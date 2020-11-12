@@ -20,13 +20,13 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
-For this tutorial, you will use [Mobile Services sample backend](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#39e06c4c-f56a-4fde-b220-d1696631c468) which has parent-child relationship setup among entities. For example, A customer can have `n` (>=0) number of sales orders.
+For this tutorial, you will use [Mobile Services sample backend](cp-mobile-dev-kit-ms-setup) (step 3) which has parent-child relationship setup among entities. For example, A customer can have `n` (>=0) number of sales orders.
 
 To create an entity and then link it to another entity, you need to carry out the following tasks:
 
 *  Create a new page for creating an order
 *  Add an action bar item to the new page for cancelling the current activity
-*  Create a new `CreateEntity` OData action to  create a new sales order  
+*  Create a new `CreateRelatedEntity` OData action to  create a new sales order  
 *  Create a new message action for displaying failure message if order creation fails
 *  Create a navigation action to show order creation page from Customer detail page
 *  Implement data subscription to update count value when a new sales order is created
@@ -270,7 +270,7 @@ The next step is to store newly created record locally for an offline applicatio
 
     !![MDK](img_5.3.png)
 
-    >In [Mobile Services sample backend](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#de147103-9b33-4c31-9f21-d60bdfe1efae), click **Metadata URL** and you will find `SalesOrders` navigation property for `Customers` entity.
+    >In [Mobile Services sample backend](cp-mobile-dev-kit-ms-setup), click **Metadata URL** and you will find `SalesOrders` navigation property for `Customers` entity.
 
 5. Since in `SalesOrderHeaders_Create.page`, we have defined seven properties (Currency Code, Net Amount, Tax Amount, Gross Amount, Life Cycle Status, Life Cycle Status Name and Creation Date) to be added, now in **Properties** section, you will bind them to respective UI Controls.
 
