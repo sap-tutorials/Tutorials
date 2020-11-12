@@ -97,7 +97,9 @@ Now, your app should be complete and you can run it locally to see if everything
     ```Shell
     cd react-core-mf
     ```
-    And:
+
+    and:
+
     ```Shell
     npm start
     ```
@@ -107,7 +109,9 @@ Now, your app should be complete and you can run it locally to see if everything
     ```Shell
     cd ui5-mf
     ```
-    And:
+
+    and:
+
     ```Shell
     npm start
     ```
