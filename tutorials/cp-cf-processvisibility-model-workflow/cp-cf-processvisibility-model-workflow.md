@@ -20,8 +20,7 @@ Once you have modelled and activated the visibility scenario, navigate to the Mo
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new instance for the workflow)]
-
+[ACCORDION-BEGIN [Step 1: ](Start a new instance of workflow)]
 1. Log on to the Workflow Management home screen and choose the **Monitor Workflows** tile.
 
     !![Home screen](FLP.png)
@@ -42,15 +41,20 @@ Once you have modelled and activated the visibility scenario, navigate to the Mo
 
     !![Show instance details](Show-instances-06.png)
 
-4. Click **Home** and navigate to the home screen.
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Open new workflow)]
+
+1. Click **Home** and navigate to the home screen.
 
     !![Home](home.png)
 
-5. You should be able to see a new task in the **My Inbox** tile in the running state.
+    You should be able to see a new task in the **My Inbox** tile in the running state.
 
     !![My Inbox](cp-cf-workflowmanagement-runcapex-myinbox.png)
 
-6. Click the **My Inbox** tile to open the application. You can see the new task in the list.
+2. Click the **My Inbox** tile to open the application. You can see the new task in the list.
 
     !![approve](approve-equipment.png)
 
@@ -58,7 +62,7 @@ Once you have modelled and activated the visibility scenario, navigate to the Mo
 
     You can move forward in the workflow by choosing the **Confirm** button in **My Inbox**.
 
-      !![Approve equipment](approve-equipment2.png)
+    !![Approve equipment](approve-equipment2.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
