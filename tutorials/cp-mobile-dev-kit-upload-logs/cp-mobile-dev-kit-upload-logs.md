@@ -62,7 +62,7 @@ You will create 3 actions:
 
 1. Create a log action of type `SetState`:
 
-    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**. **Next**.
+    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
 
     !![MDK](img_2.1.png)
 
@@ -80,7 +80,7 @@ You will create 3 actions:
 
 2. Create a log action of type `SetLevel`:
 
-    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**. **Next**.
+    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
 
     Provide the below information:
 
@@ -98,7 +98,7 @@ You will create 3 actions:
 
 3. Create a log action of type `Upload`:
 
-    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**. **Next**.
+    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
 
     Provide the below information:
 

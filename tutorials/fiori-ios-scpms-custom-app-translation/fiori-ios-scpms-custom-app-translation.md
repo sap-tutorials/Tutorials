@@ -1,32 +1,26 @@
 ---
-title: Localize an iOS app with SAP Translation Hub
+title: Localize an iOS App with SAP Translation Hub
 description: Take an iOS app generated with the SDK Assistant and make it multilingual with SAP Translation Hub.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
-author_name: Kevin Muessig
-author_profile: https://github.com/KevinMuessig
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - This tutorial is part of the [Customize UI's, themes and onboarding for iOS apps ](https://developers.sap.com/group.ios-sdk-custom.html) group
- &nbsp;
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 10 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
 
 ## Details
-In this tutorial, you will use the SAP Cloud Platform's integration with SAP Translation Hub to add multilingual features to your iOS app generated with the SDK for iOS Assistant. This way, you can run your app in many languages, depending on your device's preferred language.
-
 ### You will learn  
-
  - How to enable SAP Translation Hub in your SAP Cloud Platform trial account
  - How to add your SAP Translation Hub account into the SDK for iOS Assistant
  - How to create multilingual capabilities to your Xcode project using the SDK for iOS Assistant
  - How to modify and correct the generated translations
 
-### Time to Complete
-**15 Min**
+ In this tutorial, you will use the SAP Cloud Platform's integration with SAP Translation Hub to add multilingual features to your iOS app generated with the SDK for iOS Assistant. This way, you can run your app in many languages, depending on your device's preferred language.
+
+
 
 ---
 
