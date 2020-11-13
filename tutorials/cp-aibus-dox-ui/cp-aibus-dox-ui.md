@@ -8,7 +8,7 @@ primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
-- You have subscribed to the Document Information Extraction Trial UI: [Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub).
+- You have subscribed to the Document Information Extraction Trial UI: [Set Up Account for Document Information Extraction](cp-aibus-dox-service-instance-booster).
 
 ## Details
 ### You will learn
@@ -22,7 +22,7 @@ The core functionality of Document Information Extraction is to automatically ex
 
 [ACCORDION-BEGIN [Step 1: ](Upload documents)]
 
->Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in English. The team is working to support additional document types and languages in the near future.
+>Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
 
 Upload to the service any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice.
 
@@ -35,7 +35,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 >- [Sample Invoice 3](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-3.pdf)
 
 
-1. Open the Document Information Extraction Trial UI, as described in the previous tutorial: [Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub).
+1. Open the Document Information Extraction Trial UI, as described in the tutorial: [Set Up Account for Document Information Extraction](cp-aibus-dox-service-instance-booster).
 
     !![DOX-UI-App](png-files/app.png)
 
@@ -75,7 +75,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
 >Be aware of the following Document Information Extraction Trial UI trial account limitation:​
 
->- Maximum 40 uploaded documents per week​
+>- Maximum 40 uploaded document pages per week​ (the documents can have more than 1 page)​
 
 [VALIDATE_1]
 [ACCORDION-END]

@@ -1,6 +1,6 @@
 ---
-title: Set Up Business Application Studio for Mobile Technologies
-description: Set up your Business Application Studio to start developing mobile solutions.
+title: Set Up SAP Business Application Studio for Mobile Development
+description: Set up your SAP Business Application Studio to start developing mobile apps.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio, products>mobile-development-kit-client ]
@@ -8,24 +8,24 @@ primary_tag: software-product-function>sap-cloud-platform-mobile-services
 ---
 
 ## Prerequisites
- - [You have access to Business Application Studio](https://developers.sap.com/tutorials/appstudio-onboarding.html)
+ - You have [Set Up SAP Business Application Studio for Development](appstudio-onboarding).
 
 ## Details
 ### You will learn
-  - How to create a development space in Business Application Studio
-  - How to connect to your Cloud Foundry Target in SAP Business Application Studio
+  - How to create a development space in SAP Business Application Studio
+  - How to connect to your Cloud Foundry target in SAP Business Application Studio
 
-SAP Business Application Studio is the next generation web based IDE hosted on SAP Cloud Platform in the Cloud Foundry environment. In this tutorial, you will set up your SAP Business Application Studio for developing Mobile Technologies.
+SAP Business Application Studio is the next-generation web-based IDE hosted on SAP Cloud Platform in the Cloud Foundry environment. In this tutorial, you will set up your SAP Business Application Studio for developing mobile apps.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a Development Space)]
+[ACCORDION-BEGIN [Step 1: ](Create a development space)]
 
 Log into your Business Application Studio and click **Create Dev Space**.
 
 !![SAP Business Application Studio Dashboard](img_1_1.png)
 
-Select SAP Cloud Platform Mobile Services, enter a name (`mobileDevSpace`) for your dev space and click **Create**.
+Select SAP Cloud Platform Mobile Services, enter a name (`Mobile`) for your dev space and click **Create**.
 
 !![New Development Space](img_1_2.png)
 
@@ -34,19 +34,17 @@ Your dev space will be created and the status will change to running.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set Up Your Workspace)]
+[ACCORDION-BEGIN [Step 2: ](Set up your workspace)]
 
-Click on your dev space's name to open it.
+Click your dev space's name to open it.
 
 !![SAP Business Application Studio Dashboard with newly created Development Space](img_2_1.png)
 
 Wait till your workspace loads completely.
 
+There is no workspace opened yet, click **Open Workspace**.
+
 !![SAP Business Application Studio Home](img_2_2.png)
-
-In the menu bar, go to File &rarr; Open Workspace, click **Open Workspace**.
-
-!![Open Workpace View](img_2_3.png)
 
 Select projects, Click **Open**.
 
@@ -55,9 +53,9 @@ Select projects, Click **Open**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure Cloud Foundry Target)]
+[ACCORDION-BEGIN [Step 3: ](Configure Cloud Foundry environment)]
 
-In the bottom left corner of your status bar, click on the message **`The organization and space in Cloud Foundry have not been set.`**.
+In the bottom left corner of your status bar, click the message **`The organization and space in Cloud Foundry have not been set.`**.
 
 !![CF View](img_3_1.png)
 
@@ -69,17 +67,17 @@ Verify the URL and **Click Enter** on your keyboard.
 
 When prompted, **enter your e-mail address** you use to log in to the SAP Cloud Platform account.
 
-!![Email ID Prompt](img_3_3.png)
+!![Email ID prompt](img_3_3.png)
 
 Next, **enter your password** you use to log in to the SAP Cloud Platform account.
 
-!![Password Prompt](img_3_4.png)
+!![Password prompt](img_3_4.png)
 
 Upon successful login, you will see a toast message at the bottom right corner of your screen.
 
 !![Sucess toast message](img_3_5.png)
 
- Select the organisation in which you have enabled Mobile Services.
+Select the organisation in which you have enabled Mobile Services.
 
 !![Org list](img_3_6.png)
 

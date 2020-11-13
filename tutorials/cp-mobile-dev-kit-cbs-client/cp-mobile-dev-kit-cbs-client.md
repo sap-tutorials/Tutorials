@@ -234,11 +234,11 @@ To enable your app for push notifications, you need to carry out the following t
 
     !![MDK](img_2.1.png)
 
-2. You now have an option to generate a new signing profile in the Mobile Services cockpit by providing mandatory info like Profile Name, Validity, Common Name (user name). Other information are optional.
+2. You have an option to generate a new signing profile in the Mobile Services cockpit by providing mandatory info like Profile Name, Validity, Common Name (user name). Other information are optional.
 
     !![MDK](img_2.2.png)
 
-    Or you now have an option to to upload Android Signing profile, if you already have one.
+    Or you have an option to to upload an Android Signing profile, if you already have one.
 
     !![MDK](img_2.3.png)
 
