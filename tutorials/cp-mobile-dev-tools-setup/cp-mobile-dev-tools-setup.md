@@ -37,6 +37,12 @@ author_profile: https://github.com/jitendrakansal
 
 **Congratulations**, you have done with the setup required to get start with MDK and you are now all set to create your MDK project.
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Test yourself)]
+
+
 [VALIDATE_1]
 [ACCORDION-END]
 

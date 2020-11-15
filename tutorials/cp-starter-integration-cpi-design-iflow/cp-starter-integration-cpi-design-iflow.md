@@ -2,7 +2,7 @@
 title: Design and Test Your First Integration Flow
 description: Design an integration flow to integrate an online webshop that exposes data via OData service and fetch the product details. Your request will be sent via Postman client.
 auto_validation: true
-time: 25
+time: 45
 tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-cloud-platform-integration-for-process-services
 author_name: Vikram Kulkarni
@@ -15,79 +15,49 @@ author_profile: https://github.com/Vikramkulkarni01
 
 ## Details
 ### You will learn
-  - How to create service instance and key
+  - How to assign role collection
   - How to design and deploy an integration flow using the web-based integration flow designer
   - How to design an integration flow to query data from an online web shop that is available as an OData service
 
 
-  [ACCORDION-BEGIN [Step 1: ](Create service instance and key)]
 
->**IMPORTANT**: You should execute this step after the **`Cloud Platform Integration`** tenant is active. Please ensure that you can access your tenant. If you create a service instance and key before that it might lead to an issue.
+[ACCORDION-BEGIN [Step 1: ](Assign Role Collection)]
+ In this step, you create a required role collection for executing this scenario.
 
-  1. Navigate back to your SAP Cloud Platform's subaccount and access your subaccount's space by choosing **Spaces** > **dev**. If you have intentionally specified any other space name, you can choose the space of your choice.
+ 1. In your subaccount, go to **Security > Role Collections** and click **+** button to add new role collections.
+  !![Add Role Collections](St1.1Add Role Collections.png)
 
-      !![Access space](4.1.access-space.png)
+ 2. Enter the name **`EsbMessagingSend`** and click **Create**.
+  !![Create Role Collection](St1.2Create Role Collection.png)
 
-  2. Choose **Services** > **Service Marketplace** > **Process Integration Runtime**.
+ 3. In the **Role Collections** page, search for the role **`EsbMessagingSend`** created in the previous step and click it.
+  !![Search Role Collection](St1.3Search Role Collection.png)
 
-      !![Access PI Runtime](4.2.access-process-integration-runtime.png)
+ 4. Choose **Edit**.
+    !![Edit Role Collection](St1.4 Edit Role Collection.png)
 
-    >**TIP:** If you do not see the **Process Integration Runtime** service in the list, at the subaccount level, choose **Entitlements** > **Configure Entitlements** > **Add Service Plans**. Choose **Process Integration Runtime** and select the **integration-flow** service plan checkbox and choose **Add 1 Service Plan**.
+ 5. In the **Role Name** field, click **Search** button to search for the role name.
+    !![Search Role Name](St1.5 Search Role Name.png)
 
-  3. Select **Create Instance**.
+ 6. Search for the role name **`MessagingSend` > Select Role** and click **Add**.
+    !![Add Role name](St1.6 ADD Role Name.png)
 
-      !![Create new instance](4.3.create.new.instance.png)
+ 7. Choose **Save**.
+    !![Save Role Name](St1.7 Save Role Name.png)
 
-  4. Select the following details and choose **Next**.
+ 8. Go to **Security > Trust Configuration** and click **sap.default**.
+    !![Trust Configuration page 1](St1.8 Trust Configuration.png)
 
-    |  Field Name     | Details
-    |  :------------- | :-------------
-    |  **Service**           | **`Process Integration Runtime`**
-    |  **Service Plan**           | Select **`integration-flow`** from the dropdown list
-    |  **Instance Name**    | Enter **`Test`** or name of your choice
+ 9. Enter the user's e-mail address and click **Show Assignments** to see the role collections that are currently assigned to this user. Then click **Assign Role Collection**.
+    !![Trust Configuration Initial Screen](St1.9 Trust Configuration_part1.png)
 
-    !![New instance wizard](4.4Createnewinstance.png)
-
-  5.  In the **Specify Parameters** tab, enter the following **`JSON`** code snippet:
-
-    ```JSON
-      {
-       "roles":[
-         "ESBMessaging.send"
-       ]
-      }
-    ```
-    !![Jsoncode](4.5Jsoncode.png)
-
-    Choose **Next** > **Create Instance**.
-
-    !![finalstep](1.4.8CreateInstancefinal.png)
-
-  6. Upon successful creation of an instance, a dialog opens. Choose **View Instance**.
-    !![view instances](1.4.9viewinstance.png)
-
-  7. Select the newly created service instance and choose **Create Service Key** to create a new service key.
-
-      !![Select service key](4.6.select-service-instance.png)
-
-      You create this service instance to enable inbound HTTP calls to your SAP Cloud Platform Integration tenant.
-
-    >**TIP**: This service key will provide you the credentials for making inbound HTTP calls to integration flows deployed on your SAP Cloud Platform Integration suite tenant. You use the credentials of the service key that is `clientid` and `clientsecret` to call an integration flow as an HTTP endpoint. For more information, see [Setting Up Basic Inbound Authentication with `clientId` and `clientsecret` from a Service Key](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/647eeb3eca5d4c299009cacd1332247e.html).
-
-  8. Specify a name for the service key and choose **Create**.
-
-      !![Enter service key name](4.8.create-service-key-2.png)
-
-  9. Copy the values of **`clientid`** and **`clientsecret`** parameters. These are the credentials that you use to make a request to your integration flow after you deploy it.
-
-      ![Copy clientid and clientsecret](4.9.copy-clientid-secret.png)
-
-      Make a note of these credentials. You will use it when you make HTTP calls to integration flows deployed on your tenant with HTTP endpoints.
+ 10. Select role **`EsbMessagingSend`** and Click **Assign Role Collection**.
+    !![Assigning Role ](St1.10 Assigning Role Collection.png)
 
 [DONE]
 [ACCORDION-END]
 
-  [ACCORDION-BEGIN [Step 2: ](Access your workspace)]
+[ACCORDION-BEGIN [Step 2: ](Access your workspace)]
 
   Click the **Design** tab (pencil icon) to access your workspace. This is where you will create your integration package and integration flow.
 
@@ -245,7 +215,7 @@ From the palette, choose **Call** > **External Call** > **Request Reply**. Conne
 
     !![OData processing resource path selection - 2](6.6.odata-processing-2.png)
 
-7. Click on the **Select Entity** field and choose **Products** from the dropdown list.
+7. Click the **Select Entity** field and choose **Products** from the dropdown list.
 
     !![OData processing resource path selection - 3](6.7.odata-processing-3.png)
 
@@ -295,7 +265,7 @@ You will use this endpoint in the Postman client to test your integration flow.
 
     ![Create new postman request](8.1.create-new-postman-request.png)
 
-2. Select the **Authorization** tab and choose **Basic Auth** in the **Type** dropdown list. In the **Username** and **Password** field, enter the **`clientid`** and **`clientsecret`** that you copied from the service key that you created when you provisioned the SAP Cloud Platform Integration Suite tenant.
+2. Select the **Authorization** tab and choose **Basic Auth** in the **Type** dropdown list. In the **Username** and **Password** field, enter the **`EmailID`** and **`Password`** that you used to access the SAP Cloud Platform Integration Suite tenant.
 
     ![Provide Authorization details](8.2.provide-auth-details.png)
 

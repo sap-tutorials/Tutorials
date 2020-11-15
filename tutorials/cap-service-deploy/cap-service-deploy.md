@@ -73,6 +73,8 @@ cf login
 ```
 > This will ask you to select CF API, org, and space.
 
+> The API Endpoint is taken by default. If you want to change the API Endpoint use `cf api` to change the API.
+
 [DONE]
 [ACCORDION-END]
 
@@ -97,7 +99,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 2. Now, build and deploy both the database part and the actual application and add:
 
     ```
-    SET CDS_ENV=production && cds build
+    cds build --production
     cf push -f gen/db
     cf push -f gen/srv --random-route
     ```
@@ -139,7 +141,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 2. Now, build and deploy both the database part and the actual application and add:
 
     ```Shell/Bash
-    CDS_ENV=production cds build && cf push -f gen/db && cf push -f gen/srv --random-route
+    cds build --production && cf push -f gen/db && cf push -f gen/srv --random-route
     ```
 
     >This process takes some minutes.
@@ -151,6 +153,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
         ```
         name:              my-bookshop-srv
         requested state:   started
+        isolation segment: trial
         routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
         ```
 

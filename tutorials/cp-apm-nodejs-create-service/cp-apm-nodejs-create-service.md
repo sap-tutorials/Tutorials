@@ -15,6 +15,7 @@ time: 50
 - You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
 - (For Windows users only) You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#sqlite) in the CAP documentation.
 - You've installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
+- If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **Europe (Frankfurt) or US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
 
 ## Details
 ### You will learn
@@ -109,12 +110,11 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
     >This command tries to start a `cds` server. Whenever you feed your project with new content, for example, by adding or modifying `.cds`, `.json`, or `.js` files, the server automatically restarts to serve the new content. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
 
     ```
-    [cds] - running nodemon...
-    --ext cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env
-    --exec cds serve all --with-mocks --in-memory?
+    cds serve all --with-mocks --in-memory?
+    ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
 
 
-        No models found at db/,srv/,app/,schema,services.
+        No models found in db/,srv/,app/,schema,services.
         Waiting for some to arrive...
     ```
 
@@ -145,10 +145,11 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
     >This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
 
     ```
-    [cds] - running nodemon...
-    --ext cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml
+    cds serve all --with-mocks --in-memory?
+    ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
 
-        No models found at db/,srv/,app/,schema,services.
+
+        No models found in db/,srv/,app/,schema,services.
         Waiting for some to arrive...
     ```
 
@@ -209,10 +210,9 @@ After initializing the project, you should see the following empty folders:
     [cds] - connect to db > sqlite { database: ':memory:' }
     /> successfully deployed to sqlite in-memory db
 
-    [cds] - connect to messaging > local-messaging {}
     [cds] - serving CatalogService { at: '/catalog' }
 
-    [cds] - launched in: 777.366ms
+    [cds] - launched in: 1557.190ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -353,14 +353,13 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
     ```
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
-     > filling my.bookshop.Authors from db/csv/my.bookshop-Authors.csv
-     > filling my.bookshop.Books from db/csv/my.bookshop-Books.csv
+    > filling my.bookshop.Authors from db/csv/my.bookshop-Authors.csv
+    > filling my.bookshop.Books from db/csv/my.bookshop-Books.csv
     /> successfully deployed to sqlite in-memory db
 
-    [cds] - connect to messaging > local-messaging {}
     [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
 
-    [cds] - launched in: 783.749ms
+    [cds] - launched in: 1009.187ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -427,10 +426,9 @@ Instead of using in-memory, you can also use persistent databases.
     ```
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: 'db/my-bookshop.db' }
-    [cds] - connect to messaging > local-messaging {}
-    [cds] - serving CatalogService { at: '/catalog' }
+    [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
 
-    [cds] - launched in: 1341.398ms
+    [cds] - launched in: 871.970ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
