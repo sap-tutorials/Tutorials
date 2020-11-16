@@ -1,6 +1,8 @@
 ---
 title: SAP HANA XS Advanced, debug XSJS and node.js scripts
 description: This video tutorial will demonstrate how to debug server-side JavaScript
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana ]
 time: 5
@@ -20,8 +22,8 @@ Describe what the user will learn from your tutorial and what the outcome will b
 
 The following video demonstrates how to debug XSJS and Node.js in SAP Web IDE for SAP HANA.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pJ01pZswWRY" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4jnhhoPaJUc" frameborder="0" allowfullscreen></iframe>
 
+[DONE]
 
 [ACCORDION-END]
-

@@ -15,7 +15,7 @@ author_profile: https://github.com/mervey45
 - You have downloaded Eclipse Photon or Oxygen and installed ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
 
 ## Details
-### You will learn  
+### You will learn   
   - How to create CDS based data model
   - How to create projection view
   - How to create service definition
@@ -50,55 +50,53 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   5. Define root view for `ZI_TRAVEL_M_XXX` and database table as source.
 
     ```ABAP
-    define root view ZI_TRAVEL_M_XXX as select from ztravel_xxx            
+    define root view entity ZI_TRAVEL_M_XXX as select from ztravel_xxx as Travel       
     ```
 
   6. Your result should look like this. Replace your code with following:
 
     ```ABAP
-    @AbapCatalog.sqlViewName: 'ZVI_TRAVEL_M_XXX'
-    @AbapCatalog.compiler.compareFilter: true
-    @AbapCatalog.preserveKey: true
-    @AccessControl.authorizationCheck: #CHECK
+    @AccessControl.authorizationCheck: #NOT_REQUIRED
     @EndUserText.label: 'Travel data - XXX'
-    define root view ZI_TRAVEL_M_XXX
+    define root view entity ZI_TRAVEL_M_XXX
 
-     as select from ztravel_xxx as Travel
+      as select from ztravel_xxx as Travel
 
-     /* Associations */
-     association [0..1] to /DMO/I_Agency   as _Agency   on $projection.agency_id = _Agency.AgencyID
-     association [0..1] to /DMO/I_Customer as _Customer on $projection.customer_id = _Customer.CustomerID
-     association [0..1] to I_Currency      as _Currency on $projection.currency_code = _Currency.Currency
-     {
-      key travel_id,
-         agency_id,
-         customer_id,
-         begin_date,
-         end_date,
-         @Semantics.amount.currencyCode: 'currency_code'
-         booking_fee,
-         @Semantics.amount.currencyCode: 'currency_code'
-         total_price,
-         @Semantics.currencyCode: true
-         currency_code,
-         overall_status,
-         description,
+      /* Associations */
+      association [0..1] to /DMO/I_Agency   as _Agency   on $projection.agency_id = _Agency.AgencyID
+      association [0..1] to /DMO/I_Customer as _Customer on $projection.customer_id = _Customer.CustomerID
+      association [0..1] to I_Currency      as _Currency on $projection.currency_code = _Currency.Currency
 
-    /*-- Admin data --*/
-         @Semantics.user.createdBy: true
-         created_by,
-         @Semantics.systemDateTime.createdAt: true
-         created_at,
-         @Semantics.user.lastChangedBy: true
-         last_changed_by,
-         @Semantics.systemDateTime.lastChangedAt: true
-         last_changed_at,
+    {
+      key mykey,
+          travel_id,
+          agency_id,
+          customer_id,
+          begin_date,
+          end_date,
+          @Semantics.amount.currencyCode: 'currency_code'
+          booking_fee,
+          @Semantics.amount.currencyCode: 'currency_code'
+          total_price,
+          currency_code,
+          overall_status,
+          description,
 
-         /* Public associations */
-         _Agency,
-         _Customer,
-         _Currency
-    }        
+          /*-- Admin data --*/
+          @Semantics.user.createdBy: true
+          created_by,
+          @Semantics.systemDateTime.createdAt: true
+          created_at,
+          @Semantics.user.lastChangedBy: true
+          last_changed_by,
+          @Semantics.systemDateTime.lastChangedAt: true
+          last_changed_at,
+
+          /* Public associations */
+          _Agency,
+          _Customer,
+          _Currency
+    }  
     ```
 
   7. Save and activate.
@@ -142,81 +140,88 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     ```ABAP
     @EndUserText.label: 'Travel projection view - Processor'
-    @AccessControl.authorizationCheck: #CHECK
+    @AccessControl.authorizationCheck: #NOT_REQUIRED
 
     @UI: {
      headerInfo: { typeName: 'Travel', typeNamePlural: 'Travels', title: { type: #STANDARD, value: 'TravelID' } } }
 
     @Search.searchable: true
 
-    define root view entity ZC_TRAVEL_M_XXX as projection on ZI_TRAVEL_M_XXX {
-     @UI.facet: [ { id:              'Travel',
-                    purpose:         #STANDARD,
-                    type:            #IDENTIFICATION_REFERENCE,
-                    label:           'Travel',
-                    position:        10 } ]
+    define root view entity ZC_TRAVEL_M_XXX
+      as projection on ZI_TRAVEL_M_XXX
+    {
+          @UI.facet: [ { id:              'Travel',
+                         purpose:         #STANDARD,
+                         type:            #IDENTIFICATION_REFERENCE,
+                         label:           'Travel',
+                         position:        10 } ]
 
-     @UI: {
-         lineItem:       [ { position: 10, importance: #HIGH } ],
-         identification: [ { position: 10, label: 'Travel ID [1,...,99999999]' } ] }
-     @Search.defaultSearchElement: true
-     key travel_id          as TravelID,
+          @UI.hidden: true
+      key mykey              as TravelUUID,
 
-     @UI: {
-         lineItem:       [ { position: 20, importance: #HIGH } ],
-         identification: [ { position: 20 } ],
-         selectionField: [ { position: 20 } ] }
-     @Consumption.valueHelpDefinition: [{ entity : {name: '/DMO/I_Agency', element: 'AgencyID'  } }]
 
-     @ObjectModel.text.element: ['AgencyName'] ----meaning?
-     @Search.defaultSearchElement: true
-     agency_id          as AgencyID, _Agency.Name       as AgencyName,
+          @UI: {
+              lineItem:       [ { position: 10, importance: #HIGH } ],
+              identification: [ { position: 10, label: 'Travel ID [1,...,99999999]' } ] }
+          @Search.defaultSearchElement: true
+          travel_id          as TravelID,
 
-     @UI: {
-         lineItem:       [ { position: 30, importance: #HIGH } ],
-         identification: [ { position: 30 } ],
-         selectionField: [ { position: 30 } ] }
-     @Consumption.valueHelpDefinition: [{ entity : {name: '/DMO/I_Customer', element: 'CustomerID'  } }]
+          @UI: {
+              lineItem:       [ { position: 20, importance: #HIGH } ],
+              identification: [ { position: 20 } ],
+              selectionField: [ { position: 20 } ] }
+          @Consumption.valueHelpDefinition: [{ entity : {name: '/DMO/I_Agency', element: 'AgencyID'  } }]
 
-     @ObjectModel.text.element: ['CustomerName']
-     @Search.defaultSearchElement: true
-     customer_id        as CustomerID,
+          @ObjectModel.text.element: ['AgencyName'] ----meaning?
+          @Search.defaultSearchElement: true
+          agency_id          as AgencyID,
+          _Agency.Name       as AgencyName,
 
-     @UI.hidden: true
-     _Customer.LastName as CustomerName,
+          @UI: {
+              lineItem:       [ { position: 30, importance: #HIGH } ],
+              identification: [ { position: 30 } ],
+              selectionField: [ { position: 30 } ] }
+          @Consumption.valueHelpDefinition: [{ entity : {name: '/DMO/I_Customer', element: 'CustomerID'  } }]
 
-     @UI: {
-         lineItem:       [ { position: 40, importance: #MEDIUM } ],
-         identification: [ { position: 40 } ] }
-     begin_date         as BeginDate,
+          @ObjectModel.text.element: ['CustomerName']
+          @Search.defaultSearchElement: true
+          customer_id        as CustomerID,
 
-     @UI: {
-         lineItem:       [ { position: 41, importance: #MEDIUM } ],
-         identification: [ { position: 41 } ] }
-     end_date           as EndDate,
+          @UI.hidden: true
+          _Customer.LastName as CustomerName,
 
-     @UI: {
-         lineItem:       [ { position: 50, importance: #MEDIUM } ],
-         identification: [ { position: 50, label: 'Total Price' } ] }
-     @Semantics.amount.currencyCode: 'CurrencyCode'
-     total_price        as TotalPrice,
+          @UI: {
+              lineItem:       [ { position: 40, importance: #MEDIUM } ],
+              identification: [ { position: 40 } ] }
+          begin_date         as BeginDate,
 
-     @Consumption.valueHelpDefinition: [{entity: {name: 'I_Currency', element: 'Currency' }}]
-     currency_code      as CurrencyCode,
+          @UI: {
+              lineItem:       [ { position: 41, importance: #MEDIUM } ],
+              identification: [ { position: 41 } ] }
+          end_date           as EndDate,
 
-     @UI: {
-           lineItem:       [ { position: 60, importance: #HIGH },
-                             { type: #FOR_ACTION, dataAction: 'acceptTravel', label: 'Accept Travel' } ],
-         identification: [ { position: 60, label: 'Status [O(Open)|A(Accepted)|X(Canceled)]' } ]  }
-     overall_status     as TravelStatus,
+          @UI: {
+              lineItem:       [ { position: 50, importance: #MEDIUM } ],
+              identification: [ { position: 50, label: 'Total Price' } ] }
+          @Semantics.amount.currencyCode: 'CurrencyCode'
+          total_price        as TotalPrice,
 
-     @UI.identification: [ { position: 70, label: 'Remarks' } ]
-     description as Description,
+          @Consumption.valueHelpDefinition: [{entity: {name: 'I_Currency', element: 'Currency' }}]
+          currency_code      as CurrencyCode,
 
-     @UI.hidden: true
-     last_changed_at    as LastChangedAt
+          @UI: {
+                lineItem:       [ { position: 60, importance: #HIGH },
+                                  { type: #FOR_ACTION, dataAction: 'acceptTravel', label: 'Accept Travel' } ],
+              identification: [ { position: 60, label: 'Status [O(Open)|A(Accepted)|X(Canceled)]' } ]  }
+          overall_status     as TravelStatus,
 
-     }        
+          @UI.identification: [ { position: 70, label: 'Remarks' } ]
+          description        as Description,
+
+          @UI.hidden: true
+          last_changed_at    as LastChangedAt
+
+    }
     ```
 
   7. Save and activate.

@@ -5,6 +5,7 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-cloud-platform-portal, topic>cloud, products>sap-fiori ]
 primary_tag: products>sap-cloud-platform
+author_name: Lindsay Bert
 ---
 
 ## Prerequisites
@@ -39,11 +40,14 @@ When you access the Portal service, the Site Directory is in focus. From here yo
 
     ![Open Pages](7a_open_pages_tab.png)
 
-In your new site, you will already see the default **Launchpad** page in the **Pages** panel on the left. Note that the page is marked with an eye icon with a cross. This icon indicates that the page is not part of the site menu and is not yet visible in your site. In the next step, you'll add another page.
+In your new site, you can already see the default **Launchpad** page in the **Pages** panel on the left.
+> Note that the page is marked with an eye icon with a cross. This icon indicates that the page is not part of the site menu and is not yet visible in your site.
+
+In the next step, you are going to add a second page to your Portal site.
 
   ![View Site Manager](7_view_launchpad_page.png)
 
->Once you've created your site, you can go back to the Site Directory to see that your new site is now represented by a tile. In the future, each time you want to edit your site, you can click the pencil icon from this tile. You can also delete the site from here or preview it to see how your site users will see your site at runtime.
+>For your information: Once you've created your site, you can go back to the Site Directory. There you can see that your new site is now represented by a new tile. In the future, each time you want to edit your site, you can click the pencil icon from this tile. You can also delete the site from here or preview it to see how your site users will see your site at runtime.
 
 ![View Site Tile](8_view_site_tile.png)
 
@@ -88,14 +92,12 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page tha
 
 3. Enter the following values:
 
-
-    |  Field Name     | Value
     |  :------------- | :-------------
-    |  **Display Name**           | **`Home`**
-    |  **Item Type**           | **`Page`**
-    |  **Select Page**    | **`JobCore`**
+    |  **Display Name** | **`Home`**
+    |  **Item Type**    | **`Page`**
+    |  **Select Page**  | **`JobCore`**
 
-    Click **Add**.  
+4. Click **Add**.  
 
     ![Menu item details](11a_edit_menu.png)
 
@@ -113,13 +115,13 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page tha
 
 7. Enter the following values:
 
-    |  Field Name     | Value
+
     |  :------------- | :-------------
     |  **Display Name**           | **`My Apps`**
     |  **Item Type**           | **`Page`**
     |  **Select Page**    | **`Launchpad`**
 
-    Click **Add**.
+8. Click **Add**.
 
     ![Add launchpad to menu](14_add_launchpad_tomenu.png)
 
@@ -151,3 +153,7 @@ In the next tutorial you're going to add web content to the `Home` page.
 
 [DONE]
 [ACCORDION-END]
+
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-portal-cloud-foundry-create-site" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

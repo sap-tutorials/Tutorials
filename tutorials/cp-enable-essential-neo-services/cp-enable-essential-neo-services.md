@@ -3,7 +3,7 @@ title: Enable Essential Neo Services
 description: Learn how to enable an essential service, like the Portal service, in the SAP Cloud Platform Neo data center that you can use later for additional tutorials.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner ]
+tags: [ tutorial>beginner, tutorial>license ]
 time: 5
 ---
 

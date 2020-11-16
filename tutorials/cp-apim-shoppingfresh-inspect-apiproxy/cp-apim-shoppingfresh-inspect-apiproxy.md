@@ -42,6 +42,7 @@ primary_tag: products>sap-api-management
     ![Service Callout](05-servicecallout-geocode.png)
 
     >Note the `app_id` and `app_code` variables are hard coded for the scope of this exercise. We could have even retrieved these values from a secure key value map store.
+    >If you are using the newer HERE trial `app_id` and `app_code` is combined into `appKey`. Kindly keep a watch.
 
 6. Next, inspect the `readGeoMapResponse` policy, here you will note that we extract the Latitude and Longitude information from the response object and set in into variables named `lat` and `long`.
 

@@ -13,7 +13,6 @@ time: 15
 ### You will learn  
   - How to register on the SAP website
   - How to start your SAP Cloud Platform trial
-  - How the 90-day trial works
   - How to navigate to your sub-account and space
   - Where to find information on three important Cloud Foundry areas:  Applications, Service Marketplace, and Service Instances
 
@@ -85,69 +84,53 @@ Enter your phone number and click **New Code** to retrieve a code. Please enter 
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step](Select region for trial account)]
+[ACCORDION-BEGIN [Step](Access the welcome screen)]
 
 Click on **Log on** to log on to your verified account.
 
  ![Log on again](logon-again.png)
 
-Here, you can now create a subaccount which lives in a geographic region. Choose one of regions from this list.    
+ You will see one main button on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to navigate to your global account.
 
-> We suggest the *Europe (Frankfurt)* region because it has the largest list of services.  If you want to use a region closer to you, [check to be certain it has the services you want before selecting it](https://help.sap.com/doc/aa1ccd10da6c4337aa737df2ead1855b/Cloud/en-US/3b642f68227b4b1398d2ce1a5351389a.html?3b642f68227b4b1398d2ce1a5351389a.html).
-
-![Choose a nearby region](select-region.png)
-
-You will then see a dialog box while the account is set up.  When complete, the dialog box will look like this.  Click **Continue** to close to popup.
-
-![Dialog setting up space](trial-created.png)
+ !![enter trial account](enter-trial.png)
 
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step](Navigate to the Cloud Foundry space)]
-
-You will see two buttons on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to see your global account.
-
-![enter trial account](enter-trial.png)
 > Bookmark the link for fast and quick access to the cockpit.  
 
-The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
 
-![enter subaccount](global-account.png)
+[DONE]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step](Navigate to the subaccount)]
 
+1. Here, you can now create a subaccount which lives in a geographic region. **Choose a region** from this list and click **Create Account** to trigger the provisioning process.
 
-To get to the space, in which your applications and services live, click on the **dev** space.
+    ![Choose a nearby region](select-region.png)
 
-![enter space](sub-account.png)
+2. You will then see a dialog box while the account is set up.  When complete, click **Continue** to close to popup and to navigate to the new account.
+
+3. The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
+
+    ![Dialog setting up space](trial-created.png)
+
+4. This page will display the currently state of the subaccount. You can also use this page to jump in the different environments on SAP Cloud Platform.
+
+    ![subaccount](sub-account.png)
 
 
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step](Learn about Applications and Service Marketplace tabs)]
+[ACCORDION-BEGIN [Step](Learn about the service marketplace)]
 
-A Cloud Foundry space is the logical container of your runtime artefacts such as **Applications**, and **Service Instances**.
 
-The **Applications** tab is where all of your applications will be listed, and new applications can be added in to your Cloud Foundry runtime environment.  
+The service marketplace is where you can all services that available on **any** of the environments. Select **Service Marketplace** on the left to see all available services and a filter bar to find the one you are looking for. From here you can specify a service plan to provision service instances.
 
-![The Applications Tab](space-apps.png)
-
-The **Service Marketplace** is where you can find services to attach to any of your applications.  These services are provided by SAP Cloud Platform to make it easier to create, and produce, web applications quickly and easily. Once a service has been created, we call it a service instance.
-
-![Service Marketplace](space-marketplace.png)
-
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step](Understand the trial counter)]
-
-You can find a small counter on the top of the screen. This counter indicates how many days you have left in your free trial. Once the counter goes to zero, all your apps may be stopped and your subaccount will go to sleep. This means all apps will be stopped and you won't be able to log in via the CF CLI anymore (until you extend your trial).
-
-Extending the trial means you will get another 30 days until the account will go to sleep. After extending two times (e.g., 90 days) your subaccount will be deleted (i.e., all apps and services will be gone and you cannot log in via the CLI anymore). 
-
-After this point, you can start your new trial from scratch via the SAP Cloud Platform cockpit (see step 6).
-
-![Select trial subaccount](trial-counter.png)
-
+!![Service Marketplace](marketplace.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+<br />
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=hcp-create-trial-account&graphics=true" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

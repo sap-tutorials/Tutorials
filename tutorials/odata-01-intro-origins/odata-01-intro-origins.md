@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Learn about OData Fundamentals
 description: Discover OData's origins and learn about the fundamentals of OData by exploring a public OData service.
 auto_validation: false
@@ -19,6 +21,8 @@ OData is an open standard that is both a data format and a protocol for consumin
 
 OData has its origins in the world of weblogs and syndication, but now serves to power a great deal of the API and integration activities in typical SAP enterprise environments. This tutorial will help you understand OData from the ground up. By looking briefly at RSS and Atom, precursors of OData in some ways, you'll understand and feel more comfortable with OData and its mechanisms.
 
+> This tutorial is based upon OData versions 2 and 3. With the advent of OData version 4, there are some differences, but none significant enough to distract from the purpose of this particular tutorial which is to give a simple overview of OData and its origins.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Examine RSS, an ancestor of OData)]
@@ -33,7 +37,7 @@ Look at an example of the RSS representation of blog posts - in particular, the 
 
 <https://blogs.sap.com/tags/73554900100800000555/>
 
-and select the **RSS** link as highlighted in the screenshot.
+and select the **RSS** link as shown in the screenshot.
 
 ![RSS link on page of blog posts](blogposts-with-workflow-tag.png)
 
@@ -44,8 +48,8 @@ The resulting RSS content of this resource should look something like this:
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Latest blog posts for SAP Cloud Platform Workflow</title>
-  <link rel="alternate" type="text/html" href="https://www.sap.com/community.html" />
-  <id>https://www.sap.com/community.html</id>
+  <link rel="alternate" type="text/html" href="https://www.sap.com.community.html" />
+  <id>https://www.sap.com.community.html</id>
   <rights>© 2018 SAP SE https://www.sap.com/about/legal/copyright.html</rights>
   <logo>https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg</logo>
   <updated>2018-07-22T07:55:37Z</updated>
@@ -141,7 +145,7 @@ Notice how similar it is to the Atom service document, with a "service" root ele
 
 [ACCORDION-BEGIN [Step 4: ](Look at an OData metadata document)]
 
-In addition to the service document, an OData service also has a metadata document, a resource which describes the data in the OData service. The metadata document itself is available at a "well-known" URL, which is a combination of the service document URL with the value `$metadata` appended. For this Northwind OData service, this means that the metadata document should be available at:
+In addition to the service document, an OData service also has a metadata document, a resource which describes the data in the OData service. The metadata document itself is available at a "well-known" URL, which is the service document URL with the value `$metadata` appended. For this Northwind OData service, this means that the metadata document should be available at:
 
 <https://services.odata.org/V3/Northwind/Northwind.svc/$metadata>
 
@@ -256,3 +260,4 @@ Finally, use the OData system query option $count to retrieve the number of orde
 
 [VALIDATE_9]
 [ACCORDION-END]
+

@@ -9,7 +9,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 
 ## Prerequisites
 - You have an SAP Cloud Platform Integration tenant.
-- You have assigned `ESBMessaging.send` role in the SAP Cloud Platform cockpit to the user that will be used for calling the flow.
+- You have assigned `ESBMessaging.send` role in the SAP Cloud Platform cockpit to the user that will be used for calling the flow. You can do this by following step 6 in the [Integration Suite Onboarding Tutorial](cp-starter-isuite-onboard-subscribe)
 
 ## Details
 ### You will learn
@@ -18,6 +18,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
   - How to expose a SOAP endpoint
   - How to configure a mail receiver
   - How to deploy, execute and monitor an integration flow
+
 
 
 ---
@@ -32,7 +33,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 
     ![Security](Security.png)  
 
-    After logging in, you should finally see the following screen:
+    After logging in, you should see the following screen:
 
     ![Launching the Web Interface](Launch CPI.png)  
 
@@ -143,7 +144,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
      - Click on the SOAP sender channel.   
      - Go to the __Properties sheet__.
      - Go to the __Connection__ tab.
-     - Set __Address__ to ```/submitFreightInfo```.
+     - Set __Address__ to **`/submitFreightInfo`**.
 
 >   This is the SOAP endpoint that you will expose from this integration flow. It will be prefixed with the tenant URL to get the full URL.
 
@@ -160,7 +161,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
     - Go to the __Monitor view__.
     - Click on the tile called __Security Material__.
     - Add __User Credential__.
-    - Set __Name__ to ```mailSender```.
+    - Set __Name__ to **`mailSender`**.
     - Configure the mail sender's email address and passwords.
 
     ![Sender mail credential](Sender mail credential.png)
@@ -204,7 +205,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
     Proxy Type      | None
     Protection      | STARTTLS Mandatory
     Authentication  | Encrypted User/Password
-    Credential Name |```mailSender```
+    Credential Name |**`mailSender`**
     From            | \<Sender mail Address>
     To              | \<Receiver mail Address>
 
@@ -288,7 +289,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
     Field name     | Value     
     -------------  | -------------
     Verb           | POST
-    URL            | ```\<tenant URL>/cxf/submitFreightInfo```
+    URL            | **`\<tenant URL>/cxf/submitFreightInfo`**
     __Authorization__  |
     Type            | Basic Auth
     Username       | \<Your user on your tenant>

@@ -54,9 +54,10 @@ In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology.
 
 ```XML
 <dependency>
-    <groupId>com.github.ben-manes.caffeine</groupId>
-    <artifactId>jcache</artifactId>
-    <version>2.7.0</version>
+  <groupId>com.github.ben-manes.caffeine</groupId>
+  <artifactId>jcache</artifactId>
+  <scope>runtime</scope>
+  <version>2.7.0</version>
 </dependency>
 ```
 

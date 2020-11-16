@@ -1,6 +1,8 @@
 ---
 title: Implement Image Classification Using a Trained Core ML Model and Vision Framework
 description: Import a trained Core ML model and use the Vision framework to prepare a certain image for the classification, then use the classification result to fetch products of a certain product category from the sample data service.
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
@@ -9,7 +11,7 @@ time: 25
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
+- **SAP Cloud Platform SDK for iOS:** Version 5.0
 
 ## Details
 ### You will learn  
@@ -30,9 +32,9 @@ For this tutorial you will import the `ProductImageClassifier.mlmodel` Core ML m
 
 In order to use the `ProductImageClassifier.mlmodel` Core ML model you have to add it to your Xcode project.
 
-Go into the folder you've saved your model and **drag & drop** that model into the **Project Navigator** of Xcode. Xcode will bring up a dialogue, make sure **Copy Items if needed** and **Create folder references** is selected and click on **Finish**.
+Follow this if you haven't done it in the **Use Create ML to Train an Image Classification Model** tutorial already.
 
-![Import Model](fiori-ios-scpms-teched19-01.png)
+Go into the folder you've saved your model and **drag & drop** that model into the **Project Navigator** of Xcode. Xcode will bring up a dialogue, make sure **Copy Items if needed** and **Create folder references** is selected and click on **Finish**.
 
 The model will now be referenced in your Xcode app project and can be initialized within the app code.
 
@@ -49,7 +51,10 @@ Add the needed import statements below the `import UIKit` statement above the cl
 
 import SAPFiori
 import SAPOData
+import SAPOfflineOData
 import SAPCommon
+import SAPFoundation
+import SAPFioriFlows
 
 ```
 
@@ -57,10 +62,18 @@ Add the following properties right above the `viewDidLoad(_:)` method:
 
 ```Swift
 
-private var dataService: ESPMContainer<OnlineODataProvider>?
-private let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
 private let logger = Logger.shared(named: "ProductClassificationTableViewController")
+
+/// First retrieve the destinations your app can talk to from the AppParameters.
+let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
+
+var dataService: ESPMContainer<OfflineODataProvider>? {
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OfflineODataController, let dataService = odataController.espmContainer else {
+        AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+        return nil
+    }
+    return dataService
+}
 
 private var products = [Product]()
 
@@ -94,18 +107,14 @@ Add the following lines of code to the `viewDidLoad(_:)` method:
 
 ```Swift
 
-tableView.estimatedRowHeight = 80
-tableView.rowHeight = UITableView.automaticDimension
+override func viewDidLoad() {
+    super.viewDidLoad()
 
-tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
+    tableView.estimatedRowHeight = 80
+    tableView.rowHeight = UITableView.automaticDimension
 
-guard let dataService = appDelegate.sessionManager.onboardingSession?.odataController.espmContainer else {
-    AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
-    logger.error("OData service is nil. Please check onboarding.")
-    return
+    tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
 }
-
-self.dataService = dataService
 
 ```
 
@@ -133,7 +142,7 @@ Implement the following code right below the `viewDidLoad(:)`, read the inline c
 lazy var classificationRequest: VNCoreMLRequest = {
     do {
         // Instantiate the Core ML model
-        let model = try VNCoreMLModel(for: TechEd2019().model)
+        let model = try VNCoreMLModel(for: ProductImageClassifier_1(configuration: MLModelConfiguration()).model)
 
         // Create a VNCoreMLRequest passing in the model and starting the classification process in the completionHandler.
         let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
@@ -190,9 +199,9 @@ Right now the code above will cause compile time errors. You need an extension o
 
 Create a new Swift class with the name `CGImagePropertyOrientation+UIImageOrientation` in the **Project Navigator**.
 
-![Create Swift Class](fiori-ios-scpms-teched19-02.png)
+![Create Swift Class](fiori-ios-scpms-teched19-01.png)
 
-![Create Swift Class](fiori-ios-scpms-teched19-03.png)
+![Create Swift Class](fiori-ios-scpms-teched19-02.png)
 
 In that extension class, replace the code with the following lines:
 
@@ -212,10 +221,11 @@ extension CGImagePropertyOrientation {
         case .leftMirrored: self = .leftMirrored
         case .right: self = .right
         case .rightMirrored: self = .rightMirrored
+        @unknown default:
+            fatalError()
         }
     }
 }
-
 ```
 
 Go back to the `ProductClassificationTableViewController.swift` class and implement a method processing the image classification. This method will also fetch the products according to the classification result.
@@ -259,7 +269,7 @@ func processClassifications(for request: VNRequest, error: Error?) {
             self.navigationItem.title = category
 
             // Define a DataQuery to only fetch the products matching the classified product category
-            let query = DataQuery().filter(Product.category == category)
+            let query = DataQuery().filter(Product.categoryName == category)
 
             // Fetch the products matching the defined query
             self.dataService?.fetchProducts(matching: query) { [weak self] result, error in
@@ -293,15 +303,7 @@ private var productImageURLs = [String]()
 
 The last step would be to call the `updateClassifications(for:)` method inside the `viewDidLoad(_:)` method as the last line of code:
 
-```Swift
-
-updateClassifications(for: image)
-
-```
-
-Your `viewDidLoad(_:)` should now look like this:
-
-```Swift
+```Swift[9]
 
 override func viewDidLoad() {
     super.viewDidLoad()
@@ -310,14 +312,6 @@ override func viewDidLoad() {
     tableView.rowHeight = UITableView.automaticDimension
 
     tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
-
-    guard let dataService = appDelegate.sessionManager.onboardingSession?.odataController.espmContainer else {
-        AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
-        logger.error("OData service is nil. Please check onboarding.")
-        return
-    }
-
-    self.dataService = dataService
 
     updateClassifications(for: image)
 }
@@ -351,64 +345,76 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 
 ```
 
+Before you go ahead and implement the `tableView(_:viewDidLoad:)`, you need to retrieve the URL of your service. The data task you're going to use will use the URL to download the needed product images.
+
+Open your Mobile Services instance and select your app configuration in the `Native/Hybrid` screen. There you click  **Mobile Sample OData ESPM** in the **Assigned Features** section.
+
+!![MS APIs](fiori-ios-scpms-teched19-03.png)
+
+The detail screen for the `Mobile Sample OData ESPM` will open. There you find the **`Runtime Root URL`** for this service, copy the whole URL as you will need it in a second.
+
+!![MS APIs](fiori-ios-scpms-teched19-04.png)
+
 Next implement the `tableView(_:cellForRowAt:)` method and read the inline comments carefully:
 
 ```Swift
 
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-    // Get the correct product to display
-    let product = products[indexPath.row]
+      // Get the correct product to display
+      let product = products[indexPath.row]
 
-    // Dequeue the FUIObjectTableViewCell
-    let cell = tableView.dequeueReusableCell(withIdentifier: FUIObjectTableViewCell.reuseIdentifier) as! FUIObjectTableViewCell
+      // Dequeue the FUIObjectTableViewCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: FUIObjectTableViewCell.reuseIdentifier) as! FUIObjectTableViewCell
 
-    // Set the properties of the Object Cell to the name and category name
-    cell.headlineText = product.name ?? ""
-    cell.subheadlineText = product.categoryName ?? ""
+      // Set the properties of the Object Cell to the name and category name
+      cell.headlineText = product.name ?? ""
+      cell.subheadlineText = product.categoryName ?? ""
 
-    // If there is a price available, format it using the NumberFormatter and set it to the footnoteText property of the Object Cell.
-    if let price = product.price {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        let formattedPrice = formatter.string(for: price.intValue())
+      // If there is a price available, format it using the NumberFormatter and set it to the footnoteText property of the Object Cell.
+      if let price = product.price {
+          let formatter = NumberFormatter()
+          formatter.numberStyle = .currency
+          let formattedPrice = formatter.string(for: price.intValue())
 
-        cell.footnoteText = formattedPrice ?? ""
-    }
+          cell.footnoteText = formattedPrice ?? ""
+      }
 
-    // Because you're using a lazy loading mechanism for displaying the product images to avoid lagging of the Table View, you have to set a placeholder image on the detailImageView property of the Object Cell.
-    cell.detailImageView.image = FUIIconLibrary.system.imageLibrary
+      // Because you're using a lazy loading mechanism for displaying the product images to avoid lagging of the Table View, you have to set a placeholder image on the detailImageView property of the Object Cell.
+      cell.detailImageView.image = FUIIconLibrary.system.imageLibrary
 
-    // The data service will return the image url in the following format: /imgs/HT-2000.jpg
-    // In order to build together the URL you have to define the base URL.
-    // The Base URL is found in the Mobile Services API tab.
-    let baseURL = "https://hcpms-d061070trial.hanatrial.ondemand.com/com.sap.edm.sampleservice.v2"
-    let url = URL(string: baseURL.appending(productImageURLs[indexPath.row]))
+      // The data service will return the image url in the following format: /imgs/HT-2000.jpg
+      // In order to build together the URL you have to define the base URL.
+      // The Base URL is found in the Mobile Services App configuration's service.
+      let baseURL = "https://a9366ac9trial-dev-com-example.cfapps.eu10.hana.ondemand.com/SampleServices/ESPM.svc/v2"
+      let url = URL(string: baseURL.appending(productImageURLs[indexPath.row]))
 
-    // Safe unwrap the URL, the code above could fail when the URL is not in the correct format, so you have to make sure it is safely unwrapped so you can react accordingly. You won't show the product image if the URL is nil.
-    guard let unwrapped = url else {
-        logger.info("URL for product image is nil. Returning cell without image.")
-        return cell
-    }
-    // You will use an image cache to cache all already loaded images. If the image is already in the cache display it right out of the cache.
-    if let img = imageCache[unwrapped.absoluteString] {
-        cell.detailImageView.image = img
-    }
+      // Safe unwrap the URL, the code above could fail when the URL is not in the correct format, so you have to make sure it is safely unwrapped so you can react accordingly. You won't show the product image if the URL is nil.
+      guard let unwrapped = url else {
+          logger.info("URL for product image is nil. Returning cell without image.")
+          return cell
+      }
+      // You will use an image cache to cache all already loaded images. If the image is already in the cache display it right out of the cache.
+      if let img = imageCache[unwrapped.absoluteString] {
+          cell.detailImageView.image = img
+      }
 
-    // If the image is not loaded yet, use the loadProductImageFrom(_:) method to load the image from the data service.
-    else {
-        // The image is not cached yet, so download it.
-        loadProductImageFrom(unwrapped) { image in
-            cell.detailImageView.image = image
-        }
-    }
+      // If the image is not loaded yet, use the loadImageFrom(_:) method to load the image from the data service.
+      else {
+          // The image is not cached yet, so download it.
+          loadImageFrom(unwrapped) { image in
+              cell.detailImageView.image = image
+          }
+      }
 
-    return cell
-}
+      return cell
+  }
 
 ```
 
-Before you will implement the `loadProductImageFrom(_:)` method, you have to define an image cache. As a cache you will simply use a dictionary.
+Inside the just implemented method, assign the copied `URL` to the `baseURL` instead of `<YOUR URL>` placeholder.
+
+Before you will implement the `loadImageFrom(_:)` method, you have to define an image cache. As a cache you will simply use a dictionary.
 
 Add the following property definition to below the `private var productImageURLs = [String]()` property:
 
@@ -418,19 +424,16 @@ private var imageCache = [String:UIImage]()
 
 ```
 
-Next implement the `loadProductImageFrom(_:)` method to actually fetch the product images.
+Next implement the `loadImageFrom(_:)` method to actually fetch the product images.
 
 Implement the method right below the `viewDidLoad(_:)` method and read the inline comments carefully:
 
 ```Swift
 
-private func loadProductImageFrom(_ url: URL, completionHandler: @escaping (_ image: UIImage) -> Void) {
-
-    // Retrieve an instance of the SAPURLSession
+private func loadImageFrom(_ url: URL, completionHandler: @escaping (_ image: UIImage) -> Void) {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     if let sapURLSession = appDelegate.sessionManager.onboardingSession?.sapURLSession {
-
-        // Use a data task on the SAPURLSession to load the product images
-        sapURLSession.dataTask(with: url, completionHandler: { (data, response, error) in
+        sapURLSession.dataTask(with: url, completionHandler: { data, _, error in
 
             if let error = error {
                 self.logger.error("Failed to load image!", error: error)
@@ -459,15 +462,13 @@ Run your app on the iOS Simulator, because the iOS Simulator doesn't have a came
 
 Select a **MacBook or other Notebook** and an **Office Chair** image and drag them onto the iOS Simulator. The iOS Simulator will open up the Photo Library and add the images.
 
-![Create Swift Class](fiori-ios-scpms-teched19-04.png)
+![Create Swift Class](fiori-ios-scpms-teched19-05.png)
 
 Open your app by tapping on the `SalesAssistant` navigation on the top-left corner.
 
-![Create Swift Class](fiori-ios-scpms-teched19-05.png)
+![Create Swift Class](fiori-ios-scpms-teched19-06.png)
 
 In your app enter the App passcode if necessary.
-
-![Create Swift Class](fiori-ios-scpms-teched19-06.png)
 
 In the Overview View Controller of your app, tap on the implemented Bar Button Item in the Navigation Bar and select **Find Product Based on Photo**.
 
@@ -475,29 +476,15 @@ In the Overview View Controller of your app, tap on the implemented Bar Button I
 
 ![Create Swift Class](fiori-ios-scpms-teched19-08.png)
 
-Next the Photo Library of the iOS Simulator will open up, please tap on **Recently Added**.
+Next the Photo Library of the iOS Simulator will open up, select the **MacBook or Notebook** in there.
 
 ![Create Swift Class](fiori-ios-scpms-teched19-09.png)
-
-Select the **MacBook or Notebook** in there.
-
-![Create Swift Class](fiori-ios-scpms-teched19-10.png)
 
 The Photo Library will close and the Product Classification Table View Controller will open up and start the classification process as well as the fetching of the products.
 
 The Table View should display all available notebooks available through the data service. The product images should lazy load and appear as well.
 
-![Create Swift Class](fiori-ios-scpms-teched19-11.png)
-
-Tap on **Done** to go back to the Overview View Controller.
-
-Repeat that process using the **Office Chair** image to see if the classification also works with other products.
-
-![Create Swift Class](fiori-ios-scpms-teched19-12.png)
-
-The Product Classification Table View Controller will show all available Chairs in the data service.
-
-![Create Swift Class](fiori-ios-scpms-teched19-13.png)
+Tap on **Done** to go back to the Overview Table View Controller.
 
 Congratulations! You've successfully used a pre-trained Core ML model and Vision to classify product images.
 

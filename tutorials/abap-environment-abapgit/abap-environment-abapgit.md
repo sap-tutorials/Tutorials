@@ -5,8 +5,8 @@ description: Transform ABAP source code from on-premise SAP system to a SAP Clou
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner,  topic>abap-development, products>sap-cloud-platform, tutorial>license]
 time: 15
-author_name: Niloofar Naseri
-author_profile: https://github.com/niloofar-naseri
+author_name: Niloofar Flothköetter
+author_profile: https://github.com/niloofar-flothkoetter
 ---
 
 ## Prerequisites  
@@ -14,7 +14,7 @@ author_profile: https://github.com/niloofar-naseri
  - SAP Cloud Platform ABAP Environment system and user with developer role
  - `on-premise` system with user and required root CA of `Git` server (STRUST)
  - Download Eclipse Photon or Oxygen and install ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
-
+ - For More information see [Working with abapGit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/d62ed9d54a764c53990f25f0ab6c27f9.html)
 
 ## Details
 ### You will learn  

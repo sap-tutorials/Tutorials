@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Learn Annotation Basics for OData and Fiori
 description: Learn about annotations for OData and how they can power an SAP Fiori app.
 auto_validation: true

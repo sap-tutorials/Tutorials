@@ -2,112 +2,92 @@
 title: Introduction to app analytics on SAP Cloud Platform Mobile Services
 description: Get an introduction on the analytics features available on SAP Cloud Platform Mobile Services.
 auto_validation: true
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
-time: 5
+time: 10
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
+- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup)
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
 
 ## Details
 ### You will learn  
-In this tutorial, you will learn the basics of the analytics features on SAP Cloud Platform Mobile Services. You can view usage statistics for your iOS apps, information about Push Notifications, as also get a reports of different information about your used server. You won't create or configure anything in this part, but rather get familiar of the reporting possibilities.
+In this tutorial, you will learn the basics of the analytics features on SAP Cloud Platform Mobile Services. You can view usage statistics for your iOS apps, information about push notifications, and get reports of server usage. You won't create or configure anything in this tutorial, but rather get familiar of the reporting capabilities.
 
->  Please keep in mind, the screenshots you see here are from a sample app I've created with just a couple of sample users. If you have a productive app with a realistic amount of users the analytics features will have far more data to show. This tutorial will give you a simple overview of the available features and possibilities.
+> Please keep in mind, the screenshots you see here are from a sample app I've created with just a couple of sample users. If you have a productive app with a realistic amount of users the analytics features will have far more data to show. This tutorial will give you a simple overview of the available features and possibilities.
+
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Overview of the analytics features on SAP Cloud Platform Mobile Services)]
+[ACCORDION-BEGIN [Step 1: ](Overview of the Analytics Features on Sap Cloud Platform Mobile Services)]
 
-SAP Cloud Platform Mobile Services provides you all different features which you can use to analyze certain aspects of your distributed app. It also let's you manage users, permission, connectivity and other great features. In this tutorial you will get an introduction to the **User Registrations**, **Push Statistics** and **Server Data Report** features.
+Open your SAP Cloud Platform Mobile Services instance on SAP Cloud Platform. On the left-hand side you can see the **Analytics** category in the side panel.
 
-To get started please login to your **SAP Cloud Platform Mobile Services** account.
-> `https://hcpmsadmin-<P-/S-User>trial.dispatcher.hanatrial.ondemand.com/sap/mobile/admin/ui/index.html#/page.home`
+![mobile-services](fiori-ios-hcpms-reporting-01.png)
 
-On the left-hand side you can see the **Analytics** category in the side panel.
+Mobile Services provides different types of analytical data which are separated like the following:
 
-![mobile-services](fiori-ios-hcpms-reporting-1.png)
+**Logs**
 
-Under the **Analytics** category you can see all sort of analytics features. The two this tutorial is focusing on is the **User Registrations** and **Push Statistics** features.
+Logs will give you device log messages during runtime of your app. Those logs can be individually filtered to find very specific logs of a particular user, device or group of users.
 
-With the **User Registrations** you get an overview of all registered users for your distributed app. You can see how many users are registered as also detailed information about each user himself.
+**Server Data**
 
-The **Push Statistics** will give you an overview of how many notifications have been sent, how many succeeded and failed notifications there've been and it also provides you a statistics representation in a chart or text based view. It also allows you to export those statistics in a `CSV` format.
+The server data is responsible for tracking user registrations against your system, Online- and Offline requests during runtime of the app, data about sent push notifications and user registration details.
 
-Using the **Server Data Report** you are able to get information about registrations, requests, response times, offline requests and more. You can also specify the application you want those information for and set a time frame for which you want the data.
+**User Data**
 
-[DONE]
-[ACCORDION-END]
+With the user data you have great insight about user sessions which can help you understand how your app is being used, but also demographics and user behavior which give you all the information you need to analyze your app's success.
 
-[ACCORDION-BEGIN [Step 2: ](User Registrations)]
+**User Feedback**
 
-Inside of the **User Registrations** you will find a list of all registered users of your distributed app. This list also displays the following information:
-
-- Registration ID: The registration ID is an ID which is given to each registered user. Registered user means that this specific user has signed into your app and connected to Mobile Services.
-- User Name: The user's name with which he registered/ authenticated against Mobile Services over your app.
-- Application ID: The application ID is the ID you have given while creating the initial Mobile Services application definition.
-- Device Type: The type of device like iOS or Android.
-- Beta Tester: With the Beta Tester option you can mark specific users as beta testers for beta versions of your app.
-- Last Connection: The last connection timestamp shows you when the user last connected against Mobile Services using your app.
-- Wipe: With the wipe option you can mark specific users to wipe their app on device.
-- Actions: The actions include a delete and log settings feature. With the delete action you can delete a specific user which includes signing them out of your app. The log settings action lets you configure log specific settings for that user.
-
-If you look in the top you can see all sort of different filter settings. This is really helpful if you have a productive app out there with hundreds or thousands of users. You can filter for different device types, different applications (if you have more then one) or for specific users which makes sense if you got a support ticket from that user.
-
-![user-registrations](fiori-ios-hcpms-reporting-2.png)
-
-You can also get more detailed information about certain users, you're interested in. Please click on one of the users if you already have registered users.
-
-![user-registrations](fiori-ios-hcpms-reporting-3.png)
-
-Here you can see far more detailed information about that one user. If you have real productive users those details can be really helpful to support your users in case of a ticket or other support request.
+Tracking your app ratings and feedback of your users is crucial for the success of your application. Mobile Services gives you the perfect tooling to track these information.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Push Statistics)]
+[ACCORDION-BEGIN [Step 2: ](Logs)]
+The SAP CP SDK for iOS has it's own logging framework included in the `SAPCommon` framework. With that logging framework you can log crucial information during runtime not only inside the app but you can use the `log uploader` API to directly pass the logs through to Mobile Services.
 
-Another interesting feature is the **Push Statistics** service you can select on the left-hand side. With that you can get detailed information about all the notifications you've sent or tried to send.
+![Logs](fiori-ios-hcpms-reporting-02.png)
 
-![user-registrations](fiori-ios-hcpms-reporting-4.png)
+In Mobile Services your app admins, support staff or developers can directly access the logs specifically for different users, devices or groups of users which enables you to provide better supportability for your app.
 
-In the initial overview you will see the push notification statistics per application. The overview gives you information like:
+You can even see details to each log by clicking on the entry, this will open the log details screen for that specific log message.
 
-- Time: The timestamp of the month where you last send notifications to your users.
-- Application ID: The application ID is the ID you have given while creating the initial Mobile Services application definition.
-- Notification Channel: The notification channel where you've sent the notification. For example in case of iOS you would see `APNS` here.
-- Sent: How many notifications you've sent.
-- Received: How many of your users actually received those notifications.
-- Error: How many failed notifications you've sent.
-- Consumed: How many of the successfully sent and received notifications where actually consumed by users.
-
-If you have a lot of data here it might make sense to have them represented in a graphical way. Fortunately Mobile Services let's us switch between a textual and graphical view. You can click the **Chart** icon on the right-hand side to switch to the graphical overview.
-
-![user-registrations](fiori-ios-hcpms-reporting-5.png)
-
-You can also click on one of the bars to get a pop-up with additional information.
-
-![user-registrations](fiori-ios-hcpms-reporting-6.png)
-
-For reporting purpose Mobile Services allows you to export those statistics in a `CSV` format.
-
-![user-registrations](fiori-ios-hcpms-reporting-7.png)
+![Logs](fiori-ios-hcpms-reporting-03.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Server Data Report)]
+[ACCORDION-BEGIN [Step 3: ](Server Data)]
 
-With the help of the **Server Data Report** feature you can get server specific information for your applications on Mobile Services.
+If you want to have analytical data about backend access requests, user registrations against your system and other important data of your system you can use the server data capabilities of Mobile Service. You can make easy analytical queries to retrieve the information you need.
 
-![user-registrations](fiori-ios-hcpms-reporting-8.png)
+![Server Data](fiori-ios-hcpms-reporting-04.png)
 
-You can define for which Application ID you want the server reports, also you can define the time frame between **Today** back to the **Last 12 Months**.
-In the screenshot you can see the registrations against the server over the last 12 months for the `com.example.product` application. In the dropdown you can choose the data you want to see.
+[DONE]
+[ACCORDION-END]
 
-![user-registrations](fiori-ios-hcpms-reporting-9.png)
+[ACCORDION-BEGIN [Step 4: ](User Data)]
 
-Here you can see the past requests against the server. Also the list of possible data is rich so you can get information about all the data you might need for monitoring your backend and it's performance.
+All needed information regarding each and every single user using your app and system will be recorded in the user data section of Mobile Services. Use its analytical data to improve your app and make qualified decisions about the demographics of your user base.
 
-[VALIDATE_4]
+![Server Data](fiori-ios-hcpms-reporting-05.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](User Feedback)]
+
+Tracking and analyzing feedback of your users is crucial for you to improve your app's user experience. It also gives you the possibility to indirectly interact with your user base.
+
+For more information visit the official documentation [Managing and Monitoring Applications](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/3761042151cc4e8999295dcc561454f2.html)
+
+![Server Data](fiori-ios-hcpms-reporting-06.png)
+
+[VALIDATE_5]
 [ACCORDION-END]

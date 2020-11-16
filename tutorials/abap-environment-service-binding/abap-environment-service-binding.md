@@ -103,6 +103,11 @@ author_profile: https://github.com/mervey45
       Length: 20,
       Field Labels: Month (for all)
 
+    - **`ZCONFIG_DEPRECATION_CODE_XXX:`**
+      Category: `Predefined Type`,
+      Data Type: `CHAR`,
+      Length: 1
+
       **Create, save and activate** all data elements.
 
       ![element](element6.png)
@@ -146,8 +151,9 @@ author_profile: https://github.com/mervey45
      month_of_holiday : zcal_month_xxx;
      day_of_holiday   : zcal_day_xxx;
      changedat        : timestampl;
-
+     configdeprecationcode : zconfig_deprecation_code_xxx;
     }
+
     ```
 
   6. Save and activate.
@@ -182,6 +188,8 @@ author_profile: https://github.com/mervey45
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create CDS view)]
+
+The creation of Core Data Services-View (CDS-View) takes here place. CDS views are the foundation of each business object node.
 
   1. Right-click on **`Z_Calendar_XXX`**, select **New** > **Other ABAP Repository Object**.
 
@@ -220,15 +228,19 @@ author_profile: https://github.com/mervey45
 
   8. Add annotations for administrative data. The annotation provide the business object semantic information about the purpose of the corresponding fields. By saving the business object the fields will be updated automatically. You can add the following annotations:
 
-      ![view](cds8.png)
+      ![view](cds8x.png)
 
 
   9. Save and activate.
+
+    Now the CDS view for the database table is created. Up to now the CDS view only repeats the database table field definition and adds some annotations to the table.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create behavior definition)]
+
+Now it is time to create behavior definition. The behavior definition defines the nodes of the business object and its properties. Here you can define which node-actions the business object supports. By default, this will be create, update and delete. Furthermore, lock objects, implementation classes and authorization checks can be defined.
 
   1. Right-click on your data definition **`ZCAL_I_HOLIDAY_XXX`**, select **New Behavior Definition**.
 
@@ -242,23 +254,14 @@ author_profile: https://github.com/mervey45
 
       ![behavior](behavior3.png)
 
-  5. Add your alias, for example **`HolidayRoot`** to your behavior definition.
+  4. Add your alias, for example **`HolidayRoot`** to your behavior definition and uncomment lock master in line 5.
 
       ![behavior](behavior4.png)
-
-  6. Define the root entity as lock master.
-     Uncomment line 5.
-
-      ![behavior](behavior5.png)
 
       This defines the root node as main locking object to avoid multiple persons editing the same object.
       Sub nodes have to be defined as lock dependent later on.
 
-  7. Save and activate.
-
-  8. The definition should now look as in the screenshot:
-
-      ![behavior](behavior6.png)
+  5. Save and activate.
 
      In line 1 you see that you defined a managed business object.
      If required, you can extend the business object by an optional implementation class.
@@ -269,11 +272,16 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 6: ](Create service definition)]
 
-  1. Right-click on your data definition **`ZCAL_I_HOLIDAY_XXX`**, select **New Service Definition**.
+Service definitions expose a set of business objects and their entities to a service-URL.
 
-      ![definition](definition.png)
+  1. Right-click on your package **`Z_Calendar_XXX`** and select **New**> **Other ABAP Repository Object**.
 
-  2. Create a service definition:
+      ![definition](other.png)
+
+  2. Search for **Service Definition** and select it.
+
+
+  3. Create a service definition:
      - Name: **`ZCAL_I_HOLIDAY_SD_XXX`**
      - Description: **`Service definition for holiday calendar`**
 
@@ -281,28 +289,31 @@ author_profile: https://github.com/mervey45
 
       Make sure, that your **source type** is **service definition** and click **Next >**.
 
-  3. Click **Next >**.
+  4. Click **Next >**.
 
       ![definition](definition3.png)
 
-  4. Select the default service definition template and click **Finish**.
+  5. Select the default service definition template and click **Finish**.
 
       ![definition](definition4.png)
 
-  5. Expose the CDS view in the service definition. Therefore, add **`HolidayRoot`** as alias to the service definition.
+  6. Expose the CDS view in the service definition. Therefore, add **`HolidayRoot`** as alias to the service definition.
 
-       ![definition](definition5.png)
+      ![definition](definition5.png)
 
-  6. Save and activate.
+  7. Save and activate.
 
-  6. Now the service definition is done, and the business object is almost ready for use.
+  8. Now the service definition is done, and the business object is almost ready for use.
 
       ![definition](definition6.png)
+
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create service binding)]
+
+Service bindings expose service definitions to the Web browser.
 
   1. Right-click on your service definition **`ZCAL_I_HOLIDAY_SD_XXX`** and select **New Service Binding**.
 

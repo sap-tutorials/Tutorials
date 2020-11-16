@@ -5,6 +5,8 @@ auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-fiori]
 primary_tag: topic>html5
+author_name: Lukas Harbarth
+author_profile: https://github.com/Lukas742
 ---
 
 
@@ -27,7 +29,7 @@ This first tutorial will start by creating a React application that is able to c
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Bootstrap the app with create-react-app)]
+[ACCORDION-BEGIN [Step 1: ](Bootstrap the app with create-react-app)]
 
 Navigate to a folder where you want to create your Web App and open a terminal there. Then use the following command:
 
@@ -41,7 +43,7 @@ cd my-app
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step : ](Create your new root component)]
+[ACCORDION-BEGIN [Step 2: ](Create your new root component)]
 
 1. Open the current directory with an editor of your choice (e.g. Visual Studio Code).
 
@@ -64,7 +66,7 @@ With this you created your first `React` component. To actually render the compo
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Embed your new component)]
+[ACCORDION-BEGIN [Step 3: ](Embed your new component)]
 
 1. In `App.js` remove everything inside of the `<ThemeProvider>`. You can also delete the `className` property and the `import` of the logo and `"./App.css"` as they are not needed anymore for this tutorial.
 
@@ -78,7 +80,7 @@ With this you created your first `React` component. To actually render the compo
     ```JavaScript  / JSX
     function App() {
       return (
-        <ThemeProvider withToastContainer>
+        <ThemeProvider>
           <MyApp />
         </ThemeProvider>
       );
@@ -94,7 +96,7 @@ import { ThemeProvider } from "@ui5/webcomponents-react/lib/ThemeProvider";
 
 function App() {
   return (
-    <ThemeProvider withToastContainer>
+    <ThemeProvider>
       <MyApp />
     </ThemeProvider>
   );
@@ -106,7 +108,7 @@ export default App;
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step : ](Launch the app to start developing)]
+[ACCORDION-BEGIN [Step 4: ](Launch the app to start developing)]
 Now you can start the app in development mode. Execute the following command from the root directory of the project.
 
 ```Shell

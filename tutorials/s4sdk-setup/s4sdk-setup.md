@@ -20,10 +20,12 @@ For a complete overview, visit the [SAP Cloud SDK Overview](https://blogs.sap.co
 
 To develop with the SAP Cloud SDK for Java you will need to have two things installed:
 
-- Java 8
+- Java 8 or 11
 - Maven 3
 
-The SDK requires Java 8, later versions are currently not supported. If you have the required software installed already you can skip this step. You can check your the versions of your installations via the commands listed at the end of this step.
+If you have the required software installed already you can skip this step. You can check your the versions of your installations via the commands listed at the end of this step.
+
+> Note: Java 11 is only available on SAP Cloud Platform: Cloud Foundry
 
 [OPTION BEGIN [On Windows]]
 
@@ -35,11 +37,13 @@ For Windows 7+ or Windows Server 2003+ adhere to the following steps:
     @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
     ```
 
-2. Install Java Development Kit 8:
+2. Install the Java Development Kit:
 
     ```shell
     choco install adoptopenjdk8
     ```
+
+    > In case you want to develop with Java 11 please install [SapMachine](https://sap.github.io/SapMachine/).
 
 3. Install Maven:
 
@@ -67,6 +71,8 @@ For Mac OS adhere to the following steps:
     brew tap AdoptOpenJDK/openjdk
     brew cask install adoptopenjdk8
     ```
+
+    > In case you want to develop with Java 11 please install [SapMachine](https://sap.github.io/SapMachine/).
 
 3. Install Maven:
 
