@@ -64,7 +64,7 @@ Now, you will use the **Set up account for Data Attribute Recommendation** boost
 
     !![Service Key](booster-success.png)
 
-    You have successfully used the booster **Set up account for Data Attribute Recommendation** to create the service key for Data Attribute Recommendation. Make a local copy of the service key.
+    You have successfully used the booster **Set up account for Data Attribute Recommendation** to create the service key for Data Attribute Recommendation. Make a local copy of the service key if you are following the tutorial group [Classify Data Records with the SDK for Data Attribute Recommendation](group.cp-aibus-data-attribute-sdk.html).
 
     !![Service Key](booster-service-key.png)
 
@@ -76,7 +76,7 @@ Now, you will use the **Set up account for Data Attribute Recommendation** boost
 
 [ACCORDION-BEGIN [Step 3: ](Download Postman environment and collection templates)]
 
-Back to the **Success** pop-up box, download Postman environment and collection templates. Make a local copy of the files.
+Back to the **Success** pop-up box, download Postman environment and collection templates. Make a local copy of the files if you are following the tutorial mission [Use Machine Learning to Classify Data Records](mission.cp-aibus-data-attribute).
 
 !![Service Key](booster-success-postman.png)
 
