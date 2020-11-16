@@ -97,7 +97,7 @@ async function run(pathToQA) {
 
       return output({
         stats,
-        fileName: csvHelper.fileName,
+        fileName: csvHelper.fullFilePath,
         type: constants.checkTypes.validation,
       });
     })

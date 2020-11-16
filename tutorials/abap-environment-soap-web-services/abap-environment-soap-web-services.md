@@ -345,7 +345,7 @@ This step shows a simple example of a web service consumption.
     DATA(request) = VALUE zsc_req_msg_type( req_msg_type-product = 'HT-1000' ).
     ```
 
-  9. Add following response message type to your coding:
+  9. Add the following line to output the response:
 
     ```ABAP
     out->write( |{ response-res_msg_type-price } { response-res_msg_type-currency }| ).
