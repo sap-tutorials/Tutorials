@@ -57,7 +57,7 @@ So create an entity for the parcel size. But in this case, create a restricted e
 
 3. You will want to return a shipping price based on the size. So "enrich" the entity's data, setting a price value that the bot will add into memory when the entity is detected.
 
-    - Go to **Enrichments**.
+    - Go to **Enrichments**, and then select **Map Enrichments**.
 
         ![Go to Enrichments](Enrich_Go.png)
 
@@ -176,7 +176,7 @@ You must require that the bot knows the size and location, and in addition get a
 
     - Click **Send Message | Carousel**.
 
-    - Add a card for the user to specify the small size (use the `postback` button type), and add the texts as show below.
+    - Add a card for the user to specify the small size, adding a **Postback** button type, and adding the texts as show below. When done, click **Add Card**.
 
         ![Carousel small](Carousel_card.png)
 
@@ -239,6 +239,7 @@ Your default endpoint is already set up because you used it earlier to retrieve 
 
     - For the URL, enter: **`/get_location_thumbnail`**
     - Click **Save**.
+    - Click **Back**.
 
 You can open a chat and test this, by entering: **How much to send package to Paris**
 

@@ -32,6 +32,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 [OPTION BEGIN [Android]]
 
+
 1. Open the [Firebase console](https://console.firebase.google.com/u/0/?pli=1), login with your Google account and click **Create Project** or **Add Project** (you will see this option if you already have any existing projects).
 
     !![MDK](img_1.1.png)
@@ -277,7 +278,7 @@ Paste the downloaded `google-services.json` file to `/demosampleapp.mdkproject/A
 
 [ACCORDION-BEGIN [Step 5: ](Create MDK client)]
 
-Follow step 4 from [this](https://developers.sap.com/tutorials/cp-mobile-dev-kit-build-client.html#25bfc483-8b43-40c9-8955-c5d9bfd03957) tutorial to create your branded MDK client.
+Follow step 4 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client.
 
 [DONE]
 [ACCORDION-END]
@@ -288,7 +289,7 @@ Follow step 4 from [this](https://developers.sap.com/tutorials/cp-mobile-dev-kit
 
 [OPTION BEGIN [Android]]
 
-1. Follow step 5 from [this](https://developers.sap.com/tutorials/cp-mobile-dev-kit-build-client.html#25bfc483-8b43-40c9-8955-c5d9bfd03957) tutorial to create your branded MDK client.
+1. Follow step 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client.
 
 2. Once you accept the App update, a message should show **Push Notification Registered**. Click **OK**.
 
@@ -318,7 +319,7 @@ Follow step 4 from [this](https://developers.sap.com/tutorials/cp-mobile-dev-kit
 
 [OPTION BEGIN [iOS]]
 
-1. Follow step 5 from [this](https://developers.sap.com/tutorials/cp-mobile-dev-kit-build-client.html#25bfc483-8b43-40c9-8955-c5d9bfd03957) tutorial to create your branded MDK client.
+1. Follow step 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client.
 
 2. Once you accept the App update, you will also notice that it will first ask permission to display notifications.
 

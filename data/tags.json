@@ -141,8 +141,12 @@
       "value": "products>sap-cloud-platform-enterprise-messaging"
     },
     {
-      "name": "SAP Cloud Platform for the Cloud Foundry environment",
-      "value": "products>sap-cloud-platform-for-the-cloud-foundry-environment"
+      "name": "SAP Cloud Platform Enterprise Messaging",
+      "value": "products>sap-cloud-platform-enterprise-messaging"
+    },
+    {
+      "name": "SAP Cloud Platform, Kyma runtime",
+      "value": "products>sap-cloud-platform\\, kyma-runtime"
     },
     {
       "name": "SAP Cloud Platform Integration for process services",

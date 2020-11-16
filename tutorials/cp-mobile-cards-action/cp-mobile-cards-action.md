@@ -183,6 +183,10 @@ Click **Save** to save the changes made.
 
 [ACCORDION-BEGIN [Step 6: ](Deploy a new version of the Card)]
 
+Click **Automatic Instance Card** in the Card Templates tab.
+
+!![MobileCardsImage](img_22_1.png)
+
 Click the **Info** tab.
 
 !![MobileCardsImage](img_22.png)
