@@ -8,7 +8,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
 ## Prerequisites
- - You completed all steps until [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-cloud-foundry-sample-application.html).
+ - You completed all steps until [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](s4sdk-cloud-foundry-sample-application).
 
 ## Details
 ### You will learn
@@ -33,7 +33,7 @@ On the other hand, the App Router is mainly responsible for managing authenticat
 
 The JWT s passed by the App Router to the underlying microservices so that they are freed up from this task. At the same time, these microservices can only be accessed with a valid JWT, hence, are protected from unauthenticated traffic.
 
-The JWT contains a signature that needs to be verifiable by every microservice to establish trust. Hence, every service require a key (client-secrets or public keys) to verify this signature and reject any requests with non-valid `JWTs`. Therefore, every service has to maintain a service binding to the XSUAA that provides this information for runtime verification (Figure 2). To enable this, every microservice binds to a dedicated XSUAA instance which writes this information into the `VCAP_SERVICES` environment variable which the microservices can use to verify any token's validity.
+The JWT contains a signature that needs to be verifiable by every microservice to establish trust. Hence, every service require a key (client-secrets or public keys) to verify this signature and reject any requests with non-valid JWTs. Therefore, every service has to maintain a service binding to the XSUAA that provides this information for runtime verification (Figure 2). To enable this, every microservice binds to a dedicated XSUAA instance which writes this information into the `VCAP_SERVICES` environment variable which the microservices can use to verify any token's validity.
 
 ![Provisioning view with XSUAA binding](Figure2-1.png)
 
@@ -192,9 +192,9 @@ After logging in you should see the `HelloWorld` servlet which is now served by 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Protect your backend microservice)]
-After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. Therefore, we need to protect our java microservices as well so that they accept requests with valid `JWTs` for the current user only. In addition, we will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that we have configured previously using the `xs-security.json` file.
+After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. Therefore, we need to protect our java microservices as well so that they accept requests with valid JWTs for the current user only. In addition, we will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that we have configured previously using the `xs-security.json` file.
 
-[OPTION BEGIN [Apache]]
+[OPTION BEGIN [TomEE]]
 
 **The following steps apply to the `TomEE` runtimes. For Spring please select the relevant tab at the top of this section.**
 
@@ -301,7 +301,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 ```
 
 The above will require authentication via a JWT for all endpoints of your service.
-In addition all `JWTs` are required to contain the `Display` scope.
+In addition all JWTs are required to contain the `Display` scope.
 
 Depending on your setup your integration tests may now fail if they are not authenticated.
 In that case leverage the XSUAA testing library to mock request authentication.
