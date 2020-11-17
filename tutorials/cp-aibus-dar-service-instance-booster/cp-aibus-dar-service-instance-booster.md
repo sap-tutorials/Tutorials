@@ -64,7 +64,7 @@ Now, you will use the **Set up account for Data Attribute Recommendation** boost
 
     !![Service Key](booster-success.png)
 
-    You have successfully used the booster **Set up account for Data Attribute Recommendation** to create the service key for Data Attribute Recommendation. Make a local copy of the service key if you are following the tutorial group [Classify Data Records with the SDK for Data Attribute Recommendation](group.cp-aibus-data-attribute-sdk.html).
+    You have successfully used the booster **Set up account for Data Attribute Recommendation** to create the service key for Data Attribute Recommendation. Make a local copy of the service key if you are following the tutorial group [Classify Data Records with the SDK for Data Attribute Recommendation](group.cp-aibus-data-attribute-sdk).
 
     !![Service Key](booster-service-key.png)
 
