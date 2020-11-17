@@ -58,15 +58,17 @@ Now, you will use the **Set up account for Document Information Extraction** boo
 
     !![Service Key](booster-start.png)
 
-    >If you have more than one subaccount, the booster will choose automatically the correct subaccount and space, but this will require that you click **Next** twice and **Finish** once, before being able to see the **Success** pop-up box and click **Download Service Key**.
+    >If you have more than one subaccount, a dialog shows in which you have to select the subaccount that should be used. Click **Finish** to proceed.
 
-4. Click **Download Service Key**.
+4. Click **Download Service Key** if you are following the tutorial mission [Use Machine Learning to Process Business Documents](mission.cp-aibus-extract-document-service).
 
     !![Service Key](booster-success.png)
 
-    You have successfully used the booster **Set up account for Document Information Extraction** to create a service key for Document Information Extraction. Make a local copy of the service key. You will need the service key values to create your `access_token` in the tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
+    You have successfully used the booster **Set up account for Document Information Extraction** to create a service key for Document Information Extraction. You will need the service key values to create your `access_token` in the tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
 
-    !![Service Key](booster-service-key.png)
+    If you need to access the service key later again, enter the subaccount in which the instance was created. Then click **Service Instances** on the navigation bar, select your instance and here you can either download or view your service key directly.
+
+    ![Service Key](access-service-key.png)
 
     >If you face any issue with the booster **Set up account for Document Information Extraction**, you can alternatively follow the steps in [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance) to create a service key for Document Information Extraction manually.
 
@@ -76,7 +78,7 @@ Now, you will use the **Set up account for Document Information Extraction** boo
 
 [ACCORDION-BEGIN [Step 3: ](Go to Application)]
 
-Click **Go to Application** to access the Document Information Extraction Trial UI. Save the link to open the application in the future.
+Click **Go to Application** to access the Document Information Extraction Trial UI. Save the link to open the application in the future if you are following the tutorial group [Get Started with the Document Information Extraction User Interface Application](group.cp-aibus-extract-ui-app).
 
 !![Service Key](booster-success-app.png)
 
