@@ -20,7 +20,7 @@ author_profile: https://github.com/mervey45
   - How to create a trial user
   - How to create an ABAP Cloud project
 
->You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt) or US East (VA)** as Region.
+>You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt) - AWS or US East (VA) -  AWS** as region. The ABAP environment service is currently **not available** for **Singapore - Azure**.
 
 ---
 
