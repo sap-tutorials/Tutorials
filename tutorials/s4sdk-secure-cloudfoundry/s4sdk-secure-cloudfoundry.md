@@ -192,7 +192,7 @@ After logging in you should see the `HelloWorld` servlet which is now served by 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Protect your backend microservice)]
-After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. Therefore, we need to protect our java microservices as well so that they accept requests with valid JWTs for the current user only. In addition, we will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that we have configured previously using the `xs-security.json` file.
+After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. Therefore, we need to protect our java microservices as well so that they accept requests with valid JWTs for the current user only. In addition, you will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that we have configured previously using the `xs-security.json` file.
 
 [OPTION BEGIN [TomEE]]
 
