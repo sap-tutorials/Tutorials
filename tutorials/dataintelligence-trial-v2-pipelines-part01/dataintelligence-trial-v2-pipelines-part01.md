@@ -13,8 +13,7 @@ author_profile: https://github.com/roy-zhong
 - How to use a **Data Generator** to generate random sample data
 - How to visualize the generated data via a **Terminal**
 
-Please note that this tutorial is similar to the `Generate sensor data` tutorial from [SAP Data Intelligence, developer edition tutorial group](https://developers.sap.com/group.datahub-pipelines.html).
-Also note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services and Azure refers to Microsoft Azure.
+Please note in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services and Azure refers to Microsoft Azure.
 
 ---
 

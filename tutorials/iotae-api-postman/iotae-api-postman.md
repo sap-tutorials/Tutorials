@@ -16,12 +16,12 @@ time: 15
   - How to Use Postman to access SAP IoT APIs.
 
 
-In [previous tutorials](https://developers.sap.com/group.iotae-computer-as-thing.html), you learned about using Thing Modeler to onboard a computer as the IoT thing, send data to the thing, and retrieve data from the thing. Now, you'll learn to use Postman to access SAP IoT APIs.
+#### Application Router
 
-### Application Router
 Access to SAP IoT is usually routed through an application router as the single entry point for consumers. The application router handles the user authentication against **SAP User Account and Authentication Service (UAA)**. In addition, the service retains the generated JWT token for the duration of the client logon session. You can define multiple application routers per tenant and you can use one of the router to access SAP IoT.
 
-### Tenant-specific Application Router
+#### Tenant-specific Application Router
+
 SAP IoT offers tenant-specific application router to access the different backend services such as configuration, business partner, and thing services. For example, you can access the configuration services for the tenant `democompany` using the application router URL <https://democompany.iot-sap.cfapps.eu10.hana.ondemand.com/config-package-sap/Package/v1/Packages>. You can use your system username and password when the system prompts for credentials.
 
 The following illustrates the different parts of tenant-specific application router:

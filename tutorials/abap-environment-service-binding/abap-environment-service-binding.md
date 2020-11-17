@@ -103,6 +103,11 @@ author_profile: https://github.com/mervey45
       Length: 20,
       Field Labels: Month (for all)
 
+    - **`ZCONFIG_DEPRECATION_CODE_XXX:`**
+      Category: `Predefined Type`,
+      Data Type: `CHAR`,
+      Length: 1
+
       **Create, save and activate** all data elements.
 
       ![element](element6.png)
@@ -146,8 +151,9 @@ author_profile: https://github.com/mervey45
      month_of_holiday : zcal_month_xxx;
      day_of_holiday   : zcal_day_xxx;
      changedat        : timestampl;
-
+     configdeprecationcode : zconfig_deprecation_code_xxx;
     }
+
     ```
 
   6. Save and activate.
@@ -248,23 +254,14 @@ Now it is time to create behavior definition. The behavior definition defines th
 
       ![behavior](behavior3.png)
 
-  5. Add your alias, for example **`HolidayRoot`** to your behavior definition.
+  4. Add your alias, for example **`HolidayRoot`** to your behavior definition and uncomment lock master in line 5.
 
       ![behavior](behavior4.png)
-
-  6. Define the root entity as lock master.
-     Uncomment line 5.
-
-      ![behavior](behavior5.png)
 
       This defines the root node as main locking object to avoid multiple persons editing the same object.
       Sub nodes have to be defined as lock dependent later on.
 
-  7. Save and activate.
-
-  8. The definition should now look as in the screenshot:
-
-      ![behavior](behavior6.png)
+  5. Save and activate.
 
      In line 1 you see that you defined a managed business object.
      If required, you can extend the business object by an optional implementation class.
@@ -277,11 +274,14 @@ Now it is time to create behavior definition. The behavior definition defines th
 
 Service definitions expose a set of business objects and their entities to a service-URL.
 
-  1. Right-click on your data definition **`ZCAL_I_HOLIDAY_XXX`**, select **New Service Definition**.
+  1. Right-click on your package **`Z_Calendar_XXX`** and select **New**> **Other ABAP Repository Object**.
 
-      ![definition](definition.png)
+      ![definition](other.png)
 
-  2. Create a service definition:
+  2. Search for **Service Definition** and select it.
+
+
+  3. Create a service definition:
      - Name: **`ZCAL_I_HOLIDAY_SD_XXX`**
      - Description: **`Service definition for holiday calendar`**
 
@@ -289,21 +289,21 @@ Service definitions expose a set of business objects and their entities to a ser
 
       Make sure, that your **source type** is **service definition** and click **Next >**.
 
-  3. Click **Next >**.
+  4. Click **Next >**.
 
       ![definition](definition3.png)
 
-  4. Select the default service definition template and click **Finish**.
+  5. Select the default service definition template and click **Finish**.
 
       ![definition](definition4.png)
 
-  5. Expose the CDS view in the service definition. Therefore, add **`HolidayRoot`** as alias to the service definition.
+  6. Expose the CDS view in the service definition. Therefore, add **`HolidayRoot`** as alias to the service definition.
 
       ![definition](definition5.png)
 
-  6. Save and activate.
+  7. Save and activate.
 
-  7. Now the service definition is done, and the business object is almost ready for use.
+  8. Now the service definition is done, and the business object is almost ready for use.
 
       ![definition](definition6.png)
 

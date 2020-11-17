@@ -8,15 +8,15 @@ primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
-- [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance)
+- [Set Up Account for Document Information Extraction](cp-aibus-dox-service-instance-booster)
 - [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token)
-- [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui) (step 1 only)
+- [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui) (step 1 only)
 
 ## Details
 ### You will learn
   - How to create, update, list and delete enrichment data using the business entity
 
-After completing the tutorial mission [Get Started with Document Information Extraction](https://developers.sap.com/mission.cp-aibus-extract-document-service.html), you can also use Document Information Extraction to enrich the information extracted from documents with your own master data. You can, for example, match enrichment data entities, such as supplier IDs, with the document [Extracted Header Fields](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/b1c07d0c51b64580881d11b4acb6a6e6.html), such as sender names.
+After completing the tutorial mission [Use Machine Learning to Process Business Documents](https://developers.sap.com/mission.cp-aibus-extract-document-service.html), you can also use Document Information Extraction to enrich the information extracted from documents with your own master data. You can, for example, match enrichment data entities, such as supplier IDs, with the document [Extracted Header Fields](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/b1c07d0c51b64580881d11b4acb6a6e6.html), such as sender names.
 
 When enriching data with Document Information Extraction, you use 2 types of entities that you find in business documents. The `business entity` represents different kinds of organizations with which you deal as a company. It can represent, for example, suppliers and customers. The `employee entity` represents an employee in the company.
 
@@ -26,7 +26,7 @@ When you finish this tutorial, you will have explored all Data API functionaliti
 
 [ACCORDION-BEGIN [Step 1: ](Create client)]
 
-After completing the prerequisite tutorials [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance) and [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), and performing at least step 1 in the tutorial [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui) to access and authorize the Document Information Extraction Swagger UI, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
+After completing the prerequisite tutorials [Set Up Account for Document Information Extraction](cp-aibus-dox-service-instance-booster) and [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), and performing at least step 1 in the tutorial [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui) to access and authorize the Document Information Extraction Swagger UI, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
 
 You can either create a single client or multiple clients in the **payload** field of the **POST /clients** endpoint. The **`clientId`** values created here will be used in other service endpoints.
 
@@ -49,7 +49,7 @@ You should receive a response like the following:
 
 >Be aware of the following Document Information Extraction trial account limitations:​
 
->- Maximum 40 uploaded documents per week​
+>- Maximum 40 uploaded document pages per week​ (the documents can have more than 1 page)
 
 >- Maximum 1 created `clientId`
 
@@ -155,7 +155,7 @@ You should receive a response like the following with status SUCCESS:
 
 [ACCORDION-BEGIN [Step 4: ](Upload document to get prediction with enrichment data)]
 
->Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in English. The team is working to support additional document types and languages in the near future.
+>Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
 
 When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`id`}** endpoint. To have the enrichment data in the prediction, you need to have the following part in the query of the **POST /document/jobs** endpoint (it is usually already there by default):
 
@@ -178,10 +178,10 @@ Do the following:
 
 2. Click **Try it out**.
 
-3. Right click [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-1.pdf), then click ***Save link as*** to download locally the document PDF file for this enrich business data example.
-> You can also upload and enrich your own document in PDF format with content in headers and tables (an invoice, for example). In this case, make sure the data you define in the **`payload`** field, in step 2, matches your document fields.
+3. Right click [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-1.pdf), then click ***Save link as*** to download locally the document file for this enrich business data example.
+> You can also upload to the service and enrich any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice. In this case, make sure the data you define in the **`payload`** field, in step 2, matches your document fields.
 
-4. Upload the document PDF file you want to enrich.
+4. Upload the document file you want to enrich.
 
 5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 1 (`c_29`, for example), the document type (`invoice`, for example), `receivedDate` (2020-02-17, for example), the enrichment data type `businessEntity` and subtype `supplier`.
 
@@ -249,17 +249,17 @@ Copy the **`id`** from the **Response body** to get enrichment data prediction i
 
 When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`id`}** endpoint.
 
+> Enrichment data is refreshed automatically every 4 hours. It might take up to 4 hours until the enrichment data prediction is available in the response.
+
 1. Expand the **GET /document/jobs/{`id`}** endpoint.
 
 2. Click **Try it out**.
 
 3. Set **`extractedValues`** to `true` to get the extracted values.
 
-4. Enter the **`clientId`** you created in step 1 (`c_29`, for example).
+4. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
 
-5. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
-
-6. Click **Execute**.
+5. Click **Execute**.
 
 The endpoint request and response look as follows:
 
@@ -276,7 +276,7 @@ This is an example of a full prediction including the enrichment data part:
     ```JSON
     {
       "status": "DONE",
-      "id": "cefda9f3-5f76-4553-a245-f19e5cd6752a",
+      "id": "97a96f7c-ea6a-456c-a58c-1cee1121a210",
       "fileName": "sample-invoice-1.pdf",
       "documentType": "invoice",
       "created": "2020-06-15T09:59:04.091971+00:00",

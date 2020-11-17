@@ -28,7 +28,7 @@ Ready to explore SAP HANA, express edition? As a fun exercise, you can first hel
   - How to access the database from SQLPAD
   - How to use advanced analytics features in SAP HANA, including the document store, geospatial, graph and linguistic text search functions
 
-This tutorial will use Google Kubernetes Engine to deploy SAP HANA, express edition and an SQL client. If you do not want to use this method, you can check other [available options to download or install SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html).
+This tutorial will use Google Kubernetes Engine to deploy SAP HANA, express edition and an SQL client. If you do not want to use this method, you can check other [available options to download or install SAP HANA, express edition](https://developers.sap.com/topics/hana.html).
 
 ## How do we help Thomas?
 Like most developers, Thomas wants to stay on top of the latest technologies. His first step is to get started with free tutorials, like this one. The second step is to connect with other developers and experts in the SAP Community to share knowledge and learn together.
@@ -61,7 +61,7 @@ Use your email address or social media account.
 
 This tutorial works either with the free trial [account in Google Cloud Platform](https://cloud.google.com/free/) or with the paid tier.
 
-> Additional options to download or install SAP HANA, express edition for free are [available in the SAP Developer Center](https://developers.sap.com/topics/sap-hana-express.html). There are options for `Database Server Only` and an SQL client like [`DBeaver`](https://developers.sap.com/tutorials/hxe-cj1-download-sql-client.html), [Visual Studio](https://developers.sap.com/tutorials/hxe-ua-visual-studio.html).
+> Additional options to download or install SAP HANA, express edition for free are [available in the SAP Developer Center](https://developers.sap.com/topics/hana.html). There are options for `Database Server Only` and an SQL client like [`DBeaver`](https://developers.sap.com/tutorials/hana-clients-install.html), [Visual Studio](https://developers.sap.com/tutorials/hxe-ua-visual-studio.html).
 >
 >&nbsp;
 >
@@ -696,9 +696,9 @@ Congratulations on helping Thomas find and collaborate with other developers!
 
 Here's how you can get started with any developer-focused topic in SAP HANA and more:
 
--   **SAP Developer Center**: You'll find plenty of free downloads and missions to help you with different topics on developers.sap.com. You can learn new topics like [machine learning](https://developers.sap.com/group.hxe-aa-movielens-sql.html), dive into [geospatial](https://developers.sap.com/group.hana-aa-spatial-get-started.html) or switch to a full SAP HANA, express edition image with XS Advanced, to [create cloud native applications with micro-services](https://developers.sap.com/mission.xsa-get-started.html)
+-   **SAP Developer Center**: You'll find plenty of free downloads and missions to help you with different topics on developers.sap.com. You can learn new topics like [geospatial](https://developers.sap.com/group.hana-aa-spatial-get-started.html) or switch to a full SAP HANA, express edition image with XS Advanced, to [create cloud native applications with micro-services](https://developers.sap.com/mission.xsa-get-started.html)
 -   **The community**: Fellow developers write about their experiences and recommendations in [blog posts](https://blogs.sap.com), and many are willing to answer your questions [in the Q&A](https://answers.sap.com/index.html)
--   **Community events**: You can also check out [events](https://www.sap.com/community/events.html) closest to you in order to meet other developers.
+-   **Community events**: You can also check out [events](https://community.sap.com/events) closest to you in order to meet other developers.
 
 
 [DONE]

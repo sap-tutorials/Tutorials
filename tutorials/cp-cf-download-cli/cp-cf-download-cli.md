@@ -23,7 +23,7 @@ Download the latest Command Line Interface (CLI) from the Cloud Foundry web site
 
 [https://github.com/cloudfoundry/cli#downloads](https://github.com/cloudfoundry/cli#downloads).
 
-On the Cloud Foundry website, choose either the command line installer, or the binary from the table listed on the webpage.  If you don't know which to use, choose the installer (not the binary) for your Operating System from the table.
+On the Cloud Foundry website, choose either the command line installer or the binary from the table listed on the webpage. If you don't know which to use, choose the installer (not the binary) for your Operating System from the table.
 
 Open the installer on your computer, and follow the installation instructions.
 
@@ -42,7 +42,7 @@ Open a command prompt on your computer.
 >
 > On Linux/Unix, you know how this works, just open your favorite command shell.
 
-Next, test the Cloud Foundry command line interface to make certain it is installed correctly.
+Next, test the Cloud Foundry command line interface to make sure it is installed correctly.
 
 To test the CLI, type in the following:
 
@@ -50,7 +50,7 @@ To test the CLI, type in the following:
 
 You should see a list of Cloud Foundry commands.
 
-![Cloud Foundry list of Commands](cfhelp.png)
+!![Cloud Foundry list of Commands](cfhelp.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -70,19 +70,17 @@ First, find the correct API URL for your region.  Select the correct region from
 
 You can also identify your API Endpoint using your Cloud Foundry account:
 
-First, navigate to the [SAP Cloud Platform Cockpit](https://hanatrial.ondemand.com) and click **Log On**.
+First, navigate to the [SAP Cloud Platform Cockpit](https://hanatrial.ondemand.com) and select **Enter Your Trial Account**
 
-Next, select **Enter Your Trial Account**
-
-![entertrial](entertrial.png)
+!![entertrial](entertrial.png)
 
 Next, click on the subaccount.
 
-![subaccount](subaccount.png)
+!![subaccount](subaccount.png)
 
-The **API Endpoint** is displayed on the right-hand side of the **Overview** page.
+The **API Endpoint** is displayed on the left-hand side of the **Overview** page.
 
-![endpoint](endpoint.png)
+!![endpoint](endpoint.png)
 
 [DONE]
 [ACCORDION-END]

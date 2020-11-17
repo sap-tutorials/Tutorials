@@ -56,7 +56,7 @@ If you send a request and receive a response, as in the image below, with a stat
 
 Now, you can upload data that will be used to train a machine learning model. The training data contains historical service requests that the model can use to learn from. The dataset contains travel-related data and has the following three possible categories: `Complaint`, `Compliment` and `Request`.
 
-Select the request `Upload Classification Training File (travel data - small)`. The training data is already included in the `Body` of the request. Click **Send** to upload the training data.
+Select the request `Upload Classification Training File (travel data - small)`. The training data is already included in the `Body` of the request. If you would like to use your own set of training data, please ensure that the data is in CSV file format and encoded in Base64. Click **Send** to upload the training data.
 
 ![Upload Training File](upload-training-file.png)
 
@@ -110,7 +110,7 @@ Select the request `Classify single message (without options)`. Open the `Body` 
 
 ![Classify Requests](classify-requests.png)
 
-The response of the request includes the predicted category which, for this training data, can be `Complaint`, `Compliment` and `Request`. In this example, the predicted category is `Complaint`. The prediction is made with a probability indicated by the **confidence** field which represents how certain a model is about its prediction across all other categories. A confidence of 1 means that the model is 100% sure of its prediction.
+The response of the request includes the predicted category which, for this training data, can be `Complaint`, `Compliment` and `Request`. In this example, the predicted category is `Complaint`. The prediction is made with a probability indicated by the **confidence** field which represents how certain a model is about its prediction across all other categories. A confidence of 1 means that the model is 100% sure of its prediction. The training dataset used in this Postman collection is kept small and lightweight, so that the training process can complete within 10-15 minutes. Because of that, expect an impact on prediction performance (confidence score).  
 
 ![Classify Requests](classify-request-response.png)
 

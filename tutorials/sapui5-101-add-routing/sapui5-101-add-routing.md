@@ -1,6 +1,6 @@
 ---
 title: Add Views and Define Routes to Access Them
-description: Add new views to the SAPUI5 web application and declare them im the manifest.
+description: Add new views to the SAPUI5 web application and declare them in the manifest.
 auto_validation: true
 primary_tag: topic>sapui5
 author_name: Marius Obert
@@ -12,6 +12,7 @@ time: 20
 ## Details
 ### You will learn  
 - How to add additional views
+- How to use data binding
 - How to define routes and targets
 - How to add additional controller
 
@@ -21,7 +22,7 @@ time: 20
 
 In SAPUI5, each view is represented by a dedicated file in the `view` folder.
 
-1. Add a new view with a right-click on the `view` folder and select **New File** and name it `List.view.xml`.
+1. Add a new view with a right-click on the `view` folder and select **New File**. Name this file `List.view.xml`.
 
     !![newFile](./newView.png)
 
@@ -58,8 +59,10 @@ In SAPUI5, each view is represented by a dedicated file in the `view` folder.
     ```
 
 > Hint: You don't need to rely on the code editor to edit the views. Right-click on any view and select **Open with | Layout Editor** to access the [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) layout editor:
-    !![detailView](detailView.png)
-    !![listView](listView.png)
+
+>!![detailView](detailView.png)
+
+>!![listView](listView.png)
 
 
 [DONE]
@@ -84,7 +87,7 @@ The web app basically contains of the two views we created in the previous step.
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Add new targets and routes)]
 
-In this step we'll define so-called [targets and routes](https://sapui5.hana.ondemand.com/#/topic/3d18f20bd2294228acb6910d8e8a5fb5), which are needed for the automated navigation we want to use. Each target specifies the view it refers to, and each route defines a (URL) pattern and the target it points to.
+In this step we'll define so-called [routes and targets](https://sapui5.hana.ondemand.com/#/topic/3d18f20bd2294228acb6910d8e8a5fb5), which are needed for the automated navigation we want to use. Each route defines a (URL) pattern and the target it points to, and each target specifies the view it refers to.
 
 **Add** the new targets and routes to the existing `webapp/webapp/manifest.json` file.
 
@@ -147,7 +150,7 @@ In this step we'll define so-called [targets and routes](https://sapui5.hana.ond
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Add two new controllers)]
 
-This is the crucial step of this tutorial that ties everything together. Each view specifies its controller with the `controllerName` property in the first line. Controllers contain the business logic of web apps and bind models to views and use the router to navigate between views.
+This is the crucial step of this tutorial that ties everything together. Each view specifies its controller with the `controllerName` property in the first line. Controllers contain the business logic of web apps, bind models to views, and use the router to navigate between views.
 
 1. Right-click on the `controller` folder and select **New File** to create a new   `List.controller.js` controller for the list view. The controller defines one method that is the event listener for the press-item event of the product list. It will trigger the navigation to the second view and attached the product ID of the pressed item.
 
@@ -209,7 +212,14 @@ This is the crucial step of this tutorial that ties everything together. Each vi
     ```
 
 
+> You might notice that some global variables will be underlined red. Don't worry, this is just a type warning and your application will still work fine.
 
+> !![typeError](typeError.png)
+
+> Run `npm install` from the project root (`/home/user/projects/tutorial`) to install the type definitions and the resolve the warnings
+
+
+> !![typeSuccess](typeSuccess.png)
 
 [DONE]
 [ACCORDION-END]
@@ -217,7 +227,9 @@ This is the crucial step of this tutorial that ties everything together. Each vi
 
 If you already stopped the web app, restart the saved configuration. **Open** the running web app to see the changes.
 
-You should be able to see a list of products and navigate to and from the detail pages.
+You should be able to see a list of products and navigate to the detail pages (and back to the list page).
+
+
 !![demo](./navigation.gif)
 
 

@@ -10,7 +10,8 @@ author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites  
-- **Tutorial**: [Create a Console Application](abap-environment-console-application)
+- **IMPORTANT**: This tutorial cannot be completed on a trial account
+- **Tutorial**: [Create Your First Console Application](abap-environment-console-application)
 - **Tutorial**: [Create a Communication Arrangement for Outbound Communication](abap-env-create-comm-arrangement-api)
 
 ## Details

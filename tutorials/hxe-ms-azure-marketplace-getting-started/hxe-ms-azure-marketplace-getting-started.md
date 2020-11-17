@@ -11,9 +11,9 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 
 ## Next Steps
-- **Drivers and connectors for Python, Node.js, .NET, Java and others**: Write your [first application using advanced analytics](https://developers.sap.com/mission.xsa-analytics-advanced.html) or check sample applications using different drivers and languages [such as Node.js, Python ](https://developers.sap.com/group.hxe-tiny-world.html)
-- **Database clients**: Use a SQL client and the JDBC drivers to [connect to the database](https://developers.sap.com/tutorials/hxe-cj1-download-sql-client.html). Alternatively, use a plugin for Eclipse to connect to your SAP HANA, express edition [system database instance](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- **Drivers and connectors for Python, Node.js, .NET, Java and others**: Check sample applications using different drivers and languages [such as Node.js, Python ](https://developers.sap.com/group.hxe-tiny-world.html)
+- **Database clients**: Use a SQL client and the JDBC drivers to [connect to the database](https://developers.sap.com/tutorials/hana-clients-install.html).
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/hana.html)
 
 
 ## Details
@@ -61,7 +61,7 @@ You can now enter a password or generate an SSH key. Complete all the fields and
 
 ![Create instance](create3.png)
 
->Note: Alternatively, you can follow [these steps](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-ssh-from-windows) if you prefer to generate an SSH key
+>Note: Alternatively, you can follow [these steps](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) if you prefer to generate an SSH key
 
 [ACCORDION-END]
 
@@ -149,7 +149,7 @@ Confirm the setup with **Y**. Once the configuration is finished, you will see a
 
 Your SAP HANA, express edition database is now up and running.
 
-You can perform the optional setup steps below (recommended) or continue to [explore tutorials to get you started](https://developers.sap.com/topics/sap-hana-express.tutorials.html) or perform the optional steps below.
+You can perform the optional setup steps below (recommended) or continue to [explore tutorials to get you started](https://developers.sap.com/topics/hana.html) or perform the optional steps below.
 
 [ACCORDION-END]
 
@@ -236,6 +236,6 @@ Add the IP address followed by the name of the host, `hxehost`:
 
 
 ### Additional Information
-- **Drivers and connectors for Python, Node.js, .NET, Java and others**: Write your [first application using advanced analytics](https://developers.sap.com/mission.xsa-analytics-advanced.html) or check sample applications using different drivers and languages [such as Node.js, Python ](https://developers.sap.com/group.hxe-tiny-world.html)
-- **Database clients**: Use a SQL client and the JDBC drivers to [connect to the database](https://developers.sap.com/tutorials/hxe-cj1-download-sql-client.html). Alternatively, use a plugin for Eclipse to connect to your SAP HANA, express edition [system database instance](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- **Drivers and connectors for Python, Node.js, .NET, Java and others**: Check sample applications using different drivers and languages [such as Node.js, Python ](https://developers.sap.com/group.hxe-tiny-world.html)
+- **Database clients**: Use a SQL client and the JDBC drivers to [connect to the database](https://developers.sap.com/tutorials/hana-clients-install.html).
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/hana.html)

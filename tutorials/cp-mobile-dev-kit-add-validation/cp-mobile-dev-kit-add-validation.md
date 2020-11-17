@@ -3,7 +3,7 @@ title: Define a Validation Rule in an MDK App
 description: Write a JavaScript logic to validate an email address format in an MDK app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
 time: 10
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -15,21 +15,23 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
+![MDK](img_1.gif)
+
 [ACCORDION-BEGIN [Step 1: ](Create a validation message)]
 
 When allowing end-users to make updates to data, it is important to add validation rules to verify that they are entering valid information.
 If the Update action fails due to the validation rule, the application will display a validation failure message to the end-user. You can customize this message by creating a Message action and adding the action to the validation Failure Message field in the Update action.
 
-1. Right-click the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
+1. Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
-    ![MDK](img_020.png)
+    !![MDK](img_1.1.png)
 
 2. Provide the below information:
 
     | Field | Value |
     |----|----|
     | `Action Name`| `ValidationFailure` |
-    | `Type` | `Message` |
+    | `Type` | Select `Message` from the dropdown |
     | `Message`| `Email address is not in the correct format recipient @ domain . domaintype` |
     | `Title` |  `Validate Email` |
     | `OKCaption`| `OK` |
@@ -37,7 +39,7 @@ If the Update action fails due to the validation rule, the application will disp
     | `CancelCaption` | leave it blank |
     | `OnCancel` | `--None--` |
 
-    ![MDK](img_011.png)
+    !![MDK](img_1.2.png)
 
 3. Click **Next** and then **Finish** on the Confirmation step.
 
@@ -51,34 +53,35 @@ In the MDK editor, you will create a new JavaScript file called `EmailValidation
 
 >You can find more details about [writing a Rule](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/rules.html).
 
-1. Right-click the **Rules** folder | **New** | **File**.
+1. Right-click the **Rules** folder | click **MDK: New Rule**.
 
-    ![MDK](img_001.png)
+    !![MDK](img_2.1.png)
 
-2. Enter the file name `EmailValidation.js`, click **OK**.
+2. Enter the Rule name `EmailValidation.js`, press `Enter`.
 
-3. Copy and paste the following code.
+    !![MDK](img_2.2.png)
+
+3. Replace the generated snippet with below code.
 
     ```JavaScript
-    export default function EmailValidation(atSign) {
-
-    //The following evaluateTargetPath will retrieve the current value of the email control
-    if((atSign.evaluateTargetPath('#Control:FCEmail/#Value').indexOf('@')) === -1){
-
-    //If email value does not contain @ display a validation failure message to the end-user
-      atSign.executeAction('/DemoSampleApp/Actions/ValidationFailure.action');
-      } else {
-
-    //If @ is present in the email value, return true to indicate validation is successful
-        return true;
-      }
+    export default function EmailValidation(context) {
+        //The following evaluateTargetPath will retrieve the current value of the email control
+        if ((context.evaluateTargetPath('#Control:FCEmail/#Value').indexOf('@')) === -1) {
+            //If email value does not contain @ display a validation failure message to the end-user
+            context.executeAction('/DemoSampleApp/Actions/ValidationFailure.action');
+        } else {
+            //If @ is present in the email value, return true to indicate validation is successful
+            return true;
+        }
     }
     ```
 
->The [`indexOf()` method](https://www.w3schools.com/jsref/jsref_indexof.asp) returns the index within the calling String object of the first occurrence of the specified value and -1, if no occurrence is found.
+4. Save the changes.
 
->In above code there is a reference to `ValidationFailure.action` , you can navigate directly from here to the MDK file by right clicking on it.
-![MDK](img_001.1.png)
+    >The [`indexOf()` method](https://www.w3schools.com/jsref/jsref_indexof.asp) returns the index within the calling String object of the first occurrence of the specified value and -1, if no occurrence is found.
+
+    >In above code there is a reference to `ValidationFailure.action` , you can navigate directly from here to the MDK file by right clicking on it.
+    !![MDK](img_2.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -91,7 +94,7 @@ Now, that you have created the validation rule, you will add it to the Update ac
 
 2. Expand the **Common Action Properties** and select `EmailValidation.js` rule for **Validation Rule** field.
 
-    ![MDK](img_012.2.png)
+    !![MDK](img_3.1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -100,13 +103,17 @@ Now, that you have created the validation rule, you will add it to the Update ac
 
 Deploy the updated application to your MDK client.
 
-1. Right-click the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click `Application.app` and select **MDK: Deploy**.
 
-    ![MDK](img_026.1.png)
+    !![MDK](img_4.1.png)
 
-2. Confirm the destination name and application id match where you want to deploy and click **Next**.
+2. Select deploy target as **Mobile Services**.
 
-    ![MDK](img_014.1.png)
+    !![MDK](img_4.2.png)
+
+    You should see **Deploy succeeded** message.
+
+    !![MDK](img_4.3.png)
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -117,28 +124,27 @@ Deploy the updated application to your MDK client.
 
 [OPTION BEGIN [Android]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, click **OK**.
 
 2. Update a record with no contain of **@** in Email property throws a validation failure message.
 
-    ![MDK](img_013.1.png)
-    ![MDK](img_012.1.png)
+    ![MDK](img_5.2.1.png)
+    ![MDK](img_5.2.2.png)
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, click **OK**.
 
 2. Update a record with no contain of **@** in Email property throws a validation failure message.
 
-    ![MDK](img_013.png)
-    ![MDK](img_012.png)
-
+    ![MDK](img_5.2.3.png)
+    ![MDK](img_5.2.4.png)
 
 [OPTION END]
 
-Congratulations, you have successfully completed **Create Your First Mobile App with the Mobile Development Kit (MDK)** mission and you are now all set to [Enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
+**Congratulations!** You have successfully completed **Create Your First Mobile App with the Mobile Development Kit (MDK)** mission and you are now all set to [Enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
 
 [VALIDATE_1]
 [ACCORDION-END]
