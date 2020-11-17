@@ -123,11 +123,14 @@ Click on **Log on** to log on to your verified account.
 [ACCORDION-BEGIN [Step](Learn about the service marketplace)]
 
 
-The service marketplace is where you can all services that available on **any** of the environments. Select **Service Marketplace** on the left to see all available services and a filter bar to find the one you are looking for. From here you can specify a service plan to provision service instances.
+In the service marketplace you can find all services that are available on  **any** of the environments. Select **Service Marketplace** on the left to see all available services and a filter bar to find the one you are looking for. From here you can specify a service plan to provision service instances.
 
 !![Service Marketplace](marketplace.png)
 
-
-
 [VALIDATE_1]
 [ACCORDION-END]
+
+<br />
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=hcp-create-trial-account&graphics=true" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
