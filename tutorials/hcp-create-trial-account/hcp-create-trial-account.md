@@ -123,7 +123,7 @@ Click on **Log on** to log on to your verified account.
 [ACCORDION-BEGIN [Step](Learn about the service marketplace)]
 
 
-The service marketplace is where you can all services that available on **any** of the environments. Select **Service Marketplace** on the left to see all available services and a filter bar to find the one you are looking for. From here you can specify a service plan to provision service instances.
+In the service marketplace you can find all services that are available on  **any** of the environments. Select **Service Marketplace** on the left to see all available services and a filter bar to find the one you are looking for. From here you can specify a service plan to provision service instances.
 
 !![Service Marketplace](marketplace.png)
 
