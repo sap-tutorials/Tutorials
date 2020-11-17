@@ -11,7 +11,7 @@ author_profile: https://github.com/MatKuhr
 ## Prerequisites
  - SAP Cloud Application Programming Model
  - Basic knowledge of Spring Boot and Java (optional)
- - An account on [cloud foundry](group.scp-1-get-ready.html)
+ - An account on [Cloud Foundry](group.scp-1-get-ready)
 
 ## Details
 ### You will learn
