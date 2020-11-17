@@ -176,6 +176,4 @@ You build apps using the Mendix Studio Pro, which is an application installed on
 
 [VALIDATE_5]
 
-
-[DONE]
 [ACCORDION-END]
