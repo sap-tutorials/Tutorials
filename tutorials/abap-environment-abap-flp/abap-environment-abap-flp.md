@@ -10,11 +10,11 @@ author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- You need an SAP Cloud Platform ABAP Environment license.
+- You need an SAP Cloud Platform ABAP environment license.
 - You have created the [Travel App Mission](mission.cp-starter-extensions-abap) in a licensed system.
 - You need to have following business role assigned for your business user `SAP_BR_DEVELOPER`.
-- You need to have business catalog `SAP_CORE_BC_UI_FLD` assigned for the usage of Manage Launchpad Space.
-- You need to have business catalog `SAP_CORE_BC_UI` assigned for the usage of Manage Launchpad Settings.
+- You need to have business catalog `SAP_CORE_BC_UI_FLD` assigned for the usage of manage launchpad space.
+- You need to have business catalog `SAP_CORE_BC_UI` assigned for the usage of manage launchpad settings.
 
 Hint: Your Business Application Studio subscription needs to be in the same subaccount as the ABAP system.
 
@@ -118,7 +118,7 @@ HINT: This is an alternative way to add the app to spaces/pages. This is only po
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Alternative 2: Create launchpad side module)]
+[ACCORDION-BEGIN [Step 4: ](Alternative 2: Create launchpad site module)]
 
   1. Log in to your licensed ABAP system as an administrator and select **Maintain Business Roles**.
 
@@ -136,7 +136,7 @@ HINT: This is an alternative way to add the app to spaces/pages. This is only po
 
       ![module](module4.png)
 
-  5. Click **Create and Assign Space**.
+  5. Click **Create and Assign Space**. 
 
       ![module](module5.png)
 
