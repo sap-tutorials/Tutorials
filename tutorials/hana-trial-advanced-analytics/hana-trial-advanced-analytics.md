@@ -78,21 +78,31 @@ Once the provisioning is finished, click **Continue**:
 
 ![Cloud trial](3.png)
 
-From the SAP Cloud Platform entry page, press the `?` icon in the upper right corner. Then press the `Guided Tours` button. Finally select the `Create a SAP HANA Cloud Instance` guided tour.
+From the SAP Cloud Platform entry page, click on the **trial** Subaccount.
 
-![Guided Tour](guide_tour1.png)
+![Sub Account](trial1.png)
 
-This guided tour will walk you through the process of navigating to your development space and creating a HANA Cloud Instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup (right before you select "Create Instance"), that you select "Allow all IP addresses" in the "Allowed connections" setting. This setting will allow you to develop against your HANA Cloud trial using a variety of external development tools.
+In the Subaccount page, click on the **dev** space.
+
+![dev Space](trial2.png)
+
+Once in your **dev** space page, click on **SAP HANA Cloud** in the side menu navigation.  You will then see a page listing all your SAP HANA Cloud instances; of which you should have none.  Click on the **Create Database** button to begin the wizard to create a new instance.
+
+![dev Space](trial3.png)
+
+This wizard will walk you through the process of navigating to your development space and creating a HANA Cloud Instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Allowed connections" setting. This setting will allow you to develop against your HANA Cloud trial using a variety of external development tools.
+
+![Allow All IP addresses](trial4.png)
 
 After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP Cloud Platform.
 
-![HANA Cloud Instance](3_2.png)
+![HANA Cloud Instance](trial5.png)
 
 If you get stuck at any point in this process, there is also this short video you can watch and follow along.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GSNQpfxPuLU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=Lv_40d1ZtsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Once the SAP HANA Cloud instance is created, take note of the admin user as well as the endpoint (host:port) needed to connect to the database. This will be needed in subsequent tutorials in this tutorial.
+Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent tutorials in this tutorial.
 
 Return to the Subaccount level in the SAP Cloud Platform Cockpit. Click on **Entitlements** in the left hand navigation.  Click on **Configure Entitlements**. Then click on **Add Service Plans**.  Search for entitlements with **web** in the name. Choose **SAP Web IDE for HANA development**. Select the **TRIAL (Subscription)** plan.  Press the **Add 1 Service Plan** button.
 
