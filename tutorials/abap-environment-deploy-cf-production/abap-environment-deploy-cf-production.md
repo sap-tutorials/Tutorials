@@ -182,13 +182,13 @@ author_profile: https://github.com/mervey45
     ![object](studio20.png)
 
   7. Configure project attributes:
-     - Name: **`ztravelappxxx`**
+     - Name: **`ztravel_app_xxx`**
      - Title: **Travel App XXX**
      - Description: **A Fiori application.**
 
      Click **Finish**.
 
-    ![object](studio211.png)
+    ![object](studio21.png)
 
     HINT: Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
 
@@ -199,17 +199,17 @@ author_profile: https://github.com/mervey45
 
   1. Close the wizard.
 
-      ![run](studio221.png)
+      ![run](studio22.png)
 
-  2. Press the run button on the left side and select the **`Start ztravelappxxx`** run button to start your SAP Fiori application.
+  2. Press the run button on the left side and select the **`Start ztravel_app_xxx`** run button to start your SAP Fiori application.
 
-      ![run](studio241.png)
+      ![run](studio24.png)
 
       HINT: An alternative to run the application is to open the terminal and enter: `npm start`.
 
   3. Click **Open in New Tab**.
 
-      ![run](studio251.png)
+      ![run](studio25.png)
 
   4. Select **`test/`**.
 
@@ -236,9 +236,9 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 6: ](Deploy your application)]
 
-  1. Go back to SAP Business Application Studio, select projects, right-click your project **`ztravelappxxx`** and select **Open in Terminal**.
+  1. Go back to SAP Business Application Studio, select projects, right-click your project **`ztravel_app_xxx`** and select **Open in Terminal**.
 
-      ![deploy](deploy1.png)
+      ![deploy](deploy.png)
 
   2. To add Fiori Launchpad content use this command, enter **`npx fiori add flp-config`**.
 
@@ -249,7 +249,7 @@ author_profile: https://github.com/mervey45
        - Title: Travel App XXX
        - Subtitle (optional): press enter
 
-       ![deploy](deploy21.png)
+       ![deploy](deploy2.png)
 
   3.  Open eclipse, search your package **`ZTRAVEL_APP_XXX`** and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your **transport request** underneath the **Modifiable** folder.
 
@@ -267,7 +267,7 @@ author_profile: https://github.com/mervey45
       - Transport Request: **`<your_transport_request>`**
       - Generate standalone index.html during deployment: y
 
-      ![deploy](deploy41.png)
+      ![deploy](deploy4.png)
 
       The `ui5-deploy.yaml` will be generated as part of this `deploy config` command.
 
@@ -275,7 +275,7 @@ author_profile: https://github.com/mervey45
      When prompted, check deployment configuration and press y.
      Open the URL at the end of the deployment log in browser to preview the application.
 
-      ![deploy](deploy51.png)
+      ![deploy](deploy5.png)
 
       When the deployment is successful, you will get these two information back as a result: **UIAD details** and **deployment successful**.
 
@@ -376,14 +376,14 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 9: ](Run SAP Fiori application)]
 
-  1. Go back to SAP Business Application Studio and deploy your changes. Therefore right-click your project **`ztravelappxxx`** and select **Open in Terminal**.
+  1. Go back to SAP Business Application Studio and deploy your changes. Therefore right-click your project **`ztravel_app_xxx`** and select **Open in Terminal**.
 
-    ![url](url1.png)
+    ![url](url.png)
 
 
   2. Enter **`npm run deploy`**. When prompted, check deployment configuration and press y.
 
-      ![url](url21.png)
+      ![url](url2.png)
 
   3. Press **`CTRL and click the following link`** to open the URL in a browser.
 

@@ -265,7 +265,7 @@ You will use this endpoint in the Postman client to test your integration flow.
 
     ![Create new postman request](8.1.create-new-postman-request.png)
 
-2. Select the **Authorization** tab and choose **Basic Auth** in the **Type** dropdown list. In the **Username** and **Password** field, enter the **`clientid`** and **`clientsecret`** that you copied from the service key that you created when you provisioned the SAP Cloud Platform Integration Suite tenant.
+2. Select the **Authorization** tab and choose **Basic Auth** in the **Type** dropdown list. In the **Username** and **Password** field, enter the **`EmailID`** and **`Password`** that you used to access the SAP Cloud Platform Integration Suite tenant.
 
     ![Provide Authorization details](8.2.provide-auth-details.png)
 

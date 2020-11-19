@@ -8,7 +8,7 @@ primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
-- You have subscribed to the Document Information Extraction Trial UI: [Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub).
+- You have subscribed to the Document Information Extraction Trial UI: [Set Up Account for Document Information Extraction](cp-aibus-dox-service-instance-booster).
 
 ## Details
 ### You will learn
@@ -35,7 +35,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 >- [Sample Invoice 3](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-3.pdf)
 
 
-1. Open the Document Information Extraction Trial UI, as described in the previous tutorial: [Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub).
+1. Open the Document Information Extraction Trial UI, as described in the tutorial: [Set Up Account for Document Information Extraction](cp-aibus-dox-service-instance-booster).
 
     !![DOX-UI-App](png-files/app.png)
 
