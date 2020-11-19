@@ -214,7 +214,7 @@ You can now use the **GET /document/jobs/{`id`}** endpoint to receive the predic
 
 2. Click **Try it out**.
 
-3. Set **`returnNullValues`** and **`extractedValues`** to `true`.
+3. Set **`extractedValues`** to `true` to get the extracted values.
 
 4. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
 
