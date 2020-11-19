@@ -100,41 +100,40 @@ After completing the previous step, you should now have a new SAP HANA Cloud ins
 
 If you get stuck at any point in this process, there is also this short video you can watch and follow along.
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=Lv_40d1ZtsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Lv_40d1ZtsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent tutorials in this tutorial.
-
-Return to the Subaccount level in the SAP Cloud Platform Cockpit. Click on **Entitlements** in the left hand navigation.  Click on **Configure Entitlements**. Then click on **Add Service Plans**.  Search for entitlements with **web** in the name. Choose **SAP Web IDE for HANA development**. Select the **TRIAL (Subscription)** plan.  Press the **Add 1 Service Plan** button.
-
-![Add Service Plan for Web IDE](ide1.png)
-
-When the Entitlements dialog closes be sure to press the **Save** button.
-
-![Save Entitlements](ide2.png)
-
-Now please choose **Subscriptions** from the left hand menu.  Click on the SAP Web IDE Full-Stack Subscription.
-
-![Choose Subscription](ide3.png)
-
-In the subscription detail screen, please press the **Subscribe** button.
-
-![Subscribe](ide4.png)
-
-Now you can click on **Go to Application** in order to launch the SAP Web IDE Full-Stack.
-
-![Go to Application](ide5.png)
 
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 4: ](Configure SAP Web IDE)]
 
-1. Once SAP Web IDE opens, access the **Preferences**.
+1. Return to the Subaccount level in the SAP Cloud Platform Cockpit. Click on **Entitlements** in the left hand navigation.  Click on **Configure Entitlements**. Then click on **Add Service Plans**.  Search for entitlements with **web** in the name. Choose **SAP Web IDE for HANA development**. Select the **TRIAL (Subscription)** plan.  Press the **Add 1 Service Plan** button.
+
+    !![Add Service Plan for Web IDE](ide1.png)
+
+2. When the Entitlements dialog closes be sure to press the **Save** button.
+
+    !![Save Entitlements](ide2.png)
+
+3. Now please choose **Subscriptions** from the left hand menu.  Click on the SAP Web IDE Full-Stack Subscription.
+
+    !![Choose Subscription](ide3.png)
+
+4. In the subscription detail screen, please press the **Subscribe** button.
+
+    !![Subscribe](ide4.png)
+
+5. Now you can click on **Go to Application** in order to launch the SAP Web IDE Full-Stack.
+
+    !![Go to Application](ide5.png)
+
+6. Once SAP Web IDE opens, access the **Preferences**.
 
     !![SAP Web IDE](5.png)
 
-2. Click **Extensions** and enable **SAP HANA Database Development Tools**, if not enabled.
+7. Click **Extensions** and enable **SAP HANA Database Development Tools**, if not enabled.
 
     !![SAP Web IDE](6.png)
 
@@ -142,7 +141,7 @@ Now you can click on **Go to Application** in order to launch the SAP Web IDE Fu
 
     ![SAP Web IDE](7.png)
 
-3. After SAP Web IDE has refreshed, click **Cloud Foundry** in **Preferences**.
+8. After SAP Web IDE has refreshed, click **Cloud Foundry** in **Preferences**.
 
     ![SAP Web IDE](8.png)
 
@@ -156,7 +155,7 @@ Now you can click on **Go to Application** in order to launch the SAP Web IDE Fu
 
     The subaccount and space will populate automatically.
 
-4. Finally, configure the **Database Explorer**. Choose the region matching region `US10` or `EU10` and click **Save**.
+9. Finally, configure the **Database Explorer**. Choose the region matching region `US10` or `EU10` and click **Save**.
 
     ![SAP Web IDE](11.png)
 
