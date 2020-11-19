@@ -1,14 +1,14 @@
 ---
-title: Create a Bot that Lets Customers Track Packages
-description: Create a bot that calls an API, in this case to let customers track their packages, and see how to make use of the memory.
+title: Create a Chatbot that Lets Customers Track Packages
+description: With SAP Conversational AI, create a chatbot that calls an API, in this case to let customers track their packages, and see how to make use of the memory, using SAP Conversational AI.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-cloud-platform]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning ]
 primary_tag: products>sap-conversational-ai
 ---
 
 ## Prerequisites
- - You understand the basics of creating a bot, as described in the tutorial [Build Your First Bot with SAP Conversational AI](cai-bot-getting-started).
+ - You understand the basics of creating a chatbot, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started).
 
 ## Details
 ### You will learn
@@ -92,6 +92,8 @@ Our bot must be able to extract the parcel number from within the conversation. 
 
 5. Enter the following values for the **List of values**.
 
+    The values give the bot the valid format for a tracking number.
+
     >**CAREFUL**: Enter the values in the field where it says **Add a new entity value**. After entering the value, press **Enter**.
 
     - 1Z2220060291994175
@@ -105,7 +107,13 @@ Our bot must be able to extract the parcel number from within the conversation. 
 
     We have also supplied the numbers as a [CSV file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cai-bot-shipping-1-track-bot/parcel-numbers.csv). Instead of manually entering the numbers, you can download the file, then click **Import a CSV File**, select the file, and click **Upload**.
 
-> ### About Entities
+6. Click **Train** (at the top).
+
+    ![Train](train.png)
+
+    Generally, the chatbot will be trained automatically, but clicking **Train** will force the chatbot to better understand the different possible parcel numbers.
+
+> ### Built-in Entities
 >
 > SAP Conversational AI comes with built-in entities (called gold entities) for common data, like location, dates, and money values. For more information, see [List of Gold Entities](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/161cfefadfea4fbd9912cc38317ded57.html).
 
@@ -119,7 +127,7 @@ Customers will have to indicate whether they accept or reject certain requests f
 
 You do not have to create these yourself. Instead, you can fork them from others who have already created them.
 
->Forking is simply copying, and does not create a relationship between your bot and the source of what you forked. You can fork intents, entities, skills or an entire bot. For more information, see [Forking Bots, Skills, Intents, and Entities](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/eaa5dceaa83946f487c403b0bd6b6217.html)
+>Forking is simply copying, and does not create a relationship between your bot and the source of what you forked. You can fork intents, entities, skills or an entire bot. For more information, see [Forking Bots, Skills, Intents, and Entities](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/eaa5dceaa83946f487c403b0bd6b6217.html).
 
 1. In a different browser tab, go to [cai-adoption / ups-bot / intents / @yes](https://cai.tools.sap/cai-adoption/ups-bot/train/intents/yes).
 
@@ -154,7 +162,7 @@ You do not have to create these yourself. Instead, you can fork them from others
 
 Customers will be indicating that they want information on a parcel, so you need to create an intent for that.
 
-Again, you do not have to create this intent yourself, but can fork an existing intent.
+Again, you do not have to create this intent yourself, but you can fork an existing intent.
 
 1. In a different browser tab, go to [cai-adoption / ups-bot / intents / @track-parcel](https://cai.tools.sap/cai-adoption/ups-bot/train/intents/track-parcel).
 
@@ -188,11 +196,11 @@ Again, you do not have to create this intent yourself, but can fork an existing 
 
 [ACCORDION-BEGIN [Step 5: ](Create skill for tracking parcel)]
 
-After you determined that the user wants to track a package, you have to build a skill so the bot knows what to do in response to this intent.
+After you've determined that the user wants to track a package, you have to build a skill so the bot knows what to do in response to this intent.
 
 1. On the **Build** tab, click **Create skill**.
 
-    Call the skill **`track-parcel`**, and specify that it is a **Floating** skill, then click **Create Skill**.
+    Call the skill **`track-parcel`**, and specify that it is a **Business** skill, then click **Create Skill**.
 
     !![Create track parcel skill](createTrackParcelSkill.png)
 
@@ -211,9 +219,11 @@ After you determined that the user wants to track a package, you have to build a
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add requirements to skill)]
+[ACCORDION-BEGIN [Step 6: ](Add requirement to skill (parcel-number))]
 
 The requirements for the **track-parcel** skill indicate the data the bot needs to extract from the conversation before executing the skill's action.
+
+You will have several requirements. In this step, you will add the requirement for the parcel number.
 
 1. In the **track-parcel** skill, go to the **Requirements** tab.
 
@@ -227,20 +237,49 @@ The requirements for the **track-parcel** skill indicate the data the bot needs 
 
     ![Open requirement](Requirements_edit.png)
 
-    Next to **If #parcel-number is missing**, click **New Replies**, and then do the following:
+
+4. Next to **If #parcel-number is missing**, click **New Replies**, and then do the following:
+
+    ![Parcel number requirement](parcel-number-missing.png)
 
     - Click **Send Message**.
     - Click **Text**.
     - For the message, enter **Could you give me your tracking number?**
     - Click **Save**, then click **Back**.
 
-4. Add a second requirement that the user confirm they want information about the tracking number they wrote.
+5. Next to **If #parcel-number is complete**, click **New Replies**, and then do the following:
 
-    Click the plus sign ( **+** ) -- the second one that when you hover it says **Add a new list of requirements**.
+    - Click **Update Conversation > Edit Memory**.
+    - In the **Set Memory Field**, enter **`parcel-number`**.
+    - For the field value, click in the field and replace the contents with the following:
+
+        ```JSON
+        {
+        "raw": "{{uppercase memory.parcel-number.raw}}",
+        "value": "{{uppercase memory.parcel-number.raw}}"
+        }
+        ```
+
+    - Click **Save**, then click **Back**.
+
+    >The API to get tracking information requires the parcel number in upper case, so this step automatically converts any input to upper case.
+
+    >Here, we use Handlebars scripting to access the memory and execute the `uppercase` function. For more information on how to use scripting to access the memory and other conversation data, see [Scripting with Variables](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/5b86debf32444658b29db44733d8d81a.html).
+
+    >Scripting is also used to manipulate data returned by API calls, as described in the tutorial [Use Scripting to Design a Chatbot Message from an API Response](conversational-ai-scripting-intro).
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 1: ](Add requirement to skill (yes/no) )]
+Now you'll add a second set of requirements -- the user's confirmation that they want to track the package.
+
+1. Add a second requirement by clicking the plus sign ( **+** ) -- the second one that when you hover it says **Add a new list of requirements**.
 
     ![Requirements confirm](Requirements_confirm.png)
 
-5. In the first field, click and select **@yes**.
+2. In the first field, click and select **@yes**.
 
     In the second field (after **as**), enter **`yes`** (the name in the memory for this value), and press **Enter**.
 
@@ -248,7 +287,7 @@ The requirements for the **track-parcel** skill indicate the data the bot needs 
 
     Click the **And** between `@yes` and `@no` and change it to **Or**.
 
-6. Click **New Replies** next to **If @yes or @no are missing**.
+3. Click **New Replies** next to **If @yes or @no are missing**.
 
     ![Missing yes or non](Requirement_MissingYesNo.png)
 
@@ -269,8 +308,12 @@ The requirements for the **track-parcel** skill indicate the data the bot needs 
 
         - Click **Save**, then click **Back**.
 
+
 [DONE]
 [ACCORDION-END]
+
+
+
 
 [ACCORDION-BEGIN [Step 7: ](Add action to skill)]
 

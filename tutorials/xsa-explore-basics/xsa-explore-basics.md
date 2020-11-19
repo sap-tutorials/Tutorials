@@ -9,11 +9,11 @@ time: 10
 
 ## Prerequisites  
  - **Proficiency:** Beginner | Intermediate | Advanced
- - **Tutorials:** [Get an SAP HANA, express edition, instance with XS Advanced applications](https://developers.sap.com/topics/sap-hana-express.html)
+ - **Tutorials:** [Get an SAP HANA, express edition, instance with XS Advanced applications](https://developers.sap.com/topics/hana.html)
 
 
 ## Next Steps
- - [Get started with SAP HANA, XS Advanced development](group.hana-xsa-get-started)
+ - [Get started with SAP HANA, XS Advanced development](https://developers.sap.com/group.hana-xsa-get-started.html)
 
 
 ## Details

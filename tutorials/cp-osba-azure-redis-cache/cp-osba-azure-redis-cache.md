@@ -49,10 +49,10 @@ az provider show -n Microsoft.Cache -o table
 
 In Azure, you group resources in so-called resource groups.
 
-The first thing to do is to create a resource group. Call the resource group `**SAPTechEd**` and locate it in West Europe.
+The first thing to do is to create a resource group. Call the resource group `SAPCloudPlatform` and locate it in West Europe.
 
 ```Bash
-az group create -l westeurope -n SAPTechEd
+az group create -l westeurope -n SAPCloudPlatform
 ```
 
 ![resource group created](resource-group-creation.png)
@@ -70,7 +70,7 @@ It's time now to create the backing service for the service broker in the form o
 >Replace `<unique-cache-name>` with a globally unique technical name for the Redis Cache of your choice.
 
 ```Bash
-az redis create -n <unique-cache-name> -g SAPTechEd -l WestEurope --sku Standard --vm-size C1
+az redis create -n <unique-cache-name> -g SAPCloudPlatform -l WestEurope --sku Standard --vm-size C1
 ```
 
 ![redis cache created](create-redis-cache.png)

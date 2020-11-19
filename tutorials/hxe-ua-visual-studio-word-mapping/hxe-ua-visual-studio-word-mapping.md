@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Plugin for Microsoft Visual Studio - Word Mapping Project
-description: This tutorial describes how to build a word map project by using the SAP HANA Plugin for Microsoft Visual Studio.
+title: SAP HANA Plugin for Microsoft Visual Studio 2017 - Word Mapping Project
+description: This tutorial describes how to build a word map project by using the SAP HANA Plugin for Microsoft Visual Studio 2017.
 author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
@@ -9,15 +9,15 @@ time: 10
 ---
 
 ## Prerequisites
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Debugging Procedures](https://developers.sap.com/tutorials/hxe-ua-visual-studio-debugging.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio 2017 - Debugging Procedures](https://developers.sap.com/tutorials/hxe-ua-visual-studio-debugging.html)
 
 ## Next Steps
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Deploy to the Google Cloud Platform](https://developers.sap.com/tutorials/hxe-ua-visual-studio-google-cloud.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio 2017 - Deploy to the Google Cloud Platform](https://developers.sap.com/tutorials/hxe-ua-visual-studio-google-cloud.html)
 
 
 ## Details
 ### You will learn
-  - How to use the SAP HANA plugin for Microsoft Visual Studio to create a Twitter Word Map.
+  - How to use the SAP HANA plugin for Microsoft Visual Studio 2017 to create a Twitter Word Map.
 
 ---
 

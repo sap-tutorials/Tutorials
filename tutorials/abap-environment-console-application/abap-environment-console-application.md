@@ -147,22 +147,22 @@ or the icon:
 `out->write('Hello World!').`
 
     ```ABAP
-      class Z_CLASS_XXX definition
-      public
-      final
-      create public .
+    CLASS z_class_xxx DEFINITION
+      PUBLIC
+      FINAL
+      CREATE PUBLIC .
 
-      public section.
-      interfaces if_oo_adt_classrun.
-      protected section.
-      private section.
-      ENDCLASS.
+      PUBLIC SECTION.
+        INTERFACES if_oo_adt_classrun.
+      PROTECTED SECTION.
+      PRIVATE SECTION.
+    ENDCLASS.
 
-      CLASS Z_CLASS_XXX IMPLEMENTATION.
-      METHOD IF_OO_ADT_CLASSRUN~MAIN.
-      out->write('Hello world!').
+    CLASS z_class_xxx IMPLEMENTATION.
+      METHOD if_oo_adt_classrun~main.
+        out->write('Hello world!').
       ENDMETHOD.
-      ENDCLASS.
+    ENDCLASS.
     ```
 
   2. Save and activate your changes.

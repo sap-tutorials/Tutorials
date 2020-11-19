@@ -8,15 +8,15 @@ primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
-- [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance)
+- [Set Up Account for Document Information Extraction](cp-aibus-dox-service-instance-booster)
 - [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token)
-- [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui) (step 1 only)
+- [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui) (step 1 only)
 
 ## Details
 ### You will learn
   - How to create, update, list and delete enrichment data using the business entity
 
-After completing the tutorial mission [Get Started with Document Information Extraction](https://developers.sap.com/mission.cp-aibus-extract-document-service.html), you can also use Document Information Extraction to enrich the information extracted from documents with your own master data. You can, for example, match enrichment data entities, such as supplier IDs, with the document [Extracted Header Fields](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/b1c07d0c51b64580881d11b4acb6a6e6.html), such as sender names.
+After completing the tutorial mission [Use Machine Learning to Process Business Documents](mission.cp-aibus-extract-document-service), you can also use Document Information Extraction to enrich the information extracted from documents with your own master data. You can, for example, match enrichment data entities, such as supplier IDs, with the document [Extracted Header Fields](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/b1c07d0c51b64580881d11b4acb6a6e6.html), such as sender names.
 
 When enriching data with Document Information Extraction, you use 2 types of entities that you find in business documents. The `business entity` represents different kinds of organizations with which you deal as a company. It can represent, for example, suppliers and customers. The `employee entity` represents an employee in the company.
 
@@ -26,7 +26,7 @@ When you finish this tutorial, you will have explored all Data API functionaliti
 
 [ACCORDION-BEGIN [Step 1: ](Create client)]
 
-After completing the prerequisite tutorials [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance) and [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), and performing at least step 1 in the tutorial [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui) to access and authorize the Document Information Extraction Swagger UI, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
+After completing the prerequisite tutorials [Set Up Account for Document Information Extraction](cp-aibus-dox-service-instance-booster) and [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), and performing at least step 1 in the tutorial [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui) to access and authorize the Document Information Extraction Swagger UI, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
 
 You can either create a single client or multiple clients in the **payload** field of the **POST /clients** endpoint. The **`clientId`** values created here will be used in other service endpoints.
 
@@ -49,7 +49,7 @@ You should receive a response like the following:
 
 >Be aware of the following Document Information Extraction trial account limitations:​
 
->- Maximum 40 uploaded documents per week​
+>- Maximum 40 uploaded document pages per week​ (the documents can have more than 1 page)
 
 >- Maximum 1 created `clientId`
 
@@ -75,7 +75,7 @@ Use the **POST /data/jobs** endpoint to add your own master data records to the 
        "value":[
           {
              "id":"BE0001",
-             "name":"DEMO - Sliced",
+             "name":"Sliced Invoices",
              "accountNumber":"",
              "address1":"123 Somewhere Street Your AZ 12345 123 Somewhere St Melbourne, VIC 3000",
              "address2":"",
@@ -90,7 +90,7 @@ Use the **POST /data/jobs** endpoint to add your own master data records to the 
           },
           {
              "id":"BE0002",
-             "name":"DEMO",
+             "name":"Sliced",
              "accountNumber":"",
              "address1":"123 Somewhere Street Your AZ 12345 123 Somewhere St Melbourne, VIC 3000",
              "address2":"",
@@ -115,17 +115,17 @@ Use the **POST /data/jobs** endpoint to add your own master data records to the 
 
 7. Click **Execute**.
 
-![DOX](1post_data_jobs_request.png)
+!![DOX](1post_data_jobs_request.png)
 
 > ### What just happened?
 >
-> In this example, in the **`payload`** field, several master data records (name, ID and address, for example) from 2 different suppliers (DEMO - Sliced and DEMO) are provided, so this additional information can be added to the document extracted fields prediction when the information matches.
+> In this example, in the **`payload`** field, several master data records (name, ID and address, for example) from 2 different suppliers (Sliced Invoices and Sliced) are provided, so this additional information can be added to the document extracted fields prediction when the information matches.
 
 You should receive a response like the following with status PENDING:
 
-![DOX](1post_data_jobs_response.png)
+!![DOX](1post_data_jobs_response.png)
 
-Copy the **`id`** from the **Response body** to see the result of the enrichment data status in the **GET /data/jobs/{`uuid`}** endpoint.
+Copy the **`id`** from the **Response body** to see the result of the enrichment data status in the next step.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -133,21 +133,21 @@ Copy the **`id`** from the **Response body** to see the result of the enrichment
 
 [ACCORDION-BEGIN [Step 3: ](See created enrichment data status)]
 
-Use the **GET /data/jobs/{`uuid`}** endpoint to see the status of the uploaded enrichment data.
+Use the **GET /data/jobs/{`id`}** endpoint to see the status of the uploaded enrichment data.
 
-1. Expand the **GET /data/jobs/{`uuid`}** endpoint.
+1. Expand the **GET /data/jobs/{`id`}** endpoint.
 
 2. Click **Try it out**.
 
-3. Enter the **`id`** received in the **POST /data/jobs** endpoint as the **`uuid`**.
+3. Enter the **`id`** received in the **POST /data/jobs** endpoint as the **`id`**.
 
 4. Click **Execute**.
 
-![DOX](1get_data_jobs_uuid_request.png)
+!![DOX](1get_data_jobs_id_request.png)
 
 You should receive a response like the following with status SUCCESS:
 
-![DOX](1get_data_jobs_uuid_response.png)
+!![DOX](1get_data_jobs_id_response.png)
 
 [DONE]
 [ACCORDION-END]
@@ -155,9 +155,9 @@ You should receive a response like the following with status SUCCESS:
 
 [ACCORDION-BEGIN [Step 4: ](Upload document to get prediction with enrichment data)]
 
->Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in English. The team is working to support additional document types and languages in the near future.
+>Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
 
-When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`uuid`}** endpoint. To have the enrichment data in the prediction, you need to have the following part in the query of the **POST /document/jobs** endpoint (it is usually already there by default):
+When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`id`}** endpoint. To have the enrichment data in the prediction, you need to have the following part in the query of the **POST /document/jobs** endpoint (it is usually already there by default):
 
 ```JSON
 "enrichment": {
@@ -169,9 +169,8 @@ When enrichment data has been uploaded and fits to a certain prediction it is ad
     "employee": {
       "type": "employee"
     }
-  }
+}
 ```
-
 
 Do the following:
 
@@ -179,22 +178,68 @@ Do the following:
 
 2. Click **Try it out**.
 
-3. Right click [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-1.pdf), then click ***Save link as*** to download locally the document PDF file for this enrich business data example.
-> You can also upload and enrich your own document in PDF format with content in headers and tables (an invoice, for example). In this case, make sure the data you define in the **`payload`** field, in step 2, matches your document fields.
+3. Right click [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-1.pdf), then click ***Save link as*** to download locally the document file for this enrich business data example.
+> You can also upload to the service and enrich any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice. In this case, make sure the data you define in the **`payload`** field, in step 2, matches your document fields.
 
-4. Upload the document PDF file you want to enrich.
+4. Upload the document file you want to enrich.
 
-5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber,taxId,purchaseOrder,shippingAmount,subTotalAmount,vendorAddress,vendorName,totalAmount,currencyCode`, for example), the client id you created in step 1 (`c_29`, for example), the document type (`invoice`, for example), the enrichment data type `businessEntity` and subtype `supplier`.
+5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 1 (`c_29`, for example), the document type (`invoice`, for example), `receivedDate` (2020-02-17, for example), the enrichment data type `businessEntity` and subtype `supplier`.
+
+    ```JSON
+    {
+       "extraction":{
+          "headerFields":[
+             "documentNumber",
+             "taxId",
+             "purchaseOrderNumber",
+             "shippingAmount",
+             "netAmount",
+             "senderAddress",
+             "senderName",
+             "grossAmount",
+             "currencyCode",
+             "receiverContact",
+             "documentDate",
+             "taxAmount",
+             "taxRate",
+             "receiverName",
+             "receiverAddress"
+          ],
+          "lineItemFields":[
+             "description",
+             "netAmount",
+             "quantity",
+             "unitPrice",
+             "materialNumber"
+          ]
+       },
+       "clientId":"c_29",
+       "documentType":"invoice",
+       "receivedDate":"2020-02-17",
+       "enrichment":{
+          "sender":{
+             "top":5,
+             "type":"businessEntity",
+             "subtype":"supplier"
+          },
+          "employee":{
+             "type":"employee"
+          }
+       }
+    }
+    ```
 
 6. Click **Execute**.
 
 This is how the request should look like:
 
-![DOX](1post_document_jobs_request.png)
+!![DOX](1post_document_jobs_request.png)
 
 And that's how the response looks like:
 
-![DOX](1post_document_jobs_response.png)
+!![DOX](1post_document_jobs_response.png)
+
+Copy the **`id`** from the **Response body** to get enrichment data prediction in the next step.
 
 [DONE]
 [ACCORDION-END]
@@ -202,139 +247,127 @@ And that's how the response looks like:
 
 [ACCORDION-BEGIN [Step 5: ](Get enrichment data prediction)]
 
-When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`uuid`}** endpoint.
+When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`id`}** endpoint.
 
-1. Expand the **GET /document/jobs/{`uuid`}** endpoint.
+> Enrichment data is refreshed automatically every 4 hours. It might take up to 4 hours until the enrichment data prediction is available in the response. If the enrichment data prediction is NOT available in the response in your first try, perform again (some hours later) steps 4 and 5. Do not perform steps 7 and 8 before you see the enrichment data prediction in the response in step 5.
+
+1. Expand the **GET /document/jobs/{`id`}** endpoint.
 
 2. Click **Try it out**.
 
-3. Set **`extractedValues`** to `true` to get the extracted values.
+3. Set **`returnNullValues`** and **`extractedValues`** to `true`.
 
-4. Enter the **`clientId`** you created in step 1 (`c_29`, for example).
+4. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
 
-5. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`uuid`**.
-
-6. Click **Execute**.
+5. Click **Execute**.
 
 The endpoint request and response look as follows:
 
-![DOX](1get_document_jobs_uuid_request.png)
+!![DOX](1get_document_jobs_id_request.png)
 
-![DOX](1get_document_jobs_uuid_response.png)
+!![DOX](1get_document_jobs_id_response.png)
 
 > ### What just happened?
 >
-> In this example, in the response, one of the extracted fields is the sender name DEMO - Sliced. This information is enriched with the supplier ID enrichment data created in step 2. The prediction suggests the supplier ID BE0001 (from sender name DEMO - Sliced) with higher probability than the supplier ID BE0002 (from sender name DEMO).
+> In this example, in the response, one of the extracted fields is the sender name Sliced Invoices. This information is enriched with the supplier ID enrichment data created in step 2. The prediction suggests the supplier ID BE0001 (from sender name Sliced Invoices) with higher probability than the supplier ID BE0002 (from sender name Sliced).
 
 This is an example of a full prediction including the enrichment data part:
 
 ```JSON
 {
   "status": "DONE",
-  "id": "149e33f5-7113-420e-ab8c-0b0382d660f9",
-  "documentType": "invoice",
+  "id": "afc5f228-7393-431a-ae9a-3dddf440a9bd",
   "fileName": "sample-invoice-1.pdf",
+  "documentType": "invoice",
+  "created": "2020-11-11T12:30:22.023360+00:00",
+  "finished": "2020-11-11T12:32:05.308440+00:00",
   "country": "XX",
-  "created": "2020-04-02T13:21:58.831658+00:00",
   "extraction": {
     "headerFields": [
       {
-        "name": "documentNumber",
-        "category": "document",
-        "value": "INV-3337",
-        "type": "string",
-        "confidence": 0.989006499449412,
-        "page": 1,
+        "name": "taxRate",
+        "category": "amounts",
+        "value": null,
+        "type": "number",
+        "page": null,
+        "confidence": null,
         "coordinates": {
-          "x": 0.760887096774194,
-          "y": 0.141676168757127,
-          "w": 0.060483870967742,
-          "h": 0.00769669327251996
-        }
-      },
-      {
-        "name": "senderAddress",
-        "category": "sender",
-        "value": "123 Somewhere Street Your AZ 12345 123 Somewhere St Melbourne, VIC 3000",
-        "type": "string",
-        "confidence": 0.640021374932042,
-        "page": 1,
-        "coordinates": {
-          "x": 0.0717741935483871,
-          "y": 0.192987457240593,
-          "w": 0.150403225806452,
-          "h": 0.13939566704675
-        }
-      },
-      {
-        "name": "senderName",
-        "category": "sender",
-        "value": "DEMO - Sliced",
-        "type": "string",
-        "confidence": 0.808902713987562,
-        "page": 1,
-        "coordinates": {
-          "x": 0.0725806451612903,
-          "y": 0.163055872291904,
-          "w": 0.0955645161290323,
-          "h": 0.00798175598631701
-        }
-      },
-      {
-        "name": "receiverContact",
-        "category": "receiver",
-        "value": "",
-        "type": "string",
-        "confidence": 0,
-        "page": 1,
-        "coordinates": {
-          "x": 0.000403225806451613,
-          "y": 0.000570125427594071,
-          "w": 0.000806451612903226,
-          "h": 0.000570125427594071
-        }
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "group": 1
       },
       {
         "name": "taxAmount",
         "category": "amounts",
         "value": 8.5,
         "type": "number",
-        "confidence": 1,
         "page": 1,
+        "confidence": 0.999595546722412,
         "coordinates": {
-          "x": 0.878225806451613,
-          "y": 0.486031927023945,
-          "w": 0.913709677419355,
-          "h": 0.49515393386545
+          "x": 0.877468764781952,
+          "y": 0.481470912694931,
+          "w": 0.0362756848335266,
+          "h": 0.00883695483207703
         },
         "group": 1
+      },
+      {
+        "name": "senderName",
+        "category": "sender",
+        "value": "Sliced Invoices",
+        "type": "string",
+        "page": 1,
+        "confidence": 0.617510483307498,
+        "coordinates": {
+          "x": 0.0709391374445788,
+          "y": 0.156784492588369,
+          "w": 0.100362756952842,
+          "h": 0.00826681870011403
+        }
+      },
+      {
+        "name": "documentNumber",
+        "category": "document",
+        "value": "INV-3337",
+        "type": "string",
+        "page": 1,
+        "confidence": 0.656084211099715,
+        "coordinates": {
+          "x": 0.759774284562676,
+          "y": 0.136830102622577,
+          "w": 0.0612656187021362,
+          "h": 0.00826681870011403
+        }
       },
       {
         "name": "purchaseOrderNumber",
         "category": "details",
         "value": "12345",
         "type": "string",
-        "confidence": 1,
         "page": 1,
+        "confidence": 0,
         "coordinates": {
-          "x": 0.760887096774194,
-          "y": 0.160775370581528,
-          "w": 0.799596774193548,
-          "h": 0.168187001140251
+          "x": 0.760177347843611,
+          "y": 0.155644241733181,
+          "w": 0.0390971382507054,
+          "h": 0.00798175598631698
         }
       },
       {
-        "name": "netAmount",
-        "category": "amounts",
-        "value": 85,
-        "type": "number",
-        "confidence": 0.990608950455984,
+        "name": "receiverAddress",
+        "category": "receiver",
+        "value": "123 Somewhere St Melbourne, VIC 3000",
+        "type": "string",
         "page": 1,
+        "confidence": 0.584470650866444,
         "coordinates": {
-          "x": 0.870161290322581,
-          "y": 0.467217787913341,
-          "w": 0.0435483870967742,
-          "h": 0.0091220068415051
+          "x": 0.0725513905683192,
+          "y": 0.303591790193843,
+          "w": 0.138250705360742,
+          "h": 0.0250855188141391
         }
       },
       {
@@ -342,13 +375,98 @@ This is an example of a full prediction including the enrichment data part:
         "category": "amounts",
         "value": 93.5,
         "type": "number",
-        "confidence": 0.994631409645081,
         "page": 1,
+        "confidence": 0.653526421749231,
         "coordinates": {
-          "x": 0.870161290322581,
-          "y": 0.505131128848347,
-          "w": 0.0435483870967742,
+          "x": 0.869407496977025,
+          "y": 0.500285062713797,
+          "w": 0.0447400241837969,
           "h": 0.0091220068415051
+        }
+      },
+      {
+        "name": "netAmount",
+        "category": "amounts",
+        "value": 85,
+        "type": "number",
+        "page": 1,
+        "confidence": 0.641649420965802,
+        "coordinates": {
+          "x": 0.869407496977025,
+          "y": 0.462371721778791,
+          "w": 0.0447400241837969,
+          "h": 0.00969213226909921
+        }
+      },
+      {
+        "name": "receiverName",
+        "category": "receiver",
+        "value": "Test Business",
+        "type": "string",
+        "page": 1,
+        "confidence": 0.610726446327236,
+        "coordinates": {
+          "x": 0.071745264006449,
+          "y": 0.2884834663626,
+          "w": 0.0923014913341395,
+          "h": 0.00826681870011403
+        }
+      },
+      {
+        "name": "senderAddress",
+        "category": "sender",
+        "value": "Suite 5A-1204 123 Somewhere Street Your City AZ 12345",
+        "type": "string",
+        "page": 1,
+        "confidence": 0.602965183910869,
+        "coordinates": {
+          "x": 0.0721483272873841,
+          "y": 0.1730330672748,
+          "w": 0.15074566706973,
+          "h": 0.040193842645382
+        }
+      },
+      {
+        "name": "receiverContact",
+        "category": "receiver",
+        "value": null,
+        "type": "string",
+        "page": null,
+        "confidence": null,
+        "coordinates": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        }
+      },
+      {
+        "name": "taxId",
+        "category": "amounts",
+        "value": null,
+        "type": "string",
+        "page": null,
+        "confidence": null,
+        "coordinates": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "group": 1
+      },
+      {
+        "name": "shippingAmount",
+        "category": "amounts",
+        "value": null,
+        "type": "number",
+        "page": null,
+        "confidence": null,
+        "coordinates": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
         }
       },
       {
@@ -356,8 +474,8 @@ This is an example of a full prediction including the enrichment data part:
         "category": "amounts",
         "value": "USD",
         "type": "string",
-        "confidence": 0.70153421163559,
         "page": 1,
+        "confidence": 0.933853209018707,
         "coordinates": {
           "x": 0,
           "y": 0,
@@ -370,13 +488,13 @@ This is an example of a full prediction including the enrichment data part:
         "category": "document",
         "value": "2016-01-25",
         "type": "date",
-        "confidence": 0.989444378763437,
         "page": 1,
+        "confidence": 0.986256398260593,
         "coordinates": {
-          "x": 0.759677419354839,
-          "y": 0.179304446978335,
-          "w": 0.113306451612903,
-          "h": 0.00969213226909921
+          "x": 0.758968158000806,
+          "y": 0.174458380843786,
+          "w": 0.1136638452237,
+          "h": 0.00940706955530218
         }
       }
     ],
@@ -385,15 +503,15 @@ This is an example of a full prediction including the enrichment data part:
         {
           "name": "description",
           "category": "details",
-          "value": "Web Design",
+          "value": "Web Design This is a sample description...",
           "type": "string",
-          "confidence": 0.782224123883579,
           "page": 1,
+          "confidence": 0.620112451872042,
           "coordinates": {
-            "x": 0.172177419354839,
-            "y": 0.419042189281642,
-            "w": 0.0798387096774194,
-            "h": 0.00997719498289623
+            "x": 0.171704957678356,
+            "y": 0.413911060433295,
+            "w": 0.174929463925836,
+            "h": 0.0216647662485747
           }
         },
         {
@@ -401,13 +519,13 @@ This is an example of a full prediction including the enrichment data part:
           "category": "details",
           "value": 1,
           "type": "number",
-          "confidence": 0.712613101516451,
           "page": 1,
+          "confidence": 0.638236153693426,
           "coordinates": {
-            "x": 0.102822580645161,
-            "y": 0.42502850627138,
-            "w": 0.0266129032258064,
-            "h": 0.00769669327251993
+            "x": 0.102378073357517,
+            "y": 0.42018244013683,
+            "w": 0.0270052398226522,
+            "h": 0.00826681870011403
           }
         },
         {
@@ -415,13 +533,13 @@ This is an example of a full prediction including the enrichment data part:
           "category": "amounts",
           "value": 85,
           "type": "number",
-          "confidence": 0.915386190920165,
           "page": 1,
+          "confidence": 0.63175144701293,
           "coordinates": {
-            "x": 0.870161290322581,
-            "y": 0.424173318129989,
-            "w": 0.0439516129032258,
-            "h": 0.00940706955530218
+            "x": 0.869407496977025,
+            "y": 0.419612314709236,
+            "w": 0.0447400241837969,
+            "h": 0.00940706955530213
           }
         },
         {
@@ -429,27 +547,42 @@ This is an example of a full prediction including the enrichment data part:
           "category": "details",
           "value": 85,
           "type": "number",
-          "confidence": 0,
           "page": 1,
+          "confidence": 0.638240830464797,
           "coordinates": {
-            "x": 0.610483870967742,
-            "y": 0.424173318129989,
-            "w": 0.0435483870967742,
-            "h": 0.00912200684150516
+            "x": 0.609834744054817,
+            "y": 0.419612314709236,
+            "w": 0.0447400241837969,
+            "h": 0.00940706955530213
+          }
+        },
+        {
+          "name": "materialNumber",
+          "category": "details",
+          "value": null,
+          "type": "string",
+          "page": 1,
+          "confidence": null,
+          "coordinates": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
           }
         }
       ]
     ]
   },
+  "fileType": "pdf",
   "enrichment": {
     "sender": [
       {
         "id": "BE0001",
-        "confidence": 0.920635
+        "confidence": 0.5625
       },
       {
         "id": "BE0002",
-        "confidence": 0.825397
+        "confidence": 0.4625
       }
     ],
     "employee": []
@@ -498,6 +631,16 @@ To delete enrichment data which has been uploaded before:
 2. Click **Try it out**.
 
 3. Define the data in the **`payload`** field, so that the system knows which data entry (using, for example, the data entry ID) should be deleted.
+
+    ```JSON
+    {
+       "value":[
+          {
+             "id":"BE0001"
+          }
+       ]
+    }
+    ```
 
 4. Choose the enrichment data **`type`** `businessEntity`.
 

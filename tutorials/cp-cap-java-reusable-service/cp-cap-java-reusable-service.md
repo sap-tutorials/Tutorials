@@ -1,6 +1,6 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Create a Reusable Service
 description: Create a service that will later on be reused in another CAP Java project.
 auto_validation: true
@@ -159,10 +159,10 @@ Let's deploy the domain model to a database. Now, you will use SQLite, a light-w
 2. To initialize the database with the defined domain model, execute the following command in the terminal:
 
     ```Shell/Bash
-    npm run deploy
+    cds deploy --to sqlite
     ```
 
-    !![npm run deploy](run-deploy.png)
+    !![cds deploy](cds-deploy.png)
 
     This will create a file called `sqlite.db` in your project root. The name of this database is defined by an entry in your `package.json`.
 
@@ -179,7 +179,7 @@ Configure your Java application to use the `sqlite.db` database file.
 
 2. For the field `url`, replace the string `"jdbc:sqlite::memory:"` with a reference to your local database file `"jdbc:sqlite:/home/user/projects/products-service/sqlite.db"`
 
-3. Set the value of `initialization-mode` from `always` to `never`, because you've already initialized the database when running `npm run deploy`.
+3. Set the value of `initialization-mode` from `always` to `never`, because you've already initialized the database when running `cds deploy --to sqlite`.
 
 Your `application.yaml` file should look like this:
 

@@ -7,6 +7,7 @@ tags: [ tutorial>intermediate, products>sap-cloud-platform]
 primary_tag: products>sap-cloud-platform-integration-for-process-services
 ---
 
+
 ## Details
 ### You will learn
   - How to map message structures
@@ -17,9 +18,10 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
   - How to simulate mappings
   - How to work with resources
 
+
 In this exercise, you shall convert the message structure from:
 
-```xml
+```XML
 <orders>
 	<order>
 		<orderID>BS00010023</orderID>
@@ -83,6 +85,8 @@ to:
 	</order>
 </orders>
 ```
+
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add message mapping)]
@@ -105,16 +109,16 @@ to:
 
     ![Define MMap Str](Define MMap Str.png)
 
-    * Download the [source](https://sap-my.sharepoint.com/:u:/p/meghna_shishodiya/EaqbQ9t0jGFMvSzYPnowpVABk4l6mnN50prkKIAez1UMYA?e=lsrj63) and [target](https://sap-my.sharepoint.com/:u:/p/meghna_shishodiya/EVGGCzWcoqRAvq6GjPFXzhwBfMaaSSrlHsD_cr2PKwYAzg?e=KUdLr0) on your filesystem.
+    * Right-click the [Source XSD File](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-integration-convert-message-structure/Source.xsd) and [Target XSD file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-integration-convert-message-structure/Target.xsd) links and save them on your local folder. You will need them for the next steps.
 
     * On the following screen, upload the source and target XSD into your message map:
 
-        * Click on __Add source message__.
-        * Click __Upload from File System__ in the next window.
-        * Choose the file from the desired location.
+        * Click on **Add source message**.
+        * Click **Upload from File System** in the next window.
+        * Choose the file from the location where you saved the files before you started the exercise.
         * Repeat the above steps for the target message structure.
 
-    * Finally you should get the following screen:
+    * You should get the following screen:
 
     ![Source Target added](Source Target added.png)
 
@@ -150,11 +154,11 @@ to:
 
 [ACCORDION-BEGIN [Step 2: ](Use Standard functions)]
 
-1. Link ```CustomerName``` on the source to ```CustomerName``` on the target.
+1. Link `CustomerName` on the source to `CustomerName` on the target.
 
-2. Link ```CustomerLastName``` on the source also to ```CustomerName``` on the target.
+2. Link `CustomerLastName` on the source also to `CustomerName` on the target.
 
-3. Go to the visual mapping editor and look for the ```Concat``` standard function and drag it to the work area.
+3. Go to the visual mapping editor and look for the `Concat` standard function and drag it to the work area.
 
 4. Connect the following:       
 
@@ -188,7 +192,7 @@ to:
 
 2. Go to visual editor at the bottom and click on __Create__ function.
 
-3. In the pop-up dialog, give ```SplitAddr``` as the __Script Name__ and click __OK__.
+3. In the pop-up dialog, give `SplitAddr` as the __Script Name__ and click __OK__.
 
     ![Add Script for Address](Add Script for Address.png)
 
@@ -215,13 +219,13 @@ to:
 
 6. Click on __Add__ functions.
 
-7. Choose __splitAddr.groovy__ in the pop-up dialog.
+7. Choose **`splitAddr.groovy`** in the pop-up dialog.
 
-8. You will now see ```splitAddr``` added to the list of custom functions under the standard functions:
+8. You will now see `splitAddr` added to the list of custom functions under the standard functions:
 
     ![AddCustom](AddCustom.png)
 
-9. Click on ```splitAddr``` and drag the function ```splitAddress``` to the visual editor and connect the relevant fields.
+9. Click on `splitAddr` and drag the function `splitAddress` to the visual editor and connect the relevant fields.
 
 Finally, you should see the following:
 
@@ -267,7 +271,7 @@ Store the [Input Message](https://sap-my.sharepoint.com/:u:/p/meghna_shishodiya/
 
 [ACCORDION-BEGIN [Step 5: ](Explore resources)]
 
-In the process of defining a message map, you created or uploaded a lot of artifacts, like ```XMLs, XSDs```, scripts and message maps.
+In the process of defining a message map, you created or uploaded a lot of artifacts, like **XML**, **XSD**, scripts and message maps.
 
 You can find each of the artifacts under the __Resources view__.
 

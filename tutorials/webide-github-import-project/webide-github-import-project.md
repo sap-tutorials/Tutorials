@@ -2,9 +2,14 @@
 title: Create a Project in SAP Web IDE and Push into GitHub
 description: Create a project in SAP Web IDE and push it into GitHub to support collaborative development using GitHub and SAP Web IDE.
 primary_tag: products>sap-web-ide
-tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
+tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform, tutorial>license ]
 time: 15
 ---
+
+
+## Prerequisites
+- **IMPORTANT**: This tutorial cannot be completed on a trial account
+
 
 ## Details
 ### You will learn  

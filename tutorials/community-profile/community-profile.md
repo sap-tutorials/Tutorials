@@ -125,7 +125,7 @@ By going to the [Communications](https://people.sap.com/#communications) sub-sec
 
 >For more about your **Inbox**, see **step 17**.
 
-![Communications](Communications.png)
+!![Communications](Communications.png)
 
 Notifications are a great way for you to keep track of -- and interact with -- the content that interests you most. For example, if you want to know about new posts and replies related to tags and content you follow, you can set up notifications that give you a heads-up whenever something new is published.
 
@@ -276,5 +276,6 @@ If you're following the person, and the person is also following you, you have t
 [DONE]
 [ACCORDION-END]
 
-Thank you for taking this tutorial. Congratulations! You're now savvy about your SAP profile ([people.sap.com](https://people.sap.com/)).
 ---
+
+Congratulations! You're now savvy about your SAP profile ([people.sap.com](https://people.sap.com/)).

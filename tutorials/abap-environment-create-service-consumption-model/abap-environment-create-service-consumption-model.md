@@ -8,6 +8,7 @@ primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
 ## Prerequisites  
+- **IMPORTANT**: This tutorial cannot be completed on a trial account
 - The service definition **`/DMO/TRAVEL_U`** is available in the **provisioning** system - You can download the service as part of the ABAP Flight Reference Scenario, see [Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
 
 ## Details

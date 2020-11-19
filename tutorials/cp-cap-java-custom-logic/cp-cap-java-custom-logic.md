@@ -1,6 +1,6 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Extend the Bookstore with Custom Code
 description: Extend the previously built bookstore with custom coding, for example, to validate requests.
 auto_validation: true
@@ -117,6 +117,15 @@ You'll now add a method to the `OrdersService` Java class to decrease the stock 
     import com.sap.cds.services.cds.CdsService;
     import com.sap.cds.services.handler.annotations.Before;
     import com.sap.cds.services.persistence.PersistenceService;
+
+    import cds.gen.ordersservice.OrderItems;
+    import cds.gen.ordersservice.Orders;
+    import cds.gen.sap.capire.bookstore.Books;
+    import cds.gen.sap.capire.bookstore.Books_;
+    import java.math.BigDecimal;
+    import cds.gen.sap.capire.bookstore.OrderItems_;
+
+    import com.sap.cds.services.handler.annotations.After;
     ```
 
 Let's break down what is happening:
@@ -141,6 +150,8 @@ package com.sap.cap.bookstore.handlers;
 import com.sap.cds.services.handler.EventHandler;
 import com.sap.cds.services.handler.annotations.ServiceName;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -162,8 +173,6 @@ import java.math.BigDecimal;
 import cds.gen.sap.capire.bookstore.OrderItems_;
 
 import com.sap.cds.services.handler.annotations.After;
-
-import org.springframework.stereotype.Component;
 
 @Component
 @ServiceName("OrdersService")
@@ -256,7 +265,7 @@ public class OrdersService implements EventHandler {
 10. To reset the database to the initial state, run the following command from the root of your project:
 
     ```Shell/Bash
-    cd ~/projects/bookstore && npm run deploy
+    cd ~/projects/bookstore && cds deploy --to sqlite
     ```
 
 [VALIDATE_1]
@@ -282,14 +291,6 @@ Next, let's add a method to the `OrdersService` Java class to calculate the `net
                 item.setNetAmount(book.getPrice().multiply(new BigDecimal(item.getAmount())));
             }
         }
-    ```
-
-2. In addition add the following import statements to the top of the `OrdersService` Java class and make sure you **Save** the file:
-
-    ```Java
-    import java.math.BigDecimal;
-
-    import com.sap.cds.services.handler.annotations.After;
     ```
 
 Let's break it down again:
