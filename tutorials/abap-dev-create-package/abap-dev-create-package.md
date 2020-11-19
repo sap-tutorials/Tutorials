@@ -40,9 +40,9 @@ For more information, see
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a package)]
+[ACCORDION-BEGIN [Step 1: ](Select project)]
 
-Select the project you created previously, then choose *<Project>* > **New > ABAP Package**:
+Select the ABAP Cloud Project you created previously, then choose **New > ABAP Package**:
 
 ![Image depicting step1-new-package](step1-new-package.png)
 
@@ -50,7 +50,7 @@ Select the project you created previously, then choose *<Project>* > **New > ABA
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Define the package)]
+[ACCORDION-BEGIN [Step 2: ](Create package)]
 
 1. Enter the following and choose **Next**:
     - Name = **`Zxx_TUTORIALS`**, where **`xx`** = your initials
@@ -59,7 +59,7 @@ Select the project you created previously, then choose *<Project>* > **New > ABA
 
     ![Image depicting step2-define-package](step2-define-package.png)
 
-2. Choose a **Software Component**, by placing the cursor in the field and choosing **Autocomplete (Ctrl+Space)**, then choose **HOME** (default for customer developments):
+2. Choose a **Software Component**, by placing the cursor in the field and choosing **Autocomplete (Ctrl+Space)**, then choose **HOME** (default for customer developments) or **LOCAL** (for tests):
 
       ![Image depicting step2b-sw-component](step2b-sw-component.png)
 

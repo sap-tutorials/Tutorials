@@ -3,12 +3,12 @@ title: Enable the SAP Translation Hub Service
 description: Enable the SAP Translation Hub service in the SAP Cloud Platform cockpit.
 primary_tag: products>sap-translation-hub
 auto_validation: true
-tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, tutorial>license ]
 time: 3
 ---
 
 ## Prerequisites  
- - You need to buy SAP Translation Hub e.g. via SAP Store: <https://www.sapstore.com/solutions/40076/SAP-Translation-Hub>
+ - **IMPORTANT:** You need to buy SAP Translation Hub (for example via SAP Store at <https://www.sapstore.com/solutions/40076/SAP-Translation-Hub>)
 
 ## Details
 ### You will learn  

@@ -48,11 +48,11 @@ To try out Data Attribute Recommendation, you need to make sure that your accoun
 
 On the navigation sidebar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
 
-Search for **Data Attribute Recommendation Trial**. If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.
+Search for **Data Attribute Recommendation Trial**. ***If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
 
 ![Entitlements](check-entitlements.png)
 
-If you do not find the service in your list, proceed as follows:
+***ONLY if you DO NOT find the service in your list, proceed as follows:***
 
   1. Click **Configure Entitlements**.
 
