@@ -13,8 +13,7 @@ time: 15
 
 ## Details
 ### You will learn  
-  - How to Use Postman to access SAP IoT APIs
-  - In [previous tutorials](https://developers.sap.com/tutorials/iot-express-4-create-thing-model.html), you learned about using Thing Modeler to onboard a thing, send data to the thing, and retrieve data from the thing. Now, you'll learn to use Postman to access SAP IoT APIs.
+In [previous tutorials](https://developers.sap.com/tutorials/iot-express-4-create-thing-model.html), you learned about using Thing Modeler to onboard a thing, send data to the thing, and retrieve data from the thing. Now, you'll learn to use Postman to access SAP IoT APIs.
 
 
 #### Application Router
