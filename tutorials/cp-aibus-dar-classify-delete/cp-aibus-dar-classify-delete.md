@@ -13,7 +13,7 @@ primary_tag: topic>machine-learning
   - How to undeploy and delete your model
   - How to delete datasets and dataset schemas
 
-Based on your deployed machine learning model you can now classify records. For more information, see [Data Attribute Recommendation](https://help.sap.com/dar). For further definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/fe501df6d9f94361bfea066f9a6f6712.html).
+Based on your deployed machine learning model you can now classify records. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/dar). For further definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/fe501df6d9f94361bfea066f9a6f6712.html).
 
 ---
 

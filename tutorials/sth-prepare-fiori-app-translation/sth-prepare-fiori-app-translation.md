@@ -3,7 +3,7 @@ title: Prepare an SAP Fiori App for Translation
 description: Prepare an app based on an SAP Fiori reference app and prepare it for translation with SAP Translation Hub.
 auto_validation: true
 primary_tag: products>sap-translation-hub
-tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, topic>sapui5 ]
+tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, topic>sapui5, tutorial>license ]
 time: 10
 ---
 

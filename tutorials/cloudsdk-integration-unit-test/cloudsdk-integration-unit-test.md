@@ -10,8 +10,8 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
 ## Prerequisites
- - [Set up CI/CD](https://developers.sap.com/tutorials/cloudsdk-ci-cd.html)
- - [Connect to OData service](https://developers.sap.com/tutorials/s4sdk-odata-service-neo.html#82b577a3-381f-4f6a-bffe-77c59e207ad7)
+ - [Set up CI/CD](cloudsdk-ci-cd)
+ - [Connect to OData service](s4sdk-odata-service-neo)
 
 ## Details
 ### You will learn
@@ -37,7 +37,7 @@ Unit tests have the smallest granularity. They can be defined directly on the pr
 [ACCORDION-BEGIN [Step 2: ](Unit-tests backend)]
 For the modules of your backend services we suggest writing [JUnit](https://github.com/junit-team/junit4/wiki/Getting-started) tests. Please place your unit tests inside `application/src/test`. Unit tests should be very light weight. They should test the modules, e.g. a class, in a isolated manner. Other depended modules or even calls to external destinations, such as an ERP system, may be mocked. For mocking, the SAP Cloud SDK provides mocking facilities with the class `MockUtil`. Furthermore, we recommend using mocking frameworks, such as Mockito or PowerMock.
 
-Take a look at [Mock S/4HANA calls] (https://developers.sap.com/tutorials/cloudsdk-mocking-capabilities.html) to learn more about how the SAP Cloud SDK makes it easy to mock even calls to SAP S/4HANA systems.
+Take a look at [Mock S/4HANA calls] (cloudsdk-mocking-capabilities) to learn more about how the SAP Cloud SDK makes it easy to mock even calls to SAP S/4HANA systems.
 
 
 [DONE]
@@ -46,14 +46,14 @@ Take a look at [Mock S/4HANA calls] (https://developers.sap.com/tutorials/clouds
 
 [ACCORDION-BEGIN [Step 3: ](Integration tests backend)]
 [OPTION BEGIN [Cloud Foundry]]
-In the integration tests you can tests your backend services without the `frontend` application. In the **Tutorials** [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-cloud-foundry-sample-application.html) and [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-odata-service-cloud-foundry.html), we already introduced the integration tests and showed how to set them up.
+In the integration tests you can tests your backend services without the `frontend` application. In the **Tutorials** [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](s4sdk-cloud-foundry-sample-application) and [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry), we already introduced the integration tests and showed how to set them up.
 
 In general, we recommend to use Arquillian to spawn a small server containing only the resources for the specific backend services you want to test. This is faster compared to deploying it to the SAP Cloud Platform first and then testing against the deployed version. Furthermore, you still have the possibility to influence the test execution, e.g. with mocking or to collect test coverage data. For spring, we recommend to use the SpringRunner. For both, there is an example test already included in the corresponding archetype.
 
 [OPTION END]
 
 [OPTION BEGIN [Neo]]
-In the integration tests you can tests your backend services without the `frontend` application. In the **Tutorials** [Create a Sample Application on SCP Neo Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-scp-neo-sample-application.html) and [Connect to OData service on Neo using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-odata-service-neo.html), we already introduced the integration tests and showed how to set them up.
+In the integration tests you can tests your backend services without the `frontend` application. In the **Tutorials** [Create a Sample Application on SCP Neo Using SAP Cloud SDK](s4sdk-scp-neo-sample-application) and [Connect to OData service on Neo using SAP Cloud SDK](s4sdk-odata-service-neo), we already introduced the integration tests and showed how to set them up.
 
 In general, we recommend to use Arquillian to spawn a small server containing only the resources for the specific backend services you want to test. This is faster compared to deploying it to the SAP Cloud Platform first and then testing against the deployed version. Furthermore, you still have the possibility to influence the test execution, e.g. with mocking or to collect test coverage data. For spring, we recommend to use the SpringRunner. For both, there is an example test already included in the corresponding archetype.
 
@@ -67,7 +67,7 @@ In this tutorial, we want to focus on the mocking facilities provided by the SAP
 
 This target environment has to be, partially, replicated in the local environment where the mocking facilities allow to test your business application without relying on the provided services locally. Since the SAP Cloud SDK already comes with abstractions for these services, it also offers to mock them in a local environment.
 
-As example, we take the `BusinessPartnerServiceTest` from [Connect to OData Service](https://developers.sap.com/tutorials/s4sdk-odata-service-cloud-foundry.html)
+As example, we take the `BusinessPartnerServiceTest` from [Connect to OData Service](s4sdk-odata-service-cloud-foundry)
 
 ``` Java
 package com.sap.cloud.sdk.tutorial;
@@ -222,7 +222,7 @@ erp:
 [ACCORDION-BEGIN [Step 6: ](Unit-tests frontend)]
 In this tutorial, we will use [Jasmine](https://jasmine.github.io/) and [Karma](https://karma-runner.github.io/1.0/index.html) to implement the unit tests of the JavaScript frontend code written in SAP UI5. Jasmine is a framework to write unit tests for JavaScript code. Karma is a tool to run the tests from console or in a build pipeline.
 
-In order to make it testable, we refactor our application from [Implement and Deploy a Frontend Application](https://developers.sap.com/tutorials/cloudsdk-frontend-app.html). We extract loading the business partners from the SAP UI5 controller into a service class. We assume that your front end code is located in `webapp`. Place your service class in `webapp/service/businesspartners.js`:
+In order to make it testable, we refactor our application from [Implement and Deploy a Frontend Application](cloudsdk-frontend-app). We extract loading the business partners from the SAP UI5 controller into a service class. We assume that your front end code is located in `webapp`. Place your service class in `webapp/service/businesspartners.js`:
 
 ```
 sap.ui.define([], function () {

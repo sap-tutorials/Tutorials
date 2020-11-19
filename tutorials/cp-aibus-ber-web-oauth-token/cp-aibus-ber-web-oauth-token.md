@@ -37,7 +37,7 @@ To get your OAuth access token you will need the values listed below from the se
 
 You should receive a response like the following:
 
-```
+```JSON
 {
     "access_token": "<< your access token >>",
     "token_type": "bearer",
