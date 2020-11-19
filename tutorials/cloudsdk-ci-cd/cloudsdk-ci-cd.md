@@ -252,7 +252,7 @@ We recommend to increase the number executors to at least the number of cores of
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Troubleshoot)]
+[ACCORDION-BEGIN [Step 5: ](Troubleshoot)]
 
 ### Pipeline does not start after commit
 Check if your webhook is setup properly and that it succeeds in delivering commit events. Furthermore, ensure that your project and, therefore, also the Jenkins file are located in the root of your git repository. One way of achieving this, is to generate the archetype in the parent folder of your local repository with `artifactId=<repository name>`.
@@ -265,7 +265,7 @@ In the future, we will use this section to address common challenges and how the
 
 
 
-[ACCORDION-BEGIN [Step 5: ](More information)]
+[ACCORDION-BEGIN [Step 6: ](More information)]
 
 
 ### Questions and Bugs
