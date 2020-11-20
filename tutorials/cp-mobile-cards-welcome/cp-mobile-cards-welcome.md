@@ -9,6 +9,7 @@ author_name: Chetali Shah
 author_profile: https://github.com/shahchetali
 ---
 ## Prerequisites
+- [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
 
 ## Details
 ### You will learn
