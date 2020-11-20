@@ -2,7 +2,7 @@
 author_name: Daniel Kurzynski
 author_profile: https://github.com/daniel-kurzynski
 title: End-to-End Tests for SAP Cloud SDK Projects
-description: Implement and end-to-end tests, the highest level of automated tests, for SAP Cloud SDK projects and run them in a pipeline.
+description: Implement end-to-end tests, the highest level of automated tests, and run them in a pipeline.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk]

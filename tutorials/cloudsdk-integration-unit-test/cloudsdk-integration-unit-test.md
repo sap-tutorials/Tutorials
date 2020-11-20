@@ -58,7 +58,7 @@ In the integration tests you can tests your backend services without the `fronte
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Mocking basics)]
-In this tutorial, we want to focus on the mocking facilities provided by the SAP Cloud SDK. When you execute the integration tests locally, they run in a different environment than later on in the SAP Cloud Platform. Therefore, many services, such as the destination service, are not available, as the SAP Cloud Platform provides a much richer environment in terms of services and runtime libraries than the local test environment. This target environment has to be, partially, replicated in the local environment where the mocking facilities allow to test your business application without relying on the provided services locally. Since the SAP Cloud SDK already comes with abstractions for these services, it also offers to mock them in a local environment.
+In this tutorial, we want to focus on the mocking facilities provided by the SAP Cloud SDK. When you execute the integration tests locally, they run in a different environment than later on in the SAP Cloud Platform. Therefore, many services, such as the destination service, are not available, as the SAP Cloud Platform provides a much richer environment in terms of services and runtime libraries than the local test environment.
 
 This target environment has to be, partially, replicated in the local environment where the mocking facilities allow to test your business application without relying on the provided services locally. Since the SAP Cloud SDK already comes with abstractions for these services, it also offers to mock them in a local environment.
 
@@ -219,21 +219,13 @@ erp:
       sapClient: "SAPCLINET-NUMBER"
 ```
 
-There is even a short form of the code, because the destination name and the alias are optional. If you do not provide a destination name, the destination name will be taken from `ErpDestination.getDefaultName()`. The default destination name is `ErpQueryEndpoint`. The alias will be taken from the default system in your `systems.yml`.
-
-```
-//Uses ErpDestination.getDefaultName() as destination name and
-// the default system defined in the systems.yml
-mockUtil.mockErpDestination();
-```
-
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Unit-tests frontend)]
-In this tutorial, we will use [Jasmine](https://jasmine.github.io/) and [Karma](https://karma-runner.github.io/1.0/index.html) to implement the unit tests of the `Javascript frontend code` written in SAP UI5. As an example you downloaded as a prerequisite of this tutorial.
+In this tutorial, we will use [Jasmine](https://jasmine.github.io/) and [Karma](https://karma-runner.github.io/1.0/index.html) to implement the unit tests of the JavaScript frontend code written in SAP UI5.
 
-The example contains a service class which loads the business partners from from the backend. It is located at `webapp/service/businesspartners.js`:
+The example you downloaded as a prerequisite of this tutorial contains a service class which loads the business partners from from the backend. It is located at `webapp/service/businesspartners.js`:
 
 ```JavaScript
 sap.ui.define([], function () {
@@ -414,7 +406,7 @@ The final folder structure should look as follows:
 
 Now you can run the following commands in the root folder of the project to execute your tests. It will start a chrome instance and execute the tests.
 
-```
+```Shell
 npm install
 npm run ci-frontend-unit-test
 ```
@@ -451,7 +443,7 @@ erp:
 
 ```
 
-You also need an additional file containing the credentials to access the system you configured above. As you would usually not commit this file you can instruct the pipeline to create it for you. In the section `stages` you can configure the stage `Integration` to create a credential file for a system with the specific alias you also used before in the file `systems.yml`. The credentials with the corresponding id have to be configured as described in the tutorial [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd).
+You also need an additional file containing the credentials to access the system you configured above. As you would usually not commit this file, you can instruct the pipeline to create it for you. In the section `stages` you can configure the stage `Integration` to create a credential file for a system with the specific alias you also used before in the file `systems.yml`. The credentials with the corresponding ID have to be configured as described in the tutorial [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd).
 
 ```YAML
 stages:
