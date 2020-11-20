@@ -2,7 +2,7 @@
 author_name: Benjamin Heilbrunn
 author_profile: https://github.com/benhei
 title: Set Up Continuous Integration and Delivery for SAP Cloud SDK
-description: This tutorial shows how to use the General Purpose Pipeline of project "Piper" to implement CI/CD for an SAP Cloud SDK project.
+description: Use the General Purpose Pipeline of project "Piper" to implement CI/CD for an SAP Cloud SDK project.
 auto_validation: true
 time: 30
 tags: [tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
