@@ -2,7 +2,7 @@
 author_name: Benjamin Heilbrunn
 author_profile: https://github.com/benhei
 title: Set Up Continuous Integration and Delivery for SAP Cloud SDK
-description: SAP implements tooling for continuous delivery in project "Piper". The goal of project "Piper" is to substantially ease setting up continuous delivery in your project using SAP technologies. This tutorial shows how to use the General Purpose Pipeline of project "Piper" to implement CI/CD for an SAP Cloud SDK project.
+description: This tutorial shows how to use the General Purpose Pipeline of project "Piper" to implement CI/CD for an SAP Cloud SDK project.
 auto_validation: true
 time: 30
 tags: [tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
@@ -203,6 +203,8 @@ Congratulations! Jenkins will now scan your repository and trigger a build.
 The best way to get an overview of the build status is to open the job, navigate to the currently running build, and open it in the blue ocean UI of Jenkins.
 
 !![Jenkins Blue Ocean](jenkins-blue-ocean.png)
+
+The resulting pipeline should look as shown in the following screenshot.
 
 !![Pipeline](pipeline.png)
 
