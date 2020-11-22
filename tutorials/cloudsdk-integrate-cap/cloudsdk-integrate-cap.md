@@ -11,7 +11,7 @@ author_profile: https://github.com/MatKuhr
 ## Prerequisites
  - SAP Cloud Application Programming Model
  - Basic knowledge of Spring Boot and Java (optional)
- - An account on [cloud foundry](https://developers.sap.com/group.scp-1-get-ready.html)
+ - An account on [Cloud Foundry](group.scp-1-get-ready)
 
 ## Details
 ### You will learn
@@ -20,11 +20,13 @@ author_profile: https://github.com/MatKuhr
   - How to deploy an application to SAP Cloud Platform Cloud Foundry
   - How to create service that reads/writes business partners from S/4HANA and exposes them as SAP Cloud Application Programming Model
 
-SAP Cloud Application Programming Model enables you to quickly create business applications by allowing you to focus on your business domain. It offers a consistent end-to-end programming model for full-stack development on SAP Cloud Platform.
+[SAP Cloud Application Programming Model](https://cap.cloud.sap/docs/) enables you to quickly create business applications by allowing you to focus on your business domain. It offers a consistent end-to-end programming model for full-stack development on SAP Cloud Platform.
 
-However, this raises the question how this interacts and integrates with other SAP frameworks that SAP has introduced over the past year such as the SAP Cloud SDK.
+However, this raises the question how this interacts and integrates with other SAP frameworks that SAP has introduced over the past year such as the [SAP Cloud SDK](https://sap.github.io/cloud-sdk/).
 
 In particular, you will learn how to integrate the SAP Cloud SDK into the SAP Cloud Application Programming Model. And how the SAP Cloud SDK allows you to develop, extend and communicate with other SAP solutions.
+
+> Also check out the full documentation on [how the Cloud SDK integrates with CAP](https://sap.github.io/cloud-sdk/docs/java/guides/cap-sdk-integration).
 
 ---
 
@@ -157,6 +159,11 @@ Since your application is running on SAP Cloud Platform Cloud Foundry, include t
 <dependency>
     <groupId>com.sap.cloud.sdk.s4hana</groupId>
     <artifactId>s4hana-all</artifactId>
+</dependency>
+
+<dependency>
+  <groupId>com.sap.cds</groupId>
+  <artifactId>cds-integration-cloud-sdk</artifactId>
 </dependency>
 ```
 

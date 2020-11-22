@@ -11,8 +11,8 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 
 ## Next Steps
-- **Drivers and connectors for Python, Node.js, .NET, Java and others**: Write your [first application using advanced analytics](https://developers.sap.com/mission.xsa-analytics-advanced.html) or check sample applications using different drivers and languages [such as Node.js, Python ](https://developers.sap.com/group.hxe-tiny-world.html)
-- **Database clients**: Use a SQL client and the JDBC drivers to [connect to the database](https://developers.sap.com/tutorials/hxe-cj1-download-sql-client.html). Alternatively, use a plugin for Eclipse to connect to your SAP HANA, express edition [system database instance](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
+- **Drivers and connectors for Python, Node.js, .NET, Java and others**: Check sample applications using different drivers and languages [such as Node.js, Python ](https://developers.sap.com/group.hxe-tiny-world.html)
+- **Database clients**: Use a SQL client and the JDBC drivers to [connect to the database](https://developers.sap.com/tutorials/hana-clients-install.html).
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/hana.html)
 
 
@@ -236,6 +236,6 @@ Add the IP address followed by the name of the host, `hxehost`:
 
 
 ### Additional Information
-- **Drivers and connectors for Python, Node.js, .NET, Java and others**: Write your [first application using advanced analytics](https://developers.sap.com/mission.xsa-analytics-advanced.html) or check sample applications using different drivers and languages [such as Node.js, Python ](https://developers.sap.com/group.hxe-tiny-world.html)
-- **Database clients**: Use a SQL client and the JDBC drivers to [connect to the database](https://developers.sap.com/tutorials/hxe-cj1-download-sql-client.html). Alternatively, use a plugin for Eclipse to connect to your SAP HANA, express edition [system database instance](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
+- **Drivers and connectors for Python, Node.js, .NET, Java and others**: Check sample applications using different drivers and languages [such as Node.js, Python ](https://developers.sap.com/group.hxe-tiny-world.html)
+- **Database clients**: Use a SQL client and the JDBC drivers to [connect to the database](https://developers.sap.com/tutorials/hana-clients-install.html).
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/hana.html)

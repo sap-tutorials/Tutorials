@@ -153,6 +153,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
         ```
         name:              my-bookshop-srv
         requested state:   started
+        isolation segment: trial
         routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
         ```
 

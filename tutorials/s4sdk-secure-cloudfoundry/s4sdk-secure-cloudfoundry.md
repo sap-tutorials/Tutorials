@@ -8,7 +8,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
 ## Prerequisites
- - You completed all steps until [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-cloud-foundry-sample-application.html).
+ - You completed all steps until [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](s4sdk-cloud-foundry-sample-application).
 
 ## Details
 ### You will learn
@@ -33,7 +33,7 @@ On the other hand, the App Router is mainly responsible for managing authenticat
 
 The JWT s passed by the App Router to the underlying microservices so that they are freed up from this task. At the same time, these microservices can only be accessed with a valid JWT, hence, are protected from unauthenticated traffic.
 
-The JWT contains a signature that needs to be verifiable by every microservice to establish trust. Hence, every service require a key (client-secrets or public keys) to verify this signature and reject any requests with non-valid `JWTs`. Therefore, every service has to maintain a service binding to the XSUAA that provides this information for runtime verification (Figure 2). To enable this, every microservice binds to a dedicated XSUAA instance which writes this information into the `VCAP_SERVICES` environment variable which the microservices can use to verify any token's validity.
+The JWT contains a signature that needs to be verifiable by every microservice to establish trust. Hence, every service require a key (client-secrets or public keys) to verify this signature and reject any requests with non-valid JWTs. Therefore, every service has to maintain a service binding to the XSUAA that provides this information for runtime verification (Figure 2). To enable this, every microservice binds to a dedicated XSUAA instance which writes this information into the `VCAP_SERVICES` environment variable which the microservices can use to verify any token's validity.
 
 ![Provisioning view with XSUAA binding](Figure2-1.png)
 
@@ -98,7 +98,7 @@ We will let Cloud Foundry retrieve the App Router automatically on deployment. T
         - nodejs_buildpack
       env:
         TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.<region_id>.hana.ondemand.com'
-        destinations: '[{"name":"app-destination", "url":"<APPLICATION_URL>", "forwardAuthToken": true}]'
+        destinations: '[{"name":"app-destination", "url" :"<APPLICATION_URL>", "forwardAuthToken": true}]'
       services:
         - my-xsuaa
     ```
@@ -192,9 +192,13 @@ After logging in you should see the `HelloWorld` servlet which is now served by 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Protect your backend microservice)]
-After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. Therefore, we need to protect our java microservices as well so that they accept requests with valid `JWTs` for the current user only. In addition, we will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that we have configured previously using the `xs-security.json` file.
+After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. Therefore, we need to protect our java microservices as well so that they accept requests with valid JWTs for the current user only. In addition, you will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that we have configured previously using the `xs-security.json` file.
 
-In the following, we will use the security capabilities of the [SAP Java Buildpack](https://github.com/SAP/cloud-security-xsuaa-integration/tree/master/samples/sap-java-buildpack-api-usage) to protect the microservices.
+[OPTION BEGIN [TomEE]]
+
+**The following steps apply to the `TomEE` runtimes. For Spring please select the relevant tab at the top of this section.**
+
+In the following, you will use the security capabilities of the [SAP Java Buildpack](https://github.com/SAP/cloud-security-xsuaa-integration/tree/master/samples/sap-java-buildpack-api-usage) to protect the microservices.
 
 In your `application/src/main/webapp/WEB-INF/web.xml` file, add the following login configuration:
 
@@ -209,24 +213,24 @@ This enables authentication of requests using incoming OAuth authentication toke
 Additionally make sure to that the following `security-constraint` block is contained in your `web.xml` file:
 
 ```XML
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>Baseline Security</web-resource-name>
-            <url-pattern>/*</url-pattern>
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>*</role-name>
-        </auth-constraint>
-    </security-constraint>
+<security-constraint>
+    <web-resource-collection>
+        <web-resource-name>Baseline Security</web-resource-name>
+        <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+        <role-name>*</role-name>
+    </auth-constraint>
+</security-constraint>
 
-    <security-role>
-        <role-name>Display</role-name>
-    </security-role>
-    <!--
-    <security-role>
-        <role-name>Further Role Name</role-name>
-    </security-role>
-    -->
+<security-role>
+    <role-name>Display</role-name>
+</security-role>
+<!--
+<security-role>
+    <role-name>Further Role Name</role-name>
+</security-role>
+-->
 ```
 
 That way all endpoints of your application can be accessed by users with any of the role names specified in the `security-role` tags.
@@ -241,6 +245,94 @@ public class BusinessPartnerServlet extends HttpServlet {
 ```
 
 This will allow only users with the provided role to have access to the annotated endpoint. Compare for this the `xs-security.json` you created earlier to create the XSUAA service.
+
+[OPTION END]
+
+[OPTION BEGIN [Spring]]
+
+**The following steps apply to the Spring runtimes. For `TomEE` please select the relevant tab at the top of this section.**
+
+In the following, you will use the security capabilities of the [SAP CP Spring XSUAA Security Library](https://github.com/SAP/cloud-security-xsuaa-integration/tree/master/spring-xsuaa#setup-security-context-for-http-requests) to protect the microservices.
+
+In your applications `pom.xml` ensure the following dependency is present:
+
+```XML
+<dependency>
+    <groupId>com.sap.cloud.security.xsuaa</groupId>
+    <artifactId>xsuaa-spring-boot-starter</artifactId>
+</dependency>
+```
+
+This provides the necessary capabilities of the XSUAA library for Spring.
+Leverage them in setting up a `SecurityConfiguration`:
+
+```JAVA
+@Configuration
+@EnableWebSecurity(debug = true) // TODO "debug" may include sensitive information. Do not use in a production system!
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    XsuaaServiceConfiguration xsuaaServiceConfiguration;
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // session is created by approuter
+                .and()
+                .authorizeRequests()
+                .antMatchers("/*").authenticated()
+                .antMatchers("/*").hasAuthority("Display")
+                .anyRequest().denyAll()
+                .and()
+                .oauth2ResourceServer()
+                .jwt()
+                .jwtAuthenticationConverter(getJwtAuthenticationConverter());
+    }
+
+    /**
+     * Customizes how GrantedAuthority are derived from a Jwt
+     */
+    Converter<Jwt, AbstractAuthenticationToken> getJwtAuthenticationConverter() {
+        return new TokenAuthenticationConverter(xsuaaServiceConfiguration).setLocalScopeAsAuthorities(true);
+    }
+}
+```
+
+The above will require authentication via a JWT for all endpoints of your service.
+In addition all JWTs are required to contain the `Display` scope.
+
+Depending on your setup your integration tests may now fail if they are not authenticated.
+In that case leverage the XSUAA testing library to mock request authentication.
+
+1. Add the testing capabilities via the following dependency:
+
+    ```XML
+    <dependency>
+        <groupId>com.sap.cloud.security</groupId>
+        <artifactId>java-security-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+    ```
+
+1. Annotate your test class with `@TestPropertySource(properties = {"xsuaa.uaadomain=localhost", "xsuaa.xsappname=xsapp!t0815", "xsuaa.clientid=sb-clientId!t0815"})`
+
+1. Create a JWT for testing:
+
+  ```JAVA
+  @ClassRule
+  public static final SecurityTestRule rule = SecurityTestRule.getInstance(Service.XSUAA);
+
+  static String jwt = "Bearer " + rule.getPreconfiguredJwtGenerator()
+                .withLocalScopes("Display")
+                .createToken().getTokenValue();
+  ```
+
+1. Add the JWT in the authorization header of your test requests.
+
+[OPTION END]
+
 
 At this point you should now rebuild your application and push it to Cloud Foundry.
 

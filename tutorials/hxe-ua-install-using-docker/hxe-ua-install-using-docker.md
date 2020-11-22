@@ -9,7 +9,6 @@ time: 10
 ---
 ## Next Steps
 - [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html)
-- [How to download and install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
 
 ## Details
 ### You will learn
@@ -483,5 +482,4 @@ hdb_version
 
 ### Additional Information
 - [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html)
-- [Download and Install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
 -  [TCP/IP Ports of All SAP Products](https://help.sap.com/viewer/ports)
