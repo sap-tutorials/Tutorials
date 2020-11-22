@@ -258,6 +258,9 @@ Tracing can be helpful when debugging a problem or in identifying SQL statements
     ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'SYSTEM') SET ('sqltrace', 'trace') = 'on', ('sqltrace', 'tracefile') = 'database_overview', ('sqltrace', 'application') = 'sap_xsac_hrtt', ('sqltrace', 'user') = 'SYSTEM' WITH RECONFIGURE;
     ```
 
+    >Additional details can be found in the [Configuration Parameter Reference](https://help.sap.com/viewer/138dcf7d779543608917a2307a6115f2/2020_03_QRC/en-US/514ab38a2e574c85a70ebba80ff16d99.html#loio514ab38a2e574c85a70ebba80ff16d99__configHC_id_30).
+
+
 3. Press the refresh button on the database overview.
 
     ![database overview refresh](tracingShowOverview3.png)
@@ -280,7 +283,6 @@ Tracing can be helpful when debugging a problem or in identifying SQL statements
     >
     >![SQL Trace Dialog](SQLTrace.png)
 
-
 5. Examine the trace file.
 
     ![Open Trace File](openTrace.png)
@@ -293,7 +295,7 @@ Tracing can be helpful when debugging a problem or in identifying SQL statements
 
 
 
-6. If you are unsure where to find a trace file, a view that shows all the trace files is available.
+6. If you are unsure where to find a trace file, choose **Show Files**.
 
     ![Show Files](showFiles.png)
 

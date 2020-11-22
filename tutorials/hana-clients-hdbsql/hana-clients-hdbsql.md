@@ -21,7 +21,7 @@ HDBSQL is used in this tutorial as it is part of the SAP HANA client install.  H
 
 [ACCORDION-BEGIN [Step 1: ](Connect to SAP HANA using hdbsql)]
 
-This section demonstrates how to connect to a SAP HANA instance using [HDBSQL](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/2.4/en-US/c22c67c3bb571014afebeb4a76c3d95d.html) from the SAP HANA client installation.
+This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/c22c67c3bb571014afebeb4a76c3d95d.html) from the SAP HANA client installation.
 
 1. Copy and paste the following command to see the command line options and press the space bar to advance though the information.  
 
@@ -44,7 +44,7 @@ This section demonstrates how to connect to a SAP HANA instance using [HDBSQL](h
         hdbsql -e -n 69964be8-39e8-4622-9a2b-ba3a38be2f75.hana.canary-eu10.hanacloud.ondemand.com:443 -u DBADMIN -p your_password
         ```
 
-        > The HANA Cloud instance can be configured to enable applications running from outside the SAP Cloud Platform to connect.  The current setting is shown in the screenshot below.  
+        > The HANA Cloud instance can be configured to enable applications running from outside the SAP Cloud Platform to connect.  The current setting is shown in the landscape tool in the screenshot below.  An example of configuring this setting is shown in [Allow connections to SAP HANA Cloud instance from selected IP addresses — using the command line](https://blogs.sap.com/2020/10/30/allow-connections-to-sap-hana-cloud-instance-from-selected-ip-addresses-using-the-command-line/).
 
         ![screenshot showing the allowlist](allowlist.png)
 
@@ -96,7 +96,7 @@ This section demonstrates how to connect to a SAP HANA instance using [HDBSQL](h
 
 [ACCORDION-BEGIN [Step 2: ](Create user and schema)]
 
-In this section, create a user named `USER1`.  `USER1` will be the owner of the tables that will be created in a subsequent section and will be used to connect to the database.
+This step will create a user named `USER1`.  `USER1` will be the owner of the tables that will be created in a subsequent steps and will be used to connect to the database.
 
 On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` `hdbsql` option.  This enables multiple commands to be pasted at one time and does not require each result to be exited by pressing q.  
 
@@ -151,7 +151,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     \q
     hdbuserstore
     ```
-    `hdbuserstore` is included with the install of the SAP HANA database clients.
+    `hdbuserstore` is included with the install of the SAP HANA client.
 
 2. Using `hdbuserstore`, specify a key named `USER1UserKey` that has the host, port and credentials.  Details on where to find these values are covered in the third and fifth steps of the [first tutorial](hana-clients-choose-hana-instance) in this mission.
 
@@ -396,7 +396,7 @@ DROP USER USER1 CASCADE;
 > ---
 
 
-> HDBSQL can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/2.4/en-US/6097e699826343d0879244185d680a0d.html) in three different modes; interactive, non-interactive, and batch.  An example of each is shown below.
+> HDBSQL can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/6097e699826343d0879244185d680a0d.html) in three different modes; interactive, non-interactive, and batch.  An example of each is shown below.
 > ```SQL
 > SELECT * FROM HOTEL.CITY; -- interactive
 > hdbsql -attemptencrypt -U USER1UserKey "SELECT * FROM HOTEL.CITY"; -- non-interactive
