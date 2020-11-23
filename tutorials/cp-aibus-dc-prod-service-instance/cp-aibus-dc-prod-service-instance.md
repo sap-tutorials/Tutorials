@@ -1,6 +1,6 @@
 ---
 title: Create Service Instance for Document Classification with Customer Account
-description: Create a service instance and the associated service keys for Document Classification, one of the SAP AI Business Services, using the SAP Cloud Platform cockpit.
+description: Create a service instance and the associated service key for Document Classification, one of the SAP AI Business Services, using the SAP Cloud Platform cockpit.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to check your Document Classification entitlements
   - How to create a service instance of Document Classification
-  - How to create service keys for your service instance
+  - How to create a service key for your service instance
 
 This tutorial is intended for productive SAP Cloud Platform accounts. Make sure that you have an SAP Cloud Platform global account and fulfill the prerequisites of this tutorial. If you don't have a global account yet, refer to this [guide](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/82f9ff522f754e26ae89e0cd7ec7aa11.html#loioa71a081b39e343e097046bf487f57af3).
 
@@ -38,18 +38,20 @@ Next, access your subaccount that will be used throughout the tutorial. Therefor
 >If you don't have a subaccount or you want to create a new one, follow the procedure outlined [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/05280a123d3044ae97457a25b3013918.html).
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 2: ](Check your entitlements)]
 
-To use Document Classification, you need to make sure that your subaccount is entitled to use the service.
+To use Document Classification, you need to make sure that your account is properly configured.
 
-Click **Entitlements** on the navigation side bar and search for `Document Classification` in your list of entitlements. If you find the service in the list, proceed with the next step.
+1. On the navigation side bar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
+
+2. Search for `Document Classification`. ***If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
 
 ![Check Entitlements](check-entitlements.png)
 
-In case you do not find the service in the list, proceed as follows:
+***ONLY if you DO NOT find the service in your list, proceed as follows:***
 
   1.  Click **Configure Entitlements**.
 
@@ -133,9 +135,9 @@ You have successfully created a service instance for Document Classification.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Create service keys)]
+[ACCORDION-BEGIN [Step 6: ](Create service key)]
 
-The last step before you can finally use the service is to create service keys for your newly created service instance.
+The last step before you can finally use the service is to create a service key for your newly created service instance.
 
 Therefore, access your service instance by clicking on its name.
 
@@ -149,7 +151,7 @@ In the dialog, proceed as follows:
 
   1.  Enter `dc-service-key` as the name for your service key. Leave the Configuration Parameters (JSON) box empty
 
-  2.  Click **Save** to create the service keys.
+  2.  Click **Save** to create the service key.
 
     ![Create Service Key Dialog](create-service-key-name.png)
 

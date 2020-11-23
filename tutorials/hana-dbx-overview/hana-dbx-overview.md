@@ -24,11 +24,17 @@ The SAP HANA database explorer  is a web-based tool for browsing and working wit
 
 ![database explorer](dbx.png)
 
+> The SAP HANA Client install provides a text based tool named `hdbsql` that can used to query an SAP HANA database.  For additional details see [Use Clients to Query an SAP HANA Database](https://developers.sap.com/mission.hana-cloud-clients.html).
+
 The SAP HANA database explorer can be opened from multiple locations as shown below:
 
 * From the SAP Cloud Platform Cockpit  
 
     ![opening the SAP HANA database explorer from the on-premise SAP HANA Cockpit](open-dbx-from-hana-cloud.png)
+
+* From the landscape tool  
+
+    ![opening the SAP HANA database explorer from landscape tool](from-directory.png)
 
 * From the SAP HANA cockpit  
 
