@@ -2,7 +2,7 @@
 title: Perform Actions On Cards To Support Your Business Case
 description: Create a card that understands the contact information in a card and provides contextual actions.
 auto_validation: true
-time: 10
+time: 20
 primary_tag: products>sap-mobile-cards
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
 author_name: Sandeep TDS
