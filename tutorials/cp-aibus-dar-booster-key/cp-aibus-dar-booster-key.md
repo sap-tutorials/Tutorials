@@ -80,11 +80,13 @@ You have successfully used the booster **Set up account for Data Attribute Recom
 
     >If you face any issue with the booster **Set up account for Data Attribute Recommendation**, you can alternatively follow the steps in [Create Service Instance for Data Attribute Recommendation](cp-aibus-dar-service-instance) to create the service key for Data Attribute Recommendation manually.
 
+    You are now all set to [Set Up the SDK for Data Attribute Recommendation](cp-aibus-dar-sdk-setup) and [Use the SDK for Data Attribute Recommendation](cp-aibus-dar-sdk-usage). Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
+
 [VALIDATE_1]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Access service instance and service key)]
+[ACCORDION-BEGIN [Step 4: ](Access service instance and service key (optional))]
 
 > This is an optional step. Use it only if you want to access the service instance and service key, you created with the **Set up account for Data Attribute Recommendation** booster, without having to run it once again.
 
@@ -110,7 +112,7 @@ Do the following to access your service instance and service key, without having
 
     !![Service Key](service-key.png)
 
-Congratulations, you have completed this tutorial. You are now all set to [Set Up the SDK for Data Attribute Recommendation](cp-aibus-dar-sdk-setup) and [Use the SDK for Data Attribute Recommendation](cp-aibus-dar-sdk-usage).
+Congratulations, you have completed this tutorial.
 
 [DONE]
 [ACCORDION-END]
