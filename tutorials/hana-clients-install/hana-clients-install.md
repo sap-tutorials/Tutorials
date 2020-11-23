@@ -21,7 +21,11 @@ This tutorial will demonstrate how to install the SAP HANA client.  The next tut
 
 [ACCORDION-BEGIN [Step 1: ](The SAP HANA Client)]
 
-The SAP HANA client provides a set of utilities and drivers to connect to and query a SAP HANA database from multiple programming APIs, such as Node.js, Python or Java.  For a complete list, see [SAP HANA Client Interface Programming Reference](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US).  
+The SAP HANA client provides a set of utilities and drivers to connect to and query a SAP HANA database from multiple programming APIs, such as Node.js, Python or Java as shown below.  
+
+![drivers](drivers.png)  
+
+For a complete list, see [SAP HANA Client Interface Programming Reference](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US).  
 
 For a list of newly added features, see [SAP HANA Client Interfaces (New and Changed)](https://help.sap.com/viewer/42668af650f84f9384a3337bcd373692/latest/en-US/cfd0b10e42a047c7bc8d6135dc6b9f4c.html), [New and Changed Features in the SAP HANA Client](https://help.sap.com/viewer/79ae9d3916b84356a89744c65793b924/latest/en-US), or the [release notes](https://launchpad.support.sap.com/#/notes/2937532).
 
