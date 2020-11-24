@@ -1,6 +1,6 @@
 ---
 title: Set Up Account for Document Information Extraction and Get Service Key
-description: Get access to the service Swagger UI using a booster in the SAP Cloud Platform trial cockpit that automatically creates a service instance and the associated service key for Document Information Extraction, one of the SAP AI Business Services in SAP Cloud Platform.
+description: Get access to the service Swagger UI using a booster in the SAP Cloud Platform trial cockpit that automatically creates a service instance, and the associated service key for Document Information Extraction.
 auto_validation: true
 time: 5
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
