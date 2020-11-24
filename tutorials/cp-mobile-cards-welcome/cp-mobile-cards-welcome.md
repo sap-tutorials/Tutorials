@@ -18,7 +18,7 @@ author_profile: https://github.com/shahchetali
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get familiar with real world use case)]
+[ACCORDION-BEGIN [Step 1: ](The real-world use case)]
 
 An organisation wants to share a welcome message to a new employee. Upon successful authentication in the SAP Mobile Cards app, the new employee sees a welcome card. In this card, the organisation shows basic details to help the employee have a great first day. This card is available to the user without the user having to subscribe to the card.
 
@@ -27,7 +27,7 @@ Welcome Cards are [Single Instance Cards](https://help.sap.com/doc/f53c64b93e514
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create A Welcome Card using Boosters)]
+[ACCORDION-BEGIN [Step 2: ](Create welcome card using Boosters)]
 
 SAP Mobile Cards can be created in multiple ways. In this step, you will create a card using [SAP Cloud Platform Boosters](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fb1b56148f834749a2bf51127421610b.html?q=Boosters), which are sets of guided interactive steps which helps you to achieve specific goals.
 
@@ -108,7 +108,7 @@ Upon successful creation you will see a success message.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](View the Welcome Card in Mobile Cards Client)]
+[ACCORDION-BEGIN [Step 3: ](View card on your mobile device)]
 
 >Make sure you are choosing the right device platform tab ( **Android** or **iOS** ) **above**.
 
