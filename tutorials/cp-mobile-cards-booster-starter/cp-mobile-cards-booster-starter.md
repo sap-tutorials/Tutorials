@@ -22,7 +22,7 @@ author_profile: https://github.com/sandeep-tds
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get Familiar With The Real World Use Case)]
+[ACCORDION-BEGIN [Step 1: ](The real-world use case)]
 
 Your are a supplier relationship manager. As a part of your job you are required to frequently interact with and even visit the suppliers. Since the list of suppliers keeps changing from month to month and product to product, you find it difficult to store the information of active suppliers on your mobile phone.
 
@@ -33,7 +33,7 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create A Contact Card Using Boosters)]
+[ACCORDION-BEGIN [Step 2: ](Create contact card using Boosters)]
 
 1. Log into your [SAP CP Trial account](https://account.hanatrial.ondemand.com)
 
@@ -75,7 +75,7 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Open The Card In Mobile Services Cockpit)]
+[ACCORDION-BEGIN [Step 3: ](Open card in Mobile Services Cockpit)]
 
 1. Click **Launch the Mobile Services Cockpit** to open the mobile services cockpit where the *Supplier Contact Card* has been deployed.
 
@@ -98,7 +98,7 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](View The Supplier Contact Card On Your Mobile Device)]
+[ACCORDION-BEGIN [Step 4: ](View card on your mobile device)]
 
 >Make sure you are choosing the right device platform tab ( **Android** or **iOS** ) **above**.
 
