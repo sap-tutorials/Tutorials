@@ -11,7 +11,7 @@ time: 50
 
 
 ## Prerequisites
-- You've installed [Node.js](https://nodejs.org/en/). Use latest long-term support (LTS) version. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
+- You've installed [Node.js](https://nodejs.org/en/). Use latest long-term support (LTS) version. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
 - You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
 - (For Windows users only) You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#sqlite) in the CAP documentation.
 - You've installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
@@ -43,7 +43,7 @@ Before you start, make sure that you've completed the prerequisites.
 
     >If there's an older `@sap/cds` package already installed on the machine, you may have to remove it first; if so, you'll be instructed to do so.
 
-    >In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
+    >In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
 
 3. To verify that the installation was successful, run `cds` without arguments:
 
