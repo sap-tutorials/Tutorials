@@ -1,6 +1,6 @@
 ---
 title: Choose an SAP HANA Database
-description: Learn about SAP HANA Cloud and SAP HANA, express edition and choose one that will be used with the SAP HANA database clients in subsequent tutorials.
+description: Learn about SAP HANA Cloud and SAP HANA, express edition and choose one that will be used with the SAP HANA client interfaces in subsequent tutorials.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud]
@@ -16,7 +16,7 @@ primary_tag: products>sap-hana
   - How to create an instance of SAP HANA Cloud or SAP HANA, express edition
   - How to connect to a SAP HANA Cloud or an SAP HANA, express edition database
 
-This tutorial will provide guidance on setting up an instance of [SAP HANA](https://www.sap.com/products/hana.html) running in the cloud or on-premise so that it can then be connected to using a few of the [SAP HANA database clients](https://help.sap.com/viewer/product/SAP_HANA_CLIENT/latest/en-US).  
+This tutorial will provide guidance on setting up an instance of [SAP HANA](https://www.sap.com/products/hana.html) running in the cloud or on-premise so that it can then be connected to using a few of the [SAP HANA Client](https://help.sap.com/viewer/product/SAP_HANA_CLIENT/latest/en-US) interfaces.  
 
 For more information on SAP HANA, consult [What Is SAP HANA](https://help.sap.com/viewer/eb3777d5495d46c5b2fa773206bbfb46/latest/en-US/d3b1adcdbb571014a93eff11ad9a1d89.html).
 
@@ -90,15 +90,15 @@ Here are a few differences between SAP HANA Cloud and an on-premise version:
     - [https://help.sap.com/viewer/product/CP/Cloud/en-US](https://help.sap.com/viewer/product/CP/Cloud/en-US)
 
 
-2. Open the SAP HANA database explorer by choosing **Open In > Database Explorer**.
+2. Open the SAP HANA database explorer by choosing **Actions > Open SAP HANA Database Explorer** from the landscape tool.
 
-    ![Open with DBX](OpenWithDBExplorer.png)
+    ![Open with DBX](from-directory.png)
 
     You will be asked to enter the credentials for the database.  Enter **DBADMIN** and the password that was specified when the instance was created.
 
     ![authentication for dbx](dbx-authenticate.png)
 
-    The SAP HANA database explorer provides the ability to browse catalog objects and execute SQL statements from the SQL console.  For more information, see [Getting Started With the SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US).  
+    The SAP HANA database explorer provides the ability to browse catalog objects and execute SQL statements from the SQL console.  For more information, see the tutorial group [Get Started with the SAP HANA Database Explorer](https://developers.sap.com/group.hana-cloud-get-started.html) and SAP Help Portal topic [SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US).  
 
 
 3. Open a SQL console by clicking the **Open SQL Console** toolbar item in the top-left of the screen.  
@@ -144,7 +144,7 @@ Congratulations! You have connected to SAP HANA Cloud and performed a few querie
 
 SAP provides a free streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/cmp/td/sap-hana-express-edition.html).
 
-SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides virtual machine images that can be run on Microsoft Windows, macOS and Linux machines as well as binary installs as described at [SAP HANA, express edition - Implement](https://help.sap.com/viewer/product/DRAFT/SAP_HANA,_EXPRESS_EDITION/latest/en-US?task=implement_task).  In terms of availability, a choice between either the server or the server + applications can be made.  The applications include the SAP HANA cockpit, the SAP HANA database explorer and the SAP HANA Web IDE.  Further details about a specific version can be found in the [release notes](https://search.sap.com/search.html?t=%22SAP%20HANA%2C%20express%20edition%202.0%20SPS%200%25%20Revision%22&n=1&s=boost&src=defaultSourceGroup).    
+SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides virtual machine images that can be run on Microsoft Windows, macOS and Linux machines as well as binary installs as described at [SAP HANA, express edition - Implement](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US?task=implement_task).  In terms of availability, a choice between either the server or the server + applications can be made.  The applications include the SAP HANA cockpit, the SAP HANA database explorer and the SAP HANA Web IDE.  Further details about a specific version can be found in the [release notes](https://search.sap.com/search.html?t=%22SAP%20HANA%2C%20express%20edition%202.0%20SPS%200%25%20Revision%22&n=1&s=boost&src=defaultSourceGroup).    
 
 Choose an option and proceed to install SAP HANA, express edition.  The server-only install, which requires less memory, is sufficient to complete the tutorials in this mission.  Be sure to note the SAP HANA database master password, as it will be needed later for connecting.
 

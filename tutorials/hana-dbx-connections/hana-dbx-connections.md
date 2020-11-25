@@ -29,13 +29,9 @@ SQL consoles are associated with a database connection.
 
 Databases defined in the SAP Cloud Platform cockpit or the SAP HANA cockpit can be opened in the SAP HANA database explorer.
 
-1.  From the SAP Cloud Platform Cockpit or the SAP HANA Cockpit, choose to open the **SAP HANA Database Explorer**.  
+1.  From the landscape tool, choose **Open SAP HANA Database Explorer**.  
 
     ![Open in the database explorer](open-in-dbx.png)
-
-    or
-
-    !![Open from cockpit](open-from-cockpit.png)
 
     >You may be prompted to enter database login credentials at this point.  Enter the DBADMIN or SYSTEM user credentials that were set during the SAP HANA Cloud trial or express edition setup process, or the credentials provided by your database administrator.
 
@@ -57,13 +53,13 @@ SAP HANA Cockpit databases can be grouped together.  This enables SQL statements
 
 ![Run SQL on Multiple Databases](run-on-multiple-hxe.png)
 
-1. With SAP HANA Cloud, all databases created in a space are placed in a group.  As seen below, the space name is dev.  The SAP HANA Cloud Cockpit contains in its URL, a parameter that indicates the unique name (GUID) for the space.  
+1. With SAP HANA Cloud, all databases created in a space are placed in a group.  As seen below, the space name is dev.  The SAP HANA Cloud Cockpit, or the landscape tool, contain in their URL, a parameter that indicates the unique name (GUID) for the space.  
 
     ```
     https://host/trial/#/globalaccount/GUID/subaccount/GUID/org/GUID/space/GUID/hanaCloud
     ```   
 
-    In the SAP HANA Cloud trial, only one SAP HANA Cloud instance can be created.
+    >In the SAP HANA Cloud trial, only one SAP HANA Cloud instance can be created.
 
     ![group by space](group-by-space.png)
 
@@ -115,7 +111,7 @@ Databases can be added directly to the SAP HANA database explorer.  To connect t
 
     ![encrypted connection](encrypted.png)
 
-    The host and port values can be copied from the SAP HANA Cloud Platform Cockpit.  
+    The host and port values can be copied from the landscape tool.  
 
     !![copy host and port](host-and-port.png)
 
