@@ -93,7 +93,7 @@ Login to the administration console of SAP Cloud Platform Identity Authenticatio
 
 The URL therefore is: **`https://[TENANT_ID].accounts.ondemand.com/admin`**
 
->Tenant ID is an automatically generated ID by the system. The first administrator created for the tenant receives an activation e-mail with a URL in it. This URL contains the tenant ID. For more information have a look at the [Product Page](https://www.sap.com/products/cloud-platform/capabilities/foundation.identity-authentication.html#identity-authentication).
+>Tenant ID is an automatically generated ID by the system. The first administrator created for the tenant receives an activation e-mail with a URL in it. This URL contains the tenant ID. For more information have a look at [SAP Cloud Identity Services - Identity Authentication](https://discovery-center.cloud.sap/serviceCatalog/identity-authentication) in the SAP Discovery Center.
 
 
 [DONE]
