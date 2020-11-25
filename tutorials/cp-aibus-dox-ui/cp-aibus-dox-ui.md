@@ -1,5 +1,5 @@
 ---
-title: Use Machine Learning to Extract Information from Documents
+title: Use Machine Learning to Extract Information from Documents with Document Information Extraction Trial UI
 description: Get machine learning model predictions for the documents you upload using the Document Information Extraction Trial UI.
 auto_validation: true
 time: 15
