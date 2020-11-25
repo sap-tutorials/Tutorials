@@ -1,6 +1,6 @@
 ---
 title: Set Up Account for Data Attribute Recommendation and Download Postman Templates
-description: Use the booster for Data Attribute Recommendation to automatically create a service instance and to download Postman environment and collection templates for Data Attribute Recommendation, one of the SAP AI Business Services, using the SAP Cloud Platform trial cockpit.
+description: Use a booster in the SAP Cloud Platform trial cockpit to automatically create a service instance, and download Postman environment and collection templates for Data Attribute Recommendation.
 auto_validation: true
 time: 5
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]

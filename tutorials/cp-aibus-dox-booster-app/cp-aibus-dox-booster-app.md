@@ -1,6 +1,6 @@
 ---
 title: Set Up Account for Document Information Extraction and Go to Application
-description: Get access to the Document Information Extraction Trial UI using a booster in the SAP Cloud Platform trial cockpit that automatically creates a service instance and subscribes you to the UI application for Document Information Extraction, one of the SAP AI Business Services in SAP Cloud Platform.
+description: Get access to the Document Information Extraction Trial UI using a booster in the SAP Cloud Platform trial cockpit that automatically creates a service instance, and subscribes you to the UI application for Document Information Extraction.
 auto_validation: true
 time: 5
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
@@ -82,19 +82,18 @@ You have successfully used the booster **Set up account for Document Information
 
 >If you face any issue with the booster **Set up account for Document Information Extraction**, you can alternatively follow the steps in [Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub) to subscribe to the user interface application manually.
 
+You are now all set to [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-ui). Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
+
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Access subscription)]
+[ACCORDION-BEGIN [Step 4: ](Access subscription (optional))]
 
 > This is an optional step. Use it only if you want to access the subscription to the Document Information Extraction Trial UI, you've done with the **Set up account for Document Information Extraction** booster, without having to run it once again.
 
 Do the following to access your subscription to the Document Information Extraction Trial UI, without having to run the **Set up account for Document Information Extraction** booster once again:
 
-SAP Cloud Platform creates interactive guided boosters to automate trial cockpit steps, so users can save time when trying out the services.
-
-Now, you will use the **Set up account for Data Attribute Recommendation** booster to automatically assign entitlements, update your subaccount, create a service instance and the associated service key for Data Attribute Recommendation.
 
 1. Close the booster **Success** dialog box.
 
@@ -120,8 +119,7 @@ Now, you will use the **Set up account for Data Attribute Recommendation** boost
 
     !![UI application](subscriptions-tile.png)
 
-
-Congratulations, you have completed this tutorial. You are now all set to [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-ui).
+Congratulations, you have completed this tutorial.
 
 [DONE]
 [ACCORDION-END]

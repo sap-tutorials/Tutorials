@@ -192,7 +192,7 @@ namespace dotNETQuery
 
     >Note that the address, port, UID and PWD will be retrieved from the `hdbuserstore`.   
 
-    The above app makes use of some of the SAP HANA client .NET Core driver  methods, such as [HanaConnection](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/469e137b6d611014ac27bffe40be2f18.html).  Connection details for this class can be found at [Microsoft ADO.NET Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/469e137b6d611014ac27bffe40be2f18.html).
+    The above app makes use of some of the SAP HANA client .NET Core driver  methods, such as [HanaConnection](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/469e137b6d611014ac27bffe40be2f18.html).  Connection details for this class can be found at [Microsoft ADO.NET Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/469e137b6d611014ac27bffe40be2f18.html).  Further .NET Core API details can be found in the [.NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=netcore-3.1).
 
 5.  Run the app:
 

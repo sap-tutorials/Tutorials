@@ -43,9 +43,11 @@ Next, access your subaccount that will be used throughout the tutorial. Therefor
 
 [ACCORDION-BEGIN [Step 2: ](Check your entitlements)]
 
-To use Document Classification, you need to make sure that your subaccount is entitled to use the service.
+To use Document Classification, you need to make sure that your account is properly configured.
 
-Click **Entitlements** on the navigation side bar and search for `Document Classification` in your list of entitlements. ***If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
+1. On the navigation side bar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
+
+2. Search for `Document Classification`. ***If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
 
 ![Check Entitlements](check-entitlements.png)
 
