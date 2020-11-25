@@ -1,6 +1,6 @@
 ---
 title: Set Up Account for Document Information Extraction and Go to Application
-description: Get access to the Document Information Extraction Trial UI using a booster in the SAP Cloud Platform trial cockpit that automatically creates a service instance and subscribes you to the UI application for Document Information Extraction, one of the SAP AI Business Services in SAP Cloud Platform.
+description: Get access to the Document Information Extraction Trial UI using a booster in the SAP Cloud Platform trial cockpit that automatically creates a service instance, and subscribes you to the UI application for Document Information Extraction.
 auto_validation: true
 time: 5
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
