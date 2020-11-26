@@ -11,7 +11,7 @@ primary_tag: products>sap-cloud-platform--abap-environment
 - You have done one of the following:
     - Created an entitlement to [SAP Cloud Platform, ABAP Environment, Trial Version](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/)
     - Created an entitlement to [SAP Cloud Platform, ABAP Environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d60#14a68d825.html), customer licensed version
-- **IMPORTANT**: If you are using the licensed version, , then this tutorial is part of the mission [Connect Your On-Premise System with SAP Cloud Platform, ABAP Environment](https://developers.sap.com/mission.abap-env-connect-onpremise.html). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work.
+- **IMPORTANT**: If you are using the licensed version, then this tutorial is part of the mission [Connect Your On-Premise System with SAP Cloud Platform, ABAP Environment](https://developers.sap.com/mission.abap-env-connect-onpremise.html). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work. If you are using the trial version, we have provided mock data inside the class.
 
 
 ## Details
