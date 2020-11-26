@@ -37,8 +37,11 @@ It's now time to switch to SAP HANA as a database.
         }
       }
     ```
+
     >`kind:sql` declares the requirement for an SQL database. It evaluates to `sqlite` in the `development` profile (active by default), while in `production` it equals `hana`. This way you don't need to modify this file if you want to switch between the two databases.
-    `
+
+    > Don't edit the `gen/db/package.json` file.
+
 3. In the command line add the SAP HANA driver as a dependency to your project:
 
 ```Shell/Bash
