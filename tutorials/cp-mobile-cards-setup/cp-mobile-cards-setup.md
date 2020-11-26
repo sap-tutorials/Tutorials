@@ -208,7 +208,9 @@ In the next step, you will scan the respective QR code to connect your mobile ap
 
 You've now connected your SAP Mobile Cards client to your SAP Cloud Platform account.
 
-You can now proceed to [this tutorial](cp-mobile-bas-setup), in which you will set up your Business Application Studio to build SAP Mobile Cards.
+You can automate the set up covered in this tutorial by using SAP Cloud Platform Boosters. You can find the details in the [starter mission of SAP Mobile Cards](https://developers.sap.com/mission.mobile-cards-get-started.html). 
+
+You can now proceed to the [next tutorial](cp-mobile-bas-setup), which will guide you to set up your Business Application Studio to build SAP Mobile Cards.
 
 [DONE]
 [ACCORDION-END]
