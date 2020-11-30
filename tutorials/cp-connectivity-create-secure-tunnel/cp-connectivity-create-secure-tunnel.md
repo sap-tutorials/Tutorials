@@ -43,7 +43,7 @@ Before you can access data from the Cloud Connector in an application on SAP Clo
     |  **Subaccount User**   | Email address of your subaccount user. You can find it in the `User Information`. |
     |  **Password**          | Password of your subaccount user                                        |
     |  **Location ID**       | not required in this tutorial                                           |
-    > You can find the `User Information` here:
+    > You can find the `User Information` in the upper right corner of the cockpit:
     >
     >  ![User Information](step-01-Find-Trial-ID-003.png)
 
