@@ -54,11 +54,17 @@ In the service key you created for Document Classification in the previous tutor
 
 In this step, you can upload documents and get the service classification results.
 
-In the Document Classification trial, there is a pre-trained model available for all users. The model can classify product descriptions into categories of product types. Feel free to use and upload any PDF documents you want.
+In the Document Classification trial, there is a pre-trained model available for all users. The model predicts whether a document is an invoice, purchase order or payment advice. Feel free to use and upload any of such PDF documents.
 
->As an alternative to uploading your own document to the service, you can use the following file which is a product description of SAP Data Intelligence (right click on the link, then click ***Save link as*** to download the files locally):
+>As an alternative to uploading your own documents to the service, you can use the following sample files (right click on the link, then click ***Save link as*** to download the files locally):
 
->[SAP Data Intelligence](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dc-swagger-ui/data/data-intelligence.pdf)
+> - [Invoice](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/bejing_2008.pdf) ("Beijing Olympics logo" by sha3bi1Beijing)
+> - [Payment Advice](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/flickr.pdf) ("Logo of Flickr" by `topgold`)
+> - [Purchase Order](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/guru_shop.pdf) ("Logo Guru Shop" by `Carlo Armanni`)
+> - [Other](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/twitter.pdf) ("Logo of Twitter" by `topgold`)
+
+>Please note that those files are fake invoices, purchase orders, payment advices and other business documents for demo purposes. Logos were downloaded from search.creativecommons.org, all licensed under CC BY 2.0. Logos were embedded in the documents unaltered. The creators of the logos are denoted in brackets.
+
 
 In Swagger UI, open the group `classification`. Then click the second endpoint, called `/classification/models/{modelName}/versions/{modelVersion}/documents`. The request is marked by `POST` which indicates that data is sent to the service.
 
@@ -112,13 +118,15 @@ Finally, click **Execute** to request the classification results.
 
 Once you have executed the request, you will receive a response from the server which you find under `Response body`, as in the previous step. This time, the response includes the classification results for every characteristic by which the document is classified.
 
-The only characteristic in this model is `PRODUCT_TYPE`. For this characteristic, the service provides a list of results. Each result includes a `label` which represents the predicted value plus a `score` which represents how confident the service is about the prediction. The whole list of results is ranked by the `score`, in other words, the most probable value comes first.
+The only characteristic in this model is `document_type`. The possible types of the characteristic are invoice, payment advice and purchase order. The `label` indicates the type and the associated `score` represents how confident the service is about the prediction - the higher value the more confident the model is.
+
+In the screenshot below, the sample purchase order was used.
 
 ![Classification Result](classification-result-response.png)
 
-Go ahead and upload other PDF documents to see the categories outcome. Just note that there is a limited amount of documents that you can classify using a trial account. Find the trial account input limits for Document Classification [here](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US/baeb1924c84343158f483d82b21bd6a4.html).
+Go ahead and upload other PDF documents to see the outcome. Just note that there is a limited amount of documents that you can classify using a trial account. Find the trial account input limits for Document Classification [here](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US/baeb1924c84343158f483d82b21bd6a4.html).
 
-Congratulations, you have now successfully used our machine learning model to get category predictions for the documents you uploaded to Document Classification.
+Congratulations, you have now successfully used our machine learning model to classify business documents, namely invoice, payment advices and purchase orders.
 
 [DONE]
 [ACCORDION-END]
