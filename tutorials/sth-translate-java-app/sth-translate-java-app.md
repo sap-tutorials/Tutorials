@@ -3,7 +3,7 @@ title: Translate a Java App
 description: Use SAP Translation Hub to translate the UI texts for a Java app that you develop in Eclipse.
 auto_validation: true
 primary_tag: products>sap-translation-hub
-tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, topic>java ]
+tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, topic>java, tutorial>license ]
 time: 15
 ---
 

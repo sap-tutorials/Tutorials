@@ -15,6 +15,12 @@ time: 20
 
 
 ## Details
+### You will learn  
+- How to create an SAP Blank application in SAP Cloud Platform Rapid Application Development.
+- How to create the application data model using the SAP OData Model Creator.
+- How to consume an OData service using the SAP OData Connector.
+- How to deploy the application to SAP Cloud Platform.
+
 You can build business applications for the SAP Cloud Platform Cloud Foundry environment using SAP Cloud Platform Rapid Application Development by Mendix, without needing to write code.
 
 This tutorial takes you through the basics of development in the Mendix Desktop Modeler and teaches you how to build a simple sales order application consuming the [`GWSAMPLE_BASIC service`](https://help.sap.com/viewer/68bf513362174d54b58cddec28794093/7.51.4/en-US/59283fc4528f486b83b1a58a4f1063c0.html) from the SAP Gateway Demo System (ES5).
@@ -23,15 +29,10 @@ This tutorial also showcases the [SAP OData Model Creator](https://appstore.home
 
 **Before starting this tutorial, make sure you have followed the prerequisites**.
 
->This tutorial is applicable if you have a productive Neo environment, but assumes that you are using a trial Cloud Foundry environment.
+>This tutorial assumes that you are using a trial Cloud Foundry environment, but it is applicable also to productive CF environment with minor changes.  
 &nbsp;
-> The Mendix Desktop Modeler, for building your application, is available for Windows platforms only.
+>The Mendix Desktop Modeler, for building your application, is available for Windows platforms only.
 
-### You will learn  
-- How to create an SAP Blank application in SAP Cloud Platform Rapid Application Development.
-- How to create the application data model using the SAP OData Model Creator.
-- How to consume an OData service using the SAP OData Connector.
-- How to deploy the application to SAP Cloud Platform.
 
 
 ---

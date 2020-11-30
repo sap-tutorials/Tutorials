@@ -109,7 +109,7 @@ The [Kyma environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0e
 
 Which environment is right for you?  That's a good question.  Each environment has it's strengths, and some services are only available in one of the environments.  Take a look at all of them before making a decision, and use our [online map to guide you](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html).
 
-SAP offers a [free trial of SAP Cloud Platform](https://account.hanatrial.ondemand.com/register) for all environments.
+SAP offers a [free trial of SAP Cloud Platform](hcp-create-trial-account) for all environments.
 
 
 

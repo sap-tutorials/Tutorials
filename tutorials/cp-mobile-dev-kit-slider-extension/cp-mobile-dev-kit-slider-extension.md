@@ -163,7 +163,7 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img_3.3.gif)
 
-    >You can find more details about the **Section Extension** in [this](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/Container/Extension.schema.html) guide.    
+    >You can find more details about the **Section Extension** in [this](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/FormCell/Extension.schema.html) guide.    
 
 4. In the **Properties** section, set the **Height** to 72.
 

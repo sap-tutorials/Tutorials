@@ -216,7 +216,7 @@ primary_tag: products>sap-hana-cloud
     Copy the following SQL into the SQL console to populate the SQL Functions section of the help panel:
 
     ```SQL
-    SELECT TO_DECIMAL(ROUND( sum(PRICE) / COUNT(*), 2, ROUND_HALF_UP ))
+    SELECT TYPE, TO_DECIMAL(ROUND(sum(PRICE) / COUNT(*), 2, ROUND_HALF_UP)) as "Avg Room Price"
     FROM HOTEL.ROOM
     GROUP BY TYPE;
     ```
@@ -296,7 +296,7 @@ The statement library contains a mix of pre-populated statements, to help with m
 
     ![Statement Library](StatementLibrary.png)
 
-    >Some of the system statements come from [SAP Note 1969700 - SQL Statement Collection for SAP HANA](https://launchpad.support.sap.com/#/notes/1969700).  These statements can be used to help monitor the database.  These statements are primarily intended for SAP HANA 2.0.  
+    >Some of the system statements come from [SAP Note 1969700 - SQL Statement Collection for SAP HANA](https://launchpad.support.sap.com/#/notes/1969700).  These statements can be used to help monitor the database.  These statements are primarily intended for SAP HANA 2.0.  Another source of diagnostic information are the SAP HANA [monitoring views](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d3c10d23e8334a35afa8d9bdbc102366.html).
 
 5. To run a statement, select one from the statement library and click the **Open in SQL Console** button.
 

@@ -1,6 +1,6 @@
 ---
 title: Create Service Instance for Service Ticket Intelligence
-description: Create a service instance and the associated service keys for Service Ticket Intelligence, one of the SAP AI Business Services, using the SAP Cloud Platform trial cockpit.
+description: Create a service instance and the associated service key for Service Ticket Intelligence, one of the SAP AI Business Services, using the SAP Cloud Platform trial cockpit.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to check your Service Ticket Intelligence entitlements
   - How to create a service instance of Service Ticket Intelligence
-  - How to create service keys for your service instance
+  - How to create a service key for your service instance
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
@@ -46,13 +46,13 @@ primary_tag: topic>machine-learning
 
 To try out Service Ticket Intelligence, you need to make sure that your account is properly configured.
 
-On the navigation sidebar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
+1. On the navigation sidebar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
 
-Search for **Service Ticket Intelligence Trial**. If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with step 3.
+2. Search for **Service Ticket Intelligence Trial**. ***If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
 
-![Entitlements](check-entitlements.png)
+    ![Entitlements](check-entitlements.png)
 
-If you do not find the service in your list, proceed as follows:
+***ONLY if you DO NOT find the service in your list, proceed as follows:***
 
   1. Click **Configure Entitlements**.
 
@@ -130,23 +130,23 @@ You have successfully created a service instance for Service Ticket Intelligence
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Create service keys)]
+[ACCORDION-BEGIN [Step 6: ](Create service key)]
 
-You are now able to create service keys for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
+You are now able to create a service key for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
   1. Click the navigation arrow to open the details of your service instance. Then, click the dots to open the menu and select **Create Service Key**.
 
-      ![Service Keys](create-service-keys.png)
+      ![Service Key](create-service-keys.png)
 
   2. In the dialog, enter `sti-demo-key` as the name of your service key. Click **Create** to create the service key.
 
       ![Create Service Key](create-service-key-name.png)
 
-You have successfully created service keys for your service instance. You can now either view the service key in the browser or download it.
+You have successfully created a service key for your service instance. You can now either view the service key in the browser or download it.
 
 ![View Service Key](view-service-key.png)
 
-You will need the service keys values in [Set Up Postman Environment and Collection to Call Service Ticket Intelligence APIs](cp-aibus-sti-setup-postman).
+You will need the service key values in [Set Up Postman Environment and Collection to Call Service Ticket Intelligence APIs](cp-aibus-sti-setup-postman).
 
 [VALIDATE_1]
 [ACCORDION-END]

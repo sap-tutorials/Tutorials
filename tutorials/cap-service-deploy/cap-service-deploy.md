@@ -37,14 +37,17 @@ It's now time to switch to SAP HANA as a database.
         }
       }
     ```
+
     >`kind:sql` declares the requirement for an SQL database. It evaluates to `sqlite` in the `development` profile (active by default), while in `production` it equals `hana`. This way you don't need to modify this file if you want to switch between the two databases.
-    `
+
+    > Don't edit the `gen/db/package.json` file.
+
 3. In the command line add the SAP HANA driver as a dependency to your project:
 
 ```Shell/Bash
 npm add @sap/hana-client --save
 ```
-In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP and check that you've installed the latest long-term support (LTS) version of [Node.js](https://nodejs.org/en/).
+In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP and check that you've installed the latest long-term support (LTS) version of [Node.js](https://nodejs.org/en/).
 
 [DONE]
 
@@ -94,7 +97,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
     >Check the status of your service using `cf service my-bookshop-db`.
 
-    >If service creation fails, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#hana) for CAP.
+    >If service creation fails, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#hana) for CAP.
 
 2. Now, build and deploy both the database part and the actual application and add:
 
@@ -153,6 +156,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
         ```
         name:              my-bookshop-srv
         requested state:   started
+        isolation segment: trial
         routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
         ```
 

@@ -157,6 +157,10 @@
       "value": "products>sap-cloud-platform-internet-of-things"
     },
     {
+      "name": "SAP Cloud Platform Mobile Services",
+      "value": "software-product-function>sap-cloud-platform-mobile-services"
+    },
+    {
       "name": "SAP Cloud Platform Portal",
       "value": "products>sap-cloud-platform-portal"
     },
