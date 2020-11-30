@@ -15,24 +15,7 @@ time: 15
 ### You will learn  
 In [previous tutorials](https://developers.sap.com/tutorials/iot-express-4-create-thing-model.html), you learned about using Thing Modeler to onboard a thing, send data to the thing, and retrieve data from the thing. Now, you'll learn to use Postman to access SAP IoT APIs.
 
-
-#### Application Router
-
-Access to SAP IoT is usually routed through an application router as the single entry point for consumers. The application router handles the user authentication against **SAP User Account and Authentication Service (UAA)**. In addition, the service retains the generated JWT token for the duration of the client logon session. You can define multiple application routers per tenant and you can use one of the router to access SAP IoT.
-
-#### Tenant-specific Application Router
-
-SAP IoT offers tenant-specific application router to access the different backend services such as configuration, business partner, and thing services. For example, you can access the configuration services for the tenant `democompany` using the application router URL <https://democompany.iot-sap.cfapps.eu10.hana.ondemand.com/config-package-sap/Package/v1/Packages>. You can use your system username and password when the system prompts for credentials.
-
-The following illustrates the different parts of tenant-specific application router:
-
-| Field | Description |
-|:------|:--------------|
-|`democompany`|Tenant name|
-|`iot-sap`|Name of the application router used to access SAP IoT|
-|`cfapps.eu10`|Technology and the region|
-|`Config-package-sap`|Name of the application you are accessing using the application router|
-|`Package/v1/Packages`|API endpoint you are accessing within the application|
+Use Postman client to retrieve the OAuth token specific for your tenant. For more information, see [Accessing SAP IoT APIs Using OAuth Token](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/latest/en-US/7b3a94e68be9460680a915138a160c67.html). The retrieved token is used to access the API endpoints described in this tutorial.
 
 For more information about the authorization concept of the SAP IoT platform, see <https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/latest/en-US> | **Authorization**.
 
@@ -40,8 +23,6 @@ For more information about the authorization concept of the SAP IoT platform, se
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Display package details)]
-
-Use Postman client to retrieve the OAuth token specific for your tenant. For more information, see [Accessing SAP IoT APIs Using OAuth Token](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/latest/en-US/7b3a94e68be9460680a915138a160c67.html). The retrieved token is used to access the API endpoints described in this tutorial.
 
 1. In Postman, choose the **GET** method.
 
