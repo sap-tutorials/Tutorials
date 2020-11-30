@@ -275,8 +275,8 @@ define view Z_C_TRAVELS_xxx
       @ObjectModel.text.association: '_Agency'
       AgencyID,
 
-//      @Consumption.valueHelpDefinition: [{entity: {name: '/DMO/I_Customer', element: 'CustomerID' }}]
-//      @ObjectModel.text.association: '_Customer'
+      @Consumption.valueHelpDefinition: [{entity: {name: '/DMO/I_Customer', element: 'CustomerID' }}]
+      @ObjectModel.text.association: '_Customer'
       CustomerID,
 
       concat_with_space(_Customer.Title, _Customer.LastName, 1) as Addressee,
@@ -329,7 +329,8 @@ define view Z_C_TRAVELS_xxx
 [VALIDATE_1]
 [ACCORDION-END]
 
-### More information
-[From Open SQL Joins to CDS Associations](https://blogs.sap.com/2016/08/12/from-open-sql-joins-to-cds-associations/)
+### More Information
+- [From Open SQL Joins to CDS Associations](https://blogs.sap.com/2016/08/12/from-open-sql-joins-to-cds-associations/)
+- SAP Help Portal: [Defining UI Annotations](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/fd95e7c9905e469bb176217f49e15e71.html)
 
 ---

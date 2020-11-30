@@ -3,7 +3,7 @@ auto_validation: true
 title: Integrate List Report into ABAP Fiori Launchpad
 description: Integrate your list report application into ABAP Fiori launchpad.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -21,11 +21,10 @@ Hint: Your Business Application Studio subscription needs to be in the same suba
 
 ## Details
 ### You will learn  
-- How to save WSDL files
-- How to create ABAP package
-- How to create service consumption models
-- How to create ABAP classes
-- How to consume SOAP based web services
+- How to make use of IAM App and business catalog
+- How to create business roles
+- How to pin business catalogs
+- How to create launchpad site module
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Make use of existing IAM App and business catalog)]
@@ -136,7 +135,7 @@ HINT: This is an alternative way to add the app to spaces/pages. This is only po
 
       ![module](module4.png)
 
-  5. Click **Create and Assign Space**. 
+  5. Click **Create and Assign Space**.
 
       ![module](module5.png)
 

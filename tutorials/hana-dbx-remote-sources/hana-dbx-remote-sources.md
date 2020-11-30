@@ -79,13 +79,13 @@ For additional details on SAP HANA Smart Data Access (SDA) and SAP HANA Smart Da
     CREATE REMOTE SOURCE REMOTE_HC ADAPTER "hanaodbc" CONFIGURATION 'ServerNode=7e2a2bb8-c560-46b3-b33f-dc4a1a9fd47c.hana.trial-us10.hanacloud.ondemand.com:443;encrypt=true;Driver=libodbcHDB.so;dml_mode=readwrite;sslTrustStore="-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBhMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBDQTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVTMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5jb20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsBCSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7PT19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAOBgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbRTLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUwDQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/EsrhMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJFPnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0lsYSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQkCAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=-----END CERTIFICATE-----"' WITH CREDENTIAL TYPE 'PASSWORD' USING 'user=User1;password=Password1';
     ```  
 
-    > The ServerNode can be copied from the SAP HANA Cloud Cockpit.
+    > The ServerNode can be copied from the landsacpe tool by choosing **Actions > Copy > SQL Endpoint**.
     >
     > ![Host and Port](host_and_port.png)
 
     >---
 
-    >If the above command fails, one reason might be that an allowlist has been set on the SAP HANA Cloud instance.  This can be seen by clicking on the edit icon in the SAP HANA Cloud Cockpit.
+    >If the above command fails, one reason might be that an allowlist has been set on the SAP HANA Cloud instance.  This can be seen by choosing **Actions > Edit**.
     >
     >![allowlist](allowlist.png)
     >---
@@ -181,9 +181,9 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
 [SAP HANA Data Lake](https://help.sap.com/viewer/product/SAP_HANA_DATA_LAKE/cloud/en-US) can be used to store large amounts of data that is not accessed frequently.  The following steps create the table `tourist_reviews` in SAP HANA Data Lake and access the table from the associated SAP HANA Cloud instance and from an SAP HANA, express edition database.
 
-1. In the SAP Cloud Platform Cockpit, add an SAP HANA Data Lake instance to your SAP HANA Cloud instance, if it does not already exist.
+1. In the landscape tool, add an SAP HANA Data Lake instance to your SAP HANA Cloud instance, by choosing **Actions > Add Data Lake**.
 
-    ![add a SAP HANA Data Lake](add_Data_Lake.png)
+    ![add a SAP HANA Data Lake](host_and_port.png)
 
 2. In a SQL console connected to the HANA Cloud instance, execute the following SQL to create a table named `tourist_reviews` and populate it with a few rows in SAP HANA Data Lake.
 

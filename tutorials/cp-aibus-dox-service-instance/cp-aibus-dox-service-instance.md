@@ -48,11 +48,11 @@ To try out Document Information Extraction, you need to make sure that your suba
 
 1. On the navigation side bar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
 
-2. Search for **Document Information Extraction Trial**. If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and go to step 3.
+2. Search for **Document Information Extraction Trial**. ***If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
 
     ![Entitlements](check-entitlements.png)
 
-If you do not find the service in your list, proceed as follows:
+***ONLY if you DO NOT find the service in your list, proceed as follows:***
 
   1. Click **Configure Entitlements**.
 
@@ -133,7 +133,7 @@ You are now able to create a service key for your new service instance. Service 
 
       ![Service Key](create-service-keys.png)
 
-  2. In the dialog, enter `doc-info-extraction-keys` as the name of your service key. Click **Create** to create the service key.
+  2. In the dialog, enter `doc-info-extraction-key` as the name of your service key. Click **Create** to create the service key.
 
       ![Create Service Key](create-service-key-name.png)
 

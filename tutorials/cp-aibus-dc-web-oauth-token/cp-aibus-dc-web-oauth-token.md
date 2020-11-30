@@ -25,7 +25,7 @@ To get your OAuth access token you will need the values listed below from the se
 
 [ACCORDION-BEGIN [Step 2: ](Get OAuth access token)]
 
-1. Add **`/oauth/token/?grant_type=client_credentials&cache-control=no-cache&content-type=application/x-www-form-urlencoded`** to the `url` value (from inside the `uaa` section of the service key), paste it in any web browser and choose **Enter**.
+1. Add **`/oauth/token?grant_type=client_credentials`** to the `url` value (from inside the `uaa` section of the service key), paste it in any web browser and choose **Enter**.
 
 2. Enter the **`clientid`** value from your service key as **Username**.
 
