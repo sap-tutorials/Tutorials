@@ -1,8 +1,8 @@
 ---
-title: Design and Test Your First Integration Flow
+title: Design and Deploy Your First Integration Flow
 description: Design an integration flow to integrate an online webshop that exposes data via OData service and fetch the product details. Your request will be sent via Postman client.
 auto_validation: true
-time: 45
+time: 40
 tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-cloud-platform-integration-for-process-services
 author_name: Vikram Kulkarni
@@ -15,51 +15,13 @@ author_profile: https://github.com/Vikramkulkarni01
 
 ## Details
 ### You will learn
-  - How to assign role collection
   - How to design and deploy an integration flow using the web-based integration flow designer
   - How to design an integration flow to query data from an online web shop that is available as an OData service
 
 
+[ACCORDION-BEGIN [Step 1: ](Access your workspace)]
 
-[ACCORDION-BEGIN [Step 1: ](Assign Role Collection)]
- In this step, you create a required role collection for executing this scenario.
-
- 1. In your subaccount, go to **Security > Role Collections** and click **+** button to add new role collections.
-  !![Add Role Collections](St1.1Add Role Collections.png)
-
- 2. Enter the name **`EsbMessagingSend`** and click **Create**.
-  !![Create Role Collection](St1.2Create Role Collection.png)
-
- 3. In the **Role Collections** page, search for the role **`EsbMessagingSend`** created in the previous step and click it.
-  !![Search Role Collection](St1.3Search Role Collection.png)
-
- 4. Choose **Edit**.
-    !![Edit Role Collection](St1.4 Edit Role Collection.png)
-
- 5. In the **Role Name** field, click **Search** button to search for the role name.
-    !![Search Role Name](St1.5 Search Role Name.png)
-
- 6. Search for the role name **`MessagingSend` > Select Role** and click **Add**.
-    !![Add Role name](St1.6 ADD Role Name.png)
-
- 7. Choose **Save**.
-    !![Save Role Name](St1.7 Save Role Name.png)
-
- 8. Go to **Security > Trust Configuration** and click **sap.default**.
-    !![Trust Configuration page 1](St1.8 Trust Configuration.png)
-
- 9. Enter the user's e-mail address and click **Show Assignments** to see the role collections that are currently assigned to this user. Then click **Assign Role Collection**.
-    !![Trust Configuration Initial Screen](St1.9 Trust Configuration_part1.png)
-
- 10. Select role **`EsbMessagingSend`** and Click **Assign Role Collection**.
-    !![Assigning Role ](St1.10 Assigning Role Collection.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Access your workspace)]
-
-  Click the **Design** tab (pencil icon) to access your workspace. This is where you will create your integration package and integration flow.
+  Click on the **URL** in the integration capability. Click the **Design** tab (pencil icon) to access your workspace. This is where you will create your integration package and integration flow.
 
   ![Access workspace](1.1.access-workspace.png)
 
@@ -68,7 +30,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [DONE]
 [ACCORDION-END]
 
-  [ACCORDION-BEGIN [Step 3: ](Create an integration package and integration flow)]
+  [ACCORDION-BEGIN [Step 2: ](Create an integration package and integration flow)]
 
   1. Choose **Create** to create a new integration package.
 
@@ -88,7 +50,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
       !![Add integration flow artifact](2.3.add_integration_flow_new.png)
 
-      Enter the **Name** for integration flow and choose **OK**.
+      Enter a **Name** for the integration flow and choose **OK**.
 
       !![Enter integration flow details and confirm](2.4.enter-iflow-details.png)
 
@@ -101,7 +63,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Edit the integration flow)]
+[ACCORDION-BEGIN [Step 3: ](Edit the integration flow)]
 1. Access your integration package by choosing **Design** > **(Integration package name)**.
 
     !![Access integration package](1.1.access-integration-package.png)
@@ -119,7 +81,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Connect sender channel with HTTPS adapter)]
+[ACCORDION-BEGIN [Step 4: ](Connect sender channel with HTTPS adapter)]
 
 1. Create the sender channel by clicking the arrow icon on **Sender** and dragging it to the **Start Message** step.
 
@@ -130,17 +92,17 @@ author_profile: https://github.com/Vikramkulkarni01
 
     !![Select HTTPS adapter](2.2.-select-https-adapter.png)
 
-3. Select the **Connection** tab. In the **Address** field, enter **`/CloudIntegrationTrial`**.
+3. Select the **Connection** tab. In the **Address** field, enter **`/products/details`**.
 
     Optionally, you can enter any value of your choice, but ensure that you use **"/"** symbol before specifying the endpoint name. Deselect the **CSRF Protected** checkbox (this will be selected by default).
 
-    !![Link text e.g., Destination screen](2.3.configure-http-connection.png)
+    !![Link text e.g., Destination screen](2.3.configure-https-connection.png)
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Add JSON to XML converter)]
+[ACCORDION-BEGIN [Step 5: ](Add JSON to XML converter)]
 
 1. From the palette (the grey sidebar containing integration flow steps), choose **Message Transformers > Converter > JSON to XML Converter**.
 
@@ -156,7 +118,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add and configure content modifier)]
+[ACCORDION-BEGIN [Step 6: ](Add and configure content modifier)]
 
 1. Choose **Message Transformers** > **Content Modifier** and add it to the message path, as you did for the **JSON to XML Converter**.
 
@@ -177,7 +139,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add request reply step)]
+[ACCORDION-BEGIN [Step 7: ](Add request reply step)]
 
 From the palette, choose **Call** > **External Call** > **Request Reply**. Connect it to the message path, similar to the previous steps.
 
@@ -187,7 +149,7 @@ From the palette, choose **Call** > **External Call** > **Request Reply**. Conne
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Connect request reply to receiver)]
+[ACCORDION-BEGIN [Step 8: ](Connect request reply to receiver)]
 
 1. Move the **Receiver** step below the **Request Reply** step by selecting it and dragging it to the desired position on the palette. You do this to ensure that your integration flow is elegantly designed.
 
@@ -203,7 +165,7 @@ From the palette, choose **Call** > **External Call** > **Request Reply**. Conne
 
     !![Select adapter and message protocol](6.3.select-odata-adapter.png)
 
-4. Select the **Connection** tab. In the **Address** field, enter **`https://espmrefapps.hana.ondemand.com/espm-cloud-web/espm.svc`**. This is the URL of the online web shop from which you will fetch the product details.
+4. Select the **Connection** tab. In the **Address** field, enter **`https://refapp-espm-ui-cf.cfapps.eu10.hana.ondemand.com/espm-cloud-web/espm.svc`**. This is the URL of the online web shop from which you will fetch the product details.
 
     !![Enter connection details for OData adapter](6.4.odata-connection-details.png)
 
@@ -240,9 +202,9 @@ In this step, you have configured the OData adapter to fetch the details of the 
 [VALIDATE_6]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Deploy the integration flow)]
+[ACCORDION-BEGIN [Step 9: ](Deploy the integration flow)]
 
-1. Choose **Deploy** to deploy the integration flow. Choose **Yes** in the confirmation dialog for deployment. Once you see the deployment confirmation, choose the **Monitor** tab to access the monitoring view.
+1. Choose **Deploy** to deploy the integration flow. Choose **Yes** in the confirmation dialog for deployment. Once you see the deployment confirmation, choose the **Operations View** tab to access the monitoring view.
 
     !![Deploy iflow and access monitoring view](7.1.deploy-iflow.png)
 
@@ -252,43 +214,13 @@ In this step, you have configured the OData adapter to fetch the details of the 
 
 3. Please wait till the integration flow is in status **Started**. Then, select the integration flow and in the **Endpoints** tab, choose the **Copy** icon.
 
-![Copy Endpoints](7.3.copy-endpoint-url.png)
+    !![Copy Endpoints](7.3.copy-endpoint-url.png)
 
-You will use this endpoint in the Postman client to test your integration flow.  
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 11: ](Test integration flow using Postman)]
-
-1. Launch the Postman client that you have installed on your local machine. In the **Enter request URL** field, enter the integration flow endpoint that you copied after deploying the integration flow. Then, select the **POST** operation from the dropdown list.
-
-    ![Create new postman request](8.1.create-new-postman-request.png)
-
-2. Select the **Authorization** tab and choose **Basic Auth** in the **Type** dropdown list. In the **Username** and **Password** field, enter the **`EmailID`** and **`Password`** that you used to access the SAP Cloud Platform Integration Suite tenant.
-
-    ![Provide Authorization details](8.2.provide-auth-details.png)
-
-3. Select the **Body** tab and choose **raw** radio button. In the form below, enter
-
-    ```JSON
-    {
-      "productIdentifier": "HT-2000"
-    }
-    ```
-
-    Choose **Send**. This is the ID of the product that you are requesting from the web shop.
-
-    >**TIP:** If you would like to query a different product, access <https://espmrefapps.hana.ondemand.com/espm-cloud-web/webshop/> and select a product of your choice. Copy its **Product ID** and use that ID in the Postman request.
-
-    ![Enter payload details and send request.](8.3.enter-payload-send.png)
-
-4. Observe the response that you receive in the **Postman** client. You can see the product details fetched from the web shop. You can also double-check these details by accessing the web shop directly and searching for the product ID that you sent as input in the Postman request.
-
-    ![Observe response in Postman](8.4.observe-response.png)
+    You will use this endpoint in a subsequent step. You define the integration flow endpoint as application programming interface (API). You can, finally, call the integration flow API using API Management.
 
 [DONE]
 [ACCORDION-END]
+
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
