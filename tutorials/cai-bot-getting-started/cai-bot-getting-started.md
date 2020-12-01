@@ -14,20 +14,17 @@ primary_tag: products>sap-conversational-ai
   - How to train your chatbot (to understand people)
   - How to give your chatbot skills
 
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create SAP Conversational AI account)]
 
 Go to [https://cai.tools.sap/](https://cai.tools.sap/), and click **Sign Up** in the upper-right corner.
 
-Create an account with your email address, or with your [GitHub](http://github.com/) account.
+Follow the instructions for creating an account.
 
 ![Sign up](Signup.png)
 
 You will get an email with a link to validate your account.
-
-
 
 [DONE]
 [ACCORDION-END]
@@ -38,7 +35,9 @@ You will get an email with a link to validate your account.
 
 1. Do one of the following:
 
-    If you just validated your account, click **Start with a Template**.
+    If you just validated your account by clicking the link in your email, click **Start with a Template**.
+
+    ![New user](signup-new.png)
 
     If you are returning:
 
