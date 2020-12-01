@@ -22,7 +22,7 @@ SAP Business Application Studio is the next-generation web-based IDE hosted on S
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create A Development Space)]
+[ACCORDION-BEGIN [Step 1: ](Create a development space)]
 
 1. Log into your Business Application Studio and click **Create Dev Space**.
 
@@ -39,7 +39,7 @@ Your dev space will be created and the status will change to running.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set Up Your Workspace)]
+[ACCORDION-BEGIN [Step 2: ](Set up your workspace)]
 
 1. Click your dev space's name to open it.
 
@@ -58,7 +58,7 @@ Your dev space will be created and the status will change to running.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure Cloud Foundry Environment)]
+[ACCORDION-BEGIN [Step 3: ](Configure Cloud Foundry environment)]
 
 1. In the bottom left corner of your status bar, click the message **`The organization and space in Cloud Foundry have not been set.`**.
 
@@ -100,6 +100,8 @@ Your dev space will be created and the status will change to running.
 
 [DONE]
 [ACCORDION-END]
+
+---
 
 **Congratulations!** You have successfully configured SAP Business Application Studio to build mobile apps.
 

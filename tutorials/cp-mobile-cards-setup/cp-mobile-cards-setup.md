@@ -36,7 +36,7 @@ You can see the list of templates shipped out of the box [here](https://github.c
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Go To SAP Mobile Services Cockpit)]
+[ACCORDION-BEGIN [Step 2: ](Go to SAP Mobile Services cockpit)]
 
 1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
@@ -116,7 +116,7 @@ In the next step, you will scan the respective QR code to connect your mobile ap
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure SAP Mobile Cards Client)]
+[ACCORDION-BEGIN [Step 4: ](Configure SAP Mobile Cards client)]
 
 >Make sure you are choosing the right device platform tab ( **Android** or **iOS** ) **above**.
 
@@ -208,7 +208,7 @@ In the next step, you will scan the respective QR code to connect your mobile ap
 
 You've now connected your SAP Mobile Cards client to your SAP Cloud Platform account.
 
-You can automate the set up covered in this tutorial by using SAP Cloud Platform Boosters. You can find the details in the [starter mission of SAP Mobile Cards](https://developers.sap.com/mission.mobile-cards-get-started.html). 
+You can automate the set up covered in this tutorial by using SAP Cloud Platform Boosters. You can find the details in the [starter mission of SAP Mobile Cards](https://developers.sap.com/mission.mobile-cards-get-started.html).
 
 You can now proceed to the [next tutorial](cp-mobile-bas-setup), which will guide you to set up your Business Application Studio to build SAP Mobile Cards.
 

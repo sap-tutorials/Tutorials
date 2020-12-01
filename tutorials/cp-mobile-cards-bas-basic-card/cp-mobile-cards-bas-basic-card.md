@@ -1,6 +1,6 @@
 ---
 title: Create Your First Card in SAP Business Application Studio
-description: Configure SAP Mobile Cards Development for your Business Application and create your first card.
+description: Create a simple SAP Mobile Cards app by using a template, then make simple HTML modifications, and deploy the app and use it on your device.
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
@@ -136,7 +136,7 @@ Click [here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy and Publish the card)]
+[ACCORDION-BEGIN [Step 4: ](Deploy and publish card)]
 
 1. Open Find Command, search for *Mobile Cards* and select **Mobile Cards: Deploy**.
 
@@ -153,7 +153,7 @@ Click [here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Publish the card in Mobile Service cockpit)]
+[ACCORDION-BEGIN [Step 5: ](Publish card in Mobile Service cockpit)]
 
 1. Open your Mobile Services Cockpit.
 
@@ -182,7 +182,7 @@ Click [here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](View the card on your device)]
+[ACCORDION-BEGIN [Step 6: ](View card on your device)]
 
 >Make sure you are choosing the right device platform tab ( **Android** or **iOS** ) **above**.
 
@@ -221,8 +221,10 @@ Click [here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-
 [DONE]
 [ACCORDION-END]
 
+---
+
 **Congratulations!** You have created your first card through SAP Business Application Studio.
 
-You can now build more [**SAP Mobile Cards apps**](https://developers.sap.com/tutorial-navigator.html?tag=products:content-and-collaboration/sap-mobile-cards) using Business Application studio.
+You can now build more [**SAP Mobile Cards apps**](https://developers.sap.com/tutorial-navigator.html?tag=products:content-and-collaboration/sap-mobile-cards) using SAP Business Application Studio.
 
 ---
