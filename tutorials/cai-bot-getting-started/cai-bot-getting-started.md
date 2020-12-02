@@ -9,7 +9,7 @@ primary_tag: products>sap-conversational-ai
 
 ## Details
 ### You will learn
-  - How to get an account with SAP Conversation AI
+  - How to get an account with SAP Conversational AI
   - How to create a chatbot project
   - How to train your chatbot (to understand people)
   - How to give your chatbot skills
