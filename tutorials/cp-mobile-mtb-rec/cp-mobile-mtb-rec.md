@@ -4,7 +4,7 @@ description: Use the Mobile Transaction Bridge (MTB) to build OData services dir
 auto_validation: true
 time: 20
 tags: [tutorial>beginner, topic>mobile, products>sap-cloud-platform, software-product-function>sap-cloud-platform-mobile-services]
-primary_tag: products>sap-cloud-platform-mobile-services
+primary_tag: software-product-function>sap-cloud-platform-mobile-services
 ---
 
 ## Prerequisites

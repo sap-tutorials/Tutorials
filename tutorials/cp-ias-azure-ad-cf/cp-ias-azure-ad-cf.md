@@ -3,7 +3,7 @@ title: Register SAP Cloud Platform Cloud Foundry Subaccount in Identity Authenti
 description: Establish trust between a SAML 2.0 identity provider in SAP Cloud Platform Identity Authentication service and an SAP Cloud Platform Cloud Foundry subaccount.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-identity-authentication]
+tags: [ tutorial>beginner, products>sap-cloud-platform, products>identity-authentication]
 primary_tag: topic>security
 ---
 

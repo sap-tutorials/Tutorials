@@ -3,8 +3,8 @@ title: Add a URL App to Your Launchpad Site
 description: Create a URL app and add it to your launchpad site.
 auto_validation: true
 time: 15
-tags: [  tutorial>beginner, products>sap-cloud-platform-portal ]
-primary_tag: products>sap-cloud-platform-portal
+tags: [  tutorial>beginner, products>sap-cloud-platform-launchpad ]
+primary_tag: products>sap-cloud-platform-launchpad
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---

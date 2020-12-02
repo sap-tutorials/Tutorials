@@ -3,8 +3,8 @@ title: Connect SAP Cloud Platform to Your SAP Gateway Demo System Account (ES5)
 description: Create a connection between SAP Cloud Platform and the SAP Gateway Demo System (ES5).
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-launchpad]
+primary_tag: products>sap-cloud-platform-launchpad
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---

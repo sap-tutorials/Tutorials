@@ -3,8 +3,8 @@ title: Add Navigation to Integrate an SAPUI5 App Into a Launchpad Site
 description: Add navigation properties to your custom-developed SAPUI5 app so it can be integrated into an SAP Cloud Platform Launchpad site.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>sapui5, products>sap-business-application-studio]
-primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
+tags: [ tutorial>beginner, topic>sapui5, products>sap-business-application-studio, products>sap-cloud-platform-launchpad]
+primary_tag: products>sap-cloud-platform-launchpad
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
