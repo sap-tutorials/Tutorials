@@ -55,7 +55,7 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 
 3. Within the `cmd/api` directory, you can find `main.go` which is the main entry point of the Go application.
 
-4. The `docker` directory contains the Dockerfile used to generate the Docker image. The image is built in two stages to create an image with a very small file size.
+4. The `docker` directory contains the Dockerfile used to generate the Docker image. The image is built in two stages to create an image with a small file size.
 
     In the first stage, a Go image is used. It copies the related content of the project into the image and builds the application. The built application is then copied into the Docker `scratch` image and exposed on port 8000. The `scratch` image is an empty image containing no other tools within it so obtaining a shell/bash session is not possible. If desired, the following lines could be commented out to build an image with more included tools, but this results in a larger image.
 
