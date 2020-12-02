@@ -102,7 +102,7 @@ Click on **Log on** to log on to your verified account.
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step](Navigate to the subaccount)]
 
-1. Here, you can now create a subaccount which lives in a geographic region. **Choose a region** from this list and click **Create Account** to trigger the provisioning process.
+1. Here, you can now create a subaccount which lives in a geographic region. **Choose any region** from this list and click **Create Account** to trigger the provisioning process.
 
     ![Choose a nearby region](select-region.png)
 
