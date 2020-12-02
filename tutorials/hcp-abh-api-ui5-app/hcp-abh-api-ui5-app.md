@@ -23,7 +23,7 @@ In this tutorial, you will build a basic UI5 application that uses data from the
 
 
 Create the following two destinations in the SAP Cloud Platform cockpit. You can create these destinations manually or download and import them from these files:
-
+[sandbox_destination.txt](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-abh-api-ui5-app/sandbox_destination.txt) and [catalog_destination.txt](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-abh-api-ui5-app/catalog_destination.txt)
 
 1. !![sandbox destination](sandbox_dest.png)
 2. !![catalog destination](catalog_dest.png)
