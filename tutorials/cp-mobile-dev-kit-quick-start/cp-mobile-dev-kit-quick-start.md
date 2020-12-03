@@ -155,6 +155,10 @@ Once you accept app update, you will see the list of entities on the **Main** pa
 
 ![MDK](img_5.1.gif)
 
+Additionally, you can search via Barcode Scanner over all properties of the objects displayed in the section. For example, in Products list, you can scan the barcode to search the products belong to _MP3 Players_ category.
+
+!![MDK](img_5.3.gif)
+
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
@@ -165,11 +169,15 @@ Once you accept app update, you will see the list of entities on the **Main** pa
 
 ![MDK](img_5.2.gif)
 
+Additionally, you can search via Barcode Scanner over all properties of the objects displayed in the section. For example, in Products list, you can scan the barcode to search the products belong to _MP3 Players_ category.
+
+!![MDK](img_5.4.gif)
+
 [OPTION END]
 
 >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-**Congratulations**! You have created an MDK app with just couple of clicks. You may now follow [these tutorials](mission.mobile-dev-kit-get-started) to create an MDK app from scratch.
+Congratulations! You have created an MDK app with just couple of clicks. You may now follow [these tutorials](mission.mobile-dev-kit-get-started) to create an MDK app from scratch.
 
 [VALIDATE_1]
 [ACCORDION-END]
