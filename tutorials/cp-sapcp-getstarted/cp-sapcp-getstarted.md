@@ -62,9 +62,11 @@ The sapcp CLI is the CLI for working with SAP Cloud Platform accounts. You use t
 
 [ACCORDION-BEGIN [Step 3: ](Download and install the CLI client)]
 
-Go to the [SAP Development Tools] (https://tools.hana.ondemand.com/#cloud-cpcli) download page to download the latest version of the CLI client for your operating system. Unpack the archive and copy the client file (for example, `sapcp.exe`) to your local system.
+Go to the [SAP Development Tools] (https://tools.hana.ondemand.com/#cloud-cpcli) page to download the latest version of the CLI client for your operating system. Unpack the archive and copy the client file (for example, `sapcp.exe`) to your local system. Make sure you have read and write permissions in the target folder to run the executable.
 
-Open the directory with the client file in the command line and and enter `sapcp`.
+In Windows, open the directory where the the client file is located in the command line and and enter 'sapcp'. For example, you can open the folder and type `cmd` into the address bar.
+
+If you are using macOS, make sure that the client file is in your PATH and open a terminal session. Note that sapcp CLI may be blocked because it is "from an unidentified developer". Please refer to the macOS documentation to learn how to bypass this.
 
 ![CLI info screen](sapcp.png)
 
