@@ -60,7 +60,7 @@ Now, you will use the **Set up account for Document Information Extraction** boo
 
     >If you have more than one subaccount, a dialog shows in which you have to select the subaccount that should be used. Click **Finish** to proceed.
 
-4. Click **Download Service Key** if you are following the tutorial mission [Use Machine Learning to Process Business Documents](mission.cp-aibus-extract-document-service).
+4. Click **Download Service Key** if you are following the tutorial mission [Use Machine Learning to Extract Information from Business Documents and Enrich Data](mission.cp-aibus-extract-document-enrich-data).
 
     !![Service Key](booster-success.png)
 
@@ -78,7 +78,7 @@ Now, you will use the **Set up account for Document Information Extraction** boo
 
 [ACCORDION-BEGIN [Step 3: ](Go to Application)]
 
-Click **Go to Application** to access the Document Information Extraction Trial UI. Save the link to open the application in the future if you are following the tutorial group [Get Started with the Document Information Extraction User Interface Application](group.cp-aibus-extract-ui-app).
+Click **Go to Application** to access the Document Information Extraction Trial UI. Save the link to open the application in the future if you are following the tutorial mission [Use Machine Learning to Process Business Documents](mission.cp-aibus-extract-document-service).
 
 !![Service Key](booster-success-app.png)
 

@@ -3,8 +3,8 @@ title: Set Up SAP Cloud Platform Launchpad Service
 description: To get started with building a launchpad site, you must perform the required onboarding steps.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>cloud, products>sap-fiori]
-primary_tag: products>sap-cloud-platform-portal
+tags: [ tutorial>beginner, products>sap-cloud-platform, products>cloud, products>sap-fiori, products>sap-cloud-platform-launchpad]
+primary_tag: products>sap-cloud-platform-launchpad
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
