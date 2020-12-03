@@ -1,5 +1,5 @@
 ---
-title: Enable SAP Cloud Platform, Kyma runtime
+title: Enable SAP Cloud Platform, Kyma Runtime
 description: Enable SAP Cloud Platform, Kyma runtime on SAP Cloud Platform trial.
 time: 15
 auto_validation: true
@@ -17,8 +17,7 @@ primary_tag: products>sap-cloud-platform\, kyma-runtime
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Set entitlements)]
-
-In case the entitlements for the Kyma runtime are not enabled yet, you need to do so in order to enable the Kyma runtime trial.
+If the entitlement for the Kyma runtime trial has not be activated the button **Enable Kyma** will not be shown. The following steps detail the process of enabling the entitlement.
 
 1. In the left-hand menu, click **Entitlements**.
 
@@ -117,7 +116,7 @@ In this tutorial you will give your user the admin role as it allows you to have
 
     !![SAP-Cloud-Platform-Trial](kyma-getting-started-09.png)
 
-    While still in edit mode, you want to assign your user ID to the role collection. Locate the **Users** section and enter your email address/ user ID into the **ID** field -- the UI should give you a nice autocompletion.
+    While still in edit mode, you want to assign your user ID to the role collection. Locate the **Users** section and enter your email address into the **ID** field -- the UI should give you a nice autocompletion.
 
     Click on **Save**.
 
