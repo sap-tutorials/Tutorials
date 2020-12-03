@@ -8,7 +8,7 @@ time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
-
+  
 ## Prerequisites  
 - You need an SAP Cloud Platform ABAP environment license.
 - You have created the [Travel App Mission](mission.cp-starter-extensions-abap) in a licensed system.
@@ -24,7 +24,7 @@ Hint: Your Business Application Studio subscription needs to be in the same suba
 - How to make use of IAM App and business catalog
 - How to create business roles
 - How to pin business catalogs
-- How to create launchpad site module
+- How to create spaces and pages
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Make use of existing IAM App and business catalog)]
@@ -117,7 +117,7 @@ HINT: This is an alternative way to add the app to spaces/pages. This is only po
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Alternative 2: Create launchpad site module)]
+[ACCORDION-BEGIN [Step 4: ](Alternative 2: Create space and page)]
 
   1. Log in to your licensed ABAP system as an administrator and select **Maintain Business Roles**.
 
@@ -163,15 +163,27 @@ HINT: This is an alternative way to add the app to spaces/pages. This is only po
 
       ![module](module11.png)
 
-12. Login with business user and select your user. Select Settings.
+ 12. Go to your homepage and select **Manage Launchpad Settings** .      
+
+      ![module](homepage.png)
+
+ 13. Click **Edit**.
+
+     ![module](edit.png)
+
+ 14. Set the `SPACES_ENABLE_USER` settings to **ON** and click **Save**.
+
+      ![module](on.png)
+
+ 15. Login with business user and select your user. Select Settings.
 
       ![module](module12.png)
 
-13. Select Spaces, click Use Spaces and save your changes.
+ 16. Select Spaces, click Use Spaces and save your changes.
 
       ![module](module13.png)
 
-14. Check your result.
+ 17. Check your result.
 
       ![module](module14.png)
 
