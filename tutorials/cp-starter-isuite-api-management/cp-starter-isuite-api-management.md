@@ -1,6 +1,6 @@
 ---
-title: Expose Integration Flow Endpoint as API and Test the Integration Flow
-description: Define the endpoint of the integration flow developed in the last tutorial as an application programming interface (API). Furthermore, assign a policy template to the API to define how the API is called. After you have performed these steps, you can use the Design, Develop and Manage APIs capability of Integration Suite to finally call the API to fetch the product details.
+title: Expose Integration Flow Endpoint as API and Test the Flow
+description: Define the endpoint of the integration flow developed in the last tutorial as an application programming interface (API).
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, products>sap-cloud-platform-connectivity, products>sap-cloud-platform-for-the-cloud-foundry-environment]
@@ -16,9 +16,19 @@ author_profile: https://github.com/Vikramkulkarni01
 ## Details
 ### You will learn
   - How to create a service instance and key
-  - How to define and expose an integration flow endpoint as an application programming interface (API)
-  - How to assign a policy to the API. A policy defines, for example, how an API can be called. In this tutorial, you assign a policy that defines an authentication of the API according to OAuth 2.0 client credentials grant. It is a secure way to control access to an API.
+  - How to define and expose an integration flow endpoint as an API
+  - How to assign a policy to the API
   - How to call the API and execute the integration flow using the API portal
+
+
+
+
+
+In this tutorial, you will define the endpoint of the integration flow developed in the last tutorial as an application programming interface (API).
+
+In addition, you will assign a policy template to the API to define how the API is called. A policy defines, for example, how an API can be called. In this tutorial, you assign a policy that defines an authentication of the API according to OAuth 2.0 client credentials grant. It is a secure way to control access to an API.
+
+After you have performed these steps, you can use the Design, Develop and Manage APIs capability of Integration Suite to finally call the API to fetch the product details.
 
 ---
 
@@ -30,7 +40,8 @@ A service instance defines how a service of SAP Cloud Platform (in our case, the
     !![Access space](4.1.1access-space.png)
 
 2. Choose **Services** > **Service Marketplace** > **Process Integration Runtime**.
->**TIP:** If you do not see the **Process Integration Runtime** service in the list, at the subaccount level, choose **Entitlements** > **Configure Entitlements** > **Add Service Plans**. Choose **Process Integration Runtime** and select the **integration-flow** service plan checkbox and choose **Add 1 Service Plan**.
+
+    >**TIP:** If you do not see the **Process Integration Runtime** service in the list, at the subaccount level, choose **Entitlements** > **Configure Entitlements** > **Add Service Plans**. Choose **Process Integration Runtime** and select the **integration-flow** service plan checkbox and choose **Add 1 Service Plan**.
 
     !![Access PI Runtime](4.2.access-process-integration-runtime.png)
 
@@ -70,12 +81,13 @@ A service instance defines how a service of SAP Cloud Platform (in our case, the
 
     !![Select service key](4.6.select-service-instance.png)
 
-      You create this service instance to enable inbound HTTP calls to your SAP Cloud Platform Integration tenant.
->**TIP**: This service key will provide you the credentials for making inbound HTTP calls to integration flows deployed on your SAP Cloud Platform Integration Suite tenant. You use the credentials of the service key that is `clientid` and `clientsecret` to call an integration flow as an HTTP endpoint. For more information, see [Setting Up Basic Inbound Authentication with `clientId` and `clientsecret` from a Service Key](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/647eeb3eca5d4c299009cacd1332247e.html).
+    You create this service instance to enable inbound HTTP calls to your SAP Cloud Platform Integration tenant.
+
+    >**TIP**: This service key will provide you the credentials for making inbound HTTP calls to integration flows deployed on your SAP Cloud Platform Integration Suite tenant. You use the credentials of the service key that is `clientid` and `clientsecret` to call an integration flow as an HTTP endpoint. For more information, see [Setting Up Basic Inbound Authentication with `clientId` and `clientsecret` from a Service Key](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/647eeb3eca5d4c299009cacd1332247e.html).
 
 8. Specify a name for the service key and choose **Create**.
 
-      !![Enter service key name](4.8.create-service-key-2.png)
+    !![Enter service key name](4.8.create-service-key-2.png)
 
 9. Click the 3 dots under service keys section and choose **View**.
 
@@ -89,7 +101,7 @@ A service instance defines how a service of SAP Cloud Platform (in our case, the
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get the Endpoint Address of the Integration Flow)]
+[ACCORDION-BEGIN [Step 2: ](Get endpoint of the integration flow)]
 In this step, you copy the endpoint address of the integration flow.
 
 1. Go to the Cloud Integration Web UI.
@@ -158,7 +170,7 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
 10. Click the **POST** operation to display more details on the API. A default API definition in Open API specification format is also generated.
 
-11. To update the generated API definition in Open API format, select **Edit --> Edit in API Designer**.
+11. To update the generated API definition in Open API format, select **Edit > Edit in API Designer**.
 
     !![Edit API designer](010.png)
 
@@ -196,7 +208,7 @@ In this step, you define and expose an integration flow endpoint as an applicati
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Assign a Policy Template)]
+[ACCORDION-BEGIN [Step 4: ](Assign policy template)]
 With this step, you assign a policy template to your API to specify authentication details for the API call. In particular, you use a policy template that defines that the caller of the API authenticates itself using OAuth 2.0 client credentials grant.
 
 This grant type works in the following way: In a first call, the API client provides the values of **`clientid`** and **`clientsecret`** (from the service key generated in Step 1) to a token service (the URL of the token service is also contained in the service key definition). The token service provides an access token to the API client. In a subsequent call, the API client calls the integration flow endpoint providing the access token. If the access token is valid, the API client is authorized to call the integration flow.
@@ -283,8 +295,8 @@ This grant type works in the following way: In a first call, the API client prov
 
     In this step you have assigned a policy template.
 
-    [VALIDATE_7]
-    [ACCORDION-END]
+[VALIDATE_7]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Execute API)]
 
@@ -306,9 +318,16 @@ In this step you try out the API to get product details as a response from the r
 
     !![WebShop](037.png)
 
-    >**Congratulation!** You have successfully set up an Integration Suite trial, designed a simple integration flow that reads data from a remote component, and defined the integration flow endpoint as an API. Finally, you have successfully called the API to get product details as a response from the remote component. This scenario showed you how to use Integration Suite, and in particular its Cloud Integration and API Management capabilities seamlessly integrated, end-to-end.
 
 [DONE]
 [ACCORDION-END]
+
+---
+
+Congratulation!
+
+You have successfully set up an Integration Suite trial, designed a simple integration flow that reads data from a remote component, and defined the integration flow endpoint as an API. Finally, you have successfully called the API to get product details as a response from the remote component.
+
+This scenario showed you how to use Integration Suite, and in particular its Cloud Integration and API Management capabilities seamlessly integrated, end-to-end.
 
 ---
