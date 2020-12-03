@@ -26,7 +26,7 @@ The first step is to check if you have the .NET Core SDK  installed and what ver
 ```Shell
 dotnet --version  
 ```  
-If the `dotnet` command is not recognized, it means that the .Net Core SDK has not been installed. If the SDK is installed, the command returns the currently installed version, such as 3.1.202.  
+If the `dotnet` command is not recognized, it means that the .NET Core SDK has not been installed. If the SDK is installed, the command returns the currently installed version, such as 3.1.202.  
 
 If the .NET Core SDK is not installed, download it from [Download .NET](https://dotnet.microsoft.com/download) and run the installer on Microsoft Windows or Mac.
 > Note: Select the 'Build Apps: Download .NET Core SDK' option.
@@ -35,7 +35,7 @@ If the .NET Core SDK is not installed, download it from [Download .NET](https://
 
 On Linux, follow the instructions for the appropriate Linux version such as [openSUSE 15 Package Manager - Install .NET Core](https://docs.microsoft.com/en-us/dotnet/core/install/linux-package-manager-opensuse15).
 
-In order for the shell to recognize that the .Net Core SDK has installed and for any `dotnet` commands in future steps to be recognized, a new shell window needs to be opened.
+In order for the shell to recognize that the .NET Core SDK is installed and for any `dotnet` commands in future steps to be recognized, a new shell window needs to be opened.
 
 >For further details on supported versions, see SAP Note [2939501 - SAP HANA Client Supported Platforms for 2.5 and later](https://launchpad.support.sap.com/#/notes/2939501).
 
@@ -51,13 +51,37 @@ In order for the shell to recognize that the .Net Core SDK has installed and for
     dotnet new console -o dotNET
     ```  
 
+    On Linux or Mac, you need to modify the `HDBDOTNETCORE` variable to point to the location of the `libadonetHDB.so` or `libadonetHDB.dylib` file before creating a new console app. There are two ways to set an environment variable.
+
+    You can either set it using the export command on a Shell window or in a user's profile script. When an environment variable is modified from the Shell, its existence ends when the user's sessions ends. This could become an issue when you want the variable to persist across multiple user sessions.
+
+    Hence, choose the second option to set `HDBDOTNETCORE`.
+
+    Open an editor to edit the file `.bash_profile` or `.profile`.
+
+    ```Shell (Linux or Mac)
+    pico ~/.bash_profile
+    ```
+    Replace `pico` with your preferred text editor.
+
+    Add the following line to it.
+
     ```Shell (Linux or Mac)
     export HDBDOTNETCORE=/home/dan/sap/hdbclient/dotnetcore
+    ```
+
+    Run the source command to immediately apply all the changes made to the `.bash_profile` file
+
+    ```Shell (Linux or Mac)
+    source ~/.bash_profile
+    ```
+
+    Now, you may run the following command to create the console app.
+
+    ```Shell (Linux or Mac)
     cd $HOME/HANAClientsTutorial
     dotnet new console -o dotNET
     ```
-
-    On Linux or Mac, modify the `HDBDOTNETCORE` variable to point to the location of the `libadonetHDB.so` or `libadonetHDB.dylib` file.
 
 2.  Open the `dotNET.csproj` file:
 
@@ -71,7 +95,7 @@ In order for the shell to recognize that the .Net Core SDK has installed and for
     pico dotNET.csproj
     ```
 
-    Add the following below the `PropertyGroup` section to indicate where to load the SAP HANA Client .NET Core driver from.  Modify the `HintPath` section with the information about where the dll is located on your machine.
+    Add the following below the `PropertyGroup` section (within the `Project` section) to indicate where to load the SAP HANA Client .NET Core driver from.  Modify the `HintPath` section with the information about where the dll is located on your machine.
 
     ```Shell (Microsoft Windows)
     <ItemGroup>
@@ -117,8 +141,11 @@ namespace dotNETQuery
             try
             {
                 // User1UserKey retrieved from hdbuserstore contains server:port, UID and PWD
-                // encrypt must be true when connecting to HANA Cloud
-                // If hdbuserstore is not used to retrieve the connnection information, the format would be
+                // encrypt and sslValidateCertificate should be true for HANA Cloud connections
+                // sslValidateCertificate should be set to false when connecting
+                // to an SAP HANA, express edition instance that uses a self-signed certificate.
+                // As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
+                // If hdbuserstore is not used to retrieve the connection information, the format would be
                 // "Server=10.7.168.11:39015;UID=User1;PWD=Password1;encrypt=true;sslValidateCertificate=false"
 
                 using (var conn = new HanaConnection("key=User1UserKey;encrypt=true;sslValidateCertificate=false"))
@@ -165,7 +192,7 @@ namespace dotNETQuery
 
     >Note that the address, port, UID and PWD will be retrieved from the `hdbuserstore`.   
 
-    The above app makes use of some of the SAP HANA client .NET Core driver  methods, such as [HanaConnection](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/469e137b6d611014ac27bffe40be2f18.html).  Connection details for this class can be found at [Microsoft ADO.NET Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/469e137b6d611014ac27bffe40be2f18.html).
+    The above app makes use of some of the SAP HANA client .NET Core driver  methods, such as [HanaConnection](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/469e137b6d611014ac27bffe40be2f18.html).  Connection details for this class can be found at [Microsoft ADO.NET Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/469e137b6d611014ac27bffe40be2f18.html).  Further .NET Core API details can be found in the [.NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=netcore-3.1).
 
 5.  Run the app:
 

@@ -85,35 +85,40 @@ Finally, SAP also offers IaaS in the cloud.  We didn't mention this before, beca
 
 The SAP Cloud Platform is available in two different types of data centers.  First, SAP runs it's own data centers around the world, optimized for SAP software.  Second, SAP also partners with other cloud infrastructure providers.  Currently, we partner with Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), and Alibaba Cloud.
 
-![Data center locations and types](4.png)
+!![Data center locations and types](map.png)
 
-This is a graphical representation of all the SAP data centers worldwide.  [This page also contains a complete list of the types of centers, and the services provided at each data center](https://help.sap.com/doc/aa1ccd10da6c4337aa737df2ead1855b/Cloud/en-US/3b642f68227b4b1398d2ce1a5351389a.html).
+This is a graphical representation of all the SAP data centers worldwide. You can open this map when you click on the globe icon on this page to [see a complete list of the types of centers and the services provided at each data center](https://discovery-center.cloud.sap/viewServices).
 
 The list of services and data centers is constantly updated, so please use the link to find the latest information.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](Neo, Cloud Foundry, and ABAP)]
+[ACCORDION-BEGIN [Step](Neo, ABAP, Cloud Foundry, and Kyma)]
 
-There are three different PaaS environments in the SAP cloud.
+There are four different PaaS environments in the SAP cloud.
 
-The first environment is called "Neo".  It's is the original SAP runtime environment.  The Neo environment lets you develop HTML5, Java, and SAP HANA extended application services (SAP HANA XS) applications. You can also use the UI Development Toolkit for HTML5 (SAPUI5) to develop rich user interfaces for modern web-based business applications.  Neo is run in the SAP Cloud Platform on servers that SAP maintains and supports.
+The first environment is called [Neo](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/0f79436cf43a4785bb5b7ee9dac0c76a.html).  It's is the original SAP runtime environment.  The Neo environment lets you develop HTML5, Java, and SAP HANA extended application services (SAP HANA XS) applications. You can also use the UI Development Toolkit for HTML5 (SAPUI5) to develop rich user interfaces for modern web-based business applications.  Neo is run in the SAP Cloud Platform on servers that SAP maintains and supports.
 
-The second environment is Cloud Foundry.  This environment was added in 2017.  [Cloud Foundry is an open source project and standard](https://www.cloudfoundry.org/), run by the Cloud Foundry Foundation (and before that, the Linux Foundation).  SAP has implemented Cloud Foundry on the SAP Cloud Platform, using servers in our expanding network of third party data centers (like AWS, Azure, Google Cloud, and Alibaba Cloud).
+The second environment is Cloud Foundry.  This environment was added in 2017.  [Cloud Foundry is an open source project and standard](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/9c7092c7b7ae4d49bc8ae35fdd0e0b18.html#loio9c7092c7b7ae4d49bc8ae35fdd0e0b18/), run by the Cloud Foundry Foundation (and before that, the Linux Foundation).  SAP has implemented Cloud Foundry on the SAP Cloud Platform, using servers in our expanding network of third party data centers (like AWS, Azure, Google Cloud, and Alibaba Cloud).
 
-The latest environment is the [ABAP environment](https://www.sap.com/cloudplatform-abap) allows you to create extensions for ABAP-based products, such as SAP S/4HANA Cloud, and develop new cloud applications. You can transform existing ABAP-based custom code or extensions to the cloud.
+The [ABAP environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/11d62652aa2b4600a0fa136de0789648.html) allows you to create extensions for ABAP-based products, such as SAP S/4HANA Cloud, and develop new cloud applications. You can transform existing ABAP-based custom code or extensions to the cloud.
+
+The [Kyma environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/468c2f3c3ca24c2c8497ef9f83154c44.html) is a fully managed Kubernetes runtime based on the open-source project "Kyma" that allows developers to extend SAP solutions with server-less functions and combine them with containerized microservices.
 
 
 Which environment is right for you?  That's a good question.  Each environment has it's strengths, and some services are only available in one of the environments.  Take a look at all of them before making a decision, and use our [online map to guide you](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html).
 
-SAP offers a [free trial of SAP Cloud Platform](https://account.hanatrial.ondemand.com/register) for all environments.
+SAP offers a [free trial of SAP Cloud Platform](hcp-create-trial-account) for all environments.
+
+
+
+That's it!  That is the 10,000 meter overview of SAP Cloud Platform.  Please follow the later tutorials to get a trial account, get the account configured, and get started with services and writing new code for the cloud.  Have fun!
 
 
 [DONE]
 [ACCORDION-END]
 
-That's it!  That is the 10,000 meter overview of SAP Cloud Platform.  Please follow the later tutorials to get a trial account, get the account configured, and get started with services and writing new code for the cloud.  Have fun!
 
 
 ---

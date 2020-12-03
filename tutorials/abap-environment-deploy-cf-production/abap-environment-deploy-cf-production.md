@@ -11,6 +11,7 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
 - You need a SAP Cloud Platform ABAP Environment trial user or a license.
+- In a licensed system, the business catalog `SAP_A4C_BC_DEV_UID_PC` (Development - UI Deployment) needs to be assigned to a business role of the developer user. For an existing ABAP systems, the business catalog needs to be added manually to the existing developer business role.
 
 
 ## Details
@@ -23,8 +24,6 @@ author_profile: https://github.com/mervey45
 - How to deploy applications
 - How to check BSP library in Eclipse
 - How to create IAM apps and business catalogs
-- How to create index.html
-- How to run index.html
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Assign role collection to user)]
@@ -37,29 +36,37 @@ author_profile: https://github.com/mervey45
 
       ![assign role collection](bas2.png)
 
-  3. Click **Trust Configuration** to set up your trust.
+  3. Select **Subscriptions** and click **SAP Business Application Studio**.
+
+      ![assign role collection](bas21.png)
+
+  4. Click **Subscribe**. You have now subscribed the SAP Business Application Studio and can assign the corresponding role to your user.
+
+      ![assign role collection](bas22.png)
+
+  5. Click **Trust Configuration** to set up your trust.
 
       ![assign role collection](bas3.png)
 
       HINT: If you are using a licensed system, make sure you have the trust administrator role assigned to your user.
 
-  4. Select **sap.default**.
+  6. Select **sap.default**.
 
       ![assign role collection](bas4.png)
 
-  5. Enter your e-mail address and click **Show Assignments**.
+  7. Enter your e-mail address and click **Show Assignments**.
 
       ![assign role collection](bas5.png)
 
-  6. Click **Assign Role Collection** .
+  8. Click **Assign Role Collection** .
 
       ![assign role collection](bas6.png)
- 
-  7. Select **`Business_Application_Studio_Developer`** and click **Assign Role Collection**.
+
+  9. Select **`Business_Application_Studio_Developer`** and click **Assign Role Collection**.
 
       ![assign role collection](bas7.png)
 
-  8. Check your result. Now your user should have the **`Business_Application_Studio_Developer`** role collection assigned.
+  10. Check your result. Now your user should have the **`Business_Application_Studio_Developer`** role collection assigned.
 
       ![assign role collection](bas8.png)
 
@@ -161,12 +168,12 @@ author_profile: https://github.com/mervey45
   5. Configure data source, system and service:
      - Data source: **Connect to SAP System**
      - System: **`New System`**
-     - ABAP Environment: **`<your_abap_trial_instance>`**
-     - Service: **`ZUI_C_TRAVEL_M_XXX`**
+     - ABAP Environment: **`default_abap-trial`**
+     - Service: **`ZUI_C_TRAVEL_M_XXX(1) - odata v2`**
 
      Click **Next >**.
 
-     The destination service is: **`abap-cloud-<your_abap_trial_instance>(SCP)`**.
+     A destination for the `abap-trial` service instance is generated automatically. The naming convention is `abap-cloud-<your abap-trial service instance>`, for example, `abap-cloud-abap-trial`.
 
     ![object](studio19.png)
 
@@ -194,29 +201,25 @@ author_profile: https://github.com/mervey45
 
       ![run](studio22.png)
 
-  2. Press the run button and select press button for **`Start ztravel_app_xxx`**  to run your SAP Fiori application.
+  2. Press the run button on the left side and select the **`Start ztravel_app_xxx`** run button to start your SAP Fiori application.
 
       ![run](studio24.png)
 
       HINT: An alternative to run the application is to open the terminal and enter: `npm start`.
 
-  3. Click **Expose and Open**.
+  3. Click **Open in New Tab**.
 
       ![run](studio25.png)
 
-  4. Enter **travel** and press enter.
-
-      ![run](studio26.png)
-
-  5. Select **`test/`**.
+  4. Select **`test/`**.
 
       ![run](studio27.png)
 
-  6. Select **`flpSandbox.html`**.
+  5. Select **`flpSandbox.html`**.
 
       ![run](studio28.png)
 
-  7. Now your SAP Fiori application runs. Select your application **Travel App XXX**.
+  6. Now your SAP Fiori application runs. Select your application **Travel App XXX**.
 
       ![run](studio29.png)
 
@@ -233,7 +236,7 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 6: ](Deploy your application)]
 
-  1. Go back to SAP Business Application Studio, select projects, right-click on your project **`ztravel_app_xxx`** and select **Open in Terminal**.
+  1. Go back to SAP Business Application Studio, select projects, right-click your project **`ztravel_app_xxx`** and select **Open in Terminal**.
 
       ![deploy](deploy.png)
 
@@ -257,8 +260,8 @@ author_profile: https://github.com/mervey45
      Add following information:
 
       - Please choose the target: ABAP
-      - Target System URL: press enter for default
-      - Is this an ABAP Cloud System?: Y
+      - Is this an SAP Cloud Platform system?: Y
+      - Destination: press enter for default
       - Name: press enter for default
       - Package: **`ztravel_app_xxx`**
       - Transport Request: **`<your_transport_request>`**
@@ -282,7 +285,7 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 7: ](Check BSP library and SAP Fiori Launchpad app descriptor item in Eclipse)]
 
-  1. Open Eclipse and check the **BSP library** and **SAP Fiori Launchpad app descriptor item folder** in your package **`ZTRAVEL_APP_XXX`**.
+  1. Open Eclipse and check the **BSP library** and **SAP Fiori Launchpad app descriptor item folder** in your package **`ZTRAVEL_APP_XXX`**. If you are not able to see BSP applications and SAP Fiori Launchpad app description items, refresh your package `ZTRAVEL_APP_XXX` by pressing `F5`.
 
     ![library](library.png)
 
@@ -292,7 +295,7 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 8: ](Create IAM App and business catalog)]
 
-  1. In Eclipse right-click on your package **`ZTRAVEL_APP_XXX`** and select **New** > **Other Repository Object**.
+  1. In Eclipse right-click your package **`ZTRAVEL_APP_XXX`** and select **New** > **Other Repository Object**.
 
       ![iam](iam.png)
 
@@ -326,7 +329,7 @@ author_profile: https://github.com/mervey45
 
       **Save** and **activate** your IAM app.
 
-  7. Right-click on your package **`ZTRAVEL_APP_XXX`** and select  **New** > **Other Repository Object**.
+  7. Right-click your package **`ZTRAVEL_APP_XXX`** and select  **New** > **Other Repository Object**.
 
       ![catalog](catalog.png)
 
@@ -371,87 +374,30 @@ author_profile: https://github.com/mervey45
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Create index.html and run SAP Fiori application)]
+[ACCORDION-BEGIN [Step 9: ](Run SAP Fiori application)]
 
-  1. Go back to SAP Business Application Studio, select projects and open your project **`ztravel_app_xxx`**.Right-click your **`webapp`** folder and select **New File**.
-
-      ![index](index.png)
-
-  2. Create a new file:
-     - Name: **`index.html`**
-
-      ![run](index2.png)
-
-      Click **OK**.
-
-  3. Copy and paste following code:
-
-    ```ABAP
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BonusPlan_MD_CXT_TECH_Standalone</title>
-    <!-- Bootstrapping UI5 -->
-    <script id="sap-ui-bootstrap"
-            src="resources/sap-ui-core.js"
-            data-sap-ui-libs="sap.m"
-            data-sap-ui-theme="sap_bluecrystal"
-            data-sap-ui-compatVersion="edge"
-            data-sap-ui-preload="async"
-            data-sap-ui-resourceroots='{"ztravel_app_xxx": "."}'
-            data-sap-ui-frameOptions="trusted">
-    </script> 
-    <script>
-        sap.ui.getCore().attachInit(function () {
-            sap.ui.require([
-                "sap/m/Shell",
-                "sap/ui/core/ComponentContainer"
-            ], function (Shell, ComponentContainer) {
-                // initialize the UI component
-                new Shell({
-                    app: new ComponentContainer({
-                        height : "100%",
-                        name : "ztravel_app_xxx"
-                    })
-                }).placeAt("content");
-            });
-            });
-     </script>
-    </head>
-    <!-- UI Content -->
-    <body class="sapUiBody" id="content">
-    </body>
-    </html>
-
-    ```
-
-  5. Save **`index.html`**.
-
-  6. Deploy your changes, therefore right-click on your project **`ztravel_app_xxx`** again and select **Open in Terminal**.
+  1. Go back to SAP Business Application Studio and deploy your changes. Therefore right-click your project **`ztravel_app_xxx`** and select **Open in Terminal**.
 
     ![url](url.png)
 
 
-  7.  Enter **`npm run deploy`**. When prompted, check deployment configuration and press y.
+  2. Enter **`npm run deploy`**. When prompted, check deployment configuration and press y.
 
       ![url](url2.png)
 
-  7. Press **`CTRL and click on the following link`** to open the URL in a browser.
+  3. Press **`CTRL and click the following link`** to open the URL in a browser.
 
       ![url](url3.png)
 
-  8. Login to ABAP Trial.
+  4. Log in to ABAP Trial.
 
       ![url](url4.png)
 
-  9. Click **Go**.
+  5. Click **Go**.
 
       ![url](url5.png)
 
- 10. Check your result.
+  6. Check your result.
 
       ![url](url6.png)
 

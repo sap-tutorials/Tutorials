@@ -78,55 +78,62 @@ Once the provisioning is finished, click **Continue**:
 
 ![Cloud trial](3.png)
 
-Follow the instructions at [SAP HANA Cloud Trial Enablement](https://saphanajourney.com/hana-cloud/learning-article/starting-a-sap-hana-cloud-trial-when-you-have-an-existing-sap-cloud-platform-trial/) to prepare your SAP Cloud Platform trial account if you are using an existing trial account and didn't create it fresh in the previous steps. During this action please make sure that when adding the entitlements to your account that you add both the **SAP HANA Cloud** and **SAP HANA Schemas & HDI Containers** if they aren't already assigned.
+From the SAP Cloud Platform entry page, click on the **trial** Subaccount.
 
-![HANA Cloud Entitlements](entitlements.png)
+![Sub Account](trial1.png)
 
-From the SAP Cloud Platform entry page, click Subaccounts and then the tile for your Subaccount named **trial**
-![Subaccount](subaccount.png)
+In the Subaccount page, click on the **dev** space.
 
-Next click the space which should be named **dev**.
-![Space](space.png)
+![dev Space](trial2.png)
 
-From the space level, now please follow the instructions at [SAP HANA Cloud Trial Creation](https://saphanajourney.com/hana-cloud/learning-article/how-to-create-your-trial-sap-hana-cloud-instance/) to create the HANA Cloud instance.
+Once in your **dev** space page, click on **SAP HANA Cloud** in the side menu navigation.  You will then see a page listing all your SAP HANA Cloud instances; of which you should have none.  Click on the **Create Database** button to begin the wizard to create a new instance.
+
+![dev Space](trial3.png)
+
+This wizard will walk you through the process of navigating to your development space and creating a HANA Cloud Instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Allowed connections" setting. This setting will allow you to develop against your HANA Cloud trial using a variety of external development tools.
+
+![Allow All IP addresses](trial4.png)
 
 After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP Cloud Platform.
 
-![HANA Cloud Instance](3_2.png)
+![HANA Cloud Instance](trial5.png)
 
-Once the SAP HANA Cloud instance is created, take note of the admin user as well as the endpoint (host:port) needed to connect to the database. This will be needed in subsequent tutorials in this tutorial.
+If you get stuck at any point in this process, there is also this short video you can watch and follow along.
 
-Return to the Subaccount level in the SAP Cloud Platform Cockpit. Click on **Entitlements** in the left hand navigation.  Click on **Configure Entitlements**. Then click on **Add Service Plans**.  Search for entitlements with **web** in the name. Choose **SAP Web IDE for HANA development**. Select the **TRIAL (Subscription)** plan.  Press the **Add 1 Service Plan** button.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Lv_40d1ZtsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-![Add Service Plan for Web IDE](ide1.png)
-
-When the Entitlements dialog closes be sure to press the **Save** button.
-
-![Save Entitlements](ide2.png)
-
-Now please choose **Subscriptions** from the left hand menu.  Click on the SAP Web IDE Full-Stack Subscription.
-
-![Choose Subscription](ide3.png)
-
-In the subscription detail screen, please press the **Subscribe** button.
-
-![Subscribe](ide4.png)
-
-Now you can click on **Go to Application** in order to launch the SAP Web IDE Full-Stack.
-
-![Go to Application](ide5.png)
+Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent tutorials in this tutorial.
 
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 4: ](Configure SAP Web IDE)]
 
-1. Once SAP Web IDE opens, access the **Preferences**.
+1. Return to the Subaccount level in the SAP Cloud Platform Cockpit. Click on **Entitlements** in the left hand navigation.  Click on **Configure Entitlements**. Then click on **Add Service Plans**.  Search for entitlements with **web** in the name. Choose **SAP Web IDE for HANA development**. Select the **TRIAL (Subscription)** plan.  Press the **Add 1 Service Plan** button.
+
+    !![Add Service Plan for Web IDE](ide1.png)
+
+2. When the Entitlements dialog closes be sure to press the **Save** button.
+
+    !![Save Entitlements](ide2.png)
+
+3. Now please choose **Subscriptions** from the left hand menu.  Click on the SAP Web IDE Full-Stack Subscription.
+
+    !![Choose Subscription](ide3.png)
+
+4. In the subscription detail screen, please press the **Subscribe** button.
+
+    !![Subscribe](ide4.png)
+
+5. Now you can click on **Go to Application** in order to launch the SAP Web IDE Full-Stack.
+
+    !![Go to Application](ide5.png)
+
+6. Once SAP Web IDE opens, access the **Preferences**.
 
     !![SAP Web IDE](5.png)
 
-2. Click **Extensions** and enable **SAP HANA Database Development Tools**, if not enabled.
+7. Click **Extensions** and enable **SAP HANA Database Development Tools**, if not enabled.
 
     !![SAP Web IDE](6.png)
 
@@ -134,7 +141,7 @@ Now you can click on **Go to Application** in order to launch the SAP Web IDE Fu
 
     ![SAP Web IDE](7.png)
 
-3. After SAP Web IDE has refreshed, click **Cloud Foundry** in **Preferences**.
+8. After SAP Web IDE has refreshed, click **Cloud Foundry** in **Preferences**.
 
     ![SAP Web IDE](8.png)
 
@@ -148,7 +155,7 @@ Now you can click on **Go to Application** in order to launch the SAP Web IDE Fu
 
     The subaccount and space will populate automatically.
 
-4. Finally, configure the **Database Explorer**. Choose the region matching region `US10` or `EU10` and click **Save**.
+9. Finally, configure the **Database Explorer**. Choose the region matching region `US10` or `EU10` and click **Save**.
 
     ![SAP Web IDE](11.png)
 
@@ -442,7 +449,7 @@ Or you can continue to use the free SAP HANA Cloud trial as a part of your overa
 
 Here's how you can get started with any developer-focused topic in SAP HANA and more:
 
--   **SAP Developer Center**: You'll find plenty of free downloads and tutorials to help you with different topics on [developers.sap.com](http://developers.sap.com). You can learn new topics like [machine learning](group.hxe-aa-movielens-SQL), dive into [geospatial](group.hana-aa-spatial-get-started), working with the various [HANA client interfaces](mission.hana-cloud-clients) or switch to a full SAP HANA, express edition, image with XS Advanced, to [create cloud native applications with micro-services](mission.xsa-get-started).
+-   **SAP Developer Center**: You'll find plenty of free downloads and tutorials to help you with different topics on [developers.sap.com](http://developers.sap.com). You can learn new topics like [geospatial](group.hana-aa-spatial-get-started), working with the various [HANA client interfaces](mission.hana-cloud-clients) or switch to a full SAP HANA, express edition, image with XS Advanced, to [create cloud native applications with micro-services](mission.xsa-get-started).
 -   **The community**: Fellow developers write about their experiences and recommendations in [blog posts](https://blogs.sap.com/), and many are willing to answer your questions [in the Q&A](https://answers.sap.com).
 -   **Community events**: You can also check out [events](https://community.sap.com/events) closest to you in order to meet other developers.
 

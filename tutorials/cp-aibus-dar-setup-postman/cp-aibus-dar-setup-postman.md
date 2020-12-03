@@ -2,7 +2,7 @@
 title: Set Up Postman to Call Data Attribute Recommendation APIs
 description: Adjust and import Postman environment and collection templates to call the Data Attribute Recommendation APIs.
 auto_validation: true
-time: 10
+time: 5
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
@@ -21,7 +21,9 @@ In the following tutorials Postman is used to communicate and interact with your
 
 Postman offers the option to add environments. Environments represent key-value pairs which can be reused in requests, so you don't have to remember them. For more information, see [Postman Environments](https://learning.getpostman.com/docs/postman/environments-and-globals/intro-to-environments-and-globals/).
 
-You can use this feature to store your service key details created in [Create Service Instance for Data Attribute Recommendation](cp-aibus-dar-service-instance) and reuse them in your requests to your service instance.
+If you have downloaded the Postman environment and collection templates from the **Set up account for Data Attribute Recommendation** booster, as detailed in [Set Up Account for Data Attribute Recommendation and Download Postman Templates](cp-aibus-dar-booster-postman), you can set this step to **Done** and proceed with Step 2.
+
+Follow the steps below if you want to manually add, to the environment template, your service key details created in [Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-key).
 
 Use the [environment template](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial-sample/blob/master/Data_Attribute_Recommendation_Tutorial_Postman_Collection_Environment.json) for Data Attribute Recommendation available on GitHub and make a local copy.
 
@@ -34,7 +36,7 @@ Insert the following values from your service key into the corresponding spaces 
 |  `clientsecret` (inside the `uaa` section of the service key) | `clientsecret`
 |  `url` (outside the `uaa` section of the service key)         | `hostname`
 
-![Service Keys](service-key.png)
+![Service Key](service-key.png)
 
 ![Postman Key](service-key-values.png)
 
@@ -75,6 +77,8 @@ Collections let you group requests together in folders. This helps with the orga
 To get started, use the [collection template](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial-sample/blob/master/Data_Attribute_Recommendation_Tutorial_Postman_Collection.json) for Data Attribute Recommendation available on GitHub. There is no need to adjust anything.
 
 **Import** the collection the same way as you did for the environment in Step 2. You can either make a local copy and upload the file or paste the text directly in the available text area.
+
+Here you can also use the collection template you downloaded from the **Set up account for Data Attribute Recommendation** booster, as detailed in [Set Up Account for Data Attribute Recommendation and Download Postman Templates](cp-aibus-dar-booster-postman).
 
 After you have imported the collection, it will appear on the left. As previously explained, collections are organized in folders and you find multiple requests in each folder.
 

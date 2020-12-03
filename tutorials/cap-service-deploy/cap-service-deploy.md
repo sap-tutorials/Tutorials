@@ -11,7 +11,7 @@ time: 30
 
 ## Prerequisites
 - You've finished the tutorial [Create a Business Service with Node.js using Visual Studio Code](cp-apm-nodejs-create-service).  
-- If you don't have a Cloud Foundry Trial Subaccount on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) and, if necessary [Manage Entitlements](cp-trial-entitlements).
+- If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **Europe (Frankfurt) or US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements).
 - You've downloaded and installed the [cf command line client](https://github.com/cloudfoundry/cli#downloads) for Cloud Foundry as described in the tutorial [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
 
 ## Details
@@ -37,14 +37,17 @@ It's now time to switch to SAP HANA as a database.
         }
       }
     ```
+
     >`kind:sql` declares the requirement for an SQL database. It evaluates to `sqlite` in the `development` profile (active by default), while in `production` it equals `hana`. This way you don't need to modify this file if you want to switch between the two databases.
-    `
+
+    > Don't edit the `gen/db/package.json` file.
+
 3. In the command line add the SAP HANA driver as a dependency to your project:
 
 ```Shell/Bash
 npm add @sap/hana-client --save
 ```
-In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP and check that you've installed the latest long-term support (LTS) version of [Node.js](https://nodejs.org/en/).
+In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP and check that you've installed the latest long-term support (LTS) version of [Node.js](https://nodejs.org/en/).
 
 [DONE]
 
@@ -73,6 +76,8 @@ cf login
 ```
 > This will ask you to select CF API, org, and space.
 
+> The API Endpoint is taken by default. If you want to change the API Endpoint use `cf api` to change the API.
+
 [DONE]
 [ACCORDION-END]
 
@@ -92,12 +97,12 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
     >Check the status of your service using `cf service my-bookshop-db`.
 
-    >If service creation fails, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#hana) for CAP.
+    >If service creation fails, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#hana) for CAP.
 
 2. Now, build and deploy both the database part and the actual application and add:
 
     ```
-    SET CDS_ENV=production && cds build
+    cds build --production
     cf push -f gen/db
     cf push -f gen/srv --random-route
     ```
@@ -139,7 +144,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 2. Now, build and deploy both the database part and the actual application and add:
 
     ```Shell/Bash
-    CDS_ENV=production cds build && cf push -f gen/db && cf push -f gen/srv --random-route
+    cds build --production && cf push -f gen/db && cf push -f gen/srv --random-route
     ```
 
     >This process takes some minutes.
@@ -151,6 +156,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
         ```
         name:              my-bookshop-srv
         requested state:   started
+        isolation segment: trial
         routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
         ```
 
