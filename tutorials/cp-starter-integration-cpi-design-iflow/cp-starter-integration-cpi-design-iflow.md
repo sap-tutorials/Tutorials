@@ -1,6 +1,6 @@
 ---
 title: Design and Deploy Your First Integration Flow
-description: Design an integration flow to integrate an online webshop that exposes data via OData service and fetch the product details. Your request will be sent via Postman client.
+description: Design an integration flow to integrate an online webshop that exposes data via OData service and fetch the product details.
 auto_validation: true
 time: 40
 tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-cloud-platform-for-the-cloud-foundry-environment]
@@ -11,7 +11,6 @@ author_profile: https://github.com/Vikramkulkarni01
 
 ## Prerequisites
  - You have provisioned your SAP Cloud Platform Integration Suite tenant. For more information, see [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
- - You have [downloaded](https://www.getpostman.com/downloads/) and installed the Postman client.
 
 ## Details
 ### You will learn

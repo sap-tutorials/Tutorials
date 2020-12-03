@@ -206,9 +206,11 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 [ACCORDION-BEGIN [Step 7: ](Verify the activated capabilities)]
 
 1. After giving authorization to a user, go to the **Integration Suite Launchpad** application and choose **Manage Capabilities** tile.
-    !![Link text e.g., Destination screen](1.6.1VerifyActivatedCapab.png)
+
+    !![Activated Capabilities](ManageCapab.png)
 
 2. Click on the URLs of all the activated capabilities and verify if you can successfully access them.
+
     !![Verify](6.1Verifycapabilities.png)
 
 [DONE]
