@@ -99,29 +99,7 @@ You use Cloud Integration to design and deploy the integration flow. When you ha
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 4: ](Configure administrator access)]
-
-In this step, you authorize a user to access the Integration Suite Provisioning application and to activate its capabilities. The assigned user will also be able to add users to access activated Integration Suite capabilities.
-
-1. Go to **Security > Trust Configuration** and click **`sap.default`**.
-
-    !![Trust_configuration](4.1.1_Adminstrator_Access.png)
-
-2. Enter the user's e-mail address and click **Show Assignments**. In the confirmation dialog, click **Add User**.
->**IMPORTANT**: The confirmation message appears only when an email address is not added to the account.
-
-    !![Add User](4.1.2_Adduser.png)
-
-3. Click  **Assign Role Collections** and select **Integration Provisioner** role collection.
-
-    !![Role collection](4.1.3_Rolecollection.png)
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 5: ](Provision the capabilities)]
+[ACCORDION-BEGIN [Step 4: ](Provision the capabilities)]
 >**IMPORTANT**: Ensure that you unsubscribe to the standalone services (like Open Connectors, Process Integration or APIM service ) if you have already subscribed to it.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
 
 >**Navigational Steps**: Go to Service Marketplace, search for Open Connectors and click `unsubscribe`.
@@ -173,7 +151,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 [DONE]
 [ACCORDION-END]
 
- [ACCORDION-BEGIN [Step 6: ](Assign roles for the capabilities)]
+ [ACCORDION-BEGIN [Step 5: ](Assign roles for the capabilities)]
  In this step, you assign users to the trial account for them to access and use the activated capability.
 
  1. Go to **Security > Trust Configuration** and click **`sap.default`**.
@@ -203,7 +181,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Verify the activated capabilities)]
+[ACCORDION-BEGIN [Step 6: ](Verify the activated capabilities)]
 
 1. After giving authorization to a user, go to the **Integration Suite Launchpad** application and choose **Manage Capabilities** tile.
 
