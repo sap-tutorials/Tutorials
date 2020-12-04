@@ -155,7 +155,7 @@ Once you accept app update, you will see the list of entities on the **Main** pa
 
 ![MDK](img_5.1.gif)
 
-Additionally, you can search via Barcode Scanner over all properties of the objects displayed in the section. For example, in Products list, you can scan the barcode to search the products belong to _MP3 Players_ category.
+Additionally, you can search over all properties of the objects displayed in the section by entering manually or via barcode scanner. For example, in Products list, you can scan the barcode to search the products belong to _MP3 Players_ category.
 
 !![MDK](img_5.3.gif)
 
@@ -169,7 +169,7 @@ Once you accept app update, you will see the list of entities on the **Main** pa
 
 ![MDK](img_5.2.gif)
 
-Additionally, you can search via Barcode Scanner over all properties of the objects displayed in the section. For example, in Products list, you can scan the barcode to search the products belong to _MP3 Players_ category.
+Additionally, you can search over all properties of the objects displayed in the section by entering manually or via barcode scanner. For example, in Products list, you can scan the barcode to search the products belong to _MP3 Players_ category.
 
 !![MDK](img_5.4.gif)
 
