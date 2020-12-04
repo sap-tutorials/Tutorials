@@ -311,7 +311,7 @@ You can find more details about Cloud Build service in [help documentation](http
 
     !![MDK](img_3.7.1.png)
 
-    You can find more details about packaging details in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/customization.html#packaging-details-overview).
+    You can find more details about packaging details in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/admin/customization.html#packaging-details-overview).
 
 [VALIDATE_1]
 [ACCORDION-END]
