@@ -110,11 +110,11 @@ Click on **Log on** to log on to your verified account.
 
 3. The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
 
-    ![Dialog setting up space](trial-created.png)
+    !![Dialog setting up space](trial-created.png)
 
 4. This page will display the currently state of the subaccount. You can also use this page to jump in the different environments on SAP Cloud Platform.
 
-    ![subaccount](sub-account.png)
+    !![subaccount](sub-account.png)
 
 
 

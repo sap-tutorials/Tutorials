@@ -41,7 +41,7 @@ primary_tag: products>sap-translation-hub
 All applications and services are available in spaces. By default, trial accounts only have the **dev** space available.
 To access your spaces, click **Spaces** on the navigation sidebar and select the **dev** space to open it. You will create your service instance in this space.
 
-![Spaces](03-access-space.png)
+!![Spaces](03-access-space.png)
 
 [DONE]
 [ACCORDION-END]
@@ -50,9 +50,10 @@ To access your spaces, click **Spaces** on the navigation sidebar and select the
 [ACCORDION-BEGIN [Step 3: ](Access service via Service Marketplace)]
 
 The **Service Marketplace** is where you find the available services on SAP Cloud Platform.
-To access it, click **Service Marketplace** on the navigation sidebar and search for **doc**. Click the tile named `Document Translation` to access the service.
 
-![Service Marketplace](04-access-service-marketplace.png)
+To access it, click **Service Marketplace** on the navigation sidebar and search for **`doc`**. Click the tile named `Document Translation` to access the service.
+
+!![Service Marketplace](04-access-service-marketplace.png)
 
 [DONE]
 [ACCORDION-END]
@@ -61,22 +62,24 @@ To access it, click **Service Marketplace** on the navigation sidebar and search
 [ACCORDION-BEGIN [Step 4: ](Create service instance)]
 
 You will now create an instance of your service.
-Click **Create Instance** to start the creation dialog.
 
-![Service Instance](05-create-instance.png)
+1. Click **Create Instance** to start the creation dialog.
 
-In the dialog, leave the default value for the service and select the **trial** service plan.
-Enter a name for your new instance: `demo`.
+    !![Service Instance](05-create-instance.png)
 
-![Create Instance](06-create-instance-dialog.png)
+2. In the dialog, leave the default value for the service and select the **trial** service plan.
 
-Click **Create Instance** (you can ignore the other steps) and create the instance.
+    For the name for your new instance, enter: `demo`.
 
-![Create Instance](07-create-instance-final.png)
+    !![Create Instance](06-create-instance-dialog.png)
 
-In the following dialog, click on **View Instance** to be navigated to the list of your service instances.
+    Click **Create Instance** (you can ignore the other steps).
 
-![View Instances](08-view-instances.png)
+    !![Create Instance](07-create-instance-final.png)
+
+3. In the following dialog, click **View Instance** to go to the list of your service instances.
+
+    ![View Instances](08-view-instances.png)
 
 You have successfully created a service instance for Document Translation.
 
@@ -90,22 +93,20 @@ You are now able to create service keys for your new service instance. Service k
 
 1. Click the navigation arrow to open the details of your service instance. Then, click the dots to open the menu and select **Create Service Key**.
 
-      ![Service Keys](09-create-service-keys.png)
+      !![Service Keys](09-create-service-keys.png)
 
 2. In the dialog, enter `demo-key` as the name of your service key. Click **Create** to create the service key.
 
-      ![Create Service Key](10-create-service-key-name.png)
+      !![Create Service Key](10-create-service-key-name.png)
 
 You have successfully created service keys for your service instance. You can now either view the service key in the browser or download it.
 
-![View Service Key](11-view-service-key.png)
+!![View Service Key](11-view-service-key.png)
 
-You will need the values of the service keys to enable the Document Translation service e.g. for:
+You will need the values of the service keys to enable the Document Translation service, for example, for the following:
 
-* [Translate Documents with SAP API Business Hub](sth-document-translation-apihub)
-* [Enter credentials for Document Translation in SAP Enable Now](https://enablenowexpert.com/?p=714)
-
-[DONE]
+- [Translate Documents with SAP API Business Hub](sth-document-translation-apihub)
+- [Enter credentials for Document Translation in SAP Enable Now](https://enablenowexpert.com/?p=714)
 
 [VALIDATE_1]
 [ACCORDION-END]
