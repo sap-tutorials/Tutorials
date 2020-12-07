@@ -1,4 +1,6 @@
 ---
+author_name: Beatrice Pasch
+author_profile: https://github.com/beapasch
 title: Translate a Java App
 description: Use SAP Translation Hub to translate the UI texts for a Java app that you develop in Eclipse.
 auto_validation: true
@@ -8,6 +10,7 @@ time: 15
 ---
 
 ## Prerequisites  
+  - **IMPORTANT:**: This tutorial cannot be completed on a trial account.
   - [Install and configure Eclipse environment](https://github.com/SAP/cloud-espm-v2#1-quick-start-guide) Complete the **1. Quick start guide** section.
 
 ## Details
