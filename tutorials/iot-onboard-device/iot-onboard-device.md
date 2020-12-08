@@ -1,5 +1,5 @@
 ---
-title: Onboard Virtual Devices and have them send Data continuously
+title: Onboard Virtual Devices and Enable Them to Send Data
 description: Use scripts to register new devices in SAP Internet of Things, download authentication certificates and then have data sent from those "virtual" devices from your computer.
 auto_validation: true
 time: 10
