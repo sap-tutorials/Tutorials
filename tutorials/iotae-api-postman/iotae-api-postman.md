@@ -12,17 +12,31 @@ time: 15
  - Access to a tenant specific to SAP IoT. In this tutorial, tenant `democompany` is used.
 
 ## Details
-### You will learn  
-In [previous tutorials](https://developers.sap.com/tutorials/iot-express-4-create-thing-model.html), you learned about using Thing Modeler to onboard a thing, send data to the thing, and retrieve data from the thing. Now, you'll learn to use Postman to access SAP IoT APIs.
+### You will learn
+- How to retrieve OAuth token to access APIs
+- How to read thing metadata
+- How to onboard a thing and create data
 
-Use Postman client to retrieve the OAuth token specific for your tenant. For more information, see [Accessing SAP IoT APIs Using OAuth Token](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/latest/en-US/7b3a94e68be9460680a915138a160c67.html). The retrieved token is used to access the API endpoints described in this tutorial.
-
-For more information about the authorization concept of the SAP IoT platform, see <https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/latest/en-US> | **Authorization**.
-
+In [previous tutorials](iot-express-4-create-thing-model), you learned about using Thing Modeler to onboard a thing, send data to the thing, and retrieve data from the thing. Now, you'll learn to access SAP IoT APIs using Postman.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Display package details)]
+[ACCORDION-BEGIN [Step 1: ](Retrieve OAuth Token)]
+
+You can retrieve the OAuth token specific for your tenant using Postman. The retrieved token is used to access the API endpoints described in this tutorial.
+
+For more information, see
+
+- [How to retrieve OAuth Token](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/latest/en-US/7b3a94e68be9460680a915138a160c67.html)
+
+- [Authorization concept in SAP IoT](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/latest/en-US/5f1a38d7048042fa8c00314bc619e262.html)
+
+[DONE]
+
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 2: ](Display package details)]
 
 1. In Postman, choose the **GET** method.
 
@@ -66,7 +80,7 @@ For more information about the authorization concept of the SAP IoT platform, se
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Read thing type details)]
+[ACCORDION-BEGIN [Step 3: ](Read thing type details)]
 To create data for a thing, you must identify the property set type that is used to define property sets for a thing type. Firstly, identify thing types that belong to a package, and then read details of a thing type along with its property sets and properties.
 
 1. In Postman, choose the **GET** method.
@@ -285,7 +299,7 @@ To create data for a thing, you must identify the property set type that is used
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Onboard computer device as a thing)]
+[ACCORDION-BEGIN [Step 4: ](Onboard computer device as a thing)]
 Object group is a technical object used for assigning object-based authorizations to user groups. When you assign an object group to a thing, you are allowed to carry out the functions based on the capabilities defined for the user group. You must identify what object group to use while creating a thing.
 
 1. In Postman, choose the **GET** method.
@@ -363,7 +377,7 @@ Object group is a technical object used for assigning object-based authorization
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create time series data)]
+[ACCORDION-BEGIN [Step 5: ](Create time series data)]
 Using API endpoints is one of the ways to directly ingest data for a thing. Alternatively, using device management too you can ingest data for a thing.
 
 1. In Postman, choose the **PUT** method.
@@ -407,7 +421,7 @@ Using API endpoints is one of the ways to directly ingest data for a thing. Alte
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Read time series data)]
+[ACCORDION-BEGIN [Step 6: ](Read time series data)]
 1. In Postman, choose the **GET** method.
 
 2. Enter the following request URL:
@@ -450,7 +464,7 @@ Using API endpoints is one of the ways to directly ingest data for a thing. Alte
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Explore IoT APIs in SAP API Hub (optional))]
+[ACCORDION-BEGIN [Step 7: ](Explore IoT APIs in SAP API Hub (optional))]
 To better understand SAP IoT APIs, you can go to SAP API Hub at <https://api.sap.com/package/IOTAE?section=Artifacts> and review and execute different APIs in its sandbox.
 
 [DONE]

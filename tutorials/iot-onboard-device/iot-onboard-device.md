@@ -104,7 +104,7 @@ You can now use batch or streaming rules to react to the incoming data across ti
 
 Please refer to the other tutorials with 'IoT' in their name to get up to speed on these topics.
 
-If you remove `greenhouse.` from the file names of the provided `greenhouse.model.json` and `greenhouse.devices.json` and then run the 3 scripts again you get data that directly works with the following tutorial group: [Create a Decision Support App and Enable Notification in SAP Fiori Launchpad](https://developers.sap.com/group.iot-app-decision-support.html).
+If you remove `greenhouse.` from the file names of the provided `greenhouse.model.json` and `greenhouse.devices.json` and then run the 3 scripts again you get data that directly works with the following tutorial group: [Create a Decision Support App and Enable Notification in SAP Fiori Launchpad](group.iot-app-decision-support).
 
 [VALIDATE_7]
 [ACCORDION-END]
