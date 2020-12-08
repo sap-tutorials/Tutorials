@@ -52,9 +52,9 @@ In the service key you created for Document Classification in the previous tutor
 
 [ACCORDION-BEGIN [Step 2: ](Classify documents)]
 
-In this step, you can upload documents and get the service classification results.
+In this step, you can upload documents and get the service classification results. Please refer to the [documentation](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US/c66983111a5949af9dfd8fec25cba257.html) about the file formats that are supported by the service.
 
-In the Document Classification trial, there is a pre-trained model available for all users. The model predicts whether a document is an invoice, purchase order or payment advice. Feel free to use and upload any of such PDF documents.
+In the Document Classification trial, there is a pre-trained model available for all users. The model predicts whether a document is an invoice, purchase order or payment advice. Feel free to use and upload any of such documents.
 
 >As an alternative to uploading your own documents to the service, you can use the following sample files (right click on the link, then click ***Save link as*** to download the files locally):
 
@@ -74,7 +74,7 @@ Next, click **Try it out** to try the request.
 
 Once you click the button, several input fields show up:
 
-  1.  In the field `document`, upload the PDF document you want to classify.
+  1.  In the field `document`, upload the document you want to classify.
 
   2.  The field `parameters` should be empty. In case the field has any pre-filled content, go ahead and delete it.
 
@@ -124,7 +124,7 @@ In the screenshot below, the sample purchase order was used.
 
 ![Classification Result](classification-result-response.png)
 
-Go ahead and upload other PDF documents to see the outcome. Just note that there is a limited amount of documents that you can classify using a trial account. Find the trial account input limits for Document Classification [here](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US/baeb1924c84343158f483d82b21bd6a4.html).
+Go ahead and upload other documents to see the outcome. Just note that there is a limited amount of documents that you can classify using a trial account. Find the trial account input limits for Document Classification [here](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US/baeb1924c84343158f483d82b21bd6a4.html).
 
 Congratulations, you have now successfully used our machine learning model to classify business documents, namely invoice, payment advices and purchase orders.
 
