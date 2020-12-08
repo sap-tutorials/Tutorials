@@ -76,7 +76,7 @@ cf login
 ```
 > This will ask you to select CF API, org, and space.
 
-> The API Endpoint is taken by default. If you want to change the API Endpoint use `cf api` to change the API.
+> The API Endpoint is taken by default. If you want to change the API Endpoint use `cf api <CF_API_ENDPOINT>` to change the API. Replace `<CF_API_ENDPOINT>` with the actual value you obtained in the previous step.
 
 [DONE]
 [ACCORDION-END]
