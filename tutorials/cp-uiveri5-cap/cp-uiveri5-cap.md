@@ -559,7 +559,9 @@ Create and run a build job for your project in Jenkins.
 
 4. For **SCM**, choose **Git**.
 
-5. In your repository in GitHub, choose **Code** and copy your repository URL for HTTPS.
+5. In your repository in GitHub, choose **Code**, copy your repository URL for HTTPS, and select branch "*/main"
+
+    !![UiVeri5 Test Report in Jenkins](Jenkins-main.png)
 
 6. In Jenkins, enter your URL as **Repository URL** and choose **Save**.
 
