@@ -116,7 +116,7 @@ Now, your app should be complete and you can run it locally to see if everything
     npm start
     ```
 
-3. See your completed app at <http://localhost:3000/>. Try changing the language and clicking around. If there are errors, retrace your steps in the tutorial or compare with the finished app on [SAP Samples](https://github.com/SAP-samples/luigi-micro-frontend-application).
+3. See your completed app at `http://localhost:3000/`. Try changing the language and clicking around. If there are errors, retrace your steps in the tutorial or compare with the finished app on [SAP Samples](https://github.com/SAP-samples/luigi-micro-frontend-application).
 
 
 

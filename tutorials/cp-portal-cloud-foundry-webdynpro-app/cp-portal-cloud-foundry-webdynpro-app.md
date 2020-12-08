@@ -3,8 +3,8 @@ title: Add a Web Dynpro ABAP App to Your SAP Cloud Platform Launchpad Site
 description: Add a classic SAP UI app (like those typically run by SAP customers on the data center backends), to your launchpad site.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
-primary_tag: products>sap-cloud-platform-portal
+tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-cloud-platform-launchpad]
+primary_tag: products>sap-cloud-platform-launchpad
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---

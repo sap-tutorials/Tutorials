@@ -100,7 +100,7 @@ You can run the UI5 project to check if it's assembled correctly. Open a termina
 npm start
 ```
 
-You should be able to access the app at <http://localhost:8080/index.html>.
+You should be able to access the app at `http://localhost:8080/index.html`.
 
 
 [VALIDATE_1]

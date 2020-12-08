@@ -582,7 +582,7 @@ In this step, you can check if your core app is configured correctly so far by r
 
 1. Open a terminal/command prompt window. Navigate to the `react-core-mf` folder.
 
-2. Input `npm start`. Your application should be up and running at <http://localhost:3000/>. You should be able to see the homepage and "Products" view.
+2. Input `npm start`. Your application should be up and running at `http://localhost:3000/`. You should be able to see the homepage and "Products" view.
 
 [VALIDATE_1]
 [ACCORDION-END]
