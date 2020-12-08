@@ -101,7 +101,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
 2. Now, build and deploy both the database part and the actual application and add:
 
-    ```
+    ```Shell/Bash
     cds build --production
     cf push -f gen/db
     cf push -f gen/srv --random-route
