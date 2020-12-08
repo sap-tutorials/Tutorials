@@ -53,7 +53,7 @@ In the service key you created for Invoice Object Recommendation in the previous
 
 To train a machine learning model, you first need to upload training data by using the endpoint **`POST /ivp/upload`**. The endpoint is located in the set `Upload Data` - click to expand it. The training data must be provided in a CSV file and has to contain certain fields. Please see [here](https://help.sap.com/viewer/15074a8e9a1a4abf923460c93e89b409/SHIP/en-US/d000184cb4b849c2b2d736a4fda92a11.html) for more information on the required format and data.
 
-As an alternative to uploading your own file to the service, you can use this [sample training data](`https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ior-swagger-ui/data/Training-Sample.csv`). Right click on the link, then click ***Save link as*** to download the file locally.
+As an alternative to uploading your own file to the service, you can use this [sample training data](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ior-swagger-ui/data/Training-Sample.csv). Right click on the link, then click ***Save link as*** to download the file locally.
 
   1. Click the endpoint name to expand it.
 
@@ -158,7 +158,7 @@ You have now successfully trained a machine learning model for the Invoice Objec
 
 [ACCORDION-BEGIN [Step 5: ](Get predictions)]
 
-You can now send data, such as invoice data, to your machine learning model and it will return predictions for the fields it was trained on. In this case, the model returns G/L account predictions. You can use this [sample inference file](`https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ior-swagger-ui/data/Inference-Sample.csv`). Right click on the link, then click ***Save link as*** to download the file locally. Note that the inference data needs to be in a CSV file as well.
+You can now send data, such as invoice data, to your machine learning model and it will return predictions for the fields it was trained on. In this case, the model returns G/L account predictions. You can use this [sample inference file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ior-swagger-ui/data/Inference-Sample.csv). Right click on the link, then click ***Save link as*** to download the file locally. Note that the inference data needs to be in a CSV file as well.
 
 To make an inference call, use the endpoint **`POST /ivp/inference`**.
 
