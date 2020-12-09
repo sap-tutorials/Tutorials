@@ -24,7 +24,7 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP Cl
 
 1. Go to the [SAP Cloud Platform Trial Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) click on **Enter Your Trial Account**.
 
-    !![cloud platform cockpit view](cloudplatform-cockpit.png)
+    !![cloud platform cockpit view](cockpit.png)
 
 2. Navigate to your subaccount by hitting the corresponding tile.
 
