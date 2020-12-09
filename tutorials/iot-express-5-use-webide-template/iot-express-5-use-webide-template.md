@@ -9,7 +9,7 @@ time: 15
 
 ## Prerequisites  
  - **Configuration** You or someone else, that is an administrator in your global account, has walked through the following end-to-end configuration and onboarding guide: [Getting Started with SAP IoT](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest).
- - **Tutorials:** [Create Thing Model](https://developers.sap.com/tutorials/iot-express-4-create-thing-model.html)
+ - **Tutorials:** [Create Thing Model](iot-express-4-create-thing-model)
 
 ## Details
 ### You will learn
