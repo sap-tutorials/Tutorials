@@ -25,7 +25,7 @@ You will use Swagger UI, via all major web browser, to call the Document Classif
 
 In the service key you created for Document Classification in the previous tutorial: [Create Service Instance for Document Classification with Trial Account](cp-aibus-dc-service-instance), you should find (outside the `uaa` section of the service key) an entry called `url` (as highlighted in the image below).
 
-1. To access the Document Information Extraction Swagger UI, add **`/document-classification/v1`** to the `url` value, paste it in any web browser and press **Enter**.
+1. To access the Document Classification Swagger UI, add **`/document-classification/v1`** to the `url` value, paste it in any web browser and press **Enter**.
 
     ![Service keys](service-key-details.png)
 
@@ -33,7 +33,7 @@ In the service key you created for Document Classification in the previous tutor
 
     ![Swagger UI Authorize](swagger-authorize.png)
 
-3. Copy the `access_token` created in the previous tutorial [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), add **Bearer** in front of it, and enter in the **Value** field.
+3. Copy the `access_token` created in the previous tutorial [Get OAuth Access Token for Document Classification Using Any Web Browser](cp-aibus-dc-web-oauth-token), add **Bearer** in front of it, and enter in the **Value** field.
 
     ```
     Bearer <access_token>
