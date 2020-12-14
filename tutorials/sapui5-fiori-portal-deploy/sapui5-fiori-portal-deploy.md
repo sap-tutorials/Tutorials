@@ -7,7 +7,6 @@ tags: [ tutorial>intermediate, topic>odata, topic>sapui5,  products>sap-cloud-pl
 primary_tag: products>sap-fiori
 ---
 
-
 ## Details
 ### You will learn
   - How to prepare the interface between the web app and the Fiori Launchpad
