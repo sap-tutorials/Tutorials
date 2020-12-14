@@ -146,7 +146,7 @@ In the response, you initially receive the status of the training as **PENDING**
 
 The response includes the current status of the training. If the status is **RUNNING**, the training is still in progress. If training already finished, the status changes to **SUCCEEDED**. You should receive a response like the following:
 
-![Training Status Result](png-files\training-status-result.png)
+![Training Status Result](png-files/training-status-result.png)
 
 The response also includes accuracy which indicates how certain the model is about its prediction. A confidence of 1 means that the model is 100% sure about its prediction.
 
