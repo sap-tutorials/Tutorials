@@ -1,5 +1,5 @@
 ---
-title: Create Dataset and Upload Training Data
+title: Create Dataset, Upload Training Data and Submit Training Job
 description: Perform the initial steps to train your own Business Entity Recognition custom model to get machine learning entity predictions for the text you submit to the service.
 auto_validation: true
 time: 20
@@ -13,9 +13,7 @@ primary_tag: topic>machine-learning
   - How to access and use the Business Entity Recognition Swagger UI (User Interface)
   - How to create a dataset, upload training data and submit a training job
 
-The core functionality of Business Entity Recognition is to automatically detect and highlight any given type of named entity in unstructured text and classify it in accordance with predefined categories.
-
-In this tutorial, you will learn how to use the service APIs to create a dataset, upload training data, and submit a training job to finally create your own custom machine learning model to classify any given type of named entity, such as mobile number, first name, last name and address, in the texts you will submit to the service in the next tutorial: [Deploy Model and Get Prediction Results](cp-aibus-ber-custom-deploy).
+The core functionality of Business Entity Recognition is to automatically detect and highlight any given type of named entity in unstructured text and classify it in accordance with predefined categories. In this tutorial, you will learn how to use the service APIs to create a dataset, upload training data, and submit training job to finally train your own machine learning model and get named entity predictions for the texts you submit to the service in the next tutorial: [Deploy Model and Get Prediction Results](cp-aibus-ber-custom-deploy).
 
 ---
 
@@ -101,9 +99,9 @@ Please bear in mind that Business Entity Recognition requires your data to be in
 
 >As an alternative to uploading your own JSON file to the service, you can use the following sample files (right click on the link, then click ***Save link as*** to download the files locally):
 
->- [Sample Training Data 1](`https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ber-swagger-ui-custom/data/Tutorial_training_data_1.json`)
+>- [Sample Training Data 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ber-swagger-ui-custom/data/Tutorial_training_data_1.json)
 
->- [Sample Training Data 2](`https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ber-swagger-ui-custom/data/Tutorial_training_data_2.json`)
+>- [Sample Training Data 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ber-swagger-ui-custom/data/Tutorial_training_data_2.json)
 
 >Please repeat this step twice and upload one document each time. The more data is available the better predictions the model can give you.
 
@@ -212,7 +210,7 @@ You should receive a response like below. The status `RUNNING` indicates that th
 
 !![BER](png-files/get-training-jobs-2.png)
 
-You may check the status now and then. Please note that the training may take up to 5 hours. Afterwards, the training status changes to `SUCCEEDED`. Along with that, you receive all the capabilities of the model, that are the entities the model can recognize.
+You may check the status now and then. Please note that the training may take up to 5 hours. Afterwards, the training status changes to `SUCCEEDED`. Along with that, you receive all the `capabilities` of the model, that are the entities the model can recognize.
 
 !![BER](png-files/get-training-jobs-3.png)
 
