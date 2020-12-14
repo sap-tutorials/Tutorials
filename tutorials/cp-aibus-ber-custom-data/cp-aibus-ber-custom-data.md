@@ -1,5 +1,5 @@
 ---
-title: Create Dataset, Upload Training Data and Submit Training Job
+title: Create Dataset and Upload Training Data
 description: Perform the initial steps to train your own Business Entity Recognition custom model to get machine learning entity predictions for the text you submit to the service.
 auto_validation: true
 time: 20
@@ -13,7 +13,9 @@ primary_tag: topic>machine-learning
   - How to access and use the Business Entity Recognition Swagger UI (User Interface)
   - How to create a dataset, upload training data and submit a training job
 
-The core functionality of Business Entity Recognition is to automatically detect and highlight any given type of named entity in unstructured text and classify it in accordance with predefined categories. In this tutorial, you will learn how to use the service APIs to create a dataset, upload training data, and submit training job to finally train your own machine learning model and get named entity predictions for the texts you submit to the service in the next tutorial: [Deploy Model and Get Prediction Results](cp-aibus-ber-custom-deploy).
+The core functionality of Business Entity Recognition is to automatically detect and highlight any given type of named entity in unstructured text and classify it in accordance with predefined categories.
+
+In this tutorial, you will learn how to use the service APIs to create a dataset, upload training data, and submit a training job to finally create your own custom machine learning model to classify any given type of named entity, such as mobile number, first name, last name and address, in the texts you will submit to the service in the next tutorial: [Deploy Model and Get Prediction Results](cp-aibus-ber-custom-deploy).
 
 ---
 
@@ -210,7 +212,7 @@ You should receive a response like below. The status `RUNNING` indicates that th
 
 !![BER](png-files/get-training-jobs-2.png)
 
-You may check the status now and then. Please note that the training may take up to 5 hours. Afterwards, the training status changes to `SUCCEEDED`. Along with that, you receive all the `capabilities` of the model, that are the entities the model can recognize.
+You may check the status now and then. Please note that the training may take up to 5 hours. Afterwards, the training status changes to `SUCCEEDED`. Along with that, you receive all the capabilities of the model, that are the entities the model can recognize.
 
 !![BER](png-files/get-training-jobs-3.png)
 
