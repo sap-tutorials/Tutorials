@@ -275,9 +275,9 @@ The list of events in the result set is sorted by the business timestamp in desc
  You can create an IoT Application using the SAP Web IDE Full-Stack to view the events created as shown in the below image.
     ![Events in IoT Application](iotae-nodejs-webide-events.PNG)
 
-If you want to learn how to do this please consider this tutorial: [Build an IoT Condition Monitoring App](https://developers.sap.com/tutorials/iot-express-5-use-webide-template.html).
+If you want to learn how to do this please consider this tutorial: [Build an IoT Condition Monitoring App](iot-express-5-use-webide-template).
 
-To deploy the app for automatic operation please follow this tutorial: [Deploy Your Node.js App with the Cloud Foundry CLI](https://developers.sap.com/tutorials/cp-node-deploy-cf-cli.html).
+To deploy the app for automatic operation please follow this tutorial: [Deploy Your Node.js App with the Cloud Foundry CLI](cp-node-deploy-cf-cli).
 
 [VALIDATE_1]
 

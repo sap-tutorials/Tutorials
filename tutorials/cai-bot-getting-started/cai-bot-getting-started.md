@@ -3,13 +3,13 @@ title: Build Your First Chatbot with SAP Conversational AI
 description: Create a simple chatbot that can recognize greetings, understand when asked for a joke, provide a joke, and recognize the user's reaction to the joke.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning ]
 primary_tag: products>sap-conversational-ai
 ---
 
 ## Details
 ### You will learn
-  - How to get an account with SAP Conversation AI
+  - How to get an account with SAP Conversational AI
   - How to create a chatbot project
   - How to train your chatbot (to understand people)
   - How to give your chatbot skills
@@ -20,7 +20,7 @@ primary_tag: products>sap-conversational-ai
 
 Go to [https://cai.tools.sap/](https://cai.tools.sap/), and click **Sign Up** in the upper-right corner.
 
-Create an account with your email address, or with your [GitHub](http://github.com/) account.
+Follow the instructions for creating an account.
 
 ![Sign up](Signup.png)
 
@@ -35,7 +35,9 @@ You will get an email with a link to validate your account.
 
 1. Do one of the following:
 
-    If you just validated your account, click **Start with a Template**.
+    If you just validated your account by clicking the link in your email, click **Start with a Template**.
+
+    ![New user](signup-new.png)
 
     If you are returning:
 

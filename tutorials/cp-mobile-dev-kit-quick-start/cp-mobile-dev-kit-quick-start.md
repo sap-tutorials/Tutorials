@@ -27,47 +27,41 @@ This step includes creating the mobile development kit project in the editor.
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. If you do not see the **Welcome** page, navigate to *View* menu &rarr; *Find Command* &rarr; search with *Welcome* to launch the Welcome page.
+2. Navigate to *File* menu &rarr; click **New Project from Template**.
 
-    !![MDK](img_1.2.gif)
+    !![MDK](img_1.2.png)
 
-3. In Welcome page, click **New project from template** .
+3. Select **MDK Project** and click **Next**.
 
     !![MDK](img_1.3.png)
 
-4. Select **MDK Project** and click **Next**.
+4. In *Basic Information* step, provide the below information and click **Next**:
+
+    | Field | Value |
+    |----|----|
+    | `MDK template type`| Select `CRUD` from the dropdown |
+    | `Your project name` | `MDKApp` |
+    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
 
     !![MDK](img_1.4.png)
 
-5. In *Basic Information* step, select or provide the below information and click **Next**:
+    >The `CRUD` template creates the offline or online actions, rules, messages, List Detail Pages with editable options. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).  
+
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.
+
+5. In *Service Configuration* step, provide or select the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `MDK Template Type`| Select `CRUD` from the dropdown |
-    | `Your Project Name` | `MDKApp` |
-    | `Your Project Name` | <default name is same as Project name, you can provide any name of your choice> |
-
-    !![MDK](img_1.5.png)
-
-    >The `CRUD` template creates the offline or online actions, rules, messages, List Detail Pages with editable options.
-
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).  
-
-6. In *SAP Cloud Platform Connection* step, you will see your Cloud Foundry Organization and Space information. If you are not logged on yet, provide required credentials to retrieve your details. Click **Next**.
-
-    !![MDK](img_1.6.png)
-
-7. In *Service Configuration* step, provide or select the below information and click **Next**:
-
-    | Field | Value |
-    |----|----|
-    | `Service File Name`| `<You can continue with default name or provide any name of your choice>` |
+    | `Service File Name`| `<Provide any name of your choice>` |
     | `OData Source` | Select `Mobile Services` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
     | `Destination` | Select `com.sap.edm.sampleservice.v2` from the dropdown |
-    | `Enable Offline` | Choose `Yes` |
+    | `Enter a path to the OData service` | Leave it as it is |
+    | `Language URL` | Leave it with the default value |
+    | `Enable Offline` | It's enabled by default |
 
-    >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
+    >Offline supports only OData V2 while online supports both OData V2 and V4.
 
     !![MDK](img_1.7.png)
 
@@ -77,11 +71,11 @@ This step includes creating the mobile development kit project in the editor.
 
     Since you will create an offline based app, hence **Enable Offline** option is selected.
 
-8. In *OData Collections* step, select `Customers`, `Products`, `SalesOrderHeaders` and `SalesOrderItems`. Click **Next** to finish the project creation.
+8. In *OData Collections* step, select `Customers`, `Products`, `SalesOrderHeaders` and `SalesOrderItems`. Click **Finish** to complete the project creation.
 
     !![MDK](img_1.8.png)
 
-9. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKApp` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in new workspace or to add it to workspace. Ignore the pop-up or click the cross icon to hide the window.
+9. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKApp` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
 
     !![MDK](img_1.10.png)
 
@@ -121,13 +115,17 @@ Open the application settings in the application editor by double clicking on th
 
 So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
 
-Right-click `Application.app` and select **MDK: Deploy**.
+1. Right-click `Application.app` and select **MDK: Deploy**.
 
-!![MDK](img_3.1.png)
+    !![MDK](img_3.1.png)
 
-You should see **Deploy Succeeded** message.
+2. Select deploy target as **Mobile Services**.
 
-!![MDK](img_3.2.png)
+    !![MDK](img_3.2.png)
+
+    You should see **Deploy succeeded** message.
+
+    !![MDK](img_3.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -157,6 +155,10 @@ Once you accept app update, you will see the list of entities on the **Main** pa
 
 ![MDK](img_5.1.gif)
 
+Additionally, you can search over all properties of the objects displayed in the section by entering manually or via barcode scanner. For example, in Products list, you can scan the barcode to search the products belong to _MP3 Players_ category.
+
+!![MDK](img_5.3.gif)
+
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
@@ -167,11 +169,15 @@ Once you accept app update, you will see the list of entities on the **Main** pa
 
 ![MDK](img_5.2.gif)
 
+Additionally, you can search over all properties of the objects displayed in the section by entering manually or via barcode scanner. For example, in Products list, you can scan the barcode to search the products belong to _MP3 Players_ category.
+
+!![MDK](img_5.4.gif)
+
 [OPTION END]
 
 >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-**Congratulations**! You have created an MDK app with just couple of clicks. You may now follow [these tutorials](mission.mobile-dev-kit-get-started) to create an MDK app from scratch.
+Congratulations! You have created an MDK app with just couple of clicks. You may now follow [these tutorials](mission.mobile-dev-kit-get-started) to create an MDK app from scratch.
 
 [VALIDATE_1]
 [ACCORDION-END]

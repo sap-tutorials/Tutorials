@@ -19,7 +19,7 @@ author_profile: https://github.com/jitendrakansal
   - How to sync local changes with backend
 
 
-If you didn't follow the pre-Prerequisite then you may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Create-Your-First-Mobile-App-with-the-Mobile-Development-Kit) to start with this tutorial.
+If you didn't follow the prerequisite then you may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Create-Your-First-Mobile-App-with-the-Mobile-Development-Kit) to start with this tutorial.
 
 ---
 
@@ -66,7 +66,6 @@ In this step, you will create the `Customers_Create.page` as a **Form Cell Page*
     |----|----|
     | `Name`| `FCCreateFirstName` |
     | `Caption` | `First Name` |
-    | `IsEditable`| Select `true` from the dropdown |
     | `PlaceHolder`| `Enter Value` |
 
     !![MDK](img_1.6.png)
@@ -77,7 +76,6 @@ In this step, you will create the `Customers_Create.page` as a **Form Cell Page*
     |----|----|
     | `Name`| `FCCreateLastName` |
     | `Caption` | `Last Name` |
-    | `IsEditable`| `true` |
     | `PlaceHolder`| `Enter Value` |
 
     !![MDK](img_1.7.png)
@@ -88,7 +86,6 @@ In this step, you will create the `Customers_Create.page` as a **Form Cell Page*
     |----|----|
     | `Name`| `FCCreatePhone` |
     | `Caption` | `Phone` |
-    | `IsEditable`| `true` |
     | `PlaceHolder`| `Enter Value` |
 
     !![MDK](img_1.8.png)
@@ -99,7 +96,6 @@ In this step, you will create the `Customers_Create.page` as a **Form Cell Page*
     |----|----|
     | `Name`| `FCCreateEmail` |
     | `Caption` | `Email` |
-    | `IsEditable`| `true` |
     | `PlaceHolder`| `Enter Value` |
 
     !![MDK](img_1.9.png)
@@ -224,7 +220,7 @@ The next step is to store newly created record locally for an offline applicatio
     |----|----|
     | `Action Name`| `Customers_CreateEntity` |
     | `Type` | Select `CreateEntity` from the dropdown |
-    | `Service`| Select `SampleService.service` from the dropdown |
+    | `Service`| Select `Sample.service` from the dropdown |
     | `EntitySet` | Select `Customers` from the dropdown |
 
     !![MDK](img_5.5.png)
@@ -278,7 +274,7 @@ The next step is to store newly created record locally for an offline applicatio
 
     !![MDK](img_5.11.png)
 
-    In the Properties pane | **Events** tab, click the **link** icon for the `OnPress` property to open the object browser, bind it to `Customers_CreateEntity.action`.
+    In the **Events** tab, click the **link** icon for the `OnPress` property to open the object browser, bind it to `Customers_CreateEntity.action`.
 
     !![MDK](img_5.12.png)
 
@@ -289,13 +285,17 @@ The next step is to store newly created record locally for an offline applicatio
 
 Deploy the updated application to your MDK client.
 
-Right-click `Application.app` and select **MDK: Deploy**.
+1. Right-click `Application.app` and select **MDK: Deploy**.
 
-!![MDK](img_6.1.png)
+    !![MDK](img_6.1.png)
 
-You should see **Deploy Succeeded** message.
+2. Select deploy target as **Mobile Services**.
 
-!![MDK](img_6.2.png)
+    !![MDK](img_6.2.png)
+
+    You should see **Deploy succeeded** message.
+
+    !![MDK](img_6.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -306,7 +306,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [Android]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
 2. Tap **CUSTOMER LIST**, click **+** icon to create a new record.
 
@@ -332,7 +332,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [iOS]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
 2. Tap **Customer List**, click **+** icon to create a new record.
 
@@ -360,7 +360,11 @@ You can cross verify if a record has been updated in the backend.
 
 >Backend URL can be found in [Mobile Services Cockpit](cp-mobile-dev-kit-ms-setup).
 
->Mobile Applications | Native/Hybrid | click the MDK App com.sap.mdk.demo | Mobile Sample OData ESPM | click Root URL `v2` | add `/Customers`/ at the end of the URL
+>**Mobile Applications** | **Native/Hybrid** | click the MDK App **com.sap.mdk.demo** | **Mobile Connectivity** | click **Launch in Browser** icon
+
+>!![MDK](img_7.8.1.png)
+
+>It will open the URL in a new tab, now add `/Customers` at the end of the URL.
 
 ![MDK](img_7.9.png)
 

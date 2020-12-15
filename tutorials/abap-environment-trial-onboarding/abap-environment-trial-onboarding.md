@@ -8,7 +8,7 @@ time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
- 
+
 ## Prerequisites
   - You have read the blog post [It's Trial Time for ABAP in SAP Cloud Platform](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/), including the section "Rules of the Game"
   - You have created a **trial account on SAP Cloud Platform**:  [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
@@ -20,7 +20,7 @@ author_profile: https://github.com/mervey45
   - How to create a trial user
   - How to create an ABAP Cloud project
 
->You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt) or US East (VA)** as Region.
+>You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt) - AWS or US East (VA) -  AWS** as region. The ABAP environment service is currently **not available** for **Singapore - Azure**.
 
 ---
 
@@ -45,6 +45,8 @@ author_profile: https://github.com/mervey45
     ![Select ABAP Trial](boosters.png)
 
 4. Search the **Prepare an Account for ABAP Trial** tile and press **Start** to start your booster.
+  If you already created a service instance and service key, then please skip this step and move on with Step 2.
+  Only one service instance can be created at a time.
 
     ![Select ABAP Trial](boosters2.png)
 
@@ -84,7 +86,7 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 
       ![Create ABAP cloud project](projectx1.png)
 
-  4. You can find your service key in your default download folder. Search for **`ADT.json`**, select it and click **Open**.
+  4. You can find your service key in your default download folder. Search for **`default_key.json`**, select it and click **Open**.
 
       ![Create ABAP cloud project](projectx2.png)
 
@@ -92,9 +94,14 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 
       ![Create ABAP cloud project](project3.png)
 
-  6. Now you've been authenticated automatically. Click Finish.
-
+  6. Now you've been authenticated automatically.
+     Provide your credentials if requested.
+     The credentials are the same you used to create your trial account on SAP Cloud Platform.
+ 
       ![Create ABAP cloud project](project5.png)
+
+      Click **Finish**.
+
 
   7. Your trial system appears on the project explorer.
 
@@ -108,6 +115,12 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+
+## More Information
+- [SAP Help Portal: Creating Service Instances in Cloud Foundry](https://help.sap.com/viewer/09cc82baadc542a688176dce601398de/Cloud/en-US/6d6846def3c443aa9f83d127353147ce.html)
+- [SAP Help Portal: Creating Service Keys in Cloud Foundry](https://help.sap.com/viewer/09cc82baadc542a688176dce601398de/Cloud/en-US/6fcac08409db4b0f9ad55a6acd4d31c5.html)
+---
 
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>

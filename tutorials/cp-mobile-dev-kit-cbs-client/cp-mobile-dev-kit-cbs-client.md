@@ -234,11 +234,11 @@ To enable your app for push notifications, you need to carry out the following t
 
     !![MDK](img_2.1.png)
 
-2. You now have an option to generate a new signing profile in the Mobile Services cockpit by providing mandatory info like Profile Name, Validity, Common Name (user name). Other information are optional.
+2. You have an option to generate a new signing profile in the Mobile Services cockpit by providing mandatory info like Profile Name, Validity, Common Name (user name). Other information are optional.
 
     !![MDK](img_2.2.png)
 
-    Or you now have an option to to upload Android Signing profile, if you already have one.
+    Or you have an option to to upload an Android Signing profile, if you already have one.
 
     !![MDK](img_2.3.png)
 
@@ -311,7 +311,7 @@ You can find more details about Cloud Build service in [help documentation](http
 
     !![MDK](img_3.7.1.png)
 
-    You can find more details about packaging details in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/customization.html#packaging-details-overview).
+    You can find more details about packaging details in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/admin/customization.html#packaging-details-overview).
 
 [VALIDATE_1]
 [ACCORDION-END]

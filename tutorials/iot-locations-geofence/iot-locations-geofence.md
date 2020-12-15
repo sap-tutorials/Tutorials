@@ -1,4 +1,6 @@
 ---
+author_name: Prachi Tiwari
+author_profile: https://github.com/PrachiTiwari-SAP
 title: Create Geolocations and Configure Geofence
 description: Create geolocations and configure geofence to trigger events on thing's entry or exit using SAP Internet of Things (IoT).
 auto_validation: true

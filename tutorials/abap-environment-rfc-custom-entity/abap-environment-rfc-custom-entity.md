@@ -10,7 +10,9 @@ primary_tag: products>sap-cloud-platform--abap-environment
 ## Prerequisites
 - You have done one of the following:
     - Created an entitlement to [SAP Cloud Platform, ABAP Environment, Trial Version](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/)
-    - Created an entitlement to [SAP Cloud Platform, ABAP Environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d60#14a68d825.html), full version
+    - Created an entitlement to [SAP Cloud Platform, ABAP Environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d60#14a68d825.html), customer licensed version
+- **IMPORTANT**: If you are using the licensed version, then this tutorial is part of the mission [Connect Your On-Premise System with SAP Cloud Platform, ABAP Environment](https://developers.sap.com/mission.abap-env-connect-onpremise.html). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work. If you are using the trial version, we have provided mock data inside the class.
+
 
 ## Details
 ### You will learn
@@ -226,9 +228,7 @@ If your are working in the full version of ABAP Environment: Define the connecti
       TRY.
         DATA(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
                                     i_name                  = 'ES5_RFC_XXX'
-                                    i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
-                                    i_authn_mode            = if_a4c_cp_service=>service_specific
-           ).
+                                     ).
 
         DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name( ).
 
@@ -360,9 +360,7 @@ CLASS `zcl_product_via_rfc_xxx` IMPLEMENTATION.
 
       data(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
             i_name = 'ES5_RFC_XXX'
-            i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
-
-        ).
+            ).
 
       DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name(  ).
 
@@ -487,12 +485,12 @@ The service binding automatically references the service definition and thus the
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Display the Fiori Elements Preview)]
+[ACCORDION-BEGIN [Step 15: ](Display the Fiori Elements preview)]
 1. Select the entity set and choose **Preview**.
 
     ![Image depicting step14-preview](step14-preview.png)
 
-2. Log in using your ABAP Environment user and password; the Fiori Elements Preview appears.
+2. Log in using your ABAP Environment user and password; the Fiori Elements preview appears.
 
 3. Display the data by choosing **Go**.
 

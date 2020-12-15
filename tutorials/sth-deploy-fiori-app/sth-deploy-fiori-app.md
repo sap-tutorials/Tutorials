@@ -1,11 +1,16 @@
 ---
+author_name: Beatrice Pasch
+author_profile: https://github.com/beapasch
 title: Deploy an SAP Fiori App to SAP Cloud Platform
 description: Deploy an SAP Fiori app by committing and pushing it to the Git repository in your account on SAP Cloud Platform.
 auto_validation: true
 primary_tag: products>sap-translation-hub
-tags: [ tutorial>intermediate, products>sap-cloud-platform, products>sap-web-ide, products>sap-translation-hub ]
+tags: [ tutorial>intermediate, products>sap-cloud-platform, products>sap-web-ide, products>sap-translation-hub, tutorial>license ]
 time: 10
 ---
+
+## Prerequisites  
+  - **IMPORTANT:**: This tutorial cannot be completed on a trial account.
 
 ## Details
 ### You will learn  

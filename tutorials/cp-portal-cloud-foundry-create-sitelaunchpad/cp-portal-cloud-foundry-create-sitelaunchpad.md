@@ -3,8 +3,8 @@ title: Create a Launchpad Site
 description: Create a launchpad site to which you can later add business apps.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-fiori ]
-primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-fiori, products>sap-cloud-platform-launchpad ]
+primary_tag: products>sap-cloud-platform-launchpad
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---

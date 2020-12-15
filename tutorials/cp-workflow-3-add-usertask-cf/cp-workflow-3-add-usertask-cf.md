@@ -55,6 +55,8 @@ Define the form, which is shown when the task is opened in the My Inbox.
 
 3. Choose **Create**.
 
+    The form file is created in the **forms** folder under **onboarding** | **approvals**.
+
 4. Once the form editor opens, add form data by choosing **Add Field**.
 
     These expressions refer to the attributes in the JSON file that we have created in the previous step. The context path refers to the task context.
@@ -105,7 +107,7 @@ Now, you are ready to build and deploy the workflow.
 1. Update the **mta.yaml** file of your **onboarding** project by double-clicking it.
 
     - In  lines 9 and 13, replace `workflow_mta` with `wm_workflow`.
-    - In line 19, replace `org.cloudfoundry.managed-service` with `org.cloudfoundry.existing-service`.
+    - In line 17, replace `org.cloudfoundry.managed-service` with `org.cloudfoundry.existing-service`.
 
     ![Update YAML File](update-service-plan.png)
 

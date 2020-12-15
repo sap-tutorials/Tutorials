@@ -8,7 +8,7 @@ time: 5
 ---
 
 ## Details
-### You will learn  
+### You will learn
   - How to deploy an app to the SAP Cloud Platform Cloud Foundry environment using the cockpit
   - What is created when an app is deployed
 
@@ -84,3 +84,5 @@ At this stage, you have your sample app deployed and running in Cloud Foundry on
 [ACCORDION-END]
 
 ---
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-cf-dev-02-deploy-app&graphics=true" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+
