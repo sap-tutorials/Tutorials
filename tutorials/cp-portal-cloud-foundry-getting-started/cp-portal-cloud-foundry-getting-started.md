@@ -75,7 +75,7 @@ To be able to access the **Launchpad** service, users must be assigned to the `L
 
     ![Open Role Collections](8_trust_configuration.png)
 
-3. Click `sap.default` to select the SAP ID Service.
+3. Click `Default identity provider` to select the SAP ID Service.
 
     ![Click sap.default](9_click_sapdefault.png)
 
