@@ -21,7 +21,7 @@ author_profile: https://github.com/sandeep-tds
   - How to design and develop SAP Mobile Cards in SAP Business Application Studio
   - How to deploy a card to SAP Cloud Platform Mobile Services from SAP Business Application Studio
 
-Click [here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mck/mck-2-2-development-bas.html) to learn more about SAP Mobile Cards in SAP Business Application Studio.
+Click [here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mck/mck-development-bas.html) to learn more about SAP Mobile Cards in SAP Business Application Studio.
 
 ---
 
@@ -57,38 +57,20 @@ Click [here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-
 
     > !![Success toast message](img_1_5_note_2.png)
 
-6. Open **settings.json** file, under `.vscode` folder in the project explorer.
-
-    !![Settings JSON File](img_1_6.png)
-
-7. Add the following code to add this [Git repository](https://github.com/SAP-samples/mobile-cards-templates) as source for the templates.
-
-    ```JSON
-    "mck.github": [
-      {
-        "url": "https://github.com/SAP-samples/mobile-cards-templates",
-        "isRepository": true,
-        "inline": true
-      }
-    ]
-    ```
-
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new card)]
 
-1. Open Find Command, search for *Mobile Cards* and select **Mobile Cards: New From Template**.
+1. Open Find Command, search for `Create Project from Template` and select **SAP Business Application Studio: Create Project from Template**.
 
     !![Command for New Card](img_2_1.png)
 
-    > If prompted to enter your username & password, enter the login details you use to login to the Mobile Service cockpit.
+2. Select **SAP Mobile Cards** &rarr; Click **Start**.
 
-2. Select **Welcome Card Template - Single Instance**.
+    !![Command for New Card](img_2_2.png)
 
-    !![Template list](img_2_2.png)
-
-3. Enter a name for the card; e.g. `Welcome BAS`.
+2. Select **Welcome Card Template - Single Instance** &rarr; Enter a name for the card; e.g. `Welcome BAS` &rarr; Click **Finish**.
 
     !![Enter a name for the card](img_2_3.png)
 
@@ -96,7 +78,7 @@ Click [here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-
 
     !![Card Structure](img_2_4.png)
 
-    > You can learn more about the files [here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mck/mck-development-features.html).
+    > You can learn more about the file structure [here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mck/mck-development-features.html).
 
 [VALIDATE_1]
 [ACCORDION-END]
