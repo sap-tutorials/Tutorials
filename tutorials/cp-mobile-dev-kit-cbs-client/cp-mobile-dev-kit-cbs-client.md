@@ -37,7 +37,6 @@ You need to:
 
 After a successful build, you can download the IPA or APK file.
 
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Generate required configuration to build custom client)]

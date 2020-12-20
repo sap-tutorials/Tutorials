@@ -30,7 +30,6 @@ To extend the functionality, or customize the look and feel, and behavior of you
 
 In this tutorial, you will create a Map extension via NativeScript (in TypeScript language), you will view the Map in Apple Maps on iOS devices and in Google Maps on Android devices.
 
-
 ![MDK](img_1.gif)
 
 [ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Business Application Studio)]
