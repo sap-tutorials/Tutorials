@@ -150,6 +150,80 @@ You should receive a response like the following:
 
 In the response, you will find the prediction for the extracted entities. The prediction is made with a probability indicated by the **confidence** field which represents how certain the model is about the value provided. A confidence of 1 means that the model is 100% sure about its prediction. The model tries to provide a value for all its capabilities. Thus, you may see a different result depending on your model's capabilities. In case the model cannot identify an entity in the text, it returns an empty value.
 
+Below, you find an example of a full prediction:
+
+```JSON
+{
+  "data": {
+    "id": "5a183e26-4e5c-4139-ae44-9d17d09648eb",
+    "status": "SUCCESS",
+    "result": [
+      {
+        "title": [],
+        "firstname": [
+          {
+            "value": "Mrs. Hardi",
+            "confidence": 0.73
+          }
+        ],
+        "lastname": [
+          {
+            "value": "Shah",
+            "confidence": 0.8
+          }
+        ],
+        "emailID": [
+          {
+            "value": "hardi.shah@yuhu.com, hdshah@xy.com",
+            "confidence": 0.97
+          }
+        ],
+        "mobile": [
+          {
+            "value": "9000900090",
+            "confidence": 1
+          }
+        ],
+        "designation": [
+          {
+            "value": "Sales & Marketing",
+            "confidence": 0.97
+          }
+        ],
+        "address": [
+          {
+            "value": "Naranpura",
+            "confidence": 0.9
+          }
+        ],
+        "city": [
+          {
+            "value": "Ahmedabad",
+            "confidence": 0.9
+          }
+        ],
+        "country": [
+          {
+            "value": "India",
+            "confidence": 1
+          }
+        ],
+        "zip": [
+          {
+            "value": "380013",
+            "confidence": 1
+          }
+        ]
+      }
+    ],
+    "trialUsage": {
+      "inferenceRequestsUsage": "Maximum limit of 40 , utilized 2 Inference count and remaining 38",
+      "inferenceCharactersUsage": "Maximum limit of 140000 , utilized 1812 Inference characters and remaining 138188"
+    }
+  }
+}
+```
+
 You have now successfully used your own custom model to get text entity predictions for the unstructured text you submitted to Business Entity Recognition.
 
 [DONE]
