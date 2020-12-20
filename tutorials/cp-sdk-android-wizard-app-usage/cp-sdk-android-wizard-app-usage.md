@@ -41,15 +41,7 @@ The app must first receive permission to collect usage information from the user
 
     Once you try to enable **Consent to Usage Collection**, the consent screen will be displayed again to confirm your choice.
 
-2.  The text displayed to the user in the consent screen can be customized by accessing `res/values/strings_localized/strings_localized.xml(en)` (or by pressing **Shift** twice, searching for **`strings_localized.xml`**, selecting the one under the path `(app/src/main/res/values-en)`), and editing the text between the string tags shown below. For more details on localization (translation), see [Add New Languages to Your Android Application](cp-sdk-android-wizard-app-translation).
-
-    ```xml
-    <string name="get_usage_permission_explanation">
-      Detailed text about how data privacy pertains to this app and why it is important for the user to enable this functionality
-    </string>
-    ```
-
-3.  From the **Settings** screen, tap **Upload Usage Data**.
+2.  From the **Settings** screen, tap **Upload Usage Data**.
 
     ![Click Upload Usage](upload_usage_button.png)
 
@@ -57,7 +49,7 @@ The app must first receive permission to collect usage information from the user
 
     ![Upload Failed](403error.png)
 
-4.  To review this policy setting, in the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), access **Mobile Client Usage and User Feedback** by navigating to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** > **Mobile Client Usage and User Feedback**.
+3.  To review this policy setting, in the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), access **Mobile Client Usage and User Feedback** by navigating to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** > **Mobile Client Usage and User Feedback**.
 
     ![Access Mobile Client Usage and User Feedback](mobile_client_usage_and_user_feedback.png)
 
@@ -67,7 +59,7 @@ The app must first receive permission to collect usage information from the user
 
     ![Enable Usage in Client Policies](enable_usage.png)
 
-5.  If an empty usage report notification is shown when **Upload Usage Data** is selected, navigate away from the app by going to your phone's **Home** screen and re-entering the app. Then try uploading the usage report again. Placing the app in the background will complete or end the current usage session. Partial sessions can not be uploaded.
+4.  If an empty usage report notification is shown when **Upload Usage Data** is selected, navigate away from the app by going to your phone's **Home** screen and re-entering the app. Then try uploading the usage report again. Placing the app in the background will complete or end the current usage session. Partial sessions can not be uploaded.
 
     ![Empty Usage Report Upload Attempt](empty_usage_report.png)
 
@@ -150,7 +142,11 @@ In the example below, the user navigated to the **Entity List** screen, accessed
 The code segment that records `EntitySetListActivity` is in the `onCreate` method in `EntitySetListActivity.java`.
 
 ```Java
-UsageService.getInstance().eventBehaviorViewDisplayed(EntitySetListActivity.class.getSimpleName(), "elementId", "onCreate", "called");
+UsageService usageService = SDKInitializer.INSTANCE.getService(JvmClassMappingKt.getKotlinClass(UsageService.class));
+if (usageService != null) {
+    usageService.eventBehaviorViewDisplayed(EntitySetListActivity.class.getSimpleName(),
+            "elementId", "onCreate", "called");
+}
 ```
 
 [OPTION END]
@@ -160,7 +156,7 @@ UsageService.getInstance().eventBehaviorViewDisplayed(EntitySetListActivity.clas
 The code segment that records `EntitySetListActivity` is in the `onCreate` method in `EntitySetListActivity.kt`.
 
 ```Kotlin
-UsageService.getInstance().eventBehaviorViewDisplayed(EntitySetListActivity::class.java.simpleName, "elementId", "onCreate", "called")
+SDKInitializer.getService(UsageService::class)?.eventBehaviorViewDisplayed(EntitySetListActivity::class.java.simpleName, "elementId", "onCreate", "called")
 ```
 
 [OPTION END]
