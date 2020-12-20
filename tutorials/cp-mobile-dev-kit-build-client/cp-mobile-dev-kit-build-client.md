@@ -186,7 +186,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     Click `com.sap.mdk.demo` > **Security** tab.
 
-    Copy the Client ID, Redirect URL, OAuth Authorization & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
+    Copy the Client ID, Redirect URL, OAuth Authorisation & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
 
     !![MDK](img_3.4.1.png)
 
@@ -258,7 +258,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     Click `com.sap.mdk.demo` > **Security** tab.
 
-    Copy the Client ID, Redirect URL, OAuth Authorization & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
+    Copy the Client ID, Redirect URL, OAuth Authorisation & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
 
     !![MDK](img_3.4.1.png)
 
@@ -330,11 +330,11 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 [OPTION BEGIN [Windows]]
 
-4. You can create a client by running `create-client.cmd` and providing the path to a valid `.mdkproject` directory.
+1. You can create a client by running `create-client.cmd` and providing the path to a valid `.mdkproject` directory.
 
     !![MDK](img_4.4.png)
 
-5. Once the `create-client.cmd` script executed successfully, you will see **Application ready** message in terminal console.
+2. Once the `create-client.cmd` script executed successfully, you will see **Application ready** message in terminal console.
 
     !![MDK](img_4.4.1.png)
 

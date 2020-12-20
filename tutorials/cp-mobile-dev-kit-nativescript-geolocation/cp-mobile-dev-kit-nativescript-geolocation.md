@@ -69,9 +69,11 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 
 >You can find more details about [writing a Rule](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/rules.html).
 
-1. Right-click the **Rules** folder | click **MDK: New Rule**.
+1. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
-2. Enter the file name `GetCoordinates.js`, press `Enter`.
+    !![MDK](img_2.1.png)
+
+2. Enter the file name `GetCoordinates`, click **Next** and then **Finish** on the confirmation step.
 
     !![MDK](img_2.2.png)
 
@@ -136,7 +138,7 @@ You will add this registered control in a Form Cell page.
     | Property | Value |
     |----|----|
     | `KeyName`| `Coordinates` |
-    | `Value`| Bind it to `GetCoordinates.js` |
+    | `Value`| Bind it to rule `GetCoordinates.js` |
 
     !![MDK](img_3.4.png)
 
@@ -155,7 +157,7 @@ In `GetCoordinates.js` file, you referred `nativescript-geolocation` and `tns-co
 
     !![MDK](img_3.6.png)
 
-3. Include below references in `mdk.bundlerExternals` and save the changes.
+3. Include below references in `MDK.bundlerExternals` and save the changes.
 
     ```JSON
     "nativescript-geolocation",
