@@ -33,7 +33,7 @@ When you access the **Launchpad** service, the Site Directory is in focus. From 
 
     ![Name site](2_name_site.png)
 
-You have created a Launchpad site called `JobCore`.
+You've just created a Launchpad site called `JobCore`.
 
 [VALIDATE_7]
 
