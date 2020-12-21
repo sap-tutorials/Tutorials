@@ -1,5 +1,5 @@
 ---
-title: Create a Simple ABAP CDS View in ADT
+title: Create a Simple ABAP CDS View in ADT 
 description: You will learn how to create a CDS (Core Data Services) view using ABAP Development Tools (ADT).
 auto_validation: true
 primary_tag: topic>abap-development
@@ -186,6 +186,9 @@ define view Z_Invoice_Items_2
 where currency_code = 'USD'
 
 ```
+Open the CDS View in the Data Preview by choosing **F8**. Your CDS View should look like this:
+
+  ![Image depicting step15-data-preview](step15-data-preview.png)
 
 [DONE]
 [ACCORDION-END]
