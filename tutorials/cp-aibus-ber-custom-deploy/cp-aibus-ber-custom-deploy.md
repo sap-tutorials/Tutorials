@@ -114,7 +114,7 @@ To make a prediction, or in machine learning terms an inference, you use the **P
 
     ```JSON
     {
-       "text":"Von: lena nova <office@scomputercenter.bg> Gesendet: Montag, 21. Januar 2019, 19:13 Uhr An: canu, ana <ana.canu@company.com>; office@computercenter-bg.com Betreff: RE: M & B EOOD 2639710315 Sehr geehrter Kunde, ich sende Ihnen Informationen für unsere Zahlung. Proforma 198305906 ist ein Teil der Rechnung 4830476570 / 11.01.2019. Rechnungsdatum Betrag in EUR 4830473772 14.12.2018 9,28 € 4830474632 21.12.2018 29,16 € 4830475244 28.12.2018 46,19 € 4830475919 4.1.2019 9,28 € 198305906 10.1.2019 9,29 € 103,20 € 4830476570 11.1.2019 37,13 198305906 10.1.2019 -9,29 € 27,84 Einen schönen Tag noch! Mit freundlichen Grüßen, lena lena nova Verkaufsleiterin M & B EOOD-Computer Center 11, Angel Kanchev Str; 1000, Sofia, Bulgarien Tel.: + 359 2 981 58 57; Mobil: + 359 889 61 13 21 E-Mail: office@scomputercenter.bg Besuchen Sie uns unter: www.computercenter.bg",
+       "text":"Mrs. Hardi Shah, Email id: hardi.shah@yuhu.com, hdshah@xy.com Contact No: 9000900090 Objective: Designation: Sales & Marketing, Digita/ To work with an organization where my strong work ethics, Marketing dedication, organizational skills, communication skills and educational Education: expertise can be utilized in the growth of organization as well as mine, MBA as a manager. Gujarat Technical University Work Experience: Year: 1.2 Professional Achievements: Employer: MAP project on Awareness regarding Dry waste and Blue Star Company (1 Year) wet waste segregation AT Ahmedabad Municipal Assistant Sales Manager Corporation. A comprehensive project report on \"a study on reach Software and Tool: to the patients through socialmedia marketing by the MS Excel/Power Point Hobbies: Extra-Curricular Activities: Reading Books, Travelling PPO in MBA SEMESTER -2 Operating System: Attend Workshop Classroom to Corporate for 7 days. Accomplished \"The Fundamentals of Digital Marketing at Google Linux, Windows Digital Garage on 27/04/2020. Marita/ Status: Single ACADEMIC CREDENTIALS: Nationality: NO. DEGREE INSTITUTE PASSING PERCENTAGE Indian YEAR Mailing Address: 1 MBA GTU 2019 8.5( CGPI) Naranpura, Ahmedabad. India 2 BBA GU 2017 67% PIN: 380013 Language Known: 3 HSC Gujarat 2014 70% Board English, Hindi, Gujarati 4 SSC Gujarat 2012 50% Board DECLARATION: I declare that the above details which I have given are correct.",
        "modelName":"Tutorial_custom_model",
        "modelVersion":1
     }
@@ -149,6 +149,80 @@ You should receive a response like the following:
 !![BER](png-files/get-inf-2.png)
 
 In the response, you will find the prediction for the extracted entities. The prediction is made with a probability indicated by the **confidence** field which represents how certain the model is about the value provided. A confidence of 1 means that the model is 100% sure about its prediction. The model tries to provide a value for all its capabilities. Thus, you may see a different result depending on your model's capabilities. In case the model cannot identify an entity in the text, it returns an empty value.
+
+Below, you find an example of a full prediction:
+
+```JSON
+{
+  "data": {
+    "id": "5a183e26-4e5c-4139-ae44-9d17d09648eb",
+    "status": "SUCCESS",
+    "result": [
+      {
+        "title": [],
+        "firstname": [
+          {
+            "value": "Mrs. Hardi",
+            "confidence": 0.73
+          }
+        ],
+        "lastname": [
+          {
+            "value": "Shah",
+            "confidence": 0.8
+          }
+        ],
+        "emailID": [
+          {
+            "value": "hardi.shah@yuhu.com, hdshah@xy.com",
+            "confidence": 0.97
+          }
+        ],
+        "mobile": [
+          {
+            "value": "9000900090",
+            "confidence": 1
+          }
+        ],
+        "designation": [
+          {
+            "value": "Sales & Marketing",
+            "confidence": 0.97
+          }
+        ],
+        "address": [
+          {
+            "value": "Naranpura",
+            "confidence": 0.9
+          }
+        ],
+        "city": [
+          {
+            "value": "Ahmedabad",
+            "confidence": 0.9
+          }
+        ],
+        "country": [
+          {
+            "value": "India",
+            "confidence": 1
+          }
+        ],
+        "zip": [
+          {
+            "value": "380013",
+            "confidence": 1
+          }
+        ]
+      }
+    ],
+    "trialUsage": {
+      "inferenceRequestsUsage": "Maximum limit of 40 , utilized 2 Inference count and remaining 38",
+      "inferenceCharactersUsage": "Maximum limit of 140000 , utilized 1812 Inference characters and remaining 138188"
+    }
+  }
+}
+```
 
 You have now successfully used your own custom model to get text entity predictions for the unstructured text you submitted to Business Entity Recognition.
 

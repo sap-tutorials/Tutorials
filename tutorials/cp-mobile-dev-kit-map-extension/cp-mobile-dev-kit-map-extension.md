@@ -128,7 +128,7 @@ The extension control that you will be creating to extend the functionality of y
 
     !![MDK](img_2.5.png)
 
-6. In **Schema Information** step, provide below schema and click **Next**.
+6. In **Schema Information** step, fill schema details in **Schema** column and click **Next**.
 
     ```JSON
     {
