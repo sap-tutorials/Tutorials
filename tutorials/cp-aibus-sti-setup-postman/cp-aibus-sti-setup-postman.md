@@ -61,13 +61,13 @@ Make a local copy of the Postman collection template for Service Ticket Intellig
 
 [ACCORDION-BEGIN [Step 3: ](Import Postman collection and environment)]
 
-**Open** Postman and click **Import** to open the import dialog.
+1. **Open** Postman and click **Import** to open the import dialog.
 
-!![Postman](postman-import-button.png)
+    !![Postman](postman-import-button.png)
 
-Drag and drop the Postman collection and environment JSON files in the import dialog. Click **Import**.
+2. Drag and drop the Postman collection and environment JSON files in the import dialog. Click **Import**.
 
-!![Postman](postman-import-dialog.png)
+    !![Postman](postman-import-dialog.png)
 
 A message appears to inform you about the successful import.
 
@@ -124,7 +124,7 @@ Select it to be able to use the requests in the collection.
 
     !![Postman](postman-environment-update.png)
 
-4. Click **X**
+4. Click **X**.
 
     !![Postman](postman-environment-managex.png)
 
