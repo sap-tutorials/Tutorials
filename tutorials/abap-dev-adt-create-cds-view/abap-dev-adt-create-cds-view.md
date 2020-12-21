@@ -186,9 +186,6 @@ define view Z_Invoice_Items_2
 where currency_code = 'USD'
 
 ```
-Open the CDS View in the Data Preview by choosing **F8**. Your CDS View should look like this:
-
-  ![Image depicting step 15-data-preview](step 15-data-preview.png)
 
 [DONE]
 [ACCORDION-END]
