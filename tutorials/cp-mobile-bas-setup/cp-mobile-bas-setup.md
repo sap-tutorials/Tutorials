@@ -1,6 +1,6 @@
 ---
-title: Set Up SAP Business Application Studio for Mobile Development
-description: Set up your SAP Business Application Studio to start developing mobile apps.
+title: Set Up SAP Business Application Studio for Multi-Channel Development
+description: Set up your SAP Business Application Studio to start developing mobile and web applications.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio, products>mobile-development-kit-client ]
@@ -10,7 +10,6 @@ author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites
- - [Completed the starter mission](mission.mobile-cards-get-started) or [Set up Mobile Services on you SAP Cloud Platform account](cp-mobile-cards-setup)
  - [Set Up SAP Business Application Studio for Development](appstudio-onboarding).
 
 ## Details
@@ -22,6 +21,8 @@ SAP Business Application Studio is the next-generation web-based IDE hosted on S
 
 ---
 
+
+
 [ACCORDION-BEGIN [Step 1: ](Create a development space)]
 
 1. Log into your Business Application Studio and click **Create Dev Space**.
@@ -30,7 +31,7 @@ SAP Business Application Studio is the next-generation web-based IDE hosted on S
 
     > The number of extensions may differ if you are on trial or a production account.
 
-2. Select SAP Cloud Platform Mobile Services, enter a name (`Mobile`) for your dev space and click **Create**.
+2. Select SAP Cloud Platform Mobile Services, enter a name (`Tutorial`) for your dev space and click **Create**.
 
     !![BAS New Space](img_1_2.png)
 
@@ -103,8 +104,8 @@ Your dev space will be created and the status will change to running.
 
 ---
 
-**Congratulations!** You have successfully configured SAP Business Application Studio to build mobile apps.
+Congratulations, you have successfully configured SAP Business Application Studio to build multi-channel applications.
 
-You can now build [**Mobile Development Kit apps**](https://developers.sap.com/tutorial-navigator.html?tag=products:technology-platform/sap-cloud-platform/mobile-development-kit-client) or [**SAP Mobile Cards apps**](https://developers.sap.com/tutorial-navigator.html?tag=products:content-and-collaboration/sap-mobile-cards) using Business Application studio.
+You can now build [**Mobile Development Kit apps**](mission.mobile-dev-kit-get-started) or [**SAP Mobile Cards apps**](https://developers.sap.com/tutorial-navigator.html?tag=products:content-and-collaboration/sap-mobile-cards) using Business Application studio.
 
 ---
