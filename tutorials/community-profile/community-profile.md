@@ -257,7 +257,7 @@ If you're following the person, and the person is also following you, you have t
 
 !![Follower](Follower.png)
 
-If it's someone you follow (who doesn't follow you), you won't have the **Contact** option (only members who follow each other can send direct messages to one another -- unless they're moderators, who can message anyone), but you will see the **Unfollow** button. This option appears on the profile of every person you follow.
+If it's someone you follow (who doesn't follow you), you won't have the **Contact** option (only members who follow each other can send direct messages to one another -- unless they're moderators, who can message anyone), but you'll see the **Unfollow** button. This option appears on the profile of every person you follow.
 
 !![Unfollow](Unfollow.png)
 
