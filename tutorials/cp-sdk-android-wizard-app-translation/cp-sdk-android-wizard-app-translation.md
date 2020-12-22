@@ -99,7 +99,7 @@ The [SAP Translation Hub](https://help.sap.com/viewer/product/SAP_TRANSLATION_HU
 
     ![Go To Translation Hub UI](go-to-translation-hub-ui.png)
 
-    Notice that there are no existing translation projects in the **Translation Projects** page. In the next section ( **Step 3** ), you will use a SAP Translation Hub wizard integrated into Android Studio to create a translation project and request new language files for Italian, which is currently not supported by the generated app.
+    Notice that there are no existing translation projects in the **Translation Projects** page. In the next section ( **Step 3** ), you will use an SAP Translation Hub wizard integrated into Android Studio to create a translation project and request new language files for Catalan, which is currently not supported by the generated app.
 
     ![Translation Hub UI](translation-hub-ui.png)
 
@@ -149,7 +149,7 @@ The [SAP Translation Hub](https://help.sap.com/viewer/product/SAP_TRANSLATION_HU
 
     ![Translation Wizard Page 2](wiz-page2.png)
 
-4.  Choose the **Domain** of the application, specify the **Source Language** as English, and select the target language to add (in this case, Italian).
+4.  Choose the **Domain** of the application, specify the **Source Language** as English, and select the target language to add (in this case, Catalan).
 
     ![Translation Wizard Page 2](wiz-page3.png)
 
@@ -159,11 +159,11 @@ The [SAP Translation Hub](https://help.sap.com/viewer/product/SAP_TRANSLATION_HU
 
 6.  Press **Finish** and wait for a few moments. The **Event Log** should print `Success: Project translated successfully`.
 
-    There should now be two additional files, `strings_localized_it.xml` and `strings_it.xml`.
+    There should now be two additional files, `strings_localized.xml(ca)` and `strings.xml(ca)`.
 
     ![Translation Result](translation-result.png)
 
-7.  In the emulator or device, set the preferred language to be Italian, then run the app and notice that the app now displays Italian strings.
+7.  In the emulator or device, set the preferred language to be Catalan, then run the app and notice that the app now displays Catalan strings.
 
     ![Translation Result in App](translation-result-in-app.png)
 

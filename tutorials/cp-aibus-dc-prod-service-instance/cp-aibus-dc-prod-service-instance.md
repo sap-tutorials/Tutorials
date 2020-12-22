@@ -115,19 +115,13 @@ Click **Instances** on the navigation side bar and then click **New Instance** t
 
 ![Create Instance](create-instance.png)
 
-In the dialog, proceed as follows:
+In the dialog, leave the default value for the service and the service plan. Enter a name for your new instance as `dc-instance` and click **Create Instance** to skip the other steps and create the instance.
 
-  1. Leave the default value for the service plan and click **Next**.
+![Create Instance](create-instance-dialog.png)
 
-    ![Create Instance Service Plan](create-instance-plan.png)
+In the following dialog, click on **View Instance** to be navigated to the list of your service instances.
 
-  2.  Leave the parameters empty and click **Next**.
-
-  3.  Do not assign any application and click **Next**.
-
-  4.  Enter a name for your new instance, such as `dc-instance`. Click **Finish** to create the instance.
-
-    ![Create Instance Name](create-instance-name.png)
+![View Instances](view-instances.png)
 
 You have successfully created a service instance for Document Classification.
 
@@ -137,27 +131,21 @@ You have successfully created a service instance for Document Classification.
 
 [ACCORDION-BEGIN [Step 6: ](Create service key)]
 
-The last step before you can finally use the service is to create a service key for your newly created service instance.
+You are now able to create a service key for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
-Therefore, access your service instance by clicking on its name.
+  1. Click the navigation arrow to open the details of your service instance. Then, click the dots to open the menu and select **Create Service Key**.
 
-![Access Instance](access-instance.png)
+      ![Service Key](create-service-key.png)
 
-Then, select **Service Keys** on the navigation side bar and click **Create Service Key** to start the creation dialog.
+  2. In the dialog, enter `dc-service-key` as the name of your service key. Click **Create** to create the service key.
 
-![Create Service Key](create-service-key.png)
+      ![Create Service Key](create-service-key-name.png)
 
-In the dialog, proceed as follows:
+You have successfully created a service key for your service instance. You can now either view the service key in the browser or download it.
 
-  1.  Enter `dc-service-key` as the name for your service key. Leave the Configuration Parameters (JSON) box empty
+![View Service Key](view-service-key.png)
 
-  2.  Click **Save** to create the service key.
-
-    ![Create Service Key Dialog](create-service-key-name.png)
-
-You have successfully created a service key for your service instance. Make a local copy of the service key. You will need the service key values in the following tutorials.
-
-![Service Key](service-key.png)
+You will need the service key values in the next tutorial.
 
 [VALIDATE_1]
 [ACCORDION-END]
