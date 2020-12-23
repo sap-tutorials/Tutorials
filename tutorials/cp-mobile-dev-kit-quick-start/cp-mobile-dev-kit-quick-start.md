@@ -116,13 +116,27 @@ So far, you have learned how to build an MDK application in the SAP Business App
     !![MDK](img_3.1.png)
 
 2. Select deploy target as **Mobile & Cloud**.
-   First deployment starts to Mobile Services (for Mobile application) followed by to Cloud Foundry (for Web application).
 
-    !![MDK](img_3.2.gif)
+   First deployment starts to Mobile Services (for Mobile application) followed by to Cloud Foundry (for Web application). MDK metadata will gets deployed to HTML5 repository on Cloud Platform.
 
-    You should see successful messages for both deployments.
+   !![MDK](img_3.2.gif)
 
-    !![MDK](img_3.3.png)
+>First web deployment takes 2-3 minutes as it creates five service instances for the application, you can find these details in space cockpit.
+
+>-	XSUAA
+
+>- destination
+
+>- connectivity
+
+>- HTML Repo host
+
+>- HTML repo runtime
+
+
+   You should see successful messages for both deployments.
+
+  !![MDK](img_3.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -140,7 +154,7 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run the app in MDK client)]
+[ACCORDION-BEGIN [Step 5: ](Run the app)]
 
 [OPTION BEGIN [Android]]
 
@@ -180,7 +194,7 @@ Additionally, you can search over all properties of the objects displayed in the
 
 [OPTION BEGIN [Web]]
 
-1. Click the highlighted button to open the MDK Web application in a browser.
+1. Click the highlighted button to open the MDK Web application in a browser. Enter your cloud platform credentials if asked.
 
     !![MDK](img_5.5.png)
 
@@ -199,4 +213,5 @@ Additionally, you can search over all properties of the objects displayed in the
 ---
 
 Congratulations! You have created a Multi-Channel (Mobile & Web) application with just couple of clicks. You may now follow [these tutorials](mission.mobile-dev-kit-get-started) to create an MDK app from scratch.
+
 ---
