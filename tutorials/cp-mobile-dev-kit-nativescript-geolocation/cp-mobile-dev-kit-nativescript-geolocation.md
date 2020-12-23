@@ -72,7 +72,7 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 
     !![MDK](img_2.1.png)
 
-2. Enter the file name `GetCoordinates`, click **Next** and then **Finish** on the confirmation step.
+2. Enter the Rule name `GetCoordinates`, click **Next** and then **Finish** on the confirmation step.
 
     !![MDK](img_2.2.png)
 
