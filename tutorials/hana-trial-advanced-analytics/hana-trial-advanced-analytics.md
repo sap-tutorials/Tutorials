@@ -5,13 +5,13 @@ auto_validation: true
 time: 45
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud]
+tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-business-application-studio]
 primary_tag: products>sap-hana
 ---
 
 ### You will learn
   - How to start with your own free SAP HANA Cloud instance in the trial account of SAP Cloud platform
-  - How to leverage SAP Web IDE to use advanced analytics features in SAP HANA, including JSON table, geospatial, graph and text search functions
+  - How to leverage SAP Business Application Studio to develop with advanced analytics features in SAP HANA, including JSON table, geospatial, graph and text search functions
 
 Ready to explore SAP HANA? As a fun exercise, you can first help our fictional developer, Thomas, work with other developers in the community to create his own database schema on SAP HANA to use text, graph and geospatial processing inside the database.
 
@@ -42,159 +42,131 @@ Finally, we will use the **geospatial capabilities** in SAP HANA to find develop
 
 This tutorial uses validations to track completion and make sure you are all set after finishing important steps.
 
-**Sign in or register** by clicking on the `person` icon in the top right corner. If you're registering for the first time, all you need is an email address or social media account.
+1. **Sign in or register** by clicking on the `person` icon in the top right corner. If you're registering for the first time, all you need is an email address or social media account. ![Log in to Community](zoomlogin.gif)
 
-![Log in to Community](zoomlogin.gif)
-
-Use your email address or social media account.
-
-!![Log in to Community](community.png)
+2. Use your email address or social media account. ![Log in to Community](community.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Sign up for a trial in SAP Cloud Platform)]
 
-Navigate to the trial landscape for [SAP Cloud Platform](https://hanatrial.ondemand.com).
+1. Navigate to the trial landscape for [SAP Cloud Platform](https://hanatrial.ondemand.com).
 
-Follow steps to log in or register for an account. If you need detailed steps, you can [follow this tutorial](hcp-create-trial-account).
-
-!![Log in to Community](log.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Configure your trial account)]
-
-If you haven't already, you will be prompted to validate your account using a phone number. Complete the validation.
-
-![Validation](1.png)
-
-After completing the validation, click **Log On** again and choose your preferred region and **Create Account**.
-
-![Validation](02_200117.jpg)
-
-Once the provisioning is finished, click **Continue**:
-
-![Cloud trial](3.png)
-
-From the SAP Cloud Platform entry page, click on the **trial** Subaccount.
-
-![Sub Account](trial1.png)
-
-In the Subaccount page, click on the **dev** space.
-
-![dev Space](trial2.png)
-
-Once in your **dev** space page, click on **SAP HANA Cloud** in the side menu navigation.  You will then see a page listing all your SAP HANA Cloud instances; of which you should have none.  Click on the **Create Database** button to begin the wizard to create a new instance.
-
-![dev Space](trial3.png)
-
-This wizard will walk you through the process of navigating to your development space and creating a HANA Cloud Instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Allowed connections" setting. This setting will allow you to develop against your HANA Cloud trial using a variety of external development tools.
-
-![Allow All IP addresses](trial4.png)
-
-After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP Cloud Platform.
-
-![HANA Cloud Instance](trial5.png)
-
-If you get stuck at any point in this process, there is also this short video you can watch and follow along.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Lv_40d1ZtsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent tutorials in this tutorial.
+2. Follow steps to log in or register for an account. If you need detailed steps, you can [follow this tutorial](hcp-create-trial-account) or watch this video:
+  </br><iframe width="560" height="315" src="https://www.youtube.com/embed/n5luSQKYvQQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></br> ![Log in to Community](log.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure SAP Web IDE)]
+[ACCORDION-BEGIN [Step 3: ](Configure your trial account and add SAP HANA Cloud)]
 
-1. Return to the Subaccount level in the SAP Cloud Platform Cockpit. Click on **Entitlements** in the left hand navigation.  Click on **Configure Entitlements**. Then click on **Add Service Plans**.  Search for entitlements with **web** in the name. Choose **SAP Web IDE for HANA development**. Select the **TRIAL (Subscription)** plan.  Press the **Add 1 Service Plan** button.
+1. If you haven't already, you will be prompted to validate your account using a phone number. Complete the validation. ![Validation](1.png)
 
-    !![Add Service Plan for Web IDE](ide1.png)
+2. After completing the validation, click **Log On** again and choose your preferred region and **Create Account**. ![Validation](02_200117.jpg)
 
-2. When the Entitlements dialog closes be sure to press the **Save** button.
+3. Once the provisioning is finished, click **Continue**: ![Cloud trial](3.png)
 
-    !![Save Entitlements](ide2.png)
+4. From the SAP Cloud Platform entry page, click on the **trial** Subaccount. ![Sub Account](trial1.png)
 
-3. Now please choose **Subscriptions** from the left hand menu.  Click on the SAP Web IDE Full-Stack Subscription.
+5. In the Subaccount page, click on the **dev** space. ![dev Space](trial2.png)
 
-    !![Choose Subscription](ide3.png)
+6. Once in your **dev** space page, click on **SAP HANA Cloud** in the side menu navigation.  You will then see a page listing all your SAP HANA Cloud instances; of which you should have none.  Click on the **Create Database** button to begin the wizard to create a new instance. ![dev Space](trial3.png)
 
-4. In the subscription detail screen, please press the **Subscribe** button.
+7. This wizard will walk you through the process of navigating to your development space and creating a HANA Cloud Instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Allowed connections" setting. This setting will allow you to develop against your HANA Cloud trial using a variety of external development tools. ![Allow All IP addresses](trial4.png)
 
-    !![Subscribe](ide4.png)
+8. After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP Cloud Platform. ![HANA Cloud Instance](trial5.png)
 
-5. Now you can click on **Go to Application** in order to launch the SAP Web IDE Full-Stack.
+9. If you get stuck at any point in this process, there is also this short video you can watch and follow along: </br><iframe width="560" height="315" src="https://www.youtube.com/embed/Lv_40d1ZtsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-    !![Go to Application](ide5.png)
+10. Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent tutorials in this tutorial.
 
-6. Once SAP Web IDE opens, access the **Preferences**.
+[DONE]
+[ACCORDION-END]
 
-    !![SAP Web IDE](5.png)
+[ACCORDION-BEGIN [Step 4: ](Create SAP Business Application Studio Dev Space)]
 
-7. Click **Extensions** and enable **SAP HANA Database Development Tools**, if not enabled.
+1. Set Up SAP Business Application Studio for development (if you've never used Business Application Studio) by following [this tutorial](appstudio-onboarding) and/or this video:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WW6z4AnYriw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-    !![SAP Web IDE](6.png)
 
-    Click **Save**. When prompted, click **Refresh**.
+2. Creating Business Application Studio Dev Space - Dev spaces are like isolated virtual machines in the cloud that can be quickly spun-up. Each dev space type contains tailored tools and pre-installed run-times for a target scenario such as SAP Fiori or mobile development. This simplifies and saves time in setting up the development environment as there's no need to install anything or upgrade; letting developers focus on their business domain, anytime, anywhere. Go to your SAP Cloud Platform subaccount and click the Subscriptions option. ![Subscriptions](SCP Subscriptions_.jpg)
 
-    ![SAP Web IDE](7.png)
+3. Locate the SAP Business Application Studio tile and click Go to Application ![Go To Application](go_to_application.png)
 
-8. After SAP Web IDE has refreshed, click **Cloud Foundry** in **Preferences**.
+4. Choose **Create Dev Space**. Please NOTE: In the SAP Cloud Platform trial you are limited to only two Dev Spaces and only one can be active at a time. If you have performed other tutorials, you might already have reached your maximum. In that case you might have to delete one of the other dev spaces in order to continue with this tutorial. ![Create Dev Space](AppStudio Dev Space Manager_.jpg)
 
-    ![SAP Web IDE](8.png)
+5. Enter **HANA** for your dev space name and choose **SAP HANA Native Application** as the kind of application you are creating. ![Choose Dev Space type](dev_space_type.png)
 
-    Choose `US10` as the **API Endpoint** if you chose US East as your Trial region. Choose `EU10` as the **API Endpoint** if you chose Europe as your Trial region.
+6. The Dev space will automatically be configured with the most common tools you need for the type of application you choose. However you can also choose additional, optional extensions. ![Dev Space Extensions](dev_space_extensions.png)
 
-    ![SAP Web IDE](9.png)
+7. Once all selections are completed, press **Create Dev Space** ![Create Dev Space](create_dev_space.png)
 
-    Enter your credentials for the trial when prompted and **Log on**.
+8. The Dev Space will then begin starting and the process will take a minute or so as your cloud environment is being created ![Dev Space Creating](dev_space_creating.png)
 
-    ![SAP Web IDE](10.png)
+9. Once the Dev Space reaches the green status of **RUNNING**, you can click on the name of the Dev Space and it will load into the editor within your browser ![Load Dev Space](load_dev_space.png)
 
-    The subaccount and space will populate automatically.
+10. You'll be redirected to your newly created SAP Business Application Studio Dev Space. We recommend you bookmark this URL so it's easier for you to access this dev space of your SAP Business Application Studio in the future ![New Dev Space](new_dev_space.png)
 
-9. Finally, configure the **Database Explorer**. Choose the region matching region `US10` or `EU10` and click **Save**.
+[DONE]
+[ACCORDION-END]
 
-    ![SAP Web IDE](11.png)
+[ACCORDION-BEGIN [Step 5: ](Configure SAP Business Application Studio Dev Space)]
+
+Before we create our SAP HANA project, we want to do a few more one-time configuration steps to prepare the Dev Space
+
+1. In the bottom left of the Business Application Studio you will see a message that your Organization and Space are not set yet. Click this message to begin supplying your trial connection details ![CF Not Set](cf_not_set.png)
+
+2. The command window will then open at the top of the Business Application Studio. The first input will prompt you for the API endpoint ![API Endpoint](api_endpoint.png)
+
+3. The default value proposed is likely the correct value, but if you need to confirm; the value can be found in the SAP Cloud Platform Cockpit at the Subaccount level ![API Endpoint at Subaccount Level](api_endpoint_from_subaccount.png)
+
+4. Press Enter to confirm your input of the API endpoint. The next input field will ask you for the email address you used to create your SAP Cloud Platform trial account ![Email](email.png)
+
+5. The next input will ask you for your SAP Cloud Platform trial account password ![Password](password.png)
+
+6. The next input will ask you for your Organization. In most situations you will have a single choice. But like the API endpoint earlier, if you need to confirm the correct value it will be displayed in the top navigation of the SAP Cloud Platform Cockpit ![Organization](organization.png)
+
+7. The final input will ask you for your Space. If you choose the endpoint API and Organization correctly, then you should have a single option of **dev** ![Space](space_2.png)
+
+8. Upon completion of all the inputs, you should see that the Organization and Space have been set and you will see the values in the Targeting... dialog at the bottom left of the Business Application Studio ![Org and Space Set Correctly](org_space_set_correctly.png)
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Clone repository)]
+[ACCORDION-BEGIN [Step 6: ](Clone repository)]
 
 You can now clone an existing GitHub repository into your workspace. This repository contains the artifacts to create a schema and a document store and add data into it.
 
-Right-click on **Workspace** and choose **Git > Clone Repository**.
+1. Choose **Clone from Git** from the SAP Business Application Studio Welcome screen ![Clone From Git](clone_from_git.png)
 
-![SAP Web IDE](13.png)
+2. Enter the following URL and press **Enter**. ```https://github.com/SAP-samples/hana-cf-get-started-trial``` ![Confirm Clone](confirm_clone_URL.png)
 
-Enter the following URL and click **Clone**.
+3. The clone log will be shown in the bottom of the screen. Upon completion, please press the **Open Workspace** button. ![Complete Clone](clone_complete.png)
 
-```URL
-https://github.com/SAP-samples/hana-cf-get-started-trial
-```
-
-![SAP Web IDE](14.png)
-
-When prompted about ignoring system files, choose **Do it later**.
+4. Select **hana-cf-get-started-trial** and press **Open** ![Open Workspace](open_workspace.png)
 
 > At any time if you get stuck, you can view the completed solution in GitHub as well at this URL: [Project Solution](https://github.com/SAP-samples/hana-cf-get-started-trial/tree/solution)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create database artifacts)]
+[ACCORDION-BEGIN [Step 7: ](Create database artifacts)]
 
 The cloned repository contains files with design-time definitions to create artifacts in the database using the SAP HANA Deployment Infrastructure, or HDI for short. HDI provides a service that enables you to deploy database development artifacts to so-called containers and to build run-time database objects. You can think of HANA container as an isolation that contains a single database schema for all objects.
 
 Artifacts in the current project will be translated into a physical database schema and into a JSON document store.
 
-1. Expand the cloned folder and right-click on the `db` folder, and choose **Build**.
+1. Expand the **SAP HANA PROJECTS** window and press the **Bind** button ![Bind](bind.png)
 
-    !![SAP Web IDE](15.png)
+2. In the dialog at appears near the top of the screen, choose the **Create a new service instance** ![Create New Service Instance](create_new_service.png)
+
+3. Accept the default service instance name ![Default Name](default_service_instance_name.png)
+
+4. Press **Enter**.  It will take a minute or so to complete the creation ![Create Service](creating_service_instance1.png)
+
+5. Once created, return to the **SAP HANA PROJECTS** view. Press the **Deploy** button. ![Press Deploy](press_deploy.png)
 
     > ### What's going on?
     > The design-time definitions will be deployed by HANA Deployment Infrastructure - a service layer in SAP HANA.
@@ -205,22 +177,20 @@ Artifacts in the current project will be translated into a physical database sch
 
     You will see the build log in the console. Wait until the build has finished successfully.
 
-    ![SAP Web IDE](17.png)
+    ![Deploy Log](deploy_log.png)
 
-2. Right-click on the `db` module and choose **Open HDI container**.
+6. Press the **Open HDI container** button.
 
-    ![SAP Web IDE](18.png)
+    ![Open HDI container](open_hdi_container.png)
 
-    The database explorer will start loading. If asked to add a database connection, click **No**.
+    The database explorer will start loading in a new browser tab. If asked to add a database connection, click **No**.
 
-You can see your container with a schema and the table `COMMUNITY`. They were generated from definitions in the cloned repository.
-
-!![SAP Web IDE](19.png)
+7. You can see your container with a schema and the table `COMMUNITY`. They were generated from definitions in the cloned repository. ![Database Explorer Tables](database_explorer_tables.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](NoSQL time! Load data into JSON table)]
+[ACCORDION-BEGIN [Step 8: ](NoSQL time! Load data into JSON table)]
 
 1. Open an SQL console.
 
@@ -279,14 +249,14 @@ You can see your container with a schema and the table `COMMUNITY`. They were ge
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](SQL time! Select experienced community members)]
+[ACCORDION-BEGIN [Step 9: ](SQL time! Select experienced community members)]
 
 Free resources, like this tutorial, are a great way to get started. People in the community with more experience are often willing to help you on your learning journey. For our developer, Thomas, choosing people with more experience means that he can get up to speed quickly.
 
 You will select people whose experience is 2 years or more. You'll also need to move those records into a columnar table so that you can perform advanced analytics that are only available in the columnar store.
 
-1. Create the columnar table first by returning to the SAP Web IDE editor view and creating a file named `DEVS.hdbtable` in the `db/src` folder.
-
+1. Create the columnar table first by returning to the SAP Business Application Studio editor view and creating a file named `DEVS.hdbtable` in the `db/src` folder.
+    ![DEVS table](devs_table.png)
     Here is the content for this file.
 
     ```SQL
@@ -303,9 +273,10 @@ You will select people whose experience is 2 years or more. You'll also need to 
     > SAP HANA creates columnar tables by default. The `column` keyword is optional, but is used in the example to remind about the native column-based storage of tables in SAP HANA.
     >
 
-2. Save you content and right-click on the `db` folder, and choose **Build > Build**.
 
-    Upon completion of the build, return to the database explorer view of your HDI container. You should see the new table listed under `TABLES`:
+2. Save you content and press **Deploy** in the **SAP HANA PROJECTS** window.
+
+    Upon completion of the build, return to the database explorer view of your HDI container and refresh the Tables selection. You should see the new table listed under `TABLES`:
 
     ![SAP Web IDE](22.png)
 
@@ -339,7 +310,7 @@ Insert the result of the previous SQL command in the box below to complete the f
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Use text search to find developers who can help)]
+[ACCORDION-BEGIN [Step 10: ](Use text search to find developers who can help)]
 
 There are plenty of different ways to work with SAP HANA. Some developers are interested in its analytics, some keep it running smoothly through system and database administration, and others use it to create data-driven applications. In order to help Thomas, you'll need to look for people who like to develop applications.
 
@@ -355,7 +326,7 @@ where contains(HINT_TEXT, '%develop%')
 
 You will use these results to create a table (as a new `hdbtable` artifact as you did earlier) to show who learns from whom. This table will be used to create a graph workspace.
 
-Create it using the following syntax in a new `hdbtable` file -- remember to build your `db` module again:
+Create it using the following syntax in a new `hdbtable` file -- remember to deploy your `db` module again:
 
 ```SQL
 column table LEARNING_RELATION(
@@ -379,7 +350,7 @@ How many records were inserted into the new table?
 [VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Use graph to find out who learns from whom)]
+[ACCORDION-BEGIN [Step 11: ](Use graph to find out who learns from whom)]
 
 Now that you have a table populated with learning relationships and expert developers in the community, you can find out how these people are related to each other. One of the ways to represent a network of people is by using a graph database.
 
@@ -389,7 +360,7 @@ In SAP HANA, graphs are represented by vertices (in this example, developers) an
 
 > Find more information about the graph data model in the [SAP HANA reference](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/latest/en-US).
 
-Create a graph workspace to define a graph in terms of tables and columns by returning to the SAP Web IDE editor and creating a file with the extension `hdbgraphworkspace`:
+Create a graph workspace to define a graph in terms of tables and columns by returning to the SAP Business Application Studio editor and creating a file with the extension `hdbgraphworkspace` (and be sure to Deploy again):
 
 ```SQL
 graph workspace HANA_GRAPH
@@ -412,7 +383,7 @@ Here's the graph:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Find the closest geographical location)]
+[ACCORDION-BEGIN [Step 12: ](Find the closest geographical location)]
 
 So far, you've found the most connected developers with two or more years of experience, plus an interest in developing applications. Now find out who is closest to Thomas, so that they can meet him at the next community event.
 
@@ -437,7 +408,7 @@ order by DISTANCE_KM
 [VALIDATE_5]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Keep building your skills)]
+[ACCORDION-BEGIN [Step 13: ](Keep building your skills)]
 
 Congratulations on helping Thomas find and collaborate with other developers!
 
