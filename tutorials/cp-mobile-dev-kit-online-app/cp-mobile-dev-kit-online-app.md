@@ -39,7 +39,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img_2.2.png)
 
-3. Select **MDK Project** and click **Next**.
+3. Select **MDK Project** and click **Start**.
 
     !![MDK](img_2.3.png)
 
@@ -55,7 +55,7 @@ This step includes creating the mobile development kit project in the editor.
 
     >The `Base` template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.  
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.
 
 5. In *Service Configuration* step, provide or select the below information and click **Next**:
 
@@ -64,12 +64,10 @@ This step includes creating the mobile development kit project in the editor.
     | `Service File Name`| `<Provide any name of your choice>` |
     | `OData Source` | Select `Mobile Services` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
-    | `Destination` | Select `com.sap.edm.sampleservice.v2` from the dropdown |
+    | `Destination` | Select `SampleServiceV2` from the dropdown |
     | `Enter a path to the OData service` | Leave it as it is |
     | `Language URL` | Leave it with the default value |
     | `Enable Offline` | Choose `No` |
-
-    >Offline supports only OData V2 while online supports both OData V2 and V4.
 
     !![MDK](img_2.5.png)
 
@@ -92,11 +90,9 @@ This is how the project structure looks like within the workspace.
 
 These are the metadata definitions available in the editor and the format in which these metadata definitions are stored in the editor. Just to brief on some of these:
 
-  - **`CreateService.action`**: This action binds the OData service to your application.
+  - **`InitializeOnline.action`**: This action initializes the application data service .
 
-  - **`OpenService.action`**: This action allows your application to see the data within the OData service.
-
-  - **`CreateOpenService Success & Failure Message action`**: Here are some messages showing up in the app on a successful or failure of application data service initialization.
+  - **`InitializeOnline Success & Failure Message action`**: Here are some messages showing up in the app on a successful or failure of application data service initialization.
 
   - **`Main.page`**: This is the first page of your Mobile Development Kit application that is shown. For this application we will use this as a launching page to get to application functionality. We will add the logout action to this page.
 
@@ -109,13 +105,6 @@ These are the metadata definitions available in the editor and the format in whi
 Open the application settings in the application editor by double clicking on the `Application.app`.
 
 !![MDK](img_3.2.png)
-
->In MDK online use case, you need **create** and **open** service actions chained together for your online provider.
-
->`CreateService.action` should be set at `OnLaunch` and success of this action should call `OpenService.action`.
-!![MDK](img_3.3.png)
-
->You can find more details about [OData actions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/ODataService/Create.schema.html).
 
 [DONE]
 [ACCORDION-END]
@@ -179,9 +168,12 @@ Once you accept app update, you will see **Main** page being displayed and appli
 
 >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-**Congratulations!** You have successfully created an MDK online app and you are now all set to [Create a Customer List Page in an MDK App](cp-mobile-dev-kit-list-page).
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully created an MDK online app and you are now all set to [Create a Customer List Page in an MDK App](cp-mobile-dev-kit-list-page).
 
 ---

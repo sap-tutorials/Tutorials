@@ -1,6 +1,6 @@
 ---
 title: Use OData Annotations to Add CRUD Functionality to an MDK App
-description: Create a fully functional CRUD native mobile application for iOS and Android.
+description: Generate a fully functional CRUD native mobile application based on OData annotations.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio]
@@ -44,31 +44,17 @@ Sample backend in SAP Cloud Platform Mobile Services provides annotation functio
 
 Make sure you have already configured an app in Mobile Services cockpit and have added Sample service as per step 3 in [this](cp-mobile-dev-kit-ms-setup) tutorial.
 
-As admin changes to the default sample service destinations (`com.sap.edm.sampleservice.v2` and `com.sap.edm.sampleservice.v4`) are not allowed, you need to copy the destination URL from the sample service destination `com.sap.edm.sampleservice.v2` and create a new destination with the new name e.g., `com.sap.mdk.annotation` and add the required annotations.
-
 1. In SAP MDK Demo App configuration, click **Mobile Connectivity**.
 
     !![MDK](img_2.1.png)
 
-2. Copy the destination URL from the sample service destination `com.sap.edm.sampleservice.v2`.
+2. Click **Edit** icon to add annotation path to the `SampleServiceV2` destination.
 
     !![MDK](img_2.2.png)
 
-3. Click create icon to create a new destination.
+3. In following steps, let the existing settings as it is.
 
-    !![MDK](img_2.3.png)
-
-4. Enter a new destination name `com.sap.mdk.annotation` and paste the URL. Click **Next**.
-
-    !![MDK](img_2.4.png)
-
-5. For this tutorial, there is no Custom Headers required, click **Next**.
-
-    !![MDK](img_2.5.png)
-
-6. Click **Add Annotation URL** to add OData Annotations to the Sample service.
-
-    !![MDK](img_2.6.png)
+    In **Annotations** step, click **Add Annotation URL** to add OData Annotations to the Sample service.
 
     Provide the below information and click **Next**:
 
@@ -79,17 +65,9 @@ As admin changes to the default sample service destinations (`com.sap.edm.sample
 
     !![MDK](img_2.6.png)
 
-7. In **Create Destination** screen, select **SSO Mechanism** as `Forward Authentication` and click **Next**.
-
-    !![MDK](img_2.7.png)
-
 9. In the following screen, let the default settings as it is. Click **Finish**.
 
-    !![MDK](img_2.8.png)
-
-    You should see a Toast Message **Destination Created** at bottom of the page.
-
-    Here you can see that OData Annotation information is available in the new destination.
+    Here you can see that OData Annotation information is updated in the `SampleServiceV2` destination.
 
     !![MDK](img_2.9.png)
 
@@ -106,7 +84,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img_3.2.png)
 
-3. Select **MDK Project** and click **Next**.
+3. Select **MDK Project** and click **Start**.
 
     !![MDK](img_3.3.png)  
 
@@ -122,7 +100,7 @@ This step includes creating the mobile development kit project in the editor.
 
     >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).  
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.      
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.    
 
 5. In *Service Configuration* step, provide or select the below information and click **Next**:
 
@@ -131,7 +109,7 @@ This step includes creating the mobile development kit project in the editor.
     | `Service File Name`| `<Provide any name of your choice>` |
     | `OData Source` | Select `Mobile Services` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
-    | `Destination` | Select `com.sap.mdk.annotation` from the dropdown |
+    | `Destination` | Select `SampleServiceV2` from the dropdown |
     | `Enter a path to the OData service` | Leave it as it is |
     | `Language URL` | Leave it with the default value |
     | `Enable Offline` | Choose `No` |   
@@ -164,8 +142,6 @@ This step includes creating the mobile development kit project in the editor.
     !![MDK](img_4.3.png)
 
 4. Click **Finish** to create list detail from OData Annotation.
-
-    !![MDK](img_4.4.png)
 
     In MDK project, you will see new pages, actions, rules have been generated for **Product**.
 
@@ -265,9 +241,11 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 [OPTION END]
 
-**Congratulations!** You have successfully created a fully functional CRUD native mobile application based on OData annotations and you are now all set to [Enable Push Notifications in the MDK Public Store Client](cp-mobile-dev-kit-push).
-
 [DONE]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully created a fully functional CRUD native mobile application based on OData annotations and you are now all set to [Enable Push Notifications in the MDK Public Store Client](cp-mobile-dev-kit-push).
 
 ---

@@ -191,13 +191,12 @@ Additionally, you can search over all properties of the objects displayed in the
 
     !![MDK](img_5.7.gif)
 
-
 [OPTION END]
-
-Congratulations! You have created a Multi-Channel (Mobile & Web) application with just couple of clicks. You may now follow [these tutorials](mission.mobile-dev-kit-get-started) to create an MDK app from scratch.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
+---
 
+Congratulations! You have created a Multi-Channel (Mobile & Web) application with just couple of clicks. You may now follow [these tutorials](mission.mobile-dev-kit-get-started) to create an MDK app from scratch.
 ---
