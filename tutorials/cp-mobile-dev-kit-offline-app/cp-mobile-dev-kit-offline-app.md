@@ -1,6 +1,6 @@
 ---
 title: Create an MDK Offline App
-description: Use the mobile development kit editor to create a mobile app.
+description: Use the MDK editor to create a mobile & web app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
@@ -31,7 +31,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img_1.3.png)
 
-3. Select **MDK Project** and click **Next**.
+3. Select **MDK Project** and click **Start**.
 
     !![MDK](img_1.4.png)
 
@@ -47,7 +47,7 @@ This step includes creating the mobile development kit project in the editor.
 
     >The `Base` template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.
 
 6. In *Service Configuration* step, provide or select the below information and click **Next**:
 
@@ -56,12 +56,10 @@ This step includes creating the mobile development kit project in the editor.
     | `Service File Name`| `<Provide any name of your choice>` |
     | `OData Source` | Select `Mobile Services` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
-    | `Destination` | Select `com.sap.edm.sampleservice.v2` from the dropdown |
+    | `Destination` | Select `SampleServiceV2` from the dropdown |
     | `Enter a path to the OData service` | Leave it as it is |
     | `Language URL` | Leave it with the default value |
     | `Enable Offline` | It's enabled by default |
-
-    >Offline supports only OData V2 while online supports both OData V2 and V4.
 
     !![MDK](img_1.7.png)
 
@@ -108,7 +106,7 @@ Open the application settings in the application editor by double clicking on th
 
 !![MDK](img_2.1.png)
 
-[VALIDATE_2]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Deploy and activate the application)]
@@ -170,9 +168,11 @@ Once you accept app update, you will see the **Main** page (with **Logout** and 
 
 >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-**Congratulations!** You have successfully created an MDK offline app and you are now all set to [Create a Customer List Page](cp-mobile-dev-kit-list-page).
-
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully created an MDK offline app and you are now all set to [Create a Customer List Page](cp-mobile-dev-kit-list-page).
 
 ---
