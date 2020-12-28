@@ -13,7 +13,7 @@ primary_tag: topic>machine-learning
   - How to access and use Swagger UI (User Interface)
   - How to predict G/L accounts and other financial objects using the service
 
-Invoice Object Recommendation recommends to you G/L accounts (General Ledger, see [here](https://en.wikipedia.org/wiki/General_ledger)) and other financial objects for incoming invoices without a reference to a purchase order. In this tutorial, you learn how to make this happen. The basic steps include uploading historical invoice data for training, training the machine learning model itself and, finally, asking the model to make G/L account predictions for new incoming invoices.
+Invoice Object Recommendation recommends to you G/L (general ledger) accounts and other financial objects for incoming invoices without a reference to a purchase order. In this tutorial, you learn how to make this happen. The basic steps include uploading historical invoice data for training, training the machine learning model itself and, finally, asking the model to make G/L account predictions for new incoming invoices.
 
 Invoice Object Recommendation is available on Trial. Find Trial limitations [here](https://help.sap.com/viewer/15074a8e9a1a4abf923460c93e89b409/SHIP/en-US/20ced07332344b36a262a356f746ffe6.html).
 
@@ -51,9 +51,11 @@ In the service key you created for Invoice Object Recommendation in the previous
 
 [ACCORDION-BEGIN [Step 2: ](Upload training data)]
 
-To train a machine learning model, you first need to upload training data by using the endpoint **`POST /ivp/upload`**. The endpoint is located in the set `Upload Data` - click to expand it. The training data must be provided in a CSV file and has to contain certain fields. Please see [here](https://help.sap.com/viewer/15074a8e9a1a4abf923460c93e89b409/SHIP/en-US/d000184cb4b849c2b2d736a4fda92a11.html) for more information on the required format and data.
+To train a machine learning model, you first need to upload training data by using the endpoint **`POST /ivp/upload`**. The endpoint is located in the set `Upload Data` - click to expand it. The training data must be provided in a CSV file and has to contain certain fields. See more details on how to create a dataset to trigger training in [Best Practices](https://help.sap.com/viewer/15074a8e9a1a4abf923460c93e89b409/SHIP/en-US/d000184cb4b849c2b2d736a4fda92a11.html).
 
-As an alternative to uploading your own file to the service, you can use this [sample training data](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ior-swagger-ui/data/Training-Sample.csv). Right click on the link, then click ***Save link as*** to download the file locally.
+As an alternative to uploading your own file to the service, you can use this [sample training data](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ior-swagger-ui/data/Training-Sample.csv). Right click on the link, then click ***Save link as*** to open the file dialog. In the dialog, replace the file ending `txt` with `csv` as indicated below. Then save the file.
+
+![Save File Dialog](png-files/save-file-dialog.png)
 
   1. Click the endpoint name to expand it.
 
@@ -71,7 +73,7 @@ Once the upload succeeded, you will find a corresponding message in the response
 
 ![Upload Results](png-files/upload-result.png)
 
-Please note that there is a file size limit. See the limits [here](https://help.sap.com/viewer/15074a8e9a1a4abf923460c93e89b409/SHIP/en-US/20ced07332344b36a262a356f746ffe6.html).
+Please note that there is a file size limit. See [Trial Account Input Limits](https://help.sap.com/viewer/15074a8e9a1a4abf923460c93e89b409/SHIP/en-US/20ced07332344b36a262a356f746ffe6.html).
 In case your training file is too large, please split it into several files and upload the files separately. Then, you have to provide the **`job_id`** that you have received after the first upload in every following upload so that the service knows that the files are connected.
 
 Once you have uploaded the data, it is necessary to lock it so that no further data can be uploaded or existing data is deleted. Set the lock by using the endpoint **`PUT /ivp/upload`**.
@@ -146,7 +148,7 @@ In the response, you initially receive the status of the training as **PENDING**
 
 The response includes the current status of the training. If the status is **RUNNING**, the training is still in progress. If training already finished, the status changes to **SUCCEEDED**. You should receive a response like the following:
 
-![Training Status Result](png-files\training-status-result.png)
+![Training Status Result](png-files/training-status-result.png)
 
 The response also includes accuracy which indicates how certain the model is about its prediction. A confidence of 1 means that the model is 100% sure about its prediction.
 
@@ -158,7 +160,7 @@ You have now successfully trained a machine learning model for the Invoice Objec
 
 [ACCORDION-BEGIN [Step 5: ](Get predictions)]
 
-You can now send data, such as invoice data, to your machine learning model and it will return predictions for the fields it was trained on. In this case, the model returns G/L account predictions. You can use this [sample inference file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ior-swagger-ui/data/Inference-Sample.csv). Right click on the link, then click ***Save link as*** to download the file locally. Note that the inference data needs to be in a CSV file as well.
+You can now send data, such as invoice data, to your machine learning model and it will return predictions for the fields it was trained on. In this case, the model returns G/L account predictions. You can use this [sample inference file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ior-swagger-ui/data/Inference-Sample.csv). Right click on the link, then click ***Save link as*** to download the file locally. Please replace the file ending `txt` with `csv` as well as the inference data needs to be in a CSV file as well.
 
 To make an inference call, use the endpoint **`POST /ivp/inference`**.
 

@@ -25,23 +25,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enhance behavior definition)]
-  1. Switch to your behavior definition `ZI_TRAVEL_M_XXX` and add following action and validation to your coding:
-
-    ```ABAP
-    // instance action and dynamic action control
-    action ( features : instance ) acceptTravel result [1] $self;
-
-    // validations
-    validation validateCustomer on save { field customer_id; }
-    validation validateDates on save { field begin_date, end_date; }
-    validation validateAgency on save { field agency_id; }
-
-    // determination
-    determination CalculateTravelKey on modify
-    { create; }
-    ```
-
-  2. Your result should look like this. Replace your code with following:
+  1. Switch to your behavior definition `ZI_TRAVEL_M_XXX` and replace your code with following:
 
     ```ABAP
     managed implementation in class ZCL_BP_I_TRAVEL_M_XXX unique;
@@ -88,7 +72,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     }
     ```
 
-  3. Save and activate.
+  2. Save and activate.
 
       ![save and activate](activate.png)
 
@@ -96,13 +80,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enhance behavior definition for projection view)]
-  1. Switch to your behavior definition `ZC_TRAVEL_M_XXX` and add following action to your coding:
-
-    ```ABAP
-    use action acceptTravel;
-    ```
-
-  2. Your result should look like this. Replace your code with following:
+  1. Switch to your behavior definition `ZC_TRAVEL_M_XXX` and replace your code with following:
 
     ```ABAP
     projection;
@@ -118,7 +96,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     }
     ```
 
-  3. Save and activate.
+  2. Save and activate.
 
       ![save and activate](activate.png)
 
