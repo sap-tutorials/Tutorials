@@ -5,9 +5,13 @@ title: Display Customer Locations Using a Fiori Map Control
 description: Further customize the generated app to display customer locations on a map and try out the features of the Fiori Map control, including the toolbar, map panel, clustering, and map annotation.
 auto_validation: true
 time: 90
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>wizard, products>sap-cloud-platform-sdk-for-android, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, operating-system>android, topic>mobile, topic>wizard, products>sap-cloud-platform-sdk-for-android, products>sap-cloud-platform ]
 primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
+
+## Prerequisites
+- You completed [Try Out SAP Cloud Platform SDK for Android Wizard](cp-sdk-android-wizard-app).
+- [Downloaded](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20android) and [Installed](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/android/setup.html) version 3.2.1 (or higher version) of the SAP Cloud Platform SDK for Android.
 
 ## Details
 ### You will learn
@@ -31,13 +35,13 @@ In this section you will create a new activity to display a map.
 
 3.  Set **Activity Name** to be **`CustomersMapActivity`**.
 
-    ![Creating map activity](map-create-dialog.png)
+    ![Creating map activity](map-create-dialog-java.png)
 
 4.  Click **Finish**.
 
 5.  In the **`google_maps_api.xml`**, on line 7 correct the package name at the end of the line to be **`com.sap.wizapp`** only.
 
-6.  Paste the URL (line 7) into a browser to register the application with the Maps SDK for Android. Follow the instructions to get an API key and paste it into line 23 of `google_maps_api.xml` in place of the text **`YOUR_KEY_HERE`**.
+6.  Paste the URL (line 7) into a browser to register the application with the Maps SDK for Android. Follow the instructions to get an **API Key** and paste it into line 23 of `google_maps_api.xml` in place of the text **`YOUR_KEY_HERE`**.
 
 7.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.java`.
 
@@ -71,7 +75,7 @@ In this section you will create a new activity to display a map.
 
 2.  Right-click and choose **`New > Activity > Gallery... > Google Maps Activity`**.
 
-    ![Adding Google Map from gallery](add-maps-activity-kotlin.png)
+    ![Adding Google Map from gallery](add-maps-activity.png)
 
 3.  Set **Activity Name** to be **`CustomersMapActivity`**.
 
@@ -244,7 +248,8 @@ In this section, you will add code to place a marker on the map for each custome
                         .or(Customer.country.equal("CA"))
                         .or(Customer.country.equal("MX")))
         val sapServiceManager = (application as SAPWizardApplication).sapServiceManager
-        sapServiceManager.eSPMContainer?.let {
+        val eSPMContainer = sapServiceManager?.eSPMContainer
+        eSPMContainer?.let {
             it.getCustomersAsync(query, { customers: List<Customer> ->
                 for (customer in customers) {
                     Log.d("", "Adding a marker for " + customer.city)
@@ -365,7 +370,7 @@ In this section, you will add code to display the customer detail screen when th
 
 5.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onCreate`** to navigate to the `onCreate` method.
 
-6.  Replace the `else` block in the `onCreate` method with the following code:
+6.  Replace the content of the `else` block in the `onCreate` method with the following code:
 
     ```Java
     CustomersListFragment listFragment = new CustomersListFragment();
@@ -430,7 +435,7 @@ In this section, you will add code to display the customer detail screen when th
 2.  Add the following method to the class:
 
     ```Kotlin
-    override fun onInfoWindowClick(marker: Marker) {
+    override fun onInfoWindowClick(marker: Marker) {//import com.google.android.gms.maps.model.Marker
         val customer = marker.tag as Customer
         val intent = Intent(this, CustomersActivity::class.java)
         intent.putExtra(BundleKeys.ENTITY_INSTANCE, customer)
@@ -452,7 +457,7 @@ In this section, you will add code to display the customer detail screen when th
 
     ```Kotlin
     if (savedInstanceState == null) {
-        var listFragment = CustomersListFragment()
+        val listFragment = CustomersListFragment()
         intent.extras?.let {
             if (it.containsKey(BundleKeys.ENTITY_INSTANCE)) {
                 listFragment.arguments = it
@@ -516,7 +521,15 @@ In this section, you will create a new activity that uses the Fiori Map control.
 
 [OPTION BEGIN [Java]]
 
-1.  Add the following dependency in the app's `build.gradle` file in the dependencies object.
+1.  Press **`Shift`** twice, and type **`styles.xml`** to open `styles.xml`.
+
+2.  Declare the style of `AppTheme` as:
+
+    ```XML
+    <style name="AppTheme" parent="FioriTheme">
+    ```
+
+3.  Add the following dependency in the app's `build.gradle` file in the dependencies object.
 
     ```Gradle
     implementation group: 'com.sap.cloud.android', name: 'google-maps', version: sdkVersion
@@ -524,7 +537,9 @@ In this section, you will create a new activity that uses the Fiori Map control.
 
     ![Add Map Dependency](app-build-gradle.png)
 
-2.  Create a new **Layout resource file** in `res/layout` called **`detail_panel.xml`** and select **Text** in the lower left corner of the window (if it's on **Design** view), to switch to **Code** view to replace its contents with the following code.
+4.  Create a new **Layout Resource File** in `res/layout` called **`detail_panel.xml`** and replace its contents with the following code.
+
+    ![Create new Layout Resource File](create-new-layout-resource-file.png)
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -544,7 +559,7 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </androidx.constraintlayout.widget.ConstraintLayout>
     ```
 
-3.  Create a new **Layout resource file** in `res/layout` called **`search_auto_complete.xml`** and replace its contents with the following code:
+5.  Create a new **Layout resource file** in `res/layout` called **`search_auto_complete.xml`** and replace its contents with the following code:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -561,17 +576,17 @@ In this section, you will create a new activity that uses the Fiori Map control.
     ```
 
 
-4.  In Android Studio, using the project explorer, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
+6.  In Android Studio, using the project explorer, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
 
-5.  Right-click and choose **New** > **Activity** > **Empty Activity**.
+7.  Right-click and choose **New** > **Activity** > **Empty Activity**.
 
-6.  Set **Activity Name** to be **`CustomersFioriMapActivity`**.
+8.  Set **Activity Name** to be **`CustomersFioriMapActivity`**.
 
-7.  Click **Finish**.
+9.  Click **Finish**.
 
     ![Dialog to create Fiori map activity](create-fiori-map-activity.png)
 
-8.  Replace the file contents in the newly created `CustomersFioriMapActivity.java` with the following code:
+10.  Replace the file contents in the newly created `CustomersFioriMapActivity.java` with the following code:
 
     ```Java
     package com.sap.wizapp.mdui.customers;
@@ -826,9 +841,9 @@ In this section, you will create a new activity that uses the Fiori Map control.
     }
     ```
 
-9.  Press **Shift** twice and type **`activity_customers_fiori_map.xml`** to open `activity_customers_fiori_map.xml`.
+11.  Press **Shift** twice and type **`activity_customers_fiori_map.xml`** to open `activity_customers_fiori_map.xml`.
 
-10.  Replace its contents with the following code:
+12.  Replace its contents with the following code:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -848,17 +863,17 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </androidx.constraintlayout.widget.ConstraintLayout>
     ```
 
-11.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.java`.
+13.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.java`.
 
-12.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersMapActivity.class`**.
+14.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersMapActivity.class`**.
 
-13.  Replace `CustomersMapActivity.class` with **`CustomersFioriMapActivity.class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori map on it.
+15.  Replace `CustomersMapActivity.class` with **`CustomersFioriMapActivity.class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori map on it.
 
-14.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
+16.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
 
-15.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity`**.
+17.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity`**.
 
-16.  Modify the activity so it specifies the theme `NoActionBar`, which will cause the activity to not display an action bar.
+18.  Modify the activity so it specifies the `NoActionBar` theme, which will cause the activity to not display an action bar.
 
     ```XML
     <activity android:name=".mdui.customers.CustomersFioriMapActivity"
@@ -866,7 +881,7 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </activity>
     ```
 
-17.  Run the app.
+19.  Run the app.
 
     You should be able to see markers on the screen representing customers.
 
@@ -888,7 +903,15 @@ In this section, you will create a new activity that uses the Fiori Map control.
 
 [OPTION BEGIN [Kotlin]]
 
-1.  Add the following dependency in the app's `build.gradle` file in the dependencies object.
+1.  Press **`Shift`** twice, and type **`styles.xml`** to open `styles.xml`.
+
+2.  Declare the style of `AppTheme` as:
+
+    ```XML
+    <style name="AppTheme" parent="FioriTheme">
+    ```
+
+3.  Add the following dependency in the app's `build.gradle` file in the dependencies object.
 
     ```Gradle
     implementation group: 'com.sap.cloud.android', name: 'google-maps', version: sdkVersion
@@ -896,7 +919,9 @@ In this section, you will create a new activity that uses the Fiori Map control.
 
     ![Add Map Dependency](app-build-gradle.png)
 
-2.  Create a new **Layout resource file** in `res/layout` called **`detail_panel.xml`** and select **Text** in the lower left corner of the window (if it's on **Design** view), to switch to **Code** view to replace its contents with the following code.
+4.  Create a new **Layout Resource File** in `res/layout` called **`detail_panel.xml`** and replace its contents with the following code.
+
+    ![Create new Layout Resource File](create-new-layout-resource-file.png)
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -916,7 +941,7 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </androidx.constraintlayout.widget.ConstraintLayout>
     ```
 
-3.  Create a new **Layout resource file** in `res/layout` called **`search_auto_complete.xml`** and replace its contents with the following code.
+5.  Create a new **Layout Resource File** in `res/layout` called **`search_auto_complete.xml`** and replace its contents with the following code.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -932,18 +957,17 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </LinearLayout>
     ```
 
+6.  In Android Studio, using the project explorer, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
 
-4.  In Android Studio, using the project explorer, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
+7.  Right-click and choose **New** > **Activity** > **Empty Activity**.
 
-5.  Right-click and choose **New** > **Activity** > **Empty Activity**.
+8.  Set **Activity Name** to be **`CustomersFioriMapActivity`**.
 
-6.  Set **Activity Name** to be **`CustomersFioriMapActivity`**.
-
-7.  Click **Finish**.
+9.  Click **Finish**.
 
     ![Dialog to create Fiori map activity](create-fiori-map-activity-kotlin.png)
 
-8.  Replace the file contents in the newly created `CustomersFioriMapActivity.kt` with the following code:
+10.  Replace the file contents in the newly created `CustomersFioriMapActivity.kt` with the following code:
 
     ```Kotlin
     package com.sap.wizapp.mdui.customers
@@ -1164,7 +1188,8 @@ In this section, you will create a new activity that uses the Fiori Map control.
                             .or(Customer.country.equal("CA"))
                             .or(Customer.country.equal("MX")))
             val sapServiceManager = (application as SAPWizardApplication).sapServiceManager
-            sapServiceManager.eSPMContainer?.let {
+            val eSPMContainer = sapServiceManager?.eSPMContainer
+            eSPMContainer?.let {
                 it.getCustomersAsync(query, { customers: List<Customer> ->
                     for (customer in customers)
                     {
@@ -1178,9 +1203,9 @@ In this section, you will create a new activity that uses the Fiori Map control.
 
     ```
 
-9.  Press **Shift** twice and type **`activity_customers_fiori_map.xml`** to open `activity_customers_fiori_map.xml`.
+11.  Press **Shift** twice and type **`activity_customers_fiori_map.xml`** to open `activity_customers_fiori_map.xml`.
 
-10.  Replace its contents with the following code.
+12.  Replace its contents with the following code.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -1200,17 +1225,17 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </androidx.constraintlayout.widget.ConstraintLayout>
     ```
 
-11.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.kt`.
+13.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.kt`.
 
-12.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersMapActivity::class`**.
+14.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersMapActivity::class`**.
 
-13.  Replace `CustomersMapActivity::class` with **`CustomersFioriMapActivity::class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori map on it.
+15.  Replace `CustomersMapActivity::class` with **`CustomersFioriMapActivity::class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori map on it.
 
-14.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
+16.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
 
-15.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity`**.
+17.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity`**.
 
-16.  Modify the activity so it specifies the theme `NoActionBar` theme, which will cause the activity to not display an action bar.
+18.  Modify the activity so it specifies the `NoActionBar` theme, which will cause the activity to not display an action bar.
 
     ```XML
     <activity android:name=".mdui.customers.CustomersFioriMapActivity"
@@ -1218,7 +1243,7 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </activity>
     ```
 
-17.  Run the app.
+19.  Run the app.
 
     You should be able to see markers on the screen that represent customers.
 
@@ -1477,7 +1502,7 @@ In this section, the bottom panel will be populated with details of the selected
         }
     }
 
-    inner class MapResultsAdapter: RecyclerView.Adapter<ViewHolder>(), MapListAdapter {
+    inner class MapResultsAdapter: RecyclerView.Adapter<ViewHolder>(), MapListPanel.MapListAdapter {
         val customers = arrayListOf<Customer>()
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : ViewHolder {
@@ -1668,7 +1693,9 @@ In this section you will implement the settings dialog to include a map type set
 
 7.  Tap on the settings icon in the toolbar.
 
-8.  Change the map type to **Hybrid** and turn the **Clustering** on.
+    ![Setting icon in toolbal](setting-icon-in-toolbar.png)
+
+8.  Change the map type to **Hybrid** and turn **Clustering** on.
 
     ![Settings](settings.png)
 
@@ -1786,7 +1813,9 @@ In this section you will implement the settings dialog to include a map type set
 
 7.  Tap on the settings icon in the toolbar.
 
-8.  Change the map type to **Hybrid** and turn the **Clustering** on.
+    ![Setting icon in toolbal](setting-icon-in-toolbar.png)
+
+8.  Change the map type to **Hybrid** and turn **Clustering** on.
 
     ![Settings](settings.png)
 
@@ -1883,30 +1912,27 @@ In this section, you will test the three different types of annotations.
 
     ![Emulator toolbar settings button](emulator-settings.png)
 
-6.  Under **Location**, change **Latitude** to **`43.4723`** and **Longitude** to **`-80.5449`**. Tap **Send** to save these new coordinates.
+6.  Under **Location** > **Single points**, search for **`University of Waterloo`** and select the first instance.
 
-    ![Changing default co-ordinates in emulator settings](emulator-location-settings.png)
-
-    >If your screen looks like the following, perform the following steps.
     ![Up to date emulator location settings screen 1](up-to-date-emulator-location-settings-1.png)
 
-    >1.  Under **Location** > **Single points**, search for **`University of Waterloo`** and select the first instance.
+7.  Tap **SAVE POINT**.
 
-    >2.  Tap **SAVE POINT**.
     ![Up to date emulator location settings screen 2](up-to-date-emulator-location-settings-2.png)
 
-    >3.  Set the name you want to save as.
+8.  Set the name you want to save as.
+
     ![Up to date emulator location settings screen 3](up-to-date-emulator-location-settings-3.png)
 
-    >4.  Select the saved point and tap **SET LOCATION** to set the default location.
+9.  Select the saved point and tap **SET LOCATION** to set the default location.
+
     ![Up to date emulator location settings screen 4](up-to-date-emulator-location-settings-4.png)
 
-
-7.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below.
+10.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below.
 
     ![Zoom into current location](current-location-effect.png)
 
-8.  To annotate the map, tap on the floating action button in the corner.
+11.  To annotate the map, tap on the floating action button in the corner.
 
     ![Floating action button to edit annotations](fab.png)
 
@@ -1914,7 +1940,7 @@ In this section, you will test the three different types of annotations.
 
     ![Edit annotations panel](edit-annotations.png)
 
-9.  To add the current location as a point:
+12.  To add the current location as a point:
     -	Tap on the **Add Point** option in the panel. Note that it may take a few moments for the emulator to process the new coordinates from before.
 
         ![Add point button in panel](add-point.png)
@@ -1929,6 +1955,7 @@ In this section, you will test the three different types of annotations.
 
     > If an API error occurs, such as `Failed to get location addresscom.google.android.gms.common.api.ApiException`, or nothing happens after tapping **Current Location**, ensure that the **Places API** is enabled on the [Google Cloud Platform](https://console.developers.google.com/). Type **`Places API`** in the search bar and you'll be redirected to the following page.
     ![Google Cloud Platform Places API page](places-api.png)
+
     > If you enabled **Places API** but still nothing happens after tapping, use
     ```URL
     https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJN1t_tDeuEmsRUsoyG83frY4&fields=name,rating,formatted_phone_number&key=YOUR_API_KEY
@@ -1939,11 +1966,11 @@ In this section, you will test the three different types of annotations.
 
     ![Point added onto map](added-point.png)
 
-10.  To add a `polyline` to the map, select the **`Polyline`** option and tap different places on the map to add multiple points. The added points will be connected with a line.
+13.  To add a `polyline` to the map, select the **`Polyline`** option and tap different places on the map to add multiple points. The added points will be connected with a line.
 
     ![Add polyline to map](add-polyline.png)
 
-11.  To add a polygon, select the **Polygon** option and tap different places on the map to add multiple points. The points are connected in the order that they appear in the list within the panel and take up the least amount of area.
+14.  To add a polygon, select the **Polygon** option and tap different places on the map to add multiple points. The points are connected in the order that they appear in the list within the panel and take up the least amount of area.
 
     ![Add polygon to map](add-polygon.png)
 
@@ -2019,29 +2046,24 @@ In this section, you will test the three different types of annotations.
 
     ![Emulator toolbar settings button](emulator-settings.png)
 
-6.  Under **Location**, change **Latitude** to **`43.4723`** and **Longitude** to **`-80.5449`**. Tap **Send** to save these new coordinates.
+6.  Under **Location** > **Single points**, search for **`University of Waterloo`** and select the first instance.
 
-    ![Changing default co-ordinates in emulator settings](emulator-location-settings.png)
-
-    >If your screen looks like the following, perform the following steps.
     ![Up to date emulator location settings screen 1](up-to-date-emulator-location-settings-1.png)
 
-    >1.  Under **Location** > **Single points**, search for **`University of Waterloo`** and select the first instance.
-
-    >2.  Tap **SAVE POINT**.
+7.  Tap **SAVE POINT**.
     ![Up to date emulator location settings screen 2](up-to-date-emulator-location-settings-2.png)
 
-    >3.  Set the name you want to save as.
+8.  Set the name you want to save as.
     ![Up to date emulator location settings screen 3](up-to-date-emulator-location-settings-3.png)
 
-    >4.  Select the saved point and tap **SET LOCATION** to set the default location.
+9.  Select the saved point and tap **SET LOCATION** to set the default location.
     ![Up to date emulator location settings screen 4](up-to-date-emulator-location-settings-4.png)
 
-7.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below.
+10.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below.
 
     ![Zoom into current location](current-location-effect.png)
 
-8.  To annotate the map, tap on the floating action button in the corner.
+11.  To annotate the map, tap on the floating action button in the corner.
 
     ![Floating action button to edit annotations](fab.png)
 
@@ -2049,7 +2071,7 @@ In this section, you will test the three different types of annotations.
 
     ![Edit annotations panel](edit-annotations.png)
 
-9.  To add the current location as a point:
+12.  To add the current location as a point:
     -	Tap on the **Add Point** option in the panel. Note that it may take a few moments for the emulator to process the new coordinates from before.
 
         ![Add point button in panel](add-point.png)
@@ -2064,6 +2086,7 @@ In this section, you will test the three different types of annotations.
 
     > If an API error occurs, such as `Failed to get location addresscom.google.android.gms.common.api.ApiException`, or nothing happens after tapping **Current Location**, ensure that the **Places API** is enabled on the [Google Cloud Platform](https://console.developers.google.com/). Type **`Places API`** in the search bar and you'll be redirected to the following page.
     ![Google Cloud Platform Places API page](places-api.png)
+
     > If you enabled **Places API** but still nothing happens after tapping, use
     ```URL
     https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJN1t_tDeuEmsRUsoyG83frY4&fields=name,rating,formatted_phone_number&key=YOUR_API_KEY
@@ -2074,11 +2097,11 @@ In this section, you will test the three different types of annotations.
 
     ![Point added onto map](added-point.png)
 
-10.  To add a `polyline` to the map, select the **`Polyline`** option and tap different places on the map to add multiple points. The added points will be connected with a line.
+13.  To add a `polyline` to the map, select the **`Polyline`** option and tap different places on the map to add multiple points. The added points will be connected with a line.
 
     ![Add polyline to map](add-polyline.png)
 
-11.  To add a polygon, select the **Polygon** option and tap different places on the map to add multiple points. The points are connected in the order that they appear in the list within the panel and take up the least amount of area.
+14.  To add a polygon, select the **Polygon** option and tap different places on the map to add multiple points. The points are connected in the order that they appear in the list within the panel and take up the least amount of area.
 
     ![Add polygon to map](add-polygon.png)
 
@@ -2136,7 +2159,7 @@ In this section you will customize the map markers based on the customer's count
 
     ![Marker Legend](legend.png)
 
-    With clustering enabled, notice that clustered markers turn grey if the markers in the cluster are located in different countries.
+    With clustering enabled, notice that clustered markers turn white if the markers in the cluster are located in different countries.
 
 [OPTION END]
 
@@ -2180,573 +2203,13 @@ In this section you will customize the map markers based on the customer's count
 
     ![Marker Legend](legend.png)
 
-    With clustering enabled, notice that clustered markers turn grey if the markers in the cluster are located in different countries.
+    With clustering enabled, notice that clustered markers turn white if the markers in the cluster are located in different countries.
 
 [OPTION END]
-
-[VALIDATE_5]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 9: ](Esri map)]
-
-In this section, an `EsriFioriMapView` will be used.
-
-[OPTION BEGIN [Java]]
-
-1.  Add the following permissions to the `AndroidManifest.xml` file before the application section.
-
-    ```XML
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
-    ```
-
-2.  Add the following to the `ext.repos` section of the project's `build.gradle` file:
-
-    ```Gradle
-    maven {
-        url 'https://esri.bintray.com/arcgis'
-    }
-    ```
-
-3.  Add the following dependency to the app's `build.gradle` file:
-
-    ```Gradle
-    implementation group: 'com.sap.cloud.android', name: 'esri-maps', version: sdkVersion
-    ```
-
-4.  In Android Studio, using the project explorer, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
-
-5.  Right-click and choose **`New > Activity > Empty Activity`**.
-
-6.  Set **Activity Name** to be **`CustomersFioriEsriMapActivity`**.
-
-7.  Click **Finish**.
-
-8.  Replace the file contents in the newly created `CustomersFioriEsriMapActivity.java` with the following code:
-
-    ```Java
-    package com.sap.wizapp.mdui.customers;
-
-    import android.app.SearchManager;
-    import android.content.Context;
-    import android.content.Intent;
-    import android.location.Address;
-    import android.location.Geocoder;
-    import android.os.Bundle;
-    import android.util.Log;
-    import android.view.LayoutInflater;
-    import android.view.View;
-    import android.view.inputmethod.InputMethodManager;
-    import android.widget.ArrayAdapter;
-    import android.widget.ImageButton;
-
-    import com.esri.arcgisruntime.geometry.Point;
-    import com.esri.arcgisruntime.geometry.SpatialReferences;
-    import com.google.android.gms.maps.model.LatLng;
-    import com.sap.cloud.android.odata.espmcontainer.Customer;
-    import com.sap.cloud.android.odata.espmcontainer.ESPMContainer;
-    import com.sap.cloud.android.odata.espmcontainer.ESPMContainerMetadata;
-    import com.sap.cloud.mobile.fiori.maps.FioriMapSearchView;
-    import com.sap.cloud.mobile.fiori.maps.FioriMarkerOptions;
-    import com.sap.cloud.mobile.fiori.maps.FioriPoint;
-    import com.sap.cloud.mobile.fiori.maps.LegendButton;
-    import com.sap.cloud.mobile.fiori.maps.LocationButton;
-    import com.sap.cloud.mobile.fiori.maps.SettingsButton;
-    import com.sap.cloud.mobile.fiori.maps.ZoomExtentButton;
-    import com.sap.cloud.mobile.fiori.maps.esri.EsriFioriMapView;
-    import com.sap.cloud.mobile.fiori.maps.esri.EsriMapActionProvider;
-    import com.sap.cloud.mobile.odata.DataQuery;
-    import com.sap.wizapp.R;
-    import com.sap.wizapp.app.SAPWizardApplication;
-    import com.sap.wizapp.service.SAPServiceManager;
-
-    import java.io.IOException;
-    import java.util.ArrayList;
-    import java.util.Arrays;
-    import java.util.HashMap;
-    import java.util.List;
-
-    import androidx.appcompat.app.AppCompatActivity;
-
-    public class CustomersFioriEsriMapActivity extends AppCompatActivity  {
-        private EsriFioriMapView mEsriFioriMapView;
-        private HashMap<String, LatLng> locations = new HashMap<String, LatLng>();  // Used for demo purposes to speed up the process of converting an address to lat, long
-        private HashMap<String, FioriMarkerOptions> markers = new HashMap<String, FioriMarkerOptions>();  // Used to associate an address with a marker for search
-        private ArrayList<String> addresses = new ArrayList<String>();  // Used to populate the list of addresses that are searchable
-
-        EsriMapActionProvider mActionProvider;
-
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            Intent intent = getIntent();
-            setContentView(R.layout.activity_customers_fiori_esri_map);
-            mEsriFioriMapView = findViewById(R.id.esriFioriView);
-
-            mActionProvider = new EsriMapActionProvider(mEsriFioriMapView, this);
-            // For demo purposes, speed up the lookup of address details.
-            // Will use Geocoder to translate an address to a LatLng if address is not in this list
-            locations.put("Wilmington, Delaware, US", new LatLng(39.744655, -75.5483909));
-            locations.put("Antioch, Illinois, US", new LatLng(42.4772418, -88.0956396));
-            locations.put("Santa Clara, California, US", new LatLng(37.354107899999995, -121.9552356));
-            locations.put("Hermosillo, MX", new LatLng(29.0729673, -110.9559192));
-            locations.put("Bismarck, North Dakota, US", new LatLng(46.808326799999996, -100.7837392));
-            locations.put("Ottawa, CA", new LatLng(45.4215296, -75.69719309999999));
-            locations.put("México, MX", new LatLng(23.634501, -102.55278399999999));
-            locations.put("Boca Raton, Florida, US", new LatLng(26.368306399999998, -80.1289321));
-            locations.put("Carrollton, Texas, US", new LatLng(32.9756415, -96.8899636));
-            locations.put("Lombard, Illinois, US", new LatLng(41.8800296, -88.00784349999999));
-            locations.put("Moorestown, US", new LatLng(39.9688817, -74.948886));
-            addCustomersToMap();
-
-            // Setup toolbar buttons and add to the view.
-            SettingsButton settingsButton = new SettingsButton(mEsriFioriMapView.getToolbar().getContext());
-            LegendButton legendButton = new LegendButton(mEsriFioriMapView.getToolbar().getContext());
-            LocationButton locationButton = new LocationButton(mEsriFioriMapView.getToolbar().getContext());
-            ZoomExtentButton extentButton = new ZoomExtentButton(mEsriFioriMapView.getToolbar().getContext());
-            ImageButton[] buttons = {settingsButton, legendButton, locationButton, extentButton};
-            mEsriFioriMapView.getToolbar().addButtons(Arrays.asList(buttons));
-
-            // Setup draggable bottom panel
-            LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View detailView = inflater.inflate(R.layout.detail_panel, null);
-            mEsriFioriMapView.setDefaultPanelContent(detailView);
-
-            FioriMapSearchView mFioriMapSearchView = findViewById(R.id.fiori_map_search_view);
-            if (mFioriMapSearchView != null) {
-                SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-                mFioriMapSearchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-                mFioriMapSearchView.setAdapter(new ArrayAdapter<String>(CustomersFioriEsriMapActivity.this, R.layout.search_auto_complete, R.id.search_auto_complete_text, addresses));
-                mFioriMapSearchView.setThreshold(2);
-                mFioriMapSearchView.setOnItemClickListener((parent, view, position, id) -> {
-                    mFioriMapSearchView.setQuery(parent.getItemAtPosition(position).toString(), false);
-                    searchResultSelected((String) parent.getItemAtPosition(position));
-                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                    inputMethodManager.hideSoftInputFromWindow(mFioriMapSearchView.getWindowToken(), 0);
-                });
-            }
-        }
-
-        /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera. In this case,
-         * we just add a marker near Toronto, Canada.
-         */
-
-        private void searchResultSelected(String selectedSearchResult) {
-            LatLng latLng = locations.get(selectedSearchResult);
-            if (latLng != null) {
-                Point stationLocation = new Point(latLng.longitude, latLng.latitude, SpatialReferences.getWgs84());
-                mEsriFioriMapView.getMapView().setViewpointCenterAsync(stationLocation);
-                // Select the marker (or cluster the marker is in).
-                mActionProvider.selectMarker(markers.get(selectedSearchResult));
-            }
-        }
-
-        @Override
-        public void onDestroy() {
-            super.onDestroy();
-            //mActionProvider.cleanup();
-        }
-
-        private LatLng getCustomerLatLongFromAddress(String address) {
-            // import android.location.Address;
-            List<Address> addresses;
-            LatLng latLng = locations.get(address);
-            if (latLng != null) {
-                return latLng;
-            }
-
-            // String strAddress = "Wilmington, Delaware";
-            Geocoder coder = new Geocoder(this);
-
-            try {
-                // May throw an IOException
-                addresses = coder.getFromLocationName(address, 5);
-                if (addresses == null || addresses.size() == 0) {
-                    return null;
-                }
-
-                Address location = addresses.get(0);
-                latLng = new LatLng(location.getLatitude(), location.getLongitude());
-                return latLng;
-            } catch (IOException ex) {
-                ex.printStackTrace();
-                return null;
-            }
-        }
-
-        private void addCustomerMarkerToMap(Customer customer) {
-            LatLng latLng = getCustomerLatLongFromAddress(customer.getCity() + ", " + customer.getCountry());
-            if (latLng != null) {
-                FioriMarkerOptions customerMarker = new FioriMarkerOptions.Builder()
-                        .tag(customer)
-                        .point(new FioriPoint(latLng.latitude, latLng.longitude))
-                        .title(customer.getFirstName() + " " + customer.getLastName())
-                        .legendTitle("Customer")
-                        .build();
-                mActionProvider.addMarker(customerMarker);
-                markers.put(customer.getCity() + ", " + customer.getCountry(), customerMarker);
-
-                Point stationLocation = new Point(latLng.longitude, latLng.latitude, SpatialReferences.getWgs84());
-                mEsriFioriMapView.getMapView().setViewpointCenterAsync(stationLocation);
-            }
-        }
-
-        private void addCustomersToMap() {
-            DataQuery query = new DataQuery()
-                    .from(ESPMContainerMetadata.EntitySets.customers)
-                    .where(Customer.country.equal("US")
-                            .or(Customer.country.equal("CA"))
-                            .or(Customer.country.equal("MX")));
-            SAPServiceManager sapServiceManager = ((SAPWizardApplication) getApplication()).getSAPServiceManager();
-            ESPMContainer espmContainer = sapServiceManager.getESPMContainer();
-            espmContainer.getCustomersAsync(query, (List<Customer> customers) -> {
-                for (Customer customer : customers) {
-                    addCustomerMarkerToMap(customer);
-                    addresses.add(customer.getCity() + ", " + customer.getCountry());
-                }
-                mActionProvider.doExtentsAction();
-            }, (RuntimeException re) -> {
-                Log.d("", "An error occurred during async query:  " + re.getMessage());
-            });
-        }
-    }
-    ```
-
-9.  Press **Shift** twice and type **`activity_customers_fiori_esri_map.xml`** to open `activity_customers_fiori_esri_map.xml`.
-
-10.  Replace its contents with the following code:
-
-    ```XML
-    <?xml version="1.0" encoding="utf-8"?>
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".mdui.customers.CustomersFioriEsriMapActivity">
-
-        <com.sap.cloud.mobile.fiori.maps.esri.EsriFioriMapView
-            android:id="@+id/esriFioriView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:initialLatitude="45.5017"
-            app:initialLongitude="-73.5673"
-            >
-        </com.sap.cloud.mobile.fiori.maps.esri.EsriFioriMapView>
-
-    </FrameLayout>
-    ```
-
-11.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.java`.
-
-12.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity.class`**.
-
-13.  Replace `CustomersMapActivity.class` with **`CustomersFioriEsriMapActivity.class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori-Esri map on it.
-
-14.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
-
-15.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriEsriMapActivity`**.
-
-16.  Modify the activity so that it specifies the `NoActionBar` theme, which will cause the activity to not display an action bar.
-
-    ```XML
-    <activity android:name=".mdui.customers.CustomersFioriEsriMapActivity"
-        android:theme="@style/AppTheme.NoActionBar">
-    </activity>
-    ```
-
-17.  Run the app.
-
-    You should be able to see markers on the screen that represent customers displayed on an `Esri` map.
-
-    ![Esri Fiori Map](fiori-esri-map.png)
-
-[OPTION END]
-
-[OPTION BEGIN [Kotlin]]
-
-1.  Add the following permissions to the `AndroidManifest.xml` file before the application section.
-
-    ```XML
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
-    ```
-
-2.  Add the following to the `ext.repos` section of the project's `build.gradle` file:
-
-    ```Gradle
-    maven {
-        url 'https://esri.bintray.com/arcgis'
-    }
-    ```
-
-3.  Add the following dependency to the app's `build.gradle` file.
-
-    ```Gradle
-    implementation group: 'com.sap.cloud.android', name: 'esri-maps', version: sdkVersion
-    ```
-
-4.  In Android Studio, using the project explorer, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
-
-5.  Right-click and choose **`New > Activity > Empty Activity`**.
-
-6.  Set the Activity Name to be **`CustomersFioriEsriMapActivity`**.
-
-7.  Click **Finish**.
-
-8.  Replace the file contents in the newly created `CustomersFioriEsriMapActivity.kt` with the following code:
-
-    ```Kotlin
-    package com.sap.wizapp.mdui.customers
-
-    import android.app.SearchManager
-    import android.content.Context
-    import android.content.Intent
-    import android.location.Address
-    import android.location.Geocoder
-    import android.os.Bundle
-    import android.util.Log
-    import android.view.LayoutInflater
-    import android.view.View
-    import android.view.inputmethod.InputMethodManager
-    import android.widget.ArrayAdapter
-    import android.widget.ImageButton
-
-    import com.esri.arcgisruntime.geometry.Point
-    import com.esri.arcgisruntime.geometry.SpatialReferences
-    import com.google.android.gms.maps.model.LatLng
-    import com.sap.cloud.android.odata.espmcontainer.Customer
-    import com.sap.cloud.android.odata.espmcontainer.ESPMContainer
-    import com.sap.cloud.android.odata.espmcontainer.ESPMContainerMetadata
-    import com.sap.cloud.mobile.fiori.maps.FioriMapSearchView
-    import com.sap.cloud.mobile.fiori.maps.FioriMarkerOptions
-    import com.sap.cloud.mobile.fiori.maps.FioriPoint
-    import com.sap.cloud.mobile.fiori.maps.LegendButton
-    import com.sap.cloud.mobile.fiori.maps.LocationButton
-    import com.sap.cloud.mobile.fiori.maps.SettingsButton
-    import com.sap.cloud.mobile.fiori.maps.ZoomExtentButton
-    import com.sap.cloud.mobile.fiori.maps.esri.EsriFioriMapView
-    import com.sap.cloud.mobile.fiori.maps.esri.EsriMapActionProvider
-    import com.sap.cloud.mobile.odata.DataQuery
-    import com.sap.wizapp.R
-    import com.sap.wizapp.app.SAPWizardApplication
-    import com.sap.wizapp.service.SAPServiceManager
-
-    import java.io.IOException
-    import kotlin.collections.HashMap
-
-    import androidx.appcompat.app.AppCompatActivity
-
-    class CustomersFioriEsriMapActivity : AppCompatActivity() {
-        private lateinit var mEsriFioriMapView: EsriFioriMapView
-        private val locations = HashMap<String, LatLng>() // Used for demo purposes to speed up the process of converting an address to lat, long
-        private val markers = HashMap<String, FioriMarkerOptions>() // Used to associate an address with a marker for search
-        private val addresses = arrayListOf<String>() // Used to populate the list of addresses that are searchable
-
-        private lateinit var mActionProvider: EsriMapActionProvider
-
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            val intent = intent
-            setContentView(R.layout.activity_customers_fiori_esri_map)
-            mEsriFioriMapView = findViewById(R.id.esriFioriView)
-
-            mActionProvider = EsriMapActionProvider(mEsriFioriMapView, this)
-            // For demo purposes, speed up the lookup of address details.
-            // Will use Geocoder to translate an address to a LatLng if address is not in this list
-            locations.put("Wilmington, Delaware, US", LatLng(39.744655, -75.5483909))
-            locations.put("Antioch, Illinois, US", LatLng(42.4772418, -88.0956396))
-            locations.put("Santa Clara, California, US", LatLng(37.354107899999995, -121.9552356))
-            locations.put("Hermosillo, MX", LatLng(29.0729673, -110.9559192))
-            locations.put("Bismarck, North Dakota, US", LatLng(46.808326799999996, -100.7837392))
-            locations.put("Ottawa, CA", LatLng(45.4215296, -75.69719309999999))
-            locations.put("México, MX", LatLng(23.634501, -102.55278399999999))
-            locations.put("Boca Raton, Florida, US", LatLng(26.368306399999998, -80.1289321))
-            locations.put("Carrollton, Texas, US", LatLng(32.9756415, -96.8899636))
-            locations.put("Lombard, Illinois, US", LatLng(41.8800296, -88.00784349999999))
-            locations.put("Moorestown, US", LatLng(39.9688817, -74.948886))
-            addCustomersToMap()
-
-            // Setup toolbar buttons and add to the view.
-            val settingsButton = SettingsButton(mEsriFioriMapView.toolbar.context)
-            val legendButton = LegendButton(mEsriFioriMapView.toolbar.context)
-            val locationButton = LocationButton(mEsriFioriMapView.toolbar.context)
-            val extentButton = ZoomExtentButton(mEsriFioriMapView.toolbar.context)
-            val buttons = arrayOf<ImageButton>(settingsButton, legendButton, locationButton, extentButton)
-            mEsriFioriMapView.toolbar.addButtons(buttons.asList())
-
-            // Setup draggable bottom panel
-            val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            val detailView = inflater.inflate(R.layout.detail_panel, null)
-            mEsriFioriMapView.setDefaultPanelContent(detailView)
-
-            val mFioriMapSearchView = findViewById<FioriMapSearchView>(R.id.fiori_map_search_view)
-            mFioriMapSearchView?.let {
-                val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
-                it.setSearchableInfo(searchManager.getSearchableInfo(componentName))
-                it.setAdapter(ArrayAdapter<String>(this@CustomersFioriEsriMapActivity, R.layout.search_auto_complete, R.id.search_auto_complete_text, addresses))
-                it.setThreshold(2)
-                it.setOnItemClickListener{ parent, view, position, id ->
-                    it.setQuery(parent.getItemAtPosition(position).toString(), false)
-                    searchResultSelected(parent.getItemAtPosition(position) as String)
-                    val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-                    inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0) }
-            }
-        }
-
-        /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera. In this case,
-         * we just add a marker near Toronto, Canada.
-         */
-
-        private fun searchResultSelected(selectedSearchResult: String) {
-            locations[selectedSearchResult]?.let { latLng ->
-                val stationLocation = Point(latLng.longitude, latLng.latitude, SpatialReferences.getWgs84())
-                mEsriFioriMapView.mapView.setViewpointCenterAsync(stationLocation)
-                // Select the marker (or cluster the marker is in).
-                mActionProvider.selectMarker(markers[selectedSearchResult])
-            }
-        }
-
-        override fun onDestroy() {
-            super.onDestroy()
-            //mActionProvider.cleanup();
-        }
-
-        private fun getCustomerLatLongFromAddress(address: String): LatLng? {
-            locations[address]?.let {
-                return it
-            }
-
-            // String strAddress = "Wilmington, Delaware";
-            val coder = Geocoder(this)
-
-            try {
-                // May throw an IOException
-                val addresses = coder.getFromLocationName(address, 5)
-                if (addresses.isNullOrEmpty()) {
-                    return null
-                }
-
-                val location = addresses[0]
-                return LatLng(location.latitude, location.longitude)
-            }
-            catch (ex: IOException) {
-                ex.printStackTrace()
-                return null
-            }
-        }
-
-        private fun addCustomerMarkerToMap(customer: Customer) {
-            val latLng = getCustomerLatLongFromAddress(customer.city + ", " + customer.country)
-            latLng?.let {
-                val customerMarker = FioriMarkerOptions.Builder()
-                        .tag(customer)
-                        .point(FioriPoint(latLng.latitude, latLng.longitude))
-                        .title(customer.firstName + " " + customer.lastName)
-                        .legendTitle("Customer")
-                        .build()
-                mActionProvider.addMarker(customerMarker)
-                markers.put(customer.city + ", " + customer.country, customerMarker)
-                val stationLocation = Point(latLng.longitude, latLng.latitude, SpatialReferences.getWgs84())
-                mEsriFioriMapView.mapView.setViewpointCenterAsync(stationLocation)
-            }
-        }
-
-        private fun addCustomersToMap() {
-            val query = DataQuery()
-                    .from(ESPMContainerMetadata.EntitySets.customers)
-                    .where(Customer.country.equal("US")
-                            .or(Customer.country.equal("CA"))
-                            .or(Customer.country.equal("MX")))
-            val sapServiceManager = (application as SAPWizardApplication).sapServiceManager
-            val espmContainer = sapServiceManager.eSPMContainer
-            espmContainer?.getCustomersAsync(query, { customers: List<Customer> ->
-                for (customer in customers) {
-                    addCustomerMarkerToMap(customer)
-                    addresses.add(customer.city + ", " + customer.country)
-                }
-                mActionProvider.doExtentsAction() }, { re:RuntimeException-> Log.d("", "An error occurred during async query: " + re.message) })
-        }
-    }
-    ```
-
-9.  Press **Shift** twice and type **`activity_customers_fiori_esri_map.xml`** to open `activity_customers_fiori_esri_map.xml`.
-
-10.  Replace its contents with the following code:
-
-    ```XML
-    <?xml version="1.0" encoding="utf-8"?>
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".mdui.customers.CustomersFioriEsriMapActivity">
-
-        <com.sap.cloud.mobile.fiori.maps.esri.EsriFioriMapView
-            android:id="@+id/esriFioriView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:initialLatitude="45.5017"
-            app:initialLongitude="-73.5673"
-            >
-        </com.sap.cloud.mobile.fiori.maps.esri.EsriFioriMapView>
-
-    </FrameLayout>
-    ```
-
-11.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.kt`.
-
-12.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity::class`**.
-
-13.  Replace `CustomersMapActivity::class` with **`CustomersFioriEsriMapActivity::class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori-Esri map on it.
-
-14.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
-
-15.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriEsriMapActivity`**.
-
-16.  Modify the activity so that it specifies the `NoActionBar` theme, which will cause the activity to not display an action bar.
-
-    ```XML
-    <activity android:name=".mdui.customers.CustomersFioriEsriMapActivity"
-        android:theme="@style/AppTheme.NoActionBar">
-    </activity>
-    ```
-
-17.  Run the app.
-
-    You should be able to see markers on the screen that represent customers displayed on an `Esri` map.
-
-    ![Esri Fiori Map](fiori-esri-map.png)
-
-[OPTION END]
-
->Because `Esri` maps use a native library. And some Android devices have 64-bit processors, these devices generate and check the `arm64` folder to load a native library. So, if you cannot run the app properly in this step, try the following solution:
-
->1.  Add the following filters to the `defaultConfig` section in your app module's `build.gradle` file. When your device tries to run your app, it will not generate any folders and will use the existing native library.
-    ```Gradle
-    ndk {
-        abiFilters "armeabi-v7a", "x86", "armeabi", "mips"
-    }
-    ```
-
->2.  Add the following code to your `gradle.properties` (Project Properties) to use the deprecated `ndk`.
-    ```Gradle
-    android.useDeprecatedNdk=true
-    ```
 
 Congratulations. You have created an activity that makes use of the Fiori map control.
 
-[DONE]
+[VALIDATE_5]
 [ACCORDION-END]
-
-
 
 ---

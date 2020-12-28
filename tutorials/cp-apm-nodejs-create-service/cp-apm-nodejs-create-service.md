@@ -11,10 +11,11 @@ time: 50
 
 
 ## Prerequisites
-- You've installed [Node.js](https://nodejs.org/en/). Use latest long-term support (LTS) version. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
+- You've installed [Node.js](https://nodejs.org/en/download/releases/). Use long-term support (LTS) version 10 or 12. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
 - You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
-- (For Windows users only) You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#sqlite) in the CAP documentation.
+- (For Windows users only) You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/resources/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation.
 - You've installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
+- If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **Europe (Frankfurt) or US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
 
 ## Details
 ### You will learn
@@ -42,7 +43,7 @@ Before you start, make sure that you've completed the prerequisites.
 
     >If there's an older `@sap/cds` package already installed on the machine, you may have to remove it first; if so, you'll be instructed to do so.
 
-    >In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
+    >In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
 
 3. To verify that the installation was successful, run `cds` without arguments:
 
@@ -50,7 +51,7 @@ Before you start, make sure that you've completed the prerequisites.
     cds
     ```
 
-    ![cds commands](cds-commands.png)
+    ![cds commands](cds_commands.png)
 
     >This lists the available `cds` commands.  For example, use `cds version` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
@@ -109,10 +110,11 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
     >This command tries to start a `cds` server. Whenever you feed your project with new content, for example, by adding or modifying `.cds`, `.json`, or `.js` files, the server automatically restarts to serve the new content. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
 
     ```
-    [cds] - running nodemon...
-    --ext cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml
+    cds serve all --with-mocks --in-memory?
+    ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
 
-        No models found at db/,srv/,app/,schema,services.
+
+        No models found in db/,srv/,app/,schema,services.
         Waiting for some to arrive...
     ```
 
@@ -143,10 +145,11 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
     >This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
 
     ```
-    [cds] - running nodemon...
-    --ext cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml
+    cds serve all --with-mocks --in-memory?
+    ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
 
-        No models found at db/,srv/,app/,schema,services.
+
+        No models found in db/,srv/,app/,schema,services.
         Waiting for some to arrive...
     ```
 
@@ -164,7 +167,7 @@ After initializing the project, you should see the following empty folders:
 - `db`: for the database level schema model
 - `srv`: for the service definition layer
 
-![Folder structure](folder-structure.png)
+![Folder structure](folder_structure.png)
 
 1. Let's feed it by adding a simple domain model. In the **`srv`** folder choose the **New File** icon in Visual Studio Code and create a new file called `cat-service.cds`.
 
@@ -203,12 +206,13 @@ After initializing the project, you should see the following empty folders:
 3. As soon as you've saved your file, the still running `cds watch` reacts immediately with some new output as shown below:
 
     ```
-    [cds] - connect to db { database: ':memory:' }
+    [cds] - using bindings from: { registry: '~/.cds-services.json' }
+    [cds] - connect to db > sqlite { database: ':memory:' }
     /> successfully deployed to sqlite in-memory db
 
     [cds] - serving CatalogService { at: '/catalog' }
 
-    [cds] - launched in: 696.753ms
+    [cds] - launched in: 1557.190ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -320,7 +324,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
 
 In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill your database tables with initial data.
 
-1. In the `db` folder, choose **New File** and enter `csv/my.bookshop-Authors.csv` to create a new folder `csv` with the file named `csv/my.bookshop-Authors.csv`. Add the following to the file:
+1. In the `db` folder, choose **New File** and enter `csv/my.bookshop-Authors.csv` to create a new folder `csv` with the file named `my.bookshop-Authors.csv`. Add the following to the file:
 
     ```CSV
     ID;name
@@ -345,13 +349,17 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
     >Make sure that you now have a folder hierarchy `db/csv/...`. Remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/csv` folder.
 
     >After you added these files, `cds watch`restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
+
     ```
-    [cds] - connect to sqlite db { database: ':memory:' }
-     > filling my.bookshop.Authors from db/csv/my.bookshop-Authors.csv
-     > filling my.bookshop.Books from db/csv/my.bookshop-Books.csv
+    [cds] - using bindings from: { registry: '~/.cds-services.json' }
+    [cds] - connect to db > sqlite { database: ':memory:' }
+    > filling my.bookshop.Authors from db/csv/my.bookshop-Authors.csv
+    > filling my.bookshop.Books from db/csv/my.bookshop-Books.csv
     /> successfully deployed to sqlite in-memory db
+
     [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
-    [cds] - launched in: 751.073ms
+
+    [cds] - launched in: 1009.187ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -417,10 +425,10 @@ Instead of using in-memory, you can also use persistent databases.
 
     ```
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
-    [cds] - connect to sqlite db { database: 'db/my-bookshop.db' }
+    [cds] - connect to db > sqlite { database: 'db/my-bookshop.db' }
     [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
 
-    [cds] - launched in: 610.318ms
+    [cds] - launched in: 871.970ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -438,13 +446,13 @@ You can now see the generic handlers shipped with CAP in action.
     >You can use any other HTTP client than Postman.
 
 
-2. Click on the following link and save the file to a folder of your choice: ['postman.json'](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-nodejs-create-service/postman.json).
+2. Click on the following link and save the file to a folder of your choice: [postman.json](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-nodejs-create-service/postman.json).
 
 3. In the Postman app, use the **Import** button in the toolbar:
 
     ![Postman import](postman-import.png)
 
-4. Choose **Import File** in the wizard. Click on **Choose Files** and select the file that you've saved before.
+4. Choose **Import File** in the wizard. Click on **Choose Files** and select the file that you've saved before or add it per drag & drop  directly.
 
     ![Postman import from file](postman-import-from-file.png)
 
@@ -460,7 +468,7 @@ You can now see the generic handlers shipped with CAP in action.
 
 [ACCORDION-BEGIN [Step 10: ](Add custom logic)]
 
-1. In Visual Studio Code open the file `cat-service.js` and replace the existing code with::
+1. In Visual Studio Code open the file `cat-service.js` and replace the existing code with:
 
     ```JavaScript
       module.exports = (srv) => {

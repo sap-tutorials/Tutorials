@@ -21,11 +21,11 @@ In the trial version of Document Classification, however, a predefined and pre-t
 
 [ACCORDION-BEGIN [Step 1: ](Authorize Swagger UI)]
 
-You will use Swagger UI, via all major web browser, to call the Document Classification APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).  
+You will use Swagger UI, via all major web browser, to call the Document Classification APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).
 
 In the service key you created for Document Classification in the previous tutorial: [Create Service Instance for Document Classification with Trial Account](cp-aibus-dc-service-instance), you should find (outside the `uaa` section of the service key) an entry called `url` (as highlighted in the image below).
 
-1. To access the Document Information Extraction Swagger UI, add **`/document-classification/v1`** to the `url` value, paste it in any web browser and press **Enter**.
+1. To access the Document Classification Swagger UI, add **`/document-classification/v1`** to the `url` value, paste it in any web browser and press **Enter**.
 
     ![Service keys](service-key-details.png)
 
@@ -33,7 +33,7 @@ In the service key you created for Document Classification in the previous tutor
 
     ![Swagger UI Authorize](swagger-authorize.png)
 
-3. Copy the `access_token` created in the previous tutorial [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), add **Bearer** in front of it, and enter in the **Value** field.
+3. Copy the `access_token` created in the previous tutorial [Get OAuth Access Token for Document Classification Using Any Web Browser](cp-aibus-dc-web-oauth-token), add **Bearer** in front of it, and enter in the **Value** field.
 
     ```
     Bearer <access_token>
@@ -52,13 +52,19 @@ In the service key you created for Document Classification in the previous tutor
 
 [ACCORDION-BEGIN [Step 2: ](Classify documents)]
 
-In this step, you can upload documents and get the service classification results.
+In this step, you can upload documents and get the service classification results. Please refer to the [documentation](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US/c66983111a5949af9dfd8fec25cba257.html) about the file formats that are supported by the service.
 
-In the Document Classification trial, there is a pre-trained model available for all users. The model can classify product descriptions into categories of product types. Feel free to use and upload any PDF documents you want.
+In the Document Classification trial, there is a pre-trained model available for all users. The model predicts whether a document is an invoice, purchase order or payment advice. Feel free to use and upload any of such documents.
 
->As an alternative to uploading your own document to the service, you can use the following file which is a product description of SAP Data Intelligence (right click on the link, then click ***Save link as*** to download the files locally):
+>As an alternative to uploading your own documents to the service, you can use the following sample files (right click on the link, then click ***Save link as*** to download the files locally):
 
->[SAP Data Intelligence](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dc-swagger-ui/data/data-intelligence.pdf)
+> - [Invoice](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/bejing_2008.pdf) ("Beijing Olympics logo" by sha3bi1Beijing)
+> - [Payment Advice](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/flickr.pdf) ("Logo of Flickr" by `topgold`)
+> - [Purchase Order](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/guru_shop.pdf) ("Logo Guru Shop" by `Carlo Armanni`)
+> - [Other](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/twitter.pdf) ("Logo of Twitter" by `topgold`)
+
+>Please note that those files are fake invoices, purchase orders, payment advices and other business documents for demo purposes. Logos were downloaded from search.creativecommons.org, all licensed under CC BY 2.0. Logos were embedded in the documents unaltered. The creators of the logos are denoted in brackets.
+
 
 In Swagger UI, open the group `classification`. Then click the second endpoint, called `/classification/models/{modelName}/versions/{modelVersion}/documents`. The request is marked by `POST` which indicates that data is sent to the service.
 
@@ -68,7 +74,7 @@ Next, click **Try it out** to try the request.
 
 Once you click the button, several input fields show up:
 
-  1.  In the field `document`, upload the PDF document you want to classify.
+  1.  In the field `document`, upload the document you want to classify.
 
   2.  The field `parameters` should be empty. In case the field has any pre-filled content, go ahead and delete it.
 
@@ -112,13 +118,15 @@ Finally, click **Execute** to request the classification results.
 
 Once you have executed the request, you will receive a response from the server which you find under `Response body`, as in the previous step. This time, the response includes the classification results for every characteristic by which the document is classified.
 
-The only characteristic in this model is `PRODUCT_TYPE`. For this characteristic, the service provides a list of results. Each result includes a `label` which represents the predicted value plus a `score` which represents how confident the service is about the prediction. The whole list of results is ranked by the `score`, in other words, the most probable value comes first.
+The only characteristic in this model is `document_type`. The possible types of the characteristic are invoice, payment advice and purchase order. The `label` indicates the type and the associated `score` represents how confident the service is about the prediction - the higher value the more confident the model is.
+
+In the screenshot below, the sample purchase order was used.
 
 ![Classification Result](classification-result-response.png)
 
-Go ahead and upload other PDF documents to see the categories outcome. Just note that there is a limited amount of documents that you can classify using a trial account. Find the trial account input limits for Document Classification [here](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US/baeb1924c84343158f483d82b21bd6a4.html).
+Go ahead and upload other documents to see the outcome. Just note that there is a limited amount of documents that you can classify using a trial account. Find the trial account input limits for Document Classification [here](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US/baeb1924c84343158f483d82b21bd6a4.html).
 
-Congratulations, you have now successfully used our machine learning model to get category predictions for the documents you uploaded to Document Classification.
+Congratulations, you have now successfully used our machine learning model to classify business documents, namely invoice, payment advices and purchase orders.
 
 [DONE]
 [ACCORDION-END]

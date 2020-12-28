@@ -63,9 +63,23 @@ The `ShellBar` is the central navigation element in your Web Application and sho
 
     The logo of the application should be displayed and also a profile picture would be nice.
 
-    Use the `logo` and `profile` prop to achieve this. The `logo` prop accepts either a URL or a path to your image, the `profile` prop only accepts an `Avatar` component. Add the `image` prop to the `Avatar` component and add an image in the same way you did with the `logo`.
+    Use the `logo` and `profile` prop to achieve this. The `logo` prop accepts either an `img` tag or the `Avatar` component, the `profile` prop only accepts the `Avatar` component. First add the `logo` prop like this:
 
-    You can use your own image or simply download the images below and add them to your `public` folder in your project.
+    ```JavaScript / JSX
+     <ShellBar logo={<img src="" />} primaryTitle="My App" />
+    ```
+
+    Then pass the `profile` prop like this:
+
+    ```JavaScript / JSX
+    <ShellBar
+      logo={<img src="" />}
+      profile={<Avatar image="" />}
+      primaryTitle="My App"
+    />
+    ```
+
+    You can use your own image, use an URL to an image or simply download the images below and add them to your `public` folder in your project.
 
     [`reactLogo.png`](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/ui5-webcomponents-react-dashboard/reactLogo.png)
 
@@ -73,9 +87,10 @@ The `ShellBar` is the central navigation element in your Web Application and sho
 
     ```JavaScript / JSX
     <ShellBar
-      logo={"reactLogo.png"}
+      logo={<img src="reactLogo.png" />}
       profile={<Avatar image="profilePictureExample.png" />}
-      primaryTitle={"My App"}  />
+      primaryTitle={"My App"}  
+    />
     ```
 
 3. Add custom elements
@@ -84,7 +99,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
 
     ```JavaScript / JSX
     <ShellBar
-      logo={"reactLogo.png"}
+      logo={<img src="reactLogo.png" />}
       profile={<Avatar image="profilePictureExample.png" />}
       primaryTitle={"My App"}>
        <ShellBarItem icon="add" text="Add" />
@@ -98,7 +113,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
     Add this line to your imports:
 
     ```JavaScript / JSX
-    import "@ui5/webcomponents-icons/dist/icons/add.js";
+    import "@ui5/webcomponents-icons/dist/add.js";
     ```
 
     Now your `ShellBarItem` shows up at the right side of the `ShellBar`.
@@ -110,6 +125,7 @@ Your component should look like this:
 ```JavaScript / JSX
 import React, { useState } from "react";
 import {
+  Avatar,
   Card,
   Text,
   ShellBar,
@@ -129,13 +145,19 @@ import {
 } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-import "@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js";
-import "@ui5/webcomponents-icons/dist/icons/line-chart.js";
-import "@ui5/webcomponents-icons/dist/icons/add.js";
+import "@ui5/webcomponents-icons/dist/line-chart.js";
+import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
+import "@ui5/webcomponents-icons/dist/add.js";
+import "@ui5/webcomponents-icons/dist/list.js";
+import "@ui5/webcomponents-icons/dist/table-view.js";
 
 export function MyApp() {
   const [toggleCharts, setToggleCharts] = useState("lineChart");
   const [loading, setLoading] = useState(false);
+  const contentTitle =
+    toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
+  const switchToChart =
+    toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
 
   const handleHeaderClick = () => {
     if (toggleCharts === "lineChart") {
@@ -152,57 +174,78 @@ export function MyApp() {
       }, 2000);
     }
   };
-  const datasets = [
+  const dataset = [
     {
-      label: "Stock Price",
-      data: [65, 59, 80, 81, 56, 55, 40]
+      month: "January",
+      data: 65
+    },
+    {
+      month: "February",
+      data: 59
+    },
+    {
+      month: "March",
+      data: 80
+    },
+    {
+      month: "April",
+      data: 81
+    },
+    {
+      month: "May",
+      data: 56
+    },
+    {
+      month: "June",
+      data: 55
+    },
+    {
+      month: "July",
+      data: 40
     }
   ];
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July"
-  ];
-  const contentTitle =
-    toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
-  const switchToChart =
-    toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
   return (
     <div>
       <ShellBar
-        logo={"reactLogo.png"}
+        logo={<img src="reactLogo.png" />}
         profile={<Avatar image="profilePictureExample.png" />}
-        primaryTitle={"My App"}
+        primaryTitle="My App"
       >
         <ShellBarItem icon="add" text="Add" />
       </ShellBar>
-      <Card
-        avatar={
-          <Icon
-            name={
-              toggleCharts === "lineChart"
-                ? "line-chart"
-                : "horizontal-bar-chart"
-            }
-          />
-        }
-        heading="Stock Price"
-        style={{ width: "300px" }}
-        headerInteractive
-        onHeaderClick={handleHeaderClick}
-        subheading={`Click here to switch to ${switchToChart}`}
-      >
-        <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
-        {toggleCharts === "lineChart" ? (
-          <LineChart datasets={datasets} labels={labels} loading={loading} />
-        ) : (
-          <BarChart datasets={datasets} labels={labels} loading={loading} />
-        )}
-      </Card>
+        <Card
+          avatar={
+            <Icon
+              name={
+                toggleCharts === "lineChart"
+                  ? "line-chart"
+                  : "horizontal-bar-chart"
+              }
+            />
+          }
+          heading="Stock Price"
+          style={{ width: "300px" }}
+          headerInteractive
+          onHeaderClick={handleHeaderClick}
+          subheading={`Click here to switch to ${switchToChart}`}
+        >
+          <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
+          {toggleCharts === "lineChart" ? (
+            <LineChart
+              dimensions={[{ accessor: "month" }]}
+              measures={[{ accessor: "data", label: "Stock Price" }]}
+              dataset={dataset}
+              loading={loading}
+            />
+          ) : (
+            <BarChart
+              dimensions={[{ accessor: "month" }]}
+              measures={[{ accessor: "data", label: "Stock Price" }]}
+              dataset={dataset}
+              loading={loading}
+            />
+          )}
+        </Card>
     </div>
   );
 }
@@ -227,7 +270,7 @@ export function MyApp() {
 2. Add the list `Icon` to your imports.
 
     ```JavaScript / JSX
-    import "@ui5/webcomponents-icons/dist/icons/list.js";
+    import "@ui5/webcomponents-icons/dist/list.js";
     ```
 
 3. Add the `List` component as child of the `Card`.
@@ -259,29 +302,19 @@ export function MyApp() {
 
     For this we need the `ProgressIndicator` and `Title` component. The `Title` receives the `level` prop, it is working like the corresponding HTML elements.
 
-    The `ProgressIndicator` is given four props:
+    The `ProgressIndicator` is given two props:
 
-    - `displayValue`: The label of the indicator
-    - `precentValue`: The actual value, which indicates the progress
-    - `width`: The width of the indicator
-    - `state`: The value-state (color) of the indicator  
+    - `value`: The value, which indicates the progress
+    - `valueState`: The value-state (color) of the indicator  
 
     ```JavaScript / JSX
     <StandardListItem info="in progress" infoState={ValueState.Warning}>
         <Title level={TitleLevel.H5}>Activity 3</Title>
-        <ProgressIndicator
-            displayValue="89%"
-            percentValue={89}
-            width="180px"
-            state={ValueState.Success} />
+        <ProgressIndicator value={89} valueState={ValueState.Success} />
     </StandardListItem>
     <StandardListItem info="in progress" infoState={ValueState.Warning}>
         <Title level={TitleLevel.H5}>Activity 4</Title>
-        <ProgressIndicator
-            displayValue="5%"
-            percentValue={5}
-            width="180px"
-            state={ValueState.Error} />
+        <ProgressIndicator value={5} valueState={ValueState.Error} />
     </StandardListItem>
     ```
 
@@ -303,27 +336,21 @@ export function MyApp() {
       <StandardListItem
         info="in progress"
         infoState={ValueState.Warning}
-        style={{ height: "80px" }}>
+        style={{ height: "80px" }}
+      >
         <FlexBox direction={FlexBoxDirection.Column}>
           <Title level={TitleLevel.H5}>Activity 3</Title>
-          <ProgressIndicator
-            displayValue="89%"
-            percentValue={89}
-            width="180px"
-            state={ValueState.Success}/>
+          <ProgressIndicator value={89} valueState={ValueState.Success} />
         </FlexBox>
       </StandardListItem>
       <StandardListItem
         info="in progress"
         infoState={ValueState.Warning}
-        style={{ height: "80px" }}>
+        style={{ height: "80px" }}
+      >
         <FlexBox direction={FlexBoxDirection.Column}>
           <Title level={TitleLevel.H5}>Activity 4</Title>
-          <ProgressIndicator
-            displayValue="5%"
-            percentValue={5}
-            width="180px"
-            state={ValueState.Error}/>
+          <ProgressIndicator value={5} valueState={ValueState.Error} />
         </FlexBox>
       </StandardListItem>
     </List>
@@ -348,7 +375,7 @@ Now the components inside the card fit (we'll arrange the cards themselves later
     Also import the `table-view` `Icon`.
 
     ```JavaScript / JSX
-    import "@ui5/webcomponents-icons/dist/icons/table-view.js";
+    import "@ui5/webcomponents-icons/dist/table-view.js";
     ```
 2. Add data and columns to the table. The `columns` prop expects an array of objects that include at least the `accessor` to the data. The value of `Header` will be shown as column header.
 
@@ -415,7 +442,7 @@ Now the components inside the card fit (we'll arrange the cards themselves later
 
 At the moment, the dashboard doesn't really look like a dashboard. The components are way too close to each other and not aligned correctly. Let's change that.
 
-1. Add padding to each `Card`
+1. Add padding to each `Card` and the `ShellBar`
 
     To add a padding to the cards, you can use `spacing` again. Inside of the style property [spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) the `spacing` object and append the style. Do this for each `Card` component.
 
@@ -440,12 +467,13 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
 
 2. Align the elements
 
-    To properly align the tiles, use a `FlexBox` component and wrap your `Cards` inside of it. Use the `justifyContent` prop to center align all elements and `wrap` to make them move to the next line if not enough space is available.
+    To properly align the tiles, use a `FlexBox` component and wrap your `Cards` inside of it. Use the `justifyContent` prop to center align all elements and `wrap` to make them move to the next line if not enough space is available, also apply the `style` prop to add a padding to the whole content area.
 
     ```JavaScript / JSX
     <FlexBox
         justifyContent={FlexBoxJustifyContent.Center}
         wrap={FlexBoxWrap.Wrap} >
+        style={spacing.sapUiContentPadding}
         ...
     </FlexBox>
     ```
@@ -457,6 +485,7 @@ Your component should now look like this:
 ```JavaScript / JSX
 import React, { useState } from "react";
 import {
+  Avatar,
   Card,
   Text,
   ShellBar,
@@ -476,46 +505,19 @@ import {
 } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-import "@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js";
-import "@ui5/webcomponents-icons/dist/icons/line-chart.js";
-import "@ui5/webcomponents-icons/dist/icons/add.js";
-import "@ui5/webcomponents-icons/dist/icons/list.js";
-import "@ui5/webcomponents-icons/dist/icons/table-view.js";
+import "@ui5/webcomponents-icons/dist/line-chart.js";
+import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
+import "@ui5/webcomponents-icons/dist/add.js";
+import "@ui5/webcomponents-icons/dist/list.js";
+import "@ui5/webcomponents-icons/dist/table-view.js";
 
 export function MyApp() {
   const [toggleCharts, setToggleCharts] = useState("lineChart");
   const [loading, setLoading] = useState(false);
-
-  const handleHeaderClick = () => {
-    if (toggleCharts === "lineChart") {
-      setLoading(true);
-      setTimeout(() => {
-        setLoading(false);
-        setToggleCharts("barChart");
-      }, 2000);
-    } else {
-      setLoading(true);
-      setTimeout(() => {
-        setLoading(false);
-        setToggleCharts("lineChart");
-      }, 2000);
-    }
-  };
-  const datasets = [
-    {
-      label: "Stock Price",
-      data: [65, 59, 80, 81, 56, 55, 40]
-    }
-  ];
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July"
-  ];
+  const contentTitle =
+    toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
+  const switchToChart =
+    toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
   const tableData = new Array(500).fill(null).map((_, index) => {
     return {
       name: `name${index}`,
@@ -545,22 +547,64 @@ export function MyApp() {
       accessor: "friend.age"
     }
   ];
-  const contentTitle =
-    toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
-  const switchToChart =
-    toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
+  const handleHeaderClick = () => {
+    if (toggleCharts === "lineChart") {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        setToggleCharts("barChart");
+      }, 2000);
+    } else {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        setToggleCharts("lineChart");
+      }, 2000);
+    }
+  };
+  const dataset = [
+    {
+      month: "January",
+      data: 65
+    },
+    {
+      month: "February",
+      data: 59
+    },
+    {
+      month: "March",
+      data: 80
+    },
+    {
+      month: "April",
+      data: 81
+    },
+    {
+      month: "May",
+      data: 56
+    },
+    {
+      month: "June",
+      data: 55
+    },
+    {
+      month: "July",
+      data: 40
+    }
+  ];
   return (
     <div>
       <ShellBar
-        logo={"reactLogo.png"}
+        logo={<img src="reactLogo.png" />}
         profile={<Avatar image="profilePictureExample.png" />}
-        primaryTitle={"My App"}
+        primaryTitle="My App"
       >
         <ShellBarItem icon="add" text="Add" />
       </ShellBar>
       <FlexBox
         justifyContent={FlexBoxJustifyContent.Center}
         wrap={FlexBoxWrap.Wrap}
+        style={spacing.sapUiContentPadding}
       >
         <Card
           avatar={
@@ -573,16 +617,26 @@ export function MyApp() {
             />
           }
           heading="Stock Price"
+          style={{ width: "300px" }}
           headerInteractive
           onHeaderClick={handleHeaderClick}
           subheading={`Click here to switch to ${switchToChart}`}
-          style={{ width: "300px", ...spacing.sapUiContentPadding }}
         >
           <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
           {toggleCharts === "lineChart" ? (
-            <LineChart datasets={datasets} labels={labels} loading={loading} />
+            <LineChart
+              dimensions={[{ accessor: "month" }]}
+              measures={[{ accessor: "data", label: "Stock Price" }]}
+              dataset={dataset}
+              loading={loading}
+            />
           ) : (
-            <BarChart datasets={datasets} labels={labels} loading={loading} />
+            <BarChart
+              dimensions={[{ accessor: "month" }]}
+              measures={[{ accessor: "data", label: "Stock Price" }]}
+              dataset={dataset}
+              loading={loading}
+            />
           )}
         </Card>
         <Card
@@ -605,12 +659,7 @@ export function MyApp() {
             >
               <FlexBox direction={FlexBoxDirection.Column}>
                 <Title level={TitleLevel.H5}>Activity 3</Title>
-                <ProgressIndicator
-                  displayValue="89%"
-                  percentValue={89}
-                  width="180px"
-                  state={ValueState.Success}
-                />
+                <ProgressIndicator value={89} valueState={ValueState.Success} />
               </FlexBox>
             </StandardListItem>
             <StandardListItem
@@ -620,12 +669,7 @@ export function MyApp() {
             >
               <FlexBox direction={FlexBoxDirection.Column}>
                 <Title level={TitleLevel.H5}>Activity 4</Title>
-                <ProgressIndicator
-                  displayValue="5%"
-                  percentValue={5}
-                  width="180px"
-                  state={ValueState.Error}
-                />
+                <ProgressIndicator value={5} valueState={ValueState.Error} />
               </FlexBox>
             </StandardListItem>
           </List>

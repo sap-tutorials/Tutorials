@@ -4,6 +4,8 @@ description: Create a user-provided service to access data from a plain or repli
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 ---
 
 ## Prerequisites   

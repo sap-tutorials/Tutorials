@@ -3,11 +3,12 @@ title: Create an Outbound Communication Arrangement
 description: In an instance of the SAP Cloud Platform, ABAP Environment (client system), create all the communication objects you need, so it can communicate with a second instance (provisioning system).
 auto_validation: true
 time: 30
-tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, tutorial>license]
+tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, topic>abap-connectivity, tutorial>license]
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
 ##Prerequisites
+- **IMPORTANT**: This tutorial cannot be completed on a trial account
 - **Tutorial**: [Create Your First ABAP Console Application](abap-environment-console-application), steps 1-2
 - The ABAP Flight Reference Scenario is available in a remote SAP Cloud Platform, ABAP environment instance ( **provisioning system** ). To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
 - You have read [Developing a UI Service with Access to a Remote Service](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/f4969e551d3049c59715210cbeb4ef56.html) and its [Scenario Description](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/4f539da657fe427f868a95c0bc1b3cfa.html), since this mission is based on this tutorial series

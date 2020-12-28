@@ -34,12 +34,13 @@ Strings used within the app are read from the appropriate version of the `string
 
 ![Translations Editor](translations-editor.png)
 
-The following code in the `LogonActivity` class, in the `startLaunchScreen` method, is an example of the code used to read from a strings file.
+The following code in the `WelcomeActivity` class, in the `onCreate` method, is an example of the code used to read from a strings file.
 
 [OPTION BEGIN [Java]]
 
 ```Java
-launchScreenSettings.setLaunchScreenHeadline(getString(R.string.welcome_screen_headline_label));
+new LaunchScreenSettings.Builder()
+                .setHeaderLineLabel(getString(R.string.welcome_screen_headline_label))
 ```
 
 [OPTION END]
@@ -47,7 +48,8 @@ launchScreenSettings.setLaunchScreenHeadline(getString(R.string.welcome_screen_h
 [OPTION BEGIN [Kotlin]]
 
 ```Kotlin
-launchScreenHeadline = getString(R.string.welcome_screen_headline_label)
+LaunchScreenSettings.Builder()
+                .setHeaderLineLabel(getString(R.string.welcome_screen_headline_label))
 ```
 
 [OPTION END]
@@ -62,7 +64,7 @@ You can set the language on an Android device or emulator using **Settings > Sys
 
  ![Default Language](default-language.png)
 
-When the app is restarted, it now shows strings in the preferred language if that language is supported by the app. If the language is not supported currently, strings will be in English by default.
+When the app is restarted, it now shows strings in the preferred language if that language is supported by the app. If the language is not currently supported, the strings will be in English by default.
 
 ![French Welcome Screen](welcome-french-screen.png)
 
@@ -81,15 +83,15 @@ For additional information, see:
 
 [ACCORDION-BEGIN [Step 2: ](Sign Up for the SAP Translation Hub)]
 
-The [SAP Translation Hub](https://help.sap.com/viewer/product/SAP_TRANSLATION_HUB/Cloud/en-US) enables translation of resources to specified languages. SAP Translation Hub is currently only available on Neo trial landscapes and not on SAP Cloud Foundry. You have to create a workaround to access SAP Translation Hub in your trial environment.
+The [SAP Translation Hub](https://help.sap.com/viewer/product/SAP_TRANSLATION_HUB/Cloud/en-US) enables translation of resources to specified languages. SAP Translation Hub is currently only available on **Neo** trial landscapes and not on SAP **Cloud Foundry**. You have to create a workaround to access SAP Translation Hub in your **Neo** trial environment, as follows:
 
-1.  Please open [SAP Cloud Platform cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial).
+1.  Open [SAP Cloud Platform cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial).
 
-2.  Scroll down to **Environment** section and click **Access Neo Trial** to go to SAP Cloud Platform management cockpit page.
+2.  Scroll down to the **Environment** section and click **Access Neo Trial** to go to SAP Cloud Platform management cockpit page.
 
     ![Access Neo Trial](access-neo-trial.png)
 
-3.  In the SAP Cloud Platform management cockpit, enable **SAP Translation Hub** in **Services**.
+3.  In the SAP Cloud Platform management cockpit, in **Services**, click **Enable** for the **SAP Translation Hub**.
 
     ![Enable SAP Translation Hub](enable-translation-hub.png)
 
@@ -97,12 +99,28 @@ The [SAP Translation Hub](https://help.sap.com/viewer/product/SAP_TRANSLATION_HU
 
     ![Go To Translation Hub UI](go-to-translation-hub-ui.png)
 
-    Notice that there are no existing translation projects in the Translation Projects page. In the next section, you will use a wizard integrated into Android Studio to create a translation project and request new language files for Italian, which is not one of the languages the generated app already contains.
+    Notice that there are no existing translation projects in the **Translation Projects** page. In the next section ( **Step 3** ), you will use an SAP Translation Hub wizard integrated into Android Studio to create a translation project and request new language files for Catalan, which is currently not supported by the generated app.
 
     ![Translation Hub UI](translation-hub-ui.png)
 
-    >Note that the SAP Translation Hub wizard in the SAP Cloud Platform SDK for Android is currently not compatible with the SAP Translation Hub in the SAP Cloud Platform trial. You could/can press the + icon to create a new translation project, upload `strings_localized.xml`, and request a translation. One of the benefits of this is that feedback is provided on the expected quality of the translation, as shown below.
+    >Note that the SAP Translation Hub wizard in the SAP Cloud Platform SDK for Android is currently not compatible with the SAP Translation Hub in the SAP Cloud Platform trial account. You can, however, press the **+** icon to create a new translation project, upload `strings_localized.xml`, and request a translation, as shown below. One of the benefits of this method is that feedback is returned on the expected quality of the translation.
 
+    >1. Click **+** to create a translation project:
+    ![Create a translation project](create-translation-project.png)
+
+    >2. Fill in the required information (marked with a red star) in **Project Metadata**.
+    ![Fill in information of the project](fill-in-information-of-project.png)
+
+    >3. Click **Upload File**.
+    ![Upload file](upload-file.png)
+
+    >4. Browse to select `strings_localized.xml` to upload and translate.
+    ![Browse to select strings_localized.xml](select-file.png)
+
+    >5. When translation has completed successfully, click the **Translations** tab.
+    ![Switch to translations page](switch-to-translations-page.png)
+
+    >6. In this page, you can view the feedback of the translation:
     ![File upload translation](manual-translation.png)
 
 [DONE]
@@ -119,7 +137,9 @@ The [SAP Translation Hub](https://help.sap.com/viewer/product/SAP_TRANSLATION_HU
 
     -	**Account Name** – (optional) To save your settings for reuse, provide a name for this profile and select the Save Account Information check box. This name is used to identify the profile in the Accounts List available from Accounts.
 
-    - **URL** – The URL of the Translation Hub service. You can obtain this URL from the SAP Translation Hub service cockpit. (Just enter your username in the SAP Translation Hub dialog).
+    - **URL** – The URL of the Translation Hub service. You can obtain this URL from the SAP Translation Hub service cockpit (refer to point 4 in **Step 2** above where you are navigated to Translation Hub service UI page).
+
+        ![Translation Hub URL](translation_hub_url.png)
 
     - **Username** and **Password** – The credentials of your SAP Cloud Platform account.
 
@@ -129,21 +149,21 @@ The [SAP Translation Hub](https://help.sap.com/viewer/product/SAP_TRANSLATION_HU
 
     ![Translation Wizard Page 2](wiz-page2.png)
 
-4.  Choose the Domain of the application, specify the source language as English, as well as the target language to add (in this case, Italian).
+4.  Choose the **Domain** of the application, specify the **Source Language** as English, and select the target language to add (in this case, Catalan).
 
     ![Translation Wizard Page 2](wiz-page3.png)
 
-5.  Select the two source files to be used for the translation.
+5.  Select the source file to be used for the translation, either `strings.xml` or `strings_localized.xml`.
 
     ![Translation Wizard Page 2](wiz-page3b.png)
 
 6.  Press **Finish** and wait for a few moments. The **Event Log** should print `Success: Project translated successfully`.
 
-    There should now be two additional files, `strings_localized_it.xml` and `strings_it.xml`.
+    There should now be two additional files, `strings_localized.xml(ca)` and `strings.xml(ca)`.
 
     ![Translation Result](translation-result.png)
 
-7.  In the emulator or device, set the preferred language to be Italian, then run the app and notice that the app now displays Italian strings.
+7.  In the emulator or device, set the preferred language to be Catalan, then run the app and notice that the app now displays Catalan strings.
 
     ![Translation Result in App](translation-result-in-app.png)
 
