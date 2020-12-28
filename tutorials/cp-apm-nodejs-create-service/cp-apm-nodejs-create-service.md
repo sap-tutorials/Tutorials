@@ -73,7 +73,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 3. In Visual Studio Code choose **Install** to enable the extension for CDS Language Support.
 
-> If the extension is already installed and enabled in VS Code, it will be updated automatically.
+> If the extension is already installed and enabled in VS Code, it will be updated automatically. Learn more about the features in this short [demo](https://community.sap.com/topics/cloud-application-programming).
 
 [DONE]
 
