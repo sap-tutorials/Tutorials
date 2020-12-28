@@ -417,7 +417,7 @@ Deploy the updated application to your MDK client.
 
     >!![MDK](img_8.9.1.png)
 
-    >It will open the URL in a new tab| add `/Customers`/ at the end of the URL.
+    >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
     But here result is pointing to old First Name (`Isabelle`).
 

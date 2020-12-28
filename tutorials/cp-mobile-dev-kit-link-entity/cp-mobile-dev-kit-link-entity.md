@@ -294,8 +294,8 @@ The next step is to store newly created record locally for an offline applicatio
 
     | Property | Value |
     |----|----|
-    | `Success Action` | Select `CloseModalPage_Complete.action` from the dropdown|
-    | `Failure Action` | Select `CreateSalesOrderHeaderEntityFailureMessage.action` from the dropdown |
+    | `Success Action` | Click the link icon and bind it to `CloseModalPage_Complete.action` |
+    | `Failure Action` | Click the link icon and bind it to `CreateSalesOrderHeaderEntityFailureMessage.action` |
 
     >When `SalesOrderHeaders_CreateEntity.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered or if `SalesOrderHeaders_CreateEntity.action` fails then `CreateSalesOrderHeaderEntityFailureMessage.action` will be triggered.
 
@@ -404,11 +404,11 @@ Deploy the updated application to your MDK client.
 
 [OPTION END]
 
-**Congratulations!** You have successfully completed **Enhance Your First MDK App with Additional Functionalities** mission and you are now all set to [Level Up with the Mobile Development Kit](mission.mobile-dev-kit-level-up) mission.
-
-
 [DONE]
 [ACCORDION-END]
 
+---
+
+Congratulations, you have successfully completed **Enhance Your First MDK App with Additional Functionalities** mission and you are now all set to [Level Up with the Mobile Development Kit](mission.mobile-dev-kit-level-up) mission.
 
 ---

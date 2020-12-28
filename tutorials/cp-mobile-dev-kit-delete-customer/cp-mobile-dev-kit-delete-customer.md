@@ -19,11 +19,9 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
-
 ![MDK](img_1.gif)
 
 [ACCORDION-BEGIN [Step 1: ](Store the deleted record locally)]
-
 
 The next step is to store deleted record locally for an offline application or delete directly back to the backed for online applications. You will now create an OData delete action to delete a customer record. You will also show a failure message if the delete action fails.
 
@@ -89,16 +87,16 @@ The next step is to store deleted record locally for an offline application or d
     | Property | Value |
     |----|----|
     | `Action Result`| `delete` |
-    | `Success Action` | Select `CloseModalPage_Complete.action` from the dropdown |
-    | `Failure Action` | Select `DeleteCustomerEntityFailureMessage.action` from the dropdown |
+    | `Success Action` | Click the link icon and bind it to `CloseModalPage_Complete.action` |
+    | `Failure Action` | Click the link icon and bind it to `DeleteCustomerEntityFailureMessage.action` |
+
+    !![MDK](img_1.6.png)
 
     >When `Customers_DeleteEntity.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered or if `Customers_DeleteEntity.action` fails then `DeleteCustomerEntityFailureMessage.action` will be triggered.
 
     >`delete` value for **Action Result** is reference to `DeleteCustomerEntityFailureMessage.action` created in sub-step 1.
 
-    >You could also show a success message for `Success Action` or chain a message to success of `CloseModalPage_Complete.action`.
-
-    !![MDK](img_1.6.png)
+    >You could also show a success message for `Success Action` or chain a message to success of `CloseModalPage_Complete.action`.    
 
 [DONE]
 [ACCORDION-END]
@@ -107,11 +105,11 @@ The next step is to store deleted record locally for an offline application or d
 
 In the MDK editor, you will write a rule in JavaScript called `Customers_DeleteConfirmation.js` to display a dialog to confirm if user wants to delete current record. On it's confirmation, _customer delete entity action_ is executed.
 
-1. Right-click the **Rules** folder | **MDK: New Rule**.
+1. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
     !![MDK](img_2.1.png)
 
-2. Enter the Rule name `Customers_DeleteConfirmation.js`, press `Enter`.
+2. Enter the Rule name `Customers_DeleteConfirmation`, click **Next** and then **Finish** on the confirmation step.
 
     Copy and paste the following code.
 
@@ -241,11 +239,13 @@ You can cross verify if this record has been deleted in the backend.
 
 >!![MDK](img_5.7.png)
 
->It will open the URL in a new tab, now add `/Customers` at the end of the URL.
-
-**Congratulations!** You have successfully deleted a Customer Record and you are now all set to [Upload Logs from an MDK App](cp-mobile-dev-kit-upload-logs).
+>It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully deleted a Customer Record and you are now all set to [Upload Logs from an MDK App](cp-mobile-dev-kit-upload-logs).
 
 ---

@@ -116,7 +116,7 @@ You will create 3 actions:
 
 [ACCORDION-BEGIN [Step 3: ](Bind Set Level log action to the success of Set State action)]
 
-Double click the `LogSetState.action` file | expand **Common Action Properties** and select `LogSetLevel.action` for **Success Action**.
+Double click the `LogSetState.action` file | expand **Common Action Properties** | click the link icon for **Success Action** and bind it to  `LogSetLevel.action`
 
 !![MDK](img_3.png)
 
@@ -129,7 +129,7 @@ When the metadata is downloaded from App Update, `OnDidUpdate` event is being ca
 
 You will bind `LogSetState.action` at success of  `InitializeOffline.action`.
 
-Navigate to `DemoSampleApp` | `Actions` | `Service` | `InitializeOffline.action`, scroll-down and expand **Common Action Properties** section, select `LogSetState.action` for the **Success Action**.  
+Navigate to `DemoSampleApp` | `Actions` | `Service` | `InitializeOffline.action` | scroll-down and expand **Common Action Properties** section | click the link icon for **Success Action** and bind it to  `LogSetState.action`
 
 !![MDK](img_4.gif)
 
@@ -152,7 +152,7 @@ You will define two message actions for displaying success or failure when _Log 
     | `Action Name`| `LogUploadSuccessful` |
     | `Type` | Select `ToastMessage` from the dropdown |
     | `Message`| `Log File Uploaded` |
-    | `MaxNumberOfLines`| 1 |
+    | `NumberOfLines`| 1 |
     | `Duration` | 3 |
     | `IsIconHidden`| Select `true` from the dropdown |
     | `Animated` | Select `true` from the dropdown |
@@ -188,10 +188,10 @@ You will define two message actions for displaying success or failure when _Log 
 
     | Property | Value |
     |----|----|
-    | `Success Action`| Select `LogUploadSuccessful.action` from the dropdown |
-    | `Failure Action`| Select `LogUploadFailure.action` from the dropdown |
+    | `Success Action`| Click the link icon and bind it to `LogUploadSuccessful.action`  |
+    | `Failure Action`| Click the link icon and bind it to `LogUploadFailure.action` |
     | `Show Activity Indicator` | Select `true` from the dropdown ||
-    | `Activity Indicator Text`| `Uploading Logs...` |
+    | `Activity Indicator Text`|  `Uploading Logs...` |
 
     !![MDK](img_5.3.png)
 
@@ -281,10 +281,12 @@ You may view log entries directly in Mobile Services Cockpit or download them lo
 
 >You can find more details about [Uploading and Viewing Client Logs](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/logging/admin/client-logs.html).
 
-**Congratulations!** You have successfully uploaded client logs to SAP Cloud Platform Mobile Services and you are now all set to [Extend an MDK App with Customer Orders](cp-mobile-dev-kit-customer-order).
-
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully uploaded client logs to SAP Cloud Platform Mobile Services and you are now all set to [Extend an MDK App with Customer Orders](cp-mobile-dev-kit-customer-order).
 
 ---
