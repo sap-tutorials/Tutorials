@@ -234,6 +234,12 @@ Artifacts in the current project will be translated into a physical database sch
 
     !![Create New Service Instance](create_new_service.png)
 
+    **Note:** If you receive the following error that no services instances found:
+
+    !![No Service Instance Found](work_around1.png)
+
+    This is a bug that occurs when you have no existing HDI container service instances in your account. Therefore the dialog isn't shown. But this is in error because the same dialog would be used to also create a new instance. The bug has been fixed in development is pending a hot fix to move it production and the trial landscape. In the mean time there is a workaround. You can create the HDI service instance manually from the terminal. Use the command `cf create-service hana hdi-shared my-hdi`. Give it a few minutes to create. You can check the status with the command `cf services`. Once fully created, you can continue with this step. But instead of choosing **Create a new service instance** you can just select the service instance you just created manually.
+
 3. Accept the default service instance name
 
     !![Default Name](default_service_instance_name.png)
