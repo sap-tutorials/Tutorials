@@ -5,8 +5,8 @@ auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, products>sap-cloud-platform-connectivity, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-cloud-platform-integration-for-process-services
-author_name: Vikram Kulkarni
-author_profile: https://github.com/Vikramkulkarni01
+author_name: Karunaharan V
+author_profile: https://github.com/Karunaharan
 ---
 
 ## Prerequisites
@@ -121,7 +121,7 @@ In this step, you copy the endpoint address of the integration flow.
 [ACCORDION-BEGIN [Step 3: ](Define the API)]
 In this step, you define and expose an integration flow endpoint as an application programming interface
 
-1. Go to your trial **subaccount** > select **Subscriptions** > On the **Integration Suite tile** > select **Go to Application**.
+1. Go to your SAP Cloud Platform trial subaccount. Select **Subscriptions**. On the **Integration Suite tile**, select **Go to Application**.
 
     !![AccessIsuite](2.1.AccesstoIsuite.png)
 
@@ -176,9 +176,9 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
     The API designer is opened.
 
-12. In the editable section on the right part of the screen, change the content as shown in the following.
+12. In the editable section on the right part of the screen, make the following changes.
 
-    Change **Payload** to **`productIdentifier`** and add the following row as shown in the following screenshot: *example*: **"HT-2000"**
+    Change **Payload** to **`productIdentifier`** and add a row as shown in the following screenshot.
 
     >**TIP**: Instead of copying the example, type it manually.
 
@@ -328,6 +328,6 @@ Congratulation!
 
 You have successfully set up an Integration Suite trial, designed a simple integration flow that reads data from a remote component, and defined the integration flow endpoint as an API. Finally, you have successfully called the API to get product details as a response from the remote component.
 
-This scenario showed you how to use Integration Suite, and in particular its Cloud Integration and API Management capabilities seamlessly integrated, end-to-end.
+This scenario showed you how to use Integration Suite, and in particular, its Cloud Integration and API Management capabilities seamlessly integrated, end-to-end.
 
 ---

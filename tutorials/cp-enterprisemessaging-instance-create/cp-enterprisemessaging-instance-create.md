@@ -7,17 +7,17 @@ tags: [ tutorial>beginner, topic>cloud, tutorial>license]
 primary_tag: products>sap-cloud-platform-enterprise-messaging
 ---
 
+## Prerequisites
+- SAP Cloud Platform, Cloud Foundry environment with SAP Cloud Platform Enterprise Messaging entitlement  
+
 ## Details
 ### You will learn
   - How to create an SAP Cloud Platform Enterprise Messaging service instance
   - How to access the Service Key of a SAP Cloud Platform Enterprise Messaging service instance
 
->**IMPORTANT:** It is really important to learn the basics of messaging before going ahead with this tutorial. Check out [The Basics of Enterprise Messaging](cp-enterprisemessaging-learn-messaging-concepts).
 
+**IMPORTANT:** It is really important to learn the basics of messaging before going ahead with this tutorial. Check out [The Basics of Enterprise Messaging](cp-enterprisemessaging-learn-messaging-concepts).
 
-## Prerequisites
-
-  - SAP Cloud Platform, Cloud Foundry environment with SAP Cloud Platform Enterprise Messaging entitlement  
 
 ---
 
