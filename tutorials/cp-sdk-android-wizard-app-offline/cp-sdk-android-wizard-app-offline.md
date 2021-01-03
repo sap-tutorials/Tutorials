@@ -24,7 +24,7 @@ time: 30
 
 2.  Run the app. After the login process, a screen is displayed explaining that the offline store is opening. As the screen suggests, opening the offline store for the first time can take up to a few minutes. One technique to decrease this initial time is to only download data that is relevant to the user, such as customers that belong in their sales region.
 
-    ![Offline store opening](opening_offline_store.png)
+    !![Offline store opening](opening_offline_store.png)
 
 3.  When you get to the app's home page, turn on **airplane mode** on your device, or disable Wi-Fi and data.
 
@@ -32,23 +32,23 @@ time: 30
 
 4.  The entity list screen is populated based on the `metadata.xml` file retrieved when the application was created. Tap the **Products** list item.
 
-    ![Entity list screen](entities_screen.png)
+    !![Entity list screen](entities_screen.png)
 
     The **Products** screen makes a data request to display the available products. Notice that it succeeds without a working network connection. The data request is fulfilled from the offline store that was previously created and populated on the device. Tap the **Accessories** item to display the detail screen.
 
-    ![Select the second product](select_second_product.png)
+    !![Select the second product](select_second_product.png)
 
 5.  On the detail screen, tap the edit toolbar icon.
 
-    ![Select product edit button](select_product_edit_button.png)
+    !![Select product edit button](select_product_edit_button.png)
 
 6.  Make a change to the currency code and tap the save toolbar icon.
 
-    ![Change currency code](change_currency_code.png)
+    !![Change currency code](change_currency_code.png)
 
 7.  Navigate back to the app's **Home** screen and tap **Synchronize** using the three-dot-menu in the top right of the title bar.
 
-    ![Attempt a sync](attempt_sync_with_no_wifi.png)
+    !![Attempt a sync](attempt_sync_with_no_wifi.png)
 
     The sync should fail because you haven't turned airplane mode off yet.
 
