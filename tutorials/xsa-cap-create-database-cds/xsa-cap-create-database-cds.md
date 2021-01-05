@@ -5,11 +5,12 @@ auto_validation: true
 time: 15
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition]
+tags: [tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
 primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - You have created an application using the [Business Application wizard](xsa-cap-create-project).
 
 ## Details

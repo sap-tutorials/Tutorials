@@ -9,6 +9,7 @@ time: 10
 ---
 
 ## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Tutorials:** [SAP HANA XS Advanced tutorial - Getting started](https://developers.sap.com/group.hana-xsa-get-started.html) or [SAP HANA XS Advanced tutorial - Node.js](https://developers.sap.com/group.hana-xsa-nodejs.html) or [SAP HANA XS Advanced tutorial - SAPUI5](https://developers.sap.com/group.hana-xsa-sapui5.html)
 
 

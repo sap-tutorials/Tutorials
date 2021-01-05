@@ -9,6 +9,7 @@ time: 5
 ---
 
 ## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Tutorials:** [Creating a Node.js Module](xsa-xsjs-xsodata)
 
 ## Details

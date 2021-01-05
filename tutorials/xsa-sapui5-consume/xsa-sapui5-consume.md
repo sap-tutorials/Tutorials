@@ -8,6 +8,7 @@ tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products
 time: 15
 ---
 ## Prerequisites  
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Use OData Metadata to dynamically create the columns](https://developers.sap.com/tutorials/xsa-sapui5-metadata.html)
 
 ## Details
