@@ -3,7 +3,7 @@ title: Deploy a Node.js Application for SAP HANA
 description: Deploy a sample Node.js application which connects to SAP HANA, Express Edition or SAP HANA Cloud trial.
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-primary_tag: products>sap-hana\,-express-edition,-cloud
+primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>cloud, products>sap-hana, products>sap-hana\,-express-edition, products>sap-hana-cloud  ]
 time: 30
 ---

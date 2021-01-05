@@ -3,7 +3,7 @@ title: Setup Node.js to connect to SAP HANA
 description: Use Node.js to connect and read data from your SAP HANA express edition or SAP HANA Cloud trial
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-primary_tag: products>sap-hana\,-express-edition,-cloud
+primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>sql, products>sap-hana, products>sap-hana\,-express-edition, products>sap-hana-cloud ]
 ---
 
