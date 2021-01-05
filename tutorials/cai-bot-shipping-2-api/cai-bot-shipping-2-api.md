@@ -65,6 +65,14 @@ In this tutorial, you will modify the chatbot so it calls an API to retrieve inf
 
     ![Service path](CallAPI_Service.png)
 
+    Click **Update Conversation** | **Edit Memory**.
+
+    In the **Unset memory field**, and enter **`yes`** (the value is case-sensitive). Click **Add Fields**, and enter **`parcel-number`**. Finally, click **Save**.
+
+    ![Unset memory](CallAPI_unset_memory.png)
+
+    >We erase the parcel number because once the user tracked that parcel, it is unlikely they will want to track it again. This way, they can ask to track another parcel.
+
 [DONE]
 [ACCORDION-END]
 
