@@ -23,8 +23,6 @@ primary_tag: products>sap-hana
 
 SAP Web IDE for Full Stack is currently available in Neo. You will be entering the service from the Neo subaccount, creating a project and configuring credentials to perform a deployment in the Cloud Foundry environment.
 
->**This tutorial cannot currently be completed with a trial account.**
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Navigate to the Neo subaccount)]
