@@ -5,7 +5,7 @@ description: Transfer Your ABAP Source Code from your on-premise SAP system to y
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner,  topic>abap-development, products>sap-cloud-platform, tutorial>license]
 time: 15
-author_name: Niloofar Flothköetter
+author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
 ---
 
