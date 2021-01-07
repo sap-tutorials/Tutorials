@@ -90,13 +90,15 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
 2. Click **Extraction Results** to see the Header Fields and Line Items extraction results.
 
-    !![DOX-UI-App](png-files/extraction-results-done.png)
+    !![DOX-UI-App](png-files/extraction-results-done-header.png)
+
+    !![DOX-UI-App](png-files/extraction-results-done-line.png)
 
 3. In case corrections are needed and the document status is READY, you can **Edit** the Header Fields and Line Items extraction results.
 
     !![DOX-UI-App](png-files/edit-1.png)
 
-    See an example where the Currency Code is edited:
+    See an example where the **Currency** header field extraction result is edited:
 
     !![DOX-UI-App](png-files/edit-currency-code-1.png)
 

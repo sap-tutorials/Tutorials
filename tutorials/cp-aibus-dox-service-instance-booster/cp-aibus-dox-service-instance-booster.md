@@ -40,7 +40,7 @@ primary_tag: topic>machine-learning
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Get service key)]
+[ACCORDION-BEGIN [Step 2: ](Run booster)]
 
 SAP Cloud Platform creates interactive guided boosters to automate trial cockpit steps, so users can save time when trying out the services.
 
@@ -60,23 +60,31 @@ Now, you will use the **Set up account for Document Information Extraction** boo
 
     >If you have more than one subaccount, a dialog shows in which you have to select the subaccount that should be used. Click **Finish** to proceed.
 
-4. Click **Download Service Key** if you are following the tutorial mission [Use Machine Learning to Extract Information from Business Documents and Enrich Data](mission.cp-aibus-extract-document-enrich-data).
-
     !![Service Key](booster-success.png)
 
-    You have successfully used the booster **Set up account for Document Information Extraction** to create a service key for Document Information Extraction. You will need the service key values to create your `access_token` in the tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
+[DONE]
+[ACCORDION-END]
 
-    If you need to access the service key later again, enter the subaccount in which the instance was created. Then click **Service Instances** on the navigation bar, select your instance and here you can either download or view your service key directly.
 
-    ![Service Key](access-service-key.png)
+[ACCORDION-BEGIN [Step 3: ](Get service key)]
 
-    >If you face any issue with the booster **Set up account for Document Information Extraction**, you can alternatively follow the steps in [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance) to create a service key for Document Information Extraction manually.
+Click **Download Service Key** if you are following the tutorial mission [Use Machine Learning to Extract Information from Business Documents and Enrich Data](mission.cp-aibus-extract-document-enrich-data).
+
+!![Service Key](booster-success-key.png)
+
+You have successfully used the booster **Set up account for Document Information Extraction** to create a service key for Document Information Extraction. You will need the service key values to create your `access_token` in the tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
+
+If you need to access the service key later again, enter the subaccount in which the instance was created. Then click **Service Instances** on the navigation bar, select your instance and here you can either download or view your service key directly.
+
+![Service Key](access-service-key.png)
+
+>If you face any issue with the booster **Set up account for Document Information Extraction**, you can alternatively follow the steps in [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance) to create a service key for Document Information Extraction manually.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Go to Application)]
+[ACCORDION-BEGIN [Step 4: ](Go to Application)]
 
 Click **Go to Application** to access the Document Information Extraction Trial UI. Save the link to open the application in the future if you are following the tutorial mission [Use Machine Learning to Process Business Documents](mission.cp-aibus-extract-document-service).
 

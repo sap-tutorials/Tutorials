@@ -3,15 +3,20 @@ title: Create a Database Multi-Target Application with the SAP HANA Service
 description: Create an application with a database module.
 auto_validation: true
 time: 15
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
 primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
+ - This tutorial is designed for HANA As A Service. Consider newer tutorials designed for HANA Cloud.
  - You have created a trial instance of SAP Cloud Platform, SAP HANA service.
  - You are logged in to SAP Web IDE Full Stack and have [configured the access to the subaccount in Cloud Foundry](https://developers.sap.com/tutorials/webide-multi-cloud.html).
  - You have enabled the `SAP HANA Database Development tools` and `SAP HANA Database explorer` in the `Features` section in the settings for SAP Web IDE.
  - Optionally, you have [downloaded and setup the Command Line Interface for Cloud Foundry](https://developers.sap.com/tutorials/cp-cf-download-cli.html).
+
+>**This tutorial cannot be completed with a trial account.**
 
 ## Details
 ### You will learn

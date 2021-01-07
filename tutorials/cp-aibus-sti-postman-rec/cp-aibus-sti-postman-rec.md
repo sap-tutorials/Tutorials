@@ -68,7 +68,7 @@ Use the request `Get model status` from the previous step again to observe the p
 
 !![Activate Model](activate-model-response.png)
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 
@@ -238,10 +238,4 @@ You can also try out the other `POST /Recommend` requests.
 You have now successfully used Service Ticket Intelligence to get solution recommendations for new service requests.
 
 [DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
-
-[VALIDATE_1]
 [ACCORDION-END]

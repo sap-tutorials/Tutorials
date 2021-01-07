@@ -57,7 +57,7 @@ In this tutorial, you will start by creating a bot that understands the customer
     |  1. What do you want your chatbot to do?           | **Perform Actions**
     |  2. Predefined Skills           | **Greetings**
     |  3. Create your bot     | <ul><li>Name: **`ShippingBot`**</li><li>Description: **A bot to help shipping customers track and price packages**</li><li>Language: **English**</li></ul>
-    |  4. Data Policy  | **Non-personal** and **Non-vulnerable**
+    |  4. Data Policy  | <ul><li> **Non-personal**</li><li> **Store**</li><li> **Non-vulnerable**<li></ul>
     |  5. Bot Visibility | **Public**
 
     ![Create bot](CreateSkeletonBot_NewBot.png)
@@ -72,13 +72,15 @@ In this tutorial, you will start by creating a bot that understands the customer
 
 Our bot must be able to extract the parcel number from within the conversation. Such data extracted from a conversation is defined as entities.
 
+The tracking number is based on one of UPS's standards: 18 characters with constraints, as described in [Tracking Number](https://en.wikipedia.org/wiki/Tracking_number).
+
 1. Under the **Train** tab, go the subtab **Entities**.
 
     ![Go to Train](CreateEntity_EntitiesTab.png)
 
 2. Click **Create an Entity**.
 
-3. Call the entity **`PARCEL-NUMBER`**, specify it as a **Free entity**, and click **Create**.
+3. Call the entity **`PARCEL-NUMBER`**, specify it as a **Regex entity**, and click **Create**.
 
     ![Create entity](CreateEntity_CreateEntity.png)
 
@@ -86,32 +88,21 @@ Our bot must be able to extract the parcel number from within the conversation. 
     >
     >**Restricted entity:** You specify a limited list of acceptable values.
 
-4. Click on **`PARCEL-NUMBER`**.
+4. Click **`PARCEL-NUMBER`**.
 
     ![Edit entity](CreateEntity_EditEntity.png)
 
-5. Enter the following values for the **List of values**.
+5. Enter the following regular expression:
 
-    The values give the bot the valid format for a tracking number.
+    ```Regex
+    \b(1Z[0-9A-Z]{6}[\d]{10})\b    
+    ```
 
-    >**CAREFUL**: Enter the values in the field where it says **Add a new entity value**. After entering the value, press **Enter**.
+    >This defines only one kind of UPS tracking number, and is a simple regex that does not distinguish between the parts of the tracking number.
 
-    - 1Z2220060291994175
-    - 1Z2220060292002190
-    - 1Z2220060292634221
-    - 1Z2220060292690189
-    - 1ZISDE016691676846
-    - 1ZY756Y60380128446
+    You can test some of your parcel numbers to make sure they match, for example, enter `1ZISDE016694068891` and click **Test**:
 
-    ![Add values](CreateEntity_AddValues.png)
-
-    We have also supplied the numbers as a [CSV file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cai-bot-shipping-1-track-bot/parcel-numbers.csv). Instead of manually entering the numbers, you can download the file, then click **Import a CSV File**, select the file, and click **Upload**.
-
-6. Click **Train** (at the top).
-
-    ![Train](train.png)
-
-    Generally, the chatbot will be trained automatically, but clicking **Train** will force the chatbot to better understand the different possible parcel numbers.
+    ![Test Regex](CreateEntity_TestRegex.png)
 
 > ### Built-in Entities
 >
@@ -198,9 +189,9 @@ Again, you do not have to create this intent yourself, but you can fork an exist
 
 After you've determined that the user wants to track a package, you have to build a skill so the bot knows what to do in response to this intent.
 
-1. On the **Build** tab, click **Create skill**.
+1. On the **Build** tab, click **Add skill**.
 
-    Call the skill **`track-parcel`**, and specify that it is a **Business** skill, then click **Create Skill**.
+    Call the skill **`track-parcel`**, and specify that it is a **Business** skill, then click **Add**.
 
     !![Create track parcel skill](createTrackParcelSkill.png)
 
@@ -249,7 +240,7 @@ You will have several requirements. In this step, you will add the requirement f
 
 5. Next to **If #parcel-number is complete**, click **New Replies**, and then do the following:
 
-    - Click **Update Conversation > Edit Memory**.
+    - Click **Update Conversation | Edit Memory**.
     - In the **Set Memory Field**, enter **`parcel-number`**.
     - For the field value, click in the field and replace the contents with the following:
 
@@ -353,7 +344,7 @@ If the customer says **Yes**, then you will make an API call and retrieve the in
 
 >If the **Test** panel is open, close it.
 
-Click **Chat With Your Bot** (bottom right) and start a conversation with your bottom. Use this tracking number: **`1Z12345E6205277936`**.
+Click **Chat Preview** (bottom right) and start a conversation with your bottom. Use this tracking number: **`1Z12345E6205277936`**.
 
 In the example below, notice the bot detects the intent to track a package, but notices the tracking number is missing, and asks for it. Finally, it asks for confirmation, using the tracking number by retrieving it from memory.
 

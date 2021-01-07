@@ -30,6 +30,8 @@ The point of the tutorial is to show you how the webhook reads the request data 
 
 As an added bonus, we will show how to deploy a Python script to SAP Cloud Platform. Special thanks to [Yohei Fukuhara](https://people.sap.com/fukuhara) for his blog [Create simple Flask REST API using Cloud Foundry](https://blogs.sap.com/2018/12/12/create-simple-flask-rest-api-using-cloud-foundry/).
 
+>**IMPORTANT:** The focus of this tutorial is the response an application (API) must return in order to work with SAP Conversational AI. The requirements for Python on SAP Cloud Platform changes from time to time -- e.g., quota, runtime -- so you are encouraged to check the documentation for how to deploy Python scripts: [Developing Python in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/acf8f49356d047fbb1a4d04dcec3fd36.html)  
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a simple chatbot)]
@@ -109,11 +111,13 @@ Create a bot that asks the user to select an animal to get a fun fact about.
 
     #### `manifest.yml`
 
+    You must change the host name below to a unique name. The rest of the tutorial assumes the host name below, but everywhere you must change it (e.g., URL to API).
+
     ```Text
     applications:
-    - memory: 128MB
-      disk_quota: 256MB
-      random-route: true
+    - host: dbw-catfacts
+      memory: 128M
+      command: python chatbot-webhook-test.py
     ```
 
     #### `Procfile`
@@ -133,13 +137,11 @@ Create a bot that asks the user to select an animal to get a fun fact about.
 
     #### `runtime.txt`
 
-    The first time I tried this I was using version 3.6.6, but that did not work for me, and somehow figured out that this version worked.
+    Make sure to use a version currently supported by SAP Cloud Platform. At the time of the writing of this tutorial (December 2020), the version below worked.
 
     ```Text
-    python-3.8.1
+    python-3.8.5
     ```
-
-    >You need to verify what Python versions are supported by SAP CLoud Platform. At the time of the writing of this tutorial, 3.8.1 was supported.
 
     #### `static` (folder)
     Create the folder `static`. Download the SAP Conversational AI [icon](https://www.sap.com/content/dam/application/imagelibrary/pictograms/283000/283370-pictogram-purple.svg) and place it in the folder.
@@ -294,7 +296,7 @@ You will need your SAP Cloud Platform Cloud Foundry endpoint and org name, which
     cf push catfacts
     ```
 
-You should now have the application deployed. Go to your Cloud Foundry space, under **Applications**.
+This should about a minute, with a lot of output in the command screen. Once finished, you should now have the application deployed. Go to your Cloud Foundry space, under **Applications**.
 
 ![Link text e.g., Destination screen](CLI-deployedapp.png)
 

@@ -3,6 +3,8 @@ title: Connect to the SAP HANA Cockpit
 description: Open your application from the dashboard and connect to the SAP HANA cockpit.
 auto_validation: true
 time: 10
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
 primary_tag: products>sap-hana
 ---
@@ -13,11 +15,12 @@ primary_tag: products>sap-hana
 
 ## Details
 ### You will learn
+  - This tutorial is designed for HANA As A Service. Consider newer tutorials designed for HANA Cloud.
   - How to connect to the SAP HANA cockpit for performing administrative tasks in the physical database
 
 The SAP HANA cockpit is useful because it provides graphical tools to monitor resources and the overall health of your database.
 
->**This tutorial cannot currently be completed with a trial account.**
+>**This tutorial cannot be completed with a trial account.**
 
 ---
 

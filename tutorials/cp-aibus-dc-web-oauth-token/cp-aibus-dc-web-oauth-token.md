@@ -47,7 +47,7 @@ You should receive a response like the following:
 }
 ```
 
-You have successfully generated your OAuth access token for the service and you are now all set to [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui).
+You have successfully generated your OAuth access token for the service and you are now all set to [Use Machine Learning to Classify Documents](cp-aibus-dc-swagger-ui).
 
 [DONE]
 [ACCORDION-END]

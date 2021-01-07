@@ -7,6 +7,7 @@ primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Proficiency:** Intermediate
 - **Tutorials:** [SAP HANA XS Advanced - Modules within Node.js SAP HANA applications](https://developers.sap.com/tutorials/xsa-node-modules.html)
 

@@ -22,7 +22,7 @@ In this tutorial we'll create a launchpad site for a recruiting company called `
 
 When you access the **Launchpad** service, the Site Directory is in focus. From here you will create your new launchpad site.
 
-> Note: in the side panel of the Launchpad service, you'll see three tools. The **Site Directory** where you're going to create a new site. All sites that you create will be displayed here. The **Content Manager** where you'll manage cross-site content such as business apps. The **Provider Manager** where you manage content providers. Content providers expose business content that you can integrate into your launchpad sites.
+> Note: in the side panel of the Launchpad service, you'll see four tools. The **Site Directory** where you're going to create a new site. All sites that you create will be displayed here. The **Content Manager** where you'll manage cross-site content such as business apps. The **Provider Manager** where you manage content providers. Content providers expose business content that you can integrate into your launchpad sites. **Settings** where you can configure various settings for your subaccount.
 
 
 1. Click **Create Site**.
@@ -33,7 +33,7 @@ When you access the **Launchpad** service, the Site Directory is in focus. From 
 
     ![Name site](2_name_site.png)
 
-You have created a Launchpad site called `JobCore`.
+You've just created a Launchpad site called `JobCore`.
 
 [VALIDATE_7]
 

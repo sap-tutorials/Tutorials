@@ -101,6 +101,22 @@
       "value": "products>mobile-development-kit-client"
     },
     {
+      "name": "SAP Adaptive Server Enterprise",
+      "value": "products>sap-adaptive-server-enterprise"
+    },
+    {
+      "name": "SAP ASE - BW Enablement",
+      "value": "software-product-function>sap-ase-- bw-enablement"
+    },
+    {
+      "name": "SAP ASE - ERP Enablement",
+      "value": "software-product-function>sap-ase-- erp-enablement"
+    },
+    {
+      "name": "SAP ASE - HADR Enablement",
+      "value": "software-product-function>sap-ase-- hadr-enablement"
+    },
+    {
       "name": "SAP API Management",
       "value": "products>sap-api-management"
     },

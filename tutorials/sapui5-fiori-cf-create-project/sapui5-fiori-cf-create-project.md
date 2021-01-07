@@ -4,7 +4,7 @@ description: After you set up the environment, use the generator to bootstrap a 
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, topic>user-interface, topic>html5, topic>cloud]
-primary_tag: products>sap-cloud-platform-portal
+primary_tag: products>sap-cloud-platform-launchpad
 ---
 
 ## Prerequisites
@@ -44,7 +44,7 @@ Choose the following responses for the prompted parameters.
 |  :------------- | :-------------
 |  How do you want to name this project?          | **`products`**
 |  Which namespace do you want to use?    | **`tutorial`**
-|  On which platform would you like to host the application | **`Fiori Launchpad on Cloud Foundry`**
+|  On which platform would you like to host the application | **`SAP Cloud Platform Launchpad`**
 |  Which view type do you want to use? | **`XML`**
 |  How do you want to name your main view? | **`MainView`**
 |  Where should your UI5 libs be served from?            | **`Content delivery network (SAPUI5)`**
@@ -52,7 +52,7 @@ Choose the following responses for the prompted parameters.
 |  What name should be displayed on the Fiori Launchpad tile| **`Products`**
 
 
-![yeoman](./yeoman.png)
+  !![yeoman](./yeoman.png)
 
 The following installation of the project's dependencies might take a while.
 
@@ -70,13 +70,12 @@ code tutorial.products/
 
 You can see that the wizard created a bunch of folders and files.
 
-![vscode](./vscode.png)
+!![vscode](./vscode.png)
 
 The main code for the SAPUI5 app can be found in the directory `webapp`. You can also find the following directories:
 
-- `approuter`: This is a Cloud Foundry application that exposes all used services via an HTTP endpoint
 - `deployer`: A Cloud Foundry tasks which uploads the static web resources to the HTML5 application repository service during deploy-time.
-- `launchpad`: A Cloud Foundry tasks which uploads the static Launchpad resources to the HTML5 application repository service during deploy-time.
+- `uimodule`: The source file of your SAP Fiori app.
 
 You might miss the folders `dist` and `mta_archieves` as they will be created later during the build step.
 
@@ -97,7 +96,7 @@ npm start
 
 **Click** on the only tile you see in the Launchpad to start the SAPUI5 application.
 
-![local](./local.png)
+!![local](./local.png)
 
 
 > Hint: Put windows next to each other to benefit from the live-reload feature. This way, you will be able to see the changes in the website right when you do file modifications without having to switch to another window.

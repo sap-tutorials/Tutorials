@@ -3,7 +3,7 @@ title: Build a Decision Support UI in SAP Web IDE
 description: Create a decision support application using the SAP IoT extension for SAP Web IDE.  
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-web-ide-plug-ins, topic>sapui5, products>sap-web-ide, products>sap-leonardo-iot]
+tags: [ tutorial>beginner, topic>sapui5, products>sap-web-ide, products>sap-leonardo-iot]
 primary_tag: topic>internet-of-things
 ---
 

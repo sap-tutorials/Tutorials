@@ -50,7 +50,7 @@ author_profile: https://github.com/mervey45
 
       HINT: If you are using a licensed system, make sure you have the trust administrator role assigned to your user.
 
-  6. Select **sap.default**.
+  6. Select **Default identity provider**.
 
       ![assign role collection](bas4.png)
 
@@ -157,7 +157,7 @@ author_profile: https://github.com/mervey45
 
     ![object](studio16.png)
 
-  3. Select **SAP Fiori elements application** and click **Next >**.
+  3. Select **SAP Fiori elements application** and click **Start >**.
 
     ![object](studio17.png)
 
@@ -166,16 +166,16 @@ author_profile: https://github.com/mervey45
     ![object](studio18.png)
 
   5. Configure data source, system and service:
-     - Data source: **Connect to SAP System**
-     - System: **`New System`**
+     - Data source: **Connect to an SAP System**
+     - System: **`ABAP Environment on SAP Cloud Platform`**
      - ABAP Environment: **`default_abap-trial`**
      - Service: **`ZUI_C_TRAVEL_M_XXX(1) - odata v2`**
 
+     ![object](studio19.png)
+
      Click **Next >**.
 
-     A destination for the `abap-trial` service instance is generated automatically. The naming convention is `abap-cloud-<your abap-trial service instance>`, for example, `abap-cloud-abap-trial`.
-
-    ![object](studio19.png)
+     A destination for the `abap-trial` service instance is generated automatically.
 
   6. Select your main entity **`TravelProcessor`** and click **Next >**.
 
@@ -255,7 +255,7 @@ author_profile: https://github.com/mervey45
 
       ![deploy](deploy3.png)
 
-  4. To add `deploy config` details enter **`npx fiori add deploy-config`**.
+  4. Go back to SAP Business Application Studio and open the terminal again. To add `deploy config` details, enter **`npx fiori add deploy-config`**.
 
      Add following information:
 
@@ -265,7 +265,6 @@ author_profile: https://github.com/mervey45
       - Name: press enter for default
       - Package: **`ztravel_app_xxx`**
       - Transport Request: **`<your_transport_request>`**
-      - Generate standalone index.html during deployment: y
 
       ![deploy](deploy4.png)
 

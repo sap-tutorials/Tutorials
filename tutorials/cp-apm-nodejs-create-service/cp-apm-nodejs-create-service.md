@@ -13,7 +13,7 @@ time: 50
 ## Prerequisites
 - You've installed [Node.js](https://nodejs.org/en/download/releases/). Use long-term support (LTS) version 10 or 12. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
 - You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
-- (For Windows users only) You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#sqlite) in the CAP documentation.
+- (For Windows users only) You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/resources/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation.
 - You've installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
 - If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **Europe (Frankfurt) or US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
 
@@ -73,7 +73,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 3. In Visual Studio Code choose **Install** to enable the extension for CDS Language Support.
 
-> If the extension is already installed and enabled in VS Code, it will be updated automatically.
+> If the extension is already installed and enabled in VS Code, it will be updated automatically. Learn more about the features in this short [demo](https://community.sap.com/topics/cloud-application-programming).
 
 [DONE]
 
