@@ -28,67 +28,68 @@ The period for idle time for Factory accounts is different than for trial accoun
 
 [ACCORDION-BEGIN [Step 1: ](Create new SAP Fiori project)]
 
-1. In the **Welcome Page** click **Create project from a template**.
+1. In the **Welcome Page** click **Start from template**.
 
-    !![Open Dev Space](03-01-02 AppStudio Welcome Tab withOUT Extensions Loaded Notification_.jpg)
+    !![Open Dev Space](AppStudio Welcome Tab withOUT Extensions Loaded Notification_.jpg)
 
-    >If the Welcome Page does not appear, in the menu bar, select **View | Find Command** to open the **command palette** and select the command **SAP Business Application Studio: Welcome Page**. The command palette is opened at the top-center of the SAP Business Application Studio window.
+    >If the Welcome Page does not appear, in the menu bar, select **View | Find Command** to open the **command palette** and select the command **Welcome**. The command palette is opened at the top-center of the SAP Business Application Studio window.
 
-    >!![Welcome Page from command palette](03-01-03 AppStudio Welcome Page from Command Palette_.jpg)
+    >!![Welcome Page from command palette](AppStudio Welcome Page from Command Palette_.jpg)
 
     >The easiest way to develop an SAP Fiori freestyle app from scratch is to create it from a template. To continue developing an existing application, the best practice is to use git source code management and clone the repository.
 
-    >Using the UI wizard you can at any point click the `reset` button to reset the wizard at the top-right of the wizard screen, click the `Back` button to go back to the previous step, or click the specific wizard step to go back to that step.
-    >For convenience, click the **Explorer** view button to close the `Explorer` view.
+    >Using the UI wizard you can at any point click the `Back` button to go back to the previous step, or click the specific wizard step to go back to that step.
 
     > You can also create a project from the terminal using Yeoman.
 
-2. Make sure that the target folder is `/home/user/projects`, select the **SAP Fiori Freestyle Project** template, and click **Next**.
+2. For convenience, click the **Explorer** view button to close the `Explorer` view.
 
-    !![Fiori project template](03-03 AppStudio Fiori Project Template_.jpg)
+3. Make sure that the target folder is `/home/user/projects`, select the **SAP Fiori Freestyle Project** template, and click **Start**.
 
-3. For **Target Running Environment**, select the following, and click **Next**.
+    !![Fiori project template](AppStudio Fiori Project Template_.jpg)
+
+4. For **Target Running Environment**, select the following, and click **Next**.
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
     | A | Select the target running environment | **Cloud Foundry** |
     | B | Select the template you want to use | **SAPUI5 Application** |
 
-    !![fiori project template](03-04 AppStudio Fiori Project Template Target Running Environment_.png)
+    !![fiori project template](AppStudio Fiori Project Template Target Running Environment_.jpg)
 
-4. For **Project Name**, enter `FioriDemo`, and click **Next**.
+5. For **Project Name**, enter `FioriDemo`, and click **Next**.
 
-    !![Fiori project template - project name](03-05 AppStudio Fiori Project Template Project Name.jpg)
+    !![Fiori project template - project name](AppStudio Fiori Project Template Project Name_.jpg)
 
-5. For **HTML5 Applications**, if you plan to integrate the app to a launchpad site, select **Managed by SAP Cloud Platform** and provide a unique service name. Otherwise, select **Standalone Approuter**, and click **Next**.
+6. For **HTML5 Applications**, select **Approuter Managed by SAP Cloud Platform** and provide a unique service name, e.g. **BP**, and click **Next**.
 
-    !![Standalone Approuter](03-06-01 AppStudio HTML5 Applications Runtime.png)
+    !![central approuter](AppStudio HTML5 Applications Runtime_.jpg)
 
-    >The application router is the single point-of-entry for an application running in the Cloud Foundry environment on SAP Cloud Platform. The application router is used to serve static content, authenticate users, rewrite URLs, and forward or proxy requests to other micro services while propagating user information.
+    >When end-users access an app in the Cloud Foundry environment, they actually access the Application Router first. The application router is used to serve static content, authenticate users, rewrite URLs, and forward or proxy requests to other micro services while propagating user information.
 
-    >To simplify the tutorial the Standalone Approuter option is used.
+    >The recommendation is to use **Managed by SAP Cloud Platform** that provides many benefits, when compared to Standalone Application Router, such as save resources, lower maintenance efforts, etc. Standalone Application Router should only be used in advanced cases, for example when application router extensibility is required. More information is available in [Developing HTML5 Applications in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/11d77aa154f64c2e83cc9652a78bb985.html)
 
-6. For **Basic Attributes**, select the following, and click **Next**.
+7. For **Basic Attributes**, select the following, and click **Next**.
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
     | A | Enter an HTML5 module name | **`BusinessPartners`** |
-    | B | Do you want to add authentication | **No** |
-    | C | Enter a namespace | **`ns`** |
-    | D | Do you want to enable Karma tests? | **No** |
+    | B | Do you want to add authentication | **Yes** (default) |
+    | C | Enter a namespace | **`ns`** (default) |
+    | D | Do you want to enable Karma tests? | **No** (default) |
 
-    !![Fiori project template - basic attributes](03-06 AppStudio Fiori Project Basic Attributes.jpg)
+    !![Fiori project template - basic attributes](AppStudio Fiori Project Basic Attributes_.jpg)
 
-7. For **View Name**, select the following, and click **Next**.
+8. For **View Name**, select the following, and click **Next**.
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
     | A | Enter a view name | **`Suppliers`** |
     | B | Do you want to add a data service | **Yes** |
 
-    !![Fiori project template - view name](03-07 AppStudio Fiori Project View Name.png)
+    !![Fiori project template - view name](AppStudio Fiori Project View Name_.jpg)
 
-8. For **Consume Services**, select the following, and click **Next**.
+9. For **Consume Services**, select the following, and click **Next**.
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
@@ -96,40 +97,40 @@ The period for idle time for Factory accounts is different than for trial accoun
     | B | Select a source | **`ES5 [Catalog]`** |
     | C | Select a service | **`GWSAMPLE_BASIC`** |
 
-    !![Fiori project template - consume services](03-08 AppStudio Fiori Project Providers.jpg)
+    !![Fiori project template - consume services](AppStudio Fiori Project Providers_.jpg)
 
-    >A notification that the project has been generated appears at the bottom right of the screen.
+10. A notification that the project has been generated appears at the bottom right of the screen.
 
-    !![Fiori project template - project generated](03-08-02 AppStudio Fiori Project Project Generated.jpg)
+    !![Fiori project template - project generated](AppStudio Fiori Project Project Generated_.jpg)
 
-9. Click **Open in New Workspace** in the notification or **File > Open Workspace**, and choose `FioriDemo`.
+11. Click **Open in New Workspace** in the notification or **File > Open Workspace**, and choose `FioriDemo`.
 
-    !![AppStudio open workspace](03-09 AppStudio Open Workspace_.jpg)
+12. The **Explorer** view opens and you can see the `FioriDemo` project, its folder structure, and files. If not, you can click the **Explorer** view button at the top left of the screen.
 
-    >The **Explorer** view opens and you can see the `FioriDemo` project, its folder structure, and files. If not, you can click the **Explorer** view button at the top left of the screen.
+    !![AppStudio open workspace](AppStudio Open Workspace_.jpg)
 
     >The status bar color changes to blue, indicating that a workspace is open.
 
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open the layout editor)]
+[ACCORDION-BEGIN [Step 2: ](Open the layout editor and the code editor)]
 
-Open the layout editor in SAP Business Application Studio to easily make a few changes. In this case, you will make changes so that data from the backend service is displayed when the app is running.
+The layout editor allows users to easily make changes in the app using a visual editor. In this tutorial, you will make changes so that data from the backend service is displayed when the app is running.
 
 1. Choose **`FioriDemo` > `BusinessPartners` > `webapp` > `view`** and right-click the `Suppliers.view.xml` file that you created with the template in a previous step.
 
 2. Choose **Open With > Layout Editor**.
 
-    !![Open with Layout Editor](04-01 AppStudio Open Layout Editor_.jpg)
+    !![Open with Layout Editor](AppStudio Open Layout Editor_.jpg)
 
     >To have the Layout Editor option available after opening the workspace, you may need to wait a bit for the Layout Editor extension to be loaded.
 
-    >The **Suppliers** view is opened in the **Layout Editor**.
+3. The **Suppliers** view is opened in the **Layout Editor**.
 
-    >!![Layout Editor Opened](04-01-02 AppStudio Open Layout Editor.jpg)
+    !![Layout Editor Opened](04-01-02 AppStudio Open Layout Editor.jpg)
 
-3. You can optionally choose to open it with the code editor and see how modifications in the Layout Editor are manifested in the code editor.
+4. You can optionally choose to open it with the code editor and see how modifications in the Layout Editor are manifested in the code editor.
 
     !![Open code editor](04-03 AppStudio Open Code Editor-XML_.jpg)
 
@@ -137,7 +138,7 @@ Open the layout editor in SAP Business Application Studio to easily make a few c
 
     >!![Code editor opened](04-03-02 AppStudio Open Code Editor-XML.jpg)
 
-4. For convenience, place the code editor below the Layout Editor. Use the drag & drop functionality.
+5. For convenience, place the code editor below the Layout Editor. Use the drag & drop functionality.
 
     !![Drag-Drop editor](04-04 AppStudio Drag-Drop Code Editor.jpg)
 
@@ -151,15 +152,22 @@ Open the layout editor in SAP Business Application Studio to easily make a few c
 
 [ACCORDION-BEGIN [Step 3: ](Make changes to the UI)]
 
-Make some changes using the layout editor, with no need to do any coding.
+Edit your app using the layout editor, with no need to do any coding.
 
 1. In the **Controls** pane, enter `List` to filter the controls list in the search box.
 
     !![Filter List control](05-01 AppStudio Layout Editor Filter Controls-List.jpg)
 
+    >In order to get more screen real-estate, click the **Explorer** view button to close the `Explorer` view, and adjust the ratio between the Layout Editor and the code editor.
+
+
 2. Drag the **List** control and drop it on the **View** control in the canvas.
 
     !![Drag and drop](05-02 AppStudio Layout Editor List Dropped_.jpg)
+
+    >Adding the list control to the view is reflected in both the **Layout Editor** and the code editor.
+
+    >!![add list control](05-02 AppStudio Layout Editor List Dropped__.jpg)
 
 3. Select the **Standard List Item** control by clicking it (the breadcrumb indicates which control is selected) and, in the **Entity Set** property in the **Properties** pane, click the Bind icon.
 
@@ -171,7 +179,7 @@ Make some changes using the layout editor, with no need to do any coding.
 
     !![entity set bind window](05-04 AppStudio Layout Editor Bind to Entity Set_.jpg)
 
-    >The space of the **Select Entity Set** view may be to narrow to show all options. In case you do not see the **Define entity set and set the selected control as template** option, scroll down in the **Select Entity Set** view to make it available.
+    >The space of the **Select Entity Set** view may be too narrow to show all options. In case you do not see the **Define entity set and set the selected control as template** option, scroll down in the **Select Entity Set** view to make it available.
 
     >The bind operation is reflected in both the **Layout Editor** and the code editor.
 
@@ -194,15 +202,68 @@ Make some changes using the layout editor, with no need to do any coding.
 [VALIDATE_5]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test run the application)]
+[ACCORDION-BEGIN [Step 4: ](Set Cloud Foundry preferences)]
 
-Run your new application to test it.
+Before you can run your new application, set your Cloud Foundry preferences.
+
+1. In the menu bar, select **View | Find Command** to open the **command palette**.
+
+    !![Command Palette-Login to CF](08-01 AppStudio CF Login_.jpg)
+
+2. Select the command **CF: Login to cloud foundry**.
+
+    >Type `cf` to filter commands.
+
+    !![Command Palette-Login to CF](08-01-02 AppStudio CF Login_.jpg)
+
+3. When prompted, provide your credentials, select the API endpoint, organization, and space for your project.
+
+    >The Cloud Foundry organization and space appear in the status line at the bottom left part of the screen.
+
+    !![Logged in to CF](AppStudio CF Login_.jpg)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Create a new service instance for xsuaa)]
+
+Before you can run your new application, create a new service instance for `xsuaa`.
+
+1. In the menu bar, select **View | Find Command** to open the **command palette**.
+
+    !![Command Palette-Login to CF](08-01 AppStudio CF Login_.jpg)
+
+2. Select the command **CF: Create a new service instance**.
+
+    >Type `cf` to filter commands.
+
+    !![Command Palette-CF Create service instance](AppStudio CF Create Service Instance_.jpg)
+
+3. When prompted, provide the following:
+
+    | Step | Parameter | Value |
+    |:-----|:----------|:------|
+    | A | Enter an instance name | **`trial-uaa`** |
+    | B | Select a Cloud Foundry service | **`xsuaa`** |
+    | C | Select a Cloud Foundry service plan | **Application** |
+    | C | Enter arbitrary parameters to be passed along to the service broker | Use default (press [ENTER]) |
+
+    >A notification that the service instance is being created appears at the bottom-right of the page, followed by a notification that the service is instance has been created.
+
+    !![xsuaa service instance created](AppStudio CF Create Service Instance-3_.jpg)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Test run the application)]
+
+Run your new application locally in the SAP Business Application Studio dev space to test it.
 
 1. Open the **Run Configurations** view.
 
     !![Open Run Configurations](06-01 AppStudio Run Configurations_.jpg)
 
-2. Click **+** to create a new **Run Configurations**.
+2. Click **+** to create a new **Run Configuration**.
 
     !![Create new run configuration](06-02 AppStudio Run Configurations_.jpg)
 
@@ -220,39 +281,39 @@ Run your new application to test it.
     | B | Select a UI5 version | **latest** |
     | C | Enter a name | `Run BusinessPartners (ES5)` |
 
-    >A new run configuration is generated for the `FioriDemo` project.
+5. A new run configuration is generated for the `FioriDemo` project.
 
-5. Expand the run configuration to display the services that can be bound.
+6. Expand the run configuration to display the services that can be bound.
 
-    !![Bindable objects](06-04 AppStudio Run Configurations_.jpg)
+    !![Bindable resources](06-04 AppStudio Run Configurations_.jpg)
 
     >SAP Business Application Studio allows you to test your app with resources.
 
-6. To bind to the destination, click the **Bind** icon to the right of the destination resource to get a list of available destinations.
+7. To bind to the destination, click the **Bind** icon to the right of the destination resource to get a list of available destinations.
 
     !![Bind to Destination](06-05 AppStudio Run Configurations Bind Destination_.jpg)
 
-7. Select the `ES5` destination from the list.
+8. Select the `ES5` destination from the list.
 
     !![Select Destination](06-05-02 AppStudio Run Configurations Bind Destination_.jpg)
 
-    >Once the destination has been bound, the **Bind** icon turns green.
+    >Once the destination has been bound, the icon to the left of the destination resource turns green.
 
-    >To unbind the destination, click the **Unbind** icon.
+9. To bind to the XSUAA, click the **Bind** icon to the right of the XSUAA resource to get a list of available destinations. Select trial-uaa.
 
-    >!![Destination is bound](06-05-03 AppStudio Run Configurations Bind Destination_.jpg)
+    !![Bind to xsuaa](AppStudio Run Configuration Bind XSUAA_.jpg)
 
-8. Hover over the run configuration and click the Run Module icon.  
+10. Hover over the run configuration and click the Run Module icon.  
 
     !![Running the app locally](06-06 AppStudio Run Configurations Run_.jpg)
 
-9. Wait for the **A service is listening to port 6004** notification and then click the button to open the app.
+11. Wait for the **A service is listening to port 6004** notification and then click the button to open the app.
 
     >The left side view changes to the debug view and the status bar color changes to orange to indicate that the app is running in debug mode.
 
     >If you are running the app for the first time, the button in the notification will say **Expose and Open**. Otherwise it will say **Open in New Tab**.
 
-    !![App is running locally](06-07 AppStudio Run Configurations Run_.jpg)
+    !![App is running locally](AppStudio Run Configurations Run_.jpg)
 
     >Some of the notifications appear on the screen for a short period of time.
 
@@ -267,13 +328,13 @@ Run your new application to test it.
 [VALIDATE_7]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Stop the running application)]
+[ACCORDION-BEGIN [Step 7: ](Stop the running application)]
 
 1. Return to the SAP Business Application Studio tab.
 
-2. In the **Debug** view click the Stop icon.
+2. In the **Debug** view click the Stop icon. Repeat it until all the threads in the **Debug** view are removed.
 
-    !![Stop running app](05-02 AppStudio Stop Running App_.jpg)
+    !![Stop running app](AppStudio Stop Running App_.jpg)
 
     >The status bar background color changes from orange to blue.
 
