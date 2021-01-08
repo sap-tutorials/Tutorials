@@ -103,7 +103,7 @@ Using what you learned in [Create an SAP HANA Database Project](hana-cloud-creat
 
     !![Configure privacy](8.png)
 
-4. Go into the **Semantics** node and switch `START_YEAR` to attribute
+4. Go into the **Semantics** node and switch `START_YEAR` and `ID` to attribute
 
     !![Configure privacy](12.png)
 
@@ -143,7 +143,7 @@ Using what you learned in [Create an SAP HANA Database Project](hana-cloud-creat
       COLUMN SALARY PARAMETERS '{"is_sensitive":true, "epsilon":0.1, "sensitivity":15000}')
     ```
 
-> For more information about these parameters check the [SAP HANA Cloud Data Anonymization Guide](https://help.sap.com/viewer/2f789e82e97d4f4e9416547abfbd012e/latest/en-US/a66e8541c4004f048630f8a55f67ad37.html)
+    > For more information about these parameters check the [SAP HANA Cloud Data Anonymization Guide](https://help.sap.com/viewer/2f789e82e97d4f4e9416547abfbd012e/latest/en-US/a66e8541c4004f048630f8a55f67ad37.html)
 
 3. If you receive an error that the feature is not supported, this can be safely ignored.
 
