@@ -20,7 +20,7 @@ time: 30
 
 1.  Follow the instructions at [Try Out the SAP Cloud Platform SDK for Android Wizard](cp-sdk-android-wizard-app) to create a new application using the SAP Cloud Platform SDK for Android Wizard and select **Offline** for the OData option on the **Project Features** tab. The push feature is not needed for this application.
 
-    ![Choose Offline OData](choosing_offline_odata.png)
+    !![Choose Offline OData](choosing_offline_odata.png)
 
 2.  Run the app. After the login process, a screen is displayed explaining that the offline store is opening. As the screen suggests, opening the offline store for the first time can take up to a few minutes. One technique to decrease this initial time is to only download data that is relevant to the user, such as customers that belong in their sales region.
 
@@ -28,7 +28,7 @@ time: 30
 
 3.  When you get to the app's home page, turn on **airplane mode** on your device, or disable Wi-Fi and data.
 
-    ![Turn on Airplane mode](turn_on_airplane_mode.png)
+    !![Turn on Airplane mode](turn_on_airplane_mode.png)
 
 4.  The entity list screen is populated based on the `metadata.xml` file retrieved when the application was created. Tap the **Products** list item.
 
@@ -52,11 +52,11 @@ time: 30
 
     The sync should fail because you haven't turned airplane mode off yet.
 
-    ![Sync fails](sync_failed_no_wifi.png)
+    !![Sync fails](sync_failed_no_wifi.png)
 
 8.  Turn off airplane mode or re-enable Wi-Fi/data and attempt a sync again. You will see a notification that describes the sync action.
 
-    ![Syncing notification](syncing_data_notification.png)
+    !![Syncing notification](syncing_data_notification.png)
 
     When the sync completes, the change you made will have been applied to the back end.
 
@@ -104,23 +104,23 @@ The application allows users to make changes against a local offline store and s
 
 1.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`OpenStoreWorker`** to open `OpenStoreWorker.java` and examine the `open` method.
 
-    ![Open Store method](opening_offline_store_method_java.png)
+    !![Open Store method](opening_offline_store_method_java.png)
 
     The worker's work is to call the `open` method of the `OfflineODataProvider` class to perform the open operation and pass the given callbacks through.
 
     The `OpenStoreWorker` class is called by `MainBusinessActivity.java` when the user logs into the application.
 
-    ![MainBusinessActivity calls OpenStoreWorker](logon_calls_open_store_worker_java.png)
+    !![MainBusinessActivity calls OpenStoreWorker](logon_calls_open_store_worker_java.png)
 
 2.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`SyncStoreWorker`** to open `SyncStoreWorker.java` and examine the `download` and `upload` methods.
 
-    ![Sync method](syncing_offline_store_worker_java.png)
+    !![Sync method](syncing_offline_store_worker_java.png)
 
     The worker's work is to call the `download` and `upload` method of the `OfflineODataProvider` class to perform the sync operation and pass the given callbacks through.
 
     The `SyncStoreWorker` class is called by `SAPServiceManager` when the user wants to perform a sync. When an entity is created locally in the offline store, its primary key is left unset. This is because when the user performs an `upload`, the server will set the primary key for the client. An `upload` and a `download` are normally performed together because the `download` may return updated values from the server, such as a newly-created primary key.
 
-    ![SAPServiceManager performs sync](sap_service_manager_performs_sync_java.png)
+    !![SAPServiceManager performs sync](sap_service_manager_performs_sync_java.png)
 
 [OPTION END]
 
@@ -128,23 +128,23 @@ The application allows users to make changes against a local offline store and s
 
 1.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`OpenStoreWorker`** to open `OpenStoreWorker.kt` and examine the `open` method.
 
-    ![Open Store method](opening_offline_store_method_kotlin.png)
+    !![Open Store method](opening_offline_store_method_kotlin.png)
 
     The worker's work is to call the `open` method of the `OfflineODataProvider` class to perform the open operation and pass the given callbacks through.
 
     The `OpenStoreWorker` class is called by `MainBusinessActivity.kt` when the user logs into the application.
 
-    ![MainBusinessActivity calls OpenStoreWorker](logon_calls_open_store_worker_kotlin.png)
+    !![MainBusinessActivity calls OpenStoreWorker](logon_calls_open_store_worker_kotlin.png)
 
 2.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`SyncStoreWorker`** to open `SyncStoreWorker.kt` and examine the `download` and `upload` methods.
 
-    ![Sync method](syncing_offline_store_worker_kotlin.png)
+    !![Sync method](syncing_offline_store_worker_kotlin.png)
 
     The worker's work is to call the `download` and `upload` method of the `OfflineODataProvider` class to perform the sync operation and pass the given callbacks through.
 
     The `SyncStoreWorker` class is called by `SAPServiceManager` when the user wants to perform a sync. When an entity is created locally in the offline store, its primary key is left unset. This is because when the user performs an `upload`, the server will set the primary key for the client. An `upload` and a `download` are normally performed together because the `download` may return updated values from the server, such as a newly-created primary key.
 
-    ![SAPServiceManager performs sync](sap_service_manager_performs_sync_kotlin.png)
+    !![SAPServiceManager performs sync](sap_service_manager_performs_sync_kotlin.png)
 
 [OPTION END]
 
@@ -159,19 +159,19 @@ When syncing changes made while offline, conflicts can occur. One example might 
 
 1.  Update a **SalesOrderItem** and change its quantity to be zero and save it. Update a second item and change its quantity to a different non-zero number and save it.
 
-    ![Create SalesOrderItem Button](create_sales_order_item.png)
+    !![Create SalesOrderItem Button](create_sales_order_item.png)
 
-    ![Edit SalesOrderItem Button](edit_sales_order.png)
+    !![Edit SalesOrderItem Button](edit_sales_order.png)
 
-    ![Create with zero quantity](create_with_zero_quantity.png)
+    !![Create with zero quantity](create_with_zero_quantity.png)
 
     Notice that the items are now marked with a yellow indicator to indicate that an item has been locally modified but not yet synced.
 
-    ![Modified but not yet synced](modified.png)
+    !![Modified but not yet synced](modified.png)
 
 2.  Attempt a sync, and you'll notice that the sync completes, but if you examine the **SalesOrderItems** list, one item has a red mark beside it, indicating it is in an error state. This is because the back end has a check that **SalesOrderItems** cannot have zero for their quantity. This check does not exist in the local offline store, so the update succeeds locally but fails when the offline store is synced.
 
-    ![Sync Error](sync_error.png)
+    !![Sync Error](sync_error.png)
 
 [DONE]
 [ACCORDION-END]
@@ -427,7 +427,7 @@ In this section we will create an **Error Information** screen that displays the
 
 8.  In the `synchronize` method, find the line that performs the `sapServiceManager.synchronize` method call.
 
-    ![SapServiceManager synchronize](sapServiceManager_synchronize_call_java.png)
+    !![SapServiceManager synchronize](sapServiceManager_synchronize_call_java.png)
 
 9.  Right after the `progressBar.setVisibility(View.INVISIBLE)` line in the success callback, add the following code, which queries the error archive and displays information to the user about the first error encountered.
 
@@ -526,7 +526,7 @@ In this section we will create an **Error Information** screen that displays the
 
 10.  Run the app again, and re-attempt the sync. When the sync fails, you should see the following error screen.
 
-    ![Error screen](error_screen.png)
+    !![Error screen](error_screen.png)
 
     You can see that the HTTP status code, method, and message are included. When the application attempted a sync, the entity being updated didn't pass the backend checks, produced a `DataServiceException`, and is now in the error state. All entities that did not produce errors are successfully synced. One way to correct the exception would be to change the quantity from 0 to a valid positive number. Another would be to delete the `ErrorArchive` entry, reverting the entity to its previous state. For more information on error handling, see [Handling Errors and Conflicts](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-errors-and-conflicts.html) and [Handling Failed Requests](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-failed-requests.html).
 
@@ -777,7 +777,7 @@ In this section we will create an **Error Information** screen that displays the
 
 8.  In the `synchronize` method, find the line that performs the `sapServiceManager.synchronize` method call.
 
-    ![SapServiceManager synchronize](sapServiceManager_synchronize_call_kotlin.png)
+    !![SapServiceManager synchronize](sapServiceManager_synchronize_call_kotlin.png)
 
 9.  Right after the `progressBar!!.visibility = View.INVISIBLE` line in the success callback, add the following code, which queries the error archive and displays information to the user about the first error encountered.
 
@@ -834,7 +834,7 @@ In this section we will create an **Error Information** screen that displays the
 
 10.  Run the app again, and re-attempt the sync. When the sync fails, you should see the following error screen.
 
-    ![Error screen](error_screen.png)
+    !![Error screen](error_screen.png)
 
     You can see that the HTTP status code, method, and message are included. When the application attempted a sync, the entity being updated didn't pass the backend checks and produced a `DataServiceException` and is now in the error state. All entities that did not produce errors are successfully synced. One way to correct the exception would be to change the quantity from 0 to a valid positive number. Another would be to delete the `ErrorArchive` entry, reverting the entity to its previous state. For more information on error handling, see [Handling Errors and Conflicts](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-errors-and-conflicts.html) and [Handling Failed Requests](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-failed-requests.html).
 
