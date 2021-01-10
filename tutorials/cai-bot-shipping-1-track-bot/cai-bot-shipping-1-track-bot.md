@@ -108,6 +108,7 @@ The tracking number is based on one of UPS's standards: 18 characters with const
 >
 > SAP Conversational AI comes with built-in entities (called gold entities) for common data, like location, dates, and money values. For more information, see [List of Gold Entities](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/161cfefadfea4fbd9912cc38317ded57.html).
 
+
 [DONE]
 [ACCORDION-END]
 
