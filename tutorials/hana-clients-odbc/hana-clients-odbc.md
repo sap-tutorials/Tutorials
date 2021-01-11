@@ -66,6 +66,8 @@ The ODBC Data Source Administrator lists the ODBC drivers installed and the conf
 
 9. Press OK, to save the data source.
 
+For additional details see [ODBC Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/2.7/en-US/7cab593774474f2f8db335710b2f5c50.html).
+
 [DONE]
 [ACCORDION-END]
 
