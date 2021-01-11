@@ -43,6 +43,7 @@ After a successful build, you can download the IPA or APK file.
 
 >Make sure you are choosing the right device platform tab above.
 
+
 [OPTION BEGIN [Android]]
 
 1. Open the [Firebase console](https://console.firebase.google.com/u/0/?pli=1), login with your Google account and click **Create Project** or **Add Project** (you will see this option if you already have any existing projects).

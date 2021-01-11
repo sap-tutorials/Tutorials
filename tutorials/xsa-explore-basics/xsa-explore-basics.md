@@ -1,6 +1,8 @@
 ---
 title: SAP HANA XS Advanced, explore the basic tools
-description: This tutorial will walk you through exploring the basics of XS Advanced tools, such as athe administration cockpit or SAP Web IDE for SAP HANA
+description: This tutorial will walk you through exploring the basics of XS Advanced tools, such as the administration cockpit or SAP Web IDE for SAP HANA
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition ]
 auto_validation: true
@@ -8,6 +10,7 @@ time: 10
 ---
 
 ## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Beginner | Intermediate | Advanced
  - **Tutorials:** [Get an SAP HANA, express edition, instance with XS Advanced applications](https://developers.sap.com/topics/hana.html)
 

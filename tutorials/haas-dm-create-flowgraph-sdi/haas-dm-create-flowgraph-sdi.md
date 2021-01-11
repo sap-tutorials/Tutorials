@@ -3,13 +3,18 @@ title: Create a Flow Graph to Replicate Data
 description: Create a flow graph using Smart Data Integration to replicate data into the SAP HANA Service.
 auto_validation: true
 time: 15
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 tags: [ tutorial>beginner, products>sap-hana, topic>big-data, tutorial>license]
 primary_tag: products>sap-cloud-platform--sap-hana-service
 ---
 
 ## Prerequisites
+ - This tutorial is designed for HANA As A Service. Consider newer tutorials designed for HANA Cloud.
  - You have configured Smart Data Integration [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-connect-sdi.html).
  - You have created a remote source and configured the access [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-access-cross-container-schema.html).
+
+>**This tutorial cannot be completed with a trial account.**
 
 ## Details
 ### You will learn

@@ -70,7 +70,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 
     >!![MDK](img_1.7.1.png)
 
-8. Repeat the above steps for `Headline` and `Subheadline` properties binding to `FirstName` and `LastName` properties of the Customer entity respectively.
+8. Repeat the above steps for `Headline` and `Subheadline` properties binding to `LastName` and `FirstName` properties of the Customer entity respectively.
 
     You should have final results as below.
 
@@ -185,6 +185,7 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_5.1.png)
 
+
 2. You will notice, newly added button on the main page. Tap **CUSTOMER LIST**.
 
     ![MDK](img_5.2.png)
@@ -213,16 +214,17 @@ Deploy the updated application to your MDK client.
 
     >Here, you may notice that **City** is not showing up on screen, this is by design. In portrait mode, the device width is considered _compact_ , if you change device orientation to landscape mode, you will see **City**.
 
-    >!![MDK](img_6.4.png)
+    >![MDK](img_6.4.png)
 
-    >If it was an iPad (where both portrait and landscape are considered _regular_ instead of _compact_) you would see **City** on either orientation.
-
+    >If it was an iPad (where both portrait and landscape are considered *regular* instead of *compact*) you would see **City** on either orientation.
 
 [OPTION END]
 
-**Congratulations**! You have successfully created a Customer List page and you are now all set to [Create a Customer Detail Page](cp-mobile-dev-kit-detail-page).
-
 [DONE]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully created a Customer List page and you are now all set to [Create a Customer Detail Page](cp-mobile-dev-kit-detail-page).
 
 ---

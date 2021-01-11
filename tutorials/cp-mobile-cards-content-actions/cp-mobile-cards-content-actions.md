@@ -1,5 +1,5 @@
 ---
-title: Render Cards Based On User Input With Content Based Actions
+title: Render Cards Based On User Input With Content-Based Actions
 description: Create a card that shows data based on user-input, and then shows actions based on its content, such as triggering a phone call, sending an email, etc..
 auto_validation: true
 primary_tag: products>sap-mobile-cards

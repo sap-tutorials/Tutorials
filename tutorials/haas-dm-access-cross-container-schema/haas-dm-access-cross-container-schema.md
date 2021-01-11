@@ -3,14 +3,19 @@ title: Access a Classic Schema from SAP Web IDE Full-Stack
 description: Access data in a plain or replicated schema from an HDI container.
 auto_validation: true
 time: 20
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
 primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ---
 
 ## Prerequisites
+ - This tutorial is designed for HANA As A Service. Consider newer tutorials designed for HANA Cloud.
  - You have access to the database and SAP Cloud Platform cockpit.
  - You have created a multi-target application with a database module [as explained in this tutorial](haas-dm-create-db-mta).
  - Optionally, you have created a remote source [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-connect-sdi.html).
+
+>**This tutorial cannot be completed with a trial account.**
 
 ## Details
 ### You will learn

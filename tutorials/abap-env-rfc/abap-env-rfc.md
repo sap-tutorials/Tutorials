@@ -26,7 +26,7 @@ author_profile: https://github.com/julieplummer20
   - How to test the connection using an ABAP handler class
 
 Throughout this tutorial, replace `XXX` with your initials or group number.
-
+ 
 **The problem:**
 
 There are two problems when setting up connectivity between the Cloud Platform ABAP Environment and an on-premise:

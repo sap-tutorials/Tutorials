@@ -8,6 +8,7 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 time: 15
 ---
 ## Prerequisites  
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Creating SQLScript User Defined Libraries](xsa-sqlscript-libraries)
 
 ## Details

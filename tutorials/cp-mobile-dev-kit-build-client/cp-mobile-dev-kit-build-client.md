@@ -120,6 +120,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 [OPTION END]
 
+
 [OPTION BEGIN [Windows]]
 
 1. To use the SDK to generate a mobile development kit client, the first step is to setup the SDK to create a client. Unzip `MDKClient_SDK` if it is not already extracted.

@@ -168,15 +168,15 @@ You will add a button to the `Customers_List.page` called **Add**. You will link
 
 1. In `Customers_List.page`, drag and drop an **Action Bar Item** to the upper right of the action bar.
 
-    !![MDK](img_4_1.png)
+    !![MDK](img_4.1.png)
 
 2. Click the **link icon** to open the object browser for the `SystemItem` property. Double click the **Add** type and click **OK**.
 
-    !![MDK](img_4_2.png)
+    !![MDK](img_4.2.png)
 
 3. In the Properties pane, click the **Events** tab, click the **link icon** for the `OnPress` property to open the object browser. Double click the `NavToCustomers_Create.action` action and click **OK** to set it as the `OnPress` Action.
 
-    !![MDK](img_4_3.png)
+    !![MDK](img_4.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -253,8 +253,8 @@ The next step is to store newly created record locally for an offline applicatio
 
     | Property | Value |
     |----|----|
-    | `Success Action` | Select `CloseModalPage_Complete.action` from the dropdown |
-    | `Failure Action` | Select `CreateCustomerEntityFailureMessage.action` from the dropdown |
+    | `Success Action` | Click the link icon and bind it to `CloseModalPage_Complete.action` |
+    | `Failure Action` | Click the link icon and bind it to `CreateCustomerEntityFailureMessage.action` |
 
     !![MDK](img_5.9.png)
 
@@ -364,13 +364,15 @@ You can cross verify if a record has been updated in the backend.
 
 >!![MDK](img_7.8.1.png)
 
->It will open the URL in a new tab, now add `/Customers` at the end of the URL.
+>It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
 ![MDK](img_7.9.png)
 
-**Congratulations!** You have successfully created a Customer Record and you are now all set to [Delete a Customer Record in an MDK App](cp-mobile-dev-kit-delete-customer).
-
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully created a Customer Record and you are now all set to [Delete a Customer Record in an MDK App](cp-mobile-dev-kit-delete-customer).
 
 ---
