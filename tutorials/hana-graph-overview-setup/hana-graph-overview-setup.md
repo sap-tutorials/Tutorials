@@ -3,7 +3,7 @@ title: Create SAP HANA Graph Workspace
 description: Get overview of what SAP HANA Graph is, load some sample data and create your first graph workspace based on that data.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, topic>sql]
+tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition, topic>sql]
 primary_tag: products>sap-hana
 ---
 
