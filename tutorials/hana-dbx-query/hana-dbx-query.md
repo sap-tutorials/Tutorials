@@ -32,7 +32,7 @@ primary_tag: products>sap-hana-cloud
 
     ```SQL
     SELECT * FROM HOTEL.HOTEL;
-    INSERT INTO HOTEL.HOTEL VALUES(27, 'River Boat', '79872', '788 MAIN STREET');  --will cause a unique constraint error when executed
+    INSERT INTO HOTEL.HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '79872'); --will cause a unique constraint error when executed
     ```
 
 4. Expand the **Run** dropdown menu.  Notice that there are multiple options along with their shortcut keys.
@@ -128,6 +128,8 @@ primary_tag: products>sap-hana-cloud
 3. Shortcuts can be configured in **Global Preferences** under **Keyboard Shortcuts**.
 
     ![Open Keyboard Shortcuts Settings](KeyboardShortcutsSettings.png)
+
+    > Note, double-click on the shortcut to start the recording.
 
 4. A SQL console can be toggled to enter full-screen mode.  Double-click a SQL console tab to enter this mode.  
 
