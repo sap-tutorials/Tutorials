@@ -12,10 +12,12 @@ primary_tag: products>sap-hana-cloud
 
 ## Details
 ### You will learn
-  - How to create tables and import data using insert statements.
-  - How to create views, functions, and stored procedures.
+  - How to create tables and import data using insert statements
+  - How to create views, functions, and stored procedures
 
 The following steps will create sample objects for a hotel database using create and insert statements.  The next tutorial will demonstrate some of the ways these objects can be exported or imported.
+
+---
 
 [ACCORDION-BEGIN [Step 1: ](Create a user and schema)]
 
@@ -216,7 +218,9 @@ The following steps will create sample objects for a hotel database using create
 
 [ACCORDION-BEGIN [Step 3: ](Create a partition)]
 
-1. Partitions can be created to divide the data in a large table into smaller parts.  Execute the following SQL statement to create one partition that contains older reservations and one that contains reservations made in 2019 or later.  
+Partitions can be created to divide the data in a large table into smaller parts.  
+
+1. Execute the following SQL statement to create one partition that contains older reservations and one that contains reservations made in 2019 or later.  
 
     ```SQL
     alter table hotel.reservation partition by range(ARRIVAL)
@@ -228,7 +232,7 @@ The following steps will create sample objects for a hotel database using create
 
     In the example in this section, older reservation data will be stored on disk rather than in memory.  Another reason for partitioning is for load balancing across multiple hosts in a distributed system.  For more details see [Table Partitioning](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/c2ea130bbb571014b024ffeda5090764.html).
 
-    Execute the following SQL to make the partition containing older reservations  loadable from disk using [Native Storage Extensions (NSE)](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/786c621dd35e4534a2f955bf2f04a2e2.html).
+2. Execute the following SQL to make the partition containing older reservations  loadable from disk using [Native Storage Extensions (NSE)](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/786c621dd35e4534a2f955bf2f04a2e2.html).
 
     ```SQL
     alter table hotel.reservation ALTER PARTITION 1 PAGE LOADABLE;
@@ -248,9 +252,9 @@ The following steps will create sample objects for a hotel database using create
 
     Notice above that the partition 1 (containing older reservations) is page loadable and partition 2 (containing recent reservations) is column loadable.  
 
-    For further information see [Reduce the Memory Footprint Using Page-Loadable Columns](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/786c621dd35e4534a2f955bf2f04a2e2.html) and SAP Note: [2799997 - FAQ: SAP HANA Native Storage Extension (NSE)](https://launchpad.support.sap.com/#/notes/2799997).  
+For further information see [Reduce the Memory Footprint Using Page-Loadable Columns](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/786c621dd35e4534a2f955bf2f04a2e2.html) and SAP Note: [2799997 - FAQ: SAP HANA Native Storage Extension (NSE)](https://launchpad.support.sap.com/#/notes/2799997).  
 
-    Another option for data that is accessed less frequently is the SAP HANA Data Lake.  Additional information on when to use Native Store Extensions and Data Lake can be found at [Introduction to SAP HANA Cloud - Storage Options](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/cloud/en-US/7a27607b08ba46d5b253365e703b1c1a.html#loio7a27607b08ba46d5b253365e703b1c1a__section_storage_options).
+Another option for data that is accessed less frequently is the SAP HANA Data Lake.  Additional information on when to use Native Store Extensions and Data Lake can be found at [Introduction to SAP HANA Cloud - Storage Options](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/cloud/en-US/7a27607b08ba46d5b253365e703b1c1a.html#loio7a27607b08ba46d5b253365e703b1c1a__section_storage_options).
 
 
 [DONE]

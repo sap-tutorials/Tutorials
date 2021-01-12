@@ -1,6 +1,6 @@
 ---
 title: Create a Cloud Foundry or XS Advanced App that Queries SAP HANA
-description: A Node.js app will be created that queries SAP HANA and can be run in Cloud Foundry or XS advanced.
+description: Create a Node.js app that queries SAP HANA and can be run in Cloud Foundry or XS Advanced.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud, topic>node-js, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-cloud-platform]
@@ -15,7 +15,9 @@ primary_tag: products>sap-hana
   - How to use the command line interface (CLI) to deploy a Node.js app to Cloud Foundry or XS advanced
   - How to view the logs and enable tracing in the deployed app
 
-In the previous tutorials, applications that queried SAP HANA were run on a local machine.  In this tutorial, a simple application will be run within the SAP Cloud Platform which uses Cloud Foundry or within the SAP HANA, express edition which uses XS advanced (and is also based on Cloud Foundry).  For additional details, consult  [The XS Advanced Programming Model](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/df19a03dc07e4ba19db4e0006c1da429.html).  For a more complete example, see the Node.js topics in week 3 of [Software Development on SAP HANA](https://open.sap.com/courses/hana7).
+In the previous tutorials, applications that queried SAP HANA were run on a local machine.  In this tutorial, a simple application will be run within the SAP Cloud Platform which uses Cloud Foundry or within the SAP HANA, express edition which uses XS advanced (and is also based on Cloud Foundry).  
+
+For additional details, consult  [The XS Advanced Programming Model](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/df19a03dc07e4ba19db4e0006c1da429.html).  For a more complete example, see the Node.js topics in week 3 of [Software Development on SAP HANA](https://open.sap.com/courses/hana7).
 
 ---
 
@@ -102,7 +104,7 @@ The CLI for the SAP Cloud Platform is named `cf` while the CLI for SAP HANA, exp
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create and run a Node.js app that uses Express and queries SAP HANA)]
+[ACCORDION-BEGIN [Step 2: ](Create Node.js app that queries SAP HANA)]
 
 1.  Create a folder named `nodeCF` and enter the newly created directory.
 
@@ -198,7 +200,7 @@ The CLI for the SAP Cloud Platform is named `cf` while the CLI for SAP HANA, exp
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Deploy and test the app in SAP Cloud Platform or XS Advanced)]
+[ACCORDION-BEGIN [Step 3: ](Deploy and test app in SAP Cloud Platform or XS Advanced)]
 
 1. Create a deployment descriptor.
 

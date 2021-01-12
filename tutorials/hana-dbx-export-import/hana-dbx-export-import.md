@@ -13,12 +13,14 @@ primary_tag: products>sap-hana-cloud
 
 ## Details
 ### You will learn
-  - How to export and import data using the export and import data wizards, SQL commands export into and import from, and the download option in the SQL console results tab.
-  - How to import `ESRI shapefiles` using the import data wizard.
-  - How to export and import schema objects using export and import catalog wizards and the SQL commands export and import.
-  - How to use cloud storage providers as a target when exporting or importing.
+  - How to export and import data using the export and import data wizards, SQL commands export into and import from, and the download option in the SQL console results tab
+  - How to import `ESRI shapefiles` using the import data wizard
+  - How to export and import schema objects using export and import catalog wizards and the SQL commands export and import
+  - How to use cloud storage providers as a target when exporting or importing
 
 The following steps will demonstrate a few ways to export and import data such as the contents of tables or views as well how to export and import database schema.  
+
+---
 
 [ACCORDION-BEGIN [Step 1: ](Export and import data)]
 
@@ -87,7 +89,7 @@ The following steps will attempt to demonstrate some of these options.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Additional export and import options (optional))]
+[ACCORDION-BEGIN [Step 2: ](Use additional export and import options (optional))]
 
 1. With SAP HANA Cloud, an export data wizard is available.  
 
@@ -243,7 +245,7 @@ Similar to the first section, the maintenance table will be exported and re-impo
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step : 5 ](Using cloud storage during export and import (optional))]
+[ACCORDION-BEGIN [Step : 5 ](Use cloud storage during export and import (optional))]
 
 The following steps walk through the process of using Microsoft Azure storage service as a target for an export catalog  operation.  Similar steps can be used for other storage providers and the export data wizard.
 
