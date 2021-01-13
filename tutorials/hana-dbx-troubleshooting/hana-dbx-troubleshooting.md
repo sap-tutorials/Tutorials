@@ -170,7 +170,9 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
 
     ![Create statement](reservation_generator2_create.png)
 
-5. To address these issues, make the following changes and rerun the SQL.  The first issue can be resolved by commenting out `unusedVar` on lines 19 and 23.  The second issue can be resolved by checking the input parameter `rmType` with the [IS SQL INJECTION SAFE](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/2020_02_QRC/en-US/4496cc5717e847feb7daa41516047df9.html) function.  Uncomment lines 24 - 26 to try this.
+5. To address these issues, make the following changes and rerun the SQL in the SQL Console tab.  
+    * The first issue can be resolved by commenting out `unusedVar` on lines 19 and 23.  
+    * The second issue can be resolved by checking the input parameter `rmType` with the [IS SQL INJECTION SAFE](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/2020_02_QRC/en-US/4496cc5717e847feb7daa41516047df9.html) function.  Uncomment lines 24 - 26 to try this.
 
 3. Right-click the procedure and choose **Analyze SQLScript Code**.
 
@@ -303,7 +305,7 @@ Tracing can be helpful when debugging a problem or in identifying SQL statements
 
     ![trace files](traceFiles.png)
 
->For additional details, consult the [Traces](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/7e31247372fb4dd7b8c6bbac758b8c91.html) topic in the SAP HANA Administration Guide for SAP HANA Platform.
+>For additional details, consult the [Traces](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/7e31247372fb4dd7b8c6bbac758b8c91.html) topic in the SAP HANA Administration Guide for SAP HANA Platform and SAP Note [2119087 - How-To: Configuring SAP HANA Traces](https://launchpad.support.sap.com/#/notes/2119087).
 
 Congratulations! You have now explored the available tools to help diagnose and debug SQL or SQLScript.
 

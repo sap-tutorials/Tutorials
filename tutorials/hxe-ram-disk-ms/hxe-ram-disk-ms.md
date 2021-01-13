@@ -18,7 +18,7 @@ Go into the **Start** menu and type `System Information`.
 
 ![System information](1.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 

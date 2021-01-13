@@ -98,7 +98,7 @@ app.use(
 	})
 );
 
-//Setup Additonal Node.js Routes
+//Setup Additional Node.js Routes
 require("./router")(app, server);
 
 //Start the Server

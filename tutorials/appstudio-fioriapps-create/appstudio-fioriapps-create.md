@@ -1,6 +1,6 @@
 ---
 title: Create an SAP Fiori App Using SAP Business Application Studio
-description: Develop a simple SAP Fiori application in SAP Business Application Studio.
+description: Develop a simple SAP Fiori application that will present a list of suppliers from an on-premise backend.
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
@@ -24,7 +24,7 @@ You will build an application that presents a list of suppliers from an on-premi
 
 After a period of idle time the dev space is automatically stopped. In order to re-start the dev space open the [dev space manager](https://triallink.eu10.trial.applicationstudio.cloud.sap/), click the **Play** icon, and click the dev space.
 
-The period for idle time for Factory accounts is different than for trial accounts.
+The period for idle time for Enterprise accounts is different than for trial accounts.
 
 ---
 
