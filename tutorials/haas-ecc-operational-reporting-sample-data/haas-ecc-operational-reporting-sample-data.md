@@ -2,15 +2,18 @@
 title: SAP HANA Service, explore Operational Reporting for SAP ECC using test data
 description: Clone and deploy the Calculation Views for SAP ECC Operational Reporting and import test data to consume from SAP Analytics Cloud
 time: 40
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, tutorial>license]
 primary_tag: products>sap-cloud-platform--sap-hana-service
 ---
 
 ## Prerequisites
->**This tutorial cannot currently be completed with a trial account.**
-
+ - This tutorial is designed for HANA As A Service. Consider newer tutorials designed for HANA Cloud.
  - You have a productive instance of the [SAP Cloud Platform, SAP HANA Service on Cloud Foundry](https://developers.sap.com/group.hana-service-setup.html) **or** have signed up for a [trial account in SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) **or** an on-premise instance of SAP HANA with XS Advanced (e.g., [SAP HANA, express edition](https://developers.sap.com/topics/hana.html))
  - You will need administration access to a tenant SAP Analytics Cloud to import the pre-built models
+
+>**This tutorial cannot currently be completed with a trial account.**
 
 ## Details
 ### You will learn

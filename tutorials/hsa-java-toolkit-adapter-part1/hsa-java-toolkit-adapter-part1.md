@@ -4,34 +4,33 @@ description: Gain a comprehensive overview on Custom Adapters for SAP HANA Strea
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorial:** [Get started with SAP HANA streaming analytics for SAP HANA, express edition](https://developers.sap.com/group.sds-hxe-get-started.html)
+ - **Tutorial:** [Get started with SAP HANA streaming analytics for SAP HANA, express edition](group.sds-hxe-get-started)
  - A running SAP HANA Streaming Analytics Server built on SAP HANA 2.0 with a minimum version SPS02
  - [Java Runtime Environment (JRE)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) version 8 or newer
  - A Java IDE, such as [Eclipse](https://eclipse.org/)
  - [`Mosquitto`](http://mosquitto.org/) MQTT Broker
  - Java [PAHO](https://eclipse.org/paho/clients/java/) Library
 
-## Next Steps
- - [Creating Custom Adapter Modules](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part2.html)
-
 ## Details
 ### You will learn
-- An overview of Custom Adapters for SAP HANA Streaming Analytics
-- The architecture of Custom Adapter file structure
-- MQTT and `Mosquitto` Broker
+- About Custom Adapters for SAP HANA Streaming Analytics
+- About the architecture of Custom Adapter file structure
+- About MQTT and `Mosquitto` Broker
 
-### Time to Complete
-**15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Introduction ](&nbsp;)]
+[ACCORDION-BEGIN [Introduction ](Introduction to Custom Adaptors)]
 
-This set of tutorials provides instructions on building a custom adapter for SAP HANA Streaming Analytics. We will be using the **SAP HANA Streaming Analytics Adapter Toolkit** to create a custom input adapter that receives `MQTT` messages via the `Mosquitto` broker. The Adapter Toolkit supports writing custom adapters in Java and uses a modular architecture with each adapter consisting of a *Transporter* module, a *Formatter* module, and a streaming *Connector* module. This tutorial does not cover building a custom adapter using the SAP HANA Streaming Analytics SDK, which provides lower level support for building custom adapters using `C` or `.NET`.
+This set of tutorials provides instructions on building a custom adapter for SAP HANA Streaming Analytics. We will be using the **SAP HANA Streaming Analytics Adapter Toolkit** to create a custom input adapter that receives `MQTT` messages via the `Mosquitto` broker.
+
+The Adapter Toolkit supports writing custom adapters in Java and uses a modular architecture with each adapter consisting of a *Transporter* module, a *Formatter* module, and a streaming *Connector* module.
+
+This tutorial does not cover building a custom adapter using the SAP HANA Streaming Analytics SDK, which provides lower level support for building custom adapters using `C` or `.NET`.
 
 The **complete custom adapter** will consist of:
 
@@ -61,9 +60,11 @@ An adapter can be started in either standalone or managed mode. In standalone mo
 
 The steps following this this tutorial will assume the adapter will be running in managed mode, however, more information regarding standalone mode will be provided in the Further Reading section. Ensure you have installed the necessary prerequisites.
 
-For the question below, select the correct answer, and click **Validate**.
-
-[VALIDATE_1]
-
+[DONE]
 [ACCORDION-END]
 
+
+[ACCORDION-BEGIN [Step 1: ](Test yourself)]
+
+[VALIDATE_1]
+[ACCORDION-END]

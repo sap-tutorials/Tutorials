@@ -3,7 +3,7 @@ title: Display Database Content and Run SQL Queries
 description: Use Data Preview to display the content of tables and SQL Console to perform ad-hoc SQL queries
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
 time: 15
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20

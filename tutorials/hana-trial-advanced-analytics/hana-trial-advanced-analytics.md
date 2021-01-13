@@ -92,7 +92,7 @@ This tutorial uses validations to track completion and make sure you are all set
 
     !![dev Space](trial3.png)
 
-7. This wizard will walk you through the process of navigating to your development space and creating a HANA Cloud Instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Allowed connections" setting. This setting will allow you to develop against your HANA Cloud trial using a variety of external development tools.
+7. This wizard will walk you through the process of creating a HANA Cloud instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Allowed connections" setting. This setting will allow you to develop against your HANA Cloud trial using a variety of external development tools.
 
     !![Allow All IP addresses](trial4.png)
 
@@ -104,7 +104,7 @@ This tutorial uses validations to track completion and make sure you are all set
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/Lv_40d1ZtsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-10. Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent tutorials in this tutorial.
+10. Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent steps in this tutorial.
 
 [DONE]
 [ACCORDION-END]
@@ -233,6 +233,12 @@ Artifacts in the current project will be translated into a physical database sch
 2. In the dialog at appears near the top of the screen, choose the **Create a new service instance**
 
     !![Create New Service Instance](create_new_service.png)
+
+    **Note:** If you receive the following error that no services instances found:
+
+    !![No Service Instance Found](work_around1.png)
+
+    This is a bug that occurs when you have no existing HDI container service instances in your account. Therefore the dialog isn't shown. But this is in error because the same dialog would be used to also create a new instance. The bug has been fixed in development is pending a hot fix to move it production and the trial landscape. In the mean time there is a workaround. You can create the HDI service instance manually from the terminal. Use the command `cf create-service hana hdi-shared my-hdi`. Give it a few minutes to create. You can check the status with the command `cf services`. Once fully created, you can continue with this step. But instead of choosing **Create a new service instance** you can just select the service instance you just created manually.
 
 3. Accept the default service instance name
 

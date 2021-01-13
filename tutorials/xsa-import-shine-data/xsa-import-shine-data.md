@@ -10,6 +10,7 @@ time: 5
 ---
 
 ## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Tutorials:** [Create an HDI Module](https://developers.sap.com/tutorials/xsa-hdi-module.html)
 
 ## Details

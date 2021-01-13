@@ -61,11 +61,12 @@ This page will show related details for a customer. In this page, you will add a
 
     | Property | Value |
     |----|----|
-    | `Description` | `CustomerId` |
-    | `FootNote`| `EmailAddress` |
-    | `HeadlineText`| `LastName` |
-    | `Status` | `PhoneNumber` |
-    | `Subhead` | `FirstName` |
+    | `Description` | `{CustomerId}` |
+    | `DetailImage` | `sap-icon://customer` |
+    | `FootNote`| `{EmailAddress}` |
+    | `HeadlineText`| `{LastName}` |
+    | `Status` | `{PhoneNumber}` |
+    | `Subhead` | `{FirstName}` |
 
     >Make sure to select values for the mentioned properties only from **Customer** Entity. You may find similar values from other entities. For example,
 
@@ -108,7 +109,7 @@ This page will show related details for a customer. In this page, you will add a
 
     Click the **link icon** next to the **Value** field to display the Object Browser and change the Format to **Binding Target Path**.
 
-    Click the **checkbox** for _Current Object_ and double click `HouseNumber` to set it as the first part of the binding.
+    Click the **checkbox** for _Current Object_ and double click `HouseNumber` to set it as the first part of the binding. Don't click OK as you will set second part of the binding too.
 
     !![MDK](img_1.13.gif)
 
@@ -127,8 +128,6 @@ This page will show related details for a customer. In this page, you will add a
     >**Street** should be selected from **Customer** entity.
 
 14. Select the **upper right** Key Value Item and set the `KeyName` to **City**.
-
-    !![MDK](img_1.14.png)
 
     Click the link icon to display the Object Browser. Change the format to **Binding** and double click the **City** property of the Customer entity to set it as the binding expression.
 
@@ -162,7 +161,7 @@ Now, you will create a Navigation action that opens the `Customers_Detail.page` 
     | Field | Value |
     |----|----|
     | `Action Name`| `NavToCustomers_Detail` |
-    | `Page to Open` | Select `Customers_Detail.page` from the dropdown |
+    | `PageToOpen` | Select `Customers_Detail.page` from the dropdown |
 
     !![MDK](img_2.2.png)
 
@@ -243,9 +242,11 @@ Deploy the updated application to your MDK client.
 
 >The MDK sets the current object to the selected record when running the on press action on the list.  The detail page then just needs to reference the correct properties assuming they are part of the object from the list page. You can look at [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/action-binding-and-result.html#auto-set-action-binding) for more details.
 
-**Congratulations**! You have successfully created a Customer Detail page and you are now all set to [Modify a Customer Record in an MDK App](cp-mobile-dev-kit-edit-customer).
-
 [DONE]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully created a Customer Detail page and you are now all set to [Modify a Customer Record in an MDK App](cp-mobile-dev-kit-edit-customer).
 
 ---

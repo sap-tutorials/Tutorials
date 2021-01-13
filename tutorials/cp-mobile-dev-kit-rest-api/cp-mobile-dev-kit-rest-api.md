@@ -328,7 +328,7 @@ In this step, you will create the `Pet_Create.page` as a **Form Cell Page**. Thi
 
     !![MDK](img_10.3.png)
 
-4. Now, you will add the fields (like Category name, Pet name, Tag Name, Status) for creating a new pet record by the end-user.
+4. Now, you will add the fields (Pet name and Status) for creating a new pet record by the end-user.
 
     In the Layout Editor, expand the **Control** | **Container Item** section. Drag and drop a **Simple Property** onto the Page area.
 
@@ -410,7 +410,7 @@ In this step, you will create the `Pet_Create.page` as a **Form Cell Page**. Thi
 
 5. Click **Next** and **Finish** the confirmation step.
 
-    >You can find more details about [`SendRequest`](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/RestService/SendRequest.schema.html) action.
+    >You can find more details about `SendRequest` action in [help documentation](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/RestService/SendRequest.schema.html).
 
 [DONE]
 [ACCORDION-END]
