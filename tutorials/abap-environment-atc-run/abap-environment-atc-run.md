@@ -144,7 +144,7 @@ Also, see SAP Note [2270689 Remote Analysis for source system](https://launchpad
 
 2. Enter the following, then choose **Create**:
 
-    - Communication Scenario **``** - Choose from the dropdown list. If this communication scenario does not appear, then you are missing the correct authorizations and cannot complete this tutorial
+    - Communication Scenario **`SAP_COM_0464`** - Choose from the dropdown list. If this communication scenario does not appear, then you are missing the correct authorizations and cannot complete this tutorial
     - Arrangement Name - Overwrite the default (identically-named), e.g. with **`SAP_COM_0464_XXX`** or **`SAP_COM_0464_SID`**.
 
       !![step6a-choose-comm-scen-0464](step6a-choose-comm-scen-0464.png)
