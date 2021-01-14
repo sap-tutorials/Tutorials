@@ -265,7 +265,6 @@ author_profile: https://github.com/mervey45
       - Name: press enter for default
       - Package: **`ztravel_app_xxx`**
       - Transport Request: **`<your_transport_request>`**
-      - Generate standalone index.html during deployment: y
 
       ![deploy](deploy4.png)
 

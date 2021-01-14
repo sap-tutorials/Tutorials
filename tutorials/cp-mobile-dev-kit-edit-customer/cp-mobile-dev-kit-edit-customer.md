@@ -65,13 +65,13 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
     |----|----|
     | `Name`| `FCFirstName` |
     | `Caption` | `First Name` |
-    | `Value`| bind it to `FirstName` property of the Customer entity |
+    | `Value`| click the link icon and bind it to `FirstName` property of the Customer entity |
 
     !![MDK](img_1.6.png)
 
     >Make sure, Format should be set as _Binding_.
 
-    !![MDK](img_1.6.1.png)
+    >!![MDK](img_1.6.1.png)
 
 7. Select the second Simple Property control and provide the below information:
 
@@ -79,7 +79,7 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
     |----|----|
     | `Name`| `FCLastName` |
     | `Caption` | `Last Name` |
-    | `Value`| bind it to `LastName` property of the Customer entity |
+    | `Value`| click the link icon and bind it to `LastName` property of the Customer entity |
 
     !![MDK](img_1.7.png)
 
@@ -90,7 +90,7 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
     |----|----|
     | `Name`| `FCPhone` |
     | `Caption` | `Phone` |
-    | `Value`| bind it to `PhoneNumber` property of the Customer entity |
+    | `Value`| click the link icon and bind it to `PhoneNumber` property of the Customer entity |
 
     !![MDK](img_1.8.png)
 
@@ -100,7 +100,7 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
     |----|----|
     | `Name`| `FCEmail` |
     | `Caption` | `Email` |
-    | `Value`| bind it to `EmailAddress` property of the Customer entity |
+    | `Value`| click the link icon and bind it to `EmailAddress` property of the Customer entity |
 
     !![MDK](img_1.9.png)
 
@@ -302,8 +302,8 @@ First, define a failure message.
 
     | Property | Value |
     |----|----|
-    | `Success Action` | Select `CloseModalPage_Complete.action` from the dropdown |
-    | `Failure Action` | Select `UpdateCustomerEntityFailureMessage.action` from the dropdown |
+    | `Success Action` | Click the link icon and bind it to `CloseModalPage_Complete.action` |
+    | `Failure Action` | Click the link icon and bind it to `UpdateCustomerEntityFailureMessage.action` |
 
     >When `Customers_UpdateEntity.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered or if `Customers_UpdateEntity.action` fails then `UpdateCustomerEntityFailureMessage.action` will be triggered.
 
@@ -355,13 +355,13 @@ Deploy the updated application to your MDK client.
 
 [OPTION BEGIN [Android]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
 2. Tap **CUSTOMER LIST**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap `edit` icon.
 
     ![MDK](img_8.2.png)
 
-3. For example, updating First Name from `Lukas` to `Rob`. Tap save icon.
+3. For example, update First Name from `Isabelle` to `Carolina`. Tap save icon.
 
     ![MDK](img_8.3.1.png)
 
@@ -377,9 +377,9 @@ Deploy the updated application to your MDK client.
 
     >!![MDK](img_8.9.1.png)
 
-    >It will open the URL in a new tab, now add `/Customers` at the end of the URL.
+    >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
-    But here result is pointing to old First Name (`Lukas`).
+    But here result is pointing to old First Name (`Isabelle`).
 
     ![MDK](img_8.9.png)
 
@@ -395,13 +395,13 @@ Deploy the updated application to your MDK client.
 
 [OPTION BEGIN [iOS]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-2. Tap **Customer List**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap **Edit**..
+2. Tap **Customer List**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap **Edit**.
 
     ![MDK](img_8.6.png)
 
-3. For example, updating First Name from `Lukas` to `Rob`. Tap **Save**.
+3. For example, updating First Name from `Isabelle` to `Carolina`. Tap **Save**.
 
     ![MDK](img_8.7.png)
 
@@ -417,9 +417,9 @@ Deploy the updated application to your MDK client.
 
     >!![MDK](img_8.9.1.png)
 
-    >It will open the URL in a new tab| add `/Customers`/ at the end of the URL.
+    >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
-    But here result is pointing to old First Name (`Lukas`).
+    But here result is pointing to old First Name (`Isabelle`).
 
     ![MDK](img_8.9.png)
 
@@ -437,9 +437,11 @@ Now, refresh the URL to check if record has been updated in the backend. As Sync
 
 ![MDK](img_8.11.png)
 
-**Congratulations!** You have successfully modified a Customer Record and you are now all set to [Define a Validation Rule in an MDK App](cp-mobile-dev-kit-add-validation).
-
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully modified a Customer Record and you are now all set to [Define a Validation Rule in an MDK App](cp-mobile-dev-kit-add-validation).
 
 ---

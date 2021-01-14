@@ -53,11 +53,11 @@ In the MDK editor, you will create a new JavaScript file called `EmailValidation
 
 >You can find more details about [writing a Rule](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/rules.html).
 
-1. Right-click the **Rules** folder | click **MDK: New Rule**.
+1. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
     !![MDK](img_2.1.png)
 
-2. Enter the Rule name `EmailValidation.js`, press `Enter`.
+2. Enter the Rule name `EmailValidation`, click **Next** and then **Finish** on the confirmation step.
 
     !![MDK](img_2.2.png)
 
@@ -144,9 +144,11 @@ Deploy the updated application to your MDK client.
 
 [OPTION END]
 
-**Congratulations!** You have successfully completed **Create Your First Mobile App with the Mobile Development Kit (MDK)** mission and you are now all set to [Enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
-
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully completed **Create Your First Mobile App with the Mobile Development Kit (MDK)** mission and you are now all set to [Enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
 
 ---

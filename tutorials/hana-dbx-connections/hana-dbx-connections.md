@@ -1,6 +1,6 @@
 ---
 title: Add Databases to  the SAP HANA Database Explorer
-description: This tutorial will explore different database connections types, such as SAP HANA Cockpit Database, SAP HANA, SAP HANA Deployment Infrastructure (HDI), along with the different operations that can be performed on them.
+description: This tutorial will explore different database connections types, such as SAP HANA Cockpit Database, and SAP HANA, SAP HANA Deployment Infrastructure (HDI), along with the different operations that can be performed on them.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
@@ -67,7 +67,7 @@ SAP HANA Cockpit databases can be grouped together.  This enables SQL statements
 
     !![run on multiple](run-on-multiple.png)  
 
-    The space dev is represented by its GUID in the selection dialog below along with a predefined group named ALL.    
+    The space dev is represented by its GUID in the selection dialog below.    
 
     ![run on multiple databases in HXE](run-on-multiple-hc.png)
 
@@ -187,6 +187,10 @@ Databases have additional actions that can be performed on them such as renaming
 
     ![database overview](overview.png)
 
+5.  Groups and filters can be used to organize and quickly find databases.
+
+    ![Using groups](groups.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -197,9 +201,11 @@ An SAP HANA Deployment Infrastructure (HDI) container can be created by using th
 
 >Note: This section is optional and does not need to be followed to complete the subsequent tutorials in this group.
 
+>Note: The SAP Business Application Studio is now the recommended tool for SAP HANA native application development with SAP HANA Cloud.  The SAP HANA Web IDE for SAP HANA should continue to be used with on-premise SAP HANA.  The following steps are similar in either tool.
+
 1.  Open the SAP HANA Web IDE for HANA Development if using SAP HANA Cloud or SAP HANA Web IDE for SAP HANA if using SAP HANA, express edition or an on-premise install.
 
-    Open SAP HANA Web IDE (in SAP Cloud Platform).  Further instructions on how to setup the SAP HANA Web IDE in the trial can be found on steps 3 and 4 of [Help Thomas Get Started with SAP HANA](https://developers.sap.com/tutorials/hana-trial-advanced-analytics.html#4a1b9a58-e95b-41d5-81f5-8a9a82703ec4).    
+    Open SAP HANA Web IDE (in SAP Cloud Platform).  
 
     ![open web ide](open-web-ide.png)
 

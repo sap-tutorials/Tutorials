@@ -1,5 +1,5 @@
 ---
-title: Create A Sales Order Approval Card
+title: Create a Sales Order Approval Card
 description: Implement actions within an SAP Mobile Card to enable workflows like approve, reject or reset.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
