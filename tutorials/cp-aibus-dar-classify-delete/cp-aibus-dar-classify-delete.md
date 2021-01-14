@@ -15,6 +15,8 @@ primary_tag: topic>machine-learning
 
 Based on your deployed machine learning model you can now classify records. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/dar). For further definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/fe501df6d9f94361bfea066f9a6f6712.html).
 
+Business Use Case: After we upload data and train a machine learning model using Data Attribute Recommendation, we can classify the product data. In this tutorial, we focus on product data classification, including options to undeploy the model, delete dataset and dataset schemas.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Classify records)]

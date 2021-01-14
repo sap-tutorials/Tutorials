@@ -14,6 +14,12 @@ primary_tag: topic>machine-learning
 
 To try out Data Attribute Recommendation, the first step is to upload data that will be used to train a machine learning model. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/dar). For further definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/fe501df6d9f94361bfea066f9a6f6712.html).
 
+Business Use Case: When creating the master data of a product, classifying the product into correct category and product hierarchy is a manual process that involves a product expert.
+
+To help automate this manual process, Data Attribute Recommendation can learn from historical data of products and their hierarchies to  automatically suggest the relevant categories with confidence level. This saves a lot of manual effort and helps automate the master data creation process. The same concept can be applied to transactional data like sales orders or any other orders with missing information.   
+
+The first steps to create this machine learning model that predicts categories and subcategories of a product is to prepare the dataset schema and upload to the service the training data. In this tutorial, we focus on the model training data preparation, uploading and defining the dataset schema. For that, we will use a product dataset from Best Buy.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Get an access token)]
