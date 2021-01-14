@@ -1,6 +1,6 @@
 ---
-title: Pattern Matching using OpenCypher
-description: Pattern Matching using OpenCypher
+title: Pattern Matching Using OpenCypher in SQL
+description: Execute pattern matching queries in SAP HANA Graph using OpenCypher.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition, topic>sql]
@@ -8,7 +8,7 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - Completed [Create SAP HANA Graph Workspace](hana-graph-overview-setup)
+ - You completed [Create an SAP HANA Graph Workspace](hana-graph-overview-setup).
 
 ## Details
 ### You will learn

@@ -1,6 +1,6 @@
 ---
-title: Complex algorithms using GraphScript
-description: Complex algorithms with GraphScript
+title: Complex Algorithms Using GraphScript
+description: Learn what is GraphScript, and then build complex algorithms in SAP HANA Graph using GraphScript.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition, topic>sql]
@@ -8,7 +8,7 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - Completed [Pattern Matching using OpenCypher in SQL](hana-graph-overview-pattern-matching-sql)
+ - You completed [Pattern Matching using OpenCypher in SQL](hana-graph-overview-pattern-matching-sql)
 
 ## Details
 ### You will learn
