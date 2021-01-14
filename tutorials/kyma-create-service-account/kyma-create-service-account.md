@@ -190,7 +190,7 @@ Now that you understand how the `kubeconfig` file is structured, create a new on
 
     > You can use `Set-ExecutionPolicy Unrestricted` to change the execution policy if needed.
 
-    ```bash
+    ```PowerShell
      .\temp.ps1  
      cp .\kubeconfig.yaml  ~/.kube/config
     ```
