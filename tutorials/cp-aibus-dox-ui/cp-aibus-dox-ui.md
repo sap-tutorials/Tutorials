@@ -58,7 +58,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
 7. Review your selection. Click **Edit** if you want to change anything. Click **Confirm**.
 
-    !![DOX-UI-App](png-files/review.png)
+    !![DOX-UI-App](png-files\review.jpg)
 
     You see the Document Name, Upload Date and Status of the documents you have just uploaded.
 
@@ -106,7 +106,11 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     !![DOX-UI-App](png-files/edit-currency-code-3.png)
 
-4. Select values in the document page preview, one each time, to **Assign Field** by choosing in the dropdown list the Field name. Add or change the extraction Value if necessary. Click **Apply** to add the selected field into the Header Fields or Line Items extraction results.
+4. Click **+** to insert one empty line item row at the bottom.
+
+    !![DOX-UI-App](png-files\edit-2.jpg)
+
+5. Select values in the document page preview, one each time, to **Assign Field** by choosing in the dropdown list the Field name. Add or change the extraction Value if necessary. Click **Apply** to add the selected field into the Header Fields or Line Items extraction results.
 
     See an example where the Tax Amount value is selected in the document page preview and added to the Header Fields extraction results:
 
@@ -114,11 +118,11 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     !![DOX-UI-App](png-files/edit-tax-amount-2.png)
 
-5. Save your changes.
+6. Save your changes.
 
     !![DOX-UI-App](png-files/save.png)
 
-6. You can also **Edit** and **Confirm** the document.
+7. You can also **Edit** and **Confirm** the document.
 
     !![DOX-UI-App](png-files/confirm.png)
 
