@@ -14,7 +14,7 @@ primary_tag: topic>machine-learning
 
 To use the data uploaded in [Upload Data to Data Attribute Recommendation](cp-aibus-dar-upload-data), it is necessary to create a training job and deploy the resulting machine learning model. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/dar). For further definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/fe501df6d9f94361bfea066f9a6f6712.html).
 
-Business Use Case: After data preparation and upload, the next step is to train a model using historical data. In this tutorial, we focus on model training using the training job concept. We will create a training job, check status and get model details. We will also deploy the trained model at the end.   
+Business Use Case: After data preparation and upload, the next step is to train a model using historical data. In this tutorial, you will focus on model training using the training job concept. You will create a training job, check status, get model details, and also deploy the trained model at the end.   
 
 ---
 

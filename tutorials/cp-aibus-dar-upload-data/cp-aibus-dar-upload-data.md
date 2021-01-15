@@ -18,7 +18,7 @@ Business Use Case: When creating the master data of a product, classifying the p
 
 To help automate this manual process, Data Attribute Recommendation can learn from historical data of products and their hierarchies to  automatically suggest the relevant categories with confidence level. This saves a lot of manual effort and helps automate the master data creation process. The same concept can be applied to transactional data like sales orders or any other orders with missing information.   
 
-The first steps to create this machine learning model that predicts categories and subcategories of a product is to prepare the dataset schema and upload to the service the training data. In this tutorial, we focus on the model training data preparation, uploading and defining the dataset schema. For that, we will use a product dataset from Best Buy.
+The first steps to create this machine learning model that predicts categories and subcategories of a product is to prepare the dataset schema and upload to the service the training data. In this tutorial, you will focus on the model training data preparation, uploading and defining the dataset schema. For that, you will use a product dataset from Best Buy.
 
 ---
 
@@ -106,7 +106,7 @@ If your browser displays the data instead of downloading it, **right-click** any
 
 ![Save CSV](download-csv-save.png)
 
-Take a moment to look at the dataset. As mentioned in step 2 the dataset contains product information as well as product categories. You might ask why the product categories are in the dataset when we actually want to predict them?
+Take a moment to look at the dataset. As mentioned in step 2 the dataset contains product information as well as product categories. You might ask why the product categories are in the dataset when you actually want to predict them?
 
 The categories are only necessary for training as the service does not know yet which product information are common for certain categories. Instead, the service will recognize patterns and establish such connections during the training process. This allows the service to make predictions for categories solely based on the product information later on.
 
