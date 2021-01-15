@@ -106,11 +106,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     !![DOX-UI-App](png-files/edit-currency-code-3.png)
 
-4. You can also **Add Line Item** and **Delete Last Line Item**.
-
-    !![DOX-UI-App](png-files/edit-2.png)
-
-5. Select values in the document page preview, one each time, to **Assign Field** by choosing in the dropdown list the Field name. Add or change the extraction Value if necessary. Click **Apply** to add the selected field into the Header Fields or Line Items extraction results.
+4. Select values in the document page preview, one each time, to **Assign Field** by choosing in the dropdown list the Field name. Add or change the extraction Value if necessary. Click **Apply** to add the selected field into the Header Fields or Line Items extraction results.
 
     See an example where the Tax Amount value is selected in the document page preview and added to the Header Fields extraction results:
 
@@ -118,11 +114,11 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     !![DOX-UI-App](png-files/edit-tax-amount-2.png)
 
-6. Save your changes.
+5. Save your changes.
 
     !![DOX-UI-App](png-files/save.png)
 
-7. You can also **Edit** and **Confirm** the document.
+6. You can also **Edit** and **Confirm** the document.
 
     !![DOX-UI-App](png-files/confirm.png)
 
