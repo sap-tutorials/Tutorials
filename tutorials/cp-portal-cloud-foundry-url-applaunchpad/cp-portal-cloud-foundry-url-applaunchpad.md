@@ -12,7 +12,7 @@ author_profile: https://github.com/LindsayBert
 
 ## Details
 ### You will learn
-  - How to create a URL app and add it to your site
+  - How to create a URL app and add it to your site.
 
 In this tutorial you'll use the **Content Manager** to add a URL app to your launchpad site.
 
