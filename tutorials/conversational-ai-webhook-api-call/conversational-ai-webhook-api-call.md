@@ -9,7 +9,7 @@ primary_tag: products>sap-conversational-ai
 
 ## Prerequisites
 - You understand the basics of creating a chatbot, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started).
-
+ 
 
 ## Details
 ### You will learn
