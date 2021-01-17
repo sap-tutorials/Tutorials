@@ -36,7 +36,7 @@ Click the Content Manager icon in the left panel to open the **Content Manager**
 
 2. Enter the following values:
 
-    * **Title**: `Innovation at SAP`
+    * **Title**: `Innovation at SAP`  
 
     * **Open App**: In place
 
