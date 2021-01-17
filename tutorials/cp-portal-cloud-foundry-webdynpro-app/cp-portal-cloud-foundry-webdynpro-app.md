@@ -16,7 +16,7 @@ author_profile: https://github.com/LindsayBert
 
 ## Details
 ### You will learn
-  - How to expose a Web Dynpro ABAP backend application to your SAP Cloud Platform Launchpad site
+  - How to expose a Web Dynpro ABAP backend application to your SAP Cloud Platform Launchpad site.
 
 ---
 In this tutorial, you'll use the **Content Manager** of the SAP Cloud Platform Launchpad service to add a Web Dynpro ABAP app to your launchpad site.
@@ -133,7 +133,7 @@ A group is a set of one or more apps displayed together in the launchpad. Assign
 
 3. Name the group `Purchase Orders`.
 
-4. In the **Assignments** panel, click inside the search box on the right of the screen, to show all available apps. You should see the  `Search POs` app.  
+4. In the **Assignments** panel, delete inside the search box on the right of the screen, to show all available apps. You should see the  `Search POs` app.  
 
 5. In the list, click **+** to assign the `Search POs` app to your group.
 
