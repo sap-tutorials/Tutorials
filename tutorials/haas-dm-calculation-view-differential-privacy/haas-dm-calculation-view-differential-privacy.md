@@ -1,5 +1,5 @@
 ---
-title: Create a Calculation View with Differential Privacy
+title: Create a Calculation View with Differential Privacy in SAP Web IDE
 description: Use differential privacy to anonymize confidential data
 auto_validation: true
 time: 20

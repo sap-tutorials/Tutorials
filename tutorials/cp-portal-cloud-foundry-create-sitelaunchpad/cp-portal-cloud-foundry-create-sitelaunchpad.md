@@ -14,7 +14,7 @@ You have subscribed to the Launchpad service and assigned yourself to the `Launc
 
 
 ### You will learn
-  - How to create a launchpad site using the **Launchpad** service
+  - How to create a launchpad site using the **Launchpad** service.
 
 In this tutorial we'll create a launchpad site for a recruiting company called `JobCore`. We will then add business apps to this site.
 

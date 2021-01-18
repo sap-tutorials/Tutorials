@@ -58,7 +58,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
 7. Review your selection. Click **Edit** if you want to change anything. Click **Confirm**.
 
-    !![DOX-UI-App](png-files/review.png)
+    !![DOX-UI-App](png-files\review.jpg)
 
     You see the Document Name, Upload Date and Status of the documents you have just uploaded.
 
@@ -106,9 +106,9 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     !![DOX-UI-App](png-files/edit-currency-code-3.png)
 
-4. You can also **Add Line Item** and **Delete Last Line Item**.
+4. Click **+** to insert one empty line item row at the bottom.
 
-    !![DOX-UI-App](png-files/edit-2.png)
+    !![DOX-UI-App](png-files\edit-2.jpg)
 
 5. Select values in the document page preview, one each time, to **Assign Field** by choosing in the dropdown list the Field name. Add or change the extraction Value if necessary. Click **Apply** to add the selected field into the Header Fields or Line Items extraction results.
 

@@ -1,5 +1,5 @@
 ---
-title: Configure the Development Environment
+title: Configure the SAP Web IDE Development Environment for HANA As A Service Development
 description: Configure SAP Web IDE for Full Stack, which you will use to create a multi-target application based on the SAP Cloud Application Programming Model.
 auto_validation: true
 author_name: Thomas Jung

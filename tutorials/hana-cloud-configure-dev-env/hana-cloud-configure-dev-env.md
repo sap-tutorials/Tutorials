@@ -1,5 +1,5 @@
 ---
-title: Configure the Development Environment
+title: Configure the SAP Business Application Studio Development Environment for HANA development
 description: Configure SAP Business Application Studio, which you will use to create multi-target application
 auto_validation: true
 author_name: Thomas Jung

@@ -1,15 +1,15 @@
 ---
 title: Introduction to Custom C/C++ Adapters for Freezer Monitoring Lite
-description: Gain an overview of Custom C Adapters that work with either HANA Streaming Analytics or Streaming Lite. The Custom C/C++ Adapter will be created using the C and C++ SDK, and built using a makefile which we will provide. The purpose of this tutorial is to show how to create your own Custom C/C++ Adapter given a specific schema.
+description: Gain an overview of Custom C Adapters that work with either HANA Streaming Analytics or Streaming Lite.
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorial:** [Streaming Analytics: Freezer Monitoring Tutorial](https://developers.sap.com/group.sds-hxe-get-started.html)
- - **Tutorial:** [Freezer Monitoring Lite Tutorial for Streaming Lite](https://developers.sap.com/tutorials/hsa-streaming-lite-freezer-monitoring-part1.html)
+ - **Tutorial:** [Streaming Analytics: Freezer Monitoring Tutorial](group.sds-hxe-get-started)
+ - **Tutorial:** [Freezer Monitoring Lite Tutorial for Streaming Lite](hsa-streaming-lite-freezer-monitoring-part1)
  - SAP HANA 2.0 system with minimum version SP02
  - Streaming Analytics server running on SAP HANA
  - C/C++ editor of your choice
@@ -18,16 +18,13 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
  - Setup `Raspberry Pi` user as `"Pi"`, and root directory as `"/home/pi"`
 
 ## Next Steps
- - [Code Custom C/C++ Adapter for Freezer Monitoring Lite](https://developers.sap.com/tutorials/hsa-lite-custom-c-adapter-part2.html)
+ - [Code Custom C/C++ Adapter for Freezer Monitoring Lite](hsa-lite-custom-c-adapter-part2)
 
 ## Details
 ### You will learn  
 - An overview of Custom C/C++ Adapters for SAP HANA Streaming Lite
 - The steps in order to create and deploy a Custom C/C++ Adapter
 - How to create a Makefile for a Custom C/C++ Adapter
-
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -80,9 +77,12 @@ clean:
 
 For the question below, select the correct answer, and click **Validate**.
 
-[VALIDATE_1]
+[DONE]
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 2: ](Test yourself)]
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 ---
-

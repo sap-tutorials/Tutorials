@@ -1,6 +1,6 @@
 ---
-title: Create SAP HANA Graph Workspace
-description: Get overview of what SAP HANA Graph is, load some sample data and create your first graph workspace based on that data.
+title: Create an SAP HANA Graph Workspace
+description: Get an overview of what SAP HANA Graph is, load some sample data, and create your first graph workspace based on that data.
 auto_validation: true
 time: 10
 tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition, topic>sql]
@@ -8,8 +8,9 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - SAP HANA Cloud, e.g. [SAP HANA Cloud trial](https://developers.sap.com/topics/hana.html)
- - SAP HANA 2.0 SPS 03 or higher with XSA, e.g. [SAP HANA, express edition](https://developers.sap.com/topics/hana.html)
+ - SAP HANA Cloud, e.g. [SAP HANA Cloud trial](https://developers.sap.com/topics/hana.html), or
+ - SAP HANA 2.0 SPS 04 or higher with XSA, e.g. [SAP HANA, express edition](https://developers.sap.com/topics/hana.html)
+ - Completed [SAP HANA Database Explorer Overview](hana-dbx-overview)
 
 ## Details
 ### You will learn
@@ -34,22 +35,22 @@ For more please refer to [online documentation for SAP HANA Cloud](https://help.
 
 [ACCORDION-BEGIN [Step 2: ](Exercise data)]
 
-You will have a model and data representing a part of the real life ski resort [`Pinzolo/Madonna di Campiglio`](https://www.skiresort.info/ski-resort/madonna-di-campigliopinzolofolgaridamarilleva) in Italy. The full-size picture of the map is available in [the file](map_large.jpg) and small-scale version is displayed below.
+You will have a model and data representing a part of the real life ski resort [`Pinzolo/Madonna di Campiglio`](https://www.skiresort.info/ski-resort/madonna-di-campigliopinzolofolgaridamarilleva) in Italy. The full-size picture of the map is available in [the file](map_large.jpg) and the small-scale version can be found below.
 
 ![map](map.png)
 
-Every station got a number (in red circle) and will serve as vertices of our graph. They have additional attributes:
+Every station got an id number (in red circle) and will become a vertex of our graph. They have additional attributes:
 
--	`ticket_office` = 'TRUE' (string, not boolean), is where you buy a ticket and start the day. These are stations 1, 4, 15
--	`restaurant` = 'TRUE' is a place to have a break for a delicious Italian coffee, or to refill with a few slices of pizza. These are stations 2, 3, 5.
+-	`ticket_office = 'TRUE'` (string, not boolean), is where you buy a ticket and start the day. These are stations 1, 4, 15.
+-	`restaurant = 'TRUE'` is a place to have a break for a delicious Italian coffee, or to recharge with a few slices of pizza. These are stations 2, 3, 5.
 
-Stations are connected by either lifts (to go up) or runs (to ski down). Those will be our edges in the graph with a few attributes:
+Stations are connected by either lifts (to go up) or runs (to ski down). These connections will be edges in the graph with a few attributes:
 
--	'lift' or 'run' will be their `mode` attribute
--	`start` and `end` will be ids of connected stations
--	each of them will have attribute `length` as well, measured in meters
--	additionally, runs will have 'blue', 'red', or 'black' values in the attribute `difficulty`
--	attribute `status` is either 'open' or 'close', reflecting if particular lift or run can be used. By default all connections will be open.
+-	'lift' or 'run' will be their `mode` attribute,
+-	`start` and `end` will be ids of connected stations,
+-	each of them will have attribute `length`, measured in meters,
+-	additionally, runs will have 'blue', 'red', or 'black' values in the attribute `difficulty`,
+-	attribute `status` is either 'open' or 'close', reflecting if particular lift or run can be used. By default, all connections will be open.
 
 
 [DONE]
@@ -58,11 +59,14 @@ Stations are connected by either lifts (to go up) or runs (to ski down). Those w
 
 [ACCORDION-BEGIN [Step 3: ](Create tables)]
 
-Open SAP HANA Database Explorer's SQL Editor and connect to your database. The assumption in these exercises is that you are using a schema `SKIING`, but you can change it to any other schema of your choice.
+Open SAP HANA Database Explorer's SQL Editor and connect to your database.
 
-Copy following code into your SQL Editor.
+The assumption in these exercises is that you are using a schema `SKIING`, but you can change it to any other schema of your choice.
+
+Copy the following code into your SQL Editor.
 
 ```sql
+--DROP SCHEMA "SKIING" CASCADE;
 CREATE SCHEMA "SKIING";
 SET SCHEMA "SKIING";
 
@@ -217,4 +221,58 @@ Click on it to open its definition.
 [ACCORDION-END]
 
 
+[ACCORDION-BEGIN [Step 9: ](Open Graph Viewer)]
+
+Right click on `SKIING` graph workspace and pick **View Graph**.
+
+The graph viewer will open and load the initial view of graph.
+
+> Note, that the rendering of graph's nodes and edges is different every time
+
+![Open Graph Viewer](60b.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Customize a view of the graph)]
+
+Use **Preferences** to customize the view of the graph.
+
+![Add edge labels](70b.png)
+
+You should see labels of edges now.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 11: ](Add more data)]
+
+In reality these lifts starting from the ticket offices can be used as well to go down. So, let's add additional edges.
+
+Add four new records to `EDGES` table by executing following `INSERT` statements in the SQL Console.
+
+```sql
+--Add lifts down to boarding stations
+INSERT INTO "EDGES" VALUES (1061, 1755, '', 2, 1, 'lift', 'open') ;
+INSERT INTO "EDGES" VALUES (1060, 2453, '', 5, 4, 'lift', 'open') ;
+INSERT INTO "EDGES" VALUES (1070, 1223, '', 13, 14, 'lift', 'open') ;
+INSERT INTO "EDGES" VALUES (1071, 1151, '', 14, 15, 'lift', 'open') ;
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 12: ](Reset preview of the graph)]
+
+Go back to Graph Viewer and click on **Reset Graph**.
+
+> Note, that the rendering of graph's nodes and edges is different every time
+
+![Open Graph Viewer](80b.png)
+
+You should see lift connections in both directions now.
+
+[DONE]
+[ACCORDION-END]
 ---

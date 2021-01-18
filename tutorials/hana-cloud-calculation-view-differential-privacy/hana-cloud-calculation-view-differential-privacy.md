@@ -1,5 +1,5 @@
 ---
-title: Create a Calculation View with Differential Privacy
+title: Create a Calculation View with Differential Privacy in HANA Cloud
 description: Use differential privacy to anonymize confidential data
 time: 20
 author_name: Thomas Jung
