@@ -77,30 +77,32 @@ Here are a few benefits of using SAP HANA Cloud:
 
 1. >To complete the tutorials in this mission, an SAP HANA instance is needed. Step 3 and 5 in this tutorial provide two different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.
 
-Continue on with this tutorial once you have created an SAP HANA Cloud trial instance as shown below.
+    Continue on with this tutorial once you have created an SAP HANA Cloud trial instance as shown below.
 
-!![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
+    !![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
 
-The instructions on how to setup a free SAP HANA Cloud trial within the SAP Cloud Platform are well covered in a number of other sources listed below.  
+    The instructions on how to setup a free SAP HANA Cloud trial within the SAP Cloud Platform are well covered in a number of other sources listed below.  
 
-  * [Help Thomas Get Started with SAP HANA](https://developers.sap.com/tutorials/hana-trial-advanced-analytics.html)
+    * [Help Thomas Get Started with SAP HANA](https://developers.sap.com/tutorials/hana-trial-advanced-analytics.html)
 
-  * [Getting Started with your trial of SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/)
+    * [Getting Started with your trial of SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/)
 
-  * [SAP HANA Cloud Trial](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/latest/en-US/96b0fa04bf2b4fd6a8b210eb9fb18332.html)
+    * [SAP HANA Cloud Trial](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/latest/en-US/96b0fa04bf2b4fd6a8b210eb9fb18332.html)
 
-  For more information on the SAP Cloud Platform see the following:
+    For more information on the SAP Cloud Platform see the following:
 
-  * [https://cloudplatform.sap.com/index.html](https://cloudplatform.sap.com/index.html)  
+    * [https://cloudplatform.sap.com/index.html](https://cloudplatform.sap.com/index.html)  
 
-  * [https://developers.sap.com/topics/cloud-platform.html](https://developers.sap.com/topics/cloud-platform.html)  
+    * [https://developers.sap.com/topics/cloud-platform.html](https://developers.sap.com/topics/cloud-platform.html)  
 
-  * [https://help.sap.com/viewer/product/CP/Cloud/en-US](https://help.sap.com/viewer/product/CP/Cloud/en-US)
+    * [https://help.sap.com/viewer/product/CP/Cloud/en-US](https://help.sap.com/viewer/product/CP/Cloud/en-US)
 
     Once the SAP HANA Cloud instance is created, take note of the endpoint (host:port) needed to connect to the database.  The endpoint can be obtained via the copy menu item.  This will be needed in subsequent tutorials in this mission.  
 
     ![SQL Endpoint](SQLEndpoint.png)
+
+    >Note that the SAP HANA Cloud, HANA database trial instances are shut down overnight and will need to be restarted before working with them the next day.  
 
 2. Open the SAP HANA database explorer by choosing **Actions > Open SAP HANA Database Explorer** from the landscape tool.
 

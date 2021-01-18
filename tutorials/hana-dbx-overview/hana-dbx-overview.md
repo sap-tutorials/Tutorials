@@ -103,25 +103,27 @@ The SAP Software download links (requires an S-User ID to access) below are for 
 
 >To complete the tutorials in this group, an SAP HANA instance is needed. Step 3 and 4 in this tutorial provide two different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.
 
-Continue on to the next tutorial in this group once you have created an SAP HANA Cloud trial instance as shown below.
+    Continue on to the next tutorial in this group once you have created an SAP HANA Cloud trial instance as shown below.
 
-!![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
+    !![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
-The instructions on how to setup a free SAP HANA Cloud trial within the SAP Cloud Platform are well covered in a number of other sources listed below.  
+    >Note that the SAP HANA Cloud trial instances are shut down overnight and will need to be restarted before working with them the next day.
 
-  * [Help Thomas Get Started with SAP HANA](https://developers.sap.com/tutorials/hana-trial-advanced-analytics.html)
+    The instructions on how to setup a free SAP HANA Cloud trial within the SAP Cloud Platform are well covered in a number of other sources listed below.  
 
-  * [Getting Started with your trial of SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/)
+    * [Help Thomas Get Started with SAP HANA](https://developers.sap.com/tutorials/hana-trial-advanced-analytics.html)
 
-  * [SAP HANA Cloud Trial](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/latest/en-US/96b0fa04bf2b4fd6a8b210eb9fb18332.html)
+    * [Getting Started with your trial of SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/)
 
-  For more information on the SAP Cloud Platform see the following:
+    * [SAP HANA Cloud Trial](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/latest/en-US/96b0fa04bf2b4fd6a8b210eb9fb18332.html)
 
-  * [https://cloudplatform.sap.com/index.html](https://cloudplatform.sap.com/index.html)  
+    For more information on the SAP Cloud Platform see the following:
 
-  * [https://developers.sap.com/topics/cloud-platform.html](https://developers.sap.com/topics/cloud-platform.html)  
+    * [https://cloudplatform.sap.com/index.html](https://cloudplatform.sap.com/index.html)  
 
-  * [https://help.sap.com/viewer/product/CP/Cloud/en-US](https://help.sap.com/viewer/product/CP/Cloud/en-US)
+    * [https://developers.sap.com/topics/cloud-platform.html](https://developers.sap.com/topics/cloud-platform.html)  
+
+    * [https://help.sap.com/viewer/product/CP/Cloud/en-US](https://help.sap.com/viewer/product/CP/Cloud/en-US)
 
 
 [DONE]
