@@ -11,7 +11,7 @@ time: 50
 
 
 ## Prerequisites
-- You've installed [Node.js](https://nodejs.org/en/download/releases/). Use long-term support (LTS) version 10 or 12. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
+- You've installed [Node.js](https://nodejs.org/en/download/releases/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
 - You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
 - (For Windows users only) You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/resources/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation.
 - You've installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
