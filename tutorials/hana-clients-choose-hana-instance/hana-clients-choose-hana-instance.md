@@ -84,7 +84,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
     The instructions on how to setup a free SAP HANA Cloud trial within the SAP Cloud Platform are well covered in a number of other sources listed below.  
 
-    * [Help Thomas Get Started with SAP HANA](https://developers.sap.com/tutorials/hana-trial-advanced-analytics.html)
+    * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
 
     * [Getting Started with your trial of SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/)
 
