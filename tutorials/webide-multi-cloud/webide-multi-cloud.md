@@ -2,18 +2,23 @@
 title: Open SAP Web IDE for SAP HANA Development
 description: Access SAP Web IDE Full-Stack from your browser.
 primary_tag: products>sap-web-ide
-author_name: Marius Obert
-author_profile: https://github.com/iobert
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 auto_validation: true
-tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide  ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide, tutorial>license]
 time: 10
 ---
+
+## Prerequisites
+ - You have a productive account with entitlement to the SAP HANA Service in Cloud Foundry
 
 ## Details
 ### You will learn  
   - How to open SAP Web IDE Full-Stack
 
-We recommend SAP Web IDE, an SAP Cloud Platform service, to model data for SAP HANA. In this tutorial, you'll locate it and access it, all from your browser, without needing to install anything.
+>**This tutorial cannot currently be completed with a trial account.**
+
+In this tutorial, you'll locate the SAP Web IDE and access it, all from your browser, without needing to install anything.
 
 ---
 
@@ -21,23 +26,17 @@ We recommend SAP Web IDE, an SAP Cloud Platform service, to model data for SAP H
 
 [ACCORDION-BEGIN [Step: ](Log into SAP Cloud Platform)]
 
-1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
+1. Go to <https://account.hana.ondemand.com/#/home/welcome> and log in to your SAP Cloud Platform cockpit.
 
-2. Click on "Enter Your Access Trial Account" to access the Cloud Foundry environment.
-
-    !![accesstrial](accesstrial.png)
-
-3. Navigate to your **trial subaccount**.
+2. Navigate to your **global account** and then **subaccount**.
 
     !![subaccount](subaccount.png)
-
-
 
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Verify that the SAP Web IDE entitlement is in place)]
 
-Select **Entitlements** on the left-hand menu to see all entitlements that are assigned to this subaccount. Locate the **`SAP Web IDE for HANA development`** entitlement from this list.
+Select **Entitlements** on the left-hand menu to see all entitlements that are assigned to this subaccount. Locate the **`SAP Web IDE`** entitlement from this list.
 
 !![webideEntitlement](webideEntitlement.png)
 
@@ -54,7 +53,7 @@ Select **Entitlements** on the left-hand menu to see all entitlements that are a
 2. This detail page will show you a service description and provide you with a link to the service documentation. Click the blue button to **Subscribe** to this service.
 
     !![subscribe](subscribe.png)
-3.  Click on **Go to Application** to open  SAP Web IDE for HANA development.
+3.  Click on **Go to Application** to open  SAP Web IDE.
 
     !![goto](gotoapp.png)
 

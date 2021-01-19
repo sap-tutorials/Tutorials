@@ -198,7 +198,7 @@
     },
     {
       "name": "SAP Cloud SDK",
-      "value": "products>sap-s-4hana-cloud-sdk"
+      "value": "products>sap-cloud-sdk"
     },
     {
       "name": "SAP Conversational AI",

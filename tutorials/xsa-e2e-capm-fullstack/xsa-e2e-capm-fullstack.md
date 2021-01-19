@@ -1,16 +1,17 @@
 ---
 title: Create an application using SAP HANA and the Cloud Application Programming model
 description: Use SAP Web IDE and the Cloud Application Business wizard
-auto_validation: true
+auto_validation:
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 time: 25
-tags: [ tutorial>beginner, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform--sap-hana-service
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
+primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You have [created a trial account in SAP Cloud Platform in region `EU10`](hcp-create-trial-account)
- - You have [enabled SAP Web IDE Full stack](webide-multi-cloud)
- - You have enabled the extensions for SAP HANA, Business Applications Development tools and SAP HANA under `Preferences -> Extensions`
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
+ - [Getting started with SAP HANA, XS Advanced Development](https://developers.sap.com/group.hana-xsa-get-started.html) 
 
 ## Details
 ### You will learn

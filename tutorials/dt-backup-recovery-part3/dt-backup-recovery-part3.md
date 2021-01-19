@@ -1,27 +1,22 @@
 ---
 title: Database Recovery With HANA Dynamic Tiering
-description: Recovering Databases with Dynamic Tiering
+description: Recover databases with Dynamic Tiering.
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio ]
+time: 15
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
  - **Tutorials** [Creating Database Backups](https://www.sap.com/)
  - **Credentials:** Have access to the SYSTEM user of  `SystemDB` and "`<SID>adm`" for a SSH session on the HANA hosts.
 
-
-## Next Steps
-  - **Tutorials** [Reviewing Available Backups](https://www.sap.com/)
 
 ## Details
 ### You will learn
 - How to choose which type of recovery to perform
 - How to select backup location and prefixes
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -75,13 +70,21 @@ It will then present the "**Review Recovery Settings**" window. If the informati
 ![Review Recovery Settings](review-recovery-settings.png)
 
 You can now view the recovery being performed for both Dynamic Tiering and the core HANA host.
+
 > Note: To perform recovery, you should have the same or higher version of SAP HANA installed as the version used to create the BACKUP
 
 ![Data Recovery Performance](watch-data-recovery.png)
 
 Once the recovery process completes, the Recovery Execution Summary screen will be displayed.
+
 ![Data Recovery Summary](recovery-summary.png)
 
-[VALIDATE_1]
 
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 2: ](Test yourself)]
+
+[VALIDATE_1]
 [ACCORDION-END]

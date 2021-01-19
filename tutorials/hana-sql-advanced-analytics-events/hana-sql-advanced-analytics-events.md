@@ -2,12 +2,15 @@
 title: Explore food using Advanced Analytics in SAP HANA
 description: Use predictive and advanced analytics to gain insights on commercial food items
 time: 45
-tags: [ tutorial>beginner, products>sap-hana]
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
 primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
  - You are attending a hands-on event with a live instructor
+ - You have access to SAP HANA on premise or SAP HANA Express -- This tutorial will not work with HANA Cloud
  - The instructor has provided you with log in directions
 
 ## Details
