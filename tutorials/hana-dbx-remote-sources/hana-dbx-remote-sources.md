@@ -73,6 +73,10 @@ For additional details on SAP HANA Smart Data Access (SDA) and SAP HANA Smart Da
 
      ![Add remote source](add_remote_source.png)
 
+     Specify the server, port, extra adapter properties, and credentials (User1, Password1).
+
+     ![Add remote source properties](AddRemoteSource2.png)
+
     Alternatively, in a SQL console, enter the SQL statement below after adjusting the `ServerNode`.  
 
     ```SQL
@@ -88,6 +92,7 @@ For additional details on SAP HANA Smart Data Access (SDA) and SAP HANA Smart Da
     >If the above command fails, one reason might be that an allowlist has been set on the SAP HANA Cloud instance.  This can be seen by choosing **Actions > Edit**.
     >
     >![allowlist](allowlist.png)
+
     >---
 
     >The public root certificate of the certificate authority (CA) that signed the SAP HANA Cloud instance's server certificate is required in the `sslTrustStore` parameter.  For more information, see [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/cloud/en-US/dbd3d887bb571014bf05ca887f897b99.html).
@@ -132,10 +137,8 @@ In this step, a virtual table named `vt_tourist_reviews` will be created in SAP 
     >Alternatively, the virtual table can also be created with the SQL statement below.
     >
     ```SQL
-    CREATE VIRTUAL TABLE HOTEL.VT_TOURIST_REVIEWS2 AT "REMOTE_HC"."Dans_HC_Trial_US-hana"."HOTEL"."TOURIST_REVIEWS";
+    CREATE VIRTUAL TABLE HOTEL.VT_TOURIST_REVIEWS AT "REMOTE_HC"."Dans_HC_Trial_US-hana"."HOTEL"."TOURIST_REVIEWS";
     ```
-
-
 
 5. Open the virtual table `VT_TOURIST_REVIEWS` and notice that its type is virtual.
 

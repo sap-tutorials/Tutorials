@@ -24,24 +24,28 @@ The following steps will demonstrate a few ways to export and import data such a
 
 [ACCORDION-BEGIN [Step 1: ](Export and import data)]
 
-The following table list the different options available in the SAP HANA Cloud database explorer to export and import data from a single table or view.  Step 3 will cover import and export of catalog objects which can include the SQL to recreate the object as well as additional objects such as functions and procedures.
+The following tables list the different options available in the SAP HANA database explorer to export and import data from a single table or view.  Step 3 will cover import and export of catalog objects which can include the SQL to recreate the object as well as additional objects such as functions and procedures.
 
-| Method                  | Target/Source              | Format(s)       | Limitations |
-| ------------------------|------------------------| ----------------| ------------|
-| Export from SQL Console | local computer         | CSV             | SQL Console setting max number of rows to display|
-| \*[Export data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/97e8ec0306eb4a12a4fd72de8bdd6a62.html)    | S3, Azure, Alibaba OSS | CSV, Parquet    | |
-| \*[Export into statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)   | S3, Azure, Alibaba OSS | CSV, Parquet    |  |
-| \*\*[Export into statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)   | SAP HANA file system    | CSV | |
-| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)      | local computer         | CSV             | \*\* 2 GB max, 1 MB per col, \* 200 MB max |
-| \*[Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)      | S3, Azure, Alibaba OSS | CSV, Parquet    | Target table must exist |
-| \*[Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)      | local computer         | `ESRI shapefiles` | Archive must be a tar.gz |
-| \*\* [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)      | SAP HANA file system         | CSV             |  |
-| \*[Import from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f712e175191014907393741fadcb97.html) | S3, Azure, Alibaba OSS | CSV, Parquet    | Target table must exist |
-| \*\*[Import from statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA file system    | CSV | Target table must exist |
+Methods to export tables or views
 
-> \* HANA Cloud only
+| Method  | Version       | Target                 | Format(s)      |
+| ------- | -------------|------------------------| ----------------|
+| Export from SQL Console | All | local computer         | CSV      |
+| [Export data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/97e8ec0306eb4a12a4fd72de8bdd6a62.html)   | SAP HANA Cloud, HANA database  | S3, Azure, Alibaba OSS | CSV, Parquet    |
+| [Export into statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA Cloud, HANA database  | S3, Azure, Alibaba OSS | CSV, Parquet    |  
+| [Export into statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA on-premise  | SAP HANA file system    | CSV |
 
-> ** HANA on-premise only
+Methods to import into tables
+
+| Method  | Version       | Source          | Format(s)       | Notes |
+| ------- | -------------|------------------------| ----------------| ------------|
+| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | All    | local computer         | CSV             | 2 GB max, 1 MB per col |
+| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA Cloud, HANA database    | S3, Azure, Alibaba OSS | CSV, Parquet    | |
+| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)    | SAP HANA Cloud, HANA database   | local computer         | `ESRI shapefiles` | Archive must be a tar.gz |
+| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA on-premise    | SAP HANA file system         | CSV             | Target table can be created |
+| [Import from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA Cloud, HANA database | S3, Azure, Alibaba OSS | CSV, Parquet    | |
+| [Import from statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA on-premise  | SAP HANA file system    | CSV |  |
+| [Insert into table name select from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/2020_04_QRC/en-US/20f7f70975191014a76da70c9181720e.html) | All  | local or remote tables  | select statement |  |
 
 > Export and import using cloud storage from Amazon, Microsoft Azure and Alibaba Cloud is covered in the final step of this tutorial.
 
@@ -95,7 +99,7 @@ The following steps will attempt to demonstrate some of these options.
 
     ![Export Data Wizard](exportDataWizard.png)
 
-    It can be used to export data to cloud storage providers such as Amazon S3, Microsoft Azure, and Alibaba Cloud OSS.  Additionally, the SAP Cloud Platform offers an [object store](https://help.sap.com/viewer/product/ObjectStore/Cloud/en-US).  A detailed example of the setup and usage of a cloud storage provider will be provided later in this tutorial.
+    It can be used to export data to cloud storage providers such as Amazon S3, Microsoft Azure, and Alibaba Cloud OSS.  Additionally, the SAP Cloud Platform offers an [object store](https://help.sap.com/viewer/product/ObjectStore/Cloud/en-US).  A detailed example of the setup and usage of a cloud storage provider will be provided in Step 5 of this tutorial.
 
     ![Export Data Wizard](exportDataWizard2.png)
 
@@ -128,11 +132,13 @@ The following steps will attempt to demonstrate some of these options.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Import ESRI shapefiles)]
+[ACCORDION-BEGIN [Step 3: ](Import ESRI shapefiles (optional))]
 
 This step will import an `ESRI shapefile` containing points of interest near the `Bella Ciente` hotel in the city of `Longview` Texas.  A search can then be performed to return the 3 closest golf courses to the hotel.
 
-1. At the [ARCGIS Hub](https://hub.arcgis.com/search), search for `**City of Longview; Points of Interest**`.
+>At this time, the import option in the import wizard for `ESRI shapefiles` is only available in the SAP HANA Cloud, HANA database.
+
+1. At the [ARCGIS Hub](https://hub.arcgis.com/search), search for **`Points of Interest in and around Longview, Texas`**.
 
     ![Search](search.png)
 
@@ -162,10 +168,11 @@ This step will import an `ESRI shapefile` containing points of interest near the
 
     Additional details on spatial reference systems can be found at [SAP HANA Spatial Reference for SAP HANA Cloud](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a2ea357787c101488ecd1b725836f07.html).
 
-6. The following query shows the 3 closest golf courses to the `Bella Cliente` hotel.
+6. The following statements rename the imported table and then show the 3 closest golf courses to the `Bella Cliente` hotel.
 
     ```SQL
-    select TOP 3 NAME, ADDRESS, LINKED_URL, /* Bella Ciente location */ NEW ST_Point('POINT (-94.71868866754436 32.504451132677)', 4326).ST_Distance(NEW ST_Point(SHAPE.ST_AsWKT(), 4326), 'kilometer') * 0.621371 as dist from HOTEL."Points_of_Interest" WHERE FCODE = 'GOLF COURSE' order by dist;
+    RENAME TABLE "HOTEL"."Points_of_Interest" TO HOTEL.POI_LONGVIEW;
+    SELECT TOP 3 NAME, ADDRESS, LINKED_URL, /* Bella Ciente location */ NEW ST_Point('POINT (-94.71868866754436 32.504451132677)', 4326).ST_Distance(NEW ST_Point(SHAPE.ST_AsWKT(), 4326), 'kilometer') * 0.621371 as dist from HOTEL.POI_LONGVIEW WHERE FCODE = 'GOLF COURSE' order by dist;
     ```
 
     ![golf query](golfCourses.png)
@@ -182,26 +189,32 @@ This step will import an `ESRI shapefile` containing points of interest near the
 
 [ACCORDION-BEGIN [Step 4: ](Export and import schema or catalog objects)]
 
-The following table list the different options available in the SAP HANA Cloud database explorer to export and import catalog objects.
+The following tables list the different options available in the SAP HANA database explorer to export and import catalog objects.
 
-| Method                  | Source/Target                             | Format(s)                             | Limitations |
-| ------------------------|----------------------------------------|---------------------------------------|-------------|
-| [Export catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/1f20a6c4364c4b0680596e74e4ba281d.html)   | Local computer | CSV, Binary, \*Parquet | 2 GB max per object when the target is local computer, \*\*\* |
-| \*[Export catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/1f20a6c4364c4b0680596e74e4ba281d.html)   | S3, Azure, Alibaba OSS | CSV, Binary, Parquet | \*\*\* |
-| \*\*[Export catalog wizard](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/1f20a6c4364c4b0680596e74e4ba281d.html)   | SAP HANA file system | CSV, Binary | \*\*\* |
-| \* [Export statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html)        | S3, Azure, Alibaba OSS                 | CSV, Binary, Parquet |  |
-| \*\* [Export statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html)        | HANA file system                 | CSV, Binary data | \*\*\* |
-| [Import catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/80f63855e7854cd3a6144e0021b5f748.html)   | Local computer | CSV, Binary                          | 1 GB Max when the source is local computer, \*\*\* |
-| \*[Import catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/80f63855e7854cd3a6144e0021b5f748.html)   | S3, Azure, Alibaba OSS  | CSV, Binary, Parquet                          | \*\*\* |
-| \*\*[Import catalog wizard](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/80f63855e7854cd3a6144e0021b5f748.html)   | SAP HANA file system | CSV, Binary                | 2 GB max per object,  \*\*\* |
-| \*[Import statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html)        | S3, Azure, Alibaba OSS                 | CSV, Binary,  Parquet                          | \*\*\* |
-| \*\* [Import statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f75ade751910148492a90e5e375b8f.html)        | SAP HANA file system       | CSV, Binary                        | \*\*\* |
+Methods to export catalog objects
 
-> \* HANA Cloud only
+| Method                  | Version | Target                             | Format(s)                             | Limitations |
+| ------------------------|---------|-------------------------------|---------------------------------------|-------------|
+| [Export catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/1f20a6c4364c4b0680596e74e4ba281d.html) | All | Local computer | CSV, Binary, \*Parquet | 2 GB max, \*\* |
+| [Export catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/1f20a6c4364c4b0680596e74e4ba281d.html)  | SAP HANA Cloud, HANA database | S3, Azure, Alibaba OSS | CSV, Binary, Parquet | \*\* |
+| [Export catalog wizard](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/1f20a6c4364c4b0680596e74e4ba281d.html)  | SAP HANA on-premise | SAP HANA file system | CSV, Binary | \*\* |
+| [Export statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA Cloud, HANA database  | S3, Azure, Alibaba OSS                 | CSV, Binary, Parquet |  |
+| [Export statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA on-premise     | HANA file system                 | CSV, Binary data | \*\* |
 
-> \*\* HANA on-premise only
 
-> \*\*\* Max file size in archive is 8 GB, see SAP Note [2907201](https://launchpad.support.sap.com/#/notes/2907201).
+Methods to import catalog objects
+
+| Method                  | Version | Source                             | Format(s)                             | Limitations |
+| ------------------------|---------|-------------------------------|---------------------------------------|-------------|
+| [Import catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/80f63855e7854cd3a6144e0021b5f748.html) | All  | Local computer | CSV, Binary   | 2 GB max, \*\* |
+| [Import catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/80f63855e7854cd3a6144e0021b5f748.html)  | SAP HANA Cloud, HANA database  | S3, Azure, Alibaba OSS  | CSV, Binary, Parquet                          | \*\* |
+| [Import catalog wizard](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/80f63855e7854cd3a6144e0021b5f748.html)  | SAP HANA on-premise | SAP HANA file system | CSV, Binary                | 2 GB max per object,  \*\* |
+| [Import statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA Cloud, HANA database | S3, Azure, Alibaba OSS                 | CSV, Binary,  Parquet                          | \*\* |
+| [Import statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f75ade751910148492a90e5e375b8f.html) | SAP HANA on-premise | SAP HANA file system       | CSV, Binary                        | \*\* |
+
+> \* SAP HANA Cloud, HANA database only
+
+> \*\* Max file size in archive is 8 GB (SAP Note [2907201](https://launchpad.support.sap.com/#/notes/2907201)).
 
 > Export and import using cloud storage from Amazon, Microsoft Azure and Alibaba Cloud is covered in the final step of this tutorial.
 

@@ -107,9 +107,11 @@ Continue on to the next tutorial in this group once you have created an SAP HANA
 
 !![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
+>Note that the SAP HANA Cloud trial instances are shut down overnight and will need to be restarted before working with them the next day.
+
 The instructions on how to setup a free SAP HANA Cloud trial within the SAP Cloud Platform are well covered in a number of other sources listed below.  
 
-  * [Help Thomas Get Started with SAP HANA](https://developers.sap.com/tutorials/hana-trial-advanced-analytics.html)
+  * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
 
   * [Getting Started with your trial of SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/)
 
@@ -117,11 +119,11 @@ The instructions on how to setup a free SAP HANA Cloud trial within the SAP Clou
 
   For more information on the SAP Cloud Platform see the following:
 
-  * [https://cloudplatform.sap.com/index.html](https://cloudplatform.sap.com/index.html)  
+  * <https://cloudplatform.sap.com/index.html>
 
-  * [https://developers.sap.com/topics/cloud-platform.html](https://developers.sap.com/topics/cloud-platform.html)  
+  * <https://developers.sap.com/topics/cloud-platform.html>
 
-  * [https://help.sap.com/viewer/product/CP/Cloud/en-US](https://help.sap.com/viewer/product/CP/Cloud/en-US)
+  * <https://help.sap.com/viewer/product/CP/Cloud/en-US>
 
 
 [DONE]

@@ -48,6 +48,12 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 
         > ![screenshot showing the allowlist](allowlist.png)
 
+        >---
+
+        >The SAP HANA Cloud, HANA database trial instance will be automatically stopped overnight.   That means you need to restart your instance before working with it each new day.
+
+        >---
+
         > If you are on a Linux or Mac machine and the hdbsql connection fails with the error message below, it indicates that the client could not locate a trust store in the default location.  
         >
         >_Cannot create SSL context:  SSL trust store cannot be found: `/Users/user1/.ssl/trust.pem`_
@@ -247,6 +253,34 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     	performed_by VARCHAR(40)
     );
 
+    CREATE OR REPLACE PROCEDURE HOTEL.SHOW_RESERVATIONS(
+  	IN IN_HNO INTEGER, IN IN_ARRIVAL DATE)
+  	SQL SECURITY INVOKER
+  	READS SQL DATA
+  	AS BEGIN
+  		SELECT
+  			R.RESNO,
+  			R.ARRIVAL,
+  			DAYS_BETWEEN (R.ARRIVAL, R.DEPARTURE) as "Nights",
+  			H.NAME,
+  			CUS.TITLE,
+  			CUS.FIRSTNAME AS "FIRST NAME",
+  			CUS.NAME AS "LAST NAME"
+  		FROM
+  			HOTEL.RESERVATION AS R
+  			LEFT OUTER JOIN
+  			HOTEL.HOTEL AS H
+  			ON H.HNO = R.HNO
+  			LEFT OUTER JOIN
+  			HOTEL.CUSTOMER AS CUS
+  			ON CUS.CNO = R.CNO
+  			WHERE R.ARRIVAL = :IN_ARRIVAL AND
+  			H.HNO = :IN_HNO
+  		ORDER BY
+  			H.NAME ASC,
+  			R.ARRIVAL DESC;
+    END;
+
     INSERT INTO hotel.hotel VALUES(10, 'Congress', '155 Beechwood St.', 'Seattle', 'WA', '20005');
     INSERT INTO hotel.hotel VALUES(11, 'Regency', '477 17th Avenue', 'Seattle', 'WA', '20037');
     INSERT INTO hotel.hotel VALUES(12, 'Long Island', '1499 Grove Street', 'Long Island', 'NY', '11788');
@@ -267,15 +301,10 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     INSERT INTO hotel.room VALUES(10, 'single', 20, 135.00);
     INSERT INTO hotel.room VALUES(10, 'double', 45, 200.00);
-    INSERT INTO hotel.room VALUES(13, 'single', 12, 45.00);
-    INSERT INTO hotel.room VALUES(13, 'double', 15, 80.00);
     INSERT INTO hotel.room VALUES(12, 'single', 10, 70.00);
     INSERT INTO hotel.room VALUES(12, 'double', 13, 100.00);
-    INSERT INTO hotel.room VALUES(17, 'single', 4, 115.00);
-    INSERT INTO hotel.room VALUES(17, 'double', 11, 180.00);
-    INSERT INTO hotel.room VALUES(18, 'single', 15, 90.00);
-    INSERT INTO hotel.room VALUES(18, 'double', 19, 150.00);
-    INSERT INTO hotel.room VALUES(18, 'suite', 5, 400.00);
+    INSERT INTO hotel.room VALUES(13, 'single', 12, 45.00);
+    INSERT INTO hotel.room VALUES(13, 'double', 15, 80.00);
     INSERT INTO hotel.room VALUES(14, 'single', 20, 85.00);
     INSERT INTO hotel.room VALUES(14, 'double', 35, 140.00);
     INSERT INTO hotel.room VALUES(15, 'single', 50, 105.00);
@@ -284,6 +313,11 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     INSERT INTO hotel.room VALUES(16, 'single', 10, 120.00);
     INSERT INTO hotel.room VALUES(16, 'double', 39, 200.00);
     INSERT INTO hotel.room VALUES(16, 'suite', 20, 500.00);
+    INSERT INTO hotel.room VALUES(17, 'single', 4, 115.00);
+    INSERT INTO hotel.room VALUES(17, 'double', 11, 180.00);
+    INSERT INTO hotel.room VALUES(18, 'single', 15, 90.00);
+    INSERT INTO hotel.room VALUES(18, 'double', 19, 150.00);
+    INSERT INTO hotel.room VALUES(18, 'suite', 5, 400.00);
     INSERT INTO hotel.room VALUES(19, 'single', 45, 90.00);
     INSERT INTO hotel.room VALUES(19, 'double', 145, 150.00);
     INSERT INTO hotel.room VALUES(19, 'suite', 60, 300.00);
@@ -319,12 +353,12 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     INSERT INTO hotel.customer VALUES(1012, 'Mr', 'Joseph', 'Peters', '700 S. Ash St., APT.12', '92714');
     INSERT INTO hotel.customer VALUES(1013, 'Company', NULL, 'TOOLware', '410 Mariposa St., #10', '20019');
     INSERT INTO hotel.customer VALUES(1014, 'Mr', 'Antony', 'Jenkins', '55 A Parkway, #15', '20903');
-    INSERT INTO hotel.reservation VALUES(1, 100, 1000, 18, 'single', '2019-11-13', '2019-11-15');
-    INSERT INTO hotel.reservation VALUES(2, 110, 1001, 20, 'double', '2019-12-24', '2020-01-06');
+    INSERT INTO hotel.reservation VALUES(1, 100, 1000, 11, 'single', '2020-12-24', '2020-12-27');
+    INSERT INTO hotel.reservation VALUES(2, 110, 1001, 11, 'double', '2020-12-24', '2021-01-03');
     INSERT INTO hotel.reservation VALUES(3, 120, 1002, 15, 'suite', '2004-11-14', '2004-11-18');
     INSERT INTO hotel.reservation VALUES(4, 130, 1009, 21, 'single', '2019-02-01', '2019-02-03');
     INSERT INTO hotel.reservation VALUES(5, 150, 1006, 17, 'double', '2019-03-14', '2019-03-24');
-    INSERT INTO hotel.reservation VALUES(6, 140, 1013, 18, 'double', '2004-04-12', '2004-04-30');
+    INSERT INTO hotel.reservation VALUES(6, 140, 1013, 20, 'double', '2004-04-12', '2004-04-30');
     INSERT INTO hotel.reservation VALUES(7, 160, 1011, 17, 'single', '2004-04-12', '2004-04-15');
     INSERT INTO hotel.reservation VALUES(8, 170, 1014, 25, 'suite', '2004-09-01', '2004-09-03');
     INSERT INTO hotel.reservation VALUES(9, 180, 1001, 22, 'double', '2004-12-23', '2005-01-08');

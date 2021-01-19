@@ -33,6 +33,12 @@ The following steps will create sample objects for a hotel database using create
 
     For additional details see on creating users see [CREATE USER Statement (Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5ddb075191014b594f7b11ff08ee2.html).
 
+    > With SAP HANA Cloud, HANA database, if the DBAdmin user has privileges on more than one USERGROUP, then it must be specified which USERGROUP USER1 will be added to as shown below.
+
+    >```SQL
+    CREATE USER USER1 PASSWORD Password1 no force_first_password_change SET USERGROUP DEFAULT;
+    ```
+
 
     >The following statement deletes the user in case it already exists or if you wish to remove the user after completing the group.  Make sure you really wish to delete USER1 and the objects it owns before proceeding, as this operation cannot be undone.
 
@@ -141,15 +147,10 @@ The following steps will create sample objects for a hotel database using create
 
     INSERT INTO hotel.room VALUES(10, 'single', 20, 135.00);
     INSERT INTO hotel.room VALUES(10, 'double', 45, 200.00);
-    INSERT INTO hotel.room VALUES(13, 'single', 12, 45.00);
-    INSERT INTO hotel.room VALUES(13, 'double', 15, 80.00);
     INSERT INTO hotel.room VALUES(12, 'single', 10, 70.00);
     INSERT INTO hotel.room VALUES(12, 'double', 13, 100.00);
-    INSERT INTO hotel.room VALUES(17, 'single', 4, 115.00);
-    INSERT INTO hotel.room VALUES(17, 'double', 11, 180.00);
-    INSERT INTO hotel.room VALUES(18, 'single', 15, 90.00);
-    INSERT INTO hotel.room VALUES(18, 'double', 19, 150.00);
-    INSERT INTO hotel.room VALUES(18, 'suite', 5, 400.00);
+    INSERT INTO hotel.room VALUES(13, 'single', 12, 45.00);
+    INSERT INTO hotel.room VALUES(13, 'double', 15, 80.00);
     INSERT INTO hotel.room VALUES(14, 'single', 20, 85.00);
     INSERT INTO hotel.room VALUES(14, 'double', 35, 140.00);
     INSERT INTO hotel.room VALUES(15, 'single', 50, 105.00);
@@ -158,6 +159,11 @@ The following steps will create sample objects for a hotel database using create
     INSERT INTO hotel.room VALUES(16, 'single', 10, 120.00);
     INSERT INTO hotel.room VALUES(16, 'double', 39, 200.00);
     INSERT INTO hotel.room VALUES(16, 'suite', 20, 500.00);
+    INSERT INTO hotel.room VALUES(17, 'single', 4, 115.00);
+    INSERT INTO hotel.room VALUES(17, 'double', 11, 180.00);
+    INSERT INTO hotel.room VALUES(18, 'single', 15, 90.00);
+    INSERT INTO hotel.room VALUES(18, 'double', 19, 150.00);
+    INSERT INTO hotel.room VALUES(18, 'suite', 5, 400.00);
     INSERT INTO hotel.room VALUES(19, 'single', 45, 90.00);
     INSERT INTO hotel.room VALUES(19, 'double', 145, 150.00);
     INSERT INTO hotel.room VALUES(19, 'suite', 60, 300.00);
@@ -194,12 +200,12 @@ The following steps will create sample objects for a hotel database using create
     INSERT INTO hotel.customer VALUES(1013, 'Company', NULL, 'TOOLware', '410 Mariposa St., #10', '20019');
     INSERT INTO hotel.customer VALUES(1014, 'Mr', 'Antony', 'Jenkins', '55 A Parkway, #15', '20903');
 
-    INSERT INTO hotel.reservation VALUES(1, 100, 1000, 18, 'single', '2019-11-13', '2019-11-15');
-    INSERT INTO hotel.reservation VALUES(2, 110, 1001, 20, 'double', '2019-12-24', '2020-01-06');
+    INSERT INTO hotel.reservation VALUES(1, 100, 1000, 11, 'single', '2020-12-24', '2020-12-27');
+    INSERT INTO hotel.reservation VALUES(2, 110, 1001, 11, 'double', '2020-12-24', '2021-01-03');
     INSERT INTO hotel.reservation VALUES(3, 120, 1002, 15, 'suite', '2004-11-14', '2004-11-18');
     INSERT INTO hotel.reservation VALUES(4, 130, 1009, 21, 'single', '2019-02-01', '2019-02-03');
     INSERT INTO hotel.reservation VALUES(5, 150, 1006, 17, 'double', '2019-03-14', '2019-03-24');
-    INSERT INTO hotel.reservation VALUES(6, 140, 1013, 18, 'double', '2004-04-12', '2004-04-30');
+    INSERT INTO hotel.reservation VALUES(6, 140, 1013, 20, 'double', '2004-04-12', '2004-04-30');
     INSERT INTO hotel.reservation VALUES(7, 160, 1011, 17, 'single', '2004-04-12', '2004-04-15');
     INSERT INTO hotel.reservation VALUES(8, 170, 1014, 25, 'suite', '2004-09-01', '2004-09-03');
     INSERT INTO hotel.reservation VALUES(9, 180, 1001, 22, 'double', '2004-12-23', '2005-01-08');
