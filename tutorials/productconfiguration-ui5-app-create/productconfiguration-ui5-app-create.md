@@ -1,4 +1,6 @@
 ---
+author_name: Angelica Rodriguez
+author_profile: https://github.com/angelicarodriguezv
 title: Create an SAPUI5 Application for SAP Variant Configuration and Pricing
 description: Build a basic UI5 application that loads a configuration and changes the value of one characteristic using the SAP Variant Configuration and Pricing APIs from SAP API Business Hub.
 auto_validation: true
@@ -11,8 +13,8 @@ primary_tag: products>sap-variant-configuration-and-pricing
 ## Details
 ### You will learn
   - How to use SAP API Business Hub's productivity tools for developers (like sandbox environment and code snippet generator) to easily test cloud services
-  - How to use SAP Cloud Platform's trial environment and SAP Web IDE to build a small SAPUI5 application
-  - How to orchestrate and use the different APIs of the Variant Configuration and Pricing services
+  - How to use SAP Cloud Platform's trial environment and SAP Business Application Studio to build a small SAPUI5 application
+  - How to orchestrate and use the different APIs of the variant configuration and pricing services
 
 
 
@@ -21,38 +23,76 @@ primary_tag: products>sap-variant-configuration-and-pricing
 
 [ACCORDION-BEGIN [Step 1: ](Create a cloud account)]
 
-Create a free trial account on the SAP Cloud Platform to be able to use the Web IDE. Go to [SAP Cloud Platform](https://cloudplatform.sap.com/index.html) and click on **Start your free trial**.
+Create a free trial account on the SAP Cloud Platform to be able to use the SAP Business Application Studio. Go to [SAP Cloud Platform](https://cloudplatform.sap.com/index.html) and click on **Try now / Log in** and then on **Register for Free**.
 
-![step-1-sap-cloud-platform](step-1-sap-cloud-platform.png)
+![step-1-sap-cloud-platform-2020](step-1-sap-cloud-platform-2020.png)
 
-Fill the registration form by providing you name, email and a password. Once your account is created, log in and launch SAP Web IDE.
 
-![step-1-sap-web-IDE](step-1-sap-web-IDE.png)
-Direct link: (https://account.hanatrial.ondemand.com/cockpit)
+![step-1-business-platform](step-1-business-platform.png)
+
+Fill the registration form by providing you name, email and a password. the registration is completed an option will be provided to create the account in either US or Europe, log in and press the button **Click here to start your trail!** and open SAP Business Application Studio.
+
+![step-1-SAP-business-application-studio](Step-1-SAP-Business-Application-Studio.jpg)
+
+Direct link: (https://account.hanatrial.ondemand.com/trial/#/home/trial)
+
+
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create an SAPUI5 application)]
 
-In the Web IDE, create a new application from the template by selecting **File** -> **New** -> **Project from Template**.
+In SAP Business Application Studio, click on **Create Dev Space**.
 
-![step-2-web-IDE](step-2-web-IDE.png)
+![step-2-dev-spaces](step-2-dev-spaces.png)
 
-Select the **SAPUI5 Application** template, then click **Next**.
+Enter a name like **`ProductConfigurationUI`** for the development space, choose **SAP Fiori** and click on **Create Dev Space**.
 
-![step-2-app-template](step-2-app-template.png)
+![step-2-create-a-new-dev-space](step-2-create-a-new-dev-space.png)
 
-Provide a descriptive project name and namespace, then click **Next**.
+When the status changes to **Running**, click on the space name created.
 
-![step-2-project-name](step-2-project-name.png)
+![step-2-space-name-created](step-2-space-name-created.png)
 
-You may rename the initial view, then click **Finish**.
+In the SAP Business Application Studio, create a new project from the template via menu **File** > **New Project from Template**.
 
-![step-2-finish](step-2-finish.png)
+![step-2-new-project-from-template](step-2-new-project-from-template.png)
 
-The application is now created. The configuration will be created using the API during the initialization of the form.
- Add an empty `onInit` function to the controller, /`ProductConfigurationAPITutorial` -> `webapp` -> `controller` -> `Main.controller.js`, in which the API will be called.
+Choose the template `SAP Fiori Freestyle Project` and select **Next**.
+
+Choose the target running environment `Cloud Foundry` and the **SAPUI5 Application template**, then select **Next**.
+
+![step-2-sapui5-application-template](step-2-sapui5-application-template.png)
+
+Provide a descriptive project name like **`ProductConfigurationAPITutorial`**, then select **Next**.
+
+![step-2-descriptive-project-name](step-2-descriptive-project-name.png)
+
+Select the HTML5 Application Runtime as `Standalone Approuter` and select **Next**.
+
+![step-2-standalone-approuter](step-2-standalone-approuter.png)
+
+Enter the **Basic Attributes** and select **Next**:
+
+|  Basic Attributes           
+|  :-------------      | :-------------
+|  HTML5 module name:  | **`ProductConfigurationAPITutorial`**
+|  Add authentication: | **`No`**
+|  Namespace:          | **`sap.tutorial`**
+|  Enable Karma tests: | **`No`**
+
+![step-2-basic-attributes](step-2-basic-attributes.png)
+
+You may want to rename the initial view to `Main`. Please choose `No` for the question related to data service. Then select **Next**.
+
+![step-2-view-name](step-2-view-name.png)
+
+The application is now created. It can be opened in a new workspace.
+
+![step-2-open-in-new-space](step-2-open-in-new-space.png)
+
+The application will call the Variant Configuration service during the initialization of the form. Add an empty `onInit` function to the controller, ``**ProductConfigurationAPITutorial**`` > ``**webapp**`` > ``**controller**`` > ``**Main.controller.js**``, in which the service APIs will be called.
 
 ![step-2-empty-oninit](step-2-empty-oninit.png)
 
@@ -93,11 +133,11 @@ Click on the **JavaScript** tab and then click on the **Copy** and **Close** but
 
 [ACCORDION-BEGIN [Step 4: ](Load configuration in your application)]
 
-Back in Web IDE, add the copied code from the API Business Hub to your `onInit` function. For the data variable use the example input JSON found for the service on API Hub.
+Back in SAP Business Application Studio, add the copied code from the API Business Hub to your `onInit` function. For the data variable use the example input JSON found for the service on API Hub.
 
 ![step-4-API-hub](step-4-API-hub.png)
 
-```Java
+```Javascript
 var data = JSON.stringify({
 "productKey": "CPS_BURGER",
 "date": "2018-08-09",
@@ -120,7 +160,43 @@ var data = JSON.stringify({
 
 [ACCORDION-BEGIN [Step 5: ](Run your application)]
 
-Run your application. You should see a blank application with a title. The pre-generated code puts the results of the API in the browser console. To find the result, open your browser's developer tools and go to the **Console** tab.
+Run your new application to test it:
+
+1. Open the Run **Configurations** view.
+
+    ![step-5-run-configurations-view](step-5-run-configurations-view.png)
+
+2. Select **+** to create a new Run Configurations.
+
+    ![step-5-new-run-configurations](step-5-new-run-configurations.png)
+
+    >Creating a new Run Configuration launches the command palette, a text-based mini wizard. The command palette is opened at the top-center of the **SAP Business Application Studio** window.
+
+3. When the **What would you like to run?** question appears, choose `ProductConfigurationAPITutorial`.
+
+4. For the next steps of the wizard, select the following:
+
+    |  Step     | Parameter                | Value
+|  :------- | :-----------------------   :-------------------------------------------------------------------
+|  A        | `Select a runnable file` | index.html
+|  B        | `Select a UI5 version`   | latest
+|  C        | `Enter a name`           | Run ProductConfigurationAPITutorial-ProductConfigurationAPITutorial
+
+5. Expand the run configuration and hover over the **run configuration** and click the **Run Module** icon.
+
+
+    ![step-5-sap-business-application-studio](step-5-sap-business-application-studio.png)
+
+6. Wait for the **A service is listening to port 6004** notification and click on the button to open the app.
+
+    >The left side view changes to the debug view and the status bar color changes to orange to indicate that the app is running in debug mode.
+If you are running the app for the first time, the button in the notification will say **Expose and Open**. Otherwise, it will say **Open in New Tab**.
+
+    ![step-5-a-service-is-listening](step-5-a-service-is-listening.png)
+
+7. Enter an optional description for the port and press **Enter**.
+
+ You should see a blank application with a title `opened in a new tab`. The pre-generated code puts the results of the API in the browser console. To find the result, open your browser's developer tools and go to the **Console** tab.
 
 ![step-5-blank-application](step-5-blank-application.png)
 
@@ -135,6 +211,22 @@ The result from the API consists of the configuration, characteristics, and char
  Open your main view and add a `ComboBox`. The `ComboBox` items and selected item will be set from the result of the API call.
 
 ![step-6-main-controller](step-6-main-controller.png)
+
+```JavaScript
+<mvc:View controllerName="sap.tutorial.ProductConfigurationAPITutorial.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"  displayBlock="true" xmlns="sap.m">
+        <App id="app">
+            <pages>
+                <Page title="{i18n>title}">
+                    <content>
+                        <ComboBox items="{/possible_values}" selectedKey="{/value}">
+                            <core:Item key="{valueLow}" text="{valueLow}"/>
+                        </ComboBox>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+</mvc:View>
+```
 
 >Ensure that core namespace is declared via `xmlns:core="sap.ui.core"`
 
@@ -194,8 +286,25 @@ Next, update the configuration if the user changes the value of the `ComboBox`. 
 
 ![step-7-combobox](step-7-combobox.png)
 
+```Javascript
+<mvc:View controllerName="sap.tutorial.ProductConfigurationAPITutorial.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"  displayBlock="true" xmlns="sap.m">
+       <App id="app">
+           <pages>
+               <Page title="{i18n>title}">
+                   <content>
+                       <ComboBox items="{/possible_values}" selectedKey="{/value}" selectionChange="onChange">
+                            <core:Item key="{valueLow}" text="{valueLow}"/>
+                        </ComboBox>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+</mvc:View>
+```
+
 Back to the main controller, create an empty `onChange` function.
-```Java
+
+```JavaScript
 onChange: function (oEvent) {
 
 }
@@ -210,7 +319,8 @@ Add the copied `Javascript` code from API Business Hub to the newly created `onC
 ![step-7-java-code](step-7-java-code.png)
 
 Change the data variable declaration to assign the value from the value property of the view model, which is bound to the `ComboBox` value.
-```Java
+
+```Javascript
 var data = JSON.stringify({
     "values": [{
         "value": this.getView().getModel().getProperty("/value"),
@@ -220,36 +330,36 @@ var data = JSON.stringify({
 ```
 Since this API PATCH method does not return a response body, in the `xhr.addEventListener` call of the `onChange` function, you may change the console log so that the response code is logged instead of the response text.
 
-```Java
+```Javascript
 console.log(this.status);
 ```
 To fill out all parameters for this API method, you need to add a few fields in the view model, namely `configuration id` and `item id`. Add these new properties on the model in the `xhr.addEventListener` call of the `onInit` function so that the model is filled when the configuration is loaded.
 
-```Java
+```Javascript
 self.getView().getModel().setProperty("/config_id", jsonResults.id);
 self.getView().getModel().setProperty("/item_id", jsonResults.rootItem.id);
 ```
 
 Once they are added in the model, replace hard-coded `{configurationID}` and `{itemID}` in the generated `url` in the `onChange` function by the values in the model. Likewise, replace hard-coded `{characteristidID}` by `CPS_OPTION_M`.
 
-```Java
+```Javascript
 xhr.open("PATCH",
     "https://sandbox.api.sap.com/cpservices/prodconf/api/v2/configurations/" +
     this.getView().getModel().getProperty("/config_id") + "/items/" +
-    this.getView().getModel().getProperty("/item_id") + "/characteristics/ CPS_OPTION_M"
+    this.getView().getModel().getProperty("/item_id") + "/characteristics/CPS_OPTION_M "
 );
 ```
 
 Almost done! The variant configuration API uses HTTP header fields `etag` and `If-Match` as an optimistic lock. You need to capture the `etag` header in the model from the HTTP response when loading the configuration and send back that value in the `If-Match HTTP` header when updating the configuration. In the **`xhr.addEventListener`** call of the `onInit` function, set the `etag` property of the model with the `etag` value of the response header.
 
-```Java
+```Javascript
 self.getView().getModel().setProperty("/etag", this.getResponseHeader("etag"));
 ```
 
 In the same way, you need to capture the `etag` value of the characteristic change response in case the user wants to update the value multiple times. Add the same line in the **`xhr.addEventListener`** call of the `onChange` function.
  Back in the `onChange` function, fill the `If-Match` request header value with the `etag` value of the model.
 
-```Java
+```Javascript
 xhr.setRequestHeader("If-Match", this.getView().getModel().getProperty("/etag"));
 ```
 
@@ -278,17 +388,20 @@ Currently, the value keys are displayed in the interface. In a real-world scenar
 First, create a new method `readKb` in the controller that takes a knowledge base id as parameter.
  When creating a configuration (Step 4), the knowledge base id is returned from the API. To get the `KB` details, another API needs to be called. Go to the API Business Hub (as in step 3), locate the `GET/api/v2/knowledgebases/{kbId}` method, copy the JavaScript code then paste it in the `readKb` function.
 
-![step-9-product-configuration](step-9-product-configuration.png)
+![step-8-variant-configuration-service-code-snippet](step-8-variant-configuration-service-code-snippet.jpg)
+
+
+![step-8-product-configuration-service-code-snippet](step-8-product-configuration-service-code-snippet.jpg)
 
 
 Modify the URL of the request to include the knowledge base ID function parameter.
-```Java
+
+```Javascript
 xhr.open("GET", "https://sandbox.api.sap.com/cpservices/prodconf/api/v2/knowledgebases/" + kbId + "?$select=products,classes,characteristics,characteristicSpecifics,bomItems,description");
 ```
 Now you need to bind the possible values to the model by parsing the response text to JSON then retrieving the `possible_values` property of `CPS_OPTION_M`. Also, add the characteristic name to a new model property `/name`.
 
-```Java
-
+```Javascript
 var jsonResults = JSON.parse(this.responseText);
 var CPS_OPTION_M = jsonResults.characteristics.find(function (i) {
 return i.id === "CPS_OPTION_M";
@@ -338,7 +451,7 @@ For the pricing API to correctly reflect the status of the configuration, the va
 Locate the GET `/api/v2/configurations/{configurationId}` in the SAP API Business Hub, copy the JavaScript code and paste it in a new method `_getConfig`.
    Modify the URL of the request to include the configuration ID from the model.
 
-```Java
+```Javascript
 xhr.open("GET", "https://sandbox.api.sap.com/cpservices/prodconf/api/v2/configurations/" + this.getView().getModel().getProperty("/config_id"));
 ```
 In the `xhr.addEventListener` function, assign the configuration JSON in a new attribute `self._config`.
@@ -353,8 +466,36 @@ Next, add new read-only fields that will be used to show the base price and sele
 
 ![step-11-view](step-11-view.png)
 
+```Javascript
+<mvc:View controllerName="sap.tutorial.ProductConfigurationAPITutorial.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"  displayBlock="true" xmlns="sap.m">
+        <App id="app">
+            <pages>
+                <Page title="{i18n>title}">
+                    <content>
+                        <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="form0">
+                        <sap.ui.layout.form:content>
+                            <Label text="{/name}" id="label"/>
+                            <ComboBox items="{/possible_values}" selectedKey="{/value}" selectionChange="onChange">
+                                <core:Item key="{id}" text="{name}"/>
+                            </ComboBox>
+                            <Label text="{i18n>basePrice}"/>
+                            <Input value="{/base_price}" editable="false"/>
+                            <Label text="{i18n>selectedOptions}"/>
+                            <Input value="{/selected_options}" editable="false"/>
+                            <Label text="{i18n>price}"/>
+                            <Input value="{/price}" editable="false"/>
+                        </sap.ui.layout.form:content>
+                        </sap.ui.layout.form:SimpleForm>
+                    <Button text="{i18n>getPrice}" type="Accept" press="onPrice"/>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+</mvc:View>
+```
+
 Do not forget to update your **`i18n`** file with the new labels!
-```Java
+```Javascript
 basePrice=Base price
 selectedOptions=Selected options
 price=Price
@@ -363,12 +504,12 @@ getPrice=Get pricing
 
 Next, go to the SAP API Business Hub, locate the `/api/v1/statelesspricing` method in the Pricing service, copy the JavaScript code and paste it in a new method `onPrice`.
 
-![step-11-pricing](step-11-pricing.png)
+![step-9-api-pricing-service](step-9-api-pricing-service.png)
 
 There are a lot of parameters in this API that you would fill out in a real-world application. But for this tutorial, hard code all values except for the `KOMP-VARCOND` attribute of the item 000010.
  Get the variant condition values from the configuration and assign them to the `KOMP-VARCOND` attribute in the request data.
 
-```Java
+```Javascript
 var varCond = this._config.rootItem.characteristics.find(function (i) {
     return i.id === "CPS_VARCOND";
 });
@@ -380,7 +521,7 @@ for (var i = 0; i < varCond.values.length; i++) {
 
 In the `xhr.addEventListener` function of the `onPrice` function, get the net value as well as the value of the condition purposes `ZSS1` and `ZSS2`, which in this test model means **Base Price** and **Selected** Options, and assign them to the JSON model.
 
-```Java
+```Javascript
 var jsonResults = JSON.parse(this.responseText);
 
 self.getView().getModel().setProperty("/price", jsonResults.netValue);
@@ -391,13 +532,13 @@ self.getView().getModel().setProperty("/selected_options", jsonResults.condition
     return i.purpose === "ZSS2";
 }).value);
 ```
-![step-11-onPrice](step-11-onPrice.png)
+![step-11-on-price-1](step-11-on-price-1.jpg)
 ...
 ![step-11-onPrice-3](step-11-onPrice-3.png)
 ...
 ![step-11-onPrice-4](step-11-onPrice-4.png)
 
-Run your application. The selected options and price values will change depending on the menu option you choose.
+Run your application. The selected options and price values will change depending on the menu option you choose. The below result is excluding the `External Conditions` in the input for stateless pricing API. If the `External Conditions` are included then the results may vary.
 
 ![step-12-sample-UI5](step-12-sample-UI5.png)
 
@@ -410,7 +551,7 @@ Congratulations! You have successfully completed the tutorial. We hope that you 
 
 >In the example above, the configuration service is called without providing session context. For optimal performance and resource consumption, please ensure that the cookie retrieved with each configuration creation (implementation in the `onInit` event listener of the function in our example) is used when calling the other configuration service APIs for the same configuration session (functions `onChange`, `readKB`, and `getConfig` in our example).
 
-```Java
+```Javascript
 self.getView().getModel().setProperty("/cookie", this.getResponseHeader("set-cookie"));
 
 xhr.setRequestHeader("Cookie", this.getView().getModel().getProperty("/cookie"));
