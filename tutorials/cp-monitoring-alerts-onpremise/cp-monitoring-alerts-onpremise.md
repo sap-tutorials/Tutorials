@@ -3,7 +3,7 @@ title: Receive Alerts in Your On-Premise System Using Java Web Tomcat 8
 description: Configure a connection with an on-premise system to receive alert notifications locally.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>intermediate, products>sap-cloud-platform, products>sap-cloud-platform-monitoring ]
+tags: [ tutorial>intermediate, products>sap-cloud-platform ]
 time: 50
 ---
 
@@ -28,6 +28,8 @@ time: 50
 - How to connect with an on-premise system so that your alerts will be processed locally
 
 This tutorial describes the configuration with a Java Web Tomcat 8 runtime. However, you can change these settings to match with your runtime environment.
+
+To learn more about the whole scenario, read [Receiving Alerts in the Corporate On-Premise System](https://blogs.sap.com/2018/09/17/receiving-alerts-in-the-corporate-on-premise-system/).
 
 ---
 

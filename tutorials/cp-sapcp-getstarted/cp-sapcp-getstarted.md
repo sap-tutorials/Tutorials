@@ -9,7 +9,7 @@ primary_tag: products>sap-cloud-platform
 
 ## Prerequisites
  - You have access to a trial account on SAP Cloud Platform that was initially created after April 2, 2020 (which means your trial account is on [feature set B](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html)).
- - You are familiar with [the basic concepts of SAP Cloud Platform Trial] (https://developers.sap.com/tutorials/cp-trial-quick-onboarding.html)
+ - You are familiar with [the basic concepts of SAP Cloud Platform Trial](cp-trial-quick-onboarding)
 
 ## Details
 ### You will learn
@@ -53,7 +53,7 @@ Here you can read more about the [Cloud Management Tools Feature Set B Innovatio
 
 [ACCORDION-BEGIN [Step 2: ](sapcp CLI and cf CLI - What's the difference?)]
 
-You may have worked with the [Cloud Foundry CLI (cf CLI)] (https://developers.sap.com/tutorials/cp-cf-download-cli.html) to manage your Cloud Foundry environment. Let's quickly explain how the **cf CLI** relates to the **sapcp CLI**:
+You may have worked with the [Cloud Foundry CLI (cf CLI)](https://developers.sap.com/tutorials/cp-cf-download-cli.html) to manage your Cloud Foundry environment. Let's quickly explain how the **cf CLI** relates to the **sapcp CLI**:
 The sapcp CLI is the CLI for working with SAP Cloud Platform accounts. You use the sapcp CLI for all tasks on global account, directory, and subaccount level. Going down the account hierarchy, the last step with sapcp CLI is creating a Cloud Foundry environment instance, which essentially creates a Cloud Foundry org. From org level onwards, i.e. for managing members in orgs and spaces, creating spaces, assigning quota to orgs and spaces, you use the cf CLI.
 
 [VALIDATE_1]
@@ -62,9 +62,11 @@ The sapcp CLI is the CLI for working with SAP Cloud Platform accounts. You use t
 
 [ACCORDION-BEGIN [Step 3: ](Download and install the CLI client)]
 
-Go to the [SAP Development Tools] (https://tools.hana.ondemand.com/#cloud-cpcli) download page to download the latest version of the CLI client for your operating system. Unpack the archive and copy the client file (for example, `sapcp.exe`) to your local system.
+Go to the <a href="https://tools.hana.ondemand.com/#cloud-cpcli">SAP Development Tools</a> page to download the latest version of the CLI client for your operating system. Unpack the archive and copy the client file (for example, `sapcp.exe`) to your local system. Make sure you have read and write permissions in the target folder to run the executable.
 
-Open the directory with the client file in the command line and and enter `sapcp`.
+In Windows, open the directory where the the client file is located in the command line and and enter 'sapcp'. For example, you can open the folder and type `cmd` into the address bar.
+
+If you are using macOS, make sure that the client file is in your PATH and open a terminal session. Note that sapcp CLI may be blocked because it is "from an unidentified developer". Please refer to the macOS documentation to learn how to bypass this.
 
 ![CLI info screen](sapcp.png)
 
@@ -165,7 +167,7 @@ Here are a few simple examples of commands on global account level that you can 
 Or go through the documentation to learn more:
 
 - [Account Administration Using the CLI for SAP Cloud Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7c6df2db6332419ea7a862191525377c.html)
-- [Commands in the sapcp CLI] (https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/a03a5550cdd44fa48ff78d70ca7c9651.html)
+- [Commands in the sapcp CLI](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/a03a5550cdd44fa48ff78d70ca7c9651.html)
 
 
 [DONE]

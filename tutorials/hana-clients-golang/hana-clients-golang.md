@@ -31,7 +31,7 @@ go version
 
 If Go is installed, then it will return the currently installed version, such as 1.15.2. It is required to have at least version 1.8 or later installed.
 
->For further details on supported versions, see SAP Note [2939501 - SAP HANA Client Supported Platforms for 2.5 and later](https://launchpad.support.sap.com/#/notes/2939501).
+>For further details on supported versions, see SAP Note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307).
 
 
 If it is not installed, download it from [Download Go](https://golang.org/dl/), run the installer, follow the provided instructions, and ensure that Go is in your path.
@@ -122,9 +122,8 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 3: ](Create a Go application that queries an SAP HANA database)]
-1. In a shell, create a folder named `go`, enter the newly created directory, and open an editor on a file named `goQuery.go`.
+1. In a shell, create a folder named `go`, enter the newly created directory, and open a file named `goQuery.go` in an editor.
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\HANAClientsTutorial\go
     cd %HOMEPATH%\HANAClientsTutorial\go
@@ -150,11 +149,16 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
       )
 
     func main() {
-      connectString := "hdb://?key=USER1UserKey&encrypt=true&sslValidateCertificate=false"
+      //Option 1, retrieve the connection parameters from the hdbuserstore
       //host, port, user name and password come from the hdbuserstore key USER1UserKey
+      connectString := "hdb://?key=USER1UserKey&encrypt=true&sslValidateCertificate=false"
+
+      //Option 2, specify the connection parameters
+      //connectString := "hdb://User1:Password1@999deec0-ccb7-4a5e-b317-d419e19be648.hana.prod-us10.hanacloud.ondemand.com:443?encrypt=true&sslValidateCertificate=false"
+
       //encrypt and sslValidateCertificate should be true for HANA Cloud connections
       //As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
-      //connectString := "hdb://User1:Password1@999deec0-ccb7-4a5e-b317-d419e19be648.hana.prod-us10.hanacloud.ondemand.com:443?encrypt=true"
+
       fmt.Println("Connect String is " + connectString)
 
       db, err := sql.Open("hdb", connectString)

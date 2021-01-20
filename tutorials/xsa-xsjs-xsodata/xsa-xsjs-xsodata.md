@@ -8,6 +8,7 @@ primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>odata, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** beginner
  - **Tutorials:** [SAP HANA XS Advanced, Creating an HDI Module](https://developers.sap.com/tutorials/xsa-hdi-module.html)
 

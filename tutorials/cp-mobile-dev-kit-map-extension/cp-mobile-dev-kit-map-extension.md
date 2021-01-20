@@ -26,6 +26,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 ---
 
+
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls using **NativeScript** (TypeScript/JavaScript applicable for both Android and iOS)
 
 In this tutorial, you will create a Map extension via NativeScript (in TypeScript language), you will view the Map in Apple Maps on iOS devices and in Google Maps on Android devices.
@@ -128,7 +129,7 @@ The extension control that you will be creating to extend the functionality of y
 
     !![MDK](img_2.5.png)
 
-6. In **Schema Information** step, provide below schema and click **Next**.
+6. In **Schema Information** step, fill schema details in **Schema** column and click **Next**.
 
     ```JSON
     {

@@ -97,7 +97,7 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
   6. Now you've been authenticated automatically.
      Provide your credentials if requested.
      The credentials are the same you used to create your trial account on SAP Cloud Platform.
-
+ 
       ![Create ABAP cloud project](project5.png)
 
       Click **Finish**.
@@ -115,6 +115,12 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+
+## More Information
+- [SAP Help Portal: Creating Service Instances in Cloud Foundry](https://help.sap.com/viewer/09cc82baadc542a688176dce601398de/Cloud/en-US/6d6846def3c443aa9f83d127353147ce.html)
+- [SAP Help Portal: Creating Service Keys in Cloud Foundry](https://help.sap.com/viewer/09cc82baadc542a688176dce601398de/Cloud/en-US/6fcac08409db4b0f9ad55a6acd4d31c5.html)
+---
 
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>

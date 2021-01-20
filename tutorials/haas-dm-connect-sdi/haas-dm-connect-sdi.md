@@ -3,6 +3,8 @@ title: Configure Smart Data Integration with the SAP HANA Service
 description: Configure the data provisioning agent and create a remote source.
 auto_validation: true
 time: 25
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
 primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ---
@@ -21,7 +23,7 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 - How to configure the file adapter to load text files
 - How to create a remote source in SAP HANA using the Database Explorer
 
->**This tutorial cannot currently be completed with a trial account.**
+>**This tutorial cannot be completed with a trial account.**
 
 ---
 

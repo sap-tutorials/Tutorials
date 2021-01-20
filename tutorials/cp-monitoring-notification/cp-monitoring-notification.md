@@ -3,7 +3,7 @@ title: Implement a Notification Application for Monitoring Java Apps
 description: Create an application that notifies you of critical metrics via e-mail or SMS, using the SAP Cloud Platform Monitoring service.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-monitoring ]
+tags: [ tutorial>beginner, products>sap-cloud-platform ]
 time: 30
 ---
 

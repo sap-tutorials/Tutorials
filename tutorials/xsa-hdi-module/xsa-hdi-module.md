@@ -10,6 +10,7 @@ tags: [products>sap-hana, products>sap-hana\,-express-edition  , topic>big-data,
 ---
 
 ## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Beginner
  - **Tutorials:** [SAP HANA XS Advanced Create an HTML5 Module](https://developers.sap.com/tutorials/xsa-html5-module.html)
 

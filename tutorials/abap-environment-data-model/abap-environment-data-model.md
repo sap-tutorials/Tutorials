@@ -47,13 +47,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Define CDS based travel data model](model4.png)
 
-  5. Define root view for `ZI_TRAVEL_M_XXX` and database table as source.
 
-    ```ABAP
-    define root view entity ZI_TRAVEL_M_XXX as select from ztravel_xxx as Travel       
-    ```
-
-  6. Your result should look like this. Replace your code with following:
+  5. Replace your code with following:
 
     ```ABAP
     @AccessControl.authorizationCheck: #NOT_REQUIRED
@@ -99,7 +94,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     }  
     ```
 
-  7. Save and activate.
+  6. Save and activate.
 
       ![save and activate](activate.png)
 
@@ -130,13 +125,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create projection view for travel](projection4.png)
 
-  5. Define root view entity for `ZC_TRAVEL_M_XXX`.
-
-    ```ABAP
-    define root view entity ZC_TRAVEL_M_XXX as projection on ZI_Travel_M_XXX        
-    ```
-
-  6. Your result should look like this. Replace your code with following:
+  5. Replace your code with following:
 
     ```ABAP
     @EndUserText.label: 'Travel projection view - Processor'
@@ -224,7 +213,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     }
     ```
 
-  7. Save and activate.
+  6. Save and activate.
 
       ![save and activate](activate.png)
 
@@ -295,7 +284,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create service binding](binding3.png)
 
-  4. Activate your service binding.
+  4. **Activate** your service binding and then **publish** it.
 
       ![Create service binding](binding4.png)
 
