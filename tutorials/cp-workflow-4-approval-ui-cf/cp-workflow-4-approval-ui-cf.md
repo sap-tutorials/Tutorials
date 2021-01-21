@@ -10,7 +10,7 @@ time: 15
 ## Prerequisites  
 - You have executed the previous tutorials in [Get started with SAP Cloud Platform workflows](https://developers.sap.com/group.cp-workflow-cf.html).
 - Make sure that you use a dev space with the extension **Launchpad Module**.
-- You have a launchpad site. See [Create a Site](https://help.sap.com/viewer/e157c391253b4ecd93647bf232d18a83/Cloud/en-US/97c079f9317c42bba31cc9ca9d4cc7c3.html).
+- You have created a launchpad site. See [Create a Site](https://help.sap.com/viewer/e157c391253b4ecd93647bf232d18a83/Cloud/en-US/97c079f9317c42bba31cc9ca9d4cc7c3.html).
 - You have created a destination for your service instance. See [Manually Create a Destination to a Service Instance](https://help.sap.com/viewer/e157c391253b4ecd93647bf232d18a83/Cloud/en-US/6acb8364e7fa4fca99eca60a054e9980.html).
 
 ## Details
@@ -249,7 +249,7 @@ These expressions refer to the attributes in the JSON file that you have created
 
     6. Save your changes.
 
-10. Assign your local copies to a role so that users can access them.
+11. Assign your local copies to a role so that users can access them.
 
     1. Click the **Back to Content Management** arrow icon, and access the **Everyone** role.
 
