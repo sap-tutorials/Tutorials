@@ -284,7 +284,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create service binding](binding3.png)
 
-  4. Publish your service binding.
+  4. **Activate** your service binding and then **publish** it.
 
       ![Create service binding](binding4.png)
 
