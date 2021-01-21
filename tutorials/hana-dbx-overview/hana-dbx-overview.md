@@ -63,7 +63,7 @@ The following are some related documentation links for SAP HANA and the SAP HANA
 |  [SAP HANA Platform 2.0, SAP HANA Database Explorer What's New](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/7534f22d5bbf44c3a0de259478ad043b.html) | What's new since the previous on-premise release.  New features are released approximately twice per year
 |  [SAP Web IDE for SAP HANA](https://help.sap.com/viewer/product/SAPWEBIDE/SAPWEBIDE4HANA/en-US) | SAP Help documentation set
 |  [SAP HANA, express edition](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US)   | Released in September 2016.  Current version is 2.0 SPS 04 Revision 45
-|  [SAP HANA, express edition, release notes for SPS 04, revision 45](https://developers.sap.com/topics/sap-hana.html#pdf-asset=1eaee4fa-857d-0010-87a3-c30de2ffd8ff&page=1)  | Note that the version of the Database Explorer (HRTT) for this release is  2.11.64
+|  [SAP HANA, express edition, release notes for SPS 04, revision 45](https://www.sap.com/documents/2020/01/421a577f-817d-0010-87a3-c30de2ffd8ff.html)  | Note that the version of the Database Explorer (HRTT) for this release is  2.11.64
 |  [SAP HANA, express edition, release history](https://search.sap.com/search.html?t=%22SAP%20HANA%2C%20express%20edition%202.0%20SPS%200%25%20Revision%22&n=1&s=boost&src=defaultSourceGroup)   | Query showing previous releases
 |  [SAP HANA Cloud](https://help.sap.com/viewer/product/HANA_CLOUD)   | Released in March 2020
 |  [SAP HANA Cloud, SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US)   | Current version is 2.13.x
