@@ -23,6 +23,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
+
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls by using **NativeScript** (TypeScript/JavaScript applicable for both Android and iOS)
 
 In this tutorial, you will create a Slider extension via NativeScript (in TypeScript language) which will be common for both device platforms.
@@ -103,7 +104,7 @@ The extension control that you will be creating to extend the functionality of y
     !![MDK](img_2.3.png)
 
 
-6. In **Schema Information** step, provide below schema and click **Next**.
+6. In **Schema Information** step, fill schema details in **Schema** column and click **Next**.
 
     ```JSON
     {
@@ -163,7 +164,7 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img_3.3.gif)
 
-    >You can find more details about the **Section Extension** in [this](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/Container/Extension.schema.html) guide.    
+    >You can find more details about the **Section Extension** in [this](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/FormCell/Extension.schema.html) guide.    
 
 4. In the **Properties** section, set the **Height** to 72.
 
@@ -230,15 +231,17 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img_3.10.png)
 
-13. You can also add an input field where you can provide a manual entry for the slider value and the counter will adapt accordingly.
+11. You can also add an input field where you can provide a manual entry for the slider value and the counter will adapt accordingly.
 
     For this, first you will write a business logic to set the extension value and then bind it to the input field.
 
-    Right-click the **Rules** folder | **MDK: New Rule**.
+    Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
-    Enter the Rule name `SetExtensionValue.js`, press `Enter`.
+    !![MDK](img_3.11.1.png)
 
-    !![MDK](img_3.13.png)
+    Enter the Rule name `SetExtensionValue`, click **Next** and then **Finish** on the confirmation step.
+
+    !![MDK](img_3.11.2.png)
 
     Replace the generated snippet with below code.
 
@@ -251,15 +254,15 @@ You will add this registered control in a Form Cell page.
     }
     ```
 
-    !![MDK](img_3.13.1.png)
+    !![MDK](img_3.11.3.png)
 
-14. Save the changes to the `SetExtensionValue.js` file.
+12. Save the changes to the `SetExtensionValue.js` file.
 
-15. In `SliderExtension.page`, drag and drop a **Simple Property** item control below the slider control.
+13. In `SliderExtension.page`, drag and drop a **Simple Property** item control below the slider control.
 
     !![MDK](img_3.15.gif)
 
-16. Provide the following information:
+14. Provide the following information:
 
     | Property | Value |
     |----|----|
@@ -268,7 +271,7 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img_3.16.png)
 
-17. Navigate to **Events** tab, click the **link** icon for the `OnValueChange` property to open the object browser, bind it to `SetExtensionValue.js`.
+15. Navigate to **Events** tab, click the **link** icon for the `OnValueChange` property to open the object browser, bind it to `SetExtensionValue.js`.
 
     !![MDK](img_3.17.png)
 

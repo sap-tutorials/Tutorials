@@ -63,7 +63,7 @@ Enter `touch dar_service_key.json` to create an empty JSON file.
 
 [OPTION END]
 
-Go ahead and open the newly created file in a simple text editor. Then, paste the complete service key that you created in [Set Up Account for Data Attribute Recommendation](cp-aibus-dar-service-instance-booster) into the file and save it.
+Go ahead and open the newly created file in a simple text editor. Then, paste the complete service key that you created in [Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-key) into the file and save it.
 
 ![Service Key](service-key.png)
 

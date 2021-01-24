@@ -1,0 +1,11 @@
+#
+#Wed Dec 02 13:17:37 UTC 2020
+Description=SAP API Business Hub
+Type=HTTP
+HTML5.DynamicDestination=true
+Authentication=NoAuthentication
+WebIDEUsage=apihub_catalog
+Name=SAP_API_Business_Hub
+WebIDEEnabled=true
+ProxyType=Internet
+URL=https\://api.sap.com

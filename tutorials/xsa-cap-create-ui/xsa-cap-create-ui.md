@@ -4,11 +4,12 @@ description: Use services based on Node.js and use an SAP Fiori wizard to create
 time: 20
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
 primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - You have created a Multi-Target Application using the Cloud Application Programming model.
  - You have created database artifacts and loaded data as explained in [this tutorial](xsa-cap-create-database-cds).
 

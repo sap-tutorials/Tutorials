@@ -75,7 +75,7 @@ To import the business rules project from API Business Hub, you need to configur
 
 [ACCORDION-BEGIN [Step 3: ](Import business rules)]
 
-1. Click **Design** icon, click on the **Import** to select **Import Project from API Business API Hub**.
+1. Click **Design** icon, click **Import** to select **Import Project from API Business Hub**.
 
     !![Import Business Rules](ImportAPIHub.png)
 

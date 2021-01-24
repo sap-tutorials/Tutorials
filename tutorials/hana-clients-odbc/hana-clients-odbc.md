@@ -16,7 +16,7 @@ primary_tag: products>sap-hana
   - How to create and test an SAP HANA ODBC data source
   - How to use an ODBC data source in an application
 
-[Open Database Connectivity](https://en.wikipedia.org/wiki/Open_Database_Connectivity) (ODBC) provides an API for accessing databases.  Database vendors provide ODBC drivers for their database products.  An application written to the ODBC standard can be ported to other databases that also provide an ODBC interface.  
+[Open Database Connectivity](https://en.wikipedia.org/wiki/Open_Database_Connectivity) (ODBC) provides an [API](https://docs.microsoft.com/en-us/sql/odbc/reference/syntax/odbc-api-reference?view=sql-server-ver15) for accessing databases.  Database vendors provide ODBC drivers for their database products.  An application written to the ODBC standard can be ported to other databases that also provide an ODBC interface.  
 
 ---
 
@@ -65,6 +65,8 @@ The ODBC Data Source Administrator lists the ODBC drivers installed and the conf
     The user name `USER1` and password `Password1` can be entered when prompted for credentials.
 
 9. Press OK, to save the data source.
+
+For additional details see [ODBC Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/2.7/en-US/7cab593774474f2f8db335710b2f5c50.html).
 
 [DONE]
 [ACCORDION-END]

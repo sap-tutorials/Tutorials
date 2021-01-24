@@ -68,7 +68,7 @@ This page will display customer orders list, you will add an **Object Table** co
     |----|----|
     | `Service`| Select `Sample.service` from the dropdown |
     | `Entity` | Select `SalesOrderHeaders` from the dropdown |
-    | `Query`| `$filter=CustomerId eq '{CustomerId}'&$top=5&$orderby=CreatedAt desc` |
+    | `QueryOptions`| `$filter=CustomerId eq '{CustomerId}'&$top=5&$orderby=CreatedAt desc` |
 
     !![MDK](img_1.5.png)
 
@@ -244,9 +244,9 @@ Double-click the `NavToSalesOrders_Details.action` and click **OK** to set it as
 
 You will show a total count of orders for a customer in `Customers_Detail.page`. You will write a JavaScript logic for this calculation.
 
-1. Right-click the **Rules** folder | **MDK: New Rule**.
+1. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
-2. Enter the Rule name `Customers_OrderCount.js`, press `Enter`.
+2. Enter the Rule name `Customers_OrderCount`, press `Enter`.
 
     !![MDK](img_5.2.png)
 
@@ -254,13 +254,13 @@ You will show a total count of orders for a customer in `Customers_Detail.page`.
 
     ```JavaScript
     export default function CustomerOrderCount(context) {
-          //The following currentCustomer will retrieve the current customer record
-        	const currentCustomer = context.getPageProxy().binding.CustomerId;
-          //The following expression will retrieve the total count of the orders for a given customer
-        	return context.count('/DemoSampleApp/Services/Sample.service', 'SalesOrderHeaders', `$filter=CustomerId eq '${currentCustomer}'`).then((count) => {
-                return count;
-            });
-        }    
+        //The following currentCustomer will retrieve the current customer record
+        const currentCustomer = context.getPageProxy().binding.CustomerId;
+        //The following expression will retrieve the total count of the orders for a given customer
+        return context.count('/DemoSampleApp/Services/Sample.service', 'SalesOrderHeaders', `$filter=CustomerId eq '${currentCustomer}'`).then((count) => {
+            return count;
+        });
+    }    
     ```
 
 4. Save the changes to the `Customers_OrderCount.js` file.
@@ -284,7 +284,7 @@ You will show a total count of orders for a customer in `Customers_Detail.page`.
     |----|----|
     | `Service`| Select `Sample.service` from the dropdown |
     | `Entity` | Select `{{#Property:@odata.readLink}}/SalesOrders` from the dropdown |
-    | `Query`| `$top=5&$orderby=CreatedAt desc` |
+    | `QueryOptions`| `$top=5&$orderby=CreatedAt desc` |
 
     !![MDK](img_6.2.png)
 
@@ -454,14 +454,13 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_10.10.png)
 
-
-
 [OPTION END]
-
-**Congratulations**! You have successfully extended MDK app with Customer orders and you are now all set to [Implement Create Entity and Linking Entities in an MDK App](cp-mobile-dev-kit-link-entity).
 
 [DONE]
 [ACCORDION-END]
 
+---
+
+Congratulations, you have successfully extended MDK app with Customer orders and you are now all set to [Implement Create Entity and Linking Entities in an MDK App](cp-mobile-dev-kit-link-entity).
 
 ---

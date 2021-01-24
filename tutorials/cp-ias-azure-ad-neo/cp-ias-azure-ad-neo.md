@@ -1,9 +1,9 @@
 ---
-title: Register a Neo Subaccount in SAP Cloud Platform Identity Authentication Service
+title: Register SAP Cloud Platform Neo Subaccount in SAP Cloud Platform Identity Authentication Service
 description: Establish trust between a SAML 2.0 identity provider in SAP Cloud Platform Identity Authentication service and an SAP Cloud Platform Neo subaccount.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-identity-authentication]
+tags: [ tutorial>beginner, products>sap-cloud-platform, products>identity-authentication]
 primary_tag: topic>security
 ---
 
@@ -68,7 +68,7 @@ Click the **Application Identity Provider** tab. Add a new **Trusted Identity Pr
 
 Upload the SAML metadata file you have download in the previous Tutorial. If you don't have it anymore, you can download it in the **Tenant Settings > SAML 2.0** section in the SAP Cloud Platform Identity Authentication Service.
 
-> Note: You can also download the SAML 2.0 metadata through accessing the following URL. https://[TENANT_ID].accounts.ondemand.com/saml2/metadata Tenant ID is an automatically generated ID by the system. The first administrator created for the tenant receives an activation e-mail with a URL in it. This URL contains the tenant ID. For more information have a look at the [Product Page](https://www.sap.com/products/cloud-platform/capabilities/foundation.identity-authentication.html#identity-authentication)
+> Note: You can also download the SAML 2.0 metadata through accessing the following URL. https://[TENANT_ID].accounts.ondemand.com/saml2/metadata Tenant ID is an automatically generated ID by the system. The first administrator created for the tenant receives an activation e-mail with a URL in it. This URL contains the tenant ID. For more information have a look at [SAP Cloud Identity Services - Identity Authentication](https://discovery-center.cloud.sap/serviceCatalog/identity-authentication) in the SAP Discovery Center.
 
 ![Download Tenant SAML Configuration ](add-trusted-idp.png)
 

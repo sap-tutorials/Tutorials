@@ -3,7 +3,7 @@ title: Use an OData Service Created by MTB to Build a Mobile App
 description: Using an OData service created with the Mobile Transaction Bridge, build a Mobile app based on the mobile development kit client.
 auto_validation: true
 time: 20
-primary_tag: products>sap-cloud-platform-mobile-services
+primary_tag: software-product-function>sap-cloud-platform-mobile-services
 tags: [ tutorial>beginner, topic>mobile, products>sap-cloud-platform, software-product-function>sap-cloud-platform-mobile-services ]
 ---
 

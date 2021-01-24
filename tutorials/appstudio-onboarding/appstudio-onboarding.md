@@ -5,6 +5,8 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-workflow, software-product-function>sap-cloud-application-programming-model, topic>mobile, products>sap-mobile-cards, products>mobile-development-kit-client]
 primary_tag: products>sap-business-application-studio
+author_name: Raz Korn
+author_profile: https://github.com/raz-korn
 ---
 
 ## Prerequisites
@@ -20,58 +22,78 @@ This tutorial is based on the procedure described in the [Getting Started](https
 
 [ACCORDION-BEGIN [Step: 1](Log into SAP Cloud Platform)]
 
-
-1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
-
-2. Click **Enter Your Trial Account** to access the Cloud Foundry environment.
-
-    !![Access SAP Cloud Platform Trial](2020-08 SCP Access Trial_.jpg)
+Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step: 2](Switch to subscriptions view)]
+[ACCORDION-BEGIN [Step: 2](Launch SAP Business Application Studio)]
 
-1. Select the tile of the subaccount in which you want to enable the SAP Business Application Studio subscription.
+1. Click **SAP Business Application Studio** to launch SAP Business Application Studio.
 
-    >For the trial environment, SAP Business Application Studio is only available on:
+    !![launch sap business application studio](2020-10 SCP Access AppStudio_.jpg)
 
-    > - Amazon Web Services (AWS) - Europe (Frankfurt) or US East (VA) regions.
+    >In recently created trial accounts, SAP Business Application Studio is subscribed to by default.
 
-    >If you do not have a subaccount in one of these regions, you need to create a new subaccount, where:
+    >If you receive an error message and your recently created account was created with error, it is recommended that you re-create your account: delete the account and then [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
 
-    > - Provider = **Amazon Web Services (AWS)**
-    > - Region = **Europe (Frankfurt)** or **US East (VA)**.
+    >If you receive an error message and your account was not created recently, answer the validation question of the current step, go to the next step in this tutorial, and proceed from there.
 
-    !![subaccount](2020-08 Cockpit Select Subaccount_.jpg)
+2. You might be asked to accept the legal terms. Check the box and click **OK**.
 
-2. From the navigation area, click **Subscriptions**.
+    !![legalterms](2020-03 AppStudio Terms__.jpg)
 
-    !![opensubscriptions](2020-08 Cockpit Navigate to Subscriptions_.jpg)
+3. A new tab opens and SAP Business Application Studio loads.
 
-[DONE]
+    >**Bookmark this page!**
+
+    >If you create a bookmark to this page, it is easy to get back to SAP Business Application Studio later.
+
+    !![sapbusinessapplicationstudioloaded](2020-03 AppStudio Loaded_.jpg)
+
+    >If you reached this point in the tutorial, you have successfully on-boarded SAP Business Application Studio. Answer the validation question of the current step, and mark the rest of the steps as "Completed".
+
+[VALIDATE_4]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step: 3](Add SAP Business Application Studio subscription to subaccount)]
 
 In this step, you will add the SAP Business Application Studio subscription to a subaccount. Depending on when you created the SAP Cloud Platform account, this subscription might already be added in the subaccount.
 
-1. In the **Subscriptions** page, search for **`studio`**.
+1. Click **Enter Your Trial Account** to access the Cloud Foundry environment.
 
-2. Click the **SAP Business Application Studio** tile.
+    !![Access SAP Cloud Platform Trial](2020-08 SCP Access Trial_.jpg)
+
+2. Select the tile of the subaccount in which you want to enable the SAP Business Application Studio subscription.
+
+    >For the trial environment, SAP Business Application Studio is only available on:
+
+    > - Amazon Web Services (AWS) - Europe (Frankfurt) or US East (VA) regions.
+
+    > - Microsoft Azure - Singapore region.
+
+    >When creating an SAP Cloud Platform trial account a **trial** subaccount is generated.
+
+    !![subaccount](2020-08 Cockpit Select Subaccount_.jpg)
+
+3. From the navigation area, click **Subscriptions**.
+
+    !![opensubscriptions](2020-08 Cockpit Navigate to Subscriptions_.jpg)
+
+4. In the **Subscriptions** page, search for **`studio`**.
+
+5. Click the **SAP Business Application Studio** tile.
 
     !![findsubscription](2020-03 Cockpit Filter and Select AppStudio Subscription__.jpg)
 
-3. Click **Subscribe** to add the subscription to the subaccount.
+6. Click **Subscribe** to add the subscription to the subaccount.
 
     !![subscribe](2020-03 Cockpit Subscribe__.jpg)
-
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step: 4](Launch SAP Business Application Studio)]
+[ACCORDION-BEGIN [Step: 5](Launch SAP Business Application Studio)]
 
 1. Click **Go to Application**.
 
@@ -103,7 +125,7 @@ In this step, you will add the SAP Business Application Studio subscription to a
 
     !![sapbusinessapplicationstudioloaded](2020-03 AppStudio Loaded_.jpg)
 
-[VALIDATE_4]
+[DONE]
 [ACCORDION-END]
 
 ---

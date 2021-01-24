@@ -8,6 +8,7 @@ tags: [  tutorial>intermediate,, products>sap-web-ide  ]
 ---
 
 ## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Intermediate
  - [Create a multi-target application](https://developers.sap.com/tutorials/xsa-connecting-webide.html)
  - [Create a database module](https://developers.sap.com/tutorials/xsa-hdi-module.html)
