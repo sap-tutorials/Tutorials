@@ -61,7 +61,7 @@ tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>clo
 
 8. Click **Update**.
 
-    Upon updating the Postman environment parameters successfully, you are done with the Postman set up.
+    Upon updating the Postman environment parameters successfully, you are done with the Postman setup.
 
 
 [DONE]
@@ -340,7 +340,7 @@ Activation of a data model creates and persists aggregated data based on the inp
 
 To consume the above generated calculation view in SAP Analytics Cloud, you need to establish SAP HANA Live connection between SAP Analytics Cloud and SAP IoT. This is a one time activity and you do not need to repeat this step  again for the same tenant.
 
-1.	Open your licensed SAP Analytics Cloud tenant URL and login with valid credentials that are assigned with right roles that authorise to create live connection, create models and stories.
+1.	Open your licensed SAP Analytics Cloud tenant URL and log in with valid credentials that are assigned with right roles that authorise to create live connection, create models and stories.
 
      [https://acme-iot.eu10.sapanalytics.cloud/](https://acme-iot.eu10.sapanalytics.cloud/) (replace **acme-iot** with actual SAP Analytics Cloud tenant name)
 
