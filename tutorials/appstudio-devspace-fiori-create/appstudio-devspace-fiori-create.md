@@ -22,9 +22,11 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Business Application Studio)]
-1. Go to your Cloud Foundry environment subaccount and click the **Subscriptions** tab. 
+1. Go to your Cloud Foundry environment subaccount and click the **Subscriptions** tab.
 
     !![AppStudio Tile in SAP Cloud Platform Cockpit](01-01 SCP Subscriptions_.jpg)
+
+    >You may be prompted to accept the legal terms.
 
 2. Locate the **SAP Business Application Studio** tile.
 
@@ -64,7 +66,9 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 
 The SAP Fiori dev space opens and the **Welcome** tab appears.
 
-!![Open Dev Space](03-01-02 AppStudio Welcome Tab.jpg)
+!![Open Dev Space](AppStudio Welcome Tab_.jpg)
+
+>You may be prompted to accept the legal terms.
 
 >The purple color of the status bar indicates that there is no open workspace.
 

@@ -8,7 +8,7 @@ primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
- - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
+ - An SAP HANA database such as SAP HANA Cloud, HANA database trial or the SAP HANA, express edition that includes the SAP HANA database explorer
  - You have completed the first 3 tutorials in this group.
 
 ## Details
@@ -170,7 +170,9 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
 
     ![Create statement](reservation_generator2_create.png)
 
-5. To address these issues, make the following changes and rerun the SQL.  The first issue can be resolved by commenting out `unusedVar` on lines 19 and 23.  The second issue can be resolved by checking the input parameter `rmType` with the [IS SQL INJECTION SAFE](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/2020_02_QRC/en-US/4496cc5717e847feb7daa41516047df9.html) function.  Uncomment lines 24 - 26 to try this.
+5. To address these issues, make the following changes and rerun the SQL in the SQL Console tab.  
+    * The first issue can be resolved by commenting out `unusedVar` on lines 19 and 23.  
+    * The second issue can be resolved by checking the input parameter `rmType` with the [IS SQL INJECTION SAFE](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/2020_02_QRC/en-US/4496cc5717e847feb7daa41516047df9.html) function.  Uncomment lines 24 - 26 to try this.
 
 3. Right-click the procedure and choose **Analyze SQLScript Code**.
 
@@ -208,7 +210,7 @@ For further details see the links below.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](SQL Analyzer)]
-The SQL Analyzer provides a graphical view of how an analyzed SQL statement was executed.  This can help diagnose performance issues with query execution.  The viewer is currently available in on-premise versions of the SAP HANA database explorer and the SAP HANA cockpit as well as HANA studio.  A `.plv` file can also be saved, thereby enabling the user to open it in the SAP HANA Studio viewer.
+The SQL Analyzer provides a graphical view of how an analyzed SQL statement was executed which can provide additional insights into query execution.  The latest version is available as an extension for Visual Studio Code.  A `.plv` file can be generated in the SAP HANA database explorer which can then be opened in the SQL Analyzer.  A previous version of the SQL Analyzer is also included in the on-premise SAP HANA database explorer, the on-premise SAP HANA cockpit as well as SAP HANA studio.  
 
 1. Run the following SQL.
 
@@ -218,19 +220,38 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
 
     ![Reservations by Hotel](explainPlanSQL.png)
 
-2. Choose **Analyze | Analyze SQL** to execute the SQL and to view graphically how the SQL was executed.
+2. If using SAP HANA Cloud, HANA database, choose **Analyze | Generate SQL Analyzer Plan File**.  
+
+    ![Generate PLV](generatePLV.png)
+
+    Once the file has been saved it can then be opened in Visual Studio Code as shown below.
+
+    * Visual Studio
+
+        Install the plugin
+
+        ![VS Code Ex](vsCodeExtension.png)
+
+        Add the plan file
+
+        ![Add Plan File](VSCodeAddPlanFile.png)
+
+
+3. If using an on-premise edition, choose **Analyze | Analyze SQL** to execute the SQL and to view graphically how the SQL was executed.  Alternatively, choose to download the `plv` file and open it in the SQL Analyzer in Visual Studio Code or the SAP Business Application Studio.
 
     ![Analyze SQL](SQLAnalyzer0.png)  
 
-    Information is shown about the tables in use, records, dominant operators, and the time it took to compile and execute the SQL.
+4. Information is shown about the top 5 dominant operators, the top 10 critical path operators, the time it took to compile and execute the SQL statement, the peak memory, the result record count and accessed tables.
 
-    ![SQL Analyzer](SQLAnalyzer1.png)
+    ![SQL Analyzer](SQLAnalyzerNew.png)
 
-3. Switch to the **Timeline** tab to visually see the time that the operations took.
+5. Switch to the **PLAN GRAPH** tab to visually see details of the query execution.
 
-    ![timeline](SQLAnalyzer2.png)
+    ![timeline](SQLAnalyzer2New.png)
 
 >Refer to [Analyzing Statement Performance](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/1458a4079b294a58a57eca5823025108.html) for more information.
+
+---
 
 
 [DONE]
@@ -250,7 +271,7 @@ Tracing can be helpful when debugging a problem or in identifying SQL statements
 
 2. To determine the SQL requests that were executed in order to populate the various fields of the overview (e.g. memory used), enable a SQL trace by running the SQL statements below in a SQL console.
 
-    ```SQL SAP HANA Cloud
+    ```SQL SAP HANA Cloud, HANA database
     ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'SYSTEM') SET ('sqltrace', 'trace') = 'on', ('sqltrace', 'application') = 'sap_xsac_hrtt', ('sqltrace', 'user') = 'DBAdmin' WITH RECONFIGURE;
     ```
 
@@ -287,7 +308,7 @@ Tracing can be helpful when debugging a problem or in identifying SQL statements
 
     ![Open Trace File](openTrace.png)
 
-    >Note that in SAP HANA Cloud the file can be found under the `sqltrace` folder while with SAP HANA on-premise, the trace file appears under the `other` folder.
+    >Note that in SAP HANA Cloud, HANA database, the file can be found under the `sqltrace` folder while with SAP HANA on-premise, the trace file appears under the `other` folder.
 
     The SQL queries that return information about the memory being used by the HANA instance can be viewed in the file.  For example, the highlighted query is one such SQL request.
 
@@ -303,7 +324,7 @@ Tracing can be helpful when debugging a problem or in identifying SQL statements
 
     ![trace files](traceFiles.png)
 
->For additional details, consult the [Traces](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/7e31247372fb4dd7b8c6bbac758b8c91.html) topic in the SAP HANA Administration Guide for SAP HANA Platform.
+>For additional details, consult the [Traces](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/7e31247372fb4dd7b8c6bbac758b8c91.html) topic in the SAP HANA Administration Guide for SAP HANA Platform and SAP Note [2119087 - How-To: Configuring SAP HANA Traces](https://launchpad.support.sap.com/#/notes/2119087).
 
 Congratulations! You have now explored the available tools to help diagnose and debug SQL or SQLScript.
 

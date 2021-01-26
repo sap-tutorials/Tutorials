@@ -37,7 +37,7 @@ In this tutorial, you'll use the **Content Manager** to add an SAPUI5 to your la
     ![Add an app](2-add-app.png)
 
 
-    The app editor opens on the **PROPERTIES** tab.
+    The app editor opens with the **PROPERTIES** tab in focus.
 
 2. Enter the following values:
 
