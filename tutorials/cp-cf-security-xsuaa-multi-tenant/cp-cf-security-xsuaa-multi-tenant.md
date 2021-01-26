@@ -1,6 +1,6 @@
 ---
-title: Add Multitenancy to a Node.js Application Secured by the Authorization and Trust Management service (XSUAA)
-description: Learn how to add multitenancy to your application and make it available for other subaccounts using the SaaS Provisioning service and the XSUAA.
+title: Add Multi-Tenancy to a Node.js Application Secured by the Authorization and Trust Management service (XSUAA)
+description: Learn how to add multi-tenancy to your application and make it available for other subaccounts using the SaaS Provisioning service and the XSUAA.
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>node-js]
@@ -16,9 +16,9 @@ author_profile: https://github.com/nedo-SAP
 
 ## Details
 ### You will learn
-  - How to add multitenancy to a secure Node.js application
+  - How to add multi-tenancy to a secure Node.js application
   - How to provide the application to another subaccount with the SaaS Provisioning service
-  - How to access a multitenant application from another subaccount
+  - How to access a multi-tenant application from another subaccount
 
 The use case for this tutorial is that you've created a Node.js application in your subaccount that is secured by the XSUAA. You now want to make that application available to other subaccounts (tenants). You'll use the SaaS Provisioning service to make your application available to a consumer subaccount within your global trial account.
 
@@ -54,8 +54,8 @@ The specific values that are used in this tutorial are:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enable multitenancy in the security descriptor file)]
-To enable multitenancy, you need to change the parameter `tenant-mode` in the `xs-security.json` file to make it available for multiple tenants.
+[ACCORDION-BEGIN [Step 1: ](Enable multi-tenancy in the security descriptor file)]
+To enable multi-tenancy, you need to change the parameter `tenant-mode` in the `xs-security.json` file to make it available for multiple tenants.
 
 1. Go to the `product-list/security` folder.
 
@@ -209,8 +209,8 @@ To enable other subaccounts to subscribe to your application, you need to implem
     ```JSON
     "dependencies": {
       "express": "^4.17.1",
-      "@sap/xsenv": "^2.2.0",
-      "@sap/xssec": "^3.0.0",
+      "@sap/xsenv": "^3.1.0",
+      "@sap/xssec": "^3.0.10",
       "passport": "^0.4.1",
       "body-parser": "^1.19.0"   
     }
@@ -224,7 +224,7 @@ To enable other subaccounts to subscribe to your application, you need to implem
 [ACCORDION-BEGIN [Step 4: ](Create a SaaS configuration file)]
 To make your multitenant application endpoints available for subscription to consumer subaccounts, you must register the application in the Cloud Foundry environment via the SaaS Provisioning service.
 
-To register your application, you need a configuration file called `config.json`. In this file, you specify the subscription URL, the name, and description of your application. The `xsappname` has to be the same as the `xsappname` in the `xs-security.json` file.
+To register your application, you need a configuration file called `config.json`. In this file, you specify the subscription URL, the name and description of your application. The `xsappname` has to be the same as the `xsappname` in the `xs-security.json` file.
 
 1. Go to the `product-list` folder.
 
@@ -273,7 +273,7 @@ cf delete-service xsuaa-service-tutorial
 
 
 [ACCORDION-BEGIN [Step 6: ](Create service instances and redeploy your applications)]
-Create the new multitenant XSUAA service instance and the SaaS Provisioning service instance and redeploy your application.
+Create the new multi-tenant XSUAA service instance and the SaaS Provisioning service instance and redeploy your application.
 
 
 1. Log in to your Cloud Foundry account with the Cloud Foundry CLI.
@@ -362,7 +362,7 @@ Assign your user the role collection `ProductListViewer` that contains the neces
     `https://consumer-tenant-ap25-approuter-product-list-ap25.cfapps.eu10.hana.ondemand.com/products`
 
 
-The application will now show you the products.
+The application will now show you the products. If it's not working also consider to check with another browser or in private mode.
 
 
 [DONE]
