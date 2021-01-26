@@ -4,7 +4,7 @@ description: Using columns to store and process spatial data in tables
 auto_validation: true
 time: 10
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition   ]
+tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
