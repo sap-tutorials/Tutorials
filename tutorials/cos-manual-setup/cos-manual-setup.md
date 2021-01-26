@@ -43,6 +43,9 @@ But if you want an easy and quick way to setup SAP Customer Order Sourcing, use 
 
     !![Subscribe to SAP Customer Order Sourcing](SubscribeToCustomerOrderSourcing.png)
 
+
+>In case you are not able to subscribe to **SAP Customer Order Sourcing**, you need to [assign quota to a Subaccount](https://help.sap.com/viewer/cd03af1a94a440f1b5dbc0dc50a0989b/Cloud/en-US/bdf64a959a5249cf88b414a7c01391df.html).
+
 [VALIDATE_1]
 [ACCORDION-END]
 
