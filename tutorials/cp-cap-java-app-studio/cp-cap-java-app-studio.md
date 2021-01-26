@@ -1,6 +1,6 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Set Up SAP Business Application Studio for CAP Java
 description: Set up the SAP Business Application Studio and create a first service implementation.
 auto_validation: true
@@ -98,7 +98,7 @@ For this tutorial, you'll create a dev space personalized for building services 
 
     ```Shell/Bash
     mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
-    -DarchetypeVersion=1.3.0 -DcdsVersion=3.31.2 \
+    -DarchetypeVersion=RELEASE \
     -DgroupId=com.sap.cap -DartifactId=products-service -Dpackage=com.sap.cap.productsservice
     ```
 

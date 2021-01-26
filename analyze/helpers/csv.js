@@ -1,4 +1,5 @@
 'use strict';
+const path = require('path');
 
 const { reportFileName } = require('../constants');
 const fs = require('./fs');
@@ -9,12 +10,13 @@ class CsvHelper {
     this.fileName = reportFileName
       .replace('{{type}}', type)
       .replace('{{date}}', Date.now());
+    this.fullFilePath = path.join('analyze', 'reports', this.fileName);
   }
 
   save(rows) {
     const csv = this.prepare(rows);
 
-    return fs.writeFile(this.fileName, csv);
+    return fs.writeFile(this.fullFilePath, csv);
   }
 
   prepare() {

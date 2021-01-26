@@ -16,7 +16,6 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
-
 To enhance your MDK app with customer details information, you need to carry out the following tasks:
 
 *  Create a new customer details page
@@ -62,18 +61,20 @@ This page will show related details for a customer. In this page, you will add a
 
     | Property | Value |
     |----|----|
-    | `Description` | `CustomerId` |
-    | `FootNote`| `EmailAddress` |
-    | `HeadlineText`| `LastName` |
-    | `Status` | `PhoneNumber` |
-    | `Subhead` | `FirstName` |
+    | `Description` | `{CustomerId}` |
+    | `DetailImage` | `sap-icon://customer` |
+    | `FootNote`| `{EmailAddress}` |
+    | `HeadlineText`| `{LastName}` |
+    | `Status` | `{PhoneNumber}` |
+    | `Subhead` | `{FirstName}` |
 
     >Make sure to select values for the mentioned properties only from **Customer** Entity. You may find similar values from other entities. For example,
-    !![MDK](img_1.6.png)
 
-7. As enough fields have been selected to be displayed on the detail page, `SubStatus` and `Tags` are not required for this tutorial. In a real use case, you may need these properties.
+    >!![MDK](img_1.6.png)
 
-    Remove the default value for `SubStatus` properties.
+7. As enough fields have been selected to be displayed on the detail page, `Substatus` and `Tags` are not required for this tutorial. In a real use case, you may need these properties.
+
+    Remove the default value for `Substatus` properties.
 
 8. Also, delete items under `Tags`.
 
@@ -85,7 +86,7 @@ This page will show related details for a customer. In this page, you will add a
 
 9. In the main area of the page, let's display some other details like; address, city, postal code, county.
 
-    Drag and drop a **Static Key Value** container onto the page under the **object header**.
+    Drag and drop a **Static Key Value** container onto the page under the **Object Header**.
 
     !![MDK](img_1.9.gif)
 
@@ -108,7 +109,7 @@ This page will show related details for a customer. In this page, you will add a
 
     Click the **link icon** next to the **Value** field to display the Object Browser and change the Format to **Binding Target Path**.
 
-    Click the **checkbox** for _Current Object_ and double click `HouseNumber` to set it as the first part of the binding.
+    Click the **checkbox** for _Current Object_ and double click `HouseNumber` to set it as the first part of the binding. Don't click OK as you will set second part of the binding too.
 
     !![MDK](img_1.13.gif)
 
@@ -128,8 +129,6 @@ This page will show related details for a customer. In this page, you will add a
 
 14. Select the **upper right** Key Value Item and set the `KeyName` to **City**.
 
-    !![MDK](img_1.14.png)
-
     Click the link icon to display the Object Browser. Change the format to **Binding** and double click the **City** property of the Customer entity to set it as the binding expression.
 
     Click **OK** to set the binding.
@@ -138,9 +137,9 @@ This page will show related details for a customer. In this page, you will add a
 
     >Be careful not to select **City** from `Customer.Address (ESPM.Address)` collection, final expression should be as per above screenshot.
 
-15. Repeat the process and set the **lower left** Key Value Item Key Name to **Postal Code** and bind the value to the Postal Code entity property.
+15. Repeat the process and set the **lower left** Key Value Item Key Name to **Postal Code** and bind the value to the `PostalCode` entity property.
 
-16. Repeat the process and set the **lower right** Key Value Item Key Name to **Country** and bind the value to the Country entity property.
+16. Repeat the process and set the **lower right** Key Value Item Key Name to **Country** and bind the value to the `Country` entity property.
 
     >Be careful not to select _Postal Code_ & _City_ from Customer.Address (ESPM.Address) collection, final expression should be as per below screenshot.
 
@@ -162,7 +161,7 @@ Now, you will create a Navigation action that opens the `Customers_Detail.page` 
     | Field | Value |
     |----|----|
     | `Action Name`| `NavToCustomers_Detail` |
-    | `Page to Open` | Select `Customers_Detail.page` from the dropdown |
+    | `PageToOpen` | Select `Customers_Detail.page` from the dropdown |
 
     !![MDK](img_2.2.png)
 
@@ -173,15 +172,13 @@ Now, you will create a Navigation action that opens the `Customers_Detail.page` 
 
 [ACCORDION-BEGIN [Step 3: ](Set the OnPress of the customer list)]
 
-1. Go back to the `Customers_List page` and set the `OnLoaded` event of the Contact Cell table control. You will link the Contact Cell table control to the `NavToCustomers_Detail.action` so that when an end-user selects a customer, the Customer Detail page will open. MDK automatically passes the selected customer to the detail page.
+1. Go back to the `Customers_List.page` and set the `OnLoaded` event of the Contact Cell table control. You will link the Contact Cell table control to the `NavToCustomers_Detail.action` so that when an end-user selects a customer, the Customer Detail page will open. MDK automatically passes the selected customer to the detail page.
 
 2. In `Customers_List page`, select the **Contact Cell Table** control, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
 
 3. Double click the `NavToCustomers_Detail.action` and click **OK** to set it as the `OnPress` Action.
 
     !![MDK](img_3.1.png)
-
-4. Save the changes to the `Customers_List page`.
 
 [DONE]
 [ACCORDION-END]
@@ -190,13 +187,17 @@ Now, you will create a Navigation action that opens the `Customers_Detail.page` 
 
 Deploy the updated application to your MDK client.
 
-Right-click `Application.app` and select **MDK: Deploy**.
+1. Right-click `Application.app` and select **MDK: Deploy**.
 
-!![MDK](img_4.1.png)
+    !![MDK](img_4.1.png)
 
-You should see **Deploy Succeeded** message.
+2. Select deploy target as **Mobile Services**.
 
-!![MDK](img_4.2.png)
+    !![MDK](img_4.2.png)
+
+    You should see **Deploy succeeded** message.
+
+    !![MDK](img_4.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -207,7 +208,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [Android]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
     ![MDK](img_5.1.png)
 
@@ -223,7 +224,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [iOS]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
     ![MDK](img_6.1.png)
 
@@ -241,9 +242,11 @@ You should see **Deploy Succeeded** message.
 
 >The MDK sets the current object to the selected record when running the on press action on the list.  The detail page then just needs to reference the correct properties assuming they are part of the object from the list page. You can look at [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/action-binding-and-result.html#auto-set-action-binding) for more details.
 
-**Congratulations**! You have successfully created a Customer Detail page and you are now all set to [Modify a Customer Record in an MDK App](cp-mobile-dev-kit-edit-customer).
-
 [DONE]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully created a Customer Detail page and you are now all set to [Modify a Customer Record in an MDK App](cp-mobile-dev-kit-edit-customer).
 
 ---

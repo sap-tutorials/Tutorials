@@ -3,13 +3,13 @@ title: Download and Prepare App for Cloud Foundry Deployment
 description: Download files for a simple app, maintain the deployment descriptor, and bundle everything together ready for deployment.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform, topic>nodejs  ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, topic>nodejs ]
 time: 10
 ---
 
 
 ## Details
-### You will learn  
+### You will learn
 - What a typical small Node.js app looks like
 - What a Cloud Foundry deployment descriptor contains
 
@@ -81,3 +81,6 @@ If someone else is already using that hostname within that region and environmen
 [ACCORDION-END]
 
 ---
+
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-cf-dev-01-prepare-app&graphics=true" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+

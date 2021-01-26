@@ -53,31 +53,30 @@ In the MDK editor, you will create a new JavaScript file called `EmailValidation
 
 >You can find more details about [writing a Rule](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/rules.html).
 
-1. Right-click the **Rules** folder | **New File**.
+1. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
     !![MDK](img_2.1.png)
 
-2. Enter the file name `EmailValidation.js`, click **OK**.
+2. Enter the Rule name `EmailValidation`, click **Next** and then **Finish** on the confirmation step.
 
-3. Copy and paste the following code.
+    !![MDK](img_2.2.png)
+
+3. Replace the generated snippet with below code.
 
     ```JavaScript
-    export default function EmailValidation(atSign) {
-
-    //The following evaluateTargetPath will retrieve the current value of the email control
-    if((atSign.evaluateTargetPath('#Control:FCEmail/#Value').indexOf('@')) === -1){
-
-    //If email value does not contain @ display a validation failure message to the end-user
-      atSign.executeAction('/DemoSampleApp/Actions/ValidationFailure.action');
-      } else {
-
-    //If @ is present in the email value, return true to indicate validation is successful
-        return true;
-      }
+    export default function EmailValidation(context) {
+        //The following evaluateTargetPath will retrieve the current value of the email control
+        if ((context.evaluateTargetPath('#Control:FCEmail/#Value').indexOf('@')) === -1) {
+            //If email value does not contain @ display a validation failure message to the end-user
+            context.executeAction('/DemoSampleApp/Actions/ValidationFailure.action');
+        } else {
+            //If @ is present in the email value, return true to indicate validation is successful
+            return true;
+        }
     }
     ```
 
-    Save the changes.
+4. Save the changes.
 
     >The [`indexOf()` method](https://www.w3schools.com/jsref/jsref_indexof.asp) returns the index within the calling String object of the first occurrence of the specified value and -1, if no occurrence is found.
 
@@ -104,13 +103,17 @@ Now, that you have created the validation rule, you will add it to the Update ac
 
 Deploy the updated application to your MDK client.
 
-Right-click `Application.app` and select **MDK: Deploy**.
+1. Right-click `Application.app` and select **MDK: Deploy**.
 
-!![MDK](img_4.1.png)
+    !![MDK](img_4.1.png)
 
-You should see **Deploy Succeeded** message.
+2. Select deploy target as **Mobile Services**.
 
-!![MDK](img_4.2.png)
+    !![MDK](img_4.2.png)
+
+    You should see **Deploy succeeded** message.
+
+    !![MDK](img_4.3.png)
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -121,7 +124,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [Android]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, click **OK**.
 
 2. Update a record with no contain of **@** in Email property throws a validation failure message.
 
@@ -132,7 +135,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [iOS]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, click **OK**.
 
 2. Update a record with no contain of **@** in Email property throws a validation failure message.
 
@@ -141,9 +144,11 @@ You should see **Deploy Succeeded** message.
 
 [OPTION END]
 
-**Congratulations!** You have successfully completed **Create Your First Mobile App with the Mobile Development Kit (MDK)** mission and you are now all set to [Enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
-
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully completed **Create Your First Mobile App with the Mobile Development Kit (MDK)** mission and you are now all set to [Enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
 
 ---

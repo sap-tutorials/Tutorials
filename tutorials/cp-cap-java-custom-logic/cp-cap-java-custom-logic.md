@@ -1,6 +1,6 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Extend the Bookstore with Custom Code
 description: Extend the previously built bookstore with custom coding, for example, to validate requests.
 auto_validation: true
@@ -265,7 +265,7 @@ public class OrdersService implements EventHandler {
 10. To reset the database to the initial state, run the following command from the root of your project:
 
     ```Shell/Bash
-    cd ~/projects/bookstore && npm run deploy
+    cd ~/projects/bookstore && cds deploy --to sqlite
     ```
 
 [VALIDATE_1]

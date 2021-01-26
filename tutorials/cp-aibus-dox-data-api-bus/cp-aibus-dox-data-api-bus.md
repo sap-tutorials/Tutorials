@@ -1,22 +1,17 @@
 ---
-title: Use Machine Learning to Enrich Business Data
+title: Use Machine Learning to Enrich Business Data with Swagger UI
 description: Create, update, list and delete enrichment data using the Data API business entity from Document Information Extraction, one of the SAP AI Business Services in SAP Cloud Platform.
 auto_validation: true
 time: 15
-tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
-
-## Prerequisites
-- [Create Service Keys for Document Information Extraction](cp-aibus-dox-service-instance-booster)
-- [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token)
-- [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui) (step 1 only)
 
 ## Details
 ### You will learn
   - How to create, update, list and delete enrichment data using the business entity
 
-After completing the tutorial mission [Get Started with Document Information Extraction](https://developers.sap.com/mission.cp-aibus-extract-document-service.html), you can also use Document Information Extraction to enrich the information extracted from documents with your own master data. You can, for example, match enrichment data entities, such as supplier IDs, with the document [Extracted Header Fields](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/b1c07d0c51b64580881d11b4acb6a6e6.html), such as sender names.
+You can also use Document Information Extraction to enrich the information extracted from documents with your own master data records. You can, for example, match enrichment data entities, such as supplier IDs, with the document [Extracted Header Fields](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/b1c07d0c51b64580881d11b4acb6a6e6.html), such as sender names.
 
 When enriching data with Document Information Extraction, you use 2 types of entities that you find in business documents. The `business entity` represents different kinds of organizations with which you deal as a company. It can represent, for example, suppliers and customers. The `employee entity` represents an employee in the company.
 
@@ -26,7 +21,7 @@ When you finish this tutorial, you will have explored all Data API functionaliti
 
 [ACCORDION-BEGIN [Step 1: ](Create client)]
 
-After completing the prerequisite tutorials [Create Service Keys for Document Information Extraction](cp-aibus-dox-service-instance-booster) and [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), and performing at least step 1 in the tutorial [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui) to access and authorize the Document Information Extraction Swagger UI, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
+After performing step 1 of the tutorial [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui) to access and authorize the Document Information Extraction Swagger UI, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
 
 You can either create a single client or multiple clients in the **payload** field of the **POST /clients** endpoint. The **`clientId`** values created here will be used in other service endpoints.
 
@@ -49,7 +44,7 @@ You should receive a response like the following:
 
 >Be aware of the following Document Information Extraction trial account limitations:​
 
->- Maximum 40 uploaded documents per week​
+>- Maximum 40 uploaded document pages per week​ (the documents can have more than 1 page)
 
 >- Maximum 1 created `clientId`
 
@@ -155,22 +150,22 @@ You should receive a response like the following with status SUCCESS:
 
 [ACCORDION-BEGIN [Step 4: ](Upload document to get prediction with enrichment data)]
 
->Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in English. The team is working to support additional document types and languages in the near future.
+>Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
 
 When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`id`}** endpoint. To have the enrichment data in the prediction, you need to have the following part in the query of the **POST /document/jobs** endpoint (it is usually already there by default):
 
-    ```JSON
-    "enrichment": {
-        "sender": {
-          "top": 5,
-          "type": "businessEntity",
-          "subtype": "supplier"
-        },
-        "employee": {
-          "type": "employee"
-        }
-      }
-    ```
+```JSON
+"enrichment": {
+    "sender": {
+      "top": 5,
+      "type": "businessEntity",
+      "subtype": "supplier"
+    },
+    "employee": {
+      "type": "employee"
+    }
+}
+```
 
 Do the following:
 
@@ -178,10 +173,10 @@ Do the following:
 
 2. Click **Try it out**.
 
-3. Right click [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-1.pdf), then click ***Save link as*** to download locally the document PDF file for this enrich business data example.
-> You can also upload and enrich your own document in PDF format with content in headers and tables (an invoice, for example). In this case, make sure the data you define in the **`payload`** field, in step 2, matches your document fields.
+3. Right click [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-1.pdf), then click ***Save link as*** to download locally the document file for this enrich business data example.
+> You can also upload to the service and enrich any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice. In this case, make sure the data you define in the **`payload`** field, in step 2, matches your document fields.
 
-4. Upload the document PDF file you want to enrich.
+4. Upload the document file you want to enrich.
 
 5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 1 (`c_29`, for example), the document type (`invoice`, for example), `receivedDate` (2020-02-17, for example), the enrichment data type `businessEntity` and subtype `supplier`.
 
@@ -249,17 +244,17 @@ Copy the **`id`** from the **Response body** to get enrichment data prediction i
 
 When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`id`}** endpoint.
 
+> Enrichment data is refreshed automatically every 4 hours. It might take up to 4 hours until the enrichment data prediction is available in the response. If the enrichment data prediction is NOT available in the response in your first try, perform again (some hours later) steps 4 and 5. Do not perform steps 7 and 8 before you see the enrichment data prediction in the response in step 5.
+
 1. Expand the **GET /document/jobs/{`id`}** endpoint.
 
 2. Click **Try it out**.
 
-3. Set **`extractedValues`** to `true` to get the extracted values.
+3. Set **`returnNullValues`** and **`extractedValues`** to `true`.
 
-4. Enter the **`clientId`** you created in step 1 (`c_29`, for example).
+4. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
 
-5. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
-
-6. Click **Execute**.
+5. Click **Execute**.
 
 The endpoint request and response look as follows:
 
@@ -273,263 +268,322 @@ The endpoint request and response look as follows:
 
 This is an example of a full prediction including the enrichment data part:
 
-    ```JSON
-    {
-      "status": "DONE",
-      "id": "cefda9f3-5f76-4553-a245-f19e5cd6752a",
-      "fileName": "sample-invoice-1.pdf",
-      "documentType": "invoice",
-      "created": "2020-06-15T09:59:04.091971+00:00",
-      "finished": "2020-06-15T09:59:29.115803+00:00",
-      "country": "XX",
-      "extraction": {
-        "headerFields": [
-          {
-            "name": "currencyCode",
-            "category": "amounts",
-            "value": "USD",
-            "type": "string",
-            "confidence": 0.919029772281647,
-            "page": 1,
-            "coordinates": {
-              "x": 0,
-              "y": 0,
-              "w": 0,
-              "h": 0
-            }
-          },
-          {
-            "name": "documentDate",
-            "category": "document",
-            "value": "2016-01-25",
-            "type": "date",
-            "confidence": 0.983220152556896,
-            "page": 1,
-            "coordinates": {
-              "x": 0.759677419354839,
-              "y": 0.174458380843786,
-              "w": 0.113709677419355,
-              "h": 0.00997719498289626
-            }
-          },
-          {
-            "name": "documentNumber",
-            "category": "document",
-            "value": "INV-3337",
-            "type": "string",
-            "confidence": 0.655578226513333,
-            "page": 1,
-            "coordinates": {
-              "x": 0.760887096774194,
-              "y": 0.136830102622577,
-              "w": 0.0608870967741936,
-              "h": 0.00826681870011403
-            }
-          },
-          {
-            "name": "grossAmount",
-            "category": "amounts",
-            "value": 93.5,
-            "type": "number",
-            "confidence": 0.656007521080248,
-            "page": 1,
-            "coordinates": {
-              "x": 0.870161290322581,
-              "y": 0.500285062713797,
-              "w": 0.0447580645161291,
-              "h": 0.00940706955530213
-            }
-          },
-          {
-            "name": "netAmount",
-            "category": "amounts",
-            "value": 85,
-            "type": "number",
-            "confidence": 0.64037944782864,
-            "page": 1,
-            "coordinates": {
-              "x": 0.870161290322581,
-              "y": 0.462656784492588,
-              "w": 0.0447580645161291,
-              "h": 0.00940706955530218
-            }
-          },
-          {
-            "name": "paymentTerms",
-            "category": "payment",
-            "value": "within 30 days from date of invoice.",
-            "type": "string",
-            "confidence": 0.600183615235057,
-            "page": 1,
-            "coordinates": {
-              "x": 0.192741935483871,
-              "y": 0.863169897377423,
-              "w": 0.23508064516129,
-              "h": 0.0102622576966933
-            }
-          },
-          {
-            "name": "purchaseOrderNumber",
-            "category": "details",
-            "value": "12345",
-            "type": "string",
-            "confidence": 0,
-            "page": 1,
-            "coordinates": {
-              "x": 0.760887096774194,
-              "y": 0.155929304446978,
-              "w": 0.0391129032258065,
-              "h": 0.00741163055872293
-            }
-          },
-          {
-            "name": "receiverAddress",
-            "category": "receiver",
-            "value": "123 Somewhere St Melbourne, VIC 3000",
-            "type": "string",
-            "confidence": 0.583759787255599,
-            "page": 1,
-            "coordinates": {
-              "x": 0.0729838709677419,
-              "y": 0.303591790193843,
-              "w": 0.138306451612903,
-              "h": 0.024230330672748
-            }
-          },
-          {
-            "name": "receiverName",
-            "category": "receiver",
-            "value": "Test Business",
-            "type": "string",
-            "confidence": 0.611305298987362,
-            "page": 1,
-            "coordinates": {
-              "x": 0.0717741935483871,
-              "y": 0.288768529076397,
-              "w": 0.092741935483871,
-              "h": 0.00798175598631695
-            }
-          },
-          {
-            "name": "senderAddress",
-            "category": "sender",
-            "value": "Suite 5A-1204 123 Somewhere Street Your City AZ 12345",
-            "type": "string",
-            "confidence": 0.60411537696182,
-            "page": 1,
-            "coordinates": {
-              "x": 0.0721774193548387,
-              "y": 0.173318129988597,
-              "w": 0.150806451612903,
-              "h": 0.040193842645382
-            }
-          },
-          {
-            "name": "senderName",
-            "category": "sender",
-            "value": "Sliced Invoices",
-            "type": "string",
-            "confidence": 0.622503629965442,
-            "page": 1,
-            "coordinates": {
-              "x": 0.0713709677419355,
-              "y": 0.157069555302166,
-              "w": 0.100403225806452,
-              "h": 0.00798175598631698
-            }
-          },
-          {
-            "name": "taxRate",
-            "category": "amounts",
-            "value": 0,
-            "type": "number",
-            "confidence": 0.818773365020752,
-            "page": 1,
-            "coordinates": {
-              "x": 0.743548393249512,
-              "y": 0.420182436704636,
-              "w": 0.0411290526390076,
-              "h": 0.00769668817520142
-            },
-            "group": 1
-          }
-        ],
-        "lineItems": [
-          [
-            {
-              "name": "description",
-              "category": "details",
-              "value": "Web Design",
-              "type": "string",
-              "confidence": 0.607532449066639,
-              "page": 1,
-              "coordinates": {
-                "x": 0.172983870967742,
-                "y": 0.414196123147092,
-                "w": 0.0794354838709678,
-                "h": 0.0102622576966933
-              }
-            },
-            {
-              "name": "quantity",
-              "category": "details",
-              "value": 1,
-              "type": "number",
-              "confidence": 0.63710602976027,
-              "page": 1,
-              "coordinates": {
-                "x": 0.102822580645161,
-                "y": 0.42018244013683,
-                "w": 0.0270161290322581,
-                "h": 0.00769669327251998
-              }
-            },
-            {
-              "name": "netAmount",
-              "category": "amounts",
-              "value": 85,
-              "type": "number",
-              "confidence": 0.633846010222579,
-              "page": 1,
-              "coordinates": {
-                "x": 0.870161290322581,
-                "y": 0.419612314709236,
-                "w": 0.0447580645161291,
-                "h": 0.00940706955530213
-              }
-            },
-            {
-              "name": "unitPrice",
-              "category": "details",
-              "value": 85,
-              "type": "number",
-              "confidence": 0.635079625881079,
-              "page": 1,
-              "coordinates": {
-                "x": 0.610483870967742,
-                "y": 0.419612314709236,
-                "w": 0.0447580645161291,
-                "h": 0.00940706955530213
-              }
-            }
-          ]
-        ]
+```JSON
+{
+  "status": "DONE",
+  "id": "afc5f228-7393-431a-ae9a-3dddf440a9bd",
+  "fileName": "sample-invoice-1.pdf",
+  "documentType": "invoice",
+  "created": "2020-11-11T12:30:22.023360+00:00",
+  "finished": "2020-11-11T12:32:05.308440+00:00",
+  "country": "XX",
+  "extraction": {
+    "headerFields": [
+      {
+        "name": "taxRate",
+        "category": "amounts",
+        "value": null,
+        "type": "number",
+        "page": null,
+        "confidence": null,
+        "coordinates": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "group": 1
       },
-      "enrichment": {
-        "sender": [
-          {
-            "id": "BE0001",
-            "confidence": 0.5625
-          },
-          {
-            "id": "BE0002",
-            "confidence": 0.4625
-          }
-        ],
-        "employee": []
+      {
+        "name": "taxAmount",
+        "category": "amounts",
+        "value": 8.5,
+        "type": "number",
+        "page": 1,
+        "confidence": 0.999595546722412,
+        "coordinates": {
+          "x": 0.877468764781952,
+          "y": 0.481470912694931,
+          "w": 0.0362756848335266,
+          "h": 0.00883695483207703
+        },
+        "group": 1
+      },
+      {
+        "name": "senderName",
+        "category": "sender",
+        "value": "Sliced Invoices",
+        "type": "string",
+        "page": 1,
+        "confidence": 0.617510483307498,
+        "coordinates": {
+          "x": 0.0709391374445788,
+          "y": 0.156784492588369,
+          "w": 0.100362756952842,
+          "h": 0.00826681870011403
+        }
+      },
+      {
+        "name": "documentNumber",
+        "category": "document",
+        "value": "INV-3337",
+        "type": "string",
+        "page": 1,
+        "confidence": 0.656084211099715,
+        "coordinates": {
+          "x": 0.759774284562676,
+          "y": 0.136830102622577,
+          "w": 0.0612656187021362,
+          "h": 0.00826681870011403
+        }
+      },
+      {
+        "name": "purchaseOrderNumber",
+        "category": "details",
+        "value": "12345",
+        "type": "string",
+        "page": 1,
+        "confidence": 0,
+        "coordinates": {
+          "x": 0.760177347843611,
+          "y": 0.155644241733181,
+          "w": 0.0390971382507054,
+          "h": 0.00798175598631698
+        }
+      },
+      {
+        "name": "receiverAddress",
+        "category": "receiver",
+        "value": "123 Somewhere St Melbourne, VIC 3000",
+        "type": "string",
+        "page": 1,
+        "confidence": 0.584470650866444,
+        "coordinates": {
+          "x": 0.0725513905683192,
+          "y": 0.303591790193843,
+          "w": 0.138250705360742,
+          "h": 0.0250855188141391
+        }
+      },
+      {
+        "name": "grossAmount",
+        "category": "amounts",
+        "value": 93.5,
+        "type": "number",
+        "page": 1,
+        "confidence": 0.653526421749231,
+        "coordinates": {
+          "x": 0.869407496977025,
+          "y": 0.500285062713797,
+          "w": 0.0447400241837969,
+          "h": 0.0091220068415051
+        }
+      },
+      {
+        "name": "netAmount",
+        "category": "amounts",
+        "value": 85,
+        "type": "number",
+        "page": 1,
+        "confidence": 0.641649420965802,
+        "coordinates": {
+          "x": 0.869407496977025,
+          "y": 0.462371721778791,
+          "w": 0.0447400241837969,
+          "h": 0.00969213226909921
+        }
+      },
+      {
+        "name": "receiverName",
+        "category": "receiver",
+        "value": "Test Business",
+        "type": "string",
+        "page": 1,
+        "confidence": 0.610726446327236,
+        "coordinates": {
+          "x": 0.071745264006449,
+          "y": 0.2884834663626,
+          "w": 0.0923014913341395,
+          "h": 0.00826681870011403
+        }
+      },
+      {
+        "name": "senderAddress",
+        "category": "sender",
+        "value": "Suite 5A-1204 123 Somewhere Street Your City AZ 12345",
+        "type": "string",
+        "page": 1,
+        "confidence": 0.602965183910869,
+        "coordinates": {
+          "x": 0.0721483272873841,
+          "y": 0.1730330672748,
+          "w": 0.15074566706973,
+          "h": 0.040193842645382
+        }
+      },
+      {
+        "name": "receiverContact",
+        "category": "receiver",
+        "value": null,
+        "type": "string",
+        "page": null,
+        "confidence": null,
+        "coordinates": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        }
+      },
+      {
+        "name": "taxId",
+        "category": "amounts",
+        "value": null,
+        "type": "string",
+        "page": null,
+        "confidence": null,
+        "coordinates": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "group": 1
+      },
+      {
+        "name": "shippingAmount",
+        "category": "amounts",
+        "value": null,
+        "type": "number",
+        "page": null,
+        "confidence": null,
+        "coordinates": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        }
+      },
+      {
+        "name": "currencyCode",
+        "category": "amounts",
+        "value": "USD",
+        "type": "string",
+        "page": 1,
+        "confidence": 0.933853209018707,
+        "coordinates": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        }
+      },
+      {
+        "name": "documentDate",
+        "category": "document",
+        "value": "2016-01-25",
+        "type": "date",
+        "page": 1,
+        "confidence": 0.986256398260593,
+        "coordinates": {
+          "x": 0.758968158000806,
+          "y": 0.174458380843786,
+          "w": 0.1136638452237,
+          "h": 0.00940706955530218
+        }
       }
-    }    
-    ```
+    ],
+    "lineItems": [
+      [
+        {
+          "name": "description",
+          "category": "details",
+          "value": "Web Design This is a sample description...",
+          "type": "string",
+          "page": 1,
+          "confidence": 0.620112451872042,
+          "coordinates": {
+            "x": 0.171704957678356,
+            "y": 0.413911060433295,
+            "w": 0.174929463925836,
+            "h": 0.0216647662485747
+          }
+        },
+        {
+          "name": "quantity",
+          "category": "details",
+          "value": 1,
+          "type": "number",
+          "page": 1,
+          "confidence": 0.638236153693426,
+          "coordinates": {
+            "x": 0.102378073357517,
+            "y": 0.42018244013683,
+            "w": 0.0270052398226522,
+            "h": 0.00826681870011403
+          }
+        },
+        {
+          "name": "netAmount",
+          "category": "amounts",
+          "value": 85,
+          "type": "number",
+          "page": 1,
+          "confidence": 0.63175144701293,
+          "coordinates": {
+            "x": 0.869407496977025,
+            "y": 0.419612314709236,
+            "w": 0.0447400241837969,
+            "h": 0.00940706955530213
+          }
+        },
+        {
+          "name": "unitPrice",
+          "category": "details",
+          "value": 85,
+          "type": "number",
+          "page": 1,
+          "confidence": 0.638240830464797,
+          "coordinates": {
+            "x": 0.609834744054817,
+            "y": 0.419612314709236,
+            "w": 0.0447400241837969,
+            "h": 0.00940706955530213
+          }
+        },
+        {
+          "name": "materialNumber",
+          "category": "details",
+          "value": null,
+          "type": "string",
+          "page": 1,
+          "confidence": null,
+          "coordinates": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          }
+        }
+      ]
+    ]
+  },
+  "fileType": "pdf",
+  "enrichment": {
+    "sender": [
+      {
+        "id": "BE0001",
+        "confidence": 0.5625
+      },
+      {
+        "id": "BE0002",
+        "confidence": 0.4625
+      }
+    ],
+    "employee": []
+  }
+}
+```
 
 You have now successfully used the business entity to get enrichment data predictions for the document you uploaded to Document Information Extraction.
 

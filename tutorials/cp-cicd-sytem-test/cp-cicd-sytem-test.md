@@ -6,7 +6,7 @@ time: 60
 tags: [tutorial>beginner, topic>sapui5, products>sap-fiori, topic>cloud]
 primary_tag: products>sap-cloud-platform
 author_name: Sarah Noack
-author_profile: https://github.com/SarahNoack
+author_profile: https://github.com/SarahLendle
 ---
 
 ## Prerequisites

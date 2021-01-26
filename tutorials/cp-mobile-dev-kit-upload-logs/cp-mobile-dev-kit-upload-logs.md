@@ -20,6 +20,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 ---
 
 
+
 ![MDK](img_1.gif)
 
 [ACCORDION-BEGIN [Step 1: ](Define client log policy in Mobile Services cockpit )]
@@ -61,7 +62,7 @@ You will create 3 actions:
 
 1. Create a log action of type `SetState`:
 
-    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**. **Next**.
+    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
 
     !![MDK](img_2.1.png)
 
@@ -79,7 +80,7 @@ You will create 3 actions:
 
 2. Create a log action of type `SetLevel`:
 
-    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**. **Next**.
+    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
 
     Provide the below information:
 
@@ -97,7 +98,7 @@ You will create 3 actions:
 
 3. Create a log action of type `Upload`:
 
-    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**. **Next**.
+    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
 
     Provide the below information:
 
@@ -115,7 +116,7 @@ You will create 3 actions:
 
 [ACCORDION-BEGIN [Step 3: ](Bind Set Level log action to the success of Set State action)]
 
-Double click the `LogSetState.action` file | expand **Common Action Properties** and select `LogSetLevel.action` for **Success Action**.
+Double click the `LogSetState.action` file | expand **Common Action Properties** | click the link icon for **Success Action** and bind it to  `LogSetLevel.action`
 
 !![MDK](img_3.png)
 
@@ -128,7 +129,7 @@ When the metadata is downloaded from App Update, `OnDidUpdate` event is being ca
 
 You will bind `LogSetState.action` at success of  `InitializeOffline.action`.
 
-Navigate to `DemoSampleApp` | `Actions` | `Service` | `InitializeOffline.action`, scroll-down and expand **Common Action Properties** section, select `LogSetState.action` for the **Success Action**.  
+Navigate to `DemoSampleApp` | `Actions` | `Service` | `InitializeOffline.action` | scroll-down and expand **Common Action Properties** section | click the link icon for **Success Action** and bind it to  `LogSetState.action`
 
 !![MDK](img_4.gif)
 
@@ -151,7 +152,7 @@ You will define two message actions for displaying success or failure when _Log 
     | `Action Name`| `LogUploadSuccessful` |
     | `Type` | Select `ToastMessage` from the dropdown |
     | `Message`| `Log File Uploaded` |
-    | `MaxNumberOfLines`| 1 |
+    | `NumberOfLines`| 1 |
     | `Duration` | 3 |
     | `IsIconHidden`| Select `true` from the dropdown |
     | `Animated` | Select `true` from the dropdown |
@@ -187,10 +188,10 @@ You will define two message actions for displaying success or failure when _Log 
 
     | Property | Value |
     |----|----|
-    | `Success Action`| Select `LogUploadSuccessful.action` from the dropdown |
-    | `Failure Action`| Select `LogUploadFailure.action` from the dropdown |
+    | `Success Action`| Click the link icon and bind it to `LogUploadSuccessful.action`  |
+    | `Failure Action`| Click the link icon and bind it to `LogUploadFailure.action` |
     | `Show Activity Indicator` | Select `true` from the dropdown ||
-    | `Activity Indicator Text`| `Uploading Logs...` |
+    | `Activity Indicator Text`|  `Uploading Logs...` |
 
     !![MDK](img_5.3.png)
 
@@ -222,13 +223,17 @@ You will add a toolbar item to the _main page_ called **Upload Logs**. You will 
 
 Deploy the updated application to your MDK client.
 
-Right-click `Application.app` and select **MDK: Deploy**.
+1. Right-click `Application.app` and select **MDK: Deploy**.
 
-!![MDK](img_7.1.png)
+    !![MDK](img_7.1.png)
 
-You should see **Deploy Succeeded** message.
+2. Select deploy target as **Mobile Services**.
 
-!![MDK](img_7.2.png)
+    !![MDK](img_7.2.png)
+
+    You should see **Deploy succeeded** message.
+
+    !![MDK](img_7.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -237,7 +242,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [Android]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
     At `OnLaunch` event, app starts gathering logs.
 
@@ -251,7 +256,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [iOS]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
     At `OnLaunch` event, app starts gathering logs.
 
@@ -268,7 +273,7 @@ You should see **Deploy Succeeded** message.
 
 [ACCORDION-BEGIN [Step 9: ](Examine uploaded logs in Mobile Services cockpit)]
 
-Open SAP Cloud Platform Mobile Services Cockpit, click **Mobile Applications** | **Native/Hybrid** | click MDK app | **Mobile Client Log Upload** | **Logs**.
+Open SAP Cloud Platform Mobile Services Cockpit, click **Mobile Applications** | **Native/Hybrid** | click `com.sap.mdk.demo` app | **Mobile Client Log Upload** | **Logs**.
 
 !![MDK](img_9.png)
 
@@ -276,10 +281,12 @@ You may view log entries directly in Mobile Services Cockpit or download them lo
 
 >You can find more details about [Uploading and Viewing Client Logs](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/logging/admin/client-logs.html).
 
-**Congratulations!** You have successfully uploaded client logs to SAP Cloud Platform Mobile Services and you are now all set to [Extend an MDK App with Customer Orders](cp-mobile-dev-kit-customer-order).
-
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully uploaded client logs to SAP Cloud Platform Mobile Services and you are now all set to [Extend an MDK App with Customer Orders](cp-mobile-dev-kit-customer-order).
 
 ---

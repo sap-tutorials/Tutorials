@@ -1,51 +1,45 @@
 ---
-title: Add a Web Dynpro ABAP App to Your Portal Site
-description: Add a classic SAP UI app (like those typically run by SAP customers on the data center backends), to an SAP Cloud Platform Portal site.
+title: Add a Web Dynpro ABAP App to Your SAP Cloud Platform Launchpad Site
+description: Add a classic SAP UI app (like those typically run by SAP customers on the data center backends), to your launchpad site.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
-primary_tag: products>sap-cloud-platform-portal
+tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-cloud-platform-launchpad]
+primary_tag: products>sap-cloud-platform-launchpad
 author_name: Lindsay Bert
-author_profile: https://github.com/LindsayBert 
+author_profile: https://github.com/LindsayBert
 ---
 
 ## Prerequisites
-- You have created a destination between SAP Cloud Platform and your backend system using the SAP Gateway Demo System.
-- You have opened your trial account or other subaccount.
-
-
+- You have created a destination in SAP Cloud Platform cockpit to the SAP Gateway Demo System.
+- You have subscribed to the SAP Cloud Platform Launchpad service and created a launchpad site.
 
 
 ## Details
 ### You will learn
-  - How to expose a Web Dynpro ABAP backend application to your SAP Cloud Platform Portal site.
+  - How to expose a Web Dynpro ABAP backend application to your SAP Cloud Platform Launchpad site.
 
 ---
+In this tutorial, you'll use the **Content Manager** of the SAP Cloud Platform Launchpad service to add a Web Dynpro ABAP app to your launchpad site.
 
 [ACCORDION-BEGIN [Step 1: ](Open the Content Manager)]
 
-1. Click **Subscriptions** in the left navigation panel of your trial account and in the search box, enter `portal` to search for the **Portal** tile.
+1. To get to the **Content Manager**, first Click **Subscriptions** in the left navigation panel of your trial account and in the search box, enter `launchpad` to search for the **Launchpad** tile. Then click **Go to application**.
 
     ![Click subscriptions](1-click-subscriptions.png)
 
-2. Click **Go to Application** on the **Portal** tile.
 
-    ![Open Portal Service](2-go-to-application.png)
+2. In the side panel, click the Content Manager icon to open the **Content Manager**.
 
-    The **Site Manager** opens with the **Site Directory** in focus.
-
-4. In the side panel, click the icon that opens the **Content Manager**.
-
-    ![Open Content Manager](3-open-content-manager.png)
+    ![Open Content Manager](2-open-content-manager.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Configure the Web Dynpro ABAP app)]
 
-1.  In the Content Manager, click **+ New** -> **App**.
+1.  In the **Content Manager**, click **+ New** and then select **App** from the list.
 
-    ![Create new app](4-new-app.png)
+    !![Create new app](4-new-app.png)
 
 2. In the **PROPERTIES** tab, enter these values:
 
@@ -56,7 +50,7 @@ author_profile: https://github.com/LindsayBert
     |  App UI Technology    | Select `Web Dynpro ABAP`
     |  Application ID           | `S_EPM_FPM_PO`
 
-    ![Add app properties](5-app-properties.png)
+    !![Add app properties](5-app-properties.png)
 
 3. In the **NAVIGATION** tab, enter these values:
 
@@ -65,7 +59,7 @@ author_profile: https://github.com/LindsayBert
     |  Semantic Object           | `S_EPM_FPM_PO`
     |  Action          | `Display`
 
-    ![Add navigation properties](6-navigation-properties.png)
+    !![Add navigation properties](6-navigation-properties.png)
 
 4. In the **VISUALIZATION** tab, enter these value:
 
@@ -78,67 +72,90 @@ author_profile: https://github.com/LindsayBert
 
     ![Add visualization properties](7-visualization-properties.png)
 
-You've configured the app. Now you need to assign it to a group so that users will be able to see the app on the launchpad page of your Portal site. You also need to assign it to the **Everyone** role so that users can access the app.  
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 3: ](View the app that you created)]
+
+Click the Content Manager icon in the left side panel to open the **Content Manager**.
+
+ ![Go back to Content Manager](8-go-to-content-manager.png)
+
+You can see your Web Dynpro ABAP app in the list:
+
+  ![View app](8a-view-app.png)
+
+To view the app in runtime, you must assign the app to a role. You also need to assign the app to a group so that it'll be visible in the launchpad.
+
+This is described in the following steps.
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Assign the app to a group)]
+[ACCORDION-BEGIN [Step 4: ](Assign the app to the Everyone role)]
 
-In this step, we will first create a new group and then assign the app to it.
+>Content assigned to the `Everyone` role is visible to all users.
 
-1. Go back to the Content Manager.
+1. In the **Content Manager**, click the `Everyone` role.
 
-    ![Go back to Content Manager](8-go-to-content-manager.png)
+    !![Click everyone role](11-click-everyone-role.png)
 
-2. Click **+ New** and select **Group**.
+2. Click **Edit**.
 
-    ![Add new Group](9-add-group.png)
+    ![Click Edit](11a-click-edit.png)
 
-3. Name the group `Purchase Orders`.
+3. Click the search box in the **Assignments** panel on the right, any available apps are shown in the list below.
+>If you have many apps, you can type some letters of your app name in the search bar, (for example, `se`) to search for the app.
 
-4. In the **Assignments** panel on the right, type in `se` to find the `Search POs` app.  Then next to the app name, click the **+** icon to assign the app to the group.
-
-5. Click **Save**.
-
-    ![Assign app to group](10-assign-to-group.png)
-
-
-6. Go back to the Content Manager to see your new group in the list.
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Assign the app to a role)]
-
-In this step you will assign the app to the `Everyone` role so that users can access and launch the app in the launchpad page.
-
-1. In the Content Manager, click the `Everyone` role.
-
-    ![Click everyone role](11-click-everyone-role.png)
-
-2. Click **Edit** in the Role editor.
-
-3. In the **Assignments** panel on the right, enter `se` in the search bar to look for the `Search POs` app.
-
-3. Click the **+** icon next to the app name to assign the app to the `Everyone` role.
-
-3.  Click **Save**.
+3. Click the **+** icon next to the `Search POs` app to assign the app to the `Everyone` role.
 
     ![Assign app to role](12-assign-role.png)
 
+    You'll see that the icon changes.
+
+4. Click **Save**.
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Launch the app)]
 
-1. From the side panel, click the icon that opens the Site Directory.
+[ACCORDION-BEGIN [Step 5: ](Assign the app to a group)]
+
+A group is a set of one or more apps displayed together in the launchpad. Assigning apps to groups allows users to view them in the launchpad page.
+
+1. Click the Content Manager icon to open the **Content Manager**.
+
+2. Click **+ New** and select **Group** from the list to create a group.
+
+    !![Add new Group](9-add-group.png)
+
+3. Name the group `Purchase Orders`.
+
+4. In the **Assignments** panel, delete inside the search box on the right of the screen, to show all available apps. You should see the  `Search POs` app.  
+
+5. In the list, click **+** to assign the `Search POs` app to your group.
+
+    ![Assign app to group](10-assign-to-group.png)
+
+    You'll see that the icon changes.
+
+6. Click **Save**.
+
+
+[DONE]
+[ACCORDION-END]
+
+
+
+[ACCORDION-BEGIN [Step 6: ](Launch the app)]
+
+1. From the side panel, click the Site Directory icon to open the **Site Directory**.
 
     ![Open site directory](13-open-site-directory.png)
 
-2. On the `JobCore Portal` site (or another site that you created), click the **Go to site** icon.
+2. On the `JobCore` tile , click the **Go to site** icon.
 
     ![Go to site](14-go-to-site.png)
 
@@ -148,9 +165,9 @@ In this step you will assign the app to the `Everyone` role so that users can ac
 
     ![View my apps](15-my-apps.png)
 
-And this is what you'll see.
+And this is what you'll see:
 
-  ![View app](16-web-dynpro-app.png)
+  !![View app](16-web-dynpro-app.png)
 
 [VALIDATE_7]
 

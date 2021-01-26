@@ -19,7 +19,6 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
-
 ![MDK](img_1.gif)
 
 [ACCORDION-BEGIN [Step 1: ](Store the deleted record locally)]
@@ -71,13 +70,13 @@ The next step is to store deleted record locally for an offline application or d
     |----|----|
     | `Action Name`| `Customers_DeleteEntity` |
     | `Type` | Select `DeleteEntity` from the dropdown |
-    | `Service`| Select `SampleService.service` from the dropdown |
+    | `Service`| Select `Sample.service` from the dropdown |
     | `EntitySet` | Select `Customers` from the dropdown |
     | `ReadLink`| click link icon and double click `readLink` |
 
     !![MDK](img_1.5.png)
 
-    >The `readlink` is a direct reference to an individual entity set entry.
+    >The `readLink` is a direct reference to an individual entity set entry.
 
     Click **Next** and **Finish** on the confirmation screen. The action editor will open with the `Customers_DeleteEntity.action` loaded.
 
@@ -88,16 +87,16 @@ The next step is to store deleted record locally for an offline application or d
     | Property | Value |
     |----|----|
     | `Action Result`| `delete` |
-    | `Success Action` | Select `CloseModalPage_Complete.action` from the dropdown |
-    | `Failure Action` | Select `DeleteCustomerEntityFailureMessage.action` from the dropdown |
+    | `Success Action` | Click the link icon and bind it to `CloseModalPage_Complete.action` |
+    | `Failure Action` | Click the link icon and bind it to `DeleteCustomerEntityFailureMessage.action` |
+
+    !![MDK](img_1.6.png)
 
     >When `Customers_DeleteEntity.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered or if `Customers_DeleteEntity.action` fails then `DeleteCustomerEntityFailureMessage.action` will be triggered.
 
     >`delete` value for **Action Result** is reference to `DeleteCustomerEntityFailureMessage.action` created in sub-step 1.
 
-    >You could also show a success message for `Success Action` or chain a message to success of `CloseModalPage_Complete.action`.
-
-    !![MDK](img_1.6.png)
+    >You could also show a success message for `Success Action` or chain a message to success of `CloseModalPage_Complete.action`.    
 
 [DONE]
 [ACCORDION-END]
@@ -106,20 +105,20 @@ The next step is to store deleted record locally for an offline application or d
 
 In the MDK editor, you will write a rule in JavaScript called `Customers_DeleteConfirmation.js` to display a dialog to confirm if user wants to delete current record. On it's confirmation, _customer delete entity action_ is executed.
 
-1. Right-click the **Rules** folder | **New File**.
+1. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
     !![MDK](img_2.1.png)
 
-2. Enter the file name `Customers_DeleteConfirmation.js`, click **OK**.
+2. Enter the Rule name `Customers_DeleteConfirmation`, click **Next** and then **Finish** on the confirmation step.
 
     Copy and paste the following code.
 
     ```JavaScript
-    export default function DeleteConfirmation(clientAPI) {
-    	let dialogs = clientAPI.nativescript.uiDialogsModule;
+    export default function DeleteConfirmation(context) {
+    	let dialogs = context.nativescript.uiDialogsModule;
     	return dialogs.confirm("Delete current record?").then((result) => {
     		if (result === true) {
-    			return clientAPI.executeAction('/DemoSampleApp/Actions/Customers_DeleteEntity.action').then(
+    			return context.executeAction('/DemoSampleApp/Actions/Customers_DeleteEntity.action').then(
     				(success) => Promise.resolve(success),
     				(failure) => Promise.reject('Delete entity failed ' + failure));
     		} else {
@@ -130,9 +129,10 @@ In the MDK editor, you will write a rule in JavaScript called `Customers_DeleteC
     ```
 
     >In above code there is a reference to `Customers_DeleteEntity.action` , you can navigate directly from here to the MDK file by right clicking on it.
-    !![MDK](img_2.2.png)
 
-    Save the changes.
+    >!![MDK](img_2.2.png)
+
+3. Save the changes.
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -143,7 +143,7 @@ You will add a button to the _Customer Detail page_ called **Trash**. You will l
 
 1. In `Customers_Detail.page`, drag and drop an **Action Bar Item** to the upper right of the action bar.
 
-    !![MDK](img_3.1.gif)
+    !![MDK](img_3.1.png)
 
     >**Action Bar Item** is a button that users can use to fire actions when pressed. You can add an Action Bar Item only to the Action Bar (at the top of the page).
 
@@ -168,13 +168,17 @@ You will add a button to the _Customer Detail page_ called **Trash**. You will l
 
 Deploy the updated application to your MDK client.
 
-Right-click `Application.app` and select **MDK: Deploy**.
+1. Right-click `Application.app` and select **MDK: Deploy**.
 
-!![MDK](img_4.1.png)
+    !![MDK](img_4.1.png)
 
-You should see **Deploy Succeeded** message.
+2. Select deploy target as **Mobile Services**.
 
-!![MDK](img_4.2.png)
+    !![MDK](img_4.2.png)
+
+    You should see **Deploy succeeded** message.
+
+    !![MDK](img_4.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -185,7 +189,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [Android]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
 2. Tap **CUSTOMER LIST** | tap any record | tap trash icon.
 
@@ -207,7 +211,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [iOS]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
 2. Tap **Customer List** | tap any record | tap trash icon.
 
@@ -231,11 +235,17 @@ You can cross verify if this record has been deleted in the backend.
 
 >Backend URL can be found in [Mobile Services Cockpit](cp-mobile-dev-kit-ms-setup).
 
->Mobile Applications | Native/Hybrid | click the MDK App com.sap.mdk.demo | Mobile Sample OData ESPM | click Root URL `v2` | add `/Customers`/ at the end of the URL
+>**Mobile Applications** | **Native/Hybrid** | click the MDK App **com.sap.mdk.demo** | **Mobile Connectivity** | click **Launch in Browser** icon
 
-**Congratulations!** You have successfully deleted a Customer Record and you are now all set to [Upload Logs from an MDK App](cp-mobile-dev-kit-upload-logs).
+>!![MDK](img_5.7.png)
+
+>It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully deleted a Customer Record and you are now all set to [Upload Logs from an MDK App](cp-mobile-dev-kit-upload-logs).
 
 ---

@@ -15,7 +15,7 @@ author_profile: https://github.com/mervey45
 - You have downloaded Eclipse Photon or Oxygen and installed ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
 
 ## Details
-### You will learn  
+### You will learn   
   - How to create CDS based data model
   - How to create projection view
   - How to create service definition
@@ -47,21 +47,13 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Define CDS based travel data model](model4.png)
 
-  5. Define root view for `ZI_TRAVEL_M_XXX` and database table as source.
+
+  5. Replace your code with following:
 
     ```ABAP
-    define root view ZI_TRAVEL_M_XXX as select from ztravel_xxx            
-    ```
-
-  6. Your result should look like this. Replace your code with following:
-
-    ```ABAP
-    @AbapCatalog.sqlViewName: 'ZVI_TRAVEL_M_XXX'
-    @AbapCatalog.compiler.compareFilter: true
-    @AbapCatalog.preserveKey: true
-    @AccessControl.authorizationCheck: #CHECK
+    @AccessControl.authorizationCheck: #NOT_REQUIRED
     @EndUserText.label: 'Travel data - XXX'
-    define root view ZI_TRAVEL_M_XXX
+    define root view entity ZI_TRAVEL_M_XXX
 
       as select from ztravel_xxx as Travel
 
@@ -81,7 +73,6 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           booking_fee,
           @Semantics.amount.currencyCode: 'currency_code'
           total_price,
-          @Semantics.currencyCode: true
           currency_code,
           overall_status,
           description,
@@ -103,7 +94,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     }  
     ```
 
-  7. Save and activate.
+  6. Save and activate.
 
       ![save and activate](activate.png)
 
@@ -134,17 +125,11 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create projection view for travel](projection4.png)
 
-  5. Define root view entity for `ZC_TRAVEL_M_XXX`.
-
-    ```ABAP
-    define root view entity ZC_TRAVEL_M_XXX as projection on ZI_Travel_M_XXX        
-    ```
-
-  6. Your result should look like this. Replace your code with following:
+  5. Replace your code with following:
 
     ```ABAP
     @EndUserText.label: 'Travel projection view - Processor'
-    @AccessControl.authorizationCheck: #CHECK
+    @AccessControl.authorizationCheck: #NOT_REQUIRED
 
     @UI: {
      headerInfo: { typeName: 'Travel', typeNamePlural: 'Travels', title: { type: #STANDARD, value: 'TravelID' } } }
@@ -226,10 +211,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           last_changed_at    as LastChangedAt
 
     }
-
     ```
 
-  7. Save and activate.
+  6. Save and activate.
 
       ![save and activate](activate.png)
 
@@ -300,7 +284,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create service binding](binding3.png)
 
-  4. Activate your service binding.
+  4. **Activate** your service binding and then **publish** it.
 
       ![Create service binding](binding4.png)
 

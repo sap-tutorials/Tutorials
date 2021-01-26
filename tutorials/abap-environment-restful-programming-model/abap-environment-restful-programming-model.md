@@ -1,7 +1,7 @@
 ---
 auto_validation: true
-title: Get to Know the ABAP RESTful Programming Model
-description: Learn how the ABAP RESTful Programming Model and the development flow are structured.
+title: Get to Know the ABAP RESTful Application Programming Model
+description: Learn how the ABAP RESTful Application Programming Model and the development flow are structured.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform  ]
 time: 5
@@ -11,20 +11,20 @@ author_profile: https://github.com/mervey45
 
 ## Details
 ### You will learn  
-  - How the ABAP RESTful Programming Model is structured
+  - How the ABAP RESTful Application Programming Model is structured
   - How the development flow is organized
 
 
-In the course of the following tutorials you will be able to build a travel booking example with the help of the ABAP RESTful Programming Model.
+In the course of the following tutorials you will be able to build a travel booking example with the help of the ABAP RESTful Application Programming Model.
 
-Start to have a closer look to the ABAP RESTful Programming Model and the relationships.
+Start to have a closer look to the ABAP RESTful Application Programming Model and the relationships.
 
-After this tutorial, you'll understand the theory behind the ABAP RESTful Programming Model and apply it to the flight model example in the upcoming tutorials.
+After this tutorial, you'll understand the theory behind the ABAP RESTful Application Programming Model and apply it to the flight model example in the upcoming tutorials.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get to know the ABAP RESTful Programming Model overview)]
-The ABAP RESTful Programming Model consists of three main layers:
+[ACCORDION-BEGIN [Step 1: ](Get to know the ABAP RESTful Application Programming Model overview)]
+The ABAP RESTful Application Programming Model consists of three main layers:
 
  - Data Modeling & Behavior
  - Business Services Provisioning
@@ -95,4 +95,8 @@ To develop additional custom logic such as validations and actions the steps in 
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+## More Information
+- [SAP Help Portal: ABAP RESTful Application Programming Model](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/289477a81eec4d4e84c0302fb6835035.html)
+
 ---

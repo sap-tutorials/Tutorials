@@ -1,5 +1,5 @@
 ---
-title: Create an ABAP Database Table
+title: Create an ABAP Database Table and Relevant ABAP Dictionary Objects
 description: Create a database table from scratch using the ABAP Development Tools (ADT); use different Data Dictionary objects to define the fields; then fill the table with test data
 auto_validation: true
 primary_tag: topic>abap-development
@@ -47,7 +47,7 @@ Create a table in your package:
 
     !![Image depicting step1-new-repo-object](step1-new-repo-object.png)
 
-2. Enter the filter text **Table**, choose **Database table**, then choose Next.
+2. Enter the filter text **Table > Database table**, then choose **Next**.
 
 3. Enter a name such as `ZACCOUNTS_XXX` - always replacing `XXX` with your initials - and a description, then choose **Next**.
 
@@ -304,8 +304,6 @@ define table ZACCOUNTS_XXX {
     with foreign key [0..*,1] /dmo/customer
       where customer_id = ZACCOUNTS_XXX.bank_customer_id;
 
-  customer_first_name  : /dmo/first_name;
-  customer_last_name   : /dmo/last_name;
   account_number       : abap.numc(8) not null;
   bank_name            : z_bank_name_xxx;
   city                 : /dmo/city;
@@ -374,11 +372,11 @@ The class appears in a new editor.
     GET TIME STAMP FIELD DATA(zv_tsl).
 
     "fill internal table
-    lt_accounts =
+    lt_accounts = VALUE #(
 
-    VALUE #( ( CLIENT ='100' BANK_CUSTOMER_ID ='000001' ACCOUNT_NUMBER ='00000000' BANK_NAME ='Volksbank' CITY = 'Gaertringen' BALANCE ='200.00 ' CURRENCY ='EUR' ACCOUNT_CATEGORY ='01' LASTCHANGEDAT = zv_tsl )
-    ( CLIENT ='100' BANK_CUSTOMER_ID ='000002' ACCOUNT_NUMBER ='00000000' BANK_NAME ='Sparkasse' CITY ='Schwetzingen' BALANCE ='500.00 ' CURRENCY ='EUR' ACCOUNT_CATEGORY ='02' LASTCHANGEDAT = zv_tsl )
-    ( CLIENT ='100' BANK_CUSTOMER_ID ='000003' ACCOUNT_NUMBER ='00000000' BANK_NAME ='Commerzbank' CITY ='Nuernberg' BALANCE ='150.00 ' CURRENCY ='EUR' ACCOUNT_CATEGORY ='02' LASTCHANGEDAT = zv_tsl )
+        ( client ='100' account_number ='00000001' bank_customer_id ='100001' bank_name ='Volksbank' city = 'Gaertringen' balance ='200.00 ' currency ='EUR' account_category ='01' lastchangedat = zv_tsl )
+        ( client ='100' account_number ='00000002' bank_customer_id ='200002' bank_name ='Sparkasse' city ='Schwetzingen' balance ='500.00 ' currency ='EUR' account_category ='02' lastchangedat = zv_tsl )
+        ( client ='100' account_number ='00000003' bank_customer_id ='200003' bank_name ='Commerzbank' city ='Nuernberg' balance ='150.00 ' currency ='EUR' account_category ='02' lastchangedat = zv_tsl )
     ).
 
     "Delete possible entries; insert new entries
@@ -399,7 +397,7 @@ The class appears in a new editor.
 
 
 [ACCORDION-BEGIN [Step 18: ](Check your table in Data Preview)]
-Select your table from the Project Explorer and choose **Open With > Data Preview** from the context menu.
+Select your table from the Project Explorer and choose **Open With > Data Preview** from the context menu (**F8**).
 
 !![step17a-data-preview](step17a-data-preview.png)
 
@@ -407,7 +405,7 @@ Your table should look like this:
 
 !![step17b-data-preview-2](step17b-data-preview-2.png)
 
-You can also right click on the table and choose **Copy All Rows as ABAP Value Statement** from the context menu. You can then paste it into your own code.
+You can also right click on the table and choose **Copy All Rows as ABAP Value Statement** from the context menu. You can then paste it into other code.
 
 !![step17c-copy-all-rows](step17c-copy-all-rows.png)
 
@@ -421,6 +419,8 @@ You can also right click on the table and choose **Copy All Rows as ABAP Value S
 
 - SAP Help Portal: [Domains, Data ELements, and Field Names](https://help.sap.com/saphelp_47x200/helpdata/en/90/8d72feb1af11d194f600a0c929b3c3/frameset.htm)
 
+- SAP Help Portal: [ABAP Dictionary Editors](https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.52.2/en-US/a02fc1a064b94373a853cb07cba24fb9.html)
+
 - ABAP Keyword Documentation: [Domains](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abenddic_domains.htm)
 
 - ABAP Keyword Documentation: [Data Elements](https://help.sap.com/doc/abapdocu_751_index_htm/7.51/en-US/index.htm?file=abenddic_data_elements.htm)
@@ -429,5 +429,4 @@ You can also right click on the table and choose **Copy All Rows as ABAP Value S
 
 - ABAP for Cloud Keyword Documentation: [Glossary](https://help.sap.com/doc/abapdocu_cp_index_htm/CLOUD/en-US/index.htm?file=abenclient_glosry.htm)
 
-- Using the ABAP  Development Tools (ADT) editor for database tables, see the application help in ADT: click on the editor and choose `F1`
 ---

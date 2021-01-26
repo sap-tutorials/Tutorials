@@ -44,26 +44,29 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ```ABAP
     managed implementation in class ZCL_BP_I_TRAVEL_M_XXX unique;
 
-    define behavior for ZI_Travel_M_XXX alias Travel
+    define behavior for ZI_TRAVEL_M_XXX alias Travel
     persistent table ztravel_xxx
     etag master last_changed_at
     lock master
     {
-    // administrative fields (read only)
-    field ( readonly ) last_changed_at, last_changed_by, created_at, created_by;
 
-    // mandatory fields that are required to create a travel
-    field ( mandatory ) agency_id, overall_status, booking_fee, currency_code;
+      // semantic key is calculated in a determination
+      field ( readonly ) travel_id;
 
-    // semantic key is calculated in a determination
-    field ( readonly ) travel_id;
+      // administrative fields (read only)
+      field ( readonly ) last_changed_at, last_changed_by, created_at, created_by;
 
-    // standard operations for travel entity
-    create;
-    update;
-    delete;
-    }
+      // mandatory fields that are required to create a travel
+      field ( mandatory ) agency_id, overall_status, booking_fee, currency_code;
 
+      // mandatory fields that are required to create a travel
+      field ( mandatory ) Begin_Date, End_Date, Customer_ID;
+
+      // standard operations for travel entity
+      create;
+      update;
+      delete;
+    }  
     ```
 
   5. Save and activate.
@@ -101,14 +104,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     define behavior for ZC_TRAVEL_M_XXX alias TravelProcessor
     use etag
     {
-    // scenario specific field control
-    field ( mandatory ) BeginDate, EndDate, CustomerID;
-
-    use create;
-    use update;
-    use delete;
+      use create;
+      use update;
+      use delete;
     }
-
     ```
 
   5. Save and activate.

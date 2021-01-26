@@ -8,6 +8,7 @@ tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products
 time: 15
 ---
 ## Prerequisites  
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Creating an OData Service with Create Operation and XSJS Exit](xsa-xsodata-create) and [SAP HANA XS Advanced - Consume the OData service in a basic HTML5 module](xsa-html5-expand-module)
 
 ## Details
@@ -264,9 +265,9 @@ sap.ui.require(["sap/ui/core/Core", "sap/ui/core/Component"], (oCore, Component)
 
 You also reference some images in this HTML page. They aren't critical, but if you want you can create an images folder inside resources and then upload these images from our GIT repository:
 
-1. [SAP icon](https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/master/web/resources/images/favicon.ico)
+1. [SAP icon](https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/main/web/resources/images/favicon.ico)
 
-2. [SAP logo](https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/master/web/resources/images/sap_18.png)
+2. [SAP logo](https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/main/web/resources/images/sap_18.png)
 
 ![new images](6.png)
 

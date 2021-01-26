@@ -1,28 +1,24 @@
 ---
-title: Using the Streaming Web Service
-description: How to configure, run and test the Streaming Web Service (SWS) for SAP HANA Smart Data Streaming
+title: Use the Streaming Web Service
+description: Configure, run and test the Streaming Web Service (SWS) for SAP HANA Smart Data Streaming.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
+time: 15
 ---
-## Prerequisites
- - **Proficiency:** Beginner
- - **System:** Ensure you have access to a HANA System with the Smart Data Streaming option installed and configured.
- - `-` Have a HANA user ID with permissions to create, compile, deploy and run a SDS project. (This can be the HANA `SYSTEM` User, which is granted full permissions during the installation process)
- - `-` Have the ability to connect to the Linux host running the Smart Data Streaming as the `<sid>adm` user.
 
-## Next Steps
-- **Tutorials** : [Configuring the Web Service Provider (WSP)](https://developers.sap.com/tutorials/sds-web-service-provider-configuration.html)
+## Prerequisites
+ - **System:** Ensure you have access to a HANA System with the Smart Data Streaming option installed and configured.
+ - Have a HANA user ID with permissions to create, compile, deploy and run a SDS project. (This can be the HANA `SYSTEM` User, which is granted full permissions during the installation process)
+ - Have the ability to connect to the Linux host running the Smart Data Streaming as the `<sid>adm` user.
 
 ## Details
 ### You will learn
- - How to configure, run and test the Streaming Web Service (SWS) for SAP HANA Smart Data Streaming.
+ - How to configure, run and test the Streaming Web Service (SWS) for SAP HANA Smart Data Streaming
  - How to set various configurations in HANA Cockpit
 
-### Time to Complete
-**15 Min**
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configuring the Streaming Web Service for SAP HANA Smart Data Streaming)]
+[ACCORDION-BEGIN [Step 1: ](Configure Streaming Web Service for SAP HANA Smart Data Streaming)]
 
 Streaming Web Service (SWS) is one of the SAP HANA Smart Data Streaming (SDS) adapters. SWS is a scalable gateway which provides HTTP-based access to SAP HANA SDS. It provides greater scalability and performance than the older Web Service Provider (WSP). Like the WSP, the SWS can receive requests from multiple web services and publish data to multiple projects.  This contrasts with other adapters which only send and receive data from one source and publish to one project.
 

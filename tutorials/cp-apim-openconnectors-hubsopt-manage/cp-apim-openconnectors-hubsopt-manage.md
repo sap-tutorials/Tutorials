@@ -17,9 +17,10 @@ primary_tag: products>sap-api-management
 
 [ACCORDION-BEGIN [Step 1: ](Create API provider)]
 
-1. Navigate to your API Portal.
+1. Navigate to your API Management.
 
-    ![Open API Portal](01-open-API-Portal.png)
+    ![Access API Management](01-open-API-Portal.png)
+    ![Open API Portal](09-access-APIM_API_Portal_URL.png)
 
 2. Click **Configure** and then click **Create**.
 
@@ -48,6 +49,10 @@ primary_tag: products>sap-api-management
     ![Copy API Key](05-Connection.png)
 
     Click **Save**.
+
+    >If the region is not available in the drop down list you can always manually edit the host field and provide the value.
+
+    ![Edit Host](05_Edit_host.png)
 
 6. Click **Test Connection**.
 

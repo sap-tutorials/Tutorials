@@ -1,6 +1,6 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Deploy CAP Java App to SAP Cloud Platform
 description: Deploy the recently built bookstore application to SAP Cloud Platform using the Cloud Foundry CLI.
 auto_validation: true
@@ -30,7 +30,7 @@ When deploying an application to Cloud Foundry, you can use a manifest to descri
     ---
     applications:
     - name: bookstore
-      path: srv/target/cds-services-archetype-exec.jar
+      path: srv/target/bookstore-exec.jar
       random-route: true
       services:
       - bookstore-hana
@@ -74,7 +74,7 @@ In the previous tutorial you added the additional Java system property `-Dspring
 
 [ACCORDION-BEGIN [Step 3: ](Push the application)]
 
-You are now ready to push your application to the cloud by running the following commands from the terminal in SAP Application Studio:
+You are now ready to push your application to the cloud by running the following commands from the terminal in SAP Business Application Studio:
 
 1. Make sure that you are in the root of the bookstore project:
 
@@ -100,7 +100,8 @@ You are now ready to push your application to the cloud by running the following
 
      The manifest will be [automatically picked up](https://cli.cloudfoundry.org/en-US/cf/push.html).
 
-     > Provide the credentials you usually log in to SAP Cloud Platform if you are asked to log in.
+
+    >Provide the credentials you usually log in to SAP Cloud Platform if you are asked to log in.
 
 4. To retrieve the application URL run the following command:
 

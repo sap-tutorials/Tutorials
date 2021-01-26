@@ -1,30 +1,29 @@
 ---
-title: Add an SAPUI5 App to Your Portal Site
-description: Add an existing SAPUI5 app to a Portal site.
+title: Add an SAPUI5 App to Your Launchpad Site
+description: Add an existing SAPUI5 app to a launchpad site.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>sapui5, products>sap-cloud-platform, topic>cloud]
-primary_tag: products>sap-cloud-platform-portal
+tags: [ tutorial>beginner, topic>sapui5, products>sap-cloud-platform, topic>cloud,products>sap-cloud-platform-launchpad]
+primary_tag: products>sap-cloud-platform-launchpad
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
 ## Prerequisites
- - You've already created the `JobCore` Portal site.  
+ - You've already created the `JobCore` launchpad site.  
 
 
 ## Details
 ### You will learn
-  - How to add an existing SAPUI5 app to your Portal site.
+  - How to add an existing SAPUI5 app to your launchpad site
 
-In this tutorial, you're going to add an SAPUI5 app to your Portal site.  
-
+In this tutorial, you'll use the **Content Manager** to add an SAPUI5 to your launchpad site.
 
 [ACCORDION-BEGIN [Step 1: ](Open Content Manager)]
 
- Click the **Content Manager** icon in the left panel of the Site Manager.
+ Click the Content Manager icon in the side panel to open the **Content Manager**.
 
->The Content Manager is where you manage the business content items for your subaccount: apps, catalogs, groups, and roles. These business content items can be used in any Portal site in your subaccount.
+>The **Content Manager** has two tabs: **My Content** where you can manually configure content items and view any other available content items, and the **Content Explorer** where you can explore exposed content from available content providers, select the content, and add it to your own content.
 
   ![Open Content Manager](1-open-content-manager.png)
 
@@ -38,7 +37,7 @@ In this tutorial, you're going to add an SAPUI5 app to your Portal site.
     ![Add an app](2-add-app.png)
 
 
-    The App editor opens on the **PROPERTIES** tab.
+    The app editor opens with the **PROPERTIES** tab in focus.
 
 2. Enter the following values:
 
@@ -87,7 +86,7 @@ In this tutorial, you're going to add an SAPUI5 app to your Portal site.
 
 [ACCORDION-BEGIN [Step 3: ](View the app that you created)]
 
-Click the Content Manager icon in the left side panel of the App editor to navigate to the top level of your configured content.
+Click the Content Manager icon in the left side panel to navigate back to the **Content Manager**.
 
   !![Go back to Content Manager](6-back-to-content-manager.png)
 
@@ -95,7 +94,7 @@ You can see your app in the list:
 
 !![View app in content manager list](7-view-app.png)
 
-For end users to access the app in runtime, you must assign the app to a role. Any end user who is a member of this role will be able to access the app. In this tutorial, we use the `Everyone` role. All users are members of the `Everyone` role. You also need to assign the app to a group so that it's visible in the launchpad page.
+For end users to access the app in runtime, you must assign the app to a role. You also need to assign the app to a group so that it's visible in the launchpad.
 
 This is described in the following steps.
 
@@ -104,11 +103,10 @@ This is described in the following steps.
 
 [ACCORDION-BEGIN [Step 4: ](Assign the app to the Everyone role)]
 
-In this step you'll assign the app to the `Everyone` role.
 
 >Content assigned to the `Everyone` role is visible to all users.
 
-1. Click the Content Manager icon and select the **Everyone** role.
+1. Select the **Everyone** role.
 
     !![Select everyone role](10-everyone-role.png)
 
@@ -116,33 +114,36 @@ In this step you'll assign the app to the `Everyone` role.
 
     ![Click Edit](11-edit.png)
 
-3. In the Role editor, in the **Assignments** panel, type `Or` to search for your app.
+3. Click the search box in the **Assignments** panel on the right. Any available apps are shown in the list below.
 
-4. In the **Results** list, click the + icon next to your `New Orders` app to assign this role to your app.
+    >If you have many apps, you can type some letters of your app name in the search bar, (for example, `Or`) to search for the app.
+
+4. In the **Results** list, click the **+** icon next to the `New Orders` app to assign this role to your app.
 
     !![Assign role to app](12-assign-role.png)
 
-5. Click **Save**.
+    You'll see that the icon changes.
 
-6. Click the Content Manager icon to navigate back to the top level of your content.
+5. Click **Save**.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create a group and assign the app to it)]
 
-In this step, you will create a new group and assign your app to it.
 
 >A group is a set of one or more apps displayed together in the launchpad.
  Assigning apps to groups allows users to view them in the launchpad page.
 
-1. In the Content Manager, click **+ New** and select **Group** to open the Group editor.
+1. Click the Content Manager icon to navigate back to the **Content Manager**.
+
+2. Click **+ New** and select **Group** to create a group.
 
     !![Add a new group](8-add-group.png)
 
-2. Enter `Purchasing` as the **Title** and in the **Assignments** panel on the upper right of the screen, type in the first two letters of your app (in this case it will be `Ne`), to search for your app. You should see `New Orders`.
+2. Enter `Purchasing` as the **Title** and in the **Assignments** panel, click inside the search box on the right of the screen, to show all available apps. You should see `New Orders`.
 
-3. In the **Results** list, click + to assign this app to your group.
+3. In the **Results** list, click **+** to assign the `New Orders` app to your group.
 
     !![Configure group properties](9-configure-group.png)
 
@@ -155,11 +156,11 @@ In this step, you will create a new group and assign your app to it.
 
 [ACCORDION-BEGIN [Step 6: ](Review the site)]
 
-1. Click the Site Directory icon in the left panel.
+1. Click the Site Directory icon in the left panel to open the **Site Directory**.
 
-    !![Open Content Manager](13-open-content-manager.png)
+    !![Open Site Directory](13-open-site-directory.png)
 
-2. On the `JobCore Portal` tile in the Site Directory, click the **Go to site** icon:
+2. On the `JobCore` tile, click the **Go to site** icon.
 
     !![Go to site](14-go-to-site.png)
 
@@ -171,7 +172,7 @@ In this step, you will create a new group and assign your app to it.
 
 4. Click the `New Orders` tile to launch the app. You can click on the different items in the opened app on the left to view their details.
 
-You've added an app to your Portal site. In the next tutorial, you'll add another app.
+You've successfully added an app to your launchpad site. In the next tutorial, you'll add another app.
 
 [VALIDATE_6]
 [ACCORDION-END]

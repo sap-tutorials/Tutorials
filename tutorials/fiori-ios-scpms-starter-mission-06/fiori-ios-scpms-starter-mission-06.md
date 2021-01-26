@@ -21,18 +21,18 @@ time: 35
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Implement the master-detail view)]
+[ACCORDION-BEGIN [Step 1: ](Implement a Split View)]
 
 In the last tutorial you made changes to your Xcode project settings to enable Mac Catalyst for your app project.
 This tutorial is about making some changes to the project to fit better on MacOS without changing the appearance on iPhone or iOS.
 
-We are going to cover the basics for Mac Catalyst and the SAP Cloud Platform SDK for iOS but using the previously mentioned documentation in combination with this tutorial series you should be well suited to build great business apps.
+You are going to cover the basics for Mac Catalyst and the SAP Cloud Platform SDK for iOS but using the previously mentioned documentation in combination with this tutorial series you should be well suited to build great business apps.
 
-In the beginning we want to change the app flow to have a split view in place when running on Mac Catalyst. The split view or Master-Detail View allows Mac Catalyst to display a sidebar similar to Apple's Music or Stocks applications on MacOS.
+In the beginning you want to change the app flow to have a split view in place when running on Mac Catalyst. The split view or Split View allows Mac Catalyst to display a sidebar similar to Apple's Music or Stocks applications on MacOS.
 
 If you look at the current app structure the user will end up on the Overview screen right after finishing the onboarding process. On MacOS this is going to be the same way with the difference that the user will have a sidebar available where he or she can switch between Overview, Customer and Product list directly.
 
-To implement the new flow we can attach our current app flow in storyboard to a standard Split View Controller.
+To implement the new flow you can attach our current app flow in storyboard to a standard Split View Controller.
 
 1. Open the `Main.storyboard` and select the **Navigation Controller**, open the **Attributes Inspector** to uncheck the **Is Initial View Controller**. This is necessary because the new main entry point is going to be the Split View Controller.
 
@@ -42,7 +42,7 @@ To implement the new flow we can attach our current app flow in storyboard to a 
 
     !![Split View Controller](fiori-ios-scpms-starter-mission-06-2.png)
 
-3. With that in place we can connect the Split View Controller with our current app flow. Delete the View Controller Scene of the Split View Controller in Storyboard first.
+3. With that in place you can connect the Split View Controller with our current app flow. Delete the View Controller Scene of the Split View Controller in Storyboard first.
 
     !![Split View Controller](fiori-ios-scpms-starter-mission-06-3.png)
 
@@ -54,15 +54,15 @@ To implement the new flow we can attach our current app flow in storyboard to a 
 
     !![Split View Controller](fiori-ios-scpms-starter-mission-06-4.gif)
 
-5. Make the Master View Controller the initial view controller for the app by selecting the Master View controller and using the **Attributes Inspector** to check the box for **Is Initial View Controller**.
+5. Make the Main Split View Controller the initial view controller for the app by selecting the View controller and using the **Attributes Inspector** to check the box for **Is Initial View Controller**.
 
     !![Split View Controller](fiori-ios-scpms-starter-mission-06-5.png)
 
-    Let's quickly go over what we did here. First we added a new Split View Controller which is a standard Apple UI control. Then we added our app flow to the Split View Controller through a **detail view controller** segue. This allows the Split View Controller to automatically manage your Split View lifecycle. We leave the Navigation Controller in as we want to maintain our regular app flow.
+    Let's quickly go over what you did here. First you added a new Split View Controller which is a standard Apple UI control. Then you added our app flow to the Split View Controller through a **detail view controller** segue. This allows the Split View Controller to automatically manage your Split View lifecycle. You leave the Navigation Controller in as you want to maintain our regular app flow.
 
-    Because the Master View Controller is the new initial view controller we have to change the `ApplicationUIManager` code accordingly.
+    Because the Main View Controller is the new initial view controller you have to change the `ApplicationUIManager` code accordingly.
 
-    To ensure that we will see the standard app flow while running on iOS and displaying the Split View when running on Mac Catalyst we can use environmental conditions to distinct different initialization code.
+    To ensure that you will see the standard app flow while running on iOS and displaying the Split View when running on Mac Catalyst you can use environmental conditions to distinct different initialization code.
 
     ```Swift
     #if targetEnvironment(macCatalyst)
@@ -70,9 +70,9 @@ To implement the new flow we can attach our current app flow in storyboard to a 
 
     ```
 
-6. Open the `ApplicationUIManager.swift` file and locate the `showApplicationScreen(completionHandler:)` method. Right now you can see that we're initializing the Navigation Controller as our initial screen but you have to change that to be adaptable to Mac Catalyst. Change the implement code to the following and read the inline comments carefully:
+6. Open the `ApplicationUIManager.swift` file and locate the `showApplicationScreen(completionHandler:)` method. Right now you can see that you're initializing the Navigation Controller as our initial screen but you have to change that to be adaptable to Mac Catalyst. Change the implement code to the following and read the inline comments carefully:
 
-    ```Swift
+    ```Swift[14-25]
     func showApplicationScreen(completionHandler: @escaping (Error?) -> Void) {
         // Check if an application screen has already been presented
         guard self.isSplashPresented else {
@@ -112,6 +112,8 @@ To implement the new flow we can attach our current app flow in storyboard to a 
 
 7. Run the app on the **My Mac** scheme and you should see you app being in Split View now and you can see that beautiful empty sidebar. Also if you have noticed the system automatically knows that your app wants to receive Push Notifications and the Mac Catalyst makes sure that MacOS displays it accordingly.
 
+    > In case you run into the issue "Apple Development Identity is Ambiguous. Multiple Certificates are found in your keychain for identity Apple Development", you can follow this blog post for resolution of the problem [Handling Ambiguous Apple Developer Identity](https://blogs.sap.com/2020/03/09/sdk-5.0-handling-ambiguous-apple-developer-identity/).
+
     !![Split View Controller](fiori-ios-scpms-starter-mission-06-6.png)
 
 [DONE]
@@ -122,9 +124,11 @@ To implement the new flow we can attach our current app flow in storyboard to a 
 
 The Root View Controller represents the list you can see in the sidebar. This is a standard UI Table View Controller which allows you to have all the freedom you want to implement that.
 
-We're going to display a list with three cells containing the navigation possibilities for the user including a nice system image using `SF Symbols`.
+You're going to display a list with three cells containing the navigation possibilities for the user including a nice system image using `SF Symbols`.
 
 1. Create a new Table View Controller Cocoa Touch Class using the project navigator and make sure it inherits of `UITableViewController` and name it `SidebarTableViewController`.
+
+    !![Split View Controller](fiori-ios-scpms-starter-mission-06-7a.png)
 
 2. Open the `Main.storyboard` and set the `SidebarTableViewController` as **Custom Class** on the **`Root View Controller`**.
 
@@ -140,7 +144,7 @@ We're going to display a list with three cells containing the navigation possibi
 
     ```
 
-5. Next retrieve a new logger instance like we did before:
+5. Next retrieve a new logger instance like you did before:
 
     ```Swift
     private let logger = Logger.shared(named: "SidebarTableViewController")
@@ -149,7 +153,7 @@ We're going to display a list with three cells containing the navigation possibi
 
 6. In the `viewDidLoad()` method register an `FUIObjectTableViewCell` to be used by the Table View:
 
-    ```Swift
+    ```Swift[4]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -169,7 +173,7 @@ We're going to display a list with three cells containing the navigation possibi
 
     ```
 
-    We only need one section for this view so just return 1.
+    You only need one section for this view so just return 1.
 
 8. Directly below implement the `tableView(_:numberOfRowsInSection:)` method:
 
@@ -180,7 +184,7 @@ We're going to display a list with three cells containing the navigation possibi
 
     ```
 
-    We're going to display three cells for the Overview, the customer list and the product list.
+    You're going to display three cells for the Overview, the customer list and the product list.
 
 9. Let's not forget about the `tableView(_:cellForRowAt:)` method:
 
@@ -221,7 +225,7 @@ We're going to display a list with three cells containing the navigation possibi
 
 [ACCORDION-BEGIN [Step 3: ](Implement root view controller logic)]
 
-In order to let the user have interactions with the list items we have to write some code.
+In order to let the user have interactions with the list items you have to write some code.
 
 1. In the `SidebarTableViewController` add the following method below the data source methods. Read the inline comments carefully:
 
@@ -255,7 +259,7 @@ In order to let the user have interactions with the list items we have to write 
 
     ```
 
-2. We have to make sure that the `viewSelected(at:)` method gets called as soon as the user clicks on a list item. Add the following table view delegate method directly below the data source methods:
+2. You have to make sure that the `viewSelected(at:)` method gets called as soon as the user clicks on a list item. Add the following table view delegate method directly below the data source methods:
 
     ```Swift
     override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -274,13 +278,15 @@ In order to let the user have interactions with the list items we have to write 
 
 4. Repeat that procedure for the **Products Table View Controller** with `ProductsTableViewController` and **Customers Table View Controller** with `CustomersTableViewController`.
 
-5. Important is that you set an identity for the `original` Navigation Controller. In the `Main.storyboard`, click on the Navigation Controller which is the detail view controller for the split view controller. Change the **Identity** to `SubNavigationController`.
+    !![Menu Bar](fiori-ios-scpms-starter-mission-06-20a.png)
+
+5. Important is that you set an identity for the original **Navigation Controller**. In the `Main.storyboard`, select the Navigation Controller which is the detail view controller for the split view controller. Change the **Identity** to `SubNavigationController`.
 
     !![Storyboard ID](fiori-ios-scpms-starter-mission-06-21.png)
 
     And that's it, you have a working split view controller with a sidebar and working navigation.
 
-6. The last step we want to do is change the navigation item's title from **Root View Controller** to **Navigation**. Add the following line of code to the `viewDidLoad()` method:
+6. The last step you want to do is change the navigation item's title from **`SidebarTableViewController`** to **Navigation**. Add the following line of code to the `viewDidLoad()` method:
 
     ```Swift
     navigationItem.title = NSLocalizedString("Navigation", comment: "")
@@ -297,16 +303,18 @@ In order to let the user have interactions with the list items we have to write 
 
 [ACCORDION-BEGIN [Step 4: ](Change the menu bar)]
 
-We have our basic layout but now it would be interesting what else we could do to be more MacOS conform.
-As mentioned in the last tutorial Mac Catalyst gives you a Menu Bar for free, but how do we access the menu bar and make changes to it?
+You have our basic layout but now it would be interesting what else you could do to be more MacOS conform.
+As mentioned in the last tutorial Mac Catalyst gives you a Menu Bar for free, but how do you access the menu bar and make changes to it?
 
 There is an API provided by Apple allowing us to modify the Menu Bar in the app delegate.
 
-We can create an extension swift file containing an `AppDelegate` extension containing a `buildMenu(with:)` override method.
+You can create an extension swift file containing an `AppDelegate` extension containing a `buildMenu(with:)` override method.
 
 > This would be also the way to generically have the Table View Data Source implemented.
 
 1. Use the **Project Navigator** to create a **Swift** file and name it `AppDelegate+MenuBuilder`.
+
+    !![Storyboard ID](fiori-ios-scpms-starter-mission-06-22.png)
 
 2. Open the `AppDelegate+MenuBuilder.swift` file and change the import statement from `Foundation` to `UIKit`:
 
@@ -364,7 +372,7 @@ We can create an extension swift file containing an `AppDelegate` extension cont
 
 Every Mac user expects a preferences menu in the menu bar so you should provide, if available, settings via a settings bundle. The reason for this is that using a settings bundle will give you the preferences menu for free.
 
-Here we're going to implement some settings with help of the settings bundle.
+Here you're going to implement some settings with help of the settings bundle.
 
 1. Use the **Project Navigator** to open the context menu and click on **New File...**. In the search field of the upcoming dialog, search for **Settings**, select the **Settings Bundle** and click on **Next** and then **Create**.
 
@@ -376,7 +384,7 @@ Here we're going to implement some settings with help of the settings bundle.
 
     !![Preferences](fiori-ios-scpms-starter-mission-06-12.png)
 
-3. You can see that the `Root.plist` file contains all the settings for the displayed preferences. We can go and change the different preferences now.
+3. You can see that the `Root.plist` file contains all the settings for the displayed preferences. You can go and change the different preferences now.
 
     In the `Root.plist` locate the **Title** of **Item 0 (Group - Group)** and change it to **Sales Assistant Preferences**.
 
@@ -402,7 +410,7 @@ Maybe you have noticed that the app's title is still `TutorialApp`, let's change
 
     !![App Title](fiori-ios-scpms-starter-mission-06-18.png)
 
-3. Of course you might want to change the bundle identifier as well to match the display name or create the whole project with the correct name in the beginning. As we're extending the app created in the prerequisites, we just change the display name here.
+3. Of course you might want to change the bundle identifier as well to match the display name or create the whole project with the correct name in the beginning. As you're extending the app created in the prerequisites, you just change the display name here.
 
     !![App Title](fiori-ios-scpms-starter-mission-06-19.png)
 

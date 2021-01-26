@@ -15,9 +15,9 @@ primary_tag: topic>machine-learning
 
 [ACCORDION-BEGIN [Step 1: ](Get OAuth access token details)]
 
-To get your OAuth access token you will need the values listed below from the service key you created in the previous tutorial: [Create Service Keys for Document Information Extraction](cp-aibus-dox-service-instance-booster).
+To get your OAuth access token you will need the values listed below from the service key you created in the previous tutorial: [Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key).
 
-![DOX Service Keys](service-key-details.png)
+!![DOX Service Key](service-key-details.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -33,21 +33,21 @@ To get your OAuth access token you will need the values listed below from the se
 
 4. Click **Sign in** or **OK** (depending on the web browser you work with).
 
-![DOX TOKEN](web-browser.png)
+!![DOX TOKEN](web-browser.png)
 
 You should receive a response like the following:
 
-```
+```JSON
 {
     "access_token": "<< your access token >>",
     "token_type": "bearer",
     "expires_in": 43199,
-    "scope": "uaa.resource",
-    "jti": "1acd879bb9474a04975e0e171df445a7"
+    "scope": "uaa.resource na-9e50499f-78dd-40ca-ad8d-60acf02cff8b!b30417.technicalscope",
+    "jti": "71c4d44ea1094875a1c3d3a6489dafd6"
 }
 ```
 
-You have successfully generated your OAuth access token for the service and you are now all set to [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui).
+You have successfully generated your OAuth access token for the service and you are now all set to [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui).
 
 [DONE]
 [ACCORDION-END]

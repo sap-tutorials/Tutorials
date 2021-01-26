@@ -11,61 +11,54 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
 
 ## Details
 ### You will learn
   - How to register and consume an Extension control in MDK Metadata
   - How to write an extension via NativeScript
-  - How to build a Mobile development kit client for iOS and Android
   - How to connect to SAP Cloud Platform Mobile application
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/1-Create-a-Slider-Custom-Control-Using-Metadata-Approach) and start directly with step 6 in this tutorial.
 
 ---
 
-To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls using the following:
 
--  NativeScript (TypeScript/JavaScript applicable for both Android and iOS)
-
--  Swift class (iOS only)
+To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls by using **NativeScript** (TypeScript/JavaScript applicable for both Android and iOS)
 
 In this tutorial, you will create a Slider extension via NativeScript (in TypeScript language) which will be common for both device platforms.
 
 ![MDK](img_8.gif)
 
-
 [ACCORDION-BEGIN [Step 1: ](Set up the application foundation)]
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. If you do not see the **Welcome** page, navigate to *View* menu &rarr; *Find Command* &rarr; search with *Welcome* to launch the Welcome page.
+2. Navigate to *File* menu &rarr; click **New Project from Template**.
 
-    !![MDK](img_1.2.gif)
+    !![MDK](img_1.2.png)
 
-3. In Welcome page, click **New project from template** .
+3. Select **MDK Project** and click **Next**.
 
     !![MDK](img_1.3.png)
 
-4. Select **MDK Project** and click **Next**.
-
-    !![MDK](img_1.4.png)
-
-5. In *Basic Information* step, select or provide the below information and click **Next**:
+4. In *Basic Information* step, select or provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `MDK Template Type`| Select `Empty` from the dropdown |
-    | `Your Project Name` | `MDK_Slider` |
-    | `Your Project Name` | <default name is same as Project name, you can provide any name of your choice> |
+    | `MDK template type`| Select `Empty` from the dropdown |
+    | `Your project name` | `MDK_Slider` |
+    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |    
 
-    !![MDK](img_1.5.png)
+    !![MDK](img_1.4.png)
 
     >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).
 
-6. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Petstore` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in new workspace or to add it to workspace. Ignore the pop-up or click the cross icon to hide the window.
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.   
 
-    !![MDK](img_1.6.png)
+5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Slider` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
+
+    !![MDK](img_1.5.png)
 
 [DONE]
 [ACCORDION-END]
@@ -74,15 +67,21 @@ In this tutorial, you will create a Slider extension via NativeScript (in TypeSc
 
 The extension control that you will be creating to extend the functionality of your app can be used as base controls by registering it using the MDK editor.
 
-1. Expand `MDK_Slider` project, right-click **Extensions** | select **MDK: Register Extension Control**.
+1. Download [this](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Images/slider.png) image and save it locally. This image will be used as a display image on the page editor to represent the extension control.
+
+2. Drag & drop `slider.png` file on **Images** folders.
+
+    !![MDK](img_2.0.png)
+
+3. Right-click **Extensions** | select **MDK: Register Extension Control**.
 
     !![MDK](img_2.1.png)
 
-2. In `Template Selection` step, select **New and register Metadata Extension Control**. Click **Next**.
+4. In `Template Selection` step, select **New and register Metadata Extension Control**. Click **Next**.
 
     !![MDK](img_2.2.png)
 
-3. Provide the below information:
+5. Provide the below information:
 
     | Field | Value |
     |----|----|
@@ -90,7 +89,7 @@ The extension control that you will be creating to extend the functionality of y
     | `Module` | `MySliderModule` |
     | `Control` | `MySliderExtension` |
     | `Class` | `MySliderClass` |
-    | `Display` | leave it blank |
+    | `Display` | bind it to `slider.png` file  |
 
     Here is the basic definition for properties you defined above:
 
@@ -100,25 +99,45 @@ The extension control that you will be creating to extend the functionality of y
 
     **Class**: The class name of your custom extension class. The client will check for this class at runtime and if it's found, your extension will be instantiated. Otherwise, a stub with an error message will be shown.
 
-    **Display**: This property is used for the image to be displayed on the page editor to represent the extension control. Use the binding button to select an image from the `\MDK_Slider\Images` folder.
+    **Display**: This property is used for the image to be displayed on the page editor to represent the extension control.
 
     !![MDK](img_2.3.png)
 
-    >You will refer all these properties in step 4.
 
-4. In `Schema Information` step, click **Next**. For this tutorial, you will not need any schema.
+6. In **Schema Information** step, fill schema details in **Schema** column and click **Next**.
+
+    ```JSON
+    {
+    	"type": "object",
+    	"BindType": "",
+    	"properties": {
+    		"MaxValue": {
+    			"type": "number",
+    			"BindType": ""
+    		},
+    		"MinValue": {
+    			"type": "number",
+    			"BindType": ""
+    		},
+    		"Title": {
+    			"type": "string",
+    			"BindType": ""
+    		}
+    	}
+    }
+    ```
 
     !![MDK](img_2.4.png)
 
-    >Here you can define the properties of the extension control or import a property sample.
+    >Above schema will add these predefined properties (`MaxValue`, `MinValue` and `Title`) in the map extension control. You will provide values for these properties in next step.
 
-5. Click **Finish** to confirm.
+7. Click **Finish** to confirm.
 
     Some additional files and folders are added to the **Extensions** folder. You will learn more about it in following steps.
 
     !![MDK](img_2.5.png)
 
-    >You can find more details about registering extension control in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/advanced/extensions/registering-extension-in-webide.html) guide.
+    >You can find more details about registering extension control in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/advanced/extensions/registering-extension-in-bas.html) guide.
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -145,23 +164,19 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img_3.3.gif)
 
-4. You will set the height for the control.
+    >You can find more details about the **Section Extension** in [this](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/FormCell/Extension.schema.html) guide.    
 
-    In the **Properties** section, scroll down to the **Dimension** section and set the **Height** to 72.
+4. In the **Properties** section, set the **Height** to 72.
 
     !![MDK](img_3.4.png)
 
-5. You will now set minimum & maximum counter value for the control.
+5. Scroll down to the **Extension Properties**, and provide minimum & maximum counter value for the Extension control properties.
 
-    Scroll down to the **Extension Properties**, and paste the following information:
-
-    ```JSON
-    {
-      "MaxValue": 200,
-      "MinValue": 10,
-      "Title": "Counter"
-    }
-    ```
+    | Field | Value |
+    |----|----|
+    | `MaxValue`| 200 |
+    | `MinValue` | 10 |
+    | `Title` | Counter |  
 
     !![MDK](img_3.5.png)
 
@@ -216,46 +231,47 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img_3.10.png)
 
-13. You can also add an input field where you can provide a manual entry for the slider value and the counter will adapt accordingly.
+11. You can also add an input field where you can provide a manual entry for the slider value and the counter will adapt accordingly.
 
     For this, first you will write a business logic to set the extension value and then bind it to the input field.
 
-    Right-click the **Rules** folder | **New File**.
+    Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
-    !![MDK](img_3.13.png)
+    !![MDK](img_3.11.1.png)
 
-    Enter the file name `SetExtensionValue.js`, click **OK**.
+    Enter the Rule name `SetExtensionValue`, click **Next** and then **Finish** on the confirmation step.
 
-    Copy and paste the following code.
+    !![MDK](img_3.11.2.png)
+
+    Replace the generated snippet with below code.
 
     ```JavaScript
-    export default function SetExtensionValue(controlProxy) {
+    export default function SetExtensionValue(context) {
         console.log("In SetExtensionValue");
-        let srcValue = controlProxy.getValue();
-        let targetCtrl = controlProxy.evaluateTargetPath("#Page:SliderExtension/#Control:MyExtensionControlName");
+        let srcValue = context.getValue();
+        let targetCtrl = context.evaluateTargetPath("#Page:SliderExtension/#Control:MyExtensionControlName");
         targetCtrl.setValue(srcValue);
     }
     ```
 
-    !![MDK](img_3.13.1.png)
+    !![MDK](img_3.11.3.png)
 
-14. Save the changes to the `SetExtensionValue.js` file.
+12. Save the changes to the `SetExtensionValue.js` file.
 
-15. In `SliderExtension.page`, drag and drop a **Simple Property** item control below the slider control.
+13. In `SliderExtension.page`, drag and drop a **Simple Property** item control below the slider control.
 
     !![MDK](img_3.15.gif)
 
-16. Provide the following information:
+14. Provide the following information:
 
     | Property | Value |
     |----|----|
     | `Caption`| `Manual Entry` |
-    | `isEditable`| Select `true` from the dropdown |
     | `placeholder` | `Enter number to set the slider ext's value` |
 
     !![MDK](img_3.16.png)
 
-17. Navigate to **Events** tab, click the **link** icon for the `OnValueChange` property to open the object browser, bind it to `SetExtensionValue.js`.
+15. Navigate to **Events** tab, click the **link** icon for the `OnValueChange` property to open the object browser, bind it to `SetExtensionValue.js`.
 
     !![MDK](img_3.17.png)
 
@@ -288,9 +304,9 @@ You will add this registered control in a Form Cell page.
 2. In `MySliderPlugin/android/MySlider.ts` file, copy and paste the following code.
 
     ```JavaScript / TypeScript
-    import { Observable } from "tns-core-modules/data/observable";
-    import { View } from "tns-core-modules/ui/core/view";
-    import { layout } from "tns-core-modules/ui/core/view";
+    import { Observable } from 'tns-core-modules/data/observable';
+    import { View } from 'tns-core-modules/ui/core/view';
+    import { layout } from 'tns-core-modules/ui/core/view';
     import { device as Device } from 'tns-core-modules/platform';
     /*
       This is a way to keep iOS and Android implementation of your extension separate
@@ -461,12 +477,14 @@ You will add this registered control in a Form Cell page.
     }
     ```
 
+    >In your import function, if you see errors related to `tns-core-modules` or `mdk-core`, you can ignore them. There is currently no reference of such libraries in the MDK editor.
+
 3. Save the `MySliderPlugin/android/MySlider.ts` file.
 
 4. In `MySliderPlugin/iOS/MySlider.ts` file, copy and paste the following code.
 
     ```JavaScript / TypeScript
-    import { View } from "tns-core-modules/ui/core/view";
+    import { View } from 'tns-core-modules/ui/core/view';
 
     /*
       This is a way to keep iOS and Android implementation of your extension separate
@@ -852,29 +870,17 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     !![MDK](img_6.1.png)
 
-2. Verify the URL and **Click Enter** on your keyboard.
+2. Select deploy target as **Mobile Services**.
 
-    !![MDK](img_6.2.png)   
+    !![MDK](img_6.2.png)
 
-    >SAP Business Application Studio pre-populates the end-point of the environment it is running in. If you want to connect to a different environment, modify the API endpoint by copying it from your target SAP Cloud Platform account: *SAP Cloud Platform Cockpit &rarr; Sub-account &rarr; API Endpoint*
+3. Select the application from Mobile Services.
 
-3. Select the organisation in which you have enabled Mobile Services.
+    !![MDK](img_6.3.png)
 
-    !![MDK](img_6.3.png)   
+    You should see **Deploy succeeded** message.
 
-4. Select the space in which you have enabled Mobile Services.
-
-    !![MDK](img_6.4.png)   
-
-5. Select the an application from Mobile Services.
-
-    !![MDK](img_6.5.png)   
-
-    Upon successful setup, you should see **Deploy Succeeded** message.
-
-    !![MDK](img_6.6.png)
-
-    >MDK editor stores deployment details in `.project.json` file. When you deploy to same configuration next time, you will not be asked for above details, MDK editor will pick up these details from `.project.json` file.
+    !![MDK](img_6.4.png)
 
 [DONE]
 [ACCORDION-END]

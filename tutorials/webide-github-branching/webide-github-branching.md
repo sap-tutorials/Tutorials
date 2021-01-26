@@ -2,9 +2,13 @@
 title: Work with Branches in GitHub and SAP Web IDE
 description: Create branches in GitHub, switch branches and update application in a different branch in SAP Web IDE.
 primary_tag: products>sap-web-ide
-tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
+tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform, tutorial>license ]
 time: 15
 ---
+
+## Prerequisites
+- **IMPORTANT**: This tutorial cannot be completed on a trial account
+
 
 ## Details
 ### You will learn  

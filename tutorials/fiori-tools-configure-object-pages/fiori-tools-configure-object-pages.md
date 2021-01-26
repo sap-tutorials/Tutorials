@@ -31,9 +31,7 @@ To begin, you need to create a **`FieldGroup`** for the technical information th
 
     >If you have more than one project in your workspace, you will have to select the project you have created for this tutorial.
 
-2. A list of projections will open in a new tab. Select the projection `SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductType`.
-
-    The **Property** panel will show up on the right. Click the `@` icon from top right of the **Property** panel to view the annotations for this target.
+2. A list of projections will open in a new tab. Select the projection `SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductType` and Click the `@` icon to view the annotations for this target.
 
 3. Under the `SEPMRA_PROD_MAN_ANNO_MDL.xml` backend source, look for `UI.FieldGroup#TechnicalData`. This is the **`FieldGroup`** you need to add to your page.
 
@@ -54,7 +52,10 @@ To begin, you need to create a **`FieldGroup`** for the technical information th
     </Record>
     ```
 
-    Now paste the following to add the **Dimensions Unit** to the page:
+    Use the Code Complete feature: Press **CMD/Ctrl + Space** and then choose **`<Record DataField>`**.
+    Press **CMD/Ctrl + Space** again to choose **`Path`**.
+    Lastly, for providing value for Path, press **CMD/Ctrl + Space** to select `DimensionUnit`.
+    Your added code should look like below:
 
     ```XML
     <Record Type="UI.DataField">
@@ -89,13 +90,15 @@ Now that you have edited the **`FieldGroup`**, you need to reference it to displ
 
 3. You need to refer to the `UI.FieldGroup#TechnicalData` that you copied from the backend in the previous step in the **`UI.Facet`** you have created here. To do that, you will create a new record type called **`UI.ReferenceFacet`**.
 
-    Place your cursor between the lines of the `<Collection>` and `</Collection>` tags. Press **Shift + Space** and then select **`Record (full) "ReferenceFacet"`**.
+    Place your cursor between the lines of the `<Collection>` and `</Collection>` tags. Press **CMD/Ctrl + Space** and then select **`Record (full) "ReferenceFacet"`**.
 
 4. You need to assign the target of this **`ReferenceFacet`**. Press **CMD/Ctrl + Space** again and select **`@UI.FieldGroup#TechnicalData`**.
 
-    Now provide some text for the label: Press **CMD/Ctrl + Space** and select **String**. Type **`Technical Data`**.
+    Press **Tab** to jump to the **Property** label, then press **CMD/Ctrl + Space** and select **String**. Enter the string **`Technical Data`**.
 
-    Provide an ID. Press **CMD/Ctrl + Space** and select **String** again. Enter **`TechData`**. Your annotation file should look like the image below:
+    Press **Tab** again to jump to the **Property** id, then press **CMD/Ctrl + Space** and select **String**. Enter the string **`TechData`**.
+
+    Your annotation file should look like the image below:
 
     !![Enter Technical Data](t4-annotation-modeler-add-referenceFacet.png)
 
@@ -117,13 +120,17 @@ Next, you are going to add a chart to this object page to show users the monthly
 
     Use **CMD/Ctrl + Space** and select **`to_productSalesData`**, then enter **`/`** and select **`@UI.Chart`**.
 
-    Press **Tab** to jump to the **Property** label, then press **CMD/Ctrl + Space** and select **String**. Enter the string **`Monthly Revenue`**.
+    Press **Tab** to jump to the property label, then press **CMD/Ctrl + Space** and select **String**. Enter the string **`Monthly Revenue`**.
+
+    Press **Tab** again to jump to the property id, then press **CMD/Ctrl + Space** and select **String**. Enter the string **`MonthRev`**.
+
+    Your annotation file should look like the image below:
 
     !![Add chart](t4-annotation-modeler-add-chart.png)
 
 3. Save the file `annotation.xml` and take a look at your running app. You should see a new section in the object page showing the monthly revenue chart of the product.
 
->If your current product does not show any data, go back to list report page and select a different product.
+>If your current product does not show any data, refresh the page. If data is still not displayed, go back to the list report page and select a different product.
 
 
 [DONE]
@@ -176,13 +183,15 @@ Now you are going to add the actual section that displays the table of sales dat
 
 2. In the new line, use **CMD/Ctrl + Space** and select `<Record(full) : "ReferenceFacet:>`. Your cursor will move to `AnnotationPath`. Use **CMD/Ctrl + Space** and select **`to_productSalesData`**, then enter **`/`** and select **`@UI.LineItem`**.
 
-    Press **Tab** to go to the **Property** label. Press **CMD/Ctrl + Space** and select **String**, then enter the string **`Sales Data`**.
+    Press **Tab** to go to the property label. Press **CMD/Ctrl + Space** and select **String**, then enter the string **`Sales Data`**.
+
+    Press **Tab** to go to the property id. Press **CMD/Ctrl + Space** and select **String**, then enter the string **`SalesData`**.
 
     !![Add New Reference Facet](t4-add-new-reference-facet-lineItem.png)
 
 3. Save the file `annotation.xml` and check your running app. You should see a table with line items indicating when the selected item has sold.
 
->If your current product does not show any data, go back to the list report page and select a different product.
+>If your current product does not show any data, refresh the page. If data is still not displayed, go back to the list report page and select a different product.
 
 [DONE]
 [ACCORDION-END]
@@ -203,7 +212,7 @@ Like the other tools, you access it through the Command Palette.
 
 2. From the **Navigation** dropdown, select the `to_ProductSalesData (SEPMRA_C_PD_ProductSalesData)` entry and click **Add**.
 
-Switch back to your running application. When you click on an the arrow next to an entry in the **Sales Data** table, you will be taken a new object page.
+Switch back to your running application. Once your app has refreshed, click on the arrow next to an entry in the **Sales Data** table, you will be taken a new object page.
 
 [DONE]
 [ACCORDION-END]
@@ -320,12 +329,12 @@ Between the `<Schema>` and `</Schema>` tags, your code should look like the foll
                         <Record Type="UI.ReferenceFacet">
                             <PropertyValue Property="Target" AnnotationPath="to_ProductSalesData/@UI.Chart"/>
                             <PropertyValue Property="Label" String="Monthly Revenue"/>
-                            <PropertyValue Property="ID" />
+                            <PropertyValue Property="ID" String="MonthRev"/>
                         </Record>
                         <Record Type="UI.ReferenceFacet">
                             <PropertyValue Property="Target" AnnotationPath="to_ProductSalesData/@UI.LineItem"/>
                             <PropertyValue Property="Label" String="Sales Data"/>
-                            <PropertyValue Property="ID" />
+                            <PropertyValue Property="ID" String="SalesData"/>
                         </Record>
                     </Collection>
                 </Annotation>      

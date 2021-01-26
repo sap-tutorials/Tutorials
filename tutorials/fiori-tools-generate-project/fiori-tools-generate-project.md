@@ -9,7 +9,7 @@ primary_tag: products>sap-fiori
 
 ## Prerequisites
  - You must have access to the Gateway Demo System. This tutorial shows you how to access it: [Create an Account on the Gateway Demo System](gateway-demo-signup)
- - You must be able to access the following OData V2 service URL (ES5 service): `https://sapes5.sapdevcenter.com/sap/opu/odata/sap/SEPMRA_PROD_MAN/`
+ - You must be able to access the following OData service URL (ES5 service): `https://sapes5.sapdevcenter.com/sap/opu/odata/sap/SEPMRA_PROD_MAN/`
  - You must have Visual Studio Code and SAP Fiori tools installed.
 
 ## Details
@@ -42,7 +42,7 @@ The **Command Palette** will then close and a new tab will open. Select the **SA
 
 !![Application Generator Tile](t2-application-generator-tile.png)
 
-You need to select the page type to create. Since this tutorial involves a list report, select **List Report Object Page V2**, and then click **Next**.
+You need to select the page type to create. Since this tutorial involves a list report, select **List Report Object Page**, and then click **Next**.
 
 [DONE]
 [ACCORDION-END]
@@ -52,17 +52,19 @@ You need to select the page type to create. Since this tutorial involves a list 
 
 With the page type selected, it is time to connect a data source. You will use the OData service mentioned in the prerequisite section of this tutorial.
 
-Select **Connect to an OData Service** from the dropdown menu. A field to enter the OData V2 service will appear. Copy and paste the service URL:
+Select **Connect to an OData Service** from the dropdown menu. A field to enter the OData service URL will appear. Copy and paste the service URL:
 
 ```
 https://sapes5.sapdevcenter.com/sap/opu/odata/sap/SEPMRA_PROD_MAN/
 ```
 
-You may be prompted to enter credentials to access the service. Enter your username and password, and click the **Login** button.
+You may be prompted to enter credentials to access the service. Enter your username and password, and click the **Next** button.
 
 ![VSCode Login Button](t2-login-logo.png)
 
->These credentials were the ones you created if you had to request access to the OData V2 service.
+>These credentials were the ones you created if you had to request access to the OData service.
+
+After successfully connecting to the supplied OData service,  click **Next** to customize the template.
 
 Two more fields will appear. One for the **Main Entity** and another for the **Navigation Entity**. Since this list report is intended to display products, select `SEPMRA_C_PD_Product` for **Main Entity**. The application is simply meant to display a list of products, so set the **Navigation Entity** to **`None`**.
 
@@ -80,12 +82,11 @@ With the page type and data source defined, the next step is to configure the ma
 |  :------------- | :-------------
 |  **What is the module name for your application?**           | **`myfioriapp`**
 |  **What is the title for your application?**           | **`Manage Products`**
-|  **What is the namespace for your application?**    | **`Namespace1`** (default)
+|  **What is the namespace for your application?**    | **`Namespace1`**
 |  **What is the description for your application?**          | **`Fiori elements application for managing Products`**
 |  **Choose your project folder**   | Click the folder selection icon and select where to save your project.
-|  **Do you want to configure advanced options?** | **No**
 
-Click **Next**.
+Click **Finish**.
 
 At this point, your application folder will be generated based on the input from above.
 
@@ -100,11 +101,13 @@ Once your project has been generated, you will have the option to add it to your
 
 Since the given OData service came with pre-configured backend annotations, you can preview your app right away.
 
-From the Visual Studio Code **Explorer** on your left, right-click your project and select **Open in Terminal**.
+From the Visual Studio Code **Explorer** on your left, right-click your project and select **Preview Application**.
 
-!![VSCode Open in Terminal](t2-open-in-terminal3.png)
+!![VSCode Open Preview Application](t2-open-preview-application.png)
 
-From the terminal, type `npm start` and press **`Enter`** to preview your app with backend data. A new browser window will open with your List Report Object Page application running.
+From the options, you will need to select a npm script. Select `start` and press **`Enter`** to preview your app with backend data. A new browser window will open with your List Report Object Page application running.
+
+!![VSCode Select npm start](t2-select-npm-start.png)
 
 [DONE]
 [ACCORDION-END]
@@ -113,9 +116,11 @@ From the terminal, type `npm start` and press **`Enter`** to preview your app wi
 
 During your app development, you may face a slow internet connection or an unavailable backend system. SAP Fiori tools provides the option to run your application with mock data.
 
-Right-click your project in the Visual Studio Code **Explorer** and select **Open Preview in Browser**.
+From the Visual Studio Code **Explorer** on your left, right-click your project and select **Preview Application**.
 
-!![VSCode Preview in Browser](t2-open-preview-in-browser3.png)
+From the options, you would need to select a npm script. Select `start-mock` and press **`Enter`** to preview your app with mock data.
+
+!![VSCode Select npm start mock](t2-select-npm-start-mock.png)
 
 A new browser window opens with your List Report Object Page application running with mock data. You may now close this browser tab since you have another tab from the previous step which is running your application with real data.
 

@@ -20,14 +20,13 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
+For this tutorial, you will use [Mobile Services sample backend](cp-mobile-dev-kit-ms-setup) (step 3) which has parent-child relationship setup among entities. For example, A customer can have `n` (>=0) number of sales orders.
 
-For this tutorial, you will use [Mobile Services sample backend](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#39e06c4c-f56a-4fde-b220-d1696631c468) which has parent-child relationship setup among entities. For example, A customer can have `n` (>=0) number of sales orders.
-
-To implement deep insert between parent and child OData entities, you need to carry out the following tasks:
+To create an entity and then link it to another entity, you need to carry out the following tasks:
 
 *  Create a new page for creating an order
 *  Add an action bar item to the new page for cancelling the current activity
-*  Create a new `CreateEntity` OData action to  create a new sales order  
+*  Create a new `CreateRelatedEntity` OData action to  create a new sales order  
 *  Create a new message action for displaying failure message if order creation fails
 *  Create a navigation action to show order creation page from Customer detail page
 *  Implement data subscription to update count value when a new sales order is created
@@ -68,7 +67,6 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     |----|----|
     | `Name`| `FCCreateCurrencyCode` |
     | `Caption` | `CurrencyCode` |
-    | `IsEditable`| Select `true` from the dropdown |
     | `Value`| `EUR` |
 
     !![MDK](img_1.6.png)
@@ -81,7 +79,6 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     |----|----|
     | `Name`| `FCCreateNetAmount` |
     | `Caption` | `NetAmount` |
-    | `IsEditable`| Select `true` from the dropdown |
     | `Value`| `18.010` |
 
     !![MDK](img_1.7.png)
@@ -92,7 +89,6 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     |----|----|
     | `Name`| `FCCreateTaxAmount` |
     | `Caption` | `TaxAmount` |
-    | `IsEditable`| Select `true` from the dropdown |
     | `Value`| `108.010` |
 
     !![MDK](img_1.8.png)
@@ -103,7 +99,6 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     |----|----|
     | `Name`| `FCCreateGrossAmount` |
     | `Caption` | `GrossAmount` |
-    | `IsEditable`| Select `true` from the dropdown |
     | `Value`| `126.02` |
 
     !![MDK](img_1.9.png)
@@ -114,7 +109,6 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     |----|----|
     | `Name`| `FCCreateLifeCycleStatus` |
     | `Caption` | `LifeCycleStatus` |
-    | `IsEditable`| Select `true` from the dropdown |
     | `Value`| `N` |
 
     !![MDK](img_1.10.png)
@@ -125,7 +119,6 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     |----|----|
     | `Name`| `FCCreateLifeCycleStatusName` |
     | `Caption` | `LifeCycleStatusName` |
-    | `IsEditable`| Select `true` from the dropdown |
     | `Value`| `New` |
 
     !![MDK](img_1.11.png)
@@ -136,9 +129,7 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     |----|----|
     | `Name`| `FCCreatedate` |
     | `Caption` | `Creation Date` |
-    | `IsEditable`| Select `true` from the dropdown |
     | `Mode`| Select `datetime` from the dropdown |
-    | `Value`| `Enter Date` |
 
     !![MDK](img_1.12.png)
 
@@ -197,7 +188,7 @@ Now, you will add a button on the Create Order page and set its `onPress` to `Cl
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add Create Order toolbar item to customer detail page)]
+[ACCORDION-BEGIN [Step 4: ](Add toolbar item (Create Order) to customer detail page)]
 
 You will add a toolbar item to the `Customers_Detail.page` called **Create Order**. You will link this button to the navigation action you just created. This event will open the `SalesOrderHeaders_Create.page` when the Add button is pressed by the end-user.
 
@@ -247,7 +238,7 @@ The next step is to store newly created record locally for an offline applicatio
 
 2. You will create the **OData action** to create a sales order entity.
 
-    >You can find more details about [Create Entity Action](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/ODataService/CreateEntity.schema.html).
+    >You can find more details about [Create Related Entity Action](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/ODataService/CreateRelatedEntity.schema.html).
 
     Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Data Actions** in **Category** | click **OData Action** | **Next**.
 
@@ -258,17 +249,32 @@ The next step is to store newly created record locally for an offline applicatio
     | Property | Value |
     |----|----|
     | `Action Name`| `SalesOrderHeaders_CreateEntity` |
-    | `Type` | Select `CreateEntity` from the dropdown |
-    | `Service`| Select `SampleService.service` from the dropdown |
+    | `Type` | Select `CreateRelatedEntity` from the dropdown |
+    | `Service`| Select `Sample.service` from the dropdown |
     | `EntitySet` | Select `SalesOrderHeaders` from the dropdown |
 
     !![MDK](img_5.2.2.png)
 
+    >`CreateRelatedEntity` action creates the new entity against the navigation property of an existing entity with which the relationship is to be established.
+
 3. Click **Next**.
 
-4. Since in `SalesOrderHeaders_Create.page`, we have defined seven properties (Currency Code, Net Amount, Tax Amount, Gross Amount, Life Cycle Status, Life Cycle Status Name and Creation Date) to be added, now in this step, we will bind them to respective UI Controls.
+4. In next step, provide the below information:
 
-    Check the `CreatedAt` property (if not already) and click the **link icon** to open the object browser.
+    | Property | Value |
+    |----|----|
+    | `ParentLink`| `LinkItem Reference` |
+    | `Target EntitySet` | Select `Customers` from the dropdown |
+    | `ReadLink`| click link icon and double click `readLink` |
+    | `Property` | Select `SalesOrders` from the dropdown |
+
+    !![MDK](img_5.3.png)
+
+    >In [Mobile Services sample backend](cp-mobile-dev-kit-ms-setup), click **Metadata URL** and you will find `SalesOrders` navigation property for `Customers` entity.
+
+5. Since in `SalesOrderHeaders_Create.page`, we have defined seven properties (Currency Code, Net Amount, Tax Amount, Gross Amount, Life Cycle Status, Life Cycle Status Name and Creation Date) to be added, now in **Properties** section, you will bind them to respective UI Controls.
+
+    Check the `CreatedAt` property and click the **link icon** to open the object browser.
 
     Change the drop down in the object browser to `Controls & ClientData`, click the **Current Page** radio button.
 
@@ -276,21 +282,9 @@ The next step is to store newly created record locally for an offline applicatio
 
     !![MDK](img_5.4.gif)
 
-5. Repeat the above step for remaining properties: `CurrencyCode`, `GrossAmount`, `LifeCycleStatus`, `LifeCycleStatusName`, `NetAmount` and `TaxAmount`.
+6. Repeat the above step for remaining properties: `CurrencyCode`, `GrossAmount`, `LifeCycleStatus`, `LifeCycleStatusName`, `NetAmount` and `TaxAmount`.
 
     !![MDK](img_5.5.png)
-
-6. Under `CreateLinks`, select the checkbox for `CustomerDetails` and provide `{#Page:-Previous/@odata.readLink}` value under **Options** column.
-
-    !![MDK](img_5.6.png)
-
-    >`CreateLinks` allows you to link one or more entity objects to one of the target Entity's navigation property.
-
-    >`Page:-Previous`: A target path that when resolved will return the `PageProxy` object of the page before the currently displayed page.
-
-    >In [Mobile Services sample backend](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#39e06c4c-f56a-4fde-b220-d1696631c468), click **Metadata URL** and you will find `CustomerDetails` navigation property for `SalesOrderHeader` entity.
-
-    >!![MDK](img_5.6.1.png)
 
       Click **Next** and **Finish** on the confirmation screen. The action editor will open with the `SalesOrderHeaders_CreateEntity.action` loaded.
 
@@ -300,8 +294,8 @@ The next step is to store newly created record locally for an offline applicatio
 
     | Property | Value |
     |----|----|
-    | `Success Action` | Select `CloseModalPage_Complete.action` from the dropdown|
-    | `Failure Action` | Select `CreateSalesOrderHeaderEntityFailureMessage.action` from the dropdown |
+    | `Success Action` | Click the link icon and bind it to `CloseModalPage_Complete.action` |
+    | `Failure Action` | Click the link icon and bind it to `CreateSalesOrderHeaderEntityFailureMessage.action` |
 
     >When `SalesOrderHeaders_CreateEntity.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered or if `SalesOrderHeaders_CreateEntity.action` fails then `CreateSalesOrderHeaderEntityFailureMessage.action` will be triggered.
 
@@ -343,13 +337,17 @@ In `Customers_Detail.page`, select **Customer Orders** Object Table control. In 
 
 Deploy the updated application to your MDK client.
 
-Right-click `Application.app` and select **MDK: Deploy**.
+1. Right-click `Application.app` and select **MDK: Deploy**.
 
-!![MDK](img_7.1.png)
+    !![MDK](img_7.1.png)
 
-You should see **Deploy Succeeded** message.
+2. Select deploy target as **Mobile Services**.
 
-!![MDK](img_7.2.png)
+    !![MDK](img_7.2.png)
+
+    You should see **Deploy succeeded** message.
+
+    !![MDK](img_7.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -360,7 +358,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [Android]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a confirmation pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a confirmation pop-up, tap **OK**.
 
 2. Tap **CUSTOMER LIST**, tap one of the available customer record, you will then navigate to Customer detail page.
 
@@ -384,7 +382,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [iOS]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. When you see a confirmation pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. When you see a confirmation pop-up, tap **OK**.
 
 2. Tap **Customer List**, tap one of the available customer record,  you will then navigate to Customer detail page.
 
@@ -406,11 +404,11 @@ You should see **Deploy Succeeded** message.
 
 [OPTION END]
 
-**Congratulations!** You have successfully completed **Enhance Your First MDK App with Additional Functionalities** mission and you are now all set to [Level Up with the Mobile Development Kit](mission.mobile-dev-kit-level-up) mission.
-
-
 [DONE]
 [ACCORDION-END]
 
+---
+
+Congratulations, you have successfully completed **Enhance Your First MDK App with Additional Functionalities** mission and you are now all set to [Level Up with the Mobile Development Kit](mission.mobile-dev-kit-level-up) mission.
 
 ---

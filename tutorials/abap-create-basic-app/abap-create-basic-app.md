@@ -15,7 +15,11 @@ author_profile: https://github.com/julieplummer20
 
 ## Details
 ### You will learn  
-- How to create and run an ABAP application based on tables of the SAP NetWeaver Demo sample EPM Model (see also [The SAP NetWeaver Enterprise Procurement Model – An Introduction](https://www.sap.com/documents/2012/09/2a404253-5b7c-0010-82c7-eda71af511fa.html)), so you can complete the tutorial on any SAP NetWeaver `7.5x` system.  
+- How to create and run an ABAP application
+
+This mission is based on tables of the SAP NetWeaver Demo sample EPM Model, so that you can complete the tutorial on any SAP NetWeaver `7.5x` system.
+
+For more information, see [The SAP NetWeaver Enterprise Procurement Model – An Introduction](https://help.sap.com/viewer/a602ff71a47c441bb3000504ec938fea/7.52.2/en-US/57e9f59831e94311852a2af18ab733b5.html)
 
 ---
 

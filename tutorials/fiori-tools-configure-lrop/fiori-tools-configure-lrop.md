@@ -83,7 +83,7 @@ The Service Modeler is a graphical tool that provides a visualization of an ODat
 
 1. To access the Service Modeler, launch the Visual Studio Code Command Palette by pressing **`CMD/Ctrl + Shift + P`** and then typing **`SAP Fiori tools - Service Modeler: Open Service Modeler`**. The **Service Modeler** will open in a list view mode, listing all the projections (e.g., entity types) present in the underlying OData service. Some entries feature an `@` icon, which signifies that there are annotations attached to those targets.
 
-2. Select the projection **`SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductType`**. The property panel will show up on the right. To view all the annotations for the selected **Entity Type**, click on the `@` icon from top right of the property panel.
+2. For the projection **`SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductType`**, click on the `@` icon to view all the annotation for **`SEPMRA_PROD_MAN.SEPMRA_C_PD_ProductType`**.
 
     !![Open Service Modeler](t3-service-modeler-launch-annotation-view2.png)
 
@@ -95,7 +95,7 @@ The Service Modeler is a graphical tool that provides a visualization of an ODat
 
     **`UI.SelectionFields`** under `SEPMRA_PROD_MAN_ANNO_MDL.xml` has now been formatted with a strike through, giving you a visual indication that **`UI.SelectionsFields`** at runtime will be picked up from the local annotation file.
 
-4. Now that you have successfully copied backend **`UI.SelectionFields`** to the local annotation file, click the **Go-to source code** button next to **`UI.SelectionFields`**, under **`annotation.xml`**. This takes you to the local `annotation.xml` file, with the exact code to be changed highlighted.
+4. Now that you have successfully copied backend **`UI.SelectionFields`** to the local annotation file, click the **Show in source** button next to **`UI.SelectionFields`**, under **`annotation.xml`**. This takes you to the local `annotation.xml` file, with the exact code to be changed highlighted.
 
     !![Go To Source Code](t3-service-modeler-goto-code2.png)
 

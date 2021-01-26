@@ -1,6 +1,6 @@
 ---
 title: Set Up Business Rules for Determining Equipment
-description: Import, configure, and deploy business rules to determine equipment for new employees using SAP Cloud Platform Business Rules.
+description: Import, configure, and deploy business rules to determine equipment for new employees using Business Rules.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-cloud-platform]
@@ -11,22 +11,44 @@ primary_tag: products>sap-cloud-platform
 ### You will learn
 - How to quickly set up and deploy business rules in your account
 
-**SAP Cloud Platform Business Rules** is a platform service, which enables business users and application developers to automate their decisions and enhance their decision-making experience. It offers a simplified Fiori-based rule authoring tool and a central rule repository with various deployment options to different platforms.
+**Business Rules** is a capability of **SAP Cloud Platform Workflow Management**, which enables business users and application developers to automate their decisions and enhance their decision-making experience. It offers a simplified Fiori-based rule authoring tool and a central rule repository with various deployment options to different platforms.
 
-In this sample content, you will learn how to author and manage rules to identify the list of equipment to be provisioned for the newly hired employee based on their role and work location using SAP Cloud Platform Business Rules.
+In this tutorial, you will learn how to import and manage rules to identify the list of equipment to be provisioned for the newly hired employee based on their role and work location Business Rules.
 
 ---
 
+[ACCORDION-BEGIN [Step 1: ](Configure destination)]
 
-[ACCORDION-BEGIN [Step 1: ](Configure a system)]
+The sample business rule used in this scenario is published in API Business Hub. `BUSINESSRULES_APIHUB` destination is used in Manage Rule Projects  application to import business rules from API Business Hub. This destination is already created in the previous set up tutorial, and now you will configure the destination for the password.
+
+1. From your global account page, choose the `trial` tile to access your subaccount.
+
+    !![Enter Trial Subaccount](entertrialaccount.png)
+
+2. Click **Connectivity | Destinations** from the left-hand navigation and search for the destination with name `BUSINESSRULES_APIHUB`
+
+    ![Create Destination](createdestination-apihub.png)
+
+3. In **Destination Configuration** section, click **Edit** and enter your cloud platform trial user password:
+
+    > Ensure that the user whose credentials (username and password) are entered in the destination **does not have Two Factor Authentication enabled**.
+
+    ![Create Destination](savedestination-apihub.png)
+
+    - **Save** the destination.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Configure a system)]
 
 To import the business rules project from API Business Hub, you need to configure a system which points to the API Hub destination and then use this system to import the project.
 
-1. In your web browser, open the SAP Fiori launchpad and click the **Manage Rule Projects** tile..
+1. In your web browser, open the Workflow Management application and click the **Manage Rule Projects** tile..
 
-    >You got the launchpad link in the last step of the setup tutorial. The link would be like:  
+    >You got the workflow management application link in the last step of the setup tutorial. The link would be like:  
 
-    > `https://trial-userid-dev-workflowmanagementflp-approuter.cfapps.eu10.hana.ondemand.com/cp.portal/site#Shell-home`
+    > `https://<subdomain>.cockpit.workflowmanagement.cfapps.<eu10 or us10>.hana.ondemand.com/cp.portal/site#Shell-home`
 
     ![Rule Editor](ruleeditor.png)
 
@@ -51,9 +73,9 @@ To import the business rules project from API Business Hub, you need to configur
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Import business rules)]
+[ACCORDION-BEGIN [Step 3: ](Import business rules)]
 
-1. Click **Design** icon and select **Import Project from API Business API Hub**.
+1. Click **Design** icon, click **Import** to select **Import Project from API Business Hub**.
 
     !![Import Business Rules](ImportAPIHub.png)
 
@@ -73,7 +95,7 @@ To import the business rules project from API Business Hub, you need to configur
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy business rules)]
+[ACCORDION-BEGIN [Step 5: ](Deploy business rules)]
 
 1. Select the business rules project to navigate into the project.
 

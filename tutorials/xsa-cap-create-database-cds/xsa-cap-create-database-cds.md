@@ -5,11 +5,12 @@ auto_validation: true
 time: 15
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition]
+tags: [tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
 primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - You have created an application using the [Business Application wizard](xsa-cap-create-project).
 
 ## Details
@@ -148,6 +149,24 @@ If you pay attention to the build log in the console, you will see the `CDS` art
 You will now convert those CDS files specific to SAP HANA into runtime objects (tables). Right-click on the database module and choose **Build**.
 
 ![Build database module](7.png)
+
+Note: If you get an error during the build process, this could be caused by an older version of the XSA Runtime in HANA, express edition.  If your XSA version still contains Node.js version 8.x; this can lead to errors when building because this version of Node.js is no longer supported at the OS level.  Newer versions of the XSA runtime only contain Node.js version 10.x and 12.x.  If you do receive an error at this point, we would suggest editing the `/db/package.json` like the following to force the usage of the newer version of the Node.js runtime.
+
+```json
+{
+	"name": "deploy",
+	"dependencies": {
+		"@sap/hdi-deploy": "^3"
+	},
+	"scripts": {
+		"postinstall": "node .build.js",
+		"start": "node node_modules/@sap/hdi-deploy/deploy.js"
+	},
+	"engines": {
+		"node": "^10 || ^12"
+	}
+}
+```
 
 Scroll up to in the console to see what the build process has done.
 

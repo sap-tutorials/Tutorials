@@ -54,8 +54,6 @@ You must select a blog category before publishing a blog post. Please read the *
 
 As explained on the [Blogging](https://community.sap.com/resources/blogging) resources page, once you decide what to write about, you'll need to select tags that match the topics that your blog post covers. Please read the **Using tags** section of the [Blogging](https://community.sap.com/resources/blogging) resources page, then answer the following.
 
-![Tags](tags.png)
-
 [VALIDATE_3]
 [ACCORDION-END]
 

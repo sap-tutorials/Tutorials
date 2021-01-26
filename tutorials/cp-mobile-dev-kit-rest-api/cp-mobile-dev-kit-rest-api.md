@@ -11,38 +11,35 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial:** [Set Up Business Application Studio for Mobile Technologies](cp-mobile-bas-setup)
-- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
 
 ## Details
 ### You will learn
   - How to configure an application in Mobile Services
+  - How to define a REST endpoint as a destination in Mobile Services
   - How to create MDK applications in SAP Business Application Studio
-  - How to write a MDK rule to parse the response from REST API
-  - How to retrieve and modify the data with calls to `Petstore` API
+  - How to create a MDK Service file pointing to REST endpoint destination
+  - How to use `RestService SendRequest` Action to make directly call to `Petstore` API
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/7-Consume-rest-api-in-mdk-app) and start directly with step 6 or 16 in this tutorial but make sure you complete step 2.
 
-
 ---
 
-
-Mobile Development Kit allows you to consume REST APIs. You need to first define REST endpoint as a destination in Mobile Services and then need to write MDK rules (JavaScript) to consume it. A rule will be needed to parse the response and then decide what to do.
+Mobile Development Kit allows you to consume REST APIs. You need to first define REST endpoint as a destination in Mobile Services and then easily bind a `RestServiceTarget` to an MDK control e.g., `ObjectTable`, `ContactCell`, `ObjectCollection` etc. This assumes the REST service returns JSON similar to how OData requests are returned.
 
 A publicly available `Petstore` API from [swagger.io](https://petstore.swagger.io) is used as an example in this tutorial.
 
 ![MDK](img_17.1.png)
 
-![MDK](img_17.3.png)
-
 [ACCORDION-BEGIN [Step 1: ](Understand the Petstore API to retrieve data)]
 
 1. Open [`Swagger Petstore`](https://petstore.swagger.io/), find all pets with status as `available`.
 
-    !![MDK](img_1.png)
+    !![MDK](img_1.1.png)
 
 2. Click **Execute** to get the response.
 
-    !![MDK](img_2.png)
+    !![MDK](img_1.2.png)
 
     By looking at results, you now have understood
 
@@ -98,8 +95,6 @@ With above details, you will next configure an app in Mobile Services, add root 
 
 8. For this tutorial, there is no Custom Headers, Annotations, Authentication required, click **Next** and Finish the form.
 
-    In MDK rule, you will reference `Petstore` root URL via newly added destination `swagger.petstore`.
-
 [DONE]
 [ACCORDION-END]
 
@@ -107,85 +102,65 @@ With above details, you will next configure an app in Mobile Services, add root 
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. If you do not see the **Welcome** page, navigate to *View* menu &rarr; *Find Command* &rarr; search with *Welcome* to launch the Welcome page.
+2. Navigate to *File* menu &rarr; click **New Project from Template**.
 
-    !![MDK](img_3.2.gif)
+    !![MDK](img_3.2.png)
 
-3. In Welcome page, click **New project from template** .
+3. Select **MDK Project** and click **Start**.
 
-    !![MDK](img_3.3.png)
+    !![MDK](img_3.3.png)  
 
-4. Select **MDK Project** and click **Next**.
-
-    !![MDK](img_3.4.png)
-
-5. In *Basic Information* step, select or provide the below information and click **Next**:
+4. In *Basic Information* step, select or provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `MDK Template Type`| Select `Empty` from the dropdown |
-    | `Your Project Name` | `MDK_Petstore` |
-    | `Your Project Name` | <default name is same as Project name, you can provide any name of your choice> |
+    | `MDK template type`| Select `Empty` from the dropdown |
+    | `Your project name` | `MDK_Petstore` |
+    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
 
-    !![MDK](img_3.5.png)
+    !![MDK](img_3.4.png)
 
     >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).
 
-6. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Petstore` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in new workspace or to add it to workspace. Ignore the pop-up or click the cross icon to hide the window.
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.    
 
-    !![MDK](img_3.6.png)
+5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Petstore` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
+
+    !![MDK](img_3.5.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create rule to retrieve Pet information)]
 
-A rule will be needed to parse the response from REST API.
+[ACCORDION-BEGIN [Step 4: ](Create a new MDK Service file)]
 
->You can find more details about [writing a Rule](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/rules.html).
-
-1. Right-click the **Rules** folder | **New File**.
+1. Right-click the **Services** folder | **MDK: New Service**.
 
     !![MDK](img_4.1.png)
 
-2. Enter the file name `GetPetFindByStatus.js`, click **OK**.
+2. Select the application `com.sap.mdk.restapi` from Mobile Services.    
 
-3. Copy and paste the following code.
+    !![MDK](img_4.2.png)
 
-    ```JavaScript
-    export default function GetPetFindByStatus(context) {
-        //appId Returns the App ID com.sap.mdk.demo of application in Mobile Services on SAP Cloud Platform.
-        let appId = context.evaluateTargetPath('#Application/#ClientData/MobileServiceAppId');
-        // GET "https://petstore.swagger.io/v2/pet/findByStatus?status=available" -H "accept: application/json"
-        let destination = 'swagger.petstore';
-        let relativePath = 'pet/findByStatus?status=available';
-        let requestPath = destination + '/' + relativePath;
-        let params = {
-            'method': 'GET',
-            'header': {
-                'x-smp-appid': appId,
-                'Accept': 'application/json'
-            }
-        };
-        //sendRequest Client API is used to send a request to SAP Cloud Platform Mobile Services.
-        return context.sendRequest(requestPath, params).then((response) => {
-            if (response.statusCode == 200) {
-                console.log(response.content.toString());
-                // Parse and act on results
-                let result = JSON.parse(response.content.toString());
-                //result returns an array of objects and this result will be used in binding the Target in step 5.2
-                return result;
-            }
-            else {
-                alert('something went wrong');
-            }
-        });
-    }
-    ```
+3. Provide or select the below information:
 
-    >You can find more details about [targeting properties on Application's `ClientData` Object] (https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/client-data.html) and about [Client API `sendRequest`](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/apidoc/interfaces/ipageproxy.html#sendrequest) in documentation.
+    | Field | Value |
+    |----|----|
+    | `Name`| `<Provide any name of your choice>` |
+    | `Service Source Type` | Select `Mobile` from the dropdown |
+    | `Destination Name` | Select `swagger.petstore` from the dropdown |
+    | `Path Suffix` | Leave it as it is |
+    | `Language URL Param` | Leave it as it is |
+    | `REST Service` | Check it |
 
-4. Save the changes to the `GetPetFindByStatus.js` file.
+    !![MDK](img_4.3.png)
+
+
+4. Click **Next** and Finish the step.
+
+    .service and `.xml` (empty file) have been created under Services folder.
+
+    !![MDK](img_4.4.png)
 
 [DONE]
 [ACCORDION-END]
@@ -202,12 +177,17 @@ You will add an **Object Table** control  item on `Main.page` to display the lis
 
     | Field | Value |
     |----|----|
-    | `Select Data Type` | Select `String Target` from the dropdown |
-    | `Bind to` | `/MDK_Petstore/Rules/GetPetFindByStatus.js` |
+    | `Target` | Select `REST Service Target` from the dropdown |
+    | `Service` | Select `petstore.service` from the dropdown |
+    | `Path` | Enter `/pet/findByStatus?status=available` |
 
-    !![MDK](img_5.2.gif)
+    !![MDK](img_5.2.png)
 
     >You can find more details on **Target** in [documentation](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/definitions/Target.schema.html).
+
+    >Method GET is pre-selected for binding the `ObjectTable` control to a `RestServiceTarget`.
+
+    >!![MDK](img_5.3.png)
 
 
 3. Under **Appearance**, provide below information:
@@ -221,10 +201,12 @@ You will add an **Object Table** control  item on `Main.page` to display the lis
     | `ProgessIndicator`| leave it empty |
     | `Status` | `{status}` |
     | `Subhead` | `Pet Name: {name}` |
-    | `SubStatus` | leave it empty |
+    | `Substatus` | leave it empty |
     | `Title` | `Pet ID: {id}` |
 
-    !![MDK](img_5.3.png)
+    !![MDK](img_5.4.png)
+
+    >If you see any error in Main.page (code editor), ignore it as MDK editor currently can't validate such REST Service endpoint properties.
 
 [DONE]
 [ACCORDION-END]
@@ -237,29 +219,13 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     !![MDK](img_6.1.png)
 
-2. Verify the URL and **Click Enter** on your keyboard.
+2. Select deploy target as **Mobile Services**.
 
-    !![MDK](img_6.2.png)   
+    !![MDK](img_6.2.png)
 
-    >SAP Business Application Studio pre-populates the end-point of the environment it is running in. If you want to connect to a different environment, modify the API endpoint by copying it from your target SAP Cloud Platform account: *SAP Cloud Platform Cockpit &rarr; Sub-account &rarr; API Endpoint*
+    You should see **Deploy succeeded** message.
 
-3. Select the organisation in which you have enabled Mobile Services.
-
-    !![MDK](img_6.3.png)   
-
-4. Select the space in which you have enabled Mobile Services.
-
-    !![MDK](img_6.4.png)   
-
-5. Select the an application `com.sap.mdk.restapi` from Mobile Services.
-
-    !![MDK](img_6.5.png)   
-
-    Upon successful setup, you should see **Deploy Succeeded** message.
-
-    !![MDK](img_6.6.png)
-
-    >MDK editor stores deployment details in `.project.json` file. When you deploy to same configuration next time, you will not be asked for above details, MDK editor will pick up these details from `.project.json` file.
+    !![MDK](img_6.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -323,15 +289,7 @@ Next, you will learn how to create a new pet record.
 
     ```JSON
     {
-      "category": {
-        "name": "Terrier"
-      },
       "name": "pet-test",
-      "tags": [
-        {
-          "name": "Labrador"
-        }
-      ],
       "status": "available"
     }
     ```
@@ -370,7 +328,7 @@ In this step, you will create the `Pet_Create.page` as a **Form Cell Page**. Thi
 
     !![MDK](img_10.3.png)
 
-4. Now, you will add the fields (like Category name, Pet name, Tag Name, Status) for creating a new pet record by the end-user.
+4. Now, you will add the fields (Pet name and Status) for creating a new pet record by the end-user.
 
     In the Layout Editor, expand the **Control** | **Container Item** section. Drag and drop a **Simple Property** onto the Page area.
 
@@ -378,7 +336,7 @@ In this step, you will create the `Pet_Create.page` as a **Form Cell Page**. Thi
 
     !![MDK](img_10.4.gif)
 
-5. Drag and drop three additional Simple Property controls onto the page so you have four total controls.
+5. Drag and drop one more Simple Property control onto the page so you have two total controls.
 
     !![MDK](img_10.5.png)
 
@@ -386,9 +344,8 @@ In this step, you will create the `Pet_Create.page` as a **Form Cell Page**. Thi
 
     | Property | Value |
     |----|----|
-    | `Name`| `FCCreateCategory` |
-    | `Caption` | `Category` |
-    | `IsEditable`| Select `true` from the dropdown |
+    | `Name`| `FCCreatePet` |
+    | `Caption` | `Pet Name` |
     | `PlaceHolder`| `Enter Value` |
 
     !![MDK](img_10.6.png)
@@ -397,92 +354,63 @@ In this step, you will create the `Pet_Create.page` as a **Form Cell Page**. Thi
 
     | Property | Value |
     |----|----|
-    | `Name`| `FCCreatePet` |
-    | `Caption` | `Pet` |
-    | `IsEditable`| Select `true` from the dropdown |
-    | `PlaceHolder`| `Enter Value` |
-
-    !![MDK](img_10.7.png)
-
-8. Select the third **Simple Property control** and provide the below information:
-
-    | Property | Value |
-    |----|----|
-    | `Name`| `FCCreateTag` |
-    | `Caption` | `Tag` |
-    | `IsEditable`| Select `true` from the dropdown |
-    | `PlaceHolder`| `Enter Value` |
-
-    !![MDK](img_10.8.png)
-
-9. Select the last **Simple Property control** and provide the below information:
-
-    | Property | Value |
-    |----|----|
     | `Name`| `FCCreateStatus` |
     | `Caption` | `Status` |
-    | `IsEditable`| Select `true` from the dropdown |
     | `PlaceHolder`| `Enter Value` |
 
-    !![MDK](img_10.9.png)    
+    !![MDK](img_10.7.png)    
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11: ](Create rule to POST pet record)]
+[ACCORDION-BEGIN [Step 11: ](Create an action to POST pet record)]
 
-1. Right-click the **Rules** folder | **New File**.
+1. Create a  `RestService SendRequest` action:
 
-    !![MDK](img_4.1.png)
+    Right-click the **Actions** folder | **MDK: New Action** | choose **`MDK RestService Actions`** in **Category** | click **`RestService SendRequest` Action** | **Next**.
 
-2. Enter the file name `PostPet.js`, click **OK**.
+    !![MDK](img_11.1.png)        
 
-3. Copy and paste the following code.
+2. Provide the below information:
 
-    ```JavaScript
-    export default function PostPet(context) {
-        let appId = context.evaluateTargetPath('#Application/#ClientData/MobileServiceAppId');
-        // POST "https://petstore.swagger.io/v2/pet" -H "accept: application/json" -H "Content-Type: application/json"
-        let destination = 'swagger.petstore';
-        let relativePath = 'pet';
-        let requestPath = destination + '/' + relativePath;
-        //Retrieve the individual input values from Pet_Create page and store them in local variables  
-        let petCategory = context.evaluateTargetPath('#Page:Pet_Create/#Control:FCCreateCategory/#Value');
-        let petName = context.evaluateTargetPath('#Page:Pet_Create/#Control:FCCreatePet/#Value');
-        let petTag = context.evaluateTargetPath('#Page:Pet_Create/#Control:FCCreateTag/#Value');
-        let petStatus = context.evaluateTargetPath('#Page:Pet_Create/#Control:FCCreateStatus/#Value');
-        let requestBodyJSON = {
-            "category": {
-                "name": petCategory
-            },
-            "name": petName,
-            "tags": [{
-                "name": petTag
-            }],
-            "status": petStatus
-        }
-        let params = {
-            'method': 'POST',
-            'header': {
-                'x-smp-appid': appId,
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            'body': JSON.stringify(requestBodyJSON)
-        };
-        return context.sendRequest(requestPath, params).then((response) => {
-            if (response.statusCode == 200) {
-                alert(response.content.toString());
-            } else {
-                alert('something went wrong');
-            }
+    | Field | Value |
+    |----|----|
+    | `action Name`| `CreatePet` |
+    | `Service` | Select `petstore.service` from the dropdown |
+    | `Path` | `/pet` |
 
-        });
-    }
-    ```
+    !![MDK](img_11.2.png)
 
-4. Save the changes to the `PostPet.js` file.
+3. Expand `RequestProperties` and provide the below information.
+
+    | Field | Value |
+    |----|----|
+    | `Method`| `POST` |
+
+4. Under `Body`, switch to `object type` by clicking the icon, once it's color has changed click on `Body[0]` to add array items, this should now display a create icon in front of `Body[0]`. Click Create icon to create an array item(0).
+
+    Provide the below information:
+
+    | Field | Value |
+    |----|----|
+    | `Key`| `name` |
+    | `Value{}`| Bind it to input control `#Control:FCCreatePet/#Value` |
+
+    !![MDK](img_11.3.gif)
+
+    Repeat above step to create another array item(1).  
+
+    | Field | Value |
+    |----|----|
+    | `Key`| `status` |
+    | `Value{}`| Bind it to input control `#Control:FCCreatePet/#Value` |
+
+    !![MDK](img_11.4.png)
+
+5. Click **Next** and **Finish** the confirmation step.
+
+    >You can find more details about `SendRequest` action in [help documentation](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/RestService/SendRequest.schema.html).
 
 [DONE]
 [ACCORDION-END]
@@ -497,7 +425,7 @@ Now, you will add a button on the `Pet_Create.page` and set it's `onPress` to `C
 
 2. In the **Properties** pane, click the **link icon** to open the object browser for the **System Item** property. Double click the **Cancel** type and click **OK**.
 
-    !![MDK](img_12.2.gif)
+    !![MDK](img_12.2.png)
 
     >System Item are predefined system-supplied icon or text. Overwrites _Text_ and _Icon_ if specified.
 
@@ -507,12 +435,12 @@ Now, you will add a button on the `Pet_Create.page` and set it's `onPress` to `C
 
     Double click the `ClosePage.action` and click **OK** to set it as the `OnPress` Action.
 
-    !![MDK](img_12.3.gif)
+    !![MDK](img_12.3.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Call the rule in MDK page)]
+[ACCORDION-BEGIN [Step 13: ](Call the SendRequest Action in MDK page)]
 
 1. In `Pet_Create.page`, drag & drop an action bar item to the right corner of the action bar.
 
@@ -522,7 +450,7 @@ Now, you will add a button on the `Pet_Create.page` and set it's `onPress` to `C
 
     !![MDK](img_13.2.png)
 
-3. Navigate to **Events** tab and bind `PostPet.js` rule to `OnPress` event.
+3. Navigate to **Events** tab and bind `CreatePet.action` rule to `OnPress` event.
 
     !![MDK](img_13.3.png)
 
@@ -571,18 +499,52 @@ You will add a button to the `Main.page` called **Add**. You will link this butt
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Redeploy the application)]
+[ACCORDION-BEGIN [Step 16: ](Create Close Page Complete action)]
 
-Right-click the `Application.app` file in the project explorer pane and select **MDK: Deploy**.
+Now, you will create a new action `ClosePage_Complete.action` that will be called after `CreatePet.action` is successful.
+
+
+1. Right-click the **Actions** folder | **MDK: New Action** | choose **MDK UI Actions** in **Category** | click **Close Page Action** | **Next**.
+
+2. Provide the below information:
+
+    | Property | Value |
+    |----|----|
+    | `Action Name`| `ClosePage_Complete` |
+    | `DismissModal` | Select `Completed` from the dropdown |
+    | `CancelPendingActions`| Select `false` from the dropdown |
+
+    !![MDK](img_16.1.png)
+
+3. Click **Next** and then **Finish** on the confirmation step.
+
+4. Next, define _Success_ actions for `CreatePet.action`.
+
+    Open `CreatePet.action` in the action editor, expand the **Common Action Properties** and provide the below information:
+
+    | Property | Value |
+    |----|----|
+    | `Success Action` | Click link icon and bind it to `CloseModalPage_Complete.action` |     
+
+    !![MDK](img_16.2.png)
+
+    >When `CreatePet.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered. You may create a message action and set it as failure action if  `CreatePet.action` fails.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Update the MDK app with new metadata)]
+[ACCORDION-BEGIN [Step 17: ](Redeploy the application)]
+
+Right-click the `Application.app` file in the project explorer pane,  select **MDK: Deploy** and then select deploy target as **Mobile Services**.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 18: ](Update the MDK app with new metadata)]
 
 [OPTION BEGIN [Android]]
 
-1. Re-launch the app on your device, authenticate with passcode or Touch ID if asked. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, authenticate with passcode or Biometric authentication if asked. You will see a _Confirmation_ pop-up, tap **OK**.
 
 2. Tap **+** icon on `Main.page` to navigate to Create Pet page.
 
@@ -592,15 +554,11 @@ Right-click the `Application.app` file in the project explorer pane and select *
 
     ![MDK](img_17.2.png)
 
-    A new record has been created and results are displaying in alert pop-up.
-
-    ![MDK](img_17.3.png)
-
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-1. Re-launch the app on your device, authenticate with passcode or Touch ID if asked. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, authenticate with passcode or Biometric authentication if asked. You will see a _Confirmation_ pop-up, tap **OK**.
 
 2. Tap **+** icon on `Main.page` to navigate to Create Pet page.
 
@@ -610,20 +568,15 @@ Right-click the `Application.app` file in the project explorer pane and select *
 
     ![MDK](img_17.5.png)
 
-    A new record has been created and results are displaying in alert pop-up.
-
-    ![MDK](img_17.6.png)
-
 [OPTION END]
 
 You have created a new record consuming REST API. Similarly, you can also modify and delete an existing record.
 
-**Congratulations!** You have successfully completed **Level Up with the Mobile Development Kit** mission and you are now all set to [Brand Your Customized App with Mobile Development Kit SDK](mission.mobile-dev-kit-brand) mission.
-
 [VALIDATE_2]
 [ACCORDION-END]
 
+---
 
-
+Congratulations, you have successfully completed **Level Up with the Mobile Development Kit** mission and you are now all set to [Brand Your Customized App with Mobile Development Kit SDK](mission.mobile-dev-kit-brand) mission.
 
 ---

@@ -101,6 +101,22 @@
       "value": "products>mobile-development-kit-client"
     },
     {
+      "name": "SAP Adaptive Server Enterprise",
+      "value": "products>sap-adaptive-server-enterprise"
+    },
+    {
+      "name": "SAP ASE - BW Enablement",
+      "value": "software-product-function>sap-ase-- bw-enablement"
+    },
+    {
+      "name": "SAP ASE - ERP Enablement",
+      "value": "software-product-function>sap-ase-- erp-enablement"
+    },
+    {
+      "name": "SAP ASE - HADR Enablement",
+      "value": "software-product-function>sap-ase-- hadr-enablement"
+    },
+    {
       "name": "SAP API Management",
       "value": "products>sap-api-management"
     },
@@ -141,8 +157,12 @@
       "value": "products>sap-cloud-platform-enterprise-messaging"
     },
     {
-      "name": "SAP Cloud Platform for the Cloud Foundry environment",
-      "value": "products>sap-cloud-platform-for-the-cloud-foundry-environment"
+      "name": "SAP Cloud Platform Enterprise Messaging",
+      "value": "products>sap-cloud-platform-enterprise-messaging"
+    },
+    {
+      "name": "SAP Cloud Platform, Kyma runtime",
+      "value": "products>sap-cloud-platform\\, kyma-runtime"
     },
     {
       "name": "SAP Cloud Platform Integration for process services",
@@ -151,6 +171,10 @@
     {
       "name": "SAP Cloud Platform Internet of Things",
       "value": "products>sap-cloud-platform-internet-of-things"
+    },
+    {
+      "name": "SAP Cloud Platform Mobile Services",
+      "value": "software-product-function>sap-cloud-platform-mobile-services"
     },
     {
       "name": "SAP Cloud Platform Portal",
@@ -174,7 +198,7 @@
     },
     {
       "name": "SAP Cloud SDK",
-      "value": "products>sap-s-4hana-cloud-sdk"
+      "value": "products>sap-cloud-sdk"
     },
     {
       "name": "SAP Conversational AI",

@@ -23,7 +23,7 @@ Our overall goal in this group of tutorials is to create apps in SAP Web IDE and
 
 2. In the popup that opens, enter the **Organization Name** as `portal-dev_companyportal` and click **Create**.
 
-    > An Organization is a development account.
+    > An organization is a development account.
 
     ![Create Organization](0006_organization_name.png)
 
@@ -48,6 +48,12 @@ Your subaccount should have the following entitlements:
 - HTML5 Applications
 
 ![View quotas and apps](0009_view_quotas.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 2: ](Test yourself)]
 
 [VALIDATE_7]
 [ACCORDION-END]

@@ -11,7 +11,7 @@ time: 30
 
 ## Prerequisites
 - You've finished the tutorial [Create a Business Service with Node.js using Visual Studio Code](cp-apm-nodejs-create-service).  
-- If you don't have a Cloud Foundry Trial Subaccount on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) and, if necessary [Manage Entitlements](cp-trial-entitlements).
+- If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **Europe (Frankfurt) or US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements).
 - You've downloaded and installed the [cf command line client](https://github.com/cloudfoundry/cli#downloads) for Cloud Foundry as described in the tutorial [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
 
 ## Details
@@ -37,14 +37,17 @@ It's now time to switch to SAP HANA as a database.
         }
       }
     ```
-    >`kind:sql` declares the requirement for an SQL database. It evaluates to `sqlite` in the `development` profile (active by default), while in `production` it equals `hana`. This way you don't need to modify this file if you want to switch between the two databases.
-    `
+
+    > `kind:sql` declares the requirement for an SQL database. It evaluates to `sqlite` in the `development` profile (active by default), while in `production` it equals `hana`. This way you don't need to modify this file if you want to switch between the two databases.
+
+    > Don't edit the `gen/db/package.json` file.
+
 3. In the command line add the SAP HANA driver as a dependency to your project:
 
 ```Shell/Bash
 npm add @sap/hana-client --save
 ```
-In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP and check that you've installed the latest long-term support (LTS) version of [Node.js](https://nodejs.org/en/).
+In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) in the CAP documentation for more details and check that you've installed the latest long-term support (LTS) version of [Node.js](https://nodejs.org/en/).
 
 [DONE]
 
@@ -58,13 +61,13 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP Cl
 
     !![cloud platform cockpit view](cockpit.png)
 
-2. Navigate to your Subaccount:
+2. Navigate to the Subaccount overview:
 
     !![subaccount tile](subaccount.png)
 
-3. Copy the **Cloud Foundry API Endpoint** value:
+3. Navigate to your Subaccount and copy the **Cloud Foundry API Endpoint** value:
 
-    !![CF API endpoint value](api-endpoint.png)
+    !![CF API endpoint value](api_endpoint.png)
 
 4. Go back to Visual Studio Code to the command line. Authenticate with your login credentials using the following command:
 
@@ -72,6 +75,8 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP Cl
 cf login
 ```
 > This will ask you to select CF API, org, and space.
+
+> The API Endpoint is taken by default. If you want to change the API Endpoint use `cf api <CF_API_ENDPOINT>` to change the API. Replace `<CF_API_ENDPOINT>` with the actual value you obtained in the previous step.
 
 [DONE]
 [ACCORDION-END]
@@ -85,38 +90,40 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 1. As `cf push` can only bind but not create services, you need to create the SAP HANA service manually (along with an HDI container and a database schema). In the command line add:
 
     ```Shell/Bash
-    cf create-service hanatrial hdi-shared my-bookshop-db-hdi-container
+    cf create-service hanatrial hdi-shared my-bookshop-db
     ```
 
-    >This process takes some minutes.
+    > This process takes some minutes.
 
-    >Check the status of your service using `cf service my-bookshop-db-hdi-container`.
+    > Check the status of your service using `cf service my-bookshop-db`.
 
-    >If service creation fails, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#hana) for CAP.
+    > If service creation fails, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#hana) in the CAP documentation for more details.
 
 2. Now, build and deploy both the database part and the actual application and add:
 
-    ```
-    SET CDS_ENV=production && cds build
+    ```Shell/Bash
+    cds build --production
     cf push -f gen/db
     cf push -f gen/srv --random-route
     ```
 
-    >This process takes some minutes.
+    > This process takes some minutes.
 
-    >The first command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db-hdi-container` service that you've created in the previous step.
+    > The first command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db` service that you've created in the previous step.
 
-    >See the section [Deploy using cf push](https://cap.cloud.sap/docs/advanced/deploy-to-cloud#deploy-using-cf-push) for more details.
+    > See the section [Deploy using cf push](https://cap.cloud.sap/docs/advanced/deploy-to-cloud#deploy-using-cf-push) in the CAP documentation for more details.
 
-4. In the deploy log, find the application URL in the `routes` line at the end:
+3. In the deploy log, find the application URL in the `routes` line at the end:
 
     ```
     name:              my-bookshop-srv
     requested state:   started
-    routes:            my-bookshop-srv-....cfapps.sap.hana.ondemand.com
+    routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
     ```
 
-5. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
+4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
+
+!![application](application_running.png)
 
 [OPTION END]
 
@@ -125,34 +132,37 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 1. As `cf push` can only bind but not create services, you need to create the SAP HANA service manually (along with an HDI container and a database schema). In the command line add:
 
     ```Shell/Bash
-    cf create-service hanatrial hdi-shared my-bookshop-db-hdi-container
+    cf create-service hanatrial hdi-shared my-bookshop-db
     ```
 
-    >This process takes some minutes.
+    > This process takes some minutes.
 
-    >Check the status of your service using `cf service my-bookshop-db-hdi-container`.
+    > Check the status of your service using `cf service my-bookshop-db`.
 
-    >If service creation fails, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#hana) for CAP.
+    > If service creation fails, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#hana) in the CAP documentation for more details.
 
 2. Now, build and deploy both the database part and the actual application and add:
 
     ```Shell/Bash
-    CDS_ENV=production cds build && cf push -f gen/db && cf push -f gen/srv --random-route
+    cds build --production && cf push -f gen/db && cf push -f gen/srv --random-route
     ```
 
-    >This process takes some minutes.
+    > This process takes some minutes.
 
-    >The first part of the command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db-hdi-container` service that you've created in the previous step.
+    > The first part of the command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db` service that you've created in the previous step.
 
 3. In the deploy log, find the application URL in the `routes` line at the end:
 
         ```
         name:              my-bookshop-srv
         requested state:   started
-        routes:            my-bookshop-srv-....cfapps.sap.hana.ondemand.com
+        isolation segment: trial
+        routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
         ```
 
 4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
+
+    !![application](application_running.png)
 
 [OPTION END]
 

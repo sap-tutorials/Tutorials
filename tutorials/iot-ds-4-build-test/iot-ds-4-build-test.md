@@ -3,8 +3,8 @@ title: Build, Deploy and Test Notification and Decision Support Application
 description: Build and deploy a multi-target application (MTA) project in SAP Web IDE, generate a test notification in SAP IoT, and launch the decision support application.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform-portal, products>sap-leonardo-iot, products>sap-web-ide, products>sap-cloud-platform-internet-of-things ]
 primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform, products>sap-cloud-platform-portal, products>sap-web-ide ]
 ---
 
 ## Details
@@ -39,7 +39,6 @@ If you make any changes to an MTA project, you'll need to build and deploy the p
     Entitlement | Unit
     ------------ | -------------
     Portal|1 (or unlimited)
-    HTML5 Application|2
     Application Runtime Memory| 1 Gib (Minimum)
     Destination|1
 

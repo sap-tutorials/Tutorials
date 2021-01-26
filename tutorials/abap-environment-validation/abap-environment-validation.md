@@ -8,7 +8,7 @@ time: 20
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
- 
+
 ## Prerequisites  
 - You need an SAP Cloud Platform ABAP Environment [trial user](abap-environment-trial-onboarding) or a license.
 
@@ -94,26 +94,26 @@ Let's start adding the read-only association from the root entity to the text no
   6. In your **local types** of your behavior implementation **`zbp_cal_i_holiday_xxx`** replace your code with following:
 
     ```ABAP
-    CLASS lhc_HolidayRoot  DEFINITION INHERITING
-      FROM cl_abap_behavior_handler.
-      PRIVATE SECTION.
-        METHODS det_create_and_change_texts
-          FOR DETERMINATION HolidayRoot~det_create_and_change_texts
-          IMPORTING keys FOR HolidayRoot.
+    CLASS lhc_ZCAL_I_HOLIDAY_XXX   DEFINITION INHERITING
+    FROM cl_abap_behavior_handler.
+    PRIVATE SECTION.
+     METHODS det_create_and_change_texts FOR DETERMINE ON SAVE
+        IMPORTING
+          keys FOR HolidayRoot~det_create_and_change_texts.
 
-       METHODS create_description
-          IMPORTING
-            i_holiday_id  TYPE zcal_holiday_id_xxx
-            i_description TYPE zcal_description_xxx.
+     METHODS create_description
+        IMPORTING
+          i_holiday_id  TYPE zcal_holiday_id_xxx
+          i_description TYPE zcal_description_xxx.
 
-        METHODS update_description
-          IMPORTING
-            i_holiday_id  TYPE zcal_holiday_id_xxx
-            i_description TYPE zcal_description_xxx.
+      METHODS update_description
+        IMPORTING
+          i_holiday_id  TYPE zcal_holiday_id_xxx
+          i_description TYPE zcal_description_xxx.
 
     ENDCLASS.
 
-    CLASS lhc_HolidayRoot IMPLEMENTATION.
+    CLASS lhc_ZCAL_I_HOLIDAY_XXX IMPLEMENTATION.
 
       METHOD det_create_and_change_texts.
 

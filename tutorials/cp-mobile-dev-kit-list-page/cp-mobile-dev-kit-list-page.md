@@ -16,7 +16,6 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
-
 To enhance your MDK app with customer list information, you need to carry out the following tasks:
 
 *  Create a new customer list page
@@ -43,7 +42,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 
     !![MDK](img_1.2.png)
 
-    >You can find more details about [section page](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/mdk/section-page.html).
+    >You can find more details about [Section Page](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/mdk/section-page.html).
 
 3. Enter the **Page Name** `Customers_List` and click **Next** and the **Finish** on the confirmation step.
 
@@ -71,7 +70,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 
     >!![MDK](img_1.7.1.png)
 
-8. Repeat the above steps for `Headline` and `Subheadline` properties binding to `FirstName` and `LastName` properties of the Customer entity respectively.
+8. Repeat the above steps for `Headline` and `Subheadline` properties binding to `LastName` and `FirstName` properties of the Customer entity respectively.
 
     You should have final results as below.
 
@@ -130,7 +129,7 @@ Now, you will create a Navigation action that opens the `Customers_List.page` wh
 
 Now, that the Customer List page is created, you will add a button to the Main page to display the Customers. You will use a **Section Button Table** control.
 
-1. In `Main_page`, drag and drop the **Section Button Table** container control onto the Page.
+1. In `Main.page`, drag and drop the **Section Button Table** container control onto the Page.
 
     !![MDK](img_3.1.gif)
 
@@ -161,13 +160,17 @@ Now, that the Customer List page is created, you will add a button to the Main p
 
 Deploy the updated application to your MDK client.
 
-Right-click `Application.app` and select **MDK: Deploy**.
+1. Right-click `Application.app` and select **MDK: Deploy**.
 
-!![MDK](img_4.1.png)
+    !![MDK](img_4.1.png)
 
-You should see **Deploy Succeeded** message.
+2. Select deploy target as **Mobile Services**.
 
-!![MDK](img_4.2.png)
+    !![MDK](img_4.2.png)
+
+    You should see **Deploy succeeded** message.
+
+    !![MDK](img_4.3.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -178,9 +181,10 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [Android]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
     ![MDK](img_5.1.png)
+
 
 2. You will notice, newly added button on the main page. Tap **CUSTOMER LIST**.
 
@@ -190,11 +194,13 @@ You should see **Deploy Succeeded** message.
 
     ![MDK](img_5.3.png)
 
+    >Here, you may notice that City is not showing up on screen, this is by design. In portrait mode, the device width is considered compact, if it was a tablet device (where both portrait and landscape are considered regular instead of compact) you would see City on either orientation.
+
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
     ![MDK](img_6.1.png)
 
@@ -206,18 +212,19 @@ You should see **Deploy Succeeded** message.
 
     ![MDK](img_6.3.png)
 
-    >Here, you may notice that **City** is not showing up on screen, this is by design. Since in portrait mode, the device width is considered _compact_ , if you change device orientation to landscape mode, you will see **City**.
+    >Here, you may notice that **City** is not showing up on screen, this is by design. In portrait mode, the device width is considered _compact_ , if you change device orientation to landscape mode, you will see **City**.
 
-    >!![MDK](img_6.4.png)
+    >![MDK](img_6.4.png)
 
-    >If it was an iPad (where both portrait and landscape are considered _regular_ instead of _compact_) you would see **City** on either orientation.
-
+    >If it was an iPad (where both portrait and landscape are considered *regular* instead of *compact*) you would see **City** on either orientation.
 
 [OPTION END]
 
-**Congratulations**! You have successfully created a Customer List page and you are now all set to [Create a Customer Detail Page](cp-mobile-dev-kit-detail-page).
-
 [DONE]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully created a Customer List page and you are now all set to [Create a Customer Detail Page](cp-mobile-dev-kit-detail-page).
 
 ---

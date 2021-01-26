@@ -22,24 +22,24 @@ time: 15
 
 [ACCORDION-BEGIN [Step 1: ](Fetch right customer from data service)]
 
-In the last tutorial, you implemented the Overview View Controller and the segue to the Customer Detail View Controller. In this tutorial, you will utilize the SAP Cloud Platform SDK for iOS to implement a `FUIProfileHeader` and the different Chart Cells.
+In the last tutorial, you implemented the Overview Table View Controller and the segue to the Customer Detail Table View Controller. In this tutorial, you will utilize the SAP Cloud Platform SDK for iOS to implement a `FUIProfileHeader` and the different Chart Cells.
 
-1. Open the `CustomerDetailViewController.swift` class and add the following import statements right below the `UIKit` import:
+1. Open the `CustomerDetailTableViewController.swift` class and add the following import statements right below the `UIKit` import:
 
     ```Swift
 
     import SAPFiori
     import SAPOData
+    import SAPOfflineOData
     import SAPCommon
+    import SAPFoundation
+    import SAPFioriFlows
 
     ```
 
 2. Add the following properties right above the `var customerId: String!` line of code:
 
     ```Swift
-
-    private var dataService: ESPMContainer<OnlineODataProvider>?
-    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     private let logger = Logger.shared(named: "CustomerDetailTableViewController")
 
@@ -51,7 +51,7 @@ In the last tutorial, you implemented the Overview View Controller and the segue
 
     The above code should look familiar to you from the Overview View Controller.
 
-3. Make the `OverviewViewController.swift` class implement the `SAPFioriLoadingIndicator` protocol.
+3. Make the `CustomerDetailTableViewController.swift` class implement the `SAPFioriLoadingIndicator` protocol.
 
     ```Swift
 
@@ -59,7 +59,7 @@ In the last tutorial, you implemented the Overview View Controller and the segue
 
     ```
 
-4. Add the following lines of code as class properties to the `OverviewViewController.swift` class to retrieve the data service:
+4. Add the following lines of code as class properties to the `CustomerDetailTableViewController.swift` class to retrieve the data service:
 
     ```Swift
     // The available destinations from Mobile Services are hold in the FileConfigurationProvider. Retrieve it to find the correct data service
@@ -76,7 +76,7 @@ In the last tutorial, you implemented the Overview View Controller and the segue
 
     ```
 
-    All that code is pretty much the same as in the Overview View Controller. Instead of fetching all customers we want only the data of the customer matching the provided ID.
+    All that code is pretty much the same as in the Overview View Controller. Instead of fetching all customers you want only the data of the customer matching the provided ID.
 
 5. Add the following lines of code right below the `viewDidLoad(:)` method and read the inline comments for more details about the implemented code:
 
@@ -138,14 +138,6 @@ In the last tutorial, you implemented the Overview View Controller and the segue
 
     ```Swift
 
-    updateTable()
-
-    ```
-
-    You're `viewDidLoad(:)` method should look like this now:
-
-    ```Swift
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -156,7 +148,7 @@ In the last tutorial, you implemented the Overview View Controller and the segue
 
     To fix the rest of the compile-time errors, you have to implement the additional properties for storing the fetched customer, the flag `isDataLoaded`, as well as a computed property for the Sales Order Headers.
 
-7. As we want to display the total net amount of the Customers Sales Orders, you will implement that as a computed property to make the needed calculations.
+7. As you want to display the total net amount of the Customers Sales Orders, you will implement that as a computed property to make the needed calculations.
 
     Add the following lines of code right below the `var customerId: String` property, read the inline comments for more explanation:
 
@@ -196,7 +188,7 @@ In the last tutorial, you implemented the Overview View Controller and the segue
 
     ```
 
-    You're done for now, we will go into detail about how the Chart data is structured at a later point.
+    You're done for now, you will go into detail about how the Chart data is structured at a later point.
 
 [DONE]
 [ACCORDION-END]
@@ -207,30 +199,50 @@ In order to display the Charts, you're going to use the `FUIChartTitleTableViewC
 
 1. Add the following lines of code to the `viewDidLoad(:)` right above the `updateTable()` method call:
 
-    ```Swift
+    ```Swift[2-12]
+  override func viewDidLoad() {
+      // The Object Cell is used for the case if there are no Customer Sales Headers available for the chosen customer
+      tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
 
-    // The Object Cell is used for the case if there are no Customer Sales Headers available for the chosen customer
-    tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
+      // Used to display the title information for the Chart
+      tableView.register(FUIChartTitleTableViewCell.self, forCellReuseIdentifier: FUIChartTitleTableViewCell.reuseIdentifier)
 
-    // Used to display the title information for the Chart
-    tableView.register(FUIChartTitleTableViewCell.self, forCellReuseIdentifier: FUIChartTitleTableViewCell.reuseIdentifier)
+      // Used to display the Chart itself
+      tableView.register(FUIChartPlotTableViewCell.self, forCellReuseIdentifier: FUIChartPlotTableViewCell.reuseIdentifier)
 
-    // Used to display the Chart itself
-    tableView.register(FUIChartPlotTableViewCell.self, forCellReuseIdentifier: FUIChartPlotTableViewCell.reuseIdentifier)
+      // Used to display the Chart legend
+      tableView.register(FUIChartLegendTableViewCell.self, forCellReuseIdentifier: FUIChartLegendTableViewCell.reuseIdentifier)
 
-    // Used to display the Chart legend
-    tableView.register(FUIChartLegendTableViewCell.self, forCellReuseIdentifier: FUIChartLegendTableViewCell.reuseIdentifier)
+      updateTable()
+    }
 
     ```
 
 2. You need to set up the Table View in order for the cells to be displayed correctly.
     Add the following lines of code right above the cell registration code:
 
-    ```Swift
+    ```Swift[14-16]
 
-    tableView.estimatedRowHeight = 80
-    tableView.rowHeight = UITableView.automaticDimension
-    tableView.separatorStyle = .none
+    override func viewDidLoad() {
+          // The Object Cell is used for the case if there are no Customer Sales Headers available for the chosen customer
+          tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
+
+          // Used to display the title information for the Chart
+          tableView.register(FUIChartTitleTableViewCell.self, forCellReuseIdentifier: FUIChartTitleTableViewCell.reuseIdentifier)
+
+          // Used to display the Chart itself
+          tableView.register(FUIChartPlotTableViewCell.self, forCellReuseIdentifier: FUIChartPlotTableViewCell.reuseIdentifier)
+
+          // Used to display the Chart legend
+          tableView.register(FUIChartLegendTableViewCell.self, forCellReuseIdentifier: FUIChartLegendTableViewCell.reuseIdentifier)
+
+          tableView.estimatedRowHeight = 80
+          tableView.rowHeight = UITableView.automaticDimension
+          tableView.separatorStyle = .none
+
+          updateTable()
+      }
+  }
 
     ```
 
@@ -293,12 +305,12 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
     case 1:
         // The second cell is the actual Chart Plot cell, setup the chart as a Line Chart and set it's Data Source and Delegate to this View Controller.
         let cell = tableView.dequeueReusableCell(withIdentifier: FUIChartPlotTableViewCell.reuseIdentifier) as! FUIChartPlotTableViewCell
+        cell.chartView.delegate = self
+        cell.chartView.dataSource = self
         cell.valuesAxisTitle.text = "Net Amount (\(salesOrderHeaders.first?.currencyCode ?? ""))"
         cell.categoryAxisTitle.text = "Date"
         cell.chartView.categoryAxis.labelLayoutStyle = .range
         cell.chartView.chartType = .line
-        cell.chartView.dataSource = self
-        cell.chartView.delegate = self
         return cell
     case 2:
         // The third and last cell is for the Chart Legend. Set the year hardcoded here and set the line color to Chart1 (Hex color: 5899DA).
@@ -330,8 +342,18 @@ In the last step, you've implemented the Table View's Data Source. The `FUIChart
     // MARK: - FUIChartViewDataSource
 
     extension CustomerDetailTableViewController: FUIChartViewDataSource {
-
+    func chartView(_ chartView: FUIChartView, valueForSeries seriesIndex: Int, category categoryIndex: Int, dimension dimensionIndex: Int) -> Double? {
+        return nil
     }
+
+    func chartView(_ chartView: FUIChartView, numberOfValuesInSeries seriesIndex: Int) -> Int {
+        return 0
+    }
+
+    func numberOfSeries(in: FUIChartView) -> Int {
+        return 0
+    }
+}
 
     ```
 
@@ -389,11 +411,11 @@ In the last step, you've implemented the Table View's Data Source. The `FUIChart
 
 The customer has certain information your user might want to know, like the contact information, birthday and address. The SDK provides you with a great UI control for displaying such information: `FUIProfileHeader`.
 
-The `FUIProfileHeader` will be attached as a Table View Header to the Table View itself. It is not a section header like the one you've implemented for the Overview View Controller; it is a Header attached to the top of the Table View.
+The `FUIProfileHeader` will be attached as a Table View Header to the Table View itself. It is not a section header like the one you've implemented for the Overview Table View Controller; it is a Header attached to the top of the Table View.
 
 Remember in the `updateTable()` method where the `setupProfileHeader()` method gets called? - You will implement that method now.
 
-1. Add the following lines of code right below the `tableView(_:cellForRowAt:)` method and read the inline comments carefully:
+1. Add the following lines of code right above the `numberOfSections(in:)` method and read the inline comments carefully:
 
     ```Swift
 
@@ -401,7 +423,7 @@ Remember in the `updateTable()` method where the `setupProfileHeader()` method g
 
     private func setupProfileHeader() {
 
-        // first format the birthday of the customer as we want to display that date in the Profile Header
+        // first format the birthday of the customer as you want to display that date in the Profile Header
         let dateOfBirth = customer.dateOfBirth?.utc()
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -462,6 +484,31 @@ Remember in the `updateTable()` method where the `setupProfileHeader()` method g
         }
     }
     ```
+3. Call the `setupProfileHeader()` method in the `viewDidLoad(:)` method:
+
+```Swift[18]
+override func viewDidLoad() {
+    // The Object Cell is used for the case if there are no Customer Sales Headers available for the chosen customer
+    tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
+
+    // Used to display the title information for the Chart
+    tableView.register(FUIChartTitleTableViewCell.self, forCellReuseIdentifier: FUIChartTitleTableViewCell.reuseIdentifier)
+
+    // Used to display the Chart itself
+    tableView.register(FUIChartPlotTableViewCell.self, forCellReuseIdentifier: FUIChartPlotTableViewCell.reuseIdentifier)
+
+    // Used to display the Chart legend
+    tableView.register(FUIChartLegendTableViewCell.self, forCellReuseIdentifier: FUIChartLegendTableViewCell.reuseIdentifier)
+
+    tableView.estimatedRowHeight = 80
+    tableView.rowHeight = UITableView.automaticDimension
+    tableView.separatorStyle = .none
+
+    setupProfileHeader()
+    updateTable()
+}
+
+```
 
 [DONE]
 [ACCORDION-END]

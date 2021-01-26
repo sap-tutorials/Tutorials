@@ -5,6 +5,8 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud, topic>cloud,products>sap-cloud-platform,products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-cloud-platform-business-rules
+author_name: Vandana Vasudevan
+author_profile: https://github.com/VandanaVasudevan
 ---
 
 ## Details
@@ -13,6 +15,7 @@ primary_tag: products>sap-cloud-platform-business-rules
   - How to configure the value help for a data object
 
 Data objects are the building blocks of a project. It can hold the input as well as output information of a business rule.
+
 In this tutorial, we will create data objects which hold the employee details and the details of the equipment assigned to the employee.
 
 ---
@@ -130,8 +133,8 @@ In this tutorial, we will create data objects which hold the employee details an
     |  Field Name     | Value
     |  :------------- | :-------------
     |  Name           | **`countryofCompany`**
-    |  Label           | **`countryofCompany`**
-    |  Description    | **`Country of company`**
+    |  Label           | **`Country or Region of Company`**
+    |  Description    | **`Country or Region of company`**
     |  Business Data Type | **`String`**
 
     **`company`**:
@@ -183,7 +186,11 @@ In this tutorial, we will create data objects which hold the employee details an
 
 5. Choose **Value List** from the dropdown list.
 
-    ![Some alternative text](create_value_help5.png)
+    ![New value list](create_value_help5.png)
+
+    Select the newly created **Value List**.
+
+    ![Value list](create_value_help6-1.png)
 
 6. In the **Details** section, choose + to add a Value-Description pair and then provide the following values:
 

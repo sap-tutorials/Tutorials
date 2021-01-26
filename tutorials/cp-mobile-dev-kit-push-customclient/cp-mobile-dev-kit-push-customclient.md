@@ -25,7 +25,6 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 ---
 
-
 [ACCORDION-BEGIN [Step 1: ](Generate push configuration for Android/iOS device)]
 
 >Make sure you are choosing the right device platform tab above.
@@ -277,7 +276,7 @@ Paste the downloaded `google-services.json` file to `/demosampleapp.mdkproject/A
 
 [ACCORDION-BEGIN [Step 5: ](Create MDK client)]
 
-Follow step 4 from [this](https://developers.sap.com/tutorials/cp-mobile-dev-kit-build-client.html#25bfc483-8b43-40c9-8955-c5d9bfd03957) tutorial to create your branded MDK client.
+Follow step 4 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client.
 
 [DONE]
 [ACCORDION-END]
@@ -288,7 +287,7 @@ Follow step 4 from [this](https://developers.sap.com/tutorials/cp-mobile-dev-kit
 
 [OPTION BEGIN [Android]]
 
-1. Follow step 5 from [this](https://developers.sap.com/tutorials/cp-mobile-dev-kit-build-client.html#25bfc483-8b43-40c9-8955-c5d9bfd03957) tutorial to create your branded MDK client.
+1. Follow step 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client.
 
 2. Once you accept the App update, a message should show **Push Notification Registered**. Click **OK**.
 
@@ -318,7 +317,7 @@ Follow step 4 from [this](https://developers.sap.com/tutorials/cp-mobile-dev-kit
 
 [OPTION BEGIN [iOS]]
 
-1. Follow step 5 from [this](https://developers.sap.com/tutorials/cp-mobile-dev-kit-build-client.html#25bfc483-8b43-40c9-8955-c5d9bfd03957) tutorial to create your branded MDK client.
+1. Follow step 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client.
 
 2. Once you accept the App update, you will also notice that it will first ask permission to display notifications.
 
