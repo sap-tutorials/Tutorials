@@ -1,6 +1,6 @@
 ---
-title: Add Multi-Tenancy to a Node.js Application Secured by the Authorization and Trust Management service (XSUAA)
-description: Learn how to add multi-tenancy to your application and make it available for other subaccounts using the SaaS Provisioning service and the XSUAA.
+title: Add Multitenancy to a Node.js Application Secured by the Authorization and Trust Management service (XSUAA)
+description: Learn how to add multitenancy to your application and make it available for other subaccounts using the SaaS Provisioning service and the XSUAA.
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>node-js]
@@ -16,9 +16,9 @@ author_profile: https://github.com/nedo-SAP
 
 ## Details
 ### You will learn
-  - How to add multi-tenancy to a secure Node.js application
+  - How to add multitenancy to a secure Node.js application
   - How to provide the application to another subaccount with the SaaS Provisioning service
-  - How to access a multi-tenant application from another subaccount
+  - How to access a multitenant application from another subaccount
 
 The use case for this tutorial is that you've created a Node.js application in your subaccount that is secured by the XSUAA. You now want to make that application available to other subaccounts (tenants). You'll use the SaaS Provisioning service to make your application available to a consumer subaccount within your global trial account.
 
@@ -54,8 +54,8 @@ The specific values that are used in this tutorial are:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enable multi-tenancy in the security descriptor file)]
-To enable multi-tenancy, you need to change the parameter `tenant-mode` in the `xs-security.json` file to make it available for multiple tenants.
+[ACCORDION-BEGIN [Step 1: ](Enable multitenancy in the security descriptor file)]
+To enable multitenancy, you need to change the parameter `tenant-mode` in the `xs-security.json` file to make it available for multiple tenants.
 
 1. Go to the `product-list/security` folder.
 
@@ -273,7 +273,7 @@ cf delete-service xsuaa-service-tutorial
 
 
 [ACCORDION-BEGIN [Step 6: ](Create service instances and redeploy your applications)]
-Create the new multi-tenant XSUAA service instance and the SaaS Provisioning service instance and redeploy your application.
+Create the new multitenant XSUAA service instance and the SaaS Provisioning service instance and redeploy your application.
 
 
 1. Log in to your Cloud Foundry account with the Cloud Foundry CLI.
