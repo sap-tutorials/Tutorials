@@ -3,8 +3,8 @@ title: Create Application and Device Model
 description: Create an application model (for your business objects) and a device model (for physical devices) in SAP IoT based on a script and a model definition file.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-leonardo-iot, tutorial>license]
 primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform]
 ---
 
 ## Prerequisites

@@ -28,9 +28,9 @@ This tutorial relies on the Commerce mock application to publish events into the
 
   Choose the **Code** button and choose one of the options to download the code locally, or simply run the following command using your CLI at your desired folder location:
 
-    ```Shell/Bash
-    git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
-    ```
+```Shell/Bash
+git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
+```
 
 
 
