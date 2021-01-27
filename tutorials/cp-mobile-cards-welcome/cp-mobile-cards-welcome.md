@@ -1,6 +1,6 @@
 ---
 title: Create A New Welcome Card
-description: Create your first SAP Mobile Card using SAP Cloud Platform Boosters.
+description: Create your first SAP Mobile Card using SAP Business Technology PlatformBoosters.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [  tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
@@ -13,8 +13,8 @@ author_profile: https://github.com/shahchetali
 
 ## Details
 ### You will learn
-- How to create an SAP Mobile Card using SAP Cloud Platform Boosters
-- How to connect the SAP Mobile Cards application to your SAP Cloud Platform Mobile Services
+- How to create an SAP Mobile Card using SAP Business Technology Platform Boosters
+- How to connect the SAP Mobile Cards application to your SAP Mobile Services
 
 ---
 
@@ -29,9 +29,9 @@ Welcome Cards are [Single Instance Cards](https://help.sap.com/doc/f53c64b93e514
 
 [ACCORDION-BEGIN [Step 2: ](Create welcome card using Boosters)]
 
-SAP Mobile Cards can be created in multiple ways. In this step, you will create a card using [SAP Cloud Platform Boosters](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fb1b56148f834749a2bf51127421610b.html?q=Boosters), which are sets of guided interactive steps which helps you to achieve specific goals.
+SAP Mobile Cards can be created in multiple ways. In this step, you will create a card using [SAP Business Technology Platform Boosters](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fb1b56148f834749a2bf51127421610b.html?q=Boosters), which are sets of guided interactive steps which helps you to achieve specific goals.
 
-1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP Business Technology Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Provide the login details and click **Log On**.
 
@@ -114,7 +114,7 @@ Upon successful creation you will see a success message.
 
 [OPTION BEGIN [Android]]
 
-In this step, you will configure the SAP Mobile Cards client with your SAP Cloud Platform account.
+In this step, you will configure the SAP Mobile Cards client with your SAP Business Technology Platform account.
 
 1. Click the **Android** button and **scan the QR Code** on the left to install the SAP Mobile Cards app on your Android device.
 
@@ -140,7 +140,7 @@ In this step, you will configure the SAP Mobile Cards client with your SAP Cloud
 
     ![CPMS cockpit](img_3_6.png)
 
-7. Enter your SAP Cloud Platform credentials and tap **Log On**.
+7. Enter your SAP Business Technology Platform credentials and tap **Log On**.
 
     !![Mobile Cards](img_3_7.png)
 
@@ -166,7 +166,7 @@ In this step, you will configure the SAP Mobile Cards client with your SAP Cloud
 
     > This option is shown when you launch the application and log in to a server for the first time.
 
-12. You should see the Welcome Card created using SAP Cloud Platform Booster for SAP Mobile Cards.
+12. You should see the Welcome Card created using SAP Business Technology Platform Booster for SAP Mobile Cards.
 
     !![Mobile Cards](img_3_12.png)
 
@@ -184,7 +184,7 @@ In this step, you will configure the SAP Mobile Cards client with your SAP Cloud
 
 [OPTION BEGIN [iOS]]
 
-In this step, you will configure the SAP Mobile Cards client with your SAP Cloud Platform account.
+In this step, you will configure the SAP Mobile Cards client with your SAP Business Technology Platform account.
 
 1. Launch the **QR Code Scanner** from the Control Center on your iOS device.
 
@@ -202,7 +202,7 @@ In this step, you will configure the SAP Mobile Cards client with your SAP Cloud
 
     !![Mobile Cards](img_3_18.png)
 
-5. Enter your SAP Cloud Platform credentials and tap **Log On**.
+5. Enter your SAP Business Technology Platform credentials and tap **Log On**.
 
     !![Mobile Cards](img_3_19.png)
 
@@ -216,7 +216,7 @@ In this step, you will configure the SAP Mobile Cards client with your SAP Cloud
 
     > This option is available only on devices that support biometric authentication. This biometric option may be Face ID depending on the capabilities of your device. This feature allows you to use your biometric information for app authentication.
 
-8. You should see the Welcome Card created using SAP Cloud Platform Booster for SAP Mobile Cards.
+8. You should see the Welcome Card created using SAP Business Technology Platform Booster for SAP Mobile Cards.
 
     !![Mobile Cards](img_3_22.png)
 

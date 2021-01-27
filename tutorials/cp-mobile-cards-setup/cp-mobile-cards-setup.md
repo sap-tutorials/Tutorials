@@ -1,6 +1,6 @@
 ---
 title: Set Up SAP Mobile Cards
-description: Activate SAP Cloud Platform Mobile Services and connect the mobile application to your trial account.
+description: Activate SAP Mobile Services and connect the mobile application to your trial account.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
@@ -11,19 +11,19 @@ author_profile: https://github.com/sandeep-tds
 
 ## Prerequisites
 - [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
-- [Enable SAP Cloud Platform Mobile Services](fiori-ios-hcpms-setup)
+- [Enable SAP Mobile Services](fiori-ios-hcpms-setup)
 - **Install SAP Mobile Cards Application:**
    <table><tr><td align="center">!![Play Store QR Code](pre_qr_android.png)<br>Android</td><td align="center">!![App Store QR Code](pre_qr_ios.png)<br>iOS</td></tr></table>
 
 ## Details
 ### You will learn
-  - How to connect the SAP Mobile Cards application to your SAP Cloud Platform Mobile Services
+  - How to connect the SAP Mobile Cards application to your SAP Mobile Services
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Understand SAP Mobile Cards)]
 
-SAP Mobile Cards is a feature within SAP Cloud Platform Mobile Services which provides customers access to a micro-application platform to publish data into a consumer-grade wallet or passbook-style app.
+SAP Mobile Cards is a feature within SAP Mobile Services which provides customers access to a micro-application platform to publish data into a consumer-grade wallet or passbook-style app.
 
 It allows companies to quickly create simple, yet highly valuable quick-win apps. These apps can give access to useful organisational tools like to do lists, payslips, time sheets and workflows like Leave request approvals, or Purchase Order approvals.
 
@@ -38,7 +38,7 @@ You can see the list of templates shipped out of the box [here](https://github.c
 
 [ACCORDION-BEGIN [Step 2: ](Go to SAP Mobile Services cockpit)]
 
-1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP Business Technology Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Provide the login details and click **Log On**.
 
@@ -72,13 +72,13 @@ You can see the list of templates shipped out of the box [here](https://github.c
 
     !![Enter Service Marketplace](img_2_6.png)
 
-    >The **Service Marketplace** is where you can find services to attach to any of your applications. These services are provided by SAP Cloud Platform to create and produce applications quickly and easily.
+    >The **Service Marketplace** is where you can find services to attach to any of your applications. These services are provided by SAP Business Technology Platform to create and produce applications quickly and easily.
 
 7. Search for **Mobile**, and click on the **Mobile Services** tile.  
 
     !![Mobile Service](img_2_7.png)
 
-8. Choose **Support** to open **SAP Cloud Platform Mobile Services Cockpit**.
+8. Choose **Support** to open **SAP Mobile Services Cockpit**.
 
     !![Mobile Service Detailed View](img_2_8.png)
 
@@ -111,7 +111,7 @@ You can see the list of templates shipped out of the box [here](https://github.c
 
     > !![MobileCards](img_3_2_note.png)
 
-In the next step, you will scan the respective QR code to connect your mobile application to SAP Cloud Platform Mobile Service.
+In the next step, you will scan the respective QR code to connect your mobile application to SAP Business Technology Platform Mobile Service.
 
 [DONE]
 [ACCORDION-END]
@@ -144,7 +144,7 @@ In the next step, you will scan the respective QR code to connect your mobile ap
 
     !![QR Code](img_4_and_5.png)
 
-6. Enter your **SAP Cloud Platform login credentials** and tap **Log On**.
+6. Enter your **SAP Business Technology Platform login credentials** and tap **Log On**.
 
     !![SCP Login screen](img_4_and_6.png)
 
@@ -184,7 +184,7 @@ In the next step, you will scan the respective QR code to connect your mobile ap
 
     > If the SAP Mobile Cards application doesn't open, you may not have the application installed on your mobile device. To install the application complete all the prerequisites of this tutorial.
 
-3. Enter your **SAP Cloud Platform login credentials** and tap **Log On**.
+3. Enter your **SAP Business Technology Platform login credentials** and tap **Log On**.
 
     !![SCP Login screen](img_4_ios_3.png)
 
@@ -206,9 +206,9 @@ In the next step, you will scan the respective QR code to connect your mobile ap
 
 [OPTION END]
 
-You've now connected your SAP Mobile Cards client to your SAP Cloud Platform account.
+You've now connected your SAP Mobile Cards client to your SAP Business Technology Platform account.
 
-You can automate the set up covered in this tutorial by using SAP Cloud Platform Boosters. You can find the details in the [starter mission of SAP Mobile Cards](https://developers.sap.com/mission.mobile-cards-get-started.html).
+You can automate the set up covered in this tutorial by using SAP Business Technology Platform Boosters. You can find the details in the [starter mission of SAP Mobile Cards](https://developers.sap.com/mission.mobile-cards-get-started.html).
 
 You can now proceed to the [next tutorial](cp-mobile-bas-setup), which will guide you to set up your Business Application Studio to build SAP Mobile Cards.
 
