@@ -1,15 +1,15 @@
 ---
 title: Create Service Instance for Document Classification with Customer Account
-description: Create a service instance and the associated service key for Document Classification, one of the SAP AI Business Services, using the SAP Cloud Platform cockpit.
+description: Create a service instance and the associated service key for Document Classification, one of the SAP AI Business Services, using SAP Business Technology Platform.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
 primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
-  - SAP Cloud Platform global account
-  - CPEA (Cloud Platform Enterprise Agreement) license
+  - You have an enterprise global account on SAP BTP.
+  - You are entitled to use the service.
 
 ## Details
 ### You will learn
@@ -17,17 +17,17 @@ primary_tag: topic>machine-learning
   - How to create a service instance of Document Classification
   - How to create a service key for your service instance
 
-This tutorial is intended for productive SAP Cloud Platform accounts. Make sure that you have an SAP Cloud Platform global account and fulfill the prerequisites of this tutorial. If you don't have a global account yet, refer to this [guide](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/82f9ff522f754e26ae89e0cd7ec7aa11.html#loioa71a081b39e343e097046bf487f57af3).
+This tutorial is intended for productive SAP BTP accounts. Make sure that you have an enterprise global account on SAP BTP and fulfill the prerequisites of this tutorial. If you don't have a global account yet, refer to this [guide](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/82f9ff522f754e26ae89e0cd7ec7aa11.html#loioa71a081b39e343e097046bf487f57af3).
 
-Additionally, find details about the pricing of the Document Classification service [here](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US/aaab8a7b64b745b0bdba9cfaa0fd264f.html) or use the [SAP Cloud Platform estimator](https://www.sap.com/products/cloud-platform/pricing/estimator-tool.html).
+Additionally, find details about the pricing of the Document Classification service [here](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US/aaab8a7b64b745b0bdba9cfaa0fd264f.html) or use the [SAP BTP estimator](https://www.sap.com/products/cloud-platform/pricing/estimator-tool.html).
 
 The steps outlined in this tutorial follow the [Initial Setup guide](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US/88bdee94c7c94bc99de8484f5c2db04a.html) of the Document Classification service.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access the SAP Cloud Platform cockpit)]
+[ACCORDION-BEGIN [Step 1: ](Access the SAP BTP cockpit)]
 
-First, access the [SAP Cloud Platform cockpit](https://account.hana.ondemand.com/cockpit#/home/allaccounts). Here, click on the tile representing your global account.
+First, access the [SAP BTP cockpit](https://account.hana.ondemand.com/cockpit#/home/allaccounts). Here, click on the tile representing your global account.
 
 ![Access Global Account](access-global-account.png)
 
@@ -93,7 +93,7 @@ Click **Spaces** on the navigation side bar and select the tile that represents 
 
 [ACCORDION-BEGIN [Step 4: ](Access service via Service Marketplace)]
 
-The Service Marketplace is where you find all the services available on SAP Cloud Platform.
+The Service Marketplace is where you find all the services available on SAP Business Technology Platform.
 
   1.  To access it, click **Service Marketplace** on the navigation side bar.
 
