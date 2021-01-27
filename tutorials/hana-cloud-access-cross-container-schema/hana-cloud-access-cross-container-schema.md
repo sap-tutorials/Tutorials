@@ -1,5 +1,5 @@
 ---
-title: Access a Classic Schema from Business Application Studio
+title: Access a Classic Schema from SAP Business Application Studio
 description: Access data in a plain or replicated schema from an HDI Container in SAP Business Application Studio
 auto_validation: true
 time: 20
@@ -16,7 +16,7 @@ primary_tag: products>sap-hana
 ## Details
 ### You will learn
   - How to create a plain schema, with a table and user to simulate a replicated schema
-  - How to create a user-provided service to access a database in SAP HANA as a Service
+  - How to create a user-provided service to access a database in SAP HANA Cloud
   - How to grant permissions to the technical users in your HDI container to access the database
 
 This tutorial is meant to be an example of cross-container access. Simple data models and loading mechanisms were chosen to simulate a schema replicated using tools such as SAP Landscape Transformation or an ABAP schema.
@@ -29,7 +29,7 @@ If you are looking for the steps for an on-premise SAP HANA instance with XS Adv
 
 [ACCORDION-BEGIN [Step 1: ](Create a plain schema)]
 
-1. Return to the SAP Cloud Platform Cockpit and the HANA Cloud Management screen. Choose **Open SAP HANA Database Explorer** from the **Actions** column.
+1. Return to the SAP BTP cockpit and the HANA Cloud Management screen. Choose **Open SAP HANA Database Explorer** from the **Actions** column.
 
     !![DB Explorer](1.png)
 
@@ -126,7 +126,7 @@ If you are looking for the steps for an on-premise SAP HANA instance with XS Adv
 
 You now have a schema with a table and data in it. You have also created a user called `PLUSR` with permissions to perform basic operations on that schema. You will now create a user-provided service to access the schema through the user `PLUSR` from your HANA DB Project in the Business Application Studio.
 
-1.  Return to the Business Application Studio and the project which you created in previous tutorials in this group. Open a new Terminal
+1.  Return to the SAP Business Application Studio and the project which you created in previous tutorials in this group. Open a new Terminal
 
     !![user provided service](11_2.png)
 
