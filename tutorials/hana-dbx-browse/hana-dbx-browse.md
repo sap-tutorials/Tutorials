@@ -84,7 +84,7 @@ primary_tag: products>sap-hana-cloud
 
     ![Table Editor](TableEditor.png)
 
-7. Rows can be edited by selecting a cell and typing in a new value.  New rows can be added by selecting the **+** button.  Changes must be saved by pressing the save button in order to commit them to the table.
+7. Values can be edited by selecting a cell, pressing enter, and typing in a new value.  New rows can be added by selecting the **+** button.  Changes must be saved by pressing the save button in order to commit them to the table.
 
     ![Add Row To Table](InsertRow.png)
 
