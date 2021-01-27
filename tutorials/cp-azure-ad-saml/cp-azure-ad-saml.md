@@ -4,7 +4,7 @@ description: Configure Microsoft Azure AD as the Identity Provider of your SAP B
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-cloud-platform-for-the-cloud-foundry-environment]
-primary_tag: products>sap-BTP
+primary_tag: products>sap-cloud-platform
 ---
 
 ## Prerequisites
