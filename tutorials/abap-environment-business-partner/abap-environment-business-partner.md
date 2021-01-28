@@ -1,7 +1,7 @@
 ---
 auto_validation: true
-title: Create Business Partner in S/4HANA Cloud using ABAP Environment Data
-description: Create a business partner in an S/4HANA Cloud system based on a business user in SAP Cloud Platform ABAP Environment.
+title: Create business partner in S/4HANA Cloud using ABAP Environment data
+description: Create a business partner in an S/4HANA Cloud system based on a business user in SAP BTP ABAP Environment.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>intermediate, topic>abap-development, topic>abap-extensibility, tutorial>license ]
 time: 20
@@ -11,15 +11,15 @@ author_profile: https://github.com/niloofar-flothkoetter
 
 ### Prerequisites
 - Communication arrangement for scenario `SAP_COM_0008` was created in your SAP S/4HANA Cloud system.
-- Communication arrangement for scenario `SAP_COM_0276` was created with service instance name `OutboundCommunication` in your ABAP system.
+- Communication arrangement for scenario `SAP_COM_0276` was created with service instance name `OutboundCommunication` in your BTP ABAP system.
 - Business user in SAP S/4 HANA Cloud has business role `SAP_BR_BUPA_MASTER_SPECIALIST` in order to create business partners in SAP S/4 HANA​.
-- Integration between S/4 HANA Cloud and SAP Cloud Platform ABAP Environment completed​.
+- Integration between S/4 HANA Cloud and SAP BTP ABAP Environment completed​.
 
 ## Details
 ### You will learn
-  - How to implement outbound service call from SAP Cloud Platform ABAP Environment to S/4 HANA Cloud service
-  - How to retrieve data of logged in business user in SAP Cloud Platform ABAP Environment
-  - Create business partner in S/4 HANA Cloud system based on data of business user in SAP Cloud Platform ABAP Environment (use Business Partner Integration Service in SAP S/4 HANA)​
+  - How to implement outbound service call from SAP BTP ABAP Environment to S/4 HANA Cloud service
+  - How to retrieve data of logged in business user in SAP BTP ABAP Environment
+  - Create business partner in S/4 HANA Cloud system based on data of business user in SAP BTP ABAP Environment (use Business Partner Integration Service in SAP S/4 HANA)​
   - Return business partner id after creation
 
 Create all ABAP artifacts with namespace `Z...` for local development.
@@ -258,7 +258,7 @@ ENDCLASS.
   2. Enter business user email and password and click Log on.
 
       business user requires the `SAP_BR_BUPA_MASTER_SPECIALIST` business role.
-      This User has the same email-address for both S/4 HANA and SAP Cloud Platform ABAP Environment.
+      This User has the same email-address for both S/4 HANA and SAP BTP ABAP Environment.
 
       ![Log On](Picture11.png)
 
