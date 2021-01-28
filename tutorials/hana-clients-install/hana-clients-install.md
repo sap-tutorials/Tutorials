@@ -117,7 +117,7 @@ The SAP Cryptographic Library is only required when client-side data encryption 
 
   - [Download and Install SAP Common Crypto Library in the SAP HANA Client Installation and Update Guide](https://help.sap.com/viewer/8e208b44c0784f028b948958ef1d05e7/latest/en-US/463d3ceeb7404eca8762dfe74e9cff62.html)  
 
-  - [Connect to SAP HANA with a Secure Connection from Python](https://developers.sap.com/tutorials/hana-python-secure-connection.html)
+  - [Connect to SAP HANA with a Secure Connection from Python](hana-python-secure-connection)
 
 
 [DONE]

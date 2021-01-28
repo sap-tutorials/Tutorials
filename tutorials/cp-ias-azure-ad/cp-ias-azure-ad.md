@@ -1,6 +1,6 @@
 ---
-title: Connect Azure Active Directory to SAP Cloud Platform Identity Authentication Service
-description: Configure the SAP Cloud Platform Identity Authentication Service to leverage your Azure Active Directory setup.
+title: Connect Azure Active Directory to Identity Authentication Service
+description: Configure the Identity Authentication service to leverage your Azure Active Directory setup.
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, products>sap-cloud-platform, tutorial>license, products>identity-authentication]
@@ -8,17 +8,17 @@ primary_tag: topic>security
 ---
 
 ## Prerequisites
- - [SAP Cloud Platform Identity Authentication Service tenant](https://www.sapstore.com/solutions/40132/SAP-Cloud-Platform-Identity-Authentication)
+ - [Identity Authentication service tenant](https://www.sapstore.com/solutions/40132/SAP-Cloud-Platform-Identity-Authentication)
 
 ## Details
 ### You will learn
-  - How to establish trust between your SAP Identity Authentication Service and Azure Active Directory
+  - How to establish trust between your Identity Authentication service and Azure Active Directory
 
-The SAP Cloud Platform Identity Authentication Service offers end-to-end security including several authentication methods between your end users and applications. Leverage a variety of authentication methods including form-based/SAML, client certificate, username and password, and OAuth. In this tutorial we are initially setting up the connection between your Azure Active Directory and the SAP Identity Authentication Service in form of exchanging metadata.
+The Identity Authentication service offers end-to-end security including several authentication methods between your end users and applications. Leverage a variety of authentication methods including form-based/SAML, client certificate, username and password, and OAuth. In this tutorial we are initially setting up the connection between your Azure Active Directory and the Identity Authentication service in form of exchanging metadata.
 
-Once the connection between your Azure Active Directory and the SAP Cloud Platform Identity Authentication Service is done you can simply use it to connect it to several applications and environments.
+Once the connection between your Azure Active Directory and the Identity Authentication service is done you can simply use it to connect it to several applications and environments.
 
-To summarize the steps in this tutorial overall: You are going to exchange metadata (files) of Azure Active Directory and your SAP Cloud Platform Identity Authentication Service to make them known to each other.
+To summarize the steps in this tutorial overall: You are going to exchange metadata (files) of Azure Active Directory and your Identity Authentication service to make them known to each other.
 
 ---
 
@@ -57,7 +57,7 @@ Click **New application**.
 
 Azure Active Directory has templates for a variety of applications, one of them is the SAP Cloud Platform Identity Authentication Service. **Search** for this and select it.
 
-![search for SAP Cloud Platform Identity Authentication Service](scpias-template.png)
+![search for Identity Authentication service](scpias-template.png)
 
 A new column on the right side will appear to give the application a name. Give the application a name and click **Add**.
 
@@ -81,15 +81,15 @@ Download the federation metadata as shown below.
 
 ![download federation metadata](download-aad-metadata.png)
 
-With this information we can setup the trust between Azure Active Directory and SAP Cloud Platform Identity Authentication Service.
+With this information we can setup the trust between Azure Active Directory and Identity Authentication service.
 
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Log onto SAP Cloud Platform Authentication Identity Authentication service)]
+[ACCORDION-BEGIN [Step 4: ](Log onto Identity Authentication service)]
 
-Login to the administration console of SAP Cloud Platform Identity Authentication service through your particular URL.
+Login to the administration console of Identity Authentication service through your particular URL.
 
 The URL therefore is: **`https://[TENANT_ID].accounts.ondemand.com/admin`**
 
@@ -144,7 +144,7 @@ Change the selection to **Microsoft ADFS / Azure AD**. Save the the configuratio
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Download SAP Cloud Platform Identity Authentication service tenant metadata)]
+[ACCORDION-BEGIN [Step 8: ](Download Identity Authentication service tenant metadata)]
 
 Go to the **Tenant Settings** in SAP Cloud Platform Identity Authentication Service and navigate to the **SAML 2.0 Configuration**.
 
@@ -157,9 +157,9 @@ Go to the **Tenant Settings** in SAP Cloud Platform Identity Authentication Serv
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Upload SAP Cloud Platform Identity Authentication Service tenant metadata to Azure Active Directory)]
+[ACCORDION-BEGIN [Step 9: ](Upload Identity Authentication service tenant metadata to Azure Active Directory)]
 
-You have already uploaded the metadata file from Azure Active Directory to SAP Cloud Platform Identity Authentication Service. It's time to do it the other way round now and upload the metadata of SAP Cloud Platform Identity Authentication Service to Azure Active Directory.
+You have already uploaded the metadata file from Azure Active Directory to Identity Authentication service. It's time to do it the other way round now and upload the metadata of Identity Authentication service to Azure Active Directory.
 
 Go back to the [https://portal.azure.com](https://portal.azure.com) and search for **Enterprise application** in the search bar on top of the page. Select the according result.
 
@@ -169,9 +169,9 @@ Select the application you created previously in this tutorial.
 
 ![select previously created application](my-sap-tutorial.png)
 
-Go to **Single sign-on** and select **SAML** as Single-Sign On method. Click  **Upload metadata** to upload the metadata file from SAP Cloud Platform Identity Authentication Service.
+Go to **Single sign-on** and select **SAML** as Single-Sign On method. Click  **Upload metadata** to upload the metadata file from Identity Authentication service.
 
-![Upload the metadata file from SAP Cloud Platform Identity Authentication Service](upload-ias-metadata.png)
+![Upload the metadata file from Identity Authentication service](upload-ias-metadata.png)
 
 All the details are now taken from the metadata file. There's nothing to do for you other than saving the details. Therefore, click **Save**.
 

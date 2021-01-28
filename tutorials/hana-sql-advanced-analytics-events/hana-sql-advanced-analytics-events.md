@@ -10,7 +10,7 @@ primary_tag: products>sap-hana
 
 ## Prerequisites
  - You are attending a hands-on event with a live instructor
- - You have access to SAP HANA on premise or SAP HANA Express -- This tutorial will not work with HANA Cloud
+ - You have access to SAP HANA on premise or SAP HANA, express edition -- This tutorial will not work with SAP HANA Cloud
  - The instructor has provided you with log in directions
 
 ## Details
@@ -200,7 +200,7 @@ Press **F8** to run.
 
 Aside from the values for training, the procedure included in the Predictive Analytics Library in SAP HANA requires a table with parameter as an input.
 
-You can find more details about the parameters and their meaning in the [official SAP Help](https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/2.0.03/en-US/bc5fe09f584a4cd1a6b6b2176719a07f.html).
+You can find more details about the parameters and their meaning in the [official SAP Help](https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/latest/en-US/bc5fe09f584a4cd1a6b6b2176719a07f.html).
 
 Use the following statement to create the input table and populate it with parameters
 
