@@ -1,6 +1,6 @@
 ---
 title: Setup Node.js to connect to SAP HANA
-description: Use Node.js to connect and read data from your SAP HANA express edition or SAP HANA Cloud trial
+description: Use Node.js to connect and read data from your SAP HANA, express edition or SAP HANA Cloud trial
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, topic>sql, products>sap-hana, products>sap-hana\,-ex
  - **Tutorials:** [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
 
 ## Next Steps
- - [Deploy a Node.js Application for SAP HANA, Express Edition or SAP HANA Cloud trial](hxe-node-express)
+ - [Deploy a Node.js Application for SAP HANA, express edition or SAP HANA Cloud trial](hxe-node-express)
 
 ## Details
 ### You will learn  
@@ -28,7 +28,7 @@ Now that you have tables and data in your system the next step will be to access
 
 > Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
-To setup your system you will need to install the appropriate Node.js on your system. To do this please go to the [website](https://nodejs.org/en/) for Node.js and follow the instructions there for the type of system you have. Or consider using the SAP Business Application Studio which provides Node.js already installed in its console.
+To setup your system you will need to install the appropriate Node.js on your system. To do this please go to the [website](https://nodejs.org/en/) for Node.js and follow the instructions there for the type of system you have. Or consider using the SAP Business Application Studio which provides Node.js already installed in its environment.
 
 [DONE]
 
@@ -44,7 +44,7 @@ node -v
 
 ![Node version](1.png)
 
-Now that you have verified that Node.js is installed it is time install the appropriate library to connect to your SAP HANA express edition or HANA Cloud trial. This is the `@sap/hdbext` library which you can learn more about in [the SAP Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/54513272339246049bf438a03a8095e4.html#loio54513272339246049bf438a03a8095e4__section_ilt_mkt_vt).
+Now that you have verified that Node.js is installed it is time install the appropriate library to connect to your SAP HANA, express edition or SAP HANA Cloud trial. This is the `@sap/hdbext` library which you can learn more about in [the SAP Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/54513272339246049bf438a03a8095e4.html#loio54513272339246049bf438a03a8095e4__section_ilt_mkt_vt).
 
 Make a directory for your project and change into that directory.
 

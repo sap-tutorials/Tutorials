@@ -1,5 +1,5 @@
 ---
-title: HANA Native, Create Database Artifacts Using Core Data Services (CDS)
+title: SAP HANA Native, Create Database Artifacts Using Core Data Services (CDS)
 description: Use core data services to generate SAP HANA basic database artifacts.
 auto_validation: true
 time: 15
