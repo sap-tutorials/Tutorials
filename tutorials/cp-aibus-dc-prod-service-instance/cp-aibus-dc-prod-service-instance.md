@@ -1,6 +1,6 @@
 ---
 title: Create Service Instance for Document Classification with Customer Account
-description: Create a service instance and the associated service key for Document Classification, one of the SAP AI Business Services, using SAP Business Technology Platform.
+description: Create a service instance and the associated service key for Document Classification, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP).
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
@@ -93,7 +93,7 @@ Click **Spaces** on the navigation side bar and select the tile that represents 
 
 [ACCORDION-BEGIN [Step 4: ](Access service via Service Marketplace)]
 
-The Service Marketplace is where you find all the services available on SAP Business Technology Platform.
+The Service Marketplace is where you find all the services available on SAP BTP.
 
   1.  To access it, click **Service Marketplace** on the navigation side bar.
 
