@@ -10,7 +10,7 @@ time: 10
 ---
 
 ## Prerequisites
- - You have a productive account with entitlement to the SAP HANA Service in Cloud Foundry
+ - You have a productive account with entitlement to the SAP HANA service for SAP Business Technology Platform in SAP Business Technology Platform, Cloud Foundry environment
 
 ## Details
 ### You will learn  
@@ -26,7 +26,7 @@ In this tutorial, you'll locate the SAP Web IDE and access it, all from your bro
 
 [ACCORDION-BEGIN [Step: ](Log into SAP Cloud Platform)]
 
-1. Go to <https://account.hana.ondemand.com/#/home/welcome> and log in to your SAP Cloud Platform cockpit.
+1. Go to <https://account.hana.ondemand.com/#/home/welcome> and log in to your SAP BTP cockpit.
 
 2. Navigate to your **global account** and then **subaccount**.
 
@@ -46,7 +46,7 @@ Select **Entitlements** on the left-hand menu to see all entitlements that are a
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Subscribe to SAP Web IDE for HANA Development)]
 
-1. Select **Subscriptions** on the left-hand menu in the SAP Cloud Platform Cockpit to see all available subscriptions.
+1. Select **Subscriptions** on the left-hand menu in the SAP BTP cockpit to see all available subscriptions.
 
     !![Subscriptions](subscriptions.png)
 

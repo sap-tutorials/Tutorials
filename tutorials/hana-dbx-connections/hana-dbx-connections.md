@@ -152,6 +152,7 @@ Databases can be added directly to the SAP HANA database explorer.  To connect t
 
     >```SQL
     >select * from M_SESSION_CONTEXT where CONNECTION_ID=current_connection;
+    >select * from SYS.M_CONNECTIONS where CONNECTION_ID=current_connection;
     >select ISOLATION_LEVEL from PUBLIC.M_TRANSACTIONS where CONNECTION_ID = current_connection;
     >```
     >
