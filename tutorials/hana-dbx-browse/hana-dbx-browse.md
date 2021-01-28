@@ -133,7 +133,7 @@ primary_tag: products>sap-hana-cloud
 
     Click the magnifying glass in the top right.  
 
-    Enter **hotel** in the search field.  
+    Enter **HOTEL** in the search field.  
 
     Select the database to search against.  
 

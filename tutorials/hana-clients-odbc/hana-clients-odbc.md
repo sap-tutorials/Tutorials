@@ -78,7 +78,7 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 
     ![YaST installer](unixODBC-install.png)
 
-    For more details on how to accomplish this, please follow the second step of [this tutorial](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-odbc.html).
+    For more details on how to accomplish this, please follow the second step of [this tutorial](hxe-ua-dbfundamentals-odbc).
 
 2. On a Mac, unixODBC can be installed using [Homebrew](https://brew.sh).  
 
