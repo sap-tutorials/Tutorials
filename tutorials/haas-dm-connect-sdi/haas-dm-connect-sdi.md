@@ -1,27 +1,29 @@
 ---
-title: Configure Smart Data Integration with the SAP HANA Service
+title: Configure SAP HANA service smart data integration for SAP BTP with the SAP HANA service for SAP BTP
 description: Configure the data provisioning agent and create a remote source.
 auto_validation: true
 time: 25
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
 primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ---
 
 ## Prerequisites
-- You have a productive account in SAP Cloud Platform, a subaccount in Cloud Foundry and a space.
-- You have [created an instance of the SAP Cloud Platform, SAP HANA Service](haas-dm-deploying-haas)
-- You have [access to the database cockpit for your SAP HANA service database instance](haas-dm-connect-hana-cockpit).
-- You have enabled Data Provisioning Server in your SAP HANA service during setup or from the cockpit.
+- You have a productive account in SAP Integration Suite and SAP Extension Suite, a subaccount in SAP Business Technology Platform, Cloud Foundry environment and a space.
+- You have [created an instance of the SAP HANA service for SAP BTP](haas-dm-deploying-haas)
+- You have [access to the database cockpit for your SAP HANA service for SAP BTP database instance](haas-dm-connect-hana-cockpit).
+- You have enabled Data Provisioning Server in your SAP HANA service for SAP BTP during setup or from the cockpit.
 - You have administration rights in your local computer.
 
 
 ## Details
 ### You will learn
-- How to start and register the data provisioning agent with SAP HANA as a Service in a local computer
+- How to start and register the data provisioning agent with SAP HANA service for SAP BTP in a local computer
 - How to configure the file adapter to load text files
-- How to create a remote source in SAP HANA using the Database Explorer
+- How to create a remote source in SAP HANA service for SAP BTP using the Database Explorer
 
->**This tutorial cannot currently be completed with a trial account.**
+>**This tutorial cannot be completed with a trial account.**
 
 ---
 
@@ -44,7 +46,7 @@ If prompted for authorization, click **Authorize**. Take note of the endpoint
 
 ![Access cockpit](8x.png)
 
- Click the **SAP HANA Cockpit** icon.
+ Click the **SAP HANA cockpit** icon.
 
 ![Access cockpit](5.png)
 
@@ -70,7 +72,7 @@ The Database Explorer will automatically open a SQL console connected to your da
 
 Download the Data Provisioning Agent from [the SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/HANA%2520DP%2520Agent). Choose `SPS3` Patch 52 or higher.
 
-> For more information about installing the Data Provisioning Agent for productive environments check the [documentation in SAP Help](https://help.sap.com/viewer/7952ef28a6914997abc01745fef1b607/2.3.3/en-US/6634db61aa43435a977b608878e5313f.html)
+> For more information about installing the Data Provisioning Agent for productive environments check the [documentation in SAP Help](https://help.sap.com/viewer/7952ef28a6914997abc01745fef1b607/latest/en-US/6634db61aa43435a977b608878e5313f.html)
 
 Choose a directory in your file system and use the following command to extract the file into it.
 

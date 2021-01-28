@@ -1,6 +1,6 @@
 ---
 title: Create Service Instance for Document Classification with Trial Account
-description: Create a service instance and the associated service keys for Document Classification, one of the SAP AI Business Services, using the SAP Cloud Platform trial cockpit.
+description: Create a service instance and the associated service key for Document Classification, one of the SAP AI Business Services, using the SAP Cloud Platform trial cockpit.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification]
@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to check your Document Classification entitlements
   - How to create a service instance of Document Classification
-  - How to create service keys for your service instance
+  - How to create a service key for your service instance
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
@@ -46,13 +46,13 @@ primary_tag: topic>machine-learning
 
 To use Document Classification, you need to make sure that your account is properly configured.
 
-On the navigation side bar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
+1. On the navigation side bar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
 
-Search for **Document Classification Trial**. If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.
+2. Search for **Document Classification**. ***If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
 
-![Entitlements](check-entitlements.png)
+    ![Entitlements](check-entitlements.png)
 
-If you do not find the service in your list, proceed as follows:
+***ONLY if you DO NOT find the service in your list, proceed as follows:***
 
   1. Click **Configure Entitlements**.
 
@@ -62,7 +62,7 @@ If you do not find the service in your list, proceed as follows:
 
     ![Add Service Plan](add-service-plans.png)
 
-  3. Select **Document Classification Trial**, and choose the **default** service plan. Click **Add 1 Service Plan**.
+  3. Select **Document Classification**, and choose the **default** service plan. Click **Add 1 Service Plan**.
 
     ![Add Service Plan](add-entitlements.png)
 
@@ -130,23 +130,23 @@ You have successfully created a service instance for Document Classification.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Create service keys)]
+[ACCORDION-BEGIN [Step 6: ](Create service key)]
 
-You are now able to create service keys for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
+You are now able to create a service key for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
   1. Click the navigation arrow to open the details of your service instance. Then, click the dots to open the menu and select **Create Service Key**.
 
-      ![Service Keys](create-service-keys.png)
+      ![Service Key](create-service-keys.png)
 
   2. In the dialog, enter `dc-key` as the name of your service key. Click **Create** to create the service key.
 
       ![Create Service Key](create-service-key-name.png)
 
-You have successfully created service keys for your service instance. You can now either view the service key in the browser or download it.
+You have successfully created a service key for your service instance. You can now either view the service key in the browser or download it.
 
 ![View Service Key](view-service-key.png)
 
-You will need the service keys values in the next tutorial.
+You will need the service key values in the next tutorial.
 
 [VALIDATE_1]
 [ACCORDION-END]

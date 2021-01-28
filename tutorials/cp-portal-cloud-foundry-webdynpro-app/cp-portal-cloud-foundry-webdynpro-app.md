@@ -3,8 +3,8 @@ title: Add a Web Dynpro ABAP App to Your SAP Cloud Platform Launchpad Site
 description: Add a classic SAP UI app (like those typically run by SAP customers on the data center backends), to your launchpad site.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
-primary_tag: products>sap-cloud-platform-portal
+tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-cloud-platform-launchpad]
+primary_tag: products>sap-cloud-platform-launchpad
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
@@ -16,7 +16,7 @@ author_profile: https://github.com/LindsayBert
 
 ## Details
 ### You will learn
-  - How to expose a Web Dynpro ABAP backend application to your SAP Cloud Platform Launchpad site
+  - How to expose a Web Dynpro ABAP backend application to your SAP Cloud Platform Launchpad site.
 
 ---
 In this tutorial, you'll use the **Content Manager** of the SAP Cloud Platform Launchpad service to add a Web Dynpro ABAP app to your launchpad site.
@@ -133,7 +133,7 @@ A group is a set of one or more apps displayed together in the launchpad. Assign
 
 3. Name the group `Purchase Orders`.
 
-4. In the **Assignments** panel, click inside the search box on the right of the screen, to show all available apps. You should see the  `Search POs` app.  
+4. In the **Assignments** panel, delete inside the search box on the right of the screen, to show all available apps. You should see the  `Search POs` app.  
 
 5. In the list, click **+** to assign the `Search POs` app to your group.
 

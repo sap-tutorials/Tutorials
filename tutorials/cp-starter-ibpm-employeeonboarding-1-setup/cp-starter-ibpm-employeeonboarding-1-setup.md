@@ -14,10 +14,10 @@ primary_tag: products>sap-cloud-platform
 
 **SAP Cloud Platform Workflow Management** is a cloud offering that helps you:
 
--	digitize structured processes with workflows and decision logic.
--	flexibly extend and adapt business processes running in your packaged applications.
--	manage process variants and decision logic.
-- monitor end-to-end process metrics in real time.
+-	Digitize structured processes with workflows and decision logic.
+-	Flexibly extend and adapt business processes running in your packaged applications.
+-	Manage process variants and decision logic.
+- Monitor end-to-end process metrics in real time.
 
 
 By combining workflows, business rules, process visibility, live process content packages and process flexibility into a single unified offering, the service helps you increase enterprise efficiency and agility.
@@ -28,10 +28,7 @@ User can use Workflow, Business Rules, Process Visibility and Process Flexibilit
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Setup your account using Booster)]
-
-You will use the **Boosters** to automatically set up the workflow, business rules, process visibility and process flexibility capabilities in your account.
-
+[ACCORDION-BEGIN [Step 1: ](Open trial account)]
 1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
@@ -46,11 +43,17 @@ You will use the **Boosters** to automatically set up the workflow, business rul
 
     >![Account setup](02_Foundation20Onboarding_Processing.png)
 
-3. From your global account page, choose the **Boosters** from left-hand navigation. Among the available options, click **Start** of **Set up account for Workflow Management**.
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Set up your account using Booster)]
+You will use the **Boosters** to automatically set up the workflow, business rules, process visibility and process flexibility capabilities in your account.
+
+1. From your global account page, choose the **Boosters** from left-hand navigation. Among the available options, click **Start** of **Set up account for Workflow Management**.
 
     !![Start Booster](startrecipe_2.png)
 
-4. Automated onboarding will be started with pre-configured steps.
+2. Automated onboarding will be started with pre-configured steps.
 
     > It with take 4-5 minutes to complete the entire setup.
 
@@ -60,10 +63,11 @@ You will use the **Boosters** to automatically set up the workflow, business rul
 
     - Click on the **Go to Application** to open Workflow Management Launchpad.
 
-      !![Recipe In Progress](startrecipe_3.png)
+        !![Recipe In Progress](startrecipe_3.png)
 
-    > This is the Workflow Management Launchpad which gives you the access to all the workflow, business rules, process visibility and process flexibility applications.
-    !![WM FLP](bpmFLP.png)
+        > This is the Workflow Management Launchpad which gives you the access to all the workflow, business rules, process visibility and process flexibility applications.
+
+        >!![WM FLP](bpmFLP.png)
 
     - **Close** the **Success** popup.  
 

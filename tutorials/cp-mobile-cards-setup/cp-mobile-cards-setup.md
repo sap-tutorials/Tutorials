@@ -1,6 +1,6 @@
 ---
 title: Set Up SAP Mobile Cards
-description: Activate SAP Cloud Platform Mobile Services and connect the SAP Mobile Cards application to your trial account.
+description: Activate SAP Cloud Platform Mobile Services and connect the mobile application to your trial account.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
@@ -12,7 +12,8 @@ author_profile: https://github.com/sandeep-tds
 ## Prerequisites
 - [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
 - [Enable SAP Cloud Platform Mobile Services](fiori-ios-hcpms-setup)
-- **Install SAP Mobile Cards Application:** Download and install on your [iPhone](https://itunes.apple.com/us/app/sap-content-to-go/id1168110623?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.content2go)
+- **Install SAP Mobile Cards Application:**
+   <table><tr><td align="center">!![Play Store QR Code](pre_qr_android.png)<br>Android</td><td align="center">!![App Store QR Code](pre_qr_ios.png)<br>iOS</td></tr></table>
 
 ## Details
 ### You will learn
@@ -22,184 +23,196 @@ author_profile: https://github.com/sandeep-tds
 
 [ACCORDION-BEGIN [Step 1: ](Understand SAP Mobile Cards)]
 
-SAP Mobile Cards is a feature within SAP Cloud Platform Mobile Services which provides our customers access to a micro-application platform to publish data into a consumer-grade wallet or passbook-style app. It allows companies to quickly create simple, yet highly valuable quick-win apps. These apps can give access to useful organisational tools like to do lists, payslips, time sheets and workflows like Leave request approvals, or Purchase Order approvals.
+SAP Mobile Cards is a feature within SAP Cloud Platform Mobile Services which provides customers access to a micro-application platform to publish data into a consumer-grade wallet or passbook-style app.
 
-You can find more details on the [SAP Mobile Cards developer page](https://developers.sap.com/topics/mobile-cards.html).
+It allows companies to quickly create simple, yet highly valuable quick-win apps. These apps can give access to useful organisational tools like to do lists, payslips, time sheets and workflows like Leave request approvals, or Purchase Order approvals.
 
-![MobileCards](img_0.png)
+You can read more about the features [here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mck/mck-overview.html).
+
+You can see the list of templates shipped out of the box [here](https://github.com/SAP-samples/mobile-cards-templates).
+
+!![MobileCards](img_1_1.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Go to SAP Mobile Services cockpit)]
 
-In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-Navigate to the trial global account by clicking **Enter Your Trial Account**.
+2. Provide the login details and click **Log On**.
 
-!![Trial global account](01_Foundation20Onboarding_Home.png)
+    !![SCP Log On Screen](img_2_2.png)
 
->If this is your first time accessing your trial account, you'll have to configure your account by choosing a region (select the region closest to you). Your user profile will be set up for you automatically.  
+3. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
->Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
+    !![Enter Global Account](img_2_3.png)
 
->Choose **Continue**.
+    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region (select the region closest to you). Your user profile will be set up for you automatically.  
 
->![Account setup](02_Foundation20Onboarding_Processing.png)
+    >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
 
-Navigate to your subaccount by clicking on the tile named **trial**.
+    >Choose **Continue**.
 
-![MobileCards](img_2.png)
+    >!![Enable SCP CF Trial](img_2_3_note.png)
 
-Under **Spaces**, choose the available space as highlighted below.
+4. Navigate to your subaccount by clicking on the tile named **trial**.
 
-![MobileCards](img_3.png)
+    !![Trial Global Account](img_2_4.png)
 
-In the left pane, choose **Services** > **Service Marketplace**.
+5. Under **Spaces**, choose the available space as highlighted below.
 
->The **Service Marketplace** is where you can find services to attach to any of your applications. These services are provided by SAP Cloud Platform to create and produce applications quickly and easily.
+    !![Enter Space](img_2_5.png)
 
-![MobileCards](img_4.png)
+    >**Organization:** Organizations in Cloud Foundry enable collaboration among users and grouping of resources.
 
-Search for **Mobile**, and click on the **SAP Mobile Services** tile.  
+    >**Space:** Cloud Foundry has a standard working environment for individual applications: it is called a space. Spaces are individual working areas, which normally contain a single application.
 
-![MobileCards](img_5.png)
+6. In the left pane, choose **Services** > **Service Marketplace**.
 
-SAP Cloud Platform Mobile Services provides services to mobile applications, such as application analytics, app resources, onboarding, HTTP/HTTPS configuration and so on. Choose **Support** to open **SAP Cloud Platform Mobile Services Cockpit**.
+    !![Enter Service Marketplace](img_2_6.png)
 
-![MobileCards](img_6.png)
+    >The **Service Marketplace** is where you can find services to attach to any of your applications. These services are provided by SAP Cloud Platform to create and produce applications quickly and easily.
 
-Provide your Cloud Platform login credentials and proceed.
+7. Search for **Mobile**, and click on the **Mobile Services** tile.  
 
-![MobileCards](img_6_1.png)
+    !![Mobile Service](img_2_7.png)
 
-Choose the relevant **Organization** and **Space** from the dropdown list, and then select **Open**.
+8. Choose **Support** to open **SAP Cloud Platform Mobile Services Cockpit**.
 
-![MobileCards](img_7.png)
+    !![Mobile Service Detailed View](img_2_8.png)
 
->**Organization:** Organizations in Cloud Foundry enable collaboration among users and grouping of resources.
+9. Provide your Cloud Platform *credentials* and Click **Next**.
 
->**Space:** Cloud Foundry has a standard working environment for individual applications: it is called a space. Spaces are individual working areas, which normally contain a single application.
+    !![CPMS Login](img_2_9.png)
 
-You have now logged in to the SAP Mobile Services cockpit.
+10. Choose the **Organization** and **Space** from the dropdown list, and then select **Open**.
 
-![MobileCards](img_8.png)
+    !![Select Org & Space for CPMS Cockpit](img_2_10.png)
 
-Bookmark the **Mobile Services cockpit URL** for quick access.
+    > Since you will access the mobile services cockpit throughout the mission, Bookmark the **Mobile Services cockpit URL** for quick access.
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Get familiar with available configurations)]
 
-Navigate to **SAP Mobile Cards** to look into the Mobile Cards configuration.
+1. Click **SAP Mobile Cards** in the side bar menu to open the Mobile Cards configuration.
 
-![MobileCards](img_9.png)
+    !![Mobile Cards Option](img_3_1.png)
 
->If the SAP Mobile Cards Advisory screen pops up, choose **Close** to close it.
+    >If the SAP Mobile Cards Advisory screen pops up, choose **Close** to close it.
 
-Click **Features**.
+2. Click **APIs** tab.
 
-![MobileCards](img_11.png)
+    !![APIs Tab](img_3_2.png)
 
-> If you can't see the Features Tab, click **Initialize**. This will create a new service instance for Mobile Cards.
+    > If you can't see the APIs tab, click **Initialize**. This will create a new service instance for Mobile Cards.
 
-> ![MobileCards](img_10.png)
+    > !![MobileCards](img_3_2_note.png)
 
-Click **Mobile Sample OData ESPM** to look into available OData Version 2 and Version 4 sample endpoints.
-
-![MobileCards](img_12.png)
-
-Select **OData Version** Version 2 and click **Save**.
-
-![MobileCards](img_13.png)
-
-In the breadcrumb menu click **Features**.
-
-![MobileCards](img_14.png)
-
- Click **Mobile Connectivity** to see the destination endpoints to create a new destination, which connects to your backend, or select an existing destination.
-
- ![MobileCards](img_15.png)
-
-Below is a list of destinations from which the SAP Mobile Cards service can fetch data.
-
->For this tutorial, the `com.sap.edm.sampleservice.v2` destination is used. It's important that all destinations are only pointing to the root of the service.
-
-![MobileCards](img_16.png)
-
-Click **SAP Mobile Cards** navigation bar to go back to Mobile Cards admin page.
-
-![MobileCards](img_16_1.png)
+In the next step, you will scan the respective QR code to connect your mobile application to SAP Cloud Platform Mobile Service.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure SAP Mobile Cards Client)]
+[ACCORDION-BEGIN [Step 4: ](Configure SAP Mobile Cards client)]
 
 >Make sure you are choosing the right device platform tab ( **Android** or **iOS** ) **above**.
 
->Make sure you have installed the SAP Mobile Cards app on your phone.
-
-You will configure the SAP Mobile Cards client with your SAP Cloud Platform account.
-
-Click **APIs** and scan the respective QR Card to onboard your SAP Mobile Cards client.
-
-!![MobileCards](img_17.png)
-
 [OPTION BEGIN [Android]]
 
-Tap **SCAN QR CODE**.
+1. Launch Mobile Cards Application on your device.
 
-!![MobileCards](img_18.png)
+    !![App Launch](img_4_and_1.png)
 
-Tap **I AGREE** on `End User License Agreement`.
+    > If you don't have the application installed your device, complete all the prerequisites of this tutorial.
 
-!![MobileCards](img_19.png)
+2. Tap **Proceed** in the Welcome pop-up.
 
-Enter your SAP Cloud Platform credentials and tap **Log On**.
+    !![Welcome Pop-up](img_4_and_2.png)
 
-!![MobileCards](img_20.png)
+3. Tap **I AGREE** after reading the *End User License Agreement*.
 
-Choose a passcode with at least 8 characters to unlock the app, and tap **NEXT**.
+    !![EULA Screen](img_4_and_3.png)
 
-!![MobileCards](img_21.png)
+4. Tap **Scan QR CODE**.
 
-Confirm the passcode and tap **DONE**.
+    !![Home Screen](img_4_and_4.png)
 
-!![MobileCards](img_22.png)
+5. Scan the Android QR Code present in the APIs tab of the Mobile Services cockpit.
 
-You now have connected your SAP Mobile Cards client with your SAP Cloud Platform account.
+    !![QR Code](img_4_and_5.png)
 
-!![MobileCards](img_23.png)
+6. Enter your **SAP Cloud Platform login credentials** and tap **Log On**.
+
+    !![SCP Login screen](img_4_and_6.png)
+
+7. Specify an app **Passcode** matching the criteria, and tap **NEXT**.
+
+    !![Passcode Screen](img_4_and_7.png)
+
+8. Re-enter the **Passcode** to verify, and tap **DONE**.
+
+    !![Passcode Verify Screen](img_4_and_8.png)
+
+9. Place your finger on the fingerprint scanner to enable biometric authentication.
+
+    !![Biometric Screen](img_4_and_9.png)
+
+    > This option is available only on devices that support biometric authentication. It allows you to use your biometric information, rather than the app passcode defined earlier.
+
+10. Tap **Allow only while using the app** option for the location services request.
+
+    !![Location Services Screen](img_4_and_10.png)
+
+    > SAP Mobile Cards is capable of showing some cards based on your location. [Click here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mck/mck-android.html#location-specific-notifications) to read more about it.
+
+    > This option is shown when you launch the application and log in to a server for the first time.
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-Scan the QR code with your camera and select the toast message to launch the SAP Mobile Cards app.
+1. Launch the **QR Code Scanner** from the Control Center on your iOS device.
 
-!![MobileCards](img_24.png)
+    !![Control Center](img_4_ios_1.png)
 
-Enter your SAP Cloud Platform credentials and tap **Log On**.
+2. Scan the iOS QR Code present in the APIs tab of the Mobile Services cockpit.
 
-!![MobileCards](img_25.png)
+    !![QR Code](img_4_ios_2.png)
 
-Choose a passcode with at least 8 characters to unlock the app and tap Next.
+    > If the SAP Mobile Cards application doesn't open, you may not have the application installed on your mobile device. To install the application complete all the prerequisites of this tutorial.
 
-!![MobileCards](img_26.png)
+3. Enter your **SAP Cloud Platform login credentials** and tap **Log On**.
 
-Confirm the passcode and choose **Done**.
+    !![SCP Login screen](img_4_ios_3.png)
 
-!![MobileCards](img_27.png)
+4. Define a passcode to unlock the app and tap **Done**.
 
-You now have connected your SAP Mobile Cards client with your SAP Cloud Platform account.
+    !![Passcode Screen](img_4_ios_4.png)
 
-!![MobileCards](img_28.png)
+5. Tap **Enable** to enable biometric authentication.
+
+    !![Biometric Screen](img_4_ios_5.png)
+
+    > This biometric option may be Face ID depending on the capabilities of your device. This feature allows you to use your biometric information, rather than the app passcode defined earlier.
+
+6. Tap **Allow** to enable notification functionality for your application.
+
+    !![Notification Request Screen](img_4_ios_6.png)
+
+    > This option is shown when you launch the application and log in to a server for the first time.
 
 [OPTION END]
 
-[VALIDATE_1]
+You've now connected your SAP Mobile Cards client to your SAP Cloud Platform account.
+
+You can automate the set up covered in this tutorial by using SAP Cloud Platform Boosters. You can find the details in the [starter mission of SAP Mobile Cards](https://developers.sap.com/mission.mobile-cards-get-started.html).
+
+You can now proceed to the [next tutorial](cp-mobile-bas-setup), which will guide you to set up your Business Application Studio to build SAP Mobile Cards.
+
+[DONE]
 [ACCORDION-END]
 
 ---

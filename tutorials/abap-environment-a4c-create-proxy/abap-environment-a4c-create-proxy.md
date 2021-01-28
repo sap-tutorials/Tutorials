@@ -22,7 +22,7 @@ To retrieve data from a remote service, you must:
 
 2. Instantiate a proxy in the client system that passes an OData request to the remote service
 
-This tutorial is based on: [Creating a Remote Client Proxy](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/08603b70390a411cb984f8a8107a7525.html).
+This tutorial is based on: [SAP Help Portal: Creating a Remote Client Proxy](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/08603b70390a411cb984f8a8107a7525.html).
 
 Therefore, this tutorial will only cover in detail those aspects that are different - in particular, handling exceptions.
 
@@ -45,8 +45,6 @@ First, you create the class that instantiates the client proxy.
 
 [ACCORDION-BEGIN [Step 2: ](Copy code)]
 Copy the following code.
-
-**IMPORTANT**: Always specify the authentication mode using the interface `if_a4c_cp_service`. Never hard-code your password in the class.
 
 ```ABAP
 
@@ -74,15 +72,10 @@ CLASS zcl_proxy_travels_xxx IMPLEMENTATION.
         " 1. Get the destination of foreign system
         " 2. Create http client
 
-        " i_name = name of destination in S.C.Cockpit; URL = base URL of T08
-        " i_service_instance_name = "Service Instance Name" property in FLP, in Comm. Arr. SAP_COM_0276_XXX,
-
+        " i_name = name of destination in SAP Cloud Cockpit; URL = base URL of your provisioning system
         DATA(lo_http_client) = cl_web_http_client_manager=>create_by_http_destination(
                 cl_http_destination_provider=>create_by_cloud_destination(
-
                     i_name                  = 'XXX'
-                    i_service_instance_name = 'Xxx'
-                    i_authn_mode            = if_a4c_cp_service=>service_specific
                 )
                ).
         "LATER: Handle Exceptions
@@ -122,30 +115,26 @@ ENDCLASS.
 [ACCORDION-BEGIN [Step 3: ](Adapt code)]
 1. Specify your provisioning system as the destination, by replacing the defaults:
     - **`i_name`** = name of destination in SAP Cloud Cockpit, where URL = base URL of provisioning system
-    - **`i_service_instance_name`** = **Service Instance Name** property in Communication Arrangement `SAP_COM_0276_XXX` in the client system Dashboard: points to OAuth Client ID, System ID etc (generated from Service Key for provisioning system). See tutorial [Create an Outbound Communication Arrangement](abap-environment-a4c-outbound-communication)
 
     ```ABAP
-
-    i_name                  = 'A4C_ACCESS_XXX_HTTP'
-    i_service_instance_name = 'Outbound-For-Tutorials_XXX'
+    i_name                  = 'SID_XXX_HTTP'
 
     ```
 
-    !![step3c-dest-name](step3c-dest-name.png)    
-    !![step3d-service-instance-name-outbound-2](step3d-service-instance-name-outbound-2.png)
+      !![step8b-new-destination-settings](step8b-new-destination-settings.png)    
 
 2. Specify your service definition and the relative path of your inbound service, by replacing the defaults:
 
     - `iv_service_definition_name` = service definition generated when you created your Service Consumption Model, in the tutorial [Create a Service Consumption Model in ABAP Environment](abap-environment-create-service-consumption-model), step 3
 
-    - `iv_relative_service_root` = **relative path** of your inbound service, (that is, without the base URL), created in the tutorial [Create Inbound Communication Objects for an OData Service](abap-environment-a4c-inbound-communication), step 2.
+    - `iv_relative_service_root` = **relative path** of your inbound service, (that is, without the base URL), created in the tutorial [Create Inbound Communication Objects for an OData Service](abap-environment-a4c-inbound-communication), step 4, "Create inbound communication arrangement".
 
     ```ABAP
 
     EXPORTING
       iv_service_definition_name = 'Z_MODEL_TRAVELS_XXX'
       io_http_client             = lo_http_client
-      iv_relative_service_root   = '/sap/opu/odata/sap/Z_BIND_TRAVELS_XXX' ).
+      iv_relative_service_root   = 'sap/opu/odata/sap/Z_BIND_TRAVELS_XXX' ).
 
     ```
 
@@ -360,14 +349,10 @@ CLASS zcl_proxy_travels_xxx IMPLEMENTATION.
         " 2. Create http client
 
         " i_name = name of destination in S.C.Cockpit; URL = base URL of T08
-        " i_service_instance_name = "Service Instance Name" property in FLP, in Comm. Arr. SAP_COM_0276_XXX,
-
         DATA(lo_http_client) = cl_web_http_client_manager=>create_by_http_destination(
                 cl_http_destination_provider=>create_by_cloud_destination(
 
                     i_name                  = 'T08_ACCESS_HTTP_2'
-                    i_service_instance_name = 'OutboundForTutorial-2'
-
                     i_authn_mode            = if_a4c_cp_service=>service_specific
                 )
                ).

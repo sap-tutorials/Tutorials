@@ -43,6 +43,9 @@ But if you want an easy and quick way to setup SAP Customer Order Sourcing, use 
 
     !![Subscribe to SAP Customer Order Sourcing](SubscribeToCustomerOrderSourcing.png)
 
+
+>In case you are not able to subscribe to **SAP Customer Order Sourcing**, you need to [assign quota to a Subaccount](https://help.sap.com/viewer/cd03af1a94a440f1b5dbc0dc50a0989b/Cloud/en-US/bdf64a959a5249cf88b414a7c01391df.html).
+
 [VALIDATE_1]
 [ACCORDION-END]
 
@@ -55,13 +58,13 @@ You have successfully subscribed to SAP Customer Order Sourcing, but to be able 
 
 2. In the navigation pane, open **Security > Trust Configuration**.
 
-3. Open the **Default identity provider**.
+3. Open the default identity provider, named `sap.default`.
 
 4. Enter your email address (the one you used to register for a SAP Cloud Platform trial account) and search for already existing assignments via **Show Assignments**.
 
 5. Choose **Assign Role Collection** and assign the role collection `StrategyBuilder_ReadWrite`.
 
-![Trust Configuration](TrustConfiguration.png)
+!![Trust Configuration](TrustConfiguration.png)
 
 [DONE]
 [ACCORDION-END]
@@ -70,28 +73,24 @@ You have successfully subscribed to SAP Customer Order Sourcing, but to be able 
 
 1. Navigate to your subaccount.
 
-2. In the navigation pane, open **Spaces**.
+2. In the navigation pane, open **Services > Service Marketplace**.
 
-3. Open your already existing space, probably called `dev`.
+3. Search for **SAP Customer Order Sourcing** and click on the tile.
 
-4. In the navigation pane, open **Services > Service Marketplace**.
-
-5. Search for **SAP Customer Order Souring** and click on the tile.
-
-6. In the navigation pane, open **Instances**.
-
-7. Create a new instance by clicking **New Instance** and then **Next** three times and inserting an instance name on the last page. Click **Finish**.
+4. Choose **Create Instance**, insert a name for the instance and finish the creating by clicking **Create Instance**.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create credentials)]
 
-1. Open your newly created service instance.
+1. Open your newly created service instance via the **View Instance** button in the pop up or via **Services > Service Instances**.
 
-2. In the navigation pane, open **Service Keys**.
+2. Click on the **Actions** button and from the dropdown menu choose **Create Service Key**.
 
-3. Click **Create Service Key**. In the pop-up window, just enter a name for your service key. Click **Save**.
+    !![Actions button](Actions_Button.png)
+
+3. In the pop-up window, just enter a name for your service key. Click **Create**.
 
 Your service key will look something like this.
 

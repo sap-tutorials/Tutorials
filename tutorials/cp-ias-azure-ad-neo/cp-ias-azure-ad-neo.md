@@ -1,34 +1,34 @@
 ---
-title: Register a Neo Subaccount in SAP Cloud Platform Identity Authentication Service
-description: Establish trust between a SAML 2.0 identity provider in SAP Cloud Platform Identity Authentication service and an SAP Cloud Platform Neo subaccount.
+title: Register SAP BTP, Neo environment Subaccount in Identity Authentication Service
+description: Establish trust between a SAML 2.0 identity provider in Identity Authentication service and a SAP BTP, Neo environment subaccount.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-identity-authentication]
+tags: [ tutorial>beginner, products>sap-cloud-platform, products>identity-authentication]
 primary_tag: topic>security
 ---
 
 ## Prerequisites
- - [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+ - [Get a Free SAP BTP trial account](hcp-create-trial-account)
 
 ## Details
 ### You will learn
-  - How to establish trust between your SAP Cloud Platform Neo subaccount and the SAP Identity Authentication service
+  - How to establish trust between your SAP BTP, Neo environment subaccount and the Identity Authentication service
   - How to configure users for single sign-on usage
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log onto SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step 1: ](Log onto SAP BTP cockpit)]
 
-Go to [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and **log in** with your credentials.
+Go to [SAP Business Technology Platform cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and **log in** with your credentials.
 
->If you don't have an account yet, sign up for an [SAP Cloud Platform Trial account](hcp-create-trial-account).
+>If you don't have an account yet, sign up for an [SAP BTP trial account](hcp-create-trial-account).
 
-![SAP Cloud Platform Trial Cockpit](trial-cockpit.png)
+![SAP BTP cockpit](trial-cockpit.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Navigate to SAP Cloud Platform Neo subaccount)]
+[ACCORDION-BEGIN [Step 2: ](Navigate to SAP BTP, Neo environment subaccount)]
 
 **Scroll down** to the bottom of the page and **Click** on **Access Neo Trial**.
 
@@ -64,11 +64,11 @@ Click the **Application Identity Provider** tab. Add a new **Trusted Identity Pr
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Upload metadata file from SAP Cloud Platform Identity Authentication service)]
+[ACCORDION-BEGIN [Step 5: ](Upload metadata file from Identity Authentication service)]
 
-Upload the SAML metadata file you have download in the previous Tutorial. If you don't have it anymore, you can download it in the **Tenant Settings > SAML 2.0** section in the SAP Cloud Platform Identity Authentication Service.
+Upload the SAML metadata file you have download in the previous Tutorial. If you don't have it anymore, you can download it in the **Tenant Settings > SAML 2.0** section in the Identity Authentication service.
 
-> Note: You can also download the SAML 2.0 metadata through accessing the following URL. https://[TENANT_ID].accounts.ondemand.com/saml2/metadata Tenant ID is an automatically generated ID by the system. The first administrator created for the tenant receives an activation e-mail with a URL in it. This URL contains the tenant ID. For more information have a look at the [Product Page](https://www.sap.com/products/cloud-platform/capabilities/foundation.identity-authentication.html#identity-authentication)
+> Note: You can also download the SAML 2.0 metadata through accessing the following URL. https://[TENANT_ID].accounts.ondemand.com/saml2/metadata Tenant ID is an automatically generated ID by the system. The first administrator created for the tenant receives an activation e-mail with a URL in it. This URL contains the tenant ID. For more information have a look at [SAP Cloud Identity Services - Identity Authentication](https://discovery-center.cloud.sap/serviceCatalog/identity-authentication) in the SAP Discovery Center.
 
 ![Download Tenant SAML Configuration ](add-trusted-idp.png)
 
@@ -83,18 +83,18 @@ Click **Save** to continue.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Download SAP Cloud Platform subaccount SAML metadata)]
+[ACCORDION-BEGIN [Step 6: ](Download SAP BTP subaccount SAML metadata)]
 
-Go back to the **Local Service Provider** tab and download the metadata of your SAP Cloud Platform subaccount. **Click** on **Get Metadata** to do so.
+Go back to the **Local Service Provider** tab and download the metadata of your SAP BTP subaccount. **Click** on **Get Metadata** to do so.
 
-![Download SAP Cloud Platform subaccount metadata](get-subaccount-metadata.png)
+![Download SAP BTP subaccount metadata](get-subaccount-metadata.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create application in SAP Cloud Platform Identity Authentication service)]
+[ACCORDION-BEGIN [Step 7: ](Create application in Identity Authentication service)]
 
-Log in to the administration console of SAP Cloud Platform Identity Authentication service through your particular URL.
+Log in to the administration console of Identity Authentication service through your particular URL.
 
 The URL therefore is: **`https://[TENANT_ID].accounts.ondemand.com/admin`**
 
@@ -107,13 +107,13 @@ Navigate to the menu item **Applications**, **Click** on **Add** provide a name 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Upload SAP Cloud Platform subaccount SAML metadata)]
+[ACCORDION-BEGIN [Step 8: ](Upload SAP BTP subaccount SAML metadata)]
 
 Navigate to **SAML 2.0 Configuration** and **Click** on the menu item.
 
 ![Navigate to SAML 2.0 Configuration](neo-saml-menu.png)
 
-Choose the recently downloaded SAP Cloud Platform SAML metadata file from your local file system.
+Choose the recently downloaded SAP BTP SAML metadata file from your local file system.
 
 > You have downloaded the according file in Step 6, `Download SAP Cloud Platform subaccount SAML metadata`.
 
@@ -128,13 +128,13 @@ All fields below are automatically going to be filled due to the information pro
 
 [ACCORDION-BEGIN [Step 9: ](Change subject name identifier)]
 
-Although the configuration is already done and would work, change the unique identifier from User ID to the Email-Address so that you can enable Single-Sign On from SAP Cloud Platform to Azure Active Directory later on more easily.
+Although the configuration is already done and would work, change the unique identifier from User ID to the Email-Address so that you can enable Single-Sign On from SAP BTP to Azure Active Directory later on more easily.
 
 **Click** on the menu item **Subject Name Identifier**.
 
 ![Click the menu item Subject Name Identifier](subject-name-identifier.png)
 
-Change the basic attribute to **E-Mail**. This attribute is used to match User IDs from Azure AD and SAP Cloud Platform.
+Change the basic attribute to **E-Mail**. This attribute is used to match User IDs from Azure AD and SAP BTP.
 
 ![change basic attribute to E-Mail](basic-attribute.png)
 
@@ -145,7 +145,7 @@ Change the basic attribute to **E-Mail**. This attribute is used to match User I
 
 [ACCORDION-BEGIN [Step 10: ](Create new test user)]
 
-Now, users that have access to the Application in Azure Active Directory and to the application on the SAP Cloud Platform can seamlessly access the application with their Azure Active Directory credentials.
+Now, users that have access to the Application in Azure Active Directory and to the application on the SAP BTP can seamlessly access the application with their Azure Active Directory credentials.
 
 Therefore, we will create a new test user in Azure Active Directory and add it to the enterprise application in Azure Active Directory.
 
@@ -174,7 +174,7 @@ Press **Invite** at the bottom of the page to send out the invitation. The user 
 
 The user generally exists now in the Azure Active Directory without having access to the enterprise application. Thus, add it to the enterprise application as follows:
 
-Go to your **enterprise applications** (either through the search bar on top of the page or through the menu bar) and select your application you have created for SAP Cloud Platform Identity Authentication Service.
+Go to your **enterprise applications** (either through the search bar on top of the page or through the menu bar) and select your application you have created for Identity Authentication service.
 
 ![select your enterprise application](enterprise-application.png)
 
@@ -197,7 +197,7 @@ Click **Select** and afterwards on **Save** at the bottom of the page to continu
 
 [ACCORDION-BEGIN [Step 12: ](Access SAP Web IDE)]
 
-To test the recent configurations, try to access the SAP Web IDE Full-Stack. Therefore, go to the [SAP Cloud Platform Trial cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and **scroll down** to the bottom of the page and **click** on **Access Neo Trial**.
+To test the recent configurations, try to access the SAP Web IDE Full-Stack. Therefore, go to the [SAP BTP cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and **scroll down** to the bottom of the page and **click** on **Access Neo Trial**.
 
 ![Click Access Neo trial](neo-access.png)
 

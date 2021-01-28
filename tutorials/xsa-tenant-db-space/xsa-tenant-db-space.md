@@ -1,6 +1,8 @@
 ---
 title: Configure a Space to Develop on a Tenant Database (XS Advanced)
 description: Assign a tenant database to a space.
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
@@ -10,6 +12,7 @@ time: 15
 ## Prerequisites  
 
  - **Proficiency:** Beginner
+ - You have access to SAP HANA on premise or SAP HANA Express -- This tutorial will not work with HANA Cloud
  - SAP HANA, express edition already comes with a tenant database called `HXE`. If you are using **a different deployment**, you can create a tenant database following [this guide](hxe-ua-dbfundamentals-tenantdb)
  - SAP HANA, express edition already comes with a development space. If you want to create a separate one or are using another deployment, you can create a space as explained on [this tutorial](xsa-setup-new-space).
  - You have the proper administration rights

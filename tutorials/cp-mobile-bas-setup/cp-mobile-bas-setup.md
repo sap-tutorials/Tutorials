@@ -1,14 +1,16 @@
 ---
-title: Set Up SAP Business Application Studio for Mobile Development
-description: Set up your SAP Business Application Studio to start developing mobile apps.
+title: Set Up SAP Business Application Studio for Multi-Channel Development
+description: Set up your SAP Business Application Studio to start developing mobile and web applications.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio, products>mobile-development-kit-client ]
 primary_tag: software-product-function>sap-cloud-platform-mobile-services
+author_name: Sandeep T D S
+author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites
- - You have [Set Up SAP Business Application Studio for Development](appstudio-onboarding).
+ - [Set Up SAP Business Application Studio for Development](appstudio-onboarding).
 
 ## Details
 ### You will learn
@@ -19,15 +21,19 @@ SAP Business Application Studio is the next-generation web-based IDE hosted on S
 
 ---
 
+
+
 [ACCORDION-BEGIN [Step 1: ](Create a development space)]
 
-Log into your Business Application Studio and click **Create Dev Space**.
+1. Log into your Business Application Studio and click **Create Dev Space**.
 
-!![SAP Business Application Studio Dashboard](img_1_1.png)
+    !![BAS Dashboard](img_1_1.png)
 
-Select SAP Cloud Platform Mobile Services, enter a name (`Mobile`) for your dev space and click **Create**.
+    > The number of extensions may differ if you are on trial or a production account.
 
-!![New Development Space](img_1_2.png)
+2. Select SAP Cloud Platform Mobile Services, enter a name (`Tutorial`) for your dev space and click **Create**.
+
+    !![BAS New Space](img_1_2.png)
 
 Your dev space will be created and the status will change to running.
 
@@ -36,62 +42,70 @@ Your dev space will be created and the status will change to running.
 
 [ACCORDION-BEGIN [Step 2: ](Set up your workspace)]
 
-Click your dev space's name to open it.
+1. Click your dev space's name to open it.
 
-!![SAP Business Application Studio Dashboard with newly created Development Space](img_2_1.png)
+    !![BAS Enter Space](img_2_1.png)
 
-Wait till your workspace loads completely.
+    > Wait till your workspace loads completely.
 
-There is no workspace opened yet, click **Open Workspace**.
+2. Since there is no workspace opened yet, click **Open Workspace**.
 
-!![SAP Business Application Studio Home](img_2_2.png)
+    !![BAS Dev View](img_2_2.png)
 
-Select projects, Click **Open**.
+3. Select projects, Click **Open**.
 
-!![Select Workpace](img_2_4.png)
+    !![Select Workpace](img_2_3.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Configure Cloud Foundry environment)]
 
-In the bottom left corner of your status bar, click the message **`The organization and space in Cloud Foundry have not been set.`**.
+1. In the bottom left corner of your status bar, click the message **`The organization and space in Cloud Foundry have not been set.`**.
 
-!![CF View](img_3_1.png)
+    !![CF View](img_3_1.png)
 
-Verify the URL and **Click Enter** on your keyboard.
+2. Verify the URL and **Click Enter** on your keyboard.
 
-!![CF API End-Point](img_3_2.png)
+    !![CF API End-Point](img_3_2.png)
 
-> SAP Business Application Studio pre-populates the end-point of the environment it is running in. If you want to connect to a different environment, modify the API endpoint by copying it from your target SAP Cloud Platform account: *SAP Cloud Platform Cockpit &rarr; Sub-account &rarr; API Endpoint*
+    > SAP Business Application Studio pre-populates the end-point of the environment it is running in.
 
-When prompted, **enter your e-mail address** you use to log in to the SAP Cloud Platform account.
+    > If you want to connect to a different environment, modify the API endpoint by copying it from your target SAP Cloud Platform account:
 
-!![Email ID prompt](img_3_3.png)
+    > *SAP Cloud Platform Cockpit &rarr; Sub-account &rarr; API Endpoint*
 
-Next, **enter your password** you use to log in to the SAP Cloud Platform account.
+3. When prompted, **enter your e-mail address** you use to log in to the SAP Cloud Platform account.
 
-!![Password prompt](img_3_4.png)
+    !![Email ID prompt](img_3_3.png)
 
-Upon successful login, you will see a toast message at the bottom right corner of your screen.
+4. **Enter your password** you use to log in to the SAP Cloud Platform account.
 
-!![Sucess toast message](img_3_5.png)
+    !![Password prompt](img_3_4.png)
 
-Select the organisation in which you have enabled Mobile Services.
+    > Upon successful login, you will see a toast message at the bottom right corner of your screen.
 
-!![Org list](img_3_6.png)
+    > !![Sucess toast message](img_3_4_note.png)
 
- Select the space in which you have enabled Mobile Services.
+5. Select the organisation in which you have enabled Mobile Services.
 
-!![Space list](img_3_7.png)
+    !![Org list](img_3_5.png)
 
-Upon successful setup, you will see a toast message at the bottom right corner of your screen, and the bottom status bar will highlight CF connection details.
+6. Select the space in which you have enabled Mobile Services.
 
-!![Success toast message](img_3_8.png)
+    !![Space list](img_3_6.png)
+
+    > Upon successful setup, you will see a toast message at the bottom right corner of your screen, and the bottom status bar will highlight CF connection details.
+
+    > !![Success toast message](img_3_6_note.png)
 
 [DONE]
 [ACCORDION-END]
 
-**Congratulations!** You have successfully configured SAP Business Application Studio to build mobile apps.
+---
+
+Congratulations, you have successfully configured SAP Business Application Studio to build multi-channel applications.
+
+You can now build [**Mobile Development Kit apps**](mission.mobile-dev-kit-get-started) or [**SAP Mobile Cards apps**](https://developers.sap.com/tutorial-navigator.html?tag=products:content-and-collaboration/sap-mobile-cards) using Business Application studio.
 
 ---

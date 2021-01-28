@@ -7,6 +7,9 @@ tags: [  tutorial>beginner, topic>html5, topic>odata, topic>sapui5, products>sap
 time: 15
 ---
 
+## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
+
 ## Details
 ### You will learn  
   - How to create a user interface with a Fiori Master-Detail template

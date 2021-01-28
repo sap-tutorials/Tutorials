@@ -120,6 +120,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 [OPTION END]
 
+
 [OPTION BEGIN [Windows]]
 
 1. To use the SDK to generate a mobile development kit client, the first step is to setup the SDK to create a client. Unzip `MDKClient_SDK` if it is not already extracted.
@@ -171,7 +172,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     >`AppName`: Provide a name for example: `DemoSampleApp`. This is the name of the application on the home screen of the device.
 
-    >`BundleID`: It should be unique for iOS and same as **Identifier** `(AppID)` that is registered in Apple Developer account since that determines if the application can be installed alongside other applications. If the `XCode` project is setup to use _Automatically manage signing_ then when building, `XCode` will automatically generate a signing profile for the specified bundle id. Without matching them, trying to run the custom client in iOS device will result in failure.
+    >`BundleID`: It should be unique for iOS and same as **Identifier** `(AppID)` that is registered in Apple Developer account since that determines if the application can be installed alongside other applications. If the `XCode` project is setup to use _Automatically manage signing_ then when building, `XCode` will automatically generate a signing profile for the specified bundle id. Without matching them, trying to run the custom client in iOS device will result in failure. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
 
     >`URLScheme`: Allows you to specify a custom URL scheme which opens the client.
     If the URL includes connection settings as URL parameters, these settings will override the ones used by the client. The default is `mdkclient`.
@@ -186,7 +187,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     Click `com.sap.mdk.demo` > **Security** tab.
 
-    Copy the Client ID, Redirect URL, OAuth Authorization & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
+    Copy the Client ID, Redirect URL, OAuth Authorisation & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
 
     !![MDK](img_3.4.1.png)
 
@@ -258,7 +259,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     Click `com.sap.mdk.demo` > **Security** tab.
 
-    Copy the Client ID, Redirect URL, OAuth Authorization & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
+    Copy the Client ID, Redirect URL, OAuth Authorisation & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
 
     !![MDK](img_3.4.1.png)
 
@@ -330,11 +331,11 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 [OPTION BEGIN [Windows]]
 
-4. You can create a client by running `create-client.cmd` and providing the path to a valid `.mdkproject` directory.
+1. You can create a client by running `create-client.cmd` and providing the path to a valid `.mdkproject` directory.
 
     !![MDK](img_4.4.png)
 
-5. Once the `create-client.cmd` script executed successfully, you will see **Application ready** message in terminal console.
+2. Once the `create-client.cmd` script executed successfully, you will see **Application ready** message in terminal console.
 
     !![MDK](img_4.4.1.png)
 

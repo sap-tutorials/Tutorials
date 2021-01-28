@@ -55,7 +55,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
     !![MDK](img_2.2.png)
 
-3. Select **MDK Project** and click **Next**.
+3. Select **MDK Project** and click **Start**.
 
     !![MDK](img_2.3.png)  
 
@@ -71,7 +71,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
     >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).  
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.      
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.   
 
 5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Push` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
 
@@ -161,8 +161,8 @@ In this step, you will create the following actions:
 
     | Property | Value |
     |----|----|
-    | `Success Action` | Select `PushRegisterSuccessMessage.action` from the dropdown |
-    | `Failure Action` | Select `PushRegisterFailureMessage.action` from the dropdown |
+    | `Success Action` | Click the link icon to bind it to `PushRegisterSuccessMessage.action` |
+    | `Failure Action` | Click the link icon to bind it to `PushRegisterFailureMessage.action`  |
 
     >When `PushRegister.action` gets executed successfully then `PushRegisterSuccessMessage.action` will be triggered or if `PushRegister.action` fails then `PushRegisterFailureMessage.action` will be triggered.
 
@@ -178,7 +178,7 @@ In the step, you will set and call the Push Register Notification action when ap
 
 >It is up to developers how they want to call a Push Register Notification action.
 
-Double-click `Application.app` file, select the `PushRegister.action` for the `OnDidUpdate` event.
+In `Application.app` file, bind the `OnDidUpdate` event to `PushRegister.action`.
 
 !![MDK](img_4.png)
 
@@ -297,9 +297,11 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-**Congratulations!** You have successfully implemented Enable Push Notifications in the MDK Public Store Client and you are now all set to [Consume a REST API in an MDK App](cp-mobile-dev-kit-rest-api).
-
 [DONE]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully implemented Enable Push Notifications in the MDK Public Store Client and you are now all set to [Consume a REST API in an MDK App](cp-mobile-dev-kit-rest-api).
 
 ---

@@ -1,5 +1,5 @@
 ---
-title: Create an ABAP Database Table
+title: Create an ABAP Database Table and Relevant ABAP Dictionary Objects
 description: Create a database table from scratch using the ABAP Development Tools (ADT); use different Data Dictionary objects to define the fields; then fill the table with test data
 auto_validation: true
 primary_tag: topic>abap-development
@@ -372,7 +372,7 @@ The class appears in a new editor.
     GET TIME STAMP FIELD DATA(zv_tsl).
 
     "fill internal table
-    lt_accounts = VALUE #()
+    lt_accounts = VALUE #(
 
         ( client ='100' account_number ='00000001' bank_customer_id ='100001' bank_name ='Volksbank' city = 'Gaertringen' balance ='200.00 ' currency ='EUR' account_category ='01' lastchangedat = zv_tsl )
         ( client ='100' account_number ='00000002' bank_customer_id ='200002' bank_name ='Sparkasse' city ='Schwetzingen' balance ='500.00 ' currency ='EUR' account_category ='02' lastchangedat = zv_tsl )

@@ -2,14 +2,17 @@
 title: XS Advanced, Use SQLScript in Calculation Views
 description: Create a Table Function and wrap it in a Graphical Calculation View
 auto_validation: true
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>advanced, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition ]
 time: 25
 ---
 
 ## Prerequisites  
- - [Getting started with SAP HANA, XS Advanced Development](group.hana-xsa-get-started)
- - [Import sample data from the SHINE model](xsa-import-shine-data)
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
+ - [Getting started with SAP HANA, XS Advanced Development](https://developers.sap.com/group.hana-xsa-get-started.html)
+ - [Import sample data from the SHINE model](https://developers.sap.com/tutorials/xsa-import-shine-data.html)
 
 ## Details
 ### You will learn  
@@ -18,7 +21,7 @@ time: 25
   - Create a replacement to the former Scripted Views in previous versions of SAP HANA
   - Apply the `DENSE_RANK` function, to establish the ranking of a row relative to a partition of a dataset
 
-This tutorial assumes general knowledge of the modeling tool has been acquired through completion of the [beginner and intermediate tutorials about calculation views](group.hana-xsa-calculation-view-modeling).
+This tutorial assumes general knowledge of the modeling tool has been acquired through completion of the [beginner and intermediate tutorials about calculation views](https://developers.sap.com/group.hana-xsa-calculation-view-modeling.html).
 
 ---
 

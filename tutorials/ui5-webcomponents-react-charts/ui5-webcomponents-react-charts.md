@@ -254,12 +254,12 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
     To reduce bundle size, `Icons` need to be imported manually. As we used a `line-chart` add this to your imports.
 
     ```JavaScript / JSX
-    import '@ui5/webcomponents-icons/dist/icons/line-chart.js';
+    import '@ui5/webcomponents-icons/dist/line-chart.js';
     ```
 
     The `Icons` should also be conditionally rendered. Luckily this is easy. First add the `bar-chart` import:
     ```JavaScript / JSX
-    import '@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js';
+    import '@ui5/webcomponents-icons/dist/horizontal-bar-chart.js';
     ```
 
     Then change the `name` prop of the `Icon` to the following:
@@ -282,8 +282,8 @@ import React, { useState } from "react";
 import { Card, Text, Icon } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-import "@ui5/webcomponents-icons/dist/icons/line-chart.js";
-import "@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js";
+import "@ui5/webcomponents-icons/dist/line-chart.js";
+import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
 
 export function MyApp() {
   const [toggleCharts, setToggleCharts] = useState("lineChart");

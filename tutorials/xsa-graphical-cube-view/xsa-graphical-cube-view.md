@@ -9,6 +9,7 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 time: 15
 ---
 ## Prerequisites  
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Create a calculation view of data type Dimension](https://developers.sap.com/tutorials/xsa-graphical-view.html)
 
 

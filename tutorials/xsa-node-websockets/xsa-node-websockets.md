@@ -9,6 +9,7 @@ time: 15
 ---
 
 ## Prerequisites  
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Text Bundles](https://developers.sap.com/tutorials/xsa-node-text.html)
 
 ## Details
