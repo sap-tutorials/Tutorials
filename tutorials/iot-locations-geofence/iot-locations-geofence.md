@@ -5,8 +5,8 @@ title: Create Geolocations and Configure Geofence
 description: Create geolocations and configure geofence to trigger events on thing's entry or exit using SAP Internet of Things (IoT).
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, topic>cloud, products>sap-leonardo-iot, tutorial>license]
 primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform]
 ---
 
 ## Prerequisites

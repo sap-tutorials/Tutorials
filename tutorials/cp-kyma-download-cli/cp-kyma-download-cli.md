@@ -55,7 +55,7 @@ This should return a list of version properties, for example:
 
 [ACCORDION-BEGIN [Step 3: ](Download the Kyma runtime kubeconfig)]
 
-The `kubectl` tool relies on configuration file called the `kubeconfig`, to configure access to the cluster. This step details how this can be obtained for the Kyma runtime Console UI. Please note that the `kubeconfig` has an expiration and will have to be re-download once it expires.   
+The `kubectl` tool relies on configuration file called the `kubeconfig`, to configure access to the cluster. This step details how this can be obtained for the Kyma runtime Console UI. Please note that the `kubeconfig` has an expiration of eight hours and will have to be re-download once it expires.   
 
 1. Navigate to the Console UI of your Kyma runtime.
 
