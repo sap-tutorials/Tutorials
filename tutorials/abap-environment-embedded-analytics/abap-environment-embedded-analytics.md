@@ -1,6 +1,6 @@
 ---
-title: Develop and consume queries on SAP Analytics Cloud
-description: Develop analytical queries from ABAP system as data sources and consume them in the SAP Analytics Cloud to create analytical models, stories and multi-dimensional reports.
+title: Develop and Consume Queries on SAP Analytics Cloud
+description: Develop analytical queries from ABAP system as data sources and consume them in the SAP Analytics Cloud to create analytical models, stories, multi-dimensional reports, etc.
 auto_validation: true
 time: 60
 tags: [ tutorial>intermediate, topic>abap-connectivity, products>sap-cloud-platform, tutorial>license]
