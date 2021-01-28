@@ -1,9 +1,9 @@
 ---
-title: Develop and consume queries on SAC
-description: Develop analytical queries from ABAP system as data sources and consume them in the SAP Analytics Cloud to create analytical models, stories, multi-dimensional reports, etc.
+title: Develop and consume queries on SAP Analytics Cloud
+description: Develop analytical queries from ABAP system as data sources and consume them in the SAP Analytics Cloud to create analytical models, stories and multi-dimensional reports.
 auto_validation: true
 time: 60
-tags: [ tutorial>beginner, topic>abap-connectivity, products>sap-cloud-platform, tutorial>license]
+tags: [ tutorial>intermediate, topic>abap-connectivity, products>sap-cloud-platform, tutorial>license]
 primary_tag: products>sap-cloud-platform--abap-environment
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
@@ -11,27 +11,27 @@ author_profile: https://github.com/niloofar-flothkoetter
 
 ## Prerequisites
  - You need the standard developer authorization profile to create ABAP development objects.
- - You need a SAC account.
+ - You need a SAP Analytics Cloud account.
 
 ## Details
 ### You will learn
   - How to create an analytical report (query) as CDS View Entities
-  - How to connect an ABAP System to SAP Analytics Cloud (SAC)
-  - How to consume queries on SAC by creating models and stories
+  - How to connect an ABAP System to SAP Analytics Cloud (SAP Analytics Cloud)
+  - How to consume queries on SAP Analytics Cloud by creating models and stories
 
 Always replace `XXX` with your initials or group number.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
-The new **RAP based InA service exposure** enables the SAP Business Technology Platform ABAP Environment developers to develop analytical queries(based on ABAP-CDS analytical data models) and expose them via the `InA` (Information Protocol) service protocol. These analytical queries can be further consumed in the SAP Analytics cloud(SAC) to create analytical models, stories, multi-dimensional reports, etc.
+The new **RAP based InA service exposure** enables the SAP BTP ABAP Environment developers to develop analytical queries(based on ABAP-CDS analytical data models) and expose them via the `InA` (Information Protocol) service protocol. These analytical queries can be further consumed in the SAP Analytics cloud to create analytical models, stories, multi-dimensional reports and more.
 
 ![overview](1.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create data definition for a dimension view entity)]
+[ACCORDION-BEGIN [Step 2: ](Create data definition for dimension view entities)]
   1. Open ADT and login to your ABAP System.
     If you do not have a package, create a new one.
 
@@ -63,7 +63,7 @@ The new **RAP based InA service exposure** enables the SAP Business Technology P
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Implement an analytical model -Dimension- as CDS view entity)]
+[ACCORDION-BEGIN [Step 3: ](Implement dimension as CDS view entity)]
   These are mandatory header annotations for dimensions:
 
   `@Analytics.dataCategory: #DIMENSION`
@@ -249,7 +249,7 @@ The new **RAP based InA service exposure** enables the SAP Business Technology P
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement an analytical model -cube- as CDS view entity)]
+[ACCORDION-BEGIN [Step 5: ](Implement cube as CDS view entity)]
   The dimensions that are created in last steps will be used in this step to create a cube.
 
   1. Follow the procedure in step 2 and create a **Data Definition** to implement your cube.
@@ -361,7 +361,7 @@ The new **RAP based InA service exposure** enables the SAP Business Technology P
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Implement an analytical report -query- as CDS view entity)]
+[ACCORDION-BEGIN [Step 6: ](Implement query as CDS view entity)]
   1. Follow the procedure in step 2 and create a **Data Definition** to implement your query.
 
   2. To create a query, there is a mandatory header annotation:
@@ -471,7 +471,7 @@ The new **RAP based InA service exposure** enables the SAP Business Technology P
 
       ![activate](step8-4.png)
 
-    >The analytical query will be displayed with the external service name in SAC as the data source.
+    >The analytical query will be displayed with the external service name in SAP Analytics Cloud as the data source.
 
 [DONE]
 [ACCORDION-END]
@@ -536,7 +536,7 @@ The new **RAP based InA service exposure** enables the SAP Business Technology P
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Add business catalog to the developer business role)]
+[ACCORDION-BEGIN [Step 11: ](Add business catalog to developer business role)]
   1. Login to the Fiori launchpad and open **Maintain Business Roles** App under **Identity and Access Management**.
 
       ![maintain business roles](step11-1.png)
@@ -572,7 +572,7 @@ The new **RAP based InA service exposure** enables the SAP Business Technology P
 
       ![edit communication system](step12-3.png)
 
-  3. The new communication system will be opened. Switch **Destination Service** to **OFF** and now enter you `SAC` host name (ex: `xxx.cloud.sap`) as **Host Name** and `443` as **Port**. Click **Save**.
+  3. The new communication system will be opened. Switch **Destination Service** to **OFF** and now enter you SAP Analytics Cloud host name (ex: `xxx.cloud.sap`) as **Host Name** and `443` as **Port**. Click **Save**.
 
       ![edit communication system](step12-4.png)
 
@@ -584,11 +584,11 @@ The new **RAP based InA service exposure** enables the SAP Business Technology P
 
       ![create](step12-6.png)
 
-  6. The new communication arrangement will be opened. Choose the communication system which you created previously in the **Communication System** field. Provide the **Tenant ID** of your SAC tenant.
+  6. The new communication arrangement will be opened. Choose the communication system which you created previously in the **Communication System** field. Provide the **Tenant ID** of your SAP Analytics Cloud tenant.
 
       ![tenant](step12-7.png)
 
-    > **Tenant ID** can be found under the main menu of the SAC tenant, click **System** > **About** > **System Name**.
+    > **Tenant ID** can be found under the main menu of the SAP Analytics Cloud tenant, click **System** > **About** > **System Name**.
 
   7. Under the **Outbound Services**, the service status for **UI Link Navigation** should be checked as **Active** and **Retrieve Stories** should be unchecked, click **Save**.
 
@@ -597,8 +597,8 @@ The new **RAP based InA service exposure** enables the SAP Business Technology P
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Connect the ABAP system to SAC)]
-  1. Login to the SAC tenant.
+[ACCORDION-BEGIN [Step 13: ](Connect the ABAP system to SAP Analytics Cloud)]
+  1. Login to the SAP Analytics Cloud tenant.
 
       ![Login](step13-1.png)
 
