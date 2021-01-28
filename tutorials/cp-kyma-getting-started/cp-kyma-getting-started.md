@@ -1,6 +1,6 @@
 ---
-title: Enable SAP Cloud Platform, Kyma Runtime
-description: Enable SAP Cloud Platform, Kyma runtime on SAP Cloud Platform trial.
+title: Enable SAP BTP, Kyma Runtime
+description: Enable SAP BTP, Kyma runtime.
 time: 15
 auto_validation: true
 tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform]
@@ -8,11 +8,11 @@ primary_tag: products>sap-cloud-platform\, kyma-runtime
 ---
 
 ## Prerequisites
- - **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+ - **Tutorials:** [Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
 
 ## Details
 ### You will learn
-  - How to enable the Kyma runtime trial on your SAP Cloud Platform account
+  - How to enable the Kyma runtime trial.
 
 ---
 
@@ -27,7 +27,7 @@ If the entitlement for the Kyma runtime trial has not be activated the button **
 
     !![SAP-Cloud-Platform-Trial](kyma-getting-started-02.png)
 
-2. In case you don't have the entitlement in your account you need to add it now in order to continue. Without the entitlement you won't be able to enable the Kyma runtime for your SAP Cloud Platform account.
+2. In case you don't have the entitlement in your account you need to add it now in order to continue. Without the entitlement you won't be able to enable the Kyma runtime for your account.
 
     Click **Configure Entitlements**.
 
@@ -54,7 +54,7 @@ Go back to the **Overview** with help of the menu item on the left-hand-side. Yo
 
 [ACCORDION-BEGIN [Step 2: ](Enable the Kyma environment)]
 
-Now that you've made sure the Kyma entitlement is set, you can click **Enable Kyma** to trigger the enablement of the Kyma environment on your SAP Cloud Platform account. This will cause the SAP Cloud Platform to prepare everything for you to create a new cluster at a later point where you can use your Kyma environment.
+Now that you've made sure the Kyma entitlement is set, you can click **Enable Kyma** to trigger the enablement of the Kyma environment. This will cause the that everything will be prepared for you to create a new cluster at a later point where you can use your Kyma environment.
 
 !![SAP-Cloud-Platform-Trial](kyma-getting-started-03.png)
 
@@ -74,7 +74,7 @@ To learn more about the Kyma environment and its functionality you can visit the
 
 - [kyma-project](https://kyma-project.io/docs/)
 - [SAP Help Portal - Kyma Environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/468c2f3c3ca24c2c8497ef9f83154c44.html)
-- [SAP Cloud Platform, Kyma runtime](https://discovery-center.cloud.sap/serviceCatalog/kyma-runtime)
+- [SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/serviceCatalog/kyma-runtime)
 - [Kyma - YouTube](https://www.youtube.com/channel/UC8Q8bBtYe9gQN-dQ-_L8JvQ)
 
 Or visit the [project "Kyma" - Enablement Content](https://www.youtube.com/playlist?list=PL6RpkC85SLQC33__v6BFLDcV32uy5D3Rz) on YouTube.
@@ -90,7 +90,7 @@ In this tutorial you will give your user the admin role as it allows you to have
 
 1. Create a role collection where you assign the needed role
 
-    This will allow you to later add additional roles to it if you're using other services of the SAP Cloud Platform in combination with Kyma runtime.
+    This will allow you to later add additional roles to it if you're using other services in combination with the Kyma runtime.
 
     In the left-hand menu, click **Security > Role Collections**. From there click the plus icon ( **+** ) to  create a new collection.
 
@@ -108,7 +108,7 @@ In this tutorial you will give your user the admin role as it allows you to have
 
     !![SAP-Cloud-Platform-Trial](kyma-getting-started-07.png)
 
-    Locate the two-box-icon in order to open up the roles catalogue. The roles catalogue contains all available roles on SAP Cloud Platform including the Kyma runtime roles.
+    Locate the two-box-icon in order to open up the roles catalogue. The roles catalogue contains all available roles including the Kyma runtime roles.
 
     !![SAP-Cloud-Platform-Trial](kyma-getting-started-08.png)
 
