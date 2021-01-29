@@ -1,10 +1,10 @@
 ---
 title: Integrate SAP IoT with SAP Analytics Cloud
-description: Integrate SAP IoT with SAP Analytics Cloud to build analytical dashboards using IoT sensor data, that drive operational decisions in SAP Analytics Cloud.
+description: Integrate SAP IoT with SAP Analytics Cloud to use IoT sensor data to build analytical dashboards to drive operational decisions in SAP Analytics Cloud.
 auto_validation: true
 time: 60
-tags: [ tutorial>beginner, products>sap-analytics-cloud, tutorial>license]
 primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform, products>sap-analytics-cloud]
 ---
 
 ## Prerequisites
@@ -27,7 +27,7 @@ primary_tag: topic>internet-of-things
 ---
 [ACCORDION-BEGIN [Step 1: ](Set up Postman)]
 
- Set up Postman parameters before you start working with SAP Analytics Cloud Integration and SAP IoT. We provide a set of APIs with sample model payload on GitHub for you to download. Using the Postman collection of APIs you will run thru the tutorial to complete our exercise.
+ Set up Postman parameters before you start working with SAP Analytics Cloud Integration with SAP IoT. We provide a set of APIs with sample model payload on GitHub for you to download. Using the Postman collection of APIs you will run thru the tutorial to complete our exercise.
 
 1. Go to the GitHub repository **sap-iot-samples** at [https://github.com/SAP-samples/sap-iot-samples](https://github.com/SAP-samples/sap-iot-samples).
 
@@ -142,7 +142,7 @@ Configure the thing model including data ingestion before proceeding to data mod
 
 3. Use case definition: Based on the business needs, user can configure the dimensions and measures based on property set types available in the thing model.
 
-    Let us configure a chart in SAP Analytics Cloud to map the Average Temperature of each silo for last 7 days of data where the data is aggregated daily.
+    Let us configure a chart in SAP Analytics Cloud to map the Average Temperature of each silo for last 7 days of data where the data is aggregated Daily.
 
     Sample data model with daily aggregates for the last 7 days:
 
@@ -360,12 +360,12 @@ To consume the above generated calculation view in SAP Analytics Cloud, you need
 
     | Field | Value |
     |-------|-------|
-    | **Name** | **`TrainingEU`**  (could be any user-defined name for Live Connection)|
+    | **Name** | **`TrainingEU`**  (could be any user defined name for Live Connection)|
     | **Description** | **Live Connection to IoT Training tenant** |
     | **Connection Type** | **Direct** |
     | **Host** | **<<tenant name>>.leonardo-iot.cfapps.eu10.hana.ondemand.com/cm** (IoT launchpad URL suffixed with **/cm** and without https://)|
     | **HTTPS Port** | **443** |
-    | **Default Language** (Optional)|  Once you have clicked **OK** to save the live connection, the default language can only be changed by the administrator. If the language you choose is not installed on your SAP Analytics Cloud system, SAP Analytics Cloud will use the default language. |
+    | **Default Language** (Optional)|  Once you have clicked **OK** to save the live connection, the default language can only be changed by the administrator. If the language you choose is not installed on your SAP Analytics Cloud system, SAP Analytics Cloud will choose the default language. |
     | **Authentication Method** | **SAML Single Sign On** system will prompt to authenticate IoT launchpad URL (entered in same table above) |
     | **Save** | Click **OK** |
 

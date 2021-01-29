@@ -209,8 +209,8 @@ To enable other subaccounts to subscribe to your application, you need to implem
     ```JSON
     "dependencies": {
       "express": "^4.17.1",
-      "@sap/xsenv": "^2.2.0",
-      "@sap/xssec": "^3.0.0",
+      "@sap/xsenv": "^3.1.0",
+      "@sap/xssec": "^3.0.10",
       "passport": "^0.4.1",
       "body-parser": "^1.19.0"   
     }
@@ -224,7 +224,7 @@ To enable other subaccounts to subscribe to your application, you need to implem
 [ACCORDION-BEGIN [Step 4: ](Create a SaaS configuration file)]
 To make your multitenant application endpoints available for subscription to consumer subaccounts, you must register the application in the Cloud Foundry environment via the SaaS Provisioning service.
 
-To register your application, you need a configuration file called `config.json`. In this file, you specify the subscription URL, the name, and description of your application. The `xsappname` has to be the same as the `xsappname` in the `xs-security.json` file.
+To register your application, you need a configuration file called `config.json`. In this file, you specify the subscription URL, the name and description of your application. The `xsappname` has to be the same as the `xsappname` in the `xs-security.json` file.
 
 1. Go to the `product-list` folder.
 
@@ -362,7 +362,7 @@ Assign your user the role collection `ProductListViewer` that contains the neces
     `https://consumer-tenant-ap25-approuter-product-list-ap25.cfapps.eu10.hana.ondemand.com/products`
 
 
-The application will now show you the products.
+The application will now show you the products. If it's not working also consider to check with another browser or in private mode.
 
 
 [DONE]

@@ -3,7 +3,7 @@ title: Set Up Jupyter Notebook for Service Ticket Intelligence
 description: Set up a local JupyterLab instance as well as the Jupyter Notebook for Service Ticket Intelligence.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 

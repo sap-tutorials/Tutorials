@@ -1,6 +1,6 @@
 ---
-title: Help Thomas Get Started with SAP HANA
-description: Use SAP HANA to help Thomas get started with help from other developers in the community using in-database text analytics, graph algorithms and geospatial processing.
+title: Help Thomas Get Started with SAP HANA Cloud
+description: Use SAP HANA Cloud to help Thomas get started with help from other developers in the community using in-database text analytics, graph algorithms and geospatial processing.
 auto_validation: true
 time: 45
 author_name: Thomas Jung
@@ -10,27 +10,27 @@ primary_tag: products>sap-hana
 ---
 
 ### You will learn
-  - How to start with your own free SAP HANA Cloud instance in the trial account of SAP Cloud platform
-  - How to leverage SAP Business Application Studio to develop with advanced analytics features in SAP HANA, including JSON table, geospatial, graph and text search functions
+  - How to start with your own free SAP HANA Cloud instance in the SAP Business Technology Platform trial
+  - How to leverage SAP Business Application Studio to develop with advanced analytics features in SAP HANA Cloud, including JSON table, geospatial, graph and text search functions
 
-Ready to explore SAP HANA? As a fun exercise, you can first help our fictional developer, Thomas, work with other developers in the community to create his own database schema on SAP HANA to use text, graph and geospatial processing inside the database.
+Ready to explore SAP HANA Cloud? As a fun exercise, you can first help our fictional developer, Thomas, work with other developers in the community to create his own database schema on SAP HANA Cloud to use text, graph and geospatial processing inside the database.
 
-### Get to know SAP HANA
-SAP HANA is a complete database and application development platform. It lets you use advanced data processing capabilities — text, spatial, predictive, and more — to pull insights from all types of data.
+### Get to know SAP HANA Cloud
+SAP HANA Cloud is a complete database and application development platform. It lets you use advanced data processing capabilities — text, spatial, predictive, and more — to pull insights from all types of data.
 
 By combining in-memory storage with columnar store, data operations are performed faster than in a traditional database with a disk-based storage. SAP HANA is also `translytical`, which means that developers can perform both transactional and analytical operations from the same structure, in real time, and without creating additional copies of the data such as materialized views.
 
-> ### This tutorial is based on an SAP HANA Cloud instance that you get in a free trial account at SAP Cloud Platform.
+> ### This tutorial is based on an SAP HANA Cloud instance that you get in a free SAP BTP trial account.
 > If you do not want to use this method, you can check other [available options to download or install SAP HANA, express edition](https://developers.sap.com/topics/hana.html), and corresponding tutorials.
 
 ### How do we help Thomas?
 Like most developers, Thomas wants to stay on top of the latest technologies. His first step is to get started with free tutorials, like this one. The second step is to connect with other developers and experts in the community to share knowledge and learn together.
 
-Fellow developers from all around the world connect daily to exchange information. And we are going to find out if they share Thomas' interest for SAP HANA and related topics by using **text processing** on their opinions in the community.
+Fellow developers from all around the world connect daily to exchange information. And we are going to find out if they share Thomas' interest for SAP HANA Cloud and related topics by using **text processing** on their opinions in the community.
 
-Thanks to the multiple engines in SAP HANA, we will also combine text processing with **graph algorithms** to find out how community members are connected.
+Thanks to the multiple engines in SAP HANA Cloud, we will also combine text processing with **graph algorithms** to find out how community members are connected.
 
-Finally, we will use the **geospatial capabilities** in SAP HANA to find developers closer to Thomas' location in Munich.
+Finally, we will use the **geospatial capabilities** in SAP HANA Cloud to find developers closer to Thomas' location in Munich.
 
 !![How do we help Thomas](thomas.png)
 
@@ -55,7 +55,7 @@ This tutorial uses validations to track completion and make sure you are all set
 
 [ACCORDION-BEGIN [Step 2: ](Sign up for a trial in SAP Cloud Platform)]
 
-1. Navigate to the trial landscape for [SAP Cloud Platform](https://hanatrial.ondemand.com).
+1. Navigate to the [SAP BTP trial](https://hanatrial.ondemand.com).
 
 2. Follow steps to log in or register for an account. If you need detailed steps, you can [follow this tutorial](hcp-create-trial-account) or watch this video:
 
@@ -80,7 +80,7 @@ This tutorial uses validations to track completion and make sure you are all set
 
     !![Cloud trial](3.png)
 
-4. From the SAP Cloud Platform entry page, click on the **trial** Subaccount.
+4. From the SAP BTP trial entry page, click on the **trial** Subaccount.
 
     !![Sub Account](trial1.png)
 
@@ -92,11 +92,11 @@ This tutorial uses validations to track completion and make sure you are all set
 
     !![dev Space](trial3.png)
 
-7. This wizard will walk you through the process of navigating to your development space and creating a HANA Cloud Instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Allowed connections" setting. This setting will allow you to develop against your HANA Cloud trial using a variety of external development tools.
+7. This wizard will walk you through the process of creating a SAP HANA Cloud instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Allowed connections" setting. This setting will allow you to develop against your SAP HANA Cloud trial using a variety of external development tools.
 
     !![Allow All IP addresses](trial4.png)
 
-8. After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP Cloud Platform.
+8. After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP BTP trial.
 
     !![HANA Cloud Instance](trial5.png)
 
@@ -104,19 +104,19 @@ This tutorial uses validations to track completion and make sure you are all set
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/Lv_40d1ZtsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-10. Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent tutorials in this tutorial.
+10. Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent steps in this tutorial.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create SAP Business Application Studio Dev Space)]
 
-1. Set Up SAP Business Application Studio for development (if you've never used Business Application Studio) by following [this tutorial](appstudio-onboarding) and/or this video:
+1. Set Up SAP Business Application Studio for development (if you've never used SAP Business Application Studio) by following [this tutorial](appstudio-onboarding) and/or this video:
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/WW6z4AnYriw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-2. Creating Business Application Studio Dev Space - Dev spaces are like isolated virtual machines in the cloud that can be quickly spun-up. Each dev space type contains tailored tools and pre-installed run-times for a target scenario such as SAP Fiori or mobile development. This simplifies and saves time in setting up the development environment as there's no need to install anything or upgrade; letting developers focus on their business domain, anytime, anywhere. Go to your SAP Cloud Platform subaccount and click the Subscriptions option.
+2. Creating SAP Business Application Studio Dev Space - Dev spaces are like isolated virtual machines in the cloud that can be quickly spun-up. Each dev space type contains tailored tools and pre-installed run-times for a target scenario such as SAP Fiori or mobile development. This simplifies and saves time in setting up the development environment as there's no need to install anything or upgrade; letting developers focus on their business domain, anytime, anywhere. Go to your SAP Cloud Platform subaccount and click the Subscriptions option.
 
     !![Subscriptions](SCP Subscriptions_.jpg)
 
@@ -124,7 +124,7 @@ This tutorial uses validations to track completion and make sure you are all set
 
     !![Go To Application](go_to_application.png)
 
-4. Choose **Create Dev Space**. Please NOTE: In the SAP Cloud Platform trial you are limited to only two Dev Spaces and only one can be active at a time. If you have performed other tutorials, you might already have reached your maximum. In that case you might have to delete one of the other dev spaces in order to continue with this tutorial.
+4. Choose **Create Dev Space**. Please NOTE: In the SAP BTP trial you are limited to only two Dev Spaces and only one can be active at a time. If you have performed other tutorials, you might already have reached your maximum. In that case you might have to delete one of the other dev spaces in order to continue with this tutorial.
 
     !![Create Dev Space](AppStudio Dev Space Manager_.jpg)
 
@@ -163,23 +163,23 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
     !![CF Not Set](cf_not_set.png)
 
-2. The command window will then open at the top of the Business Application Studio. The first input will prompt you for the API endpoint
+2. The command window will then open at the top of the SAP Business Application Studio. The first input will prompt you for the API endpoint
 
     !![API Endpoint](api_endpoint.png)
 
-3. The default value proposed is likely the correct value, but if you need to confirm; the value can be found in the SAP Cloud Platform Cockpit at the Subaccount level
+3. The default value proposed is likely the correct value, but if you need to confirm; the value can be found in the SAP BTP cockpit at the Subaccount level
 
     !![API Endpoint at Subaccount Level](api_endpoint_from_subaccount.png)
 
-4. Press Enter to confirm your input of the API endpoint. The next input field will ask you for the email address you used to create your SAP Cloud Platform trial account
+4. Press Enter to confirm your input of the API endpoint. The next input field will ask you for the email address you used to create your SAP BTP trial account
 
     !![Email](email.png)
 
-5. The next input will ask you for your SAP Cloud Platform trial account password
+5. The next input will ask you for your SAP BTP trial account password
 
     !![Password](password.png)
 
-6. The next input will ask you for your Organization. In most situations you will have a single choice. But like the API endpoint earlier, if you need to confirm the correct value it will be displayed in the top navigation of the SAP Cloud Platform Cockpit
+6. The next input will ask you for your Organization. In most situations you will have a single choice. But like the API endpoint earlier, if you need to confirm the correct value it will be displayed in the top navigation of the SAP BTP cockpit
 
     !![Organization](organization.png)
 
@@ -187,7 +187,7 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
     !![Space](space_2.png)
 
-8. Upon completion of all the inputs, you should see that the Organization and Space have been set and you will see the values in the Targeting... dialog at the bottom left of the Business Application Studio
+8. Upon completion of all the inputs, you should see that the Organization and Space have been set and you will see the values in the Targeting... dialog at the bottom left of the SAP Business Application Studio
 
     !![Org and Space Set Correctly](org_space_set_correctly.png)
 
@@ -233,6 +233,12 @@ Artifacts in the current project will be translated into a physical database sch
 2. In the dialog at appears near the top of the screen, choose the **Create a new service instance**
 
     !![Create New Service Instance](create_new_service.png)
+
+    **Note:** If you receive the following error that no services instances found:
+
+    !![No Service Instance Found](work_around1.png)
+
+    This is a bug that occurs when you have no existing HDI container service instances in your account. Therefore the dialog isn't shown. But this is in error because the same dialog would be used to also create a new instance. The bug has been fixed in development is pending a hot fix to move it production and the trial landscape. In the mean time there is a workaround. You can create the HDI service instance manually from the terminal. Use the command `cf create-service hana hdi-shared my-hdi`. Give it a few minutes to create. You can check the status with the command `cf services`. Once fully created, you can continue with this step. But instead of choosing **Create a new service instance** you can just select the service instance you just created manually.
 
 3. Accept the default service instance name
 
@@ -498,7 +504,7 @@ If you are ready to explore more features with your own local copy of SAP HANA, 
 
   -  [Register for a free download](https://www.sap.com/cmp/td/sap-hana-express-edition.html)
 
-Or you can continue to use the free SAP HANA Cloud trial as a part of your overall SAP Cloud Platform trial.
+Or you can continue to use the free SAP HANA Cloud trial as a part of your overall SAP BTP trial.
 
 Here's how you can get started with any developer-focused topic in SAP HANA and more:
 

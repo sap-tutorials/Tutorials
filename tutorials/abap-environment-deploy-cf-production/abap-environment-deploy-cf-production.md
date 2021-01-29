@@ -44,29 +44,33 @@ author_profile: https://github.com/mervey45
 
       ![assign role collection](bas22.png)
 
-  5. Click **Trust Configuration** to set up your trust.
+  5. Click **trial**.
+
+      ![assign role collection](trial.png)
+
+  6. Click **Trust Configuration** to set up your trust.
 
       ![assign role collection](bas3.png)
 
       HINT: If you are using a licensed system, make sure you have the trust administrator role assigned to your user.
 
-  6. Select **Default identity provider**.
+  7. Select **Default identity provider**.
 
       ![assign role collection](bas4.png)
 
-  7. Enter your e-mail address and click **Show Assignments**.
+  8. Enter your e-mail address and click **Show Assignments**.
 
       ![assign role collection](bas5.png)
 
-  8. Click **Assign Role Collection** .
+  9. Click **Assign Role Collection** .
 
       ![assign role collection](bas6.png)
 
-  9. Select **`Business_Application_Studio_Developer`** and click **Assign Role Collection**.
+ 10. Select **`Business_Application_Studio_Developer`** and click **Assign Role Collection**.
 
       ![assign role collection](bas7.png)
 
-  10. Check your result. Now your user should have the **`Business_Application_Studio_Developer`** role collection assigned.
+ 11. Check your result. Now your user should have the **`Business_Application_Studio_Developer`** role collection assigned.
 
       ![assign role collection](bas8.png)
 
@@ -149,23 +153,19 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 4: ](Create list report object page)]
 
-  1. Select **View** > **Find Command**.
+  1. Select **Start from Template**.
 
-    ![object](studio15.png)
+    ![object](template.png)
 
-  2. Search for **Yeoman UI Generators** and select it.
-
-    ![object](studio16.png)
-
-  3. Select **SAP Fiori elements application** and click **Start >**.
+  2. Select **SAP Fiori elements application** and click **Start >**.
 
     ![object](studio17.png)
 
-  4. Select **List Report Object Page** and click **Next >**.
+  3. Select **List Report Object Page** and click **Next >**.
 
     ![object](studio18.png)
 
-  5. Configure data source, system and service:
+  4. Configure data source, system and service:
      - Data source: **Connect to an SAP System**
      - System: **`ABAP Environment on SAP Cloud Platform`**
      - ABAP Environment: **`default_abap-trial`**
@@ -177,11 +177,11 @@ author_profile: https://github.com/mervey45
 
      A destination for the `abap-trial` service instance is generated automatically.
 
-  6. Select your main entity **`TravelProcessor`** and click **Next >**.
+  5. Select your main entity **`TravelProcessor`** and click **Next >**.
 
     ![object](studio20.png)
 
-  7. Configure project attributes:
+  6. Configure project attributes:
      - Name: **`ztravel_app_xxx`**
      - Title: **Travel App XXX**
      - Description: **A Fiori application.**
@@ -259,13 +259,12 @@ author_profile: https://github.com/mervey45
 
      Add following information:
 
-      - Please choose the target: ABAP
       - Is this an SAP Cloud Platform system?: Y
       - Destination: press enter for default
+      - Is this an S/4 Cloud system? N
       - Name: press enter for default
       - Package: **`ztravel_app_xxx`**
       - Transport Request: **`<your_transport_request>`**
-      - Generate standalone index.html during deployment: y
 
       ![deploy](deploy4.png)
 

@@ -1,29 +1,31 @@
 ---
-title: Configure the Development Environment
+title: Configure the SAP Web IDE Development Environment for SAP HANA service for SAP BTP
 description: Configure SAP Web IDE for Full Stack, which you will use to create a multi-target application based on the SAP Cloud Application Programming Model.
 auto_validation: true
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 time: 15
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
 primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You have a paid account in SAP Cloud Platform
- - You have created an instance of the SAP Cloud Platform, SAP HANA Service
+ - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
+ - You have a paid account in SAP BTP
+ - You have created an instance of the SAP HANA service for SAP BTP
 
+>**This tutorial cannot be completed with a trial account.**
 
 ## Details
 ### You will learn
   - How to access SAP Web IDE for Full Stack
-  - How to create a project and configure credentials to perform a deployment in the Cloud Foundry stack
+  - How to create a project and configure credentials to perform a deployment in the SAP BTP, Cloud Foundry environment
 
-SAP Web IDE for Full Stack is currently available in Neo. You will be entering the service from the Neo subaccount, creating a project and configuring credentials to perform a deployment in the Cloud Foundry environment.
-
->**This tutorial cannot currently be completed with a trial account.**
+SAP Web IDE Full Stack is currently available in SAP BTP, Neo environment. You will be entering the service from the SAP BTP, Neo environment subaccount, creating a project and configuring credentials to perform a deployment in the SAP BTP, Cloud Foundry environment.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Navigate to the Neo subaccount)]
+[ACCORDION-BEGIN [Step 1: ](Navigate to the SAP BTP, Neo environment subaccount)]
 
 You can start configuring your development environment while the creation of your instance takes place.
 
@@ -51,15 +53,15 @@ Click on **Go to Service**. A new tab will open to load the SAP Web IDE Full-Sta
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure the Cloud Foundry space)]
+[ACCORDION-BEGIN [Step 3: ](Configure the SAP BTP, Cloud Foundry environment space)]
 
-You will now configure the Cloud Foundry space that will be used by default in your projects.
+You will now configure the SAP BTP, Cloud Foundry environment space that will be used by default in your projects.
 
 Click on the **Preferences** icon ![New project from template](6.png) and then click on **Cloud Foundry**.
 
 ![New project from template](7.png)
 
-Select the same API Endpoint that you identified in the Deploying SAP HANA as a Service tutorial.
+Select the same API Endpoint that you identified in the Deploying SAP HANA service for SAP BTP tutorial.
 
 >**Note**: Please ensure that the API Endpoint matches your account.
 
@@ -69,15 +71,8 @@ Login with your username and password.
 
 ![New project from template](9.png)
 
-Choose your **Space** and click on **Install Builder**. Wait until the builder is installed.
 
-![New project from template](10X.png)
-
-Once the builder is installed...
-
-![New project from template](11.png)
-
-... click **Save**.
+Click **Save**.
 
 ![New project from template](12X.png)
 

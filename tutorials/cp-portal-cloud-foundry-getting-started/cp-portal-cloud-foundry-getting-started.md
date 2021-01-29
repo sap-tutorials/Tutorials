@@ -116,11 +116,11 @@ You are now ready to access the **Launchpad** service.
 
     ![Access Launchpad Service](15_access_launchpad.png)
 
-4. Add your credentials if you are prompted to do so.
+5. Add your credentials if you are prompted to do so.
 
    The **Launchpad** service opens with the Site Directory in focus. This is where you'll create and manage your launchpad sites.
 
-  ![Open Site Directory](15_open_site_directory.png)
+  ![Open Site Directory](12_open_site_directory.png)
 
 
 [VALIDATE_6]

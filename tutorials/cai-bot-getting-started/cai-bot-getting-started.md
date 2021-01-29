@@ -66,11 +66,13 @@ You will get an email with a link to validate your account.
         |  Bot name       | **`my-first-bot`**
         |  Description    | **A bot that likes to tell jokes and have a little fun**
 
-      - For **Data Policy**:
+      - For **Data Policy**, select the following:
 
-        - Select **Non-personal**.
+        - **Non-personal**.
 
-        - Select **Non-vulnerable**.
+        - **Store**.
+
+        - **Non-vulnerable**.
 
       - For **Bot visibility**, select **Public**.
 
@@ -118,7 +120,11 @@ As SAP Conversational AI is collaborative, you do not have to re-create each int
 
     ![Search for intents](SearchForIntent.png)
 
-3. Click **Fork** for the first one.
+    You will get a list of intents to fork.
+
+    ![Fork choices](ForkChoices.png)
+
+3. Click **Fork** for the first `@ask-joke` intent.
 
     >There are many existing intents and the choices are always changing.
 
@@ -136,7 +142,7 @@ As SAP Conversational AI is collaborative, you do not have to re-create each int
 
 You will be able to reuse many, many intents created by others. But there are times you will want to create your own.
 
-1. Click on **Train** tab.
+1. Click the **Train** tab.
 
 2. Create an intent for recognizing good reactions to jokes.
 
@@ -152,7 +158,7 @@ You will be able to reuse many, many intents created by others. But there are ti
 
     - Click **Create Intent**.
 
-2. Create a second intent, this time for bad reactions to jokes.
+3. Create a second intent, this time for bad reactions to jokes.
 
     - Click **Create**.
 
@@ -231,6 +237,8 @@ Now that your bot knows how to understand people who talk to it, it's time to gi
 
 Open the **Build** tab.
 
+![Build tab](BuildOverview.png)
+
 Inside, you'll find the **Bot Builder**, which helps you construct the conversation flow of your bot.
 
 > ### What is a skill?
@@ -268,21 +276,24 @@ Now let's build a skill to tell a joke.
 
 1. Go back to the **Build** tab -- where you see the canvas.
 
-2. Click **Create skill**.
+2. Click **Add skill**.
 
-    >There are 3 types of skills:
+    >There are several types of skills:
     >
     >  - **Business** and **Floating** skills are basically the same, but enable you to label those skills that implement core actions (business) and those that are merely helper skills (floating).
     >
-    >  - **Fallback** skills trigger when no other skill has their triggers fulfilled after a user message. Most of the time, you'll have only one of this kind, where you can remind the user what your bot can do, and ask them to rephrase.
+    >  - The **Fallback** skill (there can only be one in a chatbot) is triggered when no other skill has their triggers fulfilled after a user message. The fallback skill tells the user that the request was not understood, reminds them what your bot can do, and asks them to rephrase their request.
 
-3. Call your skill **`tell-me-a-joke`**, set the type as **Floating**, and click **Create Skill**.
+    >  - The **Disambiguation** skill (there can only be one in a chatbot) is triggered when more than one skill is triggered, and asks the user to choose among those skills.
+
+
+3. Call your skill **`tell-me-a-joke`**, set the type as **Business**, and click **Add**.
 
     ![Create skill](CreateSkill.png)
 
 4. Click the new **tell-me-a-joke** skill, and open the **Triggers** tab.
 
-5. Add 3 **`If`** statements, one for each of the `@joke`, `@laugh`, and `@lame` intents.
+5. Add 3 **`If`** statements, one for each of the `@ask-joke`, `@laugh`, and `@lame` intents.
 
     - Click in the empty space right after `If`, select the `@joke` intent, and then click **Save**.
 
@@ -300,9 +311,13 @@ Now let's build a skill to tell a joke.
 
 7. Click **Add New Message Group**, then **Add Condition**.
 
-    After the `If`, select the `@joke` intent, and click **Save**.
+    After the `If`, select the `@ask-joke` intent, and click **Save**.
 
-8. Click **Send Message**, choose the **Text** format, and type in a really good joke.
+8. Click **Send Message**, choose the **Text** format, and type in a really good joke, like:
+
+    ```Joke
+    What's black and white and red all over? A blushing zebra
+    ```
 
     >You can define additional jokes, and one of the jokes from the set will be displayed randomly.
 
@@ -323,13 +338,15 @@ Double-check if there are any errors in the conversation flow (e.g., bad answers
 
 > Chat with your bot as often as you can while you build it, which will make it easier to find problems.
 
-Click on the bottom-right blue button **Chat with your bot** and start sending messages. Use **Clear** (at the top of the panel) to refresh the chat.
+Click on the bottom-right blue button **Chat Preview** and start sending messages. Use the clear icon ![Start](starticon.png) at the top of the panel to refresh the chat.
 
 ![Start chat](StartChat.png)
 
   - If you say **Tell me a joke**, the bot will tell you a joke.
 
   - Try other phrases and see how the bot responds. If the bot does not respond properly, then try improving your intent with additional expressions.
+
+![Chatting](StartChat-chat.png)
 
 [DONE]
 [ACCORDION-END]
