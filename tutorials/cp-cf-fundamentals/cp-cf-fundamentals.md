@@ -1,6 +1,6 @@
 ---
-title: Fundamentals of the Cloud Foundry Environment
-description: Discover how the Cloud Foundry environment fits into SAP Cloud Platform, so you're ready to deploy and run applications with confidence.
+title: Fundamentals of the SAP BTP, Cloud Foundry environment
+description: Discover the SAP BTP, Cloud Foundry environment, so you're ready to deploy and run applications with confidence.
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
@@ -9,13 +9,9 @@ tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 time: 15
 ---
 
-## Prerequisites  
- - Know the fundamentals of the SAP Cloud platform
- - Understand Platform as a Service (`PasS`)
-
 ## Details
 ### You will learn  
-  - What is Cloud Foundry&trade;
+  - What is Cloud Foundry
   - Details about the Platform as a Service (PaaS)
   - How Cloud Foundry assembles and runs your applications
   - About the Service Marketplace, and services provided by SAP
@@ -23,13 +19,13 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Step](Introduction to Cloud Foundry)]
+[ACCORDION-BEGIN [Step](Introduction to the Cloud Foundry Foundation)]
 
 ![Cloud Foundry Logo, copyright Cloud Foundry Foundation](cloud-foundry-logo.png)
 
-Let's begin by explaining the name Cloud Foundry&trade;.  What is it?  Cloud Foundry (or CF) is a specification and set of software tools by the [Cloud Foundry Foundation](https://www.cloudfoundry.org/) (and before that, the Linux foundation).  It's entirely open source, and any company or organization can use the tools or create a system that follows the CF specifications.
+Let's begin by explaining the name Cloud Foundry.  What is it?  Cloud Foundry (or CF) is a specification and set of software tools by the [Cloud Foundry Foundation](https://www.cloudfoundry.org/) (and before that, the Linux foundation).  It's entirely open source, and any company or organization can use the tools or create a system that follows the CF specifications.
 
-SAP has implemented Cloud Foundry on it's SAP Cloud Platform, as a next-generation Platform as a Service (PaaS) development and runtime environment.  
+SAP has implemented Cloud Foundry on SAP BTP by creating a dedicated environment for it as a simple-to-use Platform as a Service (PaaS).  
 
 Cloud Foundry has significant benefits to developers and organizations:
 
@@ -76,7 +72,7 @@ A buildpack defines a container for running an application.  For example, one bu
 
 A [Cloud Foundry service](https://docs.cloudfoundry.org/devguide/services/) is a software program, or set of programs, that are offered to all the different runtime environments.  The most common service is a database (or some other persistent storage) which provides a common data storage location.  Other services might include logging, messaging, or other tools common to multiple applications.
 
-Here is a partial list of services on the SAP Cloud Platform:
+Here is a partial list of services on the SAP BTP, Cloud Foundry environment:
 
 ![Partial SAP Cloud Foundry service list](sapcf-services-partial.png)
 
@@ -103,7 +99,7 @@ Running the WAR file in the cloud is simple.  Just run the command `cf push WAR-
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](SAP Marketplace - Services we provide)]
+[ACCORDION-BEGIN [Step](Service Marketplace - Services we provide)]
 
 SAP has provided a number of services for Cloud Foundry developers.  
 
@@ -111,7 +107,7 @@ Our services include SAP software (for example [SAP HANA](https://help.sap.com/v
 
 ![Partial list of Cloud Foundry services from SAP](sap-cf-service-list.png)
 
-Of course, [both developers and organizations can  create their own services](https://docs.cloudfoundry.org/devguide/services/user-provided.html) to meet the needs of the project or organization.
+Of course, [both developers and organizations can bring their own services](https://docs.cloudfoundry.org/devguide/services/user-provided.html) to meet the needs of the project or organization.
 
 [DONE]
 [ACCORDION-END]
@@ -124,7 +120,7 @@ Spaces are individual working areas, which normally contain a single application
 
 > Spaces can contain more than one application, if you want.  
 
-Organizations can create spaces for individual projects, and then also create spaces for production, testing, Q&A, and any other deployments they need.  Each space is separate, and isolated from all the others.
+Organizations can create spaces for individual projects as each space is separate, and isolated from all the others.
 
 ![SAP Cockpit view of a space](cf-space.png)
 
