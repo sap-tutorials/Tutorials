@@ -28,7 +28,7 @@ Open it up at this URL: <https://github.com/SAP/cf-sample-app-nodejs>.
 
 [ACCORDION-BEGIN [Step 2: ](Download sample files)]
 
-This tutorial is preparing the app for deployment to the SAP Cloud Platform Cloud Foundry environment, and you'll be deploying it (in another tutorial) from your own machine. So you'll need to download the repository first.
+This tutorial is preparing the app for deployment to the SAP BTP, Cloud Foundry runtime, and you'll be deploying it (in another tutorial) from your own machine. So you'll need to download the repository first.
 
 Choose **Clone or download** and then choose **Download ZIP**.
 
@@ -63,11 +63,11 @@ What is the value of the `name` parameter that exists already in the `manifest.y
 
 [ACCORDION-BEGIN [Step 5: ](Add a unique host name to the deployment descriptor)]
 
-The host name for your app must be unique within a combination of region and environment, in that it forms the most significant part of the fully qualified hostname in the app's URL space. For example, if your app host name is `myapp`, the fully qualified hostname for the Cloud Foundry environment in the `EU10` region will be:
+The host name for your app must be unique within a combination of region and runtime, in that it forms the most significant part of the fully qualified hostname in the app's URL space. For example, if your app host name is `myapp`, the fully qualified hostname for the Cloud Foundry runtime in the `EU10` region will be:
 
 `myapp.cfapps.eu10.hana.ondemand.com`
 
-If someone else is already using that hostname within that region and environment, you won't be able to deploy your application.
+If someone else is already using that hostname within that region and runtime, you won't be able to deploy your application.
 
   1. Add a parameter named `host` to the `manifest.yml` file and provide a unique value. For example, use your birth date or a random number or string or incorporate your user ID:
 
