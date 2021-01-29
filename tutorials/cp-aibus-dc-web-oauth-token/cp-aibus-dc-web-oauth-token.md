@@ -3,7 +3,7 @@ title: Get OAuth Access Token for Document Classification via Web Browser
 description: Retrieve your OAuth access token, which will grant you access to the service APIs.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification]
 primary_tag: topic>machine-learning
 ---
 

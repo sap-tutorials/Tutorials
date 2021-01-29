@@ -5,17 +5,17 @@ title: Create a Business Service with Node.js Using Visual Studio Code
 description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite, by using the SAP Cloud Application Programming Model (CAP) and developing on your local environment.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [  tutorial>beginner, topic>node-js, software-product-function>sap-cloud-application-programming-model  ]
+tags: [ tutorial>beginner, topic>node-js, products>sap-cloud-platform ]
 time: 50
 ---
 
 
 ## Prerequisites
-- You've installed [Node.js](https://nodejs.org/en/download/releases/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
+- You've installed [Node.js](https://nodejs.org/en/download/releases/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
 - You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
-- (For Windows users only): You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/resources/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation for more details.
+- (For Windows users only): You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation for more details.
 - You've installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
-- If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **Europe (Frankfurt) or US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
+- If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Business Technology Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **Europe (Frankfurt) or US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
 
 ## Details
 ### You will learn
@@ -43,7 +43,7 @@ Before you start, make sure that you've completed the prerequisites.
 
     > If there's an older `@sap/cds` package already installed on the machine, you may have to remove it first; if so, you'll be instructed to do so.
 
-    > In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) in the CAP documentation for more details.
+    > In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) in the CAP documentation for more details.
 
 3. To verify that the installation was successful, run `cds` without arguments:
 
@@ -224,7 +224,7 @@ After initializing the project, you should see the following empty folders:
 
 4. To test your service, go to: <http://localhost:4004>
 
-    > You won't see data, because you haven't added a data model yet. However, click on the available links to see the service is running.
+    > You won't see data, because you haven't added a data model yet. Click on the available links to see the service is running.
 
 [DONE]
 
@@ -418,7 +418,7 @@ Instead of using in-memory, you can also use persistent databases.
     sqlite3 db/my-bookshop.db -cmd .dump
     ```
 
-    > If this doesn't work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db/my-bookshop.db -cmd .dump`.
+    > If this doesn't work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db/my-bookshop.db -cmd .dump`. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation for more details.
 
 5. To stop `SQLite` and go back to your project directory, press **CTRL+C**.
 

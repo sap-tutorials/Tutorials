@@ -141,7 +141,7 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
     		departDateString := '''' || TO_VARCHAR( departDate, 'YYYY-MM-DD' ) || '''';
 
             -- Reservations Columns: RNO, CNO, HNO, Type, Arrival, Departure
-    		stmt := 'INSERT INTO hotel.reservation (RNO, CNO, HNO, TYPE, ARRIVAL, DEPARTURE) VALUES(' || rno || ',' || cno || ',' || hno || ',' || rmType || ',' || arriveDateString || ',' || departDateString || ');';
+    		stmt := 'INSERT INTO HOTEL.RESERVATION (RNO, CNO, HNO, TYPE, ARRIVAL, DEPARTURE) VALUES(' || rno || ',' || cno || ',' || hno || ',' || rmType || ',' || arriveDateString || ',' || departDateString || ');';
         PRTLIB:PRINT_LINE(stmt);
         EXEC(stmt);
     		val := val + 1;

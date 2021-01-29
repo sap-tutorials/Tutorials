@@ -1,6 +1,6 @@
 ---
 title: Create an SAP HANA Database Project
-description: Create a Business Application Studio HANA Database Project
+description: Create a SAP Business Application Studio HANA Database Project
 auto_validation: true
 time: 15
 author_name: Thomas Jung
@@ -10,7 +10,7 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
-- You have created a trial instance of SAP Cloud Platform, SAP HANA service. [Deploy SAP HANA Cloud trial](hana-cloud-deploying)
+- You have created a BTP trial, SAP HANA Cloud instance. [Deploy SAP HANA Cloud trial](hana-cloud-deploying)
 - You are logged in to SAP Business Application Studio and its configured [Configure the Development Environment](hana-cloud-configure-dev-env)
 
 ## Details

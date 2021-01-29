@@ -244,7 +244,7 @@ In the MDK editor, you will create 4 new Rule files:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 5: ](Deploy the application)]
 
 So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
 
