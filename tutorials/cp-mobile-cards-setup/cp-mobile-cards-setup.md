@@ -38,7 +38,7 @@ You can see the list of templates shipped out of the box [here](https://github.c
 
 [ACCORDION-BEGIN [Step 2: ](Go to SAP Mobile Services cockpit)]
 
-1. In your web browser, open the [SAP Business Technology Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP BTP trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Provide the login details and click **Log On**.
 
@@ -72,7 +72,7 @@ You can see the list of templates shipped out of the box [here](https://github.c
 
     !![Enter Service Marketplace](img_2_6.png)
 
-    >The **Service Marketplace** is where you can find services to attach to any of your applications. These services are provided by SAP Business Technology Platform to create and produce applications quickly and easily.
+    >The **Service Marketplace** is where you can find services to attach to any of your applications. These services are provided by SAP BTP to create and produce applications quickly and easily.
 
 7. Search for **Mobile**, and click on the **Mobile Services** tile.  
 
@@ -111,7 +111,7 @@ You can see the list of templates shipped out of the box [here](https://github.c
 
     > !![MobileCards](img_3_2_note.png)
 
-In the next step, you will scan the respective QR code to connect your mobile application to SAP Business Technology Platform Mobile Service.
+In the next step, you will scan the respective QR code to connect your mobile application to SAP BTP Mobile Service.
 
 [DONE]
 [ACCORDION-END]
@@ -144,7 +144,7 @@ In the next step, you will scan the respective QR code to connect your mobile ap
 
     !![QR Code](img_4_and_5.png)
 
-6. Enter your **SAP Business Technology Platform login credentials** and tap **Log On**.
+6. Enter your **SAP BTP login credentials** and tap **Log On**.
 
     !![SCP Login screen](img_4_and_6.png)
 
@@ -184,7 +184,7 @@ In the next step, you will scan the respective QR code to connect your mobile ap
 
     > If the SAP Mobile Cards application doesn't open, you may not have the application installed on your mobile device. To install the application complete all the prerequisites of this tutorial.
 
-3. Enter your **SAP Business Technology Platform login credentials** and tap **Log On**.
+3. Enter your **SAP BTP login credentials** and tap **Log On**.
 
     !![SCP Login screen](img_4_ios_3.png)
 
@@ -206,9 +206,9 @@ In the next step, you will scan the respective QR code to connect your mobile ap
 
 [OPTION END]
 
-You've now connected your SAP Mobile Cards client to your SAP Business Technology Platform account.
+You've now connected your SAP Mobile Cards client to your SAP BTP account.
 
-You can automate the set up covered in this tutorial by using SAP Business Technology Platform Boosters. You can find the details in the [starter mission of SAP Mobile Cards](https://developers.sap.com/mission.mobile-cards-get-started.html).
+You can automate the set up covered in this tutorial by using SAP BTP Boosters. You can find the details in the [starter mission of SAP Mobile Cards](https://developers.sap.com/mission.mobile-cards-get-started.html).
 
 You can now proceed to the [next tutorial](cp-mobile-bas-setup), which will guide you to set up your Business Application Studio to build SAP Mobile Cards.
 
