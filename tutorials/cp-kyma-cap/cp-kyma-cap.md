@@ -47,7 +47,9 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 
     >For more information regarding the setup of the application see [CAP Getting Started](https://cap.cloud.sap/docs/get-started/in-a-nutshell)
 
-2. Within the `k8s` directory you can find the Kubernetes/Kyma resources you will apply to your Kyma runtime.
+4. Within the `k8s` directory you can find the Kubernetes/Kyma resources you will apply to your Kyma runtime.
+
+5. Within the `docker` folder you can find the Dockerfile definition that will be used to generate the Docker image.
 
 
 [DONE]
