@@ -23,7 +23,7 @@ time: 15
 
 [ACCORDION-BEGIN [Step 1: ](Enable SAP Mobile Services)]
 
-The SAP SDK for iOS is designed to work seamlessly with a set of services provided by the SAP BTP that are optimised for communication with mobile devices, known collectively as SAP Mobile Services. These include not only data services, but also features like analytics, push notifications, and app configuration. Before creating your first app, you'll need to ensure that Mobile Services are enabled for your trial account.
+The SAP SDK for iOS is designed to work seamlessly with a set of services that are optimised for communication with mobile devices, known collectively as SAP Mobile Services. These include not only data services, but also features like analytics, push notifications, and app configuration. Before creating your first app, you'll need to ensure that Mobile Services are enabled for your trial account.
 
 [DONE]
 [ACCORDION-END]
@@ -32,9 +32,9 @@ The SAP SDK for iOS is designed to work seamlessly with a set of services provid
 
 With your account created, you can now use the Assistant to create cloud application configurations on the Mobile Services back end, create destinations pointing to data service endpoints, and generate Xcode projects with a built-in data service layer to access the backend via Swift.
 
-For the remainder of this tutorial, you will use the Assistant to generate an Xcode project that accesses a sample backend hosted on the SAP BTP, then replace the generated user interface with your own, and finally add the code necessary to integrate a Core ML machine learning model to classify product images.
+For the remainder of this tutorial, you will use the Assistant to generate an Xcode project that accesses a sample backend hosted on the SAP BTP, Cloud Foundry runtime, then replace the generated user interface with your own, and finally add the code necessary to integrate a Core ML machine learning model to classify product images.
 
-Let's get started by creating a cloud application definition on Mobile Services connecting to a service named **Mobile Sample OData ESPM**. This service is provided as a sample service on SAP BTP.
+Let's get started by creating a cloud application definition on Mobile Services connecting to a service named **Mobile Sample OData ESPM**.
 
 1. Go to your **SAP Mobile Services Trial** account in your web browser.
   !![Project creation](fiori-ios-scpms-teched19-01.png)
