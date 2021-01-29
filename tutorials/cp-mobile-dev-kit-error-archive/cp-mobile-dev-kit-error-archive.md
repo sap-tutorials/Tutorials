@@ -505,7 +505,7 @@ Now, that the **Error List** page is created, you will add a button on the **Mai
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 7: ](Deploy the application)]
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 

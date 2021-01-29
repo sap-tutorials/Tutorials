@@ -426,7 +426,7 @@ You will add this registered control in the generated `Customers_Detail.page`.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy and activate application)]
+[ACCORDION-BEGIN [Step 5: ](Deploy the application)]
 
 So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
 
