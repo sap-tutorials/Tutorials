@@ -355,7 +355,7 @@ The two OData service document URLs are:
 
 To build an app like what you have now, but with data from SAP Gateway, you simply need to:
 
-- Create an SAP Cloud Platform destination pointing to `https://sapes5.sapdevcenter.com` following an [earlier tutorial procedure](hcp-create-destination)
+- Create an SAP Cloud Platform destination pointing to `https://sapes5.sapdevcenter.com` following an [earlier tutorial procedure](cp-cf-create-destination)
 - Enter the remaining part of the URL in the Data Connection portion of the SAP Web IDE template customization. For the two URLs above, they would be:
 - `/sap/opu/odata/IWBEP/GWDEMO`
 - `/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT`
