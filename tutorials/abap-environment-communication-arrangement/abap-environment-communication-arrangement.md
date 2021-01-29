@@ -1,7 +1,7 @@
 ---
 auto_validation: true
 title: Maintain a Communication Arrangement for Inbound Communication
-description: Create a communication user and a communication system for an OData service in SAP BTP ABAP Environment.
+description: Create a communication user and a communication system for an OData service in SAP Business Technology Platform ABAP Environment.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 15
