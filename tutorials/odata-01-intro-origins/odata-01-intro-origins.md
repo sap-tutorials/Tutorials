@@ -33,51 +33,49 @@ The origin of OData's format comes from the world of weblogs, blogging and syndi
 
 > RSS is also known as "RDF Site Summary" or "Really Simple Syndication".
 
-Look at an example of the RSS representation of blog posts - in particular, the posts tagged **SAP Cloud Platform Workflow** with this URL:
+Look at an example of the RSS representation of blog posts - in particular, the posts tagged **ABAP Development** with this URL:
 
-<https://blogs.sap.com/tags/73554900100800000555/>
+<https://blogs.sap.com/tags/833755570260738661924709785639136/>
 
 and select the **RSS** link as shown in the screenshot.
 
-![RSS link on page of blog posts](blogposts-with-workflow-tag.png)
+![RSS link on page of blog posts](blogposts-with-abap-development-tag.png)
 
 
 The resulting RSS content of this resource should look something like this:
 
-```
-<?xml version="1.0" encoding="UTF-8"?>
+```xml
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Latest blog posts for SAP Cloud Platform Workflow</title>
-  <link rel="alternate" type="text/html" href="https://www.sap.com.community.html" />
-  <id>https://www.sap.com.community.html</id>
-  <rights>© 2018 SAP SE https://www.sap.com/about/legal/copyright.html</rights>
-  <logo>https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg</logo>
-  <updated>2018-07-22T07:55:37Z</updated>
-  <entry>
-    <title>SAP CodeJam in Australia – SAP Cloud Platform Workflow &amp; Business Rules</title>
-    <link rel="alternate" href="https://blogs.sap.com/?p=695538" />
-    <category term="SAP CodeJam" />
-    <category term="SAP CodeJam" />
-    <category term="SAP Cloud Platform Business Rules" />
-    <category term="SAP Cloud Platform Workflow" />
-    <author>
-      <name>Murali Shanmugham</name>
-    </author>
-    <id>blogs.sap.com_blogpost_695538</id>
-    <published>2018-07-22T07:55:37Z</published>
-    <summary type="text">I would like to share my experience hosting the CodeJam event on SAP Cloud Platform Workflow &amp; Business Rules. This was the first time a CodeJam event was conducted on this topic and it was a very special event. We had the first event in Sydney on 10th July and ...</summary>
-  </entry>
-  <entry>
-    <title>Showing what we've got at Google Next '18</title>
-    <link rel="alternate" href="https://blogs.sap.com/?p=693265" />
-    <category term="SAP Cloud Platform" />
-    [...]
-  </entry>
-  [...]
+<title>Latest blog posts for ABAP Development</title>
+<link rel="alternate" type="text/html" href="https://community.sap.com/"/>
+<id>https://community.sap.com/</id>
+<rights>© 2018 SAP SE https://www.sap.com/about/legal/copyright.html</rights>
+<logo>https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg</logo>
+<updated>2021-01-26T18:59:22Z</updated>
+<entry>
+<title>Getting Started with ABAP in 2021</title>
+<link rel="alternate" href="https://blogs.sap.com/?p=1259056"/>
+<category term="ABAP Development"/>
+<category term="#ABAP"/>
+<category term="#CDS"/>
+<category term="ABAP Beginner"/>
+<category term="abap beginners guide"/>
+<category term="beginner guide to HANA"/>
+<category term="Core Data Services (CDS)"/>
+<category term="Virtual Data Model"/>
+<author>
+<name>Markus Haug</name>
+</author>
+<id>https://blogs.sap.com/?p=1259056</id>
+<updated>2021-01-26T18:59:22Z</updated>
+<published>2021-01-26T18:59:22Z</published>
+<summary type="text">Whether you are new to ABAP or just want to learn something new this year, this blog post will give you an overview and a handful of helpful resources about all the new technologies in the ABAP cosmos. Not only the universe is expanding, but the ABAP world is also. ...</summary>
+</entry>
+...
 </feed>
 ```
 
-Observe the structure of the XML document. It describes a `feed` that has some metadata such as title, id, logo and information as to when it was last updated. That `feed` contains one or more `entry` elements, each of them representing a post in the list tagged with "SAP Cloud Platform Workflow". Think of this like a document, with a header and items.
+Observe the structure of the XML document. It describes a `feed` that has some metadata such as title, id, logo and information as to when it was last updated. That `feed` contains one or more `entry` elements, each of them representing a post in the list tagged with "ABAP Development". Think of this like a document, with a header and items.
 
 [VALIDATE_1]
 
