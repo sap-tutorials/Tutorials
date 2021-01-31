@@ -5,7 +5,7 @@ author_name: Michal Keidar
 author_profile: https://github.com/michal-keidar
 auto_validation: true
 time: 30
-tags: [tutorial>intermediate, products>sap-cloud-platform, topic>abap-development]
+tags: [tutorial>intermediate, products>sap-cloud-platform]
 primary_tag: products>sap-cloud-platform
 ---
 
