@@ -1,6 +1,6 @@
 ---
-title: Building a service-centric application with CAP on Kyma
-description: The Cloud Application Programming Model helps you keep pace with ever-changing cloud environments. You stay focused on your domain problems, while low-level features like OData protocol serving, message brokers, or multi-tenancy are handled for you. In this session, you learn how to deploy and run an existing CAP application in Kyma Runtime by using built-in tools like API Gateway and Service Mesh technology.
+title: Build a Service-Centric Application with CAP on Kyma
+description: Deploy and run an existing CAP application in Kyma runtime by using built-in tools like API Gateway and Service Mesh technology.
 auto_validation: true
 time: 45
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model]
@@ -8,31 +8,36 @@ primary_tag: products>sap-cloud-platform\, kyma-runtime
 ---
 
 ## Prerequisites
- - You've installed [Node.js](https://nodejs.org/en/download/releases/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
- - You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
- - A Kyma runtime [Enable SAP Cloud Platform, Kyma runtime](cp-kyma-getting-started)
- - The Kubernetes CLI installed on configured with your Kubeconfig [Install the Kubernetes Command Line Tool](cp-kyma-download-cli)
- - [Docker](https://www.docker.com/)
- - [Docker Hub Account](https://hub.docker.com/signup)
+- You've installed [Node.js](https://nodejs.org/en/download/releases/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number, like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
+- Latest version of [Visual Studio Code](https://code.visualstudio.com/)
+- A Kyma runtime -- see [Enable SAP Cloud Platform, Kyma runtime](cp-kyma-getting-started)
+- The Kubernetes CLI installed and configured with your Kubeconfig -- see [Install the Kubernetes Command Line Tool](cp-kyma-download-cli)
+- [Docker](https://www.docker.com/)
+- [Docker Hub Account](https://hub.docker.com/signup)
 
 
 ## Details
 ### You will learn
   - How to build a CAP application in the Kyma runtime
 
+The SAP Cloud Application Programming Model helps you keep pace with ever-changing cloud environments. You stay focused on your domain problems, while low-level features like OData protocol serving, message brokers, or multi-tenancy are handled for you.
+
+In this tutorial, you learn how to deploy and run an existing CAP application in Kyma runtime by using built-in tools like API Gateway and Service Mesh technology.
+
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Clone the Git repository)]
 
-1. Copy the repository URL.
+Copy the repository URL.
 
-  In your browser, navigate to [kyma-runtime-extension-samples](https://github.com/SAP-samples/kyma-runtime-extension-samples).
+1. In your browser, navigate to [kyma-runtime-extension-samples](https://github.com/SAP-samples/kyma-runtime-extension-samples).
 
-  Choose the **Code** button and choose one of the options to download the code locally, or simply run the following command using your CLI at your desired folder location:
+2. Choose the **Code** button and choose one of the options to download the code locally, or simply run the following command using your CLI at your desired folder location:
 
-```Shell/Bash
-git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
-```
+    ```Shell/Bash
+    git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
+    ```
 
 [DONE]
 [ACCORDION-END]
@@ -45,7 +50,7 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 
 3. The `app` directory contains a ready to use Node.js CAP service application modeling Questions and Answers.
 
-    >For more information regarding the setup of the application see [CAP Getting Started](https://cap.cloud.sap/docs/get-started/in-a-nutshell)
+    >For more information regarding the setup of the application, see [CAP Getting Started](https://cap.cloud.sap/docs/get-started/in-a-nutshell)
 
 4. Within the `k8s` directory you can find the Kubernetes/Kyma resources you will apply to your Kyma runtime.
 
@@ -65,7 +70,7 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
     ```
 
 
-2. Using the CLI install the `cds` development kit globally by executing the following command:
+2. Using the CLI, install the `cds` development kit globally by executing the following command:
 
     ```Shell/Bash
     npm i -g @sap/cds-dk
@@ -84,6 +89,7 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
     ```Shell/Bash
     cds
     ```
+
     > This lists the available `cds` commands. For example, use `cds version` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
     ![cds commands](cds_commands.png)
@@ -101,11 +107,11 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 
 2. The CAP Service should run on port 4004. Confirm by opening a browser to [http://localhost:4004](http://localhost:4004)
 
-    >Note, that you don't have the DB schemas deployed to the database, yet. We'll have to do this now.
+    >Note that you don't have the DB schemas deployed to the database, yet. We'll have to do this now.
 
 3. Stop the CAP service in your command line
 
-    >Pressing `control-c` will stop the running application.
+    >Pressing `CTRL-c` will stop the running application.
 
 
 4. Deploy the DB schemas to you local `sqlite` database file by running the following command in your CLI
@@ -132,7 +138,7 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 
 The browser page should resemble
 
-![App View in Browser](app-in-browser.png)
+!![App View in Browser](app-in-browser.png)
 
 [DONE]
 [ACCORDION-END]
@@ -141,7 +147,7 @@ The browser page should resemble
 
 Run the following commands from the `cap-sample` directory within your CLI.
 
-Make sure to replace the value of `<your-docker-id>` with your Docker account ID.
+>Make sure to replace the value of `<your-docker-id>` with your Docker account ID.
 
 1. To build the Docker image, run this command:
 
@@ -162,16 +168,17 @@ Make sure to replace the value of `<your-docker-id>` with your Docker account ID
 
 Run the following commands from the `cap-sample` directory within your CLI.
 
-Make sure to replace the value of `<your-docker-id>` with your Docker account ID.
+>Make sure to replace the value of `<your-docker-id>` with your Docker account ID.
 
 1. Start the image locally by running the following command:  
 
     ```Shell/Bash
-      docker run -p 4004:4004 <dockerid>/cap-service:latest --name cap-service
+    docker run -p 4004:4004 <dockerid>/cap-service:latest --name cap-service
     ```
-  > The -p command instructs Docker to map the host port 4004, shown on the left of the colon, to the port exposed by the image 4004, shown on the right. Using the --name parameter allows for an easy reference to the image to stop, start or remove it which is used in a later step.
 
-    Running the command should result in a similar output
+    >The -p command instructs Docker to map the host port 4004, shown on the left of the colon, to the port exposed by the image 4004, shown on the right. Using the --name parameter allows for an easy reference to the image to stop, start or remove it which is used in a later step.
+
+    Running the command should result in a similar output:
 
     ```Shell/Bash
     > faq@1.0.0 start /usr/src/app
