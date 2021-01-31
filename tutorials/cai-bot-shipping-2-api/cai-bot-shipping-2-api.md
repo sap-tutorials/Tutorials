@@ -34,7 +34,7 @@ In this tutorial, you will modify the chatbot so it calls an API to retrieve inf
 
     ![Versions](Endpoint_Edit.png)
 
-4. In the **Bot Builder** field, enter the endpoint to our application on SAP Cloud Platform: **`https://sapupschatbot.cfapps.eu10.hana.ondemand.com`**
+4. In the **Bot Builder** field, enter the endpoint to our application on SAP Business Technology Platform: **`https://sapupschatbot.cfapps.eu10.hana.ondemand.com`**
 
 5. Click **Save**.
 
