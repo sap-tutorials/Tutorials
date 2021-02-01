@@ -1,6 +1,6 @@
 ---
 title: Enable SAP BTP, Kyma Runtime
-description: Enable SAP BTP, Kyma runtime.
+description: Kyma itself is a runtime deployed on a Kubernetes cluster and is using all sorts of services to provide you an easy to use environment for your applications and services to run in. For example, the Kyma runtime is using `Istio` to bring a Service Mesh to you. You will learn how to enable the SAP BTP, Kyma runtime.
 time: 15
 auto_validation: true
 tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform]
@@ -8,7 +8,7 @@ primary_tag: products>sap-cloud-platform\, kyma-runtime
 ---
 
 ## Prerequisites
- - **Tutorials:** [Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
+ - **Tutorials:** [Get a Free Trial Account on Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
 
 ## Details
 ### You will learn
@@ -17,7 +17,7 @@ primary_tag: products>sap-cloud-platform\, kyma-runtime
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Set entitlements)]
-If the entitlement for the Kyma runtime trial has not be activated the button **Enable Kyma** will not be shown. The following steps detail the process of enabling the entitlement.
+If the entitlement for the Kyma runtime trial has not be activated the button **Enable Kyma** will not be shown. The following steps detail the process of enabling the entitlement. In case you have the necessary entitlements set, continue with **Step 2** of this tutorial
 
 1. In the left-hand menu, click **Entitlements**.
 
@@ -41,7 +41,7 @@ If the entitlement for the Kyma runtime trial has not be activated the button **
 
     !![SAP-Cloud-Platform-Trial](kyma-getting-started-02d.png)
 
-    > In case you see the message **You have already used all the global account quota for this service plan. To add this service plan, purchase more quota or remove quota from other subaccounts** You already have the Kyma Runtime entitlement used in another subaccount. Look for the subaccount where the Kyma runtime entitlement is assigned too and delete it or use it there.
+    > In case you see the message **You have already used all the global account quota for this service plan. To add this service plan, purchase more quota or remove quota from other subaccounts.**, you already have the Kyma Runtime entitlement used in another subaccount. Go for the subaccount where the Kyma runtime entitlement is assigned to and delete it or continue with this tutorial in this subaccount.
 
     Click **Save** to save the newly added service plan.
 
@@ -62,37 +62,34 @@ In the popup, enter your cluster name of choice and click **Create**.
 
 !![SAP-Cloud-Platform-Trial](kyma-getting-started-03b.png)
 
-What happens now is that, in the background, a fresh and new Kubernetes cluster is spinning up where the Kyma runtime and all its components are being installed. This might take a while until it's finished with the setup process.
-
->Kyma itself is a runtime deployed on a Kubernetes cluster and is using all sorts of services to provide you an easy to use environment for your applications and services to run in. In example, the Kyma runtime is using `Istio` to bring a Service Mesh to you.
+In the background, a fresh and new Kubernetes cluster is being set up where the Kyma runtime and all its components are being installed. This might take up 60 min.
 
 You need to wait until this process is finished before you can continue with this tutorial.
 
 !![SAP-Cloud-Platform-Trial](kyma-getting-started-03c.png)
 
-To learn more about the Kyma environment and its functionality you can visit the official documentation under the following links:
+To learn more about the Kyma environment and its functionality, see:
 
 - [kyma-project](https://kyma-project.io/docs/)
 - [SAP Help Portal - Kyma Environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/468c2f3c3ca24c2c8497ef9f83154c44.html)
 - [SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/serviceCatalog/kyma-runtime)
 - [Kyma - YouTube](https://www.youtube.com/channel/UC8Q8bBtYe9gQN-dQ-_L8JvQ)
-
-Or visit the [project "Kyma" - Enablement Content](https://www.youtube.com/playlist?list=PL6RpkC85SLQC33__v6BFLDcV32uy5D3Rz) on YouTube.
+- [project "Kyma" - Enablement Content](https://www.youtube.com/playlist?list=PL6RpkC85SLQC33__v6BFLDcV32uy5D3Rz)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create role collection for your Kyma user)]
 
-You have your Kyma runtime enabled and a cluster created. The last step is to give your user the needed role to be able to access the Kyma console UI. There are two different roles available for you to choose from: `KymaRuntimeNamespaceAdmin` and `KymaRuntimeNamespaceUser`.
+Once you've enabled your Kyma runtime, created a cluster, the last step is to assign your user the role needed to be able to access the Kyma console UI. There are two different roles available for you to choose from: `KymaRuntimeNamespaceAdmin` and `KymaRuntimeNamespaceUser`.
 
-In this tutorial you will give your user the admin role as it allows you to have full access to all functionality provided by the Kyma runtime trial.
+In this tutorial, you will learn how to give your user the admin role as it allows you to have full access to all functionality provided by the Kyma runtime trial.
 
-1. Create a role collection where you assign the needed role
+1. Create a role collection to which you assign the required role.
 
-    This will allow you to later add additional roles to it if you're using other services in combination with the Kyma runtime.
+    This will allow you to later add additional roles, if you're using other services in combination with the Kyma runtime.
 
-    In the left-hand menu, click **Security > Role Collections**. From there click the plus icon ( **+** ) to  create a new collection.
+    In the left-hand menu, click **Security > Role Collections**. From there, click the plus icon ( **+** ) to  create a new role collection.
 
     !![SAP-Cloud-Platform-Trial](kyma-getting-started-04.png)
 
@@ -116,7 +113,7 @@ In this tutorial you will give your user the admin role as it allows you to have
 
     !![SAP-Cloud-Platform-Trial](kyma-getting-started-09.png)
 
-    While still in edit mode, you want to assign your user ID to the role collection. Locate the **Users** section and enter your email address into the **ID** field -- the UI should give you a nice autocompletion.
+    Assign your user ID to the role collection. Locate the **Users** section and enter your email address into the **ID** field -- the UI should give you a nice autocompletion.
 
     Click on **Save**.
 
@@ -127,13 +124,13 @@ In this tutorial you will give your user the admin role as it allows you to have
 
 [ACCORDION-BEGIN [Step 4: ](Open Kyma runtime console UI)]
 
-Go back to the overview of your subaccount, if not already done. From there click **Link to Dashboard**.
+Go back to the overview of your subaccount. From there, click **Link to Dashboard**.
 
 !![SAP-Cloud-Platform-Trial](kyma-getting-started-11.png)
 
 The dashboard or Kyma console UI is your graphical playground for managing and deploying applications or services on the Kyma runtime. With the dashboard you can not only deploy or delete deployments but also manage them for scale, expose them over self-defined API Rules and much more.
 
-To learn more about the capabilities and features of the Kyma, runtime follow the Kyma tutorials, blog posts, read the documentation or check out the YouTube videos. If you aren't aware, there is also a [Kyma slack channel](https://kyma-community.slack.com/) where you can ask questions to the active community.
+To learn more about the capabilities and features of the SAP BTP, Kyma runtime, follow the Kyma tutorials, blog posts, read the documentation or check out the YouTube videos. If you aren't aware, there is also a [Kyma slack channel](https://kyma-community.slack.com/) where you can ask questions to the active community.
 
 !![SAP-Cloud-Platform-Trial](kyma-getting-started-12.png)
 
