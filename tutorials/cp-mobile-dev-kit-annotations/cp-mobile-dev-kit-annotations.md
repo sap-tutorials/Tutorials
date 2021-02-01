@@ -30,7 +30,6 @@ Mobile Development Kit brings OData annotations capabilities to your native mobi
 
 If you are a Fiori app designer, you may already be familiar with OData annotations and smart templates.
 
-
 SAP Fiori elements provide designs for UI patterns and predefined templates for common application use cases. App developers can use SAP Fiori elements to create SAP Fiori applications based on OData services and annotations. With little or no coding, you can create SAP Fiori applications. UI5 has a Web solution, named smart templates, that builds a starter application by parsing the annotations in your OData service.
 
 You can also check out more information on the Fiori elements [List Report](https://experience.sap.com/fiori-design-ios/article/list-report/) and [Smart templates](https://experience.sap.com/fiori-design-web/smart-templates/)
