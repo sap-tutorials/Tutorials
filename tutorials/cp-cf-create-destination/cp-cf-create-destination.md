@@ -1,5 +1,5 @@
 ---
-title: Create a Destination within the Cloud Foundry Environment
+title: Create a Destination in the SAP BTP cockpit
 description: Create a destination in the SAP BTP cockpit to allow application access to the Northwind OData services.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
