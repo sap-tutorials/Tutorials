@@ -1,7 +1,7 @@
 ---
 auto_validation: true
 title: Transport a Software Component Between two Systems
-description: Create and import a new software component into an SAP BTP ABAP Environment instance, add ABAP sources and export it to a new SAP BTP ABAP Environment instance.
+description: Create and import a new software component into an SAP Business Technology Platform ABAP Environment instance, add ABAP sources and export it to a new SAP BTP ABAP Environment instance.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 15
