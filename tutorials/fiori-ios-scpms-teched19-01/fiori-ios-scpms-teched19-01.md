@@ -1,6 +1,6 @@
 ---
-title: Create Xcode Project with SAP Cloud Platform SDK for iOS
-description: Enable SAP Cloud Platform Mobile Services, create a connection in the SAP Cloud Platform SDK for iOS Assistant, and generate a master-detail view app with the iOS Assistant.
+title: Create Xcode Project with SAP SDK for iOS
+description: Enable SAP Mobile Services, create a connection in the SAP SDK for iOS Assistant, and generate a master-detail view app with the iOS Assistant.
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 auto_validation: true
@@ -10,20 +10,20 @@ time: 15
 ---
 
 ## Prerequisites
-- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and [Enable SAP Cloud Platform Mobile Services](fiori-ios-hcpms-setup)
+- **Tutorials:** [Get a Free Trial Account on SAP BTP](hcp-create-trial-account) and [Enable SAP Mobile Services](fiori-ios-hcpms-setup)
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0
+- **SAP SDK for iOS:** Version 5.0
 
 ## Details
 ### You will learn  
-  - How to create a connection in the SAP Cloud Platform SDK for iOS Assistant
-  - How to generate an app with the SAP Cloud Platform SDK for iOS Assistant
+  - How to create a connection in the SAP SDK for iOS Assistant
+  - How to generate an app with the SAP SDK for iOS Assistant
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enable SAP Cloud Platform Mobile Services)]
+[ACCORDION-BEGIN [Step 1: ](Enable SAP Mobile Services)]
 
-The SAP Cloud Platform SDK for iOS is designed to work seamlessly with a set of services provided by the SAP Cloud Platform that are optimised for communication with mobile devices, known collectively as Mobile Services. These include not only data services, but also features like analytics, push notifications, and app configuration. Before creating your first app, you'll need to ensure that Mobile Services are enabled for your trial account.
+The SAP SDK for iOS is designed to work seamlessly with a set of services that are optimised for communication with mobile devices, known collectively as SAP Mobile Services. These include not only data services, but also features like analytics, push notifications, and app configuration. Before creating your first app, you'll need to ensure that Mobile Services are enabled for your trial account.
 
 [DONE]
 [ACCORDION-END]
@@ -32,11 +32,11 @@ The SAP Cloud Platform SDK for iOS is designed to work seamlessly with a set of 
 
 With your account created, you can now use the Assistant to create cloud application configurations on the Mobile Services back end, create destinations pointing to data service endpoints, and generate Xcode projects with a built-in data service layer to access the backend via Swift.
 
-For the remainder of this tutorial, you will use the Assistant to generate an Xcode project that accesses a sample backend hosted on the SAP Cloud Platform, then replace the generated user interface with your own, and finally add the code necessary to integrate a Core ML machine learning model to classify product images.
+For the remainder of this tutorial, you will use the Assistant to generate an Xcode project that accesses a sample backend hosted on the SAP BTP, Cloud Foundry runtime, then replace the generated user interface with your own, and finally add the code necessary to integrate a Core ML machine learning model to classify product images.
 
-Let's get started by creating a cloud application definition on Mobile Services connecting to a service named **Mobile Sample OData ESPM**. This service is provided as a sample service on SAP Cloud Platform.
+Let's get started by creating a cloud application definition on Mobile Services connecting to a service named **Mobile Sample OData ESPM**.
 
-1. Go to your **SAP Cloud Platform Mobile Services Trial** account in your web browser.
+1. Go to your **SAP Mobile Services Trial** account in your web browser.
   !![Project creation](fiori-ios-scpms-teched19-01.png)
 
 2. You will create a new native application cloud configuration on Mobile Services. To do so click on **Native/Hybrid** on the left-hand side and then on **New**.
@@ -69,7 +69,7 @@ Let's get started by creating a cloud application definition on Mobile Services 
 
 [ACCORDION-BEGIN [Step 3: ](Create an iOS app using the iOS Assistant)]
 
-1. Open up the **SAP Cloud Platform SDK for iOS Assistant** and click **Create new**.
+1. Open up the **SAP SDK for iOS Assistant** and click **Create new**.
 
     !![Project creation](fiori-ios-scpms-teched19-06.png)
 
@@ -115,7 +115,7 @@ Let's get started by creating a cloud application definition on Mobile Services 
 
     !![Project creation](fiori-ios-scpms-teched19-12.png)
 
-    The SAP Cloud Platform SDK for iOS Assistant will now create the cloud application on Mobile Services, pull the metadata document of the OData service and generate an Xcode project, including the on-boarding flow and all the necessary proxy classes and a convenience data service API.
+    The SAP SDK for iOS Assistant will now create the cloud application on Mobile Services, pull the metadata document of the OData service and generate an Xcode project, including the on-boarding flow and all the necessary proxy classes and a convenience data service API.
 
 [DONE]
 [ACCORDION-END]
@@ -136,7 +136,7 @@ After clicking **Finish**, the Assistant will generate an Xcode project, save it
 
     !![App Onboarding](fiori-ios-scpms-teched19-14.png)
 
-2. Next, your app will connect to the SAP identity provider triggering an authentication prompt for your SAP Cloud Platform account id and password.
+2. Next, your app will connect to the SAP identity provider triggering an authentication prompt for your SAP BTP account id and password.
 
     Please enter the needed information and click **Log on**.
 
