@@ -1,7 +1,7 @@
 ---
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Deploy CAP Java App to SAP Cloud Platform
+title: Deploy CAP Java App to SAP Business Technology Platform
 description: Deploy the recently built bookstore application to SAP Business Technology Platform using the Cloud Foundry CLI.
 auto_validation: true
 time: 15
