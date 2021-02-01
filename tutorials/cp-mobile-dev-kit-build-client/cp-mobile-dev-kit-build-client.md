@@ -382,9 +382,9 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     ![MDK](img_5.5.png)
 
-6. Tap **START** to connect MDK client to SAP Cloud Platform.
+6. Tap **START** to connect MDK client to SAP Business Technology Platform (BTP).
 
-7. Enter your credentials to login to SAP Cloud Platform and tap **Log On** to authenticate.
+7. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
 
     ![MDK](img_5.7.png)
 
@@ -436,9 +436,9 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     ![MDK](img_5.13.1.png)
 
-    Tap **Start** to connect MDK client to SAP Cloud Platform.
+    Tap **Start** to connect MDK client to SAP Business Technology Platform (BTP).
 
-6. Enter your credentials to login to SAP Cloud Platform and tap **Log On** to authenticate.
+6. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
 
     ![MDK](img_5.14.png)
 
