@@ -9,6 +9,7 @@ primary_tag: topic>security
 
 ## Prerequisites
  - [Identity Authentication service tenant](https://www.sapstore.com/solutions/40132/SAP-Cloud-Platform-Identity-Authentication)
+ - [Sign Up for Microsoft Azure](https://azure.microsoft.com/en-us/resources/videos/sign-up-for-microsoft-azure/)
 
 ## Details
 ### You will learn
