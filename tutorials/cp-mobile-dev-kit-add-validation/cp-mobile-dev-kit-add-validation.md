@@ -126,7 +126,7 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, click **OK**.
 
-2. Update a record with no contain of **@** in Email property throws a validation failure message.
+2. In EMAIL property, enter a value with no contain of **@**, it throws a validation failure message on saving the record.
 
     ![MDK](img_5.2.1.png)
     ![MDK](img_5.2.2.png)
@@ -137,7 +137,7 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, click **OK**.
 
-2. Update a record with no contain of **@** in Email property throws a validation failure message.
+2. In Email property, enter a value with no contain of **@**, it throws a validation failure message on saving the record.
 
     ![MDK](img_5.2.3.png)
     ![MDK](img_5.2.4.png)
@@ -154,7 +154,7 @@ Deploy the updated application to your MDK client.
 
     >!![MDK](img_5.6.png)
 
-2. Update a record with no contain of **@** in Email property throws a validation failure message.
+2. In Email property, enter a value with no contain of **@**, it throws a validation failure message on saving the record.
 
     !![MDK](img_5.4.png)
     !![MDK](img_5.5.png)
