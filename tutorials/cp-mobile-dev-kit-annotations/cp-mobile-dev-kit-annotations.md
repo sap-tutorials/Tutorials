@@ -177,7 +177,7 @@ This step includes creating the mobile development kit project in the editor.
 
 [ACCORDION-BEGIN [Step 5: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
