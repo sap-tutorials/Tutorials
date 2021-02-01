@@ -55,7 +55,7 @@ With above details, you will next configure an app in Mobile Services, add root 
 
 [ACCORDION-BEGIN [Step 2: ](Configure new MDK app in Mobile Services cockpit)]
 
-1. Navigate to [SAP Cloud Platform Mobile Services cockpit on Cloud Foundry environment](fiori-ios-hcpms-setup).
+1. Navigate to [SAP Mobile Services cockpit on Cloud Foundry environment](fiori-ios-hcpms-setup).
 
 2. On the home screen, select **Create new app**.
 

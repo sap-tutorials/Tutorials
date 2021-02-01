@@ -40,7 +40,7 @@ You can also check out more information on the Fiori elements [List Report](http
 
 [ACCORDION-BEGIN [Step 2: ](Add annotation information in the backend destination)]
 
-Sample backend in SAP Cloud Platform Mobile Services provides annotation functionality for **Products**. If you add annotation path in given backend endpoint, the same annotation information can be leveraged by MDK editor to generate related CRUD pages.
+Sample backend in SAP Mobile Services provides annotation functionality for **Products**. If you add annotation path in given backend endpoint, the same annotation information can be leveraged by MDK editor to generate related CRUD pages.
 
 Make sure you have already configured an app in Mobile Services cockpit and have added Sample service as per step 3 in [this](cp-mobile-dev-kit-ms-setup) tutorial.
 
@@ -116,7 +116,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img_3.5.png)
 
-    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services and SAP Cloud Platform.
+    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services and SAP Business Technology Platform.
 
     Since you will create an online based app, hence _Enable Offline Store_ option is unchecked.
 
@@ -175,7 +175,7 @@ This step includes creating the mobile development kit project in the editor.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 5: ](Deploy the application)]
 
 So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
 
