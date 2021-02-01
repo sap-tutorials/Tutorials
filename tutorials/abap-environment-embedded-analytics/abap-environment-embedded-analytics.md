@@ -15,8 +15,8 @@ author_profile: https://github.com/niloofar-flothkoetter
 
 ## Details
 ### You will learn
-  - How to create an analytical report (query) as CDS View Entities
-  - How to connect an ABAP System to SAP Analytics Cloud (SAP Analytics Cloud)
+  - How to create an analytical query as CDS View Entities
+  - How to connect an ABAP System to SAP Analytics Cloud
   - How to consume queries on SAP Analytics Cloud by creating models and stories
 
 Always replace `XXX` with your initials or group number.
@@ -24,7 +24,7 @@ Always replace `XXX` with your initials or group number.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
-The new **RAP based InA service exposure** enables the SAP BTP ABAP Environment developers to develop analytical queries(based on ABAP-CDS analytical data models) and expose them via the `InA` (Information Protocol) service protocol. These analytical queries can be further consumed in the SAP Analytics cloud to create analytical models, stories, multi-dimensional reports and more.
+The new **RAP based InA service exposure** enables the SAP Business Technology Platform ABAP Environment developers to develop analytical queries(based on ABAP-CDS analytical data models) and expose them via the `InA` (Information Access) service protocol. These analytical queries can be further consumed in the SAP Analytics cloud to create analytical models, stories, multi-dimensional reports and more.
 
 ![overview](1.png)
 
@@ -64,11 +64,24 @@ The new **RAP based InA service exposure** enables the SAP BTP ABAP Environment 
 
 
 [ACCORDION-BEGIN [Step 3: ](Implement dimension as CDS view entity)]
+
+  The dimensional data are descriptive data such as the Airline ID, Connection ID, and so on. This tells you who, when, and what but does not give any quantifiable fields.
+
   These are mandatory header annotations for dimensions:
 
   `@Analytics.dataCategory: #DIMENSION`
 
   `@ObjectModel.representativeKey: 'AirlineID'`
+
+>- All dimensions must have an **`@Analytics.dataCategory: #DIMENSION`** classification in the header of the view entity.
+
+>- Dimensions with composite keys need a definition of a single field as a representative key, this configuration is achieved through annotation **`@ObjectModel.representativeKey`**.
+
+>- Associations with texts and names are executed through annotation **`@ObjectModel.text.element`**.
+
+>- Annotation **`@Semantics`** helps to define text and address fields.
+
+>- Associations of external attributes are determined by foreign keys using annotation **`@ObjectModel.foreignKey.association`**.
 
   1. Edit the code in your created data definition with **`/dmo/carrier as Airline`**  and use the code completion by pressing `CTRL + Space` keys to define your fields.
 
@@ -108,11 +121,6 @@ The new **RAP based InA service exposure** enables the SAP BTP ABAP Environment 
           Airline.currency_code as CurrencyCode
       }
     ```
-
-
-    >Associations with texts and names are executed through annotation **`@ObjectModel.text.element`**.
-
-    >Annotation **`@Semantics`** helps to define text and address fields.
 
   3. Save an activate your data definition.
 
@@ -250,7 +258,7 @@ The new **RAP based InA service exposure** enables the SAP BTP ABAP Environment 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Implement cube as CDS view entity)]
-  The dimensions that are created in last steps will be used in this step to create a cube.
+  We will implement a cube, which is linked to all dimensions, what we created in last steps.
 
   1. Follow the procedure in step 2 and create a **Data Definition** to implement your cube.
 
@@ -269,6 +277,7 @@ The new **RAP based InA service exposure** enables the SAP BTP ABAP Environment 
     ```
 
   4.  All Cubes must have at least one measure.
+  The measurable data are the quantifiable fields that can be calculated, such as number of flight bookings and number of flight seats. Using a query, you can SUM these fields.
 
     ```measure
           @EndUserText.label: 'Total of Bookings'
@@ -368,7 +377,7 @@ The new **RAP based InA service exposure** enables the SAP BTP ABAP Environment 
 
       `@Analytics.query: true`
 
-  3. With the annotation `@AnalyticsDetails.query.axis:<VALUE>`, the elements of the view can be positioned on multiple axes. The elements can be directly annotated with their axis. All measures (elements which can be aggregated) need to be on the same axis. The annotation of the first measure will therefore be used for all measures of the query. If `@AnalyticsDetails.query.axis:<VALUE>` is not found, the system positions the measures on the columns.
+  3. With the annotation `@AnalyticsDetails.query.axis:<VALUE>`, the elements of the view can be positioned on multiple axes: Rows, Columns and Free. The elements can be directly annotated with their axis. All measures (elements which can be aggregated) need to be on the same axis. The annotation of the first measure will therefore be used for all measures of the query. If `@AnalyticsDetails.query.axis:<VALUE>` is not found, the system positions the measures on the columns.
 
     >The default value for elements that are not measures is the free axis. Note that elements in the projection list, which belong to the same ﬁeld in the query, will be grouped together.
 
@@ -452,7 +461,7 @@ The new **RAP based InA service exposure** enables the SAP BTP ABAP Environment 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create service binding via InA)]
+[ACCORDION-BEGIN [Step 8: ](Create service binding as InA)]
   The service binding is used to bind a service definition to a communication protocol and in our case, the protocol that enables web-based data access from ABAP systems is the Information Access (InA) protocol.
 
   1. Right-click your created query in step 6 and choose **New Service Binding**.

@@ -8,7 +8,7 @@ primary_tag: products>sap-cloud-platform\, kyma-runtime
 ---
 
 ## Prerequisites
-- You've installed [Node.js](https://nodejs.org/en/download/releases/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number, like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
+- You've installed [Node.js](https://nodejs.org/en/download/releases/). Make sure you run the Node.js version 12 . Refrain from using any other versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
 - Latest version of [Visual Studio Code](https://code.visualstudio.com/)
 - A Kyma runtime -- see [Enable SAP Cloud Platform, Kyma runtime](cp-kyma-getting-started)
 - The Kubernetes CLI installed and configured with your Kubeconfig -- see [Install the Kubernetes Command Line Tool](cp-kyma-download-cli)
@@ -145,7 +145,7 @@ The browser page should resemble
 
 [ACCORDION-BEGIN [Step 5: ](Build the Docker image)]
 
-Run the following commands from the `cap-sample` directory within your CLI.
+Run the following commands from the `cap-service` directory within your CLI.
 
 >Make sure to replace the value of `<your-docker-id>` with your Docker account ID.
 
@@ -166,14 +166,14 @@ Run the following commands from the `cap-sample` directory within your CLI.
 
 [ACCORDION-BEGIN [Step 6: ](Use the Docker image locally)]
 
-Run the following commands from the `cap-sample` directory within your CLI.
+Run the following commands from the `cap-service` directory within your CLI.
 
 >Make sure to replace the value of `<your-docker-id>` with your Docker account ID.
 
 1. Start the image locally by running the following command:  
 
     ```Shell/Bash
-    docker run -p 4004:4004 <dockerid>/cap-service:latest --name cap-service
+    docker run -p 4004:4004 --name cap-service <dockerid>/cap-service:latest
     ```
 
     >The -p command instructs Docker to map the host port 4004, shown on the left of the colon, to the port exposed by the image 4004, shown on the right. Using the --name parameter allows for an easy reference to the image to stop, start or remove it which is used in a later step.
