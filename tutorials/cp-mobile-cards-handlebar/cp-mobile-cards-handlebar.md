@@ -28,7 +28,7 @@ A Company wants managers to have a set of `KPIs` available on a mobile device. I
 
 [ACCORDION-BEGIN [Step 2: ](Create a new card)]
 
-Make sure you have logged into the **SAP Cloud Platform Mobile Services cockpit**. Navigate to **SAP Mobile Cards** to look into Mobile Cards configuration.
+Make sure you have logged into the **SAP Mobile Services cockpit**. Navigate to **SAP Mobile Cards** to look into Mobile Cards configuration.
 
 ![SAP Cloud Platform Mobile Services - Opera](img_000.png)
 

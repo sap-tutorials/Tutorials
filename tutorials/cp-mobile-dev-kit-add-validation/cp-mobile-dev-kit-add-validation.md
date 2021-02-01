@@ -99,7 +99,7 @@ Now, that you have created the validation rule, you will add it to the Update ac
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 4: ](Deploy the application)]
 
 Deploy the updated application to your MDK client.
 
@@ -107,15 +107,15 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img_4.1.png)
 
-2. Select deploy target as **Mobile Services**.
+2. Select deploy target as **Mobile & Cloud**.
 
     !![MDK](img_4.2.png)
 
-    You should see **Deploy succeeded** message.
+    You should see success message for both deployments.
 
     !![MDK](img_4.3.png)
 
-[VALIDATE_2]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Test the application)]
@@ -126,7 +126,7 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, click **OK**.
 
-2. Update a record with no contain of **@** in Email property throws a validation failure message.
+2. In EMAIL property, enter a value with no contain of **@**, it throws a validation failure message on saving the record.
 
     ![MDK](img_5.2.1.png)
     ![MDK](img_5.2.2.png)
@@ -137,10 +137,27 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, click **OK**.
 
-2. Update a record with no contain of **@** in Email property throws a validation failure message.
+2. In Email property, enter a value with no contain of **@**, it throws a validation failure message on saving the record.
 
     ![MDK](img_5.2.3.png)
     ![MDK](img_5.2.4.png)
+
+[OPTION END]
+
+[OPTION BEGIN [Web]]
+
+1. Either click the highlighted button or refresh the web page to load the changes.
+
+    !![MDK](img_5.3.png)
+
+    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+
+    >!![MDK](img_5.6.png)
+
+2. In Email property, enter a value with no contain of **@**, it throws a validation failure message on saving the record.
+
+    !![MDK](img_5.4.png)
+    !![MDK](img_5.5.png)
 
 [OPTION END]
 
@@ -149,6 +166,6 @@ Deploy the updated application to your MDK client.
 
 ---
 
-Congratulations, you have successfully completed **Create Your First Mobile App with the Mobile Development Kit (MDK)** mission and you are now all set to [Enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
+Congratulations, you have successfully completed **create Your First MDK Application** mission and you are now all set to [enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
 
 ---

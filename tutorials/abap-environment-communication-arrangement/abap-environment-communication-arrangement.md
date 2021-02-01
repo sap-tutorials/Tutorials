@@ -1,7 +1,7 @@
 ---
 auto_validation: true
 title: Maintain a Communication Arrangement for Inbound Communication
-description: Create a communication user and a communication system for an OData service in SAP Cloud Platform ABAP Environment.
+description: Create a communication user and a communication system for an OData service in SAP Business Technology Platform ABAP Environment.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 15
@@ -157,7 +157,7 @@ Select your communication scenario that you created in the last tutorial, `Expos
 
 
 [ACCORDION-BEGIN [Step 11: ](Check the service URL via Postman)]
-You can check your service URL via Postman. In Step 12 you'll learn how to check your communication scenario via SAP Cloud Platform Cockpit.
+You can check your service URL via Postman. In Step 12 you'll learn how to check your communication scenario via SAP BTP Cockpit.
 
   1. Paste your service URL in a browser or in Postman.
 
@@ -173,8 +173,8 @@ You can check your service URL via Postman. In Step 12 you'll learn how to check
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 12: ](Check communication scenario via SAP Cloud Platform Cockpit)]
-  1. Logon to your [SAP Cloud Platform Cockpit](https://account.hana.ondemand.com).
+[ACCORDION-BEGIN [Step 12: ](Check communication scenario via SAP BTP Cockpit)]
+  1. Logon to your [SAP BTP Cockpit](https://account.hana.ondemand.com).
 
     ![check scenario](signIn.png)
 

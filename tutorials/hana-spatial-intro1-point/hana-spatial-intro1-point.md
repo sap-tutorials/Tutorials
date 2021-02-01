@@ -4,7 +4,7 @@ description: A point is a spatial data type for a 0-dimensional geometry represe
 auto_validation: true
 time: 10
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition   ]
+tags: [  tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-hana\,-express-edition, software-product-function>sap-hana-spatial, software-product-function>sap-hana-multi-model-processing  ]
 ---
 ## Prerequisites
 - **System access:** You have developer access to SAP HANA database instance, for example [SAP HANA Cloud trial](https://developers.sap.com/topics/hana.html)
