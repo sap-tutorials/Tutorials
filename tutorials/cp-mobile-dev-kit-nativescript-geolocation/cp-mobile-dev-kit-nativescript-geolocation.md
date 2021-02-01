@@ -17,7 +17,7 @@ author_profile: https://github.com/jitendrakansal
 ### You will learn
   - How to reference the NativeScript Geolocation plugin from a rule
   - How to add a NativeScript plugin to your branded MDK client
-  - How to build a Mobile development kit client for iOS & Android and connect to SAP Cloud Platform Mobile application
+  - How to build a Mobile development kit client for iOS & Android and connect to SAP Mobile application
   - How to capture the device's current location
 
 You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/2-Add-NativeScript-Plugin-in-an-MDK-App) and start directly with step 4 in this tutorial.
@@ -168,7 +168,7 @@ In `GetCoordinates.js` file, you referred `nativescript-geolocation` and `tns-co
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy and activate application)]
+[ACCORDION-BEGIN [Step 5: ](Deploy the application)]
 
 So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
 
