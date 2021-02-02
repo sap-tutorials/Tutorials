@@ -18,6 +18,10 @@ primary_tag: products>sap-hana
 - How to create a calculation view in SAP Business Application Studio
 - How to join data from another calculation view
 
+A video version of this tutorial is also available:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fwwPcYZb-jQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a Calculation View)]

@@ -16,6 +16,10 @@ primary_tag: products>sap-hana
  - How to create Calculation View of type Cube using SAP Business Application Studio
  - How to configure data masking to a column in order to protect sensitive data
 
+A video version of this tutorial is also available:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kZhATB7yJ-M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a Salary Table and load data into it)]
