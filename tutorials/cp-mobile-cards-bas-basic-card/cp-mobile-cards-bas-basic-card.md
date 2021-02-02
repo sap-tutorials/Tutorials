@@ -10,7 +10,7 @@ author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites
- - [Completed the starter mission](mission.mobile-cards-get-started) or [Set up Mobile Services on you SAP Cloud Platform account](cp-mobile-cards-setup)
+ - [Completed the starter mission](mission.mobile-cards-get-started) or [Set up Mobile Services on your SAP Business Technology Platform account](cp-mobile-cards-setup)
  - [Set up SAP Business Application Studio for Mobile Development](cp-mobile-bas-setup)
  - **Install SAP Mobile Cards Application:**
     <table><tr><td align="center">!![Play Store QR Code](pre_qr_android.png)<br>Android</td><td align="center">!![App Store QR Code](pre_qr_ios.png)<br>iOS</td></tr></table>
@@ -19,7 +19,7 @@ author_profile: https://github.com/sandeep-tds
 ### You will learn
   - How to create a card using a template in SAP Business Application Studio
   - How to design and develop SAP Mobile Cards in SAP Business Application Studio
-  - How to deploy a card to SAP Cloud Platform Mobile Services from SAP Business Application Studio
+  - How to deploy a card to SAP Mobile Services from SAP Business Application Studio
 
 Click [here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mck/mck-development-bas.html) to learn more about SAP Mobile Cards in SAP Business Application Studio.
 

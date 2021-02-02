@@ -1,6 +1,6 @@
 ---
 title: Create Your Own SAP Fiori Launchpad
-description: Using Portal, create your own SAP Fiori launchpad to host your applications.
+description: Using SAP Cloud Portal service, create your own SAP Fiori launchpad to host your applications.
 auto_validation: false
 primary_tag: products>sap-fiori
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-fiori, tutorial>license ]
@@ -10,17 +10,17 @@ time: 10
 
 ## Details
 ### You will learn  
-- How to create a launchpad page using the Portal
+- How to create a launchpad page using the SAP Cloud Portal service
 
-Your Launchpad can be used with Web IDE to host apps that are deployed to the SAP Cloud Platform and registered with SAP Fiori.
+Your Launchpad can be used with SAP Web IDE to host apps that are deployed to the SAP Business Technology Platform and registered with SAP Fiori.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Go to Services)]
 
-Back in your SAP Cloud Platform cockpit, go to the **Services** page.
+Back in your SAP BTP cockpit, go to the **Services** page.
 
-![service in Cloud Platform cockpit](1.png)
+![service in SAP BTP cockpit](1.png)
 
 In the search menu, search for **Fiori**.
 
@@ -117,7 +117,7 @@ When the dialog box pops up, select **OK**.
 
 ![SAPUI5 version warning message](13.png)
 
-From the number drop down menu, select the version number **1.40.18**.
+From the number drop down menu, select the version number **1.84.4**.
 
 ![SAPUI5 number version options](14.png)
 
@@ -125,7 +125,7 @@ Verify your SAPUI5 version settings match the screenshot below and click **SAVE*
 
 ![settings page save button](15.png)
 
-When the read only settings page load, verify that under **System Settings** the _SAPUI5 Version_ is `Custom (1.40.18)`
+When the read only settings page load, verify that under **System Settings** the _SAPUI5 Version_ is `Custom (1.84.4)`
 
 ![SAPUI5 version read only](16.png)
 

@@ -19,7 +19,7 @@ Go to the **`launchpad`** on the dock. Type `System` in the search bar and selec
 
 ![System information](1.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 

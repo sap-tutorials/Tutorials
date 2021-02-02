@@ -1,6 +1,6 @@
 ---
 title: Deploy a Node.js Application for SAP HANA
-description: Deploy a sample Node.js application which connects to SAP HANA, Express Edition or SAP HANA Cloud trial.
+description: Deploy a sample Node.js application which connects to SAP HANA, express edition or SAP HANA Cloud trial.
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
@@ -10,13 +10,13 @@ time: 30
 
 ## Prerequisites and Assumptions
  - User knows how to install packages and develop using Node.js
- - Setup: `HANA, express edition` or `HANA Cloud` must be running and accessible from your client platform. For instructions on how to setup a `HANA, express edition` see the [HANA Express database deploy tutorial](hxe-database-server). For instructions on starting `SAP HANA Cloud` trial see the [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics).
- - This tutorial assumes that you have a database login that can access the `M_DATABASE` view in the `HANA, express edition` `SystemDB` or in `HANA Cloud`.
+ - Setup: `HANA, express edition` or `SAP HANA Cloud` must be running and accessible from your client platform. For instructions on how to setup a `HANA, express edition` see the [HANA Express database deploy tutorial](hxe-database-server). For instructions on starting `SAP HANA Cloud` trial see the [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics).
+ - This tutorial assumes that you have a database login that can access the `M_DATABASE` view in the `HANA, express edition` `SystemDB` or in `SAP HANA Cloud`.
  - **Tutorials:** [Setup Node.js to connect to SAP HANA](hxe-nodejs-setup)
 
 ## Details
 ### You will learn  
-This tutorial will guide you through the process to deploy a sample Node.js application  which connects to SAP HANA, Express Edition or HANA Cloud.
+This tutorial will guide you through the process to deploy a sample Node.js application  which connects to SAP HANA, express edition or SAP HANA Cloud.
 
 
 ---
@@ -70,7 +70,7 @@ Access the HANA content from this Node application.  First install HANA database
 npm install @sap/hdbext
 ```
 
-Create a Node application that allows you to access HANA express edition data.
+Create a Node application that allows you to access SAP HANA, express edition data.
 
 Open the `hxeapps.js` file and add the following content:
 
@@ -223,7 +223,7 @@ router.get('/', function (req, res, next) {
 
 module.exports = router;
 ```
-Replace the `<HANA hostname>` with the IP address or host name of your HANA Express or HANA Cloud database server. Replace `user` with `SYSTEM` if targeting HANA Express or `DBADMIN` if targeting HANA Cloud.  Replace `HANA Port` with the SQL port for your HANA system. Replace the `<HANA SYSTEM or DBADMIN user password>` with your database system user password. Then save changes.
+Replace the `<HANA hostname>` with the IP address or host name of your SAP HANA, express edition or SAP HANA Cloud database server. Replace `user` with `SYSTEM` if targeting HANA Express or `DBADMIN` if targeting SAP HANA Cloud.  Replace `HANA Port` with the SQL port for your SAP HANA system. Replace the `<HANA SYSTEM or DBADMIN user password>` with your database system user password. Then save changes.
 
 Edit the file `views/index.jade` that controls the `WebApp` output layout as follows:
 
