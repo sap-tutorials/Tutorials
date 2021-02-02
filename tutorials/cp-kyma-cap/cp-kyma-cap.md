@@ -249,7 +249,7 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     ```Shell/Bash
     kubectl -n dev get po
     ```
-    This command results in a table similar to the one below, showing a Pod with the name `cap-service-` ending with a random hash. Make sure to adjust this value in the subsequent commands. Notice that **STATUS** is reporting `CreateContainerConfigError`.
+    This command results in a table similar to the one below, showing a Pod with the name `cap-service-` ending with a random hash. Make sure to adjust this value in the subsequent commands.
 
     ```Shell/Bash
     NAME                           READY   STATUS    RESTARTS   AGE
