@@ -24,7 +24,7 @@ Visit <https://www.sap.com> and click the **Log On** icon in the upper-right cor
 
 ![log on icon](homepage.png)
 
-**If you have an account** on <a href="https://www.sap.com" target="new"><b>`www.sap.com`</b></a> (e.g. an S, C, D or I number) you can enter it or the associated email along with your password. If you don't have an account yet, you can select one of the other login methods or click **Register** to create an account.
+**If you have an account** on <a href="https://www.sap.com" target="new"><b>`www.sap.com`</b></a> (e.g. a P, S, C, D or I number) you can enter it or the associated email along with your password. If you don't have an account yet, you can select one of the other login methods or click **Register** to create an account.
 
 !![log on dialog](option-logon.png)
 
