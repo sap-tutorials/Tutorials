@@ -9,8 +9,8 @@ time: 5
 
 ## Prerequisites  
 - A text editor (e.g., Notepad, Atom, Sublime)
-- [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account)
-- [Configure Essential Local Development Tools](https://developers.sap.com/group.scp-local-tools.html)
+- [Sign up for a free SAP Business Technology Platform trial account](hcp-create-trial-account)
+- [Configure Essential Local Development Tools](group.scp-local-tools)
 
 
 ## Details

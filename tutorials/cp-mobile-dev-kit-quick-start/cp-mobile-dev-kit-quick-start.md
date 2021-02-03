@@ -84,9 +84,9 @@ This is how the project structure looks like within the workspace.
 
 !![MDK](img_2.png)
 
-These are the metadata definitions available in the editor and the format in which these metadata definitions are stored in the editor. Just to brief on some of these:
+These are the [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/App.schema.html) available in the editor and the format in which these metadata definitions are stored in the editor. Just to brief on some of these:
 
-- **`InitializeOffline.action`**: This action will initialize the offline store in the MDK mobile client and will download the required data to the offline store on the mobile device. In Web environment, it will initialize the service to be consumed in online mode.
+- **`InitializeOffline.action`**: For Mobile applications, this action binds the application to the Mobile Services Offline OData server and downloads the required data to the offline store on the mobile device. For Web applications, it will initialize the service to be consumed in online mode.
 
 - **`DownloadOffline.action`** and **`UploadOffline.action`**: These actions are applicable to Mobile client only. Using app initialization, data is downloaded to the offline store. If you want to have the application download any updated data from the backend server or upload changed data to the backend server, these actions will be needed.
 
@@ -98,18 +98,16 @@ These are the metadata definitions available in the editor and the format in whi
 
 - **`Application.app`**: this is the main configuration file for your application from within SAP Business Application Studio. Here you set your start page (here in this tutorial, it is main.page), action settings for different stages of the application session lifecycle, push notifications, and more.
 
->You can find more details about [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/App.schema.html).
+>Open the application settings in the application editor by double clicking on the `Application.app`.
 
-Open the application settings in the application editor by double clicking on the `Application.app`.
-
-!![MDK](img_2.1.png)
+>!![MDK](img_2.1.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 3: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services and Cloud Foundry to consume it as Mobile and Web application respectively.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services and Cloud Foundry to consume it as Mobile and Web application respectively.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
@@ -117,7 +115,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 2. Select deploy target as **Mobile & Cloud**.
 
-   First deployment starts to Mobile Services (for Mobile application) followed by to Cloud Foundry (for Web application). MDK metadata will gets deployed to HTML5 repository on Cloud Platform.
+   MDK editor will deploy the metadata to Mobile Services (for Mobile application) followed by to Cloud Foundry (for Web application).
 
    !![MDK](img_3.2.gif)
 
@@ -134,9 +132,9 @@ So far, you have learned how to build an MDK application in the SAP Business App
 >- HTML repo runtime
 
 
-   You should see successful messages for both deployments.
+You should see successful messages for both deployments.
 
-  !![MDK](img_3.3.png)
+!![MDK](img_3.3.png)
 
 [DONE]
 [ACCORDION-END]

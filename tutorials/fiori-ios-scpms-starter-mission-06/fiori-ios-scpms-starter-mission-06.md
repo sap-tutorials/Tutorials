@@ -11,7 +11,7 @@ time: 35
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0 or higher
+- **SAP SDK for iOS:** Version 5.0 or higher
 
 ## Details
 ### You will learn  
@@ -26,7 +26,7 @@ time: 35
 In the last tutorial you made changes to your Xcode project settings to enable Mac Catalyst for your app project.
 This tutorial is about making some changes to the project to fit better on MacOS without changing the appearance on iPhone or iOS.
 
-You are going to cover the basics for Mac Catalyst and the SAP Cloud Platform SDK for iOS but using the previously mentioned documentation in combination with this tutorial series you should be well suited to build great business apps.
+You are going to cover the basics for Mac Catalyst and the SAP SDK for iOS but using the previously mentioned documentation in combination with this tutorial series you should be well suited to build great business apps.
 
 In the beginning you want to change the app flow to have a split view in place when running on Mac Catalyst. The split view or Split View allows Mac Catalyst to display a sidebar similar to Apple's Music or Stocks applications on MacOS.
 

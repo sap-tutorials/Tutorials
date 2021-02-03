@@ -11,13 +11,13 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- **Download the latest version of Mobile Development Kit SDK** either from community [download page](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/Mobile%2520development%2520kit) if you are a SAP Cloud Platform Mobile Services customer
+- **Download the latest version of Mobile Development Kit SDK** either from community [download page](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/Mobile%2520development%2520kit) if you are a SAP Mobile Services customer
 
 ## Details
 ### You will learn
   - How to install a Mobile development kit client SDK on Mac and Windows OS
   - How to build a Mobile development kit client for iOS and Android
-  - How to connect to SAP Cloud Platform Mobile app
+  - How to connect to SAP Mobile app
 
   The SAP Mobile Services client available in the App Store is meant for demo and development or learning purposes. For distribution to your users, you need to build a custom client. This enables you to:
 
@@ -382,9 +382,9 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     ![MDK](img_5.5.png)
 
-6. Tap **START** to connect MDK client to SAP Cloud Platform.
+6. Tap **START** to connect MDK client to SAP Business Technology Platform (BTP).
 
-7. Enter your credentials to login to SAP Cloud Platform and tap **Log On** to authenticate.
+7. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
 
     ![MDK](img_5.7.png)
 
@@ -436,9 +436,9 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     ![MDK](img_5.13.1.png)
 
-    Tap **Start** to connect MDK client to SAP Cloud Platform.
+    Tap **Start** to connect MDK client to SAP Business Technology Platform (BTP).
 
-6. Enter your credentials to login to SAP Cloud Platform and tap **Log On** to authenticate.
+6. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
 
     ![MDK](img_5.14.png)
 

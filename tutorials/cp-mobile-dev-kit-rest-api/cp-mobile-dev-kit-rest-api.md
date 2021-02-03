@@ -55,7 +55,7 @@ With above details, you will next configure an app in Mobile Services, add root 
 
 [ACCORDION-BEGIN [Step 2: ](Configure new MDK app in Mobile Services cockpit)]
 
-1. Navigate to [SAP Cloud Platform Mobile Services cockpit on Cloud Foundry environment](fiori-ios-hcpms-setup).
+1. Navigate to [SAP Mobile Services cockpit on Cloud Foundry environment](fiori-ios-hcpms-setup).
 
 2. On the home screen, select **Create new app**.
 
@@ -213,7 +213,7 @@ You will add an **Object Table** control  item on `Main.page` to display the lis
 
 [ACCORDION-BEGIN [Step 6: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 

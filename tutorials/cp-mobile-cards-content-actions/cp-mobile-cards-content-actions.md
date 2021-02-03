@@ -10,7 +10,7 @@ author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites
-- [Completed the starter mission](mission.mobile-cards-get-started) or [Set up Mobile Services on you SAP Cloud Platform account](cp-mobile-cards-setup)
+- [Completed the starter mission](mission.mobile-cards-get-started) or [Set up Mobile Services on your SAP Business Technology Platform account](cp-mobile-cards-setup)
 - [Set up SAP Business Application Studio for Mobile Development](cp-mobile-bas-setup)
 - [Created your first card in SAP Business Application Studio](cp-mobile-cards-bas-basic-card)
 - **Install SAP Mobile Cards Application:**
