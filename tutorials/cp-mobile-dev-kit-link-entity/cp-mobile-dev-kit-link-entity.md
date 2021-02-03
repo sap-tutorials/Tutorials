@@ -12,8 +12,8 @@ author_profile: https://github.com/jitendrakansal
 ## Details
 ### You will learn
   - How to create relationship between parent and child entities
-  - How to create a local child entity to an existing parent entity
-  - How to create a local parent entity first and then a local child  entity
+  - How to create a child entity to an existing parent entity
+  - How to create a parent entity first and then a child  entity
   - How to implement dynamic data subscription
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Enhance-Your-First-MDK-App-with-Additional-Functionalities/4-cp-mobile-dev-kit-customer-order) to start with this tutorial.
@@ -333,7 +333,7 @@ In `Customers_Detail.page`, select **Customer Orders** Object Table control. In 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 7: ](Deploy the application)]
 
 Deploy the updated application to your MDK client.
 
@@ -341,11 +341,11 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img_7.1.png)
 
-2. Select deploy target as **Mobile Services**.
+2. Select deploy target as **Mobile & Cloud**.
 
     !![MDK](img_7.2.png)
 
-    You should see **Deploy succeeded** message.
+    You should see success message for both deployments.
 
     !![MDK](img_7.3.png)
 
@@ -366,7 +366,7 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_8.1.png)
 
-4. As we provided default values to the properties, you may change it if required. Tap **save** icon.
+4. As you provided default values to the properties, you may change it if required. Tap **save** icon.
 
     ![MDK](img_8.2.png)
 
@@ -390,7 +390,7 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_8.6.png)
 
-4. As we provided default values to the properties, you may change it if required. Tap **Save**.
+4. As you provided default values to the properties, you may change it if required. Tap **Save**.
 
     ![MDK](img_8.7.png)
 
@@ -401,6 +401,32 @@ Deploy the updated application to your MDK client.
 5. On Main page, tap **Sync** to send local changes to the backend, a successful message will be shown.
 
     ![MDK](img_8.9.png)  
+
+[OPTION END]
+
+[OPTION BEGIN [Web]]
+
+1. Either click the highlighted button or refresh the web page to load the changes.
+
+    !![MDK](img_8.11.png)
+
+    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+
+    >!![MDK](img_8.12.png)
+
+2. Click **Customer List** | click one of the available customer record,  you will then navigate to Customer detail page.
+
+3. You will see the **Create Order** option in customer detail page. Click it to create a new sales order.
+
+    !![MDK](img_8.13.png)
+
+4. As you provided default values to the properties, you may change it if required. Click **Save**.
+
+    !![MDK](img_8.14.png)
+
+    Now, you will notice that new record has been created and count value for **See All** is increased by one as you implemented in step 6.
+
+    !![MDK](img_8.15.png)
 
 [OPTION END]
 

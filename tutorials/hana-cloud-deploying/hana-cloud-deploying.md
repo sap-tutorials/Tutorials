@@ -9,7 +9,7 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You have a free SAP Business Technology Platform trial account: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+ - You have a free SAP Business Technology Platform trial account: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) 
 
 ## Details
 ### You will learn
