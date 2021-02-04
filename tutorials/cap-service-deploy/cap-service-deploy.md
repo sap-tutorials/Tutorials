@@ -123,7 +123,7 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
 
 4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
 
-!![application](application_running.png)
+!![application](application_local.png)
 
 [OPTION END]
 
@@ -162,7 +162,7 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
 
 4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
 
-    !![application](application_running.png)
+    !![application](application_local.png)
 
 [OPTION END]
 
