@@ -17,7 +17,7 @@ author_profile: https://github.com/raz-korn
 
 ## Details
 ### You will learn
-  - How to create an SAPUI5 application for SAP BTP, Cloud Foundry environment
+  - How to create an SAPUI5 application for SAP Business Technology Platform (BTP), Cloud Foundry environment
   - How to test-run the app locally in the dev space
 
 You will build an application that presents a list of suppliers from an on-premise backend. The suppliers' data will be retrieved from the `BusinessPartnerSet` collection in the `GWSAMPLE_BASIC` OData service that is available from SAP's ES5 demo gateway.
