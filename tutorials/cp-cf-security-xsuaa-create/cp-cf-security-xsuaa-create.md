@@ -413,7 +413,7 @@ Your application has two routes that are defined in the `manifest.yml`. The dire
 
 Assign your user the role collection that contains the necessary role to view the products in the product list.
 
-3. Open the SAP Cloud Platform Cockpit.
+3. Open the SAP BTP Cockpit.
 
 4. Navigate to your subaccount.
 
