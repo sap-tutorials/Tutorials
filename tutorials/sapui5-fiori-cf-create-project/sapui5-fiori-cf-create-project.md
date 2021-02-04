@@ -8,7 +8,7 @@ primary_tag: products>sap-cloud-platform-launchpad
 ---
 
 ## Prerequisites
- - Install at least version 1.3.1 of the [easy-ui5 generator](https://developers.sap.com/tutorials/cp-cf-sapui5-local-setup.html)
+ - Install at least version 1.3.1 of the [easy-ui5 generator](cp-cf-sapui5-local-setup)
 
 ## Details
 ### You will learn
@@ -44,7 +44,7 @@ Choose the following responses for the prompted parameters.
 |  :------------- | :-------------
 |  How do you want to name this project?          | **`products`**
 |  Which namespace do you want to use?    | **`tutorial`**
-|  On which platform would you like to host the application | **`SAP Cloud Platform Launchpad`**
+|  On which platform would you like to host the application | **`SAP Launchpad service`**
 |  Which view type do you want to use? | **`XML`**
 |  How do you want to name your main view? | **`MainView`**
 |  Where should your UI5 libs be served from?            | **`Content delivery network (SAPUI5)`**
@@ -94,7 +94,7 @@ Start the web server locally via the command line.
 npm start
 ```
 
-**Click** on the only tile you see in the Launchpad to start the SAPUI5 application.
+**Click** on the only tile you see in the SAP Fiori Launchpad to start the SAPUI5 application.
 
 !![local](./local.png)
 

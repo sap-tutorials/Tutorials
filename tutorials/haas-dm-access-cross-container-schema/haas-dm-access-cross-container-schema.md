@@ -10,24 +10,24 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ---
 
 ## Prerequisites
- - This tutorial is designed for HANA As A Service. Consider newer tutorials designed for HANA Cloud.
- - You have access to the database and SAP Cloud Platform cockpit.
+ - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
+ - You have access to the database and SAP BTP cockpit.
  - You have created a multi-target application with a database module [as explained in this tutorial](haas-dm-create-db-mta).
- - Optionally, you have created a remote source [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-connect-sdi.html).
+ - Optionally, you have created a remote source [as explained in this tutorial](haas-dm-connect-sdi).
 
 >**This tutorial cannot be completed with a trial account.**
 
 ## Details
 ### You will learn
   - How to create a plain schema, with a table and user to simulate a replicated schema
-  - How to create a user-provided service to access a database in SAP HANA as a Service
+  - How to create a user-provided service to access a database in SAP HANA service for SAP BTP
   - How to grant permissions to the technical users in your HDI container to access the database
 
 This tutorial is meant to be an example of cross-container access. Simple data models and loading mechanisms were chosen to simulate a schema replicated using tools such as SAP Landscape Transformation or an ABAP schema.
 
-For more information on this process and additional syntax options, refer to the [official documentation on SAP Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/a260b05631a24a759bba932aa6d81b64.html).
+For more information on this process and additional syntax options, refer to the [official documentation on SAP Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/a260b05631a24a759bba932aa6d81b64.html).
 
-If you are looking for the steps for an on-premise SAP HANA instance with XS Advanced, such as SAP HANA, express edition, [refer to this tutorial](https://developers.sap.com/tutorials/xsa-create-user-provided-anonymous-service.html).
+If you are looking for the steps for an on-premise SAP HANA instance with XS Advanced, such as SAP HANA, express edition, [refer to this tutorial](xsa-create-user-provided-anonymous-service).
 
 ---
 
@@ -62,7 +62,7 @@ Use the green play button or press **`F8`** to execute the statement.
 > ## What is going on?
 >
 >&nbsp;
-> You have created a plain schema in your SAP HANA database. When you [created a database module in SAP Web IDE](https://developers.sap.com/tutorials/haas-dm-create-db-mta.html), an HDI container was automatically generated.
+> You have created a plain schema in your SAP HANA database. When you [created a database module in SAP Web IDE](haas-dm-create-db-mta), an HDI container was automatically generated.
 >&nbsp;
 >
 > ![schema](access.png)
@@ -258,7 +258,7 @@ And use the following code in it:
 
 [ACCORDION-BEGIN [Step 6: ](OPTIONAL -  Grant access to a remote source)]
 
-**This step works only if** you have created a remote source to access a text file [using Smart Data Integration in this tutorial](https://developers.sap.com/tutorials/haas-dm-connect-sdi.html), go back to the Database Explorer and open a new SQL console to your instance of SAP HANA Service.
+**This step works only if** you have created a remote source to access a text file [using SAP HANA service smart data integration for SAP BTP in this tutorial](haas-dm-connect-sdi), go back to the Database Explorer and open a new SQL console to your instance of SAP HANA service for SAP BTP.
 
 Execute the following SQL command
 

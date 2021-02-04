@@ -455,4 +455,4 @@ Let's break down the code:
 
 Great job!
 
-You've extended the application with quite some custom business logic. In the next tutorial you'll start to make the application ready for SAP Cloud Platform, by running it with SAP HANA as the database.
+You've extended the application with quite some custom business logic. In the next tutorial you'll start to make the application ready for SAP Business Technology  Platform, by running it with SAP HANA as the database.

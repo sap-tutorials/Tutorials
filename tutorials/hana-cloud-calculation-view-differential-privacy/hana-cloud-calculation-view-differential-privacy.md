@@ -1,5 +1,5 @@
 ---
-title: Create a Calculation View with Differential Privacy in HANA Cloud
+title: Create a Calculation View with Differential Privacy in SAP HANA Cloud
 description: Use differential privacy to anonymize confidential data
 time: 20
 author_name: Thomas Jung
@@ -15,6 +15,10 @@ primary_tag: products>sap-hana
 ### You will learn
  - How to create Calculation View of type Cube using SAP Business Application Studio
  - How to configure data masking to a column in order to protect sensitive data
+
+A video version of this tutorial is also available:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kZhATB7yJ-M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 

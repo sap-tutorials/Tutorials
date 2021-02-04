@@ -259,9 +259,9 @@ author_profile: https://github.com/mervey45
 
      Add following information:
 
-      - Please choose the target: ABAP
       - Is this an SAP Cloud Platform system?: Y
       - Destination: press enter for default
+      - Is this an S/4 Cloud system? N
       - Name: press enter for default
       - Package: **`ztravel_app_xxx`**
       - Transport Request: **`<your_transport_request>`**

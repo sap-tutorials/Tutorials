@@ -24,14 +24,14 @@ This tutorial will walk you through the setup process of SAP HANA, express editi
 
  - **[Deploy SAP HANA Cloud trial](hana-cloud-deploying)**
 
- <b><span style="color:red">Or consider directly installing HANA Express yourself using one of these options:</span></b>
+ <b><span style="color:red">Or consider directly installing SAP HANA, express edition yourself using one of these options:</span></b>
 
  - **[SAP HANA, express edition - Server Only Deployment Options](hxe-database-server)**
 
 
 <div>&nbsp;</div>
 <div align="left">
-<span style="color:black;align:middle">Before you get started, please be aware that using SAP HANA, express AMI on AWS is <span style="color:red;align:middle">not covered by the AWS Free tier, </span>and therefore charges for both the EC2 instance AND the provisioned EBS volumes used by this instance will incur.  </span>
+<span style="color:black;align:middle">Before you get started, please be aware that using SAP HANA, express edition AMI on AWS is <span style="color:red;align:middle">not covered by the AWS Free tier, </span>and therefore charges for both the EC2 instance AND the provisioned EBS volumes used by this instance will incur.  </span>
 </div>
 <div>&nbsp;</div>
 <div align="left"><span style="color:black;align:middle">With the EBS volumes types in use, <span style="color:red;align:middle">even if your EC2 instance running your SAP HANA, express edition is _stopped_, charges will be incurred </span>for the provisioned EBS volumes.</span></div>

@@ -12,7 +12,7 @@ primary_tag: products>sap-hana
 
 ## Details
 ### You will learn
-  - How to enable tracing using `hdbsqldbc_cons` or environment variables 
+  - How to enable tracing using `hdbsqldbc_cons` or environment variables
   - How to record trace details to a file, `stdout`, or `stderr`
 
 Trace files can help SAP Support diagnose unexpected behavior.
