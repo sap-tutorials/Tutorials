@@ -109,7 +109,7 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
 
     > This process takes some minutes.
 
-    > The first command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db` service that you've created in the previous step.
+    > The first part of the command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db` service that you've created in the previous step.
 
     > See the section [Deploy using cf push](https://cap.cloud.sap/docs/advanced/deploy-to-cloud#deploy-using-cf-push) in the CAP documentation for more details.
 
@@ -150,6 +150,8 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
     > This process takes some minutes.
 
     > The first part of the command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db` service that you've created in the previous step.
+
+    > See the section [Deploy using cf push](https://cap.cloud.sap/docs/advanced/deploy-to-cloud#deploy-using-cf-push) in the CAP documentation for more details.
 
 3. In the deploy log, find the application URL in the `routes` line at the end:
 
