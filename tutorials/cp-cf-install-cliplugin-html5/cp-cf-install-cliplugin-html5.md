@@ -1,6 +1,6 @@
 ---
 title: Install the HTML5 Applications Repository Cloud Foundry CLI Plugin
-description: Download and install the Command Line Interface (CLI) plugin. This plugin allows you to read from and write to the HTML5 Applications Repository.
+description: Download and install the Command Line Interface (CLI) plugin. This plugin allows you to read from and write to the SAP HTML5 Application Repository service for SAP BTP.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud]
@@ -26,7 +26,7 @@ cf --version
 Now you should see the release number of the CLI you are using.
 
 
-> You can go to [this tutorial](https://developers.sap.com/tutorials/cp-cf-download-cli.html) to install the Cloud Foundry CLI if necessary
+> You can go to [this tutorial](cp-cf-download-cli) to install the Cloud Foundry CLI if necessary
 
 
 [DONE]

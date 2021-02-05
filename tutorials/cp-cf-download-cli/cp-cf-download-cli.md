@@ -69,7 +69,7 @@ First, find the correct API URL for your region.  Select the correct region from
 
 You can also identify your API Endpoint using your Cloud Foundry account:
 
-First, navigate to the [SAP Cloud Platform Cockpit](https://hanatrial.ondemand.com) and select **Enter Your Trial Account**
+First, navigate to the [SAP BTP cockpit](https://hanatrial.ondemand.com) and select **Enter Your Trial Account**
 
 !![entertrial](entertrial.png)
 
@@ -95,7 +95,7 @@ cf login -a <URL>
 
 When prompted, enter your username and password.  Once you are logged in, you should see your API endpoint, user, org, and space.
 
-You are now set up to use the Cloud Foundry systems on SAP Cloud Platform.
+You are now set up to use the SAP BTP, Cloud Foundry environment.
 
 > For more information on the Command Line Interface (CLI), go to the Cloud Foundry [Getting Started with the CLI](http://docs.cloudfoundry.org/cf-cli/getting-started.html) website.
 
