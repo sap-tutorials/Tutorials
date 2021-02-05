@@ -146,7 +146,10 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
     ```Shell/Bash
       cds watch
     ```
-    > This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown:
+
+    > This command tries to start a `cds` server. Whenever you feed your project with new content, for example, by adding or modifying `.cds`, `.json`, or `.js` files, the server automatically restarts to serve the new content.
+
+    > As there's no content in the project so far, it just keeps waiting for content with a message as shown:
 
     ```
     cds serve all --with-mocks --in-memory?
