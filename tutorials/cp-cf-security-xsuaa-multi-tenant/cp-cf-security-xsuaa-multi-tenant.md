@@ -320,7 +320,7 @@ cf map-route approuter cfapps.eu10.hana.ondemand.com --hostname consumer-tenant-
 [ACCORDION-BEGIN [Step 8: ](Access the application with the consumer subaccount)]
 To access the application you need to subscribe to it. Follow these steps to subscribe to the SaaS application with the consumer subaccount and call the application URL.
 
-1. Open the [SAP BTP trial](https://account.hanatrial.ondemand.com/cockpit/#/home/trialhome).
+1. Open the [SAP BTP Trial](https://account.hanatrial.ondemand.com/cockpit/#/home/trialhome).
 
 2. Navigate to your consumer subaccount.
 
@@ -343,7 +343,7 @@ You'll now see the application with the message `no data` because you have to as
 
 Assign your user the role collection `ProductListViewer` that contains the necessary role to view the products in the product list.
 
-3. Open the SAP BTP Cockpit.
+3. Open the SAP BTP cockpit.
 
 4. Navigate to your consumer subaccount.
 
