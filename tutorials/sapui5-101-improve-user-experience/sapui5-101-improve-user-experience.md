@@ -224,7 +224,7 @@ Try to search for a word.
 
 > With this, you completed the tutorial group. Congratulations!
 
-> You can follow step 4 and step 5 of [this tutorial](appstudio-sapui5-create) to deploy the application to SAP BTP, Cloud Foundry environment.
+> You can follow steps 6 and 7 (and possibly step 2 as well) of [this tutorial](appstudio-sapui5-create) to deploy the application to SAP BTP, Cloud Foundry environment.
 
 
 [VALIDATE_1]
