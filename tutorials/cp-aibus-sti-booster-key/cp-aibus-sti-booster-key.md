@@ -60,7 +60,7 @@ Now, you will use the **Set up account for Service Ticket Intelligence** booster
 
     >If you have more than one subaccount, the booster will choose automatically the correct subaccount and space, but this will require that you click **Next** twice and **Finish** once, before being able to see the **Success** dialog box.
 
-    !![Service Key](booster-success.png)
+    !![Service Key](booster-success.jpg)
 
 [DONE]
 [ACCORDION-END]
@@ -72,11 +72,11 @@ You have successfully used the booster **Set up account for Service Ticket Intel
 
 1. Click **Download Service Key**.
 
-    !![Service Key](booster-success-key.png)
+    !![Service Key](booster-success-key.jpg)
 
 2. Make a local copy of the service key.
 
-    !![Service Key](booster-service-key.png)
+    !![Service Key](booster-service-key.jpg)
 
 >If you face any issue with the booster **Set up account for Service Ticket Intelligence**, you can alternatively follow the steps in [Create Service Instance for Service Ticket Intelligence](cp-aibus-sti-service-instance) to create a service key for Service Ticket Intelligence manually.
 
@@ -94,7 +94,7 @@ Do the following to access your service instance and service key, without having
 
 1. Close the booster **Success** dialog box.
 
-    !![Service Key](leave-success.png)
+    !![Service Key](leave-success.jpg)
 
 2. Access your trial account.
 
