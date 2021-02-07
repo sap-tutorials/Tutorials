@@ -3,8 +3,8 @@ title: Create Your First Application with SAP Cloud SDK for JavaScript
 description: Learn the fundamentals of the SAP Cloud SDK for JavaScript and integrate with an SAP S/4HANA Cloud system.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk, topic>javascript ]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>beginner, products>sap-cloud-sdk, topic>javascript ]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Details
@@ -101,7 +101,8 @@ In `business-partner.controller.ts` create a function `getAllBusinessPartners` a
 
 
 [OPTION BEGIN [Mock Server]]
-If you are running a mock server locally on port 3000, use the following example. Documentation on the mock server can be found [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html).
+In the code snippet below, we assume that you have a mock server running locally on port 3000. Documentation on the mock server can be found [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html).
+
 ```JavaScript / TypeScript
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {
   return BusinessPartner.requestBuilder()
@@ -131,7 +132,8 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 
 
 [OPTION BEGIN [SAP API Business Hub sandbox]]
-If you are using the SAP API Business Hub sandbox for your requests, you will need to pass the API key to the VDM requests using the `withCustomHeaders` method, and you will need to add the correct URL to your destinations.
+To use the SAP API Business Hub sandbox for your requests, you will need to pass the API key to the VDM requests using the `withCustomHeaders` method, and you will need to add the correct URL to your destinations. Checkout the following example:
+
 ```JavaScript / TypeScript
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {
   return BusinessPartner.requestBuilder()
@@ -144,10 +146,9 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 ```
 [OPTION END]
 
-- We apply `requestBuilder` on the business partner entity. Every entity has a `requestBuilder` function that allows to chain all types of request builders that are available for this entity.
-- We use the `GetAll` request builder to create a request that retrieves all of the business partners.
-- The SAP Cloud SDK automatically sets some necessary request headers on every request, but you can specify additional custom headers using the `withCustomHeaders` function.
-- The last step when making a request is the request execution, chain the `execute` function and pass a destination to it. It can contain information like an URL, Authentication and Proxy Settings.
+- In line 2, we are creating a request builder for the business partner entity.
+- Line 3 indicates, that we want to create a request to get all the business partners.
+- Line 4 takes care of the execution and sends a request to an URL based on the given destination `url`.
 
 -------------------
 
