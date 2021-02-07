@@ -1,6 +1,6 @@
 ---
-title: Build and Deploy Your SAP Fiori App to SAP Cloud Platform
-description: Build and deploy your SAP Fiori MTA project to your SAP Cloud Platform, Cloud Foundry environment.
+title: Build and Deploy Your SAP Fiori App to SAP Business Technology Platform
+description: Build and deploy your SAP Fiori MTA project to your SAP BTP, Cloud Foundry environment.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-fiori, topic>sapui5, products>sap-cloud-platform-for-the-cloud-foundry-environment]
@@ -19,9 +19,9 @@ author_profile: https://github.com/raz-korn
 
 ## Details
 ### You will learn
-  - How to build and deploy an application to SAP Cloud Platform, Cloud Foundry environment
+  - How to build and deploy an application to SAP BTP, Cloud Foundry environment
   - How to configure Cloud Foundry settings in SAP Business Application Studio
-  - How to run the deployed app from your space on SAP Cloud Platform, Cloud Foundry environment
+  - How to run the deployed app from your space on SAP BTP, Cloud Foundry environment
 
 After a period of idle time the dev space is automatically stopped. In order to re-start the dev space open the [dev space manager](https://triallink.eu10.trial.applicationstudio.cloud.sap/), click the **Play** icon, and click the dev space.
 
@@ -71,7 +71,7 @@ If you are not logged in to a Cloud Foundry space - Before you can deploy your n
 
 [ACCORDION-BEGIN [Step 3: ](Deploy the application)]
 
-Deploy your application to SAP Cloud Platform, Cloud Foundry environment.
+Deploy your application to SAP BTP, Cloud Foundry environment.
 
 Right-click the `mtar` file and select **Deploy MTA Archive**.
 
@@ -86,9 +86,9 @@ Right-click the `mtar` file and select **Deploy MTA Archive**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Access the application on SAP Cloud Platform, Cloud Foundry)]
+[ACCORDION-BEGIN [Step 4: ](Access the application on SAP BTP, Cloud Foundry environment)]
 
-Run the deployed app on SAP Cloud Platform. The steps below show you how to access your new application and run it. You will use CF commands in a terminal for this.
+Run the deployed app on SAP BTP. The steps below show you how to access your new application and run it. You will use CF commands in a terminal for this.
 
 1. On the menu bar select **Terminal | New Terminal**.
 
@@ -125,9 +125,9 @@ Run the deployed app on SAP Cloud Platform. The steps below show you how to acce
 
 !![app url](AppStudio-AppURL-in-New-Tab-.png)
 
-    >You can use this URL in any browser to access your new application in your space on SAP Cloud Platform, Cloud Foundry environment.
+    >You can use this URL in any browser to access your new application in your space on SAP BTP, Cloud Foundry environment.
 
-6. The app is running on SAP Cloud Platform, Cloud Foundry environment, accessing data from an on-premise backend.
+6. The app is running on SAP BTP, Cloud Foundry environment, accessing data from an on-premise backend.
 
     !![app running on cf](05-01-AppStudio-App-Running-on-CF.png)
 
@@ -138,7 +138,7 @@ Run the deployed app on SAP Cloud Platform. The steps below show you how to acce
 
 Congratulations!
 
-With this, you have successfully completed the deployment of your SAP Fiori app to SAP Cloud Platform using SAP Business Application Studio.
+With this, you have successfully completed the deployment of your SAP Fiori app to SAP BTP using SAP Business Application Studio.
 
 In this tutorial, you used high productivity tools that are available out-of-the-box in SAP Business Applications Studio that make it easy to build and deploy applications as well as work in the Cloud Foundry environment.
 
