@@ -1,8 +1,8 @@
 ---
-title: Create Sales Order App with SAP Rapid Application Development by Mendix
+title: Create Sales Order App with SAP RAD by Mendix
 description: Create a sales order app that consumes a service from the SAP Gateway Demo System (ES5).
 auto_validation: true
-primary_tag: products>sap-cloud-platform
+primary_tag: products>sap-rad-by-mendix
 author_name: Paola Laufer
 tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platform  ]
 time: 20
