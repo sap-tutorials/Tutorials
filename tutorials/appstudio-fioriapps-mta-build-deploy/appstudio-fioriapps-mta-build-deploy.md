@@ -123,7 +123,7 @@ Run the deployed app on SAP BTP. The steps below show you how to access your new
 
 5. As a temporary step you need to edit the URL. Copy the app's URL, and paste it in a new browser tab (do not click [ENTER]). Replace `cpp` with `launchpad`.
 
-!![app url](AppStudio-AppURL-in-New-Tab-.png)
+    !![app url](AppStudio-AppURL-in-New-Tab-.png)
 
     >You can use this URL in any browser to access your new application in your space on SAP BTP, Cloud Foundry environment.
 
