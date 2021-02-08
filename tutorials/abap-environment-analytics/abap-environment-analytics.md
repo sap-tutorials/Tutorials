@@ -12,7 +12,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 ## Prerequisites
  - You need the standard developer authorization profile to create ABAP development objects.
  - You need a SAP Analytics Cloud account.
- - 1.	Install `ABAPGit` Plugin in ADT. See <http://eclipse.abapgit.org/updatesite/>
+ - Install `ABAPGit` Plugin in ADT. See <http://eclipse.abapgit.org/updatesite/>
  - To get the Flight Model into the system, follow the description at <https://github.com/SAP/abap-platform-refscen-flight/blob/master/README.md>
 
 
