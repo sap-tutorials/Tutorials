@@ -24,7 +24,7 @@ This tutorial will walk you through the setup process of SAP HANA, express editi
 
  - **[Deploy SAP HANA Cloud trial](hana-cloud-deploying)**
 
- <b><span style="color:red">Or consider directly installing HANA Express yourself using one of these options:</span></b>
+ <b><span style="color:red">Or consider directly installing SAP HANA, express edition yourself using one of these options:</span></b>
 
  - **[SAP HANA, express edition - Server Only Deployment Options](hxe-database-server)**
 

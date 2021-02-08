@@ -9,14 +9,14 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You have a free trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+ - You have a free SAP Business Technology Platform trial account: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) 
 
 ## Details
 ### You will learn
-  - How to use the SAP Cloud Platform Cockpit as a graphical tool to provision your HANA Cloud instance
+  - How to use the SAP BTP cockpit as a graphical tool to provision your SAP HANA Cloud instance
 
-### Get to know SAP HANA
-SAP HANA is a complete database and application development platform. It lets you use advanced data processing capabilities — text, spatial, predictive, and more — to pull insights from all types of data.
+### Get to know SAP HANA Cloud
+SAP HANA Cloud is a complete database and application development platform. It lets you use advanced data processing capabilities — text, spatial, predictive, and more — to pull insights from all types of data.
 
 By combining in-memory storage with columnar store, data operations are performed faster than in a traditional database with a disk-based storage. SAP HANA is also `translytical`, which means that developers can perform both transactional and analytical operations from the same structure, in real time, and without creating additional copies of the data such as materialized views.
 
@@ -24,7 +24,7 @@ By combining in-memory storage with columnar store, data operations are performe
 
 [ACCORDION-BEGIN [Step 1: ](Add SAP HANA Cloud to your trial account)]
 
-1. From the SAP Cloud Platform entry page, click on the **trial** Subaccount.
+1. From the SAP BTP cockpit entry page, click on the **trial** Subaccount.
 
     !![Sub Account](trial1.png)
 
@@ -41,11 +41,11 @@ By combining in-memory storage with columnar store, data operations are performe
 
 [ACCORDION-BEGIN [Step 2: ](Create Database)]
 
-1. This wizard will walk you through the process of creating a HANA Cloud instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Allowed connections" setting. This setting will allow you to develop against your HANA Cloud trial using a variety of external development tools.
+1. This wizard will walk you through the process of creating a SAP HANA Cloud instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Allowed connections" setting. This setting will allow you to develop against your SAP HANA Cloud trial using a variety of external development tools.
 
     !![Allow All IP addresses](trial4.png)
 
-2. After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP Cloud Platform.
+2. After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP BTP trial.
 
     !![HANA Cloud Instance](trial5.png)
 

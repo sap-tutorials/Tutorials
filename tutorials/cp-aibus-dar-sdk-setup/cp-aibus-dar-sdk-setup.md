@@ -3,7 +3,7 @@ title: Set Up the SDK for Data Attribute Recommendation
 description: Create a virtual environment and install the Python SDK (Software Development Kit) for Data Attribute Recommendation.
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
@@ -12,7 +12,7 @@ primary_tag: topic>machine-learning
   - How to set up a virtual environment
   - How to install the SDK for Data Attribute Recommendation
 
-Use Data Attribute Recommendation (one of the [SAP AI Business Services](https://help.sap.com/aibus) in SAP Cloud Platform) to classify entities such as products, stores and users into multiple classes, using free text, numbers and categories. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/dar). For the definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/fe501df6d9f94361bfea066f9a6f6712.html).
+Use Data Attribute Recommendation (one of the [SAP AI Business Services](https://help.sap.com/aibus) in SAP Business Technology Platform) to classify entities such as products, stores and users into multiple classes, using free text, numbers and categories. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/dar). For the definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/fe501df6d9f94361bfea066f9a6f6712.html).
 
 The Data Attribute Recommendation service provides a REST API to communicate and interact with your service instance. The Python SDK for Data Attribute Recommendation provides an implementation that allows you to easily consume the APIs of the service without having to write your own code. It also serves as a reference implementation and can be easily transferred into other programming environments and languages.
 

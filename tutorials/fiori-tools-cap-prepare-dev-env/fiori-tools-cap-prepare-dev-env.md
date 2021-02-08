@@ -99,6 +99,10 @@ Your development environment is now ready.
 
 In the next tutorial, you will create an SAP Fiori elements application and run it inside the SAP Business Application Studio.
 
+<!---
+Comment needed for md update. Can be deleted next time
+-->
+
 [DONE]
 [ACCORDION-END]
 

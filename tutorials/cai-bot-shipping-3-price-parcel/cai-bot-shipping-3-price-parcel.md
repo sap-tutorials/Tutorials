@@ -225,7 +225,7 @@ You must require that the bot knows the size and location, and in addition get a
 
 [ACCORDION-BEGIN [Step 5: ](Call API to show Google map)]
 
-A nice feature would be to get a Google map for the delivery location. Our application deployed to SAP Cloud Platform also has a call for retrieving a Google map based on the location in memory.
+A nice feature would be to get a Google map for the delivery location. Our application deployed to SAP Business Technology Platform also has a call for retrieving a Google map based on the location in memory.
 
 Your default endpoint is already set up because you used it earlier to retrieve tracking information.
 

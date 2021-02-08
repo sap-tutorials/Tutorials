@@ -9,7 +9,7 @@ primary_tag: products>sap-conversational-ai
 
 ## Prerequisites
 - You understand the basics of creating a chatbot, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started).
- 
+
 
 ## Details
 ### You will learn
@@ -164,7 +164,7 @@ Open **Chat with Your Bot**, and enter any text as well as animals.
 [ACCORDION-BEGIN [Step 5: ](Add webhook call)]
 Now you will call a webhook designed to receive the chatbot conversation (as JSON) and do custom processing.
 
->The webhook you will use is a demo Python webhook deployed to SAP Cloud Platform. You can see the code for the webhook in this [blog](https://cai.tools.sap/blog/how-to-build-first-delivery-tracking-chatbot-sap-conversational-ai/).
+>The webhook you will use is a demo Python webhook deployed to SAP Business Technology Platform. You can see the code for the webhook in this [blog](https://cai.tools.sap/blog/how-to-build-first-delivery-tracking-chatbot-sap-conversational-ai/).
 
 1. In the `answer` skill, click **Add New Message Group**.
 

@@ -5,8 +5,8 @@ title: Create and Deep Insert with the Virtual Data Model for OData
 description: Create and deep insert functionality for OData as supported by the SAP S/4HANA Cloud SDK.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites
