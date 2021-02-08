@@ -65,13 +65,13 @@ Before you start, make sure that you've completed the prerequisites.
 
 2. Choose **Install**.
 
-![Folder structure](VSCode_extension.png)
+   !![extension_marketplace](VSCode_extension.png)
 
-   Visual Studio Code opens the extensions details page.
+> Visual Studio Code opens the extensions details page.
 
-![Folder structure](VSCode_view_extension.png)
+3.Choose **Install** to enable the extension for SAP CDS Language Support.
 
-3. In Visual Studio Code choose **Install** to enable the extension for SAP CDS Language Support.
+   ![extension_VSCode](VSCode_view_extension.png)
 
 > If the extension is already installed and enabled in VS Code, it will be updated automatically.
 
