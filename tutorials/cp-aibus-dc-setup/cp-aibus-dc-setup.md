@@ -3,7 +3,7 @@ title: Set Up Jupyter Notebook and Client Library for Document Classification
 description: Set up a local JupyterLab instance as well as the Jupyter Notebook and the client library for Document Classification.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
+tags: [ tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
 primary_tag: topic>machine-learning
 ---
 
@@ -94,7 +94,7 @@ Then click **Run**. This command clones the repository.
 
 Once everything is done, a folder appears on the left named `document-classification-client`. This folder is the cloned repository.
 
-Now navigate into the folder `document-classification-client` > `examples` using the navigation pane on the left. In this folder the actual notebook is located. Open the notebook by double-clicking it. The content of the notebook will now appear on the right side of the page.
+Now navigate into the folder `document-classification-client` > `examples` using the navigation pane on the left. In this folder the actual notebook, called `train_and_evaluate_custom_model.ipynb`, is located. Open the notebook by double-clicking it. The content of the notebook will now appear on the right side of the page.
 
 ![Open Notebook](open-notebook.png)
 
@@ -111,19 +111,6 @@ Notebooks contain a number of cells in a sequence whereas each cell mainly conta
 Throughout this tutorial mission, you walk through the notebook and explore the capabilities of the Document Classification service as well as understand the capabilities of Jupyter Notebooks.
 
 ![Notebook Structure](notebook-structure.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Remove clone command)]
-
-Last but not least, as you have already cloned the repository in step 3 you need to make sure to prepare the notebook accordingly.
-
-Click into the first cell of the notebook. This cell contains the exact same statement as used in step 3 to clone the repository. Go ahead and delete this line.
-
-![Remove Clone Command](remove-clone.png)
-
-Now you are setup and ready to proceed with the next tutorials.
 
 [DONE]
 [ACCORDION-END]

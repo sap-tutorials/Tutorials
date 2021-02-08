@@ -17,11 +17,12 @@ author_profile: https://github.com/jitendrakansal
 ### You will learn
   - How to register and consume an Extension control in MDK Metadata
   - How to write an extension via NativeScript
-  - How to connect to SAP Cloud Platform Mobile application
+  - How to connect to SAP Mobile application
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/1-Create-a-Slider-Custom-Control-Using-Metadata-Approach) and start directly with step 6 in this tutorial.
 
 ---
+
 
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls by using **NativeScript** (TypeScript/JavaScript applicable for both Android and iOS)
 
@@ -103,7 +104,7 @@ The extension control that you will be creating to extend the functionality of y
     !![MDK](img_2.3.png)
 
 
-6. In **Schema Information** step, provide below schema and click **Next**.
+6. In **Schema Information** step, fill schema details in **Schema** column and click **Next**.
 
     ```JSON
     {
@@ -230,15 +231,17 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img_3.10.png)
 
-13. You can also add an input field where you can provide a manual entry for the slider value and the counter will adapt accordingly.
+11. You can also add an input field where you can provide a manual entry for the slider value and the counter will adapt accordingly.
 
     For this, first you will write a business logic to set the extension value and then bind it to the input field.
 
-    Right-click the **Rules** folder | **MDK: New Rule**.
+    Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
-    Enter the Rule name `SetExtensionValue.js`, press `Enter`.
+    !![MDK](img_3.11.1.png)
 
-    !![MDK](img_3.13.png)
+    Enter the Rule name `SetExtensionValue`, click **Next** and then **Finish** on the confirmation step.
+
+    !![MDK](img_3.11.2.png)
 
     Replace the generated snippet with below code.
 
@@ -251,15 +254,15 @@ You will add this registered control in a Form Cell page.
     }
     ```
 
-    !![MDK](img_3.13.1.png)
+    !![MDK](img_3.11.3.png)
 
-14. Save the changes to the `SetExtensionValue.js` file.
+12. Save the changes to the `SetExtensionValue.js` file.
 
-15. In `SliderExtension.page`, drag and drop a **Simple Property** item control below the slider control.
+13. In `SliderExtension.page`, drag and drop a **Simple Property** item control below the slider control.
 
     !![MDK](img_3.15.gif)
 
-16. Provide the following information:
+14. Provide the following information:
 
     | Property | Value |
     |----|----|
@@ -268,7 +271,7 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img_3.16.png)
 
-17. Navigate to **Events** tab, click the **link** icon for the `OnValueChange` property to open the object browser, bind it to `SetExtensionValue.js`.
+15. Navigate to **Events** tab, click the **link** icon for the `OnValueChange` property to open the object browser, bind it to `SetExtensionValue.js`.
 
     !![MDK](img_3.17.png)
 
@@ -859,9 +862,9 @@ Double click the `Application.app` file, select the `SliderExtension.page` for t
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Deploy and activate application)]
+[ACCORDION-BEGIN [Step 6: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 

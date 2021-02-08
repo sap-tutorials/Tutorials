@@ -3,8 +3,8 @@ title: Model the Needed Decision Support Based on IoT Data
 description: Create actions, rules and configurations using SAP IoT.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things ]
 primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform ]
 ---
 
 ## Details

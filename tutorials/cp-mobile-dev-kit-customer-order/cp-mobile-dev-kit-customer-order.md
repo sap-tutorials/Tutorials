@@ -68,7 +68,7 @@ This page will display customer orders list, you will add an **Object Table** co
     |----|----|
     | `Service`| Select `Sample.service` from the dropdown |
     | `Entity` | Select `SalesOrderHeaders` from the dropdown |
-    | `Query`| `$filter=CustomerId eq '{CustomerId}'&$top=5&$orderby=CreatedAt desc` |
+    | `QueryOptions`| `$filter=CustomerId eq '{CustomerId}'&$top=5&$orderby=CreatedAt desc` |
 
     !![MDK](img_1.5.png)
 
@@ -244,9 +244,9 @@ Double-click the `NavToSalesOrders_Details.action` and click **OK** to set it as
 
 You will show a total count of orders for a customer in `Customers_Detail.page`. You will write a JavaScript logic for this calculation.
 
-1. Right-click the **Rules** folder | **MDK: New Rule**.
+1. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
-2. Enter the Rule name `Customers_OrderCount.js`, press `Enter`.
+2. Enter the Rule name `Customers_OrderCount`, press `Enter`.
 
     !![MDK](img_5.2.png)
 
@@ -254,13 +254,13 @@ You will show a total count of orders for a customer in `Customers_Detail.page`.
 
     ```JavaScript
     export default function CustomerOrderCount(context) {
-          //The following currentCustomer will retrieve the current customer record
-        	const currentCustomer = context.getPageProxy().binding.CustomerId;
-          //The following expression will retrieve the total count of the orders for a given customer
-        	return context.count('/DemoSampleApp/Services/Sample.service', 'SalesOrderHeaders', `$filter=CustomerId eq '${currentCustomer}'`).then((count) => {
-                return count;
-            });
-        }    
+        //The following currentCustomer will retrieve the current customer record
+        const currentCustomer = context.getPageProxy().binding.CustomerId;
+        //The following expression will retrieve the total count of the orders for a given customer
+        return context.count('/DemoSampleApp/Services/Sample.service', 'SalesOrderHeaders', `$filter=CustomerId eq '${currentCustomer}'`).then((count) => {
+            return count;
+        });
+    }    
     ```
 
 4. Save the changes to the `Customers_OrderCount.js` file.
@@ -284,7 +284,7 @@ You will show a total count of orders for a customer in `Customers_Detail.page`.
     |----|----|
     | `Service`| Select `Sample.service` from the dropdown |
     | `Entity` | Select `{{#Property:@odata.readLink}}/SalesOrders` from the dropdown |
-    | `Query`| `$top=5&$orderby=CreatedAt desc` |
+    | `QueryOptions`| `$top=5&$orderby=CreatedAt desc` |
 
     !![MDK](img_6.2.png)
 
@@ -386,7 +386,7 @@ You will show a total count of orders for a customer in `Customers_Detail.page`.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 9: ](Deploy the application)]
 
 Deploy the updated application to your MDK client.
 
@@ -394,11 +394,11 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img_9.1.png)
 
-2. Select deploy target as **Mobile Services**.
+2. Select deploy target as **Mobile & Cloud**.
 
     !![MDK](img_9.2.png)
 
-    You should see **Deploy succeeded** message.
+    You should see success message for both deployments.
 
     !![MDK](img_9.3.png)
 
@@ -443,25 +443,52 @@ Deploy the updated application to your MDK client.
 
     >If you see _No Customer Orders Found_ message, try with other customer record.
 
-2. Tapping on any order navigates to its details page.
+3. Tapping on any order navigates to its details page.
 
     ![MDK](img_10.8.png)
 
 
-3. Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.  
+4. Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.  
 
     ![MDK](img_10.9.png)
 
     ![MDK](img_10.10.png)
 
-
-
 [OPTION END]
 
-**Congratulations**! You have successfully extended MDK app with Customer orders and you are now all set to [Implement Create Entity and Linking Entities in an MDK App](cp-mobile-dev-kit-link-entity).
+[OPTION BEGIN [Web]]
+
+1. Either click the highlighted button or refresh the web page to load the changes.
+
+    !![MDK](img_10.11.png)
+
+    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+
+    >!![MDK](img_10.12.png)
+
+2. Click **Customer List** | click a customer record. You will see the **Customer Orders** area in customer detail page and also total count of orders.
+
+    !![MDK](img_10.13.png)
+
+    >If you see _No Customer Orders Found_ message, try with other customer record.
+
+3. Clicking on any order navigates to its details page.
+
+    !![MDK](img_10.14.png)
+
+4. Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.
+
+    !![MDK](img_10.15.png)
+
+    !![MDK](img_10.16.png)
+
+[OPTION END]
 
 [DONE]
 [ACCORDION-END]
 
+---
+
+Congratulations, you have successfully extended MDK app with Customer orders and you are now all set to [implement Create Entity and Linking Entities in an MDK App](cp-mobile-dev-kit-link-entity).
 
 ---

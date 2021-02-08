@@ -3,7 +3,7 @@ title: Use Machine Learning to Classify Documents
 description: Get the machine learning model category predictions for the documents you upload to Document Classification.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification]
 primary_tag: topic>machine-learning
 ---
 
@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 
 The core functionality of Document Classification is to automatically classify documents into categories. The categories are not predefined and can be chosen by the user.
 
-In the trial version of Document Classification, however, a predefined and pre-trained machine learning model is made available for all users. Thus, the classification categories cannot be customized. This tutorial gives you an introduction to the service. If you want to try out the Document Classification training endpoints to create your own classification model, you can use an Enterprise Account (see [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) versus [Enterprise Accounts](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/171511cc425c4e079d0684936486eee6.html)) or a paid SAP Cloud Platform global account.
+In the trial version of Document Classification, however, a predefined and pre-trained machine learning model is made available for all users. Thus, the classification categories cannot be customized. This tutorial gives you an introduction to the service. If you want to try out the Document Classification training endpoints to create your own classification model, you can use an Enterprise Account (see [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) versus [Enterprise Accounts](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/171511cc425c4e079d0684936486eee6.html)) or an enterprise global account on SAP Business Technology Platform (SAP BTP) Trial.
 
 ---
 
@@ -25,7 +25,7 @@ You will use Swagger UI, via all major web browser, to call the Document Classif
 
 In the service key you created for Document Classification in the previous tutorial: [Create Service Instance for Document Classification with Trial Account](cp-aibus-dc-service-instance), you should find (outside the `uaa` section of the service key) an entry called `url` (as highlighted in the image below).
 
-1. To access the Document Information Extraction Swagger UI, add **`/document-classification/v1`** to the `url` value, paste it in any web browser and press **Enter**.
+1. To access the Document Classification Swagger UI, add **`/document-classification/v1`** to the `url` value, paste it in any web browser and press **Enter**.
 
     ![Service keys](service-key-details.png)
 
@@ -33,7 +33,7 @@ In the service key you created for Document Classification in the previous tutor
 
     ![Swagger UI Authorize](swagger-authorize.png)
 
-3. Copy the `access_token` created in the previous tutorial [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), add **Bearer** in front of it, and enter in the **Value** field.
+3. Copy the `access_token` created in the previous tutorial [Get OAuth Access Token for Document Classification Using Any Web Browser](cp-aibus-dc-web-oauth-token), add **Bearer** in front of it, and enter in the **Value** field.
 
     ```
     Bearer <access_token>

@@ -30,16 +30,16 @@ This sample provides a Redis deployment and two serverless functions that intera
 
    You can instead run the following command using your CLI at your desired folder location:
 
-   ```Shell/Bash
-   git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
-   ```
+```Shell/Bash
+git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
+```
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Bind application to namespace)]
 
-In this step you will bind the Commerce Mock application to the dev namespace. This will allow the APIs and Events of the mock application to be used within the namespace.
+In this step, you will bind the Commerce Mock application to the dev namespace. This will allow the APIs and Events of the mock application to be used within the namespace.
 
 1. In the Kyma home workspace, choose **Integration > Applications/Systems**.
 
@@ -56,7 +56,7 @@ In this step you will bind the Commerce Mock application to the dev namespace. T
 
 [ACCORDION-BEGIN [Step 3: ](Create the Events service instances)]
 
-In this step you will create service instances of the Events the Commerce Mock application exposes. This will allow the events to be consumed from resources within the namespaces such as functions or microservices.
+In this step, you will create service instances of the Events the Commerce Mock application exposes. This will allow the events to be consumed from resources within the namespaces such as functions or microservices.
 
 1. In the Kyma home workspace, choose **Namespace**.
 
@@ -70,11 +70,11 @@ In this step you will create service instances of the Events the Commerce Mock a
 
     ![Service Catalog](./assets/service-catalog.png)
 
-5. Choose the Service Class Plan for **SAP Commerce Cloud - Events**
+5. Choose the Service Class Plan for **SAP Commerce Cloud - Events**.
 
     ![Service Catalog](./assets/sc-enable-events.png)
 
-6. Choose **Add** the create a Service Instance of the **SAP Commerce Cloud - Events**
+6. Choose **Add** and then **Create** to create a Service Instance of the **SAP Commerce Cloud - Events**
 
     ![Service Catalog](./assets/sc-add-events.png)
 
@@ -83,7 +83,7 @@ In this step you will create service instances of the Events the Commerce Mock a
 
 [ACCORDION-BEGIN [Step 4: ](Create API service instances)]
 
-In this step you will create a service instance of the `Commerce Webservices` the Mock application exposes. This will expose the APIs to resources within the namespace such as functions and microservices.
+In this step, you will create a service instance of the `Commerce Webservices` the Mock application exposes. The service instance will expose the APIs to resources within the namespace such as functions and microservices.
 
 
 1. In the `dev` namespace, choose **Service Management > Catalog**.
@@ -92,11 +92,11 @@ In this step you will create a service instance of the `Commerce Webservices` th
 
     ![Service Catalog](./assets/service-catalog.png)
 
-3. Choose the Service Class Plan for **`SAP Commerce Cloud - Commerce Webservices`**
+3. Choose the Service Class Plan for **`SAP Commerce Cloud - Commerce Webservices`**.
 
     ![Service Catalog](./assets/sc-enable-occ.png)
 
-4. Choose **Add** the create a Service Instance of the **`SAP Commerce Cloud - Commerce Webservices`**.
+4. Choose **Add** and then **Create** to create a Service Instance of the **`SAP Commerce Cloud - Commerce Webservices`**.
 
     ![Service Catalog](./assets/sc-add-occ.png)
 
@@ -105,7 +105,7 @@ In this step you will create a service instance of the `Commerce Webservices` th
 
 [ACCORDION-BEGIN [Step 5: ](Deploy resources)]
 
-In this step you will deploy three resources into the Kyma runtime which include:
+In this step, you will deploy three resources into the Kyma runtime which include:
 
   - **cache-order**: This function will subscribe to an event published by the Commerce mock application. Once triggered, it will call back to the Commerce mock application to obtain the `totalPriceWithTax` and then cache the information into Redis.
   - **get-order**: This function will be exposed as an API allowing retrieval of data stored within the Redis cache.
@@ -124,7 +124,7 @@ In this step you will deploy three resources into the Kyma runtime which include
 
 [ACCORDION-BEGIN [Step 6: ](Add event trigger to function)]
 
-In this step you will configure the function `cache-order`, deployed in the previous step, to be triggered when the **order.created** event is fired from the Commerce Mock application.
+In this step, you will configure the function `cache-order`, deployed in the previous step, to be triggered when the **order.created** event is fired from the Commerce Mock application.
 
 1. In the `dev` namespace, choose **Development > Functions**.
 
@@ -136,7 +136,7 @@ In this step you will configure the function `cache-order`, deployed in the prev
 
     ![Cache Order](./assets/function-config-co.png)
 
-4. In the **Configuration** scroll down and choose **Event Triggers**.
+4. In the **Configuration** scroll down and choose **Add Event Triggers**.
 
 5. Choose the event **order.created** and then choose **Add**
 
@@ -147,7 +147,7 @@ In this step you will configure the function `cache-order`, deployed in the prev
 
 [ACCORDION-BEGIN [Step 7: ](Add service instance to function)]
 
-In this step you will add a service instance to the function cache-order allowing it to easily call the related API.
+In this step, you will add a service instance to the function cache-order allowing it to easily call the related API.
 
 1. In the function **cache-order**, choose the tab **Configuration**.
 
@@ -192,7 +192,7 @@ With the configuration steps completed, you can now test the scenario to validat
 
 5. For the **Event Topics**, choose **order.created.v1**.
 
-6. Modify the `orderCode` value as desired and choose **Send Event**.
+6. Modify the `orderCode` value as desired and choose **Send Event**. Make sure to remember the `orderCode` value, it will be used in a later step.
 
     ![Test the Scenario](./assets/test-scenario-2.png)
 
@@ -201,13 +201,13 @@ With the configuration steps completed, you can now test the scenario to validat
 
 [ACCORDION-BEGIN [Step 10: ](Review output in function logs)]
 
-In this step we will view the logs outputted by the function to verify that the scenario is working.
+In this step, we will view the logs outputted by the function to verify that the scenario is working.
 
 1. In the `dev` namespace, choose **Development > Functions**.
 
 2. Choose the function **cache-order**.
 
-3. Expand the **Log** view at the button of the function viewer.
+3. Expand the **Logs** viewer by clicking on the arrow found at the bottom of the function viewer.
 
 4. Search for the value `orderCode`.
 
@@ -220,11 +220,11 @@ In this step we will view the logs outputted by the function to verify that the 
 
 [ACCORDION-BEGIN [Step 11: ](Get output from API rule function)]
 
-In this step we use the get-order function to perform a read request of the data cached in the Redis database.
+In this step, we use the get-order function to perform a read request of the data cached in the Redis database.
 
 1. Choose **Configuration > `APIRules`** from the menu.
 
-2. Choose the **Host** entry for the **get-order** `APIRule` to open the application in the browser, When first opened you will received the message
+2. Choose the **Host** entry for the **get-order** `APIRule` to open the application in the browser. When first opened you will received the message
 
     `{"error":"No orderCode received!"}`
 
@@ -237,6 +237,8 @@ In this step we use the get-order function to perform a read request of the data
     `{"orderCode":"12331231","Date":"Tue Nov 17 2020 19:28:42 GMT+0000 (Coordinated Universal Time)","Value":"100"}`
 
 [VALIDATE_1]
+
+**Congratulations!** You have successfully completed the mission.
 
 [ACCORDION-END]
 
