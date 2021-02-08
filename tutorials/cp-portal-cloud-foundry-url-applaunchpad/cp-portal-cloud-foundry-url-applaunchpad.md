@@ -3,8 +3,8 @@ title: Add a URL App to Your Launchpad Site
 description: Create a URL app and add it to your launchpad site.
 auto_validation: true
 time: 15
-tags: [  tutorial>beginner, products>sap-cloud-platform-portal ]
-primary_tag: products>sap-cloud-platform-portal
+tags: [  tutorial>beginner, products>sap-cloud-platform-launchpad ]
+primary_tag: products>sap-cloud-platform-launchpad
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
@@ -12,7 +12,7 @@ author_profile: https://github.com/LindsayBert
 
 ## Details
 ### You will learn
-  - How to create a URL app and add it to your site
+  - How to create a URL app and add it to your site.
 
 In this tutorial you'll use the **Content Manager** to add a URL app to your launchpad site.
 
@@ -36,7 +36,7 @@ Click the Content Manager icon in the left panel to open the **Content Manager**
 
 2. Enter the following values:
 
-    * **Title**: `Innovation at SAP`
+    * **Title**: `Innovation at SAP`  
 
     * **Open App**: In place
 

@@ -3,13 +3,13 @@ title: Download and Prepare App for Cloud Foundry Deployment
 description: Download files for a simple app, maintain the deployment descriptor, and bundle everything together ready for deployment.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform, topic>nodejs  ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, topic>nodejs ]
 time: 10
 ---
 
 
 ## Details
-### You will learn  
+### You will learn
 - What a typical small Node.js app looks like
 - What a Cloud Foundry deployment descriptor contains
 
@@ -28,7 +28,7 @@ Open it up at this URL: <https://github.com/SAP/cf-sample-app-nodejs>.
 
 [ACCORDION-BEGIN [Step 2: ](Download sample files)]
 
-This tutorial is preparing the app for deployment to the SAP Cloud Platform Cloud Foundry environment, and you'll be deploying it (in another tutorial) from your own machine. So you'll need to download the repository first.
+This tutorial is preparing the app for deployment to the SAP BTP, Cloud Foundry runtime, and you'll be deploying it (in another tutorial) from your own machine. So you'll need to download the repository first.
 
 Choose **Clone or download** and then choose **Download ZIP**.
 
@@ -63,11 +63,11 @@ What is the value of the `name` parameter that exists already in the `manifest.y
 
 [ACCORDION-BEGIN [Step 5: ](Add a unique host name to the deployment descriptor)]
 
-The host name for your app must be unique within a combination of region and environment, in that it forms the most significant part of the fully qualified hostname in the app's URL space. For example, if your app host name is `myapp`, the fully qualified hostname for the Cloud Foundry environment in the `EU10` region will be:
+The host name for your app must be unique within a combination of region and runtime, in that it forms the most significant part of the fully qualified hostname in the app's URL space. For example, if your app host name is `myapp`, the fully qualified hostname for the Cloud Foundry runtime in the `EU10` region will be:
 
 `myapp.cfapps.eu10.hana.ondemand.com`
 
-If someone else is already using that hostname within that region and environment, you won't be able to deploy your application.
+If someone else is already using that hostname within that region and runtime, you won't be able to deploy your application.
 
   1. Add a parameter named `host` to the `manifest.yml` file and provide a unique value. For example, use your birth date or a random number or string or incorporate your user ID:
 
@@ -81,3 +81,6 @@ If someone else is already using that hostname within that region and environmen
 [ACCORDION-END]
 
 ---
+
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-cf-dev-01-prepare-app&graphics=true" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+

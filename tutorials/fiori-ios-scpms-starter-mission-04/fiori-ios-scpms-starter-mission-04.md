@@ -1,6 +1,6 @@
 ---
 title: Build a Customer List
-description: Build an entity list using SAP Cloud Platform SDK for iOS controls. Use storyboard segues to perform navigation between the Overview screen and the customer list.
+description: Build an entity list using SAP SDK for iOS controls. Use storyboard segues to perform navigation between the Overview screen and the customer list.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
@@ -11,7 +11,7 @@ time: 25
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0 or higher
+- **SAP SDK for iOS:** Version 5.0 or higher
 
 ## Details
 ### You will learn  
@@ -21,9 +21,9 @@ time: 25
 
 [ACCORDION-BEGIN [Step 1: ](Create a customer list)]
 
-Because we already implemented a similar screen, the Product List, we can copy most of the code from the `ProductsTableViewController.swift` class.
+Because you already implemented a similar screen, the Product List, you can copy most of the code from the `ProductsTableViewController.swift` class.
 
-1. Before we do that, open the **`Main.storyboard`** and use the **Object Library** to create another Table View Controller and place it directly below the **Products Table View Controller**.
+1. Before you do that, open the **`Main.storyboard`** and use the **Object Library** to create another Table View Controller and place it directly below the **Products Table View Controller**.
 
     !![Main Storyboard Customer VC](fiori-ios-scpms-starter-mission-04-1.png)
 
@@ -41,11 +41,11 @@ Because we already implemented a similar screen, the Product List, we can copy m
 
 [ACCORDION-BEGIN [Step 2: ](Implement the customer list)]
 
-1. Next we're going to simply copy the `ProductsTableViewController.swift` code into a new class `CustomersTableViewController.swift`.
+1. Next you're going to simply copy the `ProductsTableViewController.swift` code into a new class `CustomersTableViewController.swift`.
 
-    > Views like that which offer the same functionality and take different entities to display could be developed generically. For simplicity reasons we will just reuse code here.
+    > Views like that which offer the same functionality and take different entities to display could be developed generically. For simplicity reasons you will just reuse code here.
 
-2. We can reuse most of the code from the `ProductsTableViewController.swift` class, to start open the `CustomersTableViewController.swift` file and add the needed import statements to the class:
+2. You can reuse most of the code from the `ProductsTableViewController.swift` class, to start open the `CustomersTableViewController.swift` file and add the needed import statements to the class:
 
     ```Swift
     import SAPFiori
@@ -56,7 +56,7 @@ Because we already implemented a similar screen, the Product List, we can copy m
 
     ```
 
-3. Now we're going to copy the code inside of the class definition of the `ProductsTableViewController.swift` class to the class body of the `CustomersTableViewController`.
+3. Now you're going to copy the code inside of the class definition of the `ProductsTableViewController.swift` class to the class body of the `CustomersTableViewController`.
     Replace everything inside the `CustomersTableViewController` class **from:**
 
     ```Swift
@@ -289,9 +289,9 @@ Because we already implemented a similar screen, the Product List, we can copy m
 
     ```
 
-    If you compile now, there shouldn't be any compile time errors, if you get a compile time error for the `odataController` remember to make the `import SAPOfflineOData` import statement. What you basically did is pasted a modified code copied from the `ProductsTableViewController.swift` class. You had to simply replace all the product definitions with customer and adjust the `tableView(_:cellForRowAt:)` method to use the product data similar to the Overview Screen.
+    If you compile now, there shouldn't be any compile time errors, if you get a compile time error for the `odataController` remember to make the `import SAPOfflineOData` import statement. You did use almost the same code as in the `ProductsTableViewController.swift` class and modified it. You had to simply replace all the product definitions with customer and adjust the `tableView(_:cellForRowAt:)` method to use the product data similar to the Overview Screen.
 
-    Also, the `loadProductImages()` method is not necessary anymore so we deleted that.
+    Also, the `loadProductImages()` method is not necessary anymore so you deleted that.
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -313,7 +313,7 @@ Because we already implemented a similar screen, the Product List, we can copy m
 
 [ACCORDION-BEGIN [Step 4: ](Implement the prepare for segue method)]
 
-For the customer list it is not necessary to pass any crucial data in, but we want to set the navigation item's title before finishing up the navigation.
+For the customer list it is not necessary to pass any crucial data in, but you want to set the navigation item's title before finishing up the navigation.
 
 You can store the segue identifier in a class property for cleaner code and use it in the `prepareForSegue(for:Sender:)` method.
 

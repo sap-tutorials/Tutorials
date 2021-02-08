@@ -11,7 +11,7 @@ time: 20
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0 or higher
+- **SAP SDK for iOS:** Version 5.0 or higher
 
 ## Details
 ### You will learn  
@@ -73,11 +73,11 @@ If you want more information about Mac Catalyst you can always visit the followi
 
 [ACCORDION-BEGIN [Step 4: ](Make your app Mac ready)]
 
-Before we do the necessary steps to make our app Mac ready let's take a look on how the app is going to look like on all three platforms.
+Before you do the necessary steps to make our app Mac ready let's take a look on how the app is going to look like on all three platforms.
 
 !![Finished Apps](fiori-ios-scpms-starter-mission-05-1.png)
 
-You can see that we're going to change the appearance on MacOS to a split view having a side bar.
+You can see that you're going to change the appearance on MacOS to a split view having a side bar.
 
 1. In your Xcode project click on the `TutorialApp.xcproj` file located in the project navigator and make sure that **Mac** is selected in the **Deployment Info** section.
 

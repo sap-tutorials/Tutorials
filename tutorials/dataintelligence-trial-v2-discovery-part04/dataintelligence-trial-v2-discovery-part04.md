@@ -89,8 +89,6 @@ After a dataset has been published to the Catalog other users can search for it 
 
 [VALIDATE_1]
 
-[DONE]
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Discovery dashboard)]

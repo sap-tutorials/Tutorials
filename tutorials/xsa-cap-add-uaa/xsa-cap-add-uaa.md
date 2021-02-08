@@ -4,20 +4,21 @@ description: Define security and enable user authentication and authorization.
 time: 15
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud]
+tags: [ tutorial>beginner, products>sap-hana\,-express-edition]
 primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - You have [created a user interface](xsa-cap-create-ui).
- - You have administration access to the XS Advanced cockpit in SAP HANA (e.g., like user `XSA_ADMIN` in SAP HANA, express edition) or the SAP Cloud Platform Cockpit if performing this tutorial on SAP HANA Cloud trial.
+ - You have administration access to the XS Advanced cockpit in SAP HANA (e.g., like user `XSA_ADMIN` in SAP HANA, express edition).
 
 ## Details
 ### You will learn
   - How to create an instance of the User Authentication and Authorization service
   - How to incorporate security into the routing endpoint of your application
 
-This tutorial can be completed in SAP HANA, express edition SPS04 or higher or SAP HANA Cloud trial.
+This tutorial can be completed in SAP HANA, express edition SPS04 or higher.
 
 ---
 

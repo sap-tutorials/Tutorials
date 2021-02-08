@@ -47,6 +47,8 @@ You are the owner of an e-commerce business or a web shop in the fashion industr
 
 4. Choose **Start**.
 
+>In case you are not able to subscribe to **SAP Customer Order Sourcing**, you need to [assign quota to a Subaccount](https://help.sap.com/viewer/cd03af1a94a440f1b5dbc0dc50a0989b/Cloud/en-US/bdf64a959a5249cf88b414a7c01391df.html).
+
 The configuration and set-up of your new **SAP Customer Order Sourcing** trial system starts and finishes automatically.
 
 You want to learn how to setup SAP Customer Order Sourcing yourself? This tutorial can help: [Set Up SAP Customer Order Sourcing Manually](cos-manual-setup).

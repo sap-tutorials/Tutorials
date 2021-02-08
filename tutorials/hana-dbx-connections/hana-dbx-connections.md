@@ -1,6 +1,6 @@
 ---
 title: Add Databases to  the SAP HANA Database Explorer
-description: This tutorial will explore different database connections types, such as SAP HANA Cockpit Database, SAP HANA, SAP HANA Deployment Infrastructure (HDI), along with the different operations that can be performed on them.
+description: This tutorial will explore different database connections types, such as SAP HANA Cockpit Database, and SAP HANA, SAP HANA Deployment Infrastructure (HDI), along with the different operations that can be performed on them.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
@@ -29,13 +29,9 @@ SQL consoles are associated with a database connection.
 
 Databases defined in the SAP Cloud Platform cockpit or the SAP HANA cockpit can be opened in the SAP HANA database explorer.
 
-1.  From the SAP Cloud Platform Cockpit or the SAP HANA Cockpit, choose to open the **SAP HANA Database Explorer**.  
+1.  From the landscape tool, choose **Open SAP HANA Database Explorer**.  
 
     ![Open in the database explorer](open-in-dbx.png)
-
-    or
-
-    !![Open from cockpit](open-from-cockpit.png)
 
     >You may be prompted to enter database login credentials at this point.  Enter the DBADMIN or SYSTEM user credentials that were set during the SAP HANA Cloud trial or express edition setup process, or the credentials provided by your database administrator.
 
@@ -57,13 +53,13 @@ SAP HANA Cockpit databases can be grouped together.  This enables SQL statements
 
 ![Run SQL on Multiple Databases](run-on-multiple-hxe.png)
 
-1. With SAP HANA Cloud, all databases created in a space are placed in a group.  As seen below, the space name is dev.  The SAP HANA Cloud Cockpit contains in its URL, a parameter that indicates the unique name (GUID) for the space.  
+1. With SAP HANA Cloud, all databases created in a space are placed in a group.  As seen below, the space name is dev.  The SAP HANA Cloud Cockpit, or the landscape tool, contain in their URL, a parameter that indicates the unique name (GUID) for the space.  
 
     ```
     https://host/trial/#/globalaccount/GUID/subaccount/GUID/org/GUID/space/GUID/hanaCloud
     ```   
 
-    In the SAP HANA Cloud trial, only one SAP HANA Cloud instance can be created.
+    >In the SAP HANA Cloud trial, only one SAP HANA Cloud instance can be created.
 
     ![group by space](group-by-space.png)
 
@@ -71,7 +67,7 @@ SAP HANA Cockpit databases can be grouped together.  This enables SQL statements
 
     !![run on multiple](run-on-multiple.png)  
 
-    The space dev is represented by its GUID in the selection dialog below along with a predefined group named ALL.    
+    The space dev is represented by its GUID in the selection dialog below.    
 
     ![run on multiple databases in HXE](run-on-multiple-hc.png)
 
@@ -115,7 +111,7 @@ Databases can be added directly to the SAP HANA database explorer.  To connect t
 
     ![encrypted connection](encrypted.png)
 
-    The host and port values can be copied from the SAP HANA Cloud Platform Cockpit.  
+    The host and port values can be copied from the landscape tool.  
 
     !![copy host and port](host-and-port.png)
 
@@ -156,6 +152,7 @@ Databases can be added directly to the SAP HANA database explorer.  To connect t
 
     >```SQL
     >select * from M_SESSION_CONTEXT where CONNECTION_ID=current_connection;
+    >select * from SYS.M_CONNECTIONS where CONNECTION_ID=current_connection;
     >select ISOLATION_LEVEL from PUBLIC.M_TRANSACTIONS where CONNECTION_ID = current_connection;
     >```
     >
@@ -191,6 +188,10 @@ Databases have additional actions that can be performed on them such as renaming
 
     ![database overview](overview.png)
 
+5.  Groups and filters can be used to organize and quickly find databases.
+
+    ![Using groups](groups.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -201,9 +202,11 @@ An SAP HANA Deployment Infrastructure (HDI) container can be created by using th
 
 >Note: This section is optional and does not need to be followed to complete the subsequent tutorials in this group.
 
+>Note: The SAP Business Application Studio is now the recommended tool for SAP HANA native application development with SAP HANA Cloud.  The SAP HANA Web IDE for SAP HANA should continue to be used with on-premise SAP HANA.  The following steps are similar in either tool.
+
 1.  Open the SAP HANA Web IDE for HANA Development if using SAP HANA Cloud or SAP HANA Web IDE for SAP HANA if using SAP HANA, express edition or an on-premise install.
 
-    Open SAP HANA Web IDE (in SAP Cloud Platform).  Further instructions on how to setup the SAP HANA Web IDE in the trial can be found on steps 3 and 4 of [Help Thomas Get Started with SAP HANA](https://developers.sap.com/tutorials/hana-trial-advanced-analytics.html#4a1b9a58-e95b-41d5-81f5-8a9a82703ec4).    
+    Open SAP HANA Web IDE (in SAP Cloud Platform).  
 
     ![open web ide](open-web-ide.png)
 
@@ -304,7 +307,7 @@ An SAP HANA Deployment Infrastructure (HDI) container can be created by using th
 
 For an example of creating a calculation view inside an HDI container, see the video titled Develop Apps at the end of the blog post [Getting Started with SAP HANA Cloud II | Basics](https://blogs.sap.com/2020/03/29/getting-started-with-sap-hana-cloud-part-ii/)
 
-The mission [Get Started with XS Advanced Development](https://developers.sap.com/mission.xsa-get-started.html) provides further examples of using an HDI container.
+The mission [Get Started with XS Advanced Development](mission.xsa-get-started) provides further examples of using an HDI container.
 
 In the next tutorial, additional tables, views, functions, and procedures that will be used in subsequent tutorials in this group will be created directly in the database rather than in an HDI container.
 

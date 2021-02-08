@@ -5,15 +5,15 @@ title: Try Out the SAP Cloud Platform SDK for Android Wizard
 description: Use the Android Studio-integrated SAP Cloud Platform SDK for Android Wizard to create a mobile app and configure it to make use of SAP Cloud Platform Mobile Services features.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-android
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-cloud-platform-sdk-for-android, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-cloud-platform-sdk-for-android, products>sap-cloud-platform ]
 time: 30
 ---
 
 ## Prerequisites
 - You [created a trial account on SAP Cloud Platform](hcp-create-trial-account).
 - [Enabled SAP Cloud Platform mobile services](fiori-ios-hcpms-setup) on **Cloud Foundry**.
-- Installed [Android Studio 3.6.x](https://developer.android.com/studio/archive). Please use the specified version.
-- [Downloaded](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20android) and [Installed](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/android/setup.html) version 3.1.x (3.1.2 and higher) of the SAP Cloud Platform SDK for Android.
+- Installed [Android Studio 4.1.x](https://developer.android.com/studio/archive). Please use the specified version.
+- [Downloaded](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20android) and [Installed](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/android/setup.html) version 3.2.x of the SAP Cloud Platform SDK for Android.
 - Created a Google account.
 
 ## Details
@@ -32,7 +32,7 @@ time: 30
 
 2.  Choose **Start a new SAP Cloud Platform Android project**, which is an option created by the SAP Cloud Platform SDK for Android Wizard.
 
-    ![New project](new-project.png)
+    !![New project](new-project.png)
 
 3.  The wizard can save the server connection details for multiple servers. Fill in the required fields as shown below.
 
@@ -48,19 +48,19 @@ time: 30
 
 4.  Go to the [SAP Cloud Platform Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) and under **Important Links**, both Admin URLs are present and can be copied.
 
-    ![Admin API and UI URL](admin-url.png)
+    !![Admin API and UI URL](admin-url.png)
 
-    ![Server connection](server-connection.png)
+    !![Server connection](server-connection.png)
 
 5.  Click **Next** on the **Server Connection** tab.
 
 6.  On the **Cloud Configuration** tab, select **Sample** and set the **Application ID** to be **`com.sap.wizapp`**.
 
-    ![Sample tab information](sample-application-wizard.png)
+    !![Sample tab information](sample-application-wizard.png)
 
 7.  SAP Cloud Platform mobile services provide a sample back-end destination named `com.sap.edm.sampleservice.v2` that is being used here to provide data for the application. It contains product categories, product, supplier, customer and sales order data. Select it and click **Next**.
 
-    ![Odata service destination screen](Odata-service-destination.png)
+    !![Odata service destination screen](Odata-service-destination.png)
 
 8.  On the **Android Studio Project** tab, provide the following configuration data.
 
@@ -72,7 +72,7 @@ time: 30
 
     >The screenshot below provides a Java example. Depending on which **Target Language** you choose, either Java or Kotlin code will be generated.
 
-    ![Project configuration](project-configuration.png)
+    !![Project configuration](project-configuration.png)
 
 9.  On the **Project Features** tab, provide the following configuration data.
 
@@ -84,9 +84,10 @@ time: 30
     | Enable Logging | **`check`** |
     | Enable Upload | **`check`** |
     | Enable Usage Reporting | **`check`** |
+    | Enable Crash Reporting | **`optional`** |
     | Enable Push | **`optional`** |
 
-    ![Project features](push-notification-checkbox-enabled.png)
+    !![Project features](push-notification-checkbox-enabled.png)
 
 10.  If you would like to add push notification support to your app, proceed to **Step 2**, which describes how to acquire the `google-services.json` file required for push messaging. Otherwise, uncheck **Enable Push**, click **Finish** and proceed to **Step 3**.
 
@@ -97,33 +98,33 @@ time: 30
 
 If you check the **Enable Push** checkbox, an error message is displayed explaining that you need to specify a `google-services.json` file. We will obtain this file from the [Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/) feature in [Google Firebase](https://firebase.google.com/).
 
-![Push Notifications enabled](push-notification-checkbox-enabled.png)
+!![Push Notifications enabled](push-notification-checkbox-enabled.png)
 
 1.  Open the [Firebase](https://console.firebase.google.com/) console and click **Create project**. (If you have created any before, click **Add project**.)
 
-    ![Add project in Firebase](firebase-add-project.png)
+    !![Add project in Firebase](firebase-add-project.png)
 
 2.  Click **Continue** until a new project is successfully created.
 
 3.  Access **Project settings** for the newly created project.
 
-    ![Project settings](firebase-project-settings.png)
+    !![Project settings](firebase-project-settings.png)
 
 4.  Scroll down and add Firebase to your app.
 
-    ![Add Firebase to your Android app](add-firebase-to-android.png)
+    !![Add Firebase to your Android app](add-firebase-to-android.png)
 
     The **Android package name** must match the **Project Namespace** you used to create the app in Android Studio. In our example, the **Android package name** is **`com.sap.wizapp`**.
 
-    ![Register App](firebase-register-app.png)
+    !![Register App](firebase-register-app.png)
 
 5.  Download the `google-services.json` file.
 
-    ![Download google-services.json file](download-google-services-button.png)
+    !![Download google-services.json file](download-google-services-button.png)
 
 6.  Now browse for the `google-services.json` file in the wizard. This file is placed into the app folder of the generated project and helps enable the app to work with Google Firebase notifications.
 
-    ![Add google-services.json file to wizard](wizard-google-services-added.png)
+    !![Add google-services.json file to wizard](wizard-google-services-added.png)
 
     >You can add push configuration on the server as in the [Send Notifications to Your Android Application](cp-sdk-android-wizard-app-push) tutorial.
 
@@ -136,62 +137,66 @@ If you check the **Enable Push** checkbox, an error message is displayed explain
 
 1.  Wait for the build to finish.
 
-    ![Project created](project-created.png)
+    !![Project created](project-created.png)
 
 2.  Choose an emulator for running the app.
-    >For more information on creating virtual devices that run in the Android Emulator, see [Create and manage virtual devices](https://developer.android.com/studio/run/managing-avds) in the Android Studio User Guide.
+    >If you enabled push service, please make sure you install an emulator with **Target** labeled as **Google Play**. For more information on creating virtual devices that run in the Android Emulator, see [Create and manage virtual devices](https://developer.android.com/studio/run/managing-avds) in the Android Studio User Guide.
 
-    ![Deployment target](choose-emulator.png)
+    !![Deployment target](choose-emulator.png)
 
 3.  Click the **Run** toolbar icon.
 
-    ![Run the project](run.png)
+    !![Run the project](run.png)
 
     The welcome screen is shown the first time the app is run.
 
-    ![Welcome screen](welcome-screen.png)
+    !![Welcome screen](welcome-screen.png)
 
 
 4.  Log in with your username and password.
 
-    ![Authentication screen](authentication-screen.png)
+    !![Authentication screen](authentication-screen.png)
 
     The credentials you enter are securely stored by the app, and do not need to be re-entered the next time you open the app.
 
     The passcode (or fingerprint if enabled) screen provides an additional layer of security for your app.
 
-    ![Passcode screen](create-passcode.png)
+    !![Passcode screen](create-passcode.png)
 
 5.  You can modify the passcode policy in the [Mobile Service Cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) under **Client Configuration** in **Mobile Settings Exchange** page. The passcode screen will not be displayed if the **Enable Passcode Policy** is not checked.
 
-    ![Mobile Settings Exchange page access](access-mobile-settings-exchange.png)
+    !![Mobile Settings Exchange page access](access-mobile-settings-exchange.png)
 
-    ![Passcode Policy](passcode-policy.png)
+    !![Passcode Policy](passcode-policy.png)
 
 6.  Because **Enable Usage Reporting** is checked, this screen can be used to show details of how the collected data will be used. For now, select either **ALLOW** or **DENY**. **Usage Reporting** is covered in a later tutorial in this mission.
 
-    ![Data Collection screen](data-collection-screen.png)
+    !![Usage Reporting Consent Screen](usage-reporting-consent-screen.png)
 
-7.  The license agreement screen is displayed.
+7.  Just like usage reporting, since **Enable Crash Reporting** is checked as well, this screen will be used to display details of how the collected information will be used. Select either **ALLOW** or **DENY**. If you select **DENY**, the crash information will only be stored locally.
 
-    ![License agreement screen](license-agreement.png)
+    !![Crash Reporting Consent Screen](crash-reporting-consent-screen.png)
+
+8.  The license agreement screen is displayed.
+
+    !![License agreement screen](license-agreement.png)
 
     Read it and click **AGREE**, you will see the first screen of the app. If you select **DISAGREE**, you will be asked to confirm whether to terminate onboarding. If you confirm, you will be back to welcome screen. Otherwise, you can still select **AGREE** to complete onboarding and start to use the app.
 
-    ![License agreement disagree](license-agreement-disagree.png)
+    !![License agreement disagree](license-agreement-disagree.png)
 
-8.  The first screen of the app shows the different entities that are in the sample OData service.
+9.  The first screen of the app shows the different entities that are in the sample OData service.
 
-    ![Entities screen](entities-screen.png)
+    !![Entities screen](entities-screen.png)
 
     Tap **Products** to navigate to the products list.
 
-    ![Products screen](products-screen.png)
+    !![Products screen](products-screen.png)
 
 
-9.  Tap a list item to display the following editable detail screen.
+10.  Tap a list item to display the following editable detail screen.
 
-    ![Category detail](product-detail.png)
+    !![Category detail](product-detail.png)
 
 >For further information on generating your app, see [Creating Apps with the Wizard](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/android/creating-an-app.html).
 

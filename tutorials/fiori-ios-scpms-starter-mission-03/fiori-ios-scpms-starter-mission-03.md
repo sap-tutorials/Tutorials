@@ -1,6 +1,6 @@
 ---
 title: Build a Product List
-description: Build an entity list using SAP Cloud Platfrom SDK for iOS controls, with storyboard segues for navigation between the overview screen and the product list.
+description: Build an entity list using SAP SDK for iOS controls, with storyboard segues for navigation between the overview screen and the product list.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
@@ -11,7 +11,7 @@ time: 35
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0 or higher
+- **SAP SDK for iOS:** Version 5.0 or higher
 
 ## Details
 ### You will learn  
@@ -55,7 +55,7 @@ In this tutorial, you will implement the product list first, a `FUISearchBar` to
 
 [ACCORDION-BEGIN [Step 2: ](Implement a prepare for segue method)]
 
-For the product list, it is not necessary to pass any crucial data in, but we want to set the navigation item's title before finishing up the navigation.
+For the product list, it is not necessary to pass any crucial data in, but you want to set the navigation item's title before finishing up the navigation.
 
 You can store the segue identifier in a class property for cleaner code and use it in the `prepareForSegue(for:Sender:)` method.
 
@@ -71,7 +71,7 @@ You can store the segue identifier in a class property for cleaner code and use 
     ```Swift
     /**
     In a storyboard-based application, you will often want to do a little preparation before navigation.
-    Using a Switch-statement let's you distinct between the different segues. Right now there is only the showProductsList but we will add a showCustomersList later on.
+    Using a Switch-statement let's you distinct between the different segues. Right now there is only the showProductsList but you will add a showCustomersList later on.
     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
@@ -131,7 +131,7 @@ The Product List is a Table View Controller which means the structure is similar
 
     ```
 
-2. Now we will add parts of the class properties we already have used in the Overview Table View Controller. Implement the following lines of code at the top of the class:
+2. Now you will add parts of the class properties you already have used in the Overview Table View Controller. Implement the following lines of code at the top of the class:
 
     **For Online OData**
 
@@ -148,7 +148,7 @@ The Product List is a Table View Controller which means the structure is similar
     /// First retrieve the destinations your app can talk to from the AppParameters.
     let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
-    /// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course we only have one destination here. Handle the errors in case the OData controller is nil. We are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the iOS Assistant.
+    /// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course you only have one destination here. Handle the errors in case the OData controller is nil. You are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the iOS Assistant.
     var dataService: ESPMContainer<OnlineODataProvider>? {
         guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
             AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
@@ -200,7 +200,7 @@ The Product List is a Table View Controller which means the structure is similar
 
     ```
 
-    You might wonder why we are not passing the data service in from the Overview. Later on when adapting the app to work on MacOS through Mac Catalyst, the user will have the option to jump directly into the product list. In that case you won't perform a segue and so on not be able to pass in the data service. Of course there are ways to refactor this into a more centralized way but for simplicity reason we stick to this approach.
+    You might wonder why you are not passing the data service in from the Overview. Later on when adapting the app to work on MacOS through Mac Catalyst, the user will have the option to jump directly into the product list. In that case you won't perform a segue and so on not be able to pass in the data service. Of course there are ways to refactor this into a more centralized way but for simplicity reason you stick to this approach.
 
 3. Now implement the `viewDidLoad()` to register the needed cells and setup the table view:
 
@@ -215,7 +215,7 @@ The Product List is a Table View Controller which means the structure is similar
 
     ```
 
-4. We will use the `SAPFioriLoadingIndicator` for this table view controller as well. Let your class conform to the `SAPFioriLoadingIndicator` protocol:
+4. You will use the `SAPFioriLoadingIndicator` for this table view controller as well. Let your class conform to the `SAPFioriLoadingIndicator` protocol:
 
     ```Swift
     class ProductsTableViewController: UITableViewController, SAPFioriLoadingIndicator {
@@ -352,7 +352,7 @@ The Product List is a Table View Controller which means the structure is similar
 
 [ACCORDION-BEGIN [Step 4: ](Implement a search bar)]
 
-The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearchBar` inside but enhances the whole search controller with a barcode reader. We're not going to implement the barcode reader in this tutorial series but if you're interested in how to do so take a look at the [Use the Barcode Scanner API](fiori-ios-scpms-barcode) tutorial at a later point.
+The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearchBar` inside but enhances the whole search controller with a barcode reader. You're not going to implement the barcode reader in this tutorial series but if you're interested in how to do so take a look at the [Use the Barcode Scanner API](fiori-ios-scpms-barcode) tutorial at a later point.
 
 1. In order to add a search bar to the view you need a `FUISearchController` instance, implement the following two class properties in the `ProductsTableViewController.swift` class to hold on an instance of the search controller as well as the search results.
 
@@ -375,7 +375,7 @@ The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearc
         searchController!.searchBar.placeholderText = NSLocalizedString("Search for products...", comment: "")
         searchController!.searchBar.isBarcodeScannerEnabled = false
 
-        // Set the search bar to the table header view like we did with the KPI Header.
+        // Set the search bar to the table header view like you did with the KPI Header.
         self.tableView.tableHeaderView = searchController!.searchBar
     }
 
@@ -413,8 +413,8 @@ The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearc
 
     ```
 
-    We will go ahead and implement that later. For now leave it as is and we proceed implementing the search logic.
-    To do so we implement some helper methods deciding if the text in the search field is empty, if the user is actually in the process of searching but also the search logic itself.
+    You will go ahead and implement that later. For now leave it as is and you proceed implementing the search logic.
+    To do so you implement some helper methods deciding if the text in the search field is empty, if the user is actually in the process of searching but also the search logic itself.
 
 5. First implement the method to check if the search field is empty or not. Add the method below the `setupSearchBar()` method:
 
@@ -453,7 +453,7 @@ The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearc
 
     ```
 
-    With the search logic implemented we can go ahead and fully implement the extension we defined before.
+    With the search logic implemented you can go ahead and fully implement the extension you defined before.
 
 8. Replace the `updateSearchResults(for:)` method in the `UISearchResultsUpdating` extension:
 

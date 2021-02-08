@@ -66,13 +66,15 @@ This page will display customer orders list, you will add an **Object Table** co
 
     | Property | Value |
     |----|----|
-    | `Service`| Select `SampleService.service` from the dropdown |
+    | `Service`| Select `Sample.service` from the dropdown |
     | `Entity` | Select `SalesOrderHeaders` from the dropdown |
-    | `Query`| `$filter=CustomerId eq '{CustomerId}'&$top=5&$orderby=CreatedAt desc` |
+    | `QueryOptions`| `$filter=CustomerId eq '{CustomerId}'&$top=5&$orderby=CreatedAt desc` |
 
     !![MDK](img_1.5.png)
 
     >For a given customer id, query expression will filter top 5 order entries returned in descending when sorted by the order creation date property.
+
+    >!![MDK](img_1.5.gif)
 
 6. Now, start binding Object Table properties with `SalesOrderHeaders` entity set properties.
 
@@ -80,11 +82,11 @@ This page will display customer orders list, you will add an **Object Table** co
 
     | Property | Value |
     |----|----|
-    | `Description`| `$(D,{CreatedAt})` |
+    | `Description`| `$(D,{CreatedAt},'','',{format:'medium'})` |
     | `DetailImage`| Remove the default value and leave it blank |
-    | `Footnote` | Remove the default value and leave it blank  |
+    | `Footnote` | Remove the default value and leave it blank |
     | `PreserveIconStackSpacing`| `false` |
-    | `ProgressIndicator` | Remove the default value and leave it blank  |
+    | `ProgressIndicator` | Remove the default value and leave it blank |
     | `Status`| `$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})` |
     | `Subhead` | bind to `{CustomerId}` |
     | `Substatus`| bind to `{LifeCycleStatusName}` |
@@ -92,9 +94,13 @@ This page will display customer orders list, you will add an **Object Table** co
 
     !![MDK](img_1.6.png)
 
-    >`$(D,{CreatedAt})` is an expression of how to format a date, end result would be like 8. Jun 2018. By default it will be formatted to the device's locale setting.
+    >`$(D,{CreatedAt},'','',{format:'medium'})` is an expression of how to format a date, end result would be like June 20, 2020. By default it will be formatted to the device's locale setting. More details on Date Formatter is available in [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/property-binding/i18n-formatter.html#date-formatter).
 
-    >`$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})` is an expression of how to format currency value, end result would be like 200.44 €. By default it will be formatted to the device's locale setting.
+    >!![MDK](img_1.7.gif)
+
+    >`$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})` is an expression of how to format currency value, end result would be like €200.44. By default it will be formatted to the device's locale setting.  More details on Currency Formatter is available in [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/property-binding/i18n-formatter.html#currency-formatter).
+
+    >!![MDK](img_1.6.gif)
 
 7. In the **Search** section of the **Properties** pane, change both the **Search Enabled** property and **Barcode Scanner** property to **`true`**.
 
@@ -164,7 +170,7 @@ This page will show related details for an order. In this page, you will add an 
     | Property | Value |
     |----|----|
     | `KeyName`| `Created At` |
-    | `Value` | `$(D,{CreatedAt})` |
+    | `Value` | `$(D,{CreatedAt},'','',{format:'medium'})` |
 
     | Property | Value |
     |----|----|
@@ -236,26 +242,25 @@ Double-click the `NavToSalesOrders_Details.action` and click **OK** to set it as
 
 [ACCORDION-BEGIN [Step 5: ](Write JavaScript logic to calculate total number of orders)]
 
-1. You will show a total count of orders for a customer in `Customers_Detail.page`. You will write a JavaScript logic for this calculation.
+You will show a total count of orders for a customer in `Customers_Detail.page`. You will write a JavaScript logic for this calculation.
 
-    Right-click the **Rules** folder | **New File**.
+1. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
-    !![MDK](img_5.1.png)
+2. Enter the Rule name `Customers_OrderCount`, press `Enter`.
 
-2. Enter the file name `Customers_OrderCount.js`, click **OK**.
+    !![MDK](img_5.2.png)
 
 3. Copy and paste the following code.
 
     ```JavaScript
-    export default function CustomerOrderCount(clientAPI) {
-      //The following currentCustomer will retrieve the current customer record
-    	const currentCustomer = clientAPI.getPageProxy().binding.CustomerId;
-
-      //The following expression will retrieve the total count of the orders for a given customer
-    	return clientAPI.count('/DemoSampleApp/Services/SampleService.service', 'SalesOrderHeaders', `$filter=CustomerId eq '${currentCustomer}'`).then((count) => {
+    export default function CustomerOrderCount(context) {
+        //The following currentCustomer will retrieve the current customer record
+        const currentCustomer = context.getPageProxy().binding.CustomerId;
+        //The following expression will retrieve the total count of the orders for a given customer
+        return context.count('/DemoSampleApp/Services/Sample.service', 'SalesOrderHeaders', `$filter=CustomerId eq '${currentCustomer}'`).then((count) => {
             return count;
         });
-    }
+    }    
     ```
 
 4. Save the changes to the `Customers_OrderCount.js` file.
@@ -277,9 +282,9 @@ Double-click the `NavToSalesOrders_Details.action` and click **OK** to set it as
 
     | Property | Value |
     |----|----|
-    | `Service`| Select `SampleService.service` from the dropdown |
+    | `Service`| Select `Sample.service` from the dropdown |
     | `Entity` | Select `{{#Property:@odata.readLink}}/SalesOrders` from the dropdown |
-    | `Query`| `$top=5&$orderby=CreatedAt desc` |
+    | `QueryOptions`| `$top=5&$orderby=CreatedAt desc` |
 
     !![MDK](img_6.2.png)
 
@@ -303,15 +308,11 @@ Double-click the `NavToSalesOrders_Details.action` and click **OK** to set it as
     | `PreserveIconStackSpacing`| select `false` from the dropdown |
     | `ProgressIndicator` | Remove the default value and leave it blank  |
     | `Status`| `$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})` |
-    | `Subhead` | `$(D,{CreatedAt})` |
+    | `Subhead` | `$(D,{CreatedAt},'','',{format:'medium'})` |
     | `Substatus`| bind to `{CurrencyCode}` |
     | `Title`| bind to `{SalesOrderId}` |
 
     !![MDK](img_6.3.png)
-
-    >`$(D,{CreatedAt})` is an expression of how to format a date, end result would be like 8. Jun 2018. By default it will be formatted to the device's locale setting.
-
-    >`$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})` is an expression of how to format currency value, end result would be like 200.44 €. By default it will be formatted to the device's locale setting.
 
 4. In the **Behavior** section of the **Properties** pane, select `DisclosureIndicator` to **`AccessoryType`** property.
 
@@ -385,17 +386,21 @@ Double-click the `NavToSalesOrders_Details.action` and click **OK** to set it as
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 9: ](Deploy the application)]
 
 Deploy the updated application to your MDK client.
 
-Right-click `Application.app` and select **MDK: Deploy**.
+1. Right-click `Application.app` and select **MDK: Deploy**.
 
-!![MDK](img_9.1.png)
+    !![MDK](img_9.1.png)
 
-You should see **Deploy Succeeded** message.
+2. Select deploy target as **Mobile & Cloud**.
 
-!![MDK](img_9.2.png)
+    !![MDK](img_9.2.png)
+
+    You should see success message for both deployments.
+
+    !![MDK](img_9.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -404,7 +409,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [Android]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or fingerprint. When you see a confirmation pop-up, tap **OK**. Tap **CUSTOMER LIST**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. When you see a confirmation pop-up, tap **OK**. Tap **CUSTOMER LIST**.
 
     ![MDK](img_10.1.png)
 
@@ -428,7 +433,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [iOS]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. When you see a confirmation pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. When you see a confirmation pop-up, tap **OK**.
 
     ![MDK](img_10.6.png)
 
@@ -438,25 +443,52 @@ You should see **Deploy Succeeded** message.
 
     >If you see _No Customer Orders Found_ message, try with other customer record.
 
-2. Tapping on any order navigates to its details page.
+3. Tapping on any order navigates to its details page.
 
     ![MDK](img_10.8.png)
 
 
-3. Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.  
+4. Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.  
 
     ![MDK](img_10.9.png)
 
     ![MDK](img_10.10.png)
 
-
-
 [OPTION END]
 
-**Congratulations**! You have successfully extended MDK app with Customer orders and you are now all set to [Implement Create Entity and Linking Entities in an MDK App](cp-mobile-dev-kit-link-entity).
+[OPTION BEGIN [Web]]
+
+1. Either click the highlighted button or refresh the web page to load the changes.
+
+    !![MDK](img_10.11.png)
+
+    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+
+    >!![MDK](img_10.12.png)
+
+2. Click **Customer List** | click a customer record. You will see the **Customer Orders** area in customer detail page and also total count of orders.
+
+    !![MDK](img_10.13.png)
+
+    >If you see _No Customer Orders Found_ message, try with other customer record.
+
+3. Clicking on any order navigates to its details page.
+
+    !![MDK](img_10.14.png)
+
+4. Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.
+
+    !![MDK](img_10.15.png)
+
+    !![MDK](img_10.16.png)
+
+[OPTION END]
 
 [DONE]
 [ACCORDION-END]
 
+---
+
+Congratulations, you have successfully extended MDK app with Customer orders and you are now all set to [implement Create Entity and Linking Entities in an MDK App](cp-mobile-dev-kit-link-entity).
 
 ---

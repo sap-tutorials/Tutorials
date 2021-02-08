@@ -9,6 +9,7 @@ primary_tag: products>sap-cloud-platform--abap-environment
 
 ## Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
+- **IMPORTANT**: This tutorial is part of the mission [Connect Your On-Premise System with SAP Cloud Platform, ABAP Environment](https://developers.sap.com/mission.abap-env-connect-onpremise.html). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work.
 
 ## Details
 ### You will learn

@@ -41,6 +41,7 @@ In this tutorial, you can import a sample package with different artifacts using
 
     !![Edit Destination](cp-cf-wm-discover-editdestination.png)
     !![Destination Password](cp-cf-wm-discover-destinationpassword.png)
+    > Ensure that the credentials of the trial user that are entered in the destination do not have **Two Factor Authentication enabled**.
 
 [DONE]
 [ACCORDION-END]

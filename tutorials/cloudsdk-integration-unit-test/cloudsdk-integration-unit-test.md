@@ -1,24 +1,23 @@
 ---
 author_name: Daniel Kurzynski
 author_profile: https://github.com/daniel-kurzynski
-title: Integration and Unit Test
-description: Learn how to test applications which are written using the SAP Cloud SDK.
+title: Integration and Unit Tests for SAP Cloud SDK Projects
+description: Learn about various levels of automated tests and how to implement them specifically for SAP Cloud SDK projects.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites
- - [Set up CI/CD](https://developers.sap.com/tutorials/cloudsdk-ci-cd.html)
- - [Connect to OData service](https://developers.sap.com/tutorials/s4sdk-odata-service-neo.html#82b577a3-381f-4f6a-bffe-77c59e207ad7)
+This tutorial assumes you are already familiar with the basics of the SAP Cloud SDK and project "Piper", e.g. because you already completed the mission [Create a Cloud Foundry App Using SAP Cloud SDK](mission.cloudsdk-cf-app) and the tutorial [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd). To follow this tutorial please download and extract an [example project](https://github.com/SAP/cloud-s4-sdk-book/archive/tutorials/testing-start.zip) based on the SAP Cloud SDK archetype.
 
 ## Details
 ### You will learn
-  - How to write the test in a way that an automated build pipeline can execute them
-  - How to write backend unit tests for your application
-  - How to write integration tests
+  - How to write backend unit tests with JUnit
+  - How to write integration tests with Arquillian or SpringRunner
   - How to write frontend unit tests with Jasmine and Karma
+  - How to run these tests in an automated build pipeline
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Test Pyramid)]
@@ -37,7 +36,7 @@ Unit tests have the smallest granularity. They can be defined directly on the pr
 [ACCORDION-BEGIN [Step 2: ](Unit-tests backend)]
 For the modules of your backend services we suggest writing [JUnit](https://github.com/junit-team/junit4/wiki/Getting-started) tests. Please place your unit tests inside `application/src/test`. Unit tests should be very light weight. They should test the modules, e.g. a class, in a isolated manner. Other depended modules or even calls to external destinations, such as an ERP system, may be mocked. For mocking, the SAP Cloud SDK provides mocking facilities with the class `MockUtil`. Furthermore, we recommend using mocking frameworks, such as Mockito or PowerMock.
 
-Take a look at [Mock S/4HANA calls] (https://developers.sap.com/tutorials/cloudsdk-mocking-capabilities.html) to learn more about how the SAP Cloud SDK makes it easy to mock even calls to SAP S/4HANA systems.
+Take a look at [Mock S/4HANA calls] (cloudsdk-mocking-capabilities) to learn more about how the SAP Cloud SDK makes it easy to mock even calls to SAP S/4HANA systems.
 
 
 [DONE]
@@ -46,16 +45,12 @@ Take a look at [Mock S/4HANA calls] (https://developers.sap.com/tutorials/clouds
 
 [ACCORDION-BEGIN [Step 3: ](Integration tests backend)]
 [OPTION BEGIN [Cloud Foundry]]
-In the integration tests you can tests your backend services without the `frontend` application. In the **Tutorials** [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-cloud-foundry-sample-application.html) and [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-odata-service-cloud-foundry.html), we already introduced the integration tests and showed how to set them up.
-
-In general, we recommend to use Arquillian to spawn a small server containing only the resources for the specific backend services you want to test. This is faster compared to deploying it to the SAP Cloud Platform first and then testing against the deployed version. Furthermore, you still have the possibility to influence the test execution, e.g. with mocking or to collect test coverage data. For spring, we recommend to use the SpringRunner. For both, there is an example test already included in the corresponding archetype.
+In the integration tests you can tests your backend services without the `frontend` application. In the **Tutorials** [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](s4sdk-cloud-foundry-sample-application) and [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry), we already introduced the integration tests and showed how to set them up. In general, we recommend to use `Arquillian` to spawn a small server containing only the resources for the specific backend services you want to test. This is faster compared to deploying it to the SAP Cloud Platform first and then testing against the deployed version. Furthermore, you still have the possibility to influence the test execution, e.g. with mocking or to collect test coverage data. For spring, we recommend to use the `SpringRunner`. For both, there is an example test already included in the corresponding archetype.
 
 [OPTION END]
 
 [OPTION BEGIN [Neo]]
-In the integration tests you can tests your backend services without the `frontend` application. In the **Tutorials** [Create a Sample Application on SCP Neo Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-scp-neo-sample-application.html) and [Connect to OData service on Neo using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-odata-service-neo.html), we already introduced the integration tests and showed how to set them up.
-
-In general, we recommend to use Arquillian to spawn a small server containing only the resources for the specific backend services you want to test. This is faster compared to deploying it to the SAP Cloud Platform first and then testing against the deployed version. Furthermore, you still have the possibility to influence the test execution, e.g. with mocking or to collect test coverage data. For spring, we recommend to use the SpringRunner. For both, there is an example test already included in the corresponding archetype.
+In the integration tests you can tests your backend services without the `frontend` application. In the **Tutorials** [Create a Sample Application on SCP Neo Using SAP Cloud SDK](s4sdk-scp-neo-sample-application) and [Connect to OData service on Neo using SAP Cloud SDK](s4sdk-odata-service-neo), we already introduced the integration tests and showed how to set them up. In general, we recommend to use `Arquillian` to spawn a small server containing only the resources for the specific backend services you want to test. This is faster compared to deploying it to the SAP Cloud Platform first and then testing against the deployed version. Furthermore, you still have the possibility to influence the test execution, e.g. with mocking or to collect test coverage data. For spring, we recommend to use the `SpringRunner`. For both, there is an example test already included in the corresponding archetype.
 
 [OPTION END]
 
@@ -67,14 +62,14 @@ In this tutorial, we want to focus on the mocking facilities provided by the SAP
 
 This target environment has to be, partially, replicated in the local environment where the mocking facilities allow to test your business application without relying on the provided services locally. Since the SAP Cloud SDK already comes with abstractions for these services, it also offers to mock them in a local environment.
 
-As example, we take the `BusinessPartnerServiceTest` from [Connect to OData Service](https://developers.sap.com/tutorials/s4sdk-odata-service-cloud-foundry.html)
+As example, we take the `BusinessPartnerServletTest`. You can find this integration test also in the sources you downloaded as preparation for this tutorial.
 
-``` Java
-package com.sap.cloud.sdk.tutorial;
+```Java
+package com.sap.cloud.s4hana.examples.addressmgr;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.module.jsv.JsonSchemaValidator;
+import com.sap.cloud.sdk.cloudplatform.connectivity.ProxyConfiguration;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
@@ -83,51 +78,62 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.slf4j.Logger;
-
 import java.net.URL;
 
-import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
 import com.sap.cloud.sdk.testutil.MockUtil;
 
 import static io.restassured.RestAssured.when;
+import static org.hamcrest.Matchers.*;
 
-@RunWith(Arquillian.class)
-public class BusinessPartnerServletTest {
+@RunWith( Arquillian.class )
+public class BusinessPartnerServletTest
+{
     private static final MockUtil mockUtil = new MockUtil();
-    private static final Logger logger = CloudLoggerFactory.getLogger(BusinessPartnerServiceTest.class);
+    public static final String BUPA_ID = "1003764";
 
     @ArquillianResource
     private URL baseUrl;
 
     @Deployment
-    public static WebArchive createDeployment() {
+    public static WebArchive createDeployment()
+    {
         return TestUtil.createDeployment(BusinessPartnerServlet.class);
     }
 
     @BeforeClass
-    public static void beforeClass() {
+    public static void beforeClass()
+    {
         mockUtil.mockDefaults();
+        mockUtil.mockErpDestination();
     }
 
     @Before
-    public void before() {
+    public void before()
+    {
         RestAssured.baseURI = baseUrl.toExternalForm();
     }
 
     @Test
-    public void testService() {
-        // JSON schema validation from resource definition
-        final JsonSchemaValidator jsonValidator = JsonSchemaValidator
-                .matchesJsonSchemaInClasspath("businesspartners-schema.json");
-
-        // HTTP GET response OK, JSON header and valid schema
+    public void testGetAll()
+    {
         when()
-                .get("/businesspartners")
+                .get("/api/business-partners")
         .then()
                 .statusCode(200)
                 .contentType(ContentType.JSON)
-                .body(jsonValidator);
+                .body("$", hasSize(greaterThan(1)))
+                .body("[0].BusinessPartner", not(isEmptyOrNullString()));
+    }
+
+    @Test
+    public void testGetSingle() {
+        when()
+                .get("/api/business-partners?id={id}", BUPA_ID)
+        .then()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .body("BusinessPartner", allOf(not(isEmptyOrNullString()),equalTo(BUPA_ID)))
+                .body("to_BusinessPartnerAddress", hasSize(greaterThan(0)));
     }
 }
 ```
@@ -136,19 +142,18 @@ Everything around mocking is located in the class `MockUtil` in the SAP Cloud SD
 
 In this example, we use the class `MockUtil` in the `beforeClass` method to mock common resources using `mockUtil.mockDefaults()` and to mock the connection to the S/4HANA system. The `mockDefaults` method calls several methods from the `MockUtil` to mock:
 
-| Method| Description
 | :------------- | :-------------
-| `mockCurrentCloudPlatform()` | Mocks the SAP Cloud Platform environment, i.e. the application name. The Default application name is `testapp`.
-| `mockCurrentLocales()` | Mocks the current locale to en-US
-| `mockCurrentTenant()` | Mocks the tenant id to 00000000-0000-0000-0000-000000000000
-| `mockCurrentPrincipal()` | Mocks the principal name to `MockedUser`
-| `mockAuditLog()` | Makes the audit logger locally available not to cause run-time problems. The default behavior is to forward the logs to the standard logger.
+| `resetCloudPlatformFacade()` | `Mocks the SAP Cloud Platform environment, i.e. the application name. The Default application name is testapp.`
+| `mockCurrentLocales()` | `Mocks the current locale to en-US`
+| `mockCurrentTenant()` | `Mocks the tenant id to 00000000-0000-0000-0000-000000000000`
+| `mockCurrentUser()` | `Mocks the user name to MockedUser`
+| `resetAuditLogFacade()` | `Makes the audit logger locally available not to cause run-time problems. The default behavior is to forward the logs to the standard logger.`
 
 As result, you can get platform specific information such as tenant or user information although you are not in a SAP Cloud Platform environment. Furthermore, this is the basis to mock destination such as the connection to an ERP system or other external services.
 
 The SAP Cloud Platform has a destination concept. A destination has a name and a configuration. It specifies an URI and authentication parameters, such as basic authentication with username and password. `MockUtil` provides a way to mock a destination configuration together with a name. Thus, your application code can be the same in the tests and in the productive environment. Destinations can be mocked using the following ways:
 
-``` Java
+```Java
 //Mock system without authentication
 String name = "myDestinationName";
 URI uri = new URI("http://path/to/destination/");
@@ -156,7 +161,7 @@ mockUtil.mockDestination(name, uri);
 
 //Authentication with be taken from credentials configuration for this alias
 String alias = "myAlias";
-TestSystem<GenericSystem> testSystem = new GenericSystem(alias, uri);
+TestSystem<GenericSystem> testSystem = new GenericSystem(alias, uri, null);
 mockUtil.mockDestination(name, testSystem);
 
 //System configuration and authentication configuration for this alias
@@ -166,7 +171,7 @@ mockUtil.mockDestination(name, alias);
 
 To configure the credentials you can either create a local file or pass the credentials over command line. A valid file is named `credentials.yml` and is located in `integration-tests/src/test/resources`. The file contains a list of credentials referencing an alias. Possible formats are `json` and `yaml` format:
 
-```
+```YAML
 credentials:
   - alias: 'myAlias'
     username: 'username'
@@ -177,7 +182,7 @@ To pass the credentials over the command line you can use the command line param
 
 In the third case, we mock the destination only by referencing an alias. In this case, you also have to configure the system in the file `integration-tests/src/test/resources/systems.yml`:
 
-```
+```YAML
 systems:
   - alias: "myAlias"
     uri: "http://path/to/destination/"
@@ -189,7 +194,7 @@ systems:
 [ACCORDION-BEGIN [Step 5: ](Mock ERP destination)]
 Mocking an ERP system uses the same mechanism. However, in addition you also have to provide a `systemId` and a `clientId` in addition to providing the systems as above. You can use either `SapClient.EMPTY` if the default client of a host is fine, or you use the convenience method ErpSystem.builder() that does not require a `clientId`.
 
-```
+```Java
 //Authentication with be taken from credentials configuration for this alias
 String alias = "myAlias";
 String systemId = "AAB";
@@ -204,7 +209,7 @@ mockUtil.mockErpDestination(name, alias);
 
 In accordance to this, the `system.yml` with ERP systems looks as follows. In cloud system do not need to specify `systemId` and `sapClient`.
 
-```
+```YAML
 erp:
   default: "myAlias"
   systems:
@@ -214,75 +219,63 @@ erp:
       sapClient: "SAPCLINET-NUMBER"
 ```
 
->You also need to create corresponding records in the Jenkins credentials store and map them via an appropriate entry in the configuration file. Credentials can be created by navigating to **Credentials > System > Global Credentials**.
-
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Unit-tests frontend)]
-In this tutorial, we will use [Jasmine](https://jasmine.github.io/) and [Karma](https://karma-runner.github.io/1.0/index.html) to implement the unit tests of the JavaScript frontend code written in SAP UI5. Jasmine is a framework to write unit tests for JavaScript code. Karma is a tool to run the tests from console or in a build pipeline.
+In this tutorial, we will use [Jasmine](https://jasmine.github.io/) and [Karma](https://karma-runner.github.io/1.0/index.html) to implement the unit tests of the JavaScript frontend code written in SAP UI5.
 
-In order to make it testable, we refactor our application from [Implement and Deploy a Frontend Application](https://developers.sap.com/tutorials/cloudsdk-frontend-app.html). We extract loading the business partners from the SAP UI5 controller into a service class. We assume that your front end code is located in `webapp`. Place your service class in `webapp/service/businesspartners.js`:
+The example you downloaded as a prerequisite of this tutorial contains a service class which loads the business partners from from the backend. It is located at `webapp/service/businesspartners.js`:
 
-```
+```JavaScript
 sap.ui.define([], function () {
     "use strict";
 
-    return {
-        getBusinessPartners: function () {
-            return jQuery.get("/businesspartners")
-        }
-    }  
+    ...
+
+    getBusinessPartner: function (businessPartnerId) {
+        return jQuery.get(this.getBusinessPartnerUrl(businessPartnerId));
+    },
+
+    ...
 });
 ```
 
 The code uses jQuery to send a GET request to a backend service of your application. It returns a promise for the list of business partners.
 
-After the refactoring the imports in the controller in `webapp/controller/View1.controller.js` would look as follows:
-
-```
-sap.ui.define([
-    "sap/ui/core/mvc/Controller",
-    "sap/ui/model/json/JSONModel",
-    "sdk-tutorial-frontend/service/businesspartners"
-], function(Controller, JSONModel, BusinessPartnerService) {
-```
-
-Replace the `jQuery.get(...)` with `BusinessPartnerService.getBusinessPartners()`.
-
 A test for this service class looks as follows:
 
-```
+```JavaScript
 "use strict";
-sap.ui.define([
-        "sdk-tutorial-frontend/service/businesspartners"
-    ],
-    function (BusinessPartnersService) {
-        //Create test data used for mocking and in the assertion
-        var testBusinessPartners = [{
-            "BusinessPartner": "1",
-            "LastName": "Doe"
-        }]
+sap.ui.define(["sdk-tutorial-frontend/service/businessPartner"], function (
+  BusinessPartnersService
+) {
+  //Create test data used for mocking and in the assertion
+  var testBusinessPartners = [
+    {
+      BusinessPartner: "1",
+      LastName: "Doe",
+    },
+  ];
 
-        function getBusinessPartnersPromise() {
-            var jQueryPromise = new $.Deferred();
-            return jQueryPromise.resolve(testBusinessPartners);
-        }
+  function getBusinessPartnersPromise() {
+    var jQueryPromise = new $.Deferred();
+    return jQueryPromise.resolve(testBusinessPartners);
+  }
 
-        describe("Business Partner Service", function () {
-
-            it("gets business partners", function (done) {
-                spyOn(jQuery, "ajax").and.returnValue(getBusinessPartnersPromise());
-                BusinessPartnersService.getBusinessPartners().then(function (businessPartners) {
-                    expect(businessPartners).toEqual(testBusinessPartners);
-                    expect(jQuery.ajax).toHaveBeenCalled();
-                    done();
-                });
-
-            });
-
-        });
+  describe("Business Partner Service", function () {
+    it("gets a business partner", function (done) {
+      spyOn(jQuery, "get").and.returnValue(getBusinessPartnersPromise());
+      BusinessPartnersService.getBusinessPartner('1').then(function (
+        businessPartners
+      ) {
+        expect(businessPartners).toEqual(testBusinessPartners);
+        expect(jQuery.get).toHaveBeenCalled();
+        done();
+      });
     });
+  });
+});
 ```
 
 In Jasmine each test is wrapped into an it block. In this case it is an asynchronous test. First we mock the call to the backend in the `spyOn` method by overwriting the method `jQuery.ajax`. Then we call the `BusinessPartnerService` implemented in the file before. In the callback we evaluate the assertions and mark the asynchronous test execution is completed. We place the test in `frontend-unit-tests/tests/service/businesspartners.jasmine.js`.
@@ -291,13 +284,13 @@ In order to execute this test you can either create a new html page which execut
 
 The `package.json` could look like:
 
-```
+```JSON
 {
     "name": "businesspartner-manager-cf",
     "version": "1.0.0",
     "description": "Frontend Tests",
     "scripts": {
-        "ci-test": "karma start frontend-unit-tests/karma.conf.js --watch=false --single-run=true"
+        "ci-frontend-unit-test": "karma start frontend-unit-tests/karma.conf.js --watch=false --single-run=true"
     },
     "author": "SAP",
     "private": true,
@@ -314,86 +307,91 @@ The `package.json` could look like:
 }
 ```
 
-In the scripts section you define the command `ci-test` which is used to run the unit tests with Karma. In the section `devDependencies` you specify the dependencies needed to execute the tests. You install them with running `npm install` in a terminal window.
+In the scripts section you define the command `ci-frontend-unit-test` which is used to run the unit tests with Karma. In the section `devDependencies` you specify the dependencies needed to execute the tests. You install them with running `npm install` in a terminal window.
 
 The only piece missing is the configuration of Karma. To configure Karma you create a file called `karma.conf.js` in the folder `frontend-unit-tests`. This file looks as follows:
 
-```
+```JavaScript
 const argv = require("yargs").argv;
 
 module.exports = function (config) {
-    config.set({
-        basePath: '../',
+  config.set({
+    basePath: "../",
 
-        frameworks: ['openui5', 'jasmine'],
+    frameworks: ["openui5", "jasmine"],
 
-        openui5: {
-            path: 'https://sapui5.hana.ondemand.com/1.42.9/resources/sap-ui-cachebuster/sap-ui-core.js',
-            useMockServer: false
+    openui5: {
+      path:
+        "https://sapui5.hana.ondemand.com/1.42.9/resources/sap-ui-cachebuster/sap-ui-core.js",
+      useMockServer: false,
+    },
+
+    client: {
+      openui5: {
+        config: {
+          theme: "sap_bluecrystal",
+          resourceroots: {
+            "sdk-tutorial-frontend":
+              "./base/application/src/main/webapp/address-manager/",
+          },
         },
+      },
+    },
 
-        client: {
-            openui5: {
-                config: {
-                    theme: 'sap_bluecrystal',
-                    resourceroots: {
-                        'sdk-tutorial-frontend': './base/webapp/',
-                    }
-                }
-            }
+    files: [
+      {
+        pattern: "./application/src/main/webapp/address-manager/**",
+        served: true,
+        included: false,
+      },
+      "./frontend-unit-tests/tests/**/*.jasmine.js",
+    ],
+
+    browsers: [argv.headless ? "ChromeHeadless" : "Chrome"],
+
+    reporters: ["junit", "progress", "coverage"],
+
+    preprocessors: {
+      "webapp/**/*.js": ["coverage"],
+    },
+
+    junitReporter: {
+      outputDir: "s4hana_pipeline/reports/frontend-unit", // results will be saved as $outputDir/$browserName.xml
+      outputFile: "Test.frontend.unit.xml", // if included, results will be saved as $outputDir/$browserName/$outputFile
+      suite: "", // suite will become the package name attribute in xml testsuite element
+      useBrowserName: true, // add browser name to report and classes names
+      nameFormatter: undefined, // function (browser, result) to customize the name attribute in xml testcase element
+      classNameFormatter: undefined, // function (browser, result) to customize the classname attribute in xml testcase element
+    },
+
+    coverageReporter: {
+      // specify a common output directory
+      dir: "s4hana_pipeline/reports/frontend-unit/coverage",
+
+      includeAllSources: true,
+
+      reporters: [
+        {
+          type: "html",
+          subdir: "report-html/ut",
         },
-
-        files: [{
-            pattern: 'webapp/**',
-            served: true,
-            included: false
+        {
+          type: "lcov",
+          subdir: "report-lcov/ut",
         },
-            './frontend-unit-tests/tests/**/*.jasmine.js'
-        ],
-
-        browsers: [argv.headless?"ChromeHeadless" :"Chrome"],
-
-        reporters: ['junit', 'progress', 'coverage'],
-
-        preprocessors: {
-            'webapp/**/*.js': ['coverage'],
+        {
+          type: "cobertura",
+          subdir: ".",
+          file: "cobertura.frontend.unit.xml",
         },
-
-        junitReporter: {
-            outputDir: 's4hana_pipeline/reports/frontend-unit', // results will be saved as $outputDir/$browserName.xml
-            outputFile: 'Test.frontend.unit.xml', // if included, results will be saved as $outputDir/$browserName/$outputFile
-            suite: '', // suite will become the package name attribute in xml testsuite element
-            useBrowserName: true, // add browser name to report and classes names
-            nameFormatter: undefined, // function (browser, result) to customize the name attribute in xml testcase element
-            classNameFormatter: undefined // function (browser, result) to customize the classname attribute in xml testcase element
+      ],
+      instrumenterOptions: {
+        istanbul: {
+          noCompact: true,
         },
-
-        coverageReporter: {
-            // specify a common output directory
-            dir: 's4hana_pipeline/reports/frontend-unit/coverage',
-
-            includeAllSources: true,
-
-            reporters: [
-                {
-                    type: 'html',
-                    subdir: 'report-html/ut'
-                }, {
-                    type: 'lcov',
-                    subdir: 'report-lcov/ut'
-                }, {
-                    type: 'cobertura',
-                    subdir: '.',
-                    file: 'cobertura.frontend.unit.xml'
-                }
-            ],
-            instrumenterOptions: {
-                istanbul: {
-                    noCompact: true
-                }
-            }
-        },
-    });
+      },
+    },
+  });
 };
 ```
 
@@ -406,17 +404,11 @@ The final folder structure should look as follows:
 
 ![UnitTest Folders](unit-tests-folders.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7: ](Execute test)]
-
-
 Now you can run the following commands in the root folder of the project to execute your tests. It will start a chrome instance and execute the tests.
 
 ```Shell
 npm install
-npm run ci-test
+npm run ci-frontend-unit-test
 ```
 
 It should run the tests and shows the results in the terminal:
@@ -424,21 +416,70 @@ It should run the tests and shows the results in the terminal:
 ![UnitTest Commandline](unit-tests-commandline.png)
 
 In an delivery pipeline everything is usually executed without a user interface. Thus, opening a normal browser would not work. However, most browsers also offer a headless mode. The browser is started without a user interface.
->You can run the script also with a headless browser: `npm run ci-test -- --headless`.
-
-!![Frontend unit test pipeline](frontendUnitTest.png)
+>You can run the script also with a headless browser: `npm run ci-frontend-unit-test -- --headless`.
 
 [VALIDATE_1]
 
 [ACCORDION-END]
 
+
+[ACCORDION-BEGIN [Step 7: ](Run tests in the General Purpose Pipeline of project "Piper")]
+
+Please setup a continuous delivery pipeline for this project as learned in  [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd).
+
+This pipeline will automatically run the backend unit and integration tests and frontend unit tests implemented as part of this tutorial.
+
+As the integration tests depend on a connection to an SAP S/4HANA or a corresponding mock system, this connection needs to be configured. We discussed this option in [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry) and [Create a Sample Application on SCP Neo Using SAP Cloud SDK](s4sdk-scp-neo-sample-application). First make sure that the system you configured in the file `integration-tests/src/test/resources/systems.yml` is accessible from your Cx-server instance. For example:
+
+```YAML
+erp:
+  default: "MOCK_SYSTEM"
+  systems:
+#    - alias: "ERP_SYSTEM"
+#      uri: "https://myXXXXXX.s4hana.ondemand.com"
+#      proxy: "http://proxy:8080"
+    - alias: "MOCK_SYSTEM"
+      uri: "http://my-mock-server.corp:3000"
+
+```
+
+You also need an additional file containing the credentials to access the system you configured above. As you would usually not commit this file, you can instruct the pipeline to create it for you. In the section `stages` you can configure the stage `Integration` to create a credential file for a system with the specific alias you also used before in the file `systems.yml`. The credentials with the corresponding ID have to be configured as described in the tutorial [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd).
+
+```YAML
+stages:
+  Integration:
+    credentials:
+      - alias: 'MOCK_SYSTEM'
+        credentialId: 'MY-MOCK-ERP'
+```
+
+For the frontend unit tests you have to configure the location of the test report location as configured in the `karma.conf.js`. As the npm script `ci-frontend-unit-test` should be invoked instead of the automatic discovery of the karma file, the step `karmaExecuteTests` has to be disabled.
+
+```YAML
+stages:
+  "Additional Unit Tests":
+    karmaExecuteTests: false
+    junit:
+      active: true
+      allowEmptyResults: true
+      pattern: 's4hana_pipeline/reports/frontend-unit/**/Test*.xml'
+```
+
+The resulting pipeline should look like as shown in the following screenshot.
+
+![Pipeline](pipeline.png)
+
+[DONE]
+[ACCORDION-END]
+
+
 [ACCORDION-BEGIN [Step 8: ](Troubleshoot and questions)]
 
-Are you facing a development question? Then check out Stack Overflow for SAP Cloud SDK related questions. If you do not find an answer, feel free to post your question and make sure to attach the tag `s4sdk`. Our team, as well as the whole Stack Overflow community, are at your service and will quickly react to your question.
+Are you facing a development question? Then check out Stack Overflow for SAP Cloud SDK related questions. If you do not find an answer, feel free to post your question and make sure to attach the tag `sap-cloud-sdk`. Our team, as well as the whole Stack Overflow community, are at your service and will quickly react to your question.
 
 For an overview of SAP Cloud SDK related questions, go to <https://stackoverflow.com/questions/tagged/sap-cloud-sdk>.
 
-You think that you found a bug in one of our Continuous Delivery artifacts? Feel free to open an issue in our Pipeline GitHub repository on <https://github.com/SAP/cloud-s4-sdk-pipeline/issues>.
+You think that you found a bug in one of our Continuous Delivery artifacts? Feel free to open an issue in our GitHub repository on <https://github.com/SAP/jenkins-library/issues>.
 
 [DONE]
 

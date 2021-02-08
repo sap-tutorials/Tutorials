@@ -1,6 +1,6 @@
 ---
 title: Create Service Instance for Document Information Extraction
-description: Create a service instance and the associated service keys for Document Information Extraction, one of the SAP AI Business Services, using the SAP Cloud Platform trial cockpit.
+description: Create a service instance and the associated service key for Document Information Extraction, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
@@ -8,19 +8,19 @@ primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
-- You have created a trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
-- You have a subaccount and dev space with **Europe (Frankfurt)** or **US East (VA)** as region: [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
+- You have created a trial account on SAP BTP: [Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
+- You have a subaccount and dev space with **Europe (Frankfurt)** or **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## Details
 ### You will learn
   - How to check your Document Information Extraction entitlements
   - How to create a service instance of Document Information Extraction
-  - How to create service keys for your service instance
+  - How to create a service key for your service instance
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
 
-1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
@@ -33,7 +33,7 @@ primary_tag: topic>machine-learning
     >Choose **Continue**.
 
     >!![Account setup](02_Foundation20Onboarding_Processing.png)
-  
+
 3. From your global account page, choose the `trial` tile to access your subaccount.
 
     ![Subaccounts](enter-trial-account.png)
@@ -48,11 +48,11 @@ To try out Document Information Extraction, you need to make sure that your suba
 
 1. On the navigation side bar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
 
-2. Search for **Document Information Extraction Trial**. If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and go to step 3.
+2. Search for **Document Information Extraction Trial**. ***If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
 
     ![Entitlements](check-entitlements.png)
 
-If you do not find the service in your list, proceed as follows:
+***ONLY if you DO NOT find the service in your list, proceed as follows:***
 
   1. Click **Configure Entitlements**.
 
@@ -72,7 +72,7 @@ If you do not find the service in your list, proceed as follows:
 
 You are now entitled to use Document Information Extraction and create instances of the service.
 
->For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP Cloud Platform Trial, see [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements).
+>For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
 [DONE]
 [ACCORDION-END]
@@ -91,7 +91,7 @@ Click **Spaces** on the navigation side bar and select the **dev** space to open
 
 [ACCORDION-BEGIN [Step 4: ](Access service via Service Marketplace)]
 
-The **Service Marketplace** is where you find all the services available on SAP Cloud Platform.
+The **Service Marketplace** is where you find all the services available on SAP BTP.
 
 1. To access it, click **Service Marketplace** on the navigation side bar.
 
@@ -125,23 +125,23 @@ You have successfully created a service instance for Document Information Extrac
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create service keys)]
+[ACCORDION-BEGIN [Step 6: ](Create service key)]
 
-You are now able to create service keys for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
+You are now able to create a service key for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
   1. Click the navigation arrow to open the details of your service instance. Then, click the dots to open the menu and select **Create Service Key**.
 
-      ![Service Keys](create-service-keys.png)
+      ![Service Key](create-service-keys.png)
 
-  2. In the dialog, enter `doc-info-extraction-keys` as the name of your service key. Click **Create** to create the service key.
+  2. In the dialog, enter `doc-info-extraction-key` as the name of your service key. Click **Create** to create the service key.
 
       ![Create Service Key](create-service-key-name.png)
 
-You have successfully created service keys for your service instance. You can now either view the service key in the browser or download it.
+You have successfully created a service key for your service instance. You can now either view the service key in the browser or download it.
 
 ![View Service Key](view-service-key.png)
 
-You will need the service keys values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
+You will need the service key values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
 
 [VALIDATE_1]
 [ACCORDION-END]

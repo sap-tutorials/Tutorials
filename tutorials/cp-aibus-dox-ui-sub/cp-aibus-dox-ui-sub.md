@@ -1,6 +1,6 @@
 ---
 title: Subscribe to Document Information Extraction Trial UI
-description: Get access to the Document Information Extraction user interface application, using the SAP Cloud Platform trial cockpit.
+description: Get access to the Document Information Extraction user interface application, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 10
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
@@ -8,7 +8,7 @@ primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
-- You have created a service instance for Document Information Extraction: [Set Up Account for Document Information Extraction](cp-aibus-dox-service-instance-booster).
+- You have created a service instance for Document Information Extraction: [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance).
 
 ## Details
 ### You will learn
@@ -18,7 +18,7 @@ primary_tag: topic>machine-learning
 
 [ACCORDION-BEGIN [Step 1: ](Get subscribed)]
 
-After completing the prerequisite tutorial [Set Up Account for Document Information Extraction](cp-aibus-dox-service-instance-booster), to create a service instance for Document Information Extraction, you can start with the steps to subscribe to the Document Information Extraction Trial UI.
+After completing the prerequisite tutorial [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance), to create a service instance for Document Information Extraction, you can start with the steps to subscribe to the Document Information Extraction Trial UI.
 
 1. From your global account page, choose the `trial` tile to access your subaccount.
 

@@ -1,11 +1,16 @@
 ---
+author_name: Beatrice Pasch
+author_profile: https://github.com/beapasch
 title: Translate an SAP Fiori App
 description: Use SAP Translation Hub to translate your SAP Fiori app.
 auto_validation: true
 primary_tag: products>sap-translation-hub
-tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, topic>sapui5 ]
+tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, topic>sapui5, tutorial>license ]
 time: 10
 ---
+
+## Prerequisites  
+  - **IMPORTANT:**: This tutorial cannot be completed on a trial account.
 
 ## Details
 ### You will learn  

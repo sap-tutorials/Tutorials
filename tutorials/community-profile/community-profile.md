@@ -1,6 +1,9 @@
 ---
 title: Update and Maintain Your SAP Profile at people.sap.com
 description: By taking this tutorial, you'll explore, set up, and manage the sections of your SAP profile (people.sap.com). You'll also earn the Profile Savvy badge.
+author_name: Lena Stodal
+author_profile: https://github.com/lenastodal
+
 auto_validation: true
 time: 30
 tags: [tutorial>beginner ]
@@ -23,19 +26,15 @@ primary_tag: topic>sap-community
   - How to view your learning achievements
   - How to interact with other profiles
 
-Awarded on a weekly basis, **Profile Savvy** may not appear immediately in the **Reputation** section of your profile, so please expect a slight delay before you see the badge.
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Access your profile)]
 
-Once you're logged in, you'll be able to access your profile through several links in the avatar dropdown -- **My Profile**, **Account Settings**, and **Inbox** -- as well as by clicking on the avatar image. You can also access your profile at any time by going directly to [people.sap.com](https://people.sap.com/).
+Once you're logged in, the easiest way to check your profile is by clicking on your avatar and select **Manage My Account** in the dropdown. You can also access your profile at any time by going directly to [people.sap.com](https://people.sap.com/).
 
-![Avatar Dropdown](Avatar_Dropdown.png)
+!![Avatar_Dropdown](Avatar_Dropdown.png)
 
-Familiarize yourself with the selections available from the avatar pulldown.
-
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Upload a profile photo)]
@@ -44,7 +43,7 @@ Replacing your placeholder avatar image with a profile picture helps you connect
 
 If you haven't already, upload a profile picture following the instructions in this video.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F5JdUbyjfMA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/46bt1juWUUM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -53,11 +52,11 @@ If you haven't already, upload a profile picture following the instructions in t
 
 Once you're on your profile page, you'll be able to access several sections (and sub-sections) on the left, including **Dashboard**, **Account & Settings**, **Bookmarks**, **Content & Following**, **Connections**, **Reputation**, **Training**, and **Inbox**.
 
-![Profile Sections](Profile_Sections.png)
+!![Profile Sections](Profile_Sections.png)
 
 From the [Dashboard](https://people.sap.com/#dashboard), you can click the **Customize** button.
 
-![Dashboard](Dashboard.png)
+!![Dashboard](Dashboard.png)
 
 This feature allows you to customize your dashboard to display certain sections of your profile in the private view, giving you convenient access to the settings and information that you want to see or work on quickly. You can choose which sections to display, as well as drag and drop the sections to rearrange them as you wish.
 
@@ -70,11 +69,11 @@ From the [Dashboard](https://people.sap.com/#dashboard), you can also click the 
 
 >In fact, you'll always have the option to select **View your public profile** from any profile section when in the default private view.
 
-![Dashboard](Dashboard.png)
+!![Dashboard](Dashboard.png)
 
 The **View your public profile button** allows you to see your profile as other members will see it. This view can be very helpful as you determine which information to share and to position.  
 
-![Public Profile](Public_Profile.png)
+!![Public Profile](Public_Profile.png)
 
 If you compare the public view to the default private view, you'll notice that the selections on the left change -- with more options and details available in the private profile.
 
@@ -91,7 +90,7 @@ To fill out your profile, select [Personal Info](https://people.sap.com/#persona
 
 >Note that, depending on your membership or employment, you may not be able to update everything. A locked icon indicates which information you may not change.
 
-![Personal Data](Personal_Data.png)
+!![Personal_Data](Personal_Data.png)
 
 If you haven't already, take a few moments to enter a bio in the **About me** field found within the **Personal data** area. Flesh out the rest of your profile by selecting the languages you speak (from the **Languages** pulldown in the **Personal data** area), filling in the **Elsewhere** fields (providing links to your accounts on social media and LinkedIn, for example), and sharing your **Expertise**.
 
@@ -99,33 +98,31 @@ Make sure to save when you're finished.
 
 >To learn more, read ["Get to Know Your Profile Options, Help Us Get to Know You, and Earn Badges in the Process"](https://blogs.sap.com/2020/03/09/get-to-know-your-profile-options-help-us-get-to-know-you-and-earn-badges-in-the-process/)
 
-![About Me](About_Me.png)
-
 Take a look at the rest of the [Personal Info](https://people.sap.com/#personal_info) sub-section. In addition to **Personal data**, **Elsewhere**, and **Expertise**, familiarize yourself with the other **Personal Info** options that are available.
 
-[VALIDATE_5]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Get to know your privacy settings)]
 
 As covered in Step 1 of the [Tour the SAP Community](community-start) tutorial, in order to participate fully in the SAP Community, you need to set your account [Privacy](https://people.sap.com/#privacy) settings -- found under **Account & Settings** -- to opt in to display your profile publicly.
 
-![Privacy](Privacy.png)
+!![Privacy](Privacy.png)
 
 But you can do much more than that within the **Privacy** sub-section.
 
-For example, through the [Privacy settings](https://people.sap.com/#privacy:privacy_settings) tab, you can view data associated with your account, request a download of the information that your profile stores, and request account deletion. And in the [Public visibility](https://people.sap.com/#privacy:public_visibility) tab, you can choose the personal details that people see when they view your profile.
+In the [Public visibility](https://people.sap.com/#privacy:public_visibility) tab, you can choose the personal details that people see when they view your profile. Through the [Privacy settings](https://people.sap.com/#privacy:privacy_settings) tab, you can view data associated with your account, request a download of the information that your profile stores, and request account deletion.
 
-[VALIDATE_6]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Set up your communications)]
 
 By going to the [Communications](https://people.sap.com/#communications) sub-section, accessible under **Account & Settings**, you can personalize which information you receive from SAP. For SAP Community members, this sub-section gives you the ability to determine which notification types you receive and how -- either via email or directly in your profile **Inbox** or both.
 
->For more about your **Inbox**, see **step 17**.
+>For more about your **Inbox**, see **Step 17**.
 
-![Communications](Communications.png)
+!![Communications](Communications.png)
 
 Notifications are a great way for you to keep track of -- and interact with -- the content that interests you most. For example, if you want to know about new posts and replies related to tags and content you follow, you can set up notifications that give you a heads-up whenever something new is published.
 
@@ -140,7 +137,7 @@ Take a few moments to familiarize yourself with the notification options.
 
 If you're an SAP Community (or SCN or SDN) veteran who recently got a new job or created a new account, you may want to link your older profile (or profiles) to the newer one. To do that, go to [Profile Linking](https://people.sap.com/#profile_linking) under **Account & Settings**, enter the User ID and Password for the profile you want to link to, and select **Link profile**. Follow this process for every profile you wish to link to your new one.
 
-![Profile Linking](Profile_Linking.png)
+!![Profile Linking](Profile_Linking.png)
 
 The [Profile Linking](https://people.sap.com/#profile_linking) sub-section includes information about what this linking does (and doesn't do). Please read that information.
 
@@ -149,15 +146,13 @@ The [Profile Linking](https://people.sap.com/#profile_linking) sub-section inclu
 
 [ACCORDION-BEGIN [Step 9: ](Access and change login settings)]
 
-The [Login Settings](https://people.sap.com/#login_settings) sub-section under **Account & Settings** allows you to review your user name, associated account e-mail, and User-ID. Here you can also change your password.
+The [Login Settings](https://people.sap.com/#login_settings) sub-section under **Account & Settings** allows you to review your user name, associated account e-mail, and User-ID. Here you can also change your password. This sub-section also shows your linked social account(s).
 
 >Note that, depending on your membership or employment, you may not be able to change your password here.
 
-![Login Settings](Login_Settings.png)
+!![Login Settings](Login_Settings.png)
 
-The [Login Settings](https://people.sap.com/#login_settings) sub-section also shows your linked social account(s).
-
-[VALIDATE_9]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Access and manage bookmarks)]
@@ -168,7 +163,7 @@ You can access your [Bookmarks](https://people.sap.com/#bookmarks) from your pro
 
 Take a few moments to bookmark content -- and to get to know the [Bookmarks](https://people.sap.com/#bookmarks) section. Watch this video to learn more.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PPq6q5yAb-U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FJioUFyT6Ig" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [VALIDATE_10]
 [ACCORDION-END]
@@ -177,11 +172,11 @@ Take a few moments to bookmark content -- and to get to know the [Bookmarks](htt
 
 The [Content](https://people.sap.com/#content) sub-section, found under **Content & Following**, shows you all the content you've created -- including blog posts, questions, answers, Coffee Corner discussions, comments, and (for community veterans!) documents. Within this section, you have various options for filtering, sorting, and searching this content.
 
-![Content](Content.png)
+!![Overall_Content](Overall_Content.png)
 
 Even if you haven't created any content yet, you can still see the **FILTER BY** options. For example, select the **Status** dropdown and get to know those filter options.
 
-![Status](Status.png)
+!![Status](Status.png)
 
 [VALIDATE_11]
 [ACCORDION-END]
@@ -190,7 +185,7 @@ Even if you haven't created any content yet, you can still see the **FILTER BY**
 
 The [Following](https://people.sap.com/#following) sub-section, found under **Content & Following**, provides two tabs. The [Tags](https://people.sap.com/#following:tags) tab gives you a list of the tags you follow, and the [Content](https://people.sap.com/#following:content) tab shows the individual content items you follow.
 
-![Tags](Tags.png)
+!![Following](Following.png)
 
 Take a few moments to familiarize yourself with the actions you can take within these tabs.
 
@@ -203,9 +198,9 @@ The [Activity Log](https://people.sap.com/#activity_log) sub-section of your pro
 
 Get to know the various dropdowns within this section -- such as **Object type**, **Action type**, and **Followed tag**.
 
-![Activity_Log](Activity_Log.png)
+!![Activity_Log](Activity_Log.png)
 
-[VALIDATE_13]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Manage your connections)]
@@ -214,16 +209,16 @@ The [Connections](https://people.sap.com/#connections) section allows you to see
 
 Check out the **Sort by:** dropdowns in your [following](https://people.sap.com/#connections:following) tab. (If members follow you, you'll see a dropdown with the same options in the **followers** tab. If you have no followers yet, this tab will be grayed out.)
 
-![Connections](Connections.png)
+!![Connections](Connections.png)
 
-[VALIDATE_14]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Review your reputation)]
 
 The **Reputation** section of your profile consists of two sub-sections: [Snapshot](https://people.sap.com/#snapshot) and [Missions](https://people.sap.com/#missions). The **Missions** sub-section, in turn, is broken into two tabs: [Available Missions](https://people.sap.com/#missions:available) and [Earned Missions](https://people.sap.com/#missions:earned).
 
-![Missions](Missions.png)
+!![Missions](Missions.png)
 
 Familiarize yourself with the sub-sections and tabs within the **Reputation** section,
 
@@ -234,7 +229,7 @@ Familiarize yourself with the sub-sections and tabs within the **Reputation** se
 
 The [Training](https://people.sap.com/#training) section of your profile shows your SAP Learning achievements. If you don't have any training achievements yet, the section will appear like this:
 
-![Training](Training.png)
+!![Training](Training.png)
 
 Regardless of achievements, all members can take actions in the [Training](https://people.sap.com/#training) section. Take a few moments to explore this section.
 
@@ -243,11 +238,11 @@ Regardless of achievements, all members can take actions in the [Training](https
 
 [ACCORDION-BEGIN [Step 17: ](Manage your inbox)]
 
-As covered in **step 7**, your **Communications** settings determine what will appear in your [Inbox](https://people.sap.com/#inbox) section.
+As covered in **Step 7**, your **Communications** settings determine what will appear in your [Inbox](https://people.sap.com/#inbox) section.
 
 Get to know your **Inbox**.
 
- ![Inbox](Inbox.png)
+!![Inbox](Inbox.png)
 
 [VALIDATE_17]
 [ACCORDION-END]
@@ -260,17 +255,17 @@ Take a moment to visit another member's profile.
 
 If you're following the person, and the person is also following you, you have the option to message him or her directly -- via the **Contact** button.
 
- ![Follower](Follower.png)
+!![Follower](Follower.png)
 
- If it's someone you follow (who doesn't follow you), you won't have the **Contact** option (only members who follow each other can send direct messages to one another -- unless they're moderators, who can message anyone), but you will see the **Unfollow** button. This option appears on the profile of every person you follow.
+If it's someone you follow (who doesn't follow you), you won't have the **Contact** option (only members who follow each other can send direct messages to one another -- unless they're moderators, who can message anyone), but you'll see the **Unfollow** button. This option appears on the profile of every person you follow.
 
- ![Unfollow](Unfollow.png)
+!![Unfollow](Unfollow.png)
 
- When viewing a profile for someone you don't follow, you'll have the option to click the **Follow** button.
+When viewing a profile for someone you don't follow, you'll have the option to click the **Follow** button.
 
-![Follow](Follow.png)
+!![Follow](Follow.png)
 
- Take a few minutes to view other profiles. Follow some new members. Send a message to say hello to the members who follow you. Use the profile options to build your SAP Community network!
+Take a few minutes to view other profiles. Follow some new members. Send a message to say hello to the members who follow you. Use the profile options to build your SAP Community network!
 
 
 [DONE]

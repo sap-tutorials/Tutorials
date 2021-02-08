@@ -17,13 +17,12 @@ author_profile: https://github.com/jitendrakansal
 ### You will learn
   - How to reference the NativeScript Geolocation plugin from a rule
   - How to add a NativeScript plugin to your branded MDK client
-  - How to build a Mobile development kit client for iOS & Android and connect to SAP Cloud Platform Mobile application
+  - How to build a Mobile development kit client for iOS & Android and connect to SAP Mobile application
   - How to capture the device's current location
 
 You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/2-Add-NativeScript-Plugin-in-an-MDK-App) and start directly with step 4 in this tutorial.
 
 ---
-
 
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can use the existing NativeScript plugins like nativescript-geolocation, nativescript-nfc etc. , add this to the client and reference it from a rule.
 
@@ -35,35 +34,29 @@ In this tutorial, you will use the existing NativeScript plugin nativescript-geo
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. If you do not see the **Welcome** page, navigate to *View* menu &rarr; *Find Command* &rarr; search with *Welcome* to launch the Welcome page.
+2. Navigate to *File* menu &rarr; click **New Project from Template**.
 
-    !![MDK](img_1.2.gif)
+    !![MDK](img_1.2.png)
 
-3. In Welcome page, click **New project from template** .
+3. Select **MDK Project** and click **Next**.
 
-    !![MDK](img_1.3.png)
+    !![MDK](img_1.3.png)  
 
-4. Select **MDK Project** and click **Next**.
-
-    !![MDK](img_1.4.png)
-
-5. In *Basic Information* step, select or provide the below information and click **Next**:
+4. In *Basic Information* step, select or provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `MDK Template Type`| Select `Empty` from the dropdown |
-    | `Your Project Name` | `MDK_Geolocation` |
-    | `Your Project Name` | <default name is same as Project name, you can provide any name of your choice> |
+    | `MDK template type`| Select `Empty` from the dropdown |
+    | `Your project name` | `MDK_Geolocation` |
+    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |    
+
+    !![MDK](img_1.4.png)
+
+    >The _MDK Empty Project_ template creates a Logout action, Close page action, rule and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
+
+5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Geolocation` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
 
     !![MDK](img_1.5.png)
-
-    >The _MDK Empty Project_ template creates a Logout action, Close page action, rule and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application.
-
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
-
-6. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Geolocation` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in new workspace or to add it to workspace. Ignore the pop-up or click the cross icon to hide the window.
-
-    !![MDK](img_1.6.png)
 
 [DONE]
 [ACCORDION-END]
@@ -75,13 +68,15 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 
 >You can find more details about [writing a Rule](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/rules.html).
 
-1. Right-click the **Rules** folder | **New File**.
+1. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
     !![MDK](img_2.1.png)
 
-2. Enter the file name `GetCoordinates.js`, click **OK**.
+2. Enter the Rule name `GetCoordinates`, click **Next** and then **Finish** on the confirmation step.
 
-3. Copy and paste the following code.
+    !![MDK](img_2.2.png)
+
+3. Replace the generated snippet with below code.
 
     ```JavaScript
     import * as geolocation from "nativescript-geolocation";
@@ -142,7 +137,7 @@ You will add this registered control in a Form Cell page.
     | Property | Value |
     |----|----|
     | `KeyName`| `Coordinates` |
-    | `Value`| Bind it to `GetCoordinates.js` |
+    | `Value`| Bind it to rule `GetCoordinates.js` |
 
     !![MDK](img_3.4.png)
 
@@ -161,7 +156,7 @@ In `GetCoordinates.js` file, you referred `nativescript-geolocation` and `tns-co
 
     !![MDK](img_3.6.png)
 
-3. Include below references in `mdk.bundlerExternals` and save the changes.
+3. Include below references in `MDK.bundlerExternals` and save the changes.
 
     ```JSON
     "nativescript-geolocation",
@@ -173,37 +168,25 @@ In `GetCoordinates.js` file, you referred `nativescript-geolocation` and `tns-co
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy and activate application)]
+[ACCORDION-BEGIN [Step 5: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
-    !![MDK](img_4.1.png)
+    !![MDK](img_5.1.png)
 
-2. Verify the URL and **Click Enter** on your keyboard.
+2. Select deploy target as **Mobile Services**.
 
-    !![MDK](img_4.2.png)   
+    !![MDK](img_5.2.png)
 
-    >SAP Business Application Studio pre-populates the end-point of the environment it is running in. If you want to connect to a different environment, modify the API endpoint by copying it from your target SAP Cloud Platform account: *SAP Cloud Platform Cockpit &rarr; Sub-account &rarr; API Endpoint*
+3. Select the application from Mobile Services.
 
-3. Select the organisation in which you have enabled Mobile Services.
+    !![MDK](img_5.3.png)
 
-    !![MDK](img_4.3.png)   
+    You should see **Deploy succeeded** message.
 
-4. Select the space in which you have enabled Mobile Services.
-
-    !![MDK](img_4.4.png)   
-
-5. Select the an application from Mobile Services.
-
-    !![MDK](img_4.5.png)   
-
-    Upon successful setup, you should see **Deploy Succeeded** message.
-
-    !![MDK](img_4.6.png)
-
-    >MDK editor stores deployment details in `.project.json` file. When you deploy to same configuration next time, you will not be asked for above details, MDK editor will pick up these details from `.project.json` file.
+    !![MDK](img_5.4.png)
 
 [DONE]
 [ACCORDION-END]

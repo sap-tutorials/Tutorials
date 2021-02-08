@@ -1,21 +1,28 @@
 ---
-title: Create Sales Order App with SAP Cloud Platform Rapid Application Development by Mendix
+title: Create Sales Order App with SAP RAD by Mendix
 description: Create a sales order app that consumes a service from the SAP Gateway Demo System (ES5).
 auto_validation: true
-primary_tag: products>sap-cloud-platform
+primary_tag: products>sap-rad-by-mendix
+author_name: Paola Laufer
 tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platform  ]
 time: 20
 ---
 
 ## Prerequisites  
  - You are using a Windows desktop (or a Windows VM on a Mac).
- - You have access to an SAP Cloud Platform account. If not, you can open a trial account. See the [tutorial](https://developers.sap.com/tutorials/hcp-create-trial-account.html) or [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/65d74d39cb3a4bf8910cd36ec54d2b99.html).
- - You have completed the [Getting started with SAP Cloud Platform Rapid Application Development by Mendix](https://developers.sap.com/tutorials/mendix-onboarding.html) tutorial. Name your app **SAP Sales Orders**.
- - You have completed the [Create an account on the Gateway Demo system](https://developers.sap.com/tutorials/gateway-demo-signup.html) tutorial.
+ - You have access to an SAP BTP account. If not, you can open a trial account. See the [Get a Free Account on SAP BTP Trial](hcp-create-trial-account) tutorial or the [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/65d74d39cb3a4bf8910cd36ec54d2b99.html).
+ - You have completed the [Get Started with SAP Rapid Application Development by Mendix](mendix-onboarding) tutorial. Name your app **SAP Sales Orders**.
+ - You have completed the [Create an Account on the SAP Gateway Demo System](gateway-demo-signup) tutorial.
 
 
 ## Details
-You can build business applications for the SAP Cloud Platform Cloud Foundry environment using SAP Cloud Platform Rapid Application Development by Mendix, without needing to write code.
+### You will learn  
+- How to create an SAP Blank application in SAP BTP Rapid Application Development.
+- How to create the application data model using the SAP OData Model Creator.
+- How to consume an OData service using the SAP OData Connector.
+- How to deploy the application to SAP Business Technology Platform (BTP).
+
+You can build business applications for the SAP BTP, Cloud Foundry environment using SAP BTP Rapid Application Development by Mendix, without needing to write code.
 
 This tutorial takes you through the basics of development in the Mendix Desktop Modeler and teaches you how to build a simple sales order application consuming the [`GWSAMPLE_BASIC service`](https://help.sap.com/viewer/68bf513362174d54b58cddec28794093/7.51.4/en-US/59283fc4528f486b83b1a58a4f1063c0.html) from the SAP Gateway Demo System (ES5).
 
@@ -23,15 +30,10 @@ This tutorial also showcases the [SAP OData Model Creator](https://appstore.home
 
 **Before starting this tutorial, make sure you have followed the prerequisites**.
 
->This tutorial is applicable if you have a productive Neo environment, but assumes that you are using a trial Cloud Foundry environment.
+>This tutorial assumes that you are using a trial Cloud Foundry environment, but it is applicable also to productive CF environment with minor changes.  
 &nbsp;
-> The Mendix Desktop Modeler, for building your application, is available for Windows platforms only.
+>The Mendix Desktop Modeler, for building your application, is available for Windows platforms only.
 
-### You will learn  
-- How to create an SAP Blank application in SAP Cloud Platform Rapid Application Development.
-- How to create the application data model using the SAP OData Model Creator.
-- How to consume an OData service using the SAP OData Connector.
-- How to deploy the application to SAP Cloud Platform.
 
 
 ---
@@ -195,7 +197,7 @@ The **Get List** action retrieves a list of entities described in the domain mod
 
     > In our case, the `Use cloud connector` is set to `false` because ES5 is a publicly accessible system. <br>
     > If you would like to consume a service from your on-premise back-end system, you need to setup and configure the SAP Cloud Connector and then mark this field as `true`. <br>
-    > When running the Mendix application on SAP Cloud Platform, the SAP Cloud Connector will automatically be utilized to gain access to your on-premise system. <br>
+    > When running the Mendix application on SAP BTP, the SAP Cloud Connector will automatically be utilized to gain access to your on-premise system. <br>
     > For more information, see the [SAP Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html) documentation.
 
 
@@ -384,9 +386,9 @@ You will now see your Sales Orders Application in the browser, with live data co
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Run app in SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step 13: ](Run app in SAP BTP)]
 
-The final step is to deploy the application to SAP Cloud Platform, Cloud Foundry environment, and run it from your space!
+The final step is to deploy the application to SAP BTP, Cloud Foundry environment, and run it from your space!
 The application will automatically bind to the Connectivity, XSUAA and PostgreSQL service instances.
 
 1. Click **Run**.
@@ -397,7 +399,7 @@ The application will automatically bind to the Connectivity, XSUAA and PostgreSQ
 
     ![Deploy](mendix-salesorders32.png)
 
-2. Once the application is deployed successfully, click on **View** to run it from SAP Cloud Platform.
+2. Once the application is deployed successfully, click on **View** to run it from SAP BTP.
 
 [DONE]
 [ACCORDION-END]
