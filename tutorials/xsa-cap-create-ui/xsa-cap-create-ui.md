@@ -1,5 +1,5 @@
 ---
-title: HANA Native, Create a User Interface with the Cloud Application Programming Model
+title: SAP HANA Native, Create a User Interface with the Cloud Application Programming Model
 description: Use services based on Node.js and use an SAP Fiori wizard to create a user interface.
 time: 20
 author_name: Thomas Jung
@@ -10,7 +10,7 @@ primary_tag: products>sap-hana
 
 ## Prerequisites
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
- - You have created a Multi-Target Application using the Cloud Application Programming model.
+ - You have created a Multi-Target Application using the Cloud Application Programming Model.
  - You have created database artifacts and loaded data as explained in [this tutorial](xsa-cap-create-database-cds).
 
 ## Details

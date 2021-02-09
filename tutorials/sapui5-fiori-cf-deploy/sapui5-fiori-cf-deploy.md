@@ -8,7 +8,7 @@ primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
 ---
 
 ## Prerequisites
- - Make sure you have the [proper entitlements set](https://developers.sap.com/tutorials/cp-cf-entitlements-add.html). If you are unsure which services you need, please refer to the table of step 2.
+ - Make sure you have the [proper entitlements set](cp-cf-entitlements-add). If you are unsure which services you need, please refer to the table of step 2.
 
 ## Details
 ### You will learn
@@ -68,12 +68,12 @@ With this URL, you are able to access the `flpSandbox.html`
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Embed the SAP Fiori in the SAP Cloud Platform Launchpad)]
+[ACCORDION-BEGIN [Step: ](Embed the application in the SAP Fiori Launchpad)]
 
 
-Now it's time to embed the app in a full Launchpad environment:
+Now it's time to embed the app in a full SAP Fiori Launchpad environment:
 
-1. Open the admin UI of the [Launchpad service](https://developers.sap.com/tutorials/cp-portal-cloud-foundry-getting-started.html)
+1. Open the admin UI of the [SAP Launchpad service](cp-portal-cloud-foundry-getting-started)
 2. Access the **Content Provider** menu. You should now see the following screen and **hit the refresh button** to synchronize the Launchpad with HTML5 application repository.
 
     !![contentProvider](contentProvider.png)
@@ -110,7 +110,7 @@ Now it's time to embed the app in a full Launchpad environment:
 
     !![createFLP](createFLP.png)
 
-4. There's not need to edit this site, all we need comes with the default configuration. Click the button on the top right corner to open your new Launchpad site.
+4. There's not need to edit this site, all we need comes with the default configuration. Click the button on the top right corner to open your new site.
 
     !![openFLP](openFLP.png)
 

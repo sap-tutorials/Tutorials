@@ -1,5 +1,5 @@
 ---
-title: HANA Native, Create Database Artifacts Using Core Data Services (CDS)
+title: SAP HANA Native, Create Database Artifacts Using Core Data Services (CDS)
 description: Use core data services to generate SAP HANA basic database artifacts.
 auto_validation: true
 time: 15
@@ -225,7 +225,7 @@ Note the name of the table matches the generated `hdbtable` artifacts. You will 
 
 [ACCORDION-BEGIN [Step 5: ](Load data into your tables)]
 
-Download the [header file](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/xsa-cap-create-database-cds/Header.xlsx) and the [items file](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/xsa-cap-create-database-cds/Items.xlsx) into your local file system.
+Download the [header file](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/xsa-cap-create-database-cds/Header.csv) and the [items file](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/xsa-cap-create-database-cds/Items.csv) into your local file system.
 
 Right-click again on the header table and choose **Import Data**.
 

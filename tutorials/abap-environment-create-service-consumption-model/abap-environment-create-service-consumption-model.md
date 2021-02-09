@@ -3,7 +3,7 @@ title: Create a Service Consumption Model
 description: Create an OData service consumption model in an SAP Cloud Platform, ABAP Environment instance. In a second instance, prepare it for consumption.
 auto_validation: true
 time: 45
-tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, tutorial>license,topic>cloud]
+tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, tutorial>license,topic>cloud, topic>abap-connectivity, tutorial>license]
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
@@ -90,7 +90,7 @@ The service binding opens in a new editor.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a package)]
+[ACCORDION-BEGIN [Step 4: ](Create package in client system)]
 1. As in step 1, create a package in your `ZLOCAL` package, in the **client** system: `Z_A4C_TO_A4C_XX2`.
 
 2. Add it to **Favorite Packages**.

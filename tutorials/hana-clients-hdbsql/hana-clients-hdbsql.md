@@ -387,6 +387,15 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
 >For further information, see [CREATE TABLE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d58a5f75191014b2fe92141b7df228.html) and [INSERT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html).
 
+> ---
+
+>Note that the identifiers such as table names are automatically upper cased unless they are within "".  
+>
+```SQL
+SELECT * FROM HoTeL.RoOm;  --succeeds
+SELECT * FROM "HoTeL"."RoOm"; --fails
+SELECT * FROM "HOTEL"."ROOM"; --succeeds
+```
 
 > ---
 

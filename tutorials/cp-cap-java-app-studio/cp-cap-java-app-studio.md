@@ -10,7 +10,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - If you don't have a Cloud Foundry Trial Subaccount on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account).
+ - If you don't have a Cloud Foundry Trial Subaccount on [SAP Business Technology Platform (SAP BTP)](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account).
  - Basic knowledge of Spring Boot and Java (optional)
 
 ## Details
@@ -30,9 +30,9 @@ To make sure that everything is set up correctly, this tutorial also includes ho
 
 For a general overview about CAP, you might also want to check out at some blog posts or the live streams by Developer Advocates **`Max Streifeneder`** and **`DJ Adams`**.
 
- - [Cloud Application Programming Model (CAP) for SAP Cloud Platform – start here](https://blogs.sap.com/2018/10/10/application-programming-model-start-here/)
- - [Max's Adventure in SAP Cloud Platform: CAP in Love.](https://blogs.sap.com/2019/11/21/maxs-adventure-in-sap-cloud-platform-cap-in-love./)
- - [`Live Stream`: Max's Adventure in SAP Cloud Platform](https://www.youtube.com/playlist?list=PLzLY5gikd9hCE52Xlz9e9tYGQj_U2ThYx)
+ - [SAP Cloud Application Programming Model (CAP) for SAP BTP – start here](https://blogs.sap.com/2018/10/10/application-programming-model-start-here/)
+ - [Max's Adventure in SAP BTP: CAP in Love.](https://blogs.sap.com/2019/11/21/maxs-adventure-in-sap-cloud-platform-cap-in-love./)
+ - [`Live Stream`: Max's Adventure in SAP BTP](https://www.youtube.com/playlist?list=PLzLY5gikd9hCE52Xlz9e9tYGQj_U2ThYx)
  - [`Live Stream`: Hands-on SAP Dev with `qmacro`](https://www.youtube.com/playlist?list=PL6RpkC85SLQAIntm7MkNk78ysDm3Ua8t0)
 
 
@@ -45,7 +45,7 @@ Before you can start using SAP Business Application Studio, you need to create y
 
 For this tutorial, you'll create a dev space personalized for building services and applications with CAP.
 
-1. Go to the [SAP Cloud Platform Trial cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial).
+1. Go to the [SAP BTP Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) on Trial.
 
 2. Click **Enter Your Trial Account**.
 

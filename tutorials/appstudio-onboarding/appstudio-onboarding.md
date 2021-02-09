@@ -1,6 +1,6 @@
 ---
 title: Set Up SAP Business Application Studio for Development
-description: Before you can start developing using SAP Business Application Studio, administrators must perform the required onboarding steps that are described in this tutorial.
+description: SAP Business Application Studio is a development environment available on SAP Business Technology Platform. Before you can start developing using SAP Business Application Studio, administrators must perform the required onboarding steps that are described in this tutorial.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-workflow, software-product-function>sap-cloud-application-programming-model, topic>mobile, products>sap-mobile-cards, products>mobile-development-kit-client]
@@ -10,7 +10,7 @@ author_profile: https://github.com/raz-korn
 ---
 
 ## Prerequisites
- - You have an SAP Cloud Platform account: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+ - You have an SAP BTP Trial account: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
 
 ## Details
 ### You will learn
@@ -20,7 +20,7 @@ This tutorial is based on the procedure described in the [Getting Started](https
 
 ---
 
-[ACCORDION-BEGIN [Step: 1](Log into SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step: 1](Log into SAP BTP Trial)]
 
 Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
 
@@ -31,25 +31,29 @@ Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Plat
 
 1. Click **SAP Business Application Studio** to launch SAP Business Application Studio.
 
-    !![launch sap business application studio](2020-10 SCP Access AppStudio_.jpg)
+    !![launch sap business application studio](2020-10-SCP-Access-AppStudio-.png)
 
     >In recently created trial accounts, SAP Business Application Studio is subscribed to by default.
 
-    >If you receive an error message and your recently created account was created with error, it is recommended that you re-create your account: delete the account and then [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
+    >If you receive an error message and your recently created account was created with error, it is recommended that you re-create your account: delete the account and then [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).
 
     >If you receive an error message and your account was not created recently, answer the validation question of the current step, go to the next step in this tutorial, and proceed from there.
 
 2. You might be asked to accept the legal terms. Check the box and click **OK**.
 
-    !![legalterms](2020-03 AppStudio Terms__.jpg)
+    !![legalterms](2020-03-AppStudio-Terms--.png)
 
-3. A new tab opens and SAP Business Application Studio loads.
+3. A new tab opens and the welcome page for SAP Business Application Studio loads.
 
+    !![sap business application studio welcome](BAS_Welcome-.png)
+
+4. Click **My Dev Spaces** to open the SAP Business Application Studio dev space manager page.
+    <br>
     >**Bookmark this page!**
 
     >If you create a bookmark to this page, it is easy to get back to SAP Business Application Studio later.
 
-    !![sapbusinessapplicationstudioloaded](2020-03 AppStudio Loaded_.jpg)
+    !![sap business application studio dev space manager](BAS-Dev-Space-Manager-Empty-.png)
 
     >If you reached this point in the tutorial, you have successfully on-boarded SAP Business Application Studio. Answer the validation question of the current step, and mark the rest of the steps as "Completed".
 
@@ -58,11 +62,11 @@ Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Plat
 
 [ACCORDION-BEGIN [Step: 3](Add SAP Business Application Studio subscription to subaccount)]
 
-In this step, you will add the SAP Business Application Studio subscription to a subaccount. Depending on when you created the SAP Cloud Platform account, this subscription might already be added in the subaccount.
+In this step, you will add the SAP Business Application Studio subscription to a subaccount. Depending on when you created the SAP BTP Trial account, this subscription might already be added in the subaccount.
 
 1. Click **Enter Your Trial Account** to access the Cloud Foundry environment.
 
-    !![Access SAP Cloud Platform Trial](2020-08 SCP Access Trial_.jpg)
+    !![Access SAP BTP Trial](2020-08-SCP-Access-Trial-.png)
 
 2. Select the tile of the subaccount in which you want to enable the SAP Business Application Studio subscription.
 
@@ -72,23 +76,23 @@ In this step, you will add the SAP Business Application Studio subscription to a
 
     > - Microsoft Azure - Singapore region.
 
-    >When creating an SAP Cloud Platform trial account a **trial** subaccount is generated.
+    >When creating an SAP BTP Trial account a **trial** subaccount is generated.
 
-    !![subaccount](2020-08 Cockpit Select Subaccount_.jpg)
+    !![subaccount](2020-08-Cockpit-Select-Subaccount-.png)
 
 3. From the navigation area, click **Subscriptions**.
 
-    !![opensubscriptions](2020-08 Cockpit Navigate to Subscriptions_.jpg)
+    !![opensubscriptions](2020-08-Cockpit-Navigate-to-Subscriptions-.png)
 
 4. In the **Subscriptions** page, search for **`studio`**.
 
 5. Click the **SAP Business Application Studio** tile.
 
-    !![findsubscription](2020-03 Cockpit Filter and Select AppStudio Subscription__.jpg)
+    !![findsubscription](2020-03-Cockpit-Filter-and-Select-AppStudio-Subscription--.png)
 
 6. Click **Subscribe** to add the subscription to the subaccount.
 
-    !![subscribe](2020-03 Cockpit Subscribe__.jpg)
+    !![subscribe](2020-03-Cockpit-Subscribe--.png)
 
 [DONE]
 [ACCORDION-END]
@@ -97,33 +101,37 @@ In this step, you will add the SAP Business Application Studio subscription to a
 
 1. Click **Go to Application**.
 
-    !![gotoapplication](2020-08 Cockpit Go to Application_.jpg)
+    !![gotoapplication](2020-08-Cockpit-Go-to-Application-.png)
 
 2. You might be asked to accept the legal terms. Check the box and click **OK**.
 
-    !![legalterms](2020-03 AppStudio Terms__.jpg)
+    !![legalterms](2020-03-AppStudio-Terms--.png)
 
 3. An **Access Denied** page may appear. Log out from SAP Business Application Studio and then log in as depicted below.
 
-    !![Logout](2020-05 AppStudio Access Denied Logout_.jpg)
+    !![Logout](2020-05-AppStudio-Access-Denied-Logout-.png)
     &nbsp;
-    !![Login](2020-05 AppStudio Access Denied Login_.jpg)
+    !![Login](2020-05-AppStudio-Access-Denied-Login-.png)
 
 4. Enter your credentials, and click **Log On**.
 
-    !![authentication](2020-03 AppStudio Authentication__.jpg)
+    !![authentication](2020-03-AppStudio-Authentication--.png)
 
 5. You might be asked to accept the legal terms. Check the box and click **OK**.
 
-    !![legalterms](2020-03 AppStudio Terms__.jpg)
+    !![legalterms](2020-03-AppStudio-Terms--.png)
 
-6. A new tab opens and SAP Business Application Studio loads.
+6. A new tab opens and the welcome page for SAP Business Application Studio loads.
 
+    !![sap business application studio welcome](BAS_Welcome-.png)
+
+7. Click **My Dev Spaces** to open the SAP Business Application Studio dev space manager page.
+    <br>
     >**Bookmark this page!**
 
     >If you create a bookmark to this page, it is easy to get back to SAP Business Application Studio later.
 
-    !![sapbusinessapplicationstudioloaded](2020-03 AppStudio Loaded_.jpg)
+    !![sap business application studio dev space manager](BAS-Dev-Space-Manager-Empty-.png)
 
 [DONE]
 [ACCORDION-END]
