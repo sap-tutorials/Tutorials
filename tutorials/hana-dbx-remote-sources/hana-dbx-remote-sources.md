@@ -261,13 +261,13 @@ The following commands were used to start the Cloud Connector.
 
     The initial user name and password are Administrator and manage.
 
-5. Configure the Cloud Connector to connect to the cloud foundry subaccount.     
+5. Configure the Cloud Connector to connect to the Cloud Foundry subaccount.     
 
     ![subaccount](cloud_connector_subaccount.png)
 
     The region and subaccount ID and be found in the SAP Cloud Platform cockpit.
 
-    ![cloud foundry sub account](cloud_foundry_sub_account.png)
+    ![cloud Foundry sub account](cloud_foundry_sub_account.png)
 
     >Note, if you are an SAP employee you may need to enter your password + a  time-based passcode as the password.
 
@@ -327,9 +327,9 @@ The following commands were used to start the Cloud Connector.
 
     ![HANA Cloud to HANA, express connection](cloud_connector_connection.png)
 
-For further information, see also [Replicate data from on-premise to the cloud with the Cloud Connector](https://saphanajourney.com/hana-cloud/learning-article/sap-cloud-connector), [Access Data Across Your On-Premise and Cloud Data Sources](https://saphanajourney.com/hana-cloud/sap-hana-cloud-workshops/), and [Getting Started with SAP HANA Cloud | Remote Data Source (`multicloud`)](https://blogs.sap.com/2020/08/03/getting-started-with-sap-hana-cloud-vii-smart-data-access/).
+For further information, see also [Install the SAP Connectivity Service Cloud Connector in your System Landscape](cp-connectivity-install-cloud-connector), [Replicate data from on-premise to the cloud with the Cloud Connector](https://saphanajourney.com/hana-cloud/learning-article/sap-cloud-connector), [Access Data Across Your On-Premise and Cloud Data Sources](https://saphanajourney.com/hana-cloud/sap-hana-cloud-workshops/), and [Getting Started with SAP HANA Cloud | Remote Data Source](https://blogs.sap.com/2020/08/03/getting-started-with-sap-hana-cloud-vii-smart-data-access/).
 
-Congratulations!   You have now used remote sources to access data running on a different SAP HANA instance and on a SAP HANA Cloud, data lake.
+Congratulations!  You have now used remote sources to access data running on a different SAP HANA instance and on a SAP HANA Cloud, data lake.
 
 [VALIDATE_1]
 [ACCORDION-END]
