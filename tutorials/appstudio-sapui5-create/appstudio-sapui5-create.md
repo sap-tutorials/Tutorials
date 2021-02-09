@@ -185,7 +185,7 @@ The project is already deployable as it. But there is one thing missing in order
               content-target: true
         parameters:
           content:
-            subaccount:
+            instance:
               existing_destinations_policy: update
               destinations:
                 - Name: sap-btp-sapui5-html5-repo-host
