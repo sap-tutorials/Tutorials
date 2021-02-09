@@ -11,7 +11,7 @@ primary_tag: products>sap-cloud-platform
 ### You will learn
 - How to quickly set up and deploy business rules in your account
 
-**Business Rules** is a capability of **SAP Cloud Platform Workflow Management**, which enables business users and application developers to automate their decisions and enhance their decision-making experience. It offers a simplified Fiori-based rule authoring tool and a central rule repository with various deployment options to different platforms.
+**SAP Business Rules** is a capability of **SAP Workflow Management**, which enables business users and application developers to automate their decisions and enhance their decision-making experience. It offers a simplified Fiori-based rule authoring tool and a central rule repository with various deployment options to different platforms.
 
 In this tutorial, you will learn how to import and manage rules to identify the list of equipment to be provisioned for the newly hired employee based on their role and work location Business Rules.
 
