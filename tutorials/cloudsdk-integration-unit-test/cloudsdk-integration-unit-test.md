@@ -5,8 +5,8 @@ title: Integration and Unit Tests for SAP Cloud SDK Projects
 description: Learn about various levels of automated tests and how to implement them specifically for SAP Cloud SDK projects.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites

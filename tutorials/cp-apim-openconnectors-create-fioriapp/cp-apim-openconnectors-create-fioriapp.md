@@ -8,17 +8,21 @@ primary_tag: products>sap-api-management
 ---
 
 ## Prerequisites
-- **Tutorials:** [Enable SAP Cloud Platform API Management Service](https://developers.sap.com/tutorials/hcp-apim-enable-service.html)
+- **Tutorials:** [Enable SAP Integration Suite](https://developers.sap.com/tutorials/cp-starter-isuite-onboard-subscribe.html)
+
+- **Tutorials:** [Set Up SAP Business Application Studio](https://developers.sap.com/tutorials/appstudio-onboarding.html)
+
+- **Tutorials:** [Create a Dev Space](https://developers.sap.com/tutorials/appstudio-devspace-fiori-create.html)
 
 ## Details
 ### You will learn
-  - How to build a SAP Fiori application showing data from a third-party CRM system.
+  - How to build a SAP Fiori  application showing data from a third-party CRM system.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a Destination to API Portal)]
 
-1. Log onto your SAP Cloud Platform trial and navigate to the **Neo Environment**.
+1. Log onto your SAP BTP trial and navigate to the **Cloud Foundry Environment**.
 
     ![Navigate Destination](01-destination.png)
 
@@ -28,7 +32,7 @@ primary_tag: products>sap-api-management
 
     >Use the existing destination pointing to API Portal if it already exists.
 
-3. Enter **`API_Portal`** as the destination name and then enter the URL to SAP Cloud Platform API Management trial tenant.
+3. Enter **`API_Portal`** as the destination name and then enter the URL API Management trial tenant.
 
     ```
     https://<your_number>trial-trial.apim1.hanatrial.ondemand.com
@@ -50,9 +54,9 @@ primary_tag: products>sap-api-management
 
 [ACCORDION-BEGIN [Step 2: ](Create SAP Fiori app)]
 
-1. Go to **Services**, click on SAP Web IDE Full-Stack, and then click on **Go to Service**.
+1. Create a Dev Space for creating Fiori App.
 
-      ![Navigate Service](04-navigate-service.png)
+    ![Navigate Service](04-navigate-service.png)
 
 2. Click on **New Project** from template to create a project.
 
@@ -119,7 +123,7 @@ primary_tag: products>sap-api-management
     >UI binding has been done based on the response from the basic-companies common resource templates
     and therefore the same binding can be re-used irrespective of the actual non-SAP CRM
     application that you would be connecting to.
-    
+
     ![Model File1](11-model.png)
 
 9. In the `Component.js` file, paste the following code:
