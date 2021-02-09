@@ -33,11 +33,11 @@ Download **cf-onboarding-sample.zip**  project from [GitHub](https://github.com/
     > - If you do not have any dev-space, then click **Create Dev Space**. In the New Dev Space page, enter any dev space name, select **SAP Fiori** kind and **Workflow Management** extension. Finally click **Create Dev Space** to create a space in your business application studio.
     !![Create Dev Spave](createdevspace.png)
 
-    > - If you have a dev-space but **Workflow Management** extension is not added then click **Edit**, select **Workflow Management** and **Save Changes**.
+    > - If you have a dev-space but **Workflow Management** extension is not added then click on **Edit** button, select **Workflow Management** and **Save Changes**.
     !![Add Extension](editdevspace1.png)
     !![Add Extension](editdevspace2.png)
 
-    > - If you have the dev-space with Workflow Management extension added, and the dev-space status is STOPPED then click run to start the space.
+    > - If you have the dev-space with Workflow Management extension added, and the dev-space status is STOPPED then click on the run button to start the space.
     !![Start Workspace](startspace.png)
 
     !![Open Workspace](openworkspace.png)
