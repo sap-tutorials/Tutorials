@@ -13,7 +13,7 @@ primary_tag: products>sap-cloud-platform
   - How to quickly set up a Process Visibility scenario in your account
   - How to quickly create and activate a business scenario to provide operational end-to-end visibility into your workflow
 
-**Process Visibility** provides visibility into processes that run in the cloud, on-premise, or in hybrid environments. Process Visibility works on events. SAP or non-SAP applications (cloud or on-premise) push events into Process Visibility.
+**SAP Process Visibility** provides visibility into processes that run in the cloud, on-premise, or in hybrid environments. Process visibility works on events. SAP or non-SAP applications (cloud or on-premise) push events into Process Visibility.
 
 These events are persisted, processed and enhanced to form end-to-end process instances with insights, which are visualized by business users in their process workspace. The insights enable business users to identify process bottlenecks, track process performance, and operational issues and act on them.
 
