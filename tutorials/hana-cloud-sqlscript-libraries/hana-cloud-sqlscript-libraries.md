@@ -42,7 +42,7 @@ Libraries are designed to group related variables, functions, and procedures tog
 
 
 [ACCORDION-BEGIN [Step 2: ](Enter the Library Code)]
-1. Click on the new `masterdata.hdblibrary` file in the `libraries` folder and the editor should open with the shell of the libary.
+1. Click on the new `masterdata.hdblibrary` file in the `libraries` folder and the editor should open with the shell of the library.
 
     !![editor](2_1.png)
 
