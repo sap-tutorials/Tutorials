@@ -110,7 +110,7 @@ The project is already deployable as it. But there is one thing missing in order
 
 2.  Select **Managed Approuter** as there's not need to extend the approuter and therefore reduce the TCO of the project. Enter **`basic.service`** as the name of out business service and hit **Next** to close in the wizard.
 
-    !![approuter](./approuter.png)
+    !![approuter](./managedapprouter.png)
 
 1. Now we need to reuse this business service in our web app. Open `webapp/manifest.json` and add the following lines.
 
@@ -223,7 +223,7 @@ Now that you created a `mtar` archive, you are all set to deploy the application
 
 [ACCORDION-BEGIN [Step : ](Test to the application)]
 
-1. **Open** the started application in your browser. You might need to log in with your SAP ID (the same credentials you use for the SAP BTP Cockpit).
+1. **Open** the application in your browser. You might need to log in with your SAP ID (the same credentials you use for the SAP BTP Cockpit).
 
 
 2. See that the sample application consists of a header and an empty page. So you should see something like this:
