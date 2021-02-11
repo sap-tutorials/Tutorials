@@ -9,8 +9,8 @@ primary_tag: topic>cloud
 
 ## Prerequisites
  - You have completed the tutorial [Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing](cos-getting-started-trial).
- - You have registered for a trial account on [SAP Cloud Platform](https://cloudplatform.sap.com/index.html).
- - You are familiar with the SAP Cloud Platform trial landscape [Get Started with SAP Cloud Platform Trial](cp-trial-quick-onboarding).
+ - You have registered for a trial account on [SAP Business Technology Platform](https://cloudplatform.sap.com/index.html).
+ - You are familiar with the SAP Business Technology Platform trial landscape [Get Started with SAP Business Technology Platform Trial](cp-trial-quick-onboarding).
  - You have a subaccount in the **Cloud Foundry** environment, with **Amazon Web Services (AWS)** as provider and the **Europe (Frankfurt)** region.
 
 
@@ -117,7 +117,7 @@ You upload any master data from the SAP API Business Hub. Since you have now all
 
 1. Open [SAP Customer Order Sourcing on SAP API Business Hub](https://api.sap.com/api/Sourcing_API/resource).
 
-2. Select the environment you have created in the [previous tutorial](https://developers.sap.com/tutorials/cos-getting-started-trial.html), named `trial_test`.
+2. Select the environment you have created in the [previous tutorial](cos-getting-started-trial), named `trial_test`.
 
 3. On the left side, choose **Availability Raw Data**.
 
