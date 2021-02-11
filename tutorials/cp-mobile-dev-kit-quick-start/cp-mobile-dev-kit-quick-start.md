@@ -11,13 +11,13 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by allowing custom domains.)
 
 ## Details
 ### You will learn
   - How to create an MDK sample app using a template in SAP Business Application Studio
   - How to deploy an MDK app to Mobile Services and run it in mobile client
-  - How to deploy an MDK app to Cloud Platform and run it as a Web application
+  - How to deploy an MDK app to Cloud Foundry and run it as a Web application
 
 ---
 
@@ -63,7 +63,7 @@ This step includes creating the mobile development kit project in the editor.
 
     >In [this tutorial](cp-mobile-dev-kit-ms-setup), server-side configuration for this MDK app were already done.
 
-    Regardless of whether you are creating an online or offline application, this step is needed for app to connect to an OData service. When building an MDK Mobile application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services. For MDK Web application, destination is setup in Cloud Platform cockpit.
+    Regardless of whether you are creating an online or offline application, this step is needed for app to connect to an OData service. When building an MDK Mobile application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services. For MDK Web application, destination is setup in SAP BTP cockpit.
 
     The generated application will be offline enabled in the MDK Mobile client and will run as online in Web environment.
 
@@ -192,7 +192,7 @@ Additionally, you can search over all properties of the objects displayed in the
 
 [OPTION BEGIN [Web]]
 
-1. Click the highlighted button to open the MDK Web application in a browser. Enter your cloud platform credentials if asked.
+1. Click the highlighted button to open the MDK Web application in a browser. Enter your SAP BTP credentials if asked.
 
     !![MDK](img_5.5.png)
 

@@ -22,7 +22,6 @@ SAP Business Application Studio is the next-generation web-based IDE hosted on S
 ---
 
 
-
 [ACCORDION-BEGIN [Step 1: ](Create a development space)]
 
 1. Log into your Business Application Studio and click **Create Dev Space**.
