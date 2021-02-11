@@ -58,7 +58,7 @@ Make sure that you have completed required prerequisites mentioned in this tutor
 
     >If you see a _Confirm Finish_ window, click **OK**.
 
-5. Once you have created your application, you see a list of default features have been automatically assigned to the app.
+    Once you have created your application, you see a list of default features have been automatically assigned to the app.
 
     !![MDK](img_2.5.png)
 
