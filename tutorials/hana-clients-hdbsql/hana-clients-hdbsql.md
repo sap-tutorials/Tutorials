@@ -397,6 +397,8 @@ SELECT * FROM "HoTeL"."RoOm"; --fails
 SELECT * FROM "HOTEL"."ROOM"; --succeeds
 ```
 
+>For further details, consult [Identifiers and case sensitivity](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209f5020751910148fd8fe88aa4d79d9.html?q=case#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
+
 > ---
 
 >Should you wish to remove the contents of a table, the table itself, a schema or a user, the following statements can be executed.  Do not execute these now as `USER1` and the hotel data set will be used subsequently in this tutorial.  
