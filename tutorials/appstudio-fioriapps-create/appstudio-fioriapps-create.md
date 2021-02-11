@@ -12,12 +12,12 @@ author_profile: https://github.com/raz-korn
 ## Prerequisites
   - You have created an SAP Fiori dev space in SAP Business Application Studio. See [Create a preconfigured dev space for developing SAP Fiori apps](appstudio-devspace-fiori-create).
   - The SAP Fiori dev space is in status `RUNNING` and you opened it.
-  - You configured a destination to SAP Gateway Demo System (ES5) (see [Connect SAP Cloud Platform to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection)).
+  - You configured a destination to SAP Gateway Demo System (ES5) (see [Connect SAP BTP to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection)).
 
 
 ## Details
 ### You will learn
-  - How to create an SAPUI5 application for SAP Cloud Platform, Cloud Foundry environment
+  - How to create an SAPUI5 application for SAP Business Technology Platform (BTP), Cloud Foundry environment
   - How to test-run the app locally in the dev space
 
 You will build an application that presents a list of suppliers from an on-premise backend. The suppliers' data will be retrieved from the `BusinessPartnerSet` collection in the `GWSAMPLE_BASIC` OData service that is available from SAP's ES5 demo gateway.
@@ -63,13 +63,13 @@ The period for idle time for Enterprise accounts is different than for trial acc
 
     !![Fiori project template - project name](AppStudio-Fiori-Project-Template-Project-Name-.png)
 
-6. For **HTML5 Applications**, select **Approuter Managed by SAP Cloud Platform** and provide a unique service name, e.g. **BP**, and click **Next**.
+6. For **Approuter Configuration**, select **Managed Approuter** and provide a unique service name, e.g. **BP**, and click **Next**.
 
-    !![central approuter](AppStudio-HTML5-Applications-Runtime-.png)
+    !![central approuter](Managed-Approuter-image.png)
 
     >When end-users access an app in the Cloud Foundry environment, they actually access the Application Router first. The application router is used to serve static content, authenticate users, rewrite URLs, and forward or proxy requests to other micro services while propagating user information.
 
-    >The recommendation is to use **Managed by SAP Cloud Platform** that provides many benefits, when compared to Standalone Application Router, such as save resources, lower maintenance efforts, etc. Standalone Application Router should only be used in advanced cases, for example when application router extensibility is required. More information is available in [Developing HTML5 Applications in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/11d77aa154f64c2e83cc9652a78bb985.html)
+    >The recommendation is to use the **Managed Approuter** that provides many benefits, when compared to the Standalone Application Router, such as save resources, lower maintenance efforts, etc. Standalone Application Router should only be used in advanced cases, for example when application router extensibility is required. More information is available in [Developing HTML5 Applications in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/11d77aa154f64c2e83cc9652a78bb985.html)
 
 7. For **Basic Attributes**, select the following, and click **Next**.
 

@@ -73,7 +73,7 @@ The following are some related documentation links for SAP HANA and the SAP HANA
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Version information)]
-The SAP HANA database explorer releases independently of SAP HANA.  New features appear first in SAP HANA Cloud and are available to the on-premise version in a later release.  As an example, when SAP HANA 2.0 SPS 05 was released on June 26 2020, SAP HANA database explorer version 2.12.20185 was available in both the on-premise and SAP HANA Cloud releases.  At the time when this was published in October 2020, the version available in HANA Cloud contains additional features that that are not yet available for an on-premise installation.
+The SAP HANA database explorer releases independently of SAP HANA.  New features appear first in SAP HANA Cloud and are available to the on-premise version in a later release.  As an example, when SAP HANA 2.0 SPS 05 was released on June 26 2020, SAP HANA database explorer version 2.12.20185 was available in both the on-premise and SAP HANA Cloud releases.  At the time when this was published in October 2020, the version available in HANA Cloud contains additional features that are not yet available for an on-premise installation.
 
 The screenshots below show the version of the SAP HANA database explorer in SAP HANA Cloud and on-premise.  
 

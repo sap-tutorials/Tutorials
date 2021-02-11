@@ -25,6 +25,10 @@ For more information on this process and additional syntax options, refer to the
 
 If you are looking for the steps for an on-premise SAP HANA instance with XS Advanced, such as SAP HANA, express edition, [refer to this tutorial](xsa-create-user-provided-anonymous-service).
 
+A video version of this tutorial is also available:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ItEvMHWGak0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a plain schema)]
@@ -146,7 +150,7 @@ You now have a schema with a table and data in it. You have also created a user 
 
     !![user provided service](12.png)
 
-5. From the SAP HANA PROJECTS view, you should see that the User Provided Service is not part of the Database Connections of your project.
+5. From the SAP HANA PROJECTS view, you should see that the User Provided Service is now part of the Database Connections of your project.
 
     !![user provided service](13.png)
 

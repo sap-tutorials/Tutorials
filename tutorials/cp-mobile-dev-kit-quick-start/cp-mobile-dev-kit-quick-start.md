@@ -107,7 +107,7 @@ These are the [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264ac
 
 [ACCORDION-BEGIN [Step 3: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services and Cloud Foundry to consume it as Mobile and Web application respectively.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services and Cloud Foundry to consume it as Mobile and Web application respectively.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
