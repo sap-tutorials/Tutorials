@@ -41,7 +41,7 @@ It's now time to switch to SAP HANA as a database.
       }
     ```
 
-    > `fiori_preview:true` enables SAP Fiori preview also in production mode as you saw it in your local application in the previous tutorial in step 4.
+    > `fiori_preview:true` enables SAP Fiori preview also in production mode as you saw it in your local application in the previous tutorial in step 4. This feature is meant to help you during development and should not be used in productive applications.
 
     > `kind:sql` declares the requirement for an SQL database. It evaluates to `sqlite` in the `development` profile (active by default), while in `production` it equals `hana`. This way you don't need to modify this file if you want to switch between the two databases.
 
