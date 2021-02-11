@@ -1,6 +1,6 @@
 ---
-title: Get Started with SAP Cloud Platform Rapid Application Development by Mendix
-description: Set up your SAP Cloud Platform account so you can use SAP Cloud Platform Rapid Application Development by Mendix to build applications to be deployed on SAP Cloud Platform.
+title: Get Started with SAP Rapid Application Development by Mendix
+description: Set up your SAP Business Technology Platform (BTP) account so you can use SAP Rapid Application Development by Mendix to build applications to be deployed on SAP BTP.
 primary_tag: products>sap-rad-by-mendix
 author_name: Paola Laufer
 auto_validation: true
@@ -9,17 +9,17 @@ time: 10
 ---
 
 ## Prerequisites  
-  - You have access to an SAP Cloud Platform account. If you don't have an account, you can open a trial one. See the [tutorial](https://developers.sap.com/tutorials/hcp-create-trial-account.html) or [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/d61c2819034b48e68145c45c36acba6e.html#loio42e7e54590424e65969fced1acd47694).
+  - You have access to an SAP BTP account. If you don't have an account, you can open a trial one. See the [tutorial](hcp-create-trial-account) or [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/d61c2819034b48e68145c45c36acba6e.html#loio42e7e54590424e65969fced1acd47694).
   - You are using a Windows desktop.
 
 ## Details  
 ### You will learn  
-- How to set up your environment to use SAP Cloud Platform Rapid Application Development
-- How to open SAP Cloud Platform Rapid Application Development
+- How to set up your environment to use SAP Rapid Application Development
+- How to open SAP Rapid Application Development
 
-You can build business applications for the SAP Cloud Platform Cloud Foundry environment using SAP Cloud Platform Rapid Application Development by Mendix, without needing to write code.
+You can build business applications for SAP BTP, Cloud Foundry environment using SAP Rapid Application Development by Mendix, without the need to write code.
 
-In this tutorial, you will set up your SAP Cloud Platform account so you can use SAP Cloud Platform Rapid Application Development to build applications to be deployed on SAP Cloud Platform.
+In this tutorial, you will set up your SAP BTP account so you can use SAP Rapid Application Development to build applications to be deployed on SAP BTP.
 
 >This tutorial assumes that you are using a trial Cloud Foundry environment.
 
@@ -31,23 +31,23 @@ In this tutorial, you will set up your SAP Cloud Platform account so you can use
 [ACCORDION-BEGIN [Step 1: ](Cloud Foundry trial)]
 Go to [https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial).
 
-Log into your SAP Cloud Platform account.
+Log into your SAP BTP account.
 
-!![SAP Cloud Platform](mendix-onboarding-newLogIn.png)
+!![SAP BTP](mendix-onboarding-newLogIn.png)
 
-On the welcome screen of the SAP Cloud Platform cockpit, click **Enter Your Trial Account** to see your global account.
+On the welcome screen of the SAP BTP cockpit, click **Enter Your Trial Account** to see your global account.
 
-!![enter trial account](enter-trial-new.png)
+!![enter trial account](enter-trial.png)
 > Bookmark the link for fast and quick access to the cockpit.  
 
 The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
 
-!![enter subaccount](global-account-new.png)
+!![enter subaccount](trial-created.png)
 
 
 To get to the space in which your applications and services live, click **dev** in the **Spaces** section.
 
-!![enter space](sub-account22.png)
+!![enter space](sub-account.png)
 
 
 [DONE]
@@ -60,7 +60,7 @@ Go to the [Discovery Center](https://discovery-center.cloud.sap/#/servicessearch
 Under the **Tools** section, click **Mendix Development Portal**.
 
 
-!![Rapid Application Development](opening-mendix-devportal.png)
+!![Rapid Application Development](mendix_disco.png)
 
 
 This opens the registration page.
@@ -78,15 +78,13 @@ Choose to **sign in with SAP**.
 
 !![Sign in with SAP](mendixSigninWithSAP-New.png)
 
-Choose your SAP Cloud Platform region from the drop-down and click **Select region**.
+Choose your SAP BTP region from the drop-down and click **Select region**.
 
-!![Select region](mendixSelectRegion-New.png)
+!![Select region](mendixSelectRegion-btp.png)
 
-This will redirect you to SAP Cloud Platform's login page. Enter your SAP Cloud Platform credentials and sign in.
+This will redirect you to SAP BTP's login page. Enter your SAP BTP credentials and sign in.
 
-!![Login SAP](CP-signin.png)
-
-Choose **Authorize**.
+In the Application Authorization popup, choose **Authorize**.
 
 !![Authorize](mendixSAPAuthorize-New.png)
 
@@ -138,11 +136,9 @@ Choose **Select This Template**.
 
 Enter a name, and choose **Create App**.
 
-!![Enter name](add-name.png)
+!![Enter name](add-name1.png)
 
-Select a region for SAP Cloud Platform and choose **Next**.
-
-!![Sign in to SAP Cloud Platform](mendix-onboarding11-New.png)
+Select a region for SAP BTP and choose **Next**.
 
 Choose the Cloud Foundry environment to which you want to deploy.
 

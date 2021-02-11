@@ -20,6 +20,10 @@ primary_tag: products>sap-hana
 - How to load data for testing into a columnar table from a CSV file
 - How to access the Database Explorer to browse your tables, data and use SQL statements
 
+A video version of this tutorial is also available:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/O0x7Jt6yre0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a new project from template)]

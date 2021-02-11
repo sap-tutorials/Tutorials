@@ -1,6 +1,6 @@
 ---
-title: Set Up Account for Data Attribute Recommendation and Download Postman Templates
-description: Use a booster in SAP Business Technology Platform (SAP BTP) Trial to automatically create a service instance, and download Postman environment and collection templates for Data Attribute Recommendation.
+title: Set Up Account for Data Attribute Recommendation and Download Postman Sample Files
+description: Use a booster in SAP Business Technology Platform (SAP BTP) Trial to automatically create a service instance, and download Postman environment and collection JSON sample code files for Data Attribute Recommendation.
 auto_validation: true
 time: 5
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to access your trial account
   - What are interactive guided boosters
-  - How to use the **Set up account for Data Attribute Recommendation** booster to assign entitlements, update your subaccount, create a service instance, and also to download Postman environment and collection templates.
+  - How to use the **Set up account for Data Attribute Recommendation** booster to assign entitlements, update your subaccount, create a service instance, and also to download Postman environment and collection JSON sample code files.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
@@ -66,13 +66,13 @@ Now, you will use the **Set up account for Data Attribute Recommendation** boost
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Download Postman templates)]
+[ACCORDION-BEGIN [Step 3: ](Download Postman sample files)]
 
-Download Postman environment and collection templates. Make a local copy of the files.
+Download Postman environment and collection sample files. Make a local copy of the files.
 
 !![Postman](booster-success-postman.png)
 
->If you face any issue with the booster **Set up account for Data Attribute Recommendation**, you can alternatively follow the steps in [Create Service Instance for Data Attribute Recommendation](cp-aibus-dar-service-instance) to create the service key for Data Attribute Recommendation manually, and download and edit the Postman environment and collection templates, as described in [Set Up Postman to Call Data Attribute Recommendation APIs](cp-aibus-dar-setup-postman).
+>If you face any issue with the booster **Set up account for Data Attribute Recommendation**, you can alternatively follow the steps in [Create Service Instance for Data Attribute Recommendation](cp-aibus-dar-service-instance) to create the service key for Data Attribute Recommendation manually, and download and edit the Postman environment and collection sample files, as described in [Set Up Postman to Call Data Attribute Recommendation APIs](cp-aibus-dar-setup-postman).
 
 Congratulations, you have completed this tutorial. You are now all set to [Install Postman REST Client](api-tools-postman-install) and [Set Up Postman to Call Data Attribute Recommendation APIs](cp-aibus-dar-setup-postman).
 
