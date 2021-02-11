@@ -11,6 +11,7 @@ time: 10
 
 ## Prerequisites  
 - This tutorial is designed for SAP HANA Cloud.
+- **Tutorials:** [Creating Stored Procedures](hana-cloud-sqlscript-debugging)
 
 ## Details
 ### You will learn  
