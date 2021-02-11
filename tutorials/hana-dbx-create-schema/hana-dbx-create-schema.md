@@ -71,7 +71,7 @@ The following steps will create sample objects for a hotel database using create
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create tables and import data using SQL)]
+[ACCORDION-BEGIN [Step 2: ](Create and populate tables)]
 1. Create tables that represent a basic hotel administration system by running the SQL statements below:
 
     ```SQL
@@ -122,6 +122,7 @@ The following steps will create sample objects for a hotel database using create
     > To find the newly created tables in the database browser, select the Tables folder and set the schema to **HOTEL**.  If needed, the contents of the database browser can be updated by pressing the refresh button.
     >
     >![find tables in database browser](viewTables.png)
+
 
 
 2. Execute the following SQL statements to add data into the tables in the `HOTEL` schema.
@@ -217,6 +218,16 @@ The following steps will create sample objects for a hotel database using create
     ```
 
     For additional details see [CREATE Table statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/20d58a5f75191014b2fe92141b7df228.html) and [Insert Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/20f7f70975191014a76da70c9181720e.html).
+
+    >Note that the identifiers such as table names are automatically upper cased unless they are within "".  
+    >
+    ```SQL
+    SELECT * FROM HoTeL.RoOm;  --succeeds
+    SELECT * FROM "HoTeL"."RoOm"; --fails
+    SELECT * FROM "HOTEL"."ROOM"; --succeeds
+    ```
+
+    >For further details, consult [Identifiers and case sensitivity](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209f5020751910148fd8fe88aa4d79d9.html?q=case#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
 
 [DONE]
 [ACCORDION-END]

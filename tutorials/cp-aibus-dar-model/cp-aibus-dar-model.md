@@ -3,7 +3,7 @@ title: Use Data Attribute Recommendation to Train a Machine Learning Model
 description: Train a machine learning model using the data that you uploaded to your Data Attribute Recommendation service instance.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [ tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 

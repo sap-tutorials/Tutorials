@@ -3,7 +3,7 @@ title: Upload Data to Document Classification
 description: Find out how to create datasets and upload data to your Document Classification service instance.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
 primary_tag: topic>machine-learning
 ---
 
