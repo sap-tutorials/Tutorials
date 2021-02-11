@@ -45,7 +45,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img_1.4.png)
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.
 
 5. In *Service Configuration* step, provide or select the below information and click **Next**:
 
@@ -63,7 +63,7 @@ This step includes creating the mobile development kit project in the editor.
 
     >In [this tutorial](cp-mobile-dev-kit-ms-setup), server-side configuration for this MDK app were already done.
 
-    Regardless of whether you are creating an online or offline application, this step is needed for app to connect to an OData service. When building an MDK Mobile application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services. For MDK Web application, destination is setup in SAP BTP cockpit.
+    Regardless of whether you are creating an online or offline application, this step is needed for app to connect to an OData service. When building an MDK Mobile application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services. For MDK Web application, destination is set up in SAP BTP cockpit.
 
     The generated application will be offline enabled in the MDK Mobile client and will run as online in Web environment.
 
@@ -96,7 +96,7 @@ These are the [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264ac
 
 - **`OnWillUpdate.js`**: This rule is applicable to Mobile client only. MDK applications automatically download updates and apply them to the client without the end-user needing to take any action. The `OnWillUpdate` rule empowers the user to run business logic before the new definitions are applied. This allows the app designer to include logic to prompt the user to accept or defer applying the new definitions based on their current activity. For example, if the end-user is currently adding new customer details or in the middle of a transaction, they will be able to defer the update. The app will prompt again the next time it checks for updates.
 
-- **`Application.app`**: this is the main configuration file for your application from within SAP Business Application Studio. Here you set your start page (here in this tutorial, it is main.page), action settings for different stages of the application session lifecycle, push notifications, and more.
+- **`Application.app`**: this is the main configuration file for your application from within SAP Business Application Studio. Here you define your start page (here in this tutorial, it is main.page), action settings for different stages of the application session lifecycle, push notifications, and more.
 
 >Open the application settings in the application editor by double clicking on the `Application.app`.
 

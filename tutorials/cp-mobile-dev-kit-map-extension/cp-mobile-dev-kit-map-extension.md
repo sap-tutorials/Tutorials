@@ -72,7 +72,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img_1.5.png)
 
-    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services and SAP Business Technology Platform.
+    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services and SAP Business Technology Platform.
 
     Since you will create an online based app, hence _Enable Offline Store_ option is unchecked.
 

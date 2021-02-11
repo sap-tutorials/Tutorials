@@ -70,7 +70,7 @@ This step includes creating the mobile development kit project in the editor.
 
     >In [this tutorial](cp-mobile-dev-kit-ms-setup), server-side configuration for this MDK app were already done.
 
-    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services.
+    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services.
 
     Since you will create an offline based app, hence **Enable Offline** option is selected.
 

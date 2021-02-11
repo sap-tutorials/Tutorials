@@ -95,7 +95,7 @@ Your dev space will be created and the status will change to running.
 
     !![Space list](img_3_6.png)
 
-    > Upon successful setup, you will see a toast message at the bottom right corner of your screen, and the bottom status bar will highlight CF connection details.
+    > Upon successful set up, you will see a toast message at the bottom right corner of your screen, and the bottom status bar will highlight CF connection details.
 
     > !![Success toast message](img_3_6_note.png)
 

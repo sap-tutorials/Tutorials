@@ -64,7 +64,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img_1.7.png)
 
-    >Regardless of whether you are creating an online or offline application, this step is needed for the app to connect to an OData service. When building an MDK application, it assumes the OData service created and the destination that points to this service is setup in [Mobile Services](cp-mobile-dev-kit-ms-setup) (for Mobile consumption) and in [Cloud Foundry cockpit](cp-mobile-dev-kit-ms-setup) (for Web consumption).
+    >Regardless of whether you are creating an online or offline application, this step is needed for the app to connect to an OData service. When building an MDK application, it assumes the OData service created and the destination that points to this service is set up in [Mobile Services](cp-mobile-dev-kit-ms-setup) (for Mobile consumption) and in [Cloud Foundry cockpit](cp-mobile-dev-kit-ms-setup) (for Web consumption).
 
     >**Enable Offline** option allows MDK mobile app to be offline enabled. This configuration will be ignored on Web environment and the MDK web application will be treated as online only.
 
