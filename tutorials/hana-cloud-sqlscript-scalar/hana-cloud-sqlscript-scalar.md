@@ -44,7 +44,7 @@ time: 15
 
     !![Select Function](1_6.png)
 
-7. Use the dropdown, and select **Function(hdbfunction)** as the Artifact Type. Give the name of the artifact as  `get_full_name`, then click **Create**.
+7. Use the dropdown, and select **Function** as the Artifact Type. Give the name of the artifact as  `get_full_name`, then click **Create**.
 
     !![Artifact Type](1_7.png)
 
