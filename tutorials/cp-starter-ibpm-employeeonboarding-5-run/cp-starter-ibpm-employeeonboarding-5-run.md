@@ -93,9 +93,9 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 2. Select the `onboard` workflow, and choose **Start New Instance**.
 
-3. The start context is already filled. Choose **Start New Instance**.
+3. The start context is already filled. Choose **Start New Instance and Close**.
 
-    ![Start New Instance](start-new-instance-json.png)
+    ![Start New Instance](start-new-instance-json.png)  
 
 4. Choose **Show Instances** to see all workflow instances of the onboard workflow definition.
 
@@ -122,7 +122,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
     !![New Workflow Event Processed](processworkflowevents.png)
 
-    > In productive scenarios, you can switch on the *Schedule Job* so that the events will be automatically processed at an interval of 5 minutes.
+    > If *Schedule Job* in *ON* then the events are automatically processed at an interval of 5 minutes.
 
 2. Go back to Workflow Management Fiori launchpad, choose the **Process Workspace** tile and open `Employee Onboarding` scenario.
 
@@ -172,7 +172,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
     ![View Scenario4](viewscenario_4.png)
 
-Congratulations. With this, you have successfully completed the mission on **Automating and Extending Employee Onboarding** process using Workflow Management services. In this mission, you learned about Workflow, Business Rules and Process Visibility capabilities of **SAP Cloud Platform Workflow Management** and how they come together to help you automate the process and decisions, together with providing an out-of-box visibility into the workflows.
+Congratulations. With this, you have successfully completed the mission on **Automating and Extending Employee Onboarding** process using Workflow Management services. In this mission, you learned about Workflow, Business Rules and Process Visibility services of **SAP Workflow Management** and how they come together to help you automate processes and decisions, together with providing an out-of-box visibility into the workflows.
 
 [VALIDATE_6]
 [ACCORDION-END]
