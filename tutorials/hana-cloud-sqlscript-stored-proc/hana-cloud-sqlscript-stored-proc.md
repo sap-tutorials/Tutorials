@@ -23,9 +23,9 @@ time: 15
 
 1. If you have not done so yet, create a new HANA Database Project in the SAP Business Application Studio. For more information about how to do this, complete step 1 from the [Create an SAP HANA Database Project](hana-cloud-create-db-project) tutorial.
 
-2. Next, download the data.zip file from [here](https://github.com/SAP-samples/hana-opensap-cloud-2020/blob/main/tutorial/data.zip).   We will use predefined tables with sample data for all of the SQLScript tutorials in this group.
+2. Next, download the data.zip file from [here](https://github.com/SAP-samples/hana-opensap-cloud-2020/raw/main/tutorial/data.zip).   We will use predefined tables with sample data for all of the SQLScript tutorials in this group.
 
-3. Right click on the `src` and choose **Import Files**, choose the data.zip file that you have downloaded.
+3. Right click on the `src` and choose **Import Project**, choose the data.zip file that you have downloaded.
 
     !![Data.zip](1_1.png)
 
@@ -101,7 +101,7 @@ time: 15
 
 1. Between the BEGIN and END statements, insert the SELECT statements as shown.  These are implicit select statements whose results sets are passed to the caller.  
 
-    ```
+    ```SQL
     SELECT COUNT(*) AS CREATE_CNT, "CREATEDBY"
          FROM "OPENSAP_PURCHASEORDER_HEADERS" WHERE ID IN (
                          SELECT "POHEADER_ID"
