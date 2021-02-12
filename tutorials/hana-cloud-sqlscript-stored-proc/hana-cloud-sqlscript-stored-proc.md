@@ -101,7 +101,7 @@ time: 15
 
 1. Between the BEGIN and END statements, insert the SELECT statements as shown.  These are implicit select statements whose results sets are passed to the caller.  
 
-    ```SQL
+    ```SQLCRIPT
     SELECT COUNT(*) AS CREATE_CNT, "CREATEDBY"
          FROM "OPENSAP_PURCHASEORDER_HEADERS" WHERE ID IN (
                          SELECT "POHEADER_ID"
@@ -119,7 +119,7 @@ time: 15
 
 2. The completed code should look similar to this.
 
-    ```
+    ```SQLSCRIPT
     PROCEDURE "get_po_header_data"( )
        LANGUAGE SQLSCRIPT
        SQL SECURITY INVOKER
