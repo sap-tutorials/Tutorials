@@ -36,7 +36,7 @@ In this exercise, we will modify the code of procedure `get_po_header_data`  so 
 
 4. The completed code should be similar to this.
 
-    ```
+    ```SQLCRIPT
     PROCEDURE "get_po_header_data"(
              OUT EX_PO_CREATE_CNT TABLE(
                CREATE_CNT INTEGER,
@@ -88,7 +88,7 @@ In this exercise, we will modify the code of procedure `get_po_header_data`  so 
 
     !![Run](2_4.png)
 
-5. Check the execution time again, you may notice that it is a bit faster this time. The reason is that these SQL statements are now executed in parallel.
+5. Check the execution time again, you may notice that it is a bit faster this time depending on your system. The reason is that these SQL statements are now executed in parallel.
 
     !![Check execution time](2_5.png)
 
