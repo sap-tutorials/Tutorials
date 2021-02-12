@@ -419,7 +419,7 @@ Assign your user the role collection that contains the necessary role to view th
 
 5. Choose the **Security** tab and choose **Trust Configuration**.
 
-6. Choose **SAP ID Service**.
+6. Choose **Default identity provider**.
 
 7. Enter your e-mail address and choose **Show Assignments**.
 
