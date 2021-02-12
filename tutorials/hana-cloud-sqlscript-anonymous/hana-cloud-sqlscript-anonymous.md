@@ -39,7 +39,7 @@ In this exercise, we will show you how you can invoke SQLScript logic without th
 
 5. The completed code should look very similar to this.
 
-    ```
+    ```SQLCRIPT
     do (  OUT EX_TOP_3_EMP_PO_COMBINED_CNT TABLE(
                   FULLNAME nvarchar(256),
                   CREATE_CNT INTEGER,
