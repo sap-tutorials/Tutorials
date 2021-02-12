@@ -32,7 +32,7 @@ There are application and scenarios where you need a table function instead of p
 
 1. Add the input parameter called `IM_FDATE` as well as the RETURN Table parameter as shown. Please note the scalar input parameter we will used later on for filtering.
 
-    ```
+    ```SQLCRIPT
     FUNCTION "get_po_counts" ( im_fdate DATE )
      RETURNS TABLE (EMAIL NVARCHAR(255),
     	       FULLNAME NVARCHAR(255),
@@ -78,7 +78,7 @@ There are application and scenarios where you need a table function instead of p
 
 8. The completed code should be very similar to this.
 
-    ```
+    ```SQLCRIPT
     FUNCTION "get_po_counts"( im_fdate DATE )
      RETURNS TABLE (EMAIL NVARCHAR(255),
     	       FULLNAME NVARCHAR(255),
@@ -141,7 +141,7 @@ There are application and scenarios where you need a table function instead of p
 
 4. A new SQL tab will be opened with a SELECT statement. Enter the date `18.12.2014` as the input parameter and add  LIMIT 3 at the end of it. Click **Run**.
 
-    ```
+    ```SQLCRIPT
     SELECT * FROM "get_po_counts"('18.12.2014') LIMIT 3;
     ```
     !![Results](3_4.png)
