@@ -31,7 +31,7 @@ In this tutorial, you will update the previous procedure to now use Table Variab
     !![remove](1_2.png)
 
 3. After the SELECT statement, Use the INSERT operator to copy all rows of `lt_products` into the output parameter called `ex_products`. Then use the INSERT operator to insert 3 new products into the output table.  Since you are specifying the actual index, it will insert your new rows at that index and push all existing rows down.
-```
+```SQLCRIPT
 :ex_products.INSERT(:lt_products);
 :ex_products.INSERT(('ProductA', 'Software', '1999.99'), 1);
 :ex_products.INSERT(('ProductB', 'Software', '2999.99'), 2);
@@ -40,7 +40,7 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 
 4. The complete code should look very similar to this.
 
-	```
+	```SQLCRIPT
 	PROCEDURE "build_products" (
 			        out ex_products table (PRODUCTID nvarchar(10),
 		                               CATEGORY nvarchar(20),
@@ -73,13 +73,13 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 
 1. Return to the procedure and further modify it.  Enter another DECLARE statement for `lv_index`.
 
-	```
+	```SQLCRIPT
 	declare lv_index int = 0;
 	```
 
 2. Also add a FOR loop to loop through the rows and update the price using the UDPATE operator
 
-	```
+	```SQLCRIPT
 	FOR lv_index IN 1..record_count(:ex_products) DO
 		:ex_products.(PRICE).UPDATE((:ex_products.PRICE[lv_index] * 1.25), lv_index);
 	END FOR;
@@ -87,7 +87,7 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 
 3. The complete code should look very similar to this.
 
-	```
+	```SQLCRIPT
 	PROCEDURE "build_products" (
 		        out ex_products table (PRODUCTID nvarchar(10),
 		                               CATEGORY nvarchar(20),
@@ -123,14 +123,14 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 [ACCORDION-BEGIN [Step 3: ](Use the DELETE Operator)]
 1. Return to the procedure and further modify it.  Enter two new DECLARE statements.
 
-	```
+	```SQLCRIPT
 	declare lv_del_index int array;
 	declare lv_array_index int = 0;
 	```
 
 2. Also add a FOR loop determine which lines to delete, and finally use the DELETE operator to delete the rows all at once.
 
-	```
+	```SQLCRIPT
 	FOR lv_index IN 1..record_count(:ex_products) DO
 		IF :ex_products.PRICE[lv_index] <= 2500.00 THEN
 		 lv_array_index = lv_array_index + 1;
@@ -143,7 +143,7 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 
 3. The complete code should look very similar to this.
 
-	```
+	```SQLCRIPT
 	PROCEDURE "build_products" (
 			        out ex_products table (PRODUCTID nvarchar(10),
 			                               CATEGORY nvarchar(20),
@@ -189,20 +189,20 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 [ACCORDION-BEGIN [Step 4: ](Use the SEARCH Operator)]
 1. Return to the procedure and further modify it.  Enter code for a new output parameter.
 
-	```
+	```SQLCRIPT
 	  out ex_pc_productid nvarchar(10)
 	```
 
 2. Also add the two lines of code for performing a SEARCH on the intermediate table variable.
 
-	```
+	```SQLCRIPT
 	 lv_index = :ex_products.SEARCH("CATEGORY", 'PC', 1);  
 	 ex_pc_productid = :ex_products.PRODUCTID[lv_index];
 	```
 
 3. The complete code should look very similar to this.
 
-	```
+	```SQLCRIPT
 	PROCEDURE "build_products" (
 		        out ex_products table (PRODUCTID nvarchar(10),
 	                               CATEGORY nvarchar(20),
