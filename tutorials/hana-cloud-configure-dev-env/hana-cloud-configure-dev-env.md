@@ -68,7 +68,7 @@ Dev spaces are like isolated virtual machines in the cloud that can be quickly s
 
 [Video Link](https://www.youtube.com/watch?v=8rT-PEUg8Uw&t=526s)</br>
 
-Before we create our SAP Cloud Application Programming Model project, we want to do a few more one-time configuration steps to prepare the Dev Space
+Before we create our SAP HANA project, we want to do a few more one-time configuration steps to prepare the Dev Space
 
 1. In the bottom left of the SAP Business Application Studio you will see a message that your Organization and Space are not set yet. Click this message to begin supplying your trial connection details
 
