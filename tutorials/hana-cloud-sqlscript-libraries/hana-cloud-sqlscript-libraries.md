@@ -48,12 +48,12 @@ Libraries are designed to group related variables, functions, and procedures tog
 
 2. Between the BEGIN and END statements, define a public variable library member called `rowcount` with type int.
 
-    ```
+    ```SQLCRIPT
     public variable rowcount int;
     ```
 
 3. After the public variable, define a public function library member as shown here.
-    ```
+    ```SQLCRIPT
     public function "employee_exists"(
                  in im_employee_id nvarchar(36) )
                  returns res boolean as
@@ -74,7 +74,7 @@ Libraries are designed to group related variables, functions, and procedures tog
 4. After the public function, define two public procedure library members, one called `get_employee_data` and the other
 `get_business_partner_data`.
 
-    ```
+    ```SQLCRIPT
     public procedure "get_employee_data"(
                  out ex_employees "OPENSAP_MD_EMPLOYEES" )
        LANGUAGE SQLSCRIPT
@@ -99,7 +99,7 @@ Libraries are designed to group related variables, functions, and procedures tog
 
 5. The complete code should look like this.
 
-    ```
+    ```SQLCRIPT
     LIBRARY "masterdata"
     LANGUAGE SQLSCRIPT
     AS
@@ -160,7 +160,7 @@ Libraries are designed to group related variables, functions, and procedures tog
 
 2. Enter the output parameters in the signature of the procedure.
 
-    ```
+    ```SQLCRIPT
     out ex_emp_exists boolean,
     out ex_employees "OPENSAP_MD_EMPLOYEES" ,
     out ex_emp_count int,
@@ -169,7 +169,7 @@ Libraries are designed to group related variables, functions, and procedures tog
     ```
 3. Enter code between the BEGIN and END statements. First call the library member scalar function called `employee_exists` and pass the result to the output parameter. Next, call the library member procedures and pass the result to the output parameters as well as pass the library member variable `rowcount` to the output parameters.
 
-    ```
+    ```SQLCRIPT
     ex_emp_exists  = "masterdata":"employee_exists"('02BD2137-0890-1EEA-A6C2-BB55C19787FB');   
 
     call "masterdata":"get_employee_data"( ex_employees );
@@ -181,7 +181,7 @@ Libraries are designed to group related variables, functions, and procedures tog
 
 4. The completed code should look similar to this.
 
-    ```
+    ```SQLCRIPT
     PROCEDURE "get_master_data"(
           out ex_emp_exists boolean,
           out ex_employees "OPENSAP_MD_EMPLOYEES" ,
