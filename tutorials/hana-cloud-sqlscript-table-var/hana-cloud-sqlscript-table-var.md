@@ -49,7 +49,7 @@ In this exercise you will modify the code of procedure `get_po_header_data` agai
 
 7. The completed code should be very similar to this.
 
-    ```
+    ```SQLCRIPT
     PROCEDURE "get_po_header_data"(
               OUT EX_TOP_3_EMP_PO_COMBINED_CNT TABLE(
                   LOGINNAME NVARCHAR(12),
