@@ -29,7 +29,7 @@ Using index-based cell access to manipulate table data is faster than using curs
 
 2. Use what you have learned about procedure parameters, and define an output parameters as show here.
 
-    ```
+    ```SQLCRIPT
     out ex_products table (PRODUCTID nvarchar(10),
                            CATEGORY nvarchar(20),
                            PRICE decimal(15,2))
@@ -43,7 +43,7 @@ Using index-based cell access to manipulate table data is faster than using curs
 
 1. Between the BEGIN and END statements, using index based cell access, insert rows into an intermediate table variable using the following code.
 
-    ```
+    ```SQLCRIPT
 
      declare lt_products table like :ex_products;
 
@@ -67,7 +67,7 @@ Using index-based cell access to manipulate table data is faster than using curs
 
 2. The completed code should look like the following.
 
-    ```
+    ```SQLCRIPT
       PROCEDURE "build_products" (
           	    out ex_products table (PRODUCTID nvarchar(10),
                                    CATEGORY nvarchar(20),
