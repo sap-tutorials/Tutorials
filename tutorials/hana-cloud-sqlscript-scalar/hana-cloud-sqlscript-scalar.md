@@ -1,6 +1,6 @@
 ---
 title: Create Scalar User Defined Functions
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+description: Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -18,7 +18,7 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create New Fucntion)]
+[ACCORDION-BEGIN [Step 1: ](Create new function)]
 
 1. Right click on the `src` folder and choose **New Folder**.
 
@@ -55,7 +55,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Edit the Function and Save)]
+[ACCORDION-BEGIN [Step 2: ](Edit the function and save)]
 
 1. Enter the code into the editor as shown here.  Please note the default for parameter `im_employeeid` which makes assigning a value to the parameter optional.
 
@@ -89,7 +89,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Edit the Procedure and Save)]
+[ACCORDION-BEGIN [Step 3: ](Edit the procedure and save)]
 
 1. Return to your procedure called `get_po_header_data` and modify it. Start by renaming the `LOGINNAME` column of the output table to `FULLNAME`. Also change the output length to 256. This is needed to match later on which the anticipated output structure.
 
@@ -148,7 +148,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy and Check Results)]
+[ACCORDION-BEGIN [Step 4: ](Deploy and check results)]
 
 1. Use what you have learned already and perform a deploy.
 
