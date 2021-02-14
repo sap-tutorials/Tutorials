@@ -1,6 +1,6 @@
 ---
 title: Anonymous Blocks
-description: Leveraging SQLScript in stored procedures, user-defined functions, and user-defined libraries.
+description: Leverage SQLScript in stored procedures, user-defined functions, and user-defined libraries.
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -39,7 +39,7 @@ In this exercise, we will show you how you can invoke SQLScript logic without th
 
 5. The completed code should look very similar to this.
 
-    ```SQLCRIPT
+    ```
     do (  OUT EX_TOP_3_EMP_PO_COMBINED_CNT TABLE(
                   FULLNAME nvarchar(256),
                   CREATE_CNT INTEGER,
