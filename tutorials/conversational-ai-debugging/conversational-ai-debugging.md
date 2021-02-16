@@ -10,7 +10,7 @@ primary_tag: products>sap-conversational-ai
 ## Prerequisites
  - You have already built the bot described in [Create Chatbot for Customers of Shipping Company](group.cai-shipping-bot).
 
-
+ 
 ## Details
 ### You will learn
 - How the chatbot chooses what skill to run
