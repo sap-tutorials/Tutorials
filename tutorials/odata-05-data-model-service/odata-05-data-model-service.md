@@ -17,7 +17,7 @@ time: 20
 - How to use CDS to model entities and services
 - How to seed your OData service with test data
 - What CAP can do for you in terms of generating and servicing an OData service
-
+ 
 [CDS](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/855e00bd559742a3b8276fbed4af1008.html) powers a significant part of [CAP](https://cap.cloud.sap). CDS has many features, and in this tutorial you'll encounter a couple of fundamental ones - the ability to declaratively define your data model, concentrating on the domain at hand, and to then be able to expose parts (or all) of that model in a service. You'll also learn how much CAP can do for you with respect to creating full CRUD+Q\* OData services almost from nothing. It's hard to remember how difficult it was to do that before the advent of CAP.
 
 \*CRUD+Q is a common shorthand for referring to a fully formed OData service that sports Create, Read, Update, Delete and Query operations.
