@@ -10,7 +10,7 @@ primary_tag: products>sap-conversational-ai
 ## Prerequisites
  - You have already built the bot described in [Create Chatbot for Customers of Shipping Company](group.cai-shipping-bot).
 
- 
+
 ## Details
 ### You will learn
 - How the chatbot chooses what skill to run
@@ -20,6 +20,7 @@ primary_tag: products>sap-conversational-ai
 Once you design your bot and are putting it together (e.g., adding intents, expressions, and intents), you will want to test it as you go and keep making it better. The Test panel and Chat Preview lets you test your bot against different hypothetical utterances and conversations, to see what is happening under the hood -- and then make adjustments.
 
 In previous tutorials we used the test panel and chat preview. Now that you have a little experience, we can take a deeper dive into the debugging tools and how to make the best use of them.
+
 
 
 ---
