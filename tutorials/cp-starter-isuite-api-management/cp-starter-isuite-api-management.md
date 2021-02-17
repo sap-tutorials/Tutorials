@@ -3,8 +3,8 @@ title: Expose Integration Flow Endpoint as API and Test the Flow
 description: Define the endpoint of the integration flow developed in the last tutorial as an application programming interface (API).
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, products>sap-cloud-platform-connectivity, products>sap-cloud-platform-for-the-cloud-foundry-environment]
-primary_tag: products>sap-cloud-platform-integration-for-process-services
+tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+primary_tag: products>sap-integration-suite
 author_name: Karunaharan V
 author_profile: https://github.com/Karunaharan
 ---
@@ -19,7 +19,6 @@ author_profile: https://github.com/Karunaharan
   - How to define and expose an integration flow endpoint as an API
   - How to assign a policy to the API
   - How to call the API and execute the integration flow using the API portal
-
 
 
 In this tutorial, you will define the endpoint of the integration flow developed in the last tutorial as an application programming interface (API).
@@ -43,7 +42,7 @@ A service instance defines how a service of SAP Cloud Platform (in our case, the
 
     !![Access PI Runtime](1.2.access-process-integration-runtime.png)
 
-3. Select **Create Instance**.
+3. Select **Create**.
 
     !![Create new instance](1.3.create.new.instance.png)
 
@@ -52,12 +51,12 @@ A service instance defines how a service of SAP Cloud Platform (in our case, the
     |  Field Name     | Details
     |  :------------- | :-------------
     |  **Service**           | **`Process Integration Runtime`**
-    |  **Service Plan**           | Select **`integration-flow`** from the dropdown list
-    |  **Instance Name**    | Enter **`Test`** or name of your choice
+    |  **Plan**           | Select **`integration-flow`** from the dropdown list
+    |  **Instance Name**    | Provide a name of your choice
 
       !![New instance wizard](1.4.create.new.instance.png)
 
-5. In the **Specify Parameters** tab, enter the following **`JSON`** code snippet:
+5. In the **Parameters** tab, choose **JSON** and enter the following **`JSON`** code snippet:
     ```JSON
     {
      "roles":[
@@ -65,6 +64,7 @@ A service instance defines how a service of SAP Cloud Platform (in our case, the
      ]
     }
     ```
+
     !![Jsoncode](1.5.Jsoncode.png)
 
     Choose **Next** > **Create Instance**.

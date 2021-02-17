@@ -3,8 +3,8 @@ title: Design and Deploy Your First Integration Flow
 description: Design an integration flow to integrate an online webshop that exposes data via OData service and fetch the product details.
 auto_validation: true
 time: 40
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-cloud-platform-for-the-cloud-foundry-environment]
-primary_tag: products>sap-cloud-platform-integration-for-process-services
+tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+primary_tag: products>sap-integration-suite
 author_name: Karunaharan V
 author_profile: https://github.com/Karunaharan
 ---
@@ -18,13 +18,14 @@ author_profile: https://github.com/Karunaharan
   - How to design an integration flow to query data from an online web shop that is available as an OData service
 
 
-[ACCORDION-BEGIN [Step 1: ](Access your workspace)]
+[ACCORDION-BEGIN [Step 1: ](Access your Cloud Integration workspace)]
 
-  Click on the **URL** in the integration capability. Click the **Design** tab (pencil icon) to access your workspace. This is where you will create your integration package and integration flow.
+    In the Integration Suite home page, click on the **Design, Develop, and Operate Integration Scenarios** tile. Alternatively, in the provisioning app, use the URL available under the **Cloud Integration** section.
+    In the Cloud Integration application, click the **Design** tab (pencil icon) to access your workspace.
+    This is where you will create your integration package and integration flow.
 
   ![Access workspace](1.1.access-workspace.png)
 
-  This is the space where you will work on your integration flows and where you can access all your integration projects.
 
 [DONE]
 [ACCORDION-END]

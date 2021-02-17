@@ -3,8 +3,8 @@ title: Set Up Integration Suite Trial
 description: Get onboarded to SAP Cloud Platform Integration Suite trial account.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform-integration-for-process-services]
-primary_tag: products>sap-cloud-platform
+tags: [tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+primary_tag: products>sap-integration-suite
 author_name: Karunaharan V
 author_profile: https://github.com/Karunaharan
 ---
@@ -22,39 +22,36 @@ SAP Cloud Platform Integration Suite combines the integration capabilities such 
 
 The Integration Suite includes all integration capabilities in simple service plans. To know more on these plans, see [Integration Suite](https://discovery-center.cloud.sap/#/serviceCatalog/f810c887-8d25-4942-9849-354837951066) service catalog.
 
-This part of the series lets you experience the capabilities offered by SAP Cloud Platform Integration Suite. For the complete series, see [Request Product Details with an Integration Scenario](https://developers.sap.com/mission.cp-starter-integration-cpi.html).
+This part of the series lets you experience few capabilities offered by SAP Integration Suite. For the complete series, see [Request Product Details with an Integration Scenario](mission.cp-starter-integration-cpi.html).
 
-> **IMPORTANT**: The Integration Suite trial account is intended for personal exploration and not for production use or team development. See: [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html).
-
->**WHERE TO START**: If you have already activated Cloud Integration (Process Integration) service in your existing trial account, we recommend you to do either of the following:
-
-> **Option 1**: If you are unable to activate **`Integration Suite`** service, create a **`New Subaccount`** and then proceed to **Step 3**.
-
-> **Option 2**: Unsubscribe to Process Integration service then proceed to **Step 3**.
-
-> If you are new to SAP Cloud Platform or Cloud Integration, get started with **Step 1**.
-
-> For a new subaccount, you need to assign entitlements by adding service plans and the quotas. For more information, see [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/c90f3d522ee04e65bd87cdec8808e5ce.html).
-
----
+> **IMPORTANT**: Trial accounts are not intended for productive usage or team development. See: [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html). If you're using Integration Suite from a production account for your proof of concepts or real-time business cases, refer to the [product documentation](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/3dcf507f92f54597bc203600bf8f94c5.html) on SAP Help Portal for step-by-step explanation of the initial set up and further information.
 
 
 [ACCORDION-BEGIN [Step 1: ](The Use Case)]
 
 Using this scenario, you design and execute an integration flow that reads product details from a public product catalog (`WebShop`) for a given product identifier. Product details include data such as the product name and price, for example. To accomplish the scenario, you use SAP Cloud Platform Integration Suite, and in particular, its capabilities *Cloud Integration* and *API Management*.
 
-You use Cloud Integration to design and deploy an integration flow. When you have finished designing, you use the API Explorer tool of *API Management* to expose the integration flow endpoint as an API.
+You use *Cloud Integration* to design and deploy an integration flow. When you have finished designing, you use the API Explorer tool of *API Management* to expose the integration flow endpoint as an API.
 
   - You also define how to access the API in terms of authentication by assigning a dedicated predefined policy template.
   - Using this policy template, you define API access based on the OAuth client credentials grant method.
   - Finally, you use API Management to call the API and get the product details in a response.
 
-  !![Usecase](SetUp integration Trial.png)
+  !![Use case](SetUp integration Trial.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enter your trial account)]
+
+>**WHERE TO START**: If you have already activated Cloud Integration (Process Integration) or API Management services in your existing trial account, we recommend you to perform one of the following options:
+
+> **Option 1**: If you are unable to activate **`Integration Suite`** service in an existing subaccount, create a **`New Subaccount`** and then proceed to **Step 3**. For a new subaccount, you need to assign entitlements by adding service plans and the quotas. For more information, see [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/c90f3d522ee04e65bd87cdec8808e5ce.html).
+
+> **Option 2**: To continue with the same subaccount, unsubscribe from Process Integration and API Management services, and then proceed to **Step 3**.
+
+> If you are new to SAP Cloud Platform or Integration Suite, continue with the tutorial.
+
 
 1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
@@ -78,38 +75,39 @@ You use Cloud Integration to design and deploy an integration flow. When you hav
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Subscribe to the service)]
-1. Select **Subscriptions > Integration Suite**.
+1. Select **Services > Instances and Subscriptions**.
 
-    >If the Integration Suite tile is not visible under **Subscriptions**, you need to assign Integration Suite Trial entitlements. To assign entitlements, see [Manage Entitlements on SAP Cloud Platform Trial](https://developers.sap.com/tutorials/cp-trial-entitlements.html).
+2. Choose **Create**.
+
+    !![Instances & Subscriptions](3.2.Instances&Subscriptions.png)
+
+3. In the **New Instance or Subscription** dialog, choose **Integration Suite** from the list of services.
+
+    >If Integration Suite is not visible in the **Services** list, you need to assign Integration Suite Trial entitlements. To assign entitlements, see [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements).
 
     >- In the tutorial referred above, after **Step 3.5**, there is a list of available services on the left pane.
 
     >- Filter for Integration Suite service and select the service.
 
-    >- Select the service plan, add it to your subaccount, and execute this step.
+    >- Select the service plan, add it to your subaccount, and continue with this  tutorial.
 
-      !![Select Integration Suite](2.1.Integration_Suite_Tile.png)    
+4. Choose the default plan which is **trial** and click **Create**.
 
-2. Select **Subscribe**.
+    !![Create Subscription](3.4.Create_Subscription.png)
 
-      !![Select subscribe button](2.2.Subscribe.png)
+5. You are subscribed to the service now. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the **Integration Suite Launchpad**.
 
+    !![Go to Application](3.5.Go to Application.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Provision the capabilities)]
->**IMPORTANT**: Ensure that you unsubscribe to the standalone services (like Open Connectors, Process Integration or APIM service ) if you have already subscribed to it.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
+>**IMPORTANT**: Ensure that you unsubscribe from the standalone services (like Open Connectors, Process Integration or APIM service ) if you have already subscribed to it.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
 
->**Navigational Steps**: Go to Service Marketplace, search for Open Connectors and click `unsubscribe`.
+>**Navigational Steps**: Go to Service Marketplace, search for the service name and click `unsubscribe`.
 
-1. Navigate to your subaccount, and then choose **Subscriptions**.
-
-2. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the **Integration Suite Launchpad**.
-
-    !![Access integration suite provisioning application](3.1.Access_Prov_App.png)
-
-3. Choose **Add Capabilities** to activate the capabilities offered by Integration Suite.
+1. In the Integration Suite Launchpad, choose **Add Capabilities** to activate the capabilities offered by Integration Suite.
 
     !![Integration suite launchpad](4.3.1isuitenewlaunchpage.png)
 
@@ -126,7 +124,7 @@ You use Cloud Integration to design and deploy an integration flow. When you hav
 
     !![API management](4.1API_step.png)
 
-4. Click **Activate** to provision the selected capabilities.
+2. Click **Activate** to provision the selected capabilities.
 
     >For some capabilities, you would be given a choice to select additional functionalities that you need to choose based on your business requirement.
 
@@ -139,7 +137,7 @@ You use Cloud Integration to design and deploy an integration flow. When you hav
 
     >**IMPORTANT**: From the **Provisioning** application you can navigate back to the Integration Suite Launchpad by choosing the **Integration Suite** button on the header.
 
-5. After successful activation, you can view the activated capability tiles on the launchpad. Click on the relevant tile to access the capability.  
+3. After successful activation, you can view the activated capability tiles on the launchpad. Click on the relevant tile to access the capability.  
 
     !![URL](Isuite_launch_new_capab.png)
 
@@ -174,7 +172,7 @@ You use Cloud Integration to design and deploy an integration flow. When you hav
     | Integration Advisor | **`trial-content-developer`** | Access Integration Content advisor to create and deploy interfaces and mappings. |
     | Open Connectors | **`OpenConnectors_User`** | To view and access the Open Connectors capability. |
 
-    >**IMPORTANT**: After assigning the role collections clear the browser cache and reload the page. Try logout and login to get the roles activated. If you are still facing any issues, please send an email to <a href="mailto:cpitrialfeedback@sap.com">CPI trial feedback</a>. Include the **URL** of the **subaccount** in which you are facing access issues to help the trial experience team investigate and resolve the issue.
+    >**IMPORTANT**: After assigning the role collections, clear the browser cache and reload the page. Try logout and login to get the roles activated. If you are still facing any issues, please send an email to <a href="mailto:cpitrialfeedback@sap.com">CPI trial feedback</a>. Include the **URL** of the **subaccount** in which you are facing access issues to help the trial experience team investigate and resolve the issue.
 
 [VALIDATE_1]
 [ACCORDION-END]
