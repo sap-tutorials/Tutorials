@@ -152,6 +152,7 @@ Databases can be added directly to the SAP HANA database explorer.  To connect t
 
     >```SQL
     >select * from M_SESSION_CONTEXT where CONNECTION_ID=current_connection;
+    >select * from SYS.M_CONNECTIONS where CONNECTION_ID=current_connection;
     >select ISOLATION_LEVEL from PUBLIC.M_TRANSACTIONS where CONNECTION_ID = current_connection;
     >```
     >
@@ -306,7 +307,7 @@ An SAP HANA Deployment Infrastructure (HDI) container can be created by using th
 
 For an example of creating a calculation view inside an HDI container, see the video titled Develop Apps at the end of the blog post [Getting Started with SAP HANA Cloud II | Basics](https://blogs.sap.com/2020/03/29/getting-started-with-sap-hana-cloud-part-ii/)
 
-The mission [Get Started with XS Advanced Development](https://developers.sap.com/mission.xsa-get-started.html) provides further examples of using an HDI container.
+The mission [Get Started with XS Advanced Development](mission.xsa-get-started) provides further examples of using an HDI container.
 
 In the next tutorial, additional tables, views, functions, and procedures that will be used in subsequent tutorials in this group will be created directly in the database rather than in an HDI container.
 

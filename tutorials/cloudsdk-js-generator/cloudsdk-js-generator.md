@@ -4,7 +4,7 @@ description: Generate a custom OData client library for the SAP SuccessFactors C
 auto_validation: true
 time: 15
 tags: [tutorial>intermediate, topic>javascript, products>sap-cloud-platform, topic>odata]
-primary_tag: products>sap-s-4hana-cloud-sdk
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Details

@@ -2,8 +2,8 @@
 title: Create a Sample Application on SCP Neo Using SAP Cloud SDK
 description: Create your very first Hello World sample application on SAP Cloud Platform Neo using the SAP Cloud SDK.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
+primary_tag: products>sap-cloud-sdk
 time: 20
 ---
 

@@ -10,7 +10,7 @@ author_profile: https://github.com/lenastodal
 ---
 
 ## Prerequisites
- - If you do not already have an SAP user account and profile, [register for an account](https://accounts.sap.com/ui/public/showRegisterForm?spName=wcms_sapdx_prod_29052019&targetUrl=https%3A%2F%2Fwww.sap.com%2Fbin%2Ffiji%2Fes%2Flogin.sapdx.html&sourceUrl=https%3A%2F%2Fwww.sap.com%2Fcommunity.html).
+ - If you do not already have an SAP user account and profile, [register for an account](https://accounts.sap.com/ui/public/showRegisterForm?spName=https%3A%2F%2Fhana.ondemand.com%2Fskywalker).
  - Go to [SAP Community](https://community.sap.com) and log in before starting the tutorial.
 
 ## Details
@@ -204,7 +204,4 @@ If your blogging permissions haven't changed, please make sure that you complete
 
 [DONE]
 [ACCORDION-END]
-
-
-
 ---

@@ -16,7 +16,7 @@ author_profile: https://github.com/sandeep-tds
 
 ## Details
 ### You will learn
-  - How to create a card using SAP Cloud Platform Boosters
+  - How to create a card using SAP Business Technology Platform Boosters
   - How to create a card with context specific actions
   - How to perform contact actions without saving the contact details on your mobile phone
 

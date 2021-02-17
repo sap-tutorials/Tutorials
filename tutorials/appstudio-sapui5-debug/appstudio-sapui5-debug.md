@@ -19,9 +19,14 @@ primary_tag: topic>sapui5
 
 Add a simple message page to let the users know you are still working on this app.
 
-Replace the existing page in the file `webapp/webapp/view/View1.view.xml` with
-```JavaScript [5]
-<mvc:View controllerName="sap.cp.webapp.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+Replace the existing page in the file `webapp/view/View1.view.xml` with
+```JavaScript [10]
+<mvc:View
+    controllerName="sap.btp.sapui5.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
 	<Shell id="shell">
 		<App id="app">
 			<pages>
@@ -30,6 +35,7 @@ Replace the existing page in the file `webapp/webapp/view/View1.view.xml` with
 		</App>
 	</Shell>
 </mvc:View>
+
 ```
 
 
@@ -39,29 +45,36 @@ Replace the existing page in the file `webapp/webapp/view/View1.view.xml` with
 
 [ACCORDION-BEGIN [Step : ](Change the log level)]
 
-Add the following line to the `webapp/webapp/index.html` file to change to log level.
-```HTML [14]
+Add the following line to the `webapp/index.html` file to change to log level.
+```HTML [15]
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>webapp</title>
-		<script id="sap-ui-bootstrap"
-			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
-			data-sap-ui-theme="sap_belize"
-			data-sap-ui-resourceroots='{"sap.cp.webapp": "./"}'
-			data-sap-ui-compatVersion="edge"
-			data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
-			data-sap-ui-async="true"
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>sapui5</title>
+        <script
+            id="sap-ui-bootstrap"
+            src="resources/sap-ui-core.js"
+            data-sap-ui-theme="sap_fiori_3"
+            data-sap-ui-resourceroots='{"sap.btp.sapui5": "./"}'
+            data-sap-ui-compatVersion="edge"
+            data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+            data-sap-ui-async="true"
 			data-sap-ui-logLevel="debug"
-			data-sap-ui-frameOptions="trusted">
-		</script>
-	</head>
-	<body class="sapUiBody">
-		<div data-sap-ui-component data-name="sap.cp.webapp" data-id="container" data-settings='{"id" : "webapp"}'></div>
-	</body>
+            data-sap-ui-frameOptions="trusted"
+        ></script>
+    </head>
+    <body class="sapUiBody">
+        <div
+            data-sap-ui-component
+            data-name="sap.btp.sapui5"
+            data-id="container"
+            data-settings='{"id" : "sapui5"}'
+        ></div>
+    </body>
 </html>
+
 ```
 
 > The log level acts like a filter and hides all log messages below the defined severity.
@@ -71,7 +84,7 @@ Add the following line to the `webapp/webapp/index.html` file to change to log l
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Write a log message to the console)]
 
-Import the logger to the file `webapp/webapp/controller/View1.controller.js` and add this `onBeforeRendering` as well. This `Log` object allows you to write messages to the console.
+Import the logger to the file `webapp/controller/View1.controller.js` and add this `onBeforeRendering` as well. This `Log` object allows you to write messages to the console.
 
 Replace the highlighted lines from this snippet:
 ```JavaScript [2,3,8,14-19]
@@ -80,12 +93,12 @@ sap.ui.define([
     "sap/base/Log"
 ],
 	/**
-     * @param {typeof sap.ui.core.mvc.Controller} Controller
-     */
+	 * @param {typeof sap.ui.core.mvc.Controller} Controller
+	 */
     function (Controller, Log) {
         "use strict";
 
-        return Controller.extend("sap.cp.webapp.controller.View1", {
+        return Controller.extend("sap.btp.sapui5.controller.View1", {
             onInit: function () {
 
             },
@@ -96,9 +109,7 @@ sap.ui.define([
             },
         });
     });
-
 ```
-
 
 
 > This `onBeforeRendering` method is called every time the view is rendered. E.g., before the renderer is called and the HTML is placed in the DOM-Tree. It can be used to perform clean-up-tasks before re-rendering.
@@ -116,12 +127,12 @@ sap.ui.define([
     "sap/base/Log"
 ],
 	/**
-     * @param {typeof sap.ui.core.mvc.Controller} Controller
-     */
+	 * @param {typeof sap.ui.core.mvc.Controller} Controller
+	 */
     function (Controller, Log) {
         "use strict";
 
-        return Controller.extend("sap.cp.webapp.controller.View1", {
+        return Controller.extend("sap.btp.sapui5.controller.View1", {
             onInit: function () {
 
             },
@@ -147,48 +158,18 @@ This `onAfterRendering` method is called every time the view is rendered after t
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Create a new run configuration)]
-
-Create a run configuration to be able to run the web app. This configuration needs to be created only once.
-
-1. To run the UI module, switch to the **Run Configuration** panel on the left-hand bar. Click on the **+** icon to add a new run configuration.
-
-    !![runconfig](./runconfig.png)
-
-
-2. The first prompt will ask you which module you want to run, select **`webapp (html5)`** to continue.
-
-    !![webapp](./webapp.png)
-
-3. In the prompt, select **`index.html`** to add a new run configuration for your app.
-
-    !![runFile](./runFile.png)
-
-
-4. Choose the latest UI5 version.
-
-    !![latestUI5](./latestUI5.png)
-
-
-5. Choose **`Run Web App`** as the name of the configuration.
-
-    !![saveConfig](./saveConfig.png)
-
-[DONE]
-[ACCORDION-END]
 [ACCORDION-BEGIN [Step: ](Run the web app)]
 
 Running your application has several advantages over deploying it. Among others, it's faster, doesn't require a "build" step and won't minify your JavaScript codebase.
 
-1. To run the configuration you just created.
+1. To run the pre-generated run configuration, switch to the **Run Configuration** panel on the left-hand bar. Click on the **▶️** icon of the first run configuration to add start the SAPUI5 app.
 
     !![run](./run.png)
 
 
-2. Now the SAP Business Application Studio will start the app. When promoted, selected **Expose and open** to make the local port accessible for debugging. Choose any description for this port.
+2. Now the SAP Business Application Studio will start the app. When promoted, selected **Open** to make the local port accessible for debugging.
 
     !![expose](./expose.png)
-
 
 
 3. A new tab should open that displays the following page.

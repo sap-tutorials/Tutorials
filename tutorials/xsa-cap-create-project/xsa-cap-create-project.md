@@ -1,6 +1,6 @@
 ---
-title: HANA Native, Create a CAP model project
-description: Use the wizard for the SAP Cloud Application Programming model to create a project for SAP HANA.
+title: SAP HANA Native, Create a SAP Cloud Application Programming Model project
+description: Use the wizard for the SAP Cloud Application Programming Model to create a project for SAP HANA.
 auto_validation: true
 time: 15
 author_name: Thomas Jung
@@ -11,7 +11,7 @@ primary_tag: products>sap-hana
 
 ## Prerequisites
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
- - You have logged into SAP Web IDE for SAP HANA or the SAP Web IDE Full-stack. To find out more about SAP Web IDE and other tools in you SAP HANA, express edition instance, [refer to this tutorial](xsa-explore-basics). To learn more about SAP Web IDE Full-stack for HANA development [refer to this tutorial](hana-trial-advanced-analytics).
+ - You have logged into SAP Web IDE for SAP HANA. To find out more about SAP Web IDE and other tools in you SAP HANA, express edition instance, [refer to this tutorial](xsa-explore-basics). To learn more about SAP Web IDE Full-stack for HANA development [refer to this tutorial](hana-trial-advanced-analytics).
  - If you are planning on continuing the series in SAP HANA, express edition, it is recommended to [map the development space to the tenant database](xsa-tenant-db-space) **before starting development**.
 
 

@@ -145,7 +145,7 @@ Again, please accept the modification of the manifest file.
 
     ```
 
-2. You already created a destination named Northwind in Cloud Foundry. Now it's time to add a mocked destination to your local setup as well.
+2. You already created a destination named Northwind in Cloud Foundry environment of SAP BTP. Now it's time to add a mocked destination to your local setup as well.
 
     **Replace** the empty array of the property `destinations` in the `uimodule/ui5.yaml` file to declare the local destination.
 
