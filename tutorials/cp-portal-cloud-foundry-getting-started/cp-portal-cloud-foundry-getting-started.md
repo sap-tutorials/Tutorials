@@ -75,7 +75,7 @@ To be able to access the **Launchpad** service, users must be assigned to the `L
 
     ![Open Role Collections](8_trust_configuration.png)
 
-3. Click `sap.default` to select the SAP ID Service.
+3. Click `Default identity provider` to select the SAP ID Service.
 
     ![Click sap.default](9_click_sapdefault.png)
 
@@ -116,11 +116,11 @@ You are now ready to access the **Launchpad** service.
 
     ![Access Launchpad Service](15_access_launchpad.png)
 
-4. Add your credentials if you are prompted to do so.
+5. Add your credentials if you are prompted to do so.
 
    The **Launchpad** service opens with the Site Directory in focus. This is where you'll create and manage your launchpad sites.
 
-  ![Open Site Directory](15_open_site_directory.png)
+  ![Open Site Directory](12_open_site_directory.png)
 
 
 [VALIDATE_6]

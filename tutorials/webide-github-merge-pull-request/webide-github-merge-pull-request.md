@@ -14,18 +14,7 @@ time: 10
 ### You will learn  
   - How to create and send pull requests so that the changes in branches will be merged into the master branch
 
-<table align="center" style="width: 800px; align: right">
-<tr >
-<td bgcolor="FBC100" style="text-align:center">
-We'd love your feedback! Would you answer a brief survey? &nbsp;
-<b><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_2sGdAT7z4uFdOSN?Current%20Page%20URL=developers.sap.com">Go to survey</a></b>
-</td>
-</tr>
-</table>
-
-
 ---
-
 
 
 [ACCORDION-BEGIN [Step 1: ](Open branch on GitHub)]

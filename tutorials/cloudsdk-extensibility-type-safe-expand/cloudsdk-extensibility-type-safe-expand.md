@@ -5,7 +5,7 @@ title: Extensibility, Type-Safe Expand, and Dependency Injection with the Virtua
 description: Use the latest features of the SAP Cloud SDK regarding extensibility, eager and type-safe expand as well as dependency injection with the Virtual Data Model for OData for any SAP S/4HANA system.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk]
 primary_tag: topic>java
 ---
 

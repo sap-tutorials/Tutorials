@@ -4,7 +4,7 @@ description: Build and execute OData batch requests for writing and retrieving d
 auto_validation: true
 time: 20
 tags: [tutorial>advanced, topic>javascript, products>sap-cloud-platform, topic>odata]
-primary_tag: products>sap-s-4hana-cloud-sdk
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites

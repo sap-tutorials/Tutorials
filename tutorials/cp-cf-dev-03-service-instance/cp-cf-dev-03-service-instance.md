@@ -1,6 +1,6 @@
 ---
 title: Create a Service Instance and Bind It to Your App
-description: Create an instance of the Application Logging service and bind it to your app, as a way to explore how SAP Cloud Platform Cloud Foundry services and apps are connected.
+description: Create an instance of the Application Logging service and bind it to your app, as a way to explore how services and apps are connected on the SAP BTP, Cloud Foundry runtime.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform ]
@@ -12,15 +12,15 @@ time: 10
 - How apps and services are related
 - How to bind a service to an app
 
-In the Cloud Foundry environment there are apps and there are services. In many cases, apps are what you write, and services are what are available for your app to make use of.
+In SAP BTP, Cloud Foundry runtime there are apps and there are services. In many cases, apps are what you write, and services are what are available for your app to make use of.
 
-The [Application Logging](https://help.sap.com/viewer/ee8e8a203e024bbb8c8c2d03fce527dc/Cloud/en-US/68454d44ad41458788959485a24305e2.html) service enables the central capture and analysis of log messages from applications that are bound to it. You can manage the availability of services, and the instances thereof, in the SAP Cloud Platform cockpit.
+The [Application Logging](https://help.sap.com/viewer/ee8e8a203e024bbb8c8c2d03fce527dc/Cloud/en-US/68454d44ad41458788959485a24305e2.html) service enables the central capture and analysis of log messages from applications that are bound to it. You can manage the availability of services, and the instances thereof, in the SAP BTP cockpit.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open service bindings for your app)]
 
-In the SAP Cloud Platform Cockpit, navigate to the page for your app, as you learned to do in the [Deploy an App to SAP Cloud Platform Cloud Foundry Environment](https://developers.sap.com/tutorials/cp-cf-dev-02-deploy-app.html) tutorial.
+In the SAP BTP cockpit, navigate to the page for your app, as you learned to do in the [Deploy an App to SAP Cloud BTP, Cloud Foundry runtime](https://developers.sap.com/tutorials/cp-cf-dev-02-deploy-app.html) tutorial.
 
 Choose **Service Bindings** in the navigation area.
 

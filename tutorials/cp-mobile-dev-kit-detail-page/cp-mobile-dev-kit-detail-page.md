@@ -22,7 +22,7 @@ To enhance your MDK app with customer details information, you need to carry out
 *  Add some controls to the page to display information like id, name, email, phone, address
 *  Create a new navigation action to the customer details page
 *  Navigate from customer list page to details page
-*  Deploy app metadata to SAP Cloud Platform Mobile Services
+*  Deploy the app metadata to SAP Mobile Services & Cloud Foundry
 *  Update the app with new changes
 
 ![MDK](img_1.gif)
@@ -61,11 +61,14 @@ This page will show related details for a customer. In this page, you will add a
 
     | Property | Value |
     |----|----|
-    | `Description` | `CustomerId` |
-    | `FootNote`| `EmailAddress` |
-    | `HeadlineText`| `LastName` |
-    | `Status` | `PhoneNumber` |
-    | `Subhead` | `FirstName` |
+    | `Description` | `{CustomerId}` |
+    | `DetailImage` | `sap-icon://customer` |
+    | `FootNote`| `{EmailAddress}` |
+    | `HeadlineText`| `{LastName}` |
+    | `Status` | `{PhoneNumber}` |
+    | `Subhead` | `{FirstName}` |
+
+    >`DetailImage` property is referencing [SAP font icon](https://openui5.hana.ondemand.com/test-resources/sap/m/demokit/iconExplorer/webapp/index.html#/overview/SAP-icons).
 
     >Make sure to select values for the mentioned properties only from **Customer** Entity. You may find similar values from other entities. For example,
 
@@ -108,7 +111,7 @@ This page will show related details for a customer. In this page, you will add a
 
     Click the **link icon** next to the **Value** field to display the Object Browser and change the Format to **Binding Target Path**.
 
-    Click the **checkbox** for _Current Object_ and double click `HouseNumber` to set it as the first part of the binding.
+    Click the **checkbox** for _Current Object_ and double click `HouseNumber` to set it as the first part of the binding. Don't click OK as you will set second part of the binding too.
 
     !![MDK](img_1.13.gif)
 
@@ -127,8 +130,6 @@ This page will show related details for a customer. In this page, you will add a
     >**Street** should be selected from **Customer** entity.
 
 14. Select the **upper right** Key Value Item and set the `KeyName` to **City**.
-
-    !![MDK](img_1.14.png)
 
     Click the link icon to display the Object Browser. Change the format to **Binding** and double click the **City** property of the Customer entity to set it as the binding expression.
 
@@ -162,7 +163,7 @@ Now, you will create a Navigation action that opens the `Customers_Detail.page` 
     | Field | Value |
     |----|----|
     | `Action Name`| `NavToCustomers_Detail` |
-    | `Page to Open` | Select `Customers_Detail.page` from the dropdown |
+    | `PageToOpen` | Select `Customers_Detail.page` from the dropdown |
 
     !![MDK](img_2.2.png)
 
@@ -184,7 +185,7 @@ Now, you will create a Navigation action that opens the `Customers_Detail.page` 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 4: ](Deploy the application)]
 
 Deploy the updated application to your MDK client.
 
@@ -192,11 +193,11 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img_4.1.png)
 
-2. Select deploy target as **Mobile Services**.
+2. Select deploy target as **Mobile & Cloud**.
 
     !![MDK](img_4.2.png)
 
-    You should see **Deploy succeeded** message.
+    You should see success message for both deployments.
 
     !![MDK](img_4.3.png)
 
@@ -221,6 +222,10 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_5.3.png)
 
+    >_Are you wondering how exactly MDK knew that clicking on a record in  list page would display respective record in detail page?_
+
+    >The MDK sets the current object to the selected record when running the on press action on the list.  The detail page then just needs to reference the correct properties assuming they are part of the object from the list page. You can look at [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/action-binding-and-result.html#auto-set-action-binding) for more details.
+
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
@@ -237,15 +242,38 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_6.3.png)
 
+    >_Are you wondering how exactly MDK knew that clicking on a record in  list page would display respective record in detail page?_
+
+    >The MDK sets the current object to the selected record when running the on press action on the list.  The detail page then just needs to reference the correct properties assuming they are part of the object from the list page. You can look at [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/action-binding-and-result.html#auto-set-action-binding) for more details.
+
 [OPTION END]
 
->_Are you wondering how exactly MDK knew that clicking on a record in  list page would display respective record in detail page?_
+[OPTION BEGIN [Web]]
 
->The MDK sets the current object to the selected record when running the on press action on the list.  The detail page then just needs to reference the correct properties assuming they are part of the object from the list page. You can look at [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/action-binding-and-result.html#auto-set-action-binding) for more details.
+1. Either click the highlighted button or refresh the web page to load the changes.
 
-**Congratulations**! You have successfully created a Customer Detail page and you are now all set to [Modify a Customer Record in an MDK App](cp-mobile-dev-kit-edit-customer).
+    !![MDK](img_6.4.png)
+
+    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+
+    >!![MDK](img_6.7.png)
+
+2. Click **Customer List**, you will navigate to Customer List page.
+
+    !![MDK](img_6.5.png)
+
+3. Click any record from the list, you will navigate to it's detail page.
+
+    !![MDK](img_6.6.png)
+
+[OPTION END]
+
 
 [DONE]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully created a Customer Detail page and you are now all set to [modify a Customer Record in an MDK App](cp-mobile-dev-kit-edit-customer).
 
 ---

@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by allowing custom domains.)
 
 ## Details
 ### You will learn
@@ -53,7 +53,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img_1.2.png)
 
-3. Select **MDK Project** and click **Next**.
+3. Select **MDK Project** and click **Start**.
 
     !![MDK](img_1.3.png)    
 
@@ -65,11 +65,11 @@ This step includes creating the mobile development kit project in the editor.
     | `Your project name` | `MDK_ErrorArchive` |
     | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
 
-    !![MDK](img_1.5.png)
+    !![MDK](img_1.4.png)
 
     >The `CRUD` template creates the offline or online actions, rules, messages, List Detail Pages with editable options. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).  
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.  
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.
 
 5. In *Service Configuration* step, provide or select the below information and click **Next**:
 
@@ -78,18 +78,16 @@ This step includes creating the mobile development kit project in the editor.
     | `Service File Name`| `<Provide any name of your choice>` |
     | `OData Source` | Select `Mobile Services` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
-    | `Destination` | Select `com.sap.edm.sampleservice.v2` from the dropdown |
+    | `Destination` | Select `SampleServiceV2` from the dropdown |
     | `Enter a path to the OData service` | Leave it as it is |
     | `Language URL` | Leave it with the default value |
     | `Enable Offline` | It's enabled by default |
-
-    >Offline supports only OData V2 while online supports both OData V2 and V4.
 
     !![MDK](img_1.5.png)
 
     >In [this tutorial](cp-mobile-dev-kit-ms-setup), server-side configuration for this MDK app were already done.
 
-    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services.
+    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services.
 
     Since you will create an offline based app, hence **Enable Offline** option is selected.        
 
@@ -212,9 +210,11 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
 3. Next, write a business logic to get the **affected entity object** and this object value will be shown in error details page.
 
-    Right-click the **Rules** folder | click **MDK: New Rule**.
+    Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
-4. Enter the Rule name `GetAffectedEntityHeaderCaption.js`, press `Enter`.
+      !![MDK](img_3.3.png)
+
+4. Enter the Rule name `GetAffectedEntityHeaderCaption`, click **Next** and then **Finish** on the confirmation step.
 
       !![MDK](img_3.4.png)
 
@@ -356,7 +356,7 @@ When you click any record in **Error List** page, you want to navigate to **Erro
     | Field | Value |
     |----|----|
     | `Action Name`| `ShowErrorDetails` |
-    | `Page to Open` | Select `ErrorDetails.page` from the dropdown |
+    | `PageToOpen` | Select `ErrorDetails.page` from the dropdown |
 
     !![MDK](img_4.1.1.png)
 
@@ -399,9 +399,11 @@ You can write a logic in JavaScript to handle the `affectedEntity` and then deci
 
 2. Write a business logic to decide which action to call depends on which `@odata.type` is the `affectedEntity` and if there is no handler for an affected entity, app will display a toast message saying this affected entity doesn't have a handle yet.
 
-    Right-click the **Rules** folder | click **MDK: New Rule**.
+    Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
-    Enter the Rule name `DecideWhichEditPage.js`, press `Enter`.
+    !![MDK](img_3.3.png)
+
+    Enter the Rule name `DecideWhichEditPage`, click **Next** and then **Finish** on the confirmation step.
 
     !![MDK](img_5.2.png)
 
@@ -480,7 +482,7 @@ Now, that the **Error List** page is created, you will add a button on the **Mai
     | Field | Value |
     |----|----|
     | `Action Name`| `ShowErrorList` |
-    | `Page to Open` | Select `ErrorList.page` from the dropdown |
+    | `PageToOpen` | Select `ErrorList.page` from the dropdown |
 
     !![MDK](img_6.1.png)
 
@@ -503,7 +505,7 @@ Now, that the **Error List** page is created, you will add a button on the **Mai
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 7: ](Deploy the application)]
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
@@ -639,9 +641,11 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-**Congratulations!** You have successfully setup your app to handle Error Archive and you are now all set to [Add Styling to an MDK App](cp-mobile-dev-kit-style).
-
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully set up your app to handle Error Archive and you are now all set to [Add Styling to an MDK App](cp-mobile-dev-kit-style).
 
 ---

@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by allowing custom domains.)
 
 ## Details
 ### You will learn
@@ -21,8 +21,6 @@ author_profile: https://github.com/jitendrakansal
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/3-Add-Styling-to-an-MDK-App) and start directly with step 4 in this tutorial.
 
 ---
-
-
 
 MDK Template supports Style **LESS** file for styling for `NativeScript`, Android SDK & iOS SDK controls.
 
@@ -38,7 +36,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img_1.2.png)
 
-3. Select **MDK Project** and click **Next**.
+3. Select **MDK Project** and click **Start**.
 
     !![MDK](img_1.3.png)
 
@@ -54,7 +52,7 @@ This step includes creating the mobile development kit project in the editor.
 
     >The `CRUD` template creates the offline or online actions, rules, messages, List Detail Pages with editable options. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).  
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.    
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.
 
 7. In *Service Configuration* step, provide or select the below information and click **Next**:
 
@@ -63,18 +61,16 @@ This step includes creating the mobile development kit project in the editor.
     | `Service File Name`| `<Provide any name of your choice>` |
     | `OData Source` | Select `Mobile Services` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
-    | `Destination` | Select `com.sap.edm.sampleservice.v2` from the dropdown |
+    | `Destination` | Select `SampleServiceV2` from the dropdown |
     | `Enter a path to the OData service` | Leave it as it is |
     | `Language URL` | Leave it with the default value |
     | `Enable Offline` | It's enabled by default |
-
-    >Offline supports only OData V2 while online supports both OData V2 and V4.
 
     !![MDK](img_1.7.png)
 
     >In [this tutorial](cp-mobile-dev-kit-ms-setup), server-side configuration for this MDK app were already done.
 
-    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services.
+    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services.
 
     Since you will create an offline based app, hence **Enable Offline** option is selected.
 
@@ -142,26 +138,37 @@ The `LESS` stylesheet provides the ability to define styling styles that can be 
 
     //// below snippet is to style Object Header control in Customers_Detail.page
 
+    /* Object Header - BodyText */
+    /* iOS Only */
     .objectHeaderBodyText {
       font-color: red;
     }
 
+    /* Object Header - Description */
+    /* iOS Only */
     .objectHeaderDescription {
       font-color: blue;
     }
 
+    /* Object Header - Footnote */
+    /* iOS Only */
     .objectHeaderFootNote {
       font-color: green;
     }
 
+    /* Object Header - Headline */
+    /* iOS Only */
     .objectHeaderHeadline {
       font-color: #ff00ff;
     }
 
+    /* Object Header - Background */
     .objectHeaderBackground {
     background-color: #DC143C;
     }
 
+    /* Object Header - StatusText */
+    /* iOS Only */
     .objectHeaderStatus {
       background-color: #cccccc;
       font-color: red;
@@ -170,10 +177,14 @@ The `LESS` stylesheet provides the ability to define styling styles that can be 
       font-size: 18;
     }
 
+    /* Object Header - Subhead */
+    /* iOS Only */
     .objectHeaderSubhead {
       font-color: yellow;
     }
 
+    /* Object Header - SubstatusText */
+    /* iOS Only */
     .objectHeaderSubStatus {
       background-color: #cccccc;
       font-color: blue;
@@ -219,7 +230,7 @@ In this step, you will bind style classes:
 
     Click **link** icon next to **Title** property.
 
-    In Object browser, select **SDK Style Classes** from dropdown, double-click `ObjectTableTitle` class to bind style property and click **OK**.
+    In Object browser, double-click `ObjectTableTitle` class to bind style property and click **OK**.
 
     !![MDK](img_3.2.gif)
 
@@ -231,9 +242,9 @@ In this step, you will bind style classes:
 [VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 4: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
@@ -306,10 +317,11 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-**Congratulations!** You have successfully styled your MDK app and you are now all set to [Implement Deep Linking to Another App from an MDK App](cp-mobile-dev-kit-deep-link).
-
 [VALIDATE_2]
 [ACCORDION-END]
 
+---
+
+Congratulations, you have successfully styled your MDK app and you are now all set to [Implement Deep Linking to Another App from an MDK App](cp-mobile-dev-kit-deep-link).
 
 ---

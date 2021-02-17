@@ -17,13 +17,12 @@ author_profile: https://github.com/jitendrakansal
 ### You will learn
   - How to reference the NativeScript Geolocation plugin from a rule
   - How to add a NativeScript plugin to your branded MDK client
-  - How to build a Mobile development kit client for iOS & Android and connect to SAP Cloud Platform Mobile application
+  - How to build a Mobile development kit client for iOS & Android and connect to SAP Mobile application
   - How to capture the device's current location
 
 You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/2-Add-NativeScript-Plugin-in-an-MDK-App) and start directly with step 4 in this tutorial.
 
 ---
-
 
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can use the existing NativeScript plugins like nativescript-geolocation, nativescript-nfc etc. , add this to the client and reference it from a rule.
 
@@ -69,9 +68,11 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 
 >You can find more details about [writing a Rule](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/rules.html).
 
-1. Right-click the **Rules** folder | click **MDK: New Rule**.
+1. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
-2. Enter the file name `GetCoordinates.js`, press `Enter`.
+    !![MDK](img_2.1.png)
+
+2. Enter the Rule name `GetCoordinates`, click **Next** and then **Finish** on the confirmation step.
 
     !![MDK](img_2.2.png)
 
@@ -136,7 +137,7 @@ You will add this registered control in a Form Cell page.
     | Property | Value |
     |----|----|
     | `KeyName`| `Coordinates` |
-    | `Value`| Bind it to `GetCoordinates.js` |
+    | `Value`| Bind it to rule `GetCoordinates.js` |
 
     !![MDK](img_3.4.png)
 
@@ -155,7 +156,7 @@ In `GetCoordinates.js` file, you referred `nativescript-geolocation` and `tns-co
 
     !![MDK](img_3.6.png)
 
-3. Include below references in `mdk.bundlerExternals` and save the changes.
+3. Include below references in `MDK.bundlerExternals` and save the changes.
 
     ```JSON
     "nativescript-geolocation",
@@ -167,9 +168,9 @@ In `GetCoordinates.js` file, you referred `nativescript-geolocation` and `tns-co
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy and activate application)]
+[ACCORDION-BEGIN [Step 5: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 

@@ -1,5 +1,5 @@
 ---
-title: Create a Remote Client Proxy 
+title: Create a Remote Client Proxy
 description: In the SAP Cloud Platform, ABAP Environment, create a local class that instantiates a proxy, which passes an OData request to a remote service.
 auto_validation: true
 time: 30
