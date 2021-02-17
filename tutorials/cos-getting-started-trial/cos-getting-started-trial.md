@@ -3,7 +3,7 @@ title: Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing
 description: Use SAP Customer Order Sourcing to reduce delivery costs by applying an efficient sourcing strategy.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-cloud-platform, topic>sap-api-business-hub, products>sap-cloud-platform-for-the-cloud-foundry-environment]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>sap-api-business-hub, products>sap-btp--cloud-foundry-environment]
 primary_tag: topic>cloud
 ---
 
