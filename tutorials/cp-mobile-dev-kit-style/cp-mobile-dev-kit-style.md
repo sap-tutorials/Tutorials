@@ -3,7 +3,7 @@ title: Add Styling to an MDK App
 description: Customize an MDK app to display styling to its controls.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -32,9 +32,11 @@ This step includes creating the mobile development kit project in the editor.
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. Navigate to *File* menu &rarr; click **New Project from Template**.
+2. Click **Start from template** on Welcome page.
 
     !![MDK](img_1.2.png)
+
+    >If you do not see Welcome page, you can access it via **Help** menu.
 
 3. Select **MDK Project** and click **Start**.
 
