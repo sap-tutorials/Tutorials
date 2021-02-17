@@ -1,6 +1,6 @@
 ---
 title: Parallel Processing and Parameters
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+description: Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -20,7 +20,7 @@ In this exercise, we will modify the code of procedure `get_po_header_data`  so 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Edit Previous Procedure)]
+[ACCORDION-BEGIN [Step 1: ](Edit previous procedure)]
 
 1. Return to your procedure called `get_po_header_data`.
 
@@ -70,7 +70,7 @@ In this exercise, we will modify the code of procedure `get_po_header_data`  so 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Save, Deploy, Run and Check Results)]
+[ACCORDION-BEGIN [Step 2: ](Save, deploy, run and check results)]
 
 1. Save the procedure.
 

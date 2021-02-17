@@ -1,6 +1,6 @@
 ---
-title: Using Table Variable Operators
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+title: Use Table Variable Operators
+description: Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -21,7 +21,7 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Use INSERT Operator)]
+[ACCORDION-BEGIN [Step 1: ](Use INSERT operator)]
 1. Return to the procedure called `build_products` in the procedure folder.
 
     !![procedure editor](1_1.png)
@@ -69,7 +69,7 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Use UPDATE Operator)]
+[ACCORDION-BEGIN [Step 2: ](Use UPDATE operator)]
 
 1. Return to the procedure and further modify it.  Enter another DECLARE statement for `lv_index`.
 
@@ -120,7 +120,7 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Use the DELETE Operator)]
+[ACCORDION-BEGIN [Step 3: ](Use DELETE operator)]
 1. Return to the procedure and further modify it.  Enter two new DECLARE statements.
 
 	```SQLCRIPT
@@ -186,7 +186,7 @@ In this tutorial, you will update the previous procedure to now use Table Variab
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Use the SEARCH Operator)]
+[ACCORDION-BEGIN [Step 4: ](Use SEARCH operator)]
 1. Return to the procedure and further modify it.  Enter code for a new output parameter.
 
 	```SQLCRIPT
