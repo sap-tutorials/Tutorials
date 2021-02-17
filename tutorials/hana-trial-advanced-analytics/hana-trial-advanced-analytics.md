@@ -116,11 +116,11 @@ This tutorial uses validations to track completion and make sure you are all set
     <iframe width="560" height="315" src="https://www.youtube.com/embed/WW6z4AnYriw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-2. Creating SAP Business Application Studio Dev Space - Dev spaces are like isolated virtual machines in the cloud that can be quickly spun-up. Each dev space type contains tailored tools and pre-installed run-times for a target scenario such as SAP Fiori or mobile development. This simplifies and saves time in setting up the development environment as there's no need to install anything or upgrade; letting developers focus on their business domain, anytime, anywhere. Go to your SAP Cloud Platform subaccount and click the Subscriptions option.
+2. Creating SAP Business Application Studio Dev Space - Dev spaces are like isolated virtual machines in the cloud that can be quickly spun-up. Each dev space type contains tailored tools and pre-installed run-times for a target scenario such as SAP Fiori or mobile development. This simplifies and saves time in setting up the development environment as there's no need to install anything or upgrade; letting developers focus on their business domain, anytime, anywhere. Go to your SAP Business Technology Platform trial subaccount and click the **Services -> Instances and Subscriptions** option.
 
-    !![Subscriptions](SCP Subscriptions_.jpg)
+    !![Subscriptions](BTP_Subscriptions.png)
 
-3. Locate the SAP Business Application Studio tile and click Go to Application
+3. Locate the **SAP Business Application Studio** entry and click **Go to Application**
 
     !![Go To Application](go_to_application.png)
 
