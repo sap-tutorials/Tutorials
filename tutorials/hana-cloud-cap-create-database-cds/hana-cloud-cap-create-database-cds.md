@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Cloud, Create Database Artifacts Using Core Data Services (CDS)
-description: Use SAP Cloud Application Programming Model (CAP), Core Data Services (CDS) to generate SAP HANA Cloud basic database artifacts
+title: Create Database Artifacts Using Core Data Services (CDS) for SAP HANA Cloud
+description: Use SAP Cloud Application Programming Model (CAP) and Core Data Services (CDS) to generate SAP HANA Cloud basic database artifacts.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, products>sap-business-application-studio, products>sap-hana]
@@ -9,7 +9,7 @@ primary_tag: products>sap-hana-cloud
 
 ## Prerequisites
  - This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition
- - You have created an project according the previous tutorial: [SAP HANA Cloud, Create an SAP Cloud Application Programming Model project](hana-cloud-cap-create-project)
+ - You have created an project according the previous tutorial -- see [SAP HANA Cloud, Create an SAP Cloud Application Programming Model project](hana-cloud-cap-create-project).
 
 ## Details
 ### You will learn
@@ -120,7 +120,7 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Explore the generated design-time artifacts)]
+[ACCORDION-BEGIN [Step 3: ](Explore generated design-time artifacts)]
 
 1. If you pay attention to the build log in the console, you will see the `CDS` artifacts were converted to `hdbtable` and `hdbview` artifacts. You will find those artifacts in a new folder under `src` called `gen`.
 

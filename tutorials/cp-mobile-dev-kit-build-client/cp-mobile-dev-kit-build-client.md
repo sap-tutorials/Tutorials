@@ -104,7 +104,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 [OPTION BEGIN [Mac]]
 
-1. To use the SDK to generate a mobile development kit client, the first step is to setup the SDK to create a client. Unzip `MDKClient_SDK.zip` if it is not already extracted.
+1. To use the SDK to generate a mobile development kit client, the first step is to set up the SDK to create a client. Unzip `MDKClient_SDK.zip` if it is not already extracted.
 
     !![MDK](img_2.1.png)
 
@@ -123,7 +123,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 [OPTION BEGIN [Windows]]
 
-1. To use the SDK to generate a mobile development kit client, the first step is to setup the SDK to create a client. Unzip `MDKClient_SDK` if it is not already extracted.
+1. To use the SDK to generate a mobile development kit client, the first step is to set up the SDK to create a client. Unzip `MDKClient_SDK` if it is not already extracted.
 
     !![MDK](img_2.3.png)
 
@@ -172,7 +172,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     >`AppName`: Provide a name for example: `DemoSampleApp`. This is the name of the application on the home screen of the device.
 
-    >`BundleID`: It should be unique for iOS and same as **Identifier** `(AppID)` that is registered in Apple Developer account since that determines if the application can be installed alongside other applications. If the `XCode` project is setup to use _Automatically manage signing_ then when building, `XCode` will automatically generate a signing profile for the specified bundle id. Without matching them, trying to run the custom client in iOS device will result in failure. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
+    >`BundleID`: It should be unique for iOS and same as **Identifier** `(AppID)` that is registered in Apple Developer account since that determines if the application can be installed alongside other applications. If the `XCode` project is set up to use _Automatically manage signing_ then when building, `XCode` will automatically generate a signing profile for the specified bundle id. Without matching them, trying to run the custom client in iOS device will result in failure. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
 
     >`URLScheme`: Allows you to specify a custom URL scheme which opens the client.
     If the URL includes connection settings as URL parameters, these settings will override the ones used by the client. The default is `mdkclient`.
@@ -208,7 +208,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     **Demo**: If you want to access the app in the demo mode, you can configure required settings.        
 
-    >If you are connecting to `AliCloud` accounts, you will also need to add your custom domains under `URLWhitelist` property in the same file. You can find more details in [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#connection-settings-whitelist).
+    >If you are connecting to `AliCloud` accounts, you will also need to add your custom domains under `URLWhitelist` property in the same file. You can find more details in [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#connection-settings-allowlist).
 
 5. In the last section of `BrandedSettings.json` file, make these changes:
 

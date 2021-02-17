@@ -58,7 +58,7 @@ Make sure that you have completed required prerequisites mentioned in this tutor
 
     >If you see a _Confirm Finish_ window, click **OK**.
 
-5. Once you have created your application, you see a list of default features have been automatically assigned to the app.
+    Once you have created your application, you see a list of default features have been automatically assigned to the app.
 
     !![MDK](img_2.5.png)
 
@@ -106,7 +106,7 @@ MDK Web application accesses the data sources via Cloud Platform destination. Yo
 
     !![MDK](img_4.1.1.png)
 
-3. Navigate to the **Service Instances** in your SAP Cloud Platform space cockpit page, select **Authorization & Trust Management** service from the list, click `com-sap-mdk-demo-xsuaa` instance and click **View** to open the configuration details.
+3. Navigate to the **Service Instances** in your SAP BTP space cockpit page, select **Authorization & Trust Management** service from the list, click `com-sap-mdk-demo-xsuaa` instance and click **View** to open the configuration details.
 
     !![MDK](img_4.2.png)
 

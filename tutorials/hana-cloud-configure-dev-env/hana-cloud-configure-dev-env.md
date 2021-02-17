@@ -1,6 +1,6 @@
 ---
-title: Configure the SAP Business Application Studio Development Environment for SAP HANA development
-description: Configure SAP Business Application Studio, which you will use to create multi-target application
+title: Configure SAP Business Application Studio Development for SAP HANA Development
+description: Configure SAP Business Application Studio, which you will use to create a multi-target application.
 auto_validation: true
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -10,8 +10,8 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You have created an instance of the SAP HANA Cloud trial: [Deploy SAP HANA Cloud trial](hana-cloud-deploying)
- - You have setup SAP Business Application Studio for development: [Set Up SAP Business Application Studio for Development](appstudio-onboarding)
+ - You have created an instance of the SAP HANA Cloud trial -- see [Deploy SAP HANA Cloud trial](hana-cloud-deploying).
+ - You have set up SAP Business Application Studio for development -- see [Set Up SAP Business Application Studio for Development](appstudio-onboarding).
 
 ## Details
 ### You will learn
@@ -20,7 +20,7 @@ primary_tag: products>sap-hana
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Creating Business Application Studio Dev Space)]
+[ACCORDION-BEGIN [Step 1: ](Create dev space in SAP Business Application Studio)]
 
 [Video Link](https://www.youtube.com/watch?v=8rT-PEUg8Uw&t=297s)</br>
 
@@ -63,7 +63,7 @@ Dev spaces are like isolated virtual machines in the cloud that can be quickly s
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configuring Business Application Studio Dev Space)]
+[ACCORDION-BEGIN [Step 2: ](Configure dev space)]
 
 
 [Video Link](https://www.youtube.com/watch?v=8rT-PEUg8Uw&t=526s)</br>
@@ -102,12 +102,10 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
     !![Set Correctly](org_space_set_correctly.png)
 
-## Summary
-
-Your HANA instance should be running and you've created a Dev Space and configured it for your needs in the Business Application Studio. You are now ready to begin development.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-
 ---
+
+Your HANA instance should be running and you've created a Dev Space and configured it for your needs in the Business Application Studio. You are now ready to begin development.

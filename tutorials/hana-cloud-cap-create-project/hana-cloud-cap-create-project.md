@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Cloud, Create an SAP Cloud Application Programming Model project
-description: Use the wizard for the SAP Cloud Application Programming Model to create a project in SAP Business Application Studio that will also support SAP HANA Cloud
+title: Create an SAP Cloud Application Programming Model Project for SAP HANA Cloud
+description: Use the wizard for the SAP Cloud Application Programming Model to create a project in SAP Business Application Studio that will also support SAP HANA Cloud.
 time: 15
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -20,7 +20,7 @@ primary_tag: products>sap-hana-cloud
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Creating Business Application Studio Dev Space)]
+[ACCORDION-BEGIN [Step 1: ](Create dev space in SAP Business Application Studio)]
 
 Dev spaces are like isolated virtual machines in the cloud that can be quickly spun-up. Each dev space type contains tailored tools and pre-installed run-times for a target scenario such as SAP Fiori or mobile development. This simplifies and saves time in setting up the development environment as there's no need to install anything or upgrade; letting developers focus on their business domain, anytime, anywhere.
 
@@ -62,7 +62,7 @@ In this step we will create a new Dev Space configured for SAP Cloud Application
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configuring Business Application Studio Dev Space)]
+[ACCORDION-BEGIN [Step 2: ](Configure dev space)]
 
 Before we create our SAP Cloud Application Programming Model project, we want to do a few more one-time configuration steps to prepare the Dev Space
 
