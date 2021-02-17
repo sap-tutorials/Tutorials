@@ -3,7 +3,7 @@ title: Create Personalized Sourcing Strategies Depending on Location and Priorit
 description: Use SAP Customer Order Sourcing to build personalized sourcing strategies for different locations with different and changing needs.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, topic>sap-api-business-hub, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
+tags: [ tutorial>beginner, topic>sap-api-business-hub, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
 primary_tag: topic>cloud
 ---
 
