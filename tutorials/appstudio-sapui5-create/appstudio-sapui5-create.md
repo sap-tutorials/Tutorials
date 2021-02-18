@@ -1,6 +1,6 @@
 ---
-title: Deploy Your First SAPUI5 App to Cloud Foundry
-description: Create, build, and deploy an MTA project with an integrated SAPUI5 module.
+title: Deploy Your First SAPUI5 App
+description: Create, build, and deploy an MTA project with an integrated SAPUI5 module to SAP BTP, Cloud Foundry environment
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, topic>javascript, topic>sapui5, topic>html5, products>sap-cloud-platform, products>sap-business-application-studio]
@@ -9,7 +9,7 @@ primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
 
 ## Details
 ### You will learn
-  - How to create an MTA archive with a UI module
+  - How to create an SAPUI5 project
   - How to build a project for Cloud Foundry
   - How to deploy a project to Cloud Foundry
 
@@ -24,6 +24,12 @@ primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
 
 > Have a look at [this tutorial](appstudio-devspace-fiori-create) if you are unsure how to get here or how to create a dev space.
 
+
+[DONE]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Create a UI5 destination)]
+
+[Create a new destination](cp-cf-create-destination) of the name "ui5" that points to the URL `https://sapui5.hana.ondemand.com/`. This is where we'll pull the standard UI5 libs from later.
 
 
 [DONE]
@@ -47,59 +53,131 @@ Make sure you are connected to a Cloud Foundry endpoint to which you will deploy
 
 [DONE]
 [ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Create a new single-module-project)]
+This step will guide you through the needed actions to create a project that contains a **single** SAPUI5 application. In case you want to create a project that contains multiple UI modules, please do not follow these instructions and rather create an empty MTA project to which you then add multiple UI modules.
 
-[ACCORDION-BEGIN [Step : ](Create a new project)]
-1. Click on the link **New project From template** on the *Welcome* screen.
+
+1. Click on the link **Start from template** on the *Welcome* screen.
 
     !![newproject](./newproject.png)
 
-2. Select **SAP Fiori Freestyle - Project Generator** as the template category you want to use and click **Next**.
+2. Select **SAP Fiori freestyle SAPUI5 application** as the template category you want to use and click **Start**.
 
     !![fioriTemplate](./fioriTemplate.png)
 
-3. Specify the target environment ( **Cloud Foundry** ) and the template ( **SAPUI5 Application** ) and go to the **Next** screen.
+3. Specify the application type **SAPUI5 freestyle** and the floor plan **SAPUI5 Application** and go to the **Next** screen.
 
-    !![sapui5Template](./sapui5Template.png)
+    !![sapui5Template](./sapui5app.png)
 
-4. Name the project **`tutorial`** and proceed by clicking **Next**.
+4. Now you have the option to connect your SAPUI5 application to a data source. As we won't need a data source in this tutorial, select **None** and click **Next**.
 
-    !![projectName](./projectName.png)
+    !![nodata](./nodata.png)
 
-4. Choose **Standalone Approuter** for the runtime and click **Next**.
-
-    !![approuter](./approuter.png)
-
-4.  Name of the module  **`webapp`** and the namespace **`sap.cp`** and turn authentication off. Go to the **Next** screen.
-
-    !![webapp](./webapp.png)
-
-4. Keep the default view name and go for no data service on this screen. Click **Next** to create the new project.
+4. Keep the default view name and click **Next** .
 
     !![viewname](./viewname.png)
 
+4.   Name of the module **`sapui5`**, use the application title  **`Tutorial`**, define the namespace **`sap.btp`**, and **Add deployment configuration**. Keep the default values for the other parameters and select **Next** to go to the next step.
 
-4. Once the project has been created, the Business Application Studio will prompt you to open the project in a new workspace. Click **Open in New Workspace**.
+    !![projectdetails](./projectdetails.png)
+
+4.  Choose **Cloud Foundry** as the target runtime and type in any value for the destination as it is a mandatory field. Press **Finish** to create the new project.
+
+    !![finishProject](./finishProject.png)
 
 
-    !![newws](./newws.png)
+4. Once you see the success message, click **Open in a new Workspace** to open the new project.
 
+
+    !![openws](./openws.png)
 
 
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Redirect incoming traffic to the SAPUI5 app)]
+[ACCORDION-BEGIN [Step : ](A managed application router)]
+
+The project is already deployable as it. But there is one thing missing in order make it accessible from your browser - [the managed application router](https://blogs.sap.com/2020/10/02/serverless-sap-fiori-apps-in-sap-cloud-platform/#serverless):
+
+1. Right-click on the `mta.yaml` file and select **Create MTA Module from Template**.
+
+    !![newmod](./newmod.png)
+
+2.  Choose **Approuter Configuration** and **Start** to continue in the wizard.
+
+    !![approuter](./approuter.png)
 
 
-The generated code comes ready-to-deploy. By default, the web app will be available at `https://<approuter-url>/<app/id>` and the application router will not redirect traffic that hits the root URL. In this step, you will change this.
+2.  Select **Managed Approuter** as there's not need to extend the approuter and therefore reduce the TCO of the project. Enter **`basic.service`** as the name of out business service and hit **Next** to close in the wizard.
 
-1. **Open** the file `webapp/webapp/manifest.json` and find the property `sap.app>id`. The value of this property should be `sap.cp.webapp` but can vary depending on the names you choose in the previous step.
+    !![approuter](./managedapprouter.png)
 
-    !![appid](./appid.png)
+1. Now we need to reuse this business service in our web app. Open `webapp/manifest.json` and add the following lines.
 
-2. **Open** the file `tutorial-approuter/xs-app.json` and add a new property to define the redirect.
+    ```JSON[15-17]
+    {
+        "_version": "1.29.0",
+        "sap.app": {
+            "id": "sap.btp.sapui5",
+            "type": "application",
+            "i18n": "i18n/i18n.properties",
+            "applicationVersion": {
+                "version": "1.0.0"
+            },
+            "title": "",
+            "description": "",
+            "resources": "resources.json",
+            "ach": "ach"
+        },
+        "sap.cloud": {
+            "service": "basic.service"
+        },
+        "sap.ui": {
+        ...
+    ```
 
-    !![xsapp](./xsapp.png)
+1. There's currently one glitch in the wizard that we need to fix manually. Go to the `mta.yaml` file and add the highlighted line.
+
+    ```YAML[26]
+    _schema-version: "3.2"
+    ID: sap-btp-sapui5
+    description: A Fiori application.
+    version: 0.0.1
+    modules:
+      ...
+      - name: sap-btp-sapui5-destination-content
+        type: com.sap.application.content
+        requires:
+        - name: sap-btp-sapui5-destination-service
+          parameters:
+            content-target: true
+        - name: sap-btp-sapui5-html5-repo-host
+          parameters:
+            service-key:
+              name: sap-btp-sapui5-html5-repo-host-key
+        - name: uaa_sap-btp-sapui5
+          parameters:
+            service-key:
+              name: uaa_sap-btp-sapui5-key
+        parameters:
+          content:
+            instance:
+              destinations:
+              - Name: basic_service_sap_btp_sapui5_html5_repo_host
+                ServiceInstanceName: sap-btp-sapui5-html5-repo-host
+                ServiceKeyName: sap-btp-sapui5-html5-repo-host-key
+                sap.cloud.service: basic.service
+              - Authentication: OAuth2UserTokenExchange
+                Name: basic_service_uaa_sap_btp_sapui5
+                ServiceInstanceName: sap-btp-sapui5-xsuaa-service
+                ServiceKeyName: uaa_sap-btp-sapui5-key
+                sap.cloud.service: basic.service
+              existing_destinations_policy: ignore
+        build-parameters:
+          no-source: true
+       ...
+    ```
+
 
 
 [DONE]
@@ -112,11 +190,9 @@ Build (aka package) the project to a `mtar` archive to deploy it to Cloud Foundr
 
     !![build](./build.png)
 
-2. Check the console output to make sure the process started.
+3. Once the build is complete, you can see a message in the log. You can now find the generated `mtar` archive in the project tree under `mta_archives`.
 
-    !![state](./buildstate.png)
-
-3. Once the build is complete, you can see a message in the log. You can find the generated `mtar` archive in the project tree now.
+    !![state](./buildsuccess.png)
 
 
 
@@ -132,20 +208,22 @@ Now that you created a `mtar` archive, you are all set to deploy the application
 
 2. Check the console output to make sure the process started.
 
-3. You will see a success message and the URL of the app in the log once the deployment finished. Open this URL in your browser to start the application.
+3. You will see a success message and the URL of the app in the log once the deployment finished.
 
     !![success](./deploysuccess.png)
 
-> You can also see the URL of the deployed app when running `cf apps` in a new terminal session.
+4.   You can see the URL of the deployed app when running `cf html5-list -di sap-btp-sapui5-destination-service -u` in a new terminal session.
 
-> !![cfapps](./cfapps.png)
+    !![cfapps](./cfhtml5.png)
+
+    > You need to substitute the `cpp` with `launchpad`, in case you use the Launchpad service (instead of the Portal service).
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step : ](Test to the application)]
 
-1. **Open** the started application in your browser. You might need to log in with your SAP ID (the same credentials you use for the SAP Cloud Platform Cockpit).
+1. **Open** the application in your browser. You might need to log in with your SAP ID (the same credentials you use for the SAP BTP Cockpit).
 
 
 2. See that the sample application consists of a header and an empty page. So you should see something like this:

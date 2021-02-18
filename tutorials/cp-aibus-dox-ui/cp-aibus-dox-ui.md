@@ -3,7 +3,7 @@ title: Use Machine Learning to Extract Information from Documents with Document 
 description: Get machine learning model predictions for the documents you upload using the Document Information Extraction Trial UI.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
@@ -11,7 +11,7 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to use the Document Information Extraction Trial UI to upload new documents
   - How to see and edit the extraction results
-  - How to delete documents
+  - How to delete documents 
 
 The core functionality of Document Information Extraction is to automatically extract structured information from documents using machine learning. When you finish this tutorial, you will get field value predictions for the documents you upload to Document Information Extraction Trial UI.
 

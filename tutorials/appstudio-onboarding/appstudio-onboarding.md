@@ -45,7 +45,7 @@ Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Plat
 
 3. A new tab opens and the welcome page for SAP Business Application Studio loads.
 
-!![sap business application studio welcome](BAS_Welcome-.png)
+    !![sap business application studio welcome](BAS_Welcome-.png)
 
 4. Click **My Dev Spaces** to open the SAP Business Application Studio dev space manager page.
     <br>

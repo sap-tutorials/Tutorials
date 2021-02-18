@@ -1,6 +1,6 @@
 ---
 title: Implement a Dashboard Application for Monitoring Java Apps
-description: Create an application that retrieves metrics for Java applications running on SAP Cloud Platform.
+description: Create an application that retrieves metrics for Java applications running in SAP BTP, Neo environment.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [ tutorial>beginner, products>sap-cloud-platform ]
@@ -10,20 +10,19 @@ time: 30
 <!-- loioe4aec18cf61747a7afd531a3cfef590c -->
 
 ## Prerequisites
--   To test the entire scenario, you need subaccounts on SAP Cloud Platform in two regions: Europe (Rot/Germany) and US East. For more information, see [Regions and Hosts Available for the Neo Environment](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/d722f7cea9ec408b85db4c3dcba07b52.html) and [SAP Cloud Platform Cockpit](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/19d7119265474dd18ec16fad2a0b28c1.html).
+-   To test the entire scenario, you need subaccounts in two regions: Europe (Rot/Germany) and US East. For more information, see [Regions and Hosts Available for the Neo Environment](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/d722f7cea9ec408b85db4c3dcba07b52.html) and [SAP BTP Cockpit](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/19d7119265474dd18ec16fad2a0b28c1.html).
 -   To retrieve the metrics from Java applications, you need two deployed and running Java applications. For more information, see [Java: Application Operations](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/76f6dcfab9ec481dae0843873271d66c.html).
 - You have installed Maven.
-  For more information, see [Apache Maven](http://maven.apache.org/).
-- You have downloaded and set up your Eclipse IDE, SAP Cloud Platform Tools for Java, and SDK.
+- You have downloaded and set up your Eclipse IDE, SAP BTP Tools for Java, and SDK.
   For more information, see [Setting Up the Development Environment](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/e815ca4cbb5710148376c549fd74c0db.html).
 
 ## Details
 ### You will learn
-- How to configure a custom application that retrieves metrics for Java applications running on SAP Cloud Platform
+- How to configure a custom application that retrieves metrics for Java applications running in the Neo environment.
 
 The application you create shows the states of the Java applications and can also show the state and metrics of the processes running on those applications.
 
-This tutorial uses a Java project published on GitHub. This project contains a dashboard application that requests the metrics of the following Java applications (running on SAP Cloud Platform):
+This tutorial uses a Java project published on GitHub. This project contains a dashboard application that requests the metrics of the following Java applications (running in SAP BTP, Neo environment):
 
 -   `app1` located in `a1` subaccount and `Europe (Rot/Germany)` region
 
@@ -32,9 +31,9 @@ This tutorial uses a Java project published on GitHub. This project contains a d
 
 After receiving each JSON response, the dashboard application parses the response and retrieves the name and state of each application as well as the name, state, value, thresholds, unit, and timestamp of the metrics for each process. The data is arranged in a list and then shown in the browser as a dashboard.
 
-For more information about the JSON response, see [SAP Cloud Platform Monitoring Response for Java Applications](https://help.sap.com/viewer/64f7d2b06c6b40a9b3097860c5930641/Cloud/en-US/a8cf72ccc97b4e498ee2c09e69700e3d.html).
+For more information about the JSON response, see [SAP Monitoring Service Response for Java Applications](https://help.sap.com/viewer/64f7d2b06c6b40a9b3097860c5930641/Cloud/en-US/a8cf72ccc97b4e498ee2c09e69700e3d.html).
 
-To learn more about the whole scenario, read the [Dashboard Scenario blog post](https://blogs.sap.com/2016/01/22/use-the-monitoring-service-to-retrieve-metrics-from-different-hcp-applications/).
+To learn more about the whole scenario, read the [Dashboard Scenario blog post](https://blogs.sap.com/2021/02/05/use-the-monitoring-service-to-retrieve-metrics-from-different-java-applications-in-the-neo-environment/).
 
 ---
 
@@ -95,7 +94,7 @@ public void configure(){
 
     You can retrieve metrics only for running Java applications.
 
-    > View the status of your Java applications and start them in the SAP Cloud Platform cockpit.
+    > View the status of your Java applications and start them in the SAP BTP cockpit.
 
 2.   Create a Java Web server (for example, Java Web Tomcat 8 server) in Eclipse and start it.
 
