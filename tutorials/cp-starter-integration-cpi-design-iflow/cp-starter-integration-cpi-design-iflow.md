@@ -48,7 +48,7 @@ author_profile: https://github.com/Karunaharan
 
   2. Choose **Add** > **Integration Flow**.
 
-      !![Add integration flow artifact](2.2.add_integration_flow_new.png)
+      !![Add integration flow artifact](2.2.add-integration-flow-new.png)
 
       Enter a **Name** for the integration flow and choose **OK**.
 
