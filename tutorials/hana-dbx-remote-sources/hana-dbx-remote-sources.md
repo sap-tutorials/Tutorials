@@ -248,7 +248,7 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 The following commands were used to start the Cloud Connector.
 
     ```Shell (Microsoft Windows)
-    set path=set path=c:\Windows\System32;c:\jdk1.8\bin
+    set PATH=C:\Windows\System32;c:\jdk1.8\bin
     set JAVA_HOME=c:\jdk1.8
     C:\SAP\scc20>go.bat
     ```

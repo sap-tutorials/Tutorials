@@ -258,8 +258,8 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Tracing)]
-Tracing can be helpful when debugging a problem or in identifying SQL statements that a particular application is using.  SAP support may also ask for specific trace files when attempting to help diagnose an issue.  The following steps demonstrate an example of enabling a trace and then viewing the resulting trace file by using the SAP HANA database explorer.
+[ACCORDION-BEGIN [Step 6: ](SQL trace)]
+A SQL trace can be helpful when debugging a problem or in identifying SQL statements that a particular application is using.  The following steps demonstrate an example of enabling a SQL trace and then viewing the resulting trace file by using the SAP HANA database explorer.
 
 1. The database overview presents general information about a database.  Right-click a database and choose **Show Overview**.
 
@@ -325,6 +325,44 @@ Tracing can be helpful when debugging a problem or in identifying SQL statements
     ![trace files](traceFiles.png)
 
 >For additional details, consult the [Traces](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/7e31247372fb4dd7b8c6bbac758b8c91.html) topic in the SAP HANA Administration Guide for SAP HANA Platform and SAP Note [2119087 - How-To: Configuring SAP HANA Traces](https://launchpad.support.sap.com/#/notes/2119087).
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Expensive statements trace)]
+It can be important to examine SQL statements that consume large amounts of time, CPU or memory.  The following steps demonstrates how to enable an expensive statements trace.
+
+1. The following SQL will enable tracing of expensive statements, set the threshold values, run some statements that will exceed the thresholds, and then disable expensive statement tracing.
+
+    ```SQL
+    ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('expensive_statement', 'enable') = 'on' WITH RECONFIGURE;
+    ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('expensive_statement', 'threshold_memory') = '41943040' WITH RECONFIGURE;   -- 40 MB
+    ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('expensive_statement', 'threshold_duration') = '3000000' WITH RECONFIGURE;  -- 3 sec
+
+    CALL HOTEL.RESERVATION_GENERATOR(1000);  --consumes more than 40 MB of memory
+
+    DO BEGIN
+      -- Wait for a few seconds
+      USING SQLSCRIPT_SYNC AS SYNCLIB;
+      CALL SYNCLIB:SLEEP_SECONDS( 3 );  --runs for longer than 3 seconds
+      -- Now execute a query
+      SELECT * FROM M_TABLES;
+    END;
+
+    ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('expensive_statement', 'enable') = 'off' WITH RECONFIGURE;
+    ```
+
+2. The list of statements that exceed the expensive statement threshold values can be found in the view `M_EXPENSIVE_STATEMENTS`.
+
+    ```SQL
+    select TOP 2 DURATION_MICROSEC/1000000, CPU_TIME/1000000, MEMORY_SIZE/1048576, START_TIME, RECORDS, STATEMENT_STRING from  M_EXPENSIVE_STATEMENTS order by start_time desc;
+    ```
+
+    ![expensive statements](expensive_trace.png)
+
+3. When using SAP HANA Cloud, database explorer, the messages tab also contains detailed information about the duration, CPU, and memory consumed by a statement.
+
+    ![Resource consumption](messages-tab.png)
 
 Congratulations! You have now explored the available tools to help diagnose and debug SQL or SQLScript.
 

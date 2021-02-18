@@ -13,9 +13,9 @@ primary_tag: products>sap-hana-cloud
 
 ## Details
 ### You will learn
-  - How to export and import data using the export and import data wizards, SQL commands export into and import from, and the download option in the SQL console results tab
+  - How to export and import data using the export and import data wizards, SQL statements export into and import from, and the download option in the SQL console results tab
   - How to import `ESRI shapefiles` using the import data wizard
-  - How to export and import schema objects using export and import catalog wizards and the SQL commands export and import
+  - How to export and import schema objects using export and import catalog wizards and the SQL statements export and import
   - How to use cloud storage providers as a target when exporting or importing
 
 The following steps will demonstrate a few ways to export and import data such as the contents of tables or views as well how to export and import database schema.  
@@ -120,7 +120,7 @@ The following steps will attempt to demonstrate some of these options.
     IMPORT FROM PARQUET FILE 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance.parquet' INTO HOTEL.MAINTENANCE WITH ERROR LOG 'error_log.txt' FAIL ON INVALID DATA;
     ```
 
-3. With SAP HANA, express edition, the following commands can be executed to export and import from a directory on the SAP HANA filesystem assuming that the directory exists and the user `hxeadm` has permission to access it.
+3. With SAP HANA, express edition, the following statements can be executed to export and import from a directory on the SAP HANA filesystem assuming that the directory exists and the user `hxeadm` has permission to access it.
 
     ```SQL
     EXPORT INTO '/tmp/export/maintenance.csv' FROM HOTEL.MAINTENANCE WITH COLUMN LIST IN FIRST ROW;
@@ -345,7 +345,7 @@ R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp-----END CERTIFICATE-----' COMMENT 'Azure';
 
     ![Viewing the results](exportResult.png)
 
-    The equivalent command using the SQL statement export is shown below:
+    The equivalent SQL statement is shown below:
 
     ```SQL
     EXPORT HOTEL.MAINTENANCE AS PARQUET INTO 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance' WITH REPLACE;
@@ -363,7 +363,7 @@ R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp-----END CERTIFICATE-----' COMMENT 'Azure';
 
     The contents of the maintenance table should now be the same as it was before the previously executed drop statement.
 
-    The equivalent command using SQL the statement import is shown below:
+    The equivalent SQL statement is shown below:
 
     ```SQL
     IMPORT HOTEL.MAINTENANCE FROM 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance' WITH REPLACE;
