@@ -3,7 +3,7 @@ title: Consume a REST API in an MDK App
 description: Create a fully functional native mobile app consuming Petstore REST API.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
 time: 30
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial:** [Set Up Business Application Studio for Mobile Technologies](cp-mobile-bas-setup)
-- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by allowing custom domains.)
 
 ## Details
 ### You will learn
@@ -70,7 +70,7 @@ With above details, you will next configure an app in Mobile Services, add root 
 
     !![MDK](img_2.3.png)
 
-    >Other fields are optional. For more information about these fields, see [Creating Applications](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/admin/manage.html#creating-applications) in the SAP Cloud Platform documentation.
+    >Other fields are optional. For more information about these fields, see [Creating Applications](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/admin/manage.html#creating-applications) in the help documentation.
 
 4. Select **Mobile Development Kit Application** from the dropdown and Click **Finish**.
 
@@ -102,9 +102,11 @@ With above details, you will next configure an app in Mobile Services, add root 
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. Navigate to *File* menu &rarr; click **New Project from Template**.
+2. Click **Start from template** on Welcome page.
 
     !![MDK](img_3.2.png)
+
+    >If you do not see Welcome page, you can access it via **Help** menu.
 
 3. Select **MDK Project** and click **Start**.
 

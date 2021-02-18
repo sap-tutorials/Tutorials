@@ -3,7 +3,7 @@ title: Set Up Account for Document Information Extraction and Go to Application
 description: Get access to the Document Information Extraction Trial UI using a booster in SAP Business Technology Platform (SAP BTP) Trial that automatically creates a service instance, and subscribes you to the UI application for Document Information Extraction.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
@@ -107,17 +107,17 @@ Do the following to access your subscription to the Document Information Extract
 
     !![UI application](subaccount.png)
 
-4. Click **Subscriptions** on the navigation side bar.
+4. Click **Instances and Subscriptions** on the navigation side bar.
 
     !![UI application](subscriptions.png)
 
-5. Search for **Document Information Extraction Trial UI**.
-
-    !![UI application](subscriptions-search.png)
-
-6. Access the tile for **Document Information Extraction Trial UI** to **Go to Application**, **Copy link** to the UI application and **Manage Roles**.
+5. Look for **Document Information Extraction Trial UI** under **Subscriptions** and click the arrow on the right to access it.
 
     !![UI application](subscriptions-tile.png)
+
+6. Here, you can navigate to the application by clicking **Go to Application** but also manage the roles for the UI application.
+
+    !![UI application](subscriptions-action.png)
 
 Congratulations, you have completed this tutorial.
 

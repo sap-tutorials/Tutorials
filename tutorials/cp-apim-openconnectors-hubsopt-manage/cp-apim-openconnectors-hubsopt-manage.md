@@ -8,7 +8,7 @@ primary_tag: products>sap-api-management
 ---
 
 ## Prerequisites
-- **Tutorials:** [Enable SAP Cloud Platform API Management Service](https://developers.sap.com/tutorials/hcp-apim-enable-service.html)
+- **Tutorials:** [Enable API Management Service](https://developers.sap.com/tutorials/hcp-apim-enable-service.html)
 
 ## Details
 ### You will learn

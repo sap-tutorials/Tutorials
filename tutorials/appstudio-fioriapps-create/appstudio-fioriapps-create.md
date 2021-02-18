@@ -12,7 +12,7 @@ author_profile: https://github.com/raz-korn
 ## Prerequisites
   - You have created an SAP Fiori dev space in SAP Business Application Studio. See [Create a preconfigured dev space for developing SAP Fiori apps](appstudio-devspace-fiori-create).
   - The SAP Fiori dev space is in status `RUNNING` and you opened it.
-  - You configured a destination to SAP Gateway Demo System (ES5) (see [Connect SAP Cloud Platform to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection)).
+  - You configured a destination to SAP Gateway Demo System (ES5) (see [Connect SAP BTP to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection)).
 
 
 ## Details

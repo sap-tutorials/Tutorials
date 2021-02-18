@@ -1,6 +1,6 @@
 ---
 title: Access a Classic Schema from SAP Business Application Studio
-description: Access data in a plain or replicated schema from an HDI Container in SAP Business Application Studio
+description: Access data in a plain or replicated schema from an HDI Container in SAP Business Application Studio.
 auto_validation: true
 time: 20
 author_name: Thomas Jung
@@ -150,14 +150,14 @@ You now have a schema with a table and data in it. You have also created a user 
 
     !![user provided service](12.png)
 
-5. From the SAP HANA PROJECTS view, you should see that the User Provided Service is not part of the Database Connections of your project.
+5. From the SAP HANA PROJECTS view, you should see that the User Provided Service is now part of the Database Connections of your project.
 
     !![user provided service](13.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Grant permissions to the technical users)]
+[ACCORDION-BEGIN [Step 4: ](Grant permissions to technical users)]
 
 You will now create an artifact that grants access to the two technical users of your HDI container. These are not real users, but technical ones.
 

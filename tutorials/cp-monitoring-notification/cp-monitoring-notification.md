@@ -1,6 +1,6 @@
 ---
 title: Implement a Notification Application for Monitoring Java Apps
-description: Create an application that notifies you of critical metrics via e-mail or SMS, using the SAP Cloud Platform Monitoring service.
+description: Create an application that notifies you of critical metrics via e-mail or SMS, using SAP Monitoring service.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [ tutorial>beginner, products>sap-cloud-platform ]
@@ -10,19 +10,18 @@ time: 30
 <!-- loio9c74305e78fa4d8181ba13cbde55d5cf -->
 
 ## Prerequisites
-- To test the entire scenario, you need subaccounts on SAP Cloud Platform in two regions: Europe (Rot/Germany) and US East.   For more information, see [Regions and Hosts Available for the Neo Environment](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/d722f7cea9ec408b85db4c3dcba07b52.html) and [SAP Cloud Platform Cockpit](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/19d7119265474dd18ec16fad2a0b28c1.html).
+- To test the entire scenario, you need subaccounts in two regions: Europe (Rot/Germany) and US East.   For more information, see [Regions and Hosts Available for the Neo Environment](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/d722f7cea9ec408b85db4c3dcba07b52.html) and [SAP BTP Cockpit](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/19d7119265474dd18ec16fad2a0b28c1.html).
 - To retrieve the metrics of Java applications as shown in this scenario, you need two deployed and running Java applications. For more information, see [Java: Application Operations](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/76f6dcfab9ec481dae0843873271d66c.html).
 - You have installed Maven.
-  For more information, see [Apache Maven](http://maven.apache.org/).
-- You have downloaded and set up your Eclipse IDE, SAP Cloud Platform Tools for Java, and SDK.
+- You have downloaded and set up your Eclipse IDE, SAP BTP Tools for Java, and SDK.
   For more information, see [Setting Up the Development Environment](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/e815ca4cbb5710148376c549fd74c0db.html).
 
 ## Details
 ### You will learn
 - How to configure a custom application to notify you of critical metrics of Java applications via e-mail or SMS.
-- How to use the custom application to take self-healing actions by restarting the specified Java applications running on SAP Cloud Platform.
+- How to use the custom application to take self-healing actions by restarting the specified Java applications running in the Neo environment.
 
-In this tutorial, you implement a notification application that requests the metrics of the following Java applications (running on SAP Cloud Platform):
+In this tutorial, you implement a notification application that requests the metrics of the following Java applications (running in SAP BTP, Neo environment):
 
 -   `app1` located in `a1` subaccount and `Europe (Rot/Germany)` region
 
@@ -33,7 +32,7 @@ In this tutorial, you implement a notification application that requests the met
 
 When the notification application receives the Java application metrics, it checks for critical metrics. The application then sends an e-mail or SMS, depending on whether the metrics are received as critical once or three times. In addition, the notification application restarts the Java application when the metrics are detected as critical three times.
 
-To learn more about the whole scenario, read the [Notification Scenario blog post](https://blogs.sap.com/2016/03/09/use-the-monitoring-service-for-critical-notifications-and-self-healing-of-hcp-java-applications/).
+To learn more about the whole scenario, read the [Notification Scenario blog post](https://blogs.sap.com/2021/02/05/use-the-monitoring-service-for-critical-notifications-and-self-healing-of-java-applications-in-the-neo-environment/).
 
 > If a Java application isn't started yet, the notification application automatically triggers the start process.
 
@@ -117,7 +116,7 @@ public static void sendEmail(String to, String subject, String body) throws Addr
 
 [ACCORDION-BEGIN [Step 5: ](Test your scenario)]
 
-1.   Open the SAP Cloud Platform cockpit and find your Java applications.
+1.   Open the SAP BTP cockpit and find your Java applications.
 
 2.   Configure your Java applications to return critical metrics.
 
@@ -141,7 +140,7 @@ public static void sendEmail(String to, String subject, String body) throws Addr
 
     -   Your Java application is restarted when its critical metric is received three times.
 
-You can check the status of your Java applications in the SAP Cloud Platform cockpit.
+You can check the status of your Java applications in the SAP BTP cockpit.
 
 [VALIDATE_4]
 [ACCORDION-END]
