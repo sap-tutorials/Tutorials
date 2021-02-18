@@ -106,6 +106,10 @@ This tutorial uses validations to track completion and make sure you are all set
 
 10. Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent steps in this tutorial.
 
+11. Finally it is important to take note that the SAP HANA Cloud trial instance shuts down at the end of each day automatically to save costs from unused systems. Therefore you must to return to this screen each day you want to use the HANA Cloud Trial and choose to start the system from the Action menu.  If you forget to restart the instance, you will receive HANA connection errors whenever you try to interact with it in later steps.
+
+    !![HANA Cloud stopped](hana_stopped.png)
+
 [DONE]
 [ACCORDION-END]
 
