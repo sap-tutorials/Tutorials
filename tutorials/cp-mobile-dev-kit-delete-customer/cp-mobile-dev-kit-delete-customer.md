@@ -3,7 +3,7 @@ title: Delete a Customer Record in an MDK App
 description: Allow the user to delete a customer record in an MDK app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
 time: 20
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -12,12 +12,13 @@ author_profile: https://github.com/jitendrakansal
 ## Details
 ### You will learn
   - How to delete a customer record
-  - How to store changes locally
-  - How to sync local changes with backend
+  - How to store changes locally on Mobile app and sync these changes with backend
+  - How to update a record in web application
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Enhance-Your-First-MDK-App-with-Additional-Functionalities/1-cp-mobile-dev-kit-create-customer) to start with this tutorial.
 
 ---
+
 
 ![MDK](img_1.gif)
 
@@ -164,7 +165,7 @@ You will add a button to the _Customer Detail page_ called **Trash**. You will l
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 4: ](Deploy the application)]
 
 Deploy the updated application to your MDK client.
 
@@ -172,11 +173,11 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img_4.1.png)
 
-2. Select deploy target as **Mobile Services**.
+2. Select deploy target as **Mobile & Cloud**.
 
     !![MDK](img_4.2.png)
 
-    You should see **Deploy succeeded** message.
+    You should see success message for both deployments.
 
     !![MDK](img_4.3.png)
 
@@ -231,6 +232,26 @@ Deploy the updated application to your MDK client.
 
 [OPTION END]
 
+[OPTION BEGIN [Web]]
+
+1. Either click the highlighted button or refresh the web page to load the changes.
+
+    !![MDK](img_5.8.png)
+
+    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+
+    >!![MDK](img_5.9.png)
+
+2. Click **Customer List**| click any record | click **Trash**.
+
+    !![MDK](img_5.10.png)
+
+3. A confirmation dialog appears for user action, click **OK**.
+
+    !![MDK](img_5.11.png)
+
+[OPTION END]
+
 You can cross verify if this record has been deleted in the backend.
 
 >Backend URL can be found in [Mobile Services Cockpit](cp-mobile-dev-kit-ms-setup).
@@ -246,6 +267,6 @@ You can cross verify if this record has been deleted in the backend.
 
 ---
 
-Congratulations, you have successfully deleted a Customer Record and you are now all set to [Upload Logs from an MDK App](cp-mobile-dev-kit-upload-logs).
+Congratulations, you have successfully deleted a Customer Record and you are now all set to [upload Logs from an MDK Mobile App](cp-mobile-dev-kit-upload-logs).
 
 ---

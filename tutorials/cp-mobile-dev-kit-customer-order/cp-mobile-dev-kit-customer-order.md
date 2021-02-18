@@ -3,7 +3,7 @@ title: Extend an MDK App with Customer Orders
 description: Display a customer order list and its details.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
 time: 30
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -386,7 +386,7 @@ You will show a total count of orders for a customer in `Customers_Detail.page`.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 9: ](Deploy the application)]
 
 Deploy the updated application to your MDK client.
 
@@ -394,11 +394,11 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img_9.1.png)
 
-2. Select deploy target as **Mobile Services**.
+2. Select deploy target as **Mobile & Cloud**.
 
     !![MDK](img_9.2.png)
 
-    You should see **Deploy succeeded** message.
+    You should see success message for both deployments.
 
     !![MDK](img_9.3.png)
 
@@ -443,16 +443,44 @@ Deploy the updated application to your MDK client.
 
     >If you see _No Customer Orders Found_ message, try with other customer record.
 
-2. Tapping on any order navigates to its details page.
+3. Tapping on any order navigates to its details page.
 
     ![MDK](img_10.8.png)
 
 
-3. Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.  
+4. Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.  
 
     ![MDK](img_10.9.png)
 
     ![MDK](img_10.10.png)
+
+[OPTION END]
+
+[OPTION BEGIN [Web]]
+
+1. Either click the highlighted button or refresh the web page to load the changes.
+
+    !![MDK](img_10.11.png)
+
+    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+
+    >!![MDK](img_10.12.png)
+
+2. Click **Customer List** | click a customer record. You will see the **Customer Orders** area in customer detail page and also total count of orders.
+
+    !![MDK](img_10.13.png)
+
+    >If you see _No Customer Orders Found_ message, try with other customer record.
+
+3. Clicking on any order navigates to its details page.
+
+    !![MDK](img_10.14.png)
+
+4. Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.
+
+    !![MDK](img_10.15.png)
+
+    !![MDK](img_10.16.png)
 
 [OPTION END]
 
@@ -461,6 +489,6 @@ Deploy the updated application to your MDK client.
 
 ---
 
-Congratulations, you have successfully extended MDK app with Customer orders and you are now all set to [Implement Create Entity and Linking Entities in an MDK App](cp-mobile-dev-kit-link-entity).
+Congratulations, you have successfully extended MDK app with Customer orders and you are now all set to [implement Create Entity and Linking Entities in an MDK App](cp-mobile-dev-kit-link-entity).
 
 ---

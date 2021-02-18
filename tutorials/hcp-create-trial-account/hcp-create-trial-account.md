@@ -1,6 +1,6 @@
 ---
-title: Get a Free Trial Account on SAP Cloud Platform
-description: Sign up for a free trial account on SAP Cloud Platform.
+title: Get a Free Account on SAP BTP Trial
+description: Sign up for a free trial account on SAP BTP.
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
@@ -12,7 +12,7 @@ time: 15
 ## Details
 ### You will learn  
   - How to register on the SAP website
-  - How to start your SAP Cloud Platform trial
+  - How to start your SAP BTP Trial
   - How to navigate to your sub-account and space
   - Where to find information on three important Cloud Foundry areas:  Applications, Service Marketplace, and Service Instances
 
@@ -24,7 +24,7 @@ Visit <https://www.sap.com> and click the **Log On** icon in the upper-right cor
 
 ![log on icon](homepage.png)
 
-**If you have an account** on <a href="https://www.sap.com" target="new"><b>`www.sap.com`</b></a> (e.g. an S, C, D or I number) you can enter it or the associated email along with your password. If you don't have an account yet, you can select one of the other login methods or click **Register** to create an account.
+**If you have an account** on <a href="https://www.sap.com" target="new"><b>`www.sap.com`</b></a> (e.g. a P, S, C, D or I number) you can enter it or the associated email along with your password. If you don't have an account yet, you can select one of the other login methods or click **Register** to create an account.
 
 !![log on dialog](option-logon.png)
 
@@ -54,11 +54,11 @@ You will see a success message after activating your account.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step : ](Log on to SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step : ](Log on to SAP BTP Trial)]
 
-After activation, or if you already had an SAP account, go to the <a href="https://account.hanatrial.ondemand.com/" target="new"><b>SAP Cloud Platform Trial</b></a>  page and click **Log On**.
+After activation, or if you already had an SAP account, go to the <a href="https://account.hanatrial.ondemand.com/" target="new"><b>SAP BTP Trial</b></a> page and click **Log On**.
 
-You will see an dialog to confirm the terms and condition for the SAP Cloud Platform Developer Edition. **Check the check boxes** and click **Accept**. This simply adds the SAP.com registration to your login account on SAP Cloud Identity.
+You will see an dialog to confirm the terms and condition for the SAP BTP Trial. **Check the check boxes** and click **Accept**. This simply adds the SAP.com registration to your login account on SAP Cloud Identity.
 
 [DONE]
 [ACCORDION-END]
@@ -82,7 +82,7 @@ You will see an dialog to confirm the terms and condition for the SAP Cloud Plat
 
 Click on **Log on** to log on to your verified account.
 
-You will see one main button on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to navigate to your global account.
+You will see one main button on the welcome screen of the SAP BTP Cockpit. Click on **Enter Your Trial Account** to navigate to your global account.
 
  !![enter trial account](enter-trial.png)
 

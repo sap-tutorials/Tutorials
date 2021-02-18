@@ -3,7 +3,7 @@ title: Classify Documents with Document Classification
 description: Find out how to classify the documents you uploaded to Document Classification using your machine learning model.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
 primary_tag: topic>machine-learning
 ---
 
