@@ -106,7 +106,7 @@ This tutorial uses validations to track completion and make sure you are all set
 
 10. Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent steps in this tutorial.
 
-11. Finally it is important to take note that the SAP HANA Cloud trial instance shuts down at the end of each day automatically to save costs from unused systems. Therefore you must to return to this screen each day you want to use the HANA Cloud Trial and choose to start the system from the Action menu.  If you forget to restart the instance, you will receive HANA connection errors whenever you try to interact with it in later steps.
+11. Finally it is important to take note that the SAP HANA Cloud trial instance shuts down at the end of each day automatically to save costs from unused systems. Therefore you must return to this SAP HANA Cloud administration screen each day you want to use the SAP HANA Cloud Trial and choose to start the system from the **Action** menu.  If you forget to restart the instance, you will receive HANA connection errors whenever you try to interact with it in later steps.
 
     !![HANA Cloud stopped](hana_stopped.png)
 
@@ -234,15 +234,9 @@ Artifacts in the current project will be translated into a physical database sch
 
     !![Bind](bind.png)
 
-2. In the dialog at appears near the top of the screen, choose the **Create a new service instance**
+2. In the dialog that appears near the top of the screen, choose the **Create a new service instance**
 
     !![Create New Service Instance](create_new_service.png)
-
-    **Note:** If you receive the following error that no services instances found:
-
-    !![No Service Instance Found](work_around1.png)
-
-    This is a bug that occurs when you have no existing HDI container service instances in your account. Therefore the dialog isn't shown. But this is in error because the same dialog would be used to also create a new instance. The bug has been fixed in development is pending a hot fix to move it production and the trial landscape. In the mean time there is a workaround. You can create the HDI service instance manually from the terminal. Use the command `cf create-service hana hdi-shared my-hdi`. Give it a few minutes to create. You can check the status with the command `cf services`. Once fully created, you can continue with this step. But instead of choosing **Create a new service instance** you can just select the service instance you just created manually.
 
 3. Accept the default service instance name
 
