@@ -2,7 +2,7 @@
 title: Use the SAP Cloud SDK in the SAP Cloud Application Programming Model
 description: Create a SAP Cloud Application Programming Model project to call OData services using the SAP Cloud SDK on Cloud Foundry.
 time: 40
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 author_name: Matthias Kuhr
 author_profile: https://github.com/MatKuhr

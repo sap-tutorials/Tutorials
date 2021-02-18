@@ -1,6 +1,6 @@
 ---
 title: Access a Classic Schema from SAP Business Application Studio
-description: Access data in a plain or replicated schema from an HDI Container in SAP Business Application Studio
+description: Access data in a plain or replicated schema from an HDI Container in SAP Business Application Studio.
 auto_validation: true
 time: 20
 author_name: Thomas Jung
@@ -24,6 +24,10 @@ This tutorial is meant to be an example of cross-container access. Simple data m
 For more information on this process and additional syntax options, refer to the [official documentation on SAP Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/a260b05631a24a759bba932aa6d81b64.html).
 
 If you are looking for the steps for an on-premise SAP HANA instance with XS Advanced, such as SAP HANA, express edition, [refer to this tutorial](xsa-create-user-provided-anonymous-service).
+
+A video version of this tutorial is also available:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ItEvMHWGak0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
@@ -146,14 +150,14 @@ You now have a schema with a table and data in it. You have also created a user 
 
     !![user provided service](12.png)
 
-5. From the SAP HANA PROJECTS view, you should see that the User Provided Service is not part of the Database Connections of your project.
+5. From the SAP HANA PROJECTS view, you should see that the User Provided Service is now part of the Database Connections of your project.
 
     !![user provided service](13.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Grant permissions to the technical users)]
+[ACCORDION-BEGIN [Step 4: ](Grant permissions to technical users)]
 
 You will now create an artifact that grants access to the two technical users of your HDI container. These are not real users, but technical ones.
 

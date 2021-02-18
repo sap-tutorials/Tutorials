@@ -65,13 +65,13 @@ Before you start, make sure that you've completed the prerequisites.
 
 2. Choose **Install**.
 
-![Folder structure](VSCode_extension.png)
+   !![extension_marketplace](VSCode_extension.png)
 
-   Visual Studio Code opens the extensions details page.
+> Visual Studio Code opens the extensions details page.
 
-![Folder structure](VSCode_view_extension.png)
+3.Choose **Install** to enable the extension for SAP CDS Language Support.
 
-3. In Visual Studio Code choose **Install** to enable the extension for SAP CDS Language Support.
+   ![extension_VSCode](VSCode_view_extension.png)
 
 > If the extension is already installed and enabled in VS Code, it will be updated automatically.
 
@@ -146,7 +146,10 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
     ```Shell/Bash
       cds watch
     ```
-    > This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown:
+
+    > This command tries to start a `cds` server. Whenever you feed your project with new content, for example, by adding or modifying `.cds`, `.json`, or `.js` files, the server automatically restarts to serve the new content.
+
+    > As there's no content in the project so far, it just keeps waiting for content with a message as shown:
 
     ```
     cds serve all --with-mocks --in-memory?
@@ -224,7 +227,9 @@ After initializing the project, you should see the following empty folders:
 
 4. To test your service, go to: <http://localhost:4004>
 
-    > You won't see data, because you haven't added a data model yet. Click on the available links to see the service is running.
+!![application](application_local.png)
+
+> You won't see data, because you haven't added a data model yet. Click on the available links to see the service is running.
 
 [DONE]
 
@@ -455,15 +460,15 @@ You can now see the generic handlers shipped with CAP in action.
 
 3. In the Postman app, use the **Import** button in the toolbar:
 
-    ![Postman import](postman-import.png)
+    !![Postman import](postman-import.png)
 
 4. Choose **Import File** in the wizard. Click on **Choose Files** and select the file that you've saved before or add it per drag & drop  directly.
 
-    ![Postman import from file](postman-import-from-file.png)
+    !![Postman import from file](postman-import-from-file.png)
 
 5. In the imported collection, execute the various requests in the `metadata` and `CRUD` groups. They should all return proper responses.
 
-    ![Test the request](postman-test-request.png)
+    !![Test the request](postman-test-request.png)
 
     > With your current service implementation, you can get only `POST` orders. Any `GET` or `DELETE` to an order fails, since you've specified the `Orders` entity to be `@insertonly` in `srv/cat-service.cds`.
 
@@ -508,7 +513,7 @@ You can now see the generic handlers shipped with CAP in action.
 
     > Look at the stock of book `201`.
 
-    ![Test the request](postman-get-books.png)
+    !![Test the request](postman-get-books.png)
 
 3. Execute one of the `POST Orders` requests.
 

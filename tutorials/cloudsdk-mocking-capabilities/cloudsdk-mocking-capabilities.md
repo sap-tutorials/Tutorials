@@ -5,8 +5,8 @@ title: Develop an S/4HANA Extension Without a S/4HANA System
 description: Learn about the mocking capabilities of the SAP Cloud SDK and how to test and develop your S/4HANA extension without an S/4HANA system.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites

@@ -1,6 +1,6 @@
 ---
-title: Deploy SAP HANA Cloud trial
-description: Create an instance of the SAP Hana Cloud trial
+title: Deploy SAP HANA Cloud Trial
+description: Create an instance of the SAP Hana Cloud trial.
 time: 15
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -9,7 +9,7 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You have a free SAP Business Technology Platform trial account: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) 
+ - You have a free SAP Business Technology Platform trial account: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
 
 ## Details
 ### You will learn
@@ -24,7 +24,7 @@ By combining in-memory storage with columnar store, data operations are performe
 
 [ACCORDION-BEGIN [Step 1: ](Add SAP HANA Cloud to your trial account)]
 
-1. From the SAP BTP cockpit entry page, click on the **trial** Subaccount.
+1. From the SAP BTP cockpit entry page, click on the **trial** subaccount.
 
     !![Sub Account](trial1.png)
 
