@@ -357,6 +357,8 @@ To protect data from unauthorized read access, the ABAP CDS provides its own aut
 
      ![authorizations](catalog7.png)
 
+     Once you have created the IAM app and business catalog, assign the catalog to a business role on the SAP Fiori Launchpad by following [this user guide](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/8980ad05330b4585ab96a8e09cef4688.html). Finally, follow [this user guide](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e40e710321c74f28916affa9ae984bce.html) to assign the business role to business users to grant the rights to use your business configuration inside the maintain business configurations SAP Fiori app.
+
 [DONE]
 [ACCORDION-END]
 
@@ -659,7 +661,7 @@ In RAP business objects, modifying operations, such as standard operations and a
 
      ![authorizations](classnew3.png)
 
- 13. Replace your code with following:
+ 15. Replace your code with following:
 
     ```ABAP
     CLASS zcl_bc_authorization_xxx DEFINITION
@@ -710,10 +712,9 @@ In RAP business objects, modifying operations, such as standard operations and a
     ENDCLASS.
     ```
 
+ 16. Save and activate all inactive objects.
 
- 14. Save and activate all inactive objects.
-
- 15. Edit class `ZTH_BC_INJECTOR_XXX`.
+ 17. Edit class `ZTH_BC_INJECTOR_XXX`.
 
     ```ABAP
     CLASS zth_bc_injector_xxx DEFINITION
@@ -738,20 +739,17 @@ In RAP business objects, modifying operations, such as standard operations and a
         zcl_bc_transport_api_f_xxx=>transport_api = transport_api.
       ENDMETHOD.
     ENDCLASS.
-```
+    ```
 
+ 18. Save and activate
 
- 16. Save and activate
+ 19. Restart your app, try to create a new configuration entry. You will get the error message **You are not authorized for this modification**.
 
- 17. Restart your app, try to create a new configuration entry. You will get the error message **You are not authorized for this modification**.
-
-     ![authorizations](noaccess.png)
-
- 19. Edit your previously created IAM app. Add **Change** for **`ACTVT`** of Authorization Object `S_TABU_NAM` and save.
+ 20. Edit your previously created IAM app. Add **Change** for **`ACTVT`** of Authorization Object `S_TABU_NAM` and save.
 
      ![authorizations](change.png)
 
- 20. Logout from Fiori Launchpad if you are using the **Maintain Business Configurations** app or close & re-open your ADT project if you are using the preview of the service binding. Try to create a new configuration entry. You are once again authorized to create a new configuration entry.
+ 21. Logout from Fiori Launchpad if you are using the **Maintain Business Configurations** app or close & re-open your ADT project if you are using the preview of the service binding. Try to create a new configuration entry. You are once again authorized to create a new configuration entry.
 
      ![authorizations](accessagain.png)
 
