@@ -3,7 +3,7 @@ title: Create a Slider Custom Control in an MDK App (Using Metadata Approach)
 description: Build and run the Mobile Development Kit client with slider custom control functionality for Android and iOS platforms.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>advanced, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
+tags: [ tutorial>advanced, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
 time: 35
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -11,17 +11,18 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by allowing custom domains.)
 
 ## Details
 ### You will learn
   - How to register and consume an Extension control in MDK Metadata
   - How to write an extension via NativeScript
-  - How to connect to SAP Cloud Platform Mobile application
+  - How to connect to SAP Mobile application
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/1-Create-a-Slider-Custom-Control-Using-Metadata-Approach) and start directly with step 6 in this tutorial.
 
 ---
+
 
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls by using **NativeScript** (TypeScript/JavaScript applicable for both Android and iOS)
 
@@ -33,9 +34,11 @@ In this tutorial, you will create a Slider extension via NativeScript (in TypeSc
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. Navigate to *File* menu &rarr; click **New Project from Template**.
+2. Click **Start from template** on Welcome page.
 
     !![MDK](img_1.2.png)
+
+    >If you do not see Welcome page, you can access it via **Help** menu.
 
 3. Select **MDK Project** and click **Next**.
 
@@ -103,7 +106,7 @@ The extension control that you will be creating to extend the functionality of y
     !![MDK](img_2.3.png)
 
 
-6. In **Schema Information** step, provide below schema and click **Next**.
+6. In **Schema Information** step, fill schema details in **Schema** column and click **Next**.
 
     ```JSON
     {
@@ -230,15 +233,17 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img_3.10.png)
 
-13. You can also add an input field where you can provide a manual entry for the slider value and the counter will adapt accordingly.
+11. You can also add an input field where you can provide a manual entry for the slider value and the counter will adapt accordingly.
 
     For this, first you will write a business logic to set the extension value and then bind it to the input field.
 
-    Right-click the **Rules** folder | **MDK: New Rule**.
+    Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
-    Enter the Rule name `SetExtensionValue.js`, press `Enter`.
+    !![MDK](img_3.11.1.png)
 
-    !![MDK](img_3.13.png)
+    Enter the Rule name `SetExtensionValue`, click **Next** and then **Finish** on the confirmation step.
+
+    !![MDK](img_3.11.2.png)
 
     Replace the generated snippet with below code.
 
@@ -251,15 +256,15 @@ You will add this registered control in a Form Cell page.
     }
     ```
 
-    !![MDK](img_3.13.1.png)
+    !![MDK](img_3.11.3.png)
 
-14. Save the changes to the `SetExtensionValue.js` file.
+12. Save the changes to the `SetExtensionValue.js` file.
 
-15. In `SliderExtension.page`, drag and drop a **Simple Property** item control below the slider control.
+13. In `SliderExtension.page`, drag and drop a **Simple Property** item control below the slider control.
 
     !![MDK](img_3.15.gif)
 
-16. Provide the following information:
+14. Provide the following information:
 
     | Property | Value |
     |----|----|
@@ -268,7 +273,7 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img_3.16.png)
 
-17. Navigate to **Events** tab, click the **link** icon for the `OnValueChange` property to open the object browser, bind it to `SetExtensionValue.js`.
+15. Navigate to **Events** tab, click the **link** icon for the `OnValueChange` property to open the object browser, bind it to `SetExtensionValue.js`.
 
     !![MDK](img_3.17.png)
 
@@ -859,9 +864,9 @@ Double click the `Application.app` file, select the `SliderExtension.page` for t
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Deploy and activate application)]
+[ACCORDION-BEGIN [Step 6: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 

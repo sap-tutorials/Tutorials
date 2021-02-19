@@ -1,20 +1,22 @@
 ---
-title: Call API Business Hub API from a SAPUI5 Application
+title: Call SAP API Business Hub API from a SAPUI5 Application
 description: Incorporate an SAP API into your SAPUI5 application using SAP Business Application Studio.
 primary_tag: products>sap-cloud-platform
 auto_validation: false
 author_name: Marius Obert
 author_profile: https://github.com/IObert
 time: 25
-tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-business-application-studio]
+tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-business-application-studio, topic>sap-api-business-hub]
 ---
 
 
 ## Details
-### You will learn  
-In this tutorial, you will build a basic UI5 application that uses data from the SAP Success Factors API, that you test in the SAP Business Hub, to populate a list. Each User will have a list item that displays relevant information about that person.
+### You will learn
+- How to build UI5 app using data from SAP SuccessFactors API
 
-> It is important to note that in UI5, it is recommended to use an `ODataModel` with an `OData` service, which is what the Success Factors APIs provided in the API Business Hub are, as UI5 will optimize the data parsing for you. This tutorial uses the pre-generated SAPUI5 JSON model from the code snippets section of the API Business Hub. Using an `ODataModel` is the best practice for UI5 applications, but it is not covered in this tutorial. You can find more information about `ODataModels` in the [UI5 Demo Kit](https://sapui5.hana.ondemand.com/#docs/guide/6c47b2b39db9404582994070ec3d57a2.html).
+In this tutorial, you will build a basic UI5 application that uses data from the SAP SuccessFactors API, that you test in the SAP Business Hub, to populate a list. Each User will have a list item that displays relevant information about that person.
+
+> It is important to note that in UI5, it is recommended to use an `ODataModel` with an `OData` service, which is what the SuccessFactors APIs provided in the API Business Hub are, as UI5 will optimize the data parsing for you. This tutorial uses the pre-generated SAPUI5 JSON model from the code snippets section of the API Business Hub. Using an `ODataModel` is the best practice for UI5 applications, but it is not covered in this tutorial. You can find more information about `ODataModels` in the [UI5 Demo Kit](https://sapui5.hana.ondemand.com/#docs/guide/6c47b2b39db9404582994070ec3d57a2.html).
 
 
 ---
@@ -109,7 +111,7 @@ Make sure you are connected to a Cloud Foundry endpoint to which you will deploy
 
 > **About the "User Management" API**
 
-> In the [API Business Hub](https://api.sap.com), search for the **Success Factors** from the Discover APIs page. Find the **SAP Success Factors Foundation** API package and select it.
+> In the [API Business Hub](https://api.sap.com), search for the **SuccessFactors** from the Discover APIs page. Find the **SAP SuccessFactors Foundation** API package and select it.
 
 > ![location of API packages in API Business Hub](10.png)
 

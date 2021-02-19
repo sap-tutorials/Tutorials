@@ -1,15 +1,15 @@
 ---
 title: Set Up Account for Data Attribute Recommendation
-description: Use the booster for Data Attribute Recommendation to automatically create a service instance and the associated service key for Data Attribute Recommendation, one of the SAP AI Business Services, using the SAP Cloud Platform trial cockpit.
+description: Use the booster for Data Attribute Recommendation to automatically create a service instance and the associated service key for Data Attribute Recommendation, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
-- You have created a trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
-- You have a subaccount and dev space with **Europe (Frankfurt)** as region: [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
+- You have created a trial account on SAP BTP: [Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
+- You have a subaccount and dev space with **Europe (Frankfurt)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## Details
 ### You will learn
@@ -20,7 +20,7 @@ primary_tag: topic>machine-learning
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
 
-1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
@@ -34,15 +34,15 @@ primary_tag: topic>machine-learning
 
     >!![Account setup](02_Foundation20Onboarding_Processing.png)
 
-    >For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP Cloud Platform Trial, see [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements).
+    >For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Get service key)]
+[ACCORDION-BEGIN [Step 2: ](Run booster)]
 
-SAP Cloud Platform creates interactive guided boosters to automate trial cockpit steps, so users can save time when trying out the services.
+SAP BTP creates interactive guided boosters to automate cockpit steps, so users can save time when trying out the services.
 
 Now, you will use the **Set up account for Data Attribute Recommendation** booster to automatically assign entitlements, update your subaccount, create a service instance and the associated service key for Data Attribute Recommendation.
 
@@ -60,21 +60,29 @@ Now, you will use the **Set up account for Data Attribute Recommendation** boost
 
     >If you have more than one subaccount, the booster will choose automatically the correct subaccount and space, but this will require that you click **Next** twice and **Finish** once, before being able to see the **Success** pop-up box.
 
-4. Click **Go to Service Key**.
-
     !![Service Key](booster-success.png)
 
-    You have successfully used the booster **Set up account for Data Attribute Recommendation** to create the service key for Data Attribute Recommendation. Make a local copy of the service key if you are following the tutorial group [Classify Data Records with the SDK for Data Attribute Recommendation](group.cp-aibus-data-attribute-sdk).
+[DONE]
+[ACCORDION-END]
 
-    !![Service Key](booster-service-key.png)
 
-    >If you face any issue with the booster **Set up account for Data Attribute Recommendation**, you can alternatively follow the steps in [Create Service Instance for Data Attribute Recommendation](cp-aibus-dar-service-instance) to create the service key for Data Attribute Recommendation manually.
+    [ACCORDION-BEGIN [Step 3: ](Get service key)]
+
+Click **Go to Service Key**.
+
+!![Service Key](booster-success-key.png)
+
+You have successfully used the booster **Set up account for Data Attribute Recommendation** to create the service key for Data Attribute Recommendation. Make a local copy of the service key if you are following the tutorial group [Classify Data Records with the SDK for Data Attribute Recommendation](group.cp-aibus-data-attribute-sdk).
+
+!![Service Key](booster-service-key.png)
+
+>If you face any issue with the booster **Set up account for Data Attribute Recommendation**, you can alternatively follow the steps in [Create Service Instance for Data Attribute Recommendation](cp-aibus-dar-service-instance) to create the service key for Data Attribute Recommendation manually.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Download Postman environment and collection templates)]
+[ACCORDION-BEGIN [Step 4: ](Download Postman environment and collection templates)]
 
 Back to the **Success** pop-up box, download Postman environment and collection templates. Make a local copy of the files if you are following the tutorial mission [Use Machine Learning to Classify Data Records](mission.cp-aibus-data-attribute).
 

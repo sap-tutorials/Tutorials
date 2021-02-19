@@ -1,15 +1,15 @@
 ---
 title: Build an IoT Condition Monitoring App
 description: Build a basic condition monitoring and sensor data visualization application with SAP Web IDE in 15 minutes.
-primary_tag: topic>internet-of-things
 auto_validation: true
-tags: [  tutorial>beginner, products>sap-leonardo-iot, topic>sapui5, products>sap-cloud-platform  ]
+primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, topic>sapui5, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform, products>sap-web-ide]
 time: 15
 ---
 
 ## Prerequisites  
  - **Configuration** You or someone else, that is an administrator in your global account, has walked through the following end-to-end configuration and onboarding guide: [Getting Started with SAP IoT](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest).
- - **Tutorials:** [Create Thing Model](https://developers.sap.com/tutorials/iot-express-4-create-thing-model.html)
+ - **Tutorials:** [Create Thing Model](iot-express-4-create-thing-model)
 
 ## Details
 ### You will learn

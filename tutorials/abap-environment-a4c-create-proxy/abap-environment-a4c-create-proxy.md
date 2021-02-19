@@ -22,7 +22,7 @@ To retrieve data from a remote service, you must:
 
 2. Instantiate a proxy in the client system that passes an OData request to the remote service
 
-This tutorial is based on: [Creating a Remote Client Proxy](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/08603b70390a411cb984f8a8107a7525.html).
+This tutorial is based on: [SAP Help Portal: Creating a Remote Client Proxy](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/08603b70390a411cb984f8a8107a7525.html).
 
 Therefore, this tutorial will only cover in detail those aspects that are different - in particular, handling exceptions.
 
@@ -121,7 +121,7 @@ ENDCLASS.
 
     ```
 
-    !![step8b-new-destination-settings](step8b-new-destination-settings.png)    
+      !![step8b-new-destination-settings](step8b-new-destination-settings.png)    
 
 2. Specify your service definition and the relative path of your inbound service, by replacing the defaults:
 

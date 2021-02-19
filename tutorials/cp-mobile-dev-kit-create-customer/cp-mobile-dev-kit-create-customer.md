@@ -3,7 +3,7 @@ title: Create a Customer Record in an MDK App
 description: Allow the user to create a customer record in an MDK app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -15,8 +15,8 @@ author_profile: https://github.com/jitendrakansal
 ## Details
 ### You will learn
   - How to create a customer record
-  - How to store this record locally
-  - How to sync local changes with backend
+  - How to store changes locally on Mobile app and sync these changes with backend
+  - How to update a record in web application
 
 
 If you didn't follow the prerequisite then you may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Create-Your-First-Mobile-App-with-the-Mobile-Development-Kit) to start with this tutorial.
@@ -168,15 +168,15 @@ You will add a button to the `Customers_List.page` called **Add**. You will link
 
 1. In `Customers_List.page`, drag and drop an **Action Bar Item** to the upper right of the action bar.
 
-    !![MDK](img_4_1.png)
+    !![MDK](img_4.1.png)
 
 2. Click the **link icon** to open the object browser for the `SystemItem` property. Double click the **Add** type and click **OK**.
 
-    !![MDK](img_4_2.png)
+    !![MDK](img_4.2.png)
 
 3. In the Properties pane, click the **Events** tab, click the **link icon** for the `OnPress` property to open the object browser. Double click the `NavToCustomers_Create.action` action and click **OK** to set it as the `OnPress` Action.
 
-    !![MDK](img_4_3.png)
+    !![MDK](img_4.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -253,8 +253,8 @@ The next step is to store newly created record locally for an offline applicatio
 
     | Property | Value |
     |----|----|
-    | `Success Action` | Select `CloseModalPage_Complete.action` from the dropdown |
-    | `Failure Action` | Select `CreateCustomerEntityFailureMessage.action` from the dropdown |
+    | `Success Action` | Click the link icon and bind it to `CloseModalPage_Complete.action` |
+    | `Failure Action` | Click the link icon and bind it to `CreateCustomerEntityFailureMessage.action` |
 
     !![MDK](img_5.9.png)
 
@@ -281,7 +281,7 @@ The next step is to store newly created record locally for an offline applicatio
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 6: ](Deploy the application)]
 
 Deploy the updated application to your MDK client.
 
@@ -289,11 +289,11 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img_6.1.png)
 
-2. Select deploy target as **Mobile Services**.
+2. Select deploy target as **Mobile & Cloud**.
 
     !![MDK](img_6.2.png)
 
-    You should see **Deploy succeeded** message.
+    You should see success message for both deployments.
 
     !![MDK](img_6.3.png)
 
@@ -356,6 +356,26 @@ Deploy the updated application to your MDK client.
 
 [OPTION END]
 
+[OPTION BEGIN [Web]]
+
+1. Either click the highlighted button or refresh the web page to load the changes.
+
+    !![MDK](img_7.10.png)
+
+    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+
+    >!![MDK](img_7.11.png)
+
+2. Click **Customer List**, click **+ Add** icon to create a new record.
+
+    !![MDK](img_7.12.png)
+
+3. Enter the values, and click **Save**.
+
+    !![MDK](img_7.13.gif)
+
+[OPTION END]
+
 You can cross verify if a record has been updated in the backend.
 
 >Backend URL can be found in [Mobile Services Cockpit](cp-mobile-dev-kit-ms-setup).
@@ -364,13 +384,15 @@ You can cross verify if a record has been updated in the backend.
 
 >!![MDK](img_7.8.1.png)
 
->It will open the URL in a new tab, now add `/Customers` at the end of the URL.
+>It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
 ![MDK](img_7.9.png)
 
-**Congratulations!** You have successfully created a Customer Record and you are now all set to [Delete a Customer Record in an MDK App](cp-mobile-dev-kit-delete-customer).
-
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully created a Customer Record and you are now all set to [delete a Customer Record in an MDK App](cp-mobile-dev-kit-delete-customer).
 
 ---

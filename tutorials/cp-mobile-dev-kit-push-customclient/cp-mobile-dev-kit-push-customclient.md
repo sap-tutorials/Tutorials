@@ -1,9 +1,9 @@
 ---
 title: Enable Push Notifications in Your Branded MDK Client
-description: Use the SAP Cloud Platform Mobile Services to enable push notifications in your branded MDK client.
+description: Use the SAP Mobile Services to enable push notifications in your branded MDK client.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
 time: 35
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -18,20 +18,18 @@ author_profile: https://github.com/jitendrakansal
 ## Details
 ### You will learn
   - How to set up push notifications on an Apple Developer and Google Firebase account
-  - How to configure push settings on SAP Cloud Platform Mobile Services
+  - How to configure push settings on SAP Mobile Services
   - How to send push notification in your branded MDK client
 
 You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/5-Brand-Your-Customized-App-with-Mobile-Development-Kit-SDK/1-Enable-Push-Notifications-in-your-branded-MDK-client).
 
 ---
 
-
 [ACCORDION-BEGIN [Step 1: ](Generate push configuration for Android/iOS device)]
 
 >Make sure you are choosing the right device platform tab above.
 
 [OPTION BEGIN [Android]]
-
 
 1. Open the [Firebase console](https://console.firebase.google.com/u/0/?pli=1), login with your Google account and click **Create Project** or **Add Project** (you will see this option if you already have any existing projects).
 
@@ -155,7 +153,7 @@ To enable your app for push notifications, you need to carry out the following t
 
 4. Install the .CER file and create the .p12 file
 
-    In order to configure the `APNS` on **SAP Cloud Platform Mobile Services**, you need to install the `.CER` file and create the needed `.p12` file.
+    In order to configure the `APNS` on **SAP Mobile Services**, you need to install the `.CER` file and create the needed `.p12` file.
 
     >A `.p12` file is a encrypted container for the certificate and private key. This file is needed by Mobile Services for the `APNS` configuration.
 
@@ -295,7 +293,7 @@ Follow step 4 from [this](cp-mobile-dev-kit-build-client) tutorial to create you
 
     ![MDK](img_6.1.png)
 
-3. It is time now to send the first push notification from the **SAP Cloud Platform Mobile Services push notification feature**.
+3. It is time now to send the first push notification from the **SAP Mobile Services push notification feature**.
 
     Navigate to Mobile Services cockpit. In **Mobile Push Notification** feature, switch to **Push Registrations** tab.
 
@@ -329,7 +327,7 @@ Follow step 4 from [this](cp-mobile-dev-kit-build-client) tutorial to create you
 
     !![MDK](img_6.5.png)
 
-4. It is time now to send the first push notification from the **SAP Cloud Platform Mobile Services push notification feature**.
+4. It is time now to send the first push notification from the **SAP Mobile Services push notification feature**.
 
     Navigate to Mobile Services cockpit. In **Mobile Push Notification** feature, switch to **Push Registrations** tab.
 

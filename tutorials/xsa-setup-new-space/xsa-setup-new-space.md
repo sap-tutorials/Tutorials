@@ -8,6 +8,9 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 time: 15
 ---
 
+## Prerequisites
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
+
 ## Details
 ### You will learn  
 Describe what the user will learn from your tutorial and what the outcome will be.

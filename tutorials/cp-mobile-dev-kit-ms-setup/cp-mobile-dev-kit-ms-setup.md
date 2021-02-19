@@ -1,27 +1,28 @@
 ---
 title: Set Up Initial Configuration for an MDK App
-description: Configure a new app in the SAP Cloud Platform Mobile Services cockpit and assign some server side features.
+description: Configure initial setup for MDK Mobile and Web applications.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
 time: 10
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- **Tutorial:** If you don't have an SAP Cloud Platform account, follow the tutorial to [set up a free developer account](hcp-create-trial-account).
-- **Tutorial:** [Access SAP Cloud Platform Mobile Services](fiori-ios-hcpms-setup)
+- **Tutorial:** [Access SAP Mobile Services](fiori-ios-hcpms-setup)
 
 ## Details
 ### You will learn
   - How to configure MDK apps in the Mobile Services cockpit
+  - How to configure destination for MDK Mobile and applications
 
 ---
 
+
 [ACCORDION-BEGIN [Step 1: ](Understand the mobile development kit feature)]
 
-Mobile Development Kit (MDK) extends SAP Cloud Platform Mobile Services and Editor (SAP Web IDE/SAP Business Application Studio/Visual Studio Code extension) to provide you with a complete set of mobile application development and management tools including on-boarding, offline support, and central lifecycle management. It offers a metadata-driven approach to create native supported applications, so no experience with creating iOS or Android apps is required. Additionally, MDK now extends that capability to the [Web](https://blogs.sap.com/2020/10/27/moving-to-multi-channel-with-mobile-development-kit/) as well.
+The Mobile Development Kit (MDK) enables developers and technical business users to build [multi-channel]((https://blogs.sap.com/2020/10/27/moving-to-multi-channel-with-mobile-development-kit/)) applications. It allows you to build your application once, in an integrated development environment, and run it natively on mobile devices (Android & iOS) and as a web application (online) in the browser.
 
 You can find more details in the [Mobile Development Kit developer page](https://developers.sap.com/topics/mobile-development-kit.html).
 
@@ -32,9 +33,9 @@ You can find more details in the [Mobile Development Kit developer page](https:/
 
 [ACCORDION-BEGIN [Step 2: ](Configure a new MDK application in Mobile Services cockpit)]
 
-Make sure that you have completed required pre-Prerequisites mentioned in this tutorial.
+Make sure that you have completed required prerequisites mentioned in this tutorial.
 
-1. Navigate to [SAP Cloud Platform Mobile Services cockpit on Cloud Foundry environment](fiori-ios-hcpms-setup).
+1. Navigate to [SAP Mobile Services cockpit on Cloud Foundry environment](fiori-ios-hcpms-setup).
 
 2. On the home screen, select **Create new app**.
 
@@ -49,43 +50,92 @@ Make sure that you have completed required pre-Prerequisites mentioned in this t
 
     !![MDK](img_2.3.png)
 
-    >Other fields are optional. For more information about these fields, see [Creating Applications](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/admin/manage.html#creating-applications) in the SAP Cloud Platform documentation.
+    >Other fields are optional. For more information about these fields, see [Creating Applications](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/admin/manage.html#creating-applications) in the SAP documentation.
 
-4. Select **Mobile Development Kit Application** from the dropdown and Click **Finish**.
+4. Choose **Mobile Development Kit Application** from the dropdown, select **Mobile Sample OData ESPM** to add a sample backend to your MDK app and the click **Finish**.
 
     !![MDK](img_2.4.png)
 
     >If you see a _Confirm Finish_ window, click **OK**.
 
-5. Once you have created your application, you see a list of default features have been automatically assigned to the app.
+    Once you have created your application, you see a list of default features have been automatically assigned to the app.
 
     !![MDK](img_2.5.png)
 
-    >You can find more information on available features in SAP Cloud Platform Mobile Services in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/admin/features.html).
+    >You can find more information on available features in SAP Mobile Services in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/admin/features.html).
 
 [VALIDATE_3]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Create a new destination to your MDK Mobile application)]
 
-[ACCORDION-BEGIN [Step 3: ](Add a sample backend to your MDK app)]
-
-A sample OData service is available for developers to use during development and testing. The sample OData service also lets you evaluate how delta tokens are handled in your test application.
-
->More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/backend-connectivity/sample.html).
-
-1. Click the **+** icon to add **Mobile Sample OData ESPM** feature to your MDK app.
-
-    Here, you can view the root service and metadata URLs, and generate sample sales orders and purchase orders for multiple entity sets. You can view the data for each entity in a separate text file, and even can reset the sample data.
+1. Click **Mobile Connectivity**.  
 
     !![MDK](img_3.1.png)
 
+2. Copy the URL from existing destination and click the **Create** icon to add a new destination.
+
     !![MDK](img_3.2.png)
 
-    >If you see a _Confirm Save_ window, click **OK**.
+3. Provide the required information and click **Next**.
 
-2. Click `com.sap.mdk.demo` to navigate back to app configuration page.
+    | Field | Value |
+    |----|----|
+    | `Destination Name` | `SampleServiceV2` |
+    | `URL` | paste the URL from above step  |
 
-[VALIDATE_1]
+    !![MDK](img_3.3.png)
+
+4. For this tutorial, there is no Custom Headers, Annotations required. Select **SSO Mechanism** as **Forward Authentication**, click **Next** and Finish the form.    
+
+    !![MDK](img_3.4.png)
+
+[DONE]
 [ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 4: ](Create a new destination to your MDK Web application)]
+
+MDK Web application accesses the data sources via BTP destination. You will now create a new destination in BTP cockpit that will point to the same backend as your Mobile destination.
+
+1. Click `com.sap.mdk.demo` to navigate to Mobile Services application details.
+
+    !![MDK](img_4.1.png)
+
+2. Open the `APIs` tab, click _copy to clipboard_ icon to copy the highlighted URL and paste it in a text file. This URL will be used in configuring the  BTP destination.
+
+    !![MDK](img_4.1.1.png)
+
+3. Navigate to the **Service Instances** in your SAP BTP space cockpit page, select **Authorization & Trust Management** service from the list, click `com-sap-mdk-demo-xsuaa` instance and click **View** to open the configuration details.
+
+    !![MDK](img_4.2.png)
+
+4. Switch to **Standard** tab, copy values for `clientid`, `clientsecret`, `url` parameters and paste these values in the text file. These parameters will be used in configuring the BTP destination.  
+
+    !![MDK](img_4.3.png)
+
+5. Download the zip file from [here](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/0-Set-Up-for-the-Mobile-Development-Kit/SampleServiceV2.zip) and unzip it on your machine.
+
+6. Navigate to **Destinations** to create a BTP destination, click **Import Destination** to import the extracted file and provide the required information and click **Save**.
+
+    | Field | Value |
+    |----|----|
+    | `URL` | `Paste the URL from step#2` |
+    | `Client ID` | `paste the value from step#4`  |
+    | `Client Secret` | `paste the value from step#4`  |
+    | `Token Service URL` | `paste the URL from step#4 and make sure that URL has /oauth/token suffix at the end` |
+    | `Use Default JDK truststore` | `Select the checkbox if not selected before` |
+
+    !![MDK](img_4.4.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+---
+
+Congratulations, you have successfully configured the setup for your MDK Mobile and Web applications.
+
+You can now continue with [this tutorial](cp-mobile-bas-setup) to set up the development environment in the SAP Business Application Studio.
 
 ---

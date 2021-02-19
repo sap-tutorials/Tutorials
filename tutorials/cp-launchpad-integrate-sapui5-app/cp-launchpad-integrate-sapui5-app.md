@@ -79,7 +79,7 @@ The **HTML5 Apps** content provider should now expose any newly deployed app for
 
 [ACCORDION-BEGIN [Step 3: ](Create group and assign app to it)]
 
-In this step, you'll create a new group and you'll assign the `Suppliers` app to it.
+In this step, you'll create a new group and assign the `Suppliers` app to it.
 
 > A group is a set of one or more apps displayed together in the launchpad. Assigning apps to groups allows users to view them in the launchpad.
 

@@ -5,8 +5,8 @@ title: End to End Test for Secure Applications
 description: Learn how to write end-to-end tests for secured applications based on the SAP Cloud SDK.
 auto_validation: true
 time: 5
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites

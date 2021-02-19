@@ -3,19 +3,18 @@ title: Receive Alerts in Your On-Premise System Using Java Web Tomcat 8
 description: Configure a connection with an on-premise system to receive alert notifications locally.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>intermediate, products>sap-cloud-platform, products>sap-cloud-platform-monitoring ]
+tags: [ tutorial>intermediate, products>sap-cloud-platform ]
 time: 50
 ---
 
 <!-- loio152a1abd1a1f4618baaa6e43f55e37df -->
 
 ## Prerequisites
-- You have a customer account on SAP Cloud Platform.
+- You have a customer account.
   For more information, See [Getting Started with a Customer Account in the Neo Environment](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/1b335bad21724350b0afca66b2db2ce6.html).
-- You have active SAP Cloud Platform resources (applications) to receive alerts for.
+- You have active resources (applications) to receive alerts for.
 - You have installed Maven.
-  For more information, see [Apache Maven](http://maven.apache.org/).
-- You have downloaded and set up your Eclipse IDE, SAP Cloud Platform Tools for Java, and SDK.
+- You have downloaded and set up your Eclipse IDE, SAP BTP Tools for Java, and SDK.
   For more information, see [Setting Up the Development Environment](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/e815ca4cbb5710148376c549fd74c0db.html).
     > To build the project into a WAR file, you need `Maven Integration for Eclipse WTP`.
 - You have set up Java Web Tomcat 8 as a runtime environment.
@@ -28,6 +27,8 @@ time: 50
 - How to connect with an on-premise system so that your alerts will be processed locally
 
 This tutorial describes the configuration with a Java Web Tomcat 8 runtime. However, you can change these settings to match with your runtime environment.
+
+To learn more about the whole scenario, read [Receiving Alerts in the Corporate On-Premise System](https://blogs.sap.com/2021/02/05/receiving-alerts-in-the-corporate-on-premise-system-2/).
 
 ---
 

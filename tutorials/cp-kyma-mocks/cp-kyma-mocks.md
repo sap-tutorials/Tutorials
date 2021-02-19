@@ -40,17 +40,17 @@ The Kyma mock application contains lightweight substitutes for SAP applications 
 
     ![Add Namespace Step 1](add-ns.png)
 
-2. Open the `dev` Namespace by choosing the tile.
+2. Open the `dev` Namespace by choosing the tile, if it is not already open.
 
-3. Apply the Deployment of the mock application to the `dev` Namespace by choosing the **Deploy new resource** option, using the **Browse** option to choose the `k8s.yaml` file, and finally choosing **Deploy**.
+3. Apply the Deployment of the mock application to the `dev` Namespace by choosing the **Deploy new resource** option, using the **Browse** option to choose the `k8s.yaml` file. Choose **Deploy**.
 
     ![Add Namespace Step 1](add-resource.png)
 
     > You can find the file at `/SAP-samples/xf-application-mocks/commerce-mock/deployment/k8s.yaml`.
 
-4. Apply the `APIRule` of the mock application to the `dev` Namespace by choosing the **Deploy new resource** option, using the **Browse** option to choose the `xf.yaml` file, and finally choosing **Deploy**. The `APIRule` exposes the resource to the Internet.
+4. Apply the `APIRule` of the mock application to the `dev` Namespace by choosing the **Deploy new resource** option, using the **Browse** option to choose the `kyma.yaml` file. Choose **Deploy**. The `APIRule` exposes the resource to the Internet.
 
-    > You can find the file at at `/SAP-samples/xf-application-mocks/commerce-mock/deployment/xf.yaml`.
+    > You can find the file at at `/SAP-samples/xf-application-mocks/commerce-mock/deployment/kyma.yaml`.
 
 [DONE]
 [ACCORDION-END]
@@ -58,16 +58,18 @@ The Kyma mock application contains lightweight substitutes for SAP applications 
 
 [ACCORDION-BEGIN [Step 3: ](Open Commerce mock application)]
 
-1. You can view the `APIRules` in the Kyma console within the `dev` Namespace under the **Configuration > `APIRules`** menu options, which will display the associated **Host** value.
+1. Open the `APIRules` in the Kyma console within the `dev` Namespace by choosing the **Configuration > `APIRules`** menu option.
 
 2. Open the mock application in the browser by choosing the **HOST** value `https://commerce.*******.kyma.shoot.live.k8s-hana.ondemand.com`. If you receive the error `upstream connect...`, the application may have not finished starting. Wait for a minute or two and try again.
+
+3. Leave the mock application open in the browser, it will be used in a later step.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a System)]
 
-In this step you will create a System in the SAP Cloud Platform which will be used to pair the mock application to the Kyma runtime.
+In this step, you will create a System in the SAP Cloud Platform which will be used to pair the mock application to the Kyma runtime.
 
 1. Open your global SAP Cloud Platform account and choose the **System Landscape > Systems** menu options.
 
@@ -84,11 +86,11 @@ In this step you will create a System in the SAP Cloud Platform which will be us
 
 [ACCORDION-BEGIN [Step 5: ](Create a Formation)]
 
-In this step you will create a Formation. A Formation is used to connect one or more Systems created in the SAP Cloud Platform to a runtime.
+In this step, you will create a Formation. A Formation is used to connect one or more Systems created in the SAP Cloud Platform to a runtime.
 
 1. Within your global SAP Cloud Platform account, choose the **System Landscape > Formations** menu options. Choose the **Create Formation** option.
 
-2. Provide a **Name**, choose your **Subaccount** where the Kyma runtime is enabled, choose the **commerce-mock** System and finally choose **Create**.
+2. Provide a **Name**, choose your **Subaccount** where the Kyma runtime is enabled, choose the **commerce-mock** System. Choose **Create**.
 
     ![Formation Step 2](formation1.png)
 
@@ -115,9 +117,11 @@ In this step you will create a Formation. A Formation is used to connect one or 
 
 2. Choose the **mp-commerce-mock** application by clicking on the name value shown in the list.
 
-> After choosing the system you should now see a listing of the APIs and events the mock application is exposing.
+> After choosing the system, you should now see a list of the APIs and events the mock application is exposing.
 
   ![Verify Step 1](verify1.png)
+
+**Congratulations!** You have successfully configured the Commerce mock application.
 
 [DONE]
 [ACCORDION-END]

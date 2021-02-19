@@ -2,6 +2,8 @@
 title: SAP HANA, express edition - Server Only Deployment Options
 description: Learn the options to deploy the database-only version of SAP HANA, express edition in a local computer.
 time: 5
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition]
 primary_tag: products>sap-hana\,-express-edition
 ---
@@ -31,7 +33,7 @@ Not sure how much RAM you have?
  - How to check RAM in a [MAC computer](https://developers.sap.com/tutorials/hxe-ram-disk-mac.html)
 
 > ###  Not enough RAM or space on disk?
-If you do not have enough RAM, you can run SAP HANA, express edition in any of our cloud providers.
+If you do not have enough RAM, we would recommend SAP HANA Cloud trial which is a completely free, hosted and cloud managed solution. [Deploy SAP HANA Cloud trial](hana-cloud-deploying)
 
 [ACCORDION-END]
 

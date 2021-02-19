@@ -8,6 +8,7 @@ tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products
 time: 15
 ---
 ## Prerequisites  
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Creating an OData Service with Create Operation and XSJS Exit](xsa-xsodata-create) and [SAP HANA XS Advanced - Consume the OData service in a basic HTML5 module](xsa-html5-expand-module)
 
 ## Details

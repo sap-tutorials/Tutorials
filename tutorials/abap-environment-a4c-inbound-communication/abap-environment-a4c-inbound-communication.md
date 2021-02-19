@@ -10,7 +10,7 @@ primary_tag: products>sap-cloud-platform--abap-environment
 ## Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
 - You have set up 2 instances of SAP Cloud Platform, ABAP Environment, a **provisioning system** and a **client system**, for example by using the relevant booster: [Using a Booster to Automate the Setup of the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cd7e7e6108c24b5384b7d218c74e80b9.html)
-- **Tutorial**: [Create Your First Console Application](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html), for a licensed user, steps 1-2, for both instances
+- **Tutorial**: [Create Your First Console Application](abap-environment-trial-onboarding), for a licensed user, steps 1-2, for both instances
 - In the provisioning system:
     - The business catalog **`SAP_CORE_BC_COM`** is assigned to your user
     - The ABAP Flight Reference Scenario is available. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
@@ -148,7 +148,7 @@ You can also see this scenario in the Project Explorer.
 Your Communication Arrangement should look roughly like this.
 The Service URL / Service Interface = < Base URL of provisioning system > + relative path of your Inbound Service, here `/sap/opu/odata/sap/Z_BIND_TRAVELS_XXX`.
 
-!![step6-comm-arr](step6-comm-arr.png)
+!![step64e-comm-arr-2011](step64e-comm-arr-2011.png)
 
 [DONE]
 [ACCORDION-END]
@@ -199,7 +199,7 @@ You will now open the client system and create a destination service instance th
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+[ACCORDION-BEGIN [Step 7: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]

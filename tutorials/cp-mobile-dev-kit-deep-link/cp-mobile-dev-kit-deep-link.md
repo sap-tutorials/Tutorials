@@ -3,7 +3,7 @@ title: Implement Deep Linking to Another App from an MDK App
 description: Open a web page or navigate to an installed app from an MDK app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by allowing custom domains.)
 - **Download and install** **SAP Mobile Cards** on your [iOS](https://apps.apple.com/us/app/sap-mobile-cards/id1168110623) or [Android](https://play.google.com/store/apps/details?id=com.sap.content2go&hl=en) device
 - **Download and install** **SAP Fiori Client** on your [iOS](https://apps.apple.com/us/app/sap-fiori-client/id824997258) or [Android](https://play.google.com/store/apps/details?id=com.sap.fiori.client&hl=en) device
 
@@ -39,11 +39,13 @@ If you are building a custom version of Mobile development kit client, there you
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. Navigate to *File* menu &rarr; click **New Project from Template**.
+2. Click **Start from template** on Welcome page.
 
     !![MDK](img_1.2.png)
 
-3. Select **MDK Project** and click **Next**.
+    >If you do not see Welcome page, you can access it via **Help** menu.
+
+3. Select **MDK Project** and click **Start**.
 
     !![MDK](img_1.3.png)  
 
@@ -59,7 +61,7 @@ If you are building a custom version of Mobile development kit client, there you
 
     >The _MDK Empty Project_ template creates a Logout action, Close page action, rule and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.      
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.   
 
 5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKDeepLink` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
 
@@ -70,7 +72,7 @@ If you are building a custom version of Mobile development kit client, there you
 
 [ACCORDION-BEGIN [Step 2: ](Create a new rule)]
 
-In the MDK editor, you will create 4 new JavaScript files:
+In the MDK editor, you will create 4 new Rule files:
 
   * `OpenSAPMobileCards.js` to open SAP Mobile Cards app
   * `OpenSAPFioriClient.js` to open SAP Fiori Client app
@@ -79,9 +81,11 @@ In the MDK editor, you will create 4 new JavaScript files:
 
     >You can find more details about [writing a Rule](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/rules.html).
 
-1. Right-click the **Rules** folder | click **MDK: New Rule**.
+1. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
-2. Enter the file name `OpenSAPMobileCards.js`, press `Enter`.
+    !![MDK](img_2.0.png)
+
+2. Enter the Rule name `OpenSAPMobileCards`, press `Enter`.
 
     !![MDK](img_2.1.png)
 
@@ -109,9 +113,9 @@ In the MDK editor, you will create 4 new JavaScript files:
 
 3. Save your changes to the `OpenSAPMobileCards.js` file.
 
-4. Repeat the above step and create another new Rule:
+4. Repeat the above step and create another new Rule file:
 
-    Enter the file name `OpenSAPFioriClient.js`, click **OK**.
+    Enter the file name `OpenSAPFioriClient`, click **OK**.
 
     Replace the generated snippet with below code.
 
@@ -136,9 +140,9 @@ In the MDK editor, you will create 4 new JavaScript files:
 
 5. Save your changes to the `OpenSAPFioriClient.js` file.    
 
-6. Repeat the above step and create another new file:
+6. Repeat the above step and create another new Rule file:
 
-    Enter the file name `OpenUI5.js`, click **OK**.
+    Enter the file name `OpenUI5`, click **OK**.
 
     Replace the generated snippet with below code.
 
@@ -163,7 +167,7 @@ In the MDK editor, you will create 4 new JavaScript files:
 
 7. Save your changes to the `OpenUI5.js` file.   
 
-8. Create one more file and name it to `OpenSAPcom.js`.
+8. Create one more Rule file and name it to `OpenSAPcom`.
 
     Copy and paste the following code.
 
@@ -242,9 +246,9 @@ In the MDK editor, you will create 4 new JavaScript files:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 5: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
 
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
@@ -353,9 +357,11 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-**Congratulations!** You have successfully implemented Deep Linking to Another App from your MDK App and you are now all set to [Use OData Annotations to Add CRUD Functionality to an MDK App](cp-mobile-dev-kit-annotations).
-
 [DONE]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully implemented Deep Linking to Another App from your MDK App and you are now all set to [Use OData Annotations to Add CRUD Functionality to an MDK App](cp-mobile-dev-kit-annotations).
 
 ---
