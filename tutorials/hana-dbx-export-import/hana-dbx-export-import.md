@@ -148,7 +148,7 @@ This step will import an `ESRI shapefile` containing points of interest near the
 
 2. Choose to download the data as a `shapefile`.
 
-    ![download shapefile](download_shapefile.png)
+    ![download shapefile](download-shapefile.png)
 
 3. Unzip the downloaded file to a temporary directory and then convert the extracted contents to a tar.gz.
 

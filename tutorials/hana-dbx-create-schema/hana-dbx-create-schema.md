@@ -265,7 +265,7 @@ Partitions can be created to divide the data in a large table into smaller parts
     SELECT TABLE_NAME, PART_ID, COLUMN_NAME, LOAD_UNIT FROM M_CS_COLUMNS where schema_Name = 'HOTEL';
     ```
 
-    ![column and page loadable](partition_details.png)
+    ![column and page loadable](partition-details.png)
 
     Notice above that the partition 1 (containing older reservations) is page loadable and partition 2 (containing recent reservations) is column loadable.  
 

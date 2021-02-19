@@ -168,7 +168,7 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
 
     A double-click on an issue will open another tab containing the SQL of the procedure and the issue will be highlighted.
 
-    ![Create statement](reservation_generator2_create.png)
+    ![Create statement](reservationGenerator2Create.png)
 
 5. To address these issues, make the following changes and rerun the SQL in the SQL Console tab.  
     * The first issue can be resolved by commenting out `unusedVar` on lines 19 and 23.  
@@ -358,7 +358,7 @@ It can be important to examine SQL statements that consume large amounts of time
     select TOP 2 DURATION_MICROSEC/1000000, CPU_TIME/1000000, MEMORY_SIZE/1048576, START_TIME, RECORDS, STATEMENT_STRING from  M_EXPENSIVE_STATEMENTS order by start_time desc;
     ```
 
-    ![expensive statements](expensive_trace.png)
+    ![expensive statements](expensiveTrace.png)
 
 3. When using SAP HANA Cloud, database explorer, the messages tab also contains detailed information about the duration, CPU, and memory consumed by a statement.
 
