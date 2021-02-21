@@ -1,6 +1,6 @@
 ---
 title: Export Time Series Data
-description: For data analytics or machine learning scenarios, there is a need to extract time series data for a longer duration spanning across multiple months or years.  You can export time series data and derived data to a file format GZIP, so that the data can be used as is without any need for de-serialization logic.
+description: Export time series data and derived data to a file format GZIP, so that the data can be used as is without any need for de-serialization logic.
 auto_validation: true
 tags: [ tutorial>intermediate,  tutorial>license, topic>internet-of-things, products>sap-edge-services, products>sap-iot-services-for-sap-btp, products>sap-business-technology-platform, products>sap-hana-cloud]
 primary_tag: topic>internet-of-things
@@ -20,14 +20,18 @@ time: 30
   - How to import data into a table using SAP HANA Database Explorer
   - How to execute SQL query on the time series data
 
+For data analytics or machine learning scenarios, there is a need to extract time series data for a longer duration spanning across multiple months or years.  You can export time series data and derived data to a file format GZIP, so that the data can be used as is without any need for de-serialization logic.
+
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Initiate Time Series Data Export)]
+[ACCORDION-BEGIN [Step 1: ](Initiate time series data export)]
 
-    >- To learn how to call an API using Postman, see [Call SAP IoT APIs with Postman](iotae-api-postman).
-  - For more information about the time series data export APIs, see [Export Time Series Data](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/2012b/en-US/48394008958d468c95d1e9bd85c73121.html) in SAP Help Portal.
+>To learn how to call an API using Postman, see [Call SAP IoT APIs with Postman](iotae-api-postman).
+
+>For more information about the time series data export APIs, see [Export Time Series Data](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/2012b/en-US/48394008958d468c95d1e9bd85c73121.html) in SAP Help Portal.
 
 1. In Postman, choose the **POST** method.
+
 2. Enter the following request URL to initiate time series data export: `https://coldstore-export-sap.cfapps.eu10.hana.ondemand.com/v1/InitiateDataExport/iot.training.f954.d.com.sap.silo9960:silo_status?timerange=2020-12-01-2020-12-07`.
 
     The method after successfully initiating the data export, will display a request ID in the response header.
@@ -47,6 +51,7 @@ time: 30
     For more information about the naming convention of property set type, see [Create a Property Set Type](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/2012b/en-US/7e40790cad924439be08981c745f615b.html).
 
 3. In Postman, choose the **GET** method.
+
 4. Enter the following request URL to know the status of the initiated data export: `https://coldstore-export-sap.cfapps.eu10.hana.ondemand.com/v1/DataExportStatus?requestId=0B003FE2F4DE43FC810E041CD4FD5D14`.
 
     - If the method returns the status with the following message, you can proceed with the download of data:
@@ -70,6 +75,7 @@ time: 30
     |Expired|The data that is ready for download is available only for seven days, beyond which the exported data is not available for download. You should re-initiate the request for data export.|
 
 5. In Postman, choose the **GET** method.
+
 6. Enter the following request URL to download the data: `https://coldstore-downloader-sap.cfapps.eu10.hana.ondemand.com/v1/DownloadData('0B003FE2F4DE43FC810E041CD4FD5D14')`.
 
     Click the **Send and Download** button instead of the **Send** button.
@@ -84,11 +90,10 @@ The extracted file will be a `*.gz` file.
     The extracted files are `.csv` files. Each `.csv` file corresponds to the respective epoch days for which the data for the requested property set type is available.
 
 [VALIDATE_1]
-
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Import Data into SAP HANA Database)]
+[ACCORDION-BEGIN [Step 2: ](Import data into SAP HANA database)]
 
 1. Create a database in your SAP HANA trial account following Step 1-3 in the tutorial [Choose an SAP HANA Database](hana-clients-choose-hana-instance).
 
@@ -115,6 +120,7 @@ The extracted file will be a `*.gz` file.
     !![Choose file to import data](iot-import-data-4.png)
 
 6. Click the **Step 3** button.
+
 7. You can import the data into a new table or an existing table. In this tutorial, the data is imported into a new table.
 
     - Select the **Create a new table** option in the **IMPORT TARGET** tab.
@@ -123,6 +129,7 @@ The extracted file will be a `*.gz` file.
      !![Choose schema and table name to import data](iot-import-data-5.png)
 
 8. Click the **Step 4** button.
+
 9. In the **TABLE MAPPING** tab, you configure the  mapping between the column names in the `*.csv` file and the database.
 
     - Use the arrow keys to include or exclude the columns in the database.
@@ -131,6 +138,7 @@ The extracted file will be a `*.gz` file.
       !![map column and table properties](iot-import-data-6.png)
 
 10. Click the **Step 5** button.
+
 11. Choose the appropriate error handling option in the **ERROR HANDLING** tab.
 
       !![map column and table properties](iot-import-data-7.png)
@@ -147,10 +155,9 @@ The extracted file will be a `*.gz` file.
 
 
 [DONE]
-
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Analyze Data Using SQL Query)]
+[ACCORDION-BEGIN [Step 3: ](Analyze data using SQL Query)]
 
 1. In **SAP HANA Database Explorer**, you can run SQL queries on data using **SQL Console**. Open the **SQL Console** using the icon.
 
@@ -232,13 +239,11 @@ ORDER BY "THING_ID" ASC
 
 
 [DONE]
-
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Additional ways to download exported data (optional))]
+[ACCORDION-BEGIN [Step 4: ](More ways to download exported data)]
 
-To explore more about downloading the exported data in different ways, you can go to [SAP Blog](https://blogs.sap.com/2021/01/27/downloading-files-from-the-coldstore-downloader-app-of-sap-internet-of-things-sap-iot./).
+To explore more about downloading the exported data in different ways, you can go to the SAP blog [Downloading files from the Coldstore-Downloader app of SAP Internet of Things (SAP IoT)](https://blogs.sap.com/2021/01/27/downloading-files-from-the-coldstore-downloader-app-of-sap-internet-of-things-sap-iot./).
 
 [DONE]
-
 [ACCORDION-END]
