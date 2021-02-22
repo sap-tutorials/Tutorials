@@ -2,9 +2,11 @@
 title: Create Sales Order App with SAP RAD by Mendix
 description: Create a sales order app that consumes a service from the SAP Gateway Demo System (ES5).
 auto_validation: true
-primary_tag: products>sap-rad-by-mendix
+primary_tag: products>sap-rapid-application-development-by-mendix
 author_name: Paola Laufer
-tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platform  ]
+author_profile: https://github.com/Paolaufer
+tags: [  tutorial>beginner, topic>cloud, topic>Odata, products>sap-business-technology-platform  ]
+
 time: 20
 ---
 
@@ -17,7 +19,7 @@ time: 20
 
 ## Details
 ### You will learn  
-- How to create an SAP Blank application in SAP BTP Rapid Application Development.
+- How to create an SAP blank application in SAP BTP Rapid Application Development.
 - How to create the application data model using the SAP OData Model Creator.
 - How to consume an OData service using the SAP OData Connector.
 - How to deploy the application to SAP Business Technology Platform (BTP).
