@@ -74,7 +74,7 @@ Download the automation script file from GitHub: <https://github.com/SAP-samples
 [ACCORDION-BEGIN [Step 3: ](Change the declarations)]
 In this step, you need to open the script file in your favorite text editor and enter the values in each placeholder according to your trial account and the names and custom properties of the directories and subaccounts that you want to create.
 
-These lines declare global variables that will be used in the script: 
+These lines declare global variables that will be used in the script. 
 
 ```Bash
 declare region="<enter your trial region, e.g., eu10, us10, ap21>" 
