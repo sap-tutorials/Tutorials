@@ -11,7 +11,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
-- How to reuse a CAP project through npm packages
+- How to reuse a CAP project through NPM packages
 - How to load sample data using CSV profiles
 - How to use SQL Tools in the SAP Business Application Studio
 - How to use the localized keyword
