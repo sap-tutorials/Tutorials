@@ -327,7 +327,7 @@ The first step is to create a central class, which offers some transport change 
         ASSIGN COMPONENT cl_abap_behv=>co_techfield_name-msg OF STRUCTURE <reported_row> TO <reported_msg>.
         ASSIGN COMPONENT cl_abap_behv=>co_techfield_name-tky OF STRUCTURE <failed_row> TO <failed_key>.
 
-        "tranport messages are not key specific, select first one
+        "transport messages are not key specific, select first one
         ASSIGN COMPONENT cl_abap_behv=>co_techfield_name-tky OF STRUCTURE <keys>[ 1 ] TO <key_fields>.
         <reported_key> = <key_fields>.
         LOOP AT messages INTO DATA(message).
