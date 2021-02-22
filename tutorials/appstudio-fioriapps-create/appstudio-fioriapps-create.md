@@ -3,7 +3,7 @@ title: Create an SAP Fiori App Using SAP Business Application Studio
 description: Develop a simple SAP Fiori application that will present a list of suppliers from an on-premise backend.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
+tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
 primary_tag: products>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
@@ -12,12 +12,12 @@ author_profile: https://github.com/raz-korn
 ## Prerequisites
   - You have created an SAP Fiori dev space in SAP Business Application Studio. See [Create a preconfigured dev space for developing SAP Fiori apps](appstudio-devspace-fiori-create).
   - The SAP Fiori dev space is in status `RUNNING` and you opened it.
-  - You configured a destination to SAP Gateway Demo System (ES5) (see [Connect SAP BTP to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection)).
+  - You configured a destination to SAP Gateway Demo System (ES5) (see [Connect SAP Cloud Platform to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection)).
 
 
 ## Details
 ### You will learn
-  - How to create an SAPUI5 application for SAP Business Technology Platform (BTP), Cloud Foundry environment
+  - How to create an SAPUI5 application for SAP BTP, Cloud Foundry environment
   - How to test-run the app locally in the dev space
 
 You will build an application that presents a list of suppliers from an on-premise backend. The suppliers' data will be retrieved from the `BusinessPartnerSet` collection in the `GWSAMPLE_BASIC` OData service that is available from SAP's ES5 demo gateway.
