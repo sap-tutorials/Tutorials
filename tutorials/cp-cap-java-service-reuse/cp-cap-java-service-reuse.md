@@ -5,7 +5,7 @@ title: Reuse a CAP Java Service
 description: Create a new application and reuse the existing CAP Java service.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform, topic>java]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>java]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -57,6 +57,8 @@ mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -Darchety
 [ACCORDION-BEGIN [Step 2: ](Install reusable service as npm dependency)]
 
 As the `product-service` should be reused for the bookstore, you need to add a dependency between those two projects. Reusable models can be published as NPM modules and imported through dependencies in the `package.json` of a project.
+
+> Make sure that you have followed all the sub-steps in step 9 in the previous tutorial [Set up for reuse](https://developers.sap.com/tutorials/cp-cap-java-reusable-service.html#585efa23-03de-4736-98d3-a4e22bf92511) before continuing.
 
 First, we need to simulate a release of the `product-service` module, and consume this release in the bookstore application.
 
@@ -191,7 +193,7 @@ The `services.cds` file defines three services:
 
 The `BooksService` is used to provide a read-only view on the `Books` and `Authors` data. Modifications of these entities isn't possible via this service.
 
-The `OrdersService` allows to view, create, and delete orders. 
+The `OrdersService` allows to view, create, and delete orders.
 
 The `AdminService` is reused from the products service. But we've added the `Authors` entity to it. It can be used to create, update, and delete products and authors.
 
