@@ -58,7 +58,7 @@ mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -Darchety
 
 As the `product-service` should be reused for the bookstore, you need to add a dependency between those two projects. Reusable models can be published as NPM modules and imported through dependencies in the `package.json` of a project.
 
-> Make sure that you have followed all the sub-steps in step 9 in the previous tutorial [Set up for reuse](https://developers.sap.com/tutorials/cp-cap-java-reusable-service.html#585efa23-03de-4736-98d3-a4e22bf92511) before continuing.
+> Make sure that you have followed all the sub-steps of step 9 in the previous tutorial [Set up for reuse](https://developers.sap.com/tutorials/cp-cap-java-reusable-service.html#585efa23-03de-4736-98d3-a4e22bf92511) before continuing.
 
 First, we need to simulate a release of the `product-service` module, and consume this release in the bookstore application.
 
