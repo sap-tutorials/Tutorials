@@ -13,7 +13,7 @@ author_profile: https://github.com/SarahLendle
  - You have an account on SAP Business Technology Platform. See [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) or [Enterprise Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html).
  - You're an administrator of your global account and Org Manager of your subaccount on SAP Business Technology Platform.
  - You've installed the SAP Connectivity service. See [SAP Connectivity Service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e54cc8fbbb571014beb5caaf6aa31280.html).
- - You have an SAP Fiori project for the Cloud Foundry environment in a public Git repository in your corporate network. See [Create an SAP Fiori Project](https://help.sap.com/viewer/584e0bcbfd4a4aff91c815cefa0bce2d/Cloud/en-US/46664de4d6944471b6c29a0681bfd0fc.html).
+ - You have an SAP Fiori project in the Cloud Foundry environment in a public Git repository in your corporate network. See [Create an SAP Fiori Project](https://help.sap.com/viewer/584e0bcbfd4a4aff91c815cefa0bce2d/Cloud/en-US/46664de4d6944471b6c29a0681bfd0fc.html).
     >**Note:** Technically, you can use any Git in your corporate network. However, we recommend 	using GitHub Enterprise or Bitbucket Server, because with them, you can create webhooks 	to trigger your jobs automatically.
 
 ## Details
