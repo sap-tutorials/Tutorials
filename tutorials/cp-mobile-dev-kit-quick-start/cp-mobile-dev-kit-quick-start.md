@@ -3,7 +3,7 @@ title: Quick Start with the Mobile Development Kit (MDK)
 description: Create and examine your first mobile (offline) and web application using the MDK template connecting against a sample service.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio]
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio]
 time: 15
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -11,13 +11,13 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by allowing custom domains.)
 
 ## Details
 ### You will learn
   - How to create an MDK sample app using a template in SAP Business Application Studio
   - How to deploy an MDK app to Mobile Services and run it in mobile client
-  - How to deploy an MDK app to Cloud Platform and run it as a Web application
+  - How to deploy an MDK app to Cloud Foundry and run it as a Web application
 
 ---
 
@@ -27,9 +27,11 @@ This step includes creating the mobile development kit project in the editor.
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. Navigate to *File* menu &rarr; click **New Project from Template**.
+2. Click **Start from template** on Welcome page.
 
     !![MDK](img_1.2.png)
+
+    >If you do not see Welcome page, you can access it via **Help** menu.
 
 3. Select **MDK Project** and click **Start**.
 
@@ -45,7 +47,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img_1.4.png)
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.
 
 5. In *Service Configuration* step, provide or select the below information and click **Next**:
 
@@ -63,7 +65,7 @@ This step includes creating the mobile development kit project in the editor.
 
     >In [this tutorial](cp-mobile-dev-kit-ms-setup), server-side configuration for this MDK app were already done.
 
-    Regardless of whether you are creating an online or offline application, this step is needed for app to connect to an OData service. When building an MDK Mobile application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services. For MDK Web application, destination is setup in Cloud Platform cockpit.
+    Regardless of whether you are creating an online or offline application, this step is needed for app to connect to an OData service. When building an MDK Mobile application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services. For MDK Web application, destination is set up in SAP BTP cockpit.
 
     The generated application will be offline enabled in the MDK Mobile client and will run as online in Web environment.
 
@@ -84,9 +86,9 @@ This is how the project structure looks like within the workspace.
 
 !![MDK](img_2.png)
 
-These are the metadata definitions available in the editor and the format in which these metadata definitions are stored in the editor. Just to brief on some of these:
+These are the [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/App.schema.html) available in the editor and the format in which these metadata definitions are stored in the editor. Just to brief on some of these:
 
-- **`InitializeOffline.action`**: This action will initialize the offline store in the MDK mobile client and will download the required data to the offline store on the mobile device. In Web environment, it will initialize the service to be consumed in online mode.
+- **`InitializeOffline.action`**: For Mobile applications, this action binds the application to the Mobile Services Offline OData server and downloads the required data to the offline store on the mobile device. For Web applications, it will initialize the service to be consumed in online mode.
 
 - **`DownloadOffline.action`** and **`UploadOffline.action`**: These actions are applicable to Mobile client only. Using app initialization, data is downloaded to the offline store. If you want to have the application download any updated data from the backend server or upload changed data to the backend server, these actions will be needed.
 
@@ -96,20 +98,18 @@ These are the metadata definitions available in the editor and the format in whi
 
 - **`OnWillUpdate.js`**: This rule is applicable to Mobile client only. MDK applications automatically download updates and apply them to the client without the end-user needing to take any action. The `OnWillUpdate` rule empowers the user to run business logic before the new definitions are applied. This allows the app designer to include logic to prompt the user to accept or defer applying the new definitions based on their current activity. For example, if the end-user is currently adding new customer details or in the middle of a transaction, they will be able to defer the update. The app will prompt again the next time it checks for updates.
 
-- **`Application.app`**: this is the main configuration file for your application from within SAP Business Application Studio. Here you set your start page (here in this tutorial, it is main.page), action settings for different stages of the application session lifecycle, push notifications, and more.
+- **`Application.app`**: this is the main configuration file for your application from within SAP Business Application Studio. Here you define your start page (here in this tutorial, it is main.page), action settings for different stages of the application session lifecycle, push notifications, and more.
 
->You can find more details about [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/App.schema.html).
+>Open the application settings in the application editor by double clicking on the `Application.app`.
 
-Open the application settings in the application editor by double clicking on the `Application.app`.
-
-!![MDK](img_2.1.png)
+>!![MDK](img_2.1.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 3: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services and Cloud Foundry to consume it as Mobile and Web application respectively.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services and Cloud Foundry to consume it as Mobile and Web application respectively.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
@@ -117,7 +117,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 2. Select deploy target as **Mobile & Cloud**.
 
-   First deployment starts to Mobile Services (for Mobile application) followed by to Cloud Foundry (for Web application). MDK metadata will gets deployed to HTML5 repository on Cloud Platform.
+   MDK editor will deploy the metadata to Mobile Services (for Mobile application) followed by to Cloud Foundry (for Web application).
 
    !![MDK](img_3.2.gif)
 
@@ -134,9 +134,9 @@ So far, you have learned how to build an MDK application in the SAP Business App
 >- HTML repo runtime
 
 
-   You should see successful messages for both deployments.
+You should see successful messages for both deployments.
 
-  !![MDK](img_3.3.png)
+!![MDK](img_3.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -194,7 +194,7 @@ Additionally, you can search over all properties of the objects displayed in the
 
 [OPTION BEGIN [Web]]
 
-1. Click the highlighted button to open the MDK Web application in a browser. Enter your cloud platform credentials if asked.
+1. Click the highlighted button to open the MDK Web application in a browser. Enter your SAP BTP credentials if asked.
 
     !![MDK](img_5.5.png)
 

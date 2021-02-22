@@ -179,22 +179,36 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
         //As of SAP HANA Client 2.6 for OpenSSL connections, this can be ignored as root certificates are read from the default OS location.
         //ssltruststore: '/home/dan/.ssl/trust.pem',
         //Alternatively provide the contents of the certificate directly (DigiCertGlobalRootCA.pem)
+        //DigiCert Global Root CA: https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
         //ssltruststore: '-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBhMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBDQTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVTMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5jb20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsBCSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7PT19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAOBgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbRTLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUwDQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/EsrhMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJFPnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0lsYSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQkCAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=-----END CERTIFICATE-----'
     };
 
+    //Synchronous  example querying a table
+    var connection = hana.createConnection();
+    connection.connect(connOptions);
+    var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
+    var result = connection.exec(sql);
+    console.log(util.inspect(result, { colors: false }));
+    var t1 = performance.now();
+    console.log("time in ms " +  (t1 - t0));
+    connection.disconnect();
+
+    //Asynchronous example calling a stored procedure
     var connection = hana.createConnection();
     connection.connect(connOptions, function(err) {
         if (err) {
             return console.error(err);
         }
-        var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
-        var rows = connection.exec(sql, function(err, rows) {
+        const statement = connection.prepare('CALL HOTEL.SHOW_RESERVATIONS(?,?)');
+        const parameters = [11, '2020-12-24'];
+        var results = statement.execQuery(parameters, function(err, results) {
             if (err) {
                 return console.error(err);
             }
-            console.log(util.inspect(rows, { colors: false }));
-            var t1 = performance.now();
-            console.log("time in ms " +  (t1 - t0));
+            while (results.next()) {
+                console.log(util.inspect(results.getValues(), { colors: false }));
+            }
+            statement.drop();
             connection.disconnect(function(err) {
                 if (err) {
                     return console.error(err);
@@ -203,7 +217,6 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
         });
     });
     ```  
-
 
 4. Run the app.  
 
@@ -214,7 +227,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
 Note the above app makes use of some of the SAP HANA client Node.js driver methods, such as [connect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d7226e57dbd943aa9d8cd0b840da3e3e.html), [execute](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/ef5564058b1747ce99fd3d1e03266b39.html) and [disconnect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/fdafeb1d881947bb99abd53623996b70.html).
 
-In nodeQuery.js, the asynchronous versions of these methods are used because the optional callback function is provided.  For readers that are unfamiliar with synchronous and asynchronous operations, see [The Node.js Event Loop, Timers, and process.nextTick()](https://nodejs.org/de/docs/guides/event-loop-timers-and-nexttick/).
+In nodeQuery.js, synchronous and asynchronous queries are performed.  Notice that asynchronous method calls use callback functions.  For readers that are unfamiliar with synchronous and asynchronous operations, see [The Node.js Event Loop, Timers, and process.nextTick()](https://nodejs.org/de/docs/guides/event-loop-timers-and-nexttick/).
 
 >To enable debug logging of the SAP  HANA Node.js client, enter the following command and then rerun the app.
 

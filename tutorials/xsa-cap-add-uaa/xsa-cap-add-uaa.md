@@ -11,7 +11,7 @@ primary_tag: products>sap-hana
 ## Prerequisites
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - You have [created a user interface](xsa-cap-create-ui).
- - You have administration access to the XS Advanced cockpit in SAP HANA (e.g., like user `XSA_ADMIN` in SAP HANA, express edition) or the SAP Cloud Platform Cockpit if performing this tutorial on SAP HANA Cloud trial.
+ - You have administration access to the XS Advanced cockpit in SAP HANA (e.g., like user `XSA_ADMIN` in SAP HANA, express edition).
 
 ## Details
 ### You will learn

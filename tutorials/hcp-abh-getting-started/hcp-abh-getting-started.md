@@ -6,7 +6,7 @@ author_name: Marius Obert
 author_profile: https://github.com/IObert
 auto_validation: true
 time: 15
-tags: [  tutorial>beginner, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, topic>sap-api-business-hub ]
 
 ---
 
@@ -43,11 +43,11 @@ This will take you to the APIs section on the homepage. Select **View More** to 
 
 This will take you to the API content listing on the SAP API Business Hub.
 
-![Searchable API list page](4.png)
+!![Searchable API list page](4.png)
 
 Pay particular attention to the icons used here - there are API packages denoted by one particular icon, and individual APIs within a package, denoted by a different icon. Select an API package from the list to see both icons in use. For example, selecting the **SAP Cloud Platform Integration** API package reveals individual APIs within.
 
-![SAP Cloud Platform Integration package and APIs](api-icons.png)
+!![SAP Cloud Platform Integration package and APIs](api-icons.png)
 
 [DONE]
 [ACCORDION-END]
@@ -81,7 +81,7 @@ Let's drill down one level further and select a particular API in this package -
 
 An API package contains one or more APIs, and an API itself can contain one or more endpoints (also known as resources), organised into groups. Take a look at the endpoints in the User Management API you've just selected, and you'll see that there are three groups of endpoints - User, User Permissions and Service Operations - shown on the left hand side.
 
-![The endpoints](endpoints.png)
+!![The endpoints](endpoints.png)
 
 > The API page will most likely have opened displaying the expanded detail of the first operation / endpoint combination in the first group, in this case the `GET` operation on the `/User` endpoint. While exploring all the endpoints you may wish to collapse the information, which you can do by selecting the `GET` operation to toggle the display. The screenshot above shows the collapsed endpoints within the **User** group.
 

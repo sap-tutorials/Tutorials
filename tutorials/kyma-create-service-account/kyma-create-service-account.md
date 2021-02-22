@@ -8,7 +8,7 @@ primary_tag: products>sap-cloud-platform\, kyma-runtime
 ---
 
 ## Prerequisites
- - [Enable SAP Cloud Platform, Kyma Runtime](cp-kyma-getting-started)
+ - [Enable SAP BTP, Kyma Runtime](cp-kyma-getting-started)
  - [Install the Kubernetes Command Line Tool](cp-kyma-download-cli)
 
 ## Details

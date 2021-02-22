@@ -63,7 +63,7 @@ The following are some related documentation links for SAP HANA and the SAP HANA
 |  [SAP HANA Platform 2.0, SAP HANA Database Explorer What's New](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/7534f22d5bbf44c3a0de259478ad043b.html) | What's new since the previous on-premise release.  New features are released approximately twice per year
 |  [SAP Web IDE for SAP HANA](https://help.sap.com/viewer/product/SAPWEBIDE/SAPWEBIDE4HANA/en-US) | SAP Help documentation set
 |  [SAP HANA, express edition](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US)   | Released in September 2016.  Current version is 2.0 SPS 04 Revision 45
-|  [SAP HANA, express edition, release notes for SPS 04, revision 45](https://developers.sap.com/topics/sap-hana.html#pdf-asset=1eaee4fa-857d-0010-87a3-c30de2ffd8ff&page=1)  | Note that the version of the Database Explorer (HRTT) for this release is  2.11.64
+|  [SAP HANA, express edition, release notes for SPS 04, revision 45](https://www.sap.com/documents/2020/01/421a577f-817d-0010-87a3-c30de2ffd8ff.html)  | Note that the version of the Database Explorer (HRTT) for this release is  2.11.64
 |  [SAP HANA, express edition, release history](https://search.sap.com/search.html?t=%22SAP%20HANA%2C%20express%20edition%202.0%20SPS%200%25%20Revision%22&n=1&s=boost&src=defaultSourceGroup)   | Query showing previous releases
 |  [SAP HANA Cloud](https://help.sap.com/viewer/product/HANA_CLOUD)   | Released in March 2020
 |  [SAP HANA Cloud, SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US)   | Current version is 2.13.x
@@ -73,7 +73,7 @@ The following are some related documentation links for SAP HANA and the SAP HANA
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Version information)]
-The SAP HANA database explorer releases independently of SAP HANA.  New features appear first in SAP HANA Cloud and are available to the on-premise version in a later release.  As an example, when SAP HANA 2.0 SPS 05 was released on June 26 2020, SAP HANA database explorer version 2.12.20185 was available in both the on-premise and SAP HANA Cloud releases.  At the time when this was published in October 2020, the version available in HANA Cloud contains additional features that that are not yet available for an on-premise installation.
+The SAP HANA database explorer releases independently of SAP HANA.  New features appear first in SAP HANA Cloud and are available to the on-premise version in a later release.  As an example, when SAP HANA 2.0 SPS 05 was released on June 26 2020, SAP HANA database explorer version 2.12.20185 was available in both the on-premise and SAP HANA Cloud releases.  At the time when this was published in October 2020, the version available in HANA Cloud contains additional features that are not yet available for an on-premise installation.
 
 The screenshots below show the version of the SAP HANA database explorer in SAP HANA Cloud and on-premise.  
 
@@ -107,9 +107,11 @@ Continue on to the next tutorial in this group once you have created an SAP HANA
 
 !![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
+>Note that the SAP HANA Cloud trial instances are shut down overnight and will need to be restarted before working with them the next day.
+
 The instructions on how to setup a free SAP HANA Cloud trial within the SAP Cloud Platform are well covered in a number of other sources listed below.  
 
-  * [Help Thomas Get Started with SAP HANA](https://developers.sap.com/tutorials/hana-trial-advanced-analytics.html)
+  * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
 
   * [Getting Started with your trial of SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/)
 
@@ -117,11 +119,11 @@ The instructions on how to setup a free SAP HANA Cloud trial within the SAP Clou
 
   For more information on the SAP Cloud Platform see the following:
 
-  * [https://cloudplatform.sap.com/index.html](https://cloudplatform.sap.com/index.html)  
+  * <https://cloudplatform.sap.com/index.html>
 
-  * [https://developers.sap.com/topics/cloud-platform.html](https://developers.sap.com/topics/cloud-platform.html)  
+  * <https://developers.sap.com/topics/cloud-platform.html>
 
-  * [https://help.sap.com/viewer/product/CP/Cloud/en-US](https://help.sap.com/viewer/product/CP/Cloud/en-US)
+  * <https://help.sap.com/viewer/product/CP/Cloud/en-US>
 
 
 [DONE]

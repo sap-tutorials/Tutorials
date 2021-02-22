@@ -2,8 +2,8 @@
 title: Introduce Caching to Your Application
 description: Introduce caching to your application using the SAP Cloud SDK.
 auto_validation: true
-primary_tag: products>sap-s-4hana-cloud-sdk
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-cloud-platform, topic>cloud, topic>java ]
+primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-cloud-platform, topic>cloud, topic>java ]
 time: 15
 ---
 
@@ -41,7 +41,7 @@ Caching is applicable whenever:
 - Your cache will not need to store more data than what would fit in RAM. (By default, the cache is local to a single run of your application. It does not store data in files, or on outside servers.)
 
 
-If these requirements apply to your use case, then we highly recommend that you use the caching features provided by the SAP Cloud SDK in your application. Now that we have seen why caching is useful, we'll tend to what the Cloud SDK provides to an application in that regard.
+If these requirements apply to your use case, then we highly recommend that you use the caching features provided by the SAP Cloud SDK in your application. Now that you have seen why caching is useful, you will learn what the Cloud SDK provides to enable it.
 
 [DONE]
 [ACCORDION-END]
@@ -50,7 +50,7 @@ If these requirements apply to your use case, then we highly recommend that you 
 
 The Cloud SDK makes it easy to cache your requests since it handles most of the complexity under the hood. This includes handling of tenant-aware requests, which is essential in a multi-tenant application. The SDK will isolate the cache on a tenant or principal level automatically, if your request requires it.
 
-In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology. In this tutorial we will use the `JCache` adapter [Caffeine] (https://github.com/ben-manes/caffeine) for our purpose, but you can use any implementation you like. For Caffeine, add the following dependency to your application `pom.xml`:
+In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology. In this tutorial, you will use the `JCache` adapter [Caffeine] (https://github.com/ben-manes/caffeine) for this purpose, but you can use any implementation you like. For Caffeine, add the following dependency to your application `pom.xml`:
 
 ```XML
 <dependency>
@@ -66,9 +66,9 @@ In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology.
 
 [ACCORDION-BEGIN [Step 4: ](Cache your OData call)]
 
-Now that we have covered why caching is important and how it can help us improve performance and responsiveness, it's finally time to introduce it into our application.
+Now that we have covered why caching is important and how it can help us improve performance and responsiveness, it's finally time to introduce it into your application.
 
-In [the resilience tutorial] (https://developers.sap.com/tutorials/s4sdk-resilience.html), we introduced resilience into our application using `resilience4j`. Now, in order to make our OData calls cacheable, we will enhance the `ResilienceConfiguration` and add a `CacheConfiguration` to it.
+In [the resilience tutorial] (https://developers.sap.com/tutorials/s4sdk-resilience.html), you introduced resilience into your application using `resilience4j`. Now, in order to make our OData calls cacheable, you will enhance the `ResilienceConfiguration` and add a `CacheConfiguration` to it.
 
 Add the following lines at the end of the constructor of the `GetBusinessPartnerCommand`:
 
@@ -83,14 +83,14 @@ final ResilienceConfiguration.CacheConfiguration cacheConfig =
 myResilienceConfig.cacheConfiguration(cacheConfig);                         
 ```
 
-As mentioned above, we use our `ResilienceConfiguration` to integrate the caching functionality, which is described in a `CacheConfiguration`. There are two steps to our configuration:
+As mentioned above, the `ResilienceConfiguration` is used to integrate the caching functionality, which is described in a `CacheConfiguration`. There are two steps to your configuration:
 
 1. Determine how long objects are to be cached
 2. Declare the parameters that need to be stored together with the cached data
 
-The first step is obviously necessary, since we want to store the data for a limited amount of time. The longer we keep the cached information, the more outdated it will become. How long you want to keep data cached depends on your specific use case. How fast do you expect the information to be outdated? How frequently will the data be accessed? The timeout sets a trade-off between the data being up to date and the application being responsive.
+The first step is obviously necessary since data should be stored for a limited time only. The longer you keep the cached information, the more outdated it will become. How long you want to keep data cached depends on your specific use case. How fast do you expect the information to be outdated? How frequently will the data be accessed? The timeout sets a trade-off between the data is up to date and the application is responsive.
 
-Secondly, we specify the parameters that are to be cached with the data. For our request to retrieve a list of business partners no parameters are necessary, so we build our cache `wihtoutParameters`. But imagine you want to fetch information about a specific business partner by passing an ID to the system. In order to cache such a request the cache needs to not only remember the result received, but also the ID that was associated with it. In such a case one can simply pass such parameters by using `.withParameters(param1, param2, ..)`.
+Secondly, you specify the parameters that are to be cached with the data. For your request to retrieve a list of business partners no parameters are necessary, so you can build your cache `wihtoutParameters`. But imagine you want to fetch information about a specific business partner by passing an ID to the system. In order to cache such a request, the cache needs to not only remember the result received, but also the ID that was associated with it. In such a case one can simply pass such parameters by using `.withParameters(param1, param2, ..)`.
 
 Feel free to test that subsequent requests respond faster compared to the first request issued. Deploy your application locally or in the cloud and access the list of business partners a couple of times.
 
@@ -99,16 +99,17 @@ Feel free to test that subsequent requests respond faster compared to the first 
 
 [ACCORDION-BEGIN [Step 5: ](Test the cache)]
 
-Now that we have a working command with caching functionality we also have to adapt our test. Recall the test we prepared to check our resilient command falls back to an empty list in case of failure. Note that this behavior has now changed slightly.
+Now that you have a working command with caching functionality you also have to adapt your test. Recall the test you prepared to check your resilient command falls back to an empty list in case of failure. Note that this behavior has now changed slightly.
 
-If our servlet got the desired result cached from a previous call, and the ERP system is temporarily not available, our cache will still return the data. But the test expects the result to be empty in that case. In order to account for this behavior and to see if our cache is working as expected let's adapt the test to account for caching. Replace the `testWithFallback` test with the following code:
+If your servlet got the desired result cached from a previous call, and the ERP system is temporarily not available, your cache will still return the data. But the test expects the result to be empty in that case. In order to account for this behavior and to see if our cache is working as expected let's adapt the test to account for caching. Replace the `testWithFallback` test with the following code:
 
 `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
 
 ```Java
 @Test
 public void testCache() {
-    mockUtil.mockErpDestination("MyErpSystem", "ERP_001");
+    // TODO: insert your service URL down below
+    mockUtil.mockDestination(MockDestination.builder(DESTINATION_NAME, URI.create("https://URL")).build());
     when()
             .get("/businesspartners")
             .then()
@@ -127,16 +128,22 @@ public void testCache() {
 }
 ```
 
-Here, we expect the request still to be successful, even after swapping out the destination for a dummy one.
+Here, the test expects the request still to be successful, even after swapping out the destination for a dummy one.
+
+>If you are using the `systems.yml` and `credentials.yml` files (revisit step 4 of the [previous tutorial](https://developers.sap.com/tutorials/s4sdk-resilience.html)), mock the destination like this:
+```Java
+mockUtil.mockDestination(DESTINATION_NAME, "ERP_001");
+```
+
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](More on testing)]
 
-The introduction of caching has some implications for how we test our application. In order for tests to validate a single piece of functionality and for them to be reliable they must be independent of each other. The order of execution should not matter and one test may not depend on the successful execution of other tests. So far, this was the case for our integration tests. But now the added cache holds a state that is shared between the tests in our test class, which has to be accounted for.
+The introduction of caching has some implications for how you should test your application. In order for tests to validate a single piece of functionality and for them to be reliable they must be independent of each other. The order of execution should not matter and one test may not depend on the successful execution of other tests. So far, this was the case for your integration tests. But now the added cache holds a state that is shared between the tests in your test class, which has to be accounted for.
 
-Take a look back at the test we just replaced:
+Take a look back at the test you just replaced:
 
 ```Java
 @Test
@@ -154,7 +161,7 @@ public void testWithFallback() {
 }
 ```
 
-Executed on it's own, this test will still pass as it did before. However, if `testService` is run prior to this test the result will be cached and `testWithFallback` will fail since the cached data is returned instead of falling back to an empty list. By changing the test we avoided such issues since our new test does not interfere with other tests. While being sufficient for this tutorial, in a productive setting one should implement a more sophisticated and robust test setup, where caches are invalidated between tests.
+Executed on its own, this test will still pass as it did before. However, if `testService` is run prior to this test the result will be cached and `testWithFallback` will fail since the cached data is returned instead of falling back to an empty list. By changing the test you avoided such issues since your new test does not interfere with other tests. While being sufficient for this tutorial, in a productive setting one should implement a more sophisticated and robust test setup, where caches are invalidated between tests.
 
 This wraps up the tutorial. In the next step of this series you will learn how to secure your application on Cloud Foundry.
 

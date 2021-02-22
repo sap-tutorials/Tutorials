@@ -1,17 +1,17 @@
 ---
 title: Implement Your First Screen in an iOS App
-description: Implement the first screen of your SAP Cloud Platform SDK for iOS app.
+description: Implement the first screen of your SAP SDK for iOS app.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>ios-sdk-for-sap-btp ]
 time: 60
 ---
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0 or higher
+- **SAP SDK for iOS:** Version 5.0 or higher
 
 ## Details
 ### You will learn  
@@ -33,7 +33,7 @@ For this tutorial, you will implement an overview screen displaying a KPI Table 
 
 ![Overview Screen](fiori-ios-scpms-starter-mission-02-14.png)
 
-In the [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup), you've learned how to create an Xcode project using the SAP Cloud Platform SDK for iOS Assistant. The result of the generation process of the iOS Assistant can be a split view screen if chosen. In this tutorial you will change the generated UI to match the screen shown above, the overview screen of your app.
+In the [Set Up the SAP SDK for iOS](group.ios-sdk-setup), you've learned how to create an Xcode project using the SAP SDK for iOS Assistant. The result of the generation process of the iOS Assistant can be a split view screen if chosen. In this tutorial you will change the generated UI to match the screen shown above, the overview screen of your app.
 
 1. First, open you Xcode project if not opened already and select the **`Main.storyboard`**, this will open the `Main.storyboard` in the Interface Builder of Xcode.
 

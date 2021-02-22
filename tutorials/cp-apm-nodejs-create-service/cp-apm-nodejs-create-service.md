@@ -5,17 +5,17 @@ title: Create a Business Service with Node.js Using Visual Studio Code
 description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite, by using the SAP Cloud Application Programming Model (CAP) and developing on your local environment.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [  tutorial>beginner, topic>node-js, software-product-function>sap-cloud-application-programming-model  ]
+tags: [ tutorial>beginner, topic>node-js, products>sap-business-technology-platform, software-product-function>sap-cloud-application-programming-model ]
 time: 50
 ---
 
 
 ## Prerequisites
-- You've installed [Node.js](https://nodejs.org/en/download/releases/). Use long-term support (LTS) version 10 or 12. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
+- You've installed [Node.js](https://nodejs.org/en/download/releases/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
 - You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
-- (For Windows users only) You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/resources/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation.
+- (For Windows users only): You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation for more details.
 - You've installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
-- If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **Europe (Frankfurt) or US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
+- If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Business Technology Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **Europe (Frankfurt) or US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
 
 ## Details
 ### You will learn
@@ -37,13 +37,13 @@ Before you start, make sure that you've completed the prerequisites.
     npm i -g @sap/cds-dk
     ```
 
-    >This process takes some minutes installing the `cds` command, which you will use in the next steps.
+    > This process takes some minutes installing the `cds` command, which you will use in the next steps.
 
-    >On MacOS/Linux, you may need to follow the steps as described [here](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
+    > On MacOS/Linux, you may need to follow the steps as described [here](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
 
-    >If there's an older `@sap/cds` package already installed on the machine, you may have to remove it first; if so, you'll be instructed to do so.
+    > If there's an older `@sap/cds` package already installed on the machine, you may have to remove it first; if so, you'll be instructed to do so.
 
-    >In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
+    > In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) in the CAP documentation for more details.
 
 3. To verify that the installation was successful, run `cds` without arguments:
 
@@ -53,7 +53,7 @@ Before you start, make sure that you've completed the prerequisites.
 
     ![cds commands](cds_commands.png)
 
-    >This lists the available `cds` commands.  For example, use `cds version` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
+    > This lists the available `cds` commands. For example, use `cds version` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
 [DONE]
 
@@ -65,15 +65,17 @@ Before you start, make sure that you've completed the prerequisites.
 
 2. Choose **Install**.
 
-![Folder structure](VSCode_extension.png)
+   !![extension_marketplace](VSCode_extension.png)
 
-   Visual Studio Code opens the extensions details page.
+> Visual Studio Code opens the extensions details page.
 
-![Folder structure](VSCode_view_extension.png)
+3.Choose **Install** to enable the extension for SAP CDS Language Support.
 
-3. In Visual Studio Code choose **Install** to enable the extension for CDS Language Support.
+   ![extension_VSCode](VSCode_view_extension.png)
 
-> If the extension is already installed and enabled in VS Code, it will be updated automatically. Learn more about the features in this short [demo](https://community.sap.com/topics/cloud-application-programming).
+> If the extension is already installed and enabled in VS Code, it will be updated automatically.
+
+> Learn more about the features in this short [demo](https://www.youtube.com/watch?v=eY7BTzch8w0) and see the [features and commands](https://cap.cloud.sap/docs/get-started/tools#cds-editor) in the CAP documentation.
 
 [DONE]
 
@@ -91,7 +93,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
     cds init my-bookshop
     ```
 
-    >This creates a folder `my-bookshop` in the current directory.
+    > This creates a folder `my-bookshop` in the current directory.
 
 2. Open Visual Studio Code, go to **File** > **Open Folder** and choose the **`my-bookshop`** folder.
 
@@ -107,7 +109,9 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
       cds watch
     ```
 
-    >This command tries to start a `cds` server. Whenever you feed your project with new content, for example, by adding or modifying `.cds`, `.json`, or `.js` files, the server automatically restarts to serve the new content. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
+    > This command tries to start a `cds` server. Whenever you feed your project with new content, for example, by adding or modifying `.cds`, `.json`, or `.js` files, the server automatically restarts to serve the new content.
+
+    > As there's no content in the project so far, it just keeps waiting for content with a message as shown:
 
     ```
     cds serve all --with-mocks --in-memory?
@@ -128,7 +132,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
     cds init my-bookshop
     ```
 
-    >This creates a folder `my-bookshop` in the current directory.
+    > This creates a folder `my-bookshop` in the current directory.
 
 2. Open Visual Studio Code, go to **File** > **Open** and choose the **`my-bookshop`** folder.
 
@@ -142,7 +146,10 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
     ```Shell/Bash
       cds watch
     ```
-    >This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
+
+    > This command tries to start a `cds` server. Whenever you feed your project with new content, for example, by adding or modifying `.cds`, `.json`, or `.js` files, the server automatically restarts to serve the new content.
+
+    > As there's no content in the project so far, it just keeps waiting for content with a message as shown:
 
     ```
     cds serve all --with-mocks --in-memory?
@@ -201,7 +208,7 @@ After initializing the project, you should see the following empty folders:
     }
     ```
 
-    >Remember to save your files (keyboard shortcut **CTRL+S**).
+    > Remember to save your files (keyboard shortcut **CTRL+S**).
 
 3. As soon as you've saved your file, the still running `cds watch` reacts immediately with some new output as shown below:
 
@@ -216,11 +223,13 @@ After initializing the project, you should see the following empty folders:
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
-    >This means, `cds watch` detected the changes in `srv/cat-service.cds` and automatically bootstrapped an in-memory SQLite database when restarting the server process.
+    > This means, `cds watch` detected the changes in `srv/cat-service.cds` and automatically bootstrapped an in-memory SQLite database when restarting the server process.
 
 4. To test your service, go to: <http://localhost:4004>
 
-    >You won't see data, because you haven't added a data model yet. However, click on the available links to see the service is running.
+!![application](application_local.png)
+
+> You won't see data, because you haven't added a data model yet. Click on the available links to see the service is running.
 
 [DONE]
 
@@ -255,7 +264,7 @@ Add service provider logic to return mock data.
     }
     ```
 
-    >Remember to save your files.
+    > Remember to save your files (keyboard shortcut **CTRL+S**).
 
 3. To test your service, click on these links:
 
@@ -263,7 +272,7 @@ Add service provider logic to return mock data.
 
     - <http://localhost:4004/catalog/Authors>
 
-    >You should see the mock data that you've added for the `Books` and `Authors` entities.
+    > You should see the mock data that you've added for the `Books` and `Authors` entities.
 
 [DONE]
 
@@ -314,7 +323,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
     }
     ```
 
-    >Remember to save your files.
+    > Remember to save your files (keyboard shortcut **CTRL+S**).
 
 [DONE]
 
@@ -344,11 +353,11 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
     252;Eleonora;150;555
     271;Catweazle;170;22
     ```
-    >Remember to save your files.
+    > Remember to save your files (keyboard shortcut **CTRL+S**).
 
-    >Make sure that you now have a folder hierarchy `db/csv/...`. Remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/csv` folder.
+    > Make sure that you now have a folder hierarchy `db/csv/...`. Remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/csv` folder.
 
-    >After you added these files, `cds watch`restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
+    > After you added these files, `cds watch`restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
 
     ```
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
@@ -372,11 +381,11 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
 
     <http://localhost:4004/catalog/Authors>
 
-    >As you now have a fully capable SQL database with some initial data, you can send complex OData queries, served by the built-in generic providers.
+    > As you now have a fully capable SQL database with some initial data, you can send complex OData queries, served by the built-in generic providers.
 
     <http://localhost:4004/catalog/Authors?$expand=books($select=ID,title)>
 
-    >You should see a book titled Jane Eyre. If not, make sure you've removed the mock data from `cat-service.js`.
+    > You should see a book titled Jane Eyre. If not, make sure you've removed the mock data from `cat-service.js`.
 
 [DONE]
 
@@ -402,10 +411,11 @@ Instead of using in-memory, you can also use persistent databases.
     cds deploy --to sqlite:db/my-bookshop.db
     ```
 
-    >You've now created an `SQLite` database file under `db/my-bookshop.db`.
+    > You've now created an `SQLite` database file under `db/my-bookshop.db`.
 
-    >This configuration is saved in your `package.json` as your default data source. For subsequent deployments using the default configuration, you just need to run `cds deploy`.
-    The difference to the automatically provided in-memory database is that you now get a persistent database stored in the local file.
+    > This configuration is saved in your `package.json` as your default data source. For subsequent deployments using the default configuration, you just need to run `cds deploy`.
+
+    > The difference to the automatically provided in-memory database is that you now get a persistent database stored in the local file.
 
 4. Open `SQLite` and view the newly created database:
 
@@ -413,7 +423,7 @@ Instead of using in-memory, you can also use persistent databases.
     sqlite3 db/my-bookshop.db -cmd .dump
     ```
 
-    >If this doesn't work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db/my-bookshop.db -cmd .dump`.
+    > If this doesn't work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db/my-bookshop.db -cmd .dump`. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation for more details.
 
 5. To stop `SQLite` and go back to your project directory, press **CTRL+C**.
 
@@ -443,22 +453,22 @@ You can now see the generic handlers shipped with CAP in action.
 
 1. Open the Postman application.
 
-    >You can use any other HTTP client than Postman.
+    > You can use any other HTTP client than Postman.
 
 
 2. Click on the following link and save the file to a folder of your choice: [postman.json](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-nodejs-create-service/postman.json).
 
 3. In the Postman app, use the **Import** button in the toolbar:
 
-    ![Postman import](postman-import.png)
+    !![Postman import](postman-import.png)
 
 4. Choose **Import File** in the wizard. Click on **Choose Files** and select the file that you've saved before or add it per drag & drop  directly.
 
-    ![Postman import from file](postman-import-from-file.png)
+    !![Postman import from file](postman-import-from-file.png)
 
 5. In the imported collection, execute the various requests in the `metadata` and `CRUD` groups. They should all return proper responses.
 
-    ![Test the request](postman-test-request.png)
+    !![Test the request](postman-test-request.png)
 
     > With your current service implementation, you can get only `POST` orders. Any `GET` or `DELETE` to an order fails, since you've specified the `Orders` entity to be `@insertonly` in `srv/cat-service.cds`.
 
@@ -495,23 +505,23 @@ You can now see the generic handlers shipped with CAP in action.
 
     }
     ```
-    >Remember to save your files.
+    > Remember to save your files (keyboard shortcut **CTRL+S**).
 
-    >Whenever orders are created, this code is triggered. It updates the book stock by the given amount, unless there aren't enough books left.
+    > Whenever orders are created, this code is triggered. It updates the book stock by the given amount, unless there aren't enough books left.
 
 2. In Postman, execute the `GET Books` request.
 
-    >Look at the stock of book `201`.
+    > Look at the stock of book `201`.
 
-    ![Test the request](postman-get-books.png)
+    !![Test the request](postman-get-books.png)
 
 3. Execute one of the `POST Orders` requests.
 
-    >This triggers the logic above and reduce the stock.
+    > This triggers the logic above and reduce the stock.
 
 4. Execute the `GET Books` request again.
 
-    >The stock of book `201` is lower than before.
+    > The stock of book `201` is lower than before.
 
 [DONE]
 

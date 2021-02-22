@@ -4,14 +4,14 @@ description: Use Xcode to change the generated UI and add your own views to the 
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>ios-sdk-for-sap-btp ]
 time: 25
 ---
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0 or newer
+- **SAP SDK for iOS:** Version 5.0 or newer
 
 ## Details
 ### You will learn  
@@ -28,7 +28,7 @@ Usually a business application has some sort of overview screen giving the user 
 
 > If you're interested in the HIG of SAP for SAP Fiori for iOS, visit: [SAP Fiori for iOS Design Guidelines](https://experience.sap.com/fiori-design-ios/)
 
-In the last tutorial, you've learned how to create an Xcode project using the SAP Cloud Platform SDK for iOS Assistant. The result of the generation process of the iOS Assistant can be a split view screen if chosen. In this tutorial you will change the generated UI to make your own.
+In the last tutorial, you've learned how to create an Xcode project using the SAP SDK for iOS Assistant. The result of the generation process of the iOS Assistant can be a split view screen if chosen. In this tutorial you will change the generated UI to make your own.
 
 1. First, open your Xcode project if not opened already and select the **`Main.storyboard`**, this will open the `Main.storyboard` in the Interface Builder of Xcode.
 

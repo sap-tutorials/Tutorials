@@ -9,7 +9,7 @@ time: 75
 
 ## Prerequisites  
 - You have done one of the following:
-    - You have a valid instance of SAP Cloud Platform, ABAP Environment. For more information, see **Tutorial**: [Create Your First ABAP Console Application](abap-environment-console-application), steps 1-2
+    - You have a valid instance of SAP Business Technology Platform (BTP) ABAP Environment. For more information, see **Tutorial**: [Create Your First ABAP Console Application](abap-environment-console-application), steps 1-2
     - You have a valid instance of an on-premise AS ABAP server, version 7.52 or higher. (The text-based Table Editor is not available for earlier ABAP server versions). For a free AS ABAP server, 7.52, SP04, see [SAP Developers: Trials and Downloads - 7.52](https://developers.sap.com/trials-downloads.html?search=7.52)
 - You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), latest version
 - You have downloaded or pulled the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
@@ -415,11 +415,7 @@ You can also right click on the table and choose **Copy All Rows as ABAP Value S
 
 
 ### More Information
-- SAP Help Portal: [Database Tables](https://help.sap.com/viewer/ec1c9c8191b74de98feb94001a95dd76/7.5.9/en-US/cf21ea43446011d189700000e8322d00.html)
-
-- SAP Help Portal: [Domains, Data ELements, and Field Names](https://help.sap.com/saphelp_47x200/helpdata/en/90/8d72feb1af11d194f600a0c929b3c3/frameset.htm)
-
-- SAP Help Portal: [ABAP Dictionary Editors](https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.52.2/en-US/a02fc1a064b94373a853cb07cba24fb9.html)
+- SAP Help Portal: [Database Tables](https://help.sap.com/viewer/ec1c9c8191b74de98feb94001a95dd76/7.51.11/en-US/cf21ea43446011d189700000e8322d00.html)
 
 - ABAP Keyword Documentation: [Domains](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abenddic_domains.htm)
 
