@@ -1,42 +1,46 @@
 ---
 title: Automate Operations with the Command-Line Interface (CLI)
-description: Automate your account administrative flows with the Command-Line Interface for SAP Cloud Platform (sapcp CLI).
+description: Automate your account administrative flows with the SAP BTP command-line interface (sapcp CLI).
 author_name: Michal Keidar
 author_profile: https://github.com/michal-keidar
 auto_validation: true
 time: 30
-tags: [tutorial>intermediate, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform
+tags: [tutorial>intermediate, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
 ---
 
-With the introduction of cloud management tools feature set B to SAP Cloud Platform, the stars of the show are without a doubt the new REST APIs and command line. With these features, you now have many more options to automate your account administrative flows in SAP Cloud Platform.
+With the introduction of cloud management tools feature set B to SAP BTP, the stars of the show are without a doubt the new REST APIs and command line. With these features, you now have many more options to automate your account administrative flows in SAP BTP.
 
-The REST APIs are offered for each administrative operation available in the SAP Cloud Platform cockpit. The API Reference is integrated into the SAP API Business Hub so users can quickly learn how to leverage it for your own use cases. For example, for automating manual operations that until now could only be done via the cockpit.  
+The REST APIs are offered for each administrative operation available in the SAP BTP cockpit. The API Reference is integrated into the SAP API Business Hub so users can quickly learn how to leverage it for your own use cases. For example, for automating manual operations that until now could only be done via the cockpit.  
 
-If you prefer to use a terminal with CLI commands, the CLI for SAP Cloud Platform (sapcp CLI) also offers the operations available in the cockpit, with an integrated help so that you can quickly identify and execute commands to operate  your SAP Cloud Platform account and your resources manually or automatically via scripts.
+If you prefer to use a terminal with CLI commands, the SAP BTP command line interface (sapcp CLI) also offers the operations available in the cockpit, with an integrated help so that you can quickly identify and execute commands to operate  your global account in SAP BTP and your resources manually or automatically via scripts.
 
 >This tutorial is designed for a UNIX-like environment, such as macOS or Linux.
 
 ### About this tutorial
-In this tutorial, you are a DevOps engineer for Atomic, which develops innovative solutions for its customers on top of SAP Cloud Platform. Atomic also uses partner companies for developing solutions. 
+In this tutorial, you are a DevOps engineer for Atomic, which develops innovative solutions for its customers on top of SAP BTP. Atomic also uses partner companies for developing solutions. 
 
-Every time a new development project begins, Atomic's DevOps department needs to set up a development environment on SAP Cloud Platform.
+Every time a new development project begins, Atomic's DevOps department needs to set up a development environment on SAP BTP.
 
-According to Atomic's guidelines and standards, each such development environment must include in their account model a directory, which contains three subaccounts for each of the relevant stages, namely, Dev, Test, and Prod. In addition, each subaccount must have an entitlement for two services:  Alert Notification and HANA Cloud.
+According to Atomic's guidelines and standards, each such development environment must include in their account model a directory, which contains three subaccounts for each of the relevant stages, namely, Dev, Test, and Prod. In addition, each subaccount must have an entitlement for two services:  
+
+-	SAP Alert Notification service for SAP BTP
+
+-	SAP HANA Cloud
  
 Setting up such an environment for each new project can be very tedious and time-consuming. Luckily, the sapcp CLI can be used to automate these operations -- a new environment can be set up very quickly with the single click of a button. 
 
-In this tutorial, you act as a member of Atomic's DevOps department. Your department has decided to use the sapcp CLI to automate these operations, including the creation of a Cloud Foundry space and an instance of the HANA Cloud service in the space.
+In this tutorial, you act as a member of Atomic's DevOps department. Your department has decided to use the sapcp CLI to automate these operations, including the creation of a Cloud Foundry space and an instance of the SAP HANA Cloud service in the space.
 
 For this example, you can download an automation script that we've prepared in advance and execute it to set up the new environment. 
 
 The script will do the following: 
 
-1.  Log in to SAP Cloud Platform. 
+1.  Log in to your global account on  SAP BTP. 
 
 2.  Create a new directory in your account model. 
 
-3.  Assign two service entitlement plans (for the SAP HANA Cloud and the SAP Cloud Platform Alert Notification services) to the directory.
+3.  Assign two service entitlement plans (for the SAP HANA Cloud and the SAP Alert Notification services) to the directory.
 
 4.  Create three subaccounts in the directory. 
 
@@ -48,10 +52,10 @@ The script will do the following: 
 
 8.  Create an instance of the SAP HANA Cloud (`hana`) service in the space.
 
-Through this tutorial, we hope we can help you to unleash the power of CLI script-based automation on SAP Cloud Platform for your account admin processes on SAP Cloud Platform.
+Through this tutorial, we hope we can help you to unleash the power of CLI script-based automation for your account admin processes on SAP BTP.
 
 ## Prerequisites
--	You have a trial account on SAP Cloud Platform. For a trial account, see [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
+-	You have a trial account on SAP BTP. For a trial account, see [Get a Free Account on SAP BTP Trail](hcp-create-trial-account).
 -	You have the Cloud Foundry CLI , as described in [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
 - You have a UNIX-like environment.
 
@@ -59,7 +63,7 @@ Through this tutorial, we hope we can help you to unleash the power of CLI scrip
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Download and install the client)]
-To get started with the command-line interface for SAP Cloud Platform (sapcp CLI), please follow [this tutorial](cp-sapcp-getstarted).
+To get started with the SAP BTP command line interface (sapcp CLI), please follow [this tutorial](cp-sapcp-getstarted).
 
 [DONE]
 [ACCORDION-END]
@@ -116,7 +120,7 @@ log() { 
 } 
 ```
 
-This function performs the login to SAP Cloud Platform:
+This function performs the login to your global account on SAP BTP:
 
 ```Bash
 login_sapcp() { 
@@ -126,7 +130,7 @@ login_sapcp() { 
   local region=$3 
   local subdomain=$4 
  
-  log Authenticating with SAP Cloud Platform 
+  log Authenticating with SAP BTP 
   sapcp login \ 
     --url "https://cpcli.cf.${region}.hana.ondemand.com" \ 
     --subdomain "$subdomain" \ 
@@ -135,7 +139,7 @@ login_sapcp() { 
  
 } 
 ```
->If two-factor authentication (2FA) is activated on the SAP Cloud Platform landscape, then you need to append the passcode generated by the SAP Authenticator to your password.
+>If two-factor authentication (2FA) is activated on the SAP BTP landscape, then you need to append the passcode generated by the SAP Authenticator to your password.
 
 >For example, if your password is `Abcd` and the authenticator-generated passcode is `1234`, enter the password as `Abcd1234`.
 
@@ -180,7 +184,7 @@ The following function assigns the service and plan it receives as input, as an 
 
 In the `main` function of the script, we'll use the following function to assign two service entitlements to your directory:  
 
--	SAP Cloud Platform Alert Notification (`standard`)
+-	SAP Alert Notification service (`standard`)
 -	SAP HANA Cloud (`hana`)
 
 Since `distribute` and `auto-assign` are specified, every subaccount that is created in or moved to the directory will automatically be assigned these entitlements as well (as long as the directory has remaining quota for these services). 
@@ -279,7 +283,7 @@ login_cf() { 
 } 
 ```
 
->If two-factor authentication (2FA) is activated on the SAP Cloud Platform landscape, then you need to append the passcode generated by the SAP Authenticator to your password.
+>If two-factor authentication (2FA) is activated on the SAP BTP landscape, then you need to append the passcode generated by the SAP Authenticator to your password.
 
 >For example, if your password is `Abcd` and the authenticator-generated passcode is `1234`, enter the password as `Abcd1234`.
 
@@ -309,13 +313,13 @@ main() { 
  
   local user pass directory_id subaccount subaccount_id org 
  
-  # Obtain credentials for SAP Cloud Platform P / Cloud FoundryF 
-  echo Please enter your SAP Cloud Platform credentials 
+  # Obtain credentials for SAP BTP / Cloud Foundry 
+  echo Please enter your SAP BTP trail credentials 
   read -r -p 'Email: ' user 
   read -r -s -p 'Password: ' pass 
   echo 
  
-  # Authenticate with SAP Cloud Platform 
+  # Authenticate with SAP BTP 
   login_sapcp "$user" "$pass" "$region" "$global_account_subdomain" 
  
   # Create new directory 
@@ -344,7 +348,7 @@ main() { 
     log "Waiting for subaccount creation to complete ..." 
     sleep "$delay" 
  
-    # Create a CF Cloud Foundry environment in the new subaccount 
+    # Create a Cloud Foundry environment in the new subaccount 
     create_cf_environment "$subaccount" "$subaccount_id" "${subaccount}_org" 
  
   done 
@@ -358,7 +362,7 @@ main() { 
   # Create new space and target it 
   create_new_space "$org" "$space" 
  
-  # Create HANA Cloud trial service in targeted space 
+  # Create SAP HANA Cloud trial service in targeted space 
   echo Creating HANA Cloud trial service ... 
   cf create-service hana-cloud-trial hana hana_instance \ 
     -c ' 
@@ -400,7 +404,7 @@ Open your terminal in the location in which you saved it, then execute i
 
 [ACCORDION-BEGIN [Step 6: ](See the results)]
 
-Once the script has finished executing, open your SAP Cloud Platform trial cockpit and locate the new directory, subaccounts, entitlements, org, space, and the instance of the HANA Cloud service. 
+Once the script has finished executing, open your SAP BTP Trial cockpit and locate the new directory, subaccounts, entitlements, org, space, and the instance of the SAP HANA Cloud service. 
 
 Here's what you should find.
 
