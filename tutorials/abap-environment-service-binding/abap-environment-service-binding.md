@@ -12,7 +12,8 @@ author_profile: https://github.com/mervey45
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - Install ABAP Development Tools or Eclipse
-- Inform yourself about the [Virtual Data Model (VDM) Guidelines](https://help.sap.com/viewer/8308e6d301d54584a33cd04a9861bc52/1909.000/en-US/8573b810511948c8a99c0672abc159aa.html)
+- Inform yourself about the [Virtual Data Model (VDM) guidelines](https://help.sap.com/viewer/8308e6d301d54584a33cd04a9861bc52/1909.000/en-US/8573b810511948c8a99c0672abc159aa.html)
+- Inform yourself about the [naming conventions for Development Objects](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/8b8f9d8f3cb948b2841d6045a255e503.html)
 
 ## Details
 ### You will learn  
@@ -235,7 +236,9 @@ You want to [**create a RAP Managed Business Object**](https://help.sap.com/view
 
  ---
 
-The creation of Core Data Services-View (CDS-View) takes here place. CDS views are the foundation of each business object node.
+The creation of Core Data Services-View (CDS-View) takes place [here](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/3070e4fa2dba45efb600d5ca6c845b9f.html). CDS views are the foundation of each business object node.
+
+>Hint: The data model must consist only of client dependent tables.
 
   1. Right-click on **`Z_Calendar_XXX`**, select **New** > **Other ABAP Repository Object**.
 
@@ -266,9 +269,6 @@ The creation of Core Data Services-View (CDS-View) takes here place. CDS views a
 
   6. Add the annotation `"@Semantics.systemDateTime.lastChangedAt: true" to field "last_changed_at" and annotation "@Semantics.systemDateTime.localInstanceLastChangedAt: true" to field "local_last_changed_at"`. Both fields will be used for optimistic concurrency locking.
 
-      ![view](cds8x.png)
-
-
   7. Your code should look like this:
 
     ```ABAP
@@ -292,6 +292,8 @@ The creation of Core Data Services-View (CDS-View) takes here place. CDS views a
   8. Save and activate.
 
     Now we created a CDS view for the database table. Up to now the CDS view only exposes the database table fields and adds some annotations to the table. Later in this tutorial we will extend the CDS view to define the relationships between the database tables.
+
+
 
 [DONE]
 [ACCORDION-END]
@@ -323,9 +325,6 @@ Now it is time to create behavior definition. The behavior definition defines th
     with draft;
     ```
 
-      This defines the root node as main locking object to avoid multiple persons editing the same object.
-      Sub nodes have to be defined as lock dependent later on.
-
   5. Uncomment the alias in line 4 and choose as alias name `HolidayRoot`.
 
     ```ABAP
@@ -337,6 +336,9 @@ Now it is time to create behavior definition. The behavior definition defines th
     ```ABAP
     lock master total etag last_changed_at
     ```
+
+    This defines the root node as main locking object to avoid multiple persons editing the same object.
+    Sub nodes have to be defined as lock dependent later on.
 
   7. Add draft table `zcal_d_holi_xxx`
 

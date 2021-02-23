@@ -35,7 +35,7 @@ You can find more details in the [Mobile Development Kit developer page](https:/
 
 Make sure that you have completed required prerequisites mentioned in this tutorial.
 
-1. Navigate to [SAP Mobile Services cockpit on Cloud Foundry environment](fiori-ios-hcpms-setup).
+1. Navigate to [SAP Mobile Services cockpit](fiori-ios-hcpms-setup).
 
 2. On the home screen, select **Create new app**.
 
