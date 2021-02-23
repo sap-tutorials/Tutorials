@@ -1,5 +1,5 @@
 ---
-title: Automate Operations with the Command-Line Interface (CLI)
+title: Automate Operations with the Command Line Interface (CLI)
 description: Automate your account administrative flows with the SAP BTP command-line interface (sapcp CLI).
 author_name: Michal Keidar
 author_profile: https://github.com/michal-keidar
