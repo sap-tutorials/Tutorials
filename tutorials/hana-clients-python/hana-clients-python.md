@@ -178,7 +178,7 @@ pip install hdbcli
 
     You may replace `python` with `python3` if the above command doesn't work.
 
-    ![python Query](python_app.png)
+    ![python Query](python-app.png)
 
 The code in `pythonQuery.py` uses [PEP 249 -- Python Database API Specification](https://www.python.org/dev/peps/pep-0249/), which defines a set of methods that provide a consistent database interface, independent of the actual database being used.   
 
