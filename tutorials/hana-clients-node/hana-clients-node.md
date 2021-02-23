@@ -89,7 +89,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     npm list
     ```
 
-    ![npm list](npm_list.png)
+    ![npm list](npm-list.png)
 
 > ### Some Tips
 
@@ -241,7 +241,7 @@ export DEBUG=*
 node nodeQuery.js
 >```    
 
-> ![debug output](debug_flag.png)
+> ![debug output](debug-flag.png)
 
 > The value of the environment variable DEBUG can be seen and removed with the commands below.
 
