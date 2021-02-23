@@ -305,12 +305,17 @@ The first step is to create a central class, which offers some transport change 
         ASSIGN create->* TO <create_table>.
         <create_table> = CORRESPONDING #( <keys> ).
 
+          IF me->use_table_scomp_transport = abap_true.
+          DATA(transport) = get_table_scomp_transport( table_entity_relation-table ).
+        ENDIF.
+
         DATA(messages) =
           transport(
             check_mode = abap_true
-            table_keys  = VALUE #( ( table = table_entity_relation-table keys = create ) ) ).
+            table_keys  = VALUE #( ( table = table_entity_relation-table keys = create ) )
+            transport_request = transport ).
 
-        IF me->use_table_scomp_transport = abap_true AND get_table_scomp_transport( table_entity_relation-table ) IS INITIAL.
+        IF me->use_table_scomp_transport = abap_true AND transport IS INITIAL.
           APPEND VALUE #( msgty = 'E' msgid = 'TK' msgno = '011' ) TO messages.
         ENDIF.
 
