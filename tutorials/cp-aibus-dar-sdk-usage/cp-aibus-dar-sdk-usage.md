@@ -3,7 +3,7 @@ title: Use the SDK for Data Attribute Recommendation
 description: Use the Python SDK to train machine learning models and run inference requests.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 

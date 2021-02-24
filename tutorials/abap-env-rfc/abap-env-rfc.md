@@ -15,6 +15,7 @@ author_profile: https://github.com/julieplummer20
 - You have set up SAP Cloud Platform, ABAP Environment, for example by using the relevant booster: [Using a Booster to Automate the Setup of the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cd7e7e6108c24b5384b7d218c74e80b9.html)
 - **Tutorial**: [Create Your First Console Application](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html), for a licensed user, steps 1-2
 -	You have developer rights to an ABAP on-premise system, such as:
+    - [AS ABAP developer edition, latest version](https://blogs.sap.com/2019/07/01/as-abap-752-sp04-developer-edition-to-download/) or:
     - [SAP S/4HANA 1809 fully activated appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/) or:
     - [The SAP Gateway Demo System (ES5)](https://blogs.sap.com/2017/12/05/new-sap-gateway-demo-system-available/)
 -	In this on-premise system, you have installed SAP Cloud Connector with Administrator rights. (In the above systems, this is pre-installed)
@@ -25,7 +26,7 @@ author_profile: https://github.com/julieplummer20
   - How to create a destination service instance with an RFC connection
   - How to test the connection using an ABAP handler class
 
-Throughout this tutorial, replace `XXX` with your initials or group number.
+Throughout this tutorial, replace `XXX` or `JP` with your initials or group number.
 
 **The problem:**
 
@@ -68,14 +69,14 @@ First, you need to connect your ABAP on-premise system to a Cloud Foundry subacc
     |  Display Name    | (Subaccount) Display Name. You can find this in by choosing your subaccount in SAP Cloud Cockpit (see screenshot below)
     |  Subaccount User          |
     |  Password   |
-    |  Location ID | Optional here. However, it is mandatory if you want to connect several Cloud Connectors to your subaccount. This can be any text, e.g. `NPL_XXX` as here:
+    |  Location ID | Optional here. However, it is mandatory if you want to connect several Cloud Connectors to your subaccount. This can be any text, e.g. `XXX` for your initials or group number as here
 
     !![step1a-cf-name-id-subac](step1a-cf-name-id-subac.png)
 
-Your configuration should now look like this. Note down the **Location ID**, here **`NPL_JP`** (Change this to your own initials.)
+Your configuration should now look like this. Note down the **Location ID**, here **`XXX`**. You will need it later.
 
   !![step1b-add-subaccount](step1b-add-subaccount.png)
-  !![step1b-cf-check-scc](step1b-cf-check-scc.png)
+  !![step1c-cf-check-scc-xxx](step1c-cf-check-scc-xxx.png)
 
 [DONE]
 [ACCORDION-END]
@@ -142,7 +143,6 @@ In the SAP Cloud Platform Cockpit of your Cloud Foundry subaccount, choose **Clo
 
 !![step4a-cf-cloud-connectors-in-sap-cloud-cockpit](step4a-cf-cloud-connectors-in-sap-cloud-cockpit.png)
 
-
 > The location ID points to the correct SAP Cloud Connector (located in the on-Premise system); The virtual host points to the on-Premise connection mapped in SAP Cloud Connector.
 
 [DONE]
@@ -160,10 +160,10 @@ You will now create a destination in the ABAP Environment. This must be created 
 
     |  Field Name     | Value
     |  :------------- | :-------------
-    |  Name           | e.g. **`NPL_RFC`** as here
+    |  Name           | e.g. **`NPL_JP`** as here
     |  Type           | **`RFC`**
     |  Description    | Can be anything, here **`NPL`**
-    |  Location ID    | same as in step 1, e.g. **`NPL_XXX`**
+    |  Location ID    | same as in step 1, e.g. **`XXX`**
     |  User   | Your user for the on-premise system, e.g. DEVELOPER
     |  Password | Your password
 
@@ -213,7 +213,7 @@ Create the data types that specify your remote connection information, replacing
 
     ```ABAP
     DATA(lo_destination) = cl_rfc_destination_provider=>CREATE_BY_CLOUD_DESTINATION(
-                            i_name                  = 'NPL_RFC'
+                            i_name                  = 'NPL_JP'
 
                            ).
 
@@ -280,7 +280,7 @@ CLASS ZCL_A4C_RFC_XXX IMPLEMENTATION.
   METHOD IF_OO_ADT_CLASSRUN~MAIN.
     TRY.
       DATA(lo_destination) = cl_rfc_destination_provider=>CREATE_BY_CLOUD_DESTINATION(
-                              i_name                  = 'NPL_RFC'
+                              i_name                  = 'NPL_JP'
                              ).
 
       DATA(lv_destination) = lo_destination->get_destination_name( ).
@@ -304,7 +304,7 @@ ENDCLASS.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Test the class)]
+[ACCORDION-BEGIN [Step 13: ](Test the class)]
 1. Save and activate the class, using **`Ctrl+S, Ctrl+F3`**.
 
 2. Run the class by choosing **`F9`**. Some system information, such as the hostname, the System ID ( `<SID>` ), and the IP address should be displayed.
@@ -312,12 +312,12 @@ ENDCLASS.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Test yourself)]
+[ACCORDION-BEGIN [Step 14: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Add error handling to the class for the RFC connection )]
+[ACCORDION-BEGIN [Step 15: ](Add error handling to the class for the RFC connection )]
 1. Go back to your RFC class. Remove the period (.) after the IMPORTING parameter and add the following exception parameters to the function call `RFC_SYSTEM_INFO`:
 
     ```ABAP
@@ -358,18 +358,16 @@ For more information on SAP Cloud Platform:
 - SAP Help Portal: [Getting Started With a Customer Account](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html) - If you use the booster, these steps are performed automatically for you, but you may be interested in the background information
 
 For more information on connectivity in this context, see:
-- [SAP Help Portal: SAP Cloud Connector](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/642e87f1492146998a8eb0779cd07289.html)
+- SAP Help Portal: [SAP Cloud Connector](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/642e87f1492146998a8eb0779cd07289.html)
 
-- [SAP Help Portal: Setting Up Destinations to Enable On-Premise Connectivity](https://help.sap.com/viewer/DRAFT/65de2977205c403bbc107264b8eccf4b/Dev/en-US/9b6510edf4d844a28f022b3db41f3202.html)
+- SAP Help Portal: [Setting Up Destinations to Enable On-Premise Connectivity](https://help.sap.com/viewer/DRAFT/65de2977205c403bbc107264b8eccf4b/Dev/en-US/9b6510edf4d844a28f022b3db41f3202.html)
 
-- [SAP Help Portal: Set Up an RFC Destination](https://help.sap.com/viewer/DRAFT/60f1b283f0fd4d0aa7b3f8cea4d73d1d/Internal/en-US/a69e99c457a54ff881adcff843eea950.html)
+- SAP Help Portal: [Set Up an RFC Destination](https://help.sap.com/viewer/DRAFT/60f1b283f0fd4d0aa7b3f8cea4d73d1d/Internal/en-US/a69e99c457a54ff881adcff843eea950.html)
 
 For more information on OData services and SAP Gateway in general, see:
 
 - [OData service development with SAP Gateway using CDS](https://blogs.sap.com/2016/06/01/odata-service-development-with-sap-gateway-using-cds-via-referenced-data-sources/) - pertains to on-premise Systems, but contains lots of useful background information on the relationships between CDS views and OData services
 
 - [OData – Everything that you need to know](https://blogs.sap.com/2016/02/08/odata-everything-that-you-need-to-know-part-1/) - especially Parts 1-3 (Community content)
-
-- [How to call a remote function module in your on-premise SAP system from SAP Cloud Platform – ABAP Environment](https://blogs.sap.com/2019/02/28/how-to-call-a-remote-function-module-in-your-on-premise-sap-system-from-sap-cloud-platform-abap-environment/)
 
 ---

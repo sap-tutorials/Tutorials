@@ -2,8 +2,8 @@
 title: Connect to OData service on Neo using SAP Cloud SDK
 description: Create a basic Java project to call OData services using the SAP Cloud SDK on Neo.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java, topic>odata ]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java, topic>odata ]
+primary_tag: products>sap-cloud-sdk
 time: 20
 ---
 

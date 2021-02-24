@@ -1,15 +1,19 @@
 ---
-title: Create a Calculation View with Differential Privacy
+title: Create a Calculation View with Differential Privacy in SAP Web IDE
 description: Use differential privacy to anonymize confidential data
 auto_validation: true
 time: 20
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 tags: [ tutorial>beginner, products>sap-hana, tutorial>license]
 primary_tag: products>sap-cloud-platform--sap-hana-service
 ---
 
 ## Prerequisites
+ - This tutorial is designed for SAP HANA service for SAP Business Technology Platform. Consider newer tutorials designed for SAP HANA Cloud.
  - You have completed the previous tutorials to load data into the table `TGT_SALARIES`
 
+>**This tutorial cannot be completed with a trial account.**
 
 ## Details
 ### You will learn
@@ -57,7 +61,7 @@ For example:
 
 ![Configure privacy](7.png)
 
-> For more information about these parameters check the [SAP HANA Security Guide](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/2.0.04/en-US/ace3f36bad754cc9bbfe2bf473fccf2f.html)
+> For more information about these parameters check the [SAP HANA Security Guide](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/latest/en-US/ace3f36bad754cc9bbfe2bf473fccf2f.html)
 
 [DONE]
 [ACCORDION-END]

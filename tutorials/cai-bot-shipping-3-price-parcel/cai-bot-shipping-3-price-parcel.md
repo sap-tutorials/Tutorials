@@ -57,7 +57,7 @@ So create an entity for the parcel size. But in this case, create a restricted e
 
 3. You will want to return a shipping price based on the size. So "enrich" the entity's data, setting a price value that the bot will add into memory when the entity is detected.
 
-    - Go to **Enrichments**, and then select **Map Enrichments**.
+    - Go to **Enrichments**, and then select **Map Enrichments** (you may need to confirm by clicking **Validate**).
 
         ![Go to Enrichments](Enrich_Go.png)
 
@@ -142,11 +142,11 @@ Build a skill that:
 In this step, you'll simply create the skill and add the trigger.
 
 
-1. In the **Build** tab, click **Create Skill** and create a new floating skill called **`price-parcel`**, and click **Create Skill**
+1. In the **Build** tab, click **Add Skill** and create a new business skill called **`price-parcel`**, and click **Add**
 
-    ![Link text e.g., Destination screen](Skill_Create.png)
+    ![Send parcel skill](Skill_Create.png)
 
-2. Click the new skill, and in the **Triggers** subtab, add the **`@rate-parcel`** intent, and click **Save**.
+2. Click the new skill (it may be hiding under the **`track-parcel`** skill), and in the **Triggers** subtab, add the **`@rate-parcel`** intent, and click **Save**.
 
     ![Link text e.g., Destination screen](Skill_Triggers.png)
 
@@ -162,7 +162,7 @@ You must require that the bot knows the size and location, and in addition get a
 
     - Add 2 requirements: **`#parcel-size`** and **`#location`**
 
-    - Add another requirement list, and add 2 requirements: @yes and @no
+    - Add another requirement list, and add 2 requirements: **@yes** and **@no**
 
     - Between @yes and @no, click **And** to change it to **Or**.
 
@@ -225,7 +225,7 @@ You must require that the bot knows the size and location, and in addition get a
 
 [ACCORDION-BEGIN [Step 5: ](Call API to show Google map)]
 
-A nice feature would be to get a Google map for the delivery location. Our application deployed to SAP Cloud Platform also has a call for retrieving a Google map based on the location in memory.
+A nice feature would be to get a Google map for the delivery location. Our application deployed to SAP Business Technology Platform also has a call for retrieving a Google map based on the location in memory.
 
 Your default endpoint is already set up because you used it earlier to retrieve tracking information.
 
@@ -316,7 +316,7 @@ I'd like to send a package to 52 Place de la Madeleine, 75011 Paris
 
 ![Test](Test1.png)
 
-Test it by saying just indicating the intent (i.e., **How much to send package?**), giving it a non-French address, giving it the size in the right away, and other variations.
+Test it by just indicating the intent (i.e., **How much to send package?**), giving it a non-French address, giving it the size in the right away, and other variations.
 
 
 [VALIDATE_7]

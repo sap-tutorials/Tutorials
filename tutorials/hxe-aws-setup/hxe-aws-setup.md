@@ -1,6 +1,8 @@
 ---
 title: Set up SAP HANA, express edition, on Amazon Web Services - Database server
 description: Set up your SAP HANA, express edition, on Amazon Web Services
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition ]
@@ -18,9 +20,14 @@ This tutorial will walk you through the setup process of SAP HANA, express editi
 </div>
 &nbsp;
 
-<b><span style="color:red">The server-only image is being retired. Please refer to</span></b>:
+<b><span style="color:red">The server-only image offering specific to AWS is being retired. Please consider using SAP HANA Cloud trial for a cloud based, free experience</span></b>:
 
- - **[Set up SAP HANA, express edition on Amazon Web Services (XS Advanced)](hxe-xsa-aws-setup)**
+ - **[Deploy SAP HANA Cloud trial](hana-cloud-deploying)**
+
+ <b><span style="color:red">Or consider directly installing SAP HANA, express edition yourself using one of these options:</span></b>
+
+ - **[SAP HANA, express edition - Server Only Deployment Options](hxe-database-server)**
+
 
 **Also, before you get started, please be aware that using SAP HANA, express AMI on AWS is not covered by the AWS Free tier, and therefore charges for both the EC2 instance and the provisioned EBS volumes used by this instance will incur.**
 
@@ -30,7 +37,7 @@ This tutorial will walk you through the setup process of SAP HANA, express editi
 
 [ACCORDION-BEGIN [Step 1: ](Sign in and select the AMI)]
 
-Sign in or create an account on [Amazon Web Services Portal](https://portal.aws.amazon.com/billing/signup#/start)
+Sign in or create an account on [Amazon Web Services Portal](https://portal.aws.amazon.com/)
 
 > ### **Information:**
 >**When creating a new account with AWS, a background validation and verification process is started. This process can take up to 2 hours.**

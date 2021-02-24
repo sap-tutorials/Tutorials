@@ -3,8 +3,8 @@ title: Trigger a Microservice with an Event
 description: Trigger a microservice to run when an event is published into the Kyma runtime.
 time: 20
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
+primary_tag: products>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
@@ -28,9 +28,9 @@ This tutorial relies on the Commerce mock application to publish events into the
 
   Choose the **Code** button and choose one of the options to download the code locally, or simply run the following command using your CLI at your desired folder location:
 
-    ```Shell/Bash
-    git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
-    ```
+```Shell/Bash
+git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
+```
 
 
 

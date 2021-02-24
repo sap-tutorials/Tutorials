@@ -3,7 +3,7 @@ title: Add NativeScript Plugins in an MDK App
 description: Build and run the Mobile Development Kit client with a non-visual extension functionality for Android and iOS platforms.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>advanced, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
+tags: [ tutorial>advanced, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
 time: 35
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -17,13 +17,12 @@ author_profile: https://github.com/jitendrakansal
 ### You will learn
   - How to reference the NativeScript Geolocation plugin from a rule
   - How to add a NativeScript plugin to your branded MDK client
-  - How to build a Mobile development kit client for iOS & Android and connect to SAP Cloud Platform Mobile application
+  - How to build a Mobile development kit client for iOS & Android and connect to SAP Mobile application
   - How to capture the device's current location
 
 You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/2-Add-NativeScript-Plugin-in-an-MDK-App) and start directly with step 4 in this tutorial.
 
 ---
-
 
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can use the existing NativeScript plugins like nativescript-geolocation, nativescript-nfc etc. , add this to the client and reference it from a rule.
 
@@ -35,9 +34,11 @@ In this tutorial, you will use the existing NativeScript plugin nativescript-geo
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. Navigate to *File* menu &rarr; click **New Project from Template**.
+2. Click **Start from template** on Welcome page.
 
     !![MDK](img_1.2.png)
+
+    >If you do not see Welcome page, you can access it via **Help** menu.
 
 3. Select **MDK Project** and click **Next**.
 
@@ -73,7 +74,7 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 
     !![MDK](img_2.1.png)
 
-2. Enter the file name `GetCoordinates`, click **Next** and then **Finish** on the confirmation step.
+2. Enter the Rule name `GetCoordinates`, click **Next** and then **Finish** on the confirmation step.
 
     !![MDK](img_2.2.png)
 
@@ -169,9 +170,9 @@ In `GetCoordinates.js` file, you referred `nativescript-geolocation` and `tns-co
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy and activate application)]
+[ACCORDION-BEGIN [Step 5: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 

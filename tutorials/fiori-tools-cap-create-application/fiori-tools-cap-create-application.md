@@ -3,7 +3,7 @@ title: Create an SAP Fiori Elements Application
 description: Create an SAP Fiori elements application of type List Report Object Page based on the SAP Cloud Application Programming Model.
 auto_validation: true
 time: 15
-tags: [ products>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner, products>sap-fiori, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, products>sap-cloud-platform]
+tags: [ products>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner, products>sap-fiori, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, products>sap-business-technology-platform]
 primary_tag: products>sap-fiori
 ---
 
@@ -19,7 +19,7 @@ primary_tag: products>sap-fiori
 
     If not already done, open your trial account on SAP Cloud Platform and start the SAP Business Application Studio you set up in the previous tutorial [Prepare Your Development Environment](fiori-tools-cap-prepare-dev-env). Then start your development space and select the sample project you created there.
 
-    Once the **Welcome** page is shown, click **Create project from template**.
+    Once the **Welcome** page is shown, click **Start from template**.
 
     !![Select link "Create project from template"](select-create-project.png)
 
