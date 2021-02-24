@@ -110,6 +110,8 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 
     !![MobileCardsImage](img_3_and_4.png)
 
+    > If the card is already subscribed, you can skip this step.
+
 5. *Tap* back **&larr;** twice to go back to the card view.
 
     !![MobileCardsImage](img_3_and_5.png)
@@ -143,6 +145,8 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 3. *Tap* **Subscribe**.
 
     !![MobileCardsImage](img_3_ios_3.png)
+
+    > If the card is already subscribed, you can skip this step.
 
 4. *Tap* **All Cards**.
 
