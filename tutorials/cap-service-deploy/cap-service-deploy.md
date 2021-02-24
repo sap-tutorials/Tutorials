@@ -121,7 +121,7 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
 
 3. In the deploy log, find the application URL in the `routes` line at the end:
 
-    ```
+    ```Shell/Bash
     name:              my-bookshop-srv
     requested state:   started
     routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
@@ -161,7 +161,7 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
 
 3. In the deploy log, find the application URL in the `routes` line at the end:
 
-        ```
+        ```Shell/Bash
         name:              my-bookshop-srv
         requested state:   started
         isolation segment: trial
