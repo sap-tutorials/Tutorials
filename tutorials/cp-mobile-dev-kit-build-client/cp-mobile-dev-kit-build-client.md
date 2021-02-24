@@ -234,7 +234,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     >!![MDK](img_3.2.2.png)
 
-2. Next, you will need to update the `BrandedSettings.json` and `MDKProject.json` files as needed for your client. Go into the `DemoSampleApp.mdkproject` folder.
+2. Next, you will need to update the `MDKProject.json` and `BrandedSettings.json` files as needed for your client. Go into the `DemoSampleApp.mdkproject` folder.
 
     !![MDK](img_3.2.3.png)
 
