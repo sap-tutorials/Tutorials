@@ -1,17 +1,16 @@
 ---
 title: Translate Documents with SAP API Business Hub
-description: Use your Trial account to translate documents with SAP API Business Hub
+description: Use your trial account to translate documents with SAP API Business Hub.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>sap-api-business-hub, products>sap-cloud-platform]
+tags: [ tutorial>beginner, topic>sap-api-business-hub, products>sap-business-technology-platform]
 primary_tag: products>sap-translation-hub
 ---
 
 ## Prerequisites
-- You have created a trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
-  Hint: [Watch the video and learn how to create the account](https://www.youtube.com/watch?v=n5luSQKYvQQ&feature=emb_logo)
-- You have a subaccount and dev space with **Europe (Frankfurt)** as region: [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
-- You have created the credentials for Document Translation [Create Service Instance for Document Translation](sth-enable-document-translation)
+- You have created a trial account on SAP Business Technology Platform: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+    - Hint: [Watch the video and learn how to create the account](https://www.youtube.com/watch?v=n5luSQKYvQQ&feature=emb_logo)
+- You have created the credentials for Document Translation, as described in [Create Service Instance for Document Translation](sth-enable-document-translation)
 
 ## Details
 ### You will learn
@@ -58,7 +57,7 @@ Take a minute to explore both APIs.
 
 
 [ACCORDION-BEGIN [Step 5: ](Maintain the API environment)]
-The service doesn't offer a sandbox system out of the box, so you have to connect your SAP Cloud Platform trial account to the SAP API Business Hub.
+The service doesn't offer a sandbox system out of the box, so you have to connect your SAP Business Technology Platform trial account to the SAP API Business Hub.
 
 1. Select the gear wheel symbol to open the **Configure Environments** screen.
 
@@ -68,11 +67,11 @@ The service doesn't offer a sandbox system out of the box, so you have to connec
 
     !![Configure](06_API_hub_configure.png)
 
-3. For client ID and client secret, take the information from the Document Translation credentials
+3. For client ID and client secret, take the information from the Document Translation credentials as described in [Create Service Instance for Document Translation](sth-enable-document-translation)
 
     !![Configure](07_API_hub_configure.png)
 
-4. For subaccount, take the information from your SAP Cloud Platform cockpit. For example, on the screenshot below, the subaccount is `f2b0bceetrial`.
+4. For subaccount, take the information from your SAP Business Technology Platform cockpit. For example, on the screen-shot below, the sub-account is `f2b0bceetrial`.
 
     !![Configure](08a_API_hub_account.png)
 

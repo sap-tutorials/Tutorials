@@ -3,8 +3,8 @@ title: Deploy MSSQL in the Kyma Runtime
 description: Configure and deploy an MSSQL database within the Kyma runtime to be used for a test or development scenario.
 time: 45
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
+primary_tag: products>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
@@ -50,7 +50,7 @@ In this tutorial, you configure a database named `DemoDB` which contains one `Or
 
     The process includes defining the database password as well as the creation of the `Orders` table with sample data.
 
-4. Within the `docker` folder you can find the Dockerfile definition. Notice how the last command references the `entrypoint.sh` script defined within the app directory which is used to call the commands to configure the sample database.
+4. Within the `docker` folder you can find the Dockerfile, which is a text-based set of instructions that is used to create a container image. Notice how the last command references the `entrypoint.sh` script defined within the app directory which is used to call the commands to configure the sample database.
 
 5. Within the `k8s` folder you can find the resource definitions that will be used to deploy the sample to the Kyma runtime. This includes the `deployment.yaml` which specifies the microservice definition of the MSSQL database and also a service definition which exposes the microservice to other resources within the cluster. The `pvc.yaml` specifies a persistent volume claim which is used to request a storage location for the data of the database.  The `secret.yaml` contains the database user and password.
 
@@ -60,9 +60,7 @@ In this tutorial, you configure a database named `DemoDB` which contains one `Or
 
 [ACCORDION-BEGIN [Step 3: ](Build the Docker image)]
 
-Run the following commands from the `database-mssql` directory using your CLI.
-
-Make sure to replace the value of `<your-docker-id>` with your Docker account ID.
+A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings. In this step, you will build a `mssql` image according to the Dockerfile definition contained in the docker folder. Make sure to run the following commands from the `database-mssql` directory using your CLI, and also replace the value of `<your-docker-id>` with your Docker account ID.
 
 1. To build the Docker image, run this command:
 

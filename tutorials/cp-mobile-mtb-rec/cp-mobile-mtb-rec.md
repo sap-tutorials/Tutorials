@@ -3,8 +3,8 @@ title: Liberate Your ABAP Transactions Using Mobile Transaction Bridge
 description: Use the Mobile Transaction Bridge (MTB) to build OData services directly from your ABAP transaction.
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, topic>mobile, products>sap-cloud-platform, software-product-function>sap-cloud-platform-mobile-services]
-primary_tag: software-product-function>sap-cloud-platform-mobile-services
+tags: [tutorial>beginner, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-services]
+primary_tag: products>sap-mobile-services
 ---
 
 ## Prerequisites

@@ -230,17 +230,20 @@ You will first add all required dependencies, and the create and run a run confi
 
     !![Open Run Configurations view](create-new-config.png)
 
-3. Select `bookshop` as the runnable application from the command palette prompt.
+3. Select `bookshop (development profile)` as the runnable application from the command palette prompt.
 
     >There might be other run configuration options available in the command palette.
 
-    !![Select Run Configuration](select-run-config.png)
+    By default, the run configuration is created for the "development" profile. If you configured an additional profile for your application, you can create a run configuration that activates and uses this profile.
 
-4. Press Enter to use the default name for the configuration. A new configuration is added to the run configuration tree.
+    The dependencies of the application are calculated according to the profile selected.
+
+    !![Select Run Configuration](profile-run-config.png)
+
+4. Press `Enter` to use the default name for the configuration. A new configuration is added to the run configuration tree.
 
 5. Click the right green arrow on the right of the configuration name to run the application.
 
-    !![Run application](run-config.png)
 
 6. When prompted, click **Expose and Open** for **port 4004**.
 
