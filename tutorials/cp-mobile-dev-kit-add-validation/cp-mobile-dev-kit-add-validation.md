@@ -3,7 +3,7 @@ title: Define a Validation Rule in an MDK App
 description: Write a JavaScript logic to validate an email address format in an MDK app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
 time: 10
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal

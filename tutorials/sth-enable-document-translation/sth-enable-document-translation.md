@@ -1,18 +1,16 @@
 ---
 title: Create Service Instance for Document Translation
-description: Create a service instance and the service keys for Document Translation (one of the SAP Translation Hub services) using the SAP Cloud Platform trial cockpit.
+description: Create a service instance and the service keys for Document Translation (one of the SAP Translation Hub services) using the SAP Business Technology Platform trial cockpit.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-cloud-platform, topic>machine-learning]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>machine-learning]
 primary_tag: products>sap-translation-hub
 ---
 
 ## Prerequisites
- - You have created a trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
-    - Hint: [Watch the video and learn how to create the account](https://www.youtube.com/watch?v=n5luSQKYvQQ&feature=emb_logo)
- - You have a subaccount and dev space with **Europe (Frankfurt)** as region and created an entitlement for Document translation
-    - You can use this tutorial as example, but please use the Document Translation service instead of the API Management service: [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements).
-    - See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
+ - You have created a trial account on SAP Business Technology Platform (region AWS Europe): [Get a Free Trial Account on SAP Business Technology](hcp-create-trial-account)
+    - Hint: [You can also watch the video and learn how to create the account](https://www.youtube.com/watch?v=n5luSQKYvQQ&feature=emb_logo)
+
 
 ## Details
 ### You will learn
@@ -23,7 +21,7 @@ primary_tag: products>sap-translation-hub
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
 
-1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP Business Technology Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Navigate to your trial account by clicking **Enter Your Trial Account**.
 
@@ -40,8 +38,7 @@ primary_tag: products>sap-translation-hub
 
 [ACCORDION-BEGIN [Step 2: ](Access space)]
 
-All applications and services are available in spaces. By default, trial accounts only have the **dev** space available.
-To access your spaces, click **Spaces** on the navigation sidebar and select the **dev** space to open it. You will create your service instance in this space.
+All applications and services are available in spaces. By default, trial accounts only have the **dev** space available. To access your spaces, click **Spaces** on the navigation sidebar and select the **dev** space to open it. You will create your service instance in this space.
 
 !![Spaces](03-access-space.png)
 
@@ -51,7 +48,7 @@ To access your spaces, click **Spaces** on the navigation sidebar and select the
 
 [ACCORDION-BEGIN [Step 3: ](Access service via Service Marketplace)]
 
-The **Service Marketplace** is where you find the available services on SAP Cloud Platform.
+The **Service Marketplace** is where you find the available services on SAP Business Technology.
 
 To access it, click **Service Marketplace** on the navigation sidebar and search for **`doc`**. Click the tile named `Document Translation` to access the service.
 
@@ -65,7 +62,7 @@ To access it, click **Service Marketplace** on the navigation sidebar and search
 
 You will now create an instance of your service.
 
-1. Click **Create Instance** to start the creation dialog.
+1. Click on the three dots and open the menu to **Create** a new instance.
 
     !![Service Instance](05-create-instance.png)
 

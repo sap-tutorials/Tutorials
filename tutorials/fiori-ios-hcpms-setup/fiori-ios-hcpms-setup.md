@@ -2,8 +2,8 @@
 title: Access SAP Mobile Services
 description: Access SAP Mobile Services within a SAP Business Technology Platform trial account and open the Mobile Services cockpit.
 auto_validation: true
-primary_tag: software-product-function>sap-cloud-platform-mobile-services
-tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, software-product-function>sap-cloud-platform-mobile-services, products>sap-cloud-platform-sdk-for-ios, products>sap-cloud-platform-sdk-for-android, products>sap-mobile-cards, products>mobile-development-kit-client]
+primary_tag: products>sap-mobile-services
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-business-technology-platform, products>sap-mobile-services, products>ios-sdk-for-sap-btp, products>android-sdk-for-sap-btp, products>sap-mobile-cards, products>mobile-development-kit-client]
 time: 5
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal

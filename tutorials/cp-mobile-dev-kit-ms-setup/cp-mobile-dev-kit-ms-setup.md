@@ -3,7 +3,7 @@ title: Set Up Initial Configuration for an MDK App
 description: Configure initial setup for MDK Mobile and Web applications.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
 time: 10
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -35,7 +35,7 @@ You can find more details in the [Mobile Development Kit developer page](https:/
 
 Make sure that you have completed required prerequisites mentioned in this tutorial.
 
-1. Navigate to [SAP Mobile Services cockpit on Cloud Foundry environment](fiori-ios-hcpms-setup).
+1. Navigate to [SAP Mobile Services cockpit](fiori-ios-hcpms-setup).
 
 2. On the home screen, select **Create new app**.
 
@@ -96,13 +96,13 @@ Make sure that you have completed required prerequisites mentioned in this tutor
 
 [ACCORDION-BEGIN [Step 4: ](Create a new destination to your MDK Web application)]
 
-MDK Web application accesses the data sources via Cloud Platform destination. You will now create a new destination in Cloud Platform cockpit that will point to the same backend as your Mobile destination.
+MDK Web application accesses the data sources via BTP destination. You will now create a new destination in BTP cockpit that will point to the same backend as your Mobile destination.
 
 1. Click `com.sap.mdk.demo` to navigate to Mobile Services application details.
 
     !![MDK](img_4.1.png)
 
-2. Open the `APIs` tab, click _copy to clipboard_ icon to copy the highlighted URL and paste it in a text file. This URL will be used in configuring the Cloud platform destination.
+2. Open the `APIs` tab, click _copy to clipboard_ icon to copy the highlighted URL and paste it in a text file. This URL will be used in configuring the  BTP destination.
 
     !![MDK](img_4.1.1.png)
 
@@ -110,13 +110,13 @@ MDK Web application accesses the data sources via Cloud Platform destination. Yo
 
     !![MDK](img_4.2.png)
 
-4. Switch to **Standard** tab, copy values for `clientid`, `clientsecret`, `url` parameters and paste these values in the text file. These parameters will be used in configuring the Cloud Platform destination.  
+4. Switch to **Standard** tab, copy values for `clientid`, `clientsecret`, `url` parameters and paste these values in the text file. These parameters will be used in configuring the BTP destination.  
 
     !![MDK](img_4.3.png)
 
 5. Download the zip file from [here](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/0-Set-Up-for-the-Mobile-Development-Kit/SampleServiceV2.zip) and unzip it on your machine.
 
-6. Navigate to **Destinations** to create a Cloud Platform destination, click **Import Destination** to import the extracted file and provide the required information and click **Save**.
+6. Navigate to **Destinations** to create a BTP destination, click **Import Destination** to import the extracted file and provide the required information and click **Save**.
 
     | Field | Value |
     |----|----|

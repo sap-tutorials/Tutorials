@@ -3,7 +3,7 @@ title: Build Your Mobile Development Kit Client Using MDK SDK
 description: Set up your development environment that enable MDK SDK so that you can begin building your branded Mobile Development Kit client.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -234,7 +234,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     >!![MDK](img_3.2.2.png)
 
-2. Next, you will need to update the `BrandedSettings.json` and `MDKProject.json` files as needed for your client. Go into the `DemoSampleApp.mdkproject` folder.
+2. Next, you will need to update the `MDKProject.json` and `BrandedSettings.json` files as needed for your client. Go into the `DemoSampleApp.mdkproject` folder.
 
     !![MDK](img_3.2.3.png)
 
