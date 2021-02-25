@@ -5,7 +5,7 @@ title: Deploy a CAP Business Application to SAP Business Technology Platform
 description: This tutorial shows you how to deploy your SAP Cloud Application Programming Model (CAP) application to SAP Business Technology Platform, Cloud Foundry environment.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [  tutorial>beginner, topic>node-js, software-product-function>sap-cloud-application-programming-model  ]
+tags: [  tutorial>beginner, topic>node-js, products>sap-business-technology-platform, software-product-function>sap-cloud-application-programming-model  ]
 time: 30
 ---
 
@@ -121,7 +121,7 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
 
 3. In the deploy log, find the application URL in the `routes` line at the end:
 
-    ```
+    ```Shell/Bash
     name:              my-bookshop-srv
     requested state:   started
     routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
@@ -161,7 +161,7 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
 
 3. In the deploy log, find the application URL in the `routes` line at the end:
 
-        ```
+        ```Shell/Bash
         name:              my-bookshop-srv
         requested state:   started
         isolation segment: trial

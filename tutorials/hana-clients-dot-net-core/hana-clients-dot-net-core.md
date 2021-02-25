@@ -112,7 +112,7 @@ In order for the shell to recognize that the .NET SDK is installed and for any `
       </Reference>
     </ItemGroup>
     ```
-    ![dotNET.csproj code](dotNET_csproj_code.png)
+    ![dotNET.csproj code](dotNET-csproj-code.png)
 
     Once the `dotNet.csproj` file has been updated, save and close the file.    
 

@@ -62,14 +62,14 @@ For additional details on SAP HANA smart data access (SDA) and SAP HANA Smart Da
     SELECT * FROM HOTEL.TOURIST_REVIEWS;
     ```
 
-    ![tourist reviews in HANA Cloud](tourist_reviews_in_HC.png)
+    ![tourist reviews in HANA Cloud](tourist-reviews-in-HC.png)
 
 
 3. To create a remote source from SAP HANA, express edition to SAP HANA Cloud, open the SAP HANA database explorer from the SAP HANA, express edition.
 
      Right-click **Remote Sources** and select **Add Remote Source**.  
 
-     ![Add remote source](add_remote_source.png)
+     ![Add remote source](add-remote-source.png)
 
      Specify the server, port, extra adapter properties, and credentials (User1, Password1).
 
@@ -83,7 +83,7 @@ For additional details on SAP HANA smart data access (SDA) and SAP HANA Smart Da
 
     > The ServerNode can be copied from SAP HANA Cloud Central by choosing **Actions > Copy > SQL Endpoint**.
     >
-    > ![Host and Port](host_and_port.png)
+    > ![Host and Port](host-and-port.png)
 
     >---
 
@@ -97,13 +97,13 @@ For additional details on SAP HANA smart data access (SDA) and SAP HANA Smart Da
 
 4. After executing the create remote source SQL statement, the result can be seen in the **Remote Sources** folder, as shown below.  You may need to press the refresh button.
 
-    ![remote sources](remote_source.png)
+    ![remote sources](remote-source.png)
 
     Additional details can be found at [CREATE REMOTE SOURCE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/20d48343751910149985a2c925e12190.html).
 
 5. A virtual table named `vt_tourist_reviews` will be created in SAP HANA, express edition. This will enable access to the `tourist_reviews` table that was created in SAP HANA Cloud.   This can be visualized as follows:
 
-    ![on-premise to cloud remote connection](onprem_to_cloud_connection.png)
+    ![on-premise to cloud remote connection](onprem-to-cloud-connection.png)
 
 
     Open the SAP HANA database explorer from the SAP HANA, express edition.  If needed, create the HOTEL schema and a user who can access the schema.
@@ -120,7 +120,7 @@ For additional details on SAP HANA smart data access (SDA) and SAP HANA Smart Da
 
     Check the `TOURIST_REVIEWS` checkbox and press the **Create Virtual Object(s)** button.
 
-    ![create remote table](remote_table.png)
+    ![create remote table](remote-table.png)
 
 8. Set the **Object Name** to be `VT_TOURIST_REVIEWS` and the **Schema** to be **`HOTEL`**.
 
@@ -136,7 +136,7 @@ For additional details on SAP HANA smart data access (SDA) and SAP HANA Smart Da
 
 9. Open the virtual table `VT_TOURIST_REVIEWS` and notice that its type is virtual.
 
-    ![table editor](table_editor.png)
+    ![table editor](table-editor.png)
 
 10. Perform queries against the local tables and the remote table, and perform a federated query that contains both local and remote tables.
 
@@ -153,7 +153,7 @@ For additional details on SAP HANA smart data access (SDA) and SAP HANA Smart Da
       ON C.CNO = R.CNO;
     ```
 
-    ![federated query](federated_query.png)
+    ![federated query](federated-query.png)
 
     Notice the executed time is greater when the data is retrieved from a virtual table.
 
@@ -180,7 +180,7 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
 1. If needed, in SAP HANA Cloud Central, add an SAP HANA Cloud, data lake instance to your SAP HANA Cloud instance, by choosing **Actions > Add Data Lake**.
 
-    ![add a SAP HANA Data Lake](host_and_port.png)
+    ![add a SAP HANA Data Lake](host-and-port.png)
 
 2. In a SQL console connected to the SAP HANA Cloud instance, execute the following SQL to create a table named `tourist_reviews` in the data lake.
 
@@ -203,15 +203,15 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
 3. Notice that under remote sources, there is a connection named `SYSRDL#CG_SOURCE`.  This is the remote source for the SAP HANA Cloud, data lake that is associated with the SAP HANA Cloud instance.
 
-    ![SAP HANA Data Lake Remote Source](remote_source_DL.png)
+    ![SAP HANA Data Lake Remote Source](remote-source-DL.png)
 
 4. Create a virtual table in SAP HANA Cloud named **`VT_DL_TOURIST_REVIEWS`** in the schema **HOTEL** that maps to the newly created table in SAP HANA Cloud, data lake.
 
-    ![virtual data lake table](virtual_table_data_lake.png)
+    ![virtual data lake table](virtual-table-data-lake.png)
 
     This can be visualized as follows:
 
-    ![data lake and on-premise remote connection](dl_cloud_connection.png)
+    ![data lake and on-premise remote connection](dl-cloud-connection.png)
 
 5. Query the local SAP HANA table and the equivalent SAP HANA Cloud, data lake table.
 
@@ -219,7 +219,7 @@ A benefit of a virtual table is that there is no data movement.  There is only o
     SELECT * FROM HOTEL.VT_DL_TOURIST_REVIEWS;
     ```
 
-    ![Query SAP HANA Cloud, data lake](query_data_lake.png)
+    ![Query SAP HANA Cloud, data lake](query-data-lake.png)
 
 8. Add a new review.
 
@@ -238,22 +238,22 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
 1. Enable the Cloud Connector connectivity in SAP HANA Cloud.  This feature is not available in the HANA Cloud trial.
 
-    ![Enable the Cloud Connector](enable_cloud_connector.png)
+    ![Enable the Cloud Connector](enable-cloud-connector.png)
 
 2.  [Download the Cloud Connector](https://tools.hana.ondemand.com/#cloud).  The software needs to run on a machine that can access your on-premise SAP HANA instance.  In this example, the Cloud Connector was installed on Windows and is accessing an SAP HANA, express edition database running in a VM on the same machine.  
 
-    ![Install](cloud_connector_install1.png)
+    ![Install](cloud-connector-install1.png)
 
 3. As described at [Installation on Microsoft Windows OS](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/204aaad4270245f3baa0c57c8ab1dd60.html), Java 8 is a requirement.  
 The following commands were used to start the Cloud Connector.
 
     ```Shell (Microsoft Windows)
-    set path=set path=c:\Windows\System32;c:\jdk1.8\bin
+    set PATH=C:\Windows\System32;c:\jdk1.8\bin
     set JAVA_HOME=c:\jdk1.8
     C:\SAP\scc20>go.bat
     ```
 
-    ![Started](cloud_connector_windows.png)
+    ![Started](cloud-connector-windows.png)
 
     >Note, it may take a while to start the Cloud Connector (3 minutes) and a line such as Cloud Connector 2.13.0 started will appear as shown above when it is started.
 
@@ -263,17 +263,17 @@ The following commands were used to start the Cloud Connector.
 
 5. Configure the Cloud Connector to connect to the Cloud Foundry subaccount.     
 
-    ![subaccount](cloud_connector_subaccount.png)
+    ![subaccount](cloud-connector-subaccount.png)
 
     The region and subaccount ID and be found in the SAP Cloud Platform cockpit.
 
-    ![cloud Foundry sub account](cloud_foundry_sub_account.png)
+    ![cloud Foundry sub account](cloud-foundry-sub-account.png)
 
     >Note, if you are an SAP employee you may need to enter your password + a  time-based passcode as the password.
 
     Successfully connected.
 
-    ![Connected](cloud_connector_subaccount_connected.png)
+    ![Connected](cloud-connector-subaccount-connected.png)
 
     For additional details, see [Initial Configuration](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/db9170a7d97610148537d5a84bf79ba2.html).
 
@@ -289,15 +289,15 @@ The following commands were used to start the Cloud Connector.
 
     The virtual name and port can be different.
 
-    ![connected to SAP HANA database](cloud_connector_virtual_mapping2.png)
+    ![connected to SAP HANA database](cloud-connector-virtual-mapping2.png)
 
 7. From the SAP HANA Cloud cockpit, open the SAP HANA database explorer, then right-click **Remote Sources** and select **Add Remote Source**.  
 
-    ![Add remote source](add_remote_source.png)
+    ![Add remote source](add-remote-source.png)
 
     Specify the server, port, extra adapter properties, and credentials (User1, Password1).
 
-    ![Add remote source properties](AddRemoteSource_On_premise.png)
+    ![Add remote source properties](AddRemoteSource-On-premise.png)
 
     Alternatively, in a SQL console, enter the SQL statement below after adjusting the `ServerNode`.  
 
@@ -313,19 +313,19 @@ The following commands were used to start the Cloud Connector.
 
 8. After executing the create remote source SQL statement, the result can be seen in the **Remote Sources** folder, as shown below.  You may need to press the refresh button.
 
-    ![remote sources](remote_source2.png)
+    ![remote sources](remote-source2.png)
 
 9. Right-click the remote source named `REMOTE_HANA_EXPRESS` and choose **Open**.  
 
 10. Set the **Schema** to be **`HOTEL`** and press the **Search** button.
 
-    ![remote sources](remote_source2.png)
+    ![remote sources](remote-source2.png)
 
     Notice that it is possible to create virtual tables to access the data from the on-premise system in SAP HANA Cloud.
 
     This can be visualized as follows:
 
-    ![HANA Cloud to HANA, express connection](cloud_connector_connection.png)
+    ![HANA Cloud to HANA, express connection](cloud-connector-connection.png)
 
 For further information, see also [Install the SAP Connectivity Service Cloud Connector in your System Landscape](cp-connectivity-install-cloud-connector), [Replicate data from on-premise to the cloud with the Cloud Connector](https://saphanajourney.com/hana-cloud/learning-article/sap-cloud-connector), [Access Data Across Your On-Premise and Cloud Data Sources](https://saphanajourney.com/hana-cloud/sap-hana-cloud-workshops/), and [Getting Started with SAP HANA Cloud | Remote Data Source](https://blogs.sap.com/2020/08/03/getting-started-with-sap-hana-cloud-vii-smart-data-access/).
 
