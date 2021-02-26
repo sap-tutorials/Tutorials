@@ -44,7 +44,7 @@ A service instance defines how a service of SAP Cloud Platform (in our case, the
 
 3. Select **Create**.
 
-    !![Create new instance](1.3.create.new.instance.png)
+    !![Create new instance](1.3.create-new-instance.png)
 
 4. Select the following details and choose **Next**.
 
@@ -54,7 +54,7 @@ A service instance defines how a service of SAP Cloud Platform (in our case, the
     |  **Plan**           | Select **`integration-flow`** from the dropdown list
     |  **Instance Name**    | Provide a name of your choice
 
-      !![New instance wizard](1.4.create.new.instance.png)
+      !![New instance wizard](1.4.create-new-instance.png)
 
 5. In the **Parameters** tab, choose **JSON** and enter the following **`JSON`** code snippet:
     ```JSON
@@ -89,7 +89,7 @@ A service instance defines how a service of SAP Cloud Platform (in our case, the
 
 9. Choose **Actions** (ellipsis button) and then **View**.
 
-      !![view key](1.9.key_view.png)
+      !![view key](1.9.key-view.png)
 
 10. Copy the values of **`clientid`**, **`clientsecret`** and **`tokenurl`** parameters. These are the credentials that you use to make a request to your integration flow.
 
