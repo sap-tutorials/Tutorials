@@ -244,7 +244,7 @@ Once all the fields are mapped, your mapping should look like:
 
 You will now use the __Simulate__ functionality to test if the mapping is configured correctly and the desired output is generated.
 
-Store the [Input Message](https://sap-my.sharepoint.com/:u:/p/meghna_shishodiya/EfVlE7h0-sJHgj4qiBH9ZakBnu2Pqx6oERvlFjxtwGXwhw?e=MKsQkO) to you file system.
+Store the [Input Message](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-integration-convert-message-structure/InputMsg.xml) to you file system.
 
 1. Click on __Simulate__.
 
