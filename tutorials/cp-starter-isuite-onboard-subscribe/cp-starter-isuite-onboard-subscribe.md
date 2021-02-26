@@ -37,7 +37,7 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
   - Using this policy template, you define API access based on the OAuth client credentials grant method.
   - Finally, you use API Management to call the API and get the product details in a response.
 
-  !![Use case](SetUp integration Trial.png)
+  !![Use case](Set-up-integration-trial.png)
 
 [DONE]
 [ACCORDION-END]
@@ -97,7 +97,7 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
 5. You are subscribed to the service now. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the **Integration Suite Launchpad**.
 
-    !![Go to Application](3.5.Go to Application.png)
+    !![Go to Application](3.5.Go-to-Application.png)
 
 [DONE]
 [ACCORDION-END]
