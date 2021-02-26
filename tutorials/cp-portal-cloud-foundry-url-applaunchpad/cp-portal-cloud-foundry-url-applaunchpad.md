@@ -3,8 +3,8 @@ title: Add a URL App to Your Launchpad Site
 description: Create a URL app and add it to your launchpad site.
 auto_validation: true
 time: 15
-tags: [  tutorial>beginner, products>sap-cloud-platform-launchpad ]
-primary_tag: products>sap-cloud-platform-launchpad
+tags: [  tutorial>beginner, products>sap-business-technology-platform, products>sap-launchpad-service ]
+primary_tag: products>sap-launchpad-service
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
@@ -12,9 +12,9 @@ author_profile: https://github.com/LindsayBert
 
 ## Details
 ### You will learn
-  - How to create a URL app and add it to your site
+  - How to create a URL app and add it to your site.
 
-In this tutorial you'll use the **Content Manager** to add a URL app to your launchpad site.
+In this tutorial you'll use the **Content Manager** to add a URL app to your site.
 
 [ACCORDION-BEGIN [Step 1: ](Open the Content Manager)]
 
@@ -36,7 +36,7 @@ Click the Content Manager icon in the left panel to open the **Content Manager**
 
 2. Enter the following values:
 
-    * **Title**: `Innovation at SAP`
+    * **Title**: `Innovation at SAP`  
 
     * **Open App**: In place
 
@@ -58,7 +58,7 @@ Click the Content Manager icon in the left panel to open the **Content Manager**
 
 5. Click the **VISUALIZATION** tab.
 
-    In this tab, you specify how the app will be displayed in the launchpad.
+    In this tab, you specify how the app will be displayed in your launchpad site.
 
 6.  Enter the following values:
 
@@ -92,7 +92,7 @@ In the **Content Manager**, you can see your app in the list.
 !![Content manager with app](6-content-manager-with-app.png)
 
 
-To view the app in runtime, you must assign the app to a role. You also need to assign the app to a group so that it'll be visible in the launchpad.
+To view the app in runtime, you must assign the app to a role. You also need to assign the app to a group so that it'll be visible in your launchpad site.
 
 This is described in the following steps.
 
@@ -126,7 +126,7 @@ This is described in the following steps.
 [ACCORDION-BEGIN [Step 5: ](Create a group and assign the app to it)]
 
 
->A group is a set of one or more apps displayed together in the launchpad. Assigning apps to groups allows users to view them in the launchpad.
+>A group is a set of one or more apps displayed together in a launchpad site. Assigning apps to groups, makes them visible to users.
 
 1. Open the **Content Manager** and click **+ New** and select **Group** from the list.
 

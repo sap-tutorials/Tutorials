@@ -1,14 +1,14 @@
 ---
-title: Complex algorithms using GraphScript
-description: Complex algorithms with GraphScript
+title: Complex Algorithms Using GraphScript
+description: Learn what is GraphScript, and then build complex algorithms in SAP HANA Graph using GraphScript.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, products>sap-hana, topic>sql,  products>sap-hana\,-express-edition, products>sap-web-ide]
+tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud, products>sap-hana\,-express-edition, topic>sql]
 primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - Completed [Pattern Matching using OpenCypher](hana-graph-overview-pattern-matching)
+ - You completed [Pattern Matching using OpenCypher in SQL](hana-graph-overview-pattern-matching-sql)
 
 ## Details
 ### You will learn
@@ -21,6 +21,8 @@ primary_tag: products>sap-hana
 
 GraphScript is a high-level, powerful domain-specific language. GraphScript is specifically designed to ease the development and integration of complex graph algorithms into the existing data management workflow.
 
+ For more please refer to [online documentation for SAP HANA Cloud](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/2020_04_QRC/en-US/47b72452f48f4ca490fbffcb5ca31f92.html).
+
 [DONE]
 [ACCORDION-END]
 
@@ -29,7 +31,7 @@ GraphScript is a high-level, powerful domain-specific language. GraphScript is s
 In the SQL Console paste and execute following code.
 
 ```sql
-SET SCHEMA "DAT646_000";
+SET SCHEMA "SKIING";
 
 --DROP TYPE "TT_NODES" CASCADE;
 CREATE TYPE "TT_NODES" AS TABLE ("node_id" INTEGER, "name" NVARCHAR(16));
@@ -51,15 +53,15 @@ END;
 
 This creates an `NHOOD` object in **Procedures**.
 
-![Create first GraphScript procedure](010.png)
+![Create first GraphScript procedure](010b.png)
 
 Run `CALL "NHOOD"` with different parameters to check results.
 
 ```sql
-CALL "NHOOD"(10, 1, 1, ?);
+CALL "SKIING"."NHOOD"(10, 1, 1, ?);
 ```
 
-![First results](020.png)
+![First results](020b.png)
 
 [DONE]
 [ACCORDION-END]
@@ -67,10 +69,10 @@ CALL "NHOOD"(10, 1, 1, ?);
 
 [ACCORDION-BEGIN [Step 3: ](Custom traverse algorithm)]
 
-In the SQL Console paste and execute following code.
+In the SQL Console paste and execute following code. It creates a procedure to calculate shortest path distances to stations with restaurants.
 
 ```sql
-SET SCHEMA "DAT646_000";
+SET SCHEMA "SKIING";
 
 --DROP TYPE "TT_RESTAURANTS";
 CREATE TYPE "TT_RESTAURANTS" AS TABLE ("node_id" INTEGER, "distance" INTEGER, "hops" BIGINT);
@@ -96,15 +98,15 @@ END;
 
 This creates an `NEAREST_RESTAURANT` object in **Procedures**. Right click on the procedure name and pick **Generate CALL Statement With UI**.
 
-![Generate call with UI](030.png)
+![Generate call with UI](030b.png)
 
 Procedure's call statement is generated. Provide input value `15` and click **Run**.
 
-![Run generated procedure](040.png)
+![Run generated procedure](040b.png)
 
 When the graph script is executed, then the result is displayed. It shows a shortest distance in meters to each station with the restaurant plus number of hops to get there.
 
-![GraphScript results](050.png)
+![GraphScript results](050b.png)
 
 What is the shortest path distance in meters from station `15` to station `3`?
 

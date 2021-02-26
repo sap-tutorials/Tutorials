@@ -22,9 +22,11 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Business Application Studio)]
-1. Go to your Cloud Foundry environment subaccount and click the **Subscriptions** tab. 
+1. Go to your Cloud Foundry environment subaccount and click the **Subscriptions** tab.
 
-    !![AppStudio Tile in SAP Cloud Platform Cockpit](01-01 SCP Subscriptions_.jpg)
+    !![AppStudio Tile in SAP BTP cockpit](01-01-SCP-Subscriptions-.png)
+
+    >You may be prompted to accept the legal terms.
 
 2. Locate the **SAP Business Application Studio** tile.
 
@@ -37,7 +39,7 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 
 1. Choose **Create Dev Space**.
 
-    !![Open AppStudio](AppStudio Dev Space Manager_.jpg)
+    !![Open AppStudio](AppStudio-Dev-Space-Manager-.png)
 
 2. Enter `Demo_Fiori` for your dev space **name**.
 
@@ -45,11 +47,11 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 
 4. Click **Create Dev Space**.
 
-    !![Create Dev Space](AppStudio Create Dev Space Fiori_.jpg)
+    !![Create Dev Space](AppStudio-Create-Dev-Space-Fiori-.png)
 
     >The dev space is in status **STARTING**. Wait until it is in status **RUNNING**. This might take a couple of minutes.
 
-    !![Dev Space Starting](AppStudio Dev Space Starting_.jpg)
+    !![Dev Space Starting](AppStudio-Dev-Space-Starting-.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -59,12 +61,14 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 **Click** the name of the dev space you created.
 
 
-!![Open Dev Space](AppStudio Open Dev Space_.jpg)
+!![Open Dev Space](AppStudio-Open-Dev-Space-.png)
 
 
 The SAP Fiori dev space opens and the **Welcome** tab appears.
 
-!![Open Dev Space](03-01-02 AppStudio Welcome Tab.jpg)
+!![Open Dev Space](AppStudio-Welcome-Tab-.png)
+
+>You may be prompted to accept the legal terms.
 
 >The purple color of the status bar indicates that there is no open workspace.
 

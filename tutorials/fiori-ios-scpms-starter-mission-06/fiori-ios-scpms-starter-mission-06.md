@@ -4,14 +4,14 @@ description: Embed your app flow in a Split View Controller for Mac Catalyst onl
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>ios-sdk-for-sap-btp ]
 time: 35
 ---
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0 or higher
+- **SAP SDK for iOS:** Version 5.0 or higher
 
 ## Details
 ### You will learn  
@@ -26,7 +26,7 @@ time: 35
 In the last tutorial you made changes to your Xcode project settings to enable Mac Catalyst for your app project.
 This tutorial is about making some changes to the project to fit better on MacOS without changing the appearance on iPhone or iOS.
 
-You are going to cover the basics for Mac Catalyst and the SAP Cloud Platform SDK for iOS but using the previously mentioned documentation in combination with this tutorial series you should be well suited to build great business apps.
+You are going to cover the basics for Mac Catalyst and the SAP SDK for iOS but using the previously mentioned documentation in combination with this tutorial series you should be well suited to build great business apps.
 
 In the beginning you want to change the app flow to have a split view in place when running on Mac Catalyst. The split view or Split View allows Mac Catalyst to display a sidebar similar to Apple's Music or Stocks applications on MacOS.
 

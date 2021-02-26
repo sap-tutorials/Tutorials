@@ -17,9 +17,7 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 
 [ACCORDION-BEGIN [Step 1: ](Install Node.js and create directory)]
 
-1. Install Node.js and configure it locally. Add the SAP NPM Registry to your npm configuration for all @sap scoped modules.
-
-    `npm config set @sap:registry https://npm.sap.com`
+1. Install Node.js and configure it locally.
 
 2. Add the dependency in applications package.json and run npm for it:
 

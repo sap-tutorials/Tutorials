@@ -12,20 +12,20 @@ primary_tag: products>sap-hana
 
 ## Details
 ### You will learn
-  - How to enable tracing for SAP HANA Client interfaces
-  - How to enable different trace settings and their uses
+  - How to enable tracing using `hdbsqldbc_cons` or environment variables
+  - How to record trace details to a file, `stdout`, or `stderr`
 
 Trace files can help SAP Support diagnose unexpected behavior.
 
 Tracing can be configured using executables included with the SAP HANA Client installation.  [SQLDBC](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/0c20691739094593855ece908b4a3cde.html)-based interfaces use `hdbsqldbc_cons`, except for [ODBC](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/35368f78f6884b019caee12c125b255a.html), which uses `hdbodbc_cons`.  For [JDBC](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/4033f8e603504c0faf305ab77627af03.html), use `ngdbc.jar`.   
 
-Trace settings can also be configured using environment variables as of version 2.5 of the SAP HANA Client.  
+Trace settings can also be configured using environment variables.  
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enable Tracing)]
 
-1. Use `hdbsqldbc_cons` to set different tracing commands. Enter the following command to see the current trace settings:  
+1. Enter the following command to see the current trace settings:  
 
     ```Shell
     hdbsqldbc_cons SHOW ALL
@@ -52,12 +52,27 @@ Trace settings can also be configured using environment variables as of version 
 
     The %p will be replaced with the process ID of the traced application. Including %p in the file name ensures that each process can write its own trace file.
 
-    There are different categories of tracing that can be set, including:  SQL, DEBUG, PACKET, and DISTRIBUTION as well as different levels, such as:  DEBUG, INFO, WARNING, ERROR, and FATAL.  For more information, see [SQLDBC Tracing and Trace Options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/57e04b844d9f40d0bd5ca90f72629255.html).
+    Trace categories:  
+
+    - SQL
+    - DEBUG
+    - PACKET
+    - DISTRIBUTION
+
+    Trace levels:  
+
+    - DEBUG
+    - INFO
+    - WARNING
+    - ERROR
+    - FATAL  
+
+    For more information, see [SQLDBC Tracing and Trace Options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/57e04b844d9f40d0bd5ca90f72629255.html).
 
 3. Run the following command to connect to HDBSQL and query for the status.  Since tracing is enabled, a trace file will be generated and can be used to see which SQL statements are called by `\s`.
 
     ```Shell
-    hdbsql -attemptencrypt -U User1UserKey "\s"
+    hdbsql -U User1UserKey "\s"
     ```
 
 4. Find and open the generated trace file.  Remember to replace #### to match the trace file name you wish to open.
@@ -78,11 +93,17 @@ Trace settings can also be configured using environment variables as of version 
     Notice that the trace settings are shown at the top of the file.  
 
     ```
-    libSQLDBCHDB 2.5.86.1591211272
+    libSQLDBCHDB 2.7.17.1607722875
     SYSTEM: Microsoft Windows / X64
-    BUILD AT: 2020-06-03 20:17:38
+    BUILD AT: 2020-12-21 18:56:04
     BRANCH: unknown
-    APPLICATION: C:\sap\hdbclient\hdbsql.exe
+    APPLICATION: C:\SAP\hdbclient\hdbsql.exe
+    HOST: W-R90XC65K
+    OS USER: dan
+    CURRENT DIRECTORY: C:\Users\dan\HANAClientsTutorial
+    TRACE FILE NAME: c:\temp\traces\SQLDBC-35724.txt
+    PROCESS ID: 35724
+    TRACE FILE WRAP COUNT: 0
 
     ---
     Enabled Traces:
@@ -98,10 +119,10 @@ Trace settings can also be configured using environment variables as of version 
 5.  Search through the trace file and notice the SQL statements that were executed.
 
     ```
-    ::EXECUTE WITH COMMIT SQLCURS_1 2020-06-26 07:11:09.717000 [0x000000000319c260]
+    ::EXECUTE WITH COMMIT SQLCURS_1 2020-12-28 07:11:09.717000 [0x000000000319c260]
 SQL COMMAND : SELECT VERSION FROM SYS.M_DATABASE
     ...
-    ::EXECUTE WITH COMMIT SQLCURS_1 2020-06-26 07:11:09.729000 [0x000000000319c260]
+    ::EXECUTE WITH COMMIT SQLCURS_1 2020-12-28 07:11:09.729000 [0x000000000319c260]
 SQL COMMAND : SELECT B.HOST || ':' || SQL_PORT FROM PUBLIC.M_CONNECTIONS A JOIN SYS.M_SERVICES B   ON A.HOST = B.HOST and A.port = B.port   WHERE OWN = 'TRUE'
     ```
 
@@ -117,46 +138,69 @@ SQL COMMAND : SELECT B.HOST || ':' || SQL_PORT FROM PUBLIC.M_CONNECTIONS A JOIN 
 
 [ACCORDION-BEGIN [Step 2: ](Additional Trace Settings)]
 
-The FLUSH setting, when turned on, can reduce I/O activity.  If you are investigating a crash, it should be turned on to ensure that all the trace information is recorded.
+The following are some additional options for tracing.
 
-```Shell
-hdbsqldbc_cons TRACE FLUSH ON
-```
+1.  The FLUSH setting, when turned on, can reduce I/O activity.  If you are investigating a crash, it should be turned on to ensure that all the trace information is recorded.
 
-In situations where `hdbsqldbc_cons` is not accessible, perhaps because a driver was installed directly using npm or pip, trace settings can be set using environment variables.
+    ```Shell
+    hdbsqldbc_cons TRACE FLUSH ON
+    ```
 
-```Shell (Windows)
-set HDB_SQLDBC_TRACEFILE=c:\temp\traces\SQLDBC-%p.txt
-set HDB_SQLDBC_TRACEOPTS=SQL=DEBUG,FLUSH
-```
+2.  Enabling tracing has an impact on performance and can consume significant disk space.  The following are some additional options to limit the trace file size to 100 KB (plus an archive file) and to turn on tracing only when a specific error code occurs.  Error code 10 occurs when invalid credentials are used.
 
-```Shell (Linux or Mac)
-export HDB_SQLDBC_TRACEFILE=/tmp/traces/SQLDBC-%p.txt
-export HDB_SQLDBC_TRACEOPTS=SQL=DEBUG,FLUSH
-```
+    ```Shell
+    hdbsqldbc_cons TRACE SIZE 100K
+    hdbsqldbc_cons TRACE ONLY ON ERROR 10
+    ```
 
-Trace settings in environment variables take precedence over those set using `hdbsqldbc_cons`.
+3.  In situations where `hdbsqldbc_cons` is not accessible, perhaps because a driver was installed directly using npm or pip, trace settings can be set using environment variables.
 
-The environment variable values can be seen and removed with the following commands.  The first and last commands display what the environment variable is set to. The middle command removes the value of the environment variable.
+    ```Shell (Windows)
+    set HDB_SQLDBC_TRACEFILE=c:\temp\traces\SQLDBC-%p.txt
+    set HDB_SQLDBC_TRACEOPTS=SQL=DEBUG,FLUSH
+    ```
 
-```Shell (Windows)
-set HDB_SQLDBC_TRACEFILE
-set HDB_SQLDBC_TRACEFILE=
-set HDB_SQLDBC_TRACEFILE
+    ```Shell (Linux or Mac)
+    export HDB_SQLDBC_TRACEFILE=/tmp/traces/SQLDBC-%p.txt
+    export HDB_SQLDBC_TRACEOPTS=SQL=DEBUG,FLUSH
+    ```
 
-set HDB_SQLDBC_TRACEOPTS
-set HDB_SQLDBC_TRACEOPTS=
-set HDB_SQLDBC_TRACEOPTS
-```
+    Trace settings in environment variables take precedence over those set using `hdbsqldbc_cons`.
 
-```Shell (Linux or Mac)
-printenv | grep HDB_SQLDBC_TRACE
-unset HDB_SQLDBC_TRACEFILE
-unset HDB_SQLDBC_TRACEOPTS
-printenv | grep HDB_SQLDBC_TRACE
-```
+    The environment variable values can be seen and removed with the following commands.  The first and last commands display what the environment variable is set to. The middle command removes the value of the environment variable.
 
-  ![Environment Variable Values](EnvironmentVariable.png)
+    ```Shell (Windows)
+    set HDB_SQLDBC_TRACEFILE
+    set HDB_SQLDBC_TRACEFILE=
+    set HDB_SQLDBC_TRACEFILE
+
+    set HDB_SQLDBC_TRACEOPTS
+    set HDB_SQLDBC_TRACEOPTS=
+    set HDB_SQLDBC_TRACEOPTS
+    ```
+
+    ```Shell (Linux or Mac)
+    printenv | grep HDB_SQLDBC_TRACE
+    unset HDB_SQLDBC_TRACEFILE
+    unset HDB_SQLDBC_TRACEOPTS
+    printenv | grep HDB_SQLDBC_TRACE
+    ```
+
+    ![Environment Variable Values](EnvironmentVariable.png)
+
+4.  As of version 2.7, trace information can be directed to `stdout` or `stderr`.  The following are a few examples.
+
+    ```Shell
+    hdbsql -U User1UserKey -Z traceFile=stdout -Z traceOptions=sql=warning "SELECT * FROM HOTEL.CUSTOMER"
+    ```
+
+    ```Shell
+    set HDB_SQLDBC_TRACEOPTS=SQL=WARN
+    set HDB_SQLDBC_TRACEFILE=stdout
+    hdbsql -U User1UserKey "SELECT * FROM HOTEL.CUSTOMER"
+    set HDB_SQLDBC_TRACEOPTS=
+    set HDB_SQLDBC_TRACEFILE=
+    ```
 
 [DONE]
 [ACCORDION-END]
@@ -182,7 +226,7 @@ javac -version
     java -jar c:\sap\hdbclient\ngdbc.jar
     ```
 
-    ![JDBC Driver GUI](JDBC_GUI.png)
+    ![JDBC Driver GUI](JDBC-GUI.png)
 
 2. Turn on the tracing for SQL statements using either the GUI or the commands below:
 
@@ -194,20 +238,21 @@ javac -version
 
     >The different command-line option keywords can be found at [JDBC Tracing and Trace Options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/4033f8e603504c0faf305ab77627af03.html).
 
-3.  Execute a query which will generate a trace file.  Change the host and port below to match your SAP HANA host and port.
+3.  Execute a query which will generate a trace file.
 
     ```Shell
-    java -jar c:\sap\hdbclient\ngdbc.jar -u USER1,Password1 -n 10.0.06:39015 -o encrypt=True -o validatecertificate=false -c "SELECT * FROM HOTEL.CUSTOMER"
+    java -jar c:\sap\hdbclient\ngdbc.jar -k User1UserKey -o encrypt=True -o validatecertificate=false -c "SELECT * FROM HOTEL.CUSTOMER"
     ```
 
 4.  Examine the trace file.
 
     ```
     <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body><PRE><PLAINTEXT>
-    Java version: 8
-    ClassLoader: sun.misc.Launcher$AppClassLoader@5c647e05
-    Process ID: 29900
-    Driver version: package com.sap.db.jdbc, Java Platform API Specification, version 1.8, SAP HANA JDBC Driver, SAP SE, 2.5.46-e639a4bbe5fced11566025fc2233868774e2de4f
+    Java version:   11
+    ClassLoader:    jdk.internal.loader.ClassLoaders$AppClassLoader@30946e09
+    Process ID:     7984
+    Driver version: package com.sap.db.jdbc, Java Platform API Specification, version 1.8, SAP HANA JDBC Driver, SAP SE, 2.7.9-e7d7d91fad7f2973ba232a4bff888b86d102c42b
+
     Trace configuration:
       Levels:                                       API
       Show plain-text client-side encrypted values: Disabled
@@ -216,14 +261,20 @@ javac -version
       Trace file size:                              Unlimited
       Stop on error:                                Disabled
 
-    ---- Thread 306a30c7 main
-    com.sap.db.jdbc.Driver@133314b.connect("jdbc:sap://10.0.06:39015", {encrypt=True, password=***, user=USER1, validatecertificate=false})
-    => com.sap.db.jdbc.HanaConnectionFinalize@20fa23c1[ID:218976]
-    com.sap.db.jdbc.HanaConnectionFinalize@20fa23c1[ID:218976].createStatement()
-    => com.sap.db.jdbc.HanaStatement@77f99a05
-    com.sap.db.jdbc.HanaStatement@77f99a05.execute("SELECT * FROM HOTEL.CUSTOMER")
-    ...
+    ---- Thread 1060b431 main
+    com.sap.db.jdbc.Driver@2ac273d3.connect("jdbc:sap://localhost:30015", {encrypt=True, key=***, validatecertificate=false})
+    => com.sap.db.jdbc.HanaConnectionClean@78a2da20[ID:203274]
+    com.sap.db.jdbc.HanaConnectionClean@78a2da20[ID:203274].createStatement()
+    => com.sap.db.jdbc.HanaStatement@47d9a273
+    com.sap.db.jdbc.HanaStatement@47d9a273.execute("SELECT * FROM HOTEL.CUSTOMER")
     ```
+
+5.  Finally, tracing information can be sent to `stdout` or `stderr` as shown below.
+
+    ```shell
+    java -jar c:\sap\hdbclient\ngdbc.jar -k User1UserKey -o traceFile=stdout -o traceOptions=CONNECTIONS -c "SELECT * FROM HOTEL.CUSTOMER"
+    ```
+
 
 Congratulations, you have now configured tracing with the SAP HANA Client interfaces!
 

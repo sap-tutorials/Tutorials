@@ -1,6 +1,6 @@
 ---
-title: Install the Cloud Connector in your System Landscape
-description: Install the Cloud Connector to securely connect applications on SAP Cloud Platform with your on-premise systems.
+title: Install the SAP Connectivity Service Cloud Connector in your System Landscape
+description: Install the SAP Connectivity Service Cloud Connector to securely connect applications on SAP BTP with your on-premise systems.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity ]
@@ -9,21 +9,21 @@ time: 20
 
 ## Details
 ### You will learn  
-* About the available Cloud Connector versions
-* How to install the Cloud Connector
-* How to start and stop the Cloud Connector
-* How to log on to the Cloud Connector administration UI
-* First steps to secure your installed Cloud Connector
+* About the available SAP Connectivity Service Cloud Connector versions
+* How to install the SAP Connectivity Service Cloud Connector
+* How to start and stop the SAP Connectivity Service Cloud Connector
+* How to log on to the SAP Connectivity Service Cloud Connector administration UI
+* First steps to secure your installed SAP Connectivity Service Cloud Connector
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Check the prerequisites)]
 
-In this tutorial we will install version 2.11.0.3 of the Cloud Connector on a PC with Windows 10, but you should also be able to follow the steps if you use another operating system.
+In this tutorial we will install version 2.11.0.3 of the SAP Connectivity Service Cloud Connector (from this point forward simply referred to as Cloud Connector) on a PC with Windows 10, but you should also be able to follow the steps if you use another operating system.
 
 You need at least 2GB of RAM and 3GB of hard disk space to use this version of the Cloud Connector.
 
-Since the Cloud Connector will act as a gateway between SAP Cloud Platform and systems in your on-premise system landscape, it must have an Internet connection to the hosts of SAP Cloud Platform as well as LAN access to your systems (SAP Cloud Platform has IP addresses for connectivity for each region). As a consequence, the Cloud Connector will be a security-critical component in your system landscape, so it is highly recommended to restrict the operating system access to the machine where you install it to a minimal set of users who will administrate it.
+Since the Cloud Connector will act as a gateway between SAP Business Technology Platform and systems in your on-premise system landscape, it must have an Internet connection to the hosts of SAP BTP as well as LAN access to your systems (SAP BTP has IP addresses for connectivity for each region). As a consequence, the Cloud Connector will be a security-critical component in your system landscape, so it is highly recommended to restrict the operating system access to the machine where you install it to a minimal set of users who will administrate it.
 
 > You can check the current prerequisites for newer versions of the Cloud Connector in the [official documentation](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e23f776e4d594fdbaeeb1196d47bbcc0.html). The list of IP addresses is also given there.
 

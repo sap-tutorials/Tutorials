@@ -3,7 +3,7 @@ title: Consume a REST API in an MDK App
 description: Create a fully functional native mobile app consuming Petstore REST API.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
 time: 30
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial:** [Set Up Business Application Studio for Mobile Technologies](cp-mobile-bas-setup)
-- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by allowing custom domains.)
 
 ## Details
 ### You will learn
@@ -55,7 +55,7 @@ With above details, you will next configure an app in Mobile Services, add root 
 
 [ACCORDION-BEGIN [Step 2: ](Configure new MDK app in Mobile Services cockpit)]
 
-1. Navigate to [SAP Cloud Platform Mobile Services cockpit on Cloud Foundry environment](fiori-ios-hcpms-setup).
+1. Navigate to [SAP Mobile Services cockpit on Cloud Foundry environment](fiori-ios-hcpms-setup).
 
 2. On the home screen, select **Create new app**.
 
@@ -70,7 +70,7 @@ With above details, you will next configure an app in Mobile Services, add root 
 
     !![MDK](img_2.3.png)
 
-    >Other fields are optional. For more information about these fields, see [Creating Applications](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/admin/manage.html#creating-applications) in the SAP Cloud Platform documentation.
+    >Other fields are optional. For more information about these fields, see [Creating Applications](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/admin/manage.html#creating-applications) in the help documentation.
 
 4. Select **Mobile Development Kit Application** from the dropdown and Click **Finish**.
 
@@ -102,11 +102,13 @@ With above details, you will next configure an app in Mobile Services, add root 
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. Navigate to *File* menu &rarr; click **New Project from Template**.
+2. Click **Start from template** on Welcome page.
 
     !![MDK](img_3.2.png)
 
-3. Select **MDK Project** and click **Next**.
+    >If you do not see Welcome page, you can access it via **Help** menu.
+
+3. Select **MDK Project** and click **Start**.
 
     !![MDK](img_3.3.png)  
 
@@ -122,7 +124,7 @@ With above details, you will next configure an app in Mobile Services, add root 
 
     >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.      
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.    
 
 5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Petstore` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
 
@@ -151,7 +153,6 @@ With above details, you will next configure an app in Mobile Services, add root 
     | `Destination Name` | Select `swagger.petstore` from the dropdown |
     | `Path Suffix` | Leave it as it is |
     | `Language URL Param` | Leave it as it is |
-    | `Enable Offline Store` | uncheck it |
     | `REST Service` | Check it |
 
     !![MDK](img_4.3.png)
@@ -214,7 +215,7 @@ You will add an **Object Table** control  item on `Main.page` to display the lis
 
 [ACCORDION-BEGIN [Step 6: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
@@ -329,7 +330,7 @@ In this step, you will create the `Pet_Create.page` as a **Form Cell Page**. Thi
 
     !![MDK](img_10.3.png)
 
-4. Now, you will add the fields (like Category name, Pet name, Tag Name, Status) for creating a new pet record by the end-user.
+4. Now, you will add the fields (Pet name and Status) for creating a new pet record by the end-user.
 
     In the Layout Editor, expand the **Control** | **Container Item** section. Drag and drop a **Simple Property** onto the Page area.
 
@@ -337,7 +338,7 @@ In this step, you will create the `Pet_Create.page` as a **Form Cell Page**. Thi
 
     !![MDK](img_10.4.gif)
 
-5. Drag and drop three additional Simple Property controls onto the page so you have four total controls.
+5. Drag and drop one more Simple Property control onto the page so you have two total controls.
 
     !![MDK](img_10.5.png)
 
@@ -411,7 +412,7 @@ In this step, you will create the `Pet_Create.page` as a **Form Cell Page**. Thi
 
 5. Click **Next** and **Finish** the confirmation step.
 
-    >You can find more details about [`SendRequest`](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/RestService/SendRequest.schema.html) action.
+    >You can find more details about `SendRequest` action in [help documentation](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/RestService/SendRequest.schema.html).
 
 [DONE]
 [ACCORDION-END]
@@ -512,8 +513,8 @@ Now, you will create a new action `ClosePage_Complete.action` that will be calle
     | Property | Value |
     |----|----|
     | `Action Name`| `ClosePage_Complete` |
-    | `PageToOpen` | Select `Completed` from the dropdown |
-    | `ModalPage`| Select `false` from the dropdown |
+    | `DismissModal` | Select `Completed` from the dropdown |
+    | `CancelPendingActions`| Select `false` from the dropdown |
 
     !![MDK](img_16.1.png)
 
@@ -521,15 +522,15 @@ Now, you will create a new action `ClosePage_Complete.action` that will be calle
 
 4. Next, define _Success_ actions for `CreatePet.action`.
 
-     Open `CreatePet.action` in the action editor, expand the **Common Action Properties** and provide the below information:
+    Open `CreatePet.action` in the action editor, expand the **Common Action Properties** and provide the below information:
 
-     | Property | Value |
-     |----|----|
-     | `Success Action` | Select `CloseModalPage_Complete.action` from the dropdown |
+    | Property | Value |
+    |----|----|
+    | `Success Action` | Click link icon and bind it to `CloseModalPage_Complete.action` |     
 
     !![MDK](img_16.2.png)
 
-     >When `CreatePet.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered. You may create a message action and set it as failure action if  `CreatePet.action` fails.
+    >When `CreatePet.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered. You may create a message action and set it as failure action if  `CreatePet.action` fails.
 
 [DONE]
 [ACCORDION-END]
@@ -573,12 +574,11 @@ Right-click the `Application.app` file in the project explorer pane,  select **M
 
 You have created a new record consuming REST API. Similarly, you can also modify and delete an existing record.
 
-**Congratulations!** You have successfully completed **Level Up with the Mobile Development Kit** mission and you are now all set to [Brand Your Customized App with Mobile Development Kit SDK](mission.mobile-dev-kit-brand) mission.
-
 [VALIDATE_2]
 [ACCORDION-END]
 
+---
 
-
+Congratulations, you have successfully completed **Level Up with the Mobile Development Kit** mission and you are now all set to [Brand Your Customized App with Mobile Development Kit SDK](mission.mobile-dev-kit-brand) mission.
 
 ---

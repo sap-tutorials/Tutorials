@@ -1,20 +1,21 @@
 ---
-title: Create an application using SAP HANA and the Cloud Application Programming model
+title: Create an application using SAP HANA and the Cloud Application Programming Model
 description: Use SAP Web IDE and the Cloud Application Business wizard
-auto_validation: true
+auto_validation:
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 time: 25
-tags: [ tutorial>beginner, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform--sap-hana-service
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
+primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You have [created a trial account in SAP Cloud Platform in region `EU10`](hcp-create-trial-account)
- - You have [enabled SAP Web IDE Full stack](webide-multi-cloud)
- - You have enabled the extensions for SAP HANA, Business Applications Development tools and SAP HANA under `Preferences -> Extensions`
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
+ - [Getting started with SAP HANA, XS Advanced Development](group.hana-xsa-get-started)
 
 ## Details
 ### You will learn
-  - How to create a simple application based on the SAP Cloud Platform Business Application wizard
+  - How to create a simple application based on the SAP Cloud Application Business wizard
   - You will be introduced to basics on cloud-native development and multi-target applications
 
 ---
@@ -259,7 +260,7 @@ If prompted, enter your credentials:
 
 > Note: Your credentials are the same you used to log in to the SAP Cloud Platform trial account
 
-**Congratulations!** You have created your first multi-target application using the Cloud Application Programming model. You can read more about Multi Target applications and SAP HANA [in this series of blogs posts](https://blogs.sap.com/2017/09/04/xs-advanced-for-not-so-dummies/) or about the Cloud Application Programming model [in the official SAP Documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/00823f91779d4d42aa29a498e0535cdf.html)
+**Congratulations!** You have created your first multi-target application using the Cloud Application Programming Model. You can read more about Multi Target applications and SAP HANA [in this series of blogs posts](https://blogs.sap.com/2017/09/04/xs-advanced-for-not-so-dummies/) or about the Cloud Application Programming Model [in the official SAP Documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/00823f91779d4d42aa29a498e0535cdf.html)
 
 > If you look into the SAP Cloud Platform Cockpit, you will see the Java micro-service running as an application:
 >

@@ -10,21 +10,21 @@ author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites
- - [You have set up your SAP Cloud Platform Mobile Services account](https://developers.sap.com/tutorials/cp-mobile-cards-setup.html)
- - You have set up your Business Application Studio for Mobile Technologies
- - Configure connection between your Business Application Studio & SAP Cloud Platform Mobile Services Cockpit
+- You have [Set Up SAP Mobile Cards](cp-mobile-cards-setup).
+- You have [Set Up SAP Business Application Studio for Mobile Development](cp-mobile-bas-setup).
+- You have configured a connection between your SAP Business Application Studio and the SAP Mobile Services cockpit.
 
 ## Details
 ### You will learn
   - Create a Web Page Matching card using a template in Business Application Studio
   - Design and develop SAP Mobile Cards in Business Application Studio
-  - Deploy and Publish a card to SAP Cloud Platform Mobile Services from Business Application Studio
+  - Deploy and Publish a card to SAP Mobile Services from Business Application Studio
 
 Add additional information: Background information, longer prerequisites
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get Familiar With The Real World Use-case)]
+[ACCORDION-BEGIN [Step 1: ](Understand the use case)]
 
 Watson, a salesperson, has created a Sales Order.
 
@@ -35,7 +35,7 @@ In this tutorial, you will create a card and send a push notification to Alice a
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a New Web Page Matching Card)]
+[ACCORDION-BEGIN [Step 2: ](Create a Web Page Matching card)]
 
 Open Business Application Studio and enter your dev workspace.
 
@@ -62,7 +62,7 @@ A folder called `Sales Push Card BAS` is created.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Modify The Card Type)]
+[ACCORDION-BEGIN [Step 3: ](Modify card type)]
 
 In your File Explorer, right click on **`metadata.json`**, and select Open With &rarr; Code Editor.
 
@@ -72,7 +72,7 @@ In your File Explorer, right click on **`metadata.json`**, and select Open With 
 
 Replace the entire code in the file `metadata.json` with the following, and save your changes.
 
-```json
+```JSON
 {
     "Name": "Sales Push Card BAS",
     "Connection": "com.sap.edm.sampleservice.v2",
@@ -118,7 +118,7 @@ Replace the entire code in the file `metadata.json` with the following, and save
 }
 ```
 
-> In the code above, we are changing the Card Template type from Server Managed Card to Web Page Matching Card.
+> In the code above, you are changing the Card Template type from Server Managed Card to Web Page Matching Card.
 
 In your File Explorer, click **metadata.json**.
 
@@ -153,7 +153,7 @@ Enter the values as indicated in the table:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add Approve Action)]
+[ACCORDION-BEGIN [Step 4: ](Add approve action)]
 
 In your File Explorer, click **metadata.json** and go to the Actions Tab.
 
@@ -185,7 +185,7 @@ Enter the values as indicated in the table:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Update The Design Of The Card)]
+[ACCORDION-BEGIN [Step 5: ](Update design of card)]
 
 In your File Explorer, click **`userdata.json`**.
 
@@ -193,7 +193,7 @@ In your File Explorer, click **`userdata.json`**.
 
 Replace the entire code in the file `userdata.json` with the following, and save your changes.
 
-```json
+```JSON
 {
 	"d": {
 	  "__metadata": {
@@ -229,7 +229,7 @@ In your File Explorer, click **`template_en.html`**.
 
 Replace the entire code in the file `template_en.html` with the following, and save your changes.
 
-```html
+```HTML
 <body>
     <div id="mySimpleTemplate" class="myTemplate" data-type="text/x-handlebars-template">
         <div class="header" style="height: 30px">
@@ -308,7 +308,7 @@ In your File Explorer, click **`templateBack_en.html`**.
 
 Replace the entire code in the file `templateBack_en.html` with the following, and save your changes.
 
-```html
+```HTML
 <div id="mySimpleTemplate" data-type="text/x-handlebars-template">
     <div class="myTemplate" style="padding:25px;">
         Nothing to see here...
@@ -331,7 +331,7 @@ A preview window for your card will open to the side. It will preview the latest
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Deploy And Publish The Card From SAP Business Application Studio)]
+[ACCORDION-BEGIN [Step 6: ](Deploy and publish card)]
 
 Open Find Command, search for `mobile cards` and select **Mobile Cards: Deploy**.
 
@@ -360,7 +360,7 @@ Upon successful publish, you will see a toast message at the bottom right corner
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Subscribe To The Card On Your Mobile Device)]
+[ACCORDION-BEGIN [Step 7: ](Subscribe to card on mobile device)]
 
 >Make sure you are choosing the right device platform tab ( **Android** or **iOS** ) **above**.
 

@@ -5,8 +5,8 @@ title: Performance Test
 description: Learn how to do performance testing which are written using the SAP Cloud SDK.
 auto_validation: true
 time: 6
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites

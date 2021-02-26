@@ -3,7 +3,7 @@ title: Modify a Customer Record in an MDK App
 description: Allow editing of customer details in an MDK app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -12,11 +12,10 @@ author_profile: https://github.com/jitendrakansal
 ## Details
 ### You will learn
   - How to create a new page for modifying customer details such as name, email and phone number
-  - How to store changes locally
-  - How to sync local changes with backend
+  - How to store changes locally on Mobile app and sync these changes with backend
+  - How to update a record in web application
 
 ---
-
 
 ![MDK](img_1.gif)
 
@@ -65,13 +64,13 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
     |----|----|
     | `Name`| `FCFirstName` |
     | `Caption` | `First Name` |
-    | `Value`| bind it to `FirstName` property of the Customer entity |
+    | `Value`| click the link icon and bind it to `FirstName` property of the Customer entity |
 
     !![MDK](img_1.6.png)
 
     >Make sure, Format should be set as _Binding_.
 
-    !![MDK](img_1.6.1.png)
+    >!![MDK](img_1.6.1.png)
 
 7. Select the second Simple Property control and provide the below information:
 
@@ -79,7 +78,7 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
     |----|----|
     | `Name`| `FCLastName` |
     | `Caption` | `Last Name` |
-    | `Value`| bind it to `LastName` property of the Customer entity |
+    | `Value`| click the link icon and bind it to `LastName` property of the Customer entity |
 
     !![MDK](img_1.7.png)
 
@@ -90,7 +89,7 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
     |----|----|
     | `Name`| `FCPhone` |
     | `Caption` | `Phone` |
-    | `Value`| bind it to `PhoneNumber` property of the Customer entity |
+    | `Value`| click the link icon and bind it to `PhoneNumber` property of the Customer entity |
 
     !![MDK](img_1.8.png)
 
@@ -100,7 +99,7 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
     |----|----|
     | `Name`| `FCEmail` |
     | `Caption` | `Email` |
-    | `Value`| bind it to `EmailAddress` property of the Customer entity |
+    | `Value`| click the link icon and bind it to `EmailAddress` property of the Customer entity |
 
     !![MDK](img_1.9.png)
 
@@ -302,8 +301,8 @@ First, define a failure message.
 
     | Property | Value |
     |----|----|
-    | `Success Action` | Select `CloseModalPage_Complete.action` from the dropdown |
-    | `Failure Action` | Select `UpdateCustomerEntityFailureMessage.action` from the dropdown |
+    | `Success Action` | Click the link icon and bind it to `CloseModalPage_Complete.action` |
+    | `Failure Action` | Click the link icon and bind it to `UpdateCustomerEntityFailureMessage.action` |
 
     >When `Customers_UpdateEntity.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered or if `Customers_UpdateEntity.action` fails then `UpdateCustomerEntityFailureMessage.action` will be triggered.
 
@@ -330,7 +329,7 @@ First, define a failure message.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 7: ](Deploy the application)]
 
 Deploy the updated application to your MDK client.
 
@@ -338,11 +337,11 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img_7.1.png)
 
-2. Select deploy target as **Mobile Services**.
+2. Select deploy target as **Mobile & Cloud**.
 
     !![MDK](img_7.2.png)
 
-    You should see **Deploy succeeded** message.
+    You should see success message for both deployments.
 
     !![MDK](img_7.3.png)
 
@@ -355,13 +354,14 @@ Deploy the updated application to your MDK client.
 
 [OPTION BEGIN [Android]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
 2. Tap **CUSTOMER LIST**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap `edit` icon.
 
-    ![MDK](img_8.2.png)
+    ![MDK](img_8.2.1.png)
+    ![MDK](img_8.2.2.png)
 
-3. For example, updating First Name from `Lukas` to `Rob`. Tap save icon.
+3. For example, update First Name from `Isabelle` to `Carolina`. Tap save icon.
 
     ![MDK](img_8.3.1.png)
 
@@ -377,9 +377,9 @@ Deploy the updated application to your MDK client.
 
     >!![MDK](img_8.9.1.png)
 
-    >It will open the URL in a new tab, now add `/Customers` at the end of the URL.
+    >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
-    But here result is pointing to old First Name (`Lukas`).
+    But here result is pointing to old First Name (`Isabelle`).
 
     ![MDK](img_8.9.png)
 
@@ -391,17 +391,22 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_8.5.png)
 
+Now, refresh the URL to check if record has been updated in the backend. As Sync is pressed, `UploadOffline.action` gets triggered to upload local changes from device to the backend and on success of this call, `DownloadOffline.action` is being called.
+
+![MDK](img_8.11.png)
+
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-2. Tap **Customer List**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap **Edit**..
+2. Tap **Customer List**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap **Edit**.
 
-    ![MDK](img_8.6.png)
+    ![MDK](img_8.6.1.png)
+    ![MDK](img_8.6.2.png)
 
-3. For example, updating First Name from `Lukas` to `Rob`. Tap **Save**.
+3. For example, updating First Name from `Isabelle` to `Carolina`. Tap **Save**.
 
     ![MDK](img_8.7.png)
 
@@ -417,9 +422,9 @@ Deploy the updated application to your MDK client.
 
     >!![MDK](img_8.9.1.png)
 
-    >It will open the URL in a new tab| add `/Customers`/ at the end of the URL.
+    >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
-    But here result is pointing to old First Name (`Lukas`).
+    But here result is pointing to old First Name (`Isabelle`).
 
     ![MDK](img_8.9.png)
 
@@ -431,15 +436,55 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_8.10.png)
 
-[OPTION END]
-
 Now, refresh the URL to check if record has been updated in the backend. As Sync is pressed, `UploadOffline.action` gets triggered to upload local changes from device to the backend and on success of this call, `DownloadOffline.action` is being called.
 
 ![MDK](img_8.11.png)
 
-**Congratulations!** You have successfully modified a Customer Record and you are now all set to [Define a Validation Rule in an MDK App](cp-mobile-dev-kit-add-validation).
+[OPTION END]
+
+[OPTION BEGIN [Web]]
+
+1. Either click the highlighted button or refresh the web page to load the changes.
+
+    !![MDK](img_8.12.png)
+
+    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+
+    >!![MDK](img_8.12.2.png)
+
+2. Click **Customer List**, click one of the available customer record,  you will then navigate to Customer detail page.
+
+    !![MDK](img_8.12.1.png)
+
+3. Click **Edit**.
+
+    !![MDK](img_8.13.png)
+
+4. For example, updating First Name from `Isabelle` to `Carolina`. Click **Save**.
+
+    !![MDK](img_8.14.png)
+
+    Record gets updated accordingly.
+
+    !![MDK](img_8.15.png)
+
+4. You can cross verify if the record has been updated in the backend.
+
+    >Backend endpoint can be found in [Mobile Services Cockpit](cp-mobile-dev-kit-ms-setup).
+
+    >**Mobile Applications** | **Native/Hybrid** | click the MDK App **com.sap.mdk.demo** | **Mobile Connectivity** | click **Launch in Browser** icon
+
+    >!![MDK](img_8.9.1.png)
+
+    >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
+
+[OPTION END]
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully modified a Customer Record and you are now all set to [define a Validation Rule in an MDK App](cp-mobile-dev-kit-add-validation).
 
 ---

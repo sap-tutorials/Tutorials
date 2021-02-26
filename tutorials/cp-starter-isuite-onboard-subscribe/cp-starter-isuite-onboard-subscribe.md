@@ -5,8 +5,8 @@ auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-cloud-platform-integration-for-process-services]
 primary_tag: products>sap-cloud-platform
-author_name: Vikram Kulkarni
-author_profile: https://github.com/Vikramkulkarni01
+author_name: Karunaharan V
+author_profile: https://github.com/Karunaharan
 ---
 
 ## Prerequisites
@@ -24,13 +24,15 @@ The Integration Suite includes all integration capabilities in simple service pl
 
 This part of the series lets you experience the capabilities offered by SAP Cloud Platform Integration Suite. For the complete series, see [Request Product Details with an Integration Scenario](https://developers.sap.com/mission.cp-starter-integration-cpi.html).
 
-> **IMPORTANT**: The Integration Suite trial account is intended for personal exploration and not for production use or team development.
+> **IMPORTANT**: The Integration Suite trial account is intended for personal exploration and not for production use or team development. See: [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html).
 
 >**WHERE TO START**: If you have already activated Cloud Integration (Process Integration) service in your existing trial account, we recommend you to do either of the following:
 
-> **Option 1**: If you are unable to activate **`Integration Suite`** service, create a **`New Subaccount`** and then proceed to **Step 2**.
+> **Option 1**: If you are unable to activate **`Integration Suite`** service, create a **`New Subaccount`** and then proceed to **Step 3**.
 
-> **Option 2**: Unsubscribe to Process Integration service then proceed to **Step 2**.
+> **Option 2**: Unsubscribe to Process Integration service then proceed to **Step 3**.
+
+> If you are new to SAP Cloud Platform or Cloud Integration, get started with **Step 1**.
 
 > For a new subaccount, you need to assign entitlements by adding service plans and the quotas. For more information, see [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/c90f3d522ee04e65bd87cdec8808e5ce.html).
 
@@ -39,9 +41,9 @@ This part of the series lets you experience the capabilities offered by SAP Clou
 
 [ACCORDION-BEGIN [Step 1: ](The Use Case)]
 
-Using this scenario, you design and execute an integration flow that reads product details from a public product catalog (`WebShop`) for a given product identifier. Product details comprise data such like the product name and the price, for example. To accomplish the scenario, you use SAP Cloud Platform Integration Suite, and in particular its capabilities *Cloud Integration* and *API Management*.
+Using this scenario, you design and execute an integration flow that reads product details from a public product catalog (`WebShop`) for a given product identifier. Product details include data such as the product name and price, for example. To accomplish the scenario, you use SAP Cloud Platform Integration Suite, and in particular, its capabilities *Cloud Integration* and *API Management*.
 
-You use Cloud Integration to design and deploy the integration flow. When you have finished designing these tasks, you use the API Explorer tool of *API Management* to expose the integration flow endpoint as an API.
+You use Cloud Integration to design and deploy an integration flow. When you have finished designing, you use the API Explorer tool of *API Management* to expose the integration flow endpoint as an API.
 
   - You also define how to access the API in terms of authentication by assigning a dedicated predefined policy template.
   - Using this policy template, you define API access based on the OAuth client credentials grant method.
@@ -56,11 +58,11 @@ You use Cloud Integration to design and deploy the integration flow. When you ha
 
 1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-2. Navigate to the trial  global account by clicking **Enter Your Trial Account**.
+2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
-      !![Trial global account](01_FoundationsCockpit_trial page.png)
+    !![Trial global account](01_FoundationsCockpit_trial page.png)
 
-3. Click **Create Account** to create a subaccount. Choose the region that is closest to you.
+3. Choose the region that is closest to you. Click **Create Account** to create a subaccount.
 
     !![Select region](Screenshot_AP21.png)
 
@@ -80,70 +82,45 @@ You use Cloud Integration to design and deploy the integration flow. When you ha
 
     >If the Integration Suite tile is not visible under **Subscriptions**, you need to assign Integration Suite Trial entitlements. To assign entitlements, see [Manage Entitlements on SAP Cloud Platform Trial](https://developers.sap.com/tutorials/cp-trial-entitlements.html).
 
-    >- In the tutorial, after **Step 3.5**, there is a list of available services on the left pane.
+    >- In the tutorial referred above, after **Step 3.5**, there is a list of available services on the left pane.
 
     >- Filter for Integration Suite service and select the service.
 
-    >- Select the service plan and add it to your subaccount.
+    >- Select the service plan, add it to your subaccount, and execute this step.
 
-    >- Perform your tasks from **Step 3.1** onwards as mentioned in the tutorial.
-
-    !![Select Integration Suite](2.1.Integration_Suite_Tile.png)    
+      !![Select Integration Suite](2.1.Integration_Suite_Tile.png)    
 
 2. Select **Subscribe**.
-    >**IMPORTANT**: Trial accounts are not intended for productive use and offer a certain scope only. See: [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html).
 
-    !![Select subscribe button](2.2.Subscribe.png)
+      !![Select subscribe button](2.2.Subscribe.png)
 
 
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 4: ](Configure administrator access)]
-
-In this step, you authorize a user to access the Integration Suite Provisioning application and to activate its capabilities. The assigned user will also be able to add users to access activated Integration Suite capabilities.
-
-1. Go to **Security > Trust Configuration** and click **`sap.default`**.
-
-    !![Trust_configuration](4.1.1_Adminstrator_Access.png)
-
-2. Enter the user's e-mail address and click **Show Assignments**. In the confirmation dialog, click **Add User**.
->**IMPORTANT**: The confirmation message appears only when an email address is not added to the account.
-
-    !![Add User](4.1.2_Adduser.png)
-
-3. Click  **Assign Role Collections** and select **Integration Provisioner** role collection.
-
-    !![Role collection](4.1.3_Rolecollection.png)
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 5: ](Provision the capabilities)]
+[ACCORDION-BEGIN [Step 4: ](Provision the capabilities)]
 >**IMPORTANT**: Ensure that you unsubscribe to the standalone services (like Open Connectors, Process Integration or APIM service ) if you have already subscribed to it.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
 
 >**Navigational Steps**: Go to Service Marketplace, search for Open Connectors and click `unsubscribe`.
 
-1. Launch SAP Cloud Platform Integration provisioning application by choosing your subaccount, and then **Subscriptions**.
+1. Navigate to your subaccount, and then choose **Subscriptions**.
 
-2. Click **Go to Application** in the **Integration Suite** overview page.
+2. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the **Integration Suite Launchpad**.
 
     !![Access integration suite provisioning application](3.1.Access_Prov_App.png)
 
-3. Now you are directed to the **Integration Suite Launchpad**. Choose **Add Capabilities** to activate the capabilities offered by Integration Suite.
+3. Choose **Add Capabilities** to activate the capabilities offered by Integration Suite.
 
-    !![Integratiosuite_launchpad](4.3.1isuitenewlaunchpage.png)
+    !![Integration suite launchpad](4.3.1isuitenewlaunchpage.png)
 
     For this tutorial, you must select **Design, Develop and Operate Integration Scenarios** and **Design, Develop and Manage APIs click** capabilities.
-    You do not have to select anything here. Click **Next**.
+    Click **Next**.
 
     !![Add Capabilities](5.1.2Addcapapbilities.png)
 
-    Click **Next**.
+    You do not have to select anything here. Click **Next**.
 
-    !![Intermidiate Step](4.1intermidiate_step.png)
+    !![Intermediate Step](4.1intermidiate_step.png)
 
     Click **Next**.
 
@@ -156,7 +133,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
     !![Activate capabilities](3.3.Activate_capabilities.png)
 
     The activation may take a while and you will notice the dialog shown here.
-    >**IMPORTANT**: Before you proceed to **Step5**, please wait for all the capabilities to be activated.
+    >**IMPORTANT**: Before you proceed to **Step 4.5**, please wait for all the capabilities to be activated.
 
     !![Activation dialog](5.3Activation_Dial.png)
 
@@ -168,15 +145,15 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 
     >To know more about resources offered by the Integration Suite Launchpad, see [Working with Integration Suite Launchpad](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/a53dce3b57ba4915b055343f783300a5.html).
 
-    >To access the capability tile, you must assign capability-specific roles to the user. Continue with the next step.
+    >To access each capability's tile, you must assign capability-specific roles which is explained in the next step.
 
 [DONE]
 [ACCORDION-END]
 
- [ACCORDION-BEGIN [Step 6: ](Assign roles for the capabilities)]
- In this step, you assign users to the trial account for them to access and use the activated capability.
+ [ACCORDION-BEGIN [Step 5: ](Assign roles for the capabilities)]
+ In this step, you assign yourself or other users the necessary roles to access and use the activated capabilities.
 
- 1. Go to **Security > Trust Configuration** and click **`sap.default`**.
+ 1. Navigate to your SAP Cloud Platform subaccount. Go to **Security > Trust Configuration** and click **`Default identity provider`**.
 
     !![Trust configuration](6.1_Trust_configuration.png)
 
@@ -203,12 +180,14 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Verify the activated capabilities)]
+[ACCORDION-BEGIN [Step 6: ](Verify the activated capabilities)]
 
-1. After giving authorization to a user, go to the **Integration Suite Launchpad** application and choose **Manage Capabilities** tile.
-    !![Link text e.g., Destination screen](1.6.1VerifyActivatedCapab.png)
+1. After providing necessary authorization, go to the **Integration Suite Launchpad** application and choose **Manage Capabilities** tile.
+
+    !![Activated Capabilities](ManageCapab.png)
 
 2. Click on the URLs of all the activated capabilities and verify if you can successfully access them.
+
     !![Verify](6.1Verifycapabilities.png)
 
 [DONE]

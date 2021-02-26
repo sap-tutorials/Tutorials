@@ -7,9 +7,6 @@ tags: [  tutorial>intermediate, topic>java, products>sap-hana\,-express-edition 
 time: 30
 ---
 
-## Prerequisites  
- - **Tutorials:** [SAP HANA, express edition, in Google Cloud Platform Launcher (Database Services)](hxe-gcp-getting-started-launcher)
-
 ## Details
 ### You will learn  
   - How to set up the Google Cloud Platform project
@@ -27,7 +24,6 @@ You'll need the following software installed before setting up the project:
 - A code editor. For example, [Eclipse](http://www.eclipse.org/downloads/packages/release/photon/r/eclipse-ide-java-ee-developers)
 - A zip tool capable of creating split zip archives
 
-Please also complete the tutorial [SAP HANA, express edition, in Google Cloud Platform Launcher (Database Services)](hxe-gcp-getting-started-launcher) including all optional steps.
 
 ---
 

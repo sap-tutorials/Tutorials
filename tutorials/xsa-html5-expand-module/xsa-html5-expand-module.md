@@ -9,6 +9,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>html5, topic>odata, topic>sapu
 ---
 
 ## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Beginner
  - Create a Node.js module to expose an OData service (https://developers.sap.com/tutorials/xsa-xsjs-xsodata.html)
 

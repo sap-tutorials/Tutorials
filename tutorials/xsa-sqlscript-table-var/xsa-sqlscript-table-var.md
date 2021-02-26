@@ -4,11 +4,12 @@ description: Leveraging SQLScript in Stored Procedures, User Defined Functions, 
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition, products>sap-hana-cloud ]
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 time: 15
 ---
 
 ## Prerequisites  
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Parallel Processing and Parameters](xsa-sqlscript-parallel)
 
 ## Details

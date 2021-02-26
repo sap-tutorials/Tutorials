@@ -14,7 +14,7 @@ author_profile: https://github.com/nedo-SAP
   - For a better understanding, it is recommended to complete the tutorials [Create a Basic Node.js App](cp-node-create-basic-app) and [Deploy Your Node.js App with the Cloud Foundry CLI](cp-node-deploy-cf-cli) first.
 
 ## Details
-### You will learn 
+### You will learn
   - How to secure a basic Node.js application with user authentication
   - How to secure a certain part of your application with user authorization
   - How to assign authorizations (in the form of a role collection) to a user
@@ -92,8 +92,8 @@ npm config set @sap:registry https://npm.sap.com
     ```JSON
     "dependencies": {
       "express": "^4.17.1",
-      "@sap/xsenv": "^2.2.0",
-      "@sap/xssec": "^3.0.0",
+      "@sap/xsenv": "^3.1.0",
+      "@sap/xssec": "^3.0.10",
       "passport": "^0.4.1"    
     }
     ```
@@ -168,7 +168,7 @@ The approuter will enable you to create a secure route to your application.
     {
         "name": "approuter",
         "dependencies": {
-            "@sap/approuter": "^8.0.0"
+            "@sap/approuter": "^9.0.2"
         },
         "scripts": {
             "start": "node node_modules/@sap/approuter/approuter.js"
@@ -413,13 +413,13 @@ Your application has two routes that are defined in the `manifest.yml`. The dire
 
 Assign your user the role collection that contains the necessary role to view the products in the product list.
 
-3. Open the SAP Cloud Platform Cockpit.
+3. Open the SAP BTP cockpit.
 
 4. Navigate to your subaccount.
 
 5. Choose the **Security** tab and choose **Trust Configuration**.
 
-6. Choose **SAP ID Service**.
+6. Choose **Default identity provider**.
 
 7. Enter your e-mail address and choose **Show Assignments**.
 

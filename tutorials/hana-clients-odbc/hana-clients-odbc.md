@@ -66,6 +66,8 @@ The ODBC Data Source Administrator lists the ODBC drivers installed and the conf
 
 9. Press OK, to save the data source.
 
+For additional details see [ODBC Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/2.7/en-US/7cab593774474f2f8db335710b2f5c50.html).
+
 [DONE]
 [ACCORDION-END]
 
@@ -76,7 +78,7 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 
     ![YaST installer](unixODBC-install.png)
 
-    For more details on how to accomplish this, please follow the second step of [this tutorial](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-odbc.html).
+    For more details on how to accomplish this, please follow the second step of [this tutorial](hxe-ua-dbfundamentals-odbc).
 
 2. On a Mac, unixODBC can be installed using [Homebrew](https://brew.sh).  
 

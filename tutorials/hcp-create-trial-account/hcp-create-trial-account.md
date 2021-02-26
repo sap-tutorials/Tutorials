@@ -1,6 +1,6 @@
 ---
-title: Get a Free Trial Account on SAP Cloud Platform
-description: Sign up for a free trial account on SAP Cloud Platform.
+title: Get a Free Account on SAP BTP Trial
+description: Sign up for a free trial account on SAP BTP.
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
@@ -12,7 +12,7 @@ time: 15
 ## Details
 ### You will learn  
   - How to register on the SAP website
-  - How to start your SAP Cloud Platform trial
+  - How to start your SAP BTP Trial
   - How to navigate to your sub-account and space
   - Where to find information on three important Cloud Foundry areas:  Applications, Service Marketplace, and Service Instances
 
@@ -24,9 +24,9 @@ Visit <https://www.sap.com> and click the **Log On** icon in the upper-right cor
 
 ![log on icon](homepage.png)
 
-**If you have an account** on <a href="https://www.sap.com" target="new"><b>`www.sap.com`</b></a> (e.g. an S, C, D or I number) you can enter it or the associated email along with your password. If you don't have an account yet, you can select one of the other login methods or click **Register** to create an account.
+**If you have an account** on <a href="https://www.sap.com" target="new"><b>`www.sap.com`</b></a> (e.g. a P, S, C, D or I number) you can enter it or the associated email along with your password. If you don't have an account yet, you can select one of the other login methods or click **Register** to create an account.
 
-![log on dialog](option-logon.png)
+!![log on dialog](option-logon.png)
 
 If you don't need to register with sap.com, you can skip to Step 4. Make sure to make all steps as _DONE_ to get credit for completing this tutorial.
 
@@ -36,11 +36,9 @@ If you don't need to register with sap.com, you can skip to Step 4. Make sure to
 [ACCORDION-BEGIN [Step : ](Register at sap.com)]
 **If you don't have an account** you will see a **register dialog** on the left-hand side of the dialog. Fill in the required fields, and click **Submit**.
 
-![register dialog](option-register.png)
+!![register dialog](option-register.png)
 
-You will get a message that an activation link has been sent to you.
-
-![Activate](register_confirm.png)
+You will see a message that an activation link has been sent to you.
 
 [DONE]
 [ACCORDION-END]
@@ -49,22 +47,18 @@ You will get a message that an activation link has been sent to you.
 
 Check your emails to find the activation button **Click to activate your account**.
 
-![log into SAP](log-into-sap.png)
+!![log into SAP](log-into-sap.png)
 
-After activating your account, you will see the following screen.
-
-![successful activation](successful-activation.png)
+You will see a success message after activating your account.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step : ](Log on to SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step : ](Log on to SAP BTP Trial)]
 
-After activation, or if you already had an SAP account, go to the <a href="https://account.hanatrial.ondemand.com/" target="new"><b>SAP Cloud Platform Trial</b></a>  page and click **Log On**.
+After activation, or if you already had an SAP account, go to the <a href="https://account.hanatrial.ondemand.com/" target="new"><b>SAP BTP Trial</b></a> page and click **Log On**.
 
-You will see an dialog to confirm the terms and condition for the SAP Cloud Platform Developer Edition. Check the check boxes and click **Accept**. This simply adds the SAP.com registration to your login account on SAP Cloud Identity. There is no cost associated with this upgrade.
-
-![upgrade account dialog](legal-disclaimer.png)
+You will see an dialog to confirm the terms and condition for the SAP BTP Trial. **Check the check boxes** and click **Accept**. This simply adds the SAP.com registration to your login account on SAP Cloud Identity.
 
 [DONE]
 [ACCORDION-END]
@@ -73,13 +67,13 @@ You will see an dialog to confirm the terms and condition for the SAP Cloud Plat
 
 [ACCORDION-BEGIN [Step ](Verify your account)]
 
-You will see a message that you need to verify your account with a phone number. Click **Verify your phone number** to trigger that flow.
+1. You will see a message that you need to verify your account with a phone number. Click **Verify your phone number** to trigger that flow.
 
-![verification popover](verification.png)
+    !![verification popover](verification.png)
 
-Enter your phone number and click **New Code** to retrieve a code. Please enter this code as well and click **Continue** to verify your account. After the verification, you will be logged off automatically.
+2. Enter your phone number and click **New Code** to retrieve a code.
 
-![number popover](number.png)
+3. Please enter this code as well and click **Continue** to verify your account. After the verification, you will be logged off automatically.
 
 
 [DONE]
@@ -88,9 +82,7 @@ Enter your phone number and click **New Code** to retrieve a code. Please enter 
 
 Click on **Log on** to log on to your verified account.
 
- ![Log on again](logon-again.png)
-
- You will see one main button on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to navigate to your global account.
+You will see one main button on the welcome screen of the SAP BTP Cockpit. Click on **Enter Your Trial Account** to navigate to your global account.
 
  !![enter trial account](enter-trial.png)
 
@@ -102,7 +94,7 @@ Click on **Log on** to log on to your verified account.
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step](Navigate to the subaccount)]
 
-1. Here, you can now create a subaccount which lives in a geographic region. **Choose any region** from this list and click **Create Account** to trigger the provisioning process.
+1. Here, you can now create a subaccount that lives in a geographic region. **Choose any region** from this list and click **Create Account** to trigger the provisioning process.
 
     ![Choose a nearby region](select-region.png)
 
@@ -110,13 +102,11 @@ Click on **Log on** to log on to your verified account.
 
 3. The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
 
-    ![Dialog setting up space](trial-created.png)
+    !![Dialog setting up space](trial-created.png)
 
-4. This page will display the currently state of the subaccount. You can also use this page to jump in the different environments on SAP Cloud Platform.
+4. This page will display the current state of the subaccount. You can manage your subscriptions and jump into the different runtime environments. It also shows you fundamental; information of the Cloud Foundry environment, such as the API endpoint and the available spaces.
 
-    ![subaccount](sub-account.png)
-
-
+    !![subaccount](sub-account.png)
 
 [DONE]
 [ACCORDION-END]
