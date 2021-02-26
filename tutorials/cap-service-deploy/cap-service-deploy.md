@@ -16,7 +16,7 @@ time: 30
 
 ## Details
 ### You will learn  
-  - How xto deploy your business service on SAP Business Technology Platform (SAP BTP) using the SAP Cloud Application Programming Model (CAP) and binding appropriate service instances. See the [Developer Guide for Cloud Foundry](https://docs.cloudfoundry.org/devguide/) for more details.
+  - How to deploy your business service on SAP Business Technology Platform (SAP BTP) using the SAP Cloud Application Programming Model (CAP) and binding appropriate service instances. See the [Developer Guide for Cloud Foundry](https://docs.cloudfoundry.org/devguide/) for more details.
 
 ---
 
