@@ -37,7 +37,7 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
   - Using this policy template, you define API access based on the OAuth client credentials grant method.
   - Finally, you use API Management to call the API and get the product details in a response.
 
-  !![Use case](Set-up-integration-trial.png)
+  !![Use case](1-Set-up-integration-trial.png)
 
 [DONE]
 [ACCORDION-END]
@@ -57,19 +57,19 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
-    !![Trial global account](01_FoundationsCockpit_trial page.png)
+    !![Trial global account](2-2-FoundationsCockpit_trial page.png)
 
 3. Choose the region that is closest to you. Click **Create Account** to create a subaccount.
 
-    !![Select region](Screenshot_AP21.png)
+    !![Select region](2-3-Screenshot_AP21.png)
 
 4. Choose **Continue**.
 
-    !![Account Setup](1.2_continue.png)
+    !![Account Setup](2-4-continue.png)
 
 5. From your global account page, choose the **trial** tile to access your subaccount.
 
-    !![Access Trial account](1.3_access_trial_account.png)
+    !![Access Trial account](2-5-access_trial_account.png)
 
 [DONE]
 [ACCORDION-END]
@@ -79,7 +79,7 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
 2. Choose **Create**.
 
-    !![Instances & Subscriptions](3.2.Instances&Subscriptions.png)
+    !![Instances & Subscriptions](3-2-Instances&Subscriptions.png)
 
 3. In the **New Instance or Subscription** dialog, choose **Integration Suite** from the list of services.
 
@@ -93,11 +93,11 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
 4. Choose the default plan which is **trial** and click **Create**.
 
-    !![Create Subscription](3.4.Create_Subscription.png)
+    !![Create Subscription](3-4-Create_Subscription.png)
 
 5. You are subscribed to the service now. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the **Integration Suite Launchpad**.
 
-    !![Go to Application](3.5.Go-to-Application.png)
+    !![Go to Application](3-5-Go-to-Application.png)
 
 [DONE]
 [ACCORDION-END]
@@ -109,37 +109,37 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
 1. In the Integration Suite Launchpad, choose **Add Capabilities** to activate the capabilities offered by Integration Suite.
 
-    !![Integration suite launchpad](4.3.1isuitenewlaunchpage.png)
+    !![Integration suite launchpad](4-1-isuitenewlaunchpage.png)
 
     For this tutorial, you must select **Design, Develop and Operate Integration Scenarios** and **Design, Develop and Manage APIs click** capabilities.
     Click **Next**.
 
-    !![Add Capabilities](5.1.2Addcapapbilities.png)
+    !![Add Capabilities](4-1-Addcapapbilities.png)
 
     You do not have to select anything here. Click **Next**.
 
-    !![Intermediate Step](4.1intermidiate_step.png)
+    !![Intermediate Step](4-1-intermidiate_step.png)
 
     Click **Next**.
 
-    !![API management](4.1API_step.png)
+    !![API management](4-1-API_step.png)
 
 2. Click **Activate** to provision the selected capabilities.
 
     >For some capabilities, you would be given a choice to select additional functionalities that you need to choose based on your business requirement.
 
-    !![Activate capabilities](3.3.Activate_capabilities.png)
+    !![Activate capabilities](4-2-Activate_capabilities.png)
 
     The activation may take a while and you will notice the dialog shown here.
     >**IMPORTANT**: Before you proceed to **Step 4.5**, please wait for all the capabilities to be activated.
 
-    !![Activation dialog](5.3Activation_Dial.png)
+    !![Activation dialog](4-2-Activation_Dial.png)
 
     >**IMPORTANT**: From the **Provisioning** application you can navigate back to the Integration Suite Launchpad by choosing the **Integration Suite** button on the header.
 
 3. After successful activation, you can view the activated capability tiles on the launchpad. Click on the relevant tile to access the capability.  
 
-    !![URL](Isuite_launch_new_capab.png)
+    !![URL](4-3-Isuite_launch_new_capab.png)
 
     >To know more about resources offered by the Integration Suite Launchpad, see [Working with Integration Suite Launchpad](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/a53dce3b57ba4915b055343f783300a5.html).
 
@@ -153,12 +153,12 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
  1. Navigate to your SAP Cloud Platform subaccount. Go to **Security > Trust Configuration** and click **`Default identity provider`**.
 
-    !![Trust configuration](6.1_Trust_configuration.png)
+    !![Trust configuration](5-1-Trust_configuration.png)
 
  2. Enter the user's e-mail address and click on **Show Assignments** to see the role collections that are currently assigned to this user. Then click **Assign Role Collection** and select relevant roles based on the activated capability.
 >**IMPORTANT**: For this starter scenario to work, assign the role collections only for **`Cloud Integration`** and **`API Management`** capability.
 
-    !![Role Collections](6.2_RoleCollections.png)
+    !![Role Collections](5-2-RoleCollections.png)
 
     The table here shows the roles relevant to the Integration Suite capabilities that you must assign to the role collections for accessing the relevant capability:
 
@@ -182,11 +182,11 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
 1. After providing necessary authorization, go to the **Integration Suite Launchpad** application and choose **Manage Capabilities** tile.
 
-    !![Activated Capabilities](ManageCapab.png)
+    !![Activated Capabilities](6-1-ManageCapab.png)
 
 2. Click on the URLs of all the activated capabilities and verify if you can successfully access them.
 
-    !![Verify](6.1Verifycapabilities.png)
+    !![Verify](6-2-Verifycapabilities.png)
 
 [DONE]
 [ACCORDION-END]
