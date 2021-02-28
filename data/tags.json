@@ -119,8 +119,14 @@
             "name": "SAP BTP, ABAP environment",
             "value": "products>sap-btp--abap-environment"
         }, {
+            "name": "SAP BTP cockpit",
+            "value": "software-product-function>sap-btp-cockpit"
+        } , {
             "name": "SAP BTP, Cloud Foundry environment",
             "value": "products>sap-btp--cloud-foundry-environment"
+        }, {
+            "name": "SAP BTP command line interface",
+            "value": "software-product-function>sap-btp-command-line-interface"
         }, {
             "name": "SAP BTP, Kyma runtime",
             "value": "products>sap-btp\\, kyma-runtime"
