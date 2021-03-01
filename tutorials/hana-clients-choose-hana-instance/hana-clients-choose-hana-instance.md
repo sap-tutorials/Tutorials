@@ -39,7 +39,7 @@ There are multiple versions of SAP HANA.  The information below is a list of lin
 |  [SAP HANA Platform 1.0](https://help.sap.com/viewer/product/SAP_HANA_PLATFORM/1.0.12/en-US)           | Released in 2010.  Current version is 1.0 SPS (Support Package Stack) 12.
 |  [SAP HANA Platform 2.0](https://help.sap.com/viewer/product/SAP_HANA_PLATFORM/latest/en-US)           | Released in November 2016. Current version is 2.0 SPS 05, which was released on June 26, 2020.
 |  **[SAP HANA, express edition](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US)**    | Released in September 2016.  Current version is 2.0 SPS 04.
-|  [SAP Cloud Platform, SAP HANA Service](https://help.sap.com/viewer/product/HANA_SERVICE_CF/Cloud/en-US)          | Cloud version of SAP HANA 2.0.
+|  [SAP HANA service for SAP BTP](https://help.sap.com/viewer/product/HANA_SERVICE_CF/Cloud/en-US)          | Cloud version of SAP HANA 2.0.
 |  **[SAP HANA Cloud](https://help.sap.com/viewer/product/HANA_CLOUD/)**   | Released in March 2020 and is the successor of the SAP HANA service.  New features are released quarterly.
 
 
@@ -82,7 +82,7 @@ Here are a few benefits of using SAP HANA Cloud:
     !![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
 
-    The instructions on how to setup a free SAP HANA Cloud trial within the SAP Cloud Platform are well covered in a number of other sources listed below.  
+    The instructions on how to setup a free SAP HANA Cloud trial within the SAP Business Technology Platform (SAP BTP), are well covered in a number of other sources listed below.  
 
     * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
 
@@ -90,13 +90,13 @@ Here are a few benefits of using SAP HANA Cloud:
 
     * [SAP HANA Cloud Trial](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/latest/en-US/96b0fa04bf2b4fd6a8b210eb9fb18332.html)
 
-    For more information on the SAP Cloud Platform see the following:
+    For more information on SAP BTP see the following:
 
-    * [https://cloudplatform.sap.com/index.html](https://cloudplatform.sap.com/index.html)  
+    * [https://www.sap.com/products/business-technology-platform.html](https://www.sap.com/products/business-technology-platform.html)
 
-    * [https://developers.sap.com/topics/cloud-platform.html](https://developers.sap.com/topics/cloud-platform.html)  
+    * [https://developers.sap.com/topics/business-technology-platform.html](https://developers.sap.com/topics/business-technology-platform.html)  
 
-    * [https://help.sap.com/viewer/product/CP/Cloud/en-US](https://help.sap.com/viewer/product/CP/Cloud/en-US)
+    * [https://help.sap.com/viewer/product/BTP/Cloud/en-US](https://help.sap.com/viewer/product/BTP/Cloud/en-US)
 
     Once the SAP HANA Cloud instance is created, take note of the endpoint (host:port) needed to connect to the database.  The endpoint can be obtained via the copy menu item.  This will be needed in subsequent tutorials in this mission.  
 
@@ -104,7 +104,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
     >Note that the SAP HANA Cloud, HANA database trial instances are shut down overnight and will need to be restarted before working with them the next day.  
 
-2. Open the SAP HANA database explorer by choosing **Actions > Open SAP HANA Database Explorer** from the landscape tool.
+2. Open the SAP HANA database explorer by choosing **Actions > Open SAP HANA Database Explorer** from SAP HANA Cloud Central.
 
     ![Open with DBX](from-directory.png)
 
@@ -206,12 +206,13 @@ The following steps will demonstrate connecting to and examining a SAP HANA, exp
     ip addr
     ```
 
-3.  The following are a couple examples of [interactive options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/c24d054bbb571014b253ac5d6943b5bd.html) followed by a SQL query, which when run against **SYSTEMDB** returns information about the databases running on the SAP HANA instance.
+3.  The following are a some examples of [interactive options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/c24d054bbb571014b253ac5d6943b5bd.html) followed by a SQL query, which when run against **SYSTEMDB** returns information about the databases running on the SAP HANA instance.
 
     ```SQL
     \al
     \s
     SELECT * FROM SYS_DATABASES.M_SERVICES WHERE SQL_PORT != 0;
+    \serverstats
     ```
 
     ![hdbsql commands](hdbsql-commands.png)
@@ -220,7 +221,9 @@ The following steps will demonstrate connecting to and examining a SAP HANA, exp
 
     The `\s` command shows status information.  It shows that that the SAP System Identification (SID) is **HXE**, that the connected database is **SYSTEMDB**, and the currently logged in user is **SYSTEM**.
 
-    The result of the SELECT against the M_SERVICES table shows that there are two databases, named **SYSTEMDB** and **HXE** and that they are accessible on ports **39013** and **39015**.
+    The result of the SELECT against the `M_SERVICES` table shows that there are two databases, named **SYSTEMDB** and **HXE** and that they are accessible on ports **39013** and **39015**.  
+
+    The '\serverstats' retrieves resource consumption information about the last executed SQL statement which can be helpful when diagnosing SQL statements.
 
     The instance number can be derived from a port number using the second and third numbers in the port number 39013.  In this case, the instance number is 90.  
 
