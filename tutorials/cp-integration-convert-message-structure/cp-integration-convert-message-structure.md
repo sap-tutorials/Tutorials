@@ -3,8 +3,10 @@ title: Map Message Structure
 description: Use the mapping step to convert the message structure to a structure desired by the recipient.
 time: 15
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform-integration-for-process-services
+author_name: Gautham Krishna
+author_profile: https://github.com/gauthamkrishna-sap
+tags: [ tutorial>intermediate, products>integration-suite]
+primary_tag: products>sap-integration-suite
 ---
 
 
