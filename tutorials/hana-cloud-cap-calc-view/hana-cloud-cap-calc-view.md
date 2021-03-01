@@ -2,6 +2,8 @@
 title: SAP HANA Cloud, Create Calculation View and Expose via SAP Cloud Application Programming Model
 description: Learn how to combine HANA native artifacts, like Calculation Views, with SAP Cloud Application Programming Model (CAP)
 time: 20
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 tags: [ tutorial>beginner, products>sap-hana, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model]
 primary_tag: products>sap-hana-cloud
 ---
