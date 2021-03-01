@@ -1,15 +1,15 @@
 ---
-title: Automate Operations with the Command Line Interface (CLI)
-description: Automate your account administrative flows with the SAP BTP command-line interface (sapcp CLI).
+title: Automate Account Operations with the Command Line Interface (CLI)
+description: Automate your account administrative flows with the SAP BTP command line interface (sapcp CLI).
 author_name: Michal Keidar
 author_profile: https://github.com/michal-keidar
 auto_validation: true
 time: 30
-tags: [tutorial>intermediate, products>sap-business-technology-platform]
+tags: [tutorial>intermediate, products>sap-business-technology-platform, software-product-function>sap-btp-cockpit, software-product-function>sap-btp-command-line-interface]
 primary_tag: products>sap-business-technology-platform
 ---
 
-With the introduction of cloud management tools feature set B to SAP BTP, the stars of the show are without a doubt the new REST APIs and command line. With these features, you now have many more options to automate your account administrative flows in SAP BTP.
+With the introduction of cloud management tools feature set B to SAP BTP, the stars of the show are without a doubt the new REST APIs and command line. With these features, you now have many more options to automate your account administrative flows in SAP BTP.
 
 The REST APIs are offered for each administrative operation available in the SAP BTP cockpit. The API Reference is integrated into the SAP API Business Hub so users can quickly learn how to leverage it for your own use cases. For example, for automating manual operations that until now could only be done via the cockpit.  
 
@@ -18,16 +18,17 @@ If you prefer to use a terminal with CLI commands, the SAP BTP command lin
 >This tutorial is designed for a UNIX-like environment, such as macOS or Linux.
 
 ### About this tutorial
-In this tutorial, you are a DevOps engineer for Atomic, which develops innovative solutions for its customers on top of SAP BTP. Atomic also uses partner companies for developing solutions. 
+In this tutorial, you are a DevOps engineer for Atomic, which develops innovative solutions for its customers on top of SAP BTP. Atomic also uses partner companies for developing solutions. 
 
-Every time a new development project begins, Atomic's DevOps department needs to set up a development environment on SAP BTP.
+Every time a new development project begins, Atomic's DevOps department needs to set up a development environment on SAP BTP.
 
 According to Atomic's guidelines and standards, each such development environment must include in their account model a directory, which contains three subaccounts for each of the relevant stages, namely, Dev, Test, and Prod. In addition, each subaccount must have an entitlement for two services:  
 
 -	SAP Alert Notification service for SAP BTP
 
 -	SAP HANA Cloud
- 
+
+
 Setting up such an environment for each new project can be very tedious and time-consuming. Luckily, the sapcp CLI can be used to automate these operations -- a new environment can be set up very quickly with the single click of a button. 
 
 In this tutorial, you act as a member of Atomic's DevOps department. Your department has decided to use the sapcp CLI to automate these operations, including the creation of a Cloud Foundry space and an instance of the SAP HANA Cloud service in the space.
@@ -56,7 +57,7 @@ Through this tutorial, we hope we can help you to unleash the power of CLI scrip
 
 ## Prerequisites
 -	You have a trial account on SAP BTP. For a trial account, see [Get a Free Account on SAP BTP Trail](hcp-create-trial-account).
--	You have the Cloud Foundry CLI , as described in [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
+-	You have the Cloud Foundry CLI, as described in [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
 - You have a UNIX-like environment.
 
 
@@ -78,7 +79,7 @@ Download the automation script file from GitHub: <https://github.com/SAP-samples
 [ACCORDION-BEGIN [Step 3: ](Change the declarations)]
 In this step, you need to open the script file in your favorite text editor and enter the values in each placeholder according to your trial account and the names and custom properties of the directories and subaccounts that you want to create.
 
-These lines declare global variables that will be used in the script: 
+These lines declare global variables that will be used in the script. 
 
 ```Bash
 declare region="<enter your trial region, e.g., eu10, us10, ap21>" 
