@@ -1,6 +1,6 @@
 ---
-title: Configure the SAP Business Application Studio Development Environment for SAP HANA development
-description: Configure SAP Business Application Studio, which you will use to create multi-target application
+title: Configure SAP Business Application Studio Development for SAP HANA Development
+description: Configure SAP Business Application Studio, which you will use to create a multi-target application.
 auto_validation: true
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -10,8 +10,8 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You have created an instance of the SAP HANA Cloud trial: [Deploy SAP HANA Cloud trial](hana-cloud-deploying)
- - You have setup SAP Business Application Studio for development: [Set Up SAP Business Application Studio for Development](appstudio-onboarding)
+ - You have created an instance of the SAP HANA Cloud trial -- see [Deploy SAP HANA Cloud trial](hana-cloud-deploying).
+ - You have set up SAP Business Application Studio for development -- see [Set Up SAP Business Application Studio for Development](appstudio-onboarding).
 
 ## Details
 ### You will learn
@@ -20,17 +20,17 @@ primary_tag: products>sap-hana
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Creating Business Application Studio Dev Space)]
+[ACCORDION-BEGIN [Step 1: ](Create dev space in SAP Business Application Studio)]
 
 [Video Link](https://www.youtube.com/watch?v=8rT-PEUg8Uw&t=297s)</br>
 
 Dev spaces are like isolated virtual machines in the cloud that can be quickly spun-up. Each dev space type contains tailored tools and pre-installed run-times for a target scenario such as SAP Fiori or mobile development. This simplifies and saves time in setting up the development environment as there's no need to install anything or upgrade; letting developers focus on their business domain, anytime, anywhere.
 
-1. Go to your SAP Business Technology Platform trial subaccount and click the **Subscriptions** option.
+1. Go to your SAP Business Technology Platform trial subaccount and click the **Services -> Instances and Subscriptions** option.
 
-    !![Subscriptions](01-01_SCP_Subscriptions_.jpg)
+    !![Subscriptions](BTP_Subscriptions.png)
 
-2. Locate the **SAP Business Application Studio** tile and click **Go to Application**
+2. Locate the **SAP Business Application Studio** entry and click **Go to Application**
 
     !![Go To Application](go_to_application.png)
 
@@ -63,12 +63,12 @@ Dev spaces are like isolated virtual machines in the cloud that can be quickly s
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configuring Business Application Studio Dev Space)]
+[ACCORDION-BEGIN [Step 2: ](Configure dev space)]
 
 
 [Video Link](https://www.youtube.com/watch?v=8rT-PEUg8Uw&t=526s)</br>
 
-Before we create our SAP Cloud Application Programming Model project, we want to do a few more one-time configuration steps to prepare the Dev Space
+Before we create our SAP HANA project, we want to do a few more one-time configuration steps to prepare the Dev Space
 
 1. In the bottom left of the SAP Business Application Studio you will see a message that your Organization and Space are not set yet. Click this message to begin supplying your trial connection details
 
@@ -102,12 +102,10 @@ Before we create our SAP Cloud Application Programming Model project, we want to
 
     !![Set Correctly](org_space_set_correctly.png)
 
-## Summary
-
-Your HANA instance should be running and you've created a Dev Space and configured it for your needs in the Business Application Studio. You are now ready to begin development.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-
 ---
+
+Your HANA instance should be running and you've created a Dev Space and configured it for your needs in the Business Application Studio. You are now ready to begin development.

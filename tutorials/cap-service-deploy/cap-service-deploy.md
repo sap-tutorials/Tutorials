@@ -5,7 +5,7 @@ title: Deploy a CAP Business Application to SAP Business Technology Platform
 description: This tutorial shows you how to deploy your SAP Cloud Application Programming Model (CAP) application to SAP Business Technology Platform, Cloud Foundry environment.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [  tutorial>beginner, topic>node-js, software-product-function>sap-cloud-application-programming-model  ]
+tags: [  tutorial>beginner, topic>node-js, products>sap-business-technology-platform, software-product-function>sap-cloud-application-programming-model  ]
 time: 30
 ---
 
@@ -30,6 +30,9 @@ It's now time to switch to SAP HANA as a database.
 
     ```JSON
     "cds": {
+      "features": {
+        "fiori_preview": true
+      },
         "requires": {
           "db": {
             "kind": "sql"
@@ -38,9 +41,12 @@ It's now time to switch to SAP HANA as a database.
       }
     ```
 
+    > `fiori_preview:true` enables SAP Fiori preview also in production mode as you saw it in your local application in the previous tutorial in step 4. This feature is meant to help you during development and should not be used in productive applications.
+
     > `kind:sql` declares the requirement for an SQL database. It evaluates to `sqlite` in the `development` profile (active by default), while in `production` it equals `hana`. This way you don't need to modify this file if you want to switch between the two databases.
 
     > Don't edit the `gen/db/package.json` file.
+
 
 3. In the command line add the SAP HANA driver as a dependency to your project:
 
@@ -109,21 +115,21 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
 
     > This process takes some minutes.
 
-    > The first command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db` service that you've created in the previous step.
+    > The first part of the command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db` service that you've created in the previous step.
 
     > See the section [Deploy using cf push](https://cap.cloud.sap/docs/advanced/deploy-to-cloud#deploy-using-cf-push) in the CAP documentation for more details.
 
 3. In the deploy log, find the application URL in the `routes` line at the end:
 
-    ```
+    ```Shell/Bash
     name:              my-bookshop-srv
     requested state:   started
     routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
     ```
 
-4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
+4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA. If enabled in step 1 you can also try the **Fiori preview**.
 
-!![application](application_running.png)
+    !![application preview](application_cloud_fiori.png)
 
 [OPTION END]
 
@@ -151,18 +157,20 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
 
     > The first part of the command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db` service that you've created in the previous step.
 
+    > See the section [Deploy using cf push](https://cap.cloud.sap/docs/advanced/deploy-to-cloud#deploy-using-cf-push) in the CAP documentation for more details.
+
 3. In the deploy log, find the application URL in the `routes` line at the end:
 
-        ```
+        ```Shell/Bash
         name:              my-bookshop-srv
         requested state:   started
         isolation segment: trial
         routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
         ```
 
-4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
+4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA. If enabled in step 1 you can also try the **Fiori preview**.
 
-    !![application](application_running.png)
+    !![application preview](application_cloud_fiori.png)
 
 [OPTION END]
 

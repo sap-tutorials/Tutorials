@@ -5,7 +5,7 @@ title: Create a Business Service with Node.js Using Visual Studio Code
 description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite, by using the SAP Cloud Application Programming Model (CAP) and developing on your local environment.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [ tutorial>beginner, topic>node-js, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, topic>node-js, products>sap-business-technology-platform, software-product-function>sap-cloud-application-programming-model ]
 time: 50
 ---
 
@@ -65,13 +65,13 @@ Before you start, make sure that you've completed the prerequisites.
 
 2. Choose **Install**.
 
-![Folder structure](VSCode_extension.png)
+   !![extension_marketplace](VSCode_extension.png)
 
-   Visual Studio Code opens the extensions details page.
+> Visual Studio Code opens the extensions details page.
 
-![Folder structure](VSCode_view_extension.png)
+3.Choose **Install** to enable the extension for SAP CDS Language Support.
 
-3. In Visual Studio Code choose **Install** to enable the extension for SAP CDS Language Support.
+   ![extension_VSCode](VSCode_view_extension.png)
 
 > If the extension is already installed and enabled in VS Code, it will be updated automatically.
 
@@ -113,7 +113,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > As there's no content in the project so far, it just keeps waiting for content with a message as shown:
 
-    ```
+    ```Shell/Bash
     cds serve all --with-mocks --in-memory?
     ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
 
@@ -146,9 +146,12 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
     ```Shell/Bash
       cds watch
     ```
-    > This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown:
 
-    ```
+    > This command tries to start a `cds` server. Whenever you feed your project with new content, for example, by adding or modifying `.cds`, `.json`, or `.js` files, the server automatically restarts to serve the new content.
+
+    > As there's no content in the project so far, it just keeps waiting for content with a message as shown:
+
+    ```Shell/Bash
     cds serve all --with-mocks --in-memory?
     ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
 
@@ -209,7 +212,7 @@ After initializing the project, you should see the following empty folders:
 
 3. As soon as you've saved your file, the still running `cds watch` reacts immediately with some new output as shown below:
 
-    ```
+    ```Shell/Bash
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
     /> successfully deployed to sqlite in-memory db
@@ -224,7 +227,9 @@ After initializing the project, you should see the following empty folders:
 
 4. To test your service, go to: <http://localhost:4004>
 
-    > You won't see data, because you haven't added a data model yet. Click on the available links to see the service is running.
+!![application](application_local.png)
+
+> You won't see data, because you haven't added a data model yet. Click on the available links to see the service is running.
 
 [DONE]
 
@@ -354,7 +359,7 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
 
     > After you added these files, `cds watch`restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
 
-    ```
+    ```Shell/Bash
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
     > filling my.bookshop.Authors from db/csv/my.bookshop-Authors.csv
@@ -455,15 +460,15 @@ You can now see the generic handlers shipped with CAP in action.
 
 3. In the Postman app, use the **Import** button in the toolbar:
 
-    ![Postman import](postman-import.png)
+    !![Postman import](postman-import.png)
 
 4. Choose **Import File** in the wizard. Click on **Choose Files** and select the file that you've saved before or add it per drag & drop  directly.
 
-    ![Postman import from file](postman-import-from-file.png)
+    !![Postman import from file](postman-import-from-file.png)
 
 5. In the imported collection, execute the various requests in the `metadata` and `CRUD` groups. They should all return proper responses.
 
-    ![Test the request](postman-test-request.png)
+    !![Test the request](postman-test-request.png)
 
     > With your current service implementation, you can get only `POST` orders. Any `GET` or `DELETE` to an order fails, since you've specified the `Orders` entity to be `@insertonly` in `srv/cat-service.cds`.
 
@@ -508,7 +513,7 @@ You can now see the generic handlers shipped with CAP in action.
 
     > Look at the stock of book `201`.
 
-    ![Test the request](postman-get-books.png)
+    !![Test the request](postman-get-books.png)
 
 3. Execute one of the `POST Orders` requests.
 
