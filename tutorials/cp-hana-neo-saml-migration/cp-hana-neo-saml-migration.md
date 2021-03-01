@@ -3,12 +3,12 @@ title: Reconfigure Trust Relationships on SAP HANA XS Systems
 description: Reconfigure a SAML trust relationship on your SAP HANA XS database system from the file system to the in-memory store.
 auto_validation: true
 time: 60
-tags: [ tutorial>intermediate, products>sap-cloud-platform, tutorial>license]
-primary_tag: products>sap-cloud-platform--sap-hana-service
+tags: [ tutorial>intermediate, products>sap-business-technology-platform, tutorial>license]
+primary_tag: products>sap-hana-service-for-sap-btp
 ---
 
 ## Prerequisites
- - You have installed an **SAP HANA XS system in the SAP Cloud Platform, Neo environment** that you'd like to convert to an **SAP HANA MDC system**. For more information, see [SAP Note 2960608](https://launchpad.support.sap.com/#/notes/2960608).
+ - You have installed an **SAP HANA XS system in the SAP BTP, Neo environment** that you'd like to convert to an **SAP HANA MDC system**. For more information, see [SAP Note 2960608](https://launchpad.support.sap.com/#/notes/2960608).
  - You have configured a trust relationship between your identity provider and your SAP HANA XS system using SAML on the file system.
  - You have access to your identity provider and the required roles to configure SAML trust relationships.
  - You have installed openSSL or another certification tool.   
@@ -54,7 +54,7 @@ But before we start, we have to make sure that your database user has been assig
 
 1. Open the **SAP HANA Web-based Development Workbench** on the SAP HANA XS system.
 
-    You can do so by appending `/sap/hana/ide` to the URL of the database system, or you can access it from the SAP Cloud Platform cockpit.
+    You can do so by appending `/sap/hana/ide` to the URL of the database system, or you can access it from the SAP BTP cockpit.
 
       ![Accessing the Web-based Development Workbench](step1-access-webide.png)
 
@@ -106,7 +106,7 @@ Create the certificate collection in which you will store the service provider a
 
 1. Open the **SAP HANA cockpit** on your SAP HANA XS database system.
 
-    You can do so by appending `/sap/hana/admin/cockpit` to the URL of the database system, or you can access it from the SAP Cloud Platform cockpit.
+    You can do so by appending `/sap/hana/admin/cockpit` to the URL of the database system, or you can access it from the SAP BTP cockpit.
 
     ![Accessing the SAP HANA cockpit](step3-access-hana-cockpit.png)
 

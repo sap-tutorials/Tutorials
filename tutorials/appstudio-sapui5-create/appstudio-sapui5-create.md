@@ -9,7 +9,7 @@ primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
 
 ## Details
 ### You will learn
-  - How to create an MTA archive with a UI module
+  - How to create an SAPUI5 project
   - How to build a project for Cloud Foundry
   - How to deploy a project to Cloud Foundry
 
@@ -53,7 +53,10 @@ Make sure you are connected to a Cloud Foundry endpoint to which you will deploy
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Create a new project)]
+[ACCORDION-BEGIN [Step : ](Create a new single-module-project)]
+This step will guide you through the needed actions to create a project that contains a **single** SAPUI5 application. In case you want to create a project that contains multiple UI modules, please do not follow these instructions and rather create an empty MTA project to which you then add multiple UI modules.
+
+
 1. Click on the link **Start from template** on the *Welcome* screen.
 
     !![newproject](./newproject.png)
@@ -83,13 +86,7 @@ Make sure you are connected to a Cloud Foundry endpoint to which you will deploy
     !![finishProject](./finishProject.png)
 
 
-4. Once you see the success message, click **Files & Open** to find the new project.
-
-
-    !![newws](./newws.png)
-
-
-4. Select **user/projects/sapui5** and confirm with **Open**.
+4. Once you see the success message, click **Open in a new Workspace** to open the new project.
 
 
     !![openws](./openws.png)
@@ -98,11 +95,24 @@ Make sure you are connected to a Cloud Foundry endpoint to which you will deploy
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Configure the managed application router)]
+[ACCORDION-BEGIN [Step : ](A managed application router)]
 
-The project is already deployable as it. But there is one thing missing in order make it accessible from your browser: [The managed application router](https://blogs.sap.com/2020/10/02/serverless-sap-fiori-apps-in-sap-cloud-platform/#serverless)
+The project is already deployable as it. But there is one thing missing in order make it accessible from your browser - [the managed application router](https://blogs.sap.com/2020/10/02/serverless-sap-fiori-apps-in-sap-cloud-platform/#serverless):
 
-1. Add a service name in `webapp/manifest.json`.
+1. Right-click on the `mta.yaml` file and select **Create MTA Module from Template**.
+
+    !![newmod](./newmod.png)
+
+2.  Choose **Approuter Configuration** and **Start** to continue in the wizard.
+
+    !![approuter](./approuter.png)
+
+
+2.  Select **Managed Approuter** as there's not need to extend the approuter and therefore reduce the TCO of the project. Enter **`basic.service`** as the name of out business service and hit **Next** to close in the wizard.
+
+    !![approuter](./managedapprouter.png)
+
+1. Now we need to reuse this business service in our web app. Open `webapp/manifest.json` and add the following lines.
 
     ```JSON[15-17]
     {
@@ -126,98 +136,46 @@ The project is already deployable as it. But there is one thing missing in order
         ...
     ```
 
-1. Create a configuration file for the `UAA` service with `xs-security.json`.
+1. There's currently one glitch in the wizard that we need to fix manually. Go to the `mta.yaml` file and add the highlighted line.
 
-    ```JSON
-    {
-        "xsappname": "tutorial",
-        "tenant-mode": "dedicated"
-    }
-    ```
-
-1. Add the needed services instance to connect the manager application router with your SAPUI5. To do this, add the following module and resources to `mta.yaml`
-
-    ```YAML[30-59, 66-77]
+    ```YAML[26]
     _schema-version: "3.2"
     ID: sap-btp-sapui5
     description: A Fiori application.
     version: 0.0.1
     modules:
-      - name: sap-btp-sapui5-deployer
-        type: com.sap.application.content
-        path: .
-        requires:
-          - name: sap-btp-sapui5-html5-repo-host
-            parameters:
-              content-target: true
-        build-parameters:
-          build-result: resources
-          requires:
-            - artifacts:
-                - sapbtpsapui5.zip
-              name: sapbtpsapui5
-              target-path: resources/
-      - name: sapbtpsapui5
-        type: html5
-        path: .
-        build-parameters:
-          build-result: dist
-          builder: custom
-          commands:
-            - npm install
-            - npm run build:cf
-          supported-platforms: []
+      ...
       - name: sap-btp-sapui5-destination-content
         type: com.sap.application.content
-        build-parameters:
-          no-source: true
         requires:
-          - name: sap-btp-sapui5-uaa
-            parameters:
-              service-key:
-                name: sap-btp-sapui5-uaa-key
-          - name: sap-btp-sapui5-html5-repo-host
-            parameters:
-              service-key:
-                name: sap-btp-sapui5-html5-repo-host-key
-          - name: sap-btp-sapui5-destination-service
-            parameters:
-              content-target: true
+        - name: sap-btp-sapui5-destination-service
+          parameters:
+            content-target: true
+        - name: sap-btp-sapui5-html5-repo-host
+          parameters:
+            service-key:
+              name: sap-btp-sapui5-html5-repo-host-key
+        - name: uaa_sap-btp-sapui5
+          parameters:
+            service-key:
+              name: uaa_sap-btp-sapui5-key
         parameters:
           content:
             instance:
-              existing_destinations_policy: update
               destinations:
-                - Name: sap-btp-sapui5-html5-repo-host
-                  ServiceInstanceName: sap-btp-sapui5-html5-repo-host
-                  ServiceKeyName: sap-btp-sapui5-html5-repo-host-key
-                  sap.cloud.service: basic.service
-                - Authentication: OAuth2UserTokenExchange
-                  Name: sap-btp-sapui5-uaa
-                  ServiceInstanceName: sap-btp-sapui5-uaa
-                  ServiceKeyName: sap-btp-sapui5-uaa-key
-                  sap.cloud.service: basic.service
-    resources:
-      - name: sap-btp-sapui5-html5-repo-host
-        type: org.cloudfoundry.managed-service
-        parameters:
-          service: html5-apps-repo
-          service-plan: app-host
-      - name: sap-btp-sapui5-destination-service
-        type: org.cloudfoundry.managed-service
-        parameters:
-          service: destination
-          service-name: sap-btp-sapui5-destination-service
-          service-plan: lite
-      - name: sap-btp-sapui5-uaa
-        type: org.cloudfoundry.managed-service
-        parameters:
-          path: ./xs-security.json
-          service: xsuaa
-          service-plan: application
-    parameters:
-      deploy_mode: html5-repo
-      enable-parallel-deployments: true
+              - Name: basic_service_sap_btp_sapui5_html5_repo_host
+                ServiceInstanceName: sap-btp-sapui5-html5-repo-host
+                ServiceKeyName: sap-btp-sapui5-html5-repo-host-key
+                sap.cloud.service: basic.service
+              - Authentication: OAuth2UserTokenExchange
+                Name: basic_service_uaa_sap_btp_sapui5
+                ServiceInstanceName: sap-btp-sapui5-xsuaa-service
+                ServiceKeyName: uaa_sap-btp-sapui5-key
+                sap.cloud.service: basic.service
+              existing_destinations_policy: ignore
+        build-parameters:
+          no-source: true
+       ...
     ```
 
 
@@ -232,7 +190,7 @@ Build (aka package) the project to a `mtar` archive to deploy it to Cloud Foundr
 
     !![build](./build.png)
 
-3. Once the build is complete, you can see a message in the log. You can now find the generated `mtar` archive in the project tree under `mta_archieves`.
+3. Once the build is complete, you can see a message in the log. You can now find the generated `mtar` archive in the project tree under `mta_archives`.
 
     !![state](./buildsuccess.png)
 
@@ -250,20 +208,22 @@ Now that you created a `mtar` archive, you are all set to deploy the application
 
 2. Check the console output to make sure the process started.
 
-3. You will see a success message and the URL of the app in the log once the deployment finished. Open this URL in your browser to start the application.
+3. You will see a success message and the URL of the app in the log once the deployment finished.
 
     !![success](./deploysuccess.png)
 
-> You can also see the URL of the deployed app when running ` cf html5-list -d -u` in a new terminal session.
+4.   You can see the URL of the deployed app when running `cf html5-list -di sap-btp-sapui5-destination-service -u` in a new terminal session.
 
-> !![cfapps](./cfhtml5.png)
+    !![cfapps](./cfhtml5.png)
+
+    > You need to substitute the `cpp` with `launchpad`, in case you use the Launchpad service (instead of the Portal service).
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step : ](Test to the application)]
 
-1. **Open** the started application in your browser. You might need to log in with your SAP ID (the same credentials you use for the SAP BTP Cockpit).
+1. **Open** the application in your browser. You might need to log in with your SAP ID (the same credentials you use for the SAP BTP Cockpit).
 
 
 2. See that the sample application consists of a header and an empty page. So you should see something like this:

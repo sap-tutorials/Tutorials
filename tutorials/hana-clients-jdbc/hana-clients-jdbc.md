@@ -106,8 +106,11 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
 
     ```Java
     import java.sql.*;
+    import com.sap.db.jdbc.Driver;
     public class JavaQuery {
         public static void main(String[] argv) {
+            System.out.println("Java version: " + com.sap.db.jdbc.Driver.getJavaVersion());
+            System.out.println("Minimum supported Java version and SAP driver version number: " + com.sap.db.jdbc.Driver.getVersionInfo());
             Connection connection = null;
             try {  
                 connection = DriverManager.getConnection(  
@@ -153,9 +156,14 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
 
 3. Compile the `.java` file into a `.class` file using the following command:
 
-    ```Shell
-    javac JavaQuery.java
-    ```
+    ```Shell (Microsoft Windows)
+    javac -cp C:\SAP\hdbclient\ngdbc.jar;. JavaQuery.java
+    ```  
+
+    ```Shell (Linux or Mac)
+    javac -cp ~/sap/hdbclient/ngdbc.jar:. JavaQuery.java
+    ```  
+
 
 4. Run `JavaQuery.class` and indicate where the SAP HANA JDBC driver is located.  Note that the host, port, UID and PWD will be retrieved from the `hdbuserstore`.
 
@@ -170,6 +178,8 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
     ![Java Query](java-query.png)
 
 See [JDBC Connection Options in Java Code](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/1c86038c05464d31a7dcae14f2d8a7dd.html) for additional details on the `getConnection` method of the `DriverManager`.  
+
+See [Connect to SAP HANA Cloud via JDBC](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/2020_04_QRC/en-US/030a162d380b4ec0bc6a284954c8256d.html) for additional details on the certificate used during the connection.
 
 
 [DONE]
