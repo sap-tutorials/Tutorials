@@ -15,17 +15,17 @@ time: 20
 - How to define relationships between entities in CDS
 - What those relationships look like in an OData context
 
-This tutorial assumes you've completed the tutorial [Define a Simple Data Model and OData Service with CDS](https://developers.sap.com/tutorials/odata-05-data-model-service.html). If you have done, you'll have a brand new OData service `Northbreeze` of your own to use. However, it's still rather simple, with just a single entity.
+This tutorial assumes you've completed the tutorial [Define a Simple Data Model and OData Service with CDS](odata-05-data-model-service). If you've done, you'll have a brand new OData service `Northbreeze` of your own to use. However, it's still rather simple, with just a single entity.
 
 In this tutorial, you'll first study the relationship between products and categories in the Northwind OData V4 service. Then, in your own service, you'll add a second entity at the `db/` layer and define a relation between it and the first entity. You'll then expose this second entity at the `srv/` layer and examine what this looks like from an OData metadata and operations perspective. Finally, you'll build a relationship between those two entities, add some data, and check that everything works as intended.
 
-Before you start, open up the workspace in the SAP Business Application Studio (App Studio) dev space you were using in that previous tutorial, ready to extend the CDS definitions you have so far.
+Before you start, open up the workspace in the SAP Business Application Studio (App Studio) dev space you were using in the previous tutorial, ready to extend the CDS definitions you've so far.
 
 ---
 
 [ACCORDION-BEGIN [Step N: ](Take a look at the Northwind Product -> Category relationship)]
 
-In the [previous tutorial in this group](https://developers.sap.com/tutorials/odata-05-data-model-service.html) you added a cut down version of the `Product` entity type. If you examine [Northwind's metadata document](https://services.odata.org/V4/Northwind/Northwind.svc/$metadata) you should see that this entity type actually has relationships with three other entity types - look for the `NavigationProperty` elements in this extract from the metadata document (some of the `Property` elements have been omitted for brevity):
+In the [previous tutorial in this group](odata-05-data-model-service), you added a cut down version of the `Product` entity type. If you examine [Northwind's metadata document](https://services.odata.org/V4/Northwind/Northwind.svc/$metadata), you should see that this entity type actually has relationships with three other entity types - look for the `NavigationProperty` elements in this extract from the metadata document (some of the `Property` elements have been omitted for brevity):
 
 ```XML
 <EntityType Name="Product">
@@ -64,10 +64,10 @@ Digging into the [Navigation Property section of the OData V4 standards document
 
 The navigation property:
 
-- is on the `Product` entity type
-- is itself called `Category`
-- leads to the `Category` entity type
-- has a corresponding path back from a `Category` entity to entities of this `Product` entity type via a `Products` path (this is defined in the optional `Partner` attribute here)
+- Is on the `Product` entity type
+- Is itself called `Category`
+- Leads to the `Category` entity type
+- Has a corresponding path back from a `Category` entity to entities of this `Product` entity type via a `Products` path (this is defined in the optional `Partner` attribute here)
 
 Furthermore, the `ReferentialConstraint` element declares that the relationship between the two entities is built upon the `CategoryID` property in each case.
 
@@ -79,7 +79,7 @@ Here are three relative URLs, and the default JSON representations of those URLs
 
 A read of the first Northwind product, via <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Products(1)">/Products(1)</a>:
 
-```json
+```JSON
 {
   "@odata.context": "https://services.odata.org/V4/Northwind/Northwind.svc/$metadata#Products/$entity",
   "ProductID": 1,
@@ -98,7 +98,8 @@ A read of the first Northwind product, via <a href="https://services.odata.org/V
 Here, we only see the value of the `CategoryID` property (`1`) - but none of the details of the category itself.
 
 We can ask to see all the information on the category for that product, with <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Products(1)/Category">/Products(1)/Category</a>:
-```json
+
+```JSON
 {
   "@odata.context": "https://services.odata.org/V4/Northwind/Northwind.svc/$metadata#Categories/$entity",
   "CategoryID": 1,
@@ -108,11 +109,11 @@ We can ask to see all the information on the category for that product, with <a 
 }
 ```
 
-> From a path info perspective, this (`/Products(1)/Category`) is nothing special; it's just the same as specifying a normal (non-navigation) property, such as `ProductName`, like this: <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Products(1)/ProductName">/Products(1)/ProductName</a>.
+> From a path info perspective, this (`/Products(1)/Category`) is nothing special; it's just the same as specifying a normal (non-navigation) property, such as `ProductName`, like this: <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Products(1)/ProductName">`/Products(1)/ProductName`</a>
 
 And this is an example of a request for product _and_ category information to be returned in the same resource representation, using the OData system query option `$expand` <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Products(1)?$expand=Category">/Products(1)?$expand=Category</a>:
 
-```json
+```JSON
 {
   "@odata.context": "https://services.odata.org/V4/Northwind/Northwind.svc/$metadata#Products/$entity",
   "ProductID": 1,
@@ -142,7 +143,7 @@ And this is an example of a request for product _and_ category information to be
 
 To balance things out, let's take a brief look at the other entity type in this relationship - and that's the `Category` entity type. Here's what the definition looks like in the metadata document:
 
-```xml
+```XML
 <EntityType Name="Category">
   <Key>
     <PropertyRef Name="CategoryID"/>
@@ -158,7 +159,7 @@ To balance things out, let's take a brief look at the other entity type in this 
 </EntityType>
 ```
 
-Of course, our gaze falls immediately upon the single `NavigationProperty` here which is `Products`, the "other end of the connection" to what we looked at in the previous step.
+Of course, our gaze falls immediately upon the single `NavigationProperty` here, which is `Products`, the "other end of the connection" to what we looked at in the previous step.
 
 Notice here that in contrast to the type defined for the `NavigationProperty` in the previous step, the type here, defined for this one, is a [built-in abstract type](http://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752518) - a collection of zero or more entities of the type `NorthwindModel.Product`.
 
@@ -166,7 +167,7 @@ Thinking about what this data model is about, this makes sense, of course. There
 
 This is a relationship that might be commonly expressed like this:
 
-```
+```Shell/Bash
 +------------+                +------------+
 | Categories | 1 ------- 0..N |  Products  |
 +------------+                +------------+
@@ -182,7 +183,7 @@ A count of the products in the seventh category ("Produce") <a href="https://ser
 
 Staying with Northwind, next let's look at the details for the seventh category, including a list of products in that category <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Categories(7)?$expand=Products">/Categories(7)$?expand=Products</a> (only a couple of the products are shown in this sample output, for brevity):
 
-```json
+```JSON
 {
   "@odata.context": "https://services.odata.org/V4/Northwind/Northwind.svc/$metadata#Categories/$entity",
   "CategoryID": 7,
@@ -224,11 +225,11 @@ Staying with Northwind, next let's look at the details for the seventh category,
 
 [ACCORDION-BEGIN [Step N: ](Add a new Categories entity to your Northbreeze schema)]
 
-Now it's time to build out your own OData service to reflect a similar relationship. As it's a cut down version of Northwind, and we want to concentrate here on the relationships rather than anything else, you'll only include the category ID, name and description properties.
+Now, it's time to build out your own OData service to reflect a similar relationship. As it's a cut down version of Northwind, and we want to concentrate here on the relationships rather than anything else, you'll only include the category ID, name, and description properties.
 
-Assuming you have your App Studio dev space already open at the workspace you were using in the previous tutorial (see the instructions at the top of this tutorial), open up a terminal (menu path **Terminal -> New Terminal**) and start `cds watch`, whereupon you should see some familiar output like this:
+Assuming you've your App Studio dev space already open at the workspace you were using in the previous tutorial (see the instructions at the top of this tutorial), open up a terminal (menu path **Terminal** > **New Terminal**) and start `cds watch`, whereupon you should see some familiar output like this:
 
-```shell
+```Shell/Bash
 user: northbreeze $ cds watch
 
 cds serve all --with-mocks --in-memory?
@@ -253,9 +254,9 @@ cds serve all --with-mocks --in-memory?
 
 Using `cds watch` gives you a lovely tight [feedback loop](https://martinfowler.com/articles/developer-effectiveness.html#FeedbackLoops) where you can make changes, observe their effects, make further changes, and experience the joy of learning-by-doing.
 
-Now your feedback loop is active, add a new `Categories` entity definition to your `db/schema.cds` file, so that the resulting entire contents looks like this:
+Now, your feedback loop is active, add a new `Categories` entity definition to your `db/schema.cds` file, so that the resulting entire contents looks like this:
 
-```cds
+```CDS
 namespace northbreeze;
 
 entity Products {
@@ -277,7 +278,7 @@ As soon as the file is saved, you'll see the `cds watch` process restart things.
 
 Following the link to the preview of port 4004 (which is where we find the CAP Welcome page), and from there the link to the `/main/$metadata` resource, you may be unsurprised to see that your new entity type isn't there:
 
-```xml
+```XML
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
   <edmx:DataServices>
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Main">
@@ -301,7 +302,7 @@ You know why, don't you? Because you haven't yet exposed that entity definition 
 
 Do that now, by adding a second line to the definition details for the `Main` service in your `srv/service.cds` file, adding a reference to the `Categories` entity, so the entire file then looks like this:
 
-```cds
+```CDS
 using northbreeze from '../db/schema';
 
 service Main {
@@ -312,7 +313,7 @@ service Main {
 
 You should notice that `cds watch` restarts things - when that happens, re-request the metadata document in the other tab, and you should then see the new entity type:
 
-```xml
+```XML
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
   <edmx:DataServices>
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Main">
@@ -348,11 +349,11 @@ So far so good, right? Well, let's see. Let's add some category data in the next
 
 [ACCORDION-BEGIN [Step N: ](Add data for the Categories entity)]
 
-In the same way as in the [tutorial that precedes this](https://developers.sap.com/tutorials/odata-05-data-model-service.html), you should now seed this entity with some data, using the same Comma Separated Value (CSV) file based technique as before.
+In the same way as in the [tutorial that precedes this](odata-05-data-model-service), you should now seed this entity with some data, using the same Comma-Separated Value (CSV) file-based technique as before.
 
 In the `db/data/` directory, next to the existing `northbreeze-Products.csv` file, create a new file `northbreeze-Categories.csv` and save the following content into it (including the header line):
 
-```csv
+```CSV
 CategoryID,CategoryName,Description
 1,"Beverages","Soft drinks, coffees, teas, beers, and ales"
 2,"Condiments","Sweet and savory sauces, relishes, spreads, and seasonings"
@@ -375,11 +376,11 @@ But there's something missing - there's no way to get from a product to a catego
 
 While we can retrieve data for both entities, there's no connection yet between them. Let's address that in this step.
 
-We understand what a (two-way) relationship looks like when expressed in OData metadata XML. Now you're going to define such a relationship at the schema layer in your simple OData service, drawing a link between the `Products` and `Categories` entities. You're going to do this declaratively in CDS, using [Associations](https://cap.cloud.sap/docs/guides/domain-models#associations--structured-models).
+We understand what a (two-way) relationship looks like when expressed in OData metadata XML. Now, you're going to define such a relationship at the schema layer in your simple OData service, drawing a link between the `Products` and `Categories` entities. You're going to do this declaratively in CDS, using [Associations](https://cap.cloud.sap/docs/guides/domain-models#associations--structured-models).
 
 Open up the `db/schema.cds` file and add a new property to each of the entities, so that the resulting contents look like this:
 
-```cds
+```CDS
 namespace northbreeze;
 
 entity Products {
@@ -409,7 +410,7 @@ These types of association you've added are "managed" associations, and allow yo
 
 On saving this `db/schema.cds` file, you should notice that the `cds watch` process (that you should still have running in your terminal session) should restart things. At this point, go to the CAP Welcome page (served as usual on the exposed port 4004) and retrieve the metadata document again. It should now look something like this:
 
-```xml
+```XML
 <?xml version="1.0"?>
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
   <edmx:DataServices>
@@ -450,18 +451,18 @@ On saving this `db/schema.cds` file, you should notice that the `cds watch` proc
 
 Excellent! We now not only have the definitions of the entity types `Products` and `Categories`, but these definitions also contain appropriate `NavigationProperty` elements describing the two-way relationship between them.
 
-Our extended simple OData service's metadata is now what we want it to be, but there's one more thing to do. While we have an indication of a relationship in the metadata, there's no indication or evidence of that relationship in our (CSV-based) test data.
+Our extended simple OData service's metadata is now what we want it to be, but there's one more thing to do. While we've an indication of a relationship in the metadata, there's no indication or evidence of that relationship in our (CSV-based) test data.
 
-What do we need to do here? Well, take a closer look at the XML above. The relationship is qualified by a referential constraint, that refers to a new property (which now also appears as a `Property` element within the `EntityType` definition). That property is `Category_CategoryID`. This has been generated by the managed association and is a clue for us as to what we need to do in the data to bring the actual relationships to life.
+What do we need to do here? Well, take a closer look at the previous XML. The relationship is qualified by a referential constraint, that refers to a new property (which now also appears as a `Property` element within the `EntityType` definition). That property is `Category_CategoryID`. This has been generated by the managed association and is a clue for us as to what we need to do in the data to bring the actual relationships to life.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step N: ](Modify and extend the data for the Products entity)]
 
-In fact, if you look at the `Products` entity set (follow the `Products` hyperlink from the CAP Welcome page), you will see that this `Category_CategoryID` is indeed a new property, and there are currently no values for it in any of the entities:
+In fact, if you look at the `Products` entity set (follow the `Products` hyperlink from the CAP Welcome page), you'll see that this `Category_CategoryID` is indeed a new property, and there are currently no values for it in any of the entities:
 
-```json
+```JSON
 {
   "@odata.context": "$metadata#Products",
   "value": [
@@ -493,11 +494,11 @@ We know that each entity in the [Products entity set in the original Northwind s
 
 <https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/odata-06-extend-odata-service/northbreeze-Products.csv>
 
-Open it and copy the entire contents - then use that to replace what you have in `db/data/northbreeze-Products.csv`.
+Open it and copy the entire contents - then use that to replace what you've in `db/data/northbreeze-Products.csv`.
 
 After doing this, the contents of that file should look like this:
 
-```csv
+```CSV
 ProductID,Category_CategoryID,ProductName,UnitsInStock
 1,1,"Chai",39
 2,1,"Chang",17
@@ -511,18 +512,18 @@ ProductID,Category_CategoryID,ProductName,UnitsInStock
 ...
 ```
 
-Note that in the header line, we have the property names - they should match the names of the properties in the entity; this includes the link to the `Categories` entity, i.e. this new `Category_CategoryID` field.
+Note that in the header line, we've the property names - they should match the names of the properties in the entity; this includes the link to the `Categories` entity, that is, this new `Category_CategoryID` field.
 
 On saving the file, you should again see the `cds watch` process restart things, and also (as before) a successful loading of data, indicated by these two lines in the log output:
 
-```
+```Shell/Bash
 > filling northbreeze.Categories from ../db/data/northbreeze-Categories.csv
 > filling northbreeze.Products from ../db/data/northbreeze-Products.csv
 ```
 
 Go back to the `Products` entity set in your service that you were looking at in the previous step, and re-request it. You should now see not only more products, but also that there's a value for the `Category_CategoryID` properties in each of the entities. Here's a cut down version of what you should see:
 
-```json
+```JSON
 {
   "@odata.context": "$metadata#Products",
   "value": [
@@ -568,11 +569,11 @@ This should take you to the service document, with a URL that looks similar to t
 
 `https://workspaces-ws-42lrq-app1.eu10.trial.applicationstudio.cloud.sap/main`
 
-All paths you use in the rest of this step should be relative to (i.e. appended to) this service document URL.
+All paths you use in the rest of this step should be relative to (that is, appended to) this service document URL.
 
 Let's start by requesting just the first `Northbreeze` product, via `/Products(1)`
 
-```json
+```JSON
 {
   @odata.context: "$metadata#Products/$entity",
   ProductID: 1,
@@ -586,7 +587,7 @@ Here, we only see the value of the `Category_CategoryID` property (`1`) - but no
 
 We can ask to see all the information on the category for that product, with `/Products(1)/Category`:
 
-```json
+```JSON
 {
   @odata.context: "../$metadata#Categories/$entity",
   CategoryID: 1,
@@ -597,7 +598,7 @@ We can ask to see all the information on the category for that product, with `/P
 
 And this is the product _and_ category example request again, a request where we expect information from both entities to be returned in the same resource representation, using the `$expand` OData system query option `/Products(1)?$expand=Category`:
 
-```json
+```JSON
 {
   "@odata.context": "$metadata#Products(Category())/$entity",
   "ProductID": 1,
@@ -612,12 +613,9 @@ And this is the product _and_ category example request again, a request where we
 }
 ```
 
-As you can see, your simple OData service is looking great. With just a few lines of declarative schema definitions, plus pass-through exposure of the entities in a minimal service definition, and some CSV based data, you have yourself a fully functioning OData service.
+As you can see, your simple OData service is looking great. With just a few lines of declarative schema definitions, plus pass-through exposure of the entities in a minimal service definition, and some CSV based data, you've yourself a fully functioning OData service.
 
 Congratulations!
 
 [DONE]
 [ACCORDION-END]
-
-
-
