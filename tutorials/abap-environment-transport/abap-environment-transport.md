@@ -11,7 +11,7 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
 - You need a SAP BTP, ABAP environment license.
-- You need to configure a software component of type **business configuration**: [Transport a Software Component Between Two ABAP Instances](abap-environment-gcts).
+- Content can be recorded on both software components of type **Business Configuration** or **Development**. The former is recommended, see also [Business Configuration for SAP Cloud Platform ABAP Environment](https://blogs.sap.com/2019/12/20/business-configuration-for-sap-cloud-platform-abap-environment/)
 - You have to assign the **Configuration Expert - Business Process Configuration** role to the respective users.
 
 
@@ -42,7 +42,7 @@ To assign role **Configuration Expert – Business Process Configuration** to th
 
 [ACCORDION-BEGIN [Step 1: ](Create ABAP interface)]
 
-  1. Right-click on your class **`Z_CALENDAR_XXX`** and select **New** > **Other ABAP Repository Object**.
+  1. Right-click on your package **`Z_CALENDAR_XXX`** and select **New** > **Other ABAP Repository Object**.
 
       ![transport](element.png)
 
@@ -99,6 +99,8 @@ To assign role **Configuration Expert – Business Process Configuration** to th
 
 [ACCORDION-BEGIN [Step 2: ](Create transport class)]
 The first step is to create a central class, which offers some transport change recording to the save validation and the save method for recording of the final changes. The class will reuse the SAP BTP, ABAP environment transport `API IF_A4C_BC_HANDLER`. So it will be used to wrap the generic transport API with a factory calendar specific transport API-method to offer a transport API for the Public Holiday business object. Furthermore, the class is being used to consolidate the returned success-fields, exceptions and messages of the generic API in a single output channel.
+
+>Hint: These classes can be re-used for any customizing table related RAP BO.
 
   1. Right-click on **`Classes`** and select **New** > **ABAP Class**.
 
@@ -303,12 +305,17 @@ The first step is to create a central class, which offers some transport change 
         ASSIGN create->* TO <create_table>.
         <create_table> = CORRESPONDING #( <keys> ).
 
+          IF me->use_table_scomp_transport = abap_true.
+          DATA(transport) = get_table_scomp_transport( table_entity_relation-table ).
+        ENDIF.
+
         DATA(messages) =
           transport(
             check_mode = abap_true
-            table_keys  = VALUE #( ( table = table_entity_relation-table keys = create ) ) ).
+            table_keys  = VALUE #( ( table = table_entity_relation-table keys = create ) )
+            transport_request = transport ).
 
-        IF me->use_table_scomp_transport = abap_true AND get_table_scomp_transport( table_entity_relation-table ) IS INITIAL.
+        IF me->use_table_scomp_transport = abap_true AND transport IS INITIAL.
           APPEND VALUE #( msgty = 'E' msgid = 'TK' msgno = '011' ) TO messages.
         ENDIF.
 
@@ -325,7 +332,7 @@ The first step is to create a central class, which offers some transport change 
         ASSIGN COMPONENT cl_abap_behv=>co_techfield_name-msg OF STRUCTURE <reported_row> TO <reported_msg>.
         ASSIGN COMPONENT cl_abap_behv=>co_techfield_name-tky OF STRUCTURE <failed_row> TO <failed_key>.
 
-        "tranport messages are not key specific, select first one
+        "transport messages are not key specific, select first one
         ASSIGN COMPONENT cl_abap_behv=>co_techfield_name-tky OF STRUCTURE <keys>[ 1 ] TO <key_fields>.
         <reported_key> = <key_fields>.
         LOOP AT messages INTO DATA(message).
@@ -511,13 +518,13 @@ The first step is to create a central class, which offers some transport change 
       - Name: **`ZTH_BC_INJECTOR_XXX`**
       - Description: **`Test helper class`**
 
-      ![transport](class3.png)
+      ![transport](class5.png)
 
       Click **Next**.
 
   13. Click **Finish**.
 
-      ![transport](class4.png)
+      ![transport](class6.png)
 
   14. Replace your code with following:
 
@@ -547,9 +554,9 @@ The first step is to create a central class, which offers some transport change 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Implement save validation)]
-After you have created the global transport class for your business object you can integrate it into your UI. First, the creation of a validation is needed. This validation will check whether all prerequisites are fulfilled, and if the changes can be recorded on the transport request.
+After you have created the global transport class for your business object you can integrate it into your UI. First, the creation of a [validation](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/171e26c36cca42699976887b4c8a83bf.html) is needed. This validation will check whether all prerequisites are fulfilled, and if the changes can be recorded on the transport request.
 
-  1. Open the behavior definition **`ZCAL_I_HOLIDAY_XXX`** and add Add validation `val_transport` for both entities:
+  1. Open the behavior definition **`ZCAL_I_HOLIDAY_XXX`** and add validation `val_transport` for both entities:
 
     ```ABAP
     managed implementation in class zbp_cal_i_holiday_xxx unique;
@@ -672,7 +679,7 @@ After you have created the global transport class for your business object you c
 
       The validation is finished. If you test the factory calendar and save some changes, the validation will be executed. In case the changes cannot be recorded on the transport request, the validation will output some error messages and the save action will be cancelled.
 
-  6. For the final recording of the changes on save, we have to implement an additional save method. The previously created coding can be reused.
+  6. For the final recording of the changes on save, we have to [implement an additional save](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/a37b4f54bd8f4102adabc6e9b5fa53a4.html) method. The previously created coding can be reused.
 
     Open your behavior definition **`ZCAL_I_HOLIDAY_XXX`** and add the **with additional save** statement to your **root node** and **text node**.
 
@@ -786,8 +793,23 @@ After you have created the global transport class for your business object you c
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 4: ](Alternative: Recording changes in transport request for software component of type development)]
+As an alternative, the factory method `GET_TRANSPORT_API` of class `ZCL_BC_TRANSPORT_API_F_XXX` offers a parameter `USE_TABLE_SCOMP_TRANSPORT`. If set to true, a modifiable customizing request for the transport layer of the database table is searched for instead of using the transport layer of the software component of type Business Configuration. Adapt all factory method calls in Behavior Implementation `ZBP_CAL_I_HOLIDAY_XXX` accordingly.
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+Consider the following:
+
+  - Create exactly one customizing request beforehand for each development software component
+  - If found, the changes are recorded on this transport
+  - If no customizing request can be found, an error is raised
+  - If a customizing request is found for the software component of the table and a modifiable customizing request for software component of type **Business Configuration** is available, an error is raised
+
+>**HINT:** For character-like database table key fields you must use a data element with a domain.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]
