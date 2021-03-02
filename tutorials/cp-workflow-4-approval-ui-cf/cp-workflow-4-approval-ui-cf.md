@@ -2,73 +2,53 @@
 title: Create a Start Form and its Custom Tile for Your Workflow
 description: Create a start form for end users to start and complete the workflow application
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+primary_tag: products>sap-business-technology-platform
+tags: [  tutorial>beginner, topic>cloud, products>sap-business-technology-platform ]
 time: 15
 ---
 
 ## Prerequisites  
-- You have executed the previous tutorials in [Get started with SAP Cloud Platform workflows](https://developers.sap.com/group.cp-workflow-cf.html).
+- You have executed the previous tutorials in [Get started with SAP Workflow Service](group.cp-workflow-cf).
 - Make sure that you use a dev space with the extension **Launchpad Module**.
 - You have created a launchpad site. See [Create a Site](https://help.sap.com/viewer/e157c391253b4ecd93647bf232d18a83/Cloud/en-US/97c079f9317c42bba31cc9ca9d4cc7c3.html).
-- You have created a destination for your service instance. See [Manually Create a Destination to a Service Instance](https://help.sap.com/viewer/e157c391253b4ecd93647bf232d18a83/Cloud/en-US/6acb8364e7fa4fca99eca60a054e9980.html).
+- You have created a destination for your service instance. See [Destinations Pointing to Service Instances](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/685f383cebb54c009b2fac633b32c90f.html).
 
 ## Details
 ### You will learn  
   - How to start an instance of the workflow definition that you have defined using a start form
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Assign entitlements to your subaccount)]
 
-So that you can deploy the `WorkflowManagementFLP_0.0.1.mtar` later on, you need to assign the Application Runtime and Portal entitlements to your subaccount.
+[ACCORDION-BEGIN [Step 1: ](Subscribe to the Launchpad service)]
 
-1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. From the navigation area, choose **Service Marketplace**.
 
-2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
-
-3. Access your **trial** subaccount.
-
-4. From the navigation area, choose **Entitlements**, and choose for **Configure Entitlements**.
-
-5. Choose **Add Service Plans** and search for **Application Runtime**.
-
-6. Select **Application Runtime** and choose **Add Service Plans**.
-
-7. To add the service plan for **Launchpad** execute steps 5 and 6 again searching for **Launchpad**. From the available plans only select the **Standard (Subscription) Launchpad** option.
-
-8. Save your entries.    
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Subscribe to the Launchpad service)]
-
-1. From the navigation area, choose **Subscriptions**.
-
-2. Choose the Launchpad service, which is not subscribed yet.
+2. Search for the Launchpad service, which is not subscribed yet.
 
     ![Subscribe to Launchpad service](subscribe-launchpad.png)
 
-3. On the **Launchpad** tile, choose **Subscribe**.
+3. In the **Launchpad** details, choose **Create**.
 
-As a result, the status changes to subscribed.
+4. In the wizard, check that the entry for **Service** is **Launchpad** and set **Plan** to **standard**.
+
+5. Choose **Create**.
+
+You see a popup that the subscription is created. To display the new status, choose **View Subscription**.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Assign yourself the Launchpad_Admin role collection)]
+[ACCORDION-BEGIN [Step 2: ](Assign yourself the Launchpad_Admin role collection)]
 
-1. Navigate back to your subaccount.
+1. From the navigation area of your subaccount, choose **Security** | **Trust Configuration**.
 
-2. From the navigation area, choose **Security** | **Trust Configuration**.
+2. From the list, choose the name of your IdP.
 
-3. From the list, choose the name of your IdP.
-
-4. Enter your mail address, and choose **Show Assignments**.
+3. Enter your mail address, and choose **Show Assignments**.
 
     ![Show Assignments](show-assignments.png)
 
-5. Choose **Assign Role Collection**, and then select **`Launchpad_Admin`**.
+4. Choose **Assign Role Collection**, and then select **`Launchpad_Admin`**.
 
     ![Assign Role Collection](assign-role-collection.png)
 
@@ -76,8 +56,8 @@ As a result, the status changes to subscribed.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create a start form)]
-1. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
+[ACCORDION-BEGIN [Step 3: ](Create a start form)]
+1. In your web browser, open the [SAP Business Technology Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
 
 2. Choose **SAP Business Application Studio** and access your dev space.
 
@@ -104,7 +84,7 @@ As a result, the status changes to subscribed.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Add fields to your start form)]
+[ACCORDION-BEGIN [Step 4: ](Add fields to your start form)]
 
 Once the form editor opens, add form data by choosing **Add Field**.
 
@@ -123,7 +103,7 @@ These expressions refer to the attributes in the JSON file that you have created
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Add a start action)]
+[ACCORDION-BEGIN [Step 5: ](Add a start action)]
 
 1. Switch to the **ACTION** tab of the form editor.
 
@@ -139,7 +119,7 @@ These expressions refer to the attributes in the JSON file that you have created
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Build and deploy)]
+[ACCORDION-BEGIN [Step 6: ](Build and deploy)]
 
 1. Right-click the **mta.yaml** file in your **onboarding** project, and then select **Build MTA**.
 
@@ -153,11 +133,11 @@ These expressions refer to the attributes in the JSON file that you have created
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Create your launchpad site)]
+[ACCORDION-BEGIN [Step 7: ](Create your launchpad site)]
 
 1. Access your **trial** subaccount.
 
-2. From the navigation area, choose **Subscriptions**, and search for **Launchpad**.
+2. From the navigation area, choose **Instances and Subscriptions**, and search for **Launchpad**.
 
 3. From the navigation area, choose **Subscriptions**.
 
@@ -174,7 +154,7 @@ These expressions refer to the attributes in the JSON file that you have created
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Create your custom launchpad tile)]
+[ACCORDION-BEGIN [Step 8: ](Create your custom launchpad tile)]
 
 1. In the navigation area of the central SAP Fiori launchpad, choose the **Provider Manager** icon.
 
@@ -187,6 +167,8 @@ These expressions refer to the attributes in the JSON file that you have created
 3. In the navigation area, choose the **Content Manager** icon, and open the **Content Explorer** tab.
 
     ![Choose Content Manager](choose-content-manager.png)
+
+  >If the standard items are not displayed, check whether you have set up the destination correctly in the prerequisites.
 
 4. In the dropdown, choose the **HTML5 Apps** content provider.
 
@@ -235,7 +217,7 @@ These expressions refer to the attributes in the JSON file that you have created
 
 10. Create a group and assign your local copies of the apps to it.
 
-    1. Choose the **My Content** | **`+New`** | **Group**.
+    1. Click the **Back to Content Management** arrow icon, choose the **My Content** | **`+New`** | **Group**.
 
     2. Enter the title **Workflow**.
 
@@ -260,8 +242,7 @@ These expressions refer to the attributes in the JSON file that you have created
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 12: ](Start the workflow in your custom tile)]
+[ACCORDION-BEGIN [Step 9: ](Start the workflow in your custom tile)]
 After deployment is finished, open your launchpad site that contains the workflow applications.
 
 1. In the **Site Directory**, open your site **`mysite`** icon.
@@ -290,7 +271,7 @@ After deployment is finished, open your launchpad site that contains the workflo
 ---
 Summary
 
-Now, you have created a custom end user UI for your workflow using a start form. To learn more about SAP Cloud Platform Workflow, see:
+Now, you have created a custom end user UI for your workflow using a start form. To learn more about SAP Workflow service, see:
 
-- The [workflow service on the Help Portal](https://help.sap.com/viewer/product/WORKFLOW_SERVICE/Cloud/en-US) with entry points to our documentation and blogs
-- The workflow service in the service catalog of [Discovery Center](https://discovery-center.cloud.sap/#/serviceCatalog/workflow)
+- [The SAP Help Portal](https://help.sap.com/viewer/product/WORKFLOW_SERVICE/Cloud/en-US) with entry points to our documentation and blogs
+- The service catalog of [SAP Discovery Center](https://discovery-center.cloud.sap/#/serviceCatalog/workflow)
