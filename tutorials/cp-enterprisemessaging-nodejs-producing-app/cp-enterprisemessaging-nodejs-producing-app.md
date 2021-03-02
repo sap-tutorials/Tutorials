@@ -8,11 +8,6 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 ---
 
 
-## Prerequisites
-- Configure the SAP NPM registry, see [The SAP NPM Registry](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.02/en-US/726e5d41462c4eb29eaa6cc83ff41e84.html)
-
----
-
 ## Details
 ### You will learn
   - How to create a basic messaging client application for sending messages to a queue
@@ -93,11 +88,11 @@ Create a `package.json` file to list the packages your project depends on and to
         "engines": {
                 "node": ">=6.9.1"
         },
-        "dependencies": {
-                "@sap/xb-msg": ">=0.2.4",
-                "@sap/xb-msg-amqp-v100": "^0.9.17",
-                "@sap/xb-msg-env": ">=0.2.1",
-                "@sap/xsenv": "1.2.8"
+              "dependencies": {
+        "@sap/xb-msg": "^0.9.12",
+        "@sap/xb-msg-amqp-v100": "^0.9.48",
+        "@sap/xb-msg-env": "^0.9.7",
+        "@sap/xsenv": "^3.1.0"
         },
         "scripts": {
                 "start": "node producer.js"
@@ -126,7 +121,7 @@ On a higher level you do the following:
 As a result, the application sends messages to the defined topic and writes a quick info including a counter into the log file.
 
 ```JavaScript
-use strict;
+"use strict";
 
 //------------------------------------------------------------------------------------------------------------------
 //  Basic setup in respect to modules, messaging settings and getting messaging options
@@ -151,18 +146,6 @@ xsenv.loadEnv();
 const client = new msg.Client(env.msgClientOptions(service, [], ['myOutA', 'myOutB']));
 
 
-function setupOptions(tasks, options) {
-    Object.getOwnPropertyNames(tasks).forEach((id) => {
-        const task = tasks[id];
-        options.destinations[0].ostreams[id] = {
-            channel: 1,
-            exchange: 'amq.topic',
-            routingKey: task.topic
-        };
-    });
-    return options;
-}
-
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -178,7 +161,6 @@ function initTasks(tasks, client) {
             console.log('publishing message number ' + counter + ' to topic ' + task.topic);
 
             const message = {
-                target: { address: 'topic:' + task.topic },
                 payload: Buffer.from("Message Number " + counter)
 
             };
