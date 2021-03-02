@@ -3,14 +3,14 @@ title: Expose Integration Flow Endpoint as API and Test the Flow
 description: Define the endpoint of the integration flow developed in the last tutorial as an application programming interface (API).
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, products>sap-cloud-platform-connectivity, products>sap-cloud-platform-for-the-cloud-foundry-environment]
-primary_tag: products>sap-cloud-platform-integration-for-process-services
+tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+primary_tag: products>sap-integration-suite
 author_name: Karunaharan V
 author_profile: https://github.com/Karunaharan
 ---
 
 ## Prerequisites
- - You have provisioned your SAP Cloud Platform Integration Suite tenant and activated **Design, Develop and Operate Integration Scenarios** and **Design, Develop and Manage APIs**. For more information, see [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
+ - You have provisioned your SAP Integration Suite tenant and activated **Design, Develop and Operate Integration Scenarios** and **Design, Develop and Manage APIs**. For more information, see [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
  - You have created and deployed an integration flow that reads product details using an OData connection. For more information, see [Design and Deploy Your First Integration Flow](cp-starter-integration-cpi-design-iflow).
 
 ## Details
@@ -19,7 +19,6 @@ author_profile: https://github.com/Karunaharan
   - How to define and expose an integration flow endpoint as an API
   - How to assign a policy to the API
   - How to call the API and execute the integration flow using the API portal
-
 
 
 In this tutorial, you will define the endpoint of the integration flow developed in the last tutorial as an application programming interface (API).
@@ -31,33 +30,35 @@ After you have performed these steps, you can use the Design, Develop and Manage
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create service instance and key)]
-A service instance defines how a service of SAP Cloud Platform (in our case, the Cloud Integration runtime) can be called from a remote component. In the context of SAP Cloud Platform Integration, a service instance is the definition of an OAuth client. The service key generated out of the service instance contains credentials and other information that is required at a later step to call the integration flow.
+A service instance defines how a service of SAP BTP (in our case, the Cloud Integration runtime) can be called from a remote component. In the context of Cloud Integration, a service instance is the definition of an OAuth client. The service key generated out of the service instance contains credentials and other information that is required at a later step to call the integration flow.
 
-1. Navigate back to your SAP Cloud Platform's subaccount and access your subaccount's space by choosing **Spaces** > **dev**. If you have intentionally specified any other space name, you can choose the space of your choice.
+1. Navigate back to your SAP BTP subaccount and access your subaccount's space by choosing **Spaces** > **dev**. If you have intentionally specified any other space name, you can choose the space of your choice.
 
-    !![Access space](1.1.access-space.png)
+    !![Access space](1-1-access-space.png)
 
 2. Choose **Services** > **Service Marketplace** > **Process Integration Runtime**.
 
     >**TIP:** If you do not see the **Process Integration Runtime** service in the list, at the subaccount level, choose **Entitlements** > **Configure Entitlements** > **Add Service Plans**. Choose **Process Integration Runtime** and select the **integration-flow** service plan checkbox and choose **Add 1 Service Plan**.
 
-    !![Access PI Runtime](1.2.access-process-integration-runtime.png)
+    !![Access PI Runtime](1-2-access-process-integration-runtime.png)
 
-3. Select **Create Instance**.
+3. Select **Create**.
 
-    !![Create new instance](1.3.create.new.instance.png)
+    !![Create new instance](1-3-create-new-instance.png)
 
 4. Select the following details and choose **Next**.
 
     |  Field Name     | Details
     |  :------------- | :-------------
-    |  **Service**           | **`Process Integration Runtime`**
-    |  **Service Plan**           | Select **`integration-flow`** from the dropdown list
-    |  **Instance Name**    | Enter **`Test`** or name of your choice
+    |  **Service**           | **`Process Integration`**
+    |  **Plan**           | Select **`integration-flow`** from the list
+    |  **Runtime Environment**  | Select **`Cloud Foundry`** from the list
+    |  **Space**  | Your space name is auto selected
+    |  **Instance Name**    | Provide a name of your choice
 
-      !![New instance wizard](1.4.create.new.instance.png)
+      !![New instance wizard](1-4-create-new-instance.png)
 
-5. In the **Specify Parameters** tab, enter the following **`JSON`** code snippet:
+5. In the **Parameters** tab, enter the following **`JSON`** code snippet:
     ```JSON
     {
      "roles":[
@@ -65,35 +66,36 @@ A service instance defines how a service of SAP Cloud Platform (in our case, the
      ]
     }
     ```
-    !![Jsoncode](1.5.Jsoncode.png)
 
-    Choose **Next** > **Create Instance**.
+    !![Jsoncode](1-5-Jsoncode.png)
 
-    !![finalstep](1.5.CreateInstancefinal.png)
+    Choose **Next** > **Create**.
+
+    !![finalstep](1-5-CreateInstancefinal.png)
 
 6. Upon successful creation of an instance, a dialog opens. Choose **View Instance**.
 
-    !![view instances](1.6.viewinstance.png)
+    !![view instances](1-6-viewinstance.png)
 
 7. Select the newly created **Service Instance**, click **Actions** (ellipsis button at the right top corner) and choose **Create Service Key** to create a new service key.
 
-    !![Select service key](1.7.select-service-instance.png)
+    !![Select service key](1-7-select-service-instance.png)
 
-    You create this service instance to enable inbound HTTP calls to your SAP Cloud Platform Integration tenant.
+    You create this service instance to enable inbound HTTP calls to your SAP Cloud Integration tenant.
 
-    >**TIP**: This service key will provide you the credentials for making inbound HTTP calls to integration flows deployed on your SAP Cloud Platform Integration Suite tenant. You use the credentials of the service key that is `clientid` and `clientsecret` to call an integration flow as an HTTP endpoint. For more information, see [Setting Up Basic Inbound Authentication with `clientId` and `clientsecret` from a Service Key](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/647eeb3eca5d4c299009cacd1332247e.html).
+    >**TIP**: This service key will provide you the credentials for making inbound HTTP calls to integration flows deployed on your SAP Integration Suite tenant. You use the credentials of the service key that is `clientid` and `clientsecret` to call an integration flow as an HTTP endpoint. For more information, see [Setting Up Basic Inbound Authentication with `clientId` and `clientsecret` from a Service Key](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/647eeb3eca5d4c299009cacd1332247e.html).
 
 8. Specify a name for the service key and choose **Create**.
 
-    !![Enter service key name](1.8.create-service-key-2.png)
+    !![Enter service key name](1-8-create-service-key-2.png)
 
 9. Choose **Actions** (ellipsis button) and then **View**.
 
-      !![view key](1.9.key_view.png)
+      !![view key](1-9-key-view.png)
 
 10. Copy the values of **`clientid`**, **`clientsecret`** and **`tokenurl`** parameters. These are the credentials that you use to make a request to your integration flow.
 
-      !![Copy clientid and clientsecret](1.10.copy-clientid-secret.png)
+      !![Copy clientid and clientsecret](1-10-copy-clientid-secret.png)
 
 
 [DONE]
@@ -106,11 +108,11 @@ In this step, you copy the endpoint address of the integration flow.
 
 2. In the **Monitor view**, under the **Manage Integration Content** section, choose **All** to access all the artifacts that you have deployed. You will also see the integration flow that you have deployed here.
 
-    !![Access Deployed Artifact](2.2.acess-deployed-artifacts.png)
+    !![Access Deployed Artifact](2-2-access-deployed-artifacts.png)
 
 3. Select the integration flow and in the **Endpoints** tab, choose **Copy** icon.
 
-    !![Endpoint URL](2.3.copy-endpoint-url.png)
+    !![Endpoint URL](2-3-copy-endpoint-url.png)
 
 
 [DONE]
@@ -119,13 +121,13 @@ In this step, you copy the endpoint address of the integration flow.
 [ACCORDION-BEGIN [Step 3: ](Define the API)]
 In this step, you define and expose an integration flow endpoint as an application programming interface
 
-1. Go to your SAP Cloud Platform trial subaccount. Select **Subscriptions**. On the **Integration Suite tile**, select **Go to Application**.
+1. Go to your SAP BTP trial subaccount. Select **Subscriptions**. On the **Integration Suite tile**, select **Go to Application**.
 
-    !![AccessIsuite](3.1.AccesstoIsuite.png)
+    !![AccessIsuite](3-1-AccesstoIsuite.png)
 
 2. On the Integration Suite welcome page, click **Design, Develop and Manage APIs**.
 
-    !![API management](3.2.WelcomePageIsuite.png)
+    !![API management](3-2-WelcomePageIsuite.png)
 
 3. On the home page, under **Quick Actions** click **API**.
 
@@ -178,7 +180,11 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
     >**TIP**: Instead of copying the example, type it manually.
 
-    !![change product identifier](011.png)
+    **Before**
+    !![change product identifier](011-before.png)
+
+    **After**
+    !![change product identifier](011-after.png)
 
     Select **Save**. You are navigated to the APIs list view.
 
