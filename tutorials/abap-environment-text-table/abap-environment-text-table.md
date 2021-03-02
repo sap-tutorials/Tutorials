@@ -16,8 +16,8 @@ author_profile: https://github.com/mervey45
 ### You will learn  
 - How to create detail page
 - How to add additional UI annotations
-- How to create text tables for CDS view
-- How to create text table for behavior definition
+- How to create CDS views for text table
+- How to create behavior definition for text table
 - How to add UI annotation for text table
 - How to link the default description to the root entity
 
@@ -183,9 +183,9 @@ More information about defining CDS annotations for metadata-driven UIs can be f
     ![detail](result2.png)
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create text tables for CDS view)]
+[ACCORDION-BEGIN [Step 3: ](Create CDS views for text table)]
 
   1. In the project explorer, right-click on **Data Definitions** and select **New** > **Data Definition**.   
 
@@ -312,7 +312,9 @@ More information about defining CDS annotations for metadata-driven UIs can be f
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create text table for behavior definition)]
+[ACCORDION-BEGIN [Step 4: ](Create behavior definition for text table)]
+
+>**Hint:** Please note that the Maintain Business Configurations API only supports one level of sub nodes, i.e. your root entity can have associations to an arbitrary amount of entities but these sub entities cannot have associations to further sub entities.
 
   1. Open behavior definition **`ZCAL_I_HOLIDAY_XXX`**. Add the behavior definition for the text projection view. As the text node is a sub node of the root-entity you must define it as lock dependent. Enable the node for updates and deletions. Create is not possible here as this is defined on the composition leading to the sub node. Set fields `HolidayId` and `Language` as `readonly:update` to make it read only in the case of updates. Also add an association to the text node in the root node.
 
@@ -583,7 +585,7 @@ More information about defining CDS annotations for metadata-driven UIs can be f
 
 The list of existing configuration entries must show the description in the logon language, if maintained. Additionally, when creating a new configuration entry a description in the logon language must be automatically created and can be edited directly.
 
-  1. Open projection view **`ZCAL_C_HOLIDAY_XXX`** and define the type hierarchy:  
+  1. Open projection view **`ZCAL_C_HOLIDAY_XXX`** and add the field `HolidayDescription` from the composition to the Text view using the `localized syntax`  
 
     ```ABAP
     @EndUserText.label: 'Projection view for public holidays'

@@ -4,8 +4,8 @@ description: Build an entity list using SAP SDK for iOS controls. Use storyboard
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>ios-sdk-for-sap-btp ]
 time: 25
 ---
 

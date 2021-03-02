@@ -265,7 +265,7 @@ Partitions can be created to divide the data in a large table into smaller parts
     SELECT TABLE_NAME, PART_ID, COLUMN_NAME, LOAD_UNIT FROM M_CS_COLUMNS where schema_Name = 'HOTEL';
     ```
 
-    ![column and page loadable](partition_details.png)
+    ![column and page loadable](partition-details.png)
 
     Notice above that the partition 1 (containing older reservations) is page loadable and partition 2 (containing recent reservations) is column loadable.  
 
@@ -391,13 +391,13 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
     	SELECT ::SQL_ERROR_CODE, ::SQL_ERROR_MESSAGE FROM DUMMY;
     	WHILE (val < numToGenerate) DO
     		-- generate random room number from 100-300
-    		rno := FLOOR(RAND_SECURE() * 200) + 1 + 100;
+    		rno := FLOOR(RAND_SECURE() * 201) + 100;
     		-- generate random customer number from 1000-1014
-    		cno := FLOOR(RAND_SECURE() * 14) + 1 + 1000;
+    		cno := FLOOR(RAND_SECURE() * 15) + 1000;
     		-- generate random hotel number from 10-26
-    		hno := FLOOR(RAND_SECURE() * 16) + 1 + 10;
+    		hno := FLOOR(RAND_SECURE() * 17) + 10;
     		-- generate random number from 1-3 to determine room type
-    		rType := FLOOR(RAND_SECURE() * 3 + 1);
+    		rType := FLOOR(RAND_SECURE() * 3) + 1;
     		IF (rType = 1) THEN
     			roomType := '''single''';
     		ELSEIF (rType = 2) THEN
