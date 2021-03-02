@@ -19,7 +19,6 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
-
 ![MDK](img_1.gif)
 
 [ACCORDION-BEGIN [Step 1: ](Store the deleted record locally)]
@@ -171,7 +170,7 @@ Deploy the updated application to your MDK client.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
-    !![MDK](img_4.1.png)
+    !![MDK](img-4.1.png)
 
 2. Select deploy target as **Mobile & Cloud**.
 
