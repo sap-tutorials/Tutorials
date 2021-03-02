@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- **Download the latest version of Mobile Development Kit SDK** either from community [download page](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/Mobile%2520development%2520kit) if you are a SAP Mobile Services customer
+- **Download the latest version of Mobile Development Kit SDK** either from the SAP community [download page](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/Mobile%2520development%2520kit) if you are a SAP Mobile Services customer
 
 ## Details
 ### You will learn
@@ -67,7 +67,7 @@ Make sure that you have download latest version of MDK SDK as described in Prere
 
 1. Extract the downloaded zip file on your Windows OS.
 
-    !![MDK](img_1.5.png)
+    !![MDK](img-1.5.png)
 
     >You will also find other files in the extracted folder. The README file contains information about the version requirements, dependencies and some getting started links.
 
@@ -75,7 +75,7 @@ Make sure that you have download latest version of MDK SDK as described in Prere
 
     MDK Dependencies Installer checks the status of the MDK dependencies and will install or upgrade the dependencies for you. Double click the  `MDK_Dependencies_Installer` application file to open it.
 
-    !![MDK](img_1.6.png)
+    !![MDK](img-1.6.png)
 
     The installer will list all required components for Android platform and automatically check if they are already installed in the machine. Follow the installer UI to install the components you selected.
 
@@ -139,7 +139,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     Once this completes, close the window. Notice that the `create-client.cmd` file has appeared in the SDK directory.
 
-    !![MDK](img_2.6.png)    
+    !![MDK](img-2.6.png)    
 
 [OPTION END]
 
@@ -226,17 +226,17 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 1. In the `MDKClient_SDK` folder, you will find the `template.mdkproject` folder. It is recommended that you copy this folder to another location to use it for future builds and paste it anywhere want and you can rename template to whatever you want but the directory name needs to end in `.mdkproject`.
 
-    !![MDK](img_3.2.1.png)
+    !![MDK](img-3.2.1.png)
 
     The idea of retaining the `.mdkproject` folder is so you can use it again in the future to build additional MDK clients using the same settings using a different version of the MDK SDK.
 
     >For this tutorial, I have named my `.mdkproject` folder `DemoSampleApp.mdkproject` and put it outside of the MDK Client folder structure. I will refer this name for the rest of this tutorial.
 
-    >!![MDK](img_3.2.2.png)
+    >!![MDK](img-3.2.2.png)
 
 2. Next, you will need to update the `MDKProject.json` and `BrandedSettings.json` files as needed for your client. Go into the `DemoSampleApp.mdkproject` folder.
 
-    !![MDK](img_3.2.3.png)
+    !![MDK](img-3.2.3.png)
 
 3. Open the `MDKProject.json` file and update it as needed. This file has some build-time configurations such as the application name, version and bundle ID.
 
@@ -335,6 +335,8 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img_4.4.png)
 
+    >You can run the `create-client command` from any directory.  The resulting MDK client will be created in the directory where the `create-client command` is run from.
+
 2. Once the `create-client.cmd` script executed successfully, you will see **Application ready** message in terminal console.
 
     !![MDK](img_4.4.1.png)
@@ -343,7 +345,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
      You will also find your app created under the `MDKClient_SDK` folder.
 
-    !![MDK](img_4.4.2.png)
+    !![MDK](img-4.4.2.png)
 
 [OPTION END]
 
