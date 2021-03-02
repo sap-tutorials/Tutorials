@@ -1,19 +1,18 @@
 ---
-title: Call a Remote Function Module From SAP Cloud Platform, ABAP Environment
-description: Call a remote function module located in an on-premise system, such as a SAP S/4HANA System, from the ABAP Environment
+title: Call a Remote Function Module From SAP Business Technology Platform (BTP), ABAP Environment
+description: Call a remote function module located in an on-premise system, such as a SAP S/4HANA System, from the ABAP Environment.
 auto_validation: true
 time: 30
-tags: [ tutorial>advanced, products>sap-cloud-platform, products>sap-cloud-platform--abap-environment, topic>abap-connectivity, tutorial>license]
+tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
 primary_tag: topic>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
-
 ---
 
 ## Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
-- You have set up SAP Cloud Platform, ABAP Environment, for example by using the relevant booster: [Using a Booster to Automate the Setup of the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cd7e7e6108c24b5384b7d218c74e80b9.html)
-- **Tutorial**: [Create Your First Console Application](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html), for a licensed user, steps 1-2
+- You have set up SAP Business Technology Platform (BTP), ABAP Environment, for example by using the relevant booster: [Using a Booster to Automate the Setup of the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cd7e7e6108c24b5384b7d218c74e80b9.html)
+- **Tutorial**: [Create Your First Console Application](abap-environment-trial-onboarding), for a licensed user, steps 1-2
 -	You have developer rights to an ABAP on-premise system, such as:
     - [AS ABAP developer edition, latest version](https://blogs.sap.com/2019/07/01/as-abap-752-sp04-developer-edition-to-download/) or:
     - [SAP S/4HANA 1809 fully activated appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/) or:
@@ -22,7 +21,7 @@ author_profile: https://github.com/julieplummer20
 
 ## Details
 ### You will learn
-  - How to open a secure tunnel connection between your SAP Cloud Platform ABAP Environment and an on-premise SAP System, e.g. SAP S/4HANA
+  - How to open a secure tunnel connection between your SAP BTP, ABAP Environment and an on-premise SAP System, e.g. SAP S/4HANA
   - How to create a destination service instance with an RFC connection
   - How to test the connection using an ABAP handler class
 
@@ -30,15 +29,14 @@ Throughout this tutorial, replace `XXX` or `JP` with your initials or group numb
 
 **The problem:**
 
-There are two problems when setting up connectivity between the Cloud Platform ABAP Environment and an on-premise:
+There are two problems when setting up connectivity between the SAP BTP, ABAP Environment and an on-premise:
 
 - The ABAP Environment "lives" in the Internet, but customer on-premise systems are behind a firewall
 - RFC is not internet-enabled
 
 **The solution:**
 
-- Set up a connection from the on-premise system to the SAP Cloud Platform Neo Environment using SAP Cloud Connector
-- Set up a connection from the SAP Neo to the SAP Cloud Foundry Environment
+- Set up a secure, tunnel connection from the on-premise system to the SAP BTP, ABAP Environment
 
 **Specifically:**
 
@@ -139,7 +137,7 @@ Now, still in the **Cloud to On-Premise > Access Control** tab, enter the resour
 
 
 [ACCORDION-BEGIN [Step 4: ](Check connectivity from SAP Cloud Cockpit)]
-In the SAP Cloud Platform Cockpit of your Cloud Foundry subaccount, choose **Cloud Connectors**:
+In the SAP BTP Cockpit of your Cloud Foundry subaccount, choose **Cloud Connectors**:
 
 !![step4a-cf-cloud-connectors-in-sap-cloud-cockpit](step4a-cf-cloud-connectors-in-sap-cloud-cockpit.png)
 
@@ -152,7 +150,7 @@ In the SAP Cloud Platform Cockpit of your Cloud Foundry subaccount, choose **Clo
 [ACCORDION-BEGIN [Step 5: ](Create destination)]
 You will now create a destination in the ABAP Environment. This must be created at subaccount (not Space) level.
 
-1. In the SAP Cloud Platform Cockpit of your Cloud Foundry subaccount, choose **Destinations**, then choose **New Destinations**.
+1. In the SAP BTP Cockpit of your Cloud Foundry subaccount, choose **Destinations**, then choose **New Destinations**.
 
     !![step4a-cf-cockpit-new-destination](step4a-cf-cockpit-new-destination.png)
 
@@ -352,8 +350,8 @@ ENDCLASS.
 [ACCORDION-END]
 
 ## More Information
-For more information on SAP Cloud Platform:
-- SAP Help Portal: [What is SAP Cloud Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html)
+For more information on SAP Business Technology Platform (BTP)
+- SAP Help Portal: [What is SAP Business Technology Platform (BTP)](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html)
 
 - SAP Help Portal: [Getting Started With a Customer Account](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html) - If you use the booster, these steps are performed automatically for you, but you may be interested in the background information
 

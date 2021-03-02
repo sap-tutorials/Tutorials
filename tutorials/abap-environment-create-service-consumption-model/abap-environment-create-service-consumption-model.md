@@ -1,10 +1,12 @@
 ---
 title: Create a Service Consumption Model
-description: Create an OData service consumption model in an SAP Cloud Platform, ABAP Environment instance. In a second instance, prepare it for consumption.
+description: Create an OData service consumption model in an SAP Business Technology Platform, ABAP Environment instance. In a second instance, prepare it for consumption.
 auto_validation: true
 time: 45
-tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, tutorial>license,topic>cloud, topic>abap-connectivity, tutorial>license]
-primary_tag: products>sap-cloud-platform--abap-environment
+tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
+primary_tag: topic>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites  
@@ -18,7 +20,7 @@ primary_tag: products>sap-cloud-platform--abap-environment
 
   This tutorial is based on:
 
-  - SAP Help Portal: [Preparing Access to the Remote OData Service](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/59a91c95137e4c42946d50b25dba3fd7.html#)
+  - SAP Help Portal: [Preparing Access to the Remote OData Service](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/59a91c95137e4c42946d50b25dba3fd7.html)
   - SAP Help Portal: [SAP Help Portal: Creating a Service Consumption Model](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/96132822b3554016b653d3601bb9ff1a.html)
 
 ---
