@@ -10,7 +10,7 @@ author_profile: https://github.com/Karunaharan
 ---
 
 ## Prerequisites
- - You have provisioned your SAP Cloud Platform Integration Suite tenant. For more information, see [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
+ - You have provisioned your SAP Integration Suite tenant. For more information, see [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
 
 ## Details
 ### You will learn
