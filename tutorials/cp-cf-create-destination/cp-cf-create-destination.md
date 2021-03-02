@@ -28,7 +28,7 @@ The Northwind OData services comes in several versions.  The tutorials currently
 
 Go to <https://account.hanatrial.ondemand.com> and log in to your SAP BTP cockpit. Click the **Enter Your Trial Account** button.
 
-!![SAP BTP log in page](./scp-trial-logon.png)
+!![SAP BTP log in page](./btp-trial-logon.png)
 
 [DONE]
 [ACCORDION-END]
