@@ -3,12 +3,14 @@ title: Add SAP Web Analytics Tracking Snippet
 description: Add SAP Web Analytics tracking snippet to your website to start usage tracking.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-web-analytics, products>sap-cloud-platform]
+tags: [ tutorial>beginner, products>sap-web-analytics, products>sap-business-technology-platform]
 primary_tag: products>sap-web-analytics
+author_name: Vikram Kulkarni
+author_profile: https://github.com/Vikramkulkarni01
 ---
 
 ## Prerequisites
-[Register your website in a space](https://developers.sap.com/tutorials/cp-webanalytics-add-site.html)
+[Register Your Website in a Space](cp-webanalytics-add-site)
 
 
 ## Details
@@ -28,11 +30,11 @@ For production landscape, please follow the instructions provided in the [offici
 
 2. Click on the **Snippet** icon for your website.
 
-    ![Snippet Icon](Snippet icon.png)
+    !![Snippet Icon](Snippet icon.png)
 
 3. Copy the code block from the Snippet box.
 
-    ![Copy Snippet](Copy Snippet.png)
+    !![Copy Snippet](Copy Snippet.png)
 
 
 [DONE]
