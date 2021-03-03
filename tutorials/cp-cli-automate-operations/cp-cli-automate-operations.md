@@ -5,7 +5,7 @@ author_name: Michal Keidar
 author_profile: https://github.com/michal-keidar
 auto_validation: true
 time: 30
-tags: [tutorial>intermediate, products>sap-business-technology-platform, software-product-function>sap-btp-cockpit]
+tags: [tutorial>intermediate, products>sap-business-technology-platform, software-product-function>sap-btp-cockpit, software-product-function>sap-btp-command-line-interface]
 primary_tag: products>sap-business-technology-platform
 ---
 
