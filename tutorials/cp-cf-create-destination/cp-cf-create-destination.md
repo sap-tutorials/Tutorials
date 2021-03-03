@@ -3,7 +3,7 @@ title: Create a Destination in the SAP BTP Cockpit
 description: Create a destination in the SAP BTP cockpit to allow application access to the Northwind OData services.
 auto_validation: true
 primary_tag: products>sap-business-technology-platform
-tags: [ software-product-function>sap-btp-cockpit, topic>odata, tutorial>beginner  ]
+tags: [ tutorial>beginner, topic>odata ]
 time: 5
 ---
 
@@ -32,6 +32,7 @@ Go to <https://account.hanatrial.ondemand.com> and log in to your SAP BTP cockpi
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step : ](Access your subaccount)]
 
 Click on the tile of your Cloud Foundry subaccount.
@@ -40,6 +41,7 @@ Click on the tile of your Cloud Foundry subaccount.
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step : ](Open the Destinations view)]
 
 Click on the **Destinations** button on the left panel and click **New Destination** to open a new destination configuration form.
@@ -48,9 +50,8 @@ Click on the **Destinations** button on the left panel and click **New Destinati
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step : ](Create new destination)]
-
-
 Enter/confirm all fields in the destination configuration section with the information below and confirm with **Save**.
 
 Field Name     | Value
