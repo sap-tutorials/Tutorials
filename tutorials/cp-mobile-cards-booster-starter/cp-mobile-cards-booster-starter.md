@@ -4,7 +4,7 @@ description: Create a card that understands the contact information in a card an
 auto_validation: true
 time: 20
 primary_tag: products>sap-mobile-cards
-tags: [  tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-business-technology-platform, products>sap-mobile-cards, products>sap-mobile-services ]
 author_name: Sandeep TDS
 author_profile: https://github.com/sandeep-tds
 ---
@@ -43,7 +43,7 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 
 [ACCORDION-BEGIN [Step 2: ](Create cards using Boosters)]
 
-1. Log into your [SAP CP Trial account](https://account.hanatrial.ondemand.com)
+1. Log into your [SAP BTP Trial account](https://account.hanatrial.ondemand.com)
 
 2. Click **Enter Your Trial Account**
 
@@ -110,8 +110,6 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 
     !![MobileCardsImage](img_3_and_4.png)
 
-    > If the card is already subscribed, you can skip this step.
-
 5. *Tap* back **&larr;** twice to go back to the card view.
 
     !![MobileCardsImage](img_3_and_5.png)
@@ -145,8 +143,6 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 3. *Tap* **Subscribe**.
 
     !![MobileCardsImage](img_3_ios_3.png)
-
-    > If the card is already subscribed, you can skip this step.
 
 4. *Tap* **All Cards**.
 
