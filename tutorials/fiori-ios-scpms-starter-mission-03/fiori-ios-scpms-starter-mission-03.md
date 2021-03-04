@@ -1,6 +1,6 @@
 ---
 title: Build a Product List
-description: Build an entity list using SAP SDK for iOS controls, with storyboard segues for navigation between the overview screen and the product list.
+description: Build an entity list using SAP BTP SDK for iOS controls, with storyboard segues for navigation between the overview screen and the product list.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
@@ -11,7 +11,7 @@ time: 35
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP SDK for iOS:** Version 5.0 or higher
+- **SAP BTP SDK for iOS:** Version 5.0 or higher
 
 ## Details
 ### You will learn  
@@ -148,7 +148,7 @@ The Product List is a Table View Controller which means the structure is similar
     /// First retrieve the destinations your app can talk to from the AppParameters.
     let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
-    /// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course you only have one destination here. Handle the errors in case the OData controller is nil. You are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the iOS Assistant.
+    /// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course you only have one destination here. Handle the errors in case the OData controller is nil. You are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the Assistant.
     var dataService: ESPMContainer<OnlineODataProvider>? {
         guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
             AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)

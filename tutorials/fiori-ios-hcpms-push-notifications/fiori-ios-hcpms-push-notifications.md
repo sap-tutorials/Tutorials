@@ -1,23 +1,21 @@
 ---
 title: Enable the Push Notification service for your iOS app
-description: Use the SAP Cloud Platform Mobile Services and Apple Developer Account to enable Push Notifications for you iOS app.
-author_name: Kevin Muessig
-author_profile: https://github.com/KevinMuessig
+description: Use the SAP Mobile Services and Apple Developer Account to enable Push Notifications for you iOS app.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios, products>sap-mobile-services ]
 time: 35
 ---
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0 or higher
-- [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup)
+- **SAP BTP SDK for iOS:** Version 5.0 or higher
+- [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup)
 - **Apple ID:** A paid Apple developer account is required
 
 ## Details
 ### You will learn  
-- How to setup your Xcode project and SAP Cloud Platform Mobile Services to send/receive notifications.
+- How to setup your Xcode project and SAP Mobile Services to send/receive notifications.
 
 ---
 
@@ -29,7 +27,7 @@ You can use the Apple push notification Service to propagate information from th
 *  Create a CER file
 *  Install the CER file and create a p12 file
 *  Update your application to use push notifications
-*  Configure APNS in SAP Cloud Platform cockpit
+*  Configure APNS in SAP BTP cockpit
 
 > In order to implement push notifications, a paid Apple developer account is required. Students or other developers with a personal Apple ID for their team will not be able to use push notifications, because they won't have access to the Developer Portal to generate the required certificate.
 
@@ -133,7 +131,7 @@ In order to use the **Apple Push Notification service**, we need to create a **C
 
 [ACCORDION-BEGIN [Step 4: ](Install the .CER file and create the .p12 file)]
 
-In order to configure the `APNS` on **SAP Cloud Platform Mobile Services** we need to install the `.CER` file and create the needed `.p12` file.
+In order to configure the `APNS` on **SAP Mobile Services** we need to install the `.CER` file and create the needed `.p12` file.
 
 > A `.p12` file is a encrypted container for the certificate and private key. This file is needed by Mobile Services for the `APNS` configuration.
 
@@ -151,16 +149,16 @@ In order to configure the `APNS` on **SAP Cloud Platform Mobile Services** we ne
 
     Make sure that in the dropdown **Personal Information Exchange (.p12)** is selected and click on **Save**. You will be prompted to enter a password, please do that and click on **OK** to export the files.
 
-    > While you have the option to leave the password empty, you must provide a password when configuring the certificate for use with SAP Cloud Platform Mobile Services.
+    > While you have the option to leave the password empty, you must provide a password when configuring the certificate for use with SAP Mobile Services.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add the Mobile Push Notification feature to your app)]
 
-The iOS Assistant automatically generates the necessary code for receiving and handling push notifications in your app but how do you actually send a notification to your users? - Using the **Mobile Push Notification** feature available on SAP Cloud Platform Mobile Services.
+The Assistant automatically generates the necessary code for receiving and handling push notifications in your app but how do you actually send a notification to your users? - Using the **Mobile Push Notification** feature available on SAP Mobile Services.
 
-1. Open your SAP Mobile Services instance on SAP Cloud Platform and navigate to the **Features** menu.
+1. Open your SAP Mobile Services instance on SAP BTP and navigate to the **Features** menu.
 
     ![Push on Mobile Services](fiori-ios-hcpms-push-notifications-15.png)
 
@@ -237,7 +235,7 @@ The iOS Assistant automatically generates the necessary code for receiving and h
 
     ```
 
-    The `uploadDeviceTokenForRemoteNotification(_:Data)` will take care of uploading the app's device token to the SAP Cloud Platform Mobile Services.
+    The `uploadDeviceTokenForRemoteNotification(_:Data)` will take care of uploading the app's device token to the SAP Mobile Services.
 
     ```swift
     func uploadDeviceTokenForRemoteNotification(_ deviceToken: Data) {
@@ -306,7 +304,7 @@ The iOS Assistant automatically generates the necessary code for receiving and h
 
 [ACCORDION-BEGIN [Step 8: ](Send push notifications to your phone)]
 
-It is time now to send the first push notification from the **SAP Cloud Platform Mobile Services** push notification feature.
+It is time now to send the first push notification from the **SAP Mobile Services** push notification feature.
 
 1. Please login to your Mobile Services account and you will notice you can see your device being registered in the **Event Logs Today (UTC-0800)** section.
 

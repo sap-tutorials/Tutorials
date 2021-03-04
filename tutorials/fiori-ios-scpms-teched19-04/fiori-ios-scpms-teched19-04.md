@@ -1,6 +1,6 @@
 ---
 title: Implement the Customer Detail
-description: Use the SAP SDK for iOS to implement a Profile Header and Charts into the Customer Detail View.
+description: Use the SAP BTP SDK for iOS to implement a Profile Header and Charts into the Customer Detail View.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
@@ -11,7 +11,7 @@ time: 15
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP SDK for iOS:** Version 5.0
+- **SAP BTP SDK for iOS:** Version 5.0
 
 ## Details
 ### You will learn  
@@ -22,7 +22,7 @@ time: 15
 
 [ACCORDION-BEGIN [Step 1: ](Fetch right customer from data service)]
 
-In the last tutorial, you implemented the Overview Table View Controller and the segue to the Customer Detail Table View Controller. In this tutorial, you will utilize the SAP SDK for iOS to implement a `FUIProfileHeader` and the different Chart Cells.
+In the last tutorial, you implemented the Overview Table View Controller and the segue to the Customer Detail Table View Controller. In this tutorial, you will utilize the SAP BTP SDK for iOS to implement a `FUIProfileHeader` and the different Chart Cells.
 
 1. Open the `CustomerDetailTableViewController.swift` class and add the following import statements right below the `UIKit` import:
 
@@ -195,7 +195,7 @@ In the last tutorial, you implemented the Overview Table View Controller and the
 
 [ACCORDION-BEGIN [Step 2: ](Set up Table View and register needed cells)]
 
-In order to display the Charts, you're going to use the `FUIChartTitleTableViewCell`, `FUIChartPlotTableViewCell` and the `FUIChartLegendTableViewCell` from the SAP CP SDK for iOS.
+In order to display the Charts, you're going to use the `FUIChartTitleTableViewCell`, `FUIChartPlotTableViewCell` and the `FUIChartLegendTableViewCell` from the SAP BTP SDK for iOS.
 
 1. Add the following lines of code to the `viewDidLoad(:)` right above the `updateTable()` method call:
 

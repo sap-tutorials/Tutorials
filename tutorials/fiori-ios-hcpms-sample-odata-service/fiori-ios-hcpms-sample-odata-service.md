@@ -1,18 +1,18 @@
 ---
 title: Use the Sample OData Service for Mobile Apps
-description: Use the sample OData service included with the SAP Cloud Platform mobile service for development and operations account.
+description: Use the sample OData service included with the SAP Mobile Services for development and operations account.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 10
 ---
 ## Prerequisites  
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
- - **SAP Cloud Platform SDK for iOS:** Version 2.0
+ - **SAP BTP SDK for iOS:** Version 2.0
 
 ## Details
 ### You will learn  
-  - How to access the sample OData service that comes with the SAP Cloud Platform mobile service for development and operations
+  - How to access the sample OData service that comes with the SAP Mobile Services for development and operations
   - How to generate sample data for use in your application
 
 
@@ -31,7 +31,7 @@ The following roles are required to use this service:
 
 [ACCORDION-BEGIN [Step 1: ](Open Developer tab)]
 
-In SAP Cloud Platform mobile service for development and operations cockpit, navigate to **Developer**.
+In SAP Mobile Services for development and operations cockpit, navigate to **Developer**.
 
 ![Developer tab](fiori-ios-hcpms-sample-odata-service-01.png)
 
@@ -102,15 +102,15 @@ At panel **SSO Mechanism**, set the authentication method to **Basic Authenticat
 
 ![Authentication](fiori-ios-hcpms-sample-odata-service-03.png)
 
-> For the SSO Mechanism for the sample OData service, you can choose between `Basic Authentication` or `App2AppSSO`. In one of the next tutorials, we will use the **SDK Assistant** to create an application based on this Sample OData service, and since the SDK Assistant currently only supports Basic Authentication, we will use the **Basic Authentication** setting.
+> For the SSO Mechanism for the sample OData service, you can choose between `Basic Authentication` or `App2AppSSO`. In one of the next tutorials, we will use the **SAP BTP SDK Assistant for iOS** to create an application based on this Sample OData service, and since the SAP BTP SDK Assistant for iOS currently only supports Basic Authentication, we will use the **Basic Authentication** setting.
 
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Enter SAP Cloud Platform credentials)]
+[ACCORDION-BEGIN [Step 8: ](Enter SAP BTP credentials)]
 
-Mark the checkbox next to **Basic Authentication**, and click the **Edit** button to the right. A dialog is shown, and enter your **SAP Cloud Platform mobile service for development and operations login credentials**
+Mark the checkbox next to **Basic Authentication**, and click the **Edit** button to the right. A dialog is shown, and enter your **SAP Mobile Services for development and operations login credentials**
 
 ![Authentication](fiori-ios-hcpms-sample-odata-service-04.png)
 

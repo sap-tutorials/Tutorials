@@ -3,13 +3,13 @@ title: Create an Application Definition for a Mobile App
 description: Create an application definition that enables you to manage the application.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>beginner, operating-system>ios, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 15
 ---
 ## Prerequisites  
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
- - **SAP Cloud Platform SDK for iOS:** Version 2.0
- - **Tutorials:** [Enable SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
+ - **SAP BTP SDK for iOS:** Version 2.0
+ - **Tutorials:** [Enable SAP Mobile Services for development and operations](fiori-ios-hcpms-setup)
 
 ## Details
 ### You will learn  
@@ -17,9 +17,9 @@ time: 15
 
 ---
 
-The SAP Cloud Platform mobile service for development and operations provides various mobile-centric services, such as authentication, device registration, logging and proxying of back-end services. All these services are app specific. This allows having several that are set up using different settings.
+The SAP Mobile Services for development and operations provides various mobile-centric services, such as authentication, device registration, logging and proxying of back-end services. All these services are app specific. This allows having several that are set up using different settings.
 
-Technically it would be possible to skip this step and access an OData services directly, but leveraging the SAP Cloud Platform mobile service for development and operations has several advantages:
+Technically it would be possible to skip this step and access an OData services directly, but leveraging the SAP Mobile Services for development and operations has several advantages:
 
 - Your app is always communicating with the same Mobile Services end-point. If you want to use another service, you don't have to change the app, as the eventual end-point stays hidden for the app. It suffices to point your mobile services end-point to the new service.
 - Mobile services contains a device registration feature that allows a device to be de-authorized when the device is e.g. lost.
@@ -27,11 +27,11 @@ Technically it would be possible to skip this step and access an OData services 
 - Mobile services provide out-of-the-box features to configure your app on an app-specific, user-specific or device-specific level. It is e.g. possible to set a particular device of a user to debugging-level to gain better insight into what is happening with the application
 - Mobile services provides analytics features to monitor usage of your application per platform, device type or user group.
 
-This tutorial described how you can configure a mobile app in SAP Cloud Platform mobile service for development and operations.
+This tutorial described how you can configure a mobile app in SAP Mobile Services for development and operations.
 
 [ACCORDION-BEGIN [Step 1: ](Make sure mobile services are enabled in your account)]
 
-Got to the SAP Cloud Platform cockpit and click on **Services** in the main menu. In the `Services` page, make sure that under `Mobile Services` the `Development & Operations` service is enabled. If it is not enabled, enable it by clicking on it an pressing the **Enable** button.
+Got to the SAP BTP cockpit and click on **Services** in the main menu. In the `Services` page, make sure that under `Mobile Services` the `Development & Operations` service is enabled. If it is not enabled, enable it by clicking on it an pressing the **Enable** button.
 
 ![Enable Mobile Services](image-1.png)
 
@@ -51,7 +51,7 @@ As it is likely that you need to return to this cockpit after you have created t
 
 [ACCORDION-BEGIN [Step 3: ](Create the application definition)]
 
-Log on to your **SAP Cloud Platform mobile service for development and operations** cockpit, and navigate to **Mobile Applications > Native/Hybrid**. Click the **New** button, and in the dialog, add the following information:
+Log on to your **SAP Mobile Services for development and operations** cockpit, and navigate to **Mobile Applications > Native/Hybrid**. Click the **New** button, and in the dialog, add the following information:
 
 | Field Name | Value |
 |----|----|
@@ -79,7 +79,7 @@ Take a note of the **Incomplete Configuration** message next to the **Connectivi
 
 [ACCORDION-BEGIN [Step 5: ](Add Sample Back End Feature)]
 
-When the application is saved, you will be able to define more application configuration details. For this tutorial series, you will use a sample OData service included in SAP Cloud Platform mobile service for development and operations.
+When the application is saved, you will be able to define more application configuration details. For this tutorial series, you will use a sample OData service included in SAP Mobile Services for development and operations.
 
 Click on the **Plus** button next to **Assigned Features** to the right. A dialog now opens:
 

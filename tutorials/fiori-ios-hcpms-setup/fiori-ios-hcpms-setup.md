@@ -16,7 +16,7 @@ author_profile: https://github.com/jitendrakansal
 ### You will learn  
 - How to access SAP Mobile Services in your Cloud Foundry account
 
-Once SAP Mobile Services is available, you can use its features in your Mobile development kit, Mobile Cards, SAP SDK for iOS & Android apps.
+Once SAP Mobile Services is available, you can use its features in your Mobile development kit, Mobile Cards, SAP BTP SDK for iOS & Android apps.
 
 ---
 

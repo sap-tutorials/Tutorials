@@ -1,16 +1,16 @@
 ---
 title: Create a List Report Floorplan
-description: Use the SAP Cloud Platform SDK for iOS to build a simple List Report Floorplan containing an FUISearchBar
+description: Use the SAP BTP SDK for iOS to build a simple List Report Floorplan containing an FUISearchBar
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 60
 ---
 
 ## Prerequisites
-- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup)
+- **Tutorials:** [Get a Free Trial Account on SAP BTP](hcp-create-trial-account) and [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup)
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0
+- **SAP BTP SDK for iOS:** Version 5.0
 
 ## Details
 ### You will learn  
@@ -41,7 +41,7 @@ In this example, you build upon the Tutorial app created using the **Sample ODat
 </EntityType>
 ```
 
-The app you've generated with the SAP Cloud Platform SDK for iOS Assistant (iOS Assistant) has currently its UI. You're going to make that app your own now.
+The app you've generated with the SAP BTP SDK Assistant for iOS (Assistant) has currently its UI. You're going to make that app your own now.
 
 Open the `Main.storyboard`, select all displayed View Controllers and delete them.
 
@@ -109,7 +109,7 @@ import SAPCommon
 
 ```
 
-Next let the `SupplierTableViewController.swift` class conforms to the `SAPFioriLoadingIndicator` protocol provided by the iOS Assistant generated code. You can locate the protocol in the `Utils` group.
+Next let the `SupplierTableViewController.swift` class conforms to the `SAPFioriLoadingIndicator` protocol provided by the Assistant generated code. You can locate the protocol in the `Utils` group.
 
 ```Swift
 class SupplierTableViewController: UITableViewController, SAPFioriLoadingIndicator { ... }
