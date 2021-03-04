@@ -39,9 +39,9 @@ Before you start, make sure that you've completed the prerequisites.
 
     > This process takes some minutes installing the `cds` command, which you will use in the next steps.
 
-    > On MacOS/Linux, you may need to follow the steps as described [here](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
+    > On MacOS/Linux, you need to follow the steps as described [here](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
 
-    > If there's an older `@sap/cds` package already installed on the machine, you may have to remove it first; if so, you'll be instructed to do so.
+    > If there's an older `@sap/cds` package already installed on your machine, you have to remove it first; if so, you'll be instructed to do so.
 
     > In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) in the CAP documentation for more details.
 
@@ -113,7 +113,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > As there's no content in the project so far, it just keeps waiting for content with a message as shown:
 
-    ```Shell/Bash
+    ```
     cds serve all --with-mocks --in-memory?
     ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
 
@@ -151,7 +151,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > As there's no content in the project so far, it just keeps waiting for content with a message as shown:
 
-    ```Shell/Bash
+    ```
     cds serve all --with-mocks --in-memory?
     ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
 
@@ -433,7 +433,7 @@ Instead of using in-memory, you can also use persistent databases.
     cds watch
     ```
 
-    ```
+    ```Shell/Bash
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: 'db/my-bookshop.db' }
     [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
