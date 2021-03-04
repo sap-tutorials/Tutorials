@@ -5,7 +5,7 @@ title: Deploy a CAP Business Application to SAP Business Technology Platform
 description: This tutorial shows you how to deploy your SAP Cloud Application Programming Model (CAP) application to SAP Business Technology Platform, Cloud Foundry environment.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [  tutorial>beginner, topic>node-js, software-product-function>sap-cloud-application-programming-model  ]
+tags: [  tutorial>beginner, topic>node-js, products>sap-business-technology-platform, software-product-function>sap-cloud-application-programming-model  ]
 time: 30
 ---
 
@@ -80,7 +80,7 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP BT
 ```Shell/Bash
 cf login
 ```
-> This will ask you to select CF API, org, and space.
+> This will ask you to select Cloud foundry API, org, and space.
 
 > The API Endpoint is taken by default. If you want to change the API Endpoint use `cf api <CF_API_ENDPOINT>` to change the API. Replace `<CF_API_ENDPOINT>` with the actual value you obtained in the previous step.
 
@@ -121,7 +121,7 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
 
 3. In the deploy log, find the application URL in the `routes` line at the end:
 
-    ```
+    ```Shell/Bash
     name:              my-bookshop-srv
     requested state:   started
     routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
@@ -161,7 +161,7 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
 
 3. In the deploy log, find the application URL in the `routes` line at the end:
 
-        ```
+        ```Shell/Bash
         name:              my-bookshop-srv
         requested state:   started
         isolation segment: trial

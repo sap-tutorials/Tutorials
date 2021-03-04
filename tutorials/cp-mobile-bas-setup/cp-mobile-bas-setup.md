@@ -3,8 +3,8 @@ title: Set Up SAP Business Application Studio for Multi-Channel Development
 description: Set up your SAP Business Application Studio to start developing mobile and web applications.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio, products>mobile-development-kit-client ]
-primary_tag: software-product-function>sap-cloud-platform-mobile-services
+tags: [ tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment, products>sap-mobile-cards, products>sap-mobile-services, products>sap-business-application-studio, products>mobile-development-kit-client ]
+primary_tag: products>sap-business-technology-platform
 author_name: Sandeep T D S
 author_profile: https://github.com/sandeep-tds
 ---
@@ -26,11 +26,9 @@ SAP Business Application Studio is the next-generation web-based IDE hosted on S
 
 1. Log into your Business Application Studio and click **Create Dev Space**.
 
-    !![BAS Dashboard](img_1_1.png)
-
     > The number of extensions may differ if you are on trial or a production account.
 
-2. Select SAP Mobile Application, enter a name (`Tutorial`) for your dev space and click **Create**.
+2. Select **SAP Mobile Application**, enter a name (`Tutorial`) for your dev space and click **Create Dev Space**.
 
     !![BAS New Space](img_1_2.png)
 
@@ -48,13 +46,13 @@ Your dev space will be created and the status will change to running.
 
     > Wait till your workspace loads completely.
 
-2. Since there is no workspace opened yet, click **Open Workspace**.
+2. Since there is no folder opened yet, click **Open Folder**.
 
-    !![BAS Dev View](img_2_2.png)
+    !![BAS Dev View](img-2.2.png)
 
 3. Select projects, Click **Open**.
 
-    !![Select Workpace](img_2_3.png)
+    !![Select Workpace](img-2.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -63,7 +61,7 @@ Your dev space will be created and the status will change to running.
 
 1. In the bottom left corner of your status bar, click the message **`The organization and space in Cloud Foundry have not been set.`**.
 
-    !![CF View](img_3_1.png)
+    !![CF View](img-3.1.png)
 
 2. Verify the URL and **Click Enter** on your keyboard.
 

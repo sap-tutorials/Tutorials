@@ -3,14 +3,14 @@ title: Create Workflow Instances for Process Visibility
 description: Create workflow instances to see how events from different types of workflow activities combine to provide an overview to analyze the progress and identify inefficiencies in the workflow.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud]
-primary_tag: products>sap-cloud-platform
-author_name: Deeksha R
-author_profile: https://github.com/Deeksha-R
+tags: [tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
+author_name: Kavya M Gowda
+author_profile: https://github.com/I540620
 ---
 ## Prerequisites
- - Set up the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
- - You have set up the business rules for determining equipment. To set the business rules up, see the [Set Up Business Rules for Determining Equipment](cp-starter-ibpm-employeeonboarding-2-businessrules) tutorial.
+ - You have set up the **Workflow Management** service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
+ - You have set up the business rules for determining equipment. To setup business rules, see steps 1 to 4 in [Configure Business Rules, Workflow and Process Visibility](cp-starter-ibpm-employeeonboarding-2-configure) tutorial.
 
 ## Details
 ### You will learn
@@ -58,7 +58,7 @@ Once you have modelled and activated the visibility scenario, navigate to the Mo
 
     !![approve](approve-equipment.png)
 
-    Before you **Confirm** the task, access the Event Acquisition application to familiarize yourself with the acquired events. For more information on Event Acquisition application, refer to [Monitor Events](cp-cf-processvisibility-model-manageevents).
+    Before you **Confirm** the task, access the Event Acquisition application to familiarize yourself with the acquired events. For more information on Event Acquisition application, refer to [Monitor Events Acquired Using the Event Acquisition Application](cp-cf-processvisibility-model-manageevents).
 
     You can move forward in the workflow by choosing the **Confirm** button in **My Inbox**.
 

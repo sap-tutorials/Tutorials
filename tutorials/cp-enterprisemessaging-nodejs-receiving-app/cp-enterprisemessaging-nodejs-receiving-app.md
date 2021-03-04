@@ -197,7 +197,7 @@ As a result, the application listens for messages and once it receives a message
 
 [ACCORDION-BEGIN [Step 5: ](Deploy receiving application)]
 
-1.	Go to <filepath directory to manifest.yml> and enter `pm install` to download missing node.js modules.
+1.	Go to <filepath directory to manifest.yml> and enter `npm install` to download missing node.js modules.
 2.	To deploy the sending application to your Cloud Foundry space enter `cf push`.
 
 Your application gets deployed to the cloud and is started up.

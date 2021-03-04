@@ -3,7 +3,7 @@ title: Handle Error Archive in an MDK App
 description: Create an MDK app to display errors occurred while uploading local changes and implement some logic on how to handle such errors and then let users to fix it from the app by providing correct values.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
 time: 30
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -21,9 +21,7 @@ author_profile: https://github.com/jitendrakansal
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/2-Handle-Error-Archive-in-an-MDK-App) and start directly with step 7 in this tutorial.
 
-
 ---
-
 
 You have built an MDK app with offline functionality. In offline store, you make a change to a local record and upload this change (from request queue) to backend but backend prevents this change to accept due to some business logic failure. This error is recorded in an Offline OData specific entity set named as `ErrorArchive`. This entity set has detailed information about the errors. It's now up-to developers how they handle such errors and then let users to fix it from the app by providing the correct values.
 
@@ -49,9 +47,11 @@ This step includes creating the mobile development kit project in the editor.
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. Navigate to *File* menu &rarr; click **New Project from Template**.
+2. Click **Start from template** on Welcome page.
 
-    !![MDK](img_1.2.png)
+    !![MDK](img-1.2.png)
+
+    >If you do not see Welcome page, you can access it via **Help** menu.
 
 3. Select **MDK Project** and click **Start**.
 
@@ -97,9 +97,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img_1.6.png)
 
-7. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_ErrorArchive` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
-
-    !![MDK](img_1.7.png)    
+7. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_ErrorArchive` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -509,7 +507,7 @@ Now, that the **Error List** page is created, you will add a button on the **Mai
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
-    !![MDK](img_7.1.png)
+    !![MDK](img-7.1.png)
 
 2. Select deploy target as **Mobile Services**.
 
@@ -528,7 +526,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
 
-!![MDK](img_7.1.png)
+!![MDK](img-8.1.png)
 
 !![MDK](img_8.2.png)
 
