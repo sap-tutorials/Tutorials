@@ -1,14 +1,16 @@
 ---
 title: Set Up SAP Web Analytics
-description: Subscribe to the trial version of SAP Web Analytics on the SAP Cloud Platform cockpit.
+description: Subscribe to the trial version of SAP Web Analytics on the SAP Business Technology Platform cockpit.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-web-analytics, products>sap-cloud-platform]
+tags: [ tutorial>beginner, products>sap-web-analytics, products>sap-business-technology-platform]
 primary_tag: products>sap-web-analytics
+author_name: Vikram Kulkarni
+author_profile: https://github.com/Vikramkulkarni01
 ---
 
 ## Prerequisites  
-[Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+[Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
 
 ## Details
 ### You will learn
@@ -17,7 +19,7 @@ primary_tag: products>sap-web-analytics
   - Create a customer admin who can set up SAP Web Analytics
 
 
-SAP Web Analytics is a software as a service (SaaS) offering on the SAP Cloud Platform.
+SAP Web Analytics is a software as a service (SaaS) offering on the SAP Business Technology Platform (BTP).
 
 The service lets you collect, report, and analyze the usage data of your website that helps you to identify meaningful patterns from various digital channels. These insights may lead you to implement improvements that can help you optimize the overall user experience of your websites.
 
@@ -30,11 +32,11 @@ You can create a space for different departments in your organization. Each spac
 For example, create a space named "E-commerce" to which you register your shopping website for usage tracking.
 
 
-[ACCORDION-BEGIN [Step 1: ](Open the SAP Cloud Platform Cockpit)]
+[ACCORDION-BEGIN [Step 1: ](Open the SAP BTP Cockpit)]
 
-In the [home page](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) of SAP Cloud Platform cockpit trial, select **Enter Your Trial Account**.
+In the [home page](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) of SAP BTP cockpit trial, select **Enter Your Trial Account**.
 
-    ![Cloud Foundry](Step_1.png)
+!![Cloud Foundry](Step_1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -77,11 +79,20 @@ Skip this step if you already have a trial subaccount.
 [ACCORDION-BEGIN [Step 4: ](Subscribe to SAP Web Analytics)]
 
 1. Open your subaccount.
-2. In the left pane, select **Subscriptions**.
+2. In the left pane, select **Service Marketplace**.
 3. Look out for **Web Analytics** in the list of services. Select the service to open it.
-4. Select **Subscribe**. You'll see that you are now subscribed.
+4. Select **Create** to subscribe to the service.
 
-    ![Subscribe](Step_4.png)
+    !![Create](Step4_1.png)
+
+5. Select the **Service** as **`Web Analytics`** and **Plan** as **`standard`** then choose **Create**.
+    !![Subscribe](Step5.png)
+
+6. Choose **View Subscription**. You'll see that you are now subscribed.
+    !![View Subscription](Step6.png)
+
+    !![Subscribed in Green](Step6.1_Subscribed.png)
+
 
 
 [DONE]
@@ -116,7 +127,7 @@ Skip this step if you already have a trial subaccount.
 
 1. Select your subaccount to navigate back to subaccount overview page.
 2. In the left pane, select **Security** and then **Trust Configuration**.
-3. Select **sap.default**. If you've configured your own ID service with SAP Cloud Platform, select your custom ID service.
+3. Select **Default identify provider**. If you've configured your own ID service with SAP BTP, select your custom ID service.
 4. Enter your e-mail address (or the attribute that you've configured in the custom ID service) so that you can onboard yourself as the customer admin and select **Show Assignments**.
 5. If your e-mail address is not part of the ID service, add the same.
 6. Select **Assign Role Collection**.

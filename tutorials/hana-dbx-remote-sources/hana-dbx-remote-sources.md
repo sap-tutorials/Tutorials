@@ -265,7 +265,7 @@ The following commands were used to start the Cloud Connector.
 
     ![subaccount](cloud-connector-subaccount.png)
 
-    The region and subaccount ID and be found in the SAP Cloud Platform cockpit.
+    The region and subaccount ID and be found in the SAP BTP cockpit.
 
     ![cloud Foundry sub account](cloud-foundry-sub-account.png)
 
