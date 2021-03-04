@@ -1,20 +1,22 @@
 ---
 title: Add a Reset Flow
-description: Add a reset flow which might be used by the user to onboard the app to a different SAP Cloud Platform Mobile Services server or to use a different set of credentials.  
+description: Add a reset flow which might be used by the user to onboard the app to a different SAP Mobile Services server or to use a different set of credentials.  
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform, operating-system>android, topic>mobile]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, operating-system>android, topic>mobile]
 primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
 ## Prerequisites
- - Completed the previous tutorial in this mission which added the restore flow
+
+- Completed the previous tutorial in this mission which added the restore flow
 
 ## Details
-### You will learn
-  - How to add a reset flow to an app
-  - The effect of the reset flow on the secure stores
 
+### You will learn
+
+- How to add a reset flow to an app
+- The effect of the reset flow on the secure stores
 
 The result of the reset flow will be that the data in the stores will be cleared and the onboarding flow will be called.
 
@@ -83,6 +85,7 @@ if (t.getMessage().equals("Eula Rejected") || flow.equals("Onboard")) {
     startResetFlow();
 }
 ```
+
 This will ensure that if the EULA is rejected, or if onboarding fails, then the onboarding flow will begin again.
 
 [VALIDATE_1]

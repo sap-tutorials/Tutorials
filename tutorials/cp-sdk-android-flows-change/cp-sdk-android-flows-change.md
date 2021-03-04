@@ -3,16 +3,19 @@ title: Add a Change Flow
 description: Add a change flow enabling a user to trigger the action to change the app's passcode.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform, operating-system>android, topic>mobile]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, operating-system>android, topic>mobile]
 primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
 ## Prerequisites
- - Completed the previous tutorial in this mission which added the reset flow
+
+- Completed the previous tutorial in this mission which added the reset flow
 
 ## Details
+
 ### You will learn
-  - How to add a change flow to an app
+
+- How to add a change flow to an app
 
 In the restore tutorial, it was shown how the application responded to a change made in the management cockpit to the client policy. In the below steps, the user will trigger the action to change their passcode using the change flow.
 
@@ -81,6 +84,5 @@ Congratulations!  The code to perform a change flow has been added enabling a us
 
 [VALIDATE_1]
 [ACCORDION-END]
-
 
 ---

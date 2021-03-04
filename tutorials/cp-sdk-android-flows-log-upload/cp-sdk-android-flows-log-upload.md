@@ -1,15 +1,17 @@
 ---
 title: Log Upload Using Values from the Flow
-description: The device log will be uploaded to SAP Cloud Platform Mobile Services reusing the OKHttpClient and SettingsParameters from the flow.
+description: The device log will be uploaded to SAP Mobile Services reusing the OKHttpClient and SettingsParameters from the flow.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform, operating-system>android, topic>mobile]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, operating-system>android, topic>mobile]
 primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
 ## Details
+
 ### You will learn
-  - How to make a log upload request reusing values provided by the flows framework
+
+- How to make a log upload request reusing values provided by the flows framework
 
 When the app is opened, the restore or onboard flow will have initialized an `OKHttpClient` to communicate with Mobile Services.  The `OKHttpClient` instance will be reused for the log upload method call.  Additional values such as the `serviceURL` are available which would be needed in an online or offline OData request.
 
@@ -84,6 +86,5 @@ Congratulations!  The code to obtain the `OkHttpClient` and `SettingsParameters`
 
 [DONE]
 [ACCORDION-END]
-
 
 ---

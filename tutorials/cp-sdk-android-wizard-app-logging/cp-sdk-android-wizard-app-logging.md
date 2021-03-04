@@ -3,20 +3,20 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: See How Logging Can Be Used in Your Android Application
 description: Explore how the logging component can help make deployed applications more supportable.
-primary_tag: products>sap-cloud-platform-sdk-for-android
+primary_tag: products>sap-business-technology-platform-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap-cloud-platform-sdk-for-android, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap-business-technology-platform-sdk-for-android, products>sap-business-technology-platform ]
 time: 15
 ---
 
 ## Prerequisites
-- You completed [Try Out the SAP Cloud Platform SDK for Android Wizard](cp-sdk-android-wizard-app).
+- You completed [Try Out the SAP BTP SDK for Android Wizard](cp-sdk-android-wizard-app).
 
 ## Details
 ### You will learn
 - How to use the Logging component to log messages
 - How to change the log level
-- How to upload and view logs in the SAP Cloud Platform Mobile Services cockpit
+- How to upload and view logs in the SAP Mobile Services cockpit
 
 ---
 

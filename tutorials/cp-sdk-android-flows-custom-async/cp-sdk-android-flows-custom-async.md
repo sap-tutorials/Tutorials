@@ -3,16 +3,19 @@ title: Create a Custom Asynchronous Step in a Flow
 description: Create a custom asynchronous step in a flow which will display an Android activity.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-cloud-platform, operating-system>android, topic>mobile]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, operating-system>android, topic>mobile]
 primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
 ## Prerequisites
- - Completed the previous tutorial in this mission
+
+- Completed the previous tutorial in this mission
 
 ## Details
+
 ### You will learn
-  - How to show a screen in a custom step
+
+- How to show a screen in a custom step
 
 The below steps will demonstrate how to create a [Custom Step Implementation](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/flows/Overview.html#custom-step-implementation) using the **`AsyncResultStep`** interface instead of the Step interface.  One example use for this is to show a screen.
 
@@ -27,9 +30,11 @@ Replace the code in **`CustomActivity`** with the below code.
 ```Java
 package com.sap.flows;
 
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class CustomActivity extends AppCompatActivity {
 

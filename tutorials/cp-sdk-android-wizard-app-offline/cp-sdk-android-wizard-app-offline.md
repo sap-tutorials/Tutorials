@@ -3,9 +3,9 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: Offline-Enable Your Android Application
 description: Enable offline OData in your Android application, resulting in an application that can be used without a network connection and that performs data requests with less latency.
-primary_tag: products>sap-cloud-platform-sdk-for-android
+primary_tag: products>sap-business-technology-platform-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-cloud-platform-sdk-for-android, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-business-technology-platform-sdk-for-android, products>sap-business-technology-platform ]
 time: 30
 ---
 
@@ -18,7 +18,7 @@ time: 30
 
 [ACCORDION-BEGIN [Step 1: ](Generate and run an offline app)]
 
-1.  Follow the instructions at [Try Out the SAP Cloud Platform SDK for Android Wizard](cp-sdk-android-wizard-app) to create a new application using the SAP Cloud Platform SDK for Android Wizard and select **Offline** for the OData option on the **Project Features** tab. The push feature is not needed for this application.
+1.  Follow the instructions at [Try Out the SAP BTP SDK for Android Wizard](cp-sdk-android-wizard-app) to create a new application using the SAP BTP SDK for Android Wizard and select **Offline** for the OData option on the **Project Features** tab. The push feature is not needed for this application.
 
     !![Choose Offline OData](choosing_offline_odata.png)
 
@@ -840,9 +840,9 @@ In this section we will create an **Error Information** screen that displays the
 
 [OPTION END]
 
->Further information on using the offline feature can be found at [Step by Step with the SAP Cloud Platform SDK for Android — Part 6 — Offline OData](https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-6-offline-odata/).
+>Further information on using the offline feature can be found at [Step by Step with the SAP BTP SDK for Android — Part 6 — Offline OData](https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-6-offline-odata/).
 
-Congratulations! You have created an offline-enabled app using the SAP Cloud Platform SDK for Android Wizard and examined how the `ErrorArchive` can be used to view synchronization errors!
+Congratulations! You have created an offline-enabled app using the SAP BTP SDK for Android Wizard and examined how the `ErrorArchive` can be used to view synchronization errors!
 
 [DONE]
 [ACCORDION-END]

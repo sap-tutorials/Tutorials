@@ -1,10 +1,10 @@
 ---
 title: Explore the Secure Stores Created by the Onboarding Flow
-description: Explore the secure stores created by the onboarding flow and examine the persisted data such as the SAP Cloud Platform Mobile Services host, credentials and client policy.
+description: Explore the secure stores created by the onboarding flow and examine the persisted data such as the SAP Mobile Services host, credentials and client policy.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform, operating-system>android, topic>mobile ]
-primary_tag: products>sap-cloud-platform-sdk-for-android
+tags: [ tutorial>beginner, products>sap-business-technology-platform, operating-system>android, topic>mobile ]
+primary_tag: products>sap-business-technology-platform-sdk-for-android
 ---
 
 ## Prerequisites
