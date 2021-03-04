@@ -3,10 +3,10 @@ title: Set Up a Sample Lead-to-Cash Business Process
 description: Set up a pre-configured lead-to-cash business process to experience the Process Visibility service.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, products>sap-cloud-platform]
-primary_tag: topic>cloud
-author_name: Deeksha R
-author_profile: https://github.com/Deeksha-R
+tags: [tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
+author_name: Kavya M Gowda
+author_profile: https://github.com/I540620
 ---
 
 ## Prerequisites
@@ -17,11 +17,11 @@ Set up the Workflow Management service. For more information, see the [Set Up Wo
 - How to import a sample lead-to-cash business scenario
 - How to import the events for sample lead-to-cash business process
 - How to gain visibility on the lead-to-cash business process
-- How to quickly get started with the process visibility capability using a sample lead-to-cash business process
+- How to quickly get started with the process visibility service capability using a sample lead-to-cash business process
 
 Lead-to-cash is a business process that provides sales insights, eliminates process inefficiencies, and ensures accurate reporting on business performance and future trends.
 
-In this tutorial, you can learn how to gain visibility on a sample lead-to-cash business process using Process Visibility capability. You are provided with JSON files with events and zip files that contain the business scenario using which you can easily try out the capabilities of the service.
+In this tutorial, you can learn how to gain visibility on a sample lead-to-cash business process using SAP Process Visibility service. You are provided with JSON files with events and zip files that contain the business scenario using which you can easily try out the capabilities of the service.
 
 [ACCORDION-BEGIN [Step 1: ](Download files from GitHub)]
 1. Use the following link to access [GitHub](https://github.com/SAP-samples/cloud-process-visibility/releases).
@@ -54,7 +54,7 @@ In this step, you will import the `LeadToCashEvents.json` to the Event Acquisiti
 
     !![Import event](screen4-import.png)
 
-3. In the **Import From Tile** dialog, browse for the `LeadToCashEvents.json` that is in your local file system.
+3. In the **Import From File** dialog, browse for the `LeadToCashEvents.json` that is in your local file system.
 
     !![Import event](LeadToCashEvent-browse.png)
 
@@ -86,11 +86,11 @@ In this step, you will import the `LeadtoCash.zip` file to the Configure Visibil
 
     !![config scenario](config_flp.png)
 
-2. Choose the **Import Business Scenario** icon.
+2. Choose the **Import Scenario** icon.
 
     !![import scenario](screen8-importbusinessscaenrio.png)
 
-3. In the **Import Business Scenario** dialog, browse for the `LeadtoCash.zip` file from your local system. Then choose **Import**.
+3. In the **Import Scenario** dialog, browse for the `LeadtoCash.zip` file from your local system. Then choose **Import**.
 
     !![browse](LeadToCash-import.png)
 
@@ -142,11 +142,11 @@ In this step, you will be able to track the progress of the sample scenario usin
 
     !![L2C](pw_scenario.png)
 
-    You can view the overview page for the **Lead to Cash** business scenario as shown below. You can view information such as open orders, cycle time, open orders by product category and so on.
+    You can view the overview page for the **Lead to Cash** business scenario as shown below. You can view information such as open orders, cycle time, open orders by product category, and so on.
 
     !![L2C overview](Overview.png)
 
-    >You can customize the cards displayed on the overview page by modifying the business scenario in the **Configure Business Scenario** application. For more information, see [SAP Help](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
+    >You can customize the cards displayed on the overview page by modifying the business scenario in the **Configure Visibility Scenarios** application. For more information, see [SAP Help](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
 
 
 [VALIDATE_1]

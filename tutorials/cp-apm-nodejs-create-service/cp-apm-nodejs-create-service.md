@@ -95,9 +95,9 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > This creates a folder `my-bookshop` in the current directory.
 
-2. Open Visual Studio Code, go to **File** > **Open Folder** and choose the **`my-bookshop`** folder.
+2. Open Visual Studio Code, go to **File** **&rarr;** **Open Folder** and choose the **`my-bookshop`** folder.
 
-3. Go to **Terminal** > **New Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
+3. Go to **Terminal** **&rarr;** **New Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
 
     ```Shell/Bash
     npm install
@@ -113,7 +113,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > As there's no content in the project so far, it just keeps waiting for content with a message as shown:
 
-    ```
+    ```Shell/Bash
     cds serve all --with-mocks --in-memory?
     ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
 
@@ -134,9 +134,9 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > This creates a folder `my-bookshop` in the current directory.
 
-2. Open Visual Studio Code, go to **File** > **Open** and choose the **`my-bookshop`** folder.
+2. Open Visual Studio Code, go to **File** **&rarr;** **Open** and choose the **`my-bookshop`** folder.
 
-3. Go to **View** > **Command Palette** > **Terminal: Create New Integrated Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
+3. Go to **View** **&rarr;** **Command Palette** **&rarr;** **Terminal: Create New Integrated Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
 
     ```Shell/Bash
     npm install
@@ -151,7 +151,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > As there's no content in the project so far, it just keeps waiting for content with a message as shown:
 
-    ```
+    ```Shell/Bash
     cds serve all --with-mocks --in-memory?
     ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
 
@@ -212,7 +212,7 @@ After initializing the project, you should see the following empty folders:
 
 3. As soon as you've saved your file, the still running `cds watch` reacts immediately with some new output as shown below:
 
-    ```
+    ```Shell/Bash
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
     /> successfully deployed to sqlite in-memory db
@@ -359,7 +359,7 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
 
     > After you added these files, `cds watch`restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
 
-    ```
+    ```Shell/Bash
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
     > filling my.bookshop.Authors from db/csv/my.bookshop-Authors.csv
