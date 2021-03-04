@@ -113,7 +113,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > As there's no content in the project so far, it just keeps waiting for content with a message as shown:
 
-    ```
+    ```Shell/Bash
     cds serve all --with-mocks --in-memory?
     ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
 
@@ -151,7 +151,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > As there's no content in the project so far, it just keeps waiting for content with a message as shown:
 
-    ```
+    ```Shell/Bash
     cds serve all --with-mocks --in-memory?
     ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
 
