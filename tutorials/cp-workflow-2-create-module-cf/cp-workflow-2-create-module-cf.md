@@ -2,14 +2,14 @@
 title: Create a Basic Workflow in SAP Business Application Studio
 description: Set up a dev space and create a workflow module that contains a workflow.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+primary_tag: products>sap-business-technology-platform
+tags: [  tutorial>beginner, topic>cloud, products>sap-business-technology-platform ]
 time: 5
 ---
 
 ## Prerequisites
- - [Get a Trial Account](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
- - "Step 1: Setup your account using Booster" of the [Set Up Workflow Management in Cloud Cockpit](https://developers.sap.com/tutorials/cp-starter-ibpm-employeeonboarding-1-setup.html) tutorial creates the entitlements for the Portal and Workflow services and enables SAP Business Application Studio.
+ - [Get a Trial Account](hcp-create-trial-account)
+ - "Step 1: Setup your account using Booster" of the [Set Up Workflow Management in the Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial creates the entitlements for the SAP Cloud Portal service as well as the SAP Workflow service and it enables SAP Business Application Studio.
 
 ## Details
 ### You will learn  
@@ -19,7 +19,7 @@ time: 5
 [ACCORDION-BEGIN [Step 1: ](Set up SAP Business Application Studio)]
 You create your workspace where you will later build the workflow.
 
-1. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
+1. In your web browser, open the [SAP BTP Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
 
 2. Choose **SAP Business Application Studio**.
 
@@ -27,9 +27,7 @@ You create your workspace where you will later build the workflow.
 
     ![Create Dev Space](create-dev-space2.png)
 
-4. Enter a name, for example, `mydevspace`, and make sure to select **SAP Fiori**, the **Workflow Management**, and the **Launchpad Module** extension. Then choose **Create Dev Space** again.
-
-    > The **Launchpad Module** extension makes the Launchpad Editor available in your dev space and is only needed if you want to execute the start form tutorial.
+4. Enter a name, for example, `mydevspace`, and make sure to select **SAP Fiori** kind and the **Workflow Management** extension. Then choose **Create Dev Space** again.
 
     ![Select Options](mydevspace.png)
 

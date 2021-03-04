@@ -4,8 +4,8 @@ description: Download and install the CLI, which allows access via the command l
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
-tags: [tutorial>beginner, topic>cloud,  products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
+tags: [tutorial>beginner, topic>cloud, products>sap-business-technology-platform ]
+primary_tag: products>sap-btp--cloud-foundry-environment
 time: 15
 ---
 
