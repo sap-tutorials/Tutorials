@@ -3,7 +3,7 @@ title: Get OAuth Access Token for Document Information Extraction via Web Browse
 description: Retrieve your OAuth access token, which will grant you access to the service APIs.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-business-technology-platform, products>document-information-extraction, topic>artificial-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-ai-business-services, products>sap-business-technology-platform, products>document-information-extraction, topic>artificial-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -35,7 +35,7 @@ To get your OAuth access token you will need the values listed below from the se
 
 !![DOX TOKEN](web-browser.png)
 
-You should receive a response like the following: 
+You should receive a response like the following:
 
 ```JSON
 {
