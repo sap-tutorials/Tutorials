@@ -1,17 +1,17 @@
 ---
 title: Create an Application for Producing Messages
-description: Develop and deploy a basic Node.js-based messaging application for sending messages to an SAP Cloud Platform Enterprise Message Queue.
+description: Develop and deploy a basic Node.js-based messaging application for sending messages to an SAP Enterprise Message Queue.
 time: 20
 auto_validation: true
-tags: [ tutorial>beginner, topic>node-js, topic>java, products>sap-cloud-platform-for-the-cloud-foundry-environment, tutorial>license]
-primary_tag: products>sap-cloud-platform-enterprise-messaging
+tags: [ tutorial>beginner, topic>node-js, topic>java, products>sap-business-technology-platform, tutorial>license]
+primary_tag: products>sap-enterprise-messaging
 ---
 
 
 ## Details
 ### You will learn
   - How to create a basic messaging client application for sending messages to a queue
-  - How to deploy this application to the SAP Cloud Platform and test it
+  - How to deploy this application to the SAP Business Technology Platform and test it
 
 [ACCORDION-BEGIN [Step 1: ](Install Node.js)]
 
@@ -23,7 +23,7 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 
 3. Create a directory that holds the files for your application - name it for example Producer. Into this directory we will create three files:
 
-    - The `manifest.yml` is the deployment descriptor and contains all required information to deploy an application to a SAP Cloud Platform Cloud Foundry instance.
+    - The `manifest.yml` is the deployment descriptor and contains all required information to deploy an application to a SAP Business Technology Platform Cloud Foundry instance.
 
     - The `package.json` specifies the version of a package that your app depends on.
 
