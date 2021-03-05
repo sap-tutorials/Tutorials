@@ -3,7 +3,7 @@ title: Set Up Postman to Call Data Attribute Recommendation APIs
 description: Import Postman environment and collection JSON sample code files to call the Data Attribute Recommendation APIs.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
@@ -19,7 +19,7 @@ In the following tutorials Postman is used to communicate and interact with your
 
 [ACCORDION-BEGIN [Step 1: ](Add service key credentials to Postman environment)]
 
-Postman offers the option to add environments. Environments represent key-value pairs which can be reused in requests, so you don't have to remember them. For more information, see [Postman Environments](https://learning.getpostman.com/docs/postman/environments-and-globals/intro-to-environments-and-globals/).
+Postman offers the option to add environments. Environments represent key-value pairs which can be reused in requests, so you don't have to remember them. For more information, see [Postman Environments](https://learning.getpostman.com/docs/postman/environments-and-globals/intro-to-environments-and-globals/). 
 
 If you have downloaded the Postman environment and collection sample files from the **Set up account for Data Attribute Recommendation** booster, as detailed in [Set Up Account for Data Attribute Recommendation and Download Postman Sample Files](cp-aibus-dar-booster-postman), you can set this step to **Done** and proceed with Step 2.
 
