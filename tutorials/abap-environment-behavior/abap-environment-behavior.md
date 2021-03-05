@@ -2,16 +2,15 @@
 auto_validation: true
 title: Create Behavior Definition for Managed Scenario
 description: Create behavior definition and implementation for managed scenario.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- You have created an SAP Cloud Platform ABAP environment trial user or
-- You have created a developer user in an SAP Cloud Platform ABAP Environment system.
+- You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - You have downloaded Eclipse Photon or Oxygen and installed ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
 
 ## Details
