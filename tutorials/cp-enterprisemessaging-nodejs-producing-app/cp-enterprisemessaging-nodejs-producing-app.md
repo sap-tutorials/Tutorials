@@ -42,35 +42,34 @@ You need to add domain, messaging service and your queue name in the indicated s
 
 ```YAML
 applications:
-      - name: producer
-        host: producer-host
-        domain: <REPLACE WITH YOUR DOMAIN>
-        buildpack: https://github.com/cloudfoundry/nodejs-buildpack
-        memory: 256M
-        health-check-type: none
-        path: .
-        command: node producer.js
-        services:
-        - <REPLACE WITH YOUR MESSAGING SERVICE>
-
+  - name: producer
+    host: producer-host
+    domain: <REPLACE WITH YOUR DOMAIN>
+    buildpack: 'https://github.com/cloudfoundry/nodejs-buildpack'
+    memory: 256M
+    health-check-type: none
+    path: .
+    command: node producer.js
+    services:
+      - <REPLACE WITH YOUR MESSAGING SERVICE>
 env:
-      SAP_JWT_TRUST_ACL: "[{\"clientid\":\"*\",\"identityzone\":\"*\"}]"
-      SAP_XBEM_BINDINGS: >
-        {
-          "inputs": {},
-          "outputs": {
-            "myOutA" : {
-              "service": "<REPLACE WITH YOUR MESSAGING SERVICE>,
-              "address": "topic:<REPLACE WITH YOUR TOPIC>",
-              "reliable": false
-            },
-            "myOutB" : {
-              "service": "<REPLACE WITH YOUR MESSAGING SERVICE>,
-              "address": "topic:<REPLACE WITH YOUR TOPIC>",
-              "reliable": false
-            }
-          }
+  SAP_JWT_TRUST_ACL: '[{"clientid":"*","identityzone":"*"}]'
+  SAP_XBEM_BINDINGS: |
+    {
+      "inputs": {},
+      "outputs": {
+        "myOutA" : {
+          "service": "<REPLACE WITH YOUR MESSAGING SERVICE>",
+          "address": topic:"<REPLACE WITH YOUR TOPIC>",
+          "reliable": false
+        },
+        "myOutB" : {
+          "service": "<REPLACE WITH YOUR MESSAGING SERVICE>",
+          "address": topic:"<REPLACE WITH YOUR TOPIC>",
+          "reliable": false
         }
+      }
+    }
 ```
 
 [DONE]
