@@ -177,7 +177,7 @@ Configure your Java application to use the `sqlite.db` database file.
 
 1. Go to `srv/src/main/resources`, locate, and open the `application.yaml` file. This file was created when you initialized the application.
 
-2. For the field `url`, replace the string `"jdbc:sqlite::memory:"` with a reference to your local database file `"jdbc:sqlite:/home/user/projects/products-service/sqlite.db"`
+2. For the field `url`, replace the string `"jdbc:sqlite::memory:?cache=shared"` with a reference to your local database file `"jdbc:sqlite:/home/user/projects/products-service/sqlite.db"`
 
 3. Set the value of `initialization-mode` from `always` to `never`, because you've already initialized the database when running `cds deploy --to sqlite`.
 

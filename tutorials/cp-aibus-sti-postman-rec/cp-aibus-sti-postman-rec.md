@@ -3,7 +3,7 @@ title: Use Service Ticket Intelligence and Postman to Get Solution Recommendatio
 description: Train a machine learning model based on historical service requests in order to get solution recommendations for new requests.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -38,7 +38,7 @@ The service now automatically creates a new model and sets its status to `NEW`. 
 
 [ACCORDION-BEGIN [Step 2: ](Train model)]
 
-Next, you can start training the model based on the data that was uploaded in the previous step.
+Next, you can start training the model based on the data that was uploaded in the previous step. 
 
 Therefore, select the request `Start model training` and click **Send**. This will trigger the model training process.
 

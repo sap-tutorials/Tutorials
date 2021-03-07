@@ -3,7 +3,7 @@ title: Create Service Instance for Document Classification with Customer Account
 description: Create a service instance and the associated service key for Document Classification, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP).
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
 primary_tag: topic>machine-learning
 ---
 
@@ -31,7 +31,7 @@ First, access the [SAP BTP cockpit](https://account.hana.ondemand.com/cockpit#/h
 
 ![Access Global Account](access-global-account.png)
 
-Next, access your subaccount that will be used throughout the tutorial. Therefore, click **Subaccounts** on the navigation side bar and then select the tile that represents the subaccount that shall be used throughout these tutorials.
+Next, access your subaccount that will be used throughout the tutorial. Therefore, click **Subaccounts** on the navigation side bar and then select the tile that represents the subaccount that shall be used throughout these tutorials. 
 
 ![Access Subaccount](access-subaccount.png)
 
