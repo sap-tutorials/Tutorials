@@ -3,7 +3,7 @@ title: Set Up Account for Data Attribute Recommendation and Get Service Key
 description: Use a booster in SAP BTP Trial to automatically create a service instance, and the associated service key for Data Attribute Recommendation.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
@@ -70,13 +70,9 @@ Now, you will use the **Set up account for Data Attribute Recommendation** boost
 
 You have successfully used the booster **Set up account for Data Attribute Recommendation** to create a service key for Data Attribute Recommendation.
 
-1. Click **Go to Service Key**.
+1. Click **Download Service Key** to save the service key locally on your computer.
 
     !![Service Key](booster-success-key.png)
-
-2. Click **Save JSON to file** to make a local copy of the service key.
-
-    !![Service Key](booster-service-key.png)
 
     >If you face any issue with the booster **Set up account for Data Attribute Recommendation**, you can alternatively follow the steps in [Create Service Instance for Data Attribute Recommendation](cp-aibus-dar-service-instance) to create the service key for Data Attribute Recommendation manually.
 
@@ -104,7 +100,7 @@ Do the following to access your service instance and service key, without having
 
     !![Service Key](subaccounts.png)
 
-4. Click **Service Instances** on the navigation side bar. You see the service instance you created with the **Set up account for Document Information Extraction** booster.
+4. Click **Instances and Subscriptions** on the navigation side bar. You see the service instance you created with the **Set up account for Data Attribute Recommendation** booster.
 
     !![Service Key](service-instance.png)
 

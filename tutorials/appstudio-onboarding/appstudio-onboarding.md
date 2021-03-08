@@ -41,32 +41,40 @@ This tutorial is based on the procedure described in the [Getting Started](https
 
     >If you receive an error message and your recently created account was created with error, it is recommended that you re-create your account: delete the account and then [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).
 
-    >If you receive an error message and your account was not created recently, answer the validation question of the current step, go to the next step in this tutorial, and proceed from there.
+    >**CAUTION:** If you receive an error message and your account was not created recently, you need to add a subscription to SAP Business Application Studio. Answer the validation question of the current step, go to the next step in this tutorial, and proceed from there.
 
 2. You might be asked to accept the legal terms. Check the box and click **OK**.
 
     !![legalterms](AppStudio-Terms-.png)
 
-3. A new tab opens and the welcome page for SAP Business Application Studio loads.
+3. A new tab opens. If you have not created a dev space, the welcome page for SAP Business Application Studio loads.
 
-    !![sap business application studio welcome](BAS_Welcome-.png)
+    !![sap business application studio welcome](BAS-Welcome--.png)
+
+    >If this is not the first dev space, the dev space manager for SAP Business Application Studio loads.
+
+    >!![Create Dev Space](BAS-Dev-Space-Manager-Empty-.png)
 
 4. Click **My Dev Spaces** to open the SAP Business Application Studio dev space manager page.
-    <br>
+
+    !![sap business application studio welcome](BAS-Welcome-.png)
+
+    >Dev space manager for SAP Business Application Studio
+    >!![sap business application studio dev space manager](BAS-Dev-Space-Manager-Empty-.png)
+
     >**Bookmark this page!**
 
     >If you create a bookmark to this page, it is easy to get back to SAP Business Application Studio later.
 
-    !![sap business application studio dev space manager](BAS-Dev-Space-Manager-Empty-.png)
-
-    >If you reached this point in the tutorial, you have successfully on-boarded SAP Business Application Studio. Answer the validation question of the current tutorial step, and mark the rest of the steps as "Completed".
+    <br>
+    >**PAY ATTENTION:** If you reached this point in the tutorial, you have successfully on-boarded SAP Business Application Studio. Answer the validation question of the current tutorial step, and mark the rest of the steps as "Completed".
 
 [VALIDATE_4]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step: 3](Add SAP Business Application Studio subscription to subaccount)]
 
-In this step, you will add the SAP Business Application Studio subscription to a subaccount. Depending on when you created the SAP BTP Trial account, this subscription might already be added in the subaccount.
+Depending on when you created the SAP BTP Trial account, this subscription might already be added in the subaccount. If you are not subscribed to SAP Business Application Studio, follow this step to add the SAP Business Application Studio subscription to a subaccount.
 
 1. Click **Enter Your Trial Account** to access the Cloud Foundry environment.
 
@@ -143,15 +151,18 @@ In this step, you will add the SAP Business Application Studio subscription to a
 
 6. A new tab opens and the welcome page for SAP Business Application Studio loads.
 
-    !![sap business application studio welcome](BAS_Welcome-.png)
+    !![sap business application studio welcome](BAS-Welcome--.png)
 
 7. Click **My Dev Spaces** to open the SAP Business Application Studio dev space manager page.
-    <br>
+
+    !![sap business application studio welcome](BAS-Welcome-.png)
+
+    >Dev space manager for SAP Business Application Studio
+    >!![sap business application studio dev space manager](BAS-Dev-Space-Manager-Empty-.png)
+
     >**Bookmark this page!**
 
     >If you create a bookmark to this page, it is easy to get back to SAP Business Application Studio later.
-
-    !![sap business application studio dev space manager](BAS-Dev-Space-Manager-Empty-.png)
 
 [DONE]
 [ACCORDION-END]
