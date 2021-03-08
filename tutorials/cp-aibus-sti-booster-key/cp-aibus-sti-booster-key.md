@@ -3,7 +3,7 @@ title: Set Up Account for Service Ticket Intelligence and Get Service Key
 description: Get access to the service using a booster in SAP Business Technology Platform (SAP BTP) Trial that automatically creates a service instance, and the associated service key for Service Ticket Intelligence.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -60,7 +60,7 @@ Now, you will use the **Set up account for Service Ticket Intelligence** booster
 
     >If you have more than one subaccount, the booster will choose automatically the correct subaccount and space, but this will require that you click **Next** twice and **Finish** once, before being able to see the **Success** dialog box.
 
-    !![Service Key](booster-success.jpg)
+    !![Service Key](booster-success.png)
 
 [DONE]
 [ACCORDION-END]
@@ -72,11 +72,11 @@ You have successfully used the booster **Set up account for Service Ticket Intel
 
 1. Click **Download Service Key**.
 
-    !![Service Key](booster-success-key.jpg)
+    !![Service Key](booster-success-key.png)
 
 2. Make a local copy of the service key.
 
-    !![Service Key](booster-service-key.jpg)
+    !![Service Key](booster-service-key.png)
 
 >If you face any issue with the booster **Set up account for Service Ticket Intelligence**, you can alternatively follow the steps in [Create Service Instance for Service Ticket Intelligence](cp-aibus-sti-service-instance) to create a service key for Service Ticket Intelligence manually.
 
@@ -94,7 +94,7 @@ Do the following to access your service instance and service key, without having
 
 1. Close the booster **Success** dialog box.
 
-    !![Service Key](leave-success.jpg)
+    !![Service Key](leave-success.png)
 
 2. Access your trial account.
 
@@ -104,7 +104,7 @@ Do the following to access your service instance and service key, without having
 
     !![Service Key](subaccount.png)
 
-4. Click **Service Instances** on the navigation side bar. You see the service instance you created with the **Set up account for Service Ticket Intelligence** booster.
+4. Click **Instances and Subscriptions** on the navigation side bar. You see the service instance you created with the **Set up account for Service Ticket Intelligence** booster.
 
     !![Service Key](service-instance.png)
 
