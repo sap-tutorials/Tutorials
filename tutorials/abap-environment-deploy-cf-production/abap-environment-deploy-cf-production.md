@@ -174,7 +174,7 @@ author_profile: https://github.com/mervey45
 
     ![object](studio20.png)
 
-  6. Configure project attributes:
+  6. Configure project attributes:  
      - Name: **`ztravel_app_xxx`**
      - Title: **Travel App XXX**
      - Description: **A Fiori application.**
