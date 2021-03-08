@@ -58,7 +58,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
   * The memory, compute and storage settings can be changed as your needs change.  
 
-  * The ability is provided to expand data storage from in-memory, to native storage extensions, to a data lake, while providing a common access layer that enables you to have further control over performance and cost.  See also [Lower Your Data Management Costs With SAP HANA Cloud](https://saphanacloudservices.com/hana-cloud/resources/lower-your-data-management-costs-with-sap-hana-cloud/).
+  * The ability is provided to expand data storage from in-memory, to native storage extensions, to a data lake, while providing a common access layer that enables you to have further control over performance and cost.  See also [Lower Your Data Management Costs With SAP HANA Cloud](https://saphanajourney.com/hana-cloud/resources/lower-your-data-management-costs-with-sap-hana-cloud/).
 
 
   Here are a few differences between SAP HANA Cloud and an on-premise version:  

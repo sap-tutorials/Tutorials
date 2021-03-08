@@ -3,7 +3,7 @@ title: Use Machine Learning to Get G/L Account Recommendations
 description: Get G/L account predictions for invoices without a purchase order reference attached with Invoice Object Recommendation.
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>invoice-object-recommendation]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>invoice-object-recommendation]
 primary_tag: topic>machine-learning
 ---
 
@@ -21,7 +21,7 @@ Invoice Object Recommendation is available on Trial. Find Trial limitations [her
 
 [ACCORDION-BEGIN [Step 1: ](Authorize Swagger UI)]
 
-You will use Swagger UI, via any web browser, to call the Invoice Object Recommendation APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).  
+You will use Swagger UI, via any web browser, to call the Invoice Object Recommendation APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).   
 
 In the service key you created for Invoice Object Recommendation in the previous tutorial: [Create Service Instance for Invoice Object Recommendation](cp-aibus-ior-service-instance), you should find (outside the `uaa` section of the service key) an entry called `url` (as highlighted in the image below).
 

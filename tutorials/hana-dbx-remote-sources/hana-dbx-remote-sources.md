@@ -1,9 +1,9 @@
 ---
 title: Access Remote Sources with SAP HANA Database Explorer
-description: Use SAP HANA federation capabilities to query data from other SAP HANA and SAP HANA Cloud, data lake databases using SAP HANA smart data access (SDA).
+description: Use SAP HANA federation capabilities to query data from other SAP HANA and SAP HANA Cloud, data lake databases using SAP HANA smart data access (SDA) and the Cloud Connector.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-connectivity-service]
 primary_tag: products>sap-hana-cloud
 ---
 
@@ -233,10 +233,11 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Connect from SAP HANA Cloud to SAP HANA, express edition via the Cloud Connector)]
+[ACCORDION-BEGIN [Step 3: ](Connect from SAP HANA Cloud to SAP HANA, express edition via the Cloud Connector (optional))]
 
+The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html#loioe6c7616abb5710148cfcf3e75d96d596__context) enables communication from the SAP BTP running in the public internet to securely connect to a configured on-premise system such as SAP HANA, express edition.
 
-1. Enable the Cloud Connector connectivity in SAP HANA Cloud.  This feature is not available in the HANA Cloud trial.
+1. Enable the Cloud Connector connectivity in SAP HANA Cloud Central.
 
     ![Enable the Cloud Connector](enable-cloud-connector.png)
 
@@ -250,7 +251,8 @@ The following commands were used to start the Cloud Connector.
     ```Shell (Microsoft Windows)
     set PATH=C:\Windows\System32;c:\jdk1.8\bin
     set JAVA_HOME=c:\jdk1.8
-    C:\SAP\scc20>go.bat
+    cd C:\SAP\scc20
+    go.bat
     ```
 
     ![Started](cloud-connector-windows.png)
@@ -265,13 +267,13 @@ The following commands were used to start the Cloud Connector.
 
     ![subaccount](cloud-connector-subaccount.png)
 
-    The region and subaccount ID and be found in the SAP BTP cockpit.
+    >Note, if you are an SAP employee you may need to enter your password + a  time-based passcode as the password.
+
+    The region and subaccount ID can be found in the SAP BTP cockpit.
 
     ![cloud Foundry sub account](cloud-foundry-sub-account.png)
 
-    >Note, if you are an SAP employee you may need to enter your password + a  time-based passcode as the password.
-
-    Successfully connected.
+    The screen below shows a successful connection.
 
     ![Connected](cloud-connector-subaccount-connected.png)
 
@@ -295,7 +297,7 @@ The following commands were used to start the Cloud Connector.
 
     ![Add remote source](add-remote-source.png)
 
-    Specify the server, port, extra adapter properties, and credentials (User1, Password1).
+    Specify the server, port, extra adapter properties, credentials (User1, Password1) and if a Location ID was specified in step 5, add `scc_location_id=<locationid>'` to the Extra Adapter Properties.
 
     ![Add remote source properties](AddRemoteSource-On-premise.png)
 
@@ -319,7 +321,7 @@ The following commands were used to start the Cloud Connector.
 
 10. Set the **Schema** to be **`HOTEL`** and press the **Search** button.
 
-    ![remote sources](remote-source2.png)
+    ![remote sources](remote-source3.png)
 
     Notice that it is possible to create virtual tables to access the data from the on-premise system in SAP HANA Cloud.
 
