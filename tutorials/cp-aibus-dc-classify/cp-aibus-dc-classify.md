@@ -3,7 +3,7 @@ title: Classify Documents with Document Classification
 description: Find out how to classify the documents you uploaded to Document Classification using your machine learning model.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
 primary_tag: topic>machine-learning
 ---
 
@@ -18,7 +18,7 @@ Based on your deployed machine learning model you can now classify documents. Fo
 
 [ACCORDION-BEGIN [Step 1: ](Classify documents)]
 
-As your machine learning model is now deployed it can be used to classify documents.
+As your machine learning model is now deployed it can be used to classify documents. 
 
 Click the cell below the heading `Classification`. The below code reproduces the stratification process mentioned in the previous tutorial. The code picks out the documents that are used for testing and were not used for training the model. It will then send these documents to the service for classification. Click **Run** to start the classification.
 

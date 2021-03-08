@@ -3,7 +3,7 @@ title: Use Data Attribute Recommendation to Classify Records, Delete Model and D
 description: Classify data records you uploaded to Data Attribute Recommendation using your machine learning model.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation ]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation ]
 primary_tag: topic>machine-learning
 ---
 
@@ -23,7 +23,7 @@ Business Use Case: After you upload data and train a machine learning model usin
 
 To classify records, you need to send an inference request to your model.
 
-**Open** Postman and make sure that your `Data Attribute Recommendation environment` is selected.
+**Open** Postman and make sure that your `Data Attribute Recommendation environment` is selected. 
 
 Expand the subfolder `Classify Records` and select the request `Send inference request`. Click on the `Body` tab to see the sample data that you will send to the service.
 
