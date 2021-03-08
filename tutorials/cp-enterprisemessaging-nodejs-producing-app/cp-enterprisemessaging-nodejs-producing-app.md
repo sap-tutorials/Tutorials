@@ -52,24 +52,25 @@ applications:
     command: node producer.js
     services:
       - <REPLACE WITH YOUR MESSAGING SERVICE>
-env:
-  SAP_JWT_TRUST_ACL: '[{"clientid":"*","identityzone":"*"}]'
-  SAP_XBEM_BINDINGS: |
-    {
-      "inputs": {},
-      "outputs": {
-        "myOutA" : {
-          "service": "<REPLACE WITH YOUR MESSAGING SERVICE>",
-          "address": topic:"<REPLACE WITH YOUR TOPIC>",
-          "reliable": false
-        },
-        "myOutB" : {
-          "service": "<REPLACE WITH YOUR MESSAGING SERVICE>",
-          "address": topic:"<REPLACE WITH YOUR TOPIC>",
-          "reliable": false
+    env:
+      SAP_JWT_TRUST_ACL: '[{"clientid":"*","identityzone":"*"}]'
+      SAP_XBEM_BINDINGS: |
+        {
+          "inputs": {},
+          "outputs": {
+            "myOutA" : {
+              "service": "<REPLACE WITH YOUR MESSAGING SERVICE>",
+              "address": "topic:<REPLACE WITH YOUR TOPIC>",
+              "reliable": false
+            },
+            "myOutB" : {
+              "service": "<REPLACE WITH YOUR MESSAGING SERVICE>",
+              "address": "topic:<REPLACE WITH YOUR TOPIC>",
+              "reliable": false
+            }
+          }
         }
-      }
-    }
+
 ```
 
 [DONE]
