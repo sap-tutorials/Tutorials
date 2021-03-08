@@ -49,7 +49,7 @@ This step includes creating the mobile development kit project in the editor.
 
 2. Click **Start from template** on Welcome page.
 
-    !![MDK](img_1.2.png)
+    !![MDK](img-1.2.png)
 
     >If you do not see Welcome page, you can access it via **Help** menu.
 
@@ -97,9 +97,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img_1.6.png)
 
-7. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_ErrorArchive` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
-
-    !![MDK](img_1.7.png)    
+7. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_ErrorArchive` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -509,7 +507,7 @@ Now, that the **Error List** page is created, you will add a button on the **Mai
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
-    !![MDK](img_7.1.png)
+    !![MDK](img-7.1.png)
 
 2. Select deploy target as **Mobile Services**.
 
@@ -528,7 +526,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
 
-!![MDK](img_7.1.png)
+!![MDK](img-8.1.png)
 
 !![MDK](img_8.2.png)
 

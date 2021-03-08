@@ -2,16 +2,15 @@
 auto_validation: true
 title: Create Table Persistence and Generate Data
 description: Create table persistence and generate data for it.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform  ]
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- You have created an SAP Cloud Platform ABAP environment trial user or
-- You have created a developer user in an SAP Cloud Platform ABAP Environment system.
+- You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - You have downloaded Eclipse Photon or Oxygen and installed ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
 
 ## Details
@@ -25,7 +24,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create ABAP package)]
-  1. Open **ABAP Development Tools (ADT)** and select your **ABAP Cloud Project** you created in [Create an SAP Cloud Platform ABAP Environment Trial User](abap-environment-trial-onboarding).
+  1. Open **ABAP Development Tools (ADT)** and select your **ABAP Cloud Project** you created in [Create an SAP BTP ABAP Environment Trial User](abap-environment-trial-onboarding).
 
      Right-click on `ZLOCAL` and select **New > ABAP Package**.
 
