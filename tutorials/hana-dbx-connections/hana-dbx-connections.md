@@ -27,7 +27,7 @@ SQL consoles are associated with a database connection.
 
 [ACCORDION-BEGIN [Step 1: ](Add an SAP HANA cockpit database connection)]
 
-Databases defined in the SAP Cloud Platform cockpit or the SAP HANA cockpit can be opened in the SAP HANA database explorer.
+Databases defined in the SAP BTP cockpit or the SAP HANA cockpit can be opened in the SAP HANA database explorer.
 
 1.  From SAP HANA Cloud Central, choose **Open SAP HANA Database Explorer**.  
 
@@ -208,7 +208,7 @@ An SAP HANA Deployment Infrastructure (HDI) container can be created by using th
 
 1.  Open the SAP HANA Web IDE for HANA Development if using SAP HANA Cloud or SAP HANA Web IDE for SAP HANA if using SAP HANA, express edition or an on-premise install.
 
-    Open SAP HANA Web IDE (in SAP Cloud Platform).  
+    Open SAP HANA Web IDE (in SAP BTP).  
 
     ![open web ide](open-web-ide.png)
 
@@ -234,11 +234,11 @@ An SAP HANA Deployment Infrastructure (HDI) container can be created by using th
 
     ![Cloud Foundry space](api-endpoint.png)
 
-    The API Endpoint can be found on the subaccount page of the SAP Cloud Platform Cockpit.
+    The API Endpoint can be found on the subaccount page of the SAP BTP Cockpit.
 
     ![API Endpoint](api-endpoint2.png)
 
-    The space can be found on the subaccount page of the SAP Cloud Platform Cockpit.
+    The space can be found on the subaccount page of the SAP BTP Cockpit.
 
     !![subaccount](org-and-space.png)
 

@@ -24,8 +24,6 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 ---
 
-
-
 ![MDK](img_7.7.png)
 
 [ACCORDION-BEGIN [Step 1: ](Define push notification settings in app configuration)]
@@ -53,7 +51,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 2. Click **Start from template** on Welcome page.
 
-    !![MDK](img_2.2.png)
+    !![MDK](img-2.2.png)
 
     >If you do not see Welcome page, you can access it via **Help** menu.
 
@@ -75,10 +73,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
     >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.   
 
-5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Push` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
-
-    !![MDK](img_2.5.png)
-
+5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Push` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -193,7 +188,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
-    !![MDK](img_5.1.png)
+    !![MDK](img-5.1.png)
 
 2. Select deploy target as **Mobile Services**.
 
@@ -216,7 +211,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
 
-!![MDK](img_6.1.png)
+!![MDK](img-6.1.png)
 
 !![MDK](img_6.2.png)
 

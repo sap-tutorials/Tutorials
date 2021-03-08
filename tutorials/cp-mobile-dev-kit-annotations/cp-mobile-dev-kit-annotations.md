@@ -81,7 +81,7 @@ This step includes creating the mobile development kit project in the editor.
 
 2. Click **Start from template** on Welcome page.
 
-    !![MDK](img_3.2.png)
+    !![MDK](img-3.2.png)
 
     >If you do not see Welcome page, you can access it via **Help** menu.
 
@@ -121,9 +121,7 @@ This step includes creating the mobile development kit project in the editor.
 
     Since you will create an online based app, hence _Enable Offline Store_ option is unchecked.
 
-6. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Annotations` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
-
-    !![MDK](img_3.6.png)
+6. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Annotations` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -132,7 +130,7 @@ This step includes creating the mobile development kit project in the editor.
 
 1. Right-click `Application.app` and select **MDK:New MDK Annotation Component**.
 
-    !![MDK](img_4.1.png)
+    !![MDK](img-4.1.png)
 
 2. MDK editor fetches annotation details, select **Product** Annotation and click **Next**.
 
@@ -146,7 +144,7 @@ This step includes creating the mobile development kit project in the editor.
 
     In MDK project, you will see new pages, actions, rules have been generated for **Product**.
 
-    !![MDK](img_4.4.1.png)
+    !![MDK](img-4.4.1.png)
 
 5. Next, you will add a Toolbar item on `Main.page` to navigate to `Product_List.page`.
 
@@ -182,7 +180,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
-    !![MDK](img_5.1.png)
+    !![MDK](img-5.1.png)
 
 2. Select deploy target as **Mobile Services**.
 
@@ -201,7 +199,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
 
-!![MDK](img_6.1.png)
+!![MDK](img-6.1.png)
 
 !![MDK](img_6.2.png)
 

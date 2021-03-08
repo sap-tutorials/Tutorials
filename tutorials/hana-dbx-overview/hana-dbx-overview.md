@@ -28,9 +28,9 @@ The SAP HANA database explorer  is a web-based tool for browsing and working wit
 
 The SAP HANA database explorer can be opened from multiple locations as shown below:
 
-* From the SAP Cloud Platform Cockpit  
+* From the SAP Business Technology Platform (SAP BTP) Cockpit  
 
-    ![opening the SAP HANA database explorer from the on-premise SAP HANA Cockpit](open-dbx-from-hana-cloud.png)
+    ![opening the SAP HANA database explorer from the SAP BTP Cockpit](open-dbx-from-hana-cloud.png)
 
 * From SAP HANA Cloud Central  
 
@@ -109,7 +109,7 @@ Continue on to the next tutorial in this group once you have created an SAP HANA
 
 >Note that the SAP HANA Cloud trial instances are shut down overnight and will need to be restarted before working with them the next day.
 
-The instructions on how to setup a free SAP HANA Cloud trial within the SAP Business Technology Platform are well covered in a number of other sources listed below.  
+The instructions on how to setup a free SAP HANA Cloud trial within SAP BTP are well covered in a number of other sources listed below.  
 
   * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
 
@@ -117,7 +117,7 @@ The instructions on how to setup a free SAP HANA Cloud trial within the SAP Busi
 
   * [SAP HANA Cloud Trial](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/latest/en-US/96b0fa04bf2b4fd6a8b210eb9fb18332.html)
 
-  For more information on the SAP Business Technology Platform see the following:
+  For more information on the SAP BTP see the following:
 
   * <https://www.sap.com/products/business-technology-platform/products.html>
 

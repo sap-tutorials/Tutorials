@@ -3,7 +3,7 @@ title: Create Service Instance for Service Ticket Intelligence
 description: Create a service instance and the associated service key for Service Ticket Intelligence, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -34,7 +34,7 @@ primary_tag: topic>machine-learning
 
     >!![Account setup](02_Foundation20Onboarding_Processing.png)
 
-3. From your global account page, choose the `trial` tile to access your subaccount.
+3. From your global account page, choose the `trial` tile to access your subaccount. 
 
     !![Subaccounts](enter-trial-account.png)
 
