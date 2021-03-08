@@ -3,7 +3,7 @@ title: Manage Your Chatbot with Versions and Environments
 description: Create versions and environments for your SAP Conversational AI chatbot to make it easier to manage the development process.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>machine-learning, software-product-function>sap-adaptive-server-enterprise]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>machine-learning, software-product-function>sap-adaptive-server-enterprise, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
