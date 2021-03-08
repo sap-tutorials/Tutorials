@@ -3,9 +3,9 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: See How Logging Can Be Used in Your Android Application
 description: Explore how the logging component can help make deployed applications more supportable.
-primary_tag: products>sap-business-technology-platform-sdk-for-android
+primary_tag: products>sap-cloud-platform-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap-business-technology-platform-sdk-for-android, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap-cloud-platform-sdk-for-android, products>sap-business-technology-platform ]
 time: 15
 ---
 

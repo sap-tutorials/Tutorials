@@ -4,7 +4,7 @@ description: Add a restore flow that executes when the app is reopened.  The res
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-business-technology-platform, operating-system>android, topic>mobile]
-primary_tag: products>sap-business-technology-platform-sdk-for-android
+primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
 ## Prerequisites

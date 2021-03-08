@@ -3,9 +3,9 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: Offline-Enable Your Android Application
 description: Enable offline OData in your Android application, resulting in an application that can be used without a network connection and that performs data requests with less latency.
-primary_tag: products>sap-business-technology-platform-sdk-for-android
+primary_tag: products>sap-cloud-platform-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-business-technology-platform-sdk-for-android, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-cloud-platform-sdk-for-android, products>sap-business-technology-platform ]
 time: 30
 ---
 

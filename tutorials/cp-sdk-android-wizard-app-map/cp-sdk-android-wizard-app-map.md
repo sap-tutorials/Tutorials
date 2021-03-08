@@ -5,8 +5,8 @@ title: Display Customer Locations Using a Fiori Map Control
 description: Further customize the generated app to display customer locations on a map and try out the features of the Fiori Map control, including the toolbar, map panel, clustering, and map annotation.
 auto_validation: true
 time: 90
-tags: [ tutorial>beginner, operating-system>android, topic>mobile, topic>wizard, products>sap-business-technology-platform-sdk-for-android, products>sap-business-technology-platform ]
-primary_tag: products>sap-business-technology-platform-sdk-for-android
+tags: [ tutorial>beginner, operating-system>android, topic>mobile, topic>wizard, products>sap-cloud-platform-sdk-for-android, products>sap-business-technology-platform ]
+primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
 ## Prerequisites

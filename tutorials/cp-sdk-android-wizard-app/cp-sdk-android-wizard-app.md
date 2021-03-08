@@ -4,8 +4,8 @@ author_profile: https://github.com/flyingfish162
 title: Try Out the SAP BTP SDK for Android Wizard
 description: Use the Android Studio-integrated SAP BTP SDK for Android Wizard to create a mobile app and configure it to make use of SAP Mobile Services features.
 auto_validation: true
-primary_tag: products>sap-business-technology-platform-sdk-for-android
-tags: [ tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-business-technology-platform-sdk-for-android, products>sap-business-technology-platform ]
+primary_tag: products>sap-cloud-platform-sdk-for-android
+tags: [ tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-cloud-platform-sdk-for-android, products>sap-business-technology-platform ]
 time: 30
 ---
 

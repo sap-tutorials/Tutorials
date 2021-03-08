@@ -3,9 +3,9 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: Send Notifications to Your Android Application
 description: Add foreground and background notifications to your application using Google Firebase.
-primary_tag: products>sap-business-technology-platform-sdk-for-android
+primary_tag: products>sap-cloud-platform-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap-business-technology-platform-sdk-for-android, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap-cloud-platform-sdk-for-android, products>sap-business-technology-platform ]
 time: 20
 ---
 

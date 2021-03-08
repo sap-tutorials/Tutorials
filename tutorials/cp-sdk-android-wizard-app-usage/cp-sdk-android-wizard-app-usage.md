@@ -5,7 +5,7 @@ title: Use Usage Reporting in Your Android Application
 description: See how the Usage Reporting feature can help provide information on how your app is being used.
 auto_validation: true
 time: 30
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-business-technology-platform-sdk-for-android, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-cloud-platform-sdk-for-android, products>sap-business-technology-platform ]
 primary_tag: products>sap-cloud-platform-sdk-for-android
 
 ---
