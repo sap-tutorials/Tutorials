@@ -4,8 +4,8 @@ description: Discover the SAP BTP, Cloud Foundry environment, so you're ready to
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
-primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+primary_tag: products>sap-business-technology-platform
+tags: [ tutorial>beginner, topic>cloud, products>sap-btp--cloud-foundry-environment ]
 time: 15
 ---
 

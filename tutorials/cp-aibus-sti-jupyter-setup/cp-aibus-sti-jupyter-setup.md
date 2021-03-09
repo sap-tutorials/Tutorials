@@ -3,7 +3,7 @@ title: Set Up Jupyter Notebook for Service Ticket Intelligence
 description: Set up a local JupyterLab instance as well as the Jupyter Notebook for Service Ticket Intelligence.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -24,7 +24,7 @@ To install Anaconda, head over to the [Anaconda installation guide](https://docs
 
 [OPTION BEGIN [Windows]]
 
-To verify the installation, search for `Anaconda Prompt` in your programs and open it. In the command prompt, enter `conda --version` and the version is printed as in the image below.
+To verify the installation, search for `Anaconda Prompt` in your programs and open it. In the command prompt, enter `conda --version` and the version is printed as in the image below. 
 
 [OPTION END]
 
