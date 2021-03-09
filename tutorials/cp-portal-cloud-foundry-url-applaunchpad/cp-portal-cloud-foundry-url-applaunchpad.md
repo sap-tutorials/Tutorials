@@ -66,7 +66,7 @@ Click the Content Manager icon in the left panel to open the **Content Manager**
 
     * **Information**:  `Learn about SAP.iO`
 
-    * **Icon**: Click the browse icon, type `Visits`, select the displayed icon, and click **OK**.
+    * **Icon**: Click the browse icon, type `visits`, select the displayed icon, and click **OK**.
 
       You see a preview of the tile with all the properties you entered.
 

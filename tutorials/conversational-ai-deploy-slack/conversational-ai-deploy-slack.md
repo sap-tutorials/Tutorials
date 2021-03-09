@@ -3,7 +3,7 @@ title: Deploy an SAP Conversational AI Chatbot on Slack
 description: Deploy an SAP Conversational AI chatbot on Slack and add it to a Slack channel to respond to user messages.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-conversational-ai]
+tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
