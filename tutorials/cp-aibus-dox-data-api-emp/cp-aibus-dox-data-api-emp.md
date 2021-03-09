@@ -181,11 +181,11 @@ You should receive a response like the following:
 
 !![DOX](1create_data_activation_response.png)
 
-If you have already used this endpoint recently, you should receive a response like the following:
+>If you have already used this endpoint recently, you should receive a response like the following:
 
-!![DOX](1create_data_activation_error.png)
+>!![DOX](1create_data_activation_error.png)
 
-Wait until next data activation is possible to perform this step once again before moving to step 6.
+>Wait until next data activation is possible to perform this step once again before moving to step 6.
 
 [DONE]
 [ACCORDION-END]
