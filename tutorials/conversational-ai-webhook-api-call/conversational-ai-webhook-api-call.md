@@ -3,7 +3,7 @@ title: Consume API Services and Call Webhooks from Your Chatbot
 description: Call APIs or webhooks from within your chatbot to retrieve information or create UI elements for your conversation.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
