@@ -62,9 +62,9 @@ First, you need to connect your ABAP on-premise system to a Cloud Foundry subacc
 
     |  Field Name     | Value
     |  :------------- | :-------------
-    |  Region           | Your region. You can find this in SAP Cloud Cockpit (see screenshot below) - e.g. here, **Europe (Frankfurt) - AWS**
-    |  Subaccount           | Cloud Foundry Subaccount ID. You can find this by choosing your subaccount in SAP Cloud Cockpit and choosing the **information (i)** icon. (see screenshot below)
-    |  Display Name    | (Subaccount) Display Name. You can find this in by choosing your subaccount in SAP Cloud Cockpit (see screenshot below)
+    |  Region           | Your region. You can find this in SAP BTP cockpit (see screenshot below) - e.g. here, **Europe (Frankfurt) - AWS**
+    |  Subaccount           | Cloud Foundry Subaccount ID. You can find this by choosing your subaccount in SAP BTP cockpit and choosing the **information (i)** icon. (see screenshot below)
+    |  Display Name    | (Subaccount) Display Name. You can find this in by choosing your subaccount in SAP BTP cockpit (see screenshot below)
     |  Subaccount User          |
     |  Password   |
     |  Location ID | Optional here. However, it is mandatory if you want to connect several Cloud Connectors to your subaccount. This can be any text, e.g. `XXX` for your initials or group number as here
@@ -98,7 +98,7 @@ Your configuration should now look like this. Note down the **Location ID**, her
     |                         | Without Load Balancing
     |  Application Server     | **IP address of the on-premise server, e.g. of `NPL`**
     | Instance Number         | **`00`**
-    |  Virtual Host           | e.g. **`nplhost`**. This represents an external hostname, so that you can hide the internal hostname from the outside world. **You will need this external hostname and port later, when creating a destination from SAP Cloud Cockpit**.
+    |  Virtual Host           | e.g. **`nplhost`**. This represents an external hostname, so that you can hide the internal hostname from the outside world. **You will need this external hostname and port later, when creating a destination from SAP BTP cockpit**.
     |  Virt. Inst. No.        | **`00`**
     | Principal Type | None
     |Description | Optional
@@ -136,8 +136,8 @@ Now, still in the **Cloud to On-Premise > Access Control** tab, enter the resour
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Check connectivity from SAP Cloud Cockpit)]
-In the SAP BTP Cockpit of your Cloud Foundry subaccount, choose **Cloud Connectors**:
+[ACCORDION-BEGIN [Step 4: ](Check connectivity from SAP BTP cockpit)]
+In the SAP BTP cockpit of your Cloud Foundry subaccount, choose **Cloud Connectors**:
 
 !![step4a-cf-cloud-connectors-in-sap-cloud-cockpit](step4a-cf-cloud-connectors-in-sap-cloud-cockpit.png)
 
@@ -150,7 +150,7 @@ In the SAP BTP Cockpit of your Cloud Foundry subaccount, choose **Cloud Connecto
 [ACCORDION-BEGIN [Step 5: ](Create destination)]
 You will now create a destination in the ABAP Environment. This must be created at subaccount (not Space) level.
 
-1. In the SAP BTP Cockpit of your Cloud Foundry subaccount, choose **Destinations**, then choose **New Destinations**.
+1. In the SAP BTP cockpit of your Cloud Foundry subaccount, choose **Destinations**, then choose **New Destinations**.
 
     !![step4a-cf-cockpit-new-destination](step4a-cf-cockpit-new-destination.png)
 
@@ -207,7 +207,7 @@ You will now create a destination in the ABAP Environment. This must be created 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Create variables)]
-Create the data types that specify your remote connection information, replacing the `i_name` with your the name of the specific **RFC** destination, which you created in SAP Cloud Cockpit (in step 5 of this tutorial).
+Create the data types that specify your remote connection information, replacing the `i_name` with your the name of the specific **RFC** destination, which you created in SAP BTP cockpit (in step 5 of this tutorial).
 
     ```ABAP
     DATA(lo_destination) = cl_rfc_destination_provider=>CREATE_BY_CLOUD_DESTINATION(
