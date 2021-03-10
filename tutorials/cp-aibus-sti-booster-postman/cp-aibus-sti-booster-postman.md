@@ -8,7 +8,7 @@ primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
-- You have created a trial account on SAP BTP: [Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
+- You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
 - You have a subaccount and dev space with **Europe (Frankfurt)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## Details
@@ -46,7 +46,7 @@ SAP BTP creates interactive guided boosters to automate cockpit steps, so users 
 
 Now, you will use the **Set up account for Service Ticket Intelligence** booster to automatically assign entitlements, update your subaccount and create a service instance for Service Ticket Intelligence.
 
-1. On the navigation side bar, click **Boosters**. 
+1. On the navigation side bar, click **Boosters**.
 
     !![Postman](access-booster.png)
 
