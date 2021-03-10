@@ -1,16 +1,16 @@
 ---
 title: Test the Business Rules API from SAP API Business Hub
-description: Use SAP API Business Hub to test and run the business rules API to see how business rules can be consumed from a custom application.
+description: Use SAP API Business Hub to test and run the business rules service API to see how business rules service can be consumed from a custom application.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud, topic>cloud,products>sap-cloud-platform,products>sap-cloud-platform-for-the-cloud-foundry-environment, topic>sap-api-business-hub]
-primary_tag: products>sap-cloud-platform-business-rules
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+primary_tag: products>sap-business-rules-service
 author_name: Vandana Vasudevan
 author_profile: https://github.com/VandanaVasudevan
 ---
 
 ## Prerequisites
- - You have created the business rules project and deployed the rule service. For more information, see [Create Your First Business Rules Project](https://developers.sap.com/group.cp-rules-first-project.html).
+ - You have created the business rules project and deployed the rule service. For more information, see [Create Your First Business Rules Project](group.cp-rules-first-project).
 
 ## Details
 ### You will learn
@@ -19,7 +19,7 @@ author_profile: https://github.com/VandanaVasudevan
 
 Generally, after a rule service is deployed to a custom application, the rule service should be invoked to implement the decision logic. In this tutorial, we will simulate the rule service invocation by invoking the rule service from SAP API Business Hub.
 
-SAP Cloud Platform Business Rules REST APIs are available on SAP API Business Hub which lets you execute rules from custom applications and external REST Clients. Since these APIs are based on OAuth 2.0 authorization, you need the client credentials to access them. You get the client credentials from the service key of the business rules service instance.
+Business Rules REST APIs are available on SAP API Business Hub which lets you execute rules from custom applications and external REST Clients. Since these APIs are based on OAuth 2.0 authorization, you need the client credentials to access them. You get the client credentials from the service key of the business rules service instance.
 
 [ACCORDION-BEGIN [Step 1: ](Log on to SAP API Business Hub)]
 
@@ -27,7 +27,7 @@ SAP Cloud Platform Business Rules REST APIs are available on SAP API Business Hu
 
     ![API Hub Homepage](testing1.png)
 
-2. In the search bar, search for **Business rule**. From the search results, select the API package for SAP Cloud Platform Business Rules.
+2. In the search bar, search for **Business rules**. From the search results, select the API package for SAP Business Rules Service.
 
     ![Search bar](testing2.png)
 
@@ -42,7 +42,7 @@ SAP Cloud Platform Business Rules REST APIs are available on SAP API Business Hu
 
 Service key parameters are required to configure the environment in SAP API Business Hub.
 
-1. Log on to [SAP Cloud Platform Cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. Log on to [SAP BTP Cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Choose **Enter your trial account**.
 
@@ -58,23 +58,23 @@ Service key parameters are required to configure the environment in SAP API Busi
 
     ![dev space](service_param3.png)
 
-4. From the navigation menu, choose **Service Instances**.
+4. From the navigation menu, choose **Instances**.
 
     ![service instances](service_param4.png)
 
-5. From the list of available service instances, choose **`wm_business-rules`**.
+5. In the **`wm_business-rules`** service instance, choose the actions button, and then choose **Create Service Key**.
 
     ![business rules service instance](service_param5.png)
 
-6. From the navigation menu, choose **Service Keys** and then choose **Create Service Key**.
+6. In the **New Service Key** window,  provide the name of the service key as **business-rules** or any name of your choice, and then choose **Create**.
 
     ![service key creation](service_param6.png)
 
-7. In the **Create Service Key** window, provide the name of the service key as **business-rules** or any name of your choice, and then choose **Save**.
+    > Service key of **`wm_business-rules`** service instance will be created.
+
+7. Choose the service key.
 
     ![Service key name](service_param7.png)
-
-    > Service key of **`wm_business-rules`** service instance will be created.
 
 8. From the service key, note the following parameters required for configuring the environment:
 

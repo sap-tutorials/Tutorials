@@ -5,8 +5,8 @@ title: Set Up Continuous Integration and Delivery for SAP Cloud SDK
 description: Use the General Purpose Pipeline of project "Piper" to implement CI/CD for an SAP Cloud SDK project.
 auto_validation: true
 time: 30
-tags: [tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [tutorial>intermediate, products>sap-cloud-sdk]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites
@@ -26,7 +26,7 @@ The General Purpose Pipeline of project "Piper" uses Docker images for each indi
 
 [ACCORDION-BEGIN [Step 1: ](Generate a new project using the SAP Cloud SDK for Java)]
 
-First, generate a new project using the SAP Cloud SDK for Java which can later be deployed to SAP Cloud Platform via tools provided by project "Piper". If you already completed the tutorial [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-cloud-foundry-sample-application.html) before, you can also reuse the project during this tutorial.
+First, generate a new project using the SAP Cloud SDK for Java which can later be deployed to SAP Cloud Platform via tools provided by project "Piper". If you already completed the tutorial [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](s4sdk-cloud-foundry-sample-application) before, you can also reuse the project during this tutorial.
 
 Otherwise, the command to generate a new SAP Cloud SDK project is:
 

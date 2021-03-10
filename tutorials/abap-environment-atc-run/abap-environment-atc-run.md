@@ -1,16 +1,18 @@
 ---
-title: Connect ABAP On-Premise to an ATC Central Check System
-description: Connect an ABAP On-Premise System to a SAP Cloud Platform, ABAP Environment containing ABAP Test Cockpit (ATC) Central Check System, and test this by running an ATC Cloud-Readiness Check
+title: Connect ABAP On-Premise to a Central Check System for Custom Code Migration
+description: Connect an ABAP On-Premise System to a SAP Business Technology Platform (BTP), ABAP Environment containing the Custom Code Migration (CCM) App.
 auto_validation: true
 time: 90
-tags: [ tutorial>intermediate, products>sap-cloud-platform--abap-environment, products>sap-cloud-platform, tutorial>license, topic>abap-connectivity]
+tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
 primary_tag: topic>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account (due to connectivity requirements)
-- **Tutorial**: [Call a Remote Function Module From SAP Cloud Platform, ABAP Environment](abap-env-rfc), prerequisites plus steps 1-2, then steps 4-5. (You can test connectivity by performing steps 6-12)
-- In SAP Cloud Platform, ABAP environment, you have been assigned the role **`SAP_CORE_BC_CCM`**. This role allows you to connect your SAP Cloud and on-premise instances using communication objects For more information, see Tutorial [Create Communication System to Connect to SAP Cloud Platform ABAP Environment](tutorials/abap-environment-s4hanacloud), step 2
+- **Tutorial**: [Call a Remote Function Module From SAP Business Technology Platform, ABAP Environment](abap-env-rfc), prerequisites plus steps 1-2, then steps 4-5. (You can test connectivity by performing steps 6-12)
+- In SAP Cloud Platform, ABAP environment, you have been assigned the role **`SAP_CORE_BC_CCM`**. This role allows you to connect your SAP Cloud and on-premise instances using communication objects For more information, see Tutorial [Create Communication System to Connect to SAP BTP, ABAP Environment](abap-environment-s4hanacloud), step 2
 -	In your on-premise system, you have installed the following:
     - SAP Cloud Connector with Administrator rights. (In the systems listed in the above tutorial, this is pre-installed)
     - Java 8. Uninstall other versions of Java, e.g. Java 11
@@ -18,8 +20,7 @@ primary_tag: topic>abap-development
 
 ## Details
 ### You will learn
-  - How to connect your on-premise AS ABAP to a service in SAP Business Technology Platform, ABAP Environment - specifically, ABAP Test Cockpit (ATC)
-  - How to run an ATC check from SAP Cloud Platform, ABAP Environment on your on-premise ABAP system. This allows you to see whether your custom ABAP development objects are cloud-ready, or ready for SAP S/4HANA, and what exact changes you have to make
+  - How to connect your on-premise AS ABAP to a service in SAP BTP, ABAP Environment - specifically, the Custom Code Migration App. This app allows you to see whether your custom ABAP development objects are cloud-ready, or ready for SAP S/4HANA, and what exact changes you have to make
 
 After you set up the connections, your landscape will look roughly like this:
 
@@ -29,8 +30,8 @@ Throughout this tutorial, replace the suffix `_XXX` or `_JP` with your initials 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Connector for ATC)]
-In your browser, log on to SAP Cloud Connector. If your on-premise system is SAP AS ABAP Developer Edition, 7.5x, open the browser inside your virtual machine, e.g. `VMWare`
+[ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Connector)]
+In your browser, log on to SAP Cloud Connector for your on-premise system. If your on-premise system is SAP AS ABAP Developer Edition, 7.5x, open the browser inside your virtual machine, e.g. `VMWare`
 
   - Address = e.g. `https://localhost:<port>` (Default = 8443)
   - User = Administrator
@@ -51,8 +52,8 @@ Note the Location ID (3) - here, **`XXX`**. You will need it later.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Add resources for ATC)]
-Now you will add the resources you need for ATC. Resources are, for example, RFCs or BAPIs that the ATC check needs to call.
+[ACCORDION-BEGIN [Step 2: ](Add resources for Custom Code Migration (CCM) App)]
+Now you will add the resources you need for the CCM app. Resources are, for example, RFCs or BAPIs that the app check needs to call.
 
 1. Download the attachment in SAP Note [2861842](https://launchpad.support.sap.com/#/notes/2861842), `CustomCodeMigration(1).zip`. If using to the Linux system where your ABAP server is located.
 
@@ -87,8 +88,8 @@ Also, see SAP Note [2270689 Remote Analysis for source system](https://launchpad
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Check connectivity in SAP Cloud Cockpit)]
-1. In the SAP Cloud Platform Cockpit of your Cloud Foundry subaccount, choose **Cloud Connectors**.
+[ACCORDION-BEGIN [Step 4: ](Check connectivity in SAP BTP cockpit)]
+1. In the SAP BTP Cockpit of your Cloud Foundry subaccount, choose **Cloud Connectors**.
 
     !![step4a-cf-cloud-connectors-in-sap-cloud-cockpit](step4a-cf-cloud-connectors-in-sap-cloud-cockpit.png)
 
@@ -113,7 +114,7 @@ Also, see SAP Note [2270689 Remote Analysis for source system](https://launchpad
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create communication system for Custom Code Migration)]
-1. Open the dashboard for your SAP Cloud Platform, ABAP Environment instance. To find the URL for this, from the subaccount overview, choose the relevant space, e.g. **`Dev`**, then choose **Service Instances > ABAP System > Your System > View Dashboard**. Log on.
+1. Open the dashboard for your SAP BTP, ABAP Environment instance. To find the URL for this, from the subaccount overview, choose the relevant space, e.g. **`Dev`**, then choose **Service Instances > ABAP System > Your System > View Dashboard**. Log on.
 
     !![step5b-choose-dev-space](step5b-choose-dev-space.png)
     .
@@ -159,7 +160,7 @@ Also, see SAP Note [2270689 Remote Analysis for source system](https://launchpad
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Assign business role for ATC)]
+[ACCORDION-BEGIN [Step 7: ](Assign business role for Custom Code Migration App)]
 1.	Choose Identity and Access Management > Maintain Business Roles.
 2.	Choose **`BR_IT_PROJECT_MANAGER`** > Edit.
 3.	In Assigned Business Catalogs, choose Add > **`SAP_CORE_BC_CCM`** > Apply > OK.
@@ -171,10 +172,10 @@ The tile should appear in the Launchpad:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test ABAP Test Cockpit (ATC))]
+[ACCORDION-BEGIN [Step 8: ](Run Custom Code Migration App)]
 1.	Choose Go.
 2.	Choose Create to create new project.
-    -	Target release = SAP Cloud Platform ABAP Environment
+    -	Target release = SAP BTP, ABAP Environment
     -	Destination = `SAP_COM_0464_NPL_XXX`
     -	Transition Scenario = New implementation
 

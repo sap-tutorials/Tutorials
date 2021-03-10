@@ -3,7 +3,7 @@ title: Build a Webhook for a Chatbot using Python
 description: Create a Python script (with Flask), deploy it to SAP Business Technology Platform, and use it as a webhook to be called by an SAP Conversational AI chatbot.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, topic>python]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, topic>python, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
@@ -12,7 +12,7 @@ primary_tag: products>sap-conversational-ai
  - You understand the basics of creating a chatbot, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started).
  - [Python](https://www.python.org/downloads/)
  - [VS Code](https://code.visualstudio.com/) with the [Python extension by Microsoft](https://code.visualstudio.com/docs/languages/python), though you can use any Python development environment. See [Getting Started with Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial).
- - [Flask](https://flask.palletsprojects.com/en/1.0.x/installation/) and [requests](https://pypi.org/project/requests/) packages for Python
+ - [Flask](https://flask.palletsprojects.com/) and [requests](https://pypi.org/project/requests/) packages for Python
  - [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
 
 
@@ -115,7 +115,7 @@ Create a bot that asks the user to select an animal to get a fun fact about.
 
     ```Text
     applications:
-    - host: dbw-catfacts
+    - name: dbw-catfacts
       memory: 128M
       command: python chatbot-webhook-test.py
     ```

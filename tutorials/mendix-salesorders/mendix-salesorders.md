@@ -1,8 +1,8 @@
 ---
-title: Create Sales Order App with SAP Rapid Application Development by Mendix
+title: Create Sales Order App with SAP RAD by Mendix
 description: Create a sales order app that consumes a service from the SAP Gateway Demo System (ES5).
 auto_validation: true
-primary_tag: products>sap-cloud-platform
+primary_tag: products>sap-rad-by-mendix
 author_name: Paola Laufer
 tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platform  ]
 time: 20
@@ -10,7 +10,7 @@ time: 20
 
 ## Prerequisites  
  - You are using a Windows desktop (or a Windows VM on a Mac).
- - You have access to an SAP Business Technology Platform (BTP) account. If not, you can open a trial account. See the [Get a Free Account on SAP BTP Trial] tutorial or the [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/65d74d39cb3a4bf8910cd36ec54d2b99.html).
+ - You have access to an SAP BTP account. If not, you can open a trial account. See the [Get a Free Account on SAP BTP Trial](hcp-create-trial-account) tutorial or the [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/65d74d39cb3a4bf8910cd36ec54d2b99.html).
  - You have completed the [Get Started with SAP Rapid Application Development by Mendix](mendix-onboarding) tutorial. Name your app **SAP Sales Orders**.
  - You have completed the [Create an Account on the SAP Gateway Demo System](gateway-demo-signup) tutorial.
 
@@ -20,7 +20,7 @@ time: 20
 - How to create an SAP Blank application in SAP BTP Rapid Application Development.
 - How to create the application data model using the SAP OData Model Creator.
 - How to consume an OData service using the SAP OData Connector.
-- How to deploy the application to SAP BTP.
+- How to deploy the application to SAP Business Technology Platform (BTP).
 
 You can build business applications for the SAP BTP, Cloud Foundry environment using SAP BTP Rapid Application Development by Mendix, without needing to write code.
 

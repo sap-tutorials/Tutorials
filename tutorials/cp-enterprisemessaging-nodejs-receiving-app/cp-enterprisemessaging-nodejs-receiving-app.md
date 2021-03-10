@@ -1,18 +1,18 @@
 ---
 title: Create an Application for Receiving Messages
-description: Develop and deploy a basic Node.js-based messaging application for receiving messages from an SAP Cloud Platform Enterprise Message Queue.
+description: Develop and deploy a basic Node.js-based messaging application for receiving messages from an SAP Enterprise Message Queue.
 time: 20
 auto_validation: true
-tags: [ tutorial>beginner, topic>node-js, products>sap-cloud-platform-for-the-cloud-foundry-environment, tutorial>license]
-primary_tag: products>sap-cloud-platform-enterprise-messaging
+tags: [ tutorial>beginner, topic>node-js, products>sap-business-technology-platform, tutorial>license]
+primary_tag: products>sap-enterprise-messaging
 ---
 
 ## Prerequisites
 
 ## Details
 ### You will learn
-  - How to create a basic messaging client application for receiving messages from a queue using SAP Cloud Platform Enterprise Messaging
-  - How to deploy this application to SAP Cloud Platform
+  - How to create a basic messaging client application for receiving messages from a queue using SAP Enterprise Messaging
+  - How to deploy this application to SAP Business Technology Platform
   - How to perform a quick test that your application works
 
 [ACCORDION-BEGIN [Step 1: ](Install Node.js and create directory)]
@@ -26,7 +26,7 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 
 3. Create a directory that holds the files for your application - name it for example `Consumer`. Into this directory we will create three files:
 
-      * The `manifest.yml` is the deployment descriptor and contains all required information to deploy an application to a SAP Cloud Platform Cloud Foundry instance.
+      * The `manifest.yml` is the deployment descriptor and contains all required information to deploy an application to a SAP Business Technology Platform Cloud Foundry instance.
 
       * The `package.json` specifies the version of a package that your app depends on.
 
@@ -197,7 +197,7 @@ As a result, the application listens for messages and once it receives a message
 
 [ACCORDION-BEGIN [Step 5: ](Deploy receiving application)]
 
-1.	Go to <filepath directory to manifest.yml> and enter `pm install` to download missing node.js modules.
+1.	Go to <filepath directory to manifest.yml> and enter `npm install` to download missing node.js modules.
 2.	To deploy the sending application to your Cloud Foundry space enter `cf push`.
 
 Your application gets deployed to the cloud and is started up.

@@ -3,7 +3,7 @@ title: Use Machine Learning to Classify Documents
 description: Get the machine learning model category predictions for the documents you upload to Document Classification.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-classification]
 primary_tag: topic>machine-learning
 ---
 
@@ -25,7 +25,7 @@ You will use Swagger UI, via all major web browser, to call the Document Classif
 
 In the service key you created for Document Classification in the previous tutorial: [Create Service Instance for Document Classification with Trial Account](cp-aibus-dc-service-instance), you should find (outside the `uaa` section of the service key) an entry called `url` (as highlighted in the image below).
 
-1. To access the Document Classification Swagger UI, add **`/document-classification/v1`** to the `url` value, paste it in any web browser and press **Enter**.
+1. To access the Document Classification Swagger UI, add **`/document-classification/v1`** to the `url` value, paste it in any web browser and press **Enter**. 
 
     ![Service keys](service-key-details.png)
 

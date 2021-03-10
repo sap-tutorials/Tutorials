@@ -3,7 +3,7 @@ title: Detect and Highlight Entities from Unstructured Text with Custom Models
 description: Train your own Business Entity Recognition custom model to get machine learning entity predictions for the text you submit to the service.
 auto_validation: true
 time: 30
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>business-entity-recognition]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>business-entity-recognition]
 primary_tag: topic>machine-learning
 ---
 
@@ -21,7 +21,7 @@ The core functionality of Business Entity Recognition is to automatically detect
 
 After performing step 1 of the tutorial [Detect and Highlight Entities from Unstructured Text with Pre-trained Models](cp-aibus-ber-swagger-ui) to access and authorize the Business Entity Recognition Swagger UI, use the **POST /datasets** endpoint to create a dataset that will be used to train a custom model to extract entities from the text.
 
-1. Click the endpoint name to expand it.
+1. Click the endpoint name to expand it. 
 
 2. Click **Try it out**.
 

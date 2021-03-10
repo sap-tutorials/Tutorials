@@ -3,7 +3,7 @@ title: Create Service Instance for Invoice Object Recommendation
 description: Create a service instance and the associated service key for Invoice Object Recommendation, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>invoice-object-recommendation]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>invoice-object-recommendation]
 primary_tag: topic>machine-learning
 ---
 

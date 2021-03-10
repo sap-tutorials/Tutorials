@@ -15,7 +15,7 @@ primary_tag: products>sap-hana
   - How to connect to SAP HANA from a client machine using HDBSQL
   - How to create a user, schema, tables and import data
 
-HDBSQL is used in this tutorial as it is part of the SAP HANA client install.  HDBSQL is a very basic tool for executing SQL scripts and providing an interface for interactive queries.  Another more user-friendly option to execute SQL operations is the [SAP HANA database explorer](group.hana-cloud-get-started) which is part of a HANA Cloud instance or a server + applications SAP HANA, express edition install.  
+HDBSQL is used in this tutorial as it is part of the SAP HANA client install.  HDBSQL is a basic tool for executing SQL scripts and providing an interface for interactive queries.  Another more user-friendly option to execute SQL operations is the [SAP HANA database explorer](group.hana-cloud-get-started) which is part of a HANA Cloud instance or a server + applications SAP HANA, express edition install.  
 
 ---
 
@@ -44,7 +44,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
         hdbsql -n 69964be8-39e8-4622-9a2b-ba3a38be2f75.hana.canary-eu10.hanacloud.ondemand.com:443 -u DBADMIN -p your_password
         ```
 
-        > The HANA Cloud instance can be configured to enable applications running from outside the SAP Cloud Platform to connect.  The current setting is shown in the landscape tool in the screenshot below.  An example of configuring this setting is shown in [Allow connections to SAP HANA Cloud instance from selected IP addresses — using the command line](https://blogs.sap.com/2020/10/30/allow-connections-to-sap-hana-cloud-instance-from-selected-ip-addresses-using-the-command-line/).
+        > The HANA Cloud instance can be configured to enable applications running from outside the SAP BTP to connect.  The current setting is shown in SAP HANA Cloud Central in the screenshot below.  An example of configuring this setting is shown in [Allow connections to SAP HANA Cloud instance from selected IP addresses — using the command line](https://blogs.sap.com/2020/10/30/allow-connections-to-sap-hana-cloud-instance-from-selected-ip-addresses-using-the-command-line/).
 
         > ![screenshot showing the allowlist](allowlist.png)
 
@@ -383,11 +383,10 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     ![result](select.png)
 
+For further information, see [CREATE TABLE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d58a5f75191014b2fe92141b7df228.html) and [INSERT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html).
+
+
 > ### Some Tips
-
->For further information, see [CREATE TABLE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d58a5f75191014b2fe92141b7df228.html) and [INSERT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html).
-
-> ---
 
 >Note that the identifiers such as table names are automatically upper cased unless they are within "".  
 >
@@ -396,6 +395,8 @@ SELECT * FROM HoTeL.RoOm;  --succeeds
 SELECT * FROM "HoTeL"."RoOm"; --fails
 SELECT * FROM "HOTEL"."ROOM"; --succeeds
 ```
+
+>For further details, consult [Identifiers and case sensitivity](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209f5020751910148fd8fe88aa4d79d9.html?q=case#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
 
 > ---
 
@@ -415,11 +416,24 @@ DROP USER USER1 CASCADE;
 > ```SQL
 > SELECT * FROM HOTEL.CUSTOMER; -- interactive
 > hdbsql -U USER1UserKey "SELECT * FROM HOTEL.CUSTOMER"; -- non-interactive
-> hdbsql -U USER1UserKey -I cities.sql -- batch
+> hdbsql -U USER1UserKey -I hotel.sql -- batch
 >```
 
 > ---
 
+> [Substitution parameters](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  Given the following file:
+
+> ```SQL (find_customers.sql)
+> select * from HOTEL.CUSTOMER where FIRSTNAME LIKE '&nameParam'
+> ```
+
+> It could be called using:
+
+> ```Shell
+> hdbsql -A -U user1UserKey -V nameParam=J% -I sql.sql
+> ```
+
+> ![example of substitution parameters](subst.png)
 
 Congratulations! You have now created a user and some tables using HDBSQL.  This user will be used to connect and query the data in the following tutorials.
 

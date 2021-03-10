@@ -3,7 +3,7 @@ title: Set Up Account for Service Ticket Intelligence and Get Service Key
 description: Get access to the service using a booster in SAP Business Technology Platform (SAP BTP) Trial that automatically creates a service instance, and the associated service key for Service Ticket Intelligence.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -104,7 +104,7 @@ Do the following to access your service instance and service key, without having
 
     !![Service Key](subaccount.png)
 
-4. Click **Service Instances** on the navigation side bar. You see the service instance you created with the **Set up account for Service Ticket Intelligence** booster.
+4. Click **Instances and Subscriptions** on the navigation side bar. You see the service instance you created with the **Set up account for Service Ticket Intelligence** booster.
 
     !![Service Key](service-instance.png)
 

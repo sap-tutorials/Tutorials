@@ -227,7 +227,7 @@ The following steps will create sample objects for a hotel database using create
     SELECT * FROM "HOTEL"."ROOM"; --succeeds
     ```
 
-    >For further details, consult [Identifiers and case sensitivity](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209f5020751910148fd8fe88aa4d79d9.html?q=case#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case)
+    >For further details, consult [Identifiers and case sensitivity](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209f5020751910148fd8fe88aa4d79d9.html?q=case#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
 
 [DONE]
 [ACCORDION-END]
@@ -247,7 +247,7 @@ Partitions can be created to divide the data in a large table into smaller parts
     ));
     ```
 
-    In the example in this section, older reservation data will be stored on disk rather than in memory.  Another reason for partitioning is for load balancing across multiple hosts in a distributed system.  For more details see [Table Partitioning](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/c2ea130bbb571014b024ffeda5090764.html).
+    In the example in this section, older reservation data will be stored on disk rather than in memory.  Other reasons for partitioning include load balancing across multiple hosts and the 2 billion row size limit on a non-partitioned table.  For more details see [Table Partitioning](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/c2ea130bbb571014b024ffeda5090764.html) and [SAP Note: 2044468 - FAQ: SAP HANA Partitioning](https://launchpad.support.sap.com/#/notes/2044468).
 
 2. Execute the following SQL to make the partition containing older reservations  loadable from disk using [Native Storage Extensions (NSE)](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/786c621dd35e4534a2f955bf2f04a2e2.html).
 
@@ -265,7 +265,7 @@ Partitions can be created to divide the data in a large table into smaller parts
     SELECT TABLE_NAME, PART_ID, COLUMN_NAME, LOAD_UNIT FROM M_CS_COLUMNS where schema_Name = 'HOTEL';
     ```
 
-    ![column and page loadable](partition_details.png)
+    ![column and page loadable](partition-details.png)
 
     Notice above that the partition 1 (containing older reservations) is page loadable and partition 2 (containing recent reservations) is column loadable.  
 
@@ -391,13 +391,13 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
     	SELECT ::SQL_ERROR_CODE, ::SQL_ERROR_MESSAGE FROM DUMMY;
     	WHILE (val < numToGenerate) DO
     		-- generate random room number from 100-300
-    		rno := FLOOR(RAND_SECURE() * 200) + 1 + 100;
+    		rno := FLOOR(RAND_SECURE() * 201) + 100;
     		-- generate random customer number from 1000-1014
-    		cno := FLOOR(RAND_SECURE() * 14) + 1 + 1000;
+    		cno := FLOOR(RAND_SECURE() * 15) + 1000;
     		-- generate random hotel number from 10-26
-    		hno := FLOOR(RAND_SECURE() * 16) + 1 + 10;
+    		hno := FLOOR(RAND_SECURE() * 17) + 10;
     		-- generate random number from 1-3 to determine room type
-    		rType := FLOOR(RAND_SECURE() * 3 + 1);
+    		rType := FLOOR(RAND_SECURE() * 3) + 1;
     		IF (rType = 1) THEN
     			roomType := '''single''';
     		ELSEIF (rType = 2) THEN

@@ -3,7 +3,7 @@ title: Create Service Instance for Business Entity Recognition
 description: Create a service instance and the associated service key for Business Entity Recognition, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>business-entity-recognition]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>business-entity-recognition]
 primary_tag: topic>machine-learning
 ---
 
