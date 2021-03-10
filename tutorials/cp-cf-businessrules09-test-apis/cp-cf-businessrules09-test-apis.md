@@ -1,6 +1,6 @@
 ---
 title: Test the Business Rules API from SAP API Business Hub
-description: Use SAP API Business Hub to test and run the business rules API to see how business rules can be consumed from a custom application.
+description: Use SAP API Business Hub to test and run the business rules service API to see how business rules service can be consumed from a custom application.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
@@ -10,7 +10,7 @@ author_profile: https://github.com/VandanaVasudevan
 ---
 
 ## Prerequisites
- - You have created the business rules project and deployed the rule service. For more information, see [Create Your First Business Rules Project](group.cp-rules-first-project.html).
+ - You have created the business rules project and deployed the rule service. For more information, see [Create Your First Business Rules Project](group.cp-rules-first-project).
 
 ## Details
 ### You will learn
