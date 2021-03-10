@@ -1,6 +1,6 @@
 ---
 title: Access a Classic Schema from SAP Business Application Studio
-description: Access data in a plain or replicated schema from an HDI Container in SAP Business Application Studio
+description: Access data in a plain or replicated schema from an HDI Container in SAP Business Application Studio.
 auto_validation: true
 time: 20
 author_name: Thomas Jung
@@ -157,7 +157,7 @@ You now have a schema with a table and data in it. You have also created a user 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Grant permissions to the technical users)]
+[ACCORDION-BEGIN [Step 4: ](Grant permissions to technical users)]
 
 You will now create an artifact that grants access to the two technical users of your HDI container. These are not real users, but technical ones.
 

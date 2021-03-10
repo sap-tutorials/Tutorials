@@ -1,10 +1,12 @@
 ---
 title: Create a Remote Client Proxy
-description: In the SAP Cloud Platform, ABAP Environment, create a local class that instantiates a proxy, which passes an OData request to a remote service.
+description: In the SAP Business Technology Platform, ABAP Environment, create a local class that instantiates a proxy, which passes an OData request to a remote service.
 auto_validation: true
 time: 30
-tags: [ tutorial>advanced, topic>abap-development, topic>cloud, products>sap-cloud-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: products>sap-cloud-platform--abap-environment
+tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
+primary_tag: topic>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ##Prerequisites
@@ -72,7 +74,7 @@ CLASS zcl_proxy_travels_xxx IMPLEMENTATION.
         " 1. Get the destination of foreign system
         " 2. Create http client
 
-        " i_name = name of destination in SAP Cloud Cockpit; URL = base URL of your provisioning system
+        " i_name = name of destination in SAP BTP cockpit; URL = base URL of your provisioning system
         DATA(lo_http_client) = cl_web_http_client_manager=>create_by_http_destination(
                 cl_http_destination_provider=>create_by_cloud_destination(
                     i_name                  = 'XXX'
@@ -114,7 +116,7 @@ ENDCLASS.
 
 [ACCORDION-BEGIN [Step 3: ](Adapt code)]
 1. Specify your provisioning system as the destination, by replacing the defaults:
-    - **`i_name`** = name of destination in SAP Cloud Cockpit, where URL = base URL of provisioning system
+    - **`i_name`** = name of destination in SAP BTP cockpit, where URL = base URL of provisioning system
 
     ```ABAP
     i_name                  = 'SID_XXX_HTTP'

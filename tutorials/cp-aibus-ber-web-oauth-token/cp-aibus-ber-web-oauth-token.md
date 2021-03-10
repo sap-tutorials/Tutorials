@@ -3,7 +3,7 @@ title: Get OAuth Access Token for Business Entity Recognition via Web Browser
 description: Retrieve your OAuth access token, which will grant you access to the service APIs.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>business-entity-recognition]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>business-entity-recognition]
 primary_tag: topic>machine-learning
 ---
 
@@ -35,7 +35,7 @@ To get your OAuth access token you will need the values listed below from the se
 
 !![BER TOKEN](png-files/web-browser.png)
 
-You should receive a response like the following:
+You should receive a response like the following: 
 
 ```JSON
 {

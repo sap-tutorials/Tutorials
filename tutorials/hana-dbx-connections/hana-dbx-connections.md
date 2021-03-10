@@ -27,9 +27,9 @@ SQL consoles are associated with a database connection.
 
 [ACCORDION-BEGIN [Step 1: ](Add an SAP HANA cockpit database connection)]
 
-Databases defined in the SAP Cloud Platform cockpit or the SAP HANA cockpit can be opened in the SAP HANA database explorer.
+Databases defined in the SAP BTP cockpit or the SAP HANA cockpit can be opened in the SAP HANA database explorer.
 
-1.  From the landscape tool, choose **Open SAP HANA Database Explorer**.  
+1.  From SAP HANA Cloud Central, choose **Open SAP HANA Database Explorer**.  
 
     ![Open in the database explorer](open-in-dbx.png)
 
@@ -53,7 +53,7 @@ SAP HANA Cockpit databases can be grouped together.  This enables SQL statements
 
 ![Run SQL on Multiple Databases](run-on-multiple-hxe.png)
 
-1. With SAP HANA Cloud, all databases created in a space are placed in a group.  As seen below, the space name is dev.  The SAP HANA Cloud Cockpit, or the landscape tool, contain in their URL, a parameter that indicates the unique name (GUID) for the space.  
+1. With SAP HANA Cloud, all databases created in a space are placed in a group.  As seen below, the space name is dev.  SAP HANA Cloud Cockpit or SAP HANA Cloud Central contain in their URL, a parameter that indicates the unique name (GUID) for the space.  
 
     ```
     https://host/trial/#/globalaccount/GUID/subaccount/GUID/org/GUID/space/GUID/hanaCloud
@@ -89,7 +89,9 @@ SAP HANA Cockpit databases can be grouped together.  This enables SQL statements
 
     >---
 
-    >An on-premise SAP HANA database can be set to have a specified usage, such as development or production. When set, this usage type will appear in the predefined group with the same name.  This can be configured in the SAP HANA cockpit.  For more details on this parameter, see the `system_information` usage parameter in [SAP HANA Configuration Parameter Reference](https://help.sap.com/viewer/009e68bc5f3c440cb31823a3ec4bb95b/latest/en-US/514ab38a2e574c85a70ebba80ff16d99.html).
+    >An on-premise SAP HANA database can be set to have a specified usage, such as development or production. When set, this usage type will appear in the predefined group with the same name.  This can be configured in the SAP HANA cockpit.  For more details on this parameter, see the `system_information` usage parameter in [SAP HANA Configuration Parameter Reference](https://help.sap.com/viewer/009e68bc5f3c440cb31823a3ec4bb95b/latest/en-US/514ab38a2e574c85a70ebba80ff16d99.html).  Databases set to production will be highlighted as such as shown below:
+
+    > ![production label](prod-label.png)
 
 [DONE]
 [ACCORDION-END]
@@ -111,11 +113,11 @@ Databases can be added directly to the SAP HANA database explorer.  To connect t
 
     ![encrypted connection](encrypted.png)
 
-    The host and port values can be copied from the landscape tool.  
+    The host and port values can be copied from SAP HANA Cloud Central.  
 
     !![copy host and port](host-and-port.png)
 
-    >Remember to remove the colon and port number from the host name and add it to the port field.
+    >Remember to remove the colon and port number from the host name and add the port to the port field.
 
     >---
 
@@ -202,11 +204,11 @@ An SAP HANA Deployment Infrastructure (HDI) container can be created by using th
 
 >Note: This section is optional and does not need to be followed to complete the subsequent tutorials in this group.
 
->Note: The SAP Business Application Studio is now the recommended tool for SAP HANA native application development with SAP HANA Cloud.  The SAP HANA Web IDE for SAP HANA should continue to be used with on-premise SAP HANA.  The following steps are similar in either tool.
+>Note: The SAP Business Application Studio is now the recommended tool for SAP HANA native application development with SAP HANA Cloud.  For additional details see [SAP Business Application Studio and SAP Web IDE Full-Stack](https://blogs.sap.com/2021/02/09/sap-business-application-studio-and-sap-web-ide-full-stack/). The SAP HANA Web IDE for SAP HANA should is the recommended tool for on-premise SAP HANA.  The following steps are similar in either tool.  
 
 1.  Open the SAP HANA Web IDE for HANA Development if using SAP HANA Cloud or SAP HANA Web IDE for SAP HANA if using SAP HANA, express edition or an on-premise install.
 
-    Open SAP HANA Web IDE (in SAP Cloud Platform).  
+    Open SAP HANA Web IDE (in SAP BTP).  
 
     ![open web ide](open-web-ide.png)
 
@@ -232,11 +234,11 @@ An SAP HANA Deployment Infrastructure (HDI) container can be created by using th
 
     ![Cloud Foundry space](api-endpoint.png)
 
-    The API Endpoint can be found on the subaccount page of the SAP Cloud Platform Cockpit.
+    The API Endpoint can be found on the subaccount page of the SAP BTP Cockpit.
 
     ![API Endpoint](api-endpoint2.png)
 
-    The space can be found on the subaccount page of the SAP Cloud Platform Cockpit.
+    The space can be found on the subaccount page of the SAP BTP Cockpit.
 
     !![subaccount](org-and-space.png)
 

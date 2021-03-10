@@ -1,6 +1,6 @@
 ---
 title: Create Scalar User Defined Functions
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+description: Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -18,7 +18,7 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create New Fucntion)]
+[ACCORDION-BEGIN [Step 1: ](Create new function)]
 
 1. Right click on the `src` folder and choose **New Folder**.
 
@@ -55,11 +55,11 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Edit the Function and Save)]
+[ACCORDION-BEGIN [Step 2: ](Edit the function and save)]
 
 1. Enter the code into the editor as shown here.  Please note the default for parameter `im_employeeid` which makes assigning a value to the parameter optional.
 
-    ```
+    ```SQLCRIPT
     FUNCTION "get_full_name" (
                   IN im_firstname NVARCHAR(40) ,
                   IN im_middlename NVARCHAR(40),
@@ -89,7 +89,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Edit the Procedure and Save)]
+[ACCORDION-BEGIN [Step 3: ](Edit the procedure and save)]
 
 1. Return to your procedure called `get_po_header_data` and modify it. Start by renaming the `LOGINNAME` column of the output table to `FULLNAME`. Also change the output length to 256. This is needed to match later on which the anticipated output structure.
 
@@ -101,45 +101,43 @@ time: 15
 
 3. The completed code should look very similar to this.
 
-    ```
-    PROCEDURE "get_po_header_data" (
-               OUT EX_TOP_3_EMP_PO_COMBINED_CNT TABLE(
-                          FULLNAME NVARCHAR(256),
-    		  CREATE_CNT INTEGER,
-    		  CHANGE_CNT INTEGER,
-    		  COMBINED_CNT INTEGER )  )
-     	LANGUAGE SQLSCRIPT
-     	SQL SECURITY INVOKER
-     		--DEFAULT SCHEMA <default_schema_name>
-     	READS SQL DATA AS
+    ```SQLCRIPT
+    PROCEDURE "get_po_header_data"(
+              OUT EX_TOP_3_EMP_PO_COMBINED_CNT TABLE(
+                  FULLNAME nvarchar(256),
+                  CREATE_CNT INTEGER,
+                  CHANGE_CNT INTEGER,
+                  COMBINED_CNT INTEGER )  )
+       LANGUAGE SQLSCRIPT
+       SQL SECURITY INVOKER
+       --DEFAULT SCHEMA <default_schema_name>
+       READS SQL DATA AS
     BEGIN
 
-    po_create_cnt =  SELECT COUNT(*) AS CREATE_CNT, "HISTORY.CREATEDBY.EMPLOYEEID"  AS EID
-           FROM "PO.Header" WHERE PURCHASEORDERID IN (
-                 SELECT PURCHASEORDERID
-                      FROM "PO.Item"
-              WHERE "PRODUCT.PRODUCTID" IS NOT NULL)
-     GROUP BY  "HISTORY.CREATEDBY.EMPLOYEEID";
+    po_create_cnt =  SELECT COUNT(*) AS CREATE_CNT, "CREATEDBY" as EID
+         FROM "OPENSAP_PURCHASEORDER_HEADERS" WHERE ID IN (
+                         SELECT "POHEADER_ID"
+                              FROM "OPENSAP_PURCHASEORDER_ITEMS"
+              WHERE "PRODUCT_PRODUCTID" IS NOT NULL)
+                GROUP BY  "CREATEDBY";
 
-    po_change_cnt =  SELECT COUNT(*) AS CHANGE_CNT, "HISTORY.CHANGEDBY.EMPLOYEEID" AS EID
-           FROM "PO.Header"  WHERE PURCHASEORDERID IN (
-              SELECT PURCHASEORDERID
-                   FROM "PO.Item"
-         WHERE "PRODUCT.PRODUCTID" IS NOT NULL)
-    	GROUP BY  "HISTORY.CHANGEDBY.EMPLOYEEID";
-
+    po_change_cnt = SELECT COUNT(*) AS CHANGE_CNT, "MODIFIEDBY" as EID
+         FROM "OPENSAP_PURCHASEORDER_HEADERS"  WHERE ID IN (
+                         SELECT "POHEADER_ID"
+                              FROM "OPENSAP_PURCHASEORDER_ITEMS"
+              WHERE "PRODUCT_PRODUCTID" IS NOT NULL)
+                 GROUP BY  "MODIFIEDBY";
 
     EX_TOP_3_EMP_PO_COMBINED_CNT =
             SELECT "get_full_name"( "NAMEFIRST", "NAMEMIDDLE", "NAMELAST") as FULLNAME,
-                crcnt.CREATE_CNT, chcnt.CHANGE_CNT,
-                crcnt.CREATE_CNT + chcnt.CHANGE_CNT AS COMBINED_CNT
-     	FROM "MD.Employees" as emp
-         LEFT OUTER JOIN :PO_CREATE_CNT AS crcnt
-               ON emp.EMPLOYEEID = crcnt.EID
-         LEFT OUTER JOIN :PO_CHANGE_CNT AS chcnt
-               ON emp.EMPLOYEEID = chcnt.EID
-                  ORDER BY COMBINED_CNT DESC LIMIT 3;
-
+             crcnt.CREATE_CNT, chcnt.CHANGE_CNT,  crcnt.CREATE_CNT +
+             chcnt.CHANGE_CNT AS COMBINED_CNT
+                FROM "OPENSAP_MD_EMPLOYEES" as emp
+                LEFT OUTER JOIN :PO_CREATE_CNT AS crcnt
+                 ON emp.email = crcnt.EID
+               LEFT OUTER JOIN :PO_CHANGE_CNT AS chcnt
+               ON emp.email = chcnt.EID
+              ORDER BY COMBINED_CNT DESC LIMIT 3;
     END
     ```
 
@@ -150,7 +148,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy and Check Results)]
+[ACCORDION-BEGIN [Step 4: ](Deploy and check results)]
 
 1. Use what you have learned already and perform a deploy.
 

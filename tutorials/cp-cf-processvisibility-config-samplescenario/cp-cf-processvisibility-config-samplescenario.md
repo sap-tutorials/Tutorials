@@ -3,10 +3,10 @@ title: Set Up a Sample Design-to-Operate Business Process
 description: Set up a pre-configured design-to-operate business process to experience the Process Visibility.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>cloud]
-primary_tag: products>sap-cloud-platform
-author_name: Deeksha R
-author_profile: https://github.com/Deeksha-R
+tags: [tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
+author_name: Kavya M Gowda
+author_profile: https://github.com/I540620
 ---
 
 ## Prerequisites
@@ -17,12 +17,12 @@ author_profile: https://github.com/Deeksha-R
   - How to import a sample design-to-operate business scenario
   - How to import the events for sample design-to-operate business process
   - How to gain visibility on sample design-to-operate business process
-  - How to quickly get started with the Process Visibility capability using the sample design-to-operate business process
+  - How to quickly get started with the Process Visibility service using the sample design-to-operate business process
 
 
 Design-to-operate is a supply chain centric business process that enables companies to connect digitally to perfect reality across their product and asset lifecycle. This end-to-end business process consists of stages from design, planning, manufacturing, logistics, and operations.
 
-In this tutorial, you can learn how to gain visibility on a sample design-to-operate business process using Process Visibility. You are provided with JSON files with events and zip files that contain the business scenario using which you can easily try out the capabilities of the service.
+In this tutorial, you can learn how to gain visibility on a sample design-to-operate business process using the process visibility service. You are provided with JSON files with events and zip files that contain the business scenario using which you can easily try out the capabilities of the service.
 
 [ACCORDION-BEGIN [Step 1: ](Download files from GitHub)]
 In this step, you will download the sample design-to-operate business scenario and the respective events from GitHub to your local file system.
@@ -58,7 +58,7 @@ In this step, you will import the `DesignToOperateEvents.json` to the Event Acqu
 
     ![Import event](screen4-import.png)
 
-3. In the **Import From Tile** dialog, browse for the `DesignToOperateEvents.json` that is in your local file system.
+3. In the **Import From File** dialog, browse for the `DesignToOperateEvents.json` that is in your local file system.
 
     ![Import event](screen4-browse.png)
 
@@ -85,7 +85,7 @@ In this step, you will import the `DesignToOperateEvents.json` to the Event Acqu
 
 [ACCORDION-BEGIN [Step 3: ](Import the business scenario)]
 
-In this step, you will import the `DesigntoOperate.zip` file to the Configure Business Scenarios application.
+In this step, you will import the `DesigntoOperate.zip` file to the Configure Visibility Scenarios application.
 
 1. Log on to the **Configure Visibility Scenarios** tile by navigating to the home screen.
 
@@ -147,11 +147,11 @@ In this step, you will be able to track the progress of the sample design-to-ope
 
     !![D2O](screen11-processworkspace.png)
 
-    You can view the overview page for the **Design to Operate** business scenario as shown below. You can view information such as open orders, cycle time, open orders by product category and so on.
+    You can view the overview page for the **Design to Operate** business scenario as shown below. You can view information such as open orders, cycle time, open orders by product category, and so on.
 
     !![D2O](screen11-overviewpws.png)
 
-    >You can customize the cards displayed on the overview page by modifying the business scenario in the **Configure Visibility Scenario** application. For more information, see [SAP Help](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
+    >You can customize the cards displayed on the overview page by modifying the business scenario in the **Configure Visibility Scenarios** application. For more information, see [SAP Help](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
 
 [VALIDATE_1]
 [ACCORDION-END]

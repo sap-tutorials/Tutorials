@@ -1,6 +1,6 @@
 ---
 title: Creating Table User Defined Functions
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+description: Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -19,7 +19,7 @@ There are application and scenarios where you need a table function instead of p
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create New Function)]
+[ACCORDION-BEGIN [Step 1: ](Create new function)]
 
 1. Use what you have learned and return to the `functions` folder and create a new function called `get_po_counts` using the **SAP HANA: Create Database Artifact** command.
 
@@ -28,11 +28,11 @@ There are application and scenarios where you need a table function instead of p
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Enter Table Function Code)]
+[ACCORDION-BEGIN [Step 2: ](Enter table function code)]
 
 1. Add the input parameter called `IM_FDATE` as well as the RETURN Table parameter as shown. Please note the scalar input parameter we will used later on for filtering.
 
-    ```
+    ```SQLCRIPT
     FUNCTION "get_po_counts" ( im_fdate DATE )
      RETURNS TABLE (EMAIL NVARCHAR(255),
     	       FULLNAME NVARCHAR(255),
@@ -78,7 +78,7 @@ There are application and scenarios where you need a table function instead of p
 
 8. The completed code should be very similar to this.
 
-    ```
+    ```SQLCRIPT
     FUNCTION "get_po_counts"( im_fdate DATE )
      RETURNS TABLE (EMAIL NVARCHAR(255),
     	       FULLNAME NVARCHAR(255),
@@ -125,7 +125,7 @@ There are application and scenarios where you need a table function instead of p
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Save, Deploy, Check Results)]
+[ACCORDION-BEGIN [Step 3: ](Save, deploy, check results)]
 
 1. **Save** the function.
 
@@ -141,7 +141,7 @@ There are application and scenarios where you need a table function instead of p
 
 4. A new SQL tab will be opened with a SELECT statement. Enter the date `18.12.2014` as the input parameter and add  LIMIT 3 at the end of it. Click **Run**.
 
-    ```
+    ```SQLCRIPT
     SELECT * FROM "get_po_counts"('18.12.2014') LIMIT 3;
     ```
     !![Results](3_4.png)

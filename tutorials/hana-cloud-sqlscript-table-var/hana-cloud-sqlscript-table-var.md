@@ -1,6 +1,6 @@
 ---
 title: Intermediate Table Variables
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+description: Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -18,7 +18,7 @@ In this exercise you will modify the code of procedure `get_po_header_data` agai
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Edit Previous Procedure)]
+[ACCORDION-BEGIN [Step 1: ](Edit previous procedure)]
 
 1. Return to your procedure called `get_po_header_data`.
 
@@ -49,7 +49,7 @@ In this exercise you will modify the code of procedure `get_po_header_data` agai
 
 7. The completed code should be very similar to this.
 
-    ```
+    ```SQLCRIPT
     PROCEDURE "get_po_header_data"(
               OUT EX_TOP_3_EMP_PO_COMBINED_CNT TABLE(
                   LOGINNAME NVARCHAR(12),
@@ -94,13 +94,13 @@ In this exercise you will modify the code of procedure `get_po_header_data` agai
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Save, Deploy, Run and Check Results)]
+[ACCORDION-BEGIN [Step 2: ](Save, deploy, run and check results)]
 
-1. **Save** the procedure.
+1. Save the procedure.
 
     !![save Procedure](2_1.png)
 
-2. Perform a **Deploy**
+2. Perform a **Deploy**.
 
     !![deploy](2_2.png)
 

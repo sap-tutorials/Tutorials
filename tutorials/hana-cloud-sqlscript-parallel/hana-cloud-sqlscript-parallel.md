@@ -1,6 +1,6 @@
 ---
 title: Parallel Processing and Parameters
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+description: Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -20,7 +20,7 @@ In this exercise, we will modify the code of procedure `get_po_header_data`  so 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Edit Previous Procedure)]
+[ACCORDION-BEGIN [Step 1: ](Edit previous procedure)]
 
 1. Return to your procedure called `get_po_header_data`.
 
@@ -36,7 +36,7 @@ In this exercise, we will modify the code of procedure `get_po_header_data`  so 
 
 4. The completed code should be similar to this.
 
-    ```
+    ```SQLCRIPT
     PROCEDURE "get_po_header_data"(
              OUT EX_PO_CREATE_CNT TABLE(
                CREATE_CNT INTEGER,
@@ -70,7 +70,7 @@ In this exercise, we will modify the code of procedure `get_po_header_data`  so 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Save, Deploy, Run and Check Results)]
+[ACCORDION-BEGIN [Step 2: ](Save, deploy, run and check results)]
 
 1. Save the procedure.
 
@@ -88,7 +88,7 @@ In this exercise, we will modify the code of procedure `get_po_header_data`  so 
 
     !![Run](2_4.png)
 
-5. Check the execution time again, you may notice that it is a bit faster this time. The reason is that these SQL statements are now executed in parallel.
+5. Check the execution time again, you may notice that it is a bit faster this time depending on your system. The reason is that these SQL statements are now executed in parallel.
 
     !![Check execution time](2_5.png)
 

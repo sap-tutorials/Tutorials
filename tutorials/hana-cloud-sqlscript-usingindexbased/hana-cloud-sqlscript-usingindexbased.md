@@ -1,6 +1,6 @@
 ---
-title: Using Index Based Cell Access
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+title: Use Index-Based Cell Access
+description: Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
@@ -21,7 +21,7 @@ Using index-based cell access to manipulate table data is faster than using curs
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a New Procedure)]
+[ACCORDION-BEGIN [Step 1: ](Create a new procedure)]
 
 1. Use what you have learned and create a new procedure called `build_products` in the procedure folder.
 
@@ -29,7 +29,7 @@ Using index-based cell access to manipulate table data is faster than using curs
 
 2. Use what you have learned about procedure parameters, and define an output parameters as show here.
 
-    ```
+    ```SQLCRIPT
     out ex_products table (PRODUCTID nvarchar(10),
                            CATEGORY nvarchar(20),
                            PRICE decimal(15,2))
@@ -39,11 +39,11 @@ Using index-based cell access to manipulate table data is faster than using curs
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Insert Procedure Code)]
+[ACCORDION-BEGIN [Step 2: ](Insert procedure code)]
 
 1. Between the BEGIN and END statements, using index based cell access, insert rows into an intermediate table variable using the following code.
 
-    ```
+    ```SQLCRIPT
 
      declare lt_products table like :ex_products;
 
@@ -67,7 +67,7 @@ Using index-based cell access to manipulate table data is faster than using curs
 
 2. The completed code should look like the following.
 
-    ```
+    ```SQLCRIPT
       PROCEDURE "build_products" (
           	    out ex_products table (PRODUCTID nvarchar(10),
                                    CATEGORY nvarchar(20),
@@ -101,7 +101,7 @@ Using index-based cell access to manipulate table data is faster than using curs
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Save, Deploy and Check Results)]
+[ACCORDION-BEGIN [Step 3: ](Save, deploy and check results)]
 
 1. **Save** the procedure
 
