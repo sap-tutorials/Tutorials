@@ -146,7 +146,7 @@ The following are some additional options for tracing.
     hdbsqldbc_cons TRACE FLUSH ON
     ```
 
-2.  Enabling tracing has an impact on performance and can consume significant disk space.  The following are some additional options to limit the trace file size to 100 KB (plus an archive file) and to turn on tracing only when a specific error code occurs.  Error code 10 occurs when invalid credentials are used.
+2.  Note that tracing should be turned off when not in use, as it does have a performance, memory and disk size impact.  The following are some additional options to limit the trace file size to 100 KB (plus an archive file) and to turn on tracing only when a specific error code occurs.  Error code 10 occurs when invalid credentials are used.
 
     ```Shell
     hdbsqldbc_cons TRACE SIZE 100K

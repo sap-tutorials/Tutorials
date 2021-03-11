@@ -39,9 +39,9 @@ Before you start, make sure that you've completed the prerequisites.
 
     > This process takes some minutes installing the `cds` command, which you will use in the next steps.
 
-    > On MacOS/Linux, you may need to follow the steps as described [here](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
+    > On MacOS/Linux, you need to follow the steps as described [here](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
 
-    > If there's an older `@sap/cds` package already installed on the machine, you may have to remove it first; if so, you'll be instructed to do so.
+    > If there's an older `@sap/cds` package already installed on your machine, you have to remove it first; if so, you'll be instructed to do so.
 
     > In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) in the CAP documentation for more details.
 
@@ -69,7 +69,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 > Visual Studio Code opens the extensions details page.
 
-3.Choose **Install** to enable the extension for SAP CDS Language Support.
+3. In VS Code choose **Install** to enable the extension for SAP CDS Language Support.
 
    ![extension_VSCode](VSCode_view_extension.png)
 
@@ -95,9 +95,9 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > This creates a folder `my-bookshop` in the current directory.
 
-2. Open Visual Studio Code, go to **File** > **Open Folder** and choose the **`my-bookshop`** folder.
+2. Open Visual Studio Code, go to **File** **&rarr;** **Open Folder** and choose the **`my-bookshop`** folder.
 
-3. Go to **Terminal** > **New Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
+3. Go to **Terminal** **&rarr;** **New Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
 
     ```Shell/Bash
     npm install
@@ -134,9 +134,9 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > This creates a folder `my-bookshop` in the current directory.
 
-2. Open Visual Studio Code, go to **File** > **Open** and choose the **`my-bookshop`** folder.
+2. Open Visual Studio Code, go to **File** **&rarr;** **Open** and choose the **`my-bookshop`** folder.
 
-3. Go to **View** > **Command Palette** > **Terminal: Create New Integrated Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
+3. Go to **View** **&rarr;** **Command Palette** **&rarr;** **Terminal: Create New Integrated Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
 
     ```Shell/Bash
     npm install
@@ -433,7 +433,7 @@ Instead of using in-memory, you can also use persistent databases.
     cds watch
     ```
 
-    ```
+    ```Shell/Bash
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: 'db/my-bookshop.db' }
     [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }

@@ -3,8 +3,8 @@ title: Set Up Your Java Development Environment
 description: Learn how to set up your development environment.
 time: 25
 auto_validation: true
-tags: [tutorial>intermediate, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform
+tags: [tutorial>intermediate, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
 ---
 
 
@@ -16,9 +16,9 @@ primary_tag: products>sap-cloud-platform
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Sign up for Account on SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step 1: ](Sign up for Account on SAP Business Technology Platform (BTP))]
 
-Sign up for a Free Developer Account on the [SAP Cloud Platform](https://hcp.sap.com/try.html).
+Sign up for a Free Developer Account on the [SAP BTP](https://hcp.sap.com/try.html).
 
 [DONE]
 [ACCORDION-END]
@@ -53,7 +53,7 @@ Install [Eclipse Oxygen IDE](https://www.eclipse.org/oxygen).
 
 [ACCORDION-BEGIN [Step 5: ](Install SAP Development Tools)]
 
-Follow the instructions how to install [Install SAP Development Tools for Eclipse Oxygen](https://help.hana.ondemand.com/help/frameset.htm?76137a37711e1014839a8273b0e91070.html).
+Follow the instructions how to install [Install SAP Development Tools for Eclipse](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/76137a37711e1014839a8273b0e91070.html).
 
 [DONE]
 [ACCORDION-END]

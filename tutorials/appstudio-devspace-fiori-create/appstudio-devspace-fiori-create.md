@@ -21,36 +21,18 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open SAP Business Application Studio)]
-1. Go to your [SAP BTP Trial](https://account.hanatrial.ondemand.com) account and log in to your SAP BTP cockpit.
+[ACCORDION-BEGIN [Step 1: ](Create a preconfigured SAP Fiori dev space)]
 
-2. You might be asked to accept the legal terms. Check the box and click **Accept**.
+1. Access SAP Business Application Studio, and choose **Create Dev Space** in the welcome page or dev space manager.
 
-    !![BTPlegalterms](BTP-Terms-.png)
+    >Welcome page for SAP Business Application Studio:
 
-3. Click **SAP Business Application Studio** to launch SAP Business Application Studio.
+    >!![sap business application studio welcome](BAS-Welcome-.png)
 
-    !![launch sap business application studio](BTP-Access-AppStudio-.png)
-
-4. You might be asked to accept the legal terms. Check the box and click **OK**.
-
-    !![legalterms](AppStudio-Terms-.png)
-
-5. A new tab opens. If you have not created a dev space, the welcome page for SAP Business Application Studio loads.
-
-    !![sap business application studio welcome](BAS_Welcome-.png)
-
-    >If this is not the first dev space, the dev space manager for SAP Business Application Studio loads.
+    <br>
+    >Dev space manager for SAP Business Application Studio:
 
     >!![Create Dev Space](BAS-Dev-Space-Manager-Empty-.png)
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Create a preconfigured SAP Fiori dev space)]
-
-1. Choose **Create Dev Space** in the welcome page or dev space manager.
 
 2. Enter `Demo_Fiori` for your dev space **name**.
 
@@ -67,7 +49,7 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Open the SAP Fiori dev space)]
+[ACCORDION-BEGIN [Step 2: ](Open the SAP Fiori dev space)]
 
 1. **Click** the name of the dev space you created.
 
