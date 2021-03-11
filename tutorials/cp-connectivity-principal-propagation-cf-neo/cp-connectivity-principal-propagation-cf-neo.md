@@ -2,8 +2,8 @@
 title: Configure Principal Propagation from SAP BTP, Cloud Foundry environment to SAP BTP, Neo environment
 description: Set up principal propagation in SAP BTP so that you can deploy a SAP BTP, Cloud Foundry environment application that consumes data from a SAP BTP, Neo environment application.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>intermediate, products>sap-cloud-platform, products>sap-cloud-platform-connectivity ]
+primary_tag: products>sap-business-technology-platform
+tags: [  tutorial>intermediate, products>sap-business-technology-platform, products>sap-connectivity-service, tutorial>license ]
 time: 45
 ---
 

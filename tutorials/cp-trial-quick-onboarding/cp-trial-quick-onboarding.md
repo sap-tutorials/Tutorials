@@ -1,5 +1,5 @@
 ---
-title: Get Started with SAP BTP Trial
+title: Take a Tour of SAP BTP Trial
 description: Get familiar with the SAP Business Technology Platform basics to make the most of your trial experience.
 auto_validation: true
 time: 10
