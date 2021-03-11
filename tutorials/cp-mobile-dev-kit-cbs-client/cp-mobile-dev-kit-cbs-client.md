@@ -342,9 +342,9 @@ You can install this new custom MDK client app either by scanning QR code from i
 
 [OPTION END]
 
-**Congratulations!** You have successfully built Your Mobile Development Kit Client Using Cloud Build Service and you are now all set to [Enable Push Notifications in Your Branded MDK Client](cp-mobile-dev-kit-push-customclient).
+Congratulations, you have successfully built Your Mobile Development Kit Client Using Cloud Build Service and and you can continue with the remaining tutorials in this mission.
 
-[DONE]
+[VALIDATE_4]
 [ACCORDION-END]
 
 
