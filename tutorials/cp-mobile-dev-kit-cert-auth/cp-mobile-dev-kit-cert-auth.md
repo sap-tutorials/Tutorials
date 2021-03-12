@@ -113,27 +113,27 @@ Make sure that you have already completed steps 1 & 2 from [this](cp-mobile-dev-
     To find the correct URLs for your client, you should navigate to  [Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and find your MDK application that you want to link to this client.
 
 
-    4.1. Click `com.sap.mdk.certs` > **Security** tab.
+5. Click `com.sap.mdk.certs` > **Security** tab.
 
     Copy the Client ID, Redirect URL, OAuth Authorisation & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
 
     !![MDK](img-3.5.png)
 
-    4.2 `AppId`: App ID from `Info` tab.
+6. `AppId`: App ID from `Info` tab.
 
     !![MDK](img-3.6.png)
 
-    4.3 `SapCloudPlatformEndpoint`: Server URL from `APIs` tab.
+7. `SapCloudPlatformEndpoint`: Server URL from `APIs` tab.
 
     !![MDK](img-3.7.png)   
 
-5. Add `mdkclient://oauth2redirect` in the `URLWhitelist` property.
+8. Add `mdkclient://oauth2redirect` in the `URLWhitelist` property.
 
     !![MDK](img-3.8.1.png)
 
     >If you are connecting to `AliCloud` accounts, you will also need to add your custom domains under the same `URLWhitelist` property. You can find more details in [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#connection-settings-allowlist).     
 
-6. In the last section of `BrandedSettings.json` file, make these changes:
+9. In the last section of `BrandedSettings.json` file, make these changes:
 
     | Field | Value |
     |----|----|
@@ -178,27 +178,27 @@ Make sure that you have already completed steps 1 & 2 from [this](cp-mobile-dev-
 
     To find the correct URLs for your client, you should navigate to  [Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and find your MDK application that you want to link to this client.
 
-    4.1 Click `com.sap.mdk.certs` > **Security** tab.
+5. Click `com.sap.mdk.certs` > **Security** tab.
 
     Copy the Client ID, Redirect URL, OAuth Authorisation & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
 
     !![MDK](img-3.5.png)
 
-    4.2 `AppId`: App ID from `Info` tab.
+6. `AppId`: App ID from `Info` tab.
 
     !![MDK](img-3.6.png)
 
-    4.3 `SapCloudPlatformEndpoint`: Server URL from `APIs` tab.
+7. `SapCloudPlatformEndpoint`: Server URL from `APIs` tab.
 
     !![MDK](img-3.7.png)           
 
-5. Add `mdkclient://oauth2redirect` in the `URLWhitelist` property.
+8. Add `mdkclient://oauth2redirect` in the `URLWhitelist` property.
 
     !![MDK](img-3.8.1.png)
 
     >If you are connecting to `AliCloud` accounts, you will also need to add your custom domains under the same `URLWhitelist` property. You can find more details in [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#connection-settings-allowlist).   
 
-6. In the last section of `BrandedSettings.json` file, make these changes:
+9. In the last section of `BrandedSettings.json` file, make these changes:
 
     | Field | Value |
     |----|----|
