@@ -52,7 +52,7 @@ To create a queue, click on **Create Queue**.
 
 Enter the name of the queue. For example, queue `salesorder`.
 
-  ![Create a Queue](create-queue.png)
+  ![Create a Queue](create-queue.PNG)
 
 > The name of the queue has to follow the pattern you specified in the (JSON) descriptor when you created the SAP Event Mesh service instance. Choose the **View Rules** tab, to see the rules that must be followed when you enter the queue name. As shown in the screenshot below, the **View Rules** tab provides the following information for the instance:
 >
