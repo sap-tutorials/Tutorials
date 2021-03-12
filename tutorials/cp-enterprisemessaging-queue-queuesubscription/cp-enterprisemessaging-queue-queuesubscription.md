@@ -34,7 +34,7 @@ Queues and queue subscriptions are the core of asynchronous messaging. Messages 
 6. It will open the SAP Event Mesh Management Dashboard screen  **Overview** tab.
 
 
-    ![Management Dashboard Message Client Overview](em-instance-overview.png)
+    ![Management Dashboard Message Client Overview](em-overview.PNG)
 
 [DONE]
 [ACCORDION-END]
