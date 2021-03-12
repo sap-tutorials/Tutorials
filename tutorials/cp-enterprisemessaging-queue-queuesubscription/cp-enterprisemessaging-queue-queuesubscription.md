@@ -26,7 +26,7 @@ Queues and queue subscriptions are the core of asynchronous messaging. Messages 
 
 4. Click on **Go to Application**.
 
-    ![Service Instance](subaccount-em.png)
+    ![Service Instance](LandingPage-MgmtDashboard.png)
 
     It opens the SAP Eventing Mesh management dashboard screen. The management dashboard allows you to manage different messaging clients as shown below.
 
