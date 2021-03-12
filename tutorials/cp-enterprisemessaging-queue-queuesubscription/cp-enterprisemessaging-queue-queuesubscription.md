@@ -34,7 +34,7 @@ Queues and queue subscriptions are the core of asynchronous messaging. Messages 
 6. It will open the SAP Event Mesh Management Dashboard screen  **Overview** tab.
 
 
-    ![Management Dashboard Message Client Overview](em-overview.PNG)
+    ![Management Dashboard Message Client Overview](em-overview.png)
 
 [DONE]
 [ACCORDION-END]
@@ -48,11 +48,11 @@ On the Management Dashboard, you can create a queue to work with SAP Event Mesh.
 
 To create a queue, click on **Create Queue**.
 
-  ![Create a Queue Option](create-queue-option.PNG)
+  ![Create a Queue Option](create-queue-option.png)
 
 Enter the name of the queue. For example, queue `salesorder`.
 
-  ![Create a Queue](create-queue.PNG)
+  ![Create a Queue](create-queue.png)
 
 > The name of the queue has to follow the pattern you specified in the (JSON) descriptor when you created the SAP Event Mesh service instance. Choose the **View Rules** tab, to see the rules that must be followed when you enter the queue name. As shown in the screenshot below, the **View Rules** tab provides the following information for the instance:
 >
@@ -79,7 +79,7 @@ On the **Queues** tab, you can view
 
 For the `salesorder` queue you've created in the example, the values are displayed as below:
 
-![Queue Details](ems-queues-tab.PNG)
+![Queue Details](ems-queue-tab.png)
 
 
 If you want to delete the `salesorder` queue, you can delete the queue using **delete a queue** icon.
