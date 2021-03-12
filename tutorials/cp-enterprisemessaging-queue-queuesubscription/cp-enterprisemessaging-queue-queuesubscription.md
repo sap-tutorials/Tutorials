@@ -18,7 +18,7 @@ Queues and queue subscriptions are the core of asynchronous messaging. Messages 
 
 [ACCORDION-BEGIN [Step 1: ](Open management dashboard)]
 
-1. Open the SAP Event Mesh Management Dashboard.
+1. Open the SAP BTP Cockpit.
 
 2. Click on the **Subscriptions** menu.
 
@@ -26,7 +26,7 @@ Queues and queue subscriptions are the core of asynchronous messaging. Messages 
 
 4. Click on **Go to Application**.
 
-    ![Service Instance](subaccount-em.PNG)
+    ![Service Instance](subaccount-em.png)
 
     It opens the SAP Eventing Mesh management dashboard screen. The management dashboard allows you to manage different messaging clients as shown below.
 
