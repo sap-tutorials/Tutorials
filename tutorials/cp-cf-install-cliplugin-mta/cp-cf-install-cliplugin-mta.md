@@ -13,7 +13,6 @@ primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
   - How to install a Cloud Foundry CLI plugin
   - How to use the [MTA (aka MultiApps) plugin](https://github.com/cloudfoundry-incubator/multiapps-cli-plugin)
 
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Verify that the Cloud Foundry CLI is installed)]
@@ -26,7 +25,7 @@ cf --version
 Now you should see the release number of the CLI you are using.
 
 
-> You can go to [this tutorial](https://developers.sap.com/tutorials/cp-cf-download-cli.html) to install the Cloud Foundry CLI if necessary
+> You can go to [this tutorial](cp-cf-download-cli) to install the Cloud Foundry CLI if necessary
 
 
 [DONE]
