@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Cloud, Create a User Interface with the SAP Cloud Application Programming Model
-description: Use services based on CAP Node.js and use an SAP Fiori wizard to create a user interface
+title: Create a User Interface with CAP (SAP HANA Cloud)
+description: Use services based on SAP Cloud Application Programming Model Node.js and use an SAP Fiori wizard to create a user interface.
 time: 20
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -9,13 +9,13 @@ primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
- - This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition
+ - This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition.
  - You have created database artifacts and loaded data as explained in [the previous tutorial](hana-cloud-cap-create-database-cds).
 
 
 ## Details
 ### You will learn
- - How to create a Fiori freestyle web interface
+ - How to create an SAP Fiori freestyle web interface
  - How to configure the `approuter`
 
 
