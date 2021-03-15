@@ -85,7 +85,7 @@ Make sure that you have already completed steps 1 & 2 from [this](cp-mobile-dev-
 
     !![MDK](img-3.1.png)
 
-    It is recommended that you copy this folder to another location so that you can to use it for future builds. Copy and paste it anywhere, and then rename template to `MDKCertApp.mdkproject`.
+    It is recommended that you copy this folder to another location so that you can to use it for future builds. Copy and paste it anywhere, and then rename the template to `MDKCertApp.mdkproject`.
 
     !![MDK](img-3.1.1.png)
 
@@ -163,7 +163,7 @@ Make sure that you have already completed steps 1 & 2 from [this](cp-mobile-dev-
 
     !![MDK](img-3.3.png)
 
-    >`AppName`: Provide a name for example: `MDKCertApp`. It is the name of the application on the home screen of the device and it is also be the name of the folder where the client is created.
+    >`AppName`: Provide a name for example: `MDKCertApp`. It is the name of the application on the home screen of the device and it is also the name of the folder where the client is created.
 
     >`BundleID`: It should be a unique identifier for your application.  This controls if the client can be installed side by side with other applications on the device.  Two applications with the same Bundle ID cannot be installed at the same time on a device. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
 

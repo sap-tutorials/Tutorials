@@ -168,7 +168,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img-3.3.png)
 
-    >`AppName`: Provide a name for example: `DemoSampleApp`. It is the name of the application on the home screen of the device and it is also be the name of the folder where the client is created.
+    >`AppName`: Provide a name for example: `DemoSampleApp`. It is the name of the application on the home screen of the device and it is also the name of the folder where the client is created.
 
     >`BundleID`: It should be a unique identifier for your application.  This controls if the client can be installed side by side with other applications on the device.  Two applications with the same Bundle ID cannot be installed at the same time on a device.  For iOS this is the Identifier `(AppID)` that is registered in Apple Developer account since that determines if the application can be installed alongside other applications. If the `XCode` project is set up to use _Automatically manage signing_ then when building, `XCode` will automatically generate a signing profile for the specified bundle id. Without matching them, trying to run the custom client in iOS device will result in failure. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
 
@@ -226,7 +226,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img-3.png)
 
-    It is recommended that you copy this folder to another location so that you can to use it for future builds. Copy and paste it anywhere, and then rename template to `DemoSampleApp.mdkproject`.
+    It is recommended that you copy this folder to another location so that you can to use it for future builds. Copy and paste it anywhere, and then rename the template to `DemoSampleApp.mdkproject`.
 
     !![MDK](img-3.2.1.png)
 
@@ -368,7 +368,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img_5.3.png)
 
-    >To run the MDK client on Android emulator, you need to use `tns run android --emulator` command. Before trying to launch the client on Android emulator, make sure that you have already configured a virtual device (Android Studio>AVD Manager). Otherwise, you may get error like No emulator image available for device identifier.
+    >To run the MDK client on Android emulator, you need to use `tns run android --emulator` command. Before trying to launch the client on Android emulator, make sure that you have already configured a virtual device (Android Studio>AVD Manager). Otherwise, you may get an error like No emulator image available for device identifier.
 
     Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
 
