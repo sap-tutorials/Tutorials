@@ -3,7 +3,7 @@ title: Add Basic Logging to Your Node.js App
 description: Modify your Node.js app to add some basic logging, and learn to access the logs via the Cloud Foundry command line interface.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform, topic>node-js ]
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, topic>node-js ]
 time: 10
 ---
 
@@ -13,7 +13,7 @@ time: 10
 ## Details
 ### You will learn  
   - How to add basic logging to an application
-  - Different ways to access SAP Cloud Platform Cloud Foundry application logs
+  - Different ways to access SAP Business Technology Platform, Cloud Foundry environment application logs
   - Additional Cloud Foundry CLI commands
 
 ---
@@ -42,7 +42,7 @@ app.listen(port, function () {
 
 You added two additional logging statements. The first one logs the time whenever the endpoint is accessed. The second one informs about which Node.js version is used when the web server is started.
 
-> The version of Node.js that is used by SAP Cloud Platform Cloud Foundry can differ from the one that is used locally. The `package.json` file doesn't specify which `engine.version` (i.e. version of node ) SAP Cloud Platform Cloud Foundry should use. Therefore, SAP Cloud Platform Cloud Foundry uses a default version. Step 4 will show the logged out and the version which is actually used by Cloud Foundry. For more information about the usage of `engine.version`, refer to [Cloud Foundry documentation](https://docs.cloudfoundry.org/buildpacks/node/index.html).
+> The version of Node.js that is used by SAP BTP, Cloud Foundry environment can differ from the one that is used locally. The `package.json` file doesn't specify which `engine.version` (i.e. version of node ) SAP BTP, Cloud Foundry environment should use. Therefore, SAP BTP, Cloud Foundry environment uses a default version. Step 4 will show the logged out and the version which is actually used by Cloud Foundry. For more information about the usage of `engine.version`, refer to [Cloud Foundry documentation](https://docs.cloudfoundry.org/buildpacks/node/index.html).
 
 [DONE]
 
@@ -50,7 +50,7 @@ You added two additional logging statements. The first one logs the time wheneve
 
 [ACCORDION-BEGIN [Step 2: ](Delete the existing application)]
 
-It's not necessary to delete a application before you re-deploy it to SAP Cloud Platform Cloud Foundry. But at some point in time it might be useful to know this command. Please be aware that the logs will also be removed when you delete an app.
+It's not necessary to delete a application before you re-deploy it to SAP BTP, Cloud Foundry environment. But at some point in time it might be useful to know this command. Please be aware that the logs will also be removed when you delete an app.
 
 To delete the app, execute the following command:
 

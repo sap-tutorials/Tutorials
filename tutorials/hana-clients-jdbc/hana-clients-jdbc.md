@@ -14,6 +14,7 @@ primary_tag: products>sap-hana
 ### You will learn
   - How to install Java
   - How to create and debug a Java application that queries a SAP HANA database
+  - How to connect to SAP HANA in `DBeaver` using the SAP HANA JDBC driver
 
 [Java Database Connectivity](https://en.wikipedia.org/wiki/Java_Database_Connectivity) (JDBC) provides an [API](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) for accessing databases from Java.  An application written to the JDBC standard can be ported to other databases.  Database vendors provide JDBC drivers for their database products.
 
@@ -106,8 +107,11 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
 
     ```Java
     import java.sql.*;
+    import com.sap.db.jdbc.Driver;
     public class JavaQuery {
         public static void main(String[] argv) {
+            System.out.println("Java version: " + com.sap.db.jdbc.Driver.getJavaVersion());
+            System.out.println("Minimum supported Java version and SAP driver version number: " + com.sap.db.jdbc.Driver.getVersionInfo());
             Connection connection = null;
             try {  
                 connection = DriverManager.getConnection(  
@@ -153,9 +157,14 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
 
 3. Compile the `.java` file into a `.class` file using the following command:
 
-    ```Shell
-    javac JavaQuery.java
-    ```
+    ```Shell (Microsoft Windows)
+    javac -cp C:\SAP\hdbclient\ngdbc.jar;. JavaQuery.java
+    ```  
+
+    ```Shell (Linux or Mac)
+    javac -cp ~/sap/hdbclient/ngdbc.jar:. JavaQuery.java
+    ```  
+
 
 4. Run `JavaQuery.class` and indicate where the SAP HANA JDBC driver is located.  Note that the host, port, UID and PWD will be retrieved from the `hdbuserstore`.
 
@@ -170,6 +179,8 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
     ![Java Query](java-query.png)
 
 See [JDBC Connection Options in Java Code](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/1c86038c05464d31a7dcae14f2d8a7dd.html) for additional details on the `getConnection` method of the `DriverManager`.  
+
+See [Connect to SAP HANA Cloud via JDBC](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/2020_04_QRC/en-US/030a162d380b4ec0bc6a284954c8256d.html) for additional details on the certificate used during the connection.
 
 
 [DONE]
@@ -202,57 +213,44 @@ Eclipse is a popular integrated development environment (IDE) for Java applicati
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 5: ](Browse SAP HANA using DBeaver)]
+`DBeaver` is free and open source database tool and can be used with the SAP HANA JDBC driver.
 
-[ACCORDION-BEGIN [Step 5: ](Browse SAP HANA using Eclipse Data Tools)]
+The following steps demonstrate how to configure it to connect to SAP HANA Cloud or SAP HANA, express edition using the JDBC driver.
 
-The Eclipse IDE for Enterprise Java Developers includes a database source explorer that can be configured with a JDBC driver.  The version of Eclipse can be confirmed by selecting **Help | About Eclipse IDE**.
+1. [Download](https://dbeaver.io/download/) and install the community edition of `DBeaver`.
 
-![Eclipse for Enterprise Java Developers](EclipseForEnterprise.png)
+    ![Install DBeaver](dbeaver-install1.png)
 
-The following steps demonstrate how to configure it to enable connections to SAP HANA.
+2. Create a new SAP HANA database connection.
 
+    ![New Connection](dbeaver-connect1.png)
 
-1. Open the Data Source Explorer by choosing **Window | Show View | Other | Data Management | Data Source Explorer**
+    Specify the connection type and fill in the host and port.
 
-    ![Data Source Explorer](data-explorer.png)
+    ![Connection Settings](dbeaver-connect2.png)
 
-2. Create a connection profile for SAP HANA.
+    Click on **Connection details** to specify the connection name.
 
-    ![Data Source](datasource1.png)
+    ![Connection Details](dbeaver-connect4.png)
 
-3. Select **New Driver Definition**.
+    Click on **Edit Driver Settings** and choose to download the latest HANA JDBC driver.
 
-    ![edit definition](editDefinition.png)
+    ![Driver Settings](dbeaver-connect3.png)
 
-4. Specify where to find the SAP HANA JDBC driver.  
+3. After finishing the wizard, the catalog of the database can be viewed and SQL statements can be executed.
 
-    ![Data Source](datasource2.png)
+    ![Query](dbeaver-query1.png)
 
-5. Specify the driver class name as `com.sap.db.jdbc.Driver` and the Connection URL.  
+    `DBeaver` also has the ability to view an entity relationship (ER) diagram, perform a comparison of two selected objects, import/export wizards, a spatial view for data containing location data, and two panels to aid in data analysis (grouping and `calc` panels).
 
-    ```Java
-    jdbc:sap://dummy_host:0/?KEY=USER1UserKey&encrypt=true&validateCertificate=false
-    ```
-
-    ![Data Source](datasource3.png)
-
-    Validate the settings by selecting `Test Connection` before finishing the wizard.
-
-6. Browse the database catalog and execute SQL queries.
-
-    ![Results from Data Source Explorer](results-from-data-source-explorer.png)
-
-    >To execute SQL queries in eclipse, open SQL Scrapbook. SQL Scrapbook is similar to a SQL command line and allows you to query tables from inside eclipse.
-
-    >It can be opened by selecting the SQL Scrapbook icon from the right corner of the Data Source Explorer window.
-
-    >![Link text e.g., Destination screen](SQL_Scrapbook.png)
-
-
-Congratulations! You have now created and debugged a Java application that connects to and queries an SAP HANA database.
+Congratulations! You have now created and debugged a Java application that connects to and queries an SAP HANA database and used the JDBC driver in a third party tool.
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+
+
 
 
 

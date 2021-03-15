@@ -3,7 +3,7 @@ title: Upload Data to Data Attribute Recommendation
 description: Upload a dataset to your Data Attribute Recommendation service instance to afterwards be able to train your machine learning model.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
@@ -28,7 +28,7 @@ To communicate with your service instance, you need to retrieve an OAuth access 
 
 **Open** Postman and make sure that your `Data Attribute Recommendation environment` is selected. For detailed steps, see [Set Up Postman Environment and Collection to call Data Attribute Recommendation APIs](cp-aibus-dar-setup-postman).
 
-On the left, expand the `Data Attribute Recommendation collection` and open the subfolder `Setup`. In this folder, select the request, `Get Authorization`.
+On the left, expand the `Data Attribute Recommendation collection` and open the subfolder `Setup`. In this folder, select the request, `Get Authorization`. 
 
 Click **Send** to send the request to your service instance.
 

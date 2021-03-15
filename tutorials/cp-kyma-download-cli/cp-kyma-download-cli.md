@@ -1,10 +1,10 @@
 ---
 title: Install the Kubernetes Command Line Tool
-description: Download and install kubectl - the Kubernetes command line tool which allows access to the SAP Cloud Platform Kyma runtime via the command line.
+description: Download and install kubectl - the Kubernetes command line tool which allows access to the SAP BTP, Kyma runtime via the command line.
 time: 15
 auto_validation: true
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform\, kyma-runtime
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform]
+primary_tag: products>sap-btp\\, kyma-runtime
 ---
 
 
@@ -55,7 +55,7 @@ This should return a list of version properties, for example:
 
 [ACCORDION-BEGIN [Step 3: ](Download the Kyma runtime kubeconfig)]
 
-The `kubectl` tool relies on configuration file called the `kubeconfig`, to configure access to the cluster. This step details how this can be obtained for the Kyma runtime Console UI. Please note that the `kubeconfig` has an expiration and will have to be re-download once it expires.   
+The `kubectl` tool relies on configuration file called the `kubeconfig`, to configure access to the cluster. This step details how this can be obtained for the Kyma runtime Console UI. Please note that the `kubeconfig` has an expiration of eight hours and will have to be re-download once it expires.   
 
 1. Navigate to the Console UI of your Kyma runtime.
 
@@ -92,7 +92,7 @@ The `kubectl` tool relies on configuration file called the `kubeconfig`, to conf
     |-------|----|-------|--------|---------|
     |*      | `c-#######.kyma.shoot.live.k8s-hana.ondemand.com`|`c--#######.kyma.shoot.live.k8s-hana.ondemand.com`|`OIDCUser`| |
 
-3. You are now set up to use the Kyma runtime on SAP Cloud Platform.
+3. You are now set up to use the Kyma runtime on SAP BTP Platform.
 
 > For more information on `kubectl`, visit the Kubernetes [overview](https://kubernetes.io/docs/reference/kubectl/overview/) and [kubectl-commands](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands) websites.
 

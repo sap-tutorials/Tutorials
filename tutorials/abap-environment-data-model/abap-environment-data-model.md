@@ -2,16 +2,15 @@
 auto_validation: true
 title: Define and Expose a CDS-Based Travel Data Model
 description: Define CDS-based data model and create projection view.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
 time: 20
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- You have created an SAP Cloud Platform ABAP environment trial user or
-- You have created a developer user in an SAP Cloud Platform ABAP Environment system.
+- You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - You have downloaded Eclipse Photon or Oxygen and installed ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
 
 ## Details
@@ -24,6 +23,9 @@ author_profile: https://github.com/mervey45
 In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 ---
+
+>**If you also want to deploy your SAP Fiori application, please finish this tutorial first and then continue with**
+[ Develop a Fiori App Using the ABAP RESTful Application Programming Model (Managed Scenario)](https://developers.sap.com/group.abap-env-restful-managed.html) **starting with following tutorial** [Create Behavior Definition for Managed Scenario](https://developers.sap.com/tutorials/abap-environment-behavior.html).
 
 [ACCORDION-BEGIN [Step 1: ](Define CDS-based travel data model)]
   1. Right-click on your package `ZTRAVEL_APP_XXX`, select **New** > **Other ABAP Repository Object**.
@@ -311,7 +313,13 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 
 [ACCORDION-BEGIN [Step 5: ](Test yourself)]
+Where can you open your SAP Fiori Elements App Preview?
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+
+>**If you want to deploy your SAP Fiori application, please continue with**
+[ Develop a Fiori App Using the ABAP RESTful Application Programming Model (Managed Scenario)](https://developers.sap.com/group.abap-env-restful-managed.html) **starting with following tutorial** [Create Behavior Definition for Managed Scenario](https://developers.sap.com/tutorials/abap-environment-behavior.html).
+
 ---

@@ -3,7 +3,7 @@ title: Use Machine Learning to Extract Information from Documents with Swagger U
 description: Get machine learning model predictions for the documents you upload to Document Information Extraction.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
@@ -23,7 +23,7 @@ You will use Swagger UI, via any web browser, to call the Document Information E
 
 In the service key you created for Document Information Extraction in the previous tutorial: [Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key), you should find (outside the `uaa` section of the service key) an entry called `url` and another entry called `swagger` (as highlighted in the image below).
 
-1. To access the Document Information Extraction Swagger UI, add the `swagger` value (**`/document-information-extraction/v1`**) to the `url` value, paste it in any web browser and press **Enter**.
+1. To access the Document Information Extraction Swagger UI, add the `swagger` value (`/document-information-extraction/v1`) to the `url` value, paste it in any web browser and press **Enter**.
 
     !![DOX](png-files/service-key-details.png)
 

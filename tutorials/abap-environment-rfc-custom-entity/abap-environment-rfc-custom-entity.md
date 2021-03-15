@@ -3,15 +3,17 @@ title: Get Data from a Remote System Using a Custom Entity
 description: Get data from an on-Premise System Using RFC, by Implementing a Custom Entity in ABAP Environment
 auto_validation: true
 time: 45
-tags: [ tutorial>advanced, topic>cloud, topic>abap-development, products>sap-cloud-platform, topic>abap-connectivity,tutorial>license]
-primary_tag: products>sap-cloud-platform--abap-environment
+tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
+primary_tag: topic>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
 - You have done one of the following:
-    - Created an entitlement to [SAP Cloud Platform, ABAP Environment, Trial Version](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/)
-    - Created an entitlement to [SAP Cloud Platform, ABAP Environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d60#14a68d825.html), customer licensed version
-- **IMPORTANT**: If you are using the licensed version, then this tutorial is part of the mission [Connect Your On-Premise System with SAP Cloud Platform, ABAP Environment](https://developers.sap.com/mission.abap-env-connect-onpremise.html). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work. If you are using the trial version, we have provided mock data inside the class.
+    - Created an entitlement to [SAP Business Technology Platform, ABAP Environment, Trial Version](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/)
+    - Created an entitlement to [SAP Business Technology Platform, ABAP Environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d60#14a68d825.html), customer licensed version
+- **IMPORTANT**: If you are using the licensed version, then this tutorial is part of the mission [Connect Your On-Premise System with SAP BTP, ABAP Environment](mission.abap-env-connect-onpremise). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work. If you are using the trial version, we have provided mock data inside the class.
 
 
 ## Details
@@ -107,7 +109,7 @@ Add the following annotation to the view (immediately after the '@EndUserText.la
 
 2. Add the header information to the view, after the `@QueryImplementedBy` annotation.
 For more information on the UI Annotations used here, see
-[SAP Help Portal: SAP Cloud Platform: ABAP RESTful PM: Defining UI Annotations](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/fd95e7c9905e469bb176217f49e15e71.html)
+[SAP Help Portal: SAP BTP: ABAP RESTful PM: Defining UI Annotations](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/fd95e7c9905e469bb176217f49e15e71.html)
 
     ```CDS
 
@@ -205,7 +207,7 @@ Go back to the class.
 
     ```
 
-2. Create a variable, `lv_abap_trial`. **If** you are using the full version of SAP Cloud Platform, ABAP Environment, set it to **false**, otherwise **true**.
+2. Create a variable, `lv_abap_trial`. **If** you are using the full version of SAP BTP, ABAP Environment, set it to **false**, otherwise **true**.
 
     ```ABAP
 
@@ -542,7 +544,7 @@ The console output should look like this:
 
 - [Implement a custom entity in the ABAP RESTful Programming Model using RFC](https://blogs.sap.com/2019/03/01/how-to-implement-a-custom-entity-in-the-abap-restful-programming-model-using-remote-function-modules/) - includes handling a single record, filtering, and ordering
 
-- [Insert test data into tables in SAP Cloud Platform, ABAP Environment](https://blogs.sap.com/2019/09/30/how-to-insert-test-data-into-tables-in-sap-cloud-platform-abap-environment/)
+- [Insert test data into tables in SAP BTP, ABAP Environment](https://blogs.sap.com/2019/09/30/how-to-insert-test-data-into-tables-in-sap-cloud-platform-abap-environment/)
 
-- [Call a remote OData service from the trial version of SAP Cloud Platform ABAP environment](https://blogs.sap.com/2019/10/20/how-to-call-a-remote-odata-service-from-the-trial-version-of-sap-cloud-platform-abap-environment/)
+- [Call a remote OData service from the trial version of SAP BTP ABAP environment](https://blogs.sap.com/2019/10/20/how-to-call-a-remote-odata-service-from-the-trial-version-of-sap-cloud-platform-abap-environment/)
 ---

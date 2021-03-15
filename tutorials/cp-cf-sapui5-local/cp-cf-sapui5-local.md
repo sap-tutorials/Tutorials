@@ -12,7 +12,7 @@ primary_tag: topic>sapui5
   - How to scaffold an SAPUI5 project
   - How to leverage the ui5-tooling to test the app locally
   - How to build a multi-target application archive archive
-  - How to deploy a SAPUI5 web-app to Cloud Foundry
+  - How to deploy a SAPUI5 web-app to SAP BTP, Cloud Foundry environment
 
 ---
 
@@ -94,7 +94,7 @@ npm run build:mta
 
 [ACCORDION-BEGIN [Step 5: ](Deploy the MTA archive)]
 
-Next, we deploy the generated archive and track the deployment progress in the terminal with the following command.
+Next, we deploy the generated archive to SAP BTP, Cloud Foundry environment. Trigger the deployment and track the deployment progress in the terminal with the following command.
 
 ```Bash
 cf deploy mta_archives/myUI5App_0.0.1.mtar

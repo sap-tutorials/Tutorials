@@ -1,9 +1,9 @@
 ---
-title: Create a Destination within the Cloud Foundry Environment
-description: Create a destination within the SAP Cloud Platform Cloud Foundry Environment to allow access to the Northwind OData services.
+title: Create a Destination in the SAP BTP Cockpit
+description: Create a destination in the SAP BTP cockpit to allow application access to the Northwind OData services.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
-tags: [ products>sap-cloud-platform, topic>cloud, topic>mobile, topic>odata, tutorial>beginner  ]
+primary_tag: products>sap-business-technology-platform
+tags: [ tutorial>beginner, topic>odata, software-product-function>sap-btp-cockpit ]
 time: 5
 ---
 
@@ -13,7 +13,7 @@ time: 5
 - What some of the additional properties are for
 - How to specify the SAP Business Application Studio usage parameter for a generic OData service
 
-Destinations are key building blocks in SAP Cloud Platform, and are used to define connections for outbound communication from your application to remote systems. These remote systems can be on-premises or in the cloud.
+Destinations are key building blocks in SAP BTP, and are used to define connections for outbound communication from your application to remote systems. These remote systems can be on-premises or in the cloud.
 
 A destination has a name, a URL, authentication details, and some other configuration details.
 
@@ -26,12 +26,13 @@ The Northwind OData services comes in several versions.  The tutorials currently
 
 [ACCORDION-BEGIN [Step : ](Enter your trial account)]
 
-Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit. Click the **Enter Your Trial Account** button.
+Go to <https://account.hanatrial.ondemand.com> and log in to your SAP BTP cockpit. Click the **Enter Your Trial Account** button.
 
-!![SAP Cloud Platform log in page](./scp-trial-logon.png)
+!![SAP BTP log in page](./btp-trial-logon.png)
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step : ](Access your subaccount)]
 
 Click on the tile of your Cloud Foundry subaccount.
@@ -40,6 +41,7 @@ Click on the tile of your Cloud Foundry subaccount.
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step : ](Open the Destinations view)]
 
 Click on the **Destinations** button on the left panel and click **New Destination** to open a new destination configuration form.
@@ -48,9 +50,8 @@ Click on the **Destinations** button on the left panel and click **New Destinati
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step : ](Create new destination)]
-
-
 Enter/confirm all fields in the destination configuration section with the information below and confirm with **Save**.
 
 Field Name     | Value

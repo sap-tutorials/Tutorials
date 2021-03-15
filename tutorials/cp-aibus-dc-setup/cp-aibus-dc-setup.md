@@ -3,7 +3,7 @@ title: Set Up Jupyter Notebook and Client Library for Document Classification
 description: Set up a local JupyterLab instance as well as the Jupyter Notebook and the client library for Document Classification.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
+tags: [ tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
 primary_tag: topic>machine-learning
 ---
 
@@ -34,7 +34,7 @@ To verify the installation, search for `Anaconda Prompt` in your programs and op
 
 [OPTION BEGIN [Mac and Linux]]
 
-To verify the installation, open a new Terminal or Command Prompt. In the command prompt, enter `conda --version` and the version is printed as in the image below.
+To verify the installation, open a new Terminal or Command Prompt. In the command prompt, enter `conda --version` and the version is printed as in the image below. 
 
 [OPTION END]
 

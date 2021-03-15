@@ -4,14 +4,14 @@ description: Understand what CoreML is and how it works.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>ios-sdk-for-sap-btp ]
 time: 5
 ---
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0 or newer
+- **SAP SDK for iOS:** Version 5.0 or newer
 
 ## Details
 ### You will learn  
@@ -49,7 +49,7 @@ Core ML is not only available for iOS but also for all the other great operating
 
 What benefits do you get by using Machine Learning on device? - If you're using Core ML and import pre-trained Machine Learning models into your app you can spare the Request-Response Roundtrip to the Cloud, which gives you low-latency and Real-Time predictions. It also gives you a great deal of user privacy because the user's data will never leave the device at any time. Your on-device model will also never stop learning and gets smarter and smarter the more the user uses it. It will also learn only on the specific users data which allows it to be suited for each and every user independently.
 
-You can use different tools to train your model, there is a whole market out there for you to use. As an SAP developer using the SAP Cloud Platform Leonardo would be the recommended way to train your model, it gives you a whole lot of pre-trained models already and also makes it easy for you to train it directly in the cloud and export it to the Core ML format to use it on your Apple device.
+You can use different tools to train your model, there is a whole market out there for you to use. As an SAP developer using SAP owned machine learning platform would be the recommended way to train your model, it gives you a whole lot of pre-trained models already and also makes it easy for you to train it directly in the cloud and export it to the Core ML format to use it on your Apple device.
 
 Using Apple's Vision framework and NLP (Natural Language Processing) API together with Core ML is a way to go for you as an iOS developer. The Vision framework allows you to perform face, landmark, text, barcode recognition and detection as also image registration, and feature tracking. Use the Vision framework to pipeline those information from your mobile device to your Core ML model to solve your computer vision problems.
 

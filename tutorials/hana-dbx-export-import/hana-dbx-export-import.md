@@ -13,9 +13,9 @@ primary_tag: products>sap-hana-cloud
 
 ## Details
 ### You will learn
-  - How to export and import data using the export and import data wizards, SQL commands export into and import from, and the download option in the SQL console results tab
+  - How to export and import data using the export and import data wizards, SQL statements export into and import from, and the download option in the SQL console results tab
   - How to import `ESRI shapefiles` using the import data wizard
-  - How to export and import schema objects using export and import catalog wizards and the SQL commands export and import
+  - How to export and import schema objects using export and import catalog wizards and the SQL statements export and import
   - How to use cloud storage providers as a target when exporting or importing
 
 The following steps will demonstrate a few ways to export and import data such as the contents of tables or views as well how to export and import database schema.  
@@ -39,7 +39,7 @@ Methods to import into tables
 
 | Method  | Version       | Source          | Format(s)       | Notes |
 | ------- | -------------|------------------------| ----------------| ------------|
-| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | All    | local computer         | CSV             | 2 GB max, 1 MB per col |
+| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | All    | local computer         | CSV             | 1 GB max, 2 MB per row in SAP HANA Cloud, HANA database; 200 MB max SAP HANA on-premise |
 | [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA Cloud, HANA database    | S3, Azure, Alibaba OSS | CSV, Parquet    | |
 | [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)    | SAP HANA Cloud, HANA database   | local computer         | `ESRI shapefiles` | Archive must be a tar.gz |
 | [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA on-premise    | SAP HANA file system         | CSV             | Target table can be created |
@@ -99,7 +99,7 @@ The following steps will attempt to demonstrate some of these options.
 
     ![Export Data Wizard](exportDataWizard.png)
 
-    It can be used to export data to cloud storage providers such as Amazon S3, Microsoft Azure, and Alibaba Cloud OSS.  Additionally, the SAP Cloud Platform offers an [object store](https://help.sap.com/viewer/product/ObjectStore/Cloud/en-US).  A detailed example of the setup and usage of a cloud storage provider will be provided in Step 5 of this tutorial.
+    It can be used to export data to cloud storage providers such as Amazon S3, Microsoft Azure, and Alibaba Cloud OSS.  Additionally, the SAP BTP offers an [object store](https://help.sap.com/viewer/product/ObjectStore/Cloud/en-US).  A detailed example of the setup and usage of a cloud storage provider will be provided in Step 5 of this tutorial.
 
     ![Export Data Wizard](exportDataWizard2.png)
 
@@ -116,17 +116,17 @@ The following steps will attempt to demonstrate some of these options.
     The wizard makes use of the import from statement.  An example is shown below:
 
     ```SQL
-    DELETE FROM hotel.maintenance;
-    IMPORT FROM PARQUET FILE 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance.parquet' INTO HOTEL.MAINTENANCE;
+    DELETE FROM HOTEL.MAINTENANCE;
+    IMPORT FROM PARQUET FILE 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance.parquet' INTO HOTEL.MAINTENANCE WITH ERROR LOG 'error_log.txt' FAIL ON INVALID DATA;
     ```
 
-3. With SAP HANA, express edition, the following commands can be executed to export and import from a directory on the SAP HANA filesystem assuming that the directory exists and the user `hxeadm` has permission to access it.
+3. With SAP HANA, express edition, the following statements can be executed to export and import from a directory on the SAP HANA filesystem assuming that the directory exists and the user `hxeadm` has permission to access it.
 
     ```SQL
-    EXPORT INTO '/tmp/export/maintenance.csv' FROM hotel.maintenance WITH COLUMN LIST IN FIRST ROW;
-    DELETE FROM hotel.maintenance;
+    EXPORT INTO '/tmp/export/maintenance.csv' FROM HOTEL.MAINTENANCE WITH COLUMN LIST IN FIRST ROW;
+    DELETE FROM HOTEL.MAINTENANCE;
     ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'system') set ('import_export', 'csv_import_path_filter') = '/tmp/export' WITH RECONFIGURE;
-    IMPORT FROM CSV FILE '/tmp/export/maintenance.csv' INTO hotel.maintenance WITH COLUMN LIST IN FIRST ROW ERROR LOG 'error_log.txt';
+    IMPORT FROM CSV FILE '/tmp/export/maintenance.csv' INTO HOTEL.MAINTENANCE WITH COLUMN LIST IN FIRST ROW ERROR LOG 'error_log.txt' FAIL ON INVALID DATA;
     ```
 
 [DONE]
@@ -148,7 +148,7 @@ This step will import an `ESRI shapefile` containing points of interest near the
 
 2. Choose to download the data as a `shapefile`.
 
-    ![download shapefile](download_shapefile.png)
+    ![download shapefile](download-shapefile.png)
 
 3. Unzip the downloaded file to a temporary directory and then convert the extracted contents to a tar.gz.
 
@@ -195,10 +195,10 @@ Methods to export catalog objects
 
 | Method                  | Version | Target                             | Format(s)                             | Limitations |
 | ------------------------|---------|-------------------------------|---------------------------------------|-------------|
-| [Export catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/1f20a6c4364c4b0680596e74e4ba281d.html) | All | Local computer | CSV, Binary, \*Parquet | 2 GB max, \*\* |
+| [Export catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/1f20a6c4364c4b0680596e74e4ba281d.html) | All | Local computer | CSV, Binary, \*Parquet | 2 GB max |
 | [Export catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/1f20a6c4364c4b0680596e74e4ba281d.html)  | SAP HANA Cloud, HANA database | S3, Azure, Alibaba OSS | CSV, Binary, Parquet | \*\* |
 | [Export catalog wizard](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/1f20a6c4364c4b0680596e74e4ba281d.html)  | SAP HANA on-premise | SAP HANA file system | CSV, Binary | \*\* |
-| [Export statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA Cloud, HANA database  | S3, Azure, Alibaba OSS                 | CSV, Binary, Parquet |  |
+| [Export statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA Cloud, HANA database  | S3, Azure, Alibaba OSS                 | CSV, Binary, Parquet | ** |
 | [Export statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA on-premise     | HANA file system                 | CSV, Binary data | \*\* |
 
 
@@ -206,10 +206,10 @@ Methods to import catalog objects
 
 | Method                  | Version | Source                             | Format(s)                             | Limitations |
 | ------------------------|---------|-------------------------------|---------------------------------------|-------------|
-| [Import catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/80f63855e7854cd3a6144e0021b5f748.html) | All  | Local computer | CSV, Binary   | 2 GB max, \*\* |
+| [Import catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/80f63855e7854cd3a6144e0021b5f748.html) | All  | Local computer | CSV, Binary   | 2 GB max |
 | [Import catalog wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/80f63855e7854cd3a6144e0021b5f748.html)  | SAP HANA Cloud, HANA database  | S3, Azure, Alibaba OSS  | CSV, Binary, Parquet                          | \*\* |
 | [Import catalog wizard](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/80f63855e7854cd3a6144e0021b5f748.html)  | SAP HANA on-premise | SAP HANA file system | CSV, Binary                | 2 GB max per object,  \*\* |
-| [Import statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html) | SAP HANA Cloud, HANA database | S3, Azure, Alibaba OSS                 | CSV, Binary,  Parquet                          | \*\* |
+| [Import statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f75ade751910148492a90e5e375b8f.html) | SAP HANA Cloud, HANA database | S3, Azure, Alibaba OSS                 | CSV, Binary,  Parquet                          | \*\* |
 | [Import statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f75ade751910148492a90e5e375b8f.html) | SAP HANA on-premise | SAP HANA file system       | CSV, Binary                        | \*\* |
 
 > \* SAP HANA Cloud, HANA database only
@@ -345,7 +345,7 @@ R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp-----END CERTIFICATE-----' COMMENT 'Azure';
 
     ![Viewing the results](exportResult.png)
 
-    The equivalent command using the SQL statement export is shown below:
+    The equivalent SQL statement is shown below:
 
     ```SQL
     EXPORT HOTEL.MAINTENANCE AS PARQUET INTO 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance' WITH REPLACE;
@@ -363,11 +363,13 @@ R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp-----END CERTIFICATE-----' COMMENT 'Azure';
 
     The contents of the maintenance table should now be the same as it was before the previously executed drop statement.
 
-    The equivalent command using SQL the statement import is shown below:
+    The equivalent SQL statement is shown below:
 
     ```SQL
     IMPORT HOTEL.MAINTENANCE FROM 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance' WITH REPLACE;
     ```
+
+    For additional details see the topic [Importing and Exporting Data](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/261937915fa5438ca545b8278b2979b7.html) in the SAP HANA Cloud Administration Guide.
 
 Congratulations! You have imported and exported data and catalog objects as well as imported an `ESRI shapefile`.
 

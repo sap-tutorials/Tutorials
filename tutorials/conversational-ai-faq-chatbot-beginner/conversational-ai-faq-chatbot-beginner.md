@@ -3,7 +3,7 @@ title: Build Your First FAQ Chatbot
 description: Using SAP Conversational AI, build a chatbot designed to help users find answers to questions, based on a set of questions and answers uploaded in a CSV file.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 

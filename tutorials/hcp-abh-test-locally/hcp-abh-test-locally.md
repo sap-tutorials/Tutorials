@@ -1,12 +1,12 @@
 ---
-title: Testing API Business Hub APIs with Curl
+title: Test SAP API Business Hub APIs with Curl
 description: Try out an SAP API locally on your machine.
 primary_tag: products>sap-cloud-platform
 auto_validation: false
 author_name: Marius Obert
 author_profile: https://github.com/IObert
 time: 20
-tags: [  tutorial>beginner, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, topic>sap-api-business-hub ]
 ---
 
 ## Prerequisites  
@@ -16,6 +16,8 @@ tags: [  tutorial>beginner, products>sap-cloud-platform ]
 
 ## Details
 ### You will learn  
+- How to use command line tools like Curl and jq to test REST APIs locally
+
 You have already discovered what the API Business Hub is and learned how to test it on the website. In this tutorial, you will learn how to use command line tools like Curl and jq to test REST APIs locally on your machine.
 
 ---

@@ -3,7 +3,7 @@ title: Use Machine Learning to Extract Information from Documents with Document 
 description: Get machine learning model predictions for the documents you upload using the Document Information Extraction Trial UI.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
@@ -36,7 +36,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     !![DOX-UI-App](png-files/app.png)
 
-2. In the top right, click **+** (Upload a new document).
+2. In the top right, click **+** (Upload a new document). 
 
     !![DOX-UI-App](png-files/upload.png)
 
@@ -58,7 +58,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
 7. Review your selection. Click **Edit** if you want to change anything. Click **Confirm**.
 
-    !![DOX-UI-App](png-files\review.jpg)
+    !![DOX-UI-App](png-files/review.jpg)
 
     You see the Document Name, Upload Date and Status of the documents you have just uploaded.
 
@@ -108,7 +108,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
 4. Click **+** to insert one empty line item row at the bottom.
 
-    !![DOX-UI-App](png-files\edit-2.jpg)
+    !![DOX-UI-App](png-files/edit-2.jpg)
 
 5. Select values in the document page preview, one each time, to **Assign Field** by choosing in the dropdown list the Field name. Add or change the extraction Value if necessary. Click **Apply** to add the selected field into the Header Fields or Line Items extraction results.
 

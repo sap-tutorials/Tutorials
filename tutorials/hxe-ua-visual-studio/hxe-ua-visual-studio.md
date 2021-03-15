@@ -38,7 +38,7 @@ For more information, visit the [Microsoft Visual Studio](https://www.visualstud
 
 [ACCORDION-BEGIN [Step 2: ](Download the SAP HANA, express edition Download Manager )]
 
-You can download the SAP HANA plugin for Microsoft Visual Studio 2017 by downloading the SAP HANA, express edition download manager. Go to the [SAP HANA](https://developers.sap.com/topics/sap-hana.html) homepage and click **Install SAP HANA, express edition**.
+You can download the SAP HANA plugin for Microsoft Visual Studio 2017 by downloading the SAP HANA, express edition download manager. Go to the [SAP HANA](https://developers.sap.com/topics/hana.html) homepage and click **Install SAP HANA, express edition**.
 
 Enter your information and click **Register**.
 

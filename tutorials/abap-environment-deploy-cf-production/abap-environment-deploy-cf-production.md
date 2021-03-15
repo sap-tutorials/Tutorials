@@ -2,16 +2,22 @@
 auto_validation: true
 title: Develop and Run SAP Fiori Application With SAP Business Application Studio
 description: Develop and run your SAP Fiori application with SAP Business Application Studio
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, products>sap-business-application-studio ]
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, products>sap-business-application-studio ]
 time: 25
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- You need a SAP Cloud Platform ABAP Environment trial user or a license.
-- In a licensed system, the business catalog `SAP_A4C_BC_DEV_UID_PC` (Development - UI Deployment) needs to be assigned to a business role of the developer user. For an existing ABAP systems, the business catalog needs to be added manually to the existing developer business role.
+- **Trial:** You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
+- **Licensed system:**
+    - The business catalog `SAP_A4C_BC_DEV_UID_PC` (Development - UI Deployment) needs to be assigned to a business role of the developer user. For an existing ABAP systems, the business catalog needs to be added manually to the existing developer business role.
+    - You need to be a member at the used global account​
+    - You need to be an organization manager at the used Cloud Foundry subaccount
+    - You need to be a security administrator at the used Cloud Foundry Subaccount​
+    - The SAP Business Application Studio and the SAP BTP, ABAP environment instance should be under same subaccount.
+
 
 
 ## Details
@@ -28,7 +34,7 @@ author_profile: https://github.com/mervey45
 ---
 [ACCORDION-BEGIN [Step 1: ](Assign role collection to user)]
 
-  1. Login to [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
+  1. Login to [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
 
       ![assign role collection](bas1.png)
 
@@ -36,41 +42,25 @@ author_profile: https://github.com/mervey45
 
       ![assign role collection](bas2.png)
 
-  3. Select **Subscriptions** and click **SAP Business Application Studio**.
-
-      ![assign role collection](bas21.png)
-
-  4. Click **Subscribe**. You have now subscribed the SAP Business Application Studio and can assign the corresponding role to your user.
-
-      ![assign role collection](bas22.png)
-
-  5. Click **trial**.
-
-      ![assign role collection](trial.png)
-
-  6. Click **Trust Configuration** to set up your trust.
+  3. Click **Trust Configuration** and select **Default identity provider** to set up your trust.
 
       ![assign role collection](bas3.png)
 
       HINT: If you are using a licensed system, make sure you have the trust administrator role assigned to your user.
 
-  7. Select **Default identity provider**.
-
-      ![assign role collection](bas4.png)
-
-  8. Enter your e-mail address and click **Show Assignments**.
+  4. Enter your e-mail address and click **Show Assignments**.
 
       ![assign role collection](bas5.png)
 
-  9. Click **Assign Role Collection** .
+  5. Click **Assign Role Collection** .
 
       ![assign role collection](bas6.png)
 
- 10. Select **`Business_Application_Studio_Developer`** and click **Assign Role Collection**.
+  6. Select **`Business_Application_Studio_Developer`** and click **Assign Role Collection**.
 
       ![assign role collection](bas7.png)
 
- 11. Check your result. Now your user should have the **`Business_Application_Studio_Developer`** role collection assigned.
+  7. Check your result. Now your user should have the **`Business_Application_Studio_Developer`** role collection assigned.
 
       ![assign role collection](bas8.png)
 
@@ -82,28 +72,31 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 2: ](Create dev space)]
 
-  1.  Select **trial** > **Subscriptions** > **SAP Business Application Studio** and click **Go to Application**.
+  1.  Select **trial** > **Service Marketplace**. Search for **SAP Business Application Studio** and select it.
 
       ![dev](studio.png)
 
-  2.  Check the privacy statement and click **OK**.
+  2.  Select actions and click **Go to Application**.
+
+      ![dev](studio212.png)
+
+  3.  Check the privacy statement and click **OK**.
 
       ![dev](studio2.png)
 
-  3. Now the SAP Business Application Studio has started. Click **Create Dev Space**.
+  4. Now the SAP Business Application Studio has started. Click **Create Dev Space**.
 
       ![dev](studio3.png)
 
-  4. Create a new dev space:
+  5. Create a new dev space:
        - Name: **Fiori**
        - Type: **SAP Fiori**
-       - Additional SAP Extensions: **Launchpad Module**
 
        Click **Create Dev Space**.
 
      ![dev](studio4.png)
 
-  5. When your status is **Running**, select your dev space **Fiori**.
+  6. When your status is **Running**, select your dev space **Fiori**.
 
       ![dev](studio5.png)
 
@@ -113,7 +106,7 @@ author_profile: https://github.com/mervey45
 [ACCORDION-BEGIN [Step 3: ](Set up organization and space)]
 
   1. Now you are in your **Fiori** dev space in SAP Business Application Studio.
-     Select **Open Workspace** to set your workspace.
+     Select **Open Folder** to set your workspace.
 
       ![organization](studio6.png)
 
@@ -153,9 +146,9 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 4: ](Create list report object page)]
 
-  1. Select **Start from Template**.
+  1. Select **Start from template**.
 
-    ![object](template.png)
+    ![object](studiotemplate.png)
 
   2. Select **SAP Fiori elements application** and click **Start >**.
 
@@ -167,9 +160,9 @@ author_profile: https://github.com/mervey45
 
   4. Configure data source, system and service:
      - Data source: **Connect to an SAP System**
-     - System: **`ABAP Environment on SAP Cloud Platform`**
+     - System: **`ABAP Environment on SAP Business Technology Platform`**
      - ABAP Environment: **`default_abap-trial`**
-     - Service: **`ZUI_C_TRAVEL_M_XXX(1) - odata v2`**
+     - Service: **`ZUI_C_TRAVEL_M_XXX(1) - OData v2`**
 
      ![object](studio19.png)
 
@@ -181,7 +174,7 @@ author_profile: https://github.com/mervey45
 
     ![object](studio20.png)
 
-  6. Configure project attributes:
+  6. Configure project attributes:  
      - Name: **`ztravel_app_xxx`**
      - Title: **Travel App XXX**
      - Description: **A Fiori application.**
@@ -197,37 +190,21 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 5: ](Run SAP Fiori application for data preview)]
 
-  1. Close the wizard.
-
-      ![run](studio22.png)
-
-  2. Press the run button on the left side and select the **`Start ztravel_app_xxx`** run button to start your SAP Fiori application.
+  1. Press the run button on the left side and select the **`Start ztravel_app_xxx`** run button to start your SAP Fiori application.
 
       ![run](studio24.png)
 
       HINT: An alternative to run the application is to open the terminal and enter: `npm start`.
 
-  3. Click **Open in New Tab**.
+  2. Click **Open**.
 
       ![run](studio25.png)
 
-  4. Select **`test/`**.
-
-      ![run](studio27.png)
-
-  5. Select **`flpSandbox.html`**.
-
-      ![run](studio28.png)
-
-  6. Now your SAP Fiori application runs. Select your application **Travel App XXX**.
-
-      ![run](studio29.png)
-
-  8. Click **Go** to see your result.
+  3. Click **Go** to see your result.
 
       ![run](studio30.png)
 
-  9. Check your result.
+  4. Check your result.
 
      ![run](studio31.png)
 
@@ -260,11 +237,13 @@ author_profile: https://github.com/mervey45
      Add following information:
 
       - Please choose the target: ABAP
-      - Is this an SAP Cloud Platform system?: Y
+      - Is this an SAP Business Technology Platform system?: Y
       - Destination: press enter for default
+      - Is this an S/4 Cloud system? N
       - Name: press enter for default
       - Package: **`ztravel_app_xxx`**
       - Transport Request: **`<your_transport_request>`**
+      - Deployment description: `deployment xxx`
 
       ![deploy](deploy4.png)
 
@@ -405,6 +384,7 @@ author_profile: https://github.com/mervey45
 
 
 [ACCORDION-BEGIN [Step 10: ](Test yourself)]
+Which main entity do you need to select in order to create your list report object page?
 
 [VALIDATE_1]
 [ACCORDION-END]

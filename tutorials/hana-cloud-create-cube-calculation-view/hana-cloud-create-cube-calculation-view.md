@@ -1,6 +1,6 @@
 ---
 title: Create a Calculation View of Type Cube in the SAP HANA Cloud
-description: Use SAP Business Application Studio to create a Calculation View
+description: Use SAP Business Application Studio to create a calculation view.
 auto_validation: true
 time: 10
 author_name: Thomas Jung
@@ -17,6 +17,10 @@ primary_tag: products>sap-hana
 ### You will learn
 - How to create a calculation view in SAP Business Application Studio
 - How to join data from another calculation view
+
+A video version of this tutorial is also available:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fwwPcYZb-jQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
