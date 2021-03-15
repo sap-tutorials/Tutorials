@@ -1,6 +1,6 @@
 ---
 title: Set Up the SAP Launchpad Service
-description: To get started with building a launchpad site, you must perform the required onboarding steps.
+description: To get started with building a launchpad site in the SAP Launchpad service, you must perform the required onboarding steps.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-business-technology-platform, products>cloud, products>sap-fiori, products>sap-launchpad-service]
@@ -17,16 +17,16 @@ author_profile: https://github.com/LindsayBert
 ## Details
 ### You will learn
   - How to subscribe to the SAP Launchpad service
-  - How to assign yourself to the `Launchpad_Admin` role so that you can create and manage launchpad sites
+  - How to assign yourself to the `Launchpad_Admin` role so that you can create and manage sites in the SAP Launchpad service
   - How to access the SAP Launchpad service
 
-In this group of tutorials our goal is to create a launchpad site using the SAP Launchpad service. But before we can do this, there are some steps you need to do in the SAP Cloud Platform cockpit.
+In this group of tutorials our goal is to create a launchpad site using the SAP Launchpad service. But before we can do this, there are some steps you'll need to do in the SAP BTP cockpit.
 
-[ACCORDION-BEGIN [Step 1: ](Subscribe to the Launchpad service)]
+[ACCORDION-BEGIN [Step 1: ](Subscribe to the SAP Launchpad service)]
 
 Before you can access the SAP Launchpad service, you first need to subscribe to it.
 
-1. [Log onto SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com) and click **Enter Your Trial Account**.
+1. [Log onto SAP BTP](https://cockpit.hanatrial.ondemand.com) and click **Enter Your Trial Account**.
 
     ![Enter trial account](1_enter_trial_account.png)
 
@@ -39,17 +39,21 @@ Before you can access the SAP Launchpad service, you first need to subscribe to 
     ![Processing](2_Foundation20Onboarding_Processing.png)
 
 
-3. Click the **trial** tile to navigate to your trial subaccount in the SAP Cloud Platform cockpit. If you are using your own subaccount, you can select it instead.
+3. Click the **trial** tile to navigate to your trial subaccount in the SAP BTP cockpit. If you're using your own subaccount, you can select it instead.
 
       ![Open trial account](3_open_subaccount.png)
 
-4. Click **Go to Marketplace**.
+4. Click **Go to Marketplace**. Alternatively, you can navigate to the service marketplace by clicking on the  **Services** menu item and selecting **Service Marketplace**.
+
+    > The Service Marketplace provides you access to all services and applications that you can access from the SAP BTP cockpit.
 
     ![Go to marketplace](4-go-to-marketplace.png)
 
-5. Enter `Launchpad` in the search box and click the **Launchpad** service tile.
+5. Enter `launchpad` in the search box and click the **Launchpad Service** tile.
 
     ![Click Launchpad tile](5-find-launchpad-tile.png)
+
+    >If you aren't able to find the **Launchpad Service** tile, or if you can't access it, you may be using an older trial account. You can easily add it to your account via the **Entitlements** area. Click **Configure Entitlements** and then **Add Service Plans**. Then search for `launchpad`, check the standard plan, and click **Add 1 Service Plan**. Don't forget to save in the next screen.
 
 6. From the **Overview** tab on the right, click the Actions icon (...) and select **Create** in the opened menu to create a new subscription.
 
@@ -65,7 +69,9 @@ Before you can access the SAP Launchpad service, you first need to subscribe to 
 
     ![View subscription](8-view-subscription.png)
 
-9. From the **Instances and Subscriptions** screen, you'll see that you are subscribed to the **SAP Launchpad** service.
+    >This step will redirect you to the **Services** -> **Instances and Subscriptions** screen. This screen provides you with an overview of all services and applications that are currently active.
+
+9. From the **Instances and Subscriptions** screen, you'll see that you are subscribed to the SAP Launchpad service.
 
     ![Subscribed](9-subscribed.png)
 
@@ -76,7 +82,7 @@ Before you can access the SAP Launchpad service, you first need to subscribe to 
 
 [ACCORDION-BEGIN [Step 2: ](Add yourself to the Launchpad_Admin role)]
 
-To be able to access the **SAP Launchpad** service, users must be assigned to the `Launchpad_Admin` role. In this step, you'll assign yourself to the `Launchpad_Admin` role so that you can later create launchpad sites.
+To be able to access the **SAP Launchpad** service, users must be assigned to the `Launchpad_Admin` role. In this step, you'll assign yourself to this role so that you can access the service and create a launchpad site.
 
 
 1. Click **Security > Trust Configuration** from the side menu.
@@ -99,15 +105,15 @@ To be able to access the **SAP Launchpad** service, users must be assigned to th
 
     ![Assign Launchpad Admin](14-assign-launchpad-admin.png)
 
-You have now been assigned to the `Launchpad_Admin` role and you can access the **SAP Launchpad** service and carry out all your admin tasks.
+You have now been assigned to the `Launchpad_Admin` role and you can access the SAP Launchpad service and carry out all your admin tasks.
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Access the Launchpad service)]
+[ACCORDION-BEGIN [Step 3: ](Access the SAP Launchpad service)]
 
-You are now ready to access the **SAP Launchpad** service.  
+You are now ready to access the SAP Launchpad service.  
 
 1. Use the breadcrumbs to open your trial account.
 
@@ -117,10 +123,7 @@ You are now ready to access the **SAP Launchpad** service.
 
     ![Go to application](16-go-to-application.png)
 
-
-3. Add your credentials if you are prompted to do so.
-
-   The **SAP Launchpad** service opens with the Site Directory in focus. This is where you'll create and manage your launchpad sites.
+   The SAP Launchpad service opens with the Site Directory in focus. This is where you'll create and manage your launchpad sites.
 
   ![Open Site Directory](17-open-site-directory.png)
 

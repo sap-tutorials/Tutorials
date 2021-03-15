@@ -3,7 +3,7 @@ title: Improve Your Chatbot Accuracy by Monitoring User Activity
 description: Use the analytics features in the Monitor tab to view how users chat with your SAP Conversational AI chatbot, and adjust the way your chatbot responds accordingly.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, products>sap-conversational-ai, topic>machine-learning, topic>artificial-intelligence]
+tags: [ tutorial>intermediate, products>sap-conversational-ai, topic>machine-learning, topic>artificial-intelligence, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
