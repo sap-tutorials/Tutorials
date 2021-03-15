@@ -69,10 +69,10 @@ In SAPUI5, each view is represented by a dedicated file in the `view` folder.
 
 The web app basically contains of the two views we created in the previous step. We want to switch from the list view to the detail view when the user clicks an item, and back to the list when the user clicks the "back" button. To implement this navigation, we need an `<App>` container that includes both view.
 
-**Edit** the original `webapp/webapp/view/View1.view.xml` view to define only this container.
+**Edit** the original `webapp/view/View1.view.xml` view to define only this container.
 
 ```XML[3,4]
-<mvc:View controllerName="sap.cp.webapp.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View controllerName="sap.btp.sapui5.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
 	<Shell id="View1">
 		<App id="app">
 		</App>
@@ -87,7 +87,7 @@ The web app basically contains of the two views we created in the previous step.
 
 In this step we'll define so-called [routes and targets](https://sapui5.hana.ondemand.com/#/topic/3d18f20bd2294228acb6910d8e8a5fb5), which are needed for the automated navigation we want to use. Each route defines a (URL) pattern and the target it points to, and each target specifies the view it refers to.
 
-**Add** the new targets and routes to the existing `webapp/webapp/manifest.json` file.
+**Add** the new targets and routes to the existing `webapp/manifest.json` file.
 
 ```JSON[14-27,36-47]
 {

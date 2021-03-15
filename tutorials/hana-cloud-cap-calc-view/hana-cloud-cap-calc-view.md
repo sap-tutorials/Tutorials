@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Cloud, Create Calculation View and Expose via SAP Cloud Application Programming Model
-description: Learn how to combine HANA native artifacts, like Calculation Views, with SAP Cloud Application Programming Model (CAP)
+title: Create Calculation View and Expose via CAP (SAP HANA Cloud)
+description: Learn how to combine HANA native artifacts, like calculation views, with SAP Cloud Application Programming Model (CAP).
 time: 20
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -9,14 +9,14 @@ primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
-- This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition
+- This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition.
 - You have created database artifacts and loaded data as explained in [the previous tutorial](hana-cloud-cap-create-database-cds).
 
 ## Details
 ### You will learn
-  - The basics of creating HANA Native Artifacts within a Cloud Application Programming Model project
-  - How to create HANA Calculation Views
-  - How to integrate HANA native artifacts, like Calculation Views, within the Cloud Application Programming Model
+- The basics of creating HANA Native Artifacts within a Cloud Application Programming Model project
+- How to create SAP HANA calculation views
+- How to integrate SAP HANA native artifacts, like calculation views, within the SAP Cloud Application Programming Model
 
 With the SAP Cloud Application Programming Model and its implementation of Core Data Services (CDS), we don't  directly import a Calculation View or other native DB artifact. This import, however, is important if you want to expose these artifacts via OData V4 services, since that requires a CDS entity or view.
 
@@ -30,7 +30,7 @@ For more details on this topic, including advanced features such as parameters a
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Calculation View)]
+[ACCORDION-BEGIN [Step 1: ](Create calculation view)]
 
 Calculation Views and other HANA native artifacts allow you to leverage HANA specific features and optimizations that might not otherwise be available at the abstraction layers within the SAP Cloud Application Programming Model. Calculation Views are especially good at aggregation and filtering of large datasets. In this exercise will create a simple join Calculation View based upon or small data set and data model. This is done so we focus on the mechanics of combining HANA native with CAP without needing the typical large data set where the technical advantages of Calculation Views become more apparent.
 
@@ -53,7 +53,7 @@ Calculation Views and other HANA native artifacts allow you to leverage HANA spe
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Model the Join Relationship)]
+[ACCORDION-BEGIN [Step 2: ](Model the join relationship)]
 
 1. Drop a `join` node into the modeling space
 
@@ -123,7 +123,7 @@ Calculation Views and other HANA native artifacts allow you to leverage HANA spe
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Creating Calculation View Proxy Entity)]
+[ACCORDION-BEGIN [Step 3: ](Create calculation view proxy entity)]
 
 We now want to expose our Calculation View to the Cloud Application Programming model by creating a "proxy" entity for the view in the CDS data model.
 
