@@ -18,7 +18,9 @@ primary_tag: products>sap-hana-cloud
  - How to create an SAP Fiori freestyle web interface
  - How to configure the `approuter`
 
+Video tutorial version: </br>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WMDpKa1QkFE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Run the services)]
