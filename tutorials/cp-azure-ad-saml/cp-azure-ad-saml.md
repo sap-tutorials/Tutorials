@@ -3,8 +3,8 @@ title: Integrate Microsoft Azure AD with SAP BTP, Cloud Foundry environment
 description: Configure Microsoft Azure AD as the Identity Provider of your SAP BTP, Cloud Foundry environment subaccount.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform-for-the-cloud-foundry-environment]
-primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-btp--cloud-foundry-environment]
+primary_tag: products>sap-business-technology-platform
 ---
 
 ## Prerequisites

@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Cloud, Add User Authentication to Your Application
-description: Define security and enable user authentication and authorization
+title: Add User Authentication to Your Application (SAP HANA Cloud)
+description: Define security and enable user authentication and authorization for your SAP HANA Cloud CAP application.
 time: 20
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -9,8 +9,8 @@ primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
-- This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition
-- You have created database artifacts, loaded data, and added basic UI as explained in [the previous tutorial](hana-cloud-cap-create-ui)
+- This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition.
+- You have created database artifacts, loaded data, and added basic UI as explained in [the previous tutorial](hana-cloud-cap-create-ui).
 
 ## Details
 ### You will learn
@@ -18,13 +18,16 @@ primary_tag: products>sap-hana-cloud
   - How to incorporate security into the routing endpoint of your application
   - How to configure Cloud Application Programming (CAP) service authentication
 
-We are going to setup production level security using the [User Account and Authentication Services - UAA](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/51ec15a8979e497fbcaadf80da9b63ba.html). By default CAP allows you to mock your security for testing during development. However we also want to teach you how to setup the full production security and test that during development as well.  
+We are going to set up production level security using the [User Account and Authentication Services - UAA](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/51ec15a8979e497fbcaadf80da9b63ba.html). By default CAP allows you to mock your security for testing during development. However we also want to teach you how to setup the full production security and test that during development as well.  
 
 The UAA will provide user identity, as well as assigned roles and user attributes. This is done in the form of a JWT token in the Authorization header of the incoming HTTP request.  We will need the Application Router we added to our application in the last tutorial to perform the redirect to the UAA Login Page and then forward this JWT token to your CAP service. Therefore this will be a multiple step process.
 
+Video tutorial version: </br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AvROFBCEcEc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create XSUAA Configuration)]
+[ACCORDION-BEGIN [Step 1: ](Create XSUAA configuration)]
 
 1. In the previous tutorial, we generated an Application Router into a our project. When we did, the wizard created an xs-security.json file in the root of the project. This file is used during the creation or update of the XSUAA service instance and controls the roles, scopes, attributes and role templates that will be part of the security for your application.  What was generated was a basic version of the xs-security.json that will only require authentication but not specific roles.
 
@@ -61,7 +64,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure the Application)]
+[ACCORDION-BEGIN [Step 2: ](Configure the application)]
 
 1. In the previous tutorial, we used a default-env.json file in the root of the project, to configure the connection to the SAP HANA Cloud database. We will now extend that same file to do the same for the XSUAA instance we just created in the previous step.
 
@@ -122,7 +125,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create and Grant Roles for the Application)]
+[ACCORDION-BEGIN [Step 3: ](Create and grant roles for application)]
 
 1. Before we can test our application, we need to create a role that includes the XSUAA instance details and grant to that our user. We will do this from the SAP Business Technology Platform cockpit. In the cockpit, you set up the roles and role collections and assign the role collections to your users. This brings the necessary authorization information into the JWT token when the user logs on to your application through XSUAA and Application Router.
 
@@ -146,7 +149,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Adjusting the Application Router)]
+[ACCORDION-BEGIN [Step 4: ](Adjust Application Router)]
 
 1. The `approuter` component implements the necessary handshake with XSUAA to let the user log in interactively. The resulting JWT token is sent to the application where it's used to enforce authorization.
 
@@ -209,7 +212,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Testing)]
+[ACCORDION-BEGIN [Step 6: ](Test)]
 
 1. We are assuming you have no services running from previous tutorials. If you do, then please stop them with CTRL+C. From the Terminal in the root of the project, issue the command `npm start` to start the CAP service.
 
