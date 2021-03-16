@@ -24,11 +24,11 @@ primary_tag: products>sap-event-mesh
 
 2. Click on "New" to open a new tab on Postman to work on.
 
-    ![new tab](postman-new-tab.png)
+    ![new tab](postman-new-tab.PNG)
 
 3. Fetch the OAuth2.0 access token to be used for authorization on all subsequent operations in same session
 
-    ![service keys for rest protocol](service-keys-rest.png)
+    ![service keys for rest protocol](service-keys-rest.PNG)
 
 4. Provide the **token endpoint URL** in Postman URL from the **Service Keys** for the protocol type HTTPREST.
 
@@ -44,14 +44,14 @@ primary_tag: products>sap-event-mesh
 
     In the **Headers** tab, enter `Content-Type` as **KEY** and `application/x-www-form-urlencoded` as **VALUE**.
 
-    ![postman headers](postman-header.png)
+    ![postman headers](postman-header.PNG)
 
     In the **Authorization** tab, select the **Type** as `Basic Auth` from the dropdown.
 
       - In **Username**, provide the <`clientid`> value from the **Service Keys** for httprest protocol.
       - In **Password**, provide the <`clientsecret`> value from the **Service Keys** for httprest protocol.
 
-      ![postman authorization](postman-authorization.png)
+      ![postman authorization](postman-authorization.PNG)
 
     Select the **POST** option in **Postman** and click on the **Send** button. You will get the `access_token`.
 
@@ -73,15 +73,15 @@ Open a new tab in the Postman.
     |      x-qos     |                 0 or 1                |
     | authorization  | Bearer <the retrieved `access_token` >|     
 
-    ![postman header for publishing message](postman-post-header.png)
+    ![postman header for publishing message](postman-post-header.PNG)
 
   3. Open the **Authorization** tab and select the **TYPE** as `No Auth`.
 
-    ![postman authorization for publishing message](postman-post-authorization.png)
+    ![postman authorization for publishing message](postman-post-authorization.PNG)
 
   4. Open the **Body** tab and select the type as **raw**. And enter some test message in the body.
 
-    ![postman body for publishing message](Postman-Post-Body.png)
+    ![postman body for publishing message](Postman-Post-Body.PNG)
 
   5. Select the **POST** option in **Postman** and click on the **Send** button. If sending message is successful, you shall get a status as `204 No Content`.
 
@@ -102,11 +102,11 @@ Open a new tab in the Postman.
     |      x-qos     |                 0 or 1                |
     | authorization  | Bearer <the retrieved `access_token` >|     
 
-    ![postman header for publishing message](consumption-header.png)
+    ![postman header for publishing message](consumption-header.PNG)
 
   3. Open the **Authorization** tab and select the TYPE as **No Auth**.
 
-    ![postman authorization for publishing message](consumption-noauth.png)
+    ![postman authorization for publishing message](consumption-noauth.PNG)
 
   4. Open the **Body** tab and select the type as **raw**. And enter some test message in the body.
 
