@@ -18,6 +18,10 @@ primary_tag: products>sap-hana-cloud
   - How to create a service function implemented via an SAP HANA SQLScript stored procedure
   - How to use a CAP service exit to implement the service function
 
+Video tutorial version: </br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wr9KpbqsNpM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create stored procedure)]
