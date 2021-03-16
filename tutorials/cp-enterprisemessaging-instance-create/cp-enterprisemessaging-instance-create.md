@@ -9,7 +9,7 @@ primary_tag: products>sap-event-mesh
 
 ## Prerequisites
 - SAP Business Technology Platform environment with SAP Event Mesh entitlement  
-
+ 
 ## Details
 ### You will learn
   - How to create an SAP Event Mesh service instance
@@ -87,7 +87,7 @@ primary_tag: products>sap-event-mesh
 
     An instance of SAP Event Mesh is created.
 
-    ![SAP Event Mesh Instance](em-instance-creation.png)
+    ![SAP Event Mesh Instance](em-instance-creation.PNG)
 
     >Each Event Mesh instance represents a message client. Each message client has a set of queues and topics to which it is associated. All these queues and topics belonging to one message client are exposed to other message clients using its unique credentials. This entire set of queues and topics within different message clients in a subaccount can send and receive messages or events to each other using the service.  
 
