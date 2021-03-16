@@ -18,6 +18,8 @@ primary_tag: products>sap-hana-cloud
 - How to create an application with the wizard for the Cloud Application Programming model
 - How to use the local Git repository for development/testing purposes
 
+Video version of tutorial: </br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ydDOGz7P--8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create dev space in SAP Business Application Studio)]

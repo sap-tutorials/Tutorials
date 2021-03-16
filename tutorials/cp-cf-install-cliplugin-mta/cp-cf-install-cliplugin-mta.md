@@ -1,10 +1,11 @@
 ---
 title: Install the MultiApps Cloud Foundry CLI Plugin
-description: Download and install the Command Line Interface (CLI) plugin. This plugin allows you to deploy MTA archives from the command line.
+description: Download and install the Command Line Interface (CLI) plugin, which allows you to deploy MTA archives from the command line.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, topic>cloud]
-primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform]
+primary_tag: products>sap-btp--cloud-foundry-environment
+
 ---
 
 ## Details
