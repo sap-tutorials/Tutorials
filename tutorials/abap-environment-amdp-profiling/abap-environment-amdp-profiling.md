@@ -4,7 +4,7 @@ description: Create an AMDP and analyze its runtime performance along with the p
 auto_validation: true
 time: 45
 primary_tag: topic>abap-development
-tags: [  tutorial>intermediate, products>sap-netweaver-7.5, products>sap-cloud-platform, products>sap-cloud-platform--abap-environment ]
+tags: [  tutorial>intermediate, products>sap-netweaver-7.5, products>sap-btp--abap-environment, products>sap-business-technology-platform ]
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 
