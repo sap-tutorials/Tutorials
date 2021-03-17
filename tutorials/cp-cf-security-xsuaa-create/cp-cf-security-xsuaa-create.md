@@ -3,7 +3,7 @@ title: Secure a Basic Node.js App with the Authorization and Trust Management Se
 description: Secure a basic single-tenant Node.js application with the Authorization and Trust Management Service (XSUAA).
 auto_validation: true
 time: 25
-tags: [tutorial>intermediate, topic>node-js, products>sap-cloud-platform]
+tags: [tutorial>intermediate, topic>node-js, products>sap-business-technology-platform]
 primary_tag: topic>security
 author_name: Dominik Nehse
 author_profile: https://github.com/nedo-SAP

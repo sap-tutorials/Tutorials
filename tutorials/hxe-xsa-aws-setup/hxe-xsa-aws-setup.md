@@ -20,7 +20,7 @@ This tutorial will walk you through the setup process of SAP HANA, express editi
 </div>
 &nbsp;
 
-<b><span style="color:red">The server-only image offering specific to AWS is being retired. Please consider using SAP HANA Cloud trial for a cloud based, free experience</span></b>:
+<b><span style="color:red">The server-only image offering specific to AWS is being retired. Please consider using SAP HANA Cloud trial on AWS for a cloud based, free experience</span></b>:
 
  - **[Deploy SAP HANA Cloud trial](hana-cloud-deploying)**
 

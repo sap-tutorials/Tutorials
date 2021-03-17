@@ -18,6 +18,8 @@ primary_tag: products>sap-hana-cloud
 - How to create an application with the wizard for the Cloud Application Programming model
 - How to use the local Git repository for development/testing purposes
 
+Video version of tutorial: </br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ydDOGz7P--8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create dev space in SAP Business Application Studio)]
@@ -240,15 +242,22 @@ We are using several dependent Node.js modules in our project. They are referenc
 
 You will use the local Git repository for basic version management.
 
-1. Click on the **Source Control** icon
+1. If this is the first time you have used Git in this Business Application Studio Dev Space, you need to do some basic configuration. Please open a terminal (Terminal -> New Terminal) and issue the two commands from the command line replacing the values for your email and name with the actual values.
+
+    ```shell
+    git config --global user.email "your@email.com"
+    git config --global user.name "Your Name"
+    ```
+
+2. Click on the **Source Control** icon
 
     !![Source Control](source_control.png)
 
-2. Click on the **Initialize Repository** icon
+3. Click on the **Initialize Repository** icon
 
     !![Initialize Repository](initialize_repository.png)
 
-3. The Source Control panel now shows that it is being managed by Git and changes are being tracked
+4. The Source Control panel now shows that it is being managed by Git and changes are being tracked
 
     !![Source Control: GIT](source_control_git.png)        
 
