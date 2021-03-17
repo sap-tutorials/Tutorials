@@ -86,7 +86,7 @@ Video tutorial version: </br>
 
     ```shell
     cf create-service-key myHANAApp-xsuaa-service default
-    cf service-key MyHANAApp-xsuaa-service default
+    cf service-key myHANAApp-xsuaa-service default
     ```    
 
     !![Create service key](create_service_key.png)
