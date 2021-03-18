@@ -3,7 +3,7 @@ title: Build Your First Chatbot with SAP Conversational AI
 description: Create a simple chatbot that can recognize greetings, understand when asked for a joke, provide a joke, and recognize the user's reaction to the joke.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning ]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
 primary_tag: products>sap-conversational-ai
 ---
 

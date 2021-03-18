@@ -3,8 +3,8 @@ title: Add a New Entitlement to Your Subaccount
 description: Each subaccount in your global SAP BTP account is given a share of the resources through Entitlements. In this tutorial you will add additional entitlements (= resources) to your default subaccount.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
+tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit ]
+primary_tag: products>sap-business-technology-platform
 ---
 
 

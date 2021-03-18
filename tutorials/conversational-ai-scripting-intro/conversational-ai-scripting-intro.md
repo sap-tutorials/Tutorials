@@ -3,7 +3,7 @@ title: Use Scripting to Design a Chatbot Message from an API Response
 description: Create an SAP Conversational AI chatbot for customer ordering by calling an API and using scripting to create a custom message from the response.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-conversational-ai]
+tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 

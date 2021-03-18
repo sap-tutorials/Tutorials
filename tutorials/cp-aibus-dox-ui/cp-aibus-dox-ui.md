@@ -11,7 +11,7 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to use the Document Information Extraction Trial UI to upload new documents
   - How to see and edit the extraction results
-  - How to delete documents 
+  - How to delete documents
 
 The core functionality of Document Information Extraction is to automatically extract structured information from documents using machine learning. When you finish this tutorial, you will get field value predictions for the documents you upload to Document Information Extraction Trial UI.
 
@@ -36,7 +36,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     !![DOX-UI-App](png-files/app.png)
 
-2. In the top right, click **+** (Upload a new document).
+2. In the top right, click **+** (Upload a new document). 
 
     !![DOX-UI-App](png-files/upload.png)
 

@@ -3,12 +3,12 @@ title: Set Up Account for Document Information Extraction and Get Service Key
 description: Get access to the service Swagger UI using a booster in SAP Business Technology Platform (SAP BTP) Trial that automatically creates a service instance, and the associated service key for Document Information Extraction.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
-- You have created a trial account on SAP BTP: [Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
+- You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
 - You have a subaccount and dev space with **Europe (Frankfurt)** or **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## Details
@@ -104,7 +104,7 @@ Do the following to access your service instance and service key, without having
 
     !![Service Key](subaccount.png)
 
-4. Click **Service Instances** on the navigation side bar. You see the service instance you created with the **Set up account for Document Information Extraction** booster.
+4. Click **Instances and Subscriptions** on the navigation side bar. You see the service instance you created with the **Set up account for Document Information Extraction** booster.
 
     !![Service Key](service-instance.png)
 

@@ -2,8 +2,8 @@
 title: Create a Basic Node.js App
 description: Build a basic Node.js app and run it locally on your machine.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner, topic>node-js ]
+primary_tag: products>sap-business-technology-platform
+tags: [ products>sap-business-technology-platform, topic>cloud, tutorial>beginner, topic>node-js ]
 time: 5
 ---
 

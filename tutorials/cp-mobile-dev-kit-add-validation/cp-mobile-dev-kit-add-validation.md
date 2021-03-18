@@ -15,7 +15,6 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
-
 ![MDK](img_1.gif)
 
 [ACCORDION-BEGIN [Step 1: ](Create a validation message)]
@@ -106,7 +105,7 @@ Deploy the updated application to your MDK client.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
-    !![MDK](img_4.1.png)
+    !![MDK](img-4.1.png)
 
 2. Select deploy target as **Mobile & Cloud**.
 

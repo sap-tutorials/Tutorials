@@ -1,32 +1,40 @@
 ---
 auto_validation: true
-title: Create an SAP Cloud Platform ABAP Environment Trial User
-description: Create a trial user and ABAP cloud project with SAP Cloud Platform ABAP environment.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+title: Create an SAP BTP ABAP Environment Trial User
+description: Create a trial user and ABAP cloud project with SAP BTP ABAP environment.
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites
-  - You have read the blog post [It's Trial Time for ABAP in SAP Cloud Platform](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/), including the section "Rules of the Game"
-  - You have created a **trial account on SAP Cloud Platform**:  [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
-  - You have a **subaccount and dev space with Europe (Frankfurt) or US East (VA) as region**
-  - You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
+- You have read the blog post [It's Trial Time for ABAP in SAP Cloud Platform](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/), including the section "Rules of the Game"
+- You have created a **trial account on SAP BTP**:  [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
+- You have a **subaccount and dev space with Europe (Frankfurt) or US East (VA) as region**
+- You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
 
 ## Details
 ### You will learn  
   - How to create a trial user
   - How to create an ABAP Cloud project
 
->You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt) - AWS or US East (VA) -  AWS** as region. The ABAP environment service is currently **not available** for **Singapore - Azure**.
+You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt) - AWS or US East (VA) -  AWS** as region. The ABAP environment service is currently **not available** for **Singapore - Azure**.
+
+This tutorial is part of a 3-part series of SAP BTP, ABAP Environment tutorials, each of which will earn you a badge:
+
+- [Create an SAP BTP ABAP Environment Trial User](mission.abap-env-trial-user)
+
+- [Create and Expose a CDS-Based Data Model With SAP BTP ABAP Environment](mission.cp-starter-extensions-abap)
+
+- [Level Up with SAP BTP, ABAP Environment](mission.abap-env-level-up)
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Start boosters)]
 
-1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP BTP trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
@@ -94,16 +102,20 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 
       ![Create ABAP cloud project](project3.png)
 
-  6. Now you've been authenticated automatically.
-     Provide your credentials if requested.
-     The credentials are the same you used to create your trial account on SAP Cloud Platform.
- 
+  6. Click **Open Logon Page in Browser**.
+
+      ![Create ABAP cloud project](project4.png)
+
+  7. Now you've been authenticated automatically. Provide your credentials if requested. The credentials are the same you used to create your trial account on SAP BTP.
+
+     Go back to ADT.
+
       ![Create ABAP cloud project](project5.png)
 
       Click **Finish**.
 
 
-  7. Your trial system appears on the project explorer.
+  8. Your trial system appears on the project explorer.
 
       ![Create ABAP cloud project](project6.png)
 
@@ -116,12 +128,11 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 [VALIDATE_1]
 [ACCORDION-END]
 
-
-## More Information
-- [SAP Help Portal: Creating Service Instances in Cloud Foundry](https://help.sap.com/viewer/09cc82baadc542a688176dce601398de/Cloud/en-US/6d6846def3c443aa9f83d127353147ce.html)
-- [SAP Help Portal: Creating Service Keys in Cloud Foundry](https://help.sap.com/viewer/09cc82baadc542a688176dce601398de/Cloud/en-US/6fcac08409db4b0f9ad55a6acd4d31c5.html)
 ---
 
+After completing this mission, you might be interested in the next in the series: [Create and Expose a CDS-Based Data Model With SAP BTP ABAP Environment](mission.cp-starter-extensions-abap)
+
+---
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
