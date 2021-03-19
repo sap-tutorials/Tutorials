@@ -18,7 +18,7 @@ Queues and queue subscriptions are the core of asynchronous messaging. Messages 
 
 [ACCORDION-BEGIN [Step 1: ](Open management dashboard)]
 
-1. Open the SAP Event Mesh Management Dashboard.
+1. Open the SAP BTP Cockpit.
 
 2. Click on the **Subscriptions** menu.
 
@@ -26,7 +26,7 @@ Queues and queue subscriptions are the core of asynchronous messaging. Messages 
 
 4. Click on **Go to Application**.
 
-    ![Service Instance](subaccount-em.PNG)
+    ![Service Instance](LandingPage-MgmtDashboard.png)
 
     It opens the SAP Eventing Mesh management dashboard screen. The management dashboard allows you to manage different messaging clients as shown below.
 
@@ -34,7 +34,7 @@ Queues and queue subscriptions are the core of asynchronous messaging. Messages 
 6. It will open the SAP Event Mesh Management Dashboard screen  **Overview** tab.
 
 
-    ![Management Dashboard Message Client Overview](em-instance-overview.png)
+    ![Management Dashboard Message Client Overview](em-overview.PNG)
 
 [DONE]
 [ACCORDION-END]
@@ -52,7 +52,7 @@ To create a queue, click on **Create Queue**.
 
 Enter the name of the queue. For example, queue `salesorder`.
 
-  ![Create a Queue](create-queue.png)
+  ![Create a Queue](create-queue.PNG)
 
 > The name of the queue has to follow the pattern you specified in the (JSON) descriptor when you created the SAP Event Mesh service instance. Choose the **View Rules** tab, to see the rules that must be followed when you enter the queue name. As shown in the screenshot below, the **View Rules** tab provides the following information for the instance:
 >
@@ -65,7 +65,7 @@ Enter the name of the queue. For example, queue `salesorder`.
 In your example, you need to follow following pattern.
 
 
-![View Rules](rules.png)
+![View Rules](rules.PNG)
 
 After the queue has been created, the queue name is appended to the namespace and is displayed on the UI.
 
@@ -79,7 +79,7 @@ On the **Queues** tab, you can view
 
 For the `salesorder` queue you've created in the example, the values are displayed as below:
 
-![Queue Details](ems-queues-tab.PNG)
+![Queue Details](ems-queue-tab.png)
 
 
 If you want to delete the `salesorder` queue, you can delete the queue using **delete a queue** icon.
@@ -106,7 +106,7 @@ In this example, subscribe queue `salesorder` to the `s4hanasalesorder` topic.
 
 Below screen displays how to create a topic and once a topic is created how is it displayed.
 
-![Queue Subscriptions](queue-subscription.png)
+![Queue Subscriptions](queue-subscription.PNG)
 
 >
 1. This queue can only subscribe to topics that follow the rules defined in the service descriptor

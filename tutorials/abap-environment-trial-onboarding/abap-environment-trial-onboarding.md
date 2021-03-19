@@ -10,17 +10,25 @@ author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites
-  - You have read the blog post [It's Trial Time for ABAP in SAP Cloud Platform](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/), including the section "Rules of the Game"
-  - You have created a **trial account on SAP BTP**:  [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
-  - You have a **subaccount and dev space with Europe (Frankfurt) or US East (VA) as region**
-  - You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
+- You have read the blog post [It's Trial Time for ABAP in SAP Cloud Platform](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/), including the section "Rules of the Game"
+- You have created a **trial account on SAP BTP**:  [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
+- You have a **subaccount and dev space with Europe (Frankfurt) or US East (VA) as region**
+- You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
 
 ## Details
 ### You will learn  
   - How to create a trial user
   - How to create an ABAP Cloud project
 
->You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt) - AWS or US East (VA) -  AWS** as region. The ABAP environment service is currently **not available** for **Singapore - Azure**.
+You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt) - AWS or US East (VA) -  AWS** as region. The ABAP environment service is currently **not available** for **Singapore - Azure**.
+
+This tutorial is part of a 3-part series of SAP BTP, ABAP Environment tutorials, each of which will earn you a badge:
+
+- [Create an SAP BTP ABAP Environment Trial User](mission.abap-env-trial-user)
+
+- [Create and Expose a CDS-Based Data Model With SAP BTP ABAP Environment](mission.cp-starter-extensions-abap)
+
+- [Level Up with SAP BTP, ABAP Environment](mission.abap-env-level-up)
 
 ---
 
@@ -120,8 +128,11 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 [VALIDATE_1]
 [ACCORDION-END]
 
+---
 
+After completing this mission, you might be interested in the next in the series: [Create and Expose a CDS-Based Data Model With SAP BTP ABAP Environment](mission.cp-starter-extensions-abap)
 
+---
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 

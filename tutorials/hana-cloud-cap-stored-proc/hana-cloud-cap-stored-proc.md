@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Cloud, Create HANA Store Procedure and Expose as CAP Service Function
-description: Further combine SAP HANA Cloud native artifacts with SAP Cloud Application Programming Model. Expose SQLScript Procedures as Service Functions.
+title: Create HANA Store Procedure and Expose as CAP Service Function (SAP HANA Cloud)
+description: Further combine SAP HANA Cloud native artifacts with the SAP Cloud Application Programming Model (CAP), and expose SQLScript procedures as service functions.
 time: 20
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -9,18 +9,22 @@ primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
-- This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition
+- This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition.
 - You have created database artifacts and loaded data as explained in [the previous tutorial](hana-cloud-cap-calc-view).
 
 ## Details
 ### You will learn
-  - How to create and deploy an SAP HANA Cloud SQLScript Stored Procedure
-  - How to create a service function which is implemented via an SAP HANA SQLScript Stored Procedure.
+  - How to create and deploy an SAP HANA Cloud SQLScript stored procedure
+  - How to create a service function implemented via an SAP HANA SQLScript stored procedure
   - How to use a CAP service exit to implement the service function
+
+Video tutorial version: </br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wr9KpbqsNpM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Stored Procedure)]
+[ACCORDION-BEGIN [Step 1: ](Create stored procedure)]
 
 1. In the `/db/src` folder create a new database artifact named **sleep** of type `hdbprocedure`
 
@@ -65,7 +69,7 @@ primary_tag: products>sap-hana-cloud
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Procedure to CAP Service)]
+[ACCORDION-BEGIN [Step 2: ](Add procedure to CAP service)]
 
 1. Now we want to add this Procedure to the CAP service as a function.  Edit `/srv/interaction_srv.cds`.
 
