@@ -150,7 +150,7 @@ author_profile: https://github.com/mervey45
 
     ![object](studiotemplate.png)
 
-  2. Select **SAP Fiori elements application** and click **Start >**.
+  2. Select **SAP Fiori application** and click **Start >**.
 
     ![object](studio17.png)
 
