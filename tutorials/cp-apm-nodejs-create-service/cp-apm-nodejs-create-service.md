@@ -61,7 +61,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 [ACCORDION-BEGIN [Step 2: ](Install Visual Studio Code extension)]
 
-1. Go to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SAPSE.vscode-cds#overview).
+1. Go to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SAPSE.vscode-cds).
 
 2. Choose **Install**.
 
