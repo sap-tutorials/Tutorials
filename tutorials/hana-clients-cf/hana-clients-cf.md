@@ -14,6 +14,7 @@ primary_tag: products>sap-hana
 ### You will learn
   - How to use the command line interface (CLI) to deploy a Node.js app to Cloud Foundry or XS advanced
   - How to view the logs and enable tracing in the deployed app
+  - How to connect from a Node.js app running in Cloud Foundry to an on-premise SAP HANA instance through the Cloud Connector
 
 In the previous tutorials, applications that queried SAP HANA were run on a local machine.  In this tutorial, a simple application will be run within the SAP BTP which uses Cloud Foundry or within the SAP HANA, express edition which uses XS advanced (and is also based on Cloud Foundry).  
 
@@ -418,11 +419,12 @@ The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f6
         const connJwtToken = await _fetchJwtToken(conSrvCred.token_service_url, conSrvCred.clientid, conSrvCred.clientsecret);
 
         var connOptions = {
-            serverNode: 'v-linux-bj72:39015', //Virtual host specified in the Cloud Connector
+            serverNode: 'v-linux-bj72:39015', // Virtual host specified in the Cloud Connector
             proxyUsername: connJwtToken,
             proxyPort: conSrvCred.onpremise_socks5_proxy_port,
             proxyHostname: conSrvCred.onpremise_proxy_host,
-            //proxyScpAccount: 'myLocID',  //Cloud Connector's locationID if specified in the Cloud Connector
+            //proxyScpAccount: 'myLocID',  // Cloud Connector's location ID if specified in the Cloud Connector
+                                           // A location ID is used when multiple Cloud Connectors are connected to the same subaccount
             UID: 'USER1',
             PWD: 'Password1'
             //traceFile: 'stdout',
