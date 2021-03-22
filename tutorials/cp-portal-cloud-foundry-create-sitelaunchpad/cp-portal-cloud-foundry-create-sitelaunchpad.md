@@ -1,5 +1,5 @@
 ---
-title: Create a Launchpad Site
+title: Create a Launchpad Site Using the SAP Launchpad Service
 description: Create a launchpad site to which you can later add business apps.
 auto_validation: true
 time: 5
@@ -16,13 +16,13 @@ You have subscribed to the SAP Launchpad service and assigned yourself to the `L
 ### You will learn
   - How to create a launchpad site using the SAP Launchpad service.
 
-In this tutorial we'll create a launchpad site for a recruiting company called `JobCore`. We will then add business apps to this site.
+In this tutorial we'll create a launchpad site for a recruiting company called `JobCore`. We'll then add business apps to this site.
 
 [ACCORDION-BEGIN [Step 1: ](Create a site)]
 
-When you access the SAP Launchpad service, the Site Directory is in focus. From here you will create your new site.
+When you access the SAP Launchpad service, the Site Directory is in focus. From here you'll create your new site.
 
-> Note: in the side panel of the SAP Launchpad service, you'll see four tools. The **Site Directory** where you're going to create a new site. All sites that you create will be displayed here. The **Content Manager** where you'll manage cross-site content such as business apps. The **Provider Manager** where you manage content providers. Content providers expose business content that you can integrate into your launchpad sites. The **Settings** screen where you can configure various settings for your subaccount.
+> Note: in the side panel of the SAP Launchpad service, you'll see four tools. The **Site Directory** where you're going to create a new site. All sites that you create will be displayed here. The **Content Manager** where you'll manage cross-site content such as business apps. The **Provider Manager** where you manage content providers. Content providers expose business content that you can integrate into your launchpad sites. The fourth icon opens **Settings** where you can configure various settings related to the SAP Launchpad service.
 
 
 1. Click **Create Site**.

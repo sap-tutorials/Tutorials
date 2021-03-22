@@ -1,6 +1,6 @@
 ---
 title: Add an SAPUI5 App to Your Launchpad Site
-description: Add an existing SAPUI5 app to a launchpad site.
+description: Add an existing SAPUI5 app to a launchpad site in the SAP Launchpad service.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>sapui5, products>sap-business-technology-platform, topic>cloud, products>sap-launchpad-service]
@@ -17,7 +17,7 @@ author_profile: https://github.com/LindsayBert
 ### You will learn
   - How to add an existing SAPUI5 app to your launchpad site
 
-In this tutorial, you'll use the **Content Manager** to add an SAPUI5 to your launchpad site.
+In this tutorial, you'll use the **Content Manager** to add an SAPUI5 app to your launchpad site.
 
 [ACCORDION-BEGIN [Step 1: ](Open Content Manager)]
 
@@ -90,7 +90,7 @@ Click the Content Manager icon in the left side panel to navigate back to the **
 
   !![Go back to Content Manager](6-back-to-content-manager.png)
 
-You can see your app in the list:
+You can see your app in the list of content items:
 
 !![View app in content manager list](7-view-app.png)
 
@@ -148,6 +148,8 @@ This is described in the following steps.
     !![Configure group properties](9-configure-group.png)
 
 4. Click **Save**.
+
+    ![Save group](9a-save-group.png)
 
 [DONE]
 [ACCORDION-END]

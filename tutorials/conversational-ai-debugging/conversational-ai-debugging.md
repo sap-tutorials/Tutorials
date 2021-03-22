@@ -3,7 +3,7 @@ title: Debug Your SAP Conversational AI Chatbot
 description: Use the debugging features of SAP Conversational AI while designing your chatbot to help you fix problems and improve the chatbot.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>machine-learning, topic>artificial-intelligence]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>machine-learning, topic>artificial-intelligence, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 

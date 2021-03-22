@@ -2,8 +2,8 @@
 title: Deploy Your Node.js App with the Cloud Foundry CLI
 description: Prepare your Node.js app to be deployed to the SAP BTP, Cloud Foundry environment with the Cloud Foundry command line interface.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform, topic>node-js ]
+primary_tag: products>sap-business-technology-platform
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment, topic>node-js ]
 time: 5
 ---
 

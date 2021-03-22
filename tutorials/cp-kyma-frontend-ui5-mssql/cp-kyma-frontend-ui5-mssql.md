@@ -159,24 +159,22 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     kubectl -n dev apply -f ./k8s/apirule.yaml
     ```
 
-The `APIRule` creates an endpoint similar to the one below that is used to open the application:
-
->https\://fe-ui5-mssql.\<cluster\>.kyma.shoot.live.k8s-hana.ondemand.com
-
 [VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Open the UI application)]
 
+To access the application we can use the `APIRule` we created in the previous step.
+
 1. Open the Kyma runtime console
 
 2. Choose the `dev` Namespace.
 
-3. From the menu, choose **Configuration > `APIRules`**.
+3. From the menu, choose **Discovery and Network > `APIRules`**.
 
 4. Choose the **Host** entry for the **fe-ui5-mssql** `APIRule` to open the application in the browser. This should be similar to:
 `https://fe-ui5-mssql.*******.kyma.shoot.live.k8s-hana.ondemand.com`
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 ---

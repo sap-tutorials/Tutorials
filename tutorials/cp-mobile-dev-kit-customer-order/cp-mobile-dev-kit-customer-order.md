@@ -392,7 +392,7 @@ Deploy the updated application to your MDK client.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
-    !![MDK](img_9.1.png)
+    !![MDK](img-9.1.png)
 
 2. Select deploy target as **Mobile & Cloud**.
 

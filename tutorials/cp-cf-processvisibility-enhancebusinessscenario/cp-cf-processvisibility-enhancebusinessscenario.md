@@ -3,10 +3,10 @@ title: Enhance Your Visibility Scenario for a Deployed Workflow
 description: Enhance your scenario by adding status, phases, performance indicators, and attributes for the workflow to track and analyze business process.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>cloud]
-primary_tag: products>sap-cloud-platform
-author_name: Deeksha R
-author_profile: https://github.com/Deeksha-R
+tags: [tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
+author_name: Kavya M Gowda
+author_profile: https://github.com/I540620
 ---
 
 ## Prerequisites
@@ -17,8 +17,7 @@ author_profile: https://github.com/Deeksha-R
 -	How to enhance your scenario by adding phases, attributes, and performance indicators
 -	How to activate the scenario
 
-
-By default, a set of performance indicators are generated when you add an SAP Cloud Platform Workflow as a participant. You can view the default status, attributes, actions, and performance indicators using various tabs of the Configure Visibility Scenarios application. You can choose to activate the scenario without enhancing it. Alternatively, you can further enhance the scenario by adding phases, status, calculated attributes, and performance indicators.
+By default, a set of performance indicators are generated when you add a Workflow from SAP Workflow service as a participant. You can view the default status, attributes, actions, and performance indicators using various tabs of the Configure Visibility Scenarios application. You can choose to activate the scenario without enhancing it. Alternatively, you can further enhance the scenario by adding phases, status, calculated attributes, and performance indicators.
 
 [ACCORDION-BEGIN [Step 1: ](Create phases)]
 1. Navigate to the **Phases** tab and choose the **+** icon.
@@ -69,7 +68,7 @@ By default, a set of performance indicators are generated when you add an SAP Cl
 
     !![Add attribute](Config-Step3-attributes2.png)
 
-3. Save the changes.
+3. **Save** the changes.
 
 [DONE]
 [ACCORDION-END]
@@ -95,7 +94,7 @@ By default, a set of performance indicators are generated when you add an SAP Cl
 
     !![Filter details](config-Step4-addPFfilter2.png)
 
-6. Save the changes.
+6. **Save** the changes.
 
 [DONE]
 [ACCORDION-END]
