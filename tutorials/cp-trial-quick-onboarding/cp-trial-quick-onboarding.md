@@ -1,9 +1,9 @@
 ---
-title: Get Started with SAP BTP Trial
+title: Take a Tour of SAP BTP Trial
 description: Get familiar with the SAP Business Technology Platform basics to make the most of your trial experience.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform]
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform]
 primary_tag: products>sap-business-technology-platform
 author_name: Jessica Katz
 author_profile: https://github.com/Jessica-Katz

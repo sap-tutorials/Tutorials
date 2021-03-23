@@ -3,12 +3,12 @@ title: Set Up Account for Service Ticket Intelligence and Download Postman Sampl
 description: Use a booster in SAP Business Technology Platform (SAP BTP) Trial to automatically create a service instance, and download Postman environment and collection JSON sample code files for Service Ticket Intelligence.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
-- You have created a trial account on SAP BTP: [Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
+- You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
 - You have a subaccount and dev space with **Europe (Frankfurt)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## Details
@@ -60,7 +60,7 @@ Now, you will use the **Set up account for Service Ticket Intelligence** booster
 
     >If you have more than one subaccount, the booster will choose automatically the correct subaccount and space, but this will require that you click **Next** twice and **Finish** once, before being able to see the **Success** dialog box.
 
-    !![Postman](booster-success.jpg)
+    !![Postman](booster-success.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -70,7 +70,7 @@ Now, you will use the **Set up account for Service Ticket Intelligence** booster
 
 Download Postman environment and collection sample files. Make a local copy of the files.
 
-!![Postman](booster-success-postman.jpg)
+!![Postman](booster-success-postman.png)
 
 >If you face any issue with the booster **Set up account for Service Ticket Intelligence**, you can alternatively follow the steps in [Create Service Instance for Service Ticket Intelligence](cp-aibus-sti-service-instance) to create the service key for Service Ticket Intelligence manually, and download and edit the Postman environment and collection sample files, as described in [Set Up Postman to Call Service Ticket Intelligence APIs](cp-aibus-sti-setup-postman).
 
