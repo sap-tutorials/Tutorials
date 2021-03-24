@@ -2,13 +2,13 @@
 auto_validation: true
 title: Create and Expose Core Data Services Based on a Database Table
 description: Build a list report app with the ABAP RESTful programming model for SAP Fiori and test your UI for demo usage.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform  ]
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform]
 time: 10
 ---
 
 ## Prerequisites  
-- SAP Cloud Platform ABAP Environment user
+- SAP BTP, ABAP Environment user
 - Business Catalog `SAP_CORE_BC_EXT_TST` assigned to your business user
 - Initial development setup
 
@@ -215,7 +215,7 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
 [DONE]
 [ACCORDION-END]
 
- 
+
 [ACCORDION-BEGIN [Step 5: ](Create service definition)]
   1. Right-click on your data definition **`ZI_BOOKING_XXX`** and select **New Service Definition**
 
