@@ -10,7 +10,8 @@ primary_tag: products>android-sdk-for-sap-btp
 ---
 
 ## Prerequisites
-- You completed [Try Out the SAP Cloud Platform SDK for Android Wizard](cp-sdk-android-wizard-app).
+- You completed [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app).
+- You completed [Offline-Enable Your Android Application](cp-sdk-android-wizard-app-offline).
 
 ## Details
 ### You will learn
@@ -22,7 +23,7 @@ primary_tag: products>android-sdk-for-sap-btp
 
 [ACCORDION-BEGIN [Step 1: ](Intro to Android SDK multi-user feature)]
 
-The Flows component of SAP Android SDK provides the following functions to enable multi-user feature for your application:
+The Flows component of SAP BTP SDK for Android provides the following functions to enable multi-user feature for your application:
 
 - Handle onboarding process for multiple users.
 
@@ -61,7 +62,7 @@ Following cases are not supported in multi-user mode:
     ```
 
     Notice that the setting will only take effect with the very first user onboarding. Once a user is onboarded,  
-    this setting will be saved into local database, all flows afterwards will use the same setting from the database and ignore the one inside **`flowContext`**.
+    this setting will be saved into local database, all flows afterwards will use the same setting from the database and ignore the one inside **`flowContext`**. To change this setting, you need reset application to bring up onboarding process, and the new setting will be updated into local database after onboarding.
 
 4.  Re-run (quit first) the app and notice that the onboarding process is same as single user mode, except that no biometric authentication screen is shown. After onboarding, put the app in background until the unlock screen appears. In multi-user mode, there is a button **SWTICH OR ADD USER** at the bottom of the screen.
 
@@ -109,7 +110,7 @@ Following cases are not supported in multi-user mode:
 
 [OPTION BEGIN [Java]]
 
-1.  For offline application, enable **Allow Upload of Pending Changes from Previous User** option on server side first. Go to the [SAP Cloud Platform Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) and select your application from the application list. Click **Mobile Settings Exchange** in the assigned features list:
+1.  For offline application, enable **Allow Upload of Pending Changes from Previous User** option on server side first. Go to the [SAP Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) and select your application from the application list. Click **Mobile Settings Exchange** in the assigned features list:
 
     !![Cockpit app screen](cockpit-app.png)
 
@@ -132,7 +133,7 @@ Following cases are not supported in multi-user mode:
 
 [OPTION BEGIN [Kotlin]]
 
-1.  For offline application, enable **Allow Upload of Pending Changes from Previous User** option on server side first. Go to the [SAP Cloud Platform Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) and select your application from the application list. Click **Mobile Settings Exchange** in the assigned features list:
+1.  For offline application, enable **Allow Upload of Pending Changes from Previous User** option on server side first. Go to the [SAP Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) and select your application from the application list. Click **Mobile Settings Exchange** in the assigned features list:
 
     !![Cockpit app screen](cockpit-app.png)
 
