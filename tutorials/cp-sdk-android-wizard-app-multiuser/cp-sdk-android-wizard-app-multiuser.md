@@ -91,7 +91,7 @@ Following cases are not supported in multi-user mode:
                     .build()
     ```
 
-    Notice that the setting will only take effect with the very first user onboarding. Once a user is onboarded, this setting will be saved into local database, all flows afterwards will use the same setting from the database and ignore the one inside **`flowContext`**.
+    Notice that the setting will only take effect with the very first user onboarding. Once a user is onboarded, this setting will be saved into local database, all flows afterwards will use the same setting from the database and ignore the one inside **`flowContext`**. To change this setting, you need reset application to bring up onboarding process, and the new setting will be updated into local database after onboarding.
 
 4.  Re-run (quit first) the app and notice that the onboarding process is same as single user mode, except that no biometric authentication screen is shown. After onboarding, put the app in background until the sign in screen appears. In multi-user mode, there is a button **SWTICH OR ADD USER** at the bottom of the screen.
 
