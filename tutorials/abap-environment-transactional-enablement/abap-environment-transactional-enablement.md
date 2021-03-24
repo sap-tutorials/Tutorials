@@ -1,14 +1,16 @@
 ---
 auto_validation: true
 title: Add Transactional Behavior to Your Core Data Services
-description: Create a behavior implementation in SAP Cloud Platform ABAP Environment.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
+description: Create a behavior implementation in SAP BTP, ABAP Environment.
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
 time: 10
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- SAP Cloud Platform ABAP Environment User
+- You need an SAP BTP, ABAP Environment [trial user](abap-environment-trial-onboarding) or a license.
 - Business Catalog `SAP_CORE_BC_EXT_TST` assigned to your business user
 - Initial development setup
 
@@ -19,14 +21,17 @@ time: 10
 
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
+>For the **unmanaged implementation** type, the application developer must implement essential components of the REST contract manually. For the **managed scenario**, all required standard operations (create, update, delete) must only be specified in the behavior definition to obtain a ready-to-run business object.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
   1. Go to your ABAP package created in [Create and Expose a Core Data Services Based on a Database Table](https://developers.sap.com/tutorials/abap-environment-create-cds-view.html) and open your data definition `ZI_BOOKING_XXX` to add following statement:
-  `root`
+  `root`.
 
       ![Open Eclipse](eclipse.png)
+
+      The **root entity** is of particular importance, since it defines the top node in a business object's structure and serves as a representation of the business object.
 
   2. Save and activate.
 
@@ -63,7 +68,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     define behavior for ZI_Booking_xxx alias booking
     lock master
-    etag LastChangedAt
+    etag master LastChangedAt
     {
       create;
       update;

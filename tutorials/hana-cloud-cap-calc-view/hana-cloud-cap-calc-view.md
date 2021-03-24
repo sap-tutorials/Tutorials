@@ -28,6 +28,10 @@ In this exercise, lets see how we can create a calculation view and other artifa
 
 For more details on this topic, including advanced features such as parameters and quoted names, please refer to the online documentation here: [https://cap.cloud.sap/docs/advanced/hana#create-sap-hana-native-object](https://cap.cloud.sap/docs/advanced/hana#create-sap-hana-native-object)
 
+Video tutorial version: </br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Zb_9ccGXIRk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create calculation view)]

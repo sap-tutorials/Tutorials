@@ -56,7 +56,7 @@ Video tutorial version: </br>
 4. Open a terminal and create the XSUAA services instance with the xs-security.json configuration using the following command:
 
     ```shell
-    cf create-service xsuaa application myHANAApp-xsuaa-service -c xs-security.json
+    cf create-service xsuaa application MyHANAApp-xsuaa-service -c xs-security.json
     ```
 
     !![Create XSUAA service](create_service.png)
@@ -85,7 +85,7 @@ Video tutorial version: </br>
 3. From the terminal, we need to create a service key. This will give us access to the credentials for your XSUAA instance.
 
     ```shell
-    cf create-service-key myHANAApp-xsuaa-service default
+    cf create-service-key MyHANAApp-xsuaa-service default
     cf service-key MyHANAApp-xsuaa-service default
     ```    
 
