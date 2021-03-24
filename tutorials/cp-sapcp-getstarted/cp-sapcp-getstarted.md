@@ -3,7 +3,7 @@ title: Get Started with the SAP BTP Command Line Interface (btp CLI)
 description: Find out what the btp CLI is, download the btp CLI client, and learn how to use it.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>cloud]
+tags: [ tutorial>beginner, topic>cloud, software-product-function>sap-btp-command-line-interface]
 primary_tag: products>sap-business-technology-platform
 ---
 
