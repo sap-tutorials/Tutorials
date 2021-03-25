@@ -3,7 +3,7 @@ title: Set Up Postman to Call Service Ticket Intelligence APIs
 description: Import Postman environment and collection JSON sample code files to call the Service Ticket Intelligence APIs.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -33,7 +33,7 @@ Make a local copy of the Postman environment sample file for Service Ticket Inte
 
     !![Postman](raw-env.png)
 
-3. Right click and then click ***Save as*** to download locally the JSON file.
+3. Right click and then click ***Save as*** to download locally the JSON file. 
 
     !![Postman](raw-env-save.png)
 

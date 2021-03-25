@@ -1,19 +1,20 @@
 ---
-title: Send and Receive Test Enterprise Messages
-description: Test send and receive of message with REST protocol using the Postman tool for a SAP Cloud Platform Enterprise Message instance.   
+title: Send and Receive Test SAP Event Mesh
+description: Test send and receive of message with REST protocol using the Postman tool for a SAP Event Mesh instance.   
 time: 15
 auto_validation: true
 tags: [ tutorial>beginner, topic>cloud, tutorial>license]
-primary_tag: products>sap-cloud-platform-enterprise-messaging
+primary_tag: products>sap-event-mesh
 ---
 
 ## Prerequisites
   - [Postman](https://www.getpostman.com/), API Development environment Tool is available to publish & receive message from queue using REST Protocol
 
+
 ## Details
 ### You will learn
   - Send and Receive message to and from a queue using Postman, a REST-based tool
-
+  - **IMPORTANT:** It is really important to understand the concept of Service Key of an SAP Event Mesh instance. Check out **Step 2** of [Create Instance of SAP Event Mesh Service](cp-enterprisemessaging-instance-create).
 
 ---
 

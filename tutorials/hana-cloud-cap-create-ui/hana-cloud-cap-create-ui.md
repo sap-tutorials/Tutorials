@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Cloud, Create a User Interface with the SAP Cloud Application Programming Model
-description: Use services based on CAP Node.js and use an SAP Fiori wizard to create a user interface
+title: Create a User Interface with CAP (SAP HANA Cloud)
+description: Use services based on SAP Cloud Application Programming Model Node.js and use an SAP Fiori wizard to create a user interface.
 time: 20
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -9,16 +9,18 @@ primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
- - This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition
+ - This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition.
  - You have created database artifacts and loaded data as explained in [the previous tutorial](hana-cloud-cap-create-database-cds).
 
 
 ## Details
 ### You will learn
- - How to create a Fiori freestyle web interface
+ - How to create an SAP Fiori freestyle web interface
  - How to configure the `approuter`
 
+Video tutorial version: </br>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WMDpKa1QkFE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Run the services)]
@@ -223,11 +225,7 @@ We want to create a Fiori freestyle UI for our CAP service.  We will use the wiz
 
     !![CAP Test Page Link](cap_test_ui.png)
 
-10. Clicking that link will open a Fiori Launchpad test page with a single tile for our Interaction Items UI we just generated.
-
-    !![Fiori Launchpad](fiori_launchpad.png)
-
-11. Clicking that tile will launch the generated Fiori free style UI for the CAP service.
+10. Clicking that link will launch the generated Fiori free style UI for the CAP service.
 
     !![Test UI](test_ui.png)                        
 
