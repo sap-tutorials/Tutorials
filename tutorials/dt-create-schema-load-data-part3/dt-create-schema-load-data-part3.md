@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Create a New User and Assign Permissions](https://developers.sap.com/tutorials/dt-create-schema-load-data-part2.html)
+ - **Tutorials:** [Create a New User and Assign Permissions](dt-create-schema-load-data-part2)
  - **Files:** Download the data files zip `https://s3.amazonaws.com/sapiq/Dynamic+Tiering+Quick+Start+Guide/SAP+HANA+Dynamic+Tiering+Quick+Start+Guide+-+Supporting+Files.zip` and decompress it to get the individual data files. These "`CSV`" data files contains the data for their respective tables and is needed for the import procedure. Copy all the data files into the "`/hana/shared/<SID>/HDB00/work/TPCH_DATA/`" directory on your HANA Dynamic Tiering host ("`<SID>`" is your system's System Id). This directory also assumes that you are using instance "00". The actual directory format is: "`/hana/shared/<SID>/HDB<instance_number>/<workspace_name>/TPCH_DATA`" and the typical workspace name is "default".
 
 ## Next Steps
- - **Tutorials:** [Converting Between an In-Memory Table and an Extended Table](https://developers.sap.com/tutorials/dt-create-schema-load-data-part4.html)
+ - **Tutorials:** [Converting Between an In-Memory Table and an Extended Table](dt-create-schema-load-data-part4)
 
 ## Details
 ### You will learn
@@ -287,9 +287,9 @@ After Studio finishes refreshing, you should see the tables listed below under t
 
 ![Table Created](table_created.png)
 
-[DONE]
-
 [VALIDATE_1]
+
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Script Explanation)]
 The key syntax difference when creating a Dynamic Tiering table is the addition of the "USING EXTENDED STORAGE" clause to the "CREATE TABLE" statement as seen in the picture below. You may also notice that it did not explicitly state that the Dynamic Tiering tables should be "COLUMN" tables. All Dynamic Tiering tables are stored as columnar tables, so the use of "CREATE COLUMN TABLE" vs "CREATE TABLE" is optional.

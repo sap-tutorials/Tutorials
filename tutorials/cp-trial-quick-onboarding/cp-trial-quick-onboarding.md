@@ -1,9 +1,9 @@
 ---
-title: Get Started with SAP BTP Trial
+title: Take a Tour of SAP BTP Trial
 description: Get familiar with the SAP Business Technology Platform basics to make the most of your trial experience.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform]
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform]
 primary_tag: products>sap-business-technology-platform
 author_name: Jessica Katz
 author_profile: https://github.com/Jessica-Katz
@@ -20,7 +20,7 @@ author_profile: https://github.com/Jessica-Katz
   - What Entitlements and Quotas are
   - Environments available for BTP trial
   - How to navigate in the SAP BTP cockpit
-  - What the sapcp CLI is
+  - What the btp CLI is
 
 ---
 
@@ -158,10 +158,10 @@ To get an overview of the navigation in the cockpit, have a look at our guided t
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Get to know the sapcp CLI)]
-The sapcp CLI is **an alternative to the cockpit**, for users who prefer working on the command line rather than GUIs. It consists of a client and a server. The client needs to be installed on your computer (make sure you update it regularly!) and it interacts with SAP BTP through a server. You connect to this CLI server at login.
+[ACCORDION-BEGIN [Step : ](Get to know the btp CLI)]
+The btp CLI is **an alternative to the cockpit**, for users who prefer working on the command line rather than GUIs. It consists of a client and a server. The client needs to be installed on your computer (make sure you update it regularly!) and it interacts with SAP BTP through a server. You connect to this CLI server at login.
 
-The base call to enter on the command line is `sapcp`.
+The base call to enter on the command line is `btp`.
 
 Here are some of the tasks you can use the CLI for:
 
@@ -170,7 +170,7 @@ Here are some of the tasks you can use the CLI for:
 - Managing users and their authorizations in global accounts and subaccounts
 - Subscribing to applications
 
-To find out more about the sapcp CLI, you can have a look at this tutorial: [Get Started with the SAP BTP command line interface (sapcp CLI)](cp-sapcp-getstarted).
+To find out more about the btp CLI, you can have a look at this tutorial: [Get Started with the SAP BTP command line interface (btp CLI)](cp-sapcp-getstarted).
 
 [DONE]
 [ACCORDION-END]

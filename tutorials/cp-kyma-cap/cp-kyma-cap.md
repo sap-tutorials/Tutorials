@@ -282,7 +282,7 @@ NAME               GATEWAYS                                      HOSTS          
 cap-service-****   [kyma-gateway.kyma-system.svc.cluster.local]  [cap-service.******.kyma.shoot.live.k8s-hana.ondemand.com]  1d
 ```
 
-  Copy the value of the **HOSTS** field, making sure to append **https://** to it, to test the application in your browser.
+  Copy the value of the **HOSTS** field, making sure to append `https://` to it, to test the application in your browser.
 
 
   **Congratulations!** You have successfully configured the Cap Service.

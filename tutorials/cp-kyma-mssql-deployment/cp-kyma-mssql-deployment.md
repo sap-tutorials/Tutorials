@@ -81,7 +81,7 @@ A Docker container image is a lightweight, standalone, executable package of sof
 
 Make sure to replace the value of `<your-docker-id>` with your Docker account ID.
 
-1. Start the image locally by running this command:
+1. Start the image locally by running the following command. The start up will take about two minutes due to the scripts that run to initialize the database.
 
     ```Shell/Bash
     docker run -e ACCEPT_EULA=Y -e SA_PASSWORD=Yukon900 -p 1433:1433 --name sql1 -d <your-docker-id>/mssql
@@ -136,6 +136,16 @@ Make sure to replace the value of `<your-docker-id>` with your Docker account ID
     docker rm sql1
     ```
 
+    > To list all local containers existing:
+    ```Shell/Bash
+    docker container ls -a
+    ```
+
+    > To list out all local images existing
+    ```Shell/Bash
+    docker images
+    ```
+
 [DONE]
 [ACCORDION-END]
 
@@ -167,7 +177,7 @@ Run the following commands from the `database-mssql` directory using your CLI.
     kubectl -n dev apply -f ./k8s/secret.yaml
     ```
 
-4. Within the `deployment.yaml`, adjust the value of `spec.template.spec.containers.image` to use your Docker image. Apply the Deployment:
+4. Within the `deployment.yaml`, adjust the value of `spec.template.spec.containers.image`, commented with **#change it to your image**, to use your Docker image. Apply the Deployment:
 
     ```Shell/Bash
     kubectl -n dev apply -f ./k8s/deployment.yaml
@@ -186,7 +196,7 @@ Run the following commands from the `database-mssql` directory using your CLI.
     mssql-6df65c689d-qdj4r        2/2     Running   0          93s
     ```
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Locally access the MSSQL Deployment)]
@@ -196,7 +206,7 @@ Kubernetes provides a port-forward functionality that allows you to connect to r
 1.  Confirm the port on which the Pod is listening:
 
     ```Shell/Bash
-    kubectl get pod mssql-6df65c689d-qdj4r -n dev --template='{{(index (index .spec.containers 0).ports 0).containerPort}}'
+    kubectl get pod mssql-6df65c689d-qdj4r -n dev --template="{{(index (index .spec.containers 0).ports 0).containerPort}}"
     ```
 
     This command should return:
@@ -222,7 +232,7 @@ Kubernetes provides a port-forward functionality that allows you to connect to r
 
 4. To end the process, use `CTRL+C`.
 
-[VALIDATE_1]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Directly access the MSSQL Deployment)]
@@ -244,6 +254,8 @@ Similarly to how the Docker image can be accessed locally, you can perform the s
     ```Shell/Bash
     kubectl exec -it mssql-6df65c689d-qdj4r -n dev -c mssql -- bash
     ```
+
+    >This may output the following message which can be ignored: `groups: cannot find name for group ID 1337`
 
 3. To run the `sqlcmd` tool, which allows you to run queries against the database, run this command:
 
