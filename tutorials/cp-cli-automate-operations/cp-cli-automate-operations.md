@@ -1,6 +1,6 @@
 ---
 title: Automate Account Operations with the Command Line Interface (CLI)
-description: Automate your account administrative flows with the SAP BTP command line interface (sapcp CLI).
+description: Automate your account administrative flows with the SAP BTP command line interface (btp CLI).
 author_name: Michal Keidar
 author_profile: https://github.com/michal-keidar
 auto_validation: true
@@ -13,7 +13,7 @@ With the introduction of cloud management tools feature set B to SAP BTP, the st
 
 The REST APIs are offered for each administrative operation available in the SAP BTP cockpit. The API Reference is integrated into the SAP API Business Hub so users can quickly learn how to leverage it for your own use cases. For example, for automating manual operations that until now could only be done via the cockpit.  
 
-If you prefer to use a terminal with CLI commands, the SAP BTP command line interface (sapcp CLI) also offers the operations available in the cockpit, with an integrated help so that you can quickly identify and execute commands to operate  your global account in SAP BTP and your resources manually or automatically via scripts.
+If you prefer to use a terminal with CLI commands, the SAP BTP command line interface (btp CLI) also offers the operations available in the cockpit, with an integrated help so that you can quickly identify and execute commands to operate  your global account in SAP BTP and your resources manually or automatically via scripts.
 
 >This tutorial is designed for a UNIX-like environment, such as macOS or Linux.
 
@@ -29,9 +29,9 @@ According to Atomic's guidelines and standards, each such development envi
 -	SAP HANA Cloud
 
 
-Setting up such an environment for each new project can be very tedious and time-consuming. Luckily, the sapcp CLI can be used to automate these operations -- a new environment can be set up very quickly with the single click of a button. 
+Setting up such an environment for each new project can be very tedious and time-consuming. Luckily, the btp CLI can be used to automate these operations -- a new environment can be set up very quickly with the single click of a button. 
 
-In this tutorial, you act as a member of Atomic's DevOps department. Your department has decided to use the sapcp CLI to automate these operations, including the creation of a Cloud Foundry space and an instance of the SAP HANA Cloud service in the space.
+In this tutorial, you act as a member of Atomic's DevOps department. Your department has decided to use the btp CLI to automate these operations, including the creation of a Cloud Foundry space and an instance of the SAP HANA Cloud service in the space.
 
 For this example, you can download an automation script that we've prepared in advance and execute it to set up the new environment. 
 
@@ -64,7 +64,7 @@ Through this tutorial, we hope we can help you to unleash the power of CLI scrip
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Download and install the client)]
-To get started with the SAP BTP command line interface (sapcp CLI), please follow [this tutorial](cp-sapcp-getstarted).
+To get started with the SAP BTP command line interface (btp CLI), please follow [this tutorial](cp-sapcp-getstarted).
 
 [DONE]
 [ACCORDION-END]
@@ -124,7 +124,7 @@ log() { 
 This function performs the login to your global account on SAP BTP:
 
 ```Bash
-login_sapcp() { 
+login_btp() { 
  
   local user=$1 
   local pass=$2 
@@ -132,7 +132,7 @@ login_sapcp() { 
   local subdomain=$4 
  
   log Authenticating with SAP BTP 
-  sapcp login \ 
+  btp login \ 
     --url "https://cpcli.cf.${region}.hana.ondemand.com" \ 
     --subdomain "$subdomain" \ 
     --user "$user" \ 
@@ -166,7 +166,7 @@ create_directory() { 
   local result 
  
   result=$( 
-    sapcp create accounts/directory \ 
+    btp create accounts/directory \ 
       --global-account "$subdomain" \ 
       --features "$features" \ 
       --display-name "$name" \ 
@@ -198,7 +198,7 @@ assign_distributed_entitlement() { 
   local plan=$3 
  
   log "Initiating distributed entitlement assignments for $service / $plan ..." 
-  sapcp assign accounts/entitlement \ 
+  btp assign accounts/entitlement \ 
     --to-directory "$directory" \ 
     --for-service "$service" \ 
     --plan "$plan" \ 
@@ -231,7 +231,7 @@ create_subaccount() { 
   subdomain=$(generate_id) 
  
   result=$( 
-    sapcp create accounts/subaccount \ 
+    btp create accounts/subaccount \ 
       --display-name "$name" \ 
       --subdomain "$subdomain" \ 
       --region "$region" \ 
@@ -255,7 +255,7 @@ create_cf_environment() { 
     local display_name=$3 
  
     log "Initiating CF environment creation for $subaccount ..." 
-    sapcp create accounts/environment-instance \ 
+    btp create accounts/environment-instance \ 
       --subaccount "$subaccount_id" \ 
       --environment cloudfoundry \ 
       --display-name "$display_name" 
@@ -321,7 +321,7 @@ main() { 
   echo 
  
   # Authenticate with SAP BTP 
-  login_sapcp "$user" "$pass" "$region" "$global_account_subdomain" 
+  login_btp "$user" "$pass" "$region" "$global_account_subdomain" 
  
   # Create new directory 
   log Initiating directory creation ... 
