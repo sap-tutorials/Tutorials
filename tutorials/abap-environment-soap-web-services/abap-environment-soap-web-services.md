@@ -1,16 +1,16 @@
 ---
 auto_validation: true
-title: Consume SOAP Based Web Services with SAP Cloud Platform ABAP Environment
-description: Consume SOAP based web services with SAP Cloud Platform ABAP environment.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+title: Consume SOAP Based Web Services with SAP BTP, ABAP Environment
+description: Consume SOAP based web services with SAP BTP, ABAP environment.
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- You need an SAP Cloud Platform ABAP Environment [trial user](abap-environment-trial-onboarding) or a license.
+- You need an SAP BTP, ABAP Environment [trial user](abap-environment-trial-onboarding) or a license.
 
 ## Details
 ### You will learn  

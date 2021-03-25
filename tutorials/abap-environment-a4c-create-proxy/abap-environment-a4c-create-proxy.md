@@ -74,7 +74,7 @@ CLASS zcl_proxy_travels_xxx IMPLEMENTATION.
         " 1. Get the destination of foreign system
         " 2. Create http client
 
-        " i_name = name of destination in SAP Cloud Cockpit; URL = base URL of your provisioning system
+        " i_name = name of destination in SAP BTP cockpit; URL = base URL of your provisioning system
         DATA(lo_http_client) = cl_web_http_client_manager=>create_by_http_destination(
                 cl_http_destination_provider=>create_by_cloud_destination(
                     i_name                  = 'XXX'
@@ -116,7 +116,7 @@ ENDCLASS.
 
 [ACCORDION-BEGIN [Step 3: ](Adapt code)]
 1. Specify your provisioning system as the destination, by replacing the defaults:
-    - **`i_name`** = name of destination in SAP Cloud Cockpit, where URL = base URL of provisioning system
+    - **`i_name`** = name of destination in SAP BTP cockpit, where URL = base URL of provisioning system
 
     ```ABAP
     i_name                  = 'SID_XXX_HTTP'

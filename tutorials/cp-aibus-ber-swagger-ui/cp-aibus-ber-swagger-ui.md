@@ -3,7 +3,7 @@ title: Detect and Highlight Entities from Unstructured Text with Pre-trained Mod
 description: Use the Business Entity Recognition pre-trained models to get machine learning entity predictions for the text you submit to the service.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>business-entity-recognition]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>business-entity-recognition]
 primary_tag: topic>machine-learning
 ---
 
@@ -36,7 +36,7 @@ In the service key you created for Business Entity Recognition in the previous t
 
     !![BER](png-files/service-key-details.png)
 
-2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
+2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**. 
 
     !![BER](png-files/swagger0.png)
 

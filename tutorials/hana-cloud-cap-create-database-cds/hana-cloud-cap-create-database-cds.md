@@ -18,6 +18,10 @@ primary_tag: products>sap-hana-cloud
 
 The SAP Cloud Application Programming model utilizes core data services to define artifacts in the database module. Because this model is meant to be database-agnostic -- i.e., work with any database -- it does not allow you to leverage features that are specific to SAP HANA Cloud. For this reason, you will also create two tables that do not require any advanced data types.
 
+Video version of tutorial: </br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hlHY7eBriRA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create database entities)]

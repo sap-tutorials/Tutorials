@@ -3,10 +3,10 @@ title: Secure a Basic Node.js App with the Authorization and Trust Management Se
 description: Secure a basic single-tenant Node.js application with the Authorization and Trust Management Service (XSUAA).
 auto_validation: true
 time: 25
-tags: [tutorial>intermediate, topic>node-js, products>sap-cloud-platform]
+tags: [tutorial>intermediate, topic>node-js, products>sap-business-technology-platform]
 primary_tag: topic>security
-author_name: Dominik Nehse
-author_profile: https://github.com/nedo-SAP
+author_name: Michael Shea
+author_profile: https://github.com/MichaelPShea
 ---
 
 ## Prerequisites
@@ -448,7 +448,7 @@ To resolve this error, please edit the `manifest.yml` file and change the `route
 
 ### Resources
 - [Info on the xs-app.json](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/c103fb414988447ead2023f768096dcc.html)
-- [Info on the xs-security.json](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/150b04d647cd4b42835411c1787a8b11.html?q=security%20descriptor)
-- [Access Management in the Cloud Foundry Environment](https://help.sap.com/viewer/DRAFT/65de2977205c403bbc107264b8eccf4b/Dev/en-US/28eb34a6eda740a395ff6b0496f3bffb.html)
+- [Info on the xs-security.json](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/517895a9612241259d6941dbf9ad81cb.html)
+- [Info on the Authorization and Trust Management service](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/649961f8d4ad463daca33b3a20deba4c.html)
 
 ---

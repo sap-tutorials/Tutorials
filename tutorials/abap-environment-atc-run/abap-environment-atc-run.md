@@ -88,7 +88,7 @@ Also, see SAP Note [2270689 Remote Analysis for source system](https://launchpad
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Check connectivity in SAP Cloud Cockpit)]
+[ACCORDION-BEGIN [Step 4: ](Check connectivity in SAP BTP cockpit)]
 1. In the SAP BTP Cockpit of your Cloud Foundry subaccount, choose **Cloud Connectors**.
 
     !![step4a-cf-cloud-connectors-in-sap-cloud-cockpit](step4a-cf-cloud-connectors-in-sap-cloud-cockpit.png)
