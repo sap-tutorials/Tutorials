@@ -152,11 +152,11 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
 > **DISCLAIMER**: The booster that automates role assignment and service instance creation will be available very soon. By the time you try out this tutorial, if you are not able to find the **Enable Integration Suite** booster in your SAP BTP global account, please follow the manual steps mentioned at the end of this section.
 
- In this step, you execute a booster that will assign you the necessary roles to access and use the activated capabilities, and create service instance of Process Integration Runtime (integration).
+ In this step, you execute a booster that will assign you the necessary roles to access and use the activated capabilities, and create service instance of Process Integration (integration-flow).
 
  A **Booster** is a set of guided and interactive steps that enable you to select, configure, and consume services on SAP BTP to achieve a specific technical goal. In this case, the Integration Suite booster will help you with assigning roles and creating a service instance.
 
- A **service instance** defines how a service of SAP BTP (in our case, the Process Integration Runtime and the plan **integration**) can be called from a remote component. In the context of Cloud Integration, a service instance is the definition of an OAuth client. The service key generated out of the service instance contains credentials and other information that is required at a later step to call the integration flow.
+ A **service instance** defines how a service of SAP BTP (in our case, the **Process Integration** service with the plan **integration-flow**) can be called from a remote component. In the context of Cloud Integration, a service instance is the definition of an OAuth client. The service key generated out of the service instance contains credentials and other information that is required at a later step to call the integration flow.
 
 1. Navigate to the overview page of your SAP BTP global account.
 
