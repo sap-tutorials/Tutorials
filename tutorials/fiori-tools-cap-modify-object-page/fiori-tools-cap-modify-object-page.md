@@ -17,6 +17,7 @@ primary_tag: products>sap-fiori
   - How to create a new field group within a section
   - How to add a custom section to the object page
   - How to add an additional column to an object page table
+  - How to enable the flexible column layout
 
 
 [ACCORDION-BEGIN [Step 1: ](Add additional field to a field group)]
@@ -245,9 +246,36 @@ As already explained in the previous tutorial [Refine the List Report with Addit
 
     !![Annotation Cursor](t4-annotation-LSP-table-column.PNG)
 
+**TODO:** to be moved to the end of the last step
+
 At this point, your list report object page application is complete.
 
 [DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Enable the flexible column layout)]
+
+The flexible column layout allows you to have the list report and the object page open at the same time without the need to switch the UI when changing the selection of items in the list report.
+
+1. Right-click the `webapp` folder and select **Show Page Map**.
+
+    In the **Global Page Settings** select the **Flexible Column Layout** and choose the **Mid-Expanded** option for the two column layout.
+
+    !![Annotation Cursor](t4-flexible-column-layout-global-page-settings.PNG)
+
+    Click **Apply**.
+
+2. Refresh the application. Click on one of the items in the list report to open the object page.
+
+    !![Annotation Cursor](t4-flexible-column-layout-LR-item.PNG)
+
+    The list report and object page are now shown in a two column layout.
+    When you click on a different row in the list report the object page will update accordingly.
+
+    !![Annotation Cursor](t4-flexible-column-layout-final.PNG)
+
+[VALIDATE_4]
+
 [ACCORDION-END]
 
 ---
