@@ -78,6 +78,10 @@ In this step, you will create service instances of the Events the Commerce Mock 
 
     ![Service Catalog](./assets/sc-add-events.png)
 
+7. This will then navigate you to the newly created service instance.
+
+    ![Service Catalog](./assets/sc-result-events.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -100,33 +104,52 @@ In this step, you will create a service instance of the `Commerce Webservices` t
 
     ![Service Catalog](./assets/sc-add-occ.png)
 
+4. This will then navigate you to the newly created service instance.
+
+      ![Service Catalog](./assets/sc-result-api.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy resources)]
+[ACCORDION-BEGIN [Step 5: ](View service instances)]
 
-In this step, you will deploy three resources into the Kyma runtime which include:
+In this step we will view the  **SAP Commerce Cloud - Events** and the **`SAP Commerce Cloud - Commerce Webservices`** service instances created in the previous two steps.
+
+1. In the `dev` namespace, choose **Service Management > Instances**. This view will list the service instances existing in the namespace.
+
+    ![Service Instances](./assets/instances.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Deploy resources)]
+
+In this step, you will deploy three resources into the Kyma runtime that were obtained in [Step 1](Clone the Git repository). These resources include:
 
   - **cache-order**: This function will subscribe to an event published by the Commerce mock application. Once triggered, it will call back to the Commerce mock application to obtain the `totalPriceWithTax` and then cache the information into Redis.
   - **get-order**: This function will be exposed as an API allowing retrieval of data stored within the Redis cache.
   - **redis-deployment**: This deployment defines the Redis cache configuration and the associated Kubernetes service which exposes the Redis instance to the two Serverless functions.
 
-1. In the `dev` namespace, choose **Overview**.
+1. In the `dev` namespace, choose **Workload > Overview**.
 
-2. Choose **Deploy new resource**, using the **Browse** option choose the file **`redis-function/k8s/cache-order.yaml`** and choose **Deploy**.
+2. Choose **Deploy new workload > Upload YAML**. using the **Browse** option choose the file **`redis-function/k8s/cache-order.yaml`** and choose **Deploy**.
 
 3. Repeat the steps to deploy the files **`redis-function/k8s/get-order.yaml`** and **`redis-function/k8s/redis-deployment.yaml`**.
 
     ![Deploy Resources](./assets/deploy-function.png)
 
+4. After completing the deployment of the resources, the **Healthy Resources** panel found in **Workload > Overview** will report the status of the **deployments** and the **pods** they generate. The chart indicates the amount **Ready** vs the **Total**. An equal relation means everything is ready.
+
+    ![Deployment Status](./assets/deployment-status.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add event trigger to function)]
+[ACCORDION-BEGIN [Step 7: ](Add event trigger to function)]
 
 In this step, you will configure the function `cache-order`, deployed in the previous step, to be triggered when the **order.created** event is fired from the Commerce Mock application.
 
-1. In the `dev` namespace, choose **Development > Functions**.
+1. In the `dev` namespace, choose **Workload > Functions**.
 
 2. Choose the function **cache-order**.
 
@@ -145,7 +168,7 @@ In this step, you will configure the function `cache-order`, deployed in the pre
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add service instance to function)]
+[ACCORDION-BEGIN [Step 8: ](Add service instance to function)]
 
 In this step, you will add a service instance to the function cache-order allowing it to easily call the related API.
 
@@ -162,27 +185,29 @@ In this step, you will add a service instance to the function cache-order allowi
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Adjust function code)]
+[ACCORDION-BEGIN [Step 9: ](Adjust function code)]
 
 1. In the function **cache-order** choose the `Code` tab.
 
 2. On line three, replace the value **`<REPLACE WITH GATEWAY_URL>`** with the **`GATEWAY_URL`** found in the Environment Variables below the function code. This value will defer from what is shown in the screenshot.
 
-3. Choose **Save**
+3. Choose **Save**. Choosing **Save** will cause the function to be rebuilt and deployed. The **Status** field will indicate when the function is **Running** again after this process completes.
 
     ![Adjust Code](./assets/adjust-function-oc.png)
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test event consumption)]
+[ACCORDION-BEGIN [Step 10: ](Test event consumption)]
 
 With the configuration steps completed, you can now test the scenario to validate that it is working as intended.
 
-1. Open the mock application in the browser by choosing **Configuration > `APIRules`** from the menu.
+1. Open the mock application in the browser by choosing **Discovery and Network > `APIRules`** from the menu.
 
 2. Choose the **Host** entry for the **commerce-mock** `APIRule` to open it in the browser. This URL should be similar to:
    `https://commerce.*******.kyma.shoot.live.k8s-hana.ondemand.com`
+
+   ![APIRule Commerce](./assets/apirule-commerce.png)
 
 3. Choose the **Remote APIs** tab.
 
@@ -199,11 +224,11 @@ With the configuration steps completed, you can now test the scenario to validat
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Review output in function logs)]
+[ACCORDION-BEGIN [Step 11: ](Review output in function logs)]
 
 In this step, we will view the logs outputted by the function to verify that the scenario is working.
 
-1. In the `dev` namespace, choose **Development > Functions**.
+1. In the `dev` namespace, choose **Workload > Functions**.
 
 2. Choose the function **cache-order**.
 
@@ -218,15 +243,17 @@ In this step, we will view the logs outputted by the function to verify that the
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Get output from API rule function)]
+[ACCORDION-BEGIN [Step 12: ](Get output from API rule function)]
 
 In this step, we use the get-order function to perform a read request of the data cached in the Redis database.
 
-1. Choose **Configuration > `APIRules`** from the menu.
+1. Choose **Discovery and Network > `APIRules`** from the menu.
 
 2. Choose the **Host** entry for the **get-order** `APIRule` to open the application in the browser. When first opened you will received the message
 
     `{"error":"No orderCode received!"}`
+
+    ![APIRule Get Order](./assets/apirule-get-order.png)
 
 3. Append the value `?orderCode=12331231` to the URL where the value is the same as used when sending the event, for example
 
@@ -236,7 +263,7 @@ In this step, we use the get-order function to perform a read request of the dat
 
     `{"orderCode":"12331231","Date":"Tue Nov 17 2020 19:28:42 GMT+0000 (Coordinated Universal Time)","Value":"100"}`
 
-[VALIDATE_1]
+[VALIDATE_2]
 
 **Congratulations!** You have successfully completed the mission.
 
