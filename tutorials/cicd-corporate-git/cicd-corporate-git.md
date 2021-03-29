@@ -11,8 +11,8 @@ author_profile: https://github.com/SarahLendle
 
 ## Prerequisites
  - You have an account on SAP Business Technology Platform. See [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) or [Enterprise Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html).
- - You're an administrator of your global account and Org Manager of your subaccount on SAP Business Technology Platform.
- - You've installed SAP Connectivity service. See [SAP Connectivity Service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e54cc8fbbb571014beb5caaf6aa31280.html).
+ - You're an administrator of your global account and Org Manager of your subaccount on SAP Business Technology Platform. See [About Roles in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/09076385086b4da3bd1808d5ef572862.html).
+ - You've installed the Cloud Connector of the SAP Connectivity service. See [Install the SAP Connectivity Service Cloud Connector in your System Landscape](cp-connectivity-install-cloud-connector).
  - You have an SAP Fiori project in the Cloud Foundry environment in a public Git repository in your corporate network. See [Create an SAP Fiori Project](https://help.sap.com/viewer/584e0bcbfd4a4aff91c815cefa0bce2d/Cloud/en-US/46664de4d6944471b6c29a0681bfd0fc.html).
     &nbsp;
     **Note:** Technically, you can use any Git in your corporate network. However, we recommend using GitHub Enterprise or Bitbucket Server because with them you can create webhooks to trigger your jobs automatically.
@@ -20,7 +20,7 @@ author_profile: https://github.com/SarahLendle
 ## Details
 ### You will learn
   - How to set up SAP Continuous Integration and Delivery
-  - How to connect SAP Continuous Integration and Delivery with your corporate Git
+  - How to connect SAP Continuous Integration and Delivery with your corporate Git using SAP Connectivity service
   - How to create and trigger a basic continuous integration and delivery (CI/CD) job in SAP Continuous Integration and Delivery
 
 ### What is this tutorial about?
@@ -39,7 +39,7 @@ The tutorial comprises five main stages:
 
 4. In SAP Continuous Integration and Delivery, configure credentials for your cloud connector and add your Git repository.
 
-5. Configure and run a basic job for SAP Cloud Platform Continuous Integration and Delivery.
+5. Configure and run a basic job for SAP Continuous Integration and Delivery.
 
 > For more information about SAP Continuous Integration and Delivery and the SAP Connectivity service, see:
 
@@ -99,7 +99,7 @@ Add your subaccount on SAP BTP to the SAP Connectivity service.
 
 1. In the SAP Connectivity service, choose ![Connector icon in the SAP Connectivity service](icon-connector.png) **Connector** **&rarr;** **Add Subaccount**.
 
-    >If you haven't added a subaccount to the SAP Connectivity service, yet, the procedure 	is slightly different. In this case, you start at ![Define subaccount icon in the SAP Connectivity service](icon-subaccount.png) **Define Subaccount** and fill in the **First Subaccount** form. The required values, however, are the same.
+    >If you haven't added a subaccount to the SAP Connectivity service yet, the procedure 	is slightly different. In this case, you start at ![Define subaccount icon in the SAP Connectivity service](icon-subaccount.png) **Define Subaccount** and fill in the **First Subaccount** form. The required values, however, are the same.
 
 2. In the **Add Subaccount** pop-up, enter the following information:
 
@@ -107,7 +107,7 @@ Add your subaccount on SAP BTP to the SAP Connectivity service.
 
     | Parameter         | Value                                                                                                                                 |
     | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-    | Region            | Enter the region in which your subaccount resides.                                                                                    |
+    | Region            | Enter the region in which your subaccount resides. To find the correct region, compare your API endpoint with [Regions and Hosts Available for the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html#loiof344a57233d34199b2123b9620d0bb41).                                                                                   |
     | Subaccount        | Enter the ID of your subaccount.                                                                                                      |
     | Display Name      | Freely choose a name for your subaccount.                                                                                             |
     | Subaccount User   | Enter the e-mail address that relates to your subaccount.                                                                             |
@@ -180,7 +180,7 @@ In SAP Continuous Integration and Delivery, configure credentials for your cloud
     | Name          | Freely choose a unique name for your credential. Only use lowercase letters, numbers, and hyphens, and a maximum of 253 characters.                             |
     | Description   | Enter a meaningful description for your credential.                                                                                                             |
     | Type          | From the drop-down list, choose **Cloud Connector**.                                                                                                            |
-    | Location ID   | Enter the location ID of your cloud connector. You can find it in the SAP Cloud Platform cockpit under ![Connectivity icon in the cockpit](icon-connectivity.png) **Connectivity** **&rarr;** **Cloud Connectors**. |
+    | Location ID   | Enter the location ID of your cloud connector. You can find it in the SAP BTP cockpit under ![Connectivity icon in the cockpit](icon-connectivity.png) **Connectivity** **&rarr;** **Cloud Connectors**. |
 
 3. Choose **Create**.
 
@@ -210,7 +210,7 @@ In SAP Continuous Integration and Delivery, configure credentials for your cloud
 
 [ACCORDION-BEGIN [Step 5: ](Create and trigger a basic CI/CD job)]
 
-Configure and run a basic job for SAP Cloud Platform Continuous Integration and Delivery.
+Configure and run a basic job for SAP Continuous Integration and Delivery.
 
 1. In SAP Continuous Integration and Delivery, go to the **Jobs** tab and choose **+** *(Create job)*.
 

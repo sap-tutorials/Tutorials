@@ -5,8 +5,8 @@ auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, products>sap-business-technology-platform, topic>node-js]
 primary_tag: topic>security
-author_name: Dominik Nehse
-author_profile: https://github.com/nedo-SAP
+author_name: Michael Shea
+author_profile: https://github.com/MichaelPShea
 ---
 
 

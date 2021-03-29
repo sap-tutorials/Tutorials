@@ -188,7 +188,7 @@ See [Connect to SAP HANA Cloud via JDBC](https://help.sap.com/viewer/db19c7071e5
 
 [ACCORDION-BEGIN [Step 4: ](Debug the application)]
 
-Eclipse is a popular integrated development environment (IDE) for Java application development and provides a debugger.  [Download](https://www.eclipse.org/downloads/packages/) the Eclipse IDE for Java or if you wish to additionally browse the SAP HANA catalog using Data Tools, as shown in step 5, download Eclipse IDE for Enterprise Java Developers.
+Eclipse is a popular integrated development environment (IDE) for Java application development and provides a debugger.  [Download](https://www.eclipse.org/downloads/packages/) the Eclipse IDE for Java.
 
 1. Unzip the downloaded file and start the Eclipse IDE.  
 
