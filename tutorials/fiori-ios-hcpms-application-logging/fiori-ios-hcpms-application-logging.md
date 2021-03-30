@@ -2,23 +2,28 @@
 title: Application logging and tracing
 description: Logging and tracing using the SAP BTP SDK for iOS.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-business-technology-platform, products>sap-mobile-services ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
- - **SAP BTP SDK for iOS:** Version 2.0
- - **Tutorials:** [Push Notifications](fiori-ios-hcpms-push-notifications)
+
+- **Proficiency:** Beginner
+- **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+- **SAP BTP SDK for iOS:** Version 2.0
+- **Tutorials:** [Push Notifications](fiori-ios-hcpms-push-notifications)
 
 ## Next Steps
- - [Logging and tracing in SAP Mobile Services for development and operations](fiori-ios-hcpms-logging)
+
+- [Logging and tracing in SAP Mobile Services for development and operations](fiori-ios-hcpms-logging)
 
 ## Details
+
 ### You will learn  
+
 In this tutorial, you will learn to use the logging functionality that is part of the SAP BTP SDK for iOS. You will also learn how to set logging settings in SAP Mobile Services for development and operations which will be reflected in your application.
 
 ### Time to Complete
+
 **15 Min**.
 
 ---
@@ -80,7 +85,7 @@ In addition to plain text, you can also supply an optional `error` object, for i
 ```swift
 self.someOperation {
     if let error = error {
-	      self.logger.error("Uh-oh... An error happened", error: error)
+       self.logger.error("Uh-oh... An error happened", error: error)
     }
 }
 ```
