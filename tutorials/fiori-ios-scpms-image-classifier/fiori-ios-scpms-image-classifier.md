@@ -4,21 +4,24 @@ description: Connect to an Image Classifier API with the help of the SAP BTP SDK
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 30
 ---
 
 ## Prerequisites  
+
 - **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
 - **SAP BTP SDK for iOS:** Version 3.0 SP01
 - [Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
 - [Set Up the SAP BTP SDK for iOS](fiori-ios-hcpms-install-sdk)
 
 ## Details
+
 ### You will learn  
-  - How to connect to the correct API through the Assistant
-  - How access the Image Classifier API to identify images
+
+- How to connect to the correct API through the Assistant
+- How access the Image Classifier API to identify images
 
 ---
 
@@ -195,7 +198,6 @@ Next change the class declaration to inherit from:
 - `UINavigationControllerDelegate`
 
 Also add the following properties to your class, this code will give us a logger, an `AppDelegate` instance, an `UIImagePickerController` instance for the Photo Library and a dictionary to safe the response of the classifier:
-
 
 ```swift
   var classifications = [Dictionary<String, Any>]( )

@@ -5,18 +5,21 @@ auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>ios-sdk-for-sap-btp ]
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 35
 ---
 
 ## Prerequisites
+
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
 - **SAP BTP SDK for iOS:** Version 5.0 or higher
 
 ## Details
+
 ### You will learn  
-  - How to use storyboard segues to navigate between screens
-  - How to prepare a segue to set the title of the destination screen of each navigation
+
+- How to use storyboard segues to navigate between screens
+- How to prepare a segue to set the title of the destination screen of each navigation
 
 ---
 
@@ -114,7 +117,6 @@ You can store the segue identifier in a class property for cleaner code and use 
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](Implement a product list)]
 
@@ -534,7 +536,6 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
     return productCell
 }
 ```
-
 
 11. Run the app now and you should be able to search for products.
 

@@ -5,17 +5,20 @@ auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>ios-sdk-for-sap-btp ]
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services, products>sap-mobile-services ]
 time: 25
 ---
 
 ## Prerequisites
+
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
 - **SAP BTP SDK for iOS:** Version 5.0 or higher
 
 ## Details
+
 ### You will learn  
-  - How to reuse View Controller code
+
+- How to reuse View Controller code
 
 ---
 
@@ -37,7 +40,6 @@ Because you already implemented a similar screen, the Product List, you can copy
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 2: ](Implement the customer list)]
 

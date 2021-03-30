@@ -2,28 +2,31 @@
 title: Authenticate once and share data between multiple application
 description: Use the Onboarding flow to authenticate once and share data between multiple business applications built with SAP BTP SDK for iOS.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-services ]
 ---
 
 ## Prerequisites  
+
 - **Proficiency:** Beginner
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
 - **SAP BTP SDK for iOS:** Version 2.1
 - **Tutorials:** [Sign up for a free trial account on SAP BTP](hcp-create-trial-account) and [Enable SAP Mobile Services for development and operations](fiori-ios-hcpms-setup)
 
 ## Details
+
 ### You will learn  
+
 As of version 2.1, the SAP BTP SDK for iOS now incorporates the possibility to provide a shared logon experience for multiple applications. In addition, data can be shared between applications using the SDK's `KeychainStoreManager`.
 
 In this tutorial, you will create two applications. The first app will be used to store data from the secure store, and the second app will retrieve the data stored by the first app. In addition, you will also experience the shared logon mechanism.
 
 > Please note the apps created in this tutorial are meant show the basic principles of setting up a shared store between multiple apps. In productive code, you normally should not hard-code the cipher and password in the `AppDelegate.swift` file, but use a more secure way of handling these. However, for the brevity of the tutorial and easier understanding of what is happening, this choice was made.
 
-
 > Also, if you are working on the trial instance of SAP BTP, make sure you have a maximum of 3 application definitions defined in SAP Mobile Services for development and operations. Since the trial allows a maximum of 5 native mobile applications, you should have a maximum of 3 application definitions defined. If you have 4 or more applications defined, log on to your SAP Mobile Services for development and operations cockpit first, and export & delete any unused applications.
 
 ### Time to Complete
+
 **15 Min**
 
 ---
@@ -88,7 +91,6 @@ Click the **Plus** button below it, and provide the following **App Group** ID:
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 3: ](Modify Onboarding flow)]
 
 Open file `SharedOne > Onboarding > OnboardingManager.swift` and locate method `configuredStoreManagerStep()`
@@ -119,7 +121,6 @@ With this code, the following is happening:
  3. The `StoreManagerStep` is then initialized with the `storeManager` as the persistent store manager.
  4. When using a shared store, you don't want an error thrown when a store is created which is already been created by a different app. To bypass this behavior of the step, flag `runRestoreIfStoreExists` should be set to true.
  5. In order to share the same store ID, the step's `storeID` is set to a hard-coded `uuid` value.
-
 
 [DONE]
 [ACCORDION-END]
@@ -241,6 +242,5 @@ Now close both running apps, and open one of them again. You now notice you don'
 
 [VALIDATE_9]
 [ACCORDION-END]
-
 
 ---

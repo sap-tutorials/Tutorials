@@ -5,19 +5,22 @@ auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>ios-sdk-for-sap-btp ]
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 35
 ---
 
 ## Prerequisites
+
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
 - **SAP BTP SDK for iOS:** Version 5.0 or higher
 
 ## Details
+
 ### You will learn  
-  - How to implement a Split View Controller to support a sidebar on MacOS
-  - How to change the Menu Bar items
-  - How to create a settings bundle to enable a preferences menu
+
+- How to implement a Split View Controller to support a sidebar on MacOS
+- How to change the Menu Bar items
+- How to create a settings bundle to enable a preferences menu
 
 ---
 
@@ -118,7 +121,6 @@ To implement the new flow you can attach our current app flow in storyboard to a
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 2: ](Implement root view controller UI)]
 
@@ -222,7 +224,6 @@ You're going to display a list with three cells containing the navigation possib
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 3: ](Implement root view controller logic)]
 
 In order to let the user have interactions with the list items you have to write some code.
@@ -300,7 +301,6 @@ In order to let the user have interactions with the list items you have to write
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 4: ](Change the menu bar)]
 
 You have our basic layout but now it would be interesting what else you could do to be more MacOS conform.
@@ -367,7 +367,6 @@ You can create an extension swift file containing an `AppDelegate` extension con
 [VALIDATE_4]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 5: ](Create settings bundle)]
 
 Every Mac user expects a preferences menu in the menu bar so you should provide, if available, settings via a settings bundle. The reason for this is that using a settings bundle will give you the preferences menu for free.
@@ -398,7 +397,6 @@ Here you're going to implement some settings with help of the settings bundle.
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 6: ](Change app title)]
 
