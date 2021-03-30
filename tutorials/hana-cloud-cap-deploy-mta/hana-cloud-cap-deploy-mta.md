@@ -99,6 +99,8 @@ Note:  This is an optional tutorial as part of this mission on SAP HANA Cloud pl
 
 4. Not required as part of the deploy process, but it might be interesting to see what is inside this `MTAR` file. You can download the file to your desktop and then open with an zip archive tool.  In the root of the zip you will find folders (with zip files inside them) for the three modules we described in your mta.yaml file.  Looking at the MTAR file in a zip utility is a good way to double check and make sure that your content is structured the way you wanted (and that your build-parameters exclusions worked) before attempting to deploy to Cloud Foundry.  
 
+    !![MTAR Inner Content](mtar_inner_content.png)
+
 
 [DONE]
 [ACCORDION-END]
