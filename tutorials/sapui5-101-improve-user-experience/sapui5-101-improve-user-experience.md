@@ -6,7 +6,7 @@ auto_validation: true
 primary_tag: topic>sapui5
 author_name: Conrad Bernal
 author_profile: https://github.com/cjbernal
-tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-business-application-studio ]
+tags: [  tutorial>intermediate, topic>html5, topic>sapui5,  products>sap-btp-cloud-foundry-environment, products>sap-business-application-studio ]
 ---
 ## Details
 ### You will learn  

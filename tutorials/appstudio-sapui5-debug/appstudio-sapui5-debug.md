@@ -9,6 +9,7 @@ author_name: Conrad Bernal
 author_profile: https://github.com/cjbernal
 ---
 
+
 ## Details
 ### You will learn
   - How to add breakpoints to your JavaScript code

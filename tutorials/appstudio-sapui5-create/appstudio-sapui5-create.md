@@ -7,7 +7,6 @@ tags: [ tutorial>beginner, topic>javascript, topic>sapui5, topic>html5, products
 primary_tag: products>sap-btp-cloud-foundry-environment
 author_name: Conrad Bernal
 author_profile: https://github.com/cjbernal
-
 ---
 
 ## Details
