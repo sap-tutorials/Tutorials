@@ -23,103 +23,104 @@ If the entitlement for the Kyma runtime trial has not be activated the button **
 
     !![SAP-BTP-Trial](kyma-getting-started-01.png)
 
-    Use the search field to search for **Kyma** in order to check if you have the needed entitlements enabled. If you have a new trial account, the needed entitlements should automatically be added to your account as seen in the screenshot below.
+2. Use the search field to search for **Kyma** in order to check if you have the needed entitlements enabled. If you have a new trial account, the needed entitlements should automatically be added to your account as seen in the screenshot below.
 
     !![SAP-BTP-Trial](kyma-getting-started-02.png)
 
-2. In case you don't have the entitlement in your account you need to add it in order to continue. Without the entitlement you won't be able to enable the Kyma runtime for your account.
+> In case you don't have the entitlement in your account you need to add it in order to continue. Without the entitlement you won't be able to enable the Kyma runtime for your account.
 
-    Click **Configure Entitlements**.
+3. Click **Configure Entitlements**.
 
     !![SAP-BTP-Trial](kyma-getting-started-02b.png)
 
-    Click **Add Service Plans** to add the Kyma runtime entitlement to your account.
+4. Click **Add Service Plans** to add the Kyma runtime entitlement to your account.
 
     !![SAP-BTP-Trial](kyma-getting-started-02c.png)
 
-    Search for **Kyma**, check the trial checkbox and click **Add 1 Service Plan**.
+5. Search for **Kyma**, check the trial checkbox and click **Add 1 Service Plan**.
 
     !![SAP-BTP-Trial](kyma-getting-started-02d.png)
 
     > In case you see the message **You have already used all the global account quota for this service plan. To add this service plan, purchase more quota or remove quota from other subaccounts.**, you already have the Kyma runtime entitlement used in another subaccount. Navigate to the subaccount where the Kyma runtime entitlement is assigned and delete the entitlement. You can also continue with this tutorial in the entitled subaccount.
 
-    Click **Save** to save the newly added service plan.
+6. Click **Save** to save the newly added service plan.
 
-If you want to learn more about entitlements, visit the [Add a New Entitlement to Your Subaccount](cp-cf-entitlements-add) tutorial.
+    > If you want to learn more about entitlements, visit the [Add a New Entitlement to Your Subaccount](cp-cf-entitlements-add) tutorial.
 
-Go back to the **Overview** with help of the menu item on the left-hand-side. You should see the **Kyma Environment** tab.
+7. Go back to the **Overview** with help of the menu item on the left-hand-side. You should see the **Kyma Environment** tab.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable the Kyma environment)]
 
-Now that you've made sure the Kyma entitlement is set, you can click **Enable Kyma** to trigger the enablement of the Kyma environment.
+1. Now that you've made sure the Kyma entitlement is set, click **Enable Kyma** to trigger the enablement of the Kyma environment.
 
-!![SAP-BTP-Trial](kyma-getting-started-03.png)
+    !![SAP-BTP-Trial](kyma-getting-started-03.png)
 
-In the popup, enter your cluster name of choice and click **Create**.
+2. In the popup, enter your cluster name of choice and click **Create**.
 
-!![SAP-BTP-Trial](kyma-getting-started-03b.png)
+    !![SAP-BTP-Trial](kyma-getting-started-03b.png)
 
-In the background, a new Kubernetes cluster is being set up where the Kyma runtime and all its components will run on. This might take up 60 min.
+    In the background, a new Kubernetes cluster is being set up where the Kyma runtime and all its components will run on. This might take up 60 min.
 
-To continue with this tutorial, you need to wait until the enablement is finished. You can still use the SAP BTP trial or close the window as the setup process will continue automatically.
+    To continue with this tutorial, you need to wait until the enablement is finished. You can still use the SAP BTP trial or close the window as the setup process will continue automatically.
 
-!![SAP-BTP-Trial](kyma-getting-started-03c.png)
+    !![SAP-BTP-Trial](kyma-getting-started-03c.png)
 
-To learn more about the Kyma environment and its functionality, see:
+    To learn more about the Kyma environment and its functionality, see:
 
-- [kyma-project](https://kyma-project.io/docs/)
-- [SAP Help Portal - Kyma Environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/468c2f3c3ca24c2c8497ef9f83154c44.html)
-- [SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/serviceCatalog/kyma-runtime)
-- [Kyma - YouTube](https://www.youtube.com/channel/UC8Q8bBtYe9gQN-dQ-_L8JvQ)
-- [project "Kyma" - Enablement Content](https://www.youtube.com/playlist?list=PL6RpkC85SLQC33__v6BFLDcV32uy5D3Rz)
+    - [kyma-project](https://kyma-project.io/docs/)
+    - [SAP Help Portal - Kyma Environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/468c2f3c3ca24c2c8497ef9f83154c44.html)
+    - [SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/serviceCatalog/kyma-runtime)
+    - [Kyma - YouTube](https://www.youtube.com/channel/UC8Q8bBtYe9gQN-dQ-_L8JvQ)
+    - [project "Kyma" - Enablement Content](https://www.youtube.com/playlist?list=PL6RpkC85SLQC33__v6BFLDcV32uy5D3Rz)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create role collection for your Kyma user)]
+[ACCORDION-BEGIN [Step 3: ](Assign User to Role Collection)]
 
-Once you've enabled the Kyma runtime, the last step is to assign your user the role needed to access the Kyma console UI. There are two different roles available for you to choose from: `KymaRuntimeNamespaceAdmin` and `KymaRuntimeNamespaceUser`.
+Once you've enabled the Kyma runtime, the last step is to assign your user the role needed to access the Kyma console UI. There are already two different role collections created for you. You just need to assign your user to one or both of these collections.
 
-In this tutorial, you will assign the admin role as it allows you to have full access to the full feature set provided by the Kyma runtime trial.
+The role collections available to you are:
 
-1. Create a role collection to which you assign the required role.
+- `KymaRuntimeDeveloper` role collection with the `KymaRuntimeDeveloper` role assigned
+- `KymaRuntimeNamespaceAdmin` role collection with the `KymaRuntimeNamespaceAdmin` role assigned
 
-    This will allow you to later add additional roles, if you're using other services in combination with the Kyma runtime.
+In this tutorial, you will assign the `KymaRuntimeNamespaceAdmin` role collection as it allows you to have full access to the full feature set provided by the Kyma runtime trial.
 
-    In the left-hand menu, click **Security > Role Collections**. From there, click the plus icon ( **+** ) to  create a new role collection.
+1. If not already done, login to the SAP BTP Cockpit and choose the subaccount you want to assign roles to.
 
     !![SAP-BTP-Trial](kyma-getting-started-04.png)
 
-2. In the popup, provide a name for the collection, and click **Create**.
+2. In the left navigation panel, select the **Security** tab and choose **Role Collections**.
+
+    > If you have followed this tutorial you should have the above mentioned role collections defined.
 
     !![SAP-BTP-Trial](kyma-getting-started-05.png)
 
-3. Locate your created role collection in the table below and click its name to open the collection detail screen.
+ 3. Click on the `KymaRuntimeNamespaceAdmin` role collection to get to the details.
 
     !![SAP-BTP-Trial](kyma-getting-started-06.png)
 
-4. In the role collection detail screen, click **Edit** to add roles to it.
+4. Click **Edit** to assign a user to this role collection.
 
     !![SAP-BTP-Trial](kyma-getting-started-07.png)
 
-    Locate the two-box-icon in order to open up the roles catalogue. The roles catalogue contains all available roles including the Kyma runtime roles.
+5. In the **Users** section, add the user you want to assign to the `KymaRuntimeNamespaceAdmin` role. Provide the email address in the **ID** field.
 
     !![SAP-BTP-Trial](kyma-getting-started-08.png)
 
-    Search for the role `KymaRuntimeNamespaceAdmin` and add it to your collection by checking the checkbox. Click **Add** to finish up the process.
+6. Click **+** to add the user to the list.
 
     !![SAP-BTP-Trial](kyma-getting-started-09.png)
 
-    Assign your user ID to the role collection. Locate the **Users** section and enter your email address into the **ID** field -- the UI should give you a nice autocompletion.
-
-    Click on **Save**.
+7. Click on **Save** to save your changes.
 
     !![SAP-BTP-Trial](kyma-getting-started-10.png)
 
-[DONE]
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Open Kyma runtime console UI)]
@@ -134,5 +135,5 @@ To learn more about the capabilities and features of the SAP BTP, Kyma runtime, 
 
 !![SAP-BTP-Trial](kyma-getting-started-12.png)
 
-[VALIDATE_5]
+[DONE]
 [ACCORDION-END]
