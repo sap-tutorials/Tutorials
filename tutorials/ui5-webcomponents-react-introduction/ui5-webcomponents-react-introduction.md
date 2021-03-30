@@ -11,8 +11,8 @@ author_profile: https://github.com/Lukas742
 
 
 ## Prerequisites
-  - [React](https://www.npmjs.com/package/react) and [React-DOM](https://www.npmjs.com/package/react-dom) (**16.8.0 or higher**)
-  - [Node.js](https://nodejs.org/), **version 12 or later** (check the version with `node -v`)
+- [React](https://www.npmjs.com/package/react) and [React-DOM](https://www.npmjs.com/package/react-dom) ( **16.8.0 or higher** )
+- [Node.js](https://nodejs.org/), **version 12 or later** (check the version with `node -v`)
 
 
 ## Details
@@ -92,7 +92,7 @@ Your `App.js` file should now look like this:
 ```JavaScript  / JSX
 import React from "react";
 import { MyApp } from "./MyApp";
-import { ThemeProvider } from "@ui5/webcomponents-react/lib/ThemeProvider";
+import { ThemeProvider } from "@ui5/webcomponents-react/dist/ThemeProvider";
 
 function App() {
   return (

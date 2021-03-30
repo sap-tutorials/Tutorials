@@ -15,7 +15,6 @@ author_profile: https://github.com/Karunaharan
 
 ## Details
 ### You will learn
-  - How to create a service instance and key
   - How to define and expose an integration flow endpoint as an API
   - How to assign a policy to the API
   - How to call the API and execute the integration flow using the API portal
@@ -25,77 +24,25 @@ In this tutorial, you will define the endpoint of the integration flow developed
 
 In addition, you will assign a policy template to the API to define how the API is called. A policy defines, for example, how an API can be called. In this tutorial, you assign a policy that defines an authentication of the API according to OAuth 2.0 client credentials grant. It is a secure way to control access to an API.
 
-After you have performed these steps, you can use the Design, Develop and Manage APIs capability of Integration Suite to finally call the API to fetch the product details.
+After you have performed these steps, you can use the **Design, Develop and Manage APIs** capability of Integration Suite to finally call the API to fetch the product details.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create service instance and key)]
-A service instance defines how a service of SAP BTP (in our case, the Cloud Integration runtime) can be called from a remote component. In the context of Cloud Integration, a service instance is the definition of an OAuth client. The service key generated out of the service instance contains credentials and other information that is required at a later step to call the integration flow.
+[ACCORDION-BEGIN [Step 1: ](Copy credentials from service key)]
 
-1. Navigate back to your SAP BTP subaccount and access your subaccount's space by choosing **Spaces** > **dev**. If you have intentionally specified any other space name, you can choose the space of your choice.
+ In this step, you'll copy the client ID, client secret, and token URL from the service key that you automatically generated using a booster in [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
 
-    !![Access space](1-1-access-space.png)
+1. Navigate to your service instance page which you earlier opened at the end of [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe). You can access this from your subaccount. Choose **Services** > **Instances and Subscriptions**.
 
-2. Choose **Services** > **Service Marketplace** > **Process Integration Runtime**.
+2. Under the **Instances** section, look out for the service instance that was created by the booster. Usually the default name that the booster provides is **default-it-rt-integration**. Choose the service instance.
 
-    >**TIP:** If you do not see the **Process Integration Runtime** service in the list, at the subaccount level, choose **Entitlements** > **Configure Entitlements** > **Add Service Plans**. Choose **Process Integration Runtime** and select the **integration-flow** service plan checkbox and choose **Add 1 Service Plan**.
+3. Under the **Service Keys** section, open the service key to view its content.
 
-    !![Access PI Runtime](1-2-access-process-integration-runtime.png)
+      !![view key](1-3-key-view.png)
 
-3. Select **Create**.
+4. Copy the values of **`clientid`**, **`clientsecret`** and **`tokenurl`** parameters. These are the credentials that you use to make a request to your integration flow.
 
-    !![Create new instance](1-3-create-new-instance.png)
-
-4. Select the following details and choose **Next**.
-
-    |  Field Name     | Details
-    |  :------------- | :-------------
-    |  **Service**           | **`Process Integration`**
-    |  **Plan**           | Select **`integration-flow`** from the list
-    |  **Runtime Environment**  | Select **`Cloud Foundry`** from the list
-    |  **Space**  | Your space name is auto selected
-    |  **Instance Name**    | Provide a name of your choice
-
-      !![New instance wizard](1-4-create-new-instance.png)
-
-5. In the **Parameters** tab, enter the following **`JSON`** code snippet:
-    ```JSON
-    {
-     "roles":[
-       "ESBMessaging.send"
-     ]
-    }
-    ```
-
-    !![Jsoncode](1-5-Jsoncode.png)
-
-    Choose **Next** > **Create**.
-
-    !![finalstep](1-5-CreateInstancefinal.png)
-
-6. Upon successful creation of an instance, a dialog opens. Choose **View Instance**.
-
-    !![view instances](1-6-viewinstance.png)
-
-7. Select the newly created **Service Instance**, click **Actions** (ellipsis button at the right top corner) and choose **Create Service Key** to create a new service key.
-
-    !![Select service key](1-7-select-service-instance.png)
-
-    You create this service instance to enable inbound HTTP calls to your SAP Cloud Integration tenant.
-
-    >**TIP**: This service key will provide you the credentials for making inbound HTTP calls to integration flows deployed on your SAP Integration Suite tenant. You use the credentials of the service key that is `clientid` and `clientsecret` to call an integration flow as an HTTP endpoint. For more information, see [Setting Up Basic Inbound Authentication with `clientId` and `clientsecret` from a Service Key](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/647eeb3eca5d4c299009cacd1332247e.html).
-
-8. Specify a name for the service key and choose **Create**.
-
-    !![Enter service key name](1-8-create-service-key-2.png)
-
-9. Choose **Actions** (ellipsis button) and then **View**.
-
-      !![view key](1-9-key-view.png)
-
-10. Copy the values of **`clientid`**, **`clientsecret`** and **`tokenurl`** parameters. These are the credentials that you use to make a request to your integration flow.
-
-      !![Copy clientid and clientsecret](1-10-copy-clientid-secret.png)
+      !![Copy clientid and clientsecret](1-4-copy-clientid-secret.png)
 
 
 [DONE]

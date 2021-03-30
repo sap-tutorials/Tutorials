@@ -27,7 +27,7 @@ Inside of that file, create the `Detail` component that will return a title to y
 
 ```JavaScript / JSX
 import React from "react";
-import { Title } from "@ui5/webcomponents-react/lib/Title";
+import { Title } from "@ui5/webcomponents-react";
 
 export function Detail() {
   return <Title>Hello World!</Title>;

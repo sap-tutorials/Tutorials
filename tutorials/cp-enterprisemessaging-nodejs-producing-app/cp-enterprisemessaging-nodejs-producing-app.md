@@ -1,10 +1,10 @@
 ---
 title: Create an Application for Producing Messages
-description: Develop and deploy a basic Node.js-based messaging application for sending messages to an SAP Enterprise Message Queue.
+description: Develop and deploy a basic Node.js-based messaging application for sending messages to an SAP Event Mesh Queue.
 time: 20
 auto_validation: true
 tags: [ tutorial>beginner, topic>node-js, topic>java, products>sap-business-technology-platform, tutorial>license]
-primary_tag: products>sap-enterprise-messaging
+primary_tag: products>sap-event-mesh
 ---
 
 
@@ -52,24 +52,25 @@ applications:
     command: node producer.js
     services:
       - <REPLACE WITH YOUR MESSAGING SERVICE>
-env:
-  SAP_JWT_TRUST_ACL: '[{"clientid":"*","identityzone":"*"}]'
-  SAP_XBEM_BINDINGS: |
-    {
-      "inputs": {},
-      "outputs": {
-        "myOutA" : {
-          "service": "<REPLACE WITH YOUR MESSAGING SERVICE>",
-          "address": topic:"<REPLACE WITH YOUR TOPIC>",
-          "reliable": false
-        },
-        "myOutB" : {
-          "service": "<REPLACE WITH YOUR MESSAGING SERVICE>",
-          "address": topic:"<REPLACE WITH YOUR TOPIC>",
-          "reliable": false
+    env:
+      SAP_JWT_TRUST_ACL: '[{"clientid":"*","identityzone":"*"}]'
+      SAP_XBEM_BINDINGS: |
+        {
+          "inputs": {},
+          "outputs": {
+            "myOutA" : {
+              "service": "<REPLACE WITH YOUR MESSAGING SERVICE>",
+              "address": "topic:<REPLACE WITH YOUR TOPIC>",
+              "reliable": false
+            },
+            "myOutB" : {
+              "service": "<REPLACE WITH YOUR MESSAGING SERVICE>",
+              "address": "topic:<REPLACE WITH YOUR TOPIC>",
+              "reliable": false
+            }
+          }
         }
-      }
-    }
+
 ```
 
 [DONE]
