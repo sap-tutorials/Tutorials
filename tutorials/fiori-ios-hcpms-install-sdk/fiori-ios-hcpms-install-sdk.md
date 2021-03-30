@@ -2,8 +2,8 @@
 title: Install the SAP BTP SDK for iOS
 description: Install the SAP BTP SDK for iOS locally on your machine.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios, products>sap-mobile-services ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 5
 author_name: Sandeep TDS
 author_profile: https://github.com/sandeep-tds

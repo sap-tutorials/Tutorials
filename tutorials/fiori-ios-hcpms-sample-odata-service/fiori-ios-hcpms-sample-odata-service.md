@@ -2,8 +2,8 @@
 title: Use the Sample OData Service for Mobile Apps
 description: Use the sample OData service included with the SAP Mobile Services for development and operations account.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-business-technology-platform ]
 time: 10
 ---
 ## Prerequisites  

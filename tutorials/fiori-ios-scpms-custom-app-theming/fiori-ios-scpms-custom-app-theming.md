@@ -2,24 +2,27 @@
 title: Customize theme and on-boarding of iOS app
 description: Create a stylesheet to apply a custom theme and change the default on-boarding behavior for your iOS app.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 ---
 
 ## Prerequisites  
+
 - **Proficiency:** Intermediate
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
 - **SAP BTP SDK for iOS:** Version 2.0
 
 ## Details
+
 In this tutorial, you will apply a custom theme to your iOS app (generated with the SAP BTP SDK Assistant for iOS) using [`NUI`](https://github.com/tombenner/nui). `NUI` enables you to style iOS components with style sheets similar to CSS. `NUI` is already integrated in the SAP BTP SDK for iOS so you don't need to install anything. In addition, you will change the app's on-boarding behavior by changing certain client policies in SAP Mobile Services for development and operations.
 
 ### You will learn  
 
- - How to create and load a `NUI` stylesheet to apply a custom theme to your app
- - How to change your app's on-boarding behavior by changing the configuration in SAP Mobile Services for development and operations
+- How to create and load a `NUI` stylesheet to apply a custom theme to your app
+- How to change your app's on-boarding behavior by changing the configuration in SAP Mobile Services for development and operations
 
 ### Time to Complete
+
 **15 Min**
 
 ---
@@ -56,12 +59,12 @@ For a reference of the standard iOS components classes, you can refer to [NUI st
 For SAP Fiori for iOS components style classes, the following conventions should be followed:
 
 - Global definitions
-   - `fdl<lower camelcase enum name>_<property name>`
-   - example: `fdlFontStyle_subheadline`
+  - `fdl<lower camelcase enum name>_<property name>`
+  - example: `fdlFontStyle_subheadline`
 
 - SAP Fiori component specific definitions
-   - `fdl<class name>_<property name>`
-   - example: `fdlFUIWelcomeScreen_primaryActionButton`
+  - `fdl<class name>_<property name>`
+  - example: `fdlFUIWelcomeScreen_primaryActionButton`
 
 Open the just created `CustomTheme.nss` file, and add the following:
 
@@ -95,7 +98,6 @@ The standard SAP Fiori `subheadline` font style (member of the SDK's `SAPFiori F
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](Load stylesheet)]
 
@@ -196,6 +198,5 @@ Add a different character, and now the **Next** button is enabled:
 
 [VALIDATE_6]
 [ACCORDION-END]
-
 
 ---

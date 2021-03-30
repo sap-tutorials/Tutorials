@@ -2,18 +2,21 @@
 title: Introduction to app analytics on SAP Mobile Services
 description: Get an introduction on the analytics features available on SAP Mobile Services.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 10
 ---
 
 ## Prerequisites  
+
 - **Tutorials:** [Get a Free Trial Account on SAP BTP](hcp-create-trial-account) and [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup)
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
 - **SAP BTP SDK for iOS:** Version 4.0.10
 
 ## Details
+
 ### You will learn  
+
 In this tutorial, you will learn the basics of the analytics features on SAP Mobile Services. You can view usage statistics for your iOS apps, information about push notifications, and get reports of server usage. You won't create or configure anything in this tutorial, but rather get familiar of the reporting capabilities.
 
 > Please keep in mind, the screenshots you see here are from a sample app I've created with just a couple of sample users. If you have a productive app with a realistic amount of users the analytics features will have far more data to show. This tutorial will give you a simple overview of the available features and possibilities.
@@ -47,7 +50,7 @@ Tracking your app ratings and feedback of your users is crucial for the success 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Logs)]
+[ACCORDION-BEGIN [Step 2:](Logs)]
 The SAP BTP SDK for iOS has it's own logging framework included in the `SAPCommon` framework. With that logging framework you can log crucial information during runtime not only inside the app but you can use the `log uploader` API to directly pass the logs through to Mobile Services.
 
 ![Logs](fiori-ios-hcpms-reporting-02.png)

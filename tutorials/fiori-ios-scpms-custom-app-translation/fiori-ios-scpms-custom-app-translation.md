@@ -2,25 +2,26 @@
 title: Localize an iOS App with SAP Translation Hub
 description: Take an iOS app generated with the SAP BTP SDK Assistant for iOS and make it multilingual with SAP Translation Hub.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 15
 ---
 
 ## Prerequisites  
- - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 10 or higher
- - **SAP BTP SDK for iOS:** Version 3.0 SP01
+
+- **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 10 or higher
+- **SAP BTP SDK for iOS:** Version 3.0 SP01
 
 ## Details
+
 ### You will learn  
- - How to enable SAP Translation Hub in your SAP BTP trial account
- - How to add your SAP Translation Hub account into the SAP BTP SDK Assistant for iOS
- - How to create multilingual capabilities to your Xcode project using the SAP BTP SDK Assistant for iOS
- - How to modify and correct the generated translations
+
+- How to enable SAP Translation Hub in your SAP BTP trial account
+- How to add your SAP Translation Hub account into the SAP BTP SDK Assistant for iOS
+- How to create multilingual capabilities to your Xcode project using the SAP BTP SDK Assistant for iOS
+- How to modify and correct the generated translations
 
  In this tutorial, you will use the SAP BTP's integration with SAP Translation Hub to add multilingual features to your iOS app generated with the SAP BTP SDK Assistant for iOS. This way, you can run your app in many languages, depending on your device's preferred language.
-
-
 
 ---
 
@@ -86,7 +87,6 @@ Go back to the main screen by clicking **Back**.
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](Add translations)]
 

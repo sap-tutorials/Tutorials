@@ -2,8 +2,8 @@
 title: Use the Barcode Scanner API
 description: Implement a small search logic which will look for the correct products depending on the barcode the app scans.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios, products>sap-mobile-services ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 25
 ---
 

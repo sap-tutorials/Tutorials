@@ -2,17 +2,18 @@
 title: Data Visualisation with SAP BTP SDK for iOS
 description: Build an iOS app with the SAP BTP SDK for iOS and use the new SAP Fiori for iOS Chart Floorplan API's to visualize entity values of an OData service.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>how-to, tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>how-to, tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 ---
 ## Prerequisites  
+
 - **Proficiency:** Beginner
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
 - **SAP BTP SDK for iOS:** Version 2.1
 - **Tutorials:** [Sign up for a free trial account on SAP BTP](hcp-create-trial-account) and [Enable SAP Mobile Services for development and operations](fiori-ios-hcpms-setup)
 
-
 ## How-To Details
+
 As of version 2.1, the SAP BTP SDK for iOS now incorporates a **Chart Floor plan** for data visualisation.
 
 In this tutorial, you will use the Sample OData service to visualize stock item quantities using a bar chart.
@@ -20,6 +21,7 @@ In this tutorial, you will use the Sample OData service to visualize stock item 
 ![How-To Details](fiori-ios-scpms-dataviz-14.png)
 
 ### Time to Complete
+
 **20 Min**
 
 ---
@@ -406,8 +408,5 @@ Select one of the chart items. It should now display the summary info at the top
 
 [DONE]
 [ACCORDION-END]
-
-
-
 
 ---

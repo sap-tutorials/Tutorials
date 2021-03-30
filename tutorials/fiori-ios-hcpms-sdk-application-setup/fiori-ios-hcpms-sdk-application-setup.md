@@ -2,18 +2,21 @@
 title: Create an Application Definition for a Mobile App
 description: Create an application definition that enables you to manage the application.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, products>sap-business-technology-platform, topic>mobile, products>sap-mobile-services ]
 time: 15
 ---
 ## Prerequisites  
- - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
- - **SAP BTP SDK for iOS:** Version 2.0
- - **Tutorials:** [Enable SAP Mobile Services for development and operations](fiori-ios-hcpms-setup)
+
+- **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+- **SAP BTP SDK for iOS:** Version 2.0
+- **Tutorials:** [Enable SAP Mobile Services for development and operations](fiori-ios-hcpms-setup)
 
 ## Details
+
 ### You will learn  
-  - How to set up a mobile application so you can manage the application, the connections to the back-end data source, and other application-specific settings
+
+- How to set up a mobile application so you can manage the application, the connections to the back-end data source, and other application-specific settings
 
 ---
 
@@ -61,7 +64,6 @@ Log on to your **SAP Mobile Services for development and operations** cockpit, a
 
 ![Applications details](image-4.png)
 
-
 [DONE]
 [ACCORDION-END]
 
@@ -72,7 +74,6 @@ After entering the application details press the **Save** button to save the new
 ![One application in Mobile Services Cockpit](image-6.png)
 
 Take a note of the **Incomplete Configuration** message next to the **Connectivity** feature. This will be solved in the next step.
-
 
 [DONE]
 [ACCORDION-END]
@@ -92,7 +93,6 @@ The Sample Back End is now added:
 ![One application in Mobile Services Cockpit](image-8.png)
 
 As you can see from the **Entity Sets** drop-down, the sample service contains quite a few entities. You may click the **Generate sample sales orders** and **Generate sample purchase orders** a couple of times to generate dummy data for these entities.
-
 
 [VALIDATE_5]
 [ACCORDION-END]

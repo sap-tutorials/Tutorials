@@ -2,19 +2,21 @@
 title: Introduction to Offline OData
 description: Offline OData consists of many pieces at the back-end and the front-end that eventually make offline OData work, without being in the way of the developer. This tutorial will explain how all components work together to achieve this.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 15
 ---
 
 ## Prerequisites  
- - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 11 or higher
- - **SAP BTP SDK for iOS:** Version 4.0.10
- - **Tutorials:** [Manage usage statistics on SAP Mobile Services for development and operations](fiori-ios-hcpms-reporting)
 
+- **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 11 or higher
+- **SAP BTP SDK for iOS:** Version 4.0.10
+- **Tutorials:** [Manage usage statistics on SAP Mobile Services for development and operations](fiori-ios-hcpms-reporting)
 
 ## Details
+
 ### You will learn  
+
 How the SAP BTP SDK for iOS creates an offline store on the mobile device, how it keeps data in sync, and how data entered locally is flushed back to the originating OData service
 
 ---
@@ -67,7 +69,6 @@ Please find a schematic representation of the creation and population of the dat
 
 When a database is being opened for the first time, the app sends the defining queries over to the SAP Mobile Services for development and operations. At the SAP Mobile Services for development and operations back-end is determined whether a client store already exists for the device being used. If it doesn't. SAP Mobile Services for development and operations will pull the metadata from the originating OData service and will create a table for each of the defined queries. Once the tables have been created, the tables are synchronized by retrieving the data from the originating OData service. Once the table is fully synchronized on the SAP Mobile Services for development and operations back-end, the table is synchronized to the Offline UltraLite store on the client using the MobiLink protocol.
 
-
 [DONE]
 [ACCORDION-END]
 
@@ -80,7 +81,6 @@ Please find a schematic representation of the request for refresh sequence below
 ![Request for Refresh sequence](image-3.png)
 
 When the database is being refreshed the the app sends the defining queries over to the SAP Mobile Services for development and operations. If the originating OData service supports delta-token, the client store on the SAP Mobile Services for development and operations is refreshed using delta-tokens, otherwise a full refresh of the client store is performed. Once the client store is in sync all changes are sent to the client using the MobiLink protocol.
-
 
 [VALIDATE_3]
 [ACCORDION-END]
@@ -95,7 +95,6 @@ Please find a schematic representation of the data flush sequence below:
 
 In the diagram, you can see that the requests are being sent to the offline store on the device, in which the changes are captured. Once the user goes online and flushes his data, the request queue is being synchronized to the SAP Mobile Services for development and operations back-end. From there, SAP Mobile Services for development and operations will playback each request to the originating OData service. All errors along with their original requests are stored in the Error Archive, which manifest itself as an OData entity set named `ErrorArchive`.
 
-
 [DONE]
 [ACCORDION-END]
 
@@ -106,7 +105,6 @@ Unlike in the online scenario where most errors are displayed immediately, error
 When a request fails against the backend OData Service during an upload operation, the request and any relevant details are stored in the `ErrorArchive` entity in the Offline Store. App developers must determine what to do for these errors and whether they want to fix, merge or revert entries that have an error state.
 
 Events that happened during synchronization can be retrieved in a similar fashion as the errors. Events are stored in the `EventLog` entity set.
-
 
 [DONE]
 [ACCORDION-END]
@@ -119,7 +117,6 @@ However, it is possible to tune the configuration of offline applications to opt
 
 - Column indexes for the client database
 - Common user data to cache on the server to reduce the amount of data that needs to be synchronized with the back end.
-
 
 [DONE]
 [ACCORDION-END]
