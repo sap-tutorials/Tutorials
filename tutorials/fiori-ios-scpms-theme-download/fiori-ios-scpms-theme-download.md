@@ -2,18 +2,21 @@
 title: Download Stylesheet from SAP BTP to your iOS App
 description: Upload a stylesheet to SAP Mobile Services for development and operations and download it to your app during the onboarding flow
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-business-technology-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-services]
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Sign up for a free trial account on SAP BTP](hcp-create-trial-account) and [Enable SAP Mobile Services for development and operations](fiori-ios-hcpms-setup)
- - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9.3 or higher
- - **SAP BTP SDK for iOS:** Version 2.2
+
+- **Proficiency:** Beginner
+- **Tutorials:** [Sign up for a free trial account on SAP BTP](hcp-create-trial-account) and [Enable SAP Mobile Services for development and operations](fiori-ios-hcpms-setup)
+- **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9.3 or higher
+- **SAP BTP SDK for iOS:** Version 2.2
 
 ## Details
+
 ### You will learn  
+
 In tutorial Customize theme and on-boarding of iOS app you created a custom [`NUI`](https://github.com/tombenner/nui) stylesheet which was then included in the app's project. The biggest drawback to this approach is that for every style change, you need to rebuild and deploy your app.
 
 Since version 2.2 of the SAP BTP SDK for iOS, you can now upload stylesheets to SAP Mobile Services for development and operations, and during the onboarding flow, your app will then download the latest changes. In this tutorial, you will create a stylesheet and upload it to SAP Mobile Services for development and operations. You will then modify the app's onboarding flow so it will download and apply the stylesheet.
@@ -21,6 +24,7 @@ Since version 2.2 of the SAP BTP SDK for iOS, you can now upload stylesheets to 
 For this tutorial, you can use any iOS app you have previously created with the SAP BTP SDK Assistant for iOS.
 
 ### Time to Complete
+
 **15 Min**
 
 ---
@@ -90,10 +94,8 @@ Click **OK** when done. The uploaded stylesheet is now listed:
 
 ![Upload the stylesheet](fiori-ios-scpms-theme-download-04.png)
 
-
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](Implement the stylesheet download steps)]
 
@@ -165,7 +167,6 @@ NUIStyleSheetApplyStep(fileURL: nssResourceURL!)
 Build and run the app. After you have logged on, you'll notice the app now uses the stylesheet you uploaded to SAP BTP:
 
 ![Upload the stylesheet](fiori-ios-scpms-theme-download-05.png)
-
 
 [VALIDATE_4]
 [ACCORDION-END]
