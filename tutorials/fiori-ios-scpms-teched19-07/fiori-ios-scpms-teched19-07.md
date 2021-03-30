@@ -5,19 +5,22 @@ author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 auto_validation: true
 primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>ios-sdk-for-sap-btp ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 25
 ---
 
 ## Prerequisites
+
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
 - **SAP BTP SDK for iOS:** Version 5.0
 
 ## Details
+
 ### You will learn  
-  - How to import a trained Core ML model into Xcode
-  - How to use the Vision framework to process an Image and feed it to the classification model
-  - How to take the classification result and fetch products for the classified product category
+
+- How to import a trained Core ML model into Xcode
+- How to use the Vision framework to process an Image and feed it to the classification model
+- How to take the classification result and fetch products for the classified product category
 
 ---
 

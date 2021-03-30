@@ -5,19 +5,22 @@ author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 auto_validation: true
 primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>ios-sdk-for-sap-btp ]
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 15
 ---
 
 ## Prerequisites
+
 - **Tutorials:** [Get a Free Trial Account on SAP BTP](hcp-create-trial-account) and [Enable SAP Mobile Services](fiori-ios-hcpms-setup)
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
 - **SAP BTP SDK for iOS:** Version 5.0
 
 ## Details
+
 ### You will learn  
-  - How to create a connection in the SAP BTP SDK Assistant for iOS
-  - How to generate an app with the SAP BTP SDK Assistant for iOS
+
+- How to create a connection in the SAP BTP SDK Assistant for iOS
+- How to generate an app with the SAP BTP SDK Assistant for iOS
 
 ---
 
@@ -143,7 +146,6 @@ After clicking **Finish**, the Assistant will generate an Xcode project, save it
     > You could also define your own IDP on the cloud side if you don't want to use the SAP IDP.
 
     !![App Onboarding](fiori-ios-scpms-teched19-15.png)
-
 
 3. The next screen shows an example Data Privacy disclosure prompt which allows you to include data privacy and consent text that complies with the EU General Data Protection Regulation (GDPR) for example.
 
