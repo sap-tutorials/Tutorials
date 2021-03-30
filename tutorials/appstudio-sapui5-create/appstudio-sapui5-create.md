@@ -5,7 +5,8 @@ auto_validation: true
 time: 25
 tags: [ tutorial>beginner, topic>javascript, topic>sapui5, topic>html5, products>sap-business-technology-platform, products>sap-business-application-studio]
 primary_tag: products>sap-btp-cloud-foundry-environment
-author_name: Paola Laufer
+author_name: Conrad Bernal
+author_profile: https://github.com/cjbernal
 
 ---
 
@@ -14,7 +15,7 @@ author_name: Paola Laufer
   - How to create an SAPUI5 project
   - How to build a project for Cloud Foundry
   - How to deploy a project to Cloud Foundry
- 
+
 ---
 
 [ACCORDION-BEGIN [Step : ](Open the Fiori dev space)]
@@ -25,13 +26,6 @@ author_name: Paola Laufer
 !![selectDevSpace](./selectDevSpace.png)
 
 > Have a look at [this tutorial](appstudio-devspace-fiori-create) if you are unsure how to get here or how to create a dev space.
-
-
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Create a UI5 destination)]
-
-[Create a new destination](cp-cf-create-destination) of the name "ui5" that points to the URL `https://sapui5.hana.ondemand.com/`. This is where we'll pull the standard UI5 libs from later.
 
 
 [DONE]
@@ -83,103 +77,18 @@ This step will guide you through the needed actions to create a project that con
 
     !![projectdetails](./projectdetails.png)
 
-4.  Choose **Cloud Foundry** as the target runtime and type in any value for the destination as it is a mandatory field. Press **Finish** to create the new project.
+4.  Choose **Cloud Foundry** as the target runtime and select **None** for the destination and make sure that **Add application to managed application router** is selected. Then, press **Finish** to create the new project.
 
     !![finishProject](./finishProject.png)
 
 
-4. Once you see the success message, click **Open in a new Workspace** to open the new project.
+4. Once you see the success message, click **File | Open Workspace...** to open a new dialog.
 
+    !![openws](./openWs1.png)
 
-    !![openws](./openws.png)
+    In there, select the generated folder **sapui5** and hit **open** to see the new project.
 
-
-
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](A managed application router)]
-
-The project is already deployable as it. But there is one thing missing in order make it accessible from your browser - [the managed application router](https://blogs.sap.com/2020/10/02/serverless-sap-fiori-apps-in-sap-cloud-platform/#serverless):
-
-1. Right-click on the `mta.yaml` file and select **Create MTA Module from Template**.
-
-    !![newmod](./newmod.png)
-
-2.  Choose **Approuter Configuration** and **Start** to continue in the wizard.
-
-    !![approuter](./approuter.png)
-
-
-2.  Select **Managed Approuter** as there's not need to extend the approuter and therefore reduce the TCO of the project. Enter **`basic.service`** as the name of out business service and hit **Next** to close in the wizard.
-
-    !![approuter](./managedapprouter.png)
-
-1. Now we need to reuse this business service in our web app. Open `webapp/manifest.json` and add the following lines.
-
-    ```JSON[15-17]
-    {
-        "_version": "1.29.0",
-        "sap.app": {
-            "id": "sap.btp.sapui5",
-            "type": "application",
-            "i18n": "i18n/i18n.properties",
-            "applicationVersion": {
-                "version": "1.0.0"
-            },
-            "title": "",
-            "description": "",
-            "resources": "resources.json",
-            "ach": "ach"
-        },
-        "sap.cloud": {
-            "service": "basic.service"
-        },
-        "sap.ui": {
-        ...
-    ```
-
-1. There's currently one glitch in the wizard that we need to fix manually. Go to the `mta.yaml` file and add the highlighted line.
-
-    ```YAML[26]
-    _schema-version: "3.2"
-    ID: sap-btp-sapui5
-    description: A Fiori application.
-    version: 0.0.1
-    modules:
-      ...
-      - name: sap-btp-sapui5-destination-content
-        type: com.sap.application.content
-        requires:
-        - name: sap-btp-sapui5-destination-service
-          parameters:
-            content-target: true
-        - name: sap-btp-sapui5-html5-repo-host
-          parameters:
-            service-key:
-              name: sap-btp-sapui5-html5-repo-host-key
-        - name: uaa_sap-btp-sapui5
-          parameters:
-            service-key:
-              name: uaa_sap-btp-sapui5-key
-        parameters:
-          content:
-            instance:
-              destinations:
-              - Name: basic_service_sap_btp_sapui5_html5_repo_host
-                ServiceInstanceName: sap-btp-sapui5-html5-repo-host
-                ServiceKeyName: sap-btp-sapui5-html5-repo-host-key
-                sap.cloud.service: basic.service
-              - Authentication: OAuth2UserTokenExchange
-                Name: basic_service_uaa_sap_btp_sapui5
-                ServiceInstanceName: sap-btp-sapui5-xsuaa-service
-                ServiceKeyName: uaa_sap-btp-sapui5-key
-                sap.cloud.service: basic.service
-              existing_destinations_policy: ignore
-        build-parameters:
-          no-source: true
-       ...
-    ```
-
+    !![openws](./openWs2.png)
 
 
 [DONE]

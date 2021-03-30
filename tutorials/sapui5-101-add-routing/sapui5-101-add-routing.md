@@ -3,8 +3,8 @@ title: Add Views and Define Routes to Access Them
 description: Add new views to the SAPUI5 web application and declare them in the manifest.
 auto_validation: true
 primary_tag: topic>sapui5
-author_name: Marius Obert
-author_profile: https://github.com/iobert
+author_name: Conrad Bernal
+author_profile: https://github.com/cjbernal
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-business-application-studio  ]
 time: 20
 ---
