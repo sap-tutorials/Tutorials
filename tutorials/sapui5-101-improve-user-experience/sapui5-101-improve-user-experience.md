@@ -4,8 +4,8 @@ description: Display more detailed information for each list item and on the det
 time: 15
 auto_validation: true
 primary_tag: topic>sapui5
-author_name: Marius Obert
-author_profile: https://github.com/iobert
+author_name: Conrad Bernal
+author_profile: https://github.com/cjbernal
 tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-business-application-studio ]
 ---
 ## Details
@@ -224,7 +224,7 @@ Try to search for a word.
 
 > With this, you completed the tutorial group. Congratulations!
 
-> You can follow steps 6 and 7 (and possibly step 2 as well) of [this tutorial](appstudio-sapui5-create) to deploy the application to SAP BTP, Cloud Foundry environment.
+> You can follow steps 4 and 5 of [this tutorial](appstudio-sapui5-create) to deploy the application to SAP BTP, Cloud Foundry environment.
 
 
 [VALIDATE_1]
