@@ -397,7 +397,7 @@ Before you continue, make sure that you've completed the prerequisites and insta
 
 Instead of using in-memory, you can also use persistent databases.
 
-1. If `cds watch` is running, press **CTRL+C** in the command line to stop the service.
+1. If `cds watch` is running, choose **CTRL+C** in the command line to stop the service.
 
 2. Install `SQLite3` packages.
 
@@ -425,7 +425,7 @@ Instead of using in-memory, you can also use persistent databases.
 
     > If this doesn't work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db/my-bookshop.db -cmd .dump`. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation for more details.
 
-5. To stop `SQLite` and go back to your project directory, press **CTRL+C**.
+5. To stop `SQLite` and go back to your project directory, choose **CTRL+C**.
 
 6. Run your service.
 
@@ -438,7 +438,7 @@ Instead of using in-memory, you can also use persistent databases.
     [cds] - connect to db > sqlite { database: 'db/my-bookshop.db' }
     [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
 
-    [cds] - launched in: 871.970ms
+    [cds] - launched in: 629.769ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
