@@ -5,19 +5,16 @@ title: Use Usage Reporting in Your Android Application
 description: See how the Usage Reporting feature can help provide information on how your app is being used.
 auto_validation: true
 time: 30
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-cloud-platform-sdk-for-android, products>sap-business-technology-platform ]
-primary_tag: products>sap-cloud-platform-sdk-for-android
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>android-sdk-for-sap-btp, products>sap-business-technology-platform ]
+primary_tag: products>android-sdk-for-sap-btp
 
 ---
 
 ## Prerequisites
-
-- You completed [Try Out the SAP BTP SDK for Android Wizard](cp-sdk-android-wizard-app).
+- You completed [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app).
 
 ## Details
-
 ### You will learn
-
 - How the Usage Reporting feature works
 - How to customize the consent screen
 - How to further instrument the Wizard app
@@ -27,7 +24,7 @@ primary_tag: products>sap-cloud-platform-sdk-for-android
 
 [ACCORDION-BEGIN [Step 1: ](Manual upload of usage data)]
 
-As shown in the tutorial, [Try Out the SAP BTP SDK for Android Wizard](cp-sdk-android-wizard-app), ensure that **Enable Usage Reporting** is checked when creating the app.
+As shown in the tutorial, [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app), ensure that **Enable Usage Reporting** is checked when creating the app.
 
 !![Enable Usage when Creating App](creating_with_usage.png)
 
@@ -80,7 +77,7 @@ The app must first receive permission to collect usage information from the user
 
     !![View usage report](view_usage_report.png)
 
-    Different charts become available when you switch the tabs between **Sessions**, **Demographics**, and **Behavior**. The mark in the yellow box controls whether to display filters that are in the red box right below **User Data**.
+    Different charts become available when you select in the drop-down (green) box between **Sessions**, **Demographics**, and **Behavior**. The mark in the yellow box controls whether to display filters that are in the red box right below.
 
 2. To download the usage report, go to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** > **Mobile Client Usage and User Feedback**. You can filter the data by changing the value of the **Last 7 Days** dropdown. Click the **Download** icon to export the filtered data to a `.csv` file.
 
@@ -236,16 +233,16 @@ The following steps record how often users start adding or updating products but
 
     !![New Entries in the Client Upload csv](new_client_upload_example.png)
 
-16. In four empty cells that are not in the `P` ( `I_ACTION` ) column on the Excel spreadsheet, label two of them with **`Product Create or Edit Clicked`** and **`Cancelled Product Create or Edit`** respectively. Next to `Product Create or Edit Clicked`, use the following formula to find the number of times the user intended to add/update a product:
+16.  In four empty cells that are not in the `R` ( `I_ACTION` ) column on the Excel spreadsheet, label two of them with **`Product Create or Edit Clicked`** and **`Cancelled Product Create or Edit`** respectively. Next to `Product Create or Edit Clicked`, use the following formula to find the number of times the user intended to add/update a product:
 
     ```Excel
-    =COUNTIF(P:P, "*createOrEditProductClicked*")
+    =COUNTIF(R:R, "*createOrEditProductClicked*")
     ```
 
 17. Next to `Cancelled Product Create or Edit`, use the following formula to find the number of times the user cancelled an add/update product action:
 
     ```Excel
-    =COUNTIF(P:P, "*onBackPressed*")
+    =COUNTIF(R:R, "*onBackPressed*")
     ```
 
     In the example, the user tried to create a product four times, but cancelled three times.
@@ -317,16 +314,16 @@ The following steps record how often users start adding or updating products but
 
     !![New Entries in the Client Upload csv](new_client_upload_example.png)
 
-16. In four empty cells that are not in the `P` ( `I_ACTION` ) column on the Excel spreadsheet, label two of them with **`Product Create or Edit Clicked`** and **`Cancelled Product Create or Edit`** respectively. Next to `Product Create or Edit Clicked`, use the following formula to find the number of times the user intended to add/update a product:
+16.  In four empty cells that are not in the `R` ( `I_ACTION` ) column on the Excel spreadsheet, label two of them with **`Product Create or Edit Clicked`** and **`Cancelled Product Create or Edit`** respectively. Next to `Product Create or Edit Clicked`, use the following formula to find the number of times the user intended to add/update a product:
 
     ```Excel
-    =COUNTIF(P:P, "*createOrEditProductClicked*")
+    =COUNTIF(R:R, "*createOrEditProductClicked*")
     ```
 
 17. Next to `Cancelled Product Create or Edit`, use the following formula to find the number of times the user cancelled an add/update product action:
 
     ```Excel
-    =COUNTIF(P:P, "*onBackPressed*")
+    =COUNTIF(R:R, "*onBackPressed*")
     ```
 
     In the example, the user tried to create a product four times, but cancelled three times.
@@ -348,70 +345,46 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
 
     !![Set Auto Upload of Usage Report](automatic_upload.png)
 
-2. In Android Studio, on Windows, press **Ctrl+N**, or, on a Mac, press **command+O**, and type **`MainBusinessActivity`** to open `MainBusinessActivity.java`.
+2.  In Android Studio, on Windows, press **Ctrl+N**, or, on a Mac, press **command+O**, and type **`WizardFlowStateListener`** to open `WizardFlowStateListener.java`.
 
-3. Add the following variables to the top of the `MainBusinessActivity` class:
+3.  Add the following variables to the top of the `WizardFlowStateListener` class:
 
     ```Java
-    //Make sure to import org.slf4j.LoggerFactory
-    private static final Logger LOGGER = LoggerFactory.getLogger(MainBusinessActivity.class);
-
-    private static final String USAGE_POLICY_ENABLED = "dataCollectionEnabled";
-    private static final String USAGE_POLICY_UPLOAD_AFTER_DAYS = "uploadDataAfterDays";
-    private static final String SETTINGS_USAGE = "usagePolicy";
-
     private static boolean isUsageEnabled;
     private static int uploadInterval;
     ```
 
-4. On Windows, press **Ctrl+F12**, or, on a Mac, press **command+F12**, and type **`startEntitySetListActivity`** to move to the `startEntitySetListActivity` method.
+4.  On Windows, press **Ctrl+F12**, or, on a Mac, press **command+F12**, and type **`onClientPolicyRetrieved`** to move to the `onClientPolicyRetrieved` method.
 
-5. Before the method `startEntitySetListActivity`, add the following code:
+5.  At the end of the method, add the following code:
 
     ```Java
-    private void getClientPolicyFromServer() {
-        Settings settings = new Settings();
-        settings.load(Settings.SettingTarget.DEVICE, "mobileservices/settingsExchange", new PolicyCallbackListener());
-    }
-
-    private class PolicyCallbackListener implements Settings.CallbackListener {
-
-        @Override
-        public void onSuccess(@NonNull JSONObject result) {
-            JSONObject usagePolicyJson = result.optJSONObject(SETTINGS_USAGE);
-            if (usagePolicyJson != null) {
-                isUsageEnabled = usagePolicyJson.optBoolean(USAGE_POLICY_ENABLED, false);
-                uploadInterval = usagePolicyJson.optInt(USAGE_POLICY_UPLOAD_AFTER_DAYS, 0);
-            }
+    if (policies.getUsagePolicy() != null) {
+        isUsageEnabled = policies.getUsagePolicy().getDataCollectionEnabled();
+        uploadInterval = policies.getUsagePolicy().getUploadDataAfterDays();
+        if (isUsageEnabled) {
+            UsageBroker.setDataCollectionEnabled(isUsageEnabled);
             uploadUsage();
-        }
-
-        @Override
-        public void onError(@NonNull Throwable throwable) {
-            LOGGER.error("Could not download the policy from the server due to error: " + throwable.getMessage());
         }
     }
     ```
 
     This code gets the usage policy information from the server client policy and stores it inside global variables.
 
-    >There may be an error on `Settings`. Select it and press **`Alt+Enter`** on Windows, or, press **`option+Enter`** on Macs, to import the related class from `com.sap.cloud.mobile.foundation.settings`.
-
-6. Add the following method in the file:
+6.  Add the following method in the file:
 
     ```Java
     private void uploadUsage() {
-        int newDays = uploadInterval;
-        UsageBroker.setDaysToWaitBetweenUpload(newDays);
+        UsageBroker.setDaysToWaitBetweenUpload(uploadInterval);
 
-        //if newDays is greater than 0 then auto-upload is considered to be enabled on Mobile Services
-        if (newDays > 0) {
+        //if uploadInterval is greater than 0 then auto-upload is considered to be enabled on Mobile Services
+        if (uploadInterval > 0) {
             // The upload will only occur if the last upload was more than newDays ago
             AppUsageUploader.addUploadListener(new AppUsageUploader.UploadListener() {
                 @Override
                 public void onSuccess() {
-                    Toast.makeText(getApplication(),
-                            getResources().getString(R.string.usage_upload_ok),
+                    Toast.makeText(application,
+                            application.getString(R.string.usage_upload_ok),
                             Toast.LENGTH_LONG).show();
                 }
 
@@ -419,21 +392,21 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
                 public void onError(Throwable error) {
                     // make sure to import com.sap.cloud.mobile.foundation.networking.HttpException;
                     if (error instanceof HttpException) {
-                        LOGGER.debug("Usage Upload server error: {}, code = {}",
+                        logger.debug("Usage Upload server error: {}, code = {}",
                                 ((HttpException) error).message(), ((HttpException) error).code());
                     } else {
-                        LOGGER.debug("Usage Upload error: {}", error.getMessage());
+                        logger.debug("Usage Upload error: {}", error.getMessage());
                     }
-                    String errorMessage = getResources().getString(R.string.usage_upload_failed);
-                    LOGGER.error(errorMessage, error);
+                    String errorMessage = application.getString(R.string.usage_upload_failed);
+                    logger.error(errorMessage, error);
                 }
 
                 @Override
                 public void onProgress(int i) {
-                    LOGGER.debug("Usage upload progress: " + i);
+                    logger.debug("Usage upload progress: " + i);
                 }
             });
-            UsageBroker.upload(this, false);
+            UsageBroker.upload(application, false);
         }
     }
     ```
@@ -442,31 +415,23 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
 
     >There may be an error on `HttpException`. Select it and press **`Alt+Enter`** on Windows, or, press **`option+Enter`** on Macs, to import the related class from `com.sap.cloud.mobile.foundation.networking`.
 
-7. On Windows, press **Ctrl+F12**, or, on a Mac, press **command+F12**, and type **`startEntitySetListActivity`** to move to the `startEntitySetListActivity` method.
+7.  In Android Studio, on Windows, press **Ctrl+N**, or, on a Mac, press **command+O**, and type **`SettingsFragment`** to open `SettingsFragment.java`.
 
-8. At the very beginning of the method, add the following method call:
-
-    ```Java
-    getClientPolicyFromServer();
-    ```
-
-9. In Android Studio, on Windows, press **Ctrl+N**, or, on a Mac, press **command+O**, and type **`SettingsFragment`** to open `SettingsFragment.java`.
-
-10. On Windows, press **Ctrl+F**, or, on a Mac, press **command+F**, to find:
+8.  On Windows, press **Ctrl+F**, or, on a Mac, press **command+F**, to find:
 
     ```Java
     UsageBroker.upload(getContext(), false);
     ```
 
-11. Change **false** to **true**.
+9.  Change **false** to **true**.
 
     This will allow the user to upload the usage report via the app's settings screen regardless of the number of days specified in the policy.
 
     When the app is run and the number of days in the policy has passed, there should be a Toast notification showing that the usage report has been uploaded successfully.
 
-12. To test this feature, in **Settings** > **System** > **Date & time** from the emulator, toggle **Use network-provided time** to **off**.
+10.  To test this feature, in **Settings** > **System** > **Date & time** from the emulator, toggle **Use network-provided time** to **off**.
 
-13. Change the **Date** to a day in the future and re-run the app (quit first). The usage report should be uploaded automatically.
+11.  Change the **Date** to a day in the future and re-run the app (quit first). The usage report should be uploaded automatically.
 
     !![Usage Report Successfully Uploaded Toast Message](usage_report_uploaded_toast_message.png)
 
@@ -478,87 +443,63 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
 
     !![Set Auto Upload of Usage Report](automatic_upload.png)
 
-2. In Android Studio, on Windows, press **Ctrl+N**, or, on a Mac, press **command+O**, and type **`MainBusinessActivity`** to open `MainBusinessActivity.kt`.
+2.  In Android Studio, on Windows, press **Ctrl+N**, or, on a Mac, press **command+O**, and type **`WizardFlowStateListener`** to open `WizardFlowStateListener.kt`.
 
 3. Near the end of the class, add the following companion objects:
 
     ```Kotlin
-    companion object{
-        //Make sure to import org.slf4j.LoggerFactory
-        private val LOGGER = LoggerFactory.getLogger(MainBusinessActivity::class.java)
-
-        private val USAGE_POLICY_ENABLED = "dataCollectionEnabled"
-        private val USAGE_POLICY_UPLOAD_AFTER_DAYS = "uploadDataAfterDays"
-        private val SETTINGS_USAGE = "usagePolicy"
-
-        private var isUsageEnabled: Boolean = false
-        private var uploadInterval: Int = 0
-    }
+    private var isUsageEnabled: Boolean = false
+    private var uploadInterval: Int = 0
     ```
 
-4. On Windows, press **Ctrl+F12**, or, on a Mac, press **command+F12**, and type **`startEntitySetListActivity`** to move to the `startEntitySetListActivity` method.
+4.  On Windows, press **Ctrl+F12**, or, on a Mac, press **command+F12**, and type **`onClientPolicyRetrieved`** to move to the `onClientPolicyRetrieved` method.
 
-5. Before the method `startEntitySetListActivity`, add the following code:
+5.  At the end of the method, add the following code:
 
     ```Kotlin
-    private fun getClientPolicyFromServer() {
-        val settings = Settings()
-        settings.load(Settings.SettingTarget.DEVICE, "mobileservices/settingsExchange", PolicyCallbackListener())
-    }
-
-    private inner class PolicyCallbackListener: Settings.CallbackListener {
-
-        override fun onSuccess(result: JSONObject) {
-            val usagePolicyJson = result.optJSONObject(SETTINGS_USAGE)
-            usagePolicyJson?.let {
-                isUsageEnabled = it.optBoolean(USAGE_POLICY_ENABLED, false)
-                uploadInterval = it.optInt(USAGE_POLICY_UPLOAD_AFTER_DAYS, 0)
-            }
+    policies.usagePolicy?.also {
+        isUsageEnabled = it.dataCollectionEnabled
+        uploadInterval = it.uploadDataAfterDays
+        if (isUsageEnabled) {
+            UsageBroker.setDataCollectionEnabled(isUsageEnabled)
             uploadUsage()
-        }
-
-        override fun onError(throwable: Throwable) {
-            LOGGER.error("Could not download the policy from the server due to error: " + throwable.message)
         }
     }
     ```
 
     This code gets the usage policy information from the server client policy and stores it inside global variables.
 
-    >There may be an error on `Settings`. Select it and press **`Alt+Enter`** on Windows, or, press **`option+Enter`** on Macs, to import the related class from `com.sap.cloud.mobile.foundation.settings`.
-
-6. Add the following method in the file:
+6.  Add the following method in the file:
 
     ```Kotlin
     private fun uploadUsage() {
-        val newDays = uploadInterval
-        UsageBroker.setDaysToWaitBetweenUpload(newDays)
+        UsageBroker.setDaysToWaitBetweenUpload(uploadInterval)
 
-        //if newDays is greater than 0 then auto-upload is considered to be enabled on Mobile Services
-        if (newDays > 0) {
+        //if uploadInterval is greater than 0 then auto-upload is considered to be enabled on Mobile Services
+        if (uploadInterval > 0) {
             // The upload will only occur if the last upload was more than newDays ago
             AppUsageUploader.addUploadListener(object: AppUsageUploader.UploadListener {
                 override fun onSuccess() {
-                    Toast.makeText(application, resources.getString(R.string.usage_upload_ok), Toast.LENGTH_LONG).show()
+                    Toast.makeText(application, application.getString(R.string.usage_upload_ok), Toast.LENGTH_LONG).show()
                 }
 
                 override fun onError(error: Throwable) {
                     // make sure to import com.sap.cloud.mobile.foundation.networking.HttpException;
                     if (error is HttpException) {
-                        LOGGER.debug("Usage Upload server error: {}, code = {}", error.message(), error.code())
+                        logger.debug("Usage Upload server error: {}, code = {}", error.message(), error.code())
                     } else {
-                        LOGGER.debug("Usage Upload error: {}", error.message)
+                        logger.debug("Usage Upload error: {}", error.message)
                     }
 
-                    val errorMessage = resources.getString(R.string.usage_upload_failed)
-                    LOGGER.error(errorMessage, error)
+                    val errorMessage = application.getString(R.string.usage_upload_failed)
+                    logger.error(errorMessage, error)
                 }
 
                 override fun onProgress(i: Int) {
-                    LOGGER.debug("Usage upload progress: $i")
+                    logger.debug("Usage upload progress: $i")
                 }
             })
-            UsageBroker.upload(this, false)
+            UsageBroker.upload(application, false)
         }
     }
     ```
@@ -567,31 +508,23 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
 
     >There may be an error on `HttpException`. Select it and press **`Alt+Enter`** on Windows, or, press **`option+Enter`** on Macs, to import the related class from `com.sap.cloud.mobile.foundation.networking`.
 
-7. On Windows, press **Ctrl+F12**, or, on a Mac, press **command+F12**, and type **`startEntitySetListActivity`** to move to the `startEntitySetListActivity` method.
+7.  In Android Studio, on Windows, press **Ctrl+N**, or, on a Mac, press **command+O**, and type **`SettingsFragment`** to open `SettingsFragment.kt`.
 
-8. At the very beginning of the method, add the following method call:
-
-    ```Kotlin
-    getClientPolicyFromServer()
-    ```
-
-9. In Android Studio, on Windows, press **Ctrl+N**, or, on a Mac, press **command+O**, and type **`SettingsFragment`** to open `SettingsFragment.kt`.
-
-10. On Windows, press **Ctrl+F**, or, on a Mac, press **command+F**, to find:
+8.  On Windows, press **Ctrl+F**, or, on a Mac, press **command+F**, to find:
 
     ```Kotlin
     UsageBroker.upload(requireContext(), false)
     ```
 
-11. Change **false** to **true**.
+9.  Change **false** to **true**.
 
     This will allow the user to upload the usage report via the app's settings screen regardless of the number of days specified in the policy.
 
     When the app is run and the number of days in the policy has passed, there should be a Toast notification showing that the usage report has been uploaded successfully.
 
-12. To test this feature, in **Settings** > **System** > **Date & time** from the emulator, toggle **Use network-provided time** to **off**.
+10.  To test this feature, in **Settings** > **System** > **Date & time** from the emulator, toggle **Use network-provided time** to **off**.
 
-13. Change the **Date** to a day in the future and re-run the app (quit first). The usage report should be uploaded automatically.
+11.  Change the **Date** to a day in the future and re-run the app (quit first). The usage report should be uploaded automatically.
 
     !![Usage Report Successfully Uploaded Toast Message](usage_report_uploaded_toast_message.png)
 

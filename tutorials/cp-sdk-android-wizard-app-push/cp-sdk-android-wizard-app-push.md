@@ -3,21 +3,18 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: Send Notifications to Your Android Application
 description: Add foreground and background notifications to your application using Google Firebase.
-primary_tag: products>sap-cloud-platform-sdk-for-android
+primary_tag: products>android-sdk-for-sap-btp
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap-cloud-platform-sdk-for-android, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>android-sdk-for-sap-btp, products>sap-business-technology-platform ]
 time: 20
 ---
 
 
 ## Prerequisites
-
-- You completed [Try Out the SAP BTP SDK for Android Wizard](cp-sdk-android-wizard-app).
+- You completed [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app).
 
 ## Details
-
 ### You will learn
-
 - How to configure SAP BTP for push
 - How to configure Mobile Services for push
 - Foreground notifications

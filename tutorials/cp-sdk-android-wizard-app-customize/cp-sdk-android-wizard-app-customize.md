@@ -3,14 +3,14 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: Customize the Wizard Generated Application
 description: Customize a wizard-generated application and learn how to use Fiori object cells, search UI, and the collection view.
-primary_tag: products>sap-cloud-platform-sdk-for-android
+primary_tag: products>android-sdk-for-sap-btp
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>wizard, products>sap-cloud-platform-sdk-for-android, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>android-sdk-for-sap-btp, products>sap-business-technology-platform ]
 time: 60
 ---
 
 ## Prerequisites
-- You completed [Try Out the SAP BTP SDK for Android Wizard](cp-sdk-android-wizard-app).
+- You completed [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app).
 
 
 ## Details
@@ -445,8 +445,7 @@ In this section, you will modify the app to initially show the **Product Categor
             }
         }
         adapter.setItems(matchingProducts);
-    }
-    else {
+    } else {
         adapter.setItems(products);
     }
     ```
@@ -484,9 +483,7 @@ In this section, you will modify the app to initially show the **Product Categor
 7.  Replace the `(currentActivity.findViewById<FloatingActionButton>(R.id.fab))?.let` block with the following code:
 
     ```Kotlin
-    (currentActivity.findViewById<FloatingActionButton>(R.id.fab))?.let {
-        it.hide()
-    }
+    (currentActivity.findViewById<FloatingActionButton>(R.id.fab))?.hide()
     ```
 
 8.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onCreateOptionsMenu`**, to move to the `onCreateOptionsMenu` method.

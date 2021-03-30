@@ -4,7 +4,7 @@ description: Translate the Flows App from Java to Kotlin using Android Studio.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-business-technology-platform, operating-system>android, topic>mobile]
-primary_tag: products>sap-cloud-platform-sdk-for-android
+primary_tag: products>android-sdk-for-sap-btp
 ---
 
 ## Prerequisites

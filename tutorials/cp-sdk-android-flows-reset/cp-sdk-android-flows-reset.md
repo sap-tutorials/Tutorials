@@ -4,7 +4,7 @@ description: Add a reset flow which might be used by the user to onboard the app
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-business-technology-platform, operating-system>android, topic>mobile]
-primary_tag: products>sap-cloud-platform-sdk-for-android
+primary_tag: products>android-sdk-for-sap-btp
 ---
 
 ## Prerequisites

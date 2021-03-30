@@ -4,7 +4,7 @@ description: Create a custom asynchronous step in a flow which will display an A
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-business-technology-platform, operating-system>android, topic>mobile]
-primary_tag: products>sap-cloud-platform-sdk-for-android
+primary_tag: products>android-sdk-for-sap-btp
 ---
 
 ## Prerequisites

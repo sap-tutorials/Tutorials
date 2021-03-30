@@ -4,7 +4,7 @@ description: Add an onboarding flow that will perform the initial onboarding to 
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-business-technology-platform, operating-system>android, topic>mobile]
-primary_tag: products>sap-cloud-platform-sdk-for-android
+primary_tag: products>android-sdk-for-sap-btp
 ---
 
 ## Prerequisites
