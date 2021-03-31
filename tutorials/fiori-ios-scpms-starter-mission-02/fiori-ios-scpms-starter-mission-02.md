@@ -1,23 +1,26 @@
 ---
 title: Implement Your First Screen in an iOS App
-description: Implement the first screen of your SAP SDK for iOS app.
+description: Implement the first screen of your SAP BTP SDK for iOS app.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>ios-sdk-for-sap-btp ]
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 60
 ---
 
 ## Prerequisites
+
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP SDK for iOS:** Version 5.0 or higher
+- **SAP BTP SDK for iOS:** Version 5.0 or higher
 
 ## Details
+
 ### You will learn  
-  - How to create your first iOS screen
-  - How to retrieve data and display it on the screen
-  - How to follow the SAP Fiori for iOS guidelines.
+
+- How to create your first iOS screen
+- How to retrieve data and display it on the screen
+- How to follow the SAP Fiori for iOS guidelines.
 
 ---
 
@@ -33,7 +36,7 @@ For this tutorial, you will implement an overview screen displaying a KPI Table 
 
 ![Overview Screen](fiori-ios-scpms-starter-mission-02-14.png)
 
-In the [Set Up the SAP SDK for iOS](group.ios-sdk-setup), you've learned how to create an Xcode project using the SAP SDK for iOS Assistant. The result of the generation process of the iOS Assistant can be a split view screen if chosen. In this tutorial you will change the generated UI to match the screen shown above, the overview screen of your app.
+In the [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup), you've learned how to create an Xcode project using the SAP BTP SDK Assistant for iOS. The result of the generation process of the Assistant can be a split view screen if chosen. In this tutorial you will change the generated UI to match the screen shown above, the overview screen of your app.
 
 1. First, open you Xcode project if not opened already and select the **`Main.storyboard`**, this will open the `Main.storyboard` in the Interface Builder of Xcode.
 
@@ -141,7 +144,6 @@ Great you did all necessary steps to replace the generated UI with your own. Go 
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 3: ](Implement basic functionality of overview screen)]
 
 As you can see, the overview screen is a little bit more complicated then just simply displaying a Table View with some data. The overview screen contains the following UI controls:
@@ -172,7 +174,7 @@ You will now implement some code to set up the `OverviewTableViewController` for
 
     ```
 
-    You are going to use APIs and classes from all of those SAP iOS SDK frameworks to build the Overview screen.
+    You are going to use APIs and classes from all of those SAP BTP SDK for iOS frameworks to build the Overview screen.
 
     The overview screen will have a short list of products and a collection of customers. Implementing two arrays containing elements of type **Product** and **Customer** will do the job of storing the loaded entities later on.
 
@@ -185,7 +187,7 @@ You will now implement some code to set up the `OverviewTableViewController` for
 
     ```
 
-3. Because you want to use the logging API of the `SAPCommon` framework you have to retrieve and store an instance of the logger. Luckily the logger gets initialized in the `AppDelegate` through generated code by the iOS Assistant. The logger is initialized with a default log level of **`Debug`**.
+3. Because you want to use the logging API of the `SAPCommon` framework you have to retrieve and store an instance of the logger. Luckily the logger gets initialized in the `AppDelegate` through generated code by the Assistant. The logger is initialized with a default log level of **`Debug`**.
 
     Add the following line of code above the products array:
 
@@ -288,7 +290,6 @@ You will now implement some code to set up the `OverviewTableViewController` for
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 4: ](Implement FUITableViewHeaderFooterView)]
 
 To finish building the screen's layout you are going to implement the dividers and the Header/Footer for the products and customers.
@@ -372,7 +373,6 @@ To finish building the screen's layout you are going to implement the dividers a
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 5: ](Load customer and product data)]
 
 Before you continue implementing the Table View's data source and delegate methods, you go and implement the data loading methods.
@@ -396,7 +396,7 @@ Implement the following lines of code directly below the logger instance as clas
 /// First retrieve the destinations your app can talk to from the AppParameters.
 let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
-/// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course you only have one destination here. Handle the errors in case the OData controller is nil. You are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the iOS Assistant.
+/// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course you only have one destination here. Handle the errors in case the OData controller is nil. You are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the Assistant.
 var dataService: ESPMContainer<OnlineODataProvider>? {
     guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
         AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
@@ -432,7 +432,6 @@ var dataService: ESPMContainer<OfflineODataProvider>? {
 }
 
 ```
-
 
 2. To fetch available customers, implement the following method below the closing bracket of the `viewDidLoad()` method:
 
@@ -535,7 +534,6 @@ var dataService: ESPMContainer<OfflineODataProvider>? {
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 6: ](Implement cellForRowAt method)]
 
@@ -724,7 +722,6 @@ Before you do this you have to take care of the product image lazy loading. You'
 [VALIDATE_6]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 7: ](Implement UICollectionViewDataSource)]
 
 To complete the UI, you need to implement the `UICollectionViewDataSource` protocol.
@@ -768,7 +765,6 @@ You are using a system image that can be found in the **SF Symbols** app. You ca
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 8: ](Add KPI Header to Table View)]
 

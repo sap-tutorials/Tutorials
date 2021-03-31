@@ -1,10 +1,10 @@
 ---
 title: Create a Custom Step in a Flow
-description: Create a custom step in a flow which will read JSON data from the SAP Cloud Platform Mobile Service's JSON storage feature.
+description: Create a custom step in a flow which will read JSON data from the SAP Mobile Services's JSON storage feature.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform, operating-system>android, topic>mobile]
-primary_tag: products>sap-cloud-platform-sdk-for-android
+tags: [ tutorial>beginner, products>sap-business-technology-platform, operating-system>android, topic>mobile]
+primary_tag: products>android-sdk-for-sap-btp
 ---
 
 ## Prerequisites
@@ -121,7 +121,7 @@ Replace the code for the class **`ClientPolicyManager`** with the below code.
 ```Java
 package com.sap.flows;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.sap.cloud.mobile.flow.onboarding.ClientPolicy;
 import com.sap.cloud.mobile.flow.onboarding.SecureStore;

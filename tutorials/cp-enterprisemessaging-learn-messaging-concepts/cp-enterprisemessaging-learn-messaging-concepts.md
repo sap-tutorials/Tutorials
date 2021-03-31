@@ -8,7 +8,7 @@ primary_tag: products>sap-event-mesh
 ---
 
 ## Prerequisites
-- [Start Developing on SAP Business Technology Platform](mission.scp-1-start-developing.html)
+- [Start Developing on SAP Business Technology Platform](mission.scp-1-start-developing)
 
 ---
 
