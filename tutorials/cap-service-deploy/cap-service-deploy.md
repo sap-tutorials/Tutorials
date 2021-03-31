@@ -27,17 +27,29 @@ It's now time to switch to SAP HANA as a database.
 1. If `cds watch` is still running in VS Code, choose **CTRL+C** in the command line to stop the service.
 
 2. To prepare the project, execute in the root level of your project in VS Code:
-
 ```Shell/Bash
 cds add hana
 ```
-> This configures deployment for SAP HANA to use the `hdbtable` and `hdbview` formats.
+> This configures deployment for SAP HANA to use the `hdbtable` and `hdbview` formats. The previous command added the `@sap/hana-client` driver for SAP HANA as a dependency in `package.json`. Note that in the future, this might change to `hdb`, which is a leaner driver. See section [SAP Support for `hdb` and `@sap/hana-client`](https://www.npmjs.com/package/hdb#sap-support-for-hdb-and-saphana-client) for a feature comparison.
+>  A data source of type `sql` is added in the `cds.requires.db` block. See section [Node.js configuration](https://cap.cloud.sap/docs/node.js/cds-env#profiles) in the CAP documentation for more details.
 
-> For your information, this is what the previous command has changed in `package.json`:
+3. (Optional) To enable SAP Fiori preview add the following configuration in the `package.json` of your `my-bookshop` project in VS Code:
 
-> The `@sap/hana-client` driver for SAP HANA is added as a dependency. Note that in the future, this might change to `hdb`, which is a leaner driver. See section [SAP Support for `hdb` and `@sap/hana-client`](https://www.npmjs.com/package/hdb#sap-support-for-hdb-and-saphana-client) for a feature comparison.
+```JSON
+"cds": {
+  "features": {
+    "fiori_preview": true
+  },
+}
+```
 
-> A data source of type `sql` is added in the `cds.requires.db` block. See section [Node.js configuration](https://cap.cloud.sap/docs/node.js/cds-env#profiles) in the CAP documentation for more details.
+> `fiori_preview:true` enables SAP Fiori preview also in `production` mode as you saw it in your local application in the previous tutorial in step 4 when using `cds watch`. This feature is meant to help you during development and should not be used in productive applications.
+
+> Don't edit the `gen/db/package.json` file.
+
+[DONE]
+
+[ACCORDION-END]
 
 3. (Optional) To enable SAP Fiori preview add the following configuration in the `package.json` of your `my-bookshop` project in VS Code:
 
@@ -54,9 +66,7 @@ cds add hana
     > Don't edit the `gen/db/package.json` file.
 
 
-[DONE]
 
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Identify SAP BTP Cloud Foundry endpoint)]
 
