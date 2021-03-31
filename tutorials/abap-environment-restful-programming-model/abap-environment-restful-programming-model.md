@@ -2,8 +2,8 @@
 auto_validation: true
 title: Get to Know the ABAP RESTful Application Programming Model
 description: Learn how the ABAP RESTful Application Programming Model and the development flow are structured.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform  ]
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
 time: 5
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -96,7 +96,6 @@ To develop additional custom logic such as validations and actions the steps in 
 [VALIDATE_1]
 [ACCORDION-END]
 
-## More Information
-- [SAP Help Portal: ABAP RESTful Application Programming Model](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/289477a81eec4d4e84c0302fb6835035.html)
+
 
 ---

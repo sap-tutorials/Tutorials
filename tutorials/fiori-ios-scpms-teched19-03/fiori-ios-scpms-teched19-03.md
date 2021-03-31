@@ -1,23 +1,26 @@
 ---
 title: Customize the Overview View Controller to Display Customers and Products
-description: Use the Swift programming language and the SAP SDK for iOS to implement data loading from the sample data service and display the results in a Table View in your app. Also add Table View Section Headers and Footers to give the data more structure and a nice clean UI.
+description: Use the Swift programming language and the SAP BTP SDK for iOS to implement data loading from the sample data service and display the results in a Table View in your app. Also add Table View Section Headers and Footers to give the data more structure and a nice clean UI.
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 15
 ---
 
 ## Prerequisites
+
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP SDK for iOS:** Version 5.0
+- **SAP BTP SDK for iOS:** Version 5.0
 
 ## Details
+
 ### You will learn  
-  - How to implement a Fiori Object Table View Cell
-  - How to implement Table View Section Headers and Footers
-  - How to use the generated data service to load data from the OData service
+
+- How to implement a Fiori Object Table View Cell
+- How to implement Table View Section Headers and Footers
+- How to use the generated data service to load data from the OData service
 
 You will add Table View Section Headers and Footers to give the data more structure and a nice clean UI.
 
@@ -27,7 +30,7 @@ You will add Table View Section Headers and Footers to give the data more struct
 
 In the previous tutorials you've built the foundation for implementing the logic behind the Overview View Controller. Before you can implement the data source and delegate logic for loading the Table View, you'll need to retrieve some data.
 
-This is fairly simple thanks to the SAP CP SDK for iOS and the generated model layer and convenience data service.
+This is fairly simple thanks to the SAP BTP SDK for iOS and the generated model layer and convenience data service.
 
 1. Open up the `OverviewViewController.swift` class and right below the `import UIKit` add the following import statements:
 
@@ -50,7 +53,7 @@ This is fairly simple thanks to the SAP CP SDK for iOS and the generated model l
 
     ```Swift
 
-    // The Logger is already setup in the AppDelegate through the SAP iOS Assistant, that's why you can easily can get an instance here.
+    // The Logger is already setup in the AppDelegate through the SAP BTP SDK Assistant for iOS , that's why you can easily can get an instance here.
     private let logger = Logger.shared(named: "OverviewViewController")
 
     private var customers = [Customer]()
@@ -281,7 +284,7 @@ import SAPFioriFlows
 
 class OverviewTableViewController: UITableViewController, SAPFioriLoadingIndicator {
 
-    // The Logger is already setup in the AppDelegate through the SAP iOS Assistant, that's why you can easily can get an instance here.
+    // The Logger is already setup in the AppDelegate through the SAP BTP SDK Assistant for iOS , that's why you can easily can get an instance here.
     private let logger = Logger.shared(named: "OverviewViewController")
     var loadingIndicator: FUILoadingIndicatorView?
 
@@ -563,7 +566,7 @@ import SAPFioriFlows
 
 class OverviewTableViewController: UITableViewController, SAPFioriLoadingIndicator {
 
-    // The Logger is already setup in the AppDelegate through the SAP iOS Assistant, that's why you can easily can get an instance here.
+    // The Logger is already setup in the AppDelegate through the SAP BTP SDK Assistant for iOS , that's why you can easily can get an instance here.
     private let logger = Logger.shared(named: "OverviewViewController")
     var loadingIndicator: FUILoadingIndicatorView?
 

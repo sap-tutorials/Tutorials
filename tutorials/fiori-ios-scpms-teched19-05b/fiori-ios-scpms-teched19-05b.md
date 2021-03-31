@@ -4,19 +4,22 @@ description: Get to know Create ML and how to create an Image Classification Mod
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 15
 ---
 
 ## Prerequisites
+
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP SDK for iOS:** Version 5.0 or newer
+- **SAP BTP SDK for iOS:** Version 5.0 or newer
 
 ## Details
+
 ### You will learn  
-  - What Create ML is
-  - How to create an Image Classification Model
+
+- What Create ML is
+- How to create an Image Classification Model
 
 ---
 
@@ -27,20 +30,25 @@ Since MacOS 10.14 developers have the opportunity to use Create ML as a tool to 
 Currently Apple supports the following types of models:
 
 **Image:**
+
 - [`MLImageClassifier`](https://developer.apple.com/documentation/createml/mlimageclassifier)
 - [`MLObjectDetector`](https://developer.apple.com/documentation/createml/mlobjectdetector)
 
 **Sound:**
+
 - [`MLSoundClassifier`](https://developer.apple.com/documentation/createml/mlsoundclassifier)
 
 **Motion:**
+
 - [`MLActivityClassifier`](https://developer.apple.com/documentation/createml/mlactivityclassifier)
 
 **Text:**
+
 - [`MLTextClassifier`](https://developer.apple.com/documentation/createml/mltextclassifier)
 - [`MLWordTagger`](https://developer.apple.com/documentation/createml/mlwordtagger)
 
 **Table:**
+
 - [`MLClassifier`](https://developer.apple.com/documentation/createml/mlclassifier)
 - [`MLRegressor`](https://developer.apple.com/documentation/createml/mlregressor)
 

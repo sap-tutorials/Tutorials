@@ -3,7 +3,7 @@ title: Quick Start with the Mobile Development Kit (MDK)
 description: Create and examine your first mobile (offline) and web application using the MDK template connecting against a sample service.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio]
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio]
 time: 15
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -27,9 +27,11 @@ This step includes creating the mobile development kit project in the editor.
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. Navigate to *File* menu &rarr; click **New Project from Template**.
+2. Click **Start from template** on Welcome page.
 
-    !![MDK](img_1.2.png)
+    !![MDK](img-1.2.png)
+
+    >If you do not see Welcome page, you can access it via **Help** menu.
 
 3. Select **MDK Project** and click **Start**.
 
@@ -71,9 +73,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img_1.8.png)
 
-9. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKApp` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
-
-    !![MDK](img_1.10.png)
+9. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKApp` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -82,7 +82,7 @@ This step includes creating the mobile development kit project in the editor.
 
 This is how the project structure looks like within the workspace.
 
-!![MDK](img_2.png)
+!![MDK](img-2.png)
 
 These are the [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/App.schema.html) available in the editor and the format in which these metadata definitions are stored in the editor. Just to brief on some of these:
 
@@ -100,7 +100,7 @@ These are the [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264ac
 
 >Open the application settings in the application editor by double clicking on the `Application.app`.
 
->!![MDK](img_2.1.png)
+>!![MDK](img-2.1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -111,13 +111,13 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
-    !![MDK](img_3.1.png)
+    !![MDK](img-3.1.png)
 
 2. Select deploy target as **Mobile & Cloud**.
 
    MDK editor will deploy the metadata to Mobile Services (for Mobile application) followed by to Cloud Foundry (for Web application).
 
-   !![MDK](img_3.2.gif)
+   !![MDK](img-3.2.gif)
 
 >First web deployment takes 2-3 minutes as it creates five service instances for the application, you can find these details in space cockpit.
 
@@ -145,7 +145,7 @@ SAP Business Application Studio has a feature to generate QR code for onboarding
 
 Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
 
-!![MDK](img_4.1.png)
+!![MDK](img-4.1.png)
 
 !![MDK](img_4.2.png)
 

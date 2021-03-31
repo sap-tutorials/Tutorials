@@ -3,7 +3,7 @@ title: Create a Chatbot that Lets Customers Track Packages
 description: With SAP Conversational AI, create a chatbot that calls an API, in this case to let customers track their packages, and see how to make use of the memory, using SAP Conversational AI.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning ]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
 primary_tag: products>sap-conversational-ai
 ---
 
@@ -95,7 +95,7 @@ The tracking number is based on one of UPS's standards: 18 characters with const
 5. Enter the following regular expression:
 
     ```Regex
-    \b(1Z[0-9A-Z]{6}[\d]{10})\b    
+    \b(1Z[0-9A-Z]{6}[\d]{10})\b
     ```
 
     >This defines only one kind of UPS tracking number, and is a simple regex that does not distinguish between the parts of the tracking number.

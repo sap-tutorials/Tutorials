@@ -26,11 +26,11 @@ primary_tag: products>sap-hana
 
 Dev spaces are like isolated virtual machines in the cloud that can be quickly spun-up. Each dev space type contains tailored tools and pre-installed run-times for a target scenario such as SAP Fiori or mobile development. This simplifies and saves time in setting up the development environment as there's no need to install anything or upgrade; letting developers focus on their business domain, anytime, anywhere.
 
-1. Go to your SAP Business Technology Platform trial subaccount and click the **Subscriptions** option.
+1. Go to your SAP Business Technology Platform trial subaccount and click the **Services -> Instances and Subscriptions** option.
 
-    !![Subscriptions](01-01_SCP_Subscriptions_.jpg)
+    !![Subscriptions](BTP_Subscriptions.png)
 
-2. Locate the **SAP Business Application Studio** tile and click **Go to Application**
+2. Locate the **SAP Business Application Studio** entry and click **Go to Application**
 
     !![Go To Application](go_to_application.png)
 

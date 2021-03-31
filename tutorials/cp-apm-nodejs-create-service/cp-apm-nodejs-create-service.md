@@ -5,16 +5,16 @@ title: Create a Business Service with Node.js Using Visual Studio Code
 description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite, by using the SAP Cloud Application Programming Model (CAP) and developing on your local environment.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [ tutorial>beginner, topic>node-js, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, topic>node-js, products>sap-business-technology-platform, software-product-function>sap-cloud-application-programming-model ]
 time: 50
 ---
 
 
 ## Prerequisites
-- You've installed [Node.js](https://nodejs.org/en/download/releases/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
-- You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
-- (For Windows users only): You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation for more details.
-- You've installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
+- You have installed [Node.js](https://nodejs.org/en/download/releases/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
+- You have installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
+- (For Windows users only): You have installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation.
+- You have installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
 - If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Business Technology Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **Europe (Frankfurt) or US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
 
 ## Details
@@ -39,9 +39,9 @@ Before you start, make sure that you've completed the prerequisites.
 
     > This process takes some minutes installing the `cds` command, which you will use in the next steps.
 
-    > On MacOS/Linux, you may need to follow the steps as described [here](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
+    > On MacOS/Linux, you need to follow the steps as described [here](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
 
-    > If there's an older `@sap/cds` package already installed on the machine, you may have to remove it first; if so, you'll be instructed to do so.
+    > If there's an older `@sap/cds` package already installed on your machine, you have to remove it first; if so, you'll be instructed to do so.
 
     > In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) in the CAP documentation for more details.
 
@@ -61,7 +61,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 [ACCORDION-BEGIN [Step 2: ](Install Visual Studio Code extension)]
 
-1. Go to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SAPSE.vscode-cds#overview).
+1. Go to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SAPSE.vscode-cds).
 
 2. Choose **Install**.
 
@@ -69,7 +69,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 > Visual Studio Code opens the extensions details page.
 
-3.Choose **Install** to enable the extension for SAP CDS Language Support.
+3. In VS Code choose **Install** to enable the extension for SAP CDS Language Support.
 
    ![extension_VSCode](VSCode_view_extension.png)
 
@@ -95,9 +95,9 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > This creates a folder `my-bookshop` in the current directory.
 
-2. Open Visual Studio Code, go to **File** > **Open Folder** and choose the **`my-bookshop`** folder.
+2. Open Visual Studio Code, go to **File** **&rarr;** **Open Folder** and choose the **`my-bookshop`** folder.
 
-3. Go to **Terminal** > **New Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
+3. Go to **Terminal** **&rarr;** **New Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
 
     ```Shell/Bash
     npm install
@@ -113,7 +113,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > As there's no content in the project so far, it just keeps waiting for content with a message as shown:
 
-    ```
+    ```Shell/Bash
     cds serve all --with-mocks --in-memory?
     ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
 
@@ -134,9 +134,9 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > This creates a folder `my-bookshop` in the current directory.
 
-2. Open Visual Studio Code, go to **File** > **Open** and choose the **`my-bookshop`** folder.
+2. Open Visual Studio Code, go to **File** **&rarr;** **Open** and choose the **`my-bookshop`** folder.
 
-3. Go to **View** > **Command Palette** > **Terminal: Create New Integrated Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
+3. Go to **View** **&rarr;** **Command Palette** **&rarr;** **Terminal: Create New Integrated Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
 
     ```Shell/Bash
     npm install
@@ -151,7 +151,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > As there's no content in the project so far, it just keeps waiting for content with a message as shown:
 
-    ```
+    ```Shell/Bash
     cds serve all --with-mocks --in-memory?
     ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
 
@@ -212,7 +212,7 @@ After initializing the project, you should see the following empty folders:
 
 3. As soon as you've saved your file, the still running `cds watch` reacts immediately with some new output as shown below:
 
-    ```
+    ```Shell/Bash
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
     /> successfully deployed to sqlite in-memory db
@@ -359,7 +359,7 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
 
     > After you added these files, `cds watch`restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
 
-    ```
+    ```Shell/Bash
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
     > filling my.bookshop.Authors from db/csv/my.bookshop-Authors.csv
@@ -433,7 +433,7 @@ Instead of using in-memory, you can also use persistent databases.
     cds watch
     ```
 
-    ```
+    ```Shell/Bash
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: 'db/my-bookshop.db' }
     [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }

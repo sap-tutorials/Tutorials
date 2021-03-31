@@ -4,19 +4,22 @@ description: Understand what CoreML is and how it works.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 5
 ---
 
 ## Prerequisites  
+
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP SDK for iOS:** Version 5.0 or newer
+- **SAP BTP SDK for iOS:** Version 5.0 or newer
 
 ## Details
+
 ### You will learn  
-  - What Core ML is
-  - Why it is great for mobile apps
+
+- What Core ML is
+- Why it is great for mobile apps
 
 ---
 
@@ -42,7 +45,7 @@ When it comes to Machine Learning, Apple established a Framework called Core ML 
 Before you dive more into the capabilities of Core ML let's see how you as an iOS developer can access Machine Learning models. In general there are three different ways for your app to get an answer from a Machine Learning model:
 
 1. Host your own Machine Learning model on the cloud. Send data from your app to an endpoint and retrieve the answer in a HTTP response.
-2. Use available APIs hosted for example by Cloud Companies like SAP. With SAP you could use API Hub or the Machine Learning capabilities provided by SCP to access all sorts of different Machine Learning services.
+2. Use available APIs hosted for example by Cloud Companies like SAP. With SAP you could use API Hub or the Machine Learning capabilities provided by SAP BTP to access all sorts of different Machine Learning services.
 3. Use an offline Machine Learning model on device with help of Core ML. This will allow you to get predictions and inference right on device without having to have a roundtrip to the cloud and back.
 
 Core ML is not only available for iOS but also for all the other great operating systems (macOS, iOS, watchOS, tvOS). You can use it to make life predictions on photos and video and soon with Core ML 3 even Sound.

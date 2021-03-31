@@ -3,8 +3,8 @@ title: Trigger a Microservice with an Event
 description: Trigger a microservice to run when an event is published into the Kyma runtime.
 time: 20
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
+primary_tag: products>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
@@ -147,7 +147,7 @@ In this step you will define a Trigger which is used to create a subscriber of a
         type: SubscriberResolved
     ```
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Test scenario)]
@@ -180,7 +180,7 @@ With the configuration steps completed, you can now test the scenario to validat
 
     ![Test the Scenario](test-scenario-3.png)
 
-[VALIDATE_1]
+[VALIDATE_2]
 [ACCORDION-END]
 
 

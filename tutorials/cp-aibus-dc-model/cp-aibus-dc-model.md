@@ -3,7 +3,7 @@ title: Train and Deploy a Machine Learning Model in Document Classification
 description: Find out how to train a machine learning model using the data that you uploaded to your Document Classification service instance.
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
 primary_tag: topic>machine-learning
 ---
 
@@ -18,7 +18,7 @@ To use the data uploaded in [Upload Data to Document Classification](cp-aibus-dc
 
 [ACCORDION-BEGIN [Step 1: ](Train a machine learning model)]
 
-Based on the uploaded data, you will now train a machine learning model. The training is essentially the process whereby the model learns and recognizes the patterns in your data.
+Based on the uploaded data, you will now train a machine learning model. The training is essentially the process whereby the model learns and recognizes the patterns in your data. 
 
 Click the first cell below the heading `Training` and click **Run**.
 

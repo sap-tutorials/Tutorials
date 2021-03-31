@@ -4,13 +4,14 @@ description: Deploy and run an existing CAP application in Kyma runtime by using
 auto_validation: true
 time: 45
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model]
-primary_tag: products>sap-cloud-platform\, kyma-runtime
+primary_tag: products>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
-- You've installed [Node.js](https://nodejs.org/en/download/releases/). Make sure you run the Node.js version 12 . Refrain from using any other versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
+- You've installed [Node.js](https://nodejs.org/en/download/releases/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/resources/troubleshooting#npm-installation) for CAP.
 - Latest version of [Visual Studio Code](https://code.visualstudio.com/)
 - A Kyma runtime -- see [Enable SAP Cloud Platform, Kyma runtime](cp-kyma-getting-started)
+- (For Windows users only): You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation for more details.
 - The Kubernetes CLI installed and configured with your Kubeconfig -- see [Install the Kubernetes Command Line Tool](cp-kyma-download-cli)
 - [Docker](https://www.docker.com/)
 - [Docker Hub Account](https://hub.docker.com/signup)
@@ -54,7 +55,7 @@ Copy the repository URL.
 
 4. Within the `k8s` directory you can find the Kubernetes/Kyma resources you will apply to your Kyma runtime.
 
-5. Within the `docker` folder you can find the Dockerfile definition that will be used to generate the Docker image.
+5. Within the `docker` folder you can find the Dockerfile definition that will be used to generate the Docker image. Notice the node version specified on line 2 of the file. This should be changed to match the version you use locally.
 
 
 [DONE]
@@ -230,7 +231,9 @@ Run the following commands from the `cap-service` directory within your CLI.
 You can find the resource definitions in the `k8s` folder. If you performed any changes in the configuration, these files may also need to be updated. The folder contains the following files that are relevant to this tutorial:
 
 - `apirule.yaml`: defines the API endpoint which exposes the application to the Internet. This endpoint does not define any authentication access strategy and should be disabled when not in use.  
-- `deployment.yaml`: defines the deployment definition for the CAP service, as well as a service used for communication.
+- `deployment.yaml`: defines the deployment definition for the CAP service, as well as a service which is used for internal communication within the Kyma runtime.
+
+    >You will need the `Kubeconfig` setup to perform these steps as detailed in [Install the Kubernetes Command Line Tool](cp-kyma-download-cli). Please also note that the `kubeconfig` will need to be downloaded and configured once it expires after eight hours.
 
 1. Start by creating the `dev` Namespace if it doesn't already exist:
 
@@ -249,24 +252,40 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     ```Shell/Bash
     kubectl -n dev get po
     ```
-    This command results in a table similar to the one below, showing a Pod with the name `cap-service-` ending with a random hash. Make sure to adjust this value in the subsequent commands.
+    This command results in a table similar to the one below, showing a Pod with the name `cap-service-` ending with a random hash. When the pod is ready it will report the **STATUS** of **Running**.
 
     ```Shell/Bash
     NAME                           READY   STATUS    RESTARTS   AGE
     cap-service-c694bc847-tkthc   2/2     Running   0          23m
     ```
 
-4. Apply the `APIRule`:
+4. Apply the `APIRule` to expose the application to the internet:
 
     ```Shell/Bash
     kubectl -n dev apply -f ./k8s/apirule.yaml
     ```
 
-    The APIRule creates an endpoint similar to the one below. You can use it to test within your browser or by using a tool such as `curl`.  
+5. The `APIRule` will be create endpoint with the following format:
 
-    `https://cap-service.<cluster>.kyma.shoot.live.k8s-hana.ondemand.com`
+  `https://cap-service.<cluster>.kyma.shoot.live.k8s-hana.ondemand.com`
+
+  This can also be determined, by referencing the virtual service the `APIRule` creates by running:
+
+```Shell/Bash
+kubectl get virtualservice -n dev
+```
+
+  Reference the values found under **HOSTS**
+
+```Shell/Bash
+NAME               GATEWAYS                                      HOSTS                                                       AGE
+cap-service-****   [kyma-gateway.kyma-system.svc.cluster.local]  [cap-service.******.kyma.shoot.live.k8s-hana.ondemand.com]  1d
+```
+
+  Copy the value of the **HOSTS** field, making sure to append `https://` to it, to test the application in your browser.
 
 
+  **Congratulations!** You have successfully configured the Cap Service.
 
 [VALIDATE_1]
 [ACCORDION-END]

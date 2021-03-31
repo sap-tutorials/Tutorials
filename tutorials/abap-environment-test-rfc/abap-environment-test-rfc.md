@@ -1,13 +1,17 @@
 ---
 title: Test the Connection to the Remote System
-description: You will test your connection by calling a BAPI via RFC
+description: Test your connection by calling a BAPI via RFC.
 auto_validation: true
 time: 20
-tags: [ tutorial>advanced, topic>abap-development, topic>cloud, products>sap-cloud-platform, tutorial>license]
-primary_tag: products>sap-cloud-platform--abap-environment
+tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
+primary_tag: topic>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
+- **IMPORTANT**: This tutorial cannot be completed on a trial account
+- **IMPORTANT**: This tutorial is part of the mission [Connect Your On-Premise System with SAP BTP, ABAP Environment](mission.abap-env-connect-onpremise). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work
 
 ## Details
 ### You will learn
@@ -111,9 +115,6 @@ Define the connection, replacing `XXX` in both `i_name` and `i_service_instance_
 
 DATA(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
                     i_name = |ES5_RFC_XXX|
-                    "
-                    i_service_instance_name = |OutboundComm_for_RFCDemo_XXX|
-
 
                        ).
 
@@ -240,10 +241,7 @@ CLASS zjp_out_test IMPLEMENTATION.
 
         DATA(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
           i_name = |ES5_RFC_XXX|
-          "
-          i_service_instance_name = |OutboundComm_for_RFCDemo_XXX|
-
-                              ).
+          ).
         DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name( ).
 
 

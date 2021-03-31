@@ -2,24 +2,26 @@
 title: Access SAP Mobile Services
 description: Access SAP Mobile Services within a SAP Business Technology Platform trial account and open the Mobile Services cockpit.
 auto_validation: true
-primary_tag: software-product-function>sap-cloud-platform-mobile-services
-tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, software-product-function>sap-cloud-platform-mobile-services, products>sap-cloud-platform-sdk-for-ios, products>sap-cloud-platform-sdk-for-android, products>sap-mobile-cards, products>mobile-development-kit-client]
+primary_tag: products>sap-mobile-services
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-business-technology-platform, products>sap-mobile-services, products>ios-sdk-for-sap-btp, products>android-sdk-for-sap-btp, products>sap-mobile-cards, products>mobile-development-kit-client]
 time: 5
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
 ## Prerequisites  
- - **Tutorial:** If you're new to SAP Business Technology Platform, follow the tutorial [View the SAP BTP from 10,000 Meters](cp-explore-cloud-platform).
- - **Tutorial:** If you don't have an SAP BTP account, follow the tutorial [Get a Free Trial Account on SAP BTP trial](hcp-create-trial-account).
+
+- **Tutorial:** If you're new to SAP Business Technology Platform, follow the tutorial [View the SAP BTP from 10,000 Meters](cp-explore-cloud-platform).
+- **Tutorial:** If you don't have an SAP BTP account, follow the tutorial [Get a Free Trial Account on SAP BTP trial](hcp-create-trial-account).
 
 ## Details
+
 ### You will learn  
+
 - How to access SAP Mobile Services in your Cloud Foundry account
 
-Once SAP Mobile Services is available, you can use its features in your Mobile development kit, Mobile Cards, SAP SDK for iOS & Android apps.
+Once SAP Mobile Services is available, you can use its features in your Mobile development kit, Mobile Cards, SAP BTP SDK for iOS & Android apps.
 
 ---
-
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Business Technology Platform (BTP) cockpit)]
 
@@ -66,9 +68,7 @@ Once SAP Mobile Services is available, you can use its features in your Mobile d
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 1: ](Test yourself)]
-
 
 [VALIDATE_3]
 [ACCORDION-END]
