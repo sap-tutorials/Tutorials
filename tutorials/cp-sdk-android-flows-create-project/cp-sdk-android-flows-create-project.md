@@ -1,23 +1,25 @@
 ---
 title: Create an Android Project that Imports the SAP Flows Library
-description: Create an Android project that imports the SAP Flows library which provides a higher-level API enabling onboarding with SAP Cloud Platform Mobile Services using screens from the SAP onboarding UI.
+description: Create an Android project that imports the SAP Flows library which provides a higher-level API enabling onboarding with SAP Mobile Services using screens from the SAP onboarding UI.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform, operating-system>android, topic>mobile]
-primary_tag: products>sap-cloud-platform-sdk-for-android
+tags: [ tutorial>beginner, products>sap-business-technology-platform, operating-system>android, topic>mobile]
+primary_tag: products>android-sdk-for-sap-btp
 ---
 
 ## Prerequisites
- - **SAP Cloud Platform SDK for Android:** Version `2.1.1`
- - Complete step 1 of [Try Out SAP Cloud Platform SDK for Android Wizard](cp-sdk-android-wizard-app)
 
+- **SAP BTP SDK for Android:** Version `2.2.0`
+- Complete step 1 of [Try Out SAP BTP SDK for Android Wizard](cp-sdk-android-wizard-app)
 
 ## Details
-### You will learn
-  - How to create a project in Android Studio without using SAP Cloud Platform SDK for Android wizard
-  - How to import SAP libraries such as foundation, flows, onboarding, and SAP Fiori into the project
 
-The [Flows](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/flows/Overview.html) library is a new feature of the SAP Cloud Platform SDK for Android 2.0.  It can reduce and simplify the code in an application related to onboarding and exchanging client policy data with Mobile Services.  A great overview is provided by `Britt Womelsdorf` at [A Closer Look at Android Flows](https://blogs.sap.com/2019/03/25/a-closer-look-at-android-flows/).
+### You will learn
+
+- How to create a project in Android Studio without using SAP BTP SDK for Android Wizard
+- How to import SAP libraries such as foundation, flows, onboarding, and SAP Fiori into the project
+
+The [Flows](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/flows/Overview.html) library is a new feature of the SAP BTP SDK for Android 2.0.  It can reduce and simplify the code in an application related to onboarding and exchanging client policy data with Mobile Services.  A great overview is provided by `Britt Womelsdorf` at [A Closer Look at Android Flows](https://blogs.sap.com/2019/03/25/a-closer-look-at-android-flows/).
 
 ---
 
@@ -25,7 +27,6 @@ The [Flows](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-
 Open **Android Studio**.
 
 ![Android Studio](android-studio.png)
-
 
 Choose **Start a new Android Studio project**.
 
@@ -42,20 +43,20 @@ Provide the below values and click **Finish**.
 | Name | **Flows** |
 | Package Name | **`com.sap.flows`** |
 | Language | **Java** |
+| Use `AndroidX` artifacts | **True** |
 
 ![Project configuration](project-configuration.png)
-
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Configure app in Mobile Services)]
 
-The app configuration with an ID of `com.sap.wizapp` was created in [Try Out SAP Cloud Platform SDK for Android Wizard](cp-sdk-android-wizard-app) and will be used in this tutorial.
+The app configuration with an ID of `com.sap.wizapp` was created in [Try Out SAP BTP SDK for Android Wizard](cp-sdk-android-wizard-app) and will be used in this tutorial.
 
 ![App configuration](wizapp-configuration.png)
 
-Further details on how to access the Mobile Services cockpit are provided at [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html).
+Further details on how to access the Mobile Services cockpit are provided at [Enable SAP Mobile Services](fiori-ios-hcpms-setup).
 
 This tutorial assumes that **Basic** is selected as the apps **Security Configuration**.
 
@@ -64,18 +65,25 @@ This tutorial assumes that **Basic** is selected as the apps **Security Configur
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Add SAP BTP SDK for Android libraries to the project)]
 
-[ACCORDION-BEGIN [Step 3: ](Add SAP Cloud Platform SDK for Android libraries to the project)]
+In the **`manifests/AndroidManifest.xml`** file, change **`allowBackup`** to false.
+
+![Allow Backup](allow-backup.png)
+
+In the Project Structure dialog, set the source compatibility to be 1.8.
+
+![source compatibility](jdk-18.png)
 
 Open the project's **`gradle.properties`** file.  
 
-Add a new `gradle` setting **`sdkVersion=2.1.1`** to specify the version of the SAP Cloud Platform SDK for Android being used as shown below.
+Add a new `gradle` setting **`sdkVersion=2.2.0`** to specify the version of the SAP BTP SDK for Android being used as shown below.
 
 ![SDK version variable](sdk-version-variable.png)
 
 Open the project's **`build.gradle`** file.
 
-Specify the location where the SAP Cloud Platform SDK libraries can be located by adding **`mavenLocal()`** to the **`allProjects`** > **repositories** block as shown below.
+Specify the location where the SAP BTP SDK libraries can be located by adding **`mavenLocal()`** to the **`allProjects`** > **repositories** block as shown below.
 
 ![Add mavenLocal](add-mavenlocal.png)
 
@@ -115,7 +123,5 @@ Congratulations!  An Android app has been created that imports the SAP Flows lib
 
 [VALIDATE_1]
 [ACCORDION-END]
-
-
 
 ---

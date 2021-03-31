@@ -3,20 +3,20 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: See How Logging Can Be Used in Your Android Application
 description: Explore how the logging component can help make deployed applications more supportable.
-primary_tag: products>sap-cloud-platform-sdk-for-android
+primary_tag: products>android-sdk-for-sap-btp
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap-cloud-platform-sdk-for-android, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>android-sdk-for-sap-btp, products>sap-business-technology-platform ]
 time: 15
 ---
 
 ## Prerequisites
-- You completed [Try Out the SAP Cloud Platform SDK for Android Wizard](cp-sdk-android-wizard-app).
+- You completed [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app).
 
 ## Details
 ### You will learn
 - How to use the Logging component to log messages
 - How to change the log level
-- How to upload and view logs in the SAP Cloud Platform Mobile Services cockpit
+- How to upload and view logs in the SAP Mobile Services cockpit
 
 ---
 
@@ -35,10 +35,9 @@ time: 15
     public boolean onOptionsItemSelected(MenuItem item) {
         LOGGER.debug("onOptionsItemSelected: " + item.getTitle());
         switch (item.getItemId()) {
-            case SETTINGS_SCREEN_ITEM:
+            case R.id.menu_settings:
                 LOGGER.debug("settings screen menu item selected.");
-                Intent intent = new Intent(this, SettingsActivity.class);
-                this.startActivityForResult(intent, SETTINGS_SCREEN_ITEM);
+                this.startActivity(new Intent(this, SettingsActivity.class));
                 return true;
 
             default:
@@ -63,10 +62,11 @@ time: 15
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         LOGGER.debug("onOptionsItemSelected: " + item.title)
         return when (item.itemId) {
-            SETTINGS_SCREEN_ITEM -> {
+            R.id.menu_settings -> {
                 LOGGER.debug("settings screen menu item selected.")
-                val intent = Intent(this, SettingsActivity::class.java)
-                this.startActivityForResult(intent, SETTINGS_SCREEN_ITEM)
+                Intent(this, SettingsActivity::class.java).also {
+                    this.startActivity(it)
+                }
                 true
             }
             else -> false
