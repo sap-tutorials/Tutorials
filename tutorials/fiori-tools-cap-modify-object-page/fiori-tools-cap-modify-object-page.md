@@ -246,8 +246,6 @@ As already explained in the previous tutorial [Refine the List Report with Addit
 
     !![Annotation Cursor](t4-annotation-LSP-table-column.PNG)
 
-**TODO:** to be moved to the end of the last step
-
 At this point, your list report object page application is complete.
 
 [DONE]
