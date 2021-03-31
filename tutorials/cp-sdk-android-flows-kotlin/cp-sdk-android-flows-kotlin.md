@@ -3,17 +3,19 @@ title: Translate the Flows App from Java to Kotlin
 description: Translate the Flows App from Java to Kotlin using Android Studio.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-cloud-platform, operating-system>android, topic>mobile]
-primary_tag: products>sap-cloud-platform-sdk-for-android
+tags: [ tutorial>beginner, products>sap-business-technology-platform, operating-system>android, topic>mobile]
+primary_tag: products>android-sdk-for-sap-btp
 ---
 
 ## Prerequisites
- - Completed the previous tutorial in this mission
+
+- Completed the previous tutorial in this mission
 
 ## Details
-### You will learn
-  - How to convert an Android Studio project from Java to `Kotlin`
 
+### You will learn
+
+- How to convert an Android Studio project from Java to `Kotlin`
 
 [`Kotlin`](https://developer.android.com/kotlin) is a new language that supports Android development.  It is more concise and has state of the art language features while being interoperable with Java.
 
@@ -71,7 +73,6 @@ LOGGER.debug("isOnboarded value = $onboardFinished")
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 3: ](Try it out)]
 
 Uninstall the app.
@@ -80,7 +81,7 @@ Run the app.
 
 Try out the various features of the app.
 
-Congratulations!  You have now converted a Java app to `Kotlin`.  By finishing the tutorials in this mission you should have a better understanding of how the SAP Flows framework simplifies the code needed to onboard a user to the SAP Cloud Platform Mobile Services and interact with client policies.
+Congratulations!  You have now converted a Java app to `Kotlin`.  By finishing the tutorials in this mission you should have a better understanding of how the SAP Flows framework simplifies the code needed to onboard a user to the SAP Mobile Services and interact with client policies.
 
 [VALIDATE_1]
 [ACCORDION-END]

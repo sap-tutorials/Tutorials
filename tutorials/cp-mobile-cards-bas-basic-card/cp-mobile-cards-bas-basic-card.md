@@ -3,7 +3,7 @@ title: Create Your First Card in SAP Business Application Studio
 description: Create a simple SAP Mobile Cards app by using a template, then make simple HTML modifications, and deploy the app and use it on your device.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
+tags: [ tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-business-technology-platform, products>sap-mobile-cards, products>sap-mobile-services, products>sap-business-application-studio ]
 primary_tag: products>sap-mobile-cards
 author_name: Sandeep T D S
 author_profile: https://github.com/sandeep-tds

@@ -1,10 +1,10 @@
 ---
 title: Add a Restore Flow
-description: Add a restore flow that executes when the app is reopened.  The restore flow will present the passcode screen, unlock the secure stores and update the client policy specified in the SAP Cloud Platform Mobile Services.
+description: Add a restore flow that executes when the app is reopened.  The restore flow will present the passcode screen, unlock the secure stores and update the client policy specified in the SAP Mobile Services.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform, operating-system>android, topic>mobile]
-primary_tag: products>sap-cloud-platform-sdk-for-android
+tags: [ tutorial>beginner, products>sap-business-technology-platform, operating-system>android, topic>mobile]
+primary_tag: products>android-sdk-for-sap-btp
 ---
 
 ## Prerequisites

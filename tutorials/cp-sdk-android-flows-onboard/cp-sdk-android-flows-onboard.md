@@ -1,19 +1,22 @@
 ---
 title: Add an Onboarding Flow
-description: Add an onboarding flow that will perform the initial onboarding to the SAP Cloud Platform Mobile Services using the screens from the SAP Cloud Platform SDK for Android Onboarding UI.
+description: Add an onboarding flow that will perform the initial onboarding to the SAP Mobile Services using the screens from the SAP BTP SDK for Android Onboarding UI.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform, operating-system>android, topic>mobile]
-primary_tag: products>sap-cloud-platform-sdk-for-android
+tags: [ tutorial>beginner, products>sap-business-technology-platform, operating-system>android, topic>mobile]
+primary_tag: products>android-sdk-for-sap-btp
 ---
 
 ## Prerequisites
- - Completed the previous tutorial in this mission which created the initial project and imported the flows libraries
+
+- Completed the previous tutorial in this mission which created the initial project and imported the flows libraries
 
 ## Details
+
 ### You will learn
-  - How to add onboarding flow code to an app
-  - Customization options for the onboarding flow
+
+- How to add onboarding flow code to an app
+- Customization options for the onboarding flow
 
 The first time the app is opened is called an onboarding flow.  A welcome screen will be shown.  The configuration data containing information about which Mobile Services server to connect to as well as the credentials to do so will be obtained and stored during this flow.  The app will ask the user for a passcode or fingerprint to be used to unlock the app and request that the user accept the End User License Agreement (EULA).
 
@@ -49,17 +52,13 @@ public class MyApplication extends Application {
 
 This class enables the basic authentication dialog to have access to the top activity, so it can be shown.
 
-In the **`manifests/AndroidManifest.xml`** file, add the below entry and change **`allowBackup`** to false.
+In the **`manifests/AndroidManifest.xml`** file, add the below entry.
 
 ```XML
 android:name=".MyApplication"
 ```
 
 ![AndroidManifest.xml](androidManifest.png)
-
-Change the project to use JDK 1.8 for source and target by navigating to File > Project Structure or by clicking the toolbar icon.
-
-![Source compatibility](source-compatibility.png)
 
 Create a new layout resource file in the **`res/layout`** folder called **`splash_screen.xml`**.  Replace its contents with the following code. The splash screen will be shown until the onboarding or restore flow is complete.
 
@@ -82,10 +81,10 @@ Create a new layout resource file in the **`res/layout`** folder called **`splas
 ```
 
 Replace the code in **`MainActivity.java`** with the following code.
+
 ```Java
 package com.sap.flows;
 
-//imports for entire Flows tutorial are added here
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.DialogInterface;
@@ -94,12 +93,12 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.sap.cloud.mobile.flow.Flow;
 import com.sap.cloud.mobile.flow.FlowActionHandler;
@@ -305,7 +304,7 @@ Replace the XML in **`res/layout/activity_main.xml`** with the following code wh
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -348,7 +347,7 @@ Replace the XML in **`res/layout/activity_main.xml`** with the following code wh
 
         </LinearLayout>
     </ScrollView>
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
 Right-click on the res folder, choose **New > Directory** and name it **raw**.  
@@ -374,7 +373,6 @@ Copy the below contents into the file.
 Update the host value to match your Mobile Services host.  This value can be seen in the management cockpit under API's as shown below.
 
 ![Server APIs](server-api.png)
-
 
 [DONE]
 [ACCORDION-END]
@@ -420,7 +418,6 @@ After completing the onboarding process, the registration can be seen in the Mob
 [VALIDATE_1]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 3: ](Disable passcode)]
 
 The following changes can be made to not show the passcode screen.
@@ -438,7 +435,6 @@ settingsDownloadStep.passcodePolicy = null;
 Delete and reinstall the app.
 
 Notice that the passcode screens are not shown.
-
 
 [DONE]
 [ACCORDION-END]
