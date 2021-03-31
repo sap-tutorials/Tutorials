@@ -1,11 +1,11 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Add a Custom Event Handler
 description: Write your first CAP Java Custom Event Handler.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform, topic>java]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>java]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 

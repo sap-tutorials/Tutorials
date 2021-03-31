@@ -3,8 +3,10 @@ title: Create Decision Table and Text Rules
 description: Create and activate the decision tables and text-based rules to create the decision logic.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>cloud, topic>cloud,products>sap-cloud-platform,products>sap-cloud-platform-for-the-cloud-foundry-environment]
-primary_tag: products>sap-cloud-platform-business-rules
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+primary_tag: products>sap-business-rules-service
+author_name: Vandana Vasudevan
+author_profile: https://github.com/VandanaVasudevan
 ---
 
 ## Details
@@ -56,7 +58,7 @@ In this tutorial, we will create the decision logic required to assign equipment
 
     ![Autosuggestion list](create_dt_5.png)
 
-6. Choose the attribute **`countryofCompany`** from the **Vocabulary** section.
+6. Choose the attribute **`countryofCompany`** from the **Vocabulary** section and then in the **Label** field enter **Country or Region**.
 
     ![Attribute in autosuggestion list](create_dt_6.png)
 
@@ -66,12 +68,13 @@ In this tutorial, we will create the decision logic required to assign equipment
 
 8. Similarly, create the following condition expressions:
 
-    |  Condition Expressions     | Fixed Operator
-    |  :------------- | :-------------
-    |  **`Employee.company`**   | **`None`**
-    |  **`Employee.jobTitle`**   | **`None`**
-    |  **`Employee.isFullTimeEmployee`**   | **`None`**
+    |  Condition Expressions     |Label | Fixed Operator
+    |  :------------- |:------------ | :-------------
+    |  **`Employee.company`**   | **`Company`** | **`None`**
+    |  **`Employee.jobTitle`**   | **`Job Title`** | **`None`**
+    |  **`Employee.isFullTimeEmployee`**   | **`Full time/Part time`** | **`None`**
 
+    > The label is displayed in the decision table column header.
 
     Choose **`EquipmentInfo`** as the **Result** data object from the dropdown list and then choose **Apply**.
 
@@ -113,11 +116,11 @@ In this tutorial, we will create the decision logic required to assign equipment
 
     ![Company details](create_dt_13.png)
 
-11. Select the first row, then choose **Add Row** > **Insert After**.
+13. Select the first row, then choose **Add Row** > **Insert First**.
 
     ![Company details](create_dt_14.png)
 
-12. Enter the following values in the condition and result columns of the new row:
+14. Enter the following values in the condition and result columns of the new row:
 
     |  Field Name     | Value
     |  :------------- | :-------------

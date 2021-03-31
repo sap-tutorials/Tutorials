@@ -1,14 +1,16 @@
 ---
 title: Test the Business Rules API from SAP API Business Hub
-description: Use SAP API Business Hub to test and run the business rules API to see how business rules can be consumed from a custom application.
+description: Use SAP API Business Hub to test and run the business rules service API to see how business rules service can be consumed from a custom application.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud, topic>cloud,products>sap-cloud-platform,products>sap-cloud-platform-for-the-cloud-foundry-environment, topic>sap-api-business-hub]
-primary_tag: products>sap-cloud-platform-business-rules
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+primary_tag: products>sap-business-rules-service
+author_name: Vandana Vasudevan
+author_profile: https://github.com/VandanaVasudevan
 ---
 
 ## Prerequisites
- - You have assigned the roles **`RuleRuntimeSuperUser`** and **`RuleRepositorySuperUser`** to you in SAP Cloud Platform Cockpit. For more information, see [Assign Roles to Users for Managing Business Rules](cp-cf-businessrules02-assign-roles).
+ - You have created the business rules project and deployed the rule service. For more information, see [Create Your First Business Rules Project](group.cp-rules-first-project).
 
 ## Details
 ### You will learn
@@ -17,23 +19,15 @@ primary_tag: products>sap-cloud-platform-business-rules
 
 Generally, after a rule service is deployed to a custom application, the rule service should be invoked to implement the decision logic. In this tutorial, we will simulate the rule service invocation by invoking the rule service from SAP API Business Hub.
 
-SAP Cloud Platform Business Rules REST APIs are available on SAP API Business Hub which lets you execute rules from custom applications and external REST Clients. Since these APIs are based on OAuth 2.0, you need the service key parameters to use the APIs.
+Business Rules REST APIs are available on SAP API Business Hub which lets you execute rules from custom applications and external REST Clients. Since these APIs are based on OAuth 2.0 authorization, you need the client credentials to access them. You get the client credentials from the service key of the business rules service instance.
 
-Note the following parameters from the service keys of your business rules instance:
-
-- `clientid`
-- `clientsecret`
-- `url`
-
-![Configure environment](testing5.png)
-
-[ACCORDION-BEGIN [Step 1: ](Log onto SAP API Business Hub)]
+[ACCORDION-BEGIN [Step 1: ](Log on to SAP API Business Hub)]
 
 1. Log on to [SAP API Business Hub](https://api.sap.com/)
 
     ![API Hub Homepage](testing1.png)
 
-2. In the search bar, search for **Business rule**. From the search results, select the API package for SAP Cloud Platform Business Rules.
+2. In the search bar, search for **Business rules**. From the search results, select the API package for SAP Business Rules Service.
 
     ![Search bar](testing2.png)
 
@@ -44,9 +38,58 @@ Note the following parameters from the service keys of your business rules insta
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure the environment)]
+[ACCORDION-BEGIN [Step 2: ](Determine the service key parameters)]
 
-Here, you need to configure the environment to link it to the business rules project which you have created in Manage Rule Projects application. Since Business Rules APIs are based on OAuth 2.0 authentication, you need to provide the authentication details too.
+Service key parameters are required to configure the environment in SAP API Business Hub.
+
+1. Log on to [SAP BTP Cockpit](https://cockpit.hanatrial.ondemand.com/).
+
+2. Choose **Enter your trial account**.
+
+    ![Log on screen](service_param1.png)
+
+3. Choose your trial subaccount.
+
+    ![subaccount](service_param2.png)
+
+    Choose your space.
+
+    > In the following screenshot, the name of the space is **`dev`**. Space name can also be a custom name that you have provided.
+
+    ![dev space](service_param3.png)
+
+4. From the navigation menu, choose **Instances**.
+
+    ![service instances](service_param4.png)
+
+5. In the **`wm_business-rules`** service instance, choose the actions button, and then choose **Create Service Key**.
+
+    ![business rules service instance](service_param5.png)
+
+6. In the **New Service Key** window,  provide the name of the service key as **business-rules** or any name of your choice, and then choose **Create**.
+
+    ![service key creation](service_param6.png)
+
+    > Service key of **`wm_business-rules`** service instance will be created.
+
+7. Choose the service key.
+
+    ![Service key name](service_param7.png)
+
+8. From the service key, note the following parameters required for configuring the environment:
+
+    - `clientid`
+    - `clientsecret`
+    - `url`
+
+    ![service key parameters](service_param8.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Configure the environment)]
+
+You need to configure the environment to link it to the business rules project which you have created in **Manage Rule Projects** application. Since Business Rules APIs are based on OAuth 2.0 authentication, you need to provide the client credentials determined in step 2.
 
 1. Choose **Configure Environments**.
 
@@ -58,9 +101,9 @@ Here, you need to configure the environment to link it to the business rules pro
     |  :------------- | :-------------
     |  `Display Name for Environments`          | **`EU10`**
     |  `runtimeurl`        | **`bpmruleruntime.cfapps.eu10.hana.ondemand.com`**
-    |  `Client Id`    | **`<clientid from service key>`**
-    |  `Secret`      | **`<clientsecret from service key>`**
-    |  `tokenurl`     | **`<url from service key>`**
+    |  `Client Id`    | **`clientid`**
+    |  `Secret`      | **`clientsecret`**
+    |  `tokenurl`     | **`url`**
 
 > Enter the token URL without **`https://`**. For example, if the token URL in the service key is **`https://<trial ID>.authentication.eu10.hana.ondemand.com`**, then enter **`<trial ID>.authentication.eu10.hana.ondemand.com`**.
 
@@ -76,7 +119,7 @@ Then, choose **Save**.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Invoke a rule service)]
+[ACCORDION-BEGIN [Step 4: ](Invoke a rule service)]
 
 1. Select **Invoke a Rule Service** API and then choose **`/v2/workingset-rule-services`**. Then choose **Try out** to execute the API.
 
@@ -122,7 +165,7 @@ Then, choose **Save**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Observe the API response)]
+[ACCORDION-BEGIN [Step 5: ](Observe the API response)]
 
 You can view the equipment assigned to the employee in the response body of the API.
 

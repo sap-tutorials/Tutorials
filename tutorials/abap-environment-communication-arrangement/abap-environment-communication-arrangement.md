@@ -1,11 +1,11 @@
 ---
 auto_validation: true
 title: Maintain a Communication Arrangement for Inbound Communication
-description: Create a communication user and a communication system for an OData service in SAP Cloud Platform ABAP Environment.
+description: Create a communication user and a communication system for an OData service in SAP Business Technology Platform ABAP Environment.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 15
-author_name: Niloofar flothkoetter
+author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
 ---
 
@@ -33,7 +33,7 @@ In case you want to expose developed ABAP services for technical communication, 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Login to SAP Fiori Launchpad)]
-  1. Open Eclipse and do right click on your system and navigate to **Properties**.
+  1. Open Eclipse and do right click your system and navigate to **Properties**.
 
       ![Open Eclipse](Picture17.png)
 
@@ -90,7 +90,7 @@ In case you want to expose developed ABAP services for technical communication, 
       - System ID: `WEBIDE_BASIC_XXX`
       - System Name: `WEBIDE_BASIC_XXX`
 
-  2. Click on **Create**.
+  2. Click **Create**.
 
 A new communication system will be registered.
 
@@ -131,7 +131,7 @@ A new communication system will be registered.
 
 
 [ACCORDION-BEGIN [Step 9: ](Select scenario)]
-Select your communication scenario that you created in the last tutorial, `Expose a Standard Core Data Service for ABAP Environment`, and click on **Create**.
+Select your communication scenario that you created in the last tutorial, `Expose a Standard Core Data Service for ABAP Environment`, and click **Create**.
 
 ![Select Scenario](Picture13.png)
 
@@ -157,7 +157,7 @@ Select your communication scenario that you created in the last tutorial, `Expos
 
 
 [ACCORDION-BEGIN [Step 11: ](Check the service URL via Postman)]
-You can check your service URL via Postman. In Step 12 you'll learn how to check your communication scenario via SAP Cloud Platform Cockpit.
+You can check your service URL via Postman. In Step 12 you'll learn how to check your communication scenario via SAP BTP Cockpit.
 
   1. Paste your service URL in a browser or in Postman.
 
@@ -173,45 +173,32 @@ You can check your service URL via Postman. In Step 12 you'll learn how to check
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 12: ](Check communication scenario via SAP Cloud Platform Cockpit)]
-  1. Logon to your [SAP Cloud Platform Cockpit](https://account.hana.ondemand.com).
+[ACCORDION-BEGIN [Step 12: ](Check communication scenario via SAP BTP Cockpit)]
+  1. Logon to your [SAP BTP Cockpit](https://account.hana.ondemand.com).
 
-    ![check scenario](check.png)
+    ![check scenario](signIn.png)
 
   2. Select your global account.
 
-    ![check scenario](check2.png)
+    ![check scenario](global.png)
 
   3. Select Subaccounts.
 
-    ![check scenario](check3.png)
+    ![check scenario](subaccounts.png)
 
   4. Select your subaccount.
 
-    ![check scenario](check4.png)
+    ![check scenario](subaccount.png)
 
-  5. Select your space dev.
+  5. Select Service Instances and find your Instance and open it by clicking the arrow.
 
-    ![check scenario](check5.png)
+    ![check scenario](serviceInstances.png)
 
-  6. Select Service Instances.
+  6. Click Actions to create Service Key.
 
-    ![check scenario](check6.png)
+    ![check scenario](actions.png)
 
-  7. Select your service instance.
-
-    ![check scenario](check7.png)
-
-  8. Select Service Keys.
-
-    ![check scenario](check8.png)
-
-  9. Click Create Service Key.
-
-    ![check scenario](check9.png)
-
-
-  10. Create Service key with following parameters:
+  7. Create Service key with the following parameters:
       - Name: ADT
       - Configuration Parameters (JSON):
 
@@ -222,12 +209,9 @@ You can check your service URL via Postman. In Step 12 you'll learn how to check
      }
     ```
 
-    ![check scenario](check10.png)
+    ![check scenario](serviceKey.png)
 
-  11. Now your service key is listed. The successful creation of the service key proved the existence of the communication scenario.
-
-    ![check scenario](check11.png)
-
+  8. Now, your new service key is listed under Service Keys. The successful creation of the service key proves the existence of the communication scenario.
 
 
 

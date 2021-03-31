@@ -3,7 +3,7 @@ title: Consume API Services and Call Webhooks from Your Chatbot
 description: Call APIs or webhooks from within your chatbot to retrieve information or create UI elements for your conversation.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
@@ -164,7 +164,7 @@ Open **Chat with Your Bot**, and enter any text as well as animals.
 [ACCORDION-BEGIN [Step 5: ](Add webhook call)]
 Now you will call a webhook designed to receive the chatbot conversation (as JSON) and do custom processing.
 
->The webhook you will use is a demo Python webhook deployed to SAP Cloud Platform. You can see the code for the webhook in this [blog](https://cai.tools.sap/blog/how-to-build-first-delivery-tracking-chatbot-sap-conversational-ai/).
+>The webhook you will use is a demo Python webhook deployed to SAP Business Technology Platform. You can see the code for the webhook in this [blog](https://cai.tools.sap/blog/how-to-build-first-delivery-tracking-chatbot-sap-conversational-ai/).
 
 1. In the `answer` skill, click **Add New Message Group**.
 

@@ -1,10 +1,10 @@
 ---
 title: Add a New Entitlement to Your Subaccount
-description: Each subaccount in your global SAP Cloud Platform account is given a share of the resources through Entitlements. In this tutorial you will add additional entitlements (= resources) to your default subaccount.
+description: Each subaccount in your global SAP BTP account is given a share of the resources through Entitlements. In this tutorial you will add additional entitlements (= resources) to your default subaccount.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
+tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit ]
+primary_tag: products>sap-business-technology-platform
 ---
 
 
@@ -13,15 +13,15 @@ primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
   - Where to find all entitlements of your subaccount
   - How to add a new entitlement to your subaccount
 
-Entitlements are the heart of all subaccounts in the Cloud Foundry environment. They define which service and runtime artifacts you are able to use. This tutorial will show you how you can set up the entitlements you need to develop success solutions on SAP Cloud Platform Cloud Foundry environment.
+Entitlements are the heart of all subaccounts in SAP BTP. They define which service and runtime artifacts you are able to use. This tutorial will show you how you can set up the entitlements you need to develop success solutions on SAP BTP.
 
 ---
 
-[ACCORDION-BEGIN [Step: ](Log into SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step: ](Log into SAP BTP cockpit)]
 
-1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
+1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP BTP cockpit.
 
-2. Click on "Enter Your Access Trial Account" to access the Cloud Foundry environment.
+2. Click on "Enter Your Access Trial Account" to access the SAP BTP Cockpit.
 
     !![accesstrial](accesstrial.png)
 
@@ -41,7 +41,7 @@ Entitlements are the heart of all subaccounts in the Cloud Foundry environment. 
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step: ](Add a SAP HANA service entitlement to subaccount)]
 
-In this step we will add a new service plan to a subaccount. Depending on when you created the SAP Cloud Platform account, this entitlement might already be assigned to the subaccount.
+In this step we will add a new service plan to a subaccount. Depending on when you created the SAP BTP account, this entitlement might already be assigned to the subaccount.
 
 1. You can use the filter box if you see too many entries to find the entitlement you are looking for. Click on **Configure Entitlements** to switch the table into edit mode.
 
@@ -64,20 +64,20 @@ In this step we will add a new service plan to a subaccount. Depending on when y
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step: ](Add more entitlements to subaccount)]
 
-Congratulations, you just enabled the SAP HANA service in your Cloud Foundry environment. Depending on what you want to build, you might want to add one of more of the following service plans as well:
+Congratulations, you just enabled the SAP HANA Cloud service in your subaccount. Depending on what you want to build, you might want to add one of more of the following service plans as well:
 
-| Service | Service Plan | Usage Scenario |
-|----|----|----|
-|ABAP Trial|shared | For exploring the free trial of the SAP Cloud Platform ABAP environment|
-|Application Runtime|MEMORY|Needed to run application on SAP Cloud Platform Cloud Foundry environment. Quota defined the available memory of the Cloud Foundry Application Runtime (CFAR) |
-|Connectivity|lite|To use principal propagation between SAP Cloud Platform and on-premise backend systems. |
-|Destination|lite|To connect your applications to each other or to third party systems. |
-|Enterprise Messaging|dev|Messaging bus for inter-app communication within the Cloud Foundry environment.|
-|HTML5 Applications|app-host|To store web applications in the HTML5 Application Repository.|
-|Portal|standard|The connect your SAPUI5 components to the Fiori Launchpad.|
-|HANA|hdi-shared|The connect your SAPUI5 components to the Fiori Launchpad.|
-|Workflow|lite|To use the SAP Cloud Platform Workflow service within the Cloud Foundry environment.|
-|SAP Web IDE for HANA development|TRIAL(Subscription)|The development tools for HANA contain the SAP Web IDE Full-Stack aimed for HANA native development targeting your Cloud Foundry trial environment.|
+| Service | Usage Scenario |
+|----|----|
+|ABAP environment| For exploring the free trial of the SAP BTP, ABAP environment.|
+|Kyma runtime| For exploring the free trial of the SAP BTP, Kyma runtime.|
+|Cloud Foundry Runtime| Needed to run application on SAP BTP, Cloud Foundry runtime. The chosen quota defines the available amount of GB memory. |
+|Enterprise Messaging|Messaging bus for inter-app communication within the Cloud Foundry environment.|
+|Launchpad| Explore your SAPUI5 applications via the SAP Launchpad service.|
+|SAP HANA Cloud|To store data in an cloud-based in-memory database.|
+|SAP HANA Schemas|The create HDI containers that can be connected to your apps.|
+|Workflow|To use the SAP Workflow service within the Cloud Foundry environment.|
+|SAP Business Application Studio|The development tools for cloud-native business applications.|
+|SAP Web IDE for HANA development|The development tools for HANA contain the SAP Web IDE Full-Stack aimed for HANA native development targeting your Cloud Foundry trial environment.|
 > This is an incomplete enumeration.
 
 Follow the instructions from the previous step to add these new entitlements to your subaccount.

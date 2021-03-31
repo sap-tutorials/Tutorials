@@ -1,31 +1,32 @@
 ---
 title: Create Service Instance for Document Classification with Trial Account
-description: Create a service instance and the associated service keys for Document Classification, one of the SAP AI Business Services, using the SAP Cloud Platform trial cockpit.
+description: Create a service instance and the associated service key for Document Classification, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-classification]
 primary_tag: topic>machine-learning
 ---
+
+## Prerequisites
+- You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
+- You have a subaccount and dev space with **Europe (Frankfurt)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## Details
 ### You will learn
   - How to check your Document Classification entitlements
   - How to create a service instance of Document Classification
-  - How to create service keys for your service instance
-
+  - How to create a service key for your service instance
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
 
-1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
     !![Trial global account](01_Foundation20Onboarding_Home.png)
 
-    >Document Classification is only available in the Europe (Frankfurt) region. Follow the steps described in [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and choose the Europe (Frankfurt) region. If this is not possible, create a new subaccount in the Europe (Frankfurt) region. You should then be able to find **Document Classification Trial** in your new subaccount **Entitlements**.
-
-    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. Your user profile will be set up for you automatically.
+    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select Europe (Frankfurt)**. Your user profile will be set up for you automatically.
 
     >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
 
@@ -45,13 +46,13 @@ primary_tag: topic>machine-learning
 
 To use Document Classification, you need to make sure that your account is properly configured.
 
-On the navigation side bar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
+1. On the navigation side bar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
 
-Search for **Document Classification Trial**. If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.
+2. Search for **Document Classification**. ***If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
 
-![Entitlements](check-entitlements.png)
+    ![Entitlements](check-entitlements.png)
 
-If you do not find the service in your list, proceed as follows:
+***ONLY if you DO NOT find the service in your list, proceed as follows:***
 
   1. Click **Configure Entitlements**.
 
@@ -61,7 +62,7 @@ If you do not find the service in your list, proceed as follows:
 
     ![Add Service Plan](add-service-plans.png)
 
-  3. Select **Document Classification Trial**, and choose the **default** service plan. Click **Add 1 Service Plan**.
+  3. Select **Document Classification**, and choose the **default** service plan. Click **Add 1 Service Plan**.
 
     ![Add Service Plan](add-entitlements.png)
 
@@ -71,7 +72,7 @@ If you do not find the service in your list, proceed as follows:
 
 You are now entitled to use the service and to create instances of the service.
 
->For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP Cloud Platform Trial, see [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements).
+>For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
 [DONE]
 [ACCORDION-END]
@@ -93,7 +94,7 @@ In this space you will create your service instance.
 
 [ACCORDION-BEGIN [Step 4: ](Access service via Service Marketplace)]
 
-The **Service Marketplace** is where you find the available services on SAP Cloud Platform.
+The **Service Marketplace** is where you find the available services on SAP BTP.
 
 To access it, click **Service Marketplace** on the navigation side bar.
 
@@ -111,23 +112,17 @@ Next, search for **Document Classification**. Click the tile to access the servi
 
 You will now create an instance of your service.
 
-To create an instance, click **Instances** on the navigation side bar.
+Click **Create Instance** to start the creation dialog.
 
-Next, click **New Instance** to start the creation dialog.
+![Service Instance](create-instance.png)
 
-![Service Instances](create-instance.png)
+In the dialog, leave the default value for the service and the service plan. Enter a name for your new instance as `dc-inst` and click **Create Instance** to skip the other steps and create the instance.
 
-  1. In the dialog, leave the default value for the service plan and click **Next**.
+![Create Instance](create-instance-dialog.png)
 
-    ![Create Instance](create-instance-service-plan.png)
+In the following dialog, click on **View Instance** to be navigated to the list of your service instances.
 
-  2. Leave the parameters empty and click **Next**.
-
-  3. Do not assign any application and click **Next**.
-
-  4. Finally, enter the name `dc-inst` for your new instance. Click **Finish** to create the instance.
-
-    ![Create Instance](create-instance-name.png)
+![View Instances](view-instances.png)
 
 You have successfully created a service instance for Document Classification.
 
@@ -135,45 +130,23 @@ You have successfully created a service instance for Document Classification.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Create service keys)]
+[ACCORDION-BEGIN [Step 6: ](Create service key)]
 
-Finally, you are now able to create service keys for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
+You are now able to create a service key for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
-To create service keys, first access your service instance by clicking its name.
+  1. Click the navigation arrow to open the details of your service instance. Then, click the dots to open the menu and select **Create Service Key**.
 
-![Service Instances](access-instance.png)
+      ![Service Key](create-service-keys.png)
 
-Now select **Service Keys** on the navigation side bar. Then click **Create Service Key** to start the creation dialog.
+  2. In the dialog, enter `dc-key` as the name of your service key. Click **Create** to create the service key.
 
-![Service Keys](create-service-keys.png)
+      ![Create Service Key](create-service-key-name.png)
 
-In the dialog, enter the name `dc-key` for your service key. Leave empty the "Configuration Parameters (JSON)" box. Click **Save** to create the service keys.
+You have successfully created a service key for your service instance. You can now either view the service key in the browser or download it.
 
-![Create Service Key](create-service-key-name.png)
+![View Service Key](view-service-key.png)
 
-You have successfully created service keys for your service instance. Make a local copy of the service keys. You will need the service keys values in the next tutorial.
-
-![Service Key](service-key.png)
+You will need the service key values in the next tutorial.
 
 [VALIDATE_1]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 7: ](List service instances)]
-
-To list and access your service instances, there is no need to access the service via the Service Marketplace every time. In your **Space** you can see a list of all your service instances.
-
-**Go back** to your **dev** space using the breadcrumbs at the top of the page.
-
-As you navigate through the SAP Cloud Platform Cockpit and dig into more detail the breadcrumbs at the top of the page show you the hierarchy of your navigation. You can use them to go back to previous steps.
-
-![Breadcrumbs](nav-back-breadcrumbs.png)
-
-Back in your space, click **Service Instances** on the navigation side bar.
-
-![Service Instances List](service-instances-list.png)
-
-The list shows all your service instances across all services, including the service instance you have just created. You find here information on the service plan, referencing applications, created service keys and the current status of your instances. From here, you can manage your service instances, access or delete them, for example.
-
-[DONE]
 [ACCORDION-END]

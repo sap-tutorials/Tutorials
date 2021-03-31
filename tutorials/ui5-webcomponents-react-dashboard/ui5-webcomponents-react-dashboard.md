@@ -113,7 +113,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
     Add this line to your imports:
 
     ```JavaScript / JSX
-    import "@ui5/webcomponents-icons/dist/icons/add.js";
+    import "@ui5/webcomponents-icons/dist/add.js";
     ```
 
     Now your `ShellBarItem` shows up at the right side of the `ShellBar`.
@@ -145,11 +145,11 @@ import {
 } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-import "@ui5/webcomponents-icons/dist/icons/line-chart.js";
-import "@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js";
-import "@ui5/webcomponents-icons/dist/icons/add.js";
-import "@ui5/webcomponents-icons/dist/icons/list.js";
-import "@ui5/webcomponents-icons/dist/icons/table-view.js";
+import "@ui5/webcomponents-icons/dist/line-chart.js";
+import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
+import "@ui5/webcomponents-icons/dist/add.js";
+import "@ui5/webcomponents-icons/dist/list.js";
+import "@ui5/webcomponents-icons/dist/table-view.js";
 
 export function MyApp() {
   const [toggleCharts, setToggleCharts] = useState("lineChart");
@@ -270,7 +270,7 @@ export function MyApp() {
 2. Add the list `Icon` to your imports.
 
     ```JavaScript / JSX
-    import "@ui5/webcomponents-icons/dist/icons/list.js";
+    import "@ui5/webcomponents-icons/dist/list.js";
     ```
 
 3. Add the `List` component as child of the `Card`.
@@ -375,7 +375,7 @@ Now the components inside the card fit (we'll arrange the cards themselves later
     Also import the `table-view` `Icon`.
 
     ```JavaScript / JSX
-    import "@ui5/webcomponents-icons/dist/icons/table-view.js";
+    import "@ui5/webcomponents-icons/dist/table-view.js";
     ```
 2. Add data and columns to the table. The `columns` prop expects an array of objects that include at least the `accessor` to the data. The value of `Header` will be shown as column header.
 
@@ -505,11 +505,11 @@ import {
 } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-import "@ui5/webcomponents-icons/dist/icons/line-chart.js";
-import "@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js";
-import "@ui5/webcomponents-icons/dist/icons/add.js";
-import "@ui5/webcomponents-icons/dist/icons/list.js";
-import "@ui5/webcomponents-icons/dist/icons/table-view.js";
+import "@ui5/webcomponents-icons/dist/line-chart.js";
+import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
+import "@ui5/webcomponents-icons/dist/add.js";
+import "@ui5/webcomponents-icons/dist/list.js";
+import "@ui5/webcomponents-icons/dist/table-view.js";
 
 export function MyApp() {
   const [toggleCharts, setToggleCharts] = useState("lineChart");

@@ -1,11 +1,11 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Extend the Bookstore with Custom Code
 description: Extend the previously built bookstore with custom coding, for example, to validate requests.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform, topic>java, products>sap-business-application-studio]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>java, products>sap-business-application-studio]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -265,7 +265,7 @@ public class OrdersService implements EventHandler {
 10. To reset the database to the initial state, run the following command from the root of your project:
 
     ```Shell/Bash
-    cd ~/projects/bookstore && npm run deploy
+    cd ~/projects/bookstore && cds deploy --to sqlite
     ```
 
 [VALIDATE_1]
@@ -455,4 +455,4 @@ Let's break down the code:
 
 Great job!
 
-You've extended the application with quite some custom business logic. In the next tutorial you'll start to make the application ready for SAP Cloud Platform, by running it with SAP HANA as the database.
+You've extended the application with quite some custom business logic. In the next tutorial you'll start to make the application ready for SAP Business Technology  Platform, by running it with SAP HANA as the database.

@@ -9,7 +9,6 @@ time: 15
 ---
 
 ## Prerequisites
- - [Install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
  - Download the `.csv` files from the SAP HANA Academy GitHub page: <https://github.com/saphanaacademy/HXE/tree/master/STS>.
 
 

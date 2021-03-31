@@ -1,21 +1,19 @@
 ---
 title: Create an API Provider System
-description: In this tutorial you will learn how to create an API Provider system. This provider system will connect to the SAP Developer System created in the previous step.
+description: Create an API Provider system to connect to the SAP developer system created in the previous step.
 auto_validation: true
 primary_tag: products>sap-api-management
 tags: [  tutorial>beginner, products>sap-gateway, products>sap-cloud-platform, products>sap-api-management ]
+time: 15
 ---
 ## Prerequisites  
-- **Proficiency:** Beginner
-- **Tutorials:** [Enable the SAP Cloud Platform, API Management Service](https://developers.sap.com/tutorials/hcp-apim-enable-service.html)
-Create a user in the SAP Gateway Developer System: [Create an account on the Gateway Demo system](https://developers.sap.com/tutorials/gateway-demo-signup.html)
-
-## Next Steps
-- [Create an API Proxy](https://developers.sap.com/tutorials/hcp-apim-create-api.html)
-
+- [Enable the SAP Cloud Platform, API Management Service](https://developers.sap.com/tutorials/hcp-apim-enable-service.html)
+- [Create an Account on the Gateway Demo System](https://developers.sap.com/tutorials/gateway-demo-signup.html)
 
 ## Details
 ### You will learn  
+- Create an API provider system
+
 SAP Cloud Platform, API Management uses three main components to expose APIs.
 
 - The API Provider is used to abstract the connection to the backend / target system
@@ -24,8 +22,6 @@ SAP Cloud Platform, API Management uses three main components to expose APIs.
 
 You will use SAP Cloud Platform, API Management to create an API Provider. This API Provider will connect to a backend system, in your case to the SAP Gateway Developer System. In a real-life scenario the API Provider could connect to your Developer System. Once you have created and tested an API Proxy on it, you would transport the proxy to your productive system and the underlying API Provider would now point to your productive backend system.  
 
-### Time to Complete
-**15 Min**.
 
 ---
 

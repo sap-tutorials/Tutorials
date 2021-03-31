@@ -1,11 +1,11 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Create a Reusable Service
 description: Create a service that will later on be reused in another CAP Java project.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform, topic>java]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>java]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -159,10 +159,10 @@ Let's deploy the domain model to a database. Now, you will use SQLite, a light-w
 2. To initialize the database with the defined domain model, execute the following command in the terminal:
 
     ```Shell/Bash
-    npm run deploy
+    cds deploy --to sqlite
     ```
 
-    !![npm run deploy](run-deploy.png)
+    !![cds deploy](cds-deploy.png)
 
     This will create a file called `sqlite.db` in your project root. The name of this database is defined by an entry in your `package.json`.
 
@@ -177,9 +177,9 @@ Configure your Java application to use the `sqlite.db` database file.
 
 1. Go to `srv/src/main/resources`, locate, and open the `application.yaml` file. This file was created when you initialized the application.
 
-2. For the field `url`, replace the string `"jdbc:sqlite::memory:"` with a reference to your local database file `"jdbc:sqlite:/home/user/projects/products-service/sqlite.db"`
+2. For the field `url`, replace the string `"jdbc:sqlite::memory:?cache=shared"` with a reference to your local database file `"jdbc:sqlite:/home/user/projects/products-service/sqlite.db"`
 
-3. Set the value of `initialization-mode` from `always` to `never`, because you've already initialized the database when running `npm run deploy`.
+3. Set the value of `initialization-mode` from `always` to `never`, because you've already initialized the database when running `cds deploy --to sqlite`.
 
 Your `application.yaml` file should look like this:
 
@@ -245,7 +245,7 @@ Delete the `AdminService.java` file in the `handlers` folder.
 
 In the following tutorial, the application will be reused by a bookstore application. The reuse of models can be achieved by publishing NPM modules with the models and defining dependencies to these NPM modules in other applications. There are a two steps we need to perform to prepare the `products-service` application for reuse.
 
-1. The name of the `products-service` reuse module, should be `@sap/capire-products`. Therefore, open the `package.json` file within the `~/projects/products-service` folder and change the value of `name` field from `products-service` to `@sap/capire-products`. If you want to you can also provide a meaningful description in the `description` field.
+1. The name of the `products-service` reuse module, should be `@sap/capire-products`. Therefore, open the `package.json` file within the `~/projects/products-service` folder and change the value of `name` field from `products-service-cds` to `@sap/capire-products`. If you want to you can also provide a meaningful description in the `description` field.
 
     !![adjust the package.json in the root folder of your project](package-json.png)
 

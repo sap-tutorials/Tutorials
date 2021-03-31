@@ -9,6 +9,7 @@ time: 15
 ---
 
 ## Prerequisites  
+  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
   - **Tutorials:** [Creating an OData Service with an Entity Relationship](https://developers.sap.com/tutorials/xsa-xsodata-entity.html)
 
 ## Details

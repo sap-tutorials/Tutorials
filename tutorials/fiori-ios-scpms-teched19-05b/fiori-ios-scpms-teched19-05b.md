@@ -2,19 +2,24 @@
 title: Use Create ML to Train an Image Classification Model
 description: Get to know Create ML and how to create an Image Classification Model for products.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 15
 ---
 
 ## Prerequisites
+
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0
+- **SAP BTP SDK for iOS:** Version 5.0 or newer
 
 ## Details
+
 ### You will learn  
-  - What Create ML is
-  - How to create an Image Classification Model
+
+- What Create ML is
+- How to create an Image Classification Model
 
 ---
 
@@ -25,20 +30,25 @@ Since MacOS 10.14 developers have the opportunity to use Create ML as a tool to 
 Currently Apple supports the following types of models:
 
 **Image:**
+
 - [`MLImageClassifier`](https://developer.apple.com/documentation/createml/mlimageclassifier)
 - [`MLObjectDetector`](https://developer.apple.com/documentation/createml/mlobjectdetector)
 
 **Sound:**
+
 - [`MLSoundClassifier`](https://developer.apple.com/documentation/createml/mlsoundclassifier)
 
 **Motion:**
+
 - [`MLActivityClassifier`](https://developer.apple.com/documentation/createml/mlactivityclassifier)
 
 **Text:**
+
 - [`MLTextClassifier`](https://developer.apple.com/documentation/createml/mltextclassifier)
 - [`MLWordTagger`](https://developer.apple.com/documentation/createml/mlwordtagger)
 
 **Table:**
+
 - [`MLClassifier`](https://developer.apple.com/documentation/createml/mlclassifier)
 - [`MLRegressor`](https://developer.apple.com/documentation/createml/mlregressor)
 
@@ -55,11 +65,11 @@ For this tutorial series you're going to need an Image Classification Model to i
 
 1. After you have installed [Create ML](https://developer.apple.com/machine-learning/create-ml/) you should see a popup asking you to create a **New Document**. Please select that to reach the template screen in Create ML.
 
-    ![Create ML](fiori-ios-scpms-teched19-01.png)
+    !![Create ML](fiori-ios-scpms-teched19-01.png)
 
 2. Now please select the **Image Classifier** template as a starting point and click on **Next**.
 
-    ![Create ML](fiori-ios-scpms-teched19-02.png)
+    !![Create ML](fiori-ios-scpms-teched19-02.png)
 
 3. Fill out the required fields like the following and click on **Next**:
 
@@ -75,7 +85,7 @@ For this tutorial series you're going to need an Image Classification Model to i
 
     You should see the project opening up.
 
-    ![Create ML](fiori-ios-scpms-teched19-04.png)
+    !![Create ML](fiori-ios-scpms-teched19-04.png)
 
 [DONE]
 [ACCORDION-END]
@@ -96,27 +106,28 @@ If you have all images ready you have to structure them in a specified way for C
 
 The folder structure needs to look like the following:
 
-![Create ML](fiori-ios-scpms-teched19-05.png)
+!![Create ML](fiori-ios-scpms-teched19-05.png)
 
 The training data and the testing data need to be different images for Create ML training and testing properly.
 
 After you've chosen your training and testing data inside of Create ML you could add different **Augmentations** if you want to but for now this is not necessary.
 
-![Create ML](fiori-ios-scpms-teched19-06.png)
+!![Create ML](fiori-ios-scpms-teched19-06.png)
 
 To create a Core ML model you just have to hit **Train** located on the top of Create ML.
 
-![Create ML](fiori-ios-scpms-teched19-07.png)
+!![Create ML](fiori-ios-scpms-teched19-07.png)
 
 After Core ML runs the training you will get results similar to the following screenshot. This data allows you to understand your model, how accurate it is and how you might need to tweak the training to get better results.
 
-The model should work just fine and we can drag it from the top-right corner onto the hard-drive or directly into Xcode.
+The model should work just fine and you can export it onto the hard-drive or directly into Xcode.
 
-![Create ML](fiori-ios-scpms-teched19-08.png)
+!![Create ML](fiori-ios-scpms-teched19-08.png)
 
-Please safe the model on your machine and then continue with the next tutorial.
+Please export the model directly into Xcode and then continue with the next tutorial.
 
-![Create ML](fiori-ios-scpms-teched19-09.png)
+!![Create ML](fiori-ios-scpms-teched19-09.png)
+!![Create ML](fiori-ios-scpms-teched19-09.png)
 
 Congratulations! You've trained a Core ML model with Create ML. Feel free to play around more with Create ML and the Machine Learning capabilities with [SAP](https://www.sap.com/products/intelligent-technologies/artificial-intelligence.html).
 

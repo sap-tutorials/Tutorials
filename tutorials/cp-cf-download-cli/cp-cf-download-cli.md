@@ -4,8 +4,8 @@ description: Download and install the CLI, which allows access via the command l
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
-tags: [tutorial>beginner, topic>cloud,  products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
+tags: [tutorial>beginner, topic>cloud, products>sap-business-technology-platform ]
+primary_tag: products>sap-btp--cloud-foundry-environment
 time: 15
 ---
 
@@ -21,7 +21,7 @@ time: 15
 
 Download the latest Command Line Interface (CLI) from the Cloud Foundry web site.  Use the following URL:  
 
-[https://github.com/cloudfoundry/cli#downloads](https://github.com/cloudfoundry/cli#downloads).
+<https://github.com/cloudfoundry/cli/wiki/V7-CLI-Installation-Guide>.
 
 On the Cloud Foundry website, choose either the command line installer or the binary from the table listed on the webpage. If you don't know which to use, choose the installer (not the binary) for your Operating System from the table.
 
@@ -50,7 +50,7 @@ To test the CLI, type in the following:
 
 You should see a list of Cloud Foundry commands.
 
-![Cloud Foundry list of Commands](cfhelp.png)
+!![Cloud Foundry list of Commands](cfhelp.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -61,28 +61,25 @@ First, find the correct API URL for your region.  Select the correct region from
 
 | Region                                          | URL                                         |
 | ----------------------------------------------- | ---------------------------------------     |
-| Europe (Frankfurt)        | `https://api.cf.eu10.hana.ondemand.com`     |
-| Europe (Netherlands)  | `https://api.cf.eu20.hana.ondemand.com`     |
-| US East (VA)               | `https://api.cf.us10.hana.ondemand.com`     |
-| US West (CA)        | `https://api.cf.us20.hana.ondemand.com`     |
+| Europe (Frankfurt) AWS      | `https://api.cf.eu10.hana.ondemand.com`     |
+| US East (VA) AWS              | `https://api.cf.us10.hana.ondemand.com`     |
+| Singapore Azure       | `https://api.cf.ap21.hana.ondemand.com`     |
 
 > If your region is not in this list, check the [Regions and API endpoints list](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html#loiof344a57233d34199b2123b9620d0bb41) for the most up to date list.
 
 You can also identify your API Endpoint using your Cloud Foundry account:
 
-First, navigate to the [SAP Cloud Platform Cockpit](https://hanatrial.ondemand.com) and click **Log On**.
+First, navigate to the [SAP BTP cockpit](https://hanatrial.ondemand.com) and select **Enter Your Trial Account**
 
-Next, select **Enter Your Trial Account**
-
-![entertrial](entertrial.png)
+!![entertrial](entertrial.png)
 
 Next, click on the subaccount.
 
-![subaccount](subaccount.png)
+!![subaccount](subaccount.png)
 
-The **API Endpoint** is displayed on the right-hand side of the **Overview** page.
+The **API Endpoint** is displayed on the left-hand side of the **Overview** page.
 
-![endpoint](endpoint.png)
+!![endpoint](endpoint.png)
 
 [DONE]
 [ACCORDION-END]
@@ -98,7 +95,7 @@ cf login -a <URL>
 
 When prompted, enter your username and password.  Once you are logged in, you should see your API endpoint, user, org, and space.
 
-You are now set up to use the Cloud Foundry systems on SAP Cloud Platform.
+You are now set up to use the SAP BTP, Cloud Foundry environment.
 
 > For more information on the Command Line Interface (CLI), go to the Cloud Foundry [Getting Started with the CLI](http://docs.cloudfoundry.org/cf-cli/getting-started.html) website.
 

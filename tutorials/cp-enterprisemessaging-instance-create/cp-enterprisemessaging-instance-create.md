@@ -1,32 +1,32 @@
 ---
-title: Create Instance of SAP Cloud Platform Enterprise Messaging Service
-description:  Create an instance of SAP Cloud Platform Enterprise Messaging service from SAP Cloud Platform Cockpit and understand in detail about it's each property.  
+title: Create Instance of SAP Event Mesh
+description:  Create an instance of SAP Event Mesh service from SAP Business Technology Platform Cockpit and understand in detail about it's each property.  
 time: 15
 auto_validation: true
 tags: [ tutorial>beginner, topic>cloud, tutorial>license]
-primary_tag: products>sap-cloud-platform-enterprise-messaging
+primary_tag: products>sap-event-mesh
 ---
 
+## Prerequisites
+- SAP Business Technology Platform environment with SAP Event Mesh entitlement  
+ 
 ## Details
 ### You will learn
-  - How to create an SAP Cloud Platform Enterprise Messaging service instance
-  - How to access the Service Key of a SAP Cloud Platform Enterprise Messaging service instance
-
->**IMPORTANT:** It is really important to learn the basics of messaging before going ahead with this tutorial. Check out [The Basics of Enterprise Messaging](cp-enterprisemessaging-learn-messaging-concepts).
+  - How to create an SAP Event Mesh service instance
+  - How to access the Service Key of a SAP Event Mesh service instance
 
 
-## Prerequisites
+**IMPORTANT:** It is really important to learn the basics of messaging before going ahead with this tutorial. Check out [The Basics of SAP Event Mesh](cp-enterprisemessaging-learn-messaging-concepts).
 
-  - SAP Cloud Platform, Cloud Foundry environment with SAP Cloud Platform Enterprise Messaging entitlement  
 
 ---
 
 
 [ACCORDION-BEGIN [Step 1: ](Create an instance)]
 
-1. Open the SAP Cloud Platform cockpit, Cloud Foundry environment.
+1. Open the SAP Business Technology Platform cockpit, Cloud Foundry environment.
 
-2. Navigate to a **Space** in your Cloud Foundry environment and select **Services >  Service Marketplace > Enterprise Messaging Service**.
+2. Navigate to a **Space** in your Cloud Foundry environment and select **Services >  Service Marketplace > Event Mesh**.
 
 3. Click **Instances > New Instance**.
 
@@ -85,20 +85,20 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 
 7. Enter the instance name and click **Finish**. The instance name has to be the same as has been given against the **`emname`** parameter in the service descriptor.
 
-    An instance of SAP Cloud Platform Enterprise Message is created.
+    An instance of SAP Event Mesh is created.
 
-    ![SAP Cloud Platform Enterprise Messaging Instance](em-instance-creation.PNG)
+    ![SAP Event Mesh Instance](em-instance-creation.PNG)
 
-    >Each enterprise message instance represents a message client. Each message client has a set of queues and topics to which it is associated. All these queues and topics belonging to one message client are exposed to other message clients using its unique credentials. This entire set of queues and topics within different message clients in a subaccount can send and receive messages or events to each other using the service.  
+    >Each Event Mesh instance represents a message client. Each message client has a set of queues and topics to which it is associated. All these queues and topics belonging to one message client are exposed to other message clients using its unique credentials. This entire set of queues and topics within different message clients in a subaccount can send and receive messages or events to each other using the service.  
 
     [VALIDATE_1]
 
 
     [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understanding Service Key of SAP Enterprise Messaging instance)]
+[ACCORDION-BEGIN [Step 2: ](Understanding Service Key of SAP Event Mesh)]
 
-When an instance of SAP Cloud Platform Enterprise Message is created with the steps mentioned above, it stores the information of the protocols, corresponding end-points and authorizations which can be used to bind it to an Application. **Service Key** holds this information when an instance of SAP Cloud Platform Enterprise Message is created.
+When an instance of SAP Event Mesh is created with the steps mentioned above, it stores the information of the protocols, corresponding end-points and authorizations which can be used to bind it to an Application. **Service Key** holds this information when an instance of SAP Event Mesh is created.
 You can create a service key of the instance with the following steps depicted through following three images.
 
   - Click on Create a Service Key
@@ -110,7 +110,7 @@ You can create a service key of the instance with the following steps depicted t
   - Service Key gets Created
   ![Service Key gets created](ServiceKeys3.png)
 
-Do find below a template Service Key of an SAP Cloud Platform Enterprise Message instance.
+Do find below a template Service Key of an SAP Event Mesh instance.
 ```JSON
 {
   "xsappname": "<app-name>",
@@ -174,7 +174,7 @@ Do find below a template Service Key of an SAP Cloud Platform Enterprise Message
 
  - The segment `httprest` in the service binding information is available only if you have set the option `messagingrest` as true during service instance creation.
 
-Now you can proceed with the tutorial [Create Queues and Queue Subscriptions for Enterprise Messaging](cp-enterprisemessaging-queue-queuesubscription) to create queues and queue subscriptions so you can start working with SAP Cloud Platform Enterprise Messaging.
+Now you can proceed with the tutorial [Create Queues and Queue Subscriptions for Event Mesh](cp-enterprisemessaging-queue-queuesubscription) to create queues and queue subscriptions so you can start working with SAP Event Mesh.
 
 [VALIDATE_2]
 [ACCORDION-END]

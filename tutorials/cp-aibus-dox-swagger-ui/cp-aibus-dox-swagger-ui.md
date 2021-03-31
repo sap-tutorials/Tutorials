@@ -1,9 +1,9 @@
 ---
-title: Use Machine Learning to Extract Information from Documents
-description: Get the machine learning model prediction for the documents you upload to Document Information Extraction.
+title: Use Machine Learning to Extract Information from Documents with Swagger UI
+description: Get machine learning model predictions for the documents you upload to Document Information Extraction.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
@@ -19,11 +19,11 @@ The core functionality of Document Information Extraction is to automatically ex
 
 [ACCORDION-BEGIN [Step 1: ](Authorize Swagger UI)]
 
-You will use Swagger UI, via any web browser, to call the Document Information Extraction APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).  
+You will use Swagger UI, via any web browser, to call the Document Information Extraction APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).   
 
-In the service key you created for Document Information Extraction in the previous tutorial: [Create Service Keys for Document Information Extraction](cp-aibus-dox-service-instance-booster), you should find (outside the `uaa` section of the service key) an entry called `url` and another entry called `swagger` (as highlighted in the image below).
+In the service key you created for Document Information Extraction in the previous tutorial: [Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key), you should find (outside the `uaa` section of the service key) an entry called `url` and another entry called `swagger` (as highlighted in the image below).
 
-1. To access the Document Information Extraction Swagger UI, add the `swagger` value (**`/document-information-extraction/v1`**) to the `url` value, paste it in any web browser and press **Enter**.
+1. To access the Document Information Extraction Swagger UI, add the `swagger` value (`/document-information-extraction/v1`) to the `url` value, paste it in any web browser and press **Enter**.
 
     !![DOX](png-files/service-key-details.png)
 
@@ -92,12 +92,11 @@ You should receive a response like the following:
 
 >Be aware of the following Document Information Extraction trial account limitations:​
 
->- Maximum 40 uploaded documents per week​
+>- Maximum 40 uploaded document pages per week​ (the documents can have more than 1 page)
 
 >- Maximum 1 created `clientId`
 
 >- Maximum 10 created enrichment `dataIds`
-
 
 [DONE]
 [ACCORDION-END]
@@ -127,12 +126,11 @@ You should receive a response like the following:
 
 [ACCORDION-BEGIN [Step 5: ](Upload document)]
 
->Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in English. The team is working to support additional document types and languages in the near future.
+>Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
 
-Upload to the service any document in PDF format that has content in headers and tables, such as an invoice, using the **POST /document/jobs** endpoint.
+Use the **POST /document/jobs** endpoint to upload to the service any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice.
 
-
->As an alternative to uploading your own document in PDF format to the service, you can use any of the following sample invoice files (right click on the link, then click ***Save link as*** to download the files locally):
+>As an alternative to uploading your own document to the service, you can use any of the following sample invoice files (right click on the link, then click ***Save link as*** to download the files locally):
 
 >- [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-1.pdf)
 
@@ -147,7 +145,7 @@ Do the following:
 
 2. Click **Try it out**.
 
-3. Upload a document PDF file.
+3. Upload a document file.
 
 4. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 3 (`c_00`, for example), and the document type (`invoice`, for example). In this case, you can use the following:
 
@@ -219,11 +217,9 @@ You can now use the **GET /document/jobs/{`id`}** endpoint to receive the predic
 
 3. Set **`extractedValues`** to `true` to get the extracted values.
 
-4. Enter the **`clientId`** you used in the previous step (`c_00`, for example).
+4. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
 
-5. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
-
-6. Click **Execute**.
+5. Click **Execute**.
 
 !![DOX](png-files/getResults.png)
 

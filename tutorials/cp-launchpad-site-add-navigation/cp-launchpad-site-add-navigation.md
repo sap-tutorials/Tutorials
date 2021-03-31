@@ -1,10 +1,10 @@
 ---
-title: Add Navigation to Integrate an SAPUI5 App Into a Launchpad Site
-description: Add navigation properties to your custom-developed SAPUI5 app so it can be integrated into an SAP Cloud Platform Launchpad site.
+title: Add Navigation Manually to Integrate an SAPUI5 App Into a Launchpad Site
+description: Add navigation properties to your custom-developed SAPUI5 app so it can be integrated into your launchpad site in the SAP Launchpad service.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>sapui5, products>sap-business-application-studio]
-primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
+tags: [ tutorial>beginner, topic>sapui5, products>sap-business-application-studio, products>sap-business-technology-platform, products>sap-launchpad-service]
+primary_tag: products>sap-launchpad-service
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
@@ -13,7 +13,7 @@ author_profile: https://github.com/LindsayBert
 ### You will learn
   - How to configure the navigation properties for your custom app
 
-Adding navigation properties to custom-developed apps is mandatory in order to enable adding them to an SAP Cloud Platform Launchpad site. To add navigation properties to an app, edit its `manifest.json` file and add an intent to it. An intent is a unique combination of a semantic object and an action.
+Adding navigation properties to custom-developed apps is mandatory if you want to add them to a launchpad site. To add navigation properties to an app, edit its `manifest.json` file and add an intent to it. An intent is a unique combination of a semantic object and an action.
 
 ---
 

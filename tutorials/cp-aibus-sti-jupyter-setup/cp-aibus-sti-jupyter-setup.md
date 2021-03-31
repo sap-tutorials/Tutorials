@@ -3,7 +3,7 @@ title: Set Up Jupyter Notebook for Service Ticket Intelligence
 description: Set up a local JupyterLab instance as well as the Jupyter Notebook for Service Ticket Intelligence.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -24,7 +24,7 @@ To install Anaconda, head over to the [Anaconda installation guide](https://docs
 
 [OPTION BEGIN [Windows]]
 
-To verify the installation, search for `Anaconda Prompt` in your programs and open it. In the command prompt, enter `conda --version` and the version is printed as in the image below.
+To verify the installation, search for `Anaconda Prompt` in your programs and open it. In the command prompt, enter `conda --version` and the version is printed as in the image below. 
 
 [OPTION END]
 
@@ -72,7 +72,7 @@ Once the repository is cloned, you receive an output as above, saying that it's 
 
 [ACCORDION-BEGIN [Step 3: ](Configure service credentials)]
 
-Next, you need to configure the notebooks to use the service key that you created in [Create Service Instance for Service Ticket Intelligence](cp-aibus-sti-service-instance).
+Next, you need to configure the notebooks to use the service key that you obtained in [Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-key).
 
 Open a file explorer and navigate to the folder called `service-ticket-intelligence-jupyter-notebook-sample` that was just created. Open the file called `sti_config.ini` in a simple text editor.
 
@@ -80,12 +80,12 @@ Open a file explorer and navigate to the folder called `service-ticket-intellige
 
 Then, insert the following values from your service key into the corresponding spaces of the template. Make sure to copy only the values, without the surrounding quotes.
 
-|  Service key property                                         | Property in template
-|  :----------------------------------------------------------- | :--------------------
-|  `sti_service_url` (outside the `uaa` section of the service key)         | `service_url`
-|  `url` (inside the `uaa` section of the service key)          | `uaa_url`
-|  `clientid`                                                   | `client_id`
-|  `clientsecret`                                               | `client_secret`
+|  Service key property                                             | Property in template
+|  :----------------------------------------------------------------| :--------------------
+|  `sti_service_url` (outside the `uaa` section of the service key) | `service_url`
+|  `url` (inside the `uaa` section of the service key)              | `uaa_url`
+|  `clientid`                                                       | `client_id`
+|  `clientsecret`                                                   | `client_secret`
 
 Finally, save the file.
 
@@ -115,6 +115,3 @@ With that, you are done with setup and can proceed with the following tutorials.
 
 [VALIDATE_1]
 [ACCORDION-END]
-
-
----

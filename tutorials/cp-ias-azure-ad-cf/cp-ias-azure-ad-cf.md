@@ -1,31 +1,34 @@
 ---
-title: Register SAP Cloud Platform Cloud Foundry Subaccount in Identity Authentication Service
-description: Establish trust between a SAML 2.0 identity provider in SAP Cloud Platform Identity Authentication service and an SAP Cloud Platform Cloud Foundry subaccount.
+title: Register SAP BTP, Cloud Foundry Subaccount in Identity Authentication Service
+description: Establish trust between a SAML 2.0 identity provider in SAP Cloud Identity Services - Identity Authentication and an SAP BTP, Cloud Foundry subaccount.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-identity-authentication]
+tags: [ tutorial>beginner, products>sap-cloud-platform, products>identity-authentication]
 primary_tag: topic>security
+author_name: Valentin Atanassov
+author_profile: https://github.com/ValAta
 ---
 
 ## Prerequisites
- - [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
-
+ - You have a Free Trial Account on SAP Business Technology Platform. See [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
+ - You have a tenant of Identity Authentication service. See [Tenant Model and Licensing](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/93160ebd2dcb40e98aadcbb9a970f2b9.html)
+- You have Azure Active Directory (Azure AD) account.
 ## Details
 ### You will learn
-  - How to establish trust between your SAP Cloud Platform Cloud Foundry subaccount and the SAP Identity Authentication service
-  - How to configure users for single sign-on usage
+  - How to establish trust between your SAP BTP, Cloud Foundry subaccount and the Identity Authentication service
+  - How to configure users for single sign-on  usage
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log into SAP Cloud Platform Identity Authentication service)]
+[ACCORDION-BEGIN [Step 1: ](Log into Identity Authentication service)]
 
 > This step is optional if you have already downloaded the metadata file in the previous tutorial.
 
-Log into the administration console of SAP Cloud Platform Identity Authentication service through your particular URL.
+Log into the administration console of Identity Authentication service through your particular URL.
 
 The URL therefore is: **`https://[TENANT_ID].accounts.ondemand.com/admin`**
 
->Tenant ID is an automatically generated ID by the system. The first administrator created for the tenant receives an activation e-mail with a URL in it. This URL contains the tenant ID. For more information, have a look at the [Product Page](https://www.sap.com/products/cloud-platform/capabilities/foundation.identity-authentication.html#identity-authentication).
+>Tenant ID is an automatically generated ID by the system. The first administrator created for the tenant receives an activation e-mail with a URL in it. This URL contains the tenant ID. For more information, have a look at [SAP Cloud Identity Services - Identity Authentication](https://discovery-center.cloud.sap/serviceCatalog/identity-authentication) in the SAP Discovery Center.
 
 [DONE]
 [ACCORDION-END]
@@ -34,7 +37,7 @@ The URL therefore is: **`https://[TENANT_ID].accounts.ondemand.com/admin`**
 
 > This step is optional if you have already downloaded the metadata file in the previous tutorial.
 
-Go to the **Tenant Settings** in SAP Cloud Platform Identity Authentication Service and navigate to the **SAML 2.0 Configuration**.
+Go to the **Tenant Settings** in the administration console for Identity Authentication and navigate to the **SAML 2.0 Configuration** list item.
 
 ![Navigate to Tenant Settings and SAML 2.0 Configuration](saml-config-ias.png)
 
@@ -47,9 +50,9 @@ Go to the **Tenant Settings** in SAP Cloud Platform Identity Authentication Serv
 
 [ACCORDION-BEGIN [Step 3: ](Add trust configuration)]
 
-1. Navigate to your SAP Cloud Platform Cloud Foundry subaccount. Therefore, go to the [SAP Cloud Platform cockpit](https://hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
+1. Navigate to your SAP BTP, Cloud Foundry subaccount. Therefore, go to the [SAP BTP cockpit](https://hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
 
-2. Click the tile of your subaccount where you want to establish trust with the SAP Cloud Platform Identity Authentication service.
+2. Click the tile of your subaccount where you want to establish trust with the Identity Authentication service.
 
     ![subaccount tile](enter-subaccount-tile.png)
 
@@ -59,7 +62,7 @@ Go to the **Tenant Settings** in SAP Cloud Platform Identity Authentication Serv
 
     ![create new trust configuration](new-trust-configuration.png)
 
-5. Upload the metadata file of the SAP Cloud Platform Identity Authentication service tenant, which you downloaded in the previous step (or previous tutorial).
+5. Upload the metadata file of the Identity Authentication tenant, which you downloaded in the previous step (or previous tutorial).
 
     A message *Metadata parsed successfully* should appear.
 
@@ -78,7 +81,7 @@ You should now see an additional trust configuration.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Download SAP Cloud Platform SAML metadata)]
+[ACCORDION-BEGIN [Step 4: ](Download SAP BTP SAML metadata)]
 
 Download the **SAML Metadata** file of your subaccount.
 
@@ -89,7 +92,7 @@ Download the **SAML Metadata** file of your subaccount.
 
 [ACCORDION-BEGIN [Step 5: ](Create new SAML service provider)]
 
-1. Go back to the administration console of SAP Cloud Platform Identity Authentication service through your particular URL.
+1. Go back to the administration console for Identity Authentication service through your particular URL.
 
     > The URL is the same as the one in Step 1 of this tutorial: **`https://[TENANT_ID].accounts.ondemand.com/admin`**
 
@@ -110,7 +113,7 @@ Download the **SAML Metadata** file of your subaccount.
 
 1. Choose **SAML 2.0 Configuration** in the recently created application.
 
-2. Import the relevant metadata XML file of the SAP Cloud Platform Cloud Foundry subaccount.
+2. Import the relevant metadata XML file of the SAP BTP, Cloud Foundry subaccount.
 
 3. Click **Save**.
 
@@ -165,7 +168,7 @@ Use **+Add** and enter **Groups** (case-sensitive) as assertion attribute name f
 
     *AADSTS700016: Application with identifier 'https://<subdomain>.authentication.<region>.hana.ondemand.com' was not found in the directory '`xyz`'.*
 
-    Until now, you don't have any users assigned to this enterprise application in Microsoft Azure AD. Only your Microsoft Azure AD is known as an Identity Provider in your SAP Cloud Platform Identity Authentication Service, but so far no users are allowed to log in with it.
+    Until now, you don't have any users assigned to this enterprise application in Microsoft Azure AD. Only your Microsoft Azure AD is known as an Identity Provider in your Identity Authentication service, but so far no users are allowed to log in with it.
 
 3. Go back to your [overview of enterprise applications](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps/menuId/) in Microsoft Azure AD and click your application.
 
@@ -207,7 +210,7 @@ You should not see any particular application, because you did not access a CF a
 
 Congratulations!
 
-You have successfully connected Azure Active Directory with your SAP Cloud Platform Identity Authentication Service tenant. Furthermore, the SAP Cloud Platform Cloud Foundry subaccount can now leverage all the capabilities of SAP Cloud Platform Identity Authentication service, for instance users can login with their mail address of Azure Active Directory (as long as their account is part of the Azure Active Directory and the enterprise application).
+You have successfully connected Azure Active Directory with your Identity Authentication tenant. Furthermore, the SAP BTP, Cloud Foundry subaccount can now: leverage all the capabilities of Identity Authentication service, for instance users can login with their mail address of Azure Active Directory (as long as their account is part of the Azure Active Directory and the enterprise application).
 
 Good Job!
 

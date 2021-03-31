@@ -3,7 +3,7 @@ title: Build Your Mobile Development Kit Client Using MDK SDK
 description: Set up your development environment that enable MDK SDK so that you can begin building your branded Mobile Development Kit client.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -11,13 +11,13 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- **Download the latest version (4.3.1) of Mobile Development Kit SDK** either from [SAP Software Content Downloads](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Marketplace](https://launchpad.support.sap.com/#/softwarecenter/search/Mobile%2520development%2520kit) if you are a SAP Cloud Platform Mobile Services customer
+- **Download the latest version of Mobile Development Kit SDK** either from the SAP community [download page](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/Mobile%2520development%2520kit) if you are a SAP Mobile Services customer
 
 ## Details
 ### You will learn
   - How to install a Mobile development kit client SDK on Mac and Windows OS
   - How to build a Mobile development kit client for iOS and Android
-  - How to connect to SAP Cloud Platform Mobile app
+  - How to connect to SAP Mobile app
 
   The SAP Mobile Services client available in the App Store is meant for demo and development or learning purposes. For distribution to your users, you need to build a custom client. This enables you to:
 
@@ -67,15 +67,15 @@ Make sure that you have download latest version of MDK SDK as described in Prere
 
 1. Extract the downloaded zip file on your Windows OS.
 
-    !![MDK](img_1.5.png)
+    !![MDK](img-1.5.png)
 
     >You will also find other files in the extracted folder. The README file contains information about the version requirements, dependencies and some getting started links.
 
-2. Extract `MDKDependenciesInstallerWindows.zip` file.
+2. Extract `MDKDependenciesInstallerWindows` zip file.
 
-    MDK Dependencies Installer checks the status of the MDK dependencies and will install or upgrade the dependencies for you. Double click `MDK_Dependencies_Installer.exe` file to open it.
+    MDK Dependencies Installer checks the status of the MDK dependencies and will install or upgrade the dependencies for you. Double click the  `MDK_Dependencies_Installer` application file to open it.
 
-    !![MDK](img_1.6.png)
+    !![MDK](img-1.6.png)
 
     The installer will list all required components for Android platform and automatically check if they are already installed in the machine. Follow the installer UI to install the components you selected.
 
@@ -85,7 +85,11 @@ Make sure that you have download latest version of MDK SDK as described in Prere
     There might be some issue due to Security Policy. It can be fixed by executing this in `PowerShell`:
     >`Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser`
 
+    >You might see different software versions depending on MDK SDK version you are using.
+
 [OPTION END]
+
+>You might see different software versions depending on MDK SDK version you are using.
 
 >You can look into console by clicking **Show Log** for execution of each dependencies.
 
@@ -100,7 +104,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 [OPTION BEGIN [Mac]]
 
-1. To use the SDK to generate a mobile development kit client, the first step is to setup the SDK to create a client. Unzip `MDKClient_SDK.zip` if it is not already extracted.
+1. To use the SDK to generate a mobile development kit client, the first step is to set up the SDK to create a client. Unzip `MDKClient_SDK.zip` if it is not already extracted.
 
     !![MDK](img_2.1.png)
 
@@ -116,9 +120,10 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 [OPTION END]
 
+
 [OPTION BEGIN [Windows]]
 
-1. To use the SDK to generate a mobile development kit client, the first step is to setup the SDK to create a client. Unzip `MDKClient_SDK.zip` if it is not already extracted.
+1. To use the SDK to generate a mobile development kit client, the first step is to set up the SDK to create a client. Unzip `MDKClient_SDK` if it is not already extracted.
 
     !![MDK](img_2.3.png)
 
@@ -134,7 +139,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     Once this completes, close the window. Notice that the `create-client.cmd` file has appeared in the SDK directory.
 
-    !![MDK](img_2.6.png)    
+    !![MDK](img-2.6.png)    
 
 [OPTION END]
 
@@ -167,7 +172,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     >`AppName`: Provide a name for example: `DemoSampleApp`. This is the name of the application on the home screen of the device.
 
-    >`BundleID`: It should be unique for iOS and same as **Identifier** `(AppID)` that is registered in Apple Developer account since that determines if the application can be installed alongside other applications. If the `XCode` project is setup to use _Automatically manage signing_ then when building, `XCode` will automatically generate a signing profile for the specified bundle id. Without matching them, trying to run the custom client in iOS device will result in failure.
+    >`BundleID`: It should be unique for iOS and same as **Identifier** `(AppID)` that is registered in Apple Developer account since that determines if the application can be installed alongside other applications. If the `XCode` project is set up to use _Automatically manage signing_ then when building, `XCode` will automatically generate a signing profile for the specified bundle id. Without matching them, trying to run the custom client in iOS device will result in failure. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
 
     >`URLScheme`: Allows you to specify a custom URL scheme which opens the client.
     If the URL includes connection settings as URL parameters, these settings will override the ones used by the client. The default is `mdkclient`.
@@ -178,11 +183,11 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img_3.4.png)
 
-    To find the correct URLs for your client, you should go to [Mobile Services cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#1294a03f-3bd6-41e7-9173-c2284ca2854a) and find your MDK application that you want to link to this client.
+    To find the correct URLs for your client, you should navigate to  [Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and find your MDK application that you want to link to this client.
 
     Click `com.sap.mdk.demo` > **Security** tab.
 
-    Copy the Client ID, Redirect URL, OAuth Authorization & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
+    Copy the Client ID, Redirect URL, OAuth Authorisation & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
 
     !![MDK](img_3.4.1.png)
 
@@ -203,7 +208,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     **Demo**: If you want to access the app in the demo mode, you can configure required settings.        
 
-    >If you are connecting to `AliCloud` accounts, you will also need to add your custom domains under `URLWhitelist` property in the same file. You can find more details in [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#connection-settings-whitelist).
+    >If you are connecting to `AliCloud` accounts, you will also need to add your custom domains under `URLWhitelist` property in the same file. You can find more details in [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#connection-settings-allowlist).
 
 5. In the last section of `BrandedSettings.json` file, make these changes:
 
@@ -221,17 +226,17 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 1. In the `MDKClient_SDK` folder, you will find the `template.mdkproject` folder. It is recommended that you copy this folder to another location to use it for future builds and paste it anywhere want and you can rename template to whatever you want but the directory name needs to end in `.mdkproject`.
 
-    !![MDK](img_3.2.1.png)
+    !![MDK](img-3.2.1.png)
 
     The idea of retaining the `.mdkproject` folder is so you can use it again in the future to build additional MDK clients using the same settings using a different version of the MDK SDK.
 
     >For this tutorial, I have named my `.mdkproject` folder `DemoSampleApp.mdkproject` and put it outside of the MDK Client folder structure. I will refer this name for the rest of this tutorial.
 
-    >!![MDK](img_3.2.2.png)
+    >!![MDK](img-3.2.2.png)
 
-2. Next, you will need to update the `BrandedSettings.json` and `MDKProject.json` files as needed for your client. Go into the `DemoSampleApp.mdkproject` folder.
+2. Next, you will need to update the `MDKProject.json` and `BrandedSettings.json` files as needed for your client. Go into the `DemoSampleApp.mdkproject` folder.
 
-    !![MDK](img_3.2.3.png)
+    !![MDK](img-3.2.3.png)
 
 3. Open the `MDKProject.json` file and update it as needed. This file has some build-time configurations such as the application name, version and bundle ID.
 
@@ -250,11 +255,11 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img_3.4.png)
 
-    To find the correct URLs for your client, you should go to [Mobile Services cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#1294a03f-3bd6-41e7-9173-c2284ca2854a) and find your MDK application that you want to link to this client.
+    To find the correct URLs for your client, you should navigate to  [Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and find your MDK application that you want to link to this client.
 
     Click `com.sap.mdk.demo` > **Security** tab.
 
-    Copy the Client ID, Redirect URL, OAuth Authorization & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
+    Copy the Client ID, Redirect URL, OAuth Authorisation & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
 
     !![MDK](img_3.4.1.png)
 
@@ -318,7 +323,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img_4.3.1.png)
 
-    You will also find your app created under the `MDKClient_SDK` folder.
+    You will also find your MDK Client app created under the `MDKClient_SDK` folder.
 
     !![MDK](img_4.3.2.png)
 
@@ -326,11 +331,13 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 [OPTION BEGIN [Windows]]
 
-4. You can create a client by running `create-client.cmd` and providing the path to a valid `.mdkproject` directory.
+1. You can create a client by running `create-client.cmd` and providing the path to a valid `.mdkproject` directory.
 
     !![MDK](img_4.4.png)
 
-5. Once the `create-client.cmd` script executed successfully, you will see **Application ready** message in terminal console.
+    >You can run the `create-client command` from any directory.  The resulting MDK client will be created in the directory where the `create-client command` is run from.
+
+2. Once the `create-client.cmd` script executed successfully, you will see **Application ready** message in terminal console.
 
     !![MDK](img_4.4.1.png)
 
@@ -338,7 +345,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
      You will also find your app created under the `MDKClient_SDK` folder.
 
-    !![MDK](img_4.4.2.png)
+    !![MDK](img-4.4.2.png)
 
 [OPTION END]
 
@@ -371,15 +378,15 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     ![MDK](img_5.3.1.png)
 
-4. Tap **AGREE** on End User License Agreement.
+4. Tap **AGREE** on `End User License Agreement`.
 
 5. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.3 & 3.5.
 
     ![MDK](img_5.5.png)
 
-6. Tap **START** to connect MDK client to SAP Cloud Platform.
+6. Tap **START** to connect MDK client to SAP Business Technology Platform (BTP).
 
-7. Enter your credentials to login to SAP Cloud Platform and tap **Log On** to authenticate.
+7. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
 
     ![MDK](img_5.7.png)
 
@@ -391,7 +398,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     ![MDK](img_5.9.png)
 
-    Optionally, you can enable fingerprint to get faster access to the app data.
+    Optionally, you can enable biometric authentication to get faster access to the app data.
 
     ![MDK](img_5.9.1.png)
 
@@ -425,15 +432,15 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     ![MDK](img_5.13.png)
 
-4. Tap **Agree** on End User License Agreement.
+4. Tap **Agree** on `End User License Agreement`.
 
 5. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.3 & 3.5.
 
     ![MDK](img_5.13.1.png)
 
-    Tap **Start** to connect MDK client to SAP Cloud Platform.
+    Tap **Start** to connect MDK client to SAP Business Technology Platform (BTP).
 
-6. Enter your credentials to login to SAP Cloud Platform and tap **Log On** to authenticate.
+6. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
 
     ![MDK](img_5.14.png)
 
@@ -445,7 +452,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     ![MDK](img_5.16.png)
 
-    Optionally, you can enable Touch ID to get faster access to the app data, tap **Enable**.
+    Optionally, you can enable biometric authentication to get faster access to the app data, tap **Enable**.
 
     ![MDK](img_5.17.png)
 

@@ -1,9 +1,9 @@
 ---
 title: Run the Employee Onboarding Sample Scenario
-description: Now that all the components of your workflow are set up and the business rules are integrated, run your workflow.
+description: Now that your workflow is set up, business rules are integrated and visibility scenario is configured, run your workflow and visualize it.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-web-ide]
+tags: [ tutorial>beginner, products>sap-cloud-platform-business-application]
 primary_tag: products>sap-cloud-platform
 ---
 
@@ -19,11 +19,11 @@ First, we will import sample events & data, process these events and view them i
 
 1. Download the events `EmployeeOnboardingEvents.json` file from [here](https://github.com/SAP-samples/cloud-process-visibility/releases/download/1.0.0/Employee_OnboardingEvents.json).
 
-2. In the SAP Fiori launchpad, click the **Event Acquisition** tile.
+2. In the Workflow Management Fiori launchpad, click the **Event Acquisition** tile.
 
-    >You got the launchpad link in the last step of the setup tutorial. The link would be like:  
+    >You got the workflow management application link in the last step of the setup tutorial. The link would be like:  
 
-    > `https://trial-userid-dev-workflowmanagementflp-approuter.cfapps.eu10.hana.ondemand.com/cp.portal/site#Shell-home`
+    > `https://<subdomain>.cockpit.workflowmanagement.cfapps.<eu10 or us10>.hana.ondemand.com/cp.portal/site#Shell-home`
 
     ![Import Events](eventaquisition_1.png)
 
@@ -50,7 +50,7 @@ First, we will import sample events & data, process these events and view them i
 
 [ACCORDION-BEGIN [Step 2: ](Process the Employee Onboarding events)]
 
-1. In the SAP Fiori launchpad, click the **Monitor Visibility Scenarios** tile.
+1. In the Workflow Management Fiori Launchpad, click the **Monitor Visibility Scenarios** tile.
 
     ![Open Monitor Scenario1](monitorscenario.png)
 
@@ -67,7 +67,7 @@ First, we will import sample events & data, process these events and view them i
 
 [ACCORDION-BEGIN [Step 3: ](View the process visibility workspace)]
 
-1. In the SAP Fiori launchpad, click the **Process Workspace** tile.
+1. In the Workflow Management Fiori launchpad, click the **Process Workspace** tile.
 
     ![View Scenario1](viewscenario.png)
 
@@ -87,27 +87,27 @@ First, we will import sample events & data, process these events and view them i
 
 Now, you will run the workflow and see how the new events and data are automatically processed and shown in process workspace in real time.
 
-1. In the SAP Fiori launchpad, open the **Monitor Workflow - Workflow Definitions** tile to see all deployed workflow definitions.
+1. In the Workflow Management Fiori launchpad, open the **Monitor Workflow - Workflow Definitions** tile to see all deployed workflow definitions.
 
     ![Open Monitor Workflows](monitor-workflow.png)
 
 2. Select the `onboard` workflow, and choose **Start New Instance**.
 
-3. The start context is already filled. Choose **Start New Instance**.
+3. The start context is already filled. Choose **Start New Instance and Close**.
 
-    ![Start New Instance](start-new-instance-json.png)
+    ![Start New Instance](start-new-instance-json.png)  
 
 4. Choose **Show Instances** to see all workflow instances of the onboard workflow definition.
 
     !![View Details of Instance](workflow-instance-1.png)
 
-5. Go back to the SAP Fiori launchpad homepage. The **My Inbox** tile shows one open task.
+5. Go back to the Workflow Management Fiori launchpad homepage. The **My Inbox** tile shows one open task.
 
     ![Open Task in My Inbox](open-task.png)
 
-6. Open the **My Inbox** to display the `Confirm or Change Equipment` workflow task.
+6. Click the **My Inbox** to display the `Confirm or Change Equipment` workflow task.
 
-    - You can add new equipment, by choosing the **+** button.
+    - You can add or delete the equipment, by choosing the **Add** and **Cross**  in **Equipment Needed** section.
 
     - To complete the task, choose **Confirm**. The task then disappears from the list.
 
@@ -118,13 +118,13 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 [ACCORDION-BEGIN [Step 5: ](View process visibility workspace)]
 
-1. In the SAP Fiori launchpad, open **Monitor Visibility Scenarios** application, click **Process Data** and **Refresh** to see the new batch of processed events.
+1. In the Workflow Management Fiori launchpad, open **Monitor Visibility Scenarios** application, click **Process Data** and **Refresh** to see the new batch of processed events.
 
     !![New Workflow Event Processed](processworkflowevents.png)
 
-    > In productive scenarios, you can switch on the *Schedule Job* so that the events will be automatically processed at an interval of 5 minutes.
+    > If *Schedule Job* in *ON* then the events are automatically processed at an interval of 5 minutes.
 
-2. Go back to SAP Fiori launchpad, choose the **Process Workspace** tile and open `Employee Onboarding` scenario.
+2. Go back to Workflow Management Fiori launchpad, choose the **Process Workspace** tile and open `Employee Onboarding` scenario.
 
     > You will notice that the **Open Instances** number has changed which means the workflow instance has been processed and its progress can be tracked from this process visibility workspace.
 
@@ -139,17 +139,17 @@ Now, you will run the workflow and see how the new events and data are automatic
 
     - If you do not see the task, refresh the **My Inbox** tile to see the `Approve Equipment` task.
 
-    The `Approve Equipment` task shows the equipment configured by the buddy. As the manager, you can either approve or reject the proposed equipment for the new hire. To complete the task, choose `Approve`.
+    The `Approve Equipment` task shows the equipment configured by the buddy. As a manager, you can either approve or reject the proposed equipment for the new hire. To complete the task, choose `Approve`.
 
     ![Approve Equipment](approve-equipment.png)
 
 2. **Refresh** the tasks list and execute the **Accept Workplace** task:
 
-    > As the buddy, click the **Accept Workplace** to complete the task. The workflow status is set to **Completed**.
+    > As a buddy, click the **Accept Workplace** to complete the task. The workflow status is set to **Completed**.
 
     ![Accept Equipment](accept-equipment.png)
 
-3. In the SAP Fiori launchpad, open the **Monitor Workflow - Workflow Instances** tile, choose the filter button, select the **Status** option and choose the **Completed** status.
+3. In the Workflow Management Fiori launchpad, open the **Monitor Workflow - Workflow Instances** tile, choose the filter button, select the **Status** option and choose the **Completed** status.
 
     ![View Completed Workflow Instance](instance-filter-1.png)
 
@@ -162,7 +162,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 [ACCORDION-BEGIN [Step 7: ](View process visibility workspace for completed workflow)]
 
-1. In the SAP Fiori launchpad, choose **Monitor Scenarios** to process the new set of events.
+1. In the Workflow Management Fiori launchpad, choose **Monitor Scenarios** to process the new set of events.
 
     !![See Processed data](processeddata_2.png)
 
@@ -172,7 +172,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
     ![View Scenario4](viewscenario_4.png)
 
-Congratulations. With this, you have successfully completed the mission on **Automating and Extending Employee Onboarding** process using Workflow Management services. In this mission, you learnt about SAP Cloud Platform Workflow, Business Rules and Process Visibility and how these services come together to help you automate the process and decisions, together with providing out-of-box visibility into the workflows.
+Congratulations. With this, you have successfully completed the mission on **Automating and Extending Employee Onboarding** process using Workflow Management services. In this mission, you learned about Workflow, Business Rules and Process Visibility services of **SAP Workflow Management** and how they come together to help you automate processes and decisions, together with providing an out-of-box visibility into the workflows.
 
 [VALIDATE_6]
 [ACCORDION-END]

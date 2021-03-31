@@ -1,33 +1,38 @@
 ---
 title: Build a Customer List
-description: Build an entity list using SAP Cloud Platform SDK for iOS controls. Use storyboard segues to perform navigation between the Overview screen and the customer list.
+description: Build an entity list using SAP BTP SDK for iOS controls. Use storyboard segues to perform navigation between the Overview screen and the customer list.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services, products>sap-mobile-services ]
 time: 25
 ---
 
 ## Prerequisites
+
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0 or higher
+- **SAP BTP SDK for iOS:** Version 5.0 or higher
 
 ## Details
+
 ### You will learn  
-  - How to reuse View Controller code
+
+- How to reuse View Controller code
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a customer list)]
 
-Because we already implemented a similar screen, the Product List, we can copy most of the code from the `ProductsTableViewController.swift` class.
+Because you already implemented a similar screen, the Product List, you can copy most of the code from the `ProductsTableViewController.swift` class.
 
-1. Before we do that, open the **`Main.storyboard`** and use the **Object Library** to create another Table View Controller and place it directly below the **Products Table View Controller**.
+1. Before you do that, open the **`Main.storyboard`** and use the **Object Library** to create another Table View Controller and place it directly below the **Products Table View Controller**.
 
     !![Main Storyboard Customer VC](fiori-ios-scpms-starter-mission-04-1.png)
 
 2. Use the project navigator to create a new Table View Controller Cocoa Touch Class  **`TutorialApp > New File ... > Cocoa Touch Class`**. Name the class **`CustomersTableViewController`**.
+
+    !![Main Storyboard Customer VC](fiori-ios-scpms-starter-mission-04-2a.png)
 
 3. Open the **`Main.storyboard`** and set the **Custom Class** of the newly added Table View Controller to `CustomersTableViewController`.
 
@@ -36,14 +41,13 @@ Because we already implemented a similar screen, the Product List, we can copy m
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 2: ](Implement the customer list)]
 
-1. Next we're going to simply copy the `ProductsTableViewController.swift` code into a new class `CustomersTableViewController.swift`.
+1. Next you're going to simply copy the `ProductsTableViewController.swift` code into a new class `CustomersTableViewController.swift`.
 
-    > Views like that which offer the same functionality and take different entities to display could be developed generically. For simplicity reasons we will just reuse code here.
+    > Views like that which offer the same functionality and take different entities to display could be developed generically. For simplicity reasons you will just reuse code here.
 
-2. We can reuse most of the code from the `ProductsTableViewController.swift` class, to start open the `CustomersTableViewController.swift` file and add the needed import statements to the class:
+2. You can reuse most of the code from the `ProductsTableViewController.swift` class, to start open the `CustomersTableViewController.swift` file and add the needed import statements to the class:
 
     ```Swift
     import SAPFiori
@@ -54,7 +58,7 @@ Because we already implemented a similar screen, the Product List, we can copy m
 
     ```
 
-3. Now we're going to copy the code inside of the class definition of the `ProductsTableViewController.swift` class to the class body of the `CustomersTableViewController`.
+3. Now you're going to copy the code inside of the class definition of the `ProductsTableViewController.swift` class to the class body of the `CustomersTableViewController`.
     Replace everything inside the `CustomersTableViewController` class **from:**
 
     ```Swift
@@ -164,13 +168,13 @@ Because we already implemented a similar screen, the Product List, we can copy m
 
         let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
-        var dataService: ESPMContainer<OnlineODataProvider>? {
-            guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
-                AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
-                return nil
-            }
-            return dataService
-        }
+        var dataService: ESPMContainer<OfflineODataProvider>? {
+          guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OfflineODataController, let dataService = odataController.espmContainer else {
+              AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+              return nil
+          }
+          return dataService
+    }
 
         private let appDelegate = UIApplication.shared.delegate as! AppDelegate
         private let logger = Logger.shared(named: "ProductsTableViewController")
@@ -287,9 +291,9 @@ Because we already implemented a similar screen, the Product List, we can copy m
 
     ```
 
-    If you compile now, there shouldn't be any compile time errors. What you basically did is pasted a modified code copied from the `ProductsTableViewController.swift` class. You had to simply replace all the product definitions with customer and adjust the `tableView(_:cellForRowAt:)` method to use the product data similar to the Overview Screen.
+    If you compile now, there shouldn't be any compile time errors, if you get a compile time error for the `odataController` remember to make the `import SAPOfflineOData` import statement. You did use almost the same code as in the `ProductsTableViewController.swift` class and modified it. You had to simply replace all the product definitions with customer and adjust the `tableView(_:cellForRowAt:)` method to use the product data similar to the Overview Screen.
 
-    Also, the `loadProductImages()` method is not necessary anymore so we deleted that.
+    Also, the `loadProductImages()` method is not necessary anymore so you deleted that.
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -311,7 +315,7 @@ Because we already implemented a similar screen, the Product List, we can copy m
 
 [ACCORDION-BEGIN [Step 4: ](Implement the prepare for segue method)]
 
-For the customer list it is not necessary to pass any crucial data in, but we want to set the navigation item's title before finishing up the navigation.
+For the customer list it is not necessary to pass any crucial data in, but you want to set the navigation item's title before finishing up the navigation.
 
 You can store the segue identifier in a class property for cleaner code and use it in the `prepareForSegue(for:Sender:)` method.
 
@@ -324,7 +328,7 @@ You can store the segue identifier in a class property for cleaner code and use 
 
 2. Locate the `prepareForSegue(for:Sender:)` method and add another case statement for the `customerSegueIdentifier`. Replace the code with the following:
 
-    ```Swift
+    ```Swift[6-8]
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
@@ -345,7 +349,7 @@ You can store the segue identifier in a class property for cleaner code and use 
 
     Locate the `tableView(_:viewForHeaderInSection:)` method and change the code to call the needed method:
 
-    ```Swift
+    ```Swift[15]
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerFooterView = tableView.dequeueReusableHeaderFooterView(withIdentifier: FUITableViewHeaderFooterView.reuseIdentifier) as! FUITableViewHeaderFooterView
 

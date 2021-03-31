@@ -3,7 +3,7 @@ title: Deploy an SAP Conversational AI Chatbot on a Web Site
 description: Deploy an SAP Conversational AI chatbot on a web site and control the look and feel.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 

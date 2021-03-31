@@ -1,99 +1,109 @@
 ---
-title: Set Up Business Application Studio for Mobile Technologies
-description: Set up your Business Application Studio to start developing mobile solutions.
+title: Set Up SAP Business Application Studio for Multi-Channel Development
+description: Set up your SAP Business Application Studio to start developing mobile and web applications.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio, products>mobile-development-kit-client ]
-primary_tag: software-product-function>sap-cloud-platform-mobile-services
+tags: [ tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment, products>sap-mobile-cards, products>sap-mobile-services, products>sap-business-application-studio, products>mobile-development-kit-client ]
+primary_tag: products>sap-business-technology-platform
+author_name: Sandeep T D S
+author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites
- - [You have access to Business Application Studio](https://developers.sap.com/tutorials/appstudio-onboarding.html)
+ - [Set Up SAP Business Application Studio for Development](appstudio-onboarding).
 
 ## Details
 ### You will learn
-  - How to create a development space in Business Application Studio
-  - How to connect to your Cloud Foundry Target in SAP Business Application Studio
+  - How to create a development space in SAP Business Application Studio
+  - How to connect to your Cloud Foundry target in SAP Business Application Studio
 
-SAP Business Application Studio is the next generation web based IDE hosted on SAP Cloud Platform in the Cloud Foundry environment. In this tutorial, you will set up your SAP Business Application Studio for developing Mobile Technologies.
+SAP Business Application Studio is the next-generation web-based IDE hosted on SAP Business Technology Platform (BTP) in the Cloud Foundry environment. In this tutorial, you will set up your SAP Business Application Studio for developing mobile apps.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a Development Space)]
 
-Log into your Business Application Studio and click **Create Dev Space**.
+[ACCORDION-BEGIN [Step 1: ](Create a development space)]
 
-!![SAP Business Application Studio Dashboard](img_1_1.png)
+1. Log into your Business Application Studio and click **Create Dev Space**.
 
-Select SAP Cloud Platform Mobile Services, enter a name (`mobileDevSpace`) for your dev space and click **Create**.
+    > The number of extensions may differ if you are on trial or a production account.
 
-!![New Development Space](img_1_2.png)
+2. Select **SAP Mobile Application**, enter a name (`Tutorial`) for your dev space and click **Create Dev Space**.
+
+    !![BAS New Space](img_1_2.png)
 
 Your dev space will be created and the status will change to running.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set Up Your Workspace)]
 
-Click on your dev space's name to open it.
+[ACCORDION-BEGIN [Step 2: ](Set up your workspace)]
 
-!![SAP Business Application Studio Dashboard with newly created Development Space](img_2_1.png)
+1. Click your dev space's name to open it.
 
-Wait till your workspace loads completely.
+    !![BAS Enter Space](img_2_1.png)
 
-!![SAP Business Application Studio Home](img_2_2.png)
+    > Wait till your workspace loads completely.
 
-In the menu bar, go to File &rarr; Open Workspace, click **Open Workspace**.
+2. Since there is no folder opened yet, click **Open Folder**.
 
-!![Open Workpace View](img_2_3.png)
+    !![BAS Dev View](img-2.2.png)
 
-Select projects, Click **Open**.
+3. Select projects, Click **Open**.
 
-!![Select Workpace](img_2_4.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Configure Cloud Foundry Target)]
-
-In the bottom left corner of your status bar, click on the message **`The organization and space in Cloud Foundry have not been set.`**.
-
-!![CF View](img_3_1.png)
-
-Verify the URL and **Click Enter** on your keyboard.
-
-!![CF API End-Point](img_3_2.png)
-
-> SAP Business Application Studio pre-populates the end-point of the environment it is running in. If you want to connect to a different environment, modify the API endpoint by copying it from your target SAP Cloud Platform account: *SAP Cloud Platform Cockpit &rarr; Sub-account &rarr; API Endpoint*
-
-When prompted, **enter your e-mail address** you use to log in to the SAP Cloud Platform account.
-
-!![Email ID Prompt](img_3_3.png)
-
-Next, **enter your password** you use to log in to the SAP Cloud Platform account.
-
-!![Password Prompt](img_3_4.png)
-
-Upon successful login, you will see a toast message at the bottom right corner of your screen.
-
-!![Sucess toast message](img_3_5.png)
-
- Select the organisation in which you have enabled Mobile Services.
-
-!![Org list](img_3_6.png)
-
- Select the space in which you have enabled Mobile Services.
-
-!![Space list](img_3_7.png)
-
-Upon successful setup, you will see a toast message at the bottom right corner of your screen, and the bottom status bar will highlight CF connection details.
-
-!![Success toast message](img_3_8.png)
+    !![Select Workpace](img-2.3.png)
 
 [DONE]
 [ACCORDION-END]
 
-**Congratulations!** You have successfully configured SAP Business Application Studio to build mobile apps.
+[ACCORDION-BEGIN [Step 3: ](Configure Cloud Foundry environment)]
+
+1. In the bottom left corner of your status bar, click the message **`The organization and space in Cloud Foundry have not been set.`**.
+
+    !![CF View](img-3.1.png)
+
+2. Verify the URL and **Click Enter** on your keyboard.
+
+    !![CF API End-Point](img_3_2.png)
+
+    > SAP Business Application Studio pre-populates the end-point of the environment it is running in.
+
+    > If you want to connect to a different environment, modify the API endpoint by copying it from your target SAP BTP account:
+
+    > *SAP BTP Cockpit &rarr; Sub-account &rarr; API Endpoint*
+
+3. When prompted, **enter your e-mail address** you use to log in to the SAP BTP account.
+
+    !![Email ID prompt](img_3_3.png)
+
+4. **Enter your password** you use to log in to the SAP BTP account.
+
+    !![Password prompt](img_3_4.png)
+
+    > Upon successful login, you will see a toast message at the bottom right corner of your screen.
+
+    > !![Sucess toast message](img_3_4_note.png)
+
+5. Select the organisation in which you have enabled Mobile Services.
+
+    !![Org list](img_3_5.png)
+
+6. Select the space in which you have enabled Mobile Services.
+
+    !![Space list](img_3_6.png)
+
+    > Upon successful setup, you will see a toast message at the bottom right corner of your screen, and the bottom status bar will highlight CF connection details.
+
+    > !![Success toast message](img_3_6_note.png)
+
+[DONE]
+[ACCORDION-END]
+
+---
+
+Congratulations, you have successfully configured SAP Business Application Studio to build multi-channel applications.
+
+You can now build [**Mobile Development Kit apps**](mission.mobile-dev-kit-get-started) or [**SAP Mobile Cards apps**](https://developers.sap.com/tutorial-navigator.html?tag=products:content-and-collaboration/sap-mobile-cards) using Business Application studio.
 
 ---

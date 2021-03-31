@@ -3,74 +3,66 @@ title: Create Workflow Instances for Process Visibility
 description: Create workflow instances to see how events from different types of workflow activities combine to provide an overview to analyze the progress and identify inefficiencies in the workflow.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud]
-primary_tag: products>sap-cloud-platform
-author_name: Kavya Gowda
-author_profile: https://github.com/Kavya-Gowda
+tags: [tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
+author_name: Kavya M Gowda
+author_profile: https://github.com/I540620
 ---
-
 ## Prerequisites
- - You have your workflow modelled, built and deployed on Cloud Foundry environment using SAP Cloud Platform Workflow. If you do not have workflows configured, then refer to the following [blog](https://blogs.sap.com/2019/05/20/sap-cloud-platform-workflow-sample-application-in-cloud-foundry/).
- - You have created a portal site to create Monitor Workflow and My Inbox tiles. To learn on how to create a **Monitor workflows** and **My Inbox** tiles, refer to [Help Portal](https://help.sap.com/viewer/e157c391253b4ecd93647bf232d18a83/Cloud/en-US/97c079f9317c42bba31cc9ca9d4cc7c3.html).
- - You have **`WorkflowParticipant`**, **`WorkflowAdmin`** and **`WorkflowInitiator`** roles assigned to your user.
- - You have set up the SAP Cloud Platform Process Visibility in your Cloud Foundry tenant.
- - You have **`PVAdmin`**, **`PVDeveloper`** and **`PVOperator`** roles of SAP Cloud Platform Process Visibility assigned to your user. For more information on how to assign these roles, refer to [Assign the Process Visibility Roles to Users](cp-cf-processvisibility-setup-assignroles).
+ - You have set up the **Workflow Management** service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
+ - You have set up the business rules for determining equipment. To setup business rules, see steps 1 to 4 in [Configure Business Rules, Workflow and Process Visibility](cp-starter-ibpm-employeeonboarding-2-configure) tutorial.
 
 ## Details
 ### You will learn
-  - How to create a workflow instance in the SAP Cloud Platform Process Visibility Workspace
+  - How to start a workflow instance for a scenario
 
-Process Visibility applications have pre-built integration with SAP Cloud Platform Workflow which makes it easier to discover available workflows and import the required events and context attributes.
-
-Once you have modelled and activated the business scenario, go to your Monitor Workflows application and start a new instance of the workflow. Once the workflow has started, you will see the start and other events being received by the process visibility service. You can see these events using the Event Acquisition application and process them using the Monitor Scenario application.
+Once you have modelled and activated the visibility scenario, navigate to the Monitor Workflows application and start a new instance of the workflow. Once the workflow has started, you will see the start and other events being received in the Event Acquisition application. You can process them using the Monitor Visibility Scenarios application.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access the SAP Cloud Platform Workflow Fiori Launchpad)]
+[ACCORDION-BEGIN [Step 1: ](Start a new instance of workflow)]
+1. Log on to the Workflow Management home screen and choose the **Monitor Workflows** tile.
 
-1. Log in to SAP Cloud Platform Workflow Fiori launchpad.
+    !![Home screen](FLP.png)
 
-2. Click the **Monitor Workflows** tile.
+2. Search and select the workflow definition **onboard** for which you want to create an instance and click **Start New Instance**.
 
-    ![Fiori Launchpad window](FLP.png)
+    !![New instance creation](Start-New-Instance-03.png)
 
+2. In the available payload, provide your trial email ID in the highlighted snippet and then click **Start New Instance**.
+
+    !![Payload](Payload-04.png)
+
+3. Click **Show Instances** to view the created instance.
+
+    !![Show instances](Show-Instance-05.png)
+
+    You should be able to see the newly created workflow instance.
+
+    !![Show instance details](Show-instances-06.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a new instance for the workflow)]
+[ACCORDION-BEGIN [Step 2: ](Open new workflow)]
 
-1. Search and select the workflow definition **onboard** for which you want to create an instance and click on **Start New Instance**.
+1. Click **Home** and navigate to the home screen.
 
-    ![New instance creation](Start-New-Instance-03.png)
+    !![Home](home.png)
 
-2. Provide the starting payload and click **Start New Instance**.
+    You should be able to see a new task in the **My Inbox** tile in the running state.
 
-    ![Payload](Payload-04.png)
+    !![My Inbox](cp-cf-workflowmanagement-runcapex-myinbox.png)
 
-3. Click on **Show Instances** to view the created instance.
+2. Click the **My Inbox** tile to open the application. You can see the new task in the list.
 
-    ![Show instances](Show-Instance-05.png)
+    !![approve](approve-equipment.png)
 
-    You should be able to see the newly created workflow instance.
+    Before you **Confirm** the task, access the Event Acquisition application to familiarize yourself with the acquired events. For more information on Event Acquisition application, refer to [Monitor Events Acquired Using the Event Acquisition Application](cp-cf-processvisibility-model-manageevents).
 
-    ![Show instance details](Show-instances-06.png)
+    You can move forward in the workflow by choosing the **Confirm** button in **My Inbox**.
 
-4. Click on **Home** and navigate to SAP Cloud Platform Workflow Fiori launchpad.
-
-    ![Home screen](Home-07.png)
-
-5. You should be able to see the increased count of tasks in the **My Inbox** tile.
-
-    ![My Inbox tile](MyInbox-08.png)
-
-6. Click **My Inbox** tile to open the application. You can see the new task in the list.
-
-    ![New task](Task-09.png)
-
-    Before you Confirm the task, access the Event Acquisition application to familiarize yourself with the acquired events. For more information on Event Acquisition application, refer to [Monitor Events Acquired using the Event Acquisition Application] (cp-cf-processvisibility-model-manageevents).
-
-    You can move forward in the workflow by Confirming the task.
+    !![Approve equipment](approve-equipment2.png)
 
 [VALIDATE_1]
 [ACCORDION-END]

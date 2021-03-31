@@ -1,11 +1,11 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Use SAP HANA as the Database for a CAP Java Application
-description: Use SAP HANA in SAP Cloud Platform as database for your CAP Java application instead of SQLite.
+description: Use SAP HANA in SAP Business Technology Platform as database for your CAP Java application instead of SQLite.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform, topic>java, products>sap-business-application-studio]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>java, products>sap-business-application-studio]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -14,17 +14,17 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
   - How to use the CDS CLI to do deployments to SAP HANA
   - How to use SAP HANA for your local running application
 
-In the previous tutorial, you have added custom coding to your bookstore application. In this tutorial, you'll make the application ready to be deployed to SAP Cloud Platform. In order to make our application cloud-ready, we'll switch to SAP HANA as our database.
+In the previous tutorial, you have added custom coding to your bookstore application. In this tutorial, you'll make the application ready to be deployed to SAP Business Technology Platform (SAP BTP). In order to make our application cloud-ready, we'll switch to SAP HANA as our database.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Identify SAP Cloud Platform Cloud Foundry endpoint)]
+[ACCORDION-BEGIN [Step 1: ](Identify SAP BTP Cloud Foundry endpoint)]
 
-The Cloud Foundry API endpoint is required so that you can log on to your SAP Cloud Platform Cloud Foundry space via Cloud Foundry CLI in the next step.
+The Cloud Foundry API endpoint is required so that you can log on to your SAP BTP Cloud Foundry space through Cloud Foundry CLI in the next step.
 
-1. Go to the [SAP Cloud Platform Trial Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) click on **Enter Your Trial Account**.
+1. Go to the [SAP BTP Trial Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) click on **Enter Your Trial Account**.
 
-    !![cloud platform cockpit view](cloudplatform-cockpit.png)
+    !![business technology platform cockpit view](cockpit.png)
 
 2. Navigate to your subaccount by hitting the corresponding tile.
 
@@ -37,9 +37,9 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP Cl
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Log into SAP Cloud Platform Cloud Foundry environment)]
+[ACCORDION-BEGIN [Step 2: ](Log into SAP BTP Cloud Foundry environment)]
 
-First you need to create and initialize an SAP HANA database schema in SAP Cloud Platform. As you'll deploy your application to SAP Cloud Platform Cloud Foundry Environment, you'll also create the SAP HANA service there.
+First you need to create and initialize an SAP HANA database schema in SAP BTP. As you'll deploy your application to SAP BTP, Cloud Foundry Environment, you'll also create the SAP HANA service there.
 
 Log into the Cloud Foundry Environment using the Cloud Foundry CLI, as follows.
 
@@ -71,10 +71,18 @@ Log into the Cloud Foundry Environment using the Cloud Foundry CLI, as follows.
 2. Run the following command to install the necessary node packages:
 
     ```Shell/Bash
-    npm install --save-dev --save-exact @sap/hdi-deploy@3.7.0
+    npm install --save-dev @sap/hdi-deploy
     ```
 
-3. Create an SAP HANA service instance and implicitly push all artefacts to the database using:
+3. Add the following configuration in the file `.cdsrc.json` in the root folder of your `bookstore` project:
+
+    ```JSON
+    { "hana" : { "deploy-format": "hdbtable" } }
+    ```
+
+    >As an effect, `.hdbtable` and `.hdbview` files are generated in the `(gen/)db/src/gen/` folder.
+
+4. Create an SAP HANA service instance and implicitly push all artifacts to the database using:
 
     ```Shell/Bash
     cds deploy --to hana:bookstore-hana
@@ -148,4 +156,4 @@ The described features are available as a plugin in CAP Java. Therefore, we'll a
 
 Congratulations!
 
-You've successfully deployed your database schema to SAP HANA and connected your application, which is running locally. In the following tutorial, you'll run the application on the SAP Cloud Platform Cloud Foundry environment, using the SAP HANA service instance that was created in this tutorial.
+You've successfully deployed your database schema to SAP HANA and connected your application, which is running locally. In the following tutorial, you'll run the application on the SAP BTP Cloud Foundry environment, using the SAP HANA service instance that was created in this tutorial.

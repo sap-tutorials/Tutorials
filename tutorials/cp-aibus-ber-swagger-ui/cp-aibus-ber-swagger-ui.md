@@ -1,28 +1,28 @@
 ---
-title: Detect and Highlight Entities from Unstructured Text
-description: Get machine learning entity predictions for the text you submit to Business Entity Recognition.
+title: Detect and Highlight Entities from Unstructured Text with Pre-trained Models
+description: Use the Business Entity Recognition pre-trained models to get machine learning entity predictions for the text you submit to the service.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>business-entity-recognition]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>business-entity-recognition]
 primary_tag: topic>machine-learning
 ---
 
 ## Details
 ### You will learn
   - How to call and test Business Entity Recognition
-  - How to access and use Swagger UI (User Interface)
-  - How to extract entities from unstructured text
+  - How to access and use the Business Entity Recognition Swagger UI (User Interface)
+  - How to use the Business Entity Recognition pre-trained models to extract entities from unstructured text
 
-The core functionality of Business Entity Recognition is to automatically detect and highlight any given type of named entity in unstructured text and classify it in accordance with predefined categories. When you finish this tutorial, you will get named entity predictions for the texts you submit to Business Entity Recognition.
+The core functionality of Business Entity Recognition is to automatically detect and highlight any given type of named entity in unstructured text and classify it in accordance with predefined categories. When you finish this tutorial, you will get named entity predictions for the texts you submit to the service.
 
-Business Entity Recognition is a customizable machine learning service. In the trial version, the following pre-trained machine learning models are available for all users:
+Business Entity Recognition is a customizable machine learning service, but you can also use the following pre-trained machine learning models:
 
 - `sap_email_business_entity`
 - `sap_invoice_header`
 
 See [Extracted Entities by Pre-trained Model](https://help.sap.com/viewer/b43f8f61368d455793a241d2b10baeb2/SHIP/en-US/7eb1408001564d679adcd3bc4796800f.html)
 
-This tutorial gives you an introduction to the service using a trial account and the available pre-trained machine learning models. If you want to try out the Business Entity Recognition training endpoints to create your own model, you can use an Enterprise Account (see [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) versus [Enterprise Accounts](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/171511cc425c4e079d0684936486eee6.html)) or a paid SAP Cloud Platform global account.
+This tutorial gives you an introduction to the service using a trial account and the available pre-trained machine learning models. If you want to try out the Business Entity Recognition training endpoints to create your own model, go to the next tutorial [Detect and Highlight Entities from Unstructured Text with Custom Models](cp-aibus-ber-swagger-ui-custom).  
 
 ---
 
@@ -36,7 +36,7 @@ In the service key you created for Business Entity Recognition in the previous t
 
     !![BER](png-files/service-key-details.png)
 
-2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
+2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**. 
 
     !![BER](png-files/swagger0.png)
 

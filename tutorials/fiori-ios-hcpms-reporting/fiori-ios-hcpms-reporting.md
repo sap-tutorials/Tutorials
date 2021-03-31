@@ -1,30 +1,31 @@
 ---
-title: Introduction to app analytics on SAP Cloud Platform Mobile Services
-description: Get an introduction on the analytics features available on SAP Cloud Platform Mobile Services.
+title: Introduction to app analytics on SAP Mobile Services
+description: Get an introduction on the analytics features available on SAP Mobile Services.
 auto_validation: true
-author_name: Kevin Muessig
-author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 10
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup)
+
+- **Tutorials:** [Get a Free Trial Account on SAP BTP](hcp-create-trial-account) and [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup)
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
+- **SAP BTP SDK for iOS:** Version 4.0.10
 
 ## Details
+
 ### You will learn  
-In this tutorial, you will learn the basics of the analytics features on SAP Cloud Platform Mobile Services. You can view usage statistics for your iOS apps, information about push notifications, and get reports of server usage. You won't create or configure anything in this tutorial, but rather get familiar of the reporting capabilities.
+
+In this tutorial, you will learn the basics of the analytics features on SAP Mobile Services. You can view usage statistics for your iOS apps, information about push notifications, and get reports of server usage. You won't create or configure anything in this tutorial, but rather get familiar of the reporting capabilities.
 
 > Please keep in mind, the screenshots you see here are from a sample app I've created with just a couple of sample users. If you have a productive app with a realistic amount of users the analytics features will have far more data to show. This tutorial will give you a simple overview of the available features and possibilities.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Overview of the Analytics Features on Sap Cloud Platform Mobile Services)]
+[ACCORDION-BEGIN [Step 1: ](The analytics features on SAP Mobile Services)]
 
-Open your SAP Cloud Platform Mobile Services instance on SAP Cloud Platform. On the left-hand side you can see the **Analytics** category in the side panel.
+Open your SAP Mobile Services instance on SAP BTP. On the left-hand side you can see the **Analytics** category in the side panel.
 
 ![mobile-services](fiori-ios-hcpms-reporting-01.png)
 
@@ -49,8 +50,8 @@ Tracking your app ratings and feedback of your users is crucial for the success 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Logs)]
-The SAP CP SDK for iOS has it's own logging framework included in the `SAPCommon` framework. With that logging framework you can log crucial information during runtime not only inside the app but you can use the `log uploader` API to directly pass the logs through to Mobile Services.
+[ACCORDION-BEGIN [Step 2:](Logs)]
+The SAP BTP SDK for iOS has it's own logging framework included in the `SAPCommon` framework. With that logging framework you can log crucial information during runtime not only inside the app but you can use the `log uploader` API to directly pass the logs through to Mobile Services.
 
 ![Logs](fiori-ios-hcpms-reporting-02.png)
 
@@ -63,8 +64,7 @@ You can even see details to each log by clicking on the entry, this will open th
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Server Data)]
-
+[ACCORDION-BEGIN [Step 3: ](Server data)]
 If you want to have analytical data about backend access requests, user registrations against your system and other important data of your system you can use the server data capabilities of Mobile Service. You can make easy analytical queries to retrieve the information you need.
 
 ![Server Data](fiori-ios-hcpms-reporting-04.png)
@@ -72,8 +72,7 @@ If you want to have analytical data about backend access requests, user registra
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](User Data)]
-
+[ACCORDION-BEGIN [Step 4: ](User data)]
 All needed information regarding each and every single user using your app and system will be recorded in the user data section of Mobile Services. Use its analytical data to improve your app and make qualified decisions about the demographics of your user base.
 
 ![Server Data](fiori-ios-hcpms-reporting-05.png)
@@ -81,8 +80,7 @@ All needed information regarding each and every single user using your app and s
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](User Feedback)]
-
+[ACCORDION-BEGIN [Step 5: ](User feedback)]
 Tracking and analyzing feedback of your users is crucial for you to improve your app's user experience. It also gives you the possibility to indirectly interact with your user base.
 
 For more information visit the official documentation [Managing and Monitoring Applications](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/3761042151cc4e8999295dcc561454f2.html)

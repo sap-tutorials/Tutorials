@@ -1,31 +1,32 @@
 ---
 title: Create Service Instance for Business Entity Recognition
-description: Create a service instance and the associated service keys for Business Entity Recognition, one of the SAP AI Business Services, using the SAP Cloud Platform trial cockpit.
+description: Create a service instance and the associated service key for Business Entity Recognition, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>business-entity-recognition]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>business-entity-recognition]
 primary_tag: topic>machine-learning
 ---
+
+## Prerequisites
+- You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
+- You have a subaccount and dev space with **Europe (Frankfurt)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## Details
 ### You will learn
   - How to check your Business Entity Recognition entitlements
   - How to create a service instance of Business Entity Recognition
-  - How to create service keys for your service instance
-
+  - How to create a service key for your service instance
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
 
-1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
-    !![Trial global account](png-files/01_Foundation20Onboarding_Home.png)
+    ![Trial global account](png-files/01_Foundation20Onboarding_Home.png)
 
-    >Business Entity Recognition is only available in the Europe (Frankfurt) region. Follow the steps described in [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and choose the Europe (Frankfurt) region. If this is not possible, create a new subaccount in the Europe (Frankfurt) region. You should then be able to find **Business Entity Recognition Trial** in your new subaccount **Entitlements**.
-
-    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. Your user profile will be set up for you automatically.
+    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select Europe (Frankfurt)**. Your user profile will be set up for you automatically.
 
     >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
 
@@ -35,7 +36,7 @@ primary_tag: topic>machine-learning
 
 3. From your global account page, choose the `trial` tile to access your subaccount.
 
-    !![Subaccounts](png-files/enter-trial-account.png)
+    ![Subaccounts](png-files/enter-trial-account.png)
 
 [DONE]
 [ACCORDION-END]
@@ -47,31 +48,31 @@ To try out Business Entity Recognition, you need to make sure that your subaccou
 
 1. On the navigation side bar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
 
-2. Search for **Business Entity Recognition Trial**. If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and go to step 3.
+2. Search for **Business Entity Recognition Trial**. ***If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.***
 
-    !![Entitlements](png-files/check-entitlements.png)
+    ![Entitlements](png-files/check-entitlements.png)
 
-If you do not find the service in your list, proceed as follows:
+***ONLY if you DO NOT find the service in your list, proceed as follows:***
 
   1. Click **Configure Entitlements**.
 
-    !![Configure Entitlements](png-files/configure-entitlements.png)
+    ![Configure Entitlements](png-files/configure-entitlements.png)
 
   2. Click **Add Service Plans**.
 
-    !![Add Service Plan](png-files/add-service-plans.png)
+    ![Add Service Plan](png-files/add-service-plans.png)
 
   3. Select **Business Entity Recognition Trial**, and choose the **standard** service plan. Click **Add 1 Service Plan**.
 
-    !![Add Service Plan](png-files/add-entitlements.png)
+    ![Add Service Plan](png-files/add-entitlements.png)
 
   4. **Save** your **Entitlements** changes.
 
-    !![Add Service Plan](png-files/save-entitlements.png)    
+    ![Add Service Plan](png-files/save-entitlements.png)    
 
 You are now entitled to use Business Entity Recognition and create instances of the service.
 
->For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP Cloud Platform Trial, see [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements).
+>For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
 [DONE]
 [ACCORDION-END]
@@ -83,22 +84,22 @@ You will find all applications and services in spaces. By default, trial account
 
 Click **Spaces** on the navigation side bar and select the **dev** space to open it.
 
-!![Spaces](png-files/access-space.png)
+![Spaces](png-files/access-space.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Access service via Service Marketplace)]
 
-The **Service Marketplace** is where you find all the services available on SAP Cloud Platform.
+The **Service Marketplace** is where you find all the services available on SAP BTP.
 
 1. To access it, click **Service Marketplace** on the navigation side bar.
 
-    !![Service Marketplace](png-files/access-service-marketplace.png)
+    ![Service Marketplace](png-files/access-service-marketplace.png)
 
 2. Next, search for **Business Entity Recognition** and click the tile to access the service.
 
-    !![Business Entity Recognition in Service Marketplace](png-files/access-ber.png)
+    ![Business Entity Recognition in Service Marketplace](png-files/access-ber.png)
 
 [DONE]
 [ACCORDION-END]
@@ -107,74 +108,40 @@ The **Service Marketplace** is where you find all the services available on SAP 
 
 You will now create an instance of your service.
 
-1. Click **Instances** on the navigation side bar.
+Click **Create Instance** to start the creation dialog.
 
-2. Click **New Instance** to start the creation dialog.
+![Service Instance](png-files/create-instance.png)
 
-    !![Service Instances](png-files/create-instance.png)
+In the dialog, leave the default value for the service and the service plan. Enter a name for your new instance as `ber-inst` and click **Create Instance** to skip the other steps and create the instance.
 
-    - In the dialog, leave the default value for the service plan and click **Next**.
+![Create Instance](png-files/create-instance-dialog.png)
 
-      !![Create Instance](png-files/create-instance-service-plan.png)
+In the following dialog, click on **View Instance** to be navigated to the list of your service instances.
 
-      - Leave the parameters empty and click **Next**.
-
-      - Do not assign any application and click **Next**.
-
-      - Finally, enter a name for your new instance as `ber-inst`.
-
-      - Click **Finish** to create the instance.
-
-        !![Create Instance](png-files/create-instance-name.png)
+![View Instances](png-files/view-instances.png)
 
 You have successfully created a service instance for Business Entity Recognition.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create service keys)]
+[ACCORDION-BEGIN [Step 6: ](Create service key)]
 
-You are now able to create service keys for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
+You are now able to a create service key for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
-1. To create service keys, first access your service instance by clicking its name.
+  1. Click the navigation arrow to open the details of your service instance. Then, click the dots to open the menu and select **Create Service Key**.
 
-    !![Service Instances](png-files/access-instance.png)
+      ![Service Key](png-files/create-service-keys.png)
 
-2. Now select **Service Keys** on the navigation side bar.
+  2. In the dialog, enter `ber-key` as the name of your service key. Click **Create** to create the service key.
 
-3. Click **Create Service Key** to start the creation dialog.
+      ![Create Service Key](png-files/create-service-key-name.png)
 
-    !![Service Keys](png-files/create-service-keys.png)
+You have successfully created a service key for your service instance. You can now either view the service key in the browser or download it.
 
-    - In the dialog, enter `ber-key` as the name for your service key. Leave the **Configuration Parameters (JSON)** box empty.
+![View Service Key](png-files/view-service-key.png)
 
-    - Click **Save** to create the service keys.
-
-        !![Create Service Key](png-files/create-service-key-name.png)
-
-You have successfully created service keys for your service instance. Make a local copy of the service keys. You will need the service keys values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Business Entity Recognition Using Any Web Browser](cp-aibus-ber-web-oauth-token).
-
-!![Service Key](png-files/service-key.png)
+You will need the service key values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Business Entity Recognition Using Any Web Browser](cp-aibus-ber-web-oauth-token).
 
 [VALIDATE_1]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 7: ](List service instances)]
-
-To list and access your service instances, there is no need to access the service via the Service Marketplace every time. In your space, you can see a list of all your service instances.
-
-1. Go to your **dev** space using the breadcrumbs at the top of the page.
-
-    As you navigate through SAP Cloud Platform trial and dig into more detail the breadcrumbs at the top of the page show you the hierarchy of your navigation. You can use them to go back to previous steps.
-
-    !![Breadcrumbs](png-files/nav-back-breadcrumbs.png)
-
-2. Back in your space, click **Service Instances** on the navigation side bar.
-
-    !![Service Instances List](png-files/instance-list.png)
-
-The list shows all your service instances across all services, including the service instance you have just created. Here, you find information on the service plan, referencing applications, created service keys and the current status of your instances. You can also manage your service instances, access or delete them, for example.
-
-[DONE]
 [ACCORDION-END]

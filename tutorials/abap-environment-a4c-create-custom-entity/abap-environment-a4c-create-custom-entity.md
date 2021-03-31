@@ -1,10 +1,12 @@
 ---
 title: Implement a CDS Custom Entity and Query Implementation Class
-description: In the SAP Cloud Platform, ABAP Environment, implement a CDS custom entity and query implementation class.
+description: In the SAP Business Technology Platform, ABAP Environment, implement a CDS custom entity and query implementation class.
 auto_validation: true
 time: 30
-tags: [ tutorial>advanced, topic>abap-development, topic>cloud, products>sap-cloud-platform, tutorial>license]
-primary_tag: products>sap-cloud-platform--abap-environment
+tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
+primary_tag: topic>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ##Prerequisites
@@ -95,32 +97,36 @@ CLASS zcl_travels_xxx IMPLEMENTATION.
         DATA(lo_client_proxy) = zcl_proxy_travels_xxx=>get_client_proxy( ).
 
       TRY.
+          """Instantiate Client Proxy
           """Create Read Request
           DATA(lo_read_request) = lo_client_proxy->create_resource_for_entity_set( 'TRAVEL' )->create_request_for_read( ).
-          CATCH /iwbep/cx_gateway INTO DATA(lx_gateway).
-            RAISE EXCEPTION TYPE ZCX_TRAVELS_CONS_XXX
-              EXPORTING
-                textid   = ZCX_TRAVELS_CONS_XXX=>query_fail
-                previous = lx_gateway.
-    ENDTRY.
 
-        """Request Count
-        IF io_request->is_total_numb_of_rec_requested( ).
-          lo_read_request->request_count( ).
-        ENDIF.
 
-        """Request Paging
-        DATA(ls_paging) = io_request->get_paging( ).
-          IF ls_paging->get_offset( ) >= 0.
-            lo_read_request->set_skip( ls_paging->get_offset( ) ).
+          """Request Inline Count
+          IF io_request->is_total_numb_of_rec_requested( ).
+            io_response->set_total_number_of_records( lo_response->get_count( ) ).
           ENDIF.
 
-        IF ls_paging->get_page_size( ) <> if_rap_query_paging=>page_size_unlimited.
-            lo_read_request->set_top( ls_paging->get_page_size( ) ).
+          """Implement Paging
+          DATA(ls_paging) = io_request->get_paging( ).
+            IF ls_paging->get_offset( ) >= 0.
+              lo_read_request->set_skip( ls_paging->get_offset( ) ).
+            ENDIF.
 
-            """Execute the Request
-            DATA(lo_response) = lo_read_request->execute( ).
-        ENDIF.            
+          IF ls_paging->get_page_size( ) <> if_rap_query_paging=>page_size_unlimited.
+              lo_read_request->set_top( ls_paging->get_page_size( ) ).
+
+              """Execute the Request
+              DATA(lo_response) = lo_read_request->execute( ).
+          ENDIF.        
+
+        CATCH /iwbep/cx_gateway INTO DATA(lx_gateway).
+          RAISE EXCEPTION TYPE ZCX_TRAVELS_CONS_XXX
+            EXPORTING
+              textid   = ZCX_TRAVELS_CONS_XXX=>query_fail
+              previous = lx_gateway.
+        ENDTRY.    
+
   ENDMETHOD.
 
 ENDCLASS.
@@ -137,11 +143,10 @@ ENDCLASS.
         !![step7a-abstract-entity](step7a-abstract-entity.png)
 
     - **`lt_travel_ce`** = internal table of the custom entity, **``zce_travels_xxx``**, created in step 3 above. This table is used to fill the output parameter of the select method.
-    -
 
     ```ABAP
 
-    "Provide result data
+    """Define variables
     IF io_request->is_data_requested( ).
 
     DATA:
@@ -150,12 +155,14 @@ ENDCLASS.
         "custom entity; fills output param of SELECT
         lt_travel_ce TYPE STANDARD TABLE OF zce_travel_data_pmd.
 
+    ENDIF.
+
     ```
 
 2. Get the data from the response object of your remote service, and write it to **`lt_travel`**.
 
     ```ABAP
-    "Get data from response object
+    """Get data
     lo_response->get_business_data( IMPORTING et_business_data = lt_travel ).
 
     ```
@@ -163,7 +170,7 @@ ENDCLASS.
 3. If **`lt_travel`** returns entries, provide a mapping for those elements in the custom entity that are not identical with the names of the abstract entity elements - in this case, **Description**.
 
     ```ABAP
-    " Check if lt_travel returns entries; map elements
+    """Check if lt_travel returns entries; map elements
     IF lt_travel IS NOT INITIAL.
         lt_travel_ce = CORRESPONDING #( lt_travel MAPPING description = memo    calculatedetag = lastchangedat ).
     ENDIF.
@@ -173,7 +180,7 @@ ENDCLASS.
 4. Set return data.
 
     ```ABAP
-    "Set return data
+    """Set return data
     io_response->set_data( lt_travel_ce ).
     ENDIF.
 
@@ -207,58 +214,60 @@ CLASS zcl_travels_xxx IMPLEMENTATION.
           """Instantiate Client Proxy
     DATA(lo_client_proxy) = zcl_proxy_travels_xxx=>get_client_proxy( ).
 
-    """Create Read Request
-    TRY.      
+
+    TRY.  
+          """ Instantiate Client Proxy
+          """ Create Read Request
           DATA(lo_read_request) = lo_client_proxy->create_resource_for_entity_set( 'TRAVEL' )->create_request_for_read( ).
 
-          CATCH /iwbep/cx_gateway INTO DATA(lx_gateway).
-            RAISE EXCEPTION TYPE ZCX_TRAVELS_CONS_XXX
-              EXPORTING
-                textid   = ZCX_TRAVELS_CONS_XXX=>query_fail
-                previous = lx_gateway.
-    ENDTRY.
-
-    """Request Count
-    IF io_request->is_total_numb_of_rec_requested( ).
-      lo_read_request->request_count( ).
-    ENDIF.
-
-    """Request Paging
-    DATA(ls_paging) = io_request->get_paging( ).
-
-    IF ls_paging->get_offset( ) >= 0.
-        lo_read_request->set_skip( ls_paging->get_offset( ) ).
-    ENDIF.
-
-    IF ls_paging->get_page_size( ) <> if_rap_query_paging=>page_size_unlimited.
-        lo_read_request->set_top( ls_paging->get_page_size( ) ).
-
-        """Execute the Request
-        DATA(lo_response) = lo_read_request->execute( ).
-    ENDIF.
-
-        "Provide result data
-        IF io_request->is_data_requested( ).
-
-        DATA:
-            "abstract entity; receives data from remote service
-            lt_travel    TYPE STANDARD TABLE OF ztravelf7fb77ae54,
-            "custom entity; fills output param of SELECT
-            lt_travel_ce TYPE STANDARD TABLE OF zce_travel_data_pmd,
-            "local db table
-            lt_traveladd TYPE STANDARD TABLE OF zttravels_pmd.
-
-            "Get data from response object
-            lo_response->get_business_data( IMPORTING et_business_data = lt_travel ).
-
-            " Check if lt_travel returns entries, then pass data to internal table for custom entity
-            IF lt_travel IS NOT INITIAL.
-                lt_travel_ce = CORRESPONDING #( lt_travel MAPPING description = memo    calculatedetag = lastchangedat ).
+            """ Request Inline Count
+            IF io_request->is_total_numb_of_rec_requested( ).
+              io_response->set_total_number_of_records( lo_response->get_count( ) ).
             ENDIF.
 
-          "Set return data
-          io_response->set_data( lt_travel_ce ).
-        ENDIF.
+            """ Implement Paging
+            DATA(ls_paging) = io_request->get_paging( ).
+
+            IF ls_paging->get_offset( ) >= 0.
+                lo_read_request->set_skip( ls_paging->get_offset( ) ).
+            ENDIF.
+
+            IF ls_paging->get_page_size( ) <> if_rap_query_paging=>page_size_unlimited.
+                lo_read_request->set_top( ls_paging->get_page_size( ) ).
+
+                """ Execute the Request
+                DATA(lo_response) = lo_read_request->execute( ).
+            ENDIF.
+
+            """ Define variables
+            IF io_request->is_data_requested( ).
+
+            DATA:
+                "abstract entity; receives data from remote service
+                lt_travel    TYPE STANDARD TABLE OF ztravelf7fb77ae54,
+                "custom entity; fills output param of SELECT
+                lt_travel_ce TYPE STANDARD TABLE OF zce_travel_data_pmd,
+                "local db table
+                lt_traveladd TYPE STANDARD TABLE OF zttravels_pmd.
+
+                """ Get data from response object
+                lo_response->get_business_data( IMPORTING et_business_data = lt_travel ).
+
+                """ Check if lt_travel returns entries, then pass data to internal table for custom entity
+                IF lt_travel IS NOT INITIAL.
+                    lt_travel_ce = CORRESPONDING #( lt_travel MAPPING description = memo    calculatedetag = lastchangedat ).
+                ENDIF.
+
+              """ Set return data
+              io_response->set_data( lt_travel_ce ).
+            ENDIF.
+
+      CATCH /iwbep/cx_gateway INTO DATA(lx_gateway).
+        RAISE EXCEPTION TYPE ZCX_TRAVELS_CONS_XXX
+          EXPORTING
+            textid   = ZCX_TRAVELS_CONS_XXX=>query_fail
+            previous = lx_gateway.
+      ENDTRY.
 
   ENDMETHOD.
 

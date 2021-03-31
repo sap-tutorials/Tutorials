@@ -20,19 +20,23 @@ Go is an open source programming language developed by Google to increase produc
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Install Go)]
-The first step is to check if Go is installed, and if so, which version. To do so enter the following command:
+The first step is to check if Go is installed, and if so, which version. To do so, enter the following command:
 
 ```Shell
 go version
 ```
 
-If Go is installed, then it will return the currently installed version, such as 1.14. It is required to have at least version 1.8 or later installed.
+![go version](version.png)
 
-If it is not installed, download it from [Download Go](https://golang.org/dl/) and run the installer and or follow the provided instructions and ensure that Go is in your path.
+
+If Go is installed, then it will return the currently installed version, such as 1.15.2. It is required to have at least version 1.8 or later installed.
+
+>For further details on supported versions, see SAP Note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307).
+
+
+If it is not installed, download it from [Download Go](https://golang.org/dl/), run the installer, follow the provided instructions, and ensure that Go is in your path.
 
 ![Go Install](GoInstall.png)
-
->For further details on supported versions, see SAP Note [2939501 - SAP HANA Client Supported Platforms for 2.5 and later](https://launchpad.support.sap.com/#/notes/2939501).
 
 In order for the shell to recognize that Go has been installed and for any go commands in future steps to be recognized, a new shell window needs to be opened.
 
@@ -52,11 +56,15 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     ![gcc 64-bit](gccWindows.png)
 
-    If it is not installed, download it from [Download MinGW](http://mingw-w64.org/doku.php/download) and run the installer.
+    If it is not installed, on Linux install the System GNU C compiler.  
 
-    >Note: Set the architecture option to `x86_64` and once the install is complete add the bin folder to your path.
+    On Windows download it from [Download MinGW](http://mingw-w64.org/doku.php/download) and run the installer.
+
+    During the install, set the architecture option to `x86_64`.
 
     ![MinGW Installation](MingwInstallation.png)
+
+    Add the bin folder to your path.
 
 2. Examine the Go environment by running the below command:
 
@@ -79,10 +87,11 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
     cp -r ~/sap/hdbclient/golang/src/SAP $HOME/go/src/
     ```
 
-    The results are shown in the screenshot below:
+    The results are shown in the screenshot below:  
+
     ![Result of copying source](hana-client-in-go-src.png)
 
-4. Set the `CGO_LDFLAGS` environment variable to point to the location of `libdbcapiHDB` library as shown below.  Alternatively, set these values in the Microsoft Windows environment variables dialog or on Linux/Mac in the `.profile` or `.bashrc` file.
+4. Set the `CGO_LDFLAGS` environment variable to point to the location of `libdbcapiHDB` library as shown below.  Preferably, set these values in the Microsoft Windows environment variables dialog or on Linux/Mac in the `.profile` or `.bash_profile` file so these values persist and can be seen by other applications such as Visual Studio Code.
 
     ```Shell (Windows)
     set CGO_LDFLAGS=c:\sap\hdbclient\libdbcapiHDB.dll
@@ -113,9 +122,8 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 3: ](Create a Go application that queries an SAP HANA database)]
-1. In a shell, create a folder named `go`, enter the newly created directory, and open an editor on a file named `goQuery.go`.
+1. In a shell, create a folder named `go`, enter the newly created directory, and open a file named `goQuery.go` in an editor.
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\HANAClientsTutorial\go
     cd %HOMEPATH%\HANAClientsTutorial\go
@@ -141,8 +149,16 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
       )
 
     func main() {
-      connectString := "hdb://?key=User1UserKey&encrypt=true&sslValidateCertificate=false"
-      //connectString := "hdb://User1:Password1@999deec0-ccb7-4a5e-b317-d419e19be648.hana.prod-us10.hanacloud.ondemand.com:443?encrypt=true"
+      //Option 1, retrieve the connection parameters from the hdbuserstore
+      //host, port, user name and password come from the hdbuserstore key USER1UserKey
+      connectString := "hdb://?key=USER1UserKey&encrypt=true&sslValidateCertificate=false"
+
+      //Option 2, specify the connection parameters
+      //connectString := "hdb://User1:Password1@999deec0-ccb7-4a5e-b317-d419e19be648.hana.prod-us10.hanacloud.ondemand.com:443?encrypt=true&sslValidateCertificate=false"
+
+      //encrypt and sslValidateCertificate should be true for HANA Cloud connections
+      //As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
+
       fmt.Println("Connect String is " + connectString)
 
       db, err := sql.Open("hdb", connectString)
@@ -177,7 +193,7 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     Once the `goQuery.go` file has been updated, save and close the file.
 
-3. On Linux or Mac, add the `libdbcapiHDB` library to the path so that the Go driver can find it:
+3. On Linux or Mac, add the `libdbcapiHDB` library to the path so that the Go driver can find it.  You may do this by adding the following lines to the `.profile` or `.bash_profile` files:
 
     ```Shell (Linux)
     export LD_LIBRARY_PATH=~/sap/hdbclient

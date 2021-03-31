@@ -1,17 +1,17 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Reuse a CAP Java Service
 description: Create a new application and reuse the existing CAP Java service.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform, topic>java]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>java]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Details
 ### You will learn
-- How to reuse a CAP project through npm packages
+- How to reuse a CAP project through NPM packages
 - How to load sample data using CSV profiles
 - How to use SQL Tools in the SAP Business Application Studio
 - How to use the localized keyword
@@ -37,7 +37,7 @@ cd ~/projects
 3. Now that you are in the correct folder, run the following command:
 ```Shell/Bash
 mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
--DarchetypeVersion=1.3.0 -DcdsVersion=3.31.2 \
+-DarchetypeVersion=RELEASE \
 -DgroupId=com.sap.cap -DartifactId=bookstore
 ```
 
@@ -57,6 +57,8 @@ mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -Darchety
 [ACCORDION-BEGIN [Step 2: ](Install reusable service as npm dependency)]
 
 As the `product-service` should be reused for the bookstore, you need to add a dependency between those two projects. Reusable models can be published as NPM modules and imported through dependencies in the `package.json` of a project.
+
+> Make sure that you have followed all the sub-steps of step 9 in the previous tutorial [Set up for reuse](https://developers.sap.com/tutorials/cp-cap-java-reusable-service.html#585efa23-03de-4736-98d3-a4e22bf92511) before continuing.
 
 First, we need to simulate a release of the `product-service` module, and consume this release in the bookstore application.
 
@@ -171,7 +173,7 @@ You'll now define the services, that should expose the entities you've defined i
     // Define Orders Service
     service OrdersService {
         entity Orders as projection on db.Orders;
-        // OrderItems are auto exposed
+        entity OrderItems as projection on db.OrderItems;
     }
 
     // Reuse Admin Service
@@ -191,7 +193,7 @@ The `services.cds` file defines three services:
 
 The `BooksService` is used to provide a read-only view on the `Books` and `Authors` data. Modifications of these entities isn't possible via this service.
 
-The `OrdersService` allows to view, create, and delete orders. The entity `OrderItems` isn't explicitly listed in the `OrdersService`. However, it will be automatically added to the service (auto-exposed), as the `Orders` entity defines a composition of `OrderItems`.
+The `OrdersService` allows to view, create, and delete orders.
 
 The `AdminService` is reused from the products service. But we've added the `Authors` entity to it. It can be used to create, update, and delete products and authors.
 
@@ -262,7 +264,7 @@ npm install --save-dev sqlite3
 
 3. To initialize the bookstore database with the defined domain model and sample data, run:
 ```Shell/Bash
-npm run deploy
+cds deploy --to sqlite
 ```
 
 This will create a file called `sqlite.db` in your project root. The name of this database, is defined by an entry in your `package.json`.
@@ -276,11 +278,11 @@ To configure your Java application to use the `sqlite.db` database:
 
 1. Go to `srv/src/main/resources`, locate, and open the `application.yaml` file. This file was created when you initialized the application.
 
-2. For the field `url` **replace the string** `"jdbc:sqlite::memory:"` with a reference to your local database `"jdbc:sqlite:/home/user/projects/bookstore/sqlite.db"`
+2. For the field `url` **replace the string** `"jdbc:sqlite::memory:?cache=shared"` with a reference to your local database `"jdbc:sqlite:/home/user/projects/bookstore/sqlite.db"`
 
 3. Set the value of `initialization-mode` from `always` to `never`.
 
-    > You can update this value to `never`, because you have already initialized the database when running `npm run deploy`.
+    > You can update this value to `never`, because you have already initialized the database when running `cds deploy --to sqlite`.
 
     !![state of application yaml](application-yaml.png)
 

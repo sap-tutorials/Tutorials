@@ -221,7 +221,7 @@ async function run({ qaPath, deleteFiles }) {
 
       output({
         stats,
-        fileName: csvHelper.fileName,
+        fileName: csvHelper.fullFilePath,
         type: constants.checkTypes.memoryUsage,
       });
     });

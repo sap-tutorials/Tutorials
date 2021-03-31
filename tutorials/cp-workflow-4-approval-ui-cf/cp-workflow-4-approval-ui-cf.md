@@ -1,286 +1,277 @@
 ---
 title: Create a Start Form and its Custom Tile for Your Workflow
-description: Create a start form to avoid using the developer tool, Monitor Workflows (MWA), to start and complete the workflow application
+description: Create a start form for end users to start and complete the workflow application
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+primary_tag: products>sap-business-technology-platform
+tags: [  tutorial>beginner, topic>cloud, products>sap-business-technology-platform ]
 time: 15
 ---
 
 ## Prerequisites  
-- **Tutorials:** You have executed the previous tutorials in [Get started with SAP Cloud Platform workflows](https://developers.sap.com/group.cp-workflow-service.html).
+- You have executed the previous tutorials in [Get started with SAP Workflow Service](group.cp-workflow-cf).
+- Make sure that you use a dev space with the extension **Launchpad Module**.
+- You have created a launchpad site. See [Create a Site](https://help.sap.com/viewer/e157c391253b4ecd93647bf232d18a83/Cloud/en-US/97c079f9317c42bba31cc9ca9d4cc7c3.html).
+- You have created a destination for your service instance. See [Destinations Pointing to Service Instances](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/685f383cebb54c009b2fac633b32c90f.html).
 
 ## Details
 ### You will learn  
   - How to start an instance of the workflow definition that you have defined using a start form
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Launch SAP Web IDE)]
-1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit).
 
-2. Choose **Launch SAP Web IDE**.
+[ACCORDION-BEGIN [Step 1: ](Subscribe to the Launchpad service)]
 
-   ![Launch SAP Web IDE](launchsapwebide.png)  
+1. From the navigation area, choose **Service Marketplace**.
+
+2. Search for the Launchpad service, which is not subscribed yet.
+
+    ![Subscribe to Launchpad service](subscribe-launchpad.png)
+
+3. In the **Launchpad** details, choose **Create**.
+
+4. In the wizard, check that the entry for **Service** is **Launchpad** and set **Plan** to **standard**.
+
+5. Choose **Create**.
+
+You see a popup that the subscription is created. To display the new status, choose **View Subscription**.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Assign yourself the Launchpad_Admin role collection)]
+
+1. From the navigation area of your subaccount, choose **Security** | **Trust Configuration**.
+
+2. From the list, choose the name of your IdP.
+
+3. Enter your mail address, and choose **Show Assignments**.
+
+    ![Show Assignments](show-assignments.png)
+
+4. Choose **Assign Role Collection**, and then select **`Launchpad_Admin`**.
+
+    ![Assign Role Collection](assign-role-collection.png)
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create a start form)]
-1. In your workspace, choose **`forms`** | **`ApprovalWorkflow`**, then choose **New** | **Form**.
+[ACCORDION-BEGIN [Step 3: ](Create a start form)]
+1. In your web browser, open the [SAP Business Technology Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
+
+2. Choose **SAP Business Application Studio** and access your dev space.
+
+3. In your workspace, select **onboarding** | **approvals** | **forms**, then start the forms creation.
+
+    On a Windows PC, choose **F1** | **Workflow: Create New Form**.
+
+    On a MAC PC, enter **`COMMAND + SHIFT + P`** and then choose **Workflow: Create New Form**.
 
     ![Create Form](create-new-form.png)
 
-2. In the popup, change the following entries, then choose **Create**:
+4. You are prompted to enter the following:
 
-    | **Name**             | **Value**                         |
+    | **Field**            | **Value**                         |
     | :--------------------| :-------------------------------- |
-    | **Name**             | **`RequestForm`**                 |
-    | **Revision**         | **`1.0`**                         |
-    | **Type**             | **Start Form**                    |
+    | **Workflow module**  | **`approvals`**                   |
+    | **File name**        | **`onboardingapprovalform`**      |
+    | **Form type**        | **Start Form**                    |
+    | **Revision**         | **1.0**                           |
 
-    ![Create Entries](create-entries.png)
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 3: ](Add fields to your start form)]
-
-1. In the form editor (for the ``RequestForm.form``), select the **FIELDS** section.
-
-2. To add two new fields, click **Add Field** twice, and enter the following data to define the fields:
-
-    | **`Lable/Title`**    | **Type**      | **Context Path**            |
-    | :------------------- | :------------ | :-------------------------- |
-    | **Title**            | **String**    | **`${context.product}`**    |
-    | **Price**            | **Float**     | **`${context.price}`**      |
-
-    ![Add Fields](requestform.png)
+    The forms folder now contains your new form `onboardingapprovalform.form`.
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Add a start action)]
+[ACCORDION-BEGIN [Step 4: ](Add fields to your start form)]
 
-1. Switch to the **ACTION** section of the form editor (for the ``RequestForm.form``).
+Once the form editor opens, add form data by choosing **Add Field**.
 
-2. Enter `Request Book` in the **Start Action Text** field, then choose **Select** next to **Workflow File Name**.
+These expressions refer to the attributes in the JSON file that you have created in the previous step.
+
+| Label/Title    | Type       | Context Path                         |
+| :--------------| :----------| :------------------------------------|
+| **First Name** | **String** | **`${context.empData.firstName}`**   |
+| **Last Name**  | **String** | **`${context.empData.lastName}`**    |
+| **Country**    | **String** | **`${context.empData.country}`**     |      
+| **Hire Date**  | **Date**   | **`${context.empData.hireDate}`**    |      
+| **Job Title**  | **String** | **`${context.empData.jobTitle}`**    |      
+
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 5: ](Add a start action)]
+
+1. Switch to the **ACTION** tab of the form editor.
+
+2. Enter `Start Approval` in the **Start Action Text** field, then choose **Select** next to **Workflow File Name**.
+
     The available workflow files are displayed.
 
-    ![Add Start Action and File](action-tab.png)  
+4. Choose **/workflows/onboard.workflow**, and choose **OK**.
 
-4. Choose **/workflows/ApprovalWorkflow.workflow**, and choose **OK**.
-
-5. Save your changes.
+    ![Add Start Action and File](select-workflow.png)  
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Build the workflow project)]
+[ACCORDION-BEGIN [Step 6: ](Build and deploy)]
 
-1. Build the **`MyWorkflowProject`** project by right-clicking it and choosing **Build** | **Build with Cloud MTA Build Tool (recommended)**.
+1. Right-click the **mta.yaml** file in your **onboarding** project, and then select **Build MTA**.
 
-    ![Build Workflow Project](build-flp-project-rec.png)
+    Once the build is completed, the new folder **`mta_archives`** appears under your application folder.
 
-2. In your workspace from the **`mta_archives`** folder, right-click the `MyWorkflowProject_0_0_1.mtar` file and choose **Deploy** | **Deploy to SAP Cloud Platform**.
+2. Right-click the `.mtar` file, and then select **Deploy MTA Archive**.
 
-    ![Deploy](deploy-wf-project.png)
-
-3. In the popup, select your API endpoint, organization, and space.
-
-4. Choose **Deploy**.
+    > Note: You might be asked to log in to your Cloud Foundry space. Enter the right API endpoint depending on your region, for example, `https://api.cf.eu10.hana.ondemand.com`, your username and password, and select your Cloud Foundry org and space.
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Configure the business application visualization for your custom tile)]
-1. In your workspace of SAP Web IDE under **`sample.workflowtiles.mta.trial`**, select the **`portal-site`** folder and right-click it.
+[ACCORDION-BEGIN [Step 7: ](Create your launchpad site)]
 
-2. Choose **New** | **Folder**.
+1. Access your **trial** subaccount.
 
-    ![Create Folder](portalsite-folder.png)
+2. From the navigation area, choose **Instances and Subscriptions**, and search for **Launchpad**.
 
-3. Enter the name `business-apps`, then choose **OK**.
+3. From the navigation area, choose **Subscriptions**.
 
-4. Right-click the `business-apps` folder, and choose **New** | **File**.
+4. On the **Launchpad** tile, choose **Go to Application**.
 
-    ![Create File](businessapps-file.png)
+    ![Go to App](go-to-app.png)
 
-5. Enter the name `app.json`, then choose **OK**.
+5. On the **Site Directory** that opens, choose **Create Site**.
 
-6. Use the **Copy** button in the header of the code sample, then paste the following code into the file:
+    ![Create Site](create-site.png)
 
-    ```JSON
-    {
-      "_version": "3.0.0",
-      "identification": {
-        "id": "com.sap.bpm.wus.form.player",
-        "entityType": "businessapp",
-        "i18n": "i18n/<translation-file-name>.properties"
-      },
-      "payload": {
-        "visualizations": {
-          "<custom-id>": {
-            "vizType": "sap.ushell.StaticAppLauncher",
-            "vizConfig": {
-              "sap.app": {
-                "title": "{{title}}",
-                "subTitle": "{{subtitle}}"
-              },
-              "sap.flp": {
-                "target": {
-                  "inboundId": "bpmworkflow-Start",
-                  "parameters": {
-                    "formDefinitionId": {
-                      "value": {
-                        "value": "<form-definition-id>",
-                        "format": "plain"
-                      }
-                    },
-                    "revision": {
-                      "value": {
-                        "value": "<revision>",
-                        "format": "plain"
-                      }
-                    },
-                    "appTitle": {
-                      "value": {
-                        "value": "{{apptitle}}",
-                        "format": "plain"
-                      }
-                    },
-                    "formTitle": {
-                      "value": {
-                        "value": "{{formtitle}}",
-                        "format": "plain"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }}
-    ```
-7. In line 23, replace the `<form-definition-id>` with `requestform`.
+6. Enter the site name `mysite`, then choose **Create**.
 
-8. In line 29, enter the version of your form: `1.0`.
+[DONE]
+[ACCORDION-END]
 
-    ![Adapt File](adapt-json.png)
+[ACCORDION-BEGIN [Step 8: ](Create your custom launchpad tile)]
+
+1. In the navigation area of the central SAP Fiori launchpad, choose the **Provider Manager** icon.
+
+    ![Choose Provider Manager](choose-provider-manager.png)
+
+2. To make the default HTML5 Apps content provider load the standard apps of the workflow service, choose the **Refresh** action.
+
+    ![Choose Refresh](choose-refresh.png)
+
+3. In the navigation area, choose the **Content Manager** icon, and open the **Content Explorer** tab.
+
+    ![Choose Content Manager](choose-content-manager.png)
+
+  >If the standard items are not displayed, check whether you have set up the destination correctly in the prerequisites.
+
+4. In the dropdown, choose the **HTML5 Apps** content provider.
+
+    ![Select HTML5 Apps](select-html5-apps.png)
+
+5. Select the following items and choose **Add to My Content**:
+
+    - My Inbox
+    - BPM Form Player
+
+    ![Add WF Apps](select-standard-wf-apps.png)
+
+6. On the **My Content** tab, navigate into the **My Inbox** item.
+
+7.  On the screen that opens, choose **Create a Local Copy**.
+
+    For this exercise, we do not change the standard texts.
+
+    > You must not change the **Configuration** data.
+
+8. Click the **Back to Content Management** arrow icon, and on the **My Content** tab, navigate into the **BPM Form Player** item.
+
+    1. On the screen that opens, choose **Create a Local Copy**.
+
+    2. To adapt the texts on the **PROPERTIES** tab under **General**, choose **Edit**.
+
+        Enter the title `Onboarding`. To make the text appear, you need to adapt it on the **TRANSLATION** tab as well:
+       In the **Title - English (en)** field, enter **Onboarding**.
+       In the **Subtitle - English (en)**, enter **Onboarding Employees**.
+
+    > You must not change the **Configuration** data.
+
+    3. To configure your local copy of the Start-Form-Based Workflow Start App, open its **NAVIGATION** tab.
+    4. Set the parameters by adding new parameters that match the ones of your start form configuration:
+
+    | Name                    | Default Value                |
+    | :-----------------------| :--------------------------- |
+    | **`formDefinitionId`**  | **`onboardingapprovalform`** |
+    | **`revision`**          | **1.0**                      |
+    | **`appTitle`**          | **Onboarding Approval**      |
+    | **`formTitle`**         | **Approve Onboarding**       |
+
+    ![Add Navigation Parameters](add-nav-parameters.png)
 
 9. Save your changes.
 
-[VALIDATE_4]
-[ACCORDION-END]
+10. Create a group and assign your local copies of the apps to it.
 
+    1. Click the **Back to Content Management** arrow icon, choose the **My Content** | **`+New`** | **Group**.
 
-[ACCORDION-BEGIN [Step 7: ](Create the corresponding properties file for translation)]
-1. In your workspace under **`sample.workflowtiles.mta.trial`** | **`workflowtilesFLP`**, select the **`portal.site`** | **`i18n`** folder and right-click it.
+    2. Enter the title **Workflow**.
 
-2. Choose **New** | **File**.
+    3. Save your changes.
 
-    ![New File](i18n-file.png)
+    4. Click the **Back to Content Management** arrow icon, and access the **Workflow** group.
 
-3. Enter the name `app.properties`, then choose **OK**.
+    5. Choose **Edit**, click inside the **Assign Items** field, and choose the + next to **My Inbox (Local Copy)** and **Onboarding Local**.
 
-4. Paste the following code into the file:
+        ![Assign Items to Group](assign-items-to-group.png)
 
-    ```JSON
-    #XTIT
-    title=<your tile title>
-    #XTIT
-    subtitle=<your tile subtitle>
-    #XTIT
-    apptitle=<your app title>
-    #XTIT
-    formtitle=<your form title>
-    ```
+    6. Save your changes.
 
-5. In the file, replace the variables as follows:
+11. Assign your local copies to a role so that users can access them.
 
-    | :----------------------------------- | :---------------------------------------------- |
-    | Parameter                            | Value
-    | **title**                            | **Request Book**                                |
-    | **`subitle`**                        | **Self-Service**                                |
-    | **`apptitle`**                       | **Request Book**                                |
-    | **`formtitle`**                      | **Request Your Book**                           |
+    1. Click the **Back to Content Management** arrow icon, and access the **Everyone** role.
 
-    ![Replace Variables](replace-variables.png)
+    2. Choose **Edit**, click inside the **Assign Items** field, and choose the + next to **My Inbox (Local Copy)** and **Onboarding Local**.
 
-6. Save your changes.
+    3. Save your changes.
 
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 9: ](Start the workflow in your custom tile)]
+After deployment is finished, open your launchpad site that contains the workflow applications.
 
-[ACCORDION-BEGIN [Step 8: ](Complete the business application visualization)]
-1. In your workspace under **`sample.workflowtiles.mta.trial`** | **`workflowtilesFLP`** | **`portal.site`** | **`business-apps`**, open the `app.json` file again.
+1. In the **Site Directory**, open your site **`mysite`** icon.
 
-2. In line 6, replace `<translation-file-name>` with `app`.
+    ![Access Custom Launchpad](access-mysite.png)
 
-3. In line 10, replace `<custom-id>` with `request-approval-app-config`.
+2. Open the **Onboarding** tile, and enter the following data:
 
-    ![Replace Variables](replace-variables2.png)
+    | Field          | Data           |
+    | :--------------| :--------------|
+    | **First Name** | **Lara**       |
+    | **Last Name**  | **`Bryson`**   |
+    | **Country**    | **France**     |  
+    | **Hire Date**  | **2020-07-01** |
+    | **Job Title**  | **Developer**  |
 
-4. Save your changes.
+3. Choose **Start Approval**.
 
-[DONE]
-[ACCORDION-END]
+4. Open the **My Inbox** tile, to access the **Approval** task. Set the **Relocation** and **Equipment** fields, and then choose **Approve** to process the task.
 
-
-[ACCORDION-BEGIN [Step 9 ](Create a launchpad tile for your start form)]
-1. Double-click the `CommonDataModel.json` file in your `sample.workflowtiles.mta.trial` project. Then choose the **+** icon.
-
-    ![Create Custom Tile](add-custom-tile.png)
-
-2. On the **Select Projects Apps** screen, click the **+** icon once to insert a table row. Then enter the following data, and choose **Select**:
-
-    | App ID                               | Intent Navigation
-    | :----------------------------------- | :---------------------------------------------- |
-    | **`com.sap.bpm.wus.form.player`**    | **`request-approval-app-config`**               |
-
-5. Save your changes.
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 10: ](Build and deploy your MyFLPProject)]
-1. Right-click your **`sample.workflowtiles.mta.trial`** workflow project in the workspace, and choose **Build** | **Build with Cloud MTA Build Tool (recommended)**.
-
-    The console shows the status of the build.
-
-2. Open the **`mta.archives`** folder.
-
-3. Right-click your **`sample.workflowtiles.mta.trial_0.0.1.mtar`** file, and choose **Deploy** | **Deploy to SAP Cloud Platform**.
-
-4. Choose **Deploy**.
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 11: ](Start your workflow in SAP Fiori launchpad)]
-1. In the SAP Fiori launchpad, choose **Refresh (F5)** to display your new tile named **Request Book**.
-
-    ![View Custom Tile](request-book-tile.png)
-
-2. Click the tile, and enter any title and price, for example, `Hamlet` and `9.99` and choose **Request Book**.
-
-    ![Enter Title and Price](request-book-data-corr.png)
-
-3. In the SAP Fiori launchpad, the **My Inbox** tile displays the **Approval** task.
-
-4. Open **My Inbox**, then choose **Approve** to process the task.
-
-  ![Approve Request](accept-task-corr2.png)
+    ![Choose Approve](choose-approve.png)
 
 [VALIDATE_5]
 [ACCORDION-END]
 
 ---
+Summary
+
+Now, you have created a custom end user UI for your workflow using a start form. To learn more about SAP Workflow service, see:
+
+- [The SAP Help Portal](https://help.sap.com/viewer/product/WORKFLOW_SERVICE/Cloud/en-US) with entry points to our documentation and blogs
+- The service catalog of [SAP Discovery Center](https://discovery-center.cloud.sap/#/serviceCatalog/workflow)

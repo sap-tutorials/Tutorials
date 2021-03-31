@@ -2,8 +2,8 @@
 title: Monitor Temperature Data by Calling APIs via Node.js
 description: Use Node.js to analyze temperature data in SAP IoT and raise an event.
 auto_validation: true
-tags: [ tutorial>beginner, products>sap-leonardo-iot, , products>sap-iot-application-enablement, products>sap-cloud-platform ]
 primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform, products>sap-analytics-cloud]
 time: 15
 ---
 
@@ -275,9 +275,9 @@ The list of events in the result set is sorted by the business timestamp in desc
  You can create an IoT Application using the SAP Web IDE Full-Stack to view the events created as shown in the below image.
     ![Events in IoT Application](iotae-nodejs-webide-events.PNG)
 
-If you want to learn how to do this please consider this tutorial: [Build an IoT Condition Monitoring App](https://developers.sap.com/tutorials/iot-express-5-use-webide-template.html).
+If you want to learn how to do this please consider this tutorial: [Build an IoT Condition Monitoring App](iot-express-5-use-webide-template).
 
-To deploy the app for automatic operation please follow this tutorial: [Deploy Your Node.js App with the Cloud Foundry CLI](https://developers.sap.com/tutorials/cp-node-deploy-cf-cli.html).
+To deploy the app for automatic operation please follow this tutorial: [Deploy Your Node.js App with the Cloud Foundry CLI](cp-node-deploy-cf-cli).
 
 [VALIDATE_1]
 

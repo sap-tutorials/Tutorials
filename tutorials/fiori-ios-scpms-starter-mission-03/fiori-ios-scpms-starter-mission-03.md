@@ -1,22 +1,25 @@
 ---
 title: Build a Product List
-description: Build an entity list using SAP Cloud Platfrom SDK for iOS controls, with storyboard segues for navigation between the overview screen and the product list.
+description: Build an entity list using SAP BTP SDK for iOS controls, with storyboard segues for navigation between the overview screen and the product list.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios  ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 35
 ---
 
 ## Prerequisites
+
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0 or higher
+- **SAP BTP SDK for iOS:** Version 5.0 or higher
 
 ## Details
+
 ### You will learn  
-  - How to use storyboard segues to navigate between screens
-  - How to prepare a segue to set the title of the destination screen of each navigation
+
+- How to use storyboard segues to navigate between screens
+- How to prepare a segue to set the title of the destination screen of each navigation
 
 ---
 
@@ -55,7 +58,7 @@ In this tutorial, you will implement the product list first, a `FUISearchBar` to
 
 [ACCORDION-BEGIN [Step 2: ](Implement a prepare for segue method)]
 
-For the product list, it is not necessary to pass any crucial data in, but we want to set the navigation item's title before finishing up the navigation.
+For the product list, it is not necessary to pass any crucial data in, but you want to set the navigation item's title before finishing up the navigation.
 
 You can store the segue identifier in a class property for cleaner code and use it in the `prepareForSegue(for:Sender:)` method.
 
@@ -66,12 +69,12 @@ You can store the segue identifier in a class property for cleaner code and use 
 
     ```
 
-2. Before the closing class bracket, add the `prepareForSegue(for:Sender:)` method which will be called by the system right before the navigation finishes it's completion and the destination View Controller is loaded into memory.
+2. Before the closing class bracket, add the `prepareForSegue(for:Sender:)` method or if existent replace, which will be called by the system right before the navigation finishes it's completion and the destination View Controller is loaded into memory.
 
     ```Swift
     /**
     In a storyboard-based application, you will often want to do a little preparation before navigation.
-    Using a Switch-statement let's you distinct between the different segues. Right now there is only the showProductsList but we will add a showCustomersList later on.
+    Using a Switch-statement let's you distinct between the different segues. Right now there is only the showProductsList but you will add a showCustomersList later on.
     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
@@ -115,7 +118,6 @@ You can store the segue identifier in a class property for cleaner code and use 
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 3: ](Implement a product list)]
 
 The Product List is a Table View Controller which means the structure is similar to the Overview Table View Controller with the difference that you won't use any `FUITableViewHeaderFooterView`.
@@ -131,11 +133,24 @@ The Product List is a Table View Controller which means the structure is similar
 
     ```
 
-2. Now we will add parts of the class properties we already have used in the Overview Table View Controller. Implement the following lines of code at the top of the class:
+2. Now you will add parts of the class properties you already have used in the Overview Table View Controller. Implement the following lines of code at the top of the class:
+
+    **For Online OData**
+
+    Add the following import statement to your class:
 
     ```Swift
+    import SAPOData
+
+    ```
+
+    Implement the following lines of code directly below the logger instance as class properties:
+
+    ```Swift
+    /// First retrieve the destinations your app can talk to from the AppParameters.
     let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
+    /// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course you only have one destination here. Handle the errors in case the OData controller is nil. You are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the Assistant.
     var dataService: ESPMContainer<OnlineODataProvider>? {
         guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
             AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
@@ -153,7 +168,41 @@ The Product List is a Table View Controller which means the structure is similar
 
     ```
 
-    You might wonder why we are not passing the data service in from the Overview. Later on when adapting the app to work on MacOS through Mac Catalyst, the user will have the option to jump directly into the product list. In that case you won't perform a segue and so on not be able to pass in the data service. Of course there are ways to refactor this into a more centralized way but for simplicity reason we stick to this approach.
+    **For Offline OData**
+
+    Add the following import statement to your class:
+
+    ```Swift
+    import SAPOfflineOData
+    import SAPOData
+
+    ```
+
+    Implement the following lines of code directly below the logger instance as class properties:
+
+    ```Swift
+
+    /// First retrieve the destinations your app can talk to from the AppParameters.
+    let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
+
+    var dataService: ESPMContainer<OfflineODataProvider>? {
+        guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OfflineODataController, let dataService = odataController.espmContainer else {
+            AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+            return nil
+        }
+        return dataService
+    }
+
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    private let logger = Logger.shared(named: "ProductsTableViewController")
+
+    private var imageCache = [String: UIImage]()
+    private var productImageURLs = [String]()
+    private var products = [Product]()
+
+    ```
+
+    You might wonder why you are not passing the data service in from the Overview. Later on when adapting the app to work on MacOS through Mac Catalyst, the user will have the option to jump directly into the product list. In that case you won't perform a segue and so on not be able to pass in the data service. Of course there are ways to refactor this into a more centralized way but for simplicity reason you stick to this approach.
 
 3. Now implement the `viewDidLoad()` to register the needed cells and setup the table view:
 
@@ -168,7 +217,7 @@ The Product List is a Table View Controller which means the structure is similar
 
     ```
 
-4. We will use the `SAPFioriLoadingIndicator` for this table view controller as well. Let your class conform to the `SAPFioriLoadingIndicator` protocol:
+4. You will use the `SAPFioriLoadingIndicator` for this table view controller as well. Let your class conform to the `SAPFioriLoadingIndicator` protocol:
 
     ```Swift
     class ProductsTableViewController: UITableViewController, SAPFioriLoadingIndicator {
@@ -186,7 +235,7 @@ The Product List is a Table View Controller which means the structure is similar
 
 5. Add the following lines of code below the closing bracket of the `viewDidLoad()` method:
 
-    ```Swift
+    ```Swift[20]
     override func numberOfSections(in tableView: UITableView) -> Int {
             return 1
         }
@@ -305,9 +354,9 @@ The Product List is a Table View Controller which means the structure is similar
 
 [ACCORDION-BEGIN [Step 4: ](Implement a search bar)]
 
-The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearchBar` inside but enhances the whole search controller with a barcode reader. We're not going to implement the barcode reader in this tutorial series but if you're interested in how to do so take a look at the [Use the Barcode Scanner API](fiori-ios-scpms-barcode) tutorial at a later point.
+The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearchBar` inside but enhances the whole search controller with a barcode reader. You're not going to implement the barcode reader in this tutorial series but if you're interested in how to do so take a look at the [Use the Barcode Scanner API](fiori-ios-scpms-barcode) tutorial at a later point.
 
-1. In order to add a search bar to the view you need a `FUISearchController` instance, implement the following two class properties to hold on an instance of the search controller as well as the search results.
+1. In order to add a search bar to the view you need a `FUISearchController` instance, implement the following two class properties in the `ProductsTableViewController.swift` class to hold on an instance of the search controller as well as the search results.
 
     ```Swift
     private var searchController: FUISearchController?
@@ -328,7 +377,7 @@ The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearc
         searchController!.searchBar.placeholderText = NSLocalizedString("Search for products...", comment: "")
         searchController!.searchBar.isBarcodeScannerEnabled = false
 
-        // Set the search bar to the table header view like we did with the KPI Header.
+        // Set the search bar to the table header view like you did with the KPI Header.
         self.tableView.tableHeaderView = searchController!.searchBar
     }
 
@@ -336,7 +385,7 @@ The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearc
 
 3. The code won't compile at the moment because you haven't conformed to the `UISearchResultsUpdating` protocol. We will fix that at a later point but first call the `setupSearchBar()` method right below the `loadData()` call in the `viewDidLoad()` method.
 
-    ```Swift
+    ```Swift[9]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -366,8 +415,8 @@ The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearc
 
     ```
 
-    We will go ahead and implement that later. For now leave it as is and we proceed implementing the search logic.
-    To do so we implement some helper methods deciding if the text in the search field is empty, if the user is actually in the process of searching but also the search logic itself.
+    You will go ahead and implement that later. For now leave it as is and you proceed implementing the search logic.
+    To do so you implement some helper methods deciding if the text in the search field is empty, if the user is actually in the process of searching but also the search logic itself.
 
 5. First implement the method to check if the search field is empty or not. Add the method below the `setupSearchBar()` method:
 
@@ -406,7 +455,7 @@ The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearc
 
     ```
 
-    With the search logic implemented we can go ahead and fully implement the extension we defined before.
+    With the search logic implemented you can go ahead and fully implement the extension you defined before.
 
 8. Replace the `updateSearchResults(for:)` method in the `UISearchResultsUpdating` extension:
 
@@ -428,7 +477,67 @@ The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearc
 
     ```
 
-9. Run the app now and you should be able to search for products.
+9. Change the `tableView(_:numberOfRowsInSection:)` method to adapt to the `searchedProducts` array. In the data source method you have to check if the user is searching, and if yes then return the number of searched products instead of the complete product list. Replace the existing method with the following code:
+
+```Swift[2]
+override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+           return isSearching() ? searchedProducts.count : products.count
+      }
+```
+
+10. Like the `tableView(_:numberOfRowsInSection:)` method, you need to also adapt in the `tableView(_:cellForRowAt:)` method to the search feature. Replace the line:
+
+```Swift
+let product = products[indexPath.row]
+
+```
+
+with the following code where you use the Swift ternary operator to check if the user is searching or not:
+
+```Swift
+let product = isSearching() ? searchedProducts[indexPath.row] : products[indexPath.row]
+
+```
+
+The `tableView(_:cellForRowAt:)` method should look like this now:
+
+```Swift[2]
+
+override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let product = isSearching() ? searchedProducts[indexPath.row] : products[indexPath.row]
+    let productCell = tableView.dequeueReusableCell(withIdentifier: FUIObjectTableViewCell.reuseIdentifier) as! FUIObjectTableViewCell
+    productCell.accessoryType = .detailDisclosureButton
+    productCell.headlineText = product.name ?? "-"
+    productCell.subheadlineText = product.categoryName ?? "-"
+    productCell.footnoteText = product.stockDetails?.quantity?.intValue() != 0 ? NSLocalizedString("In Stock", comment: "") : NSLocalizedString("Out", comment: "")
+    // set a placeholder image
+    productCell.detailImageView.image = FUIIconLibrary.system.imageLibrary
+
+    // This URL is found in Mobile Services
+    let baseURL = "https://a9366ac9trial-dev-com-example.cfapps.eu10.hana.ondemand.com/SampleServices/ESPM.svc/v2"
+    let url = URL(string: baseURL.appending(productImageURLs[indexPath.row]))
+
+    guard let unwrapped = url else {
+        logger.info("URL for product image is nil. Returning cell without image.")
+        return productCell
+    }
+    // check if the image is already in the cache
+    if let img = imageCache[unwrapped.absoluteString] {
+        productCell.detailImageView.image = img
+    } else {
+        // The image is not cached yet, so download it.
+        loadImageFrom(unwrapped) { image in
+            productCell.detailImageView.image = image
+        }
+    }
+    // Only visible on regular
+    productCell.descriptionText = product.longDescription ?? ""
+
+    return productCell
+}
+```
+
+11. Run the app now and you should be able to search for products.
 
     !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-8.gif)
 
