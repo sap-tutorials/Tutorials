@@ -17,7 +17,6 @@ author_profile: https://github.com/sandeep-tds
 ### You will learn
   - how to modify the card type to single instance in Business Application Studio
   - how to add subscription parameters to SAP Mobile cards
-  - how to add actions and show them in push notifications
   - how to deploy and publish a card to SAP Mobile Services from Business Application Studio
 
 ---
@@ -27,9 +26,6 @@ author_profile: https://github.com/sandeep-tds
 Watson is a salesperson who has created a Sales Order.
 
 Alice is the sales manager who needs to approve this request. However, Alice has 20 salespeople reporting to her. Thus, she wants to be immediately notified when a new request is created.
-
-Furthermore, since she is constant contact with her colleagues, she is aware of the upcoming sales orders. Thus, she wants the ability to approve the order as fast as possible.
-
 
 [DONE]
 [ACCORDION-END]
@@ -128,53 +124,31 @@ Furthermore, since she is constant contact with her colleagues, she is aware of 
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 5: ](Customise push notifications)]
-
-1. In the `metadata.json` file, open **Actions** tab, and select the **accept** action in the `Actions` table.
-
-    !![Actions Tab](img_5_1.png)
-
-2. **Enable** `Show in Notification Center` checkbox.
-
-    !![Notification Center checkbox](img_5_2.png)
-
-3. In the `metadata.json` file, open **Notifications** tab.
-
-    !![Notifications Tab](img_5_3.png)
-
-4. Add custom text for `New Card Notification`, e.g. **New Sales Order Request Created**.
-
-    !![Notifications Tab](img_5_4.png)
-
-[VALIDATE_2]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Deploy and publish card)]
+[ACCORDION-BEGIN [Step 5: ](Deploy and publish card)]
 
 1. Open Find Command, search for `mobile cards` and select **Mobile Cards: Deploy**.
 
-    !![Deploy Command](img_6_1.png)
+    !![Deploy Command](img_5_1.png)
 
 2. Select the card you have created; e.g. `Sales Push Card BAS`.
 
-    !![Deploy Card](img_6_2.png)
+    !![Deploy Card](img_5_2.png)
 
 3. Upon successful deployment, you will see a toast message at the bottom right corner of your screen.
 
-    !![Deploy success toast message](img_6_3.png)
+    !![Deploy success toast message](img_5_3.png)
 
 4. Open Find Command, search for `mobile cards` and select **Mobile Cards: Publish**.
 
-    !![Publish Command](img_6_4.png)
+    !![Publish Command](img_5_4.png)
 
 5. Select the card you have created; e.g. `Sales Push Card BAS`.
 
-    !![Publish Card](img_6_5.png)
+    !![Publish Card](img_5_5.png)
 
 6. Upon successful publish, you will see a toast message at the bottom right corner of your screen.
 
-    !![Publish success toast message](img_6_6.png)
+    !![Publish success toast message](img_5_6.png)
 
 [DONE]
 [ACCORDION-END]
