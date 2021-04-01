@@ -36,6 +36,7 @@ primary_tag: topic>machine-learning
 
     >For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
+
 [DONE]
 [ACCORDION-END]
 
