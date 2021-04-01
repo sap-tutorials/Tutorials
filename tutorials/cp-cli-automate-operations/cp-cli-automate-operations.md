@@ -255,13 +255,14 @@ create_cf_environment() { 
     local display_name=$3 
  
     log "Initiating CF environment creation for $subaccount ..." 
-    btp create accounts/environment-instance \ 
-      --subaccount "$subaccount_id" \ 
-      --environment cloudfoundry \ 
-      --display-name "$display_name" 
-      --service cloudfoundry \
-      --plan standard
-}
+
+    btp create accounts/environment-instance \
+      --subaccount "$subaccount_id" \
+      --environment cloudfoundry \
+      --service cloudfoundry \
+      --plan standard \
+      --parameters "{\"instance_name\":\"$display_name\"}"
+}      
 ```
 
 This function performs the login to Cloud Foundry:
