@@ -3,8 +3,8 @@ title: Deploy Your First SAPUI5 App
 description: Create, build, and deploy an MTA project with an integrated SAPUI5 module to SAP BTP, Cloud Foundry environment
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner]
-primary_tag: topic>cloud
+tags: [ tutorial>beginner, topic>javascript, topic>sapui5, topic>html5, products>sap-business-technology-platform, products>sap-business-application-studio]
+primary_tag: products>sap-btp--cloud-foundry-environment
 author_name: Conrad Bernal
 author_profile: https://github.com/cjbernal
 ---
