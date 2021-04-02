@@ -207,7 +207,7 @@ With the configuration steps completed, you can now test the scenario to validat
 2. Choose the **Host** entry for the **commerce-mock** `APIRule` to open it in the browser. This URL should be similar to:
    `https://commerce.*******.kyma.shoot.live.k8s-hana.ondemand.com`
 
-   ![APIRule Commerce](./assets/apirule-commerce.png)
+    ![APIRule Commerce](./assets/apirule-commerce.png)
 
 3. Choose the **Remote APIs** tab.
 
