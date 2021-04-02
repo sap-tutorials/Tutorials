@@ -176,7 +176,7 @@ In this step, you will add a service instance to the function cache-order allowi
 
 2. In the **Configuration** scroll down and choose **Create Service Binding**.
 
-3. Choose the Service instance created in the previous step from the drop down list. The name of your service instance will defer from what is shown in the screenshot.
+3. Choose the Service instance created in the previous step from the drop down list. The name of your service instance will differ from what is shown in the screenshot.
 
 4. Choose **Create**.
 
