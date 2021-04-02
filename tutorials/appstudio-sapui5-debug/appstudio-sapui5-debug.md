@@ -3,9 +3,12 @@ title: Debug Your SAPUI5 App with SAP Business Application Studio
 description: Learn how to run and test your web apps with the SAP Business Application Studio and Google Chrome DevTools.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>html5, topic>cloud, topic>javascript, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-business-application-studio]
+tags: [ tutorial>beginner, topic>html5, topic>cloud, topic>javascript, products>sap-btp-cloud-foundry-environment, products>sap-business-application-studio]
 primary_tag: topic>sapui5
+author_name: Conrad Bernal
+author_profile: https://github.com/cjbernal
 ---
+
 
 ## Details
 ### You will learn

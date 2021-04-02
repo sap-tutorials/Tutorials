@@ -19,11 +19,11 @@ This tutorial assumes you've completed the tutorial [Define a Simple Data Model 
 
 In this tutorial, you'll first study the relationship between products and categories in the Northwind OData V4 service. Then, in your own service, you'll add a second entity at the `db/` layer and define a relation between it and the first entity. You'll then expose this second entity at the `srv/` layer and examine what this looks like from an OData metadata and operations perspective. Finally, you'll build a relationship between those two entities, add some data, and check that everything works as intended.
 
-Before you start, open up the workspace in the SAP Business Application Studio (App Studio) dev space you were using in the previous tutorial, ready to extend the CDS definitions you've so far.
+Before you start, open up the workspace in the SAP Business Application Studio (App Studio) dev space you were using in the previous tutorial, ready to extend the CDS definitions you have so far.
 
 ---
 
-[ACCORDION-BEGIN [Step N: ](Take a look at the Northwind Product -> Category relationship)]
+[ACCORDION-BEGIN [Step N: ](Take a look at the Northwind Product / Category relationship)]
 
 In the [previous tutorial in this group](odata-05-data-model-service), you added a cut down version of the `Product` entity type. If you examine [Northwind's metadata document](https://services.odata.org/V4/Northwind/Northwind.svc/$metadata), you should see that this entity type actually has relationships with three other entity types - look for the `NavigationProperty` elements in this extract from the metadata document (some of the `Property` elements have been omitted for brevity):
 
@@ -62,18 +62,18 @@ Let's focus on the relationship to the `Category` entity type, defined in the co
 
 Digging into the [Navigation Property section of the OData V4 standards document](http://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752536) we can better understand what this declaration is telling us. Here's what we can work out together, at a high level:
 
-The navigation property:
+The navigation property
 
-- Is on the `Product` entity type
-- Is itself called `Category`
-- Leads to the `Category` entity type
-- Has a corresponding path back from a `Category` entity to entities of this `Product` entity type via a `Products` path (this is defined in the optional `Partner` attribute here)
+- is on the `Product` entity type
+- is itself called `Category`
+- leads to the `Category` entity type
+- has a corresponding path back from a `Category` entity to entities of this `Product` entity type via a `Products` path (this is defined in the optional `Partner` attribute here)
 
 Furthermore, the `ReferentialConstraint` element declares that the relationship between the two entities is built upon the `CategoryID` property in each case.
 
 That's great to know from a theory perspective, but what does this mean in practical terms?
 
-Well, for starters, it means that we can use the relationship defined to find out the details of the category for a product. For example, taking the first Northwind product, we can navigate to the corresponding category. We can even request the product _and_ category information.
+Well, for starters, it means that we can use the relationship defined to find out the details of the category for a product. For example, taking the first Northwind product, we can navigate to the corresponding category. We can even request the product _and_ category information together.
 
 Here are three relative URLs, and the default JSON representations of those URLs, that demonstrate this:
 
@@ -95,7 +95,7 @@ A read of the first Northwind product, via <a href="https://services.odata.org/V
 }
 ```
 
-Here, we only see the value of the `CategoryID` property (`1`) - but none of the details of the category itself.
+Here, we only see the value of the `CategoryID` property (`1`), but none of the details of the category itself.
 
 We can ask to see all the information on the category for that product, with <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Products(1)/Category">/Products(1)/Category</a>:
 
@@ -111,7 +111,7 @@ We can ask to see all the information on the category for that product, with <a 
 
 > From a path info perspective, this (`/Products(1)/Category`) is nothing special; it's just the same as specifying a normal (non-navigation) property, such as `ProductName`, like this: <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Products(1)/ProductName">`/Products(1)/ProductName`</a>
 
-And this is an example of a request for product _and_ category information to be returned in the same resource representation, using the OData system query option `$expand` <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Products(1)?$expand=Category">/Products(1)?$expand=Category</a>:
+And this is an example of a request for product _and_ category information to be returned in the same resource representation, using the OData system query option `$expand`: <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Products(1)?$expand=Category">/Products(1)?$expand=Category</a>:
 
 ```JSON
 {
@@ -161,27 +161,21 @@ To balance things out, let's take a brief look at the other entity type in this 
 
 Of course, our gaze falls immediately upon the single `NavigationProperty` here, which is `Products`, the "other end of the connection" to what we looked at in the previous step.
 
-Notice here that in contrast to the type defined for the `NavigationProperty` in the previous step, the type here, defined for this one, is a [built-in abstract type](http://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752518) - a collection of zero or more entities of the type `NorthwindModel.Product`.
+Notice here that in contrast to the type defined for the `NavigationProperty` in the previous step, the type defined for this one is a [built-in abstract type](http://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/part3-csdl/odata-v4.0-errata03-os-part3-csdl-complete.html#_Toc453752518) - a collection of zero or more entities of the type `NorthwindModel.Product`.
 
 Thinking about what this data model is about, this makes sense, of course. There are categories, and there are products that belong to categories. There may be many products belonging to a single category (say, <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Categories(1)">Beverages</a>), and there may theoretically also be categories for which there are no products. Note also that a product can only belong to a single category here.
 
 This is a relationship that might be commonly expressed like this:
 
-```Shell/Bash
+```
 +------------+                +------------+
 | Categories | 1 ------- 0..N |  Products  |
 +------------+                +------------+
 ```
 
-Before moving on to start creating a relationship like this in our own `Northbreeze` OData service, let's just try out an OData query operation on Northwind that utilizes this `NavigationProperty` that we've been looking at:
+Before moving on to start creating a relationship like this in our own `Northbreeze` OData service, let's just try out an OData query operation on Northwind that uses this `NavigationProperty` that we've been looking at, and that is a count of the products in the seventh category ("Produce"): <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Categories(7)/Products/$count">/Categories(7)/Products/$count</a>. This should return a simple numeric value (which is 5, at the time of writing).
 
-A count of the products in the seventh category ("Produce") <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Categories(7)/Products/$count">/Categories(7)/Products/$count</a>:
-
-```
-5
-```
-
-Staying with Northwind, next let's look at the details for the seventh category, including a list of products in that category <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Categories(7)?$expand=Products">/Categories(7)$?expand=Products</a> (only a couple of the products are shown in this sample output, for brevity):
+Staying with Northwind, let's look at the details for the seventh category next, including a list of products in that category <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Categories(7)?$expand=Products">/Categories(7)$?expand=Products</a> (only a couple of the products are shown in this sample output, for brevity):
 
 ```JSON
 {
@@ -451,7 +445,7 @@ On saving this `db/schema.cds` file, you should notice that the `cds watch` proc
 
 Excellent! We now not only have the definitions of the entity types `Products` and `Categories`, but these definitions also contain appropriate `NavigationProperty` elements describing the two-way relationship between them.
 
-Our extended simple OData service's metadata is now what we want it to be, but there's one more thing to do. While we've an indication of a relationship in the metadata, there's no indication or evidence of that relationship in our (CSV-based) test data.
+Our extended simple OData service's metadata is now what we want it to be, but there's one more thing to do. While we have an indication of a relationship in the metadata, there's no indication or evidence of that relationship in our (CSV-based) test data.
 
 What do we need to do here? Well, take a closer look at the previous XML. The relationship is qualified by a referential constraint, that refers to a new property (which now also appears as a `Property` element within the `EntityType` definition). That property is `Category_CategoryID`. This has been generated by the managed association and is a clue for us as to what we need to do in the data to bring the actual relationships to life.
 
@@ -494,7 +488,7 @@ We know that each entity in the [Products entity set in the original Northwind s
 
 <https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/odata-06-extend-odata-service/northbreeze-Products.csv>
 
-Open it and copy the entire contents - then use that to replace what you've in `db/data/northbreeze-Products.csv`.
+Open it and copy the entire contents - then use that to replace what you have in `db/data/northbreeze-Products.csv`.
 
 After doing this, the contents of that file should look like this:
 
@@ -567,7 +561,7 @@ In other words, in the CAP Welcome page, select the "main" hyperlink from the `/
 
 This should take you to the service document, with a URL that looks similar to this:
 
-`https://workspaces-ws-42lrq-app1.eu10.trial.applicationstudio.cloud.sap/main`
+`https://workspaces-ws-0rval-app1.eu10.trial.applicationstudio.cloud.sap/main`
 
 All paths you use in the rest of this step should be relative to (that is, appended to) this service document URL.
 
@@ -583,7 +577,7 @@ Let's start by requesting just the first `Northbreeze` product, via `/Products(1
 }
 ```
 
-Here, we only see the value of the `Category_CategoryID` property (`1`) - but none of the details of the category itself.
+Here, we only see the value of the `Category_CategoryID` property (`1`), but none of the details of the category itself.
 
 We can ask to see all the information on the category for that product, with `/Products(1)/Category`:
 

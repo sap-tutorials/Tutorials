@@ -3,8 +3,8 @@ title: Set Up SAP Fiori Tools in Your Development Environment
 description: Set up your development environment and the extensions that enable SAP Fiori tools so that you can begin creating SAP Fiori apps.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>odata, topic>sapui5, topic>user-interface, products>sap-fiori, products>sap-business-application-studio]
-primary_tag: products>sap-fiori
+tags: [ tutorial>beginner, topic>odata, topic>sapui5, topic>user-interface, products>sap-fiori, products>sap-business-application-studio, products>sap-fiori-tools]
+primary_tag: products>sap-fiori-tools
 ---
 
 ## Prerequisites
@@ -21,7 +21,7 @@ SAP Fiori tools is an extension pack available for Visual Studio Code and SAP Bu
 
 In this tutorial group, you will be using SAP Fiori tools to create an app featuring a list of objects, with additional pages that provide more detailed information about the items in the list. You will be able to preview this app using real backend data provided by SAP, as well as mock data.
 
-To get started, this tutorial will introduce you to Visual Studio Code and tell you how to download the required extensions from the Visual Studio Code Marketplace.
+To get started, this tutorial will introduce you to Visual Studio Code and explain how to download the required extensions from the Visual Studio Code Marketplace.
 
 ---
 

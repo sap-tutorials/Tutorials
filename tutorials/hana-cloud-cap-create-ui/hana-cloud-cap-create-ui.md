@@ -225,11 +225,7 @@ We want to create a Fiori freestyle UI for our CAP service.  We will use the wiz
 
     !![CAP Test Page Link](cap_test_ui.png)
 
-10. Clicking that link will open a Fiori Launchpad test page with a single tile for our Interaction Items UI we just generated.
-
-    !![Fiori Launchpad](fiori_launchpad.png)
-
-11. Clicking that tile will launch the generated Fiori free style UI for the CAP service.
+10. Clicking that link will launch the generated Fiori free style UI for the CAP service.
 
     !![Test UI](test_ui.png)                        
 

@@ -10,7 +10,7 @@ author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
+- You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 
 ## Details
 ### You will learn  

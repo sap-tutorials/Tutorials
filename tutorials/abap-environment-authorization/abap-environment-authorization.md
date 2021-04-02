@@ -1,14 +1,16 @@
 ---
 auto_validation: true
-title: Create Authorization Model and App in SAP Cloud Platform ABAP Environment
-description: Create IAM Apps, services and catalogs for authorization model in the SAP Cloud Platform ABAP, environment.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license]
+title: Create Authorization Model and App in SAP BTP, ABAP Environment
+description: Create IAM Apps, services and catalogs for authorization model in the SAP BTP, ABAP environment.
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license]
 time: 20
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-  - SAP Cloud Platform ABAP, environment user
+  - You need a SAP BTP, ABAP environment license.
   - ADT version 2.96 or higher
 
 ## Details

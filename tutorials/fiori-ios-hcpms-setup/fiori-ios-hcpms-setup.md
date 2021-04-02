@@ -9,17 +9,19 @@ author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
 ## Prerequisites  
- - **Tutorial:** If you're new to SAP Business Technology Platform, follow the tutorial [View the SAP BTP from 10,000 Meters](cp-explore-cloud-platform).
- - **Tutorial:** If you don't have an SAP BTP account, follow the tutorial [Get a Free Trial Account on SAP BTP trial](hcp-create-trial-account).
+
+- **Tutorial:** If you're new to SAP Business Technology Platform, follow the tutorial [View the SAP BTP from 10,000 Meters](cp-explore-cloud-platform).
+- **Tutorial:** If you don't have an SAP BTP account, follow the tutorial [Get a Free Trial Account on SAP BTP trial](hcp-create-trial-account).
 
 ## Details
+
 ### You will learn  
+
 - How to access SAP Mobile Services in your Cloud Foundry account
 
-Once SAP Mobile Services is available, you can use its features in your Mobile development kit, Mobile Cards, SAP SDK for iOS & Android apps.
+Once SAP Mobile Services is available, you can use its features in your Mobile development kit, Mobile Cards, SAP BTP SDK for iOS & Android apps.
 
 ---
-
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Business Technology Platform (BTP) cockpit)]
 
@@ -66,9 +68,7 @@ Once SAP Mobile Services is available, you can use its features in your Mobile d
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 1: ](Test yourself)]
-
 
 [VALIDATE_3]
 [ACCORDION-END]
