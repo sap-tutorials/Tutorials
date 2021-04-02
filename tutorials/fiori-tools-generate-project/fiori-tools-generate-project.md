@@ -3,8 +3,8 @@ title: Set Up and Generate a New SAP Fiori App Project
 description: Create a simple SAP Fiori elements List Report Object Page using SAP Fiori tools.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5, topic>user-interface]
-primary_tag: products>sap-fiori
+tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5, topic>user-interface, products>sap-fiori-tools]
+primary_tag: products>sap-fiori-tools
 ---
 
 ## Prerequisites
@@ -27,7 +27,7 @@ In this case, you will create an SAP Fiori elements list report page displaying 
 
 SAP Fiori tools includes an Application Generator that provides a wizard-style approach for creating applications based on SAP Fiori elements page types. You are going to use it to create your List Report Object Page app.
 
-In Visual Studio Code, open the Command Palette using **CMD/CTRL + Shift + P**, type **`Application Generator`**, and select **SAP Fiori tools - Application Generator: Launch**.
+In Visual Studio Code, open the Command Palette using **CMD/CTRL + Shift + P**, type **`Application Generator`**, and select **Fiori: Open Application Generator**.
 
 !![Launch Application Generator](t2-application-generator.png)
 
@@ -38,11 +38,15 @@ In Visual Studio Code, open the Command Palette using **CMD/CTRL + Shift + P**, 
 
 [ACCORDION-BEGIN [Step 2: ](Select application template)]
 
-The **Command Palette** will then close and a new tab will open. Select the **SAP Fiori tools - Application Generator** tile and press **Next**.
+The **Command Palette** will then close and a new tab for the Application Generator will open. Since the purpose of this tutorial is to create an SAP Fiori elements List Report Object Page app, ensure that **SAP Fiori elements** is selected in the Application Type menu.
 
-!![Application Generator Tile](t2-application-generator-tile.png)
+!![Select Application Type](t2-application-type.png)
 
-You need to select the page type to create. Since this tutorial involves a list report, select **List Report Object Page**, and then click **Next**.
+Select the **List Report Object Page** tile and press **Next**.
+
+!![Application Generator Tile](t2-lrop-tile.png)
+
+Now you need to select the page type you would like to use. Since this tutorial involves a list report, select **List Report Object Page**, and then click **Next**.
 
 [DONE]
 [ACCORDION-END]
@@ -83,14 +87,14 @@ With the page type and data source defined, the next step is to configure the ma
 |  **What is the module name for your application?**           | **`myfioriapp`**
 |  **What is the title for your application?**           | **`Manage Products`**
 |  **What is the namespace for your application?**    | **`Namespace1`**
-|  **What is the description for your application?**          | **`Fiori elements application for managing Products`**
+|  **What is the description for your application?**          | **`SAP Fiori elements application for managing products`**
 |  **Choose your project folder**   | Click the folder selection icon and select where to save your project.
 
 Click **Finish**.
 
 At this point, your application folder will be generated based on the input from above.
 
-Once your project has been generated, you will have the option to add it to your existing workspace. Verify that your project has been created and it looks similar to this:
+Once your project has been generated, you will have the option to add it to your existing workspace. Verify that your project has been created and looks similar to this:
 
 !![VSCode Project Folder](t2-project-structure.png)
 
@@ -109,6 +113,8 @@ From the options, you will need to select a npm script. Select `start` and press
 
 !![VSCode Select npm start](t2-select-npm-start.png)
 
+>You may need to enter the credentials you created if you had to request access to the OData service.
+
 [DONE]
 [ACCORDION-END]
 
@@ -116,19 +122,25 @@ From the options, you will need to select a npm script. Select `start` and press
 
 During your app development, you may face a slow internet connection or an unavailable backend system. SAP Fiori tools provides the option to run your application with mock data.
 
+To download the mock data we have provided for you, navigate to the [SAP Fiori tools Sample repository on GitHub](https://github.com/SAP-samples/fiori-tools-samples/blob/main/V2/mockData/SEPMRA_PROD_MAN/mockdata.zip). Click **Download** to download the zip file of the project.
+
+![Download mock data from GitHub](t2-github-samples.png)
+
+Extract the zip file to a location of your choice. Drag the extracted folder into the `localService` folder in your app, under `**webapp**` > `**localService**`
+
 From the Visual Studio Code **Explorer** on your left, right-click your project and select **Preview Application**.
 
-From the options, you would need to select a npm script. Select `start-mock` and press **`Enter`** to preview your app with mock data.
+From the options, you will need to select a npm script. Select `start-mock` and press **`Enter`** to preview your app with mock data.
 
 !![VSCode Select npm start mock](t2-select-npm-start-mock.png)
 
-A new browser window opens with your List Report Object Page application running with mock data. You may now close this browser tab since you have another tab from the previous step which is running your application with real data.
+A new browser window opens with your List Report Object Page application running with mock data.
 
->For the remainder of this tutorial group, if the backend service becomes unavailable at any point, you can preview your application with mock data.
+>For the remainder of this tutorial group, if the backend service becomes unavailable at any point or you have trouble viewing data, you can preview your application with mock data.
 
 At this point, you should have the following:
 
-- A List Report Object Page Fiori elements project generated by the SAP Fiori tools Application Generator
+- A List Report Object Page SAP Fiori elements project generated by the SAP Fiori tools Application Generator
 
 - A running application using real backend data
 
