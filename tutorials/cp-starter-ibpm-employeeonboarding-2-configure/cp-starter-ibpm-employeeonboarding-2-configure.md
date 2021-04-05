@@ -133,7 +133,7 @@ In this section, you will use **SAP Business Application Studio** to import, con
 
     !![Download Sample Workflow](downloadsample.png)
 
-2. Open [SAP Cloud Platform Trial Homepage](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and choose **SAP Business Application Studio**.
+2. Open [SAP BTP Trial Homepage](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and choose **SAP Business Application Studio**.
 
     !![Launch Studio](launchbas.png)
 
@@ -152,6 +152,8 @@ In this section, you will use **SAP Business Application Studio** to import, con
     !![Start Workspace](startspace.png)
 
     !![Open Workspace](openworkspace.png)
+
+    > Some File menu options might not appear as they are not relevant if you are opening the workspace for the first time without any projects.
 
 4. Drag and drop the extracted **cf-onboarding-sample** project in the dialog and click **Open**.
 

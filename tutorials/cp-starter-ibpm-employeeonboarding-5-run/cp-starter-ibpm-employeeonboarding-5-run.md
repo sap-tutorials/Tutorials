@@ -162,7 +162,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 [ACCORDION-BEGIN [Step 7: ](View process visibility workspace for completed workflow)]
 
-1. In the Workflow Management Fiori launchpad, choose **Monitor Scenarios** to process the new set of events.
+1. In the Workflow Management Fiori launchpad, choose **Monitor Visibility Scenarios** to process the new set of events.
 
     !![See Processed data](processeddata_2.png)
 

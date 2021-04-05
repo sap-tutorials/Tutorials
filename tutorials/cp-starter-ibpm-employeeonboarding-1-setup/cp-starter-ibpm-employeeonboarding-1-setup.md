@@ -29,7 +29,7 @@ User can use Workflow, Business Rules, Process Visibility and Process Flexibilit
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open trial account)]
-1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
