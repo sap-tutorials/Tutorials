@@ -166,7 +166,7 @@ This grant type works in the following way: In a first call, the API client prov
 
     !![Discover](016.png)
 
-2. In the search field, Search for **Connect to SAP Cloud Platform services** and Choose package **Connect to SAP Cloud Platform services**.
+2. Search for the package **Connect to SAP Business Technology Platform Services**. Choose the package.
 
     !![choose API](017.png)
 

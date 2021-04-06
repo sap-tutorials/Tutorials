@@ -10,11 +10,11 @@ primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites
- - Either [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-odata-service-cloud-foundry.html) or [Connect to OData service on Neo using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-odata-service-neo.html)
- - [Introduce resilience to your application](https://developers.sap.com/tutorials/s4sdk-resilience.html)
+ - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
+ - [Introduce resilience to your application](s4sdk-resilience)
 
 
-## Details
+## Details≤
 ### You will learn
   - What is mocking
   - Why mocking is useful
@@ -54,7 +54,7 @@ You will learn three basic mocking principles that should empower you with all t
 - Mocking the failure path: Return an error thrown by the business partner API without an S/4HANA system.
 
 ### Mocking the happy path
-Let´s start with a very simple example of a `GetBusinessPartnersCommand` which retrieves all business partner´s first and last names that are customers. If you did all the tutorials at least until [Introduce Resilience to your Application](https://developers.sap.com/tutorials/s4sdk-resilience.html), the code should be very familiar to you.
+Let´s start with a very simple example of a `GetBusinessPartnersCommand` which retrieves all business partner´s first and last names that are customers. If you did all the tutorials at least until [Introduce Resilience to your Application](s4sdk-resilience), the code should be very familiar to you.
 
 The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory.
 
@@ -67,7 +67,7 @@ import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceDecorator;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
-import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
+import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
 
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
@@ -99,7 +99,7 @@ public class GetBusinessPartnersCommand {
                     .filter(BusinessPartner.CUSTOMER.ne(""))
                     .select(BusinessPartner.FIRST_NAME,
                             BusinessPartner.LAST_NAME)
-                    .execute(httpDestination);
+                    .executeRequest(httpDestination);
 
         } catch (ODataException e) {
             throw new ResilienceRuntimeException(e);
@@ -118,7 +118,7 @@ Unlike previous tutorials, you do not want to test this now against a real S/4HA
 For this, you put the following test file called `GetBusinessPartnerMockedTest` under `<projectroot>/unit-tests/src/test/java/com/sap/cloud/sdk/tutorial`.
 
 ```Java
-import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
+import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
 import com.google.common.collect.Lists;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -147,7 +147,7 @@ public class GetBusinessPartnerMockedTest {
         when(service.getAllBusinessPartner()
                 .filter(any())
                 .select(any())
-                .execute(any()))
+                .executeRequest(any()))
                 .thenReturn(Lists.newArrayList(alice, bob));
 
         final List<BusinessPartner> businessPartnerList = new GetBusinessPartnersCommand(httpDestination, service).execute();
@@ -197,7 +197,7 @@ public void testGetSpecificBusinessPartner() throws Exception {
     when(service.getAllBusinessPartner()
             .filter(BusinessPartner.CUSTOMER.ne(""))
             .select(any(BusinessPartnerSelectable.class))
-            .execute(any(HttpDestination.class)))
+            .executeRequest(any(HttpDestination.class)))
             .thenReturn(Lists.newArrayList(alice));
 
     final List<BusinessPartner> businessPartnerList = new GetBusinessPartnersCommand(httpDestination, service).execute();
@@ -227,8 +227,8 @@ public void testGetBusinessPartnerFailure() throws Exception {
     when(service.getAllBusinessPartner()
             .filter(any())
             .select(any())
-            .execute(any()))
-            .thenThrow(new ODataException(ODataExceptionType.METADATA_FETCH_FAILED, "Something went wrong", null));
+            .executeRequest(any()))
+            .thenThrow(new ODataException(null, "Something went wrong", null));
 
     new GetBusinessPartnersCommand(httpDestination, service).execute();
 }
@@ -251,11 +251,9 @@ package com.sap.cloud.sdk.tutorial;
 
 import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
-import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
+import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
 
 import com.google.common.collect.Lists;
-
-import com.sap.cloud.sdk.odatav2.connectivity.ODataExceptionType;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -294,7 +292,7 @@ public class GetBusinessPartnerMockedTest {
         when(service.getAllBusinessPartner()
                 .filter(any())
                 .select(any())
-                .execute(any()))
+                .executeRequest(any()))
                 .thenReturn(Lists.newArrayList(alice, bob));
 
         final List<BusinessPartner> businessPartnerList = new GetBusinessPartnersCommand(httpDestination, service).execute();
@@ -311,7 +309,7 @@ public class GetBusinessPartnerMockedTest {
         when(service.getAllBusinessPartner()
                 .filter(BusinessPartner.CUSTOMER.ne(""))
                 .select(any(BusinessPartnerSelectable.class))
-                .execute(any(HttpDestination.class)))
+                .executeRequest(any(HttpDestination.class)))
                 .thenReturn(Lists.newArrayList(alice));
 
         final List<BusinessPartner> businessPartnerList = new GetBusinessPartnersCommand(httpDestination, service).execute();
@@ -328,8 +326,8 @@ public class GetBusinessPartnerMockedTest {
         when(service.getAllBusinessPartner()
                 .filter(any())
                 .select(any())
-                .execute(any()))
-                .thenThrow(new ODataException(ODataExceptionType.METADATA_FETCH_FAILED, "Something went wrong", null));
+                .executeRequest(any()))
+                .thenThrow(new ODataException(null, "Something went wrong", null));
 
         new GetBusinessPartnersCommand(httpDestination, service).execute();
     }

@@ -3,13 +3,13 @@ title: Create A New Welcome Card
 description: Create your first SAP Mobile Card using SAP Business Technology Platform Boosters.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
-tags: [  tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [  tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-cards, products>sap-mobile-services ]
 time: 10
 author_name: Chetali Shah
 author_profile: https://github.com/shahchetali
 ---
 ## Prerequisites
-- [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+- [Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
 
 ## Details
 ### You will learn
@@ -35,7 +35,7 @@ SAP Mobile Cards can be created in multiple ways. In this step, you will create 
 
 2. Provide the login details and click **Log On**.
 
-    !![SCP Log On Screen](img_2_0.png)
+    !![SAP BTP Log On Screen](img_2_0.png)
 
 3. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
@@ -47,7 +47,7 @@ SAP Mobile Cards can be created in multiple ways. In this step, you will create 
 
     >Choose **Continue**.
 
-    >!![Enable SCP CF Trial](img_2_1_note.png)
+    >!![Enable SAP BTP CF Trial](img_2_1_note.png)
 
 4. In the side navigation bar, click **Boosters**.
 
