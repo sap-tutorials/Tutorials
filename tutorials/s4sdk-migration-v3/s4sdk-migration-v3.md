@@ -8,8 +8,8 @@ primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites
- - You already have a basic understanding of how applications with the Cloud SDK are developed. If you are new to the Cloud SDK take a look at [how to create a sample application](https://developers.sap.com/group.s4sdk-cloud-foundry.html).
- - You have the necessary development tools (JDK, maven and git) already installed. Take a look at [how to set up your machine](https://developers.sap.com/tutorials/s4sdk-setup.html) for details on how to install them.
+ - You already have a basic understanding of how applications with the Cloud SDK are developed. If you are new to the Cloud SDK take a look at [how to create a sample application](group.s4sdk-cloud-foundry).
+ - You have the necessary development tools (JDK, maven and git) already installed. Take a look at [how to set up your machine](s4sdk-setup) for details on how to install them.
 
 ## Details
 ### You will learn
@@ -115,10 +115,10 @@ The statement uses the provided `service` to create a new address. Now change th
 
 ```Java
 final BusinessPartnerAddress addressCreated = service.createBusinessPartnerAddress(address)
-                    .execute(destination);
+                    .executeRequest(destination);
 ```
 
-As you can see, not much has changed. Only `execute()` now takes a destination as input. This may seem uncomfortable at first glance, since our code just got a little more complex. But in fact, the previous execute assumed a default `ErpConfigContext` with a default destination under the name `ErpQueryEndpoint` set in place. With version 3.0 both got removed to increase transparency and offer a more powerful way to specify the system a request shall run against. That is why now the destination has to be passed explicitly with a request.
+As you can see, not much has changed. Only `executeRequest()` now takes a destination as input. This may seem uncomfortable at first glance, since our code just got a little more complex. But in fact, the previous execute assumed a default `ErpConfigContext` with a default destination under the name `ErpQueryEndpoint` set in place. With version 3.0 both got removed to increase transparency and offer a more powerful way to specify the system a request shall run against. That is why now the destination has to be passed explicitly with a request.
 
 This wraps up the first step in migration which is all you need if you want to adapt simple requests. However, the code we just changed resides inside a class that made the execution resilient by extending `ErpCommand`. You may have already noticed that `ErpCommand` is no longer found. In fact it was removed in version 3.0 and got replaced by what is called a `ResilienceConfiguration` which we will integrate in the next step.
 
@@ -158,7 +158,7 @@ Let's see how we now can use the configuration in our requests. Again, let's fir
 
 ```Java
 final BusinessPartnerAddress addressCreated = ResilienceDecorator.executeCallable(
-                    () -> service.createBusinessPartnerAddress(address).execute(destination),
+                    () -> service.createBusinessPartnerAddress(address).executeRequest(destination),
                     resilienceConfiguration);
 ```
 
@@ -170,10 +170,10 @@ So let's put together the individual pieces and adapt the complete request.
     ```Java
     private final ErpHttpDestination destination = ErpHttpDestinationUtils.getErpHttpDestination("ERP_SYSTEM");
     ```
-2. In `AddressServlet` navigate to the `CreateAddressCommand(service, address).execute()` call inside `doPost()` and replace it to now use the resilience configuration:
+2. In `AddressServlet` navigate to the `CreateAddressCommand(service, address).executeRequest()` call inside `doPost()` and replace it to now use the resilience configuration:
     ```Java
     final BusinessPartnerAddress addressCreated = ResilienceDecorator.executeCallable(
-                    () -> service.createBusinessPartnerAddress(address).execute(destination),
+                    () -> service.createBusinessPartnerAddress(address).executeRequest(destination),
                     resilienceConfiguration);
     ```
 3. Last but not least remove the `CreateAddressCommand` class altogether.
@@ -237,7 +237,7 @@ public class AddressServlet extends HttpServlet {
        logger.info("Received post request to create address {}", address);
        try {
          final BusinessPartnerAddress addressCreated = ResilienceDecorator.executeCallable(
-                         () -> service.createBusinessPartnerAddress(address).execute(destination),
+                         () -> service.createBusinessPartnerAddress(address).executeRequest(destination),
                          resilienceConfiguration);
            response.setStatus(HttpServletResponse.SC_CREATED);
            response.setContentType("application/json");
@@ -258,7 +258,7 @@ public class AddressServlet extends HttpServlet {
        logger.info("Received patch request to update address {}", addressToUpdate);
        try {
          ResilienceDecorator.executeCallable(
-                         () -> service.updateBusinessPartnerAddress(addressToUpdate).execute(destination),
+                         () -> service.updateBusinessPartnerAddress(addressToUpdate).executeRequest(destination),
                         resilienceConfiguration);
 
            response.setStatus(HttpServletResponse.SC_NO_CONTENT);
@@ -280,7 +280,7 @@ public class AddressServlet extends HttpServlet {
                .build();
        try {
          ResilienceDecorator.executeCallable(
-                         () -> service.deleteBusinessPartnerAddress(addressToDelete).execute(destination),
+                         () -> service.deleteBusinessPartnerAddress(addressToDelete).executeRequest(destination),
                          resilienceConfiguration);
 
            response.setStatus(HttpServletResponse.SC_NO_CONTENT);
@@ -312,7 +312,7 @@ import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration.TimeLimiterConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration.CacheConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceDecorator;
-import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
+import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
 
 import com.sap.cloud.sdk.s4hana.connectivity.ErpHttpDestination;
 import com.sap.cloud.sdk.s4hana.connectivity.ErpHttpDestinationUtils;
@@ -372,7 +372,7 @@ public class GetSingleBusinessPartnerByIdCommand {
                                 BusinessPartnerAddress.CITY_NAME,
                                 BusinessPartnerAddress.STREET_NAME,
                                 BusinessPartnerAddress.HOUSE_NUMBER))
-                .execute(destination);
+                .executeRequest(destination);
     }
 }
 ```
@@ -451,7 +451,7 @@ return when(service
                 .select(any(BusinessPartnerSelectable.class))
                 .filter(BusinessPartner.BUSINESS_PARTNER_CATEGORY.eq("1"))
                 .orderBy(BusinessPartner.LAST_NAME, Order.ASC)
-                .execute(any()));
+                .executeRequest(any()));
 ```
 
 The `any()` expression inside `execute` allows any destination to be passed but you could also pass a specific destination here to test the correct destination is passed in your code.
@@ -491,7 +491,7 @@ We'll now proceed with changing the integration tests and go trough the necessar
         final BusinessPartnerService service = new DefaultBusinessPartnerService();
         final ErpHttpDestination destination = ErpHttpDestinationUtils.getErpHttpDestination("ERP_SYSTEM");
         return ResilienceDecorator.executeCallable(
-                () -> service.getBusinessPartnerAddressByKey(bupaId,addressId).execute(destination),
+                () -> service.getBusinessPartnerAddressByKey(bupaId,addressId).executeRequest(destination),
                 ResilienceConfiguration.of(AddressServletTest.class),
                 e ->  null
         );
@@ -554,7 +554,7 @@ import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration.CacheC
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration.TimeLimiterConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceDecorator;
 import com.sap.cloud.sdk.datamodel.odata.helper.Order;
-import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
+import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
 
 import com.sap.cloud.sdk.s4hana.connectivity.ErpHttpDestination;
 import com.sap.cloud.sdk.s4hana.connectivity.ErpHttpDestinationUtils;
@@ -601,7 +601,7 @@ public class GetAllBusinessPartnersCommand {
                         BusinessPartner.FIRST_NAME)
                 .filter(BusinessPartner.BUSINESS_PARTNER_CATEGORY.eq(CATEGORY_PERSON))
                 .orderBy(BusinessPartner.LAST_NAME, Order.ASC)
-                .execute(destination);
+                .executeRequest(destination);
     }
 }
 ```
