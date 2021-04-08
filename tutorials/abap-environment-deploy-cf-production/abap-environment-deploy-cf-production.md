@@ -187,7 +187,7 @@ author_profile: https://github.com/mervey45
 
      Click **Next >**.
 
-    ![object](studio21.png)
+    ![object](attribute.png)
 
     **HINT:** Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
 
@@ -201,7 +201,7 @@ author_profile: https://github.com/mervey45
        - Transport Request: `<your_transport_request>`
        - Deployment description: deployment xxx
 
-      !![app](new2.png)
+      !![app](attribute2.png)
 
       Click **Next >**.
 
@@ -334,7 +334,7 @@ author_profile: https://github.com/mervey45
       ![iam](iam5.png)
 
   6. Select following:
-      - Service Type: `OData V2`
+      - Service Type: `OData IWSG`
       - Service Name: `ZUI_C_TRAVEL_M_XXX_0001`    
 
       ![iam](iam6.png)
