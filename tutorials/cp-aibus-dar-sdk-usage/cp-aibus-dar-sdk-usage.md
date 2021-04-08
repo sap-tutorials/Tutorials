@@ -23,10 +23,10 @@ First, you need to download the dataset used in this tutorial. The dataset can b
 
 Make sure that you are in your virtual environment as explained in [Setup SDK for Data Attribute Recommendation](cp-aibus-dar-sdk-setup). Now enter the following command to download the dataset from the repository:
 ```shell
-curl -o bestBuy.csv "https://raw.githubusercontent.com/SAP-samples/data-attribute-recommendation-postman-tutorial-sample/master/Tutorial_Example_Dataset.csv"
+curl -o bestBuy.csv "https://raw.githubusercontent.com/SAP-samples/data-attribute-recommendation-postman-tutorial/main/Tutorial_Example_Dataset.csv"
 ```
 
-The dataset is then saved as `bestBuy.csv`. 
+The dataset is then saved as `bestBuy.csv`.
 
 [OPTION BEGIN [Windows]]
 

@@ -1,6 +1,6 @@
 ---
 title: Test the Connection to the Remote System
-description: You will test your connection by calling a BAPI via RFC.
+description: Test your connection by calling a BAPI via RFC.
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
@@ -11,7 +11,7 @@ author_profile: https://github.com/julieplummer20
 
 ## Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
-- **IMPORTANT**: This tutorial is part of the mission [Connect Your On-Premise System with SAP Business Technology Platform, ABAP Environment](mission.abap-env-connect-onpremise.html). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work
+- **IMPORTANT**: This tutorial is part of the mission [Connect Your On-Premise System with SAP BTP, ABAP Environment](mission.abap-env-connect-onpremise). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work
 
 ## Details
 ### You will learn

@@ -95,7 +95,7 @@ The tracking number is based on one of UPS's standards: 18 characters with const
 5. Enter the following regular expression:
 
     ```Regex
-    \b(1Z[0-9A-Z]{6}[\d]{10})\b    
+    \b(1Z[0-9A-Z]{6}[\d]{10})\b
     ```
 
     >This defines only one kind of UPS tracking number, and is a simple regex that does not distinguish between the parts of the tracking number.
