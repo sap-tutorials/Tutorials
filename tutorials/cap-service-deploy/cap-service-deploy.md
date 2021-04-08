@@ -31,25 +31,7 @@ It's now time to switch to SAP HANA as a database.
 cds add hana
 ```
 > This configures deployment for SAP HANA to use the `hdbtable` and `hdbview` formats. The previous command added the `@sap/hana-client` driver for SAP HANA as a dependency in `package.json`. Note that in the future, this might change to `hdb`, which is a leaner driver. See section [SAP Support for `hdb` and `@sap/hana-client`](https://www.npmjs.com/package/hdb#sap-support-for-hdb-and-saphana-client) for a feature comparison.
->  A data source of type `sql` is added in the `cds.requires.db` block. See section [Node.js configuration](https://cap.cloud.sap/docs/node.js/cds-env#profiles) in the CAP documentation for more details.
-
-3. (Optional) To enable SAP Fiori preview add the following configuration in the `package.json` of your `my-bookshop` project in VS Code:
-
-```JSON
-"cds": {
-  "features": {
-    "fiori_preview": true
-  },
-}
-```
-
-> `fiori_preview:true` enables SAP Fiori preview also in `production` mode as you saw it in your local application in the previous tutorial in step 4 when using `cds watch`. This feature is meant to help you during development and should not be used in productive applications.
-
-> Don't edit the `gen/db/package.json` file.
-
-[DONE]
-
-[ACCORDION-END]
+> A data source of type `sql` is added in the `cds.requires.db` block. See section [Node.js configuration](https://cap.cloud.sap/docs/node.js/cds-env#profiles) in the CAP documentation for more details.
 
 3. (Optional) To enable SAP Fiori preview add the following configuration in the `package.json` of your `my-bookshop` project in VS Code:
 
@@ -65,7 +47,9 @@ cds add hana
 
     > Don't edit the `gen/db/package.json` file.
 
+[DONE]
 
+[ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 2: ](Identify SAP BTP Cloud Foundry endpoint)]
@@ -86,14 +70,16 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP BT
 
 4. Go back to Visual Studio Code to the command line. Authenticate with your login credentials using the following command:
 
-```Shell/Bash
-cf login
-```
-> This will ask you to select Cloud Foundry API, org, and space.
+    ```Shell/Bash
+    cf login
+    ```
 
-> The API Endpoint is taken by default. If you want to change the API Endpoint use `cf api <CF_API_ENDPOINT>` to change the API. Replace `<CF_API_ENDPOINT>` with the actual value you obtained in the previous step.
 
-> If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a terminal to find out.
+    > This will ask you to select Cloud Foundry API, org, and space.
+
+    > The API Endpoint is taken by default. If you want to change the API Endpoint use `cf api <CF_API_ENDPOINT>` to change the API. Replace `<CF_API_ENDPOINT>` with the actual value you obtained in the previous step.
+
+    > If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a terminal to find out.
 
 [DONE]
 [ACCORDION-END]
@@ -138,7 +124,7 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
     routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
     ```
 
-4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA. If enabled in step 1 you can also try the **Fiori preview**.
+4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA. If enabled in step 1.3 you can also try the **Fiori preview**.
 
     !![application preview](application_cloud_fiori.png)
 
@@ -172,14 +158,13 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
 
 3. In the deploy log, find the application URL in the `routes` line at the end:
 
-        ```Shell/Bash
-        name:              my-bookshop-srv
-        requested state:   started
-        isolation segment: trial
-        routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
-        ```
+    ```Shell/Bash
+    name:              my-bookshop-srv
+    requested state:   started
+    routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
+    ```
 
-4. Open this URL in your browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA. If enabled in step 1 you can also try the **Fiori preview**.
+4. Open this URL in your browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA. If enabled in step 1.3 you can also try the **Fiori preview**.
 
     !![application preview](application_cloud_fiori.png)
 
