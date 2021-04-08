@@ -23,7 +23,7 @@ Add a new view to display a list of products. For this, you can use another `eas
 **Open** a new terminal session, to keep local web server running, and execute:
 
 ```Terminal
-yo easy-ui5:newview
+yo easy-ui5 project newview
 ```
 
 |  Parameter     | Value
@@ -99,7 +99,7 @@ To populate the list with items, bind a data source to the application. For this
 > You can find a list of all available sub-generator on [GitHub](https://github.com/SAP/generator-easy-ui5/#sub-generators-to-avoid-recurring-tasks)
 
 ```Terminal
-yo easy-ui5:newmodel
+yo easy-ui5 project newmodel
 ```
 
 
@@ -113,7 +113,7 @@ yo easy-ui5:newmodel
 
 Again, please accept the modification of the manifest file.
 
-> The generator will name the data source based on the URL you specified. You can replace the name in the `manifest.yaml` if you don't like it.
+> The generator will name the data source based on the URL you specified. You can replace the name in the `manifest.json` if you don't like it.
 
 
 [DONE]
@@ -179,7 +179,7 @@ In this step, you will add a detail page that shows some additional information.
 
 1. Switch back to the second terminal session and run the same sub-generator as before.
     ```Terminal
-    yo easy-ui5:newview
+    yo easy-ui5 project newview
     ```
 
     |  Parameter     | Value

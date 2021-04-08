@@ -8,7 +8,7 @@ primary_tag: products>sap-cloud-platform-launchpad
 ---
 
 ## Prerequisites
- - Install at least version 1.3.1 of the [easy-ui5 generator](cp-cf-sapui5-local-setup)
+ - Install at least version 3.0.0 of the [easy-ui5 generator](cp-cf-sapui5-local-setup)
 
 ## Details
 ### You will learn
@@ -19,21 +19,11 @@ primary_tag: products>sap-cloud-platform-launchpad
 ---
 
 
-<!-- [ACCORDION-BEGIN [Step : ](Verify installation)]
-
-`npx check-sap-cloud-readiness -tutorial-sapui5-fiori-cf`
-Should be all-green.
-update if necessary -->
-
-
-<!-- [DONE]
-[ACCORDION-END] -->
-
 [ACCORDION-BEGIN [Step : ](Scaffold a SAPUI5 project)]
 
 Run the following command to trigger the creation of a new project.
 ```Terminal
-yo easy-ui5
+yo easy-ui5 project
 ```
 
 
@@ -42,11 +32,11 @@ Choose the following responses for the prompted parameters.
 
 |  Parameter     | Value
 |  :------------- | :-------------
+|  What do you want to do?          | **`Create a new OpenUI5/SAPUI5 project [app]`**
 |  How do you want to name this project?          | **`products`**
 |  Which namespace do you want to use?    | **`tutorial`**
 |  On which platform would you like to host the application | **`SAP Launchpad service`**
 |  Which view type do you want to use? | **`XML`**
-|  How do you want to name your main view? | **`MainView`**
 |  Where should your UI5 libs be served from?            | **`Content delivery network (SAPUI5)`**
 |  Would you like to create a new directory for the project?    | **`Yes`**
 |  What name should be displayed on the Fiori Launchpad tile| **`Products`**
@@ -105,7 +95,7 @@ npm start
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Modify the title)]
 
-**Open** the i18n file [`webapp/i18n/i18n_en.properties`](https://sapui5.hana.ondemand.com/#/topic/91f217c46f4d1014b6dd926db0e91070). **Replace** the content of this file with the following content.
+**Open** the i18n file [`uimodule/webapp/i18n/i18n_en.properties`](https://sapui5.hana.ondemand.com/#/topic/91f217c46f4d1014b6dd926db0e91070). **Replace** the content of this file with the following content.
 ```TEXT
 title=Coming soon!
 appTitle=Product List
