@@ -4,7 +4,7 @@ description: After you set up the environment, use the generator to bootstrap a 
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, topic>user-interface, topic>html5, topic>cloud]
-primary_tag: products>sap-cloud-platform-launchpad
+primary_tag:  products>sap-launchpad-service
 ---
 
 ## Prerequisites

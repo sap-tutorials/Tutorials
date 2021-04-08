@@ -3,7 +3,7 @@ title: Display Data from the Northwind Service
 description: Learn how to add new views, to display more data, and how to navigate between them.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>sapui5,  products>sap-cloud-platform-launchpad, products>sap-fiori, topic>user-interface, topic>html5, topic>cloud]
+tags: [ tutorial>beginner, topic>sapui5, products>sap-launchpad-service, products>sap-fiori, topic>user-interface, topic>html5, topic>cloud]
 primary_tag: topic>odata
 ---
 
