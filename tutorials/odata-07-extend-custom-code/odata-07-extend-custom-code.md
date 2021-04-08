@@ -138,6 +138,7 @@ module.exports = srv => {
         return items.filter(item => item.UnitsInStock > 100)
     })
 }
+```
 
 This differs from the previous step thus in a number of ways.
 
