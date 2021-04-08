@@ -3,8 +3,8 @@ title: Deploy the Fiori App to Cloud Foundry
 description: Deploy the application to the Cloud Foundry environment to be able to share it with your coworkers.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5,  products>sap-cloud-platform-launchpad, topic>user-interface, topic>html5, topic>cloud]
-primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
+tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5,   products>sap-launchpad-service, topic>user-interface, topic>html5, topic>cloud]
+primary_tag: products>sap-business-technology-platform
 ---
 
 ## Prerequisites
