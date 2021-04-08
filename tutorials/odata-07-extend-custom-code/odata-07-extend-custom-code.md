@@ -53,7 +53,7 @@ Remember that at this stage your fully functioning OData service is a result of 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step N: ](Create a service implementation)
+[ACCORDION-BEGIN [Step N: ](Create a service implementation)]
 
 Business logic in OData services belongs in a [service implementation](https://cap.cloud.sap/docs/node.js/services#srv-impls). The simplest way to do this is to create a `service.js` file in the same directory as your `service.cds` file, i.e. in the `srv/` directory. The framework will automatically recognize and use this "sibling" file.
 
@@ -121,7 +121,7 @@ Here's an example of what you should see; this data was retrieved using the syst
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step N: ](Modify the custom code)
+[ACCORDION-BEGIN [Step N: ](Modify the custom code)]
 
 That's great, but let's look now at a simple example of where we might want to change the shape of the data, or, as the documentation describes it, to make "asynchronous modifications".
 
@@ -155,7 +155,7 @@ Once you have this new implementation saved, and your service has restarted, che
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step N: ](Define a function import)
+[ACCORDION-BEGIN [Step N: ](Define a function import)]
 
 That's great, but there's more that can be done in such a service implementation file.
 
@@ -245,7 +245,7 @@ Great. Now we can get to writing the implementation of this function import.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step N: ](Implement the function import)
+[ACCORDION-BEGIN [Step N: ](Implement the function import)]
 
 The implementation of this function import might as well go in the same `srv/service.js` file as before, to keep things simple. Here's what the entire contents of the file should look like with all the additions:
 
