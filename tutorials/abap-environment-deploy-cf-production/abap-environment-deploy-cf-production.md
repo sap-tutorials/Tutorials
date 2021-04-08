@@ -417,10 +417,9 @@ author_profile: https://github.com/mervey45
 
 [DONE]
 [ACCORDION-END]
-
+ 
 
 [ACCORDION-BEGIN [Step 10: ](Test yourself)]
-Which main entity do you need to select in order to create your list report object page?
 
 [VALIDATE_1]
 [ACCORDION-END]
