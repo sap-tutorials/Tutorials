@@ -23,14 +23,16 @@ primary_tag: products>sap-hana
 
 [ACCORDION-BEGIN [Step 1: ](Install a JDK)]
 
-Ensure that you installed a Java Development Kit (JDK) and make sure it is accessible from your path.  Details on which Java versions are supported can be found in  SAP note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307) and [Oracle Java SE Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html).
+Ensure that you installed a Java Development Kit (JDK) and make sure it is accessible from your path.  Details on which Java versions are supported can be found in  SAP note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307) and [Oracle Java SE Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html).  
+
+A few options include:
 
 * [Java JDK](https://www.oracle.com/technetwork/java/javase/overview/index.html) such as [Java SE 11 (LTS)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 
 * [A SAP supported version of the `OpenJDK`](https://sap.github.io/SapMachine/#download)
 
 
-To verify that it is correctly set up, run the following:
+To verify that the JDK is correctly set up, run the following:
 
 ```Shell
 java -version
@@ -87,7 +89,7 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
 
 [ACCORDION-BEGIN [Step 3: ](Create a Java application that queries SAP HANA)]
 
-1. Create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in notepad.
+1. The following commands will create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in notepad.
 
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\HANAClientsTutorial\java
@@ -214,7 +216,7 @@ Eclipse is a popular integrated development environment (IDE) for Java applicati
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Browse SAP HANA using DBeaver)]
-`DBeaver` is free and open source database tool and can be used with the SAP HANA JDBC driver.
+`DBeaver` is a free and open source database tool and can be used with the SAP HANA JDBC driver.
 
 The following steps demonstrate how to configure it to connect to SAP HANA Cloud or SAP HANA, express edition using the JDBC driver.
 
@@ -242,7 +244,7 @@ The following steps demonstrate how to configure it to connect to SAP HANA Cloud
 
     ![Query](dbeaver-query1.png)
 
-    `DBeaver` also has the ability to view an entity relationship (ER) diagram, perform a comparison of two selected objects, import/export wizards, a spatial view for data containing location data, and two panels to aid in data analysis (grouping and `calc` panels).
+    `DBeaver` can also be used to create an entity relationship (ER) diagram, perform a comparison of two selected objects, execute import and export operations, view spatial data on a map, and perform data analysis with its grouping and `calc` panels.
 
 Congratulations! You have now created and debugged a Java application that connects to and queries an SAP HANA database and used the JDBC driver in a third party tool.
 

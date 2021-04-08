@@ -249,7 +249,7 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
 
     ![timeline](SQLAnalyzer2New.png)
 
->Refer to [Analyzing Statement Performance](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/1458a4079b294a58a57eca5823025108.html) for more information.
+>Refer to [Analyzing Statement Performance](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/1458a4079b294a58a57eca5823025108.html) and [SQL Analyzer Extension](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/50bc09af2fa549c3ace4178b61056da8.html) for more information.
 
 ---
 
