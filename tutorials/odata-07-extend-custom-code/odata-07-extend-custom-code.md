@@ -1,8 +1,9 @@
 ---
 author_name: DJ Adams
 author_profile: https://github.com/qmacro
-title: Extend the built-in OData features with custom code
-description: Learn how to customize your OData service with event handlers
+auto_validation: true
+title: Extend the Built-In OData Features with Custom Code
+description: Learn how to customize your OData service with event handlers.
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [ software-product-function>sap-business-application-studio, topic>odata, tutorial>beginner ]
 time: 20
@@ -88,7 +89,7 @@ This is how we can add custom business logic to extend the standard handling tha
 
 The use of the specific `after` API call is quite common, and allows us to jump onto the request processing flow towards the end, when the heavy lifting of data retrieval from the persistence layer has been done for us. As well as `after`, the Handler Registration API supports `before` and `on` events, but right now, `after` is what we want here.
 
-What does the function specified in this API call do? As you'd correctly guessed, it just adds a string on to the end of the value for each of the product names, specificially for the cases where the number of units in stock is high.
+What does the function specified in this API call do? As you'd correctly guessed, it just adds a string on to the end of the value for each of the product names, specifically for the cases where the number of units in stock is high.
 
 In its simplest form, the function provided is given the data retrieved, and whatever the function returns is what ends up in the response to the original request. Note, however, that in the context of the `after` API call, the handler function cannot change the "shape" of the data, such as omit specific items. We'll look at how to do that later on in this tutorial.
 
@@ -120,6 +121,10 @@ Here's an example of what you should see; this data was retrieved using the syst
 
 [DONE]
 [ACCORDION-END]
+
+
+
+
 
 [ACCORDION-BEGIN [Step N: ](Modify the custom code)]
 
@@ -182,7 +187,6 @@ service Main {
 At this point, it's worth checking to see if this has any effect on your OData service. Once the CDS file is saved, and your service has restarted, navigate to the metadata document (that's the relative path `/main/$metadata`, but you knew that already, right?). It should look something like this:
 
 ```XML
-
 <?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
   <edmx:DataServices>
@@ -244,6 +248,9 @@ Great. Now we can get to writing the implementation of this function import.
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+
+
 
 [ACCORDION-BEGIN [Step N: ](Implement the function import)]
 
@@ -324,3 +331,6 @@ That is, there are a total of 3119 stock units across all products.
 Well done! You've now successfully implemented an OData V4 unbound function, and hopefully feel comfortable enough to implement your own custom business logic for your CAP-powered OData services.
 
 [DONE]
+[ACCORDION-END]
+
+---
