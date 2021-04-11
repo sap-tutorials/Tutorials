@@ -2,7 +2,7 @@
 title: Set Up Your Local Infrastructure to Develop with SAP Cloud SDK
 description: Set up your system to create an SAP Cloud Platform application with the SAP Cloud SDK.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-business-technology-platform, topic>cloud, topic>java ]
 primary_tag: products>sap-cloud-sdk
 time: 10
 ---
