@@ -301,7 +301,6 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 
 [ACCORDION-BEGIN [Step 5: ](Test yourself)]
-Which ABAP repository object offers you the option to open your SAP Fiori Elements App Preview?
 
 [VALIDATE_1]
 [ACCORDION-END]
