@@ -32,29 +32,29 @@ The ODBC Data Source Administrator lists the ODBC drivers installed and the conf
 
 2. Click the **Drivers** tab and view the installed drivers.  
 
-    ![odbc-admin-drivers](drivers.png)
+    ![odbc admin drivers](drivers.png)
 
-    The SAP HANA ODBC driver (HDBODBC) will appear.  
+    The SAP HANA ODBC driver (HDBODBC) can be seen.  
 
 3. Click the **User DSN** tab to view the data sources.  
 
 4. Click **Add** to create a new data source to connect to a SAP HANA database.  
 
-    ![Add-ODBC-user-data-source](ODBC-add.png)  
+    ![Add ODBC user data source](ODBC-add.png)  
 
 5. Select **`HDBODBC`** and click **Finish**.
 
-    ![New-Data-Source](Create-new-data-source.png)
+    ![New data source](Create-new-data-source.png)
 
 6. Example data source configuration for SAP HANA Cloud.   
 
-    ![ODBC-HANA-Cloud](ODBC-HC.png)  
+    ![ODBC HANA Cloud](ODBC-HC.png)  
 
     To connect to SAP HANA Cloud, **Multitenant** can be unchecked and the **Validate TLS/SSL certificate** option must be checked.
 
 7. Example data source configuration for SAP HANA, express edition.    
 
-    ![ODBC-HXE](ODBC-HXE.png)  
+    ![ODBC HXE](ODBC-HXE.png)  
 
     To connect to SAP HANA, express edition, **Multitenant** should be checked and the **Validate TLS/SSL certificate** option can be unchecked.  For more information on this topic, see [How to Configure TLS/SSL in SAP HANA 2.0](https://blogs.sap.com/2018/11/13/how-to-configure-tlsssl-in-sap-hana-2.0/).  
 
@@ -69,7 +69,7 @@ The ODBC Data Source Administrator lists the ODBC drivers installed and the conf
     > Note that the saved values can also be viewed using the Microsoft Windows registry editor under the key `Computer\HKEY_CURRENT_USER\Software\ODBC\ODBC.INI`.
 
 
-For additional details see [ODBC Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/2.7/en-US/7cab593774474f2f8db335710b2f5c50.html).
+For additional details see [ODBC Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/7cab593774474f2f8db335710b2f5c50.html).
 
 [DONE]
 [ACCORDION-END]

@@ -26,13 +26,13 @@ For additional details on SAP HANA smart data access (SDA) and SAP HANA Smart Da
 
 >Note that this tutorial requires more than one database to complete.  It is not necessary to complete this tutorial to continue to the next tutorial in this group.  
 
->The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, express edition database to an SAP HANA Cloud trial database.  The example in step 2 demonstrates a connection from an SAP HANA Cloud trial database to an SAP HANA Cloud, data lake.  The example in step 3 demonstrates connecting from SAP HANA Cloud, database (non-trial) via the  Cloud Connector to an SAP HANA, express edition database.    
+>The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, express edition database to an SAP HANA Cloud database.  The example in step 2 demonstrates a connection from an SAP HANA Cloud database to an SAP HANA Cloud, data lake.  The example in step 3 demonstrates connecting from SAP HANA Cloud, database via the Cloud Connector to an SAP HANA, express edition database.    
 
 >Note that the SAP HANA Cloud trial is limited to creating one SAP HANA database per trial account.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Connect from SAP HANA, express edition to SAP HANA Cloud trial)]
+[ACCORDION-BEGIN [Step 1: ](Connect from SAP HANA, express edition to SAP HANA Cloud database)]
 
 1. From the SAP HANA Cloud cockpit, open the SAP HANA database explorer and execute the following SQL statements to create the `tourist_reviews` table.
 
@@ -49,7 +49,7 @@ For additional details on SAP HANA smart data access (SDA) and SAP HANA Smart Da
         review_date DATE NOT NULL,
         destination_id INTEGER,
         destination_rating INTEGER,
-        review CHAR(500) NOT NULL
+        review VARCHAR(500) NOT NULL
     );
 
     INSERT INTO HOTEL.TOURIST_REVIEWS(review_date, destination_id, destination_rating, review) VALUES('2019-03-15', 1, 5, 'We had a great day swimming at the beach and exploring the beach front shops.  We will for sure be back next summer.');
@@ -199,7 +199,9 @@ A benefit of a virtual table is that there is no data movement.  There is only o
     END');
     ```
 
-    For additional details consult [Creating a Data Lake Table](https://help.sap.com/viewer/071308868de34b289a6b1553b8cc37b9/cloud/en-US/d78a08b242274b36bb276b7096f6c35b.html).
+    For additional details consult [CREATE TABLE Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a619764084f21015b8039a8346dc622c.html) and [Data Lake IQ (HANA DB-Managed)](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/c87622a7c7a54f32be816faa3b64fa0f.html).
+
+    >Note that as of April 2021, it is possible to directly connect to a data lake IQ and execute the create statement without the use of the REMOTE_EXECUTE procedure.
 
 3. Notice that under remote sources, there is a connection named `SYSRDL#CG_SOURCE`.  This is the remote source for the SAP HANA Cloud, data lake that is associated with the SAP HANA Cloud instance.
 
