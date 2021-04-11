@@ -3,8 +3,8 @@ title: Map Fields Between Open Connectors and HubSpot
 description: Use Common Resources templates to map fields from multiple sources to a single field in Open Connectors.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, products>sap-cloud-platform]
-primary_tag: products>sap-api-management
+tags: [ tutorial>intermediate, products>sap-business-technology-platform]
+primary_tag: products>sap-integration-suite
 ---
 
 ## Details
