@@ -157,12 +157,12 @@ But don't worry -- just one more step and then you can play around with it.
 
 5. Open your newly created strategy.
 
-6. Under **Objectives**, drag and drop the objective **Products from Several Sources** onto the canvas for modeling your strategy, under the shopping cart.
+6. Under **Templates**, drag and drop the template **Products from Several Sources** onto the canvas for modeling your strategy, under the shopping cart.
 
 7. Drag and drop the source **Hamburg (Store)** and the Source List **DCs in Germany** into the first box.
-The order of the sources determines their priority within the sourcing. That means the source with the highest priority is the store in Hamburg. Depending on rules or filters this prioritization can change.
+The order of the sources determines their priority within the sourcing. That means the source with the highest priority is the store in Hamburg. Depending on goals or filters this prioritization can change.
 
-8. Drag and drop the rule **Shortest Distance to Destination** into the second box.
+8. Drag and drop the goal **Shortest Distance to Destination** into the second box.
 
 9. Save your strategy.
 
@@ -208,7 +208,7 @@ Let's check if this is the case:
 
 - [Official Product Documentation](https://help.sap.com/viewer/product/SAP_CUSTOMER_ORDER_SOURCING/Cloud/en-US)
 - [Trial Documentation](https://help.sap.com/viewer/DRAFT/cd03af1a94a440f1b5dbc0dc50a0989b/Cloud/en-US)
-- [How does the Rule "Shortest Distance to Destination" work?](https://help.sap.com/viewer/a8094e21e0ed43b39ad79ade28eefabb/Cloud/en-US/a96a37284b5142ee968e9c9392304920.html)
+- [How does the Goal "Shortest Distance to Destination" work?](https://help.sap.com/viewer/a8094e21e0ed43b39ad79ade28eefabb/Cloud/en-US/a96a37284b5142ee968e9c9392304920.html)
 - [API Reference Documentation](https://help.sap.com/viewer/59d653d22328437c9e0817340181b896/Cloud/en-US)
 - [SAP Customer Order Sourcing on the SAP API Business Hub](https://api.sap.com/package/CustomerOrderSourcing?section=Artifacts)
 - [Additional information on how to configure Environments on the API Business Hub](https://help.sap.com/viewer/84b35b9c39b247e3ba2a31f02beee46d/Cloud/en-US/f7796baaef6a48e9867298827f5028ff.html)
