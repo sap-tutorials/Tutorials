@@ -46,7 +46,7 @@ author_profile: https://github.com/mervey45
 
       ![assign role collection](bas3.png)
 
-      HINT: If you are using a licensed system, make sure you have the trust administrator role assigned to your user.
+      **HINT:** If you are using a licensed system, make sure you have the trust administrator role assigned to your user.
 
   4. Enter your e-mail address and click **Show Assignments**.
 
@@ -146,19 +146,23 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 4: ](Create list report object page)]
 
-  1. Select **Start from template**.
+  1. Select **View** > **Find Command**.
 
-    ![object](studiotemplate.png)
+    ![object](view.png)
 
-  2. Select **SAP Fiori application** and click **Start >**.
+  2. Select **Fiori: Open Application Generator**.  
+
+    ![object](view2.png)
+
+  3. Select **SAP Fiori application** and click **Start >**.
 
     ![object](studio17.png)
 
-  3. Select **List Report Object Page** and click **Next >**.
+  4. Select **List Report Object Page** and click **Next >**.
 
     ![object](studio18.png)
 
-  4. Configure data source, system and service:
+  5. Configure data source, system and service:
      - Data source: **Connect to an SAP System**
      - System: **`ABAP Environment on SAP Business Technology Platform`**
      - ABAP Environment: **`default_abap-trial`**
@@ -170,20 +174,53 @@ author_profile: https://github.com/mervey45
 
      A destination for the `abap-trial` service instance is generated automatically.
 
-  5. Select your main entity **`TravelProcessor`** and click **Next >**.
+  6. Select your main entity **`TravelProcessor`** and click **Next >**.
 
     ![object](studio20.png)
 
-  6. Configure project attributes:  
+  7. Configure project attributes:  
      - Name: **`ztravel_app_xxx`**
      - Title: **Travel App XXX**
      - Description: **A Fiori application.**
+     - Add deployment configuration: Yes
+     - Add FLP configuration: Yes
 
-     Click **Finish**.
+     Click **Next >**.
 
-    ![object](studio21.png)
+    ![object](attribute.png)
 
-    HINT: Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
+    **HINT:** Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
+
+  8. Configure deployment:
+
+       - Target: ABAP
+       - Is this an SAP Business Technology Platform system? Yes
+       - Target System URL: `<your_abap_system_url>`
+       - Name: `ztravel_app_xxx`
+       - Package: `ztravel_app_xxx`
+       - Transport Request: `<your_transport_request>`
+       - Deployment description: deployment xxx
+
+      !![app](attribute2.png)
+
+      Click **Next >**.
+
+    >**HINT: If you want to copy your transport request, please do following:**  Open Eclipse, search your package **`ZTRAVEL_APP_XXX`** and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your **transport request** underneath the **Modifiable** folder.
+    >      ![deploy](deploy3.png)
+
+  9. Configure Fiori Launchpad:
+
+       - Semantic Object: `ztravel_app_xxx`
+       - Action: display
+       - Title: Travel App XXX
+
+      !![app](new3.png)
+
+      Click **Finish**.
+
+ 10. Now all files have been generated.
+
+      !![app](new4.png)
 
 [DONE]
 [ACCORDION-END]
@@ -194,7 +231,7 @@ author_profile: https://github.com/mervey45
 
       ![run](studio24.png)
 
-      HINT: An alternative to run the application is to open the terminal and enter: `npm start`.
+      **HINT**: An alternative to run the application is to open the terminal and enter: `npm start`.
 
   2. Click **Open**.
 
@@ -213,30 +250,37 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 6: ](Deploy your application)]
 
-  1. Go back to SAP Business Application Studio, select projects, right-click your project **`ztravel_app_xxx`** and select **Open in Terminal**.
+1. Open the terminal and enter **`npm run deploy`** to deploy your application. When prompted, check deployment configuration and press y. Open the URL at the end of the deployment log in browser to preview the application.
 
-      ![deploy](deploy.png)
+    ![deploy](deploy5.png)
 
-  2. To add Fiori Launchpad content use this command, enter **`npx fiori add flp-config`**.
+    When the deployment is successful, you will get these two information back as a result: **UIAD details** and **deployment successful**.
 
-     Add following information:
+>**HINT: If you want to update your SAP Fiori Launchpad configuration, then you can o following steps:**
+> 1. Go back to SAP Business Application Studio, select projects, right-click your project **`ztravel_app_xxx`** and select **Open in Terminal**.
 
-       - Semantic Object: **`ztravel_app_xxx`**
+>![deploy](deploy.png)
+
+>  2. To add Fiori Launchpad content use this command, enter **`npx fiori add flp-config`**.
+
+>     Add following information:
+
+>       - Semantic Object: **`ztravel_app_xxx`**
        - Action: display
        - Title: Travel App XXX
        - Subtitle (optional): press enter
 
-       ![deploy](deploy2.png)
+>       ![deploy](deploy2.png)
 
-  3.  Open eclipse, search your package **`ZTRAVEL_APP_XXX`** and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your **transport request** underneath the **Modifiable** folder.
+> 3.  Open Eclipse, search your package **`ZTRAVEL_APP_XXX`** and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your **transport request** underneath the **Modifiable** folder.
 
-      ![deploy](deploy3.png)
+>      ![deploy](deploy3.png)
 
-  4. Go back to SAP Business Application Studio and open the terminal again. To add `deploy config` details, enter **`npx fiori add deploy-config`**.
+>  4. Go back to SAP Business Application Studio and open the terminal again. To add `deploy config` details, enter **`npx fiori add deploy-config`**.
 
-     Add following information:
+>     Add following information:
 
-      - Please choose the target: ABAP
+>      - Please choose the target: ABAP
       - Is this an SAP Business Technology Platform system?: Y
       - Destination: press enter for default
       - Is this an S/4 Cloud system? N
@@ -245,17 +289,9 @@ author_profile: https://github.com/mervey45
       - Transport Request: **`<your_transport_request>`**
       - Deployment description: `deployment xxx`
 
-      ![deploy](deploy4.png)
+>      ![deploy](deploy4.png)
 
-      The `ui5-deploy.yaml` will be generated as part of this `deploy config` command.
-
-  5. Enter **`npm run deploy`** to deploy your application.
-     When prompted, check deployment configuration and press y.
-     Open the URL at the end of the deployment log in browser to preview the application.
-
-      ![deploy](deploy5.png)
-
-      When the deployment is successful, you will get these two information back as a result: **UIAD details** and **deployment successful**.
+>      The `ui5-deploy.yaml` will be generated as part of this `deploy config` command.
 
 
 [DONE]
@@ -298,7 +334,7 @@ author_profile: https://github.com/mervey45
       ![iam](iam5.png)
 
   6. Select following:
-      - Service Type: `OData V2`
+      - Service Type: `OData IWSG`
       - Service Name: `ZUI_C_TRAVEL_M_XXX_0001`    
 
       ![iam](iam6.png)
@@ -381,10 +417,9 @@ author_profile: https://github.com/mervey45
 
 [DONE]
 [ACCORDION-END]
-
+ 
 
 [ACCORDION-BEGIN [Step 10: ](Test yourself)]
-Which main entity do you need to select in order to create your list report object page?
 
 [VALIDATE_1]
 [ACCORDION-END]

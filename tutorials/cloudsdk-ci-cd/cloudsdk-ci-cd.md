@@ -12,7 +12,7 @@ primary_tag: products>sap-cloud-sdk
 ## Prerequisites
 For getting started with Continuous Integration and Delivery (`Cx`) in your project, you need to assure the following prerequisites:
     - **Linux host with Docker**: For instantiating the Cx-server of project "Piper", you need to provide a suitable host or virtual machine with a Linux operating system and Docker installed. Please also ensure that the user with whom you start the Cx-server belongs to the Docker group.
-    - **Project sources in GitHub or Git**: Your project source files need to be available on a Git or GitHub server, which is accessible from the Cx-server host. Creating your project is explained in <https://developers.sap.com/tutorials/s4sdk-scp-neo-sample-application.html> and <https://developers.sap.com/group.s4sdk-cloud-foundry.html>.
+    - **Project sources in GitHub or Git**: Your project source files need to be available on a Git or GitHub server, which is accessible from the Cx-server host. Creating your project is explained in <https://developers.sap.com/group.s4sdk-cloud-foundry.html>.
 
 The General Purpose Pipeline of project "Piper" uses Docker images for each individual build step. Accordingly, you do not need to take care of installing any further dependencies on your host machine. All tools required for building, testing, quality checking, and deploying your applications, are dynamically retrieved in the form of Docker images.
 

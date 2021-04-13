@@ -16,6 +16,7 @@ primary_tag: topic>machine-learning
   - How to access your trial account
   - What are interactive guided boosters
   - How to use the **Set up account for Document Information Extraction** booster to assign entitlements, update your subaccount, create a service instance, subscribe to and access the Document Information Extraction Trial UI.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]

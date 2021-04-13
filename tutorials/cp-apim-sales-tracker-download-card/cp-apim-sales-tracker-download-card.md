@@ -3,8 +3,9 @@ title: Download SAP Mobile Cards to Your Device
 description: Download and register to the Mobile Cards service to consume data on an android or iOS device.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-api-management, products>sap-cloud-platform]
-primary_tag: products>sap-api-management
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-integration-suite
+---
 ---
 
 ## Prerequisites
@@ -69,7 +70,7 @@ primary_tag: products>sap-api-management
 
     ![Navigate Destination](06-create.png)
 
-    >Adds the Cloud Platform destination we just created
+    >Adds the destination we just created
 
 4. In the Destination wizard enter the following:
 
@@ -77,7 +78,7 @@ primary_tag: products>sap-api-management
 
     **Field** | **Value**
     ---- | ----
-    Type |`Cloud Platform Destination`
+    Type |` Destination`
     Platform Destination Name |`API_Portal_Trial`
     Destination Name |`API_Portal_Trial`
 

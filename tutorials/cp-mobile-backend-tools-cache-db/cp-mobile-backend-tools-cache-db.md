@@ -1,5 +1,5 @@
 ---
-title: Create a cached OData Service for improved Offline OData
+title: Create a Cached OData Service for Improved Offline OData
 description: Create and configure an SAP Mobile Services mobile back-end tools (MBT) OData service with a cache database attached to an existing web service to enhance it with delta tracking and client filter
 auto_validation: true
 primary_tag: topic>mobile

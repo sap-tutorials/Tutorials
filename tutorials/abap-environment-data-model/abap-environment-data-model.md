@@ -200,19 +200,20 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           @Consumption.valueHelpDefinition: [{entity: {name: 'I_Currency', element: 'Currency' }}]
           currency_code      as CurrencyCode,
 
-          @UI: {
-                lineItem:       [ { position: 60, importance: #HIGH },
-                                  { type: #FOR_ACTION, dataAction: 'acceptTravel', label: 'Accept Travel' } ],
-              identification: [ { position: 60, label: 'Status [O(Open)|A(Accepted)|X(Canceled)]' } ]  }
-          overall_status     as TravelStatus,
-
           @UI.identification: [ { position: 70, label: 'Remarks' } ]
           description        as Description,
 
           @UI.hidden: true
-          last_changed_at    as LastChangedAt
+          last_changed_at    as LastChangedAt,
+
+          @UI: {
+          lineItem:       [ { position: 60, importance: #HIGH },
+                            { type: #FOR_ACTION, dataAction: 'acceptTravel', label: 'Accept Travel' } ],
+          identification: [ { position: 60, label: 'Status [O(Open)|A(Accepted)|X(Canceled)]' } ]  }
+          overall_status     as TravelStatus
 
     }
+
     ```
 
   6. Save and activate.
@@ -294,26 +295,12 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      The **service binding** allows you to bind the service definition to an ODATA protocol. Therefore you are able to see the travel booking application on the UI.
 
-  5. Double-click on `TravelProcessor` to see the application on the UI.
-
-      ![Create service binding](binding5.png)
-
-  6. Logon to your ABAP system.
-
-      ![Create service binding](binding6.png)
-
-  7. Click **GO** to see your result.
-
-     Your columns are created. The annotation ensures that all columns are already selected. As you can see, buttons like, create and update are missing. Therefore you need to define your behavior definition.
-
-      ![Create service binding](binding7.png)
 
 [DONE]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 5: ](Test yourself)]
-Where can you open your SAP Fiori Elements App Preview?
 
 [VALIDATE_1]
 [ACCORDION-END]
