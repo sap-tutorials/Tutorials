@@ -57,7 +57,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 3. Select **MDK Project** and click **Start**.
 
-    !![MDK](img_2.3.png)  
+    !![MDK](img-2.3.png)  
 
 4. In *Basic Information* step, select or provide the below information and click **Next**:
 
@@ -200,20 +200,22 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     You should see **Deploy succeeded** message.
 
-    !![MDK](img_5.4.png)
+    !![MDK](img-5.4.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Populate the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 6: ](Display the QR code for app onboarding)]
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
+Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
 !![MDK](img-6.1.png)
 
 !![MDK](img_6.2.png)
+
+>Leave the Onboarding dialog box open for step 7.
 
 [DONE]
 [ACCORDION-END]
@@ -226,7 +228,7 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 1. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-2. Once you accept the App update, a message should show **Push Notification Registered**. Click **OK**.
+2. Once you accept the App update, a message should show **Push Notification registered**. Click **OK**.
 
     ![MDK](img_7.1.png)
 
@@ -260,7 +262,7 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
     !![MDK](img_7.8.png)
 
-3. If push registration is successful, a message should show **Push Notification Registered**. Click **OK**.
+3. If push registration is successful, a message should show **Push Notification registered**. Click **OK**.
 
     !![MDK](img_7.9.png)
 
@@ -294,11 +296,11 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 ---
 
-Congratulations, you have successfully implemented Enable Push Notifications in the MDK Public Store Client and you are now all set to [Consume a REST API in an MDK App](cp-mobile-dev-kit-rest-api).
+Congratulations, you have successfully implemented Enable Push Notifications in the MDK Public Store Client and you can continue with the remaining tutorials in this mission.
 
 ---

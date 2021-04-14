@@ -46,7 +46,7 @@ If you are building a custom version of Mobile development kit client, there you
 
 3. Select **MDK Project** and click **Start**.
 
-    !![MDK](img_1.3.png)  
+    !![MDK](img-1.3.png)  
 
 4. In *Basic Information* step, select or provide the below information and click **Next**:
 
@@ -106,7 +106,7 @@ In the MDK editor, you will create 4 new Rule files:
     ```
     !![MDK](img_2.2.png)
 
-    >`openUrl` is a `NativeScript` API to open an URL on device. You can find more details about [this API](https://docs.nativescript.org/core-concepts/utils#openurl-function).
+    >`openUrl` is a `NativeScript` API to open an URL on device. You can find more details about [this API](https://v6.docs.nativescript.org/core-concepts/utils#openurl-function).
 
 3. Save your changes to the `OpenSAPMobileCards.js` file.
 
@@ -262,20 +262,22 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     You should see **Deploy succeeded** message.
 
-    !![MDK](img_5.4.png)
+    !![MDK](img-5.4.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Populate the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 6: ](Display the QR code for app onboarding)]
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
+Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
 !![MDK](img-6.1.png)
 
 !![MDK](img_6.2.png)
+
+>Leave the Onboarding dialog box open for step 7.
 
 [DONE]
 [ACCORDION-END]
@@ -350,15 +352,15 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
     !![MDK](img_7.12.png)
 
+    >To run this app in your branded client, you need to add Mobile Cards and Fiori Client app URL schemes (`com.sap.content2go`,`com.sap.fiori.client.xcallbackurl`)  in the info.plist.   
+
 [OPTION END]
 
->Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
-
-[DONE]
+[VALIDATE_3]
 [ACCORDION-END]
 
 ---
 
-Congratulations, you have successfully implemented Deep Linking to Another App from your MDK App and you are now all set to [Use OData Annotations to Add CRUD Functionality to an MDK App](cp-mobile-dev-kit-annotations).
+Congratulations, you have successfully implemented Deep Linking to Another App from your MDK App and you can continue with the remaining tutorials in this mission.
 
 ---
