@@ -2,16 +2,16 @@
 auto_validation: true
 title: Integrate List Report into ABAP Fiori Launchpad
 description: Integrate your list report application into ABAP Fiori launchpad.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license]
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
-  
+
 ## Prerequisites  
-- You need an SAP Cloud Platform ABAP environment license.
-- You have created the [Travel App Mission](mission.cp-starter-extensions-abap) in a licensed system.
+- You need an SAP BTP, ABAP environment license.
+- You have created the [Travel App Group](group.abap-env-restful-managed) in a licensed system.
 - You need to have following business role assigned for your business user `SAP_BR_DEVELOPER`.
 - You need to have business catalog `SAP_CORE_BC_UI_FLD` assigned for the usage of manage launchpad space.
 - You need to have business catalog `SAP_CORE_BC_UI` assigned for the usage of manage launchpad settings.

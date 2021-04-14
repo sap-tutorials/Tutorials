@@ -47,7 +47,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 
 >**IMPORTANT** Arrange with your system administrator before you install `zabapgit`.
 
-  1. Copy the content of the latest build from the program `zabapgit`, that you will find in the `abapGit` repository <https://github.com/larshp/abapGit>.
+  1. Copy the content of the latest build from the program `zabapgit`, that you will find in the `abapGit` repository <https://github.com/abapGit/abapGit>.
 
     ![latest build](github4.png)
 
@@ -62,7 +62,7 @@ author_profile: https://github.com/niloofar-flothkoetter
   4. Now `abapGit` is installed and opened.
       ![execute program](abapgit2.png)
 
->You can find all installation information under <https://github.com/larshp/abapGit> > **Documentation/Guides**.
+>You can find all installation information under <https://github.com/abapGit/abapGit> > **Documentation/Guides**.
 
 > **IMPORTANT** Logon with language `EN` to your on-premise system. SAP BTP ABAP Environment just supports `EN` at the moment. Otherwise you'll get problem during import.
 

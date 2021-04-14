@@ -14,6 +14,7 @@ module.exports = {
         validate,
         validate_vr: validateVr,
         done,
+        multipleValidations,
         codeBlock,
         inlineCodeBlock,
         codeLine,
@@ -28,6 +29,7 @@ module.exports = {
     const accordionMatches = clearContent.match(accordions);
     let validationFormExists;
     let accordionsWOAnyValidation;
+    let accordionsWMultipleValidations;
 
     if (accordionMatches) {
       validationFormExists = accordionMatches.some(step => step.match(validate));
@@ -35,6 +37,10 @@ module.exports = {
         step,
         id: index + 1,
       })).filter(({ step }) => !step.match(validate) && !step.match(done));
+      accordionsWMultipleValidations = accordionMatches.map((step, index) => ({
+        step,
+        id: index + 1,
+      })).filter(({ step }) => step.match(multipleValidations));
     }
     if (autoValidationMatch) {
       const [, value] = autoValidationMatch;
@@ -86,6 +92,11 @@ module.exports = {
         if (accordionsWOAnyValidation) {
           accordionsWOAnyValidation.forEach(
             ({ id }) => err.push(messages.validate_restrictions.missed_validation(id))
+          );
+        }
+        if (accordionsWMultipleValidations) {
+          accordionsWMultipleValidations.forEach(
+            ({ id }) => err.push(messages.validate_restrictions.multiple_validations(id))
           );
         }
       }

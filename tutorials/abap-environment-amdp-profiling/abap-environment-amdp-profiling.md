@@ -4,7 +4,7 @@ description: Create an AMDP and analyze its runtime performance along with the p
 auto_validation: true
 time: 45
 primary_tag: topic>abap-development
-tags: [  tutorial>intermediate, products>sap-netweaver-7.5, products>sap-cloud-platform, products>sap-cloud-platform--abap-environment ]
+tags: [  tutorial>intermediate, products>sap-netweaver-7.5, products>sap-btp--abap-environment, products>sap-business-technology-platform ]
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 
@@ -12,8 +12,8 @@ author_profile: https://github.com/julieplummer20
 
 ## Prerequisites
 - You have one of the following:
-    - You have a sub-account with the entitlement SAP Cloud Platform, ABAP environment. For more details, see [Getting Started with a Customer Account: Workflow in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html). You have also created an ABAP Cloud Project pointing to this ABAP environment. For more details, see  [Connect to the ABAP System](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
-      - You have a valid instance of SAP S/4HANA on-premise edition, version 1909 or higher. For a free Cloud Appliance Library (CAL) version, of SAP S/4HANA 1909, see [SAP S/4HANA Fully-Activated Appliance](https://blogs.sap.com/2019/04/23/sap-s4hana-fully-activated-appliance-demo-guides/)
+    - You have a sub-account with the entitlement SAP Business Technology Platform (BTP) ABAP environment. For more details, see [Getting Started with a Customer Account: Workflow in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html). You have also created an ABAP Cloud Project pointing to this ABAP environment. For more details, see  [Connect to the ABAP System](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
+      - You have a valid instance of SAP S/4HANA on-premise edition, version 1909 or higher. For a free Cloud Appliance Library (CAL) version, of SAP S/4HANA 1909, see [SAP S/4HANA Fully-Activated Cloud Appliance](https://blogs.sap.com/2019/04/23/sap-s4hana-fully-activated-appliance-demo-guides/)
 - You have installed [ABAP Development Tools 3.0](https://tools.hana.ondemand.com/#abap) or higher
 - You have downloaded or pulled the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
 
@@ -429,8 +429,8 @@ ENDCLASS.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Save, activate, and test your code)]
-1. Save and activate your code by choosing **`Ctrl+S, Ctrl+3`**.
+[ACCORDION-BEGIN [Step 10: ](Format, save, activate, and test your code)]
+1. Format, save, and activate your code by choosing **`Shift+F1`, `Ctrl+S, Ctrl+F3`**.
 
 2. Test your class by running it the ABAP Console ( **`F9`** ).
 

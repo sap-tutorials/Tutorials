@@ -4,8 +4,8 @@ description: Manage and configure the business decisions flexibly for your capit
 
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform
+tags: [tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
 author_name: Deeksha R
 author_profile: https://github.com/Deeksha-R
 ---
@@ -28,17 +28,13 @@ You configure the auto approval policy using this tutorial. This policy is used 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open manage decisions)]
-1. Navigate to the Workflow Management home screen.
-
-    !![Home screen](cp-cf-wm-configuredecision-home.png)
-
-2.  Choose the **Process Flexibility Cockpit**. Then navigate to **My Live Processes** section and choose **Sample Capital Expenditure Approval Process** tile.
+1. Choose the **Process Flexibility Cockpit**. Then navigate to **My Live Processes** section and choose **Sample Capital Expenditure Approval Process** tile.
 
     !![PFC](cp-cf-wm-configuredecision-home2.png)
 
     !![Capital Expenditure](cp-cf-wm-discover-importedcapex0.png)
 
-3. Choose the **Determine All Approvers** decision.
+2. Choose the **Determine All Approvers** decision.
 
     !![Manage decisions](cp-cf-wm-configuredecision-determine.png)
 
