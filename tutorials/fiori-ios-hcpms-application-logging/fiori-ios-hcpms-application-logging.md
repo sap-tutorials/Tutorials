@@ -1,29 +1,34 @@
 ---
 title: Application logging and tracing
-description: Logging and tracing using the SAP Cloud Platform SDK for iOS.
+description: Logging and tracing using the SAP BTP SDK for iOS.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-business-technology-platform, products>sap-mobile-services ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
- - **SAP Cloud Platform SDK for iOS:** Version 2.0
- - **Tutorials:** [Push Notifications](https://developers.sap.com/tutorials/fiori-ios-hcpms-push-notifications.html)
+
+- **Proficiency:** Beginner
+- **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+- **SAP BTP SDK for iOS:** Version 2.0
+- **Tutorials:** [Push Notifications](fiori-ios-hcpms-push-notifications)
 
 ## Next Steps
- - [Logging and tracing in SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-logging.html)
+
+- [Logging and tracing in SAP Mobile Services for development and operations](fiori-ios-hcpms-logging)
 
 ## Details
+
 ### You will learn  
-In this tutorial, you will learn to use the logging functionality that is part of the SAP Cloud Platform SDK for iOS. You will also learn how to set logging settings in SAP Cloud Platform mobile service for development and operations which will be reflected in your application.
+
+In this tutorial, you will learn to use the logging functionality that is part of the SAP BTP SDK for iOS. You will also learn how to set logging settings in SAP Mobile Services for development and operations which will be reflected in your application.
 
 ### Time to Complete
+
 **15 Min**.
 
 ---
 
-The SAP Cloud Platform SDK for iOS provides you with sophisticated functionality which allows you to implement logging and tracing in your application. In addition, you can configure specific logging settings in SAP Cloud Platform mobile service for development and operations, which can be mirrored in your application using the `SAPcpmsSettings` class.
+The SAP BTP SDK for iOS provides you with sophisticated functionality which allows you to implement logging and tracing in your application. In addition, you can configure specific logging settings in SAP Mobile Services for development and operations, which can be mirrored in your application using the `SAPcpmsSettings` class.
 
 The actual logging is provided by the `Logger` class, which is part of the `SAPCommon` SDK module.
 
@@ -80,7 +85,7 @@ In addition to plain text, you can also supply an optional `error` object, for i
 ```swift
 self.someOperation {
     if let error = error {
-	      self.logger.error("Uh-oh... An error happened", error: error)
+       self.logger.error("Uh-oh... An error happened", error: error)
     }
 }
 ```
@@ -89,9 +94,9 @@ self.someOperation {
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Retrieve log settings from SAP Cloud Platform mobile service for development and operations)]
+[ACCORDION-BEGIN [Step 3: ](Retrieve log settings from SAP Mobile Services for development and operations)]
 
-Instead of hard-coding logging levels and settings, you can also retrieve these from SAP Cloud Platform mobile service for development and operations. Once you have defined logging settings for your application in SAP Cloud Platform mobile service for development and operations, you can retrieve these settings (among other settings you may have specified) via:
+Instead of hard-coding logging levels and settings, you can also retrieve these from SAP Mobile Services for development and operations. Once you have defined logging settings for your application in SAP Mobile Services for development and operations, you can retrieve these settings (among other settings you may have specified) via:
 
 ```swift
 var urlSession = SAPURLSession()
@@ -104,4 +109,3 @@ settings.load(for: .application)
 [DONE]
 
 [ACCORDION-END]
-

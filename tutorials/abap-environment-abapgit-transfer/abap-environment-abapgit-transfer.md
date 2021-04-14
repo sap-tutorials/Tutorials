@@ -1,16 +1,16 @@
 ---
 auto_validation: true
-title: Push Your ABAP Source Code from SAP Cloud Platform ABAP Environment to a GitHub Repository using abapGit
-description: Push Your ABAP Source Code from a SAP Cloud Platform ABAP Environment instance to a GitHub repository using the ADT plugin for abapGit.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
+title: Push Your ABAP Source Code from SAP BTP, ABAP Environment to a GitHub Repository using abapGit
+description: Push Your ABAP Source Code from a SAP BTP, ABAP environment instance to a GitHub repository using the ADT plugin for abapGit.
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- You need an SAP Cloud Platform ABAP Environment [trial user](abap-environment-trial-onboarding) or a license.
+- You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - You have installed [abapGit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/2002380aeda84875a5fae4adc66b3fdb.html ).
 
 ## Details

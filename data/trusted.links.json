@@ -6,6 +6,7 @@
         "sap-iot-noah-live-geomatch-service.cfapps.eu10.hana.ondemand.com",
         "sap-iot-noah-live-geomatch-association-odata.cfapps.eu10.hana.ondemand.com",
         "sap-iot-noah-live-geolocation-runtime.cfapps.eu10.hana.ondemand.com",
-        "https://itunes.apple.com/us/app/sap-content-to-go/id1168110623"
+        "https://itunes.apple.com/us/app/sap-content-to-go/id1168110623",
+        "mvnrepository.com"
     ]
 }

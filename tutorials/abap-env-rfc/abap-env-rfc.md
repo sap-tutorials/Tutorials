@@ -10,7 +10,7 @@ author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
-- **IMPORTANT**: This tutorial cannot be completed on a trial account
+- **IMPORTANT**: This tutorial cannot be completed on a trial account. If you want to explore some of the concepts of this mission on a trial account, see the following workshop: [SAP BTP, ABAP Environment: Connectivity and Integration](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/managed_extensibility ), parts 1-2
 - You have set up SAP Business Technology Platform (BTP), ABAP Environment, for example by using the relevant booster: [Using a Booster to Automate the Setup of the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cd7e7e6108c24b5384b7d218c74e80b9.html)
 - **Tutorial**: [Create Your First Console Application](abap-environment-trial-onboarding), for a licensed user, steps 1-2
 -	You have developer rights to an ABAP on-premise system, such as:
