@@ -404,7 +404,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     >You can always interrupt running process in terminal window by pressing `control + C`.
 
-    >To build an **`APK` for an Android device**, use `tns build android --release`. More information about archiving can be found in `NativeScript` documentation [here](https://docs.nativescript.org/tooling/docs-cli/project/testing/build-android).
+    >To build an **`APK` for an Android device**, use `tns build android --release`. More information about archiving can be found in `NativeScript` documentation [here](https://v6.docs.nativescript.org/tooling/docs-cli/project/testing/build-android).
 
 [OPTION END]
 

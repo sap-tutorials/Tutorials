@@ -106,7 +106,7 @@ In the MDK editor, you will create 4 new Rule files:
     ```
     !![MDK](img_2.2.png)
 
-    >`openUrl` is a `NativeScript` API to open an URL on device. You can find more details about [this API](https://docs.nativescript.org/core-concepts/utils#openurl-function).
+    >`openUrl` is a `NativeScript` API to open an URL on device. You can find more details about [this API](https://v6.docs.nativescript.org/core-concepts/utils#openurl-function).
 
 3. Save your changes to the `OpenSAPMobileCards.js` file.
 
