@@ -10,8 +10,8 @@ tags: [  tutorial>intermediate,, products>sap-web-ide  ]
 ## Prerequisites  
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Intermediate
- - [Create a multi-target application](https://developers.sap.com/tutorials/xsa-connecting-webide.html)
- - [Create a database module](https://developers.sap.com/tutorials/xsa-hdi-module.html)
+ - [Create a multi-target application](xsa-connecting-webide)
+ - [Create a database module](xsa-hdi-module)
 
 ## Details
 ### You will learn  
@@ -55,7 +55,7 @@ Your current database module will use two containers, the `hdi-container` create
 
     ![Check service name](service.png)
 
-    >The CLI client can be executed from a HANA express command line as user `hxeadm` or downloaded to your computer using the download manager available after you [register to download SAP HANA, express edition](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html)
+    >The CLI client can be executed from a HANA express command line as user `hxeadm` or downloaded to your computer using the download manager available after you [register to download SAP HANA, express edition](hhttps://www.sap.com/products/hana/express-trial.html)
       Open the `mta.yaml` file in your consuming application and go to the **Resources** tab. Create a new resource of type `org.cloudfoundry.existing-service`.
 
       Call it `consumed-core-container` and a new parameter with `service-name` as a key and the name of the service from command `xs s`

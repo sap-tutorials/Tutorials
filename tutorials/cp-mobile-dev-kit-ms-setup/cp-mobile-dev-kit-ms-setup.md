@@ -39,7 +39,7 @@ Make sure that you have completed required prerequisites mentioned in this tutor
 
 2. On the home screen, select **Create new app**.
 
-    ![MDK](img_2.2.png)
+    ![MDK](img-2.2.png)
 
 3. Provide the required information and click **Next**.
 

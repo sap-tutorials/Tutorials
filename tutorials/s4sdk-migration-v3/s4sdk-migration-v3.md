@@ -3,7 +3,7 @@ title: Migrate an Existing Application to Version 3.0 of the Cloud SDK
 description: Migrate an existing project to version 3.0 of the SAP Cloud SDK.
 auto_validation: true
 time: 40
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-cloud-platform, topic>cloud, topic>java ]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-business-technology-platform, topic>cloud, topic>java ]
 primary_tag: products>sap-cloud-sdk
 ---
 
