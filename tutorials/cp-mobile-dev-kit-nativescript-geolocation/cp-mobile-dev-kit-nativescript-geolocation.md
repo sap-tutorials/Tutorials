@@ -42,7 +42,7 @@ In this tutorial, you will use the existing NativeScript plugin nativescript-geo
 
 3. Select **MDK Project** and click **Next**.
 
-    !![MDK](img_1.3.png)  
+    !![MDK](img-1.3.png)  
 
 4. In *Basic Information* step, select or provide the below information and click **Next**:
 
@@ -186,7 +186,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     You should see **Deploy succeeded** message.
 
-    !![MDK](img_5.4.png)
+    !![MDK](img-5.4.png)
 
 [DONE]
 [ACCORDION-END]
@@ -221,7 +221,7 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
 
 1. Navigate to `/DemoSampleApp.mdkproject/App_Resources/Android` and create a new file `before-plugins.gradle`.
 
-    !![MDK](img_6.png)
+    !![MDK](img-6.png)
 
 2. Provide the below information:
 
@@ -268,9 +268,9 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
 
 [OPTION END]
 
-**Congratulations!** You have learned how to capture device's current location in an MDK app and you are now all set to [Extend Your MDK App With a Map Custom Control (Using Metadata Approach)](cp-mobile-dev-kit-map-extension).
+Congratulations, you have learned how to capture device's current location in your MDK app and you can continue with the remaining tutorials in this mission.
 
-[DONE]
+[VALIDATE_4]
 [ACCORDION-END]
 
 ---

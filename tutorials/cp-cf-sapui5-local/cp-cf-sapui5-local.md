@@ -3,9 +3,12 @@ title: Create an SAPUI5 App from the Command Line
 description: Create and test a newly created SAPUI5 app on you local machine with the editor of your choice.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>html5, topic>cloud, topic>javascript, products>sap-cloud-platform-for-the-cloud-foundry-environment]
+tags: [ tutorial>beginner, topic>html5, topic>cloud, topic>javascript, products>sap-business-technology-platform]
 primary_tag: topic>sapui5
 ---
+
+## Prerequisites
+ - Install at least version 3.0.0 of the [easy-ui5 generator](cp-cf-sapui5-local-setup)
 
 ## Details
 ### You will learn
@@ -20,7 +23,7 @@ primary_tag: topic>sapui5
 
 Run the following command to trigger the creation of a new project.
 ```
-yo easy-ui5
+yo easy-ui5 project
 ```
 
 
@@ -28,11 +31,11 @@ Choose the following responses for the prompted parameters.
 
 |  Parameter     | Value
 |  :------------- | :-------------
+|  What do you want to do?          | **`Create a new OpenUI5/SAPUI5 project [app]`**
 |  How do you want to name this project?          | **`myUI5App`**
 |  Which namespace do you want to use?    | **`com.myorg`**
 |  On which platform would you like to host the application | **`Application Router @ Cloud Foundry`**
 |  Which view type do you want to use? | **`XML`**
-|  How do you want to name your main view? | **`MainView`**
 |  Where should your UI5 libs be served from?            | **`Content delivery network (SAPUI5)`**
 |  Would you like to create a new directory for the project?    | **`Yes`**
 

@@ -45,7 +45,7 @@ Before you start, make sure that you've completed the prerequisites.
 
     > In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) in the CAP documentation for more details.
 
-3. To verify that the installation was successful, run `cds` without arguments:
+2. To verify that the installation was successful, run `cds` without arguments:
 
     ```Shell/Bash
     cds
@@ -65,17 +65,17 @@ Before you start, make sure that you've completed the prerequisites.
 
 2. Choose **Install**.
 
-   !![extension_marketplace](VSCode_extension.png)
+    !![extension_marketplace](VSCode_extension.png)
 
-> Visual Studio Code opens the extensions details page.
+    > Visual Studio Code opens the extensions details page.
 
 3. In VS Code choose **Install** to enable the extension for SAP CDS Language Support.
 
-   ![extension_VSCode](VSCode_view_extension.png)
+    ![extension_VSCode](VSCode_view_extension.png)
 
-> If the extension is already installed and enabled in VS Code, it will be updated automatically.
+    > If the extension is already installed and enabled in VS Code, it will be updated automatically.
 
-> Learn more about the features in this short [demo](https://www.youtube.com/watch?v=eY7BTzch8w0) and see the [features and commands](https://cap.cloud.sap/docs/get-started/tools#cds-editor) in the CAP documentation.
+    > Learn more about the features in this short [demo](https://www.youtube.com/watch?v=eY7BTzch8w0) and see the [features and commands](https://cap.cloud.sap/docs/get-started/tools#cds-editor) in the CAP documentation.
 
 [DONE]
 
@@ -174,7 +174,7 @@ After initializing the project, you should see the following empty folders:
 - `db`: for the database level schema model
 - `srv`: for the service definition layer
 
-![Folder structure](folder_structure.png)
+  ![Folder structure](folder_structure.png)
 
 1. Let's feed it by adding a simple domain model. In the **`srv`** folder choose the **New File** icon in Visual Studio Code and create a new file called `cat-service.cds`.
 
@@ -227,9 +227,9 @@ After initializing the project, you should see the following empty folders:
 
 4. To test your service, go to: <http://localhost:4004>
 
-!![application](application_local.png)
+    !![application](application_local.png)
 
-> You won't see data, because you haven't added a data model yet. Click on the available links to see the service is running.
+    > You won't see data, because you haven't added a data model yet. Click on the available links to see the service is running.
 
 [DONE]
 
@@ -397,7 +397,7 @@ Before you continue, make sure that you've completed the prerequisites and insta
 
 Instead of using in-memory, you can also use persistent databases.
 
-1. If `cds watch` is running, press **CTRL+C** in the command line to stop the service.
+1. If `cds watch` is running, choose **CTRL+C** in the command line to stop the service.
 
 2. Install `SQLite3` packages.
 
@@ -425,7 +425,7 @@ Instead of using in-memory, you can also use persistent databases.
 
     > If this doesn't work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db/my-bookshop.db -cmd .dump`. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation for more details.
 
-5. To stop `SQLite` and go back to your project directory, press **CTRL+C**.
+5. To stop `SQLite` and go back to your project directory, choose **CTRL+C**.
 
 6. Run your service.
 
@@ -438,7 +438,7 @@ Instead of using in-memory, you can also use persistent databases.
     [cds] - connect to db > sqlite { database: 'db/my-bookshop.db' }
     [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
 
-    [cds] - launched in: 871.970ms
+    [cds] - launched in: 629.769ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```

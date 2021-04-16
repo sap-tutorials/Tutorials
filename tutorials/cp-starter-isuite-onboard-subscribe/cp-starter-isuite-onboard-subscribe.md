@@ -44,13 +44,15 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
 [ACCORDION-BEGIN [Step 2: ](Enter your trial account)]
 
->**WHERE TO START**: If you have already activated Cloud Integration (Process Integration) or API Management services in your existing trial account, we recommend you to perform one of the following options:
+>**WHERE TO START**: If you are new to SAP BTP or SAP Integration Suite, skip this note and continue with the tutorial.
+
+> If you have already activated Cloud Integration (Process Integration) or API Management services in your existing trial account, we recommend you to perform one of the following options:
 
 > **Option 1**: If you are unable to activate **`Integration Suite`** service in an existing subaccount, create a **`New Subaccount`** and then proceed to **Step 3**. For a new subaccount, you need to assign entitlements by adding service plans and the quotas. For more information, see [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/c90f3d522ee04e65bd87cdec8808e5ce.html).
 
 > **Option 2**: To continue with the same subaccount, unsubscribe from Cloud Integration and API Management services, and then proceed to **Step 3**.
 
-> If you are new to SAP BTP or Integration Suite, continue with the tutorial.
+> If you have already activated Integration Suite in your existing trial account, proceed to **Step 4**. You can consume only one Integration Suite tenant per trial account.
 
 
 1. In your web browser, open the [SAP BTP trial cockpit](https://cockpit.hanatrial.ondemand.com/).
@@ -150,11 +152,11 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
 [ACCORDION-BEGIN [Step 5: ](Automatically assign roles and create service instances using Booster)]
 
- In this step, you execute a booster that will assign you the necessary roles to access and use the activated capabilities, and create service instances.
+ In this step, you execute a booster that will assign you the necessary roles to access and use the activated capabilities, and create service instance of Process Integration.
 
  A **Booster** is a set of guided and interactive steps that enable you to select, configure, and consume services on SAP BTP to achieve a specific technical goal. In this case, the Integration Suite booster will help you with assigning roles and creating service instances.
 
- A **service instance** defines how a service of SAP BTP (in our case, the Process Integration Runtime) can be called from a remote component. In the context of Cloud Integration, a service instance is the definition of an OAuth client. The service key generated out of the service instance contains credentials and other information that is required at a later step to call the integration flow.
+ A **service instance** defines how a service of SAP BTP (in our case, the **Process Integration** service) can be called from a remote component. In the context of Cloud Integration, a service instance is the definition of an OAuth client. The service key generated out of the service instance contains credentials and other information that is required at a later step to call the integration flow.
 
 1. Navigate to the overview page of your SAP BTP global account.
 

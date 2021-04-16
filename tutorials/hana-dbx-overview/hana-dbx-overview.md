@@ -20,7 +20,7 @@ primary_tag: products>sap-hana-cloud
 
 [ACCORDION-BEGIN [Step 1: ](Database explorer overview)]
 
-The SAP HANA database explorer  is a web-based tool for browsing and working with database objects such as tables, views, functions, stored procedures, importing and exporting data, debugging SQLScript, viewing trace files, and executing SQL statements. It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP HANA 1.0 SPS 12. As it is web-based, individual users do not need to worry about installing the software or applying patches.  
+The SAP HANA database explorer is a web-based tool for browsing and working with SAP HANA database objects such as tables, views, functions, stored procedures, importing and exporting data, debugging SQLScript, viewing trace files, and executing SQL statements. It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP HANA 1.0 SPS 12. As it is web-based, individual users do not need to worry about installing the software or applying patches.  As of March 25, 2021 it also offers support for Data Lake IQ connections.
 
 ![database explorer](dbx.png)
 
@@ -28,11 +28,11 @@ The SAP HANA database explorer  is a web-based tool for browsing and working wit
 
 The SAP HANA database explorer can be opened from multiple locations as shown below:
 
-* From the SAP Business Technology Platform (SAP BTP) Cockpit  
+* From the SAP Business Technology Platform (SAP BTP) Cockpit from an SAP HANA or Data Lake instance.
 
     ![opening the SAP HANA database explorer from the SAP BTP Cockpit](open-dbx-from-hana-cloud.png)
 
-* From SAP HANA Cloud Central  
+* From SAP HANA Cloud Central on either a SAP HANA or Data Lake with IQ enabled.
 
     ![opening the SAP HANA database explorer from SAP HANA Cloud Central](from-directory.png)
 
@@ -73,13 +73,13 @@ The following are some related documentation links for SAP HANA and the SAP HANA
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Version information)]
-The SAP HANA database explorer releases independently of SAP HANA.  New features appear first in SAP HANA Cloud and where applicable are available to the on-premise version in a later release.  As an example, when SAP HANA 2.0 SPS 05 was released on June 26 2020, SAP HANA database explorer version 2.12.20185 was available in both the on-premise and SAP HANA Cloud releases.  At the time when this was published in October 2020, the version available in HANA Cloud contains additional features that are not yet available for an on-premise installation.
+The SAP HANA database explorer releases independently of SAP HANA.  New features appear first in SAP HANA Cloud and are available to the on-premise version if applicable, in a later release.  Features are also enabled based on the database being connected to.  For example, the ability to import and export from cloud storage providers is a feature of an SAP HANA Cloud database.
 
 The screenshots below show the version of the SAP HANA database explorer in SAP HANA Cloud and on-premise.  
 
 The image below shows the SAP HANA database explorer running in SAP HANA Cloud.  
 
-![latest available version in HANA Cloud](dbx-hana-cloud-version.png)
+![latest available version in SAP HANA Cloud](dbx-hana-cloud-version.png)
 
 The image below shows the SAP HANA database explorer running in an on-premise installation.  
 
@@ -114,8 +114,6 @@ The instructions on how to setup a free SAP HANA Cloud trial within SAP BTP are 
   * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
 
   * [Getting Started with your trial of SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/)
-
-  * [SAP HANA Cloud Trial](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/latest/en-US/96b0fa04bf2b4fd6a8b210eb9fb18332.html)
 
   For more information on the SAP BTP see the following:
 

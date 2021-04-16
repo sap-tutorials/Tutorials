@@ -3,8 +3,8 @@ title: Develop and Consume Queries on SAP Analytics Cloud
 description: Develop analytical queries from ABAP system as data sources and consume them in the SAP Analytics Cloud to create analytical models, stories and multi-dimensional reports.
 auto_validation: true
 time: 60
-tags: [ tutorial>intermediate, topic>abap-connectivity, products>sap-cloud-platform, tutorial>license]
-primary_tag: products>sap-cloud-platform--abap-environment
+tags: [ tutorial>intermediate, topic>abap-connectivity, products>sap-business-technology-platform, tutorial>license]
+primary_tag: products>sap-btp--abap-environment
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
 ---
@@ -14,6 +14,7 @@ author_profile: https://github.com/niloofar-flothkoetter
  - You need a SAP Analytics Cloud account.
  - Install `ABAPGit` Plugin in ADT. See <http://eclipse.abapgit.org/updatesite/>
  - To get the Flight Model into the system, follow the description at <https://github.com/SAP/abap-platform-refscen-flight/blob/master/README.md>
+ - Requires Customer or Partner License.
 
 
 ## Details
