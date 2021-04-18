@@ -59,7 +59,7 @@ With above details, you will next configure an app in Mobile Services, add root 
 
 2. On the home screen, select **Create new app**.
 
-    !![MDK](img_2.2.png)
+    !![MDK](img-2.2.png)
 
 3. Provide the required information and click **Next**.
 
@@ -110,7 +110,7 @@ With above details, you will next configure an app in Mobile Services, add root 
 
 3. Select **MDK Project** and click **Start**.
 
-    !![MDK](img_3.3.png)  
+    !![MDK](img-3.3.png)  
 
 4. In *Basic Information* step, select or provide the below information and click **Next**:
 
@@ -225,20 +225,22 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     You should see **Deploy succeeded** message.
 
-    !![MDK](img_6.3.png)
+    !![MDK](img-6.3.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Populate the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 7: ](Display the QR code for app onboarding)]
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
+Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
 !![MDK](img-7.1.png)
 
 !![MDK](img_7.2.png)
+
+>Leave the Onboarding dialog box open for step 8.
 
 [DONE]
 [ACCORDION-END]
@@ -530,7 +532,7 @@ Now, you will create a new action `ClosePage_Complete.action` that will be calle
 
     >When `CreatePet.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered. You may create a message action and set it as failure action if  `CreatePet.action` fails.
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Redeploy the application)]
@@ -577,6 +579,6 @@ You have created a new record consuming REST API. Similarly, you can also modify
 
 ---
 
-Congratulations, you have successfully completed **Level Up with the Mobile Development Kit** mission and you are now all set to [Brand Your Customized App with Mobile Development Kit SDK](mission.mobile-dev-kit-brand) mission.
+Congratulations, you have successfully consumed the REST API in your MDK app and you can continue with the remaining tutorials in this mission.
 
 ---

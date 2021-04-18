@@ -69,10 +69,9 @@ Property Name     | Value
 :------------- | :-------------
 `HTML5.DynamicDestination`           | **`true`** (enter this property manually as it is not available in the dropdown list)
 `WebIDEEnabled`           | **`true`**
-`WebIDESystem`    | **`Northwind`**
-`WebIDEUsage`            | **`odata_gen`**
 
 > Do **not** use the entire path for the URL.  The URL should only be `https://services.odata.org`
+> You can find more information on the used properties in the [documentation](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/7e49887e6fd34182bebeca5a6841a0cc.html)
 
 When you specify a URL with the HTTPS scheme, a checkbox **Use default JDK truststore** will appear. Ensure that this is checked.
 
