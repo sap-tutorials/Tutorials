@@ -28,11 +28,11 @@ author_profile: https://github.com/Paolaufer
 
 3. Choose a name for your dev space.
 
-    !![Choose Name](choose-name.png)
+    !![Choose Name](add-name.png)
 
-4. Choose **SAP Cloud Business Application** as the application type.
+4. Choose **SAP Full Stack Cloud Application** as the application type.
 
-    !![Choose SAP Cloud](choose-dev-space.png)
+    !![Choose SAP Cloud](select-devspace.png)
 
     >By selecting SAP Cloud Business Application, your dev space comes with several extensions out-of-the-box that you need to develop CAP applications. For example, CDS tools, Java Tools, and MTA Tools.
 

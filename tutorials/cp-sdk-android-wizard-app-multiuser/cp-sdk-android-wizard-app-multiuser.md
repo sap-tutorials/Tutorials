@@ -6,7 +6,7 @@ description: Learn how to configure a wizard-generated application to support mu
 auto_validation: true
 time: 60
 tags: [ tutorial>beginner, operating-system>android, topic>mobile, products>sap-business-technology-platform]
-primary_tag: products>sap-btp-sdk-for android
+primary_tag: products>sap-btp-sdk-for-android
 ---
 
 ## Prerequisites
@@ -19,7 +19,7 @@ primary_tag: products>sap-btp-sdk-for android
   - How to enable multi-user feature for an online app
   - How to enable multi-user feature for an offline app
   - Several multi-user related APIs
-  
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Intro to Android SDK multi-user feature)]

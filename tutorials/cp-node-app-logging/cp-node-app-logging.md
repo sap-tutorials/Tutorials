@@ -2,7 +2,7 @@
 title: Add Basic Logging to Your Node.js App
 description: Modify your Node.js app to add some basic logging, and learn to access the logs via the Cloud Foundry command line interface.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
+primary_tag: products>sap-business-technology-platform
 tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, topic>node-js ]
 time: 10
 ---

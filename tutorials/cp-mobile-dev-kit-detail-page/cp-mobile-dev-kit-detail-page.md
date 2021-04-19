@@ -199,7 +199,7 @@ Deploy the updated application to your MDK client.
 
     You should see success message for both deployments.
 
-    !![MDK](img_4.3.png)
+    !![MDK](img-4.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -269,7 +269,7 @@ Deploy the updated application to your MDK client.
 [OPTION END]
 
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 ---

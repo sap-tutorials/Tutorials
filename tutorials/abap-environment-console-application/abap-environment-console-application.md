@@ -1,23 +1,27 @@
 ---
 auto_validation: true
 title: Create Your First ABAP Console Application
-description: Create an ABAP package and an ABAP class in the SAP Cloud Platform ABAP Environment with the ABAP Development Tools (ADT) in Eclipse.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+description: Create an ABAP package and an ABAP class in the SAP BTP, ABAP Environment with the ABAP Development Tools (ADT) in Eclipse.
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform]
 time: 5
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
--	You have purchased an entitlement to [SAP Cloud Platform, ABAP environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d6014a68d825.html)
+
+**For ABAP license:**
 -	You have set up your ABAP environment as described in [Getting Started with a Customer Account: Workflow in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html)
 - You have a user in the ABAP Environment [Connect to the ABAP System](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
+- You have downloaded the ABAP Development Tools (ADT). SAP recommends the latest version of ADT, available from [ABAP Development Tools](https://tools.hana.ondemand.com/#abap)
+**For ABAP Trial:**
+- You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding).
 - You have downloaded the ABAP Development Tools (ADT). SAP recommends the latest version of ADT, available from [ABAP Development Tools](https://tools.hana.ondemand.com/#abap)
 
 ## Details
 ### You will learn
-  - How to create an ABAP Cloud Project in ADT
+  - How to create an ABAP cloud project in ADT
   - How to create an ABAP package
   - How to create an ABAP class
   - How to execute the application console
@@ -25,20 +29,22 @@ author_profile: https://github.com/mervey45
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`) or your initials.
 
 For more information, see:
-- [SAP Help Portal: What is SAP Cloud Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html)
+- [SAP Help Portal: What is SAP BTP](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/6a2c1ab5a31b4ed9a2ce17a5329e1dd8.html)
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open the ABAP Development Tools (ADT) )]
-Open the ADT and change to the ABAP perspective, using the menu:
+Open the ADT and change to the ABAP perspective, using the menu.
 
-![adt-abap-menu](adt-abap-menu.png)
-.
-![perspective](perspective.png)
+ ![adt-abap-menu](adt-abap-menu.png)
 
-or the icon:
+And select **ABAP** and click **Open**.
 
-![adt-abap-icon](adt-abap-icon.png)
+ ![perspective](perspective.png)
+
+Or select the icon.
+
+ ![adt-abap-icon](adt-abap-icon.png)
 
 [DONE]
 [ACCORDION-END]
@@ -52,45 +58,41 @@ or the icon:
 
     ![Select ABAP Cloud Project](abap.png)
 
-3. If you are using your **SAP Cloud Platform ABAP environment trial user**, then select **Service Key** and click **Next >**.
+3. Select **Use Cloud Foundry Environment** in section **SAP BTP Cloud Foundry Environment** and click **Next >**
 
-    If you want to use your **license user**, then skip **step 2.3** and move on with **step 2.4**.
+    ![Create ABAP cloud project](servicekey.png)
 
-    ![Create ABAP cloud project](project2.png)
+4. Enter your **connection settings**:
+     - Region: choose your SAP BTP Cloud Foundry Environment region, for e.g. Europe (Frankfurt)
+     - Email: your email address
+     - Password: your password    
 
-    Paste your service key from the SAP Cloud Platform Trial Cockpit you created in [Create an SAP Cloud Platform ABAP Environment Trial User](abap-environment-trial-onboarding) in **Step 3.5**. Click **Next >** and move on with **step 2.5**.
+    ![Create ABAP cloud project](projectx12.png)
 
-    ![Create ABAP cloud project](project3.png)
+      Click **Next >**.
 
-4. As a **licensed user** select SAP Cloud Platform Cloud Foundry Environment and click **Next**.
+5. Set your **service instance details**:                                                                                             
+     - Organization: `<your_organization>`
+     - Space: dev
+     - Service instance: `<your_service_instance>`
 
-    ![Select service instance connection](servicekey.png)
+    ![Create ABAP cloud project](projectx22.png)
 
-    Maintain the SAP Cloud Platform Foundry connection information and click **Next**:
-     - Region: **`<your_region>`**
-     - Email: **`<your_email_address>`**
-     - Password: **`<your_password>`**
+    Click **Next >**.
 
-     ![Setup connection settings](connect.png)
+    >**HINT:** Your service instance is **`default_abap-trial`** when you use the **ABAP trial booster** on SAP BTP. If you create a manual instance, use your own instance name.
 
-     Maintain the required Service Instance details by selecting the appropriate values from the drop-down lists and move on with **Next**.
-      - Organization: **`<your_organization>`**
-      - Space: **`<your_space>`**
-      - Service Instance: **`<your_service_instance>`**
+6. Click **Open Logon Page in Browser**.
 
-    ![Select service instance details](details.png)
+    ![Create ABAP cloud project](project4.png)
 
-5. Now provide your login credentials of the SAP Cloud Platform Identity Authentication Service (IAS) tenant to connect to the system and press Log On.
+7. Now you've been authenticated automatically. Provide your credentials if requested. The credentials are the same you used to create your trial account on SAP BTP.
 
-    ![Enter login credentials](login.png)
+    Go back to ADT.
 
-7. Connect to service instance by selecting **Next**.
+    ![Create ABAP cloud project](project52.png)
 
-    ![Connect to Service Instance](instance.png)
-
-8. At this stage you may add your favorite packages and click **Finish** to complete your setup.
-
-    ![Add favorite packages](project.png)
+    Click **Finish**.
 
 [DONE]
 [ACCORDION-END]
@@ -98,23 +100,23 @@ or the icon:
 
 
 [ACCORDION-BEGIN [Step 3: ](Create ABAP package)]
-  1. Right-click on the `ZLocal` package and select New > ABAP Package from the context menu.
+  1. Right-click on the `ZLOCAL` and select **New** > **ABAP Package** from the context menu.
 
       ![Add ABAP package](package.png)
 
   2. Provide the required information and move on with **Next**.
-      - Name: `ZPackage_XXX`
-      - Description: My Package
+      - Name: **`ZPACKAGE_XXX`**
+      - Description: My Package XXX
+      - **Check** Add to favorite packages.
 
       ![Create ABAP package](abappackage.png)
 
-  3. Move on with **Next**.
+      Click **Next >**.
 
-      ![Select package properties](properties.png)
-
-  4. Provide a description for the transport request and click **Finish**.
+  3. Create a new request and click **Finish**.
 
       ![Select transport request](transport.png)
+
      The ABAP package is now created.
 
 [DONE]
@@ -126,12 +128,14 @@ or the icon:
       ![Add new ABAP class](class.png)
 
   2. Maintain the required information and click **Next** to move on:   
-      - Name: `Z_Class_XXX`
-      - Description: My Class
+      - Name: **`Z_CLASS_XXX`**
+      - Description: My class XXX
 
       ![Add new ABAP class](abapclass.png)
 
-  3. Provide a transport request and click **Finish**.
+      Click **Next >**.
+
+  3. Click **Finish**.
 
       ![Select transport request](request.png)
 

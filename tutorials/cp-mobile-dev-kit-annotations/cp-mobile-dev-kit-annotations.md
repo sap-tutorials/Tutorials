@@ -87,7 +87,7 @@ This step includes creating the mobile development kit project in the editor.
 
 3. Select **MDK Project** and click **Start**.
 
-    !![MDK](img_3.3.png)  
+    !![MDK](img-3.3.png)  
 
 4. In *Basic Information* step, select or provide the below information and click **Next**:
 
@@ -188,20 +188,22 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     You should see **Deploy succeeded** message.
 
-    !![MDK](img_5.3.png)
+    !![MDK](img-5.3.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Populate the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 6: ](Display the QR code for app onboarding)]
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
+Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
 !![MDK](img-6.1.png)
 
 !![MDK](img_6.2.png)
+
+>Leave the Onboarding dialog box open for step 7.
 
 [DONE]
 [ACCORDION-END]
@@ -240,11 +242,11 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 [OPTION END]
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 ---
 
-Congratulations, you have successfully created a fully functional CRUD native mobile application based on OData annotations and you are now all set to [Enable Push Notifications in the MDK Public Store Client](cp-mobile-dev-kit-push).
+Congratulations, you have successfully created a fully functional CRUD native mobile application based on OData annotations and you can continue with the remaining tutorials in this mission.
 
 ---
