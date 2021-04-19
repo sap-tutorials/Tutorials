@@ -3,8 +3,8 @@ title: Run the Employee Onboarding Sample Scenario
 description: Now that your workflow is set up, business rules are integrated and visibility scenario is configured, run your workflow and visualize it.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform-business-application]
-primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-workflow-management
 ---
 
 

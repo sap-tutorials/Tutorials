@@ -3,8 +3,8 @@ title: Configure Business Rules, Workflow and Process Visibility
 description: Configure workflow, business rules and process visibility to automate processes and decisions, and achieve operational insights into employee onboarding process
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-cloud-platform-workflow]
-primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-workflow-management
 ---
 
 ## Details
