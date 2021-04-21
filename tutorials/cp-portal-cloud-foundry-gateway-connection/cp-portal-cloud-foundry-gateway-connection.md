@@ -73,14 +73,14 @@ In this step, you'll create connectivity between SAP BTP and the SAP Gateway Dem
     |  :------------- | :-------------
     | `WebIDEEnabled`          | `true`
     | `WebIDESystem`    | `Gateway`
-    | `WebIDEUsage`           | `odata_abap`
+    | `WebIDEUsage`           | `odata_abap`,`dev_abap` <div>Note that the `dev_abap` value is only required if you're developing or deploying to the SAPUI5 ABAP repository.</div>    
     | `sap-platform`          | `ABAP` (enter this property manually as it is not available in the dropdown list)
     | `sap-client`          | `002`
     | `HTML5.DynamicDestination`          | `true`
 
     >Note that SAP Business Application Studio reuses SAP Web IDE properties. In this way, the destination configuration as well as the migration from SAP Web IDE to SAP Business Application Studio, is much simpler.
 
-    >For more information about these properties, see [Connecting to External Systems](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/7e49887e6fd34182bebeca5a6841a0cc.html) and [Configure (HTML5) Destinations](https://help.sap.com/viewer/29badeeee3684338b2e870139bdc4d86/Cloud/en-US/fab4035652cb4fc48503c65dc841d335.html).
+    >For more information about these properties, see [Connecting to External Systems](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/7e49887e6fd34182bebeca5a6841a0cc.html) and [Configure (HTML5) Destinations](https://help.sap.com/viewer/ad4b9f0b14b0458cad9bd27bf435637d/Cloud/en-US/fab4035652cb4fc48503c65dc841d335.html).
 
     Your screen will look like this:
 
