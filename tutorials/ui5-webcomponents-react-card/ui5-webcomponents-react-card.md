@@ -32,10 +32,6 @@ You can check out all available components in the [Storybook](https://sap.github
     import { Card } from "@ui5/webcomponents-react";
     ```
 
-    > Direct import of components from `@ui5/webcomponents-react` have a **negative impact on your bundle size**. If you want to keep the bundle size small, import the components like this:
-
-    >    `import { Card } from "@ui5/webcomponents-react/lib/Card";`
-
 2. So, you imported the `Card` component. Now it's time to use it. Replace the content of your `<div>` with a `<Card>`.
 
     In the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/story/4-ui5-web-components-card--default-story), you can see that Cards can receive different props. For now only add `heading='Card'`.

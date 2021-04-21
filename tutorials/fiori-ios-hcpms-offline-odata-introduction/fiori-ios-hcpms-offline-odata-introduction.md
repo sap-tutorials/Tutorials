@@ -2,20 +2,22 @@
 title: Introduction to Offline OData
 description: Offline OData consists of many pieces at the back-end and the front-end that eventually make offline OData work, without being in the way of the developer. This tutorial will explain how all components work together to achieve this.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 15
 ---
 
 ## Prerequisites  
- - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
- - **SAP Cloud Platform SDK for iOS:** Version 2.0
- - **Tutorials:** [Manage usage statistics on SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-reporting.html)
 
+- **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 11 or higher
+- **SAP BTP SDK for iOS:** Version 4.0.10
+- **Tutorials:** [Manage usage statistics on SAP Mobile Services for development and operations](fiori-ios-hcpms-reporting)
 
 ## Details
+
 ### You will learn  
-  - How the Fiori iOS SDK creates an offline store on the mobile device, how it keeps data in sync, and how data entered locally is flushed back to the originating OData service
+
+How the SAP BTP SDK for iOS creates an offline store on the mobile device, how it keeps data in sync, and how data entered locally is flushed back to the originating OData service
 
 ---
 
@@ -27,19 +29,19 @@ This is the reason why many apps are sensitive to the device's connection state 
 
 > Why offline: Business doesn't always happen where networks exist.
 
-[ACCORDION-BEGIN [Step 1: ](SAP Fiori iOS SDK - Offline OData service)]
+[ACCORDION-BEGIN [Step 1: ](SAP BTP SDK for iOS - Offline OData service)]
 
-The Offline OData feature of the SAP Fiori iOS SDK allows you to develop Always-available application that can respond quickly to changes in the connection state. Instead of calling OData services directly, the OData service call will be redirected to the Offline OData feature, which will mimic a response using the latest synchronized data.
+The Offline OData feature of the SAP BTP SDK for iOS allows you to develop Always-available application that can respond quickly to changes in the connection state. Instead of calling OData services directly, the OData service call will be redirected to the Offline OData feature, which will mimic a response using the latest synchronized data.
 
 Features:
 
 - Synchronize OData services and run them locally on a device
 - UltraLite as client database, which is optionally encrypted
 - Optimized for OData services supporting delta queries to synchronize only new and changed items
-- Middle-tier delta enablement on SAP Cloud Platform for services that don't support delta queries
+- Middle-tier delta enablement on SAP BTP for services that don't support delta queries
 - Middle-tier caching of generic OData collections that are not user dependent, so that e.g. not every user needs to read the same master data from the source OData service
 - Offline OData services work in both read and write mode, allowing users to enter data on their device. OData updates are played back to the originating OData service when the user comes back online.
-- Data synchronization between the app and the SAP Cloud Platform will leverage the MobiLink protocol which is designed for synchronizing remote databases.
+- Data synchronization between the app and the SAP BTP will leverage the MobiLink protocol which is designed for synchronizing remote databases.
 
 Please find a schematic representation of the synchronization flow below:
 
@@ -65,8 +67,7 @@ Please find a schematic representation of the creation and population of the dat
 
 ![Initial Download sequence](image-2.png)
 
-When a database is being opened for the first time, the app sends the defining queries over to the SAP Cloud Platform mobile service for development and operations. At the SAP Cloud Platform mobile service for development and operations back-end is determined whether a client store already exists for the device being used. If it doesn't. SAP Cloud Platform mobile service for development and operations will pull the metadata from the originating OData service and will create a table for each of the defined queries. Once the tables have been created, the tables are synchronized by retrieving the data from the originating OData service. Once the table is fully synchronized on the SAP Cloud Platform mobile service for development and operations back-end, the table is synchronized to the Offline UltraLite store on the client using the MobiLink protocol.
-
+When a database is being opened for the first time, the app sends the defining queries over to the SAP Mobile Services for development and operations. At the SAP Mobile Services for development and operations back-end is determined whether a client store already exists for the device being used. If it doesn't. SAP Mobile Services for development and operations will pull the metadata from the originating OData service and will create a table for each of the defined queries. Once the tables have been created, the tables are synchronized by retrieving the data from the originating OData service. Once the table is fully synchronized on the SAP Mobile Services for development and operations back-end, the table is synchronized to the Offline UltraLite store on the client using the MobiLink protocol.
 
 [DONE]
 [ACCORDION-END]
@@ -79,22 +80,20 @@ Please find a schematic representation of the request for refresh sequence below
 
 ![Request for Refresh sequence](image-3.png)
 
-When the database is being refreshed the the app sends the defining queries over to the SAP Cloud Platform mobile service for development and operations. If the originating OData service supports delta-token, the client store on the SAP Cloud Platform mobile service for development and operations is refreshed using delta-tokens, otherwise a full refresh of the client store is performed. Once the client store is in sync all changes are sent to the client using the MobiLink protocol.
-
+When the database is being refreshed the the app sends the defining queries over to the SAP Mobile Services for development and operations. If the originating OData service supports delta-token, the client store on the SAP Mobile Services for development and operations is refreshed using delta-tokens, otherwise a full refresh of the client store is performed. Once the client store is in sync all changes are sent to the client using the MobiLink protocol.
 
 [VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Data Flush sequence)]
 
-After a user has entered data, and when the user is back online again, the entered data needs to be uploaded to the originating OData service. This is achieved by collecting all requests that need to be executed in the Offline store on the device, synchronizing them to the SAP Cloud Platform mobile service for development and operations back-end, and from there they will be played back on the originating OData service in the same order as in which they were received.
+After a user has entered data, and when the user is back online again, the entered data needs to be uploaded to the originating OData service. This is achieved by collecting all requests that need to be executed in the Offline store on the device, synchronizing them to the SAP Mobile Services for development and operations back-end, and from there they will be played back on the originating OData service in the same order as in which they were received.
 
 Please find a schematic representation of the data flush sequence below:
 
 ![Data flush sequence](image-4.png)
 
-In the diagram, you can see that the requests are being sent to the offline store on the device, in which the changes are captured. Once the user goes online and flushes his data, the request queue is being synchronized to the SAP Cloud Platform mobile service for development and operations back-end. From there, SAP Cloud Platform mobile service for development and operations will playback each request to the originating OData service. All errors along with their original requests are stored in the Error Archive, which manifest itself as an OData entity set named `ErrorArchive`.
-
+In the diagram, you can see that the requests are being sent to the offline store on the device, in which the changes are captured. Once the user goes online and flushes his data, the request queue is being synchronized to the SAP Mobile Services for development and operations back-end. From there, SAP Mobile Services for development and operations will playback each request to the originating OData service. All errors along with their original requests are stored in the Error Archive, which manifest itself as an OData entity set named `ErrorArchive`.
 
 [DONE]
 [ACCORDION-END]
@@ -107,13 +106,12 @@ When a request fails against the backend OData Service during an upload operatio
 
 Events that happened during synchronization can be retrieved in a similar fashion as the errors. Events are stored in the `EventLog` entity set.
 
-
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Configuration of the SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step 6: ](Configuration of the SAP BTP)]
 
-To leverage the offline store features it is not necessary to add any specific configuration to your application. In that case, SAP Cloud Platform mobile service for development and operations will apply defaults that will make a good amount of applications run smoothly.
+To leverage the offline store features it is not necessary to add any specific configuration to your application. In that case, SAP Mobile Services for development and operations will apply defaults that will make a good amount of applications run smoothly.
 
 However, it is possible to tune the configuration of offline applications to optimize offline performance by defining e.g.:
 

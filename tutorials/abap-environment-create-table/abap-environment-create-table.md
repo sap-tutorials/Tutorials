@@ -1,7 +1,7 @@
 ---
 auto_validation: true
 title: Create a Simple Database Table for ABAP Environment
-description: Create a database table in SAP Cloud Platform ABAP Environment and prefill it with data.
+description: Create a database table in SAP BTP, ABAP Environment and prefill it with data.
 primary_tag: products>sap-btp--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
 time: 10
@@ -10,7 +10,7 @@ author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- You must have an SAP Cloud Platform ABAP Environment user.
+- You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or license.
 
 ## Details
 ### You will learn

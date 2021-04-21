@@ -326,7 +326,7 @@ First, define a failure message.
 
     !![MDK](img_6.16.png)
 
-[DONE]
+[VALIDATE_4]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Deploy the application)]
@@ -343,7 +343,7 @@ Deploy the updated application to your MDK client.
 
     You should see success message for both deployments.
 
-    !![MDK](img_7.3.png)
+    !![MDK](img-7.3.png)
 
 [VALIDATE_3]
 [ACCORDION-END]

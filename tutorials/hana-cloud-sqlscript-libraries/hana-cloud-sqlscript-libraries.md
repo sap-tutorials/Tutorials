@@ -53,6 +53,7 @@ Libraries are designed to group related variables, functions, and procedures tog
     ```
 
 3. After the public variable, define a public function library member as shown here.
+
     ```SQLCRIPT
     public function "employee_exists"(
                  in im_employee_id nvarchar(36) )

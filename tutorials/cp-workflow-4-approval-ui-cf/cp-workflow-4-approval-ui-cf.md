@@ -10,16 +10,36 @@ time: 15
 ## Prerequisites  
 - You have executed the previous tutorials in [Get started with SAP Workflow Service](group.cp-workflow-cf).
 - Make sure that you use a dev space with the extension **Launchpad Module**.
-- You have created a launchpad site. See [Create a Site](https://help.sap.com/viewer/e157c391253b4ecd93647bf232d18a83/Cloud/en-US/97c079f9317c42bba31cc9ca9d4cc7c3.html).
-- You have created a destination for your service instance. See [Destinations Pointing to Service Instances](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/685f383cebb54c009b2fac633b32c90f.html).
+- You have created a destination to the workflow service instance with the authentication method `OAuth2JWTBearer`. See [Destinations Pointing to Service Instances](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/685f383cebb54c009b2fac633b32c90f.html).
 
 ## Details
 ### You will learn  
   - How to start an instance of the workflow definition that you have defined using a start form
 
 ---
+[ACCORDION-BEGIN [Step 1: ](Assign entitlements to your subaccount)]
 
-[ACCORDION-BEGIN [Step 1: ](Subscribe to the Launchpad service)]
+So that you can deploy the `WorkflowManagementFLP_0.0.1.mtar` later on, you need to assign the Application Runtime and Portal entitlements to your subaccount.
+
+1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+
+2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
+
+3. Access your **trial** subaccount.
+
+4. From the navigation area, choose **Entitlements**, and choose for **Configure Entitlements**.
+
+5. Choose **Add Service Plans** and search for **Launchpad**.
+
+6. Select **Launchpad** and choose **Add Service Plans**. From the available plans only select the **Standard (Subscription) Launchpad** option.
+
+8. Save your entries.    
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 2: ](Subscribe to the Launchpad service)]
 
 1. From the navigation area, choose **Service Marketplace**.
 
@@ -38,7 +58,7 @@ You see a popup that the subscription is created. To display the new status, cho
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Assign yourself the Launchpad_Admin role collection)]
+[ACCORDION-BEGIN [Step 3: ](Assign yourself the Launchpad_Admin role collection)]
 
 1. From the navigation area of your subaccount, choose **Security** | **Trust Configuration**.
 
@@ -56,7 +76,7 @@ You see a popup that the subscription is created. To display the new status, cho
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a start form)]
+[ACCORDION-BEGIN [Step 4: ](Create a start form)]
 1. In your web browser, open the [SAP Business Technology Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
 
 2. Choose **SAP Business Application Studio** and access your dev space.
@@ -84,7 +104,7 @@ You see a popup that the subscription is created. To display the new status, cho
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Add fields to your start form)]
+[ACCORDION-BEGIN [Step 5: ](Add fields to your start form)]
 
 Once the form editor opens, add form data by choosing **Add Field**.
 
@@ -103,7 +123,7 @@ These expressions refer to the attributes in the JSON file that you have created
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Add a start action)]
+[ACCORDION-BEGIN [Step 6: ](Add a start action)]
 
 1. Switch to the **ACTION** tab of the form editor.
 
@@ -119,7 +139,7 @@ These expressions refer to the attributes in the JSON file that you have created
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Build and deploy)]
+[ACCORDION-BEGIN [Step 7: ](Build and deploy)]
 
 1. Right-click the **mta.yaml** file in your **onboarding** project, and then select **Build MTA**.
 
@@ -133,7 +153,7 @@ These expressions refer to the attributes in the JSON file that you have created
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Create your launchpad site)]
+[ACCORDION-BEGIN [Step 8: ](Create your launchpad site)]
 
 1. Access your **trial** subaccount.
 
@@ -154,7 +174,7 @@ These expressions refer to the attributes in the JSON file that you have created
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create your custom launchpad tile)]
+[ACCORDION-BEGIN [Step 9: ](Create your custom launchpad tile)]
 
 1. In the navigation area of the central SAP Fiori launchpad, choose the **Provider Manager** icon.
 
@@ -242,7 +262,7 @@ These expressions refer to the attributes in the JSON file that you have created
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Start the workflow in your custom tile)]
+[ACCORDION-BEGIN [Step 10: ](Start the workflow in your custom tile)]
 After deployment is finished, open your launchpad site that contains the workflow applications.
 
 1. In the **Site Directory**, open your site **`mysite`** icon.

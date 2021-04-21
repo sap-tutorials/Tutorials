@@ -35,7 +35,7 @@ This step includes creating the mobile development kit project in the editor.
 
 3. Select **MDK Project** and click **Start**.
 
-    !![MDK](img_1.3.png)
+    !![MDK](img-1.3.png)
 
 4. In *Basic Information* step, provide the below information and click **Next**:
 
@@ -55,15 +55,13 @@ This step includes creating the mobile development kit project in the editor.
     |----|----|
     | `Service File Name`| `<Provide any name of your choice>` |
     | `OData Source` | Select `Mobile Services` from the dropdown |
-    | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
+    | `Application Id` | Select `com.sap.mdk.demo` from the dropdown (this app was configured as per [this](cp-mobile-dev-kit-ms-setup) tutorial) |
     | `Destination` | Select `SampleServiceV2` from the dropdown |
     | `Enter a path to the OData service` | Leave it as it is |
     | `Language URL` | Leave it with the default value |
     | `Enable Offline` | It's enabled by default |
 
     !![MDK](img_1.7.png)
-
-    >In [this tutorial](cp-mobile-dev-kit-ms-setup), server-side configuration for this MDK app were already done.
 
     Regardless of whether you are creating an online or offline application, this step is needed for app to connect to an OData service. When building an MDK Mobile application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services. For MDK Web application, destination is set up in SAP BTP cockpit.
 
@@ -139,15 +137,17 @@ You should see successful messages for both deployments.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Populate the QR code for onboarding the Mobile app)]
+[ACCORDION-BEGIN [Step 4: ](Display the QR code for onboarding the Mobile app)]
 
 SAP Business Application Studio has a feature to generate QR code for onboarding the mobile app.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
+Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
 !![MDK](img-4.1.png)
 
 !![MDK](img_4.2.png)
+
+>Leave the Onboarding dialog box open for step 5.
 
 [DONE]
 [ACCORDION-END]

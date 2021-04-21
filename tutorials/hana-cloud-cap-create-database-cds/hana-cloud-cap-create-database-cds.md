@@ -186,7 +186,7 @@ Video version of tutorial: </br>
 >
 > ![Build database module](console.png)
 >
-> You can find a similar example and further context on Core Data and Services in [this explanatory video](https://www.youtube.com/watch?v=O0qSsbnx3u8&list=PLoc6uc3ML1JR38-V46qhmGIKG07nXwO6X&index=6)
+> You can find a similar example and further context on Core Data and Services in [this explanatory video](https://www.youtube.com/watch?v=UuXURLt1IQE&list=PL6RpkC85SLQAPHYG1x6IEu_exE5pa0UK_&index=7)
 
 [DONE]
 [ACCORDION-END]
