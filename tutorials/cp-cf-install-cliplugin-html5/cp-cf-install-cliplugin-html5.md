@@ -4,7 +4,7 @@ description: Download and install the Command Line Interface (CLI) plugin. This 
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud]
-primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
+primary_tag: products>sap-btp--cloud-foundry-environment
 ---
 
 ## Details
