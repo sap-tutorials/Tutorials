@@ -9,7 +9,6 @@ primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
 
 ## Details
 ### You will learn
-  - How to add the community repository to the  Cloud Foundry CLI
   - How to install a Cloud Foundry CLI plugin
   - How to use the [HTML5 Applications Repository plugin](https://github.com/SAP/cf-html5-apps-repo-cli-plugin)
 
@@ -34,15 +33,24 @@ Now you should see the release number of the CLI you are using.
 [ACCORDION-BEGIN [Step 2: ](Install the plugin)]
 
 
-Install the plugin, using the following command:
-```Bash
-cf install-plugin -r CF-Community "html5-plugin"
-```
+Install the plugin from the OS-specific binary, using the following command:
 
-> If you do not have the community repository in your CF CLI, you can add it first by executing.
+[OPTION BEGIN [macOS]]
 ```Bash
-cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org
+cf install-plugin -f https://github.com/SAP/cf-html5-apps-repo-cli-plugin/releases/latest/download/cf-html5-apps-repo-cli-plugin-darwin-amd64
 ```
+[OPTION END]
+[OPTION BEGIN [Windows]]
+```Bash
+cf install-plugin -f https://github.com/SAP/cf-html5-apps-repo-cli-plugin/releases/latest/download/cf-html5-apps-repo-cli-plugin-windows-amd64.exe
+```
+[OPTION END]
+[OPTION BEGIN [Linux]]
+```Bash
+cf install-plugin -f https://github.com/SAP/cf-html5-apps-repo-cli-plugin/releases/latest/download/cf-html5-apps-repo-cli-plugin-linux-amd64
+```
+[OPTION END]
+
 
 
 [DONE]
@@ -57,7 +65,7 @@ You should now see the following output:
 
 ![listed plugins](./cfplugins.png)
 
-> This list shows you all the new commands you added to the CLI. E.g., now you can run `cf deploy` and `cf mta` from the command line.
+> This list shows you all the new commands you added to the CLI. E.g., now you can run `cf html5-list` and `cf html5-push` from the command line.
 
 [DONE]
 [ACCORDION-END]
@@ -67,7 +75,7 @@ Run the following command to inspect all options for the `cf cf html5-push` comm
 cf html5-push --help
 ```
 
-> Visit the [GitHub Repo](https://sap.github.io/cf-html5-apps-repo-cli-plugin/) to learn about more commands that are offered by this tool.
+> Visit the [GitHub repository](https://sap.github.io/cf-html5-apps-repo-cli-plugin/) to learn about more commands that are offered by this tool.
 
 [VALIDATE_1]
 [ACCORDION-END]
