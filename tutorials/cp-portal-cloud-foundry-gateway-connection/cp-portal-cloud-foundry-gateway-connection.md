@@ -73,7 +73,7 @@ In this step, you'll create connectivity between SAP BTP and the SAP Gateway Dem
     |  :------------- | :-------------
     | `WebIDEEnabled`          | `true`
     | `WebIDESystem`    | `Gateway`
-    | `WebIDEUsage`           | `odata_abap`,`dev_abap` <div>Note that the `dev_abap` value is only required if you're developing or deploying to the SAPUI5 ABAP repository.</div>    
+    | `WebIDEUsage`           | `odata_abap`,`dev_abap` <div>Note that the `dev_abap` value is mandatory only if you're developing or deploying to the SAPUI5 ABAP repository.</div>    
     | `sap-platform`          | `ABAP` (enter this property manually as it is not available in the dropdown list)
     | `sap-client`          | `002`
     | `HTML5.DynamicDestination`          | `true`
