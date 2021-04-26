@@ -184,9 +184,10 @@ author_profile: https://github.com/mervey45
      - Description: **A Fiori application.**
      - Add deployment configuration: Yes
      - Add FLP configuration: Yes
+     - Configure advanced options: No
 
      Click **Next >**.
-
+ 
     ![object](attribute.png)
 
     **HINT:** Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
@@ -420,7 +421,6 @@ author_profile: https://github.com/mervey45
 
 
 [ACCORDION-BEGIN [Step 10: ](Test yourself)]
-Which main entity do you need to select in order to create your list report object page?
 
 [VALIDATE_1]
 [ACCORDION-END]
