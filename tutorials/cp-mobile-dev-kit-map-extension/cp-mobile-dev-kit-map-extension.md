@@ -46,7 +46,7 @@ This step includes creating the mobile development kit project in the editor.
 
 3. Select **MDK Project** and click **Next**.
 
-    !![MDK](img_1.3.png)  
+    !![MDK](img-1.3.png)  
 
 4. In *Basic Information* step, select or provide the below information and click **Next**:
 
@@ -66,7 +66,7 @@ This step includes creating the mobile development kit project in the editor.
     |----|----|
     | `Service File Name`| `<Provide any name of your choice>` |
     | `OData Source` | Select `Mobile Services` from the dropdown |
-    | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
+    | `Application Id` | Select `com.sap.mdk.demo` from the dropdown (this app was configured as per [this](cp-mobile-dev-kit-ms-setup) tutorial) |
     | `Destination` | Select `com.sap.edm.sampleservice.v2` from the dropdown |
     | `Enter a path to the OData service` | Leave it as it is |
     | `Language URL` | Leave it with the default value |
@@ -335,7 +335,7 @@ You will add this registered control in the generated `Customers_Detail.page`.
             this._mapView.onDestroy();
         }
 
-        //In case of iOS you'll use CLGeocoder API to convert a address to get latitude and longitude.
+        //In case of iOS you'll use CLGeocoder API to convert an address to get latitude and longitude.
         //NOTE - API getlatlang is called only on ios devices
 
         private getlatlang(customerAddress) {
@@ -439,7 +439,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     You should see **Deploy succeeded** message.
 
-    !![MDK](img_5.3.png)
+    !![MDK](img-5.3.png)
 
 
 [DONE]
@@ -583,13 +583,13 @@ In this step, you will run the app on an android device.
 
 1. SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-    Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
+    Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
     !![MDK](img-8.17.png)
 
     !![MDK](img_8.18.png)
 
-    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+    >Leave the Onboarding dialog box open for next step.
 
 2. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
@@ -607,9 +607,9 @@ In this step, you will run the app on an android device.
 
 [OPTION END]
 
-**Congratulations!** You have completed **Create Extension Controls in Mobile Development Kit (MDK) Apps** mission.
+Congratulations, you have extended Your MDK App With a Map Custom Control and you can continue with the remaining tutorials in this mission.
 
-[DONE]
+[VALIDATE_4]
 [ACCORDION-END]
 
 ---

@@ -176,7 +176,7 @@ Deploy the updated application to your MDK client.
 
     You should see success message for both deployments.
 
-    !![MDK](img_4.3.png)
+    !![MDK](img-4.3.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -189,8 +189,7 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-    ![MDK](img_5.1.png)
-
+    ![MDK](img-5.1.png)
 
 2. You will notice, newly added button on the main page. Tap **CUSTOMER LIST**.
 
@@ -246,7 +245,7 @@ Deploy the updated application to your MDK client.
 
 [OPTION END]
 
-[DONE]
+[VALIDATE_3]
 [ACCORDION-END]
 
 ---
