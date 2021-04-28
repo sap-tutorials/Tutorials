@@ -91,7 +91,7 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
     >- Filter for Integration Suite service and select the service.
 
-    >- Select the service plan, add it to your subaccount, and continue with this  tutorial.
+    >- Select the service plan, add it to your subaccount, and continue with this tutorial.
 
 4. Choose the default plan which is **trial** and click **Create**.
 
