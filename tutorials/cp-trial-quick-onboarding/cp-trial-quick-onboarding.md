@@ -47,9 +47,9 @@ SAP BTP currently offers these [environments](https://help.sap.com/viewer/65de29
 
 To become familiar with the specifics of the trial offerings regarding, have a look at the following resources:
 
-- [Getting Started with a Trial Account in the Cloud Foundry Environment](https://help.sap.com/viewer/DRAFT/60f1b283f0fd4d0aa7b3f8cea4d73d1d/Internal/en-US/e50ab7b423f04a8db301d7678946626e.html)
-- [Getting Started with a Trial Account in the ABAP Environment](https://help.sap.com/viewer/DRAFT/60f1b283f0fd4d0aa7b3f8cea4d73d1d/Internal/en-US/720c423ef1a8498ab690cf0e5512ba50.html)
-- [Getting Started with a Trial Account in the Kyma Environment](https://help.sap.com/viewer/DRAFT/60f1b283f0fd4d0aa7b3f8cea4d73d1d/Internal/en-US/ccb83c700e8d4bb8aa545d7307b8b08a.html)
+- [Getting Started with a Trial Account in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e50ab7b423f04a8db301d7678946626e.html)
+- [Getting Started with a Trial Account in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/720c423ef1a8498ab690cf0e5512ba50.html)
+- [Getting Started with a Trial Account in the Kyma Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/ccb83c700e8d4bb8aa545d7307b8b08a.html)
 
 ### Cloud Foundry
 In addition to global accounts, directories, and subaccounts, the Cloud Foundry environment includes another hierarchical level represented by **orgs** and **spaces**.

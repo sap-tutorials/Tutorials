@@ -118,8 +118,7 @@ The following steps will create sample objects for a hotel database using create
       hno INTEGER,
       description VARCHAR(100),
       date_performed DATE,
-      performed_by VARCHAR(40),
-      FOREIGN KEY(hno) REFERENCES HOTEL.HOTEL
+      performed_by VARCHAR(40)
     );
     ```
 
@@ -207,14 +206,14 @@ The following steps will create sample objects for a hotel database using create
 
     INSERT INTO HOTEL.RESERVATION VALUES(1, 100, 1000, 11, 'single', '2020-12-24', '2020-12-27');
     INSERT INTO HOTEL.RESERVATION VALUES(2, 110, 1001, 11, 'double', '2020-12-24', '2021-01-03');
-    INSERT INTO HOTEL.RESERVATION VALUES(3, 120, 1002, 15, 'suite', '2004-11-14', '2004-11-18');
+    INSERT INTO HOTEL.RESERVATION VALUES(3, 120, 1002, 15, 'suite', '2020-11-14', '2020-11-18');
     INSERT INTO HOTEL.RESERVATION VALUES(4, 130, 1009, 21, 'single', '2019-02-01', '2019-02-03');
     INSERT INTO HOTEL.RESERVATION VALUES(5, 150, 1006, 17, 'double', '2019-03-14', '2019-03-24');
-    INSERT INTO HOTEL.RESERVATION VALUES(6, 140, 1013, 20, 'double', '2004-04-12', '2004-04-30');
-    INSERT INTO HOTEL.RESERVATION VALUES(7, 160, 1011, 17, 'single', '2004-04-12', '2004-04-15');
-    INSERT INTO HOTEL.RESERVATION VALUES(8, 170, 1014, 25, 'suite', '2004-09-01', '2004-09-03');
-    INSERT INTO HOTEL.RESERVATION VALUES(9, 180, 1001, 22, 'double', '2004-12-23', '2005-01-08');
-    INSERT INTO HOTEL.RESERVATION VALUES(10, 190, 1013, 24, 'double', '2004-11-14', '2004-11-17');
+    INSERT INTO HOTEL.RESERVATION VALUES(6, 140, 1013, 20, 'double', '2020-04-12', '2020-04-30');
+    INSERT INTO HOTEL.RESERVATION VALUES(7, 160, 1011, 17, 'single', '2020-04-12', '2020-04-15');
+    INSERT INTO HOTEL.RESERVATION VALUES(8, 170, 1014, 25, 'suite', '2020-09-01', '2020-09-03');
+    INSERT INTO HOTEL.RESERVATION VALUES(9, 180, 1001, 22, 'double', '2020-12-23', '2021-01-08');
+    INSERT INTO HOTEL.RESERVATION VALUES(10, 190, 1013, 24, 'double', '2020-11-14', '2020-11-17');
 
     INSERT INTO HOTEL.MAINTENANCE VALUES(10, 24, 'Replace pool liner and pump', '2019-03-21', 'Discount Pool Supplies');
     INSERT INTO HOTEL.MAINTENANCE VALUES(11, 25, 'Renovate the bar area.  Replace TV and speakers', '2020-11-29', 'TV and Audio Superstore');
