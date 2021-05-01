@@ -94,7 +94,7 @@ Now, that you have created the validation rule, you will add it to the Update ac
 
 2. Expand the **Common Action Properties** and select `EmailValidation.js` rule for **Validation Rule** field.
 
-    !![MDK](img_3.1.png)
+    !![MDK](img-3.1.png)
 
 [VALIDATE_3]
 [ACCORDION-END]
@@ -109,11 +109,11 @@ Deploy the updated application to your MDK client.
 
 2. Select deploy target as **Mobile & Cloud**.
 
-    !![MDK](img_4.2.png)
+    !![MDK](img-4.2.png)
 
     You should see success message for both deployments.
 
-    !![MDK](img_4.3.png)
+    !![MDK](img-4.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -148,11 +148,11 @@ Deploy the updated application to your MDK client.
 
 1. Either click the highlighted button or refresh the web page to load the changes.
 
-    !![MDK](img_5.3.png)
+    !![MDK](img-5.6.png)
 
     >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
-    >!![MDK](img_5.6.png)
+    >!![MDK](img-5.3.png)
 
 2. In Email property, enter a value with no contain of **@**, it throws a validation failure message on saving the record.
 
