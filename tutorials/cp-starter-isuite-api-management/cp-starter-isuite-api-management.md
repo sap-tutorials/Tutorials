@@ -68,7 +68,7 @@ In this step, you copy the endpoint address of the integration flow.
 [ACCORDION-BEGIN [Step 3: ](Define the API)]
 In this step, you define and expose an integration flow endpoint as an application programming interface
 
-1. Go to your SAP BTP trial subaccount. Select **Subscriptions**. On the **Integration Suite tile**, select **Go to Application**.
+1. Go to your SAP BTP trial subaccount. Select **Instances and Subscriptions**. In the **Subscriptions**, section, find **Integration Suite** and select **Go to Application**.
 
     !![AccessIsuite](3-1-AccesstoIsuite.png)
 
@@ -214,9 +214,7 @@ This grant type works in the following way: In a first call, the API client prov
 
 13. In the editor, the OAuth workflow defined by the policy is visualized as a graphical model.
 
-    Now, you need the content of the service key generated in Step 1: Create service instance and key. Open another browser tab and display the service key.
-
-    You need the values of **`clientid`**, **`clientsecret`** and **`tokenurl`**.
+    Now, you need the values from the service key that you copied in **Step 1: Copy credentials from service key**. You need the values of **`clientid`**, **`clientsecret`** and **`tokenurl`**.
 
 14. In the graphical model of the **Policy Editor**, click the **`getcredential`** shape.
 

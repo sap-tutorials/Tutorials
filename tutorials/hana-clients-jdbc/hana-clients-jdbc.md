@@ -48,6 +48,8 @@ If these commands fail, ensure that the folder they are located in, is included 
 
 The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.net/jeps/238) and as such supports multiple versions of Java.  It is available in the client installation folder at `C:\SAP\hdbclient\ngdbc.jar` and in the [maven repository](https://mvnrepository.com/artifact/com.sap.cloud.db.jdbc/ngdbc).
 
+![maven](maven.png)
+
 1. Run the following command for version information.  If needed, adjust the path to match the installation location on your machine.
 
     ```Shell (Microsoft Windows)
@@ -190,27 +192,33 @@ See [Connect to SAP HANA Cloud via JDBC](https://help.sap.com/viewer/db19c7071e5
 
 [ACCORDION-BEGIN [Step 4: ](Debug the application)]
 
-Eclipse is a popular integrated development environment (IDE) for Java application development and provides a debugger.  [Download](https://www.eclipse.org/downloads/packages/) the Eclipse IDE for Java.
+Visual Studio Code provides plugins for Python and can be used to debug an application.  
 
-1. Unzip the downloaded file and start the Eclipse IDE.  
+1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
 
-    >Eclipse shows views appropriate to a certain task.  For Java development, it provides a Java perspective.  You may wish to change the perspective to the Java perspective via **Window | Perspective | Open Perspective | Java**
+2. If you have not already done so, in Visual Studio Code, choose **File | Open Folder**, and then select the `HANAClientsTutorial` folder.
 
->![Java Perspective](perspective.png)
+    ![Workspace](workspace.png)
 
-2. Create a new Java project named `JavaQuery` via the **File | New | Java Project** wizard.
+3. Open the file `JavaQuery.java` and if asked, install the recommended extensions.
 
-    Add the JDBC driver as an external jar file.  
+    ![Java extensions](extensions.png)
 
-    ![Create project](externalJar.png)
+4. Once the Java Extension Pack has been installed, expand the Java Project Explorer, and click on the **+** icon to add the JDBC driver as a referenced library.
 
-2. Add a new Java class named `JavaQuery` and replace its contents with the previous code.
+    ![referenced libraries](ref-libraries.png)
 
-    ![Add a new class](new_class.png)  
+    The JDBC driver is located at `C:\SAP\hdbclient\ngdbc.jar`.
 
-4. Set a breakpoint and click the debug toolbar to run the application and to step through the code.  
+5. Place a breakpoint and then select **Run | Start Debugging**.  
 
-    ![debugging in eclipse](debugging.png)
+    Notice that the debug view becomes active.  
+
+    Notice that the program stops running at the breakpoint that was set. Step through the code by pressing F10 and observe the variable values in the variables pane.
+
+    ![VS Code Debugging](debugging.png)
+
+
 
 [DONE]
 [ACCORDION-END]

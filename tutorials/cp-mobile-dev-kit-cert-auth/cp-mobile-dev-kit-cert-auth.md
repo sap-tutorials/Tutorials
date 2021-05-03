@@ -1,5 +1,5 @@
 ---
-title: Enable Certificate based Authentication
+title: Enable Certificate-Based Authentication
 description: Create a branded MDK client that can on-board using certificates for authentication.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client

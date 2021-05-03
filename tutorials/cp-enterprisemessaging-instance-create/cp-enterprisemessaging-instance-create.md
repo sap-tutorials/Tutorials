@@ -9,7 +9,7 @@ primary_tag: products>sap-event-mesh
 
 ## Prerequisites
 - SAP Business Technology Platform environment with SAP Event Mesh entitlement  
- 
+
 ## Details
 ### You will learn
   - How to create an SAP Event Mesh service instance
@@ -107,8 +107,8 @@ You can create a service key of the instance with the following steps depicted t
   - Naming the Service Key
   ![Naming the Service Key](ServiceKeys2.png)
 
-  - Service Key gets Created
-  ![Service Key gets created](ServiceKeys3.png)
+  - View the created Service Key
+  ![View the created Service Key](ServiceKeys3.png)
 
 Do find below a template Service Key of an SAP Event Mesh instance.
 ```JSON

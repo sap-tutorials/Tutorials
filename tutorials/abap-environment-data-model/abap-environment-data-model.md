@@ -200,17 +200,17 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           @Consumption.valueHelpDefinition: [{entity: {name: 'I_Currency', element: 'Currency' }}]
           currency_code      as CurrencyCode,
 
-          @UI.identification: [ { position: 70, label: 'Remarks' } ]
-          description        as Description,
-
-          @UI.hidden: true
-          last_changed_at    as LastChangedAt,
-
           @UI: {
           lineItem:       [ { position: 60, importance: #HIGH },
                             { type: #FOR_ACTION, dataAction: 'acceptTravel', label: 'Accept Travel' } ],
           identification: [ { position: 60, label: 'Status [O(Open)|A(Accepted)|X(Canceled)]' } ]  }
-          overall_status     as TravelStatus
+          overall_status     as TravelStatus,
+
+          @UI.identification: [ { position: 70, label: 'Remarks' } ]
+          description        as Description,
+
+          @UI.hidden: true
+          last_changed_at    as LastChangedAt
 
     }
 
