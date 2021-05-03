@@ -278,7 +278,7 @@ The next step is to store newly created record locally for an offline applicatio
 
     !![MDK](img_5.12.png)
 
-[DONE]
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Deploy the application)]

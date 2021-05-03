@@ -221,7 +221,7 @@ You will add a toolbar item to the _main page_ called **Upload Logs**. You will 
 
     !![MDK](img_6.3.png)
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Deploy the application)]
@@ -238,7 +238,7 @@ Deploy the updated application to your MDK client.
 
     You should see **Deploy succeeded** message.
 
-    !![MDK](img_7.3.png)
+    !![MDK](img-7.3.png)
 
 [DONE]
 [ACCORDION-END]
