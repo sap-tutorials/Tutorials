@@ -49,7 +49,6 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       // mandatory fields that are required to create a travel
       field ( mandatory ) Begin_Date, End_Date, Customer_ID;
 
-
       // standard operations for travel entity
       create;
       update;
@@ -64,9 +63,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       validation validateAgency on save
       { field agency_id; }
 
-        // determination
-        determination CalculateTravelKey on modify
-        { create; }
+      // determination
+      determination CalculateTravelKey on modify
+      { create; }
 
     }
     ```

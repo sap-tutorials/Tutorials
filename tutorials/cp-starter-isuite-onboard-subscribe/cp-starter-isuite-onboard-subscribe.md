@@ -44,13 +44,15 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
 [ACCORDION-BEGIN [Step 2: ](Enter your trial account)]
 
->**WHERE TO START**: If you have already activated Cloud Integration (Process Integration) or API Management services in your existing trial account, we recommend you to perform one of the following options:
+>**WHERE TO START**: If you are new to SAP BTP or SAP Integration Suite, skip this note and continue with the tutorial.
+
+> If you have already activated Cloud Integration (Process Integration) or API Management services in your existing trial account, we recommend you to perform one of the following options:
 
 > **Option 1**: If you are unable to activate **`Integration Suite`** service in an existing subaccount, create a **`New Subaccount`** and then proceed to **Step 3**. For a new subaccount, you need to assign entitlements by adding service plans and the quotas. For more information, see [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/c90f3d522ee04e65bd87cdec8808e5ce.html).
 
 > **Option 2**: To continue with the same subaccount, unsubscribe from Cloud Integration and API Management services, and then proceed to **Step 3**.
 
-> If you are new to SAP BTP or Integration Suite, continue with the tutorial.
+> If you have already activated Integration Suite in your existing trial account, proceed to **Step 4**. You can consume only one Integration Suite tenant per trial account.
 
 
 1. In your web browser, open the [SAP BTP trial cockpit](https://cockpit.hanatrial.ondemand.com/).
@@ -89,7 +91,7 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
     >- Filter for Integration Suite service and select the service.
 
-    >- Select the service plan, add it to your subaccount, and continue with this  tutorial.
+    >- Select the service plan, add it to your subaccount, and continue with this tutorial.
 
 4. Choose the default plan which is **trial** and click **Create**.
 

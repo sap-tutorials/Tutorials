@@ -42,7 +42,7 @@ In this tutorial, you will create a Slider extension via NativeScript (in TypeSc
 
 3. Select **MDK Project** and click **Next**.
 
-    !![MDK](img_1.3.png)
+    !![MDK](img-1.3.png)
 
 4. In *Basic Information* step, select or provide the below information and click **Next**:
 
@@ -880,20 +880,22 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     You should see **Deploy succeeded** message.
 
-    !![MDK](img_6.4.png)
+    !![MDK](img-6.4.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Populate the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 7: ](Display the QR code for app onboarding)]
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
+Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
 !![MDK](img-7.1.png)
 
 !![MDK](img_7.2.png)
+
+>Leave the Onboarding dialog box open for step 7.
 
 [DONE]
 [ACCORDION-END]
@@ -922,9 +924,9 @@ Once you accept app update, you see Slider control.
 
 [OPTION END]
 
-**Congratulations!** You have successfully created a Slider Custom Control in your MDK App Using Metadata Approach and you are now all set to [Add NativeScript Plugins in an MDK App](cp-mobile-dev-kit-nativescript-geolocation).
+Congratulations, you have successfully created a Slider Custom Control in your MDK App Using Metadata Approach and you can continue with the remaining tutorials in this mission.
 
-[DONE]
+[VALIDATE_4]
 [ACCORDION-END]
 
 ---

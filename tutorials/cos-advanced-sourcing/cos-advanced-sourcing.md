@@ -18,9 +18,9 @@ primary_tag: topic>cloud
 ### You will learn
   - How to check availability raw data already included in your service
   - How to create source lists
-  - How to create custom rules from custom attributes
+  - How to create custom goals from custom attributes
   - How to create and change sourcing strategies
-  - How different rules affect the sourcing algorithm
+  - How different goals affect the sourcing algorithm
 
 ---
 
@@ -51,7 +51,7 @@ You have several products available:
 
   - In Germany the sourcing strategy changes:
       - At first the goal was to serve the Customers from the source with the **shortest distance to the destination**.
-      - As the distribution center in Berlin got renovated and now is the biggest one in Germany it is the number one priority source. To achieve this, the rule **sources according to priority** will be added on top of the already existing rule for Germany.
+      - As the distribution center in Berlin got renovated and now is the biggest one in Germany it is the number one priority source. To achieve this, the goal **sources according to priority** will be added on top of the already existing goal for Germany.
   - Customer who are not located in Germany, Canada or the US should be served by the DC or store with the **highest capacity**.
 
 
@@ -169,11 +169,11 @@ If you want to learn how to create a sourcing strategy in a short and effective 
 
 10. Go back to your strategy creation screen.
 
-11. Under **Objectives**, drag and drop the objective **Products from Several Sources** onto the canvas for modeling your strategy, under the shopping cart.
+11. Under **Templates**, drag and drop the template **Products from Several Sources** onto the canvas for modeling your strategy, under the shopping cart.
 
 12. Drag and drop the source list **Sources in the US** into the first box.
 
-13. Drag and drop the rule **Shortest Distance to Destination** into the second box.
+13. Drag and drop the goal **Shortest Distance to Destination** into the second box.
 
 14. Save your strategy.
 
@@ -206,11 +206,11 @@ If you want to learn how to create a sourcing strategy in a short and effective 
 
 10. Go back to your strategy creation screen.
 
-11. Under Objectives, drag and drop the objective **Products from Several Sources** onto the canvas for modeling your strategy, under the shopping cart.
+11. Under Templates, drag and drop the template **Products from Several Sources** onto the canvas for modeling your strategy, under the shopping cart.
 
 12. Drag and drop the source list **Sources for Canada or worldwide** into the first box.
 
-13. Drag and drop the rule **Highest Availability** into the second box.
+13. Drag and drop the goal **Highest Availability** into the second box.
 
 14. Save your strategy.
 
@@ -229,11 +229,11 @@ In Germany, the sourcing strategy will change. This change will take place after
 
 2. Open your newly created strategy.
 
-3. Under Objectives, drag and drop the objective **Products from Several Sources** onto the canvas for modeling your strategy, under the shopping cart.
+3. Under Templates, drag and drop the template **Products from Several Sources** onto the canvas for modeling your strategy, under the shopping cart.
 
 4. Drag and drop the source list **DCs in Germany** into the first box. Additionally to that add the source **Berlin** as well. Make sure, that Berlin is at the first position in the box.
 
-5. Drag and drop the rule **Shortest Distance to Destination** into the second box.
+5. Drag and drop the goal **Shortest Distance to Destination** into the second box.
 
 6. Save your strategy.
 
@@ -248,11 +248,11 @@ In Germany, the sourcing strategy will change. This change will take place after
 
 2. Open your newly created strategy.
 
-3. Create a custom rule, which will be used in this strategy:
+3. Create a custom goal, which will be used in this strategy:
 
-4. Go to **Rules > Manage** to open the **Manage Rules** screen.
+4. Go to **Goals > Manage** to open the **Manage Goals** screen.
 
-5. Create a new rule by clicking **+** in the top-right corner.
+5. Create a new goal by clicking **+** in the top-right corner.
 
 6. For **Name**, enter **`Highest Capacity`**.
 
@@ -260,17 +260,17 @@ In Germany, the sourcing strategy will change. This change will take place after
 
 8. For **Comparator**, choose **`Highest Value`**.
 
-9. Save your rule.
+9. Save your goal.
 
     ![Capacity](Rule_Capacity.png)
 
 10. Go back to your strategy creation screen.
 
-11. Under Objectives, drag and drop the objective **Products from Several Sources** onto the canvas for modeling your strategy, under the shopping cart.
+11. Under Templates, drag and drop the template **Products from Several Sources** onto the canvas for modeling your strategy, under the shopping cart.
 
 12. Drag and drop source list **Sources for Canada or worldwide** into the first box.
 
-13. Drag and drop the rule **Highest Capacity** into the second box.
+13. Drag and drop the goal **Highest Capacity** into the second box.
 
 14. Save your strategy.
 
@@ -402,7 +402,7 @@ Let's check where the products are sourced from:
 
 1. In the Strategy Builder open the strategy with the Strategy ID **Germany**.
 
-2. Drag and drop the rule **Sources according to Priority** above the rule **Shortest Distance to Destination** into the second box.
+2. Drag and drop the goal **Sources according to Priority** above the goal **Shortest Distance to Destination** into the second box.
 
 3. Save your strategy.
 
@@ -490,7 +490,7 @@ Congratulations! You have successfully completed this tutorial.
 
 - [Official Product Documentation](https://help.sap.com/viewer/product/SAP_CUSTOMER_ORDER_SOURCING/Cloud/en-US)
 - [Trial Documentation](https://help.sap.com/viewer/DRAFT/cd03af1a94a440f1b5dbc0dc50a0989b/Cloud/en-US)
-- [How do the Rules work?](https://help.sap.com/viewer/a8094e21e0ed43b39ad79ade28eefabb/Cloud/en-US/a96a37284b5142ee968e9c9392304920.html#loiob368d40ba4a7438b857d394ab6e6c7a6)
+- [How do the Goals work?](https://help.sap.com/viewer/a8094e21e0ed43b39ad79ade28eefabb/Cloud/en-US/a96a37284b5142ee968e9c9392304920.html#loiob368d40ba4a7438b857d394ab6e6c7a6)
 - [API Reference Documentation](https://help.sap.com/viewer/59d653d22328437c9e0817340181b896/Cloud/en-US)
 - [SAP Customer Order Sourcing on the SAP API Business Hub](https://api.sap.com/package/CustomerOrderSourcing?section=Artifacts)
 - [Additional information on how to configure Environments on the SAP API Business Hub](https://help.sap.com/viewer/84b35b9c39b247e3ba2a31f02beee46d/Cloud/en-US/f7796baaef6a48e9867298827f5028ff.html)

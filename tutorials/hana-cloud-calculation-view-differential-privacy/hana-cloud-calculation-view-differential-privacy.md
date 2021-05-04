@@ -14,7 +14,7 @@ primary_tag: products>sap-hana
 ## Details
 ### You will learn
  - How to create Calculation View of type Cube using SAP Business Application Studio
- - How to configure data masking to a column in order to protect sensitive data
+ - How to configure data anonymization to a column in order to protect sensitive data
 
 A video version of this tutorial is also available:
 
