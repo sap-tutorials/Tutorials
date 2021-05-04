@@ -11,8 +11,7 @@ primary_tag: topic>internet-of-things
 - You have licensed SAP Internet of Things (with the new capacity unit based licensing introduced in August 2020, your company has a Cloud Platform Enterprise Agreement or Pay-As-You-Go for SAP BTP and you have subscribed to the `oneproduct` service plan)
  - You have setup the subscription for SAP IoT in your global account in a tenant (e.g. in the DEV tenant, the guide for the basic setup is at [Get Started with Your SAP IoT Account](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest/en-US/bfe6a46a13d14222949072bf330ff2f4.html) ).
  - Your SAP User has at a minimum the `iot_role_collection` created during onboarding of your tenant and the associated roles (see [SAP Help on Providing Authorizations in](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest/en-US/2810dd61e0a8446d839c936f341ec46d.html ) )
- - You have created an empty `package` in SAP Internet of Things (see [SAP Help on Creating a Package](https://help.sap.com/viewer/e057ad687acc4d2d8f2893609aff248b/latest/en-US/5ba36c7bc9af4576997f72d6dddfc951.html) )
- -You have created destinations for the SAP S/4HANA or SAP S/4HANA Cloud kanban APIs as described in [Create Destinations for Kanban APIs](iot-autoid-kanban-destination)
+ - You have created destinations for the SAP S/4HANA or SAP S/4HANA Cloud kanban APIs as described in [Create Destinations for Kanban APIs](iot-autoid-kanban-destination)
 
 ## Details
 ### You will learn

@@ -14,6 +14,7 @@ primary_tag: topic>internet-of-things
 - You have licensed SAP Internet of Things (with the new capacity unit based licensing introduced in August 2020, your company has a Cloud Platform Enterprise Agreement or Pay-As-You-Go for SAP BTP and you have subscribed to the `oneproduct` service plan)
 - You have setup the subscription for SAP IoT in your global account in a tenant (e.g. in the DEV tenant, the guide for the basic setup is at [Get Started with Your SAP IoT Account](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest/en-US/bfe6a46a13d14222949072bf330ff2f4.html) ).
 - Your SAP User has at a minimum the `iot_role_collection` created during onboarding of your tenant and the associated roles (see [SAP Help on Providing Authorizations in SAP IoT](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest/en-US/2810dd61e0a8446d839c936f341ec46d.html ) )
+ - You have created an empty `package` in SAP Internet of Things (see [SAP Help on Creating a Package](https://help.sap.com/viewer/e057ad687acc4d2d8f2893609aff248b/latest/en-US/5ba36c7bc9af4576997f72d6dddfc951.html) )
 
 ## Details
 ### You will learn
@@ -92,10 +93,47 @@ In order to create a digital twin of a physical asset (e.g. a RFID scanner that 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create Mapping in Thing Type)]
+[ACCORDION-BEGIN [Step 3: ](Create Thing Property and Thing Type)]
 Open the Fiori launchpad of your SAP Internet of Things tenant and navigate to the **Thing Engineer OData** tab and open the app **Thing Modeler**
 
-  1.   Open the **Package** `epcis` in the **Select Package** dialog.
+  1.   Open your **Package** (in this example a package with name  `sap.tutorial` is used ) in the **Select Package** dialog.
+
+  2.   Create a new **Thing Type** **`epcis`** and **Save**
+
+  3.   Open the **Thing Properties Catalog**:
+
+      !![Thing Type created](ThingType.png)
+
+  4.   Create a new **Property Set** called **`epcis_data`** of type **Measured Values**
+
+      !![New Property Set](NewPropertySet.png)
+
+  5.  Add a new **Measured Value** **`eventxml`** of type **Large String**
+
+      !![AddMeasuredValue](AddMeasuredValue.png)
+
+  6.  **Save** the created **Thing Property** and switch back to the **Thing Modeler**
+
+  7.  On your **Thing Type** `epcis` switch to the **Measured Values (0)** tab and click **+** to add your property set `epcis_data`
+
+      !![AddMeasuredValuetoThingType](AddMeasuredValuetoThingType.png)
+
+  8. Finally **Save** the **Thing Type**
+
+At the end the result should look like this:
+
+!![FinalThingType](FinalThingType.png)
+
+
+> Ensure that the property is called `eventxml`
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Create Mapping in Thing Type)]
+Open the Fiori launchpad of your SAP Internet of Things tenant and navigate to the **Thing Engineer OData** tab and open the app **Thing Modeler**
+
+  1.   Open the **Package** `sap.tutorial` in the **Select Package** dialog.
 
     !![Select EPICS Package](EPCIS Package.png)
 
@@ -116,7 +154,7 @@ At the end the result you look like this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create Thing and assign Device)]
+[ACCORDION-BEGIN [Step 5: ](Create Thing and assign Device)]
 Open the Fiori launchpad of your SAP Internet of Things tenant and navigate to the **Thing Engineer OData**, open the app **Thing Modeler** and select again the `epcis` package.
 
   1. Switch to the **Things** tab and create a new Thing. Provide an appropriate name (e.g. **`epcis_scanner`** ) and description and select `epcis` as **Thing Type** and choose `TENANT_ROOT` as Authorization Group and **Save**.
@@ -134,7 +172,7 @@ Open the Fiori launchpad of your SAP Internet of Things tenant and navigate to t
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Setup MQTT Box)]
+[ACCORDION-BEGIN [Step 6: ](Setup MQTT Box)]
 
 Start the `MQTTBox` application and click on **Create MQTT Client**. Maintain the following fields in the **MQTT Client Setting**:
 
@@ -186,7 +224,7 @@ If you have used the `alternateIds` maintained in the Postman collection you can
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Ingest EPCIS Event)]
+[ACCORDION-BEGIN [Step 7: ](Ingest EPCIS Event)]
 Once you have established the connection you can try to send an EPCIS Event via MQTT. To do so you have to escape the the XML format based EPCIS and send it is value of `eventxml`. Here you can find an example payload:
 
 ``` JSON
