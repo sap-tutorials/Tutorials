@@ -3,9 +3,9 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: Offline-Enable Your Android Application
 description: Enable offline OData in your Android application, resulting in an application that can be used without a network connection and that performs data requests with less latency.
-primary_tag: products>sap-cloud-platform-sdk-for-android
+primary_tag: products>sap-btp-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-cloud-platform-sdk-for-android, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
 time: 30
 ---
 
@@ -15,10 +15,10 @@ time: 30
 - How the synchronization code works
 - How to handle errors that occur while syncing
 ---
-
+ 
 [ACCORDION-BEGIN [Step 1: ](Generate and run an offline app)]
 
-1.  Follow the instructions at [Try Out the SAP Cloud Platform SDK for Android Wizard](cp-sdk-android-wizard-app) to create a new application using the SAP Cloud Platform SDK for Android Wizard and select **Offline** for the OData option on the **Project Features** tab. The push feature is not needed for this application.
+1.  Follow the instructions at [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app) to create a new application using the SAP BTP SDK Wizard for Android and select **Offline** for the OData option on the **Project Features** tab. The push feature is not needed for this application.
 
     !![Choose Offline OData](choosing_offline_odata.png)
 
@@ -68,7 +68,7 @@ time: 30
 >Make sure you are selecting the right language above.
 
 [OPTION BEGIN [Java]]
-The offline store is populated based on objects called in using `OfflineODataDefiningQuery`. The defining queries are located in `SAPServiceManager.java`, in the `initializeOffline` method.
+The offline store is populated based on objects called in using `OfflineODataDefiningQuery`. The defining queries are located in `OfflineWorkerUtil.java`, in the `initializeOffline` method.
 
 ```Java
 OfflineODataDefiningQuery customersQuery = new OfflineODataDefiningQuery("Customers", "Customers", false);
@@ -78,7 +78,7 @@ OfflineODataDefiningQuery productsQuery = new OfflineODataDefiningQuery("Product
 [OPTION END]
 
 [OPTION BEGIN [Kotlin]]
-The offline store is populated based on objects called in using `OfflineODataDefiningQuery`. The defining queries are located in `SAPServiceManager.kt`, in the `initializeOffline` method.
+The offline store is populated based on objects called in using `OfflineODataDefiningQuery`. The defining queries are located in `OfflineWorkerUtil.kt`, in the `initializeOffline` method.
 
 ```Kotlin
 val customersQuery = OfflineODataDefiningQuery("Customers", "Customers", false)
@@ -98,53 +98,61 @@ Defining queries tell the `OfflineODataProvider` (the class that manages the off
 
 >Make sure you are selecting the right language above.
 
-The application allows users to make changes against a local offline store and synchronize manually at any time. The sync operation is performed by a [foreground service](https://developer.android.com/guide/components/services#Foreground). There are three operations that must be implemented in order to use the offline store functionality: `open`, `download`, and `upload`. As their names suggest, the operations open the offline store, download server changes, and upload user changes, respectively. In the wizard-generated application, `OpenStoreWorker` implements `open` during initialization and `SyncStoreWorker` implements a sync operation, which requires `download` first, and then `upload`.
+The application allows users to make changes against a local offline store and synchronize manually at any time. The sync operation is performed by a [worker](https://developer.android.com/topic/libraries/architecture/workmanager/basics). There are three operations that must be implemented in order to use the offline store functionality: `open`, `download`, and `upload`. As their names suggest, the operations open the offline store, download server changes, and upload user changes, respectively. In the wizard-generated application, `OfflineOpenWorker` implements `open` during initialization and `OfflineSyncWorker` implements a sync operation, which requires `download` first, and then `upload`.
 
 [OPTION BEGIN [Java]]
 
-1.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`OpenStoreWorker`** to open `OpenStoreWorker.java` and examine the `open` method.
+1.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`OfflineOpenWorker`** to open `OfflineOpenWorker.java` and examine the `open` method.
 
-    !![Open Store method](opening_offline_store_method_java.png)
+    !![Open method](opening_offline_store_method_java.png)
 
     The worker's work is to call the `open` method of the `OfflineODataProvider` class to perform the open operation and pass the given callbacks through.
 
-    The `OpenStoreWorker` class is called by `MainBusinessActivity.java` when the user logs into the application.
+    The `OfflineOpenWorker` class is called by `open` method in `OfflineWorkerUtil.java` which is called by `WizardFlowStateListener` when the user logs into the application.
 
-    !![MainBusinessActivity calls OpenStoreWorker](logon_calls_open_store_worker_java.png)
+    !![Open method calls OfflineOpenWorker](method_calls_offline_open_worker_java.png)
 
-2.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`SyncStoreWorker`** to open `SyncStoreWorker.java` and examine the `download` and `upload` methods.
+    !![WizardFlowStateListener calls open](logon_calls_open_java.png)
+
+2.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`OfflineSyncWorker`** to open `OfflineSyncWorker.java` and examine the `download` and `upload` methods.
 
     !![Sync method](syncing_offline_store_worker_java.png)
 
     The worker's work is to call the `download` and `upload` method of the `OfflineODataProvider` class to perform the sync operation and pass the given callbacks through.
 
-    The `SyncStoreWorker` class is called by `SAPServiceManager` when the user wants to perform a sync. When an entity is created locally in the offline store, its primary key is left unset. This is because when the user performs an `upload`, the server will set the primary key for the client. An `upload` and a `download` are normally performed together because the `download` may return updated values from the server, such as a newly-created primary key.
+    The `OfflineSyncWorker` class is called by the `sync` method in `OfflineWorkerUtil.java`, which is called by `EntitySetListActivity` when the user wants to perform a sync. When an entity is created locally in the offline store, its primary key is left unset. This is because when the user performs an `upload`, the server will set the primary key for the client. An `upload` and a `download` are normally performed together because the `download` may return updated values from the server, such as a newly-created primary key.
 
-    !![SAPServiceManager performs sync](sap_service_manager_performs_sync_java.png)
+    !![Sync method calls OfflineSyncWorker](method_calls_offline_sync_worker_java.png)
+
+    !![EntitySetListActivity performs sync](entity_set_list_activity_performs_sync_java.png)
 
 [OPTION END]
 
 [OPTION BEGIN [Kotlin]]
 
-1.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`OpenStoreWorker`** to open `OpenStoreWorker.kt` and examine the `open` method.
+1.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`OfflineOpenWorker`** to open `OfflineOpenWorker.kt` and examine the `open` method.
 
-    !![Open Store method](opening_offline_store_method_kotlin.png)
+    !![Open method](opening_offline_store_method_kotlin.png)
 
     The worker's work is to call the `open` method of the `OfflineODataProvider` class to perform the open operation and pass the given callbacks through.
 
-    The `OpenStoreWorker` class is called by `MainBusinessActivity.kt` when the user logs into the application.
+    The `OfflineOpenWorker` class is called by `open` method in `OfflineWorkerUtil.kt` which is called by `WizardFlowStateListener` when the user logs into the application.
 
-    !![MainBusinessActivity calls OpenStoreWorker](logon_calls_open_store_worker_kotlin.png)
+    !![Open method calls OfflineOpenWorker](method_calls_offline_open_worker_kotlin.png)
 
-2.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`SyncStoreWorker`** to open `SyncStoreWorker.kt` and examine the `download` and `upload` methods.
+    !![WizardFlowStateListener calls open](logon_calls_open_kotlin.png)
+
+2.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`OfflineSyncWorker`** to open `OfflineSyncWorker.kt` and examine the `download` and `upload` methods.
 
     !![Sync method](syncing_offline_store_worker_kotlin.png)
 
     The worker's work is to call the `download` and `upload` method of the `OfflineODataProvider` class to perform the sync operation and pass the given callbacks through.
 
-    The `SyncStoreWorker` class is called by `SAPServiceManager` when the user wants to perform a sync. When an entity is created locally in the offline store, its primary key is left unset. This is because when the user performs an `upload`, the server will set the primary key for the client. An `upload` and a `download` are normally performed together because the `download` may return updated values from the server, such as a newly-created primary key.
+    The `OfflineSyncWorker` class is called by the `sync` method in `OfflineWorkerUtil.kt`, which is called by `EntitySetListActivity` when the user wants to perform a sync. When an entity is created locally in the offline store, its primary key is left unset. This is because when the user performs an `upload`, the server will set the primary key for the client. An `upload` and a `download` are normally performed together because the `download` may return updated values from the server, such as a newly-created primary key.
 
-    !![SAPServiceManager performs sync](sap_service_manager_performs_sync_kotlin.png)
+    !![Sync method calls OfflineSyncWorker](method_calls_offline_sync_worker_kotlin.png)
+
+    !![EntitySetListActivity performs sync](entity_set_list_activity_performs_sync_kotlin.png)
 
 [OPTION END]
 
@@ -425,15 +433,14 @@ In this section we will create an **Error Information** screen that displays the
 
 7.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.java`.
 
-8.  In the `synchronize` method, find the line that performs the `sapServiceManager.synchronize` method call.
+8.  In the `synchronize` method, find the line that performs the `OfflineWorkerUtil.sync` method call.
 
-    !![SapServiceManager synchronize](sapServiceManager_synchronize_call_java.png)
+    !![OfflineWorkerUtil synchronize](offlineWorkerUtil_synchronize_call_java.png)
 
-9.  Right after the `progressBar.setVisibility(View.INVISIBLE)` line in the success callback, add the following code, which queries the error archive and displays information to the user about the first error encountered.
+9.  Right after the `progressBar.setVisibility(View.INVISIBLE);` line, in the `SUCCEEDED` case of sync work state, add the following code, which queries the error archive and displays information to the user about the first error encountered:
 
     ```Java
-    SAPServiceManager serviceManager = ((SAPWizardApplication)getApplication()).getSAPServiceManager();
-    OfflineODataProvider provider = serviceManager.retrieveProvider();
+    OfflineODataProvider provider = OfflineWorkerUtil.getOfflineODataProvider();
     try {
         List<OfflineODataErrorArchiveEntity> errorArchive = provider.getErrorArchive();
 
@@ -475,53 +482,52 @@ In this section we will create an **Error Information** screen that displays the
     }
     ```
 
-    After modification, the success callback should look like this:
+    After modification, the `SUCCEEDED` block should look like this:
 
     ```Java
-    () -> EntitySetListActivity.this.runOnUiThread(() -> {
-        progressBar.setVisibility(View.INVISIBLE);
-        SAPServiceManager serviceManager = ((SAPWizardApplication)getApplication()).getSAPServiceManager();
-        OfflineODataProvider provider = serviceManager.retrieveProvider();
-        try {
-            List<OfflineODataErrorArchiveEntity> errorArchive = provider.getErrorArchive();
+    case SUCCEEDED:
+      LOGGER.info("Offline sync done.");
+      OfflineODataProvider provider = OfflineWorkerUtil.getOfflineODataProvider();
+      try {
+          List<OfflineODataErrorArchiveEntity> errorArchive = provider.getErrorArchive();
 
-            for (OfflineODataErrorArchiveEntity errorEntity : errorArchive) {
-                String requestURL = errorEntity.getRequestURL();
-                String method = errorEntity.getRequestMethod();
-                String message = errorEntity.getMessage();
-                Integer statusCode = errorEntity.getHttpStatusCode() != null  ?  errorEntity.getHttpStatusCode() : 0;
-                String body = errorEntity.getRequestBody();
+          for (OfflineODataErrorArchiveEntity errorEntity : errorArchive) {
+              String requestURL = errorEntity.getRequestURL();
+              String method = errorEntity.getRequestMethod();
+              String message = errorEntity.getMessage();
+              Integer statusCode = errorEntity.getHttpStatusCode() != null  ?  errorEntity.getHttpStatusCode() : 0;
+              String body = errorEntity.getRequestBody();
 
-                LOGGER.error("RequestURL: " + requestURL);
-                LOGGER.error("HTTP Status Code: " + statusCode);
-                LOGGER.error("Method: " + method);
-                LOGGER.error("Message: " + message);
-                LOGGER.error("Body: " + body);
+              LOGGER.error("RequestURL: " + requestURL);
+              LOGGER.error("HTTP Status Code: " + statusCode);
+              LOGGER.error("Method: " + method);
+              LOGGER.error("Message: " + message);
+              LOGGER.error("Body: " + body);
 
-                Intent errorIntent = new Intent(EntitySetListActivity.this, ErrorActivity.class);
-                errorIntent.putExtra("ERROR_URL", requestURL);
-                errorIntent.putExtra("ERROR_CODE", statusCode);
-                errorIntent.putExtra("ERROR_METHOD", method);
-                errorIntent.putExtra("ERROR_BODY", body);
-                try {
-                    JSONObject jsonObj = new JSONObject(message);
-                    errorIntent.putExtra("ERROR_MESSAGE", jsonObj.getJSONObject("error").getString("message"));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+              Intent errorIntent = new Intent(EntitySetListActivity.this, ErrorActivity.class);
+              errorIntent.putExtra("ERROR_URL", requestURL);
+              errorIntent.putExtra("ERROR_CODE", statusCode);
+              errorIntent.putExtra("ERROR_METHOD", method);
+              errorIntent.putExtra("ERROR_BODY", body);
+              try {
+                  JSONObject jsonObj = new JSONObject(message);
+                  errorIntent.putExtra("ERROR_MESSAGE", jsonObj.getJSONObject("error").getString("message"));
+              } catch (JSONException e) {
+                  e.printStackTrace();
+              }
 
-                // Reverts all failing entities to the previous state or set
-                // offlineODataParameters.setEnableIndividualErrorArchiveDeletion(true);
-                // to cause the deleteEntity call to only revert the specified entity
-                // https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html#reverting-an-error-state
-                // provider.deleteEntity(errorEntity, null, null);
-                startActivity(errorIntent);
-                break; //For simplicity, only show the first error encountered
-            }
-        } catch (OfflineODataException e) {
-            e.printStackTrace();
-        }
-    }),
+              // Reverts all failing entities to the previous state or set
+              // offlineODataParameters.setEnableIndividualErrorArchiveDeletion(true);
+              // to cause the deleteEntity call to only revert the specified entity
+              // https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html#reverting-an-error-state
+              // provider.deleteEntity(errorEntity, null, null);
+              startActivity(errorIntent);
+              break; //For simplicity, only show the first error encountered
+          }
+      } catch (OfflineODataException e) {
+          e.printStackTrace();
+      }
+      break;
     ```
 
 10.  Run the app again, and re-attempt the sync. When the sync fails, you should see the following error screen.
@@ -775,15 +781,14 @@ In this section we will create an **Error Information** screen that displays the
 
 7.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.kt`.
 
-8.  In the `synchronize` method, find the line that performs the `sapServiceManager.synchronize` method call.
+8.  In the `synchronize` method, find the line that performs the `OfflineWorkerUtil.sync` method call.
 
-    !![SapServiceManager synchronize](sapServiceManager_synchronize_call_kotlin.png)
+    !![OfflineWorkerUtil synchronize](offlineWorkerUtil_synchronize_call_kotlin.png)
 
-9.  Right after the `progressBar!!.visibility = View.INVISIBLE` line in the success callback, add the following code, which queries the error archive and displays information to the user about the first error encountered.
+9.  Right after the `sync_determinate.visibility = View.INVISIBLE` line, in the `WorkInfo.State.SUCCEEDED` block, add the following code, which queries the error archive and displays information to the user about the first error encountered:
 
     ```Kotlin
-    val serviceManager = (application as SAPWizardApplication).sapServiceManager
-    val provider = serviceManager!!.retrieveProvider()
+    val provider = OfflineWorkerUtil.offlineODataProvider
 
     try {
         val errorArchive = provider!!.errorArchive
@@ -826,10 +831,58 @@ In this section we will create an **Error Information** screen that displays the
     } catch (e: OfflineODataException) {
         e.printStackTrace()
     }
-
     ```
 
-    After modification, the success callback should look like:
+    After modification, the `WorkInfo.State.SUCCEEDED` block should look like this:
+
+    ```Kotlin
+    WorkInfo.State.SUCCEEDED -> {
+        LOGGER.info("Offline sync done.")
+        val provider = OfflineWorkerUtil.offlineODataProvider
+
+        try {
+            val errorArchive = provider!!.errorArchive
+
+            for (errorEntity in errorArchive) {
+                val requestURL = errorEntity.requestURL
+                val method = errorEntity.requestMethod
+                val message = errorEntity.message
+                val statusCode = errorEntity.httpStatusCode ?: 0
+                val body = errorEntity.requestBody
+
+                LOGGER.error("RequestURL: $requestURL")
+                LOGGER.error("HTTP Status Code: $statusCode")
+                LOGGER.error("Method: $method")
+                LOGGER.error("Message: $message")
+                LOGGER.error("Body: $body")
+
+                val errorIntent = Intent(this@EntitySetListActivity, ErrorActivity::class.java)
+
+                errorIntent.putExtra("ERROR_URL", requestURL)
+                errorIntent.putExtra("ERROR_CODE", statusCode)
+                errorIntent.putExtra("ERROR_METHOD", method)
+                errorIntent.putExtra("ERROR_BODY", body)
+
+                try {
+                    val jsonObj = JSONObject(message)
+                    errorIntent.putExtra("ERROR_MESSAGE", jsonObj.getJSONObject("error").getString("message"))
+                } catch (e: JSONException) {
+                    e.printStackTrace()
+                }
+
+                // Reverts all failing entities to the previous state or set
+                // offlineODataParameters.setEnableIndividualErrorArchiveDeletion(true);
+                // to cause the deleteEntity call to only revert the specified entity
+                // https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html#reverting-an-error-state
+                // provider.deleteEntity(errorEntity, null, null);
+                startActivity(errorIntent)
+                break //For simplicity, only show the first error encountered
+            }
+        } catch (e: OfflineODataException) {
+            e.printStackTrace()
+        }
+    }
+    ```
 
 
 10.  Run the app again, and re-attempt the sync. When the sync fails, you should see the following error screen.
@@ -840,9 +893,9 @@ In this section we will create an **Error Information** screen that displays the
 
 [OPTION END]
 
->Further information on using the offline feature can be found at [Step by Step with the SAP Cloud Platform SDK for Android — Part 6 — Offline OData](https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-6-offline-odata/).
+>Further information on using the offline feature can be found at [Step by Step with the SAP BTP SDK for Android — Part 6 — Offline OData](https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-6-offline-odata/).
 
-Congratulations! You have created an offline-enabled app using the SAP Cloud Platform SDK for Android Wizard and examined how the `ErrorArchive` can be used to view synchronization errors!
+Congratulations! You have created an offline-enabled app using the SAP BTP SDK Wizard for Android and examined how the `ErrorArchive` can be used to view synchronization errors!
 
 [DONE]
 [ACCORDION-END]

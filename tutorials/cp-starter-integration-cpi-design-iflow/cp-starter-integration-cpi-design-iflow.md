@@ -54,7 +54,7 @@ author_profile: https://github.com/Karunaharan
 
       !![Enter integration flow details and confirm](2-2-enter-iflow-details.png)
 
-  3. Save the integration package by choosing **Save** and open the integration flow by selecting it.
+  3. Choose **Save** and open the integration flow by selecting it.
 
       You can then edit the integration flow to add the required steps to create your integration scenario.
 
@@ -144,7 +144,7 @@ From the palette, choose **Call** > **External Call** > **Request Reply**. Conne
 
 [ACCORDION-BEGIN [Step 8: ](Connect request reply to receiver)]
 
-1. Move the **Receiver** step below the **Request Reply** step by selecting it and dragging it to the desired position on the palette. You do this to ensure that your integration flow is elegantly designed.
+1. Move the **Receiver** step below the **Request Reply** step by selecting it and dragging it to the desired position on the editor. You do this to ensure that your integration flow is elegantly designed.
 
     >**TIP:** Use the pan and zoom controls (highlighted in yellow) for resizing the canvas. Use the guidelines to ensure that **Receiver** is aligned with the **Request Reply** step.
 

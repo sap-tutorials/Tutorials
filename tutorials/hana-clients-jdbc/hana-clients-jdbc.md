@@ -23,14 +23,16 @@ primary_tag: products>sap-hana
 
 [ACCORDION-BEGIN [Step 1: ](Install a JDK)]
 
-Ensure that you installed a Java Development Kit (JDK) and make sure it is accessible from your path.  Details on which Java versions are supported can be found in  SAP note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307) and [Oracle Java SE Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html).
+Ensure that you installed a Java Development Kit (JDK) and make sure it is accessible from your path.  Details on which Java versions are supported can be found in  SAP note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307) and [Oracle Java SE Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html).  
+
+A few options include:
 
 * [Java JDK](https://www.oracle.com/technetwork/java/javase/overview/index.html) such as [Java SE 11 (LTS)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 
 * [A SAP supported version of the `OpenJDK`](https://sap.github.io/SapMachine/#download)
 
 
-To verify that it is correctly set up, run the following:
+To verify that the JDK is correctly set up, run the following:
 
 ```Shell
 java -version
@@ -45,6 +47,8 @@ If these commands fail, ensure that the folder they are located in, is included 
 [ACCORDION-BEGIN [Step 2: ](The SAP HANA JDBC driver)]
 
 The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.net/jeps/238) and as such supports multiple versions of Java.  It is available in the client installation folder at `C:\SAP\hdbclient\ngdbc.jar` and in the [maven repository](https://mvnrepository.com/artifact/com.sap.cloud.db.jdbc/ngdbc).
+
+![maven](maven.png)
 
 1. Run the following command for version information.  If needed, adjust the path to match the installation location on your machine.
 
@@ -87,7 +91,7 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
 
 [ACCORDION-BEGIN [Step 3: ](Create a Java application that queries SAP HANA)]
 
-1. Create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in notepad.
+1. The following commands will create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in notepad.
 
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\HANAClientsTutorial\java
@@ -188,33 +192,39 @@ See [Connect to SAP HANA Cloud via JDBC](https://help.sap.com/viewer/db19c7071e5
 
 [ACCORDION-BEGIN [Step 4: ](Debug the application)]
 
-Eclipse is a popular integrated development environment (IDE) for Java application development and provides a debugger.  [Download](https://www.eclipse.org/downloads/packages/) the Eclipse IDE for Java or if you wish to additionally browse the SAP HANA catalog using Data Tools, as shown in step 5, download Eclipse IDE for Enterprise Java Developers.
+Visual Studio Code provides plugins for Python and can be used to debug an application.  
 
-1. Unzip the downloaded file and start the Eclipse IDE.  
+1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
 
-    >Eclipse shows views appropriate to a certain task.  For Java development, it provides a Java perspective.  You may wish to change the perspective to the Java perspective via **Window | Perspective | Open Perspective | Java**
+2. If you have not already done so, in Visual Studio Code, choose **File | Open Folder**, and then select the `HANAClientsTutorial` folder.
 
->![Java Perspective](perspective.png)
+    ![Workspace](workspace.png)
 
-2. Create a new Java project named `JavaQuery` via the **File | New | Java Project** wizard.
+3. Open the file `JavaQuery.java` and if asked, install the recommended extensions.
 
-    Add the JDBC driver as an external jar file.  
+    ![Java extensions](extensions.png)
 
-    ![Create project](externalJar.png)
+4. Once the Java Extension Pack has been installed, expand the Java Project Explorer, and click on the **+** icon to add the JDBC driver as a referenced library.
 
-2. Add a new Java class named `JavaQuery` and replace its contents with the previous code.
+    ![referenced libraries](ref-libraries.png)
 
-    ![Add a new class](new_class.png)  
+    The JDBC driver is located at `C:\SAP\hdbclient\ngdbc.jar`.
 
-4. Set a breakpoint and click the debug toolbar to run the application and to step through the code.  
+5. Place a breakpoint and then select **Run | Start Debugging**.  
 
-    ![debugging in eclipse](debugging.png)
+    Notice that the debug view becomes active.  
+
+    Notice that the program stops running at the breakpoint that was set. Step through the code by pressing F10 and observe the variable values in the variables pane.
+
+    ![VS Code Debugging](debugging.png)
+
+
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Browse SAP HANA using DBeaver)]
-`DBeaver` is free and open source database tool and can be used with the SAP HANA JDBC driver.
+`DBeaver` is a free and open source database tool and can be used with the SAP HANA JDBC driver.
 
 The following steps demonstrate how to configure it to connect to SAP HANA Cloud or SAP HANA, express edition using the JDBC driver.
 
@@ -242,7 +252,7 @@ The following steps demonstrate how to configure it to connect to SAP HANA Cloud
 
     ![Query](dbeaver-query1.png)
 
-    `DBeaver` also has the ability to view an entity relationship (ER) diagram, perform a comparison of two selected objects, import/export wizards, a spatial view for data containing location data, and two panels to aid in data analysis (grouping and `calc` panels).
+    `DBeaver` can also be used to create an entity relationship (ER) diagram, perform a comparison of two selected objects, execute import and export operations, view spatial data on a map, and perform data analysis with its grouping and `calc` panels.
 
 Congratulations! You have now created and debugged a Java application that connects to and queries an SAP HANA database and used the JDBC driver in a third party tool.
 

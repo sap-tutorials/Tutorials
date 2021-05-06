@@ -2,17 +2,16 @@
 auto_validation: true
 title: Develop and Run SAP Fiori Application with Visual Studio Code
 description: Develop and run your SAP Fiori Application with Visual Studio Code.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites
-  - You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
-  - You need an SAP Cloud Platform ABAP Environment [trial user](abap-environment-trial-onboarding) or a license.
-  - You have completed [Develop an SAP Fiori App Using ABAP Mission (Tutorial 1 - 6)](abap-environment-trial-onboarding).
+  - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
+  - You have completed [Develop a Fiori App Using the ABAP RESTful Application Programming Model (Managed Scenario)](group.abap-env-restful-managed).
   - Installation of:
     - [Git](https://git-scm.com/downloads)
     - [Node.js and VS Code](https://help.sap.com/viewer/454b7fb9aacd4e369e5be8f7e909d3ec/Latest/en-US/61383cac9de24b75a4e2b8c9d11e8af0.html)
@@ -26,6 +25,8 @@ author_profile: https://github.com/mervey45
   - How to run an SAP Fiori application
   - How to deploy an SAP Fiori application
 
+>**HINT**: If you are not able to see the **Fiori Application Generator**, please install the generator again by opening the terminal and adding following: npm `install -g yo`.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create SAP Fiori application)]
@@ -34,23 +35,19 @@ author_profile: https://github.com/mervey45
 
     !![app](app.png)
 
-2. Search **Yeoman UI Generators** and select it.
+2. Search **Fiori: Open Application Generator** and select it.
 
     !![app](app2.png)
 
-3. Select **SAP Fiori elements application** and click **Next >**.
+3. Select **SAP Fiori elements** as application type, **List Report Object Page** as `floorplan` and click **Next >**.
 
     !![app](app3.png)
 
-4. Select **List Report Object Page** and click **Next >**.
-
-    !![app](app4.png)
-
-5. Select **Data Source** and **Service**:
+4. Select **Data Source** and **Service**:
 
     - Data source: Connect to an SAP System
     - System: New System
-    - System type: ABAP Environment on SAP Cloud Platform
+    - System type: ABAP Environment on SAP Business Technology Platform
     - ABAP environment definition source: Upload a Service Key File
     - Service key file path: `<your_service_key>`
     - System name: `<your_system_name>`
@@ -60,23 +57,53 @@ author_profile: https://github.com/mervey45
 
       Click **Next >**.
 
-      You have downloaded the service key earlier in the SAP Cloud Platform Trial Cockpit.
+      You have downloaded the service key earlier in the SAP BTP Trial Cockpit.
 
-6. Select **`TravelProcessor`** and click **Next >**.
+5. Select **`TravelProcessor`** and click **Next >**.
 
     !![app](app6.png)
 
-7. Add project attributes:
+6. Add project attributes:
 
     - Module name: `ztravel_app_xxx`
     - Application title: Travel App XXX
     - Project folder path: `C:\Users\<your_user>\projects`
+    - Add deployment configuration: Yes
+    - Add FLP configuration: Yes
 
     !![app](app7.png)
 
+    Click **Next >**.
+
+7. Configure deployment:
+
+     - Target: ABAP
+     - Is this an SAP Business Technology Platform system? Yes
+     - Target System URL: `<your_abap_system_url>`
+     - Name: `ztravel_app_xxx`
+     - Package: `ztravel_app_xxx`
+     - Transport Request: `<your_transport_request>`
+     - Deployment description: deployment xxx
+
+    !![app](app9.png)
+
+    Click **Next >**.
+
+    >**HINT: If you want to copy your transport request, please do following:**  Open Eclipse, search your package **`ZTRAVEL_APP_XXX`** and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your **transport request** underneath the **Modifiable** folder.
+    >      ![deploy](deploy31.png)
+
+
+8. Configure Fiori Launchpad:
+
+     - Semantic Object: `ztravel_app_xxx`
+     - Action: display
+     - Title: Travel App XXX
+
+    !![app](app10.png)
+
     Click **Finish**.
 
-8. Click **Open in New Workspace**.
+9. Now all files have been generated.
 
     !![app](app8.png)
 
@@ -104,47 +131,52 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 3: ](Deploy SAP Fiori application)]
 
-  1. Open your terminal, enter `npx fiori add flp-config` and press enter.
+1. Open your terminal and enter `npm run deploy`. When prompted, check deployment configuration and press **y**.
 
-      ![deploy](deploy.png)
+     ![deploy](deploy6.png)
 
-  2. Enter following:
+2. Now your application is deployed.
+
+     ![deploy](deploy7.png)
+
+
+>**HINT: If you want to update your SAP Fiori Launchpad configuration, then you can do following steps:**
+
+>  1. Open your terminal, enter `npx fiori add flp-config` and press enter.
+>     ![deploy](deploy.png)
+
+>  2. Enter following:
      - Semantic object: `ztravel_app_xxx`
      - Action: display
      - Title: Travel App XXX
      - Subtitle: (press enter)  
 
-      ![deploy](deploy2.png)
+>      ![deploy](deploy2.png)
 
-  3. Open `manifest.json` in your `webapp` folder.
+>  3. Open `manifest.json` in your `webapp` folder.
 
-      ![deploy](deploy3.png)
+>      ![deploy](deploy3.png)
 
-  4. Check your semantic object. It should be **`ztravel_app_xxx`**.
+>  4. Check your semantic object. It should be **`ztravel_app_xxx`**.
 
-      ![deploy](deploy4.png)
+>      ![deploy](deploy4.png)
 
-  5. Open your terminal, enter `npx fiori add deploy-config` and press enter.   
+>  5.  Open Eclipse, search your package **`ZTRAVEL_APP_XXX`** and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your **transport request** underneath the **Modifiable** folder.
+
+>      ![deploy](deploy31.png)
+
+>  6. Open your terminal, enter `npx fiori add deploy-config` and press enter.   
      Enter following:
      - Target: ABAP
-     - SAP Cloud Platform System: Y
+     - SAP BTP System: Y
      - Target System URL: `<your_target_system_url>`
      - Name: (press enter)
      - Package: `ztravel_app_xxx`
      - Transport Number: `<your_transport_number>`
 
-      ![deploy](deploy5.png)
+>    ![deploy](deploy5.png)
 
-      Your `yaml` file should be written after entering all information.
-
-
- 6. Enter `npm run deploy` in your terminal. When prompted, check deployment configuration and press **y**.
-
-      ![deploy](deploy6.png)
-
- 7. Now your application is deployed.
-
-      ![deploy](deploy7.png)
+>    Your `yaml` file should be written after entering all information.
 
 
 [DONE]

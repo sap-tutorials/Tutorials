@@ -3,7 +3,7 @@ title: Create a Sales Order Approval Card
 description: Implement actions within an SAP Mobile Card to enable workflows like approve, reject or reset.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
-tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-cards, products>sap-mobile-services ]
 time: 30
 author_name: Sandeep T D S
 author_profile: https://github.com/sandeep-tds

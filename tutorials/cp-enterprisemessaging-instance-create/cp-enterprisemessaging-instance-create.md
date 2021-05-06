@@ -87,7 +87,7 @@ primary_tag: products>sap-event-mesh
 
     An instance of SAP Event Mesh is created.
 
-    ![SAP Event Mesh Instance](em-instance-creation.png)
+    ![SAP Event Mesh Instance](em-instance-creation.PNG)
 
     >Each Event Mesh instance represents a message client. Each message client has a set of queues and topics to which it is associated. All these queues and topics belonging to one message client are exposed to other message clients using its unique credentials. This entire set of queues and topics within different message clients in a subaccount can send and receive messages or events to each other using the service.  
 
@@ -107,8 +107,8 @@ You can create a service key of the instance with the following steps depicted t
   - Naming the Service Key
   ![Naming the Service Key](ServiceKeys2.png)
 
-  - Service Key gets Created
-  ![Service Key gets created](ServiceKeys3.png)
+  - View the created Service Key
+  ![View the created Service Key](ServiceKeys3.png)
 
 Do find below a template Service Key of an SAP Event Mesh instance.
 ```JSON

@@ -5,13 +5,13 @@ auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>ios-sdk-for-sap-btp ]
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform ]
 time: 20
 ---
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP SDK for iOS:** Version 5.0 or higher
+- **SAP BTP SDK for iOS:** Version 5.0 or higher
 
 ## Details
 ### You will learn  
@@ -39,7 +39,7 @@ The big difference is that the underlying UI technologies remained separated on 
 
 Before you transform your app into a MacOS ready app through Mac Catalyst, you should consider if your app is actually suitable for a MacOS application:
 
-- You should definitely familiarize yourself with the Human Interface Guidelines for [Mac Catalyst](https://developer.apple.com/design/human-interface-guidelines/ios/overview/mac-catalyst/).
+- You should definitely familiarize yourself with the Human Interface Guidelines for [Mac Catalyst](https://developer.apple.com/design/human-interface-guidelines/mac-catalyst/overview/introduction/).
 - Also think about if you're using features which are not available on Mac Catalyst like `ARKit`.
 - Think about your Use Case of the iPad app and think about if that app would make sense on Mac.
 - If you already have a well maintained MacOS application released you should think twice if it is helpful to replace it with you iOS app.

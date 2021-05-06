@@ -2,11 +2,11 @@
 author_name: Beatrice Pasch
 author_profile: https://github.com/beapasch
 title: Enable the SAP Translation Hub Service
-description: Enable the SAP Translation Hub service in the SAP Cloud Platform cockpit.
+description: Enable the SAP Translation Hub service in the SAP BTP cockpit.
 primary_tag: products>sap-translation-hub
 auto_validation: true
-tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, tutorial>license ]
-time: 3
+tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-business-technology-platform, tutorial>license ]
+time: 5
 ---
 
 ## Prerequisites  
@@ -14,13 +14,13 @@ time: 3
 
 ## Details
 ### You will learn  
-  - How to enable the SAP Translation Hub service on SAP Cloud Platform
+  - How to enable the SAP Translation Hub service on SAP Business Technology Platform (BTP)
 
 
   ---
 [ACCORDION-BEGIN [Step 1: ](Open the service catalog)]
 
-In your SAP Cloud Platform account choose **Services** in the navigation area on the left.
+In your SAP BTP account choose **Services** in the navigation area on the left.
 
 ![Open service catalog](sth-open-services.png)
 
@@ -53,8 +53,6 @@ Choose **Enable**.
 After you enable the service, the **Enabled** status is green and the link to the SAP Translation Hub UI in the **Take Action** section is active:
 
 ![Verify enabled state](sth-enable-service-confirm.png)
-
-[DONE]
 
 [VALIDATE_1]
 

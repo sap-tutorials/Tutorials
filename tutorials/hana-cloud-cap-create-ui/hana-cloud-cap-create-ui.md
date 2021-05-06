@@ -18,7 +18,9 @@ primary_tag: products>sap-hana-cloud
  - How to create an SAP Fiori freestyle web interface
  - How to configure the `approuter`
 
+Video tutorial version: </br>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WMDpKa1QkFE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Run the services)]
@@ -223,11 +225,7 @@ We want to create a Fiori freestyle UI for our CAP service.  We will use the wiz
 
     !![CAP Test Page Link](cap_test_ui.png)
 
-10. Clicking that link will open a Fiori Launchpad test page with a single tile for our Interaction Items UI we just generated.
-
-    !![Fiori Launchpad](fiori_launchpad.png)
-
-11. Clicking that tile will launch the generated Fiori free style UI for the CAP service.
+10. Clicking that link will launch the generated Fiori free style UI for the CAP service.
 
     !![Test UI](test_ui.png)                        
 

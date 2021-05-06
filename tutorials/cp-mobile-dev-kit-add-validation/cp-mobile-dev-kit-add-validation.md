@@ -96,7 +96,7 @@ Now, that you have created the validation rule, you will add it to the Update ac
 
     !![MDK](img_3.1.png)
 
-[DONE]
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Deploy the application)]

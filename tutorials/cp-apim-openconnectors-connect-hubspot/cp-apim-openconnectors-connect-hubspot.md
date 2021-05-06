@@ -3,8 +3,8 @@ title: Connect to HubSpot
 description: Connect to HubSpot (an example of a non-SAP third-party application) via CRM Hub.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-cloud-platform]
-primary_tag: products>sap-api-management
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-integration-suite
 ---
 
 ## Prerequisites

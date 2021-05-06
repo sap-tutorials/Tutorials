@@ -3,12 +3,12 @@ title: Configure Object Pages Using SAP Fiori Tools
 description: Configure the object pages that can be accessed from your app using the various extensions available in SAP Fiori tools.
 auto_validation: true
 time: 40
-tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5, topic>user-interface]
-primary_tag: products>sap-fiori
+tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5, topic>user-interface, products>sap-fiori-tools]
+primary_tag: products>sap-fiori-tools
 ---
 
 ## Prerequisites
- - You should have a preview of your app running with real data that you built in [Configure a List Report Page using SAP Fiori Tools](fiori-tools-configure-lrop).
+ - You should have a preview of your app running with either real or mock data. Your list report should be configured as instructed in [Configure a List Report Page using SAP Fiori Tools](fiori-tools-configure-lrop).
 
 ## Details
 ### You will learn
@@ -27,7 +27,7 @@ You are going to add a section of technical data, as well as a chart and a table
 
 To begin, you need to create a **`FieldGroup`** for the technical information that will be displayed on the first object page. To do this, you are going to use the **SAP Fiori tools Service Modeler** to see whether the backend developer has already added the annotation term **`UI.FieldGroup`** to the target so that it can be re-used for editing locally.
 
-1. Launch the Visual Studio Code Command Palette by pressing **CMD/Ctrl + Shift + P**, typing **`SAP Fiori tools- Service Modeler: Open Service Modeler`**, and then selecting it with your mouse or the **Enter** key once it appears.
+1. Launch the Visual Studio Code Command Palette by pressing **CMD/Ctrl + Shift + P**, typing **`Service Modeler`**, and then selecting **Fiori: Open Service Modeler** with your mouse or the **Enter** key once it appears.
 
     >If you have more than one project in your workspace, you will have to select the project you have created for this tutorial.
 
@@ -37,11 +37,7 @@ To begin, you need to create a **`FieldGroup`** for the technical information th
 
     Click the **Copy** button next to it. You will notice a new entry has been created under `annotation.xml` and the entry under `SEPMRA_PROD_MAN_ANNO_MDL.xml` has been formatted with a strike through.
 
-    Click the **Go-to-Code** button next to `UI.FieldGroup#TechnicalData`.
-
-    !![Go To Code Button](t4-service-modeler-copy-field-group2.png)
-
-    So far, you have copied the annotation term `UI.FieldGroup#TechnicalData` into your local annotation file. It is currently missing the field **Dimensions Unit**. Since a measurement is not as helpful without a unit, you will add this new data field now.
+     A tab with your local annotation file will open. The annotation term `UI.FieldGroup#TechnicalData` will be copied inside it. It is currently missing the field **Dimensions Unit**. Since a measurement is not as helpful without a unit, you will add this new data field now.
 
 4. Your local annotation file has been highlighted and features the copied `UI.FieldGroup#TechnicalData`. To add a new data field, create a new line after the following section.
 
@@ -74,7 +70,7 @@ Now that you have edited the **`FieldGroup`**, you need to reference it to displ
 
 1. In your local annotation file `annotation.xml`, for the target `SAP.SEPMRA_C_PD_ProductType`, insert a new line after the end of the `</Annotation>` tag of the annotation term `UI.SelectionFields`.
 
-    !![UI Facet](t4-annotation-modeler-new-line-facet2.png)
+    !![UI Facet](t4-annotation-modeler-new-line-facet3.png)
 
     To accelerate the coding required here, use the Code Complete feature: Press **CMD/Ctrl + Space** and then choose **`UI.Facets`**.
 
@@ -90,19 +86,19 @@ Now that you have edited the **`FieldGroup`**, you need to reference it to displ
 
 3. You need to refer to the `UI.FieldGroup#TechnicalData` that you copied from the backend in the previous step in the **`UI.Facet`** you have created here. To do that, you will create a new record type called **`UI.ReferenceFacet`**.
 
-    Place your cursor between the lines of the `<Collection>` and `</Collection>` tags. Press **CMD/Ctrl + Space** and then select **`Record (full) "ReferenceFacet"`**.
+    Ensure your cursor is between the lines of the `<Collection>` and `</Collection>` tags. Press **CMD/Ctrl + Space** and then select **`Record (full) "ReferenceFacet"`**.
 
 4. You need to assign the target of this **`ReferenceFacet`**. Press **CMD/Ctrl + Space** again and select **`@UI.FieldGroup#TechnicalData`**.
 
-    Press **Tab** to jump to the **Property** label, then press **CMD/Ctrl + Space** and select **String**. Enter the string **`Technical Data`**.
+    Press **Tab** to jump to the **Property** label. Enter the string **`Technical Data`**.
 
-    Press **Tab** again to jump to the **Property** id, then press **CMD/Ctrl + Space** and select **String**. Enter the string **`TechData`**.
+    Press **Tab** again to jump to the **Property** id. Enter the string **`TechData`**.
 
     Your annotation file should look like the image below:
 
     !![Enter Technical Data](t4-annotation-modeler-add-referenceFacet.png)
 
-5. Save `annotation.xml` and take a look at your running app. You should see a new section in the object page showing the technical data of the selected product.
+5. Save `annotation.xml` and take a look at your running app. Select a row in the list to open the object page. You should see a new section in the object page showing the technical data of the selected product.
 
 [DONE]
 [ACCORDION-END]
@@ -120,13 +116,13 @@ Next, you are going to add a chart to this object page to show users the monthly
 
     Use **CMD/Ctrl + Space** and select **`to_productSalesData`**, then enter **`/`** and select **`@UI.Chart`**.
 
-    Press **Tab** to jump to the property label, then press **CMD/Ctrl + Space** and select **String**. Enter the string **`Monthly Revenue`**.
+    Press **Tab** to jump to the property label. Enter the string **`Monthly Revenue`**.
 
-    Press **Tab** again to jump to the property id, then press **CMD/Ctrl + Space** and select **String**. Enter the string **`MonthRev`**.
+    Press **Tab** again to jump to the property id. Enter the string **`MonthRev`**.
 
     Your annotation file should look like the image below:
 
-    !![Add chart](t4-annotation-modeler-add-chart.png)
+    !![Add chart](t4-annotation-modeler-add-chart2.png)
 
 3. Save the file `annotation.xml` and take a look at your running app. You should see a new section in the object page showing the monthly revenue chart of the product.
 
@@ -156,15 +152,15 @@ Next, you are going to add a section to your object page that shows the sales hi
 
 3. Add the annotation term `UI.LineItem` using **CMD/Ctrl + Space**. Press **Tab** to move your cursor to the line below `<Collection>`. Then, using **CMD/Ctrl + Space** again, add a column to the table (`Record "DataField"`).
 
-4. Press **CMD/Ctrl + Space** and add a **`Path`**. Enter an ID for this **`Path`**.
+4. Press **CMD/Ctrl + Space** and add a **`Path`**. Enter an **`ID`** for this **`Path`**.
 
-    Move your cursor to the next line and use **CMD/Ctrl + Space** to add a **Label** property.
+    Press **Enter** to move your cursor to the next line and use **CMD/Ctrl + Space** to add a **Label** property.
 
     Use **CMD/Ctrl + Space** again and select **String**. Enter **`Sales ID`** for the **String**.
 
 5. Now you are going to add another column.
 
-    Navigate to the line below the `</Record>` you just created. Again, use **CMD/Ctrl + Space** and select **`Record "DataField"`** and add one property -- **Value** (using **CMD/Ctrl + Space**). Assign the **Path** as **`DeliveryMonth_Text`**.
+    Navigate to the line below the `</Record>` you just created. Again, use **CMD/Ctrl + Space** and select **`Record "DataField"`** and add one property -- **Value** (using **CMD/Ctrl + Space**). Assign the **Path** as **`DeliveryCalendarMonthT`**.
 
     !![Add column](t4-add-new-target-lineItem.png)
 
@@ -198,11 +194,11 @@ Now you are going to add the actual section that displays the table of sales dat
 
 [ACCORDION-BEGIN [Step 6: ](Add a new Object Page)]
 
-Next, you are going to create a second object page for your users that opens when an entry from the Sales Data list is clicked. To do this, you are going to use the **SAP Fiori tools - Page Map** . It provides a visual representation of an application's pages, navigations, and service entities that it uses. You can use it to add new navigations and pages, delete pages, and navigate to corresponding editing tools.
+Next, you are going to create a second object page for your users that opens when an entry from the Sales Data list is clicked. To do this, you are going to use the **Page Map** . It provides a visual representation of an application's pages, navigations, and service entities that it uses. You can use it to add new navigations and pages, delete pages, and navigate to corresponding editing tools.
 
 Like the other tools, you access it through the Command Palette.
 
-1. Press **CMD/CTRL + Shift + P** and type **`SAP Fiori tools - Page Map`** and select **SAP Fiori tools - Application Modeler: Show Page Map**.
+1. Press **CMD/CTRL + Shift + P** and type **`Page Map`** and select **Fiori: Show Page Map**.
 
     !![Open Page Map](t4-launch-page-map.png)
 
@@ -237,41 +233,41 @@ Copy and paste the following code in the new line you inserted above.
 
 ```XML
 <Annotation Term="UI.HeaderInfo" >
-       <Record Type="UI.HeaderInfoType">
-           <PropertyValue Property="TypeName" String="Sales Order" />
-           <PropertyValue Property="TypeNamePlural" String="Sales Orders"/>
-           <PropertyValue Property="Title">
-               <Record Type="UI.DataField">
-                   <PropertyValue Property="Value" Path="ID"/>
-               </Record>
-           </PropertyValue>
-       </Record>
-   </Annotation>
-   <Annotation Term="UI.FieldGroup" >
-       <Record Type="UI.FieldGroupType">
-           <PropertyValue Property="Data">
-               <Collection>
-                   <Record Type="UI.DataField">
-                       <PropertyValue Property="Value" Path="DeliveryDateTime"/>
-                   </Record>
-                   <Record Type="UI.DataField">
-                       <PropertyValue Property="Value" Path="DeliveryMonth"/>
-                   </Record>
-                   <Record Type="UI.DataField">
-                       <PropertyValue Property="Value" Path="DeliveryMonth_Text"/>
-                   </Record>
-               </Collection>
-           </PropertyValue>
-       </Record>
-   </Annotation>
-   <Annotation Term="UI.Facets" >
-       <Collection>
-           <Record Type="UI.ReferenceFacet">
-               <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup"/>
-               <PropertyValue Property="Label" String="Sales Information"/>
-           </Record>
-       </Collection>
-   </Annotation>
+    <Record Type="UI.HeaderInfoType">
+        <PropertyValue Property="TypeName" String="Sales Order" />
+        <PropertyValue Property="TypeNamePlural" String="Sales Orders"/>
+        <PropertyValue Property="Title">
+            <Record Type="UI.DataField">
+                <PropertyValue Property="Value" Path="ID"/>
+            </Record>
+        </PropertyValue>
+    </Record>
+</Annotation>
+<Annotation Term="UI.FieldGroup" >
+    <Record Type="UI.FieldGroupType">
+        <PropertyValue Property="Data">
+            <Collection>
+                <Record Type="UI.DataField">
+                    <PropertyValue Property="Value" Path="DeliveryCalendarDate"/>
+                </Record>
+                <Record Type="UI.DataField">
+                    <PropertyValue Property="Value" Path="DeliveryCalendarMonth"/>
+                </Record>
+                <Record Type="UI.DataField">
+                    <PropertyValue Property="Value" Path="DeliveryCalendarMonthT"/>
+                </Record>
+            </Collection>
+        </PropertyValue>
+    </Record>
+</Annotation>
+<Annotation Term="UI.Facets" >
+    <Collection>
+        <Record Type="UI.ReferenceFacet">
+            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup"/>
+            <PropertyValue Property="Label" String="Sales Information"/>
+        </Record>
+    </Collection>
+</Annotation>
 ```
 
 Save your file `annotation.xml`.
@@ -284,7 +280,7 @@ Between the `<Schema>` and `</Schema>` tags, your code should look like the foll
                     <Collection>
                         <PropertyPath>to_PriceRange/PriceClassification</PropertyPath>
                         <PropertyPath>to_ProductCategory/MainProductCategory</PropertyPath>
-                        <PropertyPath>Name</PropertyPath>
+                        <PropertyPath>Supplier</PropertyPath>
                     </Collection>
                 </Annotation>
                 <Annotation Term="UI.FieldGroup" Qualifier="TechnicalData">
@@ -347,7 +343,7 @@ Between the `<Schema>` and `</Schema>` tags, your code should look like the foll
                             <PropertyValue Property="Label" String="Sales ID"/>
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Value" Path="DeliveryMonth_Text"/>
+                            <PropertyValue Property="Value" Path="DeliveryCalendarMonthT"/>
                         </Record>
                     </Collection>
                 </Annotation>
@@ -367,13 +363,13 @@ Between the `<Schema>` and `</Schema>` tags, your code should look like the foll
                         <PropertyValue Property="Data">
                             <Collection>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="DeliveryDateTime"/>
+                                    <PropertyValue Property="Value" Path="DeliveryCalendarDate"/>
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="DeliveryMonth"/>
+                                    <PropertyValue Property="Value" Path="DeliveryCalendarMonth"/>
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="DeliveryMonth_Text"/>
+                                    <PropertyValue Property="Value" Path="DeliveryCalendarMonthT"/>
                                 </Record>
                             </Collection>
                         </PropertyValue>

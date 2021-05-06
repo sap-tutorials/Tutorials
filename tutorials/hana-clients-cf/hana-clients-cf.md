@@ -14,6 +14,7 @@ primary_tag: products>sap-hana
 ### You will learn
   - How to use the command line interface (CLI) to deploy a Node.js app to Cloud Foundry or XS advanced
   - How to view the logs and enable tracing in the deployed app
+  - How to connect from a Node.js app running in Cloud Foundry to an on-premise SAP HANA instance through the Cloud Connector
 
 In the previous tutorials, applications that queried SAP HANA were run on a local machine.  In this tutorial, a simple application will be run within the SAP BTP which uses Cloud Foundry or within the SAP HANA, express edition which uses XS advanced (and is also based on Cloud Foundry).  
 
@@ -340,7 +341,7 @@ For additional details see:
 
 The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html#loioe6c7616abb5710148cfcf3e75d96d596__context) enables communication from the SAP BTP running in the public internet to securely connect to a configured on-premise system such as SAP HANA, express edition.  The following steps demonstrate how to do this with the previously deployed app `nodeQueryCF`.
 
-1. Follow step 3 at [Access Remote Sources with SAP HANA Database Explorer](tutorial.hana-dbx-remote-sources) to install and configure the Cloud Connector.
+1. Follow step 3 at [Access Remote Sources with SAP HANA Database Explorer](hana-dbx-remote-sources) to install and configure the Cloud Connector.
 
 2. In the project created in step 2, perform the following steps to bind a connectivity service instance to the application.
 
@@ -418,11 +419,12 @@ The [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f6
         const connJwtToken = await _fetchJwtToken(conSrvCred.token_service_url, conSrvCred.clientid, conSrvCred.clientsecret);
 
         var connOptions = {
-            serverNode: 'v-linux-bj72:39015', //Virtual host specified in the Cloud Connector
+            serverNode: 'v-linux-bj72:39015', // Virtual host specified in the Cloud Connector
             proxyUsername: connJwtToken,
             proxyPort: conSrvCred.onpremise_socks5_proxy_port,
             proxyHostname: conSrvCred.onpremise_proxy_host,
-            //proxyScpAccount: 'myLocID',  //Cloud Connector's locationID if specified in the Cloud Connector
+            //proxyScpAccount: 'myLocID',  // Cloud Connector's location ID if specified in the Cloud Connector
+                                           // A location ID is used when multiple Cloud Connectors are connected to the same subaccount
             UID: 'USER1',
             PWD: 'Password1'
             //traceFile: 'stdout',
