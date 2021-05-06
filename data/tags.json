@@ -227,6 +227,9 @@
             "name": "SAP IoT services for SAP BTP",
             "value": "products>sap-iot-services-for-sap-btp"
         }, {
+            "name": "SAP IQ",
+            "value": "products>sap-iq"
+       }, {
             "name": "SAP Jam",
             "value": "products>sap-jam"
         }, {
