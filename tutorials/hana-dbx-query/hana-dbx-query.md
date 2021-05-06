@@ -85,6 +85,7 @@ primary_tag: products>sap-hana-cloud
     SELECT
     '{ "name":"John", "age":30, "cars": { "car1":"Ford", "car2":"BMW", "car3":"Fiat" }}'
     AS JSON_EXAMPLE FROM DUMMY;
+    SELECT * FROM HOTEL.CUSTOMERS FOR JSON;
     ```
 
     ![JSON Query Results](JSONQuery.png)

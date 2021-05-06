@@ -178,7 +178,7 @@ Deploy the updated application to your MDK client.
 
     You should see success message for both deployments.
 
-    !![MDK](img_4.3.png)
+    !![MDK](img-4.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -261,7 +261,7 @@ You can cross verify if this record has been deleted in the backend.
 
 >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
-[VALIDATE_1]
+[VALIDATE_3]
 [ACCORDION-END]
 
 ---

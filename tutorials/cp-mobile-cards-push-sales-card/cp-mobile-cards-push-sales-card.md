@@ -3,7 +3,7 @@ title: Push a Sales Order Card to Your Mobile Device
 description: Push a card to the mobile device by triggering an action in an external system.
 auto_validation: true
 time: 30
-tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio]
+tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-cards, products>sap-mobile-services, products>sap-business-application-studio]
 primary_tag: products>sap-mobile-cards
 author_name: Sandeep TDS
 author_profile: https://github.com/sandeep-tds

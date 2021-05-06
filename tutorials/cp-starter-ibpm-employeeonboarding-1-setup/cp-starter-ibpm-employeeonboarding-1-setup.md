@@ -4,8 +4,8 @@ description:  Set up workflow, business rules and process visibility capabilitie
 
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-workflow-management
 ---
 
 ## Details
@@ -29,7 +29,7 @@ User can use Workflow, Business Rules, Process Visibility and Process Flexibilit
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open trial account)]
-1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 

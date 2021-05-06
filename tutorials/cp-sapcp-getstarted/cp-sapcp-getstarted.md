@@ -1,9 +1,9 @@
 ---
-title: Get Started with the SAP BTP Command Line Interface (sapcp CLI)
-description: Download the SAP BTP command line interface and learn how to use it.
+title: Get Started with the SAP BTP Command Line Interface (btp CLI)
+description: Find out what the btp CLI is, download the btp CLI client, and learn how to use it.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>cloud]
+tags: [ tutorial>beginner, topic>cloud, software-product-function>sap-btp-command-line-interface]
 primary_tag: products>sap-business-technology-platform
 ---
 
@@ -13,24 +13,25 @@ primary_tag: products>sap-business-technology-platform
 
 ## Details
 ### You will learn
-  - What the SAP BTP command line interface (sapcp CLI) is
-  - For which global accounts you can use the sapcp CLI
-  - How the sapcp CLI works
+  - What the SAP BTP command line interface (btp CLI) is
+  - For which global accounts you can use the btp CLI
+  - How the btp CLI works
   - Where and how to download and install the client
   - How commands are structured
-  - How to get help in the sapcp CLI
+  - How to get help in the btp CLI
   - Where to find documentation
 
+>With the release of the btp CLI client version 2.0 on March 25, 2021, the executable file name was changed from `sapcp` to `btp`. This change is reflected in all documentation, including this tutorial. If you still have a 1.X version of sapcp CLI, see [Migrating from sapcp to btp](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4f1fe8dd2739467cb7bcab63f918b8dc.html).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](What is the sapcp CLI?)]
+[ACCORDION-BEGIN [Step 1: ](What is the btp CLI?)]
 
-The sapcp CLI is **an alternative to the cockpit** for users who prefer working with the command line. It consists of a client and a server. The client is installed on your computer and it interacts with SAP BTP through a server. You connect to this CLI server when you log on to your global account through the sapcp CLI.
+The btp CLI is **an alternative to the cockpit** for users who prefer working on the command line. It consists of a client and a server. The client is installed on your computer and it interacts with SAP BTP through a server. You connect to this CLI server when you log on to your global account through the btp CLI. 
 
-The base call to enter on the command line is `sapcp`.
+The base call to enter on the command line is `btp`.
 
-Here are some of the tasks you can use the sapcp CLI for:
+Here are some of the tasks you can use the btp CLI for:
 
 - Creating subaccounts and directories
 - Managing entitlements of global accounts and subaccounts
@@ -41,9 +42,9 @@ Here are some of the tasks you can use the sapcp CLI for:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 1: ](For which global accounts can I use the sapcp CLI?)]
+[ACCORDION-BEGIN [Step 1: ](For which global accounts can I use the btp CLI?)]
 
-SAP is currently migrating all global accounts from the existing cloud management tools feature set A to the renovated cloud management tools feature set B. One of the innovations of feature set B is the command line interface (sapcp CLI) for account management. With a trial account, you can try out the sapcp CLI and other features of feature set B.  
+SAP is currently migrating all global accounts from the existing cloud management tools feature set A to the renovated cloud management tools feature set B. One of the innovations of feature set B is the command line interface (btp CLI) for account management. With a trial account, you can try out the btp CLI and other features of feature set B.  
 
 Here you can read more about the [Cloud Management Tools Feature Set B Innovations](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html).
 
@@ -51,10 +52,10 @@ Here you can read more about the [Cloud Management Tools Feature Set B Innovatio
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](sapcp CLI and cf CLI - What's the difference?)]
+[ACCORDION-BEGIN [Step 2: ](btp CLI and cf CLI - What's the difference?)]
 
-You may have worked with the [Cloud Foundry CLI (cf CLI)](cp-cf-download-cli) to manage your Cloud Foundry environment. To avoid confusion, here's how the **sapcp CLI** relates to the **cf CLI**:
-The sapcp CLI is the CLI for working with global accounts on SAP BTP. You use the sapcp CLI for all tasks on global account, directory, and subaccount level. Going down the account hierarchy, the last step with sapcp CLI is creating a Cloud Foundry environment instance, which essentially creates a Cloud Foundry org. From org level onwards, i.e. for managing members in orgs and spaces, creating spaces, as well as assigning quota to orgs and spaces, you use the cf CLI.
+You may have worked with the [Cloud Foundry CLI (cf CLI)](cp-cf-download-cli) to manage your Cloud Foundry environment. To avoid confusion, here's how the **btp CLI** relates to the **cf CLI**:
+The btp CLI is the CLI for working with global accounts on SAP BTP. You use the btp CLI for all tasks on global account, directory, and subaccount level. Going down the account hierarchy, the last step with btp CLI is creating a Cloud Foundry environment instance, which essentially creates a Cloud Foundry org. From org level onwards, i.e. for managing members in orgs and spaces, creating spaces, as well as assigning quota to orgs and spaces, you use the cf CLI.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -62,11 +63,11 @@ The sapcp CLI is the CLI for working with global accounts on SAP BTP. You use th
 
 [ACCORDION-BEGIN [Step 3: ](Download and install the CLI client)]
 
-Go to the <a href="https://tools.hana.ondemand.com/#cloud-cpcli">SAP Development Tools</a> page to download the latest version of the CLI client for your operating system. Unpack the archive and copy the client file (there is only one file inside, for example, `sapcp.exe`) to your local system. Make sure that you have read and write permissions in the target folder to run the executable.
+Go to the <a href="https://tools.hana.ondemand.com/#cloud-btpcli">SAP Development Tools</a> page to download the latest version of the CLI client for your operating system. Unpack the archive and copy the client file (there is only one file inside, for example, `btp.exe`) to your local system. Make sure that you have read and write permissions in the target folder to run the executable.
 
-In Windows, open the command line to the directory where the client file is located and enter `sapcp`. For example, you can open the folder and type `cmd` into the address bar.
+In Windows, open the command line to the directory where the client file is located and enter `btp`. For example, you can open the folder and type `cmd` into the address bar.
 
-If you are using macOS, make sure that the client file is in your PATH and open a terminal session. Note that sapcp CLI may be blocked because it is "from an unidentified developer". Please refer to the macOS documentation to learn how to bypass this.
+If you are using macOS, make sure that the client file is in your PATH and open a terminal session. Note that btp CLI may be blocked because it is "from an unidentified developer". Please refer to the macOS documentation to learn how to bypass this.
 
 ![CLI info screen](sapcp.png)
 
@@ -80,7 +81,7 @@ You get version and usage information, you learn where the configuration file is
 Now type in the following to show a list of all available commands and options:
 
 ```Bash
-sapcp --help
+btp --help
 ```
 ![CLI help overview](sapcp--help.png)
 
@@ -92,7 +93,7 @@ sapcp --help
 
 ![CLI command syntax](usage.png)
 
-Each command starts with the base call `sapcp`. The syntax of the command itself is very close to natural language: It starts with a verb, i.e. the *action*, followed by a *group/object* combination. So you build a command by combining `sapcp` with an action (let's say *list*) and a group/object combination (let's say *accounts/subaccount*):  `sapcp list accounts/subaccount`
+Each command starts with the base call `btp`. The syntax of the command itself is very close to natural language: It starts with a verb, i.e. the *action*, followed by a *group/object* combination. So you build a command by combining `btp` with an action (let's say *list*) and a group/object combination (let's say *accounts/subaccount*):  `btp list accounts/subaccount`
 
 >Note that the object is always a singular noun. Even for list commands, where you might naturally want to use a plural form.
 
@@ -104,16 +105,16 @@ Each command starts with the base call `sapcp`. The syntax of the command itself
 Additionally, **options** and **parameters** can be added to a command. As you've seen in the overview of all commands, there are the following options that you can add at the beginning of each command. For example, to get help on a specific command or to use the verbose mode.
 
 ```Bash
-sapcp --help list accounts/subaccount
+btp --help list accounts/subaccount
 ```
 
 ```Bash
-sapcp --verbose list accounts/subaccount
+btp --verbose list accounts/subaccount
 ```
 
 ![CLI options](options.png)
 
->The `--help` option can also be placed at the end of a command, for example `sapcp list accounts/subaccount --help`.
+>The `--help` option can also be placed at the end of a command, for example `btp list accounts/subaccount --help`.
 
 [VALIDATE_3]
 [ACCORDION-END]
@@ -126,7 +127,7 @@ sapcp --verbose list accounts/subaccount
 For example:
 
 ```Bash
-sapcp assign security/role-collection "Global Account Administrator" --to-user example@mail.com --of-idp my-idp
+btp assign security/role-collection "Global Account Administrator" --to-user example@mail.com --of-idp my-idp
 ```
 
 "Global Account Administrator" is the positional parameter, and the other two parameters have keys (`--to-user` and `--of-idp`).
@@ -143,7 +144,7 @@ Now let's log in. Login is always on global account level. Make sure you know th
 Enter the following command:
 
 ```Bash
-sapcp login
+btp login
 ```
 
 The client proposes the CLI server URL for your trial and you can confirm with ENTER. Once you're logged in, it should look like this:
@@ -159,15 +160,15 @@ Here are a few simple examples of commands on global account level that you can 
 
 |  Task                                   | Command
 |  :-------------                         | :-------------
-|  List subaccounts                       | `sapcp list accounts/subaccount`
-|  Get details of the global accounts     | `sapcp get accounts/global-account`
-|  List role collections                  | `sapcp list security/role-collection`
+|  List subaccounts                       | `btp list accounts/subaccount`
+|  Get details of the global accounts     | `btp get accounts/global-account`
+|  List role collections                  | `btp list security/role-collection`
 
 
 Or go through the documentation to learn more:
 
 - [Account Administration Using the SAP BTP Command Line Interface](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7c6df2db6332419ea7a862191525377c.html)
-- [Commands in the sapcp CLI](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/a03a5550cdd44fa48ff78d70ca7c9651.html)
+- [Commands in the btp CLI](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/a03a5550cdd44fa48ff78d70ca7c9651.html)
 - Check out this tutorial: [Automate Account Operations with the Command Line Interface (CLI)](cp-cli-automate-operations)
 
 [DONE]

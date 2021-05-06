@@ -34,12 +34,13 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
      - Name: `ZTRAVEL_APP_XXX`
      - Description: `Package for travel XXX`
      - `Superpackage`: `ZLOCAL`
+     - **Check** Add to favorite packages.
 
      Use your number instead of `XXX`.
 
-     Click **Next >**.
+      ![Create ABAP package](packagef.png)
 
-      ![Create ABAP package](package2.png)
+      Click **Next >**.
 
   3. Select **Create new request** and enter a request description.
 
@@ -47,14 +48,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       Click **Finish**.
 
+  4. Now your package is added to favorites objects.
 
-  4. Right-click on **Favorite Packages** and select **Add Package**.
+      ![Create ABAP package](packagefav.png)
 
-      ![Create ABAP package](package5.png)
-
-  5. Search for `ZTRAVEL_APP_XXX`, select it and click **OK** to add your package in the favorite packages section.
-
-      ![Create ABAP package](package6.png)
 
 [DONE]
 [ACCORDION-END]

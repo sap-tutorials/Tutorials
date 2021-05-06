@@ -86,38 +86,46 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 
       ![Create ABAP cloud project](cloud.png)
 
-  2. Select **Service Key** and click **Next >**.
+  2. Select **Use Cloud Foundry Environment** in section **SAP BTP Cloud Foundry Environment** and click **Next >**.
 
       ![Create ABAP cloud project](project2.png)
 
-  3. Select **Import** to import your downloaded service key.
+  3. Enter your **connection settings**:
+     - Region: choose your SAP BTP Cloud Foundry Environment region, for e.g. Europe (Frankfurt)
+     - Email: your email address
+     - Password: your password    
 
-      ![Create ABAP cloud project](projectx1.png)
+      ![Create ABAP cloud project](projectx12.png)
 
-  4. You can find your service key in your default download folder. Search for **`default_key.json`**, select it and click **Open**.
+      Click **Next >**.
 
-      ![Create ABAP cloud project](projectx2.png)
+  4. Set your **service instance details**:                                                                                             
+     - Organization: your organization
+     - Space: dev
+     - Service instance: `default_abap-trial`
 
-  5. Now your service key is pasted. Click **Next**.
+      ![Create ABAP cloud project](projectx22.png)
 
-      ![Create ABAP cloud project](project3.png)
+      Click **Next >**.
 
-  6. Click **Open Logon Page in Browser**.
+    >**HINT:** Your service instance is **`default_abap-trial`** when you use the **ABAP trial booster** on SAP BTP. If you create a manual instance, use your own instance name.
+
+  5. Click **Open Logon Page in Browser**.
 
       ![Create ABAP cloud project](project4.png)
 
-  7. Now you've been authenticated automatically. Provide your credentials if requested. The credentials are the same you used to create your trial account on SAP BTP.
+  6. Now you've been authenticated automatically. Provide your credentials if requested. The credentials are the same you used to create your trial account on SAP BTP.
 
      Go back to ADT.
 
-      ![Create ABAP cloud project](project5.png)
+      ![Create ABAP cloud project](project52.png)
 
       Click **Finish**.
 
 
-  8. Your trial system appears on the project explorer.
+  7. Your trial system appears on the project explorer.
 
-      ![Create ABAP cloud project](project6.png)
+      ![Create ABAP cloud project](project62.png)
 
 [DONE]
 [ACCORDION-END]

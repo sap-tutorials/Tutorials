@@ -236,23 +236,23 @@ To enable your app for push notifications, you need to carry out the following t
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Place push files in local MDK project)]
+[ACCORDION-BEGIN [Step 3: ](Place push files in local MDK project)]
 
 >Make sure you are choosing the right device platform tab above.
 
 [OPTION BEGIN [Android]]
 
-Paste the downloaded `google-services.json` file to `/demosampleapp.mdkproject/App_Resources/Android/` path.
+Paste the downloaded `google-services.json` file to `/DemoSampleApp.mdkproject/App_Resources/Android/` path.
 
-!![MDK](img_4.1.png)
+!![MDK](img-3.1.png)
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-1. Create a new file named as `app.entitlements` and place it under `/demosampleapp.mdkproject/App_Resources/iOS/` path.
+1. Create a new file named as `app.entitlements` and place it under `/DemoSampleApp.mdkproject/App_Resources/iOS/` path.
 
-    !![MDK](img_4.2.png)
+    !![MDK](img-3.2.png)
 
 2. Open this file and copy & paste the below information:
 
@@ -289,7 +289,7 @@ Follow step 4 from [this](cp-mobile-dev-kit-build-client) tutorial to create you
 
 1. Follow step 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client.
 
-2. Once you accept the App update, a message should show **Push Notification Registered**. Click **OK**.
+2. Once you accept the App update, a message should show **Push Notification registered**. Click **OK**.
 
     ![MDK](img_6.1.png)
 
@@ -323,7 +323,7 @@ Follow step 4 from [this](cp-mobile-dev-kit-build-client) tutorial to create you
 
     !![MDK](img_6.4.png)
 
-3. If push registration is successful, a message should show **Push Notification Registered**. Click **OK**.
+3. If push registration is successful, a message should show **Push Notification registered**. Click **OK**.
 
     !![MDK](img_6.5.png)
 
@@ -355,9 +355,9 @@ Follow step 4 from [this](cp-mobile-dev-kit-build-client) tutorial to create you
 
 [OPTION END]
 
-**Congratulations!** You have successfully completed **Brand Your Customized App with Mobile Development Kit SDK** mission and you are now all set to [Create Extension Controls in Mobile Development Kit (MDK) Apps](mission.mobile-dev-kit-controls) mission.
+Congratulations, you have successfully enabled push notification in your branded client and you can continue with the remaining tutorials in this mission.
 
-[DONE]
+[VALIDATE_4]
 [ACCORDION-END]
 
 ---

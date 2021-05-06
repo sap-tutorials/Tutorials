@@ -21,7 +21,7 @@ Please note that trial mode has limits on number of schemas, datasets and models
 
 [ACCORDION-BEGIN [Step 1: ](Prepare your data)]
 
-In order to use your own dataset, you need to define a dataset schema that fits your dataset. 
+In order to use your own dataset, you need to define a dataset schema that fits your dataset.
 
 In your dataset, you need to decide which columns will be `features`, for example the inputs for the machine learning model and which columns will be `labels`, for example the fields that will be predicted by the machine learning model. For further definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/fe501df6d9f94361bfea066f9a6f6712.html).
 
@@ -79,7 +79,7 @@ Last but not least, you have to make sure that your dataset meets the [prerequis
 
   - include no fields that are not used in your dataset schema
 
-You can use this [dataset](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial-sample/blob/master/Tutorial_Example_Dataset.csv) as a reference.
+You can use this [dataset](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial/blob/main/Tutorial_Example_Dataset.csv) as a reference.
 
 [VALIDATE_1]
 [ACCORDION-END]
