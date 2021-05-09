@@ -19,6 +19,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
+
 ![MDK](img_1.gif)
 
 [ACCORDION-BEGIN [Step 1: ](Define client log policy in Mobile Services cockpit )]
