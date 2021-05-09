@@ -14,6 +14,7 @@ author_profile: https://github.com/jitendrakansal
   - How to create a new page and add some controls to display customer information
   - How to navigate from one page to another page
 
+
 ---
 
 To enhance your MDK app with customer details information, you need to carry out the following tasks:
