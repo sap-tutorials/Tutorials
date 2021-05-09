@@ -2,16 +2,16 @@
 auto_validation: true
 title: Create business partner in S/4HANA Cloud using ABAP Environment data
 description: Create a business partner in an S/4HANA Cloud system based on a business user in SAP Business Technology Platform ABAP Environment.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>intermediate, topic>abap-development, topic>abap-extensibility, tutorial>license ]
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>intermediate, topic>abap-development, products>sap-business-technology-platform, topic>abap-extensibility, tutorial>license ]
 time: 20
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
 ---
 
 ### Prerequisites
-- Communication arrangement for scenario `SAP_COM_0008` was created in your SAP S/4HANA Cloud system.
-- Communication arrangement for scenario `SAP_COM_0276` was created with service instance name `OutboundCommunication` in your BTP ABAP system.
+- Communication arrangement for scenario `SAP_COM_0008` was created in your SAP S/4HANA Cloud system as described in [Creating a Communication Arrangement in SAP S/4HANA Cloud](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/889fbe37b7b344deabfbdc78ab16e544.html).
+- Destination `S4BusinessPartnerOAuth2` for the S/4Cloud system was created on subaccount level as described in [Creating the OAuth2SAMLBearerAssertion Destination to SAP S/4HANA Cloud](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/b968a25fe20e4f9a8f4366d1972fc7d4.html)
 - Business user in SAP S/4 HANA Cloud has business role `SAP_BR_BUPA_MASTER_SPECIALIST` in order to create business partners in SAP S/4 HANA​.
 - Integration between S/4 HANA Cloud and SAP BTP ABAP Environment completed​.
 
@@ -189,7 +189,6 @@ CLASS zcl_s4_bupa_xxx IMPLEMENTATION.
     TRY.
         DATA(lo_destination) = cl_http_destination_provider=>create_by_cloud_destination(
              i_name                  = 'S4BusinessPartnerOAuth2'
-             i_service_instance_name = 'OutboundCommunication'
              i_authn_mode =  if_a4c_cp_service=>user_propagation
          ).
 
