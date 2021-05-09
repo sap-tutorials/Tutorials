@@ -19,15 +19,13 @@ primary_tag: products>sap-business-application-studio
 
 You'll build an application that presents a list of suppliers from an on-premise backend. The suppliers' data will be retrieved from the `BusinessPartnerSet` collection in the `ZGWSAMPLE_BASIC` OData service that is available from SAP's ES5 demo Gateway system.
 
->**Important**
-
->After a period of idle time, the dev space is automatically stopped. To re-start the dev space, open the [Dev Space Manager](https://triallink.eu10.trial.applicationstudio.cloud.sap/), click the **Play** icon, and click the dev space name.
+>**Important:** After a period of idle time, the dev space is automatically stopped. To re-start the dev space, open the [Dev Space Manager](https://triallink.eu10.trial.applicationstudio.cloud.sap/), click the **Play** icon, and click the dev space name.
 
 >The period for idle time for Enterprise accounts is different than for trial accounts.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Verify That the Required SAP Business Application Studio Extensions Are Selected)]
+[ACCORDION-BEGIN [Step 1: ](Verify SAP Business Application Studio Extensions)]
 
 1. Open the [Dev Space Manager](https://triallink.eu10.trial.applicationstudio.cloud.sap/) and verify that the dev space's status is `STOPPED`. If needed, click the **Stop** icon.
 
@@ -52,7 +50,7 @@ You'll build an application that presents a list of suppliers from an on-premise
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Vue Project)]
+[ACCORDION-BEGIN [Step 2: ](Create Vue project)]
 
 1. From the **Welcome** tab, click **Start from template**.
 
@@ -128,7 +126,7 @@ You'll build an application that presents a list of suppliers from an on-premise
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Test the Vue Application Locally in the Dev Space)]
+[ACCORDION-BEGIN [Step 3: ](Test Vue application locally)]
 
 The application runs on build artifacts. Therefore, using the **watch** command ensures that every change in the source code will be built automatically.
 
@@ -221,7 +219,7 @@ The application runs on build artifacts. Therefore, using the **watch** command 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Modify the App (Optional))]
+[ACCORDION-BEGIN [Step 4: ](Modify the app)]
 
 1. Click **Toggle Bottom Panel** to free up screen space for the editors pane.
 
@@ -286,7 +284,7 @@ The application runs on build artifacts. Therefore, using the **watch** command 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Prepare for Integration with the SAP BTP Launchpad Service)]
+[ACCORDION-BEGIN [Step 5: ](Prepare integration with SAP Launchpad service)]
 
 1. In the **Explorer** view, choose **`VUEDEMO` > `businesspartners`**, and click the `manifest.json` file that you created with the template in a previous step. The **`manifest.json`** file opens in the **Code Editor**.
 
@@ -320,14 +318,14 @@ The application runs on build artifacts. Therefore, using the **watch** command 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Build, Deploy, and Run the App on SAP BTP, Cloud Foundry Environment)]
+[ACCORDION-BEGIN [Step 6: ](Build, Deploy, and Run the App on SAP BTP)]
 
 1. Follow the [Build and Deploy Your SAP Fiori App to SAP Business Technology Platform](appstudio-fioriapps-mta-build-deploy) tutorial with the necessary adjustments.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add your Application to a Launchpad)]
+[ACCORDION-BEGIN [Step 7: ](Add your application to  Launchpad)]
 
 1. Follow the [Set Up the SAP Launchpad Service](cp-portal-cloud-foundry-getting-started) tutorial to onboard yourself to the SAP Launchpad service.
 
@@ -341,7 +339,9 @@ The application runs on build artifacts. Therefore, using the **watch** command 
 
 [DONE]
 [ACCORDION-END]
+
 ---
+
 Congratulations!
 
 You have completed the development of an SAP business application that uses the Vue JavaScript framework, using SAP Business Application Studio. You created the app using a wizard, test run the app locally in the dev space, and built, deployed, and ran the app on SAP BTP, Cloud Foundry environment. As an optional step, you included the app in your SAP launchpad.
