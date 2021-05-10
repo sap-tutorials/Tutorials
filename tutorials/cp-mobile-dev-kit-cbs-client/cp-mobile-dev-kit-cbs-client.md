@@ -90,8 +90,8 @@ To enable your app for push notifications, you need to carry out the following t
 
 * Obtain a certificate signing request
 * Register an iOS App ID
-* Create a new development certificate .CER file
-* Install the .CER file and create the .p12 file
+* Create a new development certificate `.cer` file
+* Install the `.cer` file and create the .p12 file
 * Register your device
 * Create a development provisioning profile
 
@@ -116,7 +116,7 @@ To enable your app for push notifications, you need to carry out the following t
     !![MDK](img_1.12.png)
 
 
-2. Create a new development certificate .CER file
+2. Create a new development certificate `.cer` file
 
     Go to your [Apple Developer Account](https://developer.apple.com/account) and Click **Certificates, Identifiers & Profiles**.
 
@@ -128,35 +128,35 @@ To enable your app for push notifications, you need to carry out the following t
 
     Select **Apple Development** and click **Continue**.
 
-    !![MDK](img_1.15.png)
+    !![MDK](img-1.15.png)
 
     Click **Choose File** and browse to the downloaded Signing Request `CSR` file, click **Continue**.
 
-    Apple will now create a `.CER` file for you which is issued by the **Apple Worldwide Developer Relations Certification Authority**.
+    Apple will now create a `.cer` file for you which is issued by the **Apple Worldwide Developer Relations Certification Authority**.
 
     !![MDK](img_1.16.png)
 
     Click **Download** to download your certificate.
 
-    !![MDK](img_1.17.png)
+    !![MDK](img-1.17.png)
 
-3.  Install the .CER file and create the .p12 file
+3.  Install the `.cer` file and create the .p12 file
 
-    In order to create a signing profile on **SAP Mobile Services**, you need to install the `.CER` file and create the needed `.p12` file.
+    In order to create a signing profile on **SAP Mobile Services**, you need to install the `.cer` file and create the needed `.p12` file.
 
     >A `.p12` file is a encrypted container for the certificate and private key. This file is needed by Mobile Services for creating a signing profile.
 
-    Locate your downloaded `.CER` file and double-click it in order to install the certificate.
+    Locate your downloaded `.cer` file and double-click it in order to install the certificate.
 
     >In case the **Add Certificate** dialog pops up make sure to choose **Login** from the dropdown and click **Add**.
 
     If the certificate is added correctly to the Keychain you should see it in the `MyCertificates` section, make sure you selected **login** as keychain.
 
-    !![MDK](img_1.18.png)
+    !![MDK](img-1.18.png)
 
-    Select the certificate as well as the private key and right-click to export those two items.
+    Select the certificate as well as the private key and right-click to export those 2 items.
 
-    !![MDK](img_1.19.png)
+    !![MDK](img-1.19.png)
 
     Make sure that in the dropdown **Personal Information Exchange (.p12)** is selected and click **Save**. You will be prompted to enter a password, click **OK** to export the files.
 
@@ -170,11 +170,11 @@ To enable your app for push notifications, you need to carry out the following t
 
     Select **App IDs** and click **Continue**.
 
-    !![MDK](img_1.22.png)
+    !![MDK](img-1.22.png)
 
     Provide a unique **Bundle ID** name, **Description** and click **Continue**.
 
-    !![MDK](img_1.23.png)
+    !![MDK](img-1.23.png)
 
     In the following screen, select option for **Deployment Details** and then click **Continue**.
 
