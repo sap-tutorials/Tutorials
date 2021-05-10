@@ -48,7 +48,7 @@ Make sure that you have completed required prerequisites mentioned in this tutor
     | `ID` | `com.sap.mdk.demo` |
     | `Name` | `SAP MDK Demo App` |
 
-    !![MDK](img_2.3.png)
+    !![MDK](img-2.3.png)
 
     >Other fields are optional. For more information about these fields, see [Creating Applications](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/admin/manage.html#creating-applications) in the SAP documentation.
 
@@ -106,13 +106,13 @@ MDK Web application accesses the data sources via BTP destination. You will now 
 
     !![MDK](img_4.1.1.png)
 
-3. Navigate to the **Service Instances** in your SAP BTP space cockpit page, select **Authorization & Trust Management** service from the list, click `com-sap-mdk-demo-xsuaa` instance and click **View** to open the configuration details.
+3. Navigate to the **Instances and Subscriptions** in your SAP BTP space cockpit page, select **Authorization & Trust Management** service from the list, click `com-sap-mdk-demo-xsuaa` instance and click **View** to open the configuration details.
 
-    !![MDK](img_4.2.png)
+    !![MDK](img-4.2.png)
 
-4. Switch to **Standard** tab, copy values for `clientid`, `clientsecret`, `url` parameters and paste these values in the text file. These parameters will be used in configuring the BTP destination.  
+4. Switch to **Form** tab, copy values for `clientid`, `clientsecret`, `url` parameters and paste these values in the text file. These parameters will be used in configuring the BTP destination.  
 
-    !![MDK](img_4.3.png)
+    !![MDK](img-4.3.png)
 
 5. Download the zip file from [here](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/0-Set-Up-for-the-Mobile-Development-Kit/SampleServiceV2.zip) and unzip it on your machine.
 
@@ -126,7 +126,7 @@ MDK Web application accesses the data sources via BTP destination. You will now 
     | `Token Service URL` | `paste the URL from step#4 and make sure that URL has /oauth/token suffix at the end` |
     | `Use Default JDK truststore` | `Select the checkbox if not selected before` |
 
-    !![MDK](img_4.4.png)
+    !![MDK](img-4.4.png)
 
 
 [DONE]
