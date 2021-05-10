@@ -1,6 +1,8 @@
 ---
+author_name: Marcel Wolf
+author_profile: https://github.com/wolfmarcel
 title: Adjust the Business Context Hierarchy for Kanban
-description: Adjust the dusiness context hierarchy for kanban using SAP Event Mesh or polling and activate the Auto-ID event enrichment.
+description: Adjust the business context hierarchy for kanban using SAP Event Mesh or polling and activate the Auto-ID event enrichment.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, products>sap-internet-of-things, products>sap-business-technology-platform products>sap-event-mesh, products>sap-s-4hana]

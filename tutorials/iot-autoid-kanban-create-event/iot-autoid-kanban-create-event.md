@@ -1,4 +1,6 @@
 ---
+author_name: Marcel Wolf
+author_profile: https://github.com/wolfmarcel
 title: Ingest an EPCIS Event to Change Kanban Status
 description: Ingest an EPCIS event via MQTT to update the kanban container status in SAP S/4HANA or SAP S/4HANA Cloud.
 auto_validation: true

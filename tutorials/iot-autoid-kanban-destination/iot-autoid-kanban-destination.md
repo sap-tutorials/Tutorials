@@ -1,4 +1,6 @@
 ---
+author_name: Marcel Wolf
+author_profile: https://github.com/wolfmarcel
 title: Create Destinations for Kanban APIs
 description: Create destinations for kanban APIs in SAP Business Technology Platform to enable fetching and updating kanban containers in SAP S/4HANA or SAP S/4HANA Cloud.
 auto_validation: true
