@@ -1,4 +1,6 @@
 ---
+author_name: Marcel Wolf
+author_profile: https://github.com/wolfmarcel
 title: Create Custom Kanban Event, Rule Project and Action
 description: Create your own kanban Event Type and Rule Project, including Rule and Action that will allow you to process Auto-ID events and trigger kanban status updates.
 auto_validation: true

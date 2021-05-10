@@ -1,4 +1,6 @@
 ---
+author_name: Marcel Wolf
+author_profile: https://github.com/wolfmarcel
 title: Activate Kanban Business Template
 description: Activate the pre-delivered kanban template in your SAP Internet of Things tenant, which will create the Business Context, Business Context Hierarchy and Auto-ID Event Enrichment objects for you automatically.
 auto_validation: true
