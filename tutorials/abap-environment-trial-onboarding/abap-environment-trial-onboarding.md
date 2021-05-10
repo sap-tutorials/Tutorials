@@ -86,9 +86,9 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 
       ![Create ABAP cloud project](cloud.png)
 
-  2. Select **Use Cloud Foundry Environment** in section **SAP BTP Cloud Foundry Environment** and click **Next >**.
+  2. Select **SAP BTP Cloud Foundry Environment** and click **Next >**.
 
-      ![Create ABAP cloud project](project2.png)
+      ![Create ABAP cloud project](project2x.png)
 
   3. Enter your **connection settings**:
      - Region: choose your SAP BTP Cloud Foundry Environment region, for e.g. Europe (Frankfurt)
