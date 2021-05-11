@@ -21,7 +21,6 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
-
 [ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Business Application Studio)]
 
 
