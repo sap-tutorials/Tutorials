@@ -8,7 +8,7 @@ time: 20
 tags: [ tutorial>intermediate, tutorial>license, topic>internet-of-things, products>sap-internet-of-things, products>sap-business-technology-platform]
 primary_tag: topic>internet-of-things
 ---
-
+ 
 ## Prerequisites
 - Basic knowledge of REST, APIs and Postman
 - Followed the Tutorial [Install Postman Rest Client](api-tools-postman-install)
