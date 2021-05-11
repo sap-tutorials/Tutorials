@@ -8,7 +8,7 @@ time: 10
 tags: [ tutorial>beginner, topic>internet-of-things, products>sap-internet-of-things, products>sap-business-technology-platform, products>sap-s-4hana]
 primary_tag: topic>internet-of-things
 ---
-
+ 
 ## Prerequisites
  - Your accounts.sap.com User has been added to this tenant as a `OrgManager`, `SpaceManager` or `SpaceDeveloper` to manage destinations.
  - Either you have setup the APIs for the `Kanban Control Cycle Integration` in your SAP S/4HANA system including SAP Cloud Connector setup. See [API Business Hub](https://api.sap.com/api/OP_API_KANBAN_CONTROL_CYCLE_SRV_0002/overview) and [SAP Help Portal on SAP Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html) for further information.
