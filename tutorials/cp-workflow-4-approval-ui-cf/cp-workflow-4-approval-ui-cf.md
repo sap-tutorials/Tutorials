@@ -141,7 +141,7 @@ These expressions refer to the attributes in the JSON file that you have created
 
 [ACCORDION-BEGIN [Step 7: ](Build and deploy)]
 
-1. Right-click the **mta.yaml** file in your **onboarding** project, and then select **Build MTA**.
+1. Right-click the **mta.yaml** file in your **onboarding** project, and then select **Build MTA Project**.
 
     Once the build is completed, the new folder **`mta_archives`** appears under your application folder.
 
@@ -163,7 +163,7 @@ These expressions refer to the attributes in the JSON file that you have created
 
 4. On the **Launchpad** tile, choose **Go to Application**.
 
-    ![Go to App](go-to-app.png)
+    ![Go to App](go-to-app1.png)
 
 5. On the **Site Directory** that opens, choose **Create Site**.
 

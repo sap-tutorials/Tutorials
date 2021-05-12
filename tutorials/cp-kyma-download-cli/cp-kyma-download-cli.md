@@ -95,7 +95,7 @@ set KUBECONFIG="<KUBECONFIG_FILE_PATH>"
 
 [OPTION END]
 
-Replace the `<KUBECONFIG_FILE_PATH>` section with the file path of the `Kubeconfig` you downloaded in the previous step.
+Replace the `<KUBECONFIG_FILE_PATH>` section with the file path, including the file name and extension, of the `Kubeconfig` you downloaded in the previous step.
 
 2. Test the configuration by running this command:  
 
