@@ -3,9 +3,9 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: Offline-Enable Your Android Application
 description: Enable offline OData in your Android application, resulting in an application that can be used without a network connection and that performs data requests with less latency.
-primary_tag: products>android-sdk-for-sap-btp
+primary_tag: products>sap-btp-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>android-sdk-for-sap-btp, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
 time: 30
 ---
 
@@ -15,7 +15,7 @@ time: 30
 - How the synchronization code works
 - How to handle errors that occur while syncing
 ---
-
+ 
 [ACCORDION-BEGIN [Step 1: ](Generate and run an offline app)]
 
 1.  Follow the instructions at [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app) to create a new application using the SAP BTP SDK Wizard for Android and select **Offline** for the OData option on the **Project Features** tab. The push feature is not needed for this application.
@@ -120,7 +120,7 @@ The application allows users to make changes against a local offline store and s
 
     The worker's work is to call the `download` and `upload` method of the `OfflineODataProvider` class to perform the sync operation and pass the given callbacks through.
 
-    The `OfflineSyncWorker` class is called by `sync` method in `OfflineWorkerUtil.java` which is called by `EntitySetListActivity` when the user wants to perform a sync. When an entity is created locally in the offline store, its primary key is left unset. This is because when the user performs an `upload`, the server will set the primary key for the client. An `upload` and a `download` are normally performed together because the `download` may return updated values from the server, such as a newly-created primary key.
+    The `OfflineSyncWorker` class is called by the `sync` method in `OfflineWorkerUtil.java`, which is called by `EntitySetListActivity` when the user wants to perform a sync. When an entity is created locally in the offline store, its primary key is left unset. This is because when the user performs an `upload`, the server will set the primary key for the client. An `upload` and a `download` are normally performed together because the `download` may return updated values from the server, such as a newly-created primary key.
 
     !![Sync method calls OfflineSyncWorker](method_calls_offline_sync_worker_java.png)
 
@@ -148,7 +148,7 @@ The application allows users to make changes against a local offline store and s
 
     The worker's work is to call the `download` and `upload` method of the `OfflineODataProvider` class to perform the sync operation and pass the given callbacks through.
 
-    The `OfflineSyncWorker` class is called by `sync` method in `OfflineWorkerUtil.kt` which is called by `EntitySetListActivity` when the user wants to perform a sync. When an entity is created locally in the offline store, its primary key is left unset. This is because when the user performs an `upload`, the server will set the primary key for the client. An `upload` and a `download` are normally performed together because the `download` may return updated values from the server, such as a newly-created primary key.
+    The `OfflineSyncWorker` class is called by the `sync` method in `OfflineWorkerUtil.kt`, which is called by `EntitySetListActivity` when the user wants to perform a sync. When an entity is created locally in the offline store, its primary key is left unset. This is because when the user performs an `upload`, the server will set the primary key for the client. An `upload` and a `download` are normally performed together because the `download` may return updated values from the server, such as a newly-created primary key.
 
     !![Sync method calls OfflineSyncWorker](method_calls_offline_sync_worker_kotlin.png)
 
@@ -437,7 +437,7 @@ In this section we will create an **Error Information** screen that displays the
 
     !![OfflineWorkerUtil synchronize](offlineWorkerUtil_synchronize_call_java.png)
 
-9.  Right after `progressBar.setVisibility(View.INVISIBLE);` line, in the `SUCCEEDED` case of sync work state, add the following code, which queries the error archive and displays information to the user about the first error encountered.
+9.  Right after the `progressBar.setVisibility(View.INVISIBLE);` line, in the `SUCCEEDED` case of sync work state, add the following code, which queries the error archive and displays information to the user about the first error encountered:
 
     ```Java
     OfflineODataProvider provider = OfflineWorkerUtil.getOfflineODataProvider();
@@ -785,7 +785,7 @@ In this section we will create an **Error Information** screen that displays the
 
     !![OfflineWorkerUtil synchronize](offlineWorkerUtil_synchronize_call_kotlin.png)
 
-9.  Right after the `sync_determinate.visibility = View.INVISIBLE` line, in the `WorkInfo.State.SUCCEEDED` block, add the following code, which queries the error archive and displays information to the user about the first error encountered.
+9.  Right after the `sync_determinate.visibility = View.INVISIBLE` line, in the `WorkInfo.State.SUCCEEDED` block, add the following code, which queries the error archive and displays information to the user about the first error encountered:
 
     ```Kotlin
     val provider = OfflineWorkerUtil.offlineODataProvider
