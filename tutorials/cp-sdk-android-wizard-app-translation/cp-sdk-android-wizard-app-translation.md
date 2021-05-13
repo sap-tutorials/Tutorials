@@ -5,8 +5,8 @@ title: Add New Languages to Your Android Application
 description: See how the SAP Translation Hub can be used to quickly add support for a new language to your app.
 auto_validation: true
 time: 20
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>android-sdk-for-sap-btp, products>sap-business-technology-platform ]
-primary_tag: products>android-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
+primary_tag: products>sap-btp-sdk-for-android
 ---
 
 ## Prerequisites
@@ -20,7 +20,7 @@ primary_tag: products>android-sdk-for-sap-btp
 - How to use the SAP Translation Hub from within an Android Studio Project
 
 
-The SAP Translation Hub is currently not available on SAP **Cloud Foundry**. So if you didn't enable SAP Translation Hub service before, you can skip this tutorial.
+The SAP Translation Hub is currently not available on SAP Cloud Foundry. So if you didn't enable SAP Translation Hub service before, you can skip this tutorial.
 
 ---
 
@@ -85,7 +85,7 @@ For additional information, see:
 
 [ACCORDION-BEGIN [Step 2: ](Sign Up for the SAP Translation Hub)]
 
-The [SAP Translation Hub](https://help.sap.com/viewer/product/SAP_TRANSLATION_HUB/Cloud/en-US) enables translation of resources to specified languages. SAP Translation Hub is currently not available on SAP **Cloud Foundry**. Since we cannot enable SAP Translation Hub on **Cloud Foundry** yet, we cannot follow **Step 3** to use SAP Translation Hub wizard to generate new languages to the project.
+The [SAP Translation Hub](https://help.sap.com/viewer/product/SAP_TRANSLATION_HUB/Cloud/en-US) enables translation of resources to specified languages. SAP Translation Hub is currently not available on SAP Cloud Foundry. Since we cannot enable the SAP Translation Hub on Cloud Foundry yet, we cannot follow Step 3 to use the SAP Translation Hub wizard to generate new languages for the project.
 
 [DONE]
 [ACCORDION-END]
@@ -94,15 +94,15 @@ The [SAP Translation Hub](https://help.sap.com/viewer/product/SAP_TRANSLATION_HU
 
 >If you have enabled SAP Translation Hub service and the service URL is still available, then you can follow the steps to complete this part.
 
-1. Right-click on a file in the **Project** Explorer and choose **Translate Resources with SAP Translation Hub**.
+1. Right-click on a file in the **Project Explorer** and choose **Translate Resources with SAP Translation Hub**.
 
     !![Translation wizard Context Menu](translation-wizard-context-menu.png)
 
 2. Fill in the necessary information:
 
-    - **Account Name** – (optional) To save your settings for reuse, provide a name for this profile and select the Save Account Information check box. This name is used to identify the profile in the Accounts List available from Accounts.
+    - **Account Name** – (optional) To save your settings for reuse, provide a name for this profile and select the **Save Account Information** check box. This name is used to identify the profile in the **Accounts List** available from **Accounts**.
 
-    - **URL** – The URL of the Translation Hub service.
+    - **URL** – The URL of the SAP Translation Hub service.
 
     - **Username** and **Password** – The credentials of your SAP BTP account.
 

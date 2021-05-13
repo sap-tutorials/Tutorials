@@ -5,8 +5,8 @@ title: Display Customer Locations Using a Fiori Map Control
 description: Further customize the generated app to display customer locations on a map and try out the features of the Fiori Map control, including the toolbar, map panel, clustering, and map annotation.
 auto_validation: true
 time: 90
-tags: [ tutorial>beginner, operating-system>android, topic>mobile, products>android-sdk-for-sap-btp, products>sap-business-technology-platform ]
-primary_tag: products>android-sdk-for-sap-btp
+tags: [ tutorial>beginner, operating-system>android, topic>mobile, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
+primary_tag: products>sap-btp-sdk-for-android
 ---
 
 ## Prerequisites
@@ -2213,7 +2213,7 @@ In this section, an `EsriFioriMapView` will be used.
     implementation group: 'com.sap.cloud.android', name: 'esri-maps', version: sdkVersion
     ```
 
-4.  In Android Studio, using the project explorer, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
+4.  In Android Studio, using the **Project Explorer**, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
 
 5.  Right-click and choose **`New > Activity > Empty Activity`**.
 
@@ -2329,7 +2329,7 @@ In this section, an `EsriFioriMapView` will be used.
         /**
          * Manipulates the map once available.
          * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera. In this case,
+         * This is where we can add markers or lines, add listeners, or move the camera. In this case,
          * we just add a marker near Toronto, Canada.
          */
 
@@ -2488,7 +2488,7 @@ In this section, an `EsriFioriMapView` will be used.
     implementation group: 'com.sap.cloud.android', name: 'esri-maps', version: sdkVersion
     ```
 
-4.  In Android Studio, using the project explorer, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
+4.  In Android Studio, using the **Project Explorer**, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
 
 5.  Right-click and choose **`New > Activity > Empty Activity`**.
 
@@ -2593,7 +2593,7 @@ In this section, an `EsriFioriMapView` will be used.
         /**
          * Manipulates the map once available.
          * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera. In this case,
+         * This is where we can add markers or lines, add listeners, or move the camera. In this case,
          * we just add a marker near Toronto, Canada.
          */
 

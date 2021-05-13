@@ -4,8 +4,8 @@ author_profile: https://github.com/flyingfish162
 title: Try Out the SAP BTP SDK Wizard for Android
 description: Use the Android Studio-integrated SAP BTP SDK Wizard for Android to create a mobile app and configure it to make use of SAP Mobile Services features.
 auto_validation: true
-primary_tag: products>android-sdk-for-sap-btp
-tags: [ tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>android-sdk-for-sap-btp, products>sap-business-technology-platform ]
+primary_tag: products>sap-btp-sdk-for-android
+tags: [ tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
 time: 30
 ---
 
@@ -156,7 +156,7 @@ If you check the **Enable Push** checkbox, an error message is displayed explain
 
     !![License agreement screen](license-agreement.png)
 
-    Read it and click **AGREE**, you will see the Sign-In screen of the app. If you select **DISAGREE**, you will be asked to confirm whether to terminate onboarding. If you confirm, you will be back to welcome screen. Otherwise, you can still select **AGREE** to complete onboarding and start to use the app.
+    Read it and click **AGREE**, you will see the **Sign-In** screen of the app. If you select **DISAGREE**, you will be asked to confirm whether to terminate onboarding. If you confirm, you will return to the **Welcome** screen. Otherwise, you can still select **AGREE** to complete onboarding and start to use the app.
 
     !![License agreement disagree](license-agreement-disagree.png)
 

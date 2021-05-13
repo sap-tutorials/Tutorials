@@ -68,7 +68,7 @@ In this step, you copy the endpoint address of the integration flow.
 [ACCORDION-BEGIN [Step 3: ](Define the API)]
 In this step, you define and expose an integration flow endpoint as an application programming interface
 
-1. Go to your SAP BTP trial subaccount. Select **Subscriptions**. On the **Integration Suite tile**, select **Go to Application**.
+1. Go to your SAP BTP trial subaccount. Select **Instances and Subscriptions**. In the **Subscriptions**, section, find **Integration Suite** and select **Go to Application**.
 
     !![AccessIsuite](3-1-AccesstoIsuite.png)
 
@@ -158,7 +158,7 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
 
 [ACCORDION-BEGIN [Step 4: ](Assign policy template)]
-With this step, you assign a policy template to your API to specify authentication details for the API call. In particular, you use a policy template that defines that the caller of the API authenticates itself using OAuth 2.0 client credentials grant.
+In this step, you assign a policy template to your API to specify authentication details for the API call. In particular, you use a policy template that defines that the caller of the API authenticates itself using OAuth 2.0 client credentials grant.
 
 This grant type works in the following way: In a first call, the API client provides the values of **`clientid`** and **`clientsecret`** (from the service key generated in Step 1) to a token service (the URL of the token service is also contained in the service key definition). The token service provides an access token to the API client. In a subsequent call, the API client calls the integration flow endpoint providing the access token. If the access token is valid, the API client is authorized to call the integration flow.
 
@@ -166,7 +166,7 @@ This grant type works in the following way: In a first call, the API client prov
 
     !![Discover](016.png)
 
-2. In the search field, Search for **Connect to SAP Cloud Platform services** and Choose package **Connect to SAP Cloud Platform services**.
+2. Search for the package **Connect to SAP Business Technology Platform Services**. Choose the package.
 
     !![choose API](017.png)
 
@@ -214,9 +214,7 @@ This grant type works in the following way: In a first call, the API client prov
 
 13. In the editor, the OAuth workflow defined by the policy is visualized as a graphical model.
 
-    Now, you need the content of the service key generated in Step 1: Create service instance and key. Open another browser tab and display the service key.
-
-    You need the values of **`clientid`**, **`clientsecret`** and **`tokenurl`**.
+    Now, you need the values from the service key that you copied in **Step 1: Copy credentials from service key**. You need the values of **`clientid`**, **`clientsecret`** and **`tokenurl`**.
 
 14. In the graphical model of the **Policy Editor**, click the **`getcredential`** shape.
 

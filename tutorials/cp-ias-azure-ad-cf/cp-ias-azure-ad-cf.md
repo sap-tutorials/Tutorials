@@ -3,21 +3,23 @@ title: Register SAP BTP, Cloud Foundry Subaccount in Identity Authentication Ser
 description: Establish trust between a SAML 2.0 identity provider in SAP Cloud Identity Services - Identity Authentication and an SAP BTP, Cloud Foundry subaccount.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>identity-authentication]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, products>identity-authentication]
 primary_tag: topic>security
 author_name: Valentin Atanassov
 author_profile: https://github.com/ValAta
+
 ---
 
 ## Prerequisites
- - You have a Free Trial Account on SAP Business Technology Platform. See [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
- - You have a tenant of Identity Authentication service. See [Tenant Model and Licensing](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/93160ebd2dcb40e98aadcbb9a970f2b9.html)
-- You have Azure Active Directory (Azure AD) account.
+ - You have a Free Trial Account on SAP Business Technology Platform. See [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).
+ - You have a tenant of Identity Authentication service. See [Tenant Model and Licensing](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/93160ebd2dcb40e98aadcbb9a970f2b9.html).
+ - You have an Azure Active Directory (Azure AD) account. See [Sign Up for Microsoft Azure](https://azure.microsoft.com/en-us/resources/videos/sign-up-for-microsoft-azure/)
+
 ## Details
 ### You will learn
   - How to establish trust between your SAP BTP, Cloud Foundry subaccount and the Identity Authentication service
   - How to configure users for single sign-on  usage
-
+ 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Log into Identity Authentication service)]

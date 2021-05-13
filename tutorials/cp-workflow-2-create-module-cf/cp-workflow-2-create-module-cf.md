@@ -38,9 +38,9 @@ You create your workspace where you will later build the workflow.
 
     > It takes 2-3 minutes to initialize your dev workspace for the first time. You will see a Welcome page once the dev space is initialized.
 
-6. If you have never accessed the workspace before, open it with the **Open Workspace** button.
+6. If you have never accessed the workspace before, choose **File** | **Open Workspace**.
 
-7. Select the **projects** folder and choose **Open**.
+7. Select the **projects** folder, and choose **Open**.
 
     ![See Projects Folder](see-result-projects-folder.png)
 
@@ -49,25 +49,20 @@ You create your workspace where you will later build the workflow.
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 2: ](Create an MTA project)]
+You need to create a multitarget application (MTA) project that contains a workflow module.
 
-[ACCORDION-BEGIN [Step 2: ](Create an MTA application)]
-To create a deployment artifact, you need to create a multitarget (MTA) application.
+1. Open **File** | **New Project from Template**.
 
-1. Open a terminal window to start the Yeoman generator, choose **Terminal** | **New Terminal**.
+2. Choose **Basic Multitarget Application**, and then choose **Start**.
 
-    A new terminal window opens.
+    ![Select Basic MTA](select-basic-mta2.png)
 
-2. Type in *yo*, and choose ENTER to start the generator framework.
+3. Enter a project name, for example, `onboarding`, and choose **Finish**.
 
-3. Use the down arrow to select **Basic Multitarget Application**, then choose ENTER.
+    The IDE opens again with MTA as a workspace. It contains an `mta.yaml` file, which describes the application.
 
-    ![Select Basic MTA](select-basic-mta.png)
-
-4. Enter a project name, for example, `onboarding`, and choose ENTER.
-
-    A new folder with the project name appears in the **Explorer** view. It contains an `mta.yaml` file, which describes the application.
-
-    ![See YAML File](new-yaml.png)
+    ![See YAML File](new-yaml2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -75,22 +70,21 @@ To create a deployment artifact, you need to create a multitarget (MTA) applicat
 [ACCORDION-BEGIN [Step 3: ](Create a workflow module and a workflow)]
 You now need to create a workflow module within the MTA project.
 
-1. In the terminal, access the application folder below the **projects** folder using the command `cd <folder name>`. Use, for example, `cd onboarding`, then choose ENTER.
+1. Right-click the `mta.yaml` file, and then choose **Create MTA Module from Template**.
 
-2. Type in *yo*, then choose ENTER again.
+2. Choose **Workflow Module**, and then choose **Start**.
 
-3. Use the down arrow to select the **`@workflow/workflow Module`**, then choose ENTER.
+    ![Select Workflow Module](select-wf-module.png)
 
-4. Enter a name for the workflow module, for example, `approvals`, then choose ENTER.
+3. Enter a path to the location where the module is to be generated. We recommend using the proposed one.
 
-5. In the same way, enter a name for the workflow itself, for example, `onboard`, and a description.
+4. Enter a name for the workflow module, for example, `approvals`, then choose **Next**.
 
-6. Confirm to overwrite the `mta.yaml` file by entering `y`, then press ENTER.
+5. Enter a name for the workflow, for example, `onboard`, and a description, then choose **Finish**.
 
-    Now you see the newly created workflow in the editor.
+    ![See Simple Onboard Workflow](see-onboardwf.png)
 
-    ![See Simple Onboard Workflow](see-conboardwf.png)
-
+The workflow module together with a workflow is created and opens.
 
 [VALIDATE_1]
 [ACCORDION-END]
