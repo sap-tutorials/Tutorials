@@ -179,7 +179,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 4. Now, open the `BrandedSettings.json` file and update the `ConnectionSettings` with the values for your MDK application in Mobile Services.
 
-    !![MDK](img_3.4.png)
+    !![MDK](img-3.4.png)
 
     To find the correct URLs for your client, you should navigate to  [Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and find your MDK application that you want to link to this client.
 
@@ -193,7 +193,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img_3.4.2.png)
 
-    4.3 `SapCloudPlatformEndpoint`: Server URL from `APIs` tab.
+    4.3 `ServerUrl`: Server URL from `APIs` tab.
 
     !![MDK](img_3.4.3.png)
 
@@ -249,7 +249,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 4. Now, open the `BrandedSettings.json` file and update it with information from your MDK Mobile Services application.
 
-    !![MDK](img_3.4.png)
+    !![MDK](img-3.4.png)
 
     To find the correct URLs for your client, you should navigate to  [Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and find your MDK application that you want to link to this client.
 
@@ -263,7 +263,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img_3.4.2.png)
 
-    4.3 `SapCloudPlatformEndpoint`: Server URL from `APIs` tab.
+    4.3 `ServerUrl`: Server URL from `APIs` tab.
 
     !![MDK](img_3.4.3.png)
 
@@ -372,29 +372,27 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
 
-    ![MDK](img-5.3.1.png)
-
-4. Tap **AGREE** on `End User License Agreement`.
-
-5. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.4 & 3.5.
+4. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.4 & 3.5. Tap **START** to connect MDK client to SAP Business Technology Platform (BTP).
 
     ![MDK](img_5.5.png)
 
-6. Tap **START** to connect MDK client to SAP Business Technology Platform (BTP).
+5. Tap **AGREE** on `End User License Agreement`.
 
-7. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
+    ![MDK](img-5.3.1.png)
+
+6. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
 
     ![MDK](img_5.7.png)
 
-8. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
+7. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
-    ![MDK](img_5.8.png)
+    ![MDK](img-5.8.png)
 
-9. Confirm the passcode and tap **DONE**.
+8. Confirm the passcode and tap **DONE**.
 
     ![MDK](img_5.9.png)
 
-10. Optionally, you can enable biometric authentication to get faster access to the app data.
+9. Optionally, you can enable biometric authentication to get faster access to the app data.
 
     ![MDK](img_5.9.1.png)
 
@@ -462,7 +460,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 [OPTION END]
 
-Congratulations, you have successfully built Your Mobile Development Kit Client Using MDK SDK and you are now all set to [Build Your Mobile Development Kit Client Using Cloud Build Service](cp-mobile-dev-kit-cbs-client).
+Congratulations, you have successfully built Your Mobile Development Kit Client Using MDK SDK and and you can continue with the remaining tutorials in this mission.
 
 [VALIDATE_3]
 [ACCORDION-END]
