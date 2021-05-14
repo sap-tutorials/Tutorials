@@ -5,8 +5,8 @@ title: Enable Multi-User for Your Android Application
 description: Learn how to configure a wizard-generated application to support multi-user feature.
 auto_validation: true
 time: 60
-tags: [ tutorial>beginner, operating-system>android, topic>mobile, products>android-sdk-for-sap-btp, products>sap-business-technology-platform]
-primary_tag: products>android-sdk-for-sap-btp
+tags: [ tutorial>beginner, operating-system>android, topic>mobile, products>sap-business-technology-platform]
+primary_tag: products>sap-btp-sdk-for-android
 ---
 
 ## Prerequisites
@@ -19,6 +19,7 @@ primary_tag: products>android-sdk-for-sap-btp
   - How to enable multi-user feature for an online app
   - How to enable multi-user feature for an offline app
   - Several multi-user related APIs
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Intro to Android SDK multi-user feature)]

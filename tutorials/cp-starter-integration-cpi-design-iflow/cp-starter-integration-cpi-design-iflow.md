@@ -144,7 +144,7 @@ From the palette, choose **Call** > **External Call** > **Request Reply**. Conne
 
 [ACCORDION-BEGIN [Step 8: ](Connect request reply to receiver)]
 
-1. Move the **Receiver** step below the **Request Reply** step by selecting it and dragging it to the desired position on the palette. You do this to ensure that your integration flow is elegantly designed.
+1. Move the **Receiver** step below the **Request Reply** step by selecting it and dragging it to the desired position on the editor. You do this to ensure that your integration flow is elegantly designed.
 
     >**TIP:** Use the pan and zoom controls (highlighted in yellow) for resizing the canvas. Use the guidelines to ensure that **Receiver** is aligned with the **Request Reply** step.
 
