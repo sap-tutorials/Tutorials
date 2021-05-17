@@ -19,7 +19,6 @@ time: 10
   - What services are, and where to find them
   - What the different environments of SAP BTP are
 
-
 [ACCORDION-BEGIN [Step](Introduction to SAP BTP)]
 
 **Welcome to the SAP BTP**
