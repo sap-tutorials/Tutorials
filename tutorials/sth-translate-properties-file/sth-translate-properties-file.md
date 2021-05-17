@@ -1,6 +1,6 @@
 ---
-title: Translate a Java properties file
-description: Learn how easy it is to translate a properties file with the file upload - translation workflow from SAP Translation Hub.
+title: Translate a Java Properties File
+description: Translate and review properties files with the SAP Translation Hub file upload scenario.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>machine-learning]
