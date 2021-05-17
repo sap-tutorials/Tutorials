@@ -15,7 +15,7 @@ time: 30
 - How the synchronization code works
 - How to handle errors that occur while syncing
 ---
- 
+
 [ACCORDION-BEGIN [Step 1: ](Generate and run an offline app)]
 
 1.  Follow the instructions at [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app) to create a new application using the SAP BTP SDK Wizard for Android and select **Offline** for the OData option on the **Project Features** tab. The push feature is not needed for this application.
@@ -63,7 +63,32 @@ time: 30
 [VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Examine the defining queries)]
+[ACCORDION-BEGIN [Step 2: ](Examine the encryption key)]
+
+To protect the data in offline store, you must enable offline store encryption by supplying an encryption key.
+
+[OPTION BEGIN [Java]]
+1.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`OfflineWorkerUtil`**, to open `OfflineWorkerUtil.java`.
+
+2.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`initializeOffline`**, to move to the `initializeOffline` method. Call the **`setStoreEncryptionKey`** method of **`OfflineODataParameters`** instance to encrypt offline store.
+
+    !![Parameter setting Java](offline-key-java.png)
+
+[OPTION END]
+
+[OPTION BEGIN [Kotlin]]
+1.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`OfflineWorkerUtil`**, to open `OfflineWorkerUtil.kt`.
+
+2.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`initializeOffline`**, to move to the `initializeOffline` method. Call the **`setStoreEncryptionKey`** method of **`OfflineODataParameters`** instance to encrypt offline store.
+
+    !![Parameter setting Kotlin](offline-key-kotlin.png)
+
+[OPTION END]
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Examine the defining queries)]
 
 >Make sure you are selecting the right language above.
 
@@ -94,7 +119,7 @@ Defining queries tell the `OfflineODataProvider` (the class that manages the off
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Examine the offline service and service manager)]
+[ACCORDION-BEGIN [Step 4: ](Examine the offline service and service manager)]
 
 >Make sure you are selecting the right language above.
 
@@ -161,7 +186,7 @@ For more information about how the offline store works, see the [Offline API](ht
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Introduce a synchronization error)]
+[ACCORDION-BEGIN [Step 5: ](Introduce a synchronization error)]
 
 When syncing changes made while offline, conflicts can occur. One example might be if two people attempted to update a description field for the same product. Another might be updating a record that was deleted by another user. The [`ErrorArchive`](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-errors-and-conflicts.html#accessing-the-errorarchive) provides a way to see details of any of the conflicts that may have occurred. The following instructions demonstrate how to use `ErrorArchive`.
 
@@ -184,7 +209,7 @@ When syncing changes made while offline, conflicts can occur. One example might 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Display ErrorArchive details)]
+[ACCORDION-BEGIN [Step 6: ](Display ErrorArchive details)]
 
 In this section we will create an **Error Information** screen that displays the details from the `ErrorArchive`.
 
