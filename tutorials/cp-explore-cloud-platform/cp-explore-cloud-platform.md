@@ -5,7 +5,7 @@ auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform ]
 time: 10
 ---
 
