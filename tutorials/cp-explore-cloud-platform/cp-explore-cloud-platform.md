@@ -9,6 +9,7 @@ tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platfor
 time: 10
 ---
 
+
 ## Prerequisites  
  - There are none. If you want to start learning about SAP BTP, this is the very beginning.
 
