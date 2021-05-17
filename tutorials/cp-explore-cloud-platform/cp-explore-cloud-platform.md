@@ -4,8 +4,8 @@ description: Explore SAP BTP from a developer's perspective, and understand the 
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
-primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform ]
+primary_tag: products>sap-business-technology-platform
+tags: [ tutorial>beginner, topic>cloud ]
 time: 10
 ---
 
