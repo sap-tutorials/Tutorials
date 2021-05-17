@@ -35,7 +35,6 @@ Let's start with an overview of the different types of "as a Service" that SAP B
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step](What does "as a Service" mean?)]
 
 A term that is widely used in Cloud computing is "*Something* as a Service".  Services, in this case, mean anything provided in the cloud for the organization.  So, the important part of the term is the first word - the *Something*.
