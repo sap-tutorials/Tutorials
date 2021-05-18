@@ -95,7 +95,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > This creates a folder `my-bookshop` in the current directory.
 
-2. Open Visual Studio Code, go to **File** **&rarr;** **Open Folder** and choose the **`my-bookshop`** folder.
+2. In Visual Studio Code, go to **File** **&rarr;** **Open Folder** and choose the **`my-bookshop`** folder.
 
 3. Go to **Terminal** **&rarr;** **New Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
 
@@ -115,7 +115,8 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     ```Shell/Bash
     cds serve all --with-mocks --in-memory?
-    ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
+    watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env,css,gif,html,jpg,png,svg...
+    live reload enabled for browsers
 
 
         No models found in db/,srv/,app/,schema,services.
@@ -153,7 +154,8 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     ```Shell/Bash
     cds serve all --with-mocks --in-memory?
-    ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
+    watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env,css,gif,html,jpg,png,svg...
+    live reload enabled for browsers
 
 
         No models found in db/,srv/,app/,schema,services.
@@ -213,13 +215,13 @@ After initializing the project, you should see the following empty folders:
 3. As soon as you've saved your file, the still running `cds watch` reacts immediately with some new output as shown below:
 
     ```Shell/Bash
-    [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
+    [cds] - using bindings from: { registry: '~/.cds-services.json' }
     /> successfully deployed to sqlite in-memory db
 
     [cds] - serving CatalogService { at: '/catalog' }
 
-    [cds] - launched in: 1557.190ms
+    [cds] - launched in: 1.453s
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -360,15 +362,14 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
     > After you added these files, `cds watch`restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
 
     ```Shell/Bash
-    [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
-    > filling my.bookshop.Authors from db/csv/my.bookshop-Authors.csv
-    > filling my.bookshop.Books from db/csv/my.bookshop-Books.csv
+    [cds] - using bindings from: { registry: '~/.cds-services.json' }
+     > filling my.bookshop.Authors from ./db/csv/my.bookshop-Authors.csv
     /> successfully deployed to sqlite in-memory db
 
-    [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
+    [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
-    [cds] - launched in: 1009.187ms
+    [cds] - launched in: 686.831ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -434,11 +435,11 @@ Instead of using in-memory, you can also use persistent databases.
     ```
 
     ```Shell/Bash
+    [cds] - connect to db > sqlite { database: '/Users/d053053/my-bookshop/db/my-bookshop.db' }
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
-    [cds] - connect to db > sqlite { database: 'db/my-bookshop.db' }
-    [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
+    [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
-    [cds] - launched in: 629.769ms
+    [cds] - launched in: 1.128s
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
