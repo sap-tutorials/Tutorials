@@ -139,13 +139,10 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
     >**IMPORTANT**: From the **Provisioning** application you can navigate back to the Integration Suite Launchpad by choosing the **Integration Suite** button on the header.
 
-3. After successful activation, you can view the activated capability tiles on the launchpad. Click on the relevant tile to access the capability.  
-
-    !![URL](4-3-Isuite_launch_new_capab.png)
-
     >To know more about resources offered by the Integration Suite Launchpad, see [Working with Integration Suite Launchpad](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/a53dce3b57ba4915b055343f783300a5.html).
 
-    >To access each capability's tile, you must assign capability-specific roles which is explained in the next step.
+    >To access each capability's tile, you must first assign capability-specific roles which is explained in the next step.
+
 
 [DONE]
 [ACCORDION-END]
