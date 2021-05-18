@@ -96,7 +96,7 @@ In Visual Studio Code, set up your UIVeri5 test project.
 3. Use the following command to call the generator for UIVeri5 tests:
 
     ```Shell/Bash
-    yo easy-ui5:uiveri5
+    yo easy-ui5 project uiveri5
     ```
 
     Now, you're asked a couple of questions that help the generator create your test structure.
@@ -451,7 +451,7 @@ Check if the following two statements are true:
 13. Enter the following command:
 
     ```Shell/Bash
-    yo easy-ui5:newuiveri5po
+    yo easy-ui5 project newuiveri5po
     ```
 
 14. Answer the questions that help the generator create your new page object as follows:

@@ -188,7 +188,7 @@ This grant type works in the following way: In a first call, the API client prov
 
 7. Choose **Edit**.
 
-    !![EDit](022.png)
+    !![Edit](022.png)
 
 8. Select **Policies**.
 
