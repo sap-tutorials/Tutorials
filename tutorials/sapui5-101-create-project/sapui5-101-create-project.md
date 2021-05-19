@@ -3,9 +3,9 @@ title: Create an Empty SAPUI5 Project
 description: Start working with the SAP Business Application Studio, and create a new empty UI5 project connected to a data source.
 auto_validation: true
 primary_tag: topic>sapui5
-author_name: Marius Obert
-author_profile: https://github.com/iobert
-tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-business-application-studio ]
+author_name: Conrad Bernal
+author_profile: https://github.com/cjbernal
+tags: [  tutorial>beginner, topic>html5, topic>sapui5,  products>sap-btp-cloud-foundry-environment, products>sap-business-application-studio ]
 time: 15
 
 ---
@@ -16,7 +16,7 @@ time: 15
 ## Details
 ### You will learn  
   - How to create a new SAPUI5 project that is connected to a data source
-  - How to create a run configuration for new projects
+  - How to run the project to in the SAP Business Application Studio
 
 ---
 [ACCORDION-BEGIN [Step : ](Open the Fiori dev space)]
@@ -29,12 +29,18 @@ time: 15
 > Have a look at [this tutorial](appstudio-devspace-fiori-create) if you are unsure how to get here or how to create a dev space.
 
 
+[DONE]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Create a UI5 destination)]
+
+[Create a new destination](cp-cf-create-destination) of the name "ui5" that points to the URL `https://sapui5.hana.ondemand.com/`. This is where we'll pull the standard UI5 libs from later.
+
 
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Connect to a Cloud Foundry endpoint)]
 
-Make sure you are connected to a Cloud Foundry endpoint to deploy the SAPUI5 application later.
+Make sure you are connected to a Cloud Foundry endpoint to which you will deploy the SAPUI5 application later.
 
 1. Click on the bottom-left corner of the screen to start the connection flow.
 
@@ -44,86 +50,53 @@ Make sure you are connected to a Cloud Foundry endpoint to deploy the SAPUI5 app
 
     !![selectEndpoint](./selectEndpoint.png)
 
-3. Next, you need to select the Cloud Foundry Organization and space you want to use. You will see that you are connected to the endpoint once these prompts have been answered.
+3. Next, you need to select the Cloud Foundry Organization and space you want use. You will see that you are connected to the endpoint once these prompts have been answered.
 
     !![connectedEndpoint](./connectedEndpoint.png)
 
 
 [DONE]
 [ACCORDION-END]
-
 [ACCORDION-BEGIN [Step : ](Create a new project)]
-1. Click on the link **New project From template** on the *Welcome* screen.
+1. Click on the link **Start from template** on the *Welcome* screen.
 
     !![newproject](./newproject.png)
 
-2. Select **SAP Fiori Freestyle - Project Generator** as the template category you want to use and click **Next**.
+2. Select **SAP Fiori freestyle SAPUI5 application** as the template category you want to use and click **Start**.
 
     !![fioriTemplate](./fioriTemplate.png)
 
-3. Specify the target environment ( **Cloud Foundry** ) and the template ( **SAPUI5 Application** ) and go to the **Next** screen.
+3. Specify the application type **SAPUI5 freestyle** and the floor plan **SAPUI5 Application** and go to the **Next** screen.
 
-    !![sapui5Template](./sapui5Template.png)
+    !![sapui5Template](./sapui5app.png)
 
-4. Name the project **`tutorial`** and proceed by clicking **Next**.
+4. Now you have the option to connect your SAPUI5 application to a data source. Select **Connect to an OData Service** and enter the following service URL **`https://services.odata.org/V2/Northwind/Northwind.svc/`** before you click **Next**.
 
-    !![projectName](./projectName.png)
+    !![odata](./odata.png)
 
-4. Choose **Standalone Approuter** for the runtime and click **Next**.
-
-    !![approuter](./approuter.png)
-
-4.  Name of the module  **`webapp`** and the namespace **`sap.cp`** and turn authentication off. Go to the **Next** screen.
-
-    !![webapp](./webapp.png)
-
-4. Keep the default view name and select **Yes** to add a data service on this project.
+4. Keep the default view name and click **Next** .
 
     !![viewname](./viewname.png)
 
-4. Select **My SAP Systems** and the source **Northwind**. Enter `/v2/northwind/northwind.svc/` for the path - don't forget the ending slash. Click **Next** to create the new project.
+  4.   Name of the module **`sapui5`**, use the application title  **`Tutorial`**, define the namespace **`sap.btp`**, and **Add deployment configuration**. Keep the default values for the other parameters and select **Next** to go to the next step.
 
-    !![datasource](./datasource.png)
+      !![projectdetails](./projectdetails.png)
 
-4. Once the project has been created, the Business Application Studio will prompt you to open the project in a new workspace. Click **Open in New Workspace**.
+  4.  Choose **Cloud Foundry** as the target runtime and type in the name of the destination you created before: **`Northwind`**. Press **Finish** to create the new project.
+
+      !![finishProject](./finishProject.png)
+
+
+4. Once you see the success message, click **Files & Open** to find the new project.
+
 
     !![newws](./newws.png)
 
 
+4. Select **user/projects/sapui5** and confirm with **Open**.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Create a new run configuration)]
 
-Create a run configuration to be able to run the web app. This configuration needs to be created only once.
-
-1. To run the UI module, switch to the **Run Configuration** panel on the left-hand bar. Click on the **+** icon to add a new run configuration.
-
-    !![runconfig](./runconfig.png)
-
-2. In the prompt, select the UI module **`webapp`** as the app you want to run.
-
-    !![selectProject](./selectProject.png)
-
-2.  Then, select **index.html** to add a new run configuration for your app.
-
-    !![runFile](./runFile.png)
-
-3. Choose the latest UI5 version.
-
-    !![latestUI5](./latestUI5.png)
-
-3. Choose **`Run Web App`** as the name of the configuration to create the configuration.
-
-    !![saveConfig](./saveConfig.png)
-
-3. You can see the configuration on the left side now. Expand it to view the *Data Source (Destination)* dependency and click on it to connect the run configuration to the data source.
-
-    !![connectSource](./connectSource.png)
-
-3. Select the **Northwind** data source from the list.
-
-    !![selectNW](./selectNW.png)
+    !![openws](./openws.png)
 
 
 [DONE]
@@ -132,26 +105,19 @@ Create a run configuration to be able to run the web app. This configuration nee
 
 Running your application has several advantages over deploying it. Among others, it's faster, doesn't require a "build" step and won't minify your JavaScript codebase.
 
-1. Run the configuration you just created.
+1. To run the pre-generated run configuration, switch to the **Run Configuration** panel on the left-hand bar. Click on the **▶️** icon of the first run configuration to add start the SAPUI5 app.
 
     !![run](./run.png)
 
 
-2. Now the SAP Business Application Studio will start the app. When promoted, selected **Expose and open** to making the local port accessible for testing and debugging. Choose any description for this port.
+2. Now the SAP Business Application Studio will start the app. When promoted, selected **Open** to make the local port accessible for debugging.
 
     !![expose](./expose.png)
 
 
-> In case you run into this error:
+3. A new tab should open that displays the following page.
 
->!![errorPath](./errorPath.png)
-
->  You can fix this by running the following command in a **Terminal|New Terminal**:
-
-```Terminal
-cd tutorial-approuter/
-npm install
-```
+    !![running](./running.png)
 
 
 [DONE]

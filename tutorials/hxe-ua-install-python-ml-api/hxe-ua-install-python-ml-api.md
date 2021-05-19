@@ -15,7 +15,7 @@ Ensure that you have Python 2.7 or 3.6 installed.
 
 You have downloaded, extracted, and installed one of the SAP HANA HDB clients. See [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html).
 
-You have also installed the Python driver that comes with the clients. See [Use Clients to Query an SAP HANA Database](hhttps://developers.sap.com/mission.hana-cloud-clients.html).
+You have also installed the Python driver that comes with the clients. See [Use Clients to Query an SAP HANA Database](https://developers.sap.com/mission.hana-cloud-clients.html).
 
 
 ## Details

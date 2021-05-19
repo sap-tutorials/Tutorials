@@ -32,7 +32,7 @@ primary_tag: products>sap-hana-cloud
 
     ```SQL
     SELECT * FROM HOTEL.HOTEL;
-    INSERT INTO HOTEL.HOTEL VALUES(27, 'River Boat', '79872', '788 MAIN STREET');  --will cause a unique constraint error when executed
+    INSERT INTO HOTEL.HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '79872'); --will cause a unique constraint error when executed
     ```
 
 4. Expand the **Run** dropdown menu.  Notice that there are multiple options along with their shortcut keys.
@@ -85,6 +85,7 @@ primary_tag: products>sap-hana-cloud
     SELECT
     '{ "name":"John", "age":30, "cars": { "car1":"Ford", "car2":"BMW", "car3":"Fiat" }}'
     AS JSON_EXAMPLE FROM DUMMY;
+    SELECT * FROM HOTEL.CUSTOMERS FOR JSON;
     ```
 
     ![JSON Query Results](JSONQuery.png)
@@ -128,6 +129,8 @@ primary_tag: products>sap-hana-cloud
 3. Shortcuts can be configured in **Global Preferences** under **Keyboard Shortcuts**.
 
     ![Open Keyboard Shortcuts Settings](KeyboardShortcutsSettings.png)
+
+    > Note, double-click on the shortcut to start the recording.
 
 4. A SQL console can be toggled to enter full-screen mode.  Double-click a SQL console tab to enter this mode.  
 
@@ -216,7 +219,7 @@ primary_tag: products>sap-hana-cloud
     Copy the following SQL into the SQL console to populate the SQL Functions section of the help panel:
 
     ```SQL
-    SELECT TO_DECIMAL(ROUND( sum(PRICE) / COUNT(*), 2, ROUND_HALF_UP ))
+    SELECT TYPE, TO_DECIMAL(ROUND(sum(PRICE) / COUNT(*), 2, ROUND_HALF_UP)) as "Avg Room Price"
     FROM HOTEL.ROOM
     GROUP BY TYPE;
     ```
@@ -264,7 +267,7 @@ primary_tag: products>sap-hana-cloud
 
 [ACCORDION-BEGIN [Step 6: ](Statement library)]
 
-The statement library contains a mix of pre-populated statements, to help with monitoring, and user-saved statements.
+The statement library contains a mix of pre-populated system statements and user-saved statements.
 
 1. Frequently used statements can be saved to the statement library for easy access.  Enter the statement below into the SQL console and click the **Add to Statement Library** button.
 
@@ -296,7 +299,7 @@ The statement library contains a mix of pre-populated statements, to help with m
 
     ![Statement Library](StatementLibrary.png)
 
-    >Some of the system statements come from [SAP Note 1969700 - SQL Statement Collection for SAP HANA](https://launchpad.support.sap.com/#/notes/1969700).  These statements can be used to help monitor the database.  These statements are primarily intended for SAP HANA 2.0.  
+    >Some of the system statements come from [SAP Note 1969700 - SQL Statement Collection for SAP HANA](https://launchpad.support.sap.com/#/notes/1969700).  These statements can be used to help monitor the database.  These statements are primarily intended for SAP HANA 2.0.  Another source of diagnostic information are the SQL queries contained in [`M_SYSTEM_INFORMATION_STATEMENTS` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20c5dfac751910148a3fc81b81b2d19b.html).
 
 5. To run a statement, select one from the statement library and click the **Open in SQL Console** button.
 

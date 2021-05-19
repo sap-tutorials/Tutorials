@@ -27,7 +27,7 @@ Inside of that file, create the `Detail` component that will return a title to y
 
 ```JavaScript / JSX
 import React from "react";
-import { Title } from "@ui5/webcomponents-react/lib/Title";
+import { Title } from "@ui5/webcomponents-react";
 
 export function Detail() {
   return <Title>Hello World!</Title>;
@@ -91,7 +91,7 @@ export function Detail() {
     ```JavaScript / JSX
     import React from "react";
     import { ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
-    import "@ui5/webcomponents-icons/dist/icons/add.js";
+    import "@ui5/webcomponents-icons/dist/add.js";
 
     export function MyApp() {
       return (
@@ -130,10 +130,10 @@ export function Detail() {
     } from "@ui5/webcomponents-react";
     import { spacing } from "@ui5/webcomponents-react-base";
     import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-    import "@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js";
-    import "@ui5/webcomponents-icons/dist/icons/line-chart.js";
-    import "@ui5/webcomponents-icons/dist/icons/list.js";
-    import "@ui5/webcomponents-icons/dist/icons/table-view.js";
+    import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
+    import "@ui5/webcomponents-icons/dist/line-chart.js";
+    import "@ui5/webcomponents-icons/dist/list.js";
+    import "@ui5/webcomponents-icons/dist/table-view.js";
 
     export function Home() {
       const [toggleCharts, setToggleCharts] = useState("lineChart");
@@ -411,7 +411,7 @@ If needed, you can compare your files with the following code references:
 ```JavaScript / JSX
 import React from "react";
 import { Avatar, ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
-import "@ui5/webcomponents-icons/dist/icons/add.js";
+import "@ui5/webcomponents-icons/dist/add.js";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { Home } from "./Home";
@@ -465,10 +465,10 @@ import {
 import { spacing } from "@ui5/webcomponents-react-base";
 import { useHistory } from "react-router-dom";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-import "@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js";
-import "@ui5/webcomponents-icons/dist/icons/line-chart.js";
-import "@ui5/webcomponents-icons/dist/icons/list.js";
-import "@ui5/webcomponents-icons/dist/icons/table-view.js";
+import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
+import "@ui5/webcomponents-icons/dist/line-chart.js";
+import "@ui5/webcomponents-icons/dist/list.js";
+import "@ui5/webcomponents-icons/dist/table-view.js";
 
 export function Home() {
   const [toggleCharts, setToggleCharts] = useState("lineChart");

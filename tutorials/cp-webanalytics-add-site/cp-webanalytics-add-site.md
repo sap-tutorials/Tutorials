@@ -3,8 +3,10 @@ title: Register Your Website in a Space
 description: Register your website in a SAP Web Analytics space to initiate usage tracking.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-web-analytics, products>sap-cloud-platform]
+tags: [ tutorial>beginner, products>sap-web-analytics, products>sap-business-technology-platform]
 primary_tag: products>sap-web-analytics
+author_name: Vikram Kulkarni
+author_profile: https://github.com/Vikramkulkarni01
 ---
 
 ## Prerequisites
@@ -31,9 +33,11 @@ Open SAP Web Analytics application. If you're the space admin, you must have rec
 
 [ACCORDION-BEGIN [Step 2: ](Register your website)]
 
-> If you don't have a web application, you can create a simple one with **SAP Business Application Studio**. Refer to this [tutorial](https://developers.sap.com/tutorials/sapui5-101-create-project.html).
+> If you don't have a web application, you can create a simple one with **SAP Business Application Studio**. Refer to this [Create an Empty SAPUI5 Project](sapui5-101-create-project).
 
 1. Select **Add Site**.
+    !![AddSite](AddSite.png)
+
 2. Enter the domain name of your website. Don't include http:// or https:// for the domain name.
 3. Enter a meaningful name or description that describes the website.
 4. Leave **Tracking Status** as its default, active (green).

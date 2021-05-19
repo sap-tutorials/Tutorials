@@ -1,6 +1,6 @@
 ---
-title: Connect Using the SAP HANA .NET Core Interface
-description: Create and debug a .NET Core application that connects to SAP HANA using the SAP HANA client.
+title: Connect Using the SAP HANA .NET Interface
+description: Create and debug a .NET application that connects to SAP HANA using the SAP HANA client.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud]
@@ -12,37 +12,37 @@ primary_tag: products>sap-hana
 
 ## Details
 ### You will learn
-  - How to install the .NET Core SDK
-  - How to create and debug a .NET Core application that queries an SAP HANA database
+  - How to install the .NET SDK
+  - How to create and debug a .NET application that queries an SAP HANA database
 
-[.NET Core](https://en.wikipedia.org/wiki/.NET_Core) is a free and open source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.
+[.NET](https://en.wikipedia.org/wiki/.NET_Core) is a free and open source software framework for Microsoft Windows, Linux and Mac operating systems and is the successor to the .NET Framework.  .NET was previously known as .NET Core.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install the .NET Core SDK)]
+[ACCORDION-BEGIN [Step 1: ](Install the .NET SDK)]
 
-The first step is to check if you have the .NET Core SDK  installed and what version it is.  Enter the following command:
+The first step is to check if you have the .NET SDK  installed and what version it is.  Enter the following command:
 
 ```Shell
 dotnet --version  
 ```  
-If the `dotnet` command is not recognized, it means that the .NET Core SDK has not been installed. If the SDK is installed, the command returns the currently installed version, such as 3.1.202.  
+If the `dotnet` command is not recognized, it means that the .NET SDK has not been installed. If the SDK is installed, the command returns the currently installed version, such as 5.0.101.  
 
-If the .NET Core SDK is not installed, download it from [Download .NET](https://dotnet.microsoft.com/download) and run the installer on Microsoft Windows or Mac.
-> Note: Select the 'Build Apps: Download .NET Core SDK' option.
+If the .NET SDK is not installed, download it from [Download .NET](https://dotnet.microsoft.com/download) and run the installer on Microsoft Windows or Mac.
+> Note: Select the 'Build Apps: Download .NET SDK' option.
 
 ![.NET Core SDK Install](install.png)
 
 On Linux, follow the instructions for the appropriate Linux version such as [openSUSE 15 Package Manager - Install .NET Core](https://docs.microsoft.com/en-us/dotnet/core/install/linux-package-manager-opensuse15).
 
-In order for the shell to recognize that the .NET Core SDK is installed and for any `dotnet` commands in future steps to be recognized, a new shell window needs to be opened.
+In order for the shell to recognize that the .NET SDK is installed and for any `dotnet` commands in future steps to be recognized, a new shell window needs to be opened.
 
->For further details on supported versions, see SAP Note [2939501 - SAP HANA Client Supported Platforms for 2.5 and later](https://launchpad.support.sap.com/#/notes/2939501).
+>For further details on supported versions, see SAP Note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307).
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a .NET Core application that queries an SAP HANA database)]
+[ACCORDION-BEGIN [Step 2: ](Create a .NET application that queries an SAP HANA database)]
 
 1.  Create a new console app with the below commands:
 
@@ -95,7 +95,7 @@ In order for the shell to recognize that the .NET Core SDK is installed and for 
     pico dotNET.csproj
     ```
 
-    Add the following below the `PropertyGroup` section (within the `Project` section) to indicate where to load the SAP HANA Client .NET Core driver from.  Modify the `HintPath` section with the information about where the dll is located on your machine.
+    Add the following below the `PropertyGroup` section (within the `Project` section) to indicate where to load the SAP HANA Client .NET driver from.  Modify the `HintPath` section with the information about where the dll is located on your machine.
 
     ```Shell (Microsoft Windows)
     <ItemGroup>
@@ -112,11 +112,11 @@ In order for the shell to recognize that the .NET Core SDK is installed and for 
       </Reference>
     </ItemGroup>
     ```
-    ![dotNET.csproj code](dotNET_csproj_code.png)
+    ![dotNET.csproj code](dotNET-csproj-code.png)
 
     Once the `dotNet.csproj` file has been updated, save and close the file.    
 
-    >The SAP HANA Client interface for .NET Core is compatible with version 2.1,  and 3.x releases of .NET Core.
+    >The SAP HANA Client interface for .NET is compatible with version 2.1, 3.x, and 5.x releases of .NET.
 
 3.  Open an editor to edit the file `Program.cs`.
     ```Shell (Windows)
@@ -140,15 +140,18 @@ namespace dotNETQuery
         {
             try
             {
+                // Option 1, retrieve the connection parameters from the hdbuserstore
                 // User1UserKey retrieved from hdbuserstore contains server:port, UID and PWD
+                using (var conn = new HanaConnection("key=User1UserKey;encrypt=true;sslValidateCertificate=false"))
+
+                //Option2, specify the connection parameters
+                //using (var conn = new HanaConnection("Server=10.7.168.11:39015;UID=User1;PWD=Password1;encrypt=true;sslValidateCertificate=false"))
+
                 // encrypt and sslValidateCertificate should be true for HANA Cloud connections
+                // As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
                 // sslValidateCertificate should be set to false when connecting
                 // to an SAP HANA, express edition instance that uses a self-signed certificate.
-                // As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
-                // If hdbuserstore is not used to retrieve the connection information, the format would be
-                // "Server=10.7.168.11:39015;UID=User1;PWD=Password1;encrypt=true;sslValidateCertificate=false"
 
-                using (var conn = new HanaConnection("key=User1UserKey;encrypt=true;sslValidateCertificate=false"))
                 {
                     conn.Open();
                     Console.WriteLine("Connected");
@@ -192,7 +195,7 @@ namespace dotNETQuery
 
     >Note that the address, port, UID and PWD will be retrieved from the `hdbuserstore`.   
 
-    The above app makes use of some of the SAP HANA client .NET Core driver  methods, such as [HanaConnection](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/469e137b6d611014ac27bffe40be2f18.html).  Connection details for this class can be found at [Microsoft ADO.NET Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/469e137b6d611014ac27bffe40be2f18.html).
+    The above app makes use of some of the SAP HANA client .NET driver  methods, such as [HanaConnection](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d19390d16d6110149af29776dce510bc.html).  Connection details for this class can be found at [Microsoft ADO.NET Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/469e137b6d611014ac27bffe40be2f18.html).  Further .NET API details can be found in the [.NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=net-5.0).
 
 5.  Run the app:
 
@@ -221,15 +224,9 @@ namespace dotNETQuery
 
     Visual Studio Code will recognize the `cs` file extension and will suggest installing the C# for Visual Studio Code extension.  Click **Install**.
 
-4. Place a breakpoint.
-    ![Place Breakpoint](PlaceBreakpoint.png)
+4. Place a breakpoint on the line sbRow.Append line.  Select **Run | Start Debugging | .NET Core**.  A configuration will be added.  Choose **Run | Start Debugging**.
 
-5. Select **Run | Start Debugging**.
-
-6. Choose the .NET Core environment.
-    ![Select the environment to run](environment.png)
-
-    Notice that the debug view becomes active and that the RUN option is .NET Core Launch.
+    Notice that the debug view becomes active and that the RUN option is .NET Launch.
 
     Notice that the program stops running at the breakpoint that was set.
 
@@ -237,9 +234,9 @@ namespace dotNETQuery
 
     ![VS Code Debugging](debugging.png)  
 
-    For further information on debugging .NET Core apps consult [Tutorial: Debug a .NET Core console application using Visual Studio Code](https://docs.microsoft.com/en-us/dotnet/core/tutorials/debugging-with-visual-studio-code) and [Instructions for setting up the .NET Core debugger](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
+    For further information on debugging .NET apps consult [Tutorial: Debug a .NET Core console application using Visual Studio Code](https://docs.microsoft.com/en-us/dotnet/core/tutorials/debugging-with-visual-studio-code) and [Instructions for setting up the .NET Core debugger](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 
-Congratulations! You have now created and debugged a .NET Core application that connects to and queries an SAP HANA database.  
+Congratulations! You have now created and debugged a .NET application that connects to and queries an SAP HANA database.  
 
 
 [VALIDATE_1]

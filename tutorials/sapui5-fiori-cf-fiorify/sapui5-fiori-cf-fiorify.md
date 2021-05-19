@@ -3,7 +3,7 @@ title: Add Rich Enterprise Controls to the User Interface
 description: Replace the current  UI controls with more complex controls that fully leverage the OData protocol.
 auto_validation: true
 time: 25
-tags: [ tutorial>intermediate, topic>odata, topic>sapui5,  products>sap-cloud-platform-portal, topic>user-interface, topic>html5, topic>cloud ]
+tags: [ tutorial>intermediate, topic>odata, topic>sapui5,   products>sap-launchpad-service, topic>user-interface, topic>html5, topic>cloud ]
 primary_tag: products>sap-fiori
 ---
 
@@ -17,7 +17,7 @@ primary_tag: products>sap-fiori
 ---
 
 [ACCORDION-BEGIN [Step : ](Enrich the products page)]
-1. To import smart controls to the view, *add* new XML namespaces to the `webapp/view/Products.view.xml` file.
+1. To import smart controls to the view, *add* new XML namespaces to the `uimodule/webapp/view/Products.view.xml` file.
 2. Replace <Page> in the same view with a page that contains the smart controls `smartFilterBar` and `smartList`
 
 ```XML [2-4,6-12]
@@ -72,7 +72,7 @@ You've already learned about the cool expand-feature of OData in the previous st
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Use an ObjectPage in the detail view)]
 
-1. Similar to step 1, **include** new XML namespaces to the `webapp/view/ProductDetail.view.xml` view to allow the usage of new controls.
+1. Similar to step 1, **include** new XML namespaces to the `uimodule/webapp/view/ProductDetail.view.xml` view to allow the usage of new controls.
 2. **Replace** the current page of the view with this smart `ObjectPage`.
 
 ```XML [2-4, 6-29]
@@ -116,7 +116,7 @@ You've already learned about the cool expand-feature of OData in the previous st
 [ACCORDION-BEGIN [Step : ](Enrich the detail view controller)]
 
 
-1. The header of the view also contains two buttons. In the next sub-steps, you'll implement the event listener for these buttons. **Replace** the existing file header with this one to import another library during the controller-initialization in file `webapp/controller/ProductDetail.controller.js`.
+1. The header of the view also contains two buttons. In the next sub-steps, you'll implement the event listener for these buttons. **Replace** the existing file header with this one to import another library during the controller-initialization in file `uimodule/webapp/controller/ProductDetail.controller.js`.
 
     ```JavaScript
     sap.ui.define([
@@ -160,7 +160,7 @@ The following snippet defines the content of the `ObjectPage`. It's mostly basic
 
 **Insert** the snippet after the closing tag `</uxap:headerContent>` in the view.
 
-```XML
+```XML[30-91]
 <mvc:View controllerName="tutorial.products.controller.ProductDetail" displayBlock="true"
   xmlns="sap.m"
   xmlns:uxap="sap.uxap"
@@ -265,9 +265,9 @@ You probably noticed empty fields that do not show data yet.
 
 1. Most of the fields are empty because they are bound to properties of navigation entities like the "Supplier". The data is missing because you didn't specify that these entities should be expanded during the binding of the view.
 
-    **Update** the binding definition, to expand the suppliers and categories, in the `_onRouteMatched` method of the controller `webapp/controller/ProductDetail.controller.js`.
+    **Update** the binding definition, to expand the suppliers and categories, in the `_onRouteMatched` method of the controller `uimodule/webapp/controller/ProductDetail.controller.js`.
 
-    ```JavaScript [4-18]
+    ```JavaScript [6-8]
     _onRouteMatched: function (oEvent) {
       const iProductId = oEvent.getParameter("arguments").productId;
       const oView = this.getView();
@@ -315,7 +315,7 @@ You probably noticed empty fields that do not show data yet.
 
 In this step, we add hierarchy information to the `Shellbar` to enable fast navigation shortcuts.
 
-1. Add a method to the `webapp/controller/BaseController.js` which we'll use to interface the hierarchy feature of the `Shellbar`. Note that we use a [JavaScript closure](https://www.w3schools.com/js/js_function_closures.asp) to store the history. Add this method after the `onNavBack` method.
+1. Add a method to the `uimodule/webapp/controller/BaseController.js` which we'll use to interface the hierarchy feature of the `Shellbar`. Note that we use a [JavaScript closure](https://www.w3schools.com/js/js_function_closures.asp) to store the history. Add this method after the `onNavBack` method.
 
     ```JavaScript
     addHistoryEntry: (function() {
@@ -342,9 +342,9 @@ In this step, we add hierarchy information to the `Shellbar` to enable fast navi
 
     > Note that this implementation is used to display the history instead of the hierarchy of pages.
 
-2. In the previous sub-step we used the `ShellUIService` which is not loaded by default. Change this in the `webapp/manifest.json` and add a new configuration in the `sap.ui5` property after the `models` section.
+2. In the previous sub-step we used the `ShellUIService` which is not loaded by default. Change this in the `uimodule/webapp/manifest.json` and add a new configuration in the `sap.ui5` property after the `models` section.
 
-    ```JSON
+    ```JSON[6-14]
     {
       "sap.app": {},
       "sap.ui": {},
@@ -358,12 +358,12 @@ In this step, we add hierarchy information to the `Shellbar` to enable fast navi
               "setTitle": "auto"
             }
           }
-        }
+        },
       }
     }
     ```
 
-3. Add a new history item when the controller of the list view (`webapp/controller/Products.controller.js`) is initialized.
+3. Add a new history item when the controller of the list view (`uimodule/webapp/controller/Products.controller.js`) is initialized.
 
     ```JavaScript
     onInit : function () {
@@ -377,7 +377,7 @@ In this step, we add hierarchy information to the `Shellbar` to enable fast navi
 
 4. Add a new history item when the product detail page has been loaded. Change the `dataReceived` hook inside the `_onRouteMatched` method.
 
-    ```JavaScript
+    ```JavaScript[15-20]
     _onRouteMatched: function (oEvent) {
       const iProductId = oEvent.getParameter("arguments").productId;
       const oView = this.getView();

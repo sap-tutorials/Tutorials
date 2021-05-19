@@ -4,9 +4,12 @@ description: Anonymize data to protect privacy.
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: topic>big-data
-tags: [  tutorial>intermediate, topic>big-data, topic>cloud, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
+tags: [  tutorial>intermediate, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
 time: 20
 ---
+
+## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 
 ## Details
 ### You will learn  

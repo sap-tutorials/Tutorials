@@ -3,8 +3,8 @@ title: Discover and Import the Live Process Package
 description: Use Process Flexibility Cockpit to explore, discover, and import the capital expenditure live process content package from SAP API Business Hub.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
 author_name: Deeksha R
 author_profile: https://github.com/Deeksha-R
 ---
@@ -17,7 +17,7 @@ author_profile: https://github.com/Deeksha-R
   - What is a capital expenditure process
   - How to discover capital expenditure live process package and import it
 
-SAP Cloud Platform Workflow Management allows you to digitize workflows, manage decisions, gain end-to-end process visibility, and configure processes in a low-code approach.
+SAP Workflow Management allows you to digitize workflows, manage decisions, gain end-to-end process visibility, and configure processes in a low-code approach.
 
 The capital expenditure (CAPEX) process automates CAPEX request approvals in a transparent way and provides end-to-end visibility across all the steps. A workflow is triggered when the capital expenditure request is submitted by the user. This workflow internally calls business rules to determine number of approval steps based on the amount of investment and other related attributes of the request.
 
@@ -37,15 +37,16 @@ In this tutorial, you can import a sample package with different artifacts using
 
     !![Destination screen](cp-cf-wm-discover-trialdestination.png)
 
-3. Choose the edit icon for the destination with name `WM_CF_SPACE_PROVIDER`. In the **Destination Configuration** section, enter your SAP Cloud Platform trial user password and save the changes.
+3. Choose the edit icon for the destination with name `WM_CF_SPACE_PROVIDER`. In the **Destination Configuration** section, enter your SAP BTP trial user password and save the changes.
 
     !![Edit Destination](cp-cf-wm-discover-editdestination.png)
     !![Destination Password](cp-cf-wm-discover-destinationpassword.png)
+    > Ensure that the credentials of the trial user that are entered in the destination do not have **Two Factor Authentication enabled**.
 
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 2: ](Navigate to the workflow management home screen)]
-1. Navigate to the **Subscriptions** tab.
+1. Navigate to **Services | Service Marketplace**.
 
     !![Subscriptions](cp-cf-wm-discover-subscription.png)
 

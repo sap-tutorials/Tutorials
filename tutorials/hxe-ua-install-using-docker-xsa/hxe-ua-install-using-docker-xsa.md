@@ -9,7 +9,6 @@ time: 10
 ---
 ## Next Steps
 - [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html)
-- [How to download and install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
 
 ## Details
 ### You will learn

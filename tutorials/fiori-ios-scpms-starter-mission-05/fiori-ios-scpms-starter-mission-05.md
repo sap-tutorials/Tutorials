@@ -4,14 +4,14 @@ description: Learn what Mac Catalyst is and what you should consider before tran
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform ]
 time: 20
 ---
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0 or higher
+- **SAP BTP SDK for iOS:** Version 5.0 or higher
 
 ## Details
 ### You will learn  
@@ -39,7 +39,7 @@ The big difference is that the underlying UI technologies remained separated on 
 
 Before you transform your app into a MacOS ready app through Mac Catalyst, you should consider if your app is actually suitable for a MacOS application:
 
-- You should definitely familiarize yourself with the Human Interface Guidelines for [Mac Catalyst](https://developer.apple.com/design/human-interface-guidelines/ios/overview/mac-catalyst/).
+- You should definitely familiarize yourself with the Human Interface Guidelines for [Mac Catalyst](https://developer.apple.com/design/human-interface-guidelines/mac-catalyst/overview/introduction/).
 - Also think about if you're using features which are not available on Mac Catalyst like `ARKit`.
 - Think about your Use Case of the iPad app and think about if that app would make sense on Mac.
 - If you already have a well maintained MacOS application released you should think twice if it is helpful to replace it with you iOS app.
@@ -73,11 +73,11 @@ If you want more information about Mac Catalyst you can always visit the followi
 
 [ACCORDION-BEGIN [Step 4: ](Make your app Mac ready)]
 
-Before we do the necessary steps to make our app Mac ready let's take a look on how the app is going to look like on all three platforms.
+Before you do the necessary steps to make our app Mac ready let's take a look on how the app is going to look like on all three platforms.
 
 !![Finished Apps](fiori-ios-scpms-starter-mission-05-1.png)
 
-You can see that we're going to change the appearance on MacOS to a split view having a side bar.
+You can see that you're going to change the appearance on MacOS to a split view having a side bar.
 
 1. In your Xcode project click on the `TutorialApp.xcproj` file located in the project navigator and make sure that **Mac** is selected in the **Deployment Info** section.
 

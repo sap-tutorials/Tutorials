@@ -3,24 +3,24 @@ title: Build Your First Chatbot with SAP Conversational AI
 description: Create a simple chatbot that can recognize greetings, understand when asked for a joke, provide a joke, and recognize the user's reaction to the joke.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning ]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
 primary_tag: products>sap-conversational-ai
 ---
 
 ## Details
 ### You will learn
-  - How to get an account with SAP Conversation AI
+  - How to get an account with SAP Conversational AI
   - How to create a chatbot project
   - How to train your chatbot (to understand people)
   - How to give your chatbot skills
 
 ---
-
+ 
 [ACCORDION-BEGIN [Step 1: ](Create SAP Conversational AI account)]
 
 Go to [https://cai.tools.sap/](https://cai.tools.sap/), and click **Sign Up** in the upper-right corner.
 
-Create an account with your email address, or with your [GitHub](http://github.com/) account.
+Follow the instructions for creating an account.
 
 ![Sign up](Signup.png)
 
@@ -35,7 +35,9 @@ You will get an email with a link to validate your account.
 
 1. Do one of the following:
 
-    If you just validated your account, click **Start with a Template**.
+    If you just validated your account by clicking the link in your email, click **Start with a Template**.
+
+    ![New user](signup-new.png)
 
     If you are returning:
 
@@ -64,11 +66,13 @@ You will get an email with a link to validate your account.
         |  Bot name       | **`my-first-bot`**
         |  Description    | **A bot that likes to tell jokes and have a little fun**
 
-      - For **Data Policy**:
+      - For **Data Policy**, select the following:
 
-        - Select **Non-personal**.
+        - **Non-personal**.
 
-        - Select **Non-vulnerable**.
+        - **Store**.
+
+        - **Non-vulnerable**.
 
       - For **Bot visibility**, select **Public**.
 
@@ -94,7 +98,7 @@ There are 4 stages in your bot's life:
 
   - **Connect:** Ship your bot to one or several messaging platforms.
 
-  - **Monitor:** Train your bot to make it sharper, and get insights on its usage.
+  - **Monitor:** See how users are communicating with your bot, check if the bot is understanding users correctly, and make updates to the bots intents/entities. Monitoring also lets you see what your users want, and gives you ideas of what additional capabilities you could add to the bot.
 
 The 4 phases are represented in the bot project by the 4 tabs.
 
@@ -116,7 +120,11 @@ As SAP Conversational AI is collaborative, you do not have to re-create each int
 
     ![Search for intents](SearchForIntent.png)
 
-3. Click **Fork** for the first one.
+    You will get a list of intents to fork.
+
+    ![Fork choices](ForkChoices.png)
+
+3. Click **Fork** for the first `@ask-joke` intent.
 
     >There are many existing intents and the choices are always changing.
 
@@ -134,7 +142,7 @@ As SAP Conversational AI is collaborative, you do not have to re-create each int
 
 You will be able to reuse many, many intents created by others. But there are times you will want to create your own.
 
-1. Click on **Train** tab.
+1. Click the **Train** tab.
 
 2. Create an intent for recognizing good reactions to jokes.
 
@@ -150,7 +158,7 @@ You will be able to reuse many, many intents created by others. But there are ti
 
     - Click **Create Intent**.
 
-2. Create a second intent, this time for bad reactions to jokes.
+3. Create a second intent, this time for bad reactions to jokes.
 
     - Click **Create**.
 
@@ -177,6 +185,8 @@ Put yourself in the shoes of the people talking to your bot. What could they pos
 
 2. In the expression field, enter a sentence you want your bot to understand, then press **Enter**.
 
+    ![Link text e.g., Destination screen](ExpressionsAdd.png)
+
     Here are some examples for the `laughs` intent you added:
 
     ```
@@ -185,6 +195,8 @@ Put yourself in the shoes of the people talking to your bot. What could they pos
     That, my friend, was an amazing joke.
     I haven't laughed that much in a long time!
     ```
+
+    For a production bot, you want 30-50 expressions, all the ways someone is likely to express their intent. In addition, after deploying the bot, you can review what users are writing and add those.
 
 3. Do the same for the `@lame` intent (you'll have to navigate to the intent by click **Train** tab or navigating the breadcrumb).
 
@@ -203,6 +215,20 @@ Put yourself in the shoes of the people talking to your bot. What could they pos
 [ACCORDION-BEGIN [Step 7: ](Test bot)]
 
 We want to now test to see if the bot can detect when a user says something matching the intent we created.
+
+>For your bot to work, it must train itself based on the intents, expressions, and entities you define (sometimes referred as your dataset). This is done automatically, but may take some time -- up to an hour for a simple bot like this, though generally less time.
+
+>You can see the status of your bot's training at the top of the screen. If blue, this means it is in the middle of training.
+
+>![Training status](TrainStatus1.png)
+
+><div>&nbsp;</div>
+
+>When it is done, it turns green.
+
+>![Trained](TrainStatus2.png)
+
+><div>&nbsp;</div>
 
 1. Click the fly-out tab **Test** on the right.
 
@@ -228,6 +254,8 @@ If the bot did not recognize the intent (or selected the wrong intent), you will
 Now that your bot knows how to understand people who talk to it, it's time to give your robot some skills.
 
 Open the **Build** tab.
+
+![Build tab](BuildOverview.png)
 
 Inside, you'll find the **Bot Builder**, which helps you construct the conversation flow of your bot.
 
@@ -266,23 +294,26 @@ Now let's build a skill to tell a joke.
 
 1. Go back to the **Build** tab -- where you see the canvas.
 
-2. Click **Create skill**.
+2. Click **Add skill**.
 
-    >There are 3 types of skills:
+    >There are several types of skills:
     >
     >  - **Business** and **Floating** skills are basically the same, but enable you to label those skills that implement core actions (business) and those that are merely helper skills (floating).
     >
-    >  - **Fallback** skills trigger when no other skill has their triggers fulfilled after a user message. Most of the time, you'll have only one of this kind, where you can remind the user what your bot can do, and ask them to rephrase.
+    >  - The **Fallback** skill (there can only be one in a chatbot) is triggered when no other skill has their triggers fulfilled after a user message. The fallback skill tells the user that the request was not understood, reminds them what your bot can do, and asks them to rephrase their request.
 
-3. Call your skill **`tell-me-a-joke`**, set the type as **Floating**, and click **Create Skill**.
+    >  - The **Disambiguation** skill (there can only be one in a chatbot) is triggered when more than one skill is triggered, and asks the user to choose among those skills.
+
+
+3. Call your skill **`tell-me-a-joke`**, set the type as **Business**, and click **Add**.
 
     ![Create skill](CreateSkill.png)
 
 4. Click the new **tell-me-a-joke** skill, and open the **Triggers** tab.
 
-5. Add 3 **`If`** statements, one for each of the `@joke`, `@laugh`, and `@lame` intents.
+5. Add 3 **`If`** statements, one for each of the `@ask-joke`, `@laugh`, and `@lame` intents.
 
-    - Click in the empty space right after `If`, select the `@joke` intent, and then click **Save**.
+    - Click in the empty space right after `If`, select the `@ask-joke` intent, and then click **Save**.
 
     ![Skill trigger condition](SkillCondition.png)
 
@@ -298,9 +329,13 @@ Now let's build a skill to tell a joke.
 
 7. Click **Add New Message Group**, then **Add Condition**.
 
-    After the `If`, select the `@joke` intent, and click **Save**.
+    After the `If`, select the `@ask-joke` intent, and click **Save**.
 
-8. Click **Send Message**, choose the **Text** format, and type in a really good joke.
+8. Click **Send Message**, choose the **Text** format, and type in a really good joke, like:
+
+    ```Joke
+    I just flew into town, and boy are my arms tired.
+    ```
 
     >You can define additional jokes, and one of the jokes from the set will be displayed randomly.
 
@@ -313,7 +348,9 @@ Now let's build a skill to tell a joke.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test by chatting with bot)]
+[ACCORDION-BEGIN [Step 10: ](Test by chatting with bot)]
+
+
 
 Before releasing your bot to your audience, chat with it in real situation. This will help show you how the bot will behave in a "real" conversation.
 
@@ -321,7 +358,7 @@ Double-check if there are any errors in the conversation flow (e.g., bad answers
 
 > Chat with your bot as often as you can while you build it, which will make it easier to find problems.
 
-Click on the bottom-right blue button **Chat with your bot** and start sending messages. Use **Clear** (at the top of the panel) to refresh the chat.
+Click on the bottom-right blue button **Chat Preview** and start sending messages. Use the clear icon ![Start](starticon.png) at the top of the panel to refresh the chat.
 
 ![Start chat](StartChat.png)
 
@@ -329,11 +366,13 @@ Click on the bottom-right blue button **Chat with your bot** and start sending m
 
   - Try other phrases and see how the bot responds. If the bot does not respond properly, then try improving your intent with additional expressions.
 
+![Chatting](StartChat-chat.png)
+
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Test yourself)]
+[ACCORDION-BEGIN [Step 11: ](Test yourself)]
 Congratulations! You have created your first bot.
 
 In later tutorials, you will learn how to deploy your bot and monitor it so it gets smarter and smarter.

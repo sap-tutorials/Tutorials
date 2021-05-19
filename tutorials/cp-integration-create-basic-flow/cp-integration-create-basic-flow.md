@@ -20,6 +20,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
   - How to deploy, execute and monitor an integration flow
 
 
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Launch SAP Cloud Platform Integration)]
@@ -32,7 +33,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 
     ![Security](Security.png)  
 
-    After logging in, you should finally see the following screen:
+    After logging in, you should see the following screen:
 
     ![Launching the Web Interface](Launch CPI.png)  
 
@@ -274,7 +275,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
     * Ensure you are in the _Manage Integration Content_ view.
     * Locate your integration flow.
     * Make sure it is in started state.
-    * Select the flow to view  the endpoint details on the right hand pane. 
+    * Select the flow to view  the endpoint details on the right hand pane.
     * Copy the endpoint URL with the speed button on the right.
 
     ![Endpoint](Endpoint.png)  

@@ -3,7 +3,7 @@ title: Use the SDK for Data Attribute Recommendation
 description: Use the Python SDK to train machine learning models and run inference requests.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
@@ -23,7 +23,7 @@ First, you need to download the dataset used in this tutorial. The dataset can b
 
 Make sure that you are in your virtual environment as explained in [Setup SDK for Data Attribute Recommendation](cp-aibus-dar-sdk-setup). Now enter the following command to download the dataset from the repository:
 ```shell
-curl -o bestBuy.csv "https://raw.githubusercontent.com/SAP-samples/data-attribute-recommendation-postman-tutorial-sample/master/Tutorial_Example_Dataset.csv"
+curl -o bestBuy.csv "https://raw.githubusercontent.com/SAP-samples/data-attribute-recommendation-postman-tutorial/main/Tutorial_Example_Dataset.csv"
 ```
 
 The dataset is then saved as `bestBuy.csv`.
@@ -63,7 +63,7 @@ Enter `touch dar_service_key.json` to create an empty JSON file.
 
 [OPTION END]
 
-Go ahead and open the newly created file in a simple text editor. Then, paste the complete service key that you created in [Create Service Instance for Data Attribute Recommendation](cp-aibus-dar-service-instance) into the file and save it.
+Go ahead and open the newly created file in a simple text editor. Then, paste the complete service key that you created in [Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-key) into the file and save it.
 
 ![Service Key](service-key.png)
 

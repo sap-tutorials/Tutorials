@@ -1,6 +1,6 @@
 ---
-title: Create an Account on the Gateway Demo System
-description: Sign up for an account on our demo Gateway server (ES5).
+title: Create an Account on the SAP Gateway Demo System
+description: Sign up for an account on our demo SAP Gateway server (ES5).
 auto_validation: true
 primary_tag: products>sap-gateway
 tags: [ products>sap-gateway, topic>cloud, topic>odata, tutorial>beginner ]
@@ -9,7 +9,7 @@ time: 5
 
 ## Details
 ### You will learn
-  - How to create an account on the Gateway Demo System (ES5).
+  - How to create an account on the SAP Gateway Demo System (ES5).
 
 At the end of this tutorial, you will have a username and password, and will be able to sign in to the Gateway web front end.
 
@@ -17,7 +17,7 @@ At the end of this tutorial, you will have a username and password, and will be 
 
 [ACCORDION-BEGIN [Step 1: ](Go to sign up page)]
 
-First we need to create an account on the Gateway System.  The system will use your sap.com profile information to create the account.
+First we need to create an account on the SAP Gateway System.  The system will use your sap.com profile information to create the account.
 
 Click this link in your browser: [Gateway Registration system](https://register.sapdevcenter.com/SUPSignForms).
 
@@ -25,7 +25,7 @@ Click this link in your browser: [Gateway Registration system](https://register.
 
 You should see this page:
 
-![Gateway Demo web based sign up form](1.png)
+![SAP Gateway Demo web based sign up form](1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -49,11 +49,11 @@ Your username and a temporary password are displayed on the registration screen.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Go to SAP Gateway web GUI)]
+[ACCORDION-BEGIN [Step 4: ](Go to SAP Gateway SAP GUI for HTML)]
 
-Once you received your registration email, go to the [SAP Gateway Web GUI](https://sapes5.sapdevcenter.com/).  Enter the username and initial password from your email.
+Once you received your registration email, go to the [SAP Gateway SAP GUI for HTML](https://sapes5.sapdevcenter.com/).  Enter the username and initial password from your email.
 
-![Initial login - Gateway Web GUI](4.png)
+![Initial login - SAP Gateway SAP GUI for HTML](4.png)
 
 [DONE]
 [ACCORDION-END]
@@ -76,9 +76,9 @@ When your password is changed, you will see a confirmation dialog. Click **Conti
 
 You should now see the **SAP Easy Access** screen.  Your account is now active and ready for use.
 
-![SAP NetWeaver Gateway Splash Screen](7.png)
+![SAP Gateway Splash Screen](7.png)
 
-![SAP NetWeaver Gateway Main Screen](8.png)
+![SAP Gateway Main Screen](8.png)
 
 Enter the URL of the SAP Easy Access page below and click **Validate**.
 
@@ -92,12 +92,12 @@ Enter the URL of the SAP Easy Access page below and click **Validate**.
 
 ### Account Maintenance
 
-- If you need to reset your password, please visit the [Gateway Registration system](https://register.sapdevcenter.com/SUPSignForms) again.  The system will reset your password and email you the new temporary password.
+- If you need to reset your password, please visit the [SAP Gateway Registration system](https://register.sapdevcenter.com/SUPSignForms) again.  The system will reset your password and email you the new temporary password.
 
 
 ### Problems?  Need Help?
 There are two different forums, depending on what type of trouble you are experiencing.  *Please use the correct one, or it will take longer to answer your questions.*
 
-- For questions about SAP Gateway (this includes using the Gateway server, creating services, or accessing ODATA) please post any questions to the [SAP NetWeaver Gateway Community](https://community.sap.com/topics/gateway) Q&A system.  
+- For questions about SAP Gateway (this includes using the Gateway server, creating services, or accessing ODATA) please post any questions to the [SAP Gateway Community](https://community.sap.com/topics/gateway) Q&A system.  
 
 - For any problems with registration, or password changes, please email <rac-support@sap.com>.

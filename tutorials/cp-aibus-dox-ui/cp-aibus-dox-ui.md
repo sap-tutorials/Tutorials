@@ -1,14 +1,11 @@
 ---
-title: Use Machine Learning to Extract Information from Documents
+title: Use Machine Learning to Extract Information from Documents with Document Information Extraction Trial UI
 description: Get machine learning model predictions for the documents you upload using the Document Information Extraction Trial UI.
 auto_validation: true
-time: 10
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
+time: 15
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
-
-## Prerequisites
-- You have subscribed to the Document Information Extraction Trial UI: [Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub).
 
 ## Details
 ### You will learn
@@ -35,7 +32,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 >- [Sample Invoice 3](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-3.pdf)
 
 
-1. Open the Document Information Extraction Trial UI, as described in the previous tutorial: [Subscribe to Document Information Extraction Trial UI](cp-aibus-dox-ui-sub).
+1. Open the Document Information Extraction Trial UI, as described in the tutorial: [Set Up Account for Document Information Extraction and Go to Application](cp-aibus-dox-booster-app).
 
     !![DOX-UI-App](png-files/app.png)
 
@@ -93,13 +90,25 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
 2. Click **Extraction Results** to see the Header Fields and Line Items extraction results.
 
-    !![DOX-UI-App](png-files/extraction-results-done.png)
+    !![DOX-UI-App](png-files/extraction-results-done-header.png)
+
+    !![DOX-UI-App](png-files/extraction-results-done-line.png)
+
+    See also the machine learning model **Extraction Confidence Range** classified by colors: red (confidence between 0% and 50%), yellow (confidence between 51% and 79%), and green (confidence between 80% and 100%).
+
+    !![DOX-UI-App](png-files/confidence-range.png)
+
+    See the prediction confidence score for each header field and line item extraction result by hovering the mouse over a field name, for example **Invoice Number**.
+
+    !![DOX-UI-App](png-files/confidence-header.png)
+
+    !![DOX-UI-App](png-files/confidence-line.png)
 
 3. In case corrections are needed and the document status is READY, you can **Edit** the Header Fields and Line Items extraction results.
 
     !![DOX-UI-App](png-files/edit-1.png)
 
-    See an example where the Currency Code is edited:
+    See an example where the **Currency Code** header field extraction result is edited:
 
     !![DOX-UI-App](png-files/edit-currency-code-1.png)
 
@@ -107,17 +116,17 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     !![DOX-UI-App](png-files/edit-currency-code-3.png)
 
-4. You can also **Add Line Item** and **Delete Last Line Item**.
+4. Click **+** to insert a new line item at the bottom.
 
     !![DOX-UI-App](png-files/edit-2.png)
 
 5. Select values in the document page preview, one each time, to **Assign Field** by choosing in the dropdown list the Field name. Add or change the extraction Value if necessary. Click **Apply** to add the selected field into the Header Fields or Line Items extraction results.
 
-    See an example where the Tax Amount value is selected in the document page preview and added to the Header Fields extraction results:
+    See an example where the Buyer Contact value is selected in the document page preview and added to the Header Fields extraction results:
 
-    !![DOX-UI-App](png-files/edit-tax-amount-1.png)
+    !![DOX-UI-App](png-files/edit-buyer-1.png)
 
-    !![DOX-UI-App](png-files/edit-tax-amount-2.png)
+    !![DOX-UI-App](png-files/edit-buyer-2.png)
 
 6. Save your changes.
 

@@ -3,7 +3,7 @@ title: Handle Error Archive in an MDK App
 description: Create an MDK app to display errors occurred while uploading local changes and implement some logic on how to handle such errors and then let users to fix it from the app by providing correct values.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
 time: 30
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by allowing custom domains.)
 
 ## Details
 ### You will learn
@@ -21,9 +21,7 @@ author_profile: https://github.com/jitendrakansal
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/2-Handle-Error-Archive-in-an-MDK-App) and start directly with step 7 in this tutorial.
 
-
 ---
-
 
 You have built an MDK app with offline functionality. In offline store, you make a change to a local record and upload this change (from request queue) to backend but backend prevents this change to accept due to some business logic failure. This error is recorded in an Offline OData specific entity set named as `ErrorArchive`. This entity set has detailed information about the errors. It's now up-to developers how they handle such errors and then let users to fix it from the app by providing the correct values.
 
@@ -49,65 +47,56 @@ This step includes creating the mobile development kit project in the editor.
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. If you do not see the **Welcome** page, navigate to *View* menu &rarr; *Find Command* &rarr; search with *Welcome* to launch the Welcome page.
+2. Click **Start from template** on Welcome page.
 
-    !![MDK](img_1.2.gif)
+    !![MDK](img-1.2.png)
 
-3. In Welcome page, click **New project from template** .
+    >If you do not see Welcome page, you can access it via **Help** menu.
 
-    !![MDK](img_1.3.png)
+3. Select **MDK Project** and click **Start**.
 
-4. Select **MDK Project** and click **Next**.
+    !![MDK](img-1.3.png)    
 
-    !![MDK](img_1.4.png)
-
-5. In *Basic Information* step, select or provide the below information and click **Next**:
+4. In *Type* step, select or provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `MDK Template Type`| Select `CRUD` from the dropdown |
-    | `Your Project Name` | `MDK_ErrorArchive` |
-    | `Your Project Name` | <default name is same as Project name, you can provide any name of your choice> |
+    | `MDK template type`| Select `CRUD` from the dropdown |
+    | `Your project name` | `MDK_ErrorArchive` |
+    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
 
-    !![MDK](img_1.5.png)
+    !![MDK](img-1.4.png)
 
-    >The `CRUD` template creates the offline or online actions, rules, messages, List Detail Pages with editable options.
+    >The `CRUD` template creates the offline or online actions, rules, messages, List Detail Pages with editable options. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).  
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).  
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.
 
-6. In *SAP Cloud Platform Connection* step, you will see your Cloud Foundry Organization and Space information. If you are not logged on yet, provide required credentials to retrieve your details. Click **Next**.
-
-    !![MDK](img_1.6.png)
-
-7. In *Service Configuration* step, provide or select the below information and click **Next**:
+5. In *Service Name* step, provide or select the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `Service File Name`| `<You can continue with default name or provide any name of your choice>` |
+    | `Service File Name`| `<Provide any name of your choice>` |
     | `OData Source` | Select `Mobile Services` from the dropdown |
+    | `Mobile Services Landscape` | Select `standard` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
-    | `Destination` | Select `com.sap.edm.sampleservice.v2` from the dropdown |
-    | `Enable Offline` | Choose `Yes` |        
+    | `Destination` | Select `SampleServiceV2` from the dropdown |
+    | `Enter a path to the OData service` | Leave it as it is |
+    | `Language URL` | Leave it with the default value |
+    | `Enable Offline` | It's enabled by default |
 
-    >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
+    !![MDK](img-1.5.png)
 
-    !![MDK](img_1.7.png)
-
-    >In [this tutorial](cp-mobile-dev-kit-ms-setup), server-side configuration for this MDK app were already done.
-
-    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services.
+    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services.
 
     Since you will create an offline based app, hence **Enable Offline** option is selected.        
 
-8. In *OData Collections* step, unselect `Customers`, select `PurchaseOrderHeaders` and `PurchaseOrderItems`.
+6. In *Collection* step, unselect `Customers`, select `PurchaseOrderHeaders` and `PurchaseOrderItems`.
 
-    Click **Next** to finish the project creation.
+    !![MDK](img-1.6.png)
 
-    !![MDK](img_1.8.png)
+    Click **Next** to complete the project creation.
 
-9. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_ErrorArchive` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in new workspace or to add it to workspace. Ignore the pop-up or click the cross icon to hide the window.
-
-    !![MDK](img_1.9.png)    
+7. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_ErrorArchive` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -116,7 +105,7 @@ This step includes creating the mobile development kit project in the editor.
 
 Generated project is offline enabled and includes two entity sets (`PurchaseOrderHeaders` and `PurchaseOrderItems`) on main page and these entities are fully CRUD enabled. You can create a new record and also modify an existing one.
 
-!![MDK](img_2.png)
+!![MDK](img-2.png)
 
 1. Now, you will create a new page to display list of errors.
 
@@ -132,7 +121,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
 2. In the **Properties** pane, set the caption to **Error List**.
 
-    !![MDK](img_2.2.png)
+    !![MDK](img-2.2.png)
 
 3. Next, add an **Object Table** control to display information like HTTP status code, HTTP method for the affected record.
 
@@ -148,10 +137,10 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
     | Property | Value |
     |----|----|
-    | `Service`| Select `SampleService.service` from the dropdown |
+    | `Service`| Select `Sample.service` from the dropdown |
     | `EntitySet` | Select `ErrorArchive` from the dropdown |
 
-    !![MDK](img_2.4.png)
+    !![MDK](img-2.4.png)
 
 7. In **Appearance** section, provide below properties:
 
@@ -164,10 +153,10 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
     | `ProgessIndicator`| leave it empty |
     | `Status` | bind it to `{RequestMethod}` |
     | `Subhead` | bind it to `{RequestURL}` |
-    | `SubStatus` | `leave it empty` |
+    | `Substatus` | `leave it empty` |
     | `Title` | bind it to `{HTTPStatusCode}` |
 
-    !![MDK](img_2.7.png)
+    !![MDK](img-2.7.png)
 
     >You can find more details about [`ErrorArchive` Entity Properties](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-errors-and-conflicts.html#errorarchive-entity-properties).
 
@@ -177,15 +166,15 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
     |----|----|
     | `SearchEnabled`| `true` |
 
-    !![MDK](img_2.8.png)
+    !![MDK](img-2.8.png)
 
 9. In **Behavior** section, update below properties:
 
     | Property | Value |
     |----|----|
-    | `AccessoryType`| `disclosureIndicator` |
+    | `AccessoryType`| `DisclosureIndicator` |
 
-    !![MDK](img_2.9.png)
+    !![MDK](img-2.9.png)
 
 10. In `EmptySection` section, update below properties:
 
@@ -193,7 +182,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
     |----|----|
     | `Caption`| `No Sync Errors Found` |
 
-    !![MDK](img_2.10.png)
+    !![MDK](img-2.10.png)
 
 [DONE]
 [ACCORDION-END]
@@ -212,19 +201,21 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
 2. In the **Properties** pane, set the caption to **Error Details**.
 
-    !![MDK](img_3.2.png)
+    !![MDK](img-3.2.png)
 
     In this page, you would show which entity has been affected due to business logic failure and also want to display other information like detailed error message, request body, request URL etc.
 
 3. Next, write a business logic to get the **affected entity object** and this object value will be shown in error details page.
 
-    Right-click the **Rules** folder | **New File**.
+    Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
-    !![MDK](img_3.3.png)
+      !![MDK](img_3.3.png)
 
-4. Enter the file name `GetAffectedEntityHeaderCaption.js`, click **OK**.
+4. Enter the Rule name `GetAffectedEntityHeaderCaption`, click **Next** and then **Finish** on the confirmation step.
 
-    Copy and paste the following code.
+      !![MDK](img_3.4.png)
+
+    Replace the generated snippet with below code.
 
     ```JavaScript
     export default function GetAffectedEntityHeaderCaption(context) {
@@ -254,7 +245,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
 7. In the **Properties** | **Target** pane, choose **String Target** from the dropdown and provide `{AffectedEntity}` value.
 
-    !![MDK](img_3.9.png)
+    !![MDK](img-3.9.png)
 
 8. In **Appearance** section, provide below properties:
 
@@ -267,20 +258,20 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
     | `ProgessIndicator`| leave it empty |
     | `Status` | leave it empty  |
     | `Subhead` | `{@odata.id}` |
-    | `SubStatus` | leave it empty  |
+    | `Substatus` | leave it empty  |
     | `Title` | `Edit Affected Entity` |
 
-    !![MDK](img_3.10.png)
+    !![MDK](img-3.10.png)
 
-9. In **Behavior** section, update below properties:
+10. In **Behavior** section, update below properties:
 
     | Property | Value |
     |----|----|
-    | `AccessoryType`| `disclosureIndicator` |
+    | `AccessoryType`| `DisclosureIndicator` |
 
-    !![MDK](img_3.11.png)
+    !![MDK](img-3.11.png)
 
-10. Next, add a **Header** section bar to display affected entity information.
+11. Next, add a **Header** section bar to display affected entity information.
 
     In the Layout Editor, expand the **Controls** | **Section Bar** section, drag and drop the **Header** control onto the **Object Table** control.
 
@@ -288,37 +279,37 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
     Now, bind its **Caption** property to `GetAffectedEntityHeaderCaption.js` file.
 
-    !![MDK](img_3.12.1.gif)
+    !![MDK](img-3.12.1.gif)
 
-11. Next, you can also display additional information like detailed error message, request body, request URL etc.
+12. Next, you can also display additional information like detailed error message, request body, request URL etc.
 
     In the Layout Editor, expand the **Controls** | **Container** section, drag and drop the **Static Key Value** control on the page area.
 
-    !![MDK](img_3.13.gif)
+    !![MDK](img-3.13.gif)
 
-12. Update `NumberOfColumns` value to 1.
+13. Update `NumberOfColumns` value to 1.
 
-    !![MDK](img_3.13.png)
+    !![MDK](img-3.13.png)
 
-    >You can limit the number of columns to be displayed.
+    >You can find details on `NumberOfColumns` in the [documentation](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/definitions/Layout.schema.html#numberofcolumns).
 
-13. Next, you will add items to the container.
+14. Next, you will add items to the container.
 
     In the Layout Editor, expand the **Controls** | **Container Item** section, drag and drop the **Key Value Item** control in the **Static Key Value** control.
 
-    !![MDK](img_3.14.gif)
+    !![MDK](img-3.14.gif)
 
 
-14. Provide the below information:
+15. Provide the below information:
 
     | Property | Value |
     |----|----|
     | `KeyName`| `HTTP Status Code` |
     | `Value` | `{HTTPStatusCode}` |
 
-    !![MDK](img_3.14.1.gif)
+    !![MDK](img-3.14.1.gif)
 
-15. Drag and drop 4 more **Key Value Item** control in the **Static Key Value** control and provide the below information:
+16. Drag and drop 4 more **Key Value Item** control in the **Static Key Value** control and provide the below information:
 
     | Property | Value |
     |----|----|
@@ -342,7 +333,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
     You should have final binding for all the key value items as below:
 
-    !![MDK](img_3.14.2.png)
+    !![MDK](img-3.14.2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -362,17 +353,17 @@ When you click any record in **Error List** page, you want to navigate to **Erro
     | Field | Value |
     |----|----|
     | `Action Name`| `ShowErrorDetails` |
-    | `Page to Open` | Select `ErrorDetails.page` from the dropdown |
+    | `PageToOpen` | Select `ErrorDetails.page` from the dropdown |
 
     !![MDK](img_4.1.1.png)
 
 2. Bind this action to `OnPress` of **Object Table** in `ErrorList.page`.
 
-    Open `ErrorList.page` | **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
+    Open `ErrorList.page` | **Events** tab, click the 3 dots icon for the `OnPress` property to open the **Object Browser**.
 
     Double click the `ShowErrorDetails.action` action and click **OK** to set it as the `OnPress` action.
 
-    !![MDK](img_4.2.gif)
+    !![MDK](img-4.2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -405,13 +396,15 @@ You can write a logic in JavaScript to handle the `affectedEntity` and then deci
 
 2. Write a business logic to decide which action to call depends on which `@odata.type` is the `affectedEntity` and if there is no handler for an affected entity, app will display a toast message saying this affected entity doesn't have a handle yet.
 
-    Right-click the **Rules** folder | **New File**.
+    Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
     !![MDK](img_3.3.png)
 
-    Enter the file name `DecideWhichEditPage.js`, click **OK**.
+    Enter the Rule name `DecideWhichEditPage`, click **Next** and then **Finish** on the confirmation step.
 
-    Copy and paste the following code.
+    !![MDK](img_5.2.png)
+
+    Replace the generated snippet with below code.
 
     ```JavaScript
     export default function DecideWhichEditPage(context) {
@@ -462,11 +455,11 @@ You can write a logic in JavaScript to handle the `affectedEntity` and then deci
 
 5. Bind this file to `onPress` of **Object Table** in `ErrorDetails.page`.
 
-    Open `ErrorDetails.page` | Select **Object Table** control | **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
+    Open `ErrorDetails.page` | Select **Object Table** control | **Events** tab, click the 3 dots icon for the `OnPress` property to open the **Object Browser**.
 
     Double click the `DecideWhichEditPage.js` action and click **OK** to set it as the `OnPress` Action.
 
-    !![MDK](img_5.5.gif)
+    !![MDK](img-5.5.png)
 
 [DONE]
 [ACCORDION-END]
@@ -486,7 +479,7 @@ Now, that the **Error List** page is created, you will add a button on the **Mai
     | Field | Value |
     |----|----|
     | `Action Name`| `ShowErrorList` |
-    | `Page to Open` | Select `ErrorList.page` from the dropdown |
+    | `PageToOpen` | Select `ErrorList.page` from the dropdown |
 
     !![MDK](img_6.1.png)
 
@@ -496,7 +489,7 @@ Now, that the **Error List** page is created, you will add a button on the **Mai
 
 3. Provide **Title** as **Error Archive**.
 
-    !![MDK](img_6.2.png)
+    !![MDK](img-6.2.png)
 
 4. Bind `ShowErrorList.action` to the `onPress` of **Error Archive** section button in **Main** page.
 
@@ -504,37 +497,41 @@ Now, that the **Error List** page is created, you will add a button on the **Mai
 
     Double click the `ShowErrorList.action` action and click **OK** to set it as the `OnPress` Action.
 
-    !![MDK](img_6.3.gif)
+    !![MDK](img-6.3.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Deploy and activate the application)]
+[ACCORDION-BEGIN [Step 7: ](Deploy the application)]
 
-Deploy the updated application to your MDK client.
+1. Right-click `Application.app` and select **MDK: Deploy**.
 
-Right-click `Application.app` and select **MDK: Deploy**.
+    !![MDK](img-7.1.png)
 
-!![MDK](img_8.1.png)
+2. Select deploy target as **Mobile Services**.
 
-You should see **Deploy Succeeded** message.
+    !![MDK](img-7.2.png)
 
-!![MDK](img_7.2.png)
+    You should see **Deploy to Mobile Services successfully!** message.
+
+    !![MDK](img-7.3.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Populate the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 8: ](Display the QR code for app onboarding)]
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
+Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
-!![MDK](img_7.1.png)
+!![MDK](img-8.1.png)
 
-!![MDK](img_8.2.png)
+!![MDK](img-8.2.png)
 
-[DONE]
+>Leave the Onboarding dialog box open for step 9.
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Run the app in MDK client)]
@@ -643,9 +640,11 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-**Congratulations!** You have successfully setup your app to handle Error Archive and you are now all set to [Add Styling to an MDK App](cp-mobile-dev-kit-style).
-
-[VALIDATE_1]
+[VALIDATE_2]
 [ACCORDION-END]
+
+---
+
+Congratulations, you have successfully set up your app to handle Error Archive and you can continue with the remaining tutorials in this mission.
 
 ---

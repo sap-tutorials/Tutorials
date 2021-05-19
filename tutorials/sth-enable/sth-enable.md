@@ -1,47 +1,26 @@
 ---
+author_name: Beatrice Pasch
+author_profile: https://github.com/beapasch
 title: Enable the SAP Translation Hub Service
-description: Enable the SAP Translation Hub service in the SAP Cloud Platform cockpit.
+description: Enable the SAP Translation Hub service in the SAP BTP cockpit.
 primary_tag: products>sap-translation-hub
 auto_validation: true
-tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-business-technology-platform, tutorial>license ]
 time: 5
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+ - **IMPORTANT:** This tutorial cannot be completed on a trial account.
 
 ## Details
 ### You will learn  
-  - How to enable the SAP Translation Hub service on SAP Cloud Platform
+  - How to enable the SAP Translation Hub service on SAP Business Technology Platform (BTP)
 
 
----
-[ACCORDION-BEGIN [Step 1: ](Launch SAP Web IDE)]
+  ---
+[ACCORDION-BEGIN [Step 1: ](Open the service catalog)]
 
-SAP Translation Hub is currently only available on Neo Trial landscape and not on SAP Cloud Foundry. You have to choose a workaround to access SAP Translation Hub in your Trial environment. Please open your Trial instance: `https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial`
-In SAP Cloud Platform cockpit, choose the "Launch SAP Web IDE" button.
-
-![Access trial account in Neo environment](sth-open-scp-cockpit.png)
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Open SAP Cloud Platform cockpit)]
-
-In SAP Web IDE, choose **Tools** - **SAP Cloud Platform Cockpit** in the navigation area.
-
-
-![Open cockpit](sth-webide-open-cockpit.png)
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Open the service catalog)]
-
-In your SAP Cloud Platform trial account, choose **Services** in the navigation area on the left.
-
+In your SAP BTP account choose **Services** in the navigation area on the left.
 
 ![Open service catalog](sth-open-services.png)
 
@@ -49,7 +28,7 @@ In your SAP Cloud Platform trial account, choose **Services** in the navigation 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Locate the SAP Translation Hub service)]
+[ACCORDION-BEGIN [Step 2: ](Locate the SAP Translation Hub service)]
 
 Search for the SAP Translation Hub service by entering **`transl`**, and then choose the **SAP Translation Hub** tile.
 
@@ -59,7 +38,7 @@ Search for the SAP Translation Hub service by entering **`transl`**, and then ch
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Enable the service)]
+[ACCORDION-BEGIN [Step 3: ](Enable the service)]
 
 Choose **Enable**.
 
@@ -69,7 +48,7 @@ Choose **Enable**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Verify that the service is enabled)]
+[ACCORDION-BEGIN [Step 4: ](Verify that the service is enabled)]
 
 After you enable the service, the **Enabled** status is green and the link to the SAP Translation Hub UI in the **Take Action** section is active:
 

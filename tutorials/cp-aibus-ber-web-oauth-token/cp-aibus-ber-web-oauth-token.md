@@ -3,7 +3,7 @@ title: Get OAuth Access Token for Business Entity Recognition via Web Browser
 description: Retrieve your OAuth access token, which will grant you access to the service APIs.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>business-entity-recognition]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>business-entity-recognition]
 primary_tag: topic>machine-learning
 ---
 
@@ -37,7 +37,7 @@ To get your OAuth access token you will need the values listed below from the se
 
 You should receive a response like the following:
 
-```
+```JSON
 {
     "access_token": "<< your access token >>",
     "token_type": "bearer",
@@ -47,7 +47,7 @@ You should receive a response like the following:
 }
 ```
 
-You have successfully generated your OAuth access token for the service and you are now all set to [Use Machine Learning to Detect and Highlight Entities from Unstructured Text](cp-aibus-ber-swagger-ui).
+You have successfully generated your OAuth access token for the service and you are now all set to [Detect and Highlight Entities from Unstructured Text with Pre-trained Models](cp-aibus-ber-swagger-ui), and [Create Dataset and Upload Training Data](cp-aibus-ber-custom-data) followed by [Deploy Model and Get Prediction Results](cp-aibus-ber-custom-deploy).
 
 [DONE]
 [ACCORDION-END]

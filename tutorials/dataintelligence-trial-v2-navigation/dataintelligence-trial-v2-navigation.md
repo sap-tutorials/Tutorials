@@ -48,11 +48,16 @@ Check the below screenshot and answer the question based on the same screenshot:
 
 >**Hint:** You can hover over the operator icon to open up a documentation page to learn more about it.
 
+
 [VALIDATE_1]
 
-[DONE]
+
 
 [ACCORDION-END]
+
+
+
+
 
 [ACCORDION-BEGIN [Step 3: ](SAP Data Intelligence Metadata Explorer)]
 The SAP Data Intelligence Metadata Explorer gathers information about the location, attributes, quality, and sensitivity of data. With this information, you can make informed decisions about which datasets to publish and determine who has access to use or view information about the datasets. Metadata Explorer can be accessed by going to SAP Data Intelligence App Launchpad as mentioned in Step 1.
