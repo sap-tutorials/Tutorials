@@ -63,7 +63,7 @@ The following cases are not supported in multi-user mode:
     ```
 
     Notice that the setting will only take effect when the very first user onboards. Once a user is onboarded,  
-    this setting will be saved into the local database. All subsequent flows will use the same setting from the database and ignore the one inside **`flowContext`**. To change this setting, you need to reset the application to bring up the onboarding process, and the new setting will be updated into the local database after onboarding.
+    this setting will be saved in the local database. All subsequent flows will use the same setting from the database and ignore the one inside **`flowContext`**. To change this setting, you need to reset the application to bring up the onboarding process, and the new setting will be updated in the local database after onboarding.
 
 4.  Re-run (quit first) the app and notice that the onboarding process is the same as for single-user mode, except that no biometric authentication screen is shown. After onboarding, put the app in background until the unlock screen appears. In multi-user mode, there is a **SWTICH OR ADD USER** button at the bottom of the screen.
 
@@ -92,7 +92,7 @@ The following cases are not supported in multi-user mode:
                     .build()
     ```
 
-    Notice that the setting will only take effect when the very first user onboards. Once a user is onboarded, this setting will be saved into the local database. All subsequent flows will use the same setting from the database and ignore the one inside **`flowContext`**. To change this setting, you need to reset the application to bring up the onboarding process, and the new setting will be updated into the local database after onboarding.
+    Notice that the setting will only take effect when the very first user onboards. Once a user is onboarded, this setting will be saved in the local database. All subsequent flows will use the same setting from the database and ignore the one inside **`flowContext`**. To change this setting, you need to reset the application to bring up the onboarding process, and the new setting will be updated in the local database after onboarding.
 
 4.  Re-run (quit first) the app and notice that the onboarding process is same as for single-user mode, except that no biometric authentication screen is shown. After onboarding, put the app in background until the sign in screen appears. In multi-user mode, there is a **SWTICH OR ADD USER** button at the bottom of the screen.
 
@@ -253,7 +253,7 @@ The following cases are not supported in multi-user mode:
 
     The **`getUserInfoByIdAsync`** function is mainly used by the Java code. Notice that this function can only be called after the onboarding or restore flow.
 
-2.  After onboarding, the setting for multi-user mode enablement is saved into the local database. To get this setting, the **`UserSecureStoreDelegate`** class exposes the following API:
+2.  After onboarding, the setting for multi-user mode enablement is saved in the local database. To get this setting, the **`UserSecureStoreDelegate`** class exposes the following API:
 
     **`suspend fun getRuntimeMultipleUserMode(): Boolean?`**
 
@@ -291,7 +291,7 @@ The following cases are not supported in multi-user mode:
 
     The **`getUserInfoByIdAsync`** function is mainly used by the Java code. Notice that this function can only be called after the onboarding or restore flow.
 
-2.  After onboarding, the setting for multi-user mode enablement is saved into the local database. To get this setting, the **`UserSecureStoreDelegate`** class exposes the following API:
+2.  After onboarding, the setting for multi-user mode enablement is saved in the local database. To get this setting, the **`UserSecureStoreDelegate`** class exposes the following API:
 
     **`suspend fun getRuntimeMultipleUserMode(): Boolean?`**
 
