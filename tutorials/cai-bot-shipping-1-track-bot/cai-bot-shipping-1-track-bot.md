@@ -300,6 +300,7 @@ Now you'll add a second set of requirements -- the user's confirmation that they
 
         - Click **Save**, then click **Back**.
 
+        ![Yes and no reply](yesnoreply.png)
 
 [DONE]
 [ACCORDION-END]
