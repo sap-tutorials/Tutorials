@@ -114,32 +114,36 @@ author_profile: https://github.com/mervey45
 
       ![organization](studio7.png)
 
-  3. Select **The organization and space in Cloud Foundry have not been set.**
+  3. Select **View > Find Command**.
 
-      ![organization](studio8.png)
+      ![organization](neuyy.png)
 
-  4. Press enter to set your Cloud Foundry endpoint.
+  4. Search for **CF: Login to Cloud Foundry** and select it.
 
-      ![organization](studio9.png)
+      ![organization](neu2.png)
 
-  5. Enter the same e-mail address you set in your trial instance and press enter.
-      ![organization](studio10.png)
+  5. Select your API endpoint and press enter.
 
-  6. Enter your password and press enter.
+      ![organization](neu3.png)
 
-      ![organization](studio11.png)
+  6. Enter the same e-mail address you set in your trial instance and press enter.
+      ![organization](neu4.png)
+
+  7. Enter your password and press enter.
+
+      ![organization](neu5.png)
 
   7. Select your global account and press enter.
 
-      ![organization](studio12.png)
+      ![organization](neu6.png)
 
   8. Select dev as your space and press enter.
 
-      ![organization](studio13.png)
+      ![organization](neu7.png)
 
   9. Check your result. Now your organization and space have been set.
 
-     ![organization](studio14.png)
+     ![organization](neumm.png)
 
 [DONE]
 [ACCORDION-END]
@@ -152,15 +156,11 @@ author_profile: https://github.com/mervey45
 
   2. Select **Fiori: Open Application Generator**.  
 
-    ![object](view2.png)
+    ![object](neu9.png)
 
-  3. Select **SAP Fiori application** and click **Start >**.
+  3. Select **List Report Object Page** and click **Next >**.
 
-    ![object](studio17.png)
-
-  4. Select **List Report Object Page** and click **Next >**.
-
-    ![object](studio18.png)
+    ![object](neu10.png)
 
   5. Configure data source, system and service:
      - Data source: **Connect to an SAP System**
@@ -168,7 +168,7 @@ author_profile: https://github.com/mervey45
      - ABAP Environment: **`default_abap-trial`**
      - Service: **`ZUI_C_TRAVEL_M_XXX(1) - OData v2`**
 
-     ![object](studio19.png)
+     ![object](neu11.png)
 
      Click **Next >**.
 
@@ -176,7 +176,7 @@ author_profile: https://github.com/mervey45
 
   6. Select your main entity **`TravelProcessor`** and click **Next >**.
 
-    ![object](studio20.png)
+    ![object](neu12.png)
 
   7. Configure project attributes:  
      - Name: **`ztravel_app_xxx`**
@@ -184,10 +184,11 @@ author_profile: https://github.com/mervey45
      - Description: **A Fiori application.**
      - Add deployment configuration: Yes
      - Add FLP configuration: Yes
+     - Configure advanced options: No
 
      Click **Next >**.
 
-    ![object](attribute.png)
+    ![object](neu13.png)
 
     **HINT:** Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
 
@@ -201,7 +202,7 @@ author_profile: https://github.com/mervey45
        - Transport Request: `<your_transport_request>`
        - Deployment description: deployment xxx
 
-      !![app](attribute2.png)
+      !![app](neu14.png)
 
       Click **Next >**.
 
@@ -214,7 +215,7 @@ author_profile: https://github.com/mervey45
        - Action: display
        - Title: Travel App XXX
 
-      !![app](new3.png)
+      !![app](neu15.png)
 
       Click **Finish**.
 
@@ -233,15 +234,11 @@ author_profile: https://github.com/mervey45
 
       **HINT**: An alternative to run the application is to open the terminal and enter: `npm start`.
 
-  2. Click **Open**.
-
-      ![run](studio25.png)
-
-  3. Click **Go** to see your result.
+  2. Your default browser will open. Click **Go** to see your result.
 
       ![run](studio30.png)
 
-  4. Check your result.
+  3. Check your result.
 
      ![run](studio31.png)
 
@@ -250,7 +247,11 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 6: ](Deploy your application)]
 
-1. Open the terminal and enter **`npm run deploy`** to deploy your application. When prompted, check deployment configuration and press y. Open the URL at the end of the deployment log in browser to preview the application.
+1. Click **Files**, right-click your project and select **Open in Terminal**.
+
+    ![deploy](neuxx.png)
+
+2. Enter **`npm run deploy`** to deploy your application. When prompted, check deployment configuration and press y. Open the URL at the end of the deployment log in browser to preview the application.
 
     ![deploy](deploy5.png)
 
@@ -417,7 +418,7 @@ author_profile: https://github.com/mervey45
 
 [DONE]
 [ACCORDION-END]
- 
+
 
 [ACCORDION-BEGIN [Step 10: ](Test yourself)]
 

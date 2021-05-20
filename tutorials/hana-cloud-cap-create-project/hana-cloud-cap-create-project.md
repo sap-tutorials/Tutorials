@@ -66,39 +66,43 @@ In this step we will create a new Dev Space configured for SAP Cloud Application
 
 [ACCORDION-BEGIN [Step 2: ](Configure dev space)]
 
-Before we create our SAP Cloud Application Programming Model project, we want to do a few more one-time configuration steps to prepare the Dev Space
+Before we create our SAP HANA project, we want to do a few more one-time configuration steps to prepare the Dev Space
 
-1. In the bottom left of the SAP Business Application Studio you will see a message that your Organization and Space are not set yet. Click this message to begin supplying your trial connection details
+1. In the left side of the Business Application Studio click on the Cloud Foundry targets icon
 
-    !![Org and Space Not Set](cf_not_set.png)
+    !![CF Not Set](cf_not_set.png)
 
-2. The command window will then open at the top of the SAP Business Application Studio. The first input will prompt you for the API endpoint
+2. Now in the Cloud Foundry Targets window you can expand either Service or Applications and then click on the Logon icon to continue the configuration process
+
+    !![Login Required](cf_login_required.png)
+
+3. The command window will then open at the top of the SAP Business Application Studio. The first input will prompt you for the API endpoint
 
     !![API Endpoint](api_endpoint.png)
 
-3. The default value proposed is likely the correct value, but if you need to confirm; the value can be found in the SAP BTP cockpit at the Subaccount level
+4. The default value proposed is likely the correct value, but if you need to confirm; the value can be found in the SAP BTP cockpit at the Subaccount level
 
     !![Finding the API Endpoint](api_endpoint_from_subaccount.png)
 
-4. Press **Enter** to confirm your input of the API endpoint. The next input field will ask you for the email address you used to create your SAP BTP trial account
+5. Press **Enter** to confirm your input of the API endpoint. The next input field will ask you for the email address you used to create your SAP BTP trial account
 
     !![Email](email.png)
 
-5. The next input will ask you for your SAP BTP trial account password
+6. The next input will ask you for your SAP BTP trial account password
 
     !![Password](password.png)
 
-6. The next input will ask you for your Organization. In most situations you will have a single choice. But like the API endpoint earlier, if you need to confirm the correct value it will be displayed in the top navigation of the SAP BTP cockpit
+7. The next input will ask you for your Organization. In most situations you will have a single choice. But like the API endpoint earlier, if you need to confirm the correct value it will be displayed in the top navigation of the SAP BTP cockpit
 
     !![Organization](organization.png)
 
-7. The final input will ask you for your Space. If you choose the endpoint API and Organization correctly, then you should have a single option of **dev**
+8. The final input will ask you for your Space. If you choose the endpoint API and Organization correctly, then you should have a single option of **dev**
 
     !![Space](space.png)
 
-8. Upon completion of all the inputs, you should see that the Organization and Space have been set and you will see the values in the Targeting... dialog at the bottom left of the SAP Business Application Studio
+9. Upon completion of all the inputs, you should see that the Organization and Space have been set and you will see any service instances or application instances from the target space.
 
-    !![Set Correctly](org_space_set_correctly.png)
+    !![Org and Space Set Correctly](org_space_set_correctly.png)
 
 [DONE]
 [ACCORDION-END]
@@ -269,11 +273,11 @@ You will use the local Git repository for basic version management.
 Each time you commit to the local or remote repository, you create a version. This will allow you to revert and compare any changes.
 **It is recommended that you perform commits at the end of each tutorial.**
 
-1. Choose **Stage All Changes** to include all the new or changed files in this commits
+1. Choose **Changes -> Stage All Changes** to include all the new or changed files in this commits
 
     !![Stage All](stage_all.png)
 
-2. Add a commit message and click **Commit (Signed Off)**:
+2. Add a commit message and click **Commit All (Signed Off)**:
 
     !![Commit](commit.png)
 
