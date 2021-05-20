@@ -179,7 +179,7 @@ The badges you earn appear in the **Earned Missions** tab of your [SAP profile](
 
 Now that you toured the Tutorial Navigator, you can get credit for doing this tutorial by clicking all the **Done** buttons in the steps above, and answering the following question.
 
-[VALIDATE_1]
+[VALIDATE_7]
 [ACCORDION-END]
 
 ---
