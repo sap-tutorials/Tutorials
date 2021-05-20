@@ -122,7 +122,7 @@ The top part of the tutorial is made up of the following:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Your progress)]
+[ACCORDION-BEGIN [Step 6: ](See your progress)]
 
 While you are doing the tutorial, you can see your progress in a couple of ways.
 
