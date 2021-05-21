@@ -170,6 +170,4 @@ With the configuration steps completed, you can now test the scenario to validat
 
 [VALIDATE_2]
 [ACCORDION-END]
-
-
 ---
