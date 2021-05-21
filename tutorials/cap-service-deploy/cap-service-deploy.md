@@ -5,7 +5,7 @@ title: Deploy a CAP Business Application to SAP Business Technology Platform
 description: This tutorial shows you how to deploy your SAP Cloud Application Programming Model (CAP) application to SAP Business Technology Platform, Cloud Foundry environment.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [  tutorial>beginner, topic>node-js, products>sap-business-technology-platform, software-product-function>sap-cloud-application-programming-model  ]
+tags: [ tutorial>beginner, topic>node-js, products>sap-business-technology-platform, products>sap-fiori, software-product-function>sap-cloud-application-programming-model ]
 time: 30
 ---
 

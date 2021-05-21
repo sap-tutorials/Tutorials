@@ -90,9 +90,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
 2. Click **Extraction Results** to see the Header Fields and Line Items extraction results.
 
-    !![DOX-UI-App](png-files/extraction-results-done-header.png)
-
-    !![DOX-UI-App](png-files/extraction-results-done-line.png)
+    !![DOX-UI-App](png-files/extraction-results-done.png)
 
     See also the machine learning model **Extraction Confidence Range** classified by colors: red (confidence between 0% and 50%), yellow (confidence between 51% and 79%), and green (confidence between 80% and 100%).
 
@@ -100,9 +98,7 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     See the prediction confidence score for each header field and line item extraction result by hovering the mouse over a field name, for example **Invoice Number**.
 
-    !![DOX-UI-App](png-files/confidence-header.png)
-
-    !![DOX-UI-App](png-files/confidence-line.png)
+    !![DOX-UI-App](png-files/confidence.png)
 
 3. In case corrections are needed and the document status is READY, you can **Edit** the Header Fields and Line Items extraction results.
 
@@ -113,8 +109,6 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
     !![DOX-UI-App](png-files/edit-currency-code-1.png)
 
     !![DOX-UI-App](png-files/edit-currency-code-2.png)
-
-    !![DOX-UI-App](png-files/edit-currency-code-3.png)
 
 4. Click **+** to insert a new line item at the bottom.
 
@@ -138,8 +132,6 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     Status changes from READY to CONFIRMED. This means the extraction results have been confirmed and can no longer be changed.
 
-    !![DOX-UI-App](png-files/confirmed.png)
-
 [DONE]
 [ACCORDION-END]
 
@@ -155,8 +147,6 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
     !![DOX-UI-App](png-files/extraction-results-delete.png)
 
 2. Click **Delete** and then click **OK** to delete the document you selected.
-
-    !![DOX-UI-App](png-files/delete.png)
 
     The document is then removed from the Documents list.
 
