@@ -4,7 +4,7 @@ description: Create a decision support application using the SAP IoT extension f
 auto_validation: true
 time: 30
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, topic>sapui5, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform, products>sap-web-ide ]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, topic>sapui5, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-business-technology-platform, products>sap-web-ide ]
 ---
 
 ## Details
@@ -29,6 +29,8 @@ tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>clo
 
 
 [ACCORDION-BEGIN [Step 2: ](Add decision support application to MTA project)]
+
+>If you have commented out the references to `UI Deployer` in `mta.yaml` in Step 7 of [Set up SAP Fiori launchpad in Cloud Foundry to receive Notifications](iot-ds-2-create-flp) to test notification, **please revert those changes before continuing**.
 
   1. Right click your MTA project and add a new HTML5 Module.  We'll reuse the MTA project created in the tutorial [Setting up the SAP Fiori launchpad in Cloud Foundry to receive Notifications](iot-ds-2-create-flp).
 
@@ -474,16 +476,55 @@ This sample quick create application uses mock data.
 
     ```JSON
     {
-      "name": "ServiceTicketQC",
-      "description": "",
-      "devDependencies": {
-        "@sap/grunt-sapui5-bestpractice-build": "1.3.65",
-        "@sap/grunt-sapui5-bestpractice-test": "2.0.1"
-      },
-      "scripts": {
-        "test": "grunt unit_and_integration_tests"
-      }
-    }        
+    	"name": "ServiceTicketQC",
+    	"version": "0.0.1",
+    	"description": "",
+    	"devDependencies": {
+    		"@ui5/cli": "1.13.0",
+    		"@sap/ui5-builder-webide-extension": "1.0.x"
+    	},
+    	"scripts": {
+    		"build": "ui5 build --clean-dest --include-task=generateManifestBundle generateCachebusterInfo"
+    	},
+    	"ui5": {
+    		"dependencies": [
+    			"@sap/ui5-builder-webide-extension"
+    		]
+    	}
+    }       
+    ```
+  11. In the folder `ServiceTicketQC`, create the file `ui5.yaml` with the following content:
+
+    ```YAML
+    specVersion: '1.0'
+    metadata:
+      name: ServiceTicketQC
+    type: application
+    resources:
+      configuration:
+        propertiesFileSourceEncoding: UTF-8
+    builder:
+      customTasks:
+        - name: webide-extension-task-updateManifestJson
+          beforeTask: generateManifestBundle
+          configuration:
+            appFolder: webapp
+            destDir: dist
+        - name: webide-extension-task-resources
+          afterTask: generateVersionInfo
+          configuration:
+            nameSpace: iot/ds/test/quickcreate
+        - name: webide-extension-task-copyFile
+          afterTask: webide-extension-task-resources
+          configuration:
+            srcFile: "/xs-app.json"
+            destFile: "/xs-app.json"
+        - name: webide-extension-task-lint
+          afterTask: webide-extension-task-copyFile
+          configuration:
+            destDir: dist
+            appFolder: webapp
+            nameSpace: iot/ds/test/quickcreate
     ```
 
   11. In the folder `ServiceTicketQC`, create the file `xs-app.json` with the following content:
@@ -516,7 +557,7 @@ This sample quick create application uses mock data.
 
   13. Your `ServiceTicketQC` folder should look like this:
 
-    ![Quick create application created](/images/qc_create_3.png)        
+    ![Quick create application created](/images/qc_create_3_1.png)        
 
 [DONE]
 [ACCORDION-END]
@@ -543,17 +584,20 @@ This sample quick create application uses mock data.
         type: html5
         path: ServiceTicketQC
         build-parameters:
-          builder: grunt
+          builder: custom
+          commands:
+            - npm install
+            - npm run build
           supported-platforms: []
           build-result: dist
     ```
-    ![Add ServiceTicketQC module to mta.yaml](/images/import_qc_7.png)
+    ![Add ServiceTicketQC module to mta.yaml](/images/import_qc_7_1.png)
 
     >Please **use spaces** and **not tabs** when applying indentations in the `mta.yaml` file.
 
-  4. Since we are going to register the decision support and quick create applications with the SAP Fiori launchpad site in the next step, these modules have to be declared before the SAP Fiori launchpad site module (type: `com.sap.portal.content`) in the `mta.yaml`, otherwise, we'll get an error when we try to deploy the project in a later step.
+  4. Since we are going to register the decision support and quick create applications with the SAP Fiori launchpad site in the next step, these modules have to be declared before the SAP Fiori launchpad site module in the `mta.yaml`, otherwise, we'll get an error when we try to deploy the project in a later step.
 
-    ![Reorder resources](/images/reorder_ds_resource.png)
+    ![Reorder resources](/images/reorder_ds_resource_1.png)
 
   5. Click **Save**.
 
@@ -582,19 +626,10 @@ This sample quick create application uses mock data.
 
   3. **Save** the changes.
 
+  4. Please continue to the next tutorial to test the application.
+
 [VALIDATE_1]
 
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 7: ](Test application)]
-
-Please continue with the next tutorial to test the application.
-
->If you have commented out the references to `UI Deployer` in `mta.yaml` in Step 7 of [Set up SAP Fiori launchpad in Cloud Foundry to receive Notifications](iot-ds-2-create-flp), **please revert those changes before continuing**.
-
-
-[DONE]
 [ACCORDION-END]
 
 ---
