@@ -299,7 +299,7 @@ Please complete the prerequisites before starting this step.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Define an action service option (optional))]
-In addition to defining quick create and SAP Fiori navigation options, you can also define an action service option.  We will not define an action service option in this tutorial but you can define one if you have an action service that you'd like to use as an additional option.
+In addition to defining quick create and SAP Fiori navigation options, you can also define an action service option.  You will not define an action service option in this tutorial but you can define one if you have an action service that you'd like to use as an additional option.
 
   ![Select action service as action mode](/images/ds_action_service_def.png)
 

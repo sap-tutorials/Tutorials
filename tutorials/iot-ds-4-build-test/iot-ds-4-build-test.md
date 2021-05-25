@@ -4,7 +4,7 @@ description: Build and deploy a multi-target application (MTA) project in SAP We
 auto_validation: true
 time: 20
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-business-technology-platform, products>sap-cloud-platform-portal, products>sap-web-ide ]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-edge-services, products>sap-business-technology-platform, products>sap-web-ide ]
 ---
 
 ## Details
@@ -64,7 +64,7 @@ If you make any changes to an MTA project, you'll need to build and deploy the p
 
 [ACCORDION-BEGIN [Step 3: ](Retrieve thing id)]
 
-  We will need to retrieve the thing id for the next step. If you already have the thing id, please proceed to the next step.
+  You will need to retrieve the thing id for the next step. If you already have the thing id, please proceed to the next step.
 
   1. From SAP IoT launchpad, select the **Thing Modeler** tile.
 
@@ -76,7 +76,7 @@ If you make any changes to an MTA project, you'll need to build and deploy the p
 
     ![Select greenhouse package and click connectivity information](/images/shared/thing_modeler_1.png)  
 
-  4. Copy the thing id.  We'll use it in the next step.
+  4. Copy the thing id.  You'll use it in the next step.
 
     ![Copy thing id](/images/shared/thing_id.png)
 

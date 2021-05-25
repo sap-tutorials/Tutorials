@@ -4,7 +4,7 @@ description: Create a decision support application using the SAP IoT extension f
 auto_validation: true
 time: 30
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, topic>sapui5, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-business-technology-platform, products>sap-web-ide ]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, topic>sapui5, products>sap-edge-services, products>sap-business-technology-platform, products>sap-web-ide ]
 ---
 
 ## Details
@@ -32,7 +32,7 @@ tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>clo
 
 >If you have commented out the references to `UI Deployer` in `mta.yaml` in Step 7 of [Set up SAP Fiori launchpad in Cloud Foundry to receive Notifications](iot-ds-2-create-flp) to test notification, **please revert those changes before continuing**.
 
-  1. Right click your MTA project and add a new HTML5 Module.  We'll reuse the MTA project created in the tutorial [Setting up the SAP Fiori launchpad in Cloud Foundry to receive Notifications](iot-ds-2-create-flp).
+  1. Right click your MTA project and add a new HTML5 Module.  You'll reuse the MTA project created in the tutorial [Setting up the SAP Fiori launchpad in Cloud Foundry to receive Notifications](iot-ds-2-create-flp).
 
     ![Add new HTML5 module](images/webide_ds_1.png)
 
@@ -75,7 +75,7 @@ tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>clo
 
 [ACCORDION-BEGIN [Step 4: ](Create sample quick create application (part 1))]
 
-In this step, we'll create a sample service ticket quick create application which will be one of the configured option in the decision support application for the greenhouse demo scenario. Quick create application is a SAP Fiori application based on the SAP Fiori quick create element.
+In this step, you'll create a sample service ticket quick create application which will be one of the configured option in the decision support application for the greenhouse demo scenario. Quick create application is a SAP Fiori application based on the SAP Fiori quick create element.
 
 This sample quick create application uses mock data.
 
@@ -595,7 +595,7 @@ This sample quick create application uses mock data.
 
     >Please **use spaces** and **not tabs** when applying indentations in the `mta.yaml` file.
 
-  4. Since we are going to register the decision support and quick create applications with the SAP Fiori launchpad site in the next step, these modules have to be declared before the SAP Fiori launchpad site module in the `mta.yaml`, otherwise, we'll get an error when we try to deploy the project in a later step.
+  4. Since you are going to register the decision support and quick create applications with the SAP Fiori launchpad site in the next step, these modules have to be declared before the SAP Fiori launchpad site module in the `mta.yaml`, otherwise, you'll get an error when you try to deploy the project in a later step.
 
     ![Reorder resources](/images/reorder_ds_resource_1.png)
 
@@ -606,7 +606,7 @@ This sample quick create application uses mock data.
 
 [ACCORDION-BEGIN [Step 6: ](Register UI components in SAP Fiori launchpad site)]
 
-  In order to run the decision support application, it needs to be registered with a SAP Fiori launchpad site.  We'll reuse the Fiori launchpad site created in the tutorial [Setting up the Fiori launchpad in Cloud Foundry to receive notifications](iot-ds-2-create-flp).  We'll also register the sample quick create application.
+  In order to run the decision support application, it needs to be registered with a SAP Fiori launchpad site.  You'll reuse the Fiori launchpad site created in the tutorial [Setting up the Fiori launchpad in Cloud Foundry to receive notifications](iot-ds-2-create-flp).  You'll also register the sample quick create application.
 
   1. Open `CommonDataModel.json` in **Code Editor**.
 

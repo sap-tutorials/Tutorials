@@ -4,7 +4,7 @@ description: Create and configure an SAP Fiori launchpad site to receive notific
 auto_validation: true
 time: 40
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-business-technology-platform, products>sap-web-ide ]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-edge-services, products>sap-business-technology-platform, products>sap-web-ide ]
 ---
 
 ## Details
@@ -307,9 +307,9 @@ Otherwise, you can continue with the next tutorial [Build a Decision Support UI 
 
 [ACCORDION-BEGIN [Step 7: ](Test notification in launchpad site)]
 
-If you want to test notifications in SAP Fiori launchpad site at this point, you'll need to comment out the references to `UI Deployer` in `mta.yaml`. The `UI Deployer` is used for deploying UI components but we have not added any UI components to our project yet and it will cause the deployment to fail.
+If you want to test notifications in SAP Fiori launchpad site at this point, you'll need to comment out the references to `UI Deployer` in `mta.yaml`. The `UI Deployer` is used for deploying UI components but you have not added any UI components to your project yet and it will cause the deployment to fail.
 
-We'll add UI components to our project in the next tutorial [Build a Decision Support UI in the Web IDE](iot-ds-3-create-ui) and we will be able to test notifications without having to make these changes.
+You'll add UI components to our project in the next tutorial [Build a Decision Support UI in the Web IDE](iot-ds-3-create-ui) and you will be able to test notifications without having to make these changes.
 
 To comment out the references to `UI Deployer`:
 
@@ -373,7 +373,7 @@ To comment out the references to `UI Deployer`:
 
 [ACCORDION-BEGIN [Step 10: ](Retrieve thing id)]
 
-  We will need to retrieve the thing id for the next Step. If you already have the thing id, please proceed to the next step.
+  You will need to retrieve the thing id for the next Step. If you already have the thing id, please proceed to the next step.
 
   1. From SAP IoT launchpad, select the **Thing Modeler** tile.
 
@@ -385,7 +385,7 @@ To comment out the references to `UI Deployer`:
 
     ![Select greenhouse package and click connectivity information](/images/shared/thing_modeler_1.png)  
 
-  4. Copy the thing id.  We'll use it in the next step.
+  4. Copy the thing id.  You'll use it in the next step.
 
     ![Copy thing id](/images/shared/thing_id.png)
 

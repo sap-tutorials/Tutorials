@@ -4,7 +4,7 @@ description: Extend the SAP IoT Decision Support application using SAP Web IDE b
 auto_validation: true
 time: 20
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, topic>sapui5, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-business-technology-platform, products>sap-web-ide ]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, topic>sapui5, products>sap-edge-services, products>sap-business-technology-platform, products>sap-web-ide ]
 ---
 
 ## Prerequisites
@@ -32,11 +32,11 @@ tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>clo
 
     ![Create new externalized data](/images/ds_config_ext_data_1.png)
 
-  4. Enter a value for the field **Alias**. In this example, we'll enter the value `DEVICE`. This value will be used in the controller of the custom SAPUI5 view.  
+  4. Enter a value for the field **Alias**. In this example, you'll enter the value `DEVICE`. This value will be used in the controller of the custom SAPUI5 view.  
 
   5. Enter the binding path for this alias.  This path should be defined according to the JSON structure of the payload defined in the decision support action.
 
-    Here is the payload that we have defined in the decision support action in step 3 of [Model the needed Decision Support based on IoT data](iot-ds-1-define-actions).
+    Here is the payload that you have defined in the decision support action in step 3 of [Model the needed Decision Support based on IoT data](iot-ds-1-define-actions).
 
     ![Display of a sample payload](/images/ds_config_ext_data_2_1.png)
 
@@ -44,7 +44,7 @@ tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>clo
 
     `{ Path of exposed data in JSON payload }`
 
-    In this example, we would like to expose the data under `properties.device`, we enter the value `{properties.device}` in the field.
+    In this example, you would like to expose the data under `properties.device`, you enter the value `{properties.device}` in the field.
 
     ![Enter configuration for externalized data](/images/ds_config_ext_data_3.png)
 
