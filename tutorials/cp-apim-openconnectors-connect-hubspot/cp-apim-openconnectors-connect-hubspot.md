@@ -13,7 +13,7 @@ primary_tag: products>sap-integration-suite
 ## Details
 ### You will learn
   - How to get the integration or API key to access `HubSpot`
-  - How to connect to a third-party application from Open Connectors
+  - How to connect to a third-party application from Open Connectors.
 
 [ACCORDION-BEGIN [Step 1: ](Get integration key to access HubSpot)]
 
