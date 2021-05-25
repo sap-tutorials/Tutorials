@@ -273,11 +273,11 @@ You will use the local Git repository for basic version management.
 Each time you commit to the local or remote repository, you create a version. This will allow you to revert and compare any changes.
 **It is recommended that you perform commits at the end of each tutorial.**
 
-1. Choose **Stage All Changes** to include all the new or changed files in this commits
+1. Choose **Changes -> Stage All Changes** to include all the new or changed files in this commits
 
     !![Stage All](stage_all.png)
 
-2. Add a commit message and click **Commit (Signed Off)**:
+2. Add a commit message and click **Commit All (Signed Off)**:
 
     !![Commit](commit.png)
 
