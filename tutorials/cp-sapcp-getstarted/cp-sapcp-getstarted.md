@@ -27,7 +27,7 @@ primary_tag: products>sap-business-technology-platform
 
 [ACCORDION-BEGIN [Step 1: ](What is the btp CLI?)]
 
-The btp CLI is **an alternative to the cockpit** for users who prefer working on the command line. It consists of a client and a server. The client is installed on your computer and it interacts with SAP BTP through a server. You connect to this CLI server when you log on to your global account through the btp CLI.
+The btp CLI is **an alternative to the cockpit** for users who prefer working on the command line. It consists of a client and a server. The client is installed on your computer and it interacts with SAP BTP through a server. You connect to this CLI server when you log on to your global account through the btp CLI. 
 
 The base call to enter on the command line is `btp`.
 

@@ -145,9 +145,9 @@ In this step, you will deploy three resources into the Kyma runtime that were ob
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add event trigger to function)]
+[ACCORDION-BEGIN [Step 7: ](Add event subscription to function)]
 
-In this step, you will configure the function `cache-order`, deployed in the previous step, to be triggered when the **order.created** event is fired from the Commerce Mock application.
+In this step, you will configure the function `cache-order`, deployed in the previous step, to run when the **order.created** event is fired from the Commerce Mock application.
 
 1. In the `dev` namespace, choose **Workload > Functions**.
 
@@ -159,7 +159,7 @@ In this step, you will configure the function `cache-order`, deployed in the pre
 
     ![Cache Order](./assets/function-config-co.png)
 
-4. In the **Configuration** scroll down and choose **Add Event Triggers**.
+4. In the **Configuration** scroll down and choose **Create Event Subscription**.
 
 5. Choose the event **order.created** and then choose **Add**
 
@@ -176,7 +176,7 @@ In this step, you will add a service instance to the function cache-order allowi
 
 2. In the **Configuration** scroll down and choose **Create Service Binding**.
 
-3. Choose the Service instance created in the previous step from the drop down list. The name of your service instance will defer from what is shown in the screenshot.
+3. Choose the Service instance created in the previous step from the drop down list. The name of your service instance will differ from what is shown in the screenshot.
 
 4. Choose **Create**.
 
@@ -207,7 +207,7 @@ With the configuration steps completed, you can now test the scenario to validat
 2. Choose the **Host** entry for the **commerce-mock** `APIRule` to open it in the browser. This URL should be similar to:
    `https://commerce.*******.kyma.shoot.live.k8s-hana.ondemand.com`
 
-   ![APIRule Commerce](./assets/apirule-commerce.png)
+    ![APIRule Commerce](./assets/apirule-commerce.png)
 
 3. Choose the **Remote APIs** tab.
 

@@ -122,11 +122,13 @@ Now that you created a `mtar` archive, you are all set to deploy the application
 
     !![success](./deploysuccess.png)
 
-4.   You can see the URL of the deployed app when running `cf html5-list -di sap-btp-sapui5-destination-service -u` in a new terminal session.
+4.   You can see the URL of the deployed app when running `cf html5-list -di sap-btp-sapui5-destination-service -u  --runtime launchpad` in a new terminal session.
 
     !![cfapps](./cfhtml5.png)
 
-    > You need to substitute the `cpp` with `launchpad`, in case you use the Launchpad service (instead of the Portal service).
+    > Use the following command in case you use the Portal service
+    >
+    >  `cf html5-list -di sap-btp-sapui5-destination-service -u  --runtime cpp`
 
 [DONE]
 [ACCORDION-END]
