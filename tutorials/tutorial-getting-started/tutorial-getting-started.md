@@ -3,7 +3,7 @@ title: Get to Know SAP Tutorials
 description: Take a tour of the Tutorial Navigator and learn how to complete tutorials and earn badges.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>sap-community]
 primary_tag: products>sap-business-technology-platform
 ---
 
