@@ -4,7 +4,7 @@ description: Create a decision support application using the SAP IoT extension f
 auto_validation: true
 time: 30
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, topic>sapui5, products>sap-edge-services, products>sap-business-technology-platform, products>sap-web-ide ]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, topic>sapui5, products>sap-internet-of-things, products>sap-business-technology-platform, products>sap-web-ide ]
 ---
 
 ## Details

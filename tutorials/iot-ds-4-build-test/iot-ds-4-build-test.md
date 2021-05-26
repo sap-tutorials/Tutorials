@@ -4,7 +4,7 @@ description: Build and deploy a multi-target application (MTA) project in SAP We
 auto_validation: true
 time: 20
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-edge-services, products>sap-business-technology-platform, products>sap-web-ide ]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-business-technology-platform, products>sap-web-ide ]
 ---
 
 ## Details

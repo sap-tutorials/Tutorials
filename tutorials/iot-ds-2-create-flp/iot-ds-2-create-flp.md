@@ -4,7 +4,7 @@ description: Create and configure an SAP Fiori launchpad site to receive notific
 auto_validation: true
 time: 40
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-edge-services, products>sap-business-technology-platform, products>sap-web-ide ]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-fiori, products>sap-internet-of-things, products>sap-business-technology-platform, products>sap-web-ide ]
 ---
 
 ## Details

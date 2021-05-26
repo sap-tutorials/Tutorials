@@ -4,7 +4,7 @@ description: Create actions, rules and configurations using SAP IoT.
 auto_validation: true
 time: 30
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-edge-services, products>sap-internet-of-things, products>sap-business-technology-platform ]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-business-technology-platform ]
 ---
 
 ## Details
