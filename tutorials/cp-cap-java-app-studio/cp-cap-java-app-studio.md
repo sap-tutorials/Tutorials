@@ -111,7 +111,7 @@ For this tutorial, you'll create a dev space personalized for building services 
 
 CAP applications use [Core Data Services](https://cap.cloud.sap/docs/cds/) (CDS) to describe:
 
-- Data structures by using [entity definitions](https://cap.cloud.sap/docs/cds/cdl#entities-views)
+- Data structures by using [entity definitions](https://cap.cloud.sap/docs/cds/cdl#entity-and-type-definitions)
 - How data structures are consumed by using [service definitions](https://cap.cloud.sap/docs/cds/cdl#services)
 
 In this step, you'll define a simple service, which also defines its own entity. In more complex applications, services usually expose projections on entities defined in the data model.
