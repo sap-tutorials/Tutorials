@@ -153,7 +153,7 @@ Video tutorial version: </br>
 
 1. The `approuter` component implements the necessary handshake with XSUAA to let the user log in interactively. The resulting JWT token is sent to the application where it's used to enforce authorization.
 
-2. The application router configuration was generated in the previous tutorial via wizard.  We now want to extend that application router setup.  Start with the package.json file in the `/app` folder. We want to update the version of the `@sap/approuter` to at least version 9.1.
+2. The application router configuration was generated in the previous tutorial via wizard.  We now want to extend that application router setup.  Start with the package.json file in the `/app` folder. We want to update the version of the `@sap/approuter` to at least version 10
 
     !![Update app router version](approuter_version.png)
 
@@ -208,6 +208,9 @@ Video tutorial version: </br>
 
     !![Add UAA to SRV module](mta_srv.png)
 
+3. **OPTIONAL** If you want to use the mta.yaml text editor instead of the form based edition you could make this same change by adding the following line:
+
+    !![mta.yaml add UAA](mta_yaml_add_uaa.png)
 
 [DONE]
 [ACCORDION-END]
@@ -244,7 +247,9 @@ Video tutorial version: </br>
 
     !![Fiori with authentication](fiori_with_authentication.png)
 
-Congratulations! You have now successfully configured and tested with production level authentication and authorization for the SAP HANA Cloud and Cloud Business Application based project.            
+Congratulations! You have now successfully configured and tested with production level authentication and authorization for the SAP HANA Cloud and Cloud Business Application based project.   
+
+If you are wanting to learn about packaging and deploying this complete application as a Multi-Target Application to SAP BTP, Cloud Foundry runtime; there is a separate, optional tutorial which is not part of this mission that covers this step.  Note: that this is an advanced topic and does allocate a large amount of your available resources in an SAP BTP trial account. [Deploy CAP with SAP HANA Cloud project as MTA](hana-cloud-cap-deploy-mta)       
 
 [DONE]
 [ACCORDION-END]

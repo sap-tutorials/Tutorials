@@ -3,9 +3,9 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: Send Notifications to Your Android Application
 description: Add foreground and background notifications to your application using Google Firebase.
-primary_tag: products>android-sdk-for-sap-btp
+primary_tag: products>sap-btp-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>android-sdk-for-sap-btp, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
 time: 20
 ---
 
@@ -28,7 +28,7 @@ time: 20
 
     !![Application page in CF cockpit](cf-trial-application-page.png)
 
-2. Select **Mobile Push Notification**
+2. Select **Mobile Push Notification**.
 
     !![Mobile Push Notification](push-notification.png)
 
@@ -119,7 +119,7 @@ You can add custom logic to the app to decide on the action to take, such as dis
 
 [OPTION END]
 
->For further information on push, see [Push Notifications](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/push/android/push.html#support-for-baidu-push), [Push API Notification Scenarios](https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/aaec2dbe78ec4fc08ef0a605a899e3dd.html), and [About FCM Messages](https://firebase.google.com/docs/cloud-messaging/concept-options).
+>For further information on push, see [Push Notifications](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/push/android/push.html), [Push API Notification Scenarios](https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/aaec2dbe78ec4fc08ef0a605a899e3dd.html), and [About FCM Messages](https://firebase.google.com/docs/cloud-messaging/concept-options).
 
 Congratulations! You have seen how an app can make use of foreground and background notifications.
 

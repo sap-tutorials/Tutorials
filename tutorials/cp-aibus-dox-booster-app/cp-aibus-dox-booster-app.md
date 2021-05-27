@@ -16,6 +16,7 @@ primary_tag: topic>machine-learning
   - How to access your trial account
   - What are interactive guided boosters
   - How to use the **Set up account for Document Information Extraction** booster to assign entitlements, update your subaccount, create a service instance, subscribe to and access the Document Information Extraction Trial UI.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
@@ -31,8 +32,6 @@ primary_tag: topic>machine-learning
     >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
 
     >Choose **Continue**.
-
-    >!![Account setup](02_Foundation20Onboarding_Processing.png)
 
     >For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
@@ -90,32 +89,25 @@ You are now all set to [Use Machine Learning to Extract Information from Documen
 
 [ACCORDION-BEGIN [Step 4: ](Access subscription (optional))]
 
-> This is an optional step. Use it only if you want to access the subscription to the Document Information Extraction Trial UI, you've done with the **Set up account for Document Information Extraction** booster, without having to run it once again.
+> This is an optional step. Use it only if you want to access the subscription to the Document Information Extraction Trial UI, you've created with the **Set up account for Document Information Extraction** booster, without having to run it once again.
 
 Do the following to access your subscription to the Document Information Extraction Trial UI, without having to run the **Set up account for Document Information Extraction** booster once again:
 
+1. Access your trial account.
 
-1. Close the booster **Success** dialog box.
-
-    !![UI application](leave-success.png)
-
-2. Access your trial account.
-
-    !![UI application](trial-account.png)
-
-3. Click **Subaccounts** on the navigation side bar and select **trial** to access your subaccount.
+2. Click **Subaccounts** on the navigation side bar and select **trial** to access your subaccount.
 
     !![UI application](subaccount.png)
 
-4. Click **Instances and Subscriptions** on the navigation side bar.
+3. Click **Instances and Subscriptions** on the navigation side bar.
 
     !![UI application](subscriptions.png)
 
-5. Look for **Document Information Extraction Trial UI** under **Subscriptions** and click the arrow on the right to access it.
+4. Look for **Document Information Extraction Trial UI** under **Subscriptions** and click the arrow on the right to access it.
 
     !![UI application](subscriptions-tile.png)
 
-6. Here, you can navigate to the application by clicking **Go to Application** but also manage the roles for the UI application.
+5. Here, you can navigate to the application by clicking **Go to Application** but also manage the roles for the UI application.
 
     !![UI application](subscriptions-action.png)
 

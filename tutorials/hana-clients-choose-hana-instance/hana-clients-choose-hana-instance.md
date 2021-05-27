@@ -88,7 +88,6 @@ Here are a few benefits of using SAP HANA Cloud:
 
     * [Getting Started with your trial of SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/)
 
-    * [SAP HANA Cloud Trial](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/latest/en-US/96b0fa04bf2b4fd6a8b210eb9fb18332.html)
 
     For more information on SAP BTP see the following:
 
@@ -112,6 +111,8 @@ Here are a few benefits of using SAP HANA Cloud:
 
     ![authentication for dbx](dbx-authenticate.png)
 
+    >Note, the credentials can be persisted so they do not need to be entered again by entering them into the SAP HANA Cockpit app.  
+
     The SAP HANA database explorer provides the ability to browse catalog objects and execute SQL statements from the SQL console.  For more information, see the tutorial group [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started) and SAP Help Portal topic [SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US).  
 
 
@@ -119,7 +120,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
     ![Database Explorer](databaseExplorer.png)  
 
-4. Run the following query to see the name of the database you are currently connected to.  Notice it is **H00**.  
+4. Run the following query to see the name of the database you are currently connected to.  
 
     ```SQL
     SELECT * FROM M_DATABASE;
