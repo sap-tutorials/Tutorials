@@ -3,8 +3,8 @@ title: Configure Business Rules, Workflow and Process Visibility
 description: Configure workflow, business rules and process visibility to automate processes and decisions, and achieve operational insights into employee onboarding process
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-cloud-platform-workflow]
-primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-workflow-management
 ---
 
 ## Details
@@ -133,7 +133,7 @@ In this section, you will use **SAP Business Application Studio** to import, con
 
     !![Download Sample Workflow](downloadsample.png)
 
-2. Open [SAP Cloud Platform Trial Homepage](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and choose **SAP Business Application Studio**.
+2. Open [SAP BTP Trial Homepage](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and choose **SAP Business Application Studio**.
 
     !![Launch Studio](launchbas.png)
 
@@ -152,6 +152,8 @@ In this section, you will use **SAP Business Application Studio** to import, con
     !![Start Workspace](startspace.png)
 
     !![Open Workspace](openworkspace.png)
+
+    > Some File menu options might not appear as they are not relevant if you are opening the workspace for the first time without any projects.
 
 4. Drag and drop the extracted **cf-onboarding-sample** project in the dialog and click **Open**.
 
@@ -207,7 +209,7 @@ In this section, you will create and activate a process visibility scenario to p
 
 2. To create a new visibility scenario, choose **+**.
 
-    !![Create Scenarios](addscenario.png)
+    !![Create Scenarios](addscenario_1.png)
 
 3. Enter **Name** as `Employee Onboarding`, any **Description** of your choice, and click **Create**.
 

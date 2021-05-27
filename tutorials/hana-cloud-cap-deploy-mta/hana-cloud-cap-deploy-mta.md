@@ -64,7 +64,7 @@ Note:  This is an optional tutorial as part of this mission on SAP HANA Cloud pl
 
 6. The rest of the adjustments we need to make are all in the `mta.yaml` file in the root of the project. This is the file that will control the build and deployment of the application.
 
-7. The first adjustment we want to make is to the database module section. We added `default-env.json` and `.env` files to the project so that we could deploy and test from the SAP Business Application Studio.  However we don't want these files to be present in a "real" deployment, instead getting configuration from the bound service instances. Therefore we can tell the builder to exclude these files from this module. That way we can keep these files in our project for future testing and development but ensure that they don't accidentally make it into a production deployment.
+7. The first adjustment we want to make is to the database module section. We added `default-env.json` and `.env` files to the project so that we could deploy and test from the SAP Business Application Studio.  However we don't want these files to be present in a "real" deployment, instead getting configuration from the bound service instances. Therefore we can tell the builder to exclude these files from this module as well as any other build content (such as the `node_modules` folder). That way we can keep these files in our project for future testing and development but ensure that they don't accidentally make it into a production deployment.
 
     !![mta.yaml database module build parameters](mta_db_adjustments.png)
 

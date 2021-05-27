@@ -2,7 +2,7 @@
 title: Connect to OData Service on Cloud Foundry Using SAP Cloud SDK
 description: Create a basic Java project to call OData services using the SAP Cloud SDK on Cloud Foundry.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-s-4hana, topic>cloud, topic>java, topic>odata ]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-business-technology-platform, products>sap-cloud-platform-connectivity, products>sap-s-4hana, topic>cloud, topic>java, topic>odata ]
 primary_tag: products>sap-cloud-sdk
 time: 20
 ---
@@ -304,7 +304,7 @@ Whenever this environment variable is set, the SAP Cloud SDK will use it to dete
 As mentioned in the Tutorial `Create a sample application on Cloud Foundry using SAP Cloud SDK` of this tutorial series, you can run the project on a local `TomEE` server. Here, you need to supply the destinations as an environment variable on your local machine.
 
 ```Bash
-export destinations=[{name: "MyErpSystem", url: "https://URL"}]
+export destinations='[{name: "MyErpSystem", url: "https://URL"}]'
 ```
 
 **Note:** Some services, other than the sandbox service and the mock server, may require user credentials for the request execution.
@@ -411,7 +411,7 @@ Afterwards, the destination should look as follows.
 
 ![Cloud Foundry destination](cf-destination.png)
 
-Please note that the above settings represent the setup for a connection to SAP S/4HANA Cloud via a technical user (communication user). Depending on your setup and requirements, you may want to use a different `ProxyType` (`OnPremise` when using the Cloud Connector) or a different means of authentication. If you want to learn more about authorizing user access in a productive environment, please find [Secure Your Application on SAP Cloud Platform Cloud Foundry](https://developers.sap.com/tutorials/s4sdk-secure-cloudfoundry.html).
+Please note that the above settings represent the setup for a connection to SAP S/4HANA Cloud via a technical user (communication user). Depending on your setup and requirements, you may want to use a different `ProxyType` (`OnPremise` when using the Cloud Connector) or a different means of authentication. If you want to learn more about authorizing user access in a productive environment, please find [Secure Your Application on SAP Cloud Platform Cloud Foundry](s4sdk-secure-cloudfoundry).
 
 
 **Deploy to Cloud Foundry**

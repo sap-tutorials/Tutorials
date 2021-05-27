@@ -2,8 +2,8 @@
 auto_validation: true
 title: Use abapGit to Transfer Your On-Premise ABAP Source Code to the Cloud
 description: Transfer Your ABAP Source Code from your on-premise SAP system to your SAP Business Technology Platform ABAP Environment instance over a Github Repository using the abapGit report and the ADT plugin for abapGit.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner,  topic>abap-development, products>sap-cloud-platform, tutorial>license]
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner,  topic>abap-development, products>sap-business-technology-platform, tutorial>license]
 time: 15
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
@@ -47,7 +47,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 
 >**IMPORTANT** Arrange with your system administrator before you install `zabapgit`.
 
-  1. Copy the content of the latest build from the program `zabapgit`, that you will find in the `abapGit` repository <https://github.com/larshp/abapGit>.
+  1. Copy the content of the latest build from the program `zabapgit`, that you will find in the `abapGit` repository <https://github.com/abapGit/abapGit>.
 
     ![latest build](github4.png)
 
@@ -62,7 +62,7 @@ author_profile: https://github.com/niloofar-flothkoetter
   4. Now `abapGit` is installed and opened.
       ![execute program](abapgit2.png)
 
->You can find all installation information under <https://github.com/larshp/abapGit> > **Documentation/Guides**.
+>You can find all installation information under <https://github.com/abapGit/abapGit> > **Documentation/Guides**.
 
 > **IMPORTANT** Logon with language `EN` to your on-premise system. SAP BTP ABAP Environment just supports `EN` at the moment. Otherwise you'll get problem during import.
 
