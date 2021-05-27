@@ -57,7 +57,7 @@ For this tutorial, you'll create a dev space personalized for building services 
 
     !![open dev space](open-dev-space.png)
 
-> Please note that you're using the trial version of SAP Business Application Studio. See section [Restrictions](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/a45742a719704bdea179b4c4f9afa07f.html) for more details how your your development environment can be affected.
+    > Please note that you're using the trial version of SAP Business Application Studio. See section [Restrictions](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/a45742a719704bdea179b4c4f9afa07f.html) in the SAP Business Application Studio documentation for more details on how your development environment can be affected.
 
 [DONE]
 [ACCORDION-END]
