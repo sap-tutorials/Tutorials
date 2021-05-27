@@ -60,11 +60,11 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP BT
 
     !![business technology platform cockpit view](cockpit.png)
 
-2. Navigate to the **Subaccount** overview:
+2. From the **Subaccounts** overview navigate to your subaccount.
 
     !![subaccount tile](subaccount.png)
 
-3. Navigate to your Subaccount and copy the **Cloud Foundry API Endpoint** value:
+3. From your subaccount copy the **Cloud Foundry API Endpoint** value.
 
     !![CF API endpoint value](api_endpoint.png)
 
