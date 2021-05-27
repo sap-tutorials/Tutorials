@@ -3,7 +3,7 @@ title: Introduce Caching to Your Application
 description: Introduce caching to your application using the SAP Cloud SDK.
 auto_validation: true
 primary_tag: products>sap-cloud-sdk
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-cloud-platform, topic>cloud, topic>java ]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-business-technology-platform, topic>cloud, topic>java ]
 time: 15
 ---
 
@@ -68,7 +68,7 @@ In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology.
 
 Now that we have covered why caching is important and how it can help us improve performance and responsiveness, it's finally time to introduce it into your application.
 
-In [the resilience tutorial] (https://developers.sap.com/tutorials/s4sdk-resilience.html), you introduced resilience into your application using `resilience4j`. Now, in order to make our OData calls cacheable, you will enhance the `ResilienceConfiguration` and add a `CacheConfiguration` to it.
+In [the resilience tutorial](s4sdk-resilience), you introduced resilience into your application using `resilience4j`. Now, in order to make our OData calls cacheable, you will enhance the `ResilienceConfiguration` and add a `CacheConfiguration` to it.
 
 Add the following lines at the end of the constructor of the `GetBusinessPartnerCommand`:
 
@@ -130,7 +130,7 @@ public void testCache() {
 
 Here, the test expects the request still to be successful, even after swapping out the destination for a dummy one.
 
->If you are using the `systems.yml` and `credentials.yml` files (revisit step 4 of the [previous tutorial](https://developers.sap.com/tutorials/s4sdk-resilience.html)), mock the destination like this:
+>If you are using the `systems.yml` and `credentials.yml` files (revisit step 4 of the [previous tutorial](s4sdk-resilience)), mock the destination like this:
 ```Java
 mockUtil.mockDestination(DESTINATION_NAME, "ERP_001");
 ```
