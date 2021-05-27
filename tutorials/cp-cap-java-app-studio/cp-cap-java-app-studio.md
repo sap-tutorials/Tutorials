@@ -47,33 +47,24 @@ For this tutorial, you'll create a dev space personalized for building services 
 
 1. Go to the [SAP BTP Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) on Trial.
 
-2. Click **Enter Your Trial Account**.
-
-3. Select your subaccount.
+2. Choose **SAP Business Application Studio** under **Quick Tool Access**.
 
     !![enter subaccount](enter-subaccount.png)
 
-4. Go to **Subscriptions** submenu and filter for **Business Application Studio**.
+3. Choose **Create Dev Space**.
 
-    !![subscriptions filter for Business Application Studio](subscriptions-filter.png)
-
-5. Open the SAP Business Application Studio by clicking on **Go to Application** on the according tile.
-> If you aren't already subscribed, please subscribe first.
-
-6. Choose **Create Dev Space**
-
-    !![click on create dev space](create-dev-space.png)
-
-7. Choose **`CAPTutorial`** as the name for your dev space and **SAP Cloud Business Application** as the application type. Continue with **Create Dev Space**.
+4. Choose **`CAPTutorial`** as the name for your dev space and **Full Stack Cloud Application** as the application type. Continue with **Create Dev Space**.
 
     !![choose space name and type](select-app-type.png)
 
-    By selecting SAP Cloud Business Application, your space comes with several extensions out of the box that you'll need to develop CAP applications. For example, CDS tools are built in. This saves unnecessary setup time.
+    By selecting **Full Stack Cloud Application**, your space comes with several extensions out of the box that you'll need to develop CAP applications. For example, CDS tools are built in. This saves unnecessary setup time.
     The creation of the dev space takes a few seconds.
 
-8. When it's ready, open your dev space by clicking on the name.
+5. When it's ready, open your dev space by clicking on the name.
 
     !![open dev space](open-dev-space.png)
+
+> Please note that you're using the trial version of SAP Business Application Studio. See section [Restrictions](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/a45742a719704bdea179b4c4f9afa07f.html) for more details how your your development environment can be affected.
 
 [DONE]
 [ACCORDION-END]
