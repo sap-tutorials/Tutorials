@@ -181,14 +181,14 @@ The application allows users to make changes against a local offline store and s
 
 [OPTION END]
 
-For more information about how the offline store works, see the [Offline API](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-introduction.html).
+For more information about how the offline store works, see the [Working With Offline Stores](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/working-with-offline-stores.html).
 
 [VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Introduce a synchronization error)]
 
-When syncing changes made while offline, conflicts can occur. One example might be if two people attempted to update a description field for the same product. Another might be updating a record that was deleted by another user. The [`ErrorArchive`](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-errors-and-conflicts.html#accessing-the-errorarchive) provides a way to see details of any of the conflicts that may have occurred. The following instructions demonstrate how to use `ErrorArchive`.
+When syncing changes made while offline, conflicts can occur. One example might be if two people attempted to update a description field for the same product. Another might be updating a record that was deleted by another user. The [`ErrorArchive`](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/handling-errors-and-conflicts/accessing-errorarchive.html) provides a way to see details of any of the conflicts that may have occurred. The following instructions demonstrate how to use `ErrorArchive`.
 
 1.  Update a **SalesOrderItem** and change its quantity to be zero and save it. Update a second item and change its quantity to a different non-zero number and save it.
 
@@ -497,7 +497,7 @@ In this section we will create an **Error Information** screen that displays the
             // Reverts all failing entities to the previous state or set
             // offlineODataParameters.setEnableIndividualErrorArchiveDeletion(true);
             // to cause the deleteEntity call to only revert the specified entity
-            // https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html#reverting-an-error-state
+            // https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/handling-failed-requests/reverting-error-state.html
             // provider.deleteEntity(errorEntity, null, null);
             startActivity(errorIntent);
             break; //For simplicity, only show the first error encountered
@@ -544,7 +544,7 @@ In this section we will create an **Error Information** screen that displays the
               // Reverts all failing entities to the previous state or set
               // offlineODataParameters.setEnableIndividualErrorArchiveDeletion(true);
               // to cause the deleteEntity call to only revert the specified entity
-              // https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html#reverting-an-error-state
+              // https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/handling-failed-requests/reverting-error-state.html
               // provider.deleteEntity(errorEntity, null, null);
               startActivity(errorIntent);
               break; //For simplicity, only show the first error encountered
@@ -848,7 +848,7 @@ In this section we will create an **Error Information** screen that displays the
             // Reverts all failing entities to the previous state or set
             // offlineODataParameters.setEnableIndividualErrorArchiveDeletion(true);
             // to cause the deleteEntity call to only revert the specified entity
-            // https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html#reverting-an-error-state
+            // https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/handling-failed-requests/reverting-error-state.html
             // provider.deleteEntity(errorEntity, null, null);
             startActivity(errorIntent)
             break //For simplicity, only show the first error encountered
@@ -898,7 +898,7 @@ In this section we will create an **Error Information** screen that displays the
                 // Reverts all failing entities to the previous state or set
                 // offlineODataParameters.setEnableIndividualErrorArchiveDeletion(true);
                 // to cause the deleteEntity call to only revert the specified entity
-                // https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html#reverting-an-error-state
+                // https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/handling-failed-requests/reverting-error-state.html
                 // provider.deleteEntity(errorEntity, null, null);
                 startActivity(errorIntent)
                 break //For simplicity, only show the first error encountered
