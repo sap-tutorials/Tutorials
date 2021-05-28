@@ -4,7 +4,7 @@ description: Use SAP Fiori tools to provide additional functionality to your Lis
 auto_validation: true
 time: 40
 tags: [ tutorial>beginner, products>sap-fiori, topic>sapui5, topic>odata, topic>user-interface, products>sap-fiori-tools]
-primary_tag: topic>sapui5
+primary_tag: products>sap-fiori-tools
 ---
 
 ## Prerequisites
