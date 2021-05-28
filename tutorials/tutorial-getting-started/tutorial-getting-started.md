@@ -1,9 +1,9 @@
 ---
 title: Get to Know SAP Tutorials
-description: Take a tour of the Tutorial Navigator and learn how to complete tutorials and earn badges.
+description: Take a tour of the Tutorial Navigator and learn how to complete tutorials and earn badges (part of SAP Community Crossover Learner mission).
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>sap-community]
 primary_tag: products>sap-business-technology-platform
 ---
 
@@ -16,6 +16,8 @@ primary_tag: products>sap-business-technology-platform
 We want to give a very quick tour of SAP Tutorials.
 
 Since you are already doing a tutorial -- this tutorial -- you already know some of the basics. Still, we'd like to review some things maybe you didn't know.
+
+>**REMEMBER:** This tutorial is part of the Crossover Learner mission, as described in [Become a dual threat: SAP learner AND community pro](https://blogs.sap.com/2021/05/20/become-a-dual-threat-sap-learner-and-community-pro/). After completing it, remember that you must (1) vote on at least one question or answer; (2) and comment on the blog.
 
 ---
 
@@ -184,6 +186,6 @@ Now that you toured the Tutorial Navigator, you can get credit for doing this tu
 
 ---
 
-This tutorial was first released in May 2021 as part of the Crossover Learner mission.
+** REMEMBER:** If you are doing this tutorial as part of the Crossover Learner (expires June 30, 2021), remember to go to the community and vote on a question or answer and comment on the blog [Become a dual threat: SAP learner AND community pro](https://blogs.sap.com/2021/05/20/become-a-dual-threat-sap-learner-and-community-pro/).
 
 ---

@@ -37,11 +37,11 @@ In this step we will create a new Dev Space configured for SAP Cloud Application
 
     !![Create Dev Space](AppStudio_Dev_Space_Manager_.jpg)
 
-3. Enter any name you wish for your dev space name and choose **SAP Cloud Business Application** as the kind of application you are creating.
+3. Enter any name you wish for your dev space name and choose **Full Stack Cloud Application** as the kind of application you are creating.
 
     !![Create Dev Space](create_cap_dev_space.png)
 
-4. The Dev space will automatically be configured with the most common tools you need for the type of application you choose. However you can also choose additional, optional extensions. Since you want to combine CAP and HANA artefacts in the same project, we would ask that you also choose SAP HANA Calculation View Editor, SAP HANA Database Explorer, and SAP HANA Tools at minimum.
+4. The Dev space will automatically be configured with the most common tools you need for the type of application you choose. However you can also choose additional, optional extensions. Since you want to combine CAP and HANA artefacts in the same project, we would ask that you also choose SAP HANA Calculation View Editor and SAP HANA Tools at minimum.
 
     !![Configure Dev Space](configure_cap_dev_space.png)
 
