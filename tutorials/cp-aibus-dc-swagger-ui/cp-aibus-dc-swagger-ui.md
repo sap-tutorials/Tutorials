@@ -25,7 +25,7 @@ You will use Swagger UI, via all major web browser, to call the Document Classif
 
 In the service key you created for Document Classification in the previous tutorial: [Create Service Instance for Document Classification with Trial Account](cp-aibus-dc-service-instance), you should find (outside the `uaa` section of the service key) an entry called `url` (as highlighted in the image below).
 
-1. To access the Document Classification Swagger UI, add **`/document-classification/v1`** to the `url` value, paste it in any web browser and press **Enter**. 
+1. To access the Document Classification Swagger UI, add **`/document-classification/v1`** to the `url` value, paste it in any web browser and press **Enter**.
 
     ![Service keys](service-key-details.png)
 
@@ -80,7 +80,7 @@ Once you click the button, several input fields show up:
 
   3.  The field `modelVersion` needs to be filled. As machine learning models can have multiple versions, the version of the model needs to be specified with every request. Write `latest` into the field so that the latest version of the model is used.
 
-  4.  The field `modelName` needs to be specified. Enter `DocumentInfoRecord/AUT` to use the model that categorizes products.
+  4.  The field `modelName` needs to be specified. Enter `sap_document_type` to use the pre-trained model.
 
   5.  Finally, click **Execute** to send the document to the service.
 
@@ -109,7 +109,7 @@ Click **Try it out** to try the request.
 Once you click the button, similar input fields, as before, show up:
 
   1.  Enter `latest` in the field `modelVersion`.
-  2.  Enter `DocumentInfoRecord/AUT` in the field `modelName`.
+  2.  Enter `sap_document_type` in the field `modelName`.
   3.  In the field `documentId`, enter the ID you received in the previous step.
 
 Finally, click **Execute** to request the classification results.
