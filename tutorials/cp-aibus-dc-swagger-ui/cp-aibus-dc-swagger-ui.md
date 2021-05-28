@@ -74,7 +74,7 @@ Next, click **Try it out** to try the request.
 
 Once you click the button, several input fields show up:
 
-  1.  In the field `document`, upload the document you want to classify.
+  1.  In the field `document`, upload the document you want to classify. 
 
   2.  The field `parameters` should be empty. In case the field has any pre-filled content, go ahead and delete it.
 
