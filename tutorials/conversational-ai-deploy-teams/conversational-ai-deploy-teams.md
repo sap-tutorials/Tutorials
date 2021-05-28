@@ -58,6 +58,7 @@ This tutorial shows you how to enable and test your chatbot in Microsoft teams, 
 4. Fill in the registration form.
 
     ![Link text e.g., Destination screen](1-registration-form.png)
+    <div>&nbsp;</div>
 
     | Field Name | Input Value
     |------------|-------------

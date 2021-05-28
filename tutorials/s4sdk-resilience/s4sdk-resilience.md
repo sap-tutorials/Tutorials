@@ -2,7 +2,7 @@
 title: Introduce Resilience to your Application
 description: Introduce resilience to your application using the SAP Cloud SDK.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java  ]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-business-technology-platform, topic>cloud, topic>java  ]
 primary_tag: products>sap-cloud-sdk
 time: 15
 ---
@@ -329,7 +329,7 @@ public class BusinessPartnerServletTest {
 
 Make sure to replace the URL in line 58 with the one of your service (e.g. `http://localhost:3000` for a locally deployed mock server), or otherwise the test will fail.
 
->If you are using a service other than the SAP Business Hub sandbox service or the mock server (see steps 1 and 10 of the [previous tutorial](https://developers.sap.com/tutorials/s4sdk-odata-service-cloud-foundry.html)), i.e., you stored your system information and your credentials in the `systems.yml` and `credentials.yml` files, change your test code like this:
+>If you are using a service other than the SAP Business Hub sandbox service or the mock server (see steps 1 and 10 of the [previous tutorial](s4sdk-odata-service-cloud-foundry)), i.e., you stored your system information and your credentials in the `systems.yml` and `credentials.yml` files, change your test code like this:
 ```Java
 @Test
 public void testService() {
