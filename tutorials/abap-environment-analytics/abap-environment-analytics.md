@@ -28,7 +28,7 @@ Always replace `####` with your initials or group number.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
-The new **RAP based InA service exposure** enables the SAP Business Technology Platform ABAP Environment developers to develop analytical queries(based on ABAP-CDS analytical data models) and expose them via the `InA` (Information Access) service protocol. In this Tutorial we will create a complete Analytical Data Model for Booking data. This consists out of dimensions for Carrier, Customer, Connection and Agency data, as well as an interface CDS view for Booking data which acts as a data source for the cube and query.
+The new **RAP based InA service exposure** enables the SAP Business Technology Platform ABAP Environment developers to develop analytical queries(based on ABAP-CDS analytical data models) and expose them via the `InA` (Information Access) service protocol. In this Tutorial you will create a complete Analytical Data Model for Booking data. This consists out of dimensions for Carrier, Customer, Connection and Agency data, as well as an interface CDS view for Booking data which acts as a data source for the cube and query.
 These analytical queries can be further consumed in the SAP Analytics cloud to create analytical models, stories, multi-dimensional reports and more.
 
 ![overview](1.png)
@@ -38,7 +38,7 @@ These analytical queries can be further consumed in the SAP Analytics cloud to c
 
 [ACCORDION-BEGIN [Step 2: ](Import templates for Analytical CDS views)]
 
-As a first task we will start to import templates that we will use in this tutorial to create Analytical CDS views such as dimension views, cubes and queries.
+As a first task you will start to import templates that you will use in this tutorial to create Analytical CDS views such as dimension views, cubes and queries.
 
 The templates already contain certain annotations that are mandatory for the above mentioned analytical CDS views. If values such as the name of a property have to be added this can then simply be done by using code completion.
 
@@ -63,7 +63,7 @@ The templates already contain certain annotations that are mandatory for the abo
 
     > The Import-Dialog only allows to select files having the extension `.xml.` When you have downloaded the file using a different file extension you have first to rename your file so that it gets the extension `.xml.`
 
-  6. You will see that three new templates have been imported that we will use in the following tutorial.
+  6. You will see that three new templates have been imported that you will use in the following tutorial.
 
     Press **Apply and Close**
 
@@ -75,13 +75,13 @@ The templates already contain certain annotations that are mandatory for the abo
 [ACCORDION-BEGIN [Step 3: ](Create the first dimension for Carrier)]
 
 >Dimensions views are links to various master data, which are later used in reporting as further attributes (according to which different aggregations can be made) and thus make up the versatility of our Analytical Model.
-In the following we will create four dimension views for Carrier, Customers, Connections and Travel Agencies so that we can visualize our
+In the following you will create four dimension views for Carrier, Customers, Connections and Travel Agencies so that you can visualize our
 measures Number of bookings and Flight price in relation to these dimensions.
-That means we will be able to create different charts that show how much money was spend for bookings for the connection
+That means you will be able to create different charts that show how much money was spend for bookings for the connection
 Frankfurt-->New York compared to the connection Frankfurt-->Sydney or that show how much money was spend for flights with a certain airline.
 
 
-We will start to create a dimension view that contains the different Airlines / Carriers. Since our model will contain two measures, namely **Number of bookings** and **Flight Price** we will be able to answer questions such as
+You will start to create a dimension view that contains the different Airlines / Carriers. Since our model will contain two measures, namely **Number of bookings** and **Flight Price** you will be able to answer questions such as
 
   - How much bookings are there per Carrier ? or
   - How much money was spend for bookings for a certain Airline?
@@ -178,11 +178,11 @@ We will start to create a dimension view that contains the different Airlines / 
 
     | Code | Explanation |
     | ------------- | ---------- |
-    | @Metadata.ignorePropagatedAnnotations: true | We ignore annotations from tables and base views, because we want to completely control/override the annotations here. |
-    | @Analytics.dataCategory | We define this CDS view as a dimension. |
+    | @Metadata.ignorePropagatedAnnotations: true | ignore annotations from tables and base views, because you want to completely control/override the annotations here. |
+    | @Analytics.dataCategory | you define this CDS view as a dimension. |
     | @Analytics.internalName: #LOCAL | Create UUIDs. |
-    | @ObjectModel.representativeKey: 'CarrierId' | We define **CarrierID** as the representative key to be able to refer to it using @ObjectModel.foreignKey.association in the Cube that we will create later |
-    |  @ObjectModel.text.element: ['Name'] | Using this annotation we define that the attribute **Name**, contains the text element for a given CarrierId. |  
+    | @ObjectModel.representativeKey: 'CarrierId' | you define **CarrierID** as the representative key to be able to refer to it using @ObjectModel.foreignKey.association in the Cube that you will create later |
+    |  @ObjectModel.text.element: ['Name'] | Using this annotation you define that the attribute **Name**, contains the text element for a given CarrierId. |  
 
 
 [DONE]
@@ -193,8 +193,8 @@ We will start to create a dimension view that contains the different Airlines / 
   ***Customer Dimension***
 
   The data for customers is contained in the table `/dmo/customer`. So you have to follow all steps above and create a dimension `ZRAP500_I_Customer_####` and use the table `/DMO/customer` as a data source / reference object.  
-  The table `/dmo/customer` contains the columns first name and last name, but not the full name of the customer. We will hence add a new field to our CDS view where we calculate the full name so that we can use it as the text element for the key field `CustomerId`.  
-  The table `/dmo/customer` also contains fields that are too long to be used in analytics scenarios and it contains administrative fields that we do not want to show. We will hence delete these fields from the field list after having used the  **Define a View Entity for a Dimension** template.
+  The table `/dmo/customer` contains the columns first name and last name, but not the full name of the customer. You will hence add a new field to our CDS view where you calculate the full name so that you can use it as the text element for the key field `CustomerId`.  
+  The table `/dmo/customer` also contains fields that are too long to be used in analytics scenarios and it contains administrative fields that you do not want to show. You will hence delete these fields from the field list after having used the  **Define a View Entity for a Dimension** template.
 
   1. Right click on your **Core Data Services** folder, choose **Data Definition** > **New** > **Data Definition**. Enter following values and press **Next**:
 
@@ -210,7 +210,7 @@ We will start to create a dimension view that contains the different Airlines / 
 
     `concat_with_space(first_name, last_name, 1) as CustomerName,`
 
-  5. Remove or comment out these fields because they are too long for our analytics scenarios and we do not need any administration fields.
+  5. Remove or comment out these fields because they are too long for our analytics scenarios and you do not need any administration fields.
 
     ```
     //    email_address as EmailAddress,
@@ -243,7 +243,7 @@ We will start to create a dimension view that contains the different Airlines / 
 
    8. Save and activate the dimension.
 
-    > We expose the association `_Country` to be able to access country information in the cube and query.   
+    > You expose the association `_Country` to be able to access country information in the cube and query.   
 
    9. Your final code should look like following:
 
@@ -283,9 +283,9 @@ We will start to create a dimension view that contains the different Airlines / 
 
   ***Connection Dimension***
 
-  The information about the connections (flights) is stored in the table `/dmo/connection`. In this dimension view we again add a new field. The newly created field **Trip** will show the departure airport and the destination airport in one string.
+  The information about the connections (flights) is stored in the table `/dmo/connection`. In this dimension view you again add a new field. The newly created field **Trip** will show the departure airport and the destination airport in one string.
   For tables such as `/dmo/connection` that contain more than one key field, the key fields that are not annotated as the representative key field have to be annotated with a foreign key relationship.
-  Since the key field `ConnectionId` will be annotated as the `representativeKey` we have to add an association that points to the Carrier dimension view which will be added as a foreign key relationship to the key field `CarrierId`.
+  Since the key field `ConnectionId` will be annotated as the `representativeKey` you have to add an association that points to the Carrier dimension view which will be added as a foreign key relationship to the key field `CarrierId`.
 
   1. Right click on the folder **Data Definitions** > **New** > **Data Definition**.    
   2. Enter the following values and press **Next**.
@@ -409,7 +409,7 @@ We will start to create a dimension view that contains the different Airlines / 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Booking interface view)]
-We now have to create an interface view that serves as a data source for the Cube.
+You now have to create an interface view that serves as a data source for the Cube.
 
   1. Right click on the folder **Data Definitions** and choose **New** > **New Data Definition** from the context menu.
 
@@ -422,7 +422,7 @@ We now have to create an interface view that serves as a data source for the Cub
       ![interface](1300.png)
 
   3. Select a transport request and press **Next**.  
-     Do **NOT** press finish at this point because we want to select a different template in the next step.  
+     Do **NOT** press finish at this point because you need to select a different template in the next step.  
   4. This time select the template **Define a View Entity** and then press **Finish**
 
       ![new interface](1310.png)
@@ -482,7 +482,7 @@ We now have to create an interface view that serves as a data source for the Cub
 >The Cube is the analytical interface view that is ultimately used in the query and "holds together" the model. In addition to the facts and the measurable key figures (if necessary also calculations), it contains references to the dimensions.
 
 
-We will now use the Booking interface view as a data source to create a cube. All cubes must have at least one measure. The measurable data are the quantifiable fields that can be calculated, such as number of flight bookings and price of a flight. Using a query, you can SUM these fields. To create a cube, there is a mandatory header annotation:
+You will now use the Booking interface view as a data source to create a cube. All cubes must have at least one measure. The measurable data are the quantifiable fields that can be calculated, such as number of flight bookings and price of a flight. Using a query, you can SUM these fields. To create a cube, there is a mandatory header annotation:
 
 <pre>@Analytics.dataCategory: #CUBE </pre>
 
@@ -512,14 +512,14 @@ This annotation is part of the template **Define a View Entity for a Cube** that
        association [0..1] to ZRAP500_I_AGENCY_####    as _Agency     on  $projection.AgencyID = _Agency.AgencyId
     ```
 
-    we also have to add the following to entries to the field list
+    you also need to add the following to entries to the field list
 
     <pre>
         _Agency,
         _Customer._Country    as _CustomerCountry
     </pre>    
 
-5. In the created cube we define `foreignKey associatons` via `_Customer`, `_Carrier`, `_Connection`, and `_Agency` to be able to fetch and expose information in the cube and in the query.
+5. In the created cube you define `foreignKey associatons` via `_Customer`, `_Carrier`, `_Connection`, and `_Agency` to be able to fetch and expose information in the cube and in the query.
 
     - Add the annotation `@ObjectModel.foreignKey.association: '_Customer'` to the field `CustomerId`
     - Add the annotation `@ObjectModel.foreignKey.association: '_Carrier'` to the field `CarrierId`  
@@ -535,7 +535,7 @@ This annotation is part of the template **Define a View Entity for a Cube** that
         _Customer.City        as CustomerCity,
     ```
 
-8. We add fields that contain information about the customers
+8. You add fields that contain information about the customers
 
     ```customer
         @ObjectModel.foreignKey.association: '_CustomerCountry'
@@ -543,9 +543,9 @@ This annotation is part of the template **Define a View Entity for a Cube** that
         _Customer.City        as CustomerCity,
     ```
 
-9. We now add Measures to our cube.
+9. You now add Measures to our cube.
 
-    We add a field `TotalOfBookings`
+    You add a field `TotalOfBookings`
 
     ```totalOfBooking
         @EndUserText.label: 'Total of Bookings'
@@ -662,7 +662,7 @@ Again you can use a template that you have imported at the beginning of this tut
 
   5. Edit the code of your query and add the annotation **@AnalyticsDetails.query.axis** to all properties except the two measures `FlightPrice` and `TotalOfBookings`. All fields beside the field `CustomerCountry` get the annotation **@AnalyticsDetails.query.axis: #ROWS**, whereas the field `CustomerCountry` gets the annotation **@AnalyticsDetails.query.axis: #COLUMN**.
 
-  6. We add a currency conversion to the field `FlightPrice` to be able to comparison all flight prices in a single currency.    
+  6. You add a currency conversion to the field `FlightPrice` to be able to comparison all flight prices in a single currency.    
 
         ```
               @Semantics.amount.currencyCode: 'CurrencyCode'
@@ -740,7 +740,7 @@ Again you can use a template that you have imported at the beginning of this tut
 
 Similar to the SAP Fiori Elements preview which is offered for OData V2 UI and OData V4 UI service bindings there is now an Analytical Data Preview available. This can be used by the ABAP developer to test the implementation of an Analytical Query since the preview uses the InA protocol.
 
-Now that we have created the query it is possible to use a data preview to test our implementation.
+Now that you have created the query it is possible to use a data preview to test our implementation.
 
 1. Navigate to the folder **Data Definition**
 2. Right click on the query `ZRAP500_C_BOOKINGQUERY_####` and select **Open with** > **Data Preview**
@@ -958,7 +958,7 @@ Now that we have created the query it is possible to use a data preview to test 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Create model)]
-Models transform your raw data into useful information that can then be used to create dynamic visualizations. Since we will use the unique feature Live Data Connection SAP Analytics cloud will create the model based on the analytical query that we have created and published in the previous exercise. Based on such a model you can perform online analysis without the need of data replication.
+Models transform your raw data into useful information that can then be used to create dynamic visualizations. Since you will use the unique feature Live Data Connection SAP Analytics cloud will create the model based on the analytical query that you have created and published in the previous exercise. Based on such a model you can perform online analysis without the need of data replication.
 
 1. Expand navigation bar.
 
@@ -1007,7 +1007,7 @@ Models transform your raw data into useful information that can then be used to 
 [ACCORDION-BEGIN [Step 18: ](Create Story)]
 
 A story is a presentation-style document that uses various elements such as charts, images or tables to visualize your data.
-Adding a chart starts with picking a chart type. Then you select your model and add measures and dimension and start on working how the data is displayed. Here we will create a story including a chart, a table and a Donut chart.
+Adding a chart starts with picking a chart type. Then you select your model and add measures and dimension and start on working how the data is displayed. Here you will create a story including a chart, a table and a Donut chart.
 
 
 ***Open a blank dashboard***
@@ -1056,7 +1056,7 @@ Adding a chart starts with picking a chart type. Then you select your model and 
 
   ![table](2200.png)
 
-   In the table you can find all data from your query, what you choose as **ROWS** or **COLUMNS**. We have just one dimension `CustomerCountry` in columns and all other dimensions are in rows.
+   In the table you can find all data from your query, what you choose as **ROWS** or **COLUMNS**. You have just one dimension `CustomerCountry` in columns and all other dimensions are in rows.
 
    ![columns](2210.png)
 
@@ -1068,7 +1068,7 @@ Adding a chart starts with picking a chart type. Then you select your model and 
 
 2. Choose **Flight Price** under **+ Add Measure** and choose **Airline ID** under **+ Add Dimension**.
 
-    > We now have a visualization how the booking costs are distributed in different airlines.  
+    > You now have a visualization how the booking costs are distributed in different airlines.  
 
     ![measure](2230.png)
 
