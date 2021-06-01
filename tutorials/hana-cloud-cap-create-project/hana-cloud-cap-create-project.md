@@ -110,6 +110,28 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
 [ACCORDION-BEGIN [Step 3: ](Create a new project)]
 
+
+> The wizard that is explained in this step currently doesn't work due to a [temporary problem](https://answers.sap.com/questions/13395658/issue-in-creating-cap-project.html). Please open a new terminal and execute the following command to achieve the same result without a GUI.
+
+> 1. Open a new terminal
+>    !![New terminal](temp_new_terminal.png)
+> 1. Execute the following commands
+>        
+>        `npm i -g @sap/cds-dk`
+>
+>        `bash  # a bit strange, but makes sure the new cds-dk is active`
+>
+>        `cd projects/`
+>
+>        `cds init MyHANAApp --add hana,mta,pipeline`
+>
+> 1. Open the project in a new workspace
+>    !![New terminal](temp_open_ws1.png)
+>    !![New terminal](temp_open_ws2.png)
+
+> 1. Proceed to the next step
+
+
 1. From the SAP Business Application Studio Welcome tab, click **Start from template Create a new project**.
 
     !![New project from template](start_from_template.png)
@@ -245,13 +267,6 @@ We are using several dependent Node.js modules in our project. They are referenc
 [ACCORDION-BEGIN [Step 7: ](Initialize local Git repository)]
 
 You will use the local Git repository for basic version management.
-
-1. If this is the first time you have used Git in this Business Application Studio Dev Space, you need to do some basic configuration. Please open a terminal (Terminal -> New Terminal) and issue the two commands from the command line replacing the values for your email and name with the actual values.
-
-    ```shell
-    git config --global user.email "your@email.com"
-    git config --global user.name "Your Name"
-    ```
 
 2. Click on the **Source Control** icon
 
