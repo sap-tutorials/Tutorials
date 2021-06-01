@@ -8,7 +8,7 @@ time: 20
 tags: [ tutorial>intermediate, tutorial>license, topic>internet-of-things, products>sap-internet-of-things, products>sap-business-technology-platform]
 primary_tag: topic>internet-of-things
 ---
- 
+
 ## Prerequisites
 - Basic knowledge of REST, APIs and Postman
 - Followed the Tutorial [Install Postman Rest Client](api-tools-postman-install)
@@ -33,7 +33,7 @@ primary_tag: topic>internet-of-things
 
 Before you can create your **Rule** we need to create a custom **Event Type** which you will use as Output in the Rule later on. To do so, you must do the following: (For more information see [SAP Help Portal](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/latest/en-US/f6fd1c9194d64286967e2446376b254c.html) )
 
-  - Update the `package` Postman environment variable to you package name, for example **`sap.tutorial`**.
+  - Read the fully qualified package name by triggering **Step 1.1 Get Package name** and update the `package` Postman environment variable to your package name, for example **`iot.tenant.sap.tutorial`**.
 
   - Create your `Event Property Set Type` by using the Postman collection and triggering the request **Step 2.1 Create Event Property Set Type**.
 
