@@ -37,11 +37,11 @@ In this step we will create a new Dev Space configured for SAP Cloud Application
 
     !![Create Dev Space](AppStudio_Dev_Space_Manager_.jpg)
 
-3. Enter any name you wish for your dev space name and choose **SAP Cloud Business Application** as the kind of application you are creating.
+3. Enter any name you wish for your dev space name and choose **Full Stack Cloud Application** as the kind of application you are creating.
 
     !![Create Dev Space](create_cap_dev_space.png)
 
-4. The Dev space will automatically be configured with the most common tools you need for the type of application you choose. However you can also choose additional, optional extensions. Since you want to combine CAP and HANA artefacts in the same project, we would ask that you also choose SAP HANA Calculation View Editor, SAP HANA Database Explorer, and SAP HANA Tools at minimum.
+4. The Dev space will automatically be configured with the most common tools you need for the type of application you choose. However you can also choose additional, optional extensions. Since you want to combine CAP and HANA artefacts in the same project, we would ask that you also choose SAP HANA Calculation View Editor and SAP HANA Tools at minimum.
 
     !![Configure Dev Space](configure_cap_dev_space.png)
 
@@ -66,45 +66,71 @@ In this step we will create a new Dev Space configured for SAP Cloud Application
 
 [ACCORDION-BEGIN [Step 2: ](Configure dev space)]
 
-Before we create our SAP Cloud Application Programming Model project, we want to do a few more one-time configuration steps to prepare the Dev Space
+Before we create our SAP HANA project, we want to do a few more one-time configuration steps to prepare the Dev Space
 
-1. In the bottom left of the SAP Business Application Studio you will see a message that your Organization and Space are not set yet. Click this message to begin supplying your trial connection details
+1. In the left side of the Business Application Studio click on the Cloud Foundry targets icon
 
-    !![Org and Space Not Set](cf_not_set.png)
+    !![CF Not Set](cf_not_set.png)
 
-2. The command window will then open at the top of the SAP Business Application Studio. The first input will prompt you for the API endpoint
+2. Now in the Cloud Foundry Targets window you can expand either Service or Applications and then click on the Logon icon to continue the configuration process
+
+    !![Login Required](cf_login_required.png)
+
+3. The command window will then open at the top of the SAP Business Application Studio. The first input will prompt you for the API endpoint
 
     !![API Endpoint](api_endpoint.png)
 
-3. The default value proposed is likely the correct value, but if you need to confirm; the value can be found in the SAP BTP cockpit at the Subaccount level
+4. The default value proposed is likely the correct value, but if you need to confirm; the value can be found in the SAP BTP cockpit at the Subaccount level
 
     !![Finding the API Endpoint](api_endpoint_from_subaccount.png)
 
-4. Press **Enter** to confirm your input of the API endpoint. The next input field will ask you for the email address you used to create your SAP BTP trial account
+5. Press **Enter** to confirm your input of the API endpoint. The next input field will ask you for the email address you used to create your SAP BTP trial account
 
     !![Email](email.png)
 
-5. The next input will ask you for your SAP BTP trial account password
+6. The next input will ask you for your SAP BTP trial account password
 
     !![Password](password.png)
 
-6. The next input will ask you for your Organization. In most situations you will have a single choice. But like the API endpoint earlier, if you need to confirm the correct value it will be displayed in the top navigation of the SAP BTP cockpit
+7. The next input will ask you for your Organization. In most situations you will have a single choice. But like the API endpoint earlier, if you need to confirm the correct value it will be displayed in the top navigation of the SAP BTP cockpit
 
     !![Organization](organization.png)
 
-7. The final input will ask you for your Space. If you choose the endpoint API and Organization correctly, then you should have a single option of **dev**
+8. The final input will ask you for your Space. If you choose the endpoint API and Organization correctly, then you should have a single option of **dev**
 
     !![Space](space.png)
 
-8. Upon completion of all the inputs, you should see that the Organization and Space have been set and you will see the values in the Targeting... dialog at the bottom left of the SAP Business Application Studio
+9. Upon completion of all the inputs, you should see that the Organization and Space have been set and you will see any service instances or application instances from the target space.
 
-    !![Set Correctly](org_space_set_correctly.png)
+    !![Org and Space Set Correctly](org_space_set_correctly.png)
 
 [DONE]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 3: ](Create a new project)]
+
+
+> The wizard that is explained in this step currently doesn't work due to a [temporary problem](https://answers.sap.com/questions/13395658/issue-in-creating-cap-project.html). Please open a new terminal and execute the following command to achieve the same result without a GUI.
+
+> 1. Open a new terminal
+>    !![New terminal](temp_new_terminal.png)
+> 1. Execute the following commands
+>        
+>        `npm i -g @sap/cds-dk`
+>
+>        `bash  # a bit strange, but makes sure the new cds-dk is active`
+>
+>        `cd projects/`
+>
+>        `cds init MyHANAApp --add hana,mta,pipeline`
+>
+> 1. Open the project in a new workspace
+>    !![New terminal](temp_open_ws1.png)
+>    !![New terminal](temp_open_ws2.png)
+
+> 1. Proceed to the next step
+
 
 1. From the SAP Business Application Studio Welcome tab, click **Start from template Create a new project**.
 
@@ -242,13 +268,6 @@ We are using several dependent Node.js modules in our project. They are referenc
 
 You will use the local Git repository for basic version management.
 
-1. If this is the first time you have used Git in this Business Application Studio Dev Space, you need to do some basic configuration. Please open a terminal (Terminal -> New Terminal) and issue the two commands from the command line replacing the values for your email and name with the actual values.
-
-    ```shell
-    git config --global user.email "your@email.com"
-    git config --global user.name "Your Name"
-    ```
-
 2. Click on the **Source Control** icon
 
     !![Source Control](source_control.png)
@@ -269,11 +288,11 @@ You will use the local Git repository for basic version management.
 Each time you commit to the local or remote repository, you create a version. This will allow you to revert and compare any changes.
 **It is recommended that you perform commits at the end of each tutorial.**
 
-1. Choose **Stage All Changes** to include all the new or changed files in this commits
+1. Choose **Changes -> Stage All Changes** to include all the new or changed files in this commits
 
     !![Stage All](stage_all.png)
 
-2. Add a commit message and click **Commit (Signed Off)**:
+2. Add a commit message and click **Commit All (Signed Off)**:
 
     !![Commit](commit.png)
 

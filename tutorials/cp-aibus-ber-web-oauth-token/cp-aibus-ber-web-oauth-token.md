@@ -35,7 +35,7 @@ To get your OAuth access token you will need the values listed below from the se
 
 !![BER TOKEN](png-files/web-browser.png)
 
-You should receive a response like the following: 
+You should receive a response like the following:
 
 ```JSON
 {
@@ -47,7 +47,7 @@ You should receive a response like the following:
 }
 ```
 
-You have successfully generated your OAuth access token for the service and you are now all set to [Use Machine Learning to Detect and Highlight Entities from Unstructured Text](cp-aibus-ber-swagger-ui).
+You have successfully generated your OAuth access token for the service and you are now all set to [Detect and Highlight Entities from Unstructured Text with Pre-trained Models](cp-aibus-ber-swagger-ui), and [Create Dataset and Upload Training Data](cp-aibus-ber-custom-data) followed by [Deploy Model and Get Prediction Results](cp-aibus-ber-custom-deploy).
 
 [DONE]
 [ACCORDION-END]

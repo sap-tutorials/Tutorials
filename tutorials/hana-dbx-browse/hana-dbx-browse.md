@@ -108,8 +108,30 @@ primary_tag: products>sap-hana-cloud
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Analysis)]
+An analysis view is provided to help get quick insights into the data of a table.
 
-[ACCORDION-BEGIN [Step 3: ](Additional features)]
+1. Right-click on the ROOM table and choose **Open Data**.
+
+2. Click on the **Analysis** tab.
+
+    ![room data](room-data.png)
+
+3. Create a chart showing how many reservations of each room type have been made.
+
+    ![room count by type](room-count-by-type.png)
+
+4. Create a chart showing the overall value of the bookings by room type.
+
+    ![sum of the booking by room type](room-price-sum.png)
+
+We can see that reservations for suites only make up a small part of the overall bookings but account for the largest share of the total revenue.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 4: ](Additional features)]
 
 1. Right-click the tab of an open object such as CITY and choose  **Display In Database Browser** to reveal the object in the database browser.
 
@@ -119,13 +141,13 @@ primary_tag: products>sap-hana-cloud
 
     ![Object Displayed In Catalog](ObjectOpenedInCatalog.png)
 
-2.  A list of objects that make use of a selected object can be found using the **Where-Used Browser** or in more recent versions **Find Dependencies** menu item.  
+2.  A list of objects that make use of a selected object can be found using the **Find Dependencies** menu item.  
 
-    Right-click the ROOM table and choose **Where-Used Browser**.
+    Right-click the ROOM table and choose **Find Dependencies**.
 
     ![where used browser](where-used.png)
 
-    As seen in the screenshot below, the ROOM table is used by the `AVERAGE_PRICE` function and the `HOTEL_ROOMS_VIEW`.
+    As seen in the screenshot below, the ROOM table is used by the `AVERAGE_PRICE` function and the `HOTEL_ROOMS_VIEW` as well as triggers related to the foreign key between the ROOM and HOTEL tables.
 
     ![where used browser](where-used2.png)
 

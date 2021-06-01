@@ -23,7 +23,6 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
-
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls by using **NativeScript** (TypeScript/JavaScript applicable for both Android and iOS)
 
 In this tutorial, you will create a Slider extension via NativeScript (in TypeScript language) which will be common for both device platforms.
@@ -44,7 +43,7 @@ In this tutorial, you will create a Slider extension via NativeScript (in TypeSc
 
     !![MDK](img-1.3.png)
 
-4. In *Basic Information* step, select or provide the below information and click **Next**:
+4. In *Type* step, select or provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
@@ -52,11 +51,11 @@ In this tutorial, you will create a Slider extension via NativeScript (in TypeSc
     | `Your project name` | `MDK_Slider` |
     | `Your application name` | <default name is same as project name, you can provide any name of your choice> |    
 
-    !![MDK](img_1.4.png)
+    !![MDK](img-1.4.png)
 
     >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.   
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.
 
 5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Slider` project in the project explorer.
 
@@ -81,7 +80,7 @@ The extension control that you will be creating to extend the functionality of y
 
     !![MDK](img_2.2.png)
 
-5. Provide the below information:
+5. In the **Basic Information** step, provide the below information:
 
     | Field | Value |
     |----|----|
@@ -127,7 +126,7 @@ The extension control that you will be creating to extend the functionality of y
     }
     ```
 
-    !![MDK](img_2.4.png)
+    !![MDK](img-2.4.png)
 
     >Above schema will add these predefined properties (`MaxValue`, `MinValue` and `Title`) in the map extension control. You will provide values for these properties in next step.
 
@@ -168,7 +167,7 @@ You will add this registered control in a Form Cell page.
 
 4. In the **Properties** section, set the **Height** to 72.
 
-    !![MDK](img_3.4.png)
+    !![MDK](img-3.4.png)
 
 5. Scroll down to the **Extension Properties**, and provide minimum & maximum counter value for the Extension control properties.
 
@@ -178,13 +177,13 @@ You will add this registered control in a Form Cell page.
     | `MinValue` | 10 |
     | `Title` | Counter |  
 
-    !![MDK](img_3.5.png)
+    !![MDK](img-3.5.png)
 
 6. You will fetch the value of the Slider control and would display this value in a message.
 
     Right-click the `SliderExtension.page`, open it with **Code Editor**.
 
-    !![MDK](img_3.6.png)
+    !![MDK](img-3.6.png)
 
     Rename the value for `_Name` property to `MyExtensionControlName`.
 
@@ -225,11 +224,11 @@ You will add this registered control in a Form Cell page.
 
     Double click the **Save** type and click **OK**.
 
-    !![MDK](img_3.9.png)
+    !![MDK](img-3.9.png)
 
-10. In the **Properties** pane | **Events** tab, click the **link** icon for the `OnPress` property to open the object browser, bind it to `ShowMessage.action`.
+10. In the **Properties** pane | **Events** tab, click the 3 dots icon for the `OnPress` property to open the **Object Browser**, bind it to `ShowMessage.action`.
 
-    !![MDK](img_3.10.png)
+    !![MDK](img-3.10.png)
 
 11. You can also add an input field where you can provide a manual entry for the slider value and the counter will adapt accordingly.
 
@@ -269,11 +268,11 @@ You will add this registered control in a Form Cell page.
     | `Caption`| `Manual Entry` |
     | `placeholder` | `Enter number to set the slider ext's value` |
 
-    !![MDK](img_3.16.png)
+    !![MDK](img-3.16.png)
 
-15. Navigate to **Events** tab, click the **link** icon for the `OnValueChange` property to open the object browser, bind it to `SetExtensionValue.js`.
+15. Navigate to **Events** tab, click the 3 dots icon for the `OnValueChange` property to open the **Object Browser**, bind it to `SetExtensionValue.js`.
 
-    !![MDK](img_3.17.png)
+    !![MDK](img-3.17.png)
 
 [DONE]
 [ACCORDION-END]
@@ -855,9 +854,9 @@ You will add this registered control in a Form Cell page.
 
 In the template generated project, there is already a page called `Main.page` which is also the page that opens after successful onboarding. For this tutorial, you will change the default behavior of the app launch.
 
-Double click the `Application.app` file, select the `SliderExtension.page` for the **Main Page** field.
+Click the `Application.app` file, select the `SliderExtension.page` for the **Main Page** field.
 
-!![MDK](img_5.png)
+!![MDK](img-5.png)
 
 [DONE]
 [ACCORDION-END]
@@ -872,13 +871,17 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 2. Select deploy target as **Mobile Services**.
 
-    !![MDK](img_6.2.png)
+    !![MDK](img-5.2.png)
 
-3. Select the application from Mobile Services.
+3. Select **Mobile Services Landscape**.
 
-    !![MDK](img_6.3.png)
+    !![MDK](img-5.3.1.png)    
 
-    You should see **Deploy succeeded** message.
+4. Select the application from Mobile Services.
+
+    !![MDK](img-5.3.png)
+
+    You should see **Deploy to Mobile Services successfully!** message.
 
     !![MDK](img-6.4.png)
 
@@ -889,11 +892,11 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
 !![MDK](img-7.1.png)
 
-!![MDK](img_7.2.png)
+!![MDK](img-6.2.png)
 
 >Leave the Onboarding dialog box open for step 7.
 

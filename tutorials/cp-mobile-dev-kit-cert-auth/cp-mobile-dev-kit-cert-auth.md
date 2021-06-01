@@ -1,5 +1,5 @@
 ---
-title: Enable Certificate based Authentication
+title: Enable Certificate-Based Authentication
 description: Create a branded MDK client that can on-board using certificates for authentication.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
@@ -61,7 +61,7 @@ To enable certificate based authentication, you need to modify **Redirect URL** 
 
     !![MDK](img-2.2.png)
 
-3. Replace the *Redirect URL* with `mdkclient://oauth2redirect` parameter, and click **OK** to save the changes. This *Redirect URL* needs to be added in the `URLWhitelist` property while building your branded client (step 3.5).
+3. Replace the *Redirect URL* with `mdkclient://oauth2redirect` parameter, and click **OK** to save the changes. This *Redirect URL* needs to be added in the `AllowedDomains` property while building your branded client (step 3.5).
 
     !![MDK](img-2.3.png)
 
@@ -123,15 +123,15 @@ Make sure that you have already completed steps 1 & 2 from [this](cp-mobile-dev-
 
     !![MDK](img-3.6.png)
 
-7. `SapCloudPlatformEndpoint`: Server URL from `APIs` tab.
+7. `ServerUrl`: Server URL from `APIs` tab.
 
     !![MDK](img-3.7.png)   
 
-8. Add `mdkclient://oauth2redirect` in the `URLWhitelist` property.
+8. Add `mdkclient://oauth2redirect` in the `AllowedDomains` property.
 
     !![MDK](img-3.8.1.png)
 
-    >If you are connecting to `AliCloud` accounts, you will also need to add your custom domains under the same `URLWhitelist` property. You can find more details in [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#connection-settings-allowlist).     
+    >If you are connecting to `AliCloud` accounts, you will also need to add your custom domains under the same `AllowedDomains` property. You can find more details in [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#connection-settings-allowlist).     
 
 9. In the last section of `BrandedSettings.json` file, make these changes:
 
@@ -188,15 +188,15 @@ Make sure that you have already completed steps 1 & 2 from [this](cp-mobile-dev-
 
     !![MDK](img-3.6.png)
 
-7. `SapCloudPlatformEndpoint`: Server URL from `APIs` tab.
+7. `ServerUrl`: Server URL from `APIs` tab.
 
     !![MDK](img-3.7.png)           
 
-8. Add `mdkclient://oauth2redirect` in the `URLWhitelist` property.
+8. Add `mdkclient://oauth2redirect` in the `AllowedDomains` property.
 
     !![MDK](img-3.8.1.png)
 
-    >If you are connecting to `AliCloud` accounts, you will also need to add your custom domains under the same `URLWhitelist` property. You can find more details in [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#connection-settings-allowlist).   
+    >If you are connecting to `AliCloud` accounts, you will also need to add your custom domains under the same `AllowedDomains` property. You can find more details in [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#connection-settings-allowlist).   
 
 9. In the last section of `BrandedSettings.json` file, make these changes:
 
@@ -287,15 +287,16 @@ Make sure that you have already completed steps 1 & 2 from [this](cp-mobile-dev-
 
     Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
 
-4. Tap **AGREE** on `End User License Agreement`.
-
-    !![MDK](img-5.19.png)
-
-5. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.4 & 3.6.
+4. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.4 & 3.6. Tap **START** to connect the MDK client to SAP Business Technology Platform (BTP).
 
     !![MDK](img-5.20.png)
 
-6. Tap **START** to connect the MDK client to SAP Business Technology Platform (BTP). As you enabled the certificate based authentication, MDK client detects a valid certificate installed on the device and connects successfully to the SAP BTP.
+5. Tap **AGREE** on `End User License Agreement`.
+
+    !![MDK](img-5.19.png)
+
+
+6.  As you enabled the certificate based authentication, MDK client detects a valid certificate installed on the device and connects successfully to the SAP BTP.
 
     !![MDK](img-5.21.png)
 
