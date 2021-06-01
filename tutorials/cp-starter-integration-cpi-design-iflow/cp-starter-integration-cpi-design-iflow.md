@@ -22,7 +22,7 @@ author_profile: https://github.com/Karunaharan
 
     In the Integration Suite home page, click on the **Design, Develop, and Operate Integration Scenarios** tile. Alternatively, in the provisioning app, use the URL available under the **Cloud Integration** section.
     In the Cloud Integration application, click the **Design** tab (pencil icon) to access your workspace.
-    This is where you will create your integration package and integration flow.
+    This is where you will design your integration package and integration flow.
 
   ![Access workspace](1-1-access-workspace.png)
 

@@ -209,7 +209,7 @@ In this section, you will create and activate a process visibility scenario to p
 
 2. To create a new visibility scenario, choose **+**.
 
-    !![Create Scenarios](addscenario.png)
+    !![Create Scenarios](addscenario_1.png)
 
 3. Enter **Name** as `Employee Onboarding`, any **Description** of your choice, and click **Create**.
 

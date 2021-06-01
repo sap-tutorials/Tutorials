@@ -16,8 +16,8 @@ author_profile: https://github.com/Karunaharan
 ## Details
 ### You will learn
   - How to define and expose an integration flow endpoint as an API
-  - How to assign a policy to the API
-  - How to call the API and execute the integration flow using the API portal
+  - How to assign a policy to your API
+  - How to call your API and execute the integration flow using the API portal
 
 
 In this tutorial, you will define the endpoint of the integration flow developed in the last tutorial as an application programming interface (API).
@@ -188,7 +188,7 @@ This grant type works in the following way: In a first call, the API client prov
 
 7. Choose **Edit**.
 
-    !![EDit](022.png)
+    !![Edit](022.png)
 
 8. Select **Policies**.
 
@@ -242,7 +242,7 @@ This grant type works in the following way: In a first call, the API client prov
 
     In this step you have assigned a policy template.
 
-[VALIDATE_7]
+[VALIDATE_4]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Execute API)]

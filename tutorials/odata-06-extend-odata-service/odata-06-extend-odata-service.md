@@ -175,7 +175,7 @@ This is a relationship that might be commonly expressed like this:
 
 Before moving on to start creating a relationship like this in our own `Northbreeze` OData service, let's just try out an OData query operation on Northwind that uses this `NavigationProperty` that we've been looking at, and that is a count of the products in the seventh category ("Produce"): <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Categories(7)/Products/$count">/Categories(7)/Products/$count</a>. This should return a simple numeric value (which is 5, at the time of writing).
 
-Staying with Northwind, let's look at the details for the seventh category next, including a list of products in that category <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Categories(7)?$expand=Products">/Categories(7)$?expand=Products</a> (only a couple of the products are shown in this sample output, for brevity):
+Staying with Northwind, let's look at the details for the seventh category next, including a list of products in that category <a href="https://services.odata.org/V4/Northwind/Northwind.svc/Categories(7)?$expand=Products">/Categories(7)?$expand=Products</a> (only a couple of the products are shown in this sample output, for brevity):
 
 ```JSON
 {
