@@ -421,10 +421,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Enhance behavior definition for projection view](projection2.png)
 
-      Hint: If your accept travel button does not appear, wait a few minutes or deactivate your service binding and activate it again.
+      **Hint: If your UI buttons don't appear, please add a space anywhere you want in your data definition `ZI_TRAVEL_M_XXX` and behavior definition `ZI_TRAVEL_M_XXX`, activate both and open your SAP Fiori preview again. It takes 120 seconds to make the buttons visible on the user interface.**
 
 [DONE]
-[ACCORDION-END]
+[ACCORDION-END]   
 
 
 [ACCORDION-BEGIN [Step 4: ](Test yourself)]
