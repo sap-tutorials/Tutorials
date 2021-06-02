@@ -31,7 +31,7 @@ primary_tag: topic>internet-of-things
 
 [ACCORDION-BEGIN [Step 1:](Configure event in SAP Internet of Things)]
 
-Before you can create your **Rule** we need to create a custom **Event Type** which you will use as Output in the Rule later on. To do so, you must do the following: (For more information see [SAP Help Portal](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/latest/en-US/f6fd1c9194d64286967e2446376b254c.html) )
+Before you can create your **Rule** you need to create a custom **Event Type** which you will use as Output in the Rule later on. To do so, you must do the following: (For more information see [SAP Help Portal](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/latest/en-US/f6fd1c9194d64286967e2446376b254c.html) )
 
   - Read the fully qualified package name by triggering **Step 1.1 Get Package name** and update the `package` Postman environment variable to your package name, for example **`iot.tenant.sap.tutorial`**.
 
