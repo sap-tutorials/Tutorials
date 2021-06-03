@@ -221,7 +221,7 @@ After initializing the project, you should see the following empty folders:
 
     [cds] - serving CatalogService { at: '/catalog' }
 
-    [cds] - launched in: 1.453s
+    [cds] - launched in: 1.071s
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -365,11 +365,12 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
     [cds] - connect to db > sqlite { database: ':memory:' }
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
      > filling my.bookshop.Authors from ./db/csv/my.bookshop-Authors.csv
+     > filling my.bookshop.Books from ./db/csv/my.bookshop-Books.csv
     /> successfully deployed to sqlite in-memory db
 
     [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
-    [cds] - launched in: 686.831ms
+    [cds] - launched in: 1.049s
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -435,11 +436,11 @@ Instead of using in-memory, you can also use persistent databases.
     ```
 
     ```Shell/Bash
-    [cds] - connect to db > sqlite { database: '/Users/d053053/my-bookshop/db/my-bookshop.db' }
+    [cds] - connect to db > sqlite { database: '/Users/xxxxxx/my-bookshop/db/my-bookshop.db' }
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
-    [cds] - launched in: 1.128s
+    [cds] - launched in: 923.411ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
