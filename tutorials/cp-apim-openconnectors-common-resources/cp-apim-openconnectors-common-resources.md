@@ -14,7 +14,7 @@ primary_tag: products>sap-integration-suite
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Navigate to Common Resources)]
-1. Navigate to SAP Cloud Platform Open Connectors home or landing page.
+1. Navigate to  Open Connectors home or landing page.
 
     ![Home Page](01-open-connectors-home.png)
 
@@ -39,7 +39,7 @@ primary_tag: products>sap-integration-suite
 
     ![Common Resource Overview](04-cr-overview.png)
 
-2. Select **Clone** to copy or clone the selected common resource template to your SAP Cloud Platform Open Connectors tenant.
+2. Select **Clone** to copy or clone the selected common resource template to your Open Connectors tenant.
 
     ![Clone Common Resource](05-cr-clone.png)
 
@@ -55,18 +55,18 @@ primary_tag: products>sap-integration-suite
 
     ![Common Resource Save](07-cr-save.png)
 
-    >After the common resource is cloned, you would see the common resource cloned to your SAP Cloud Platform Open Connectors tenant and it would show all the mapped connector instances that are present in your tenant.
+    >After the common resource is cloned, you would see the common resource cloned to your  Open Connectors tenant and it would show all the mapped connector instances that are present in your tenant.
 
 [VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Test Common Resources template)]
 
-1. Select the connector instance for HubSpot that you have in your SAP Cloud Platform Open Connectors tenant.
+1. Select the connector instance for HubSpot that you have in your  Open Connectors tenant.
 
     ![HubSpot Instance](08-cr-hubspot-instance.png)
 
-2. The mapping of the basic-companies to the selected non-SAP connector can be tested from SAP Cloud Platform Open Connectors.
+2. The mapping of the basic-companies to the selected non-SAP connector can be tested from Open Connectors.
 
     - Select the non-SAP CRM connector instance, say `myhubspotdemo`.
 
