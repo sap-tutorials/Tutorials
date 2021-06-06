@@ -84,7 +84,6 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
 [VALIDATE_1]
 
-
 The result of this tutorial can be found in the [`cap/launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/launchpage) branch.
 
 [ACCORDION-END]
