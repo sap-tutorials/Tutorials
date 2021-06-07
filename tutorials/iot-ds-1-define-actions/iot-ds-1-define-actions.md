@@ -4,13 +4,12 @@ description: Create actions, rules and configurations using SAP IoT.
 auto_validation: true
 time: 30
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-business-technology-platform ]
 ---
 
 ## Details
 ### You will learn
-  - How to create a new rule context
-  - How to create a new streaming rule
+  - How to create a new rule project and streaming rule
   - How to create an action of type decision support
   - How to create an action of type in-app notification
   - How to create a decision support configuration
@@ -20,82 +19,85 @@ In this tutorial, you'll create a streaming rule for high greenhouse temperature
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create rule context)]
-  Please complete the prerequisites before starting this step. If you already have created a rule context for `greenhouse`, you can skip to the next step **Create streaming rule**.
+[ACCORDION-BEGIN [Step 1: ](Create rule project)]
+Please complete the prerequisites before starting this step.
 
-  1. From SAP IoT launchpad, select the **Rule Contexts** tile.
+  1. From SAP IoT launchpad, select the **Rule Projects** tile.
 
-    ![Select rule contexts on SAP Fiori launchpad](/images/launchpad_tile_rulecontexts.png)
+    ![Rule Projects tile on SAP Fiori launchpad](/images/launchpad_tile_ruleproject.png)
 
-  2. Create a new rule context.
+  2. On the **Rule Projects** page, click **Create** to create a new rule project.
 
-    ![Add new rule context](/images/rulectxt_new_1.png)
+    ![Rule Projects create](/images/ruleproject_create_1.png)
 
-  3. Enter `greenhouserulecontext` in field **Name**.
+  3. Set **Name** to `Greenhouse Rule Project` and click **Create**.
 
-  4. Enter `Greenhouse Rule Context` in the field **Short Text** and **Description**.
+    ![Rule Projects create dialog](/images/ruleproject_create_2.png)
 
-    ![Enter basic data](/images/rulectxt_new_4_1.png)
+  4. Under **Data Objects** section, click **+** for **Property Set-based**.
 
-  5. Add a new **Property Set**.
+    ![Rule Projects create data object ](/images/ruleproject_create_dataobj_1.png)
 
-    ![Add new property set](/images/rulectxt_new_5.png)
+  5. Set **Package** to `greenhouse`.
 
-  6. In the dialog, select `greenhouse` for **Package** and `greenhouseType` for **Thing Type**.  The entry `envData` should be displayed automatically in the **Property Sets** section.  Select `envData` and click **OK**.
+  6. Set **Thing Type** to `greenhouseType`.
 
-    ![Select property set](/images/rulectxt_new_2_1.png)
+  7. Select `envData`.
 
-  7. The new property set `envData` has been added.
+  8. Click **OK**.
 
-    ![Completed basic data and data object](/images/rulectxt_new_3_1.png)
+    ![Rule Projects create data object dialog](/images/ruleproject_create_dataobj_2.png)
 
-  8. Click **Save**.
+  9. In the next dialog, only select **Property Set** `Aggregates`. Click **OK**.
+
+    ![Rule Projects create data object dialog 2](/images/ruleproject_create_dataobj_3.png)
+
+  10. On the **Rule Projects** page, click **Save and Continue**.
+
+    ![Rule Projects create data object finish](/images/ruleproject_create_3.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create streaming rule)]
-This tutorial is based on the greenhouse device used in the SAP IoT Foundation tutorials.  You can find these tutorials under prerequisites.  Please complete them before continuing with this tutorial.
 
-1. From SAP IoT launchpad, select the **Rules** tile.
+  1. Click on **Rules** section.  Select **Create Rule**, **Streaming** and **Event Creation**.
 
-    ![Select rule on SAP Fiori launchpad](/images/launchpad_tile_rules.png)
+    ![Rule Projects create rule 1](/images/ruleproject_create_rule_1.png)
 
-2. Create a new **Streaming Cloud** rule.
+  2. Set **Name** to `High Greenhouse Temperature`.
 
-    ![Create new rule of type streaming cloud](/images/rule_new_1_1.png)
+  3. Set **Description** to `Temperature in Greenhouse is above 25 degrees`.
 
-3. In **General Information**, enter `High Greenhouse Temperature` in the **Name** field.
+  4. Click icon on field **Input**.
 
-4. In the field **Description**, enter `Temperature in Greenhouse is above 25 degrees`.
+    ![Rule Projects create rule 2](/images/ruleproject_create_rule_2.png)
 
-    ![Enter general information for new rule](/images/rule_new_2.png)
+  5. Select `envData` entry under **Property Set-based**.
 
-5. In **Definition**, click the field **Rule Context**.
+    ![Rule Projects create rule 3](/images/ruleproject_create_rule_3.png)
 
-    ![Select rule context](/images/rule_new_3_1.png)
+  6. Click **OK** in the next dialog.
 
-6. Select the rule context for your greenhouse. The name of your rule context might be different.
+    ![Rule Projects create rule 4](/images/ruleproject_create_rule_4.png)
 
-    ![Select greenhouserulecontext](/images/rule_new_4.png)
+  7. Click **Confirm**.
 
-7. In the next dialog, select `envData`.
+    ![Rule Projects create rule 5](/images/ruleproject_create_rule_5.png)
 
-    ![Select envdata](/images/rule_new_8.png)
+  8. Enter the following rule in the **If** field of **Ruled Editor**:
 
-8. Confirm the selection.
+    `envData.temperature > 25`
 
-    ![Confirm rule context selection](/images/rule_new_5_1.png)
+    ![Rule Projects create rule 6](/images/ruleproject_create_rule_6.png)
 
-9. Enter the following rule in the **If** field of **Ruled Editor**:
+  9. Click **Activate**.
 
-    `temperature of envData is greater than 25`
+    ![Rule Projects create rule 7](/images/ruleproject_create_rule_7.png)
 
-    ![Enter if condition for new rule](/images/rule_new_6.png)
+  10. Click **Save**.
 
-    ![Completed if condition](/images/rule_new_7_1.png)
-
-10. **Activate** the rule.
+    ![Rule Projects create rule 7](/images/ruleproject_create_rule_8.png)
 
 [DONE]
 [ACCORDION-END]
@@ -104,23 +106,31 @@ This tutorial is based on the greenhouse device used in the SAP IoT Foundation t
 
   1. From SAP IoT launchpad, select the **Actions** tile.
 
-    ![Actions tile on SAP Fiori launchpad](/images/launchpad_tile_actions.png)
+    ![Actions tile on SAP Fiori launchpad](/images/launchpad_tile_actions_1.png)
 
-  2. On the **Actions** page, click **New** to create a new action.
+  2. On the **Actions** page, click **Create** to create a new action.
 
-    ![Create new action](/images/actions_new.png)
+    ![Create new action](/images/actions_new_1.png)
 
   3. Set **Name** to `Greenhouse Action`.
 
-  4. In the **Triggered by** field, select `Event from Rule`.
+  4. Set **Triggered by** field to `Event from Rule`.
 
-  5. In the **Rule** dropdown, select `High Greenhouse Temperature`. The system populates **Thing Type** automatically.
+  5. Click on the icon on **Rule** field.  
 
-  6. In the **Action Type** dropdown, select `Decision Support`.
+    ![Create new action 1](/images/actions_new_1a.png)
 
-  7. Enter `Greenhouse_CF` for **Alias** field.  You can enter a different value of your preference. This value will be used in a later tutorial step.
+  6. Set **Rule Project** to `Greenhouse Rule Project`, **Data Object** to `envData` and select  `High Greenhouse Temperature`.
 
-  8. If you want to display device event data and `Thing` master data in a decision support application, you can do so by providing a JSON payload. To include master data properties from the `Thing` model, please use the following notation:
+    ![Create new action 2](/images/actions_new_2.png)
+
+  7. Click **OK**.
+
+  8. In the **Action Type** dropdown, select `Decision Support`.
+
+  9. Enter `Greenhouse_CF` for **Alias** field.
+
+  10. If you want to display device event data and `Thing` master data in a decision support application, you can do so by providing a JSON payload. To include master data properties from the `Thing` model, please use the following notation:
 
     `${propertyname}`
 
@@ -144,9 +154,9 @@ This tutorial is based on the greenhouse device used in the SAP IoT Foundation t
     }
     ```	  
 
-  9. Click **Save**.
+  11. Click **Save**.
 
-    ![New action screen with entered data](/images/actions_new_ds_details_1.png)
+    ![New action screen with entered data](/images/actions_new_ds_details_3.png)
 
 
 [DONE]
@@ -154,21 +164,21 @@ This tutorial is based on the greenhouse device used in the SAP IoT Foundation t
 
 [ACCORDION-BEGIN [Step 4: ](Create in-app notification)]
 
-  1. On the **Actions** page, click **New** to create a new action.
+  1. On the **Actions** page, click **Create** to create a new action.
 
-    ![Create new action](/images/actions_new.png)
+    ![Create new action](/images/actions_new_1.png)
 
   2. Enter `Greenhouse In-App Notification Action` in the **Name** field.  
 
   3. In **Triggered By** dropdown, select `Event from Action`.
 
-  4. In **Action** dropdown, select `Action - Greenhouse Action`. The system populates **Thing Type** automatically.  
+  4. In **Action** dropdown, select `Greenhouse Action`. The system populates **Thing Type** automatically.  
 
   5. In the **Action Type** dropdown, select `In-App Notification`.  
 
   6. In **Recipients** field, enter your email address.  
 
-  7. Enter `GreenhouseDSApp` as **Target Object** and `display` as **Target Action**.  These values are defined in step 2 of [Building the Decision Support UI in the Web IDE](iot-ds-3-create-ui)
+  7. Enter `GreenhouseDSApp` as **Target Object** and `display` as **Target Action**.  These values are defined in step 3 of [Building the Decision Support UI in the Web IDE](iot-ds-3-create-ui)
 
   8. In **Text** field, enter `High Greenhouse Temperature Alert`.
 
@@ -186,7 +196,7 @@ This tutorial is based on the greenhouse device used in the SAP IoT Foundation t
 
   13. Click **Save**.  
 
-    ![New action screen with entered data](/images/actions_new_inappnotif_details.png)
+    ![New action screen with entered data](/images/actions_new_inappnotif_details_0.png)
 
 [VALIDATE_1]
 
@@ -197,7 +207,7 @@ This tutorial is based on the greenhouse device used in the SAP IoT Foundation t
 
   1. From SAP IoT launchpad, select the **Decision Support Definition** tile.
 
-    ![Select Decision Support tile in SAP Fiori launchpad](/images/launchpad_tile_ds.png)
+    ![Select Decision Support tile in SAP Fiori launchpad](/images/launchpad_tile_ds_1.png)
 
   2. On the **Decision Support Definition** page, click **Create** to create a new decision support configuration.
 
@@ -289,11 +299,11 @@ This tutorial is based on the greenhouse device used in the SAP IoT Foundation t
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Define an action service option (optional))]
-In addition to defining quick create and SAP Fiori navigation options, you can also define an action service option.  We will not define an action service option in this tutorial but you can define one if you have an action service that you'd like to use as an additional option.
+In addition to defining quick create and SAP Fiori navigation options, you can also define an action service option.  You will not define an action service option in this tutorial but you can define one if you have an action service that you'd like to use as an additional option.
 
   ![Select action service as action mode](/images/ds_action_service_def.png)
 
->**Note**: Only action service of type "Decision Support" can be used as a decision support configured option. If you do not see your action service displayed in the **Action Service ID** dropdown, please check that your action service is defined with the type "Decision Support".
+>**Note**: Only action service of type triggered by "Decision Support" can be used as a decision support configured option. If you do not see your action service displayed in the **Action Service ID** dropdown, please check that your action service is defined correctly.
 
   ![Select action service as action mode](/images/ds_action_service_type_example.png)
 

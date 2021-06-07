@@ -19,13 +19,13 @@ In the following tutorials Postman is used to communicate and interact with your
 
 [ACCORDION-BEGIN [Step 1: ](Add service key credentials to Postman environment)]
 
-Postman offers the option to add environments. Environments represent key-value pairs which can be reused in requests, so you don't have to remember them. For more information, see [Postman Environments](https://learning.getpostman.com/docs/postman/environments-and-globals/intro-to-environments-and-globals/). 
+Postman offers the option to add environments. Environments represent key-value pairs which can be reused in requests, so you don't have to remember them. For more information, see [Postman Environments](https://learning.getpostman.com/docs/postman/environments-and-globals/intro-to-environments-and-globals/).
 
 If you have downloaded the Postman environment and collection sample files from the **Set up account for Data Attribute Recommendation** booster, as detailed in [Set Up Account for Data Attribute Recommendation and Download Postman Sample Files](cp-aibus-dar-booster-postman), you can set this step to **Done** and proceed with Step 2.
 
 Follow the steps below if you want to manually add, to the environment sample file, your service key details created in [Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-key).
 
-Use the [environment sample file](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial-sample/blob/master/Data_Attribute_Recommendation_Tutorial_Postman_Collection_Environment.json) for Data Attribute Recommendation available on GitHub and make a local copy.
+Use the [environment sample file](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial/blob/main/Data_Attribute_Recommendation_Tutorial_Postman_Collection_Environment.json) for Data Attribute Recommendation available on GitHub and make a local copy.
 
 Insert the following values from your service key into the corresponding spaces of the environment sample file:
 
@@ -74,7 +74,7 @@ You have successfully imported the Postman environment for Data Attribute Recomm
 
 Collections let you group requests together in folders. This helps with the organization of multiple requests. For more information, see [Postman Collections](https://learning.getpostman.com/docs/postman/collections/intro-to-collections/).
 
-To get started, use the [collection sample file](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial-sample/blob/master/Data_Attribute_Recommendation_Tutorial_Postman_Collection.json) for Data Attribute Recommendation available on GitHub. There is no need to adjust anything.
+To get started, use the [collection sample file](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial/blob/main/Data_Attribute_Recommendation_Tutorial_Postman_Collection.json) for Data Attribute Recommendation available on GitHub. There is no need to adjust anything.
 
 **Import** the collection the same way as you did for the environment in Step 2. You can either make a local copy and upload the file or paste the text directly in the available text area.
 

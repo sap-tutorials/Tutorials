@@ -43,9 +43,9 @@ This step includes creating the mobile development kit project in the editor.
 
 3. Select **MDK Project** and click **Start**.
 
-    !![MDK](img_2.3.png)
+    !![MDK](img-2.3.png)
 
-4. In *Basic Information* step, select or provide the below information and click **Next**:
+4. In *Type* step, select or provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
@@ -53,27 +53,26 @@ This step includes creating the mobile development kit project in the editor.
     | `Your project name` | `MDKOnlineApp` |
     | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
 
-    !![MDK](img_2.4.png)
+    !![MDK](img-2.4.png)
 
     >The `Base` template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.
 
-5. In *Service Configuration* step, provide or select the below information and click **Next**:
+5. In *Service Name* step, provide or select the below information and click **Next**:
 
     | Field | Value |
     |----|----|
     | `Service File Name`| `<Provide any name of your choice>` |
     | `OData Source` | Select `Mobile Services` from the dropdown |
+    | `Mobile Services Landscape` | Select `standard` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
     | `Destination` | Select `SampleServiceV2` from the dropdown |
     | `Enter a path to the OData service` | Leave it as it is |
     | `Language URL` | Leave it with the default value |
     | `Enable Offline` | Choose `No` |
 
-    !![MDK](img_2.5.png)
-
-    >In [this tutorial](cp-mobile-dev-kit-ms-setup), server-side configuration for this MDK app were already done.  
+    !![MDK](img-2.5.png)
 
     >Regardless of whether you are creating an online or offline application, this step is needed for the app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services.
 
@@ -98,13 +97,11 @@ These are the metadata definitions available in the editor and the format in whi
 
   - **`OnWillUpdate.js`**: MDK applications automatically download updates and apply them to the client without the end-user needing to take any action. The `OnWillUpdate` rule empowers the user to run business logic before the new definitions are applied. This allows the application designer to include logic to prompt the user to accept or defer applying the new definitions based on their current activity. For example, if the end-user is currently adding new customer details or in the middle of a transaction, they will be able to defer the update. The application will prompt again the next time it checks for updates.
 
+  - **`Web`**: In this folder, you can provide web specific app resource files and configurations.
+
 - **`Application.app`**: this is the main configuration file for your application from within SAP Business Application Studio. Here you set your start page (here in this tutorial, it is main.page), action settings for different stages of the application session lifecycle, push notifications, and more.
 
 >You can find more details about [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/App.schema.html).
-
-Open the application settings in the application editor by double clicking on the `Application.app`.
-
-!![MDK](img-3.2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -119,25 +116,27 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 2. Select deploy target as **Mobile Services**.
 
-    !![MDK](img_4.2.png)
+    !![MDK](img-4.2.png)
 
-    You should see **Deploy succeeded** message.
+    You should see **Deploy to Mobile Services successfully!** message.
 
-    !![MDK](img_4.3.png)
+    !![MDK](img-4.3.png)
 
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Populate the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 5: ](Display the QR code for app onboarding)]
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
+Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
 !![MDK](img-5.1.png)
 
-!![MDK](img_5.2.png)
+!![MDK](img-5.2.png)
+
+>Leave the Onboarding dialog box open for step 6.
 
 [DONE]
 [ACCORDION-END]
@@ -162,7 +161,7 @@ Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/b
 
 Once you accept app update, you will see **Main** page being displayed and application data service is initialized.
 
-![MDK](img_6.2.png)
+![MDK](img-6.2.png)
 
 [OPTION END]
 
@@ -174,6 +173,6 @@ Once you accept app update, you will see **Main** page being displayed and appli
 
 ---
 
-Congratulations, you have successfully created an MDK online app and you are now all set to [Create a Customer List Page in an MDK App](cp-mobile-dev-kit-list-page).
+Congratulations, you have successfully created an MDK online app and you can continue with the remaining tutorials in this mission.
 
 ---

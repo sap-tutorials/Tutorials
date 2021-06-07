@@ -103,16 +103,13 @@ Define the form, which is shown when the task is opened in the My Inbox.
 [ACCORDION-BEGIN [Step 4: ](Build and deploy)]
 Now, you are ready to build and deploy the workflow.
 
-1. Update the **mta.yaml** file of your **onboarding** project by double-clicking it.
+1. Open the **mta.yaml** file of your **onboarding** project by double-clicking it. In  lines 9 and 13, replace `workflow_mta` with `wm_workflow`.
 
-    - In  lines 9 and 13, replace `workflow_mta` with `wm_workflow`.
-    - In line 17, replace `org.cloudfoundry.managed-service` with `org.cloudfoundry.existing-service`.
+    ![Update YAML File](update-yaml.png)
 
-    ![Update YAML File](update-service-plan.png)
+2. Right-click the **mta.yaml** file in your **onboarding** project folder, and then select **Build MTA Project**.
 
-2. Right-click the **mta.yaml** file in your **onboarding** project folder, and then select **Build MTA**.
-
-    ![Build MTA](build-mta2.png)
+    ![Build MTA](build-mta.png)
 
     Once the build is completed, the new folder **`mta_archives`** appears under your application folder.
 

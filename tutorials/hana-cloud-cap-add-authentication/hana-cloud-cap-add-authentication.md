@@ -18,7 +18,7 @@ primary_tag: products>sap-hana-cloud
   - How to incorporate security into the routing endpoint of your application
   - How to configure Cloud Application Programming (CAP) service authentication
 
-We are going to set up production level security using the [User Account and Authentication Services - UAA](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/51ec15a8979e497fbcaadf80da9b63ba.html). By default CAP allows you to mock your security for testing during development. However we also want to teach you how to setup the full production security and test that during development as well.  
+We are going to set up production level security using the [SAP Authorization and Trust Management service for SAP BTP in the Cloud Foundry environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/649961f8d4ad463daca33b3a20deba4c.html) and more specifically the User Account and Authorization or UAA Service. By default CAP allows you to mock your security for testing during development. However we also want to teach you how to setup the full production security and test that during development as well.  
 
 The UAA will provide user identity, as well as assigned roles and user attributes. This is done in the form of a JWT token in the Authorization header of the incoming HTTP request.  We will need the Application Router we added to our application in the last tutorial to perform the redirect to the UAA Login Page and then forward this JWT token to your CAP service. Therefore this will be a multiple step process.
 
@@ -153,7 +153,7 @@ Video tutorial version: </br>
 
 1. The `approuter` component implements the necessary handshake with XSUAA to let the user log in interactively. The resulting JWT token is sent to the application where it's used to enforce authorization.
 
-2. The application router configuration was generated in the previous tutorial via wizard.  We now want to extend that application router setup.  Start with the package.json file in the `/app` folder. We want to update the version of the `@sap/approuter` to at least version 9.1.
+2. The application router configuration was generated in the previous tutorial via wizard.  We now want to extend that application router setup.  Start with the package.json file in the `/app` folder. We want to update the version of the `@sap/approuter` to at least version 10
 
     !![Update app router version](approuter_version.png)
 
@@ -208,6 +208,9 @@ Video tutorial version: </br>
 
     !![Add UAA to SRV module](mta_srv.png)
 
+3. **OPTIONAL** If you want to use the mta.yaml text editor instead of the form based edition you could make this same change by adding the following line:
+
+    !![mta.yaml add UAA](mta_yaml_add_uaa.png)
 
 [DONE]
 [ACCORDION-END]
@@ -244,7 +247,9 @@ Video tutorial version: </br>
 
     !![Fiori with authentication](fiori_with_authentication.png)
 
-Congratulations! You have now successfully configured and tested with production level authentication and authorization for the SAP HANA Cloud and Cloud Business Application based project.            
+Congratulations! You have now successfully configured and tested with production level authentication and authorization for the SAP HANA Cloud and Cloud Business Application based project.   
+
+If you are wanting to learn about packaging and deploying this complete application as a Multi-Target Application to SAP BTP, Cloud Foundry runtime; there is a separate, optional tutorial which is not part of this mission that covers this step.  Note: that this is an advanced topic and does allocate a large amount of your available resources in an SAP BTP trial account. [Deploy CAP with SAP HANA Cloud project as MTA](hana-cloud-cap-deploy-mta)       
 
 [DONE]
 [ACCORDION-END]
