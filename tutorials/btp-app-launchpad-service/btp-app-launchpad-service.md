@@ -547,3 +547,4 @@ You have launched your `Risks` app through the SAP Launchpad service.
 The result of this tutorial can be found in the [`launchpad-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpad-service) branch.
 
 [ACCORDION-END]
+---

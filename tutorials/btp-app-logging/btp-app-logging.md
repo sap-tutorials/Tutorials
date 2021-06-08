@@ -210,3 +210,4 @@ The time filter is on the right top of the screen. Don't forget to choose *Refre
 The result of this tutorial can be found in the [`cp/logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/logging) branch.
 
 [ACCORDION-END]
+---

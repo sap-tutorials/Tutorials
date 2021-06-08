@@ -466,3 +466,4 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 The result of this tutorial can be found in the [cap/freestyle-ui5-app](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/freestyle-ui5-app) branch.
 
 [ACCORDION-END]
+---

@@ -30,7 +30,7 @@ If you decide to use SAP Business Application Studio, your benefits are:
 - You don't have to install or update any of the packages yourself. They all come with your SAP Business Application Studio instance.
 - In some cases, you have additional productivity features that are available only in SAP Business Application Studio but not in VS Code.
 
-If you go for SAP Business Application Studio, you first have to get access to SAP BTP, it can only be used with a user there. At a later stage of the tutorial, this is required anyway. 
+If you go for SAP Business Application Studio, you first have to get access to SAP BTP, it can only be used with a user there. At a later stage of the tutorial, this is required anyway.
 
 > _You can still perform the following steps locally and without any access the SAP BTP_
 
@@ -139,3 +139,4 @@ SAP Business Application Studio will refresh and select the `projects` folder as
 
 [DONE]
 [ACCORDION-END]
+---

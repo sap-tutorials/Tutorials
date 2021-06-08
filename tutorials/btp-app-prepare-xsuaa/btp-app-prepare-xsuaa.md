@@ -140,3 +140,4 @@ And created scopes and roles for both in the `xs-security.json` file:
 The result of this tutorial can be found in the [`cp/roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/roles) branch.
 
 [ACCORDION-END]
+---

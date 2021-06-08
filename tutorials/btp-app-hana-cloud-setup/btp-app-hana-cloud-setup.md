@@ -288,3 +288,4 @@ You already have an SAP HANA Cloud service instance in your Cloud Foundry space 
 The result of this tutorial can be found in the [`cp/hana`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/hana) branch.
 
 [ACCORDION-END]
+---

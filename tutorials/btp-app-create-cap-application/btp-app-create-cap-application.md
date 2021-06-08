@@ -207,3 +207,4 @@ And that's it: You have now got a full blown OData service, which complies to th
 The result of this tutorial can be found in the [`cap/create-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/create-service) branch.
 
 [ACCORDION-END]
+---

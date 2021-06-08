@@ -74,3 +74,4 @@ The central point of entry to the cloud platform is the SAP BTP cockpit, where y
 
 [VALIDATE_1]
 [ACCORDION-END]
+---

@@ -296,3 +296,4 @@ If the **@sapui5/sapui5-templates** generator is listed in the terminal, you're 
 
 [DONE]
 [ACCORDION-END]
+---
