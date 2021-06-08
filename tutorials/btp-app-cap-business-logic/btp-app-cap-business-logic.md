@@ -97,3 +97,4 @@ You can find more about the possible values of the `Criticality` annotation in s
 The result of this tutorial can be found in the [`cap/business-logic`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/business-logic) branch.
 
 [ACCORDION-END]
+---

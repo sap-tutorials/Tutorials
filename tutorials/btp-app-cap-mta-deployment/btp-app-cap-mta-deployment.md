@@ -368,3 +368,4 @@ The service expects a so called `JWT` (JSON Web Token) in the HTTP `Authorizatio
 The result of this tutorial can be found in the [`mta`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/mta) branch.
 
 [ACCORDION-END]
+---
