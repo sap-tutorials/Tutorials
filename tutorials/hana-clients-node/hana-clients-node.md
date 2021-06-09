@@ -21,23 +21,31 @@ Node.js provides a JavaScript runtime outside of the browser and uses an asynchr
 
 [ACCORDION-BEGIN [Step 1: ](Install Node.js)]
 
-The first step is to check if you have Node.js installed and what version it is.  Enter the following command:
+Ensure you have Node.js installed and check its version. Enter the following command:
 
 ```Shell
 node -v  
 ```  
 
-If Node.js is installed, it will return the currently installed version, such as v15.3.0.
+If Node.js is installed, the currently installed version is returned, such as v15.3.0.
 
-If node is not installed, download the long-term support (LTS) version of Node.js from [Download Node.js](https://nodejs.org/en/download/).
+If Node.js is not installed, download the long-term support (LTS) version of Node.js from [Download Node.js](https://nodejs.org/en/download/).
 
->An install for node.js is not provided on Linux. You may choose to install it via a package manager. For more details, please navigate to [this link](https://nodejs.org/en/download/package-manager/).
+>An install for Node.js is not provided on Linux. You may choose to install it via a package manager. For more details, please navigate to [this link](https://nodejs.org/en/download/package-manager/).
 
 During the installation, there is no need to check the following box as you do not need to install Chocolatey.  
 
 ![Chocolatey](Chocolatey.png)
 
 >The SAP HANA client provides a 32-bit and a 64-bit install, as does Node.js.  The Node.js driver provided with the SAP HANA client is available for 64-bit only and supports Node.js versions 8.11.2 and higher.  For additional details see SAP note [3006307 - SAP HANA Client Supported Platforms for 2.7 and higher](https://launchpad.support.sap.com/#/notes/3006307).
+
+---
+
+> Another option is to use a docker image that contains [Node.js](https://github.com/nodejs/docker-node#docker-run) as shown below.
+>
+>```Shell
+>docker run -it --name=nodealpine node:alpine /bin/bash
+>```
 
 [DONE]
 [ACCORDION-END]
@@ -83,7 +91,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     >If you encounter an error about permissions, on Microsoft Windows, run or open the command prompt as an administrator, or use `sudo` on Linux or Mac.
 
-4. The following command will list the Node.js modules that are now installed locally into the `HANAClientsTutorial\node` folder.  Note that the extraneous message can be ignored.  
+4. The following command lists the Node.js modules that are now installed locally into the `HANAClientsTutorial\node` folder.  Note that the extraneous message can be ignored.  
 
     ```Shell
     npm list
@@ -97,7 +105,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
 > ---
 
->Node.js modules can also be installed globally. To see the list of node modules installed globally enter the following command.  
+>Node.js modules can also be installed globally. To see the list of Node.js modules installed globally enter the following command.  
 
 >The depth parameter can be used to specify the number of levels to show when displaying module dependencies.  By setting depth=x, a tree-structure is outputted that shows modules that are x levels below the top-level module.
 
@@ -139,14 +147,12 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 1. Open a file named `nodeQuery.js` in an editor.
 
     ```Shell (Microsoft Windows)
-    cd %HOMEPATH%\HANAClientsTutorial\node
     notepad nodeQuery.js
     ```
 
     Substitute `pico` below for your preferred text editor.  
 
     ```Shell (Linux or Mac)
-    cd $HOME/HANAClientsTutorial/node
     pico nodeQuery.js
     ```
 
@@ -155,7 +161,6 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     ```JavaScript
     'use strict';
     const { PerformanceObserver, performance } = require('perf_hooks');
-    var t0 = performance.now();
     var util = require('util');
     var hana = require('@sap/hana-client');
 
@@ -189,6 +194,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     var connection = hana.createConnection();
     connection.connect(connOptions);
     var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
+    var t0 = performance.now()
     var result = connection.exec(sql);
     console.log(util.inspect(result, { colors: false }));
     var t1 = performance.now();
@@ -265,7 +271,7 @@ node nodeQuery.js
 
 [ACCORDION-BEGIN [Step 4: ](Debug the application)]
 
-Visual Studio Code can be used to run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux.
+Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux.
 
 1. [Download Visual Studio Code.](https://code.visualstudio.com/Download)
 
