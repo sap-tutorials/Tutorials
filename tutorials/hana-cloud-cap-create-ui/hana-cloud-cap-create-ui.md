@@ -182,6 +182,10 @@ When an application is deployed, the `mta.yaml` file is used to establish the de
 
 8. **Save** the changes in the deployment descriptor file.       
 
+9. **OPTIONAL**: If you would want to make these changes without the form based mta.yaml editor, here is also the section as it could be inserted via the text editor:
+
+    !![mta.yaml editor add srv-api](mta_yaml_srv_api.png)
+
 > For more information and examples about the `approuter`, refer to this [section in the help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/6ba89596e3a64a5480c3977d4ea7fdba.html).
 
 [DONE]
