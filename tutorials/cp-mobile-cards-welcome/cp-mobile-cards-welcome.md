@@ -5,8 +5,8 @@ auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [  tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-cards, products>sap-mobile-services ]
 time: 10
-author_name: Chetali Shah
-author_profile: https://github.com/shahchetali
+author_name: Sandeep TDS
+author_profile: https://github.com/sandeep-tds
 ---
 ## Prerequisites
 - [Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
