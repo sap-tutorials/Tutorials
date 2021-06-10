@@ -1,5 +1,5 @@
 ---
-title: Apply a mix-and-match promotional rule with SAP Omnichannel Promotion Pricing
+title: Apply Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing
 description: Use SAP Omnichannel Promotion Pricing to calculate the effective sales price by applying a mix-and-match promotion rule on top of the regular sales price.
 auto_validation: true
 time: 10
