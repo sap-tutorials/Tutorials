@@ -22,9 +22,9 @@ primary_tag: products>sap-hana
 
 [ACCORDION-BEGIN [Step 1: ](Configure a data source using Microsoft Windows ODBC Data Source Administrator)]
 
-The ODBC Data Source Administrator lists the ODBC drivers installed and the configured data sources.  
+The ODBC Data Source Administrator lists the installed ODBC drivers and the configured data sources.  
 
-1. Open it by entering ODBC after clicking on the Microsoft Windows start icon.  
+1. Open the administrator by entering ODBC after clicking on the Microsoft Windows start icon.  
 
     >Ensure that you choose the 64-bit version assuming that you have the 64-bit version of the SAP HANA client installed.
 
@@ -34,7 +34,7 @@ The ODBC Data Source Administrator lists the ODBC drivers installed and the conf
 
     ![odbc admin drivers](drivers.png)
 
-    The SAP HANA ODBC driver (HDBODBC) can be seen.  
+    The SAP HANA ODBC driver (HDBODBC) is visible.  
 
 3. Click the **User DSN** tab to view the data sources.  
 
@@ -64,7 +64,7 @@ The ODBC Data Source Administrator lists the ODBC drivers installed and the conf
 
     The user name `USER1` and password `Password1` can be entered when prompted for credentials.
 
-9. Press OK, to save the data source.  
+9. Press OK to save the data source.  
 
     > Note that the saved values can also be viewed using the Microsoft Windows registry editor under the key `Computer\HKEY_CURRENT_USER\Software\ODBC\ODBC.INI`.
 
@@ -104,9 +104,11 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
     cd $HOME
     ```
 
-5. Edit the `.odbc.ini` file (or create it if it does not exist) to add one or more data sources. Be sure to configure the values of `servernode` and `driver` so that they conform with your setup. Note that the driver's file extension is `dylib` instead of `so` on a Mac.
+5. Edit the `.odbc.ini` file (or create it if it does not exist) to add one or more data sources. Be sure to configure the values of `servernode` and `driver` so that they conform with your setup.
 
-    ```.odbci.ini
+    >Note that the driver's file extension is `dylib` instead of `so` on a Mac.
+
+    ```.odbc.ini
     [HANA_Cloud]
     servernode = 61964be8-39e8-4622-9a2b-ba3a38be2f75.hana.hanacloud.ondemand.com:443
     driver = /home/dan/sap/hdbclient/libodbcHDB.so

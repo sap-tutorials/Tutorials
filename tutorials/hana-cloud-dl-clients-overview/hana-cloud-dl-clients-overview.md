@@ -8,14 +8,14 @@ primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
- - A Microsoft Windows computer.
+ - A Microsoft Windows or Linux computer.
 
 ## Details
 ### You will learn
   - Information about SAP HANA Cloud data lake IQ
   - How to install the data lake IQ client
   - How to create sample tables, views, and procedures
-  - How to connect using SAP HANA cockpit, database explorer and the Interactive SQL Client
+  - How to connect using SAP HANA cockpit, SAP HANA database explorer and the Interactive SQL Client
 
 This tutorial group will provide guidance on setting up a trial instance of [SAP HANA Cloud, data lake IQ](https://help.sap.com/viewer/product/SAP_HANA_DATA_LAKE/latest/en-US) so that it can then be connected to and queried using a few of the data lake IQ client interfaces as described in [SAP HANA Cloud, Data Lake Developer Guide for Data Lake IQ](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US).  
 
@@ -41,8 +41,8 @@ For additional details see [How & When to Use the New SAP HANA Cloud Database In
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create data lake instance and connect to it)]
-The following steps provide instructions on how to create a data lake instance in the SAP Business Technology Platform (BTP) trial and how to connect to it from the database explorer.  
+[ACCORDION-BEGIN [Step 2: ](Create a data lake instance and connect to it)]
+The following steps provide instructions on how to create a data lake instance in the SAP Business Technology Platform (BTP) trial.  Additional content on this topic is available at [Quick Start Tutorial for Data Lake](https://help.sap.com/viewer/a89a80f984f21015b2b2c84d2498d36d/latest/en-US/b62bc948ad684e3a94b9e14b68318f2a.html).
 
 There are multiple ways to create a data lake:  
 
@@ -85,11 +85,20 @@ There are multiple ways to create a data lake:
 
     ![Allowed connections](allowed-connections.png)
 
-5. Once the data lake has been created, use the actions menu (three dots) to open SAP HANA cockpit.  
+5. After a while, press the **Refresh** button and the status will change from CREATING to RUNNING.
+
+    ![data lake running](data-lake-running.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Open the SAP HANA cockpit)]
+
+1. Once the data lake has been created, use the actions menu (three dots) to open SAP HANA cockpit.  
 
     ![Open in cockpit](open-cockpit.png)
 
-    Input your credentials. These are stored by the SAP HANA cockpit and are shared with the database explorer in cockpit connections once entered into the following dialog.
+    Input your credentials. These are stored by the SAP HANA cockpit and are shared with the SAP HANA database explorer in cockpit connections once entered into the following dialog.
 
     ![Credentials](credentials.png)
 
@@ -97,11 +106,19 @@ There are multiple ways to create a data lake:
 
     ![Credentials](credentials2.png)
 
-6. In SAP HANA Cloud Central, use the actions menu to open the SAP HANA database explorer.
+2. The SAP HANA Cockpit can also be used to examine and configure users.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Create tables with SAP HANA database explorer)]
+In this step, a sample HOTEL dataset will created comprising tables, a view, and a stored procedure.
+
+1. In SAP HANA Cloud Central, use the actions menu to open the SAP HANA database explorer.
 
     ![open database explorer](open-dbx.png)
 
-7. Execute a few queries.
+2. Execute a few queries.
 
     ```SQL
     SELECT CURRENT USER FROM DUMMY;
@@ -112,15 +129,8 @@ There are multiple ways to create a data lake:
 
     ![SAP HANA database explorer](dbx-query.png)
 
-For additional details on the database explorer, see the tutorial [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started), which showcases many of its features.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Create sample tables and data)]
-The following SQL will create tables, functions, views, and stored procedures that comprise a sample HOTEL dataset.
-
-1. In the database explorer, execute the following SQL statements.
+3. In the SAP HANA database explorer, execute the following SQL statements.
 
     ```SQL
     -- DROP VIEW HOTEL_ROOMS_VIEW;
@@ -223,52 +233,112 @@ The following SQL will create tables, functions, views, and stored procedures th
 
     ![DBX Create](dbx-create.png)
 
-    > Note that autocommit is set to on in the SQL Console while in DBISQL it is set to off.  A series of insert statements will run quicker in the SQL Console if they are surrounded with begin and end or if autocommit is set to off.
+    Additional details on the SQL used above can be found at [CREATE TABLE Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a619764084f21015b8039a8346dc622c.html), [CREATE VIEW Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61a051684f210158cced2d83231bd8a.html), and [CREATE PROCEDURE Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a6185b2184f21015b2419a5444b55609.html).
+
+    > Note that autocommit is set to on in the SQL Console, while in DBISQL it is set to off.  A series of insert statements will run quicker in the SQL Console if they are surrounded with begin and end or if autocommit is set to off.
     >
     ```SQL
     begin
-    INSERT INTO ROOM VALUES(10, 'single', 20, 135.00);
-    INSERT INTO ROOM VALUES(10, 'double', 45, 200.00);
+    INSERT INTO ROOM VALUES(11, 'single', 13, 135.00);
+    INSERT INTO ROOM VALUES(11, 'double', 15, 175.00);
     end;
     ```
     >
     ```SQL
     set temporary option auto_commit= 'off';
-    INSERT INTO ROOM VALUES(10, 'single', 20, 135.00);
-    INSERT INTO ROOM VALUES(10, 'double', 45, 200.00);
+    INSERT INTO ROOM VALUES(11, 'triple', 7, 235.00);
+    INSERT INTO ROOM VALUES(11, 'quad', 5, 275.00);
     set temporary option auto_commit= 'on';
     ```
+
+For additional details on the SAP HANA database explorer, see the tutorial [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started), which showcases many of its features.
 
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 4: ](Install the data lake IQ client)]
-1.  In [SAP Software Downloads](https://support.sap.com/en/my-support/software-downloads.html), under **Support Packages & Patches**, search for **HANA DATALAKE CLIENT 1.0**.  Select the platform (Windows) and download the zip file.
+[ACCORDION-BEGIN [Step 5: ](Install the data lake IQ client)]
+1.  In [SAP Software Downloads](https://support.sap.com/en/my-support/software-downloads.html), under **Support Packages & Patches**, search for **HANA DATALAKE CLIENT 1.0**.  Select the platform (Windows or Linux) and download the archive.
 
     ![data lake software downloads](dl-Software-Downloads.png)
 
     > Note access to the client install is currently limited to S-user IDs
 
-2.  Once downloaded, extract the zip and run setup.exe.
+2.  Extract the archive and start the installer.
 
-    ![data lake client](data-lake-client-install.png)
+    * On Microsoft Windows extract the zip and run setup.exe.
 
-    The installation location can be referenced after the installation is complete by the following environment variable.
+        ![data lake client](data-lake-client-install.png)
 
-    ```Shell
+    * On Linux, extract the archive.
+
+        ```Shell (Linux)
+        tar -zxvf HANADLCLIENT10000_0*.TGZ
+        ```
+
+        Run `setup.bin` which will start either the GUI installer or text based installer.
+
+        ```Shell (Linux)
+        cd ebf29856
+        ./setup.bin
+        ```
+
+3.  Specify an install folder and install all the features.
+
+    ![GUI Installer](linux-gui-install.png)
+
+    Console mode installer
+
+    ![Product Features](productfeatures.png)
+
+    Follow the remaining prompts to finish the installation.
+
+4.  The installation location can be referenced after the installation is complete by the following environment variable.
+
+    ```Shell (Windows)
     ECHO %IQDIR17%
+    ```
+
+    >Note that this tutorial uses notepad and `nano` as default text editors, but any text editor will do.
+    >`nano` can be installed on SUSE Linux with
+
+    >```Shell (Linux SUSE)
+    sudo zypper nano
+    >```
+
+    On Linux, this environment variable and others are set in a file named `IQ.sh`.  Configure it to be run each time the shell is started by referencing it in `.bash_profile` or possibly `.bashrc`.
+
+    Open the `.bash_profile`.
+
+    ```Shell (Linux)
+    nano ~/.bash_profile
+    ```
+
+    Add the following line to point to the location where the SAP data lake client is installed.
+
+    ```Shell (Linux) .bash_profile
+    source /path-to-data-lake-install/IQ.sh
+    ```
+
+    Test the change by running:
+
+    ```Shell (Linux)
+    source ~/.bash_profile
+    ```
+
+    Once the shell is closed and re-opened the following command should display the install location of the data lake client.
+
+    ```Shell (Linux)
+    echo $IQDIR17
     ```
 
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 5: ](Work with data lake IQ using Interactive SQL Client (DBISQL))]
+[ACCORDION-BEGIN [Step 6: ](Connect with the Interactive SQL Client (DBISQL))]
 
 The data lake IQ client install includes Interactive SQL (DBISQL), which can be used to connect and query a data lake IQ. The following steps will provide instructions on how to connect to the data lake IQ using DBISQL and then populate the previously created tables with sample data to perform a few queries.
 
-1. Start DBISQL from the Windows start command, or by double-clicking on it from the location where the data lake client was installed.
+1. Start GUI version of DBISQL from the Microsoft Windows Start menu, by double clicking on it, or on Linux by entering `dbisql`.
 
     ![start dbisql](dbisql-start.png)
 
@@ -286,7 +356,24 @@ The data lake IQ client install includes Interactive SQL (DBISQL), which can be 
 
     > A failure to connect could be caused by the allowed connections list, which is editable in SAP HANA Cloud Central.  
 
-4. Execute the following insert statements to provide some sample data.
+    ![DBISQL Connected](dbisql-connected.png)
+
+    >DBISQL can also be started without a GUI.
+    >
+    >```Shell
+    dbisql -hdl -c "uid=HDLADMIN;pwd=myPassword;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
+    >```
+
+    >![DBISQL connected nogui](dbisql-connected-nogui.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Insert data with Interactive SQL Client (DBISQL))]
+
+1. Execute the following insert statements to provide some sample data.
+
+    >If you are using the `nogui` option, paste the insert statements into a file first and then run `dbisql -hdl -c "uid..." sql.sql`.
 
     ```SQL
     INSERT INTO HOTEL VALUES(10, 'Congress', '155 Beechwood St.', 'Seattle', 'WA', '20005');
@@ -336,15 +423,15 @@ The data lake IQ client install includes Interactive SQL (DBISQL), which can be 
     INSERT INTO ROOM VALUES(22, 'single', 34, 80.00);
     INSERT INTO ROOM VALUES(22, 'double', 78, 140.00);
     INSERT INTO ROOM VALUES(22, 'suite', 55, 350.00);
-    INSERT INTO ROOM VALUES(25, 'single', 44, 100.00);
-    INSERT INTO ROOM VALUES(25, 'double', 115, 190.00);
-    INSERT INTO ROOM VALUES(25, 'suite', 6, 450.00);
     INSERT INTO ROOM VALUES(23, 'single', 89, 160.00);
     INSERT INTO ROOM VALUES(23, 'double', 300, 270.00);
     INSERT INTO ROOM VALUES(23, 'suite', 100, 700.00);
     INSERT INTO ROOM VALUES(24, 'single', 10, 125.00);
     INSERT INTO ROOM VALUES(24, 'double', 9, 200.00);
     INSERT INTO ROOM VALUES(24, 'suite', 78, 600.00);
+    INSERT INTO ROOM VALUES(25, 'single', 44, 100.00);
+    INSERT INTO ROOM VALUES(25, 'double', 115, 190.00);
+    INSERT INTO ROOM VALUES(25, 'suite', 6, 450.00);
 
     INSERT INTO CUSTOMER VALUES(1000, 'Mrs', 'Jenny', 'Porter', '1340 N. Ash Street, #3', '10580');
     INSERT INTO CUSTOMER VALUES(1001, 'Mr', 'Peter', 'Brown', '1001 34th St., APT.3', '48226');
@@ -378,7 +465,9 @@ The data lake IQ client install includes Interactive SQL (DBISQL), which can be 
     INSERT INTO MAINTENANCE VALUES(12, 26, 'Roof repair due to storm', null, null);
     ```
 
-5. Notice that pressing ctrl-space brings up auto complete.
+    Additional details on the SQL used above can be found at [INSERT Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61fdeff84f21015aa66b9add387d7f9.html).
+
+2. Notice that pressing ctrl-space brings up auto complete (Microsoft Windows only).
 
     ![auto complete](dbisql-auto-complete.png)
 
@@ -391,11 +480,11 @@ The data lake IQ client install includes Interactive SQL (DBISQL), which can be 
 
     ![Query in DBISQL](dbisql-query.png)
 
-6. DBISQL can also run in batch mode. A few examples are shown below.
+3. DBISQL can also execute SQL from the command line or from a provided file. A few examples are shown below.
 
     ```Shell
-    dbisql -hdl -c "uid=HDLADMIN;pwd=Hana1234;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" select count(*) from RESERVATION
-    dbisql -hdl -c "uid=HDLADMIN;pwd=Hana1234;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" sql.sql
+    dbisql -hdl -c "uid=HDLADMIN;pwd=myPassword;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" "select * from CUSTOMER;"
+    dbisql -hdl -c "uid=HDLADMIN;pwd=myPassword;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" sql.sql
     ```
 
     ![DBISQL in batch mode](dbisql-batch.png)
