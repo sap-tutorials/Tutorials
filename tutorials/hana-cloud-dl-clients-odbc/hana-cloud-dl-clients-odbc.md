@@ -106,6 +106,7 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
     encryption=TLS(trusted_certificates=*;direct=yes)
     host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443
     integrated=NO
+    log=/tmp/hdlclientlog.txt
     ```
 
 5. DBISQL or `isql`, which is a tool provided by unixODBC can be used to try out the data source. Ensure you are using the correct username and password.
