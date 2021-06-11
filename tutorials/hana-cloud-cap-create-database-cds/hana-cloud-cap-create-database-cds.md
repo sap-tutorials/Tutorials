@@ -77,7 +77,7 @@ Video version of tutorial: </br>
 
 [ACCORDION-BEGIN [Step 2: ](Create service interface)]
 
-1. In the `srv` folder created another file and name it `interaction_srv.cds`
+1. In the `srv` (**not `scr`!**) folder created another file and name it `interaction_srv.cds`
 
     ```Name
     interaction_srv.cds
@@ -150,6 +150,10 @@ Video version of tutorial: </br>
 
     !![Generated Service Name](generated_service_name.png)
 
+6. Select the first suggested Cloud Foundry service plan with the name **hdi-shared**
+
+    !![CF Plan](cf-plan.png)
+
 7. It will take a minute or two for the service to be created in HANA. A progress bar will be shown in the message dialog
 
     !![Service Creation Progress](progress.png)
@@ -161,6 +165,8 @@ Video version of tutorial: </br>
 9. We are now ready to deploy the development content into the database. Press the **Deploy** button (which looks like a rocket) at the **db** folder level in the SAP HANA Projects view.
 
     !![Deploy](deploy.png)
+
+    > If the deployment fails, run `cds deploy` manually in the terminal to see an error log.
 
 10. Scroll up to in the console to see what the build process has done.
 
