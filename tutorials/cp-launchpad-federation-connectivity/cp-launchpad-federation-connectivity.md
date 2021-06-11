@@ -196,10 +196,17 @@ The design-time destination is used to fetch the federated content from the cont
 
     If you entered a Location ID in SAP Cloud Connector, enter the same value here in **Location ID** as well.
 
+5. Click **New Property** to add an additional property to your destination.
 
-5. Click **Save**.
 
-    ![Design-time Destination](25a-btp-designtime-destination.png)
+
+    ![Design-time Destination](25b-btp-designtime-destination.png)
+
+6. Enter ``sap-client`` and the client of your SAP S/4HANA system, e.g. 100 for SAP S/4HANA trial systems, as property name and value.
+
+7. Click **Save**.
+
+![Additional property](25-2-btp-designtime-destination.png)
 
 [DONE]
 [ACCORDION-END]
@@ -218,20 +225,18 @@ The runtime destination is used to launch federated applications at runtime.
 
 4. Enter the password ``Welcome1`` again.
 
-5. Click **New Property** to add the following properties to your destination. You can either select the property name from the dropdown list or type it in, if it is not available there.
+5. Click **New Property** to add the following properties to your destination. You can **type in the property name, if it is not available in the dropdown list**.
 
     |  Property Name     | Value
     |  :------------- | :-------------
-    |  HTML5.DynamicDestination | `true`
-    |  sap-client     | `<Client of your SAP S/4HANA system>` - **100** if you are using a CAL SAP S/4HANA trial system
-    |  sap-platform   | `ABAP`
-    |  sap-service    | A string that consists of the first two characters 32 and the instance number of the ABAP application server, e.g. 3200
-    |  sap-sysid      | `<System ID of your SAP S/4HANA system>` - **S4H** for your CAL system
+    |  HTML5.DynamicDestination           | `true`
+    |  sap-platform  | `ABAP` (type the property name)
+    |  sap-service    | A string that consists of the first two  characters 32 and the instance number of the ABAP application server, e.g. 3200 (type the property name)
+    |  sap-sysid            | `<System ID of your SAP S/4HANA system>` - **S4H** for your CAL system (type the property name)
 
 6. Click **Save**.
 
 ![Runtime Destination](27a-btp-runtime-destination.png)
-
 
 [VALIDATE_7]
 [ACCORDION-END]

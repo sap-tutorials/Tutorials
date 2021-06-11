@@ -483,9 +483,31 @@ Since you will display the customer's address in Google Maps on Android device, 
 
 [ACCORDION-BEGIN [Step 7: ](Create Your Branded MDK Client (Required only for Android))]
 
-For Android, you will pass the API key to the MDK client, there is no way public store client can access it, hence you will create a branded client using MDK SDK. Follow steps 1 to 4 from [this tutorial](cp-mobile-dev-kit-build-client).
-
 For iOS, you can just use the App store client. Continue with next step.
+
+For Android, you will pass the API key to the MDK client, there is no way public store client can access it, hence you will create a branded client using MDK SDK.
+
+1.  Follow steps 1 to 3 from [this tutorial](cp-mobile-dev-kit-build-client).
+
+2. Create below file structure under `DemoSampleApp.mdkproject`.
+
+            DemoSampleApp.mdkproject
+            ├── App_Resources_Merge
+               └── Android
+                   ├── app.gradle
+
+
+      !![MDK](img-7.1.png)
+
+    >Files specified in the `.mdkproject/App_Resources_Merge` folder override a part of the files in `<generated-project>/app/App_Resources`. You can find more details about it in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/app-resources-merge.html).
+
+3. Provide below information in the `app.gradle` file. Save the changes.
+
+    ```Java
+    dependencies { implementation 'com.google.android.gms:play-services-maps:17.0.0' }
+    ```
+
+4. Follow step 4 from [this tutorial](cp-mobile-dev-kit-build-client) to create your branded MDK client.
 
 [DONE]
 [ACCORDION-END]
@@ -497,26 +519,14 @@ For iOS, you can just use the App store client. Continue with next step.
 
 [OPTION BEGIN [Android]]
 
-In this step, you will run the app on an android device.
+In this step, you will run the app on an Android device.
 
-1. Navigate to `/DemoSampleApp.mdkproject/App_Resources/Android/app.gradle`.  
 
-    !![MDK](img_8.1.png)
-
-  2. Provide below information at the end of this file.
-
-    ```Java
-    dependencies { implementation 'com.google.android.gms:play-services-maps:17.0.0' }
-    ```
-
-    !![MDK](img_8.2.png)
-
-   3. Navigate to `/DemoSampleApp/app/App_Resources/Android/src/main/AndroidManifest.xml`.
+1. Navigate to `/DemoSampleApp/app/App_Resources/Android/src/main/AndroidManifest.xml`.
 
     !![MDK](img_8.3.png)
 
-   4. Provide below information before `application` closing tag.
-
+2. Provide below information before `application` closing tag.
 
     ```XML
      <meta-data android:name="com.google.android.geo.API_KEY" android:value="Enter your API Key generated in step 6" />
@@ -524,7 +534,7 @@ In this step, you will run the app on an android device.
 
     !![MDK](img_8.4.png)
 
-5. Attach the device to your Mac or Windows machine and run `tns device android` command to print a list of attached devices.
+3. Attach the device to your Mac or Windows machine and run `tns device android` command to print a list of attached devices.
 
     !![MDK](img_8.5.png)
 
