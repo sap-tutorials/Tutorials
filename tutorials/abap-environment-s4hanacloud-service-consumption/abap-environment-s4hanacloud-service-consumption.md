@@ -2,16 +2,16 @@
 auto_validation: true
 title: Create Service Consumption Model for Business Partner and Sales Order Item Cube
 description: Create Service Consumption Model for Business Partner and Sales Order Item Cube.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>intermediate, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>intermediate, topic>abap-development, products>sap-business-technology-platform, tutorial>license ]
 time: 45
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
- - Create a developer user in a SAP Cloud Platform ABAP Environment system.
- - Download Eclipse Photon or Oxygen and install ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
+ - Create a developer user in a SAP BTP, ABAP Environment system.
+ - Download the latest Eclipse and install ADT <https://tools.hana.ondemand.com/#abap>.
 
 ## Details
 ### You will learn  
@@ -21,23 +21,15 @@ author_profile: https://github.com/mervey45
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Copying the inbound service URL)]
-  1. Logon to SAP S/4HANA Cloud system as administrator.
+  1. Logon to SAP S/4HANA Cloud system as administrator and select **Communication Arrangement** in the **Communication Management** section.
 
       ![Copying the inbound service URL](administrator.png)
 
-  2. Go to **Communication Management** and select **Communication Arrangement**.
-
-      ![Copying the inbound service URL](arrangement.png)
-
-  3. Select the communication arrangement that you have created.
+  2. Select the communication arrangement that you have created.
 
       ![Copying the inbound service URL](arrangement2.png)
 
-  4. Select **`OAuth 2.0` Details** in the inbound communication area.
-
-      ![Copying the inbound service URL](arrangement3.png)
-
-  5. Copy the user name and SAML2 audience for later use.
+  3. Copy the business partner (A2X) URL for later use.
 
       ![Copying the inbound service URL](arrangement4.png)
 
@@ -46,61 +38,25 @@ author_profile: https://github.com/mervey45
 
 
 [ACCORDION-BEGIN [Step 2: ](Create destination with basic authentication)]
-  1. Log on to the SAP Cloud Platform cockpit as administrator.
+  1. Log on to the [SAP BTP cockpit](https://account.hana.ondemand.com/) and navigate to your **subaccount**. Select **Destinations** under **Connectivity** and create a new destination.
 
       ![Create destination with basic authentication](cockpit.png)
 
-  2. Choose your global account.
-
-      ![Create destination with basic authentication](global.png)
-
-  3. Select Subaccounts.
-
-      ![Create destination with basic authentication](subaccount.png)
-
-  4. Select your Cloud Foundry subaccount.
-
-      ![Create destination with basic authentication](cloudfoundry.png)
-
-  5. Choose the space that you have created for your ABAP environment during the setup.
-
-      ![Create destination with basic authentication](space.png)
-
-  6. Go to the service market place for the selected space, search for destination and select it.
-
-      ![Create destination with basic authentication](marketplace.png)
-
-  7. Click Instances.
-
-      ![Create destination with basic authentication](instance.png)
-
-  8. Choose your instance.
-
-      ![Create destination with basic authentication](instance2.png)
-
-  9. Select Destinations.
-
-      ![Create destination with basic authentication](destination.png)
-
-  10. Click **New Destination**.
-
-      ![Create destination with basic authentication](destination2.png)
-
-  11. Enter destination configuration:
+  2. Enter destination configuration:
 
       -  Name: your destination name
       -  Type: HTTP
       -  Description: your description
-      -  URL: Service URL from communication arrangement (Inbound Services screen -> ODataV2 service Business Partner Integration)
+      -  URL: Service URL from communication arrangement ( Business Partner (A2CX) ODataV2 service URL)
       -  (without `/sap/opu/odata/sap/API_BUSINESS_PARTNER`)
       -  Proxy Type: Internet
       -  Authentication: `BasicAuthentication`
-      -  User: <Communication user name from Oauth2.0 Details>
-      -  Password: <Password of communication user>
+      -  User: <your_communication_user>
+      -  Password: <password_of_communication_user>
 
       ![Create destination with basic authentication](destination3.png)
 
-  12. Check connection.
+   3. Check connection.
 
       ![Create destination with basic authentication](connection.png)
 
@@ -108,7 +64,7 @@ author_profile: https://github.com/mervey45
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create Custom CDS View in SAP S/4HANA Cloud)]
-  1. Logon to your S/4HANA Cloud system, navigate to Extensibility and open the Custom CDS Views tile.
+  1. Logon to your SAP S/4HANA Cloud system, navigate to Extensibility and open the Custom CDS Views tile.
 
       ![Create Custom CDS View in SAP S/4HANA Cloud](cds.png)
 
@@ -116,65 +72,81 @@ author_profile: https://github.com/mervey45
 
       ![Create Custom CDS View in SAP S/4HANA Cloud](cds2.png)
 
-  3. Name your CDS view `YY1_SALESORDERITEMCUBEXXX` and click **Add** and select **Add Primary Data Source**.
+  3. Name your CDS view `YY1_SALESORDERITEMCUBEXXX` and label. Select **External API** as scenario and click **Create**.
 
       ![Create Custom CDS View in SAP S/4HANA Cloud](cds3.png)
 
-  4. Search for **`I_SalesOrderItemCube`**, select it and click **Add**.
+  4. Search for **`I_SalesOrderItemCube`** and select it.
 
       ![Create Custom CDS View in SAP S/4HANA Cloud](cds4.png)
 
-  5. Click **Add** and select **Add Associated Data Source**.
+  5. Click **Add** and select **Associated Data Source**.
 
       ![Create Custom CDS View in SAP S/4HANA Cloud](cds5.png)
 
-  6. Search for **`I_BusinessUser`**, select it and click **Add**.
+  6. Search for **`I_BusinessUser`**, select it and click **OK**.
 
       ![Create Custom CDS View in SAP S/4HANA Cloud](cds6.png)
 
-  7. Select **Yes** and move on.
+  7. Select the butterfly symbol to add a join condition.
 
       ![Create Custom CDS View in SAP S/4HANA Cloud](cds7.png)
 
-  8. Select **External API** and click on the butterfly symbol.
+  8. Click **Add**.
 
       ![Create Custom CDS View in SAP S/4HANA Cloud](cds8.png)
 
-  9. In the field section search for following fields and add them to your CDS view.
+  9. Search for `userid` and select it.
+
+      ![Create Custom CDS View in SAP S/4HANA Cloud](cdsx.png)
+
+ 10. Add a value to your join condition, therefore select the **field symbol** under Value.
+
+      ![Create Custom CDS View in SAP S/4HANA Cloud](cds10.png)
+
+ 11. Search for `CreatedByUser` under `I_SalesOrderItemCube` and select it.
+
+       ![Create Custom CDS View in SAP S/4HANA Cloud](cds11.png)
+
+ 12. Now your join condition is complete. Click **Close**.
+
+       ![Create Custom CDS View in SAP S/4HANA Cloud](cds12.png)
+
+ 13. Navigate to **Parameters** and add manual parameters for the exchange rate type and display currency.
+
+       ![Create Custom CDS View in SAP S/4HANA Cloud](cds16.png)
+
+ 14. Navigate to **Elements**, select **Add** > **Elements**.
+
+       ![Create Custom CDS View in SAP S/4HANA Cloud](cds13.png)
+
+ 15. Search for `BusinessPartner`, select it and click **OK**.
+
+       ![Create Custom CDS View in SAP S/4HANA Cloud](cds14.png)
+
+ 16. Add also following elements to your CDS view:
      - `SalesOrder`
      - `SalesOrderItem`
-     - `_CreatedBy.BusinessPartner`
-     - `_SalesOrder.OverallSDProcessStatus`
      - `CreationDate`
      - `NetAmountInDisplayCurrency`
      - `DisplayCurrency`
 
-      ![Create Custom CDS View in SAP S/4HANA Cloud](cds9.png)
+  17. Check your result and click **Publish**.
 
-  10. Go to properties and check your result.
-
-      ![Create Custom CDS View in SAP S/4HANA Cloud](cds10.png)
-
-  11. Switch to Parameters and set following manual default values:
-      - `P_ExchangeRateType`: EUR
-      - `P_DisplayCurrency`: M
-
-      Click **Publish**.
-
-      ![Create Custom CDS View in SAP S/4HANA Cloud](cds11.png)
+      ![Create Custom CDS View in SAP S/4HANA Cloud](cds15.png)
 
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create custom communication scenarios)]
-  1. Navigate to **Extensibility** and select **Custom Communication Scenario**.
+  1. Navigate to **Extensibility** and select **Custom Communication Scenarios**.
 
       ![Create custom communication scenarios](extensibility.png)
 
   2. Click **New**.
 
-      ![Create custom communication scenarios](new.png)
+      ![Create custom communication scenarios](new2.png)
 
   3. Create a communication scenario:
      - Communication Scenario ID: `Salesorderitemcubexxx`
@@ -182,19 +154,19 @@ author_profile: https://github.com/mervey45
 
      Click **New**.
 
-      ![Create custom communication scenarios](newscenario.png)
+      ![Create custom communication scenarios](new3.png)
 
   4. Click `+` to add an inbound service.
 
-      ![Create custom communication scenarios](plus.png)
+      ![Create custom communication scenarios](new.png)
 
   5. Search for `YY1_SalesOrderItemCubeXXX`, select it and click **OK**.
 
-      ![Create custom communication scenarios](ok.png)
+      ![Create custom communication scenarios](newscenario.png)
 
   6. Select your inbound service and click **Publish**.
 
-      ![Create custom communication scenarios](publish.png)
+      ![Create custom communication scenarios](publishx.png)
 
 
 [DONE]
@@ -205,7 +177,7 @@ author_profile: https://github.com/mervey45
 
      Copy the production URL.
 
-      ![Download metadata for business partner](bupa.png)
+      ![Download metadata for business partner](ok.png)
 
   2. Now open a browser of your choice and past the production URL with your hostname and port.
      Add also `$metadata` at the end, like following:
@@ -282,17 +254,17 @@ author_profile: https://github.com/mervey45
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create service consumption model for sales order item)]
-  1. Navigate to **Communication Management** and select **Communication Arrangement**.
+  1. Open your SAP S/4HANA Cloud system and navigate to **Communication Management** and select **Communication Arrangements**.
 
-      ![Create service consumption model for sales order item](consumption8.png)
+      ![Create service consumption model for sales order item](com.png)
 
   2. Search for your communication arrangement `yy1_salesorderitemcubexxx` and select it.
 
-      ![Create service consumption model for sales order item](consumption9.png)
+      ![Create service consumption model for sales order item](comm2.png)
 
   3. Copy the service URL of your communication arrangement.
 
-      ![Create service consumption model for sales order item](consumption11.png)
+      ![Create service consumption model for sales order item](comm3.png)
 
   4. Paste the copied service URL in your browser, add `/$metadata` at the end of your URL and login with you communication user and password to see your metadata.
 
