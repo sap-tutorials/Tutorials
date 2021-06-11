@@ -1,6 +1,6 @@
 ---
 title: Connect to Data Lake IQ Using the ODBC Driver
-description: Configure a data source in the ODBC Data Source Administrator to connect to the previously created data lake IQ and then use the data source in Microsoft Excel and DBeaver.
+description: Configure a data source to connect to the previously created data lake IQ and then use the data source in unixODBC, Microsoft Excel and DBeaver.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>sql, products>sap-iq]
@@ -106,21 +106,32 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
     encryption=TLS(trusted_certificates=*;direct=yes)
     host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443
     integrated=NO
+    log=/tmp/hdlclientlog.txt
     ```
 
-5. unixODBC provides a basic SQL query tool called `isql` that can be used to validate a data source. Ensure you are using the correct username and password.
+5. DBISQL or `isql`, which is a tool provided by unixODBC can be used to try out the data source. Ensure you are using the correct username and password.
 
     ```Shell (Linux)
+    dbisql -hdl -c "uid=HDLADMIN;pwd=myPassword;dsn=HC_DL_Trial" -nogui
     isql -v HC_DL_Trial HDLADMIN myPassword
     ```
 
-    Once you see a message that indicates a connection has been made, enter the following statement to verify this.
+    DBISQL
 
-    ```Shell (Linux)
-    SELECT * FROM HOTEL;
-    ```
+    ![ODBC example with dbisql](ODBC-dbisql.png)
+
+    isql
 
     ![isql query](isqlQuery.png)
+
+    > To exit dbisql or isql type quit.
+
+    > ---
+
+    > The column width when displaying results in isql can be set using the -m parameter.  
+    > ```Shell (Linux)
+    isql -v HC_DL_Trial HDLADMIN myPassword -m6
+    >```
 
 [DONE]
 [ACCORDION-END]

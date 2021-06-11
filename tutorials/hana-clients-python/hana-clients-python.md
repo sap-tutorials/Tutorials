@@ -63,12 +63,6 @@ The repository that contains Python packages is [PyPI](https://pypi.org/) and in
 
 ![hdbcli on PyPI](PyPI.png)  
 
-The pip command can be used to list the currently available version of the SAP HANA database driver for Python on PyPI.  
-
-```Shell
-pip search hdbcli
-```
-
 Run the following command to download and install the SAP HANA client for Python from PyPI:
 
 ```Shell
@@ -79,7 +73,7 @@ pip install hdbcli
 >
 > ```Shell
 > cd C:\SAP\hdbclient
-> pip install hdbcli-2.5.86.zip
+> pip install hdbcli-2.8.16.zip
 > ```
 
 > ---
