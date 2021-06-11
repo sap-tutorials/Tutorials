@@ -196,7 +196,9 @@ Once the build process has been completed, look for the newly generated file in 
 
     !![select_columns](select_columns.png)
 
-7.  Once all needed columns are selected, hit the **Go** button to display the data. This should show the same data that you saw at the end of the previous tutorial.
+7.  Once all needed columns are selected, hit the **Go** button to display the data. This should show the **NO DATA** this time.
+
+    > The reason why you don't see data, is that you created a **new HDI container** during the deployment. You can use the *SAP HANA Projects* panel of the SAP Business Application Studio to open the container in the SAP HANA DB Explorer. In there, you can repeat the same steps to display the data that you saw at the end of the previous tutorial.
 
     !![fe_lr](fe_lr.png)
 
