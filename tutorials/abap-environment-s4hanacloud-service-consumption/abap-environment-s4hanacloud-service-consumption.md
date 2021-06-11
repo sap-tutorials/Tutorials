@@ -21,7 +21,7 @@ author_profile: https://github.com/mervey45
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Copying the inbound service URL)]
-  1. Logon to SAP S/4HANA Cloud system as administrator and select **Communication Arrangement** in the **Communication Management** section.
+  1. Log in to SAP S/4HANA Cloud system as administrator and select **Communication Arrangement** in the **Communication Management** section.
 
       ![Copying the inbound service URL](administrator.png)
 
@@ -38,7 +38,7 @@ author_profile: https://github.com/mervey45
 
 
 [ACCORDION-BEGIN [Step 2: ](Create destination with basic authentication)]
-  1. Log on to the [SAP BTP cockpit](https://account.hana.ondemand.com/) and navigate to your **subaccount**. Select **Destinations** under **Connectivity** and create a new destination.
+  1. Log in to the [SAP BTP cockpit](https://account.hana.ondemand.com/) and navigate to your **subaccount**. Select **Destinations** under **Connectivity** and create a new destination.
 
       ![Create destination with basic authentication](cockpit.png)
 
@@ -64,7 +64,7 @@ author_profile: https://github.com/mervey45
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create Custom CDS View in SAP S/4HANA Cloud)]
-  1. Logon to your SAP S/4HANA Cloud system, navigate to Extensibility and open the Custom CDS Views tile.
+  1. Log in to your SAP S/4HANA Cloud system, navigate to Extensibility and open the Custom CDS Views tile.
 
       ![Create Custom CDS View in SAP S/4HANA Cloud](cds.png)
 
@@ -124,7 +124,7 @@ author_profile: https://github.com/mervey45
 
        ![Create Custom CDS View in SAP S/4HANA Cloud](cds14.png)
 
- 16. Add also following elements to your CDS view:
+ 16. Add also the following elements to your CDS view:
      - `SalesOrder`
      - `SalesOrderItem`
      - `CreationDate`
@@ -186,7 +186,7 @@ author_profile: https://github.com/mervey45
        https://{host}:{port}/sap/opu/odata/sap/API_BUSINESS_PARTNER/$metadata
      ```
 
-     Login with you communication user and password to see your metadata.
+     Log in with you communication user and password to see your metadata.
 
       ![Download metadata for business partner](logon.png)
 
@@ -266,7 +266,7 @@ author_profile: https://github.com/mervey45
 
       ![Create service consumption model for sales order item](comm3.png)
 
-  4. Paste the copied service URL in your browser, add `/$metadata` at the end of your URL and login with you communication user and password to see your metadata.
+  4. Paste the copied service URL in your browser, add `/$metadata` at the end of your URL and log in with you communication user and password to see your metadata.
 
       ![Create service consumption model for sales order item](consumption12.png)
 
