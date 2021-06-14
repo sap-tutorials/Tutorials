@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Set Up Local Development Using VS Code
-description: This tutorial shows you how to get started using VS Code as an editor. 
+description: This tutorial shows you how to get started using VS Code as an editor.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
@@ -82,7 +82,7 @@ Make sure you run the latest long-term support (LTS) version of Node.js with an 
 v14.x.x
 ```
 
-> If you don't see the required version, go to [Node.js](https://nodejs.org/en/download/) download page, pick the installer appropriate for your operating system, and install it. 
+> If you don't see the required version, go to [Node.js](https://nodejs.org/en/download/) download page, pick the installer appropriate for your operating system, and install it.
 In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#node-version) for CAP for more details.
 
 
@@ -218,6 +218,7 @@ You need to install the [**SAP Language Support**](https://marketplace.visualstu
 1. Open VS Code.
 
 2. Choose the **Extensions** icon in the left pane.
+
 3. Type **SAP CDS** in the search field and choose **SAP Language Support** from the search results.
 
 
@@ -229,9 +230,10 @@ You need to install the [**SAP Language Support**](https://marketplace.visualstu
 
 Now, the extension is installed in VS Code. If the extension is already installed and enabled in VS Code, it is updated automatically. The VS Code extension comes with a welcome page, which shows latest release notes of CAP. It starts automatically whenever an update arrives for the extension. Later, you can open the page through the command `CDS: Show CAP Release Notes`.
 
-> Learn more about the features of the extension in this short [demo](https://www.youtube.com/watch?v=eY7BTzch8w0) and see the [features and commands](https://cap.cloud.sap/docs/get-started/tools#cds-editor) in the CAP documentation.
+> Learn more about SAP CDS Language Support Extension:
 
-
+> - short [demo](https://www.youtube.com/watch?v=eY7BTzch8w0)
+> - [features and commands](https://cap.cloud.sap/docs/get-started/tools#cds-editor)
 
 [DONE]
 [ACCORDION-END]
@@ -242,9 +244,9 @@ SAP Fiori tools are a number of extensions for VS Code. They mainly support you 
 
 > Additional Documentation:
 
-> - [SAP Fiori Tools](https://help.sap.com/viewer/product/SAP_FIORI_tools/Latest/en-US)
+> [SAP Fiori Tools](https://help.sap.com/viewer/product/SAP_FIORI_tools/Latest/en-US)
 
-(For macOS users only): You need to install the `code` command in PATH:
+For macOS you need to install the `code` command in PATH:
 
 1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P**) and type `shell command` to find the Shell Command: `Install 'code' command in PATH`.
 

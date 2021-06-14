@@ -30,7 +30,11 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
 [ACCORDION-BEGIN [Step 1: ](Enable Authentication Support)]
 
-To enable authentication support in CAP, the [passport](http://www.passportjs.org/) module needs to be installed. Passport is Express-compatible authentication middleware for Node.js. See [Authentication for CAP Node.js SDK](https://cap.cloud.sap/docs/node.js/authentication#mocked) for more details.
+To enable authentication support in CAP, the [passport](http://www.passportjs.org/) module needs to be installed. Passport is Express-compatible authentication middleware for Node.js.
+
+> Additional Documentation:
+
+>    [Authentication for CAP Node.js SDK](https://cap.cloud.sap/docs/node.js/authentication#mocked)
 
 1. Navigate to your project folder.
 
