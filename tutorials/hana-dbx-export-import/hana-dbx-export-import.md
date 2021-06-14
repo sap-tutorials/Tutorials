@@ -136,11 +136,13 @@ The following steps will attempt to demonstrate some of these options.
 
 This step will import an `ESRI shapefile` containing points of interest near the `Bella Ciente` hotel in the city of `Longview` Texas.  A search can then be performed to return the 3 closest golf courses to the hotel.
 
->At this time, the import option in the import wizard for `ESRI shapefiles` is only available in the SAP HANA Cloud, HANA database.
+>The import option for `ESRI shapefiles` is available in the SAP HANA database explorer SP 13 or in the SAP HANA database explorer included with SAP HANA Cloud.
 
 1. At the [ARCGIS Hub](https://hub.arcgis.com/search), search for **`Points of Interest in and around Longview, Texas`**.
 
     ![Search](search.png)
+
+    >There may be a delay before the search results are returned.
 
     Scroll through the results and choose the selection below.
 
