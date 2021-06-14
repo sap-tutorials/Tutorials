@@ -5,7 +5,7 @@ title: Implement Roles and Authorization Checks In CAP
 description: This tutorial shows you how to enable authentication and authorization for your CAP application.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -30,7 +30,11 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
 [ACCORDION-BEGIN [Step 1: ](Enable Authentication Support)]
 
-To enable authentication support in CAP, the [passport](http://www.passportjs.org/) module needs to be installed. Passport is Express-compatible authentication middleware for Node.js. See [Authentication for CAP Node.js SDK](https://cap.cloud.sap/docs/node.js/authentication#mocked) for more details.
+To enable authentication support in CAP, the [passport](http://www.passportjs.org/) module needs to be installed. Passport is Express-compatible authentication middleware for Node.js.
+
+> Additional Documentation:
+
+>    [Authentication for CAP Node.js SDK](https://cap.cloud.sap/docs/node.js/authentication#mocked)
 
 1. Navigate to your project folder.
 

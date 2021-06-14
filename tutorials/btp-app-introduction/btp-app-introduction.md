@@ -3,7 +3,7 @@ title: Introduction to Application Development using CAP and Node.js
 description: Learn more about SAP Cloud Application Programming Model (CAP) and SAP BTP Application Development
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori, products>sap-fiori-tools, products>sapui5]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 

@@ -57,7 +57,7 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
     !![App Logs](cpapp-srv-logs.png)
 
-> Only the recent logs are displayed.
+    > Only the recent logs are displayed.
 
 
 
@@ -78,9 +78,9 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
 6. Choose **Open Kibana Dashboard**.
 
-> Kibana shows all logs
+    > Kibana shows all logs.
 
-> Although the **Open Kibana Dashboard** link is placed on the logs view of a particular application, it will give you access to the logs of all spaces where you have the required permission.
+    > Although the **Open Kibana Dashboard** link is placed on the logs view of a particular application, it will give you access to the logs of all spaces where you have the required permission.
 
 [DONE]
 [ACCORDION-END]

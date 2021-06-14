@@ -78,7 +78,7 @@ cds compile srv --to xsuaa >xs-security.json
 
 The file contains the configuration of the XSUAA (XS User Authentication and Authorization service).
 
-The CAP server takes the authorization parts `@(restrict ... )` from our service definition form ([Adding CAP Role Restrictions to Entities](btp-app-#adding-cap-role-cf-scope-restrictions-to-entities)) and creates scopes and role templates from it.
+The CAP server takes the authorization parts `@(restrict ... )` from our service definition form and creates scopes and role templates from it.
 
 For example, it found the roles `RiskViewer` and `RiskManager` in the `srv/risk-service.cds` file:
 

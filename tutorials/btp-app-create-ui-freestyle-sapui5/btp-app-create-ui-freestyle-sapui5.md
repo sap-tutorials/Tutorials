@@ -261,6 +261,8 @@ The change in the `manifest.yaml` is to make sure that the data requests are use
 
 [OPTION BEGIN [macOS/Linux]]
 
+   > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+
 While `cds watch` comes in handy for serving even the SAPUI5 based apps directly in your CAP projects, there's also an additional alternative, again from the SAPUI5 tools. They also provide a development server that can be used in any pure SAPUI5 project. So, you can use the SAPUI5 development server when there's no CAP service around and/or the service is provided by a different technology. Here are some advantages of the SAPUI5 development server compared to `cds watch`, depending on how deep you want to be involved in SAPUI5 freestyle programming.
 
 - You can run multiple servers at a time (`cds watch` can only run once).
@@ -319,7 +321,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-    > Additional documentation
+    > Additional Documentation:
 
     > In a projects `ui5.yaml` file, you can define additional server middleware modules that will be executed when the request is received by the server. This configuration exclusively affects the server started in this project. See [UI5 Tooling](https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/) documentation for more details.
 
@@ -359,6 +361,8 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 [OPTION END]
 [OPTION BEGIN [Windows]]
 
+   > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+
 While `cds watch` comes in handy for serving even the SAPUI5 based apps directly in your CAP projects, there's also an additional alternative, again from the SAPUI5 tools. They also provide a development server that can be used in any pure SAPUI5 project. So, you can use the SAPUI5 development server when there's no CAP service around and/or the service is provided by a different technology. Here are some advantages of the SAPUI5 development server compared to `cds watch`, depending on how deep you want to be involved in SAPUI5 freestyle programming.
 
 - You can run multiple servers at a time (`cds watch` can only run once).
@@ -417,7 +421,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-    > Additional documentation
+    > Additional Documentation:
 
     > In a projects `ui5.yaml` file, you can define additional server middleware modules that will be executed when the request is received by the server. This configuration exclusively affects the server started in this project. See [UI5 Tooling](https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/) documentation for more details.
 

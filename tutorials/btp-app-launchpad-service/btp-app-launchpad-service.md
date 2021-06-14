@@ -436,9 +436,9 @@ app/*/package-lock.json
     cf deploy cpapp_1.0.0.mtar
     ```
 
-> MBT build options
+    > Additional Documentation:
 
-> [How to build an MTA archive from the project sources](https://sap.github.io/cloud-mta-build-tool/usage/#how-to-build-an-mta-archive-from-the-project-sources)
+    > [How to build an MTA archive from the project sources](https://sap.github.io/cloud-mta-build-tool/usage/#how-to-build-an-mta-archive-from-the-project-sources)
 
 3. Go to SAP BTP cockpit to check the deployed content.
 
@@ -453,11 +453,9 @@ app/*/package-lock.json
 
 3. Search for the **Launchpad Service** tile and choose **Create**.
 
-
     !![Create Launchpad Service](create_launchpad_service.png)
 
 4. Keep the default settings for **Service** and **Plan** and choose **Create**.
-
 
     !![New Instance or Subscription](new_instance_dialog.png)
 
@@ -552,7 +550,7 @@ You have launched your `Risks` app through the SAP Launchpad service.
 
   !![Risks App](risks.png)
 
-> If you choose ***Go***, you'll get an error because you haven't assigned a role collection to your user yet. We'll do it in the next step.
+> If you choose ***Go***, you'll get an error because you haven't assigned a role collection to your user yet. We'll do it in the next tutorial.
 
 
 
