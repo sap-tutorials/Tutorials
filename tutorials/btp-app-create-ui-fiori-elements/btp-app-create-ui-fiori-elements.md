@@ -10,6 +10,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
+ - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
  - [Create a Directory for Development](btp-app-create-directory)
  - [Create a CAP-Based Application](btp-app-create-cap-application)
 
