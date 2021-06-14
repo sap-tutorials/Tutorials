@@ -5,7 +5,7 @@ title: Deploy Your Multi-Target Application (MTA)
 description: This tutorial shows you how to deploy your CAP application as Multi-Target Application (MTA).
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -55,11 +55,11 @@ The deployment is based on MTA ( *Multi-Target Application*, sometimes also call
 
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ]((For Windows users only): Install make Tool)]
+[ACCORDION-BEGIN [Step 2: ]((For Windows) Install make Tool)]
 
-> Linux and macOS are already shipped with `make`. This is only relevant for Windows users.
+   > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-The `make` tool is required by the `mbt` tool. You can download it from the GNU Make site:
+The `make` tool is required by the `mbt` tool. Linux and macOS are already shipped with `make`. For Windows you can download it from the GNU Make site:
 
 1. Go to <http://gnuwin32.sourceforge.net/packages/make.htm>.
 2. Choose the download with the description **Complete package, except sources**.
@@ -244,7 +244,7 @@ The resources are generated from the `requires` section of `cds` in the `package
 
 The resources are Cloud Foundry service instances that are automatically created and updated during the MTA deployment.
 
-> Additional Documentation
+> Additional Documentation:
 
 > [Assigning Role Collections](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/9e1bf57130ef466e8017eab298b40e5e.html) in SAP BTP documentation
 
@@ -317,7 +317,7 @@ Further, you can add role collections using the `xs-security.json` file. Since r
 
 Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 
-> Additional Documentation
+> Additional Documentation:
 
 > [Assigning Role Collections](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/9e1bf57130ef466e8017eab298b40e5e.html) in SAP BTP documentation
 

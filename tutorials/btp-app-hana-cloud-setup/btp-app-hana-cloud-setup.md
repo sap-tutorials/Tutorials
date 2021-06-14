@@ -5,7 +5,7 @@ title: Set Up the SAP HANA Cloud Service
 description: This tutorial shows you how to set up the SAP HANA cloud service.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-hana-cloud]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -65,7 +65,7 @@ By default, the deployment uses the `hdbcds` as deployment format. However, this
     }
     ```
 
-    > Additional Documentation
+    > Additional Documentation:
 
     > - [Using Databases](https://cap.cloud.sap/docs/guides/databases#get-hana)
     > - [CAP Configuration](https://cap.cloud.sap/docs/node.js/cds-env)
@@ -83,7 +83,7 @@ If you already have an SAP HANA Cloud service instance in your Cloud Foundry spa
 
 If you need to create a SAP HANA Cloud service instance first **&rarr;** continue with step [Create an SAP HANA Cloud Service Instance](btp-app-#create-an-sap-hana-cloud-service-instance).
  
-> Additional Documentation
+> Additional Documentation:
 
 >   - [SAP HANA Cloud Getting Started Guide](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/cloud/en-US/d0aa0ec935c1401e8deb3be35d49730b.html)
 >   - [SAP HANA Cloud Administrator DBADMIN](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/5b35402c47b344d882ac13c661aff1c0.html)

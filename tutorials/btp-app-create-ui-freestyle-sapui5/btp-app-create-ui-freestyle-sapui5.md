@@ -319,7 +319,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-    > Additional documentation
+    > Additional Documentation:
 
     > In a projects `ui5.yaml` file, you can define additional server middleware modules that will be executed when the request is received by the server. This configuration exclusively affects the server started in this project. See [UI5 Tooling](https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/) documentation for more details.
 
@@ -417,7 +417,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-    > Additional documentation
+    > Additional Documentation:
 
     > In a projects `ui5.yaml` file, you can define additional server middleware modules that will be executed when the request is received by the server. This configuration exclusively affects the server started in this project. See [UI5 Tooling](https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/) documentation for more details.
 
