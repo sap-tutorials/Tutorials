@@ -29,7 +29,10 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 [OPTION BEGIN [Trial]]
 
-You need an SAP BTP account to deploy the services and applications. In general, you have a choice of the following options:
+   > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+
+You need an SAP BTP account to deploy the services and applications. 
+In general, you have a choice of the following options:
 
 If you just want to try out things and don't want to use any of the parts of this tutorial productively, this is probably the best option for you. The usage is free of cost and many of the services that you need are created for you. For example, an SAP HANA instance is already created for you when you set up the trial account. So, there's the least work to do when you want to concentrate on developing the actual application. This comes with some drawbacks, however. Trial accounts have a limited usage time. After a while, you have to refresh the subscription and redo all the work. Also, there are a number of things that you can't do as opposed to a full account.
 
@@ -37,7 +40,10 @@ If you just want to try out things and don't want to use any of the parts of thi
 [OPTION END]
 [OPTION BEGIN [Live]]
 
-You need an SAP BTP account to deploy the services and applications. In general, you have a choice of the following options:
+   > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+
+You need an SAP BTP account to deploy the services and applications. 
+In general, you have a choice of the following options:
 
 There are multiple live landscapes in different data centers around the globe. The live landscapes are intended for live customer usage, but also development projects by customers and partners.
 
@@ -48,8 +54,6 @@ There are multiple live landscapes in different data centers around the globe. T
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Create a Trial Account)]
-
-    **To earn your badge for the whole mission, you'll need to mark all steps as done, including any optional ones that you may have skipped because they are not relevant for you.**
 
 You can [register for a trial account](https://www.sap.com/cmp/td/sap-cloud-platform-trial.html) and access it [here](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial).
 
@@ -68,14 +72,12 @@ A global account, a subaccount, a Cloud Foundry org, and space with some entitle
 > 5. Search for the missing Service Plans and add it with **Add <x> Service Plans**.
 > 6. Choose **Save**.
 
-Continue with [*Log On to Cloud Foundry*](#option-1-log-on-to-cloud-foundry-from-the-command-line) at the end of this page.
+Continue with [Log on from the Command Line](btp-app-#log-on-from-the-command-line) at the end of this tutorial.
 
 [DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Create a Live Account)]
-
-    **To earn your badge for the whole mission, you'll need to mark all steps as done, including any optional ones that you may have skipped because they are not relevant for you.**
 
 If you choose to create an account on Live, you have to select a number of services that you need to subscribe to, for example, an SAP HANA database. For each service, there are so-called `entitlements`, which are basically the service plans and the number of units that you want from each service, when you create an account you need to provide these also.
 
@@ -170,9 +172,7 @@ Enter *Business Info:*
 
 6. To fill the **New Subaccount** dialog enter a **Display Name**.
 
-    > Use a short name for your project and add the prefix for the landscape, for example: `<project name>-cf-eu10`.
-
-    !!! warning "Don't select the checkbox **Neo**!"
+    > Use a short name for your project and add the prefix for the landscape, for example: `<project name>-cf-eu10`. Don't select the checkbox **Neo**!
 
 7. Enter a subdomain.
 

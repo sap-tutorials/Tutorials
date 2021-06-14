@@ -103,7 +103,7 @@ Go to [GitHub](https://github.com/) and create a new GitHub repository.
 ---
 [ACCORDION-BEGIN [Step 5: ]((Optional) Copy the Files to Start from an Example)]
 
-    **To earn your badge for the whole mission, you'll need to mark all steps as done, including any optional ones that you may have skipped because they are not relevant for you.**
+   > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
 If you don't want to start from scratch, but from a specific example of the tutorial, you can copy the required files in your project. Alternatively, you can fork the project and work on the fork.
 
