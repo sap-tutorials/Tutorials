@@ -2,7 +2,7 @@
 author_name: Haoyue Feng
 author_profile: https://github.com/Fenghaoyue
 title: Customize the Onboarding Flow
-description: Learn how to customize the UI screens and add your own logic with extension points for the onboarding flow.
+description: Learn how to customize the UI screens and add your own logic with extension points for the onboarding flow of SAP BTP SDK for Android.
 auto_validation: true
 time: 60
 tags: [ tutorial>beginner, operating-system>android, topic>mobile, products>sap-business-technology-platform]
