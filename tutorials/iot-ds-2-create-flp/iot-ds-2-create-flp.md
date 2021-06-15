@@ -1,6 +1,8 @@
 ---
 title: Set Up SAP Fiori launchpad in Cloud Foundry to Get Notifications
 description: Create and configure an SAP Fiori launchpad site to receive notifications from SAP IoT using SAP Web IDE.
+author_name: Jitendra Sharma
+author_profile: https://github.com/JitendraSharma01
 auto_validation: true
 time: 40
 primary_tag: topic>internet-of-things
