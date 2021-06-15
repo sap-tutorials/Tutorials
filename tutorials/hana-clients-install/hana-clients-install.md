@@ -59,7 +59,7 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
     ./hdbsetup
     ```  
 
-    Set the install directory to `C:\sap\hdbclient` on windows or linux or Mac to `users\your_user\sap\hdbclient` and complete the installation.  
+    Set the install directory to `C:\sap\hdbclient` on Microsoft Windows or to `users/your_user/sap/hdbclient` on Linux or macOS and complete the installation.  
 
     ![Client-install](client-installer.png)
 
