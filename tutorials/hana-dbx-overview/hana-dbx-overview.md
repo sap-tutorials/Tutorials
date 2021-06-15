@@ -85,7 +85,7 @@ The image below shows the SAP HANA database explorer running in an on-premise in
 
 ![latest available version for on-premise](dbx-on-premise-version.png)
 
-For the on-premise edition, only the currently released version receives patches.  For example, now that version 2.12.X has been released, there will no longer be fixes made to  the 2.11.X release.  For additional details see [SAP Note 2433181 - SAP HANA 2.0 Cockpit Revision and Maintenance Strategy](https://launchpad.support.sap.com/#/notes/2433181).
+For the on-premise edition, only the currently released version receives patches.  For example, now that version 2.13.X has been released, there will no longer be fixes made to  the 2.12.X release.  For additional details see [SAP Note 2433181 - SAP HANA 2.0 Cockpit Revision and Maintenance Strategy](https://launchpad.support.sap.com/#/notes/2433181).
 
 The SAP Software download links (requires an S-User ID to access) below are for the on-premise version of the SAP HANA Cockpit, the SAP Web IDE, and the SAP HANA database explorer.  These pages also contain links to release notes that describe fixes made to each release.
 
@@ -111,7 +111,7 @@ Continue on to the next tutorial in this group once you have created an SAP HANA
 
 The instructions on how to setup a free SAP HANA Cloud trial within SAP BTP are well covered in a number of other sources listed below.  
 
-  * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
+  * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics) (Only the first 3 steps of this tutorial are needed for basic setup of SAP HANA Cloud trial.)
 
   * [Getting Started with your trial of SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/)
 
@@ -143,7 +143,7 @@ Once installed, a useful starting point is the page below.
 
 ![XSA is up and running](xsa-is-up.png)
 
-It contains links to the SAP Web IDE for SAP HANA, SAP HANA cockpit, the SAP HANA cockpit manager, and the SAP HANA database explorer.
+It contains links to the SAP Web IDE for SAP HANA, SAP HANA cockpit, and the SAP HANA cockpit manager.
 
 [VALIDATE_1]
 [ACCORDION-END]

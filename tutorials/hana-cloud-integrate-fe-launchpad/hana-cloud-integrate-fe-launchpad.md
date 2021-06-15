@@ -170,6 +170,8 @@ In this step, you'll assign the `List Report` app to the `Everyone` role. This i
 
     !![See all apps](see-all.png)
 
+    > Note that your might see no records if you didn't explicitly fill the HDI container that is used for this deployment.
+
 2. Apply a new filter to display only items with the German language code `DE`
 
     !![applied-filter](applied-filter.png)

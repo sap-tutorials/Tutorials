@@ -85,7 +85,8 @@ primary_tag: products>sap-hana-cloud
     SELECT
     '{ "name":"John", "age":30, "cars": { "car1":"Ford", "car2":"BMW", "car3":"Fiat" }}'
     AS JSON_EXAMPLE FROM DUMMY;
-    SELECT * FROM HOTEL.CUSTOMERS FOR JSON;
+
+    SELECT * FROM HOTEL.CUSTOMER FOR JSON;
     ```
 
     ![JSON Query Results](JSONQuery.png)
@@ -299,7 +300,7 @@ The statement library contains a mix of pre-populated system statements and user
 
     ![Statement Library](StatementLibrary.png)
 
-    >Some of the system statements come from [SAP Note 1969700 - SQL Statement Collection for SAP HANA](https://launchpad.support.sap.com/#/notes/1969700).  These statements can be used to help monitor the database.  These statements are primarily intended for SAP HANA 2.0.  Another source of diagnostic information are the SQL queries contained in [`M_SYSTEM_INFORMATION_STATEMENTS` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20c5dfac751910148a3fc81b81b2d19b.html).
+    >Previously, some of the included system statements came from [SAP Note 1969700 - SQL Statement Collection for SAP HANA](https://launchpad.support.sap.com/#/notes/1969700).  If you wish to add these, they can be downloaded from the SAP Note referenced above and added as user statements.  Another source of diagnostic information are the SQL queries contained in [`M_SYSTEM_INFORMATION_STATEMENTS` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20c5dfac751910148a3fc81b81b2d19b.html).
 
 5. To run a statement, select one from the statement library and click the **Open in SQL Console** button.
 
