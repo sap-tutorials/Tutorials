@@ -211,13 +211,13 @@ In order to use the existing NativeScript plugin in MDK client, you will need to
       "AppName": "DemoSampleApp",
       "AppVersion": "1.0.0",
       "BundleID": "com.sap.mdk.demo",
-      "Externals": ["nativescript-geolocation","ui/enums"],
+      "Externals": [],
       "NSPlugins": ["nativescript-geolocation"],
       "UrlScheme": "mdkclient"
     }
     ```
 
-!![MDK](img_5.png)
+!![MDK](img-5.png)
 
 [DONE]
 [ACCORDION-END]
