@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Create a Directory for Development
-description: This tutorial shows you how to start building your application with CAP.
+description: This tutorial shows you how to start building your application with CAP and VS Code.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform]
