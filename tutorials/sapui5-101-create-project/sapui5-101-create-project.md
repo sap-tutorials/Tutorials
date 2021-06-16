@@ -3,9 +3,9 @@ title: Create an Empty SAPUI5 Project
 description: Start working with the SAP Business Application Studio, and create a new empty UI5 project connected to a data source.
 auto_validation: true
 primary_tag: topic>sapui5
-author_name: Marius Obert
-author_profile: https://github.com/iobert
-tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-business-application-studio ]
+author_name: Conrad Bernal
+author_profile: https://github.com/cjbernal
+tags: [  tutorial>beginner, topic>html5, topic>sapui5,  products>sap-btp-cloud-foundry-environment, products>sap-business-application-studio ]
 time: 15
 
 ---
@@ -27,13 +27,6 @@ time: 15
 !![selectDevSpace](./selectDevSpace.png)
 
 > Have a look at [this tutorial](appstudio-devspace-fiori-create) if you are unsure how to get here or how to create a dev space.
-
-
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Create a UI5 destination)]
-
-[Create a new destination](cp-cf-create-destination) of the name "ui5" that points to the URL `https://sapui5.hana.ondemand.com/`. This is where we'll pull the standard UI5 libs from later.
 
 
 [DONE]

@@ -3,21 +3,24 @@ title: Set Up SAP Mobile Cards
 description: Activate SAP Mobile Services and connect the mobile application to your trial account.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-cards, products>sap-mobile-services ]
 time: 10
 author_name: Sandeep TDS
 author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites
-- [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+
+- [Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
 - [Enable SAP Mobile Services](fiori-ios-hcpms-setup)
 - **Install SAP Mobile Cards Application:**
    <table><tr><td align="center">!![Play Store QR Code](pre_qr_android.png)<br>Android</td><td align="center">!![App Store QR Code](pre_qr_ios.png)<br>iOS</td></tr></table>
 
 ## Details
+
 ### You will learn
-  - How to connect the SAP Mobile Cards application to your SAP Mobile Services
+
+- How to connect the SAP Mobile Cards application to your SAP Mobile Services
 
 ---
 
@@ -42,7 +45,7 @@ You can see the list of templates shipped out of the box [here](https://github.c
 
 2. Provide the login details and click **Log On**.
 
-    !![SCP Log On Screen](img_2_2.png)
+    !![SAP BTP Log On Screen](img_2_2.png)
 
 3. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
@@ -54,7 +57,7 @@ You can see the list of templates shipped out of the box [here](https://github.c
 
     >Choose **Continue**.
 
-    >!![Enable SCP CF Trial](img_2_3_note.png)
+    >!![Enable SAP BTP CF Trial](img_2_3_note.png)
 
 4. Navigate to your subaccount by clicking on the tile named **trial**.
 
@@ -146,7 +149,7 @@ In the next step, you will scan the respective QR code to connect your mobile ap
 
 6. Enter your **SAP BTP login credentials** and tap **Log On**.
 
-    !![SCP Login screen](img_4_and_6.png)
+    !![SAP BTP Login screen](img_4_and_6.png)
 
 7. Specify an app **Passcode** matching the criteria, and tap **NEXT**.
 
@@ -186,7 +189,7 @@ In the next step, you will scan the respective QR code to connect your mobile ap
 
 3. Enter your **SAP BTP login credentials** and tap **Log On**.
 
-    !![SCP Login screen](img_4_ios_3.png)
+    !![SAP BTP Login screen](img_4_ios_3.png)
 
 4. Define a passcode to unlock the app and tap **Done**.
 
@@ -208,7 +211,7 @@ In the next step, you will scan the respective QR code to connect your mobile ap
 
 You've now connected your SAP Mobile Cards client to your SAP BTP account.
 
-You can automate the set up covered in this tutorial by using SAP BTP Boosters. You can find the details in the [starter mission of SAP Mobile Cards](https://developers.sap.com/mission.mobile-cards-get-started.html).
+You can automate the set up covered in this tutorial by using SAP BTP Boosters. You can find the details in the [starter mission of SAP Mobile Cards](cp-mobile-cards-welcome).
 
 You can now proceed to the [next tutorial](cp-mobile-bas-setup), which will guide you to set up your Business Application Studio to build SAP Mobile Cards.
 

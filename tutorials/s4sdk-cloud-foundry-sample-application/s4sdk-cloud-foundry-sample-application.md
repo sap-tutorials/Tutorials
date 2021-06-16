@@ -2,7 +2,7 @@
 title: Create a Sample Application on Cloud Foundry Using SAP Cloud SDK
 description: Create the very first Hello World example on Cloud Foundry using the SAP Cloud SDK.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-business-technology-platform, topic>cloud, topic>java ]
 primary_tag: products>sap-cloud-sdk
 time: 20
 ---

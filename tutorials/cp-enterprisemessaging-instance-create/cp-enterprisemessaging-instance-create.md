@@ -9,7 +9,7 @@ primary_tag: products>sap-event-mesh
 
 ## Prerequisites
 - SAP Business Technology Platform environment with SAP Event Mesh entitlement  
- 
+
 ## Details
 ### You will learn
   - How to create an SAP Event Mesh service instance
@@ -91,10 +91,8 @@ primary_tag: products>sap-event-mesh
 
     >Each Event Mesh instance represents a message client. Each message client has a set of queues and topics to which it is associated. All these queues and topics belonging to one message client are exposed to other message clients using its unique credentials. This entire set of queues and topics within different message clients in a subaccount can send and receive messages or events to each other using the service.  
 
-    [VALIDATE_1]
-
-
-    [ACCORDION-END]
+[VALIDATE_1]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Understanding Service Key of SAP Event Mesh)]
 
@@ -107,8 +105,8 @@ You can create a service key of the instance with the following steps depicted t
   - Naming the Service Key
   ![Naming the Service Key](ServiceKeys2.png)
 
-  - Service Key gets Created
-  ![Service Key gets created](ServiceKeys3.png)
+  - View the created Service Key
+  ![View the created Service Key](ServiceKeys3.png)
 
 Do find below a template Service Key of an SAP Event Mesh instance.
 ```JSON
@@ -170,7 +168,7 @@ Do find below a template Service Key of an SAP Event Mesh instance.
 }
 
 ```
- - The segment `management` in the service binding information is available only if you have set the option management as true during service instance creation.
+ - The segment `management` in the service binding information is available only if you set the option management as true during service instance creation.
 
  - The segment `httprest` in the service binding information is available only if you have set the option `messagingrest` as true during service instance creation.
 

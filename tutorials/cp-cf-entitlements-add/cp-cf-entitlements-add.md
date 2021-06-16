@@ -21,7 +21,7 @@ Entitlements are the heart of all subaccounts in SAP BTP. They define which serv
 
 1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP BTP cockpit.
 
-2. Click on "Enter Your Access Trial Account" to access the SAP BTP Cockpit.
+2. Click on "Enter Your Trial Account" to access the SAP BTP Cockpit.
 
     !![accesstrial](accesstrial.png)
 
@@ -39,7 +39,7 @@ Entitlements are the heart of all subaccounts in SAP BTP. They define which serv
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Add a SAP HANA service entitlement to subaccount)]
+[ACCORDION-BEGIN [Step: ](Add SAP HANA Cloud services entitlement to the subaccount)]
 
 In this step we will add a new service plan to a subaccount. Depending on when you created the SAP BTP account, this entitlement might already be assigned to the subaccount.
 
@@ -73,11 +73,11 @@ Congratulations, you just enabled the SAP HANA Cloud service in your subaccount.
 |Cloud Foundry Runtime| Needed to run application on SAP BTP, Cloud Foundry runtime. The chosen quota defines the available amount of GB memory. |
 |Enterprise Messaging|Messaging bus for inter-app communication within the Cloud Foundry environment.|
 |Launchpad| Explore your SAPUI5 applications via the SAP Launchpad service.|
-|SAP HANA Cloud|To store data in an cloud-based in-memory database.|
+|SAP HANA Cloud| Manage all your data in a single solution with a multi-tier data storage including in-memory, warm disc memory and a petabyte scale data lake.|
 |SAP HANA Schemas|The create HDI containers that can be connected to your apps.|
 |Workflow|To use the SAP Workflow service within the Cloud Foundry environment.|
 |SAP Business Application Studio|The development tools for cloud-native business applications.|
-|SAP Web IDE for HANA development|The development tools for HANA contain the SAP Web IDE Full-Stack aimed for HANA native development targeting your Cloud Foundry trial environment.|
+
 > This is an incomplete enumeration.
 
 Follow the instructions from the previous step to add these new entitlements to your subaccount.

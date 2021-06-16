@@ -4,10 +4,11 @@ description: Explore SAP BTP from a developer's perspective, and understand the 
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
-primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+primary_tag: products>sap-business-technology-platform
+tags: [ tutorial>beginner, topic>cloud ]
 time: 10
 ---
+
 
 ## Prerequisites  
  - There are none. If you want to start learning about SAP BTP, this is the very beginning.
@@ -18,7 +19,6 @@ time: 10
   - What SaaS, PaaS, and IaaS mean and how they work
   - What services are, and where to find them
   - What the different environments of SAP BTP are
-
 
 [ACCORDION-BEGIN [Step](Introduction to SAP BTP)]
 
@@ -34,7 +34,6 @@ Let's start with an overview of the different types of "as a Service" that SAP B
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step](What does "as a Service" mean?)]
 

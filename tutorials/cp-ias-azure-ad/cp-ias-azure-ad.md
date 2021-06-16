@@ -5,6 +5,8 @@ auto_validation: true
 time: 30
 tags: [ tutorial>beginner, products>sap-business-technology-platform, tutorial>license, products>identity-authentication]
 primary_tag: topic>security
+author_name: Valentin Atanassov
+author_profile: https://github.com/ValAta
 ---
 
 ## Prerequisites

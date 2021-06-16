@@ -24,32 +24,22 @@ primary_tag: products>sap-event-mesh
 
 [ACCORDION-BEGIN [Step 1: ](Set up environment)]
 
-
-|       Application                    |              Scenario Description                                 
-| :----------------------------------- | :-----------------------------------------------------------------
-|     emjapi-samples-jms-p2p           | This sample demonstrates how messages can be sent               
-|  (Point to Point communication)      | and received from an application deployed on SAP Business Technology Platform.               
-|                                      | Therefore the messaging sample provides a Spring
-|                                      | Boot based application which provides REST               
-|                                      | endpoints for sending and receiving messages via a
-|                                      | queue (or queues) of choice. The REST endpoints         
-|                                      | are provided via the `MessagingServiceRestController`.
-
-
-|       Application                    |              Scenario Description                                 
-| :----------------------------------- | :-----------------------------------------------------------------
-|     emjapi-samples-jms-pubsub        |  This sample demonstrates how messages can be sent and
-|        (Publish & Subscribe)         |  received to a topic from an application deployed on SAP Business Technology Platform.
-|                                      |  This messaging sample provides a Spring Boot
-|                                      |  based application which provides REST endpoints for sending
-|                                      |  and receiving messages via a topic of choice. It also       
-|                                      |  offers a REST endpoint to receive a message from a queue.   
-|                                      |  The REST endpoints are provided via the
-|                                      |  `MessagingServiceRestController`.
-
 To download and install the samples, just clone the repository via: [git clone](https://github.com/SAP/enterprise-messaging-client-java-samples)
 
-This downloads both the scenarios to your local IDE and the structure is as follows:
+The git has two applications for you to try out.
+
+|       Application                    |              Scenario Description                                 
+| :----------------------------------- | :-----------------------------------------------------------------
+|     emjapi-samples-jms-p2p (Point to Point communication)           | This sample demonstrates how messages can be sent and received from an application deployed on SAP Business Technology Platform. Therefore the messaging sample provides a Spring Boot based application which provides REST endpoints for sending and receiving messages via a queue (or queues) of choice. The REST endpoints are provided via the `MessagingServiceRestController`.
+|
+
+
+|       Application                    |              Scenario Description                                 
+| :----------------------------------- | :-----------------------------------------------------------------
+|     emjapi-samples-jms-pubsub (Publish & Subscribe)        |  This sample demonstrates how messages can be sent and received to a topic from an application deployed on SAP Business Technology Platform. This messaging sample provides a Spring Boot based application which provides REST endpoints for sending and receiving messages via a topic of choice. It also offers a REST endpoint to receive a message from a queue. The REST endpoints are provided via the `MessagingServiceRestController`.  
+|
+
+Download both the scenarios to your local IDE. After downloading, the project structure will look like this :
 
 !![Project Structure](ProjectStructure.JPG)
 
@@ -57,7 +47,7 @@ The downloaded project has all the dependencies and required client files for bo
 The Event Mesh service descriptor is `/config/em-config-default.json`. Detailed information on different parameters of the
 descriptor can be found in [Create Instance of SAP Event Mesh](cp-enterprisemessaging-instance-create).  
 
-Replace the content in the json file with the content of the descriptor in the service instance you have created.
+*Replace the content in the **.json** file with the content of the descriptor in the service instance you have created.*
 
 [DONE]
 [ACCORDION-END]
@@ -69,7 +59,9 @@ To be able to build, deploy and run the Java message client, ensure the followin
 -  enterprise-messaging core that creates the connection factory
 -  enterprise-messaging JMS extension that provides the `MessagingServiceJmsConnectionFactory`
 
-```POM.XML
+i.e. the pom.xml should have dependencies as below.
+
+```XML
 <dependency>
 	<groupId>com.sap.cloud.servicesdk.xbem</groupId>
 	<artifactId>emjapi-connector-sap-cp</artifactId>
@@ -93,7 +85,7 @@ To be able to build, deploy and run the Java message client, ensure the followin
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Code Snippets - common for both examples)]
+[ACCORDION-BEGIN [Step 3: ](Code Snippets — common for both examples)]
 
 1. Open the `manifest.yml` file for the projects and make changes to the following parameters:
 
@@ -108,7 +100,7 @@ To be able to build, deploy and run the Java message client, ensure the followin
 
 2. Get the `MessagingService`
 
-    ```
+    ```Java
     ServiceConnectorConfig config = null; // currently there are no configurations for the MessagingServiceFactory supported
     Cloud cloud = new CloudFactory().getCloud();
     // get a messaging service factory via the service connector
@@ -119,7 +111,7 @@ To be able to build, deploy and run the Java message client, ensure the followin
 
     The Connection Factory can be configured with the `MessagingServiceJmsSettings`. In case the reconnection feature is not needed and an individual connection mechanism (for example, through a connection cache) is used these settings can be skipped. The connection factory can be built with `messagingServiceFactory.createConnectionFactory(MessagingServiceJmsConnectionFactory.class,settings)`.
 
-    ```
+    ```Java
     MessagingServiceJmsSettings settings = new MessagingServiceJmsSettings(); // settings are preset with default values (see JavaDoc)
     settings.setMaxReconnectAttempts(5); // use -1 for unlimited attempts
     settings.setInitialReconnectDelay(3000);
@@ -130,7 +122,7 @@ To be able to build, deploy and run the Java message client, ensure the followin
 
 4. Create a connection and a session
 
-    ```
+    ```Java
     Connection connection = connectionFactory.createConnection();
     Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE));
     ```
@@ -138,19 +130,22 @@ To be able to build, deploy and run the Java message client, ensure the followin
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Code Snippets - Point to Point communication)]
+[ACCORDION-BEGIN [Step 4: ](Code Snippets — Point to Point communication)]
 #### Sending
 
 Open the `MessagingServiceRestController.java` source code. Change the value of `QUEUE_PATH` based on the values of the instance you created.
 
-`private static final String QUEUE_PATH = "queue/{queueName}";`
+```Java
+
+private static final String QUEUE_PATH = "queue/{queueName}";
+```
 
 For sending messages a Connection and a Session are required first. Note that those resources must be closed if they are not needed anymore. As those objects
 are implementing the `autoclosable` interface they will be closed automatically after the try-catch-block. Now a `BytesMessage` can be created. In the next
 steps a queue is bound to a producer. The queue must be created on the broker first (via for example, the UI or MM API). Note that the prefix "queue:" is
 mandatory. Finally, the message can be sent to the queue.
 
-```
+```Java
 try (
   Connection connection = connectionFactory.createConnection();
   Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE)) {
@@ -171,7 +166,7 @@ In this example, a consumer is listening to a queue. Again a Connection and a Se
 needed anymore. First, a queue with the mandatory prefix "queue:" is bound to a consumer. Since the messages are sent as a `ByteMassage`, the message needs to be
 converted to say a String.
 
-```
+```Java
 try (Connection connection = connectionFactory.createConnection();Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE)) {
 	connection.start();
 	Queue queue = session.createQueue(QUEUE_PREFIX + queueName); // see comments above
@@ -187,20 +182,20 @@ try (Connection connection = connectionFactory.createConnection();Session sessio
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Code Snippets - Publish and Subscribe)]
+[ACCORDION-BEGIN [Step 5: ](Code Snippets — Publish and Subscribe)]
 
 Open the `MessageingServiceRestController.java` source code. Change the value of `TOPIC_PATH` and `QUEUE_PATH` based on the values of the instance you created.
-
+```Java
 `private static final String TOPIC_PATH = "topic/{topicName}";
 private static final String QUEUE_PATH = "queue/{queueName}";`
-
+```
 #### Sending
 
 For sending messages a Connection and a Session are required first. Note that those resources must be closed if they are not needed anymore. As those objects are
 implementing the `autoclosable` interface they will be closed automatically after the try-catch-block. Now a `BytesMessage` can be created. In the next steps,
 a topic is bound (not created) to a producer. Note, that the prefix "topic:" is mandatory. Finally, the message can be sent to the topic.
 
-```
+```Java
 try (
   Connection connection = connectionFactory.createConnection();
   Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE)) {
@@ -221,7 +216,7 @@ Currently, direct topic subscription is *not supported for the default plan*. In
 and a Session are needed. Note that those resources must be closed if they are not needed anymore. First a topic (not created) with the mandatory prefix "topic:"
 is bound to consumer. Since the messages are sent as a `ByteMessage` the message needs to be converted to say a String
 
-```
+```Java
 try (
   Connection connection = connectionFactory.createConnection();
   Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE)) {

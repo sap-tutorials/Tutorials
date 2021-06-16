@@ -28,7 +28,7 @@ To communicate with your service instance, you need to retrieve an OAuth access 
 
 **Open** Postman and make sure that your `Data Attribute Recommendation environment` is selected. For detailed steps, see [Set Up Postman Environment and Collection to call Data Attribute Recommendation APIs](cp-aibus-dar-setup-postman).
 
-On the left, expand the `Data Attribute Recommendation collection` and open the subfolder `Setup`. In this folder, select the request, `Get Authorization`. 
+On the left, expand the `Data Attribute Recommendation collection` and open the subfolder `Setup`. In this folder, select the request, `Get Authorization`.
 
 Click **Send** to send the request to your service instance.
 
@@ -98,7 +98,7 @@ You have successfully created a dataset.
 
 The final step is to upload data to your dataset.
 
-For that, use the [sample data](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial-sample/blob/master/Tutorial_Example_Dataset.csv) available on GitHub. **Download** the CSV file that contains the data.
+For that, use the [sample data](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial/blob/main/Tutorial_Example_Dataset.csv) available on GitHub. **Download** the CSV file that contains the data.
 
 ![Download CSV](download-csv.png)
 
