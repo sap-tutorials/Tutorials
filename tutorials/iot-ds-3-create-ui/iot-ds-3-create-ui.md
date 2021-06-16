@@ -1,6 +1,8 @@
 ---
 title: Build a Decision Support UI in SAP Web IDE
-description: Create a decision support application using the SAP IoT extension for SAP Web IDE.  
+description: Create a decision support application using the SAP IoT extension for SAP Web IDE.
+author_name: Jitendra Sharma
+author_profile: https://github.com/JitendraSharma01
 auto_validation: true
 time: 30
 primary_tag: topic>internet-of-things
