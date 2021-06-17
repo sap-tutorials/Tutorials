@@ -1,6 +1,8 @@
 ---
 title: Build, Deploy and Test Notification and Decision Support Application
 description: Build and deploy a multi-target application (MTA) project in SAP Web IDE, generate a test notification in SAP IoT, and launch the decision support application.
+author_name: Jitendra Sharma
+author_profile: https://github.com/JitendraSharma01
 auto_validation: true
 time: 20
 primary_tag: topic>internet-of-things
