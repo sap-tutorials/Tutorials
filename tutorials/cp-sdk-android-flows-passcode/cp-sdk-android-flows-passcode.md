@@ -25,7 +25,7 @@ primary_tag: products>sap-btp-sdk-for-android
 
 [OPTION BEGIN [Java]]
 
-1.  Open the project you previously created using the SAP BTP SDK Wizard for Android.
+1.  Open the project you [previously created](cp-sdk-android-wizard-app) using the SAP BTP SDK Wizard for Android.
 
 2.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`SettingsFragment`** to open `SettingsFragment.java`.
 
@@ -43,7 +43,7 @@ primary_tag: products>sap-btp-sdk-for-android
 
 [OPTION BEGIN [Kotlin]]
 
-1.  Open the project you previously created using the SAP BTP SDK Wizard for Android.
+1.  Open the project you [previously created](cp-sdk-android-wizard-app) using the SAP BTP SDK Wizard for Android.
 
 2.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`SettingsFragment`** to open `SettingsFragment.kt`.
 
