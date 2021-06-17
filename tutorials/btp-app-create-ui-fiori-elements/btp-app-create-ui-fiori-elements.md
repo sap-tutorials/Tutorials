@@ -20,6 +20,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - Hot to modify the UI with OData annotations
  - How to check the annotation files
 
+
+To continue with this tutorial you can find the result of the previous tutorial in the [`cap/create-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/create-service) branch.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
@@ -71,7 +74,6 @@ The application is now generated and in a few seconds you can see it in the `app
 
 > However, the code there's minimal and it basically inherits its logic from the `sap/fe/core/AppComponent`. The `sap/fe/core/AppComponent` is the base class for SAP Fiori elements. This class is managed centrally by SAP Fiori elements, so you don't need to modify it yourself.
 
-> 
 
 [VALIDATE_1]
 
@@ -88,7 +90,7 @@ The application is now generated and in a few seconds you can see it in the `app
 2. Choose the link [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html) for the HTML page.
 
 3. On the launch page that now comes up, choose the **Risks** tile.
-    
+
     !![Index HTML Page](feapptile.png)
 
     You can now see the application without any data.
@@ -161,7 +163,15 @@ annotate RiskService.Risks with @(
     UI: {
         HeaderInfo: {
             TypeName: 'Risk',
-            TypeNamePlural: 'Risks'
+            TypeNamePlural: 'Risks',
+            Title          : {
+                $Type : 'UI.DataField',
+                Value : title
+            },
+            Description : {
+                $Type: 'UI.DataField',
+                Value: descr
+            }
         },
         SelectionFields: [prio],
         LineItem: [
@@ -181,9 +191,7 @@ annotate RiskService.Risks with @(
         ],
         FieldGroup#Main: {
             Data: [
-                {Value: title},
                 {Value: miti_ID},
-                {Value: descr},
                 {
                     Value: prio,
                     Criticality: criticality
@@ -202,15 +210,19 @@ annotate RiskService.Risks with @(
 
 This defines the content of the work list page and the object page that you navigate to when you click on a line in the work list.
 
+The `HeaderInfo` describes the key information of the object, which will make the object page to display `title` of the risk as title and the `descr` as subtitle in its header area.
+
 The `SelectionFields` section defines which of the properties are exposed as search fields in the header bar above the list. In this case, `prio` is the only explicit search field.
 
 The columns and their order in the work list are derived from the `LineItem` section. While in most cases the columns are defined by `Value:` followed by the property name of the entity, in the case of `prio` and `impact` there's also `Criticality`. For now, you can neglect it but keep it in mind in case you go to the later modules.
 
 Next up is the `Facets` section. In this case, it defines the content of the object page. It contains only a single facet, a `ReferenceFacet`, of the field group `FieldGroup#Main`. This field group just shows up as a form. The properties of the `Data` array within `FieldGroup#Main` determine the fields in the form:
 
-
 !![Fiori elements Object Page](feappobjectpage.png)
 
 [DONE]
+
+The result of this tutorial can be found in the [`cap/fiori-elements-app`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/fiori-elements-app) branch.
+
 [ACCORDION-END]
 ---
