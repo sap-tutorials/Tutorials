@@ -29,7 +29,7 @@ primary_tag: products>sap-btp-sdk-for-android
 
 2.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`SettingsFragment`** to open `SettingsFragment.java`.
 
-3.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onCreatePreferences`** to move to the `onCreatePreferences` method. To start the flow to change passcode, set the flow type as **`FlowType.CHANGEPASSCODE`** for the **`FlowContext`** instance, and then start the flow with this **`FlowContext`** instance. The entire process to change passcode will be handled automatically.
+3.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onCreatePreferences`** to move to the `onCreatePreferences` method. To start the flow to change passcode, the flow type must be **`FlowType.CHANGEPASSCODE`** for the **`FlowContext`** instance. Upon starting the flow with this **`FlowContext`** instance, the entire process to change passcode will be handled automatically.
 
     !![Change passcode flow](change-passcode-java.png)
 
@@ -47,7 +47,7 @@ primary_tag: products>sap-btp-sdk-for-android
 
 2.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`SettingsFragment`** to open `SettingsFragment.kt`.
 
-3.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onCreatePreferences`** to move to the `onCreatePreferences` method. To start the flow to change passcode, set the flow type as **`FlowType.CHANGEPASSCODE`** for the **`FlowContext`** instance, and then start the flow with this **`FlowContext`** instance. The entire process to change passcode will be handled automatically.
+3.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onCreatePreferences`** to move to the `onCreatePreferences` method. To start the flow to change passcode, the flow type must be **`FlowType.CHANGEPASSCODE`** for the **`FlowContext`** instance. Upon starting the flow with this **`FlowContext`** instance, the entire process to change passcode will be handled automatically.
 
     !![Change passcode flow](change-passcode-kotlin.png)
 
