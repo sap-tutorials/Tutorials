@@ -20,6 +20,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - Hot to modify the UI with OData annotations
  - How to check the annotation files
 
+
+To continue with this tutorial you can find the result of the previous tutorial in the [`cap/create-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/create-service) branch.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
@@ -71,7 +74,6 @@ The application is now generated and in a few seconds you can see it in the `app
 
 > However, the code there's minimal and it basically inherits its logic from the `sap/fe/core/AppComponent`. The `sap/fe/core/AppComponent` is the base class for SAP Fiori elements. This class is managed centrally by SAP Fiori elements, so you don't need to modify it yourself.
 
-> 
 
 [VALIDATE_1]
 
@@ -88,7 +90,7 @@ The application is now generated and in a few seconds you can see it in the `app
 2. Choose the link [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html) for the HTML page.
 
 3. On the launch page that now comes up, choose the **Risks** tile.
-    
+
     !![Index HTML Page](feapptile.png)
 
     You can now see the application without any data.
@@ -134,56 +136,44 @@ annotate RiskService.Risks with {
 
 It's referring to the definitions of the earlier `cds` file that exposes the service and its `Risks` and `Mitigations` entities. Then it annotates the `Risks` entity with a number of texts. These should be in a translatable file normally but for now we keep them here. These texts are used as labels in form fields and column headers by SAP Fiori elements.
 
-> Annotations for value help
+The following section is needed for the value help of the **Mitigation** field that is visible when you're editing the object page of the `Risks` app.
 
-> The following section is needed for the value help of the **Mitigation** field that is visible when you're editing the object page of the `Risks` app.
-
-> ```javascript
-> annotate RiskService.Mitigations with {
-> ID @(
->     UI.Hidden,
->     Common: {
->     Text: description
->     }
-> );
-> description  @title: 'Description';
-> owner        @title: 'Owner';
-> timeline     @title: 'Timeline';
-> risks        @title: 'Risks';
-> }
-> ```
-
+    ```javascript
+    annotate RiskService.Mitigations with {
+    ID @(
+        UI.Hidden,
+        Common: {
+        Text: description
+        }
+    );
+    description  @title: 'Description';
+    owner        @title: 'Owner';
+    timeline     @title: 'Timeline';
+    risks        @title: 'Risks';
+    }
+    ```
 
 Next up:
 
-```JavaScript
-annotate RiskService.Risks with @(
-    UI: {
-        HeaderInfo: {
-            TypeName: 'Risk',
-            TypeNamePlural: 'Risks'
-        },
-        SelectionFields: [prio],
-        LineItem: [
-            {Value: title},
-            {Value: miti_ID},
-            {
-                Value: prio,
-                Criticality: criticality
+    ```javascript
+    annotate RiskService.Risks with @(
+        UI: {
+            HeaderInfo: {
+                TypeName: 'Risk',
+                TypeNamePlural: 'Risks',
+                Title          : {
+                    $Type : 'UI.DataField',
+                    Value : title
+                },
+                Description : {
+                    $Type: 'UI.DataField',
+                    Value: descr
+                }
             },
-            {
-                Value: impact,
-                Criticality: criticality
-            }
-        ],
-        Facets: [
-            {$Type: 'UI.ReferenceFacet', Label: 'Main', Target: '@UI.FieldGroup#Main'}
-        ],
-        FieldGroup#Main: {
-            Data: [
+            SelectionFields: [prio],
+            LineItem: [
                 {Value: title},
                 {Value: miti_ID},
-                {Value: descr},
                 {
                     Value: prio,
                     Criticality: criticality
@@ -192,15 +182,32 @@ annotate RiskService.Risks with @(
                     Value: impact,
                     Criticality: criticality
                 }
-            ]
-        }
-    },
-) {
+            ],
+            Facets: [
+                {$Type: 'UI.ReferenceFacet', Label: 'Main', Target: '@UI.FieldGroup#Main'}
+            ],
+            FieldGroup#Main: {
+                Data: [
+                    {Value: miti_ID},
+                    {
+                        Value: prio,
+                        Criticality: criticality
+                    },
+                    {
+                        Value: impact,
+                        Criticality: criticality
+                    }
+                ]
+            }
+        },
+    ) {
 
-};
-```
+    };
+    ```
 
 This defines the content of the work list page and the object page that you navigate to when you click on a line in the work list.
+
+The `HeaderInfo` describes the key information of the object, which will make the object page to display `title` of the risk as title and the `descr` as subtitle in its header area.
 
 The `SelectionFields` section defines which of the properties are exposed as search fields in the header bar above the list. In this case, `prio` is the only explicit search field.
 
@@ -208,9 +215,11 @@ The columns and their order in the work list are derived from the `LineItem` sec
 
 Next up is the `Facets` section. In this case, it defines the content of the object page. It contains only a single facet, a `ReferenceFacet`, of the field group `FieldGroup#Main`. This field group just shows up as a form. The properties of the `Data` array within `FieldGroup#Main` determine the fields in the form:
 
-
 !![Fiori elements Object Page](feappobjectpage.png)
 
 [DONE]
+
+The result of this tutorial can be found in the [`cap/fiori-elements-app`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/fiori-elements-app) branch.
+
 [ACCORDION-END]
 ---

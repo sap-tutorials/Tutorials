@@ -34,7 +34,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
    > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-You need an SAP BTP account to deploy the services and applications.
+You need an SAP BTP account to deploy the services and applications. 
 In general, you have a choice of the following options:
 
 If you just want to try out things and don't want to use any of the parts of this tutorial productively, this is probably the best option for you. The usage is free of cost and many of the services that you need are created for you. For example, an SAP HANA instance is already created for you when you set up the trial account. So, there's the least work to do when you want to concentrate on developing the actual application. This comes with some drawbacks, however. Trial accounts have a limited usage time. After a while, you have to refresh the subscription and redo all the work. Also, there are a number of things that you can't do as opposed to a full account.
@@ -45,7 +45,7 @@ If you just want to try out things and don't want to use any of the parts of thi
 
    > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-You need an SAP BTP account to deploy the services and applications.
+You need an SAP BTP account to deploy the services and applications. 
 In general, you have a choice of the following options:
 
 There are multiple live landscapes in different data centers around the globe. The live landscapes are intended for live customer usage, but also development projects by customers and partners.
@@ -275,7 +275,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
     !![CF Data in SAP BTP Cockpit](cfdatacloudcockpit.png)
 
-
+        
     For your convenience, this is the API endpoint for your landscape:
 
     [https://api.cf.eu10.hana.ondemand.com](https://api.cf.eu10.hana.ondemand.com)
@@ -286,7 +286,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```bash
     cf api <API Endpoint of your landscape>
     ```
-
+    
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials:
 
     ```bash        
@@ -294,7 +294,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-
+  
 [OPTION END]
 [OPTION BEGIN [Live]]
 
@@ -316,7 +316,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
     !![CF Data in SAP BTP Cockpit](cfdatacloudcockpit.png)
 
-
+        
     For your convenience, this is the API endpoint for your landscape:
 
     [https://api.cf.eu10.hana.ondemand.com ](https://api.cf.eu10.hana.ondemand.com)
@@ -329,7 +329,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```bash
     cf api <API Endpoint of your landscape>
     ```
-
+    
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials:
 
     ```bash        
@@ -337,7 +337,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-
+  
 [OPTION END]
 
 
