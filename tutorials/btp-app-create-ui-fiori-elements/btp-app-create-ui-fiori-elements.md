@@ -136,61 +136,43 @@ annotate RiskService.Risks with {
 
 It's referring to the definitions of the earlier `cds` file that exposes the service and its `Risks` and `Mitigations` entities. Then it annotates the `Risks` entity with a number of texts. These should be in a translatable file normally but for now we keep them here. These texts are used as labels in form fields and column headers by SAP Fiori elements.
 
-> Annotations for value help
+The following section is needed for the value help of the **Mitigation** field that is visible when you're editing the object page of the `Risks` app.
 
-> The following section is needed for the value help of the **Mitigation** field that is visible when you're editing the object page of the `Risks` app.
-
-> ```javascript
-> annotate RiskService.Mitigations with {
-> ID @(
->     UI.Hidden,
->     Common: {
->     Text: description
->     }
-> );
-> description  @title: 'Description';
-> owner        @title: 'Owner';
-> timeline     @title: 'Timeline';
-> risks        @title: 'Risks';
-> }
-> ```
-
+    ```javascript
+    annotate RiskService.Mitigations with {
+    ID @(
+        UI.Hidden,
+        Common: {
+        Text: description
+        }
+    );
+    description  @title: 'Description';
+    owner        @title: 'Owner';
+    timeline     @title: 'Timeline';
+    risks        @title: 'Risks';
+    }
+    ```
 
 Next up:
 
-```JavaScript
-annotate RiskService.Risks with @(
-    UI: {
-        HeaderInfo: {
-            TypeName: 'Risk',
-            TypeNamePlural: 'Risks',
-            Title          : {
-                $Type : 'UI.DataField',
-                Value : title
+    ```javascript
+    annotate RiskService.Risks with @(
+        UI: {
+            HeaderInfo: {
+                TypeName: 'Risk',
+                TypeNamePlural: 'Risks',
+                Title          : {
+                    $Type : 'UI.DataField',
+                    Value : title
+                },
+                Description : {
+                    $Type: 'UI.DataField',
+                    Value: descr
+                }
             },
-            Description : {
-                $Type: 'UI.DataField',
-                Value: descr
-            }
-        },
-        SelectionFields: [prio],
-        LineItem: [
-            {Value: title},
-            {Value: miti_ID},
-            {
-                Value: prio,
-                Criticality: criticality
-            },
-            {
-                Value: impact,
-                Criticality: criticality
-            }
-        ],
-        Facets: [
-            {$Type: 'UI.ReferenceFacet', Label: 'Main', Target: '@UI.FieldGroup#Main'}
-        ],
-        FieldGroup#Main: {
-            Data: [
+            SelectionFields: [prio],
+            LineItem: [
+                {Value: title},
                 {Value: miti_ID},
                 {
                     Value: prio,
@@ -200,13 +182,28 @@ annotate RiskService.Risks with @(
                     Value: impact,
                     Criticality: criticality
                 }
-            ]
-        }
-    },
-) {
+            ],
+            Facets: [
+                {$Type: 'UI.ReferenceFacet', Label: 'Main', Target: '@UI.FieldGroup#Main'}
+            ],
+            FieldGroup#Main: {
+                Data: [
+                    {Value: miti_ID},
+                    {
+                        Value: prio,
+                        Criticality: criticality
+                    },
+                    {
+                        Value: impact,
+                        Criticality: criticality
+                    }
+                ]
+            }
+        },
+    ) {
 
-};
-```
+    };
+    ```
 
 This defines the content of the work list page and the object page that you navigate to when you click on a line in the work list.
 
