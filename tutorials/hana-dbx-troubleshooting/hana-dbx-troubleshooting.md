@@ -378,7 +378,7 @@ It can be important to examine SQL statements that consume large amounts of time
 
     ![expensive statements](expensiveTrace.png)
 
-3. When using SAP HANA Cloud, database explorer, the messages tab also contains detailed information about the duration, CPU, and memory consumed by a statement.
+3. When using SAP HANA Cloud or the on-premise SP 13 or higher database explorer, the messages tab also contains detailed information about the duration, CPU, and memory consumed by a statement.
 
     ![Resource consumption](messages-tab.png)
 
