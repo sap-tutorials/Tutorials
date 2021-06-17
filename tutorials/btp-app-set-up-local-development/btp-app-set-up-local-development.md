@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Set Up Local Development Using VS Code
-description: This tutorial shows you how to get started using VS Code as an editor. 
+description: This tutorial shows you how to get started using VS Code as an editor.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
@@ -82,7 +82,7 @@ Make sure you run the latest long-term support (LTS) version of Node.js with an 
 v14.x.x
 ```
 
-> If you don't see the required version, go to [Node.js](https://nodejs.org/en/download/) download page, pick the installer appropriate for your operating system, and install it. 
+> If you don't see the required version, go to [Node.js](https://nodejs.org/en/download/) download page, pick the installer appropriate for your operating system, and install it.
 In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#node-version) for CAP for more details.
 
 
@@ -183,13 +183,15 @@ CAP provides you with all the tools to create your data model with entities and 
 
 2. To verify that the installation was successful, run `cds` without arguments.
 
-    This lists the available `cds` commands. For example, use `cds version` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
+    This lists the available `cds` commands.
 
 3. Check what versions of the CDS libraries have been installed:
 
     ```bash
     cds v
     ```
+
+    To know what is the latest version of the CAP tooling, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
 [DONE]
 [ACCORDION-END]
