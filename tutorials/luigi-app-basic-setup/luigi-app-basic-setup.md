@@ -8,7 +8,7 @@ primary_tag: topic>user-interface
 ---
 
 ## Prerequisites
- - You need to have [Node.js](https://nodejs.org) installed.
+ - You need to install [Node.js](https://nodejs.org/en/download/current/). If you already have an old version installed on your machine, please run `npm install npm@latest -g`.
  - You need to install [SAP Fonts](https://experience.sap.com/fiori-design-web/downloads/#sap-icon-font).
 
 ## Details

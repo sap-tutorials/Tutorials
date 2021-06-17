@@ -9,6 +9,7 @@ primary_tag: products>sap-screen-personas
 
 ## Prerequisites
  - SAP Screen Personas SP06 or higher
+ - A flavor rendered with Slipstream Engine
 
 ## Details
 ### You will learn

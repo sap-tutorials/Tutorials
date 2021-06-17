@@ -5,7 +5,7 @@ title: Deploy a CAP Business Application to SAP Business Technology Platform
 description: This tutorial shows you how to deploy your SAP Cloud Application Programming Model (CAP) application to SAP Business Technology Platform, Cloud Foundry environment.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [  tutorial>beginner, topic>node-js, products>sap-business-technology-platform, software-product-function>sap-cloud-application-programming-model  ]
+tags: [ tutorial>beginner, topic>node-js, products>sap-business-technology-platform, products>sap-fiori, software-product-function>sap-cloud-application-programming-model ]
 time: 30
 ---
 
@@ -60,11 +60,11 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP BT
 
     !![business technology platform cockpit view](cockpit.png)
 
-2. Navigate to the **Subaccount** overview:
+2. From the **Subaccounts** overview navigate to your subaccount.
 
     !![subaccount tile](subaccount.png)
 
-3. Navigate to your Subaccount and copy the **Cloud Foundry API Endpoint** value:
+3. From your subaccount copy the **Cloud Foundry API Endpoint** value.
 
     !![CF API endpoint value](api_endpoint.png)
 
@@ -93,7 +93,7 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
 1. As `cf push` can only bind but not create services, you need to create the SAP HANA service manually (along with an HDI container and a database schema). In the command line add:
 
     ```Shell/Bash
-    cf create-service hanatrial hdi-shared my-bookshop-db
+    cf create-service hanatrial securestore my-bookshop-db
     ```
 
     > This process takes some minutes.
@@ -114,7 +114,6 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
 
     > The first part of the command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db` service that you've created in the previous step.
 
-    > See the section [Deploy using cf push](https://cap.cloud.sap/docs/advanced/deploy-to-cloud#deploy-using-cf-push) in the CAP documentation for more details.
 
 3. In the deploy log, find the application URL in the `routes` line at the end:
 
@@ -135,7 +134,7 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
 1. As `cf push` can only bind but not create services, you need to create the SAP HANA service manually (along with an HDI container and a database schema). In the command line add:
 
     ```Shell/Bash
-    cf create-service hanatrial hdi-shared my-bookshop-db
+    cf create-service hanatrial securestore my-bookshop-db
     ```
 
     > This process takes some minutes.
@@ -153,8 +152,6 @@ SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfo
     > This process takes some minutes.
 
     > The first part of the command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db` service that you've created in the previous step.
-
-    > See the section [Deploy using cf push](https://cap.cloud.sap/docs/advanced/deploy-to-cloud#cfpush) in the CAP documentation for more details.
 
 3. In the deploy log, find the application URL in the `routes` line at the end:
 

@@ -3,7 +3,7 @@ title: Delete OData Entities with the SAP Cloud SDK's Virtual Data Model
 description: Delete OData entities with the SAP Cloud SDK's virtual data model to duild an address manager application.
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>javascript, topic>odata]
+tags: [ tutorial>intermediate, products>sap-business-technology-platform, topic>javascript, topic>odata]
 primary_tag: products>sap-cloud-sdk
 ---
 

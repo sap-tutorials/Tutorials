@@ -94,6 +94,8 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 
 [OPTION BEGIN [Android]]
 
+> If you can see the supplier card, skip to step 6.
+
 1. *Tap* the Add button ![Android Add Button](ico_and_add.png) in the SAP Mobile Cards Android application.
 
     !![MobileCardsImage](img_3_and_1.png)
@@ -131,6 +133,8 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
+
+> If you can see the supplier card, skip to step 5.
 
 1. *Tap* **More** &rarr; **Subscriptions** in the SAP Mobile Cards iOS application.
 
@@ -176,6 +180,8 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 
 [OPTION BEGIN [Android]]
 
+> If you can see the supplier card, skip to step 6.
+
 1. *Tap* the Add button ![Android Add Button](ico_and_add.png) in the SAP Mobile Cards Android application.
 
     !![MobileCardsImage](img_4_and_1.png)
@@ -216,6 +222,8 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
+
+> If you can see the supplier card, skip to step 5.
 
 1. *Tap* **More** &rarr; **Subscriptions** in the SAP Mobile Cards iOS application.
 

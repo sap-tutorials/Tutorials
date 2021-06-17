@@ -19,11 +19,57 @@ When you finish this tutorial, you will have explored all Data API functionaliti
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create client)]
+[ACCORDION-BEGIN [Step 1: ](Get client)]
 
-After performing step 1 of the tutorial [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui) to access and authorize the Document Information Extraction Swagger UI, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
+After performing step 1 of the tutorial [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui) to access and authorize the Document Information Extraction Swagger UI, you need to create a client.
 
-You can either create a single client or multiple clients in the **payload** field of the **POST /clients** endpoint. The **`clientId`** values created here will be used in other service endpoints.
+When you create a service instance for Document Information Extraction, a `default` client is automatically created. A client is used in most of the endpoints to distinguish and separate data.
+
+Trial users can only create one client. To see your list of clients:
+
+1. Expand the **GET /clients** endpoint.
+
+2. Click **Try it out**.
+
+3. Enter a maximum number of clients to be listed in the **limit** field.
+
+4. Click **Execute**.
+
+!![DOX](listClient.png)
+
+You should receive a response like the following:
+
+!![DOX](listClientResponse.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 2: ](Delete client)]
+
+Use the **DELETE /clients** endpoint to delete the `default` client.
+
+1. Expand the **DELETE /clients** endpoint.
+
+2. Click **Try it out**.
+
+3. Enter in the **payload** field the client id (`default`) you want to delete.
+
+4. Click **Execute**.
+
+!![DOX](1delete_clients_request.png)
+
+You should receive a response like the following:
+
+!![DOX](1delete_clients_response.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 3: ](Create client)]
+
+Use the **POST /clients** endpoint to create your own client. The **`clientId`** value created here will be used in other service endpoints.
 
 1. Expand the **POST /clients** endpoint.
 
@@ -38,6 +84,8 @@ You can either create a single client or multiple clients in the **payload** fie
 You should receive a response like the following:
 
 !![DOX](1create_clients_response.png)
+
+You can repeat step 1 to see the **`clientId`** and **`clientName`** of the client you have just created.
 
 
 >**CAUTION:**
@@ -55,7 +103,7 @@ You should receive a response like the following:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create enrichment data)]
+[ACCORDION-BEGIN [Step 4: ](Create enrichment data)]
 
 Use the **POST /data/jobs** endpoint to add your own master data records to the database to enrich the information extracted from documents.
 
@@ -108,7 +156,7 @@ Copy the **`id`** from the **Response body** to see the result of the enrichment
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](See created enrichment data status)]
+[ACCORDION-BEGIN [Step 5: ](See created enrichment data status)]
 
 Use the **GET /data/jobs/{`id`}** endpoint to see the status of the uploaded enrichment data.
 
@@ -135,7 +183,7 @@ You should receive a response like the following with status SUCCESS:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create configuration)]
+[ACCORDION-BEGIN [Step 6: ](Create configuration)]
 
 Set data activation to manual, instead of using the default automatic refresh of enrichment data that takes place every 4 hours.
 
@@ -165,7 +213,7 @@ You should receive a response like the following:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create data activation)]
+[ACCORDION-BEGIN [Step 7: ](Create data activation)]
 
 Create a data activation job record to see new or updated enrichment data in the extraction results. Only activated enrichment data will be added to the extraction results.
 
@@ -185,13 +233,13 @@ You should receive a response like the following:
 
 >!![DOX](1create_data_activation_error.png)
 
->Wait until next data activation is possible to perform this step once again before moving to step 6.
+>Wait until next data activation is possible to perform this step once again before moving to step 8.
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Upload document to get prediction with enrichment data)]
+[ACCORDION-BEGIN [Step 8: ](Upload document to get prediction with enrichment data)]
 
 >Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
 
@@ -217,11 +265,11 @@ Do the following:
 2. Click **Try it out**.
 
 3. Right click [Sample Invoice 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-2.pdf), then click ***Save link as*** to download locally the document file for this enrich employee data example.
-> You can also upload to the service and enrich any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice. In this case, make sure the data you define in the **`payload`** field, in step 2, matches your document fields.
+> You can also upload to the service and enrich any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice. In this case, make sure the data you define in the **`payload`** field, in step 4, matches your document fields.
 
 4. Upload the document file you want to enrich.
 
-5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 1 (`c_27`, for example), the document type (`invoice`, for example), `receivedDate` (2020-02-17, for example) and the enrichment data type `employee`.
+5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 3 (`c_27`, for example), the document type (`invoice`, for example), `receivedDate` (2020-02-17, for example) and the enrichment data type `employee`.
 
     ```JSON
     {
@@ -288,11 +336,11 @@ Copy the **`id`** from the **Response body** to get enrichment data prediction i
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Get enrichment data prediction)]
+[ACCORDION-BEGIN [Step 9: ](Get enrichment data prediction)]
 
 When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`id`}** endpoint.
 
-> Enrichment data is refreshed automatically every 4 hours. It might take up to 4 hours until the enrichment data prediction is available in the response. If the enrichment data prediction is NOT available in the response in your first try, perform again (some hours later) steps 4 and 5. Do not perform steps 7 and 8 before you see the enrichment data prediction in the response in step 5.
+> Enrichment data is refreshed automatically every 4 hours. It might take up to 4 hours until the enrichment data prediction is available in the response. If the enrichment data prediction is NOT available in the response in your first try, perform again (some hours later) steps 6 and 7. Do not perform steps 9 and 10 before you see the enrichment data prediction in the response in step 7.
 
 1. Expand the **GET /document/jobs/{`id`}** endpoint.
 
@@ -312,7 +360,7 @@ You should receive a response like the following:
 
 > ### What just happened?
 >
-> In this example, in the response, one of the extracted fields is the receiver contact Linda Owens. This information is enriched with the employee ID enrichment data created in step 2. The prediction suggests the employee ID from Linda Owens (E0001) with 100% probability. The employee ID from Lin Owens (E0002) is not even considered by the machine leaning model.
+> In this example, in the response, one of the extracted fields is the receiver contact Linda Owens. This information is enriched with the employee ID enrichment data created in step 4. The prediction suggests the employee ID from Linda Owens (E0001) with 100% probability. The employee ID from Lin Owens (E0002) is not even considered by the machine leaning model.
 
 You have now successfully used the employee entity to get enrichment data predictions for the document you uploaded to Document Information Extraction.
 
@@ -320,7 +368,7 @@ You have now successfully used the employee entity to get enrichment data predic
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](See all enrichment data entries)]
+[ACCORDION-BEGIN [Step 10: ](See all enrichment data entries)]
 
 To see a list of the enrichment data entries you have created:
 
@@ -342,7 +390,7 @@ You should receive a response like the following:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Delete enrichment data)]
+[ACCORDION-BEGIN [Step 11: ](Delete enrichment data)]
 
 To delete enrichment data which has been uploaded before:
 
@@ -375,27 +423,7 @@ You should receive a response like the following:
 
 !![DOX](1delete_data_response.png)
 
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 10: ](Delete client)]
-
-If you want to delete a client you created in Step 1, use the **DELETE /clients** endpoint.
-
-1. Expand the **DELETE /clients** endpoint.
-
-2. Click **Try it out**.
-
-3. Enter in the **payload** field the client id or multiple client ids (`c_27`, for example) you want to delete.
-
-4. Click **Execute**.
-
-!![DOX](1delete_clients_request.png)
-
-You should receive a response like the following:
-
-!![DOX](1delete_clients_response.png)
+You can repeat step 2 and delete the client you created in step 3.
 
 Congratulations, you have completed this tutorial.
 
