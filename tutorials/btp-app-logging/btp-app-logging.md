@@ -40,14 +40,16 @@ To continue with this tutorial you can find the result of the previous tutorial 
 [ACCORDION-BEGIN [Step 1: ](Access Logs from Terminal)]
 
 1. Display recent logs:
-  ```bash
-  cf logs --recent <appname>
-  ```
+
+    ```bash
+    cf logs --recent <appname>
+    ```
 
 2. Follow logs live:
-  ```bash
-  cf logs <appname>
-  ```
+
+    ```bash
+    cf logs <appname>
+    ```
 
 > Choose **Ctrl** + **C** to quit.
 
@@ -109,7 +111,8 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 
 1. Add an instance for the logging service to the `resources` section of your `mta.yaml`:
 
-```yaml hl_lines="4-9"
+
+```YAML[4-9]
 ...
 resources:
 ...
@@ -135,18 +138,6 @@ modules:
       - name: cpapp-logs
 ```
 
-<!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-db-deployer")].requires[?(@.name=="cpapp-logs")] -->
-```YAML[9-9]
-_schema-version: '3.1'
-...
-modules:
-  ...
-  - name: cpapp-db-deployer
-    ...
-    requires:
-      ...
-      - name: cpapp-logs
-```
 [OPTION END]
 [OPTION BEGIN [Live]]
 
@@ -158,7 +149,8 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 
 1. Add an instance for the logging service to the `resources` section of your `mta.yaml`:
 
-```yaml hl_lines="4-9"
+
+```YAML[4-9]
 ...
 resources:
 ...
@@ -171,19 +163,6 @@ resources:
 
 2. Bind the logging service instance to all `modules` of the `mta.yaml`:
 
-<!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->
-```YAML[9-9]
-_schema-version: '3.1'
-...
-modules:
-  ...
-  - name: cpapp-srv
-    ...
-    requires:
-      ...
-      - name: cpapp-logs
-```
-
 <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-db-deployer")].requires[?(@.name=="cpapp-logs")] -->
 ```YAML[9-9]
 _schema-version: '3.1'
@@ -196,6 +175,7 @@ modules:
       ...
       - name: cpapp-logs
 ```
+
 [OPTION END]
 
 
