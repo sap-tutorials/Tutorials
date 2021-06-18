@@ -351,7 +351,7 @@ This section provides some sample implementations for the methods in the **`Flow
         if(name.isEmpty()) {
             return name;
         }
-        if (name.length > 2) {
+        if (name.length() > 2) {
             return name.substring(0, 2) + "____";
         } else {
             return name.substring(0, 1) + "_____";
