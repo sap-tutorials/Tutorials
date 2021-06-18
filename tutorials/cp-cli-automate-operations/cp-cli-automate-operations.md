@@ -18,6 +18,7 @@ If you prefer to use a terminal with CLI commands, the SAP BTP command lin
 >This tutorial is designed for a UNIX-like environment, such as macOS or Linux.
 
 ### About this tutorial
+
 In this tutorial, you are a DevOps engineer for Atomic, which develops innovative solutions for its customers on top of SAP BTP. Atomic also uses partner companies for developing solutions. 
 
 Every time a new development project begins, Atomic's DevOps department needs to set up a development environment on SAP BTP.
