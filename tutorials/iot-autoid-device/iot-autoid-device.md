@@ -151,8 +151,6 @@ At the end the result you look like this:
 
 !![Mapping created](MappingCreated.png)
 
-> The `epcis` package is shipped with Smart Sensing in SAP Internet of Things.
-
 [DONE]
 [ACCORDION-END]
 

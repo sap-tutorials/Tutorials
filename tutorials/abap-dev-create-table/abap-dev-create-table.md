@@ -9,10 +9,11 @@ time: 75
 
 ## Prerequisites  
 - You have done one of the following:
-    - You have a valid instance of SAP Business Technology Platform (BTP) ABAP Environment. For more information, see **Tutorial**: [Create Your First ABAP Console Application](abap-environment-console-application), steps 1-2
-    - You have a valid instance of an on-premise AS ABAP server, version 7.52 or higher. (The text-based Table Editor is not available for earlier ABAP server versions). For a free AS ABAP server, 7.52, SP04, see [SAP Developers: Trials and Downloads - 7.52](https://developers.sap.com/trials-downloads.html?search=7.52)
-- You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), latest version
-- You have downloaded or pulled the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
+    - You have a valid instance of SAP Business Technology Platform (BTP) ABAP Environment. For more information, see **Tutorial**: [Create Your First ABAP Console Application](abap-environment-console-application), steps 1-2. On this instance, you have pulled the SAP ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
+    - You have a valid instance of an on-premise [SAP AS ABAP Platform 1909, developer edition on Docker](https://blogs.sap.com/2021/02/15/sap-abap-platform-1909-developer-edition-available-soon/). (The ABAP Flight Reference Scenario is included pre-installed on this server)
+    - You have a valid instance of an on-premise [SAP AS ABAP Platform 1909, developer edition in SAP Cloud Appliance Library (CAL)](https://cal.sap.com/subscription?sguid=7bd4548f-a95b-4ee9-910a-08c74b4f6c37)
+- You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), version 3.16 or later
+
 
 ## Details
 
