@@ -99,23 +99,23 @@ In the next steps, you build an application using the `mitigations` part of our 
 
 10. Add a `/` to the beginning of the value of the `uri` parameter:
 
-    ```javascript hl_lines="7"
-    {
+```JavaScript[7]
+{
+    ...
+    "sap.app": {
         ...
-        "sap.app": {
-            ...
-            "dataSources": {
-                "mainService": {
-                    "uri": "/service/risk/",
-                    "type": "OData",
-                    "settings": {
-                        "odataVersion": "4.0",
-                        "localUri": "localService/metadata.xml"
-                    }
+        "dataSources": {
+            "mainService": {
+                "uri": "/service/risk/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0",
+                    "localUri": "localService/metadata.xml"
                 }
             }
-        },
-    ```
+        }
+        ,
+```
 
 [DONE]
 [ACCORDION-END]
@@ -172,78 +172,78 @@ The change in the `manifest.yaml` is to make sure that the data requests are use
 
 4. Open the view of the work list `cpapp/app/mitigations/webapp/view/Worklist.view.xml`  and add the following code, removing the `ID` column and instead adding `Description`, `Owner` and `Timeline` columns:
 
-    ```XML hl_lines="2-10 19-23"
-        <columns>
-            <Column id="DescriptionColumn">
-                <Text text="Description" id="DescriptionColumnTitle"/>
-            </Column>
-            <Column id="OwnerColumn">
-                <Text text="Owner" id="OwnerColumnTitle"/>
-            </Column>
-            <Column id="TimelineColumn">
-                <Text text="Timeline" id="TimelineColumnTitle"/>
-            </Column>
-        </columns>
+```XML[2-10,19-23]
+    <columns>
+        <Column id="DescriptionColumn">
+            <Text text="Description" id="DescriptionColumnTitle"/>
+        </Column>
+        <Column id="OwnerColumn">
+            <Text text="Owner" id="OwnerColumnTitle"/>
+        </Column>
+        <Column id="TimelineColumn">
+            <Text text="Timeline" id="TimelineColumnTitle"/>
+        </Column>
+    </columns>
 
-        <items>
-            <ColumnListItem
-                type="Navigation"
-                press=".onPress">
-                <cells>
-                    <ObjectIdentifier
-                        text="{description}" />
-                    <Text
-                        text="{owner}" />
-                    <Text
-                        text="{timeline}" />
-                </cells>
-            </ColumnListItem>
-        </items>
-    ```
+    <items>
+        <ColumnListItem
+            type="Navigation"
+            press=".onPress">
+            <cells>
+                <ObjectIdentifier
+                    text="{description}" />
+                <Text
+                    text="{owner}" />
+                <Text
+                    text="{timeline}" />
+            </cells>
+        </ColumnListItem>
+    </items>
+```
 
 5. Open the view of the object `cpapp/app/mitigations/webapp/view/Object.view.xml` and also replace `ID` and add `Description`, `Owner`, and `Timeline` using SAPUI5 controls like `ObjectStatus` (you can copy the whole code and replace the existing code in the file):
 
-    ```XML hl_lines="4 16 28-34"
-    <mvc:View
-        controllerName="ns.mitigations.controller.Object"
-        xmlns="sap.m"
-        xmlns:l="sap.ui.layout"
-        xmlns:mvc="sap.ui.core.mvc"
-        xmlns:semantic="sap.f.semantic">
+```XML[4,16,28-34]
+<mvc:View
+    controllerName="ns.mitigations.controller.Object"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
 
-        <semantic:SemanticPage
-            id="page"
-            headerPinnable="false"
-            toggleHeaderOnTitleClick="false"
-            busy="{objectView>/busy}"
-            busyIndicatorDelay="{objectView>/delay}">
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false"
+        busy="{objectView>/busy}"
+        busyIndicatorDelay="{objectView>/delay}">
 
-            <semantic:titleHeading>
-                <Title text="{description}" />
-            </semantic:titleHeading>
+        <semantic:titleHeading>
+            <Title text="{description}" />
+        </semantic:titleHeading>
 
-            <semantic:headerContent>
-                <ObjectNumber
-                />
-            </semantic:headerContent>
+        <semantic:headerContent>
+            <ObjectNumber
+            />
+        </semantic:headerContent>
 
-            <semantic:sendEmailAction>
-                <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
-            </semantic:sendEmailAction>
+        <semantic:sendEmailAction>
+            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+        </semantic:sendEmailAction>
 
-            <semantic:content>
-                <l:VerticalLayout>
-                    <ObjectStatus title="Description" text="{description}"/>
-                    <ObjectStatus title="Owner" text="{owner}"/>
-                    <ObjectStatus title="Timeline" text="{timeline}"/>
-                </l:VerticalLayout>
-            </semantic:content>
+        <semantic:content>
+            <l:VerticalLayout>
+                <ObjectStatus title="Description" text="{description}"/>
+                <ObjectStatus title="Owner" text="{owner}"/>
+                <ObjectStatus title="Timeline" text="{timeline}"/>
+            </l:VerticalLayout>
+        </semantic:content>
 
 
-        </semantic:SemanticPage>
+    </semantic:SemanticPage>
 
-    </mvc:View>
-    ```
+</mvc:View>
+```
 
 6. Refresh the `mitigations` application in your browser.
 
@@ -283,48 +283,49 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 
 2. Add the following lines to add the live reload module:
 
-    ```JSON hl_lines="6 11"
-    {
-        ...
-        "devDependencies": {
-            "@ui5/cli": "^1.14.0",
-            "ui5-middleware-simpleproxy": "^0.2.1",
-            "ui5-middleware-livereload": "^0.1.10"
-        },
-        "ui5": {
-            "dependencies": [
-                "ui5-middleware-simpleproxy",
-                "ui5-middleware-livereload"
-            ]
-        }
+```JSON[6,11]
+{
+    ...
+    "devDependencies": {
+        "@ui5/cli": "^1.14.0",
+        "ui5-middleware-simpleproxy": "^0.2.1",
+        "ui5-middleware-livereload": "^0.1.10"
+    },
+    "ui5": {
+        "dependencies": [
+            "ui5-middleware-simpleproxy",
+            "ui5-middleware-livereload"
+        ]
     }
-    ```
+}
+```
 
 3. Open the `ui5.yaml` file in your `cpapp/app/mitigations` folder.
 
 4. Add the following lines to configure SAPUI5 tools to use the live reload module:
 
-    ```YAML hl_lines="9-15"
-        ...
-        server:
-          customMiddleware:
-          - name: ui5-middleware-simpleproxy
-            mountPath: /service/risk
-            afterMiddleware: compression
-            configuration:
-              baseUri: http://localhost:4004/service/risk
-          - name: ui5-middleware-livereload
-            afterMiddleware: compression
-            configuration:
-              debug: true
-              ext: "xml,json,properties"
-              port: 35729
-              path: "webapp"
+```YAML[9-15]
+    ...
+    server:
+      customMiddleware:
+      - name: ui5-middleware-simpleproxy
+        mountPath: /service/risk
+        afterMiddleware: compression
+        configuration:
+          baseUri: http://localhost:4004/service/risk
+      - name: ui5-middleware-livereload
+        afterMiddleware: compression
+        configuration:
+          debug: true
+          ext: "xml,json,properties"
+          port: 35729
+          path: "webapp"
 
-    ```
-    > Additional Documentation:
+```
 
-    > In a projects `ui5.yaml` file, you can define additional server middleware modules that will be executed when the request is received by the server. This configuration exclusively affects the server started in this project. See [UI5 Tooling](https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/) documentation for more details.
+> Additional Documentation:
+
+> In a projects `ui5.yaml` file, you can define additional server middleware modules that will be executed when the request is received by the server. This configuration exclusively affects the server started in this project. See [UI5 Tooling](https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/) documentation for more details.
 
 5. From your `cpapp` folder, navigate to your `mitigations` folder:
 
@@ -383,48 +384,49 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 
 2. Add the following lines to add the live reload module:
 
-    ```JSON hl_lines="6 11"
-    {
-        ...
-        "devDependencies": {
-            "@ui5/cli": "^1.14.0",
-            "ui5-middleware-simpleproxy": "^0.2.1",
-            "ui5-middleware-livereload": "^0.1.10"
-        },
-        "ui5": {
-            "dependencies": [
-                "ui5-middleware-simpleproxy",
-                "ui5-middleware-livereload"
-            ]
-        }
+```JSON[6,11]
+{
+    ...
+    "devDependencies": {
+        "@ui5/cli": "^1.14.0",
+        "ui5-middleware-simpleproxy": "^0.2.1",
+        "ui5-middleware-livereload": "^0.1.10"
+    },
+    "ui5": {
+        "dependencies": [
+            "ui5-middleware-simpleproxy",
+            "ui5-middleware-livereload"
+        ]
     }
-    ```
+}
+```
 
 3. Open the `ui5.yaml` file in your `cpapp/app/mitigations` folder.
 
 4. Add the following lines to configure SAPUI5 tools to use the live reload module:
 
-    ```YAML hl_lines="9-15"
-        ...
-        server:
-          customMiddleware:
-          - name: ui5-middleware-simpleproxy
-            mountPath: /service/risk
-            afterMiddleware: compression
-            configuration:
-              baseUri: http://localhost:4004/service/risk
-          - name: ui5-middleware-livereload
-            afterMiddleware: compression
-            configuration:
-              debug: true
-              ext: "xml,json,properties"
-              port: 35729
-              path: "webapp"
+```YAML[9-15]
+    ...
+    server:
+      customMiddleware:
+      - name: ui5-middleware-simpleproxy
+        mountPath: /service/risk
+        afterMiddleware: compression
+        configuration:
+          baseUri: http://localhost:4004/service/risk
+      - name: ui5-middleware-livereload
+        afterMiddleware: compression
+        configuration:
+          debug: true
+          ext: "xml,json,properties"
+          port: 35729
+          path: "webapp"
 
-    ```
-    > Additional Documentation:
+```
 
-    > In a projects `ui5.yaml` file, you can define additional server middleware modules that will be executed when the request is received by the server. This configuration exclusively affects the server started in this project. See [UI5 Tooling](https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/) documentation for more details.
+> Additional Documentation:
+
+> In a projects `ui5.yaml` file, you can define additional server middleware modules that will be executed when the request is received by the server. This configuration exclusively affects the server started in this project. See [UI5 Tooling](https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/) documentation for more details.
 
 5. From your `cpapp` folder, navigate to your `mitigations` folder:
 
