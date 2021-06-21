@@ -112,12 +112,12 @@ In Visual Studio Code, set up and run your bookshop application.
 
     ```Shell/Bash
     cd fiori
-    cds watch
+    cds run
     ```
 
     The console output should look as follows:
 
-    ![Terminal response for the cd fiori and cds watch commands](cap_output.png)
+    ![Terminal response for the cd fiori and cds run commands](cap_output.png)
 
 8. In your project in the **EXPLORER** pane, choose **`fiori`** **→** **`app`** **→** **`admin`** **→** **`webapp`** **→** **`test`** **→** **`uiveri5`**.
 
