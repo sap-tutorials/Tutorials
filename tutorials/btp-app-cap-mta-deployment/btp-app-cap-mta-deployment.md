@@ -30,7 +30,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to deploy your application as Multi-Target Application (MTA) to SAP BTP, Cloud Foundry runtime
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`deployment/mta-generated`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/deployment/mta-generated) branch.
+To continue with this tutorial you can find the result of the previous tutorial in the [`mta`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/deployment/mta-generated) branch.
 
 ---
 
