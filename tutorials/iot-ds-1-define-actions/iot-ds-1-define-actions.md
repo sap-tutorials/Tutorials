@@ -1,6 +1,8 @@
 ---
 title: Model the Needed Decision Support Based on IoT Data
 description: Create actions, rules and configurations using SAP IoT.
+author_name: Jitendra Sharma
+author_profile: https://github.com/JitendraSharma01
 auto_validation: true
 time: 30
 primary_tag: topic>internet-of-things
