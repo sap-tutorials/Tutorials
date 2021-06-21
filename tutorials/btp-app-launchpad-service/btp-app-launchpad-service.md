@@ -33,7 +33,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to test your SAP Launchpad site
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`launchpad-service-prep`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpad-service-prep) branch.
+To continue with this tutorial you can find the result of the previous tutorial in the [`launchpad-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpad-service-prep) branch.
 
 ---
 
@@ -261,6 +261,7 @@ modules:
     ```bash
     npm install -g @sap/ux-ui5-tooling
     ```
+
 2. Install [SAP Fiori application generator](https://www.npmjs.com/package/@sap/generator-fiori) package as global module:
 
     ```bash
@@ -486,14 +487,13 @@ You have now subscribed to the SAP Launchpad service.
 
     > In case you get the error: `Sorry, we couldn't find  the site`.
 
-    > If you get the error `Sorry, we couldn't find the site. Please contact your site administrator for assistance.` while opening the application, you have to assign your user to the `Launchpad_Admin` role collection.
-
-    > ![Couldn't find the site](cant_find_site_error.png)
+    > If you get the error `Sorry, we couldn't find the site. Please contact your site administrator for assistance.` while opening the application, you have to assign your user to the `Launchpad_Admin` role collection:
 
     > 1. Choose **Security** **&rarr;** **Trust Configuration** on the left.
     > 2. Choose your identity provider from the list.
     > 3. Enter your e-mail address and choose **Show Assignments**.
     > 4. Choose **Assign Role Collection** and assign the `Launchpad Admin` role collection to your user.
+    > 5. Open another browser or clear your browser's cache.
 
     > See section [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html) in the SAP Launchpad service's documentation for more details.
 
@@ -562,7 +562,7 @@ You have launched your `Risks` app through the SAP Launchpad service.
 
   !![Risks App](risks.png)
 
-> If you choose ***Go***, you'll get an error because you haven't assigned a role collection to your user yet. We'll do it in the next tutorial.
+> If you choose **Go**, you'll get an error because you haven't assigned a role collection to your user yet. We'll do it in the next tutorial.
 
 
 

@@ -123,6 +123,19 @@ resources:
     service-plan: lite
 ```
 
+=== "Live"
+
+```YAML[4-9]
+...
+resources:
+...
+- name: cpapp-logs
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: application-logs
+    service-plan: standard
+```
+
 2. Bind the logging service instance to all `modules` of the `mta.yaml`:
 
 <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->
@@ -138,6 +151,18 @@ modules:
       - name: cpapp-logs
 ```
 
+<!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-db-deployer")].requires[?(@.name=="cpapp-logs")] -->
+```YAML[9-9]
+_schema-version: '3.1'
+...
+modules:
+  ...
+  - name: cpapp-db-deployer
+    ...
+    requires:
+      ...
+      - name: cpapp-logs
+```
 [OPTION END]
 [OPTION BEGIN [Live]]
 
@@ -148,6 +173,19 @@ It's suggested to enable the Logging Service for all applications, so that error
 In our experience, the `development` plan wasn't sufficient for test scenarios. Probably, its okay for personal development spaces. However, this tutorial uses the `standard` plan to be on the safe side.
 
 1. Add an instance for the logging service to the `resources` section of your `mta.yaml`:
+
+=== "Trial"
+
+```YAML[4-9]
+...
+resources:
+...
+- name: cpapp-logs
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: application-logs
+    service-plan: lite
+```
 
 
 ```YAML[4-9]
@@ -163,6 +201,19 @@ resources:
 
 2. Bind the logging service instance to all `modules` of the `mta.yaml`:
 
+<!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->
+```YAML[9-9]
+_schema-version: '3.1'
+...
+modules:
+  ...
+  - name: cpapp-srv
+    ...
+    requires:
+      ...
+      - name: cpapp-logs
+```
+
 <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-db-deployer")].requires[?(@.name=="cpapp-logs")] -->
 ```YAML[9-9]
 _schema-version: '3.1'
@@ -175,7 +226,6 @@ modules:
       ...
       - name: cpapp-logs
 ```
-
 [OPTION END]
 
 

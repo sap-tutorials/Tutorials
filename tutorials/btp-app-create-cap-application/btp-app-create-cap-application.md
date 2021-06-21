@@ -93,7 +93,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 [ACCORDION-BEGIN [Step 2: ](Add Files to the Project)]
 
-1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Create Directory](btp-app-create-directory#download-the-tutorial).
+1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Create Directory](btp-app-create-directory).
 
 2. Open the folder `templates` and keep it open as you copy a number of files from there. For this part of the tutorial and others, it's probably best if you place it next to your VS Code instance like this:
 
@@ -195,7 +195,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 And that's it: You have now got a full blown OData service, which complies to the OData standard and supports the respective queries without having to code anything but the data model and exposing the service itself.
 
-> The service is completely exposed without any authentication or authorization check. You extend the service later in the tutorial [Implement Roles and Authorization Checks In CAP](btp-app-..cap-roles) with such checks.
+> The service is completely exposed without any authentication or authorization check. You extend the service later in the tutorial [Implement Roles and Authorization Checks In CAP](btp-app-cap-roles) with such checks.
 
 
 
