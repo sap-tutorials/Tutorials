@@ -28,7 +28,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
-- How to create system tests with UIVeri5 using the UI5 Test Recorder for CAP-based projects on SAP Cloud Platform
+- How to create system tests with UIVeri5 using the UI5 Test Recorder for CAP-based projects on SAP Business Technology Platform
 - How to create a CI/CD pipeline with project "Piper"
 - How to add system tests as automated steps to your CI/CD pipeline
 
