@@ -129,7 +129,7 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 >    !![New terminal](temp_open_ws1.png)
 >    !![New terminal](temp_open_ws2.png)
 
-> 1. Proceed to the next step
+> 1. Proceed to step 5: Adjust CAP project for HANA development
 
 
 1. From the SAP Business Application Studio Welcome tab, click **Start from template Create a new project**.
@@ -198,6 +198,8 @@ The Cloud Application Programming Model wizard generates a project that supports
 
     !![Open package.json for editing](package_json.png)
 
+    > No need to worry about the yellow underlining below the name of the package. This is just a hint and doesn't have any impact on the tutorial.
+
 5. You can completely delete the `devDependencies` section of the `package.json`
 
 6. The rest of the changes will be in the `cds` section of the file. Replace this entire section of `package.json` with the following content
@@ -218,7 +220,7 @@ The Cloud Application Programming Model wizard generates a project that supports
     }
     ```
 
-    > these changes will alter the generated folder structure of the cds build operation. Content will no longer be placed into the gen folder but back into the source folders. This also will tell CAP to generate hdbtable artifacts instead of hdbcds. This is a critical change for SAP HANA Cloud compatibility. Finally the db.kind change to HANA tells CAP to use HANA at development time instead of SQLite.
+    > These changes will alter the generated folder structure of the cds build operation. Content will no longer be placed into the gen folder but back into the source folders. This also will tell CAP to generate hdbtable artifacts instead of hdbcds. This is a critical change for SAP HANA Cloud compatibility. Finally the db.kind change to HANA tells CAP to use HANA at development time instead of SQLite.
 
 7. Your `package.json` file should now look something like this. The exact version numbers in the `dependencies` section in your file might differ from this screenshot
 
