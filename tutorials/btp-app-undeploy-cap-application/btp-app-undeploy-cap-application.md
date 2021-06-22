@@ -30,7 +30,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ### You will learn
 
  - How to undeploy your Cloud Foundry application
- 
+
 
 ---
 
@@ -46,6 +46,8 @@ You can either undeploy the applications or undeploy the applications and their 
 cf undeploy cpapp
 ```
 
+[VALIDATE_1]
+
 
 [OPTION END]
 [OPTION BEGIN [Delete applications and service instances]]
@@ -59,8 +61,6 @@ You can either undeploy the applications or undeploy the applications and their 
 ```bash
 cf undeploy cpapp --delete-service-keys --delete-services
 ```
-
-[VALIDATE_1]
 
 [OPTION END]
 
