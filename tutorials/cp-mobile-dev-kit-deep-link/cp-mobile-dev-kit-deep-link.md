@@ -46,9 +46,9 @@ If you are building a custom version of Mobile development kit client, there you
 
 3. Select **MDK Project** and click **Start**.
 
-    !![MDK](img_1.3.png)  
+    !![MDK](img-1.3.png)  
 
-4. In *Basic Information* step, select or provide the below information and click **Next**:
+4. In *Type* step, select or provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
@@ -56,11 +56,11 @@ If you are building a custom version of Mobile development kit client, there you
     | `Your project name` | `MDKDeepLink` |
     | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
 
-    !![MDK](img_1.4.png)
+    !![MDK](img-1.4.png)
 
     >The _MDK Empty Project_ template creates a Logout action, Close page action, rule and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.   
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.  
 
 5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKDeepLink` project in the project explorer.
 
@@ -106,7 +106,7 @@ In the MDK editor, you will create 4 new Rule files:
     ```
     !![MDK](img_2.2.png)
 
-    >`openUrl` is a `NativeScript` API to open an URL on device. You can find more details about [this API](https://docs.nativescript.org/core-concepts/utils#openurl-function).
+    >`openUrl` is a `NativeScript` API to open an URL on device. You can find more details about [this API](https://v6.docs.nativescript.org/core-concepts/utils#openurl-function).
 
 3. Save your changes to the `OpenSAPMobileCards.js` file.
 
@@ -166,7 +166,7 @@ In the MDK editor, you will create 4 new Rule files:
 
 8. Create one more Rule file and name it to `OpenSAPcom`.
 
-    Copy and paste the following code.
+    Replace the generated snippet with below code.
 
     ```JavaScript
     export default function OpenSAPcom(context) {
@@ -213,7 +213,7 @@ In the MDK editor, you will create 4 new Rule files:
 
 4. Select the first control and change its title to **Open SAP Mobile Cards**.
 
-    !![MDK](img_3.4.png)
+    !![MDK](img-3.4.png)
 
 5. Repeat the above step and change the title for other controls as below:
 
@@ -230,7 +230,7 @@ In the MDK editor, you will create 4 new Rule files:
 
     Double-click the `OpenSAPMobileCards.js` and click **OK** to set it as the `OnPress` action.
 
-    !![MDK](img_4.1.gif)
+    !![MDK](img-4.1.gif)
 
 3. Repeat the same and do the following:
 
@@ -254,28 +254,34 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 2. Select deploy target as **Mobile Services**.
 
-    !![MDK](img_5.2.png)
+    !![MDK](img-5.2.png)
 
-3. Select the application from Mobile Services.
+3. Select **Mobile Services Landscape**.
 
-    !![MDK](img_5.3.png)
+    !![MDK](img-5.3.1.png)    
 
-    You should see **Deploy succeeded** message.
+4. Select application from **Mobile Services**.
 
-    !![MDK](img_5.4.png)
+    !![MDK](img-5.3.png)   
+
+    You should see **Deploy to Mobile Services successfully!** message.
+
+    !![MDK](img-5.4.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Populate the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 6: ](Display the QR code for app onboarding)]
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
+Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
 !![MDK](img-6.1.png)
 
-!![MDK](img_6.2.png)
+!![MDK](img-6.2.png)
+
+>Leave the Onboarding dialog box open for step 7.
 
 [DONE]
 [ACCORDION-END]
@@ -350,15 +356,15 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
     !![MDK](img_7.12.png)
 
+    >To run this app in your branded client, you need to add Mobile Cards and Fiori Client app URL schemes (`com.sap.content2go`,`com.sap.fiori.client.xcallbackurl`)  in the info.plist.   
+
 [OPTION END]
 
->Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
-
-[DONE]
+[VALIDATE_3]
 [ACCORDION-END]
 
 ---
 
-Congratulations, you have successfully implemented Deep Linking to Another App from your MDK App and you are now all set to [Use OData Annotations to Add CRUD Functionality to an MDK App](cp-mobile-dev-kit-annotations).
+Congratulations, you have successfully implemented Deep Linking to Another App from your MDK App and you can continue with the remaining tutorials in this mission.
 
 ---

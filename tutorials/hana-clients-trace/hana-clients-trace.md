@@ -226,7 +226,7 @@ javac -version
     java -jar c:\sap\hdbclient\ngdbc.jar
     ```
 
-    ![JDBC Driver GUI](JDBC-GUI.png)
+    ![JDBC Driver GUI](JDBC-Driver-Trace-Config.png)
 
 2. Turn on the tracing for SQL statements using either the GUI or the commands below:
 

@@ -1,6 +1,6 @@
 ---
 title: Create an SAP Fiori App Using SAP Business Application Studio
-description: Develop a simple SAP Fiori application that will present a list of suppliers from an on-premise backend.
+description: Develop a simple SAPUI5 freestyle application, adhering to SAP Fiori design guidelines, that will present a list of suppliers from an on-premise backend.
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
@@ -23,14 +23,20 @@ author_profile: https://github.com/raz-korn
 You'll build an application that presents a list of suppliers from an on-premise backend. The suppliers' data will be retrieved from the `BusinessPartnerSet` collection in the `GWSAMPLE_BASIC` OData service that is available from SAP's ES5 demo Gateway system.
 
 The flow consists of the following parts:
-- Running a wizard that creates a basic multi-target application (MTA) project. This is required in order to create the deployment artifact for SAP BTP, Cloud Foundry environment. If you are not familiar with the multitarget application concepts, read this [guide](https://www.sap.com/documents/2016/06/e2f618e4-757c-0010-82c7-eda71af511fa.html).
-- Running a wizard that configured the app to use Managed Application Router. This is best practice as well as required in order to include the app in SAP launchpad.
-- Running a wizard that generates the app based on SAPUI5 Application template.
-- Enhancing the application by creating the UI and presenting data fetched from an SAP backend.
 
-After a period of idle time the dev space is automatically stopped. In order to re-start the dev space open the [dev space manager](https://triallink.eu10.trial.applicationstudio.cloud.sap/), click the **Play** icon, and click the dev space.
+1. Running a wizard that creates a basic multi-target application (MTA) project. This is required in order to create the deployment artifact for SAP BTP, Cloud Foundry environment. If you are not familiar with the multitarget application concepts, read this [guide](https://www.sap.com/documents/2016/06/e2f618e4-757c-0010-82c7-eda71af511fa.html).
 
-The period for idle time for Enterprise accounts is different than for trial accounts.
+2. Running a wizard that configured the app to use Managed Application Router. This is best practice as well as required in order to include the app in SAP launchpad.
+
+3. Running a wizard that generates the app based on SAPUI5 Application template.
+
+4. Enhancing the application by creating the UI and presenting data fetched from an SAP backend.
+
+>**Important**
+
+>After a period of idle time the dev space is automatically stopped. In order to re-start the dev space open the [dev space manager](https://triallink.eu10.trial.applicationstudio.cloud.sap/), click the **Play** icon, and click the dev space.
+
+>The period for idle time for Enterprise accounts is different than for trial accounts.
 
 ---
 
@@ -160,7 +166,7 @@ The recommendation is to use **Managed Application Router** that provides many b
     |:-----|:----------|:------|
     | A | Data source | **Connect to an SAP system** |
     | B | System | **`ES5`** |
-    | C | Service | **`GWSAMPLE_BASIC (1) - OData V2`** |
+    | C | Service | **`ZGWSAMPLE_BASIC (1) - OData V2`** |
 
     !![floorplan](AppStudio-Generate-App-4-.png)
 

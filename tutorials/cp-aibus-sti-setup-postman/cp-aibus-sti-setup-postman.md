@@ -27,13 +27,13 @@ In step 5, you are going to use this feature to store your service key details o
 
 Make a local copy of the Postman environment sample file for Service Ticket Intelligence available on GitHub:
 
-1. Open the [environment sample file](https://github.com/SAP-samples/service-ticket-intelligence-postman-collection/blob/master/Env%20for%20STI%20sample%20collection%202012.postman_environment.json).
+1. Open the [environment sample file](https://github.com/SAP-samples/service-ticket-intelligence-postman-collection/blob/main/Env%20for%20STI%20sample%20collection%202012.postman_environment.json).
 
 2. Click **Raw**.
 
     !![Postman](raw-env.png)
 
-3. Right click and then click ***Save as*** to download locally the JSON file. 
+3. Right click and then click ***Save as*** to download locally the JSON file.
 
     !![Postman](raw-env-save.png)
 
@@ -47,7 +47,7 @@ Collections let you group requests together and save them for later use. This he
 
 Make a local copy of the Postman collection sample file for Service Ticket Intelligence available on GitHub:
 
-1. Open the [collection sample file](https://github.com/SAP-samples/service-ticket-intelligence-postman-collection/blob/master/STI%20sample%20collection%202012.postman_collection.json).
+1. Open the [collection sample file](https://github.com/SAP-samples/service-ticket-intelligence-postman-collection/blob/main/STI%20sample%20collection%202012.postman_collection.json).
 
 2. Click **Raw**.
 

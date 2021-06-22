@@ -46,7 +46,7 @@ For local development, you need to do the following:
 
     ```Shell/Bash
     mvn archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds -DarchetypeVersion=RELEASE \
-    -DartifactId=cap-business-service
+    -DartifactId=cap-business-service -DgroupId=org.your.org.cap.test
     ```    
 
     This will initialise the application using the [maven archetype](http://maven.apache.org/guides/introduction/introduction-to-archetypes.html) `cds-services-archetype` and create your project as follows:

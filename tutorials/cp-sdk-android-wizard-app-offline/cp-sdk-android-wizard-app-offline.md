@@ -3,9 +3,9 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: Offline-Enable Your Android Application
 description: Enable offline OData in your Android application, resulting in an application that can be used without a network connection and that performs data requests with less latency.
-primary_tag: products>android-sdk-for-sap-btp
+primary_tag: products>sap-btp-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>android-sdk-for-sap-btp, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
 time: 30
 ---
 
@@ -63,7 +63,32 @@ time: 30
 [VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Examine the defining queries)]
+[ACCORDION-BEGIN [Step 2: ](Examine the encryption key)]
+
+To protect the data in offline store, you must enable offline store encryption by supplying an encryption key.
+
+[OPTION BEGIN [Java]]
+1.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`OfflineWorkerUtil`**, to open `OfflineWorkerUtil.java`.
+
+2.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`initializeOffline`**, to move to the `initializeOffline` method. Call the **`setStoreEncryptionKey`** method of **`OfflineODataParameters`** instance to encrypt offline store.
+
+    !![Parameter setting Java](offline-key-java.png)
+
+[OPTION END]
+
+[OPTION BEGIN [Kotlin]]
+1.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`OfflineWorkerUtil`**, to open `OfflineWorkerUtil.kt`.
+
+2.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`initializeOffline`**, to move to the `initializeOffline` method. Call the **`setStoreEncryptionKey`** method of **`OfflineODataParameters`** instance to encrypt offline store.
+
+    !![Parameter setting Kotlin](offline-key-kotlin.png)
+
+[OPTION END]
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Examine the defining queries)]
 
 >Make sure you are selecting the right language above.
 
@@ -87,14 +112,14 @@ val productsQuery = OfflineODataDefiningQuery("Products", "Products", true)
 
 [OPTION END]
 
-Defining queries tell the `OfflineODataProvider` (the class that manages the offline store) which entity sets to store on the device. In the case of the wizard-generated application, there is a defining query for each available entity by default, meaning that each entity is stored offline and available if the user doesn't have an internet connection. For more information, see [Defining Queries](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-defining-application-configuration-file.html#defining-queries).
+Defining queries tell the `OfflineODataProvider` (the class that manages the offline store) which entity sets to store on the device. In the case of the wizard-generated application, there is a defining query for each available entity by default, meaning that each entity is stored offline and available if the user doesn't have an internet connection. For more information, see [Defining Queries](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/defining-an-application-configuration-file/defining-queries.html).
 
 >With an offline-enabled app, requests made against the entity sets that are included in the defining requests will always be fulfilled from the local offline store.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Examine the offline service and service manager)]
+[ACCORDION-BEGIN [Step 4: ](Examine the offline service and service manager)]
 
 >Make sure you are selecting the right language above.
 
@@ -120,7 +145,7 @@ The application allows users to make changes against a local offline store and s
 
     The worker's work is to call the `download` and `upload` method of the `OfflineODataProvider` class to perform the sync operation and pass the given callbacks through.
 
-    The `OfflineSyncWorker` class is called by `sync` method in `OfflineWorkerUtil.java` which is called by `EntitySetListActivity` when the user wants to perform a sync. When an entity is created locally in the offline store, its primary key is left unset. This is because when the user performs an `upload`, the server will set the primary key for the client. An `upload` and a `download` are normally performed together because the `download` may return updated values from the server, such as a newly-created primary key.
+    The `OfflineSyncWorker` class is called by the `sync` method in `OfflineWorkerUtil.java`, which is called by `EntitySetListActivity` when the user wants to perform a sync. When an entity is created locally in the offline store, its primary key is left unset. This is because when the user performs an `upload`, the server will set the primary key for the client. An `upload` and a `download` are normally performed together because the `download` may return updated values from the server, such as a newly-created primary key.
 
     !![Sync method calls OfflineSyncWorker](method_calls_offline_sync_worker_java.png)
 
@@ -148,7 +173,7 @@ The application allows users to make changes against a local offline store and s
 
     The worker's work is to call the `download` and `upload` method of the `OfflineODataProvider` class to perform the sync operation and pass the given callbacks through.
 
-    The `OfflineSyncWorker` class is called by `sync` method in `OfflineWorkerUtil.kt` which is called by `EntitySetListActivity` when the user wants to perform a sync. When an entity is created locally in the offline store, its primary key is left unset. This is because when the user performs an `upload`, the server will set the primary key for the client. An `upload` and a `download` are normally performed together because the `download` may return updated values from the server, such as a newly-created primary key.
+    The `OfflineSyncWorker` class is called by the `sync` method in `OfflineWorkerUtil.kt`, which is called by `EntitySetListActivity` when the user wants to perform a sync. When an entity is created locally in the offline store, its primary key is left unset. This is because when the user performs an `upload`, the server will set the primary key for the client. An `upload` and a `download` are normally performed together because the `download` may return updated values from the server, such as a newly-created primary key.
 
     !![Sync method calls OfflineSyncWorker](method_calls_offline_sync_worker_kotlin.png)
 
@@ -156,14 +181,14 @@ The application allows users to make changes against a local offline store and s
 
 [OPTION END]
 
-For more information about how the offline store works, see the [Offline API](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-introduction.html).
+For more information about how the offline store works, see the [Working With Offline Stores](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/working-with-offline-stores.html).
 
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Introduce a synchronization error)]
+[ACCORDION-BEGIN [Step 5: ](Introduce a synchronization error)]
 
-When syncing changes made while offline, conflicts can occur. One example might be if two people attempted to update a description field for the same product. Another might be updating a record that was deleted by another user. The [`ErrorArchive`](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-errors-and-conflicts.html#accessing-the-errorarchive) provides a way to see details of any of the conflicts that may have occurred. The following instructions demonstrate how to use `ErrorArchive`.
+When syncing changes made while offline, conflicts can occur. One example might be if two people attempted to update a description field for the same product. Another might be updating a record that was deleted by another user. The [`ErrorArchive`](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/handling-errors-and-conflicts/accessing-errorarchive.html) provides a way to see details of any of the conflicts that may have occurred. The following instructions demonstrate how to use `ErrorArchive`.
 
 1.  Update a **SalesOrderItem** and change its quantity to be zero and save it. Update a second item and change its quantity to a different non-zero number and save it.
 
@@ -184,7 +209,7 @@ When syncing changes made while offline, conflicts can occur. One example might 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Display ErrorArchive details)]
+[ACCORDION-BEGIN [Step 6: ](Display ErrorArchive details)]
 
 In this section we will create an **Error Information** screen that displays the details from the `ErrorArchive`.
 
@@ -437,7 +462,7 @@ In this section we will create an **Error Information** screen that displays the
 
     !![OfflineWorkerUtil synchronize](offlineWorkerUtil_synchronize_call_java.png)
 
-9.  Right after `progressBar.setVisibility(View.INVISIBLE);` line, in the `SUCCEEDED` case of sync work state, add the following code, which queries the error archive and displays information to the user about the first error encountered.
+9.  Right after the `progressBar.setVisibility(View.INVISIBLE);` line, in the `SUCCEEDED` case of sync work state, add the following code, which queries the error archive and displays information to the user about the first error encountered:
 
     ```Java
     OfflineODataProvider provider = OfflineWorkerUtil.getOfflineODataProvider();
@@ -472,7 +497,7 @@ In this section we will create an **Error Information** screen that displays the
             // Reverts all failing entities to the previous state or set
             // offlineODataParameters.setEnableIndividualErrorArchiveDeletion(true);
             // to cause the deleteEntity call to only revert the specified entity
-            // https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html#reverting-an-error-state
+            // https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/handling-failed-requests/reverting-error-state.html
             // provider.deleteEntity(errorEntity, null, null);
             startActivity(errorIntent);
             break; //For simplicity, only show the first error encountered
@@ -519,7 +544,7 @@ In this section we will create an **Error Information** screen that displays the
               // Reverts all failing entities to the previous state or set
               // offlineODataParameters.setEnableIndividualErrorArchiveDeletion(true);
               // to cause the deleteEntity call to only revert the specified entity
-              // https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html#reverting-an-error-state
+              // https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/handling-failed-requests/reverting-error-state.html
               // provider.deleteEntity(errorEntity, null, null);
               startActivity(errorIntent);
               break; //For simplicity, only show the first error encountered
@@ -534,7 +559,7 @@ In this section we will create an **Error Information** screen that displays the
 
     !![Error screen](error_screen.png)
 
-    You can see that the HTTP status code, method, and message are included. When the application attempted a sync, the entity being updated didn't pass the backend checks, produced a `DataServiceException`, and is now in the error state. All entities that did not produce errors are successfully synced. One way to correct the exception would be to change the quantity from 0 to a valid positive number. Another would be to delete the `ErrorArchive` entry, reverting the entity to its previous state. For more information on error handling, see [Handling Errors and Conflicts](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-errors-and-conflicts.html) and [Handling Failed Requests](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-failed-requests.html).
+    You can see that the HTTP status code, method, and message are included. When the application attempted a sync, the entity being updated didn't pass the backend checks, produced a `DataServiceException`, and is now in the error state. All entities that did not produce errors are successfully synced. One way to correct the exception would be to change the quantity from 0 to a valid positive number. Another would be to delete the `ErrorArchive` entry, reverting the entity to its previous state. For more information on error handling, see [Handling Errors and Conflicts](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/handling-errors-and-conflicts/handling-errors-and-conflicts.html) and [Handling Failed Requests](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/handling-failed-requests/handling-failed-requests.html).
 
 [OPTION END]
 
@@ -785,7 +810,7 @@ In this section we will create an **Error Information** screen that displays the
 
     !![OfflineWorkerUtil synchronize](offlineWorkerUtil_synchronize_call_kotlin.png)
 
-9.  Right after the `sync_determinate.visibility = View.INVISIBLE` line, in the `WorkInfo.State.SUCCEEDED` block, add the following code, which queries the error archive and displays information to the user about the first error encountered.
+9.  Right after the `sync_determinate.visibility = View.INVISIBLE` line, in the `WorkInfo.State.SUCCEEDED` block, add the following code, which queries the error archive and displays information to the user about the first error encountered:
 
     ```Kotlin
     val provider = OfflineWorkerUtil.offlineODataProvider
@@ -823,7 +848,7 @@ In this section we will create an **Error Information** screen that displays the
             // Reverts all failing entities to the previous state or set
             // offlineODataParameters.setEnableIndividualErrorArchiveDeletion(true);
             // to cause the deleteEntity call to only revert the specified entity
-            // https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html#reverting-an-error-state
+            // https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/handling-failed-requests/reverting-error-state.html
             // provider.deleteEntity(errorEntity, null, null);
             startActivity(errorIntent)
             break //For simplicity, only show the first error encountered
@@ -873,7 +898,7 @@ In this section we will create an **Error Information** screen that displays the
                 // Reverts all failing entities to the previous state or set
                 // offlineODataParameters.setEnableIndividualErrorArchiveDeletion(true);
                 // to cause the deleteEntity call to only revert the specified entity
-                // https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html#reverting-an-error-state
+                // https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/handling-failed-requests/reverting-error-state.html
                 // provider.deleteEntity(errorEntity, null, null);
                 startActivity(errorIntent)
                 break //For simplicity, only show the first error encountered
@@ -889,7 +914,7 @@ In this section we will create an **Error Information** screen that displays the
 
     !![Error screen](error_screen.png)
 
-    You can see that the HTTP status code, method, and message are included. When the application attempted a sync, the entity being updated didn't pass the backend checks and produced a `DataServiceException` and is now in the error state. All entities that did not produce errors are successfully synced. One way to correct the exception would be to change the quantity from 0 to a valid positive number. Another would be to delete the `ErrorArchive` entry, reverting the entity to its previous state. For more information on error handling, see [Handling Errors and Conflicts](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-errors-and-conflicts.html) and [Handling Failed Requests](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-failed-requests.html).
+    You can see that the HTTP status code, method, and message are included. When the application attempted a sync, the entity being updated didn't pass the backend checks and produced a `DataServiceException` and is now in the error state. All entities that did not produce errors are successfully synced. One way to correct the exception would be to change the quantity from 0 to a valid positive number. Another would be to delete the `ErrorArchive` entry, reverting the entity to its previous state. For more information on error handling, see [Handling Errors and Conflicts](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/handling-errors-and-conflicts/handling-errors-and-conflicts.html) and [Handling Failed Requests](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/common/handling-failed-requests/handling-failed-requests.html).
 
 [OPTION END]
 

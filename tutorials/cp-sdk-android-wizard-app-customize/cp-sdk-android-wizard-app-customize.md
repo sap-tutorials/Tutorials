@@ -3,9 +3,9 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: Customize the Wizard Generated Application
 description: Customize a wizard-generated application and learn how to use Fiori object cells, search UI, and the collection view.
-primary_tag: products>android-sdk-for-sap-btp
+primary_tag: products>sap-btp-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>android-sdk-for-sap-btp, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
 time: 60
 ---
 

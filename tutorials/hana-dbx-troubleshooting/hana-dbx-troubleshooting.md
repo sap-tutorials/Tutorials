@@ -186,15 +186,24 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
 [ACCORDION-BEGIN [Step 4: ](Explain plan)]
 Explain plan provides a compiled plan in tabular form without executing it.  This can be useful in analyzing certain situations when it is hard to reproduce issues without causing the issue.
 
-1. Run the following SQL.
+1. Run the following SQL and enter the date 2020-12-24 when prompted.  
 
     ```SQL
-    SELECT HOTEL_NAME, count(*) AS "NUMBER OF RESERVATIONS" FROM HOTEL.RESERVATION_VIEW group by HOTEL_NAME order by HOTEL_NAME;
+    SELECT
+      R.RESNO, H.NAME AS HOTEL_NAME, R.ARRIVAL, R.DEPARTURE, CUS.TITLE, CUS.FIRSTNAME, CUS.NAME AS CUSTOMER_NAME, CUS.ADDRESS AS CUSTOMER_ADDRESS
+    FROM HOTEL.RESERVATION R
+    	LEFT JOIN HOTEL.HOTEL H ON H.HNO = R.HNO
+    	LEFT JOIN HOTEL.CUSTOMER CUS ON CUS.CNO = R.CNO
+    	WHERE ARRIVAL = ?
+    ORDER BY H.NAME, R.ARRIVAL DESC
+    WITH HINT (IGNORE_PLAN_CACHE);
     ```
+
+    > Notice that a hint is provided which indicates that if a query plan is found in the cache it is ignored.
 
     ![Reservations by Hotel](explainPlanSQL.png)
 
-2. Choose **Analyze | Explain Plan** to see the complied plan without executing the statement.
+2. Choose **Analyze | Explain Plan** to see the complied plan without executing the statement.  
 
     ![Explain Plan](explainPlan.png)
 
@@ -202,15 +211,14 @@ For further details see the links below.
 
 [View Execution Plans for SQL Statements, Procedures, and Anonymous Blocks](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/c41b37e67fa647b392c05b41804aee39.html)
 
-[Explain Plan](https://help.sap.com/viewer/9de0171a6027400bb3b9bee385222eff/2.0.05/en-US/ee5e2ac159f14cc897c8b3a5f39a38b5.html)
-
+[Explain Plan](https://help.sap.com/viewer/9de0171a6027400bb3b9bee385222eff/latest/en-US/ee5e2ac159f14cc897c8b3a5f39a38b5.html)
 
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](SQL Analyzer)]
-The SQL Analyzer provides a graphical view of how an analyzed SQL statement was executed which can provide additional insights into query execution.  The latest version is available as an extension for Visual Studio Code.  A `.plv` file can be generated in the SAP HANA database explorer which can then be opened in the SQL Analyzer.  A previous version of the SQL Analyzer is also included in the on-premise SAP HANA database explorer, the on-premise SAP HANA cockpit as well as SAP HANA studio.  
+The SQL Analyzer provides a graphical view of how an analyzed SQL statement was executed which can provide additional insights into query execution.  The latest version is available as an extension for Visual Studio Code or as an additional extension (SAP Performance Tools) in the SAP Business Application Studio.  A `.plv` file can be generated in the SAP HANA database explorer which can then be opened in the SQL Analyzer.  A previous version of the SQL Analyzer is also included in the on-premise SAP HANA database explorer, the on-premise SAP HANA cockpit as well as SAP HANA studio.  
 
 1. Run the following SQL.
 
@@ -224,7 +232,7 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
 
     ![Generate PLV](generatePLV.png)
 
-    Once the file has been saved it can then be opened in Visual Studio Code as shown below.
+    Once the file has been saved it can then be opened in Visual Studio Code or SAP Business Application Studio as shown below.
 
     * Visual Studio
 
@@ -235,6 +243,16 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
         Add the plan file
 
         ![Add Plan File](VSCodeAddPlanFile.png)
+
+    * SAP Business Application studio
+
+        Add the additional extension
+
+        ![performance tools plugin](bas-sql-analyzer.png)
+
+        Add the plan file
+
+        ![Add plan file](bas-add-plan-file.png)
 
 
 3. If using an on-premise edition, choose **Analyze | Analyze SQL** to execute the SQL and to view graphically how the SQL was executed.  Alternatively, choose to download the `plv` file and open it in the SQL Analyzer in Visual Studio Code or the SAP Business Application Studio.
@@ -249,7 +267,7 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
 
     ![timeline](SQLAnalyzer2New.png)
 
->Refer to [Analyzing Statement Performance](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/1458a4079b294a58a57eca5823025108.html) for more information.
+>Refer to [Analyzing Statement Performance](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/1458a4079b294a58a57eca5823025108.html) and [SQL Analyzer Extension](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/50bc09af2fa549c3ace4178b61056da8.html) for more information.
 
 ---
 
@@ -308,7 +326,7 @@ A SQL trace can be helpful when debugging a problem or in identifying SQL statem
 
     ![Open Trace File](openTrace.png)
 
-    >Note that in SAP HANA Cloud, HANA database, the file can be found under the `sqltrace` folder while with SAP HANA on-premise, the trace file appears under the `other` folder.
+    >Note that in SP 12 and older versions of the database explorer, the file can be found under the `other` folder rather than the `sqltrace` folder.
 
     The SQL queries that return information about the memory being used by the HANA instance can be viewed in the file.  For example, the highlighted query is one such SQL request.
 
@@ -360,11 +378,50 @@ It can be important to examine SQL statements that consume large amounts of time
 
     ![expensive statements](expensiveTrace.png)
 
-3. When using SAP HANA Cloud, database explorer, the messages tab also contains detailed information about the duration, CPU, and memory consumed by a statement.
+3. When using SAP HANA Cloud or the on-premise SP 13 or higher database explorer, the messages tab also contains detailed information about the duration, CPU, and memory consumed by a statement.
 
     ![Resource consumption](messages-tab.png)
 
-Congratulations! You have now explored the available tools to help diagnose and debug SQL or SQLScript.
+    > For SAP HANA on-premise databases, the peak memory used option requires the configuration parameters `enable_tracking` and `memory_tracking` to be enabled.
+    >
+    > ```SQL
+    SELECT * FROM SYS.M_CONFIGURATION_PARAMETER_VALUES WHERE KEY = 'memory_tracking' OR KEY = 'enable_tracking';
+    ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('resource_tracking', 'enable_tracking') = 'on' WITH RECONFIGURE;
+    ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('resource_tracking', 'memory_tracking') = 'on' WITH RECONFIGURE;
+    > ```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Viewing trace files with SQL)]    
+The SAP HANA database provides a set of monitoring views enabling access to the trace files.  An example is [`M_MERGED_TRACES` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/2020_03_QRC/en-US/20b52c0075191014a43fb02951633999.html) which contains the content of multiple trace files enabling a query to be performed across trace files for a certain time period.  The following instructions provide some examples of accessing the views.
+
+1. Information about the available trace files and content from individual trace files can be queried.
+
+    ```SQL
+    SELECT * FROM M_TRACEFILES;
+    SELECT * FROM M_TRACEFILE_CONTENTS  WHERE HOST = 'XXXXXXXX' AND FILE_NAME='XXXXXXXX.XXX';
+    ```
+
+2. Execute the following SQL query to see entries from the past 45 minutes.
+
+    ```SQL
+    SELECT SERVICE_NAME, TIMESTAMP, TRACE_LEVEL, COMPONENT, SOURCE_FILE_NAME, TRACE_TEXT
+    FROM M_MERGED_TRACES
+    WHERE TIMESTAMP > ADD_SECONDS (TO_TIMESTAMP (CURRENT_TIMESTAMP), -1*60*45) AND TIMESTAMP < CURRENT_TIMESTAMP
+    ORDER BY TIMESTAMP;
+    ```
+
+    ![M_MERGED_TRACES](m_merged_traces.png)
+
+3. The SAP Note [SQL Statement Collection for SAP HANA](https://launchpad.support.sap.com/#/notes/1969700) contains a query named `HANA_TraceFiles_Content` that also includes relevant SAP notes that match certain strings in the trace files.
+
+    ![Trace files and associated SAP Notes](trace_files2.png)
+
+    >Notice above that the modification section can be used to set the begin and end time.
+
+
+Congratulations! You have now explored many of the available tools in the SAP HANA database explorer to help diagnose or debug.
 
 [VALIDATE_1]
 [ACCORDION-END]
