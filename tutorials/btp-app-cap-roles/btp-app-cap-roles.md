@@ -59,37 +59,37 @@ To enable authentication support in CAP, the [passport](http://www.passportjs.or
 
 2. Add the following restrictions block (`@(...)`) to your `Risks` and `Mitigations` entities.
 
-    <!-- cpes-file srv/risk-service.cds -->
-    ```text hl_lines="4-13 15-24"
-    using { sap.ui.riskmanagement as my } from '../db/schema';
-    @path: 'service/risk'
-    service RiskService {
-      entity Risks @(restrict : [
-                {
-                    grant : [ 'READ' ],
-                    to : [ 'RiskViewer' ]
-                },
-                {
-                    grant : [ '*' ],
-                    to : [ 'RiskManager' ]
-                }
-            ]) as projection on my.Risks;
-        annotate Risks with @odata.draft.enabled;
-      entity Mitigations @(restrict : [
-                {
-                    grant : [ 'READ' ],
-                    to : [ 'RiskViewer' ]
-                },
-                {
-                    grant : [ '*' ],
-                    to : [ 'RiskManager' ]
-                }
-            ]) as projection on my.Mitigations;
-        annotate Mitigations with @odata.draft.enabled;
-    }
-    ```
+<!-- cpes-file srv/risk-service.cds -->
+```[4-13,15-24]
+using { sap.ui.riskmanagement as my } from '../db/schema';
+@path: 'service/risk'
+service RiskService {
+  entity Risks @(restrict : [
+            {
+                grant : [ 'READ' ],
+                to : [ 'RiskViewer' ]
+            },
+            {
+                grant : [ '*' ],
+                to : [ 'RiskManager' ]
+            }
+        ]) as projection on my.Risks;
+    annotate Risks with @odata.draft.enabled;
+  entity Mitigations @(restrict : [
+            {
+                 grant : [ 'READ' ],
+                to : [ 'RiskViewer' ]
+            },
+             {
+                grant : [ '*' ],
+                to : [ 'RiskManager' ]
+            }
+        ]) as projection on my.Mitigations;
+    annotate Mitigations with @odata.draft.enabled;
+}
+```
 
-    With this change, a user with the role `RiskViewer` can view risks and mitigations, and a user with role `RiskManager` can view and change risks and mitigations.
+With this change, a user with the role `RiskViewer` can view risks and mitigations, and a user with role `RiskManager` can view and change risks and mitigations.
 
 [DONE]
 [ACCORDION-END]

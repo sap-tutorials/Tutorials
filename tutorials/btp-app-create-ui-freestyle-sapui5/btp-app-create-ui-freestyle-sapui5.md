@@ -17,7 +17,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Add Business Logic to Your Application](btp-app-cap-business-logic)
 
 ## Details
-
 ### You will learn
  - How to create a Freestyle SAPUI5 app on top of your CAP application
  - How to start the application
@@ -45,7 +44,7 @@ Fortunately, you have also got a choice of several templates that get your appli
 
 In the next steps, you build an application using the `mitigations` part of our CAP-based service.
 
-1. Make sure that you've installed the SAPUI5 templates as described in section [Set Up Local Development using VS Code](btp-app-#install-the-ui5-command-line-interface).
+1. Make sure that you've installed the SAPUI5 templates as described in section [Set Up Local Development using VS Code](btp-app-set-up-local-development).
 
 2. Open a terminal in VS Code via **Terminal** **&rarr;** **New Terminal**.
 
@@ -99,30 +98,30 @@ In the next steps, you build an application using the `mitigations` part of our 
 
 10. Add a `/` to the beginning of the value of the `uri` parameter:
 
-    ```javascript hl_lines="7"
-    {
+```JavaScript[7]
+{
+    ...
+    "sap.app": {
         ...
-        "sap.app": {
-            ...
-            "dataSources": {
-                "mainService": {
-                    "uri": "/service/risk/",
-                    "type": "OData",
-                    "settings": {
-                        "odataVersion": "4.0",
-                        "localUri": "localService/metadata.xml"
-                    }
+        "dataSources": {
+            "mainService": {
+                "uri": "/service/risk/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0",
+                    "localUri": "localService/metadata.xml"
                 }
             }
-        },
-    ```
+        }
+        ,
+```
 
 [DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Summary)]
 
-What happened here? (You can skip this and carry on with [Starting the Application](#starting-the-application) if you aren't keen to know.)
+What happened here? (You can skip this and carry on with the next step **Starting the Application** if you aren't keen to know.)
 
 First, you created a new application from the work list template with a detail page based on a V4 OData service (the CAP service is V4). The result is a similar application layout like the one you have already chosen in the [Create a SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements) section. There are other templates available (a Worklist Application and a Master Detail one, both for V2 services).
 
@@ -172,78 +171,78 @@ The change in the `manifest.yaml` is to make sure that the data requests are use
 
 4. Open the view of the work list `cpapp/app/mitigations/webapp/view/Worklist.view.xml`  and add the following code, removing the `ID` column and instead adding `Description`, `Owner` and `Timeline` columns:
 
-    ```XML hl_lines="2-10 19-23"
-        <columns>
-            <Column id="DescriptionColumn">
-                <Text text="Description" id="DescriptionColumnTitle"/>
-            </Column>
-            <Column id="OwnerColumn">
-                <Text text="Owner" id="OwnerColumnTitle"/>
-            </Column>
-            <Column id="TimelineColumn">
-                <Text text="Timeline" id="TimelineColumnTitle"/>
-            </Column>
-        </columns>
+```XML[2-10,19-23]
+    <columns>
+        <Column id="DescriptionColumn">
+            <Text text="Description" id="DescriptionColumnTitle"/>
+        </Column>
+        <Column id="OwnerColumn">
+            <Text text="Owner" id="OwnerColumnTitle"/>
+        </Column>
+        <Column id="TimelineColumn">
+            <Text text="Timeline" id="TimelineColumnTitle"/>
+        </Column>
+    </columns>
 
-        <items>
-            <ColumnListItem
-                type="Navigation"
-                press=".onPress">
-                <cells>
-                    <ObjectIdentifier
-                        text="{description}" />
-                    <Text
-                        text="{owner}" />
-                    <Text
-                        text="{timeline}" />
-                </cells>
-            </ColumnListItem>
-        </items>
-    ```
+    <items>
+        <ColumnListItem
+            type="Navigation"
+            press=".onPress">
+            <cells>
+                <ObjectIdentifier
+                    text="{description}" />
+                <Text
+                    text="{owner}" />
+                <Text
+                    text="{timeline}" />
+            </cells>
+        </ColumnListItem>
+    </items>
+```
 
 5. Open the view of the object `cpapp/app/mitigations/webapp/view/Object.view.xml` and also replace `ID` and add `Description`, `Owner`, and `Timeline` using SAPUI5 controls like `ObjectStatus` (you can copy the whole code and replace the existing code in the file):
 
-    ```XML hl_lines="4 16 28-34"
-    <mvc:View
-        controllerName="ns.mitigations.controller.Object"
-        xmlns="sap.m"
-        xmlns:l="sap.ui.layout"
-        xmlns:mvc="sap.ui.core.mvc"
-        xmlns:semantic="sap.f.semantic">
+```XML[4,16,28-34]
+<mvc:View
+    controllerName="ns.mitigations.controller.Object"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
 
-        <semantic:SemanticPage
-            id="page"
-            headerPinnable="false"
-            toggleHeaderOnTitleClick="false"
-            busy="{objectView>/busy}"
-            busyIndicatorDelay="{objectView>/delay}">
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false"
+        busy="{objectView>/busy}"
+        busyIndicatorDelay="{objectView>/delay}">
 
-            <semantic:titleHeading>
-                <Title text="{description}" />
-            </semantic:titleHeading>
+        <semantic:titleHeading>
+            <Title text="{description}" />
+        </semantic:titleHeading>
 
-            <semantic:headerContent>
-                <ObjectNumber
-                />
-            </semantic:headerContent>
+        <semantic:headerContent>
+            <ObjectNumber
+            />
+        </semantic:headerContent>
 
-            <semantic:sendEmailAction>
-                <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
-            </semantic:sendEmailAction>
+        <semantic:sendEmailAction>
+            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+        </semantic:sendEmailAction>
 
-            <semantic:content>
-                <l:VerticalLayout>
-                    <ObjectStatus title="Description" text="{description}"/>
-                    <ObjectStatus title="Owner" text="{owner}"/>
-                    <ObjectStatus title="Timeline" text="{timeline}"/>
-                </l:VerticalLayout>
-            </semantic:content>
+        <semantic:content>
+            <l:VerticalLayout>
+                <ObjectStatus title="Description" text="{description}"/>
+                <ObjectStatus title="Owner" text="{owner}"/>
+                <ObjectStatus title="Timeline" text="{timeline}"/>
+            </l:VerticalLayout>
+        </semantic:content>
 
 
-        </semantic:SemanticPage>
+    </semantic:SemanticPage>
 
-    </mvc:View>
-    ```
+</mvc:View>
+```
 
 6. Refresh the `mitigations` application in your browser.
 
@@ -262,7 +261,7 @@ The change in the `manifest.yaml` is to make sure that the data requests are use
 
 [OPTION BEGIN [macOS/Linux]]
 
-   > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+> ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
 While `cds watch` comes in handy for serving even the SAPUI5 based apps directly in your CAP projects, there's also an additional alternative, again from the SAPUI5 tools. They also provide a development server that can be used in any pure SAPUI5 project. So, you can use the SAPUI5 development server when there's no CAP service around and/or the service is provided by a different technology. Here are some advantages of the SAPUI5 development server compared to `cds watch`, depending on how deep you want to be involved in SAPUI5 freestyle programming.
 
@@ -283,22 +282,22 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 
 2. Add the following lines to add the live reload module:
 
-    ```JSON hl_lines="6 11"
-    {
-        ...
-        "devDependencies": {
-            "@ui5/cli": "^1.14.0",
-            "ui5-middleware-simpleproxy": "^0.2.1",
-            "ui5-middleware-livereload": "^0.1.10"
-        },
-        "ui5": {
-            "dependencies": [
-                "ui5-middleware-simpleproxy",
-                "ui5-middleware-livereload"
-            ]
-        }
+```JSON[6,11]
+{
+    ...
+    "devDependencies": {
+        "@ui5/cli": "^1.14.0",
+        "ui5-middleware-simpleproxy": "^0.2.1",
+        "ui5-middleware-livereload": "^0.1.10"
+    },
+    "ui5": {
+        "dependencies": [
+            "ui5-middleware-simpleproxy",
+            "ui5-middleware-livereload"
+        ]
     }
-    ```
+}
+```
 
 3. Open the `ui5.yaml` file in your `cpapp/app/mitigations` folder.
 
@@ -322,9 +321,9 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-    > Additional Documentation:
 
-    > In a projects `ui5.yaml` file, you can define additional server middleware modules that will be executed when the request is received by the server. This configuration exclusively affects the server started in this project. See [UI5 Tooling](https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/) documentation for more details.
+    > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
+
 
 5. From your `cpapp` folder, navigate to your `mitigations` folder:
 
@@ -362,7 +361,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 [OPTION END]
 [OPTION BEGIN [Windows]]
 
-   > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+> ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
 While `cds watch` comes in handy for serving even the SAPUI5 based apps directly in your CAP projects, there's also an additional alternative, again from the SAPUI5 tools. They also provide a development server that can be used in any pure SAPUI5 project. So, you can use the SAPUI5 development server when there's no CAP service around and/or the service is provided by a different technology. Here are some advantages of the SAPUI5 development server compared to `cds watch`, depending on how deep you want to be involved in SAPUI5 freestyle programming.
 
@@ -383,22 +382,22 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 
 2. Add the following lines to add the live reload module:
 
-    ```JSON hl_lines="6 11"
-    {
-        ...
-        "devDependencies": {
-            "@ui5/cli": "^1.14.0",
-            "ui5-middleware-simpleproxy": "^0.2.1",
-            "ui5-middleware-livereload": "^0.1.10"
-        },
-        "ui5": {
-            "dependencies": [
-                "ui5-middleware-simpleproxy",
-                "ui5-middleware-livereload"
-            ]
-        }
+```JSON[6,11]
+{
+    ...
+    "devDependencies": {
+        "@ui5/cli": "^1.14.0",
+        "ui5-middleware-simpleproxy": "^0.2.1",
+        "ui5-middleware-livereload": "^0.1.10"
+    },
+    "ui5": {
+        "dependencies": [
+            "ui5-middleware-simpleproxy",
+            "ui5-middleware-livereload"
+        ]
     }
-    ```
+}
+```
 
 3. Open the `ui5.yaml` file in your `cpapp/app/mitigations` folder.
 
@@ -422,9 +421,9 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-    > Additional Documentation:
 
-    > In a projects `ui5.yaml` file, you can define additional server middleware modules that will be executed when the request is received by the server. This configuration exclusively affects the server started in this project. See [UI5 Tooling](https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/) documentation for more details.
+    > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
+
 
 5. From your `cpapp` folder, navigate to your `mitigations` folder:
 

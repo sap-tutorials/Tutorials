@@ -65,6 +65,8 @@ We need to tell CAP that XSUAA is used. For this open the `package.json` in your
 }
 ```
 
+Make sure you have pasted the new lines within the `"requires": {` section and not outside of it. This can cause some errors in the next steps.
+
 [DONE]
 [ACCORDION-END]
 ---
