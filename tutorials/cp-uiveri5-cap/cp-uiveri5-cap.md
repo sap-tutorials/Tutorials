@@ -6,7 +6,7 @@ time: 60
 tags: [ tutorial>beginner, topic>cloud, topic>user-interface, products>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
-
+ 
 ## Prerequisites
 - You use [SAPUI5](https://sapui5.hana.ondemand.com/#/topic/2535ef9272064cb6bd6b44e5402d531d) in version 1.74 or higher.
 - You have installed and configured a local Git client.
