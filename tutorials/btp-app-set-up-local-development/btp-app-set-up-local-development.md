@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Set Up Local Development Using VS Code
-description: This tutorial shows you how to get started using VS Code as an editor. 
+description: This tutorial shows you how to get started using VS Code as an editor.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
@@ -182,7 +182,7 @@ CAP provides you with all the tools to create your data model with entities and 
 
 2. To verify that the installation was successful, run `cds` without arguments.
 
-    This lists the available `cds` commands. 
+    This lists the available `cds` commands.
 
 3. Check what versions of the CDS libraries have been installed:
 
@@ -197,17 +197,42 @@ CAP provides you with all the tools to create your data model with entities and 
 ---
 [ACCORDION-BEGIN [Step 8: ](Install VS Code)]
 
+[OPTION BEGIN [macOS]]
+
 VS Code is used to edit the code of the application project and it comes with a couple of so-called extensions from SAP (CAP and SAP Fiori tools) that are also used here.
 
-In case you don't have it, go to the [Visual Studio Code](https://code.visualstudio.com/) homepage and install the version appropriate for your operating system.
+In case you don't have it, go to the [Visual Studio Code](https://code.visualstudio.com/) homepage and find the version appropriate for your operating system.
 
-MacOS users must also perform the following steps as described [here](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac). To start it like any other application and to start it from the terminal on MacOS, follow these steps:
+Download the package for macOS and perform the following steps as described [here](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac). To start it like any other application and to start it from the terminal on MacOS, follow these steps:
 
 1. Move VS Code from your **Download** folder to the **Applications** folder.
 
 2. Use **command** + **shift** + **P** keys to open the command palette.
 
-3. Type `Install 'code' command in PATH` and choose **Enter**.
+3. Type **`Install 'code' command in PATH`** and choose **Enter**.
+
+
+[OPTION END]
+[OPTION BEGIN [Windows]]
+
+VS Code is used to edit the code of the application project and it comes with a couple of so-called extensions from SAP (CAP and SAP Fiori tools) that are also used here.
+
+In case you don't have it, go to the [Visual Studio Code](https://code.visualstudio.com/) homepage and find the version appropriate for your operating system.
+
+Download the installer suitable for your Windows version and follow the instructions in the installation wizard.
+
+
+[OPTION END]
+[OPTION BEGIN [Linux]]
+
+VS Code is used to edit the code of the application project and it comes with a couple of so-called extensions from SAP (CAP and SAP Fiori tools) that are also used here.
+
+In case you don't have it, go to the [Visual Studio Code](https://code.visualstudio.com/) homepage and find the version appropriate for your operating system.
+
+Download the package for your Linux distribution and install.
+
+[OPTION END]
+
 
 [DONE]
 [ACCORDION-END]
