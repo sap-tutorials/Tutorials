@@ -46,7 +46,7 @@ The Data Lake Files component is currently not available in trial.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](How to use a data lake?)]
+[ACCORDION-BEGIN [Step 3: ](How to use a data lake)]
 SAP HANA Cloud, data lake can be provisioned and used in two different ways:
 
 
@@ -139,11 +139,11 @@ The right choice of compatibility depends on how you wish to use your data lake.
 
 3.  Finally, you can choose the **`NChar` Collation** and the **`NChar` Case Sensitivity** for your data lake.
 
-!![Advanced DL Settings2](ss-07-advanced-settings-2.png)
+    !![Advanced DL Settings2](ss-07-advanced-settings-2.png)
 
-Click on **Create Instance** and you are done! Your first standalone data lake will be created, and you can monitor its status to see when it will be ready to be used. This process usually takes a few minutes.
+    Click on **Create Instance** and you are done! Your first standalone data lake will be created, and you can monitor its status to see when it will be ready to be used. This process usually takes a few minutes.
 
-!![Creation Complete](ss-08-data-lake-creation-complete.png)
+    !![Creation Complete](ss-08-data-lake-creation-complete.png)
 
 [DONE]
 [ACCORDION-END]                 
@@ -163,16 +163,18 @@ To resize your data lake, follow these steps:
 
 4.	The editing wizard will open and show you the options currently available.
 
-!![Edit Compute and Storage size](ss-09-edit-storage-settings.gif)
+    !![Edit Compute and Storage size](ss-09-edit-storage-settings.gif)
 
-By changing storage capacity, the instance will be forced to restart if it was previously running. When changing compute size, single-worker-node systems will require a restart. Multi-worker-node systems will require a restart when the worker-node's size changes, but do not require a restart when the number of workers changes if the size per worker-node is held constant.
+    By changing storage capacity, the instance will be forced to restart if it was previously running. When changing compute size, single-worker-node systems will require a restart. Multi-worker-node systems will require a restart when the worker-node's size changes, but do not require a restart when the number of workers changes if the size per worker-node is held constant.
 
->**Storage service level and the additional settings found under the initialization section cannot be modified after provisioning and must be configured appropriately at the time when the data lake is created.**
+    >**Storage service level and the additional settings found under the initialization section cannot be modified after provisioning and must be configured appropriately at the time when the data lake is created.**
+
+>In this tutorial, you have learned how to provision a standalone data lake in SAP HANA Cloud. In the next tutorial, you will see the different ways to access your standalone data lake.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test Yourself)]
+[ACCORDION-BEGIN [Step 10: ](Test yourself)]
 
 
 
