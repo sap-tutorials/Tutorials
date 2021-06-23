@@ -54,7 +54,7 @@ Ensure that your standalone data lake instance is currently running before tryin
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Connection Options)]
+[ACCORDION-BEGIN [Step 3: ](Connection options)]
 >You can use different tools to connect to a standalone data lake in SAP HANA Cloud. In this tutorial, we will show you four different options you can choose from:
 
 >* Option A: SAP HANA Database explorer
@@ -67,8 +67,9 @@ In the next steps, you can learn how to use each of these connection methods. On
 [DONE]
 [ACCORDION-END]
 
-## Option A: SAP HANA Database Explorer
-[ACCORDION-BEGIN [Step 4: ](Connect using the SAP HANA Database Explorer)]
+[ACCORDION-BEGIN [Step 4: ](Connect to data lake)]
+
+[OPTION BEGIN [SAP HANA Database Explorer]]
 After confirming the status, click on the three dots again and select the option to **Open SQL Console** in the SAP HANA Database Explorer.
 >You can also navigate to the same destination by selecting the option to open SAP HANA Database Explorer.
 
@@ -78,13 +79,8 @@ After confirming the status, click on the three dots again and select the option
 
 3.	You can confirm the connection to your standalone data lake from the connection status provided on the menu in the SQL Console.
 
-[DONE]
-[ACCORDION-END]
-
-
-## Option B: Connect using the graphical interface of Interactive SQL
-
-[ACCORDION-BEGIN [Step 4: ](Prepare Interactive SQL to connect)]
+[OPTION END]
+[OPTION BEGIN [dbisql]]
 >Connecting to a data lake instance with Interactive SQL is another option besides using the SAP HANA Database Explorer. If you want to connect using Interactive SQL (dbisql), you need to have it installed on your local system. You can download the Interactive SQL using the link provided in the [technical documentation](https://help.sap.com/viewer/a895964984f210158925ce02750eb580/LATEST/en-US/2fdb23a4fb364e06ace0eea0c9a4afec.html).
 
 There are two ways to connecting to an instance through an Interactive SQL- from the graphical user interface or from the command line.
@@ -107,34 +103,26 @@ These are the steps towards connecting to your instance through the graphical us
 
     !![User credentials](ss-04-user-credentials.png)
 
-[DONE]
-[ACCORDION-END]
 
+    Next, you must enter your Instance ID and Landscape. These details can be found in the SAP HANA Cloud Central wizard of your instance in the SAP HANA Cloud.
 
-[ACCORDION-BEGIN [Step 5: ](Connect using Interactive SQL)]
-Next, you must enter your Instance ID and Landscape. These details can be found in the SAP HANA Cloud Central wizard of your instance in the SAP HANA Cloud.
-
-1.	Open the **SAP HANA Cloud Central** wizard and locate your standalone data lake from the list of all instances. Select the three dots under the Actions column for your instance and choose **Copy Instance ID** to copy the Instance ID to the clipboard. Then, paste the Instance ID into the Instance ID field in the Interactive SQL.
+5.	Open the **SAP HANA Cloud Central** wizard and locate your standalone data lake from the list of all instances. Select the three dots under the Actions column for your instance and choose **Copy Instance ID** to copy the Instance ID to the clipboard. Then, paste the Instance ID into the Instance ID field in the Interactive SQL.
 
      !![Copy Instance ID](ss-05-copy-instance-ID.png)
 
-2.	Switch back to the SAP HANA Cloud Central window. Again, select Actions to choose **Copy SQL Endpoint**. Paste the SQL Endpoint in a notepad file for viewing. The SQL Endpoint is composed of the Instance ID, Landscape and Port.
+6.	Switch back to the SAP HANA Cloud Central window. Again, select Actions to choose **Copy SQL Endpoint**. Paste the SQL Endpoint in a notepad file for viewing. The SQL Endpoint is composed of the Instance ID, Landscape and Port.
 
-3.	Paste the information on the Landscape that you isolated from the SQL Endpoint into the Interactive SQL, and click **Connect**.
+7.	Paste the information on the Landscape that you isolated from the SQL Endpoint into the Interactive SQL, and click **Connect**.
 
     !![Instance ID and Landscape](ss-06-instance-and-landscape.png)
 
-4.	Now, you should be connected to your data lake instance thorough Interactive SQL, as seen in the below image.
+8.	Now, you should be connected to your data lake instance thorough Interactive SQL, as seen in the below image.
 
      !![Connected to Instance](ss-07-connected-instance.png)
 
+[OPTION END]
+[OPTION BEGIN [CLI]]
 
-
-[DONE]
-[ACCORDION-END]
-
-## Option C: Connect using the command line interface of Interactive SQL
-[ACCORDION-BEGIN [Step 6: ](Prepare for connecting)]
 If you would like to connect to your data lake instance through an Interactive SQL from the command line, please follow the instructions given below.
 
 1.	Connecting to a data lake instance through an Interactive SQL from the command line requires a Connection String. To extract the connection string, ensure all fields on the Identification tab are filled in. Select **Tools**, then choose **Copy Connection String to Clipboard**.
@@ -146,11 +134,8 @@ If you would like to connect to your data lake instance through an Interactive S
 
     !![Connection string](ss-09-connection-string.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Connect using Interactive SQL command line)]
-1.	Now, open a Command Prompt window in your system. To begin an Interactive SQL session, execute the following command given below.
+3.	Now, open a Command Prompt window in your system. To begin an Interactive SQL session, execute the following command given below.
 ```
 dbisql -c <CONNECTION_STRING>
 ```
@@ -163,11 +148,11 @@ dbisql -c "UID=HDLADMIN;PWD=SamplePassword;host=a111111a-1a11-11aa-a11a-1a1a11a1
     !![Command Prompt](ss-10-command-prompt.png)
 
 
-2.	An Interactive SQL window should show up on your screen and you are now connected to your data lake instance, as seen below.
+4.	An Interactive SQL window should show up on your screen and you are now connected to your data lake instance, as seen below.
 
     !![Call dbisql](ss-11-call-dbisql.png)
 
-3.	You can also setup the connection without opening the graphical user interface of the Interactive SQL, for which you must simply add **'-nogui'** at the end of your connection string.
+5.	You can also setup the connection without opening the graphical user interface of the Interactive SQL, for which you must simply add **'-nogui'** at the end of your connection string.
 
     **For example**, the command will look like this:
 ```
@@ -175,13 +160,11 @@ dbisql -c "UID=HDLADMIN;PWD=SamplePassword;host=a111111a-1a11-11aa-a11a-1a1a11a1
 ```
     !![No GUI dbisql](ss-12-no-gui-dbisql.png)
 
-4.	Your User ID will be displayed after the execution of the above command which indicates that a connection to your data lake instance has successfully been made.
+6.	Your User ID will be displayed after the execution of the above command which indicates that a connection to your data lake instance has successfully been made.
 
-[DONE]
-[ACCORDION-END]
+[OPTION END]
+[OPTION BEGIN [isql]]
 
-## Option D: Connect using isql
-[ACCORDION-BEGIN [Step 8: ](Prepare the interfaces file)]
 >**Attention**: The following instructions apply to you if you're using isql from the on-premise SAP IQ 16.1 version. Using any other open-source isql versions may lead to errors. Therefore, it's highly recommended to use the same version to avoid any errors.
 
 
@@ -205,93 +188,74 @@ To use isql, you need to have an **interfaces file**, which you can create in th
 
 4.	Enter your respective credentials using the following format:
 
-```
+    ```
+    <Instance_Name>
 
-<Instance_Name>
+    query tcp ether <InstanceID>.<Landscape> <Port> ssl="CN=hanacloud.ondemand.com"
+    ```
 
-query tcp ether <InstanceID>.<Landscape> <Port> ssl="CN=hanacloud.ondemand.com"
+    **For example**, as shown below:
 
-```
+    ```
+    DEMO_INSTANCE
 
-**For example**, as shown below:
+    query tcp ether a111111a-1a11-11aa-a11a-1a1a11a1a111.iq.hdl.beta-us21.hanacloud.ondemand.com 443 ssl="CN=hanacloud.ondemand.com"
+    ```
 
-```
-
-DEMO_INSTANCE
-
-query tcp ether a111111a-1a11-11aa-a11a-1a1a11a1a111.iq.hdl.beta-us21.hanacloud.ondemand.com 443 ssl="CN=hanacloud.ondemand.com"
-
-```
-
->Note: there must be a tab used at the beginning of the second line, prior to query. Using spaces will not work.
+    >Note: there must be a tab used at the beginning of the second line, prior to query. Using spaces will not work.
 
 
-!![SQL Endpoint query](ss-15-sql-endpoint-query.png)
-
-
-[DONE]
-[ACCORDION-END]
+    !![SQL Endpoint query](ss-15-sql-endpoint-query.png)
 
 
 
-[ACCORDION-BEGIN [Step 9: ](Finalize connection details for `isql` session)]
+5.	Once you have entered your details, save the interfaces file, and exit the vim editor.
 
-1.	Once you have entered your details, save the interfaces file, and exit the vim editor.
+6.	Before connecting to a database, run the command `source SYBASE.sh`
 
-2.	Before connecting to a database, run the command `source SYBASE.sh`
-
-3.	The successful execution of this command can be verified by running the command `which isql`
+7.	The successful execution of this command can be verified by running the command `which isql`
 
     !![Verify SQL query](ss-16-verify-query.png)
 
-4.	If the editor shows location of the isql, this indicates that now you can start an isql session.
+8.	If the editor shows location of the isql, this indicates that now you can start an isql session.
 
 
-
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 10: ](Connect using isql)]
-
-1.	Start an isql session and connect to your database by running the following command and entering your credentials:
+9.	Start an isql session and connect to your database by running the following command and entering your credentials:
 ```
 isql -U <username> -S <Instance_Name> -I<path to interfaces file>
 ```
-2.	You will be prompted to enter your password.
+10.	You will be prompted to enter your password.
 
     !![Enter Password](ss-17-enter-password.png)
 
-3.	When the editor shows `1>`, you are connected to your database and may run queries.
+11.	When the editor shows `1>`, you are connected to your database and may run queries.
 
     For Example, Test query: `select @@ version`
 
     !![Test query](ss-18-test-query.png)
 
 
+12. If you encounter the following error while trying to start an isql session:
+
+    !![Troubleshoot](ss-19-troubleshoot.png)
+
+    Run the following command before trying again:
+
+    ```
+    unset LANG
+    ```
+
+    >**Attention**: This error was observed while using Ubuntu on a virtual Linux machine. This error will not occur when supported programs are used.
+
+
+[OPTION END]
+
+>In this tutorial, you have learned how to access your standalone data lake in SAP HANA Cloud. In the next tutorial, you will see how to load data into your standalone data lake.
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Troubleshoot when you encounter this error)]
-
-If you encounter the following error while trying to start an isql session:
-
-!![Troubleshoot](ss-19-troubleshoot.png)
-
-Run the following command before trying again:
-
-```
-unset LANG
-```
-
->**Attention**: This error was observed while using Ubuntu on a virtual Linux machine. This error will not occur when supported programs are used.
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 12: ](Test Yourself)]
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 
 
 [VALIDATE_7]
