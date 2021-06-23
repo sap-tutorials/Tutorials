@@ -109,12 +109,12 @@ Monitoring views contain over a hundred reporting metrics, which means you can u
 
 Use these examples as a starting point for your own diagnostic use cases.
 
-
+>In this tutorial, you have learned about monitoring your data lake. There are a wide variety of options to view historical and current data. You are now equipped with the procedures to monitor and diagnose basic problems you may encounter within your system. In the next tutorial, you will see how to back up and recover the data in your standalone data lake.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test Yourself)]
+[ACCORDION-BEGIN [Step 6: ](Test yourself)]
 
 [VALIDATE_4]
 [ACCORDION-END]
