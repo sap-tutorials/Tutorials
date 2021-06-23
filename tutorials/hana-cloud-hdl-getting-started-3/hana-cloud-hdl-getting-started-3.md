@@ -1,5 +1,5 @@
 ---
-title: Load data into Standalone Data Lake in SAP HANA Cloud
+title: Load Data into Standalone Data Lake in SAP HANA Cloud
 description: Learn to load data into tables in a standalone data lake in SAP HANA Cloud using a trial account.
 auto_validation: true
 time: 20
@@ -55,7 +55,7 @@ For more in-depth information about creating users in SAP HANA Cloud, data lake,
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create tables in data lake using SAP HANA Database Explorer)]
+[ACCORDION-BEGIN [Step 2: ](Create tables in data lake)]
 Now it's time to create tables. In this example, you will create the following tables:
 
 >* customer
@@ -63,6 +63,7 @@ Now it's time to create tables. In this example, you will create the following t
 * region
 * supplier
 
+[OPTION BEGIN [SAP HANA Database Explorer]]
 
 Let's get started. Follow these steps:
 
@@ -71,82 +72,84 @@ Let's get started. Follow these steps:
 2.	Copy the code given below into the SQL Console and execute the script after entering your password in the appropriate field.
 
 ```SQL
-/*==============================================================*/                       */
-/* Created on:     11/21/2008 2:40:41 PM                        */
-/*==============================================================*/
-/*==============================================================*/
+     /*==============================================================*/                       */
+     /* Created on:     11/21/2008 2:40:41 PM                        */
+     /*==============================================================*/
+     /*==============================================================*/
 
-/*==============================================================*/
-/* User: TPCH                                                   */
-/*==============================================================*/
-CREATE USER TPCH IDENTIFIED BY "<your_password>";
+     /*==============================================================*/
+     /* User: TPCH                                                   */
+     /*==============================================================*/
+     CREATE USER TPCH IDENTIFIED BY "<your_password>";
 
-/*==============================================================*/
-/* Table: CUSTOMER                                              */
-/*==============================================================*/
-create table TPCH.CUSTOMER (
-   C_CUSTKEY            integer                        not null iq unique (150000),
-   C_NAME               varchar(25)                    not null,
-   C_ADDRESS            varchar(40)                    not null,
-   C_NATIONKEY          integer                        not null iq unique (25),
-   C_PHONE              char(15)                       not null,
-   C_ACCTBAL            decimal(15,2)                  not null,
-   C_MKTSEGMENT         char(10)                       not null,
-   C_COMMENT            varchar(117)                   not null,
-   constraint PK_CUSTOMER primary key (C_CUSTKEY)
-);
+     /*==============================================================*/
+     /* Table: CUSTOMER                                              */
+     /*==============================================================*/
+     create table TPCH.CUSTOMER (
+       C_CUSTKEY            integer                        not null iq unique (150000),
+       C_NAME               varchar(25)                    not null,
+       C_ADDRESS            varchar(40)                    not null,
+       C_NATIONKEY          integer                        not null iq unique (25),
+       C_PHONE              char(15)                       not null,
+       C_ACCTBAL            decimal(15,2)                  not null,
+       C_MKTSEGMENT         char(10)                       not null,
+       C_COMMENT            varchar(117)                   not null,
+       constraint PK_CUSTOMER primary key (C_CUSTKEY)
+     );
 
-/*==============================================================*/
-/* Table: NATION                                                */
-/*==============================================================*/
-create table TPCH.NATION (
-   N_NATIONKEY          integer                        not null iq unique (25),
-   N_NAME               char(25)                       not null,
-   N_REGIONKEY          integer                        not null iq unique (5),
-   N_COMMENT            varchar(152)                   not null,
-   constraint PK_NATION primary key (N_NATIONKEY)
-);
+     /*==============================================================*/
+     /* Table: NATION                                                */
+     /*==============================================================*/
+     create table TPCH.NATION (
+       N_NATIONKEY          integer                        not null iq unique (25),
+       N_NAME               char(25)                       not null,
+       N_REGIONKEY          integer                        not null iq unique (5),
+       N_COMMENT            varchar(152)                   not null,
+       constraint PK_NATION primary key (N_NATIONKEY)
+     );
 
-/*==============================================================*/
-/* Table: REGION                                                */
-/*==============================================================*/
-create table TPCH.REGION (
-   R_REGIONKEY          integer                        not null iq unique (5),
-   R_NAME               char(25)                       not null,
-   R_COMMENT            varchar(152)                   not null,
-   constraint PK_REGION primary key (R_REGIONKEY)
-);
+     /*==============================================================*/
+     /* Table: REGION                                                */
+     /*==============================================================*/
+     create table TPCH.REGION (
+       R_REGIONKEY          integer                        not null iq unique (5),
+       R_NAME               char(25)                       not null,
+       R_COMMENT            varchar(152)                   not null,
+       constraint PK_REGION primary key (R_REGIONKEY)
+     );
 
-/*==============================================================*/
-/* Table: SUPPLIER                                              */
-/*==============================================================*/
-create table TPCH.SUPPLIER (
-   S_SUPPKEY            integer                        not null iq unique (10000),
-   S_NAME               char(25)                       not null,
-   S_ADDRESS            varchar(40)                    not null,
-   S_NATIONKEY          integer                        not null iq unique (25),
-   S_PHONE              char(15)                       not null,
-   S_ACCTBAL            decimal(15,2)                  not null,
-   S_COMMENT            varchar(101)                   not null,
-   constraint PK_SUPPLIER primary key (S_SUPPKEY)
-);
+     /*==============================================================*/
+     /* Table: SUPPLIER                                              */
+     /*==============================================================*/
+     create table TPCH.SUPPLIER (
+       S_SUPPKEY            integer                        not null iq unique (10000),
+       S_NAME               char(25)                       not null,
+       S_ADDRESS            varchar(40)                    not null,
+       S_NATIONKEY          integer                        not null iq unique (25),
+       S_PHONE              char(15)                       not null,
+       S_ACCTBAL            decimal(15,2)                  not null,
+       S_COMMENT            varchar(101)                   not null,
+       constraint PK_SUPPLIER primary key (S_SUPPKEY)
+     );
 
-alter table TPCH.CUSTOMER
-   add foreign key FK_CUSTOMER_REFERENCE_NATION (C_NATIONKEY)
-      references TPCH.NATION (N_NATIONKEY)
-      on delete restrict on update restrict;
+     alter table TPCH.CUSTOMER
+       add foreign key FK_CUSTOMER_REFERENCE_NATION (C_NATIONKEY)
+          references TPCH.NATION (N_NATIONKEY)
+          on delete restrict on update restrict;
 
-alter table TPCH.NATION
-   add foreign key FK_NATION_REFERENCE_REGION (N_REGIONKEY)
-      references TPCH.REGION (R_REGIONKEY)
-      on delete restrict on update restrict;
+     alter table TPCH.NATION
+       add foreign key FK_NATION_REFERENCE_REGION (N_REGIONKEY)
+          references TPCH.REGION (R_REGIONKEY)
+          on delete restrict on update restrict;
 
-alter table TPCH.SUPPLIER
-   add foreign key FK_SUPPLIER_REFERENCE_NATION (S_NATIONKEY)
-      references TPCH.NATION (N_NATIONKEY)
-      on delete restrict on update restrict;
+     alter table TPCH.SUPPLIER
+       add foreign key FK_SUPPLIER_REFERENCE_NATION (S_NATIONKEY)
+          references TPCH.NATION (N_NATIONKEY)
+          on delete restrict on update restrict;
+
 
 ```
+
 
 
 >**Attention**: You should make a slight adjustment in the  above query if you have provisioned the Data Lake, IQ instance in maximum compatibility mode with SAP HANA Cloud, SAP HANA database. This mode does not support **CHAR** data type. Instead, you can alter the query by using **VARCHAR** data type.
@@ -156,33 +159,111 @@ alter table TPCH.SUPPLIER
 !![Create Tables](ss-01-create-tables.png)
 
 
+[OPTION END]
 
+[OPTION BEGIN [Interactive SQL]]
+You can create tables using Interactive SQL connected to your data lake instance.
 
-[DONE]
-[ACCORDION-END]
+Let's get started. Follow these steps:
 
+1.  Within an Interactive SQL window, copy and paste the SQL script given below.
 
-[ACCORDION-BEGIN [Step 3: ](Create tables in data lake using Interactive SQL)]
-Alternatively, you can create tables using Interactive SQL connected to your data lake instance.
+    ```SQL
+    /*==============================================================*/                       */
+    /* Created on:     11/21/2008 2:40:41 PM                        */
+    /*==============================================================*/
+    /*==============================================================*/
+    /*==============================================================*/
+    /* User: TPCH                                                   */
+    /*==============================================================*/
+    CREATE USER TPCH IDENTIFIED BY "<your_password>";
 
-1. Within an Interactive SQL window, copy and paste the SQL script given in the above step.
+    /*==============================================================*/
+    /* Table: CUSTOMER                                              */
+    /*==============================================================*/
+    create table TPCH.CUSTOMER (
+    C_CUSTKEY            integer                        not null iq unique (150000),
+    C_NAME               varchar(25)                    not null,
+    C_ADDRESS            varchar(40)                    not null,
+    C_NATIONKEY          integer                        not null iq unique (25),
+    C_PHONE              char(15)                       not null,
+    C_ACCTBAL            decimal(15,2)                  not null,
+    C_MKTSEGMENT         char(10)                       not null,
+    C_COMMENT            varchar(117)                   not null,
+    constraint PK_CUSTOMER primary key (C_CUSTKEY)
+    );
+
+    /*==============================================================*/
+    /* Table: NATION                                                */
+    /*==============================================================*/
+    create table TPCH.NATION (
+    N_NATIONKEY          integer                        not null iq unique (25),
+    N_NAME               char(25)                       not null,
+    N_REGIONKEY          integer                        not null iq unique (5),
+    N_COMMENT            varchar(152)                   not null,
+    constraint PK_NATION primary key (N_NATIONKEY)
+    );
+
+    /*==============================================================*/
+    /* Table: REGION                                                */
+    /*==============================================================*/
+    create table TPCH.REGION (
+    R_REGIONKEY          integer                        not null iq unique (5),
+    R_NAME               char(25)                       not null,
+    R_COMMENT            varchar(152)                   not null,
+    constraint PK_REGION primary key (R_REGIONKEY)
+    );
+
+    /*==============================================================*/
+    /* Table: SUPPLIER                                              */
+    /*==============================================================*/
+    create table TPCH.SUPPLIER (
+    S_SUPPKEY            integer                        not null iq unique (10000),
+    S_NAME               char(25)                       not null,
+    S_ADDRESS            varchar(40)                    not null,
+    S_NATIONKEY          integer                        not null iq unique (25),
+    S_PHONE              char(15)                       not null,
+    S_ACCTBAL            decimal(15,2)                  not null,
+    S_COMMENT            varchar(101)                   not null,
+    constraint PK_SUPPLIER primary key (S_SUPPKEY)
+    );
+
+    alter table TPCH.CUSTOMER
+       add foreign key FK_CUSTOMER_REFERENCE_NATION (C_NATIONKEY)
+         references TPCH.NATION (N_NATIONKEY)
+         on delete restrict on update restrict;
+
+    alter table TPCH.NATION
+      add foreign key FK_NATION_REFERENCE_REGION (N_REGIONKEY)
+         references TPCH.REGION (R_REGIONKEY)
+         on delete restrict on update restrict;
+
+    alter table TPCH.SUPPLIER
+      add foreign key FK_SUPPLIER_REFERENCE_NATION (S_NATIONKEY)
+         references TPCH.NATION (N_NATIONKEY)
+         on delete restrict on update restrict;
+
+    ```
+
+    >**Attention**: You should make a slight adjustment in the  above query if you have provisioned the Data Lake, IQ instance in maximum compatibility mode with SAP HANA Cloud, SAP HANA database. This mode does not support **CHAR** data type. Instead, you can alter the query by using **VARCHAR** data type.
+    >
+    >For more information on database compatibility modes, please see our [technical documentation](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/LATEST/en-US/82cdda1398644f4a95ec402f3144bcea.html).
 
 2. The Query tab will now contain the file name as seen below, and then the script can be executed.
 
-!![Run script dbisql](ss-04-run-script-dbisql.png)
+    !![Run script dbisql](ss-04-run-script-dbisql.png)
 
 >**Attention**: If you are familiar with SAP IQ on-premise, you will notice some differences between SAP IQ and SAP HANA Cloud, data lake.
 >
 >The data lake takes responsibility of managing administrative tasks such as storage allocation, and you don't need to specify `dbspace` usage, as was required while using SAP IQ. One of the impacts of this change is that the syntax for creating a table no longer supports a **USING** clause, as this specification is handled automatically by the data lake.
 
-
+[OPTION END]
 
 [DONE]
 [ACCORDION-END]
 
-## Load Data from an Amazon Web Services (AWS) S3 bucket
-
-[ACCORDION-BEGIN [Step 4: ](Prepare to use an S3 bucket on Amazon Web Services (AWS))]
+[ACCORDION-BEGIN [Step 3: ](Upload sample data)]
+[OPTION BEGIN [AWS S3 bucket]]
 If you wish to work with an S3 bucket on Amazon Web Services (AWS), then you will need the following details about your S3 bucket to load the data into the data lake:
 
 >* Account ID
@@ -195,11 +276,6 @@ If you wish to work with an S3 bucket on Amazon Web Services (AWS), then you wil
 You can find this information in your **Amazon Management Console**.
 
 
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Upload sample data into S3 bucket)]
 >In a real-world data lake scenario, your data upload would likely exceed the Amazon Management Console upload limit of 160 GB, meaning you would have to upload using the AWS CLI, AWS SDK, or Amazon S3 REST API. However, for this tutorial you are using only a sample data that is less than 160 GB, you can use the Amazon Management Console to upload the sample data files to the S3 bucket.
 
 The sample data files mentioned at the beginning of this tutorial are used here. Upload the following files to the S3 bucket:
@@ -215,12 +291,36 @@ After all the mentioned files are uploaded completely, exit from the Amazon Mana
 
 !![Amazon S3 Upload](ss-05-amazon-s3-upload.png)
 
+[OPTION END]
 
+[OPTION BEGIN [Microsoft Azure container]]
+If you wish to work with a Microsoft Azure container, then you will need the following details about your Azure container to load the data into the data lake:
+
+>* Container name
+* Connection string of the Azure container
+
+If you do not yet have a storage account and container, please follow the instructions in Microsoft Azure to do so. Subsequently, select the Storage account and then select the container to upload the data files.
+
+!![MS Azure Storage Account](ss-07-ms-azure-storage-account.png)
+
+The sample data files mentioned at the beginning of this tutorial are used here. Upload the following files to the Azure container:
+
+>* customer.tbl
+*	nation.tbl
+*	region.tbl
+*	supplier.tbl
+
+!![MS Azure Upload](ss-08-ms-azure-upload.png)
+
+After all the mentioned files are uploaded completely, you can exit the Azure portal.
+
+[OPTION END]
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Load data into data lake tables from S3 bucket)]
+[ACCORDION-BEGIN [Step 4: ](Load data into data lake tables)]
+[OPTION BEGIN [AWS S3 bucket]]
 Now it's time to load the data from the S3 bucket into your data lake.
 
 Copy the SQL script given below into the SQL Console in the SAP HANA Database Explorer. **But before you execute it, make the following changes in the script**.
@@ -345,44 +445,18 @@ rollback
 !![Amazon S3 Load Table script](ss-06-s3-load-script.png)
 
 At the end of each of the 'LOAD TABLE' statements in the code, replace these variables with your AWS S3 bucket credentials:
-> * **``<your_bucket_name>``** : For example, if the path to the uploaded files in the Amazon S3 bucket is ''s3://hdl-sample-data/customer.tbl'', then **``<your_bucket_name>``** is: hdl-sample-data
+
+ * **``<your_bucket_name>``** : For example, if the path to the uploaded files in the Amazon S3 bucket is ''s3://hdl-sample-data/customer.tbl'', then **``<your_bucket_name>``** is: hdl-sample-data
 *	**``<your_access_key_id>``** : Example: EXAMPLEMOCNLUCMIJPJK
 *	**``<your_secret_access_key>``** : Example: r2Jt4Exa/MplE8Lqv0ZA2SYdIXLdgTBsExample
 *	**``<your_aws_region>``** : Example: us-east-2
 
 Run the script after making the changes. For the data to be loaded, please make sure that the script runs without any errors.
 
+[OPTION END]
 
+[OPTION BEGIN [Microsoft Azure container]]
 
-[DONE]
-[ACCORDION-END]
-
-## Load data from a Microsoft Azure container
-[ACCORDION-BEGIN [Step 7: ](Upload sample data into Microsoft Azure container)]
-If you wish to work with a Microsoft Azure container, then you will need the following details about your Azure container to load the data into the data lake:
-
->* Container name
-* Connection string of the Azure container
-
-If you do not yet have a storage account and container, please follow the instructions in Microsoft Azure to do so. Subsequently, select the Storage account and then select the container to upload the data files.
-
-!![MS Azure Storage Account](ss-07-ms-azure-storage-account.png)
-
-The sample data files mentioned at the beginning of this tutorial are used here. Upload the following files to the Azure container:
-
->* customer.tbl
-*	nation.tbl
-*	region.tbl
-*	supplier.tbl
-
-!![MS Azure Upload](ss-08-ms-azure-upload.png)
-
-After all the mentioned files are uploaded completely, you can exit the Azure portal.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Load data into data lake tables from Azure container)]
 Now it's time to load the data from the Azure container into your data lake.
 
 Copy the SQL script given below into the SQL Console in the SAP HANA Database Explorer. **But before you execute it, make the following changes in the script**.
@@ -498,13 +572,14 @@ rollback
 !![MS Load Table script](ss-09-ms-load-script.png)
 
 At the end of each of these 'LOAD TABLE' statements in the code provided, replace these variables with your Azure credentials:
->*	**``<azure_container_name>``** : For example, if the path to the uploaded file in the Azure storage container is BB://mycontainer76543/customer.tbl, then **``<azure_container_name>``** is: mycontainer76543
+
+*	**``<azure_container_name>``** : For example, if the path to the uploaded file in the Azure storage container is BB://mycontainer76543/customer.tbl, then **``<azure_container_name>``** is: mycontainer76543
     >
     >**Attention** : If you are loading from Azure Data Lake Storage Gen2 using hierarchical namespaces: The **``<azure_container_name>``** is container/directory/subdirectory.
     >
     >Example: `BB://mycontainer76543/mydirectory/mysubdirectory/customer.tbl`
 
->*	**``<azure_connection_string>``** : You can find azure connection string in the Azure portal. From your storage account, navigate towards Access Keys details under Security features. Locate the Connection string section and copy the connection string to the clipboard.
+*	**``<azure_connection_string>``** : You can find azure connection string in the Azure portal. From your storage account, navigate towards Access Keys details under Security features. Locate the Connection string section and copy the connection string to the clipboard.
 >
     Example: `DefaultEndpointsProtocol=https;AccountName=datalake54321;AccountKey=EXamPLe/eXAmPlE==;EndpointSuffix=core.windows.net.`
 
@@ -513,11 +588,13 @@ Run the script after making the changes. For the data to be loaded, please make 
 >**Attention**: The 'LOAD TABLE' statement is case-sensitive.
 
 
+[OPTION END]
 
+>In this tutorial, you have learned how to load data into the tables in the SAP HANA Cloud, data lake. In the next tutorial, you will see how to monitor your standalone data lake.
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step 9: ](Test Yourself)]
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 
 [VALIDATE_7]
 [ACCORDION-END]
