@@ -1,5 +1,5 @@
 ---
-title: Backup and Recovery of Standalone Data Lake in SAP HANA Cloud
+title: Perform Backup and Recovery of Standalone Data Lake in SAP HANA Cloud
 description: Learn to backup and recover the data in your standalone data lake in SAP HANA Cloud using a trial account.
 auto_validation: true
 time: 10
@@ -34,11 +34,11 @@ All backups are encrypted using the capabilities of the IaaS provider and are re
 [ACCORDION-BEGIN [Step 2: ](What is the Database backup schedule?)]
 The backup schedule can be categorized into three types:
 
-1.	Full backups occur daily **at 12:00 AM UTC**
+-	Full backups occur daily **at 12:00 AM UTC**
 
-2.	Incremental backups occur **every 3 hours** following the full backup. This is independent of the region the database was configured in.
+-	Incremental backups occur **every 3 hours** following the full backup. This is independent of the region the database was configured in.
 
-3.	Incremental since full backups occur **at 12 PM UTC of each day**
+-	Incremental since full backups occur **at 12 PM UTC of each day**
 
 !![Backup Time schedule](ss-01-time-schedule.png)
 
@@ -78,16 +78,19 @@ When creating a service request for data lake recovery, be sure to complete the 
 
 2.	**Timestamp in UTC (ISO format)** (as received from procedure) to which the instance is to be recovered (must be within the last 14 days)
 
-!![Service Request](ss-03-service-request.png)
+    !![Service Request](ss-03-service-request.png)
 
->The **Service ID** is the same as the **Instance ID** for your data lake. This can be found from the SAP HANA Cloud Central.
+    >The **Service ID** is the same as the **Instance ID** for your data lake. This can be found from the SAP HANA Cloud Central.
 
-!![Instance ID](ss-04-instance-ID.png)
+    !![Instance ID](ss-04-instance-ID.png)
+
+
+>In this tutorial, you have learned about the backup and recovery process of your database using SAP HANA Cloud, data lake. Make sure to take note of the frequency of the backups, their time of occurrence and the process for recovery.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test Yourself)]
+[ACCORDION-BEGIN [Step 6: ](Test yourself)]
 
 [VALIDATE_7]
 [ACCORDION-END]
