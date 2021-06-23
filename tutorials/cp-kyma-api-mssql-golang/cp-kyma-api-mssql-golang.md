@@ -247,7 +247,7 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     kubectl create namespace dev
     ```
 
-2. Within the `deployment.yaml`, adjust the value of `spec.template.spec.containers.image`, commented with **#change it to your image**, to use your Docker image. Apply the Deployment:
+2. Within the `deployment.yaml`, adjust the value of `spec.template.spec.containers.image`, commented with **#change it to your image**, to use your Docker image. Apply the Deployment which will cause an error which we will further explore:
 
     ```Shell/Bash
     kubectl -n dev apply -f ./k8s/deployment.yaml

@@ -19,7 +19,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
- - How to add more applications to the Launch Page
+ - How to add more applications to the launch page
+
 
 
 To continue with this tutorial you can find the result of the previous tutorial in the [`cap/freestyle-ui5-app`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/freestyle-ui5-app) branch.
@@ -45,33 +46,31 @@ In the current implementation, the launch page is sitting inside the application
 
 3. Open the file `index.html` in an editor and change the following lines:
 
-
-    ```javascript hl_lines="5 10 12-20"
-        <script>
-            window["sap-ushell-config"] = {
-                defaultRenderer: "fiori2",
-                applications: {
-                    "risks-app": {
-                        title: "Risks",
-                        description: "Risks",
-                        additionalInformation: "SAPUI5.Component=ns.risks",
-                        applicationType: "URL",
-                        url: "./risks/webapp",
-                        navigationMode: "embedded"
-                    },
-                    "mitigations-app": {
-                        title: "Mitigations",
-                        description: "Mitigations",
-                        additionalInformation: "SAPUI5.Component=ns.mitigations",
-                        applicationType: "URL",
-                        url: "./mitigations/webapp",
-                        navigationMode: "embedded"
-                    }
+```JavaScript[5,10,12-20]
+    <script>
+        window["sap-ushell-config"] = {
+            defaultRenderer: "fiori2",
+            applications: {
+                "risks-app": {
+                    title: "Risks",
+                    description: "Risks",
+                    additionalInformation: "SAPUI5.Component=ns.risks",
+                    applicationType: "URL",
+                    url: "./risks/webapp",
+                    navigationMode: "embedded"
+                },
+                "mitigations-app": {
+                    title: "Mitigations",
+                    description: "Mitigations",
+                    additionalInformation: "SAPUI5.Component=ns.mitigations",
+                    applicationType: "URL",
+                    url: "./mitigations/webapp",
+                    navigationMode: "embedded"
                 }
-            };
-        </script>
-    ```
-
+            }
+        };
+    </script>
+```
 
 4. Rename the file from `index.html` to `launchpage.html`.
 

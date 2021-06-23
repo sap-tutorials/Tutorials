@@ -82,8 +82,7 @@ Make sure you run the latest long-term support (LTS) version of Node.js with an 
 v14.x.x
 ```
 
-> If you don't see the required version, go to [Node.js](https://nodejs.org/en/download/) download page, pick the installer appropriate for your operating system, and install it.
-In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#node-version) for CAP for more details.
+> If you don't see the required version, go to [Node.js](https://nodejs.org/en/download/) download page, pick the installer appropriate for your operating system, and install it. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#node-version) for CAP for more details.
 
 
 
@@ -183,7 +182,7 @@ CAP provides you with all the tools to create your data model with entities and 
 
 2. To verify that the installation was successful, run `cds` without arguments.
 
-    This lists the available `cds` commands. For example, use `cds version` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
+    This lists the available `cds` commands.
 
 3. Check what versions of the CDS libraries have been installed:
 
@@ -191,22 +190,49 @@ CAP provides you with all the tools to create your data model with entities and 
     cds v
     ```
 
+    To know what is the latest version of the CAP tooling, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
+
 [DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Install VS Code)]
 
+[OPTION BEGIN [macOS]]
+
 VS Code is used to edit the code of the application project and it comes with a couple of so-called extensions from SAP (CAP and SAP Fiori tools) that are also used here.
 
-In case you don't have it, go to the [Visual Studio Code](https://code.visualstudio.com/) homepage and install the version appropriate for your operating system.
+In case you don't have it, go to the [Visual Studio Code](https://code.visualstudio.com/) homepage and find the version appropriate for your operating system.
 
-MacOS users must also perform the following steps as described [here](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac). To start it like any other application and to start it from the terminal on MacOS, follow these steps:
+Download the package for macOS and perform the following steps as described [here](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac). To start it like any other application and to start it from the terminal on MacOS, follow these steps:
 
 1. Move VS Code from your **Download** folder to the **Applications** folder.
 
 2. Use **command** + **shift** + **P** keys to open the command palette.
 
-3. Type `Install 'code' command in PATH` and choose **Enter**.
+3. Type **`Install 'code' command in PATH`** and choose **Enter**.
+
+
+[OPTION END]
+[OPTION BEGIN [Windows]]
+
+VS Code is used to edit the code of the application project and it comes with a couple of so-called extensions from SAP (CAP and SAP Fiori tools) that are also used here.
+
+In case you don't have it, go to the [Visual Studio Code](https://code.visualstudio.com/) homepage and find the version appropriate for your operating system.
+
+Download the installer suitable for your Windows version and follow the instructions in the installation wizard.
+
+
+[OPTION END]
+[OPTION BEGIN [Linux]]
+
+VS Code is used to edit the code of the application project and it comes with a couple of so-called extensions from SAP (CAP and SAP Fiori tools) that are also used here.
+
+In case you don't have it, go to the [Visual Studio Code](https://code.visualstudio.com/) homepage and find the version appropriate for your operating system.
+
+Download the package for your Linux distribution and install.
+
+[OPTION END]
+
 
 [DONE]
 [ACCORDION-END]
@@ -228,7 +254,7 @@ You need to install the [**SAP Language Support**](https://marketplace.visualstu
 
 5. Restart VS Code after the installation.
 
-Now, the extension is installed in VS Code. If the extension is already installed and enabled in VS Code, it is updated automatically. The VS Code extension comes with a welcome page, which shows latest release notes of CAP. It starts automatically whenever an update arrives for the extension. Later, you can open the page through the command `CDS: Show CAP Release Notes`.
+Now, the extension is installed in VS Code. If the extension is already installed and enabled in VS Code, it is updated automatically. The VS Code extension comes with a welcome page, which shows latest release notes of CAP. It starts automatically whenever an update arrives for the extension. Later, you can open the page through the **Command Palette** in VS Code `CDS: Show CAP Release Notes`.
 
 > Learn more about SAP CDS Language Support Extension:
 

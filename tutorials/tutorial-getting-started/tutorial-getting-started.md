@@ -186,6 +186,6 @@ Now that you toured the Tutorial Navigator, you can get credit for doing this tu
 
 ---
 
-** REMEMBER:** If you are doing this tutorial as part of the Crossover Learner (expires June 30, 2021), remember to go to the community and vote on a question or answer and comment on the blog [Become a dual threat: SAP learner AND community pro](https://blogs.sap.com/2021/05/20/become-a-dual-threat-sap-learner-and-community-pro/).
+**REMEMBER:** If you are doing this tutorial as part of the Crossover Learner (expires June 30, 2021), remember to go to the community and vote on a question or answer and comment on the blog [Become a dual threat: SAP learner AND community pro](https://blogs.sap.com/2021/05/20/become-a-dual-threat-sap-learner-and-community-pro/).
 
 ---
