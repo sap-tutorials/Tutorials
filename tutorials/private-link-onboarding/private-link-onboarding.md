@@ -19,6 +19,7 @@ primary_tag: software-product-function>sap-private-link-service
 SAP Private Link service (Beta) establishes a private connection between applications running on SAP BTP and selected services in your own IaaS provider accounts. By reusing the private link functionality of our partner IaaS providers, you can access your services through private network connections to avoid data transfer via the public internet.
 
 !![Overview of SAP Private Link service functionality](private-endpoint-overview.png)
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Set entitlements)]
@@ -29,13 +30,13 @@ To be able to use the functionalities of SAP Private Link service, you first nee
 3. Navigate to **Entitlements** in the left hand navigation bar. You can now see all the existing service assignments for this respective subaccount.  
 4. Select **Configure Entitlements**.
 
-!![Configure Entitlements for SAP Private Link service](private-endpoint-configure-entitlements.png)
+    !![Configure Entitlements for SAP Private Link service](private-endpoint-configure-entitlements.png)  
 
 5. To add a new service assignment, select **Add Service Plans**. You see now all the offerings available to this specific subaccount.
 
 6. Select **SAP Private Link service**, **Standard** (from Available Plans) and then **Add 1 Service Plan**.
 
-!![Add Service Plan for SAP Private Link service](private-endpoint-add-service-plan.png)
+    !![Add Service Plan for SAP Private Link service](private-endpoint-add-service-plan.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -50,10 +51,8 @@ Use **+** and **-** to increase or decrease the quota of the SAP Private Link se
 
 > One unit equals one Private Link endpoint.
 
-
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](Enable Cloud Foundry runtime)]
 
@@ -61,11 +60,11 @@ Navigate to the **Overview** tab of your subaccount and check whether you've alr
 
 1. To enable Cloud Foundry runtime, select **Enable Cloud Foundry**.
 
-!![Enable Cloud Foundry runtime](private-endpoint-enable-CF.png)
+    !![Enable Cloud Foundry runtime](private-endpoint-enable-CF.png)
 
 2. Enter the following details:
 
-     - **Plan**: `standard`
+    - **Plan**: `standard`
     - **Instance Name**:  Choose a unique name, for example `privatelink-test`.
     - **Org Name**: Choose a name relating back to the instance, for example `privatelink-test`
 
