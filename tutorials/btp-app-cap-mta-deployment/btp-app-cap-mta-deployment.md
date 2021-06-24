@@ -30,7 +30,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to deploy your application as Multi-Target Application (MTA) to SAP BTP, Cloud Foundry runtime
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`mta`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/deployment/mta-generated) branch.
+To continue with this tutorial you can find the result of the previous tutorial in the [`cp/roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/roles) branch.
 
 ---
 
@@ -51,13 +51,13 @@ The deployment is based on MTA ( *Multi-Target Application*, sometimes also call
 
 1. Check if you have already installed the [Cloud MTA Build Tool (MBT)](https://sap.github.io/cloud-mta-build-tool/):
 
-    ```bash
+    ```Shell/Bash
     mbt --version
     ```
 
 2. If you don't get back a version number, install the **MultiApps Archive Builder**:
 
-    ```bash
+    ```Shell/Bash
     npm install -g mbt
     ```
 
@@ -117,13 +117,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 4. Set the Cloud Foundry API endpoint:
 
-    ```bash
+    ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
 
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials:
 
-    ```bash        
+    ```Shell/Bash
     cf login
     ```
 
@@ -132,13 +132,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 6. Check if the `MultiApps` plugin is already installed:
 
-    ```bash
+    ```Shell/Bash
     cf plugins
     ```
 
 7. If the `MultiApps` plugin isn't installed, install it now:
 
-    ```bash
+    ```Shell/Bash
     cf install-plugin multiapps
     ```
 
@@ -174,13 +174,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 4. Set the Cloud Foundry API endpoint:
 
-    ```bash
+    ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
 
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials:
 
-    ```bash        
+    ```Shell/Bash
     cf login
     ```
 
@@ -189,13 +189,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 6. Check if the `MultiApps` plugin is already installed:
 
-    ```bash
+    ```Shell/Bash
     cf plugins
     ```
 
 7. If the `MultiApps` plugin isn't installed, install it now:
 
-    ```bash
+    ```Shell/Bash
     cf install-plugin multiapps
     ```
 
@@ -342,7 +342,7 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 
 1. Build the MTA module from the project root folder:
 
-    ```bash
+    ```Shell/Bash
     mbt build -t ./
     ```
 
@@ -352,13 +352,13 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 
 2. Deploy the module to your current Cloud Foundry space:
 
-    ```bash
+    ```Shell/Bash
     cf deploy cpapp_1.0.0.mtar
     ```
 
 3. The deployment can take some minutes. After successful deployment, check if all the services have been created:
 
-    ```bash
+    ```Shell/Bash
     cf services
     ```
 
@@ -368,7 +368,7 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 
 4. Check if the apps are running:
 
-    ```bash
+    ```Shell/Bash
     cf apps
     ```
 

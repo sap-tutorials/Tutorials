@@ -33,7 +33,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to test your SAP Launchpad site
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`launchpad-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpad-service-prep) branch.
+To continue with this tutorial you can find the result of the previous tutorial in the [`mta`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/mta) branch.
 
 ---
 
@@ -258,25 +258,25 @@ modules:
 
 1. Install [SAPUI5 tooling](https://www.npmjs.com/package/@sap/ux-ui5-tooling) package as global module:
 
-    ```bash
+    ```Shell/Bash
     npm install -g @sap/ux-ui5-tooling
     ```
 
 2. Install [SAP Fiori application generator](https://www.npmjs.com/package/@sap/generator-fiori) package as global module:
 
-    ```bash
+    ```Shell/Bash
     npm install -g @sap/generator-fiori
     ```
 
 3. Install [MTA](https://www.npmjs.com/package/mta) package as global module:
 
-    ```bash
+    ```Shell/Bash
     npm i -g mta
     ```
 
 4. Delete the file `app/mitigations/.yo-rc.json`, because this makes the SAP Fiori application generator fail.
 
-    ```bash
+    ```Shell/Bash
     rm app/mitigations/.yo-rc.json
     ```
 
@@ -304,13 +304,13 @@ Make sure the last entry in `"devDependencies"` doesn't end with a comma (`,`) c
 
 1. Switch to `app/risks` directory:
 
-    ```bash
+    ```Shell/Bash
     cd app/risks
     ```
 
 2. Add deployment configuration:
 
-    ```bash
+    ```Shell/Bash
     fiori add deploy-config cf
     ```
 
@@ -326,7 +326,7 @@ Make sure the last entry in `"devDependencies"` doesn't end with a comma (`,`) c
 
 1. Repeat the procedure with the `app/mitigations` folder:
 
-    ```bash
+    ```Shell/Bash
     cd ../../app/mitigations
     fiori add deploy-config cf
     ```
@@ -437,7 +437,7 @@ app/*/package-lock.json
 
 1. Build your project with the MTA Build Tool (MBT):
 
-    ```bash
+    ```Shell/Bash
     mbt build -t ./
     ```
 
@@ -445,7 +445,7 @@ app/*/package-lock.json
 
 2. Deploy your project to SAP BTP:
 
-    ```bash
+    ```Shell/Bash
     cf deploy cpapp_1.0.0.mtar
     ```
 

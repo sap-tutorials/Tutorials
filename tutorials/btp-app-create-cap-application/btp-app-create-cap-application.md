@@ -27,25 +27,25 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 2. Navigate to your tutorial root directory:
 
-    ```bash
+    ```Shell/Bash
     cd <tutorial root directory>
     ```
 
 3. Switch to your tutorial app directory:
 
-    ```bash
+    ```Shell/Bash
     cd cpapp
     ```
 
 4. Create an initial CAP project by executing the command `cds init`:
 
-    ```bash
+    ```Shell/Bash
     cds init
     ```
 
 5. Open the project in VS Code:
 
-    ```bash
+    ```Shell/Bash
     code .
     ```
 
@@ -59,13 +59,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 7. In the VS Code terminal, run:
 
-    ```bash
+    ```Shell/Bash
     npm install
     ```
 
 8. In the VS Code terminal, start a CAP server:
 
-    ```bash
+    ```Shell/Bash
     cds watch
     ```
 
@@ -106,7 +106,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     This is the code:
 
     <!-- cpes-file db/schema.cds -->
-    ```javascript
+    ```JavaScript
     namespace sap.ui.riskmanagement;
     using { managed } from '@sap/cds/common';
       entity Risks : managed {
@@ -137,7 +137,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     The content of the file looks like this:
 
     <!-- cpes-file srv/risk-service.cds -->
-    ```javascript
+    ```JavaScript
     using { sap.ui.riskmanagement as my } from '../db/schema';
     @path: 'service/risk'
     service RiskService {
@@ -164,7 +164,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     If you now choose the `Risks` link, you only get this:
 
-    ```javascript
+    ```JavaScript
     {
         @odata.context: "$metadata#Risks",
         value: [ ]

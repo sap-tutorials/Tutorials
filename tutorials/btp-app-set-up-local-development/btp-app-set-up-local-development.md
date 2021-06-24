@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Set Up Local Development Using VS Code
-description: This tutorial shows you how to get started using VS Code as an editor.
+description: This tutorial shows you how to get started using VS Code as an editor. 
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
@@ -95,19 +95,19 @@ A Node.js version 14 or higher is required to install the SAPUI5 CLI. See [SAPUI
 
 1. Check in a terminal whether you already have the UI5 CLI installed:
 
-    ```bash
+    ```Shell/Bash
     ui5 --version
     ```
 
 2. If you don't get a version number, install the UI5 CLI:
 
-    ```bash
+    ```Shell/Bash
     npm install --global @ui5/cli
     ```
 
 3. Verify that the installation was successful by running the version command again:
 
-    ```bash
+    ```Shell/Bash
     ui5 --version
     ```
 
@@ -122,12 +122,12 @@ This is needed if you want to use the services and applications that you create 
 
 1. Check whether the package manager `brew` is installed on your machine:
 
-    ```bash
+    ```Shell/Bash
     brew --version
     ```
       If there's an output of a version of `brew`, you got brew and it's best if you install the CF CLI:
 
-    ```bash
+    ```Shell/Bash
     brew install cloudfoundry/tap/cf-cli
     ```
 
@@ -136,7 +136,7 @@ This is needed if you want to use the services and applications that you create 
 
 2. In either case, after the installation, check whether you get the output of a version indicating the installation succeeded:
 
-    ```bash
+    ```Shell/Bash
     cf --version
     ```
 
@@ -172,7 +172,7 @@ CAP provides you with all the tools to create your data model with entities and 
 
 1. Install CDS development kit globally in a terminal:
 
-    ```bash
+    ```Shell/Bash
     npm i -g @sap/cds-dk
     ```
 
@@ -182,11 +182,11 @@ CAP provides you with all the tools to create your data model with entities and 
 
 2. To verify that the installation was successful, run `cds` without arguments.
 
-    This lists the available `cds` commands.
+    This lists the available `cds` commands. 
 
 3. Check what versions of the CDS libraries have been installed:
 
-    ```bash
+    ```Shell/Bash
     cds v
     ```
 
@@ -307,25 +307,25 @@ SAPUI5 templates are based on [Yeoman](https://yeoman.io/), a tool for scaffoldi
 
 1. Check in a terminal whether you already have Yeoman installed:
 
-    ```bash
+    ```Shell/Bash
     yo --version
     ```
 
 2. If you don't get a version number, install Yeoman:
 
-    ```bash
+    ```Shell/Bash
     npm install -g yo
     ```
 
 3. Now, you can go ahead and install the [SAPUI5 templates](https://www.npmjs.com/package/@sapui5/generator-sapui5-templates):
 
-    ```bash
+    ```Shell/Bash
     npm install -g yo @sapui5/generator-sapui5-templates
     ```
 
 4. Test whether everything works:
 
-    ```bash
+    ```Shell/Bash
     yo --generators
     ```
 

@@ -44,11 +44,12 @@ In this tutorial, you add some custom code to the CAP application. Depending on 
 
 <!-- cpes-file srv/risk-service.js -->
 ```JavaScript
+const cds = require('@sap/cds')
 /**
  * Implementation for Risk Management service defined in ./risk-service.cds
  */
-module.exports = async (srv) => {
-    srv.after('READ', 'Risks', (risksData) => {
+module.exports = cds.service.impl(async function() {
+    this.after('READ', 'Risks', risksData => {
         const risks = Array.isArray(risksData) ? risksData : [risksData];
         risks.forEach(risk => {
             if (risk.impact >= 100000) {
@@ -58,7 +59,7 @@ module.exports = async (srv) => {
             }
         });
     });
-}
+});
 ```
 
 Because your file is called `risk-service.js` and, therefore, has the same name as your application definition file `risk-service.cds`, CAP automatically treats it as a handler file for the application defined in there. CAP exposes several [events](https://cap.cloud.sap/docs/node.js/requests) and you can easily write handlers like the above.

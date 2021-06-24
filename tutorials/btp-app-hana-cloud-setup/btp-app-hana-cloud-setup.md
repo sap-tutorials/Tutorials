@@ -51,7 +51,7 @@ By default, the deployment uses the `hdbcds` as deployment format. However, this
 1. Add the following snippet at the end of your `package.json` in your `cpapp` project:
 
     <!-- cpes-file package.json:$.cds -->
-    ```json hl_lines="4-13"
+    ```JSON[4-13]
     {
       "name": "cpapp",
       ...
@@ -84,7 +84,7 @@ By default, the deployment uses the `hdbcds` as deployment format. However, this
 
 SAP HANA Cloud service instances are not created automatically for any type of account. Therefore, you'll have to create a SAP HANA Cloud instance first, if you don't have one yet.
 
-If you already have an SAP HANA Cloud service instance in your Cloud Foundry space **&rarr;** continue with **Use an Existing SAP HANA Cloud Service Instance****.
+If you already have an SAP HANA Cloud service instance in your Cloud Foundry space **&rarr;** continue with **Use an Existing SAP HANA Cloud Service Instance**.
 
 If you need to create a SAP HANA Cloud service instance first **&rarr;** continue with **Create an SAP HANA Cloud Service Instance**.
 
@@ -103,7 +103,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
 
     [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
-
+    
 2. Choose the **Global Account**.
 
 3. Navigate to the **Subaccount**.
@@ -116,8 +116,8 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
 7. Choose **Manage SAP HANA Cloud** in the upper right corner.
 
-8. Sign in with your SAP BTP Cockpit username/email.
-
+8. Sign in with your SAP BTP Cockpit username/email. 
+    
     The **SAP HANA Cloud Central** cockpit opens.
 
 9. Choose an organization and again choose the space where you have the SAP HANA Cloud service instance.
@@ -150,8 +150,8 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
 7. Choose **Manage SAP HANA Cloud** in the upper right corner.
 
-8. Sign in with your SAP BTP Cockpit username/email.
-
+8. Sign in with your SAP BTP Cockpit username/email. 
+    
     The **SAP HANA Cloud Central** cockpit opens.
 
 9. Choose an organization and again choose the space where you have the SAP HANA Cloud service instance.
@@ -178,7 +178,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
 
     [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
-
+    
 2. Choose your **Global Account**.
 
 3. Navigate to your **Subaccount**.
@@ -204,7 +204,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
     !![Create SAP HANA Cloud: Step 1a](hana_cloud_create_1a.png)
 
 11. Enter a password for _DBADMIN_ in **Administrator Password** and **Confirm Administrator Password**.
-
+   
     !![Create SAP HANA Cloud: Step 1b](hana_cloud_create_1b.png)
 
 12. Choose **Step 2**.
@@ -218,20 +218,20 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 15. Choose `Deny all IP addresses (except Business Technology Platform)`.
 
     !![Create SAP HANA Cloud: Step 3](hana_cloud_create_3.png)
-
+    
 
 16. Choose **Step 4**.
 
     > You can optionally create a SAP HANA [data lake](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/f7febb16072b41f7ac90abf5ea1d4b86.html#loiof7febb16072b41f7ac90abf5ea1d4b86__step_datalake_params). It's really useful for storing and analyzing high volumes of infrequently updated data in a production environment and to adjust how much Compute and Storage space it has, but we don't need it for this tutorial. You can enable or disable the SAP HANA data lake later as well if you prefer.
 
     !!! info "If you choose to create a data lake, an additional step 5 is added. This step includes advanced SAP HANA data lake settings. You can skip this if you haven't created a SAP HANA data lake."
-
-18. Choose **Create Instance**.
+ 
+18. Choose **Create Instance**. 
 
     The creation of the database instance can take some minutes to complete. The final result looks like this in SAP BTP cockpit:
-
+    
     !![SAP HANA Cloud Instance Created](hana_cloud_created.png)
-
+ 
     > Your SAP HANA Cloud instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day, before you start working with your trial.
 
 
@@ -267,7 +267,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
     !![Create SAP HANA Cloud: Step 1a](hana_cloud_create_1a.png)
 
 11. Enter a password for _DBADMIN_ in **Administrator Password** and **Confirm Administrator Password**.
-
+   
     !![Create SAP HANA Cloud: Step 1b](hana_cloud_create_1b.png)
 
 12. Choose **Step 2**.
@@ -281,20 +281,20 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 15. Choose `Deny all IP addresses (except Business Technology Platform)`.
 
     !![Create SAP HANA Cloud: Step 3](hana_cloud_create_3.png)
-
+    
 
 16. Choose **Step 4**.
 
     > You can optionally create a SAP HANA [data lake](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/f7febb16072b41f7ac90abf5ea1d4b86.html#loiof7febb16072b41f7ac90abf5ea1d4b86__step_datalake_params). It's really useful for storing and analyzing high volumes of infrequently updated data in a production environment and to adjust how much Compute and Storage space it has, but we don't need it for this tutorial. You can enable or disable the SAP HANA data lake later as well if you prefer.
 
     !!! info "If you choose to create a data lake, an additional step 5 is added. This step includes advanced SAP HANA data lake settings. You can skip this if you haven't created a SAP HANA data lake."
-
-18. Choose **Create Instance**.
+ 
+18. Choose **Create Instance**. 
 
     The creation of the database instance can take some minutes to complete. The final result looks like this in SAP BTP cockpit:
-
+    
     !![SAP HANA Cloud Instance Created](hana_cloud_created.png)
-
+ 
     > Your SAP HANA Cloud instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day, before you start working with your trial.
 
 
