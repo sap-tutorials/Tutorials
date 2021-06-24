@@ -19,7 +19,7 @@ primary_tag: software-product-function>sap-private-link-service
 
 SAP Private Link service (Beta) establishes a private connection between applications running on SAP BTP and selected services in your own IaaS provider accounts. By reusing the private link functionality of our partner IaaS providers, you can access your services through private network connections to avoid data transfer via the public internet.
 
-!![Overview of SAP Private Link service functionality](private-endpoint-overview.png)
+!![Overview of SAP Private Link service functionality](private-endpoint.png)
 
 ---
 
