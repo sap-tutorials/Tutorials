@@ -65,7 +65,7 @@ Navigate to the **Overview** tab of your subaccount and check whether you've alr
 2. Enter the following details:
 
     - **Plan**: `standard`
-    - **Instance Name**:  Choose a unique name, for example `privatelink-test`.
+    - **Instance Name**: Choose a unique name, for example `privatelink-test`.
     - **Org Name**: Choose a name relating back to the instance, for example `privatelink-test`
 
 3. Select **Create**.
