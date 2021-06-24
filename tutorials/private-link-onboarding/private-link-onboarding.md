@@ -1,5 +1,6 @@
 ---
 title: Set Up SAP Private Link Service
+author_profile: https://github.com/AnnikaGonnermann
 description: Get onboarded to use SAP Private Link service in SAP BTP.
 auto_validation: true
 time: 10
