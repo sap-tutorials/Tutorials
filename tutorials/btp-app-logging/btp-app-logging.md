@@ -41,13 +41,13 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
 1. Display recent logs:
 
-    ```bash
+    ```Shell/Bash
     cf logs --recent <appname>
     ```
 
 2. Follow logs live:
 
-    ```bash
+    ```Shell/Bash
     cf logs <appname>
     ```
 
@@ -135,7 +135,7 @@ resources:
     service: application-logs
     service-plan: standard
 ```
-
+    
 2. Bind the logging service instance to all `modules` of the `mta.yaml`:
 
 <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->
@@ -198,7 +198,7 @@ resources:
     service: application-logs
     service-plan: standard
 ```
-
+    
 2. Bind the logging service instance to all `modules` of the `mta.yaml`:
 
 <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->
