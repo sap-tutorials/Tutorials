@@ -297,13 +297,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 4. Set the Cloud Foundry API endpoint:
 
-    ```bash
+    ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
     
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials:
 
-    ```bash        
+    ```Shell/Bash
     cf login
     ```
 
@@ -340,13 +340,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 4. Set the Cloud Foundry API endpoint:
 
-    ```bash
+    ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
     
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials:
 
-    ```bash        
+    ```Shell/Bash
     cf login
     ```
 

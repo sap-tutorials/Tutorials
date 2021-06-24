@@ -43,7 +43,7 @@ To enable authentication support in CAP, the [passport](http://www.passportjs.or
 
 2. Install the `passport` module.
 
-    ```bash
+    ```Shell/Bash
     npm install --save passport
     ```
 
@@ -77,10 +77,10 @@ service RiskService {
     annotate Risks with @odata.draft.enabled;
   entity Mitigations @(restrict : [
             {
-                 grant : [ 'READ' ],
+                grant : [ 'READ' ],
                 to : [ 'RiskViewer' ]
             },
-             {
+            {
                 grant : [ '*' ],
                 to : [ 'RiskManager' ]
             }
@@ -109,12 +109,12 @@ CAP offers a possibility to add local users for testing as part of the `cds` con
 2. Let's look at the `risk.manager@tester.sap.com` example:
 
     <!-- cpes-file .cdsrc.json:$.*.*.*.users[?(@.ID=="risk.manager@tester.sap.com")] -->
-    ```json hl_lines="8-17"
+    ```JSON[8-17]
     {
       "[development]": {
         "auth": {
           "passport": {
-            "strategy": "mock",
+            ...
             "users": {
               "risk.viewer@tester.sap.com": "...",
               "risk.manager@tester.sap.com": {
@@ -155,7 +155,7 @@ When accessing the `Risks` service in your browser, you get a basic auth popup n
 
   You can now access the `Risks` application.
 
-!![Access Risk Application](risks_management_application.png)  
+!![Access Risk Application](risks_management_application.png)
 
 > Currently there's no logout functionality. You can clear your browser's cache or simply close all browser windows to get rid of the basic auth login data in your browser. For Chrome restart your browser (complete shutdown and restart) by entering `chrome: // restart` in the address line.
 

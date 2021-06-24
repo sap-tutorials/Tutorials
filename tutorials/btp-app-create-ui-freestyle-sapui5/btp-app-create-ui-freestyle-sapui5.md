@@ -52,32 +52,32 @@ In the next steps, you build an application using the `mitigations` part of our 
 
 4. Navigate to the `app` folder:
 
-    ```bash
+    ```Shell/Bash
     cd app
     ```
 
 5. Create a new `mitigations` folder for the new app:
 
-    ```bash
+    ```Shell/Bash
     mkdir mitigations
     ```
 
 6. Navigate to the `mitigations` folder:
 
-    ```bash
+    ```Shell/Bash
     cd mitigations
     ```
 
 7. Create a freestyle UI5 application:
 
-    ```bash
+    ```Shell/Bash
     yo @sapui5/sapui5-templates
     ```
     A creation wizard starts.
 
 8. Follow the creation wizard and use the following values:
 
-    ```javascript
+    ```JavaScript
     - "Provide the module name" mitigations
     - "Provide the module namespace" ns
     - "Select a template" SAP Fiori Worklist Application OData V4
@@ -153,7 +153,7 @@ The change in the `manifest.yaml` is to make sure that the data requests are use
 
 1. Make sure `cds watch` is still running in the project root folder:
 
-    ```bash
+    ```Shell/Bash
     cds watch
     ```
 
@@ -303,7 +303,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 
 4. Add the following lines to configure SAPUI5 tools to use the live reload module:
 
-    ```YAML hl_lines="9-15"
+    ```YAML[9-15]
         ...
         server:
           customMiddleware:
@@ -321,35 +321,35 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-
+    
     > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
 
 
 5. From your `cpapp` folder, navigate to your `mitigations` folder:
 
-    ```bash
+    ```Shell/Bash
     cd app/mitigations/
     ```
 
 6. Check if a (hidden) file called `.npmrc` exists:
 
-    ```bash
+    ```Shell/Bash
     ls -a
     ```
 6. Delete the file `.npmrc` if it exists:
 
-    ```bash
+    ```Shell/Bash
     rm .npmrc
     ```
 7. Install the npm packages:
 
-    ```bash
+    ```Shell/Bash
     npm install
     ```
 
 8. Start the application. Make sure that `cds watch` is running in another terminal:
 
-    ```bash
+    ```Shell/Bash
     ui5 serve
     ```
 
@@ -403,7 +403,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 
 4. Add the following lines to configure SAPUI5 tools to use the live reload module:
 
-    ```YAML hl_lines="9-15"
+    ```YAML[9-15]
         ...
         server:
           customMiddleware:
@@ -421,41 +421,41 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-
+    
     > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
 
 
 5. From your `cpapp` folder, navigate to your `mitigations` folder:
 
-    ```bash
+    ```Shell/Bash
     cd app/mitigations/
     ```
 
 6. Check if a (hidden) file called `.npmrc` exists:
 
-    ```bash
+    ```Shell/Bash
     Get-ChildItem -Hidden
     ```
-    ```bash
+    ```Shell/Bash
     dir
     ```
 
 
 6. Delete the file `.npmrc` if it exists:
 
-    ```bash
+    ```Shell/Bash
     del .npmrc
     ```
 
 7. Install the npm packages:
 
-    ```bash
+    ```Shell/Bash
     npm install
     ```
 
 8. Start the application. Make sure that `cds watch` is running in another terminal:
 
-    ```bash
+    ```Shell/Bash
     ui5 serve
     ```
 

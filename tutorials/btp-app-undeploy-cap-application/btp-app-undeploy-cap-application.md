@@ -42,11 +42,9 @@ To undeploy (delete) an `mtar`, you don't need to delete the apps and the servic
 
 You can either undeploy the applications or undeploy the applications and their service instances. Undeploying the applications and their service instances will also delete the data stored in these instances (for example, database content).
 
-```bash
+```Shell/Bash
 cf undeploy cpapp
 ```
-
-[VALIDATE_1]
 
 
 [OPTION END]
@@ -58,12 +56,21 @@ You can either undeploy the applications or undeploy the applications and their 
 
 > Deletes all data stored in the application.
 
-```bash
+```Shell/Bash
 cf undeploy cpapp --delete-service-keys --delete-services
 ```
 
 [OPTION END]
 
+
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 2: ](Summary)]
+
+Congratulations! You have completed all tutorials.
+
+[VALIDATE_1]
 
 [ACCORDION-END]
 ---

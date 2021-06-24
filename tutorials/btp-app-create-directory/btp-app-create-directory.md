@@ -45,13 +45,13 @@ Downloading the tutorial gives you easy access to template files that are requir
 
 2. Navigate to the previously decided tutorial root directory:
 
-    ```bash
+    ```Shell/Bash
     cd <tutorial root directory>
     ```
 
 3. Clone the tutorial:
 
-    ```bash
+    ```Shell/Bash
     git clone https://github.com/SAP-samples/cloud-cap-risk-management tutorial
     ```
 
@@ -84,13 +84,13 @@ Go to [GitHub](https://github.com/) and create a new GitHub repository.
 
 3. Navigate to the tutorial root directory:
 
-    ```bash
+    ```Shell/Bash
     cd <tutorial root directory>
     ```
 
 4. Clone your new repository:
 
-    ```bash
+    ```Shell/Bash
     git clone <git-repository-url> cpapp
     ```
 
@@ -115,7 +115,7 @@ If you don't want to start from scratch, but from a specific example of the tuto
 
 3. Navigate to the tutorial root directory:
 
-    ```bash
+    ```Shell/Bash
     cd <tutorial root directory>
     ```
 
@@ -130,19 +130,19 @@ If you don't want to start from scratch, but from a specific example of the tuto
 
 5. Copy all files from the example to a local directory `<project-dir>`, except the `.git` directory.
 
-    ```bash
+    ```Shell/Bash
     cp -r .gitignore $(ls -1A | grep -v .git) ../cpapp
     ```
 
 6. Check out the `master` branch to get access to the template files again:
 
-    ```bash
+    ```Shell/Bash
     git checkout master
     ```
 
 7. Switch to your app directory:
 
-    ```bash
+    ```Shell/Bash
     cd ../cpapp
     ```
 
