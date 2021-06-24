@@ -144,7 +144,7 @@ Then there's the section about the service base URI and the data source URL. It 
 >         baseUri: http://localhost:4004/service/risk
 > ```
 
-The change in the `manifest.yaml` is to make sure that the data requests are used with an absolute URL at `/risk`. The original entry for the URI was `risk`. This would have triggered SAPUI5 to issue any data request relative to the path of the application itself, but we want the requests to be absolute to risk.
+The change in the `manifest.json` is to make sure that the data requests are used with an absolute URL at `/risk`. The original entry for the URI was `risk`. This would have triggered SAPUI5 to issue any data request relative to the path of the application itself, but we want the requests to be absolute to risk.
 
 [DONE]
 [ACCORDION-END]
@@ -171,78 +171,78 @@ The change in the `manifest.yaml` is to make sure that the data requests are use
 
 4. Open the view of the work list `cpapp/app/mitigations/webapp/view/Worklist.view.xml`  and add the following code, removing the `ID` column and instead adding `Description`, `Owner` and `Timeline` columns:
 
-```XML[2-10,19-23]
-    <columns>
-        <Column id="DescriptionColumn">
-            <Text text="Description" id="DescriptionColumnTitle"/>
-        </Column>
-        <Column id="OwnerColumn">
-            <Text text="Owner" id="OwnerColumnTitle"/>
-        </Column>
-        <Column id="TimelineColumn">
-            <Text text="Timeline" id="TimelineColumnTitle"/>
-        </Column>
-    </columns>
+    ```XML[2-10,19-23]
+        <columns>
+            <Column id="DescriptionColumn">
+                <Text text="Description" id="DescriptionColumnTitle"/>
+            </Column>
+            <Column id="OwnerColumn">
+                <Text text="Owner" id="OwnerColumnTitle"/>
+            </Column>
+            <Column id="TimelineColumn">
+                <Text text="Timeline" id="TimelineColumnTitle"/>
+            </Column>
+        </columns>
 
-    <items>
-        <ColumnListItem
-            type="Navigation"
-            press=".onPress">
-            <cells>
-                <ObjectIdentifier
-                    text="{description}" />
-                <Text
-                    text="{owner}" />
-                <Text
-                    text="{timeline}" />
-            </cells>
-        </ColumnListItem>
-    </items>
-```
+        <items>
+            <ColumnListItem
+                type="Navigation"
+                press=".onPress">
+                <cells>
+                    <ObjectIdentifier
+                        text="{description}" />
+                    <Text
+                        text="{owner}" />
+                    <Text
+                        text="{timeline}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    ```
 
 5. Open the view of the object `cpapp/app/mitigations/webapp/view/Object.view.xml` and also replace `ID` and add `Description`, `Owner`, and `Timeline` using SAPUI5 controls like `ObjectStatus` (you can copy the whole code and replace the existing code in the file):
 
-```XML[4,16,28-34]
-<mvc:View
-    controllerName="ns.mitigations.controller.Object"
-    xmlns="sap.m"
-    xmlns:l="sap.ui.layout"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns:semantic="sap.f.semantic">
+    ```XML[4,16,28-34]
+    <mvc:View
+        controllerName="ns.mitigations.controller.Object"
+        xmlns="sap.m"
+        xmlns:l="sap.ui.layout"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:semantic="sap.f.semantic">
 
-    <semantic:SemanticPage
-        id="page"
-        headerPinnable="false"
-        toggleHeaderOnTitleClick="false"
-        busy="{objectView>/busy}"
-        busyIndicatorDelay="{objectView>/delay}">
+        <semantic:SemanticPage
+            id="page"
+            headerPinnable="false"
+            toggleHeaderOnTitleClick="false"
+            busy="{objectView>/busy}"
+            busyIndicatorDelay="{objectView>/delay}">
 
-        <semantic:titleHeading>
-            <Title text="{description}" />
-        </semantic:titleHeading>
+            <semantic:titleHeading>
+                <Title text="{description}" />
+            </semantic:titleHeading>
 
-        <semantic:headerContent>
-            <ObjectNumber
-            />
-        </semantic:headerContent>
+            <semantic:headerContent>
+                <ObjectNumber
+                />
+            </semantic:headerContent>
 
-        <semantic:sendEmailAction>
-            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
-        </semantic:sendEmailAction>
+            <semantic:sendEmailAction>
+                <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+            </semantic:sendEmailAction>
 
-        <semantic:content>
-            <l:VerticalLayout>
-                <ObjectStatus title="Description" text="{description}"/>
-                <ObjectStatus title="Owner" text="{owner}"/>
-                <ObjectStatus title="Timeline" text="{timeline}"/>
-            </l:VerticalLayout>
-        </semantic:content>
+            <semantic:content>
+                <l:VerticalLayout>
+                    <ObjectStatus title="Description" text="{description}"/>
+                    <ObjectStatus title="Owner" text="{owner}"/>
+                    <ObjectStatus title="Timeline" text="{timeline}"/>
+                </l:VerticalLayout>
+            </semantic:content>
 
 
-    </semantic:SemanticPage>
+        </semantic:SemanticPage>
 
-</mvc:View>
-```
+    </mvc:View>
+    ```
 
 6. Refresh the `mitigations` application in your browser.
 
@@ -282,22 +282,22 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 
 2. Add the following lines to add the live reload module:
 
-```JSON[6,11]
-{
-    ...
-    "devDependencies": {
-        "@ui5/cli": "^1.14.0",
-        "ui5-middleware-simpleproxy": "^0.2.1",
-        "ui5-middleware-livereload": "^0.1.10"
-    },
-    "ui5": {
-        "dependencies": [
-            "ui5-middleware-simpleproxy",
-            "ui5-middleware-livereload"
-        ]
+    ```JSON[6,11]
+    {
+        ...
+        "devDependencies": {
+            "@ui5/cli": "^1.14.0",
+            "ui5-middleware-simpleproxy": "^0.2.1",
+            "ui5-middleware-livereload": "^0.1.10"
+        },
+        "ui5": {
+            "dependencies": [
+                "ui5-middleware-simpleproxy",
+                "ui5-middleware-livereload"
+            ]
+        }
     }
-}
-```
+    ```
 
 3. Open the `ui5.yaml` file in your `cpapp/app/mitigations` folder.
 
@@ -321,7 +321,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-    
+
     > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
 
 
@@ -382,22 +382,22 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 
 2. Add the following lines to add the live reload module:
 
-```JSON[6,11]
-{
-    ...
-    "devDependencies": {
-        "@ui5/cli": "^1.14.0",
-        "ui5-middleware-simpleproxy": "^0.2.1",
-        "ui5-middleware-livereload": "^0.1.10"
-    },
-    "ui5": {
-        "dependencies": [
-            "ui5-middleware-simpleproxy",
-            "ui5-middleware-livereload"
-        ]
+    ```JSON[6,11]
+    {
+        ...
+        "devDependencies": {
+            "@ui5/cli": "^1.14.0",
+            "ui5-middleware-simpleproxy": "^0.2.1",
+            "ui5-middleware-livereload": "^0.1.10"
+        },
+        "ui5": {
+            "dependencies": [
+                "ui5-middleware-simpleproxy",
+                "ui5-middleware-livereload"
+            ]
+        }
     }
-}
-```
+    ```
 
 3. Open the `ui5.yaml` file in your `cpapp/app/mitigations` folder.
 
@@ -421,7 +421,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-    
+
     > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
 
 
