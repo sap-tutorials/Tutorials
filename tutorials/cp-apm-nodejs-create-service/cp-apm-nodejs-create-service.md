@@ -13,7 +13,7 @@ time: 50
 ## Prerequisites
 - You have installed [Node.js](https://nodejs.org/en/download/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
 - You have installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
-- (For Windows users only): You have installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation.
+- (For Windows) You have installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation.
 - You have installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
 - If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Business Technology Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **Europe (Frankfurt) or US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
 
@@ -221,7 +221,7 @@ After initializing the project, you should see the following empty folders:
 
     [cds] - serving CatalogService { at: '/catalog' }
 
-    [cds] - launched in: 1.453s
+    [cds] - launched in: 1.016s
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -365,11 +365,12 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
     [cds] - connect to db > sqlite { database: ':memory:' }
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
      > filling my.bookshop.Authors from ./db/csv/my.bookshop-Authors.csv
+     > filling my.bookshop.Books from ./db/csv/my.bookshop-Books.csv
     /> successfully deployed to sqlite in-memory db
 
     [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
-    [cds] - launched in: 686.831ms
+    [cds] - launched in: 656.931ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -435,11 +436,11 @@ Instead of using in-memory, you can also use persistent databases.
     ```
 
     ```Shell/Bash
-    [cds] - connect to db > sqlite { database: '/Users/d053053/my-bookshop/db/my-bookshop.db' }
+    [cds] - connect to db > sqlite { database: '/Users/xxxxxx/my-bookshop/db/my-bookshop.db' }
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
-    [cds] - launched in: 1.128s
+    [cds] - launched in: 537.482ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```

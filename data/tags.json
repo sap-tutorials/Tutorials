@@ -290,8 +290,14 @@
             "name": "SAP Web IDE",
             "value": "products>sap-web-ide"
         }, {
+            "name": "SAP Work Zone",
+            "value": "products>sap-work-zone"
+        }, {
             "name": "License Required",
             "value": "tutorial>license"
+        }, {
+            "name": "Free Tier",
+            "value": "tutorial>free-tier"
         }
     ]
 }

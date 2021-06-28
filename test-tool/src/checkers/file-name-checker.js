@@ -1,7 +1,7 @@
 const path = require('path');
 
 const { constraints, regexp } = require('../constants');
-const { words } = require('../../config/file.name.stop.words.json');
+const { words } = require('../../../data/file.name.stop.words.json');
 
 const checkFilePath = (filename, fileProjectPath) => {
     const { filePath: { maxFoldersDepth, includedFolders }, fileName: { maxChunks, maxLength } } = constraints;
