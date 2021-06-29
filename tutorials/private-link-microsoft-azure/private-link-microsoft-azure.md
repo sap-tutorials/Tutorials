@@ -40,7 +40,7 @@ $ cf marketplace
 Getting all service offerings from marketplace in org ... / xy… trial as admin...
 
 offering      plans      description                                                                                                                                                    
-privatelink   standard   SAP Private Link service establishes private connectivity between SAP BTP and services hosted on Azure or on-premise, without exposing data to the internet.   privatelink-ua-trial-test
+privatelink   standard   SAP Private Link service (BETA) establishes a private connection between selected SAP BTP services and selected services in your own IaaS provider accounts.
 ```
 
 Make sure you can see `privatelink` in the sample output.
