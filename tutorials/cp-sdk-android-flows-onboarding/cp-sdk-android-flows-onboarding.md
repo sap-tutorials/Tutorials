@@ -12,7 +12,7 @@ primary_tag: products>sap-btp-sdk-for-android
 ## Prerequisites
 - You completed [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app).
 - You completed [Offline-Enable Your Android Application](cp-sdk-android-wizard-app-offline).
-- You completed [Get Familiar with Flows Component by Wizard Generated Application](cp-sdk-android-flows-wizard).
+- You completed [Get Familiar with the Flows Component by a Wizard Generated Application](cp-sdk-android-flows-wizard).
 
 ## Details
 ### You will learn
