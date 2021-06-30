@@ -130,13 +130,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 
 
-6. Check if the `MultiApps` plugin is already installed:
+6. Check if the `multiapps` plugin is already installed:
 
     ```Shell/Bash
     cf plugins
     ```
 
-7. If the `MultiApps` plugin isn't installed, install it now:
+7. If the `multiapps` plugin isn't installed, install it now:
 
     ```Shell/Bash
     cf install-plugin multiapps
@@ -187,13 +187,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 
 
-6. Check if the `MultiApps` plugin is already installed:
+6. Check if the `multiapps` plugin is already installed:
 
     ```Shell/Bash
     cf plugins
     ```
 
-7. If the `MultiApps` plugin isn't installed, install it now:
+7. If the `multiapps` plugin isn't installed, install it now:
 
     ```Shell/Bash
     cf install-plugin multiapps
