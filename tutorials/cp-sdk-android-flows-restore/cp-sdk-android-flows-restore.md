@@ -4,7 +4,7 @@ author_profile: https://github.com/Fenghaoyue
 title: Restore and Reset Applications Using the Flows Component
 description: Learn how to use the SAP BTP SDK for Android Flows component to handle application restore, passcode timeout, and reset scenarios.
 auto_validation: true
-time: 60
+time: 30
 tags: [ tutorial>beginner, operating-system>android, topic>mobile, products>sap-business-technology-platform]
 primary_tag: products>sap-btp-sdk-for-android
 ---

@@ -4,7 +4,7 @@ author_profile: https://github.com/Fenghaoyue
 title: Create Your Own Flow
 description: Learn how to create your own flow with the framework provided by the Flows component of SAP BTP SDK for Android.
 auto_validation: true
-time: 90
+time: 60
 tags: [ tutorial>intermediate, operating-system>android, topic>mobile, products>sap-business-technology-platform]
 primary_tag: products>sap-btp-sdk-for-android
 ---
