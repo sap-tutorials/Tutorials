@@ -5,8 +5,8 @@ title: End-to-End Tests for SAP Cloud SDK Projects
 description: Implement end-to-end tests, the highest level of automated tests, and run them in a pipeline.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>beginner, products>sap-cloud-sdk]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites
@@ -276,7 +276,7 @@ The final folder structure looks as follows:
 
 [ACCORDION-BEGIN [Step 4: ](Execute test)]
 
-Now you can run the following commands to execute your tests. Note that the launch URL must be unprotected as we have not yet implemented a login step. [End-to-end tests against secured applications](https://developers.sap.com/tutorials/cloudsdk-e2e-test-secure-applications.html) explains how you can also target apps that require authentication.
+Now you can run the following commands to execute your tests. Note that the launch URL must be unprotected as we have not yet implemented a login step. [End-to-end tests against secured applications](cloudsdk-e2e-test-secure-applications) explains how you can also target apps that require authentication.
 
 ```Shell
 npm install
@@ -297,7 +297,7 @@ You should see the following result:
 
 Please setup a continuous delivery pipeline for this project as learned in  [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd).
 
-To run the end-to-end tests in the pipeline you have to adapt the `.pipeline/config.yml`. In [Set up CI/CD](https://developers.sap.com/tutorials/cloudsdk-ci-cd.html) you learned that this file configures the behavior of the pipeline.
+To run the end-to-end tests in the pipeline you have to adapt the `.pipeline/config.yml`. In [Set up CI/CD](cloudsdk-ci-cd) you learned that this file configures the behavior of the pipeline.
 The end-to-end tests are run as part of the `Acceptance` stage.
 
 The final configuration is shown below.
@@ -320,7 +320,7 @@ stages:
 
 The section `Acceptance` consists of two sections. Before you can run the end-to-end tests, you first have to deploy our application to the SAP Cloud Platform. As for the productive deployment, you define a section called `cfTargets` or `neoTargets` to configure the deployment. Afterwards in `appUrls` you define a list of URL and credential ids specifying the launch URL for the tests and the credentials used as username and password environment variables.
 
->`credentialId: e2e-test-user-cf` only required if you have implemented [End-to-End tests against secured](https://developers.sap.com/tutorials/cloudsdk-e2e-test-secure-applications.html)
+>`credentialId: e2e-test-user-cf` only required if you have implemented [End-to-End tests against secured](cloudsdk-e2e-test-secure-applications)
 
 The tests are executed once per entry in the list. For each entry the URL is passed as `launchUrl` to the test. The `credentialsId` is used to read the corresponding credentials from the credentials store in Jenkins. Thus, you have to create these credentials, as explained in the tutorial [Set Up Continuous Integration and Delivery for SAP Cloud SDK](cloudsdk-ci-cd). The `username` and `password` is read from the credentials store and passed as environment variable to the test.
 

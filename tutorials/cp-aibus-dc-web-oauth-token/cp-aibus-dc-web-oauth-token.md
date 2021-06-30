@@ -3,7 +3,7 @@ title: Get OAuth Access Token for Document Classification via Web Browser
 description: Retrieve your OAuth access token, which will grant you access to the service APIs.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-classification]
 primary_tag: topic>machine-learning
 ---
 
@@ -47,7 +47,7 @@ You should receive a response like the following:
 }
 ```
 
-You have successfully generated your OAuth access token for the service and you are now all set to [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui).
+You have successfully generated your OAuth access token for the service and you are now all set to [Use Machine Learning to Classify Documents](cp-aibus-dc-swagger-ui).
 
 [DONE]
 [ACCORDION-END]

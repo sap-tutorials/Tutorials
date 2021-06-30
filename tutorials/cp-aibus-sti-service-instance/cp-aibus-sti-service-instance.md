@@ -1,15 +1,15 @@
 ---
 title: Create Service Instance for Service Ticket Intelligence
-description: Create a service instance and the associated service key for Service Ticket Intelligence, one of the SAP AI Business Services, using the SAP Cloud Platform trial cockpit.
+description: Create a service instance and the associated service key for Service Ticket Intelligence, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
-- You have created a trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
-- You have a subaccount and dev space with **Europe (Frankfurt)** as region: [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
+- You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
+- You have a subaccount and dev space with **Europe (Frankfurt)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## Details
 ### You will learn
@@ -20,7 +20,7 @@ primary_tag: topic>machine-learning
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
 
-1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
@@ -72,7 +72,7 @@ To try out Service Ticket Intelligence, you need to make sure that your account 
 
 You are now entitled to use the service and to create instances of the service.
 
->For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP Cloud Platform Trial, see [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements).
+>For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
 [DONE]
 [ACCORDION-END]
@@ -94,7 +94,7 @@ In this space you will create your service instance.
 
 [ACCORDION-BEGIN [Step 4: ](Access service via Service Marketplace)]
 
-The **Service Marketplace** is where you find the available services on SAP Cloud Platform.
+The **Service Marketplace** is where you find the available services on SAP BTP.
 
 To access it, click **Service Marketplace** on the navigation sidebar.
 

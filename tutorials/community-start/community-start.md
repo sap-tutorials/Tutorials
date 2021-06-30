@@ -10,7 +10,7 @@ author_profile: https://github.com/lenastodal
 ---
 
 ## Prerequisites
- - If you do not already have an SAP user account and profile, [register for an account](https://accounts.sap.com/ui/public/showRegisterForm?spName=wcms_sapdx_prod_29052019&targetUrl=https%3A%2F%2Fwww.sap.com%2Fbin%2Ffiji%2Fes%2Flogin.sapdx.html&sourceUrl=https%3A%2F%2Fwww.sap.com%2Fcommunity.html).
+ - If you do not already have an SAP user account and profile, [register for an account](https://accounts.sap.com/ui/public/showRegisterForm?spName=https%3A%2F%2Fhana.ondemand.com%2Fskywalker).
  - Go to [SAP Community](https://community.sap.com) and log in before starting the tutorial.
 
 ## Details
@@ -28,7 +28,7 @@ In order to participate fully in the SAP Community, you need to set your account
 
 1. Watch this SAP Community video [Changing Privacy Settings](https://www.youtube.com/watch?v=9BnkWDfjVlU&feature=youtu.be).
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/9BnkWDfjVlU"frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Pp007skcxFk"frameborder="0" allowfullscreen></iframe>
 
 2. Go to your SAP.com profile **Dashboard** (accessible by clicking your avatar in the upper right and using the **My Profile** feature), select **Privacy** (found under **Account & Settings** on the left-hand side), and make sure that **I want my profile to be visible to public** is switched to **`Allow`**.
 
@@ -204,7 +204,4 @@ If your blogging permissions haven't changed, please make sure that you complete
 
 [DONE]
 [ACCORDION-END]
-
-
-
 ---

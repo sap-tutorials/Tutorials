@@ -2,8 +2,8 @@
 title: Introduce Resilience to your Application
 description: Introduce resilience to your application using the SAP Cloud SDK.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java  ]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-business-technology-platform, topic>cloud, topic>java  ]
+primary_tag: products>sap-cloud-sdk
 time: 15
 ---
 
@@ -19,7 +19,7 @@ time: 15
 
 Consider the following situation: you are developing a cloud application to provide a service to your customers. In order to keep your customers happy, you're of course interested in achieving the highest possible availability of your application.
 
-However, cloud applications, possibly spanned across multiple services, are inherently complex. So we can assume that something, somewhere will fail at some point in time. For example a call to your database might fail and cause one part of your application to fail. If other parts of your application rely on the part that has failed, these parts will fail as well. So a single failure might cascade through the whole system and break it. This is especially critical for multi-tenancy applications, where a single instance of your application serves multiple customers. A typical S/4HANA multi-tenancy application involves many downstream services, such as on-premise S/4HANA ERP systems.
+However, cloud applications, possibly spanned across multiple services, are inherently complex. So it is safe to assume that something, somewhere will fail at some point in time. For example a call to your database might fail and cause one part of your application to fail. If other parts of your application rely on the part that has failed, these parts will fail as well. So a single failure might cascade through the whole system and break it. This is especially critical for multi-tenancy applications, where a single instance of your application serves multiple customers. A typical S/4HANA multi-tenancy application involves many downstream services, such as on-premise S/4HANA ERP systems.
 
 Let's look at a concrete example: Suppose you have 30 systems your cloud application is dependent on and each system has a "perfect" availability of 99.99%. This means each service is unavailable for 4.32 minutes each month (43200 min * (1 – 0.9999) = 4.32 min).
 
@@ -29,7 +29,7 @@ Now assume failures are cascading, so one service being unavailable means the wh
 
 So your multi-tenancy application is unavailable for more than two hours every month for every customer!
 
-In order to avoid such scenarios, we need to equip applications with the ability to deal with failure. If an application can deal with failures, we call it **resilient**. So **resilience** is the means by which we achieve **availability**.
+In order to avoid such scenarios, we need to equip applications with the ability to deal with failure. If an application can deal with failures, it is called **resilient**. So **resilience** is the means by which we achieve **availability**.
 
 [DONE]
 [ACCORDION-END]
@@ -46,7 +46,7 @@ The SAP Cloud SDK now builds upon the `Resilience4j` library in order to provide
 
 - **Circuit Breakers:** `Resilience4j` uses the circuit breaker pattern to determine whether a remote service is currently available. Breakers are closed by default. If a remote service call fails too many times, `Resilience4j` will open/trip the breaker. This means that any further calls that should be made to the same remote service are automatically stopped. `Resilience4j` will periodically check if the service is available again, and close the open breaker again accordingly. For more information on the circuit breaker pattern, check [this article by Martin Fowler](https://martinfowler.com/bliki/CircuitBreaker.html).
 
-Additionally, the SAP Cloud SDK enables you to provide fallback functions. So if a call fails, for example because the bulkhead is saturated or the circuit breaker is open/tripped, the SDK will check whether a fallback is implemented and call it automatically. So even if a service is unavailable we can still provide some useful result, e.g. by serving cached data.
+Additionally, the SAP Cloud SDK enables you to provide fallback functions. So if a call fails, for example because the bulkhead is saturated or the circuit breaker is open/tripped, the SDK will check whether a fallback is implemented and call it automatically. So even if a service is unavailable you can still provide some useful result, e.g. by serving cached data.
 
 If you want to gain a deeper understanding of the inner workings, checkout the [`Resilience4j` User Guide] (https://resilience4j.readme.io).
 
@@ -55,11 +55,11 @@ If you want to gain a deeper understanding of the inner workings, checkout the [
 
 [ACCORDION-BEGIN [Step 3: ](Make your OData call resilient)]
 
-Now that we have covered why resilience is important, it's finally time to introduce it into our application. In the last tutorial we created a simple servlet that uses the SDK's Virtual Data Model (VDM) and other helpful abstractions to retrieve business partners from an ERP system. In order to make this VDM call resilient, we have to wrap the code using the `ResilienceDecorator` class provided by the SAP Cloud SDK.
+Now that we have covered why resilience is important, it's finally time to introduce it into your application. In the last tutorial you created a simple servlet that uses the SDK's Virtual Data Model (VDM) and other helpful abstractions to retrieve business partners from an ERP system. In order to make this VDM call resilient, you have to wrap the code using the `ResilienceDecorator` class provided by the SAP Cloud SDK.
 
-At the same time we will also separate the VDM call itself into another class for better readability and easier maintenance in future tutorials. Note that starting with version 3 of the SAP Cloud SDK, a separate class is no longer required to implement resilience. We could have also added resilience directly to the existing `BusinessPartnerServlet` class.
+At the same time you will also separate the VDM call itself into another class for better readability and easier maintenance in future tutorials. Note that starting with version 3 of the SAP Cloud SDK, a separate class is no longer required to implement resilience. You could have also added resilience directly to the existing `BusinessPartnerServlet` class.
 
-So first we will create the following class:
+So first create the following class:
 
 `./application/src/main/java/com/sap/cloud/sdk/tutorial/GetBusinessPartnersCommand.java`
 
@@ -77,8 +77,8 @@ import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceDecorator;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceIsolationMode;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
+import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
 import com.sap.cloud.sdk.datamodel.odata.helper.Order;
-import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
 
 import com.sap.cloud.sdk.s4hana.connectivity.ErpHttpDestination;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.AddressEmailAddress;
@@ -89,6 +89,9 @@ import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerS
 
 public class GetBusinessPartnersCommand {
     private static final Logger logger = LoggerFactory.getLogger(GetBusinessPartnersCommand.class);
+    // TODO: uncomment the lines below and insert your API key, if you are using the sandbox service
+    // private static final String APIKEY_HEADER = "apikey";
+    // private static final String SANDBOX_APIKEY = "";
     private static final String CATEGORY_PERSON = "1";
     private final ErpHttpDestination destination;
 
@@ -110,7 +113,7 @@ public class GetBusinessPartnersCommand {
                                 .timeoutDuration(Duration.ofMillis(10000)))
                 .bulkheadConfiguration(
                         ResilienceConfiguration.BulkheadConfiguration.of()
-                                .maxConcurrentCalls(20));        
+                                .maxConcurrentCalls(20));
     }
 
     public List<BusinessPartner> execute() {
@@ -140,7 +143,9 @@ public class GetBusinessPartnersCommand {
                     .filter(BusinessPartner.BUSINESS_PARTNER_CATEGORY.eq(CATEGORY_PERSON))
                     .orderBy(BusinessPartner.LAST_NAME, Order.ASC)
                     .top(200)
-                    .execute(destination);
+                    // TODO: uncomment the line below, if you are using the sandbox service
+                    // .withHeader(APIKEY_HEADER, SANDBOX_APIKEY)
+                    .executeRequest(destination);
         } catch (ODataException e) {
             throw new ResilienceRuntimeException(e);
         }
@@ -148,13 +153,13 @@ public class GetBusinessPartnersCommand {
 }
 ```
 
-To use the `ResilienceDecorator` we need at least two things:
+To use the `ResilienceDecorator` you need at least two things:
 
-1. The code we want to execute in a resilient manner. It can be either a `Supplier`, `Callable`, `Supplier<Future>`, method reference, or a simple lambda function. As you might have noticed already, we have simply taken the VDM-based code that calls our OData service from the previous tutorial, and put it into a separate run() method. The `ResilienceDecorator` offers methods that simply wrap the provided function and returns a new function (`decorateSupplier`, `decorateCallable`, etc.), plus methods that also start execution the function immediately (`executeSupplier`, `executeCallable`, etc.). Here we used `executeSupplier` with a method reference to the VDM-based code.
+1. The code you want to execute in a resilient manner. It can be either a `Supplier`, `Callable`, `Supplier<Future>`, method reference, or a simple lambda function. As you might have noticed already, the example simply takes the VDM-based code that calls the OData service from the previous tutorial, and puts it into a separate run() method. The `ResilienceDecorator` offers methods that simply wrap the provided function and returns a new function (`decorateSupplier`, `decorateCallable`, etc.), plus methods that also start execution the function immediately (`executeSupplier`, `executeCallable`, etc.). Here `executeSupplier` is used with a method reference to the VDM-based code.
 
-2. An instance of `ResilienceConfiguration` with identifier parameter set. Here we use the class reference, but a string identifier can also be used. Besides the mandatory identifier parameter, the SAP Cloud SDK comes with a default resilience configuration, so you don't need to perform any other configuration on your own. In most cases the default configuration will suffice. However, if you need to change the resilience configuration, you can find more information on this topic in [SAP Cloud SDK Javadoc](https://help.sap.com/doc/ae45330c443b42c5a54bde85dd70aec9/1.0/en-US/com/sap/cloud/sdk/cloudplatform/resilience/ResilienceConfiguration.html)
+2. An instance of `ResilienceConfiguration` with identifier parameter set. Here the example uses the class reference, but a string identifier can also be used. Besides the mandatory identifier parameter, the SAP Cloud SDK comes with a default resilience configuration, so you don't need to perform any other configuration on your own. In most cases the default configuration will suffice. However, if you need to change the resilience configuration, you can find more information on this topic in [SAP Cloud SDK Javadoc](https://help.sap.com/doc/ae45330c443b42c5a54bde85dd70aec9/1.0/en-US/com/sap/cloud/sdk/cloudplatform/resilience/ResilienceConfiguration.html)
 
-Here is an example of a custom resilience configuration. Here we set the isolation mode to optional tenant + user, the bulkhead maximum concurrent calls to 20, and the execution timeout to 10000 milliseconds.
+Here is an example of a custom resilience configuration. Here the isolation mode is set to optional tenant + user, the bulkhead maximum concurrent calls to 20, and the execution timeout to 10000 milliseconds.
 
 ```Java
 myResilienceConfig = ResilienceConfiguration.of(BusinessPartnerService.class)
@@ -167,10 +172,10 @@ myResilienceConfig = ResilienceConfiguration.of(BusinessPartnerService.class)
                         .maxConcurrentCalls(20));
 ```
 
-Additionally, the `decorate...` and `execute...` methods of `ResilienceDecorator` support an optional third parameter for a fallback function, in case the remote service call should fail. In this case we have a lambda function that returns an empty list. We could also serve static data or check whether we have already cached a response to this call. Best practice is to at least log the provided `Throwable`.
+Additionally, the `decorate...` and `execute...` methods of `ResilienceDecorator` support an optional third parameter for a fallback function, in case the remote service call should fail. In this case a lambda function that returns an empty list is used. You could also serve static data or check whether a response to this call has already been cached. Best practice is to at least log the provided `Throwable`.
 
 
-Update your resilience configuration to match the above configuration. Now that we have a working command, we need to adapt our `BusinessPartnerServlet` to use our newly created command:
+Update your resilience configuration to match the above configuration. Now that you have a working command, you need to adapt your `BusinessPartnerServlet` to use the newly created command:
 
 `./application/src/main/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServlet.java`
 
@@ -223,7 +228,7 @@ public class BusinessPartnerServlet extends HttpServlet {
 }
 ```
 
-Thanks to our new `GetBusinessPartnersCommand`, we can now simply create a new command and execute it. As before, we get a list of business partners as result. But now we can be sure that our application will not stop working all-together if the OData service is temporarily unavailable for any tenant.
+Thanks to your new `GetBusinessPartnersCommand`, you can now simply create a new command and execute it. As before, you'll get a list of business partners as result. But now you can be sure that your application will not stop working all-together if the OData service is temporarily unavailable for any tenant.
 
 
 [DONE]
@@ -232,11 +237,9 @@ Thanks to our new `GetBusinessPartnersCommand`, we can now simply create a new c
 
 [ACCORDION-BEGIN [Step 4: ](Write tests for the resilient command)]
 
-There is one thing we need to address in order to properly test our code: we need to provide our tests with an ERP endpoint.
+There is one thing you need to address in order to properly test your code: you need to provide your tests with an ERP endpoint.
 
-The following steps assume that you stored your system information and credentials in `systems.yml`and `credentials.yml` file. Revisit steps 9 and 10 of the [previous tutorial] (https://developers.sap.com/tutorials/s4sdk-odata-service-cloud-foundry.html) if you have not set them up just yet.
-
-Now let's adapt the code inn our integration test to check, if our fallback is working correctly:
+Now let's adapt the code in your integration test to check, if your fallback is working correctly:
 
  `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
 
@@ -263,6 +266,7 @@ import java.net.URL;
 import com.sap.cloud.sdk.cloudplatform.connectivity.DefaultDestination;
 import com.sap.cloud.sdk.cloudplatform.connectivity.Destination;
 import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
+import com.sap.cloud.sdk.testutil.MockDestination;
 import com.sap.cloud.sdk.testutil.MockUtil;
 
 import static io.restassured.RestAssured.when;
@@ -296,11 +300,12 @@ public class BusinessPartnerServletTest {
 
     @Test
     public void testService() {
-        mockUtil.mockErpDestination("MyErpSystem", "ERP_001");
+        // TODO: insert your service URL down below
+        mockUtil.mockDestination(MockDestination.builder(DESTINATION_NAME, URI.create("https://URL")).build());
         // HTTP GET response OK, JSON header and valid schema
         when()
                 .get("/businesspartners")
-        .then()
+                .then()
                 .statusCode(200)
                 .contentType(ContentType.JSON)
                 .body(jsonValidator_List);
@@ -320,12 +325,28 @@ public class BusinessPartnerServletTest {
                 .body("", Matchers.hasSize(0));
     }
 }
-
 ```
 
-With `testWithFallback()` we added a test to test our resilience. We intentionally provide a destination (localhost) that does not provide the called OData service in order to make the command fail. Since we implemented a fallback for our command that returns an empty list, we assert that we actually receive an empty list as response.
+Make sure to replace the URL in line 58 with the one of your service (e.g. `http://localhost:3000` for a locally deployed mock server), or otherwise the test will fail.
 
-Simply run  `mvn clean install` as in the previous tutorials to test and build your application. Consider the following before deploying to Cloud Foundry.
+>If you are using a service other than the SAP Business Hub sandbox service or the mock server (see steps 1 and 10 of the [previous tutorial](s4sdk-odata-service-cloud-foundry)), i.e., you stored your system information and your credentials in the `systems.yml` and `credentials.yml` files, change your test code like this:
+```Java
+@Test
+public void testService() {
+    mockUtil.mockDestination(DESTINATION_NAME, "ERP_001");
+    // HTTP GET response OK, JSON header and valid schema
+    when()
+            .get("/businesspartners")
+            .then()
+            .statusCode(200)
+            .contentType(ContentType.JSON)
+            .body(jsonValidator_List);
+}
+```
+
+With `testWithFallback()` you added a test to test your resilience. The example intentionally provides a destination (localhost) that does not provide the called OData service in order to make the command fail. Since you implemented a fallback for your command that returns an empty list, you can assert that the response actually contains an empty list.
+
+Simply run  `mvn clean install` as in the previous tutorials to test and build your application.
 
 [DONE]
 [ACCORDION-END]

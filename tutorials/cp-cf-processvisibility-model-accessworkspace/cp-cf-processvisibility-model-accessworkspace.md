@@ -3,15 +3,15 @@ title: Track the Workflow Using the Process Workspace Application
 description: Track the workflow in real time and analyze performance indicators to gain insights on the needed improvements.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud]
-primary_tag: products>sap-cloud-platform
-author_name: Deeksha R
-author_profile: https://github.com/Deeksha-R
+tags: [tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
+author_name: Kavya M Gowda
+author_profile: https://github.com/I540620
 ---
 
 ## Prerequisites
- - Setup the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
- - Process the data by using Monitor Visibility Scenarios application. For more information, see the [Monitor Your Visibility Scenarios](cp-cf-processvisibility-model-monitorscenario) tutorial.
+ - Ensure that you have setup the **Workflow Management** service to access the **Process Workspace** application. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
+ - Process the data by using **Monitor Visibility Scenarios** application. For more information, see the [Monitor Your Visibility Scenarios](cp-cf-processvisibility-model-monitorscenario) tutorial.
 
 ## Details
 ### You will learn
@@ -19,13 +19,13 @@ author_profile: https://github.com/Deeksha-R
 
 You can track the workflow in real-time and analyze performance indicators to gain insights on the needed improvements.
 
-SAP Cloud Platform Process Visibility provides the Process Workspace application to gain visibility on end-to-end processes for line-of-business users. It enables you to track processes in real-time, search and filter instances, analyze performance indicators, and view detailed information about an instance.
+SAP Process Visibility service provides the Process Workspace application to gain visibility on end-to-end processes for line-of-business users. It enables you to track processes in real-time, search and filter instances, analyze performance indicators, and view detailed information about an instance.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Access the Process Workspace)]
 
-Log on to the Workflow Management home screen and choose the  **Process Workspace** tile.
+Log on to **Workflow Management** home screen and choose the  **Process Workspace** tile.
     !![Home screen](homescreen.png)
 
 [DONE]

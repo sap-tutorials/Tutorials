@@ -3,7 +3,7 @@ title: Enable Mobile Services App Development Tools in Neo Environment
 description: Find the Mobile Services related extension in SAP Web IDE, enable it, save it, and refresh the browser.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, tutorial>license ]
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform,  products>mobile-development-kit-client, products>sap-mobile-services, tutorial>license ]
 time: 5
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -15,7 +15,7 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enable Mobile Services App Development Tools extension)]
+[ACCORDION-BEGIN [Step 1: ](Enable Mobile Services app development tools extension)]
 
 1. In SAP Web IDE, open **Preferences** window by clicking the gear icon and click **Extensions**.
 
@@ -36,6 +36,11 @@ author_profile: https://github.com/jitendrakansal
     !![MDK](img_008.png)
 
 Congratulations! You have done with the setup required to get start with MDK and you are now all set to create your MDK project.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]

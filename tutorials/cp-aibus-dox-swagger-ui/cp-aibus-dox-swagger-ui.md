@@ -3,7 +3,7 @@ title: Use Machine Learning to Extract Information from Documents with Swagger U
 description: Get machine learning model predictions for the documents you upload to Document Information Extraction.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
@@ -23,7 +23,7 @@ You will use Swagger UI, via any web browser, to call the Document Information E
 
 In the service key you created for Document Information Extraction in the previous tutorial: [Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key), you should find (outside the `uaa` section of the service key) an entry called `url` and another entry called `swagger` (as highlighted in the image below).
 
-1. To access the Document Information Extraction Swagger UI, add the `swagger` value (**`/document-information-extraction/v1`**) to the `url` value, paste it in any web browser and press **Enter**.
+1. To access the Document Information Extraction Swagger UI, add the `swagger` value (`/document-information-extraction/v1`) to the `url` value, paste it in any web browser and press **Enter**.
 
     !![DOX](png-files/service-key-details.png)
 
@@ -49,7 +49,7 @@ In the service key you created for Document Information Extraction in the previo
 
 [ACCORDION-BEGIN [Step 2: ](See list of document fields you can extract)]
 
-Use the **GET /capabilities** endpoint to see a list of document fields you can extract with Document Information Extraction.
+Use the **GET /capabilities** endpoint to see the list of document fields and enrichment data for each document type you can process with Document Information Extraction.
 
 Click the endpoint name to expand it, click **Try it out**, and then **Execute**.
 
@@ -67,44 +67,11 @@ You should receive a response like the following:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create client)]
+[ACCORDION-BEGIN [Step 3: ](Get client)]
 
-To use Document Information Extraction, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
+When you create a service instance for Document Information Extraction, a `default` client is automatically created. A client is used in most of the endpoints to distinguish and separate data.
 
-You can either create a single client or multiple clients in the **payload** field of the **POST /clients** endpoint. The **`clientId`** values created here will be used in other service endpoints.
-
-1. Expand the **POST /clients** endpoint.
-
-2. Click **Try it out**.
-
-3. Enter your **`clientId`** and **`clientName`** values in the **payload** field in the format you see in **Examples for payload parameter** (`c_00` and `client 00`, for example).
-
-4. Click **Execute**.
-
-!![DOX](png-files/createClient.png)
-
-You should receive a response like the following:
-
-!![DOX](png-files/createClientResponse.png)
-
-
->**CAUTION:**
-
->Be aware of the following Document Information Extraction trial account limitations:​
-
->- Maximum 40 uploaded document pages per week​ (the documents can have more than 1 page)
-
->- Maximum 1 created `clientId`
-
->- Maximum 10 created enrichment `dataIds`
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 4: ](See created clients)]
-
-To see a list of the clients you have created:
+Trial users can only create one client. To see your list of clients:
 
 1. Expand the **GET /clients** endpoint.
 
@@ -124,7 +91,65 @@ You should receive a response like the following:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Upload document)]
+[ACCORDION-BEGIN [Step 4: ](Delete client)]
+
+Use the **DELETE /clients** endpoint to delete the `default` client.
+
+1. Expand the **DELETE /clients** endpoint.
+
+2. Click **Try it out**.
+
+3. Enter in the **payload** field the client id (`default`) you want to delete.
+
+4. Click **Execute**.
+
+!![DOX](png-files/deleteClient.png)
+
+You should receive a response like the following:
+
+!![DOX](png-files/deleteClientResponse.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 5: ](Create client)]
+
+Use the **POST /clients** endpoint to create your own client. The **`clientId`** value created here will be used in other service endpoints.
+
+1. Expand the **POST /clients** endpoint.
+
+2. Click **Try it out**.
+
+3. Enter your **`clientId`** and **`clientName`** values in the **payload** field in the format you see in **Examples for payload parameter** (`c_00` and `client 00`, for example).
+
+4. Click **Execute**.
+
+!![DOX](png-files/createClient.png)
+
+You should receive a response like the following:
+
+!![DOX](png-files/createClientResponse.png)
+
+You can repeat step 3 to see the **`clientId`** and **`clientName`** of the client you have just created.
+
+
+>**CAUTION:**
+
+>Be aware of the following Document Information Extraction trial account limitations:​
+
+>- Maximum 40 uploaded document pages per week​ (the documents can have more than 1 page)
+
+>- Maximum 1 created `clientId`
+
+>- Maximum 10 created enrichment `dataIds`
+
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 6: ](Upload document)]
 
 >Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
 
@@ -147,7 +172,7 @@ Do the following:
 
 3. Upload a document file.
 
-4. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 3 (`c_00`, for example), and the document type (`invoice`, for example). In this case, you can use the following:
+4. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client you created in step 5 (`c_00`, for example), and the document type (`invoice`, for example). In this case, you can use the following:
 
     ```JSON
     {
@@ -207,7 +232,7 @@ Copy the **`id`** from the **Response body** to see the result of the extraction
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](See extracted fields)]
+[ACCORDION-BEGIN [Step 7: ](See extracted fields)]
 
 You can now use the **GET /document/jobs/{`id`}** endpoint to receive the prediction.
 
@@ -235,27 +260,7 @@ If the status of the document (indicated by the **status** field) is **PENDING**
 
 You have now successfully used our machine learning model to get field value predictions for the document you uploaded to Document Information Extraction.
 
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 7: ](Delete client)]
-
-If you want to delete a client you created in Step 3, use the **DELETE /clients** endpoint.
-
-1. Expand the **DELETE /clients** endpoint.
-
-2. Click **Try it out**.
-
-3. Enter in the **payload** field the client id you want to delete (`c_00`, for example).
-
-4. Click **Execute**.
-
-!![DOX](png-files/deleteClient.png)
-
-You should receive a response like the following:
-
-!![DOX](png-files/deleteClientResponse.png)
+You can repeat step 4 and delete the client you created in step 5.
 
 Congratulations, you have completed this tutorial.
 

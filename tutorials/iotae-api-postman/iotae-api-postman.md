@@ -3,7 +3,7 @@ title: Call SAP IoT APIs with Postman
 description: Use a REST client (Postman) to call SAP IoT APIs.
 auto_validation: true
 primary_tag: topic>internet-of-things
-tags: [  tutorial>beginner, products>sap-api-management, topic>internet-of-things, products>sap-leonardo-iot ]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform, products>sap-analytics-cloud]
 time: 15
 ---
 
@@ -12,36 +12,31 @@ time: 15
  - Access to a tenant specific to SAP IoT. In this tutorial, tenant `democompany` is used.
 
 ## Details
-### You will learn  
-  - How to Use Postman to access SAP IoT APIs.
+### You will learn
+- How to retrieve OAuth token to access APIs
+- How to read thing metadata
+- How to onboard a thing and create data
 
-
-#### Application Router
-
-Access to SAP IoT is usually routed through an application router as the single entry point for consumers. The application router handles the user authentication against **SAP User Account and Authentication Service (UAA)**. In addition, the service retains the generated JWT token for the duration of the client logon session. You can define multiple application routers per tenant and you can use one of the router to access SAP IoT.
-
-#### Tenant-specific Application Router
-
-SAP IoT offers tenant-specific application router to access the different backend services such as configuration, business partner, and thing services. For example, you can access the configuration services for the tenant `democompany` using the application router URL <https://democompany.iot-sap.cfapps.eu10.hana.ondemand.com/config-package-sap/Package/v1/Packages>. You can use your system username and password when the system prompts for credentials.
-
-The following illustrates the different parts of tenant-specific application router:
-
-| Field | Description |
-|:------|:--------------|
-|`democompany`|Tenant name|
-|`iot-sap`|Name of the application router used to access SAP IoT|
-|`cfapps.eu10`|Technology and the region|
-|`Config-package-sap`|Name of the application you are accessing using the application router|
-|`Package/v1/Packages`|API endpoint you are accessing within the application|
-
-For more information about the authorization concept of the SAP IoT platform, see <https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/latest/en-US> | **Authorization**.
-
+In [previous tutorials](iot-express-4-create-thing-model), you learned about using Thing Modeler to onboard a thing, send data to the thing, and retrieve data from the thing. Now, you'll learn to access SAP IoT APIs using Postman.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Display package details)]
+[ACCORDION-BEGIN [Step 1: ](Retrieve OAuth Token)]
 
-Use Postman client to retrieve the OAuth token specific for your tenant. For more information, see [Accessing SAP IoT APIs Using OAuth Token](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/latest/en-US/7b3a94e68be9460680a915138a160c67.html). The retrieved token is used to access the API endpoints described in this tutorial.
+You can retrieve the OAuth token specific for your tenant using Postman. The retrieved token is used to access the API endpoints described in this tutorial.
+
+For more information, see
+
+- [How to retrieve OAuth Token](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/latest/en-US/7b3a94e68be9460680a915138a160c67.html)
+
+- [Authorization concept in SAP IoT](https://help.sap.com/viewer/fffd6ca18e374c2e80688dab5c31527f/latest/en-US/5f1a38d7048042fa8c00314bc619e262.html)
+
+[DONE]
+
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 2: ](Display package details)]
 
 1. In Postman, choose the **GET** method.
 
@@ -85,7 +80,7 @@ Use Postman client to retrieve the OAuth token specific for your tenant. For mor
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Read thing type details)]
+[ACCORDION-BEGIN [Step 3: ](Read thing type details)]
 To create data for a thing, you must identify the property set type that is used to define property sets for a thing type. Firstly, identify thing types that belong to a package, and then read details of a thing type along with its property sets and properties.
 
 1. In Postman, choose the **GET** method.
@@ -304,7 +299,7 @@ To create data for a thing, you must identify the property set type that is used
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Onboard computer device as a thing)]
+[ACCORDION-BEGIN [Step 4: ](Onboard computer device as a thing)]
 Object group is a technical object used for assigning object-based authorizations to user groups. When you assign an object group to a thing, you are allowed to carry out the functions based on the capabilities defined for the user group. You must identify what object group to use while creating a thing.
 
 1. In Postman, choose the **GET** method.
@@ -382,7 +377,7 @@ Object group is a technical object used for assigning object-based authorization
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create time series data)]
+[ACCORDION-BEGIN [Step 5: ](Create time series data)]
 Using API endpoints is one of the ways to directly ingest data for a thing. Alternatively, using device management too you can ingest data for a thing.
 
 1. In Postman, choose the **PUT** method.
@@ -426,7 +421,7 @@ Using API endpoints is one of the ways to directly ingest data for a thing. Alte
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Read time series data)]
+[ACCORDION-BEGIN [Step 6: ](Read time series data)]
 1. In Postman, choose the **GET** method.
 
 2. Enter the following request URL:
@@ -469,7 +464,7 @@ Using API endpoints is one of the ways to directly ingest data for a thing. Alte
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Explore IoT APIs in SAP API Hub (optional))]
+[ACCORDION-BEGIN [Step 7: ](Explore IoT APIs in SAP API Hub (optional))]
 To better understand SAP IoT APIs, you can go to SAP API Hub at <https://api.sap.com/package/IOTAE?section=Artifacts> and review and execute different APIs in its sandbox.
 
 [DONE]

@@ -239,8 +239,6 @@ This is a development step strictly related to React, and it involves passing th
     );
     ```
 
-[DONE]
-
 [VALIDATE_1]
 [ACCORDION-END]
 

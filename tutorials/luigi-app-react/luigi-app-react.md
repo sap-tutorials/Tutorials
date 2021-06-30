@@ -143,7 +143,7 @@ This step prepares you for development. In order to be able to use `webpack` and
     cd react-core-mf
     ```
 
-2. Trigger eject command:
+2. Trigger eject command. Note that due to the way this command works, it is possible the `npm run eject` fails. If you get an error, you need to commit any changes before running the command. More information can be found [here](https://stackoverflow.com/questions/45671057/how-to-run-eject-in-my-react-app).
 
     ```Shell
     npm run eject
@@ -208,16 +208,25 @@ In this step, we configure `webpack` and adjust dependencies in order to make it
 
 1. Go to `react-core-mf/config/webpack-config.js`
 
-2. At line 27, add:
+2. Around line 27, next to the other similar entries, add:
 
     ```JavaScript
-    const CopyWebpackPlugin = require('copy-webpack-plugin')
+    const CopyWebpackPlugin = require('copy-webpack-plugin');
     ```
 
-3. Remove the following line from the file (use search/find and replace, it should be at line 19 and line 311).
+3. Remove the following line from the file:
 
     ```JavaScript
     const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
+    ```
+
+    In the second occurrence, remove the whole entry as well:
+
+    ```JavaScript
+    new ModuleScopePlugin(paths.appSrc, [
+      paths.appPackageJson,
+      reactRefreshOverlayEntry,
+    ]),
     ```
 
 4. Find the `plugins` section around line 510. Replace its content with:
@@ -233,7 +242,7 @@ In this step, we configure `webpack` and adjust dependencies in order to make it
            },
            {
              from: 'node_modules/@luigi-project/core',
-             	             to: './luigi-core'
+             to: './luigi-core'
            }
          ]
        },
@@ -380,17 +389,15 @@ In this step, you will create more React micro-frontends including a product lis
     ```XML
     import React from 'react';
     import { MessageStrip, Avatar, LayoutPanel, LayoutGrid } from 'fundamental-react';
-    import { linkManager } from '@luigi-project/client';
 
     const NO_AVAILABLE_PRODUCT_MSG = 'Unfortunately, there is no available product at this moment.';
-    const navigateToDetail = (id) => linkManager().navigate('/home/products/' + id);
     const panelStyle = { cursor: 'pointer' };
 
     export const List = ({ items }) => (
        (items.length === 0) ? <MessageStrip type='error'>{NO_AVAILABLE_PRODUCT_MSG}</MessageStrip>
        : items.map(({id, name, price, icon, stock}) => {
            return (
-                <LayoutPanel key={id} style={panelStyle} onClick={()=>navigateToDetail(id)}>
+                <LayoutPanel key={id} style={panelStyle}>
                     <LayoutPanel.Header>
                         <LayoutPanel.Head  title={name} />
                     </LayoutPanel.Header>
@@ -547,7 +554,7 @@ In this step, you will add the `ProductDetail.jsx` view to the app. You will be 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Use Luigi link manager for routing)]
+[ACCORDION-BEGIN [Step 12: ](Use Luigi link manager for routing)]
 
 Instead of using React, in this step we we will use Luigi to provide routing on the micro-frontend side. Luigi Client's [`linkManager`](https://docs.luigi-project.io/docs/luigi-client-api/?section=linkmanager) function is the simplest way to navigate to the `id` page for each product.
 
@@ -567,22 +574,22 @@ Instead of using React, in this step we we will use Luigi to provide routing on 
     }
     ```
 
-4. Add `onClick` event at the `Tile` component:
+4. Add `onClick` event at the `LayoutPanel` component:
 
     ```JavaScript
-    <Tile isDouble key={id} onClick={() => navigateToDetail(id)} size='m'>
+    <LayoutPanel key={id} style={panelStyle} onClick={()=>navigateToDetail(id)}>
     ```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Run your core app)]
+[ACCORDION-BEGIN [Step 13: ](Run your core app)]
 
 In this step, you can check if your core app is configured correctly so far by running it locally.
 
 1. Open a terminal/command prompt window. Navigate to the `react-core-mf` folder.
 
-2. Input `npm start`. Your application should be up and running at <http://localhost:3000/>. You should be able to see the homepage and "Products" view.
+2. Input `npm start`. Your application should be up and running at `http://localhost:3000/`. You should be able to see the homepage and "Products" view.
 
 [VALIDATE_1]
 [ACCORDION-END]

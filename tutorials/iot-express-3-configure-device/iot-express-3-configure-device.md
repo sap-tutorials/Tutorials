@@ -1,9 +1,9 @@
 ---
 title: Assemble and Configure Device Hardware
 description: Assemble device hardware, configure device firmware and deploy it in the field.
-primary_tag: topic>internet-of-things
 auto_validation: true
-tags: [  tutorial>beginner, products>sap-leonardo-iot, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform]
+primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform]
 time: 30
 ---
 
@@ -38,7 +38,7 @@ Using the provided wires, connect GND (or - on some boards) from the temperature
 
 [ACCORDION-BEGIN [Step 2: ](Install the operating system for the Pi)]
 
-The last step missing before you can use the Raspberry Pi is to install an operating system on the micro SD card. On Windows and Mac, we recommend you use the etcher application available from [http://etcher.io](http://etcher.io). Download the latest `Raspbian` image (with desktop) from [https://www.raspberrypi.org/downloads/raspbian/](https://www.raspberrypi.org/downloads/raspbian/) and burn it onto the micro SD card using Etcher. Then, plug the micro SD card into the Raspberry Pi at the bottom.
+The last step missing before you can use the Raspberry Pi is to install an operating system on the micro SD card. On Windows and Mac, we recommend you use the etcher application available from [http://etcher.io](http://etcher.io). Download the latest `Raspbian` image (with desktop) from [https://www.raspberrypi.org/software/](https://www.raspberrypi.org/software/) and burn it onto the micro SD card using Etcher. Then, plug the micro SD card into the Raspberry Pi at the bottom.
 
 Your Pi is now in a factory default state. The next step will be to install firmware and configure it based on a device created in IoT Service for Cloud Foundry.
 
