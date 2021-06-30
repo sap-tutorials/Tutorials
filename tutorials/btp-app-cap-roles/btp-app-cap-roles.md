@@ -44,10 +44,9 @@ To enable authentication support in CAP, the [passport](http://www.passportjs.or
 2. Install the `passport` module.
 
     ```Shell/Bash
-    npm install --save passport
+    npm install passport
     ```
 
-    > The `--save` part makes sure it's also added as a dependency to your project's `package.json`.
 
 [VALIDATE_1]
 
@@ -109,7 +108,7 @@ CAP offers a possibility to add local users for testing as part of the `cds` con
 2. Let's look at the `risk.manager@tester.sap.com` example:
 
     <!-- cpes-file .cdsrc.json:$.*.*.*.users[?(@.ID=="risk.manager@tester.sap.com")] -->
-    ```JSON[8-17]
+    ```JSON[7-14]
     {
       "[development]": {
         "auth": {
@@ -120,9 +119,6 @@ CAP offers a possibility to add local users for testing as part of the `cds` con
               "risk.manager@tester.sap.com": {
                 "password": "initial",
                 "ID": "risk.manager@tester.sap.com",
-                "userAttributes": {
-                  "email": "risk.manager@tester.sap.com"
-                },
                 "roles": [
                   "RiskManager"
                 ]
