@@ -30,7 +30,7 @@ author_profile: https://github.com/Paolaufer
 
     !![Choose Name](add-name.png)
 
-4. Choose **SAP Full Stack Cloud Application** as the application type.
+4. Choose **Full Stack Cloud Application** as the application type.
 
     !![Choose SAP Cloud](select-devspace.png)
 

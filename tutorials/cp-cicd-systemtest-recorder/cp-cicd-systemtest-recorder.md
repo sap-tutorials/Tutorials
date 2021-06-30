@@ -31,8 +31,6 @@ author_profile: https://github.com/SarahLendle
 - How to create a CI/CD pipeline with project "Piper"
 - How to add system tests as automated steps to your CI/CD pipeline
 
-> This tutorial only applies to SAPUI5 in version 1.74 or higher. If you use an older version of SAPUI5, have a look at [Add Automated System Tests to Your CI/CD Pipeline](cp-cicd-sytem-test), instead.
-
 ### What Is This Tutorial About?
 
 In this tutorial, you'll create and run automated system tests with UIVeri5 against a simple shopping app for electronic devices. Your test application has basic functions such as a product catalog sorted by categories, a search option, and an *add to cart* function.
@@ -96,7 +94,7 @@ In Visual Studio Code, set up your UIVeri5 test project.
 3. Use the following command to call the generator for UIVeri5 tests:
 
     ```Shell/Bash
-    yo easy-ui5:uiveri5
+    yo easy-ui5 project uiveri5
     ```
 
     Now, you're asked a couple of questions that help the generator create your test structure.
@@ -451,7 +449,7 @@ Check if the following two statements are true:
 13. Enter the following command:
 
     ```Shell/Bash
-    yo easy-ui5:newuiveri5po
+    yo easy-ui5 project newuiveri5po
     ```
 
 14. Answer the questions that help the generator create your new page object as follows:

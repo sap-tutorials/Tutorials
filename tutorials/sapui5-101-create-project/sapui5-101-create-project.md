@@ -31,13 +31,6 @@ time: 15
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Create a UI5 destination)]
-
-[Create a new destination](cp-cf-create-destination) of the name "ui5" that points to the URL `https://sapui5.hana.ondemand.com/`. This is where we'll pull the standard UI5 libs from later.
-
-
-[DONE]
-[ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Connect to a Cloud Foundry endpoint)]
 
 Make sure you are connected to a Cloud Foundry endpoint to which you will deploy the SAPUI5 application later.

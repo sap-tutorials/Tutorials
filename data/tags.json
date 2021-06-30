@@ -227,6 +227,9 @@
             "name": "SAP IoT services for SAP BTP",
             "value": "products>sap-iot-services-for-sap-btp"
         }, {
+            "name": "SAP IQ",
+            "value": "products>sap-iq"
+       }, {
             "name": "SAP Jam",
             "value": "products>sap-jam"
         }, {
@@ -287,8 +290,14 @@
             "name": "SAP Web IDE",
             "value": "products>sap-web-ide"
         }, {
+            "name": "SAP Work Zone",
+            "value": "products>sap-work-zone"
+        }, {
             "name": "License Required",
             "value": "tutorial>license"
+        }, {
+            "name": "Free Tier",
+            "value": "tutorial>free-tier"
         }
     ]
 }

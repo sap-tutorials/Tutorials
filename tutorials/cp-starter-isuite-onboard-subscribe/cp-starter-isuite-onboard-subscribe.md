@@ -91,7 +91,7 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
     >- Filter for Integration Suite service and select the service.
 
-    >- Select the service plan, add it to your subaccount, and continue with this  tutorial.
+    >- Select the service plan, add it to your subaccount, and continue with this tutorial.
 
 4. Choose the default plan which is **trial** and click **Create**.
 
@@ -122,7 +122,7 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
     !![Intermediate Step](4-1-intermidiate_step.png)
 
-    Click **Next**.
+    Select the **Enable API Business Hub Enterprise** checkbox. Click **Next**.
 
     !![API management](4-1-API_step.png)
 
@@ -132,31 +132,28 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
     !![Activate capabilities](4-2-Activate_capabilities.png)
 
-    The activation may take a while and you will notice the dialog shown here.
-    >**IMPORTANT**: Before you proceed to **Step 4.5**, please wait for all the capabilities to be activated.
+    The activation takes a while to complete.
+    >**IMPORTANT**: Before you proceed to **Step 5**, please wait for all the capabilities to be activated.
 
     !![Activation dialog](4-2-Activation_Dial.png)
 
     >**IMPORTANT**: From the **Provisioning** application you can navigate back to the Integration Suite Launchpad by choosing the **Integration Suite** button on the header.
 
-3. After successful activation, you can view the activated capability tiles on the launchpad. Click on the relevant tile to access the capability.  
-
-    !![URL](4-3-Isuite_launch_new_capab.png)
-
     >To know more about resources offered by the Integration Suite Launchpad, see [Working with Integration Suite Launchpad](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/a53dce3b57ba4915b055343f783300a5.html).
 
-    >To access each capability's tile, you must assign capability-specific roles which is explained in the next step.
+    >To access each capability's tile, you must first assign capability-specific roles which is explained in the next step.
+
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Automatically assign roles and create service instances using Booster)]
 
- In this step, you execute a booster that will assign you the necessary roles to access and use the activated capabilities, and create service instance of Process Integration.
+ In this step, you execute a booster that will assign you the necessary roles to access and use the activated capabilities, and create service instance of Process Integration Runtime.
 
  A **Booster** is a set of guided and interactive steps that enable you to select, configure, and consume services on SAP BTP to achieve a specific technical goal. In this case, the Integration Suite booster will help you with assigning roles and creating service instances.
 
- A **service instance** defines how a service of SAP BTP (in our case, the **Process Integration** service) can be called from a remote component. In the context of Cloud Integration, a service instance is the definition of an OAuth client. The service key generated out of the service instance contains credentials and other information that is required at a later step to call the integration flow.
+ A **service instance** defines how a service of SAP BTP (in our case, the **Process Integration Runtime** service) can be called from a remote component. In the context of Cloud Integration, a service instance is the definition of an OAuth client. The service key generated out of the service instance contains credentials and other information that is required at a later step to call the integration flow.
 
 1. Navigate to the overview page of your SAP BTP global account.
 

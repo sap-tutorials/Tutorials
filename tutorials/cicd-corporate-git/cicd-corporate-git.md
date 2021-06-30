@@ -93,13 +93,13 @@ Enable SAP Continuous Integration and Delivery, assign yourself the administrato
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up the connection with the SAP Connectivity service)]
+[ACCORDION-BEGIN [Step 2: ](Set up the connection with the SAP Cloud Connector)]
 
-Add your subaccount on SAP BTP to the SAP Connectivity service.
+Add your SAP BTP subaccount to the SAP Cloud Connector.
 
-1. In the SAP Connectivity service, choose ![Connector icon in the SAP Connectivity service](icon-connector.png) **Connector** **&rarr;** **Add Subaccount**.
+1. In the SAP Cloud Connector, choose ![Connector icon in the SAP Connectivity service](icon-connector.png) **Connector** **&rarr;** **Add Subaccount**.
 
-    >If you haven't added a subaccount to the SAP Connectivity service yet, the procedure 	is slightly different. In this case, you start at ![Define subaccount icon in the SAP Connectivity service](icon-subaccount.png) **Define Subaccount** and fill in the **First Subaccount** form. The required values, however, are the same.
+    >If you haven't added a subaccount to the Cloud Connector yet, the procedure 	is slightly different. In this case, you start at ![Define subaccount icon in the SAP Connectivity service](icon-subaccount.png) **Define Subaccount** and fill in the **First Subaccount** form. The required values, however, are the same.
 
 2. In the **Add Subaccount** pop-up, enter the following information:
 
