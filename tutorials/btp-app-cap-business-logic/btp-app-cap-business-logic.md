@@ -20,6 +20,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to add custom code to your application
 
 
+
 To continue with this tutorial you can find the result of the previous tutorial in the [`cap/fiori-elements-app`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/fiori-elements-app) branch.
 
 ---
@@ -43,11 +44,12 @@ In this tutorial, you add some custom code to the CAP application. Depending on 
 
 <!-- cpes-file srv/risk-service.js -->
 ```JavaScript
+const cds = require('@sap/cds')
 /**
  * Implementation for Risk Management service defined in ./risk-service.cds
  */
-module.exports = async (srv) => {
-    srv.after('READ', 'Risks', (risksData) => {
+module.exports = cds.service.impl(async function() {
+    this.after('READ', 'Risks', risksData => {
         const risks = Array.isArray(risksData) ? risksData : [risksData];
         risks.forEach(risk => {
             if (risk.impact >= 100000) {
@@ -57,7 +59,7 @@ module.exports = async (srv) => {
             }
         });
     });
-}
+});
 ```
 
 Because your file is called `risk-service.js` and, therefore, has the same name as your application definition file `risk-service.cds`, CAP automatically treats it as a handler file for the application defined in there. CAP exposes several [events](https://cap.cloud.sap/docs/node.js/requests) and you can easily write handlers like the above.

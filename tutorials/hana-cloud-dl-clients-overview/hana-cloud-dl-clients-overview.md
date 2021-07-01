@@ -23,7 +23,7 @@ This tutorial group will provide guidance on setting up a trial instance of [SAP
 
 [ACCORDION-BEGIN [Step 1: ](Overview of Data Lake IQ)]
 
-SAP HANA Cloud includes multiple technologies, including data lake IQ.
+SAP HANA Cloud is composed of multiple components, including data lake IQ.
 
   * SAP HANA is an in-memory, multi-model, column-based, relational database. For further details see [Introduction to SAP HANA Cloud](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/latest/en-US/7a27607b08ba46d5b253365e703b1c1a.html) and [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
 
@@ -31,7 +31,9 @@ SAP HANA Cloud includes multiple technologies, including data lake IQ.
 
     [Data Lake IQ](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/bedae75d1482413d92af8ca7f43d430b.html) is a disk-based, column-oriented relational database for storing and analyzing high volumes of infrequently updated data. Data lake IQ descends from [SAP IQ](https://help.sap.com/viewer/product/SAP_IQ/latest/en-US), which was previously named Sybase IQ. Because of its heritage, there are commonalities with other Sybase products. Many client interface drivers are shared with [SAP SQL Anywhere](https://help.sap.com/viewer/product/SAP_SQL_Anywhere/17.0/en-US) and SAP Adaptive Server Enterprise. Details on compatibility can be found at [Compatibility with Other SAP Database Products](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a5d9e97d84f210158efdd7e4092eac36.html).
 
-    [Data Lake Files](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/502642d7fd0e4a5b9b3a61c8ac4d5ce5.html) can be used to store and access unstructured data such as trace files and structured files like CSV, Parquet, or ORC. Structured files can use [SQL on Files](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/b8ed121f351a4a56a451b9ba6f10f88e.html), which enables SQL queries to be performed on them.
+    [Data Lake Files](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/502642d7fd0e4a5b9b3a61c8ac4d5ce5.html) can be used to store and access unstructured data such as trace files and structured files like CSV, Parquet, or ORC. Structured files can use [SQL on Files](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/b8ed121f351a4a56a451b9ba6f10f88e.html), which enables SQL queries to be performed on them.  
+
+    >Note, that the data lake Files component is currently not available in trial accounts.
 
   * [SAP HANA Cloud, adaptive server enterprise](https://help.sap.com/viewer/46353c3b724f4934bb0671dd82044acd/latest/en-US/7817022aff40482abc431d20275984bb.html) is a disk based, row-oriented, relational database providing extreme online transaction processing.
 
@@ -112,7 +114,7 @@ There are multiple ways to create a data lake:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create tables with SAP HANA database explorer)]
-In this step, a sample HOTEL dataset will created comprising tables, a view, and a stored procedure.
+In this step, a sample HOTEL dataset will be created comprising tables, a view, and a stored procedure.
 
 1. In SAP HANA Cloud Central, use the actions menu to open the SAP HANA database explorer.
 
@@ -124,7 +126,7 @@ In this step, a sample HOTEL dataset will created comprising tables, a view, and
     SELECT CURRENT USER FROM DUMMY;
     SELECT * FROM SYS.SYSINFO;
     SELECT * FROM sa_db_properties() WHERE UPPER(PropName) LIKE '%NAME%';
-    SELECT * from SYS.SYSOPTIONS WHERE UPPER("option") LIKE '%VERIFY%';
+    SELECT * FROM SYS.SYSOPTIONS WHERE UPPER("option") LIKE '%VERIFY%';
     ```
 
     ![SAP HANA database explorer](dbx-query.png)
@@ -235,21 +237,7 @@ In this step, a sample HOTEL dataset will created comprising tables, a view, and
 
     Additional details on the SQL used above can be found at [CREATE TABLE Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a619764084f21015b8039a8346dc622c.html), [CREATE VIEW Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61a051684f210158cced2d83231bd8a.html), and [CREATE PROCEDURE Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a6185b2184f21015b2419a5444b55609.html).
 
-    > Note that autocommit is set to on in the SQL Console, while in DBISQL it is set to off.  A series of insert statements will run quicker in the SQL Console if they are surrounded with begin and end or if autocommit is set to off.
-    >
-    ```SQL
-    begin
-    INSERT INTO ROOM VALUES(11, 'single', 13, 135.00);
-    INSERT INTO ROOM VALUES(11, 'double', 15, 175.00);
-    end;
-    ```
-    >
-    ```SQL
-    set temporary option auto_commit= 'off';
-    INSERT INTO ROOM VALUES(11, 'triple', 7, 235.00);
-    INSERT INTO ROOM VALUES(11, 'quad', 5, 275.00);
-    set temporary option auto_commit= 'on';
-    ```
+    > Note that the identifiers such as the column names in a table are [case-insensitive](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a5e4ad6a84f21015ab0c854d2822461a.html).
 
 For additional details on the SAP HANA database explorer, see the tutorial [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started), which showcases many of its features.
 
@@ -305,7 +293,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
     sudo zypper nano
     >```
 
-    On Linux, this environment variable and others are set in a file named `IQ.sh`.  Configure it to be run each time the shell is started by referencing it in `.bash_profile` or possibly `.bashrc`.
+    On Linux, this environment variable and others are set in a file named `IQ.sh`.  Configure it to be run each time the Bash shell is started by referencing it in `.bash_profile` or possibly `.bashrc`.
 
     Open the `.bash_profile`.
 
@@ -360,8 +348,14 @@ The data lake IQ client install includes Interactive SQL (DBISQL), which can be 
 
     >DBISQL can also be started without a GUI.
     >
-    >```Shell
+    >```Shell (Windows)
     dbisql -hdl -c "uid=HDLADMIN;pwd=myPassword;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
+    >```
+    >
+    > Note that in a Bash shell, strings in double quotes versus single quotes are treated [differently](https://stackoverflow.com/questions/6697753/difference-between-single-and-double-quotes-in-bash).
+    >
+    >```Shell (Linux)
+    dbisql -hdl -c 'uid=HDLADMIN;pwd=myPassword;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)' -nogui
     >```
 
     >![DBISQL connected nogui](dbisql-connected-nogui.png)
@@ -467,7 +461,23 @@ The data lake IQ client install includes Interactive SQL (DBISQL), which can be 
 
     Additional details on the SQL used above can be found at [INSERT Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61fdeff84f21015aa66b9add387d7f9.html).
 
-2. Notice that pressing ctrl-space brings up auto complete (Microsoft Windows only).
+    > Note that autocommit is set to on in the SQL Console of the database explorer, while in DBISQL it is set to off.  A series of insert statements will run quicker in the SQL Console if they are surrounded with begin and end or if autocommit is set to off.
+    >
+    ```SQL
+    begin
+    INSERT INTO ROOM VALUES(11, 'single', 13, 135.00);
+    INSERT INTO ROOM VALUES(11, 'double', 15, 175.00);
+    end;
+    ```
+    >
+    ```SQL
+    set temporary option auto_commit= 'off';
+    INSERT INTO ROOM VALUES(11, 'triple', 7, 235.00);
+    INSERT INTO ROOM VALUES(11, 'quad', 5, 275.00);
+    set temporary option auto_commit= 'on';
+    ```
+
+2. Notice that pressing ctrl-space brings up auto complete (GUI mode only).
 
     ![auto complete](dbisql-auto-complete.png)
 

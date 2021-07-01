@@ -33,7 +33,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to test your SAP Launchpad site
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`launchpad-service-prep`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpad-service-prep) branch.
+To continue with this tutorial you can find the result of the previous tutorial in the [`mta`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/mta) branch.
 
 ---
 
@@ -258,24 +258,25 @@ modules:
 
 1. Install [SAPUI5 tooling](https://www.npmjs.com/package/@sap/ux-ui5-tooling) package as global module:
 
-    ```bash
+    ```Shell/Bash
     npm install -g @sap/ux-ui5-tooling
     ```
+
 2. Install [SAP Fiori application generator](https://www.npmjs.com/package/@sap/generator-fiori) package as global module:
 
-    ```bash
+    ```Shell/Bash
     npm install -g @sap/generator-fiori
     ```
 
 3. Install [MTA](https://www.npmjs.com/package/mta) package as global module:
 
-    ```bash
+    ```Shell/Bash
     npm i -g mta
     ```
 
 4. Delete the file `app/mitigations/.yo-rc.json`, because this makes the SAP Fiori application generator fail.
 
-    ```bash
+    ```Shell/Bash
     rm app/mitigations/.yo-rc.json
     ```
 
@@ -303,13 +304,13 @@ Make sure the last entry in `"devDependencies"` doesn't end with a comma (`,`) c
 
 1. Switch to `app/risks` directory:
 
-    ```bash
+    ```Shell/Bash
     cd app/risks
     ```
 
 2. Add deployment configuration:
 
-    ```bash
+    ```Shell/Bash
     fiori add deploy-config cf
     ```
 
@@ -325,7 +326,7 @@ Make sure the last entry in `"devDependencies"` doesn't end with a comma (`,`) c
 
 1. Repeat the procedure with the `app/mitigations` folder:
 
-    ```bash
+    ```Shell/Bash
     cd ../../app/mitigations
     fiori add deploy-config cf
     ```
@@ -436,7 +437,7 @@ app/*/package-lock.json
 
 1. Build your project with the MTA Build Tool (MBT):
 
-    ```bash
+    ```Shell/Bash
     mbt build -t ./
     ```
 
@@ -444,7 +445,7 @@ app/*/package-lock.json
 
 2. Deploy your project to SAP BTP:
 
-    ```bash
+    ```Shell/Bash
     cf deploy cpapp_1.0.0.mtar
     ```
 
@@ -486,14 +487,13 @@ You have now subscribed to the SAP Launchpad service.
 
     > In case you get the error: `Sorry, we couldn't find  the site`.
 
-    > If you get the error `Sorry, we couldn't find the site. Please contact your site administrator for assistance.` while opening the application, you have to assign your user to the `Launchpad_Admin` role collection.
-
-    > ![Couldn't find the site](cant_find_site_error.png)
+    > If you get the error `Sorry, we couldn't find the site. Please contact your site administrator for assistance.` while opening the application, you have to assign your user to the `Launchpad_Admin` role collection:
 
     > 1. Choose **Security** **&rarr;** **Trust Configuration** on the left.
     > 2. Choose your identity provider from the list.
     > 3. Enter your e-mail address and choose **Show Assignments**.
     > 4. Choose **Assign Role Collection** and assign the `Launchpad Admin` role collection to your user.
+    > 5. Open another browser or clear your browser's cache.
 
     > See section [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html) in the SAP Launchpad service's documentation for more details.
 
@@ -562,7 +562,7 @@ You have launched your `Risks` app through the SAP Launchpad service.
 
   !![Risks App](risks.png)
 
-> If you choose ***Go***, you'll get an error because you haven't assigned a role collection to your user yet. We'll do it in the next tutorial.
+> If you choose **Go**, you'll get an error because you haven't assigned a role collection to your user yet. We'll do it in the next tutorial.
 
 
 

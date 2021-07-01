@@ -84,7 +84,7 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 
     ![unixODBC install](unixODBC-install.png)
 
-    For more details on how to accomplish this, please follow the second step of [this tutorial](tutorial.hxe-ua-dbfundamentals-odbc).
+    For more details on how to accomplish this, please follow the second step of [this tutorial](hxe-ua-dbfundamentals-odbc).
 
 2. The following commands can be used to confirm that unixODBC is installed and determine the location of the .odbc.ini file (if it exists).
     ```Shell (Linux)

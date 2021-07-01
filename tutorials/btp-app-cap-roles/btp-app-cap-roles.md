@@ -43,11 +43,10 @@ To enable authentication support in CAP, the [passport](http://www.passportjs.or
 
 2. Install the `passport` module.
 
-    ```bash
-    npm install --save passport
+    ```Shell/Bash
+    npm install passport
     ```
 
-    > The `--save` part makes sure it's also added as a dependency to your project's `package.json`.
 
 [VALIDATE_1]
 
@@ -59,37 +58,37 @@ To enable authentication support in CAP, the [passport](http://www.passportjs.or
 
 2. Add the following restrictions block (`@(...)`) to your `Risks` and `Mitigations` entities.
 
-    <!-- cpes-file srv/risk-service.cds -->
-    ```text hl_lines="4-13 15-24"
-    using { sap.ui.riskmanagement as my } from '../db/schema';
-    @path: 'service/risk'
-    service RiskService {
-      entity Risks @(restrict : [
-                {
-                    grant : [ 'READ' ],
-                    to : [ 'RiskViewer' ]
-                },
-                {
-                    grant : [ '*' ],
-                    to : [ 'RiskManager' ]
-                }
-            ]) as projection on my.Risks;
-        annotate Risks with @odata.draft.enabled;
-      entity Mitigations @(restrict : [
-                {
-                    grant : [ 'READ' ],
-                    to : [ 'RiskViewer' ]
-                },
-                {
-                    grant : [ '*' ],
-                    to : [ 'RiskManager' ]
-                }
-            ]) as projection on my.Mitigations;
-        annotate Mitigations with @odata.draft.enabled;
-    }
-    ```
+<!-- cpes-file srv/risk-service.cds -->
+```[4-13,15-24]
+using { sap.ui.riskmanagement as my } from '../db/schema';
+@path: 'service/risk'
+service RiskService {
+  entity Risks @(restrict : [
+            {
+                grant : [ 'READ' ],
+                to : [ 'RiskViewer' ]
+            },
+            {
+                grant : [ '*' ],
+                to : [ 'RiskManager' ]
+            }
+        ]) as projection on my.Risks;
+    annotate Risks with @odata.draft.enabled;
+  entity Mitigations @(restrict : [
+            {
+                grant : [ 'READ' ],
+                to : [ 'RiskViewer' ]
+            },
+            {
+                grant : [ '*' ],
+                to : [ 'RiskManager' ]
+            }
+        ]) as projection on my.Mitigations;
+    annotate Mitigations with @odata.draft.enabled;
+}
+```
 
-    With this change, a user with the role `RiskViewer` can view risks and mitigations, and a user with role `RiskManager` can view and change risks and mitigations.
+With this change, a user with the role `RiskViewer` can view risks and mitigations, and a user with role `RiskManager` can view and change risks and mitigations.
 
 [DONE]
 [ACCORDION-END]
@@ -109,20 +108,17 @@ CAP offers a possibility to add local users for testing as part of the `cds` con
 2. Let's look at the `risk.manager@tester.sap.com` example:
 
     <!-- cpes-file .cdsrc.json:$.*.*.*.users[?(@.ID=="risk.manager@tester.sap.com")] -->
-    ```json hl_lines="8-17"
+    ```JSON[7-14]
     {
       "[development]": {
         "auth": {
           "passport": {
-            "strategy": "mock",
+            ...
             "users": {
               "risk.viewer@tester.sap.com": "...",
               "risk.manager@tester.sap.com": {
                 "password": "initial",
                 "ID": "risk.manager@tester.sap.com",
-                "userAttributes": {
-                  "email": "risk.manager@tester.sap.com"
-                },
                 "roles": [
                   "RiskManager"
                 ]
@@ -155,7 +151,7 @@ When accessing the `Risks` service in your browser, you get a basic auth popup n
 
   You can now access the `Risks` application.
 
-!![Access Risk Application](risks_management_application.png)  
+!![Access Risk Application](risks_management_application.png)
 
 > Currently there's no logout functionality. You can clear your browser's cache or simply close all browser windows to get rid of the basic auth login data in your browser. For Chrome restart your browser (complete shutdown and restart) by entering `chrome: // restart` in the address line.
 

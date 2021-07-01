@@ -47,9 +47,8 @@ npm i --save  @sap/xssec  @sap/xsenv
 We need to tell CAP that XSUAA is used. For this open the `package.json` in your `cpapp` project and add the following lines:
 
 <!-- cpes-file package.json:$.cds.requires -->
-```JSON[8-11]
+```JSON[7-10]
 {
-  "name": "cpapp",
   ...
   "cds": {
     "requires": {
@@ -64,6 +63,8 @@ We need to tell CAP that XSUAA is used. For this open the `package.json` in your
   }
 }
 ```
+
+Make sure you have pasted the new lines within the `"requires": {` section and not outside of it. This can cause some errors in the next steps.
 
 [DONE]
 [ACCORDION-END]

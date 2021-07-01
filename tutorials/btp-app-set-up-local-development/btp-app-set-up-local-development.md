@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Set Up Local Development Using VS Code
-description: This tutorial shows you how to get started using VS Code as an editor.
+description: This tutorial shows you how to get started using VS Code as an editor. 
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
@@ -82,8 +82,7 @@ Make sure you run the latest long-term support (LTS) version of Node.js with an 
 v14.x.x
 ```
 
-> If you don't see the required version, go to [Node.js](https://nodejs.org/en/download/) download page, pick the installer appropriate for your operating system, and install it.
-In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#node-version) for CAP for more details.
+> If you don't see the required version, go to [Node.js](https://nodejs.org/en/download/) download page, pick the installer appropriate for your operating system, and install it. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#node-version) for CAP for more details.
 
 
 
@@ -96,19 +95,19 @@ A Node.js version 14 or higher is required to install the SAPUI5 CLI. See [SAPUI
 
 1. Check in a terminal whether you already have the UI5 CLI installed:
 
-    ```bash
+    ```Shell/Bash
     ui5 --version
     ```
 
 2. If you don't get a version number, install the UI5 CLI:
 
-    ```bash
+    ```Shell/Bash
     npm install --global @ui5/cli
     ```
 
 3. Verify that the installation was successful by running the version command again:
 
-    ```bash
+    ```Shell/Bash
     ui5 --version
     ```
 
@@ -123,12 +122,12 @@ This is needed if you want to use the services and applications that you create 
 
 1. Check whether the package manager `brew` is installed on your machine:
 
-    ```bash
+    ```Shell/Bash
     brew --version
     ```
       If there's an output of a version of `brew`, you got brew and it's best if you install the CF CLI:
 
-    ```bash
+    ```Shell/Bash
     brew install cloudfoundry/tap/cf-cli
     ```
 
@@ -137,7 +136,7 @@ This is needed if you want to use the services and applications that you create 
 
 2. In either case, after the installation, check whether you get the output of a version indicating the installation succeeded:
 
-    ```bash
+    ```Shell/Bash
     cf --version
     ```
 
@@ -173,7 +172,7 @@ CAP provides you with all the tools to create your data model with entities and 
 
 1. Install CDS development kit globally in a terminal:
 
-    ```bash
+    ```Shell/Bash
     npm i -g @sap/cds-dk
     ```
 
@@ -183,30 +182,57 @@ CAP provides you with all the tools to create your data model with entities and 
 
 2. To verify that the installation was successful, run `cds` without arguments.
 
-    This lists the available `cds` commands. For example, use `cds version` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
+    This lists the available `cds` commands. 
 
 3. Check what versions of the CDS libraries have been installed:
 
-    ```bash
+    ```Shell/Bash
     cds v
     ```
+
+    To know what is the latest version of the CAP tooling, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
 [DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Install VS Code)]
 
+[OPTION BEGIN [macOS]]
+
 VS Code is used to edit the code of the application project and it comes with a couple of so-called extensions from SAP (CAP and SAP Fiori tools) that are also used here.
 
-In case you don't have it, go to the [Visual Studio Code](https://code.visualstudio.com/) homepage and install the version appropriate for your operating system.
+In case you don't have it, go to the [Visual Studio Code](https://code.visualstudio.com/) homepage and find the version appropriate for your operating system.
 
-MacOS users must also perform the following steps as described [here](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac). To start it like any other application and to start it from the terminal on MacOS, follow these steps:
+Download the package for macOS and perform the following steps as described [here](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac). To start it like any other application and to start it from the terminal on MacOS, follow these steps:
 
 1. Move VS Code from your **Download** folder to the **Applications** folder.
 
 2. Use **command** + **shift** + **P** keys to open the command palette.
 
-3. Type `Install 'code' command in PATH` and choose **Enter**.
+3. Type **`Install 'code' command in PATH`** and choose **Enter**.
+
+
+[OPTION END]
+[OPTION BEGIN [Windows]]
+
+VS Code is used to edit the code of the application project and it comes with a couple of so-called extensions from SAP (CAP and SAP Fiori tools) that are also used here.
+
+In case you don't have it, go to the [Visual Studio Code](https://code.visualstudio.com/) homepage and find the version appropriate for your operating system.
+
+Download the installer suitable for your Windows version and follow the instructions in the installation wizard.
+
+
+[OPTION END]
+[OPTION BEGIN [Linux]]
+
+VS Code is used to edit the code of the application project and it comes with a couple of so-called extensions from SAP (CAP and SAP Fiori tools) that are also used here.
+
+In case you don't have it, go to the [Visual Studio Code](https://code.visualstudio.com/) homepage and find the version appropriate for your operating system.
+
+Download the package for your Linux distribution and install.
+
+[OPTION END]
+
 
 [DONE]
 [ACCORDION-END]
@@ -228,7 +254,7 @@ You need to install the [**SAP Language Support**](https://marketplace.visualstu
 
 5. Restart VS Code after the installation.
 
-Now, the extension is installed in VS Code. If the extension is already installed and enabled in VS Code, it is updated automatically. The VS Code extension comes with a welcome page, which shows latest release notes of CAP. It starts automatically whenever an update arrives for the extension. Later, you can open the page through the command `CDS: Show CAP Release Notes`.
+Now, the extension is installed in VS Code. If the extension is already installed and enabled in VS Code, it is updated automatically. The VS Code extension comes with a welcome page, which shows latest release notes of CAP. It starts automatically whenever an update arrives for the extension. Later, you can open the page through the **Command Palette** in VS Code `CDS: Show CAP Release Notes`.
 
 > Learn more about SAP CDS Language Support Extension:
 
@@ -281,25 +307,25 @@ SAPUI5 templates are based on [Yeoman](https://yeoman.io/), a tool for scaffoldi
 
 1. Check in a terminal whether you already have Yeoman installed:
 
-    ```bash
+    ```Shell/Bash
     yo --version
     ```
 
 2. If you don't get a version number, install Yeoman:
 
-    ```bash
+    ```Shell/Bash
     npm install -g yo
     ```
 
 3. Now, you can go ahead and install the [SAPUI5 templates](https://www.npmjs.com/package/@sapui5/generator-sapui5-templates):
 
-    ```bash
+    ```Shell/Bash
     npm install -g yo @sapui5/generator-sapui5-templates
     ```
 
 4. Test whether everything works:
 
-    ```bash
+    ```Shell/Bash
     yo --generators
     ```
 

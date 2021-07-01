@@ -32,10 +32,10 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
 [ACCORDION-BEGIN [Step 1: ](Add SAP HANA Client to Your Project)]
 
-The SAP HANA `hdb` npm module needs to be added to our package to support SAP HANA.
+The SAP HANA `hdb` npm module needs to be added to our package to support SAP HANA. In your project folder execute:
 
 ```Shell/Bash
-npm install hdb --save
+npm install hdb
 ```
 
 The CAP application will still use SQLite in-memory database for local testing, while the SAP HANA database should be used "productively" in the cloud.
@@ -51,7 +51,7 @@ By default, the deployment uses the `hdbcds` as deployment format. However, this
 1. Add the following snippet at the end of your `package.json` in your `cpapp` project:
 
     <!-- cpes-file package.json:$.cds -->
-    ```json hl_lines="4-13"
+    ```JSON[4-13]
     {
       "name": "cpapp",
       ...
@@ -80,11 +80,13 @@ By default, the deployment uses the `hdbcds` as deployment format. However, this
 ---
 [ACCORDION-BEGIN [Step 3: ](Prepare Using SAP HANA Cloud )]
 
-   > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+> ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-If you already have an SAP HANA Cloud service instance in your Cloud Foundry space **&rarr;** you can continue with step **Use an Existing SAP HANA Cloud Service Instance**.
+SAP HANA Cloud service instances are not created automatically for any type of account. Therefore, you'll have to create a SAP HANA Cloud instance first, if you don't have one yet.
 
-If you need to create a SAP HANA Cloud service instance first **&rarr;** continue with step **Create an SAP HANA Cloud Service Instance**.
+If you already have an SAP HANA Cloud service instance in your Cloud Foundry space **&rarr;** continue with **Use an Existing SAP HANA Cloud Service Instance**.
+
+If you need to create a SAP HANA Cloud service instance first **&rarr;** continue with **Create an SAP HANA Cloud Service Instance**.
 
 > Additional Documentation:
 
@@ -205,29 +207,18 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     !![Create SAP HANA Cloud: Step 1b](hana_cloud_create_1b.png)
 
-12. Choose **Step 2**.
-
-13. The default settings should be sufficient for the tutorial application.
+12. Choose **Step 2**. The default settings should be sufficient for the tutorial application.
 
     !![Create SAP HANA Cloud: Step 2](hana_cloud_create_2.png)
 
-14. Choose **Step 3**.
+13. Choose **Step 3**.
 
-15. Choose `Deny all IP addresses (except Business Technology Platform)`.
+14. Choose `Allow only BTP IP addresses`.
 
     !![Create SAP HANA Cloud: Step 3](hana_cloud_create_3.png)
 
 
-16. Choose **Step 4**.
-
-    > You can optional create a SAP HANA [data lake](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/f7febb16072b41f7ac90abf5ea1d4b86.html#loiof7febb16072b41f7ac90abf5ea1d4b86__step_datalake_params). It's really useful for storing and analyzing high volumes of infrequently updated data in a production environment and to adjust how much Compute and Storage space it has, but we don't need it for this tutorial. You can enable or disable the SAP HANA data lake later as well if you prefer.
-
-17. Choose **Step 5**.
-
-    > This step includes advanced SAP HANA data lake settings that are only relevant if you have created a SAP HANA data lake at step 4. You can skip this if you haven't created a SAP HANA data lake.
-
-
-18. Choose **Create Instance**.
+15. Choose **Create Instance**.
 
     The creation of the database instance can take some minutes to complete. The final result looks like this in SAP BTP cockpit:
 
@@ -271,29 +262,18 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     !![Create SAP HANA Cloud: Step 1b](hana_cloud_create_1b.png)
 
-12. Choose **Step 2**.
-
-13. The default settings should be sufficient for the tutorial application.
+12. Choose **Step 2**. The default settings should be sufficient for the tutorial application.
 
     !![Create SAP HANA Cloud: Step 2](hana_cloud_create_2.png)
 
-14. Choose **Step 3**.
+13. Choose **Step 3**.
 
-15. Choose `Deny all IP addresses (except Business Technology Platform)`.
+14. Choose `Allow only BTP IP addresses`.
 
     !![Create SAP HANA Cloud: Step 3](hana_cloud_create_3.png)
 
 
-16. Choose **Step 4**.
-
-    > You can optional create a SAP HANA [data lake](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/f7febb16072b41f7ac90abf5ea1d4b86.html#loiof7febb16072b41f7ac90abf5ea1d4b86__step_datalake_params). It's really useful for storing and analyzing high volumes of infrequently updated data in a production environment and to adjust how much Compute and Storage space it has, but we don't need it for this tutorial. You can enable or disable the SAP HANA data lake later as well if you prefer.
-
-17. Choose **Step 5**.
-
-    > This step includes advanced SAP HANA data lake settings that are only relevant if you have created a SAP HANA data lake at step 4. You can skip this if you haven't created a SAP HANA data lake.
-
-
-18. Choose **Create Instance**.
+15. Choose **Create Instance**.
 
     The creation of the database instance can take some minutes to complete. The final result looks like this in SAP BTP cockpit:
 
