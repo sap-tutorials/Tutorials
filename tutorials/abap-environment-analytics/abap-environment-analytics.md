@@ -75,10 +75,10 @@ The templates already contain certain annotations that are mandatory for the abo
 [ACCORDION-BEGIN [Step 3: ](Create the first dimension for Carrier)]
 
 >Dimensions views are links to various master data, which are later used in reporting as further attributes (according to which different aggregations can be made) and thus make up the versatility of our Analytical Model.
-In the following you will create four dimension views for Carrier, Customers, Connections and Travel Agencies so that you can visualize our
-measures Number of bookings and Flight price in relation to these dimensions.
-That means you will be able to create different charts that show how much money was spend for bookings for the connection
-Frankfurt-->New York compared to the connection Frankfurt-->Sydney or that show how much money was spend for flights with a certain airline.
+
+>In the following you will create four dimension views for Carrier, Customers, Connections and Travel Agencies so that you can visualize our measures Number of bookings and Flight price in relation to these dimensions.
+
+>That means you will be able to create different charts that show how much money was spend for bookings for the connection Frankfurt-->New York compared to the connection Frankfurt-->Sydney or that show how much money was spend for flights with a certain airline.
 
 
 You will start to create a dimension view that contains the different Airlines / Carriers. Since our model will contain two measures, namely **Number of bookings** and **Flight Price** you will be able to answer questions such as
@@ -494,7 +494,7 @@ This annotation is part of the template **Define a View Entity for a Cube** that
 
      - **Name**: `ZRAP500_I_BookingCube_####`
      - **Description**: `Booking Cube`
-     - **Referenced Object**: `ZRAP_I_BOOKING_####**` (The booking interface view)
+     - **Referenced Object**: `ZRAP_I_BOOKING_####` (The booking interface view)
 
      ![new cube](1270.png)
 
@@ -522,10 +522,11 @@ This annotation is part of the template **Define a View Entity for a Cube** that
 5. In the created cube you define `foreignKey associatons` via `_Customer`, `_Carrier`, `_Connection`, and `_Agency` to be able to fetch and expose information in the cube and in the query.
 
     - Add the annotation `@ObjectModel.foreignKey.association: '_Customer'` to the field `CustomerId`
-    - Add the annotation `@ObjectModel.foreignKey.association: '_Carrier'` to the field `CarrierId`  
+    - Add the annotation `@ObjectModel.foreignKey.association: '_Carrier'` to the field `AirlineID`  
     - Add the annotation `@ObjectModel.foreignKey.association: '_Connection'` to the field `ConnectionId`
+    - Add the annotation `@ObjectModel.foreignKey.association: '_Agency'` to the field `AgencyID`
 
-6. Add an annotation `@Semantics.amount.currencyCode` to the property **Flight Price** that points to the property `CurrencyCode`.
+6. Comment out both lines of annotation `@Semantics.amount.currencyCode` and the property **Flight Price**.
 
 7. Add the following two fields alongside with a foreign key association
 
@@ -541,6 +542,7 @@ This annotation is part of the template **Define a View Entity for a Cube** that
         @ObjectModel.foreignKey.association: '_CustomerCountry'
         _Customer.CountryCode as CustomerCountry,
         _Customer.City        as CustomerCity,
+        _Connection.Trip      as Trip,
     ```
 
 9. You now add Measures to our cube.
@@ -650,7 +652,7 @@ Again you can use a template that you have imported at the beginning of this tut
 
     - **Name**: `ZRAP500_C_BookingQuery_####`
     - **Description**: `Query for Booking`
-    - **Referenced Object**: `ZRAP500_I_BookingCube_####**`
+    - **Referenced Object**: `ZRAP500_I_BookingCube_####`
 
     ![new query](1120.png)
 
@@ -861,11 +863,11 @@ Now that you have created the query it is possible to use a data preview to test
 
   4. To create a **Business Catalog App Assignment**, in your created Business Catalog click **Apps**, click **Add**, assign your previously created external IAM app as **IAM App**. Enter a **Name** and **Description** and click **Next**.
 
-      ![IAM App](step10-4.png)
+      ![IAM App](1250.png)
+
+      ![IAM App](1260.png)
 
   5. Choose a transport request and click **Finish**. The **Business Catalog App Assignment** will be opened.
-
-      ![Assignment](step10-6.png)
 
   6. Back to the **Business Catalog**, choose your **Assignment ID** and click **Publish Locally**.
 

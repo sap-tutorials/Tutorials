@@ -8,14 +8,13 @@ primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
- - You have completed the first two tutorials in this group.
+ - You have completed the first tutorial in this group.
 
 ## Details
 ### You will learn
   - How to create and debug a Java application that connects to and queries a data lake IQ database
 
 [Java Database Connectivity](https://en.wikipedia.org/wiki/Java_Database_Connectivity) (JDBC) provides an [API](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) for accessing databases from Java. An application written to the JDBC standard can be ported to other databases. Database vendors provide JDBC drivers for their database products.
-
 
 ---
 
@@ -29,7 +28,6 @@ A few options include:
 
 * [A SAP supported version of the `OpenJDK`](https://sap.github.io/SapMachine/#download)
 
-
 To verify that the JDK is correctly set up, run the following:
 
 ```Shell
@@ -39,12 +37,18 @@ javac -version
 
 If these commands fail, ensure that the folder they are located in is included in your path.  
 
+The following command will install Java on openSUSE Leap 15.2.
+
+```Shell (Linux)
+sudo zypper install java-11-openjdk-devel
+```
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](The SAP IQ JDBC driver)]
 
-The SAP IQ JDBC driver is a type 2 driver, which means it has a native (non-Java) component. For additional details see [Type 2 driver – Native-API driver](https://en.wikipedia.org/wiki/JDBC_driver#Type_2_driver_%E2%80%93_Native-API_driver). The driver is located in `%IQDIR17%\Java\sajdbc4.jar` and the native component is at `%IQDIR17%\Bin64\dbjdbc17.dll`.
+The SAP IQ JDBC driver is a type 2 driver, which means it has a native (non-Java) component. For additional details see [Type 2 driver – Native-API driver](https://en.wikipedia.org/wiki/JDBC_driver#Type_2_driver_%E2%80%93_Native-API_driver). The driver is located in `%IQDIR17%\Java\sajdbc4.jar` on Microsoft Windows and `$IQDIR17/java/sajdbc4.jar` on Linux.  The native component is at `%IQDIR17%\Bin64\dbjdbc17.dll` on Microsoft Windows and `$IQDIR17\lib64\libdbjdbc17.so` on Linux.
 
 A native JDBC driver called `jConnect` is also provided. This tutorial focuses on the SAP IQ JDBC driver.
 
@@ -61,6 +65,12 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
     mkdir %HOMEPATH%\DataLakeClientsTutorial\java
     cd %HOMEPATH%\DataLakeClientsTutorial\java
     notepad JavaQuery.java
+    ```
+
+    ```Shell (Linux)
+    mkdir ~/DataLakeClientsTutorial/java
+    cd ~/DataLakeClientsTutorial/java
+    nano JavaQuery.java
     ```
 
 2. Copy the following code into `JavaQuery.java`:
@@ -110,11 +120,17 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
     ```Shell (Microsoft Windows)
     javac -cp %IQDIR17%\Java\sajdbc4.jar;. JavaQuery.java
     ```  
+    ```Shell (Linux)
+    javac -cp $IQDIR17/java/sajdbc4.jar:. JavaQuery.java
+    ```  
 
 5. Run `JavaQuery.class` and indicate where the JDBC driver is located.  
 
     ```Shell (Microsoft Windows)
     java -classpath %IQDIR17%\Java\sajdbc4.jar;. JavaQuery
+    ```  
+    ```Shell (Linux)
+    java -classpath $IQDIR17/java/sajdbc4.jar:. JavaQuery
     ```  
 
     ![Java Query](jdbc-query.png)
@@ -127,7 +143,7 @@ See [JDBC Program Structure](https://help.sap.com/viewer/a894a54d84f21015b142ffe
 
 [ACCORDION-BEGIN [Step 4: ](Debug the application)]
 
-Visual Studio Code can run and debug a Java application. It is a lightweight but powerful source code editor available on Windows, macOS, and Linux.
+Visual Studio Code can run and debug a Java application. It is a lightweight but powerful source code editor available on Microsoft Windows, macOS, and Linux.
 
 1. If required, [Download Visual Studio Code](https://code.visualstudio.com/Download).
 
@@ -143,7 +159,7 @@ Visual Studio Code can run and debug a Java application. It is a lightweight but
 
     ![referenced libraries](ref-libraries.png)
 
-    The JDBC driver is located at `%IQDIR17%\Java\sajdbc4.jar`.
+    The JDBC driver is located at `%IQDIR17%\Java\sajdbc4.jar` on Microsoft Windows and `$IQDIR17/java/sajdbc4.jar` on Linux.
 
 5. Place a breakpoint and then select **Run | Start Debugging**.  
 

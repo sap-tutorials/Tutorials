@@ -21,7 +21,7 @@ Entitlements are the heart of all subaccounts in SAP BTP. They define which serv
 
 1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP BTP cockpit.
 
-2. Click on "Enter Your Access Trial Account" to access the SAP BTP Cockpit.
+2. Click on "Enter Your Trial Account" to access the SAP BTP Cockpit.
 
     !![accesstrial](accesstrial.png)
 

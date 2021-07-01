@@ -43,11 +43,12 @@ In a first step, you will add the SAP S/4HANA system as a content provider.
     |  ID             | Remove /, so the ID does not contain special characters except underscores.
     |  Design-Time Destination  | Select `s4hanadt` from drop-down list
     |  Runtime Destination  | Select `s4hanart` from drop-down list
+    |  Runtime Destination for OData  | `Use default runtime destination`
     |  Content Addition Mode  | `Manual addition of selected content items`
 
    5. Click **Save**.
 
-       ![Provider creation form](3-provider-manager-form.png)
+       ![Provider creation form](3a-new-content-provider-form.png)
 
     > If you select *Automatic addition of all content items*, all exposed content items will be automatically selected in the Content Explorer and added to the My Content tab, as soon as you create the content provider. In this case, when updating a provider, all the new content items are automatically added. In this exercise, you will add content items manually.
 
