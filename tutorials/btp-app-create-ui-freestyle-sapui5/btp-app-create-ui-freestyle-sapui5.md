@@ -274,7 +274,7 @@ While `cds watch` comes in handy for serving even the SAPUI5 based apps directly
     - Theme Build on-the-fly for library development
     - Transpiling middleware
 
-If you are not interested in the previous listed pros, you can go on using `cds watch` and skip the rest of the section.
+    > If you are not interested in the previous listed pros, you can go on using `cds watch` and skip the rest of the section.
 
 You now add the capability of live reloading to the configuration of the SAPUI5 tools. After enabling it, every time you save a file in your `mitigations` app, the browser window will automatically reload the new sources and show them.
 
@@ -374,7 +374,7 @@ While `cds watch` comes in handy for serving even the SAPUI5 based apps directly
     - Theme Build on-the-fly for library development
     - Transpiling middleware
 
-If you are not interested in the previous listed pros, you can go on using `cds watch` and skip the rest of the section.
+    > If you are not interested in the previous listed pros, you can go on using `cds watch` and skip the rest of the section.
 
 You now add the capability of live reloading to the configuration of the SAPUI5 tools. After enabling it, every time you save a file in your `mitigations` app, the browser window will automatically reload the new sources and show them.
 
