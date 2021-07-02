@@ -110,6 +110,28 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
 [ACCORDION-BEGIN [Step 3: ](Create a new project)]
 
+
+> The wizard that is explained in this step currently doesn't work due to a [temporary problem](https://answers.sap.com/questions/13395658/issue-in-creating-cap-project.html). Please open a new terminal and execute the following command to achieve the same result without a GUI.
+
+> 1. Open a new terminal
+>    !![New terminal](temp_new_terminal.png)
+> 1. Execute the following commands
+>        
+>        `npm i -g @sap/cds-dk`
+>
+>        `bash  # a bit strange, but makes sure the new cds-dk is active`
+>
+>        `cd projects/`
+>
+>        `cds init MyHANAApp --add hana,mta,pipeline`
+>
+> 1. Open the project in a new workspace
+>    !![New terminal](temp_open_ws1.png)
+>    !![New terminal](temp_open_ws2.png)
+
+> 1. Proceed to step 5: Adjust CAP project for HANA development
+
+
 1. From the SAP Business Application Studio Welcome tab, click **Start from template Create a new project**.
 
     !![New project from template](start_from_template.png)
@@ -176,6 +198,8 @@ The Cloud Application Programming Model wizard generates a project that supports
 
     !![Open package.json for editing](package_json.png)
 
+    > No need to worry about the yellow underlining below the name of the package. This is just a hint and doesn't have any impact on the tutorial.
+
 5. You can completely delete the `devDependencies` section of the `package.json`
 
 6. The rest of the changes will be in the `cds` section of the file. Replace this entire section of `package.json` with the following content
@@ -196,7 +220,7 @@ The Cloud Application Programming Model wizard generates a project that supports
     }
     ```
 
-    > these changes will alter the generated folder structure of the cds build operation. Content will no longer be placed into the gen folder but back into the source folders. This also will tell CAP to generate hdbtable artifacts instead of hdbcds. This is a critical change for SAP HANA Cloud compatibility. Finally the db.kind change to HANA tells CAP to use HANA at development time instead of SQLite.
+    > These changes will alter the generated folder structure of the cds build operation. Content will no longer be placed into the gen folder but back into the source folders. This also will tell CAP to generate hdbtable artifacts instead of hdbcds. This is a critical change for SAP HANA Cloud compatibility. Finally the db.kind change to HANA tells CAP to use HANA at development time instead of SQLite.
 
 7. Your `package.json` file should now look something like this. The exact version numbers in the `dependencies` section in your file might differ from this screenshot
 
@@ -245,13 +269,6 @@ We are using several dependent Node.js modules in our project. They are referenc
 [ACCORDION-BEGIN [Step 7: ](Initialize local Git repository)]
 
 You will use the local Git repository for basic version management.
-
-1. If this is the first time you have used Git in this Business Application Studio Dev Space, you need to do some basic configuration. Please open a terminal (Terminal -> New Terminal) and issue the two commands from the command line replacing the values for your email and name with the actual values.
-
-    ```shell
-    git config --global user.email "your@email.com"
-    git config --global user.name "Your Name"
-    ```
 
 2. Click on the **Source Control** icon
 

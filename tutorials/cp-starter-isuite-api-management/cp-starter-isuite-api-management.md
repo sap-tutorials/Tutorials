@@ -242,7 +242,7 @@ This grant type works in the following way: In a first call, the API client prov
 
     In this step you have assigned a policy template.
 
-[VALIDATE_7]
+[VALIDATE_4]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Execute API)]

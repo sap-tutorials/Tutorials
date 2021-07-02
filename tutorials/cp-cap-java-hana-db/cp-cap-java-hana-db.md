@@ -80,15 +80,15 @@ Log into the Cloud Foundry Environment using the Cloud Foundry CLI, as follows.
     { "hana" : { "deploy-format": "hdbtable" } }
     ```
 
-    >As an effect, `.hdbtable` and `.hdbview` files are generated in the `(gen/)db/src/gen/` folder.
-
 4. Create an SAP HANA service instance and implicitly push all artifacts to the database using:
 
     ```Shell/Bash
     cds deploy --to hana:bookstore-hana
     ```
 
-    In addition, the command initialized the database schemas inside the SAP HANA HDI container.
+    > As an effect, `.hdbtable` and `.hdbview` files are generated in the `(gen/)db/src/gen/` folder.
+
+    > In addition, the command initialized the database schemas inside the SAP HANA HDI container.
 
 [DONE]
 [ACCORDION-END]

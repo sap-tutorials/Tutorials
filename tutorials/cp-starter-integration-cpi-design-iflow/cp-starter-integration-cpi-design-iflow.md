@@ -15,7 +15,7 @@ author_profile: https://github.com/Karunaharan
 ## Details
 ### You will learn
   - How to design and deploy an integration flow using the web-based integration flow designer
-  - How to design an integration flow to query data from an online web shop that is available as an OData service
+  - How to design an integration flow to fetch data from an online web shop that is available as an OData service
 
 
 [ACCORDION-BEGIN [Step 1: ](Access your Cloud Integration workspace)]

@@ -24,6 +24,10 @@ For more information on SAP HANA, consult [What Is SAP HANA](https://help.sap.co
 
 >---
 
+>For connections to the SAP HANA Cloud, Data Lake, see the tutorial [Use Clients to Query Data Lake IQ](group.hana-cloud-clients-data-lake).
+
+>---
+
 >**IMPORTANT**: Complete the first 3 tutorials, and then you can select any of the following tutorials about connecting with different client interfaces.
 
 ---
