@@ -199,7 +199,7 @@ If your GitHub repository is private, configure credentials for it, so that SAP 
     > Use a technical user instead of your personal credentials.
 
 
-    > Deployment will not work if you have activated Two-factor authentication for the password.
+    > Deployment will not work if you have activated Two-factor authentication for the user.
 
 17. Leave the **Upload to Cloud Transport Management** step switched off.
 
