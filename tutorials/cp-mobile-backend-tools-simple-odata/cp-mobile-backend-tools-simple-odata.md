@@ -19,7 +19,7 @@ author_profile: https://github.com/manuel-stampp
   - How to deploy an OData service with SAP Mobile Services, mobile back-end tools
   - How to create an app router and configure login
 
-The mobile back-end tools is a set of tools that enable a developer to model an OData service and generate a Java EE web application to implement the OData service, along with automatic creation of the necessary database tables within a preexisting database schema.
+The mobile back-end tools is a set of tools that enable a developer to model an OData service and generate a Java EE web application to implement the OData service, along with automatic creation of the necessary database tables within a pre-existing database schema.
 
 In this tutorial, you will rebuild a small part of the `GWSAMPLE_BASIC` OData service publicly available on the SAP Gateway Demo system (ES5), using the MBT graphical modeler in SAP Business Application Studio. In further tutorials you can therefore extend, connect and build an app on top of it.
 

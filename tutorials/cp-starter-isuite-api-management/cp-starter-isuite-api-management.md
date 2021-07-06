@@ -16,8 +16,8 @@ author_profile: https://github.com/Karunaharan
 ## Details
 ### You will learn
   - How to define and expose an integration flow endpoint as an API
-  - How to assign a policy to the API
-  - How to call the API and execute the integration flow using the API portal
+  - How to assign a policy to your API
+  - How to call your API and execute the integration flow using the API portal
 
 
 In this tutorial, you will define the endpoint of the integration flow developed in the last tutorial as an application programming interface (API).
@@ -68,7 +68,7 @@ In this step, you copy the endpoint address of the integration flow.
 [ACCORDION-BEGIN [Step 3: ](Define the API)]
 In this step, you define and expose an integration flow endpoint as an application programming interface
 
-1. Go to your SAP BTP trial subaccount. Select **Subscriptions**. On the **Integration Suite tile**, select **Go to Application**.
+1. Go to your SAP BTP trial subaccount. Select **Instances and Subscriptions**. In the **Subscriptions**, section, find **Integration Suite** and select **Go to Application**.
 
     !![AccessIsuite](3-1-AccesstoIsuite.png)
 
@@ -188,7 +188,7 @@ This grant type works in the following way: In a first call, the API client prov
 
 7. Choose **Edit**.
 
-    !![EDit](022.png)
+    !![Edit](022.png)
 
 8. Select **Policies**.
 
@@ -214,9 +214,7 @@ This grant type works in the following way: In a first call, the API client prov
 
 13. In the editor, the OAuth workflow defined by the policy is visualized as a graphical model.
 
-    Now, you need the content of the service key generated in Step 1: Create service instance and key. Open another browser tab and display the service key.
-
-    You need the values of **`clientid`**, **`clientsecret`** and **`tokenurl`**.
+    Now, you need the values from the service key that you copied in **Step 1: Copy credentials from service key**. You need the values of **`clientid`**, **`clientsecret`** and **`tokenurl`**.
 
 14. In the graphical model of the **Policy Editor**, click the **`getcredential`** shape.
 
@@ -244,7 +242,7 @@ This grant type works in the following way: In a first call, the API client prov
 
     In this step you have assigned a policy template.
 
-[VALIDATE_7]
+[VALIDATE_4]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Execute API)]

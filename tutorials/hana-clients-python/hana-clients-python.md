@@ -19,7 +19,7 @@ In the 2020 Stack Overflow's annual developer survey, Python ranked 4th in the [
 
 The [SAP HANA client for Python](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f3b8fabf34324302b123297cdbe710f0.html) supports Python 3.4+ and  Python 2.7.  For further details see SAP note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307).  
 
-The following steps will create a simple Python app that can connect to and query an SAP HANA database.  
+The following steps create a simple Python app that can connect to and query an SAP HANA database.  
 
 ---
 
@@ -63,12 +63,6 @@ The repository that contains Python packages is [PyPI](https://pypi.org/) and in
 
 ![hdbcli on PyPI](PyPI.png)  
 
-The pip command can be used to list the currently available version of the SAP HANA database driver for Python on PyPI.  
-
-```Shell
-pip search hdbcli
-```
-
 Run the following command to download and install the SAP HANA client for Python from PyPI:
 
 ```Shell
@@ -79,7 +73,7 @@ pip install hdbcli
 >
 > ```Shell
 > cd C:\SAP\hdbclient
-> pip install hdbcli-2.5.86.zip
+> pip install hdbcli-2.8.16.zip
 > ```
 
 > ---

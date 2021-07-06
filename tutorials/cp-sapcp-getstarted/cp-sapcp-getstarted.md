@@ -95,7 +95,6 @@ btp --help
 
 Each command starts with the base call `btp`. The syntax of the command itself is very close to natural language: It starts with a verb, i.e. the *action*, followed by a *group/object* combination. So you build a command by combining `btp` with an action (let's say *list*) and a group/object combination (let's say *accounts/subaccount*):  `btp list accounts/subaccount`
 
->Note that the object is always a singular noun. Even for list commands, where you might naturally want to use a plural form.
 
 [DONE]
 [ACCORDION-END]

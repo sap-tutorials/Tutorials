@@ -10,7 +10,7 @@ author_profile: https://github.com/julieplummer20
 ---
 
 ##Prerequisites
-- **IMPORTANT**: This tutorial cannot be completed on a trial account
+- **IMPORTANT**: This tutorial cannot be completed on a trial account  
 
 ## Details
 ### You will learn

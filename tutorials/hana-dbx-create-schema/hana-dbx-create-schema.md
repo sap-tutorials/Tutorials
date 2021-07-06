@@ -25,27 +25,23 @@ The following steps will create sample objects for a hotel database using create
 
     ![Open SQL console](open-sql-console.png)
 
-2. Create a user named `User1`.
+2. Create two users.
 
     ```SQL
     CREATE USER USER1 PASSWORD Password1 no force_first_password_change;
+    CREATE USER USER2 PASSWORD Password2 no force_first_password_change;
     ```
 
-    For additional details see on creating users see [CREATE USER Statement (Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5ddb075191014b594f7b11ff08ee2.html).
-
-    > With SAP HANA Cloud, HANA database, if the DBAdmin user has privileges on more than one USERGROUP, then it must be specified which USERGROUP USER1 will be added to as shown below.
+    > With SAP HANA Cloud, HANA database, if the DBAdmin user has privileges on more than one USERGROUP, then it must be specified which USERGROUP USER1 and USER2 will be added to as shown below.
 
     >```SQL
     CREATE USER USER1 PASSWORD Password1 no force_first_password_change SET USERGROUP DEFAULT;
-    ```
+    CREATE USER USER2 PASSWORD Password2 no force_first_password_change SET USERGROUP DEFAULT;
+    >```
 
+    >---
 
-    >The following statement deletes the user in case it already exists or if you wish to remove the user after completing the group.  Make sure you really wish to delete USER1 and the objects it owns before proceeding, as this operation cannot be undone.
-
-    >
-    ```SQL
-    DROP USER USER1 CASCADE;
-    ```
+    For additional detail on creating users see [CREATE USER Statement (Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5ddb075191014b594f7b11ff08ee2.html). Note that the user USER1 will be used in tutorial 5 and tutorial 7 of this tutorial group.
 
 3. The list of users can be seen by executing the following statement:
 
@@ -53,20 +49,61 @@ The following steps will create sample objects for a hotel database using create
     SELECT USER_NAME FROM USERS;
     ```
 
-4. Create a schema named `HOTEL` and grant `User1` access to it.  A schema provides a way to group database objects together.
+4. Create a schema named `HOTEL`.  A schema provides a way to group database objects together.  Privileges can be assigned to users directly (commented line below) or a better practice is to assign users to a role that has a set of privileges which is shown in the next step.
 
     ```SQL
     CREATE SCHEMA HOTEL;
-    GRANT ALL PRIVILEGES ON SCHEMA HOTEL TO USER1;
+    --GRANT ALL PRIVILEGES ON SCHEMA HOTEL TO USER1;
     ```
 
-    >The following statement deletes the schema in case it already exists or if you wish to remove the schema  after completing the group.  Make sure you really wish to delete the HOTEL schema and the objects it contains before proceeding, as this operation cannot be undone.
+    >The following statement deletes the schema and objects it contains if you wish to remove the schema after completing the tutorials.
     >
-    ```SQL
+    >```SQL
     DROP SCHEMA HOTEL CASCADE;
+    >```
+
+    For additional details see [CREATE SCHEMA Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/20d4ecad7519101497d192700ce5f3df.html).
+
+5.  Create two roles, assign privileges to the roles, and assign users to the roles.
+
+    ```SQL
+    CREATE ROLE HOTEL_ADMIN;
+    CREATE ROLE HOTEL_READER;
+
+    GRANT ALL PRIVILEGES ON SCHEMA HOTEL TO HOTEL_ADMIN;
+    GRANT SELECT ON SCHEMA HOTEL TO HOTEL_READER;
+
+    GRANT HOTEL_ADMIN TO USER1;
+    GRANT HOTEL_READER TO USER2;
     ```
 
-    For additional details see [Database Users](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/bd856a90bb5710148a47e5765db45e3e.html) and [CREATE SCHEMA Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/20d4ecad7519101497d192700ce5f3df.html).
+    >An example follows showing the privileges.
+
+    >```SQL
+    CREATE TABLE HOTEL.TEST(
+      myValue VARCHAR(50)
+    );
+    >
+    --USER1 has all privileges on the HOTEL schema
+    CONNECT USER1 PASSWORD Password1;
+    INSERT INTO HOTEL.TEST VALUES('Value1'); --succeeds
+    SELECT * FROM HOTEL.TEST; --succeeds
+    >
+    --USER2 can only select
+    CONNECT USER2 PASSWORD Password2;
+    SELECT * FROM HOTEL.MAINTENANCE; --succeeds
+    INSERT INTO HOTEL.TEST VALUES('Value2'); --fails
+    CONNECT DBADMIN PASSWORD myPassword;
+    >
+    --Remove the unused table, role and user
+    DROP TABLE HOTEL.TEST;
+    DROP ROLE HOTEL_READER;
+    DROP USER USER2;
+    >```
+
+    For additional details see [CREATE Role Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d4a23b75191014a182b123906d5b16.html) and [Managing SAP HANA Users](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/ed7af17e5ae14de694d9bee5f35098f4.html).  Users and roles can also be managed in the SAP HANA Cloud Cockpit.
+
+    ![roles management](roles-cockpit.png)
 
 [DONE]
 [ACCORDION-END]
@@ -118,8 +155,7 @@ The following steps will create sample objects for a hotel database using create
       hno INTEGER,
       description VARCHAR(100),
       date_performed DATE,
-      performed_by VARCHAR(40),
-      FOREIGN KEY(hno) REFERENCES HOTEL.HOTEL
+      performed_by VARCHAR(40)
     );
     ```
 
@@ -179,15 +215,15 @@ The following steps will create sample objects for a hotel database using create
     INSERT INTO HOTEL.ROOM VALUES(22, 'single', 34, 80.00);
     INSERT INTO HOTEL.ROOM VALUES(22, 'double', 78, 140.00);
     INSERT INTO HOTEL.ROOM VALUES(22, 'suite', 55, 350.00);
-    INSERT INTO HOTEL.ROOM VALUES(25, 'single', 44, 100.00);
-    INSERT INTO HOTEL.ROOM VALUES(25, 'double', 115, 190.00);
-    INSERT INTO HOTEL.ROOM VALUES(25, 'suite', 6, 450.00);
     INSERT INTO HOTEL.ROOM VALUES(23, 'single', 89, 160.00);
     INSERT INTO HOTEL.ROOM VALUES(23, 'double', 300, 270.00);
     INSERT INTO HOTEL.ROOM VALUES(23, 'suite', 100, 700.00);
     INSERT INTO HOTEL.ROOM VALUES(24, 'single', 10, 125.00);
     INSERT INTO HOTEL.ROOM VALUES(24, 'double', 9, 200.00);
     INSERT INTO HOTEL.ROOM VALUES(24, 'suite', 78, 600.00);
+    INSERT INTO HOTEL.ROOM VALUES(25, 'single', 44, 100.00);
+    INSERT INTO HOTEL.ROOM VALUES(25, 'double', 115, 190.00);
+    INSERT INTO HOTEL.ROOM VALUES(25, 'suite', 6, 450.00);
 
     INSERT INTO HOTEL.CUSTOMER VALUES(1000, 'Mrs', 'Jenny', 'Porter', '1340 N. Ash Street, #3', '10580');
     INSERT INTO HOTEL.CUSTOMER VALUES(1001, 'Mr', 'Peter', 'Brown', '1001 34th St., APT.3', '48226');
@@ -207,14 +243,14 @@ The following steps will create sample objects for a hotel database using create
 
     INSERT INTO HOTEL.RESERVATION VALUES(1, 100, 1000, 11, 'single', '2020-12-24', '2020-12-27');
     INSERT INTO HOTEL.RESERVATION VALUES(2, 110, 1001, 11, 'double', '2020-12-24', '2021-01-03');
-    INSERT INTO HOTEL.RESERVATION VALUES(3, 120, 1002, 15, 'suite', '2004-11-14', '2004-11-18');
+    INSERT INTO HOTEL.RESERVATION VALUES(3, 120, 1002, 15, 'suite', '2020-11-14', '2020-11-18');
     INSERT INTO HOTEL.RESERVATION VALUES(4, 130, 1009, 21, 'single', '2019-02-01', '2019-02-03');
     INSERT INTO HOTEL.RESERVATION VALUES(5, 150, 1006, 17, 'double', '2019-03-14', '2019-03-24');
-    INSERT INTO HOTEL.RESERVATION VALUES(6, 140, 1013, 20, 'double', '2004-04-12', '2004-04-30');
-    INSERT INTO HOTEL.RESERVATION VALUES(7, 160, 1011, 17, 'single', '2004-04-12', '2004-04-15');
-    INSERT INTO HOTEL.RESERVATION VALUES(8, 170, 1014, 25, 'suite', '2004-09-01', '2004-09-03');
-    INSERT INTO HOTEL.RESERVATION VALUES(9, 180, 1001, 22, 'double', '2004-12-23', '2005-01-08');
-    INSERT INTO HOTEL.RESERVATION VALUES(10, 190, 1013, 24, 'double', '2004-11-14', '2004-11-17');
+    INSERT INTO HOTEL.RESERVATION VALUES(6, 140, 1013, 20, 'double', '2020-04-12', '2020-04-30');
+    INSERT INTO HOTEL.RESERVATION VALUES(7, 160, 1011, 17, 'single', '2020-04-12', '2020-04-15');
+    INSERT INTO HOTEL.RESERVATION VALUES(8, 170, 1014, 25, 'suite', '2020-09-01', '2020-09-03');
+    INSERT INTO HOTEL.RESERVATION VALUES(9, 180, 1001, 22, 'double', '2020-12-23', '2021-01-08');
+    INSERT INTO HOTEL.RESERVATION VALUES(10, 190, 1013, 24, 'double', '2020-11-14', '2020-11-17');
 
     INSERT INTO HOTEL.MAINTENANCE VALUES(10, 24, 'Replace pool liner and pump', '2019-03-21', 'Discount Pool Supplies');
     INSERT INTO HOTEL.MAINTENANCE VALUES(11, 25, 'Renovate the bar area.  Replace TV and speakers', '2020-11-29', 'TV and Audio Superstore');

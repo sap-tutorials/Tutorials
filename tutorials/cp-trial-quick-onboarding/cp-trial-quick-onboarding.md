@@ -47,9 +47,9 @@ SAP BTP currently offers these [environments](https://help.sap.com/viewer/65de29
 
 To become familiar with the specifics of the trial offerings regarding, have a look at the following resources:
 
-- [Getting Started with a Trial Account in the Cloud Foundry Environment](https://help.sap.com/viewer/DRAFT/60f1b283f0fd4d0aa7b3f8cea4d73d1d/Internal/en-US/e50ab7b423f04a8db301d7678946626e.html)
-- [Getting Started with a Trial Account in the ABAP Environment](https://help.sap.com/viewer/DRAFT/60f1b283f0fd4d0aa7b3f8cea4d73d1d/Internal/en-US/720c423ef1a8498ab690cf0e5512ba50.html)
-- [Getting Started with a Trial Account in the Kyma Environment](https://help.sap.com/viewer/DRAFT/60f1b283f0fd4d0aa7b3f8cea4d73d1d/Internal/en-US/ccb83c700e8d4bb8aa545d7307b8b08a.html)
+- [Getting Started with a Trial Account in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e50ab7b423f04a8db301d7678946626e.html)
+- [Getting Started with a Trial Account in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/720c423ef1a8498ab690cf0e5512ba50.html)
+- [Getting Started with a Trial Account in the Kyma Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/ccb83c700e8d4bb8aa545d7307b8b08a.html)
 
 ### Cloud Foundry
 In addition to global accounts, directories, and subaccounts, the Cloud Foundry environment includes another hierarchical level represented by **orgs** and **spaces**.
@@ -63,7 +63,7 @@ In addition to global accounts, directories, and subaccounts, the Cloud Foundry 
 ### ABAP
 Within the Cloud Foundry environment, you can create a new space for ABAP development. This is what we refer to as the ABAP environment. It allows you to create extensions for ABAP-based products, such as SAP S/4HANA Cloud, and develop new cloud applications. You can transform existing ABAP-based custom code or extensions to the cloud.
 
-The ABAP environment is based on the latest ABAP platform cloud release that is also used for SAP S/4HANA Cloud. It leverages the innovations provided by SAP HANA. The software stack contains standard technology components that are familiar from the standalone Application Server ABAP. The ABAP environment supports the ABAP RESTful Application Programming Model including SAP Fiori and Core Data Services (CDS). SAP Services and APIs are offered according to a new whitelisting approach. The ABAP environment provides you technical access to SAP Business Technology Platform services, such as destination service, integration, machine learning, and IoT.
+The ABAP environment is based on the latest ABAP platform cloud release that is also used for SAP S/4HANA Cloud. It leverages the innovations provided by SAP HANA. The software stack contains standard technology components that are familiar from the standalone Application Server ABAP. The ABAP environment supports the ABAP RESTful Application Programming Model including SAP Fiori and Core Data Services (CDS). SAP Services and APIs are offered according to a new allowlist approach. The ABAP environment provides you technical access to SAP Business Technology Platform services, such as destination service, integration, machine learning, and IoT.
 
 ### Kyma
 Kyma environment is a runtime you can use to build cloud-native Kubernetes-based extensions by using microservices and serverless functions. The offered functionality ensures smooth consumption of SAP and non-SAP applications, running workloads in a highly scalable environment and building event-based and API-based extensions. To enable Kyma trial, log in to your SAP BTP trial home, create a subaccount, add entitlements, and click Enable Kyma in the Overview section of your subaccount.
@@ -110,7 +110,7 @@ If you want to get a deeper understanding of the account structure, have a look 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step: ](Navigate in the cockpit)]
-You can access your trial account cockpit at [https://cockpit.eu10.hana.ondemand.com/trial/#/home/trial](https://cockpit.hanatrial.ondemand.com/trial/#/home/trial).
+You can access your trial account cockpit at [https://cockpit.hanatrial.ondemand.com/trial/](https://cockpit.hanatrial.ondemand.com/trial/).
 
 
 There are 2 ways of navigating in the cockpit:
