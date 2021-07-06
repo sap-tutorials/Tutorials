@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Develop the App)]
+[ACCORDION-BEGIN [Step 1: ](Develop the app)]
 
 If a tutorial has prerequisites, they're listed at the beginning of the tutorial.
 
@@ -37,7 +37,7 @@ For the tutorial, you need a directory to develop the app and you need access to
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Download the Tutorial)]
+[ACCORDION-BEGIN [Step 2: ](Download the tutorial)]
 
 Downloading the tutorial gives you easy access to template files that are required for some tutorials.
 
@@ -59,24 +59,24 @@ Downloading the tutorial gives you easy access to template files that are requir
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Create a GitHub Repository for Your Project)]
+[ACCORDION-BEGIN [Step 3: ](Create a GitHub repository for your project)]
 
-We recommend creating a public [GitHub](https://github.com) repository to save your tutorial application. This way, if you have issues with your tutorial application, you can refer to it.
+To be able to perform the steps for [CI/CD](btp-app-ci-cd-btp), you'll need a public repository. Currently, SAP Continuous Integration and Delivery supports [GitHub](https://github.com/) and [Bitbucket](https://bitbucket.org/) repositories.
+
+We recommend creating a public [GitHub](https://github.com) repository to save your tutorial application because this is what the tutorial uses. This way, if you have issues with your tutorial application, you can refer to it.
 
 For real application development, you need to consider the right place for your repository, of course.
 
 Go to [GitHub](https://github.com/) and create a new GitHub repository.
 
-<!--
-    Currently, SAP Continuous Integration and Delivery supports only [GitHub](https://github.com/) repositories.
-    To be able to connect SAP Continuous Integration and Delivery with your repository, create a new repository on [GitHub](https://github.com/).
--->
+> Info about branches
 
+> For the sake of simplicity, don't create additional branches in your repository. When initially created, your repository has only one branch - the **`main`** branch. This is the only branch you need to complete the tutorial.
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Clone Your GitHub Repository)]
+[ACCORDION-BEGIN [Step 4: ](Clone your GitHub repository)]
 
 1. Copy the repository's URL you have created before.
 
@@ -101,7 +101,7 @@ Go to [GitHub](https://github.com/) and create a new GitHub repository.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ]((Optional) Copy the Files to Start from an Example)]
+[ACCORDION-BEGIN [Step 5: ]((Optional) Copy the files to start from an example)]
 
    > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
@@ -145,7 +145,7 @@ If you don't want to start from scratch, but from a specific example of the tuto
     ```Shell/Bash
     cd ../cpapp
     ```
-
+    
 8. Install required Node.js modules in your app directory:
 
     ```Shell/Bash
