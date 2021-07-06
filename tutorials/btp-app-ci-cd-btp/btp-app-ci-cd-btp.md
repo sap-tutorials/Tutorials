@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Configure and Run a Predefined SAP Continuous Integration and Delivery (CI/CD) Pipeline
-description: This tutorial shows you how to enable CI/CD for your CAP application.
+description: Enable SAP Continuous Integration and Delivery (CI/CD) service on SAP Business Technology Platform for your CAP application.
 auto_validation: true
 time: 15
 tags: [ tutorial>advanced, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform]
@@ -34,7 +34,7 @@ For more information on how to configure and run predefined pipelines for your o
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Enable SAP Continuous Integration and Delivery)]
+[ACCORDION-BEGIN [Step 2: ](Enable SAP Continuous Integration and Delivery service)]
 
 1. Enter the [SAP BTP cockpit](https://cockpit.hanatrial.ondemand.com/).
 
@@ -81,7 +81,7 @@ For more information on how to configure and run predefined pipelines for your o
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Access Continuous Integration and Delivery Service)]
+[ACCORDION-BEGIN [Step 3: ](Access Continuous Integration and Delivery service)]
 
 1. In your SAP BTP subaccount, navigate to **Services** → **Instances and Subscriptions** in the left-hand pane.
 
@@ -96,7 +96,7 @@ For more information on how to configure and run predefined pipelines for your o
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Configure Your GitHub Credentials)]
+[ACCORDION-BEGIN [Step 4: ](Configure your GitHub credentials)]
 
    > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
@@ -118,14 +118,14 @@ If your GitHub repository is private, configure credentials for it, so that SAP 
 
 6. For **Password**, use a [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
-> Select **repo** as scope when creating the token.
+    > Select **repo** as scope when creating the token.
 
 7. Choose **Create**.
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Configure Your SAP BTP Credentials)]
+[ACCORDION-BEGIN [Step 5: ](Configure your SAP BTP credentials)]
 
 1. To create credentials for deploying to SAP BTP, Cloud Foundry environment, go to the **Credentials** tab and choose **+** *(Create Credentials)*.
 
@@ -146,7 +146,7 @@ If your GitHub repository is private, configure credentials for it, so that SAP 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 6: ](Configure a CI/CD Job)]
+[ACCORDION-BEGIN [Step 6: ](Configure a CI/CD job)]
 
 1. In the **Jobs** tab in SAP Continuous Integration and Delivery, choose **+** to create a new job.
 
@@ -208,7 +208,7 @@ If your GitHub repository is private, configure credentials for it, so that SAP 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 7: ](Create a GitHub Webhook)]
+[ACCORDION-BEGIN [Step 7: ](Create a GitHub webhook)]
 
 GitHub webhooks allow you to automate CI/CD builds. Whenever you push changes to your GitHub repository, a webhook push event is sent to the service to trigger a build of the connected job.
 
@@ -240,7 +240,7 @@ You can find this data (*Payload URL* and *Secret*) when you open the detail vie
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 8: ](Verify the Success of Your Build)]
+[ACCORDION-BEGIN [Step 8: ](Verify the success of your build)]
 
 You have to trigger your job manually the first time after creation.
 
@@ -274,18 +274,15 @@ You have to trigger your job manually the first time after creation.
 
     !![Cpapp Srv Route](CICD_cpapp_srv_route.png)
 
-[VALIDATE_1]
-
 You have now successfully created a CI/CD pipeline and deployed your application to SAP BTP.
 
-> Additional Documentation:
+> Additional Information:
 
-> If you'd like to add more stages to your job, for example, additional unit tests, you can configure the job in your repository instead of using the job editor of the SAP Continuous Integration and Delivery. See [Configure an SAP Cloud Application Programming Model Job in Your Repository](https://help.sap.com/viewer/SAP-Cloud-Platform-Continuous-Integration-and-Delivery/bfe48a4b12ed41868f92fa564829f752.html#loiobfe48a4b12ed41868f92fa564829f752) for more details.
-
+> If you'd like to add more stages to your job, for example, additional unit tests, you can configure the job in your repository instead of using the job editor of the SAP Continuous Integration and Delivery. See [Configure an SAP Cloud Application Programming Model Job in Your Repository](https://help.sap.com/viewer/SAP-Cloud-Platform-Continuous-Integration-and-Delivery/bfe48a4b12ed41868f92fa564829f752.html#loiobfe48a4b12ed41868f92fa564829f752) for more details."
 
 > In case this is your first deployment of the `cpapp` project to the SAP BTP Cloud Foundry environment, please continue with the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service). You'll need to complete the configuration before you can use the application, because this part can't be automated with CI/CD tooling.
 
-
+[VALIDATE_1]
 
 [ACCORDION-END]
 ---
