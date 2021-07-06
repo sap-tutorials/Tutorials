@@ -26,7 +26,7 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](SAP Fiori Elements Application vs. Freestyle UI5 Application)]
+[ACCORDION-BEGIN [Step 1: ](SAP Fiori elements application vs. freestyle UI5 application)]
 
 What is the difference to an SAP Fiori elements based application that you have already built in the [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements) section? As mentioned, both the freestyle app and the SAP Fiori elements app are based on SAPUI5.
 
@@ -40,7 +40,7 @@ Fortunately, you have also got a choice of several templates that get your appli
 
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Creating the Application)]
+[ACCORDION-BEGIN [Step 2: ](Creating the application)]
 
 In the next steps, you build an application using the `mitigations` part of our CAP-based service.
 
@@ -149,7 +149,7 @@ The change in the `manifest.json` is to make sure that the data requests are use
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Starting the Application)]
+[ACCORDION-BEGIN [Step 4: ](Starting the application)]
 
 1. Make sure `cds watch` is still running in the project root folder:
 
@@ -257,7 +257,7 @@ The change in the `manifest.json` is to make sure that the data requests are use
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ]((Optional) SAPUI5 Serve)]
+[ACCORDION-BEGIN [Step 5: ]((Optional) SAPUI5 serve)]
 
 [OPTION BEGIN [macOS/Linux]]
 
@@ -321,7 +321,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-
+    
     > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
 
 
@@ -421,7 +421,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-
+    
     > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
 
 
