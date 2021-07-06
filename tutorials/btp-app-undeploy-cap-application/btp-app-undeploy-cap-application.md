@@ -34,7 +34,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Undeploy Your Cloud Foundry Application)]
+[ACCORDION-BEGIN [Step 1: ](Undeploy your Cloud Foundry application)]
 
 [OPTION BEGIN [Delete applications]]
 
