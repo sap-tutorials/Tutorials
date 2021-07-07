@@ -21,7 +21,7 @@ SAP Workflow Management allows you to digitize workflows, manage decisions, gain
 
 The capital expenditure (CAPEX) process automates CAPEX request approvals in a transparent way and provides end-to-end visibility across all the steps. A workflow is triggered when the capital expenditure request is submitted by the user. This workflow internally calls business rules to determine number of approval steps based on the amount of investment and other related attributes of the request.
 
-In this tutorial, you can import a sample package with different artifacts using Process Flexibility Cockpit. For more information, see [Discover and Import Packages](https://help.sap.com/viewer/6f55baaf330443bd8132d071581bbae6/Cloud/en-US/bf54c54a7522465788728e6a33c88a8b.html).
+In this tutorial, you can import a sample package with different artifacts using the Process Flexibility Cockpit. For more information, see [Discover and Import Packages](https://help.sap.com/viewer/6f55baaf330443bd8132d071581bbae6/Cloud/en-US/bf54c54a7522465788728e6a33c88a8b.html).
 
 ---
 
