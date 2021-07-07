@@ -37,17 +37,17 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access Logs from Terminal)]
+[ACCORDION-BEGIN [Step 1: ](Access logs from terminal)]
 
 1. Display recent logs:
 
-    ```bash
+    ```Shell/Bash
     cf logs --recent <appname>
     ```
 
 2. Follow logs live:
 
-    ```bash
+    ```Shell/Bash
     cf logs <appname>
     ```
 
@@ -57,7 +57,7 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Access Logs from SAP BTP Cockpit)]
+[ACCORDION-BEGIN [Step 2: ](Access logs from SAP BTP cockpit)]
 
 1. Go to your subaccount in **SAP BTP cockpit**.
 
@@ -78,7 +78,7 @@ To continue with this tutorial you can find the result of the previous tutorial 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Analyze Logs Using Kibana Dashboard)]
+[ACCORDION-BEGIN [Step 3: ](Analyze logs using Kibana dashboard)]
 
 1. Go to your subaccount in **SAP BTP cockpit**.
 
@@ -135,7 +135,7 @@ resources:
     service: application-logs
     service-plan: standard
 ```
-
+    
 2. Bind the logging service instance to all `modules` of the `mta.yaml`:
 
 <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->
@@ -198,7 +198,7 @@ resources:
     service: application-logs
     service-plan: standard
 ```
-
+    
 2. Bind the logging service instance to all `modules` of the `mta.yaml`:
 
 <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->
@@ -232,7 +232,7 @@ modules:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Test It)]
+[ACCORDION-BEGIN [Step 5: ](Test it)]
 
 1. Build the MTAR file and deploy it to your Cloud Foundry space:
 

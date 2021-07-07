@@ -31,7 +31,7 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enable Authentication Support)]
+[ACCORDION-BEGIN [Step 1: ](Enable authentication support)]
 
 The enable authentication support in CAP for SAP BTP, the `xssec` and `xsenv` modules need to be installed. If `cds watch`is still running stop it with `Ctrl+C`. In your project folder execute:
 
@@ -42,14 +42,13 @@ npm i --save  @sap/xssec  @sap/xsenv
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Add UAA Service)]
+[ACCORDION-BEGIN [Step 2: ](Add UAA service)]
 
 We need to tell CAP that XSUAA is used. For this open the `package.json` in your `cpapp` project and add the following lines:
 
 <!-- cpes-file package.json:$.cds.requires -->
-```JSON[8-11]
+```JSON[7-10]
 {
-  "name": "cpapp",
   ...
   "cds": {
     "requires": {
@@ -70,7 +69,7 @@ Make sure you have pasted the new lines within the `"requires": {` section and n
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Roles and Scopes)]
+[ACCORDION-BEGIN [Step 3: ](Roles and scopes)]
 
 In the context of Cloud Foundry, a single authorization is called scope. For example, there could be a scope "Read" and a scope "Write". The scope allows a user to read or write a certain business object. Scopes can't be assigned to users directly. They're packaged into roles. For example, there could a role "Editor" consisting of the "Read" and "Write" scopes, while the role "Viewer" consists only of the "Read" scope.
 
@@ -79,7 +78,7 @@ However, CAP recommends using roles only, and creating one-to-one mappings betwe
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](XSUAA Security Configuration)]
+[ACCORDION-BEGIN [Step 4: ](XSUAA security configuration)]
 
 Create the file `xs-security.json` in your `cpapp` project by executing:
 

@@ -30,7 +30,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Assign Roles)]
+[ACCORDION-BEGIN [Step 1: ](Assign roles)]
 
 To be able to access the application, your user needs to be assigned to a role collection that provides the requires scopes.
 
@@ -56,7 +56,7 @@ Your user now appears in the list of the role collection's users.
 
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Test It)]
+[ACCORDION-BEGIN [Step 2: ](Test it)]
 
 Go to the application and choose the tile `Risks`. You should be able to see and change the data in the `Risks` application.
 
@@ -65,7 +65,7 @@ If not, probably you have signed in before adding the role collection to your us
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Additional Info: Create a Role Collection Manually)]
+[ACCORDION-BEGIN [Step 3: ](Additional Information: Create a role collection manually)]
 
 Instead of creating the role collection automatically using the `xs-security.json`, it's also possible to create a role collection manually. For example:
 
