@@ -1,6 +1,6 @@
 ---
-title: Create an SAP Fiori Elements Application
-description: Generate an SAP Fiori elements application and add additional features like flexible column layout and initial loading using SAP Fiori tools.
+title: Generate an SAP Fiori Elements Application based on a RAP-based Service
+description: Generate an SAP Fiori elements application of type List Report Object Page and add additional features.
 auto_validation: true
 time: 20
 tags: [products>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner, products>sap-business-application-studio, products>sap-business-technology-platform]
