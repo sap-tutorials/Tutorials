@@ -10,6 +10,12 @@
             "value": " tutorial>advanced"
         }
     ],
+    
+    
+    
+    
+    
+    
     "common": [{
             "name": "ABAP Connectivity",
             "value": "topic>abap-connectivity"
@@ -37,6 +43,9 @@
         }, {
             "name": "HTML5",
             "value": "topic>html5"
+        }, {
+            "name": "Identity Authentication",
+            "value": "topic>internet-of-thingsproducts>identity-authentication"
         }, {
             "name": "Internet of Things",
             "value": "topic>internet-of-things"
@@ -79,13 +88,7 @@
         }, {
             "name": "User Interface",
             "value": "topic>user-interface"
-        }, {
-            "name": "Android SDK for SAP BTP",
-            "value": "products>android-sdk-for-sap-btp"
-        }, {
-            "name": "Identity Authentication",
-            "value": "topic>internet-of-thingsproducts>identity-authentication"
-        }, {
+        },  {
             "name": "iOS SDK for SAP BTP",
             "value": "products>ios-sdk-for-sap-btp"
         }, {
@@ -95,8 +98,23 @@
             "name": "SAP Adaptive Server Enterprise",
             "value": "products>sap-adaptive-server-enterprise"
         }, {
+            "name": "SAP Advanced SQL Migration",
+            "value": "software-product-function>sap-advanced-sql-migration"
+        }, {
             "name": "SAP AI Business Services",
             "value": "products>sap-ai-business-services"
+        },  {
+            "name": "SAP Analytics Cloud",
+            "value": "products>sap-analytics-cloud"
+        }, {
+            "name": "SAP Analytics Cloud, analytics designer",
+            "value": "software-product-function>sap-analytics-cloud\\,-analytics-designer"
+        }, {
+            "name": "SAP API Management",
+            "value": "products>sap-api-management"
+        }, {         
+            "name": "SAP Application Interface Framework",
+            "value": "products>sap-application-interface-framework"
         }, {
             "name": "SAP ASE - BW Enablement",
             "value": "software-product-function>sap-ase-- bw-enablement"
@@ -106,15 +124,6 @@
         }, {
             "name": "SAP ASE - HADR Enablement",
             "value": "software-product-function>sap-ase-- hadr-enablement"
-        }, {
-            "name": "SAP Analytics Cloud",
-            "value": "products>sap-analytics-cloud"
-        }, {
-            "name": "SAP API Management",
-            "value": "products>sap-api-management"
-        }, {         
-            "name": "SAP Application Interface Framework",
-            "value": "products>sap-application-interface-framework"
         }, {
             "name": "SAP Build",
             "value": "products>build"
@@ -133,6 +142,12 @@
         }, {
             "name": "SAP BTP, Kyma runtime",
             "value": "products>sap-btp\\, kyma-runtime"
+        }, {
+            "name": "SAP BTP SDK for Android",
+            "value": "products>sap-btp-sdk-for-android"
+        }, {
+            "name": "SAP BTP SDK for iOS",
+            "value": "products>sap-btp-sdk-for-ios"
         }, {
             "name": "SAP Business Application Studio",
             "value": "products>sap-business-application-studio"
@@ -188,6 +203,18 @@
             "name": "SAP HANA Cloud",
             "value": "products>sap-hana-cloud"
         }, {
+            "name": "SAP HANA Cloud, data lake",
+            "value": "software-product-function>sap-hana-cloud\\,-data-lake"
+        }, {
+            "name": "SAP HANA Cloud, SAP HANA database",
+            "value": "software-product-function>sap-hana-cloud\\,-sap-hana-database"
+        }, {
+            "name": "SAP HANA Cloud, SAP Adaptive Server Enterprise",
+            "value": "software-product-function>sap-hana-cloud\\,-sap-adaptive-server-enterprise"
+        }, {
+            "name": "SAP HANA Cloud, SAP Adaptive Server Enterprise replication",
+            "value": "software-product-function>sap-hana-cloud\\,-sap-adaptive-server-enterprise-replication"
+        },  {
             "name": "SAP HANA, dynamic tiering",
             "value": "products>sap-hana-dynamic-tiering"
         }, {
