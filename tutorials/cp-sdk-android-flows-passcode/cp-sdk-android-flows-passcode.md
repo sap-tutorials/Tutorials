@@ -4,14 +4,14 @@ author_profile: https://github.com/Fenghaoyue
 title: Handle Passcode with the Flows Component
 description: Learn how to use the Flows component of SAP BTP SDK for Android to handle passcode change, forgetting passcode and passcode verification scenarios.
 auto_validation: true
-time: 60
+time: 30
 tags: [ tutorial>beginner, operating-system>android, topic>mobile, products>sap-business-technology-platform]
 primary_tag: products>sap-btp-sdk-for-android
 ---
 
 ## Prerequisites
 - You completed [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app).
-- You completed [Get Familiar with Flows Component by Wizard Generated Application](cp-sdk-android-flows-wizard).
+- You completed [Get Familiar with the Flows Component by a Wizard Generated Application](cp-sdk-android-flows-wizard).
 
 ## Details
 ### You will learn
