@@ -10,12 +10,6 @@
             "value": " tutorial>advanced"
         }
     ],
-    
-    
-    
-    
-    
-    
     "common": [{
             "name": "ABAP Connectivity",
             "value": "topic>abap-connectivity"
@@ -185,6 +179,9 @@
             "name": "SAP Data Intelligence",
             "value": "products>sap-data-intelligence"
         }, {
+            "name": "SAP Data Warehouse Cloud",
+            "value": "products>sap-data-warehouse-cloud"
+        },  {
             "name": "SAP Enterprise Messaging",
             "value": "products>sap-enterprise-messaging"
         }, {
