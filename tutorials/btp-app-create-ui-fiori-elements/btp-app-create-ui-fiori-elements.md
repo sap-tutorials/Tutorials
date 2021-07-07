@@ -32,7 +32,7 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Generate the UI with an SAP Fiori Elements Template)]
+[ACCORDION-BEGIN [Step 2: ](Generate the UI with an SAP Fiori elements template)]
 
 1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P** for macOS / **Ctrl** + **Shift** + **P** for Windows) and choose **Fiori: Open Application Generator**.
 
@@ -79,7 +79,7 @@ The application is now generated and in a few seconds you can see it in the `app
 
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Modify the UI with OData Annotations)]
+[ACCORDION-BEGIN [Step 3: ](Modify the UI with OData annotations)]
 
 1. If it's not still running from the previous tutorial, execute `cds watch` in a VS Code terminal and switch to <http://localhost:4004> in your browser.
 
@@ -118,7 +118,7 @@ You've now already finished a full blown service and a UI application on top run
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Check the Annotation Files)]
+[ACCORDION-BEGIN [Step 4: ](Check the annotation files)]
 
 Let's have a look at the new `risk-service-ui.cds` file and the annotations in there. At the beginning we see:
 
