@@ -26,7 +26,7 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](SAP Fiori Elements Application vs. Freestyle UI5 Application)]
+[ACCORDION-BEGIN [Step 1: ](SAP Fiori elements application vs. freestyle UI5 application)]
 
 What is the difference to an SAP Fiori elements based application that you have already built in the [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements) section? As mentioned, both the freestyle app and the SAP Fiori elements app are based on SAPUI5.
 
@@ -40,7 +40,7 @@ Fortunately, you have also got a choice of several templates that get your appli
 
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Creating the Application)]
+[ACCORDION-BEGIN [Step 2: ](Creating the application)]
 
 In the next steps, you build an application using the `mitigations` part of our CAP-based service.
 
@@ -52,32 +52,32 @@ In the next steps, you build an application using the `mitigations` part of our 
 
 4. Navigate to the `app` folder:
 
-    ```bash
+    ```Shell/Bash
     cd app
     ```
 
 5. Create a new `mitigations` folder for the new app:
 
-    ```bash
+    ```Shell/Bash
     mkdir mitigations
     ```
 
 6. Navigate to the `mitigations` folder:
 
-    ```bash
+    ```Shell/Bash
     cd mitigations
     ```
 
 7. Create a freestyle UI5 application:
 
-    ```bash
+    ```Shell/Bash
     yo @sapui5/sapui5-templates
     ```
     A creation wizard starts.
 
 8. Follow the creation wizard and use the following values:
 
-    ```javascript
+    ```JavaScript
     - "Provide the module name" mitigations
     - "Provide the module namespace" ns
     - "Select a template" SAP Fiori Worklist Application OData V4
@@ -144,16 +144,16 @@ Then there's the section about the service base URI and the data source URL. It 
 >         baseUri: http://localhost:4004/service/risk
 > ```
 
-The change in the `manifest.yaml` is to make sure that the data requests are used with an absolute URL at `/risk`. The original entry for the URI was `risk`. This would have triggered SAPUI5 to issue any data request relative to the path of the application itself, but we want the requests to be absolute to risk.
+The change in the `manifest.json` is to make sure that the data requests are used with an absolute URL at `/risk`. The original entry for the URI was `risk`. This would have triggered SAPUI5 to issue any data request relative to the path of the application itself, but we want the requests to be absolute to risk.
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Starting the Application)]
+[ACCORDION-BEGIN [Step 4: ](Starting the application)]
 
 1. Make sure `cds watch` is still running in the project root folder:
 
-    ```bash
+    ```Shell/Bash
     cds watch
     ```
 
@@ -171,78 +171,78 @@ The change in the `manifest.yaml` is to make sure that the data requests are use
 
 4. Open the view of the work list `cpapp/app/mitigations/webapp/view/Worklist.view.xml`  and add the following code, removing the `ID` column and instead adding `Description`, `Owner` and `Timeline` columns:
 
-```XML[2-10,19-23]
-    <columns>
-        <Column id="DescriptionColumn">
-            <Text text="Description" id="DescriptionColumnTitle"/>
-        </Column>
-        <Column id="OwnerColumn">
-            <Text text="Owner" id="OwnerColumnTitle"/>
-        </Column>
-        <Column id="TimelineColumn">
-            <Text text="Timeline" id="TimelineColumnTitle"/>
-        </Column>
-    </columns>
+    ```XML[2-10,19-23]
+        <columns>
+            <Column id="DescriptionColumn">
+                <Text text="Description" id="DescriptionColumnTitle"/>
+            </Column>
+            <Column id="OwnerColumn">
+                <Text text="Owner" id="OwnerColumnTitle"/>
+            </Column>
+            <Column id="TimelineColumn">
+                <Text text="Timeline" id="TimelineColumnTitle"/>
+            </Column>
+        </columns>
 
-    <items>
-        <ColumnListItem
-            type="Navigation"
-            press=".onPress">
-            <cells>
-                <ObjectIdentifier
-                    text="{description}" />
-                <Text
-                    text="{owner}" />
-                <Text
-                    text="{timeline}" />
-            </cells>
-        </ColumnListItem>
-    </items>
-```
+        <items>
+            <ColumnListItem
+                type="Navigation"
+                press=".onPress">
+                <cells>
+                    <ObjectIdentifier
+                        text="{description}" />
+                    <Text
+                        text="{owner}" />
+                    <Text
+                        text="{timeline}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    ```
 
 5. Open the view of the object `cpapp/app/mitigations/webapp/view/Object.view.xml` and also replace `ID` and add `Description`, `Owner`, and `Timeline` using SAPUI5 controls like `ObjectStatus` (you can copy the whole code and replace the existing code in the file):
 
-```XML[4,16,28-34]
-<mvc:View
-    controllerName="ns.mitigations.controller.Object"
-    xmlns="sap.m"
-    xmlns:l="sap.ui.layout"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns:semantic="sap.f.semantic">
+    ```XML[4,16,28-34]
+    <mvc:View
+        controllerName="ns.mitigations.controller.Object"
+        xmlns="sap.m"
+        xmlns:l="sap.ui.layout"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:semantic="sap.f.semantic">
 
-    <semantic:SemanticPage
-        id="page"
-        headerPinnable="false"
-        toggleHeaderOnTitleClick="false"
-        busy="{objectView>/busy}"
-        busyIndicatorDelay="{objectView>/delay}">
+        <semantic:SemanticPage
+            id="page"
+            headerPinnable="false"
+            toggleHeaderOnTitleClick="false"
+            busy="{objectView>/busy}"
+            busyIndicatorDelay="{objectView>/delay}">
 
-        <semantic:titleHeading>
-            <Title text="{description}" />
-        </semantic:titleHeading>
+            <semantic:titleHeading>
+                <Title text="{description}" />
+            </semantic:titleHeading>
 
-        <semantic:headerContent>
-            <ObjectNumber
-            />
-        </semantic:headerContent>
+            <semantic:headerContent>
+                <ObjectNumber
+                />
+            </semantic:headerContent>
 
-        <semantic:sendEmailAction>
-            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
-        </semantic:sendEmailAction>
+            <semantic:sendEmailAction>
+                <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+            </semantic:sendEmailAction>
 
-        <semantic:content>
-            <l:VerticalLayout>
-                <ObjectStatus title="Description" text="{description}"/>
-                <ObjectStatus title="Owner" text="{owner}"/>
-                <ObjectStatus title="Timeline" text="{timeline}"/>
-            </l:VerticalLayout>
-        </semantic:content>
+            <semantic:content>
+                <l:VerticalLayout>
+                    <ObjectStatus title="Description" text="{description}"/>
+                    <ObjectStatus title="Owner" text="{owner}"/>
+                    <ObjectStatus title="Timeline" text="{timeline}"/>
+                </l:VerticalLayout>
+            </semantic:content>
 
 
-    </semantic:SemanticPage>
+        </semantic:SemanticPage>
 
-</mvc:View>
-```
+    </mvc:View>
+    ```
 
 6. Refresh the `mitigations` application in your browser.
 
@@ -257,7 +257,7 @@ The change in the `manifest.yaml` is to make sure that the data requests are use
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ]((Optional) SAPUI5 Serve)]
+[ACCORDION-BEGIN [Step 5: ]((Optional) SAPUI5 serve)]
 
 [OPTION BEGIN [macOS/Linux]]
 
@@ -274,7 +274,7 @@ While `cds watch` comes in handy for serving even the SAPUI5 based apps directly
     - Theme Build on-the-fly for library development
     - Transpiling middleware
 
-If these are of interest to you, you can go on using `cds watch` and skip the rest of the section.
+    > If you are not interested in the previous listed pros, you can go on using `cds watch` and skip the rest of the section.
 
 You now add the capability of live reloading to the configuration of the SAPUI5 tools. After enabling it, every time you save a file in your `mitigations` app, the browser window will automatically reload the new sources and show them.
 
@@ -282,28 +282,28 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 
 2. Add the following lines to add the live reload module:
 
-```JSON[6,11]
-{
-    ...
-    "devDependencies": {
-        "@ui5/cli": "^1.14.0",
-        "ui5-middleware-simpleproxy": "^0.2.1",
-        "ui5-middleware-livereload": "^0.1.10"
-    },
-    "ui5": {
-        "dependencies": [
-            "ui5-middleware-simpleproxy",
-            "ui5-middleware-livereload"
-        ]
+    ```JSON[6,11]
+    {
+        ...
+        "devDependencies": {
+            "@ui5/cli": "^1.14.0",
+            "ui5-middleware-simpleproxy": "^0.2.1",
+            "ui5-middleware-livereload": "^0.1.10"
+        },
+        "ui5": {
+            "dependencies": [
+                "ui5-middleware-simpleproxy",
+                "ui5-middleware-livereload"
+            ]
+        }
     }
-}
-```
+    ```
 
 3. Open the `ui5.yaml` file in your `cpapp/app/mitigations` folder.
 
 4. Add the following lines to configure SAPUI5 tools to use the live reload module:
 
-    ```YAML hl_lines="9-15"
+    ```YAML[9-15]
         ...
         server:
           customMiddleware:
@@ -321,35 +321,35 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-
+    
     > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
 
 
 5. From your `cpapp` folder, navigate to your `mitigations` folder:
 
-    ```bash
+    ```Shell/Bash
     cd app/mitigations/
     ```
 
 6. Check if a (hidden) file called `.npmrc` exists:
 
-    ```bash
+    ```Shell/Bash
     ls -a
     ```
 6. Delete the file `.npmrc` if it exists:
 
-    ```bash
+    ```Shell/Bash
     rm .npmrc
     ```
 7. Install the npm packages:
 
-    ```bash
+    ```Shell/Bash
     npm install
     ```
 
 8. Start the application. Make sure that `cds watch` is running in another terminal:
 
-    ```bash
+    ```Shell/Bash
     ui5 serve
     ```
 
@@ -374,7 +374,7 @@ While `cds watch` comes in handy for serving even the SAPUI5 based apps directly
     - Theme Build on-the-fly for library development
     - Transpiling middleware
 
-If these are of interest to you, you can go on using `cds watch` and skip the rest of the section.
+    > If you are not interested in the previous listed pros, you can go on using `cds watch` and skip the rest of the section.
 
 You now add the capability of live reloading to the configuration of the SAPUI5 tools. After enabling it, every time you save a file in your `mitigations` app, the browser window will automatically reload the new sources and show them.
 
@@ -382,28 +382,28 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 
 2. Add the following lines to add the live reload module:
 
-```JSON[6,11]
-{
-    ...
-    "devDependencies": {
-        "@ui5/cli": "^1.14.0",
-        "ui5-middleware-simpleproxy": "^0.2.1",
-        "ui5-middleware-livereload": "^0.1.10"
-    },
-    "ui5": {
-        "dependencies": [
-            "ui5-middleware-simpleproxy",
-            "ui5-middleware-livereload"
-        ]
+    ```JSON[6,11]
+    {
+        ...
+        "devDependencies": {
+            "@ui5/cli": "^1.14.0",
+            "ui5-middleware-simpleproxy": "^0.2.1",
+            "ui5-middleware-livereload": "^0.1.10"
+        },
+        "ui5": {
+            "dependencies": [
+                "ui5-middleware-simpleproxy",
+                "ui5-middleware-livereload"
+            ]
+        }
     }
-}
-```
+    ```
 
 3. Open the `ui5.yaml` file in your `cpapp/app/mitigations` folder.
 
 4. Add the following lines to configure SAPUI5 tools to use the live reload module:
 
-    ```YAML hl_lines="9-15"
+    ```YAML[9-15]
         ...
         server:
           customMiddleware:
@@ -421,41 +421,41 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-
+    
     > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
 
 
 5. From your `cpapp` folder, navigate to your `mitigations` folder:
 
-    ```bash
+    ```Shell/Bash
     cd app/mitigations/
     ```
 
 6. Check if a (hidden) file called `.npmrc` exists:
 
-    ```bash
+    ```Shell/Bash
     Get-ChildItem -Hidden
     ```
-    ```bash
+    ```Shell/Bash
     dir
     ```
 
 
 6. Delete the file `.npmrc` if it exists:
 
-    ```bash
+    ```Shell/Bash
     del .npmrc
     ```
 
 7. Install the npm packages:
 
-    ```bash
+    ```Shell/Bash
     npm install
     ```
 
 8. Start the application. Make sure that `cds watch` is running in another terminal:
 
-    ```bash
+    ```Shell/Bash
     ui5 serve
     ```
 

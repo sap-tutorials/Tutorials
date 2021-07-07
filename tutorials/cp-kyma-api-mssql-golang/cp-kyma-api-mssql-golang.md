@@ -96,10 +96,10 @@ export MYAPP_port=1433
 [OPTION BEGIN [Windows]]
 
 ```PowerShell
-$ENV:MYAPP_username=sa
-$ENV:MYAPP_password=Yukon900
-$ENV:MYAPP_database=DemoDB
-$ENV:MYAPP_host=localhost
+$ENV:MYAPP_username='sa'
+$ENV:MYAPP_password='Yukon900'
+$ENV:MYAPP_database='DemoDB'
+$ENV:MYAPP_host='localhost'
 $ENV:MYAPP_port=1433
 ```
 
