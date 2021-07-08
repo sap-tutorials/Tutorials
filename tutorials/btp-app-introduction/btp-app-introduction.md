@@ -37,7 +37,7 @@ The tutorials cover a variety of topics starting from basic onboarding tasks to 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](What Is CAP)]
+[ACCORDION-BEGIN [Step 2: ](What is CAP)]
 
 CAP is a framework of languages, libraries, and tools for building enterprise-grade services and applications. It guides developers along a 'golden path' of proven best practices and a great wealth of out-of-the-box solutions to recurring tasks.
 

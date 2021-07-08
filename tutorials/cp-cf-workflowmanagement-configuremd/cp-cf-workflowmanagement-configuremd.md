@@ -22,7 +22,7 @@ You can view, edit, author, and activate your business decisions using **Manage 
 
 A decision consists of one or more policies, and each policy consists of a collection of rules. It is a part of the live process package and is used to automate the decision making parts of a business process.
 
-You configure the auto approval policy using this tutorial. This policy is used to determine if an approval is required or not, based on the total investment cost. In this scenario, auto approval is enabled if the investment cost is less than 10000.
+You configure the auto approval policy using this tutorial. This policy is used to determine if an approval is required or not, based on the total investment cost. In this scenario, auto approval is enabled if the investment cost is less than 5000.
 
 
 ---
@@ -65,7 +65,7 @@ You configure the auto approval policy using this tutorial. This policy is used 
 
     !![Edit Rule](cp-cf-wm-configuredecision-edit.png)
 
-6. Modify the text rule value to **`10000`** and **Save** the changes.
+6. Modify the text rule value to **`5000`** and **Save** the changes.
 
     !![Text Rule Value](cp-cf-wm-configuredecision-autovalue.png)
 
@@ -77,7 +77,7 @@ You configure the auto approval policy using this tutorial. This policy is used 
 
     !![Release Version](cp-cf-wm-configuredecision-release.png)
 
-2. In the **Release Version** dialog, provide the version number and description. Then choose **Release**.
+2. In the **Release Version** dialog, provide the revision number and description. Then choose **Release**.
 
     !![Release](cp-cf-wm-configuredecision-releasedialog.png)
 
