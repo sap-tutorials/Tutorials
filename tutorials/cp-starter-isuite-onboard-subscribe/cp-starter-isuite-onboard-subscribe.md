@@ -122,7 +122,7 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
     !![Intermediate Step](4-1-intermidiate_step.png)
 
-    Click **Next**.
+    Select the **Enable API Business Hub Enterprise** checkbox. Click **Next**.
 
     !![API management](4-1-API_step.png)
 
@@ -132,8 +132,8 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
     !![Activate capabilities](4-2-Activate_capabilities.png)
 
-    The activation may take a while and you will notice the dialog shown here.
-    >**IMPORTANT**: Before you proceed to **Step 4.5**, please wait for all the capabilities to be activated.
+    The activation takes a while to complete.
+    >**IMPORTANT**: Before you proceed to **Step 5**, please wait for all the capabilities to be activated.
 
     !![Activation dialog](4-2-Activation_Dial.png)
 

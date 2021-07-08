@@ -28,11 +28,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
+
  - How to undeploy your Cloud Foundry application
+
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Undeploy Your Cloud Foundry Application)]
+[ACCORDION-BEGIN [Step 1: ](Undeploy your Cloud Foundry application)]
 
 [OPTION BEGIN [Delete applications]]
 
@@ -40,7 +42,7 @@ To undeploy (delete) an `mtar`, you don't need to delete the apps and the servic
 
 You can either undeploy the applications or undeploy the applications and their service instances. Undeploying the applications and their service instances will also delete the data stored in these instances (for example, database content).
 
-```bash
+```Shell/Bash
 cf undeploy cpapp
 ```
 
@@ -54,14 +56,21 @@ You can either undeploy the applications or undeploy the applications and their 
 
 > Deletes all data stored in the application.
 
-```bash
+```Shell/Bash
 cf undeploy cpapp --delete-service-keys --delete-services
 ```
 
-[VALIDATE_1]
-
 [OPTION END]
 
+
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 2: ](Summary)]
+
+Congratulations! You have completed all tutorials.
+
+[VALIDATE_1]
 
 [ACCORDION-END]
 ---
