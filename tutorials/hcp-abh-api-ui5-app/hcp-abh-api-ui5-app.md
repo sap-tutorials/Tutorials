@@ -30,7 +30,7 @@ Create the following two destinations in the SAP Cloud Platform cockpit. You can
 1. !![sandbox destination](sandbox_dest.png)
 2. !![catalog destination](catalog_dest.png)
 
-
+Connecting to the SAP API Business Hub, allows you to discover APIs to use in your UI5 application. Once you find the required API, you can test it in a sandbox which is enabled by connecting to the sandbox.
 
 > Check out [this tutorial](cp-cf-create-destination) if you are not sure how to create destinations.
 
