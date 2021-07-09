@@ -1,12 +1,12 @@
 ---
 title: Call SAP API Business Hub API from a SAPUI5 Application
 description: Incorporate an SAP API into your SAPUI5 application using SAP Business Application Studio.
-primary_tag: products>sap-cloud-platform
+primary_tag: products>sap-business-technology-platform
 auto_validation: false
 author_name: Marius Obert
 author_profile: https://github.com/IObert
 time: 25
-tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-business-application-studio, topic>sap-api-business-hub]
+tags: [  tutorial>beginner, topic>sapui5, products>sap-business-technology-platform, products>sap-business-application-studio, topic>sap-api-business-hub]
 ---
 
 
