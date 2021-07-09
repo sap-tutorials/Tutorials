@@ -37,7 +37,7 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add Navigation Targets)]
+[ACCORDION-BEGIN [Step 1: ](Add navigation targets)]
 
 In this tutorial, you will use the SAP Launchpad service to access your CAP service and its UI. Additionally, the SAP Launchpad service provides features like personalization, role-based visibility, theming, and more. You can add multiple applications to one launchpad, including subscribed ones and applications from SAP S/4HANA or SAP BTP.
 
@@ -46,7 +46,7 @@ Navigation targets are required to navigate between applications, but also to st
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Add Navigation Target for Risks UI)]
+[ACCORDION-BEGIN [Step 2: ](Add navigation target for Risks UI)]
 
 1. Open the file `app/risks/webapp/manifest.json`.
 
@@ -82,7 +82,7 @@ Navigation targets are required to navigate between applications, but also to st
 
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Add Navigation Target for Mitigations UI)]
+[ACCORDION-BEGIN [Step 3: ](Add navigation target for Mitigations UI)]
 
 Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.json`, but with the `semanticObject` name `Mitigations`:
 
@@ -115,7 +115,7 @@ Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Add SAP Cloud Service)]
+[ACCORDION-BEGIN [Step 4: ](Add SAP Cloud service)]
 
 Add your SAP Cloud service at the end of `app/risks/webapp/manifest.json` and `app/mitigations/webapp/manifest.json` files:
 
@@ -139,7 +139,7 @@ The name of your SAP Cloud service (`cpapp` in this case) should be unique withi
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Add the SAP Destination Service)]
+[ACCORDION-BEGIN [Step 5: ](Add the SAP Destination service)]
 
 Add the following lines to the `resources` section of the `mta.yaml` file:
 
@@ -163,7 +163,7 @@ The service configuration option `HTML5Runtime_enabled: true` is required to mak
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 6: ](Add SAP HTML5 Application Repository Service)]
+[ACCORDION-BEGIN [Step 6: ](Add SAP HTML5 Application Repository service)]
 
 Add the following lines to the `resources` section of the `mta.yaml` file:
 
@@ -183,7 +183,7 @@ The SAP HTML5 Application Repository service stores static UI files. In the depl
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 7: ](Add Destinations)]
+[ACCORDION-BEGIN [Step 7: ](Add destinations)]
 
 You add three destinations for the SAP Destination service that are used by the SAP Launchpad service:
 
@@ -254,7 +254,7 @@ modules:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 8: ](Install Required UI Tools and MTA)]
+[ACCORDION-BEGIN [Step 8: ](Install required UI tools and MTA)]
 
 1. Install [SAPUI5 tooling](https://www.npmjs.com/package/@sap/ux-ui5-tooling) package as global module:
 
@@ -283,7 +283,7 @@ modules:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 9: ](Remove Broken Dependency from Risks Application)]
+[ACCORDION-BEGIN [Step 9: ](Remove broken dependency from Risks application)]
 
 Remove the following two lines from `app/risks/package.json`, because they produce build issues and are not needed:
 
@@ -300,7 +300,7 @@ Make sure the last entry in `"devDependencies"` doesn't end with a comma (`,`) c
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 10: ](Add SAP Fiori Elements Risks Application)]
+[ACCORDION-BEGIN [Step 10: ](Add SAP Fiori elements Risks application)]
 
 1. Switch to `app/risks` directory:
 
@@ -314,6 +314,7 @@ Make sure the last entry in `"devDependencies"` doesn't end with a comma (`,`) c
     fiori add deploy-config cf
     ```
 
+    > If the SAP Fiori generator fails, make sure to remove other `.yo-rc.json` files you might have in any of your project's directories and try again.
 
 3. It will ask for the destination name.
 
@@ -322,7 +323,7 @@ Make sure the last entry in `"devDependencies"` doesn't end with a comma (`,`) c
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 11: ](Add SAPUI5 Freestyle Mitigations Application)]
+[ACCORDION-BEGIN [Step 11: ](Add SAPUI5 freestyle Mitigations application)]
 
 1. Repeat the procedure with the `app/mitigations` folder:
 
@@ -336,14 +337,14 @@ Make sure the last entry in `"devDependencies"` doesn't end with a comma (`,`) c
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 12: ](Check the Results in mta.yaml)]
+[ACCORDION-BEGIN [Step 12: ](Check the results in mta.yaml)]
 
 The newly added modules `nsrisks` and `nsmitigations` do the build of the SAP Fiori application. Each build result is a ZIP file that contains optimized UI resources and a ZIP file `manifest-bundle.zip` with the `manifest.json` and the `i18n` files. The latter is required by the SAP Launchpad service.
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 13: ](Risks Application Module nsrisks)]
+[ACCORDION-BEGIN [Step 13: ](Risks application module nsrisks)]
 
 <!-- snippet mta.yaml --branch launchpad-service modules: "- name: nsrisks" -->
 ```YAML
@@ -364,7 +365,7 @@ modules:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 14: ](Mitigations Application Module nsmitigations)]
+[ACCORDION-BEGIN [Step 14: ](Mitigations application module nsmitigations)]
 
 <!-- snippet mta.yaml --branch launchpad-service modules: "- name: nsmitigations" -->
 ```YAML
@@ -385,7 +386,7 @@ modules:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 15: ](HTML5 Application Deployer)]
+[ACCORDION-BEGIN [Step 15: ](HTML5 application deployer)]
 
 The module `cpapp-app-content` deploys the ZIP files from the `nsrisks.zip` and `nsmitigations.zip` to the SAP HTML5 Application Repository service, where it can be accessed by the SAP Launchpad service using the previously added destinations.
 
@@ -416,7 +417,7 @@ modules:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 16: ](Add UI Build Files to .gitignore)]
+[ACCORDION-BEGIN [Step 16: ](Add UI build files to .gitignore)]
 
 The SAP Fiori build files do not need to be stored in Git. You can add it to your `.gitignore` file:
 
@@ -433,7 +434,7 @@ app/*/package-lock.json
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 17: ](Re-Build and Re-Deploy the .mtar File)]
+[ACCORDION-BEGIN [Step 17: ](Re-build and re-deploy the .mtar file)]
 
 1. Build your project with the MTA Build Tool (MBT):
 
@@ -458,7 +459,7 @@ app/*/package-lock.json
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 18: ](Subscribe to SAP Launchpad Service)]
+[ACCORDION-BEGIN [Step 18: ](Subscribe to SAP Launchpad service)]
 
 1. Log on to your **Global Account** and navigate to the **Subaccount** where you have deployed your service and application.
 
@@ -477,7 +478,7 @@ You have now subscribed to the SAP Launchpad service.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 19: ](Create Your SAP Launchpad Site)]
+[ACCORDION-BEGIN [Step 19: ](Create your SAP Launchpad site)]
 
 1. Choose **Services** **&rarr;** **Instances and Subscriptions** on the left.
 
@@ -546,7 +547,7 @@ You have now subscribed to the SAP Launchpad service.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 20: ](Test Your SAP Launchpad Site)]
+[ACCORDION-BEGIN [Step 20: ](Test your SAP Launchpad site)]
 
 1. Choose **Go to site**.
 

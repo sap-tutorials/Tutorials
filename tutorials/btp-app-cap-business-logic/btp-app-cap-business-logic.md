@@ -25,7 +25,7 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add Custom Code)]
+[ACCORDION-BEGIN [Step 1: ](Add custom code)]
 
 In this tutorial, you add some custom code to the CAP application. Depending on the value of the property `impact`, the custom code changes the value of the property `criticality`. This property is used in OData annotations to control the color of some of the cells in the table of our work list page.
 
@@ -40,7 +40,7 @@ In this tutorial, you add some custom code to the CAP application. Depending on 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Explanation of the Custom Code)]
+[ACCORDION-BEGIN [Step 2: ](Explanation of the custom code)]
 
 <!-- cpes-file srv/risk-service.js -->
 ```JavaScript
