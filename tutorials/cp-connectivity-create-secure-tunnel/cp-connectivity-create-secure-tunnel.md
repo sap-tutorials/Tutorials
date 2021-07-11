@@ -2,8 +2,8 @@
 title: Set up Secure Tunnel between ABAP System and SAP Cloud Platform (CF)
 description: Set up your SAP Cloud Platform account and the Cloud Connector to establish a secure tunnel between SAP Cloud Platform and the Application Server ABAP in your system landscape.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity,  topic>abap-connectivity]
+primary_tag: products>sap-business-technology-platform
+tags: [  tutorial>beginner, products>sap-business-technology-platform, products>sap-connectivity-service,  topic>abap-connectivity]
 time: 15
 ---
 
