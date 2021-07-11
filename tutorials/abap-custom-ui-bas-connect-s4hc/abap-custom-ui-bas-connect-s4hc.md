@@ -8,16 +8,14 @@ primary_tag: topic>abap-extensibility
 ---
 
 ## Prerequisites
- - You have an **SAP S/4HANA Cloud tenant** and a business user with **Communication Management** authorizations (this requires a business role with unrestricted write access containing business catalog *`SAP_CORE_BC_COM`* ).
+ - You have an **SAP S/4HANA Cloud tenant** and a business user with **Communication Management** authorizations (this requires a business role with unrestricted write access containing business catalog `SAP_CORE_BC_COM` ).
  - You have an **SAP Business Technology Platform trial account** with an SAP Business Application Studio subscription
 
 ### You will learn
-  - How to create an HTTP destination on SAP Business Technology Platform (SAP BTP) with SAML assertion authentication to an SAP S/4HANA Cloud tenant
-  - How to create a communication system for an SAP Business Application Studio subaccount in an S/4HANA ABAP tenant
-  - This connection is needed to develop a custom UI with SAP Business Application Studio for a custom business object running in an S/4HANA ABAP tenant and for deploying that UI.
+- How to create an HTTP destination on SAP Business Technology Platform with SAML assertion authentication to an SAP S/4HANA Cloud tenant
+- How to create a communication system for an SAP Business Application Studio subaccount in an S/4HANA ABAP tenant
 
-
-To follow this tutorial, you can either use a subaccount in your trial account on SAP BTP or you can use a subaccount in a customer account, however, for the customer account subaccount, you have to do the following:
+To follow this tutorial, you can either use a subaccount in your trial account on SAP BTP or you can use a subaccount in a customer account. However, for the customer account subaccount, you have to do the following:
 
   - Set up mutual trust between the SAP BTP subaccount and the Identity Provider, see
 
@@ -31,26 +29,28 @@ To follow this tutorial, you can either use a subaccount in your trial account o
 
 Alternatively, see [Integrating SAP Business Application Studio](https://help.sap.com/viewer/0f69f8fb28ac4bf48d2b57b9637e81fa/latest/en-US/22bc724fd51a4aa4a4d1c5854db7e026.html) documentation for this tutorial's content with a customer account.
 
-### Additional Information
-Tutorial last updated with SAP S/4HANA Cloud Release 2105
+The communication system for an SAP Business Application Studio subaccount in an S/4HANA ABAP tenant is needed to develop a custom UI with SAP Business Application Studio for a custom business object running in an S/4HANA ABAP tenant and for deploying that UI.
+
+>Tutorial last updated with SAP S/4HANA Cloud Release 2105
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Destination in SAP BTP to SAP S/4HANA Cloud Tenant)]
+[ACCORDION-BEGIN [Step 1: ](Create destination to SAP S/4HANA Cloud tenant)]
 SAP Business Application Studio requires connection information to request custom business object data from your SAP S/4HANA Cloud tenant and to deploy a UI into this tenant. That information is stored in the SAP Business Application Studio subaccount as a so-called destination. To create that destination, do the following:
 
-1.  In your web browser, open the SAP BTP Trial cockpit <https://account.hanatrial.ondemand.com> and *Enter Your Trial Account*, which is a so-called global account.
+1.  In your web browser, open the SAP BTP Trial cockpit <https://account.hanatrial.ondemand.com> and **Enter Your Trial Account**, which is a so-called global account.
 
     !![Enter Global Trial Account ](btp-enter-global-trial-account.png)
 
-2.  On your global account page, select default subaccount *trial*.
-!![Enter trial Subaccount](btp-enter-trial-subaccount.png)
+2.  On your global account page, select default subaccount `trial`.
 
-3.  In the navigation pane expand the *Connectivity* section.
+    !![Enter trial Subaccount](btp-enter-trial-subaccount.png)
 
-4.  Select *Destinations*.
+3.  In the navigation pane expand the **Connectivity** section.
 
-5.  Select *New Destination*.
+4.  Select **Destinations**.
+
+5.  Select **New Destination**.
 
 !![Get to New Destination](btp-destination-new.png)
 
@@ -59,7 +59,7 @@ SAP Business Application Studio requires connection information to request custo
 
 
 
-[ACCORDION-BEGIN [Step 2: ](Configure Destination)]
+[ACCORDION-BEGIN [Step 2: ](Configure destination)]
 
 Configure the new destination with the following standard field values.
 
@@ -68,13 +68,13 @@ Configure the new destination with the following standard field values.
 |  Name           | **`<YOUR_SYSTEMS_ID>_SAML_ASSERTION`**
 |  Type           | **`HTTP`**
 |  Description    | **`SAML Assertion Destination to SAP S/4HANA Cloud tenant <YOUR_SYSTEMS_ID>`**
-|  URL          | In the SAP S/4HANA Cloud tenant, navigate to the *Communication Systems* app and copy the *Host Name* from *Own System* = `Yes`<div>!![Own System Host Name in Communication Systems App](s4hc-cs-own-system-host-name.png)</div> and paste it with prefix **`https://`** for example **`https://my12345-api.s4hana.ondemand.com.`**
+|  URL          | In the SAP S/4HANA Cloud tenant, navigate to the **Communication Systems** app and copy the **Host Name** from **Own System** = `Yes`<div>!![Own System Host Name in Communication Systems App](s4hc-cs-own-system-host-name.png)</div> and paste it with prefix `https://` for example `https://my12345-api.s4hana.ondemand.com.`
 |  Proxy Type   | **`Internet`**
 |  Authentication | **`SAMLAssertion`**
-|  Audience   | Enter the URL of your system and remove `-api`, for example **`https://my12345.s4hana.ondemand.com`**.
+|  Audience   | Enter the URL of your system and remove `-api`, for example `https://my12345.s4hana.ondemand.com`.
 |  `AuthnContextClassRef` | **`urn:oasis:names:tc:SAML:2.0:ac:classes:PreviousSession`**
 
-Select *New Property* and maintain the following *Additional Properties* and values.
+Select **New Property** and maintain the following **Additional Properties** and values.
 
 |  Field Name     | Value          | Remark
 |  :------------- | :------------- | :-------------
@@ -84,58 +84,75 @@ Select *New Property* and maintain the following *Additional Properties* and val
 |  `WebIDEUsage`          | **`odata_abap,dev_abap`**   |&nbsp;
 |  `nameIDFormat`     | **`urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`**  | Required in case your subaccount sends mail address as SAML Name ID for authentication (**Subject Name Identifier** in Identity Authentication tenant), although SAP S/4HANA Cloud tenant expects user login by default. **That is the case with a trial Account.** This also requires the mail address to be maintained for SAP S/4HANA Cloud tenant business users.
 
-Make sure that the *Use default JDK truststore* checkbox is ticked.
+Make sure that the **Use default JDK truststore** checkbox is ticked.
 
 !![Configure Destination](btp-destination-configure.png)
 
-Click *Save*.
+Click **Save**.
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Download SAP BTP Certificate)]
+[ACCORDION-BEGIN [Step 3: ](Download SAP BTP certificate)]
 
 On the SAP S/4HANA Cloud tenant side, you need to allow SAP Business Application Studio to make inbound calls.
 To set SAP Business Application Studio as a trusted caller in the SAP S/4HANA Cloud tenant, you first have to download the public key of the SAP Business Application Studio subaccount.
 
-To do this, in the Destinations section, select *Download Trust*.
+To do this, in the Destinations section, select **Download Trust**.
+
 !![Download Trust](btp-trust-download.png)
 
-An untyped file with name *pk-\<your subaccounts ID\>* (for example *pk_9zy8xw7v-6u54-3tsr-21qp-1pqr234st56uv;*) is downloaded. Save this file for later.
+An untyped file with name `pk-\<your subaccounts ID\>` (for example `pk_9zy8xw7v-6u54-3tsr-21qp-1pqr234st56uv;`) is downloaded. Save this file for later.
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create Communication System in SAP S/4HANA Cloud Tenant for SAP BTP Subaccount)]
+[ACCORDION-BEGIN [Step 4: ](Create communication system in SAP S/4HANA Cloud tenant)]
 With the downloaded public key from the SAP Business Application Studio subaccount, you can now maintain it as a trusted caller in SAP S/4HANA Cloud tenant.
 
 - Log on to your SAP S/4HANA Cloud tenant with the business user that is authorized for communication management.
-- From the dashboard home screen, choose *Communication Management > Communication Systems*
-!![Communications Systems tile](s4hc-cs-tile.png)
-- Select *New*.
-!![New Communication System](s4hc-cs-new.png)
-- Enter a System ID and System Name, for example `BAS_<YOUR SUBACCOUNTS_SUBDOMAIN>` like `BAS_12AB34CDTRIAL` and choose *Create*.
-!![Create Communication System](s4hc-cs-create.png)
+
+- From the dashboard home screen, choose **Communication Management > Communication Systems**
+
+    !![Communications Systems tile](s4hc-cs-tile.png)
+
+- Select **New**.
+
+    !![New Communication System](s4hc-cs-new.png)
+
+- Enter a System ID and System Name, for example `BAS_<YOUR SUBACCOUNTS_SUBDOMAIN>` like `BAS_12AB34CDTRIAL` and choose **Create**.
+
+    !![Create Communication System](s4hc-cs-create.png)
 
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Configure Communication System)]
+[ACCORDION-BEGIN [Step 5: ](Configure communication system)]
 This is how you have to configure the communication system that represents the SAP Business Application subaccount as a trusted caller.
 
 - Navigate to **General > Technical Data**
-!![Navigate to General Technical Data](s4hc-cs-navigate-to-technical-data.png)
+
+    !![Navigate to General Technical Data](s4hc-cs-navigate-to-technical-data.png)
+
 - Tick the **Inbound Only** checkbox.
-!![Set Communication System as Inbound Only](s4hc-cs-set-inbound-only.png)
-- Navigate to **General > SAML Bearer Assertion Provider** and slide the button to *ON*.
-!![Enable SAML Bearer Assertion Provider for Communication System](s4hc-cs-enable-SAML.png)
+
+    !![Set Communication System as Inbound Only](s4hc-cs-set-inbound-only.png)
+
+- Navigate to **General > SAML Bearer Assertion Provider** and slide the button to **ON**.
+
+    !![Enable SAML Bearer Assertion Provider for Communication System](s4hc-cs-enable-SAML.png)
+
 - Choose **Upload Signing Certificate**, browse for the SAP BTP certificate and upload it.
-!![Upload Certificate to Communication System](s4hc-cs-upload-cert.png)
+
+    !![Upload Certificate to Communication System](s4hc-cs-upload-cert.png)
+
 - Set the **Provider Name** by inserting the CN attribute of the Signing Certificate Subject.
-!![Copy and Paste Provider Name ](s4hc-cs-fill-saml-provider-name.png)
+
+    !![Copy and Paste Provider Name ](s4hc-cs-fill-saml-provider-name.png)
+
 - Choose **Save**.
 
 The connection is now set up and you can use of the custom business object OData services of the SAP S/4HANA Cloud tenant in SAP Business Application Studio.  
@@ -143,10 +160,9 @@ The connection is now set up and you can use of the custom business object OData
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test Yourself)]
+[ACCORDION-BEGIN [Step 6: ](Test yourself)]
 
 [VALIDATE_1]
-
 [ACCORDION-END]
 
 
