@@ -1,4 +1,6 @@
 ---
+author_name: Marcel Wolf
+author_profile: https://github.com/wolfmarcel
 title: Ingest an EPCIS Event to Change Kanban Status
 description: Ingest an EPCIS event via MQTT to update the kanban container status in SAP S/4HANA or SAP S/4HANA Cloud.
 auto_validation: true
@@ -6,7 +8,7 @@ time: 10
 tags: [ tutorial>intermediate, tutorial>license, topic>internet-of-things, products>sap-internet-of-things, products>sap-business-technology-platform, products>sap-s-4hana]
 primary_tag: topic>internet-of-things
 ---
-
+ 
 ## Prerequisites
 - You have licensed SAP Internet of Things (with the new capacity unit based licensing introduced in August 2020, your company has a Cloud Platform Enterprise Agreement or Pay-As-You-Go for SAP BTP and you have subscribed to the `oneproduct` service plan)
 - You have setup the subscription for SAP IoT in your global account in a tenant (e.g. in the DEV tenant, the guide for the basic setup is at [Get Started with Your SAP IoT Account](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest/en-US/bfe6a46a13d14222949072bf330ff2f4.html) ).

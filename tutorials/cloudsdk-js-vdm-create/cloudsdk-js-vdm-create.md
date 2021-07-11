@@ -3,7 +3,7 @@ title: Create OData Entities with the SAP Cloud SDK's Virtual Data Model
 description: Create OData entities with the SAP Cloud SDK's virtual data model to build an address manager application.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, topic>javascript, products>sap-cloud-platform, topic>odata]
+tags: [ tutorial>intermediate, topic>javascript, products>sap-business-technology-platform, topic>odata]
 primary_tag: products>sap-cloud-sdk
 ---
 

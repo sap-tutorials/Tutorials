@@ -87,18 +87,24 @@ You can add your package to **Favorite Packages**.
 [ACCORDION-BEGIN [Step 4: ](Create service consumption model)]
   1. Enter a name for your service consumption model, a service definition will be generated as part of the service consumption model with this name.
 
-  2. Enter a description and upload the `.edmx` file, which you saved before, in the Service Metadata File field.
+  2. Enter a description and choose **OData** as **Remote Consumption Mode**.
 
   3. Click **Next**.
 
       ![Create Service Consumption Model](Picture3.png)
+
+  4. Upload the `.edmx` file, which you saved before, in the Service Metadata File field.
+
+  5. Click **Next**.
+
+      ![upload file](Picture3-1.png)
 
 [DONE]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 5: ](Change ABAP artifact names)]
-  1. Add the `XXX` at the end of each name.
+  1. Add the `_XXX` at the end of each name.
 
   2. Click on **Next**.
 
@@ -244,6 +250,11 @@ CLASS zcl_s4_bupa_xxx IMPLEMENTATION.
 ENDCLASS.
 
 ```
+
+  4. Save and activate all objects that you created.
+
+      ![activate](activate.png)
+
 
 [DONE]
 [ACCORDION-END]

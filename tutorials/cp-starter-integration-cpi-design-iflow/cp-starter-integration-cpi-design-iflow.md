@@ -15,14 +15,14 @@ author_profile: https://github.com/Karunaharan
 ## Details
 ### You will learn
   - How to design and deploy an integration flow using the web-based integration flow designer
-  - How to design an integration flow to query data from an online web shop that is available as an OData service
+  - How to design an integration flow to fetch data from an online web shop that is available as an OData service
 
 
 [ACCORDION-BEGIN [Step 1: ](Access your Cloud Integration workspace)]
 
     In the Integration Suite home page, click on the **Design, Develop, and Operate Integration Scenarios** tile. Alternatively, in the provisioning app, use the URL available under the **Cloud Integration** section.
     In the Cloud Integration application, click the **Design** tab (pencil icon) to access your workspace.
-    This is where you will create your integration package and integration flow.
+    This is where you will design your integration package and integration flow.
 
   ![Access workspace](1-1-access-workspace.png)
 

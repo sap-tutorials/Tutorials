@@ -1,4 +1,6 @@
 ---
+author_name: Marcel Wolf
+author_profile: https://github.com/wolfmarcel
 title: Create Device Model and Thing and Ingest EPCIS Event
 description: Create device model and thing for EPCIS events in SAP IoT based on a Postman collection and ingest an EPCIS event via MQTT.
 auto_validation: true
@@ -149,8 +151,6 @@ At the end the result you look like this:
 
 !![Mapping created](MappingCreated.png)
 
-> The `epcis` package is shipped with Smart Sensing in SAP Internet of Things.
-
 [DONE]
 [ACCORDION-END]
 
@@ -249,5 +249,6 @@ The next tutorial to consider doing might be this one to [Create the Destination
 
 [VALIDATE_1]
 [ACCORDION-END]
+
 
 ---

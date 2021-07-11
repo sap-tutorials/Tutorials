@@ -24,6 +24,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 ---
 
+
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can use the existing NativeScript plugins like nativescript-geolocation, nativescript-nfc etc. , add this to the client and reference it from a rule.
 
 In this tutorial, you will use the existing NativeScript plugin nativescript-geolocation to capture the device location: latitude & longitude.
@@ -210,13 +211,13 @@ In order to use the existing NativeScript plugin in MDK client, you will need to
       "AppName": "DemoSampleApp",
       "AppVersion": "1.0.0",
       "BundleID": "com.sap.mdk.demo",
-      "Externals": ["nativescript-geolocation","ui/enums"],
+      "Externals": [],
       "NSPlugins": ["nativescript-geolocation"],
       "UrlScheme": "mdkclient"
     }
     ```
 
-!![MDK](img_5.png)
+!![MDK](img-5.png)
 
 [DONE]
 [ACCORDION-END]
