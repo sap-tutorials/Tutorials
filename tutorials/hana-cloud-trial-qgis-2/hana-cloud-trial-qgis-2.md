@@ -1,9 +1,9 @@
 ---
-title: Visualize a Spatial Dataset on an SAP HANA database in SAP HANA Cloud
+title: Visualize a Spatial Dataset on SAP HANA Database in SAP HANA Cloud
 description: Learn how to upload and visualize spatial data on a base map with QGIS and SAP HANA database in SAP HANA Cloud.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-spatial]
+tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-spatial]
 primary_tag: products>sap-hana-cloud
 ---
 
@@ -138,7 +138,7 @@ You now know how to visualize data from SAP HANA in QGIS. If you like, you can p
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test Yourself)]
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 
 
 
