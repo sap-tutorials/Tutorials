@@ -37,26 +37,25 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access Logs from Terminal)]
-
+[ACCORDION-BEGIN [Step 1: ](Access logs from terminal)]
 1. Display recent logs:
-  ```bash
-  cf logs --recent <appname>
-  ```
+
+    ```Shell/Bash
+    cf logs --recent <appname>
+    ```
 
 2. Follow logs live:
-  ```bash
-  cf logs <appname>
-  ```
+
+    ```Shell/Bash
+    cf logs <appname>
+    ```
 
 > Choose **Ctrl** + **C** to quit.
 
 [VALIDATE_1]
-
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Access Logs from SAP BTP Cockpit)]
-
+[ACCORDION-BEGIN [Step 2: ](Access logs from SAP BTP cockpit)]
 1. Go to your subaccount in **SAP BTP cockpit**.
 
 2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
@@ -76,8 +75,7 @@ To continue with this tutorial you can find the result of the previous tutorial 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Analyze Logs Using Kibana Dashboard)]
-
+[ACCORDION-BEGIN [Step 3: ](Analyze logs using Kibana dashboard)]
 1. Go to your subaccount in **SAP BTP cockpit**.
 
 2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
@@ -98,7 +96,6 @@ To continue with this tutorial you can find the result of the previous tutorial 
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Enable Logging Service)]
-
 [OPTION BEGIN [Trial]]
 
 Logs are only kept for a short period and won't be visible in Kibana without the Logging Service. By binding the Logging Service to your application, logs will be kept for longer and will be available for further analysis via Kibana.
@@ -109,7 +106,8 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 
 1. Add an instance for the logging service to the `resources` section of your `mta.yaml`:
 
-```yaml hl_lines="4-9"
+
+```YAML[4-9]
 ...
 resources:
 ...
@@ -118,6 +116,19 @@ resources:
   parameters:
     service: application-logs
     service-plan: lite
+```
+
+=== "Live"
+
+```YAML[4-9]
+...
+resources:
+...
+- name: cpapp-logs
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: application-logs
+    service-plan: standard
 ```
 
 2. Bind the logging service instance to all `modules` of the `mta.yaml`:
@@ -158,7 +169,21 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 
 1. Add an instance for the logging service to the `resources` section of your `mta.yaml`:
 
-```yaml hl_lines="4-9"
+=== "Trial"
+
+```YAML[4-9]
+...
+resources:
+...
+- name: cpapp-logs
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: application-logs
+    service-plan: lite
+```
+
+
+```YAML[4-9]
 ...
 resources:
 ...
@@ -202,8 +227,7 @@ modules:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Test It)]
-
+[ACCORDION-BEGIN [Step 5: ](Test it)]
 1. Build the MTAR file and deploy it to your Cloud Foundry space:
 
     ```
@@ -228,9 +252,13 @@ The available fields are displayed on the left side of the screen. You can add f
 
 The time filter is on the right top of the screen. Don't forget to choose *Refresh*.
 
-[DONE]
 
+
+[DONE]
 The result of this tutorial can be found in the [`cp/logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/logging) branch.
 
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-logging" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
 ---
