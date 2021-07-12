@@ -1,9 +1,9 @@
 ---
-title: Push down a Spatial Workload to an SAP HANA database in SAP HANA Cloud
+title: Push Down a Spatial Workload to SAP HANA Database in SAP HANA Cloud
 description: Learn how to create SQL views using hexagonal clustering and QGIS and apply basic styling on a base map.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-spatial]
+tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-spatial]
 primary_tag: products>sap-hana-cloud
 ---
 
@@ -139,7 +139,7 @@ Read [this blog](https://blogs.sap.com/2020/02/12/the-four-advantages-of-arcgis-
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test Yourself)]
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 
 
 
