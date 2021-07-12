@@ -1,9 +1,9 @@
 ---
-title: Connect QGIS to SAP HANA database in SAP HANA Cloud
+title: Connect QGIS to SAP HANA Database in SAP HANA Cloud
 description: Learn how to connect QGIS to your SAP HANA database in SAP HANA Cloud.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-spatial]
+tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-spatial]
 primary_tag: products>sap-hana-cloud
 ---
 
@@ -18,11 +18,9 @@ primary_tag: products>sap-hana-cloud
 - How to install QGIS 3.18
 - How to connect QGIS to SAP HANA database in SAP HANA Cloud
 
-
-
 If you are interested in knowing more about what the SAP HANA engine within SAP HANA Cloud, SAP HANA database can do, this tutorial will walk you through the steps to use it with your SAP HANA Cloud trial account. These steps work in an SAP HANA Cloud production account as well.
 
-In this tutorial group you will learn how to perform the following tasks:
+In this tutorial group, you will learn how to perform the following tasks:
 
 1. **Install SAP HANA ODBC Driver**
 
@@ -43,7 +41,7 @@ Let's get started!
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Introduction to SAP HANA Spatial engine)]
->Please note that SAP HANA Spatial engine works only with **SAP HANA Cloud, SAP HANA database**. 
+>Please note that SAP HANA Spatial engine works only with **SAP HANA Cloud, SAP HANA database**.
 
 The combination of SAP HANA Cloud trial with QGIS offers an easy way to get into spatial data processing at scale. Spatial workflows built upon SAP HANA Cloud can ultimately be re-used in business applications to inject the location dimension into your business processes.
 
@@ -55,7 +53,7 @@ No matter if you're new to QGIS or if you're new to SAP HANA Cloud – or even b
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install SAP HANA ODBC Driver)]
+[ACCORDION-BEGIN [Step 2: ](Install SAP HANA ODBC driver)]
 Here, you should not need more than 2 minutes. To install the SAP HANA ODBC Driver, which is part of the SAP HANA Client, you just need to download it from [SAP Development Tools](https://tools.hana.ondemand.com/#hanatools) and execute the installer for your operating system.
 
 !![SAP HANA ODBC](ss-01-sap-hana-odbc.png)
@@ -91,7 +89,7 @@ The general instructions on how to connect QGIS to SAP HANA database in SAP HANA
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Collect SQL Endpoint information)]
+[ACCORDION-BEGIN [Step 5: ](Collect SQL endpoint information)]
 1. Please go to the **SAP BTP Cockpit** and navigate to your space, then click on **SAP HANA Cloud**. There you will be able to see your running SAP HANA database instance in SAP HANA Cloud.
 
 2. Click on **Actions** and then on **Copy SQL endpoint**. The endpoint will be copied to your clipboard. Keep it there.
@@ -135,7 +133,7 @@ The general instructions on how to connect QGIS to SAP HANA database in SAP HANA
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step 8: ](Test Yourself)]
+[ACCORDION-BEGIN [Step 8: ](Test yourself)]
 
 [VALIDATE_7]
 [ACCORDION-END]
