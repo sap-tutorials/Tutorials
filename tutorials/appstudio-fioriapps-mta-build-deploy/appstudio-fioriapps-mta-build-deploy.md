@@ -13,7 +13,7 @@ author_profile: https://github.com/raz-korn
 - The SAP Fiori dev space is in status `RUNNING` and you opened it.
 - You completed [Create an SAP Fiori App Using SAP Business Application Studio](appstudio-fioriapps-create).
 - For the deployment step, additional prerequisites apply. You need to have the following available in the Cloud Foundry space to which you will log on (see [Add a New Entitlement to Your Subaccount](cp-cf-entitlements-add)):
-    - Application Runtime: 1GB free
+    - Cloud Foundry Runtime: 1GB free
     - Destination: 1 free
     - HTML5 Applications: 1 free
 

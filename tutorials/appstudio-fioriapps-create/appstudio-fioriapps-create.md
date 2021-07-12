@@ -164,7 +164,7 @@ The recommendation is to use **Managed Application Router** that provides many b
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
-    | A | Data source | **Connect to an SAP system** |
+    | A | Data source | **Connect to a system** |
     | B | System | **`ES5`** |
     | C | Service | **`ZGWSAMPLE_BASIC (1) - OData V2`** |
 
