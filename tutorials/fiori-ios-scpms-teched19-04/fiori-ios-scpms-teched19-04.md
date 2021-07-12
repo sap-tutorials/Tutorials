@@ -1,28 +1,31 @@
 ---
 title: Implement the Customer Detail
-description: Use the SAP SDK for iOS to implement a Profile Header and Charts into the Customer Detail View.
+description: Use the SAP BTP SDK for iOS to implement a Profile Header and Charts into the Customer Detail View.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>ios-sdk-for-sap-btp ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 15
 ---
 
 ## Prerequisites
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP SDK for iOS:** Version 5.0
+
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
+- **SAP BTP SDK for iOS:** Version 6.0
 
 ## Details
+
 ### You will learn  
-  - How to implement a Profile Header
-  - How to implement a Chart View
+
+- How to implement a Profile Header
+- How to implement a Chart View
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Fetch right customer from data service)]
 
-In the last tutorial, you implemented the Overview Table View Controller and the segue to the Customer Detail Table View Controller. In this tutorial, you will utilize the SAP SDK for iOS to implement a `FUIProfileHeader` and the different Chart Cells.
+In the last tutorial, you implemented the Overview Table View Controller and the segue to the Customer Detail Table View Controller. In this tutorial, you will utilize the SAP BTP SDK for iOS to implement a `FUIProfileHeader` and the different Chart Cells.
 
 1. Open the `CustomerDetailTableViewController.swift` class and add the following import statements right below the `UIKit` import:
 
@@ -34,6 +37,8 @@ In the last tutorial, you implemented the Overview Table View Controller and the
     import SAPCommon
     import SAPFoundation
     import SAPFioriFlows
+    import ESPMContainerFmwk
+    import SharedFmwk
 
     ```
 
@@ -66,9 +71,9 @@ In the last tutorial, you implemented the Overview Table View Controller and the
     let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
     // Retrieve the data service using the destinations dictionary and return it.
-    var dataService: ESPMContainer<OnlineODataProvider>? {
-        guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
-            AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+    var dataService: ESPMContainer<OfflineODataProvider>? {
+        guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOfflineODataController, let dataService = odataController.dataService else {
+            AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
             return nil
         }
         return dataService
@@ -195,11 +200,12 @@ In the last tutorial, you implemented the Overview Table View Controller and the
 
 [ACCORDION-BEGIN [Step 2: ](Set up Table View and register needed cells)]
 
-In order to display the Charts, you're going to use the `FUIChartTitleTableViewCell`, `FUIChartPlotTableViewCell` and the `FUIChartLegendTableViewCell` from the SAP CP SDK for iOS.
+In order to display the Charts, you're going to use the `FUIChartTitleTableViewCell`, `FUIChartPlotTableViewCell` and the `FUIChartLegendTableViewCell` from the SAP BTP SDK for iOS.
 
 1. Add the following lines of code to the `viewDidLoad(:)` right above the `updateTable()` method call:
 
     ```Swift[2-12]
+
   override func viewDidLoad() {
       // The Object Cell is used for the case if there are no Customer Sales Headers available for the chosen customer
       tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
@@ -242,6 +248,7 @@ In order to display the Charts, you're going to use the `FUIChartTitleTableViewC
 
           updateTable()
       }
+
   }
 
     ```
@@ -342,18 +349,19 @@ In the last step, you've implemented the Table View's Data Source. The `FUIChart
     // MARK: - FUIChartViewDataSource
 
     extension CustomerDetailTableViewController: FUIChartViewDataSource {
-    func chartView(_ chartView: FUIChartView, valueForSeries seriesIndex: Int, category categoryIndex: Int, dimension dimensionIndex: Int) -> Double? {
-        return nil
-    }
+      func chartView(_ chartView: FUIChartView, valueForSeries seriesIndex: Int, category categoryIndex: Int, dimension dimensionIndex: Int) -> Double? {
+          return nil
+      }
 
-    func chartView(_ chartView: FUIChartView, numberOfValuesInSeries seriesIndex: Int) -> Int {
-        return 0
-    }
+      func chartView(_ chartView: FUIChartView, numberOfValuesInSeries seriesIndex: Int) -> Int {
+          return 0
+      }
 
-    func numberOfSeries(in: FUIChartView) -> Int {
-        return 0
+      func numberOfSeries(in: FUIChartView) -> Int {
+          return 0
+      }
+
     }
-}
 
     ```
 
@@ -484,6 +492,7 @@ Remember in the `updateTable()` method where the `setupProfileHeader()` method g
         }
     }
     ```
+
 3. Call the `setupProfileHeader()` method in the `viewDidLoad(:)` method:
 
 ```Swift[18]

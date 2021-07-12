@@ -1,29 +1,32 @@
 ---
-title: Create Xcode Project with SAP SDK for iOS
-description: Enable SAP Mobile Services, create a connection in the SAP SDK for iOS Assistant, and generate a master-detail view app with the iOS Assistant.
+title: Create Xcode Project with SAP BTP SDK for iOS
+description: Enable SAP Mobile Services, create a connection in the SAP BTP SDK Assistant for iOS, and generate a master-detail view app with the Assistant.
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 auto_validation: true
 primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>ios-sdk-for-sap-btp ]
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 15
 ---
 
 ## Prerequisites
+
 - **Tutorials:** [Get a Free Trial Account on SAP BTP](hcp-create-trial-account) and [Enable SAP Mobile Services](fiori-ios-hcpms-setup)
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP SDK for iOS:** Version 5.0
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
+- **SAP BTP SDK for iOS:** Version 6.0
 
 ## Details
+
 ### You will learn  
-  - How to create a connection in the SAP SDK for iOS Assistant
-  - How to generate an app with the SAP SDK for iOS Assistant
+
+- How to create a connection in the SAP BTP SDK Assistant for iOS
+- How to generate an app with the SAP BTP SDK Assistant for iOS
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enable SAP Mobile Services)]
 
-The SAP SDK for iOS is designed to work seamlessly with a set of services that are optimised for communication with mobile devices, known collectively as SAP Mobile Services. These include not only data services, but also features like analytics, push notifications, and app configuration. Before creating your first app, you'll need to ensure that Mobile Services are enabled for your trial account.
+The SAP BTP SDK for iOS is designed to work seamlessly with a set of services that are optimised for communication with mobile devices, known collectively as SAP Mobile Services. These include not only data services, but also features like analytics, push notifications, and app configuration. Before creating your first app, you'll need to ensure that Mobile Services are enabled for your trial account.
 
 [DONE]
 [ACCORDION-END]
@@ -67,9 +70,9 @@ Let's get started by creating a cloud application definition on Mobile Services 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create an iOS app using the iOS Assistant)]
+[ACCORDION-BEGIN [Step 3: ](Create an iOS app using the Assistant)]
 
-1. Open up the **SAP SDK for iOS Assistant** and click **Create new**.
+1. Open up the **SAP BTP SDK Assistant for iOS** and click **Create new**.
 
     !![Project creation](fiori-ios-scpms-teched19-06.png)
 
@@ -115,7 +118,7 @@ Let's get started by creating a cloud application definition on Mobile Services 
 
     !![Project creation](fiori-ios-scpms-teched19-12.png)
 
-    The SAP SDK for iOS Assistant will now create the cloud application on Mobile Services, pull the metadata document of the OData service and generate an Xcode project, including the on-boarding flow and all the necessary proxy classes and a convenience data service API.
+    The SAP BTP SDK Assistant for iOS will now create the cloud application on Mobile Services, pull the metadata document of the OData service and generate an Xcode project, including the on-boarding flow and all the necessary proxy classes and a convenience data service API.
 
 [DONE]
 [ACCORDION-END]
@@ -143,7 +146,6 @@ After clicking **Finish**, the Assistant will generate an Xcode project, save it
     > You could also define your own IDP on the cloud side if you don't want to use the SAP IDP.
 
     !![App Onboarding](fiori-ios-scpms-teched19-15.png)
-
 
 3. The next screen shows an example Data Privacy disclosure prompt which allows you to include data privacy and consent text that complies with the EU General Data Protection Regulation (GDPR) for example.
 
