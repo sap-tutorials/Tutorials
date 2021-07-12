@@ -1,23 +1,23 @@
 ---
 title: Add an SAPUI5 App to Your Launchpad Site
-description: Add an existing SAPUI5 app to a launchpad site.
+description: Add an existing SAPUI5 app to a launchpad site in the SAP Launchpad service.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>sapui5, products>sap-cloud-platform, topic>cloud,products>sap-cloud-platform-launchpad]
-primary_tag: products>sap-cloud-platform-launchpad
+tags: [ tutorial>beginner, topic>sapui5, products>sap-business-technology-platform, topic>cloud, products>sap-launchpad-service]
+primary_tag: products>sap-launchpad-service
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
 ## Prerequisites
- - You've already created the `JobCore` launchpad site.  
+ - You've already created the `JobCore` site.  
 
 
 ## Details
 ### You will learn
   - How to add an existing SAPUI5 app to your launchpad site
 
-In this tutorial, you'll use the **Content Manager** to add an SAPUI5 to your launchpad site.
+In this tutorial, you'll use the **Content Manager** to add an SAPUI5 app to your launchpad site.
 
 [ACCORDION-BEGIN [Step 1: ](Open Content Manager)]
 
@@ -65,7 +65,7 @@ In this tutorial, you'll use the **Content Manager** to add an SAPUI5 to your la
 
 5. Click the **VISUALIZATION** tab.
 
-    In this tab, you specify how the app will be displayed in the launchpad.
+    In this tab, you specify how the app will be displayed in the launchpad site.
 
 6. Enter the following values:
 
@@ -90,11 +90,11 @@ Click the Content Manager icon in the left side panel to navigate back to the **
 
   !![Go back to Content Manager](6-back-to-content-manager.png)
 
-You can see your app in the list:
+You can see your app in the list of content items:
 
 !![View app in content manager list](7-view-app.png)
 
-For end users to access the app in runtime, you must assign the app to a role. You also need to assign the app to a group so that it's visible in the launchpad.
+For end users to access the app in runtime, you must assign the app to a role. You also need to assign the app to a group so that it's visible in the site.
 
 This is described in the following steps.
 
@@ -132,8 +132,8 @@ This is described in the following steps.
 [ACCORDION-BEGIN [Step 5: ](Create a group and assign the app to it)]
 
 
->A group is a set of one or more apps displayed together in the launchpad.
- Assigning apps to groups allows users to view them in the launchpad page.
+>A group is a set of one or more apps displayed together in a launchpad site.
+ Assigning apps to groups, makes them visible to the user.
 
 1. Click the Content Manager icon to navigate back to the **Content Manager**.
 
@@ -148,6 +148,8 @@ This is described in the following steps.
     !![Configure group properties](9-configure-group.png)
 
 4. Click **Save**.
+
+    ![Save group](9a-save-group.png)
 
 [DONE]
 [ACCORDION-END]

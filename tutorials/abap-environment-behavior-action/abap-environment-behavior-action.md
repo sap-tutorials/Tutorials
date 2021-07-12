@@ -2,16 +2,15 @@
 auto_validation: true
 title: Enhance Behavior With Action and Validation
 description: Enhance behavior definition and implementation with action and validation.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- You have created an SAP Cloud Platform ABAP environment trial user or
-- You have created a developer user in an SAP Cloud Platform ABAP Environment system.
+- You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - You have downloaded Eclipse Photon or Oxygen and installed ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
 
 ## Details
@@ -50,7 +49,6 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       // mandatory fields that are required to create a travel
       field ( mandatory ) Begin_Date, End_Date, Customer_ID;
 
-
       // standard operations for travel entity
       create;
       update;
@@ -65,9 +63,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       validation validateAgency on save
       { field agency_id; }
 
-        // determination
-        determination CalculateTravelKey on modify
-        { create; }
+      // determination
+      determination CalculateTravelKey on modify
+      { create; }
 
     }
     ```
@@ -423,10 +421,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Enhance behavior definition for projection view](projection2.png)
 
-      Hint: If your accept travel button does not appear, wait a few minutes or deactivate your service binding and activate it again.
+      **Hint: If your UI buttons don't appear, please add a space anywhere you want in your data definition `ZI_TRAVEL_M_XXX` and behavior definition `ZI_TRAVEL_M_XXX`, activate both and open your SAP Fiori preview again. It takes 120 seconds to make the buttons visible on the user interface.**
 
 [DONE]
-[ACCORDION-END]
+[ACCORDION-END]   
 
 
 [ACCORDION-BEGIN [Step 4: ](Test yourself)]

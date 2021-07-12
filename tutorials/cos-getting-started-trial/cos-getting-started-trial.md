@@ -3,13 +3,13 @@ title: Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing
 description: Use SAP Customer Order Sourcing to reduce delivery costs by applying an efficient sourcing strategy.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-cloud-platform, topic>sap-api-business-hub, products>sap-cloud-platform-for-the-cloud-foundry-environment]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>sap-api-business-hub, products>sap-btp--cloud-foundry-environment]
 primary_tag: topic>cloud
 ---
 
 ## Prerequisites
- - You have registered for a trial account on [SAP Cloud Platform](https://cloudplatform.sap.com/index.html).
- - You should be familiar with the SAP Cloud Platform trial landscape (see [Get Started with SAP Cloud Platform Trial](cp-trial-quick-onboarding)).
+ - You have registered for a trial account on [SAP Business Technology Platform](https://cloudplatform.sap.com/index.html).
+ - You should be familiar with the SAP Business Technology Platform trial landscape (see [Get Started with SAP Business Technology Platform Trial](cp-trial-quick-onboarding)).
  - You have a subaccount in the **Cloud Foundry** environment, with **Amazon Web Services (AWS)** as provider and the **Europe (Frankfurt)** region.
 
 ## Details
@@ -39,9 +39,9 @@ You are the owner of an e-commerce business or a web shop in the fashion industr
 
 [ACCORDION-BEGIN [Step 2: ](Set up SAP Customer Order Sourcing via Booster)]
 
-1. Log on to the **SAP Cloud Platform trial** cockpit and open your global account for the Cloud Foundry environment.
+1. Log on to the **SAP Business Technology Platform trial** cockpit and open your global account for the Cloud Foundry environment.
 
-2. In the navigation pane of the SAP Cloud Platform cockpit, choose **Boosters**.
+2. In the navigation pane of the SAP Business Technology Platform cockpit, choose **Boosters**.
 
 3. Choose the booster **Prepare an Account for SAP Customer Order Sourcing**.
 
@@ -68,7 +68,7 @@ Having created a service instance and the corresponding credentials, you can now
 
 4. Enter a name for your environment, for example `trial_test`.
 
-5. In your **SAP Cloud Platform trial** **Subaccount** open **Spaces** and your already existing space, probably called `dev`.
+5. In your **SAP Business Technology Platform trial** **Subaccount** open **Spaces** and your already existing space, probably called `dev`.
 
 6. In the navigation pane, open **Services > Service Marketplace**.
 
@@ -145,22 +145,26 @@ Those were a lot of steps already and you didn't get the chance to do anything w
 
 But don't worry -- just one more step and then you can play around with it.
 
-1. Go back to your Subaccount and navigate to **Subscriptions** on the SAP Cloud Platform trial landscape.
+1. Go back to your Subaccount.
 
-2. In the SAP Customer Order Service Overview page, choose **Go to Application** and login.
+2. In the navigation pane, open **Service Marketplace**.
 
-3. Open the Strategy Builder app and create a new strategy. As **Strategy ID** use **Test**. This is important for the Sourcing to work properly.
+    Search for **SAP Customer Order Sourcing**.
 
-4. Open your newly created strategy.
+3. Open the SAP Customer Order Service tile, choose **Go to Application**, and log in.
 
-5. Under **Objectives**, drag and drop the objective **Products from Several Sources** onto the canvas for modeling your strategy, under the shopping cart.
+4. Open the Strategy Builder app and create a new strategy. As **Strategy ID** use **Test**. This is important for the Sourcing to work properly.
 
-6. Drag and drop the source **Hamburg (Store)** and the Source List **DCs in Germany** into the first box.
-The order of the sources determines their priority within the sourcing. That means the source with the highest priority is the store in Hamburg. Depending on rules or filters this prioritization can change.
+5. Open your newly created strategy.
 
-7. Drag and drop the rule **Shortest Distance to Destination** into the second box.
+6. Under **Templates**, drag and drop the template **Products from Several Sources** onto the canvas for modeling your strategy, under the shopping cart.
 
-8. Save your strategy.
+7. Drag and drop the source **Hamburg (Store)** and the Source List **DCs in Germany** into the first box.
+The order of the sources determines their priority within the sourcing. That means the source with the highest priority is the store in Hamburg. Depending on goals or filters this prioritization can change.
+
+8. Drag and drop the goal **Shortest Distance to Destination** into the second box.
+
+9. Save your strategy.
 
 !![Strategy Builder](StrategyBuilder.png)
 
@@ -204,7 +208,7 @@ Let's check if this is the case:
 
 - [Official Product Documentation](https://help.sap.com/viewer/product/SAP_CUSTOMER_ORDER_SOURCING/Cloud/en-US)
 - [Trial Documentation](https://help.sap.com/viewer/DRAFT/cd03af1a94a440f1b5dbc0dc50a0989b/Cloud/en-US)
-- [How does the Rule "Shortest Distance to Destination" work?](https://help.sap.com/viewer/a8094e21e0ed43b39ad79ade28eefabb/Cloud/en-US/a96a37284b5142ee968e9c9392304920.html)
+- [How does the Goal "Shortest Distance to Destination" work?](https://help.sap.com/viewer/a8094e21e0ed43b39ad79ade28eefabb/Cloud/en-US/a96a37284b5142ee968e9c9392304920.html)
 - [API Reference Documentation](https://help.sap.com/viewer/59d653d22328437c9e0817340181b896/Cloud/en-US)
 - [SAP Customer Order Sourcing on the SAP API Business Hub](https://api.sap.com/package/CustomerOrderSourcing?section=Artifacts)
 - [Additional information on how to configure Environments on the API Business Hub](https://help.sap.com/viewer/84b35b9c39b247e3ba2a31f02beee46d/Cloud/en-US/f7796baaef6a48e9867298827f5028ff.html)

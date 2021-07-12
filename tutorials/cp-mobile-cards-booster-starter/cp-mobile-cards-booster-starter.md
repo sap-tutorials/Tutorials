@@ -4,7 +4,7 @@ description: Create a card that understands the contact information in a card an
 auto_validation: true
 time: 20
 primary_tag: products>sap-mobile-cards
-tags: [  tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-business-technology-platform, products>sap-mobile-cards, products>sap-mobile-services ]
 author_name: Sandeep TDS
 author_profile: https://github.com/sandeep-tds
 ---
@@ -16,7 +16,7 @@ author_profile: https://github.com/sandeep-tds
 
 ## Details
 ### You will learn
-  - How to create a card using SAP Cloud Platform Boosters
+  - How to create a card using SAP Business Technology Platform Boosters
   - How to create a card with context specific actions
   - How to perform contact actions without saving the contact details on your mobile phone
 
@@ -43,7 +43,7 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 
 [ACCORDION-BEGIN [Step 2: ](Create cards using Boosters)]
 
-1. Log into your [SAP CP Trial account](https://account.hanatrial.ondemand.com)
+1. Log into your [SAP BTP Trial account](https://account.hanatrial.ondemand.com)
 
 2. Click **Enter Your Trial Account**
 
@@ -94,6 +94,8 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 
 [OPTION BEGIN [Android]]
 
+> If you can see the supplier card, skip to step 6.
+
 1. *Tap* the Add button ![Android Add Button](ico_and_add.png) in the SAP Mobile Cards Android application.
 
     !![MobileCardsImage](img_3_and_1.png)
@@ -131,6 +133,8 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
+
+> If you can see the supplier card, skip to step 5.
 
 1. *Tap* **More** &rarr; **Subscriptions** in the SAP Mobile Cards iOS application.
 
@@ -176,6 +180,8 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 
 [OPTION BEGIN [Android]]
 
+> If you can see the supplier card, skip to step 6.
+
 1. *Tap* the Add button ![Android Add Button](ico_and_add.png) in the SAP Mobile Cards Android application.
 
     !![MobileCardsImage](img_4_and_1.png)
@@ -216,6 +222,8 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
+
+> If you can see the supplier card, skip to step 5.
 
 1. *Tap* **More** &rarr; **Subscriptions** in the SAP Mobile Cards iOS application.
 

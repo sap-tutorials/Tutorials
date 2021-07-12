@@ -249,7 +249,7 @@ In order to display the Charts, you're going to use the `FUIChartTitleTableViewC
           updateTable()
       }
 
-  }
+    }
 
     ```
 
@@ -362,7 +362,7 @@ In the last step, you've implemented the Table View's Data Source. The `FUIChart
       }
 
     }
-
+    
     ```
 
 2. Inside this extension, implement the following code and read the inline comments carefully:

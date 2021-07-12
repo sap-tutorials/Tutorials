@@ -1,20 +1,23 @@
 ---
 title: Create a List Report Floorplan
-description: Use the SAP Cloud Platform SDK for iOS to build a simple List Report Floorplan containing an FUISearchBar
+description: Use the SAP BTP SDK for iOS to build a simple List Report Floorplan containing an FUISearchBar
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 60
 ---
 
 ## Prerequisites
-- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup)
+
+- **Tutorials:** [Get a Free Trial Account on SAP BTP](hcp-create-trial-account) and [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup)
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0
+- **SAP BTP SDK for iOS:** Version 5.0
 
 ## Details
+
 ### You will learn  
-  - How to use the `SAPFiori` UI controls to build a List Report Floorplan
+
+- How to use the `SAPFiori` UI controls to build a List Report Floorplan
 
 ---
 
@@ -41,7 +44,7 @@ In this example, you build upon the Tutorial app created using the **Sample ODat
 </EntityType>
 ```
 
-The app you've generated with the SAP Cloud Platform SDK for iOS Assistant (iOS Assistant) has currently its UI. You're going to make that app your own now.
+The app you've generated with the SAP BTP SDK Assistant for iOS (Assistant) has currently its UI. You're going to make that app your own now.
 
 Open the `Main.storyboard`, select all displayed View Controllers and delete them.
 
@@ -109,7 +112,7 @@ import SAPCommon
 
 ```
 
-Next let the `SupplierTableViewController.swift` class conforms to the `SAPFioriLoadingIndicator` protocol provided by the iOS Assistant generated code. You can locate the protocol in the `Utils` group.
+Next let the `SupplierTableViewController.swift` class conforms to the `SAPFioriLoadingIndicator` protocol provided by the Assistant generated code. You can locate the protocol in the `Utils` group.
 
 ```Swift
 class SupplierTableViewController: UITableViewController, SAPFioriLoadingIndicator { ... }
@@ -486,6 +489,7 @@ Let's load some data!
 We're using the same style we've used in the `SupplierTableViewController`. Implement the following two methods and read the inline comments carefully because you will see that we utilize the `DataQuery` object for making a filter as well as an expand.
 
 > If you're not familiar with those OData specific terms please make yourself familiar with the OData specification:
+
 - [URI Conventions (OData Version 2.0)](https://www.odata.org/documentation/odata-version-2-0/uri-conventions/)
 - [OData Version 4.01. Part 2: URL Conventions](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html)
 

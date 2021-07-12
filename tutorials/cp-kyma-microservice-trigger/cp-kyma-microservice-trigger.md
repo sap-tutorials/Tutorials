@@ -3,8 +3,8 @@ title: Trigger a Microservice with an Event
 description: Trigger a microservice to run when an event is published into the Kyma runtime.
 time: 20
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
+primary_tag: products>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
@@ -16,7 +16,7 @@ primary_tag: products>sap-cloud-platform\, kyma-runtime
 ### You will learn
   - How to trigger a microservice with an event
 
-This tutorial relies on the Commerce mock application to publish events into the Kyma runtime. After binding the Commerce mock application to the `dev` Namespace, we will create a service instance of the SAP Commerce Cloud - Events. The service instance will allow for any microservice or lambda function within the `dev` Namespace to subscribe to these events by defining a Trigger. The Trigger pairs an event source, the Commerce mock application, and the event type, **order.created**, to a subscriber which in this case will be the Go MSSQL API microservice.
+This tutorial relies on the Commerce mock application to publish events into the Kyma runtime. After binding the Commerce mock application to the `dev` Namespace, we will create a service instance of the SAP Commerce Cloud - Events. The service instance will allow for any microservice or lambda function within the `dev` Namespace to subscribe to these events by defining an event subscription. The subscription pairs an event source, the Commerce mock application, and the event type, **order.created**, to a subscriber which in this case will be the Go MSSQL API microservice.
 
 ---
 
@@ -45,15 +45,12 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 
 3. Within the `internal/api/events.go` file you can find the code that handles the consumption of the event data. This code expects to receive a JSON payload containing an `orderCode`. This function is exposed on the path `/orderCodeEvent`, which is defined in `cmd/api/main.go`.
 
-4. Within the `k8s` directory you can find the file `event-trigger.yaml` containing the Trigger definition which defines how an event will be consumed. The fields of interest include:
+4. Within the `k8s` directory you can find the file `event.yaml` containing the event subscription definition which defines how an event will be consumed. The fields of interest include the following which would have to be altered if a different namespace or application name was used:
 
-| Property                                | Description                                                   | Value            |
-|-----------------------------------------|---------------------------------------------------------------|------------------|
-| spec.filter.attributes.eventtypeversion | The event version to subscribe to                             | v1               |
-| spec.filter.attributes.source           | The name of the application that publishes the events         | mp-commerce-mock |
-| spec.filter.attributes.type             | The event type to subscribe to                                | order.created    |
-| spec.filter.subscriber.ref.name         | The name of the service to receive the event                  | api-mssql-go     |
-| spec.filter.subscriber.uri              | The URI endpoint of the service that receives the event | `/orderCodeEvent`  |
+| Property                                | Description                                                   | Value                                                         |
+|-----------------------------------------|---------------------------------------------------------------|---------------------------------------------------------------|
+| spec.filter.filters.eventType.value     | The event source and version to subscribe to                  | sap.kyma.custom.mp-commerce-mock.order.created.v1             |
+| spec.sink                               | The URI endpoint of the service that receives the event       | `http://api-mssql-go.dev.svc.cluster.local:80/orderCodeEvent` |
 
 
 
@@ -109,45 +106,36 @@ In this step you will create a service instance of the events exposed by the moc
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Apply a trigger)]
+[ACCORDION-BEGIN [Step 5: ](Apply an event subscription)]
 
-In this step you will define a Trigger which is used to create a subscriber of an event. This will allow you to specify that your **api-mssql-go** API application, by referencing its service, should receive the payload of the **order.created** event.
+In this step you will define an event subscription which is used to create a subscriber of an event. This will allow you to specify that your **api-mssql-go** API application, by referencing its service, should receive the payload of the **order.created** event.
 
-1. Apply the Trigger by running the following command in the CLI:
-
-    ```Shell/Bash
-    kubectl -n dev apply -f ./k8s/event-trigger.yaml
-    ```
-
-2. Verify that the Trigger was created successfully by running this command:
+1. Apply the subscription by running the following command in the CLI:
 
     ```Shell/Bash
-    kubectl get trigger api-mssql-go-trigger -n dev -o yaml
+    kubectl -n dev apply -f ./k8s/event.yaml
     ```
 
-    > After the Trigger definition, find a status object indicating the status of the related resources:
+2. Verify that the subscription was created successfully by running this command:
+
+    ```Shell/Bash
+    kubectl get subscription api-mssql-go-event-sub -n dev -o yaml
+    ```
+
+    > After the event subscription definition, find a status object indicating the status of the related resources:
 
     ```yaml
     status:
       conditions:
-      - lastTransitionTime: "2020-10-07T16:09:44Z"
+      - lastTransitionTime: "2021-05-06T14:54:50Z"
+        reason: NATS Subscription active
         status: "True"
-        type: BrokerReady
-      - lastTransitionTime: "2020-10-07T16:09:26Z"
-        status: "True"
-        type: DependencyReady
-      - lastTransitionTime: "2020-10-07T16:09:44Z"
-        status: "True"
-        type: Ready
-      - lastTransitionTime: "2020-10-07T16:09:27Z"
-        status: "True"
-        type: Subscribed
-      - lastTransitionTime: "2020-10-07T16:09:26Z"
-        status: "True"
-        type: SubscriberResolved
+        type: Subscription active
+      emsSubscriptionStatus: {}
+      ready: true
     ```
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Test scenario)]
@@ -180,8 +168,6 @@ With the configuration steps completed, you can now test the scenario to validat
 
     ![Test the Scenario](test-scenario-3.png)
 
-[VALIDATE_1]
+[VALIDATE_2]
 [ACCORDION-END]
-
-
 ---

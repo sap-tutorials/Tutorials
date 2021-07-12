@@ -1,9 +1,9 @@
 ---
 title: Use Machine Learning to Enrich Employee Data with Swagger UI
-description: Create, update, list and delete enrichment data using the Data API employee entity from Document Information Extraction, one of the SAP AI Business Services in SAP Cloud Platform.
+description: Create, update, list and delete enrichment data using the Data API employee entity from Document Information Extraction, one of the SAP AI Business Services in SAP Business Technology Platform (SAP BTP).
 auto_validation: true
-time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
+time: 25
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
@@ -19,11 +19,57 @@ When you finish this tutorial, you will have explored all Data API functionaliti
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create client)]
+[ACCORDION-BEGIN [Step 1: ](Get client)]
 
-After performing step 1 of the tutorial [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui) to access and authorize the Document Information Extraction Swagger UI, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
+After performing step 1 of the tutorial [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui) to access and authorize the Document Information Extraction Swagger UI, you need to create a client.
 
-You can either create a single client or multiple clients in the **payload** field of the **POST /clients** endpoint. The **`clientId`** values created here will be used in other service endpoints.
+When you create a service instance for Document Information Extraction, a `default` client is automatically created. A client is used in most of the endpoints to distinguish and separate data.
+
+Trial users can only create one client. To see your list of clients:
+
+1. Expand the **GET /clients** endpoint.
+
+2. Click **Try it out**.
+
+3. Enter a maximum number of clients to be listed in the **limit** field.
+
+4. Click **Execute**.
+
+!![DOX](listClient.png)
+
+You should receive a response like the following:
+
+!![DOX](listClientResponse.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 2: ](Delete client)]
+
+Use the **DELETE /clients** endpoint to delete the `default` client.
+
+1. Expand the **DELETE /clients** endpoint.
+
+2. Click **Try it out**.
+
+3. Enter in the **payload** field the client id (`default`) you want to delete.
+
+4. Click **Execute**.
+
+!![DOX](1delete_clients_request.png)
+
+You should receive a response like the following:
+
+!![DOX](1delete_clients_response.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 3: ](Create client)]
+
+Use the **POST /clients** endpoint to create your own client. The **`clientId`** value created here will be used in other service endpoints.
 
 1. Expand the **POST /clients** endpoint.
 
@@ -33,11 +79,13 @@ You can either create a single client or multiple clients in the **payload** fie
 
 4. Click **Execute**.
 
-![DOX](1create_clients_request.png)
+!![DOX](1create_clients_request.png)
 
 You should receive a response like the following:
 
-![DOX](1create_clients_response.png)
+!![DOX](1create_clients_response.png)
+
+You can repeat step 1 to see the **`clientId`** and **`clientName`** of the client you have just created.
 
 
 >**CAUTION:**
@@ -55,7 +103,7 @@ You should receive a response like the following:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create enrichment data)]
+[ACCORDION-BEGIN [Step 4: ](Create enrichment data)]
 
 Use the **POST /data/jobs** endpoint to add your own master data records to the database to enrich the information extracted from documents.
 
@@ -108,7 +156,7 @@ Copy the **`id`** from the **Response body** to see the result of the enrichment
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](See created enrichment data status)]
+[ACCORDION-BEGIN [Step 5: ](See created enrichment data status)]
 
 Use the **GET /data/jobs/{`id`}** endpoint to see the status of the uploaded enrichment data.
 
@@ -126,11 +174,72 @@ You should receive a response like the following with status SUCCESS:
 
 !![DOX](1get_data_jobs_id_response.png)
 
+> ### What just happened?
+>
+> The **`refreshedAt`** parameter tells when the enrichment data job was refreshed for the last time. When the response is **null**, it means that the enrichment data has not yet been refreshed.
+> Enrichment data is refreshed automatically every 4 hours. It might take up to 4 hours until the enrichment data prediction is available in the response.
+
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Upload document to get prediction with enrichment data)]
+[ACCORDION-BEGIN [Step 6: ](Create configuration)]
+
+Set data activation to manual, instead of using the default automatic refresh of enrichment data that takes place every 4 hours.
+
+1. Expand the **POST /configuration** endpoint.
+
+2. Click **Try it out**.
+
+3. Enter the following in the **`payload`** field:
+
+    ```JSON
+    {
+      "value": {
+        "manualDataActivation":"true"
+      }
+    }  
+    ```
+
+4. Click **Execute**.
+
+!![DOX](1create_config_request.png)
+
+You should receive a response like the following:
+
+!![DOX](1create_config_response.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 7: ](Create data activation)]
+
+Create a data activation job record to see new or updated enrichment data in the extraction results. Only activated enrichment data will be added to the extraction results.
+
+1. Expand the **POST /data/activation** endpoint.
+
+2. Click **Try it out**.
+
+4. Click **Execute**.
+
+!![DOX](1create_data_activation_request.png)
+
+You should receive a response like the following:
+
+!![DOX](1create_data_activation_response.png)
+
+>If you have already used this endpoint recently, you should receive a response like the following:
+
+>!![DOX](1create_data_activation_error.png)
+
+>Wait until next data activation is possible to perform this step once again before moving to step 8.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 8: ](Upload document to get prediction with enrichment data)]
 
 >Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
 
@@ -156,23 +265,23 @@ Do the following:
 2. Click **Try it out**.
 
 3. Right click [Sample Invoice 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-2.pdf), then click ***Save link as*** to download locally the document file for this enrich employee data example.
-> You can also upload to the service and enrich any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice. In this case, make sure the data you define in the **`payload`** field, in step 2, matches your document fields.
+> You can also upload to the service and enrich any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice. In this case, make sure the data you define in the **`payload`** field, in step 4, matches your document fields.
 
 4. Upload the document file you want to enrich.
 
-5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 1 (`c_27`, for example), the document type (`invoice`, for example), `receivedDate` (2020-02-17, for example) and the enrichment data type `employee`.
+5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 3 (`c_27`, for example), the document type (`invoice`, for example), `receivedDate` (2020-02-17, for example) and the enrichment data type `employee`.
 
     ```JSON
     {
        "extraction":{
           "headerFields":[
+             "barcode",
              "documentNumber",
              "taxId",
+             "taxName",
              "purchaseOrderNumber",
              "shippingAmount",
              "netAmount",
-             "senderAddress",
-             "senderName",
              "grossAmount",
              "currencyCode",
              "receiverContact",
@@ -180,14 +289,24 @@ Do the following:
              "taxAmount",
              "taxRate",
              "receiverName",
-             "receiverAddress"
+             "receiverAddress",
+             "receiverTaxId",
+             "deliveryDate",
+             "paymentTerms",
+             "deliveryNoteNumber",
+             "senderBankAccount",
+             "senderAddress",
+             "senderName",
+             "dueDate",
+             "discount"
           ],
           "lineItemFields":[
              "description",
              "netAmount",
              "quantity",
              "unitPrice",
-             "materialNumber"
+             "materialNumber",
+             "unitOfMeasure"
           ]
        },
        "clientId":"c_27",
@@ -217,11 +336,11 @@ Copy the **`id`** from the **Response body** to get enrichment data prediction i
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Get enrichment data prediction)]
+[ACCORDION-BEGIN [Step 9: ](Get enrichment data prediction)]
 
 When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`id`}** endpoint.
 
-> Enrichment data is refreshed automatically every 4 hours. It might take up to 4 hours until the enrichment data prediction is available in the response. If the enrichment data prediction is NOT available in the response in your first try, perform again (some hours later) steps 4 and 5. Do not perform steps 7 and 8 before you see the enrichment data prediction in the response in step 5.
+> Enrichment data is refreshed automatically every 4 hours. It might take up to 4 hours until the enrichment data prediction is available in the response. If the enrichment data prediction is NOT available in the response in your first try, perform again (some hours later) steps 6 and 7. Do not perform steps 9 and 10 before you see the enrichment data prediction in the response in step 7.
 
 1. Expand the **GET /document/jobs/{`id`}** endpoint.
 
@@ -233,401 +352,15 @@ When enrichment data has been uploaded and fits to a certain prediction it is ad
 
 5. Click **Execute**.
 
-The endpoint request and response look as follows:
-
 !![DOX](1get_document_jobs_id_request.png)
+
+You should receive a response like the following:
 
 !![DOX](1get_document_jobs_id_response.png)
 
 > ### What just happened?
 >
-> In this example, in the response, one of the extracted fields is the receiver contact Linda Owens. This information is enriched with the employee ID enrichment data created in step 2. The prediction suggests the employee ID from Linda Owens (E0001) with 100% probability. The employee ID from Lin Owens (E0002) is not even considered by the machine leaning model.
-
-This is an example of a full prediction including the enrichment data part:
-
-```JSON
-{
-  "status": "DONE",
-  "id": "47dc278a-f329-4925-9344-48ac7ffda67a",
-  "fileName": "sample-invoice-2.pdf",
-  "documentType": "invoice",
-  "created": "2020-11-13T09:22:46.069362+00:00",
-  "finished": "2020-11-13T09:22:55.708792+00:00",
-  "country": "XX",
-  "extraction": {
-    "headerFields": [
-      {
-        "name": "taxAmount",
-        "category": "amounts",
-        "value": null,
-        "type": "number",
-        "page": null,
-        "confidence": null,
-        "coordinates": {
-          "x": 0,
-          "y": 0,
-          "w": 0,
-          "h": 0
-        },
-        "group": 1
-      },
-      {
-        "name": "taxRate",
-        "category": "amounts",
-        "value": null,
-        "type": "number",
-        "page": null,
-        "confidence": null,
-        "coordinates": {
-          "x": 0,
-          "y": 0,
-          "w": 0,
-          "h": 0
-        },
-        "group": 1
-      },
-      {
-        "name": "documentDate",
-        "category": "document",
-        "value": "2020-02-20",
-        "type": "date",
-        "page": 1,
-        "confidence": 0.654179429306703,
-        "coordinates": {
-          "x": 0.863306451612903,
-          "y": 0.286121402108863,
-          "w": 0.0681451612903226,
-          "h": 0.0088344257623254
-        }
-      },
-      {
-        "name": "senderAddress",
-        "category": "sender",
-        "value": "Cupertino,CA 95014",
-        "type": "string",
-        "page": 1,
-        "confidence": 0.595586925575679,
-        "coordinates": {
-          "x": 0.067741935483871,
-          "y": 0.0929039612425192,
-          "w": 0.138306451612903,
-          "h": 0.0102593331433457
-        }
-      },
-      {
-        "name": "senderName",
-        "category": "sender",
-        "value": "Apple Store One Infinite Loop",
-        "type": "string",
-        "page": 1,
-        "confidence": 0.597478873833562,
-        "coordinates": {
-          "x": 0.0665322580645161,
-          "y": 0.0544314619549729,
-          "w": 0.127016129032258,
-          "h": 0.030777999430037
-        }
-      },
-      {
-        "name": "grossAmount",
-        "category": "amounts",
-        "value": 1998,
-        "type": "number",
-        "page": 1,
-        "confidence": 0.549836874008179,
-        "coordinates": {
-          "x": 0.793548387096774,
-          "y": 0.447420917640353,
-          "w": 0.0681451612903226,
-          "h": 0.00997435166714167
-        }
-      },
-      {
-        "name": "documentNumber",
-        "category": "document",
-        "value": "9001321",
-        "type": "string",
-        "page": 1,
-        "confidence": 0.654770247993015,
-        "coordinates": {
-          "x": 0.863306451612903,
-          "y": 0.268167569108008,
-          "w": 0.0584677419354839,
-          "h": 0.00854944428612142
-        }
-      },
-      {
-        "name": "receiverContact",
-        "category": "receiver",
-        "value": "Linda Owens",
-        "type": "string",
-        "page": 1,
-        "confidence": 0.622583129314276,
-        "coordinates": {
-          "x": 0.150403225806452,
-          "y": 0.320604160729553,
-          "w": 0.0943548387096774,
-          "h": 0.00797948133371335
-        }
-      },
-      {
-        "name": "receiverAddress",
-        "category": "receiver",
-        "value": "5584 Nickel Road KINTA, Oklahoma 74552",
-        "type": "string",
-        "page": 1,
-        "confidence": 0.587670087023011,
-        "coordinates": {
-          "x": 0.14758064516129,
-          "y": 0.275577087489313,
-          "w": 0.170564516129032,
-          "h": 0.0287831290966087
-        }
-      },
-      {
-        "name": "receiverName",
-        "category": "receiver",
-        "value": "Future Inc.",
-        "type": "string",
-        "page": 1,
-        "confidence": 0.605180115394649,
-        "coordinates": {
-          "x": 0.148387096774194,
-          "y": 0.257623254488458,
-          "w": 0.0770161290322581,
-          "h": 0.00883442576232546
-        }
-      },
-      {
-        "name": "taxId",
-        "category": "amounts",
-        "value": null,
-        "type": "string",
-        "page": null,
-        "confidence": null,
-        "coordinates": {
-          "x": 0,
-          "y": 0,
-          "w": 0,
-          "h": 0
-        },
-        "group": 1
-      },
-      {
-        "name": "shippingAmount",
-        "category": "amounts",
-        "value": null,
-        "type": "number",
-        "page": null,
-        "confidence": null,
-        "coordinates": {
-          "x": 0,
-          "y": 0,
-          "w": 0,
-          "h": 0
-        }
-      },
-      {
-        "name": "currencyCode",
-        "category": "amounts",
-        "value": "USD",
-        "type": "string",
-        "page": 1,
-        "confidence": 0.962176322937012,
-        "coordinates": {
-          "x": 0,
-          "y": 0,
-          "w": 0,
-          "h": 0
-        }
-      },
-      {
-        "name": "purchaseOrderNumber",
-        "category": "details",
-        "value": null,
-        "type": "string",
-        "page": null,
-        "confidence": null,
-        "coordinates": {
-          "x": 0,
-          "y": 0,
-          "w": 0,
-          "h": 0
-        }
-      },
-      {
-        "name": "netAmount",
-        "category": "amounts",
-        "value": 1998,
-        "type": "number",
-        "page": 1,
-        "confidence": 0.227824148204592,
-        "coordinates": {
-          "x": 0.793548387096774,
-          "y": 0.447420917640353,
-          "w": 0.067741935483871,
-          "h": 0.00968937019093763
-        }
-      }
-    ],
-    "lineItems": [
-      [
-        {
-          "name": "description",
-          "category": "details",
-          "value": "Phone 11 Pro 256GB Gold",
-          "type": "string",
-          "page": 1,
-          "confidence": 0.618215461879066,
-          "coordinates": {
-            "x": 0.0758064516129032,
-            "y": 0.376460530065546,
-            "w": 0.181451612903226,
-            "h": 0.00854944428612137
-          }
-        },
-        {
-          "name": "quantity",
-          "category": "details",
-          "value": 1,
-          "type": "number",
-          "page": 1,
-          "confidence": 0.623341202735901,
-          "coordinates": {
-            "x": 0.631048387096774,
-            "y": 0.37674551154175,
-            "w": 0.0108870967741935,
-            "h": 0.00797948133371329
-          }
-        },
-        {
-          "name": "netAmount",
-          "category": "amounts",
-          "value": 1149,
-          "type": "number",
-          "page": 1,
-          "confidence": 0.634690215774611,
-          "coordinates": {
-            "x": 0.794758064516129,
-            "y": 0.376460530065546,
-            "w": 0.0681451612903226,
-            "h": 0.00997435166714161
-          }
-        },
-        {
-          "name": "unitPrice",
-          "category": "details",
-          "value": 1149,
-          "type": "number",
-          "page": 1,
-          "confidence": 0.619598222275575,
-          "coordinates": {
-            "x": 0.709677419354839,
-            "y": 0.376460530065546,
-            "w": 0.0681451612903226,
-            "h": 0.00997435166714161
-          }
-        },
-        {
-          "name": "materialNumber",
-          "category": "details",
-          "value": null,
-          "type": "string",
-          "page": 1,
-          "confidence": null,
-          "coordinates": {
-            "x": 0,
-            "y": 0,
-            "w": 0,
-            "h": 0
-          }
-        }
-      ],
-      [
-        {
-          "name": "description",
-          "category": "details",
-          "value": "Apple Watch Edition GPS + Cellular, 44mm Space Black Titanium Case with Anchor Gray Sport Loop",
-          "type": "string",
-          "page": 1,
-          "confidence": 0.615273810685171,
-          "coordinates": {
-            "x": 0.0737903225806452,
-            "y": 0.402678825876318,
-            "w": 0.524193548387097,
-            "h": 0.0290681105728128
-          }
-        },
-        {
-          "name": "quantity",
-          "category": "details",
-          "value": 1,
-          "type": "number",
-          "page": 1,
-          "confidence": 0.624722316861153,
-          "coordinates": {
-            "x": 0.631048387096774,
-            "y": 0.403248788828726,
-            "w": 0.0108870967741935,
-            "h": 0.00826446280991738
-          }
-        },
-        {
-          "name": "netAmount",
-          "category": "amounts",
-          "value": 849,
-          "type": "number",
-          "page": 1,
-          "confidence": 0.613978360380445,
-          "coordinates": {
-            "x": 0.794758064516129,
-            "y": 0.402678825876318,
-            "w": 0.0552419354838709,
-            "h": 0.00968937019093757
-          }
-        },
-        {
-          "name": "unitPrice",
-          "category": "details",
-          "value": 849,
-          "type": "number",
-          "page": 1,
-          "confidence": 0.591678272073086,
-          "coordinates": {
-            "x": 0.71008064516129,
-            "y": 0.402678825876318,
-            "w": 0.0548387096774193,
-            "h": 0.00968937019093757
-          }
-        },
-        {
-          "name": "materialNumber",
-          "category": "details",
-          "value": null,
-          "type": "string",
-          "page": 1,
-          "confidence": null,
-          "coordinates": {
-            "x": 0,
-            "y": 0,
-            "w": 0,
-            "h": 0
-          }
-        }
-      ]
-    ]
-  },
-  "fileType": "pdf",
-  "enrichment": {
-    "employee": [
-      {
-        "id": "E0001",
-        "confidence": 1
-      }
-    ]
-  }
-}
-```
+> In this example, in the response, one of the extracted fields is the receiver contact Linda Owens. This information is enriched with the employee ID enrichment data created in step 4. The prediction suggests the employee ID from Linda Owens (E0001) with 100% probability. The employee ID from Lin Owens (E0002) is not even considered by the machine leaning model.
 
 You have now successfully used the employee entity to get enrichment data predictions for the document you uploaded to Document Information Extraction.
 
@@ -635,7 +368,7 @@ You have now successfully used the employee entity to get enrichment data predic
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](See all enrichment data entries)]
+[ACCORDION-BEGIN [Step 10: ](See all enrichment data entries)]
 
 To see a list of the enrichment data entries you have created:
 
@@ -647,17 +380,17 @@ To see a list of the enrichment data entries you have created:
 
 4. Click **Execute**.
 
-![DOX](1get_data_request.png)
+!![DOX](1get_data_request.png)
 
 You should receive a response like the following:
 
-![DOX](1get_data_response.png)
+!![DOX](1get_data_response.png)
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Delete enrichment data)]
+[ACCORDION-BEGIN [Step 11: ](Delete enrichment data)]
 
 To delete enrichment data which has been uploaded before:
 
@@ -672,6 +405,9 @@ To delete enrichment data which has been uploaded before:
        "value":[
           {
              "id":"E0001"
+          },
+          {
+             "id":"E0002"
           }
        ]
     }
@@ -681,33 +417,13 @@ To delete enrichment data which has been uploaded before:
 
 5. Click **Execute**.
 
-![DOX](1delete_data_request.png)
+!![DOX](1delete_data_request.png)
 
 You should receive a response like the following:
 
-![DOX](1delete_data_response.png)
+!![DOX](1delete_data_response.png)
 
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 8: ](Delete client)]
-
-If you want to delete a client you created in Step 1, use the **DELETE /clients** endpoint.
-
-1. Expand the **DELETE /clients** endpoint.
-
-2. Click **Try it out**.
-
-3. Enter in the **payload** field the client id or multiple client ids (`c_27`, for example) you want to delete.
-
-4. Click **Execute**.
-
-![DOX](1delete_clients_request.png)
-
-You should receive a response like the following:
-
-![DOX](1delete_clients_response.png)
+You can repeat step 2 and delete the client you created in step 3.
 
 Congratulations, you have completed this tutorial.
 

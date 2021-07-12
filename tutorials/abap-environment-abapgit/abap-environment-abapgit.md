@@ -1,9 +1,9 @@
 ---
 auto_validation: true
 title: Use abapGit to Transfer Your On-Premise ABAP Source Code to the Cloud
-description: Transfer Your ABAP Source Code from your on-premise SAP system to your SAP Cloud Platform ABAP Environment instance over a Github Repository using the abapGit report and the ADT plugin for abapGit.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner,  topic>abap-development, products>sap-cloud-platform, tutorial>license]
+description: Transfer Your ABAP Source Code from your on-premise SAP system to your SAP Business Technology Platform ABAP Environment instance over a Github Repository using the abapGit report and the ADT plugin for abapGit.
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner,  topic>abap-development, products>sap-business-technology-platform, tutorial>license]
 time: 15
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
@@ -11,7 +11,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 
 ## Prerequisites  
  - `github.com` or similar account
- - SAP Cloud Platform ABAP Environment system and user with developer role
+ - SAP BTP ABAP Environment system and user with developer role
  - on-premise system with user and required root CA of Git server (STRUST)
  - Download Eclipse Photon or Oxygen and install ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
  - For More information see [Working with abapGit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/d62ed9d54a764c53990f25f0ab6c27f9.html)
@@ -19,7 +19,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 ## Details
 ### You will learn  
   - How to create content in an on-premise system and push it to Git repository
-  - How to import the content from Git repository into a SAP Cloud Platform ABAP Environment instance
+  - How to import the content from Git repository into a SAP BTP ABAP Environment instance
 
 ---
 
@@ -47,7 +47,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 
 >**IMPORTANT** Arrange with your system administrator before you install `zabapgit`.
 
-  1. Copy the content of the latest build from the program `zabapgit`, that you will find in the `abapGit` repository <https://github.com/larshp/abapGit>.
+  1. Copy the content of the latest build from the program `zabapgit`, that you will find in the `abapGit` repository <https://github.com/abapGit/abapGit>.
 
     ![latest build](github4.png)
 
@@ -62,9 +62,9 @@ author_profile: https://github.com/niloofar-flothkoetter
   4. Now `abapGit` is installed and opened.
       ![execute program](abapgit2.png)
 
->You can find all installation information under <https://github.com/larshp/abapGit> > **Documentation/Guides**.
+>You can find all installation information under <https://github.com/abapGit/abapGit> > **Documentation/Guides**.
 
-> **IMPORTANT** Logon with language `EN` to your on-premise system. SAP Cloud Platform ABAP Environment just supports `EN` at the moment. Otherwise you'll get problem during import.
+> **IMPORTANT** Logon with language `EN` to your on-premise system. SAP BTP ABAP Environment just supports `EN` at the moment. Otherwise you'll get problem during import.
 
 [DONE]
 [ACCORDION-END]
@@ -116,7 +116,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 
       ![favorite](abapgit20.png)
 
-  2. Add ABAP development objects to your package (e.g. ABAP class). Save and activate your changes.
+  2. Add ABAP development objects to your package, for example an ABAP class. Save and activate your changes.
 
       ![development objects](abapgit9.png)
 
@@ -181,7 +181,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Clone Git repository into SAP Cloud Platform ABAP Environment)]
+[ACCORDION-BEGIN [Step 8: ](Clone Git repository into SAP BTP ABAP Environment)]
 
   1. Click the clone button (green + button) in the `abapGit` repositories view.
 

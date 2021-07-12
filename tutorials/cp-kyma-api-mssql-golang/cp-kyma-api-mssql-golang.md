@@ -3,8 +3,8 @@ title: Deploy a Go MSSQL API Endpoint in the Kyma Runtime
 description: Develop and deploy an MSSQL API endpoint written in Go to the Kyma runtime.
 auto_validation: true
 time: 40
-tags: [ tutorial>intermediate, topic>cloud, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
+primary_tag: products>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
@@ -81,13 +81,37 @@ Run the following commands from the `api-mssql-go` directory using your CLI.
 
 1. The application expects that the following environment variables are set as they are required for the database connection. Make sure to adjust them for your environment. Review the the tutorial [Deploying MSSQL in the Kyma Runtime](cp-kyma-mssql-deployment) for the different configurations to run the database.
 
-    ```Shell/Bash
-    export MYAPP_username=sa
-    export MYAPP_password=Yukon900
-    export MYAPP_database=DemoDB
-    export MYAPP_host=localhost
-    export MYAPP_port=1433
-    ```
+[OPTION BEGIN [Mac and Linux]]
+
+```Shell/Bash
+export MYAPP_username=sa
+export MYAPP_password=Yukon900
+export MYAPP_database=DemoDB
+export MYAPP_host=localhost
+export MYAPP_port=1433
+```
+
+[OPTION END]
+
+[OPTION BEGIN [Windows]]
+
+```PowerShell
+$ENV:MYAPP_username='sa'
+$ENV:MYAPP_password='Yukon900'
+$ENV:MYAPP_database='DemoDB'
+$ENV:MYAPP_host='localhost'
+$ENV:MYAPP_port=1433
+```
+
+```DOS
+set MYAPP_username=sa
+set MYAPP_password=Yukon900
+set MYAPP_database=DemoDB
+set MYAPP_host=localhost
+set MYAPP_port=1433
+```
+
+[OPTION END]
 
 2. To run the application, use the following command:
 
@@ -104,7 +128,7 @@ Run the following commands from the `api-mssql-go` directory using your CLI.
 
     > To POST data:
     ```Shell/Bash
-    curl --data '{"order_id":"10000003","description":"test from curl"}' http://localhost:8000/orders
+    curl --data "{\"order_id\":\"10000003\",\"description\":\"test from curl\"}" http://localhost:8000/orders
     ```
 
 [DONE]
@@ -139,17 +163,42 @@ Make sure to replace the value of `<your-docker-id>` with your Docker account ID
 
 1. Start the image locally by running the following command:  
 
-    ```Shell/Bash
-      docker run -p 8000:8000  --name api-mssql-go \
-      -e MYAPP_username="sa" \
-      -e MYAPP_password="Yukon900" \
-      -e MYAPP_database="DemoDB" \
-      -e MYAPP_host="host.docker.internal" \
-      -e MYAPP_port="1433" \
-      -d <your-docker-id>/api-mssql-go:latest
-    ```
+[OPTION BEGIN [Mac and Linux]]
 
-    The command is expecting that the database is available at `localhost:1433` on the host machine. This is denoted by the `host.docker.internal` value. Review the tutorial [Deploying MSSQL in the Kyma Runtime](cp-kyma-mssql-deployment) for the different configurations to run the database.
+```Shell/Bash
+docker run -p 8000:8000  --name api-mssql-go \
+-e MYAPP_username="sa" \
+-e MYAPP_password="Yukon900" \
+-e MYAPP_database="DemoDB" \
+-e MYAPP_host="host.docker.internal" \
+-e MYAPP_port="1433" \
+-d <your-docker-id>/api-mssql-go:latest
+```
+[OPTION END]
+[OPTION BEGIN [Windows]]
+
+```PowerShell
+docker run -p 8000:8000  --name api-mssql-go `
+-e MYAPP_username="sa" `
+-e MYAPP_password="Yukon900" `
+-e MYAPP_database="DemoDB" `
+-e MYAPP_host="host.docker.internal" `
+-e MYAPP_port="1433" `
+-d <your-docker-id>/api-mssql-go:latest  
+```
+
+```DOS
+docker run -p 8000:8000  --name api-mssql-go ^
+-e MYAPP_username="sa" ^
+-e MYAPP_password="Yukon900" ^
+-e MYAPP_database="DemoDB" ^
+-e MYAPP_host="host.docker.internal" ^
+-e MYAPP_port="1433" ^
+-d <your-docker-id>/api-mssql-go:latest  
+```
+[OPTION END]
+
+The command is expecting that the database is available at `localhost:1433` on the host machine. This is denoted by the `host.docker.internal` value. Review the tutorial [Deploying MSSQL in the Kyma Runtime](cp-kyma-mssql-deployment) for the different configurations to run/stop the database.
 
 2. The application is available at <http://localhost:8000/orders>. You can use a tool such as curl to test the different HTTP methods, for example:
 
@@ -160,7 +209,7 @@ Make sure to replace the value of `<your-docker-id>` with your Docker account ID
 
     > To POST data - make sure to use a unique value for the order_id:
     ```Shell/Bash
-    curl --data '{"order_id":"10000003","description":"test from curl"}' http://localhost:8000/orders
+    curl --data "{\"order_id\":\"10000004\",\"description\":\"test from curl\"}" http://localhost:8000/orders
     ```
 
 3. Stop the Docker container by running:
@@ -198,7 +247,7 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     kubectl create namespace dev
     ```
 
-2. Within the `deployment.yaml`, adjust the value of `spec.template.spec.containers.image` to use your Docker image. Apply the Deployment:
+2. Within the `deployment.yaml`, adjust the value of `spec.template.spec.containers.image`, commented with **#change it to your image**, to use your Docker image. Apply the Deployment which will cause an error which we will further explore:
 
     ```Shell/Bash
     kubectl -n dev apply -f ./k8s/deployment.yaml
@@ -255,11 +304,27 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     kubectl -n dev apply -f ./k8s/apirule.yaml
     ```
 
-    The APIRule creates an endpoint similar to the one below. You can use it to test within your browser or by using a tool such as `curl`.  
+[VALIDATE_1]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Open the API endpoint)]
+
+To access the API we can use the `APIRule` we created in the previous step.
+
+1. Open the Kyma runtime console
+
+2. Choose the `dev` Namespace.
+
+3. From the menu, choose **Discovery and Network > `APIRules`**.
+
+4. Choose the **Host** entry for the **api-mssql-go** `APIRule` to open the application in the browser which will produce a **404** error. Append `/orders` to the end of the URL and refresh the page to successfully access the API. The URL should be similar to:
 
     `https://api-mssql-go.<cluster>.kyma.shoot.live.k8s-hana.ondemand.com/orders`
 
-[VALIDATE_1]
+    >A tool such as `curl` can be used to test the various HTTP methods of the API.
+
+
+[VALIDATE_2]
 [ACCORDION-END]
 
 ---

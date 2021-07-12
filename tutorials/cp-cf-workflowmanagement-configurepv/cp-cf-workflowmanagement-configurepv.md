@@ -3,8 +3,8 @@ title: Create and Configure a Process Variant
 description: Create, configure, and activate a process variant in the imported capital expenditure package using the process flexibility cockpit.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform
+tags: [tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
 author_name: Deeksha R
 author_profile: https://github.com/Deeksha-R
 ---
@@ -80,6 +80,10 @@ In this tutorial, you can configure one such approval step and activate a proces
 4. **Save** and **Activate** the process variant.
 
     ![Variant Activate](cp-cf-wm-configurepv-activate.png)
+
+5. Navigate to the Workflow Management home screen.
+
+    !![Home screen](cp-cf-wm-configuredecision-home.png)
 
 [VALIDATE_2]
 [ACCORDION-END]

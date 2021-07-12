@@ -3,14 +3,14 @@ title: Create Your First Card in SAP Business Application Studio
 description: Create a simple SAP Mobile Cards app by using a template, then make simple HTML modifications, and deploy the app and use it on your device.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
+tags: [ tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-business-technology-platform, products>sap-mobile-cards, products>sap-mobile-services, products>sap-business-application-studio ]
 primary_tag: products>sap-mobile-cards
 author_name: Sandeep T D S
 author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites
- - [Completed the starter mission](mission.mobile-cards-get-started) or [Set up Mobile Services on you SAP Cloud Platform account](cp-mobile-cards-setup)
+ - [Completed the starter mission](mission.mobile-cards-get-started) or [Set up Mobile Services on your SAP Business Technology Platform account](cp-mobile-cards-setup)
  - [Set up SAP Business Application Studio for Mobile Development](cp-mobile-bas-setup)
  - **Install SAP Mobile Cards Application:**
     <table><tr><td align="center">!![Play Store QR Code](pre_qr_android.png)<br>Android</td><td align="center">!![App Store QR Code](pre_qr_ios.png)<br>iOS</td></tr></table>
@@ -19,7 +19,7 @@ author_profile: https://github.com/sandeep-tds
 ### You will learn
   - How to create a card using a template in SAP Business Application Studio
   - How to design and develop SAP Mobile Cards in SAP Business Application Studio
-  - How to deploy a card to SAP Cloud Platform Mobile Services from SAP Business Application Studio
+  - How to deploy a card to SAP Mobile Services from SAP Business Application Studio
 
 Click [here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mck/mck-development-bas.html) to learn more about SAP Mobile Cards in SAP Business Application Studio.
 
@@ -157,11 +157,7 @@ Click [here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-
 
     !![Publish confirmation dialog](img_5_5.png)
 
-    > The status of the card should now be **Productive**.
-
-    > !![Card in productive status](img_5_5_note.png)
-
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](View card on your device)]

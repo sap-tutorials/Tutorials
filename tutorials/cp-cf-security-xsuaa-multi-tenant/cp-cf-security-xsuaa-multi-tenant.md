@@ -3,10 +3,10 @@ title: Add Multitenancy to a Node.js Application Secured by the Authorization an
 description: Learn how to add multitenancy to your application and make it available for other subaccounts using the SaaS Provisioning service and the XSUAA.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>node-js]
+tags: [ tutorial>intermediate, products>sap-business-technology-platform, topic>node-js ]
 primary_tag: topic>security
-author_name: Dominik Nehse
-author_profile: https://github.com/nedo-SAP
+author_name: Michael Shea
+author_profile: https://github.com/MichaelPShea
 ---
 
 
@@ -320,7 +320,7 @@ cf map-route approuter cfapps.eu10.hana.ondemand.com --hostname consumer-tenant-
 [ACCORDION-BEGIN [Step 8: ](Access the application with the consumer subaccount)]
 To access the application you need to subscribe to it. Follow these steps to subscribe to the SaaS application with the consumer subaccount and call the application URL.
 
-1. Open the [SAP Cloud Platform trial](https://account.hanatrial.ondemand.com/cockpit/#/home/trialhome).
+1. Open the [SAP BTP Trial](https://account.hanatrial.ondemand.com/cockpit/#/home/trialhome).
 
 2. Navigate to your consumer subaccount.
 
@@ -343,13 +343,13 @@ You'll now see the application with the message `no data` because you have to as
 
 Assign your user the role collection `ProductListViewer` that contains the necessary role to view the products in the product list.
 
-3. Open the SAP Cloud Platform Cockpit.
+3. Open the SAP BTP cockpit.
 
 4. Navigate to your consumer subaccount.
 
 5. Choose the **Security** tab and choose **Trust Configuration**.
 
-6. Choose **SAP ID Service**.
+6. Choose **Default identity provider**.
 
 7. Enter your e-mail address and choose **Show Assignments**.
 

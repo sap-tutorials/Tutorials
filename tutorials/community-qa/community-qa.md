@@ -17,7 +17,7 @@ primary_tag: topic>sap-community
 - What to do after you asked your question
  ---
 
-This tutorial is version number 01.2021.001
+This tutorial is version number 07.2021.001
 
 SAP Community wants to create a valuable store of knowledge and it is our goal to provide content to our members in the form of advice, support, and guidance. The creation of such a reliable place is amongst other factors heavily dependent on questions, how they are asked and answered -- and this is why you are here.
 
@@ -87,7 +87,7 @@ You can learn more on the [About Tags](https://community.sap.com/resources/using
 [ACCORDION-BEGIN [Step 5:](Regularly check your question)]
 There is an easy way to check on your question -- if you correctly adjusted your notifications on your profile, you will be automatically notified via e-mail and won't miss any reactions to your question.
 
-It's all explained and outlined in our [Tour the Community Tutorial](https://developers.sap.com/tutorials/community-start.html), that we recommend to take as a starting point to the SAP Community.
+It's all explained and outlined in our [Tour the Community Tutorial](community-start), that we recommend to take as a starting point to the SAP Community.
 
 **Select the best answer to your question**
 
@@ -163,8 +163,8 @@ You can also learn more about Q&A on the SAP Community [Questions and Answers](h
 
 **Write and publish blog posts**
 
-By taking [this tutorial](https://developers.sap.com/tutorials/community-blogging.html), you'll discover how to prepare and manage your blog posts on SAP Community, get tips for better blogging, and learn how to interact with readers. You'll also earn the Blogging Savvy badge.
+By taking [this tutorial](community-blogging), you'll discover how to prepare and manage your blog posts on SAP Community, get tips for better blogging, and learn how to interact with readers. You'll also earn the Blogging Savvy badge.
 
 **Maintain your SAP profile at [people.sap.com](https://people.sap.com/)**
 
-By taking [this tutorial](https://developers.sap.com/tutorials/community-profile.html), you'll explore, set up, and manage the sections of your SAP profile ([people.sap.com](https://people.sap.com/)). You'll also earn the Profile Savvy badge.
+By taking [this tutorial](community-profile), you'll explore, set up, and manage the sections of your SAP profile ([people.sap.com](https://people.sap.com/)). You'll also earn the Profile Savvy badge.

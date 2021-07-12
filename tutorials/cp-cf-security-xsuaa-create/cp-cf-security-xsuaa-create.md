@@ -3,10 +3,10 @@ title: Secure a Basic Node.js App with the Authorization and Trust Management Se
 description: Secure a basic single-tenant Node.js application with the Authorization and Trust Management Service (XSUAA).
 auto_validation: true
 time: 25
-tags: [tutorial>intermediate, topic>node-js, products>sap-cloud-platform]
+tags: [tutorial>intermediate, topic>node-js, products>sap-business-technology-platform ]
 primary_tag: topic>security
-author_name: Dominik Nehse
-author_profile: https://github.com/nedo-SAP
+author_name: Michael Shea
+author_profile: https://github.com/MichaelPShea
 ---
 
 ## Prerequisites
@@ -413,13 +413,13 @@ Your application has two routes that are defined in the `manifest.yml`. The dire
 
 Assign your user the role collection that contains the necessary role to view the products in the product list.
 
-3. Open the SAP Cloud Platform Cockpit.
+3. Open the SAP BTP cockpit.
 
 4. Navigate to your subaccount.
 
 5. Choose the **Security** tab and choose **Trust Configuration**.
 
-6. Choose **SAP ID Service**.
+6. Choose **Default identity provider**.
 
 7. Enter your e-mail address and choose **Show Assignments**.
 

@@ -3,7 +3,7 @@ title: Use Data Attribute Recommendation With Your Own Dataset
 description: Classify your own data records in Data Attribute Recommendation using a custom dataset schema.
 auto_validation: true
 time: 30  
-tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 
 In this tutorial, you will use machine learning to classify your own data records and prepare a corresponding dataset schema. The steps that you have already learned in the previous tutorials will be once again needed to perform this tutorial. You will be given instructions, but if you need more details for each task, please review the respective tutorial.
 
-Please note that trial mode has limits on number of schemas, datasets and models. In order to be able to run this tutorial end-to-end without hitting limits, it is recommended to perform a cleanup as described [here](cp-aibus-dar-classify-delete) or just re-create the service instance in the SAP Cloud Platform as described below.
+Please note that trial mode has limits on number of schemas, datasets and models. In order to be able to run this tutorial end-to-end without hitting limits, it is recommended to perform a cleanup as described [here](cp-aibus-dar-classify-delete) or just re-create the service instance in SAP BTP Trial as described below.
 
 ---
 
@@ -79,7 +79,7 @@ Last but not least, you have to make sure that your dataset meets the [prerequis
 
   - include no fields that are not used in your dataset schema
 
-You can use this [dataset](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial-sample/blob/master/Tutorial_Example_Dataset.csv) as a reference.
+You can use this [dataset](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial/blob/main/Tutorial_Example_Dataset.csv) as a reference.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -145,7 +145,7 @@ The status of the deployment is `PENDING` after the start of the deployment. It 
 
 > ### What just happened?
 >
-> You have created a virtual container on the SAP Cloud Platform that is awake and has the trained instance of the machine learning model uploaded into the memory and ready to serve inference (prediction) requests.
+> You have created a virtual container on SAP BTP that is awake and has the trained instance of the machine learning model uploaded into the memory and ready to serve inference (prediction) requests.
 
 [DONE]
 [ACCORDION-END]

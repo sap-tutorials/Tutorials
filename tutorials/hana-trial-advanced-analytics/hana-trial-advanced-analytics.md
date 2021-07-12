@@ -53,7 +53,7 @@ This tutorial uses validations to track completion and make sure you are all set
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Sign up for a trial in SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step 2: ](Sign up for a trial in the SAP Business Technology Platform)]
 
 1. Navigate to the [SAP BTP trial](https://hanatrial.ondemand.com).
 
@@ -88,7 +88,7 @@ This tutorial uses validations to track completion and make sure you are all set
 
     !![dev Space](trial2.png)
 
-6. Once in your **dev** space page, click on **SAP HANA Cloud** in the side menu navigation.  You will then see a page listing all your SAP HANA Cloud instances; of which you should have none.  Click on the **Create Database** button to begin the wizard to create a new instance.
+6. Once in your **dev** space page, click on **SAP HANA Cloud** in the side menu navigation.  You will then see a page listing all your SAP HANA Cloud instances; of which you should have none.  Click on the **Create SAP HANA database** button to begin the wizard to create a new instance.
 
     !![dev Space](trial3.png)
 
@@ -106,6 +106,10 @@ This tutorial uses validations to track completion and make sure you are all set
 
 10. Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent steps in this tutorial.
 
+11. Finally it is important to take note that the SAP HANA Cloud trial instance shuts down at the end of each day automatically to save costs from unused systems. Therefore you must return to this SAP HANA Cloud administration screen each day you want to use the SAP HANA Cloud Trial and choose to start the system from the **Action** menu.  If you forget to restart the instance, you will receive HANA connection errors whenever you try to interact with it in later steps.
+
+    !![HANA Cloud stopped](hana_stopped.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -116,11 +120,11 @@ This tutorial uses validations to track completion and make sure you are all set
     <iframe width="560" height="315" src="https://www.youtube.com/embed/WW6z4AnYriw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-2. Creating SAP Business Application Studio Dev Space - Dev spaces are like isolated virtual machines in the cloud that can be quickly spun-up. Each dev space type contains tailored tools and pre-installed run-times for a target scenario such as SAP Fiori or mobile development. This simplifies and saves time in setting up the development environment as there's no need to install anything or upgrade; letting developers focus on their business domain, anytime, anywhere. Go to your SAP Cloud Platform subaccount and click the Subscriptions option.
+2. Creating SAP Business Application Studio Dev Space - Dev spaces are like isolated virtual machines in the cloud that can be quickly spun-up. Each dev space type contains tailored tools and pre-installed run-times for a target scenario such as SAP Fiori or mobile development. This simplifies and saves time in setting up the development environment as there's no need to install anything or upgrade; letting developers focus on their business domain, anytime, anywhere. Go to your SAP Business Technology Platform trial subaccount and click the **Services -> Instances and Subscriptions** option.
 
-    !![Subscriptions](SCP Subscriptions_.jpg)
+    !![Subscriptions](BTP_Subscriptions.png)
 
-3. Locate the SAP Business Application Studio tile and click Go to Application
+3. Locate the **SAP Business Application Studio** entry and click **Go to Application**
 
     !![Go To Application](go_to_application.png)
 
@@ -132,7 +136,7 @@ This tutorial uses validations to track completion and make sure you are all set
 
     !![Choose Dev Space type](dev_space_type.png)
 
-6. The Dev space will automatically be configured with the most common tools you need for the type of application you choose. However you can also choose additional, optional extensions.
+6. The Dev space will automatically be configured with the most common tools you need for the type of application you choose. However you can also choose additional, optional extensions. For example you might want to add the optional SAP HANA Performance Tools to your HANA Dev Space.
 
     !![Dev Space Extensions](dev_space_extensions.png)
 
@@ -159,35 +163,39 @@ This tutorial uses validations to track completion and make sure you are all set
 
 Before we create our SAP HANA project, we want to do a few more one-time configuration steps to prepare the Dev Space
 
-1. In the bottom left of the Business Application Studio you will see a message that your Organization and Space are not set yet. Click this message to begin supplying your trial connection details
+1. In the left side of the Business Application Studio click on the Cloud Foundry targets icon
 
     !![CF Not Set](cf_not_set.png)
 
-2. The command window will then open at the top of the SAP Business Application Studio. The first input will prompt you for the API endpoint
+2. Now in the Cloud Foundry Targets window you can expand either Service or Applications and then click on the Logon icon to continue the configuration process
+
+    !![Login Required](cf_login_required.png)
+
+3. The command window will then open at the top of the SAP Business Application Studio. The first input will prompt you for the API endpoint
 
     !![API Endpoint](api_endpoint.png)
 
-3. The default value proposed is likely the correct value, but if you need to confirm; the value can be found in the SAP BTP cockpit at the Subaccount level
+4. The default value proposed is likely the correct value, but if you need to confirm; the value can be found in the SAP BTP cockpit at the Subaccount level
 
     !![API Endpoint at Subaccount Level](api_endpoint_from_subaccount.png)
 
-4. Press Enter to confirm your input of the API endpoint. The next input field will ask you for the email address you used to create your SAP BTP trial account
+5. Press Enter to confirm your input of the API endpoint. The next input field will ask you for the email address you used to create your SAP BTP trial account
 
     !![Email](email.png)
 
-5. The next input will ask you for your SAP BTP trial account password
+6. The next input will ask you for your SAP BTP trial account password
 
     !![Password](password.png)
 
-6. The next input will ask you for your Organization. In most situations you will have a single choice. But like the API endpoint earlier, if you need to confirm the correct value it will be displayed in the top navigation of the SAP BTP cockpit
+7. The next input will ask you for your Organization. In most situations you will have a single choice. But like the API endpoint earlier, if you need to confirm the correct value it will be displayed in the top navigation of the SAP BTP cockpit
 
     !![Organization](organization.png)
 
-7. The final input will ask you for your Space. If you choose the endpoint API and Organization correctly, then you should have a single option of **dev**
+8. The final input will ask you for your Space. If you choose the endpoint API and Organization correctly, then you should have a single option of **dev**
 
     !![Space](space_2.png)
 
-8. Upon completion of all the inputs, you should see that the Organization and Space have been set and you will see the values in the Targeting... dialog at the bottom left of the SAP Business Application Studio
+9. Upon completion of all the inputs, you should see that the Organization and Space have been set and you will see any service instances or application instances from the target space.
 
     !![Org and Space Set Correctly](org_space_set_correctly.png)
 
@@ -207,13 +215,9 @@ You can now clone an existing GitHub repository into your workspace. This reposi
 
     !![Confirm Clone](confirm_clone_URL.png)
 
-3. The clone log will be shown in the bottom of the screen. Upon completion, please press the **Open Workspace** button.
+3. The clone log will be shown in the bottom of the screen. Upon completion, please press the **Open** button in the dialog in the bottom right.
 
     !![Complete Clone](clone_complete.png)
-
-4. Select **hana-cf-get-started-trial** and press **Open**
-
-    !![Open Workspace](open_workspace.png)
 
 > At any time if you get stuck, you can view the completed solution in GitHub as well at this URL: [Project Solution](https://github.com/SAP-samples/hana-cf-get-started-trial/tree/solution)
 
@@ -230,15 +234,9 @@ Artifacts in the current project will be translated into a physical database sch
 
     !![Bind](bind.png)
 
-2. In the dialog at appears near the top of the screen, choose the **Create a new service instance**
+2. In the dialog that appears near the top of the screen, choose the **Create a new service instance**
 
     !![Create New Service Instance](create_new_service.png)
-
-    **Note:** If you receive the following error that no services instances found:
-
-    !![No Service Instance Found](work_around1.png)
-
-    This is a bug that occurs when you have no existing HDI container service instances in your account. Therefore the dialog isn't shown. But this is in error because the same dialog would be used to also create a new instance. The bug has been fixed in development is pending a hot fix to move it production and the trial landscape. In the mean time there is a workaround. You can create the HDI service instance manually from the terminal. Use the command `cf create-service hana hdi-shared my-hdi`. Give it a few minutes to create. You can check the status with the command `cf services`. Once fully created, you can continue with this step. But instead of choosing **Create a new service instance** you can just select the service instance you just created manually.
 
 3. Accept the default service instance name
 

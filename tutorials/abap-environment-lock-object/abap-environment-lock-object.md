@@ -1,14 +1,14 @@
 ---
 auto_validation: true
-title: Create Data Model and Lock Object in SAP Cloud Platform ABAP Environment
-description: Create data model and lock object in SAP Cloud Platform, ABAP environment.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
+title: Create Data Model and Lock Object in SAP BTP, ABAP Environment
+description: Create data model and lock object in SAP BTP, ABAP environment.
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license ]
 time: 15
 ---
 
 ## Prerequisites  
-  - SAP Cloud Platform, ABAP environment user
+  - You need a SAP BTP, ABAP environment license.
   - ADT version 2.96 or higher
 
 ## Details

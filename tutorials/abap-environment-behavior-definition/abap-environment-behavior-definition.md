@@ -1,14 +1,16 @@
 ---
 auto_validation: true
-title: Create Behavior and Service in SAP Cloud Platform ABAP Environment
-description: Create behavior and services in SAP Cloud Platform, ABAP environment.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+title: Create Behavior and Service in SAP BTP, ABAP Environment
+description: Create behavior and services in SAP BTP, ABAP environment.
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
 time: 20
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-  - SAP Cloud Platform, ABAP environment user
+  - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding).
   - ADT version 2.96 or higher
 
 ## Details
@@ -205,7 +207,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
       ENDMETHOD.
 
       METHOD validate.
-         "Add method from Tutorial: Create authorization in SAP Cloud Platform ABAP environment (Step 4)
+         "Add method from Tutorial: Create authorization in SAP BTP, ABAP environment (Step 4)
       ENDMETHOD.
 
     ENDCLASS.

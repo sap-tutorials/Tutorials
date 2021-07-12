@@ -3,7 +3,7 @@ title: Let Customers Ask Chatbot for Shipping Price
 description: Create an intent for requesting the price of shipping a package, use the carousel for selecting a package size, call an API to retrieve a Google map, retrieve memory data and put in the message.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
@@ -225,7 +225,7 @@ You must require that the bot knows the size and location, and in addition get a
 
 [ACCORDION-BEGIN [Step 5: ](Call API to show Google map)]
 
-A nice feature would be to get a Google map for the delivery location. Our application deployed to SAP Cloud Platform also has a call for retrieving a Google map based on the location in memory.
+A nice feature would be to get a Google map for the delivery location. Our application deployed to SAP Business Technology Platform also has a call for retrieving a Google map based on the location in memory.
 
 Your default endpoint is already set up because you used it earlier to retrieve tracking information.
 
