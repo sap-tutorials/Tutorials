@@ -28,9 +28,9 @@ Tables are defined independently of the database in the ABAP Dictionary. When yo
 
 The table in this tutorial will store bank account details for customers. The table will have the following columns (or **fields**):
 
-- `client`
+- `client` (key field)
+- `account_number` (key account number)
 - `bank_customer_id`
-- `account_number`
 - `bank_name`
 - `city`
 - `balance`
@@ -103,7 +103,7 @@ Now you will add the field **`account_number`**, based on a primitive type.
       key account_number : abap.
     ```
 
-    !![Image depicting step3-create-accnum-field](step3-create-accnum-field.png)
+    !![step3a-create-accnum-field](step3a-create-accnum-field.png)
 
 2. From the dropdown list, choose `numc(len)` and specify `len` as 8. Also, specify this key field as not null:
   `key account_number : abap.numc(8) not null;`
@@ -233,7 +233,7 @@ Before you activate the table, change the technical settings at the top as follo
 
 2. **`EnhancementCategory`** : Place your cursor immediately after the hash symbol (#), delete the existing text, then choose **Auto-complete (`Ctrl+Space`)**:
 
-    ![Image depicting step9a-tech-settings](step9a-tech-settings.png)
+    ![step9a-tech-settings](step9a-tech-settings.png)
 
 3. Then choose `#EXTENSIBLE_CHARACTER_NUMERIC` from the dropdown list. Your table contains both character-type and numeric-type fields but does not contain any deep structures (such as a structure included within a table row).
 
@@ -279,7 +279,8 @@ Now you will add a check table for the field `bank_customer_id`. This checks the
 ```ABAP
 @AbapCatalog.foreignKey.keyType : #KEY
 @AbapCatalog.foreignKey.screenCheck : true
-key bank_customer_id : /dmo/customer_id not null
+
+bank_customer_id : /dmo/customer_id not null
   with foreign key [0..*,1] /dmo/customer
     where customer_id = ZACCOUNTS_XXX.bank_customer_id;
 ```
@@ -298,14 +299,14 @@ Now, save (`Ctrl+S`) and activate (`Ctrl+F3`) your table. Your code should look 
 @AbapCatalog.dataMaintenance : #LIMITED
 define table ZACCOUNTS_XXX {
   key client           : mandt not null;
+  key account_number       : abap.numc(8) not null;
 
   @AbapCatalog.foreignKey.keyType : #KEY
   @AbapCatalog.foreignKey.screenCheck : true
-  key bank_customer_id : /dmo/customer_id not null
+  bank_customer_id : /dmo/customer_id not null
     with foreign key [0..*,1] /dmo/customer
       where customer_id = ZACCOUNTS_XXX.bank_customer_id;
 
-  account_number       : abap.numc(8) not null;
   bank_name            : z_bank_name_xxx;
   city                 : /dmo/city;
   @Semantics.amount.currencyCode : 'ZACCOUNTS_XXX.currency'
