@@ -314,6 +314,7 @@ Make sure the last entry in `"devDependencies"` doesn't end with a comma (`,`) c
     fiori add deploy-config cf
     ```
 
+    > If the SAP Fiori generator fails, make sure to remove other `.yo-rc.json` files you might have in any of your project's directories and try again.
 
 3. It will ask for the destination name.
 
