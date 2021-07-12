@@ -3,8 +3,8 @@ title: Deploy MSSQL in the Kyma Runtime
 description: Configure and deploy an MSSQL database within the Kyma runtime to be used for a test or development scenario.
 time: 45
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
+primary_tag: products>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
@@ -50,7 +50,7 @@ In this tutorial, you configure a database named `DemoDB` which contains one `Or
 
     The process includes defining the database password as well as the creation of the `Orders` table with sample data.
 
-4. Within the `docker` folder you can find the Dockerfile definition. Notice how the last command references the `entrypoint.sh` script defined within the app directory which is used to call the commands to configure the sample database.
+4. Within the `docker` folder you can find the Dockerfile, which is a text-based set of instructions that is used to create a container image. Notice how the last command references the `entrypoint.sh` script defined within the app directory which is used to call the commands to configure the sample database.
 
 5. Within the `k8s` folder you can find the resource definitions that will be used to deploy the sample to the Kyma runtime. This includes the `deployment.yaml` which specifies the microservice definition of the MSSQL database and also a service definition which exposes the microservice to other resources within the cluster. The `pvc.yaml` specifies a persistent volume claim which is used to request a storage location for the data of the database.  The `secret.yaml` contains the database user and password.
 
@@ -60,9 +60,7 @@ In this tutorial, you configure a database named `DemoDB` which contains one `Or
 
 [ACCORDION-BEGIN [Step 3: ](Build the Docker image)]
 
-Run the following commands from the `database-mssql` directory using your CLI.
-
-Make sure to replace the value of `<your-docker-id>` with your Docker account ID.
+A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings. In this step, you will build a `mssql` image according to the Dockerfile definition contained in the docker folder. Make sure to run the following commands from the `database-mssql` directory using your CLI, and also replace the value of `<your-docker-id>` with your Docker account ID.
 
 1. To build the Docker image, run this command:
 
@@ -83,7 +81,7 @@ Make sure to replace the value of `<your-docker-id>` with your Docker account ID
 
 Make sure to replace the value of `<your-docker-id>` with your Docker account ID.
 
-1. Start the image locally by running this command:
+1. Start the image locally by running the following command. The start up will take about two minutes due to the scripts that run to initialize the database.
 
     ```Shell/Bash
     docker run -e ACCEPT_EULA=Y -e SA_PASSWORD=Yukon900 -p 1433:1433 --name sql1 -d <your-docker-id>/mssql
@@ -101,33 +99,37 @@ Make sure to replace the value of `<your-docker-id>` with your Docker account ID
     /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P Yukon900
     ```
 
-4. Run a sample query by running this commands:
+4. Enter a query by entering this command:
 
     ```Shell/Bash
-    1> USE DemoDB
-    2> SELECT * FROM ORDERS
-    3> GO
+    USE DemoDB SELECT * FROM ORDERS
     ```
 
-5. End the `sqlcmd` session by running:
+5. The query can now be executed by entering this command:
 
     ```Shell/Bash
-    1> exit
+    GO
     ```
 
-6. End the bash session by running:
+6. End the `sqlcmd` session by running:
 
     ```Shell/Bash
     exit
     ```
 
-7. Shutdown the Docker container by running this command:
+7. End the bash session by running:
+
+    ```Shell/Bash
+    exit
+    ```
+
+8. Shutdown the Docker container by running this command:
 
     ```Shell/Bash
     docker stop sql1
     ```
 
-8. Here are some additional commands that can be used:
+9. Here are some additional commands that can be used:
 
     > To start the container again, run:
     ```Shell/Bash
@@ -136,6 +138,16 @@ Make sure to replace the value of `<your-docker-id>` with your Docker account ID
     > The container can be removed by running:
     ```Shell/Bash
     docker rm sql1
+    ```
+
+    > To list all local containers existing:
+    ```Shell/Bash
+    docker container ls -a
+    ```
+
+    > To list out all local images existing
+    ```Shell/Bash
+    docker images
     ```
 
 [DONE]
@@ -169,7 +181,7 @@ Run the following commands from the `database-mssql` directory using your CLI.
     kubectl -n dev apply -f ./k8s/secret.yaml
     ```
 
-4. Within the `deployment.yaml`, adjust the value of `spec.template.spec.containers.image` to use your Docker image. Apply the Deployment:
+4. Within the `deployment.yaml`, adjust the value of `spec.template.spec.containers.image`, commented with **#change it to your image**, to use your Docker image. Apply the Deployment:
 
     ```Shell/Bash
     kubectl -n dev apply -f ./k8s/deployment.yaml
@@ -188,7 +200,7 @@ Run the following commands from the `database-mssql` directory using your CLI.
     mssql-6df65c689d-qdj4r        2/2     Running   0          93s
     ```
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Locally access the MSSQL Deployment)]
@@ -198,7 +210,7 @@ Kubernetes provides a port-forward functionality that allows you to connect to r
 1.  Confirm the port on which the Pod is listening:
 
     ```Shell/Bash
-    kubectl get pod mssql-6df65c689d-qdj4r -n dev --template='{{(index (index .spec.containers 0).ports 0).containerPort}}'
+    kubectl get pod mssql-6df65c689d-qdj4r -n dev --template="{{(index (index .spec.containers 0).ports 0).containerPort}}"
     ```
 
     This command should return:
@@ -224,7 +236,7 @@ Kubernetes provides a port-forward functionality that allows you to connect to r
 
 4. To end the process, use `CTRL+C`.
 
-[VALIDATE_1]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Directly access the MSSQL Deployment)]
@@ -246,6 +258,8 @@ Similarly to how the Docker image can be accessed locally, you can perform the s
     ```Shell/Bash
     kubectl exec -it mssql-6df65c689d-qdj4r -n dev -c mssql -- bash
     ```
+
+    >This may output the following message which can be ignored: `groups: cannot find name for group ID 1337`
 
 3. To run the `sqlcmd` tool, which allows you to run queries against the database, run this command:
 

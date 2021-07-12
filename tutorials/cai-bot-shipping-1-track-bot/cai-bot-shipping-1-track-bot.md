@@ -3,7 +3,7 @@ title: Create a Chatbot that Lets Customers Track Packages
 description: With SAP Conversational AI, create a chatbot that calls an API, in this case to let customers track their packages, and see how to make use of the memory, using SAP Conversational AI.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning ]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
 primary_tag: products>sap-conversational-ai
 ---
 
@@ -95,7 +95,7 @@ The tracking number is based on one of UPS's standards: 18 characters with const
 5. Enter the following regular expression:
 
     ```Regex
-    \b(1Z[0-9A-Z]{6}[\d]{10})\b    
+    \b(1Z[0-9A-Z]{6}[\d]{10})\b
     ```
 
     >This defines only one kind of UPS tracking number, and is a simple regex that does not distinguish between the parts of the tracking number.
@@ -237,7 +237,14 @@ You will have several requirements. In this step, you will add the requirement f
     - Click **Send Message**.
     - Click **Text**.
     - For the message, enter **Could you give me your tracking number?**
-    - Click **Save**, then click **Back**.
+    - Click **Save**
+
+    Reset the memory:
+
+    - Click **Update Conversation > Edit Memory**.
+    - Under **Unset Memory Field**, add `yes`, then add another field to unset, `no`.
+
+    Click **Back**.
 
 5. Next to **If #parcel-number is complete**, click **New Replies**, and then do the following:
 
@@ -264,7 +271,7 @@ You will have several requirements. In this step, you will add the requirement f
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 1: ](Add requirement to skill (yes/no) )]
+[ACCORDION-BEGIN [Step 7: ](Add requirement to skill (yes/no) )]
 Now you'll add a second set of requirements -- the user's confirmation that they want to track the package.
 
 1. Add a second requirement by clicking the plus sign ( **+** ) -- the second one that when you hover it says **Add a new list of requirements**.
@@ -300,6 +307,7 @@ Now you'll add a second set of requirements -- the user's confirmation that they
 
         - Click **Save**, then click **Back**.
 
+        ![Yes and no reply](yesnoreply.png)
 
 [DONE]
 [ACCORDION-END]
@@ -307,7 +315,7 @@ Now you'll add a second set of requirements -- the user's confirmation that they
 
 
 
-[ACCORDION-BEGIN [Step 7: ](Add action to skill)]
+[ACCORDION-BEGIN [Step 8: ](Add action to skill)]
 
 Add the action if the user says **No**.
 
@@ -341,7 +349,7 @@ If the customer says **Yes**, then you will make an API call and retrieve the in
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test the bot)]
+[ACCORDION-BEGIN [Step 9: ](Test the bot)]
 
 >If the **Test** panel is open, close it.
 

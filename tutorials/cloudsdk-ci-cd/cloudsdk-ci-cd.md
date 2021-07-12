@@ -5,14 +5,14 @@ title: Set Up Continuous Integration and Delivery for SAP Cloud SDK
 description: Use the General Purpose Pipeline of project "Piper" to implement CI/CD for an SAP Cloud SDK project.
 auto_validation: true
 time: 30
-tags: [tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [tutorial>intermediate, products>sap-cloud-sdk]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites
 For getting started with Continuous Integration and Delivery (`Cx`) in your project, you need to assure the following prerequisites:
     - **Linux host with Docker**: For instantiating the Cx-server of project "Piper", you need to provide a suitable host or virtual machine with a Linux operating system and Docker installed. Please also ensure that the user with whom you start the Cx-server belongs to the Docker group.
-    - **Project sources in GitHub or Git**: Your project source files need to be available on a Git or GitHub server, which is accessible from the Cx-server host. Creating your project is explained in <https://developers.sap.com/tutorials/s4sdk-scp-neo-sample-application.html> and <https://developers.sap.com/group.s4sdk-cloud-foundry.html>.
+    - **Project sources in GitHub or Git**: Your project source files need to be available on a Git or GitHub server, which is accessible from the Cx-server host. Creating your project is explained in <https://developers.sap.com/group.s4sdk-cloud-foundry.html>.
 
 The General Purpose Pipeline of project "Piper" uses Docker images for each individual build step. Accordingly, you do not need to take care of installing any further dependencies on your host machine. All tools required for building, testing, quality checking, and deploying your applications, are dynamically retrieved in the form of Docker images.
 
@@ -26,7 +26,7 @@ The General Purpose Pipeline of project "Piper" uses Docker images for each indi
 
 [ACCORDION-BEGIN [Step 1: ](Generate a new project using the SAP Cloud SDK for Java)]
 
-First, generate a new project using the SAP Cloud SDK for Java which can later be deployed to SAP Cloud Platform via tools provided by project "Piper". If you already completed the tutorial [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-cloud-foundry-sample-application.html) before, you can also reuse the project during this tutorial.
+First, generate a new project using the SAP Cloud SDK for Java which can later be deployed to SAP Cloud Platform via tools provided by project "Piper". If you already completed the tutorial [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](s4sdk-cloud-foundry-sample-application) before, you can also reuse the project during this tutorial.
 
 Otherwise, the command to generate a new SAP Cloud SDK project is:
 

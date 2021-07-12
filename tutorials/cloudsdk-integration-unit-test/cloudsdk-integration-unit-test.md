@@ -5,8 +5,8 @@ title: Integration and Unit Tests for SAP Cloud SDK Projects
 description: Learn about various levels of automated tests and how to implement them specifically for SAP Cloud SDK projects.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-cloud-sdk]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites
@@ -42,17 +42,9 @@ Take a look at [Mock S/4HANA calls] (cloudsdk-mocking-capabilities) to learn mor
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 3: ](Integration tests backend)]
-[OPTION BEGIN [Cloud Foundry]]
+
 In the integration tests you can tests your backend services without the `frontend` application. In the **Tutorials** [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](s4sdk-cloud-foundry-sample-application) and [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry), we already introduced the integration tests and showed how to set them up. In general, we recommend to use `Arquillian` to spawn a small server containing only the resources for the specific backend services you want to test. This is faster compared to deploying it to the SAP Cloud Platform first and then testing against the deployed version. Furthermore, you still have the possibility to influence the test execution, e.g. with mocking or to collect test coverage data. For spring, we recommend to use the `SpringRunner`. For both, there is an example test already included in the corresponding archetype.
-
-[OPTION END]
-
-[OPTION BEGIN [Neo]]
-In the integration tests you can tests your backend services without the `frontend` application. In the **Tutorials** [Create a Sample Application on SCP Neo Using SAP Cloud SDK](s4sdk-scp-neo-sample-application) and [Connect to OData service on Neo using SAP Cloud SDK](s4sdk-odata-service-neo), we already introduced the integration tests and showed how to set them up. In general, we recommend to use `Arquillian` to spawn a small server containing only the resources for the specific backend services you want to test. This is faster compared to deploying it to the SAP Cloud Platform first and then testing against the deployed version. Furthermore, you still have the possibility to influence the test execution, e.g. with mocking or to collect test coverage data. For spring, we recommend to use the `SpringRunner`. For both, there is an example test already included in the corresponding archetype.
-
-[OPTION END]
 
 [DONE]
 [ACCORDION-END]
@@ -429,7 +421,7 @@ Please setup a continuous delivery pipeline for this project as learned in  [Set
 
 This pipeline will automatically run the backend unit and integration tests and frontend unit tests implemented as part of this tutorial.
 
-As the integration tests depend on a connection to an SAP S/4HANA or a corresponding mock system, this connection needs to be configured. We discussed this option in [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry) and [Create a Sample Application on SCP Neo Using SAP Cloud SDK](s4sdk-scp-neo-sample-application). First make sure that the system you configured in the file `integration-tests/src/test/resources/systems.yml` is accessible from your Cx-server instance. For example:
+As the integration tests depend on a connection to an SAP S/4HANA or a corresponding mock system, this connection needs to be configured. We discussed this option in [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry). First make sure that the system you configured in the file `integration-tests/src/test/resources/systems.yml` is accessible from your Cx-server instance. For example:
 
 ```YAML
 erp:

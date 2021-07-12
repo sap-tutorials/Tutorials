@@ -1,9 +1,9 @@
 ---
 title: Build Your Mobile Development Kit Client Using Cloud Build Service
-description: Build the Mobile Development Kit client using cloud build service and connect to your SAP Cloud Platform mobile app.
+description: Build the Mobile Development Kit client using cloud build service and connect to your SAP mobile app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
 time: 35
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -21,12 +21,12 @@ author_profile: https://github.com/jitendrakansal
 There are 3 options for mobile development kit client:
 
 1. Install the SAP Mobile Services client from the public store
-2. Use the Cloud Build feature in SAP Cloud Platform Mobile Services to generate a customized client
+2. Use the Cloud Build feature in SAP Mobile Services to generate a customized client
 3. [Build and customize a client on your local machine in your organization development environment](cp-mobile-dev-kit-build-client)
 
 In this tutorial, you will learn how to use Cloud Build service to generate a custom MDK client (option 2).
 
-SAP Cloud Platform Mobile Services provides the capability to build the MDK client without client-side installations.
+SAP Mobile Services provides the capability to build the MDK client without client-side installations.
 
 You need to:
 
@@ -90,8 +90,8 @@ To enable your app for push notifications, you need to carry out the following t
 
 * Obtain a certificate signing request
 * Register an iOS App ID
-* Create a new development certificate .CER file
-* Install the .CER file and create the .p12 file
+* Create a new development certificate `.cer` file
+* Install the `.cer` file and create the .p12 file
 * Register your device
 * Create a development provisioning profile
 
@@ -116,7 +116,7 @@ To enable your app for push notifications, you need to carry out the following t
     !![MDK](img_1.12.png)
 
 
-2. Create a new development certificate .CER file
+2. Create a new development certificate `.cer` file
 
     Go to your [Apple Developer Account](https://developer.apple.com/account) and Click **Certificates, Identifiers & Profiles**.
 
@@ -128,35 +128,35 @@ To enable your app for push notifications, you need to carry out the following t
 
     Select **Apple Development** and click **Continue**.
 
-    !![MDK](img_1.15.png)
+    !![MDK](img-1.15.png)
 
     Click **Choose File** and browse to the downloaded Signing Request `CSR` file, click **Continue**.
 
-    Apple will now create a `.CER` file for you which is issued by the **Apple Worldwide Developer Relations Certification Authority**.
+    Apple will now create a `.cer` file for you which is issued by the **Apple Worldwide Developer Relations Certification Authority**.
 
     !![MDK](img_1.16.png)
 
     Click **Download** to download your certificate.
 
-    !![MDK](img_1.17.png)
+    !![MDK](img-1.17.png)
 
-3.  Install the .CER file and create the .p12 file
+3.  Install the `.cer` file and create the .p12 file
 
-    In order to create a signing profile on **SAP Cloud Platform Mobile Services**, you need to install the `.CER` file and create the needed `.p12` file.
+    In order to create a signing profile on **SAP Mobile Services**, you need to install the `.cer` file and create the needed `.p12` file.
 
     >A `.p12` file is a encrypted container for the certificate and private key. This file is needed by Mobile Services for creating a signing profile.
 
-    Locate your downloaded `.CER` file and double-click it in order to install the certificate.
+    Locate your downloaded `.cer` file and double-click it in order to install the certificate.
 
     >In case the **Add Certificate** dialog pops up make sure to choose **Login** from the dropdown and click **Add**.
 
     If the certificate is added correctly to the Keychain you should see it in the `MyCertificates` section, make sure you selected **login** as keychain.
 
-    !![MDK](img_1.18.png)
+    !![MDK](img-1.18.png)
 
-    Select the certificate as well as the private key and right-click to export those two items.
+    Select the certificate as well as the private key and right-click to export those 2 items.
 
-    !![MDK](img_1.19.png)
+    !![MDK](img-1.19.png)
 
     Make sure that in the dropdown **Personal Information Exchange (.p12)** is selected and click **Save**. You will be prompted to enter a password, click **OK** to export the files.
 
@@ -170,11 +170,11 @@ To enable your app for push notifications, you need to carry out the following t
 
     Select **App IDs** and click **Continue**.
 
-    !![MDK](img_1.22.png)
+    !![MDK](img-1.22.png)
 
     Provide a unique **Bundle ID** name, **Description** and click **Continue**.
 
-    !![MDK](img_1.23.png)
+    !![MDK](img-1.23.png)
 
     In the following screen, select option for **Deployment Details** and then click **Continue**.
 
@@ -231,7 +231,7 @@ To enable your app for push notifications, you need to carry out the following t
 
 [OPTION BEGIN [Android]]
 
-1. Open the [SAP Cloud Platform Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and navigate to **Settings** | **Cloud Build**. Initialise the **Cloud Build Settings** if not done before.
+1. Open the [SAP Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and navigate to **Settings** | **Cloud Build**. Initialise the **Cloud Build Settings** if not done before.
 
     !![MDK](img_2.1.png)
 
@@ -247,7 +247,7 @@ To enable your app for push notifications, you need to carry out the following t
 
 [OPTION BEGIN [iOS]]
 
-1. Open the [SAP Cloud Platform Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and navigate to **Settings** | **Cloud Build**. Initialize the **Cloud Build Settings** if not done before.
+1. Open the [SAP Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and navigate to **Settings** | **Cloud Build**. Initialize the **Cloud Build Settings** if not done before.
 
     !![MDK](img_2.1.png)
 
@@ -342,9 +342,9 @@ You can install this new custom MDK client app either by scanning QR code from i
 
 [OPTION END]
 
-**Congratulations!** You have successfully built Your Mobile Development Kit Client Using Cloud Build Service and you are now all set to [Enable Push Notifications in Your Branded MDK Client](cp-mobile-dev-kit-push-customclient).
+Congratulations, you have successfully built Your Mobile Development Kit Client Using Cloud Build Service and and you can continue with the remaining tutorials in this mission.
 
-[DONE]
+[VALIDATE_4]
 [ACCORDION-END]
 
 

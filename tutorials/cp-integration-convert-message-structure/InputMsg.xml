@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<orders>
+	<order>
+		<orderID>BS00010023</orderID>
+    <order>
+  		<orderID>BS00010023</orderID>
+      <code>KWA2PRBK5I</code>
+    </order>  
+		<OrderDate>11.04.2019</OrderDate>
+		<CustomerName>Kiara</CustomerName>
+		<CustomerLastName>Jain</CustomerLastName>
+		<Address>23,Prime View,Redfield,Bangalore,Karnataka,560037,India</Address>
+    <code>KWA2PRBK5I</code>
+		<ContactNumber>0091-8437329849</ContactNumber>
+		<items>
+			<item>
+				<ProductID>RPD4044543</ProductID>
+				<ProductDescription>Wireless Mouse</ProductDescription>
+				<Quantity>1</Quantity>
+				<ItemValue>1057</ItemValue>
+			</item>
+		</items>
+		<Shipping>200</Shipping>
+		<OrderValue>1257</OrderValue>
+		<ShippingType>Priority 2-day</ShippingType>
+		<SpecialPackaging>None</SpecialPackaging>
+		<PaymentType>CoD</PaymentType>
+	</order>
+</orders>

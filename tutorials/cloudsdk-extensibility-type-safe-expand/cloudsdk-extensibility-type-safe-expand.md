@@ -5,15 +5,18 @@ title: Extensibility, Type-Safe Expand, and Dependency Injection with the Virtua
 description: Use the latest features of the SAP Cloud SDK regarding extensibility, eager and type-safe expand as well as dependency injection with the Virtual Data Model for OData for any SAP S/4HANA system.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk]
 primary_tag: topic>java
 ---
 
 ## Prerequisites
- - [Introduce Resilience to Your Application](https://developers.sap.com/tutorials/s4sdk-resilience.html)
+ - [Introduce Resilience to Your Application](s4sdk-resilience)
  - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
 
 ## Details
+
+Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
+
 ### You will learn
   - How to use custom field extensions from S/4HANA in the virtual data model for OData
   - How to join connected entities from the virtual data model in eager fashion
@@ -33,7 +36,7 @@ import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceDecorator;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
-import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
+import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.field.BusinessPartnerField;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
@@ -65,7 +68,7 @@ public class GetBusinessPartnersCommand {
                     .filter(BusinessPartner.CUSTOMER.ne(""))
                     .select(BusinessPartner.FIRST_NAME,
                             BusinessPartner.LAST_NAME)
-                     .execute(httpDestination));
+                     .executeRequest(httpDestination));
 
         } catch (ODataException e) {
             throw new ResilienceRuntimeException(e);
@@ -156,7 +159,7 @@ import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceDecorator;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
-import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
+import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.field.BusinessPartnerField;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
@@ -190,7 +193,7 @@ public class GetBusinessPartnersCommand {
                             BusinessPartner.LAST_NAME,
                             new BusinessPartnerField<String>("YY1_ApprovedBy_bus"),
                             new BusinessPartnerField<String>("YY1_ProposedBy_bus"))
-                     .execute(httpDestination);
+                     .executeRequest(httpDestination);
 
         } catch (ODataException e) {
             throw new ResilienceRuntimeException(e);
@@ -337,7 +340,7 @@ import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceDecorator;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
-import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
+import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.field.BusinessPartnerField;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
@@ -381,7 +384,7 @@ public class GetBusinessPartnersCommand {
                                                     )
                                                 )
                         )
-                     .execute(httpDestination);
+                     .executeRequest(httpDestination);
         } catch (ODataException e) {
             throw new ResilienceRuntimeException(e);
         }

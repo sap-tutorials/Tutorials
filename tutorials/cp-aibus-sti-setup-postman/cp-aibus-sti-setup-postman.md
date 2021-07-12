@@ -1,17 +1,17 @@
 ---
 title: Set Up Postman to Call Service Ticket Intelligence APIs
-description: Adjust and import Postman environment and collection templates to call the Service Ticket Intelligence APIs.
+description: Import Postman environment and collection JSON sample code files to call the Service Ticket Intelligence APIs.
 auto_validation: true
-time: 10
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+time: 5
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
 ## Details
 ### You will learn
   - What Postman environments and collections are and how to use them
-  - How to download and import Postman environments and collections
   - How to adjust the Postman environment for your service instance
+  - How to import Postman environments and collections
 
 In the following tutorials, Postman is used to communicate and interact with your Service Ticket Intelligence service instance. Postman is an API client you use to call APIs. For more information, see [Postman](https://learning.getpostman.com/).
 
@@ -19,13 +19,15 @@ In the following tutorials, Postman is used to communicate and interact with you
 
 [ACCORDION-BEGIN [Step 1: ](Download locally Postman environment)]
 
+If you have downloaded locally the Postman environment and collection sample files from the **Set up account for Service Ticket Intelligence** booster, as detailed in [Set Up Account for Service Ticket Intelligence and Download Postman Sample Files](cp-aibus-sti-booster-postman), you can set steps 1 and 2 to **Done** and proceed with Step 3.
+
 Postman offers the option to add environments. Environments represent key-value pairs which can be reused in requests, so you don't have to remember them. For more information, see [Postman Environments](https://learning.getpostman.com/docs/postman/environments-and-globals/intro-to-environments-and-globals/).
 
 In step 5, you are going to use this feature to store your service key details obtained in [Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-key) and reuse them in your requests to your service instance.
 
-Make a local copy of the Postman environment template for Service Ticket Intelligence available on GitHub:
+Make a local copy of the Postman environment sample file for Service Ticket Intelligence available on GitHub:
 
-1. Open the [environment template](https://github.com/SAP-samples/service-ticket-intelligence-postman-collection/blob/master/Env%20for%20STI%20sample%20collection%202012.postman_environment.json).
+1. Open the [environment sample file](https://github.com/SAP-samples/service-ticket-intelligence-postman-collection/blob/main/Env%20for%20STI%20sample%20collection%202012.postman_environment.json).
 
 2. Click **Raw**.
 
@@ -43,9 +45,9 @@ Make a local copy of the Postman environment template for Service Ticket Intelli
 
 Collections let you group requests together and save them for later use. This helps with the organization of requests as well as sharing requests. For more information, see [Postman Collections](https://learning.getpostman.com/docs/postman/collections/intro-to-collections/).
 
-Make a local copy of the Postman collection template for Service Ticket Intelligence available on GitHub:
+Make a local copy of the Postman collection sample file for Service Ticket Intelligence available on GitHub:
 
-1. Open the [collection template](https://github.com/SAP-samples/service-ticket-intelligence-postman-collection/blob/master/STI%20sample%20collection%202012.postman_collection.json).
+1. Open the [collection sample file](https://github.com/SAP-samples/service-ticket-intelligence-postman-collection/blob/main/STI%20sample%20collection%202012.postman_collection.json).
 
 2. Click **Raw**.
 
@@ -98,6 +100,8 @@ Select it to be able to use the requests in the collection.
 
 
 [ACCORDION-BEGIN [Step 5: ](Edit Postman environment)]
+
+If you are using the Postman environment and collection sample files from the **Set up account for Service Ticket Intelligence** booster, as detailed in [Set Up Account for Service Ticket Intelligence and Download Postman Sample Files](cp-aibus-sti-booster-postman), your service key details have already been entered in the Postman environment sample file. You can set this step to **Done** and proceed with the next tutorial: [Use Service Ticket Intelligence and Postman to Classify Service Requests](cp-aibus-sti-postman-classification).
 
 1. Click **Environment quick look**.
 

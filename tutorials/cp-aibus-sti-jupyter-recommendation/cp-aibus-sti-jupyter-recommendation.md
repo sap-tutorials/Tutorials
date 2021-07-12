@@ -3,7 +3,7 @@ title: Use Service Ticket Intelligence and Jupyter Notebook to Get Solution Reco
 description: Train a machine learning model based on historical service requests in order to get solution recommendations for new requests.
 auto_validation: true
 time: 40
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -32,7 +32,7 @@ The first page that you see shows the content of the repository that you cloned 
 
 ![Jupyter Home](jupyter-home.png)
 
-Next, click **Recommendation_demo.ipynb** to open the notebook. You can recognize Jupyter notebooks by their `.ipynb` file extension.
+Next, click **Recommendation_demo.ipynb** to open the notebook. You can recognize Jupyter notebooks by their `.ipynb` file extension. 
 
 ![Open Notebook](open-notebook.png)
 

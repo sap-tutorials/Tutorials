@@ -1,10 +1,10 @@
 ---
 title: Install the Kubernetes Command Line Tool
-description: Download and install kubectl - the Kubernetes command line tool which allows access to the SAP Cloud Platform Kyma runtime via the command line.
+description: Download and install kubectl - the Kubernetes command line tool which allows access to the SAP BTP, Kyma runtime via the command line.
 time: 15
 auto_validation: true
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform\, kyma-runtime
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform]
+primary_tag: products>sap-btp\\, kyma-runtime
 ---
 
 
@@ -40,6 +40,7 @@ The Kyma runtime is a Kubernetes cluster. To manage resources and configurations
     > On Linux/Unix, you know how this works - just open your favorite command shell.
 
 2. Test the `kubectl` command line tool to make sure it is installed correctly by running the following command in your CLI:
+
 ```Shell/Bash
 kubectl version --client
 ```
@@ -50,7 +51,7 @@ This should return a list of version properties, for example:
 'Client Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.0", GitCommit:"9e991415386e4cf155a24b1da15becaa390438d8", GitTreeState:"clean", BuildDate:"2020-03-26T06:16:15Z", GoVersion:"go1.14", Compiler:"gc", Platform:"darwin/amd64"}
 ```
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Download the Kyma runtime kubeconfig)]
@@ -74,11 +75,27 @@ The `kubectl` tool relies on configuration file called the `kubeconfig`, to conf
 
 1. Open a command line prompt on your computer. In the command line screen, type in the following:
 
-    ```Shell/Bash
-    export KUBECONFIG=<KUBECONFIG_FILE_PATH>
-    ```
+[OPTION BEGIN [Mac and Linux]]
 
-    Replace the `<KUBECONFIG_FILE_PATH>` section with the file path of the `Kubeconfig` you downloaded in the previous step.
+```Shell/Bash
+export KUBECONFIG=<KUBECONFIG_FILE_PATH>
+```
+
+[OPTION END]
+
+[OPTION BEGIN [Windows]]
+
+```PowerShell
+$ENV:KUBECONFIG="<KUBECONFIG_FILE_PATH>"
+```
+
+```DOS
+set KUBECONFIG="<KUBECONFIG_FILE_PATH>"
+```
+
+[OPTION END]
+
+Replace the `<KUBECONFIG_FILE_PATH>` section with the file path, including the file name and extension, of the `Kubeconfig` you downloaded in the previous step.
 
 2. Test the configuration by running this command:  
 
@@ -92,11 +109,11 @@ The `kubectl` tool relies on configuration file called the `kubeconfig`, to conf
     |-------|----|-------|--------|---------|
     |*      | `c-#######.kyma.shoot.live.k8s-hana.ondemand.com`|`c--#######.kyma.shoot.live.k8s-hana.ondemand.com`|`OIDCUser`| |
 
-3. You are now set up to use the Kyma runtime on SAP Cloud Platform.
+3. You are now set up to use the Kyma runtime on SAP BTP Platform.
 
 > For more information on `kubectl`, visit the Kubernetes [overview](https://kubernetes.io/docs/reference/kubectl/overview/) and [kubectl-commands](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands) websites.
 
-[VALIDATE_1]
+[VALIDATE_2]
 [ACCORDION-END]
 
 ---

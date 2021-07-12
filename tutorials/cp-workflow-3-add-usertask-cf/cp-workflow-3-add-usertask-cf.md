@@ -2,8 +2,8 @@
 title: Add a User Task to Your Workflow and Deploy
 description: Enhance the workflow with with a form-based user task and deploy the workflow
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform ]
+primary_tag: products>sap-business-technology-platform
+tags: [  tutorial>beginner, products>sap-business-technology-platform ]
 time: 15
 ---
 
@@ -15,7 +15,7 @@ time: 15
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add a user task)]
-1. In SAP Business Application Studio SAP, access the `onboard.workflow` you created in the **projects** folder.
+1. In SAP Business Application Studio, access the `onboard.workflow` you created in the **projects** folder.
 
 2. In the workflow editor, select  **Tasks** | **User Tasks**, then click the connector between the Start and the End event to insert the task there.
 
@@ -100,20 +100,16 @@ Define the form, which is shown when the task is opened in the My Inbox.
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 4: ](Build and deploy)]
 Now, you are ready to build and deploy the workflow.
 
-1. Update the **mta.yaml** file of your **onboarding** project by double-clicking it.
+1. Open the **mta.yaml** file of your **onboarding** project by double-clicking it. In  lines 9 and 13, replace `workflow_mta` with `wm_workflow`.
 
-    - In  lines 9 and 13, replace `workflow_mta` with `wm_workflow`.
-    - In line 17, replace `org.cloudfoundry.managed-service` with `org.cloudfoundry.existing-service`.
+    ![Update YAML File](update-yaml.png)
 
-    ![Update YAML File](update-service-plan.png)
+2. Right-click the **mta.yaml** file in your **onboarding** project folder, and then select **Build MTA Project**.
 
-2. Right-click the **mta.yaml** file in your **onboarding** project folder, and then select **Build MTA**.
-
-    ![Build MTA](build-mta2.png)
+    ![Build MTA](build-mta.png)
 
     Once the build is completed, the new folder **`mta_archives`** appears under your application folder.
 
@@ -139,15 +135,15 @@ Now, you are ready to build and deploy the workflow.
 
 After deployment is finished, open the SAP Fiori launchpad site that contains the workflow applications.
 
-1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP Business Technology Platform (SAP BTP) Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
 3. Access your **trial** subaccount.
 
-4. From the navigation area, choose **Subscriptions**, and search for **Workflow Management**.
+4. From the navigation area, choose **Instances and Subscriptions**, and search for **Workflow Management**.
 
-5. Open your SAP Fiori launchpad, by choosing **Go to Application** on the **Workflow Management** tile.
+5. Open your SAP Fiori launchpad, by choosing **Go to Application** in the **Workflow Management** row.
 
     ![Go to Application](go-to-application.png)
 
@@ -157,7 +153,7 @@ After deployment is finished, open the SAP Fiori launchpad site that contains th
 
     ![Start New Instance](start-new-instance.png)
 
-8. Replace the payload by adding the following code as context, then choose **Start New Instance** again.
+8. Replace the payload by adding the following code as context, then choose **Start New Instance and Close**.
 
     ```
     {
@@ -177,7 +173,7 @@ After deployment is finished, open the SAP Fiori launchpad site that contains th
     ```
     ![Add Payload](payload-start-new-instance.png)
 
-9. To display the execution log of the instance, choose **Show Instance** and go to the **Execution Log** tab.
+9. To display the execution log of the instance, choose **Show Instances** and go to the **Execution Log** tab.
 
     This opens the **Monitor Workflows (Workflow Instances)** application.
 

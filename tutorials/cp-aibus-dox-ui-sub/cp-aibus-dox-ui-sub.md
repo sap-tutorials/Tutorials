@@ -1,9 +1,9 @@
 ---
 title: Subscribe to Document Information Extraction Trial UI
-description: Get access to the Document Information Extraction user interface application, using the SAP Cloud Platform trial cockpit.
+description: Get access to the Document Information Extraction user interface application, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
@@ -25,24 +25,27 @@ After completing the prerequisite tutorial [Create Service Instance for Document
     !![DOX-UI](enter-trial-account.png)
 
 
-2. On the navigation side bar, click **Subscriptions**.
+2. On the navigation side bar, click **Service Marketplace**.
 
-    !![DOX-UI](subscriptions.png)
+    !![DOX-UI](access-service-marketplace.png)
 
 
-3. Search for **Document Information Extraction Trial UI** and click the tile to open the **Subscription: Document Information Extraction Trial UI - Overview** page.
+3. Search for **Document Information Extraction Trial UI** and click the tile.
 
     !![DOX-UI](tile.png)
 
 
-4. Click **Subscribe**.
+4. Click **Create**.
 
     !![DOX-UI](subscribe.png)
 
+5. In the dialog, leave the default values and click **Create**.
 
-You are now subscribed to Document Information Extraction Trial UI.
+  !![DOX-UI](dialog-create.png)
 
-!![DOX-UI](subscribed.png)
+The subscription will now be created. Click on **View Subscription** to go to the list of your existing subscriptions.
+
+!![DOX-UI](dialog-in-progress.png)
 
 [DONE]
 [ACCORDION-END]
@@ -54,28 +57,22 @@ You are now subscribed to Document Information Extraction Trial UI.
 
     !![DOX-UI](enter-trial-account.png)
 
-
-2. On the navigation side bar, click **Security**.
-
-    !![DOX-UI](security.png)
-
-
-3. Click **Trust Configuration**.
+2. Click **Trust Configuration**.
 
     !![DOX-UI](trust-config.png)
 
 
-4. Click **sap.default**.
+3. Click **Default Identity Provider**.
 
     !![DOX-UI](default.png)
 
 
-5. Enter your email address and click **Show Assignments**.
+4. Enter your email address and click **Show Assignments**.
 
     !![DOX-UI](show-assigments.png)
 
 
-6. Click **Assign Role Collection**, choose **`Document_Information_Extraction_UI_End_User_trial`** and click **Assign Role Collection**.
+5. Click **Assign Role Collection**, choose **`Document_Information_Extraction_UI_End_User_trial`** and click **Assign Role Collection**.
 
     !![DOX-UI](role-collection.png)
 
@@ -90,7 +87,7 @@ You have now assigned the Document Information Extraction Trial UI role collecti
 
 [ACCORDION-BEGIN [Step 3: ](Go to application)]
 
-Go back to the **Subscription: Document Information Extraction Trial UI - Overview** page and click **Go to Application**.
+Go back to the **Instances and Subscriptions** page, click on your subscription and then click **Go to Application** to open the app.
 
 !![DOX-UI](go-to-app.png)
 

@@ -4,8 +4,8 @@ description: Manage and configure the business decisions flexibly for your capit
 
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform
+tags: [tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
 author_name: Deeksha R
 author_profile: https://github.com/Deeksha-R
 ---
@@ -22,23 +22,19 @@ You can view, edit, author, and activate your business decisions using **Manage 
 
 A decision consists of one or more policies, and each policy consists of a collection of rules. It is a part of the live process package and is used to automate the decision making parts of a business process.
 
-You configure the auto approval policy using this tutorial. This policy is used to determine if an approval is required or not, based on the total investment cost. In this scenario, auto approval is enabled if the investment cost is less than 10000.
+You configure the auto approval policy using this tutorial. This policy is used to determine if an approval is required or not, based on the total investment cost. In this scenario, auto approval is enabled if the investment cost is less than 5000.
 
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open manage decisions)]
-1. Navigate to the Workflow Management home screen.
-
-    !![Home screen](cp-cf-wm-configuredecision-home.png)
-
-2.  Choose the **Process Flexibility Cockpit**. Then navigate to **My Live Processes** section and choose **Sample Capital Expenditure Approval Process** tile.
+1. Choose the **Process Flexibility Cockpit**. Then navigate to **My Live Processes** section and choose **Sample Capital Expenditure Approval Process** tile.
 
     !![PFC](cp-cf-wm-configuredecision-home2.png)
 
     !![Capital Expenditure](cp-cf-wm-discover-importedcapex0.png)
 
-3. Choose the **Determine All Approvers** decision.
+2. Choose the **Determine All Approvers** decision.
 
     !![Manage decisions](cp-cf-wm-configuredecision-determine.png)
 
@@ -69,7 +65,7 @@ You configure the auto approval policy using this tutorial. This policy is used 
 
     !![Edit Rule](cp-cf-wm-configuredecision-edit.png)
 
-6. Modify the text rule value to **`10000`** and **Save** the changes.
+6. Modify the text rule value to **`5000`** and **Save** the changes.
 
     !![Text Rule Value](cp-cf-wm-configuredecision-autovalue.png)
 
@@ -81,7 +77,7 @@ You configure the auto approval policy using this tutorial. This policy is used 
 
     !![Release Version](cp-cf-wm-configuredecision-release.png)
 
-2. In the **Release Version** dialog, provide the version number and description. Then choose **Release**.
+2. In the **Release Version** dialog, provide the revision number and description. Then choose **Release**.
 
     !![Release](cp-cf-wm-configuredecision-releasedialog.png)
 

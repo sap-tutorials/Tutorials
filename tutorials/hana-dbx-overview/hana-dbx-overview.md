@@ -20,7 +20,7 @@ primary_tag: products>sap-hana-cloud
 
 [ACCORDION-BEGIN [Step 1: ](Database explorer overview)]
 
-The SAP HANA database explorer  is a web-based tool for browsing and working with database objects such as tables, views, functions, stored procedures, importing and exporting data, debugging SQLScript, viewing trace files, and executing SQL statements. It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP HANA 1.0 SPS 12. As it is web-based, individual users do not need to worry about installing the software or applying patches.  
+The SAP HANA database explorer is a web-based tool for browsing and working with SAP HANA database objects such as tables, views, functions, stored procedures, importing and exporting data, debugging SQLScript, viewing trace files, and executing SQL statements. It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP HANA 1.0 SPS 12. As it is web-based, individual users do not need to worry about installing the software or applying patches.  As of March 25, 2021 it also offers support for Data Lake IQ connections.
 
 ![database explorer](dbx.png)
 
@@ -28,13 +28,13 @@ The SAP HANA database explorer  is a web-based tool for browsing and working wit
 
 The SAP HANA database explorer can be opened from multiple locations as shown below:
 
-* From the SAP Cloud Platform Cockpit  
+* From the SAP Business Technology Platform (SAP BTP) Cockpit from an SAP HANA or Data Lake instance.
 
-    ![opening the SAP HANA database explorer from the on-premise SAP HANA Cockpit](open-dbx-from-hana-cloud.png)
+    ![opening the SAP HANA database explorer from the SAP BTP Cockpit](open-dbx-from-hana-cloud.png)
 
-* From the landscape tool  
+* From SAP HANA Cloud Central on either a SAP HANA or Data Lake with IQ enabled.
 
-    ![opening the SAP HANA database explorer from landscape tool](from-directory.png)
+    ![opening the SAP HANA database explorer from SAP HANA Cloud Central](from-directory.png)
 
 * From the SAP HANA cockpit  
 
@@ -48,7 +48,7 @@ The SAP HANA database explorer can be opened from multiple locations as shown be
 
     ![BAS Open SAP HANA Database Explorer](BusinessAppStudioOpenDBX.png)
 
-* From the SAP Web IDE for SAP HANA.  
+* From the SAP Web IDE for SAP HANA with the extension enabled
 
     ![opening the SAP HANA database explorer from the SAP Web IDE](open-dbx-from-web-ide.png)
 
@@ -56,36 +56,36 @@ The SAP HANA database explorer can be opened from multiple locations as shown be
 
 The following are some related documentation links for SAP HANA and the SAP HANA database explorer.
 
-|  Version     | Notes
-|  :------------- | :-------------
-|  [SAP HANA Platform 2.0](https://help.sap.com/viewer/product/SAP_HANA_PLATFORM/latest/en-US) | Released in November 2016. Current version is 2.0 SPS 05, which was released on June 26, 2020
-|  [SAP HANA Platform 2.0, SAP HANA Database Explorer](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US) | Current version is 2.12, which was released in June 2020
-|  [SAP HANA Platform 2.0, SAP HANA Database Explorer What's New](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/7534f22d5bbf44c3a0de259478ad043b.html) | What's new since the previous on-premise release.  New features are released approximately twice per year
-|  [SAP Web IDE for SAP HANA](https://help.sap.com/viewer/product/SAPWEBIDE/SAPWEBIDE4HANA/en-US) | SAP Help documentation set
-|  [SAP HANA, express edition](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US)   | Released in September 2016.  Current version is 2.0 SPS 04 Revision 45
-|  [SAP HANA, express edition, release notes for SPS 04, revision 45](https://www.sap.com/documents/2020/01/421a577f-817d-0010-87a3-c30de2ffd8ff.html)  | Note that the version of the Database Explorer (HRTT) for this release is  2.11.64
-|  [SAP HANA, express edition, release history](https://search.sap.com/search.html?t=%22SAP%20HANA%2C%20express%20edition%202.0%20SPS%200%25%20Revision%22&n=1&s=boost&src=defaultSourceGroup)   | Query showing previous releases
-|  [SAP HANA Cloud](https://help.sap.com/viewer/product/HANA_CLOUD)   | Released in March 2020
-|  [SAP HANA Cloud, SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US)   | Current version is 2.13.x
-|  [SAP HANA Cloud, SAP HANA Database Explorer What's New](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/7a0c586f5a4e442d976459e0f0a70c7a.html)   | What's new.  New features are released approximately every month or two  
+|  Version     | Notes |
+|  :------------- | :------------- |
+|  [SAP HANA Platform 2.0](https://help.sap.com/viewer/product/SAP_HANA_PLATFORM/latest/en-US) | Released in November 2016. Current version is 2.0 SPS 05, which was released on June 26, 2020 |
+|  [SAP HANA Platform 2.0, SAP HANA Database Explorer](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US) | Current version is 2.13, which was released in June 2021 |
+|  [SAP HANA Platform 2.0, SAP HANA Database Explorer What's New](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/7534f22d5bbf44c3a0de259478ad043b.html) | What's new since the previous on-premise release.  New features are released approximately twice per year |
+|  [SAP Web IDE for SAP HANA](https://help.sap.com/viewer/product/SAPWEBIDE/SAPWEBIDE4HANA/en-US) | SAP Help documentation set |
+|  [SAP HANA, express edition](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US)   | Released in September 2016.  Current version is 2.0 SPS 05 Revision 54 |
+|  [SAP HANA, express edition, release notes for SPS 05, revision 54](https://www.sap.com/documents/2021/06/3abec5ed-e97d-0010-bca6-c68f7e60039b.html)  | Note that the version of the Database Explorer (HRTT) for this release is  2.12 |
+|  [SAP HANA, express edition, release history](https://search.sap.com/search.html?t=%22SAP%20HANA%2C%20express%20edition%202.0%20SPS%200%25%20Revision%22&n=1&s=boost&src=defaultSourceGroup)   | Query showing previous releases |
+|  [SAP HANA Cloud](https://help.sap.com/viewer/product/HANA_CLOUD)   | Released in March 2020 |
+|  [SAP HANA Cloud, SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US)   | Current version is 210401 |
+|  [SAP HANA Cloud, SAP HANA Database Explorer What's New](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/7a0c586f5a4e442d976459e0f0a70c7a.html)   | What's new.  New features are released as often as every two weeks.  This link is also available from the Help menu in the database explorer  |
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Version information)]
-The SAP HANA database explorer releases independently of SAP HANA.  New features appear first in SAP HANA Cloud and are available to the on-premise version in a later release.  As an example, when SAP HANA 2.0 SPS 05 was released on June 26 2020, SAP HANA database explorer version 2.12.20185 was available in both the on-premise and SAP HANA Cloud releases.  At the time when this was published in October 2020, the version available in HANA Cloud contains additional features that that are not yet available for an on-premise installation.
+The SAP HANA database explorer releases independently of SAP HANA.  New features appear first in SAP HANA Cloud and are available to the on-premise version if applicable, in a later release.  Features are also enabled based on the database being connected to.  For example, the ability to import and export from cloud storage providers is a feature of an SAP HANA Cloud database.
 
 The screenshots below show the version of the SAP HANA database explorer in SAP HANA Cloud and on-premise.  
 
 The image below shows the SAP HANA database explorer running in SAP HANA Cloud.  
 
-![latest available version in HANA Cloud](dbx-hana-cloud-version.png)
+![latest available version in SAP HANA Cloud](dbx-hana-cloud-version.png)
 
 The image below shows the SAP HANA database explorer running in an on-premise installation.  
 
 ![latest available version for on-premise](dbx-on-premise-version.png)
 
-For the on-premise edition, only the currently released version receives patches.  For example, now that version 2.12.X has been released, there will no longer be fixes made to  the 2.11.X release.  For additional details see [SAP Note 2433181 - SAP HANA 2.0 Cockpit Revision and Maintenance Strategy](https://launchpad.support.sap.com/#/notes/2433181).
+For the on-premise edition, only the currently released version receives patches.  For example, now that version 2.13.X has been released, there will no longer be fixes made to  the 2.12.X release.  For additional details see [SAP Note 2433181 - SAP HANA 2.0 Cockpit Revision and Maintenance Strategy](https://launchpad.support.sap.com/#/notes/2433181).
 
 The SAP Software download links (requires an S-User ID to access) below are for the on-premise version of the SAP HANA Cockpit, the SAP Web IDE, and the SAP HANA database explorer.  These pages also contain links to release notes that describe fixes made to each release.
 
@@ -109,21 +109,19 @@ Continue on to the next tutorial in this group once you have created an SAP HANA
 
 >Note that the SAP HANA Cloud trial instances are shut down overnight and will need to be restarted before working with them the next day.
 
-The instructions on how to setup a free SAP HANA Cloud trial within the SAP Cloud Platform are well covered in a number of other sources listed below.  
+The instructions on how to setup a free SAP HANA Cloud trial within SAP BTP are well covered in a number of other sources listed below.  
 
-  * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
+  * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics) (Only the first 3 steps of this tutorial are needed for basic setup of SAP HANA Cloud trial.)
 
   * [Getting Started with your trial of SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/)
 
-  * [SAP HANA Cloud Trial](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/latest/en-US/96b0fa04bf2b4fd6a8b210eb9fb18332.html)
+  For more information on the SAP BTP see the following:
 
-  For more information on the SAP Cloud Platform see the following:
+  * <https://www.sap.com/products/business-technology-platform/products.html>
 
-  * <https://cloudplatform.sap.com/index.html>
+  * <https://developers.sap.com/topics/business-technology-platform.html>
 
-  * <https://developers.sap.com/topics/cloud-platform.html>
-
-  * <https://help.sap.com/viewer/product/CP/Cloud/en-US>
+  * <https://help.sap.com/viewer/product/BTP/Cloud/en-US>
 
 
 [DONE]
@@ -145,7 +143,7 @@ Once installed, a useful starting point is the page below.
 
 ![XSA is up and running](xsa-is-up.png)
 
-It contains links to the SAP Web IDE for SAP HANA, SAP HANA cockpit, the SAP HANA cockpit manager, and the SAP HANA database explorer.
+It contains links to the SAP Web IDE for SAP HANA, SAP HANA cockpit, and the SAP HANA cockpit manager.
 
 [VALIDATE_1]
 [ACCORDION-END]

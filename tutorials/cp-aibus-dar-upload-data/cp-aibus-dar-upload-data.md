@@ -3,7 +3,7 @@ title: Upload Data to Data Attribute Recommendation
 description: Upload a dataset to your Data Attribute Recommendation service instance to afterwards be able to train your machine learning model.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
@@ -98,7 +98,7 @@ You have successfully created a dataset.
 
 The final step is to upload data to your dataset.
 
-For that, use the [sample data](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial-sample/blob/master/Tutorial_Example_Dataset.csv) available on GitHub. **Download** the CSV file that contains the data.
+For that, use the [sample data](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial/blob/main/Tutorial_Example_Dataset.csv) available on GitHub. **Download** the CSV file that contains the data.
 
 ![Download CSV](download-csv.png)
 

@@ -3,12 +3,15 @@ title: Connect Azure Active Directory to Identity Authentication Service
 description: Configure the Identity Authentication service to leverage your Azure Active Directory setup.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-cloud-platform, tutorial>license, products>identity-authentication]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, tutorial>license, products>identity-authentication]
 primary_tag: topic>security
+author_name: Valentin Atanassov
+author_profile: https://github.com/ValAta
 ---
 
 ## Prerequisites
  - [Identity Authentication service tenant](https://www.sapstore.com/solutions/40132/SAP-Cloud-Platform-Identity-Authentication)
+ - [Sign Up for Microsoft Azure](https://azure.microsoft.com/en-us/resources/videos/sign-up-for-microsoft-azure/)
 
 ## Details
 ### You will learn

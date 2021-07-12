@@ -1,38 +1,35 @@
 ---
-title: Push A Sales Order Card To Your Mobile Device
-description: Push a card to the mobile device by triggering an action in external system.
+title: Push a Sales Order Card to Your Mobile Device
+description: Push a card to the mobile device by triggering an action in an external system.
 auto_validation: true
 time: 30
-tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio]
+tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-cards, products>sap-mobile-services, products>sap-business-application-studio]
 primary_tag: products>sap-mobile-cards
 author_name: Sandeep TDS
 author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites
- - You have created a Sales Push Card
- - Postman Client, CURL or any other API Development Platform
+  - You are working with Postman client, CURL or any other API development platform.
 
 ## Details
 ### You will learn
   - Push a card to your Mobile Device from an external system
-  - View & delete a Web Page Matching Card
-  - Perform an action using the Push Notification
+  - View and delete a Web Page Matching Card
+  - Perform an action using push notification
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get Familiar With The Real World Use-case)]
+[ACCORDION-BEGIN [Step 1: ](Understand the use case)]
 
-In the previous tutorial of the mission, you have created a Card that Alice will Subscribe.
+In the previous tutorial, you created a card that Alice will subscribe to. In this tutorial, you will make Watson create a request in a different application. Once the request is created, Alice will receive a push notification.
 
-In this tutorial, we will make Watson create a request in a different application. Once the request is created, Alice will receive a **push notification**.
-
-We will use Postman to mock Watson's request.
+You will use Postman to mock Watson's request.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create A Service Key)]
+[ACCORDION-BEGIN [Step 2: ](Create service key)]
 
 Open your Mobile Services Cockpit.
 
@@ -65,7 +62,7 @@ Make a note of the **Alias**, **API Key**, and the **URL** for your service key.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Copy Receiver's User Name)]
+[ACCORDION-BEGIN [Step 3: ](Copy receiver's user name)]
 
 **Click Features Tab  &rarr; Push Notification**.
 !![Push Notification Feature](img_3_1.png)
@@ -79,9 +76,10 @@ Make a note of your **User Name**. You will need it in an upcoming step.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Copy A Sales Order Id)]
+[ACCORDION-BEGIN [Step 4: ](Copy sales order ID)]
 
 **Click Features Tab  &rarr; Mobile Sample OData ESPM**.
+
 !![Sample Data Feature](img_4_1.png)
 
 **Click V2**.
@@ -99,7 +97,7 @@ Make a note of a **Sales Order Id**. You will need it in the next step.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Make An HTTP Request)]
+[ACCORDION-BEGIN [Step 5: ](Make HTTP request)]
 
 In this step, you will make an HTTP Request. This knowledge is transferrable, i.e. you can implement this logic in your Web/Desktop/Mobile applications.
 
@@ -147,7 +145,7 @@ Create your HTTP Request by using the following configuration:
 
 Use the following cURL code to make the HTTP request. You will need to modify the text mentioned in **< >**.
 
-```cURL
+```Curl
 curl --user SalesPushCardKey:<The API Key you copied from the service key table> --location --request POST '<The URL you copied from the service key table>/mobileservices/origin/hcpms/CARDS/v1/register/templated' \
 --header 'Content-Type: application/json' \
   --data-raw '{
@@ -165,7 +163,7 @@ curl --user SalesPushCardKey:<The API Key you copied from the service key table>
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](View Notification On Device)]
+[ACCORDION-BEGIN [Step 6: ](View notification on device)]
 
 >Make sure you are choosing the right device platform tab ( **Android** or **iOS** ) **above**.
 
@@ -230,11 +228,11 @@ You can now see a sales order card for the **Sales Order Id** you specified in t
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Perform Action Through Notification)]
+[ACCORDION-BEGIN [Step 7: ](Perform action through notification)]
 
 >Make sure you are choosing the right device platform tab ( **Android** or **iOS** ) **above**.
 
-Copy another **Sales Order Id** from the sample OData service; e.g. `439bb7dd-50cb-4556-82f4-c835a4627650`. We will perform an action that will update `LifeCycleStatus` and `LifeCycleStatusName`.
+Copy another **Sales Order Id** from the sample OData service (e.g., `439bb7dd-50cb-4556-82f4-c835a4627650`). You will perform an action that will update `LifeCycleStatus` and `LifeCycleStatusName`.
 
 !![Action SalesOrder Id](img_7_1.png)
 
@@ -298,8 +296,6 @@ Open the sample OData service and verify that the changes have taken effect for 
 [VALIDATE_1]
 [ACCORDION-END]
 
-**Congratulations!** You have completed this tutorial.
-
-You can now push cards to your Mobile Device effortlessly.
+**Congratulations!** You can now push cards to your Mobile Device effortlessly.
 
 ---

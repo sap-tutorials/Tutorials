@@ -3,9 +3,9 @@
 title: Create an HTTP Service  
 description: Create an HTTP service in the ABAP environment that can be called from the browser.
 auto_validation: true
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, topic>cloud, products>sap-cloud-platform, tutorial>license ]
 time: 15
+tags: [ tutorial>beginner, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
+primary_tag: topic>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
@@ -17,7 +17,7 @@ author_profile: https://github.com/julieplummer20
 ### You will learn  
   - How to create an HTTP service that can be accessed from a browser
   -	How to return system data using a (whitelisted) ABAP utility class
-  - How to expose the service for external consumption, by defining the necessary inbound communication artefacts
+  - How to expose the service for external consumption, by defining the necessary inbound communication artifacts
 
 **Important**: If you are working in SAP S/4HANA:
 ICF services are direct entry points into the ABAP system via the HTTP protocol. Implementing ICF services is a security-critical task with implications on the system and landscape configuration.
@@ -90,69 +90,112 @@ Now, you will implement the handler class, starting with a simple text output.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add system date to the method)]
-Now you will add to the method by fetching the date from the back end first.
+[ACCORDION-BEGIN [Step 5: ](Add method `get_html`)]
+Now you will add a method to get system data and format this in HTML
 
-In the ABAP environment, you can only use whitelisted APIs. Therefore, you cannot use `SY-DATUM`. Instead, you call the appropriate method of the class `CL_ABAP_CONTEXT_INFO`.
+In the ABAP environment, you can only use whitelisted APIs. Therefore, for example, you cannot use `SY-UNAME`. Instead, you call the appropriate method of the class `CL_ABAP_CONTEXT_INFO`.
 
-You then cast this date variable to a string variable and output that as before.
+1. In your class definition, add the following statement:
 
-Delete the statement `response->set_text('Hello again!').` and add the following to your code:
+    ```ABAP
+    METHODS: get_html RETURNING VALUE(ui_html) TYPE string.
 
-```ABAP
-DATA(system_date) = CL_ABAP_CONTEXT_INFO=>get_system_date( ).
-DATA: text type string.
+    ```
+2. You will get the error "Implementation missing...". Resolve this by choosing **Quick Assist ( `Ctrl+1` )** and choosing **Add implementation...**. Ignore the two warnings for now.
 
-text = system_date.
-response->set_text( text ).
-```
+    ```ABAP
+
+    DATA(user_formatted_name) = cl_abap_context_info=>get_user_formatted_name( ).
+    DATA(system_date) = cl_abap_context_info=>get_system_date( ).
+
+    ui_html =  |<html> \n| &&
+    |<body> \n| &&
+    |<title>General Information</title> \n| &&
+    |<p style="color:DodgerBlue;"> Hello there, { user_formatted_name } </p> \n | &&
+    |<p> Today, the date is:  { get_system_date }| &&
+    |<p> | &&
+    |</body> \n| &&
+    |</html> | .
+
+    ```
+
+3. Now change the method implementation of the method **`handle_request`**
+
+    ```ABAP
+    response->set_text( get_html(  ) ).
+
+    ```
+
+4. Now select the warning for the method **`get_html`** and choose **Quick Assist `( Ctrl + 1 )`**. (You cannot resolve the warning for the method `handle_request`).
+
+5. Choose **Add raising declaration**, then choose **Finish**.
+
+6. Format, save, and activate the class **( `Shift + F1, Ctrl + S, Ctrl + F3` )**.
+
+6. Test the service again using the URL. Your page should look roughly like this:
+
+    !![step8a-formatted-html](step8a-formatted-html.png)
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test the service again)]
-1. Save (`Ctrl+S`) and activate (`Ctrl+F3`) your class.
-2. Test your service by clicking the URL link again. This time, the preview should display something like this:
 
-.
-    ![Image depicting step-6-system-date](step-6-system-date.png)
-
-[DONE]
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Check code)]
 Your code should look like this:
 
 ```ABAP
-class Z_GET_DATE_HTTP_XXX definition
-  public
-  create public .
+CLASS Z_GET_DATE_HTTP_XXX DEFINITION
+  PUBLIC
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
 
-  interfaces IF_HTTP_SERVICE_EXTENSION .
-protected section.
-private section.
+    INTERFACES if_http_service_extension .
+
+    METHODS: get_html RETURNING VALUE(ui_html) TYPE string
+    RAISING
+        cx_abap_context_info_error.
+
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 ENDCLASS.
+
+
 
 CLASS Z_GET_DATE_HTTP_XXX IMPLEMENTATION.
 
-  method IF_HTTP_SERVICE_EXTENSION~HANDLE_REQUEST.
-      DATA(system_date) = CL_ABAP_CONTEXT_INFO=>get_system_date( ).
-      DATA: text type string.
 
-      text = system_date.
-      response->set_text( text ).
-  endmethod.
+  METHOD if_http_service_extension~handle_request.
+    response->set_text( get_html(  ) ).
+  ENDMETHOD.
+
+  METHOD get_html.
+
+    DATA(user_formatted_name) = cl_abap_context_info=>get_user_formatted_name( ).
+    DATA(system_date) = cl_abap_context_info=>get_system_date( ).
+
+    ui_html =  |<html> \n| &&
+    |<body> \n| &&
+    |<title>General Information</title> \n| &&
+    |<p style="color:DodgerBlue;"> Hello there, { user_formatted_name } </p> \n | &&
+    |<p> Today, the date is:  { get_system_date }| &&
+    |<p> | &&
+    |</body> \n| &&
+    |</html> | .
+
+  ENDMETHOD.
+
 ENDCLASS.
 ```
 
 [DONE]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 9: ](Create an inbound Communication Scenario)]
-You will now create the artefacts you need to allow other systems to call your service compliantly. This involves some overhead for one consumer; however, the advantage is that you can add several consumer systems, or users (for example, with different authentication) pointing to the same HTTP service, wrapped in the same Communication Scenario.
+You will now create the artifacts you need to allow other systems to call your service compliantly. This involves some overhead for one consumer; however, the advantage is that you can add several consumer systems, or users (for example, with different authentication) pointing to the same HTTP service, wrapped in the same Communication Scenario.
 
 ![step9-create-comm-artefacts-overview](step9-create-comm-artefacts-overview.png)
 
@@ -255,5 +298,7 @@ Your Communication Scenario appears.
 - [SAP Help Portal: HTTP Communication](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/dee3a93a2b8d4018b3c4910f745b744f.html)
 
 - [SAP Help Portal: Components of SAP Communication Technology - HTTP Service](https://help.sap.com/doc/saphelp_nwpi71/7.1/en-US/1f/93163f9959a808e10000000a114084/frameset.htm)
+
+- [SAP ABAP Keyword Documentation: Calling an HTTP Service](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/abenicf_service_abexa.htm)
 
 ---

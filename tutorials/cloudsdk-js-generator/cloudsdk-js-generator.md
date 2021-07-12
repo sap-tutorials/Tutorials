@@ -3,8 +3,8 @@ title: Generate Custom OData Client Library with SAP Cloud SDK's Generator for J
 description: Generate a custom OData client library for the SAP SuccessFactors Candidate service of the Recruiting module.
 auto_validation: true
 time: 15
-tags: [tutorial>intermediate, topic>javascript, products>sap-cloud-platform, topic>odata]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [tutorial>intermediate, topic>javascript, products>sap-business-technology-platform, topic>odata]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Details

@@ -13,9 +13,9 @@ primary_tag: products>sap-hana-cloud
 
 ## Details
 ### You will learn
-  - How to export and import data using the export and import data wizards, SQL commands export into and import from, and the download option in the SQL console results tab
+  - How to export and import data using the export and import data wizards, SQL statements export into and import from, and the download option in the SQL console results tab
   - How to import `ESRI shapefiles` using the import data wizard
-  - How to export and import schema objects using export and import catalog wizards and the SQL commands export and import
+  - How to export and import schema objects using export and import catalog wizards and the SQL statements export and import
   - How to use cloud storage providers as a target when exporting or importing
 
 The following steps will demonstrate a few ways to export and import data such as the contents of tables or views as well how to export and import database schema.  
@@ -41,11 +41,11 @@ Methods to import into tables
 | ------- | -------------|------------------------| ----------------| ------------|
 | [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | All    | local computer         | CSV             | 1 GB max, 2 MB per row in SAP HANA Cloud, HANA database; 200 MB max SAP HANA on-premise |
 | [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA Cloud, HANA database    | S3, Azure, Alibaba OSS | CSV, Parquet    | |
-| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)    | SAP HANA Cloud, HANA database   | local computer         | `ESRI shapefiles` | Archive must be a tar.gz |
-| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA on-premise    | SAP HANA file system         | CSV             | Target table can be created |
+| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)    | SAP HANA Cloud, HANA database   | local computer         | `ESRI shapefiles` |  |
+| [Import data wizard](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA on-premise    | SAP HANA file system         | CSV             | Target table can be created |
 | [Import from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA Cloud, HANA database | S3, Azure, Alibaba OSS | CSV, Parquet    | |
 | [Import from statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA on-premise  | SAP HANA file system    | CSV |  |
-| [Insert into table name select from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/2020_04_QRC/en-US/20f7f70975191014a76da70c9181720e.html) | All  | local or remote tables  | select statement |  |
+| [Insert into table name select from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html) | All  | local or remote tables  | select statement |  |
 
 > Export and import using cloud storage from Amazon, Microsoft Azure and Alibaba Cloud is covered in the final step of this tutorial.
 
@@ -99,7 +99,7 @@ The following steps will attempt to demonstrate some of these options.
 
     ![Export Data Wizard](exportDataWizard.png)
 
-    It can be used to export data to cloud storage providers such as Amazon S3, Microsoft Azure, and Alibaba Cloud OSS.  Additionally, the SAP Cloud Platform offers an [object store](https://help.sap.com/viewer/product/ObjectStore/Cloud/en-US).  A detailed example of the setup and usage of a cloud storage provider will be provided in Step 5 of this tutorial.
+    It can be used to export data to cloud storage providers such as Amazon S3, Microsoft Azure, and Alibaba Cloud OSS.  Additionally, the SAP BTP offers an [object store](https://help.sap.com/viewer/product/ObjectStore/Cloud/en-US).  A detailed example of the setup and usage of a cloud storage provider will be provided in Step 5 of this tutorial.
 
     ![Export Data Wizard](exportDataWizard2.png)
 
@@ -117,16 +117,16 @@ The following steps will attempt to demonstrate some of these options.
 
     ```SQL
     DELETE FROM HOTEL.MAINTENANCE;
-    IMPORT FROM PARQUET FILE 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance.parquet' INTO HOTEL.MAINTENANCE;
+    IMPORT FROM PARQUET FILE 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance.parquet' INTO HOTEL.MAINTENANCE WITH ERROR LOG 'error_log.txt' FAIL ON INVALID DATA;
     ```
 
-3. With SAP HANA, express edition, the following commands can be executed to export and import from a directory on the SAP HANA filesystem assuming that the directory exists and the user `hxeadm` has permission to access it.
+3. With SAP HANA, express edition, the following statements can be executed to export and import from a directory on the SAP HANA file system assuming that the directory exists and the user `hxeadm` has permission to access it.
 
     ```SQL
     EXPORT INTO '/tmp/export/maintenance.csv' FROM HOTEL.MAINTENANCE WITH COLUMN LIST IN FIRST ROW;
     DELETE FROM HOTEL.MAINTENANCE;
     ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'system') set ('import_export', 'csv_import_path_filter') = '/tmp/export' WITH RECONFIGURE;
-    IMPORT FROM CSV FILE '/tmp/export/maintenance.csv' INTO HOTEL.MAINTENANCE WITH COLUMN LIST IN FIRST ROW ERROR LOG 'error_log.txt';
+    IMPORT FROM CSV FILE '/tmp/export/maintenance.csv' INTO HOTEL.MAINTENANCE WITH COLUMN LIST IN FIRST ROW ERROR LOG 'error_log.txt' FAIL ON INVALID DATA;
     ```
 
 [DONE]
@@ -136,11 +136,13 @@ The following steps will attempt to demonstrate some of these options.
 
 This step will import an `ESRI shapefile` containing points of interest near the `Bella Ciente` hotel in the city of `Longview` Texas.  A search can then be performed to return the 3 closest golf courses to the hotel.
 
->At this time, the import option in the import wizard for `ESRI shapefiles` is only available in the SAP HANA Cloud, HANA database.
+>The import option for `ESRI shapefiles` is available in the SAP HANA database explorer SP 13 or in the SAP HANA database explorer included with SAP HANA Cloud.
 
 1. At the [ARCGIS Hub](https://hub.arcgis.com/search), search for **`Points of Interest in and around Longview, Texas`**.
 
     ![Search](search.png)
+
+    >There may be a delay before the search results are returned.
 
     Scroll through the results and choose the selection below.
 
@@ -148,19 +150,14 @@ This step will import an `ESRI shapefile` containing points of interest near the
 
 2. Choose to download the data as a `shapefile`.
 
-    ![download shapefile](download_shapefile.png)
+    ![download shapefile](download-shapefile.png)
 
-3. Unzip the downloaded file to a temporary directory and then convert the extracted contents to a tar.gz.
 
-    ```Shell
-    tar -cvzf LongViewPOI.tar.gz Points_of*.*
-    ```
-
-4. Start the import data wizard, choose **Import ESRI Shapefiles** and select the `LongViewPOI.tar.gz` file.
+3. Start the import data wizard, choose **Import ESRI Shapefiles** and select the `LongViewPOI.zip` file.
 
     ![Import ESRI Shapefile](importESRI.png)
 
-5. Choose to import the `ESRI shapefile` into the schema **HOTEL**.  
+4. Choose to import the `ESRI shapefile` into the schema **HOTEL**.  
 
     Within the downloaded `ESRI shapefile`, there is a file named `Points_of_Interest.prj`.  This file mentions the spatial reference system used by this `ESRI shapefile`.  Specify **WGS 84** as the spatial reference system.
 
@@ -168,7 +165,7 @@ This step will import an `ESRI shapefile` containing points of interest near the
 
     Additional details on spatial reference systems can be found at [SAP HANA Spatial Reference for SAP HANA Cloud](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a2ea357787c101488ecd1b725836f07.html).
 
-6. The following statements rename the imported table and then show the 3 closest golf courses to the `Bella Cliente` hotel.
+5. The following statements rename the imported table and then show the 3 closest golf courses to the `Bella Cliente` hotel.
 
     ```SQL
     RENAME TABLE "HOTEL"."Points_of_Interest" TO HOTEL.POI_LONGVIEW;
@@ -345,7 +342,7 @@ R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp-----END CERTIFICATE-----' COMMENT 'Azure';
 
     ![Viewing the results](exportResult.png)
 
-    The equivalent command using the SQL statement export is shown below:
+    The equivalent SQL statement is shown below:
 
     ```SQL
     EXPORT HOTEL.MAINTENANCE AS PARQUET INTO 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance' WITH REPLACE;
@@ -363,7 +360,7 @@ R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp-----END CERTIFICATE-----' COMMENT 'Azure';
 
     The contents of the maintenance table should now be the same as it was before the previously executed drop statement.
 
-    The equivalent command using SQL the statement import is shown below:
+    The equivalent SQL statement is shown below:
 
     ```SQL
     IMPORT HOTEL.MAINTENANCE FROM 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance' WITH REPLACE;

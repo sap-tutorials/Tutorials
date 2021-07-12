@@ -3,7 +3,7 @@ title: Deploy an SAP Conversational AI Chatbot to Microsoft Teams
 description: Enable an SAP Conversational AI chatbot to be run within Microsoft Teams.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-conversational-ai]
+tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 author_name: Daniel Wroblewski
 author_profile: https://github.com/thecodester
@@ -58,6 +58,7 @@ This tutorial shows you how to enable and test your chatbot in Microsoft teams, 
 4. Fill in the registration form.
 
     ![Link text e.g., Destination screen](1-registration-form.png)
+    <div>&nbsp;</div>
 
     | Field Name | Input Value
     |------------|-------------

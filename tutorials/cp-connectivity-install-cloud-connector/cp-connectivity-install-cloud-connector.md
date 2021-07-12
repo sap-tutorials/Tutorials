@@ -2,8 +2,8 @@
 title: Install the SAP Connectivity Service Cloud Connector in your System Landscape
 description: Install the SAP Connectivity Service Cloud Connector to securely connect applications on SAP BTP with your on-premise systems.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity ]
+primary_tag: products>sap-business-technology-platform
+tags: [  tutorial>beginner, products>sap-business-technology-platform, products>sap-connectivity-service  ]
 time: 20
 ---
 

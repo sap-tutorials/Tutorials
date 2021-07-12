@@ -3,14 +3,14 @@ title: Render Cards Based On User Input With Content-Based Actions
 description: Create a card that shows data based on user-input, and then shows actions based on its content, such as triggering a phone call, sending an email, etc..
 auto_validation: true
 primary_tag: products>sap-mobile-cards
-tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-cards, products>sap-mobile-services ]
 time: 60
 author_name: Sandeep TDS
 author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites
-- [Completed the starter mission](mission.mobile-cards-get-started) or [Set up Mobile Services on you SAP Cloud Platform account](cp-mobile-cards-setup)
+- [Completed the starter mission](mission.mobile-cards-get-started) or [Set up Mobile Services on your SAP Business Technology Platform account](cp-mobile-cards-setup)
 - [Set up SAP Business Application Studio for Mobile Development](cp-mobile-bas-setup)
 - [Created your first card in SAP Business Application Studio](cp-mobile-cards-bas-basic-card)
 - **Install SAP Mobile Cards Application:**
