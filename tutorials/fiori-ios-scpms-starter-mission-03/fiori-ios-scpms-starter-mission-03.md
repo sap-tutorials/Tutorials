@@ -1,22 +1,25 @@
 ---
 title: Build a Product List
-description: Build an entity list using SAP SDK for iOS controls, with storyboard segues for navigation between the overview screen and the product list.
+description: Build an entity list using SAP BTP SDK for iOS controls, with storyboard segues for navigation between the overview screen and the product list.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>ios-sdk-for-sap-btp ]
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 35
 ---
 
 ## Prerequisites
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP SDK for iOS:** Version 5.0 or higher
+
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
+- **SAP BTP SDK for iOS:** Version 6.0 or higher
 
 ## Details
+
 ### You will learn  
-  - How to use storyboard segues to navigate between screens
-  - How to prepare a segue to set the title of the destination screen of each navigation
+
+- How to use storyboard segues to navigate between screens
+- How to prepare a segue to set the title of the destination screen of each navigation
 
 ---
 
@@ -115,7 +118,6 @@ You can store the segue identifier in a class property for cleaner code and use 
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 3: ](Implement a product list)]
 
 The Product List is a Table View Controller which means the structure is similar to the Overview Table View Controller with the difference that you won't use any `FUITableViewHeaderFooterView`.
@@ -128,6 +130,8 @@ The Product List is a Table View Controller which means the structure is similar
     import SAPOData
     import SAPFioriFlows
     import SAPCommon
+    import ESPMContainerFmwk
+    import SharedFmwk
 
     ```
 
@@ -148,10 +152,10 @@ The Product List is a Table View Controller which means the structure is similar
     /// First retrieve the destinations your app can talk to from the AppParameters.
     let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
-    /// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course you only have one destination here. Handle the errors in case the OData controller is nil. You are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the iOS Assistant.
+    /// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course you only have one destination here. Handle the errors in case the OData controller is nil. You are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the Assistant.
     var dataService: ESPMContainer<OnlineODataProvider>? {
-        guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
-            AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+        guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOnlineODataController, let dataService = odataController.dataService else {
+            AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
             return nil
         }
         return dataService
@@ -184,8 +188,8 @@ The Product List is a Table View Controller which means the structure is similar
     let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
     var dataService: ESPMContainer<OfflineODataProvider>? {
-        guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OfflineODataController, let dataService = odataController.espmContainer else {
-            AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+        guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOfflineODataController, let dataService = odataController.dataService else {
+            AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
             return nil
         }
         return dataService
@@ -534,7 +538,6 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
     return productCell
 }
 ```
-
 
 11. Run the app now and you should be able to search for products.
 
