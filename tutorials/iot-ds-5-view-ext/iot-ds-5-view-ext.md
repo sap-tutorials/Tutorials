@@ -1,6 +1,8 @@
 ---
 title: Extend Decision Support Application with Custom SAPUI5 View
 description: Extend the SAP IoT Decision Support application using SAP Web IDE by adding a custom SAPUI5 view to display device event payload data.
+author_name: Jitendra Sharma
+author_profile: https://github.com/JitendraSharma01
 auto_validation: true
 time: 20
 primary_tag: topic>internet-of-things
