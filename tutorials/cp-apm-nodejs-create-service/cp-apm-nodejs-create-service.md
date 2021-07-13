@@ -5,7 +5,7 @@ title: Create a Business Service with Node.js Using Visual Studio Code
 description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite, by using the SAP Cloud Application Programming Model (CAP) and developing on your local environment.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [ tutorial>beginner, topic>node-js, products>sap-business-technology-platform, software-product-function>sap-cloud-application-programming-model ]
+tags: [ tutorial>beginner, topic>node-js, products>sap-business-technology-platform,  software-product-function>sap-cloud-application-programming-model ]
 time: 50
 ---
 
@@ -221,7 +221,7 @@ After initializing the project, you should see the following empty folders:
 
     [cds] - serving CatalogService { at: '/catalog' }
 
-    [cds] - launched in: 1.071s
+    [cds] - launched in: 1.016s
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -370,7 +370,7 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
 
     [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
-    [cds] - launched in: 1.049s
+    [cds] - launched in: 656.931ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -440,7 +440,7 @@ Instead of using in-memory, you can also use persistent databases.
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
-    [cds] - launched in: 923.411ms
+    [cds] - launched in: 537.482ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
