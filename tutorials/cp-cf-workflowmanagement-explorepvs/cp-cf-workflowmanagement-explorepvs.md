@@ -19,7 +19,7 @@ author_profile: https://github.com/Deeksha-R
 
 Visibility scenarios allow users to track the performance of end-to-end processes. You can create, edit, delete, and activate a visibility scenario using the **Configure Visibility Scenarios** application. For more information, see [SAP Help Portal](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
 
-In this tutorial, you explore the application, modify a performance indicator, and activate the visibility scenario.
+In this tutorial, you explore the application, modify a performance indicator, and activate the visibility scenario. You can choose to modify different entities of Configure Visibility Scenarios such as processes, phases, state, attributes and so on. For more information, see [SAP Help Portal](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
 
 ---
 
@@ -64,7 +64,7 @@ Choose **Activate**.
 
 !![Activate Visibility Scenario](cp-cf-wm-explorepv-activate.png)
 
-The successful activation message appears. You can choose to modify different entities of Configure Visibility Scenarios such as processes, phases, state, attributes and so on. For more information, see [SAP Help Portal](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
+The successful activation message appears.
 
 [VALIDATE_1]
 [ACCORDION-END]
