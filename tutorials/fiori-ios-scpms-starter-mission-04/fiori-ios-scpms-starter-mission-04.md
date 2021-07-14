@@ -11,8 +11,8 @@ time: 25
 
 ## Prerequisites
 
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP BTP SDK for iOS:** Version 5.0 or higher
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
+- **SAP BTP SDK for iOS:** Version 6.0 or higher
 
 ## Details
 
@@ -55,6 +55,8 @@ Because you already implemented a similar screen, the Product List, you can copy
     import SAPOData
     import SAPFioriFlows
     import SAPCommon
+    import ESPMContainerFmwk
+    import SharedFmwk
 
     ```
 
@@ -162,19 +164,21 @@ Because you already implemented a similar screen, the Product List, you can copy
     import SAPOData
     import SAPFioriFlows
     import SAPCommon
+    import ESPMContainerFmwk
+    import SharedFmwk
 
     class CustomersTableViewController: UITableViewController, SAPFioriLoadingIndicator {
         var loadingIndicator: FUILoadingIndicatorView?
 
         let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
-        var dataService: ESPMContainer<OfflineODataProvider>? {
-          guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OfflineODataController, let dataService = odataController.espmContainer else {
-              AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
-              return nil
-          }
-          return dataService
-    }
+        var dataService: ESPMContainer<OnlineODataProvider>? {
+            guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOnlineODataController, let dataService = odataController.dataService else {
+                AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
+                return nil
+            }
+            return dataService
+        }
 
         private let appDelegate = UIApplication.shared.delegate as! AppDelegate
         private let logger = Logger.shared(named: "ProductsTableViewController")
@@ -239,7 +243,7 @@ Because you already implemented a similar screen, the Product List, you can copy
             if let customerDOB = customer.dateOfBirth {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateStyle = .medium
-                customerCell.subheadlineText = "\(dateFormatter.string(from: customerDOB.utc()))"
+                customerCell.subheadlineText = "\(dateFormatter.string(from: customerDOB.utc() ?? Date()))"
             }
             return customerCell
         }

@@ -101,7 +101,7 @@ Go to [GitHub](https://github.com/) and create a new GitHub repository.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ]((Optional) Copy the files to start from an example)]
+[ACCORDION-BEGIN [Step 5: ](Copy the files to start from an example)]
 
    > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
@@ -145,7 +145,7 @@ If you don't want to start from scratch, but from a specific example of the tuto
     ```Shell/Bash
     cd ../cpapp
     ```
-    
+
 8. Install required Node.js modules in your app directory:
 
     ```Shell/Bash
@@ -153,6 +153,10 @@ If you don't want to start from scratch, but from a specific example of the tuto
     ```
 
 [VALIDATE_1]
+
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-create-directory" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 
 [ACCORDION-END]
 ---

@@ -165,8 +165,8 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     var connOptions = {
         //Specify the connection parameters
         host: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443',
-        uid: 'HDLAdmin',
-        pwd: 'myPWD',
+        uid: 'USER1',
+        pwd: 'Password1',
         enc: 'TLS{tls_type=rsa;direct=yes}',
     };
 
@@ -205,7 +205,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     });
     ```  
 
-4. Update the `uid`, `pwd`, and `host` values in `connOptions`.
+4. Update the `host` value in `connOptions`.
 
 5. Run the app.  
 

@@ -112,8 +112,8 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 5. DBISQL or `isql`, which is a tool provided by unixODBC can be used to try out the data source. Ensure you are using the correct username and password.
 
     ```Shell (Linux)
-    dbisql -hdl -c "uid=HDLADMIN;pwd=myPassword;dsn=HC_DL_Trial" -nogui
-    isql -v HC_DL_Trial HDLADMIN myPassword
+    dbisql -hdl -c "uid=USER1;pwd=Password1;dsn=HC_DL_Trial" -nogui
+    isql -v HC_DL_Trial USER1 Password1
     ```
 
     DBISQL
@@ -122,7 +122,7 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 
     isql
 
-    ![isql query](isqlQuery.png)
+    ![isql query](isql-query.png)
 
     > To exit dbisql or isql type quit.
 
@@ -130,7 +130,7 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 
     > The column width when displaying results in isql can be set using the -m parameter.  
     > ```Shell (Linux)
-    isql -v HC_DL_Trial HDLADMIN myPassword -m6
+    isql -v HC_DL_Trial USER1 Password1 -m6
     >```
 
 [DONE]
