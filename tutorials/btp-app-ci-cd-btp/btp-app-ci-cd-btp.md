@@ -10,7 +10,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - You have created a GitHub repository as described in section [Create a GitHub Repository for Your Project](btp-app-create-directory)
+ - You have created a GitHub repository as described in step [Create a GitHub Repository for Your Project](btp-app-create-directory)
  - You have developed your CAP application and have prepared it for deployment using this collection of tutorials: [Build an Application End-to-End using CAP, Node.js and VS Code](mission.btp-application-cap-e2e)
  - You have to [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup) or use an existing SAP HANA Cloud instance
 
@@ -24,7 +24,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Introduction)]
-
 [SAP Continuous Integration and Delivery (CI/CD)](https://help.sap.com/viewer/product/CONTINUOUS_DELIVERY/Cloud/en-US) is a service on SAP BTP, which lets you configure and run predefined continuous integration and delivery pipelines. It connects with your Git SCM repository and builds, tests, and deploys your code changes. In its user interface, you can easily monitor the status of your builds and detect errors as soon as possible, which helps you prevent integration problems before completing your development.
 
 SAP Continuous Integration and Delivery has a ready-to-use pipeline for CAP, that is applicable to multi-target application (MTA) and Node.js based projects. It does not require you to host your own Jenkins instance and it provides an easy, UI-guided way to configure your pipelines.
@@ -35,7 +34,6 @@ For more information on how to configure and run predefined pipelines for your o
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Enable SAP Continuous Integration and Delivery service)]
-
 1. Enter the [SAP BTP cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Choose **Enter Your Trial Account**.
@@ -82,7 +80,6 @@ For more information on how to configure and run predefined pipelines for your o
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Access Continuous Integration and Delivery service)]
-
 1. In your SAP BTP subaccount, navigate to **Services** → **Instances and Subscriptions** in the left-hand pane.
 
 2. Choose the **Go to Application** icon located next to the **Continuous Integration & Delivery** subscription.
@@ -97,7 +94,6 @@ For more information on how to configure and run predefined pipelines for your o
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Configure your GitHub credentials)]
-
    > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
 If your GitHub repository is private, configure credentials for it, so that SAP Continuous Integration and Delivery service can connect to it.
@@ -126,7 +122,6 @@ If your GitHub repository is private, configure credentials for it, so that SAP 
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 5: ](Configure your SAP BTP credentials)]
-
 1. To create credentials for deploying to SAP BTP, Cloud Foundry environment, go to the **Credentials** tab and choose **+** *(Create Credentials)*.
 
     !![Credentials](CICD_credentials.png)
@@ -147,7 +142,6 @@ If your GitHub repository is private, configure credentials for it, so that SAP 
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 6: ](Configure a CI/CD job)]
-
 1. In the **Jobs** tab in SAP Continuous Integration and Delivery, choose **+** to create a new job.
 
     !![Jobs](CICD_jobs.png)
@@ -209,11 +203,9 @@ If your GitHub repository is private, configure credentials for it, so that SAP 
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 7: ](Create a GitHub webhook)]
-
 GitHub webhooks allow you to automate CI/CD builds. Whenever you push changes to your GitHub repository, a webhook push event is sent to the service to trigger a build of the connected job.
 
-To create a webhook in GitHub, you need some data that has been automatically created during the previous step.
-You can find this data (*Payload URL* and *Secret*) when you open the detail view of an existing repository in the **Repositories** tab.
+To create a webhook in GitHub, you need some data that has been automatically created during the previous step. You can find this data, the *Payload URL* and *Secret*, when you open the detail view of an existing repository in the **Repositories** tab.
 
 1. Choose the name of your repository and choose **Webhook Data**.
 
@@ -241,7 +233,6 @@ You can find this data (*Payload URL* and *Secret*) when you open the detail vie
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Verify the success of your build)]
-
 You have to trigger your job manually the first time after creation.
 
 1. In the **Jobs** tab in SAP Continuous Integration and Delivery, select your job and choose **Trigger Build**.
@@ -284,9 +275,9 @@ You have now successfully created a CI/CD pipeline and deployed your application
 
 [VALIDATE_1]
 
+
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
 <p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-ci-cd-btp" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
-
 [ACCORDION-END]
 ---
