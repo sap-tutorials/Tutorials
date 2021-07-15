@@ -160,15 +160,19 @@ cf bind-service "app-name" "service-instance"
 
 > ```JSON
 {
-  "privatelink": [
-      {
-        "instance_name": "privatelink-test",
-        "label": "privatelink", // can be used to look up the bound instance programmatically
-        "credentials": {
-          "hostname": "<private-link-IP>" // internal IP which needs to be used to connect to the service
+    "privatelink": [
+        {
+            "instance_name": "privatelink-test",
+            "label": "privatelink", // can be used to look up the bound instance programmatically
+            "credentials": {
+                "hostname": "<private-link-IP>" // internal IP which needs to be used to connect to the service
+            },
+            "tags": [
+                "privatelink",
+                "privatelinkservice"
+            ]
         }
-      }
-  ]
+    ]
 }
 ```
 
