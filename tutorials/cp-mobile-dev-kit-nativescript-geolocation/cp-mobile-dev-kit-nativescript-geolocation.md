@@ -24,6 +24,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 ---
 
+
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can use the existing NativeScript plugins like nativescript-geolocation, nativescript-nfc etc. , add this to the client and reference it from a rule.
 
 In this tutorial, you will use the existing NativeScript plugin nativescript-geolocation to capture the device location: latitude & longitude.
@@ -42,9 +43,9 @@ In this tutorial, you will use the existing NativeScript plugin nativescript-geo
 
 3. Select **MDK Project** and click **Next**.
 
-    !![MDK](img-1.3.png)  
+    !![MDK](img-1.3.png)
 
-4. In *Basic Information* step, select or provide the below information and click **Next**:
+4. In *Type* step, select or provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
@@ -52,9 +53,11 @@ In this tutorial, you will use the existing NativeScript plugin nativescript-geo
     | `Your project name` | `MDK_Geolocation` |
     | `Your application name` | <default name is same as project name, you can provide any name of your choice> |    
 
-    !![MDK](img_1.4.png)
+    !![MDK](img-1.4.png)
 
     >The _MDK Empty Project_ template creates a Logout action, Close page action, rule and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
+
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.  
 
 5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Geolocation` project in the project explorer.
 
@@ -120,9 +123,9 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 
 You will add this registered control in a Form Cell page.
 
-  1. Double-click the `Main.page`, drag & drop **Static Key Value** container control to the page area.
+  1. Click the `Main.page`, drag & drop **Static Key Value** container control to the page area.
 
-    !![MDK](img_3.1.gif)
+    !![MDK](img-3.1.gif)
 
   2. In **Properties** | **Layout**, change `NumberOfColumns` to 1.
 
@@ -139,7 +142,7 @@ You will add this registered control in a Form Cell page.
     | `KeyName`| `Coordinates` |
     | `Value`| Bind it to rule `GetCoordinates.js` |
 
-    !![MDK](img_3.4.png)
+    !![MDK](img-3.4.png)
 
 [DONE]
 [ACCORDION-END]
@@ -154,7 +157,7 @@ In `GetCoordinates.js` file, you referred `nativescript-geolocation` and `tns-co
 
 2. Search with `mdk`, click **Edit in settings.json**.
 
-    !![MDK](img_3.6.png)
+    !![MDK](img-3.6.png)
 
 3. Include below references in `MDK.bundlerExternals` and save the changes.
 
@@ -163,7 +166,7 @@ In `GetCoordinates.js` file, you referred `nativescript-geolocation` and `tns-co
     "tns-core-modules/ui/enums"
     ```
 
-     !![MDK](img_3.7.png)        
+     !![MDK](img-3.7.png)        
 
 [DONE]
 [ACCORDION-END]
@@ -178,13 +181,17 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 2. Select deploy target as **Mobile Services**.
 
-    !![MDK](img_5.2.png)
+    !![MDK](img-5.2.png)
 
-3. Select the application from Mobile Services.
+3. Select **Mobile Services Landscape**.
 
-    !![MDK](img_5.3.png)
+    !![MDK](img-5.3.1.png)    
 
-    You should see **Deploy succeeded** message.
+4. Select application from **Mobile Services**.
+
+    !![MDK](img-5.3.png)   
+
+    You should see **Deploy to Mobile Services successfully!** message.
 
     !![MDK](img-5.4.png)
 
@@ -204,13 +211,13 @@ In order to use the existing NativeScript plugin in MDK client, you will need to
       "AppName": "DemoSampleApp",
       "AppVersion": "1.0.0",
       "BundleID": "com.sap.mdk.demo",
-      "Externals": ["nativescript-geolocation","ui/enums"],
+      "Externals": [],
       "NSPlugins": ["nativescript-geolocation"],
       "UrlScheme": "mdkclient"
     }
     ```
 
-!![MDK](img_5.png)
+!![MDK](img-5.png)
 
 [DONE]
 [ACCORDION-END]

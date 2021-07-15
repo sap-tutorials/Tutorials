@@ -99,33 +99,37 @@ Make sure to replace the value of `<your-docker-id>` with your Docker account ID
     /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P Yukon900
     ```
 
-4. Run a sample query by running this commands:
+4. Enter a query by entering this command:
 
     ```Shell/Bash
-    1> USE DemoDB
-    2> SELECT * FROM ORDERS
-    3> GO
+    USE DemoDB SELECT * FROM ORDERS
     ```
 
-5. End the `sqlcmd` session by running:
+5. The query can now be executed by entering this command:
 
     ```Shell/Bash
-    1> exit
+    GO
     ```
 
-6. End the bash session by running:
+6. End the `sqlcmd` session by running:
 
     ```Shell/Bash
     exit
     ```
 
-7. Shutdown the Docker container by running this command:
+7. End the bash session by running:
+
+    ```Shell/Bash
+    exit
+    ```
+
+8. Shutdown the Docker container by running this command:
 
     ```Shell/Bash
     docker stop sql1
     ```
 
-8. Here are some additional commands that can be used:
+9. Here are some additional commands that can be used:
 
     > To start the container again, run:
     ```Shell/Bash

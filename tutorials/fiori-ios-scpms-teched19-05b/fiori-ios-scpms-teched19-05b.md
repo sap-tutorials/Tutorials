@@ -11,8 +11,8 @@ time: 15
 
 ## Prerequisites
 
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP BTP SDK for iOS:** Version 5.0 or newer
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
+- **SAP BTP SDK for iOS:** Version 6.0 or newer
 
 ## Details
 
@@ -129,7 +129,7 @@ Please export the model directly into Xcode and then continue with the next tuto
 !![Create ML](fiori-ios-scpms-teched19-09.png)
 !![Create ML](fiori-ios-scpms-teched19-09.png)
 
-Congratulations! You've trained a Core ML model with Create ML. Feel free to play around more with Create ML and the Machine Learning capabilities with [SAP](https://www.sap.com/products/intelligent-technologies/artificial-intelligence.html).
+Congratulations! You've trained a Core ML model with Create ML. Feel free to play around more with Create ML and the Machine Learning capabilities with [Artificial Intelligence](https://www.sap.com/products/artificial-intelligence.html).
 
 [VALIDATE_3]
 [ACCORDION-END]

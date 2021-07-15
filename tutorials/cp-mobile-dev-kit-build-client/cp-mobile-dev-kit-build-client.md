@@ -61,6 +61,10 @@ Make sure that you have download latest version of MDK SDK as described in Prere
 
     !![MDK](img_1.4.gif)
 
+    >You might see different software versions depending on MDK SDK version you are using.
+
+    >You can look into console by clicking **Show Log** for execution of each dependencies.
+
 [OPTION END]
 
 [OPTION BEGIN [Windows]]
@@ -81,17 +85,15 @@ Make sure that you have download latest version of MDK SDK as described in Prere
 
     !![MDK](img_1.7.png)
 
-    >If MDK Dependencies Installer keeps showing `Loading...` then use command `MDK_Dependencies_Installer.exe –debug –debug` to see more information.
-    There might be some issue due to Security Policy. It can be fixed by executing this in `PowerShell`:
-    >`Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser`
+    >If MDK Dependencies Installer keeps showing `Loading...` then have a look at [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/troubleshooting/mdk/troubleshoot.html#loading-message-displays-while-running-mobile-development-kit-dependency-installer-on-windows-machine) troubleshooting guide.
 
     >You might see different software versions depending on MDK SDK version you are using.
 
+    >You can look into console by clicking **Show Log** for execution of each dependencies.
+
 [OPTION END]
 
->You might see different software versions depending on MDK SDK version you are using.
 
->You can look into console by clicking **Show Log** for execution of each dependencies.
 
 Once you've installed these prerequisites, your machine is ready to generate and build an MDK project.
 
@@ -179,7 +181,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 4. Now, open the `BrandedSettings.json` file and update the `ConnectionSettings` with the values for your MDK application in Mobile Services.
 
-    !![MDK](img_3.4.png)
+    !![MDK](img-3.4.png)
 
     To find the correct URLs for your client, you should navigate to  [Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and find your MDK application that you want to link to this client.
 
@@ -193,7 +195,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img_3.4.2.png)
 
-    4.3 `SapCloudPlatformEndpoint`: Server URL from `APIs` tab.
+    4.3 `ServerUrl`: Server URL from `APIs` tab.
 
     !![MDK](img_3.4.3.png)
 
@@ -242,14 +244,13 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     >`BundleID`: It should be a unique identifier for your application.  This controls if the client can be installed side by side with other applications on the device.  Two applications with the same Bundle ID cannot be installed at the same time on a device. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
 
-    >`URLScheme`: Allows you to specify a custom URL scheme which opens the client. This value is provided in step 2 for **Redirect URL**.
-     If the URL includes connection settings as URL parameters, these settings will override the ones used by the client. The default is `mdkclient`. This value needs to match the value provided in step 2 for the Redirect URL. This value also needs to be unique across applications on your device.  If the value is not unique the wrong application may be referenced when redirecting.    
+    >`URLScheme`: Allows you to specify a custom URL scheme which opens the client. The default is `mdkclient`. This value also needs to be unique across applications on your device.  If the value is not unique the wrong application may be referenced when redirecting.    
 
     >You can find more details about configuration of `MDKProject.json` file in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html) help documentation.                    
 
 4. Now, open the `BrandedSettings.json` file and update it with information from your MDK Mobile Services application.
 
-    !![MDK](img_3.4.png)
+    !![MDK](img-3.4.png)
 
     To find the correct URLs for your client, you should navigate to  [Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and find your MDK application that you want to link to this client.
 
@@ -263,7 +264,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img_3.4.2.png)
 
-    4.3 `SapCloudPlatformEndpoint`: Server URL from `APIs` tab.
+    4.3 `ServerUrl`: Server URL from `APIs` tab.
 
     !![MDK](img_3.4.3.png)
 
@@ -372,29 +373,27 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
 
-    ![MDK](img-5.3.1.png)
-
-4. Tap **AGREE** on `End User License Agreement`.
-
-5. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.4 & 3.5.
+4. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.4 & 3.5. Tap **START** to connect MDK client to SAP Business Technology Platform (BTP).
 
     ![MDK](img_5.5.png)
 
-6. Tap **START** to connect MDK client to SAP Business Technology Platform (BTP).
+5. Tap **AGREE** on `End User License Agreement`.
 
-7. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
+    ![MDK](img-5.3.1.png)
+
+6. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
 
     ![MDK](img_5.7.png)
 
-8. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
+7. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
-    ![MDK](img_5.8.png)
+    ![MDK](img-5.8.png)
 
-9. Confirm the passcode and tap **DONE**.
+8. Confirm the passcode and tap **DONE**.
 
     ![MDK](img_5.9.png)
 
-10. Optionally, you can enable biometric authentication to get faster access to the app data.
+9. Optionally, you can enable biometric authentication to get faster access to the app data.
 
     ![MDK](img_5.9.1.png)
 
@@ -462,7 +461,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 [OPTION END]
 
-Congratulations, you have successfully built Your Mobile Development Kit Client Using MDK SDK and you are now all set to [Build Your Mobile Development Kit Client Using Cloud Build Service](cp-mobile-dev-kit-cbs-client).
+Congratulations, you have successfully built Your Mobile Development Kit Client Using MDK SDK and and you can continue with the remaining tutorials in this mission.
 
 [VALIDATE_3]
 [ACCORDION-END]
