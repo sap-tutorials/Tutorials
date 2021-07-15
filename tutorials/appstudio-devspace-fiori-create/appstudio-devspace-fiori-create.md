@@ -3,7 +3,7 @@ title: Create a Dev Space for SAP Fiori Apps
 description: Create an SAP Business Application Studio dev space, a preconfigured environment with the required tools and extensions tailored for a specific business scenario.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
+tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-business-technology-platform, products>sap-btp-cloud-foundry-environment]
 primary_tag: products>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
@@ -21,23 +21,18 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open SAP Business Application Studio)]
-1. Go to your Cloud Foundry environment subaccount and click the **Subscriptions** tab. 
+[ACCORDION-BEGIN [Step 1: ](Create a preconfigured SAP Fiori dev space)]
 
-    !![AppStudio Tile in SAP Cloud Platform Cockpit](01-01 SCP Subscriptions_.jpg)
+1. Access SAP Business Application Studio, and choose **Create Dev Space** in the welcome page or dev space manager.
 
-2. Locate the **SAP Business Application Studio** tile.
+    >Welcome page for SAP Business Application Studio:
 
-3. Click **Go to Application**.
+    >!![sap business application studio welcome](BAS-Welcome-.png)
 
-[DONE]
-[ACCORDION-END]
+    <br>
+    >Dev space manager for SAP Business Application Studio:
 
-[ACCORDION-BEGIN [Step 2: ](Create a preconfigured SAP Fiori dev space)]
-
-1. Choose **Create Dev Space**.
-
-    !![Open AppStudio](AppStudio Dev Space Manager_.jpg)
+    >!![Create Dev Space](BAS-Dev-Space-Manager-Empty-.png)
 
 2. Enter `Demo_Fiori` for your dev space **name**.
 
@@ -45,28 +40,29 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 
 4. Click **Create Dev Space**.
 
-    !![Create Dev Space](AppStudio Create Dev Space Fiori_.jpg)
+    !![Create Dev Space](AppStudio-Create-Dev-Space-Fiori-.png)
 
     >The dev space is in status **STARTING**. Wait until it is in status **RUNNING**. This might take a couple of minutes.
 
-    !![Dev Space Starting](AppStudio Dev Space Starting_.jpg)
+    !![Dev Space Starting](BAS-Dev-Space-Starting-.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Open the SAP Fiori dev space)]
+[ACCORDION-BEGIN [Step 2: ](Open the SAP Fiori dev space)]
 
-**Click** the name of the dev space you created.
+1. **Click** the name of the dev space you created.
+
+    !![Open Dev Space](BAS-Open-Dev-Space-.png)
 
 
-!![Open Dev Space](AppStudio Open Dev Space_.jpg)
+2. The SAP Fiori dev space opens and the **Welcome** tab appears.
 
+    !![Open Dev Space](BAS-Welcome-Tab-.png)
 
-The SAP Fiori dev space opens and the **Welcome** tab appears.
+    >You may be prompted to accept the legal terms.
 
-!![Open Dev Space](03-01-02 AppStudio Welcome Tab.jpg)
-
->The purple color of the status bar indicates that there is no open workspace.
+    >The purple color of the status bar indicates that there is no open workspace.
 
 
 [DONE]

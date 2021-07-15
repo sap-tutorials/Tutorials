@@ -3,7 +3,7 @@ title: Get OAuth Access Token for Document Information Extraction via Web Browse
 description: Retrieve your OAuth access token, which will grant you access to the service APIs.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction, topic>artificial-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-ai-business-services, products>sap-business-technology-platform, products>document-information-extraction, topic>artificial-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 
 [ACCORDION-BEGIN [Step 1: ](Get OAuth access token details)]
 
-To get your OAuth access token you will need the values listed below from the service key you created in the previous tutorial: [Set Up Account for Document Information Extraction](cp-aibus-dox-service-instance-booster).
+To get your OAuth access token you will need the values listed below from the service key you created in the previous tutorial: [Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key).
 
 !![DOX Service Key](service-key-details.png)
 

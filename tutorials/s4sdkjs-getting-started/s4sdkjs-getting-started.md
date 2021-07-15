@@ -3,8 +3,8 @@ title: Get Started with SAP Cloud SDK for JavaScript
 description: Scaffold an application that is ready to be used with the SAP Cloud SDK for JavaScript.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk, topic>javascript ]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>beginner, products>sap-cloud-sdk, topic>javascript ]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Details

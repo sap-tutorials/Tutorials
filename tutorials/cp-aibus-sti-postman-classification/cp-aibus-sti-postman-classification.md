@@ -3,7 +3,7 @@ title: Use Service Ticket Intelligence and Postman to Classify Service Requests
 description: Train a machine learning model based on historical service requests in order to classify new requests.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -27,22 +27,15 @@ Find more details on the Service Ticket Intelligence concepts [here](https://hel
 
 First, you need to retrieve an OAuth access token which will grant you access to the Service Ticket Intelligence APIs and allows you to communicate with your service instance. This access token is added to all your service instance requests.
 
-**Open** Postman and make sure that the `Env for STI sample collection` environment is selected. For detailed steps, see [Set Up Postman Environment and Collection to Call Service Ticket Intelligence APIs](cp-aibus-sti-setup-postman).
+**Open** Postman and make sure that the `Env for STI sample collection 2012` environment is selected. For detailed steps, see [Set Up Postman Environment and Collection to Call Service Ticket Intelligence APIs](cp-aibus-sti-setup-postman).
 
-On the left, expand the `STI sample collection`. Select the request, `Get Access Token`.
+On the left, expand the `STI sample collection 2012`. Select the request, `Get Access Token`.
 
-In the request, select the tab `Authorization` and make sure that for the authorization type `Basic Auth` is selected. Now enter the following values from your service key into the authentication fields `Username` and `Password`:
-
-|  Service key property                                         | Field in Postman
-|  :----------------------------------------------------------- | :--------------------
-|  `clientid` (inside the `uaa` section of the service key)     | `Username`
-|  `clientsecret` (inside the `uaa` section of the service key) | `Password`
-
-Click **Send** to send the request to your service instance.
+Click **Send** to send the request to your service instance. 
 
 ![Get Access Token](get-access-token.png)
 
-The response includes your `access_token` that is valid for 1799 seconds (30 minutes). After that time, you will need to generate a new one. There is no need to copy the access token as the collection automatically adds the token to all requests.
+The response includes your `access_token` that is valid for 1799 seconds (30 minutes). After that time, you will need to generate a new one using once again the `Get Access Token` request. There is no need to copy the access token as the collection automatically adds the token to all requests.
 
 If you send a request and receive a response, as in the image below, with a status of `401 Unauthorized`, your access token has expired. In this case please redo this step in order to get a new access token.
 
@@ -98,7 +91,7 @@ Select the request `Activate model` and click **Send**. This will start the acti
 
 Use the request `Get model status` from the previous step again to observe the process. Once the status of the model changes to `ACTIVE`, the model is ready and activated.
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 
@@ -123,10 +116,4 @@ You can also try out the other `POST /Classify` requests.
 You have now successfully used Service Ticket Intelligence to classify new service requests.
 
 [DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
-
-[VALIDATE_1]
 [ACCORDION-END]

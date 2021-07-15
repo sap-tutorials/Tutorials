@@ -8,9 +8,9 @@ primary_tag: topic>abap-development
 ---
 
 ## Prerequisites
-- You have a valid instance of SAP S/4HANA 1909 or later, on-premise
+- You have a valid instance of SAP S/4HANA 1909 or later, on-premise edition - for example, [SAP ABAP Platform 1909, developer edition](https://blogs.sap.com/2021/02/15/sap-abap-platform-1909-developer-edition-available-soon/) or [SAP S/4HANA Fully-Activated Appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/)
 - You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), latest version
-- You have downloaded the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
+- You have downloaded the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html). **IMPORTANT** This scenario is already included in SAP ABAP Platform 1909, developer edition
 
 ## Details
 ### You will learn
@@ -44,7 +44,7 @@ Throughout this tutorial, object names may include a suffix or group number, suc
 
 
 [ACCORDION-BEGIN [Step 2: ](Create CDS View)]
-1. In your package, create a CDS view. Select the package, then choose **New > Other** from the context menu.
+1. In your package, create a CDS view. Select the package, then choose **New > Other** from the context menu, then choose **Data Definition**.
 
     !![step2a-new-cds](step2a-new-cds.png)
 
@@ -59,27 +59,39 @@ Throughout this tutorial, object names may include a suffix or group number, suc
 
 3. Choose or create a transport request, then choose **Next**. Do not choose **Finish.**
 
-4. Finally, choose **Use template** then choose **Define view**. Then choose **Finish**.
+4. Choose **Use template** then choose **Define view**.
+
+5. Finally, choose **Finish**.
 
 Your CDS view appears in a new editor.
-
-!![step3a-view-name-data-source](step3a-view-name-data-source.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Define CDS View)]
 1. Add the following:
-    - `sql_view_name` = **`ZCTRAVEL_003`**
+    - `sql_view_name` = **`ZCTRAVEL_XXX`**
     - `data_source_name` = **`/DMO/I_Travel_U`**. You can use **Auto-Complete `Ctrl+Space`**
 
 2. Insert all the elements from `/DMO/I_TRAVEL_U` by placing your cursor inside the `as select from` statement (curly brackets) and again choosing **Auto-Complete `Ctrl+Space`** .
 
       !![step3b-insert-all-elements](step3b-insert-all-elements.png)
 
-3. Comment out the statement **`with parameters parameter_name : parameter_type`** for now, so that the error disappears.
+3. Add the alias  **`as Travel`** to the **`define View`** statement, so that your code looks like this:
 
-4. Format, save, and activate your code by choosing **`Shift+F1`, `Ctrl+S, Ctrl+3`**.
+    ```ABAP
+    @AbapCatalog.sqlViewName: 'ZCTRAVEL_XXX'
+    @AbapCatalog.compiler.compareFilter: true
+    @AbapCatalog.preserveKey: true
+    @AccessControl.authorizationCheck: #NOT_REQUIRED
+    @EndUserText.label: 'Consumption view from /DMO/I_TRAVEL_U'
+
+    define view Z_C_TRAVEL_DATA_XXX
+    as select from /DMO/I_Travel_U as Travel
+
+    ```
+
+3. Format, save, and activate your code by choosing **`Shift+F1`, `Ctrl+S, Ctrl+F3`**.
 
 [DONE]
 [ACCORDION-END]
@@ -178,7 +190,7 @@ The service binding automatically references the service definition and thus the
 
     !![step13e-service-xml-in-browser](step13e-service-xml-in-browser.png)
 
-4. In the browser, you can also see the **Metadata Document** of the Business Service by adding $metadata to the URL: `/sap/opu/odata/sap/Z_BIND_TRAVEL_003/$metadata`.
+4. In the browser, you can also see the **Metadata Document** of the Business Service by adding $metadata to the URL: `/sap/opu/odata/sap/Z_BIND_TRAVEL_XXX/$metadata`.
 
     !![step13f-service-metadata-in-browser](step13f-service-metadata-in-browser.png)
 
@@ -206,14 +218,11 @@ The service binding automatically references the service definition and thus the
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add annotation for automatic display)]
-1. It would be nice if at least some fields were displayed immediately for the user. To do this, simply add the following annotation to the relevant fields. The start of your CDS view will then look like this.
+1. It would be nice if at least some fields were displayed immediately for the user. To do this, simply add the following annotation to the relevant fields in **`Z_C_TRAVEL_DATA_XXX`**. The start of your CDS view will then look like this.
 
     > `BookingFee` is not automatically displayed. The numbers for each field are relative to the other fields and are responsive - they do not refer to a specific pixel position or similar. For larger entities, you can specify *HIGH*,*MEDIUM*, or *LOW*, so that less important fields are automatically hidden on a smaller screen, such as a mobile phone.
 
     ```CDS
-    @UI           : {
-    lineItem      : [{position: 10, importance: #HIGH}]
-    }
     @UI           : {
     lineItem      : [{position: 10, importance: #HIGH}]
     }
@@ -253,7 +262,7 @@ The service binding automatically references the service definition and thus the
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Extract metadata)]
+[ACCORDION-BEGIN [Step 10: ](Extract UI metadata)]
 At present, you only have minimal annotations. As you add more, your CDS view will start to get cluttered. So you should extract your UI annotations to a separate object, a **metadata extensions** object, as follows:
 
 1. First add the annotation **`@Metadata.allowExtensions: true`** to your CDS view.
@@ -279,7 +288,7 @@ At present, you only have minimal annotations. As you add more, your CDS view wi
 
     > The metadata extensions are evaluated in a specific order. For more information, see [Annotation Propagation](https://help.sap.com/viewer/f859579898c7494dbe2449bb7f278dcc/Cloud/en-US/df5d534075254682a81b59fb67ebd686.html).
 
-6. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+3`** ).
+6. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+F3`** ).
 
 [DONE]
 [ACCORDION-END]
@@ -300,7 +309,7 @@ For example, in this tutorial, if you define `TotalPrice` as a currency amount, 
     CurrencyCode,
 
     ```
-2. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+3`** ).
+2. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+F3`** ).
 
 3. If you refresh the Fiori Elements preview, the **Total Price** column now looks like this.
 
@@ -326,7 +335,7 @@ You will now add a fuzzy search capability.
 
     ```
 
-3. For convenience, add the following annotation to the metadata extension object, so that the **Memo** field appears by default in the preview, then format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+3`** ):
+3. For convenience, add the following annotation to the metadata extension object, so that the **Memo** field appears by default in the preview, then format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+F3`** ):
 
     ```CDS
     @UI           : {
@@ -367,7 +376,7 @@ As well as search fields, you can filter the list using an input field. In the n
     TravelID;
     ```
 
-2. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+3`** ). The Fiori elements preview should now look like this:
+2. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+F3`** ). The Fiori elements preview should now look like this:
 
     !![step12a-selection-field](step12a-selection-field.png)
 
@@ -433,7 +442,7 @@ As well as search fields, you can filter the list using an input field. In the n
 Your CDS entity code should look like this:
 
 ```CDS
-@AbapCatalog.sqlViewName: 'ZCTRAVEL_003'
+@AbapCatalog.sqlViewName: 'ZCTRAVEL_XXX'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
@@ -441,7 +450,7 @@ Your CDS entity code should look like this:
 @Metadata.allowExtensions: true
 @Search.searchable: true
 
-define view Z_C_TRAVEL_DATA_003
+define view Z_C_TRAVEL_DATA_XXX as Travel
   as select from /DMO/I_Travel_U
 {
 
@@ -482,17 +491,8 @@ Your MDE code should look like this:
 
 ```CDS
 @Metadata.layer: #CORE
-annotate view Z_C_TRAVEL_DATA_003 with
+annotate view Z_C_TRAVEL_DATA_XXX with
 {
-
-@UI.facet: [
-{ id:     'Connection_JP',
-purpose:  #STANDARD,
-type:     #IDENTIFICATION_REFERENCE,
-label:    'Connection' }
-
-]
-
 
 @UI           : {
       lineItem      : [{position: 15, importance: #HIGH}],

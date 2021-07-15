@@ -4,21 +4,24 @@ description: Use the SAPUI5 Test Recorder to create system tests with UIVeri5 ag
 auto_validation: true
 time: 60
 tags: [ tutorial>beginner, topic>cloud, topic>sapui5, products>sap-fiori]
-primary_tag: products>sap-cloud-platform
-author_name: Sarah Noack
+primary_tag: products>sap-business-technology-platform
+author_name: Sarah Lendle
 author_profile: https://github.com/SarahLendle
 ---
 
 ## Prerequisites
 - You use [SAPUI5](https://sapui5.hana.ondemand.com/#/topic/2535ef9272064cb6bd6b44e5402d531d) in version 1.74 or higher.
--	You have installed and configured a local Git client.
 -	You have installed [Node JS](https://nodejs.org/en/) in version 8.0 or higher.
 -	You have installed [Visual Studio Code](https://code.visualstudio.com/).
 -	You have installed UIVeri5 using the following command:
     ```
     npm install @ui5/uiveri5 -g
     ```
--	Your Google Chrome version is up to date. See [Update Google Chrome](https://support.google.com/chrome/answer/95414?co=GENIE.Platform%3DDesktop&hl=en).
+-	You have installed [Yeoman](https://yeoman.io/) and [generator-easy-ui5](https://github.com/SAP/generator-easy-ui5) using the following command:
+    ```
+    npm install -g yo generator-easy-ui5
+    ```
+- Your Google Chrome version is up to date. See [Update Google Chrome](https://support.google.com/chrome/answer/95414?co=GENIE.Platform%3DDesktop&hl=en).
 -	You have a [Jenkins](https://jenkins.io/) instance that is preconfigured for using project "Piper". See [Configuration](https://sap.github.io/jenkins-library/configuration/).
 -	You have an account and a repository in [GitHub](https://github.com/).
 
@@ -27,8 +30,6 @@ author_profile: https://github.com/SarahLendle
 - How to create system tests with UIVeri5 using the UI5 Test Recorder
 - How to create a CI/CD pipeline with project "Piper"
 - How to add system tests as automated steps to your CI/CD pipeline
-
-> This tutorial only applies to SAPUI5 in version 1.74 or higher. If you use an older version of SAPUI5, have a look at [Add Automated System Tests to Your CI/CD Pipeline](https://developers.sap.com/tutorials/cp-cicd-sytem-test.html), instead.
 
 ### What Is This Tutorial About?
 
@@ -63,6 +64,11 @@ The SAPUI5 Test Recorder is a tool that helps you create integration and system 
 
 > For more information about the SAPUI5 Test Recorder, see [Test Recorder](https://sapui5.hana.ondemand.com/#/topic/2535ef9272064cb6bd6b44e5402d531d).
 
+### About the Yeoman Generator for UIVeri5
+
+Yeoman is a popular open-source command-line tool to create a scaffolding for either a complete project or parts of it. As of version 2.3.0., the UIVeri5 Yeoman generator is a sub-generator of the project `generator-easy-ui5`. It helps you kickstart your test suite and quickly write new tests with your own action and assertion logic for scenarios that are relevant for your use case.
+
+>For more information, see [Yeoman generators for OPA5 and UIVeri5](https://blogs.sap.com/2020/11/30/yeoman-generators-for-opa5-and-uiveri5/).
 
 ### About CI/CD with Project "Piper"
 
@@ -81,23 +87,41 @@ Project "Piper" is one of SAP's solutions for continuous integration and deliver
 
 In Visual Studio Code, set up your UIVeri5 test project.
 
-1. Open Visual Studio Code.
+1. In Visual Studio Code, open a new terminal.
 
-2. Choose **View** **&rarr;** **Command Palette...** **&rarr;** **Git:Clone**.
+2. Navigate to the folder to which you want to add your UIVeri5 project.
 
-3. As **Repository URL**, enter:
+3. Use the following command to call the generator for UIVeri5 tests:
 
+    ```Shell/Bash
+    yo easy-ui5 project uiveri5
     ```
-    https://github.com/SAP-samples/teched2019-uiveri5.git
-    ```
 
-4. Select a folder of your choice into which to clone the test repository by choosing **Select Repository Location**.
+    Now, you're asked a couple of questions that help the generator create your test structure.
 
-5. When asked if you would like to open the cloned repository, choose **Open**.
+4. Answer the questions as follows:
 
-    As a result, the project `TECHED2019-UIVERI5` is loaded into the **EXPLORER** pane and you can see its resources in the outline:
+    | Question | Answer |
+    | ----------- | ----------- |
+    | Please enter the name of your project | `uiveri5` |
+    | URL to the app under test | `https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/cart/webapp/index.html`|
+    | Choose authentication | `none` |
+    | Choose additional reporters | `JUNIT` |
+    | Do you want to add a page object | `Y` |
+    | Do you want to add a spec | `Y` |
+    | Page object name | `Home` |
+    | Add action with name | Press **Enter** to skip |
+    | Add assertion with name | Press **Enter** to skip |
+    | Name for the suite (describe block) | `teched` |
+    | Name for the spec (it block) | `Should validate the home screen` |
 
-    ![Resources in the EXPLORER pane](explorer-pane.png)
+5. Press **Enter**. Now, your project structure is generated.
+
+    ![Questions for generating the project structure](yeoman-uiveri5.png)
+
+6. In Visual Studio Code, open the folder `uiveri5`. As a result, the project `uiveri5` is loaded into the **EXPLORER** pane and you can see its resources in the outline:
+
+    ![Resources in the EXPLORER pane](explorer-pane-yeoman.png)
 
     Like all system tests with UIVeri5, you'll define your tests through different files:
 
@@ -117,31 +141,18 @@ In Visual Studio Code, set up your UIVeri5 test project.
            - Assertions, for example, getting a search result that matches the previously entered text
 
         Page objects use locators to identify specific elements on the screen. Thereby, they allow test runners to see and do anything a real user would. Page objects reside in the `pages` folder of your project.
-6. Open the `conf.js` file.
 
-    In this file, you'll define the base URL of your test application.
+        >If you want to set up a project for an application that is protected by credentials, you need to add authentication configurations. See [Authentication](https://github.com/SAP/ui5-uiveri5/blob/master/docs/config/authentication.md).
 
-7. Add the following line into the `exports.config` property:
+7. To check if the test execution works, choose **Terminal** **&rarr;** **New Terminal** in the root folder of your project, and enter the following command:
 
-    ```
-    baseUrl: "https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/cart/webapp/index.html",
-    ```
-
-    Now, your project setup is ready. Make sure that your code looks as follows and choose **File** **&rarr;** **Save**.
-
-    ![Project Setup](base.png)
-
-    > If you want to set up a project for an application that is protected by credentials, you need to add authentication configurations. See [Authentication](https://github.com/SAP/ui5-uiveri5/blob/master/docs/config/authentication.md).
-
-8. To check if the test execution works, make sure that you're in the root folder of your project, choose **Terminal** **&rarr;** **New Terminal**, and enter the following command:
-
-    ```
-    uiveri5
+    ```Shell/Bash
+    uiVeri5
     ```
 
     As a result, the browser briefly opens to execute the tests. However, as you haven't defined any tests, yet, the application doesn't load.
 
-9. In the terminal response, check if the test execution has been successful:
+8. In the terminal response, check if the test execution has been successful:
 
     ![Terminal Response: Successful](status-passed.png)
 
@@ -345,15 +356,15 @@ Implement a test that checks if when you search for a product, the search result
 
     ![Added Code Snippets](homejs-productlist.png)
 
-14. To run the test, execute the following command in the terminal:
+16. To run the test, execute the following command in the terminal:
 
-    ```
+    ```Shell/Bash
     uiveri5
     ```
 
     As a result, the browser opens and you can watch the automated test software execute the actions you have defined.
 
-15. In the terminal response, check if the test has been passed successfully:
+17. In the terminal response, check if the test has been passed successfully:
 
     ![Status: Passed](status-passed.png)
 
@@ -429,11 +440,35 @@ Check if the following two statements are true:
 
     ![Page Object for Home Screenshot](homejs-navigation.png)
 
-12. From the Explorer pane, open `pages` **&rarr;** `product.js`.
+    Next, add an assertion that is related to the product details.
+
+    As you don't have a page object for the detailed view, yet, use the yeoman sub-generator to generate its scaffolding. The generator `yo easy-ui5:newuiveri5po` creates a new page object and adds it to the existing specs.
+
+12. In the terminal in Visual Studio Code, make sure that you're in the `uiveri5` root folder.
+
+13. Enter the following command:
+
+    ```Shell/Bash
+    yo easy-ui5 project newuiveri5po
+    ```
+
+14. Answer the questions that help the generator create your new page object as follows:
+
+    | Question | Answer |
+    | ----------- | ----------- |
+    | Page object name | `Product` |
+    | Add action with name | Press **Enter** to skip |
+    | Add assertion with name | Press **Enter** to skip |
+
+    Now, your page object is created.
+
+    ![Page object creation by generator](sub-generatorPO.png)
+
+13. From the Explorer pane, open `pages` **&rarr;** `product.js`.
 
     This file represents the page object for the detail view of your selected product.
 
-13. In the Shopping Cart application in Google Chrome, right-click the header of the detail view and choose **Highlight**. As a result, the Test Recorder highlights the header to indicate its activity:
+14. In the Shopping Cart application in Google Chrome, right-click the header of the detail view and choose **Highlight**. As a result, the Test Recorder highlights the header to indicate its activity:
 
     !![Highlighted Header](highlight-header.png)
 
@@ -443,9 +478,9 @@ Check if the following two statements are true:
 
     !![Code Snippet for Header](snippet-header.png)
 
-14. Copy this code snippet into the `assertions` section of your `product.js`.
+15. Copy this code snippet into the `assertions` section of your `product.js`.
 
-15. Add a suitable name for your action and the following code snippets:
+16. Add a suitable name for your action and the following code snippets:
 
     ![Added Name and Code Snippets](theproducttitleisshown.png)
 
@@ -455,9 +490,9 @@ Check if the following two statements are true:
 
     To verify if there is an **Add to Cart** button in the detail view of your selected product, add another assertion.
 
-16. Add a comma after your last assertion.
+17. Add a comma after your last assertion.
 
-17. In the Shopping Cart application in Google Chrome, right-click the **Add to Cart** button and choose **Highlight**. As a result, the Test Recorder highlights the button to indicate its activity:
+18. In the Shopping Cart application in Google Chrome, right-click the **Add to Cart** button and choose **Highlight**. As a result, the Test Recorder highlights the button to indicate its activity:
 
     !![Highlighted Button](highlight-button.png)
 
@@ -467,9 +502,9 @@ Check if the following two statements are true:
 
     !![Code Snippet for Button](snippet-button.png)
 
-18. Copy this code snippet into the `assertions` section of your `product.js`.
+19. Copy this code snippet into the `assertions` section of your `product.js`.
 
-19. Add a suitable name for your assertion and add the following code snippet to define that you expect the **Add to Cart** button to be displayed:
+20. Add a suitable name for your assertion and add the following code snippet to define that you expect the **Add to Cart** button to be displayed:
 
     ![Added Name and Code Snippets](theproductcouldbeordered.png)
 
@@ -477,13 +512,13 @@ Check if the following two statements are true:
 
     ![Page Object with Button Test](productjs-finished.png)
 
-20. To run the test, execute the following command in the terminal:
+21. To run the test, execute the following command in the terminal:
 
     ```
     uiveri5
     ```
 
-21. In the terminal response, check if the test has been passed successfully:
+22. In the terminal response, check if the test has been passed successfully:
 
     ![Status: Passed](status-passed.png)
 

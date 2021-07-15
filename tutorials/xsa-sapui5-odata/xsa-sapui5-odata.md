@@ -7,6 +7,7 @@ primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Proficiency:** Intermediate
 - **Tutorials:** [SAPUI5 User Interface](https://developers.sap.com/tutorials/xsa-sapui5.html)
 

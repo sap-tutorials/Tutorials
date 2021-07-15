@@ -3,7 +3,7 @@ title: Upload Data to Data Attribute Recommendation
 description: Upload a dataset to your Data Attribute Recommendation service instance to afterwards be able to train your machine learning model.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
@@ -13,6 +13,12 @@ primary_tag: topic>machine-learning
   - How to do upload data to your Data Attribute Recommendation service instance to train a machine learning model
 
 To try out Data Attribute Recommendation, the first step is to upload data that will be used to train a machine learning model. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/dar). For further definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/fe501df6d9f94361bfea066f9a6f6712.html).
+
+Business Use Case: When creating the master data of a product, classifying the product into correct category and product hierarchy is a manual process that involves a product expert.
+
+To help automate this manual process, Data Attribute Recommendation can learn from historical data of products and their hierarchies to  automatically suggest the relevant categories with confidence level. This saves a lot of manual effort and helps automate the master data creation process. The same concept can be applied to transactional data like sales orders or any other orders with missing information.   
+
+The first steps to create this machine learning model that predicts categories and subcategories of a product is to prepare the dataset schema and upload to the service the training data. In this tutorial, you will focus on the model training data preparation, uploading and defining the dataset schema. For that, you will use a product dataset from Best Buy.
 
 ---
 
@@ -92,7 +98,7 @@ You have successfully created a dataset.
 
 The final step is to upload data to your dataset.
 
-For that, use the [sample data](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial-sample/blob/master/Tutorial_Example_Dataset.csv) available on GitHub. **Download** the CSV file that contains the data.
+For that, use the [sample data](https://github.com/SAP-samples/data-attribute-recommendation-postman-tutorial/blob/main/Tutorial_Example_Dataset.csv) available on GitHub. **Download** the CSV file that contains the data.
 
 ![Download CSV](download-csv.png)
 
@@ -100,7 +106,7 @@ If your browser displays the data instead of downloading it, **right-click** any
 
 ![Save CSV](download-csv-save.png)
 
-Take a moment to look at the dataset. As mentioned in step 2 the dataset contains product information as well as product categories. You might ask why the product categories are in the dataset when we actually want to predict them?
+Take a moment to look at the dataset. As mentioned in step 2 the dataset contains product information as well as product categories. You might ask why the product categories are in the dataset when you actually want to predict them?
 
 The categories are only necessary for training as the service does not know yet which product information are common for certain categories. Instead, the service will recognize patterns and establish such connections during the training process. This allows the service to make predictions for categories solely based on the product information later on.
 

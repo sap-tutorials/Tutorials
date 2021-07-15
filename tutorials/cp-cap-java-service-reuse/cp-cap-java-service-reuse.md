@@ -5,13 +5,13 @@ title: Reuse a CAP Java Service
 description: Create a new application and reuse the existing CAP Java service.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform, topic>java]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>java]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Details
 ### You will learn
-- How to reuse a CAP project through npm packages
+- How to reuse a CAP project through NPM packages
 - How to load sample data using CSV profiles
 - How to use SQL Tools in the SAP Business Application Studio
 - How to use the localized keyword
@@ -57,6 +57,8 @@ mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -Darchety
 [ACCORDION-BEGIN [Step 2: ](Install reusable service as npm dependency)]
 
 As the `product-service` should be reused for the bookstore, you need to add a dependency between those two projects. Reusable models can be published as NPM modules and imported through dependencies in the `package.json` of a project.
+
+> ### Make sure that you have followed all the sub-steps of step 9 in the previous tutorial [Set up for reuse](https://developers.sap.com/tutorials/cp-cap-java-reusable-service.html#585efa23-03de-4736-98d3-a4e22bf92511) before continuing.
 
 First, we need to simulate a release of the `product-service` module, and consume this release in the bookstore application.
 
@@ -191,7 +193,7 @@ The `services.cds` file defines three services:
 
 The `BooksService` is used to provide a read-only view on the `Books` and `Authors` data. Modifications of these entities isn't possible via this service.
 
-The `OrdersService` allows to view, create, and delete orders. 
+The `OrdersService` allows to view, create, and delete orders.
 
 The `AdminService` is reused from the products service. But we've added the `Authors` entity to it. It can be used to create, update, and delete products and authors.
 
@@ -276,7 +278,7 @@ To configure your Java application to use the `sqlite.db` database:
 
 1. Go to `srv/src/main/resources`, locate, and open the `application.yaml` file. This file was created when you initialized the application.
 
-2. For the field `url` **replace the string** `"jdbc:sqlite::memory:"` with a reference to your local database `"jdbc:sqlite:/home/user/projects/bookstore/sqlite.db"`
+2. For the field `url` **replace the string** `"jdbc:sqlite::memory:?cache=shared"` with a reference to your local database `"jdbc:sqlite:/home/user/projects/bookstore/sqlite.db"`
 
 3. Set the value of `initialization-mode` from `always` to `never`.
 

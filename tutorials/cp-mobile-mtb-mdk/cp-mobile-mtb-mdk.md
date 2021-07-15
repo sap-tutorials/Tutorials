@@ -3,8 +3,8 @@ title: Use an OData Service Created by MTB to Build a Mobile App
 description: Using an OData service created with the Mobile Transaction Bridge, build a Mobile app based on the mobile development kit client.
 auto_validation: true
 time: 20
-primary_tag: products>sap-cloud-platform-mobile-services
-tags: [ tutorial>beginner, topic>mobile, products>sap-cloud-platform, software-product-function>sap-cloud-platform-mobile-services ]
+primary_tag: products>sap-mobile-services
+tags: [ tutorial>beginner, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-services ]
 ---
 
 ## Prerequisites
@@ -69,7 +69,7 @@ Now it's time to deploy this application.
 
 2. Right-click the file and from the context menu, click **MDK Deploy**.
 
-    !![MTB](.\reimgs\06.png)
+    !![MTB](06-deploy.png)
 
     This gives you a selection popup at the top of the main pane. Choose **Mobile Services**, since that is your starting point.
 
@@ -77,7 +77,7 @@ Now it's time to deploy this application.
 
     When the app has successfully deployed, you will see a success message in the bottom-right corner of the main pane.
 
-    !![MTB](.\reimgs\93.png)
+    !![MTB](93-deploytarget.png)
 
 
 [VALIDATE_1]

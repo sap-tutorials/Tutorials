@@ -5,11 +5,12 @@ auto_validation: true
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
-tags: [products>sap-hana, products>sap-hana\,-express-edition  , topic>big-data, tutorial>beginner ]
+tags: [products>sap-hana, products>sap-hana\,-express-edition, topic>big-data, tutorial>beginner ]
 
 ---
 
 ## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - You have created a  Multi-Target Application as explained in this tutorial: [SAP HANA XS Advanced Connect to Web IDE and clone Git Repository](https://developers.sap.com/tutorials/xsa-connecting-webide.html)
 
 

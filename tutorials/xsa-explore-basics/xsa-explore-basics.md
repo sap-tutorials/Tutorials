@@ -1,6 +1,8 @@
 ---
 title: SAP HANA XS Advanced, explore the basic tools
-description: This tutorial will walk you through exploring the basics of XS Advanced tools, such as athe administration cockpit or SAP Web IDE for SAP HANA
+description: This tutorial will walk you through exploring the basics of XS Advanced tools, such as the administration cockpit or SAP Web IDE for SAP HANA
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition ]
 auto_validation: true
@@ -8,12 +10,13 @@ time: 10
 ---
 
 ## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Beginner | Intermediate | Advanced
  - **Tutorials:** [Get an SAP HANA, express edition, instance with XS Advanced applications](https://developers.sap.com/topics/hana.html)
 
 
 ## Next Steps
- - [Get started with SAP HANA, XS Advanced development](https://developers.sap.com/group.hana-xsa-get-started.html)
+ - [Get started with SAP HANA, XS Advanced development](group.hana-xsa-get-started)
 
 
 ## Details
@@ -29,7 +32,7 @@ time: 10
 The XS CLI is also available by default in the SAP HANA server with XS Advanced applications. In the case of SAP HANA, express edition, you can access it from the same SSH console you used to start and configure your platform.
 
 The XS CLI enables you to maintain not only the applications that are deployed to the XS advanced run-time environment, but also the run-time environment itself, and the users who access and use it.
-> Note: You can get it from the [download manager for SAP HANA, express edition](https://sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html) or from the [SAP Service Marketplace](https://launchpad.support.sap.com/#/softwarecenter). Make sure you have the latest version in order to avoid issues.
+> Note: You can get it from the [download manager for SAP HANA, express edition](https://www.sap.com/products/hana/express-trial.html) or from the [SAP Service Marketplace](https://launchpad.support.sap.com/#/softwarecenter). Make sure you have the latest version in order to avoid issues.
 
 **This tutorial assumes you are using the CLI from the operating system in your SAP HANA, express edition instance.**
 

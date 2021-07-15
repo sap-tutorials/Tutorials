@@ -3,8 +3,8 @@ title: Configure a Mobile Services App to Use an MTB OData Service
 description: Configure a Mobile Services app with the MTB OData service and Destination.
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, topic>mobile, products>sap-cloud-platform, software-product-function>sap-cloud-platform-mobile-services]
-primary_tag: products>sap-cloud-platform-mobile-services
+tags: [tutorial>beginner, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-services]
+primary_tag: products>sap-mobile-services
 ---
 
 ## Prerequisites

@@ -2,14 +2,14 @@
 title: Set up Secure Tunnel between ABAP System and SAP Cloud Platform (CF)
 description: Set up your SAP Cloud Platform account and the Cloud Connector to establish a secure tunnel between SAP Cloud Platform and the Application Server ABAP in your system landscape.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity,  topic>abap-connectivity]
+primary_tag: products>sap-business-technology-platform
+tags: [  tutorial>beginner, products>sap-business-technology-platform, products>sap-connectivity-service,  topic>abap-connectivity]
 time: 15
 ---
 
 ## Prerequisites  
-  - [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://developers.sap.com/tutorials/cp-connectivity-configure-fiori-reference-apps.html)
-  - [Install the Cloud Connector in your System Landscape](https://developers.sap.com/tutorials/cp-connectivity-install-cloud-connector.html)
+  - [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](cp-connectivity-configure-fiori-reference-apps)
+  - [Install the Cloud Connector in your System Landscape](cp-connectivity-install-cloud-connector)
 
 ## Details
 ### You will learn  
@@ -25,7 +25,7 @@ Before you can access data from the Cloud Connector in an application on SAP Clo
 
 1. Go to [Your SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit) | **Cloud Foundry Trial**, and navigate to your subaccount.
 
-1. The card with your subaccount information will show the sub-account name **trial** by default. If the card shows the subdomain instead of your subaccount's ID choose the flip icon:
+1. The card with your subaccount information will show the sub-account name **trial** by default. Choose **More Info** to display your subaccount's ID:
 
     ![subaccount ID](step-01-Find-Trial-ID-001.png)
 
@@ -43,7 +43,7 @@ Before you can access data from the Cloud Connector in an application on SAP Clo
     |  **Subaccount User**   | Email address of your subaccount user. You can find it in the `User Information`. |
     |  **Password**          | Password of your subaccount user                                        |
     |  **Location ID**       | not required in this tutorial                                           |
-    > You can find the `User Information` here:
+    > You can find the `User Information` in the upper right corner of the cockpit:
     >
     >  ![User Information](step-01-Find-Trial-ID-003.png)
 
