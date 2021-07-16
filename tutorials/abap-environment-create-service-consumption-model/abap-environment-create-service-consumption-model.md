@@ -16,7 +16,7 @@ author_profile: https://github.com/julieplummer20
 ## Details
 ### You will learn
   - How to create an XML file representing the remote service and save this locally
-  - How to create proxy artefacts representing the remote service in the client system, using this `metadata` file
+  - How to create proxy artifacts representing the remote service in the client system, using this `metadata` file
 
   This tutorial is based on:
 
@@ -100,8 +100,8 @@ The service binding opens in a new editor.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create proxy artefacts)]
-You will now use the `EDMX` file that you stored locally to create the necessary ABAP proxy artefacts in the client system.
+[ACCORDION-BEGIN [Step 5: ](Create proxy artifacts)]
+You will now use the `EDMX` file that you stored locally to create the necessary ABAP proxy artifacts in the client system.
 
 1. Select your package and choose **New > Other ABAP Repository Object** from the context menu.
 
@@ -113,7 +113,7 @@ You will now use the `EDMX` file that you stored locally to create the necessary
 
 5. Again, deselect all entity sets except **Travel**, make sure **`ETag` Support** is selected for it, then choose **Next**.
 
-6. The same list of ABAP artefacts appears. Choose **Next**.
+6. The same list of ABAP artifacts appears. Choose **Next**.
 
 7. Accept the transport request and choose **Finish**.
 
