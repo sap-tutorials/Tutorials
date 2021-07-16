@@ -146,12 +146,12 @@ Another download location is the [Software Downloads](https://support.sap.com/en
     The command to extract a `.sar` file is shown below.  The command options are extract, verbose and file.
 
     ```Shell (Microsoft Windows Command Prompt)
-    SAPCAR.EXE -xvf IMDB_CLIENT20_008_16-80002083.SAR
+    SAPCAR_1010-70006231.EXE -xvf IMDB_CLIENT20_009_19-80002083.SAR
     ```
 
     ```Shell (Linux or Mac)
     chmod u+x SAPCAR
-    ./SAPCAR.EXE -xvf IMDB_CLIENT20_008_16-80002082.SAR
+    ./SAPCAR_1010-70006178.EXE -xvf IMDB_CLIENT20_009_19-80002082.SAR
     ```
 
     >For further information on SAPCAR or if you are having troubles using it, see [SAP HANA, SAPCAR, and macOS](https://blogs.sap.com/2020/03/18/sap-hana-sapcar-and-macos/).  
