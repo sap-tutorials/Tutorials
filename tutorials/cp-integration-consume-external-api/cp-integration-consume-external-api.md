@@ -353,10 +353,11 @@ Assign ESBMessaging.send to a user and then add the corresponding user as a cred
 
     Field     | Value  
     ------------- | -------------
-    Address       | SOAP endpoint URL of the flow created in Step 1
-    Method | __POST__
-    Authentication | __Basic__  
-    Credential Name | __User__
+    Aggregation Algorithm | Enrich
+    ORIGINAL MESSAGE - Path to Node | /orders/order
+    ORIGINAL MESSAGE - Key Element | orderID
+    LOOKUP  MESSAGE - Path to Node | /order
+    LOOKUP  MESSAGE - Key Element | orderID
 
 
 
