@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create and Initialize the Project)]
+[ACCORDION-BEGIN [Step 1: ](Create and initialize the project)]
 
 1. Open a terminal.
 
@@ -91,7 +91,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Add Files to the Project)]
+[ACCORDION-BEGIN [Step 2: ](Add Files to the project)]
 
 1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Create Directory](btp-app-create-directory).
 
