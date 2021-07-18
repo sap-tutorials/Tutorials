@@ -7,8 +7,8 @@ tags: [  tutorial>beginner, products>sap-gateway, products>sap-cloud-platform, p
 time: 15
 ---
 ## Prerequisites  
-- [Enable the SAP Cloud Platform, API Management Service](https://developers.sap.com/tutorials/hcp-apim-enable-service.html)
-- [Create an Account on the Gateway Demo System](https://developers.sap.com/tutorials/gateway-demo-signup.html)
+- [Enable the SAP Cloud Platform, API Management Service](hcp-apim-enable-service)
+- [Create an Account on the Gateway Demo System](gateway-demo-signup)
 
 ## Details
 ### You will learn  
