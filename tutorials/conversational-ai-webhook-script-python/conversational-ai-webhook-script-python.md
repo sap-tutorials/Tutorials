@@ -72,6 +72,8 @@ Create a bot that asks the user to select an animal to get a fun fact about.
     But I am only familiar with certain animals.
     ```
 
+5. Click **Train** at the top of the page.
+
 [DONE]
 [ACCORDION-END]
 
@@ -212,8 +214,14 @@ Now we will write the main part of the app, which creates the endpoints.
 
       # Get the fun fact
       url = "https://cat-fact.herokuapp.com/facts/random?animal_type=" + animal + "&amount=1"
-      r = requests.get(url)
-      fact_data = json.loads(r.content)
+      nodata = {"text" : "No data"}
+
+      # In case the API does not work after 8 seconds, we return "no data"
+      try:
+        r = requests.get(url, timeout=8)
+        fact_data = json.loads(r.content)
+      except:
+        fact_data = nodata
 
       # Increment the # of times this has been called
       if 'funfacts' in memory:
@@ -286,7 +294,7 @@ You will need your SAP BTP Cloud Foundry endpoint and org name, which you can se
     cf login
     ```
 
-3. Select your CF org.
+3. Select your CF org (if you have multiple orgs in that endpoint).
 
     ![CLI org](CLI-org.png)
 
@@ -374,3 +382,5 @@ Click on the yellow **i** icon to see the JSON of the conversation. Scroll down 
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
