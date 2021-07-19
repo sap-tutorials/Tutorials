@@ -142,7 +142,7 @@ Create a bot that asks the user to select an animal to get a fun fact about.
     Make sure to use a version currently supported by SAP BTP. At the time of the writing of this tutorial (December 2020), the version below worked.
 
     ```Text
-    python-3.8.5
+    python-3.x
     ```
 
     #### `static` (folder)
