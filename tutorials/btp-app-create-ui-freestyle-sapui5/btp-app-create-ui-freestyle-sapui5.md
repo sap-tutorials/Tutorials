@@ -27,7 +27,6 @@ To continue with this tutorial you can find the result of the previous tutorial 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](SAP Fiori elements application vs. freestyle UI5 application)]
-
 What is the difference to an SAP Fiori elements based application that you have already built in the [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements) section? As mentioned, both the freestyle app and the SAP Fiori elements app are based on SAPUI5.
 
 An SAP Fiori elements app can be thought of like a giant player built with SAPUI5 where most of the code resides outside your own development project in central components. Much of its logic comes out of the box and is controlled by metadata from your OData service.
@@ -37,11 +36,9 @@ A freestyle UI5 application, on the other hand, lives mainly in your own project
 Fortunately, you have also got a choice of several templates that get your application kick started for freestyle UI5. They copy the initial code into your project and any change necessary for the app can be done manually by you in the code.
 
 [VALIDATE_1]
-
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Creating the application)]
-
 In the next steps, you build an application using the `mitigations` part of our CAP-based service.
 
 1. Make sure that you've installed the SAPUI5 templates as described in section [Set Up Local Development using VS Code](btp-app-set-up-local-development).
@@ -120,7 +117,6 @@ In the next steps, you build an application using the `mitigations` part of our 
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Summary)]
-
 What happened here? (You can skip this and carry on with the next step **Starting the Application** if you aren't keen to know.)
 
 First, you created a new application from the work list template with a detail page based on a V4 OData service (the CAP service is V4). The result is a similar application layout like the one you have already chosen in the [Create a SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements) section. There are other templates available (a Worklist Application and a Master Detail one, both for V2 services).
@@ -150,7 +146,6 @@ The change in the `manifest.json` is to make sure that the data requests are use
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Starting the application)]
-
 1. Make sure `cds watch` is still running in the project root folder:
 
     ```Shell/Bash
@@ -258,7 +253,6 @@ The change in the `manifest.json` is to make sure that the data requests are use
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 5: ]((Optional) SAPUI5 serve)]
-
 [OPTION BEGIN [macOS/Linux]]
 
 > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
@@ -321,7 +315,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-    
+
     > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
 
 
@@ -347,7 +341,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
     npm install
     ```
 
-8. Start the application. Make sure that `cds watch` is running in another terminal:
+8. Start the application. Make sure that `cds watch` is running in another terminal in the root folder of your project:
 
     ```Shell/Bash
     ui5 serve
@@ -421,7 +415,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-    
+
     > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
 
 
@@ -453,7 +447,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
     npm install
     ```
 
-8. Start the application. Make sure that `cds watch` is running in another terminal:
+8. Start the application. Make sure that `cds watch` is running in another terminal in the root folder of your project:
 
     ```Shell/Bash
     ui5 serve
@@ -468,8 +462,8 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 
 
 [DONE]
-
 The result of this tutorial can be found in the [`cap/freestyle-ui5-app`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/freestyle-ui5-app) branch.
+
 
 [ACCORDION-END]
 ---
