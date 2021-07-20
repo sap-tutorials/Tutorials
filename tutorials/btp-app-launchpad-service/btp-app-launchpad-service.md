@@ -550,7 +550,7 @@ You have launched your `Risks` app through the SAP Launchpad service.
 
   !![Risks App](risks.png)
 
-> If you choose **Go**, you'll get an error because you haven't assigned a role collection to your user yet. We'll do it in the next tutorial.
+> If you choose **Go**, you will get an error because you haven't assigned a role collection to your user yet. We'll do it in the next tutorial.
 
 
 
