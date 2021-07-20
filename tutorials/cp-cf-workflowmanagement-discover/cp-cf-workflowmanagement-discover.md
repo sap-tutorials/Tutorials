@@ -37,10 +37,13 @@ In this tutorial, you can import a sample package with different artifacts using
 
     !![Destination screen](cp-cf-wm-discover-trialdestination.png)
 
-3. Choose the edit icon for the destination with name `WM_CF_SPACE_PROVIDER`. In the **Destination Configuration** section, enter your SAP BTP trial user password and save the changes.
+3. Search for the `WM_CF_SPACE_PROVIDER` destination, then choose the edit icon. In the **Destination Configuration** section, enter your SAP BTP trial user password and save the changes.
 
     !![Edit Destination](cp-cf-wm-discover-editdestination.png)
+
     !![Destination Password](cp-cf-wm-discover-destinationpassword.png)
+
+    Ensure to replace the dummy password that is provided upon running the booster.
     > Ensure that the credentials of the trial user that are entered in the destination do not have **Two Factor Authentication enabled**.
 
 [DONE]
