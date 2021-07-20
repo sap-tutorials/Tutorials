@@ -31,9 +31,9 @@ User can use Workflow, Business Rules, Process Visibility and Process Flexibilit
 [ACCORDION-BEGIN [Step 1: ](Open trial account)]
 1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
+2. Navigate to the trial global account by clicking **Go To Your Trial Account**.
 
-    !![Trial global account](02_Foundation20Onboarding_Home.png)
+    !![Trial global account](FoundationOnboarding_Home.png)
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region (*select the region closest to you*). Your user profile will be set up for you automatically.  
 
@@ -51,7 +51,7 @@ You will use the **Boosters** to automatically set up the workflow, business rul
 
 1. From your global account page, choose the **Boosters** from left-hand navigation. Among the available options, click **Start** of **Set up account for Workflow Management**.
 
-    !![Start Booster](startrecipe_2.png)
+    !![Start Booster](startrecipe_21.png)
 
     > If you have multiple sub-accounts, then you will get a wizard to select the sub-account where you want to setup SAP Workflow Management capabilities. In the wizard, select the Subaccount, Org and Space. Click Finish to start the Booster.
 
@@ -59,7 +59,7 @@ You will use the **Boosters** to automatically set up the workflow, business rul
 
     > It will take 4-5 minutes to complete the entire setup.
 
-    !![Recipe In Progress](startrecipe_5.png)
+    !![Recipe In Progress](startrecipe_51.png)
 
     - Wait until you see the success popup window once the booster completes successfully.
 
@@ -79,9 +79,11 @@ You will use the **Boosters** to automatically set up the workflow, business rul
 
     > - Enable **Workflow Management** subscription.
 
-    > - Create service instance for each of Business Rules, Workflow, Process Visibility and Workflow Management services.
+    > - Create service instance for each of Business Rules, Workflow, Process Visibility and Workflow Management services with service keys.
 
-    > - Create destinations with name `BUSINESS_RULES`, `BUSINESSRULES_APIHUB` and `WM_CF_SPACE_PROVIDER`. These destinations will be used while integrating business rules with workflow, importing business rules project from API Hub and importing live process content from process hub respectively.
+    > - Create multiple destinations like `BUSINESS_RULES`, `BUSINESSRULES_APIHUB`,  `WM_CF_SPACE_PROVIDER` and `bpmworkflowruntimeoauth`. These destinations will be used while integrating business rules with workflow, importing business rules project from API Hub, importing live process content from process hub and for configuring workflow with principal propagation respectively.
+
+    > - Other destinations like `bpmprocessvisibility`, `bpmrulesruntime`, `bpmworkflowmanagement` and  `bpmworkflowruntime` are service instance based destinations that can be used while configuring SAP Launchpad for Workflow Management applications.
 
     > - Add all the needed Workflow Management roles collections to your user.
 
