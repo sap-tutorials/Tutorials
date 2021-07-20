@@ -186,8 +186,8 @@ In this section, you will use **SAP Business Application Studio** to import, con
 
     !![Deploy Workflow](deployworkflow.png)
 
-    >The deployment will fail if you have not logged in to the trial account. Check in the bottom blue bar, if you have already logged in to your trial account. If it does not show organisation-name/space-name then click on the bar and follow the wizard to login to your trial account.
-    !![Login](trial-login.png)
+    >The deployment will fail if you have not logged in to the trial account. Click Function F1 to open the login wizard and follow the wizard to login to your trial account.
+    !![Login](LoginToCF.png)
 
     >A successful deployment message will be shown in the terminal once the deployment has completed successfully.
     !![View Success Messages](success-message.png)

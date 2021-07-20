@@ -53,6 +53,8 @@ You will use the **Boosters** to automatically set up the workflow, business rul
 
     !![Start Booster](startrecipe_2.png)
 
+    > If you have multiple sub-accounts, then you will get a wizard to select the sub-account where you want to setup SAP Workflow Management capabilities. In the wizard, select the Subaccount, Org and Space. Click Finish to start the Booster.
+
 2. Automated onboarding will be started with pre-configured steps.
 
     > It will take 4-5 minutes to complete the entire setup.

@@ -17,7 +17,7 @@ primary_tag: products>sap-workflow-management
 [ACCORDION-BEGIN [Step 1: ](Set up sample events for workflow)]
 First, we will import sample events & data, process these events and view them in workspace using different process visibility applications. This is mainly done to give you a demo-ready workspace with pre-filled data. Later, you will run the `employee onboarding` workflow and see the process workspace being updated automatically in real time.
 
-1. Download the events `EmployeeOnboardingEvents.json` file from [here](https://github.com/SAP-samples/cloud-process-visibility/releases/download/1.0.0/Employee_OnboardingEvents.json).
+1. Download the events `Employee_OnboardingEvents.json` file from [here](https://github.com/SAP-samples/cloud-process-visibility/releases/download/1.0.0/Employee_OnboardingEvents.json).
 
 2. In the Workflow Management Fiori launchpad, click the **Event Acquisition** tile.
 
