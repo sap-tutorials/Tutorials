@@ -21,31 +21,30 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create and Initialize the Project)]
-
+[ACCORDION-BEGIN [Step 1: ](Create and initialize the project)]
 1. Open a terminal.
 
 2. Navigate to your tutorial root directory:
 
-    ```bash
+    ```Shell/Bash
     cd <tutorial root directory>
     ```
 
 3. Switch to your tutorial app directory:
 
-    ```bash
+    ```Shell/Bash
     cd cpapp
     ```
 
 4. Create an initial CAP project by executing the command `cds init`:
 
-    ```bash
+    ```Shell/Bash
     cds init
     ```
 
 5. Open the project in VS Code:
 
-    ```bash
+    ```Shell/Bash
     code .
     ```
 
@@ -59,13 +58,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 7. In the VS Code terminal, run:
 
-    ```bash
+    ```Shell/Bash
     npm install
     ```
 
 8. In the VS Code terminal, start a CAP server:
 
-    ```bash
+    ```Shell/Bash
     cds watch
     ```
 
@@ -85,19 +84,17 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     ![CDS Watch](cdswatch.png)
 
-    The CAP server tells you that there's no model yet that it can serve. You add one in the next steps.
+    The CAP server tells you that there is no model yet that it can serve. You add one in the next step.
 
 [VALIDATE_1]
-
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Add Files to the Project)]
-
-1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Create Directory](btp-app-create-directory#download-the-tutorial).
+[ACCORDION-BEGIN [Step 2: ](Add Files to the project)]
+1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Create a Directory for Development](btp-app-create-directory).
 
 2. Open the folder `templates` and keep it open as you copy a number of files from there. For this part of the tutorial and others, it's probably best if you place it next to your VS Code instance like this:
 
-    ![Windows](codeandfinder.png)
+    !![Windows](codeandfinder.png)
 
     Alternatively, you can open it as a second folder in your VS Code project: **File** **&rarr;** **Add Folder to Workspace...**.
 
@@ -106,7 +103,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     This is the code:
 
     <!-- cpes-file db/schema.cds -->
-    ```javascript
+    ```JavaScript
     namespace sap.ui.riskmanagement;
     using { managed } from '@sap/cds/common';
       entity Risks : managed {
@@ -137,7 +134,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     The content of the file looks like this:
 
     <!-- cpes-file srv/risk-service.cds -->
-    ```javascript
+    ```JavaScript
     using { sap.ui.riskmanagement as my } from '../db/schema';
     @path: 'service/risk'
     service RiskService {
@@ -164,7 +161,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     If you now choose the `Risks` link, you only get this:
 
-    ```javascript
+    ```JavaScript
     {
         @odata.context: "$metadata#Risks",
         value: [ ]
@@ -195,13 +192,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 And that's it: You have now got a full blown OData service, which complies to the OData standard and supports the respective queries without having to code anything but the data model and exposing the service itself.
 
-> The service is completely exposed without any authentication or authorization check. You extend the service later in the tutorial [Implement Roles and Authorization Checks In CAP](btp-app-..cap-roles) with such checks.
+> The service is completely exposed without any authentication or authorization check. You extend the service later in the tutorial [Implement Roles and Authorization Checks In CAP](btp-app-cap-roles) with such checks.
 
 
 
 [DONE]
-
 The result of this tutorial can be found in the [`cap/create-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/create-service) branch.
+
 
 [ACCORDION-END]
 ---

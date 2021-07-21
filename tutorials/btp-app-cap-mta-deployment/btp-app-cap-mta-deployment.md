@@ -30,12 +30,11 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to deploy your application as Multi-Target Application (MTA) to SAP BTP, Cloud Foundry runtime
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`deployment/mta-generated`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/deployment/mta-generated) branch.
+To continue with this tutorial you can find the result of the previous tutorial in the [`cp/roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/roles) branch.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install the MTA Build Tool mbt)]
-
+[ACCORDION-BEGIN [Step 1: ](Install the MTA build tool mbt)]
 As a result of this tutorial, you have a running CAP application in the cloud based on SAP HANA. You will deploy the user interface later in the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service).
 
 The deployment is based on MTA ( *Multi-Target Application*, sometimes also called *MultiApps*) technology. The [MTA](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/d04fc0e2ad894545aebfd7126384307c.html) is a SAP-proprietary way to do deployments consisting of multiple modules that can be implemented in different technologies.
@@ -51,23 +50,25 @@ The deployment is based on MTA ( *Multi-Target Application*, sometimes also call
 
 1. Check if you have already installed the [Cloud MTA Build Tool (MBT)](https://sap.github.io/cloud-mta-build-tool/):
 
-    ```bash
+    ```Shell/Bash
     mbt --version
     ```
 
 2. If you don't get back a version number, install the **MultiApps Archive Builder**:
 
-    ```bash
+    ```Shell/Bash
     npm install -g mbt
     ```
 
-[VALIDATE_1]
+> If you encounter a problem with the installation of the MBT, install it manually by following the instructions in the [MBT documentation](https://sap.github.io/cloud-mta-build-tool/download/).
 
+
+[VALIDATE_1]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ]((For Windows) Install make Tool)]
+[ACCORDION-BEGIN [Step 2: ]((For Windows) Install make tool)]
+> ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-   > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
 The `make` tool is required by the `mbt` tool. Linux and macOS are already shipped with `make`. For Windows you can download it from the GNU Make site:
 
@@ -84,8 +85,7 @@ The `make` tool is required by the `mbt` tool. Linux and macOS are already shipp
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Install the MultiApps Cloud Foundry CLI Plugin)]
-
+[ACCORDION-BEGIN [Step 3: ](Install the MultiApps Cloud Foundry CLI plugin)]
 [OPTION BEGIN [Trial]]
 
 The [MultiApps plugin](https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/blob/master/README.md) is required to deploy an MTA archive. It needs to be available in your Cloud Foundry landscape's Cloud Foundry plugin repository. Therefore, you need to log on to your Cloud Foundry landscape.
@@ -113,28 +113,28 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 4. Set the Cloud Foundry API endpoint:
 
-    ```bash
+    ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
 
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials:
 
-    ```bash        
+    ```Shell/Bash
     cf login
     ```
 
 
 
 
-6. Check if the `MultiApps` plugin is already installed:
+6. Check if the `multiapps` plugin is already installed:
 
-    ```bash
+    ```Shell/Bash
     cf plugins
     ```
 
-7. If the `MultiApps` plugin isn't installed, install it now:
+7. If the `multiapps` plugin isn't installed, install it now:
 
-    ```bash
+    ```Shell/Bash
     cf install-plugin multiapps
     ```
 
@@ -170,28 +170,28 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 4. Set the Cloud Foundry API endpoint:
 
-    ```bash
+    ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
 
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials:
 
-    ```bash        
+    ```Shell/Bash
     cf login
     ```
 
 
 
 
-6. Check if the `MultiApps` plugin is already installed:
+6. Check if the `multiapps` plugin is already installed:
 
-    ```bash
+    ```Shell/Bash
     cf plugins
     ```
 
-7. If the `MultiApps` plugin isn't installed, install it now:
+7. If the `multiapps` plugin isn't installed, install it now:
 
-    ```bash
+    ```Shell/Bash
     cf install-plugin multiapps
     ```
 
@@ -202,8 +202,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Declare Required Node.js Version)]
-
+[ACCORDION-BEGIN [Step 4: ](Declare required Node.js version)]
 When you run your CAP application, your locally installed Node.js version is used. Cloud Foundry supports multiple Node.js major versions (like 12 and 14) and usually uses the lowest available by default. Therefore, it is important to declare which Node.js version should be used.
 
 > Node.js 14 is sufficient for this tutorial.
@@ -225,8 +224,7 @@ Open the file `package.json` and add the following snippet:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Generate MTA Deployment Descriptor (mta.yaml))]
-
+[ACCORDION-BEGIN [Step 5: ](Generate MTA deployment descriptor (mta.yaml))]
 The MTA deployment is described in the MTA Deployment Descriptor, a file called  `mta.yaml`.
 As the first step, you let the CAP server generate an initial `mta.yaml` file.
 
@@ -261,8 +259,7 @@ The resources are Cloud Foundry service instances that are automatically created
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 6: ](Exclude CSV Files from Deployment)]
-
+[ACCORDION-BEGIN [Step 6: ](Exclude CSV files from deployment)]
 In one of the first steps creating the CAP application, you have added two CSV files with test data. These files are required to pre-fill local testing with the SQLite memory. Without the files, the database would be empty after each restart.
 
 > Test files should never be deployed to an SAP HANA database as table data.
@@ -272,7 +269,7 @@ In one of the first steps creating the CAP application, you have added two CSV f
 To avoid any loss of data, you change the MTA build parameters to remove all the `CSV` files and the `hdbtabledata` that is generated by the CAP server out of the `CSV` files. Add the following line to the `mta.yaml` file:
 
 <!-- snippet mta.yaml build-parameters -->
-```YAML[6-7]
+```YAML[7-7]
 build-parameters:
   before-all:
    - builder: custom
@@ -285,12 +282,11 @@ build-parameters:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 7: ](Add Authorization and Trust Management Service (XSUAA))]
-
+[ACCORDION-BEGIN [Step 7: ](Add Authorization and Trust Management service (XSUAA))]
 The next step is to add the Authorization and Trust Management service to `mta.yaml` to allow user login, authorization, and authentication checks.
 
 <!-- snippet mta.yaml resources: cpapp-uaa -->
-```YAML[8-9,13-21]
+```YAML[8-8,12-21]
 resources:
    ...
  - name: cpapp-uaa
@@ -313,7 +309,7 @@ resources:
              - $XSAPPNAME.RiskViewer
 ```
 
-The configuration for XSUAA is read from the `xs-security.json` file that was created in the tutorial [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa#xsuaa-security-configuration).
+The configuration for XSUAA is read from the `xs-security.json` file that was created in the tutorial [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa).
 
 But in the `config` element, values can be added and overwritten.
 
@@ -334,25 +330,26 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 8: ](Build, Deploy, and Test mtar File)]
-
+[ACCORDION-BEGIN [Step 8: ](Build, deploy, and test mtar file)]
 1. Build the MTA module from the project root folder:
 
-    ```bash
+    ```Shell/Bash
     mbt build -t ./
     ```
 
     This creates a `mtar` file `cpapp_1.0.0.mtar` in the current folder (option: `-t ./`).
 
+    > In case you get the error `On Windows, this driver only supports the x64 architecture. You node process is: ia32`, check if you have installed the right version of Node.js for your operating system.
+
 2. Deploy the module to your current Cloud Foundry space:
 
-    ```bash
+    ```Shell/Bash
     cf deploy cpapp_1.0.0.mtar
     ```
 
 3. The deployment can take some minutes. After successful deployment, check if all the services have been created:
 
-    ```bash
+    ```Shell/Bash
     cf services
     ```
 
@@ -362,7 +359,7 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 
 4. Check if the apps are running:
 
-    ```bash
+    ```Shell/Bash
     cf apps
     ```
 
@@ -384,8 +381,8 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 The service expects a so called `JWT` (JSON Web Token) in the HTTP `Authorization` header that contains the required authentication and authorization information to access the service. In the next tutorial, you will deploy the SAP Fiori UIs, so that you can access your UIs from SAP Fiori Launchpad. The Launchpad will trigger the authentication flow to provide the required token to access the service.
 
 [DONE]
-
 The result of this tutorial can be found in the [`mta`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/mta) branch.
+
 
 [ACCORDION-END]
 ---

@@ -41,7 +41,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
         The following is a connection example for the SAP HANA Cloud.  
 
         ```Shell
-        hdbsql -n 69964be8-39e8-4622-9a2b-ba3a38be2f75.hana.canary-eu10.hanacloud.ondemand.com:443 -u DBADMIN -p your_password
+        hdbsql -n 3b2gf55e-4214-4bd9-adfc-f547d8e2d384.hana.trial-us10.hanacloud.ondemand.com:443 -u DBADMIN -p your_password
         ```
 
         > The HANA Cloud instance can be configured to enable applications running from outside the SAP BTP to connect.  The current setting is shown in SAP HANA Cloud Central in the screenshot below.  An example of configuring this setting is shown in [Allow connections to SAP HANA Cloud instance from selected IP addresses — using the command line](https://blogs.sap.com/2020/10/30/allow-connections-to-sap-hana-cloud-instance-from-selected-ip-addresses-using-the-command-line/).
