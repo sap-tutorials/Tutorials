@@ -1,5 +1,5 @@
 ---
-title: Create HANA Store Procedure and Expose as CAP Service Function (SAP HANA Cloud)
+title: Create HANA Stored Procedure and Expose as CAP Service Function (SAP HANA Cloud)
 description: Further combine SAP HANA Cloud native artifacts with the SAP Cloud Application Programming Model (CAP), and expose SQLScript procedures as service functions.
 time: 20
 author_name: Thomas Jung

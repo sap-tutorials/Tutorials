@@ -1,6 +1,6 @@
 ---
 title: Enable SAP BTP, Kyma Runtime
-description: Kyma itself is a runtime deployed on a Kubernetes cluster and is using all sorts of services to provide you an easy to use environment for your applications and services to run in. For example, the Kyma runtime is using `Istio` to bring a Service Mesh to you. You will learn how to enable the SAP BTP, Kyma runtime.
+description: Kyma itself is a runtime deployed on a Kubernetes cluster and is using services to provide you an environment for your applications, services and serverless functions to run in. For example, the Kyma runtime is using `Istio` to provide a Service Mesh to you for better scaling.
 time: 15
 auto_validation: true
 tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform]
@@ -17,7 +17,7 @@ primary_tag: products>sap-btp\\, kyma-runtime
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Set entitlements)]
-If the entitlement for the Kyma runtime trial has not be activated the button **Enable Kyma** will not be shown. The following steps detail the process of enabling the entitlement. In case you have the necessary entitlements set, continue with **Step 2** of this tutorial.
+If the entitlement for the Kyma runtime trial has not been activated, the button **Enable Kyma** will not be shown. The following steps detail the process of enabling the **Kyma Runtime** entitlement. In case you have the necessary entitlements set, continue with **Step 2** of this tutorial.
 
 1. In the left-hand menu, click **Entitlements**.
 
@@ -81,7 +81,7 @@ If the entitlement for the Kyma runtime trial has not be activated the button **
 
 [ACCORDION-BEGIN [Step 3: ](Assign User to Role Collection)]
 
-Once you've enabled the Kyma runtime, the last step is to assign your user the role needed to access the Kyma console UI. There are already two different role collections created for you. You just need to assign your user to one or both of these collections.
+Once you've enabled the Kyma runtime, the last step is to assign your user the role needed to access the Kyma console UI. SAP BTP Cockpit has already created two different role collections for you in the process of Kyma runtime activation. You just need to assign your user to one or both of these collections.
 
 The role collections available to you are:
 
@@ -125,9 +125,15 @@ In this tutorial, you will assign the `KymaRuntimeNamespaceAdmin` role collectio
 
 [ACCORDION-BEGIN [Step 4: ](Open Kyma runtime console UI)]
 
-Go back to the overview of your subaccount. From there, click **Link to Dashboard**.
+To open the Kyma runtime console UI, navigate to **Services > Instances and Subscriptions**. Under the **Environments** section you can find the **Kyma Environment**.
 
 !![SAP-BTP-Trial](kyma-getting-started-11.png)
+
+Click on the **Kyma Environment** row to open the detail side panel.
+
+!![SAP-BTP-Trial](kyma-getting-started-11a.png)
+
+Click on the **Go to Dashboard** to open the Kyma runtime console UI.
 
 The dashboard or Kyma console UI is your graphical playground for managing and deploying applications or services on the Kyma runtime. With the dashboard you can not only deploy or delete deployments but also manage them for scale, expose them over self-defined API Rules and much more.
 

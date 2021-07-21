@@ -45,8 +45,8 @@ Make sure that you have completed required prerequisites mentioned in this tutor
 
     | Field | Value |
     |----|----|
-    | `ID` | `com.sap.mdk.demo` |
-    | `Name` | `SAP MDK Demo App` |
+    | `ID` | com.sap.mdk.demo |
+    | `Name` | SAP MDK Demo App |
 
     !![MDK](img-2.3.png)
 
@@ -55,6 +55,7 @@ Make sure that you have completed required prerequisites mentioned in this tutor
 4. Choose **Mobile Development Kit Application** from the dropdown, select **Mobile Sample OData ESPM** to add a sample backend to your MDK app and the click **Finish**.
 
     !![MDK](img_2.4.png)
+
 
     >If you see a _Confirm Finish_ window, click **OK**.
 
@@ -81,7 +82,7 @@ Make sure that you have completed required prerequisites mentioned in this tutor
 
     | Field | Value |
     |----|----|
-    | `Destination Name` | `SampleServiceV2` |
+    | `Destination Name` | SampleServiceV2 |
     | `URL` | paste the URL from above step  |
 
     !![MDK](img_3.3.png)
@@ -120,11 +121,11 @@ MDK Web application accesses the data sources via BTP destination. You will now 
 
     | Field | Value |
     |----|----|
-    | `URL` | `Paste the URL from step#2` |
-    | `Client ID` | `paste the value from step#4`  |
-    | `Client Secret` | `paste the value from step#4`  |
-    | `Token Service URL` | `paste the URL from step#4 and make sure that URL has /oauth/token suffix at the end` |
-    | `Use Default JDK truststore` | `Select the checkbox if not selected before` |
+    | `URL` | Paste the URL from step 2 |
+    | `Client ID` | Paste the value from step 4  |
+    | `Client Secret` | Paste the value from step 4 |
+    | `Token Service URL` | Paste the URL from step 4 and add **`/oauth/token`** suffix at the end |
+    | `Use Default JDK truststore` | Select the checkbox if not selected before |
 
     !![MDK](img-4.4.png)
 

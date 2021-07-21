@@ -11,8 +11,8 @@ time: 15
 
 ## Prerequisites
 
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP BTP SDK for iOS:** Version 5.0
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
+- **SAP BTP SDK for iOS:** Version 6.0
 
 ## Details
 
@@ -37,6 +37,8 @@ In the last tutorial, you implemented the Overview Table View Controller and the
     import SAPCommon
     import SAPFoundation
     import SAPFioriFlows
+    import ESPMContainerFmwk
+    import SharedFmwk
 
     ```
 
@@ -69,9 +71,9 @@ In the last tutorial, you implemented the Overview Table View Controller and the
     let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
     // Retrieve the data service using the destinations dictionary and return it.
-    var dataService: ESPMContainer<OnlineODataProvider>? {
-        guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
-            AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+    var dataService: ESPMContainer<OfflineODataProvider>? {
+        guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOfflineODataController, let dataService = odataController.dataService else {
+            AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
             return nil
         }
         return dataService
@@ -247,7 +249,7 @@ In order to display the Charts, you're going to use the `FUIChartTitleTableViewC
           updateTable()
       }
 
-  }
+    }
 
     ```
 
@@ -347,20 +349,20 @@ In the last step, you've implemented the Table View's Data Source. The `FUIChart
     // MARK: - FUIChartViewDataSource
 
     extension CustomerDetailTableViewController: FUIChartViewDataSource {
-    func chartView(_ chartView: FUIChartView, valueForSeries seriesIndex: Int, category categoryIndex: Int, dimension dimensionIndex: Int) -> Double? {
-        return nil
+      func chartView(_ chartView: FUIChartView, valueForSeries seriesIndex: Int, category categoryIndex: Int, dimension dimensionIndex: Int) -> Double? {
+          return nil
+      }
+
+      func chartView(_ chartView: FUIChartView, numberOfValuesInSeries seriesIndex: Int) -> Int {
+          return 0
+      }
+
+      func numberOfSeries(in: FUIChartView) -> Int {
+          return 0
+      }
+
     }
-
-    func chartView(_ chartView: FUIChartView, numberOfValuesInSeries seriesIndex: Int) -> Int {
-        return 0
-    }
-
-    func numberOfSeries(in: FUIChartView) -> Int {
-        return 0
-    }
-
-}
-
+    
     ```
 
 2. Inside this extension, implement the following code and read the inline comments carefully:
