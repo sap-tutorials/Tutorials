@@ -122,7 +122,7 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
     !![Intermediate Step](4-1-intermidiate_step.png)
 
-    Click **Next**.
+    Select the **Enable API Business Hub Enterprise** checkbox. Click **Next**.
 
     !![API management](4-1-API_step.png)
 
@@ -132,8 +132,8 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
     !![Activate capabilities](4-2-Activate_capabilities.png)
 
-    The activation may take a while and you will notice the dialog shown here.
-    >**IMPORTANT**: Before you proceed to **Step 4.5**, please wait for all the capabilities to be activated.
+    The activation takes a while to complete.
+    >**IMPORTANT**: Before you proceed to **Step 5**, please wait for all the capabilities to be activated.
 
     !![Activation dialog](4-2-Activation_Dial.png)
 
@@ -149,11 +149,11 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
 [ACCORDION-BEGIN [Step 5: ](Automatically assign roles and create service instances using Booster)]
 
- In this step, you execute a booster that will assign you the necessary roles to access and use the activated capabilities, and create service instance of Process Integration.
+ In this step, you execute a booster that will assign you the necessary roles to access and use the activated capabilities, and create service instance of Process Integration Runtime.
 
  A **Booster** is a set of guided and interactive steps that enable you to select, configure, and consume services on SAP BTP to achieve a specific technical goal. In this case, the Integration Suite booster will help you with assigning roles and creating service instances.
 
- A **service instance** defines how a service of SAP BTP (in our case, the **Process Integration** service) can be called from a remote component. In the context of Cloud Integration, a service instance is the definition of an OAuth client. The service key generated out of the service instance contains credentials and other information that is required at a later step to call the integration flow.
+ A **service instance** defines how a service of SAP BTP (in our case, the **Process Integration Runtime** service) can be called from a remote component. In the context of Cloud Integration, a service instance is the definition of an OAuth client. The service key generated out of the service instance contains credentials and other information that is required at a later step to call the integration flow.
 
 1. Navigate to the overview page of your SAP BTP global account.
 

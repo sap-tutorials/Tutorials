@@ -27,7 +27,7 @@ primary_tag: products>sap-business-technology-platform
 
 [ACCORDION-BEGIN [Step 1: ](What is the btp CLI?)]
 
-The btp CLI is **an alternative to the cockpit** for users who prefer working on the command line. It consists of a client and a server. The client is installed on your computer and it interacts with SAP BTP through a server. You connect to this CLI server when you log on to your global account through the btp CLI. 
+The btp CLI is **an alternative to the cockpit** for users who prefer working on the command line. It consists of a client and a server. The client is installed on your computer and it interacts with SAP BTP through a server. You connect to this CLI server when you log on to your global account through the btp CLI.
 
 The base call to enter on the command line is `btp`.
 
@@ -95,7 +95,6 @@ btp --help
 
 Each command starts with the base call `btp`. The syntax of the command itself is very close to natural language: It starts with a verb, i.e. the *action*, followed by a *group/object* combination. So you build a command by combining `btp` with an action (let's say *list*) and a group/object combination (let's say *accounts/subaccount*):  `btp list accounts/subaccount`
 
->Note that the object is always a singular noun. Even for list commands, where you might naturally want to use a plural form.
 
 [DONE]
 [ACCORDION-END]
