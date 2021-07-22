@@ -3,7 +3,7 @@ title: Call SAP IoT APIs with Postman
 description: Use a REST client (Postman) to call SAP IoT APIs.
 auto_validation: true
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform, products>sap-analytics-cloud]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-iot-services-for-sap-btp, products>sap-business-technology-platform, products>sap-analytics-cloud]
 time: 15
 ---
 
