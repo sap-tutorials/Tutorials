@@ -197,7 +197,7 @@ Download the package for macOS and perform the following steps as described [her
 
 2. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P**) and type `shell command` to find the Shell Command: `Install 'code' command in PATH`.
 
-    ![shell command](shell_command.png)     
+    ![shell command](shell_command.png)
 
 3. Restart VS Code for the new `$PATH` value to take effect.   
 
