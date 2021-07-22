@@ -22,6 +22,9 @@ primary_tag: products>sap-business-technology-platform
 - How to upload a **promotional rule with a discount on transaction level** with the help of the SAP API Business Hub
 - How to execute a calculation request to determine the effective sales price that includes the discount on transaction level
 
+>This tutorial includes steps and screenshots based on the classic design of the SAP API Business Hub. To use the classic design, go to the upper right corner and disable the **New SAP API Business Hub** option.
+  ![Switch API Business Hub Layout](Switch API Business Hub Layout.png)
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Get to know the business scenario)]
