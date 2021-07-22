@@ -9,18 +9,18 @@ primary_tag: products>sap-workflow-management
 
 ## Details
 ### You will learn
-  - How to import and manage rules using SAP Business Rules service
+  - How to import and manage rules using Business Rules
   - How to import, build and deploy a sample workflow from SAP Business Application Studio
-  - How to create and activate a visibility scenario using SAP Process Visibility service
+  - How to create and activate a visibility scenario using Process Visibility
 
-**SAP Workflow service** helps to digitalize workflows and quickly orchestrate tasks that span people, applications, and organizations. You can enhance productivity by automating and tracking coordinated, account-able tasks – including approvals, order fulfillment, or time-sensitive partner collaboration.
+**Workflow** helps to digitalize workflows and quickly orchestrate tasks that span people, applications, and organizations. You can enhance productivity by automating and tracking coordinated, account-able tasks – including approvals, order fulfillment, or time-sensitive partner collaboration.
 
-**SAP Business Rules service** enables business users and application developers to automate their decisions and enhance their decision-making experience. It offers a simplified Fiori-based rule authoring tool and a central rule repository with various deployment options to different platforms.
+**Business Rules** enables business users and application developers to automate their decisions and enhance their decision-making experience. It offers a simplified Fiori-based rule authoring tool and a central rule repository with various deployment options to different platforms.
 
-**SAP Process Visibility service** provides visibility into processes that run in the cloud, on-premise, or in hybrid environments. Process visibility works on events. SAP or non-SAP applications (cloud or on-premise) push events into Process Visibility. These events are persisted, processed and enhanced to form end-to-end process instances with insights, which are visualized by business users in their process workspace. The insights enable business users to identify process bottlenecks, track process performance, and operational issues and act on them.
+**Process Visibility** provides visibility into processes that run in the cloud, on-premise, or in hybrid environments. Process visibility works on events. SAP or non-SAP applications (cloud or on-premise) push events into Process Visibility. These events are persisted, processed and enhanced to form end-to-end process instances with insights, which are visualized by business users in their process workspace. The insights enable business users to identify process bottlenecks, track process performance, and operational issues and act on them.
 
 ---
-In this section, you will setup business rules to identify the list of equipment to be provisioned for the newly hired employee based on their role and work location using **SAP Business Rules service**.
+In this section, you will setup business rules to identify the list of equipment to be provisioned for the newly hired employee based on their role and work location using **Business Rules capability of SAP Workflow Management**.
 
 [ACCORDION-BEGIN [Step 1: ](Configure API Business Hub destination)]
 
@@ -195,7 +195,7 @@ In this section, you will use **SAP Business Application Studio** to import, con
 [VALIDATE_1]
 [ACCORDION-END]
 
-In this section, you will create and activate a process visibility scenario to provide an out-of-box visibility into workflow using **SAP Process Visibility service**. The resulting insight helps you to track the process and focus on key business milestones so that you can actively improve the processes.
+In this section, you will create and activate a process visibility scenario to provide an out-of-box visibility into workflow using **Process Visibility capability of SAP Workflow Management**. The resulting insight helps you to track the process and focus on key business milestones so that you can actively improve the processes.
 
 [ACCORDION-BEGIN [Step 8: ](Create visibility scenario)]
 

@@ -20,9 +20,9 @@ primary_tag: products>sap-workflow-management
 - Monitor end-to-end process metrics in real time.
 
 
-By combining workflows, business rules, process visibility, live process content packages and process flexibility into a single unified offering, the service helps you increase enterprise efficiency and agility.
+By combining workflows, business rules, process visibility, live process content packages and process flexibility into a single unified offering, these capabilities help you increase enterprise efficiency and agility.
 
-User can use Workflow, Business Rules, Process Visibility and Process Flexibility services of SAP  Workflow Management to accelerate automation, simplify extensions and enhance development efficiency.
+User can use Workflow, Business Rules, Process Visibility and Process Flexibility capabilities of SAP  Workflow Management to accelerate automation, simplify extensions and enhance development efficiency.
 
 [Explore More](https://www.sap.com/products/cloud-platform/capabilities/enterprise-extensions.html)
 
@@ -87,7 +87,7 @@ You will use the **Boosters** to automatically set up the workflow, business rul
 
     > - Add all the needed Workflow Management roles collections to your user.
 
-These steps complete the setup of the workflow management services in your trial account. In the next tutorial, you will access the sample content of these different services, set them up in your account and then run to get an integrated experience.
+These steps complete the setup of the Workflow Management in your trial account. In the next tutorial, you will access the sample content of these different capabilities, set them up in your account and then run to get an integrated experience.
 
 [VALIDATE_1]
 [ACCORDION-END]
