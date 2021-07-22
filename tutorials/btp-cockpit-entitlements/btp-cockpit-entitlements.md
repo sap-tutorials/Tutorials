@@ -24,7 +24,13 @@ If you are in a global account using cloud management tools feature set A, you c
 
 If you are in a global account using the consumption-based commercial model, you can try out services for free. To do that, you have to assign the entitlements using the **free** plan if it is available.
 
-<div>Every service has its own available plans:<div>1. Go to [SAP Discovery Center](https://discovery-center.cloud.sap/) to obtain information on which plans are available. To do so, search for the name of the product you are interested in.</div><div>2. Select the tile of the product you are interested in.</div><div>3. From the available tabs, select **Pricing**. You can now see all Service Plans available (such as **Free**, **Default** / **Standard** or **Trial** service plans). As an example, see the screenshot below.</div>
+Every service has its own available plans:
+
+1. Go to [SAP Discovery Center](https://discovery-center.cloud.sap/) to obtain information on which plans are available. To do so, search for the name of the product you are interested in.
+
+2. Select the tile of the product you are interested in.
+
+3. From the available tabs, select **Pricing**. You can now see all Service Plans available (such as **Free**, **Default** / **Standard** or **Trial** service plans). As an example, see the screenshot below.
 
 !![Discovery Center](tutorial-instance-4-discovery-center.png)
 
@@ -53,7 +59,7 @@ Entitlements and quota are managed at the global account and directory levels, d
 
     A popover appears with all entitlements available for your directory/ subaccount.
 
-    ![Configure Subaccount Entitlements](subaccounts.gif)
+    !![Configure Subaccount Entitlements](subaccounts.gif)
 
 5. Select the service and then the plan you want to entitle.
 
