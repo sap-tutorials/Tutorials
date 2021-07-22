@@ -1,8 +1,8 @@
 ---
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Undeploy Your Cloud Foundry Application
-description: This tutorial shows you how to undeploy your Cloud Foundry Application.
+title: Undeploy Your Multi-Target Application (MTA)
+description: This tutorial shows you how to undeploy your Multi-Target Application (MTA) from Cloud Foundry.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
@@ -29,13 +29,12 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ## Details
 ### You will learn
 
- - How to undeploy your Cloud Foundry application
- 
+ - How to undeploy your Multi-Target Application (MTA)
+
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Undeploy your Cloud Foundry application)]
-
+[ACCORDION-BEGIN [Step 1: ](Undeploy your Multi-Target Application (MTA))]
 [OPTION BEGIN [Delete applications]]
 
 To undeploy (delete) an `mtar`, you don't need to delete the apps and the services individually. The deploy service on Cloud Foundry keeps track on the deployed `mtar` and its resources.
@@ -67,10 +66,8 @@ cf undeploy cpapp --delete-service-keys --delete-services
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Summary)]
-
-Congratulations! You have completed all tutorials. 
+Congratulations! You have completed all tutorials.
 
 [VALIDATE_1]
-
 [ACCORDION-END]
 ---
