@@ -74,9 +74,9 @@ To continue with this tutorial you can find the result of the previous tutorial 
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Prepare using SAP HANA Cloud)]
-> ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-SAP HANA Cloud service instances are not created automatically for any type of account. Therefore, you'll have to create a SAP HANA Cloud instance first, if you don't have one yet.
+SAP HANA Cloud service instances are not created automatically for any type of account. Therefore, you will have to create a SAP HANA Cloud instance first, if you don't have one yet.
 
 If you already have an SAP HANA Cloud service instance in your Cloud Foundry space **&rarr;** continue with **Use an Existing SAP HANA Cloud Service Instance**.
 

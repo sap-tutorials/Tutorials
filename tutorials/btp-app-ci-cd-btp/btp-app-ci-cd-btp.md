@@ -10,7 +10,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - You have created a GitHub repository as described in step [Create a GitHub Repository for Your Project](btp-app-create-directory)
+ - You have created a GitHub repository as described in step **Create a GitHub repository for your project** in the tutorial [Create a Directory for Development](btp-app-create-directory)
  - You have developed your CAP application and have prepared it for deployment using this collection of tutorials: [Build an Application End-to-End using CAP, Node.js and VS Code](mission.btp-application-cap-e2e)
  - You have to [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup) or use an existing SAP HANA Cloud instance
 
@@ -94,7 +94,7 @@ For more information on how to configure and run predefined pipelines for your o
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Configure your GitHub credentials)]
-   > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+   > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
 If your GitHub repository is private, configure credentials for it, so that SAP Continuous Integration and Delivery service can connect to it.
 
@@ -156,7 +156,7 @@ If your GitHub repository is private, configure credentials for it, so that SAP 
 
     !![Add repository](CICD_add_repository2.png)
 
-    > If your GitHub repository is private, enter the name of the credentials in **Repository Credentials** to access your GitHub Repository that you've already created. If your GitHub repository isn't private, leave this field empty.
+    > If your GitHub repository is private, enter the name of the credentials in **Repository Credentials** to access your GitHub Repository that you have already created. If your GitHub repository isn't private, leave this field empty.
 
 5. Choose **Add**.
 
@@ -271,7 +271,7 @@ You have now successfully created a CI/CD pipeline and deployed your application
 
 > If you'd like to add more stages to your job, for example, additional unit tests, you can configure the job in your repository instead of using the job editor of the SAP Continuous Integration and Delivery. See [Configure an SAP Cloud Application Programming Model Job in Your Repository](https://help.sap.com/viewer/SAP-Cloud-Platform-Continuous-Integration-and-Delivery/bfe48a4b12ed41868f92fa564829f752.html#loiobfe48a4b12ed41868f92fa564829f752) for more details."
 
-> In case this is your first deployment of the `cpapp` project to the SAP BTP Cloud Foundry environment, please continue with the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service). You'll need to complete the configuration before you can use the application, because this part can't be automated with CI/CD tooling.
+> In case this is your first deployment of the `cpapp` project to the SAP BTP Cloud Foundry environment, please continue with the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service).  You will need to complete the configuration before you can use the application, because this part can't be automated with CI/CD tooling.
 
 [VALIDATE_1]
 
