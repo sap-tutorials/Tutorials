@@ -277,7 +277,7 @@ modules:
 [ACCORDION-BEGIN [Step 9: ](Remove broken dependency from Risks application)]
 Remove the following two lines from `app/risks/package.json`, because they produce build issues and are not needed:
 
-```JSON[3-4]
+```JSON[3-5]
     "devDependencies": {
       ...
       "@sap/ux-ui5-tooling": "1",
