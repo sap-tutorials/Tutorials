@@ -3,10 +3,10 @@ title: Add Automated System Tests for CAP-Based Projects to Your CI/CD Pipeline
 description: Use UIVeri5 to create system tests against a CAP-based sample application. Automate your tests through a CI/CD pipeline.
 auto_validation: true
 time: 60
-tags: [ tutorial>beginner, topic>cloud, topic>user-interface, products>sap-cloud-platform]
+tags: [ tutorial>beginner, topic>cloud, topic>user-interface, products>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
-
+ 
 ## Prerequisites
 - You use [SAPUI5](https://sapui5.hana.ondemand.com/#/topic/2535ef9272064cb6bd6b44e5402d531d) in version 1.74 or higher.
 - You have installed and configured a local Git client.
@@ -28,7 +28,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
-- How to create system tests with UIVeri5 using the UI5 Test Recorder for CAP-based projects on SAP Cloud Platform
+- How to create system tests with UIVeri5 using the UI5 Test Recorder for CAP-based projects on SAP Business Technology Platform
 - How to create a CI/CD pipeline with project "Piper"
 - How to add system tests as automated steps to your CI/CD pipeline
 
@@ -112,12 +112,12 @@ In Visual Studio Code, set up and run your bookshop application.
 
     ```Shell/Bash
     cd fiori
-    cds watch
+    cds run
     ```
 
     The console output should look as follows:
 
-    ![Terminal response for the cd fiori and cds watch commands](cap_output.png)
+    ![Terminal response for the cd fiori and cds run commands](cap_output.png)
 
 8. In your project in the **EXPLORER** pane, choose **`fiori`** **→** **`app`** **→** **`admin`** **→** **`webapp`** **→** **`test`** **→** **`uiveri5`**.
 

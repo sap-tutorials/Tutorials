@@ -30,13 +30,62 @@ Node.js provides a JavaScript runtime outside of the browser and uses an asynchr
 
     > Note that the supported versions of Node.js are listed at [node sqlanywhere](https://www.npmjs.com/package/sqlanywhere).
 
-    If Node.js is not installed, download the long-term support (LTS) version 12 of Node.js from [Download Node.js](https://nodejs.org/en/download/).
+    If Node.js is not installed, on Microsoft Windows, download the long-term support (LTS) version 12 of Node.js from [Download Node.js](https://nodejs.org/en/download/).
+
+    The following command will install Node 12 on openSUSE Leap 15.2.
+
+    ```Shell (Linux)
+    sudo zypper install nodejs12
+    sudo zypper install npm
+    ```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Install additional dependencies for native compilation on Linux)]
+
+The driver requires compilation on Linux.  On Microsoft Windows, these libraries are included when the driver is downloaded from NPM.  
+
+Compilation is managed by [node-gyp](https://github.com/nodejs/node-gyp).
+
+1. Install node-gyp with the following command:
+
+    ```Shell (Linux)
+    sudo npm install -g node-gyp
+    ```
+
+2. `node-gyp` also has additional requirements.
+
+    |Dependencies|
+    |---|
+    |Python v3.6, v3.7, v3.8, or v3.9|
+    |A C/C++ compiler like [GCC](https://gcc.gnu.org/)|
+    |make|
+
+    The following commands can be used to check if the software is installed and the version:
+
+    ```Shell (Linux)
+    python3 --version
+    gcc -v
+    g++ --version
+    make -v
+    ```
+
+    The following commands will install these on openSUSE Leap 15.2.
+
+    ```Shell (Linux)
+    sudo zypper install nodejs12-devel
+    sudo zypper install python3
+    sudo zypper install gcc
+    sudo zypper install gcc-c++
+    sudo zypper install make
+    ```
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Install Node.js driver from GitHub or NPM)]
+[ACCORDION-BEGIN [Step 3: ](Install Node.js driver from NPM)]
 
 Node.js packages are available using [NPM](https://www.npmjs.com/), which is the standard package manager for Node.js.  
 
@@ -44,13 +93,16 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     ![Search for sqlanywhere](search-npm.png)  
 
-    The page for the SQL Anywhere Node.js package on NPM is shown below. Note that this same driver is common for data lake IQ and SQL Anywhere.   
+    The page for the SQL Anywhere Node.js package on NPM is shown below. Note that this same driver is used for data lake IQ and SQL Anywhere.   
 
 2. Create a folder named `node` and enter the newly created directory.
 
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\DataLakeClientsTutorial\node
     cd %HOMEPATH%\DataLakeClientsTutorial\node
+    ```
+    ```Shell (Linux)
+    mkdir -p ~/DataLakeClientsTutorial/node
     ```
 
 3. Initialize the project and install the driver from NPM.
@@ -60,9 +112,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     npm install sqlanywhere
     ```
 
-    >The driver is also available at [GitHub](https://github.com/sqlanywhere/node-sqlanywhere) and can alternatively be used as shown below. When the driver is installed from GitHub, the native libraries need to be built using [node-gyp](https://github.com/nodejs/node-gyp). Selecting native tools is an option in the Node.js setup wizard.
-
-    >![native tools](native-tools.png)
+    >The driver is also available at [GitHub](https://github.com/sqlanywhere/node-sqlanywhere) and can alternatively be used as shown below.
 
     >Download a zip of the project.
 
@@ -82,7 +132,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 4. The following command lists the Node.js modules that are now installed locally into the `DataLakeClientsTutorial\node` folder.
 
     ```Shell
-    npm list
+    npm list --depth=2
     ```
 
     ![npm list](npm-list.png)
@@ -96,8 +146,11 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 1. Open a file named `nodeQuery.js` in an editor.
 
     ```Shell (Microsoft Windows)
-    cd %HOMEPATH%\DataLakeClientsTutorial\node
     notepad nodeQuery.js
+    ```
+
+    ```Shell (Linux)
+    nano nodeQuery.js
     ```
 
 2. Add the code below to `nodeQuery.js`.
@@ -105,22 +158,24 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     ```JavaScript
     'use strict';
     const { PerformanceObserver, performance } = require('perf_hooks');
-    var t0 = performance.now();
+    var t0;
     var util = require('util');
     var datalakeIQ = require('sqlanywhere');
 
     var connOptions = {
         //Specify the connection parameters
         host: 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443',
-        uid: 'HDLAdmin',
-        pwd: 'myPWD',
+        uid: 'USER1',
+        pwd: 'Password1',
         enc: 'TLS{tls_type=rsa;direct=yes}',
     };
 
     //Synchronous  example querying a table
     var connection = datalakeIQ.createConnection();
     connection.connect(connOptions);
+
     var sql = 'select TITLE, FIRSTNAME, NAME from CUSTOMER;';
+    t0 = performance.now();
     var result = connection.exec(sql);
     console.log(util.inspect(result, { colors: false }));
     var t1 = performance.now();
@@ -150,7 +205,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     });
     ```  
 
-4. Update the `uid`, `pwd`, and `host` values in `connOptions`.
+4. Update the `host` value in `connOptions`.
 
 5. Run the app.  
 

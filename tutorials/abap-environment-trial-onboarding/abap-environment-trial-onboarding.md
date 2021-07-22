@@ -63,7 +63,6 @@ This tutorial is part of a 3-part series of SAP BTP, ABAP Environment tutorials,
     ![Select ABAP Trial](boosters3.png)
 
 6. The booster is now executed successfully.
-   **Download** the service key for later use. The service key is needed to setup the connection in ABAP Development Tools (ADT).
 
     ![Select ABAP Trial](boosters4.png)
 
@@ -98,7 +97,7 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
       ![Create ABAP cloud project](projectx12.png)
 
       Click **Next >**.
-
+ 
   4. Set your **service instance details**:                                                                                             
      - Organization: your organization
      - Space: dev

@@ -363,7 +363,7 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
         isUsageEnabled = policies.getUsagePolicy().getDataCollectionEnabled();
         uploadInterval = policies.getUsagePolicy().getUploadDataAfterDays();
         if (isUsageEnabled) {
-            UsageBroker.setDataCollectionEnabled(isUsageEnabled);
+            UsageBroker.setDataCollectionEnabled(true);
             uploadUsage();
         }
     }
@@ -389,7 +389,7 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
                 }
 
                 @Override
-                public void onError(Throwable error) {
+                public void onError(@NotNull Throwable error) {
                     // make sure to import com.sap.cloud.mobile.foundation.networking.HttpException;
                     if (error instanceof HttpException) {
                         logger.debug("Usage Upload server error: {}, code = {}",
