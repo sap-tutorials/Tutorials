@@ -21,7 +21,7 @@ First, we will import sample events & data, process these events and view them i
 
 2. In the Workflow Management Fiori launchpad, click the **Event Acquisition** tile.
 
-    >You got the workflow management application link in the last step of the setup tutorial. The link would be like:  
+    >You got the workflow management application link in the last step of the set up tutorial. The link would be like:  
 
     > `https://<subdomain>.cockpit.workflowmanagement.cfapps.<eu10 or us10>.hana.ondemand.com/cp.portal/site#Shell-home`
 

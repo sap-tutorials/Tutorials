@@ -53,11 +53,11 @@ You will use the **Boosters** to automatically set up the workflow, business rul
 
     !![Start Booster](startrecipe_21.png)
 
-    > If you have multiple sub-accounts, then you will get a wizard to select the sub-account where you want to setup SAP Workflow Management capabilities. In the wizard, select the Subaccount, Org and Space. Click Finish to start the Booster.
+    > If you have multiple sub-accounts, then you will get a wizard to select the sub-account where you want to set up SAP Workflow Management capabilities. In the wizard, select the Subaccount, Org and Space. Click Finish to start the Booster.
 
 2. Automated onboarding will be started with pre-configured steps.
 
-    > It will take 4-5 minutes to complete the entire setup.
+    > It will take 4-5 minutes to complete the entire set up.
 
     !![Recipe In Progress](startrecipe_51.png)
 
@@ -73,7 +73,7 @@ You will use the **Boosters** to automatically set up the workflow, business rul
 
     - **Close** the **Success** popup.  
 
-    > This automatic setup will do the following:
+    > This automatic set up will do the following:
 
     > - Add Business Rules, Workflow, Process Visibility and Workflow Management entitlements in your account.
 
@@ -87,7 +87,7 @@ You will use the **Boosters** to automatically set up the workflow, business rul
 
     > - Add all the needed Workflow Management roles collections to your user.
 
-These steps complete the setup of the Workflow Management in your trial account. In the next tutorial, you will access the sample content of these different capabilities, set them up in your account and then run to get an integrated experience.
+These steps complete the set up of the Workflow Management in your trial account. In the next tutorial, you will access the sample content of these different capabilities, set them up in your account and then run to get an integrated experience.
 
 [VALIDATE_1]
 [ACCORDION-END]

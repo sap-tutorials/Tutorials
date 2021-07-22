@@ -20,7 +20,7 @@ primary_tag: products>sap-workflow-management
 **Process Visibility** provides visibility into processes that run in the cloud, on-premise, or in hybrid environments. Process visibility works on events. SAP or non-SAP applications (cloud or on-premise) push events into Process Visibility. These events are persisted, processed and enhanced to form end-to-end process instances with insights, which are visualized by business users in their process workspace. The insights enable business users to identify process bottlenecks, track process performance, and operational issues and act on them.
 
 ---
-In this section, you will setup business rules to identify the list of equipment to be provisioned for the newly hired employee based on their role and work location using **Business Rules capability of SAP Workflow Management**.
+In this section, you will set up business rules to identify the list of equipment to be provisioned for the newly hired employee based on their role and work location using **Business Rules capability of SAP Workflow Management**.
 
 [ACCORDION-BEGIN [Step 1: ](Configure API Business Hub destination)]
 
@@ -51,7 +51,7 @@ To import the business rules project from API Business Hub, you need to configur
 
 1. In your web browser, open the Workflow Management application and click the **Manage Rule Projects** tile..
 
-    >You got the workflow management application link in the last step of the setup tutorial. The link would be like:  
+    >You got the workflow management application link in the last step of the set up tutorial. The link would be like:  
 
     > `https://<subdomain>.cockpit.workflowmanagement.cfapps.<eu10 or us10>.hana.ondemand.com/cp.portal/site#Shell-home`
 
@@ -68,7 +68,7 @@ To import the business rules project from API Business Hub, you need to configur
     |  Field Name     | Value
     |  :------------- | :-------------
     |  Name           | `APIHub`
-    |  Destination    | `BUSINESSRULES_APIHUB` or the name of the destination you created in the setup tutorial
+    |  Destination    | `BUSINESSRULES_APIHUB` or the name of the destination you created in the set up tutorial
 
 5. **Save** the system configuration.
 
@@ -186,7 +186,7 @@ In this section, you will use **SAP Business Application Studio** to import, con
 
     !![Deploy Workflow](deployworkflow.png)
 
-    >The deployment will fail if you have not logged in to the trial account. Click Function F1 to open the login wizard and follow the wizard to login to your trial account.
+    >The deployment will fail if you have not logged in to the trial account. Click Function F1 to open the login wizard and follow the wizard to log in to your trial account.
     !![Login](LoginToCF.png)
 
     >A successful deployment message will be shown in the terminal once the deployment has completed successfully.
@@ -201,7 +201,7 @@ In this section, you will create and activate a process visibility scenario to p
 
 1. In your web browser, open the Workflow Management application and choose **Configure Visibility Scenarios**.
 
-    >You should have gotten the workflow management application link in the last step of the setup tutorial. The link should be like this:
+    >You should have gotten the workflow management application link in the last step of the set up tutorial. The link should be like this:
 
     >`https://<subdomain>.cockpit.workflowmanagement.cfapps.<eu10 or us10>.hana.ondemand.com/cp.portal/site#Shell-home`
 
