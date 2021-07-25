@@ -3,8 +3,8 @@ title: Call an External Endpoint to Retrieve Additional Information
 description: Call an endpoint from an external system to retrieve additional information to use in your processing.
 time: 15
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform-integration-for-process-services
+tags: [ tutorial>intermediate, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
 ---
 
 ## Prerequisites
