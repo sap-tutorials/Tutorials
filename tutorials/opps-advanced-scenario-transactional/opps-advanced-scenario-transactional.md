@@ -56,7 +56,7 @@ For step-by-step instructions, go to the tutorial [Set Up SAP Omnichannel Promot
 
 [ACCORDION-BEGIN [Step 2: ](Create environments in SAP API Business Hub)]
 
-In order to continue with the next steps, you need to have already set up your trial environments for the Data Upload service, Data Access service, and Calculation service in the SAP API Business Hub. If you need guidance, have a look at step 3 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
+In order to continue with the next steps, you need to have already set up your trial environments for the Data Upload service, Data Access service, and Calculation service in the SAP API Business Hub. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 
 [DONE]
 
@@ -178,7 +178,7 @@ With this, you uploaded the promotional rule "Spend 800 Euro and get 25% off" (p
 
 [ACCORDION-BEGIN [Step 4: ](Check uploaded master data)]
 
-You can use the **Data Access** service for checking your uploaded data. If you need guidance, have a look at step 5 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
+You can use the **Data Access** service for checking your uploaded data. If you need guidance, have a look at step 4 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 
 [DONE]
 [ACCORDION-END]
