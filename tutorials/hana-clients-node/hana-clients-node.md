@@ -84,6 +84,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     ```
 
     >The `hana-client` driver contains native libraries as shown below.
+
     >![pre built libraries](prebuilt.png)
 
     >When installed using NPM, the native libraries for all available platforms are downloaded.  The following environment variable can be used to remove the other platforms reducing the size of the project.  For additional details, see [Node.js Environment Variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/2dbfa39ecc364a65a6ab0fea9c8c8bd9.html).
@@ -196,11 +197,17 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
         //As of 2.7 trace info can be directed to stdout or stderr
         //traceFile: 'stdout',
         //traceOptions: 'sql=warning',
+
         //As of SAP HANA Client 2.6, connections on port 443 enable encryption by default (HANA Cloud).
         //encrypt: 'true',  //Must be set to true when connecting to HANA as a Service
         sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
-        //Used to specify where the trust store is located.  
-        //As of SAP HANA Client 2.6 for OpenSSL connections, this can be ignored as root certificates are read from the default OS location.
+        //Used to specify where the trust store is located.
+
+        //For encrypted connections, the default crypto provider is mscrypto on Windows or openSSL on Linux or macos
+        //To use the SAP crypto provider, uncomment the below line.
+        //sslCryptoProvider: 'commoncrypto',
+
+        //As of SAP HANA Client 2.6 for OpenSSL connections, the following settings can be ignored as root certificates are read from the default OS location.
         //ssltruststore: '/home/dan/.ssl/trust.pem',
         //Alternatively provide the contents of the certificate directly (DigiCertGlobalRootCA.pem)
         //DigiCert Global Root CA: https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem used for SAP HANA cloud
