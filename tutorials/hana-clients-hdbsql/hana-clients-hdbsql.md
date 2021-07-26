@@ -55,7 +55,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 
         >---
 
-        > Connections to a HANA Cloud instance must use encryption.  The default encryption library on Windows is mscrypto and on Linux and macOS it is OpenSSL.  The following example demonstrates how one could use the SAP provided conmmoncrypto library instead of the default encryption library.  Note, this requires that the SAP Client be downloaded from the SAP Software Downloads site which includes the SAP Common Crypto library (libsapcrypto).  Note that the environment variables can also be set by running source hdbclienv.sh or hdbclienv.bat.
+        > Connections to a HANA Cloud instance must use encryption.  The default encryption library on Windows is mscrypto and on Linux and macOS it is OpenSSL.  The following example demonstrates how one could use the SAP provided conmmoncrypto library instead of the default encryption library.  Note, the following steps require that the SAP HANA Client be downloaded from the SAP Software Downloads as the download includes the SAP Common Crypto library (libsapcrypto).  Note that the environment variables can also be set by running source hdbclienv.sh or hdbclienv.bat.
 
         >```Shell (Linux or Mac)
         mkdir ~/.ssl
