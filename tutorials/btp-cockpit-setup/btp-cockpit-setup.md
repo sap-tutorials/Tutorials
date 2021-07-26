@@ -1,5 +1,5 @@
 ---
-title: Set Up a BTP Account for Tutorials
+title: Get an SAP BTP Account for Tutorials
 description: Set up an SAP Business Technology Platform account so you can do the tutorials involving SAP BTP services and applications.
 time: 5
 tags: [ tutorial>beginner, products>sap-business-technology-platform]
@@ -18,7 +18,7 @@ There are a couple of ways to do SAP BTP tutorials and to try out SAP BTP servic
 
 - A **free trial account** for SAP BTP essentially provides you (as an individual) an isolated account and subaccount, with pre-allocated service entitlements.
 
-- **Free tier** is not an account but a set of entitlement plans within a consumption-based global account for activating certain services for free. So, say, you want to try out the SAP Launchpad tutorials, but in your company's existing global account -- you could create a new subaccount, activate the SAP Launchpad service in this subaccount using the free plan, and do the tutorials.
+- **Free tier** is not an account but a set of entitlement plans within a consumption-based global account for activating certain services for free. So, say, you want to try out the SAP Launchpad tutorials, but in your company's existing global account -- you can create a new subaccount, activate the SAP Launchpad service in this subaccount using the free plan, create a service instance, and do the tutorials.
 
     A plan limits the quantity of the service that's available.  Maybe you need a lot of some service in a production subaccount, and maybe you need less for development or test.  When you assign an entitlement to a subaccount, you also select the plan for use in that subaccount as well.
 
@@ -39,14 +39,14 @@ For more information, check out the blog [Exploring BTP's New Free Tier Plans](h
 
 Some services are available to try out for free in both free-tier and a trial account, some are available free only in free trial, and some are only available with a paid license.
 
-- If a service is available in both free tier and free trial, which should you choose? The decision may come down to whether your focus is on personal learning (free trial) or a more formal company-sponsored project (free tier).  Both approaches available to you, and most existing SAP enablement content and code samples will run on both, too.
+- If a service is available in both free tier and free trial, which should you choose? The decision may come down to whether your focus is on personal learning (free trial) or a more formal company-sponsored project (free tier).  Both approaches are available to you, and most existing SAP enablement content and code samples will run on both, too.
 
 - For tutorials with services not yet on free tier, you can still use a free trial account.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](How to get/setup an account)]
+[ACCORDION-BEGIN [Step 2: ](How to set up an account)]
 
 Do one of the following:
 
@@ -56,7 +56,7 @@ Do one of the following:
 
     You will want to consider isolating your tutorial work from normal development and production activity in that global account, and isolating yourself is fairly easy: create a new subaccount. Then add appropriate free service plan entitlements to that subaccount, enable the services, and execute the tutorials there.
 
-    Depending on your company's administration policies, you might need to have an authorized BTP administrator perform those tasks for you. IN any event, instructions for these tasks are described here:
+    Depending on your company's administration policies, you might need to have an authorized BTP administrator perform those tasks for you. In any event, instructions for these tasks are described here:
 
     - [Manage Entitlements Using the Cockpit](btp-cockpit-entitlements)
 
