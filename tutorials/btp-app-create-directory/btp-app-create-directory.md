@@ -58,7 +58,7 @@ Downloading the tutorial gives you easy access to template files that are requir
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Create a GitHub repository for your project)]
-To be able to perform the steps for [CI/CD](btp-app-ci-cd-btp), you'll need a public repository. Currently, SAP Continuous Integration and Delivery supports [GitHub](https://github.com/) and [Bitbucket](https://bitbucket.org/) repositories.
+To be able to perform the steps for [CI/CD](btp-app-ci-cd-btp), you will need a public repository. Currently, SAP Continuous Integration and Delivery supports [GitHub](https://github.com/) and [Bitbucket](https://bitbucket.org/) repositories.
 
 We recommend creating a public [GitHub](https://github.com) repository to save your tutorial application because this is what the tutorial uses. This way, if you have issues with your tutorial application, you can refer to it.
 
@@ -98,7 +98,7 @@ Go to [GitHub](https://github.com/) and create a new GitHub repository.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 5: ](Copy the files to start from an example)]
-   > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+   > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
 If you don't want to start from scratch, but from a specific example of the tutorial, you can copy the required files in your project. Alternatively, you can fork the project and work on the fork.
 

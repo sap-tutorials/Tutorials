@@ -51,7 +51,7 @@ On top of open source technologies, CAP mainly adds:
 
 - Service SDK and runtimes for Node.js and Java, offering libraries to implement and consume services as well as generic provider implementations serving many requests automatically.
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](What is SAP BTP)]
@@ -62,10 +62,5 @@ SAP BTP is also constantly evolving. SAP continuously updates the services we pr
 The central point of entry to the cloud platform is the SAP BTP cockpit, where you can access your accounts and applications and manage all activities associated with them.
 
 [DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
-
-[VALIDATE_1]
 [ACCORDION-END]
 ---
