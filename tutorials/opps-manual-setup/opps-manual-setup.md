@@ -1,4 +1,6 @@
 ---
+author_name: Lena Bast
+author_profile: https://github.com/BastLena
 title: Set Up SAP Omnichannel Promotion Pricing
 description: Learn how to set up a fully-functional trial for SAP Omnichannel Promotion Pricing and how to create roles for your users.
 auto_validation: true
@@ -76,7 +78,8 @@ COS has already implemented a role collection for trial, should we do sth simila
 
 [ACCORDION-BEGIN [Step 3: ](Create service instances)]
 
-1. Navigate to your subaccount and the space in which you want to create the service instances.
+1. Navigate to your subaccount and the **space** in which you want to create the service instances.
+> To save you some clicks, do the following steps in your space. You can also do this in your subaccount but then you have to provide further information.
 
 2. In the navigation pane, choose **Services > Service Marketplace**.
 
@@ -101,7 +104,7 @@ COS has already implemented a role collection for trial, should we do sth simila
 
 1. Navigate to the space in which you have created your service instances.
 
-2. In the navigation pane, choose **Services > Service Instances**.
+2. In the navigation pane, choose **Services > Instances**.
 
 3. Select the instance you have just created.
 
@@ -119,10 +122,10 @@ After you have created the service key, click the three dot symbol **°°°** ne
 
 Your service key will look something like this:
 
-!![Service Key](v2_Service-Key.png)
+!![Service Key](v3_Service-Key.png)
 
 
-You have now successfully set up your SAP Omnichannel Promotion Pricing trial on SAP BTP. You can proceed with **Step 3** in the [basic tutorial](opps-basic-scenario) to apply a simple promotion with SAP Omnichannel Promotion Pricing to calculate the effective sales price.
+You have now successfully set up your SAP Omnichannel Promotion Pricing trial on SAP BTP. You can proceed with the [basic tutorial](opps-basic-scenario) to apply a simple promotion with SAP Omnichannel Promotion Pricing to calculate the effective sales price.
 
 [DONE]
 [ACCORDION-END]

@@ -165,7 +165,7 @@ CAP provides you with all the tools to create your data model with entities and 
     npm i -g @sap/cds-dk
     ```
 
-    This process takes some minutes installing the `cds` command that you'll use in the next steps. On macOS/Linux, you need to follow the steps as described [here](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
+    This process takes some minutes installing the `cds` command that you will use in the next steps. On macOS/Linux, you need to follow the steps as described [here](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
 
     If there's an older `@sap/cds` package already installed on your machine, you have to remove it first. You'll be instructed to do so. If you run into problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) in the CAP documentation for more details.
 
@@ -195,9 +195,11 @@ Download the package for macOS and perform the following steps as described [her
 
 1. Move VS Code from your **Download** folder to the **Applications** folder.
 
-2. Use **command** + **shift** + **P** keys to open the command palette.
+2. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P**) and type `shell command` to find the Shell Command: `Install 'code' command in PATH`.
 
-3. Type **`Install 'code' command in PATH`** and choose **Enter**.
+    ![shell command](shell_command.png)
+
+3. Restart VS Code for the new `$PATH` value to take effect.   
 
 
 [OPTION END]
@@ -258,13 +260,7 @@ SAP Fiori tools are a number of extensions for VS Code. They mainly support you 
 
 > [SAP Fiori Tools](https://help.sap.com/viewer/product/SAP_FIORI_tools/Latest/en-US)
 
-For macOS you need to install the `code` command in PATH:
-
-1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P**) and type `shell command` to find the Shell Command: `Install 'code' command in PATH`.
-
-    ![shell command](shell_command.png)  
-
-2. Restart the terminal for the new `$PATH` value to take effect.
+> For macOS you need to install the `code` command in PATH as described in the previous step on how to **Install VS Code**.
 
 You need to install the [**SAP Fiori tools - Extension Pack**](https://marketplace.visualstudio.com/items?itemName=SAPSE.sap-ux-fiori-tools-extension-pack)  extensions for VS Code:
 
