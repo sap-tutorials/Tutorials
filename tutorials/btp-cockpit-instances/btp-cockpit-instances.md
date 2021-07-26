@@ -57,12 +57,11 @@ For more information about these SAP BTP entities, see:
 
 [ACCORDION-BEGIN [Step 2: ](Find the service you want to consume)]
 
-1. All offerings that are available for consumption in your subaccount are shown as tiles.
+All offerings that are available for consumption in your subaccount are shown as tiles.
 
 Select **Services** from the filter to get only the service tiles and find the service you want to consume:
 
-
-  !![Go to Service Marketplace](for-service-offerings-1.png)
+!![Go to Service Marketplace](for-service-offerings-1.png)
 
 
 
@@ -73,7 +72,6 @@ Select **Services** from the filter to get only the service tiles and find the s
 
 1. You can get information about the selected service and the available plans.
 Click on the tile. The page expands to show instance details, such as its overview, available documentation, and service plans.
-
 
 2. Click on **Create** in the upper-right corner.
 
@@ -92,18 +90,18 @@ Click on the tile. The page expands to show instance details, such as its overvi
 
     !![Discovery Center](tutorial-instance-4-discovery-center.png)
 
-3. Depending on the service and the plan you've selected, you will be asked to add information on the **runtime environment**, **spaces**, and the **instance name**.
+4. Depending on the service and the plan you've selected, you will be asked to add information on the **runtime environment**, **spaces**, and the **instance name**.
 
-4. You can either select **Create** or proceed to the step 2 of the wizard.<div>&nbsp;</div>Some services provide additional configuration parameters to define in that step. Open the additional info next to **Configure instance parameters** to get more information about the available parameters.
+5. You can either select **Create** or proceed to the step 2 of the wizard.<div>&nbsp;</div>Some services provide additional configuration parameters to define in that step. Open the additional info next to **Configure instance parameters** to get more information about the available parameters.
 
-4. Select **Create**. If the creation was successful, the table will be updated accordingly. Once the status bar has jumped from **Processing** to **Subscribed**, you've successfully created a service instance.<div>&nbsp;</div>This process might take a moment or two.
+6. Select **Create**. If the creation was successful, the table will be updated accordingly. Once the status bar has jumped from **Processing** to **Subscribed**, you've successfully created a service instance.<div>&nbsp;</div>This process might take a moment or two.
 
 [DONE]
 [ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 5: ](Go to the Instances and Subscriptions page)]
+[ACCORDION-BEGIN [Step 4: ](Go to Instances and Subscriptions page)]
 
 After you've successfully created your service instance, you can proceed by clicking on **Services** > **Instances and Subscriptions** from the left-hand navigation bar.
 
@@ -113,7 +111,7 @@ Clicking on the instance row opens an instance overview page to the right.
 
 There, you can find more information about your instance.
 
-  !![Instance details page ](instances-and-subscriptions.png)
+!![Instance details page ](instances-and-subscriptions.png)
 
 [VALIDATE_5]
 [ACCORDION-END]
