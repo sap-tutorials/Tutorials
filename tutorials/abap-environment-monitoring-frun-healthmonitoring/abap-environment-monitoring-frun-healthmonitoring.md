@@ -1,6 +1,6 @@
 ---
 title: Monitor An SAP BTP ABAP Environment Service Using SAP Focused Run (FRUN)
-description: Configure health monitoring and real user monitoring for an SAP BTP ABAP Environment service using SAP Focused Run (FRUN)
+description: Configure health monitoring and real user monitoring for an SAP BTP ABAP Environment service using SAP Focused Run (FRUN).
 auto_validation: true
 time: 45
 tags: [ tutorial>intermediate, products>sap-btp--abap-environment ]
@@ -21,7 +21,6 @@ author_profile: https://github.com/julieplummer20
 - How to configure the use case real user monitoring  metric endpoint in the on-premise FRUN system
 
 
-### Context
 If you run SAP BTP, ABAP environment, as one part of a hybrid landscape with on-premise and cloud systems, you might already have a central monitoring and alerting infrastructure in place. For example, the service offering SAP Focused Run (FRUN) is designed specifically for businesses that need high-volume system and application monitoring, alerting, and analytics.
 
 If you use FRUN as your monitoring and alerting infrastructure, you can integrate monitoring of the ABAP environment in FRUN. Using the health monitoring in SAP Focused Run, you can also watch whether your ABAP environment is still up and running and whether any exceptional situations occurred. In addition, you can use the real-user monitoring to monitor requests coming from business users and integration monitoring to watch the communication between integrated systems.
