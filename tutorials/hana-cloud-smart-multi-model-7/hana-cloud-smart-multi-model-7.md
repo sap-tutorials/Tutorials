@@ -1,6 +1,6 @@
 ---
-title: First steps with the SAP HANA Graph Engine
-description: Learn in this tutorial how to prepare your data for the SAP HANA Cloud, SAP HANA database Graph Engine how to create a Graph Workspace.
+title: Take Your First Steps with the SAP HANA Graph Engine
+description: Learn how to prepare your data for the SAP HANA Cloud, SAP HANA database Graph Engine how to create a Graph Workspace.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-graph, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing]

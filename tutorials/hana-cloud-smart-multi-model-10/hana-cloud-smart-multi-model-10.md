@@ -1,6 +1,6 @@
 ---
 title: Calculate Isochrones and Closeness Centrality
-description: Learn in this tutorial how to use Shortest Paths One-To-All (SPOA) and Breadth First Search (BFS) functions, which allow you to calculate isochrones and closeness centrality.
+description: Learn how to use Shortest Paths One-To-All (SPOA) and Breadth First Search (BFS) functions, which allow you to calculate isochrones and closeness centrality.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-graph, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing]

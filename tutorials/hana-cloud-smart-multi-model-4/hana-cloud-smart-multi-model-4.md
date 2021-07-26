@@ -1,6 +1,6 @@
 ---
 title: Identify Relevant Networks in Spatial Data
-description: Learn in this tutorial how to identify a relevant area in your spatial data in SAP HANA Cloud, SAP HANA database.
+description: Learn how to identify a relevant area in your spatial data in SAP HANA Cloud, SAP HANA database.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-spatial, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing]

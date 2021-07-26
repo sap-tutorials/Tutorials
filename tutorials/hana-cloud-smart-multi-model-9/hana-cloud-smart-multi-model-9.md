@@ -1,6 +1,6 @@
 ---
 title: Use a Cost Function to Calculate Shortest Path
-description: Learn in this tutorial how to use a more complex cost function to calculate Shortest Paths and how to wrap this procedure into a table function to compare different paths.
+description: Learn how to use a more complex cost function to calculate shortest paths and how to wrap this procedure into a table function to compare different paths.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-graph, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing]

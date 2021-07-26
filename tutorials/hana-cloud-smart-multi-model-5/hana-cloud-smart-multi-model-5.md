@@ -1,6 +1,6 @@
 ---
-title: Visualize a Voronoi cell using a Scalable Vector Graphic
-description: Learn in this tutorial how you can visualize edges and use Voronoi cells to check parameters in an area in your spatial data in SAP HANA Cloud, HANA database.
+title: Visualize a Voronoi Cell Using a Scalable Vector Graphic
+description: Learn how you can visualize edges and use Voronoi cells to check parameters in an area in your spatial data in SAP HANA Cloud, HANA database.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-spatial, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing]

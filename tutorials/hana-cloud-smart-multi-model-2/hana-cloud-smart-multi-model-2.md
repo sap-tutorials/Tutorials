@@ -1,5 +1,5 @@
 ---
-title: Adding Planar Geometries to SAP HANA database in SAP HANA Cloud
+title: Add Planar Geometries to SAP HANA Database in SAP HANA Cloud
 description: Learn about what Spatial Reference Systems are and how to add planar geometries based on WGS84 geometries to a table in SAP HANA Cloud, SAP HANA database.
 auto_validation: true
 time: 10

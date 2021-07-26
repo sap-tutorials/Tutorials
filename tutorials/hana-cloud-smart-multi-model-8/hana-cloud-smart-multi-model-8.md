@@ -1,6 +1,6 @@
 ---
-title: Calculate Shortest Path using a GRAPH Procedure
-description: Learn in this tutorial how to use a GRAPH Procedure to calculate Shortest Paths on the Street Network.
+title: Calculate Shortest Path Using a GRAPH Procedure
+description: Learn how to use a GRAPH Procedure to calculate shortest paths on the Street Network.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-graph, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing]

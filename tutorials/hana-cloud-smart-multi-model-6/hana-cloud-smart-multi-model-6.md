@@ -1,6 +1,6 @@
 ---
-title: Connect Nodes, Centroids and Voronoi cells to POI
-description: Learn in this tutorial how you can enhance a table with POI's by adding columns that hold Voronoi cells, Centroids and Node references that can be used for calculating shortest paths between POI's.
+title: Connect Nodes, Centroids and Voronoi Cells to POI
+description: Learn how you can enhance a table with POI's by adding columns that hold Voronoi cells, Centroids and Node references that can be used for calculating shortest paths between POI's.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-spatial, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product-function>sap-hana-multi-model-processing]
