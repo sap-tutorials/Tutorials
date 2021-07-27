@@ -167,7 +167,7 @@ Since your application is running on SAP Cloud Platform Cloud Foundry, include t
 </dependency>
 ```
 
-For more information, visit the documentation of the [SAP Cloud SDK](https://sap.github.io/cloud-sdk/docs/java/getting-started/#integrate-the-sap-cloud-sdk-for-java-into-your-project).
+For more information, visit the documentation of the [SAP Cloud SDK](https://sap.github.io/cloud-sdk/docs/java/getting-started#integrate-the-sap-cloud-sdk-for-java-into-your-project).
 
 [DONE]
 [ACCORDION-END]
