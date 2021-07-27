@@ -83,11 +83,31 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     npm install @sap/hana-client
     ```
 
+    >The `hana-client` driver contains native libraries as shown below.
+
+    >![pre built libraries](prebuilt.png)
+
+    >When installed using NPM, the native libraries for all available platforms are downloaded.  The following environment variable can be used to remove the other platforms reducing the size of the project.  For additional details, see [Node.js Environment Variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/2dbfa39ecc364a65a6ab0fea9c8c8bd9.html).
+
+    >```Shell (Microsoft Windows)
+    set HDB_NODE_PLATFORM_CLEAN=1
+    npm uninstall @sap/hana-client
+    npm install @sap/hana-client
+    >```
+
+    >```Shell (Linux or Mac)
+    export HDB_NODE_PLATFORM_CLEAN=1
+    npm uninstall @sap/hana-client
+    npm install @sap/hana-client
+    >```
+
+    >---
+
     >The hana-client driver is also available from the HANA client install folder.  The install location was set during the install.
 
     >```Shell
-    >npm install C:\SAP\hdbclient\node
-    ```
+    npm install C:\SAP\hdbclient\node
+    >```
 
     >If you encounter an error about permissions, on Microsoft Windows, run or open the command prompt as an administrator, or use `sudo` on Linux or Mac.
 
@@ -177,11 +197,17 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
         //As of 2.7 trace info can be directed to stdout or stderr
         //traceFile: 'stdout',
         //traceOptions: 'sql=warning',
+
         //As of SAP HANA Client 2.6, connections on port 443 enable encryption by default (HANA Cloud).
         //encrypt: 'true',  //Must be set to true when connecting to HANA as a Service
         sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
-        //Used to specify where the trust store is located.  
-        //As of SAP HANA Client 2.6 for OpenSSL connections, this can be ignored as root certificates are read from the default OS location.
+        //Used to specify where the trust store is located.
+
+        //For encrypted connections, the default crypto provider is mscrypto on Windows or openSSL on Linux or macos
+        //To use the SAP crypto provider, uncomment the below line.
+        //sslCryptoProvider: 'commoncrypto',
+
+        //As of SAP HANA Client 2.6 for OpenSSL connections, the following settings can be ignored as root certificates are read from the default OS location.
         //ssltruststore: '/home/dan/.ssl/trust.pem',
         //Alternatively provide the contents of the certificate directly (DigiCertGlobalRootCA.pem)
         //DigiCert Global Root CA: https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem used for SAP HANA cloud
@@ -192,7 +218,19 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     //Synchronous  example querying a table
     var connection = hana.createConnection();
+
+    //As of 2.9, tracing can be directed to a callback
+    /*
+    var traceCB = function (buf) {
+        console.log(buf);
+    };
+    connection.onTrace("sql=error,debug=fatal,OutBufferSize=64k", traceCB);  
+    */
+
     connection.connect(connOptions);
+
+    //connection.onTrace("", null);  //disables callback tracing for the rest of the program
+
     var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
     var t0 = performance.now()
     var result = connection.exec(sql);
@@ -202,11 +240,12 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     connection.disconnect();
 
     //Asynchronous example calling a stored procedure
-    var connection = hana.createConnection();
+    connection = hana.createConnection();
     connection.connect(connOptions, function(err) {
         if (err) {
             return console.error(err);
         }
+        //Prepared statement example
         const statement = connection.prepare('CALL HOTEL.SHOW_RESERVATIONS(?,?)');
         const parameters = [11, '2020-12-24'];
         var results = statement.execQuery(parameters, function(err, results) {
@@ -216,12 +255,24 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
             while (results.next()) {
                 console.log(util.inspect(results.getValues(), { colors: false }));
             }
-            statement.drop();
-            connection.disconnect(function(err) {
+            results.close(function(err) {
                 if (err) {
                     return console.error(err);
-                }   
-            });
+                }
+                console.log("results.close");
+                statement.drop(function(err) {
+                    if (err) {
+                        return console.error(err);
+                    }
+                    console.log("statement.drop");
+                    return connection.disconnect(function(err) {
+                        if (err) {
+                            return console.error(err);
+                        }
+                        console.log("disconnect");
+                    });
+                });
+            });u
         });
     });
     ```  

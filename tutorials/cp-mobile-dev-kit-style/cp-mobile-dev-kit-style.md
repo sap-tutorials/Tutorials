@@ -22,7 +22,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
-![MDK](img_1.gif)
+![MDK](img-1.gif)
 
 [ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Business Application Studio)]
 
@@ -107,7 +107,8 @@ The `LESS` stylesheet provides the ability to define styling styles that can be 
     //// This style applies to all the ToolBars in the application
     ToolBar {
         color: white;
-        background-color: blue;
+        background-color: gray; /* Android */
+        bartintcolor: gray;     /* iOS */
     }
 
     //// LogoutToolbarItem is tool bar item for Logout in Main.page
@@ -117,14 +118,14 @@ The `LESS` stylesheet provides the ability to define styling styles that can be 
 
     //// UploadToolbarItem is tool bar item for Sync in Main.page
     #UploadToolbarItem  {
-        color: green;
+        color: blue;
     }
 
     //// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function
     //// below snippet is to style Customers button on Main.page
     .MyCustomerButton{
       font-color: @mdkRed1;
-      background-color: black;
+      background-color: cyan;
     }
 
     //// below snippet is to style Title property of an Object Table control in Customers_List.page
@@ -191,7 +192,7 @@ The `LESS` stylesheet provides the ability to define styling styles that can be 
     }
     ```
 
-    >By default there is a tint overlay overlay on the toolbar.  If you want a solid color toolbar that matches the action bar you need to use the `bartintcolor` property in the style instead of the background color (or in addition to). `bartintcolor: blue;`
+    >To learn more on styling, find more details in [help documentation](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Styles.less.html).
 
 3. Save your changes to the `Styles.less` file.
 

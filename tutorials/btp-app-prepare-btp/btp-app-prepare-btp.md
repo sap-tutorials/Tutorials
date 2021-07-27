@@ -29,42 +29,25 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-[OPTION BEGIN [Trial]]
-
-> ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
-
-
-You need an SAP BTP account to deploy the services and applications. 
+You need an SAP BTP account to deploy the services and applications.
 In general, you have a choice of the following options:
 
-If you just want to try out things and don't want to use any of the parts of this tutorial productively, this is probably the best option for you. The usage is free of cost and many of the services that you need are created for you. For example, an SAP HANA instance is already created for you when you set up the trial account. So, there's the least work to do when you want to concentrate on developing the actual application. This comes with some drawbacks, however. Trial accounts have a limited usage time. After a while, you have to refresh the subscription and redo all the work. Also, there are a number of things that you can't do as opposed to a full account.
+**Trial:** *(recommended)* Use a trial account if you just want to try out things and don't want to use any of the parts of this tutorial productively. The usage is free of cost and all the services that you need for this tutorial gets automatically assigned to your trial account.
 
-
-[OPTION END]
-[OPTION BEGIN [Live]]
-
-> ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
-
-
-You need an SAP BTP account to deploy the services and applications. 
-In general, you have a choice of the following options:
-
-There are multiple live landscapes in different data centers around the globe. The live landscapes are intended for live customer usage, but also development projects by customers and partners.
-
-[OPTION END]
+**Live:** There are multiple live landscapes available in different data centers around the globe. Live landscapes are intended for productive usage and development projects.
 
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Create a Trial Account)]
-
+[ACCORDION-BEGIN [Step 2: ](Create a Trial account)]
 You can [register for a trial account](https://www.sap.com/cmp/td/sap-cloud-platform-trial.html) and access it [here](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial).
 
 A global account, a subaccount, a Cloud Foundry org, and space with some entitlements that are sufficient to do this tutorial are set up for you.
 
-> If you use an existing `trial` account then service entitlements may be missing. If you encounter such situation, we suggest to delete your `trial` account and create a new one.
+> If you use an existing `trial` account then service entitlements may be missing. If you encounter such situation, we suggest deleting your `trial` account and create a new one.
 
 > New service offerings are not added to existing `trial` accounts automatically.
 
@@ -83,7 +66,6 @@ Continue with step **Log on from the Command Line** at the end of this tutorial.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Create a Live Account)]
-
 If you choose to create an account on Live, you have to select a number of services that you need to subscribe to, for example, an SAP HANA database. For each service, there are so-called `entitlements`, which are basically the service plans and the number of units that you want from each service, when you create an account you need to provide these also.
 
 The following services with their service plans and entitlements are required for the different modules of the tutorial and will be needed to create the global account and subaccount.
@@ -111,11 +93,9 @@ The following services with their service plans and entitlements are required fo
 At least the services for the tutorials [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup) and [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment) need to be entitled.
 
 [VALIDATE_1]
-
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Create a Global Account)]
-
+[ACCORDION-BEGIN [Step 4: ](Create a Global account)]
 As the result of the previous steps there will be a Cloud Foundry space with required entitlement to deploy the service. This requires the creation of an SAP BTP global account, subaccount, space, and the assignment of the required entitlements.
 
 1. Go to **SAP BTP Control Center**:
@@ -127,8 +107,7 @@ As the result of the previous steps there will be a Cloud Foundry space with req
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Enter Account Info)]
-
+[ACCORDION-BEGIN [Step 5: ](Enter account info)]
 1. Enter a global account name.
 
 2. Enter a description.
@@ -140,8 +119,7 @@ As the result of the previous steps there will be a Cloud Foundry space with req
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 6: ](Enter Business Info)]
-
+[ACCORDION-BEGIN [Step 6: ](Enter business info)]
 1. Enter the cost center number.
 
 2. Read & check the disclaimer.
@@ -151,8 +129,7 @@ As the result of the previous steps there will be a Cloud Foundry space with req
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 7: ](Assign Services)]
-
+[ACCORDION-BEGIN [Step 7: ](Assign services)]
 1. Select the services specified in the table in the previous step **Create a Live Account**.
 
 2. Choose **Next**.
@@ -160,8 +137,7 @@ As the result of the previous steps there will be a Cloud Foundry space with req
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 8: ](Set Entitlements)]
-
+[ACCORDION-BEGIN [Step 8: ](Set entitlements)]
 1. Set the entitlements from the table in the previous step **Create a Live Account**.
 
 2. Choose the **Add** button for each of them.
@@ -171,8 +147,7 @@ As the result of the previous steps there will be a Cloud Foundry space with req
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 9: ](Create Subaccount)]
-
+[ACCORDION-BEGIN [Step 9: ](Create subaccount)]
 1. Go to **SAP BTP Control Center**:
 
     [https://int.controlcenter.ondemand.com/index.html](https://controlcenter.ondemand.com/index.html)
@@ -187,7 +162,7 @@ As the result of the previous steps there will be a Cloud Foundry space with req
 
 5. Choose the **New Subaccount** button.
 
-6. To fill the **New Subaccount** dialog enter a **Display Name**.
+6. To fill the **New Subaccount** dialog, enter a **Display Name**.
 
     > Use a short name for your project and add the prefix for the landscape, for example: `<project name>-cf-eu10`. Don't select the checkbox **Neo**!
 
@@ -204,8 +179,7 @@ As the result of the previous steps there will be a Cloud Foundry space with req
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 10: ](Configure Cloud Foundry in Your Subaccount)]
-
+[ACCORDION-BEGIN [Step 10: ](Configure Cloud Foundry in your subaccount)]
 This creates a [Cloud Foundry (CF) Org](https://docs.cloudfoundry.org/concepts/roles.html#orgs) in your subaccount. There's always one Cloud Foundry org per subaccount. Later on, when you log on to Cloud Foundry, it asks you which Cloud Foundry org you want to log on to. For any development in you subaccount, you need to choose this org for your subaccount.
 
 1. Choose **Enable Cloud Foundry**.
@@ -214,13 +188,12 @@ This creates a [Cloud Foundry (CF) Org](https://docs.cloudfoundry.org/concepts/r
 
 3. (Optional) In the left navigation pane under the section **Cloud Foundry**, choose **Org Members** and add users for your new account. Your own user should already be there. You can add other users if needed and assign a role to them.
 
-4. On the left-hand pane under **Security**, choose **Administrators** and add the required security administrators. Again, your user should be pre-filled. You can add other users if needed.
+4. On the left-hand pane under **Security**, choose **Administrators** and add the required security administrators. Again, your user should be-filled. You can add other users if needed.
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 11: ](Assign Entitlements)]
-
+[ACCORDION-BEGIN [Step 11: ](Assign entitlements)]
 In this section, you assign a portion of the entitlements that you've bought for your global account to the individual subaccounts. In this, you have only one subaccount. If you have 3 subaccounts, for example, and have bought 100 units of the HTML5 service, you could assign 50 units to the first subaccount, 20 to the second, and the remaining 30 to the third subaccount.
 
 1. In your subaccount, choose **Entitlements** in the left-hand pane.
@@ -238,8 +211,7 @@ In this section, you assign a portion of the entitlements that you've bought for
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 12: ](Create a Cloud Foundry Space)]
-
+[ACCORDION-BEGIN [Step 12: ](Create a Cloud Foundry space)]
 Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org/concepts/roles.html#spaces). Each Cloud Foundry org can have 0 to n spaces, you create just one here.
 
 1. Open the subaccount page in the SAP BTP cockpit.
@@ -255,8 +227,7 @@ Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 13: ](User Assignment in the Cloud Foundry Space)]
-
+[ACCORDION-BEGIN [Step 13: ](User assignment in the Cloud Foundry space)]
 1. Open the space page in the SAP BTP cockpit (you can just choose the tile for the space that was created).
 
 2. Choose **Members** in the left navigation pane.
@@ -268,8 +239,7 @@ Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 14: ](Log on from the Command Line)]
-
+[ACCORDION-BEGIN [Step 14: ](Log on from the command line)]
 [OPTION BEGIN [Trial]]
 
 Prepare for the next steps by logging on to Cloud Foundry and targeting your space in the account.
@@ -289,7 +259,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
     !![CF Data in SAP BTP Cockpit](cfdatacloudcockpit.png)
 
-        
+
     For your convenience, this is the API endpoint for your landscape:
 
     [https://api.cf.eu10.hana.ondemand.com](https://api.cf.eu10.hana.ondemand.com)
@@ -300,7 +270,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-    
+
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials:
 
     ```Shell/Bash
@@ -308,7 +278,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-  
+
 [OPTION END]
 [OPTION BEGIN [Live]]
 
@@ -330,7 +300,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
     !![CF Data in SAP BTP Cockpit](cfdatacloudcockpit.png)
 
-        
+
     For your convenience, this is the API endpoint for your landscape:
 
     [https://api.cf.eu10.hana.ondemand.com ](https://api.cf.eu10.hana.ondemand.com)
@@ -343,7 +313,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-    
+
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials:
 
     ```Shell/Bash
@@ -351,7 +321,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-  
+
 [OPTION END]
 
 
