@@ -4,7 +4,7 @@ description: Deploy and test an SAP Edge Services project, with streaming rules 
 auto_validation: true
 time: 30
 primary_tag: topic>internet-of-things
-tags: [ tutorial>intermediate, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-usiness-technology-platform, products>sap-iot-services-for-sap-btp, products>sap-s-4hana]
+tags: [ tutorial>intermediate, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-business-technology-platform, products>sap-iot-services-for-sap-btp, products>sap-s-4hana]
 ---
 
 ## Prerequisites
