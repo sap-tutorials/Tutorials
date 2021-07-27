@@ -48,13 +48,64 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 
         > ![screenshot showing the allowlist](allowlist.png)
 
+
         >---
 
         >The SAP HANA Cloud, HANA database trial instance will be automatically stopped overnight.   That means you need to restart your instance before working with it each new day.
 
         >---
 
-        > If you are on a Linux or Mac machine and the hdbsql connection fails with the error message below, it indicates that the client could not locate a trust store in the default location.  
+        > Connections to a HANA Cloud instance must use encryption.  The default encryption library on Windows is mscrypto and on Linux and macOS it is OpenSSL.  The following example demonstrates how one could use the SAP provided conmmoncrypto library instead of the default encryption library.  Note, the following steps require that the SAP HANA Client be downloaded from the SAP Software Downloads as the download includes the SAP Common Crypto library (libsapcrypto).  Note that the environment variables can also be set by running source hdbclienv.sh or hdbclienv.bat.
+
+        >```Shell (Linux or Mac)
+        mkdir ~/.ssl
+        # Download the public root certificate used by HANA Cloud
+        wget --no-check-certificate https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem -O ~/.ssl/DigiCertGlobalRootCA.crt.pem
+        # Show the command help for the sapgenpse
+        sapgenpse -h
+        # SECDIR environment variable is required when using the commoncrypto library
+        export SECUDIR=~/sap/hdbclient
+        # macOS only
+        export DYLD_LIBRARY_PATH=~/sap/hdbclient
+        # Create a PSE (Personal Security Environment) which will be used to contain the public root certificate of the HANA Client.  
+        # Press enter twice to not provide a pin
+        sapgenpse gen_verify_pse -p "$SECUDIR/sapcli.pse"
+        >```
+
+        >```Shell (Linux or Mac)
+        # Add the certificate to the PSE
+        sapgenpse maintain_pk -p "$SECUDIR/sapcli.pse" -a ~/.ssl/DigiCertGlobalRootCA.crt.pem
+        # View the contents of the PSE
+        sapgenpse maintain_pk -p "$SECUDIR/sapcli.pse" -l
+        # Connect using the SAP commoncrypto library rather than OpenSSL.
+        hdbsql -sslprovider commoncrypto -n 3b2gf55e-4214-4bd9-adfc-f547d8e2d384.hana.trial-us10.hanacloud.ondemand.com:443 -u DBADMIN -p Hana1234
+        >```
+
+        >```Shell (Windows)
+        REM In a browser download https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt
+        REM Show the command help for the sapgenpse
+        sapgenpse -h
+        REM SECDIR environment variable is required when using the commoncrypto library
+        set SECUDIR=C:/SAP/hdbclient/
+        REM Create a PSE (Personal Security Environment) which will be used to contain the public root certificate of the HANA Client.  
+        REM Press enter twice to not provide a pin
+        sapgenpse gen_verify_pse -p "%SECUDIR%/sapcli.pse"
+        >```
+
+        >```Shell (Windows)
+        REM Add the certificate to the PSE
+        sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -a %USERPROFILE%/Downloads/DigiCertGlobalRootCA.crt.pem
+        REM View the contents of the PSE
+        sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -l
+        REM Connect using the SAP commoncrypto library rather than OpenSSL.
+        hdbsql -sslprovider commoncrypto -n 3b2gf55e-4214-4bd9-adfc-f547d8e2d384.hana.trial-us10.hanacloud.ondemand.com:443 -u DBADMIN -p Hana1234
+        >```
+
+        > For additional details see [Server Certificate Authentication](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/a95754380f4c4c05b728524f9cd652e3.html).
+
+        >---
+
+        > If you are on a Linux or Mac machine and the hdbsql connection fails with the error message below, it indicates that the OpenSSL library could not locate a trust store in the default location.  
         >
         >_Cannot create SSL context:  SSL trust store cannot be found: `/Users/user1/.ssl/trust.pem`_
 
