@@ -14,7 +14,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - (For macOS) You have to install Command-Line Tools for Xcode, cause some node modules need binary modules (`node-gyp`). There are two options to install them:
     - Using the command line: `xcode-select --install`
     - Downloading [Xcode](https://developer.apple.com/xcode/) (a login with your Apple ID and password is required). Search for `Command Line Tools for Xcode`.
- - You have to install the [CF CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)   
 
 ## Details
 
@@ -112,7 +111,9 @@ A Node.js version 14 or higher is required to install the SAPUI5 CLI. See [SAPUI
 [ACCORDION-BEGIN [Step 6: ](Install the Cloud Foundry command line interface)]
 [OPTION BEGIN [macOS]]
 
-This is needed if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the Cloud Foundry Command Line Interface (CF CLI) to deploy the services and apps to the platform. If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation.
+If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
+
+You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) needed if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
 
 1. Check whether the package manager `brew` is installed on your machine:
 
@@ -138,7 +139,9 @@ This is needed if you want to use the services and applications that you create 
 [OPTION END]
 [OPTION BEGIN [Windows]]
 
-This is needed if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the Cloud Foundry Command Line Interface (CF CLI) to deploy the services and apps to the platform. If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation.
+If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
+
+You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) needed if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
 
 Download a binary installer as described [here](https://github.com/cloudfoundry/cli#installers-and-compressed-binaries).
 
@@ -146,7 +149,9 @@ Download a binary installer as described [here](https://github.com/cloudfoundry/
 [OPTION END]
 [OPTION BEGIN [Linux]]
 
-This is needed if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the Cloud Foundry Command Line Interface (CF CLI) to deploy the services and apps to the platform. If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation.
+If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
+
+You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) needed if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
 
 Follow the steps described [here](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#pkg-linux).
 
