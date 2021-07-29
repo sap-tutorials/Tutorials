@@ -52,9 +52,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img_mdk_wizard_basic.png)
 
-    >If you see the message *"Cloud foundry token expired, continue without mobile services connection?"*, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.
-
-      ![CF Token expired](img_cf_token_expired.png)
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.
 
 5. In **Service Configuration** step, provide or select the below information and click **Next**:
 
@@ -72,15 +70,13 @@ This step includes creating the mobile development kit project in the editor.
 
     The generated application will be offline enabled in the MDK Mobile client.
 
-8. In **OData Collections** step, select all collections. Click **Finish** to complete the project creation.
+8. In **OData Collections** step, select all collections. Click **Next** to complete the project creation.
 
     !![MDK](img_template_collections.png)
 
     >In [this tutorial](cp-mobile-backend-tools-cache-db), server-side configuration for this MDK app was already done.
 
-9. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You might want to answer the upcoming prompt with `Open in New Workspace` to open the new project automatically. You should now see the `EpmCacheApp` project in the project explorer.
-
-    !![Open in new workspace](img_1.10.png)
+9. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `EpmCacheApp` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -116,7 +112,7 @@ The approach for handling the service onboarding introduced here will leverage M
 
 The procedure consists of an additional MDK Service for online communication, additional actions, modified actions and rules for controlling the flow and generating randoms.  
 
-1. Create a rule to make a app-unique `Client-Instance-ID` available to other MDK components.
+1. Create a rule to make an app-unique `Client-Instance-ID` available to other MDK components.
 
     - Right-click the folder `Rules` &rarr; select **MDK: New Rule File**.
 
