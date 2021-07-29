@@ -1,5 +1,5 @@
 ---
-title: Apply Incentives such as Coupon and Loyalty Points with SAP Omnichannel Promotion Pricing
+title: Apply Incentives (like coupon and loyalty points) with SAP Omnichannel Promotion Pricing
 description: Learn how to use SAP Omnichannel Promotion Pricing for calculating the effective sales price by applying a coupon to the transaction and adding loyalty points.
 auto_validation: true
 time: 10
