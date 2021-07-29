@@ -58,6 +58,13 @@ pip install --upgrade pip
 
 >On Linux or Mac, if you encounter permission issues, one way to solve the issue is to use `sudo` before the command.
 
+>---
+
+>On Linux, if Python is installed but pip is not, it can be installed on openSUSE using Zypper as shown below.
+
+>```Shell (Linux)
+zypper install python3-pip
+>```
 
 The repository that contains Python packages is [PyPI](https://pypi.org/) and includes a package for the SAP HANA client for Python.
 
@@ -73,7 +80,7 @@ pip install hdbcli
 >
 > ```Shell
 > cd C:\SAP\hdbclient
-> pip install hdbcli-2.8.16.zip
+> pip install hdbcli-2.9.19.zip
 > ```
 
 > ---
@@ -153,6 +160,18 @@ pip install hdbcli
     cursor = conn.cursor()
     sql_command = "select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;"
     cursor.execute(sql_command)
+    rows = cursor.fetchall()
+    for row in rows:
+        for col in row:
+            print ("%s" % col, end=" ")
+        print ("  ")
+    cursor.close()
+    print("\n")
+
+    #Prepared statement example
+    sql_command2 = "call HOTEL.SHOW_RESERVATIONS(?,?);"
+    parameters = [11, "2020-12-24"]
+    cursor.execute(sql_command2, parameters)
     rows = cursor.fetchall()
     for row in rows:
         for col in row:

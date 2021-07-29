@@ -35,7 +35,7 @@ To be able to use the functionalities of SAP Private Link service, you first nee
 
 5. To add a new service assignment, select **Add Service Plans**. You see now all the offerings available to this specific subaccount.
 
-6. Select **SAP Private Link service**, **Standard** (from Available Plans) and then **Add 1 Service Plan**.
+6. Select **SAP Private Link service**, **standard** (from Available Plans) and then **Add 1 Service Plan**.
 
     !![Add Service Plan for SAP Private Link service](private-endpoint-add-service-plan.png)
 
