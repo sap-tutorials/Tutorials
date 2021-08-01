@@ -253,7 +253,6 @@ The available fields are displayed on the left side of the screen. You can add f
 The time filter is on the right top of the screen. Don't forget to choose *Refresh*.
 
 
-
 [DONE]
 The result of this tutorial can be found in the [`cp/logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/logging) branch.
 

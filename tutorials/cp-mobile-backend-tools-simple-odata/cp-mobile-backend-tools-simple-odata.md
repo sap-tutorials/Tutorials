@@ -37,7 +37,7 @@ In this tutorial, you will rebuild a small part of the `GWSAMPLE_BASIC` OData se
 
 3. Select **View** &rarr; **Find Command**.
 
-4. Select **MBT: New OData CSDL document (metadata)** and press **Enter**.
+4. Type `MBT` and select **MBT: New OData CSDL document (metadata)** and press **Enter**.
 
     ![Command selection](img_task_new_csdl.png)
 
@@ -216,17 +216,19 @@ In the end of this step, the content of the CSDL file is linked, so you do not h
 
 4. In the input dialog, confirm the options as given in the following table:
 
-    > **Important:** Replace the application name `<subaccount>_<space>_` with a string actually representing your BTP sub account and space, e.g. `d00xxxxxtrial_dev_`:
+    > **Important:** Replace the application name `<subaccount><space>` with a string actually representing your BTP sub account and space, e.g. `d00xxxxxtrialdev`:
 
     | Prompt | Value |
     |----|----|
     | `Generate odata service for Cloud Foundry`| *Yes, Cloud Foundry* |
-    | `applicationName` | `<subaccount>_<space>_MbtEpmDemoService` |
+    | `applicationName` | `<subaccount><space>MbtEpmDemoService` |
     | `application version` | *1.0.0* |
     | `Generate odata service with Spring Boot style` | *No (Java EE style)* |
     | `Select database type` | *H2 Database* |
     | `Target folder where generate odata service` | *Keep Default* |
     | `Do you want to add MTA support` | *No* |
+
+    > Make sure to not use underscores in the application name
 
     > The selected database type will be corresponding, explicit database for the MBT OData service.  For the sake of simplicity, for this tutorial's purpose an embedded H2 database type is used, which is not supported for productive use.
 
@@ -238,7 +240,7 @@ In the end of this step, the content of the CSDL file is linked, so you do not h
 
     ![Deployment log](img_run_log.png)
 
-7. If you want your service to load test data, you can switch `TEST_MODE` to `true`. Then open the file `TestSettings.java` from your workspace at the path `src` &rarr; `main` &rarr; `java` &rarr; `com` &rarr; `sap` &rarr; `mbtepmdemo` &rarr; `TestSettings.java`.
+7. If you want your service to load test data, you can switch `TEST_MODE` to `true`. Therefore you execute task `csdl-to-war-test` or edit the variable in file `TestSettings.java` from your workspace at the path `src` &rarr; `main` &rarr; `java` &rarr; `com` &rarr; `sap` &rarr; `mbtepmdemo` &rarr; `TestSettings.java`.
 
     You can also edit the generated test data inside the folder `src` &rarr; `main` &rarr; `resources` &rarr; `test-data`. The test data is stored in the `.json` files. You will have to re-run the build task `csdl-to-war` again to reflect this change.
 
@@ -263,14 +265,16 @@ If the service shall be accessible independently and authentication is required,
 
     >In your workspace a file ``xs-security.json`` will appear that contains two basic roles: ``Everyone`` (for users) and ``ViewMetrics`` (for administrators). Use this file to create a service instance via Terminal in the next sub-step.
 
+    >If you do not find the file, try to close and re-open `tasks.json` file. This will refresh the file system cache. Then re-run the task.
+
 3. Select **Terminal** &rarr; **New Terminal** and type the following after the *$* character.
 
-    > **Important:** In the snippet below, replace ``<subaccount>_<space>_MbtEpmDemoService`` with your actual application name which is defined in ``tasks.json`` or `manifest.yml`.
+    > **Important:** In the snippet below, replace ``<subaccount><space>MbtEpmDemoService`` with your actual application name which is defined in ``tasks.json`` or `manifest.yml`.
 
-    > This will be the service instance name and should look like e.g. `d00xxxxxtrial_dev_MbtEpmDemoService-xsuaa`.
+    > This will be the service instance name and should look like e.g. `d00xxxxxtrialdevMbtEpmDemoService-xsuaa`.
 
     ```Terminal
-    cf create-service xsuaa application <subaccount>_<space>_MbtEpmDemoService-xsuaa -c xs-security.json
+    cf create-service xsuaa application <subaccount><space>MbtEpmDemoService-xsuaa -c xs-security.json
     ```
 
     ![Create XSUAA service instance from the console](img_create_xsuaa_instance.png)
@@ -315,12 +319,12 @@ If the service shall be accessible independently and authentication is required,
 
 7. Finally, the app router and XSUAA service binding need to be reflected for deployment. You can achieve this by adding them to the ``manifest.yml`` that was generated in your workspace.
 
-    - Initially, your `manifest.yml` should look like this, just having a different application **name** instead of `<subaccount>_<space>_MbtEpmDemoService`.
+    - Initially, your `manifest.yml` should look like this, just having a different application **name** instead of `<subaccount><space>MbtEpmDemoService`.
 
     ```YAML
     applications:
       - buildpack: sap_java_buildpack
-        name: <subaccount>_<space>_MbtEpmDemoService
+        name: <subaccount><space>MbtEpmDemoService
         path: target/odata-service-1.0.0.war
         env:
           TARGET_RUNTIME: tomee7
@@ -330,23 +334,23 @@ If the service shall be accessible independently and authentication is required,
 
     >**Hint:** You can indent multiple line back or forward by selecting them and pressing **(Shift + TAB)** or **(TAB)** on your keyboard.
 
-    - To bind the XSUAA service instance, add the following lines, replacing `<subaccount>_<space>_MbtEpmDemoService` with your own application name:
+    - To bind the XSUAA service instance, add the following lines, replacing `<subaccount><space>MbtEpmDemoService` with your own application name:
 
     ```YAML
         services:    
-          - <subaccount>_<space>_MbtEpmDemoService-xsuaa
+          - <subaccount><space>MbtEpmDemoService-xsuaa
     ```
 
-    - To also reflect your app router, add the following lines, adjusting the URL path to what you copied in the last sub-step. Don't forget to replace ``<subaccount>_<space>_MbtEpmDemoService`` with your actual application name in all the instance names.
+    - To also reflect your app router, add the following lines, adjusting the URL path to what you copied in the last sub-step. Don't forget to replace ``<subaccount><space>MbtEpmDemoService`` with your actual application name in all the instance names.
 
     ```YAML
-      - name: <subaccount>_<space>_MbtEpmDemoService-approuter
+      - name: <subaccount><space>MbtEpmDemoService-approuter
         path: approuter
         buildpacks:    
           - nodejs_buildpack
         memory: 128M
         services:    
-          - <subaccount>_<space>_MbtEpmDemoService-xsuaa
+          - <subaccount><space>MbtEpmDemoService-xsuaa
         env:
           destinations: >
             [
@@ -367,7 +371,7 @@ If the service shall be accessible independently and authentication is required,
       <details>
       <summary> **Click to expand** - for reference please see the following manifest file content. </summary>
 
-      - Each occurrence of `d00xxxxxtrial_dev_MbtEpmDemoService` must be replaced with your application **name**
+      - Each occurrence of `d00xxxxxtrialdevMbtEpmDemoService` must be replaced with your application **name**
 
       - The URL `https://d00xxxxxtrialdevmbtepmdemoservice.cfapps.eu10.hana.ondemand.com` must be changed to reflect your application **route**.
 
@@ -375,20 +379,20 @@ If the service shall be accessible independently and authentication is required,
     ---
     applications:
       - buildpack: sap_java_buildpack
-        name: d00xxxxxtrial_dev_MbtEpmDemoService
+        name: d00xxxxxtrialdevMbtEpmDemoService
         path: target/odata-service-1.0.0.war
         env:    
           SET_LOGGING_LEVEL: '{odata: TRACE, sap.xs.console: TRACE, sap.xs.odata: TRACE}'
           TARGET_RUNTIME: tomee7
         services:    
-          - d00xxxxxtrial_dev_MbtEpmDemoService-xsuaa
-      - name: d00xxxxxtrial_dev_MbtEpmDemoService-approuter
+          - d00xxxxxtrialdevMbtEpmDemoService-xsuaa
+      - name: d00xxxxxtrialdevMbtEpmDemoService-approuter
         path: approuter
         buildpacks:    
           - nodejs_buildpack
         memory: 128M
         services:    
-          - d00xxxxxtrial_dev_MbtEpmDemoService-xsuaa
+          - d00xxxxxtrialdevMbtEpmDemoService-xsuaa
         env:
           destinations: >
             [
