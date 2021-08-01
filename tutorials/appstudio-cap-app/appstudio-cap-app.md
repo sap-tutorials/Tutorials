@@ -21,7 +21,7 @@ author_profile: https://github.com/Paolaufer
 - How to develop business applications based on the SAP Cloud Programming Model (CAP)
 - How to run and test your application using the Run Configurations tool
 
-  The application you'll develop is a simple bookshop app that consists of a data model with three entities:
+  The application you'll develop is a simple bookshop app consisting of a data model with three entities:
 
   - Books
   - Authors
@@ -123,7 +123,7 @@ author_profile: https://github.com/Paolaufer
         author.name as author
         } excluding { createdBy, modifiedBy };
 
-        action submitOrder (book : Books.ID, amount: Integer);
+        action submitOrder (book:Books:ID, amount: Integer);
       }
 
     ```
