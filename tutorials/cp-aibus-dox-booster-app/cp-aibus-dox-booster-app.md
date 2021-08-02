@@ -19,11 +19,11 @@ primary_tag: topic>machine-learning
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
+[ACCORDION-BEGIN [Step 1: ](Go to your trial account)]
 
 1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
+2. Navigate to the trial global account by clicking **Go To Your Trial Account**.
 
     !![Trial global account](01_Foundation20Onboarding_Home.png)
 
@@ -93,9 +93,9 @@ You are now all set to [Use Machine Learning to Extract Information from Documen
 
 Do the following to access your subscription to the Document Information Extraction Trial UI, without having to run the **Set up account for Document Information Extraction** booster once again:
 
-1. Access your trial account.
+1. Go to your trial account.
 
-2. Click **Subaccounts** on the navigation side bar and select **trial** to access your subaccount.
+2. From your global account page, choose the `trial` tile to access your subaccount.
 
     !![UI application](subaccount.png)
 
@@ -103,7 +103,7 @@ Do the following to access your subscription to the Document Information Extract
 
     !![UI application](subscriptions.png)
 
-4. Look for **Document Information Extraction Trial UI** under **Subscriptions** and click the arrow on the right to access it.
+4. Search for **Document Information Extraction Trial UI** under **Subscriptions** and click the arrow on the right to access it.
 
     !![UI application](subscriptions-tile.png)
 

@@ -2,18 +2,18 @@
 title: Protect Your API Proxy by Adding Application Key Verification
 description: Protect your API Proxy with a first simple policy -- the Verify API Key policy.
 auto_validation: true
-primary_tag: products>sap-api-management
-tags: [  tutorial>beginner, topic>cloud, topic>security, products>sap-cloud-platform, products>sap-api-management ]
+primary_tag: products>sap-integration-suite
+tags: [  tutorial>beginner, topic>cloud, topic>security, products>sap-business-technology-platform, products>sap-api-management ]
 time: 20
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Add the API Proxy to a product](https://developers.sap.com/tutorials/hcp-apim-create-product.html)
+- **Tutorials:** [Add the API Proxy to a product](hcp-apim-create-product)
 
 
 ## Details
 ### You will learn  
-SAP Cloud Platform, API Management offers several out of the box policies which help you protect, model and "work" with your APIs. One of the security related Policies is the "Verify API Key" Policy.
+SAP Integration Suite, API Management offers several out of the box policies which help you protect, model and "work" with your APIs. One of the security related Policies is the "Verify API Key" Policy.
 
 In this tutorial you will learn how to protect your API Proxy with the "Verify API Key" Policy. This policy allows you to add a simple protection via a so called API Key. Only calls which send a valid API Key along with the main request will be allowed to call the API Proxy.
 
@@ -55,9 +55,9 @@ You will look at [assigning multiple policies to various processing stages](http
 
 [ACCORDION-BEGIN [Step 5: ](Access the SAP API Management API Portal)]
 
-Open the SAP API Management API Portal (you can get the URL from Enable the SAP Cloud Platform, API Management Service).
+Open the SAP API Management API Portal (you can get the URL from Enable the SAP Integration Suite, API Management Service).
 
-![Access the API Portal](01-access_api_portal.png)
+![Access the API Portal](01-access_api_portal_cf.png)
 
 [DONE]
 
@@ -67,7 +67,7 @@ Open the SAP API Management API Portal (you can get the URL from Enable the SAP 
 
 From the **Hamburger Menu** in the upper left corner and click on **Develop**.
 
-![Click on Develop](02-manage.png)
+![Click on Develop](02-manage-cf.png)
 
 [DONE]
 
@@ -77,7 +77,7 @@ From the **Hamburger Menu** in the upper left corner and click on **Develop**.
 
 Select the API `GWSAMPLE_BASIC` created in a previous step in the this tutorial series.
 
-![Select the GWSAMPLE_BASIC Proxy](03-GWSAMPLE.png)
+![Select the GWSAMPLE_BASIC Proxy](03-GWSAMPLE-cf.png)
 
 [DONE]
 
@@ -87,7 +87,7 @@ Select the API `GWSAMPLE_BASIC` created in a previous step in the this tutorial 
 
 In the upper right corner click on **Policies** to open the policy information for the API.
 
-![Select policies on API page](04-Policies.png)
+![Select policies on API page](04-Policies-cf.png)
 
 [DONE]
 
@@ -97,7 +97,7 @@ In the upper right corner click on **Policies** to open the policy information f
 
 In the Policy Editor, click on **Edit**.
 
-![Click on Edit](05-Designer-Edit.png)
+![Click on Edit](05-Designer-Edit-cf.png)
 
 [DONE]
 
@@ -107,7 +107,7 @@ In the Policy Editor, click on **Edit**.
 
 Select the `PreFlow` from the `ProxyEndpoint` on the left hand side.
 
-![Select pre-flow](06-Preflow.png)
+![Select Pre-flow](06-Preflow-cf.png)
 
 [DONE]
 
@@ -117,7 +117,7 @@ Select the `PreFlow` from the `ProxyEndpoint` on the left hand side.
 
 On the right hand, find the **Security Policies** section under the _Policies_ pane. Find the **Verify API Key** policy and click the **+** next to the policy name.
 
-![Add Verify API Key policy](07-VerifyAPI.png)
+![Add Verify API Key policy](07-VerifyAPI-cf.png)
 
 [DONE]
 
@@ -127,7 +127,7 @@ On the right hand, find the **Security Policies** section under the _Policies_ p
 
 Enter the Policy Name `CheckAPIKey` and click on **Add**.
 
-![Enter CheckAPIKey](08-AddPolicy.png)
+![Enter CheckAPIKey](08-AddPolicy-cf.png)
 
 [DONE]
 
@@ -137,7 +137,7 @@ Enter the Policy Name `CheckAPIKey` and click on **Add**.
 
 In the **Code Editor** found in the bottom pane, look for the `<APIKey ... />` tag. Replace the string `variable_containing_api_key` with `request.header.APIKey`.
 
-![Adjust the policy](09-RequestHeader.png)
+![Adjust the policy](09-RequestHeader-cf.png)
 
 [DONE]
 
@@ -147,11 +147,11 @@ In the **Code Editor** found in the bottom pane, look for the `<APIKey ... />` t
 
 Click on **Update** to apply the new policies.
 
-![Click on Update](10-Update.png)
+![Click on Update](10-Update-cf.png)
 
 Click on **Save** to save the changes to the API and enforce the new policies.
 
-![Click on Save](11-Save.png)
+![Click on Save](11-Save-cf.png)
 
 [DONE]
 

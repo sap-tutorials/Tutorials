@@ -106,7 +106,6 @@ The new role collection appears now in the list, but it doesn't contain any role
 7. Choose **Save**.
 
 
-
 [DONE]
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
