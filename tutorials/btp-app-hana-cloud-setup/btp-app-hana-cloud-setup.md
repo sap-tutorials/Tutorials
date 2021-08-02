@@ -30,59 +30,53 @@ To continue with this tutorial you can find the result of the previous tutorial 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add SAP HANA Client to Your Project)]
+[ACCORDION-BEGIN [Step 1: ](Add SAP HANA client and configuration to your project)]
+1. Add SAP HANA support to your project by running:
 
-The SAP HANA `hdb` npm module needs to be added to our package to support SAP HANA. In your project folder execute:
+    ```Shell/Bash
+    cds add hana
+    ```
 
-```Shell/Bash
-npm install hdb
-```
+    This adds the `hdb` module for SAP HANA access to your `package.json` file and will configure kind `sql` as the database service.
 
-The CAP application will still use SQLite in-memory database for local testing, while the SAP HANA database should be used "productively" in the cloud.
-
-[VALIDATE_1]
-
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 2: ](Switch to hdbtable Deployment)]
-
-By default, the deployment uses the `hdbcds` as deployment format. However, this isn't supported for SAP HANA Cloud and the configuration needs to be changed to use the `hdbtable` and `hdbview` format.
-
-1. Add the following snippet at the end of your `package.json` in your `cpapp` project:
+    Changes in the `package.json` file done by `cds add hana`:
 
     <!-- cpes-file package.json:$.cds -->
     ```JSON[4-13]
     {
-      "name": "cpapp",
-      ...
-      "cds": {
+        "name": "cpapp",
+        ...
+        "cds": {
         "requires": {
-          "db": {
+            "db": {
             "kind": "sql"
-          }
+            }
         },
         "hana": {
-          "deploy-format": "hdbtable"
+            "deploy-format": "hdbtable"
         }
-      }
+        }
     }
     ```
+
+    Different to CAP default behavior, kind `sql` uses the SQLite in-memory database for local testing and the SAP HANA database for productive usage in the cloud.
+
+    The `deploy-format` setting is required to create the required artifacts for SAP HANA Cloud in the build which are different from the artifacts for the previous SAP HANA offering.
 
     > Additional Documentation:
 
     > - [Using Databases](https://cap.cloud.sap/docs/guides/databases#get-hana)
     > - [CAP Configuration](https://cap.cloud.sap/docs/node.js/cds-env)
 
-2. Run `cds watch` and check that your app still works locally as it used to work before at <http://localhost:4004/>.
+2. Run `cds watch` in your project folder and check that your app still works locally as it used to work before at <http://localhost:4004/>.
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Prepare Using SAP HANA Cloud )]
+[ACCORDION-BEGIN [Step 2: ](Prepare using SAP HANA Cloud)]
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-> ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
-
-SAP HANA Cloud service instances are not created automatically for any type of account. Therefore, you'll have to create a SAP HANA Cloud instance first, if you don't have one yet.
+SAP HANA Cloud service instances are not created automatically for any type of account. Therefore, you will have to create a SAP HANA Cloud instance first, if you don't have one yet.
 
 If you already have an SAP HANA Cloud service instance in your Cloud Foundry space **&rarr;** continue with **Use an Existing SAP HANA Cloud Service Instance**.
 
@@ -96,8 +90,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Use an Existing SAP HANA Cloud Service Instance)]
-
+[ACCORDION-BEGIN [Step 3: ](Use an existing SAP HANA Cloud service instance)]
 [OPTION BEGIN [Trial]]
 
 1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
@@ -171,8 +164,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Create an SAP HANA Cloud Service Instance)]
-
+[ACCORDION-BEGIN [Step 4: ](Create an SAP HANA Cloud service instance)]
 [OPTION BEGIN [Trial]]
 
 1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
@@ -224,7 +216,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     !![SAP HANA Cloud Instance Created](hana_cloud_created.png)
 
-    > Your SAP HANA Cloud instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day, before you start working with your trial.
+    > Your SAP HANA Cloud instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day before you start working with it.
 
 
 [OPTION END]
@@ -279,15 +271,15 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     !![SAP HANA Cloud Instance Created](hana_cloud_created.png)
 
-    > Your SAP HANA Cloud instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day, before you start working with your trial.
+    > Your SAP HANA Cloud instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day before you start working with it.
 
 
 [OPTION END]
 
 
 [DONE]
-
 The result of this tutorial can be found in the [`cp/hana`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/hana) branch.
+
 
 [ACCORDION-END]
 ---

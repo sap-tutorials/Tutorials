@@ -296,7 +296,7 @@ The statement library contains a mix of pre-populated system statements and user
 
     ![Show Statement Library](ShowStatementLibrary.png)
 
-4. In the statement library there are two types of statements:  user-defined and system. This is shown in the Type column. User-defined statements are statements that you have created and added, like Future check-ins, while system statements are already created and added to the library. System statements are often used for monitoring and diagnostic purposes.
+4. In the statement library there are two types of statements:  user-defined and system. This is shown in the Type column. User-defined statements are statements that you have created and added, like All Future Check-ins, while system statements are already created and added to the library. System statements are often used for monitoring and diagnostic purposes.
 
     ![Statement Library](StatementLibrary.png)
 
