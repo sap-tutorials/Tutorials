@@ -4,7 +4,7 @@ description: Create a business rules project to determine the equipment for a ne
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
-primary_tag: products>sap-business-rules-service
+primary_tag: products>business-rules
 author_name: Vandana Vasudevan
 author_profile: https://github.com/VandanaVasudevan
 ---

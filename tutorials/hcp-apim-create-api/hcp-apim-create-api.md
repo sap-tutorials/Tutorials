@@ -1,22 +1,22 @@
 ---
 title: Create an API Proxy
-description: Learn how SAP Cloud Platform, API Management can leverage the OData catalog service to retrieve relevant information from a SAP Gateway system and pre-populate required information for an API proxy.
+description: Learn how SAP Integration Suite, API Management can leverage the OData catalog service to retrieve relevant information from a SAP Gateway system and pre-populate required information for an API proxy.
 auto_validation: true
-primary_tag: products>sap-api-management
-tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-api-management, products>sap-cloud-platform, products>sap-gateway ]
+primary_tag: products>sap-integration-suite
+tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-integration-suite, products>sap-gateway ]
 time: 15
 ---
 ## Prerequisites  
-- **Tutorials:**  [Create an API Provider System](https://developers.sap.com/tutorials/hcp-apim-create-provider.html)
+- **Tutorials:**  [Create an API Provider System](hcp-apim-create-provider)
 
 ## Details
 ### You will learn  
-SAP Cloud Platform, API Management uses three main components to expose APIs.
+SAP Integration Suite, API Management uses three main components to expose APIs.
 - The API Provider is used to abstract the connection to the backend / target system
 - The API Proxy is the actual API which contains the logic to connect to the target system. Here you can model the flow, add security policies, transform the incoming message or look for content injections
-- The API Product which bundles one or more API Proxies before they are exposed in the API Developer portal so they can be consumed by a developer
+- The API Product which bundles one or more API Proxies before they are exposed in the API Business Hub Enterprise so they can be consumed by a developer
 
-In this tutorial you will learn how to create an API Proxy based on the API Provider created in the previous step. You will learn how SAP Cloud Platform, API Management can leverage the OData catalog service to retrieve relevant information from a SAP Gateway system and pre-populate required information for the API Proxy
+In this tutorial you will learn how to create an API Proxy based on the API Provider created in the previous step. You will learn how SAP Integration Suite, API Management can leverage the OData catalog service to retrieve relevant information from a SAP Gateway system and pre-populate required information for the API Proxy
 
 ---
 
@@ -29,9 +29,10 @@ In this tutorial you will learn how to create an API Proxy based on the API Prov
 
 [ACCORDION-BEGIN [Step 2: ](Access the SAP API Management API Portal)]
 
-Open the SAP API Management API Portal (you can get the URL from enabling the SAP Cloud Platform, API Management service).
+Open the **API Management, API Portal** (you can get the URL from Integration Suite Launchpad, click on Design Develop, and Manage APIs).
 
-![Access API Portal](01-access_api_portal.png)
+![Open SAP API Management API Portal](01-access_api_portal_cf.png)
+
 
 [DONE]
 [ACCORDION-END]
@@ -40,7 +41,7 @@ Open the SAP API Management API Portal (you can get the URL from enabling the SA
 
 From the Home screen under the Quick Actions tile, click on **API**. This will bring up the Create API wizard.
 
-![Click on API](02-API.png)
+![Click on API](02-API-cf.png)
 
 [DONE]
 
@@ -49,13 +50,13 @@ From the Home screen under the Quick Actions tile, click on **API**. This will b
 [ACCORDION-BEGIN [Step 4: ](View and create APIs)]
 To view your APIs that you have previously created, select from the **Hamburger Menu** in the upper left corner and click **Develop**.
 
-![Click on Develop](03-manage.png)
+![Click on Develop](03-manage-cf.png)
 
 This will open the list of previously created APIs.
 
 To create a new API from this page, click **Create**.
 
-![Click on Create](04-CreateAPI.png)
+![Click on Create](04-CreateAPI-cf.png)
 
 [DONE]
 
@@ -65,7 +66,7 @@ To create a new API from this page, click **Create**.
 
 From the drop-down select the `SAPDeveloperSystemES5` API Provider created in the previous tutorial.
 
-![Select Provider System](05-API_Provider.png)
+![Select Provider System](05-API_Provider-cf.png)
 
 [DONE]
 
@@ -75,7 +76,7 @@ From the drop-down select the `SAPDeveloperSystemES5` API Provider created in th
 
 Click on **Discover**.
 
-![Click on Discover](06-Discover.png)
+![Click on Discover](06-Discover-cf.png)
 
 [DONE]
 
@@ -87,7 +88,7 @@ Select the `GWSAMPLE_BASIC` services by using the search bar to search for _samp
 
 > You can use the Search to narrow down the list.
 
-![Select the GWSAMPLE_BASIC service](07-Sample-OK.png)
+![Select the GWSAMPLE_BASIC service](07-Sample-OK-cf.png)
 
 Click on **OK**.
 
@@ -95,17 +96,17 @@ The remaining fields from the API Proxy creation screen are populated. Click **C
 
 > In the trial version, there is only 1 option for the Host Alias which is your default trial account. Leave this as is.
 
-![Click on Create](08-Create.png)
+![Click on Create](08-Create-cf.png)
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Save and deploy your API)]
+[ACCORDION-BEGIN [Step 8: ](Save your API)]
 
-Click on **Save and Deploy**.
+Click on **Save**.
 
-![Click on Save and Deploy](09-SaveAndDeploy.png)
+![Click on Save](09-Save-cf.png)
 
 [DONE]
 
@@ -113,13 +114,15 @@ Click on **Save and Deploy**.
 
 [ACCORDION-BEGIN [Step 9: ](View APIs created)]
 
+Status of the API Proxy is **Not Deployed** as we have not deployed the API
+
 Click on the arrow next to **Create API** to go back to the overview page
 
-![Go back to Overview](10-GoBackToOverview.png)
+![Go back to Overview](10-GoBackToOverview-cf.png)
 
 A new API Proxy has been created
 
-![API Proxy has been created](11-Overview.png)
+![API Proxy has been created](11-Overview-cf.png)
 
 [DONE]
 
@@ -129,7 +132,7 @@ A new API Proxy has been created
 
 Click on action button from right side and select **Deploy**
 
-![Deploy Proxy](12-Deployproxy.png)
+![Deploy Proxy](12-Deployproxy-cf.png)
 
 API proxy is deployed.
 
@@ -140,15 +143,15 @@ API proxy is deployed.
 [ACCORDION-BEGIN [Step 11: ](Test your API Proxy)]
 
 To Test your API proxy, navigate to **Test** from navigation bar.
-![Navigate Test](13-Navtest.png)
+![Navigate Test](13-Navtest-cf.png)
 
 Select your API and provide the user name and password and click **OK**.
 
-![Test Authentication](14-Testauth.png)
+![Test Authentication](14-Testauth-cf.png)
 
 Click on Send.
 
-![Get Request](15-Send.png)
+![Get Request](15-Send-cf.png)
 
 You should get the response.
 
