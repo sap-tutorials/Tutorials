@@ -63,11 +63,12 @@ The btp CLI is the CLI for working with global accounts on SAP BTP. You use the 
 
 [ACCORDION-BEGIN [Step 4: ](Download and install the CLI client)]
 
-Go to the <a href="https://tools.hana.ondemand.com/#cloud-btpcli">SAP Development Tools</a> page to download the latest version of the CLI client for your operating system. Unpack the archive and copy the client file (there is only one file inside, for example, `btp.exe`) to your local system. Make sure that you have read and write permissions in the target folder to run the executable.
-
-In Windows, open the command line to the directory where the client file is located and enter `btp`. For example, you can open the folder and type `cmd` into the address bar.
-
-If you are using macOS, make sure that the client file is in your PATH and open a terminal session. Note that btp CLI may be blocked because it is "from an unidentified developer". Please refer to the macOS documentation to learn how to bypass this.
+1. Go to the <a href="https://tools.hana.ondemand.com/#cloud-btpcli">SAP Development Tools</a> page to download the latest version of the CLI client for your operating system.
+2. Extract the client executable from the tar.gz archive as follows:
+    - Linux: Use the terminal to extract the tar.gz archive with `tar -vxzf <tar.gz name>`
+    - macOS: Open the tar.gz file with a double click
+    - Windows: Use PowerShell to extract the tar.gz archive with `tar -vxzf <tar.gz name>`. Alternatively, use an external tool to extract the executable file to your system.
+3. Run btp from within the extracted folder or ensure that it's in your PATH. In Windows, for example, you can open the folder and type `cmd` or `powershell` into the address bar. On macOS, make sure that the client file is in your PATH and open a terminal session. Note that btp CLI may be blocked because it is "from an unidentified developer". Please refer to the macOS documentation to learn how to bypass this.
 
 ![CLI info screen](sapcp.png)
 
@@ -75,6 +76,7 @@ You get version and usage information, you learn where the configuration file is
 
 [DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 5: ](Display the help overview)]
 
@@ -88,6 +90,32 @@ btp --help
 [DONE]
 [ACCORDION-END]
 
+
+[ACCORDION-BEGIN [Step 9: ](Log in to your global account)]
+
+Now let's log in. Login is on global account level. Make sure you know the subdomain of your global account, which you find in the cockpit:
+
+![Subdomain of the global account in the cockpit](subdomain-ga.png)
+
+You have two options for login. In both cases, the client proposes the CLI server URL for your trial, which you can confirm with ENTER. 
+
+For login on the command-line, enter:
+
+```Bash
+btp login
+```
+For login with single sign-on through a browser, enter:
+
+```Bash
+btp login --sso
+```
+
+Once you're logged into your global account, it should look like this:
+
+![CLI Login](sapcplogin.png)
+
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Understand the command syntax: usage)]
 
@@ -130,25 +158,6 @@ btp assign security/role-collection "Global Account Administrator" --to-user exa
 ```
 
 "Global Account Administrator" is the positional parameter, and the other two parameters have keys (`--to-user` and `--of-idp`).
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Log in to your global account)]
-
-Now let's log in. Login is on global account level. Make sure you know the subdomain of your global account. You can find in the cockpit:
-
-![Subdomain of the global account in the cockpit](subdomain-ga.png)
-
-Enter the following command:
-
-```Bash
-btp login
-```
-
-The client proposes the CLI server URL for your trial and you can confirm with ENTER. Once you're logged into your global account, it should look like this:
-
-![CLI Login](sapcplogin.png)
 
 [DONE]
 [ACCORDION-END]
