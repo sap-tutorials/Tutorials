@@ -18,11 +18,11 @@ primary_tag: topic>machine-learning
   - How to use the **Set up account for Service Ticket Intelligence** booster to assign entitlements, update your subaccount, create a service instance, and also to download Postman environment and collection JSON sample code files.
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
+[ACCORDION-BEGIN [Step 1: ](Go To Your Trial Account)]
 
 1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
+2. Navigate to the trial global account by clicking **Go To Your Trial Account**.
 
     !![Trial global account](01_Foundation20Onboarding_Home.png)
 
