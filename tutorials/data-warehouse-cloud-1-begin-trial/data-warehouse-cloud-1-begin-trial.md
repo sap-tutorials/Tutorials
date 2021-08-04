@@ -17,7 +17,7 @@ primary_tag: products>sap-data-warehouse-cloud
 
 [ACCORDION-BEGIN [Step 1: ](Sign up for free trial)]
 
-To sign up for a free trial of SAP Data Warehouse cloud, go to this [link](https://www.sap.com/products/data-warehouse-cloud/trial.html), and click on **Start your free trial**.
+To sign up for a free trial of SAP Data Warehouse Cloud, go to this [link](https://www.sap.com/products/data-warehouse-cloud/trial.html), and click on **Start your free trial**.
 
 Enter your details and confirm your e-mail address. You will then receive an email with more instructions and a link to sign into your SAP Data Warehouse Cloud trial! Your trial will be available for 30 days, so make sure to make the most of this time.
 
@@ -42,13 +42,13 @@ Your mission today is to help Best Run Bikes to get a holistic view of their sal
 
 The toolkit contains sample data you can import into your trial SAP Data Warehouse Cloud account. The toolkit consists of 4 sales data CSV tables related to Best Run Bikes. These are:
 
-•	[Sales Orders](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/data-warehouse-cloud-begin-trial-mission/SalesOrders.csv)
+•	[Sales Orders](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/data-warehouse-cloud-1-begin-trial/SalesOrders.csv)
 
-•	[Sales Order Items](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/data-warehouse-cloud-begin-trial-mission/SalesOrderItems.csv)
+•	[Sales Order Items](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/data-warehouse-cloud-1-begin-trial/SalesOrderItems.csv)
 
-•	[Addresses](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/data-warehouse-cloud-begin-trial-mission/Addresses.csv)
+•	[Addresses](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/data-warehouse-cloud-1-begin-trial/Addresses.csv)
 
-•	[Business Partners](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/data-warehouse-cloud-begin-trial-mission/BusinessPartners.csv)
+•	[Business Partners](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/data-warehouse-cloud-1-begin-trial/BusinessPartners.csv)
 
 Download these files and save them in a folder on your local system. After that, you will be ready to get hands-on!
 
