@@ -3,7 +3,7 @@ title: Onboard Virtual Devices and Enable Them to Send Data
 description: Use scripts to register new devices in SAP Internet of Things, download authentication certificates and then have data sent from those "virtual" devices from your computer.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-business-technology-platform, products>sap-iot-services-for-sap-btp]
 primary_tag: topic>internet-of-things
 ---
 
