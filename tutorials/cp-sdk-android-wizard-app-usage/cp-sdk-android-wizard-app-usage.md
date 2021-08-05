@@ -5,8 +5,8 @@ title: Use Usage Reporting in Your Android Application
 description: See how the Usage Reporting feature can help provide information on how your app is being used.
 auto_validation: true
 time: 30
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>android-sdk-for-sap-btp, products>sap-business-technology-platform ]
-primary_tag: products>android-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
+primary_tag: products>sap-btp-sdk-for-android
 
 ---
 
@@ -77,7 +77,7 @@ The app must first receive permission to collect usage information from the user
 
     !![View usage report](view_usage_report.png)
 
-    Different charts become available when you select in the drop-down (green) box between **Sessions**, **Demographics**, and **Behavior**. The mark in the yellow box controls whether to display filters that are in the red box right below.
+    Different charts become available when you select between **Sessions**, **Demographics**, and **Behavior** in the drop-down (green) box. The mark in the yellow box controls whether to display filters that are in the red box right below.
 
 2. To download the usage report, go to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** > **Mobile Client Usage and User Feedback**. You can filter the data by changing the value of the **Last 7 Days** dropdown. Click the **Download** icon to export the filtered data to a `.csv` file.
 
@@ -215,7 +215,7 @@ The following steps record how often users start adding or updating products but
 
     !![Press Back Button](test_usage3.png)
 
-10. Repeat those steps two more times to generate multiple entries for the usage report.
+10. Repeat these steps two more times to generate multiple entries for the usage report.
 
 11. Select an existing product and tap its **Edit** button.
 
@@ -296,7 +296,7 @@ The following steps record how often users start adding or updating products but
 
     !![Press Back Button](test_usage3.png)
 
-10. Repeat those steps two more times to generate multiple entries for the usage report.
+10. Repeat these steps two more times to generate multiple entries for the usage report.
 
 11. Select an existing product and tap its **Edit** button.
 
@@ -363,7 +363,7 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
         isUsageEnabled = policies.getUsagePolicy().getDataCollectionEnabled();
         uploadInterval = policies.getUsagePolicy().getUploadDataAfterDays();
         if (isUsageEnabled) {
-            UsageBroker.setDataCollectionEnabled(isUsageEnabled);
+            UsageBroker.setDataCollectionEnabled(true);
             uploadUsage();
         }
     }
@@ -389,7 +389,7 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
                 }
 
                 @Override
-                public void onError(Throwable error) {
+                public void onError(@NotNull Throwable error) {
                     // make sure to import com.sap.cloud.mobile.foundation.networking.HttpException;
                     if (error instanceof HttpException) {
                         logger.debug("Usage Upload server error: {}, code = {}",

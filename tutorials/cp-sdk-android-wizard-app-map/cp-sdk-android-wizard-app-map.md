@@ -5,8 +5,8 @@ title: Display Customer Locations Using a Fiori Map Control
 description: Further customize the generated app to display customer locations on a map and try out the features of the Fiori Map control, including the toolbar, map panel, clustering, and map annotation.
 auto_validation: true
 time: 90
-tags: [ tutorial>beginner, operating-system>android, topic>mobile, products>android-sdk-for-sap-btp, products>sap-business-technology-platform ]
-primary_tag: products>android-sdk-for-sap-btp
+tags: [ tutorial>beginner, operating-system>android, topic>mobile, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
+primary_tag: products>sap-btp-sdk-for-android
 ---
 
 ## Prerequisites
@@ -57,7 +57,17 @@ In this section you will create a new activity to display a map.
     import com.sap.wizapp.R;
     ```
 
-12.  Run the app. Select **Customers**.
+12.  Find the following import:
+    ```Java
+    import com.sap.wizapp.mdui.customers.databinding.ActivityCustomersMapBinding;
+    ```
+
+13.  Change it to the following import:
+    ```Java
+    import com.sap.wizapp.databinding.ActivityCustomersMapBinding;
+    ```
+
+14.  Run the app. Select **Customers**.
 
     !![Entities screen](tap-on-customers.png)
 
@@ -96,12 +106,21 @@ In this section you will create a new activity to display a map.
 10.  On Windows press **`Ctrl+N`** or on a Mac press **`command+O`**, and type **`CustomersMapActivity`** to open `CustomersMapActivity.kt`.
 
 11.  Add the following import if it doesn't automatically add itself:
-
     ```Kotlin
     import com.sap.wizapp.R
     ```
 
-12.  Run the app. Select **Customers**.
+12.  Find the following import:
+    ```Kotlin
+    import com.sap.wizapp.mdui.customers.databinding.ActivityCustomersMapBinding
+    ```
+
+13.  Change it to the following import:
+    ```Kotlin
+    import com.sap.wizapp.databinding.ActivityCustomersMapBinding
+    ```
+
+14.  Run the app. Select **Customers**.
 
     !![Entities screen](tap-on-customers.png)
 
@@ -521,10 +540,14 @@ In this section, you will create a new activity that uses the Fiori Map control.
 
 1.  Press **`Shift`** twice, and type **`styles.xml`** to open `styles.xml`.
 
-2.  Declare the style of `AppTheme` as:
+2.  Add the following code right after `AppTheme` and before `AppTheme.NoActionBar`:
 
     ```XML
-    <style name="AppTheme" parent="FioriTheme">
+    <style name="FioriMap.NoActionBar" parent="FioriTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
     ```
 
 3.  Add the following dependency in the app's `build.gradle` file in the dependencies object.
@@ -875,7 +898,7 @@ In this section, you will create a new activity that uses the Fiori Map control.
 
     ```XML
     <activity android:name=".mdui.customers.CustomersFioriMapActivity"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/FioriMap.NoActionBar">
     </activity>
     ```
 
@@ -903,10 +926,14 @@ In this section, you will create a new activity that uses the Fiori Map control.
 
 1.  Press **`Shift`** twice, and type **`styles.xml`** to open `styles.xml`.
 
-2.  Declare the style of `AppTheme` as:
+2.  Add the following code right after `AppTheme` and before `AppTheme.NoActionBar`:
 
     ```XML
-    <style name="AppTheme" parent="FioriTheme">
+    <style name="FioriMap.NoActionBar" parent="FioriTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
     ```
 
 3.  Add the following dependency in the app's `build.gradle` file in the dependencies object.
@@ -915,7 +942,7 @@ In this section, you will create a new activity that uses the Fiori Map control.
     implementation group: 'com.sap.cloud.android', name: 'google-maps', version: sdkVersion
     ```
 
-    !![Add Map Dependency](app-build-gradle.png)
+    !![Add Map Dependency](app-build-gradle-kotlin.png)
 
 4.  Create a new **Layout Resource File** in `res/layout` called **`detail_panel.xml`** and replace its contents with the following code.
 
@@ -1233,7 +1260,7 @@ In this section, you will create a new activity that uses the Fiori Map control.
 
     ```XML
     <activity android:name=".mdui.customers.CustomersFioriMapActivity"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/FioriMap.NoActionBar">
     </activity>
     ```
 
@@ -1911,7 +1938,7 @@ In this section, you will test the three different types of annotations.
 
     !![Up to date emulator location settings screen 4](up-to-date-emulator-location-settings-4.png)
 
-10.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below.
+10.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below. (If tapping doesn't work, quit the app, restart it, and try the button again.)
 
     !![Zoom into current location](current-location-effect.png)
 
@@ -2034,7 +2061,7 @@ In this section, you will test the three different types of annotations.
 9.  Select the saved point and tap **SET LOCATION** to set the default location.
     !![Up to date emulator location settings screen 4](up-to-date-emulator-location-settings-4.png)
 
-10.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below.
+10.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below. (If tapping doesn't work, quit the app, restart it, and try the button again.)
 
     !![Zoom into current location](current-location-effect.png)
 
@@ -2213,7 +2240,7 @@ In this section, an `EsriFioriMapView` will be used.
     implementation group: 'com.sap.cloud.android', name: 'esri-maps', version: sdkVersion
     ```
 
-4.  In Android Studio, using the project explorer, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
+4.  In Android Studio, using the **Project Explorer**, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
 
 5.  Right-click and choose **`New > Activity > Empty Activity`**.
 
@@ -2329,7 +2356,7 @@ In this section, an `EsriFioriMapView` will be used.
         /**
          * Manipulates the map once available.
          * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera. In this case,
+         * This is where we can add markers or lines, add listeners, or move the camera. In this case,
          * we just add a marker near Toronto, Canada.
          */
 
@@ -2453,7 +2480,7 @@ In this section, an `EsriFioriMapView` will be used.
 
     ```XML
     <activity android:name=".mdui.customers.CustomersFioriEsriMapActivity"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/FioriMap.NoActionBar">
     </activity>
     ```
 
@@ -2488,7 +2515,7 @@ In this section, an `EsriFioriMapView` will be used.
     implementation group: 'com.sap.cloud.android', name: 'esri-maps', version: sdkVersion
     ```
 
-4.  In Android Studio, using the project explorer, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
+4.  In Android Studio, using the **Project Explorer**, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
 
 5.  Right-click and choose **`New > Activity > Empty Activity`**.
 
@@ -2593,7 +2620,7 @@ In this section, an `EsriFioriMapView` will be used.
         /**
          * Manipulates the map once available.
          * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera. In this case,
+         * This is where we can add markers or lines, add listeners, or move the camera. In this case,
          * we just add a marker near Toronto, Canada.
          */
 
@@ -2703,7 +2730,7 @@ In this section, an `EsriFioriMapView` will be used.
 
     ```XML
     <activity android:name=".mdui.customers.CustomersFioriEsriMapActivity"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/FioriMap.NoActionBar">
     </activity>
     ```
 

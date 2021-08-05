@@ -15,7 +15,7 @@ primary_tag: products>sap-conversational-ai
   - How to give your chatbot skills
 
 ---
-
+ 
 [ACCORDION-BEGIN [Step 1: ](Create SAP Conversational AI account)]
 
 Go to [https://cai.tools.sap/](https://cai.tools.sap/), and click **Sign Up** in the upper-right corner.

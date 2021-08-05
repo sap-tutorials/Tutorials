@@ -3,8 +3,8 @@ title: Run the Employee Onboarding Sample Scenario
 description: Now that your workflow is set up, business rules are integrated and visibility scenario is configured, run your workflow and visualize it.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform-business-application]
-primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-workflow-management
 ---
 
 
@@ -17,11 +17,11 @@ primary_tag: products>sap-cloud-platform
 [ACCORDION-BEGIN [Step 1: ](Set up sample events for workflow)]
 First, we will import sample events & data, process these events and view them in workspace using different process visibility applications. This is mainly done to give you a demo-ready workspace with pre-filled data. Later, you will run the `employee onboarding` workflow and see the process workspace being updated automatically in real time.
 
-1. Download the events `EmployeeOnboardingEvents.json` file from [here](https://github.com/SAP-samples/cloud-process-visibility/releases/download/1.0.0/Employee_OnboardingEvents.json).
+1. Download the events `Employee_OnboardingEvents.json` file from [here](https://github.com/SAP-samples/cloud-process-visibility/releases/download/1.0.0/Employee_OnboardingEvents.json).
 
 2. In the Workflow Management Fiori launchpad, click the **Event Acquisition** tile.
 
-    >You got the workflow management application link in the last step of the setup tutorial. The link would be like:  
+    >You got the workflow management application link in the last step of the set up tutorial. The link would be like:  
 
     > `https://<subdomain>.cockpit.workflowmanagement.cfapps.<eu10 or us10>.hana.ondemand.com/cp.portal/site#Shell-home`
 
@@ -162,7 +162,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 [ACCORDION-BEGIN [Step 7: ](View process visibility workspace for completed workflow)]
 
-1. In the Workflow Management Fiori launchpad, choose **Monitor Scenarios** to process the new set of events.
+1. In the Workflow Management Fiori launchpad, choose **Monitor Visibility Scenarios** to process the new set of events.
 
     !![See Processed data](processeddata_2.png)
 
@@ -172,7 +172,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
     ![View Scenario4](viewscenario_4.png)
 
-Congratulations. With this, you have successfully completed the mission on **Automating and Extending Employee Onboarding** process using Workflow Management services. In this mission, you learned about Workflow, Business Rules and Process Visibility services of **SAP Workflow Management** and how they come together to help you automate processes and decisions, together with providing an out-of-box visibility into the workflows.
+Congratulations. With this, you have successfully completed the mission on **Automating and Extending Employee Onboarding** process using Workflow Management. In this mission, you learned about Workflow, Business Rules and Process Visibility capabilities of **SAP Workflow Management** and how they come together to help you automate processes and decisions, together with providing an out-of-box visibility into the workflows.
 
 [VALIDATE_6]
 [ACCORDION-END]

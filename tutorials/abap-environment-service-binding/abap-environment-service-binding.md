@@ -211,7 +211,7 @@ author_profile: https://github.com/mervey45
 To use the [**Business Configuration Change Logs**](https://help.sap.com/viewer/DRAFT/60f1b283f0fd4d0aa7b3f8cea4d73d1d/Internal/en-US/5c6cf20499894f1083e80dba7c5963d4.html) app, activate the log changes function to keep track of configuration changes in your business configuration tables.
 
 Select database table **`ZCAL_HOLIDAY_XXX`**, navigate to the technical table settings and open **`ZCAL_I_HOLIDAY_XXX`**. Enable log changes.
-
+ 
 ![log](log.png)
 
 Save and activate.

@@ -1,5 +1,5 @@
 ---
-title: Create a cached OData Service for improved Offline OData
+title: Create a Cached OData Service for Improved Offline OData
 description: Create and configure an SAP Mobile Services mobile back-end tools (MBT) OData service with a cache database attached to an existing web service to enhance it with delta tracking and client filter
 auto_validation: true
 primary_tag: topic>mobile
@@ -60,23 +60,23 @@ author_profile: https://github.com/manuel-stampp
     - Select **Terminal** &rarr; **New Terminal** and execute the following command:
 
         ```Terminal
-        cf create-service destination lite <subaccount>_<space>_MbtEpmDemoService-destination
+        cf create-service destination lite <subaccount><space>MbtEpmDemoService-destination
         ```
 
-    >As in the previous tutorial, replace `<subaccount>_<space>_MbtEpmDemoService` with your actual application name in all the occurrences
+    >As in the previous tutorial, replace `<subaccount><space>MbtEpmDemoService` with your actual application name in all the occurrences
 
 4. Reference the destination service instance in `manifest.yml` by adding the instance name (that you just created it with) to the **services** of your application (last line only) as below:
 
     ```YAML
     applications:
       - buildpack: sap_java_buildpack
-        name: <subaccount>_<space>_MbtEpmDemoService
+        name: <subaccount><space>MbtEpmDemoService
         path: target/odata-service-1.0.0.war
         env:
           TARGET_RUNTIME: tomee7
         services:    
-          - <subaccount>_<space>_MbtEpmDemoService-xsuaa
-          - <subaccount>_<space>_MbtEpmDemoService-destination
+          - <subaccount><space>MbtEpmDemoService-xsuaa
+          - <subaccount><space>MbtEpmDemoService-destination
     ```
 
 
@@ -480,25 +480,25 @@ For reference please double check with the following documents.
   <details>
   <summary>manifest.yml</summary>
 
-```YAML remember to replace *<subaccount>_<space>_* with your own name
+```YAML remember to replace *<subaccount><space>* with your own name
 ---
 applications:
   - buildpack: sap_java_buildpack
-    name: <subaccount>_<space>_MbtEpmDemoService
+    name: <subaccount><space>MbtEpmDemoService
     path: target/odata-service-1.0.0.war
     env:    
       SET_LOGGING_LEVEL: '{odata: TRACE, sap.xs.console: TRACE, sap.xs.odata: TRACE}'
       TARGET_RUNTIME: tomee7
     services:    
-      - <subaccount>_<space>_MbtEpmDemoService-xsuaa
-      - <subaccount>_<space>_MbtEpmDemoService-destination
-  - name: <subaccount>_<space>_MbtEpmDemoService-approuter
+      - <subaccount><space>MbtEpmDemoService-xsuaa
+      - <subaccount><space>MbtEpmDemoService-destination
+  - name: <subaccount><space>MbtEpmDemoService-approuter
     path: approuter
     buildpacks:    
       - nodejs_buildpack
     memory: 128M
     services:    
-      - <subaccount>_<space>_MbtEpmDemoService-xsuaa
+      - <subaccount><space>MbtEpmDemoService-xsuaa
     env:
       destinations: >
         [
@@ -515,18 +515,18 @@ applications:
   <details>
   <summary>manifest.yml without app router (workaround)</summary>
 
-```YAML remember to replace *<subaccount>_<space>_* with your own name
+```YAML remember to replace *<subaccount><space>* with your own name
 ---
 applications:
   - buildpack: sap_java_buildpack
-    name: <subaccount>_<space>_MbtEpmDemoService
+    name: <subaccount><space>MbtEpmDemoService
     path: target/odata-service-1.0.0.war
     env:    
       SET_LOGGING_LEVEL: '{odata: TRACE, sap.xs.console: TRACE, sap.xs.odata: TRACE}'
       TARGET_RUNTIME: tomee7
     services:    
-      - <subaccount>_<space>_MbtEpmDemoService-xsuaa
-      - <subaccount>_<space>_MbtEpmDemoService-destination
+      - <subaccount><space>MbtEpmDemoService-xsuaa
+      - <subaccount><space>MbtEpmDemoService-destination
 ```
 </details>
 
@@ -576,7 +576,7 @@ applications:
     | Name | `My Businesspartners` |
     | Description | MDK-based demo for MBT registrations for My Customers  |
     | Vendor | SAP |
-    | XSUAA Service | `<subaccount>_<space>_MbtEpmDemoService-xsuaa` |
+    | XSUAA Service | `<subaccount><space>MbtEpmDemoService-xsuaa` |
     | Domain of Application Route | *keep default* |
 
     ![SAP Mobile Services Cockpit New App](img_sapms_new_app.png)

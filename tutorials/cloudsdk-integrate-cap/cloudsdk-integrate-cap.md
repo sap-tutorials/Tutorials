@@ -46,7 +46,7 @@ For local development, you need to do the following:
 
     ```Shell/Bash
     mvn archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds -DarchetypeVersion=RELEASE \
-    -DartifactId=cap-business-service
+    -DartifactId=cap-business-service -DgroupId=org.your.org.cap.test
     ```    
 
     This will initialise the application using the [maven archetype](http://maven.apache.org/guides/introduction/introduction-to-archetypes.html) `cds-services-archetype` and create your project as follows:
@@ -167,7 +167,7 @@ Since your application is running on SAP Cloud Platform Cloud Foundry, include t
 </dependency>
 ```
 
-For more information, visit the documentation of the [SAP Cloud SDK](https://sap.github.io/cloud-sdk/docs/java/getting-started/#integrate-the-cloud-sdk-for-java-into-your-project).
+For more information, visit the documentation of the [SAP Cloud SDK](https://sap.github.io/cloud-sdk/docs/java/getting-started#integrate-the-sap-cloud-sdk-for-java-into-your-project).
 
 [DONE]
 [ACCORDION-END]
