@@ -1,6 +1,6 @@
 ---
 title: Connect SAP Data Intelligence Cloud to SAP HANA Cloud
-description: Learn to use the data you have in your SAP HANA database in SAP HANA Cloud, by connecting it with SAP Data Intelligence Cloud.
+description: Use the data you have in your SAP HANA database in SAP HANA Cloud, by connecting it with SAP Data Intelligence Cloud.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-data-intelligence]

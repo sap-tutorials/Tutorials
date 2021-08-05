@@ -1,6 +1,6 @@
 ---
 title: Connect SAP Business Warehouse to SAP HANA Cloud
-description: Learn to use the data you have in your SAP Business Warehouse (BW) system by connecting it with SAP HANA Cloud, SAP HANA database.
+description: Use the data you have in your SAP Business Warehouse (BW) system by connecting it with SAP HANA Cloud, SAP HANA database.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]

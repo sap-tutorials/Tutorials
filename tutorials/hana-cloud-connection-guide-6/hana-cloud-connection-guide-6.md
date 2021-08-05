@@ -1,6 +1,6 @@
 ---
 title: Connect SAP S/4HANA as Data Source to SAP HANA Cloud
-description: Learn to connect SAP S/4HANA as a data source to SAP HANA Cloud, SAP HANA database.
+description: Connect your SAP S/4HANA as a data source to SAP HANA Cloud, SAP HANA database.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-s-4hana]

@@ -1,6 +1,6 @@
 ---
 title: Connect SAP ERP Central Component to SAP HANA Cloud
-description: Learn to connect your SAP ERP Central Component (ECC) to SAP HANA Cloud, SAP HANA database.
+description: Connect your SAP ERP Central Component (ECC) to SAP HANA Cloud, SAP HANA database.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
