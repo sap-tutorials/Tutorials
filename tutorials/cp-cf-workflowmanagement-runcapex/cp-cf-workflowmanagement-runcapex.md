@@ -35,7 +35,7 @@ In this tutorial, you start a new instance of the process variant that you have 
 
     !![Start New Instance](cp-cf-workflowmanagement-runcapex-startinstance.png)
 
-4. In the **Start New Instance** popup menu, replace the existing JSON snippet with the below snippet. Then, replace the **`UserId`** field with your SAP trial email ID. Finally, choose **Start New Instance**.
+4. In the **Start New Instance** popup menu, replace the existing JSON snippet with the below snippet. Then, replace the **`UserId`** field with your SAP trial email ID. Finally, choose **Start New Instance and Close**.
 
     ```JSON
     {
@@ -102,7 +102,7 @@ You can view the workflow instance created for approval. You can navigate to the
 
     !![Approve Task](cp-cf-workflowmanagement-runcapex-myinbox3.png)
 
-    >Similarly, you would have a new task in the **My Inbox** tile for your approval as a CFO.
+    >Similarly, after the local manager approval, you would have a new task in the **My Inbox** tile for your approval as a CFO.
 
     >!![CFO Approval](cp-cf-workflowmanagement-runcapex-CFO.png)
 

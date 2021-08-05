@@ -26,8 +26,11 @@ SAP Private Link service (Beta) establishes a private connection between applica
 [ACCORDION-BEGIN [Step 1: ](Set entitlements)]
 To be able to use the functionalities of SAP Private Link service, you first need to set the entitlements in your subaccount. For more information, see [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/5ba357b4fa1e4de4b9fcc4ae771609da.html).
 
-1. Navigate to your **global account** of SAP BTP cockpit.
-2. Enter the respective **subaccount** for which you would like to enable SAP Private Link service.
+1. Navigate to your **global account** of SAP BTP cockpit and select **Account Explorer**.
+
+    !![Access Account Explorer](private-endpoint_Account-Explorer.png)
+
+2. From the list, choose the respective **subaccount** for which you would like to enable SAP Private Link service.
 3. Navigate to **Entitlements** in the left hand navigation bar. You can now see all the existing service assignments for this respective subaccount.  
 4. Select **Configure Entitlements**.
 
@@ -35,7 +38,7 @@ To be able to use the functionalities of SAP Private Link service, you first nee
 
 5. To add a new service assignment, select **Add Service Plans**. You see now all the offerings available to this specific subaccount.
 
-6. Select **SAP Private Link service**, **Standard** (from Available Plans) and then **Add 1 Service Plan**.
+6. Select **SAP Private Link service**, **standard** (from Available Plans) and then **Add 1 Service Plan**.
 
     !![Add Service Plan for SAP Private Link service](private-endpoint-add-service-plan.png)
 
