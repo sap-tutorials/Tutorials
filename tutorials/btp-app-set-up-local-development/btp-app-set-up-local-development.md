@@ -113,7 +113,7 @@ A Node.js version 14 or higher is required to install the SAPUI5 CLI. See [SAPUI
 
 If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
 
-You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) needed if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
+You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
 
 1. Check whether the package manager `brew` is installed on your machine:
 
@@ -141,7 +141,7 @@ You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudf
 
 If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
 
-You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) needed if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
+You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
 
 Download a binary installer as described [here](https://github.com/cloudfoundry/cli#installers-and-compressed-binaries).
 
@@ -151,7 +151,7 @@ Download a binary installer as described [here](https://github.com/cloudfoundry/
 
 If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
 
-You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) needed if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
+You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
 
 Follow the steps described [here](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#pkg-linux).
 
@@ -250,10 +250,9 @@ You need to install the [**SAP Language Support**](https://marketplace.visualstu
 
 Now, the extension is installed in VS Code. If the extension is already installed and enabled in VS Code, it is updated automatically. The VS Code extension comes with a welcome page, which shows latest release notes of CAP. It starts automatically whenever an update arrives for the extension. Later, you can open the page through the **Command Palette** in VS Code `CDS: Show CAP Release Notes`.
 
-> Learn more about SAP CDS Language Support Extension:
+> Learn more about SAP CDS Language Support Extension from this short [demo](https://www.youtube.com/watch?v=eY7BTzch8w0). You can also take a look at the[features and commands](https://cap.cloud.sap/docs/get-started/tools#cds-editor).
 
-> - short [demo](https://www.youtube.com/watch?v=eY7BTzch8w0)
-> - [features and commands](https://cap.cloud.sap/docs/get-started/tools#cds-editor)
+
 
 [DONE]
 [ACCORDION-END]
@@ -261,14 +260,14 @@ Now, the extension is installed in VS Code. If the extension is already installe
 [ACCORDION-BEGIN [Step 10: ](Install SAP Fiori tools Extension Pack)]
 SAP Fiori tools are a number of extensions for VS Code. They mainly support you in developing SAP Fiori elements apps. In this tutorial, we use the so-called SAP Fiori application generator to create an SAP Fiori elements app, you need this for the tutorial [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements).
 
-> Additional Documentation:
+> For additional documentation, please see [SAP Fiori Tools](https://help.sap.com/viewer/product/SAP_FIORI_tools/Latest/en-US). For macOS, you need to install the `code` command in PATH as described in the previous step on how to **Install VS Code**.
 
-> [SAP Fiori Tools](https://help.sap.com/viewer/product/SAP_FIORI_tools/Latest/en-US)
 
-> For macOS you need to install the `code` command in PATH as described in the previous step on how to **Install VS Code**.
 
-You need to install the [**SAP Fiori tools - Extension Pack**](https://marketplace.visualstudio.com/items?itemName=SAPSE.sap-ux-fiori-tools-extension-pack)  extensions for VS Code:
-
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 11: ](Installation)]
 1. Open VS Code.
 
 2. Choose the **Extensions** icon in the left pane.
@@ -286,7 +285,7 @@ After a restart of VS Code, you can check for the tools by invoking **View** **&
 [VALIDATE_1]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 11: ](Install SAPUI5 freestyle app templates using Yeoman)]
+[ACCORDION-BEGIN [Step 12: ](Install SAPUI5 freestyle app templates using Yeoman)]
 SAPUI5 comes with templates that kick start your development for SAPUI5 freestyle app development. You need these if you want to carry out the tutorial [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5).
 SAPUI5 templates are based on [Yeoman](https://yeoman.io/), a tool for scaffolding web apps. You need to install it first.
 
@@ -305,7 +304,7 @@ SAPUI5 templates are based on [Yeoman](https://yeoman.io/), a tool for scaffoldi
 3. Now, you can go ahead and install the [SAPUI5 templates](https://www.npmjs.com/package/@sapui5/generator-sapui5-templates):
 
     ```Shell/Bash
-    npm install -g yo @sapui5/generator-sapui5-templates
+    npm install -g @sapui5/generator-sapui5-templates
     ```
 
 4. Test whether everything works:

@@ -70,12 +70,12 @@ Now that you've created your Space, you can now move ahead and assign users to y
 
 [ACCORDION-BEGIN [Step 3: ](Add users into your Space)]
 
-1.	Once in your Space, click on the Members tab. You can also alternatively scroll down to the Members heading.
-2.	Click on Add to allocate a member from your user list.
+1.	Once in your Space, click on the Members tab. You can also alternatively scroll down to the members heading.
+2.	Click on **Add** to allocate a member from your user list.
 
     ![Add Users](T04-Picture5.png)
 
-3.	You can now select the users you'd like to add to your space by checking them off. When you're happy with your choices, click on Add to confirm. Don't forget to add yourself as a user!
+3.	You can now select the users you'd like to add to your space by checking them off. When you're happy with your choices, click on **Add** to confirm. Don't forget to add yourself as a user!
 
 ![Select User](T04-Picture6.png)
 

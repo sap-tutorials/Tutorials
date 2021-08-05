@@ -33,9 +33,9 @@ primary_tag: products>sap-data-warehouse-cloud
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get to know the data builder)]
+[ACCORDION-BEGIN [Step 1: ](Get to know the Data Builder)]
 
-SAP Data Warehouse Cloud has two modeling layers tailored for different user groups: the data layer is the area where data engineers can create their models with a technical approach, whereas the business layer is the area for business users who create their models using a more semantic approach. This allows business users to work independently from data engineers, while still being able to collaborate and share data with them.
+SAP Data Warehouse Cloud has two modelling layers tailored for different user groups: the data layer is the area where data engineers can create their models with a technical approach, whereas the business layer is the area for business users who create their models using a more semantic approach. This allows business users to work independently from data engineers, while still being able to collaborate and share data with them.
 
 !![Data Modeling Overview](T05-Picture1.png)
 
