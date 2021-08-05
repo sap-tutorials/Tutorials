@@ -38,7 +38,7 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 3.	Tools to manage and access the SAP HANA Cloud, SAP HANA Database
 
-4.	*You are here* **`->`Create users and manage roles and privileges**
+4.	You are here <sub-style="font-size:30px">&#9755;</sub> **Create users and manage roles and privileges**
 
 5.	Import data into SAP HANA Cloud, SAP HANA Database
 
@@ -54,7 +54,7 @@ In this tutorial, you will learn how to create users and assign roles and privil
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand Roles and Privileges)]
+[ACCORDION-BEGIN [Step 1: ](Understand roles and privileges)]
 
 SAP HANA Cloud, SAP HANA database defines user permissions and privileges using a **role-based security model**.
 
@@ -172,7 +172,7 @@ GRANT SELECT TO <user_name>;
 
 [OPTION END]
 
-*Well done!*
+Well done!
 
 You have completed the fourth tutorial of this mission! Now you know how you can manage access rights in your instance by creating users, and granting roles and privileges using SAP HANA cockpit and the SAP HANA Database Explorer.
 
