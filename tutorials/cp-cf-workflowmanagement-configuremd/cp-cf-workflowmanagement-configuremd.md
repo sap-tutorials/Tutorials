@@ -20,7 +20,7 @@ author_profile: https://github.com/Deeksha-R
 
 You can view, edit, author, and activate your business decisions using **Manage Decisions**.
 
-A decision consists of one or more policies, and each policy consists of a collection of rules. It is a part of the live process package and is used to automate the decision making parts of a business process.
+A decision consists of one or more policies, and each policy consists of a collection of rules. It is a part of the live process package and is used to automate decision making of a business process.
 
 You configure the auto approval policy using this tutorial. This policy is used to determine if an approval is required or not, based on the total investment cost. In this scenario, auto approval is enabled if the investment cost is less than 5000.
 
