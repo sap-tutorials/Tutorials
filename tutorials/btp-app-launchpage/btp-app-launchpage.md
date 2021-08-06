@@ -42,7 +42,7 @@ In the current implementation, the launch page is sitting inside the application
 
     As you have now moved up the file two folders, this needs to be reflected in the URL that points to the app in the launch page. In the next steps, you change the URL and also give the path to the application a more fitting name.
 
-3. Open the file `index.html` in an editor and change the following lines:
+3. Open the file `index.html` in an editor and change the following lines.
 
     ```JavaScript[5,10,12-20]
         <script>
