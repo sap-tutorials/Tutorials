@@ -31,7 +31,7 @@ To continue with this tutorial you can find the result of the previous tutorial 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add SAP HANA client and configuration to your project)]
-1. Add SAP HANA support to your project by running:
+1. Add SAP HANA support to your project by running.
 
     ```Shell/Bash
     cds add hana
@@ -93,7 +93,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 [ACCORDION-BEGIN [Step 3: ](Use an existing SAP HANA Cloud service instance)]
 [OPTION BEGIN [Trial]]
 
-1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
+1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use.
 
     [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
@@ -127,7 +127,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 [OPTION END]
 [OPTION BEGIN [Live]]
 
-1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
+1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use.
 
     [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
@@ -167,7 +167,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 [ACCORDION-BEGIN [Step 4: ](Create an SAP HANA Cloud service instance)]
 [OPTION BEGIN [Trial]]
 
-1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
+1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use.
 
     [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
@@ -209,6 +209,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     !![Create SAP HANA Cloud: Step 3](hana_cloud_create_3.png)
 
+    > In case you get error `[APP/TASK/deploy/0] ERR Error: Connection failed (RTE:[xxx] Socket closed by peer (<your-instance-ID>.hana.trial-<your-ladscape>.hanacloud.ondemand.com:443))`, change the setting to `Allow all IP addresses`.
 
 15. Choose **Create Instance**.
 
@@ -222,7 +223,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 [OPTION END]
 [OPTION BEGIN [Live]]
 
-1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
+1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use.
 
     [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
@@ -264,6 +265,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     !![Create SAP HANA Cloud: Step 3](hana_cloud_create_3.png)
 
+    > In case you get error `[APP/TASK/deploy/0] ERR Error: Connection failed (RTE:[xxx] Socket closed by peer (<your-instance-ID>.hana.trial-<your-ladscape>.hanacloud.ondemand.com:443))`, change the setting to `Allow all IP addresses`.
 
 15. Choose **Create Instance**.
 

@@ -98,7 +98,7 @@ At least the services for the tutorials [Set Up the SAP HANA Cloud Service](btp-
 [ACCORDION-BEGIN [Step 4: ](Create a Global account)]
 As the result of the previous steps there will be a Cloud Foundry space with required entitlement to deploy the service. This requires the creation of an SAP BTP global account, subaccount, space, and the assignment of the required entitlements.
 
-1. Go to **SAP BTP Control Center**:
+1. Go to **SAP BTP Control Center**.
 
     [https://int.controlcenter.ondemand.com/index.html](https://controlcenter.ondemand.com/index.html)
 
@@ -112,7 +112,7 @@ As the result of the previous steps there will be a Cloud Foundry space with req
 
 2. Enter a description.
 
-3. (Optional) If you have a Service Inventory ID, choose the radio button **Yes** under the section "Service Provider Account" and enter it.
+3. (Optional) If you have a Service Inventory ID, choose the radio button **Yes** under the section **Service Provider Account** and enter it.
 
 4. Choose **Next**.
 
@@ -158,9 +158,9 @@ As the result of the previous steps there will be a Cloud Foundry space with req
 
     !![Open global account in cockpit](open_global_account.png)
 
-4. Choose **Subaccounts** in the left navigation pane.
+4. Choose **Account Explorer** in the left navigation pane.
 
-5. Choose the **New Subaccount** button.
+5. Choose **Create** **&rarr;** **Subaccount**.
 
 6. To fill the **New Subaccount** dialog, enter a **Display Name**.
 
@@ -251,7 +251,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 1. Select your **Global Account** and then the **Subaccount** to which you want to deploy your service and application.
 
-2. On the subaccount page, gather all the data to log in to Cloud Foundry (CF):
+2. On the subaccount page, gather all the data to log in to Cloud Foundry (CF).
 
     - `API Endpoint`
     - `Org Name`
@@ -265,13 +265,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     [https://api.cf.eu10.hana.ondemand.com](https://api.cf.eu10.hana.ondemand.com)
 3. Open a terminal.
 
-4. Set the Cloud Foundry API endpoint:
+4. Set the Cloud Foundry API endpoint.
 
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
 
-5. Log in to your Cloud Foundry account, using your SAP BTP credentials:
+5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
     cf login
@@ -292,7 +292,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 1. Select your **Global Account** and then the **Subaccount** to which you want to deploy your service and application.
 
-2. On the subaccount page, gather all the data to log in to Cloud Foundry (CF):
+2. On the subaccount page, gather all the data to log in to Cloud Foundry (CF).
 
     - `API Endpoint`
     - `Org Name`
@@ -308,13 +308,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 3. Open a terminal.
 
-4. Set the Cloud Foundry API endpoint:
+4. Set the Cloud Foundry API endpoint.
 
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
 
-5. Log in to your Cloud Foundry account, using your SAP BTP credentials:
+5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
     cf login
