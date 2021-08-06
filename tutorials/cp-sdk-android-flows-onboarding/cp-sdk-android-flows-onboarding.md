@@ -197,7 +197,7 @@ In this section, we explain the onboarding-related callbacks in **`FlowStateList
 
     !![Policy Ready](policy-ready-java.png)
 
-5.  For an offline application, on Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onOfflineEncryptionKeyReady`** to move to the `onOfflineEncryptionKeyReady` method. After setting passcode, the onboarding flow will get the offline OData store encryption key and then notify this event. The client code can then use the key to open the offline store. Notice that this callback is only used for offline applications.
+5.  For an offline application, on Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onOfflineEncryptionKeyReady`** to move to the `onOfflineEncryptionKeyReady` method. After setting passcode, the onboarding flow will get the offline OData store encryption key and then notify this event. Notice that this callback is only used for offline applications.
 
     !![Offline Key Ready](offline-key-ready-java.png)
 
@@ -231,7 +231,7 @@ In this section, we explain the onboarding-related callbacks in **`FlowStateList
 
     !![Policy Ready](policy-ready-kotlin.png)
 
-5.  For an offline application, on Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onOfflineEncryptionKeyReady`** to move to the `onOfflineEncryptionKeyReady` method. After setting passcode, the onboarding flow will get the offline OData store encryption key and then notify this event. The client code can then use the key to open the offline store. Notice that this callback is only used for offline applications.
+5.  For an offline application, on Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onOfflineEncryptionKeyReady`** to move to the `onOfflineEncryptionKeyReady` method. After setting passcode, the onboarding flow will get the offline OData store encryption key and then notify this event. Notice that this callback is only used for offline applications.
 
     !![Offline Key Ready](offline-key-ready-kotlin.png)
 

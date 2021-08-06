@@ -8,7 +8,7 @@ time: 20
 tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, products>sap-internet-of-things, products>sap-business-technology-platform products>sap-event-mesh, products>sap-s-4hana]
 primary_tag: topic>internet-of-things
 ---
- 
+
 ## Prerequisites
 - You have licensed SAP Internet of Things (with the new capacity unit based licensing introduced in August 2020, your company has a Cloud Platform Enterprise Agreement or Pay-As-You-Go for SAP BTP and you have subscribed to the `oneproduct` service plan)
 - You have setup the subscription for SAP IoT in your global account in a tenant (e.g. in the DEV tenant, the guide for the basic setup is at [Get Started with Your SAP IoT Account](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest/en-US/bfe6a46a13d14222949072bf330ff2f4.html) ).
@@ -16,7 +16,7 @@ primary_tag: topic>internet-of-things
 - You have created destinations for the kanban APIs as described in [Create Destinations for kanban APIs](iot-autoid-kanban-destination)
 - You have created a kanban Business Context Hierarchy using the [Activate kanban Business Template](iot-autoid-kanban-bt) tutorial.
 - Optional for Event based setup: You have subscribed to SAP Event Mesh and created a Service Instance of it [SAP Help Portal on Creating an Event Mesh Service Instance](https://help.sap.com/viewer/bf82e6b26456494cbdd197057c09979f/Cloud/en-US/d0483a9e38434f23a4579d6fcc72654b.html)
-- Optional for Event based setup: You have setup the Business Event Handling in your SAP S/4HANA or SAP S/4HANA Cloud system according to [Scope Item 1NN](https://rapid.sap.com/bp/#/browse/scopeitems/1NN)
+- Optional for Event based setup: You have setup the Business Event Handling in your SAP S/4HANA Cloud system according to [Scope Item 1NN](https://rapid.sap.com/bp/#/browse/scopeitems/1NN) or SAP S/4HANA according to the [Enterprise Event Enablement Documentation](https://help.sap.com/viewer/810dfd34f2cc4f39aa8d946b5204fd9c/latest/en-US/c200f98fadb64ff1828ed5696c86fca2.html)
 
 ## Details
 ### You will learn

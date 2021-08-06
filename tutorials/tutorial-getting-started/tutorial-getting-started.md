@@ -8,7 +8,7 @@ primary_tag: products>sap-business-technology-platform
 ---
 
 ### Prerequisites
-- You can view the tutorials without an SAP ID, but you will be able to keep your progress and earn badges with one (and do this tutorial). If you don't have one, go to [Create your SAP Universal ID](https://account.sap.com/core/create).
+- You can view the tutorials without an SAP ID, but you will be able to keep your progress and earn badges with an SAP ID (and do this tutorial). If you don't have one, go to [Create your SAP Universal ID](https://account.sap.com/core/create) or click the person icon at the top-right of this page ![person](person.png).
 
 
 ## Details
