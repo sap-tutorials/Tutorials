@@ -37,7 +37,7 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 4.	Create users and manage roles and privileges
 
-5.	*You are here* **`->`Import data into SAP HANA Cloud, SAP HANA Database**
+5.	You are here <sub-style="font-size:30px">&#9755;</sub> **Import data into SAP HANA Cloud, SAP HANA Database**
 
 6.	Query the database using SQL statements
 

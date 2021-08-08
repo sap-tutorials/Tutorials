@@ -2,7 +2,7 @@
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
 title: Create a Development Project in SAP Business Application Studio
-description: Learn how to create a development project and how to establish a connection to a database. You will create a user-provided service, an .hdbgrants file and deploy your project.
+description: Create a development project, establish a connection to a database, create a user-provided service and .hdbgrants file, and deploy your project.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-business-application-studio]
@@ -45,7 +45,7 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 6.	Query the database using SQL statements
 
-7.	You are here **`->`Create a development project in SAP Business Application Studio**
+7.	You are here <sub-style="font-size:30px">&#9755;</sub> **Create a development project in SAP Business Application Studio**
 
 8.	Create a calculation view
 
@@ -237,7 +237,7 @@ Now that you have a connection to your database, it is important to grant privil
 
 A more convenient option to assign a set of privileges to many users directly from your project is an `.hdbgrants` file. This file will specify that the user-provided service will be used to grant the privileges entered in the `.hdbgrants` file in the connected database.
 
-> Note: This step only has to be done once in the beginning for a project. You will only have to modify the file if you need additional privileges.
+> This step only has to be done once in the beginning for a project. You will only have to modify the file if you need additional privileges.
 
 We have prepared an `.hdbgrants` file that is ready for you to use and import to your project but also added instructions here to create an `.hdbgrants` file yourself. Select one of the options below this step title:
 
