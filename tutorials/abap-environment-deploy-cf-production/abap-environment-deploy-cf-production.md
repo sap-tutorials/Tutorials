@@ -42,13 +42,17 @@ author_profile: https://github.com/mervey45
 
       ![assign role collection](bas2.png)
 
-  3. Click **Trust Configuration** and select **Default identity provider** to set up your trust.
+  3. Now you are in the trial overview page. Click **Trust Configuration**.
+
+      ![assign role collection](basxnew.png)
+
+  4. Click **Default identity provider** to set up your trust.
 
       ![assign role collection](bas3.png)
 
       **HINT:** If you are using a licensed system, make sure you have the trust administrator role assigned to your user.
 
-  4. Enter your e-mail address and click **Show Assignments**.
+  5. Enter your e-mail address and click **Show Assignments**.
 
       ![assign role collection](bas5.png)
 
@@ -72,11 +76,11 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 2: ](Create dev space)]
 
-  1.  Select **trial** > **Service Marketplace**. Search for **SAP Business Application Studio** and select it.
+  1.  Select **trial**.
 
       ![dev](studio.png)
 
-  2.  Select actions and click **Go to Application**.
+  2.   Select **Service Marketplace** and search for **SAP Business Application Studio**. Select actions and click **Go to Application**.
 
       ![dev](studio212.png)
 

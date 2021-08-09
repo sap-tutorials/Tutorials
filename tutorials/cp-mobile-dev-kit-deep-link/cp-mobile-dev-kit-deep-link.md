@@ -281,6 +281,7 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 
 !![MDK](img-6.2.png)
 
+
 >Leave the Onboarding dialog box open for step 7.
 
 [DONE]
