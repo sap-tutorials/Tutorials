@@ -60,7 +60,7 @@ In the Document Classification trial, there is a pre-trained model available for
 
 > - [Invoice](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/bejing_2008.pdf) ("Beijing Olympics logo" by sha3bi1Beijing)
 > - [Payment Advice](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/flickr.pdf) ("Logo of Flickr" by `topgold`)
-> - [Purchase Order](https://www.google.com) ("`umbro` logo" by `sefcmpa`)
+> - [Purchase Order](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/umbro.pdf") ("`umbro` logo" by `sefcmpa`)
 > - [Other](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/twitter.pdf) ("Logo of Twitter" by `topgold`)
 
 >Please note that those files are fake invoices, purchase orders, payment advices and other business documents for demo purposes. Logos were downloaded from search.creativecommons.org, all licensed under CC BY 2.0. Logos were embedded in the documents unaltered. The creators of the logos are denoted in brackets.
@@ -74,7 +74,7 @@ Next, click **Try it out** to try the request.
 
 Once you click the button, several input fields show up:
 
-  1.  In the field `document`, upload the document you want to classify. 
+  1.  In the field `document`, upload the document you want to classify.
 
   2.  The field `parameters` should be empty. In case the field has any pre-filled content, go ahead and delete it.
 

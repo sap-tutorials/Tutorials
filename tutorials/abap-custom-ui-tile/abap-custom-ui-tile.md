@@ -11,7 +11,7 @@ author_profile: https://github.com/Liebherr
 
 ## Prerequisites
 **Authorizations**: Your user needs
-- (a) business role(s) with Unrestricted Write Access for business catalog **Extensibility - Fiori App Development** (ID: `SAP_CORE_BC_EXT_UI`) and **Extensibility** (ID: `SAP_CORE_BC_EXT`) in your **S/4HANA Cloud** system
+- (a) business role(s) with Unrestricted Write Access for business catalog **Extensibility - Fiori App Development** (ID: `SAP_CORE_BC_EXT_UI`) and **Extensibility - Custom Business Objects** (ID: `SAP_CORE_BC_EXT_CBO`) and in your **S/4HANA Cloud** system
 - access to **SAP Web IDE**
 
 ## Details
