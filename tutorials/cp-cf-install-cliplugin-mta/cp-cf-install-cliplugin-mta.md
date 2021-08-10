@@ -66,6 +66,7 @@ cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plu
 [ACCORDION-BEGIN [Step 4: ](Verify the installation of the plugin)]
 
 List all Cloud Foundry CLI plugins to see whether the installation worked.
+
 [OPTION BEGIN [macOS]]
 ```Bash
 cf plugins | grep html5   
