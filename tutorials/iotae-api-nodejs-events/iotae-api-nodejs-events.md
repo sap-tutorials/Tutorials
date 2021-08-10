@@ -3,7 +3,7 @@ title: Monitor Temperature Data by Calling APIs via Node.js
 description: Use Node.js to analyze temperature data in SAP IoT and raise an event.
 auto_validation: true
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform, products>sap-analytics-cloud]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-business-technology-platform, products>sap-iot-services-for-sap-btp, products>sap-analytics-cloud]
 time: 15
 ---
 

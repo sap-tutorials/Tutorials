@@ -36,7 +36,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 
 1. In SAP Business Application Studio project, right-click the **Pages** | **MDK: New Page**.
 
-    !![MDK](img_1.1.png)
+    !![MDK](img-1.1.png)
 
 2. Select | **Section Page** and click **Next**.
 
@@ -66,41 +66,41 @@ To create the Customer List page, you will create a **Section page** and drag th
     | `EntitySet` | Select `Customers` from the dropdown |
     | `QueryOptions` | `$orderby=LastName` |
 
-    !![MDK](img_1.6.gif)
+    !![MDK](img-1.6.gif)
 
 7. In the **Properties** pane, click the **link icon** to open the Object Browser for the **Description** property. Double click the `City` property of the Customer entity to set it as the binding expression and click **OK**.
 
-    !![MDK](img_1.7.gif)
+    !![MDK](img-1.7.gif)
 
     >Be careful **not** to select `City` from `Address (ESPM.Address)`.
 
-    >!![MDK](img_1.7.1.png)
+    >!![MDK](img-1.7.1.png)
 
 8. Repeat the above steps for `Headline` and `Subheadline` properties binding to `LastName` and `FirstName` properties of the Customer entity respectively.
 
     You should have final results as below.
 
-    !![MDK](img_1.8.png)
+    !![MDK](img-1.8.png)
 
 9. In the **Search** section of the Properties pane, change both the **Search Enabled** property and **Barcode Scanner** property to **true**.
 
-    !![MDK](img_1.9.png)
+    !![MDK](img-1.9.png)
 
 10. In the **Activity Items** section of the Properties pane, change `VideoCall` on the first activity to **Phone**.
 
-    !![MDK](img_1.10.gif)
+    !![MDK](img-1.10.gif)
 
 11. Click the **link icon** to open the Object browser for the **Phone** activity and bind it to the `PhoneNumber` property of the Customer entity.
 
-    !![MDK](img_1.11.png)
+    !![MDK](img-1.11.png)
 
 12. Repeat the above step for **Email** activity and bind it to `EmailAddress` property of the Customer entity.
 
-    !![MDK](img_1.12.png)
+    !![MDK](img-1.12.png)
 
 13. Click the **trash** can icon for the Detail activity to remove it from the Activity list.
 
-    !![MDK](img_1.13.png)
+    !![MDK](img-1.13.png)
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -111,11 +111,11 @@ Now, you will create a Navigation action that opens the `Customers_List.page` wh
 
 1. In SAP Business Application Studio project, right-click the **Actions** | **MDK: New Action**.
 
-    !![MDK](img_2.1.png)
+    !![MDK](img-2.1.png)
 
 2. Choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
 
-    !![MDK](img_2.2.png)
+    !![MDK](img-2.2.png)
 
 2. Provide the below information:
 
@@ -137,7 +137,7 @@ Now, that the Customer List page is created, you will add a button to the Main p
 
 1. In `Main.page`, drag and drop the **Section Button Table** container control onto the Page.
 
-    !![MDK](img_3.1.gif)
+    !![MDK](img-3.1.gif)
 
     >**Container** includes controls that act as containers for other controls, such as container items. A container is constant for all pages. The size of a container depends on the controls and contents included inside.
 
@@ -153,11 +153,11 @@ Now, that the Customer List page is created, you will add a button to the Main p
 
 3. In the Properties pane, set the **Title** of the button to **Customer List**.
 
-    !![MDK](img_3.3.png)
+    !![MDK](img-3.3.png)
 
 4. Under **Events** tab, click the **link icon** for the `OnPress Handler` property to open the Object Browser. Double click the `NavToCustomers_List` action and click **OK** to set it as the `OnPress Handler` Action.
 
-    !![MDK](img_3.4.gif)
+    !![MDK](img-3.4.gif)
 
 [DONE]
 [ACCORDION-END]
@@ -172,11 +172,11 @@ Deploy the updated application to your MDK client.
 
 2. Select deploy target as **Mobile & Cloud**.
 
-    !![MDK](img_4.2.png)
+    !![MDK](img-4.2.png)
 
     You should see success message for both deployments.
 
-    !![MDK](img_4.3.png)
+    !![MDK](img-4.3.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -189,8 +189,7 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-    ![MDK](img_5.1.png)
-
+    ![MDK](img-5.1.png)
 
 2. You will notice, newly added button on the main page. Tap **CUSTOMER LIST**.
 
@@ -230,11 +229,11 @@ Deploy the updated application to your MDK client.
 
 1. Either click the highlighted button or refresh the web page to load the changes.
 
-    !![MDK](img_6.5.png)
+    !![MDK](img-6.5.png)
 
-    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+    >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
-    >!![MDK](img_6.8.png)
+    >!![MDK](img-6.8.png)
 
 2. You will notice, newly added button on the main page. Click **Customer List**.
 
@@ -246,7 +245,7 @@ Deploy the updated application to your MDK client.
 
 [OPTION END]
 
-[DONE]
+[VALIDATE_3]
 [ACCORDION-END]
 
 ---

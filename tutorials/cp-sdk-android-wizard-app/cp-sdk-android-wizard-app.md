@@ -1,19 +1,19 @@
 ---
 author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
-title: Try Out the SAP Cloud Platform SDK for Android Wizard
-description: Use the Android Studio-integrated SAP Cloud Platform SDK for Android Wizard to create a mobile app and configure it to make use of SAP Cloud Platform Mobile Services features.
+title: Try Out the SAP BTP SDK Wizard for Android
+description: Use the Android Studio-integrated SAP BTP SDK Wizard for Android to create a mobile app and configure it to make use of SAP Mobile Services features.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-android
-tags: [ tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-cloud-platform-sdk-for-android, products>sap-cloud-platform ]
+primary_tag: products>sap-btp-sdk-for-android
+tags: [ tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
 time: 30
 ---
 
 ## Prerequisites
-- You [created a trial account on SAP Cloud Platform](hcp-create-trial-account).
-- [Enabled SAP Cloud Platform mobile services](fiori-ios-hcpms-setup) on **Cloud Foundry**.
-- Installed [Android Studio 4.1.x](https://developer.android.com/studio/archive). Please use the specified version.
-- [Downloaded](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20android) and [Installed](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/android/setup.html) version 3.2.x of the SAP Cloud Platform SDK for Android.
+- You [created a trial account on SAP BTP](hcp-create-trial-account).
+- [Enabled SAP Mobile Services](fiori-ios-hcpms-setup) on **Cloud Foundry**.
+- Installed [Android Studio 4.2.x](https://developer.android.com/studio/archive). Please use the specified version.
+- [Downloaded](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20android) and [Installed](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/android/setup.html) version 3.4.x of the SAP BTP SDK for Android.
 - Created a Google account.
 
 ## Details
@@ -30,7 +30,7 @@ time: 30
 
 1.  Open **Android Studio**.
 
-2.  Choose **Start a new SAP Cloud Platform Android project**, which is an option created by the SAP Cloud Platform SDK for Android Wizard.
+2.  Choose **Start a new SAP Business Technology Platform Android project**, which is an option created by the SAP BTP SDK Wizard for Android.
 
     !![New project](new-project.png)
 
@@ -38,7 +38,7 @@ time: 30
 
     | Field | Value |
     |:----|:----|
-    | Account Name | **`SAP Cloud Platform Mobile Services Trial`** |
+    | Account Name | **`SAP Mobile Services Trial`** |
     | Admin API URL | **`See below for how to get this URL`** |
     | Admin UI URL | **`See below for how to get this URL`** |
     | Authentication Type | **`Basic`** |
@@ -46,7 +46,7 @@ time: 30
     | Password | **`Password for your trial account`** |
     | Save Account Information | **`Check this so that you do not have to re-enter account information on subsequent runs of the wizard`** |
 
-4.  Go to the [SAP Cloud Platform Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) and under **Important Links**, both Admin URLs are present and can be copied.
+4.  Go to the [SAP Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) and under **Important Links**, both Admin URLs are present and can be copied.
 
     !![Admin API and UI URL](admin-url.png)
 
@@ -58,7 +58,7 @@ time: 30
 
     !![Sample tab information](sample-application-wizard.png)
 
-7.  SAP Cloud Platform mobile services provide a sample back-end destination named `com.sap.edm.sampleservice.v2` that is being used here to provide data for the application. It contains product categories, product, supplier, customer and sales order data. Select it and click **Next**.
+7.  SAP Mobile Services provides a sample back-end destination named `com.sap.edm.sampleservice.v2` that is being used here to provide data for the application. It contains product categories, product, supplier, customer and sales order data. Select it and click **Next**.
 
     !![Odata service destination screen](Odata-service-destination.png)
 
@@ -80,7 +80,7 @@ time: 30
     |:----|:----|
     | Use Discovery Service as Configuration Provider | **`uncheck`** |
     | OData | **`Online`** |
-    | Create a sample user experience for the selected OData Destination | **`check`** |
+    | Create a Sample User Experience for the Selected OData Destination | **`check`** |
     | Enable Logging | **`check`** |
     | Enable Upload | **`check`** |
     | Enable Usage Reporting | **`check`** |
@@ -152,8 +152,15 @@ If you check the **Enable Push** checkbox, an error message is displayed explain
 
     !![Welcome screen](welcome-screen.png)
 
+4.  Click **GET STARTED** and the license agreement screen is displayed.
 
-4.  Log in with your username and password.
+    !![License agreement screen](license-agreement.png)
+
+    Read it and click **AGREE**, you will see the **Sign-In** screen of the app. If you select **DISAGREE**, you will be asked to confirm whether to terminate onboarding. If you confirm, you will return to the **Welcome** screen. Otherwise, you can still select **AGREE** to complete onboarding and start to use the app.
+
+    !![License agreement disagree](license-agreement-disagree.png)
+
+5.  Log in with your username and password.
 
     !![Authentication screen](authentication-screen.png)
 
@@ -163,27 +170,19 @@ If you check the **Enable Push** checkbox, an error message is displayed explain
 
     !![Passcode screen](create-passcode.png)
 
-5.  You can modify the passcode policy in the [Mobile Service Cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) under **Client Configuration** in **Mobile Settings Exchange** page. The passcode screen will not be displayed if the **Enable Passcode Policy** is not checked.
+6.  You can modify the passcode policy in the [Mobile Service Cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) under **Client Configuration** in **Mobile Settings Exchange** page. The passcode screen will not be displayed if the **Enable Passcode Policy** is not checked.
 
     !![Mobile Settings Exchange page access](access-mobile-settings-exchange.png)
 
     !![Passcode Policy](passcode-policy.png)
 
-6.  Because **Enable Usage Reporting** is checked, this screen can be used to show details of how the collected data will be used. For now, select either **ALLOW** or **DENY**. **Usage Reporting** is covered in a later tutorial in this mission.
+7.  Because **Enable Usage Reporting** is checked, this screen can be used to show details of how the collected data will be used. For now, select either **ALLOW** or **DENY**. **Usage Reporting** is covered in a later tutorial in this mission.
 
     !![Usage Reporting Consent Screen](usage-reporting-consent-screen.png)
 
-7.  Just like usage reporting, since **Enable Crash Reporting** is checked as well, this screen will be used to display details of how the collected information will be used. Select either **ALLOW** or **DENY**. If you select **DENY**, the crash information will only be stored locally.
+8.  Just like usage reporting, since **Enable Crash Reporting** is checked as well, this screen will be used to display details of how the collected information will be used. Select either **ALLOW** or **DENY**. If you select **DENY**, the crash information will only be stored locally.
 
     !![Crash Reporting Consent Screen](crash-reporting-consent-screen.png)
-
-8.  The license agreement screen is displayed.
-
-    !![License agreement screen](license-agreement.png)
-
-    Read it and click **AGREE**, you will see the first screen of the app. If you select **DISAGREE**, you will be asked to confirm whether to terminate onboarding. If you confirm, you will be back to welcome screen. Otherwise, you can still select **AGREE** to complete onboarding and start to use the app.
-
-    !![License agreement disagree](license-agreement-disagree.png)
 
 9.  The first screen of the app shows the different entities that are in the sample OData service.
 
@@ -193,14 +192,13 @@ If you check the **Enable Push** checkbox, an error message is displayed explain
 
     !![Products screen](products-screen.png)
 
-
 10.  Tap a list item to display the following editable detail screen.
 
     !![Category detail](product-detail.png)
 
 >For further information on generating your app, see [Creating Apps with the Wizard](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/android/creating-an-app.html).
 
-Congratulations! You have created your first Android app using the SAP Cloud Platform SDK for Android Wizard!
+Congratulations! You have created your first Android app using the SAP BTP SDK Wizard for Android!
 
 [VALIDATE_3]
 [ACCORDION-END]

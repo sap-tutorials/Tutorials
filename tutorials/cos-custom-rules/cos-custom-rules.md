@@ -1,6 +1,6 @@
 ---
-title: Create a Custom Rule with SAP Customer Order Sourcing
-description: Learn how to create a custom rule from start to finish with SAP Customer Order Sourcing.
+title: Create a Custom Goal with SAP Customer Order Sourcing
+description: Learn how to create a custom goal from start to finish with SAP Customer Order Sourcing.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>sap-api-business-hub]
@@ -16,12 +16,12 @@ primary_tag: topic>cloud
 ## Details
 ### You will learn
   - How to create a custom attribute via the SAP Customer Order Sourcing API
-  - How to create a custom rule using the custom attribute
+  - How to create a custom goal using the custom attribute
 
 
-  In this tutorial you learn create a custom rule in SAP Customer Order Sourcing from start to finish.
+  In this tutorial you learn create a custom goal in SAP Customer Order Sourcing from start to finish.
 
-  Custom Rules allow you to extend the rule based sourcing according to your needs.
+  Custom Goals allow you to extend the goal based sourcing according to your needs.
 
 
 [ACCORDION-BEGIN [Step 1: ](Add custom attribute via SAP Customer Order Sourcing API)]
@@ -68,7 +68,7 @@ primary_tag: topic>cloud
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a custom rule)]
+[ACCORDION-BEGIN [Step 2: ](Create a custom goal)]
 
 1. In the [SAP Business Technology Platform trial space](https://account.hanatrial.ondemand.com), enter your trial account.
 
@@ -82,22 +82,22 @@ primary_tag: topic>cloud
 
 5. Open the Strategy Builder app and open an existing strategy or create a new one via **+**.
 
-6. Under **Rules** click **Manage**.
+6. Under **Goals** click **Manage**.
 
-7. In the **Manage Rules** view, create a new rule by clicking **+**.
+7. In the **Manage Goals** view, create a new goal by clicking **+**.
 
-    For the rule, set the following:
+    For the goal, set the following:
 
     |  Field Name     | Value
     |  :------------- | :-------------
     |  **Name**           | **`Highest Sustainability Rating`**
-    |  **Description**    | **`The focus of this rule is to deliver products only from the source with the highest (best) sustainability rating.`**
+    |  **Description**    | **`The focus of this goal is to deliver products only from the source with the highest (best) sustainability rating.`**
     |  **Numeric Attribute**    | **`sustainabilityrating`**
     |  **Comparator**          | **`Highest Value`**
 
-    Save the rule.
+    Save the goal.
 
-You are now able to use the custom rule in the **Strategy Builder**.
+You are now able to use the custom goal in the **Strategy Builder**.
 
 For sourcing to properly work, you must upload sources that include the sustainability rating attribute.
 

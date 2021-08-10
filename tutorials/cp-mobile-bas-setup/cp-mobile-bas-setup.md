@@ -5,8 +5,8 @@ auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment, products>sap-mobile-cards, products>sap-mobile-services, products>sap-business-application-studio, products>mobile-development-kit-client ]
 primary_tag: products>sap-business-technology-platform
-author_name: Sandeep T D S
-author_profile: https://github.com/sandeep-tds
+author_name: Jitendra Kansal
+author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
@@ -26,42 +26,25 @@ SAP Business Application Studio is the next-generation web-based IDE hosted on S
 
 1. Log into your Business Application Studio and click **Create Dev Space**.
 
-    > The number of extensions may differ if you are on trial or a production account.
-
 2. Select **SAP Mobile Application**, enter a name (`Tutorial`) for your dev space and click **Create Dev Space**.
 
-    !![BAS New Space](img_1_2.png)
+    !![BAS New Space](img-1.2.png)
 
-Your dev space will be created and the status will change to running.
+    Your dev space will be created and the status will change to running.
+
+3. Click your dev space's name to open it.
+
+    !![BAS Enter Space](img-2.1.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Set up your workspace)]
+[ACCORDION-BEGIN [Step 2: ](Configure Cloud Foundry environment)]
 
-1. Click your dev space's name to open it.
+1. Navigate to **View** menu > **Find Command**> **CF: Login to Cloud foundry**.
 
-    !![BAS Enter Space](img_2_1.png)
-
-    > Wait till your workspace loads completely.
-
-2. Since there is no folder opened yet, click **Open Folder**.
-
-    !![BAS Dev View](img-2.2.png)
-
-3. Select projects, Click **Open**.
-
-    !![Select Workpace](img-2.3.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Configure Cloud Foundry environment)]
-
-1. In the bottom left corner of your status bar, click the message **`The organization and space in Cloud Foundry have not been set.`**.
-
-    !![CF View](img-3.1.png)
+    !![CF View](img-3.1.gif)
 
 2. Verify the URL and **Click Enter** on your keyboard.
 
@@ -87,15 +70,15 @@ Your dev space will be created and the status will change to running.
 
 5. Select the organisation in which you have enabled Mobile Services.
 
-    !![Org list](img_3_5.png)
+    !![Org list](img-3.5.png)
 
 6. Select the space in which you have enabled Mobile Services.
 
     !![Space list](img_3_6.png)
 
-    > Upon successful setup, you will see a toast message at the bottom right corner of your screen, and the bottom status bar will highlight CF connection details.
+    > Upon successful setup, you will see a toast message at the bottom right corner of your screen.
 
-    > !![Success toast message](img_3_6_note.png)
+    > !![Success toast message](img-3.6note.png)
 
 [DONE]
 [ACCORDION-END]

@@ -3,8 +3,8 @@ title: Discover Sales Order API from S/4HANA Cloud System
 description: Discover the Sales Order API from S/4HANA Cloud system.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, products>sap-api-management, products>sap-cloud-platform]
-primary_tag: products>sap-api-management
+tags: [ tutorial>intermediate,  products>sap-business-technology-platform]
+primary_tag: products>sap-integration-suite
 ---
 
 ## Prerequisites
@@ -13,7 +13,7 @@ primary_tag: products>sap-api-management
 ### You will learn
   - How to discover APIs from SAP API Business Hub
   - How to create API proxy
-  - How to tryout APIs in SAP API Management
+  - How to tryout APIs in API Management
   - How to get the API key
 
 [ACCORDION-BEGIN [Step 1: ](Discover S/4HANA APIs in API portal)]

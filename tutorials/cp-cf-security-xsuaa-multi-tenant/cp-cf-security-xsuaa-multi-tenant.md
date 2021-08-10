@@ -3,10 +3,10 @@ title: Add Multitenancy to a Node.js Application Secured by the Authorization an
 description: Learn how to add multitenancy to your application and make it available for other subaccounts using the SaaS Provisioning service and the XSUAA.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, products>sap-business-technology-platform, topic>node-js]
+tags: [ tutorial>intermediate, products>sap-business-technology-platform, topic>node-js ]
 primary_tag: topic>security
-author_name: Dominik Nehse
-author_profile: https://github.com/nedo-SAP
+author_name: Michael Shea
+author_profile: https://github.com/MichaelPShea
 ---
 
 

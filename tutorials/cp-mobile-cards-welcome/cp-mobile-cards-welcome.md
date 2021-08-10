@@ -3,13 +3,13 @@ title: Create A New Welcome Card
 description: Create your first SAP Mobile Card using SAP Business Technology Platform Boosters.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
-tags: [  tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [  tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-cards, products>sap-mobile-services ]
 time: 10
-author_name: Chetali Shah
-author_profile: https://github.com/shahchetali
+author_name: Sandeep TDS
+author_profile: https://github.com/sandeep-tds
 ---
 ## Prerequisites
-- [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+- [Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
 
 ## Details
 ### You will learn
@@ -35,11 +35,11 @@ SAP Mobile Cards can be created in multiple ways. In this step, you will create 
 
 2. Provide the login details and click **Log On**.
 
-    !![SCP Log On Screen](img_2_0.png)
+    !![SAP BTP Log On Screen](img_2_2.png)
 
 3. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
-    !![Trial global account](img_2_1.png)
+    !![Trial global account](img_2_3.png)
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region (select the region closest to you). Your user profile will be set up for you automatically.  
 
@@ -47,23 +47,23 @@ SAP Mobile Cards can be created in multiple ways. In this step, you will create 
 
     >Choose **Continue**.
 
-    >!![Enable SCP CF Trial](img_2_1_note.png)
+    >!![Enable SAP BTP CF Trial](img_2_3_note.png)
 
 4. In the side navigation bar, click **Boosters**.
 
-    !![CP CF Trial Account](img_2_2.png)
+    !![CP CF Trial Account](img_2_4.png)
 
 5. Click the **Build a Micro App for SAP Mobile Cards** tile.
 
-    !![Booster View](img_2_3.png)
+    !![Booster View](img_2_5.png)
 
 6. Go through the details mentioned and click **Start**.
 
-    !![Booster View](img_2_4.png)
+    !![Booster View](img_2_6.png)
 
 7. In the *Check Prerequisites* tab of the wizard, click **Next**.
 
-    !![Booster Wizard Tab 1](img_2_5.png)
+    !![Booster Wizard Tab 1](img_2_7.png)
 
 8. In the *Select Subaccount* tab of the wizard, select the following values.
 
@@ -72,23 +72,23 @@ SAP Mobile Cards can be created in multiple ways. In this step, you will create 
     | Subaccount | trial | All the spaces under this subaccount will be listed in the *Space dropdown*. |
     | Space | dev | The mobile card kit status is determined. |
 
-    !![Booster Wizard Tab 2](img_2_6.png)
+    !![Booster Wizard Tab 2](img_2_8.png)
 
 9. If your Mobile Card Kit status is *Not Available*, then Click **Initialize mobile card**.
 
-    !![Booster Wizard Tab 2](img_2_7.png)
+    !![Booster Wizard Tab 2](img_2_9.png)
 
 10. Click **Initialize**.
 
-    !![Booster Wizard Tab 2](img_2_8.png)
+    !![Booster Wizard Tab 2](img_2_10.png)
 
 11. When your Mobile Card Kit status is *Available*, then click **Next**.
 
-    !![Booster Wizard Tab 2](img_2_9.png)
+    !![Booster Wizard Tab 2](img_2_11.png)
 
 12. In the *Select Cards* tab of the wizard, select the **Welcome Card Template - Single Instance** and click **Next**.
 
-    !![Booster Wizard Tab 3](img_2_10.png)
+    !![Booster Wizard Tab 3](img_2_12.png)
 
 13. In the *Configure Cards* tab of the wizard, enter the name as following and click **Next**.
 
@@ -96,14 +96,14 @@ SAP Mobile Cards can be created in multiple ways. In this step, you will create 
     |----|---|
     |Name| Booster welcome card |
 
-    !![Booster Wizard Tab 4](img_2_11.png)
+    !![Booster Wizard Tab 4](img_2_13.png)
 
 14. In the *Review* tab of the wizard, review the details you've entered and click **Finish**.
 
-    !![CPMS cockpit](img_2_12.png)
+    !![CPMS cockpit](img_2_14.png)
 
 Upon successful creation you will see a success message.
-!![CPMS cockpit](img_2_13.png)
+!![CPMS cockpit](img_2_15.png)
 
 [VALIDATE_1]
 [ACCORDION-END]

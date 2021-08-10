@@ -21,6 +21,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ![MDK](img_1.gif)
 
+
 [ACCORDION-BEGIN [Step 1: ](Store the deleted record locally)]
 
 The next step is to store deleted record locally for an offline application or delete directly back to the backed for online applications. You will now create an OData delete action to delete a customer record. You will also show a failure message if the delete action fails.
@@ -74,7 +75,7 @@ The next step is to store deleted record locally for an offline application or d
     | `EntitySet` | Select `Customers` from the dropdown |
     | `ReadLink`| click link icon and double click `readLink` |
 
-    !![MDK](img_1.5.png)
+    !![MDK](img-1.5.png)
 
     >The `readLink` is a direct reference to an individual entity set entry.
 
@@ -90,7 +91,7 @@ The next step is to store deleted record locally for an offline application or d
     | `Success Action` | Click the link icon and bind it to `CloseModalPage_Complete.action` |
     | `Failure Action` | Click the link icon and bind it to `DeleteCustomerEntityFailureMessage.action` |
 
-    !![MDK](img_1.6.png)
+    !![MDK](img-1.6.png)
 
     >When `Customers_DeleteEntity.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered or if `Customers_DeleteEntity.action` fails then `DeleteCustomerEntityFailureMessage.action` will be triggered.
 
@@ -151,15 +152,15 @@ You will add a button to the _Customer Detail page_ called **Trash**. You will l
 
     Double click the **Trash** type and click **OK**.
 
-    !![MDK](img_3.2.png)
+    !![MDK](img-3.2.png)
 
-2. Next, click the **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
+2. Next, click the **Events** tab, click the 3 dots icon for the `OnPress` property to open the **Object Browser**.
 
     Double click the `Customers_DeleteConfirmation.js` rule and click **OK** to set it as the `OnPress` Action.
 
     >You could link `OnPress` property directly to OData delete action directly instead to this JavaScript file. Idea of linking to  JavaScript file is to let you understand another way to achieve similar functionality.
 
-    !![MDK](img_3.3.png)
+    !![MDK](img-3.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -174,11 +175,11 @@ Deploy the updated application to your MDK client.
 
 2. Select deploy target as **Mobile & Cloud**.
 
-    !![MDK](img_4.2.png)
+    !![MDK](img-4.2.png)
 
     You should see success message for both deployments.
 
-    !![MDK](img_4.3.png)
+    !![MDK](img-4.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -235,11 +236,11 @@ Deploy the updated application to your MDK client.
 
 1. Either click the highlighted button or refresh the web page to load the changes.
 
-    !![MDK](img_5.8.png)
+    !![MDK](img-5.8.png)
 
-    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+    >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
-    >!![MDK](img_5.9.png)
+    >!![MDK](img-5.9.png)
 
 2. Click **Customer List**| click any record | click **Trash**.
 
@@ -257,11 +258,11 @@ You can cross verify if this record has been deleted in the backend.
 
 >**Mobile Applications** | **Native/Hybrid** | click the MDK App **com.sap.mdk.demo** | **Mobile Connectivity** | click **Launch in Browser** icon
 
->!![MDK](img_5.7.png)
+>!![MDK](img-5.7.png)
 
 >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
-[VALIDATE_1]
+[VALIDATE_3]
 [ACCORDION-END]
 
 ---

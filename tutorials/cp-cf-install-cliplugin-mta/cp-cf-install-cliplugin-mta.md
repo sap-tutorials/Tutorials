@@ -10,7 +10,6 @@ primary_tag: products>sap-btp--cloud-foundry-environment
 
 ## Details
 ### You will learn
-  - How to add the community repository to the  Cloud Foundry CLI
   - How to install a Cloud Foundry CLI plugin
   - How to use the [MTA (aka MultiApps) plugin](https://github.com/cloudfoundry-incubator/multiapps-cli-plugin)
 
@@ -34,15 +33,33 @@ Now you should see the release number of the CLI you are using.
 [ACCORDION-BEGIN [Step 3: ](Install the plugin)]
 
 
-Install the plugin, using the following command:
-```Bash
-cf install-plugin multiapps
-```
+Install the plugin from the OS-specific binary, using the following command:
 
-> If you do not have the community repository in your CF CLI, you can add it first by executing.
+[OPTION BEGIN [macOS]]
 ```Bash
-cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org
+cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.osx
 ```
+[OPTION END]
+[OPTION BEGIN [Windows 64 Bit]]
+```Bash
+cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.win64
+```
+[OPTION END]
+[OPTION BEGIN [Linux 64 Bit]]
+```Bash
+cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.linux64
+```
+[OPTION END]
+[OPTION BEGIN [Windows 32 Bit]]
+```Bash
+cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.win32
+```
+[OPTION END]
+[OPTION BEGIN [Linux 32 Bit]]
+```Bash
+cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.linux32
+```
+[OPTION END]
 
 [DONE]
 [ACCORDION-END]

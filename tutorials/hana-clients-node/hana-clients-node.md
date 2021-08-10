@@ -21,23 +21,31 @@ Node.js provides a JavaScript runtime outside of the browser and uses an asynchr
 
 [ACCORDION-BEGIN [Step 1: ](Install Node.js)]
 
-The first step is to check if you have Node.js installed and what version it is.  Enter the following command:
+Ensure you have Node.js installed and check its version. Enter the following command:
 
 ```Shell
 node -v  
 ```  
 
-If Node.js is installed, it will return the currently installed version, such as v15.3.0.
+If Node.js is installed, the currently installed version is returned, such as v15.3.0.
 
-If node is not installed, download the long-term support (LTS) version of Node.js from [Node.js Download](https://nodejs.org/en/download/).
+If Node.js is not installed, download the long-term support (LTS) version of Node.js from [Download Node.js](https://nodejs.org/en/download/).
 
->An install for node.js is not provided on Linux. You may choose to install it via a package manager. For more details, please navigate to [this link](https://nodejs.org/en/download/package-manager/).
+>An install for Node.js is not provided on Linux. You may choose to install it via a package manager. For more details, please navigate to [this link](https://nodejs.org/en/download/package-manager/).
 
 During the installation, there is no need to check the following box as you do not need to install Chocolatey.  
 
 ![Chocolatey](Chocolatey.png)
 
->The SAP HANA client provides a 32-bit and a 64-bit install, as does Node.js.  The Node.js driver provided with the SAP HANA client is available for 64-bit only and supports Node.js versions 8.11.2 and higher.  For additional details see SAP note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307).
+>The SAP HANA client provides a 32-bit and a 64-bit install, as does Node.js.  The Node.js driver provided with the SAP HANA client is available for 64-bit only and supports Node.js versions 8.11.2 and higher.  For additional details see SAP note [3006307 - SAP HANA Client Supported Platforms for 2.7 and higher](https://launchpad.support.sap.com/#/notes/3006307).
+
+---
+
+> Another option is to use a docker image that contains [Node.js](https://github.com/nodejs/docker-node#docker-run) as shown below.
+>
+>```Shell
+>docker run -it --name=nodealpine node:alpine /bin/bash
+>```
 
 [DONE]
 [ACCORDION-END]
@@ -46,7 +54,7 @@ During the installation, there is no need to check the following box as you do n
 
 Node.js packages are available using [NPM](https://www.npmjs.com/), which is the standard package manager for Node.js.  
 
-1. Enter `@sap/hana-client`, and click **Search**.
+1. Enter `hana client`, and click **Search**.
 
     ![Search for hana-client](search-hana-client.png)  
 
@@ -75,15 +83,35 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     npm install @sap/hana-client
     ```
 
+    >The `hana-client` driver contains native libraries as shown below.
+
+    >![pre built libraries](prebuilt.png)
+
+    >When installed using NPM, the native libraries for all available platforms are downloaded.  The following environment variable can be used to remove the other platforms reducing the size of the project.  For additional details, see [Node.js Environment Variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/2dbfa39ecc364a65a6ab0fea9c8c8bd9.html).
+
+    >```Shell (Microsoft Windows)
+    set HDB_NODE_PLATFORM_CLEAN=1
+    npm uninstall @sap/hana-client
+    npm install @sap/hana-client
+    >```
+
+    >```Shell (Linux or Mac)
+    export HDB_NODE_PLATFORM_CLEAN=1
+    npm uninstall @sap/hana-client
+    npm install @sap/hana-client
+    >```
+
+    >---
+
     >The hana-client driver is also available from the HANA client install folder.  The install location was set during the install.
 
     >```Shell
-    >npm install C:\SAP\hdbclient\node
-    ```
+    npm install C:\SAP\hdbclient\node
+    >```
 
     >If you encounter an error about permissions, on Microsoft Windows, run or open the command prompt as an administrator, or use `sudo` on Linux or Mac.
 
-4. The following command will list the Node.js modules that are now installed locally into the `HANAClientsTutorial\node` folder.  Note that the extraneous message can be ignored.  
+4. The following command lists the Node.js modules that are now installed locally into the `HANAClientsTutorial\node` folder.  Note that the extraneous message can be ignored.  
 
     ```Shell
     npm list
@@ -97,7 +125,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
 > ---
 
->Node.js modules can also be installed globally. To see the list of node modules installed globally enter the following command.  
+>Node.js modules can also be installed globally. To see the list of Node.js modules installed globally enter the following command.  
 
 >The depth parameter can be used to specify the number of levels to show when displaying module dependencies.  By setting depth=x, a tree-structure is outputted that shows modules that are x levels below the top-level module.
 
@@ -139,14 +167,12 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 1. Open a file named `nodeQuery.js` in an editor.
 
     ```Shell (Microsoft Windows)
-    cd %HOMEPATH%\HANAClientsTutorial\node
     notepad nodeQuery.js
     ```
 
     Substitute `pico` below for your preferred text editor.  
 
     ```Shell (Linux or Mac)
-    cd $HOME/HANAClientsTutorial/node
     pico nodeQuery.js
     ```
 
@@ -155,7 +181,6 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     ```JavaScript
     'use strict';
     const { PerformanceObserver, performance } = require('perf_hooks');
-    var t0 = performance.now();
     var util = require('util');
     var hana = require('@sap/hana-client');
 
@@ -172,11 +197,17 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
         //As of 2.7 trace info can be directed to stdout or stderr
         //traceFile: 'stdout',
         //traceOptions: 'sql=warning',
+
         //As of SAP HANA Client 2.6, connections on port 443 enable encryption by default (HANA Cloud).
         //encrypt: 'true',  //Must be set to true when connecting to HANA as a Service
         sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
-        //Used to specify where the trust store is located.  
-        //As of SAP HANA Client 2.6 for OpenSSL connections, this can be ignored as root certificates are read from the default OS location.
+        //Used to specify where the trust store is located.
+
+        //For encrypted connections, the default crypto provider is mscrypto on Windows or openSSL on Linux or macos
+        //To use the SAP crypto provider, uncomment the below line.
+        //sslCryptoProvider: 'commoncrypto',
+
+        //As of SAP HANA Client 2.6 for OpenSSL connections, the following settings can be ignored as root certificates are read from the default OS location.
         //ssltruststore: '/home/dan/.ssl/trust.pem',
         //Alternatively provide the contents of the certificate directly (DigiCertGlobalRootCA.pem)
         //DigiCert Global Root CA: https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem used for SAP HANA cloud
@@ -187,8 +218,21 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     //Synchronous  example querying a table
     var connection = hana.createConnection();
+
+    //As of 2.9, tracing can be directed to a callback
+    /*
+    var traceCB = function (buf) {
+        console.log(buf);
+    };
+    connection.onTrace("sql=error,debug=fatal,OutBufferSize=64k", traceCB);  
+    */
+
     connection.connect(connOptions);
+
+    //connection.onTrace("", null);  //disables callback tracing for the rest of the program
+
     var sql = 'select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;';
+    var t0 = performance.now()
     var result = connection.exec(sql);
     console.log(util.inspect(result, { colors: false }));
     var t1 = performance.now();
@@ -196,11 +240,12 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     connection.disconnect();
 
     //Asynchronous example calling a stored procedure
-    var connection = hana.createConnection();
+    connection = hana.createConnection();
     connection.connect(connOptions, function(err) {
         if (err) {
             return console.error(err);
         }
+        //Prepared statement example
         const statement = connection.prepare('CALL HOTEL.SHOW_RESERVATIONS(?,?)');
         const parameters = [11, '2020-12-24'];
         var results = statement.execQuery(parameters, function(err, results) {
@@ -210,12 +255,24 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
             while (results.next()) {
                 console.log(util.inspect(results.getValues(), { colors: false }));
             }
-            statement.drop();
-            connection.disconnect(function(err) {
+            results.close(function(err) {
                 if (err) {
                     return console.error(err);
-                }   
-            });
+                }
+                console.log("results.close");
+                statement.drop(function(err) {
+                    if (err) {
+                        return console.error(err);
+                    }
+                    console.log("statement.drop");
+                    return connection.disconnect(function(err) {
+                        if (err) {
+                            return console.error(err);
+                        }
+                        console.log("disconnect");
+                    });
+                });
+            });u
         });
     });
     ```  
@@ -229,7 +286,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
 Note the above app makes use of some of the SAP HANA client Node.js driver methods, such as [connect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d7226e57dbd943aa9d8cd0b840da3e3e.html), [execute](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/ef5564058b1747ce99fd3d1e03266b39.html) and [disconnect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/fdafeb1d881947bb99abd53623996b70.html).
 
-In nodeQuery.js, synchronous and asynchronous queries are performed.  Notice that asynchronous method calls use callback functions.  For readers that are unfamiliar with synchronous and asynchronous operations, see [The Node.js Event Loop, Timers, and process.nextTick()](https://nodejs.org/de/docs/guides/event-loop-timers-and-nexttick/).
+In nodeQuery.js, synchronous and asynchronous queries are performed.  Notice that asynchronous method calls use callback functions.  See [JavaScript Asynchronous Programming and Callbacks](https://nodejs.dev/learn/javascript-asynchronous-programming-and-callbacks) for additional details.
 
 >To enable debug logging of the SAP  HANA Node.js client, enter the following command and then rerun the app.
 
@@ -265,7 +322,7 @@ node nodeQuery.js
 
 [ACCORDION-BEGIN [Step 4: ](Debug the application)]
 
-Visual Studio Code can be used to run and debug a Node.js application.  
+Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux.
 
 1. [Download Visual Studio Code.](https://code.visualstudio.com/Download)
 

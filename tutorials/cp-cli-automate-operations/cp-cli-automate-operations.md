@@ -1,6 +1,6 @@
 ---
 title: Automate Account Operations with the Command Line Interface (CLI)
-description: Automate your account administrative flows with the SAP BTP command line interface (sapcp CLI).
+description: Automate your account administrative flows with the SAP BTP command line interface (btp CLI).
 author_name: Michal Keidar
 author_profile: https://github.com/michal-keidar
 auto_validation: true
@@ -13,11 +13,12 @@ With the introduction of cloud management tools feature set B to SAP BTP, the st
 
 The REST APIs are offered for each administrative operation available in the SAP BTP cockpit. The API Reference is integrated into the SAP API Business Hub so users can quickly learn how to leverage it for your own use cases. For example, for automating manual operations that until now could only be done via the cockpit.  
 
-If you prefer to use a terminal with CLI commands, the SAP BTP command line interface (sapcp CLI) also offers the operations available in the cockpit, with an integrated help so that you can quickly identify and execute commands to operate  your global account in SAP BTP and your resources manually or automatically via scripts.
+If you prefer to use a terminal with CLI commands, the SAP BTP command line interface (btp CLI) also offers the operations available in the cockpit, with an integrated help so that you can quickly identify and execute commands to operate  your global account in SAP BTP and your resources manually or automatically via scripts.
 
 >This tutorial is designed for a UNIX-like environment, such as macOS or Linux.
 
 ### About this tutorial
+
 In this tutorial, you are a DevOps engineer for Atomic, which develops innovative solutions for its customers on top of SAP BTP. Atomic also uses partner companies for developing solutions. 
 
 Every time a new development project begins, Atomic's DevOps department needs to set up a development environment on SAP BTP.
@@ -29,9 +30,9 @@ According to Atomic's guidelines and standards, each such development envi
 -	SAP HANA Cloud
 
 
-Setting up such an environment for each new project can be very tedious and time-consuming. Luckily, the sapcp CLI can be used to automate these operations -- a new environment can be set up very quickly with the single click of a button. 
+Setting up such an environment for each new project can be very tedious and time-consuming. Luckily, the btp CLI can be used to automate these operations -- a new environment can be set up very quickly with the single click of a button. 
 
-In this tutorial, you act as a member of Atomic's DevOps department. Your department has decided to use the sapcp CLI to automate these operations, including the creation of a Cloud Foundry space and an instance of the SAP HANA Cloud service in the space.
+In this tutorial, you act as a member of Atomic's DevOps department. Your department has decided to use the btp CLI to automate these operations, including the creation of a Cloud Foundry space and an instance of the SAP HANA Cloud service in the space.
 
 For this example, you can download an automation script that we've prepared in advance and execute it to set up the new environment. 
 
@@ -64,7 +65,7 @@ Through this tutorial, we hope we can help you to unleash the power of CLI scrip
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Download and install the client)]
-To get started with the SAP BTP command line interface (sapcp CLI), please follow [this tutorial](cp-sapcp-getstarted).
+To get started with the SAP BTP command line interface (btp CLI), please follow [this tutorial](cp-sapcp-getstarted).
 
 [DONE]
 [ACCORDION-END]
@@ -82,14 +83,14 @@ In this step, you need to open the script file in your favorite text editor and 
 These lines declare global variables that will be used in the script. 
 
 ```Bash
-declare region="<enter your trial region, e.g., eu10, us10, ap21>" 
-declare global_account_subdomain="<enter your trial global account subdomain, see below where it is located>" 
-declare directory_name="<enter a name for the directory of the new project, e.g., Project X>" 
-declare directory_description="<enter a description for the directory of the new project, e.g., Directory for project X of partner Y>" 
-declare contact_person="<enter the email address of your partner company´s contact person>" 
-declare department="<enter the department relevant for your new project, e.g., HR>" 
-declare subaccounts="dev test prod" 
-declare space="<enter a name for the space. e.g., dev>" 
+declare region="<enter your trial region, e.g., eu10, us10, ap21>"
+declare global_account_subdomain="<enter your trial global account subdomain, see below where it is located>"
+declare directory_name="<enter a name for the directory of the new project, e.g., Project X>"
+declare directory_description="<enter a description for the directory of the new project, e.g., Directory for project X of partner Y>"
+declare contact_person="<enter the email address of your partner company´s contact person>"
+declare department="<enter the department relevant for your new project, e.g., HR>"
+declare subaccounts="dev test prod"
+declare space="<enter a name for the space. e.g., dev>"
 declare delay=15
 ```
 
@@ -110,35 +111,36 @@ Let's take a closer look at the script we've provided to understand it better.
 This tells the script to stop executing in case of errors:
 
 ```Bash
-set -o errexit 
+set -o errexit
 ```
 
 This function prints the input text it gets to the screen and colors it in yellow:
 
 ```Bash
-log() { 
-  echo -e "\e[93m$*\e[0m" 
-} 
+log() {
+  echo -e "\e[93m$*\e[0m"
+}
 ```
 
 This function performs the login to your global account on SAP BTP:
 
 ```Bash
-login_sapcp() { 
- 
-  local user=$1 
-  local pass=$2 
-  local region=$3 
-  local subdomain=$4 
- 
-  log Authenticating with SAP BTP 
-  sapcp login \ 
-    --url "https://cpcli.cf.${region}.hana.ondemand.com" \ 
-    --subdomain "$subdomain" \ 
-    --user "$user" \ 
-    --password "$pass" 
- 
-} 
+login_btp() {
+
+  local user=$1
+  local pass=$2
+  local region=$3
+  local subdomain=$4
+
+  log Authenticating with SAP BTP
+  btp login \
+    --url "https://cpcli.cf.${region}.hana.ondemand.com" \
+    --subdomain "$subdomain" \
+    --user "$user" \
+    --password "$pass"
+
+}
+
 ```
 >If two-factor authentication (2FA) is activated on the SAP BTP landscape, then you need to append the passcode generated by the SAP Authenticator to your password.
 
@@ -156,29 +158,29 @@ There are two custom properties here: 
 -	**Department:** The department relevant for the project
 
 ```Bash
-create_directory() { 
- 
-  local subdomain=$1 
-  local name=$2 
-  local desc=$3 
-  local admin=$4 
-  local features=DEFAULT,ENTITLEMENTS,AUTHORIZATIONS 
-  local result 
- 
-  result=$( 
-    sapcp create accounts/directory \ 
-      --global-account "$subdomain" \ 
-      --features "$features" \ 
-      --display-name "$name" \ 
-      --description "$desc" \ 
-      --directory-admins "[\"$admin\"]" \ 
-      --custom-properties "$(printf '[{"key": "Contact Person", "value": "%s"}, {"key": "Department", "value": "%s"}]' "$contact_person" "$department")" 
-  ) 
- 
-  # Return directory ID 
-  awk '/^directory id:/ { print $NF }' <<< "$result" 
- 
-} 
+create_directory() {
+
+  local subdomain=$1
+  local name=$2
+  local desc=$3
+  local admin=$4
+  local features=DEFAULT,ENTITLEMENTS,AUTHORIZATIONS
+  local result
+
+  result=$(
+    btp create accounts/directory \
+      --global-account "$subdomain" \
+      --features "$features" \
+      --display-name "$name" \
+      --description "$desc" \
+      --directory-admins "[\"$admin\"]" \
+      --custom-properties "$(printf '[{"key": "Contact Person", "value": "%s"}, {"key": "Department", "value": "%s"}]' "$contact_person" "$department")"
+  )
+
+  # Return directory ID
+  awk '/^directory id:/ { print $NF }' <<< "$result"
+
+}
 ```
 
 The following function assigns the service and plan it receives as input, as an entitlement to a directory.
@@ -191,97 +193,100 @@ In the `main` function of the script, we'll use the following function to assign
 Since `distribute` and `auto-assign` are specified, every subaccount that is created in or moved to the directory will automatically be assigned these entitlements as well (as long as the directory has remaining quota for these services). 
 
 ```Bash
-assign_distributed_entitlement() { 
- 
-  local directory=$1 
-  local service=$2 
-  local plan=$3 
- 
-  log "Initiating distributed entitlement assignments for $service / $plan ..." 
-  sapcp assign accounts/entitlement \ 
-    --to-directory "$directory" \ 
-    --for-service "$service" \ 
-    --plan "$plan" \ 
-    --distribute \ 
-    --auto-assign 
- 
-} 
+assign_distributed_entitlement() {
+
+  local directory=$1
+  local service=$2
+  local plan=$3
+
+  log "Initiating distributed entitlement assignments for $service / $plan ..."
+  btp assign accounts/entitlement \
+    --to-directory "$directory" \
+    --for-service "$service" \
+    --plan "$plan" \
+    --distribute \
+    --auto-assign \
+    --enable
+
+}
 ```
 
 This function generates a random ID that will be used as each subaccount's subdomain, as it needs to be unique:
 
 ```Bash
-generate_id() { 
-  date | md5 | head -c 8 
-} 
+generate_id() {
+  date | md5 | head -c 8
+}
 ```
 
 The following function creates a new subaccount in a directory:
 
 ```Bash
-create_subaccount() { 
- 
-  local name=$1 
-  local region=$2 
-  local email=$3 
-  local directory_id=$4 
-  local subdomain 
-  local result 
- 
-  subdomain=$(generate_id) 
- 
-  result=$( 
-    sapcp create accounts/subaccount \ 
-      --display-name "$name" \ 
-      --subdomain "$subdomain" \ 
-      --region "$region" \ 
-      --subaccount-admins "[\"$email\"]" \ 
-      --directory "$directory_id" 
-  ) 
- 
-  # Return subaccount ID 
-  awk '/^subaccount id:/ { print $NF }' <<< "$result" 
- 
-} 
+
+create_subaccount() {
+
+  local name=$1
+  local region=$2
+  local email=$3
+  local directory_id=$4
+  local subdomain
+  local result
+
+  subdomain=$(generate_id)
+
+  result=$(
+    btp create accounts/subaccount \
+      --display-name "$name" \
+      --subdomain "$subdomain" \
+      --region "$region" \
+      --subaccount-admins "[\"$email\"]" \
+      --directory "$directory_id"
+  )
+
+  # Return subaccount ID
+  awk '/^subaccount id:/ { print $NF }' <<< "$result"
+
+}
 ```
 
 The following function creates a Cloud Foundry org in the subaccount it receives as input:
 
 ```Bash
-create_cf_environment() { 
- 
-    local subaccount=$1 
-    local subaccount_id=$2 
-    local display_name=$3 
- 
-    log "Initiating CF environment creation for $subaccount ..." 
-    sapcp create accounts/environment-instance \ 
-      --subaccount "$subaccount_id" \ 
-      --environment cloudfoundry \ 
-      --display-name "$display_name" 
-      --service cloudfoundry \
-      --plan standard
+create_cf_environment() {
+
+    local subaccount=$1
+    local subaccount_id=$2
+    local display_name=$3
+
+    log "Initiating CF environment creation for $subaccount ..."
+    btp create accounts/environment-instance \
+      --subaccount "$subaccount_id" \
+      --environment cloudfoundry \
+      --service cloudfoundry \
+      --plan standard \
+      --parameters "{\"instance_name\":\"$display_name\"}"
+
 }
 ```
 
 This function performs the login to Cloud Foundry:
 
 ```Bash
-login_cf() { 
- 
-  local user=$1 
-  local pass=$2 
-  local region=$3 
-  local org=$4 
- 
-  log Authenticating with Cloud Foundry 
-  cf login \ 
-    -a "https://api.cf.${region}.hana.ondemand.com" \ 
-    -o "$org" \ 
-    -u "$user" \ 
-    -p "$pass" 
- 
-} 
+login_cf() {
+
+  local user=$1
+  local pass=$2
+  local region=$3
+  local org=$4
+
+  log Authenticating with Cloud Foundry
+  cf login \
+    -a "https://api.cf.${region}.hana.ondemand.com" \
+    -o "$org" \
+    -u "$user" \
+    -p "$pass"
+
+}
 ```
 
 >If two-factor authentication (2FA) is activated on the SAP BTP landscape, then you need to append the passcode generated by the SAP Authenticator to your password.
@@ -294,93 +299,96 @@ login_cf() { 
 This function creates a new space, using native cf CLI:
 
 ```Bash
-create_new_space() { 
- 
-  local org=$1 
-  local space=$2 
- 
-  log "Creating new space $space in org $org ..." 
-  cf create-space "$space" -o "$org" 
-  sleep "$delay" 
-  cf target -o "$org" -s "$space" 
- 
+create_new_space() {
+
+  local org=$1
+  local space=$2
+
+  log "Creating new space $space in org $org ..."
+  cf create-space "$space" -o "$org"
+  # Since the creation is asynchronous, use sleep for simplicity
+  sleep "$delay"
+  cf target -o "$org" -s "$space"
+
 }
 ```
 
-The main flow is executed in the `main` function: 
+The main flow is executed in the `main` function:
 
 ```Bash
-main() { 
- 
-  local user pass directory_id subaccount subaccount_id org 
- 
-  # Obtain credentials for SAP BTP / Cloud Foundry 
-  echo Please enter your SAP BTP trail credentials 
-  read -r -p 'Email: ' user 
-  read -r -s -p 'Password: ' pass 
-  echo 
- 
-  # Authenticate with SAP BTP 
-  login_sapcp "$user" "$pass" "$region" "$global_account_subdomain" 
- 
-  # Create new directory 
-  log Initiating directory creation ... 
-  directory_id=$( 
-    create_directory \ 
-      "$global_account_subdomain" \ 
-      "$directory_name" \ 
-      "$directory_description" \ 
-      "$user" 
-  ) 
-  log "Directory creation initiated, ID is $directory_id" 
- 
-  # Add two service entitlements that child subaccounts will get 
-  assign_distributed_entitlement "$directory_id" alert-notification standard 
-  assign_distributed_entitlement "$directory_id" hana-cloud-trial hana 
- 
-  # Create new subaccounts in the directory 
-  log Initiating creation of subaccounts ... 
-  for subaccount in $subaccounts; do 
- 
-    subaccount_id=$(create_subaccount "$subaccount" "$region" "$user" "$directory_id") 
-    log "Subaccount $subaccount creation initiated, ID is $subaccount_id" 
- 
-    # Wait for async subaccount creation to end 
-    log "Waiting for subaccount creation to complete ..." 
-    sleep "$delay" 
- 
-    # Create a Cloud Foundry environment in the new subaccount 
-    create_cf_environment "$subaccount" "$subaccount_id" "${subaccount}_org" 
- 
-  done 
- 
-  # Pick the first subaccount/org for further processing 
-  org="$(echo "$subaccounts" | cut -d' ' -f 1)_org" 
- 
-  # Authenticate with Cloud Foundry 
-  login_cf "$user" "$pass" "$region" "$org" 
- 
-  # Create new space and target it 
-  create_new_space "$org" "$space" 
- 
-  # Create SAP HANA Cloud trial service in targeted space 
-  echo Creating HANA Cloud trial service ... 
-  cf create-service hana-cloud-trial hana hana_instance \ 
-    -c ' 
-      { 
-        "data": { 
-          "edition": "cloud", 
-          "memory": 30, 
-          "serviceStopped": false, 
-          "storage": 120, 
-          "systempassword": "Init2020", 
-          "vcpu": 0, 
-          "versionIndicator": "", 
-          "whitelistIPs": [] 
-        } 
-      }' 
- 
-} 
+main() {
+
+  # Define local variables
+  local user pass directory_id subaccount subaccount_id org
+
+  # Obtain credentials for SAP BTP / CF
+  echo Please enter your SAP BTP credentials
+  read -r -p 'Email: ' user
+  read -r -s -p 'Password: ' pass
+  echo
+
+  # Authenticate with SAP BTP
+  login_btp "$user" "$pass" "$region" "$global_account_subdomain"
+
+  # Create new directory
+  log Initiating directory creation ...
+  directory_id=$(
+    create_directory \
+      "$global_account_subdomain" \
+      "$directory_name" \
+      "$directory_description" \
+      "$user"
+  )
+  log "Directory creation initiated, ID is $directory_id"
+
+  # Add two service entitlements that child subaccounts will get
+  assign_distributed_entitlement "$directory_id" alert-notification standard
+  assign_distributed_entitlement "$directory_id" hana-cloud-trial hana
+
+  # Create the dev, test, prod subaccounts in the directory
+  log Initiating creation of subaccounts ...
+  for subaccount in $subaccounts; do
+
+    subaccount_id=$(create_subaccount "$subaccount" "$region" "$user" "$directory_id")
+    log "Subaccount $subaccount creation initiated, ID is $subaccount_id"
+
+    # Wait for async subaccount creation to end
+    log "Waiting for subaccount creation to complete ..."
+    # Since the creation is asynchronous, use sleep for simplicity
+    sleep "$delay"
+
+    # Create a Cloud Foundry environment in the new subaccount
+    create_cf_environment "$subaccount" "$subaccount_id" "${subaccount}_org"
+
+  done
+
+  # Pick the first subaccount/org for further processing
+  org="$(echo "$subaccounts" | cut -d' ' -f 1)_org"
+
+  # Authenticate with Cloud Foundry
+  login_cf "$user" "$pass" "$region" "$org"
+
+  # Create new space and target it
+  create_new_space "$org" "$space"
+
+  # Create SAP HANA Cloud trial service instance in targeted space
+  echo Creating SAP HANA Cloud trial service ...
+  cf create-service hana-cloud-trial hana hana_instance \
+    -c '
+      {
+        "data": {
+          "edition": "cloud",
+          "memory": 30,
+          "serviceStopped": false,
+          "storage": 120,
+          "systempassword": "Init2020",
+          "vcpu": 0,
+          "versionIndicator": "",
+          "whitelistIPs": []
+        }
+      }'
+
+}
 ```
 
 The last step is to call the `main` function:

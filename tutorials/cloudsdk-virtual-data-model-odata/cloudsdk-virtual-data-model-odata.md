@@ -15,6 +15,9 @@ primary_tag: products>sap-cloud-sdk
  - [Develop an S/4HANA Extension Without an S/4HANA System](cloudsdk-mocking-capabilities)
 
 ## Details
+
+Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
+
 ### You will learn
   - How to build up a complex data structure using the virtual data model
   - How to write deeply nested data to SAP S/4HANA in a single call
@@ -52,7 +55,7 @@ import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceDecorator;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
-import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
+import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
 
@@ -76,7 +79,7 @@ public class StoreBusinessPartnerCommand{
         try {
             return businessPartnerService
                     .createBusinessPartner(businessPartner)
-                    .execute(httpDestination);
+                    .executeRequest(httpDestination);
         } catch (final ODataException e) {
             throw new ResilienceRuntimeException(e);
         }
@@ -216,7 +219,7 @@ public class BusinessPartnerServlet extends HttpServlet {
 >
 > In case of an exception, you simply return the error message, ignoring any pretty printing or JSON formatting here for simplicity reasons.
 
-You can deploy the above created code to SAP Cloud Platform or to a local instance (please consider previous tutorials such as [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-cloud-foundry-sample-application.html)).
+You can deploy the above created code to SAP Cloud Platform or to a local instance (please consider previous tutorials such as [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](s4sdk-cloud-foundry-sample-application)).
 
 To run it on a localhost, run the following:
 
@@ -233,7 +236,7 @@ Then you can use a tool like Postman or Curl to check whether the code works. As
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Write a unit test)]
-As learned in [Develop an S/4HANA Extension Without a S/4HANA System](https://developers.sap.com/tutorials/cloudsdk-mocking-capabilities.html) you can utilize mocking to test the functionality without an S/4HANA system to achieve code coverage, fast running tests and better testable code.
+As learned in [Develop an S/4HANA Extension Without a S/4HANA System](cloudsdk-mocking-capabilities) you can utilize mocking to test the functionality without an S/4HANA system to achieve code coverage, fast running tests and better testable code.
 
 For this purpose, you are creating the following test class, which checks the basic assumptions of our API as well as the failure case.
 
@@ -245,8 +248,7 @@ package com.sap.cloud.sdk.tutorial;
 import com.google.common.collect.Lists;
 import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
-import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
-import com.sap.cloud.sdk.odatav2.connectivity.ODataExceptionType;
+import com.sap.cloud.sdk.datamodel.odata.client.exception.ODataException;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
 import org.junit.BeforeClass;
@@ -284,7 +286,7 @@ public class GetBusinessPartnerMockedTest {
                 .filter(any())
                 .orderBy(any(),any())
                 .top(any())
-                .execute(any()))
+                .executeRequest(any()))
                 .thenReturn(Lists.newArrayList(alice, bob));
 
         final List<BusinessPartner> businessPartnerList = new GetBusinessPartnersCommand(httpDestination, service).execute();
@@ -303,7 +305,7 @@ public class GetBusinessPartnerMockedTest {
                 .filter(any())
                 .orderBy(any(),any())
                 .top(any())
-                .execute(any()))
+                .executeRequest(any()))
                 .thenReturn(Lists.newArrayList(alice));
 
         final List<BusinessPartner> businessPartnerList = new GetBusinessPartnersCommand(httpDestination, service).execute();
@@ -322,8 +324,8 @@ public class GetBusinessPartnerMockedTest {
                 .filter(any())
                 .orderBy(any(),any())
                 .top(any())
-                .execute(any()))
-                .thenThrow(new ODataException(ODataExceptionType.METADATA_FETCH_FAILED, "Something went wrong", null));
+                .executeRequest(any()))
+                .thenThrow(new ODataException(null, "Something went wrong", null));
 
         new GetBusinessPartnersCommand(httpDestination, service).execute();
     }
@@ -405,7 +407,7 @@ public class BusinessPartnerDeepInsertTest {
 }
 
 ```
-In addition, you are using a system alias which is stored inside the `<projectroot>/integration-tests/src/test/resources/systems.yml` (the basics of the credentials.yml / systems.yml approach was introduced in [Introduce resilience to your application](https://developers.sap.com/tutorials/s4sdk-resilience.html)).
+In addition, you are using a system alias which is stored inside the `<projectroot>/integration-tests/src/test/resources/systems.yml` (the basics of the credentials.yml / systems.yml approach was introduced in [Introduce resilience to your application](s4sdk-resilience)).
 
 Both tests together give us a code coverage of 91%:
 

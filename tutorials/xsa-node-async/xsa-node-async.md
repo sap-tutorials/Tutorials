@@ -9,10 +9,10 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 ## Prerequisites  
  - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Intermediate
- - **Tutorials:** [HANA Database Access from Node.js](https://developers.sap.com/tutorials/xsa-node-dbaccess.html)
+ - **Tutorials:** [HANA Database Access from Node.js](xsa-node-dbaccess)
 
 ## Next Steps
- - [Text Bundles](https://developers.sap.com/tutorials/xsa-node-text.html)
+ - [Text Bundles](xsa-node-text)
 
 ## Details
 ### You will learn  
@@ -781,7 +781,7 @@ module.exports = {
 
 				], function (err, result) {
 					wss.broadcast(err || "done");
-					wss.broadcast("Error Occured disrupting flow of Waterfall for #1");
+					wss.broadcast("Error Occurred disrupting flow of Waterfall for #1");
 				//	pool.release(client);
 					cb();
 				}); //end Waterfall
@@ -841,7 +841,7 @@ module.exports = {
 
 					], function (err, result) {
 						wss.broadcast(err || "done");
-						wss.broadcast("Error Occured disrupting flow of Waterfall for #2");
+						wss.broadcast("Error Occurred disrupting flow of Waterfall for #2");
 					//	pool.release(client);
 						cb();
 					}); //end Waterfall

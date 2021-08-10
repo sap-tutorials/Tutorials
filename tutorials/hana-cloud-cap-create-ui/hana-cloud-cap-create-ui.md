@@ -182,6 +182,10 @@ When an application is deployed, the `mta.yaml` file is used to establish the de
 
 8. **Save** the changes in the deployment descriptor file.       
 
+9. **OPTIONAL**: If you would want to make these changes without the form based mta.yaml editor, here is also the section as it could be inserted via the text editor:
+
+    !![mta.yaml editor add srv-api](mta_yaml_srv_api.png)
+
 > For more information and examples about the `approuter`, refer to this [section in the help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/6ba89596e3a64a5480c3977d4ea7fdba.html).
 
 [DONE]
@@ -225,11 +229,7 @@ We want to create a Fiori freestyle UI for our CAP service.  We will use the wiz
 
     !![CAP Test Page Link](cap_test_ui.png)
 
-10. Clicking that link will open a Fiori Launchpad test page with a single tile for our Interaction Items UI we just generated.
-
-    !![Fiori Launchpad](fiori_launchpad.png)
-
-11. Clicking that tile will launch the generated Fiori free style UI for the CAP service.
+10. Clicking that link will launch the generated Fiori free style UI for the CAP service.
 
     !![Test UI](test_ui.png)                        
 

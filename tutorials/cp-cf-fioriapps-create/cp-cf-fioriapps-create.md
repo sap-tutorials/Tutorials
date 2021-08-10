@@ -1,21 +1,21 @@
 ---
 author_name: Paola Laufer
 author_profile: https://github.com/Paolaufer
-title: Develop SAP SAPUI5 Application for SAP Cloud Platform on Cloud Foundry
-description: Create an SAPUI5 application in SAP Web IDE Full-Stack and deploy it to your SAP Cloud Platform Cloud Foundry environment.
+title: Develop SAP SAPUI5 Application for SAP BTP on Cloud Foundry
+description: Create an SAPUI5 application in SAP Web IDE Full-Stack and deploy it to your SAP BTP, Cloud Foundry environment.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-fiori ]
+tags: [ tutorial>beginner, products>sap-fiori, tutorial>license ]
 primary_tag: products>sap-web-ide
 ---
 
 ## Prerequisites
  - Make sure you have access to the trial version of SAP Web IDE Full-Stack.
- - To access Web IDE go through tutorial of [Prepare SAP Web IDE for Cloud Foundry Development](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
+ - To access Web IDE go through the [Prepare SAP Web IDE for Cloud Foundry Development](sapui5-webide-open-webide) tutorial.
 
 ## Details
 ### You will learn
-  - How to create a new SAPUI5 application for SAP Cloud Platform Cloud Foundry
+  - How to create a new SAPUI5 application for SAP Business Technology Platform (BTP), Cloud Foundry environment
   - How to configure your Cloud Foundry settings in SAP Web IDE
   - How to build and deploy your application to Cloud Foundry
 
@@ -99,7 +99,7 @@ Now, before you can build and deploy your new application, check your Cloud Foun
 
 1. Open the **Preferences** perspective in SAP Web IDE by clicking the **Preferences** icon and then select **Cloud Foundry**.
 
-    ![Open preferences](step4-preferences.png)
+    ![Open preferences](cf.png)
 
 2. In the pane on the right, select the API endpoint, organization and space for your project.
 
@@ -158,13 +158,13 @@ The build process creates a multi-target archive (`MTAR`) file in your workspace
 
 [ACCORDION-BEGIN [Step 7: ](Deploy your application)]
 
-Now, you need to deploy your application to SAP Cloud Platform, Cloud Foundry environment.
+Now, you need to deploy your application to SAP BTP, Cloud Foundry environment.
 
-In your workspace, locate and right-click the new `mta_FioriDemo_0.0.1.mtar` file in the `mta_archives` folder, and select **Deploy > Deploy to SAP Cloud Platform**.
+In your workspace, locate and right-click the new `mta_FioriDemo_0.0.1.mtar` file in the `mta_archives` folder, and select **Deploy > Deploy to SAP BTP**.
 
 ![Deploy](step7-deploy.png)
 
-The **Deploy to SAP Cloud Platform** dialog box opens. The fields are automatically populated. Click **Deploy**.
+The **Deploy to SAP BTP** dialog box opens. The fields are automatically populated. Click **Deploy**.
 
 ![Deploy dialog](step7-deploy-dialog.png)
 
@@ -178,11 +178,11 @@ When the deployment process is complete, you should see the notification in the 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ]( Get the URL to access your application)]
-Now you can access your deployed application in the SAP Cloud Platform cockpit. The steps below show you how to create a URL that you can use to access your new application.
+Now you can access your deployed application in the SAP Business Technology Platform cockpit. The steps below show you how to create a URL that you can use to access your new application.
 
-1. From the **Tools** menu  click **SAP Cloud Platform Cockpit**.
+1. From the **Tools** menu  click **SAP BTP Cockpit**.
 
-    ![Open cockpit](step8-open-cockpit.png)
+    ![Open cockpit](tools_cockpit.png)
 
 2. Click **Home [Europe (Rot)-Trial]** at the top of the screen.
 
@@ -191,7 +191,7 @@ Now you can access your deployed application in the SAP Cloud Platform cockpit. 
 
 3. Click **Enter your Trial Account**.
 
-    ![Enter Trial Account](Step8-Trial2.png)
+    ![Enter Trial Account](login_cockpit.png)
 
 
 
