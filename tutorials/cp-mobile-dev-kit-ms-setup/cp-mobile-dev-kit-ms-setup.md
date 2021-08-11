@@ -76,7 +76,7 @@ Make sure that you have completed required prerequisites mentioned in this tutor
 
 2. Copy the URL from existing destination and click the **Create** icon to add a new destination.
 
-    !![MDK](img_3.2.png)
+    !![MDK](img-3.2.png)
 
 3. Provide the required information and click **Next**.
 
@@ -85,7 +85,7 @@ Make sure that you have completed required prerequisites mentioned in this tutor
     | `Destination Name` | SampleServiceV2 |
     | `URL` | paste the URL from above step  |
 
-    !![MDK](img_3.3.png)
+    !![MDK](img-3.3.png)
 
 4. For this tutorial, there is no Custom Headers, Annotations required. Select **SSO Mechanism** as **Forward Authentication**, click **Next** and Finish the form.    
 

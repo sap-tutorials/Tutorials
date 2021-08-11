@@ -164,6 +164,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 [OPTION END]
 
+
 [OPTION BEGIN [Web]]
 
 1. Click the highlighted button to open the MDK Web application in a browser. Enter your SAP BTP credentials if asked.
