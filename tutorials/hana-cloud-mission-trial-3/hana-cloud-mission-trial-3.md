@@ -38,7 +38,7 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 2.	Provision an instance of SAP HANA Cloud, SAP HANA database
 
-3.	You are here **`->`Tools to manage and access the SAP HANA Cloud, SAP HANA Database**
+3.	You are here <sub-style="font-size:30px">&#9755;</sub> **Tools to manage and access the SAP HANA Cloud, SAP HANA Database**
 
 4.	Create users and manage roles and privileges
 
@@ -276,7 +276,7 @@ Using SAP Business Application Studio is not strictly necessary to use your tria
 
 [OPTION END]
 
-*Well done!*
+Well done!
 
 You have completed the third tutorial of this mission! Now you know how to access the tools you need to make the best use of your SAP HANA Cloud, SAP HANA database instances. Learn in the next tutorial how create and manage users and privileges.
 
