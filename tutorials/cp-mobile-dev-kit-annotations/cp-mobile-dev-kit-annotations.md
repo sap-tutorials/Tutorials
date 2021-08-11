@@ -49,7 +49,7 @@ Make sure you have already configured an app in Mobile Services cockpit and have
 
 2. Click **Edit** icon to add annotation path to the `SampleServiceV2` destination.
 
-    !![MDK](img_2.2.png)
+    !![MDK](img-2.2.png)
 
 3. In following steps, let the existing settings as it is.
 
@@ -64,7 +64,7 @@ Make sure you have already configured an app in Mobile Services cockpit and have
 
     !![MDK](img-2.6.png)
 
-9. In the following screen, let the default settings as it is. Click **Finish**.
+4. In the following screen, let the default settings as it is. Click **Finish**.
 
     Here you can see that OData Annotation information is updated in the `SampleServiceV2` destination.
 

@@ -29,7 +29,7 @@ In this tutorial, you will create a Slider extension via NativeScript (in TypeSc
 
 ![MDK](img_8.gif)
 
-[ACCORDION-BEGIN [Step 1: ](Set up the application foundation)]
+[ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Business Application Studio)]
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
