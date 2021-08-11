@@ -1,15 +1,17 @@
 ---
 title: Build and Deploy a Java Application
-description: Learn how to build and deploy your Java application on SAP Cloud Platform, Neo environment.
+description: Learn how to build and deploy your Java application on SAP Business Technology Platform, Neo environment.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>java, products>sap-cloud-platform ]
+primary_tag: products>sap-business-technology-platform
+tags: [tutorial>beginner, topic>java, products>sap-business-technology-platform ]
 time: 15
+author_name: Yogitha
+author_profile: https://github.com/YogithaC
 ---
 
 ## Details
 ### You will learn  
-- How to build the ESPM application on SAP Cloud Platform
+- How to build the ESPM application on SAP Business Technology Platform
 - How to bind the application to a database
 - How to add the retailer role
 
@@ -38,7 +40,7 @@ In this step you will create a git repository in the Eclipse IDE and copy the re
 
     - Choose **Next**.
 
-    - Select the master branch and choose **Next**.
+    - Select the main branch and choose **Next**.
 
     - You will see the directory where the application will be stored. Choose **Finish**.
 
@@ -73,9 +75,9 @@ The following steps describe how you can import and then update the Maven projec
 
 [ACCORDION-BEGIN [Step 3: ](Deploy the application)]
 
-The steps below outline the way in which you can deploy the ESPM Application on the SAP Cloud Platform.
+The steps below outline the way in which you can deploy the ESPM Application on the SAP Business Technology Platform.
 
-1. Go to the [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com) and select the **Neo trial** button.
+1. Go to the [SAP BTP Cockpit Trial](https://account.hanatrial.ondemand.com) and select the **Neo trial** button.
 
 2. Go to **Applications** > **Java Applications** and click on **Deploy Application**.
 
