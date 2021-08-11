@@ -363,7 +363,7 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-7.10.png)
 
-    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+    >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
     >!![MDK](img-7.11.png)
 
@@ -383,7 +383,7 @@ You can cross verify if a record has been updated in the backend.
 
 >**Mobile Applications** | **Native/Hybrid** | click the MDK App **com.sap.mdk.demo** | **Mobile Connectivity** | click **Launch in Browser** icon
 
->!![MDK](img_7.8.1.png)
+>!![MDK](img-7.8.1.png)
 
 >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
