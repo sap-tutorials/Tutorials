@@ -15,9 +15,9 @@ author_profile: https://github.com/sandeep-tds
 
 ## Details
 ### You will learn
-  - how to modify the card type to single instance in Business Application Studio
-  - how to add subscription parameters to SAP Mobile cards
-  - how to deploy and publish a card to SAP Mobile Services from Business Application Studio
+  - How to modify the card type to single instance in Business Application Studio
+  - How to add subscription parameters to SAP Mobile cards
+  - How to deploy and publish a card to SAP Mobile Services from Business Application Studio
 
 ---
 

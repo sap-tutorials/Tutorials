@@ -15,8 +15,8 @@ author_profile: https://github.com/sandeep-tds
 
 ## Details
 ### You will learn
-  - how to push a card to your mobile device from an external system
-  - how to view and delete subscription cards on your mobile device
+  - How to push a card to your mobile device from an external system
+  - How to view and delete subscription cards on your mobile device
 
 ---
 
