@@ -23,7 +23,7 @@ In this tutorial, you'll use the **Content Manager** in the SAP Launchpad servic
 
 [ACCORDION-BEGIN [Step 1: ](Open the Content Manager)]
 
-1. To get to the **Content Manager**, first click **Service Marketplace** in the left navigation panel of your trial account and in the search box, enter `launchpad` to find the **Launchpad Service** tile. Then click the **Launchpad Service** service tile.
+1. To get to the Content Manager, first click **Service Marketplace** in the left navigation panel of your trial account and in the search box, enter `launchpad` to find the **Launchpad Service** tile. Then click the **Launchpad Service** service tile.
     ![Click subscriptions](1-find-launchpad.png)
 
 
