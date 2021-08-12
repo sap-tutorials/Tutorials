@@ -47,32 +47,32 @@ In the next steps, you build an application using the `mitigations` part of our 
 
 3. Navigate to your project folder.
 
-4. Navigate to the `app` folder:
+4. Navigate to the `app` folder.
 
     ```Shell/Bash
     cd app
     ```
 
-5. Create a new `mitigations` folder for the new app:
+5. Create a new `mitigations` folder for the new app.
 
     ```Shell/Bash
     mkdir mitigations
     ```
 
-6. Navigate to the `mitigations` folder:
+6. Navigate to the `mitigations` folder.
 
     ```Shell/Bash
     cd mitigations
     ```
 
-7. Create a freestyle UI5 application:
+7. Create a freestyle UI5 application.
 
     ```Shell/Bash
     yo @sapui5/sapui5-templates
     ```
     A creation wizard starts.
 
-8. Follow the creation wizard and use the following values:
+8. Follow the creation wizard and use the following values.
 
     ```JavaScript
     - "Provide the module name" mitigations
@@ -93,7 +93,7 @@ In the next steps, you build an application using the `mitigations` part of our 
 
 9. Open the newly created file `manifest.json` in your `cpapp/app/mitigations/webapp` folder.
 
-10. Add a `/` to the beginning of the value of the `uri` parameter:
+10. Add a `/` to the beginning of the value of the `uri` parameter.
 
 ```JavaScript[7]
 {
@@ -146,7 +146,7 @@ The change in the `manifest.json` is to make sure that the data requests are use
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Starting the application)]
-1. Make sure `cds watch` is still running in the project root folder:
+1. Make sure `cds watch` is still running in the project root folder.
 
     ```Shell/Bash
     cds watch
@@ -164,7 +164,7 @@ The change in the `manifest.json` is to make sure that the data requests are use
 
     As a result, you can see a list but you can only see the IDs of the mitigations both in the list view and on the detail page. This is because the freestyle template only got the information from you that the `Object Collection ID` is the `ID` property of the `mitigations` service. You now need to add additional SAPUI5 controls that are bound to additional properties of the `mitigations` service.
 
-4. Open the view of the work list `cpapp/app/mitigations/webapp/view/Worklist.view.xml`  and add the following code, removing the `ID` column and instead adding `Description`, `Owner` and `Timeline` columns:
+4. Open the view of the work list `cpapp/app/mitigations/webapp/view/Worklist.view.xml`  and add the following code, removing the `ID` column and instead adding `Description`, `Owner` and `Timeline` columns.
 
     ```XML[2-10,19-23]
         <columns>
@@ -195,7 +195,7 @@ The change in the `manifest.json` is to make sure that the data requests are use
         </items>
     ```
 
-5. Open the view of the object `cpapp/app/mitigations/webapp/view/Object.view.xml` and also replace `ID` and add `Description`, `Owner`, and `Timeline` using SAPUI5 controls like `ObjectStatus` (you can copy the whole code and replace the existing code in the file):
+5. Open the view of the object `cpapp/app/mitigations/webapp/view/Object.view.xml` and also replace `ID` and add `Description`, `Owner`, and `Timeline` using SAPUI5 controls like `ObjectStatus` (you can copy the whole code and replace the existing code in the file).
 
     ```XML[4,16,28-34]
     <mvc:View
@@ -274,7 +274,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 
 1. Open the `package.json` file in your `cpapp/app/mitigations` folder.
 
-2. Add the following lines to add the live reload module:
+2. Add the following lines to add the live reload module.
 
     ```JSON[6,11]
     {
@@ -295,7 +295,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 
 3. Open the `ui5.yaml` file in your `cpapp/app/mitigations` folder.
 
-4. Add the following lines to configure SAPUI5 tools to use the live reload module:
+4. Add the following lines to configure SAPUI5 tools to use the live reload module.
 
     ```YAML[9-15]
         ...
@@ -319,29 +319,29 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
     > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
 
 
-5. From your `cpapp` folder, navigate to your `mitigations` folder:
+5. From your `cpapp` folder, navigate to your `mitigations` folder.
 
     ```Shell/Bash
     cd app/mitigations/
     ```
 
-6. Check if a (hidden) file called `.npmrc` exists:
+6. Check if a (hidden) file called `.npmrc` exists.
 
     ```Shell/Bash
     ls -a
     ```
-6. Delete the file `.npmrc` if it exists:
+6. Delete the file `.npmrc` if it exists.
 
     ```Shell/Bash
     rm .npmrc
     ```
-7. Install the npm packages:
+7. Install the npm packages.
 
     ```Shell/Bash
     npm install
     ```
 
-8. Start the application. Make sure that `cds watch` is running in another terminal in the root folder of your project:
+8. Start the application. Make sure that `cds watch` is running in another terminal in the root folder of your project.
 
     ```Shell/Bash
     ui5 serve
@@ -374,7 +374,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 
 1. Open the `package.json` file in your `cpapp/app/mitigations` folder.
 
-2. Add the following lines to add the live reload module:
+2. Add the following lines to add the live reload module.
 
     ```JSON[6,11]
     {
@@ -395,7 +395,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
 
 3. Open the `ui5.yaml` file in your `cpapp/app/mitigations` folder.
 
-4. Add the following lines to configure SAPUI5 tools to use the live reload module:
+4. Add the following lines to configure SAPUI5 tools to use the live reload module.
 
     ```YAML[9-15]
         ...
@@ -419,13 +419,13 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
     > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
 
 
-5. From your `cpapp` folder, navigate to your `mitigations` folder:
+5. From your `cpapp` folder, navigate to your `mitigations` folder.
 
     ```Shell/Bash
     cd app/mitigations/
     ```
 
-6. Check if a (hidden) file called `.npmrc` exists:
+6. Check if a (hidden) file called `.npmrc` exists.
 
     ```Shell/Bash
     Get-ChildItem -Hidden
@@ -435,19 +435,19 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
     ```
 
 
-6. Delete the file `.npmrc` if it exists:
+6. Delete the file `.npmrc` if it exists.
 
     ```Shell/Bash
     del .npmrc
     ```
 
-7. Install the npm packages:
+7. Install the npm packages.
 
     ```Shell/Bash
     npm install
     ```
 
-8. Start the application. Make sure that `cds watch` is running in another terminal in the root folder of your project:
+8. Start the application. Make sure that `cds watch` is running in another terminal in the root folder of your project.
 
     ```Shell/Bash
     ui5 serve

@@ -49,7 +49,7 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 8.	Create a calculation view
 
-9.	*You are here* **`->`Grant access to Calculation Views**
+9.	You are here <sub-style="font-size:30px">&#9755;</sub> **Grant access to Calculation Views**
 
 In this tutorial, you will learn how to make the calculation view you created previously available to others in the organization by creating a new role and granting this role access to the view.
 
@@ -70,7 +70,7 @@ To run `SELECT` statements on calculation views in the new environment, first ma
 
 2. Find your HDI container in the catalog.
 
-    > **Not sure how to find the HDI container of your project in the catalog?**
+    > ### Not sure how to find the HDI container of your project in the catalog?
 >
 > Unless you specified a name for your container manually upon creation of your project, the default name will look something like this:
 >
@@ -199,7 +199,7 @@ Now that you have the role created and granted privileges to this role, it's tim
 CREATE USER report PASSWORD <your_password> NO FORCE_FIRST_PASSWORD_CHANGE set usergroup default;
 ```
 
-    > Note: Using the clause `NO FORCE_FIRST_PASSWORD_CHANGE` is not considered a security best practice! We will only use this option for the purpose of this tutorial, in our example to make a user available to multiple individuals. If you create users in your productive environment, please consider forcing a password change for the first log in and giving individuals different users.
+    > Using the clause `NO FORCE_FIRST_PASSWORD_CHANGE` is not considered a security best practice! We will only use this option for the purpose of this tutorial, in our example to make a user available to multiple individuals. If you create users in your productive environment, please consider forcing a password change for the first log in and giving individuals different users.
 
 4.	Now that our new user `report` is created, we need to grant the user access to the role `PublicAccessSchema`.
 
@@ -213,7 +213,7 @@ GRANT <SCHEMA_NAME>."PublicAccessSchema" to report;
 
 7. Make sure to remove the `<>` characters and then run the statement.
 
-> **Custom vs. default roles**
+> ### Custom vs. default roles
 >
 > You can also use the default role that has the `container name.default` access. As soon as an HDI container is created, the default access role is created. You can find the name of the role by using the statement `SELECT * FROM ROLES`
 >
@@ -250,7 +250,7 @@ CONNECT report PASSWORD <Your_Password>
 
 And with that last step, you have completed the last tutorial of this mission! You learned how to create a new user role and how to grant access to your calculation view using SAP Business Application Studio and SAP HANA Database Explorer.
 
-> **Congratulations - you successfully completed this mission!**
+> **Congratulations! You successfully completed this mission!**
 >
 > You achieved your goal of helping Alex find the business insights they were looking for and share these insights with others!
 >
@@ -269,7 +269,7 @@ Follow our tag in the [SAP Community](https://blogs.sap.com/tags/735549001008000
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](XXXXX)]
+[ACCORDION-BEGIN [Step 6: ](Test yourself)]
 
 
 

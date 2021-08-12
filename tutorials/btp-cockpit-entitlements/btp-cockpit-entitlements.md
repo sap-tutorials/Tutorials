@@ -1,6 +1,6 @@
 ---
 title: Manage Entitlements Using the Cockpit
-description: Configure entitlements and quota using the cockpit.
+description: Configure entitlements and quota using the cockpit. (Free Tier ready)
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud, software-product-function>sap-btp-cockpit, tutorial>free-tier]

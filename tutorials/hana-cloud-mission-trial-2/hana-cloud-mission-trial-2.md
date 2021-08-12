@@ -51,7 +51,7 @@ The steps described in this tutorial can also be followed watching this video:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Start the Provisioning Wizard)]
+[ACCORDION-BEGIN [Step 2: ](Start the provisioning wizard)]
 
 To create your first instance of SAP HANA Cloud, SAP HANA database, you need to follow these steps:
 
@@ -74,13 +74,13 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Enter Location and Basics about your Instance)]
+[ACCORDION-BEGIN [Step 3: ](Enter location and basics about your instance)]
 
 1.	You can see that your **Organization** and **Space** have been preselected. If you are part of multiple organizations or spaces, you can select others in the drop-down menu.
 
 2.	In the section **Basics**, enter a name for your instance in the field **Instance Name**.
 
-    > Note: This field does not allow any spaces in the name.
+    > This field does not allow any spaces in the name.
 
 3.	You can optionally insert a description of this instance on the **Description** field.
 
@@ -88,7 +88,7 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 
 5.	Confirm it by typing it again on the **Confirm Administrator Password** field.
 
-    > Note: Once the instance is created, this super-user password cannot be recovered in a trial account. So, make sure to remember it.
+    > Once the instance is created, this super-user password cannot be recovered in a trial account. So, make sure to remember it.
 
 6.	Now the **Step 2** button will appear on the left-hand side of the wizard. Click on it to continue.
 
@@ -136,13 +136,13 @@ Click on **Step 3** to continue.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Specify Advanced Settings)]
+[ACCORDION-BEGIN [Step 5: ](Specify advanced settings)]
 
 > Please select one of the tabs in this step depending on whether you use a trial account or production environment.
 
 Now you can configure the **Advanced Settings** by managing the allowed connections for your SAP HANA Cloud, SAP HANA database instance. That means, choosing if you want to allow access to your database instance from outside of SAP BTP. You can either limit it to SAP BTP by denying all IP addresses, or allow specific applications to access it by inserting one or more specific IP addresses. Finally, you can allow all connections from all IP addresses.
 
-> Note: If you have added a managed data lake to your instance, changing the allowed IP addresses in SAP HANA database does not automatically sync the new settings to data lake. You have to edit data lake settings individually for them to match.
+> If you have added a managed data lake to your instance, changing the allowed IP addresses in SAP HANA database does not automatically sync the new settings to data lake. You have to edit data lake settings individually for them to match.
 
 [OPTION BEGIN [Trial]]
 
@@ -228,7 +228,7 @@ You are done! Your first SAP HANA Cloud, SAP HANA database and data lake instanc
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Starting and stopping your instance)]
+[ACCORDION-BEGIN [Step 7: ](Start and stop your instance)]
 
 The final step is learning how to stop and start your instance.
 

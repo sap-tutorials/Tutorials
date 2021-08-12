@@ -534,6 +534,7 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 [VALIDATE_1]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 9: ](Run the app in MDK client)]
 
 >Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.

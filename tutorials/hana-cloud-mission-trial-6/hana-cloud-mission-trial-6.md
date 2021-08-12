@@ -43,7 +43,7 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 5.	Import data into SAP HANA Cloud, SAP HANA Database
 
-6.	*You are here* **`->`Query the database using SQL statements**
+6.	You are here <sub-style="font-size:30px">&#9755;</sub> **Query the database using SQL statements**
 
 7.	Create a development project in SAP Business Application Studio
 

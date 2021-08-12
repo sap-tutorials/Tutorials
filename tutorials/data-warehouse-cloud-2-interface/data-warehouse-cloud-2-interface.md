@@ -28,6 +28,11 @@ primary_tag: products>sap-data-warehouse-cloud
   7. [Create a graphical view model](data-warehouse-cloud-7-graphicalview)
   8. [Define measures, business semantics and preview your data](data-warehouse-cloud-8-define-measures)
 
+  You can also follow the steps in this tutorial by watching this video
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/rBHXzCmyYc0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Get to know the home page)]
