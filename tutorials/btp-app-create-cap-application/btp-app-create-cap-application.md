@@ -22,28 +22,27 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create and initialize the project)]
-
 1. Open a terminal.
 
-2. Navigate to your tutorial root directory:
+2. Navigate to your tutorial root directory.
 
     ```Shell/Bash
     cd <tutorial root directory>
     ```
 
-3. Switch to your tutorial app directory:
+3. Switch to your tutorial app directory.
 
     ```Shell/Bash
     cd cpapp
     ```
 
-4. Create an initial CAP project by executing the command `cds init`:
+4. Create an initial CAP project by executing the command `cds init`.
 
     ```Shell/Bash
     cds init
     ```
 
-5. Open the project in VS Code:
+5. Open the project in VS Code.
 
     ```Shell/Bash
     code .
@@ -57,13 +56,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     A new terminal opens in the lower right part of the VS Code screen.
 
-7. In the VS Code terminal, run:
+7. In the VS Code terminal, run the following command.
 
     ```Shell/Bash
     npm install
     ```
 
-8. In the VS Code terminal, start a CAP server:
+8. In the VS Code terminal, start a CAP server.
 
     ```Shell/Bash
     cds watch
@@ -85,19 +84,17 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     ![CDS Watch](cdswatch.png)
 
-    The CAP server tells you that there's no model yet that it can serve. You add one in the next steps.
+    The CAP server tells you that there is no model yet that it can serve. You add one in the next step.
 
 [VALIDATE_1]
-
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Add Files to the project)]
+1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Create a Directory for Development](btp-app-create-directory).
 
-1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Create Directory](btp-app-create-directory).
+2. Open the folder `templates` and keep it open as you copy a number of files from there. For this part of the tutorial and others, it's probably best if you place it next to your VS Code instance.
 
-2. Open the folder `templates` and keep it open as you copy a number of files from there. For this part of the tutorial and others, it's probably best if you place it next to your VS Code instance like this:
-
-    ![Windows](codeandfinder.png)
+    !![Windows](codeandfinder.png)
 
     Alternatively, you can open it as a second folder in your VS Code project: **File** **&rarr;** **Add Folder to Workspace...**.
 
@@ -152,11 +149,11 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     If you again look at the terminal, you see that the CAP server has noticed the new file and now tells us that it serves something under <http://localhost:4004>.
 
-5. In your browser open the link <http://localhost:4004> and you see:
+5. In your browser open the link <http://localhost:4004>.
 
     !![Service](service.png)
 
-    > You may have to stop and restart the `cds watch` command with **Ctrl** + **C**.
+    > You may have to stop the CAP server with **Ctrl** + **C** and restart it with the `cds watch` command.
 
 6. Choose the `$metadata` link.
 
@@ -187,21 +184,21 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     As always, the CAP server has noticed the change.
 
-    > You may have to stop and restart the `cds watch` command with **Ctrl** + **C**.
+    > You may have to stop the CAP server with **Ctrl** + **C** and restart it with the `cds watch` command.
 
-8. Revisit the `Risks` entity <http://localhost:4004/service/risk/Risks> in your browser. You now see the data exposed:
+8. Revisit the `Risks` entity <http://localhost:4004/service/risk/Risks> in your browser. You now see the data exposed.
 
     !![Service Data](servicedata.png)
 
-And that's it: You have now got a full blown OData service, which complies to the OData standard and supports the respective queries without having to code anything but the data model and exposing the service itself.
+And that's it. You now have a full blown OData service, which complies to the OData standard and supports the respective queries without having to code anything but the data model and exposing the service itself.
 
 > The service is completely exposed without any authentication or authorization check. You extend the service later in the tutorial [Implement Roles and Authorization Checks In CAP](btp-app-cap-roles) with such checks.
 
 
 
 [DONE]
-
 The result of this tutorial can be found in the [`cap/create-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/create-service) branch.
+
 
 [ACCORDION-END]
 ---

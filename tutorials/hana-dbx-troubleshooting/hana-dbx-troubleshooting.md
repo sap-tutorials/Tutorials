@@ -301,7 +301,13 @@ A SQL trace can be helpful when debugging a problem or in identifying SQL statem
 
     >---
 
-    >The names of the configuration files, their contents, and a history of changes can be viewed by performing a select against the monitoring views named M_INIFILES,  M_INIFILE_CONTENTS, M_INIFILE_CONTENT_HISTORY, SYS.CONFIGURATION_PARAMETER_PROPERTIES, and M_CONFIGURATION_PARAMETER_VALUES.
+    >The names of the configuration files, their contents, and a history of changes can be viewed by performing a select against the following monitoring views:
+    >
+    - M_INIFILES
+    - M_INIFILE_CONTENTS
+    - M_INIFILE_CONTENT_HISTORY
+    - CONFIGURATION_PARAMETER_PROPERTIES
+    - M_CONFIGURATION_PARAMETER_VALUES
 
 
 3. Press the refresh button on the database overview.

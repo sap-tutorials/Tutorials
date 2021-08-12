@@ -6,19 +6,17 @@ author_name: Prathibha GC
 author_profile: https://github.com/Prathibha-Mouli
 auto_validation: true
 time: 15
-tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap-api-business-hub ]
+tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap-api-business-hub  ]
 
 ---
 
 ## Details
 ### You will learn
-- How to get started with SAP API Business Hub 
+- How to get started with SAP API Business Hub
 
 SAP API Business Hub is a website to discover, explore, and test APIs from various SAP products such as SAP S/4HANA, SAP SuccessFactors, SAP Customer Experience, SAP BTP, and selected partners. Apart from various product APIs, you can find detailed information on Business Processes and Partner Content. The new workspace feature enables you to consume integration content.
 
-Want to learn more about the new SAP API Business Hub? Not sure where to get started? Find more about how to find and enable the SAP API Business Hub in your SAP BTP instance.
-
-Once you are in the SAP API Business Hub, start learning about and testing one of the many available APIs.
+Want to learn more about the new SAP API Business Hub? Not sure where to get started? Navigate to [api.sap.com] (https://api.sap.com), explore the SAP API Business Hub, start learning about and testing one of the many available APIs.
 
 ---
 
@@ -27,8 +25,7 @@ In your browser, open [SAP API Business Hub](https://api.sap.com/).
 
 !![SAP API Business Hub page](1.png)
 
-You can explore Products, Business Processes, Content Categories, Partner Content, and Featured	 Content.
-Click Explore on top for quick access to detailed information.
+You can explore Products, Business Processes, Content Categories, Partner Content, and Featured	 Content. Click Explore on top for quick access to detailed information.
 
 [DONE]
 [ACCORDION-END]
@@ -49,7 +46,7 @@ Choose APIs. You can browse through different types of APIs such as REST, ODATA,
 
 !![Searching for types of APIs APIs](3.png)
 
-You may wish to explore the API either by selecting a type of an API or by selecting an API package. An API package contains one or more APIs. Let us get started by choosing one of the API packages-**`SAP Cloud for Customer`** to find all the Cloud for Customer related content.
+You may wish to explore the API either by selecting a type of an API or by selecting an API package. An API package contains one or more APIs. Let us get started by choosing one of the API packages-`SAP Cloud for Customer` to find all the Cloud for Customer related content.
 
 Search for the API package **SAP Cloud for Customer** in the search box on top right of the API page.
 
@@ -102,7 +99,7 @@ Once the required inputs are entered, click `Execute` at the top right corner to
 
 > Use the _control_ key on Windows, or the _command_ key on macOS to be able to select multiple entries.
 
-Feel free to explore other endpoints in this User Management API.
+Feel free to explore other endpoints in this Campaign API.
 
 [VALIDATE_4]
 [ACCORDION-END]
