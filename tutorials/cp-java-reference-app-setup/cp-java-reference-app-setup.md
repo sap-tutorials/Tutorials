@@ -5,6 +5,8 @@ time: 25
 auto_validation: true
 tags: [tutorial>intermediate, products>sap-business-technology-platform]
 primary_tag: products>sap-business-technology-platform
+author_name: Yogitha
+author_profile: https://github.com/YogithaC
 ---
 
 
@@ -27,7 +29,7 @@ Sign up for a Free Developer Account on the [SAP BTP](https://hcp.sap.com/try.ht
 
 Install [Java JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and set up the `JAVA_HOME` and `PATH` environment variables on your local machine.
 
-Alternatively, if you want to use the SAP JVM, you can download it from the [SAP Development Tools for Eclipse](https://tools.hana.ondemand.com/#cloud) page, as well.
+Alternatively, if you want to use the SAP JVM, you can download it from the [SAP Development Tools for Eclipse](https://tools.hana.ondemand.com/#cloud) page, as well. Based on your operating system, select a suitable version.
 
 ![JVM](JVM.PNG)
 
@@ -46,14 +48,14 @@ Download [Java Web Tomcat 8 SDK](https://tools.hana.ondemand.com/#cloud) and ext
 
 [ACCORDION-BEGIN [Step 4: ](Install Eclipse)]
 
-Install [Eclipse Oxygen IDE](https://www.eclipse.org/oxygen).
+Install [Eclipse Oxygen IDE](https://www.eclipse.org/downloads/packages/release/oxygen/3a/eclipse-ide-java-ee-developers).
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Install SAP Development Tools)]
 
-Follow the instructions how to install [Install SAP Development Tools for Eclipse](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/76137a37711e1014839a8273b0e91070.html).
+Follow the instructions how to install [Install SAP Development Tools for Eclipse](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/4e974524dfc240a3b942e553e5ef44a0.html).
 
 [DONE]
 [ACCORDION-END]
@@ -87,7 +89,7 @@ Follow the instructions how to install [Install SAP Development Tools for Eclips
 
 [ACCORDION-BEGIN [Step 7: ](Set Up SAP JVM in Eclipse)]
 
-Follow the steps in order to [Set Up SAP JVM in Eclipse IDE](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7613eaad711e1014839a8273b0e91070.html).
+Follow the steps in order to [Set Up SAP JVM in Eclipse IDE](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/76137f42711e1014839a8273b0e91070.html).
 
 [DONE]
 [ACCORDION-END]

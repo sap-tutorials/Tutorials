@@ -189,6 +189,7 @@ Additionally, you can search over all properties of the objects displayed in the
 
 !![MDK](img_5.4.gif)
 
+
 >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 [OPTION END]

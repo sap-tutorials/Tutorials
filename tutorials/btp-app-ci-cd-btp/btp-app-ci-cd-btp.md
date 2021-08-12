@@ -34,11 +34,17 @@ For more information on how to configure and run predefined pipelines for your o
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Enable SAP Continuous Integration and Delivery service)]
-1. Enter the [SAP BTP cockpit](https://cockpit.hanatrial.ondemand.com/).
+[OPTION BEGIN [Trial]]
 
-2. Choose **Enter Your Trial Account**.
+1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
 
-3. Enter your subaccount and go to **Service Marketplace** in the left-hand pane.
+    [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
+
+2. Choose your **Global Account**.
+
+3. Navigate to your **Subaccount**.
+
+3. Choose **Service Marketplace** in the left-hand pane.
 
 4. Type **Continuous Integration & Delivery** in the search box and choose the service tile.
 
@@ -76,6 +82,64 @@ For more information on how to configure and run predefined pipelines for your o
 
 13. Choose **Save**.
 
+    > See [Initial Setup](https://help.sap.com/viewer/SAP-Cloud-Platform-Continuous-Integration-and-Delivery/719acaf61e4b4bf0a496483155c52570.html) for more details on how to enable the service.
+
+
+[OPTION END]
+[OPTION BEGIN [Live]]
+
+1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
+
+    [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
+
+2. Choose your **Global Account**.
+
+3. Navigate to your **Subaccount**.
+
+3. Choose **Service Marketplace** in the left-hand pane.
+
+4. Type **Continuous Integration & Delivery** in the search box and choose the service tile.
+
+    !![Service Tile](CICD_ServiceTile.png)
+
+5. Choose **Create**.
+
+    !![Service Tile](CICD_subscribe_service.png)
+
+6. Choose **Create** in the popup without changing any values.
+
+    !![Popup](CICD_create_service.png)
+
+7. Choose **View Subscription** and wait until the status changes to **Subscribed**.
+
+    !![Subscriptions](CICD_view_subscriptions.png)
+
+    !![Subscribed](CICD_view_subscribed.png)
+
+8. In your SAP BTP subaccount, choose **Security** → **Role Collections** in the left-hand pane.
+
+9. Choose role collection **CICD Service Administrator**.
+
+10. Choose **Edit**.
+
+    !![Role](CICD_edit_role.png)
+
+11. In the **Users** section, enter your e-mail address in the fields **ID** and **E-Mail**.
+
+12. Select an **Identity Provider**.
+
+    !![Users](CICD_edit_users.png)
+
+    > Keep the setting `Default Identity Provider` unless you have a custom identity provider configured.
+
+13. Choose **Save**.
+
+    > See [Initial Setup](https://help.sap.com/viewer/SAP-Cloud-Platform-Continuous-Integration-and-Delivery/719acaf61e4b4bf0a496483155c52570.html) for more details on how to enable the service.
+
+
+[OPTION END]
+
+
 [DONE]
 [ACCORDION-END]
 ---
@@ -94,11 +158,9 @@ For more information on how to configure and run predefined pipelines for your o
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Configure your GitHub credentials)]
-   > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-If your GitHub repository is private, configure credentials for it, so that SAP Continuous Integration and Delivery service can connect to it.
-
-> If your GitHub repository is not private, you can skip this section.
+If your GitHub repository is not private, you can skip this section. If your GitHub repository is private, configure credentials for it, so that SAP Continuous Integration and Delivery service can connect to it.
 
 1. Navigate to the **Credentials** tab in SAP Continuous Integration and Delivery.
 
