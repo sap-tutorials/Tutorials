@@ -9,6 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sa
 primary_tag: products>sap-hana-cloud
 ---
 
+
 ## Prerequisites
 - Two **running** SAP HANA Cloud, SAP HANA database instances in a production environment, one having a managed data lake.
 - Completion of the [previous tutorial in this group](hana-cloud-mission-extend-11) is recommended.
