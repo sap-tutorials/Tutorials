@@ -72,9 +72,9 @@ This tutorial is part of a 3-part series of SAP BTP, ABAP Environment tutorials,
 
 [ACCORDION-BEGIN [Step 2: ](Open ABAP Development Tools )]
 
-Open your local ABAP Development Tools (ADT). You can download the latest version from <https://tools.hana.ondemand.com/#abap>.
+Open Eclipse. Make sure you have installed ADT in your Eclipse. You can download the latest version from <https://tools.hana.ondemand.com/#abap>.
 
-![Create service definition](adt_logo.png)
+![Create service definition](eclipse.png)
 
 [DONE]
 [ACCORDION-END]
