@@ -17,7 +17,7 @@ primary_tag: products>sap-hana-cloud
 
 ## Details
 ### You will learn
-- how to create a remote source in SAP HANA Cloud, SAP HANA database to a managed data lake.
+- How to create a remote source in SAP HANA Cloud, SAP HANA database to a managed data lake
 - How to virtualise data from a managed data lake to SAP HANA Cloud, SAP HANA database
 
 

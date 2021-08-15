@@ -1,7 +1,7 @@
 ---
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Use the Cloud Connector to connect SAP HANA On-Premise to SAP HANA Cloud, SAP HANA Database
+title: Use the Cloud Connector to Connect SAP HANA On-Premise to SAP HANA Cloud, SAP HANA Database
 description: Replicate data from SAP HANA on-premise to SAP HANA Cloud, SAP HANA database using the cloud connector.
 auto_validation: true
 time: 10

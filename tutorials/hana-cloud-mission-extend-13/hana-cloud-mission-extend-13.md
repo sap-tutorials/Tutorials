@@ -13,7 +13,7 @@ primary_tag: products>sap-hana-cloud
 - A **running** SAP HANA Cloud, SAP HANA database instance in trial or production.
 - A multi-source data landscape like the one set up in this tutorial group.
 - An SAP HANA on-premise system with SPS04 Rev45 or higher.
-- Completion of the previous tutorials in this group is recommended.
+- Completion of the previous tutorials in this group is recommended. 
 
 
 ## Details
