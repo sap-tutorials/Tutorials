@@ -1,6 +1,6 @@
 ---
 title: Set Up a Sample Design-to-Operate Business Process
-description: Set up a pre-configured design-to-operate business process to experience the Process Visibility.
+description: Set up a pre-configured Design-to-Operate business process to experience the Process Visibility capability.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, products>sap-business-technology-platform]
@@ -10,28 +10,28 @@ author_profile: https://github.com/I540620
 ---
 
 ## Prerequisites
- Set up the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
+ you have set up **SAP Workflow Management** service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
 
 ## Details
 ### You will learn
-  - How to import a sample design-to-operate business scenario
-  - How to import the events for sample design-to-operate business process
-  - How to gain visibility on sample design-to-operate business process
-  - How to quickly get started with the Process Visibility service using the sample design-to-operate business process
+  - How to import a Design-to-Operate visibility scenario
+  - How to import the events for sample Design-to-Operate business process
+  - How to gain visibility on sample Design-to-Operate business process
+  - How to quickly get started with the process visibility capability using the sample Design-to-Operate business process
 
 
-Design-to-operate is a supply chain centric business process that enables companies to connect digitally to perfect reality across their product and asset lifecycle. This end-to-end business process consists of stages from design, planning, manufacturing, logistics, and operations.
+Design-to-Operate is a supply chain centric business process that enables companies to connect digitally to perfect reality across their product and asset lifecycle. This end-to-end business process consists of stages from design, planning, manufacturing, logistics, and operations.
 
-In this tutorial, you can learn how to gain visibility on a sample design-to-operate business process using the process visibility service. You are provided with JSON files with events and zip files that contain the business scenario using which you can easily try out the capabilities of the service.
+In this tutorial, you can learn how to gain visibility on a sample Design-to-Operate business process using the process visibility capability. You are provided with a JSON file containing events and a zip file that contain the visibility scenario for Design-To-Operate business process using which you can easily try out the capabilities of process visibility.
 
 [ACCORDION-BEGIN [Step 1: ](Download files from GitHub)]
-In this step, you will download the sample design-to-operate business scenario and the respective events from GitHub to your local file system.
+In this step, you will download the sample Design-to-Operate visibility scenario and the respective events from GitHub to your local file system.
 
 1. Use the following link to access [GitHub](https://github.com/SAP-samples/cloud-process-visibility/releases).
 
 2. Choose the `DesignToOperateEvents.json` file.
 
-      ![GitHub](screen1-git.png)
+    ![GitHub](screen1-git.png)
 
     >This downloads the `DesignToOperateEvents.json` file to your local system.
 
@@ -41,117 +41,113 @@ In this step, you will download the sample design-to-operate business scenario a
 
     >This downloads the `DesigntoOperate.zip` file to your local system.
 
-    You now have the two downloaded files in your local system with the events and scenario relevant to design-to-operate process.
+    You now have the two downloaded files in your local system with events and a scenario relevant to Design-to-Operate business process.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Import events)]
 
-In this step, you will import the `DesignToOperateEvents.json` to the Event Acquisition application.
+In this step, you will import the `DesignToOperateEvents.json` to the **Event Acquisition** application.
 
-1. Log onto the **Event Acquisition** tile using the Workflow Management home screen.
+1. Open the **Event Acquisition** tile from the **Workflow Management** dashboard.
 
-    ![Event Aquisition App](event-flp.png)
+    ![Event Acquisition App](event-flp.png)
 
 2. Choose the **Import** icon.
 
-    ![Import event](screen4-import.png)
+    ![Import event](Import.png)
 
-3. In the **Import From File** dialog, browse for the `DesignToOperateEvents.json` that is in your local file system.
+3. In the **Import From File** dialog, browse for the `DesignToOperateEvents.json` file present in your local file system.
 
-    ![Import event](screen4-browse.png)
+    ![Import event](Browse.png)
 
 4. Choose **Import**.  
 
-    ![Import from tile](screen5-import2.png)
+    ![Import from tile](D2O-Import.png)
 
 5. Check if the events are imported successfully, by choosing the **View Filter Settings** icon.
 
-    ![View Filter](screen6-viewfilter.png)
+    ![View Filter](Filter.png)
 
-    Choose the **Process Definition ID** option. Provide the value as **`DESIGN`** and choose **OK**.
+6. Choose the **Process Definition ID** option. In this tutorial, for the Design-To-Operate business process, provide the value as **`DESIGN`** and choose **OK**.
 
-      ![Process Definition ID](screen7-onboard.png)
+    ![Process Definition ID](D2O-Ok.png)
 
-      You can view a list of events imported for this process definition ID.
+    You can view a list of events imported for this process definition ID.
 
-      ![Process Definition ID](screen7-onboard2.png)
+    ![Process Definition ID](D2O-Eventlist.png)
 
     >Similarly, you can search for other process definition IDs such as **`DELIVER`** and **`MANUFACTURE`**. You will be able to view the list of events imported for the respective process definition IDs.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Import the business scenario)]
+[ACCORDION-BEGIN [Step 3: ](Import the visibility scenario)]
 
-In this step, you will import the `DesigntoOperate.zip` file to the Configure Visibility Scenarios application.
+In this step, you will import the `DesigntoOperate.zip` file to the **Configure Visibility Scenarios** application.
 
-1. Log on to the **Configure Visibility Scenarios** tile by navigating to the home screen.
+1. Open the **Configure Visibility Scenarios** tile from the **Workflow Management** dashboard.
 
-    !![config scenario](config_flp.png)
+    !![config scenario](config-flp.png)
 
 2. Choose the **Import Scenario** icon.
 
-    !![import scenario](screen8-importbusinessscaenrio.png)
+    !![import scenario](CVS-Import.png)
 
-3. In the **Import Scenario** dialog, browse for the `DesigntoOperate.zip` file from your local system. Then choose **Import**.
+3. In the **Import Scenario** dialog, browse for the `DesigntoOperate.zip` file from your local system and choose **Import**.
 
-    !![Browse screen](screen8-browse.png)
+    !![Browse screen](D2O-zipfile-import.png)
 
-    You can now see the imported business scenario as shown.
-
-      !![imported scenario](screen9-d2o.png)
-
-4. Choose the **Design to Operate** business scenario.
+    You can now see the imported visibility scenario as shown.
 
     !![imported scenario](screen9-d2o.png)
 
-5. Click **Activate**.
+4. Choose the **Design to Operate** visibility scenario from the list and choose **Activate**.
 
     !![Activate](screen9-activate.png)
 
-    > You will see a message upon successful activation of the scenario.
+    >You will see a message upon successful activation of the scenario.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Process the data)]
 
-In this step, you can process the data of the activated business scenario using the Monitor Visibility Scenarios application.
+In this step, you can process the data of the activated visibility scenario using the **Monitor Visibility Scenarios** application.
 
-1. Click the **Monitor Visibility Scenarios** tile by navigating to the home screen.
+1. Open the **Monitor Visibility Scenarios** tile from the **Workflow Management** dashboard.
 
-      !![monitor scenarios](monitor-flp.png)
+    !![monitor scenarios](MVS.png)
 
 2. Choose the **Design to Operate** scenario definition, then choose **Process Data**.
 
-      !![Process Data](screen10-monitor.png)
+    !![Process Data](screen10-monitor.png)
 
 3. On successful processing of data, choose the refresh icon to view the processing information listed out under **Processing Information**.
 
-      !![Refresh](screen10-refresh.png)
+    !![Refresh](screen10-refresh.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Track Business Scenario)]
+[ACCORDION-BEGIN [Step 5: ](Track the visibility scenario)]
 
-In this step, you will be able to track the progress of the sample design-to-operate business scenario using the visual representation of the Process Workspace application.
+In this step, you will be able to track the progress of the sample Design-To-Operate visibility scenario using the visual representation in the **Process Workspace** application.
 
-1. Click the **Process Workspace** tile by navigating to the home screen.
+1. Open the **Process Workspace** tile from the **Workflow Management** dashboard.
 
-    !![process workspace](processworkspace_flp.png)
+    !![process workspace](PW.png)
 
-2. Choose the **Design to Operate** business scenario.
+2. Choose the **Design to Operate** visibility scenario.
 
     !![D2O](screen11-processworkspace.png)
 
-    You can view the overview page for the **Design to Operate** business scenario as shown below. You can view information such as open orders, cycle time, open orders by product category, and so on.
+    You can view the overview page for the **Design to Operate** visibility scenario as shown below. You can view information such as open orders, cycle time, open orders by product category, and so on.
 
     !![D2O](screen11-overviewpws.png)
 
-    >You can customize the cards displayed on the overview page by modifying the business scenario in the **Configure Visibility Scenarios** application. For more information, see [SAP Help](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
+    >You can customize the cards displayed on the overview page by modifying the visibility scenario in the **Configure Visibility Scenarios** application. For more information on creating and enhancing a scenario, see [Create a Scenario](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html) documentation.
 
 [VALIDATE_1]
 [ACCORDION-END]
