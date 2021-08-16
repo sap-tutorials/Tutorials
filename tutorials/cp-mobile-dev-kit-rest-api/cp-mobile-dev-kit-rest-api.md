@@ -286,6 +286,7 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 !![MDK](img-7.2.png)
 
+
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
 Once you accept app update, you will see the Pets list on the **Main** page.

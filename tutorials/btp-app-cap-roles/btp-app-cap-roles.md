@@ -101,7 +101,7 @@ CAP offers a possibility to add local users for testing as part of the `cds` con
 
     The file defines two users `risk.viewer@tester.sap.com` and `risk.manager@tester.sap.com`.
 
-2. Let's look at the `risk.manager@tester.sap.com` example:
+2. Let's look at the `risk.manager@tester.sap.com` example.
 
     <!-- cpes-file .cdsrc.json:$.*.*.*.users[?(@.ID=="risk.manager@tester.sap.com")] -->
     ```JSON[7-14]
@@ -138,9 +138,9 @@ When accessing the `Risks` service in your browser, you get a basic auth popup n
 
 2. Choose **Risks** and choose **Go**.
 
-3. Enter **Username**: `risk.manager@tester.sap.com`
+3. Enter **Username**: `risk.manager@tester.sap.com`.
 
-4. Enter **Password**: `initial`
+4. Enter **Password**: `initial`.
 
 !![Sign In Risk Application](role_risks_management.png)
 
