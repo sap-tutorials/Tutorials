@@ -194,7 +194,7 @@ Once you accept app update, you will see the **Main** page (with **Logout** and 
     !![MDK](img_5.3.png)
 
     >You can also open the MDK web application by accessing its URL from `.project.json` file.
-    !![MDK](img_5.4.png)
+    !![MDK](img-5.4.png)
 
     You will see the **Main** page (with **Logout** option at bottom of the page) and application data service is being initialized.
 

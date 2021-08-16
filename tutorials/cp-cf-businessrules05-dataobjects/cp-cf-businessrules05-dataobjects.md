@@ -4,7 +4,7 @@ description: Create data objects that hold employee and equipment details, and c
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
-primary_tag: products>sap-business-rules-service
+primary_tag: products>business-rules
 author_name: Vandana Vasudevan
 author_profile: https://github.com/VandanaVasudevan
 ---

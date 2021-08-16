@@ -26,15 +26,16 @@ To continue with this tutorial you can find the result of the previous tutorial 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
-
 An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 controls, and SAPUI5 model view controller (MVC) concepts. In a plain SAPUI5 or a freestyle SAPUI5 app, all the views and controllers are part of your project. In contrast, in an SAP Fiori elements app most of the code is outside of the project, managed centrally by the SAP Fiori elements team. The code inside your project only references these central components. They take care of creating the UI according to the latest SAP Fiori design guidelines and cover all the controller logic for you out of the box. The UI can be influenced by OData annotations. They determine, for example, which properties of an OData service make up the columns of a table that displays the content of the service.
 
 [DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Generate the UI with an SAP Fiori elements template)]
-
 1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P** for macOS / **Ctrl** + **Shift** + **P** for Windows) and choose **Fiori: Open Application Generator**.
+
+
+    > In case you get an error launching the Application Generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
 
 2. Choose application type **SAP Fiori elements** and floor plan **List Report Object Page**.
 
@@ -76,11 +77,9 @@ The application is now generated and in a few seconds you can see it in the `app
 
 
 [VALIDATE_1]
-
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Modify the UI with OData annotations)]
-
 1. If it's not still running from the previous tutorial, execute `cds watch` in a VS Code terminal and switch to <http://localhost:4004> in your browser.
 
     You can now see that the CAP server has discovered an HTML page in your `app` folder:
@@ -119,7 +118,6 @@ You've now already finished a full blown service and a UI application on top run
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Check the annotation files)]
-
 Let's have a look at the new `risk-service-ui.cds` file and the annotations in there. At the beginning we see:
 
 ```JavaScript
@@ -246,8 +244,8 @@ The line `Text: miti.description , TextArrangement: #TextOnly,` declares that th
 !![Fiori elements Object Page](feappobjectpage.png)
 
 [DONE]
-
 The result of this tutorial can be found in the [`cap/fiori-elements-app`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/fiori-elements-app) branch.
+
 
 [ACCORDION-END]
 ---

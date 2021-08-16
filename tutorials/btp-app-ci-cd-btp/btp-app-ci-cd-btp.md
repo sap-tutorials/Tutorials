@@ -10,7 +10,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - You have created a GitHub repository as described in step [Create a GitHub Repository for Your Project](btp-app-create-directory)
+ - You have created a GitHub repository as described in step **Create a GitHub repository for your project** in the tutorial [Create a Directory for Development](btp-app-create-directory)
  - You have developed your CAP application and have prepared it for deployment using this collection of tutorials: [Build an Application End-to-End using CAP, Node.js and VS Code](mission.btp-application-cap-e2e)
  - You have to [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup) or use an existing SAP HANA Cloud instance
 
@@ -34,11 +34,17 @@ For more information on how to configure and run predefined pipelines for your o
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Enable SAP Continuous Integration and Delivery service)]
-1. Enter the [SAP BTP cockpit](https://cockpit.hanatrial.ondemand.com/).
+[OPTION BEGIN [Trial]]
 
-2. Choose **Enter Your Trial Account**.
+1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
 
-3. Enter your subaccount and go to **Service Marketplace** in the left-hand pane.
+    [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
+
+2. Choose your **Global Account**.
+
+3. Navigate to your **Subaccount**.
+
+3. Choose **Service Marketplace** in the left-hand pane.
 
 4. Type **Continuous Integration & Delivery** in the search box and choose the service tile.
 
@@ -76,6 +82,64 @@ For more information on how to configure and run predefined pipelines for your o
 
 13. Choose **Save**.
 
+    > See [Initial Setup](https://help.sap.com/viewer/SAP-Cloud-Platform-Continuous-Integration-and-Delivery/719acaf61e4b4bf0a496483155c52570.html) for more details on how to enable the service.
+
+
+[OPTION END]
+[OPTION BEGIN [Live]]
+
+1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
+
+    [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
+
+2. Choose your **Global Account**.
+
+3. Navigate to your **Subaccount**.
+
+3. Choose **Service Marketplace** in the left-hand pane.
+
+4. Type **Continuous Integration & Delivery** in the search box and choose the service tile.
+
+    !![Service Tile](CICD_ServiceTile.png)
+
+5. Choose **Create**.
+
+    !![Service Tile](CICD_subscribe_service.png)
+
+6. Choose **Create** in the popup without changing any values.
+
+    !![Popup](CICD_create_service.png)
+
+7. Choose **View Subscription** and wait until the status changes to **Subscribed**.
+
+    !![Subscriptions](CICD_view_subscriptions.png)
+
+    !![Subscribed](CICD_view_subscribed.png)
+
+8. In your SAP BTP subaccount, choose **Security** → **Role Collections** in the left-hand pane.
+
+9. Choose role collection **CICD Service Administrator**.
+
+10. Choose **Edit**.
+
+    !![Role](CICD_edit_role.png)
+
+11. In the **Users** section, enter your e-mail address in the fields **ID** and **E-Mail**.
+
+12. Select an **Identity Provider**.
+
+    !![Users](CICD_edit_users.png)
+
+    > Keep the setting `Default Identity Provider` unless you have a custom identity provider configured.
+
+13. Choose **Save**.
+
+    > See [Initial Setup](https://help.sap.com/viewer/SAP-Cloud-Platform-Continuous-Integration-and-Delivery/719acaf61e4b4bf0a496483155c52570.html) for more details on how to enable the service.
+
+
+[OPTION END]
+
+
 [DONE]
 [ACCORDION-END]
 ---
@@ -94,11 +158,9 @@ For more information on how to configure and run predefined pipelines for your o
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Configure your GitHub credentials)]
-   > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-If your GitHub repository is private, configure credentials for it, so that SAP Continuous Integration and Delivery service can connect to it.
-
-> If your GitHub repository is not private, you can skip this section.
+If your GitHub repository is not private, you can skip this section. If your GitHub repository is private, configure credentials for it, so that SAP Continuous Integration and Delivery service can connect to it.
 
 1. Navigate to the **Credentials** tab in SAP Continuous Integration and Delivery.
 
@@ -156,7 +218,7 @@ If your GitHub repository is private, configure credentials for it, so that SAP 
 
     !![Add repository](CICD_add_repository2.png)
 
-    > If your GitHub repository is private, enter the name of the credentials in **Repository Credentials** to access your GitHub Repository that you've already created. If your GitHub repository isn't private, leave this field empty.
+    > If your GitHub repository is private, enter the name of the credentials in **Repository Credentials** to access your GitHub Repository that you have already created. If your GitHub repository isn't private, leave this field empty.
 
 5. Choose **Add**.
 
@@ -271,7 +333,7 @@ You have now successfully created a CI/CD pipeline and deployed your application
 
 > If you'd like to add more stages to your job, for example, additional unit tests, you can configure the job in your repository instead of using the job editor of the SAP Continuous Integration and Delivery. See [Configure an SAP Cloud Application Programming Model Job in Your Repository](https://help.sap.com/viewer/SAP-Cloud-Platform-Continuous-Integration-and-Delivery/bfe48a4b12ed41868f92fa564829f752.html#loiobfe48a4b12ed41868f92fa564829f752) for more details."
 
-> In case this is your first deployment of the `cpapp` project to the SAP BTP Cloud Foundry environment, please continue with the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service). You'll need to complete the configuration before you can use the application, because this part can't be automated with CI/CD tooling.
+> In case this is your first deployment of the `cpapp` project to the SAP BTP Cloud Foundry environment, please continue with the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service).  You will need to complete the configuration before you can use the application, because this part can't be automated with CI/CD tooling.
 
 [VALIDATE_1]
 
