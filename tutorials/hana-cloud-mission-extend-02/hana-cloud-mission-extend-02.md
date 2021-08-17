@@ -20,7 +20,7 @@ primary_tag: products>sap-hana-cloud
 
 The security of your organization's data is a big concern at SAP. This is why we pre-configure every SAP HANA Cloud, SAP HANA database instance to a secure standard. In this way, you can rely on the proven comprehensive **SAP HANA security framework**, now also in the cloud. You get complete control over who accesses your data and you can make full use of your data through advanced solutions like anonymization.
 
-![Illustration Security circle](LT04_02_01 Illustration_Security cirlce only_resized.png)
+![Illustration Security circle](ss-01-illustration-security-circle-only.png)
 
 This tutorial serves as a broad introduction with links to all important documentation regarding security and backup topics. Feel free to add them all to your SAP HANA Cloud, SAP HANA database bookmark collection but do not forget to come back here and continue learning. Our first recommendation for your collection is the comprehensive technical documentation, the [SAP HANA Cloud Security Guide](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/LATEST/en-US/c3d9889e3c9843bdb834e9eb56f1b041.html).
 
