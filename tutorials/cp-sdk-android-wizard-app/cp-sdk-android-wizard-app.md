@@ -12,8 +12,8 @@ time: 30
 ## Prerequisites
 - You [created a trial account on SAP BTP](hcp-create-trial-account).
 - [Enabled SAP Mobile Services](fiori-ios-hcpms-setup) on **Cloud Foundry**.
-- Installed [Android Studio 4.1.x](https://developer.android.com/studio/archive). Please use the specified version.
-- [Downloaded](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20android) and [Installed](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/android/setup.html) version 3.3.x of the SAP BTP SDK for Android.
+- Installed [Android Studio 4.2.x](https://developer.android.com/studio/archive). Please use the specified version.
+- [Downloaded](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20android) and [Installed](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/android/setup.html) version 3.4.x of the SAP BTP SDK for Android.
 - Created a Google account.
 
 ## Details

@@ -41,12 +41,13 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
         The following is a connection example for the SAP HANA Cloud.  
 
         ```Shell
-        hdbsql -n 69964be8-39e8-4622-9a2b-ba3a38be2f75.hana.canary-eu10.hanacloud.ondemand.com:443 -u DBADMIN -p your_password
+        hdbsql -n 3b2gf55e-4214-4bd9-adfc-f547d8e2d384.hana.trial-us10.hanacloud.ondemand.com:443 -u DBADMIN -p your_password
         ```
 
         > The HANA Cloud instance can be configured to enable applications running from outside the SAP BTP to connect.  The current setting is shown in SAP HANA Cloud Central in the screenshot below.  An example of configuring this setting is shown in [Allow connections to SAP HANA Cloud instance from selected IP addresses — using the command line](https://blogs.sap.com/2020/10/30/allow-connections-to-sap-hana-cloud-instance-from-selected-ip-addresses-using-the-command-line/).
 
         > ![screenshot showing the allowlist](allowlist.png)
+
 
         >---
 
@@ -54,7 +55,57 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 
         >---
 
-        > If you are on a Linux or Mac machine and the hdbsql connection fails with the error message below, it indicates that the client could not locate a trust store in the default location.  
+        > Connections to a HANA Cloud instance must use encryption.  The default encryption library on Windows is mscrypto and on Linux and macOS it is OpenSSL.  The following example demonstrates how one could use the SAP provided conmmoncrypto library instead of the default encryption library.  Note, the following steps require that the SAP HANA Client be downloaded from the SAP Software Downloads as the download includes the SAP Common Crypto library (libsapcrypto).  Note that the environment variables can also be set by running source hdbclienv.sh or hdbclienv.bat.
+
+        >```Shell (Linux or Mac)
+        mkdir ~/.ssl
+        # Download the public root certificate used by HANA Cloud
+        wget --no-check-certificate https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem -O ~/.ssl/DigiCertGlobalRootCA.crt.pem
+        # Show the command help for the sapgenpse
+        sapgenpse -h
+        # SECDIR environment variable is required when using the commoncrypto library
+        export SECUDIR=~/sap/hdbclient
+        # macOS only
+        export DYLD_LIBRARY_PATH=~/sap/hdbclient
+        # Create a PSE (Personal Security Environment) which will be used to contain the public root certificate of the HANA Client.  
+        # Press enter twice to not provide a pin
+        sapgenpse gen_verify_pse -p "$SECUDIR/sapcli.pse"
+        >```
+
+        >```Shell (Linux or Mac)
+        # Add the certificate to the PSE
+        sapgenpse maintain_pk -p "$SECUDIR/sapcli.pse" -a ~/.ssl/DigiCertGlobalRootCA.crt.pem
+        # View the contents of the PSE
+        sapgenpse maintain_pk -p "$SECUDIR/sapcli.pse" -l
+        # Connect using the SAP commoncrypto library rather than OpenSSL.
+        hdbsql -sslprovider commoncrypto -n 3b2gf55e-4214-4bd9-adfc-f547d8e2d384.hana.trial-us10.hanacloud.ondemand.com:443 -u DBADMIN -p Hana1234
+        >```
+
+        >```Shell (Windows)
+        REM In a browser download https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt
+        REM Show the command help for the sapgenpse
+        sapgenpse -h
+        REM SECDIR environment variable is required when using the commoncrypto library
+        set SECUDIR=C:/SAP/hdbclient/
+        REM Create a PSE (Personal Security Environment) which will be used to contain the public root certificate of the HANA Client.  
+        REM Press enter twice to not provide a pin
+        sapgenpse gen_verify_pse -p "%SECUDIR%/sapcli.pse"
+        >```
+
+        >```Shell (Windows)
+        REM Add the certificate to the PSE
+        sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -a %USERPROFILE%/Downloads/DigiCertGlobalRootCA.crt.pem
+        REM View the contents of the PSE
+        sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -l
+        REM Connect using the SAP commoncrypto library rather than OpenSSL.
+        hdbsql -sslprovider commoncrypto -n 3b2gf55e-4214-4bd9-adfc-f547d8e2d384.hana.trial-us10.hanacloud.ondemand.com:443 -u DBADMIN -p Hana1234
+        >```
+
+        > For additional details see [Server Certificate Authentication](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/a95754380f4c4c05b728524f9cd652e3.html).
+
+        >---
+
+        > If you are on a Linux or Mac machine and the hdbsql connection fails with the error message below, it indicates that the OpenSSL library could not locate a trust store in the default location.  
         >
         >_Cannot create SSL context:  SSL trust store cannot be found: `/Users/user1/.ssl/trust.pem`_
 
@@ -102,7 +153,7 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
 
 [ACCORDION-BEGIN [Step 2: ](Create user and schema)]
 
-This step will create a user named `USER1`.  `USER1` will be the owner of the tables that will be created in a subsequent steps and will be used to connect to the database.
+This step creates a user named `USER1`.  `USER1` will be the owner of the tables that will be created in a subsequent steps and will be used to connect to the database.
 
 On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` `hdbsql` option.  This enables multiple commands to be pasted at one time and does not require each result to be exited by pressing q.  
 
@@ -211,19 +262,19 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     ```SQL
     CREATE COLUMN TABLE HOTEL.HOTEL(
-    	hno INTEGER PRIMARY KEY,
-    	name VARCHAR(50) NOT NULL,
-    	address VARCHAR(40) NOT NULL,
+      hno INTEGER PRIMARY KEY,
+      name VARCHAR(50) NOT NULL,
+      address VARCHAR(40) NOT NULL,
       city VARCHAR(30) NOT NULL,
       state VARCHAR(2) NOT NULL,
       zip VARCHAR(6)
     );
     CREATE COLUMN TABLE HOTEL.ROOM(
-    	hno INTEGER,
-    	type VARCHAR(6),
-    	free NUMERIC(3),
-    	price NUMERIC(6, 2),
-    	PRIMARY KEY (hno, type),
+      hno INTEGER,
+      type VARCHAR(6),
+      free NUMERIC(3),
+      price NUMERIC(6, 2),
+      PRIMARY KEY (hno, type),
       FOREIGN KEY (hno) REFERENCES HOTEL.HOTEL
     );
     CREATE COLUMN TABLE HOTEL.CUSTOMER(
@@ -236,53 +287,53 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     );
     CREATE COLUMN TABLE HOTEL.RESERVATION(
       resno INTEGER NOT NULL GENERATED BY DEFAULT AS IDENTITY,
-    	rno INTEGER NOT NULL,
-    	cno INTEGER,
-    	hno INTEGER,
-    	type VARCHAR(6),
-    	arrival DATE NOT NULL,
-    	departure DATE NOT NULL,
-    	PRIMARY KEY (
-    		"RESNO", "ARRIVAL"
-    	),
+      rno INTEGER NOT NULL,
+      cno INTEGER,
+      hno INTEGER,
+      type VARCHAR(6),
+      arrival DATE NOT NULL,
+      departure DATE NOT NULL,
+      PRIMARY KEY (
+      	"RESNO", "ARRIVAL"
+      ),
       FOREIGN KEY(hno) REFERENCES HOTEL.HOTEL,
       FOREIGN KEY(cno) REFERENCES HOTEL.CUSTOMER
     );
     CREATE COLUMN TABLE HOTEL.MAINTENANCE(
-    	mno INTEGER PRIMARY KEY,
-    	hno INTEGER,
-    	description VARCHAR(100),
-    	date_performed DATE,
-    	performed_by VARCHAR(40)
+      mno INTEGER PRIMARY KEY,
+      hno INTEGER,
+      description VARCHAR(100),
+      date_performed DATE,
+      performed_by VARCHAR(40)
     );
 
     CREATE OR REPLACE PROCEDURE HOTEL.SHOW_RESERVATIONS(
-  	IN IN_HNO INTEGER, IN IN_ARRIVAL DATE)
-  	SQL SECURITY INVOKER
-  	READS SQL DATA
-  	AS BEGIN
-  		SELECT
-  			R.RESNO,
-  			R.ARRIVAL,
-  			DAYS_BETWEEN (R.ARRIVAL, R.DEPARTURE) as "Nights",
-  			H.NAME,
-  			CUS.TITLE,
-  			CUS.FIRSTNAME AS "FIRST NAME",
-  			CUS.NAME AS "LAST NAME"
-  		FROM
-  			HOTEL.RESERVATION AS R
-  			LEFT OUTER JOIN
-  			HOTEL.HOTEL AS H
-  			ON H.HNO = R.HNO
-  			LEFT OUTER JOIN
-  			HOTEL.CUSTOMER AS CUS
-  			ON CUS.CNO = R.CNO
-  			WHERE R.ARRIVAL = :IN_ARRIVAL AND
-  			H.HNO = :IN_HNO
-  		ORDER BY
-  			H.NAME ASC,
-  			R.ARRIVAL DESC;
-    END;
+      IN IN_HNO INTEGER, IN IN_ARRIVAL DATE)
+      SQL SECURITY INVOKER
+      READS SQL DATA
+      AS BEGIN
+        SELECT
+          R.RESNO,
+          R.ARRIVAL,
+          DAYS_BETWEEN (R.ARRIVAL, R.DEPARTURE) as "Nights",
+          H.NAME,
+          CUS.TITLE,
+          CUS.FIRSTNAME AS "FIRST NAME",
+          CUS.NAME AS "LAST NAME"
+        FROM
+          HOTEL.RESERVATION AS R
+          LEFT OUTER JOIN
+          HOTEL.HOTEL AS H
+          ON H.HNO = R.HNO
+          LEFT OUTER JOIN
+          HOTEL.CUSTOMER AS CUS
+          ON CUS.CNO = R.CNO
+          WHERE R.ARRIVAL = :IN_ARRIVAL AND
+          H.HNO = :IN_HNO
+        ORDER BY
+          H.NAME ASC,
+          R.ARRIVAL DESC;
+      END;
 
     INSERT INTO HOTEL.HOTEL VALUES(10, 'Congress', '155 Beechwood St.', 'Seattle', 'WA', '20005');
     INSERT INTO HOTEL.HOTEL VALUES(11, 'Regency', '477 17th Avenue', 'Seattle', 'WA', '20037');
@@ -331,15 +382,15 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     INSERT INTO HOTEL.ROOM VALUES(22, 'single', 34, 80.00);
     INSERT INTO HOTEL.ROOM VALUES(22, 'double', 78, 140.00);
     INSERT INTO HOTEL.ROOM VALUES(22, 'suite', 55, 350.00);
-    INSERT INTO HOTEL.ROOM VALUES(25, 'single', 44, 100.00);
-    INSERT INTO HOTEL.ROOM VALUES(25, 'double', 115, 190.00);
-    INSERT INTO HOTEL.ROOM VALUES(25, 'suite', 6, 450.00);
     INSERT INTO HOTEL.ROOM VALUES(23, 'single', 89, 160.00);
     INSERT INTO HOTEL.ROOM VALUES(23, 'double', 300, 270.00);
     INSERT INTO HOTEL.ROOM VALUES(23, 'suite', 100, 700.00);
     INSERT INTO HOTEL.ROOM VALUES(24, 'single', 10, 125.00);
     INSERT INTO HOTEL.ROOM VALUES(24, 'double', 9, 200.00);
     INSERT INTO HOTEL.ROOM VALUES(24, 'suite', 78, 600.00);
+    INSERT INTO HOTEL.ROOM VALUES(25, 'single', 44, 100.00);
+    INSERT INTO HOTEL.ROOM VALUES(25, 'double', 115, 190.00);
+    INSERT INTO HOTEL.ROOM VALUES(25, 'suite', 6, 450.00);
 
     INSERT INTO HOTEL.CUSTOMER VALUES(1000, 'Mrs', 'Jenny', 'Porter', '1340 N. Ash Street, #3', '10580');
     INSERT INTO HOTEL.CUSTOMER VALUES(1001, 'Mr', 'Peter', 'Brown', '1001 34th St., APT.3', '48226');
@@ -415,16 +466,16 @@ DROP USER USER1 CASCADE;
 > ---
 
 
-> HDBSQL can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/6097e699826343d0879244185d680a0d.html) in three different modes; interactive, non-interactive, and batch.  An example of each is shown below.
+> HDBSQL can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/6097e699826343d0879244185d680a0d.html) interactively, or non-interactively.  A few examples are shown below.
 > ```SQL
 > SELECT * FROM HOTEL.CUSTOMER; -- interactive
 > hdbsql -U USER1UserKey "SELECT * FROM HOTEL.CUSTOMER"; -- non-interactive
-> hdbsql -U USER1UserKey -I hotel.sql -- batch
+> hdbsql -U USER1UserKey -I hotel.sql -- batch file
 >```
 
 > ---
 
-> [Substitution parameters](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  Given the following file:
+> [Substitution variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  Given the following file:
 
 > ```SQL (find_customers.sql)
 > select * from HOTEL.CUSTOMER where FIRSTNAME LIKE '&nameParam'

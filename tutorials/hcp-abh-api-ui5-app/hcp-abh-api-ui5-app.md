@@ -1,12 +1,12 @@
 ---
 title: Call SAP API Business Hub API from a SAPUI5 Application
 description: Incorporate an SAP API into your SAPUI5 application using SAP Business Application Studio.
-primary_tag: products>sap-cloud-platform
+primary_tag: products>sap-business-technology-platform
 auto_validation: false
-author_name: Marius Obert
-author_profile: https://github.com/IObert
+author_name: Prathibha GC
+author_profile: https://github.com/Prathibha-Mouli
 time: 25
-tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-business-application-studio, topic>sap-api-business-hub]
+tags: [  tutorial>beginner, topic>sapui5, products>sap-business-technology-platform, products>sap-business-application-studio, topic>sap-api-business-hub]
 ---
 
 
@@ -30,7 +30,7 @@ Create the following two destinations in the SAP Cloud Platform cockpit. You can
 1. !![sandbox destination](sandbox_dest.png)
 2. !![catalog destination](catalog_dest.png)
 
-
+Connecting to the SAP API Business Hub, allows you to discover APIs to use in your UI5 application. Once you find the required API, you can test it in a sandbox which is enabled by connecting to the sandbox.
 
 > Check out [this tutorial](cp-cf-create-destination) if you are not sure how to create destinations.
 

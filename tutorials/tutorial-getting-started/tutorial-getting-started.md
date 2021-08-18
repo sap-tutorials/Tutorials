@@ -7,6 +7,10 @@ tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>sap-
 primary_tag: products>sap-business-technology-platform
 ---
 
+### Prerequisites
+- You can view the tutorials without an SAP ID, but you will be able to keep your progress and earn badges with an SAP ID (and do this tutorial). If you don't have one, go to [Create your SAP Universal ID](https://account.sap.com/core/create) or click the person icon at the top-right of this page ![person](person.png).
+
+
 ## Details
 ### You will learn
   - How to search for tutorials
@@ -17,7 +21,6 @@ We want to give a very quick tour of SAP Tutorials.
 
 Since you are already doing a tutorial -- this tutorial -- you already know some of the basics. Still, we'd like to review some things maybe you didn't know.
 
->**REMEMBER:** This tutorial is part of the Crossover Learner mission, as described in [Become a dual threat: SAP learner AND community pro](https://blogs.sap.com/2021/05/20/become-a-dual-threat-sap-learner-and-community-pro/). After completing it, remember that you must (1) vote on at least one question or answer; (2) and comment on the blog.
 
 ---
 
@@ -79,7 +82,28 @@ Note that you can further filter the results by the topic or product tags shown,
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Open mission)]
+[ACCORDION-BEGIN [Step 4: ](Bookmark tutorials)]
+
+You can bookmark tutorials so you can do them when you have time. Just click the **+** sign in the tile.
+
+![Bookmark](bookmark1.png)
+
+The bookmark icon turns white.
+
+![Bookmark created](bookmark2.png)
+
+Now you can open another browser window to the [developers home page](https://developers.sap.com), and make sure you are logged in with your SAP ID (top right).  
+
+Open the Bookmarks tab and you will see the new tutorial/mission bookmarks.
+
+![Bookmarks tab](bookmark3.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Open mission)]
+
+Make sure you are back in the SAP Tutorial Navigator.
 
 Click the tile called **Create Your First Chatbot with SAP Conversational AI**, which opens the mission page.
 
@@ -96,7 +120,7 @@ You can also see, in the top-left corner, the badge you will earn if you complet
 
 
 
-[ACCORDION-BEGIN [Step 5: ](Open tutorial)]
+[ACCORDION-BEGIN [Step 6: ](Open tutorial)]
 Open the tutorial **Build Your First Chatbot with SAP Conversational AI**.
 
 The top part of the tutorial is made up of the following:
@@ -124,7 +148,7 @@ The top part of the tutorial is made up of the following:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](See your progress)]
+[ACCORDION-BEGIN [Step 7: ](See your progress)]
 
 While you are doing the tutorial, you can see your progress in a couple of ways.
 
@@ -143,7 +167,7 @@ If you have been clicking the buttons as you complete this tutorial until here, 
 
 
 
-[ACCORDION-BEGIN [Step 7: ](Provide feedback)]
+[ACCORDION-BEGIN [Step 8: ](Provide feedback)]
 
 While you are doing the tutorial, you have the option of providing feedback to:
 
@@ -158,7 +182,7 @@ While you are doing the tutorial, you have the option of providing feedback to:
 
 
 
-[ACCORDION-BEGIN [Step 8: ](What badges can you earn?)]
+[ACCORDION-BEGIN [Step 9: ](What badges can you earn?)]
 Every mission in the Tutorial Navigator can earn you a badge. To see all the missions, open the [Tutorial Navigator](https://developers.sap.com/tutorial-navigator.html) and then filter by mission.
 
 ![Mission filter](MissionsFilter.png)
@@ -177,7 +201,7 @@ The badges you earn appear in the **Earned Missions** tab of your [SAP profile](
 
 
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+[ACCORDION-BEGIN [Step 10: ](Test yourself)]
 
 Now that you toured the Tutorial Navigator, you can get credit for doing this tutorial by clicking all the **Done** buttons in the steps above, and answering the following question.
 
@@ -186,6 +210,6 @@ Now that you toured the Tutorial Navigator, you can get credit for doing this tu
 
 ---
 
-** REMEMBER:** If you are doing this tutorial as part of the Crossover Learner (expires June 30, 2021), remember to go to the community and vote on a question or answer and comment on the blog [Become a dual threat: SAP learner AND community pro](https://blogs.sap.com/2021/05/20/become-a-dual-threat-sap-learner-and-community-pro/).
+
 
 ---
