@@ -294,7 +294,7 @@ In this step, you will add a detail page that shows some additional information.
 
 3. Once you saved the view, the web app should update automatically and display a view similar to this this one.
 
-!![detail view](detailview.png)
+!![detail view](detailView.png)
 
 [DONE]
 [ACCORDION-END]
