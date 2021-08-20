@@ -1,6 +1,6 @@
 ---
 title: Generate Time Table and Dimensions
-description: Create time tables and dimensions with Spaces in SAP Data Warehouse Cloud which then allows you to add time dimensions with year, quarter, month and day granularities when associated with the date field of your datasets and views. You can easily get the time related information by integrating with your datasets and views to gather insights and perform data analysis with year, quarter, month and day timeline visualizations in the Data Builder.
+description: Create time tables and dimensions in SAP Data Warehouse Cloud which then allows you to gather insights with year, quarter, month and day granularities.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
@@ -35,7 +35,7 @@ You can then for example visualize the sales of `Product_x` throughout the year 
 
 2.	Click on **Create timetables and dimensions**.
 
-    ![Time data](Time data.png)
+    !![Time data](Time data.png)
 
 3.	In the next dialog, you can configure your time table. You can give a business name and set the time period for which you want to generate the data for.
 
@@ -58,7 +58,7 @@ You can then for example visualize the sales of `Product_x` throughout the year 
 
 4.	In the properties sidebar, under Associations, click on the plus icon to create a new association.
 
-    ![Associations](Picture2.png)
+    !![Associations](Picture2.png)
 
 5.	Next, search and select the time data granularity you need for your raw dataset. This is going to be based on the date field you have in your dataset.
 
@@ -68,8 +68,9 @@ You can then for example visualize the sales of `Product_x` throughout the year 
 
 8.	Re-deploy the dataset by clicking on the deploy icon.
 
-**Well done!**
 
+> **Well done!**
+>
 > You have completed the Basic Data Modeling with Graphical Views tutorial group in SAP Data Warehouse Cloud. Now it is time to continue learning. Please check out the other [SAP Data Warehouse Cloud tutorials available here](https://developers.sap.com/tutorial-navigator.html?tag=products:technology-platform/sap-data-warehouse-cloud), and do not forget to follow the [SAP Data Warehouse Cloud tag](https://blogs.sap.com/tags/73555000100800002141/) in the SAP Community to hear about the most up to date product news.
 
 [DONE]

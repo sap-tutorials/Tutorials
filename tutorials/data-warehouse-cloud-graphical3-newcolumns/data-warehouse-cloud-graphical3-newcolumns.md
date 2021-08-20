@@ -1,6 +1,6 @@
 ---
 title: Create New Columns in a Graphical View
-description: In this tutorial, you will learn how to add new columns to a table or existing graphical view in SAP Data Warehouse Cloud. You will also learn to adapt the new columns for the output structure.
+description: Learn how to add new columns to a table or existing graphical view in SAP Data Warehouse Cloud and adapt them for the output structure.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
@@ -34,7 +34,7 @@ In the video above, you can see a complete demo adding new columns and managing 
 
 As an example, imagine you have a table called `ORDER`. This table has several fields such as `SalesOrderID`, `CreationDate`, and so on. This table was also used to build a dependent view called `V_ORDER`.
 
-![Order Table](Picture1.png)
+!![Order Table](Picture1.png)
 
 1.	Modify the `ORDER` table by adding two new fields, for example `Product_ID` and the `Expected_Delivery_Date`.
 
@@ -42,7 +42,7 @@ As an example, imagine you have a table called `ORDER`. This table has several f
 
 3.	You will see a list of columns with their business name. To add a new column, click on the plus icon. Enter the business and technical name for the column. As an example, add `Product_ID` and the `Expected_Delivery_Date`.
 
-    ![New Column](Picture2.png)
+    !![New Column](Picture2.png)
 
 4.	The last step is to deploy the table by clicking on the deploy icon.
 
@@ -55,11 +55,11 @@ Now your table is changed. It is time to open the dependent view and see what ha
 
 1.	First, open the dependent view in the Data Builder. By default, you will see a notification pop up window about the changes in the source table. When you close the pop-up, you will see the notification bubbles on the screen in the modeling canvas of the dependent view.
 
-    ![Notifications](Picture3.png)
+    !![Notifications](Picture3.png)
 
 2.	To review the changes, select the source table in the canvas and click on notifications icon of the table/view properties sidebar. In this example, you can see that two new columns have been added and are available but are not shown in the output node.
 
-    ![Notifications](Picture4.png)
+    !![Notifications](Picture4.png)
 > The newly created columns are not shown in the output node and this will always happen by default. The system is automatically adding a new projection node that hides these two new columns and preserves the existing output column list you had before creating the new columns.
 
 3.	To enable the two newly created columns, click on the projection node and then click on the notification icon. You will see a message that you can keep everything as is without the newly created columns or enable these new columns by restoring them.
@@ -84,15 +84,16 @@ If you need to restore the new columns you previously added, follow these steps:
 
 5.	Repeat the same steps for the other column.
 
-  ![Restore](Picture5.png)
+  !![Restore](Picture5.png)
 
 > Note that if you want to restore all hidden columns at once, simply delete the system generated projection node. You can now deploy the table as usual.
 
 > You can alter the primary key of a table in data builder of SAP Data Warehouse Cloud, even if the table already contains data and even if you have added a new column. The system validates new primary keys and checks tables for null values and uniqueness of the record sets. Also, the system supports compound and or multiple primary keys to adapt to the table data and modeling requirements. At the same time, it prevents you to enter data sets into an already existing data set if it is not unique.
 
-  ![Primary Key](Picture6.png)
+  !![Primary Key](Picture6.png)
 
-**Well done!**
+> **Well done!**
+>
 > You have completed the 3rd tutorial of this group! Now you know how to add new columns.
 > Learn in the next tutorial how to understand the notification bubbles.
 

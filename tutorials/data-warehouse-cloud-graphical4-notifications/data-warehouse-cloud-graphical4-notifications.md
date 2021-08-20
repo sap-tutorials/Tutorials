@@ -1,6 +1,6 @@
 ---
 title: Use Notification Bubbles in SAP Data Warehouse Cloud
-description: SAP Data Warehouse Cloud is designed to make data modeling easier for everyone. However, changes and even mistakes are a normal part of the daily work with modeling. To help you efficiently deal with these challenges, you can rely on the SAP Data Warehouse Cloud notification bubbles. Their purpose is to signal the changes that happen in the data models as well as their severity.
+description: Understand notification bubbles in SAP Data Warehouse Cloud whose purpose is to signal changes that happen in the data models as well as their severity.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
@@ -34,11 +34,11 @@ In this video, you will see an example of data model being broken on purpose, so
 
 [ACCORDION-BEGIN [Step 2: ](Get to know the information bubbles)]
 
-![Information Bubbles](Picture1.png)
-
 You will see the blue information bubbles in case of changes or updates to your data models.
 
 For example, if an underlying source table used in your view has been changed, you will see a notification bubble. With these bubbles, it is easy for you to see when any changes have been made.
+
+  !![Information Bubbles](Picture1.png)
 
 
 [DONE]
@@ -47,28 +47,28 @@ For example, if an underlying source table used in your view has been changed, y
 
 [ACCORDION-BEGIN [Step 3: ](Get to know the warning bubbles)]
 
-![Warning Bubbles](Picture2.png)
-
 You will see the orange warning bubbles when changes or actions may cause issues.
 For example, if you save a data flow without the final output table or with a branch that is not connected to any outputs, this would prompt a warning. These bubbles say: This may not work – proceed with caution!
 
+  !![Warning Bubbles](Picture2.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Get to know the error bubbles)]
 
-![Error Bubbles](Picture3.png)
-
 Finally, red error bubbles highlight errors and situations that need your intervention.
 
 Some of the examples create an impossible join condition or having a syntax error in a formula.
 
+!![Error Bubbles](Picture3.png)
+
 > Please note from release `2021.10` on, a new version history is created each time a model is successfully deployed. Those versions can be retrieved through a specific endpoint.
 
-![Version](Picture4.png)
+!![Version](Picture4.png)
 
-**Well done!**
+> **Well done!**
+>
 > You have completed the 4th tutorial of this group/mission! Now you know how to make use of different notification bubbles.
 
 > Learn in the next tutorial how to generate time tables and dimensions.

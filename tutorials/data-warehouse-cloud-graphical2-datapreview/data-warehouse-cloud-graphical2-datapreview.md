@@ -1,6 +1,6 @@
 ---
 title: Preview and transform your data in a graphical view
-description: Previewing data is simple and user friendly in SAP Data Warehouse cloud. In addition to previewing your data in the Data Builder, you can also sort and filter it. You will also learn join cardinalities and converting a graphical view to SQL statements.
+description: Learn how to preview data in SAP Data Warehouse Cloud and further add join cardinalities and convert a graphical view to SQL statements.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
@@ -28,7 +28,7 @@ The Data Builder in SAP Data Warehouse Cloud comes with easy and effective data 
 
 2.	Click on the view icon to preview the data. You can click on this icon to show or hide the data preview.
 
-    ![View](Picture11.png)
+    !![View](Picture11.png)
 
 What you will see first are the first thousand rows in this dataset. But you can sort and filter to view different slices of the data.
 This allows you to find specific data easily and increases the usability of the data preview.
@@ -41,15 +41,15 @@ This allows you to find specific data easily and increases the usability of the 
 
 1.	To sort the data in your data preview, you can choose to sort specific columns in a specific order. For example, you can choose to sort one of the columns, called Month, in ascending order. Hover your mouse over the column you wish to sort, then click on the three dots menu, and then selecting **Sort Ascending**.
 
-    ![Sort Data Preview](Picture1.png)
+    !![Sort Data Preview](Picture1.png)
 
     You will now see the values and an arrow mark next to Month column showing a Ascending order symbol.
 
-    ![Sort Ascending](Picture2.png)
+    !![Sort Ascending](Picture2.png)
 
 2.	You can follow the same steps to sort another column in descending order by choosing the **Sort Descending** option from the three dots menu. You will see the last 1000 values displayed.
 
-    ![Values](Picture3.png)
+    !![Values](Picture3.png)
 
 3.	You can also **filter** data by clicking on the three dots menu of a particular column and then typing a filter value in the filter box based on the column type.
 
@@ -62,15 +62,15 @@ This allows you to find specific data easily and increases the usability of the 
 
 1.	Finally, you can see a preview of the data within a graphical view by clicking on the Preview Data button next to your output node. You can also click on it on the top menu, next to the save and deploy icons.
 
-    ![Preview Data](Picture4.png)
+    !![Preview Data](Picture4.png)
 
 2.	But you can also preview just one table or one join. To do that, just click on the **Preview Data** icon next to the table or node you want to preview.
 
-    ![Icon](Picture5.png)
+    !![Icon](Picture5.png)
 
 3.	You will see the preview on the center lower part of the screen. Notice that you can confirm which preview you are looking at by checking the title of the preview **Data Preview: Output**.
 
-    ![Output](Picture6.png)
+    !![Output](Picture6.png)
 
 4.	Now you have previewed your data and explored it further by sorting and filtering as required.
 
@@ -95,11 +95,11 @@ The cardinality between two or more tables shows how the join relationships are 
 
 In the screenshot below you can see an example of Exact One to Exact One relationship in the join properties of the data model.
 
-  ![E One to E One](Picture7.png)
+  !![E One to E One](Picture7.png)
 
 You can change the join cardinality in the join properties of the data model. Click on the join node in the modeling canvas and then select the supported join cardinality in the join properties canvas based on the tables you are using for the model.
 
-  ![Join Cardinality](Picture8.png)
+  !![Join Cardinality](Picture8.png)
 
 
 [VALIDATE_7]
@@ -117,17 +117,18 @@ The video above or the steps following will guide you through the process of con
 
 2.	Open any of your available views, In the below screenshot, you can see a `Sales Order Items` view.
 
-    ![SalesOrder](Picture9.png)
+    !![SalesOrder](Picture9.png)
 
 3.	Click on the export icon to select **Preview SQL**.
 
-    ![SQL](Picture10.png)
+    !![SQL](Picture10.png)
 
 4.	Copy the SQL statements from the dialog and use it to debug, validate or even creating a new SQL view.
-
 >Currently, it is not possible to get a graphical view on the basis of SQL statements.
 
-**Well done!**
+
+> **Well done!**
+>
 > You have completed the 2nd tutorial of this group! Now you know how to preview data and make use of different tools in the Data Builder.
 
 > Learn in the next tutorial how to add new columns in the Data Builder.
