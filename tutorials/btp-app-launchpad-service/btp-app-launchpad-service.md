@@ -460,7 +460,13 @@ app/*/package-lock.json
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 16: ](Subscribe to SAP Launchpad service)]
-1. Log on to your **Global Account** and navigate to the **Subaccount** where you have deployed your service and application.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
+
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount where you have deployed your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 2. Choose **Services** **&rarr;** **Service Marketplace** on the left.
 
@@ -491,8 +497,8 @@ You have now subscribed to the SAP Launchpad service.
     > 1. Choose **Security** **&rarr;** **Trust Configuration** on the left.
     > 2. Choose your identity provider from the list.
     > 3. Enter your e-mail address and choose **Show Assignments**.
-    > 4. Choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
-    >
+    > 4. Choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user. 
+    > 
     >     !![Add role](add_launchpad_admin_role.png)
 
     > 5. Open another browser or clear your browser's cache.

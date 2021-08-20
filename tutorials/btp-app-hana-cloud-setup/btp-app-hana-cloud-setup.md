@@ -97,9 +97,13 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-2. Choose the **Global Account**.
+2. Enter your **Global Account**.
 
-3. Navigate to the **Subaccount**.
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 4. Choose **Cloud Foundry** **&rarr;** **Spaces** in the left-hand pane.
 
@@ -131,9 +135,13 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
-2. Choose the **Global Account**.
+2. Enter your **Global Account**.
 
-3. Navigate to the **Subaccount**.
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 4. Choose **Cloud Foundry** **&rarr;** **Spaces** in the left-hand pane.
 
@@ -171,9 +179,13 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-2. Choose your **Global Account**.
+2. Enter your **Global Account**.
 
-3. Navigate to your **Subaccount**.
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 4. Choose **Cloud Foundry** **&rarr;** **Spaces** in the left-hand pane.
 
@@ -227,9 +239,13 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
-2. Choose your **Global Account**.
+2. Enter your **Global Account**.
 
-3. Navigate to your **Subaccount**.
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 4. Choose **Cloud Foundry** **&rarr;** **Spaces** in the left-hand pane.
 

@@ -140,7 +140,7 @@ If you don't want to start from scratch, but from a specific example of the tuto
     ```Shell/Bash
     cd ../cpapp
     ```
-
+    
 8. Install required Node.js modules in your app directory.
 
     ```Shell/Bash
