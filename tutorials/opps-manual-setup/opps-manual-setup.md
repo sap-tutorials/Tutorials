@@ -53,7 +53,7 @@ Once the subscription is finished, you can choose the three dot symbol **°°°*
 
 [ACCORDION-BEGIN [Step 2: ](Set up roles and authorizations)]
 
-In order to use the **Configure Omnichannel Promotion Pricing** app, you have to create a role collection and assign users to it. With the configuration app, you can maintain various parameters to influence the behavior of the **Calculation service**. <!-- Using the app is not part of the basic tutorial. -->
+In order to use the **Configure Omnichannel Promotion Pricing** app, you must create a role collection and assign users to it. With the configuration app, you can maintain various parameters to influence the behavior of the **Calculation service**. <!-- Using the app is not part of the basic tutorial. -->
 
 1. Navigate back to your subaccount.
 
