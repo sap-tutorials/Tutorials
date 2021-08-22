@@ -1,6 +1,6 @@
 ---
 title: Use Notification Bubbles in SAP Data Warehouse Cloud
-description: Understand notification bubbles in SAP Data Warehouse Cloud whose purpose is to signal changes that happen in the data models as well as their severity.
+description: Understand notification bubbles in SAP Data Warehouse Cloud, whose purpose is to signal changes that happen in the data models as well as their severity.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
@@ -8,8 +8,7 @@ primary_tag: products>sap-data-warehouse-cloud
 ---
 
 ## Prerequisites
-- Get familiar with the graphical view builder in SAP Data Warehouse Cloud
-- Have at least one graphical view created and deployed in the data layer of SAP Data Warehouse Cloud
+- Have at least one graphical view created and deployed in SAP Data Warehouse Cloud -- see [Model Data with a Graphical View](data-warehouse-cloud-graphical1-model).
 
 ## Details
 ### You will learn

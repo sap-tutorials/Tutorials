@@ -1,6 +1,6 @@
 ---
 title: Generate Time Table and Dimensions
-description: Create time tables and dimensions in SAP Data Warehouse Cloud which then allows you to gather insights with year, quarter, month and day granularities.
+description: Create time tables and dimensions in SAP Data Warehouse Cloudת which then allows you to gather insights with year, quarter, month and day granularities.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
@@ -8,9 +8,8 @@ primary_tag: products>sap-data-warehouse-cloud
 ---
 
 ## Prerequisites
-- Get familiar with graphical views in the Data Builder
-- Have at least one deployed graphical view in your Space
-- Have a date field in your dataset or views to be analysed
+- Have at least one graphical view created and deployed in SAP Data Warehouse Cloud -- see [Model Data with a Graphical View](data-warehouse-cloud-graphical1-model).
+- Have a date field in your dataset or views to be analyzed
 
 
 ## Details
@@ -19,7 +18,7 @@ primary_tag: products>sap-data-warehouse-cloud
 - How to associate the time dimensions with your data
 
 
-Let us suppose you have two columns named `Product` and `Createdat` with the values of `'product_x'` and `'20210707'` in your dataset or view.
+Let's suppose you have two columns named `Product` and `Createdat` with the values of `'product_x'` and `'20210707'` in your dataset or view.
 
 You can easily associate the `Createdat` field with the time dimensions in SAP Data Warehouse Cloud to get `'20210707'` and year, quarter, month and day columns for the `Product_x` additionally.
 

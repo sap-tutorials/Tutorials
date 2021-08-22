@@ -1,6 +1,6 @@
 ---
 title: Create New Columns in a Graphical View
-description: Learn how to add new columns to a table or existing graphical view in SAP Data Warehouse Cloud and adapt them for the output structure.
+description: Add new columns to a table or existing graphical view in SAP Data Warehouse Cloud and adapt them for the output structure.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
@@ -8,8 +8,7 @@ primary_tag: products>sap-data-warehouse-cloud
 ---
 
 ## Prerequisites
-- Get to know graphical views in SAP Data Warehouse Cloud
-- Have at least one graphical view created and deployed in SAP Data Warehouse Cloud
+- Have at least one graphical view created and deployed in SAP Data Warehouse Cloud -- see [Model Data with a Graphical View](data-warehouse-cloud-graphical1-model).
 
 ## Details
 ### You will learn

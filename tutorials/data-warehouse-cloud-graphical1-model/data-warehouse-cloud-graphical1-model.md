@@ -1,6 +1,6 @@
 ---
 title: Model Data with a Graphical View
-description: Get started with Graphical Views using the Data Builder in SAP Data Warehouse Cloud which helps you to create and visualize the data model .
+description: Get started with graphical views using the Data Builder in SAP Data Warehouse Cloud, which helps you to create and visualize the data model.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
@@ -13,7 +13,7 @@ primary_tag: products>sap-data-warehouse-cloud
 
 ## Details
 ### You will learn
-- Create a new graphical view in your Space
+- Create a new graphical view in your space
 - Add data to your new view
 - Create a join or union
 - Transform your data
@@ -34,7 +34,7 @@ If you are unsure what data modeling means, or what a joins and unions are, plea
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Graphical View Demo)]
+[ACCORDION-BEGIN [Step 1: ](Graphical view demo)]
 In the video below, you can see a complete demo of the data modeling process in SAP Data Warehouse Cloud using graphical views. The steps in this tutorial are going to guide you through the same process.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nLwA81yf5IE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -136,7 +136,7 @@ To start modeling your data using the graphical view in the Data Builder of SAP 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy Your View)]
+[ACCORDION-BEGIN [Step 5: ](Deploy your view)]
 When you are done with your data modeling and transformation, you still need to make sure to either save, or save and deploy your data model. You should choose Save if you are not yet done with your modeling and still will make changes to it before using the data model in a data story.
 
 But you can directly click on the **Deploy** icon to deploy your data model, which also saves it on your Space's Repository. If you haven't yet added a business and technical name to this data model, you will be asked to do so when clicking either the Save or Deploy icons. Your data model will be available for use in the Business Builder, or in any Business Intelligence visualization tool, like SAP Analytics Cloud.

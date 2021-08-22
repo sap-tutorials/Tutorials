@@ -1,14 +1,11 @@
 ---
-title: Preview and transform your data in a graphical view
-description: Learn how to preview data in SAP Data Warehouse Cloud and further add join cardinalities and convert a graphical view to SQL statements.
+title: Preview and Transform Your Data in a Graphical View
+description: Preview data in SAP Data Warehouse Cloud and further add join cardinalities and convert a graphical view to SQL statements.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
-
-## Prerequisites
- - Get to know the graphical view builder in SAP Data Warehouse Cloud
 
 ## Details
 ### You will learn
@@ -18,11 +15,11 @@ primary_tag: products>sap-data-warehouse-cloud
 - How to convert your graphical view to SQL statements
 
 
-The Data Builder in SAP Data Warehouse Cloud comes with easy and effective data preview options to help you analysing data. Join cardinalities and one click SQL statements from a graphical view are the additional accessories to model your data effortlessly.
+The Data Builder in SAP Data Warehouse Cloud comes with easy and effective data preview options to help you analyzing data. Join cardinalities and one click SQL statements from a graphical view are the additional accessories to model your data effortlessly.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access the Data Preview Panel)]
+[ACCORDION-BEGIN [Step 1: ](Access the Data Preview panel)]
 
 1.	Go to the **Data Builder** in SAP Data Warehouse Cloud and select your space to see your tables and views listed. Click on the desired table or view for the data preview.
 
@@ -124,7 +121,8 @@ The video above or the steps following will guide you through the process of con
     !![SQL](Picture10.png)
 
 4.	Copy the SQL statements from the dialog and use it to debug, validate or even creating a new SQL view.
->Currently, it is not possible to get a graphical view on the basis of SQL statements.
+
+Currently, it is not possible to get a graphical view on the basis of SQL statements.
 
 
 > **Well done!**
