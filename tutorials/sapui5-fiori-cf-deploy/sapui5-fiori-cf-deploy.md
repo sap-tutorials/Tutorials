@@ -64,7 +64,7 @@ Use "cf dmol -i 0915a099-4130-11eb-b43e-eeee0a8f7188" to download the logs of th
 This means you uploaded the app successfully. The URL of you web app will now follow this pattern: `https://<yourID>.launchpad.cfapps.<region>.hana.ondemand.com/productsservice.tutorialproducts`
 With this URL, you are able to access the `flpSandbox.html`
 
-> You can also run `cf html5-list -di products_destination -u --runtime launchpad` to print the full URL of your web app.
+> You can also install [this plugin](cp-cf-install-cliplugin-html5) and run `cf html5-list -di products_destination -u --runtime launchpad` to print the full URL of your web app.
 
 
 [DONE]
