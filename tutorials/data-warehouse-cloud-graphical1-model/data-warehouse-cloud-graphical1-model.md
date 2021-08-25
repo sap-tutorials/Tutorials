@@ -9,7 +9,7 @@ primary_tag: products>sap-data-warehouse-cloud
 
 ## Prerequisites
  - You have your SAP Data Warehouse Cloud account or a [trial account](https://www.sap.com/products/data-warehouse-cloud/trial.html)
- - You have [imported your dataset into your Space.](data-warehouse-cloud-import-dataset-csv)
+ - You have imported your dataset into your Space.
 
 ## Details
 ### You will learn
