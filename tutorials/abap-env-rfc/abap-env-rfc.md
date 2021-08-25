@@ -56,7 +56,7 @@ First, you need to connect your ABAP on-premise system to a Cloud Foundry subacc
 1. In your browser, log on to SAP Cloud Connector:
     - Address = e.g. `https://localhost:<port>` (Default = 8443)
     - User = Administrator
-    - Initial password = Manage (You will change this when you first log in)
+    - Initial password = manage (You will change this when you first log in)
 
 2. Choose **Add Subaccount**:
 
