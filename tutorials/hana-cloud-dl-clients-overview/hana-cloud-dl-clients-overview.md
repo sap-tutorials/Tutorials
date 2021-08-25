@@ -25,7 +25,7 @@ This tutorial group will provide guidance on setting up a trial instance of [SAP
 
 SAP HANA Cloud is composed of multiple components, including data lake IQ.
 
-  * SAP HANA is an in-memory, multi-model, column-based, relational database. For further details see [Introduction to SAP HANA Cloud](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/latest/en-US/7a27607b08ba46d5b253365e703b1c1a.html) and [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
+  * SAP HANA is an in-memory, multi-model, column-based, relational database. For further details see [Introduction to SAP HANA Cloud](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/latest/en-US/7a27607b08ba46d5b253365e703b1c1a.html) and the tutorial mission [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
 
   * [SAP HANA Cloud, data lake](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/228c19ac890046ecbe8e38a540c0cb6b.html) is composed of two components:  data lake IQ and data lake Files.    
 
@@ -81,7 +81,9 @@ There are multiple ways to create a data lake:
 
     ![Enable a data lake](enable-data-lake.png)
 
-    Note that the administration user HDLADMIN is created.  
+    Take note that the administration user is HDLADMIN.  
+
+    >Note that it is also possible to create and manage data lake instances using the [Cloud Foundry CLI](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/921f3e46247947779d69b8c85c9b9985.html).
 
 4. As this is a trial account, set allowed connections to **Allow all IP addresses** so that client applications can connect from any IP address.  
 
@@ -342,7 +344,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
 [ACCORDION-BEGIN [Step 6: ](Connect with the Interactive SQL Client (DBISQL))]
 
-The data lake IQ client install includes Interactive SQL (DBISQL), which can be used to connect and query a data lake IQ. The following steps will provide instructions on how to connect to the data lake IQ using DBISQL and then populate the previously created tables with sample data to perform a few queries.
+The data lake IQ client install includes Interactive SQL (DBISQL), which can be used to connect and query a data lake IQ. The following steps will provide instructions on how to connect to the data lake IQ using DBISQL and then populate the previously created tables with sample data.
 
 1. Start GUI version of DBISQL from the Microsoft Windows Start menu, by double clicking on it, or on Linux by entering `dbisql`.
 

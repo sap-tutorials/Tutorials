@@ -298,7 +298,7 @@ With this, you uploaded the promotional rule "Buy a coffee machine and get 3 pac
 
 [ACCORDION-BEGIN [Step 5: ](Check uploaded master data)]
 
-You can use the **Data Access** service for checking your uploaded data. If you need guidance, have a look at step 5 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
+You can use the **Data Access** service for checking your uploaded data. If you need guidance, have a look at step 4 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 
 [DONE]
 [ACCORDION-END]

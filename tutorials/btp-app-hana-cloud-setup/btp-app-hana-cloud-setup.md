@@ -31,7 +31,7 @@ To continue with this tutorial you can find the result of the previous tutorial 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add SAP HANA client and configuration to your project)]
-1. Add SAP HANA support to your project by running:
+1. Add SAP HANA support to your project by running.
 
     ```Shell/Bash
     cds add hana
@@ -93,13 +93,17 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 [ACCORDION-BEGIN [Step 3: ](Use an existing SAP HANA Cloud service instance)]
 [OPTION BEGIN [Trial]]
 
-1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
+1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use.
 
     [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-2. Choose the **Global Account**.
+2. Enter your **Global Account**.
 
-3. Navigate to the **Subaccount**.
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 4. Choose **Cloud Foundry** **&rarr;** **Spaces** in the left-hand pane.
 
@@ -127,13 +131,17 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 [OPTION END]
 [OPTION BEGIN [Live]]
 
-1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
+1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use.
 
     [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
-2. Choose the **Global Account**.
+2. Enter your **Global Account**.
 
-3. Navigate to the **Subaccount**.
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 4. Choose **Cloud Foundry** **&rarr;** **Spaces** in the left-hand pane.
 
@@ -167,13 +175,17 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 [ACCORDION-BEGIN [Step 4: ](Create an SAP HANA Cloud service instance)]
 [OPTION BEGIN [Trial]]
 
-1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
+1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use.
 
     [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-2. Choose your **Global Account**.
+2. Enter your **Global Account**.
 
-3. Navigate to your **Subaccount**.
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 4. Choose **Cloud Foundry** **&rarr;** **Spaces** in the left-hand pane.
 
@@ -209,6 +221,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     !![Create SAP HANA Cloud: Step 3](hana_cloud_create_3.png)
 
+    > In case you get error `[APP/TASK/deploy/0] ERR Error: Connection failed (RTE:[xxx] Socket closed by peer (<your-instance-ID>.hana.trial-<your-ladscape>.hanacloud.ondemand.com:443))`, change the setting to `Allow all IP addresses`.
 
 15. Choose **Create Instance**.
 
@@ -222,13 +235,17 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 [OPTION END]
 [OPTION BEGIN [Live]]
 
-1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
+1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use.
 
     [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
-2. Choose your **Global Account**.
+2. Enter your **Global Account**.
 
-3. Navigate to your **Subaccount**.
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 4. Choose **Cloud Foundry** **&rarr;** **Spaces** in the left-hand pane.
 
@@ -264,6 +281,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     !![Create SAP HANA Cloud: Step 3](hana_cloud_create_3.png)
 
+    > In case you get error `[APP/TASK/deploy/0] ERR Error: Connection failed (RTE:[xxx] Socket closed by peer (<your-instance-ID>.hana.trial-<your-ladscape>.hanacloud.ondemand.com:443))`, change the setting to `Allow all IP addresses`.
 
 15. Choose **Create Instance**.
 

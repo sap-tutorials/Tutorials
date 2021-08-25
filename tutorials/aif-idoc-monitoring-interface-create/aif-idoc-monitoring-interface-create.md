@@ -201,7 +201,7 @@ Congratulations! You've created and tested a simple IDoc interface for monitorin
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test Yourself )]
+[ACCORDION-BEGIN [Step 9: ](Test yourself )]
 
 [VALIDATE_1]
 [ACCORDION-END]
