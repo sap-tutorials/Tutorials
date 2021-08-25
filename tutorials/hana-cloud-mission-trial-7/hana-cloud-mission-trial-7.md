@@ -198,7 +198,7 @@ To avoid using the super-user `DBADMIN`, we will now first create a new user tha
 create role "genericRoleForOO";
 create role "genericRoleForAP";
 -- assign privileges that these roles should grant
-grant select on schema SFLIGHT to "genericRoleForOO " with grant option;
+grant select on schema SFLIGHT to "genericRoleForOO" with grant option;
 grant select on schema SFLIGHT to "genericRoleForAP";
 -- create a database user that should assign these privileges
 create user UPS_GRANTOR password "DnATBG!1" NO FORCE_FIRST_PASSWORD_CHANGE;
