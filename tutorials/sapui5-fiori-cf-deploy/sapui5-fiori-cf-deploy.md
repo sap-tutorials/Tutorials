@@ -3,12 +3,17 @@ title: Deploy the Fiori App to Cloud Foundry
 description: Deploy the application to the Cloud Foundry environment to be able to share it with your coworkers.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5,   products>sap-launchpad-service, topic>user-interface, topic>html5, topic>cloud]
+tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5,   products>sap-launchpad-service, topic>user-interface, topic>html5, topic>cloud, tutorial>free-tier]
 primary_tag: products>sap-business-technology-platform
 ---
 
 ## Prerequisites
- - Make sure you have the [proper entitlements](cp-cf-entitlements-add) set. If you are unsure which services you need, please refer to the table of step 2.
+## Prerequisites
+- You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
+    - **SAP Launchpad service**
+    - **`destination`**
+    - **`xsuaa`**
+    - **`html5-apps-repo`**
 
 ## Details
 ### You will learn
