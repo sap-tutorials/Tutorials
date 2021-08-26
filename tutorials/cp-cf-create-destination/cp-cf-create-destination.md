@@ -29,7 +29,6 @@ The Northwind OData services comes in several versions.  The tutorials currently
 
 ---
 
-
 [ACCORDION-BEGIN [Step : ](Enter your BTP account)]
 
 Go to <https://account.hanatrial.ondemand.com> or  <https://account.hana.ondemand.com> and log in to the SAP BTP cockpit.
