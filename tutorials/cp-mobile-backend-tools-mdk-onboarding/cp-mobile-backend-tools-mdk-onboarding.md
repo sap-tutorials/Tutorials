@@ -52,19 +52,17 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img_mdk_wizard_basic.png)
 
-    >If you see the message *"Cloud foundry token expired, continue without mobile services connection?"*, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.
-
-      ![CF Token expired](img_cf_token_expired.png)
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.
 
 5. In **Service Configuration** step, provide or select the below information and click **Next**:
 
     | Field | Value |
     |----|----|
     | `Service File Name`| `EpmCacheService` |
-    | `OData Source` | Select `Local File` from the dropdown |
-    | `Enter a path to the OData service` | Leave it empty |
-    | `Local dev space XML` | Via file picker, find the `metadata.csdl.xml` of your service in the project of the MBT service |
-    | `Destination Name` | Type the name specified in Mobile Services `com.sap.MbtEpmDemo` |
+    | `OData Source` | Select `Mobile Services` from the dropdown |
+    | `Mobile Services Landscape` | `standard` |
+    | `Application Id` | As specified in the previous tutorial, e.g. `com.sap.MbtEpmDemo` |
+    | `Destination` | As specified in the previous tutorial, e.g. `com.sap.MbtEpmDemo` |
     | `Language URL` | Delete field content |
     | `Enable Offline` | Leave **Yes** |
 
@@ -72,13 +70,13 @@ This step includes creating the mobile development kit project in the editor.
 
     The generated application will be offline enabled in the MDK Mobile client.
 
-8. In **OData Collections** step, select all collections. Click **Finish** to complete the project creation.
+8. In **OData Collections** step, select all collections. Click **Next** to complete the project creation.
 
     !![MDK](img_template_collections.png)
 
-9. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You might want to answer the upcoming prompt with `Open in New Workspace` to open the new project automatically. You should now see the `EpmCacheApp` project in the project explorer.
+    >In [this tutorial](cp-mobile-backend-tools-cache-db), server-side configuration for this MDK app was already done.
 
-    !![Open in new workspace](img_1.10.png)
+9. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `EpmCacheApp` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -114,7 +112,7 @@ The approach for handling the service onboarding introduced here will leverage M
 
 The procedure consists of an additional MDK Service for online communication, additional actions, modified actions and rules for controlling the flow and generating randoms.  
 
-1. Create a rule to make a app-unique `Client-Instance-ID` available to other MDK components.
+1. Create a rule to make an app-unique `Client-Instance-ID` available to other MDK components.
 
     - Right-click the folder `Rules` &rarr; select **MDK: New Rule File**.
 
@@ -182,14 +180,6 @@ The procedure consists of an additional MDK Service for online communication, ad
 2. Open `EpmCacheServiceOnline.service` and uncheck **Use Offline Store** and save.
 
     ![Duplicate files](gif_duplicate_service.gif)
-
-    >When opening the Service file for the first time, you will be asked to select the application from SAP Mobile Services to which your app project shall be bound. If you are not currently logged in to Cloud Foundry, you will also be asked to login and select organisation and space.
-
-    ![Select Mobile Services App](img_service_select_app.png)
-
-    >In [this tutorial](cp-mobile-backend-tools-cache-db), server-side configuration for this MDK app was already done.
-
-    As you used a local XML file for generating the client app, this selection will automatically create the link between your MDK project and SAP Mobile Services. Make sure to really select the application you created in the previous tutorial.
 
 3. Edit `EpmCacheService` to reflect the created rule for custom header. Therefore open `EpmCacheService.service`, expand **Headers** and enter the following:
 
@@ -332,7 +322,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 2. Select deploy target as **Mobile Services**.
 
-   First deployment starts to Mobile Services (for Mobile application).
+      First deployment starts to Mobile Services (for Mobile application).
 
    !![MDK](gif_app_deploy.gif)
 
