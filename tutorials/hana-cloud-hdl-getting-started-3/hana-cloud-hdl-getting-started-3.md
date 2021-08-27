@@ -18,18 +18,25 @@ primary_tag: products>sap-hana-cloud
   - How to load data hosted in an Amazon Web Services (AWS) S3 bucket into a standalone data lake
   - How to load data hosted in a Microsoft Azure container into a standalone data lake
 
-You can download these supporting `csv` files that will be used throughout this tutorial.
 
 
-  -	[Customer](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-cloud-hdl-getting-started-3/customer.tbl?token=AUDXVMKBFVFSJ65COMHYJQTAYOOTQ)
+The supporting sample data and code files are available on a public GitHub repository. From the folder [Mission: Get Started with a Standalone Data lake](https://github.com/SAP-samples/hana-cloud-learning/tree/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake) download the zip file [Sample Data](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/Sample%20Data.zip).
 
-  -	[Nation](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-cloud-hdl-getting-started-3/nation.tbl?token=AUDXVMNYPET4FMW2UT4WAZLAYOOXO)
+In this zip file, you will find four tables:
 
-  -	 [Region](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-cloud-hdl-getting-started-3/region.tbl?token=AUDXVMKXKRPCMGNFKQKONTLAYOOZU)
+  -	Customer.tbl
 
-  - [Supplier](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-cloud-hdl-getting-started-3/supplier.tbl?token=AUDXVMPJAOWQHEQ6ZC4AN7DAYOO3M)
+  -	Nation.tbl
 
-If you decide to use Interactive SQL instead of SAP HANA Database Explorer, please copy the `SQL Scripts` used in this tutorial onto the machine where you installed the Interactive SQL.
+  -	Region.tbl
+
+  - Supplier.tbl
+
+In the same GitHub folder, you can also find the SQL scripts used in this tutorial as a [zip file](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/SQL%20Scripts.zip) or as individual files.
+
+If you decide to use Interactive SQL instead of SAP HANA Database Explorer, please copy the SQL Scripts used in this tutorial onto the machine where you installed the Interactive SQL.
+
+
 
 [ACCORDION-BEGIN [Step 1: ](Create a new user)]
 Before you create tables, it is recommended that you also create a new user, so that your new tables are not owned by `HDLADMIN`. With a new user, your new tables will be created under a particular schema.
@@ -56,6 +63,8 @@ For more in-depth information about creating users in SAP HANA Cloud, data lake,
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create tables in data lake)]
+> **For this step, select your preferred method by clicking on the options under the step title.**
+
 Now it's time to create tables. In this example, you will create the following tables:
 
 >* customer
@@ -69,7 +78,7 @@ Let's get started. Follow these steps:
 
 1.	In SAP HANA Database Explorer, make sure your SQL Console is open.
 
-2.	Copy the code given below into the SQL Console and execute the script after entering your password in the appropriate field.
+2.	Copy the code given below into the SQL Console and execute the script after entering your password in the appropriate field. You can also find this code in `CreateTables.sql` file contained in the `SQL scripts.zip` [file](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/SQL%20Scripts.zip).
 
 ```SQL
      /*==============================================================*/                       */
@@ -166,7 +175,7 @@ You can create tables using Interactive SQL connected to your data lake instance
 
 Let's get started. Follow these steps:
 
-1.  Within an Interactive SQL window, copy and paste the SQL script given below.
+1.  Within an Interactive SQL window, copy and paste the SQL script given below. You can also find this code in `CreateTables.sql` file contained in the `SQL scripts.zip` [file](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/SQL%20Scripts.zip).
 
     ```SQL
     /*==============================================================*/                       */
@@ -263,6 +272,8 @@ Let's get started. Follow these steps:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Upload sample data)]
+> **For this step, select your preferred method by clicking on the options under the step title.**
+
 [OPTION BEGIN [AWS S3 bucket]]
 If you wish to work with an S3 bucket on Amazon Web Services (AWS), then you will need the following details about your S3 bucket to load the data into the data lake:
 
@@ -320,10 +331,12 @@ After all the mentioned files are uploaded completely, you can exit the Azure po
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Load data into data lake tables)]
+> **For this step, select your preferred method by clicking on the options under the step title.**
+
 [OPTION BEGIN [AWS S3 bucket]]
 Now it's time to load the data from the S3 bucket into your data lake.
 
-Copy the SQL script given below into the SQL Console in the SAP HANA Database Explorer. **But before you execute it, make the following changes in the script**.
+Copy the SQL script given below into the SQL Console in the SAP HANA Database Explorer. You can also find this code in `LoadTables_AWS.sql` file contained in the `SQL scripts.zip` [file](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/SQL%20Scripts.zip). **But before you execute it, make the following changes in the script**.
 
 ```SQL
 /* Create an S3 bucket in AWS */
@@ -459,7 +472,7 @@ Run the script after making the changes. For the data to be loaded, please make 
 
 Now it's time to load the data from the Azure container into your data lake.
 
-Copy the SQL script given below into the SQL Console in the SAP HANA Database Explorer. **But before you execute it, make the following changes in the script**.
+Copy the SQL script given below into the SQL Console in the SAP HANA Database Explorer. You can also find this code in `LoadTables_Azure.sql` file contained in the `SQL scripts.zip` [file](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/SQL%20Scripts.zip). **But before you execute it, make the following changes in the script**.
 
 ```SQL
 /* Create an S3 bucket in AWS */

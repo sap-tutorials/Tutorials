@@ -19,7 +19,15 @@ author_profile: https://github.com/jitendrakansal
   - How to build a Mobile development kit client for iOS and Android
   - How to connect to SAP Mobile app
 
-  The SAP Mobile Services client available in the App Store is meant for demo and development or learning purposes. For distribution to your users, you need to build a custom client. This enables you to:
+  There are 3 options for mobile development kit client:
+
+  1. Install the SAP Mobile Services client from the public store which is meant for demo and development or learning purposes.
+  2. Use the Cloud Build feature in SAP Mobile Services to generate a MDK Client (details are in [this](cp-mobile-dev-kit-cbs-client) tutorial)
+  3. Build a client on your local machine in your organization development environment using MDK SDK
+
+In this tutorial, you will learn creating a MDK client using option 3.  
+
+For distribution to your users, you need to build a custom client. This enables you to:
 
 -	Provide customer app icon
 -	Use your signing profiles

@@ -109,7 +109,7 @@ The visibility and the content of each screen will vary depending on the differe
 
 [OPTION BEGIN [Kotlin]]
 
-1.  By default, the first screen of the onboarding flow is the EULA screen. This screen allows users to review and agree to the end user license agreement. To exclude this screen, set the value of **`excludeEula parameter`** to **`true`** for the **`FlowOptions`** instance and set this **`FlowOptions`** instance for the **`FlowContext`** instance to start the onboarding flow.
+1.  By default, the first screen of the onboarding flow is the EULA screen. This screen allows users to review and agree to the end user license agreement. To exclude this screen, set the value of **`excludeEula`** parameter to **`true`** for the **`FlowOptions`** instance and set this **`FlowOptions`** instance for the **`FlowContext`** instance to start the onboarding flow.
 
     ```Kotlin
     val flowContext =

@@ -97,7 +97,7 @@ With the service instances and corresponding credentials that you set up (as des
 * Choose **Save**.
 
 >** From the service key that you have created for the Data Upload service in your SAP BTP account. For a detailed description, go to step 4 in the tutorial [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
-![Service Key](v2_Service-Key.png)
+![Service Key](v3_Service_Key.png)
 
 
 You have now created the trial environment for the **Data Upload** service in the SAP API Business Hub. Repeat the sub-steps 1-5 for the **Data Access** service and the **Calculation** service, using the credentials from their respective service keys.
@@ -264,7 +264,7 @@ With this you uploaded the promotional rule "Buy sunglasses and get 40% off" (pr
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Check uploaded master data (Optional))]
+[ACCORDION-BEGIN [Step 4: ](Check uploaded master data)]
 
 You can use the **Data Access** service for checking your uploaded data.
 
@@ -529,6 +529,12 @@ The response should look similar to this:
 
 [VALIDATE_2]
 [ACCORDION-END]
+
+
+### What to Do Next ###
+
+ Navigate to the intermediate group [Set up Complex Promotions with SAP Omnichannel Promotion Pricing](group.opps-complex-promotion) and continue with the next tutorial [Apply Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing](opps-advanced-scenario-mixandmatch).
+
 
 ### Additional Information
 
