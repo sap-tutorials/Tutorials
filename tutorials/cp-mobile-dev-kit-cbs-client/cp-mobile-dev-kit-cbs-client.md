@@ -1,6 +1,6 @@
 ---
 title: Build Your Mobile Development Kit Client Using Cloud Build Service
-description: Build the Mobile Development Kit client using cloud build service and connect to your SAP mobile app.
+description: Build a standard or a customized Mobile Development Kit client using cloud build service and connect to your SAP mobile app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
@@ -15,36 +15,35 @@ author_profile: https://github.com/jitendrakansal
 
 ## Details
 ### You will learn
-  - How to create a custom MDK client using Cloud Build service
-  - How to add your company logo and company name to the custom client
+  - How to generate platform specific configurations required for your MDK client
+  - How to build a standard MDK client
+  - How to upload your local `.mdkproject` to the Cloud Build service to build a customized MDK client
+  - How to install the binary on your device
 
-There are 3 options for mobile development kit client:
+Cloud Build Service provides 2 options for creating a Mobile development kit client:
 
-1. Install the SAP Mobile Services client from the public store
-2. Use the Cloud Build feature in SAP Mobile Services to generate a customized client
-3. [Build and customize a client on your local machine in your organization development environment](cp-mobile-dev-kit-build-client)
-
-In this tutorial, you will learn how to use Cloud Build service to generate a custom MDK client (option 2).
-
-SAP Mobile Services provides the capability to build the MDK client without client-side installations.
+1. Create a standard MDK client by providing your own app icon and app logo.
+2. Create a customized MDK client by importing your local `.mdkproject` similar to what you might have done via MDK SDK locally on your machine.
 
 You need to:
 
 - Add Cloud Build service feature to your MDK app configuration
 - Upload signing profiles and/or app information
-- Upload app icon
+- Upload your local `.mdkproject` (applies for custom MDK client)
 - Initiate the build
 
-After a successful build, you can download the IPA or APK file.
+After a successful build, you can download the APK or IPA file.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Generate required configuration to build custom client)]
+[ACCORDION-BEGIN [Step 1: ](Generate required configuration to build the MDK client)]
 
 >Make sure you are choosing the right device platform tab above.
 
 
 [OPTION BEGIN [Android]]
+
+> This step is required only if you will be using Push notification in your Android MDK client. If not using the Push, proceed to next step.
 
 1. Open the [Firebase console](https://console.firebase.google.com/u/0/?pli=1), login with your Google account and click **Create Project** or **Add Project** (you will see this option if you already have any existing projects).
 
@@ -225,15 +224,28 @@ To enable your app for push notifications, you need to carry out the following t
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure device platform signing profile in Mobile Services)]
+
+[ACCORDION-BEGIN [Step 2: ](Compress your .mdkproject (Required for a customized client))]
+
+If you haven't created your local `.mdkproject`, have a look at step 3 from [this](cp-mobile-dev-kit-build-client) tutorial.
+
+Compress your `.mdkproject` folder, the resulting zip file will be used to create a build job for a customized Mobile Development Kit client in Mobile Services cockpit.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 3: ](Configure device platform signing profile in Mobile Services)]
 
 >Make sure you are choosing the right device platform tab above.
 
+
+
 [OPTION BEGIN [Android]]
 
-1. Open the [SAP Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and navigate to **Settings** | **Cloud Build**. Initialise the **Cloud Build Settings** if not done before.
+1. Open the [SAP Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and navigate to **Settings** | **Cloud Build**. Initialize the **Cloud Build Settings** if not done before.
 
-    !![MDK](img_2.1.png)
+    !![MDK](img-2.1.1.png)
 
 2. You have an option to generate a new signing profile in the Mobile Services cockpit by providing mandatory info like Profile Name, Validity, Common Name (user name). Other information are optional.
 
@@ -247,9 +259,9 @@ To enable your app for push notifications, you need to carry out the following t
 
 [OPTION BEGIN [iOS]]
 
-1. Open the [SAP Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and navigate to **Settings** | **Cloud Build**. Initialize the **Cloud Build Settings** if not done before.
+1. Open the [SAP Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and navigate to **Settings** | **Cloud Build**. Initialise the **Cloud Build Settings** if not done before.
 
-    !![MDK](img_2.1.png)
+    !![MDK](img-2.1.1.png)
 
 2. Click **Upload** to upload iOS Signing profile and provide below information:
 
@@ -272,47 +284,110 @@ You can find more details about Cloud Build service in [help documentation](http
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a build job in Cloud Build service)]
+[ACCORDION-BEGIN [Step 4: ](Create a build job in Cloud Build service)]
+
+>Make sure you are choosing the right tab above to build a MDK client as per your requirement.
+
+
+[OPTION BEGIN [Standard Client]]
 
 1. In Mobile Services cockpit, navigate to `Mobile Applications` | `Native/Hybrid` | `com.sap.mdk.demo` | `Mobile Cloud Build`.
 
-    Click **Create Build Job** to build your first build job.
+    > If you do not see **Mobile Cloud Build** feature in the **Assigned Features** list, click the **+** icon to add it.
 
-    !![MDK](img_3.1.png)
+2. Click **Create Build Job** to build your first build job.
 
-2. Select **Mobile Development Kit Client** from **Client Type** dropdown.
+    !![MDK](img-3.1.png)
 
-    !![MDK](img_3.2.png)
+3. Select **Mobile Development Kit Client** from **Client Type** dropdown.
 
-3. Provide required values and click **Next**.
+    !![MDK](img-3.2.2.png)
 
-    !![MDK](img_3.3.png)
+4. Provide required values and click **Next**.
+
+    !![MDK](img-3.3.3.png)
 
     >**Encrypt Database**: Whether the database must be encrypted. Unselect this field to extract the database for debugging purposes.
 
-4. Provide a unique value to the **URL Scheme** and browse to `google-services.json` file for Android build  values and click **Next**.
+4. In **Platform** step, provide a unique value to the **URL Scheme**.
 
-    !![MDK](img_3.4.png)
+    If you have a Firebase configuration for your client, browse to select the `google-services.json` file and click **Next**.
+
+
+    !![MDK](img-3.4.4.png)
 
     >**Google Services JSON File**: The Firebase Android configuration file associated with your app in your Firebase project.
 
-5. You may upload your company logo for the app icon and click **Next**.
+5. In **Multimedia** step, you may upload an image to use for the app logo and click **Next**.
 
-    !![MDK](img_3.5.png)
+    !![MDK](img-3.5.5.png)
 
-6. Upload respective Signing profile(s), set minimum platform version and click **Finish**.
+6. In **Build Options step**, upload respective Signing profile(s), set minimum platform version and click **Finish**.
 
-    !![MDK](img_3.6.png)
+    !![MDK](img-3.6.6.png)
 
 7. Click **Build** to start the Build job.
 
-    !![MDK](img_3.7.png)
+    !![MDK](img-3.7.png)
 
     After few minutes, Build should be completed. You can select each cloud build history row to view its current state, install, and download binaries.
 
-    !![MDK](img_3.7.1.png)
+    !![MDK](img-3.7.1.png)
 
     You can find more details about packaging details in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/admin/customization.html#packaging-details-overview).
+
+[OPTION END]
+
+
+[OPTION BEGIN [Custom Client]]
+
+1. In Mobile Services cockpit, navigate to `Mobile Applications` | `Native/Hybrid` | `com.sap.mdk.demo` | `Mobile Cloud Build`.
+
+    > If you do not see **Mobile Cloud Build** feature in the **Assigned Features** list, click the **+** icon to add it.
+
+2. Click **Create Build Job** to build your first build job.
+
+    !![MDK](img-3.1.png)
+
+3. Select **Customized Mobile Development Kit Client** from **Client Type** dropdown.
+
+    !![MDK](img-3.2.png)
+
+    >The build includes functionality to run customized extensions, application resources, and onboarding, and to include demo mode in your application.
+
+4. Browse to your compressed MDK project as previously created.
+
+    !![MDK](img-3.3.png)
+
+    Upon upload, Cloud Build service starts validating the ZIP file. If the ZIP file doesn't conform to the  `.mdkproject` structure, you may see build failures. Check the [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/admin/create.html#creating-a-build-job-for-customized-mobile-development-kit-clients) for more details.
+
+    Once validation is successful, you will notice the values like Device App Name, Device App Display Name, Device App Version, Device App Details, Bundle ID, and Encrypt Database have been auto-filled/selected. These values were provided in your `MDKProject.json` and `BrandedSettings.json` as part of your local `.mdkproject`.
+
+    !![MDK](img-3.4.png)
+
+    Click **Next**.
+
+5. In the **Platform** step, URL Scheme has been retrieved from the MDKProject.json. Click **Next**.    
+
+    !![MDK](img-3.5.png)
+
+6. In the **Build Options** step, select the Platforms, respective signing profile(s), set minimum Platform Version and click **Finish**.
+
+    !![MDK](img-3.6.png)
+
+7. Click **Build** to start the Build job.
+
+    !![MDK](img-3.7.png)
+
+    After few minutes, Build should be completed. You can select each cloud build history row to view its current state, install, and download binaries.
+
+    !![MDK](img-3.7.1.png)
+
+    You can find more details about packaging details in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/admin/customization.html#packaging-details-overview).
+
+[OPTION END]
+
+
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -323,10 +398,10 @@ You can find more details about Cloud Build service in [help documentation](http
 
 You can install this new custom MDK client app either by scanning QR code from Android phone camera app (click **Install**) or download binary (APK) locally and install in your device via IDEs like Android Studio or via other means.
 
-!![MDK](img_4.1.png)
+!![MDK](img-4.1.png)
 
-!![MDK](img_4.2.png)
-!![MDK](img_4.3.png)
+![MDK](img-4.2.png)
+![MDK](img-4.3.png)
 
 [OPTION END]
 
@@ -335,10 +410,10 @@ You can install this new custom MDK client app either by scanning QR code from A
 
 You can install this new custom MDK client app either by scanning QR code from iPhone phone camera app (click **Install**) or download binary (IPA) locally and install in your device via IDEs like Xcode or via other means.
 
-!![MDK](img_4.1.png)
+!![MDK](img-4.1.png)
 
-!![MDK](img_4.4.png)
-!![MDK](img_4.5.png)
+![MDK](img-4.4.png)
+![MDK](img-4.5.png)
 
 [OPTION END]
 
