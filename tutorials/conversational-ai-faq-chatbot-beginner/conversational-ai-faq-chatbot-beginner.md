@@ -95,14 +95,14 @@ Download our sample <a href="https://github.com/SAPDocuments/Tutorials/raw/maste
     |  4. Data Policy  | **Non-personal** and **Non-vulnerable**
     |  5. Bot Visibility | **Public**
 
-3. Click **Create a Bot**.
+3. Click **Create**.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Upload CSV file)]
 
-1. On the **Train** tab, click **Upload**, and select the file you downloaded.
+1. On the **Train** tab, click **Upload Document**, and select the file you downloaded.
 
 2. Click **Upload**, and when the upload finishes and you get a little green check, click **Close**.
 

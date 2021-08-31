@@ -122,7 +122,7 @@ Now that you created a `mtar` archive, you are all set to deploy the application
 
     !![success](./deploysuccess.png)
 
-4.   You can see the URL of the deployed app when running `cf html5-list -di sap-btp-sapui5-destination-service -u  --runtime launchpad` in a new terminal session.
+4.   You can see the URL of the deployed app when running `cf html5-list -di sap-btp-sapui5-dest-srv -u --runtime launchpad` in a new terminal session.
 
     !![cfapps](./cfhtml5.png)
 
@@ -136,6 +136,7 @@ Now that you created a `mtar` archive, you are all set to deploy the application
 [ACCORDION-BEGIN [Step : ](Test to the application)]
 
 1. **Open** the application in your browser. You might need to log in with your SAP ID (the same credentials you use for the SAP BTP Cockpit).
+>There is temporarily a need to update the given URL to view the application. When pasting the URL into your browser, remove `cpp` from your URL and replace it with `launchpad`. 
 
 
 2. See that the sample application consists of a header and an empty page. So you should see something like this:

@@ -315,7 +315,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-
+    
     > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
 
 
@@ -415,7 +415,7 @@ You now add the capability of live reloading to the configuration of the SAPUI5 
               path: "webapp"
 
     ```
-
+    
     > Make sure you have added the lines with the correct indentation so you don't have to deal with unexpected errors in the next steps.
 
 
