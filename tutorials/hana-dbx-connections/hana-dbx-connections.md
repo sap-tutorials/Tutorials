@@ -3,7 +3,7 @@ title: Add Databases to  the SAP HANA Database Explorer
 description: This tutorial will explore different database connections types, such as SAP HANA Cockpit Database, SAP HANA, Data Lake IQ, and SAP HANA Deployment Infrastructure (HDI), along with the different operations that can be performed on them.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, software-product-function>sap-hana-cloud\,-data-lake]
 primary_tag: products>sap-hana-cloud
 ---
 
