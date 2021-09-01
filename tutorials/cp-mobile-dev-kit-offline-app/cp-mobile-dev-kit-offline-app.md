@@ -147,7 +147,7 @@ SAP Business Application Studio has a feature to generate QR code for onboarding
 
     !![MDK](img-4.1.png)
 
-2. Select `com.sap.mdk.demo` application from the list
+2. Select `com.sap.mdk.demo` application from the list.
 
     !![MDK](img-4.3.png)
 
