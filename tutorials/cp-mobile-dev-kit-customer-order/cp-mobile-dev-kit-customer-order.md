@@ -65,7 +65,7 @@ This page will display customer orders list, you will add an **Object Table** co
 
     | Property | Value |
     |----|----|
-    | `Service`| Select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `Entity` | Select `SalesOrderHeaders` from the dropdown |
     | `QueryOptions`| `$filter=CustomerId eq '{CustomerId}'&$top=5&$orderby=CreatedAt desc` |
 
@@ -206,7 +206,7 @@ This page will show related details for an order. In this page, you will add an 
     | `Action Name`| `NavToCustomers_Orders` |
     | `PageToOpen` | Select `Customers_Orders.page` from the dropdown |
 
-    !![MDK](img_3.1.png)
+    !![MDK](img-3.1.png)
 
     Click **Next** and then **Finish** on the confirmation step.
 
@@ -219,7 +219,7 @@ This page will show related details for an order. In this page, you will add an 
     | `Action Name`| `NavToSalesOrders_Details` |
     | `PageToOpen` | Select `SalesOrders_Details.page` from the dropdown |
 
-    !![MDK](img_3.2.png)
+    !![MDK](img-3.2.png)
 
     Click **Next** and then **Finish** on the confirmation step.
 
@@ -256,7 +256,7 @@ You will show a total count of orders for a customer in `Customers_Detail.page`.
         //The following currentCustomer will retrieve the current customer record
         const currentCustomer = context.getPageProxy().binding.CustomerId;
         //The following expression will retrieve the total count of the orders for a given customer
-        return context.count('/DemoSampleApp/Services/Sample.service', 'SalesOrderHeaders', `$filter=CustomerId eq '${currentCustomer}'`).then((count) => {
+        return context.count('/DemoSampleApp/Services/SampleServiceV2.service', 'SalesOrderHeaders', `$filter=CustomerId eq '${currentCustomer}'`).then((count) => {
             return count;
         });
     }    
@@ -281,7 +281,7 @@ You will show a total count of orders for a customer in `Customers_Detail.page`.
 
     | Property | Value |
     |----|----|
-    | `Service`| Select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `Entity` | Select `{@odata.readLink}/SalesOrders` from the dropdown |
     | `QueryOptions`| `$top=5&$orderby=CreatedAt desc` |
 

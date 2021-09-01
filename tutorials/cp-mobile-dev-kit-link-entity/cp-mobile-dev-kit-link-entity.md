@@ -181,7 +181,7 @@ Now, you will add a button on the Create Order page and set its `onPress` to `Cl
     | `PageToOpen` | Select `SalesOrderHeaders_Create.page` from the dropdown |
     | `ModalPage`| Select `true` from the dropdown |
 
-    !![MDK](img_3.2.png)
+    !![MDK](img-3.2.png)
 
 3. Click **Next** and then **Finish** on the confirmation step.
 
@@ -244,13 +244,13 @@ The next step is to store newly created record locally for an offline applicatio
 
     !![MDK](img_5.2.png)
 
-    Provide the below information:
+    In **Operation and Service Selection** step, provide the below information:
 
     | Property | Value |
     |----|----|
     | `Action Name`| `SalesOrderHeaders_CreateEntity` |
     | `Type` | Select `CreateRelatedEntity` from the dropdown |
-    | `Service`| Select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `EntitySet` | Select `SalesOrderHeaders` from the dropdown |
 
     !![MDK](img-5.2.2.png)
@@ -259,7 +259,7 @@ The next step is to store newly created record locally for an offline applicatio
 
 3. Click **Next**.
 
-4. In next step, provide the below information:
+4. In **Parent Link and Properties Selection** step, provide the below information:
 
     | Property | Value |
     |----|----|
@@ -366,19 +366,20 @@ Deploy the updated application to your MDK client.
 
 3. You will see the **CREATE ORDER** option in customer detail page. Tap it to create a new sales order.
 
-    ![MDK](img_8.1.png)
+    ![MDK](img-8.1.png)
 
 4. As you provided default values to the properties, you may change it if required. Tap **save** icon.
 
-    ![MDK](img_8.2.png)
+    ![MDK](img-8.2.png)
 
     Now, you will notice that new record has been created and count value for **SEE ALL** is now increased by one as you implemented in step 6.
 
-    ![MDK](img_8.3.png)
+    ![MDK](img-8.3.png)
 
 5. On Main page, tap **SYNC** to send local changes to the backend, a successful message will be shown.
 
-    ![MDK](img_8.4.png)
+    ![MDK](img-8.4.png)
+    ![MDK](img-8.5.png)
 
 [OPTION END]
 
@@ -390,19 +391,20 @@ Deploy the updated application to your MDK client.
 
 3. You will see the **Create Order** option in customer detail page. Tap on it to create a new sales order.
 
-    ![MDK](img_8.6.png)
+    ![MDK](img-8.6.png)
 
 4. As you provided default values to the properties, you may change it if required. Tap **Save**.
 
-    ![MDK](img_8.7.png)
+    ![MDK](img-8.7.png)
 
     Now, you will notice that new record has been created and count value for **See All** is increased by one as you implemented in step 6.
 
-    ![MDK](img_8.8.png)
+    ![MDK](img-8.8.png)
 
 5. On Main page, tap **Sync** to send local changes to the backend, a successful message will be shown.
 
-    ![MDK](img_8.9.png)  
+    ![MDK](img-8.9.png)  
+    ![MDK](img-8.10.png)  
 
 [OPTION END]
 
