@@ -3,12 +3,17 @@ title: Deploy the Fiori App to Cloud Foundry
 description: Deploy the application to the Cloud Foundry environment to be able to share it with your coworkers.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5,   products>sap-launchpad-service, topic>user-interface, topic>html5, topic>cloud]
+tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5,   products>sap-launchpad-service, topic>user-interface, topic>html5, topic>cloud, tutorial>free-tier]
 primary_tag: products>sap-business-technology-platform
 ---
 
 ## Prerequisites
- - Make sure you have the [proper entitlements](cp-cf-entitlements-add) set. If you are unsure which services you need, please refer to the table of step 2.
+## Prerequisites
+- You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
+    - **SAP Launchpad service**
+    - **`destination`**
+    - **`xsuaa`**
+    - **`html5-apps-repo`**
 
 ## Details
 ### You will learn
@@ -64,7 +69,7 @@ Use "cf dmol -i 0915a099-4130-11eb-b43e-eeee0a8f7188" to download the logs of th
 This means you uploaded the app successfully. The URL of you web app will now follow this pattern: `https://<yourID>.launchpad.cfapps.<region>.hana.ondemand.com/productsservice.tutorialproducts`
 With this URL, you are able to access the `flpSandbox.html`
 
-> You can also run `cf html5-list -di products_destination -u --runtime launchpad` to print the full URL of your web app.
+> You can also install [this plugin](cp-cf-install-cliplugin-html5) and run `cf html5-list -di products_destination -u --runtime launchpad` to print the full URL of your web app.
 
 
 [DONE]

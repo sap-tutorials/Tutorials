@@ -29,7 +29,7 @@ You are the owner of an e-commerce business or an online shop in the fashion ind
 
 **Sources**
 
-You own several stores and distribution centers in Germany (Distribution centers in Berlin, Frankfurt and Munich and a store in Hamburg), the US (Distribution centers in Atlanta, Chicago, Houston, Philadelphia, Detroit, Orlando, San Jose and stores New York and Los Angeles) and Canada (Distribution center in Toronto).
+You own several stores and distribution centers in Germany (Distribution centers in Berlin, Frankfurt and Munich and a store in Hamburg), the US (Distribution centers in Atlanta, Chicago, Houston, Philadelphia, Detroit, Orlando, San Jose, and stores New York and Los Angeles), and Canada (Distribution center in Toronto).
 
 **Products**
 
@@ -63,9 +63,9 @@ You check the master data from the SAP API Business Hub.
 
 1. Select the environment you have created in the previous tutorial: [Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing](cos-getting-started-trial)
 
-2. On the left side choose **Sources**.
+2. Navigate to Navigate to **Overview** and choose **Try Out**.
 
-3. Open `GET/sources` and choose **Try Out**.
+3. On the left side choose **Sources** and open `GET/sources`.
 
 4. You don't have to enter anything, just choose **Execute**.
 
@@ -77,9 +77,9 @@ You check the master data from the SAP API Business Hub.
 
 1. Select the environment you have created in the previous tutorial: [Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing](cos-getting-started-trial)
 
-2. On the left side choose **Availability Raw Data**.
+2. Navigate to Navigate to **Overview** and choose **Try Out**.
 
-3. Open `GET/availabilityRawData` and choose **Try Out**.
+3. On the left side choose **Availability Raw Data** and open `GET/availabilityRawData`.
 
 4. For the product id, enter `black_sports_shoe`.
 
@@ -96,9 +96,9 @@ You upload any master data from the SAP API Business Hub. Since there are only s
 
 2. Select the environment you created in the [previous tutorial](cos-getting-started-trial), named `trial_test`.
 
-3. On the left side, choose **Sources**.
+3. Navigate to Navigate to **Overview** and choose **Try Out**.
 
-4. Open `POST/sources` and choose **Try Out**.
+4. On the left side, choose **Sources**, open `POST/sources`, and navigate to the **Body**.
 
 5. Copy the following source master data and paste it into the body:
 
@@ -132,11 +132,11 @@ You upload any master data from the SAP API Business Hub. Since you have now all
 
  As you might have noticed with the sources you just uploaded, there was a attribute called **Capacity** included.
 
-This is a custom numeric attribute, you can extend your service with. To make it easier for you, there is an custom attribute, named capacity, already included in the trial and capacities are provided for the sources you got when signing up for the trial.
+This is a custom numeric attribute, you can extend your service with. To make it easier for you, there is a custom attribute, named capacity, already included in the trial and capacities are provided for the sources you got when signing up for the trial.
 
 If you want to create your own custom attribute you can do that with the `POST/attributes` endpoint on the [SAP API Business Hub](https://api.sap.com/api/Sourcing_API/resource).
 
-For more information on how to create Custom Attributes, see [Help Portal documentation on Custom Attributes](https://help.sap.com/viewer/0e899d665ec840908ddb3eba9a6c25dc/Cloud/en-US).
+For more information on how to create custom attributes, see [Help Portal documentation on Custom Attributes](https://help.sap.com/viewer/0e899d665ec840908ddb3eba9a6c25dc/Cloud/en-US).
 
 [DONE]
 [ACCORDION-END]   
