@@ -449,8 +449,6 @@ To apply a filter to a model of a story, you need to set the following parameter
 
 The section `models` shows all models used by a story. The value of the `id` field provides the package name, followed by the model name. This is in the right format and can be used directly.
 
-You can find a detailed description in the documentation [SAP Analytics Cloud REST API](https://help.sap.com/doc/14cac91febef464dbb1efce20e3f1613/release/en-US/index.html).
-
 An alternative way to get the model and package name is as follows: Navigate to Menu -> Browser -Y Files, search for your model and open it. The value is displayed in the address bar of the browser as shown on the screenshot below. To get the technical names of the dimension and possible filter values this is only possible on the UI. Lets continue there.
 
 ![Model_ID](model_id_ui.png)

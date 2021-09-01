@@ -57,10 +57,14 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 In this tutorial, you will first learn how to sign up for a trial of SAP HANA Cloud, SAP HANA database or add it to an existing trial account of SAP BTP if you have one. This is the prerequisite for all other modules in this mission.
 
 > If you have a **production environment** of SAP HANA Cloud, SAP HANA database, you may also follow the steps described in this mission.
-
-You can also watch this video to kick off the mission.
-
+>
+> You can also watch this video to kick off the mission.
+>
 <iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_7y0hucq6/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
+>
+> ### About this video
+>
+> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
 
 ---
 
