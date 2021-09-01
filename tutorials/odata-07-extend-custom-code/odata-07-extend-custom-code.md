@@ -257,7 +257,6 @@ Great. Now we can get to writing the implementation of this function import.
 The implementation of this function import might as well go in the same `srv/service.js` file as before, to keep things simple. Here's what the entire contents of the file should look like with all the additions:
 
 ```JavaScript
-const cds = require('@sap/cds')
 const { Products } = cds.entities('northbreeze')
 
 module.exports = srv => {
@@ -275,14 +274,13 @@ module.exports = srv => {
 
 Let's look at what's new.
 
-First, at the top of the file, there are these two new lines:
+First, at the top of the file, there is this new line:
 
 ```JavaScript
-const cds = require('@sap/cds')
 const { Products } = cds.entities('northbreeze')
 ```
 
-Bringing in the `cds` module here allows us to introspect on our `northbreeze` service definition, and pull out the `Products` entity that we'll need shortly.
+Here, we're using introspection, made available to use by the `cds` module that we get access to automatically, to pull out the `Products` entity that we'll need shortly.
 
 Next, directly below the existing `srv.on('READ', 'Products', async (req, next) => { ... })` call that you already had, there is now a second call to the Handler Registration API to define a handler for the `TotalStockCount` function import.
 
