@@ -107,6 +107,8 @@ Make sure that you have completed required prerequisites mentioned in this tutor
 
 MDK Web application accesses the data sources via BTP destination. You will now create a new destination in BTP cockpit that will point to the same backend as your Mobile destination.
 
+>The destination that you are going to create in this tutorial is very specific as this connects to the backend via Mobile Services and will use OAuth2JWTBearer authentication type. For other kinds of backend or services, you may skip the following steps and directly setup your BTP destination with the relevant authentication type that is required by the backend.
+
 1. Click `com.sap.mdk.demo` to navigate to Mobile Services application details.
 
     !![MDK](img-4.1.png)
