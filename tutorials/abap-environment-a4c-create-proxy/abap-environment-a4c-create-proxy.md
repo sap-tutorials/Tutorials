@@ -10,7 +10,7 @@ author_profile: https://github.com/julieplummer20
 ---
 
 ##Prerequisites
-- **IMPORTANT**: This tutorial cannot be completed on a trial account
+- **IMPORTANT**: This tutorial cannot be completed on a trial account  
 
 ## Details
 ### You will learn
@@ -519,7 +519,7 @@ ENDCLASS.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Test yourself)]
-Create a `CONSTANT` structure named **`agency_unkown`** for an exception class, specifying the message class **`/DMO/CM_FLIGHTS`**, message number **`010`**, and four attributes. The first attribute should have the value **`MV_AGENCY_ID`**. Enter your code in the space below and choose **Submit Answer**.
+Create a `CONSTANT` structure named **`agency_unknown`** for an exception class, specifying the message class **`/DMO/CM_FLIGHTS`**, message number **`010`**, and four attributes. The first attribute should have the value **`MV_AGENCY_ID`**. Enter your code in the space below and choose **Submit Answer**.
 
 [VALIDATE_1]
 [ACCORDION-END]

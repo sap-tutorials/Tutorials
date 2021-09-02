@@ -19,7 +19,15 @@ author_profile: https://github.com/jitendrakansal
   - How to build a Mobile development kit client for iOS and Android
   - How to connect to SAP Mobile app
 
-  The SAP Mobile Services client available in the App Store is meant for demo and development or learning purposes. For distribution to your users, you need to build a custom client. This enables you to:
+  There are 3 options for mobile development kit client:
+
+  1. Install the SAP Mobile Services client from the public store which is meant for demo and development or learning purposes.
+  2. Use the Cloud Build feature in SAP Mobile Services to generate a MDK Client (details are in [this](cp-mobile-dev-kit-cbs-client) tutorial)
+  3. Build a client on your local machine in your organization development environment using MDK SDK
+
+In this tutorial, you will learn creating a MDK client using option 3.  
+
+For distribution to your users, you need to build a custom client. This enables you to:
 
 -	Provide customer app icon
 -	Use your signing profiles
@@ -61,6 +69,10 @@ Make sure that you have download latest version of MDK SDK as described in Prere
 
     !![MDK](img_1.4.gif)
 
+    >You might see different software versions depending on MDK SDK version you are using.
+
+    >You can look into console by clicking **Show Log** for execution of each dependencies.
+
 [OPTION END]
 
 [OPTION BEGIN [Windows]]
@@ -81,17 +93,15 @@ Make sure that you have download latest version of MDK SDK as described in Prere
 
     !![MDK](img_1.7.png)
 
-    >If MDK Dependencies Installer keeps showing `Loading...` then use command `MDK_Dependencies_Installer.exe –debug –debug` to see more information.
-    There might be some issue due to Security Policy. It can be fixed by executing this in `PowerShell`:
-    >`Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser`
+    >If MDK Dependencies Installer keeps showing `Loading...` then have a look at [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/troubleshooting/mdk/troubleshoot.html#loading-message-displays-while-running-mobile-development-kit-dependency-installer-on-windows-machine) troubleshooting guide.
 
     >You might see different software versions depending on MDK SDK version you are using.
 
+    >You can look into console by clicking **Show Log** for execution of each dependencies.
+
 [OPTION END]
 
->You might see different software versions depending on MDK SDK version you are using.
 
->You can look into console by clicking **Show Log** for execution of each dependencies.
 
 Once you've installed these prerequisites, your machine is ready to generate and build an MDK project.
 
@@ -242,8 +252,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     >`BundleID`: It should be a unique identifier for your application.  This controls if the client can be installed side by side with other applications on the device.  Two applications with the same Bundle ID cannot be installed at the same time on a device. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
 
-    >`URLScheme`: Allows you to specify a custom URL scheme which opens the client. This value is provided in step 2 for **Redirect URL**.
-     If the URL includes connection settings as URL parameters, these settings will override the ones used by the client. The default is `mdkclient`. This value needs to match the value provided in step 2 for the Redirect URL. This value also needs to be unique across applications on your device.  If the value is not unique the wrong application may be referenced when redirecting.    
+    >`URLScheme`: Allows you to specify a custom URL scheme which opens the client. The default is `mdkclient`. This value also needs to be unique across applications on your device.  If the value is not unique the wrong application may be referenced when redirecting.    
 
     >You can find more details about configuration of `MDKProject.json` file in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html) help documentation.                    
 

@@ -146,7 +146,7 @@ For integrating the SAP Cloud SDK in SAP Cloud Application Programming Model, yo
 </dependencyManagement>
 ```
 
->Please make sure to always use the latest version available on Maven Central. Check out the [release notes](https://sap.github.io/cloud-sdk/docs/java/release-notes-sap-cloud-sdk-for-java/).
+>Please make sure to always use the latest version available on Maven Central. Check out the [release notes](https://sap.github.io/cloud-sdk/docs/java/release-notes-sap-cloud-sdk-for-java).
 
 Since your application is running on SAP Cloud Platform Cloud Foundry, include the following dependencies to your `pom.xml` in the `srv` directory:
 
@@ -167,7 +167,7 @@ Since your application is running on SAP Cloud Platform Cloud Foundry, include t
 </dependency>
 ```
 
-For more information, visit the documentation of the [SAP Cloud SDK](https://sap.github.io/cloud-sdk/docs/java/getting-started/#integrate-the-cloud-sdk-for-java-into-your-project).
+For more information, visit the documentation of the [SAP Cloud SDK](https://sap.github.io/cloud-sdk/docs/java/getting-started#integrate-the-sap-cloud-sdk-for-java-into-your-project).
 
 [DONE]
 [ACCORDION-END]

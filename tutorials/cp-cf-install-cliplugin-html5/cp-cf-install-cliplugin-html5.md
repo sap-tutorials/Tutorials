@@ -12,7 +12,6 @@ primary_tag: products>sap-btp--cloud-foundry-environment
   - How to install a Cloud Foundry CLI plugin
   - How to use the [HTML5 Applications Repository plugin](https://github.com/SAP/cf-html5-apps-repo-cli-plugin)
 
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Verify that the Cloud Foundry CLI is installed)]
@@ -41,7 +40,7 @@ cf install-plugin -f https://github.com/SAP/cf-html5-apps-repo-cli-plugin/releas
 ```
 [OPTION END]
 [OPTION BEGIN [Windows]]
-```Bash
+```Terminal
 cf install-plugin -f https://github.com/SAP/cf-html5-apps-repo-cli-plugin/releases/latest/download/cf-html5-apps-repo-cli-plugin-windows-amd64.exe
 ```
 [OPTION END]
@@ -58,9 +57,23 @@ cf install-plugin -f https://github.com/SAP/cf-html5-apps-repo-cli-plugin/releas
 [ACCORDION-BEGIN [Step 3: ](Verify the installation of the plugin)]
 
 List all Cloud Foundry CLI plugins to see whether the installation worked.
+
+[OPTION BEGIN [macOS]]
 ```Bash
 cf plugins | grep html5   
 ```
+[OPTION END]
+[OPTION BEGIN [Windows]]
+```Terminal
+cf plugins | find /I "html5"
+```
+[OPTION END]
+[OPTION BEGIN [Linux]]
+```Bash
+cf plugins | grep html5   
+```
+[OPTION END]
+
 You should now see the following output:
 
 ![listed plugins](./cfplugins.png)
