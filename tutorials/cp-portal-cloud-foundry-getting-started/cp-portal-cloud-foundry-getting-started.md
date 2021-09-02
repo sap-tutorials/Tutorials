@@ -26,7 +26,7 @@ In this group of tutorials our goal is to create a launchpad site using the SAP 
 
 Before you can access the SAP Launchpad service, you first need to subscribe to it.
 
-1. [Log onto SAP BTP](https://cockpit.hanatrial.ondemand.com) and click **Enter Your Trial Account**.
+1. [Log onto SAP BTP](https://cockpit.hanatrial.ondemand.com) and click **Go To Your Trial Account**.
 
     ![Enter trial account](1_enter_trial_account.png)
 
@@ -34,7 +34,7 @@ Before you can access the SAP Launchpad service, you first need to subscribe to 
 
     >Wait until your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.  
 
-2. Click **Continue**.
+2. Click **Continue** if you get this popup.
 
     ![Processing](2_Foundation20Onboarding_Processing.png)
 
@@ -71,7 +71,7 @@ Before you can access the SAP Launchpad service, you first need to subscribe to 
 
     >This step will redirect you to the **Services** -> **Instances and Subscriptions** screen. This screen provides you with an overview of all services and applications that are currently active.
 
-9. From the **Instances and Subscriptions** screen, you'll see that you are subscribed to the SAP Launchpad service.
+9. From the **Instances and Subscriptions** screen, under the **Subscriptions** tab or in the **Overview** section, you'll see that you are subscribed to the **Launchpad Service**.
 
     ![Subscribed](9-subscribed.png)
 
@@ -82,12 +82,12 @@ Before you can access the SAP Launchpad service, you first need to subscribe to 
 
 [ACCORDION-BEGIN [Step 2: ](Add yourself to the Launchpad_Admin role)]
 
-To be able to access the **SAP Launchpad** service, users must be assigned to the `Launchpad_Admin` role. In this step, you'll assign yourself to this role so that you can access the service and create a launchpad site.
+To be able to access the SAP Launchpad service, users must be assigned to the `Launchpad_Admin` role. In this step, you'll assign yourself to this role so that you can access the service and create a launchpad site.
 
 
 1. Click **Security > Trust Configuration** from the side menu.
 
-    ![Open Role Collections](10-trust-configuration.png)
+    ![Trust configuration](10-trust-configuration.png)
 
 2. Click `Default identity provider` to select the SAP ID Service.
 
@@ -101,7 +101,7 @@ To be able to access the **SAP Launchpad** service, users must be assigned to th
 
     ![Assign role collection](13-assign-role-collection.png)
 
-5. Select the `Launchpad_Admin` role and then click **Assign Role Collection**.
+5. Scroll down until you find the `Launchpad_Admin` role, select it, and then click **Assign Role Collection**.
 
     ![Assign Launchpad Admin](14-assign-launchpad-admin.png)
 

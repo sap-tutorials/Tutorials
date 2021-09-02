@@ -280,7 +280,7 @@ That is all for this tutorial group. You got to know various methods to work wit
 
 Thanks for reading!
 
-Click here for more learning materials on [SAP HANA Cloud](https://community.sap.com/topics/hana-cloud). Follow our tag in the [SAP Community](https://blogs.sap.com/tags/73554900100800002881/) to stay up-to-date on the latest updates and newest content!
+Follow our tag in the [**SAP Community**](https://blogs.sap.com/tags/73554900100800002881/) to stay up-to-date on the latest updates and newest content! For more learning materials on **SAP HANA Cloud**, [click here](https://community.sap.com/topics/hana-cloud).
 
 Related content:
 

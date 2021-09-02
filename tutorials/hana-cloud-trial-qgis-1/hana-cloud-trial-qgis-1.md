@@ -90,7 +90,7 @@ The general instructions on how to connect QGIS to SAP HANA database in SAP HANA
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Collect SQL endpoint information)]
-1. Please go to the **SAP BTP Cockpit** and navigate to your space, then click on **SAP HANA Cloud**. There you will be able to see your running SAP HANA database instance in SAP HANA Cloud.
+1. Please go to the **SAP BTP cockpit** and navigate to your space, then click on **SAP HANA Cloud**. There you will be able to see your running SAP HANA database instance in SAP HANA Cloud.
 
 2. Click on **Actions** and then on **Copy SQL endpoint**. The endpoint will be copied to your clipboard. Keep it there.
 

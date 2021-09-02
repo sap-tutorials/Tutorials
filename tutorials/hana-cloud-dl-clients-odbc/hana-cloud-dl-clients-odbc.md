@@ -3,8 +3,8 @@ title: Connect to Data Lake IQ Using the ODBC Driver
 description: Configure a data source to connect to the previously created data lake IQ and then use the data source in unixODBC, Microsoft Excel and DBeaver.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>sql, products>sap-iq]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-iq]
+primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
 ## Prerequisites
@@ -43,11 +43,11 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
     ![New data source](Create-new-data-source.png)
 
-6. Configure an example data source for data lake IQ.
+6. Configure the data source.
 
     ![specify the data source name](data-source1.png)  
 
-    Connect using the HDLADMIN user. The host and port values can be copied from the SAP BTP Cockpit or SAP HANA Cloud Central via the copy SQL endpoint option.
+    Connect using USER1. The host and port values can be copied from the SAP BTP Cockpit or SAP HANA Cloud Central via the copy SQL endpoint option.
 
     ![specify the credentials, host and port](data-source2.png)  
 
