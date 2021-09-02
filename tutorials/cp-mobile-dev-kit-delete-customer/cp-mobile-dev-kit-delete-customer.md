@@ -71,7 +71,7 @@ The next step is to store deleted record locally for an offline application or d
     |----|----|
     | `Action Name`| `Customers_DeleteEntity` |
     | `Type` | Select `DeleteEntity` from the dropdown |
-    | `Service`| Select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `EntitySet` | Select `Customers` from the dropdown |
     | `ReadLink`| click link icon and double click `readLink` |
 
@@ -180,6 +180,7 @@ Deploy the updated application to your MDK client.
     You should see success message for both deployments.
 
     !![MDK](img-4.3.png)
+
 
 [DONE]
 [ACCORDION-END]
