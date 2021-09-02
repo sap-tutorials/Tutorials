@@ -1071,7 +1071,7 @@ Again you can use a template that you have imported at the beginning of this tut
   3. Select a transport request and press **Next**.
   4. Select the template **Define a View Entity for Query** and press **Finish**.
 
-    ![query view](3175.png)
+      ![query view](3175.png)
 
   5. Change @AccessControl.authorizationCheck: from `#CHECK` to `#PRIVILEGED_ONLY`. It only allows privileged access to this query to avoid that it is queried from regular ABAP programs. Remove all associations.
 
