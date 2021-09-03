@@ -9,15 +9,11 @@ author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
 ## Prerequisites  
-
 - You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
-    - **SAP Mobile Services**
 
 ## Details
-
-### You will learn  
-
-- How to access SAP Mobile Services in your BTP account
+### You will learn
+  - How to access SAP Mobile Services in your BTP account
 
 Once SAP Mobile Services is available, you can use its features in your Mobile development kit, Mobile Cards, SAP BTP SDK for iOS & Android apps.
 
