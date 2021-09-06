@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Deploy a CAP Business Application to SAP Business Technology Platform
-description: This tutorial shows you how to deploy your SAP Cloud Application Programming Model (CAP) application to SAP Business Technology Platform, Cloud Foundry environment using SAP HANA Cloud Service.
+description: This tutorial shows you how to deploy your SAP Cloud Application Programming Model (CAP) application to SAP Business Technology Platform, Cloud Foundry environment using SAP HANA Cloud service.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [ tutorial>beginner, topic>node-js, products>sap-business-technology-platform, products>sap-fiori, products>sap-hana-cloud, software-product-function>sap-cloud-application-programming-model ]
@@ -13,7 +13,7 @@ time: 30
 - You have finished the tutorial [Create a Business Service with Node.js using Visual Studio Code](cp-apm-nodejs-create-service).  
 - If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP BTP Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **Europe (Frankfurt) or US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements).
 - You have downloaded and installed the [cf command line client](https://github.com/cloudfoundry/cli#downloads) for Cloud Foundry as described in the tutorial [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
-- You have to [Set Up the SAP HANA Cloud Service](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#ed90f751-47d6-4324-b337-6360fe8e1160) or use an existing SAP HANA Cloud instance to deploy your application
+- You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) to deploy your CAP application
 
 ## Details
 ### You will learn  
@@ -23,9 +23,9 @@ time: 30
 
 [ACCORDION-BEGIN [Step 1: ](Enhance project configuration for SAP HANA)]
 
-It's now time to switch to SAP HANA as a database. To continue with this tutorial you need to [Set Up the SAP HANA Cloud Service](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#875f00a8-91f8-454b-9d09-2ad87189b10b) or [Use an Existing SAP HANA Cloud Service Instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#553c295a-5b64-45dc-a6c4-21522736512c) to deploy your application.
+It's now time to switch to SAP HANA as a database. To continue with this tutorial you need to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) to deploy your CAP application.
 
-> ### Your SAP HANA Cloud instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day, before you start working with your trial.
+> ### Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day, before you start working with your trial.
 
 1. If `cds watch` is still running in VS Code, choose **CTRL+C** in the command line to stop the service.
 
