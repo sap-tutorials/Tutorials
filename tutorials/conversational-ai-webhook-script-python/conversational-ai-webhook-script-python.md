@@ -1,36 +1,36 @@
 ---
-title: Build a Webhook for a Chatbot using Python
-description: Create a Python script (with Flask), deploy it to SAP Cloud Platform, and use it as a webhook to be called by an SAP Conversational AI chatbot.
+title: Build a Webhook for a Chatbot Using Python
+description: Create a Python script (with Flask), deploy it to SAP Business Technology Platform, and use it as a webhook to be called by an SAP Conversational AI chatbot.
 auto_validation: true
-time: 20
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, topic>python]
+time: 25
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, topic>python, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
 ## Prerequisites
- - A [SAP Cloud Platform trial account](hcp-create-trial-account). If you create a new trial account you should have the necessary entitlements, but check the tutorial [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements), if needed.
+ - A [SAP Business Technology Platform trial account](hcp-create-trial-account). If you create a new trial account you should have the necessary entitlements, but check the tutorial [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements), if needed.
  - You understand the basics of creating a chatbot, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started).
  - [Python](https://www.python.org/downloads/)
  - [VS Code](https://code.visualstudio.com/) with the [Python extension by Microsoft](https://code.visualstudio.com/docs/languages/python), though you can use any Python development environment. See [Getting Started with Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial).
- - [Flask](https://flask.palletsprojects.com/en/1.0.x/installation/) and [requests](https://pypi.org/project/requests/) packages for Python
+ - [Flask](https://flask.palletsprojects.com/) and [requests](https://pypi.org/project/requests/) packages for Python
  - [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html)
 
 
 ## Details
 ### You will learn
-  - How to create a Python endpoint in SAP Cloud Platform, using Flask
+  - How to create a Python endpoint in SAP BTP, using Flask
   - How to read POST data from a chatbot
   - How to send back data to a chatbot
-  - How to deploy a Python script to SAP Cloud Platform (using Cloud Foundry CLI)
+  - How to deploy a Python script to SAP BTP (using Cloud Foundry CLI)
   - How to connect the webhook to the chatbot
 
 You will create a very simple chatbot that asks the user to pick an animal, and then have the chatbot call a webhook, which will then call an API to retrieve a "fun fact" about the animal via the [`cat-facts`](https://alexwohlbruck.github.io/cat-facts/docs/endpoints/facts.html) API. The webhook will also update the memory variable that keeps track of how many times the user requested a fun fact.
 
 The point of the tutorial is to show you how the webhook reads the request data from the chatbot, and to show you the format of the data that must be returned to the chatbot.
 
-As an added bonus, we will show how to deploy a Python script to SAP Cloud Platform. Special thanks to [Yohei Fukuhara](https://people.sap.com/fukuhara) for his blog [Create simple Flask REST API using Cloud Foundry](https://blogs.sap.com/2018/12/12/create-simple-flask-rest-api-using-cloud-foundry/).
+As an added bonus, we will show how to deploy a Python script to SAP BTP. Special thanks to [Yohei Fukuhara](https://people.sap.com/fukuhara) for his blog [Create simple Flask REST API using Cloud Foundry](https://blogs.sap.com/2018/12/12/create-simple-flask-rest-api-using-cloud-foundry/).
 
->**IMPORTANT:** The focus of this tutorial is the response an application (API) must return in order to work with SAP Conversational AI. The requirements for Python on SAP Cloud Platform changes from time to time -- e.g., quota, runtime -- so you are encouraged to check the documentation for how to deploy Python scripts: [Developing Python in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/acf8f49356d047fbb1a4d04dcec3fd36.html)  
+>**IMPORTANT:** The focus of this tutorial is the response an application (API) must return in order to work with SAP Conversational AI. The requirements for Python on SAP BTP changes from time to time -- e.g., quota, runtime -- so you are encouraged to check the documentation for how to deploy Python scripts: [Developing Python in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/acf8f49356d047fbb1a4d04dcec3fd36.html)  
 
 ---
 
@@ -71,6 +71,8 @@ Create a bot that asks the user to select an animal to get a fun fact about.
 
     But I am only familiar with certain animals.
     ```
+
+5. Click **Train** at the top of the page.
 
 [DONE]
 [ACCORDION-END]
@@ -115,7 +117,7 @@ Create a bot that asks the user to select an animal to get a fun fact about.
 
     ```Text
     applications:
-    - host: dbw-catfacts
+    - name: dbw-catfacts
       memory: 128M
       command: python chatbot-webhook-test.py
     ```
@@ -137,10 +139,10 @@ Create a bot that asks the user to select an animal to get a fun fact about.
 
     #### `runtime.txt`
 
-    Make sure to use a version currently supported by SAP Cloud Platform. At the time of the writing of this tutorial (December 2020), the version below worked.
+    Make sure to use a version currently supported by SAP BTP. At the time of the writing of this tutorial (December 2020), the version below worked.
 
     ```Text
-    python-3.8.5
+    python-3.x
     ```
 
     #### `static` (folder)
@@ -212,8 +214,14 @@ Now we will write the main part of the app, which creates the endpoints.
 
       # Get the fun fact
       url = "https://cat-fact.herokuapp.com/facts/random?animal_type=" + animal + "&amount=1"
-      r = requests.get(url)
-      fact_data = json.loads(r.content)
+      nodata = {"text" : "No data"}
+
+      # In case the API does not work after 8 seconds, we return "no data"
+      try:
+        r = requests.get(url, timeout=8)
+        fact_data = json.loads(r.content)
+      except:
+        fact_data = nodata
 
       # Increment the # of times this has been called
       if 'funfacts' in memory:
@@ -264,11 +272,11 @@ Now we will write the main part of the app, which creates the endpoints.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Push Python script to SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step 5: ](Push Python script to SAP BTP)]
 
-Use the Cloud Foundry CLI to deploy the script to SAP Cloud Platform.
+Use the Cloud Foundry CLI to deploy the script to SAP BTP.
 
-You will need your SAP Cloud Platform Cloud Foundry endpoint and org name, which you can see when you open your subaccount **Overview** page.
+You will need your SAP BTP Cloud Foundry endpoint and org name, which you can see when you open your subaccount **Overview** page.
 
 ![Account info](CLI-info.png)
 
@@ -286,7 +294,7 @@ You will need your SAP Cloud Platform Cloud Foundry endpoint and org name, which
     cf login
     ```
 
-3. Select your CF org.
+3. Select your CF org (if you have multiple orgs in that endpoint).
 
     ![CLI org](CLI-org.png)
 
@@ -374,3 +382,5 @@ Click on the yellow **i** icon to see the JSON of the conversation. Scroll down 
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+---

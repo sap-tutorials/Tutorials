@@ -1,9 +1,9 @@
 ---
 title: Enable Push Notifications in Your Branded MDK Client
-description: Use the SAP Cloud Platform Mobile Services to enable push notifications in your branded MDK client.
+description: Use the SAP Mobile Services to enable push notifications in your branded MDK client.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
 time: 35
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -18,7 +18,7 @@ author_profile: https://github.com/jitendrakansal
 ## Details
 ### You will learn
   - How to set up push notifications on an Apple Developer and Google Firebase account
-  - How to configure push settings on SAP Cloud Platform Mobile Services
+  - How to configure push settings on SAP Mobile Services
   - How to send push notification in your branded MDK client
 
 You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/5-Brand-Your-Customized-App-with-Mobile-Development-Kit-SDK/1-Enable-Push-Notifications-in-your-branded-MDK-client).
@@ -75,8 +75,8 @@ To enable your app for push notifications, you need to carry out the following t
 
 * Obtain a certificate signing request
 * Register an iOS App ID
-* Create a new development certificate .CER file
-* Install the .CER file and create the .p12 file
+* Create a new development certificate `.cer` file
+* Install the `.cer` file and create the .p12 file
 * Register your device
 
 1. Obtain a certificate signing request
@@ -125,7 +125,7 @@ To enable your app for push notifications, you need to carry out the following t
 
     Confirm your App ID by clicking on **Register**.
 
-3. Create a new development certificate .CER file
+3. Create a new development certificate `.cer` file
 
     Under **Identifiers**, search for the App ID that you registered in previous step.
 
@@ -137,13 +137,13 @@ To enable your app for push notifications, you need to carry out the following t
 
     To configure push notifications for the App ID `com.sap.mdk.demo`, a Client SSL Certificate is required that will allow the notification server to connect to the Apple Push Notification Service. Each App ID requires its own Client SSL Certificate.
 
-    Click **Create Certificate** to start the process for creating the needed `.CER` file.
+    Click **Create Certificate** to start the process for creating the needed `.cer` file.
 
     !![MDK](img_1.12.8.png)
 
     Click **Choose File** and browse to the downloaded Signing Request `CSR` file, click **Continue**.
 
-    Apple will now create a `.CER` file for you which is issued by the **Apple Worldwide Developer Relations Certification Authority**.
+    Apple will now create a `.cer` file for you which is issued by the **Apple Worldwide Developer Relations Certification Authority**.
 
     !![MDK](img_1.12.9.png)
 
@@ -151,13 +151,13 @@ To enable your app for push notifications, you need to carry out the following t
 
     !![MDK](img_1.12.10.png)
 
-4. Install the .CER file and create the .p12 file
+4. Install the `.cer` file and create the .p12 file
 
-    In order to configure the `APNS` on **SAP Cloud Platform Mobile Services**, you need to install the `.CER` file and create the needed `.p12` file.
+    In order to configure the `APNS` on **SAP Mobile Services**, you need to install the `.cer` file and create the needed `.p12` file.
 
     >A `.p12` file is a encrypted container for the certificate and private key. This file is needed by Mobile Services for the `APNS` configuration.
 
-    Locate your downloaded `.CER` file and double-click it in order to install the certificate.
+    Locate your downloaded `.cer` file and double-click it in order to install the certificate.
 
     >In case the **Add Certificate** dialog pops up make sure to choose **Login** from the dropdown and click **Add**.
 
@@ -205,7 +205,7 @@ To enable your app for push notifications, you need to carry out the following t
 
 3. In Mobile Services cockpit, navigate to `Mobile Applications` | `Native/Hybrid` | `com.sap.mdk.demo` | `Mobile Push Notification`. Paste the Server Key value in **Android** push settings in Mobile Services cockpit.
 
-    !![MDK](img_2.3.png)
+    !![MDK](img-2.3.png)
 
 4. Repeat the above step for **Sender ID** and then click **Save**.
 
@@ -217,7 +217,7 @@ To enable your app for push notifications, you need to carry out the following t
 
     !![MDK](img_2.4.png)
 
-2. Provide the following details to the **Apple** panel:
+2. Provide the following details to the **Apple** panel and click **Save**.
 
 
     |  Field Name     | Value |
@@ -227,32 +227,34 @@ To enable your app for push notifications, you need to carry out the following t
     |  Certificate | `Browse to the `.p12`certificate you just exported` |
     |  Password | Enter the password you provided during the export |
 
-3. Click **Save**. You have now successfully configured the APNS Endpoint on the server side in Mobile Services cockpit.
+    !![MDK](img-2.5.png)
 
-    !![MDK](img_2.5.png)
+You have now successfully configured the APNS Endpoint on the server side in Mobile Services cockpit.
+
+
 
 [OPTION END]
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Place push files in local MDK project)]
+[ACCORDION-BEGIN [Step 3: ](Place push files in local MDK project)]
 
 >Make sure you are choosing the right device platform tab above.
 
 [OPTION BEGIN [Android]]
 
-Paste the downloaded `google-services.json` file to `/demosampleapp.mdkproject/App_Resources/Android/` path.
+Paste the downloaded `google-services.json` file to `/DemoSampleApp.mdkproject/App_Resources/Android/` path.
 
-!![MDK](img_4.1.png)
+!![MDK](img-3.1.png)
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-1. Create a new file named as `app.entitlements` and place it under `/demosampleapp.mdkproject/App_Resources/iOS/` path.
+1. Create a new file named as `app.entitlements` and place it under `/DemoSampleApp.mdkproject/App_Resources/iOS/` path.
 
-    !![MDK](img_4.2.png)
+    !![MDK](img-3.2.png)
 
 2. Open this file and copy & paste the below information:
 
@@ -289,11 +291,11 @@ Follow step 4 from [this](cp-mobile-dev-kit-build-client) tutorial to create you
 
 1. Follow step 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client.
 
-2. Once you accept the App update, a message should show **Push Notification Registered**. Click **OK**.
+2. Once you accept the App update, a message should show **Push Notification registered**. Click **OK**.
 
     ![MDK](img_6.1.png)
 
-3. It is time now to send the first push notification from the **SAP Cloud Platform Mobile Services push notification feature**.
+3. It is time now to send the first push notification from the **SAP Mobile Services push notification feature**.
 
     Navigate to Mobile Services cockpit. In **Mobile Push Notification** feature, switch to **Push Registrations** tab.
 
@@ -323,11 +325,11 @@ Follow step 4 from [this](cp-mobile-dev-kit-build-client) tutorial to create you
 
     !![MDK](img_6.4.png)
 
-3. If push registration is successful, a message should show **Push Notification Registered**. Click **OK**.
+3. If push registration is successful, a message should show **Push Notification registered**. Click **OK**.
 
     !![MDK](img_6.5.png)
 
-4. It is time now to send the first push notification from the **SAP Cloud Platform Mobile Services push notification feature**.
+4. It is time now to send the first push notification from the **SAP Mobile Services push notification feature**.
 
     Navigate to Mobile Services cockpit. In **Mobile Push Notification** feature, switch to **Push Registrations** tab.
 
@@ -355,9 +357,9 @@ Follow step 4 from [this](cp-mobile-dev-kit-build-client) tutorial to create you
 
 [OPTION END]
 
-**Congratulations!** You have successfully completed **Brand Your Customized App with Mobile Development Kit SDK** mission and you are now all set to [Create Extension Controls in Mobile Development Kit (MDK) Apps](mission.mobile-dev-kit-controls) mission.
+Congratulations, you have successfully enabled push notification in your branded client and you can continue with the remaining tutorials in this mission.
 
-[DONE]
+[VALIDATE_4]
 [ACCORDION-END]
 
 ---

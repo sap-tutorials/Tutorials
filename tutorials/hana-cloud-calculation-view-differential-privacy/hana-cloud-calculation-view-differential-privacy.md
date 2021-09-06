@@ -1,6 +1,6 @@
 ---
-title: Create a Calculation View with Differential Privacy in HANA Cloud
-description: Use differential privacy to anonymize confidential data
+title: Create a Calculation View with Differential Privacy in SAP HANA Cloud
+description: Use differential privacy to anonymize confidential data in SAP HANA Cloud.
 time: 20
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -14,11 +14,15 @@ primary_tag: products>sap-hana
 ## Details
 ### You will learn
  - How to create Calculation View of type Cube using SAP Business Application Studio
- - How to configure data masking to a column in order to protect sensitive data
+ - How to configure data anonymization to a column in order to protect sensitive data
+
+A video version of this tutorial is also available:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kZhATB7yJ-M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a Salary Table and load data into it)]
+[ACCORDION-BEGIN [Step 1: ](Create a salary table and load data into it)]
 
 Using what you learned in [Create an SAP HANA Database Project](hana-cloud-create-db-project), you will create another database table and load sample data into it but without step by step instructions. Extrapolate what you learned from these same steps in the earlier tutorial to complete this task.
 
@@ -66,7 +70,7 @@ Using what you learned in [Create an SAP HANA Database Project](hana-cloud-creat
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a new Calculation view)]
+[ACCORDION-BEGIN [Step 2: ](Create a new calculation view)]
 
 1. Create a new folder called **models** under `db/src`. Create a new **Calculation View** via the **SAP HANA: Create SAP HANA Database Artifact** command pallet entry.
 
@@ -88,7 +92,7 @@ Using what you learned in [Create an SAP HANA Database Project](hana-cloud-creat
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Complete the Calculation View)]
+[ACCORDION-BEGIN [Step 3: ](Complete the calculation View)]
 
 
 1. Double click on the `Projection_1` node. This will open the mapping. Double click on `TGT_SALARIES` to add all of the columns to the output
@@ -112,7 +116,7 @@ Using what you learned in [Create an SAP HANA Database Project](hana-cloud-creat
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure differential privacy via SQL View)]
+[ACCORDION-BEGIN [Step 4: ](Configure differential privacy via SQL view)]
 
 1.  Create a view (artifact type `hdbview`) in the `src/data/models` folder named `V_SALARIES`.
 
@@ -154,7 +158,7 @@ Using what you learned in [Create an SAP HANA Database Project](hana-cloud-creat
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Data preview)]
+[ACCORDION-BEGIN [Step 5: ](Preview data)]
 
 1. Open the Database Explorer for your project
 

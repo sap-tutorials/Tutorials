@@ -3,8 +3,8 @@ title: Use SAP Edge Services to Automate Creation of Work Order Based on IoT Dat
 description: Create an SAP Edge Services project, with streaming rules based on Iot data, that will automate creating a work order in S/4HANA.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-leonardo-iot,products>sap-s-4hana, products>sap-cloud-platform]
 primary_tag: topic>internet-of-things
+tags: [ tutorial>intermediate, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-business-technology-platform, products>sap-iot-services-for-sap-btp, products>sap-s-4hana]
 ---
 
 ## Prerequisites

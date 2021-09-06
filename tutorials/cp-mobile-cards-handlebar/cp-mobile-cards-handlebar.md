@@ -3,7 +3,7 @@ title: Create Handlebars Helper Card
 description: Enhance the visual representation of a card by implementing a logic.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
-tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>sap-mobile-cards, products>sap-mobile-services ]
 time: 20
 author_name: Sandeep TDS
 author_profile: https://github.com/sandeep-tds
@@ -21,20 +21,20 @@ Handlebars helper help developer to use JavaScript logic in rendering of the car
 
 A Company wants managers to have a set of `KPIs` available on a mobile device. In order to simplify the card, sales order status is visualized with the traffic lights ( **Accepted** | Green, **Rejected** | Red and **New** | Yellow) and also if the gross amount is larger than 500 Euros then it is highlighted with Green yellow color.
 
-![SAP Cloud Platform Mobile Services - Opera](img_0.1.gif)
+![SAP Mobile Services - Opera](img_0.1.gif)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new card)]
 
-Make sure you have logged into the **SAP Cloud Platform Mobile Services cockpit**. Navigate to **SAP Mobile Cards** to look into Mobile Cards configuration.
+Make sure you have logged into the **SAP Mobile Services cockpit**. Navigate to **SAP Mobile Cards** to look into Mobile Cards configuration.
 
-![SAP Cloud Platform Mobile Services - Opera](img_000.png)
+![SAP Mobile Services - Opera](img_000.png)
 
 Click the **Create a New Card** icon.
 
-![SAP Cloud Platform Mobile Services - Opera](img_001.png)
+![SAP Mobile Services - Opera](img_001.png)
 
 Provide the required information:
 
@@ -47,7 +47,7 @@ Provide the required information:
 
 > If you see a pop-up, click **OK** for the confirmation.
 
-![SAP Cloud Platform Mobile Services - Opera](img_007.png)
+![SAP Mobile Services - Opera](img_007.png)
 
 [DONE]
 [ACCORDION-END]
@@ -58,32 +58,32 @@ Click **Editor** to view the **HTML** which builds this card and to add handleba
 
 Make sure **Define source without mapping** is checked, here the actual mapping of the data is defined.
 
-![SAP Cloud Platform Mobile Services - Opera](img_010.png)
+![SAP Mobile Services - Opera](img_010.png)
 
 >In this template, there is already a **d.** added in front of  [Handlebars](https://handlebarsjs.com) expression and this expression points to the correct JSON path.
 
->![SAP Cloud Platform Mobile Services - Opera](img_011.png)
+>![SAP Mobile Services - Opera](img_011.png)
 
 Scroll down and you will find [Handlebars block helper](https://handlebarsjs.com/guide/#evaluation-context) function **each**, it points to the correct JSON path of the items result set.
 
-![SAP Cloud Platform Mobile Services - Opera](img_015.png)
+![SAP Mobile Services - Opera](img_015.png)
 
 Replace `{{dataSets.[0].data.d.LifeCycleStatusName}}` with `{{lcsHelper dataSets.[0].data.d.LifeCycleStatusName}}` handlebar helper function.
 
 ```JSON
 {{lcsHelper dataSets.[0].data.d.LifeCycleStatusName}}
 ```
-![SAP Cloud Platform Mobile Services - Opera](img_016.png)
+![SAP Mobile Services - Opera](img_016.png)
 
 You will see a pop-up window alerting on missing helper function. Click **Close** to implement it.
 
-![SAP Cloud Platform Mobile Services - Opera](img_017.png)
+![SAP Mobile Services - Opera](img_017.png)
 
 >We have not yet implemented `lcsHelper` function.
 
 Click **Handle...** to switch to the **Handlebars** tab where missing Handlebars helper function can be implemented.
 
-![SAP Cloud Platform Mobile Services - Opera](img_018.png)
+![SAP Mobile Services - Opera](img_018.png)
 
 Replace existing source code with below.
 
@@ -99,7 +99,7 @@ return new Handlebars.SafeString( "<img src='red.png' style=' width: 24px; heigh
 });
 ```
 
-![SAP Cloud Platform Mobile Services - Opera](img_019.png)
+![SAP Mobile Services - Opera](img_019.png)
 
 >This Handlebars helper function will evaluate the `passedString` which is the `LifeCycleStatusName` JSON value. This function will insert an image depending on the status and return the related `HTML` snippet. If the Status is **C** (closed) than the function will not insert any image.
 
@@ -120,19 +120,19 @@ Open below links and save images on local machine. These images will be used as 
 
 Once done, click **Assets** to upload asset files.
 
-![SAP Cloud Platform Mobile Services - Opera](img_020.png)
+![SAP Mobile Services - Opera](img_020.png)
 
 Click the **upload** icon to upload the images.
 
-![SAP Cloud Platform Mobile Services - Opera](img_022.png)
+![SAP Mobile Services - Opera](img_022.png)
 
 Navigate to folder where you have saved all three images and upload them one by one.
 
-![SAP Cloud Platform Mobile Services - Opera](img_023.png)
+![SAP Mobile Services - Opera](img_023.png)
 
 Make sure you have all three images uploaded.
 
-![SAP Cloud Platform Mobile Services - Opera](img_024.png)
+![SAP Mobile Services - Opera](img_024.png)
 
 [DONE]
 [ACCORDION-END]
@@ -141,7 +141,7 @@ Make sure you have all three images uploaded.
 
 Navigate to **Editor** tab and click **Handle...**.
 
-![SAP Cloud Platform Mobile Services - Opera](img_026.png)
+![SAP Mobile Services - Opera](img_026.png)
 
 Copy and paste the following code below the existing function:
 
@@ -154,13 +154,13 @@ return new Handlebars.SafeString( grossAmount);
 });
 ```
 
-![SAP Cloud Platform Mobile Services - Opera](img_027.png)
+![SAP Mobile Services - Opera](img_027.png)
 
 >This handlebars helper function will evaluate the  `grossAmount` which is the `grossAmount` JSON value. If the value is above 500 it will Color it green.
 
 Switch to **HTML** editor.
 
-![SAP Cloud Platform Mobile Services - Opera](img_029.png)
+![SAP Mobile Services - Opera](img_029.png)
 
 Replace `{{GrossAmount}}` with `{{gaCheckHelper GrossAmount}}` .
 
@@ -168,7 +168,7 @@ Replace `{{GrossAmount}}` with `{{gaCheckHelper GrossAmount}}` .
 {{gaCheckHelper GrossAmount}}
 ```
 
->![SAP Cloud Platform Mobile Services - Opera](img_027.1.png)
+>![SAP Mobile Services - Opera](img_027.1.png)
 
 >`gaCheckHelper` handlebars helper function is getting the value `GrossAmount` passed in. `GrossAmount` does not need the path as this function is getting called in the Handlebars helper block with `d.Items.results` path.
 
@@ -176,7 +176,7 @@ As a result, the value above 500 is coloured green.
 
 >If the editor does not refreshed by itself, you can force it to reload by switching tabs. Click `css` and then back on `HTML`.
 
-![SAP Cloud Platform Mobile Services - Opera](img_030.png)
+![SAP Mobile Services - Opera](img_030.png)
 
 Click **Save**.
 

@@ -3,7 +3,7 @@ title: Build Your First FAQ Chatbot
 description: Using SAP Conversational AI, build a chatbot designed to help users find answers to questions, based on a set of questions and answers uploaded in a CSV file.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
@@ -95,14 +95,14 @@ Download our sample <a href="https://github.com/SAPDocuments/Tutorials/raw/maste
     |  4. Data Policy  | **Non-personal** and **Non-vulnerable**
     |  5. Bot Visibility | **Public**
 
-3. Click **Create a Bot**.
+3. Click **Create**.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Upload CSV file)]
 
-1. On the **Train** tab, click **Upload**, and select the file you downloaded.
+1. On the **Train** tab, click **Upload Document**, and select the file you downloaded.
 
 2. Click **Upload**, and when the upload finishes and you get a little green check, click **Close**.
 

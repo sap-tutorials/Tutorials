@@ -3,8 +3,8 @@ title: Create Data Objects and Configure Value Help for Scenario
 description: Create data objects that hold employee and equipment details, and configure value help for the data object to choose the values while modeling rules.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud, topic>cloud,products>sap-cloud-platform,products>sap-cloud-platform-for-the-cloud-foundry-environment]
-primary_tag: products>sap-cloud-platform-business-rules
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+primary_tag: products>business-rules
 author_name: Vandana Vasudevan
 author_profile: https://github.com/VandanaVasudevan
 ---

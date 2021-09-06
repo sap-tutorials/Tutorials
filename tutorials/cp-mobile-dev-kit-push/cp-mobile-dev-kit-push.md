@@ -1,9 +1,9 @@
 ---
 title: Enable Push Notifications in the MDK Public Store Client
-description: Use the SAP Cloud Platform Mobile Services to enable push notifications in the MDK public store client.
+description: Use the SAP Mobile Services to enable push notifications in the MDK public store client.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio]
 time: 20
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by allowing custom domains.)
 
 ## Details
 ### You will learn
@@ -24,15 +24,13 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 ---
 
-
-
 ![MDK](img_7.7.png)
 
 [ACCORDION-BEGIN [Step 1: ](Define push notification settings in app configuration)]
 
-1. Open the [SAP Cloud Platform Mobile Services cockpit](cp-mobile-dev-kit-ms-setup), click **Mobile Push Notification** feature.
+1. Open the [SAP Mobile Services cockpit](cp-mobile-dev-kit-ms-setup), click **Mobile Push Notification** feature.
 
-    !![MDK](img_1.1.png)
+    !![MDK](img-1.1.png)
 
     >You can add **Mobile Push Notification** feature by clicking on + icon in case feature is not already assigned to the application.
 
@@ -51,32 +49,30 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. Navigate to *File* menu &rarr; click **New Project from Template**.
+2. Click **Start from template** on Welcome page.
 
-    !![MDK](img_2.2.png)
+    !![MDK](img-2.2.png)
+
+    >If you do not see Welcome page, you can access it via **Help** menu.
 
 3. Select **MDK Project** and click **Start**.
 
-    !![MDK](img_2.3.png)  
+    !![MDK](img-2.3.png)  
 
-4. In *Basic Information* step, select or provide the below information and click **Next**:
+4. In *Basic Information* step, provide the below information and click **Finish**:
 
     | Field | Value |
     |----|----|
-    | `MDK template type`| Select `Empty` from the dropdown |
-    | `Your project name` | `MDK_Push` |
-    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
+    | `MDK Template Type`| Select `Empty` from the dropdown |
+    | `Your Project Name` | `MDK_Push` |
+    | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
 
-    !![MDK](img_2.4.png)
+    !![MDK](img-2.4.png)
 
     >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).  
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and click Start Over.   
-
-5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Push` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
-
-    !![MDK](img_2.5.png)
-
+5. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Push` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -85,7 +81,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 In this step, you will create the following actions:
 
-* **Push Notification Register action**: this will register the device with SAP Cloud Platform Mobile Services for push notification.
+* **Push Notification Register action**: this will register the device with SAP Mobile Services for push notification.
 
 * **Message actions**: these will display a message if Push Notification Register action has succeeded or failed.
 
@@ -166,7 +162,7 @@ In this step, you will create the following actions:
 
     >When `PushRegister.action` gets executed successfully then `PushRegisterSuccessMessage.action` will be triggered or if `PushRegister.action` fails then `PushRegisterFailureMessage.action` will be triggered.
 
-    !![MDK](img_3.4.png)
+    !![MDK](img-3.4.png)
 
 [DONE]
 [ACCORDION-END]
@@ -180,60 +176,78 @@ In the step, you will set and call the Push Register Notification action when ap
 
 In `Application.app` file, bind the `OnDidUpdate` event to `PushRegister.action`.
 
-!![MDK](img_4.png)
+!![MDK](img-4.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy and activate application)]
+[ACCORDION-BEGIN [Step 5: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
-    !![MDK](img_5.1.png)
+    !![MDK](img-5.1.png)
 
 2. Select deploy target as **Mobile Services**.
 
-    !![MDK](img_5.2.png)
+    !![MDK](img-5.2.png)
 
-3. Select the application from Mobile Services.
+3. Select **Mobile Services Landscape**.
 
-    !![MDK](img_5.3.png)
+    !![MDK](img-5.3.1.png)  
 
-    You should see **Deploy succeeded** message.
 
-    !![MDK](img_5.4.png)
+4.  Select the application from Mobile Services.
+
+    !![MDK](img-5.3.png)
+
+5. If you want to enable source for debugging the deployed bundle, then choose **Yes**.
+
+    !![MDK](img-4.4.png)
+
+    You should see **Deploy to Mobile Services successfully!** message.
+
+    !![MDK](img-5.4.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Populate the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 6: ](Display the QR code for app onboarding)]
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
+1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
-!![MDK](img_6.1.png)
+    !![MDK](img-6.1.png)
 
-!![MDK](img_6.2.png)
+2. Select `com.sap.mdk.demo` application from the list.
+
+    !![MDK](img-5.3.2.png)
+
+    The On-boarding QR code is now displayed.
+
+    !![MDK](img-6.2.png)
+
+
+>Leave the Onboarding dialog box open for step 7.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and on-board again, you will be asked either to continue to use current application or to scan new QR code.
 
 [OPTION BEGIN [Android]]
 
 1. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-2. Once you accept the App update, a message should show **Push Notification Registered**. Click **OK**.
+2. Once you accept the App update, a message should show **Push Notification registered**. Click **OK**.
 
     ![MDK](img_7.1.png)
 
-3. It is time now to send the first push notification from the **SAP Cloud Platform Mobile Services push notification feature**.
+3. It is time now to send the first push notification from the **SAP Mobile Services push notification feature**.
 
     Navigate to Mobile Services cockpit. In **Mobile Push Notification** feature, switch to **Push Registrations** tab.
 
@@ -243,7 +257,7 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 12. In notification dialog, type a notification message and click **Send**.
 
-    !![MDK](img_7.5.png)
+    !![MDK](img-7.5.png)
 
     You will see a success toast message.
 
@@ -263,11 +277,11 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
     !![MDK](img_7.8.png)
 
-3. If push registration is successful, a message should show **Push Notification Registered**. Click **OK**.
+3. If push registration is successful, a message should show **Push Notification registered**. Click **OK**.
 
     !![MDK](img_7.9.png)
 
-4. It is time now to send the first push notification from the **SAP Cloud Platform Mobile Services push notification feature**.
+4. It is time now to send the first push notification from the **SAP Mobile Services push notification feature**.
 
     Navigate to Mobile Services cockpit. In **Mobile Push Notification** feature, switch to **Push Registrations** tab.
 
@@ -277,7 +291,7 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 11. In notification dialog, type a notification message and click **Send**.
 
-    !![MDK](img_7.5.png)
+    !![MDK](img-7.5.png)
 
     You will see a success toast message.
 
@@ -295,13 +309,13 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 [OPTION END]
 
->Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and on-board again, you will be asked either to continue to use current application or to scan new QR code.
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 ---
 
-Congratulations, you have successfully implemented Enable Push Notifications in the MDK Public Store Client and you are now all set to [Consume a REST API in an MDK App](cp-mobile-dev-kit-rest-api).
+Congratulations, you have successfully implemented Enable Push Notifications in the MDK Public Store Client and you can continue with the remaining tutorials in this mission.
 
 ---

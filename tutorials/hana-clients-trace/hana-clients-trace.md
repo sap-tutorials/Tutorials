@@ -12,7 +12,7 @@ primary_tag: products>sap-hana
 
 ## Details
 ### You will learn
-  - How to enable tracing using `hdbsqldbc_cons` or environment variables 
+  - How to enable tracing using `hdbsqldbc_cons` or environment variables
   - How to record trace details to a file, `stdout`, or `stderr`
 
 Trace files can help SAP Support diagnose unexpected behavior.
@@ -146,7 +146,14 @@ The following are some additional options for tracing.
     hdbsqldbc_cons TRACE FLUSH ON
     ```
 
-2.  In situations where `hdbsqldbc_cons` is not accessible, perhaps because a driver was installed directly using npm or pip, trace settings can be set using environment variables.
+2.  Note that tracing should be turned off when not in use, as it does have a performance, memory and disk size impact.  The following are some additional options to limit the trace file size to 100 KB (plus an archive file) and to turn on tracing only when a specific error code occurs.  Error code 10 occurs when invalid credentials are used.
+
+    ```Shell
+    hdbsqldbc_cons TRACE SIZE 100K
+    hdbsqldbc_cons TRACE ONLY ON ERROR 10
+    ```
+
+3.  In situations where `hdbsqldbc_cons` is not accessible, perhaps because a driver was installed directly using npm or pip, trace settings can be set using environment variables.
 
     ```Shell (Windows)
     set HDB_SQLDBC_TRACEFILE=c:\temp\traces\SQLDBC-%p.txt
@@ -181,7 +188,7 @@ The following are some additional options for tracing.
 
     ![Environment Variable Values](EnvironmentVariable.png)
 
-3.  As of version 2.7, trace information can be directed to `stdout` or `stderr`.  The following are a few examples.
+4.  As of version 2.7, trace information can be directed to `stdout` or `stderr`.  The following are a few examples.
 
     ```Shell
     hdbsql -U User1UserKey -Z traceFile=stdout -Z traceOptions=sql=warning "SELECT * FROM HOTEL.CUSTOMER"
@@ -219,7 +226,7 @@ javac -version
     java -jar c:\sap\hdbclient\ngdbc.jar
     ```
 
-    ![JDBC Driver GUI](JDBC_GUI.png)
+    ![JDBC Driver GUI](JDBC-Driver-Trace-Config.png)
 
 2. Turn on the tracing for SQL statements using either the GUI or the commands below:
 

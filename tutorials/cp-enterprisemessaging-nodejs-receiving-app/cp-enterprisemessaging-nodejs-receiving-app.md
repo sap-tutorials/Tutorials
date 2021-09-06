@@ -1,25 +1,23 @@
 ---
 title: Create an Application for Receiving Messages
-description: Develop and deploy a basic Node.js-based messaging application for receiving messages from an SAP Cloud Platform Enterprise Message Queue.
+description: Develop and deploy a basic Node.js-based messaging application for receiving messages from an SAP Event Mesh Queue.
 time: 20
 auto_validation: true
-tags: [ tutorial>beginner, topic>node-js, products>sap-cloud-platform-for-the-cloud-foundry-environment, tutorial>license]
-primary_tag: products>sap-cloud-platform-enterprise-messaging
+tags: [ tutorial>beginner, topic>node-js, products>sap-business-technology-platform, tutorial>license]
+primary_tag: products>sap-event-mesh
 ---
 
 ## Prerequisites
 
 ## Details
 ### You will learn
-  - How to create a basic messaging client application for receiving messages from a queue using SAP Cloud Platform Enterprise Messaging
-  - How to deploy this application to SAP Cloud Platform
+  - How to create a basic messaging client application for receiving messages from a queue using SAP Event Mesh.
+  - How to deploy this application to SAP Business Technology Platform
   - How to perform a quick test that your application works
 
 [ACCORDION-BEGIN [Step 1: ](Install Node.js and create directory)]
 
-1. Install Node.js and configure it locally. Add the SAP NPM Registry to your npm configuration for all @sap scoped modules.
-
-    `npm config set @sap:registry https://npm.sap.com`
+1. Install Node.js and configure it locally.
 
 2. Add the dependency in applications package.json and run npm for it:
 
@@ -28,7 +26,7 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 
 3. Create a directory that holds the files for your application - name it for example `Consumer`. Into this directory we will create three files:
 
-      * The `manifest.yml` is the deployment descriptor and contains all required information to deploy an application to a SAP Cloud Platform Cloud Foundry instance.
+      * The `manifest.yml` is the deployment descriptor and contains all required information to deploy an application to a SAP Business Technology Platform Cloud Foundry instance.
 
       * The `package.json` specifies the version of a package that your app depends on.
 
@@ -49,7 +47,6 @@ You need to add `domain`, `messaging service` and your `queue name` in the indic
 applications:
       - name: consumer
         host: consumer-host
-        domain: <REPLACE WITH YOUR DOMAIN>
         buildpack: https://github.com/cloudfoundry/nodejs-buildpack
         memory: 256M
         health-check-type: none
@@ -141,7 +138,7 @@ As a result, the application listens for messages and once it receives a message
         // Start messaging client
         //------------------------------------------------------------------------------------------------------------------
 
-        // Client for Enterprise Messaging Service instance
+        // Client for SAP Event Mesh Service instance
         const client = new msg.Client(options);
 
         //------------------------------------------------------------------------------------------------------------------
@@ -150,13 +147,13 @@ As a result, the application listens for messages and once it receives a message
 
         client
         .on('connected', () => {
-          console.log('connected to enterprise messaging service');
+          console.log('connected to SAP Event Mesh service');
         })
         .on('error', (err) => {
-          console.log('error on enterprise messaging service occurred ' + err);
+          console.log('error on SAP Event Mesh service occurred ' + err);
         })
         .on('disconnected', (hadError) => {
-          console.log('connection to enterprise messaging service lost, trying to reconnect in ' + reconnect_retry_ms + ' ms');
+          console.log('connection to SAP Event Mesh service lost, trying to reconnect in ' + reconnect_retry_ms + ' ms');
           setTimeout(()=> client.connect(), reconnect_retry_ms);
         });
 
@@ -199,7 +196,7 @@ As a result, the application listens for messages and once it receives a message
 
 [ACCORDION-BEGIN [Step 5: ](Deploy receiving application)]
 
-1.	Go to <filepath directory to manifest.yml> and enter `pm install` to download missing node.js modules.
+1.	Go to <filepath directory to manifest.yml> and enter `npm install` to download missing node.js modules.
 2.	To deploy the sending application to your Cloud Foundry space enter `cf push`.
 
 Your application gets deployed to the cloud and is started up.
@@ -209,7 +206,7 @@ Your application gets deployed to the cloud and is started up.
 
 [ACCORDION-BEGIN [Step 6: ](Test your application)]
 
-Once the application is started up, you can test your message consumer. To do this you send messages via the REST Gateway of Enterprise Messaging using Postman as described in the earlier tutorial.
+Once the application is started up, you can test your message consumer. To do this you send messages via the REST Gateway of SAP Event Mesh using Postman as described in the earlier tutorial.
 
 Alternatively you can skip this step, continue with the next tutorial, create the message producer app and use it for sending messages.
 

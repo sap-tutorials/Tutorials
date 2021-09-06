@@ -3,7 +3,7 @@ title: Upload Data to Document Classification
 description: Find out how to create datasets and upload data to your Document Classification service instance.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
 primary_tag: topic>machine-learning
 ---
 
@@ -35,7 +35,7 @@ To start it, open a new Terminal or Command Prompt and enter `jupyter lab`. Then
 
 In the JupyterLab interface, navigate into the folder where the notebook `train_and_evaluate_custom_model.ipynb` is located using the navigation pane on the left. Open the notebook by double-clicking it. The content of the notebook will now appear on the right. If you are not familiar with that, please review the previous [tutorial](cp-aibus-dc-setup).
 
-The first step is to install the client library and to clone the [repository](https://github.com/SAP/document-classification-client) so that you have the example dataset ready to use.
+The first step is to install the client library and to clone the [repository](https://github.com/SAP/business-document-processing) so that you have the example dataset ready to use.
 
 To do so, click the first cell indicated by its grey background. Once you clicked the cell, a blue bar appears on the right side which always indicates at which position in the notebook you currently are. A cell can be run by clicking **Run** at the top.
 

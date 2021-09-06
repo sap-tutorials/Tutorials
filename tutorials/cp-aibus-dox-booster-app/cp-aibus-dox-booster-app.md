@@ -1,28 +1,29 @@
 ---
 title: Set Up Account for Document Information Extraction and Go to Application
-description: Get access to the Document Information Extraction Trial UI using a booster in the SAP Cloud Platform trial cockpit that automatically creates a service instance, and subscribes you to the UI application for Document Information Extraction.
+description: Get access to the Document Information Extraction Trial UI using a booster in SAP Business Technology Platform (SAP BTP) Trial that automatically creates a service instance, and subscribes you to the UI application for Document Information Extraction.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
-- You have created a trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
-- You have a subaccount and dev space with **Europe (Frankfurt)** or **US East (VA)** as region: [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
+- You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
+- You have a subaccount and dev space with **Europe (Frankfurt)** or **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
 
 ## Details
 ### You will learn
   - How to access your trial account
   - What are interactive guided boosters
   - How to use the **Set up account for Document Information Extraction** booster to assign entitlements, update your subaccount, create a service instance, subscribe to and access the Document Information Extraction Trial UI.
+
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
+[ACCORDION-BEGIN [Step 1: ](Go to your trial account)]
 
-1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
+2. Navigate to the trial global account by clicking **Go To Your Trial Account**.
 
     !![Trial global account](01_Foundation20Onboarding_Home.png)
 
@@ -32,9 +33,7 @@ primary_tag: topic>machine-learning
 
     >Choose **Continue**.
 
-    >!![Account setup](02_Foundation20Onboarding_Processing.png)
-
-    >For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP Cloud Platform Trial, see [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements).
+    >For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
 [DONE]
 [ACCORDION-END]
@@ -42,7 +41,7 @@ primary_tag: topic>machine-learning
 
 [ACCORDION-BEGIN [Step 2: ](Run booster)]
 
-SAP Cloud Platform creates interactive guided boosters to automate trial cockpit steps, so users can save time when trying out the services.
+SAP BTP creates interactive guided boosters to automate cockpit steps, so users can save time when trying out the services.
 
 Now, you will use the **Set up account for Document Information Extraction** booster to automatically assign entitlements, update your subaccount, create a service instance, subscribe to and access the Document Information Extraction Trial UI.
 
@@ -90,34 +89,27 @@ You are now all set to [Use Machine Learning to Extract Information from Documen
 
 [ACCORDION-BEGIN [Step 4: ](Access subscription (optional))]
 
-> This is an optional step. Use it only if you want to access the subscription to the Document Information Extraction Trial UI, you've done with the **Set up account for Document Information Extraction** booster, without having to run it once again.
+> This is an optional step. Use it only if you want to access the subscription to the Document Information Extraction Trial UI, you've created with the **Set up account for Document Information Extraction** booster, without having to run it once again.
 
 Do the following to access your subscription to the Document Information Extraction Trial UI, without having to run the **Set up account for Document Information Extraction** booster once again:
 
+1. Go to your trial account.
 
-1. Close the booster **Success** dialog box.
-
-    !![UI application](leave-success.png)
-
-2. Access your trial account.
-
-    !![UI application](trial-account.png)
-
-3. Click **Subaccounts** on the navigation side bar and select **trial** to access your subaccount.
+2. From your global account page, choose the `trial` tile to access your subaccount.
 
     !![UI application](subaccount.png)
 
-4. Click **Subscriptions** on the navigation side bar.
+3. Click **Instances and Subscriptions** on the navigation side bar.
 
     !![UI application](subscriptions.png)
 
-5. Search for **Document Information Extraction Trial UI**.
-
-    !![UI application](subscriptions-search.png)
-
-6. Access the tile for **Document Information Extraction Trial UI** to **Go to Application**, **Copy link** to the UI application and **Manage Roles**.
+4. Search for **Document Information Extraction Trial UI** under **Subscriptions** and click the arrow on the right to access it.
 
     !![UI application](subscriptions-tile.png)
+
+5. Here, you can navigate to the application by clicking **Go to Application** but also manage the roles for the UI application.
+
+    !![UI application](subscriptions-action.png)
 
 Congratulations, you have completed this tutorial.
 

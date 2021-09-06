@@ -2,15 +2,15 @@
 title: Create a Basic Node.js App
 description: Build a basic Node.js app and run it locally on your machine.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner, topic>node-js ]
+primary_tag: products>sap-business-technology-platform
+tags: [ products>sap-business-technology-platform, topic>cloud, tutorial>beginner, topic>node-js ]
 time: 5
 ---
 
 ## Prerequisites  
 - A text editor (e.g., Notepad, Atom, Sublime)
-- [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account)
-- [Configure Essential Local Development Tools](https://developers.sap.com/group.scp-local-tools.html)
+- [Sign up for a free SAP Business Technology Platform trial account](hcp-create-trial-account)
+- [Configure Essential Local Development Tools](group.scp-local-tools)
 
 
 ## Details

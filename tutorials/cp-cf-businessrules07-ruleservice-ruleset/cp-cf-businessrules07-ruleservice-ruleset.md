@@ -3,8 +3,8 @@ title: Create Rule Services and Rulesets
 description: Create a rule service interface for an application to invoke the decision logic by associating the rule to a ruleset of the rule service.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, topic>cloud, topic>cloud,products>sap-cloud-platform,products>sap-cloud-platform-for-the-cloud-foundry-environment]
-primary_tag: products>sap-cloud-platform-business-rules
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+primary_tag: products>business-rules
 ---
 
 ## Details

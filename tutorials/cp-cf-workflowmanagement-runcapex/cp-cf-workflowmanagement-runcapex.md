@@ -3,8 +3,8 @@ title: Run the Capital Expenditure Live Process
 description: Run the capital expenditure live process and approve tasks using My Inbox.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
 author_name: Deeksha R
 author_profile: https://github.com/Deeksha-R
 ---
@@ -31,11 +31,12 @@ In this tutorial, you start a new instance of the process variant that you have 
 
     !![Workflow Definitions](cp-cf-workflowmanagement-runcapex-wfdef.png)
 
-2. Choose the **High Value Investments** workflow definition, then choose **Start New Instance**.
+3. Choose the **High Value Investments** workflow definition, then choose **Start New Instance**.
 
     !![Start New Instance](cp-cf-workflowmanagement-runcapex-startinstance.png)
 
-3. In the **Start New Instance** popup menu, replace the existing JSON snippet with the below snippet and choose **Start New Instance**.
+4. In the **Start New Instance** popup menu, replace the existing JSON snippet with the below snippet. Then, replace the **`UserId`** field with your SAP trial email ID. Finally, choose **Start New Instance and Close**.
+
     ```JSON
     {
       "RequestId": "IAP-2020-180",
@@ -63,11 +64,14 @@ In this tutorial, you start a new instance of the process variant that you have 
         "CO2Efficiency": 20,
         "EnergyCostSavings": 15,
         "WaterSavings": 10
+      },
+      "internal": {
+
       }
     }
-```
+    ```
 
-    !![Payload](cp-cf-workflowmanagement-runcapex-payload.png)
+      !![Payload](cp-cf-workflowmanagement-runcapex-payload.png)
 
 4. Choose **Show Instances**.
 
@@ -98,7 +102,7 @@ You can view the workflow instance created for approval. You can navigate to the
 
     !![Approve Task](cp-cf-workflowmanagement-runcapex-myinbox3.png)
 
-    >Similarly, you would have a new task in the **My Inbox** tile for your approval as a CFO.
+    >Similarly, after the local manager approval, you would have a new task in the **My Inbox** tile for your approval as a CFO.
 
     >!![CFO Approval](cp-cf-workflowmanagement-runcapex-CFO.png)
 

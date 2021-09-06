@@ -3,7 +3,7 @@ title: Use Machine Learning to Classify Documents
 description: Get the machine learning model category predictions for the documents you upload to Document Classification.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-classification]
 primary_tag: topic>machine-learning
 ---
 
@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 
 The core functionality of Document Classification is to automatically classify documents into categories. The categories are not predefined and can be chosen by the user.
 
-In the trial version of Document Classification, however, a predefined and pre-trained machine learning model is made available for all users. Thus, the classification categories cannot be customized. This tutorial gives you an introduction to the service. If you want to try out the Document Classification training endpoints to create your own classification model, you can use an Enterprise Account (see [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) versus [Enterprise Accounts](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/171511cc425c4e079d0684936486eee6.html)) or a paid SAP Cloud Platform global account.
+In the trial version of Document Classification, however, a predefined and pre-trained machine learning model is made available for all users. Thus, the classification categories cannot be customized. This tutorial gives you an introduction to the service. If you want to try out the Document Classification training endpoints to create your own classification model, you can use an Enterprise Account (see [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) versus [Enterprise Accounts](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/171511cc425c4e079d0684936486eee6.html)) or an enterprise global account on SAP Business Technology Platform (SAP BTP) Trial.
 
 ---
 
@@ -60,7 +60,7 @@ In the Document Classification trial, there is a pre-trained model available for
 
 > - [Invoice](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/bejing_2008.pdf) ("Beijing Olympics logo" by sha3bi1Beijing)
 > - [Payment Advice](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/flickr.pdf) ("Logo of Flickr" by `topgold`)
-> - [Purchase Order](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/guru_shop.pdf) ("Logo Guru Shop" by `Carlo Armanni`)
+> - [Purchase Order](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/umbro.pdf) ("`umbro` logo" by `sefcmpa`)
 > - [Other](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/twitter.pdf) ("Logo of Twitter" by `topgold`)
 
 >Please note that those files are fake invoices, purchase orders, payment advices and other business documents for demo purposes. Logos were downloaded from search.creativecommons.org, all licensed under CC BY 2.0. Logos were embedded in the documents unaltered. The creators of the logos are denoted in brackets.
@@ -80,7 +80,7 @@ Once you click the button, several input fields show up:
 
   3.  The field `modelVersion` needs to be filled. As machine learning models can have multiple versions, the version of the model needs to be specified with every request. Write `latest` into the field so that the latest version of the model is used.
 
-  4.  The field `modelName` needs to be specified. Enter `DocumentInfoRecord/AUT` to use the model that categorizes products.
+  4.  The field `modelName` needs to be specified. Enter `sap_document_type` to use the pre-trained model.
 
   5.  Finally, click **Execute** to send the document to the service.
 
@@ -109,7 +109,7 @@ Click **Try it out** to try the request.
 Once you click the button, similar input fields, as before, show up:
 
   1.  Enter `latest` in the field `modelVersion`.
-  2.  Enter `DocumentInfoRecord/AUT` in the field `modelName`.
+  2.  Enter `sap_document_type` in the field `modelName`.
   3.  In the field `documentId`, enter the ID you received in the previous step.
 
 Finally, click **Execute** to request the classification results.

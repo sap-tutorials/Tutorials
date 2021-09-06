@@ -1,10 +1,10 @@
 ---
 title: Create a Simple IoT Device Model
 description: Create a simple IoT device model in the IoT service of SAP Cloud Platform.
-primary_tag: topic>internet-of-things
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-leonardo-iot, products>sap-cloud-platform, products>sap-cloud-platform-internet-of-things ]
+primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-iot-services-for-sap-btp, products>sap-business-technology-platform]
 ---
 
 ## Prerequisites  

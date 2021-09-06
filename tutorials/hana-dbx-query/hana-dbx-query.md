@@ -85,6 +85,8 @@ primary_tag: products>sap-hana-cloud
     SELECT
     '{ "name":"John", "age":30, "cars": { "car1":"Ford", "car2":"BMW", "car3":"Fiat" }}'
     AS JSON_EXAMPLE FROM DUMMY;
+
+    SELECT * FROM HOTEL.CUSTOMER FOR JSON;
     ```
 
     ![JSON Query Results](JSONQuery.png)
@@ -266,7 +268,7 @@ primary_tag: products>sap-hana-cloud
 
 [ACCORDION-BEGIN [Step 6: ](Statement library)]
 
-The statement library contains a mix of pre-populated statements, to help with monitoring, and user-saved statements.
+The statement library contains a mix of pre-populated system statements and user-saved statements.
 
 1. Frequently used statements can be saved to the statement library for easy access.  Enter the statement below into the SQL console and click the **Add to Statement Library** button.
 
@@ -294,11 +296,11 @@ The statement library contains a mix of pre-populated statements, to help with m
 
     ![Show Statement Library](ShowStatementLibrary.png)
 
-4. In the statement library there are two types of statements:  user-defined and system. This is shown in the Type column. User-defined statements are statements that you have created and added, like Future check-ins, while system statements are already created and added to the library. System statements are often used for monitoring and diagnostic purposes.
+4. In the statement library there are two types of statements:  user-defined and system. This is shown in the Type column. User-defined statements are statements that you have created and added, like All Future Check-ins, while system statements are already created and added to the library. System statements are often used for monitoring and diagnostic purposes.
 
     ![Statement Library](StatementLibrary.png)
 
-    >Some of the system statements come from [SAP Note 1969700 - SQL Statement Collection for SAP HANA](https://launchpad.support.sap.com/#/notes/1969700).  These statements can be used to help monitor the database.  These statements are primarily intended for SAP HANA 2.0.  Another source of diagnostic information are the SAP HANA [monitoring views](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d3c10d23e8334a35afa8d9bdbc102366.html).
+    >Previously, some of the included system statements came from [SAP Note 1969700 - SQL Statement Collection for SAP HANA](https://launchpad.support.sap.com/#/notes/1969700).  If you wish to add these, they can be downloaded from the SAP Note referenced above and added as user statements.  Another source of diagnostic information are the SQL queries contained in [`M_SYSTEM_INFORMATION_STATEMENTS` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20c5dfac751910148a3fc81b81b2d19b.html).
 
 5. To run a statement, select one from the statement library and click the **Open in SQL Console** button.
 

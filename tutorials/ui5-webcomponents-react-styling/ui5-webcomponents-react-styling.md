@@ -53,7 +53,7 @@ If you want to add a custom component to your app, but still want to use the sty
     ```JavaScript / JSX
     import React from "react";
     import { createUseStyles } from 'react-jss';
-    import { ThemingParameters } from "@ui5/webcomponents-react-base/lib/ThemingParameters";
+    import { ThemingParameters } from "@ui5/webcomponents-react-base";
 
     export const MyCustomElement = () => {
       return (
@@ -78,7 +78,7 @@ If you want to add a custom component to your app, but still want to use the sty
     ```JavaScript / JSX
     import React from "react";
     import { createUseStyles } from 'react-jss';
-    import { ThemingParameters } from "@ui5/webcomponents-react-base/lib/ThemingParameters";
+    import { ThemingParameters } from "@ui5/webcomponents-react-base";
 
     const styles = {
       container: {

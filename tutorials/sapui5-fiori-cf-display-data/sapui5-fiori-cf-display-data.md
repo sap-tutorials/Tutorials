@@ -3,7 +3,7 @@ title: Display Data from the Northwind Service
 description: Learn how to add new views, to display more data, and how to navigate between them.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>sapui5,  products>sap-cloud-platform-launchpad, products>sap-fiori, topic>user-interface, topic>html5, topic>cloud]
+tags: [ tutorial>beginner, topic>sapui5, products>sap-launchpad-service, products>sap-fiori, topic>user-interface, topic>html5, topic>cloud, tutorial>free-tier]
 primary_tag: topic>odata
 ---
 
@@ -23,7 +23,7 @@ Add a new view to display a list of products. For this, you can use another `eas
 **Open** a new terminal session, to keep local web server running, and execute:
 
 ```Terminal
-yo easy-ui5:newview
+yo easy-ui5 project newview
 ```
 
 |  Parameter     | Value
@@ -99,7 +99,7 @@ To populate the list with items, bind a data source to the application. For this
 > You can find a list of all available sub-generator on [GitHub](https://github.com/SAP/generator-easy-ui5/#sub-generators-to-avoid-recurring-tasks)
 
 ```Terminal
-yo easy-ui5:newmodel
+yo easy-ui5 project newmodel
 ```
 
 
@@ -113,7 +113,7 @@ yo easy-ui5:newmodel
 
 Again, please accept the modification of the manifest file.
 
-> The generator will name the data source based on the URL you specified. You can replace the name in the `manifest.yaml` if you don't like it.
+> The generator will name the data source based on the URL you specified. You can replace the name in the `manifest.json` if you don't like it.
 
 
 [DONE]
@@ -145,7 +145,7 @@ Again, please accept the modification of the manifest file.
 
     ```
 
-2. You already created a destination named Northwind in Cloud Foundry. Now it's time to add a mocked destination to your local setup as well.
+2. You already created a destination named Northwind in Cloud Foundry environment of SAP BTP. Now it's time to add a mocked destination to your local setup as well.
 
     **Replace** the empty array of the property `destinations` in the `uimodule/ui5.yaml` file to declare the local destination.
 
@@ -179,7 +179,7 @@ In this step, you will add a detail page that shows some additional information.
 
 1. Switch back to the second terminal session and run the same sub-generator as before.
     ```Terminal
-    yo easy-ui5:newview
+    yo easy-ui5 project newview
     ```
 
     |  Parameter     | Value
@@ -294,7 +294,7 @@ In this step, you will add a detail page that shows some additional information.
 
 3. Once you saved the view, the web app should update automatically and display a view similar to this this one.
 
-!![detail view](detailview.png)
+!![detail view](detail.png)
 
 [DONE]
 [ACCORDION-END]

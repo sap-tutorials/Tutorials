@@ -3,8 +3,8 @@ title: Create Decision Table and Text Rules
 description: Create and activate the decision tables and text-based rules to create the decision logic.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>cloud, topic>cloud,products>sap-cloud-platform,products>sap-cloud-platform-for-the-cloud-foundry-environment]
-primary_tag: products>sap-cloud-platform-business-rules
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+primary_tag: products>business-rules
 author_name: Vandana Vasudevan
 author_profile: https://github.com/VandanaVasudevan
 ---
@@ -16,7 +16,7 @@ author_profile: https://github.com/VandanaVasudevan
 
 A decision table rule is the collection of rule expressions in tabular format and sequentially executes each rule in the table.
 
-A text rule is a decision logic in simple if-then format. The **If** condition of the text rule is evaluated by the system once the rule is triggered. Based on the result of the condition, the rule performs a set of operations.
+A text rule is a decision logic in simple if-then-else format. Once the rule is triggered, the **If** condition of the text rule is evaluated and the result that matches the condition is returned. Based on the result of the condition, the rule performs a set of operations.
 
 In this tutorial, we will create the decision logic required to assign equipment for the new hire, both as text rule as well as decision table.
 
@@ -58,9 +58,7 @@ In this tutorial, we will create the decision logic required to assign equipment
 
     ![Autosuggestion list](create_dt_5.png)
 
-6. Choose the attribute **`countryofCompany`** from the **Vocabulary** section.
-
-    > The label **`Country or Region of Company`** of the attribute **`countryofCompany`**, is displayed in the list.
+6. Choose the attribute **`countryofCompany`** from the **Vocabulary** section and then in the **Label** field enter **Country or Region**.
 
     ![Attribute in autosuggestion list](create_dt_6.png)
 
@@ -70,12 +68,13 @@ In this tutorial, we will create the decision logic required to assign equipment
 
 8. Similarly, create the following condition expressions:
 
-    |  Condition Expressions     | Fixed Operator
-    |  :------------- | :-------------
-    |  **`Employee.company`**   | **`None`**
-    |  **`Employee.jobTitle`**   | **`None`**
-    |  **`Employee.isFullTimeEmployee`**   | **`None`**
+    |  Condition Expressions     |Label | Fixed Operator
+    |  :------------- |:------------ | :-------------
+    |  **`Employee.company`**   | **`Company`** | **`None`**
+    |  **`Employee.jobTitle`**   | **`Job Title`** | **`None`**
+    |  **`Employee.isFullTimeEmployee`**   | **`Full time/Part time`** | **`None`**
 
+    > The label is displayed in the decision table column header.
 
     Choose **`EquipmentInfo`** as the **Result** data object from the dropdown list and then choose **Apply**.
 

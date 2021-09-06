@@ -1,16 +1,18 @@
 ---
 title: Create Communication Objects for a Remote OData Service
-description: Create an inbound communication scenario, arrangement, system, and user in the provisioning system of SAP Cloud Platform, ABAP Environment.
+description: Create an inbound communication scenario, arrangement, system, and user in the provisioning system of SAP BTP, ABAP Environment.
 auto_validation: true
 time: 45
-tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: products>sap-cloud-platform--abap-environment
+tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
+primary_tag: topic>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
-- You have set up 2 instances of SAP Cloud Platform, ABAP Environment, a **provisioning system** and a **client system**, for example by using the relevant booster: [Using a Booster to Automate the Setup of the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cd7e7e6108c24b5384b7d218c74e80b9.html)
-- **Tutorial**: [Create Your First Console Application](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html), for a licensed user, steps 1-2, for both instances
+- You have set up 2 instances of SAP Business Technology Platform, ABAP Environment, a **provisioning system** and a **client system**, for example by using the relevant booster: [Using a Booster to Automate the Setup of the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cd7e7e6108c24b5384b7d218c74e80b9.html)
+- **Tutorial**: [Create Your First Console Application](abap-environment-trial-onboarding), for a licensed user, steps 1-2, for both instances
 - In the provisioning system:
     - The business catalog **`SAP_CORE_BC_COM`** is assigned to your user
     - The ABAP Flight Reference Scenario is available. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
@@ -21,7 +23,7 @@ primary_tag: products>sap-cloud-platform--abap-environment
 ## Details
 ### You will learn
 - In the **provisioning** system: How to expose a CDS view as an OData service using a **Service Binding**
-- How to wrap this OData service in an inbound communication scenario, so that it can be accessed from another instance of SAP Cloud Platform, ABAP environment
+- How to wrap this OData service in an inbound communication scenario, so that it can be accessed from another instance of SAP BTP, ABAP environment
 - How to make the provisioning system available for connection from other ABAP systems
 - How to test your service URL in Postman (optional)
 - In the **client** system: How to create a new destination with an HTTP connection, pointing to the provisioning system
@@ -35,12 +37,12 @@ This involves some overhead for one consumer; however, the advantage is that you
 
 **Mission Scenario**:
 
-You want to get data that is only available in a remote instance of SAP Cloud Platform, ABAP Environment ( **provisioning system** ) and display it in a second instance ( **client system** ).
+You want to get data that is only available in a remote instance of SAP BTP, ABAP Environment ( **provisioning system** ) and display it in a second instance ( **client system** ).
 
 You need to:
 
-1. Create inbound communication artefacts for an OData Service in the **provisioning system**
-2. Create a Service Consumption Model, and save this locally as a `$metadata` XML file; From this you will create proxy artefacts in the client system, representing the remote service, and use this model to generate an **abstract entity**
+1. Create inbound communication artifacts for an OData Service in the **provisioning system**
+2. Create a Service Consumption Model, and save this locally as a `$metadata` XML file; From this you will create proxy artifacts in the client system, representing the remote service, and use this model to generate an **abstract entity**
 3. Create a Remote Client Proxy
 4. Build a new OData service in the client system, using a CDS custom entity and query implementation class
 5. Finally, display the remote data in Fiori Elements preview in your browser
@@ -148,7 +150,7 @@ You can also see this scenario in the Project Explorer.
 Your Communication Arrangement should look roughly like this.
 The Service URL / Service Interface = < Base URL of provisioning system > + relative path of your Inbound Service, here `/sap/opu/odata/sap/Z_BIND_TRAVELS_XXX`.
 
-!![step6-comm-arr](step6-comm-arr.png)
+!![step64e-comm-arr-2011](step64e-comm-arr-2011.png)
 
 [DONE]
 [ACCORDION-END]
@@ -173,7 +175,7 @@ The Service URL / Service Interface = < Base URL of provisioning system > + rela
 [ACCORDION-BEGIN [Step 6: ](Create destination in client system)]
 You will now open the client system and create a destination service instance there. This must be created at subaccount (not Space) level.
 
-1. In the **client** system, open the SAP Cloud Platform Cockpit of your Cloud Foundry subaccount and choose **Destinations**, then choose **New Destinations**.
+1. In the **client** system, open the SAP BTP Cockpit of your Cloud Foundry subaccount and choose **Destinations**, then choose **New Destinations**.
 
     !![step4a-cf-cockpit-new-destination](step4a-cf-cockpit-new-destination.png)
 
@@ -199,7 +201,7 @@ You will now open the client system and create a destination service instance th
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+[ACCORDION-BEGIN [Step 7: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]

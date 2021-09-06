@@ -1,19 +1,20 @@
 ---
-title: Send and Receive Test Enterprise Messages
-description: Test send and receive of message with REST protocol using the Postman tool for a SAP Cloud Platform Enterprise Message instance.   
+title: Send and Receive Test SAP Event Mesh
+description: Test send and receive of message with REST protocol using the Postman tool for a SAP Event Mesh instance.   
 time: 15
 auto_validation: true
 tags: [ tutorial>beginner, topic>cloud, tutorial>license]
-primary_tag: products>sap-cloud-platform-enterprise-messaging
+primary_tag: products>sap-event-mesh
 ---
 
 ## Prerequisites
   - [Postman](https://www.getpostman.com/), API Development environment Tool is available to publish & receive message from queue using REST Protocol
 
+
 ## Details
 ### You will learn
   - Send and Receive message to and from a queue using Postman, a REST-based tool
-
+  - **IMPORTANT:** It is really important to understand the concept of Service Key of an SAP Event Mesh instance. Check out **Step 2** of [Create Instance of SAP Event Mesh Service](cp-enterprisemessaging-instance-create).
 
 ---
 
@@ -35,24 +36,24 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 
     So the final postman URL should look like this:
 
-    ```URL
-    https://<***space name***>
-    .authentication.sap.hana.ondemand.com/oauth/token
-    ?grant_type=client_credentials&response_type=token
-    ```
+```
+<<tokenendpoint>>?grant_type=client_credentials&response_type=token
 
-    In the **Headers** tab, enter `Content-Type` as **KEY** and `application/x-www-form-urlencoded` as **VALUE**.
+<<tokenendpoint>> is to be replaced with the 'tokenendpoint' field of the service key.
+In the Headers tab, enter `Content-Type` as KEY and `application/x-www-form-urlencoded` as VALUE.
 
-    ![postman headers](postman-header.PNG)
+```
 
-    In the **Authorization** tab, select the **Type** as `Basic Auth` from the dropdown.
+![postman headers](postman-header.PNG)
 
-      - In **Username**, provide the <`clientid`> value from the **Service Keys** for httprest protocol.
-      - In **Password**, provide the <`clientsecret`> value from the **Service Keys** for httprest protocol.
+In the **Authorization** tab, select the **Type** as `Basic Auth` from the dropdown.
+
+- In **Username**, provide the <`clientid`> value from the **Service Keys** for `httprest` protocol.
+- In **Password**, provide the <`clientsecret`> value from the **Service Keys** for `httprest` protocol.
 
       ![postman authorization](postman-authorization.PNG)
 
-    Select the **POST** option in **Postman** and click on the **Send** button. You will get the `access_token`.
+Select the **POST** option in **Postman** and click on the **Send** button. You will get the `access_token`.
 
 [DONE]
 [ACCORDION-END]

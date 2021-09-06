@@ -3,7 +3,7 @@ title: Set Up Jupyter Notebook and Client Library for Document Classification
 description: Set up a local JupyterLab instance as well as the Jupyter Notebook and the client library for Document Classification.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
+tags: [ tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
 primary_tag: topic>machine-learning
 ---
 
@@ -12,7 +12,7 @@ primary_tag: topic>machine-learning
   - How to install Python and Anaconda
   - How to set up a local JupyterLab instance
 
-In order to give you a head start, a client library for the Document Classification service is available. The library already has all necessary operations implemented and ready to use, like, for example, `Creating a Dataset` and `Training a Model`. The client library can be found [here](https://github.com/SAP/document-classification-client).
+In order to give you a head start, a client library for the Document Classification service is available. The library already has all necessary operations implemented and ready to use, like, for example, `Creating a Dataset` and `Training a Model`. The client library can be found [here](https://github.com/SAP/business-document-processing).
 
 Additionally, a Jupyter Notebook is used in the following tutorials to make the steps interactive and easy to follow. For more information on Jupyter Notebooks, see [Jupyter](https://jupyter.org/). The notebook that was created for this tutorial mission is also available in the client library repository.
 
@@ -22,7 +22,7 @@ Additionally, a Jupyter Notebook is used in the following tutorials to make the 
 
 First, you need to install Anaconda. Anaconda is a platform that offers tools to process large datasets and is often used by data scientists. When installing Anaconda, the programming language Python is installed as well.
 
-If you are on Linux, there is a script available for the installation of Anaconda [here](https://github.com/SAP/document-classification-client/blob/master/examples/install_jupyterlab.sh). The first three commands are necessary to install Anaconda whereas the other commands are used in the following step of this tutorial.
+If you are on Linux, there is a script available for the installation of Anaconda [here](https://github.com/SAP/business-document-processing/blob/main/examples/document_classification_examples/install_jupyterlab.sh). The first three commands are necessary to install Anaconda whereas the other commands are used in the following step of this tutorial.
 
 If you are on a different operating system or the script does not work for you, head over to the [Anaconda installation guide](https://docs.anaconda.com/anaconda/install/) and look for your operating system. Once there, follow the installation guide.
 
@@ -48,7 +48,7 @@ You have successfully installed Anaconda.
 
 [ACCORDION-BEGIN [Step 2: ](Start a JupyterLab server)]
 
-As mentioned before, you now need to execute the other commands of the [script](https://github.com/SAP/document-classification-client/blob/master/examples/install_jupyterlab.sh).
+As mentioned before, you now need to execute the other commands of the [script](https://github.com/SAP/business-document-processing/blob/main/examples/document_classification_examples/install_jupyterlab.sh).
 
 [OPTION BEGIN [Windows]]
 
@@ -74,7 +74,7 @@ You have successfully installed a local instance of JupyterLab and you are now a
 
 [ACCORDION-BEGIN [Step 3: ](Open the Jupyter Notebook)]
 
-As everything is installed now, you can open the Jupyter Notebook that is used in the following tutorials. Therefore, you are going to clone the [repository](https://github.com/SAP/document-classification-client) that includes the notebook and the example dataset.
+As everything is installed now, you can open the Jupyter Notebook that is used in the following tutorials. Therefore, you are going to clone the [repository](https://github.com/SAP/business-document-processing) that includes the notebook and the example dataset.
 
 Open JupyterLab in your browser, using the URL from the command prompt from the previous step. Once opened, click the tile under the heading `Notebook` to open an empty notebook.
 
@@ -85,7 +85,7 @@ Open JupyterLab in your browser, using the URL from the command prompt from the 
 In the notebook, click into the first cell and enter the following command:
 
 ```
-!git clone https://github.com/SAP/document-classification-client.git
+!git clone https://github.com/SAP/business-document-processing.git
 ```
 
 Then click **Run**. This command clones the repository.

@@ -2,8 +2,8 @@
 title: Using Analytical OData in SAP IoT
 description: Explore the Analytical OData services in SAP IoT to get time series and aggregates on data
 auto_validation: false
-tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-api-management ]
 primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-business-technology-platform, products>sap-iot-services-for-sap-btp, products>sap-analytics-cloud, products>sap-api-management]
 ---
 
 ## Prerequisites  

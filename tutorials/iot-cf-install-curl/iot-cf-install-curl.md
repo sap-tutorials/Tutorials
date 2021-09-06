@@ -4,8 +4,8 @@ author_profile: https://github.com/SupriyaCherukunnathu
 title: Install cURL
 description: Install cURL to send data to the SAP Cloud Platform Internet of Things Service Cloud using REST.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-internet-of-things
-tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud ]
+primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-business-technology-platform, products>sap-iot-services-for-sap-btp ]
 ---
 
 

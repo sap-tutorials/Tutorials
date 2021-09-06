@@ -4,8 +4,8 @@ author_profile: https://github.com/SupriyaCherukunnathu
 title: Create a Device Model Using the API
 description: Create a device model for the SAP Cloud Platform Internet of Things Service using the Device Management API.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-internet-of-things
-tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud, tutorial>license ]
+primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-iot-services-for-sap-btp, products>sap-business-technology-platform ]
 ---
 
 

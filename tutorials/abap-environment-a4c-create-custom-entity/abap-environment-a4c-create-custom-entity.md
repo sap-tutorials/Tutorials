@@ -1,10 +1,12 @@
 ---
 title: Implement a CDS Custom Entity and Query Implementation Class
-description: In the SAP Cloud Platform, ABAP Environment, implement a CDS custom entity and query implementation class.
+description: In the SAP Business Technology Platform, ABAP Environment, implement a CDS custom entity and query implementation class.
 auto_validation: true
 time: 30
-tags: [ tutorial>advanced, topic>abap-development, topic>cloud, products>sap-cloud-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: products>sap-cloud-platform--abap-environment
+tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
+primary_tag: topic>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ##Prerequisites
@@ -148,9 +150,11 @@ ENDCLASS.
     IF io_request->is_data_requested( ).
 
     DATA:
-        "abstract entity; receives data from remote servce
+
+        "abstract entity; receives data from remote service
         lt_travel    TYPE STANDARD TABLE OF ZTRAVEL,
-        "custom entity; fills output param of SELECT
+
+        "custom entity; fills output parameter of SELECT
         lt_travel_ce TYPE STANDARD TABLE OF zce_travel_data_pmd.
 
     ENDIF.

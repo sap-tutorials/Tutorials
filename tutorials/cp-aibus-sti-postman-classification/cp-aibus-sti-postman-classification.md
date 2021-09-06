@@ -3,7 +3,7 @@ title: Use Service Ticket Intelligence and Postman to Classify Service Requests
 description: Train a machine learning model based on historical service requests in order to classify new requests.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, products>sap-cloud-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -31,7 +31,7 @@ First, you need to retrieve an OAuth access token which will grant you access to
 
 On the left, expand the `STI sample collection 2012`. Select the request, `Get Access Token`.
 
-Click **Send** to send the request to your service instance.
+Click **Send** to send the request to your service instance. 
 
 ![Get Access Token](get-access-token.png)
 

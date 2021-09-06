@@ -5,7 +5,7 @@ author_profile: https://github.com/marcuscbehrens
 description: Purchase SAP IoT and acquire the hardware necessary to follow subsequent tutorials.
 auto_validation: true
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, products>sap-leonardo-iot, products>sap-cloud-platform, tutorial>license]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-business-technology-platform, products>sap-iot-services-for-sap-btp]
 time: 15
 ---
 

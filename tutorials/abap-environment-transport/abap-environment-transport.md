@@ -1,727 +1,551 @@
 ---
 auto_validation: true
 title: Implement the Transport for Your Factory Calendar
-description: Create a transport class and implement the save validation for your factory calendar.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
-time: 20
+description: Maintain your business configuration and implement the save validation for your factory calendar.
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license ]
+time: 30
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- You need an SAP Cloud Platform ABAP Environment [trial user](abap-environment-trial-onboarding) or a license.
-- You need to configure a software component of type **business configuration**: [Transport a Software Component Between Two ABAP Instances](abap-environment-gcts).
+- You need a SAP BTP, ABAP environment license.
 - You have to assign the **Configuration Expert - Business Process Configuration** role to the respective users.
-
 
 ## Details
 ### You will learn  
+- How to maintain business configuration
 - How to create transport class
 - How to implement save validation
 
+Business configuration content can be recorded on both software components of type **Business Configuration** or **Development**. The former is recommended, see also [Business Configuration for SAP BTP, ABAP Environment | SAP Blogs](https://blogs.sap.com/2019/12/20/business-configuration-for-sap-cloud-platform-abap-environment/)
 
-To assign role **Configuration Expert – Business Process Configuration** to the respective user please follow the following steps:
+The necessary transport request can be created in the Transport Organizer Tab in ADT or in the [Export Customizing Transports](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fa7366c3888848bd94566104ac52e627.html) app.
 
-  1.	Logon as administrator to your ABAP system (SAP Fiori launchpad).
-  2.	Go to Fiori app **Business Role Templates**, find the **Configuration Expert - Business Process Configuration** template and create a business role based on this template.
+The transport request must have the attribute `SAP_ATO_TRANSPORT_TYPE` set to **Business Configuration** and the attribute `SAP_CUS_TRANSPORT_CATEGORY` set to `DEFAULT_CUST` or `MANUAL_CUST`
 
-  3.	With the authorizations contained in this business role, users can create customizing requests. You can create customizing requests in two ways:
-    - Create them directly in the Transport Organizer in the Eclipse-based ABAP development tools (ADT).
-    - Create them implicitly using the method `add_to_transport_request()`. If no request and/or task exists for a user, the API will create one, if the user has the authorization. If the user has no authorization and no request and/or task exists, the API will raise an exception.
+>**HINT:** You can manage your customizing transports with the [Export Customizing Transports](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fa7366c3888848bd94566104ac52e627.html) app.
+>To access this app and to be able to create a transport request the role **Configuration Expert - Business Process Configuration** can be assigned to the user.
+>For this role the access category **Write, Read, Value Help** must be set to **Unrestricted** to be able to create a transport request.
 
-  4.	With the authorizations contained in this business role, users can release customizing requests in the Transport Organizer in the Eclipse-based ABAP development tools (ADT). When releasing the request, the business configuration content is written to the Git repository and can be pulled into the target systems.
-
+The RAP business object is enhanced with the following steps by a transport selection action and the recording of the business configuration changes during the save operation.
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Create ABAP interface)]
 
-  1. Right-click on your class **`Z_CALENDAR_XXX`** and select **New** > **Other ABAP Repository Object**.
+[ACCORDION-BEGIN [Step 1: ](Maintain business configuration)]
 
-      ![transport](element.png)
+>**HINT: This tutorial needs to be done in a licensed system.**
 
-  2. Search for **ABAP Interface**, select it and click **Next**.
 
-      ![transport](interface.png)
-
-  3. Create a new ABAP interface:
-      - Name: **`ZIF_BC_TRANSPORT_API_XXX`**
-      - Description: **`Transport interface`**
-
-      ![transport](interface2.png)
-
-      Click **Next >**.
-
-  4. Click **Finish**.
-
-      ![transport](interface3.png)
-
-  5. Insert following code:
+  1. Open behavior definition `ZCAL_I_MCAL_ALL_XXX` and edit it. Add the action `selectTransportRequest` to entity `HolidayAll`. The abstract entity `D_SelectCustomizingTransptReqP` returns all modifiable customizing transport requests where the user is the owner of the request or at least one task of the request.  
 
     ```ABAP
-    INTERFACE zif_bc_transport_api_xxx PUBLIC.
+    managed with additional save implementation in class zbp_cal_i_mcal_all_xxx unique;
+    strict;
+    with draft;
 
-      METHODS transport
-        IMPORTING
-          i_create_ref TYPE REF TO data
-          i_update_ref TYPE REF TO data
-          i_delete_ref TYPE REF TO data.
+    define behavior for zcal_i_mcal_all_xxx alias HolidayAll
+    with unmanaged save
+    lock master total etag LastChangedAtMax
+    authorization master ( global )
+    draft table zcal_x_cal_a_xxx
+    {
+      update;
+      draft action Activate;
+      draft action Discard;
+      draft action Edit;
+      draft action Resume;
+      draft determine action Prepare;
 
-      METHODS validate
-        IMPORTING
-          i_table_ref    TYPE REF TO data
-          i_reported_ref TYPE REF TO data
-          i_failed_ref   TYPE REF TO data.
+      action ( features : instance ) selectTransportRequest parameter D_SelectCustomizingTransptReqP result [1] $self;
 
-    ENDINTERFACE.
+      association _Holiday { create; with draft; }
+    }
+    define behavior for zcal_i_mcal_xxx alias HolidayRoot
+    lock dependent by _HolidayAll
+    authorization dependent by _HolidayAll
+    persistent table zcal_holiday_xxx
+    draft table zcal_d_cal_xxx
+    {
+      update;
+      delete;
+      field ( readonly ) HolidayAllID;
+      field ( readonly : update ) Holiday;
+      association _HolidayAll { with draft; }
+      association _HolidayTxt { create; with draft; }
+
+      mapping for ZCAL_HOLIDAY_XXX corresponding
+      {
+        Holiday = holiday_id;
+        HolidayDay = day_of_holiday;
+        HolidayMonth = month_of_holiday;
+      }
+    }
+
+    define behavior for zcal_i_mcal_txt_xxx alias HolidayText
+    lock dependent by _HolidayAll
+    authorization dependent by _HolidayAll
+    persistent table zcal_holitxt_xxx
+    draft table zcal_d_txt_xxx
+
+    {
+      update;
+      delete;
+      field ( readonly : update ) Holiday;
+      field ( readonly : update ) Language;
+
+      field ( readonly ) HolidayAllID;
+
+      association _HolidayAll { with draft; }
+      association _Public_Holiday { with draft; }
+
+      mapping for ZCAL_HOLITXT_XXX corresponding
+      {
+        Language = spras;
+        Holiday = holiday_id;
+        HolidayDescription = fcal_description;
+      }
+    }
     ```
 
-  6. Save and activate.
+  2. Save and activate.
 
-[DONE]
-[ACCORDION-END]
+  3. Place the cursor on action `selectTransportRequest` and use the quick assist (CTRL+1) to create the missing methods.
 
-[ACCORDION-BEGIN [Step 2: ](Create transport class)]
-The first step is to create a central class, which offers some transport change recording to the save validation and the save method for recording of the final changes. The class will reuse the SAP Cloud Platform ABAP environment Transport `API IF_A4C_BC_HANDLER`. So it will be used to wrap the generic transport API with a factory calendar specific transport API-method to offer a transport API for the Public Holiday business object. Furthermore, the class is being used to consolidate the returned success-fields, exceptions and messages of the generic API in a single output channel.
+      ![transport](select.png)
 
-  1. Right-click on **`Classes`** and select **New ABAP Class**.
+  4. Implement the following methods in class `ZBP_CAL_I_MCAL_ALL_XXX`. The `selectTransportRequest` action must only be active if the Business Configuration is in edit mode. The result of the selection is stored in the draft version of the singleton entity.
 
-      ![transport](transport.png)
-
-  2.  Create a new class:
-      - Name: **`ZCL_BC_TRANSPORT_API_XXX`**
-      - Description: **`Transport class`**
-
-      ![transport](class.png)
-
-      Click **Next**.
-
-  3. Click **Finish**.
-
-      ![transport](class2.png)
-
-  4. In your **global class** replace your code with following:
+    Insert following code:
 
     ```ABAP
-      CLASS zcl_bc_transport_api_xxx DEFINITION  PUBLIC  FINAL  CREATE PROTECTED  GLOBAL FRIENDS zcl_bc_transport_api_f_xxx.
-        PUBLIC SECTION.
-          INTERFACES zif_bc_transport_api_xxx.
+    CLASS lhc_HolidayAll DEFINITION INHERITING FROM cl_abap_behavior_handler.
+      PRIVATE SECTION.
 
-          TYPES zfieldname TYPE c LENGTH 30.
+        METHODS get_global_authorizations FOR GLOBAL AUTHORIZATION
+          IMPORTING REQUEST requested_authorizations FOR HolidayAll RESULT result.
+        METHODS get_instance_features FOR INSTANCE FEATURES
+          IMPORTING keys REQUEST requested_features FOR HolidayAll RESULT result.
 
-          METHODS:
-            constructor
-              IMPORTING
-                i_tabname TYPE tabname.
+        METHODS selectTransportRequest FOR MODIFY
+          IMPORTING keys FOR ACTION HolidayAll~selectTransportRequest RESULT result.
 
-        PROTECTED SECTION.
-          DATA: transport_api TYPE REF TO if_a4c_bc_handler,
-                tabname       TYPE tabname,
-                client_field  TYPE zfieldname.
-          METHODS transport
-            IMPORTING
-              i_check_mode      TYPE abap_bool
-              i_table_ref       TYPE REF TO data
-            RETURNING
-              VALUE(r_messages) TYPE if_a4c_bc_handler=>tt_message.
-      ENDCLASS.
+    ENDCLASS.
 
+    CLASS lhc_HolidayAll IMPLEMENTATION.
 
+      METHOD get_global_authorizations.
+      ENDMETHOD.
 
-      CLASS zcl_bc_transport_api_xxx IMPLEMENTATION.
+      METHOD get_instance_features.
+        READ ENTITIES OF zcal_i_mcal_all_xxx IN LOCAL MODE
+           ENTITY holidayall
+           ALL FIELDS WITH CORRESPONDING #( keys )
+           RESULT DATA(all).
 
+      result = VALUE #( ( %tky = all[ 1 ]-%tky
+                          %action-selecttransportrequest = COND #( WHEN all[ 1 ]-%is_draft = if_abap_behv=>mk-on THEN if_abap_behv=>mk-off
+                                                                   ELSE if_abap_behv=>mk-on  )   ) ).
 
-        METHOD constructor.
-          transport_api = cl_a4c_bc_factory=>get_handler( ).
-          tabname       = i_tabname.
-          client_field  = 'CLIENT'.
-        ENDMETHOD.
+      ENDMETHOD.
 
+      METHOD selectTransportRequest.
+       MODIFY ENTITIES OF zcal_i_mcal_all_xxx IN LOCAL MODE
+      ENTITY holidayall
+      UPDATE FIELDS ( request hidetransport )
+      WITH VALUE #( FOR key IN keys
+                   ( %tky         = key-%tky
+                     request = key-%param-transportrequestid
+                     hidetransport = abap_false ) ).
+      READ ENTITIES OF zcal_i_mcal_all_xxx IN LOCAL MODE
+        ENTITY holidayall
+          ALL FIELDS WITH CORRESPONDING #( keys )
+        RESULT DATA(holidays).
+      result = VALUE #( FOR holiday IN holidays
+                          ( %tky   = holiday-%tky
+                            %param = holiday ) ).
+      ENDMETHOD.
 
-        METHOD transport.
-          DATA: object_keys TYPE if_a4c_bc_handler=>tt_object_tables,
-                object_key  TYPE if_a4c_bc_handler=>ts_object_list,
-                table_ref   TYPE REF TO data.
-
-          FIELD-SYMBOLS:
-            <import_table>   TYPE ANY TABLE,
-            <original_table> TYPE ANY TABLE.
-
-          ASSIGN i_table_ref->* TO <import_table>.
-
-          CREATE DATA table_ref TYPE TABLE OF (tabname).
-          ASSIGN table_ref->* TO <original_table>.
-          <original_table> = CORRESPONDING #( <import_table> ).
-
-          object_key-objname = tabname.
-          object_key-tabkeys = table_ref.
-          APPEND object_key TO object_keys.
-
-          TRY.
-              transport_api->add_to_transport_request(
-                EXPORTING
-                  iv_check_mode         = i_check_mode
-                  it_object_tables      = object_keys
-                  iv_mandant_field_name = CONV #( client_field )
-                IMPORTING
-                  rt_messages           = r_messages
-                  rv_success            = DATA(success_flag) ).
-
-              IF success_flag NE 'S'.
-                RAISE EXCEPTION TYPE cx_a4c_bc_exception.
-              ENDIF.
-            CATCH cx_a4c_bc_exception INTO DATA(bc_exception).
-              APPEND
-                VALUE #( msgty = bc_exception->if_t100_dyn_msg~msgty
-                         msgid = bc_exception->if_t100_message~t100key-msgid
-                         msgno = bc_exception->if_t100_message~t100key-msgno
-                         msgv1 = bc_exception->if_t100_dyn_msg~msgv1
-                         msgv2 = bc_exception->if_t100_dyn_msg~msgv2
-                         msgv3 = bc_exception->if_t100_dyn_msg~msgv3
-                         msgv4 = bc_exception->if_t100_dyn_msg~msgv4 )
-                TO r_messages.
-          ENDTRY.
-        ENDMETHOD.
-
-
-        METHOD zif_bc_transport_api_xxx~transport.
-          FIELD-SYMBOLS:
-            <all_records> TYPE INDEX TABLE,
-            <insert>      TYPE INDEX TABLE,
-            <update>      TYPE INDEX TABLE,
-            <delete>      TYPE INDEX TABLE,
-            <row>         TYPE any.
-
-          ASSIGN i_create_ref->* TO <insert>.
-          ASSIGN i_update_ref->* TO <update>.
-          ASSIGN i_delete_ref->* TO <delete>.
-
-          DATA: table_ref TYPE REF TO data,
-                row_ref   TYPE REF TO data.
-          CREATE DATA table_ref LIKE <insert>.
-          CREATE DATA row_ref LIKE LINE OF <insert>.
-
-          ASSIGN table_ref->* TO <all_records>.
-          ASSIGN row_ref->* TO <row>.
-
-          APPEND LINES OF <insert> TO <all_records>.
-          APPEND LINES OF <update> TO <all_records>.
-          LOOP AT <delete> ASSIGNING FIELD-SYMBOL(<delete_row>).
-            <row> = CORRESPONDING #( <delete_row> ).
-            APPEND <row> TO <all_records>.
-          ENDLOOP.
-
-          SORT <all_records>.
-          DELETE ADJACENT DUPLICATES FROM <all_records> COMPARING ALL FIELDS.
-
-          DATA(messages) =
-            transport(
-              i_check_mode = abap_false
-              i_table_ref  = table_ref ).
-
-          IF line_exists( messages[ msgty = 'E' ] ) OR
-             line_exists( messages[ msgty = 'A' ] ) OR
-             line_exists( messages[ msgty = 'X' ] ).
-            ASSERT 1 EQ 2.
-          ENDIF.
-        ENDMETHOD.
-
-
-        METHOD zif_bc_transport_api_xxx~validate.
-          DATA reported_row_ref TYPE REF TO data.
-          FIELD-SYMBOLS:
-            <keys>           TYPE INDEX TABLE,
-            <failed_table>   TYPE INDEX TABLE,
-            <key_fields>     TYPE any,
-            <reported_table> TYPE INDEX TABLE,
-            <reported_row>   TYPE any,
-            <reported_key>   TYPE any,
-            <reported_msg>   TYPE REF TO if_abap_behv_message.
-
-          DATA(messages) =
-            transport(
-              i_check_mode = abap_true
-              i_table_ref  = i_table_ref ).
-
-          ASSIGN i_table_ref->*  TO <keys>.
-          ASSIGN i_reported_ref->* TO <reported_table>.
-          CREATE DATA reported_row_ref LIKE LINE OF <reported_table>.
-          ASSIGN reported_row_ref->* TO <reported_row>.
-          ASSIGN COMPONENT '%KEY' OF STRUCTURE <reported_row> TO <reported_key>.
-          ASSIGN COMPONENT '%MSG' OF STRUCTURE <reported_row> TO <reported_msg>.
-
-          LOOP AT messages INTO DATA(message).
-            IF message-msgty CA 'AEX'.
-              DATA(failed) = abap_true.
-            ENDIF.
-
-            ASSIGN COMPONENT '%KEY' OF STRUCTURE <keys>[ 1 ] TO <key_fields>.
-            <reported_key> = <key_fields>.
-            <reported_msg> = NEW lcl_abap_behv_msg(
-                                   i_severity = if_abap_behv_message=>severity-error
-                                   i_msgid    = message-msgid
-                                   i_msgno    = message-msgno
-                                   i_msgv1    = message-msgv1
-                                   i_msgv2    = message-msgv2
-                                   i_msgv3    = message-msgv3
-                                   i_msgv4    = message-msgv4 ).
-            APPEND <reported_row> TO <reported_table>.
-          ENDLOOP.
-
-          IF failed EQ abap_true.
-            " Set all keys to failed
-            ASSIGN i_failed_ref->* TO <failed_table>.
-            LOOP AT <keys> ASSIGNING FIELD-SYMBOL(<key>).
-              ASSIGN COMPONENT '%KEY' OF STRUCTURE <key> TO <key_fields>.
-              APPEND <key_fields> TO <failed_table>.
-            ENDLOOP.
-          ENDIF.
-
-        ENDMETHOD.
-      ENDCLASS.
-    ```
-
-  5. Don't save and activate yet.
-
-
-  6. In your **local types** replace your code with following:
-
-    ```ABAP
-      CLASS lcl_abap_behv_msg DEFINITION CREATE PUBLIC INHERITING FROM cx_no_check.
-        PUBLIC SECTION.
-          INTERFACES if_abap_behv_message .
-
-          METHODS constructor
-            IMPORTING
-              i_severity type if_abap_behv_message=>t_severity
-              i_msgid    type sy-msgid
-              i_msgno    type sy-msgno
-              i_msgv1    TYPE sy-msgv1
-              i_msgv2    TYPE sy-msgv2
-              i_msgv3    TYPE sy-msgv3
-              i_msgv4    TYPE sy-msgv4.
-      ENDCLASS.
-      CLASS lcl_abap_behv_msg IMPLEMENTATION.
-
-        METHOD constructor.
-          CALL METHOD super->constructor
-            EXPORTING
-              previous = previous.
-
-          if_t100_dyn_msg~msgty = CONV #( i_severity ).
-          if_t100_dyn_msg~msgv1 = if_t100_message~t100key-attr1 = i_msgv1.
-          if_t100_dyn_msg~msgv2 = if_t100_message~t100key-attr2 = i_msgv2.
-          if_t100_dyn_msg~msgv3 = if_t100_message~t100key-attr3 = i_msgv3.
-          if_t100_dyn_msg~msgv4 = if_t100_message~t100key-attr4 = i_msgv4.
-
-          if_t100_message~t100key-msgno = i_msgno.
-          if_t100_message~t100key-msgid = i_msgid.
-
-          if_abap_behv_message~m_severity = i_severity.
-        ENDMETHOD.
-
-      ENDCLASS.
-
-    ```
-
-  5. Don't save and activate yet.   
-
-  6. Right-click on **`Classes`** and select **New ABAP Class**.
-
-      ![transport](transport.png)
-
-  7.  Create a new class:
-      - Name: **`ZCL_BC_TRANSPORT_API_F_XXX`**
-      - Description: **`Transport API Factory Class`**
-
-      ![transport](class3.png)
-
-      Click **Next**.
-
-  8. Click **Finish**.
-
-      ![transport](class4.png)
-
-  9. Replace your code with following:
-
-    ```ABAP
-    CLASS zcl_bc_transport_api_f_xxx DEFINITION  PUBLIC  FINAL  CREATE PUBLIC.
-    PUBLIC SECTION.
-      CLASS-METHODS get_api
-        IMPORTING
-          i_tabname     TYPE tabname
-        RETURNING
-          VALUE(result) TYPE REF TO zif_bc_transport_api_xxx.
     ENDCLASS.
 
 
 
-    CLASS zcl_bc_transport_api_f_xxx IMPLEMENTATION.
-    METHOD get_api.
-      result = NEW zcl_bc_transport_api_xxx( i_tabname ).
-    ENDMETHOD.
-    ENDCLASS.
-    ```
-
-  10. **Save** and **activate** all classes.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Implement save validation)]
-After you have created the global transport class for your business object you can integrate it into your UI. First, the creation of a validation is needed. This validation will check whether all prerequisites are fulfilled, and if the changes can be recorded on the transport request.
-
-  1. Open the behavior definition **`ZCAL_I_HOLIDAY_XXX`** and add following to the **root node**:
-
-    ```ABAP
-    validation val_transport on save
-    { field holiday_id, HolidayDescription, day_of_holiday, month_of_holiday;}
-    ```
-
-    Add following to the **text node**:
-
-    ```ABAP
-     validation val_transport on save
-      { field holiday_id, fcal_description, spras; }
-    ```
-
-      ![save](save.png)
-
-  2. Save and activate your behavior definition. Set the cursor to the validation name **`val_transport`** of your **root node** and press **CTRL + 1**. Select **`Add missing method for validation val_transport in new local handler class`**.
-
-      ![save](save2.png)
-
-  3. Implement the validation on the **root node** of your **`val_transport`**.
-
-    ```ABAP
-    METHOD val_transport.
-        DATA(transport_api) =
-          zcl_bc_transport_api_f_xxx=>get_api( 'ZCAL_I_HOLIDAY_XXX' ).
-
-        transport_api->validate(
-          i_table_ref    = REF #( keys )
-          i_reported_ref = REF #( reported-holidayroot )
-          i_failed_ref   = REF #( failed-holidayroot ) ).
-    ENDMETHOD.
-    ```
-
-      ![method](method.png)
-
-  4. Repeat step **4.2** to add the missing method for validation **`val_transport`** of your **text node**.
-
-      ![save](save3.png)
-
-  5. Implement the validation on the **text node** of your **`val_transport`**.
-
-    ```ABAP
-    METHOD val_transport.
-     DATA(transport_api) =
-       zcl_bc_transport_api_f_xxx=>get_api( 'ZCAL_I_HOLITXT_XXX' ).
-
-     transport_api->validate(
-       i_table_ref    = REF #( keys )
-       i_reported_ref = REF #( reported-holidaytext )
-       i_failed_ref   = REF #( failed-holidaytext ) ).
-    ENDMETHOD.
-    ```
-
-      ![method](method2.png)
-
-  6. Save and activate your class **`ZBP_CAL_I_HOLIDAY_XXX`**.
-
-      The validation is finished. If you test the factory calendar and save some changes, the validation will be executed. In case the changes cannot be recorded on the transport request, the validation will output some error messages and the save action will be cancelled.
-
-  7. For the final recording of the changes on save, we have to implement an additional save method. The previously created coding can be reused.
-
-    Open your behavior definition **`ZCAL_I_HOLIDAY_XXX`** and add the **with additional save** statement to your **root node** and **text node**.
-
-    ```ABAP
-    with additional save
-    ```
-
-      ![record](record.png)
-
- 8. Save and activate.
-
- 9. Set the cursor to **`save`** of your **root node** and press **CTRL + 1**.
-    Select **`Add missing method for validation save_modified in new local saver class`**.
-
-    ```ABAP
-    METHOD save_modified.
-    DATA(transport_api_root) =
-      zcl_bc_transport_api_f_xxx=>get_api( 'ZCAL_I_HOLIDAY_XXX' ).
-    DATA(transport_api_text) =
-      zcl_bc_transport_api_f_xxx=>get_api( 'ZCAL_I_HOLITXT_XXX' ).
-
-    transport_api_root->transport(
-      i_create_ref = REF #( create-holidayroot )
-      i_update_ref = REF #( update-holidayroot )
-      i_delete_ref = REF #( delete-holidayroot ) ).
-
-    transport_api_text->transport(
-      i_create_ref = REF #( create-holidaytext )
-      i_update_ref = REF #( update-holidaytext )
-      i_delete_ref = REF #( delete-holidaytext ) ).
-    ENDMETHOD.
-
-    ```
-
-    ![record](record2.png)
-
- 11. Save and activate.
-
- 12. Check your result. Your implementation should look like following:
-
-    ```ABAP
-    CLASS lsc_zcal_i_holiday_xxx DEFINITION INHERITING FROM cl_abap_behavior_saver.
-
+    CLASS lsc_ZCAL_I_MCAL_ALL_XXX DEFINITION INHERITING FROM cl_abap_behavior_saver.
       PROTECTED SECTION.
 
         METHODS save_modified REDEFINITION.
 
+        METHODS cleanup_finalize REDEFINITION.
 
     ENDCLASS.
 
-    CLASS lsc_zcal_i_holiday_xxx IMPLEMENTATION.
+    CLASS lsc_ZCAL_I_MCAL_ALL_XXX IMPLEMENTATION.
 
-     METHOD save_modified.
-      DATA(transport_api_root) =
-        zcl_bc_transport_api_f_xxx=>get_api( 'ZCAL_I_HOLIDAY_XX' ).
-      DATA(transport_api_text) =
-        zcl_bc_transport_api_f_xxx=>get_api( 'ZCAL_I_HOLITXT_XXX' ).
-
-      transport_api_root->transport(
-        i_create_ref = REF #( create-holidayroot )
-        i_update_ref = REF #( update-holidayroot )
-        i_delete_ref = REF #( delete-holidayroot ) ).
-
-      transport_api_text->transport(
-        i_create_ref = REF #( create-holidaytext )
-        i_update_ref = REF #( update-holidaytext )
-        i_delete_ref = REF #( delete-holidaytext ) ).
-    ENDMETHOD.
-
-
-    ENDCLASS.
-
-    CLASS lhc_holidaytext DEFINITION INHERITING FROM cl_abap_behavior_handler.
-
-      PRIVATE SECTION.
-
-        METHODS val_transport FOR VALIDATE ON SAVE
-          IMPORTING keys FOR HolidayText~val_transport.
-
-    ENDCLASS.
-
-    CLASS lhc_holidaytext IMPLEMENTATION.
-
-     METHOD val_transport.
-      DATA(transport_api) =
-        zcl_bc_transport_api_f_xxx=>get_api( 'ZCAL_I_HOLITXT_XXX' ).
-
-      transport_api->validate(
-        i_table_ref    = REF #( keys )
-        i_reported_ref = REF #( reported-holidaytext )
-        i_failed_ref   = REF #( failed-holidaytext ) ).
-    ENDMETHOD.
-
-
-    ENDCLASS.
-
-    CLASS lhc_ZCAL_I_HOLIDAY_XXX   DEFINITION INHERITING
-      FROM cl_abap_behavior_handler.
-      PRIVATE SECTION.
-
-       METHODS det_create_and_change_texts FOR DETERMINE ON SAVE
-          IMPORTING
-            keys FOR HolidayRoot~det_create_and_change_texts.
-       METHODS val_transport FOR VALIDATE ON SAVE
-         IMPORTING keys FOR HolidayRoot~val_transport.
-       METHODS delete FOR MODIFY
-         IMPORTING keys FOR ACTION HolidayRoot~delete.
-
-       METHODS create_description
-          IMPORTING
-            i_holiday_id  TYPE zcal_holiday_id_xxx
-            i_description TYPE zcal_description_xxx.
-
-        METHODS update_description
-          IMPORTING
-            i_holiday_id  TYPE zcal_holiday_id_xxx
-            i_description TYPE zcal_description_xxx.
-
-    ENDCLASS.
-
-    CLASS lhc_ZCAL_I_HOLIDAY_XXX IMPLEMENTATION.
-
-      METHOD val_transport.
-          DATA(transport_api) =
-            zcl_bc_transport_api_f_xxx=>get_api( 'ZCAL_I_HOLIDAY_XXX' ).
-
-          transport_api->validate(
-            i_table_ref    = REF #( keys )
-            i_reported_ref = REF #( reported-holidayroot )
-            i_failed_ref   = REF #( failed-holidayroot ) ).
+      METHOD save_modified.
       ENDMETHOD.
 
-      METHOD det_create_and_change_texts.
-
-        READ ENTITIES OF zcal_i_holiday_xxx
-          ENTITY HolidayRoot
-          FROM VALUE #( FOR <root_key> IN keys ( %key = <root_key> ) )
-          RESULT DATA(public_holidays_table).
-
-
-        LOOP AT public_holidays_table INTO DATA(public_holiday).
-          READ ENTITIES OF zcal_i_holiday_xxx
-            ENTITY HolidayRoot BY \_HolidayTxt
-            FROM VALUE #( ( %key = public_holiday-%key ) )
-            RESULT DATA(description_table).
-          IF line_exists( description_table[
-                            spras      = sy-langu
-                            holiday_id = public_holiday-holiday_id ] ).
-            update_description(
-              i_holiday_id  = public_holiday-holiday_id
-              i_description = public_holiday-HolidayDescription ).
-
-          ELSE.
-            create_description(
-              i_holiday_id  = public_holiday-holiday_id
-              i_description = public_holiday-HolidayDescription ).
-          ENDIF.
-        ENDLOOP.
-
+      METHOD cleanup_finalize.
       ENDMETHOD.
-
-      METHOD create_description.
-        DATA:
-          description_table TYPE TABLE FOR CREATE zcal_i_holiday_xxx\_HolidayTxt,
-          description       TYPE STRUCTURE FOR CREATE zcal_i_holiday_xxx\_HolidayTxt.
-
-        description-%key    = i_holiday_id.
-        description-%target =
-          VALUE #(
-                   ( holiday_id       = i_holiday_id
-                     spras            = sy-langu
-                     fcal_description = i_description
-                     %control = VALUE
-                                #( holiday_id       = cl_abap_behv=>flag_changed
-                                   spras            = cl_abap_behv=>flag_changed
-                                   fcal_description = cl_abap_behv=>flag_changed
-                                 )
-                   )
-                 ).
-
-        APPEND description TO description_table.
-
-        MODIFY ENTITIES OF zcal_i_holiday_xxx IN LOCAL MODE
-          ENTITY HolidayRoot CREATE BY \_HolidayTxt FROM description_table.
-      ENDMETHOD.
-
-      METHOD update_description.
-        DATA:
-          description_table TYPE TABLE FOR UPDATE zcal_i_holitxt_xxx,
-          description       TYPE STRUCTURE FOR UPDATE zcal_i_holitxt_xxx.
-
-        description-holiday_id       = i_holiday_id.
-        description-spras            = sy-langu.
-        description-fcal_description = i_description.
-
-        description-%control-fcal_description = cl_abap_behv=>flag_changed.
-        APPEND description TO description_table.
-
-        MODIFY ENTITIES OF zcal_i_holiday_xxx IN LOCAL MODE
-          ENTITY HolidayText UPDATE FROM description_table.
-      ENDMETHOD.
-
-      METHOD delete.
-        CONSTANTS no_longer_valid TYPE zconfig_deprecation_code_xxx VALUE 'E'.
-        DATA holidayroot_table TYPE TABLE FOR UPDATE zcal_i_holiday_xxx.
-
-        LOOP AT keys ASSIGNING FIELD-SYMBOL(<key>).
-          APPEND
-            VALUE #( holiday_id            = <key>-holiday_id
-                     configdeprecationcode = no_longer_valid
-                     %control              = VALUE #( configdeprecationcode = cl_abap_behv=>flag_changed ) )
-               TO holidayroot_table.
-        ENDLOOP.
-
-        MODIFY ENTITIES OF zcal_i_holiday_xxx IN LOCAL MODE
-          ENTITY HolidayRoot UPDATE FROM holidayroot_table
-              MAPPED   DATA(ls_mapped)
-              FAILED   DATA(ls_failed)
-              REPORTED DATA(ls_reported).
-      ENDMETHOD.
-
 
     ENDCLASS.
-
     ```
 
-    Now your whole transport functionality is ready for testing. Whenever you now save an object all keys will be written to a transport request. In case of problems, please consider checking the prerequisites section again.
+  6. Save and activate.
+
+  7. Edit Behavior Projection `ZCAL_C_MCAL_ALL_XXX`. Add the action `selectTransportRequest` to entity `HolidayAll`.
+
+    ```ABAP
+    projection implementation in class zbp_cal_c_mcal_all_xxx unique;
+    strict;
+    use draft;
+
+    define behavior for ZCAL_C_MCAL_ALL_XXX alias HolidayAll
+    {
+      use action Activate;
+      use action Discard;
+      use action Edit;
+      use action Prepare;
+      use action Resume;
+
+      use action selectTransportRequest;
+
+      use association _Holiday { create ( augment ); with draft; }
+    }
+    define behavior for ZCAL_c_MCAL_XXX alias HolidayRoot
+    {
+      use update ( augment );
+      use delete;
+
+      field ( modify ) HolidayDescription;
+
+      use association _HolidayAll { with draft; }
+      use association _HolidayTxt { create; with draft; }
+    }
+
+    define behavior for ZCAL_c_MCAL_TXT_XXX alias HolidayText
+    {
+      use update;
+      use delete;
+
+      use association _HolidayAll { with draft; }
+      use association _Public_Holiday { with draft; }
+    }
+    ```
+
+  8. Save and activate.
+
+  9. Edit Metadata Extension `ZCAL_C_MCAL_ALL_XXX`. The `Transport` facet is only shown when a transport request was selected.
+
+    ```ABAP
+    @Metadata.layer: #CORE
+
+    @UI: { headerInfo: { typeName: 'Holiday' } }
+    annotate view ZCAL_C_MCAL_ALL_XXX with
+    {
+      @UI.facet: [
+                {
+            id: 'Transport',
+            purpose: #STANDARD,
+            label: 'Transport',
+            type: #IDENTIFICATION_REFERENCE,
+            position: 1,
+            hidden: #(HideTransport)
+          },
+      {
+      purpose:  #STANDARD,
+      type:     #LINEITEM_REFERENCE,
+      label:    'Holidays',
+      position: 2,
+      targetElement: '_Holiday'
+      }
+      ]
+
+      @UI.lineItem: [{ position: 1 }]
+      HolidayAllID;
+      @UI.identification: [{position: 2, importance: #HIGH },{ type: #FOR_ACTION, dataAction: 'selectTransportRequest', label: 'Select Transport Request' }]
+      Request;
+      @UI.hidden
+      HideTransport;
+    }
+    ```
+
+ 10. Save and activate.
+
+ 11. Start the Maintain Business Configuration app and select your business configuration.
+
+      ![transport](mbc1.png)
+
+ 12.  A new action **Select Transport Request** is available in top right corner. The action is only active in edit mode.
+
+      ![transport](mbc.png)
+
+ 13. Click **Edit**.
+
+      ![transport](mbc2.png)
+
+ 14. Click **Select Transport Request** and select an transport request.
+
+      ![transport](mbc3.png)
+
+ 15. If no transport request is available, use the **[Export Customizing Transport](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/fa7366c3888848bd94566104ac52e627.html)** to create one. Enter your transport request from the transport organizer tab in ADT.
+
+      ![transport](mbc4.png)
+
+ 16. After selecting a transport request, the facet **Transport** is visible.
+
+      ![transport](mbc5.png)
+
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add ETAG to factory calendar business object)]
 
-The ABAP RESTful Programming Model supports optimistic locking using entity tags. The timestamp (last changed on) is used as ETAG-field. On save, the value of the ETAG field kept in the user interface is compared with the value of the ETAG field in the database. If the value no longer matches, another process must have changed the entity. The outdated version is detected by RAP and the saving process is aborted with an error message.
+[ACCORDION-BEGIN [Step 2: ](Recording changes in transport request for software component of type development)]
 
->Ensure that the annotation of the ETAG field **`changedat`** in your data definition **`ZCAL_I_HOLIDAY_XXX`** is **`@Semantics.systemDateTime.lastChangedAt: true`**.
 
-  1. Open your database table **`ZCAL_HOLIDAY_XXX`** and ensure that you added field **`changedat`** of type **`timestampl`**.
-
-    ![lock](lock.png)
-
-  2. Open behavior definition **`ZCAL_I_HOLIDAY_XXX`** and add **`etag master changedat`** to the behavior definition of entity **`ZCAL_I_HOLIDAY_XXX`**.
-
-     ![lock](lock2.png)
-
-     Save and activate.
-
-  4. Your code should look like following:
+1. Edit Behavior Definition `ZCAL_I_MCAL_ALL_XXX`. Add [validation](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/171e26c36cca42699976887b4c8a83bf.html) `validateChanges` to both entity `HolidayRoot` and `HolidayText`.
 
     ```ABAP
-    managed implementation in class zbp_cal_i_holiday_xxx unique;
+    managed with additional save implementation in class zbp_cal_i_mcal_all_xxx unique;
+    strict;
+    with draft;
 
-    define behavior for ZCAL_I_HOLIDAY_XXX alias HolidayRoot
-    persistent table ZCAL_HOLIDAY_XXX
-    lock master
-    with additional save
-    //authorization master ( instance )
-    etag master changedat
+    define behavior for zcal_i_mcal_all_xxx alias HolidayAll
+    with unmanaged save
+    lock master total etag LastChangedAtMax
+    authorization master ( global )
+    draft table zcal_x_cal_a_xxx
     {
-      create;
+      update;
+      draft action Activate;
+      draft action Discard;
+      draft action Edit;
+      draft action Resume;
+      draft determine action Prepare;
+
+      action ( features : instance ) selectTransportRequest parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+      association _Holiday { create; with draft; }
+    }
+    define behavior for zcal_i_mcal_xxx alias HolidayRoot
+    lock dependent by _HolidayAll
+    authorization dependent by _HolidayAll
+    persistent table zcal_holiday_xxx
+    draft table zcal_d_cal_xxx
+    {
       update;
       delete;
+      field ( readonly ) HolidayAllID;
+      field ( readonly : update ) Holiday;
+      association _HolidayAll { with draft; }
+      association _HolidayTxt { create; with draft; }
 
-      determination det_create_and_change_texts on save
-      { field HolidayDescription; }
+      mapping for ZCAL_HOLIDAY_XXX corresponding
+      {
+        Holiday = holiday_id;
+        HolidayDay = day_of_holiday;
+        HolidayMonth = month_of_holiday;
+      }
 
-      validation val_transport on save
-     { field holiday_id, HolidayDescription, day_of_holiday, month_of_holiday;}
-
+      validation validateChanges on save { create; update; delete; }
     }
 
-    define behavior for ZCAL_I_HOLITXT_XXX alias HolidayText
+    define behavior for zcal_i_mcal_txt_xxx alias HolidayText
+    lock dependent by _HolidayAll
+    authorization dependent by _HolidayAll
     persistent table zcal_holitxt_xxx
-    lock dependent by _PublicHoliday
-    with additional save
+    draft table zcal_d_txt_xxx
+
     {
-      update; delete;
-      field( readonly ) holiday_id;
+      update;
+      delete;
+      field ( readonly : update ) Holiday;
+      field ( readonly : update ) Language;
 
-       validation val_transport on save
-      { field holiday_id, fcal_description, spras; }
+      field ( readonly ) HolidayAllID;
 
+      association _HolidayAll { with draft; }
+      association _Public_Holiday { with draft; }
+
+
+      mapping for ZCAL_HOLITXT_XXX corresponding
+      {
+        Language = spras;
+        Holiday = holiday_id;
+        HolidayDescription = fcal_description;
+      }
+
+
+      validation validateChanges on save { create; update; delete; }
     }
     ```
 
-  5. Open your service binding to start your SAP Fiori Elements preview.
+2. Save and activate.
 
-     If one entity of the factory calendar is edited from two users at the same time, an error message appears:
+3. One after another place the cursor on the both validations and use the quick assist (CTRL+1)to create the missing methods.
 
-      ![lock](lock3.png)
+    ![transport](cursor1.png)
+
+
+    ![transport](cursor2.png)
+
+4. Edit Class `ZBP_CAL_I_MCAL_ALL_XXX`. Implement the validation methods, the save method and add a new helper class.
+
+    ```ABAP
+    CLASS lhc_mbc_cts DEFINITION.
+      PUBLIC SECTION.
+        METHODS get_mbc_cts RETURNING VALUE(result) TYPE REF TO if_mbc_cp_rap_table_cts.
+    ENDCLASS.
+
+    CLASS lhc_mbc_cts IMPLEMENTATION.
+      METHOD get_mbc_cts.
+        result = mbc_cp_api=>rap_table_cts( table_entity_relations = VALUE #( ( entity = 'HolidayRoot' table = 'ZCAL_HOLIDAY_XXX' )
+                                                                              ( entity = 'HolidayText' table = 'ZCAL_HOLITXT_XXX' ) ) ).
+      ENDMETHOD.
+    ENDCLASS.
+
+    CLASS lhc_holidayroot DEFINITION INHERITING FROM cl_abap_behavior_handler.
+      PRIVATE SECTION.
+        METHODS validateChanges FOR VALIDATE ON SAVE
+          IMPORTING keys FOR HolidayRoot~validateChanges.
+    ENDCLASS.
+
+    CLASS lhc_holidayroot IMPLEMENTATION.
+      METHOD validateChanges.
+        DATA change TYPE REQUEST FOR CHANGE zcal_i_mcal_all_xxx.
+        SELECT SINGLE request FROM zcal_x_cal_a_xxx INTO @DATA(request).
+        NEW lhc_mbc_cts( )->get_mbc_cts( )->validate_changes(
+            transport_request = request
+            table             = 'ZCAL_HOLIDAY_XXX'
+            keys              = REF #( keys )
+            reported          = REF #( reported )
+            failed            = REF #( failed )
+            change            = REF #( change-holidayroot ) ).
+      ENDMETHOD.
+    ENDCLASS.
+
+    CLASS lhc_holidaytext DEFINITION INHERITING FROM cl_abap_behavior_handler.
+      PRIVATE SECTION.
+        METHODS validateChanges FOR VALIDATE ON SAVE
+          IMPORTING keys FOR HolidayText~validateChanges.
+    ENDCLASS.
+
+    CLASS lhc_holidaytext IMPLEMENTATION.
+      METHOD validatechanges.
+        DATA change TYPE REQUEST FOR CHANGE zcal_i_mcal_all_xxx.
+        SELECT SINGLE request FROM zcal_x_cal_a_xxx INTO @DATA(request).
+        NEW lhc_mbc_cts( )->get_mbc_cts( )->validate_changes(
+            transport_request = request
+            table             = 'ZCAL_HOLITXT_XXX'
+            keys              = REF #( keys )
+            reported          = REF #( reported )
+            failed            = REF #( failed )
+            change            = REF #( change-holidaytext ) ).
+      ENDMETHOD.
+    ENDCLASS.
+
+    CLASS lhc_holidayall DEFINITION INHERITING FROM cl_abap_behavior_handler.
+      PRIVATE SECTION.
+        METHODS get_global_authorizations FOR GLOBAL AUTHORIZATION
+          IMPORTING REQUEST requested_authorizations FOR holidayall RESULT result.
+        METHODS get_instance_features FOR INSTANCE FEATURES
+          IMPORTING keys REQUEST requested_features FOR holidayall RESULT result.
+        METHODS selecttransportrequest FOR MODIFY
+          IMPORTING keys FOR ACTION holidayall~selecttransportrequest RESULT result.
+    ENDCLASS.
+
+    CLASS lhc_holidayall IMPLEMENTATION.
+      METHOD get_global_authorizations.
+      ENDMETHOD.
+
+      METHOD get_instance_features.
+        READ ENTITIES OF zcal_i_mcal_all_xxx IN LOCAL MODE
+             ENTITY holidayall
+             ALL FIELDS WITH CORRESPONDING #( keys )
+             RESULT DATA(all).
+
+        result = VALUE #( ( %tky = all[ 1 ]-%tky
+                            %action-selecttransportrequest = COND #( WHEN all[ 1 ]-%is_draft = if_abap_behv=>mk-on THEN if_abap_behv=>mk-off
+                                                                     ELSE if_abap_behv=>mk-on  )   ) ).
+      ENDMETHOD.
+
+      METHOD selecttransportrequest.
+        MODIFY ENTITIES OF zcal_i_mcal_all_xxx IN LOCAL MODE
+        ENTITY holidayall
+        UPDATE FIELDS ( request hidetransport )
+        WITH VALUE #( FOR key IN keys
+                     ( %tky         = key-%tky
+                       request = key-%param-transportrequestid
+                       hidetransport = abap_false ) ).
+        READ ENTITIES OF zcal_i_mcal_all_xxx IN LOCAL MODE
+          ENTITY holidayall
+            ALL FIELDS WITH CORRESPONDING #( keys )
+          RESULT DATA(holidays).
+        result = VALUE #( FOR holiday IN holidays
+                            ( %tky   = holiday-%tky
+                              %param = holiday ) ).
+      ENDMETHOD.
+
+    ENDCLASS.
+
+    CLASS lsc_zcal_i_mcal_all_xxx DEFINITION INHERITING FROM cl_abap_behavior_saver.
+      PROTECTED SECTION.
+        METHODS save_modified REDEFINITION.
+        METHODS cleanup_finalize REDEFINITION.
+    ENDCLASS.
+
+    CLASS lsc_zcal_i_mcal_all_xxx IMPLEMENTATION.
+      METHOD save_modified.
+        READ TABLE update-holidayall INDEX 1 INTO DATA(all).
+        IF all-request IS NOT INITIAL.
+          NEW lhc_mbc_cts( )->get_mbc_cts( )->record_changes(
+            EXPORTING
+              transport_request = all-request
+              create            = REF #( create )
+              update            = REF #( update )
+              delete            = REF #( delete ) ).
+        ENDIF.
+      ENDMETHOD.
+
+      METHOD cleanup_finalize.
+      ENDMETHOD.
+    ENDCLASS.
+    ```
+
+5. Save and activate.
+
+6. Start the **Maintain Business Configuration** app and select your business configuration.
+
+    ![transport](mbc1.png)
+
+7. If a draft version is available, discard it by clicking **Cancel**. Click **Edit**, perform some changes on the business configuration entries.
+
+    ![transport](edit.png)
+
+8. Use  **Select Transport Request** to select a transport request.
+
+    ![transport](transport2.png)
+
+9. Enter your transport request.
+
+    ![transport](transport3.png)
+
+10. Click **Save**. Now you can see your transport request.
+
+    ![transport](save4.png)
+
+12. Start the **Export Customizing Transport** app.
+
+    ![transport](export.png)
+
+13. Check if the table content was recorded on the selected transport request.
+
+    ![transport](export2.png)
+
+    ![transport](export3.png)
+
+
 
 [DONE]
 [ACCORDION-END]

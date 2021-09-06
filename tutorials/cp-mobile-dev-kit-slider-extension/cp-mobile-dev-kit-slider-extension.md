@@ -3,7 +3,7 @@ title: Create a Slider Custom Control in an MDK App (Using Metadata Approach)
 description: Build and run the Mobile Development Kit client with slider custom control functionality for Android and iOS platforms.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>advanced, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
+tags: [ tutorial>advanced, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
 time: 35
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -11,54 +11,53 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by allowing custom domains.)
 
 ## Details
 ### You will learn
   - How to register and consume an Extension control in MDK Metadata
-  - How to write an extension via NativeScript
-  - How to connect to SAP Cloud Platform Mobile application
+  - How to write an extension via `NativeScript`
+  - How to connect to SAP Mobile application
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/1-Create-a-Slider-Custom-Control-Using-Metadata-Approach) and start directly with step 6 in this tutorial.
 
 ---
 
+To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls by using `NativeScript` (TypeScript/JavaScript applicable for both Android and iOS)
 
-To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls by using **NativeScript** (TypeScript/JavaScript applicable for both Android and iOS)
-
-In this tutorial, you will create a Slider extension via NativeScript (in TypeScript language) which will be common for both device platforms.
+In this tutorial, you will create a Slider extension via `NativeScript` (in TypeScript language) which will be common for both device platforms.
 
 ![MDK](img_8.gif)
 
-[ACCORDION-BEGIN [Step 1: ](Set up the application foundation)]
+[ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Business Application Studio)]
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. Navigate to *File* menu &rarr; click **New Project from Template**.
+2. Click **Start from template** on Welcome page.
 
-    !![MDK](img_1.2.png)
+    !![MDK](img-1.2.png)
+
+    >If you do not see Welcome page, you can access it via **Help** menu.
 
 3. Select **MDK Project** and click **Next**.
 
-    !![MDK](img_1.3.png)
+    !![MDK](img-1.3.png)
 
-4. In *Basic Information* step, select or provide the below information and click **Next**:
+4. In *Type* step, select or provide the below information and click **Finish**:
 
     | Field | Value |
     |----|----|
-    | `MDK template type`| Select `Empty` from the dropdown |
-    | `Your project name` | `MDK_Slider` |
-    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |    
+    | `MDK Template Type`| Select `Empty` from the dropdown |
+    | `Your Project Name` | `MDK_Slider` |
+    | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |    
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
 
-    !![MDK](img_1.4.png)
+    !![MDK](img-1.4.png)
 
     >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.   
 
-5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Slider` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
-
-    !![MDK](img_1.5.png)
+5. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Slider` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -75,13 +74,13 @@ The extension control that you will be creating to extend the functionality of y
 
 3. Right-click **Extensions** | select **MDK: Register Extension Control**.
 
-    !![MDK](img_2.1.png)
+    !![MDK](img-2.1.png)
 
 4. In `Template Selection` step, select **New and register Metadata Extension Control**. Click **Next**.
 
     !![MDK](img_2.2.png)
 
-5. Provide the below information:
+5. In the **Basic Information** step, provide the below information:
 
     | Field | Value |
     |----|----|
@@ -127,7 +126,7 @@ The extension control that you will be creating to extend the functionality of y
     }
     ```
 
-    !![MDK](img_2.4.png)
+    !![MDK](img-2.4.png)
 
     >Above schema will add these predefined properties (`MaxValue`, `MinValue` and `Title`) in the map extension control. You will provide values for these properties in next step.
 
@@ -166,29 +165,17 @@ You will add this registered control in a Form Cell page.
 
     >You can find more details about the **Section Extension** in [this](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/FormCell/Extension.schema.html) guide.    
 
-4. In the **Properties** section, set the **Height** to 72.
-
-    !![MDK](img_3.4.png)
-
-5. Scroll down to the **Extension Properties**, and provide minimum & maximum counter value for the Extension control properties.
+4. In the **Properties** section, provide the below value:
 
     | Field | Value |
-    |----|----|
+    |----|----|    
+    | `Name`| `MyExtensionControlName` |
+    | `Height` | 72 |
     | `MaxValue`| 200 |
     | `MinValue` | 10 |
     | `Title` | Counter |  
 
-    !![MDK](img_3.5.png)
-
-6. You will fetch the value of the Slider control and would display this value in a message.
-
-    Right-click the `SliderExtension.page`, open it with **Code Editor**.
-
-    !![MDK](img_3.6.png)
-
-    Rename the value for `_Name` property to `MyExtensionControlName`.
-
-    !![MDK](img_3.6.1.png)
+    !![MDK](img-3.5.png)
 
 7. Create a new Message action.
 
@@ -225,11 +212,11 @@ You will add this registered control in a Form Cell page.
 
     Double click the **Save** type and click **OK**.
 
-    !![MDK](img_3.9.png)
+    !![MDK](img-3.9.png)
 
-10. In the **Properties** pane | **Events** tab, click the **link** icon for the `OnPress` property to open the object browser, bind it to `ShowMessage.action`.
+10. In the **Properties** pane | **Events** tab, click the 3 dots icon for the `OnPress` property to open the **Object Browser**, bind it to `ShowMessage.action`.
 
-    !![MDK](img_3.10.png)
+    !![MDK](img-3.10.png)
 
 11. You can also add an input field where you can provide a manual entry for the slider value and the counter will adapt accordingly.
 
@@ -269,11 +256,11 @@ You will add this registered control in a Form Cell page.
     | `Caption`| `Manual Entry` |
     | `placeholder` | `Enter number to set the slider ext's value` |
 
-    !![MDK](img_3.16.png)
+    !![MDK](img-3.16.png)
 
-15. Navigate to **Events** tab, click the **link** icon for the `OnValueChange` property to open the object browser, bind it to `SetExtensionValue.js`.
+15. Navigate to **Events** tab, click the 3 dots icon for the `OnValueChange` property to open the **Object Browser**, bind it to `SetExtensionValue.js`.
 
-    !![MDK](img_3.17.png)
+    !![MDK](img-3.17.png)
 
 [DONE]
 [ACCORDION-END]
@@ -286,17 +273,18 @@ You will add this registered control in a Form Cell page.
 
 
 
-        Extensions
-        ├── MySliderModule
-        │   └── controls
-        │       ├── MySliderPlugin
-        │       │   ├── android
-        │       │   │   └── MySlider.ts
-        │       │   ├── ios
-        │       │   │   └── MySlider.ts
-        │       │   └── MySlider.ts
-        │       └── MySliderExtension.ts
-        └── tsconfig.json
+        ├── Extensions
+          ├── MySliderModule
+           │   └── controls
+           │       ├── MySliderExtension.ts
+           │       └── MySliderPlugin
+           │           ├── MySlider.ts
+           │           ├── android
+           │           │   └── MySlider.ts
+           │           └── ios
+           │               └── MySlider.ts
+           └── mdk_slider.extension
+
 
 
 
@@ -304,10 +292,8 @@ You will add this registered control in a Form Cell page.
 2. In `MySliderPlugin/android/MySlider.ts` file, copy and paste the following code.
 
     ```JavaScript / TypeScript
-    import { Observable } from 'tns-core-modules/data/observable';
-    import { View } from 'tns-core-modules/ui/core/view';
-    import { layout } from 'tns-core-modules/ui/core/view';
-    import { device as Device } from 'tns-core-modules/platform';
+    import { Observable } from '@nativescript/core/data/observable';
+    import {​​​​​​ Device, View, Utils }​​​​​​ from'@nativescript/core';
     /*
       This is a way to keep iOS and Android implementation of your extension separate
       We will encapsulate the MySlider class definition inside a function called GetMySliderClass
@@ -355,7 +341,7 @@ You will add this registered control in a Form Cell page.
             public createNativeView(): Object {
                 //Create an Android label
                 this._label = new android.widget.TextView(this._androidcontext);
-                const labelBottomPaddingInPx = layout.round(layout.toDevicePixels(8)); // For top & bottom padding, always 16dp
+                const labelBottomPaddingInPx = Utils.layout.round(Utils.layout.toDevicePixels(8)); // For top & bottom padding, always 16dp
                 this._label.setPadding(0, 0, 0, labelBottomPaddingInPx);
                 this._label.setLayoutParams(new android.view.ViewGroup.LayoutParams(-1, -2));
 
@@ -368,8 +354,8 @@ You will add this registered control in a Form Cell page.
                 this._layout.setOrientation(android.widget.LinearLayout.VERTICAL);
                 this._layout.setLayoutParams(new android.view.ViewGroup.LayoutParams(-1, -1));
 
-                const hortPaddingInPx = layout.round(layout.toDevicePixels(getPadding()));
-                const vertPaddingInPx = layout.round(layout.toDevicePixels(16)); // For top & bottom padding, always 16dp
+                const hortPaddingInPx = Utils.layout.round(Utils.layout.toDevicePixels(getPadding()));
+                const vertPaddingInPx = Utils.layout.round(Utils.layout.toDevicePixels(16)); // For top & bottom padding, always 16dp
                 this._layout.setPadding(hortPaddingInPx, vertPaddingInPx, hortPaddingInPx, vertPaddingInPx);
                 this._layout.addView(this._label);
                 this._layout.addView(this._seekbar);
@@ -477,15 +463,14 @@ You will add this registered control in a Form Cell page.
     }
     ```
 
-    >In your import function, if you see errors related to `tns-core-modules` or `mdk-core`, you can ignore them. There is currently no reference of such libraries in the MDK editor.
+    >In your import function, if you see errors related to `@nativescript/core`, you can ignore them. There is currently no reference of such libraries in the MDK editor.
 
 3. Save the `MySliderPlugin/android/MySlider.ts` file.
 
 4. In `MySliderPlugin/iOS/MySlider.ts` file, copy and paste the following code.
 
     ```JavaScript / TypeScript
-    import { View } from 'tns-core-modules/ui/core/view';
-
+    import {​​​​​​View}​​​​​​ from'@nativescript/core';
     /*
       This is a way to keep iOS and Android implementation of your extension separate
       You will encapsulate the MySlider class definition inside a function called GetMySliderClass
@@ -499,6 +484,7 @@ You will add this registered control in a Form Cell page.
          */
 
         // This is a class that handles the native event callbacks
+        @NativeClass()
         class SliderHandler extends NSObject {
 
             //This handler function will be called whenever the slider's value is changed
@@ -659,8 +645,7 @@ You will add this registered control in a Form Cell page.
 6. In `MySliderPlugin/MySlider.ts` file, copy and paste the following code.
 
     ```JavaScript / TypeScript
-    import * as application from 'tns-core-modules/application';
-
+    import * as application from '@nativescript/core/application';
     export let MySlider;
     let MySliderModule;
     /*
@@ -799,55 +784,6 @@ You will add this registered control in a Form Cell page.
 
 9. Save the `MySliderExtension.ts` file.
 
-10. In `tsconfig.json` file, copy and paste the following code.
-
-    ```JSON
-    {
-        "compilerOptions": {
-            "module": "commonjs",
-            "target": "es5",
-            "experimentalDecorators": true,
-            "emitDecoratorMetadata": true,
-            "removeComments": true,
-            "inlineSourceMap": false,
-            "sourceMap": false,
-            "noEmitOnError": false,
-            "noEmitHelpers": true,
-            "declaration": true,
-            "lib": [
-                "es6",
-                "dom"
-            ],
-            "baseUrl": ".",
-            "paths": {
-                "tns-core-modules/*": [
-                    "./node_modules/tns-core-modules/*"
-                ],
-                "mdk-sap": [
-                    "./node_modules/mdk-sap"
-                ],
-                "toolbar-plugin": [
-                    "./node_modules/toolbar-plugin"
-                ],
-                "zip-plugin": [
-                    "./node_modules/zip-plugin"
-                ]
-            }
-        },
-        "exclude": [
-            "node_modules",
-            "platforms",
-            "modules",
-            "plugins",
-            "build.definitions"
-        ]
-    }
-    ```
-
-    >This file is used for using types defined in MDK SDK or NativeScript. You can find more details about it in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/vscode/intellisense-and-code-nav-support-for-extensions-metadata.html).
-
-11. Save the `tsconfig.json` file.
-
 [DONE]
 [ACCORDION-END]
 
@@ -855,52 +791,68 @@ You will add this registered control in a Form Cell page.
 
 In the template generated project, there is already a page called `Main.page` which is also the page that opens after successful onboarding. For this tutorial, you will change the default behavior of the app launch.
 
-Double click the `Application.app` file, select the `SliderExtension.page` for the **Main Page** field.
+Click the `Application.app` file, select the `SliderExtension.page` for the **Main Page** field.
 
-!![MDK](img_5.png)
+!![MDK](img-5.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Deploy and activate application)]
+[ACCORDION-BEGIN [Step 6: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
-    !![MDK](img_6.1.png)
+    !![MDK](img-6.1.png)
 
 2. Select deploy target as **Mobile Services**.
 
-    !![MDK](img_6.2.png)
+    !![MDK](img-5.2.png)
 
-3. Select the application from Mobile Services.
+3. Select **Mobile Services Landscape**.
 
-    !![MDK](img_6.3.png)
+    !![MDK](img-5.3.1.png)    
 
-    You should see **Deploy succeeded** message.
+4. Select the application from Mobile Services.
 
-    !![MDK](img_6.4.png)
+    !![MDK](img-5.3.png)
+
+    If you want to enable source for debugging the deployed bundle, then choose **Yes**.
+
+    !![MDK](img-4.4.png)
+
+    You should see **Deploy to Mobile Services successfully!** message.
+
+    !![MDK](img-6.4.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Populate the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 7: ](Display the QR code for app onboarding)]
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
+1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
-!![MDK](img_7.1.png)
+    !![MDK](img-7.1.png)
 
-!![MDK](img_7.2.png)
+2. Select `com.sap.mdk.demo` application from the list.
+
+    !![MDK](img-5.3.2.png)
+
+    The On-boarding QR code is now displayed.
+
+    !![MDK](img-6.2.png)
+
+>Leave the Onboarding dialog box open for step 7.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 [OPTION BEGIN [Android]]
 
@@ -922,9 +874,9 @@ Once you accept app update, you see Slider control.
 
 [OPTION END]
 
-**Congratulations!** You have successfully created a Slider Custom Control in your MDK App Using Metadata Approach and you are now all set to [Add NativeScript Plugins in an MDK App](cp-mobile-dev-kit-nativescript-geolocation).
+Congratulations, you have successfully created a Slider Custom Control in your MDK App Using Metadata Approach and you can continue with the remaining tutorials in this mission.
 
-[DONE]
+[VALIDATE_4]
 [ACCORDION-END]
 
 ---
