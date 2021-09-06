@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Set Up the SAP HANA Cloud Service
-description: This tutorial shows you how to set up the SAP HANA cloud service.
+description: This tutorial shows you how to set up the SAP HANA cloud service instance.
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-hana-cloud]
@@ -22,8 +22,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
- - How to set up the SAP HANA cloud service
- - How to add SAP HANA Client to your project
+ - How to set up the SAP HANA cloud service instance
+ - How to add SAP HANA client to your project
 
 
 To continue with this tutorial you can find the result of the previous tutorial in the [`cap/roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/roles) branch.
@@ -73,14 +73,14 @@ To continue with this tutorial you can find the result of the previous tutorial 
 [VALIDATE_1]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Prepare using SAP HANA Cloud)]
+[ACCORDION-BEGIN [Step 2: ](Prepare using SAP HANA Cloud service)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-SAP HANA Cloud service instances are not created automatically for any type of account. Therefore, you will have to create a SAP HANA Cloud instance first, if you don't have one yet.
+SAP HANA Cloud service instances are not created automatically for any type of account. Therefore, you will have to create a SAP HANA Cloud service instance first, if you don't have one yet.
 
-If you already have an SAP HANA Cloud service instance in your Cloud Foundry space **&rarr;** continue with **Use an Existing SAP HANA Cloud Service Instance**.
+If you already have an SAP HANA Cloud service instance in your Cloud Foundry space **&rarr;** continue with **Use an Existing SAP HANA Cloud service instance**.
 
-If you need to create a SAP HANA Cloud service instance first **&rarr;** continue with **Create an SAP HANA Cloud Service Instance**.
+If you need to create a SAP HANA Cloud service instance first **&rarr;** continue with **Create an SAP HANA Cloud service instance**.
 
 > Additional Documentation:
 
@@ -229,7 +229,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     !![SAP HANA Cloud Instance Created](hana_cloud_created.png)
 
-    > Your SAP HANA Cloud instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day before you start working with it.
+    > Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day before you start working with it.
 
 
 [OPTION END]
@@ -289,7 +289,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     !![SAP HANA Cloud Instance Created](hana_cloud_created.png)
 
-    > Your SAP HANA Cloud instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day before you start working with it.
+    > Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day before you start working with it.
 
 
 [OPTION END]
