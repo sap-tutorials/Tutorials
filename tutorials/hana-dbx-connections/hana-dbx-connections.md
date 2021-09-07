@@ -3,7 +3,7 @@ title: Add Databases to  the SAP HANA Database Explorer
 description: This tutorial will explore different database connections types, such as SAP HANA Cockpit Database, SAP HANA, Data Lake IQ, and SAP HANA Deployment Infrastructure (HDI), along with the different operations that can be performed on them.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, software-product-function>sap-hana-cloud\,-data-lake]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition, software-product-function>sap-hana-cloud\,-data-lake]
 primary_tag: products>sap-hana-cloud
 ---
 
@@ -51,15 +51,15 @@ SAP HANA Cockpit databases can be grouped together.  This enables SQL statements
 
 !![run on multiple](run-on-multiple.png)  
 
-1. With SAP HANA Cloud, all databases created in a space are placed in a group.  As seen below, the space name is dev.  SAP HANA Cloud Cockpit or SAP HANA Cloud Central contain in their URL, a parameter that indicates the unique name (GUID) for the space.  
+1. With SAP HANA Cloud, all databases created in a space are placed in a group.  As seen below, the space name is dev.    
+
+    ![group by space](group-by-space.png)
+
+    SAP HANA Cloud Cockpit or SAP HANA Cloud Central contain in their URL, a parameter that indicates the unique name (GUID) for the space.
 
     ```
     https://host/trial/#/globalaccount/GUID/subaccount/GUID/org/GUID/space/GUID/hanaCloud
-    ```   
-
-    >In the SAP HANA Cloud trial, only one SAP HANA Cloud instance can be created.
-
-    ![group by space](group-by-space.png)
+    ```
 
     The spaces that contain SAP HANA Cloud instances appear when running SQL against multiple databases.  Executing commands in the SQL console will be covered in a subsequent tutorial.
 
@@ -95,11 +95,11 @@ SAP HANA Cockpit databases can be grouped together.  This enables SQL statements
 An SAP HANA database can be set to have a specified usage, such as development or production.  The following SQL statements will display the current usage value and then change it to production.
 
 ```SQL
-select * from M_INIFILE_CONTENTS where KEY = 'usage';
+SELECT * FROM M_INIFILE_CONTENTS WHERE KEY = 'usage';
 ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('system_information', 'usage') = 'production' WITH RECONFIGURE;
 ```
 
-After refreshing the page, there will be indicators that the database instance being worked with is a production database as shown below.
+After refreshing the page, there will be indicators that the database instance being worked with is a production database as shown below and care should be taken before executing operations that may affect performance or make unintentional changes to the database.
 
 > ![production label](prod-label.png)
 
@@ -138,15 +138,17 @@ Databases can be added directly to the SAP HANA database explorer.  To connect t
 
     >![connect using TLS](encryption2.png)
 
-    >The public root certificate of the certificate authority (CA) that signed the SAP HANA Cloud instance's server certificate is required.  This certificate is likely already available in the system certificate store and accessible by the browser, but if not, it can be pasted into the UI.  For more information see [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/cloud/en-US/dbd3d887bb571014bf05ca887f897b99.html).
+    >The public root certificate of the certificate authority (CA) that signed the SAP HANA Cloud instance's server certificate is required.  This certificate is likely already available in the system certificate store on the operating system and accessible by the browser, but if not, it can be pasted into the UI.  For more information see [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/cloud/en-US/dbd3d887bb571014bf05ca887f897b99.html).
 
-    If you are using an SAP HANA, express edition or on-premise database, the port numbers for a system or tenant database can be determined by running the following query against the **System** database.  
+    >---
 
-    ```SQL
+    >If you are using an SAP HANA, express edition or on-premise database, the port numbers for a system or tenant database can be determined by running the following query against the **System** database.  
+
+    >```SQL
     SELECT "DATABASE_NAME", "HOST", "SERVICE_NAME", "SQL_PORT" FROM SYS_DATABASES.M_SERVICES WHERE SQL_PORT != 0;
-    ```
+    >```
 
-    ![SQL port query](sql-port.png)
+    >![SQL port query](sql-port.png)
 
 4.  After pressing OK, a new database will appear whose type is SAP HANA Database.
 
@@ -166,12 +168,12 @@ Databases can be added directly to the SAP HANA database explorer.  To connect t
     >These values can be seen by opening a SQL console and noticing the schema that the database is using or by executing the following queries.
 
     >```SQL
-    >select * from M_SESSION_CONTEXT where CONNECTION_ID=current_connection;
-    >select * from SYS.M_CONNECTIONS where CONNECTION_ID=current_connection;
-    >select ISOLATION_LEVEL from PUBLIC.M_TRANSACTIONS where CONNECTION_ID = current_connection;
+    >SELECT * FROM M_SESSION_CONTEXT WHERE CONNECTION_ID=current_connection;
+    >SELECT * FROM SYS.M_CONNECTIONS WHERE CONNECTION_ID=current_connection;
+    >SELECT ISOLATION_LEVEL FROM PUBLIC.M_TRANSACTIONS where CONNECTION_ID = current_connection;
     >```
     >
-    >For additional details, see [Add HDI Containers and Databases to the SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/4a0818acfaff48bea88c1c3010f6944b.html).
+    >For additional details, see [Add Instances to the SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/4e2e8382f8484edba31b8b633005e937.html).
 
 [DONE]
 [ACCORDION-END]
@@ -200,6 +202,13 @@ A Data Lake IQ is a column oriented, disk based relational store that can be use
     ![Copy SQL Endpoint](copy-sql-endpoint.png)
 
 3.  The catalog browser can be used to view database objects and a SQL Console can be opened to query the database.
+
+    ```SQL
+    SELECT CURRENT USER FROM DUMMY;
+    SELECT * FROM SYS.SYSINFO;
+    SELECT * FROM sa_db_properties() WHERE UPPER(PropName) LIKE '%NAME%';
+    SELECT * FROM SYS.SYSOPTIONS WHERE UPPER("option") LIKE '%AUTO%' OR UPPER("option") LIKE '%COMM%' OR UPPER("option") LIKE '%ISOL%';
+    ```
 
     ![A few queries](iq-query.png)
 

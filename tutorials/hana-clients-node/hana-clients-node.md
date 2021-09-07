@@ -3,8 +3,8 @@ title: Connect Using the SAP HANA Node.js Interface
 description: Create and debug a Node.js application that connects to SAP HANA using the SAP HANA client.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud, topic>node-js]
-primary_tag: products>sap-hana
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition, topic>node-js]
+primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -324,7 +324,7 @@ node nodeQuery.js
 
 Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux.
 
-1. [Download Visual Studio Code.](https://code.visualstudio.com/Download)
+1. If required, download [Visual Studio Code.](https://code.visualstudio.com/Download).
 
 2. In Visual Studio Code, choose **File | Add Folder to Workspace** and then add the `HANAClientsTutorial` folder.
 
