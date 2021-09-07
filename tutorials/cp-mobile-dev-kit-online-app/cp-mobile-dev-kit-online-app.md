@@ -109,6 +109,7 @@ These are the metadata definitions available in the editor and the format in whi
 [DONE]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 4: ](Deploy the application)]
 
 So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.

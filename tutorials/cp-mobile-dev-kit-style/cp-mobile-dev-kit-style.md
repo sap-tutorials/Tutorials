@@ -45,27 +45,28 @@ This step includes creating the mobile development kit project in the editor.
 
     | Field | Value |
     |----|----|
-    | `MDK template type`| Select `CRUD` from the dropdown |
-    | `Your project name` | `MDK_Styling` |
-    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
+    | `MDK Template Type`| Select `CRUD` from the dropdown |
+    | `Your Project Name` | `MDK_Styling` |
+    | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
 
-    !![MDK](img_1.4.png)
+    !![MDK](img-1.4.png)
 
     >The `CRUD` template creates the offline or online actions, rules, messages, List Detail Pages with editable options. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).  
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.
+    >You might notice an additional step *SAP BTP Connection* listed, this will be visible if the current Cloud Foundry token has been expired. In this case, you will be asked to login to your Cloud Foundry account in the following step.
 
-7. In *Service Name* step, provide or select the below information and click **Next**:
+    >!![MDK](img-1.4.1.png)
+
+7. In *Service configuration* step, provide or select the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `Service File Name`| `<Provide any name of your choice>` |
-    | `OData Source` | Select `Mobile Services` from the dropdown |
+    | `Data Source` | Select `Mobile Services` from the dropdown |
     | `Mobile Services Landscape` | Select `standard` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
     | `Destination` | Select `SampleServiceV2` from the dropdown |
     | `Enter a path to the OData service` | Leave it as it is |
-    | `Language URL` | Leave it with the default value |
     | `Enable Offline` | It's enabled by default |
 
     !![MDK](img-1.7.png)
@@ -74,11 +75,11 @@ This step includes creating the mobile development kit project in the editor.
 
     Since you will create an offline based app, hence **Enable Offline** option is selected.
 
-8. In *Collection* step, select `Customers` (if not selected as default). Click **Next** to complete the project creation.
+8. In *Data Collections* step, select `Customers` and `Products`. Click **Finish** to complete the project creation.
 
     !![MDK](img-1.8.png)
 
-9. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Styling` project in the project explorer.
+9. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Styling` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -199,7 +200,7 @@ The `LESS` stylesheet provides the ability to define styling styles that can be 
 
     >`Styles.less` is already bound to Styles properties in `Application.app` file.
 
-    >!![MDK](img_2.3.png)
+    >!![MDK](img-2.3.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -236,6 +237,7 @@ In this step, you will bind style classes:
 3. Navigate to **Pages** | **Customers**, click `Customers_Detail.page`, select **Object Header** control, scroll-down to **Style** section and bind control properties to style properties.
 
     !![MDK](img-3.3.png)
+    !![MDK](img-3.4.png)
 
 
 [VALIDATE_3]
@@ -265,59 +267,69 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 [ACCORDION-BEGIN [Step 5: ](Run the app)]
 
-
-
 [OPTION BEGIN [Android]]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon.
 
     !![MDK](img-5.1.png)
 
+2. Select `com.sap.mdk.demo` application from the list.
+
+    !![MDK](img-5.3.png)
+
+    The On-boarding QR code is now displayed.
+
     !![MDK](img-5.2.png)
 
-2. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
+3. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see the **Main** page (with **LOGOUT** and **SYNC** options at bottom of the page) and **CUSTOMERS** entity set to navigate to List-Detail page. In Main page, you will notice styling on action bar, tool bar, items (Logout & Sync) available on tool bar, `CUSTOMERS` button.
+    Once you accept app update, you will see the **Main** page (with **LOGOUT** and **SYNC** options at bottom of the page), **CUSTOMERS** and **PRODUCTS** entity sets to navigate to List-Detail page. In Main page, you will notice styling on action bar, tool bar, items (Logout & Sync) available on tool bar, `CUSTOMERS` button.
 
     ![MDK](img-6.4.png)
 
-3. Tap **CUSTOMERS** to navigate to Customer List. You will see that Title property has been styled.
+4. Tap **CUSTOMERS** to navigate to Customer List. You will see that Title property has been styled.
 
     ![MDK](img_6.5.png)
 
-4. Tap any record to navigate to Customer Detail page. You will see that Object Header control has been styled.
+5. Tap any record to navigate to Customer Detail page. You will see that Object Header control has been styled.
 
-    ![MDK](img_6.6.png)       
+    ![MDK](img-6.6.png)       
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon.
 
     !![MDK](img-5.1.png)
 
+2. Select `com.sap.mdk.demo` application from the list.
+
+    !![MDK](img-5.3.png)
+
+    The On-boarding QR code is now displayed.
+
     !![MDK](img-5.2.png)
 
-2. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
+3. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see the **Main** page (with **Logout** and **Sync** options at bottom of the page) and `Customers` entity set to navigate to List-Detail page. In Main page, you will notice styling on action bar, tool bar, items (Logout & Sync) available on tool bar, `Customers` button.
+    Once you accept app update, you will see the **Main** page (with **Logout** and **Sync** options at bottom of the page), `Customers` and `Products` entity sets to navigate to List-Detail page. In Main page, you will notice styling on action bar, tool bar, items (Logout & Sync) available on tool bar, `Customers` button.
 
     ![MDK](img-6.1.png)
 
-3. Tap **Customers** to navigate to Customer List. You will see that Title property has been styled.
+4. Tap **Customers** to navigate to Customer List. You will see that Title property has been styled.
 
     ![MDK](img-6.2.png)
 
-4. Tap any record to navigate to Customer Detail page. You will see that Object Header control has been styled.
+5. Tap any record to navigate to Customer Detail page. You will see that Object Header control has been styled.
 
     ![MDK](img-6.3.png)   
 
@@ -333,7 +345,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
     >You can also open the MDK web application by accessing its URL from `.project.json` file.
     !![MDK](img-6.6.png)
 
-    You will see the **Main** page (with **Logout** option at bottom of the page) and `Customers` entity set to navigate to List-Detail page. In Main page, you will notice styling on action bar, tool bar, items (Logout) available on tool bar, `Customers` button.
+    You will see the **Main** page (with **Logout** option at bottom of the page), `Customers` and `Products` entity sets to navigate to List-Detail page. In Main page, you will notice styling on action bar, tool bar, items (Logout) available on tool bar, `Customers` button.
 
     !![MDK](img-6.7.png)
 
