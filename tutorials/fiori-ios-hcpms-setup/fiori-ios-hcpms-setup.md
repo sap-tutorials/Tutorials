@@ -9,15 +9,11 @@ author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
 ## Prerequisites  
-
 - You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
-    - **SAP Mobile Services**
 
 ## Details
-
-### You will learn  
-
-- How to access SAP Mobile Services in your BTP account
+### You will learn
+  - How to access SAP Mobile Services in your BTP account
 
 Once SAP Mobile Services is available, you can use its features in your Mobile development kit, Mobile Cards, SAP BTP SDK for iOS & Android apps.
 
@@ -65,7 +61,7 @@ Once SAP Mobile Services is available, you can use its features in your Mobile d
 
     !![enter subaccount](img-1.2.png)
 
-2. In the left pane, choose **Services** > **Service Marketplace**.
+2. In the left pane, choose ![Services](icon-services.png) **Services** **&rarr;** **Service Marketplace**.
 
     >The **Service Marketplace** is where you can find services to attach to any of your applications. These services are provided by SAP BTP to create, and produce applications quickly and easily. Once a service has been created, it is known as a `service instance`.
 
@@ -80,8 +76,6 @@ Once SAP Mobile Services is available, you can use its features in your Mobile d
     !![support button click](img-1.6.png)
 
 5. If you are asked to sign in then enter your Email or Username to continue and click **Next**.
-
-    !![BTP](img-1.7.png)
 
 6. Choose the relevant **Organization** and **Space** from the dropdown list, and then select **Open**.
 
