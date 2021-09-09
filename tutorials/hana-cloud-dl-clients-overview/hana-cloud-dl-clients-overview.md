@@ -3,8 +3,8 @@ title: SAP HANA Cloud, Data Lake IQ Client Interfaces Overview
 description: Learn about the data lake IQ, how to create a trial instance, how to install the data lake IQ client, and how to connect to the data lake IQ using the SAP HANA cockpit, SAP HANA database explorer, and Interactive SQL Client.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>java, products>sap-iq]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, topic>java, products>sap-hana-cloud, products>sap-iq]
+primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
 ## Prerequisites
@@ -344,9 +344,9 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
 [ACCORDION-BEGIN [Step 6: ](Connect with the Interactive SQL Client (DBISQL))]
 
-The data lake IQ client install includes Interactive SQL (DBISQL), which can be used to connect and query a data lake IQ. The following steps will provide instructions on how to connect to the data lake IQ using DBISQL and then populate the previously created tables with sample data.
+The data lake IQ client install includes [Interactive SQL Client (DBISQL)](https://help.sap.com/viewer/a895964984f210158925ce02750eb580/latest/en-US/4abee782576b4bff9f1a1274d662f74b.html), which can be used to connect and query a data lake IQ. The following steps will provide instructions on how to connect to the data lake IQ using DBISQL and then populate the previously created tables with sample data.
 
-1. Start GUI version of DBISQL from the Microsoft Windows Start menu, by double clicking on it, or on Linux by entering `dbisql`.
+1. Start the GUI version of DBISQL from the Microsoft Windows Start menu, by browsing to it under SAP > Interactive SQL and double clicking on it, or by entering `dbisql` in a terminal.
 
     ![start dbisql](dbisql-start.png)
 
@@ -387,7 +387,7 @@ The data lake IQ client install includes Interactive SQL (DBISQL), which can be 
 
 1. Execute the following insert statements to provide some sample data.
 
-    >If you are using the `nogui` option, paste the insert statements into a file first and then run `dbisql -hdl -c "uid..." sql.sql`.
+    >If you do not wish to use the GUI mode, paste the insert statements into a file first and then run `dbisql -hdl -c "uid..." sql.sql`.
 
     ```SQL
     INSERT INTO HOTEL.HOTEL VALUES(10, 'Congress', '155 Beechwood St.', 'Seattle', 'WA', '20005');
