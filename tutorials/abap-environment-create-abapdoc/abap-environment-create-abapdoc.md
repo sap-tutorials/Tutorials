@@ -83,7 +83,7 @@ The comments should now appear in the Outline View:
     ```
     "! <ol>
     "!    <li>Reads flights from HANA DB</li>
-    "!    <li>Converts currency to EUR</li>
+    "!    <li>Converts currency to EUR</li> 
     "! </ol>
 
     ```
