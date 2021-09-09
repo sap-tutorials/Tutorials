@@ -9,10 +9,10 @@ primary_tag: products>sap-business-technology-platform
 
 ## Prerequisites
 - You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
-  - **SAP Launchpad service**
-  - **Destination**
-  - **XSUAA**
-  - **HTML5 Application Repository Service**
+    - **SAP Launchpad service**
+    - **Destination**
+    - **XSUAA**
+    - **HTML5 Application Repository Service**
 
 ## Details
 ### You will learn
