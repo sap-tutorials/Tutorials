@@ -3,7 +3,7 @@ title: Access Remote Sources with SAP HANA Database Explorer
 description: Use SAP HANA federation capabilities to query data from other SAP HANA and SAP HANA Cloud, data lake IQ databases using SAP HANA smart data access (SDA) and the Cloud Connector.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-connectivity-service, software-product-function>sap-hana-cloud\,-data-lake]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, software-product-function>sap-hana-cloud\,-data-lake, products>sap-hana\,-express-edition, products>sap-connectivity-service]
 primary_tag: products>sap-hana-cloud
 ---
 
