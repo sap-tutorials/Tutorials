@@ -239,6 +239,9 @@ If the **`QualityNotOk`** rule condition is satisfied, you can define one or mor
 
     > If you are using `In-App Notification` and you want to inform the current logged user, just put your SAP Login into the **Recipients** field.
 
+
+    Text sample:
+    ```
     Notification time: ${thresholdCheck.scanningTime}
 
     Received delivery: ${thresholdCheck.deliveryDocument}
@@ -247,6 +250,7 @@ If the **`QualityNotOk`** rule condition is satisfied, you can define one or mor
 
     Best Regards
     ACME team
+    ```
 
 6.   Finally, **Save** your **Action**.
 
