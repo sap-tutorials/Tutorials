@@ -1,6 +1,6 @@
 ---
-title: Develop Queries based on booking supplement and Consume on SAP Analytics Cloud
-description: Develop analytical queries  based on booking supplements from ABAP system as data sources and consume them in the SAP Analytics Cloud to create analytical models, stories and multi-dimensional reports.
+title: Develop Queries Based on Booking Supplement and Consume on SAP Analytics Cloud
+description: Develop analytical queries based on booking supplements from ABAP system as data sources and consume them in the SAP Analytics Cloud to create analytical models, stories and multi-dimensional reports.
 auto_validation: true
 time: 60
 tags: [ tutorial>advanced, topic>abap-connectivity, products>sap-business-technology-platform, tutorial>license]
