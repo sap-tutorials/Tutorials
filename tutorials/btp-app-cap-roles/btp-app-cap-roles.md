@@ -148,7 +148,7 @@ When accessing the `Risks` service in your browser, you get a basic auth popup n
 
 !![Access Risk Application](risks_management_application.png)
 
-> Currently there's no logout functionality. You can clear your browser's cache or simply close all browser windows to get rid of the basic auth login data in your browser. For Chrome restart your browser (complete shutdown and restart) by entering `chrome: // restart` in the address line.
+> Currently there's no logout functionality. You can clear your browser's cache or simply close all browser windows to get rid of the login data in your browser. For Google Chrome, restart your browser (complete shutdown and restart) by entering `chrome://restart` in the address line.
 
 
 
