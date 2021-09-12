@@ -15,7 +15,7 @@ primary_tag: products>sap-data-warehouse-cloud
 ### You will learn
   - How to connect your SAP Data Warehouse Cloud Space to the SAP HANA Cloud, data lake
 
-To get familiar with the SAP HANA Cloud, data lake, please see the [SAP HANA Cloud product page.](https://www.sap.com/products/hana/cloud.html) You can also discover the data lake capabilities in detail with this [SAP HANA Cloud, data lake mission.](mission.hana-cloud-mission-trial-1)
+To get familiar with the SAP HANA Cloud, data lake, please see the [SAP HANA Cloud product page.](https://www.sap.com/products/hana/cloud.html) You can also discover the data lake capabilities in detail with this [SAP HANA Cloud, data lake mission.](mission.hana-cloud-data-lake-get-started)
 
 To use a data lake associated with SAP Data Warehouse Cloud tenant, you need to open a support ticket. Please see more details here in the [technical documentation.](https://help.sap.com/viewer/9f804b8efa8043539289f42f372c4862/cloud/en-US/93d0b5d4faa24777a4b78513f7ed6172.html?q=data%20lake)
 
