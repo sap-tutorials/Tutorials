@@ -82,7 +82,7 @@ For this tutorial, you'll create a dev space personalized for building services 
 
     ```Shell/Bash
     mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
-    -DarchetypeVersion=RELEASE \
+    -DarchetypeVersion=1.17.1 \
     -DgroupId=com.sap.cap -DartifactId=products-service -Dpackage=com.sap.cap.productsservice
     ```
 
