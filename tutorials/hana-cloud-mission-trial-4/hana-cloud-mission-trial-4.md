@@ -38,7 +38,7 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 3.	Tools to manage and access the SAP HANA Cloud, SAP HANA Database
 
-4.	*You are here* **`->`Create users and manage roles and privileges**
+4.	You are here <sub-style="font-size:30px">&#9755;</sub> **Create users and manage roles and privileges**
 
 5.	Import data into SAP HANA Cloud, SAP HANA Database
 
@@ -54,7 +54,7 @@ In this tutorial, you will learn how to create users and assign roles and privil
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand Roles and Privileges)]
+[ACCORDION-BEGIN [Step 1: ](Understand roles and privileges)]
 
 SAP HANA Cloud, SAP HANA database defines user permissions and privileges using a **role-based security model**.
 
@@ -160,19 +160,32 @@ CREATE USER <username> PASSWORD "<password>";
 
 To grant this user roles and privileges, you can use the `GRANT` statement. To use this statement to grant a certain privilege, you must have the privilege and permissions required to grant this privilege.
 
-> The `GRANT` statement can also be used to grant privileges to roles.
+The `GRANT` statement can also be used to grant privileges to roles.
 
-In this example, we want to grant our user the `SELECT` privilege. To do that, adjust and run the following example statement:
+This is the generic structure to use the `GRANT` statement for granting privileges on a certain schema or object to a user:
 
+```SQL
+GRANT <privilege> ON <SCHEMA_or_OBJECT> <schema_or_object_name> TO <user_name>
 ```
-GRANT SELECT TO <user_name>;
+
+For example, to grant the SELECT privilege for the schema SFLIGHT to a user, you would adjust the statement as follows:
+
+```SQL
+GRANT SELECT ON SCHEMA SFLIGHT TO <user_name>
 ```
+
+When granting roles to users, the statement needs to be adjusted as follows:
+```SQL
+GRANT <role_name> TO <user_name>
+```
+
+To allow a user to grant a privilege to other users themselves, you need to add `WITH GRANT OPTION` to the end of the statement. For roles and system privileges, you need to add `WITH ADMIN OPTION` to the statement.
 
 > You can find all the details about syntax elements and all available privileges to grant in the [technical documentation here](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/LATEST/en-US/20f674e1751910148a8b990d33efbdc5.html).
 
 [OPTION END]
 
-*Well done!*
+Well done!
 
 You have completed the fourth tutorial of this mission! Now you know how you can manage access rights in your instance by creating users, and granting roles and privileges using SAP HANA cockpit and the SAP HANA Database Explorer.
 

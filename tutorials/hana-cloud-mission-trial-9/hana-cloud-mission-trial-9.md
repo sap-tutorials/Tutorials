@@ -49,14 +49,17 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 8.	Create a calculation view
 
-9.	*You are here* **`->`Grant access to Calculation Views**
+9.	You are here <sub-style="font-size:30px">&#9755;</sub> **Grant access to Calculation Views**
 
 In this tutorial, you will learn how to make the calculation view you created previously available to others in the organization by creating a new role and granting this role access to the view.
 
-You can follow the steps in this tutorial also by watching this video.
-
+> You can follow the steps in this tutorial also by watching this video:
+>
 <iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_aqfw0mwi/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
-
+>
+> ### About this video
+>
+> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
 
 ---
 
@@ -70,7 +73,7 @@ To run `SELECT` statements on calculation views in the new environment, first ma
 
 2. Find your HDI container in the catalog.
 
-    > **Not sure how to find the HDI container of your project in the catalog?**
+    > ### Not sure how to find the HDI container of your project in the catalog?
 >
 > Unless you specified a name for your container manually upon creation of your project, the default name will look something like this:
 >
@@ -199,7 +202,7 @@ Now that you have the role created and granted privileges to this role, it's tim
 CREATE USER report PASSWORD <your_password> NO FORCE_FIRST_PASSWORD_CHANGE set usergroup default;
 ```
 
-    > Note: Using the clause `NO FORCE_FIRST_PASSWORD_CHANGE` is not considered a security best practice! We will only use this option for the purpose of this tutorial, in our example to make a user available to multiple individuals. If you create users in your productive environment, please consider forcing a password change for the first log in and giving individuals different users.
+    > Using the clause `NO FORCE_FIRST_PASSWORD_CHANGE` is not considered a security best practice! We will only use this option for the purpose of this tutorial, in our example to make a user available to multiple individuals. If you create users in your productive environment, please consider forcing a password change for the first log in and giving individuals different users.
 
 4.	Now that our new user `report` is created, we need to grant the user access to the role `PublicAccessSchema`.
 
@@ -213,7 +216,7 @@ GRANT <SCHEMA_NAME>."PublicAccessSchema" to report;
 
 7. Make sure to remove the `<>` characters and then run the statement.
 
-> **Custom vs. default roles**
+> ### Custom vs. default roles
 >
 > You can also use the default role that has the `container name.default` access. As soon as an HDI container is created, the default access role is created. You can find the name of the role by using the statement `SELECT * FROM ROLES`
 >
@@ -250,13 +253,15 @@ CONNECT report PASSWORD <Your_Password>
 
 And with that last step, you have completed the last tutorial of this mission! You learned how to create a new user role and how to grant access to your calculation view using SAP Business Application Studio and SAP HANA Database Explorer.
 
-> **Congratulations - you successfully completed this mission!**
+> **Congratulations! You successfully completed this mission!**
 >
 > You achieved your goal of helping Alex find the business insights they were looking for and share these insights with others!
 >
 > ![Alex Banner final](banner-alex-final.png)
 >
 > Throughout the modules of this mission, you have learned how to provision your first SAP HANA Cloud, SAP HANA database instance, how to use the different SAP HANA Cloud tools, how to import and query data, how set up a development project, create and calculation view and how to make it available to others within your organization.
+
+To quickly recap the tutorial mission, you can also watch all the mission videos in a [playlist](https://microlearning.opensap.com/playlist/dedicated/213248013/1_e5zton4v/1_7y0hucq6) on `openSAP Microlearning` site.
 
 Make sure to get the badge for this mission and share it on your profile in the SAP Community.
 [Click here for more learning materials on SAP HANA Cloud](https://community.sap.com/topics/hana-cloud).
@@ -269,7 +274,7 @@ Follow our tag in the [SAP Community](https://blogs.sap.com/tags/735549001008000
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](XXXXX)]
+[ACCORDION-BEGIN [Step 6: ](Test yourself)]
 
 
 

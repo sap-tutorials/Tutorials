@@ -38,31 +38,32 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.4.png)
 
-5. In *Type* step, select or provide the below information and click **Next**:
+5. In *Basic Information* step, provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `MDK template type`| Select `Base` from the dropdown |
-    | `Your project name` | `DemoSampleApp` |
-    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
+    | `MDK Template Type`| Select `Base` from the dropdown |
+    | `Your Project Name` | `DemoSampleApp` |
+    | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
 
     !![MDK](img-1.5.png)
 
     >The `Base` template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.
+    >This screen will only show up when your CF login session has expired. Enter your login credentials, click Login icon and select the org & space where you have set up the initial configuration for your MDK app.
 
-6. In *Service Name* step, provide or select the below information and click **Next**:
+    >!![MDK](img-1.4.1.png)
+
+6. In *Service configuration* step, provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `Service File Name`| `<Provide any name of your choice>` |
-    | `OData Source` | Select `Mobile Services` from the dropdown |
+    | `Data Source` | Select `Mobile Services` from the dropdown |
     | `Mobile Services Landscape` | Select `standard` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
     | `Destination` | Select `SampleServiceV2` from the dropdown |
     | `Enter a path to the OData service` | Leave it as it is |
-    | `Language URL` | Leave it with the default value |
     | `Enable Offline` | It's enabled by default |
 
     !![MDK](img-1.7.png)
@@ -71,11 +72,11 @@ This step includes creating the mobile development kit project in the editor.
 
     >**Enable Offline** option allows MDK mobile app to be offline enabled. This configuration will be ignored on Web environment and the MDK web application will be treated as online only.
 
-7. In **Collection** step, select `Customers`, `Product`, `SalesOrderHeaders` and `SaelesOrderItems` data collections. Click **Finish**.
+7. In **Data Collections** step, select `Customers`, `Products`, `SalesOrderHeaders` and `SalesOrderItems` data collections. Click Finish.
 
     !![MDK](img-1.8.png)
 
-    After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `DemoSampleApp` project in the project explorer.
+    After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `DemoSampleApp` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -101,10 +102,6 @@ These are the [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264ac
 - **`Web`**: In this folder, you can provide web specific app resource files and configurations.
 
 - **`Application.app`**: this is the main configuration file for your application from within SAP Business Application Studio. Here you define your start page (here in this tutorial, it is main.page), action settings for different stages of the application session lifecycle, push notifications, and more.
-
->Open the application settings in the application editor by clicking the `Application.app`.
-
->!![MDK](img-2.1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -146,11 +143,17 @@ You should see successful messages for both deployments.
 
 SAP Business Application Studio has a feature to generate QR code for onboarding the mobile app.
 
-Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon.
 
-!![MDK](img-4.1.png)
+    !![MDK](img-4.1.png)
 
-!![MDK](img-4.2.png)
+2. Select `com.sap.mdk.demo` application from the list.
+
+    !![MDK](img-4.3.png)
+
+    The On-boarding QR code is now displayed.
+
+    !![MDK](img-4.2.png)
 
 >Leave the Onboarding dialog box open for step 5.
 
@@ -161,7 +164,7 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 
 [OPTION BEGIN [Android]]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
@@ -169,13 +172,13 @@ Once you accept app update, you will see the **Main** page (with **LOGOUT** and 
 
 >Since you selected the Base template during the project creation, which generated this empty page without any UI controls on it. In next tutorials, you will add some UI controls to this page and create more pages.
 
-![MDK](img-5.1.gif)
+![MDK](img-5.1.png)
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
@@ -183,7 +186,7 @@ Once you accept app update, you will see the **Main** page (with **Logout** and 
 
 >Since you selected the Base template during the project creation, which generated this empty page without any UI controls on it. In next tutorials, you will add some UI controls to this page and create more pages.
 
-![MDK](img-5.2.gif)
+![MDK](img-5.2.png)
 
 [OPTION END]
 
@@ -193,8 +196,8 @@ Once you accept app update, you will see the **Main** page (with **Logout** and 
 
     !![MDK](img_5.3.png)
 
-    >You can also open the MDK web application by accessing its URL from `.project.json` file.
-    !![MDK](img_5.4.png)
+    >You can also open the MDK web application by accessing its URL in *CF* from `.project.json` file.
+    !![MDK](img-5.4.png)
 
     You will see the **Main** page (with **Logout** option at bottom of the page) and application data service is being initialized.
 

@@ -1,16 +1,17 @@
 ---
 title: Create ABAPDoc Comments in Your Class in ABAP Environment
-description: Learn how to maintain ABAPDoc documentation for your class in SAP Cloud Platform, ABAP Environment so your comments appear in the Outline view.
+description: Learn how to maintain ABAPDoc documentation for your class in SAP Business Technology Platform (BTP), ABAP Environment so your comments appear in the Outline view.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform--abap-environment, products>sap-cloud-platform]
+tags: [ tutorial>beginner, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
 primary_tag: topic>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
-- You have an entitlement to SAP Cloud Platform, ABAP Environment. For more information, see **Tutorial**: [Create Your First ABAP Console Application](abap-environment-console-application), steps 1-2
+- You have an entitlement to SAP BTP ABAP Environment. For more information, see **Tutorial**: [Create Your First ABAP Console Application](abap-environment-console-application), steps 1-2
 - You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), latest version
-- **Tutorial**: [Create an AMDP and Analyze Its Performance](abap-environment-amdp-profiling)
 
 ## Details
 ### You will learn  
@@ -82,7 +83,7 @@ The comments should now appear in the Outline View:
     ```
     "! <ol>
     "!    <li>Reads flights from HANA DB</li>
-    "!    <li>Converts currency to EUR</li>
+    "!    <li>Converts currency to EUR</li> 
     "! </ol>
 
     ```

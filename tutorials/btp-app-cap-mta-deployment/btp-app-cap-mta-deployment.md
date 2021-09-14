@@ -95,9 +95,15 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-1. Select your **Global Account** and then the **Subaccount** to which you want to deploy your service and application.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
 
-2. On the subaccount page, gather all the data to log in to Cloud Foundry (CF):
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
+
+2. On the subaccount page, gather all the data to log in to Cloud Foundry (CF).
 
     - `API Endpoint`
     - `Org Name`
@@ -111,13 +117,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     [https://api.cf.eu10.hana.ondemand.com](https://api.cf.eu10.hana.ondemand.com)
 3. Open a terminal.
 
-4. Set the Cloud Foundry API endpoint:
+4. Set the Cloud Foundry API endpoint.
 
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
 
-5. Log in to your Cloud Foundry account, using your SAP BTP credentials:
+5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
     cf login
@@ -150,9 +156,15 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
 
-1. Select your **Global Account** and then the **Subaccount** to which you want to deploy your service and application.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
 
-2. On the subaccount page, gather all the data to log in to Cloud Foundry (CF):
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
+
+2. On the subaccount page, gather all the data to log in to Cloud Foundry (CF).
 
     - `API Endpoint`
     - `Org Name`
@@ -168,13 +180,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 3. Open a terminal.
 
-4. Set the Cloud Foundry API endpoint:
+4. Set the Cloud Foundry API endpoint.
 
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
 
-5. Log in to your Cloud Foundry account, using your SAP BTP credentials:
+5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
     cf login
