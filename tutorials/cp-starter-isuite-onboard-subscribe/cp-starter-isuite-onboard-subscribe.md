@@ -40,30 +40,35 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
 
->**WHERE TO START**: If you are new to SAP BTP or SAP Integration Suite, skip this note and continue with the tutorial.
+>**WHERE TO START**:
 
-> If you have already activated Cloud Integration (Process Integration) or API Management services in your existing trial account, we recommend you to perform one of the following options:
+> - **Are you new to SAP BTP** - skip the rest of the note and continue with the tutorial.
 
-> **Option 1**: If you are unable to activate **`Integration Suite`** service in an existing subaccount, create a **`New Subaccount`** and then proceed to **Step 2**. For a new subaccount, you must assign entitlements by adding service plans and the quotas. For more information, see [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/c90f3d522ee04e65bd87cdec8808e5ce.html).
+> - You already have a SAP BTP account but new to SAP Integration Suite:
 
-> **Option 2**: To continue with the same subaccount, unsubscribe from Cloud Integration and API Management services, and then proceed to **Step 2**.
+>     - If you have already activated Cloud Integration (Process Integration) or API Management services in a subaccount:
+          - **Option 1**:
+          If you are unable to activate **`Integration Suite`** service in the existing subaccount, create a **`New Subaccount`** and then proceed to **Step 2** of this tutorial.
+          For a new subaccount, you must assign entitlements by adding service plans and the quotas. For more information, see [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/c90f3d522ee04e65bd87cdec8808e5ce.html).          
+          - **Option 2**:
+          To continue with the same subaccount, unsubscribe from Cloud Integration and API Management services, and then proceed to **Step 2**.
 
-> If you have already activated Integration Suite in your existing trial account, proceed to **Step 3**. You can consume only one Integration Suite tenant per trial account.
+> - If you have already subscribed to Integration Suite in your existing trial account, proceed to **Step 3**. You can consume only one Integration Suite tenant per trial account.
 
 
 1. In your web browser, open the [SAP BTP trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-2. Navigate to the trial global account by choosing **Go To Your Trial Account**.
-
-    !![Trial global account](2-2-FoundationsCockpit_trial page.png)
-
-3. Choose the region that is closest to you. Click **Create Account** to create a subaccount.
+2. Choose the region that is closest to you. Choose **Create Account**.
 
     !![Select region](2-3-Screenshot_AP21.png)
 
-4. Choose **Continue**.
+3. Choose **Continue**.
 
     !![Account Setup](2-4-continue.png)
+
+4. Navigate to the trial global account by choosing **Go To Your Trial Account**.
+
+    !![Trial global account](2-2-FoundationsCockpit_trial page.png)
 
 5. From your global account page, choose the **trial** tile to access your subaccount.
 
