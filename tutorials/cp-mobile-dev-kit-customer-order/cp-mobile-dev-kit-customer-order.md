@@ -59,9 +59,7 @@ This page will display customer orders list, you will add an **Object Table** co
 
     >A **Compound** control contains a group of other controls. Unlike in a container control where you can add your own child controls (container items), the child controls in a compound control are fixed. You can populate each of its child control by defining its data binding, depending on which the child controls are created.
 
-5. In the **Properties** pane, select the previously added service from the **Service** drop down and then select `SalesOrderHeaders` entity set from the dropdown. This way, the Object Table has been bound to `SalesOrderHeaders` entity.
-
-    Provide below Properties:
+5. In the **Properties** pane, provide the below information:
 
     | Property | Value |
     |----|----|
@@ -109,7 +107,7 @@ This page will display customer orders list, you will add an **Object Table** co
 
     !![MDK](img-1.8.png)
 
-9. In the `EmptySection` of the **Properties** pane, provide **`No Orders Found`** for the **caption** property.
+9. In the `EmptySection` of the **Properties** pane, provide **`No Orders Found`** for the **Caption** property.
 
     !![MDK](img-1.9.png)
 
@@ -275,11 +273,8 @@ You will show a total count of orders for a customer in `Customers_Detail.page`.
 
     !![MDK](img-6.1.gif)
 
-2. In the **Properties** pane, select the previously added service from the **Service** drop down.
+2. In the **Properties** pane, provide below information:
 
-    Provide below Properties:
-
-    | Property | Value |
     |----|----|
     | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `Entity` | Select `{@odata.readLink}/SalesOrders` from the dropdown |
@@ -293,13 +288,12 @@ You will show a total count of orders for a customer in `Customers_Detail.page`.
 
     >!![MDK](img_6.2.1.png)
 
-    >**Query** expression will filter order entries returned in descending when sorted by the order creation date property.
+    >**`QueryOptions`** expression will filter order entries returned in descending when sorted by the order creation date property.
 
 3. Now, start binding Object Table properties with `SalesOrderHeaders` entity set properties.
 
     In the **Appearance** section of the **Properties** pane, provide the below information:
 
-    | Property | Value |
     |----|----|
     | `Description`| Remove the default value and leave it blank  |
     | `DetailImage`| Remove the default value and leave it blank  |
