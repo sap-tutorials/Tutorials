@@ -42,16 +42,16 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
 >**WHERE TO START**:
 
-> - **Are you new to SAP BTP** - skip the rest of the note and continue with the tutorial.
+> - **Are you new to SAP BTP?** - skip the rest of the note and continue with the tutorial.
 
 > - You already have a SAP BTP account but new to SAP Integration Suite:
 
 >     - If you have already activated Cloud Integration (Process Integration) or API Management services in a subaccount:
           - **Option 1**:
-          If you are unable to activate **`Integration Suite`** service in the existing subaccount, create a **`New Subaccount`** and then proceed to **Step 2** of this tutorial.
+          Create a **`New Subaccount`** and then proceed to **Step 2** of this tutorial.
           For a new subaccount, you must assign entitlements by adding service plans and the quotas. For more information, see [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/c90f3d522ee04e65bd87cdec8808e5ce.html).          
           - **Option 2**:
-          To continue with the same subaccount, unsubscribe from Cloud Integration and API Management services, and then proceed to **Step 2**.
+          To continue with an existing subaccount, unsubscribe from Cloud Integration and API Management services, and then proceed to **Step 2**.
 
 > - If you have already subscribed to Integration Suite in your existing trial account, proceed to **Step 3**. You can consume only one Integration Suite tenant per trial account.
 
