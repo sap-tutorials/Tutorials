@@ -37,7 +37,7 @@ SAP Mobile Cards can be created in multiple ways. In this step, you will create 
 
     !![SAP BTP Log On Screen](img_2_2.png)
 
-3. Navigate to the trial global account by clicking **Enter Your Trial Account**.
+3. Navigate to the trial global account by clicking **Go To Your Trial Account**.
 
     !![Trial global account](img_2_3.png)
 
@@ -215,6 +215,8 @@ In this step, you will configure the SAP Mobile Cards client with your SAP BTP a
     !![Mobile Cards](img_3_21.png)
 
     > This option is available only on devices that support biometric authentication. This biometric option may be Face ID depending on the capabilities of your device. This feature allows you to use your biometric information for app authentication.
+
+    > !![Mobile Cards](img_3_21_note.png)
 
 8. You should see the Welcome Card created using SAP BTP Booster for SAP Mobile Cards.
 

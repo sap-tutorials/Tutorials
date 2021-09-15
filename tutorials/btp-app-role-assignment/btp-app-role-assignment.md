@@ -25,13 +25,16 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Add the SAP Launchpad Service](btp-app-launchpad-service)
 
 ## Details
+
 ### You will learn
- - How to assign roles to users
+
+- How to assign roles to users
+
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Assign roles)]
-To be able to access the application, your user needs to be assigned to a role collection that provides the requires scopes.
+To be able to access the application, your user needs to be assigned to a role collection that provides the required scopes.
 
 1. Open the **SAP BTP Cockpit**.
 
@@ -57,7 +60,7 @@ Your user now appears in the list of the role collection's users.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Test it)]
-Go to the application and choose the tile `Risks`. You should be able to create entries in the `Risks` application.
+Go to the application and choose the tile `Risks`. You should be able to create entries in the `Risks` application. 
 
 If not, probably you have signed in before adding the role collection to your user. Sign out and sign in again to get the added roles in your login ticket.
 
@@ -91,11 +94,11 @@ The new role collection appears now in the list, but it doesn't contain any role
 
 3. Open the value help for **Role Name**.
 
-    !!![RoleName value help](role_name_value_help.png)
+    !![RoleName value help](role_name_value_help.png)
 
 4. Select `cpapp-...!...` in **Application Identifier** dropdown.
 
-    !!![Application Identifier](app_identifier.png)
+    !![Application Identifier](app_identifier.png)
 
     > The **App Identifier** is the **XSAPPID** of your application. It consists of the **XSAPPNAME** that's been used to create the XSUAA service followed by an exclamation mark (`!`) and a landscape-wide unique ID.
 

@@ -71,7 +71,7 @@ The next step is to store deleted record locally for an offline application or d
     |----|----|
     | `Action Name`| `Customers_DeleteEntity` |
     | `Type` | Select `DeleteEntity` from the dropdown |
-    | `Service`| Select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `EntitySet` | Select `Customers` from the dropdown |
     | `ReadLink`| click link icon and double click `readLink` |
 
@@ -181,6 +181,7 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-4.3.png)
 
+
 [DONE]
 [ACCORDION-END]
 
@@ -238,7 +239,7 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-5.8.png)
 
-    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+    >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
     >!![MDK](img-5.9.png)
 
@@ -258,7 +259,7 @@ You can cross verify if this record has been deleted in the backend.
 
 >**Mobile Applications** | **Native/Hybrid** | click the MDK App **com.sap.mdk.demo** | **Mobile Connectivity** | click **Launch in Browser** icon
 
->!![MDK](img_5.7.png)
+>!![MDK](img-5.7.png)
 
 >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
