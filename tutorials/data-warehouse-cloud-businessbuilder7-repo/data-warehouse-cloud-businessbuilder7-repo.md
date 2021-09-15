@@ -1,4 +1,6 @@
 ---
+author_name: Helena Nacinovic
+author_profile: https://github.com/helenanacinovic
 title: Collaborate with the Repository Explorer
 description: Collaborate with other users of SAP Data Warehouse Cloud using the Repository Explorer.
 auto_validation: true

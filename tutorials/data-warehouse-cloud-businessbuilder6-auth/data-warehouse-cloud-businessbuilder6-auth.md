@@ -1,4 +1,6 @@
 ---
+author_name: Helena Nacinovic
+author_profile: https://github.com/helenanacinovic
 title: Create an Authorization Scenario in the Business Builder
 description: Create authorization scenarios in the Business Builder of SAP Data Warehouse Cloud to control who can access your business models.
 auto_validation: true
