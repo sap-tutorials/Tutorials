@@ -95,6 +95,10 @@ Video tutorial version: </br>
 
     !![Paste Service Key details](paste_service_key.png)
 
+    It should look something like this:
+
+    !![Example default-env.json with Service Key Details](example_default_env.png)
+
 5. Next we need to enhance the CAP application configuration in the package.json file in the root of the project. Add an `uaa` section to the `cds.requires` section of the file.
 
     !![Add uaa to package.json](uaa_package_json.png)
