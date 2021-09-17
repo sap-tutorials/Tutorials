@@ -11,8 +11,8 @@ author_profile: https://github.com/julieplummer20
 
 ## Prerequisites
 - You have done one of the following:
-    - Created an entitlement to [SAP Business Technology Platform, ABAP Environment, Trial Version](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/)
-    - Created an entitlement to [SAP Business Technology Platform, ABAP Environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d60#14a68d825.html), customer licensed version
+    - Created an instance of [SAP Business Technology Platform, ABAP Environment, Trial Version](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/)
+    - Created an entitlement to [SAP Business Technology Platform, ABAP Environment](https://www.sapstore.com/solutions/40191/SAP-BTP-ABAP-Environment), customer licensed version
 - **IMPORTANT**: If you are using the licensed version, then this tutorial is part of the mission [Connect Your On-Premise System with SAP BTP, ABAP Environment](mission.abap-env-connect-onpremise). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work. If you are using the trial version, we have provided mock data inside the class.
 
 
@@ -547,4 +547,7 @@ The console output should look like this:
 - [Insert test data into tables in SAP BTP, ABAP Environment](https://blogs.sap.com/2019/09/30/how-to-insert-test-data-into-tables-in-sap-cloud-platform-abap-environment/)
 
 - [Call a remote OData service from the trial version of SAP BTP ABAP environment](https://blogs.sap.com/2019/10/20/how-to-call-a-remote-odata-service-from-the-trial-version-of-sap-cloud-platform-abap-environment/)
+
+- Find out more about SAP Business Technology Platform ABAP Environment on SAP Community: [SAP Business Technology Platform ABAP Environment](https://community.sap.com/topics/btp-abap-environment)
+
 ---

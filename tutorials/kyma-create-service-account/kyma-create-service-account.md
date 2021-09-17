@@ -3,7 +3,7 @@ title: Create a Kyma service account
 description: Learn how to create a Kubernetes service account that you can leverage to interact with your Kyma cluster.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: products>sap-btp\\, kyma-runtime
 ---
 

@@ -55,7 +55,7 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 
     > See the [CAP Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for more details.
 
-5.    Select the **`RiskService`** as the OData service and choose **Next**.
+5.    Select the **`RiskService(Node.js)`** as the OData service and choose **Next**.
 
     ![CAPpro](datasourceselection.png)
 

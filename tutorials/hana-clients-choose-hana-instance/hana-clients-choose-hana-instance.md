@@ -3,8 +3,8 @@ title: Choose an SAP HANA Database
 description: Learn about SAP HANA Cloud and SAP HANA, express edition and choose one that will be used with the SAP HANA client interfaces in subsequent tutorials.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud]
-primary_tag: products>sap-hana
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition]
+primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -20,7 +20,7 @@ This tutorial will provide guidance on setting up an instance of [SAP HANA](http
 
 For more information on SAP HANA, consult [What Is SAP HANA](https://help.sap.com/viewer/eb3777d5495d46c5b2fa773206bbfb46/latest/en-US/d3b1adcdbb571014a93eff11ad9a1d89.html).
 
->Note, for connections from additional sources such as SAP Analytics Cloud, Jupyter Notebooks, SAP Business Warehouse, SAP Data Intelligence Cloud, and SAP ERP Central Component see [Connection Guides for SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/connecting-guides-for-sap-hana-cloud).
+>Note, for connections from additional sources such as SAP Analytics Cloud, `Jupyter` Notebooks, SAP Business Warehouse, SAP Data Intelligence Cloud, and SAP ERP Central Component see [Connection Guides for SAP HANA Cloud](group.hana-cloud-database-connection-guides).
 
 >---
 

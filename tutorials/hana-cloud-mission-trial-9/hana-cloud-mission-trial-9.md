@@ -53,10 +53,13 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 In this tutorial, you will learn how to make the calculation view you created previously available to others in the organization by creating a new role and granting this role access to the view.
 
-You can follow the steps in this tutorial also by watching this video.
-
+> You can follow the steps in this tutorial also by watching this video:
+>
 <iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_aqfw0mwi/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
-
+>
+> ### About this video
+>
+> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
 
 ---
 
@@ -257,6 +260,8 @@ And with that last step, you have completed the last tutorial of this mission! Y
 > ![Alex Banner final](banner-alex-final.png)
 >
 > Throughout the modules of this mission, you have learned how to provision your first SAP HANA Cloud, SAP HANA database instance, how to use the different SAP HANA Cloud tools, how to import and query data, how set up a development project, create and calculation view and how to make it available to others within your organization.
+
+To quickly recap the tutorial mission, you can also watch all the mission videos in a [playlist](https://microlearning.opensap.com/playlist/dedicated/213248013/1_e5zton4v/1_7y0hucq6) on `openSAP Microlearning` site.
 
 Make sure to get the badge for this mission and share it on your profile in the SAP Community.
 [Click here for more learning materials on SAP HANA Cloud](https://community.sap.com/topics/hana-cloud).
