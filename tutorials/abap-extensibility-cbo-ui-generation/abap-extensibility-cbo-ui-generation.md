@@ -8,7 +8,7 @@ time: 15
 ---
 
 ## Prerequisites  
-- **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`) in your **S/4HANA Cloud** system
+- **Authorizations:** Your user needs a business role with business catalogs **Extensibility - Custom Business Objects** (ID: `SAP_CORE_BC_EXT_CBO`) and **Extensibility - Custom Catalog Extensions** (ID: `SAP_CORE_BC_EXT_CCE`) in your **SAP S/4HANA Cloud** system
 
 ## Details
 
@@ -23,7 +23,7 @@ At the end you will have a running application that you can create, update and d
 
 >**UI Generation** and later done **UI Adaptation** are so called **In-App Extensibility** features done completely inside a S/4HANA system. They are key user functionality with limited possibilities.
 >
->Alternatively the more powerful **Side-By-Side Extensibility** via **SAP Cloud Platform** could be done to develop an UI with all SAPUI5 options (see tutorial group [Create Custom UI for S/4HANA Cloud](https://developers.sap.com/group.abap-custom-ui-with-webide.html)).
+>Alternatively the more powerful **Side-By-Side Extensibility** via **SAP Cloud Platform** could be done to develop an UI with all SAPUI5 options (see tutorial group [Create Custom UI for S/4HANA Cloud](group.abap-custom-ui-with-webide)).
 
 **Our Example**
 
@@ -74,17 +74,17 @@ A new window will open.
 
 Start adding a catalog with the **Add** action.
 
-![Add new Custom Catalog Extension](CCE_add.png)
+!![Add new Custom Catalog Extension](CCE_add.png)
 
-In the opening value help narrow down the result list by searching for `Extensibility`, select the Catalog with role ID `SAP_CORE_BC_EXT` and press **OK**.
+In the opening value help narrow down the result list by searching for `Custom Business`, select the Catalog with role ID `SAP_CORE_BC_EXT_CBO` and press **OK**.
 
-![Value Help for adding Custom Catalog Extension](CCE_addValueHelp.png)
+!![Value Help for adding Custom Catalog Extension](CCE_addValueHelp.png)
 
 >You could also choose another Catalog, but be aware that your user must have a Business Role containing the same to be able to view the created application.
 
 **Select** the just added Catalog and **Publish** it.
 
-![Publishing Custom Catalog Extension](CCE_publish.png)
+!![Publishing Custom Catalog Extension](CCE_publish.png)
 
 This step takes some minutes, the screen refreshes automatically and once the status switches from unpublished to published, you can close this application's window and proceed.
 

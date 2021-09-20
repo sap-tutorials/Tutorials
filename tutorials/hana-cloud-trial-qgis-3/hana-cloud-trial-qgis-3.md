@@ -44,7 +44,7 @@ So, you need to open the SAP HANA Database Explorer, create an SQL View and cons
 [ACCORDION-BEGIN [Step 1: ](Create a SQL view using hexagonal clustering)]
 Follow the steps to create an SQL view doing a hexagonal clustering and counting the number of POI's (points of interest) per cluster:
 
-1. Go to the SAP BTP Cockpit and navigate to your SAP HANA database instance in SAP HANA Cloud. You should see your created and running instance.
+1. Go to the SAP BTP cockpit and navigate to your SAP HANA database instance in SAP HANA Cloud. You should see your created and running instance.
 
 2. Click on **Actions** and **Open in SAP HANA Database Explorer**.
 
@@ -132,7 +132,7 @@ Also, read [this blog](https://cutt.ly/saphanaspatial) gathering all the communi
 
 Read [this blog](https://blogs.sap.com/2020/02/12/the-four-advantages-of-arcgis-on-hana/) outlining the major advantages of running your **`ArcGIS`** on SAP HANA Cloud. While it is specifically tailored to **`ArcGIS`**, the outlined qualities are valid irrespective of the actual GIS client.
 
-> Follow our tag in the [SAP Community](https://blogs.sap.com/tags/73554900100800002881/) to stay up-to-date on the latest updates and newest content!
+> Follow our tag in the [**SAP Community**](https://blogs.sap.com/tags/73554900100800002881/) to stay up-to-date on the latest updates and newest content! For more learning materials on **SAP HANA Cloud**, [click here](https://community.sap.com/topics/hana-cloud).
 
 
 

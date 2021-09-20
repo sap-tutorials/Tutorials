@@ -34,7 +34,8 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 [ACCORDION-BEGIN [Step 2: ](Generate the UI with an SAP Fiori elements template)]
 1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P** for macOS / **Ctrl** + **Shift** + **P** for Windows) and choose **Fiori: Open Application Generator**.
 
-    ??? error "In case you get an error launching the Application Generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
+
+    > In case you get an error launching the Application Generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
 
 2. Choose application type **SAP Fiori elements** and floor plan **List Report Object Page**.
 
@@ -54,7 +55,7 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 
     > See the [CAP Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for more details.
 
-5.    Select the **`RiskService`** as the OData service and choose **Next**.
+5.    Select the **`RiskService(Node.js)`** as the OData service and choose **Next**.
 
     ![CAPpro](datasourceselection.png)
 
