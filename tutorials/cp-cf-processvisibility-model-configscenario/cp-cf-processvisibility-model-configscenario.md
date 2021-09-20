@@ -35,11 +35,11 @@ In this tutorial, you will learn how to add a workflow to your visibility scenar
 
     !![Add scenario](Config-Step1-plus.png)
 
-3. In the **New Scenario** dialog, provide a **Name** and optionally a description for the scenario and choose **Create**. On providing the name, the **ID** field gets populated automatically.
+3. In the **New Scenario** dialog, provide a **Namespace** and a **Name** for the scenario. On providing these values, the **ID** field gets populated automatically. You can choose to edit the **ID** if required. You can even provide a **Description** for your scenario and and choose **Create**.
 
     !![visibility scenario name](scenario-name.PNG)
 
-    You can see the **Employee Onboarding Process** scenario listed in the **Scenarios** table in **Draft** state.
+    You can see the **Employee Onboarding Process** scenario listed in the **Scenarios** table in the **Draft** state.
 
 4. Now, select the **Employee Onboarding Process** scenario in the **Draft** state to edit it.
 
