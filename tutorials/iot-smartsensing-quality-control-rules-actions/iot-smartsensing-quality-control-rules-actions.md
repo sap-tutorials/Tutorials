@@ -13,8 +13,8 @@ primary_tag: topic>internet-of-things
 -   You have licensed SAP Internet of Things (with the new capacity unit based licensing introduced in August 2020, your company has a Cloud Platform Enterprise Agreement or Pay-As-You-Go for SAP BTP and you have subscribed to the `oneproduct` service plan)
 -   You have setup the subscription for SAP IoT in your global account in a tenant (e.g. in the DEV tenant, the guide for the basic setup is at [Get Started with Your SAP IoT Account](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest/en-US/bfe6a46a13d14222949072bf330ff2f4.html) ).
 -   Your SAP User has at a minimum the `iot_role_collection` created during onboarding of your tenant and the associated roles (see [SAP Help on Providing Authorizations in](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest/en-US/2810dd61e0a8446d839c936f341ec46d.html) )
--   You have created and setup the Inbound Delivery **Business Context Hierarchy** and **Auto-ID Event Enrichment** using the [Activate Business Template for Inbound Delivery](iot-smartsensing-inbounddelivery-template) and [Adjust the Business Context Hierarchy for Inbound Delivery](iot-smartsensing-quality-control-business-context-hierarchy) tutorials.
--   You have created destinations for the goods receipt API as described in [Create SAP S/4HANA Destination for Smart Sensing](iot-smartsensing-s4destinations) and [Create destinations for Inbound Delivery APIs and scanning event](iot-smartsensing-quality-control-goods-receipt-destinations)
+-   You have created and setup the Inbound Delivery **Business Context Hierarchy** and **Auto-ID Event Enrichment** using the [Activate Business Template for Inbound Delivery](iot-smartsensing-inbounddelivery-template) and [Adjust the Business Context Hierarchy for Inbound Delivery](iot-smartsensing-qcbc-hierarchy) tutorials.
+-   You have created destinations for the goods receipt API as described in [Create SAP S/4HANA Destination for Smart Sensing](iot-smartsensing-s4destinations) and [Create Destinations for Inbound Delivery APIs and Scanning Event](iot-smartsensing-qcgr-destinations)
 -   Optional: You have configured the [Notification and Email setup](https://help.sap.com/viewer/fbf2583f7bcf47fcb5107bf4d358770e/LATEST/en-US/c31a2362f5b848138cb5a1e709ef9fe2.html)
 
 ## Details
@@ -239,6 +239,9 @@ If the **`QualityNotOk`** rule condition is satisfied, you can define one or mor
 
     > If you are using `In-App Notification` and you want to inform the current logged user, just put your SAP Login into the **Recipients** field.
 
+
+    Text sample:
+    ```
     Notification time: ${thresholdCheck.scanningTime}
 
     Received delivery: ${thresholdCheck.deliveryDocument}
@@ -247,6 +250,7 @@ If the **`QualityNotOk`** rule condition is satisfied, you can define one or mor
 
     Best Regards
     ACME team
+    ```
 
 6.   Finally, **Save** your **Action**.
 

@@ -205,7 +205,7 @@ To enable your app for push notifications, you need to carry out the following t
 
 3. In Mobile Services cockpit, navigate to `Mobile Applications` | `Native/Hybrid` | `com.sap.mdk.demo` | `Mobile Push Notification`. Paste the Server Key value in **Android** push settings in Mobile Services cockpit.
 
-    !![MDK](img_2.3.png)
+    !![MDK](img-2.3.png)
 
 4. Repeat the above step for **Sender ID** and then click **Save**.
 
@@ -217,7 +217,7 @@ To enable your app for push notifications, you need to carry out the following t
 
     !![MDK](img_2.4.png)
 
-2. Provide the following details to the **Apple** panel:
+2. Provide the following details to the **Apple** panel and click **Save**.
 
 
     |  Field Name     | Value |
@@ -227,9 +227,11 @@ To enable your app for push notifications, you need to carry out the following t
     |  Certificate | `Browse to the `.p12`certificate you just exported` |
     |  Password | Enter the password you provided during the export |
 
-3. Click **Save**. You have now successfully configured the APNS Endpoint on the server side in Mobile Services cockpit.
+    !![MDK](img-2.5.png)
 
-    !![MDK](img_2.5.png)
+You have now successfully configured the APNS Endpoint on the server side in Mobile Services cockpit.
+
+
 
 [OPTION END]
 

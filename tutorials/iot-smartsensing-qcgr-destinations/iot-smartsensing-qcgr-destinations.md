@@ -1,7 +1,7 @@
 ---
 author_name: Marco Porru
 author_profile: https://github.com/marco-porru
-title: Create Destinations for Inbound Delivery APIs and Scanning Events.
+title: Create Destinations for Inbound Delivery APIs and Scanning Events
 description: Create Destinations for Inbound Delivery APIs in SAP Business Technology Platform to enable to post Goods Receipt in SAP S/4HANA or SAP S/4HANA Cloud, and to be able to ingest data with the scanning event.
 auto_validation: true
 time: 5

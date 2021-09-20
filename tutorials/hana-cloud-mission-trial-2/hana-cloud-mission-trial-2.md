@@ -33,10 +33,13 @@ A few notes to remember about trial accounts:
 
 -	If you do not restart your instances within **60 days**, they will be **deleted**. Your trial account, however, will continue to exist and you can easily provision an instance again, if you wish to do so.
 
-The steps described in this tutorial can also be followed watching this video:
-
+>The steps described in this tutorial can also be followed watching this video:
+>
 <iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_mxvf5900/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
-
+>
+> ### About this video
+>
+> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
 
 [OPTION END]
 [OPTION BEGIN [Production]]

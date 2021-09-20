@@ -47,7 +47,6 @@ You need to add `domain`, `messaging service` and your `queue name` in the indic
 applications:
       - name: consumer
         host: consumer-host
-        domain: <REPLACE WITH YOUR DOMAIN>
         buildpack: https://github.com/cloudfoundry/nodejs-buildpack
         memory: 256M
         health-check-type: none
