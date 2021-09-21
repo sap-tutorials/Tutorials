@@ -73,7 +73,7 @@ This page will show related details for a customer. In this page, you will add a
 
     >Make sure to select values for the mentioned properties only from **Customer** Entity. You may find similar values from other entities. For example,
 
-    >!![MDK](img_1.6.png)
+    >!![MDK](img-1.6.png)
 
 7. As enough fields have been selected to be displayed on the detail page, `Substatus` and `Tags` are not required for this tutorial. In a real use case, you may need these properties.
 
@@ -166,7 +166,7 @@ Now, you will create a Navigation action that opens the `Customers_Detail.page` 
     | `Action Name`| `NavToCustomers_Detail` |
     | `PageToOpen` | Select `Customers_Detail.page` from the dropdown |
 
-    !![MDK](img_2.2.png)
+    !![MDK](img-2.2.png)
 
 3. Click **Next** and then **Finish** on the confirmation step.
 
@@ -255,7 +255,7 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-6.4.png)
 
-    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+    >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
     >!![MDK](img-6.7.png)
 

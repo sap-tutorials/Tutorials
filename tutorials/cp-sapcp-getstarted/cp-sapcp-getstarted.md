@@ -97,7 +97,7 @@ Now let's log in. Login is on global account level. Make sure you know the subdo
 
 ![Subdomain of the global account in the cockpit](subdomain-ga.png)
 
-You have two options for login. In both cases, the client proposes the CLI server URL for your trial, which you can confirm with ENTER. 
+You have two options for login. In both cases, the client proposes the CLI server URL for your trial, which you can confirm with ENTER.
 
 For login on the command-line, enter:
 
@@ -195,13 +195,13 @@ The targeting mechanism works according to the hierarchy of entities in the glob
 We recommend to enable command autocompletion so you won't have to remember or keep looking up individual commands. Command autocompletion saves you keystrokes when entering command actions, group-object combinations, and their parameters. Autocompletion is supported for  Bash, PowerShell, and Zsh.
 
 ```Bash
-btp enable autocompletion <SHELL>
+btp enable autocomplete <shell>
 ```
 Enter a partial command action, group-object combination, or parameter, and then press the Tab key. The command line either automatically completes your command or, when there's more than one option available, it displays a list of suggested command actions/options/parameters. When a suggestion list is displayed, use the Tab or arrow keys to move through the list and press Enter to make a selection.
 
 When you enable command autocompletion, a script containing all the autocomplete commands is downloaded and installed in your file system. Additionally, the RC file of your shell is modified so the script is called at startup.
 
-The autocompletion option remains enabled in future sessions in your current client, until you disable it. To disable command autocompletion and uninstall the autocomplete script, run `disable autocomplete <SHELL>`.
+The autocompletion option remains enabled in future sessions in your current client, until you disable it. To disable command autocompletion and uninstall the autocomplete script, run `disable autocomplete <shell>`.
 
 [DONE]
 [ACCORDION-END]

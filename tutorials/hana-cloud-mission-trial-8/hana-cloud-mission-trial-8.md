@@ -47,15 +47,20 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 7.	Create a development project in SAP Business Application Studio
 
-8.	*You are here* **`->`Create a calculation view**
+8.	You are here <sub-style="font-size:30px">&#9755;</sub> **Create a calculation view**
 
 9.	Grant access to Calculation Views
 
 In this tutorial, you will learn how to create a calculation in SAP Business Application Studio, in which you will join tables and rank results to get Alex the business insights they need.
 
-You can follow the steps in this tutorial also by watching this video.
-
+> You can follow the steps in this tutorial also by watching this video:
+>
 <iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_sxorir18/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
+>
+> ### About this video
+>
+> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
+
 
 ---
 
@@ -97,7 +102,7 @@ You can follow the steps in this tutorial also by watching this video.
 6.	Type in the first few letters of the table names. Let's start with the `SAGENCYDATA` table, which we created in a previous module.
 
 
-    > Note: If you want to see all objects available via the connection service, enter `**` in the search field.
+    > If you want to see all objects available via the connection service, enter `**` in the search field.
 
 
 7.	To find out the top 5 partners for Best Run Travel, we need to join the `SAGENCY` table with the `STRAVELAG` table. So, let's also add the `STRAVELAG` table to the join node.
@@ -295,7 +300,7 @@ You are almost done!
 
     !![final results](ss-21-final-results.png)
 
-*Well done!*
+Well done!
 
 You have completed the eighth tutorial of this mission! You learned how to create a calculation view in SAP Business Application Studio using the graphical calculation view editor. You used join and rank nodes to get Alex the business insights they were looking for. Now, all that's left to do is make this calculation view available to others in Alex organization. Learn in the last tutorial how to do that!
 

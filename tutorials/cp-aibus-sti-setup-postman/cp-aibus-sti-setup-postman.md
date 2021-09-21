@@ -47,7 +47,7 @@ Collections let you group requests together and save them for later use. This he
 
 Make a local copy of the Postman collection sample file for Service Ticket Intelligence available on GitHub:
 
-1. Open the [collection sample file](https://github.com/SAP-samples/service-ticket-intelligence-postman-collection/blob/main/STI%20sample%20collection%202012.postman_collection.json).
+1. Open the [collection sample file](https://github.com/SAP-samples/service-ticket-intelligence-postman-collection/blob/main/STI%20sample%20collection%202108.postman_collection.json).
 
 2. Click **Raw**.
 

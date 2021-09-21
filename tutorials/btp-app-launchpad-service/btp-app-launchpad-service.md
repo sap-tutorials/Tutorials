@@ -80,7 +80,7 @@ Navigation targets are required to navigate between applications, but also to st
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Add navigation target for Mitigations UI)]
-Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.json`, but with the `semanticObject` name `Mitigations`:
+Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.json`, but with the `semanticObject` name `Mitigations`.
 
 <!-- cpes-file app/mitigations/webapp/manifest.json:$["sap.app"].crossNavigation -->
 ```JSON[8-19]
@@ -265,12 +265,6 @@ modules:
     npm i -g mta
     ```
 
-4. Delete the file `app/mitigations/.yo-rc.json`, because this makes the SAP Fiori application generator fail.
-
-    ```Shell/Bash
-    rm app/mitigations/.yo-rc.json
-    ```
-
 [DONE]
 [ACCORDION-END]
 ---
@@ -313,7 +307,20 @@ Make sure the last entry in `"devDependencies"` doesn't end with a comma (`,`) c
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 11: ](Add SAPUI5 freestyle Mitigations application)]
+[ACCORDION-BEGIN [Step 11: ](Fix SAPUI5 Tools Version for Risks app)]
+The SAPUI5 CLI version added by the SAPUI5 freestyle generator is outdated. Open the `app/risks/package.json` file and update the version for it so that it requires a newer version:
+
+```JSON[2]
+    "devDependencies": {
+        "@ui5/cli": "^2.11.1",
+```
+
+Without this change, the MTA build would break later.
+
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 12: ](Add SAPUI5 freestyle Mitigations application)]
 Repeat the procedure from the previous step for the `app/mitigation` folder.
 
 1. Switch to `app/mitigations` folder:
@@ -328,22 +335,9 @@ Repeat the procedure from the previous step for the `app/mitigation` folder.
     fiori add deploy-config cf
     ```
 
-3. It will ask for the destination name.
+    It will ask for the destination name.
 
-4. Enter `cpapp-app-srv` for the destination name again.
-
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 12: ](Fix SAPUI5 Tools Version for Mitigations app)]
-The SAPUI5 CLI version added by the SAPUI5 freestyle generator is outdated. Open the `app/mitigations/package.json` file and update the version for it so that it requires a newer version:
-
-```JSON[2]
-    "devDependencies": {
-        "@ui5/cli": "^2.11.1",
-```
-
-Without this change, the MTA build will break later.
+3. Enter `cpapp-app-srv` for the destination name again.
 
 [DONE]
 [ACCORDION-END]
@@ -388,7 +382,7 @@ The newly added modules `nsrisks` and `nsmitigations` do the build of the SAP Fi
         supported-platforms: []
     ```
 
-3. Check the HTML5 application deployer:
+3. Check the HTML5 application deployer.
 
     The module `cpapp-app-content` deploys the ZIP files from the `nsrisks.zip` and `nsmitigations.zip` to the SAP HTML5 Application Repository service, where it can be accessed by the SAP Launchpad service using the previously added destinations.
 
@@ -460,7 +454,13 @@ app/*/package-lock.json
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 16: ](Subscribe to SAP Launchpad service)]
-1. Log on to your **Global Account** and navigate to the **Subaccount** where you have deployed your service and application.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount where you have deployed your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 2. Choose **Services** **&rarr;** **Service Marketplace** on the left.
 
@@ -492,8 +492,8 @@ You have now subscribed to the SAP Launchpad service.
     > 2. Choose your identity provider from the list.
     > 3. Enter your e-mail address and choose **Show Assignments**.
     > 4. Choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
-    >
-    > !![Add role](add_launchpad_admin_role.png)
+
+    >     !![Add role](add_launchpad_admin_role.png)
 
     > 5. Open another browser or clear your browser's cache.
 
@@ -521,7 +521,7 @@ You have now subscribed to the SAP Launchpad service.
 
     > `Everyone` is a role that has to be assigned to the `Risks` and `Mitigations` apps so all users can access them.
 
-8. Choose **Edit** and assign the `Risks` and `Mitigations` apps to the role and *Save*.
+8. Choose **Edit**, assign the `Risks` and `Mitigations` apps to the role, and choose **Save**.
 
     !![Add Apps to Role](apps_to_role_everyone.png)
 
