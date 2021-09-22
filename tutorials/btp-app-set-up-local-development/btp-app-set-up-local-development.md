@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Set Up Local Development Using VS Code
-description: This tutorial shows you how to get started using VS Code as an editor. 
+description: This tutorial shows you how to get started using VS Code as an editor.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
@@ -113,7 +113,7 @@ A Node.js version 14 or higher is required to install the SAPUI5 CLI. See [SAPUI
 
 If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
 
-You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform. 
+You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
 
 1. Check whether the package manager `brew` is installed on your machine.
 
@@ -141,7 +141,7 @@ You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudf
 
 If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
 
-You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform. 
+You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
 
 Download a binary installer as described [here](https://github.com/cloudfoundry/cli#installers-and-compressed-binaries).
 
@@ -151,7 +151,7 @@ Download a binary installer as described [here](https://github.com/cloudfoundry/
 
 If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
 
-You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform. 
+You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
 
 Follow the steps described [here](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#pkg-linux).
 
@@ -176,7 +176,7 @@ CAP provides you with all the tools to create your data model with entities and 
 
 2. To verify that the installation was successful, run `cds` without arguments.
 
-    This lists the available `cds` commands. 
+    This lists the available `cds` commands.
 
 3. Check what versions of the CDS libraries have been installed.
 
@@ -203,8 +203,8 @@ Download the package for macOS and perform the following steps as described [her
 2. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P**) and type `shell command` to find the Shell Command: `Install 'code' command in PATH`.
 
     ![shell command](shell_command.png)
-          
-3. Restart VS Code for the new `$PATH` value to take effect.   
+
+3. Restart VS Code for the new `$PATH` value to take effect.
 
 
 [OPTION END]
@@ -284,40 +284,5 @@ You need to install the [**SAP Fiori tools - Extension Pack**](https://marketpla
 After a restart of VS Code, you can check for the tools by invoking **View** **&rarr;** **Extensions** and then scrolling through the list of **Enabled** extensions. They all start with **SAP Fiori tools**. If the extension is already installed and enabled in VS Code, it's updated automatically.
 
 [VALIDATE_1]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 11: ](Install SAPUI5 freestyle app templates using Yeoman)]
-SAPUI5 comes with templates that kick start your development for SAPUI5 freestyle app development. You need these if you want to carry out the tutorial [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5).
-SAPUI5 templates are based on [Yeoman](https://yeoman.io/), a tool for scaffolding web apps. You need to install it first.
-
-1. Check in a terminal whether you already have Yeoman installed.
-
-    ```Shell/Bash
-    yo --version
-    ```
-
-2. If you don't get a version number, install Yeoman.
-
-    ```Shell/Bash
-    npm install -g yo
-    ```
-
-3. Now, you can go ahead and install the [SAPUI5 templates](https://www.npmjs.com/package/@sapui5/generator-sapui5-templates).
-
-    ```Shell/Bash
-    npm install -g @sapui5/generator-sapui5-templates
-    ```
-
-4. Test whether everything works.
-
-    ```Shell/Bash
-    yo --generators
-    ```
-
-If the **@sapui5/sapui5-templates** generator is listed in the terminal, you're ready to go.
-
-![Generator](yeoman_generator.png)
-
-[DONE]
 [ACCORDION-END]
 ---
