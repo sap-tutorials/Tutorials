@@ -10,6 +10,9 @@ author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites
+- You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
+    - **SAP Mobile Services**
+    - **Business Application Studio**
 - [Completed the starter mission](mission.mobile-cards-get-started) or [Set up Mobile Services on your SAP Business Technology Platform account](cp-mobile-cards-setup)
 - [Set up SAP Business Application Studio for Mobile Development](cp-mobile-bas-setup)
 - [Created your first card in SAP Business Application Studio](cp-mobile-cards-bas-basic-card)
@@ -379,7 +382,7 @@ The data in `userdata.json` can now be used to design the card. You can learn mo
 
     !![MobileCardsImage](img_7_and_1.png)
 
-2. Tap **Subcriptions**.
+2. Tap **Subscriptions**.
 
     !![MobileCardsImage](img_7_and_2.png)
 
@@ -398,8 +401,6 @@ The data in `userdata.json` can now be used to design the card. You can learn mo
 6. Scroll through the carousel, and tap a card to open it.
 
     !![MobileCardsImage](img_7_and_6.png)
-
-    > If you are on a trial landscape, you will see a maximum of 3 card instances, i.e. 3 products.
 
 7. **Tap** the actions menu (![Android Action Button](ico_and_action.png)), and **tap** **Email** to send an e-mail to raise an order.
 
@@ -432,8 +433,6 @@ The data in `userdata.json` can now be used to design the card. You can learn mo
 5. Tap a card to open it.
 
     !![MobileCardsImage](img_7_ios_5.png)
-
-    > If you are on a trial landscape, you will see a maximum of 3 card instances, i.e. 3 products.
 
 6. **Tap** the actions menu (![iOS Action Button](ico_ios_action.png)), and **tap** **Email** to send an e-mail to raise an order.
 
