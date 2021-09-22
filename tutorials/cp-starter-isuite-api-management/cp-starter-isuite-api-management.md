@@ -66,7 +66,7 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
     |  Parameter    | Settings
     |  :------------- | :-------------
-    |  URL           | Paste the integration flow endpoint address you have copied in **step 2**. It ends with **`/http/products/details`**. **Note:** paste only the endpoint URL till **`/http/products`** instead of **`/http/products/details`**.
+    |  URL           | Paste the integration flow endpoint address you have copied in **step 1**. It ends with **`/http/products/details`**. **Note:** paste only the endpoint URL till **`/http/products`** instead of **`/http/products/details`**.
     |  Name           | **`RequestProductDetails`**
     |  Title    | **`Product Details API`**
     |  API Base Path          | **`/products`**
@@ -111,21 +111,13 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
     !![change product identifier after](011-after.png)
 
-    Choose **Save**. You are navigated to the APIs list view.
+    Choose **Save**.
 
-12. To view or edit your API Proxy changes, choose the name of the API **`RequestProductDetails`**.
-
-    !![View API proxy](012.png)
-
-13. Go to tab **Resources**, and choose the **POST** request.
-
-    !![Resources Tab](013.png)
-
-    You notice the API changes, in particular, the request body contains now one element with a product identifier.
+12. Choose the **POST** request. You notice the API changes, in particular, the request body contains now one element with a product identifier.
 
     !![Resources Tab API Changes](014.png)
 
-14. When you choose **Try Out** and then **Execute**, since no authentication details have been configured, you get an error message with error code 401 (not authorized).
+13. When you choose **Try Out** and then **Execute**, since no authentication details have been configured, you get an error message with error code 401 (not authorized).
 
     !![Error message](015.png)
 
@@ -158,7 +150,7 @@ In this step, you assign a policy template to your API to specify authentication
 
 This grant type works in the following way: In a first call, the API client provides the values of **`clientid`** and **`clientsecret`** (from the service key generated in Step 1) to a token service (the URL of the token service is also contained in the service key definition). The token service provides an access token to the API client. In a subsequent call, the API client calls the integration flow endpoint providing the access token. If the access token is valid, the API client is authorized to call the integration flow.
 
-1. In the navigation area of API Portal, choose **Discover**.
+1. In the navigation area of API Portal, choose **View content packages**.
 
     !![Discover](016.png)
 

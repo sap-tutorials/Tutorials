@@ -1,4 +1,6 @@
 ---
+author_name: Helena Nacinovic
+author_profile: https://github.com/helenanacinovic
 title: Business Builder in SAP Data Warehouse Cloud
 description: Learn about the business modeling capabilities of the Business Builder in SAP Data Warehouse Cloud, including what you can use it for, who should use it, and some of the prerequisites.
 auto_validation: true

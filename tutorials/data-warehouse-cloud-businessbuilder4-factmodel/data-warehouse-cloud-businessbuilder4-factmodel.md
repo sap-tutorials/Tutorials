@@ -1,4 +1,6 @@
 ---
+author_name: Helena Nacinovic
+author_profile: https://github.com/helenanacinovic
 title: Create a Fact Model in the Business Builder
 description: Group analytical datasets and dimensions into fact models in the Business Builder of SAP Data Warehouse Cloud.
 auto_validation: true

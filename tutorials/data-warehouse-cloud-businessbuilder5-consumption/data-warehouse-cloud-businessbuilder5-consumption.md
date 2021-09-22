@@ -1,4 +1,6 @@
 ---
+author_name: Helena Nacinovic
+author_profile: https://github.com/helenanacinovic
 title: Create a Consumption Model in the Business Builder
 description: Create consumption models in the Business Builder of SAP Data Warehouse Cloud to use the output data in visualization tools, such as SAP Analytics Cloud.
 auto_validation: true
