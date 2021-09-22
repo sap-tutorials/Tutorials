@@ -1,7 +1,7 @@
 ---
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Virtualize Data from On-Premise to the Cloud Using Smart Data Integration
+title: Use Smart Data Integration to Virtualise Data from On-Premise to the Cloud
 description: Virtualize data from SAP HANA on-premise to SAP HANA Cloud, SAP HANA database using Smart Data Integration (SDI) and the Data Provisioning Agent.
 auto_validation: true
 time: 15
@@ -110,7 +110,7 @@ Watch this video to see all the steps needed to install and configure the Data P
 
 [OPTION END]
 
-Now that the DP Agent is configured, you can virtualise and replicate data from the on-premise database to the SAP HANA Cloud, SAP HANA database instance. You can either virtualise or replicate data using this connection. The next steps will describe how to create virtual objects. In the [next tutorial](hana-cloud-mission-extend-07), you will learn how to use this connection to create a replication service.
+Now that the DP Agent is configured, you can virtualise and replicate data from the on-premise database to the SAP HANA Cloud, SAP HANA database instance. You can either virtualise or replicate data using this connection. The next steps will describe how to create virtual objects.
 
 
 

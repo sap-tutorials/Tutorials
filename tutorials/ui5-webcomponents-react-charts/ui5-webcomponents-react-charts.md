@@ -250,7 +250,7 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
 
     Add the following import to your component:
     ```JavaScript / JSX
-    import { Card, Text, Icon } from "@ui5/webcomponents-react";
+    import { Card, CardHeader, Text, Icon } from "@ui5/webcomponents-react";
     ```
 
     And the `avatar` prop, which receives an `Icon` as value, to the `Card` component:
@@ -289,7 +289,7 @@ Two charts in one `Card` is a bit too much, don't you think? It would be nicer i
 If something went wrong you can compare your component to this code snippet:
 ```JavaScript / JSX
 import React, { useState } from "react";
-import { Card, Text, Icon } from "@ui5/webcomponents-react";
+import { Card, CardHeader, Text, Icon } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
 import "@ui5/webcomponents-icons/dist/line-chart.js";

@@ -47,33 +47,37 @@ This tutorial shows you how to enable and test your chatbot in Microsoft teams, 
 
     ![Create a Resource](1-create-resource.png)
 
-3. Search for and then select **Bot Channels Registration**.
+3. Search for **Azure Bot**, then at the bottom of the tile click **Create > Azure Bot**.
 
     ![Bot Registration](1-bot-registration.png)
 
-    Click **Create**.
+4. Fill in the fields in the wizard.
 
-    ![Link text e.g., Destination screen](1-bot-registration-create.png)
-
-4. Fill in the registration form.
-
-    ![Link text e.g., Destination screen](1-registration-form.png)
-    <div>&nbsp;</div>
+    >The instructions were valid at the time of this writing, but you should check the Microsoft documentation for exact instructions.
 
     | Field Name | Input Value
     |------------|-------------
-    | Bot Name	 | A unique display name for the bot (which will appear in channels and directories -- this can be changed later)
-    | Subscription	| Your Azure subscription	(in my trial, I had only one)
-    | Resource Group	| Select a resource group. If you don't have one -- which you probably won't have -- then create a new one.
-    | Location	| Choose a location near where your bot is deployed
-    | Pricing Tier	| `F0	(10K Premium Messages)`
-    | Messaging endpoint	| This will be filled out later
-    | Application Insights	| On
-    | Application Insights Location | Choose a location near where your bot is deployed
+    | **Bot Handle**	 | A unique display name for the bot (which will appear in channels and directories -- this can be changed later)
+    | **Subscription**	| Your Azure subscription	(in my trial, I had only one)
+    | **Resource Group**	| Select a resource group. If you don't have one -- which you probably won't have -- then create a new one.
+    | **Pricing**	| Make sure you select the F0 free Pricing tier -- I had to change the selection -- unless you want to use it in production.
+    | **Microsoft App ID**	| Keep **Create new Microsoft App ID**
 
-    Click **Create**.
+    Click **Review + Create**.
 
->It may take a few minutes for the registration to take effect and be listed in your resources list.
+    ![Create bot resource](bot-create.png)
+
+5. It will take a few minutes for the resource settings to be validated.
+
+    Once complete, click **Create**.
+
+    >It may take a few minutes for the resource to be created.
+
+    When complete, you can go to the bot resource by clicking **Go to resource**.
+
+    ![Bot created](bot-created-list.png)
+
+    There will be 2 links: one to the resource, and one to the key vault, where you get the secret.
 
 [DONE]
 [ACCORDION-END]
@@ -81,19 +85,36 @@ This tutorial shows you how to enable and test your chatbot in Microsoft teams, 
 
 [ACCORDION-BEGIN [Step 3: ](Get your app ID and secret)]
 
-1. Go to the Microsoft Azure [portal](https://portal.azure.com/), and then go to the **Dashboard**.
 
-    ![Dashboard](3-dashboard.png)
+1. Open your bot resource, and go to **Settings > Configuration**.
 
-2. In the dashboard, click the resource you just created.
+    The app ID is shown under **Microsoft App ID**. Copy this number down.
 
-3. Click **Settings**, and scroll down.
+    ![App ID](app-id.png)
 
-    - Generate a **Client Secret** by clicking **Manage**, then **New Client Secret**, then **Add**.
+2. Open the key vault.
 
-    - Copy the **Microsoft App ID** and **Client Secret**, for use later.
+    >In my Azure account, I had to give myself permission to enable me to use the key vaults and to get my app's secret. I did the following:
 
-    ![ID and secret](3-IDandSecret.png)
+    >- In the key vault, go to **Settings > Access Policies**.
+
+    >- Click **Add Access Policy**.
+
+    >- In the **Configure from template** field, select the **Key, Secret & Certificate Management**.
+
+    >      ![Access policy](accesspolicy.png)
+
+    >- Under **Select principal**, search for your account and select it.
+
+    >- Click **Add**, and then **Save**.
+
+3. Select the secret already created when you created your bot resource.
+
+    ![Secret](key-vault-secret.png)
+
+4. Click on the version, and then copy the secret at the bottom of the page.
+
+    ![Copy secret](key-vault-secret2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -106,7 +127,7 @@ This tutorial shows you how to enable and test your chatbot in Microsoft teams, 
 
     ![Connect tab](4-connect.png)
 
-3. Click on the row for Skype and Teams, and in the popup, enter the app ID and client secret from Azure.
+3. Click on the row for Skype and Teams, and in the popup, enter the app ID and secret from Azure.
 
     ![Copy endpoint](4-appID-secret.png)
 
@@ -114,11 +135,11 @@ This tutorial shows you how to enable and test your chatbot in Microsoft teams, 
 
     ![Link text e.g., Destination screen](4-endpoint.png)
 
-4. Go back to your resource in Azure, and under **Settings**, paste the endpoint into the **Messaging Endpoint** field.
+4. Go back to your resource in Azure, and under **Settings > Configuration**, paste the endpoint into the **Messaging Endpoint** field.
 
     ![Paste endpoint](4-endpoint-Azure.png)
 
-    Click **Save** (at top).
+    Click **Apply** (at top).
 
 
 [DONE]
@@ -147,7 +168,7 @@ This tutorial shows you how to enable and test your chatbot in Microsoft teams, 
 
     ![Channels](6-channels.png)
 
-3. Click **Save**.
+3. Click **Publish**, then **Save**.
 
     ![Publish](6-channels-teams.png)
 

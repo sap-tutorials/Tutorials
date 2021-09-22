@@ -1,7 +1,7 @@
 ---
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Virtualise Data from the Cloud to an On-Premise Database Using Smart Data Access
+title: Use Smart Data Access to Virtualise Data from the Cloud to an On-Premise Database
 description: Create an SDA connection between SAP HANA Cloud, SAP HANA database and SAP HANA on-premise.
 auto_validation: true
 time: 10
@@ -17,7 +17,7 @@ primary_tag: products>sap-hana-cloud
 
 ## Details
 ### You will learn
-- how to create a remote source to an SAP HANA Cloud, SAP HANA database instance in your SAP HANA on-premise system using Smart Data Access
+- How to create a remote source to an SAP HANA Cloud, SAP HANA database instance in your SAP HANA on-premise system using Smart Data Access
 - How to then virtualise data from SAP HANA Cloud to an SAP HANA on-premise database
 
 
