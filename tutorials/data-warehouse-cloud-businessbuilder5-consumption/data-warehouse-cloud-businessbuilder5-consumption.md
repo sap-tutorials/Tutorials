@@ -68,7 +68,7 @@ Your new consumption model is created.
 
 [ACCORDION-BEGIN [Step 2: ](Add business entities to the consumption model)]
 
-For your consumption model to have data in its output, you need to add add business entities to your consumption model, such as measures and attributes.
+For your consumption model to have data in its output, you need to add business entities to your consumption model, such as measures and attributes.
 
 1.	On the main canvas of the consumption model, click on the plus icon under **Fact Sources** or **Dimension Sources** on the right sidebar.
 
