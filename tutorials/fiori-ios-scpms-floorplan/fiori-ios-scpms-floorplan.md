@@ -247,7 +247,7 @@ Implement the following lines of code before the `updateTableView()` method call
 // Register the cell with the provided convenience reuse identifier.
 tableView.register(FUIContactCell.self, forCellReuseIdentifier: FUIContactCell.reuseIdentifier)
 
-// Set the seperator style of the table view to none and the background color to the standard Fiori background base color.
+// Set the separator style of the table view to none and the background color to the standard Fiori background base color.
 tableView.separatorStyle = .none
 tableView.backgroundColor = .preferredFioriColor(forStyle: .backgroundBase)
 
