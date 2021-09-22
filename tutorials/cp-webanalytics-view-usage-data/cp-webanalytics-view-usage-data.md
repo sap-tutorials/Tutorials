@@ -5,6 +5,8 @@ auto_validation: true
 time: 10
 tags: [tutorial>beginner, products>sap-web-analytics, products>sap-cloud-platform]
 primary_tag: products>sap-web-analytics
+author_name: Vikram Kulkarni
+author_profile: https://github.com/Vikramkulkarni01
 ---
 
 ## Details

@@ -1,4 +1,6 @@
 ---
+author_name: Helena Nacinovic
+author_profile: https://github.com/helenanacinovic
 title: Create an Analytical Dataset in the Business Builder
 description: Create a new analytical dataset with measures and attributes in the Business Builder of SAP Data Warehouse Cloud.
 auto_validation: true

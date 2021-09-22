@@ -80,7 +80,7 @@ pip install hdbcli
 >
 > ```Shell
 > cd C:\SAP\hdbclient
-> pip install hdbcli-2.9.19.zip
+> pip install hdbcli-2.10.9.zip
 > ```
 
 > ---

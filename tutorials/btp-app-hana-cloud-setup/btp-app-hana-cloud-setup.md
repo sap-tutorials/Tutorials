@@ -10,7 +10,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
+ - [Set Up Local Development Using VS Code](btp-app-set-up-local-development)
  - [Create a Directory for Development](btp-app-create-directory)
  - [Create a CAP-Based Application](btp-app-create-cap-application)
  - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
@@ -201,29 +201,37 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
 8. Sign in with your SAP BTP Cockpit username/email.
 
-9. The **Organization** and **Space** will be selected.
+9. Choose **SAP HANA Cloud, SAP HANA Database** and choose **Next Step**.
 
-10. Enter the **Instance Name**: `cpapp`.
+    !![Create SAP HANA Cloud: Step 1](hana_cloud_create_1.png)
 
-    !![Create SAP HANA Cloud: Step 1a](hana_cloud_create_1a.png)
+10. The **Organization** and **Space** will be selected. Enter the **Instance Name** `cpapp`.
+
+    !![Create SAP HANA Cloud: Step 2a](hana_cloud_create_2a.png)
 
 11. Enter a password for _DBADMIN_ in **Administrator Password** and **Confirm Administrator Password**.
 
-    !![Create SAP HANA Cloud: Step 1b](hana_cloud_create_1b.png)
+    !![Create SAP HANA Cloud: Step 2b](hana_cloud_create_2b.png)
 
-12. Choose **Step 2**. The default settings should be sufficient for the tutorial application.
-
-    !![Create SAP HANA Cloud: Step 2](hana_cloud_create_2.png)
-
-13. Choose **Step 3**.
-
-14. Choose `Allow only BTP IP addresses`.
+12. Choose **Next Step**. The default settings should be sufficient for the tutorial application.
 
     !![Create SAP HANA Cloud: Step 3](hana_cloud_create_3.png)
 
-    > In case you get error `[APP/TASK/deploy/0] ERR Error: Connection failed (RTE:[xxx] Socket closed by peer (<your-instance-ID>.hana.trial-<your-ladscape>.hanacloud.ondemand.com:443))`, change the setting to `Allow all IP addresses`.
+13. Choose **Next Step**.
 
-15. Choose **Create Instance**.
+14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**. 
+
+14. Choose `Allow only BTP IP addresses`.
+
+    !![Create SAP HANA Cloud: Step 4](hana_cloud_create_4.png)
+
+15. Choose **Next Step**.
+
+    > Do not create a Data Lake. It's useful for ingesting, storing and analyzing high volumes of data but you don't needed it for the tutorial application.
+
+15. Choose **Review and Create** to review your HANA Cloud instance configuration and choose **Create Instance**.
+
+    > You can also copy the configuration so you can create a similar instance or cancel the creation and start from the beginning.
 
     The creation of the database instance can take some minutes to complete. The final result looks like this in SAP BTP cockpit:
 
@@ -261,29 +269,37 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
 8. Sign in with your SAP BTP Cockpit username/email.
 
-9. The **Organization** and **Space** will be selected.
+9. Choose **SAP HANA Cloud, SAP HANA Database** and choose **Next Step**.
 
-10. Enter the **Instance Name**: `cpapp`.
+    !![Create SAP HANA Cloud: Step 1](hana_cloud_create_1.png)
 
-    !![Create SAP HANA Cloud: Step 1a](hana_cloud_create_1a.png)
+10. The **Organization** and **Space** will be selected. Enter the **Instance Name** `cpapp`.
+
+    !![Create SAP HANA Cloud: Step 2a](hana_cloud_create_2a.png)
 
 11. Enter a password for _DBADMIN_ in **Administrator Password** and **Confirm Administrator Password**.
 
-    !![Create SAP HANA Cloud: Step 1b](hana_cloud_create_1b.png)
+    !![Create SAP HANA Cloud: Step 2b](hana_cloud_create_2b.png)
 
-12. Choose **Step 2**. The default settings should be sufficient for the tutorial application.
-
-    !![Create SAP HANA Cloud: Step 2](hana_cloud_create_2.png)
-
-13. Choose **Step 3**.
-
-14. Choose `Allow only BTP IP addresses`.
+12. Choose **Next Step**. The default settings should be sufficient for the tutorial application.
 
     !![Create SAP HANA Cloud: Step 3](hana_cloud_create_3.png)
 
-    > In case you get error `[APP/TASK/deploy/0] ERR Error: Connection failed (RTE:[xxx] Socket closed by peer (<your-instance-ID>.hana.trial-<your-ladscape>.hanacloud.ondemand.com:443))`, change the setting to `Allow all IP addresses`.
+13. Choose **Next Step**.
 
-15. Choose **Create Instance**.
+14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**. 
+
+14. Choose `Allow only BTP IP addresses`.
+
+    !![Create SAP HANA Cloud: Step 4](hana_cloud_create_4.png)
+
+15. Choose **Next Step**.
+
+    > Do not create a Data Lake. It's useful for ingesting, storing and analyzing high volumes of data but you don't needed it for the tutorial application.
+
+15. Choose **Review and Create** to review your HANA Cloud instance configuration and choose **Create Instance**.
+
+    > You can also copy the configuration so you can create a similar instance or cancel the creation and start from the beginning.
 
     The creation of the database instance can take some minutes to complete. The final result looks like this in SAP BTP cockpit:
 

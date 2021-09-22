@@ -29,7 +29,7 @@ In this step, you will download the sample Design-to-Operate visibility scenario
 
 1. Use the following link to access [GitHub](https://github.com/SAP-samples/cloud-process-visibility/releases).
 
-2. Choose the `DesignToOperateEvents.json` file.
+2. Choose the `DesignToOperateEvents.json` file. 
 
     ![GitHub](screen1-git.png)
 

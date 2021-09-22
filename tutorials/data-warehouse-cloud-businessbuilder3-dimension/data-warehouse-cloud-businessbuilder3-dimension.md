@@ -1,4 +1,6 @@
 ---
+author_name: Helena Nacinovic
+author_profile: https://github.com/helenanacinovic
 title: Create a Dimension in the Business Builder
 description: Create a dimension in the Business Builder of SAP Data Warehouse Cloud.
 auto_validation: true
