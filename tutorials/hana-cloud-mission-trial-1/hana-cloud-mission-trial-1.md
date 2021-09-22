@@ -36,7 +36,7 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
 
 This mission consists of 9 modules that contain the necessary steps you need to follow in your mission to help Alex:
 
-1.	You are here **`->`Start using an SAP HANA Cloud trial in SAP BTP Cockpit**.
+1.	You are here <sub-style="font-size:30px">&#9755;</sub> **Start using an SAP HANA Cloud trial in SAP BTP Cockpit**.
 
 2.	Provision an instance of SAP HANA Cloud, SAP HANA database
 
@@ -57,10 +57,14 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 In this tutorial, you will first learn how to sign up for a trial of SAP HANA Cloud, SAP HANA database or add it to an existing trial account of SAP BTP if you have one. This is the prerequisite for all other modules in this mission.
 
 > If you have a **production environment** of SAP HANA Cloud, SAP HANA database, you may also follow the steps described in this mission.
-
-You can also watch this video to kick off the mission.
-
+>
+> You can also watch this video to kick off the mission.
+>
 <iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_7y0hucq6/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
+>
+> ### About this video
+>
+> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
 
 ---
 
@@ -170,7 +174,7 @@ SAP BTP cockpit is a web-based interface used to manage SAP cloud applications, 
 
 When you first access your trial account, you will see the **Trial Home Page**.
 
-> Note: In a production environment, you do not see the Trial Home Page.
+> In a production environment, you do not see the Trial Home Page.
 
 This is where you can enter your account but also find helpful resources to get to know the SAP BTP cockpit in detail:
 

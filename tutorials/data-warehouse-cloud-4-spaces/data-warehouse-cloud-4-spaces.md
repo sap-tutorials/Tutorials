@@ -1,8 +1,8 @@
 ---
-title: Create a Space in SAP Data Warehouse Cloud
-description: A Space is like a virtual team or office space. These virtual workspaces are designed for an individual or a group of users to perform their data modeling and data integration. Spaces are totally isolated from each other and can be assigned quotas for available disk space, CPU usage, runtime hours, and memory usage.
+title: Create and Monitor a Space in SAP Data Warehouse Cloud
+description: In this tutorial, learn how to create and monitor a Space. This is where you and your team will work towards fulfilling your objective with SAP Data Warehouse Cloud.
 auto_validation: true
-time: 5
+time: 10
 tags: [ tutorial>beginner, products>sap-data-warehouse-cloud]
 primary_tag: products>sap-data-warehouse-cloud
 ---
@@ -15,28 +15,19 @@ primary_tag: products>sap-data-warehouse-cloud
   - How to create a Space
   - How to manage and monitor your Space
 
-  This tutorial is part of a mission, in which you try to help Best Run Bikes to to get a holistic view of their sales data by using the power of SAP Data Warehouse Cloud. You will get the sales data of Best Run Bikes and it is your mission to use the features of SAP Data Warehouse Cloud to help the bike suppliers make the best possible business decisions.
+  You can also follow the steps in this tutorial by watching this video
 
-  This mission consists of 8 modules that contain the necessary steps you need to follow in your mission to help Best Run Bikes:
-
-  1. [Sign up for trial.](data-warehouse-cloud-1-begin-trial)
-  2. [Get to know the SAP Data Warehouse Cloud interface](data-warehouse-cloud-2-interface)
-  3. [Add users and assign roles](data-warehouse-cloud-3-add-users)
-  4. **You are here ->** [Create your Space](data-warehouse-cloud-4-spaces)
-  5. [Import your datasets](data-warehouse-cloud-5-import-dataset)
-  6. [Create an entity relationship model](data-warehouse-cloud-6-entityrelationship-model)
-  7. [Create a graphical view model](data-warehouse-cloud-7-graphicalview)
-  8. [Define measures, business semantics and preview your data](data-warehouse-cloud-8-define-measures)
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/sOFzqSZy5UI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a Space)]
 
-1.	To create a space, click on the space management icon on the bottom left, and click on the plus symbol on the top right.
+1.	To create a Space, click on the Space management icon on the bottom left, and click on the plus symbol on the top right.
 
     ![Create Space](T04-Picture1.png)
 
-2.	Enter a name for your space. The Space ID will auto populate. In this example, let's call our space Best Run Bikes.
+2.	Enter a name for your Space. The Space ID will auto populate. In this example, let's call our Space **Best Run Bikes**.
 
     ![Space Name](T04-Picture2.png)
 
@@ -45,21 +36,40 @@ primary_tag: products>sap-data-warehouse-cloud
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understand your Space)]
+[ACCORDION-BEGIN [Step 2: ](Monitor your Space)]
 
 In the **Space Management** screen, each Space is represented by a tile. The Spaces tiles can show a red, green, or blue colour table.
 
-•	Green spaces are performing optimally.
+  -	Green Spaces are performing optimally.
 
-•	Red spaces are overactive and need more resources allocated to perform optimally.
+  -	Red Spaces are overactive and need more resources allocated to perform optimally.
 
-•	Blue spaces are under active.
+  -	Blue Spaces are under active.
 
-Some resources that aren't being used by a blue space could be reallocated to a red space, for example. You also have the option to monitor a space and see detailed information about disk use and in memory usage. This is done by clicking on the three dots next to your space name.
+Some resources that aren't being used by a blue Space could be reallocated to a red Space, for example. You also have the option to monitor a Space and see detailed information about disk use and in memory usage. This is done by clicking on the three dots next to your Space name.
 
-!![Space Overview](T04-Picture3.png)
+![Space Overview](T04-Picture3.png)
 
-To see an overview of your space settings, simply select the Space, and this takes you to the overview, where you can monitor your space and see a more detailed view of the same. You can fine tune your disk-space and memory allocations as per your requirements if you wish. For this example, use the minimum configuration.
+Space monitoring allows the administrator to keep an eye on their Space.
+
+Click your Space or click the monitoring button on the upper right side of your Space in Space Management to open the monitoring page.
+
+![Space Monitoring](T07 Monitoring.jpg)
+
+On the monitoring screen, you can perform the following features:
+
+- See used disk and in-memory storage of your Space.
+
+- Track your data flow capacity units that have been assigned to your Space.
+
+- Filter by schema or by storage type. Filter values by adding or removing them from the drop-down menu. The values are displayed in a doughnut and bar chart. The hidden replica tables of virtual tables in the SAP HANA Cloud, SAP HANA database are stored in a separate schema named `_SYS_TABLE_REPLICA_DATA`.
+
+- The table storage consumption graph displays all the relevant tables according to your selected filter which makes it easy to get an overview over the consumed storage.
+
+- Table details provides more information such as the name, schema, storage type, record count, and the used storage of each table. Sort your list of tables in ascending, descending order or group them together as well as search for certain values.
+
+
+To see an overview of your Space settings, simply select the Space, and this takes you to the overview, where you can monitor your Space and see a more detailed view of the same. You can fine tune your disk-Space and memory allocations as per your requirements if you wish. For this example, use the minimum configuration.
 
 ![Space Details](T04-Picture4.png)
 
@@ -70,16 +80,40 @@ Now that you've created your Space, you can now move ahead and assign users to y
 
 [ACCORDION-BEGIN [Step 3: ](Add users into your Space)]
 
-1.	Once in your Space, click on the Members tab. You can also alternatively scroll down to the Members heading.
-2.	Click on Add to allocate a member from your user list.
+1.	Once in your Space, click on the Members tab. You can also alternatively scroll down to the members heading.
+2.	Click on **Add** to allocate a member from your user list.
 
     ![Add Users](T04-Picture5.png)
 
-3.	You can now select the users you'd like to add to your space by checking them off. When you're happy with your choices, click on Add to confirm. Don't forget to add yourself as a user!
+3.	You can now select the users you'd like to add to your Space by checking them off. When you're happy with your choices, click on **Add** to confirm. Don't forget to add yourself as a user!
 
 ![Select User](T04-Picture6.png)
 
 You have successfully added your team members as users into your Space.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Responding to a locked Space)]
+
+When a Space exceeds its quota, it will eventually get locked. You'll see it in Space Management. After you receive an alert that your Space is about to be locked, you should take immediate action to ensure that you can continue working in the Space.
+
+![Locked Space](T07 Locked.png)
+
+When the Space is locked, operations like uploading data, creating a new user, creating a new connection, new model, or Open SQL Schema, are not possible. Also any operations in the data or business builder using this particular Space are also not possible.
+
+When you click **Unlock Space**, you have 24 hours in which you can delete unwanted data or increase the increase the Space's quota. If you do not take action, the Space remains locked.
+
+It is hence important to manage your Spaces well in order to ensure a smooth experience for you and your team with SAP Data Warehouse Cloud.
+
+> **Well done!**
+
+> You have completed this tutorial. Now you know how to create and monitor Spaces in SAP Data Warehouse Cloud.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]

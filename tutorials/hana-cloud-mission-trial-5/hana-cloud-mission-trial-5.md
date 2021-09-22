@@ -37,7 +37,7 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 4.	Create users and manage roles and privileges
 
-5.	*You are here* **`->`Import data into SAP HANA Cloud, SAP HANA Database**
+5.	You are here <sub-style="font-size:30px">&#9755;</sub> **Import data into SAP HANA Cloud, SAP HANA Database**
 
 6.	Query the database using SQL statements
 
@@ -48,9 +48,14 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 9.	Grant access to Calculation Views
 
 In this tutorial, you will learn how to import data to your SAP HANA database in SAP HANA Cloud.
-You can follow the steps in this tutorial also by watching this video.
 
+> You can follow the steps in this tutorial also by watching this video:
+>
 <iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_tkv59xbu/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
+>
+> ### About this video
+>
+> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
 
 
 ---

@@ -34,7 +34,7 @@ For example, create a space named "E-commerce" to which you register your shoppi
 
 [ACCORDION-BEGIN [Step 1: ](Open the SAP BTP Cockpit)]
 
-In the [home page](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) of SAP BTP cockpit trial, select **Enter Your Trial Account**.
+In the [home page](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) of SAP BTP cockpit trial, select **Go To Your Trial Account**.
 
 !![Cloud Foundry](Step_1.png)
 

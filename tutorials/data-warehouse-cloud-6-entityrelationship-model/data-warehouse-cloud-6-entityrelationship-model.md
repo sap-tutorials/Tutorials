@@ -30,6 +30,10 @@ primary_tag: products>sap-data-warehouse-cloud
   7. [Create a graphical view model](data-warehouse-cloud-7-graphicalview)
   8. [Define measures, business semantics and preview your data](data-warehouse-cloud-8-define-measures)
 
+  You can also follow the steps in this tutorial by watching this video
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/zd3wGDhY2SM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Understand the basics of E/R models)]
@@ -37,7 +41,9 @@ primary_tag: products>sap-data-warehouse-cloud
 An E/R model provides a diagram for organising your data entities (tables and views) in relation to one another. You can:
 
 •	Add entities from the repository or import them from a connection or a CSN file, as well as creating new entities directly.
+
 •	Modify the properties of your entities including adding human-readable business names and creating associations directly in the diagram.
+
 •	Save and deploy all the contents of your model with a single action.
 
 The work that you do in an E/R model benefits all the users in your Space as they can use the entities that you import or enhance as sources in their views.
@@ -61,7 +67,7 @@ A data model is a way to organise the data and define the relationship between t
 
     ![SalesOrder and SalesOrderItems](T06-Picture3.png)
 
-5.	With the data tables now in your modeling interface, you are now ready to create the relevant associations and deploy your E/R model.
+5.	With the data tables now in your modelling interface, you are now ready to create the relevant associations and deploy your E/R model.
 
 [DONE]
 [ACCORDION-END]

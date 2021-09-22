@@ -44,7 +44,7 @@ In the current implementation, the launch page is sitting inside the application
 
 3. Open the file `index.html` in an editor and change the following lines:
 
-    ```JavaScript[5,10,12-20]
+    ```JavaScript[5,10,12-19]
         <script>
             window["sap-ushell-config"] = {
                 defaultRenderer: "fiori2",
@@ -79,7 +79,7 @@ In the current implementation, the launch page is sitting inside the application
 
 5. With `cds watch` running, open the app in your browser at <http://localhost:4004/launchpage.html#Shell-home>.
 
-6. You now see the `mitigations` app next to the `risks` app on the launch page.
+6. You now see the `Mitigations` app next to the `Risks` app on the launch page.
 
     !![Launch Page](launchpage2apps.png)
 

@@ -31,11 +31,15 @@ primary_tag: products>sap-data-warehouse-cloud
   7. [Create a graphical view model](data-warehouse-cloud-7-graphicalview)
   8. [Define measures, business semantics and preview your data](data-warehouse-cloud-8-define-measures)
 
+  You can also follow the steps in this tutorial by watching this video
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/36Gs4YZyQeY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get to know the data builder)]
+[ACCORDION-BEGIN [Step 1: ](Get to know the Data Builder)]
 
-SAP Data Warehouse Cloud has two modeling layers tailored for different user groups: the data layer is the area where data engineers can create their models with a technical approach, whereas the business layer is the area for business users who create their models using a more semantic approach. This allows business users to work independently from data engineers, while still being able to collaborate and share data with them.
+SAP Data Warehouse Cloud has two modelling layers tailored for different user groups: the data layer is the area where data engineers can create their models with a technical approach, whereas the business layer is the area for business users who create their models using a more semantic approach. This allows business users to work independently from data engineers, while still being able to collaborate and share data with them.
 
 !![Data Modeling Overview](T05-Picture1.png)
 

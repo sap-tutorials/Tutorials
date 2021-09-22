@@ -24,7 +24,7 @@ In SAPUI5, each view is represented by a dedicated file in the `view` folder.
 
 1. Add a new view with a right-click on the `view` folder and select **New File**. Name this file `List.view.xml`.
 
-    !![newFile](./newView.png)
+    !![newFile](./newView.png) 
 
 2. The name already suggests that this view fill contain a [list](https://sapui5.hana.ondemand.com/#/topic/295e44b2d0144318bcb7bdd56bfa5189) of products. Add the following file content that defines the views and the list. Note the list already uses [data binding](https://sapui5.hana.ondemand.com/#/topic/68b9644a253741e8a4b9e4279a35c247) to show the product entities as list items.
 

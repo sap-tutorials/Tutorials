@@ -5,6 +5,8 @@ auto_validation: true
 time: 15
 tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 ## Details
@@ -22,7 +24,7 @@ The SDK is available in [GitHub](https://github.com/SAP/data-attribute-recommend
 
 [ACCORDION-BEGIN [Step 1: ](Install Python)]
 
-First, you need to make sure that you have Python installed. Ideally, you have a Python version from 3.5 up to 3.8 as those are actively supported by the SDK. 
+First, you need to make sure that you have Python installed. Ideally, you have a Python version from 3.5 up to 3.8 as those are actively supported by the SDK.
 
 [OPTION BEGIN [Windows]]
 

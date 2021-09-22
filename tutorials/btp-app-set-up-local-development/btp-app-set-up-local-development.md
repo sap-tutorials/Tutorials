@@ -45,7 +45,7 @@ This tutorial contains a number of command line snippets that need to be pasted 
 [ACCORDION-BEGIN [Step 3: ](Install Git)]
 Git is the version control system that you need to download the files of this tutorial but also to develop anything in collaboration with others really.
 
-Check whether you already have Git installed by opening a terminal and execute:
+Check whether you already have Git installed. Open a terminal and execute the following command.
 
 ```Shell/Bash
 git version
@@ -65,7 +65,7 @@ If not, go to [Git downloads](https://git-scm.com/downloads), pick the installer
 [ACCORDION-BEGIN [Step 4: ](Install Node.js)]
 Node.js is the JavaScript runtime the CAP backend part of the application runs on and that is needed for some of the tools involved to develop the application.
 
-In case you don't know whether you have Node.js installed and whether it has the right version (>=14), open a terminal and execute:
+In case you don't know whether you have Node.js installed and whether it has the right version (>=14), open a terminal and execute the following command.
 
 ```Shell/Bash
 node -v
@@ -87,19 +87,19 @@ v14.x.x
 [ACCORDION-BEGIN [Step 5: ](Install the SAPUI5 command line interface)]
 A Node.js version 14 or higher is required to install the SAPUI5 CLI. See [SAPUI5 CLI](https://sap.github.io/ui5-tooling/pages/CLI/) for more details.
 
-1. Check in a terminal whether you already have the UI5 CLI installed:
+1. Check in a terminal whether you already have the UI5 CLI installed.
 
     ```Shell/Bash
     ui5 --version
     ```
 
-2. If you don't get a version number, install the UI5 CLI:
+2. If you don't get a version number, install the UI5 CLI.
 
     ```Shell/Bash
     npm install --global @ui5/cli
     ```
 
-3. Verify that the installation was successful by running the version command again:
+3. Verify that the installation was successful by running the version command again.
 
     ```Shell/Bash
     ui5 --version
@@ -113,14 +113,14 @@ A Node.js version 14 or higher is required to install the SAPUI5 CLI. See [SAPUI
 
 If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
 
-You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) needed if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
+You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
 
-1. Check whether the package manager `brew` is installed on your machine:
+1. Check whether the package manager `brew` is installed on your machine.
 
     ```Shell/Bash
     brew --version
     ```
-      If there's an output of a version of `brew`, you got brew and it's best if you install the CF CLI:
+      If there's an output of a version of `brew`, you got brew and it's best if you install the CF CLI.
 
     ```Shell/Bash
     brew install cloudfoundry/tap/cf-cli
@@ -129,7 +129,7 @@ You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudf
       If you don't have `brew`, you might want to consider installing [brew](https://brew.sh/), because it lets you install many software packages easily even outside the context of this tutorial.
       If you don't have `brew`, you have to download a binary installer as described [here](https://github.com/cloudfoundry/cli#installers-and-compressed-binaries).
 
-2. In either case, after the installation, check whether you get the output of a version indicating the installation succeeded:
+2. In either case, after the installation, check whether you get the output of a version indicating the installation succeeded.
 
     ```Shell/Bash
     cf --version
@@ -141,7 +141,7 @@ You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudf
 
 If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
 
-You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) needed if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
+You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
 
 Download a binary installer as described [here](https://github.com/cloudfoundry/cli#installers-and-compressed-binaries).
 
@@ -151,7 +151,7 @@ Download a binary installer as described [here](https://github.com/cloudfoundry/
 
 If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
 
-You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) needed if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
+You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
 
 Follow the steps described [here](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#pkg-linux).
 
@@ -164,7 +164,7 @@ Follow the steps described [here](https://docs.cloudfoundry.org/cf-cli/install-g
 [ACCORDION-BEGIN [Step 7: ](Add CAP tooling)]
 CAP provides you with all the tools to create your data model with entities and your services. It helps you tremendously to get these services running locally during development with an incredible speed. It also creates the connection to both local databases and databases in the cloud (SAP HANA). It comes with different tooling that is used in this tutorial. You can see the details in the [CAP documentation](https://cap.cloud.sap/docs/get-started/in-a-nutshell).
 
-1. Install CDS development kit globally in a terminal:
+1. Install CDS development kit globally in a terminal.
 
     ```Shell/Bash
     npm i -g @sap/cds-dk
@@ -178,7 +178,7 @@ CAP provides you with all the tools to create your data model with entities and 
 
     This lists the available `cds` commands.
 
-3. Check what versions of the CDS libraries have been installed:
+3. Check what versions of the CDS libraries have been installed.
 
     ```Shell/Bash
     cds v
@@ -204,7 +204,7 @@ Download the package for macOS and perform the following steps as described [her
 
     ![shell command](shell_command.png)
 
-3. Restart VS Code for the new `$PATH` value to take effect.   
+3. Restart VS Code for the new `$PATH` value to take effect.
 
 
 [OPTION END]
@@ -284,40 +284,5 @@ You need to install the [**SAP Fiori tools - Extension Pack**](https://marketpla
 After a restart of VS Code, you can check for the tools by invoking **View** **&rarr;** **Extensions** and then scrolling through the list of **Enabled** extensions. They all start with **SAP Fiori tools**. If the extension is already installed and enabled in VS Code, it's updated automatically.
 
 [VALIDATE_1]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 11: ](Install SAPUI5 freestyle app templates using Yeoman)]
-SAPUI5 comes with templates that kick start your development for SAPUI5 freestyle app development. You need these if you want to carry out the tutorial [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5).
-SAPUI5 templates are based on [Yeoman](https://yeoman.io/), a tool for scaffolding web apps. You need to install it first.
-
-1. Check in a terminal whether you already have Yeoman installed:
-
-    ```Shell/Bash
-    yo --version
-    ```
-
-2. If you don't get a version number, install Yeoman:
-
-    ```Shell/Bash
-    npm install -g yo
-    ```
-
-3. Now, you can go ahead and install the [SAPUI5 templates](https://www.npmjs.com/package/@sapui5/generator-sapui5-templates):
-
-    ```Shell/Bash
-    npm install -g yo @sapui5/generator-sapui5-templates
-    ```
-
-4. Test whether everything works:
-
-    ```Shell/Bash
-    yo --generators
-    ```
-
-If the **@sapui5/sapui5-templates** generator is listed in the terminal, you're ready to go.
-
-![Generator](yeoman_generator.png)
-
-[DONE]
 [ACCORDION-END]
 ---

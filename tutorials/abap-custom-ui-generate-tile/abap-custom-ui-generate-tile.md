@@ -10,7 +10,7 @@ author_profile: https://github.com/Liebherr
 ---
 
 ## Prerequisites
-- **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`) in **SAP S/4HANA Cloud**
+- **Authorizations:** Your user needs a business role with business catalogs **Extensibility - Custom Business Objects** (ID: `SAP_CORE_BC_EXT_CBO`) and  **Extensibility - Custom Catalog Extensions** (ID: `SAP_CORE_BC_EXT_CCE`) in **SAP S/4HANA Cloud**
 
 ## Details
 ### You will learn
@@ -45,15 +45,15 @@ Press **Add** to start extending the business catalog that the new app shall be 
 
 ![add a catalog to become extended](s4_customCatalogExtension_add.png)
 
-A pop up opens for catalog selection. Be aware, that users that shall be able to use the app must have a role with the same catalog assigned. As for this tutorial catalog `SAP_CORE_BC_EXT` is the essential prerequisite, we simply select that and press **OK**
+A pop up opens for catalog selection. Be aware, that users that shall be able to use the app must have a role with the same catalog assigned. Narrow down the result list by searching for `Custom Business`, select the Catalog with role ID `SAP_CORE_BC_EXT_CBO` and press **OK**.
 
-![Find and select catalog ](s4_customCatalogExtension_chooseCatalog.png)
+!![Find and select catalog ](s4_customCatalogExtension_chooseCatalog.png)
 
 The pop up has closed and the catalog extension got an entry in its list of used catalogs. Select that entry and press **Publish**
 
-![Published Catalog Extension for Extensibility catalog](s4_customCatalogExtension_publish.png)
+!![Published Catalog Extension for Extensibility catalog](s4_customCatalogExtension_publish.png)
 
-![Published Catalog Extension for Extensibility catalog](s4_customCatalogExtension_published.png)
+This step takes some minutes, the screen refreshes automatically and once the status switches from unpublished to published, you can close this application's window and proceed.
 
 [DONE]
 [ACCORDION-END]
