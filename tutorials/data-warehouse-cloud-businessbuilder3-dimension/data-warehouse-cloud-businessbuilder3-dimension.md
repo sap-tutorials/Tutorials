@@ -22,7 +22,7 @@ primary_tag: products>sap-data-warehouse-cloud
 - How to preview your data and adjust the perspective
 
 
-In this tutorial, we will use an example dataset that contains information about sales. Please keep in mind that any data that will be used in the Business Builder needs to first be connected to or imported into SAP Data Warehouse Cloud before you can start creating business objects with Business Builder.
+In this tutorial, you will see an example dataset that contains information about sales. Please keep in mind that any data that will be used in the Business Builder needs to first be connected to or imported into SAP Data Warehouse Cloud before you can start creating business objects with Business Builder.
 
 ---
 
