@@ -31,10 +31,10 @@ In the service key you created for Document Information Extraction in the previo
 
     !![DOX](png-files/swagger0.png)
 
-3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), then add **bearer** in front of it, and enter in the **Value** field.
+3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), then add **Bearer** in front of it, and enter in the **Value** field.
 
     ```
-    bearer <access_token>
+    Bearer <access_token>
     ```
 
     !![DOX](png-files/Authorize.png)
@@ -61,7 +61,7 @@ You should receive a response like the following:
 
 !![DOX](png-files/capabilitiesResponse.png)
 
->If you get an error response code 401 (Unauthorized), your token is probably incorrect. Check if you have added the word **`bearer`** before the token and if the token value is complete and has been properly copied from the **`access_token`** value you received in the previous tutorial: [Get OAuth Access Token for Document Information Extraction via Web Browser](cp-aibus-dox-web-oauth-token).
+>If you get an error response code 401 (Unauthorized), your token is probably incorrect. Check if you have added the word **`Bearer`** before the token and if the token value is complete and has been properly copied from the **`access_token`** value you received in the previous tutorial: [Get OAuth Access Token for Document Information Extraction via Web Browser](cp-aibus-dox-web-oauth-token).
 
 [DONE]
 [ACCORDION-END]
