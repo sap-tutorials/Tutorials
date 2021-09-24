@@ -1,6 +1,6 @@
 ---
-title: Create a Low-Code Application with SAP AppGyver
-description: In this tutorial, you will learn how to create a low-code application with SAP AppGyver on SAP BTP. This application, created in a browser, can then be used with the AppGyver Previewer App to scan physical barcodes on food packaging to display calorific information.
+title: Create an Application with SAP AppGyver
+description: In this tutorial, you will learn how to create an application with SAP AppGyver on SAP BTP. This application, created in a browser, can then be used with the AppGyver Previewer App to scan physical barcodes on food packaging to display calorific information.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, tutorial>license, topic>mobile]
@@ -17,10 +17,10 @@ author_profile: https://github.com/heytombeck
 
 ## Details
 ### You will learn
-  - How to create a low-code project with SAP AppGyver
+  - How to create a no-code project with SAP AppGyver
   - How to add and edit visual elements in the AppGyver Composer tool
 
-  In this mission you will learn how to create a low-code application using the SAP 'AppGyver' Composer tool on SAP BTP. The application you create will enable you to scan a barcode on a smartphone and retrieve information from a public API. To do this, you will need to download the 'AppGyver' Preview app (available through iTunes and Google Play store) and sign up for an account using the same email address that your SAP BTP account uses.
+  In this mission you will learn how to create a no-code application using the SAP 'AppGyver' Composer tool on SAP BTP. The application you create will enable you to scan a barcode on a smartphone and retrieve information from a public API. To do this, you will need to download the 'AppGyver' Preview app (available through iTunes and Google Play store) and sign up for an account using the same email address that your SAP BTP account uses.
 
   The application you'll create across the tutorials will read barcodes from food packaging and display information about the product using the Open Food Facts API:
 
