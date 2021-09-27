@@ -39,7 +39,7 @@ After completing the prerequisite tutorial [Create Service Instance for Document
 
     !![DOX-UI](subscribe.png)
 
-5. In the dialog, leave the default values and click **Create**.
+5. In the dialog, click **Create** once again.
 
   !![DOX-UI](dialog-create.png)
 
@@ -62,7 +62,7 @@ The subscription will now be created. Click on **View Subscription** to go to th
     !![DOX-UI](trust-config.png)
 
 
-3. Click **Default Identity Provider**.
+3. Click **Default identity provider**.
 
     !![DOX-UI](default.png)
 
@@ -72,7 +72,7 @@ The subscription will now be created. Click on **View Subscription** to go to th
     !![DOX-UI](show-assigments.png)
 
 
-5. Click **Assign Role Collection**, choose **`Document_Information_Extraction_UI_End_User_trial`** and click **Assign Role Collection**.
+5. Click **Assign Role Collection**, choose **`Document_Information_Extraction_UI_Admin_User_trial`** to access all the features available in the UI application and click **Assign Role Collection**.
 
     !![DOX-UI](role-collection.png)
 
