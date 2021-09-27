@@ -242,6 +242,9 @@
             "name": "SAP Integration Suite",
             "value": "products>sap-integration-suite"
         }, {
+            "name": "SAP Intelligent Robotic Process Automation",
+            "value": "software-product>sap-intelligent-robotic-process-automation"
+       }, {
             "name": "SAP Internet of Things",
             "value": "products>sap-internet-of-things"
         }, {
