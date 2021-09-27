@@ -3,8 +3,8 @@ title: Add SAP Web Analytics Tracking Snippet
 description: Add SAP Web Analytics tracking snippet to your website to start usage tracking.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-web-analytics, products>sap-business-technology-platform]
-primary_tag: products>sap-web-analytics
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-web-analytics-(pilot)
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
 ---

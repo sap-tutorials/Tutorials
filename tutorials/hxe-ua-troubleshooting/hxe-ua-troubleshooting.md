@@ -222,7 +222,7 @@ This error displays: "`XSA` cockpit apps failed to start at this point of time. 
 
 **Issue:** You have exceeded the 32GB memory limit of SAP HANA, express edition and you wish to use more memory on your local machine.
 
-**Solution:** SAP HANA, express edition is limited to 32GB of memory. If you've exceeded this limit and wish to use additional memory for your local installation, purchase a license. Go to the [SAP HANA, express edition](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition) license page to purchase a license.
+**Solution:** SAP HANA, express edition is limited to 32GB of memory. If you've exceeded this limit and wish to use additional memory for your local installation, purchase a license. Go to the [SAP HANA, express edition](https://www.sapstore.com/solutions/99055/SAP-HANA---express-edition) license page to purchase a license.
 
 [DONE]
 
@@ -234,7 +234,7 @@ This error displays: "`XSA` cockpit apps failed to start at this point of time. 
 
 **Solution:** SAP HANA, express edition is limited to 32GB of memory. If you've exceeded this limit and wish to use additional memory but do not have any additional memory for your local installation, consider migrating to a cloud installation. Visit the [SAP HANA, express edition](https://developers.sap.com/topics/hana.html) homepage to view cloud offerings.
 
-Additionally, you can add more memory to your local installation and then purchase a license. Go to the [SAP HANA, express edition](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition) license page to purchase a license.
+Additionally, you can add more memory to your local installation and then purchase a license. Go to the [SAP HANA, express edition](https://www.sapstore.com/solutions/99055/SAP-HANA---express-edition) license page to purchase a license.
 
 [DONE]
 

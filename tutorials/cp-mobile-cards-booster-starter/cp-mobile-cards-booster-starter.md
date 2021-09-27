@@ -45,7 +45,7 @@ The SAP Mobile Cards [Contact Card Template](https://github.com/SAP-samples/mobi
 
 1. Log into your [SAP BTP Trial account](https://account.hanatrial.ondemand.com)
 
-2. Click **Enter Your Trial Account**
+2. Click **Go To Your Trial Account**.
 
     !![Trial Home](img_2_2.png)
 

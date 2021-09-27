@@ -227,6 +227,8 @@ And that is it for this connection. You will then be able to use the communicati
 
 > Congratulations! You have completed this tutorial group and learned how to create connections to and from SAP HANA Cloud, SAP HANA database.
 >
+> If you are interested to learn about how to **use clients to query an SAP HANA database** in SAP HANA Cloud, we recommend [this tutorial mission](mission.hana-cloud-clients).
+>
 > Follow our tag in the [SAP Community](https://blogs.sap.com/tags/73554900100800002881/) to stay up-to-date on the latest updates and newest content! For more learning materials on SAP HANA Cloud, [click here](https://community.sap.com/topics/hana-cloud).
 
 

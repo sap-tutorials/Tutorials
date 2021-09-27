@@ -156,7 +156,7 @@ Now, create a navigation action that will open the `Customers_Create.page` when 
     | `PageToOpen` | Select `Customers_Create.page` from the dropdown |
     | `ModalPage`| Select `true` from the dropdown |
 
-    !![MDK](img_3.2.png)
+    !![MDK](img-3.2.png)
 
 3. Click **Next** and then **Finish** on the confirmation step.
 
@@ -221,7 +221,7 @@ The next step is to store newly created record locally for an offline applicatio
     |----|----|
     | `Action Name`| `Customers_CreateEntity` |
     | `Type` | Select `CreateEntity` from the dropdown |
-    | `Service`| Select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `EntitySet` | Select `Customers` from the dropdown |
 
     !![MDK](img-5.5.png)

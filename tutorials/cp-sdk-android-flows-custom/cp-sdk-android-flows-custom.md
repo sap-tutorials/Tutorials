@@ -10,6 +10,8 @@ primary_tag: products>sap-btp-sdk-for-android
 ---
 
 ## Prerequisites
+- You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
+    - **SAP Mobile Services**
 - You completed [Get Familiar with the Flows Component by a Wizard Generated Application](cp-sdk-android-flows-wizard).
 - You completed [Customize the Onboarding Flow](cp-sdk-android-flows-onboarding).
 - You completed [Handle Passcode with the Flows Component](cp-sdk-android-flows-passcode).

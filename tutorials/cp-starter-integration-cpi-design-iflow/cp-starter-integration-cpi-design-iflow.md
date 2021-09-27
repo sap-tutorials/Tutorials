@@ -24,7 +24,7 @@ author_profile: https://github.com/Karunaharan
     In the Cloud Integration application, choose the **Design** tab (pencil icon) to access your workspace.
     This is where you will design your integration package and integration flow.
 
-    !![Access workspace](1-1-access-workspace.png)
+  !![Access workspace](1-1-access-workspace.png)
 
 
 [DONE]
@@ -32,7 +32,7 @@ author_profile: https://github.com/Karunaharan
 
   [ACCORDION-BEGIN [Step 2: ](Create an integration package and integration flow)]
 
-1. Choose **Create** to create a new integration package.
+1. Choose **Create** to create an integration package.
 
     >An integration flow should be associated with an integration package.
 

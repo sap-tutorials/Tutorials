@@ -54,9 +54,13 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 In this tutorial, you will get to know the tools you need when interacting with your SAP HANA database in SAP HANA Cloud.
 
-You can follow the steps in this tutorial also by watching this video.
-
+> You can follow the steps in this tutorial also by watching this video:
+>
 <iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_64dk2ry6/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
+>
+> ### About this video
+>
+> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
 
 ---
 
@@ -214,7 +218,7 @@ An important part of the SAP HANA Database Explorer is the **Catalog**. Each dat
 
 > In this mission, you will use the SAP HANA Database Explorer for many tasks, so we recommend you bookmark it for easy access.
 
-You can also refer to this [technical documentation on Getting Started with the SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/LATEST/en-US/7fa981c8f1b44196b243faeb4afb5793.html).
+For more information on how to use the SAP HANA Database Explorer, you can also check out the tutorial group [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started.html) or refer to the [technical documentation](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/LATEST/en-US/7fa981c8f1b44196b243faeb4afb5793.html).
 
 
 

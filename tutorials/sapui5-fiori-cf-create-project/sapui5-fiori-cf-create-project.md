@@ -3,7 +3,7 @@ title: Create a Fiori Launchpad App
 description: After you set up the environment, use the generator to bootstrap a new SAPUI5 project. Learn about the main components of this basic project and the tools that support it.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, topic>user-interface, topic>html5, topic>cloud]
+tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, topic>user-interface, topic>html5, topic>cloud, tutorial>free-tier]
 primary_tag:  products>sap-launchpad-service
 ---
 
