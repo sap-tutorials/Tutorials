@@ -101,7 +101,7 @@ Do the following to access your service instance and service key, without having
 
     !![Service Key](trial-account.png)
 
-3. Click **Subaccounts** on the navigation side bar and select **trial** to access your subaccount.
+3. Click **Account Explorer** on the navigation side bar and select **trial** to access your subaccount.
 
     !![Service Key](subaccount.png)
 
