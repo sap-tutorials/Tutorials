@@ -258,7 +258,7 @@ The prediction is made with a probability indicated by the **confidence** field 
 
 If the status of the document (indicated by the **status** field) is **PENDING** instead of **DONE**, then it means that the service is still extracting some fields and the returned JSON file does not yet contain all the requested fields.
 
-You have now successfully used our machine learning model to get field value predictions for the document you uploaded to Document Information Extraction.
+You have now successfully used our machine learning model to get field value predictions for the document you uploaded to the Document Information Extraction service.
 
 You can repeat step 4 and delete the client you created in step 5.
 
