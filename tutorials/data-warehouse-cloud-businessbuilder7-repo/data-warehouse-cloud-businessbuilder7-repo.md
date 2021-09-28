@@ -64,7 +64,7 @@ Alternatively, you can see the full search results by simply pressing **Enter**.
 
 ![Search](T07 – Picture 01.png)
 
-To filter the list of objects, you can use the left sidebar options. This allows you to easily filter the objects based on the Space they are in. If you are a member of multiple Spaces, you will see the list of all Spaces available to you.
+To filter the list of objects, you can use the left sidebar options. This allows you to easily filter objects based on the Space they are in. If you are a member of multiple Spaces, you will see the list of all Spaces available to you.
 
 ![Filter 1](T07 – Picture 02.png)
 
