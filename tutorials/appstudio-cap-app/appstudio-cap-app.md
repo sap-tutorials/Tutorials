@@ -43,15 +43,12 @@ author_profile: https://github.com/Paolaufer
 
 2. Leave the default target folder path.
 
-3. Select the **CAP Project** template, and click **Next**.
-
-    !![Select CAP Template](select-template.png)
+3. Select the **CAP Project** template, and click **Start**.
 
 4. Enter **`bookshop`** as the name for the project, and leave all other options not checked.
 
-    Click **Next**.
+5. Click **Finish**.
 
-5.	When prompted, click **Open in New Workspace**. The new workspace loads and is displayed in the file explorer.
 
 
 [DONE]
@@ -99,9 +96,6 @@ author_profile: https://github.com/Paolaufer
     ```
 
 3. Save your changes.
-
-    The `schema.cds` file is shown with an error. That's expected and will be resolved in the next section.
-
 
 
 
@@ -191,13 +185,13 @@ module.exports = function (){
 
 Your application should look similar to the structure shown in the picture below.
 
-!![Project structure](explorer.png)
+!![Project structure](explorer2.png)
 
 Save your changes.
 
-You can also see the semantic structure of the application by expanding the CAP Project explorer located at the bottom of the *EXPLORER* view.
+You can also see the semantic structure of the application by expanding the CAP DATA MODELS AND SERVICES section located at the bottom of the *EXPLORER* view.
 
-!![Project structure](CAPProjectExplorer.png)
+!![Project structure](CAPProjectExplorer2.png)
 
 [VALIDATE_7]
 [ACCORDION-END]
@@ -224,7 +218,7 @@ You will first add all required dependencies, and the create and run a run confi
 
 1. From the left side menu, open the Run Configurations view.
 
-    !![Open Run Configurations view](open-run-configs.png)
+    !![Open Run Configurations view](open-run-configs3.png)
 
 2. Click **+** at the top of the view to add a new configuration.
 
@@ -253,7 +247,7 @@ You will first add all required dependencies, and the create and run a run confi
 
 7. Press Enter to use the default description. The application opens in the browser and you can click to see the metadata and entities the service.
 
-    !![Open app](open-app.png)
+    !![Open app](open-app2.png)
 
     You can also debug your application to check your code logic. For example, to debug the custom logic for this application, perform the following steps:
 
