@@ -13,6 +13,11 @@ primary_tag: products>sap-cloud-sdk
  - Basic knowledge of OData is recommended, but not required.
 
 ## Details
+
+> ### DEPRECATED
+> This tutorial on the SAP Cloud SDK for JavaScript is not maintained anymore and is probably outdated.
+> Up-to-date documentation is published on the [documentation portal](https://sap.github.io/cloud-sdk/)  of the SAP Cloud SDK.
+
 ### You will learn
   - What the OData Virtual Data Model for SAP S/4HANA Cloud is
   - How to use the Virtual Data Model to query the business partner service
