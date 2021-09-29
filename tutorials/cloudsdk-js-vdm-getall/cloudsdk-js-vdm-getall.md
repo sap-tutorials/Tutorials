@@ -14,9 +14,10 @@ primary_tag: products>sap-cloud-sdk
 
 ## Details
 
-> ### DEPRECATED
-> This tutorial on the SAP Cloud SDK for JavaScript is not maintained anymore and is probably outdated.
-> Up-to-date documentation is published on the [documentation portal](https://sap.github.io/cloud-sdk/)  of the SAP Cloud SDK.
+> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/docs/js/getting-started)
+> This tutorial is not actively maintained and might be partially outdated.
+> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/docs/js/getting-started).
+> We will provide a link to the updated version of this tutorial as soon as we release it.
 
 ### You will learn
   - What the OData Virtual Data Model for SAP S/4HANA Cloud is
