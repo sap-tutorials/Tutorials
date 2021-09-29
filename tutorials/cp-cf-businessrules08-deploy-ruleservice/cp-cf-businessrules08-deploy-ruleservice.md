@@ -12,11 +12,11 @@ primary_tag: products>business-rules
 ### You will learn
   - How to deploy a rule service to the consumer application to implement the decision logic
 
-Once you have modelled the rule services, you can deploy them to execute the rule set associated to them. In this tutorial, we will deploy the rule services we have created. Using the next tutorial, you can test the decision logic using the Business Rules APIs in SAP API Business Hub.
+Once you have modelled the rule services, you can deploy them to execute the rule set associated to them. In this tutorial, we will deploy the rule services we have created. In the next tutorial, you can test the decision logic using the Business Rules APIs in SAP API Business Hub.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Activate project)]
+[ACCORDION-BEGIN [Step 1: ](Activate the project)]
 
 1. Navigate to the **Details** tab of the project, then choose **Edit**.
 
@@ -31,7 +31,7 @@ Once you have modelled the rule services, you can deploy them to execute the rul
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Deploy rule service to SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step 2: ](Deploy rule service to cloud runtime)]
 
 1. Navigate to the **Rule Service** tab and then choose **Deploy** button of **`EquipmentApprovalRuleservice`** to deploy the rule service.
 
@@ -41,7 +41,7 @@ Once you have modelled the rule services, you can deploy them to execute the rul
 
     ![Deploy to Cloud Runtime](deploy4.png)
 
-3. Similarly, choose **Deploy** button of **`DetermineEquipmentRuleservice`** and choose the system as **Cloud Runtime**.
+3. Similarly, choose the **Deploy** button of **`DetermineEquipmentRuleservice`** and then choose the system as **Cloud Runtime**.
 
       You will see the following message on successful activation of the rule service:
 
