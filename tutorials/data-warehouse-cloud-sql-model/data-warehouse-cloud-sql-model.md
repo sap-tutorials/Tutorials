@@ -8,7 +8,7 @@ primary_tag: products>sap-data-warehouse-cloud
 ---
 
 ## Prerequisites
-- You have your SAP Data Warehouse Cloud tenant or you have signed up for a [trial account] (https://www.sap.com/products/data-warehouse-cloud/trial.html)
+- You have your SAP Data Warehouse Cloud tenant or you have signed up for a [trial account](https://www.sap.com/products/data-warehouse-cloud/trial.html).
 - You have imported data into your Space.
 
 
@@ -48,20 +48,20 @@ To start modeling your data using the graphical view in the Data Builder of SAP 
 
 4. Below is an example of self-join in SQL code which fetches all the operators, address, postal code and state of electric charging stations in the same postal code. The table used as an example is `Charging_Stations_ECars`.
 
-```SQL
-SELECT DISTINCT t1."Betreiber" AS "Operator 1",
-	t2."Betreiber" AS "Operator 2",
-	t1."Adresse",
-	t1."Postleitzahl Ort" AS "Operator 1 Pincode",
-	t2."Postleitzahl Ort" AS "Operator 2 Pincode",
-	t1."Bundesland"
-FROM "Charging_Stations_ECars" t1,
-	"Charging_Stations_ECars" t2
-WHERE t1."Betreiber" <> t2."Betreiber"
-	AND t1."Postleitzahl Ort" = t2."Postleitzahl Ort"
+    ```SQL
+    SELECT DISTINCT t1."Betreiber" AS "Operator 1",
+    t2."Betreiber" AS "Operator 2",
+    t1."Adresse",
+    t1."Postleitzahl Ort" AS "Operator 1 Pincode",
+    t2."Postleitzahl Ort" AS "Operator 2 Pincode",
+    t1."Bundesland"
+    FROM "Charging_Stations_ECars" t1,
+    "Charging_Stations_ECars" t2
+    WHERE t1."Betreiber" <> t2."Betreiber"
+    AND t1."Postleitzahl Ort" = t2."Postleitzahl Ort"
 
-```
-  !![Code ](Code.png)
+    ```
+    !![Code ](Code.png)
 
 > Exposing the SQL views makes the object available for consumption in SAP Analytics Cloud with which you can invoke business intelligence tools on your data and use them for data analysis. To do this you will have to define the data model type as a `Analytical Dataset` in the model properties sidebar of the view and toggle on the option **Expose for consumption**.
 
@@ -108,6 +108,7 @@ In the video below, you will see the use of SQL Script to create an ABC Analysis
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BQRaKJTXmUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+&nbsp;
 > **Well done!**
 >
 > You have completed the tutorial on Model Data with a SQL View in SAP Data Warehouse Cloud!
