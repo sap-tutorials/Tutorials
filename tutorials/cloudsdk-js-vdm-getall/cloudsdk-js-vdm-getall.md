@@ -183,6 +183,8 @@ getAllBusinessPartners(): Promise<BusinessPartner[]> {
 }
 ```
 
+In the examples above the `username`, `password` and `APIKey` are hard coded. This is only done to keep this tutorial brief. You should have a look at the [destination API](https://sap.github.io/cloud-sdk/docs/js/features/connectivity/destination) of the SAP cloud SDK to learn how to avoid hard coding credentials. Please do not use hard coded credentials in any productive solution.
+
 [DONE]
 [ACCORDION-END]
 

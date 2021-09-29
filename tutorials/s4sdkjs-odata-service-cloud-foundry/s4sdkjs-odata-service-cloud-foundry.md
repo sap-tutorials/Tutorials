@@ -9,8 +9,8 @@ primary_tag: products>sap-cloud-sdk
 
 ## Details
 ### You will learn
- - How to extend a scaffolded application by another route
- - How to call the Business Partner Service of SAP S/4HANA Cloud using SAP Cloud SDK for JavaScript
+- How to extend a scaffolded application by another route
+- How to call the Business Partner Service of SAP S/4HANA Cloud using SAP Cloud SDK for JavaScript
 
 ---
 
@@ -65,15 +65,11 @@ import { BusinessPartnerController } from './business-partner.controller';
 export class AppModule {}
 ```
 
-<<<<<<< HEAD
-If you've started your application with `npm run start:dev` in the previous tutorial, it should detect the change and restart automatically. If you've terminated your application, you can restart it by running the start command again. Now, calling `http://localhost:8080/business-partners` should return our placeholder string.
-=======
 If you've started your application the following command in the previous tutorial, it should detect the change and restart automatically.
 ```Shell
 npm run start:dev
 ```
 If you've terminated your application, you can restart it by running the start command again. Now, calling `http://localhost:8080/business-partners` should return our placeholder string.
->>>>>>> b4b8ef670e949ef9fd043cb3c1e539ccaaa2c815
 
 [DONE]
 [ACCORDION-END]
@@ -118,14 +114,6 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 ```
 [OPTION END]
 
-<<<<<<< HEAD
-- In line 2, we are creating a request builder for the business partner entity.
-- Line 3 indicates, that we want to create a request to get all the business partners.
-- Line 4 ff. takes care of the execution and sends a request to a `url` based on the given destination `url`.
-
-In the code snippet above we assume that you have a mock server running locally on port 3000. Documentation on the mock server can be found [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html). If you are using an actual `SAP S/4HANA Cloud` system, you can replace the fourth line with a different destination configuration:
-=======
->>>>>>> b4b8ef670e949ef9fd043cb3c1e539ccaaa2c815
 
 [OPTION BEGIN [SAP S/4HANA Cloud system]]
 If you are using an actual `SAP S/4HANA Cloud` system, you can replace the fourth line with a different destination configuration:
