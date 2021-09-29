@@ -154,6 +154,7 @@ You will start to create a dimension view that contains the different Airlines /
   5. Your final code should look like following:
 
     ```ZRAP500_I_Carrier_####
+
     @AccessControl.authorizationCheck: #CHECK
     @EndUserText.label: 'Dimension for Carrier'
     @Metadata.ignorePropagatedAnnotations: true
@@ -625,7 +626,6 @@ This annotation is part of the template **Define a View Entity for a Cube** that
 
 
           /* Associations */
-          _BookSupplement,
           _Carrier,
           _Connection,
           _Customer,
