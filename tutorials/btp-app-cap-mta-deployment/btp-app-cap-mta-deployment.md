@@ -343,7 +343,7 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Build, deploy, and test mtar file)]
-1. Build the MTA module from the project root folder:
+1. Build the MTA module from your project root folder:
 
     ```Shell/Bash
     mbt build -t ./
