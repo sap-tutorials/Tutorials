@@ -9,8 +9,8 @@ primary_tag: products>sap-cloud-sdk
 
 ## Details
 ### You will learn
-- How to extend a scaffolded application by another route
-- How to call the Business Partner Service of SAP S/4HANA Cloud using SAP Cloud SDK for JavaScript
+ - How to extend a scaffolded application by another route
+ - How to call the Business Partner Service of SAP S/4HANA Cloud using SAP Cloud SDK for JavaScript
 
 ---
 
