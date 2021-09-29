@@ -34,9 +34,9 @@ A project is used to configure and manage the entities of business rules. Entiti
 
 [ACCORDION-BEGIN [Step 2: ](Enter details of the project)]
 
-Enter the following details of the project:
+Since we are building a basic project in this tutorial, enter only the following details of the project:
 
-|  Field Name     | Value
+|  Field     | Value
 |  :------------- | :-------------
 |  Name           | **`DetermineEquipment01`**
 |  Label           | **`DetermineEquipment01`**
@@ -44,7 +44,10 @@ Enter the following details of the project:
 |  System            | **`Cloud Runtime`**
 |  Expression Language    | **`2.0`**
 
-**Label** and **Description** are a mandatory fields. **Description** field does not support special characters.
+The other fields can be left as it is.
+
+> We have used expression language 2.0 for this tutorial. For more information on expression languages in business rules, see [Expression Language 2.0](https://help.sap.com/viewer/0e4dd38c4e204f47b1ffd09e5684537b/Cloud/en-US/b10229a87b1644bd82baa8cd2c6e6991.html) and [Expression Language 1.0](https://help.sap.com/viewer/0e4dd38c4e204f47b1ffd09e5684537b/Cloud/en-US/0f73cd85e5f04e0ea77486109ee97964.html).
+
 
 [DONE]
 [ACCORDION-END]
