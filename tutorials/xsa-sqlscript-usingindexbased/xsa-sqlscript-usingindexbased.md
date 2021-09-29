@@ -5,19 +5,18 @@ author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
----
-## Prerequisites  
-- **Proficiency:** Intermediate
+time: 10
 
-## Next Steps
-- [Using Table Variable Operators](https://developers.sap.com/tutorials/xsa-sqlscript-table-operators.html)
+---
+
+## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 
 ## Details
 ### You will learn  
-This solution shows how to use index-based cell access to manipulate table data. This approach is faster than using cursors or arrays.
+- How to use index-based cell access to manipulate table data.
 
-### Time to Complete
-**10 Min**.
+Using index-based cell access to manipulate table data is faster than using cursors or arrays.
 
 ---
 

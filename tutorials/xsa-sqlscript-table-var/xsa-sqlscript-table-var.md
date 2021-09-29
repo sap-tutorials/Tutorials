@@ -5,20 +5,16 @@ author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
+time: 15
 ---
-## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** [Parallel Processing and Parameters](https://developers.sap.com/tutorials/xsa-sqlscript-parallel.html)
 
-## Next Steps
-- [Creating Scalar User Defined Functions](https://developers.sap.com/tutorials/xsa-sqlscript-scalar.html)
+## Prerequisites  
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
+- **Tutorials:** [Parallel Processing and Parameters](xsa-sqlscript-parallel)
 
 ## Details
 ### You will learn  
 In this exercise you will modify the code of procedure `get_po_header_data` again to use a single tabular output. Existing queries will be reused based on intermediate table variables.
-
-### Time to Complete
-**15 Min**.
 
 ---
 

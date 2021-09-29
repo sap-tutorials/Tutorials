@@ -1,141 +1,125 @@
 ---
+author_name: Bruce Meng
+author_profile: https://github.com/flyingfish162
 title: Send Notifications to Your Android Application
-description: Add foreground and background notifications to your application with help of Google Firebase.
-primary_tag: products>sap-cloud-platform-sdk-for-android
+description: Add foreground and background notifications to your application using Google Firebase.
+primary_tag: products>sap-btp-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap-cloud-platform-sdk-for-android, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
 time: 20
 ---
 
 
-## Prerequisites  
-- Completed [Try Out SAP Cloud Platform SDK for Android Wizard](https://developers.sap.com/tutorials/cp-sdk-android-wizard-app.html)
-
+## Prerequisites
+- You completed [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app).
 
 ## Details
 ### You will learn
-  - How to configure SAP Cloud Platform for push
-  - How to configure Mobile Services for push
-  - Foreground notifications
-  - Background notifications
+- How to configure SAP BTP for push
+- How to configure Mobile Services for push
+- Foreground notifications
+- Background notifications
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure the SAP Cloud Platform for push notifications)]
+[ACCORDION-BEGIN [Step 1: ](Configure Mobile Services for push notifications)]
 
-Open [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com) and log in to **Neo Trial**.
+1. Go to [SAP Mobile Services Cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), select the **com.sap.wizapp** application.
 
-![Neo Trial button](neo-trial-button.png)
+    !![Application page in CF cockpit](cf-trial-application-page.png)
 
+2. Select **Mobile Push Notification**.
 
-Select **Services**, then choose **Mobile** from the dropdown.  Then click on **Mobile Services, std**.
+    !![Mobile Push Notification](push-notification.png)
 
-![Mobile Services](mobile-services-in-cloud-cockpit.png)
+    >If you don't see the option, follow the screenshots to add this feature:
+    >
+    > - !![Add assigned features](add-assigned-features.png)
+    > - !![Add push notification](add-push-notification.png)
+    > - !![Confirm save](confirm-change.png)
 
+3. The **Mobile Push Notification** screen requires information from [Firebase](https://firebase.google.com/).
 
-Click on the **Configure Mobile Services** link.
+    !![Push notification](push-notification-blank.png)
 
-![Configure Mobile Services](mobile-services-configure.png)
+4. In the [Firebase console](https://console.firebase.google.com/), select project **Wiz App**, and then go to **Project settings**.
 
+    - !![Firebase console page](firebase-console-page.png)
 
-On the **Roles** tab, select the **Notification User** role and click the **Assign** button, assigning your **User ID**.
+    - !![Project settings](firebase-project-settings.png)
 
-![Setting Notification User role](assigning-notification-user-role.png)
+5. Select the **Cloud Messaging** tab and copy the **Server Key** and **Sender ID** values from Firebase to the SAP Mobile Services **Mobile Push Notification** settings screen. Click **Save** to save changes.
+
+    - !![Server key and Sender ID](serverkey-and-senderid.png)
+
+    - !![Push notification android](push-notification-android.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure Mobile Services for push notifications)]
+[ACCORDION-BEGIN [Step 2: ](Send a notification)]
 
-Return to the **Mobile Services** screen.
+1. Switch to **Push Registrations** on the **Mobile Push Notification** settings page.
 
-![Back to mobile services](back-to-mobile-services.png)
+    !![Push registrations page](push-registrations.png)
 
+2. Select certain registration to send notifications.
 
-Click the **Go to Service** link.
+    !![Send notification](send-notification.png)
 
-![Go to Service link](go-to-mobile-services.png)
+    >It may be difficult to tell which registration to choose. The last field on the page shows the last time a given registration made a request. If you are unsure which registration to choose, navigate through a few screens in the application and then press the **GO** button to refresh the display, or select all of them and send a greeting to all the registrations.
 
+    >If you don't see the **Send Notifications** button, try logging out and back into the management cockpit.
 
-In SAP Cloud Platform Mobile Services, select the application **`com.sap.wizapp`** and click on **Push Notification**.
+3. Specify the notification text to send to the app.
 
-![Push notification link on home page](push-notification-button.png)
-
-
-This screen requires information from [Firebase](https://firebase.google.com/).
-
-![Push notification](push-notification-blank.png)
-
-
-In the [Firebase console](https://console.firebase.google.com/), go to the **Project settings**.
-
-![Project settings](firebase-project-settings-button.png)
-
-
-Select the **Cloud Messaging** tab and copy the **Server Key** and **Sender ID** values from Firebase to the SAP Mobile Services **Android Push Notification** settings screen.
-
-![Server key and Sender ID](serverkey-and-senderid.png)
-
-
-![Push notification android](push-notification-android.png)
-
-[VALIDATE_2]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Send a notification)]
-Under **Mobile Applications**, select the application.
-
-![Management cockpit](management-cockpit.png)
-
-
-Select the User Registrations tab to send the notification to your app.  
-
-![Send notification](send-notification.png)
-
->It may be difficult to tell which registration to choose. The **Last Connection** field shows the last time a given registration made a request.  If you are unsure which registration to choose, navigate through a few screens in the application and then press the **GO** button to refresh the display or select all of them and send a greeting to all the registrations.
-
->If the Send Notifications button does is not showing, try logging out and back in to the management cockpit.
-
-
-Specify the notification text to send to the app.
-
-![Send notification](send-notification2.png)
+    !![Send notification](send-notification2.png)
 
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Foreground notification)]
 
-[ACCORDION-BEGIN [Step 4: ](Foreground notification)]
 Notice that the app shows the notification.
 
-![Receive notification](receive-notification.png)
+!![Receive notification](receive-notification.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Background notification)]
+[ACCORDION-BEGIN [Step 4: ](Background notification)]
 
-On the emulator or mobile device, open another app, such as Chrome, which will cause the Wiz App to no longer be the foreground app.
+>Make sure you are selecting the right language above.
 
-If you now send another notification you notice that since the app is in the background, or not running, a notification is placed in the notification drawer.
+1. On an emulator or mobile device, open another app, such as Chrome, which will cause the Wiz App to no longer be the foreground app.
 
-![Receive Notification Background](receive-notification-background.png)
+2. If you now send another notification, you will notice that because the app is in the background, or not running, a notification is placed in the notification drawer.
 
-Tapping on the notification will bring the app to the foreground or open the app.
+    !![Receive Notification Background](receive-notification-background.png)
 
-![Receive Notification from Background](receive-notification.png)
+3. Tapping the notification will bring the app to the foreground or open the app.
 
->If the app was not running when the notification was tapped on, due to a change made in the previous tutorial, it can be viewed by pressing the back button and navigating from the categories screen to the entity list screen.
+    !![Receive Notification from Background](receive-notification.png)
 
-Currently, the message is displayed in an `AlertDialog`.  
+    >If the app was not running when the notification was tapped, due to a change made in the previous tutorial, you can view it by pressing **Back** and navigating from the **Categories** screen to the **Entity** list screen.
 
-Custom logic could be added to the app to decide on the action to take, such as displaying the new Office Furniture category.
+Currently, the message is displayed in an `AlertDialog`.
 
-![Show Notification Code](show-notification-code.png)
+You can add custom logic to the app to decide on the action to take, such as displaying the new Office Furniture category.
 
+[OPTION BEGIN [Java]]
 
->Further information on push can be found at [Push Notifications](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/remotenotification.html), [Push API Notification Scenarios](https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/aaec2dbe78ec4fc08ef0a605a899e3dd.html), and [About FCM Messages](https://firebase.google.com/docs/cloud-messaging/concept-options).
+!![Show Notification Code](show-notification-code-java.png)
 
+[OPTION END]
+
+[OPTION BEGIN [Kotlin]]
+
+!![Show Notification Code](show-notification-code-kotlin.png)
+
+[OPTION END]
+
+>For further information on push, see [Push Notifications](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/push/android/push.html), [Push API Notification Scenarios](https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/aaec2dbe78ec4fc08ef0a605a899e3dd.html), and [About FCM Messages](https://firebase.google.com/docs/cloud-messaging/concept-options).
 
 Congratulations! You have seen how an app can make use of foreground and background notifications.
 

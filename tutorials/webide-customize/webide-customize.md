@@ -5,7 +5,7 @@ author_name: Shira Manas
 author_profile: https://github.com/shiramanas
 auto_validation: true
 primary_tag: products>sap-web-ide
-tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-web-ide, tutorial>license ]
 time: 10
 ---
 

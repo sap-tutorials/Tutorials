@@ -1,121 +1,97 @@
 ---
-title: Create Your SAP Fiori Launchpad Project and its Module
-description: Create an SAP Fiori launchpad project as well as its module using SAP Web IDE.
+title: Create a Basic Workflow in SAP Business Application Studio
+description: Set up a dev space and create a workflow module that contains a workflow.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform ]
-time: 15
+primary_tag: products>sap-business-technology-platform
+tags: [  tutorial>beginner, topic>cloud, products>sap-business-technology-platform ]
+time: 5
 ---
+
+## Prerequisites
+ - [Get a Trial Account](hcp-create-trial-account)
+ - "Step 1: Setup your account using Booster" of the [Set Up Workflow Management in the Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial creates the entitlements for the SAP Cloud Portal service as well as for the workflow capability and it enables SAP Business Application Studio.
 
 ## Details
 ### You will learn  
-  - How to create ``multitarget`` application projects for your workflow in the SAP Web IDE.
-  - How to deploy these projects to the SAP Cloud Platform.
+  - How to create a basic workflow
 
 ---
+[ACCORDION-BEGIN [Step 1: ](Set up SAP Business Application Studio)]
+You create your workspace where you will later build the workflow.
 
+1. In your web browser, open the [SAP BTP Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
 
-[ACCORDION-BEGIN [Step 1: ](Create an SAP Fiori launchpad project)]
-1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit).
+2. Choose **SAP Business Application Studio**.
 
-2. Choose **Launch SAP Web IDE**.
+3. In the application studio, choose **Create Dev Space**.
 
-    ![Launch SAP Web IDE](launchsapwebide.png)
+    ![Create Dev Space](create-dev-space2.png)
 
-3. In the navigation area of SAP Web IDE, choose the **Development** icon.
+4. Enter a name, for example, `mydevspace`, and make sure to select **SAP Fiori** kind and the **Workflow Management** extension. Then choose **Create Dev Space** again.
 
-4. Select the **Show hidden files** icon to display hidden files.
+    ![Select Options](mydevspace.png)
 
-    ![Show Hidden Files](show-hidden-files.png)
+    > Wait until the dev space is created and you see the RUNNING status.
+    !![Dev Space Created](DevSpaceCreated.png)
 
-5. Under **Files**, right-click **Workspace** and choose **New** | **New Project from Sample Application**.
+5. Click the **Dev Space** to access the workspace.
 
-    ![Create Project](create-sample-project.png)
+    > It takes 2-3 minutes to initialize your dev workspace for the first time. You will see a Welcome page once the dev space is initialized.
 
-6. In the wizard, set **Category** to **Workflow Sample Application** and select the **Workflow Applications on SAP Fiori Launchpad for Cloud Foundry (Trial)** template. Then choose **Next**.
+6. If you have never accessed the workspace before, choose **File** | **Open Workspace**.
 
-    ![Choose Workflow Sample Application](select-wf-sample-app.png)
+7. Select the **projects** folder, and choose **Open**.
 
-7. Select the checkbox and provide your consent to create the application, and choose **Finish**.
+    ![See Projects Folder](see-result-projects-folder.png)
 
-    ![Consent to Creation](consent-creation.png)
-
-
-You now see a project with an `mta.yaml` file in your workspace:
-
-![Sample Application](sample-app.png)    
-
-> If there are layout issues with the editor window (can't see the properties), simply refresh the SAP Web IDE window (F5).
+    > The **PROJECTS** explorer is opened.
 
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 2: ](Create an MTA project)]
+You need to create a multitarget application (MTA) project that contains a workflow module.
 
-[ACCORDION-BEGIN [Step 2: ](Use existing workflow instance project)]
-1. In your workspace in the **`sample.trial`** project, right-click the **`mta.yaml`** file and choose **Open MTA Editor**.
+1. Open **File** | **New Project from Template**.
 
-    ![Open MTA Editor](open-mta-editor.png)
+2. Choose **Basic Multitarget Application**, and then choose **Start**.
 
-2. On the **Resources** tab, replace the workflow resource. On the left-hand side, select `workflow_workflowtiles` and change it to `my-workflow-instance`. Choose `org.cloudfoundry.existing-service` in the **Type** field.
+    ![Select Basic MTA](select-basic-mta2.png)
 
-    ![Use Workflow Resource](use-wf-resource.png)
+3. Enter a project name, for example, `onboarding`, and choose **Finish**.
 
-3. Save your changes.
+    The IDE opens again with MTA as a workspace. It contains an `mta.yaml` file, which describes the application.
 
-4. Switch to the **Modules** tab, and select **`workflowtilesApprouter`**. Under **Requires** replace one of the `uaa_workflowtiles (resource)` entries with a **my-workflow-instance (resource)** resource entry.
-
-    ![Add Workflow Resource](requires-section.png)
-
-
-To really ensure that the updated instance name is used in all respective places, execute the following steps:
-
-1. Select the **`workflowtilesFLP`** module and under **Requires** switch the **my-workflow-instance (resource)** entry to some other entry.
-
-2. Save your changes.
-
-3. Switch the changed resource entry back to **my-workflow-instance (resource)**.
-
-4. Save your changes.
+    ![See YAML File](new-yaml2.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Build and deploy your launchpad project)]
-1. Right-click your **`sample.workflowtiles.mta.trial`** project in the workspace, and choose **Build** | **Build with Cloud MTA Build Tool (recommended)**.
+[ACCORDION-BEGIN [Step 3: ](Create a workflow module and a workflow)]
+You now need to create a workflow module within the MTA project.
 
-    ![Build FLP Project](build-flp-project-rec.png)
+1. Right-click the `mta.yaml` file, and then choose **Create MTA Module from Template**.
 
-    The console shows the status of the build: Build of `sample.workflowtiles.mta.trial` completed.
+2. Choose **Workflow Module**, and then choose **Start**.
 
-2. Open the **`mta_archives`** folder.
+    ![Select Workflow Module](select-wf-module.png)
 
-3. Right-click your **`.mtar`** file, and choose **Deploy** | **Deploy to SAP Cloud Platform**.
+3. Enter a path to the location where the module is to be generated. We recommend using the proposed one.
 
-    ![Deploy File](deploy-project.png)
+4. Enter a name for the workflow module, for example, `approvals`, then choose **Next**.
 
-4. Enter your API endpoint, and choose **Deploy**.
+5. Enter a name for the workflow, for example, `onboard`, and a description, then choose **Finish**.
 
-    ![Deploy](deploy.png)
+    ![See Simple Onboard Workflow](see-onboardwf.png)
 
-[VALIDATE_2]
+The workflow module together with a workflow is created and opens.
+
+[VALIDATE_1]
 [ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 4: ](Access your SAP Fiori launchpad apps)]
-1. Open the SAP Web IDE console, and search for the launchpad URL `https://<dev space name>-trial-dev-workflowtilesapprouter.cfapps.<your endoint>.hana.ondemand.com`.
-
-    ![Copy URL](console-url2.png)
-
-2. Copy the URL to your browser.
-
-    >If the URL does not work, append `/cp.portal` to it.
-
-3. Log on to your trial account by entering your email address and password. Your home page of SAP Fiori launchpad is displayed.
-
-    ![Log on to Launchpad](launchpad-home.png)
-
-[DONE]
-[ACCORDION-END]
-
 
 ---
+Summary
+
+You have now created your first workflow with SAP Business Application Studio in the Cloud Foundry environment.
+
+Your next step is to add a user task to this workflow and then display that task using the standard apps of Workflow Management in SAP Fiori launchpad.

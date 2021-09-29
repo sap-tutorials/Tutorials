@@ -1,9 +1,9 @@
 ---
 title: Assemble and Configure Device Hardware
 description: Assemble device hardware, configure device firmware and deploy it in the field.
-primary_tag: products>sap-cloud-platform-internet-of-things
 auto_validation: true
-tags: [  tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform]
+primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services,  products>sap-business-technology-platform, products>sap-iot-services-for-sap-btp]
 time: 30
 ---
 
@@ -38,7 +38,7 @@ Using the provided wires, connect GND (or - on some boards) from the temperature
 
 [ACCORDION-BEGIN [Step 2: ](Install the operating system for the Pi)]
 
-The last step missing before you can use the Raspberry Pi is to install an operating system on the micro SD card. On Windows and Mac, we recommend you use the etcher application available from [http://etcher.io](http://etcher.io). Download the latest `Raspbian` image (with desktop) from [https://www.raspberrypi.org/downloads/raspbian/](https://www.raspberrypi.org/downloads/raspbian/) and burn it onto the micro SD card using Etcher. Then, plug the micro SD card into the Raspberry Pi at the bottom.
+The last step missing before you can use the Raspberry Pi is to install an operating system on the micro SD card. On Windows and Mac, we recommend you use the etcher application available from [http://etcher.io](http://etcher.io). Download the latest `Raspbian` image (with desktop) from [https://www.raspberrypi.org/software/](https://www.raspberrypi.org/software/) and burn it onto the micro SD card using Etcher. Then, plug the micro SD card into the Raspberry Pi at the bottom.
 
 Your Pi is now in a factory default state. The next step will be to install firmware and configure it based on a device created in IoT Service for Cloud Foundry.
 
@@ -219,7 +219,7 @@ cd Downloads
 sudo node app.js
 ```
 
-This will now continuously read sensor values, print them and send the data to IoT Service for Cloud Foundry. The data is not beeing picked up by anyone. It is forwarded to Leonardo IoT but while there is no thing mapped the data is not persisted.
+This will now continuously read sensor values, print them and send the data to IoT Service for Cloud Foundry. The data is not beeing picked up by anyone. It is forwarded to SAP IoT but while there is no thing mapped the data is not persisted.
 
 !![Output on the PI](sensoroutput.png)
 

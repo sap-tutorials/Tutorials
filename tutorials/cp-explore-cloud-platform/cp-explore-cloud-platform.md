@@ -1,40 +1,39 @@
 ---
-title: View the SAP Cloud Platform from 10,000 Meters
-description: Explore SAP Cloud Platform from a developer's perspective, and understand the concepts of accounts, environments and more.
+title: View the SAP BTP from 10,000 Meters
+description: Explore SAP BTP from a developer's perspective, and understand the concepts of accounts, environments and more.
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
-primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+primary_tag: products>sap-business-technology-platform
+tags: [ tutorial>beginner, topic>cloud ]
 time: 10
 ---
 
+
 ## Prerequisites  
- - There are none. If you want to start learning about SAP Cloud Platform, this is the very beginning.
+ - There are none. If you want to start learning about SAP BTP, this is the very beginning.
 
 ## Details
 ### You will learn  
-  - What is SAP Cloud Platform?
-  - What do SaaS, PaaS, and IaaS mean and how do they work?
-  - What are services, and where can I find out about them?
-  - What are the different flavors of SAP Cloud Platform?
+  - What SAP BTP is
+  - What SaaS, PaaS, and IaaS mean and how they work
+  - What services are, and where to find them
+  - What the different environments of SAP BTP are
 
+[ACCORDION-BEGIN [Step](Introduction to SAP BTP)]
 
-[ACCORDION-BEGIN [Step](Introduction to SAP Cloud Platform)]
+**Welcome to the SAP BTP**
 
-**Welcome to the SAP Cloud Platform**
+SAP BTP is an open set of Software, Platform, and Infrastructure as a Service systems that delivers in-memory capabilities, core platform services, and unique micro-services for building and extending intelligent, mobile and browser enabled applications.  SAP BTP is multi-lingual, with support for most major languages ([now including ABAP](https://blogs.sap.com/2018/09/04/sap-cloud-platform-abap-environment/)) and support for development, testing, and production systems both inside an organization and to the larger public.  
 
-SAP Cloud Platform is an open set of Software, Platform, and Infrastructure as a Service systems that delivers in-memory capabilities, core platform services, and unique micro-services for building and extending intelligent, mobile and browser enabled applications.  SAP Cloud Platform is multi-lingual, with support for most major languages ([now including ABAP](https://blogs.sap.com/2018/09/04/sap-cloud-platform-abap-environment/)) and support for development, testing, and production systems both inside an organization and to the larger public.  
+SAP BTP provides a large number of SAP software packages, or services, that deliver all the functionality of on-premise SAP applications, but in a cloud focused way.  It also provides a way for developers to customize those services, or build entirely new applications, to deliver custom applications personalized to your organization.
 
-SAP Cloud Platform provides a large number of SAP software packages, or services, that deliver all the functionality of on-premise SAP applications, but in a cloud focused way.  It also provides a way for developers to customize those services, or build entirely new applications, to deliver custom applications personalized to your organization.
+SAP BTP is also constantly evolving.  SAP continuously updates the services we provide, the platforms that run the custom code, and the infrastructure that supports everything.  This allows developers to focus on the custom code, and not worry about hardware maintenance or software upgrades.
 
-SAP Cloud Platform is also constantly evolving.  SAP continuously updates the services we provide, the platforms that run the custom code, and the infrastructure that supports everything.  This allows developers to focus on the custom code, and not worry about hardware maintenance or software upgrades.
-
-Let's start with an overview of the different types of "as a Service" that SAP Cloud Platform provides.
+Let's start with an overview of the different types of "as a Service" that SAP BTP provides.
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step](What does "as a Service" mean?)]
 
@@ -60,9 +59,9 @@ The three different service levels are:
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](SAP Cloud Platform service types)]
+[ACCORDION-BEGIN [Step](SAP BTP service types)]
 
-SAP Cloud Platform provides both Platform as a Service (PaaS) and Software as a Service (SaaS).  
+SAP BTP provides both Platform as a Service (PaaS) and Software as a Service (SaaS).  
 
 Why does SAP provide both?  The combination of both PaaS and SaaS provide all the tools we have traditionally sold, new tools that are specific to the cloud, and also the ability to customize all of our products to fit each individual organization.  
 
@@ -70,7 +69,7 @@ We have a lot of SaaS solutions available in the SAP Cloud.  They include our co
 
 > **Note**:  There are two different types of Services being described here.  The software listed above are stand-alone software packages, which can be used without customization.  These are all Software as a Service, but we refer to those applications as **Solutions**.  
 >
-> SAP Cloud Platform also offers services, called "Platform Services", which provide additional functionality to custom code. These "Platform Services" do not run independently.  SAP refers to these as **Services**, especially in Cloud Foundry.  So when you see the name "Service" in later tutorials, this usually means "Platform Services".
+> SAP BTP also offers services, called "Platform Services", which provide additional functionality to custom code. These "Platform Services" do not run independently.  SAP refers to these as **Services**, especially in Cloud Foundry.  So when you see the name "Service" in later tutorials, this usually means "Platform Services".
 
 SAP also offers Platform as a Service (PaaS).  Developers can write code in almost any language, and run that software in the same cloud with our services.  Organizations can use this to run independent software, or to customize the SAP services to meet specific needs.
 
@@ -81,39 +80,44 @@ Finally, SAP also offers IaaS in the cloud.  We didn't mention this before, beca
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](SAP Cloud Platform data centers)]
+[ACCORDION-BEGIN [Step](SAP BTP data centers)]
 
-The SAP Cloud Platform is available in two different types of data centers.  First, SAP runs it's own data centers around the world, optimized for SAP software.  Second, SAP also partners with other cloud infrastructure providers.  Currently, we partner with Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), and Alibaba Cloud.
+The SAP BTP is available in two different types of data centers.  First, SAP runs it's own data centers around the world, optimized for SAP software.  Second, SAP also partners with other cloud infrastructure providers.  Currently, we partner with Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP), and Alibaba Cloud.
 
-![Data center locations and types](4.png)
+!![Data center locations and types](map.png)
 
-This is a graphical representation of all the SAP data centers worldwide.  [This page also contains a complete list of the types of centers, and the services provided at each data center](https://help.sap.com/doc/aa1ccd10da6c4337aa737df2ead1855b/Cloud/en-US/3b642f68227b4b1398d2ce1a5351389a.html).
+This is a graphical representation of all the SAP data centers worldwide. You can open this map when you click on the globe icon on this page to [see a complete list of the types of centers and the services provided at each data center](https://discovery-center.cloud.sap/viewServices).
 
 The list of services and data centers is constantly updated, so please use the link to find the latest information.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](Neo, Cloud Foundry, and ABAP)]
+[ACCORDION-BEGIN [Step](Neo, ABAP, Cloud Foundry, and Kubernetes)]
 
-There are three different PaaS environments in the SAP cloud.
+There are four different PaaS environments in the SAP cloud.
 
-The first environment is called "Neo".  It's is the original SAP runtime environment.  The Neo environment lets you develop HTML5, Java, and SAP HANA extended application services (SAP HANA XS) applications. You can also use the UI Development Toolkit for HTML5 (SAPUI5) to develop rich user interfaces for modern web-based business applications.  Neo is run in the SAP Cloud Platform on servers that SAP maintains and supports.
+The first environment is called [SAP BTP, Neo environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/0f79436cf43a4785bb5b7ee9dac0c76a.html).  It's is the original SAP runtime environment.  The Neo environment lets you develop HTML5, Java, and SAP HANA extended application services (SAP HANA XS) applications. You can also use the UI Development Toolkit for HTML5 (SAPUI5) to develop rich user interfaces for modern web-based business applications.  Neo is run in the SAP BTP on servers that SAP maintains and supports.
 
-The second environment is Cloud Foundry.  This environment was added in 2017.  [Cloud Foundry is an open source project and standard](https://www.cloudfoundry.org/), run by the Cloud Foundry Foundation (and before that, the Linux Foundation).  SAP has implemented Cloud Foundry on the SAP Cloud Platform, using servers in our expanding network of third party data centers (like AWS, Azure, Google Cloud, and Alibaba Cloud).
+The second environment is  [SAP BTP, Cloud Foundry environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/9c7092c7b7ae4d49bc8ae35fdd0e0b18.html#loio9c7092c7b7ae4d49bc8ae35fdd0e0b18/).  This environment was added in 2017.  [Cloud Foundry is an open source project and standard](https://www.cloudfoundry.org/), run by the Cloud Foundry Foundation (and before that, the Linux Foundation).  SAP has implemented Cloud Foundry on the SAP BTP, using servers in our expanding network of third party data centers (like AWS, Azure, Google Cloud, and Alibaba Cloud).
 
-The latest environment is the [ABAP environment](https://www.sap.com/cloudplatform-abap) allows you to create extensions for ABAP-based products, such as SAP S/4HANA Cloud, and develop new cloud applications. You can transform existing ABAP-based custom code or extensions to the cloud.
+The [SAP BTP,  ABAP environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/11d62652aa2b4600a0fa136de0789648.html) allows you to create extensions for ABAP-based products, such as SAP S/4HANA Cloud, and develop new cloud applications. You can transform existing ABAP-based custom code or extensions to the cloud.
+
+The [SAP BTP, Kubernetes environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/468c2f3c3ca24c2c8497ef9f83154c44.html) is based on the open-source project [Kyma](https://kyma-project.io/) that allows developers to extend SAP solutions with server-less functions and combine them with containerized microservices. It comes with the SAP BTP, Kyma runtime.
 
 
 Which environment is right for you?  That's a good question.  Each environment has it's strengths, and some services are only available in one of the environments.  Take a look at all of them before making a decision, and use our [online map to guide you](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html).
 
-SAP offers a [free trial of SAP Cloud Platform](https://account.hanatrial.ondemand.com/register) for all environments.
+SAP offers a [free trial of SAP BTP](hcp-create-trial-account) for all environments.
+
+
+
+That's it!  That is the 10,000 meter overview of SAP BTP.  Please follow the later tutorials to get a trial account, get the account configured, and get started with services and writing new code for the cloud.  Have fun!
 
 
 [DONE]
 [ACCORDION-END]
 
-That's it!  That is the 10,000 meter overview of SAP Cloud Platform.  Please follow the later tutorials to get a trial account, get the account configured, and get started with services and writing new code for the cloud.  Have fun!
 
 
 ---

@@ -1,5 +1,5 @@
 ---
-title: Learn about the ABAP Data Dictionary
+title: Learn about the ABAP Data Dictionary 
 description: Open an ABAP package containing Data Dictionary objects and find out more about them.
 auto_validation: true
 primary_tag: topic>abap-development
@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - You have a running ABAP application server (AS ABAP). This tutorial was created in the AS ABAP developer edition, 752, download version. For more information, see [SAP Developer Community: Trials and Downloads](https://www.sap.com/developer/trials-downloads.html).
- - **Tutorial**: [Create an ABAP project](https://developers.sap.com/tutorials/abap-create-project.html)
+ - **Tutorial**: [Create an ABAP project](abap-create-project)
 
 ## Details
 ### You will learn
@@ -120,7 +120,7 @@ The relationship between these Dictionary objects looks like this:
 
 [ACCORDION-BEGIN [Step 6: ](Table types and internal tables)]
 
-These are a very powerful feature of ABAP. You will explore them in a later tutorial group, [Get started with ABAP development](https://developers.sap.com/group.abap-basic-app.html).
+These are a very powerful feature of ABAP. You will explore them in a later tutorial group, [Start Developing ABAP Tables](group.abap-dev-tables).
 
   - A **table type** describes the data type of an internal table in ABAP. You can create an internal table, based on the structure of a database table, and then use this internal table to manipulate the data in your application.
   - A **structure** is a data type that consists of a single row of one or more components, such as elementary types. This is a powerful concept: You can create a structure representing a single row of a table, and then use it to manipulate table data in your application.
@@ -147,8 +147,8 @@ For more information on how to do this, see the [SAP Help Portal](https://help.s
 You should now understand six important ABAP Dictionary objects and the relationship between them.
 Now, You can either:
 
-  - [Learn about the ABAP Repository for development objects](https://developers.sap.com/tutorials/abap-dev-learn-repo.html) or
-  - [Go back to ABAP for Newbies](https://developers.sap.com/topics/abap-platform/abap-for-newbies.html)
+  - [Learn about the ABAP Repository for development objects](abap-dev-learn-repo) or
+  - [Go back to ABAP for Newbies](https://community.sap.com/topics/abap/abap-for-newbies)
 
 [VALIDATE_1]
 

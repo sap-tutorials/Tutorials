@@ -24,7 +24,7 @@ To complete this tutorial, you will need:
 
 You will also need an instance of **SAP HANA 2.0, express edition** (SPS02 revision 24 or newer). Both packages, the ***Server only*** and ***Server + Applications***, will work.
 
-To get your instance up and running, you can check the available options and get started on the [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html) product page.
+To get your instance up and running, you can check the available options and get started on the [SAP HANA, express edition](https://developers.sap.com/topics/hana.html) product page.
 
 [DONE]
 [ACCORDION-END]

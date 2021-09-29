@@ -3,8 +3,8 @@ title: Build OData Queries with the SAP Cloud SDK's Virtual Data Model
 description: Build OData queries with the SAP Cloud SDK's virtual data model to build an address manager application.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, topic>javascript, products>sap-cloud-platform, topic>odata]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, topic>javascript, products>sap-business-technology-platform, topic>odata]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites
@@ -19,14 +19,15 @@ primary_tag: products>sap-s-4hana-cloud-sdk
   - How to expose the business partners in a `NestJS` application
 
 The goal of this tutorial group is to show you how to implement a JavaScript application that allows you to manage the addresses of business partners. This application will be using `NestJS` and the SAP Cloud SDK for JavaScript. In this tutorial, we introduce the SAP Cloud SDK's OData Virtual Data Model and teach you how to use it to query business partners from an SAP S/4HANA Cloud system.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](What is the SAP Cloud SDK's Virtual Data Model?)]
 
 Most of the services exposed by SAP S/4HANA Cloud and On-Premise are OData services. OData is a [RESTful API protocol](https://www.odata.org/) that has two key features:
 
-- First, each services is described by a metadata document that lists all entities, their properties and relations, and which operations can be executed on them.
-- Second, OData defines a set of SQL-like operators that allow constructing powerful queries.
+- Each service is described by a metadata document that lists all entities, their properties and relations, and which operations can be executed on them.
+- OData defines a set of SQL-like operators that allow constructing powerful queries.
 
 However, building requests by hand can be tedious and error-prone. It's easy to mistype the name of an entity or a property, which will make the request fail. Furthermore, you have to continuously cross-check with the service's metadata to look up the spelling and types of entities and properties.
 
@@ -103,7 +104,11 @@ import { BusinessPartnerService } from './business-partner.service';
 export class AppModule {}
 ```
 
-Now you can start your application using `npm start`. When the server is running, you should see a message like: `[NestApplication] Nest application successfully started` and some mappings related to the listed controllers. Open the URL `http://localhost:3000/business-partners` and you should see `Not yet implemented.`
+Now you can start your application using:
+```Shell
+npm start
+```
+When the server is running, you should see a message like: `[NestApplication] Nest application successfully started` and some mappings related to the listed controllers. Open the URL `http://localhost:3000/business-partners` and you should see `Not yet implemented.`
 
 [DONE]
 [ACCORDION-END]

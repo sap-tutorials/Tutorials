@@ -1,15 +1,15 @@
 ---
 title: Create a Thing Model and Bind to Device
 description: Use the Thing Modeler to create the master data and the measurement properties, then map your thing to devices and sensors, and to your business process.
-primary_tag: products>sap-leonardo-iot
 auto_validation: true
-tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-internet-of-things ]
+primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-business-technology-platform, products>sap-iot-services-for-sap-btp]
 time: 20
 ---
 
 ## Prerequisites  
  - **Tutorials:** [Assemble and Configure Device Hardware](iot-express-3-configure-device) or at least [Create a Simple IoT Device Model](iot-express-2-create-device-model)
- - **Configuration** You or someone else that is an administrator in your global account has walked through the following end-to-end configuration and onboarding guide: [Getting Started with SAP Leonardo IoT](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest).
+ - **Configuration** You or someone else that is an administrator in your global account has walked through the following end-to-end configuration and onboarding guide: [Getting Started with SAP IoT](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest).
 
 
 ## Details
@@ -22,18 +22,18 @@ time: 20
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access Fiori Launchpad with Leonardo IoT apps)]
+[ACCORDION-BEGIN [Step 1: ](Access Fiori Launchpad with SAP IoT apps)]
 
   The Launchpad provides all the tools for creating thing types, properties, things but also persons, companies and KPI's. In this first step you find out how to access it.
 
   1. Go to the [SAP Cloud Platform cockpit](https://account.eu1.hana.ondemand.com/cockpit#/home/allaccounts).
-  2. Drill down into the **Global Account** and the Cloud Foundry **Sub-account** where you have configured the subscription to Leonardo IoT.
+  2. Drill down into the **Global Account** and the Cloud Foundry **Sub-account** where you have configured the subscription to SAP IoT.
   5. From the left-side menu, click **Subscriptions**.
-  6. Click **Go to Application** from the `SAP Leonardo IoT` tile.
+  6. Click **Go to Application** from the `SAP IoT` tile.
 
 >Enter the email address used with your SAP Cloud Platform account and the password if you are asked for one.
 
-  ![Go to SAP Leonardo IoT Subscription](go_to_iotae.png)
+  ![Go to SAP IoT Subscription](go_to_iotae.png)
 
 [DONE]
 
@@ -44,7 +44,7 @@ time: 20
 
   The next step is to create a package. A package allows re-use of thing types and properties within your tenant and across tenants. As we want to put the environment sensor that we have to use in the context of a greenhouse condition monitoring application, we call this package `greenhouse`.
 
-  1. Click **Go to Application** link from the **SAP Leonardo IoT** tile (more info in Step 2).
+  1. Click **Go to Application** link from the **SAP IoT** tile (more info in Step 2).
   2. From **IoT Thing Modeler**, click the **Packages** tile.
   3. Make sure no similar package already exists using the top-right search field.
   4. Create a new package by clicking the `+` in the right of the search field.
@@ -97,7 +97,7 @@ Now that our greenhouse has a property set to capture the serial number for busi
 
 Note that we focus on the data we want to use in the business application -- the actual physical sensor or its manufacturer does not matter. We could even get the different measurements from different devices across different communication technologies. What matters in the thing model is what you need to know in the applications built on top.
 
-1. Click the **Home** icon at the top-left of the page after the package creation, or click **Go to Application** from the **SAP Leonardo IoT** tile (more info in Step 2).
+1. Click the **Home** icon at the top-left of the page after the package creation, or click **Go to Application** from the **SAP IoT** tile (more info in Step 2).
 2. From the **IoT Thing Modeler** section, click the **Thing Properties Catalog** tile. On the left side, you'll see the list of existing property sets in the selected package that is written on the top of the search field of the list.
 4. Select your package from the grey slice of the screen found below the list. Click the package icon (first one).
 5. Search and choose your package by entering `greenhouse` in the search field and click on the search icon or press **Enter**.

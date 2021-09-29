@@ -22,7 +22,7 @@ The `server machine` in these instructions refers to the machine on which SAP HA
 
 [ACCORDION-BEGIN [Step 1: ](XS CLI client info.)]
 
-The XS advanced client-tools bundle (`xs.onpremise.runtime.client_<platform>-<version>.zip`) also includes the `Javascript` bundle (`xs_javascript-1.3.0-bundle.tar.gz`), which includes a selection of mandatory `Node.js` packages developed by SAP for use with the `Node.js` applications running XS Advanced runtime.
+The XS advanced `client-tools` bundle (`xs.onpremise.runtime.client_<platform>-<version>.zip`) also includes the `Javascript` bundle (`xs_javascript-1.3.0-bundle.tar.gz`), which includes a selection of mandatory `Node.js` packages developed by SAP for use with the `Node.js` applications running XS Advanced runtime.
 
 You can use the XS command line client to perform a wide variety of developer- and administrator-related tasks. For example, in the role of a developer, you can use the XS CLI to connect to the XS Advanced runtime installed on the server machine, log on as a specific user, and deploy and manage your applications.
 
@@ -48,13 +48,11 @@ Install the Download Manager to your client machine and download the client pack
 
     -   For Windows and Mac machines, use a compression utility.
 
-    -   For Linux, navigate to the directory in which you wish to extract the client files and use the tar command.
+    -   For Linux machines, navigate to the directory in which you wish to extract the client files and use the `tar` command:
 
-        ```bash
-        cd <preferred_filepath>
-        sudo tar <download_filepath>/clients_<OS>.zip
-        ```
-
+```cd <preferred_filepath>
+sudo tar -xzf <download_filepath>/clients_<OS>.tgz
+```            
 
 These files are extracted:
 

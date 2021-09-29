@@ -1,7 +1,7 @@
 node_modules
 .config
 .idea
-report*
+analyze/reports/report_*.csv
 
 # Compiled source #
 ###################

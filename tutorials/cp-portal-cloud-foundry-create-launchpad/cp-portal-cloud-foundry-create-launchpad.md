@@ -3,8 +3,10 @@ title: Expose Your App to the Portal Service (Cloud Foundry)
 description: Create a launchpad module in SAP Web IDE to make your SAP Fiori app available for use in the Portal.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>sapui5, products>sap-cloud-platform, topic>html5, topic>sapui5, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-fiori, products>sap-web-ide]
+tags: [ tutorial>beginner, topic>sapui5, products>sap-cloud-platform, topic>html5, topic>sapui5, products>sap-fiori, products>sap-web-ide, products>sap-cloud-platform-launchpad]
 primary_tag: products>sap-cloud-platform-portal
+author_name: Lindsay Bert
+author_profile: https://github.com/LindsayBert
 ---
 
 ## Details
@@ -80,7 +82,7 @@ In this step you are going to do just that.
 
 Build and deploy the `MTA` project with these modules thus exposing your app to the Portal service.
 
-1. Right click on your `mta_FioriDemo` project and click **Build**.
+1. Right click on your `mta_FioriDemo` project and click **Build** and then **Build with Cloud MTA Build Tool**.
 
     ![Build your project](16_build.png)
 

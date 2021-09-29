@@ -3,7 +3,7 @@ title: The ESPM Application
 description: In this tutorial series you will go through the process of developing a Java-based e-commerce application on SAP Cloud Platform. A reference app is used in order to demonstrate the development steps. The tutorials start with the basics and gradually build upon the functionality of the application.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>java, products>build>build, products>sap-cloud-platform, products>sap-jam ]
+tags: [  tutorial>beginner, topic>java, products>build>build, products>sap-cloud-platform  ]
 ---
 
 ## Prerequisites  
@@ -27,8 +27,16 @@ The Enterprise Sales and Procurement Model (`ESPM`) is a reference application t
 
  The `ESPM` application's business scenario is one of an `eCommerce` site that sells electronic products. The customer can order products as well as provide reviews and rate them. The retailer can accept those sales orders and update the product stock information.
 
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 1: ](Test yourself)]
+
+
 [VALIDATE_1]
 [ACCORDION-END]
+
 
 
 

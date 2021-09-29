@@ -1,21 +1,21 @@
 ---
-title: Deploy Your Bot on Facebook Messenger
-description: Create, test, and publish a Facebook Messenger bot with SAP Conversational AI.
+title: Deploy an SAP Conversational AI ChatBot on Facebook Messenger
+description: Create, test, and publish an SAP Conversational AI chatBot on Facebook Messenger.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>machine-learning, products>sap-leonardo]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform]
 primary_tag: products>sap-conversational-ai
 ---
 
 ## Prerequisites
- - An SAP Conversational AI account (as described in Step 1 of [Build Your First Bot with SAP Conversational AI](cai-bot-getting-started))
+ - An SAP Conversational AI account (as described in Step 1 of [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started))
  - A Facebook account
 
 ## Details
 ### You will learn
   - How to create a Facebook Messenger app
-  - How to set up your app for use as a chat bot
-  - How to connect your SAP Conversational AI bot to your app
+  - How to set up your app for use as a chatbot
+  - How to connect your SAP Conversational AI chatbot to your app
   - How to test and publish your Messenger chatbot
 
 ---

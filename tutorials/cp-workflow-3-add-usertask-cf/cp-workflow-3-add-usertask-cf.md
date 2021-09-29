@@ -1,168 +1,195 @@
 ---
-title: Add a User Task to Your Workflow
-description: Enhance your workflow with a form-based user task, in this case, to add an approval.
+title: Add a User Task to Your Workflow and Deploy
+description: Enhance the workflow with with a form-based user task and deploy the workflow
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner ]
+primary_tag: products>sap-business-technology-platform
+tags: [  tutorial>beginner, products>sap-business-technology-platform ]
 time: 15
 ---
 
 ## Details
 ### You will learn  
-  - How to start an instance of the workflow definition that you have defined using a start form
+  - How to create a simple approval task for your workflow.
+  - How to deploy the workflow.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Launch SAP Web IDE)]
-1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit).
+[ACCORDION-BEGIN [Step 1: ](Add a user task)]
+1. In SAP Business Application Studio, access the `onboard.workflow` you created in the **projects** folder.
 
-2. Choose **Launch SAP Web IDE**.
+2. In the workflow editor, select  **Tasks** | **User Tasks**, then click the connector between the Start and the End event to insert the task there.
 
-   ![Launch SAP Web IDE](launchsapwebide.png)  
+    > Make sure that the connector color is green. Otherwise, your task is not correctly processed.
+
+    ![Insert User Task](insert-user-task2.png)
+
+3. Enter the following data:
+    - In the **GENERAL** tab of the **User Task Properties**, enter **`Assign and Approve Equipment`** in the **Name** field.
+
+    - Switch to the **DETAILS** tab, enter **`Assign and Approve Equipment for ${context.empData.firstName} ${context.empData.lastName}`** in the **Subject** field.
+
+        The subject will be shown in the task list in My Inbox.
+
+    - Enter a description **`The manager assigns and approves equipment and relocation of the newly onboarded employee`**.
+
+    - Assign a recipient for the task. In the **Users** field, enter **`${info.startedBy}`**.
+
+        With this recipient information everyone who starts the workflow will then receive the task.
+
+    ![Add User Task Details](add-user-task-details.png)
+
 
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 2: ](Create a task form)]
+Define the form, which is shown when the task is opened in the My Inbox.
 
-[ACCORDION-BEGIN [Step 2: ](Create task form)]
-1. In your workspace, choose **`MyWorkflowProject`** | **`MyWorkflow`** | **`workflows`**. Then double-click the **`ApprovalWorkflow.workflow`** file.
+1. On the **User Interface** tab of the **User Task Properties**, set the **Type** to **Form** and choose **Create File**.
 
-    ![Open File](open-approvalwf-new.png)
+    ![Create Form File](create-form-file.png)
 
-2. To create a user task in the editor, select **`StartEvent1`** and then from the `speedbuttons` choose **User Task** .
+2. Enter the name **`approvalform`**, keep the ID. For the revision enter **`1.0`**. Keep the **Task Form** type.
 
-    ![Create User Task](create-user-task-no.png)
+    ![Create Form File](create-approval-form.png)
 
-3. Make sure to select the newly created user task. Otherwise, the **User Task Properties** are not displayed.
+3. Choose **Create**.
 
-4. Under **User Task Properties** | **USER INTERFACE**, set the **Type** to **Form**.
+    The form file is created in the **forms** folder under **onboarding** | **approvals**.
 
-    ![Set Type](set-to-form.png)
+4. Once the form editor opens, add form data by choosing **Add Field**.
 
-5. Under **Form Details**, select **Create File**.
+    The context path refers to the task context.
 
-    ![Create File](select-create-file.png)
+    | Label/Title    | Type       | Context Path                         |
+    | :--------------| :----------| :------------------------------------|
+    | **First Name** | **String** | **`${context.empData.firstName}`**   |
+    | **Last Name**  | **String** | **`${context.empData.lastName}`**    |
+    | **Country**    | **String** | **`${context.empData.country}`**     |      
+    | **Hire Date**  | **Date**   | **`${context.empData.hireDate}`**    |      
+    | **Job Title**  | **String** | **`${context.empData.jobTitle}`**    |      
+    | **Relocation** | **String** | **`${context.empData.relocation}`**  |      
+    | **Equipment**  | **String** | **`${context.empData.equipment}`**   |      
 
-6. In the popup, enter the following data, then choose **Create**:
+    For **Relocation**, select **Radio Buttons** under **Control** in the right side-panel. Then add **`Yes`** in the first line and **`No`** in the second line both as string and as display values.
 
-    | Field                  | Value                  |
-    | :--------------------- | :--------------------- |
-    | **Name**               | **`ApprovalForm`**     |
-    | **Revision**           | **`1.0`**              |      
+    For **Equipment**, select **Dropdown** under **Control** in the right side-panel. Then add **`Notebook`** in the first line and **`Cables and Accessories`** in the second line both as string and as display values.
 
-    ![Create Approval Form](create-approval-form.png)
+    The filled form looks like this:
 
-A message confirms that the form has been created.
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 3: ](Add fields to your task form)]
-
-1. In the form editor (for the ``ApprovalForm.form``), select the **Fields** section.
-
-2. To add two new fields, click **Add Field** twice, and enter the following data to define the fields:
-
-    | Label/Title      | Type          | Context Path                
-    | :--------------- | :------------ | :--------------------------
-    | **Title**        | **String**    | **`${context.product}`**    
-    | **Price**        | **Float**     | **`${context.price}`**      
-
-    ![Add Fields](add-fields.png)
-
-3. Save your changes.
+    ![Add Fields to Form](add-form-data.png)
 
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Add a button to your task form)]
 
-[ACCORDION-BEGIN [Step 4: ](Add approve and reject buttons)]
+1. In the form editor, switch from the **FIELDS** to the **DECISIONS** tab, and choose **Add**.
 
-1. In the form editor (for the ``ApprovalForm.form``), select the **Decisions** section.
+    Then enter the following data.
 
-2. To add two new buttons, click **Add** twice.
+    | Text         | ID           | Type         |
+    | :------------| :------------| :------------|
+    | **Approve**  | **approve**  | **Positive** |
 
-3. In the two new rows that are added in the **Decisions** section, enter the following data:
 
-    | **Text**         | **ID**           | **Type**       |
-    | :--------------- | :--------------- | :------------- |
-    | **`Approve`**    | **`approve`**    | **Positive**   |
-    | **`Reject`**     | **`reject`**     | **Negative**   |
+    The form looks like this:
 
-    ![Add Buttons](add-buttons.png)
-
-4. Save your changes.
+    ![Add Decision](add-decision.png)
 
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 4: ](Build and deploy)]
+Now, you are ready to build and deploy the workflow.
 
-[ACCORDION-BEGIN [Step 5: ](Complete the user task)]
-1. Go back to the `ApprovalWorkflow.workflow` file. If you have closed it, reopen it by selecting and choosing **Workflow Editor**.
+1. Open the **mta.yaml** file of your **onboarding** project by double-clicking it. In  lines 9 and 13, replace `workflow_mta` with `wm_workflow`.
 
-2. Under **User Task Properties** | **GENERAL**, enter `ApproveBook` in the **Name** field.
+    ![Update YAML File](update-yaml.png)
 
-    ![Enter Name](enter-name-approvebook.png)
+2. Right-click the **mta.yaml** file in your **onboarding** project folder, and then select **Build MTA Project**.
 
-3. Switch to the **DETAILS** tab, and enter `Approval` in the **Subject** field.
+    ![Build MTA](build-mta.png)
 
-    ![Enter Subject](enter-subject-approval.png)
+    Once the build is completed, the new folder **`mta_archives`** appears under your application folder.
 
-4. Under **Recipients**, enter your email address in the **Users** field.
+3. Check whether the blue message line at the bottom of your screen, asks you to log in to your Cloud Foundry space.
 
-    ![Enter Recipient](enter-recipient.png)
+    ![Open Login Dialog](blue-login-message.png)
 
-5. Save your changes.
+    If so, click it to open the entry field. Enter the right API endpoint depending on your region, for example, `https://api.cf.eu10.hana.ondemand.com`, your username and password, and select the Cloud Foundry org and space of your trial account.
 
-[DONE]
-[ACCORDION-END]
+    > You can get the trial API Endpoint, organisation name, and space name from your trial account overview page.
+        !![Set Env](SetOrgName.png)
 
+4. Right-click the `.mtar` file, and then select **Deploy MTA Archive**.
 
-[ACCORDION-BEGIN [Step 6: ](Build the workflow project)]
+    ![Deploy MTA Archive](deploy-mtar2.png)
 
-1. Build the **`MyWorkflowProject`** project by right-clicking it and choosing **Build** | **Build with Cloud MTA Build Tool (recommended)**.
-
-    ![Build Workflow Project](build-wf-project-rec.png)
-
-    You will receive a build confirmation popup.
-
-2. In your workspace from the **`mta_archives`** folder, right-click the `MyWorkflowProject_0_0_1.mtar` file and choose **Deploy** | **Deploy to SAP Cloud Platform**.
-
-    ![Deploy File](deploy-wf-mtar-new.png)
-
-3. In the popup, select your API endpoint, organization, and space.
-
-4. Choose **Deploy**.
-
-    ![Deploy](deploy.png)
-
-    You will receive a deploy confirmation popup.
+    > It will take approximately 5 minutes to deploy the multitarget application.
 
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 5: ](Run the workflow)]
 
-[ACCORDION-BEGIN [Step 7: ](Open the Workflow Monitor - Workflow Definitions app)]
-1. Open your browser and access your SAP Fiori launchpad at: `https://<dev space name>-trial-dev-workflowtilesapprouter.cfapps.<your endoint>.hana.ondemand.com`.
+After deployment is finished, open the SAP Fiori launchpad site that contains the workflow applications.
 
-2. Choose the **Monitor Workflows - Workflow Definitions** tile, and for the `ApprovalWorkflow` task choose **Start New Instance**.
+1. In your web browser, open the [SAP Business Technology Platform (SAP BTP) Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+
+2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
+
+3. Access your **trial** subaccount.
+
+4. From the navigation area, choose **Instances and Subscriptions**, and search for **Workflow Management**.
+
+5. Open your SAP Fiori launchpad, by choosing **Go to Application** in the **Workflow Management** row.
+
+    ![Go to Application](go-to-application.png)
+
+6. In the SAP Fiori launchpad, open the **Monitor Workflows (Workflow Definitions)** application and select the **onboard** workflow definition.
+
+7. Choose **Start New Instance**.
 
     ![Start New Instance](start-new-instance.png)
 
-3. Leave the `JSON` context as is, and choose **Start New Instance**.
+8. Replace the payload by adding the following code as context, then choose **Start New Instance and Close**.
 
-    ![Start New Instance](start-new-instance2.png)
+    ```
+    {
+      "managerId": "john.edrich@sapdemo.com",
+      "buddyId": "kevin.hart@saptest.com",
+      "userId": "cgrant1",
+      "empData": {
+        "firstName": "Carla",
+        "lastName": "Grant",
+        "city": "San Mateo",
+        "country": "United States",
+        "hireDate": "2020-07-11",
+        "jobTitle": "General Manager, Industries"
+      }
+    }
 
-4. Go back to the **Home** page. The **My Inbox** app displays one task.
+    ```
+    ![Add Payload](payload-start-new-instance.png)
 
-    ![View My Inbox](my-inbox-task.png)
+9. To display the execution log of the instance, choose **Show Instances** and go to the **Execution Log** tab.
 
-5. Open **My Inbox**, and choose **Approve** to process the task.
+    This opens the **Monitor Workflows (Workflow Instances)** application.
 
-    ![Approve Task](approve-task.png)
+    ![Show Execution Log](show-execution-log.png)
 
-[VALIDATE_3]
+10. Go back to the home page and open the **My Inbox** application.
+
+    You should see the **Approval** task with a form, showing the equipment name and an **Approve** button.
+
+    ![Approve Equipment](approve-equipment.png)
+
+[VALIDATE_2]
 [ACCORDION-END]
 
+
 ---
+Summary
+
+If you want to build a dedicated UI for end users and not use the administrative **Monitor Workflow (Workflow Definitions)** application, you can use a start form. See the next tutorial.

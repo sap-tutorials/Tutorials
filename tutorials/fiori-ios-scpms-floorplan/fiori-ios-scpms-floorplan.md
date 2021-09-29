@@ -1,22 +1,23 @@
 ---
 title: Create a List Report Floorplan
-description: Use the SAP Cloud Platform SDK for iOS to build a simple List Report Floorplan containing an FUISearchBar
+description: Use the SAP BTP SDK for iOS to build a simple List Report Floorplan containing an FUISearchBar
 auto_validation: true
-author_name: Kevin Muessig
-author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 60
 ---
 
 ## Prerequisites
-- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup)
+
+- **Tutorials:** [Get a Free Trial Account on SAP BTP](hcp-create-trial-account) and [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup)
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0
+- **SAP BTP SDK for iOS:** Version 5.0
 
 ## Details
+
 ### You will learn  
-  - How to use the `SAPFiori` UI controls to build a List Report Floorplan
+
+- How to use the `SAPFiori` UI controls to build a List Report Floorplan
 
 ---
 
@@ -43,7 +44,7 @@ In this example, you build upon the Tutorial app created using the **Sample ODat
 </EntityType>
 ```
 
-The app you've generated with the SAP Cloud Platform SDK for iOS Assistant (iOS Assistant) has currently its UI. You're going to make that app your own now.
+The app you've generated with the SAP BTP SDK Assistant for iOS (Assistant) has currently its UI. You're going to make that app your own now.
 
 Open the `Main.storyboard`, select all displayed View Controllers and delete them.
 
@@ -111,7 +112,7 @@ import SAPCommon
 
 ```
 
-Next let the `SupplierTableViewController.swift` class conforms to the `SAPFioriLoadingIndicator` protocol provided by the iOS Assistant generated code. You can locate the protocol in the `Utils` group.
+Next let the `SupplierTableViewController.swift` class conforms to the `SAPFioriLoadingIndicator` protocol provided by the Assistant generated code. You can locate the protocol in the `Utils` group.
 
 ```Swift
 class SupplierTableViewController: UITableViewController, SAPFioriLoadingIndicator { ... }
@@ -142,7 +143,7 @@ var dataService: ESPMContainer<OnlineODataProvider>? {
 
 ```
 
-> NOTE: In case you're using an `ODataOfflineProvider` you have to change the above-mentioned code to use `ODataOfflineProvider` instead of `ODataOnlineProvider`. You have to also import `SAPOfflineOData` in addition to the `SAPOData` framework.
+> In case you're using an `ODataOfflineProvider` you have to change the above-mentioned code to use `ODataOfflineProvider` instead of `ODataOnlineProvider`. You have to also import `SAPOfflineOData` in addition to the `SAPOData` framework.
 
 Because we're good citizens we want to use an app logger to log important information. Fortunately, SAP is offering a simple-to-use Logging API with the `SAPCommon` framework.
 
@@ -162,7 +163,7 @@ private var suppliers = [Supplier]()
 
 ```
 
-> NOTE: From now on bigger code blocks are explained with inline comments. Read the inline comments carefully to fully understand what the code is doing and why we're implementing it.
+> From now on bigger code blocks are explained with inline comments. Read the inline comments carefully to fully understand what the code is doing and why we're implementing it.
 
 Loading all available suppliers is fairly easy using the generated data service. The generated code will handle all authentication and authorization challenges for you and the data service will construct all necessary requests to load, create and update entities in your backend.
 
@@ -356,7 +357,7 @@ Tapping on one of the `FUIActivityItem` will result in an alert dialogue showing
 In this step, we will implement a second `UITableViewController` displaying all products a supplier provides.
 For this, we will use a storyboard segue to navigate to the `SupplierProductsTableViewController` and pass through the selected supplier.
 
-> NOTE: In case you're not familiar with segues please visit, and carefully read the official documentation before continuing. [Using Segues](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/UsingSegues.html)
+> In case you're not familiar with segues please visit, and carefully read the official documentation before continuing. [Using Segues](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/UsingSegues.html)
 
 Open up the `Main.storyboard` and add a new `UITableViewController` from the **Object Library** directly next to the `SupplierTableViewController`. Create a new segue from one of the prototype cells inside of the `SupplierTableViewController` to the newly added `UITableViewController`.
 
@@ -410,6 +411,15 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       destinationVC.supplier = suppliers[indexPathForSelectedRow.row]
     }
   }
+}
+
+```
+
+You can utilize the `tableView(_:didSelectRowAt:)` method to trigger the navigation. Implement the override method:
+
+```Swift
+override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: segueIdentifier, sender: tableView)
 }
 
 ```
@@ -478,7 +488,8 @@ Let's load some data!
 
 We're using the same style we've used in the `SupplierTableViewController`. Implement the following two methods and read the inline comments carefully because you will see that we utilize the `DataQuery` object for making a filter as well as an expand.
 
-> NOTE: If you're not familiar with those OData specific terms please make yourself familiar with the OData specification:
+> If you're not familiar with those OData specific terms please make yourself familiar with the OData specification:
+
 - [URI Conventions (OData Version 2.0)](https://www.odata.org/documentation/odata-version-2-0/uri-conventions/)
 - [OData Version 4.01. Part 2: URL Conventions](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html)
 
@@ -681,7 +692,7 @@ Run the app and navigate to the `SupplierProductsTableViewController`.
 
 Wouldn't it be cool to also have a `FUISearchBar` which is inheriting from `UISearchBar`? - Of course, it would be, so let's implement that.
 
-> NOTE: In case you're not familiar with the `UISearchBar` or `UISearchController` read the official documentation:
+> In case you're not familiar with the `UISearchBar` or `UISearchController` read the official documentation:
 
 - [`UISearchBar`](https://developer.apple.com/documentation/uikit/uisearchbar)
 - [`UISearchController`](https://developer.apple.com/documentation/uikit/uisearchcontroller)

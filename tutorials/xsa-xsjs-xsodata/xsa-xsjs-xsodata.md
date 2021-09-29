@@ -8,6 +8,7 @@ primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>odata, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** beginner
  - **Tutorials:** [SAP HANA XS Advanced, Creating an HDI Module](https://developers.sap.com/tutorials/xsa-hdi-module.html)
 
@@ -110,7 +111,7 @@ This is what the section should like:
 
 [ACCORDION-BEGIN [Step 3: ](Enable authentication in your service)]
 
-Return to the `core_xsjs` folder that you created in this exercise. Like the other applications, this one also starts with a `package.json` file. Different this time is the fact that the startup script is not an SAP provided central node application, but one that you have created via the module creation wizard. To avoid the "make: g++: Command not found" or "node-gyp exited with code: 1" on the latest versions of XSA; please update the node version from 8.x to 10.x in the package.json. Also update the @sap/xsjs-test package to at least "^3.1.2". For more details on this compatibility situation, see service note: https://launchpad.support.sap.com/#/notes/2905261
+Return to the `core_xsjs` folder that you created in this exercise. Like the other applications, this one also starts with a `package.json` file. Different this time is the fact that the startup script is not an SAP provided central node application, but one that you have created via the module creation wizard. To avoid the "make: g++: Command not found" or "node-gyp exited with code: 1" on the latest versions of XSA; please update the node version from 8.x to 10.x in the package.json. Also update the @sap/xsjs-test package to at least "^3.1.2". For more details on this compatibility situation, see service note: <https://launchpad.support.sap.com/#/notes/2905261>
 
 ![js folder](7.png)
 

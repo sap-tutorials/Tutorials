@@ -5,20 +5,18 @@ author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
+time: 15
 ---
 ## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** [Creating Scalar User Defined Functions](https://developers.sap.com/tutorials/xsa-sqlscript-scalar.html)
-
-## Next Steps
-- [Creating SQLScript User Defined Libraries](https://developers.sap.com/tutorials/xsa-sqlscript-libraries.html)
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
+- **Tutorials:** [Creating Scalar User Defined Functions](xsa-sqlscript-scalar)
 
 ## Details
-### You will learn  
-There are application and scenarios where you need a table function instead of procedure to leverage the advantage of direct selects on the output i.e. filtering, sorting and grouping. In the following exercise we show you how you can easily transform a procedure to a table function.
+### You will learn
+- How to transform a procedure to a table function.
 
-### Time to Complete
-**15 Min**.
+There are application and scenarios where you need a table function instead of procedure to leverage the advantage of direct selects on the output, for example, filtering, sorting and grouping. In the following exercise, we show you how you can easily transform a procedure to a table function.
+
 
 ---
 

@@ -5,6 +5,7 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-cloud-platform-portal, topic>cloud, products>sap-fiori ]
 primary_tag: products>sap-cloud-platform
+author_name: Lindsay Bert
 ---
 
 ## Prerequisites
@@ -155,4 +156,4 @@ In the next tutorial you're going to add web content to the `Home` page.
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
-<p style="text-align: center;"><a href="https://s.userzoom.com/m/MyBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-portal-cloud-foundry-create-site" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

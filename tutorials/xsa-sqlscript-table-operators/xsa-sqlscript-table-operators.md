@@ -5,20 +5,21 @@ author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
+time: 10
 ---
 
 ## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** [Using Index Based Cell Access](https://developers.sap.com/tutorials/xsa-sqlscript-usingindexbased.html)
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
+- **Tutorials:** [Using Index Based Cell Access](xsa-sqlscript-usingindexbased)
 
 
 ## Details
 ### You will learn  
-In this tutorial you will update the previous procedure to now use Table Variable Operators to manipulate the immediate table variables.  We can use table variable operators to perform DML like operations on table variables without having to invoke the SQL layer.  In this exercise we will experiment with the INSERT, UPDATE, DELETE, and SEARCH operators.
+- How to update procedure to use Table Variable Operators to manipulate the immediate table variables
 
-### Time to Complete
-**10 Min**.
+In this tutorial, you will update the previous procedure to now use Table Variable Operators to manipulate the immediate table variables.  We can use table variable operators to perform DML like operations on table variables without having to invoke the SQL layer.  In this exercise, we will experiment with the INSERT, UPDATE, DELETE, and SEARCH operators.
 
+---
 
 [ACCORDION-BEGIN [Step 1: ](Return to Previous Procedure)]
 Return to the procedure called `build_products` in the procedure folder.

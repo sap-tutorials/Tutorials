@@ -3,8 +3,8 @@ title: Delete OData Entities with the SAP Cloud SDK's Virtual Data Model
 description: Delete OData entities with the SAP Cloud SDK's virtual data model to duild an address manager application.
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>javascript, topic>odata]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-business-technology-platform, topic>javascript, topic>odata]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites
@@ -113,7 +113,7 @@ export class BusinessPartnerController {
 }
 ```
 
-Restart your server and send a delete request to `http://localhost:3000/business-partners/1/address/1` (or the respective IDs you used in the previous tutorials). If everything works, you should see an empty response and return type 204 and your address should disappear in the backend.
+Restart your server and send a delete request to `http://localhost:3000/business-partners/1003764/address/28238` (or the respective IDs you used in the previous tutorials). If everything works, you should see an empty response with status code 204 and your address should disappear from the backend.
 
 [DONE]
 [ACCORDION-END]

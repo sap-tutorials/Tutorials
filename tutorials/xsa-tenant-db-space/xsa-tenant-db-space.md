@@ -1,6 +1,8 @@
 ---
 title: Configure a Space to Develop on a Tenant Database (XS Advanced)
 description: Assign a tenant database to a space.
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
@@ -10,6 +12,7 @@ time: 15
 ## Prerequisites  
 
  - **Proficiency:** Beginner
+ - You have access to SAP HANA on premise or SAP HANA Express -- This tutorial will not work with HANA Cloud
  - SAP HANA, express edition already comes with a tenant database called `HXE`. If you are using **a different deployment**, you can create a tenant database following [this guide](hxe-ua-dbfundamentals-tenantdb)
  - SAP HANA, express edition already comes with a development space. If you want to create a separate one or are using another deployment, you can create a space as explained on [this tutorial](xsa-setup-new-space).
  - You have the proper administration rights
@@ -29,7 +32,7 @@ Log in to the XS Advanced CLI as `XSA_ADMIN`. Use command `xs-admin-login` from 
 
 ![CLI login](cli.png)
 
-> **Note**: If you are not using the command line from the operating system in the virtual machine, use command `xs login -a https://hxehost:39030 --skip-ssl-validation` or adapt it to your deployment.
+> **Note**: If you are not using the command line from the operating system in the virtual machine, use command `xs login -a <https://hxehost:39030> --skip-ssl-validation` or adapt it to your deployment.
 
 ![CLI login](cli.png)
 
@@ -66,7 +69,7 @@ Click on the button to open and log in to the XSA Cockpit
 
 ![Cockpit log in](1.png)
 
->If you are not using SAP HANA, express edition, or you have changed the ports, you can find out the right URL using command `xs apps` on the Command Line Interface and look for the URL for application `xsa-cockpit`. You can access the CLI directly from an SSH console on the server or download it using the Download Manager. You can get the Download Manager after registering at the [Download site](https://developers.sap.com/topics/sap-hana-express.html)
+>If you are not using SAP HANA, express edition, or you have changed the ports, you can find out the right URL using command `xs apps` on the Command Line Interface and look for the URL for application `xsa-cockpit`. You can access the CLI directly from an SSH console on the server or download it using the Download Manager. You can get the Download Manager after registering at the [Download site](https://developers.sap.com/topics/hana.html)
 
 &nbsp;
 

@@ -2,17 +2,15 @@
 title: Use the Barcode Scanner API
 description: Implement a small search logic which will look for the correct products depending on the barcode the app scans.
 auto_validation: true
-author_name: Kevin Muessig
-author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, software-product-function>sap-cloud-platform-mobile-services ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 25
 ---
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0
-- [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup)
+- **SAP BTP SDK for iOS:** Version 5.0
+- [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup)
 
 ## Details
 ### You will learn  
@@ -23,7 +21,7 @@ time: 25
 
 [ACCORDION-BEGIN [Step 1: ](Replace the generated app UI with your own)]
 
-> This tutorial uses the generated app out of the [Set Up the SAP Cloud Platform SDK for iOS](https://developers.sap.com/group.ios-sdk-setup.html) tutorial group.
+> This tutorial uses the generated app out of the [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup) tutorial group.
 
 Please open up the `TutorialApp` created in the above mentioned tutorial group. The app contains a Master-Detail View which has to be removed to add a `UITableViewController` displaying a list of products.
 
@@ -296,7 +294,7 @@ If you run the app on the simulator now, you should see a search bar appearing o
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implemnt the search result handling and update of the UITableViewController)]
+[ACCORDION-BEGIN [Step 5: ](Implement the search result handling and update of the UITableViewController)]
 
 At the moment the search bar doesn't do much, so let's go ahead and implement the search logic.
 
@@ -457,7 +455,10 @@ You will see a compile error because the `ProductTableViewController` doesn't co
 ```swift
 extension ProductTableViewController: FUIBarcodeScanViewControllerDelegate {
     func barcodeScanViewController(_ barcodeScanViewController: FUIBarcodeScanViewController, didReceiveScanResult scanResult: FUIBarcodeScanResult?) {
-        // TODO: implement
+        if let resultString = scanResult?.scanResultString {
+            searchProducts(resultString)
+            return
+        }
     }
 }
 

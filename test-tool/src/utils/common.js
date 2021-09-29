@@ -1,9 +1,13 @@
 const fs = require('fs-extra');
+const path = require('path');
+const recursive = require('recursive-readdir');
 
 const linkUtils = require('./link');
 const { regexp: { validation: { codeBlock, codeLine } } } = require('../constants');
 
-const isTutorialDoc = filePath => filePath.includes('docs-tutorial') || filePath.includes('contributing.md');
+const isTutorialDoc = filePath => ['contributing.md', 'docs-tutorial'].reduce((flag, exclusion) => flag || filePath.includes(exclusion), false);
+
+const readFilesFactory = (projectPath, relativePath, exclusions) => () => recursive(path.join(projectPath, relativePath), exclusions);
 
 const getContentLines = content => content.replace(/\r\n|\n\r|\n|\r/g, '\n').split('\n');
 
@@ -24,21 +28,35 @@ const getNoCodeContentLines = (content) => {
         clearContent = clearContent.replace(result[0], newLines);
     }
 
-    clearContent = clearContent.replace(codeLine, '');
+    clearContent = removeCodeLines(clearContent);
+
     return getContentLines(clearContent);
+};
+
+const removeCodeLines = (content) => {
+    let result;
+
+    let clearContent = content;
+    while ((result = codeLine.exec(content)) !== null) {
+        const match = result[2];
+        const spaces = match.split('').fill(' ').join('');
+        clearContent = clearContent.replace(match, spaces);
+    }
+
+    return clearContent;
 };
 
 const parseFiles = async (filePaths) => {
     const files = new Map();
     const uniqueLinksToFiles = new Map();
-    for(let filePath of filePaths) {
+    for (let filePath of filePaths) {
         const content = await fs.readFile(filePath, 'utf8');
         const contentLines = getContentLines(content);
         const noCodeContentLines = getNoCodeContentLines(content);
 
         const links = linkUtils.extractLinks(content);
         links.forEach(link => {
-            if(uniqueLinksToFiles.has(link)) {
+            if (uniqueLinksToFiles.has(link)) {
                 const filePathsToLink = uniqueLinksToFiles.get(link);
                 filePathsToLink.push(filePath);
             } else {
@@ -64,11 +82,11 @@ const findDuplicates = (arr) => {
     const map = new Map();
     const result = [];
     arr.forEach(el => {
-        let counter = map.has(el) ? map.get(el) : 0
+        let counter = map.has(el) ? map.get(el) : 0;
         map.set(el, ++counter);
     });
     map.forEach((value, key) => {
-        if(value > 1) {
+        if (value > 1) {
             result.push(key);
         }
     });
@@ -83,5 +101,7 @@ module.exports = {
     parseFiles,
     findDuplicates,
     isTutorialDoc,
+    readFilesFactory,
     orderByAlphabet,
+    removeCodeLines,
 };

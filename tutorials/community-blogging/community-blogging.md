@@ -1,6 +1,9 @@
 ---
 title: Write and Publish Blog Posts on SAP Community
 description: By taking this tutorial, you'll discover how to prepare and manage your blog posts on SAP Community, get tips for better blogging, and learn how to interact with readers. You'll also earn the Blogging Savvy badge.
+author_name: Lena Stodal
+author_profile: https://github.com/lenastodal
+
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner ]
@@ -9,7 +12,7 @@ primary_tag: topic>sap-community
 
 ## Prerequisites
 - Log into the [SAP Community](https://community.sap.com) before starting the tutorial.
-- If you do not already have an SAP user account and profile, [register for an account](https://accounts.sap.com/ui/public/showRegisterForm?spName=wcms_sapdx_prod_29052019&targetUrl=https%3A%2F%2Fwww.sap.com%2Fbin%2Ffiji%2Fes%2Flogin.sapdx.html&sourceUrl=https%3A%2F%2Fwww.sap.com%2Fcommunity.html).
+- If you do not already have an SAP user account and profile, [register for an account](https://accounts.sap.com/ui/public/showRegisterForm?spName=https%3A%2F%2Fhana.ondemand.com%2Fskywalker).
 - Achieve the _Contributor_ or _Author_ blogger level.
 - If you don't have one of these blogger levels, please complete the [Tour the SAP Community](community-start) tutorial before beginning this one.
 
@@ -30,11 +33,11 @@ Awarded on a weekly basis, **Blogging Savvy** may not appear in the **Reputation
 
 To open the blogging tool, you'll need to click **Write a Blog Post**, a link you'll find throughout the [SAP Community site](https://community.sap.com).
 
-![Write a Blog Post](writepost.png)
+!![homepage](homepage.png)
 
 Once you click **Write a Blog Post** (and you have a _Contributor_ or _Author_ blogger level), you'll open the blogging tool.
 
-![Blog Tool](blogtool.png)
+!![bloggingtool](bloggingtool.png)
 
 Please familiarize yourself with the tool, then answer the following.
 
@@ -45,16 +48,12 @@ Please familiarize yourself with the tool, then answer the following.
 
 You must select a blog category before publishing a blog post. Please read the **Using categories** section of the [Blogging](https://community.sap.com/resources/blogging) resources page, then answer the following.
 
-![Category](category.png)
-
 [VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Use tags)]
 
 As explained on the [Blogging](https://community.sap.com/resources/blogging) resources page, once you decide what to write about, you'll need to select tags that match the topics that your blog post covers. Please read the **Using tags** section of the [Blogging](https://community.sap.com/resources/blogging) resources page, then answer the following.
-
-![Tags](tags.png)
 
 [VALIDATE_3]
 [ACCORDION-END]
@@ -105,7 +104,7 @@ Watch this video for tips on how to engage with readers.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u5v4Pr0XESA" frameborder="0" allowfullscreen></iframe>
 
-Next, please go to the [All blogs](https://blogs.sap.com/) page, find a post with comments, then answer the following.
+Next, please go to the [All blogs](https://blogs.sap.com) page, find a post with comments, then answer the following.
 
 ![All posts](allposts.png)
 
@@ -121,6 +120,6 @@ As your blog posts draw readers, you can complete missions and earn badges. Plea
 [VALIDATE_9]
 [ACCORDION-END]
 
-
-
+**Thank you for taking part in our Blogging Tutorial! Stay tuned to receive your Blogging Savvy badge!**
+**Happy Blogging!**
 ---

@@ -4,10 +4,11 @@ description: Leveraging SQLScript in stored procedures, user-defined functions, 
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition, products>sap-hana-cloud  ]
 time: 15
 ---
 ## Prerequisites  
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Creating SQLScript User Defined Libraries](xsa-sqlscript-libraries)
 
 ## Details
@@ -15,6 +16,7 @@ time: 15
 - How to invoke SQLScript logic without a persistent logic container  
 
 In this exercise, we will show you how you can invoke SQLScript logic without the need to create a persistent logic container such as a procedure or function. Instead we will use so called anonymous blocks.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create anonymous block )]

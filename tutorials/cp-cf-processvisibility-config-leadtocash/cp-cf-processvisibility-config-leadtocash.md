@@ -1,35 +1,35 @@
 ---
 title: Set Up a Sample Lead-to-Cash Business Process
-description: Set up a pre-configured lead-to-cash business process to experience the Process Visibility service.
+description: Set up a pre-configured Lead-to-Cash business process to experience the process visibility capability.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-cloud-platform]
-primary_tag: topic>cloud
-author_name: Deeksha R
-author_profile: https://github.com/Deeksha-R
+tags: [tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
+author_name: Kavya M Gowda
+author_profile: https://github.com/I540620
 ---
 
 ## Prerequisites
-- You have set up the Process Visibility service. For more information, see [Set Up the Process Visibility Service](https://developers.sap.com/group.cp-visibility-setup.html)
-- You have the **`PVEventSender`**, **`PVAdmin`**, **`PVOperator`**, **`PVDeveloper`**, role assigned to you. For more information, see [Assign Process Visibility Roles to Users](cp-cf-processvisibility-setup-assignroles)
+Set up **SAP Workflow Management** service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
 
 ## Details
 ### You will learn
-- How to import a sample lead-to-cash business scenario
-- How to import the events for sample lead-to-cash business process
-- How to gain visibility on the lead-to-cash business process
-- How to quickly get started with the process visibility service using a sample lead-to-cash business process
+- How to import a sample Lead-to-Cash visibility scenario
+- How to import the events for sample Lead-to-Cash business process
+- How to gain visibility on the Lead-to-Cash business process
+- How to quickly get started with the process visibility capability using a sample Lead-to-Cash business process
 
-Lead-to-cash is a business process that provides sales insights, eliminates process inefficiencies, and ensures accurate reporting on business performance and future trends.
+Lead-to-Cash is a business process that provides sales insights, eliminates process inefficiencies, and ensures accurate reporting on business performance and future trends.
 
-In this tutorial, you can learn how to gain visibility on a sample lead-to-cash business process using the Process Visibility service. You are provided with JSON files with events and zip files that contain the business scenario using which you can easily try out the capabilities of the service.
+In this tutorial, you can learn how to gain visibility on a sample Lead-to-Cash business process using the process visibility capability. You are provided with a JSON file containing events and a zip file that contain the visibility scenario using which you can easily try out the capabilities of process visibility.
 
 [ACCORDION-BEGIN [Step 1: ](Download files from GitHub)]
+
 1. Use the following link to access [GitHub](https://github.com/SAP-samples/cloud-process-visibility/releases).
 
 2. Choose the `LeadToCashEvents.json` file.
 
-      ![GitHub](LeadToCashEvents-json.png)
+    ![GitHub](LeadToCashEvents-json.png)
 
     >This downloads the `LeadToCashEvents.json` file to your local system.
 
@@ -39,116 +39,111 @@ In this tutorial, you can learn how to gain visibility on a sample lead-to-cash 
 
     >This downloads the `LeadToCash.zip` file to your local system.
 
-    You now have the two downloaded files in your local system with the events and business scenario relevant to lead-to-cash process.
+    You now have the two downloaded files in your local system with events and visibility scenario relevant to Lead-to-Cash business process.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Import events)]
-In this step, you will import the `LeadToCashEvents.json` to the Event Acquisition application.
+In this step, you will import the `LeadToCashEvents.json` file to the **Event Acquisition** application.
 
-1. Log on to the **Event Acquisition** tile on SAP Fiori launchpad.
+1. Open the **Event Acquisition** tile from the **Workflow Management** dashboard.
 
-    ![Event Aquisition App](event-flp.png)
+    !![Event Aquisition App](event-flp.png)
 
 2. Choose the **Import** icon.
 
-    ![Import event](screen4-import.png)
+    !![Import event](Import.png)
 
-3. In the **Import From Tile** dialog, browse for the `LeadToCashEvents.json` that is in your local file system.
+3. In the **Import From File** dialog, browse for the `LeadToCashEvents.json` file present in your local file system.
 
-    ![Import event](LeadToCashEvent-browse.png)
+    !![Import event](Browse.png)
 
 4. Choose **Import**.  
 
-    ![Import from tile](LeadToCash-Events.png)
+    !![Import from tile](Browse_Import.png)
 
 5. Check if the events are imported successfully, by choosing the **View Filter Settings** icon.
 
-    ![View Filter](screen6-viewfilter.png)
+    !![View Filter](Filter.png)
 
-    Choose the **Process Definition ID** option. Provide the value as **`L2C`** and choose **OK**.
+6. Choose the **Process Definition ID** option to filter the events. In this tutorial, for the Lead-to-Cash business process, provide the value as **`L2C`** and choose **OK**.
 
-      ![Process Definition ID](L2C.png)
+    !![Process Definition ID](L2C.png)
 
-     You can view a list of events imported for this process definition ID.
+    You can view the list of events imported for the **`L2C`** process definition ID.
 
-      ![Process Definition ID list](L2C_List.png)
+    !![Process Definition ID list](L2C_List.png)
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Import the business scenario)]
+[ACCORDION-BEGIN [Step 3: ](Import the visibility scenario)]
 
-In this step, you will import the `LeadtoCash.zip` file to the Configure Business Scenarios application.
+In this step, you will import the `LeadtoCash.zip` file to the **Configure Visibility Scenarios** application.
 
-1. Log on to the **Configure Business Scenarios** tile on SAP Fiori launchpad.
+1. Open the **Configure Visibility Scenarios** tile from the **Workflow Management** dashboard.
 
-    ![config scenario](config_flp.png)
+    !![config scenario](config-flp.png)
 
-2. Choose the **Import Business Scenario** icon.
+2. Choose the **Import Scenario** icon.
 
-    ![import scenario](screen8-importbusinessscaenrio.png)
+    !![import scenario](CVS-Import.png)
 
-3. In the **Import Business Scenario** dialog, browse for the `LeadtoCash.zip` file from your local system. Then choose **Import**.
+3. In the **Import Scenario** dialog, browse for the `LeadtoCash.zip` file present in your local system and choose **Import**.
 
-    ![browse](LeadToCash-import.png)
+    !![browse](L2C-zipfile-import.png)
 
-    You can now see the imported business scenario as shown.
+    You can now see the visibility scenario imported for a Lead-to-Cash business process as shown.
 
-    ![imported scenario](LeadToCash.png)
+    !![imported scenario](CVS-L2C.png)
 
-4. Choose the **Lead to Cash** business scenario.
+4. Choose the **Lead to Cash** visibility scenario from the list and choose **Activate**.
 
-    ![imported scenario](LeadToCash.png)
+    !![Activate](L2C-Activate.png)
 
-      Choose **Activate**.
-
-      ![Activate](Activate.png)
-
-    > You will see a message upon successful activation of the business scenario.
+    >You will see a message upon successful activation of the scenario.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Process the data)]
 
-In this step, you can process the data of the activated business scenarios using the Monitor Scenarios application.
+In this step, you can process the data of the activated visibility scenarios using the **Monitor Visibility Scenarios** application.
 
-1. Log on to the **Monitor Scenarios** tile on SAP Fiori launchpad.
+1. Choose the **Monitor Visibility Scenarios** tile from the **Workflow Management** dashboard.
 
-      ![monitor scenarios](monitor-flp.png)
+    !![monitor scenarios](MVS.png)
 
 2. Choose the **Lead to Cash** scenario definition, then choose **Process Data**.
 
-      ![Process Data](LTC_MonitorScenarios.png)
+    !![Process Data](LTC_MonitorScenarios.png)
 
 3. On successful processing of data, choose the refresh icon to view the processing information listed out under **Processing Information**.
 
-      ![Refresh](ProcessInformation.png)
+    !![Refresh](ProcessInformation.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Track business scenario)]
+[ACCORDION-BEGIN [Step 5: ](Track the visibility scenario)]
 
-In this step, you will be able to track the progress of the sample business scenario using the visual representation of the Process Workspace application.
+In this step, you will be able to track the progress of the visibility scenario using the visual representation in the **Process Workspace** application.
 
-1. Log on to the **Process Workspace** tile on SAP Fiori launchpad.
+1. Choose the **Process Workspace** tile from the **Workflow Management** dashboard.
 
-    ![process workspace](processworkspace_flp.png)
+    !![process workspace](PW.png)
 
-2. Choose the **Lead to Cash** business scenario.
+2. Choose the **Lead to Cash** visibility scenario.
 
-    ![L2C](ProcessWorkspace.png)
+    !![L2C](PW_Lead-to-Cash.png)
 
-    You can view the overview page for the **Lead to Cash** business scenario as shown below. You can view information such as open orders, cycle time, open orders by product category and so on.
+    You can view the overview page for the **Lead to Cash** visibility scenario as shown below. You can view information such as open orders, cycle time, open orders by product category, and so on.
 
-    ![L2C overview](Overview.png)
+    !![L2C overview](Overview.png)
 
-    >You can customize the cards displayed on the overview page by modifying the business scenario in the **Configure Business Scenario** application. For more information, see [SAP Help](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
-
+    >You can customize the cards displayed on the overview page by modifying the visibility scenario in the **Configure Visibility Scenarios** application. For more information on creating and enhancing a scenario, see [Create a Scenario](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html) documentation.
 
 [VALIDATE_1]
 [ACCORDION-END]

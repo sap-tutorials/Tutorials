@@ -9,7 +9,7 @@ time: 45
 ---
 ## Prerequisites
 - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
-- You have generated the data for the relevant database table by running the transaction `SEPM_DG_OIA_NEW` (or program  `RS_EPM_DGC_HANA_NEW` ).
+- You have generated the data for the relevant database table by running the transaction **`SEPM_DG`**.
 
 ## Details
 ### You will learn  
@@ -22,7 +22,8 @@ time: 45
 
 [ACCORDION-BEGIN [Step 1: ](Open your ABAP program and remove the WRITE statement)]
 
-1. First, open your ABAP program, `ZSO_INVOICE_ITEMS_EURO` which you created in the previous tutorial, [Create and run an ABAP application](https://developers.sap.com/tutorials/abap-create-basic-app.html).
+1. First, open your ABAP program, `ZSO_INVOICE_ITEMS_EURO` which you created in the previous tutorial, [Create and run an ABAP application](abap-create-basic-app).
+
 
     ![Image depicting step1-open-abap-program](step1-open-abap-program.png)
 
@@ -56,9 +57,8 @@ data(invoices) = new ZCL_INVOICE_RETRIEVAL( ).
 
 A new editor will be opened showing the class you have created, `ZCL_INVOICE_RETRIEVAL`.
 
-> Since release 7.40, ABAP permits inline declarations. For more information, see:
-  - [Old and new ABAP syntax – overview sheet](https://blogs.sap.com/2016/03/02/old-and-new-abap-syntax-overview-sheet/)
-  - [7.4 Release News - Inline Declaration I](http://abapmentor.expertise-team.com/post/7-4-release-news-inline-declaration-i.aspx)
+> Since release 7.40, ABAP permits inline declarations. For more information, see the links at the end of this tutorial.
+
 
 [DONE]
 [ACCORDION-END]
@@ -84,7 +84,7 @@ This method does not yet exist so we will create it with a Quick Assist as follo
 
     ```
 
-2. Since the method does not exist, you will get an error. Position the cursor on the name of the missing method and choose **Quick Assist (`Ctrl+1`)**. In the Quick Assist menu, choose **Create method `get_items_from_db`**
+2. Since the method does not exist, you will get an error. Position the cursor on the name of the missing method and choose **Quick Assist, i.e. `Ctrl+1`**. In the Quick Assist menu, choose **Create method `get_items_from_db`**
 
     ![Image depicting step6a-create-method](step6a-create-method.png)
 
@@ -243,7 +243,7 @@ Now, in your program, declare an inline declared variable, `data(invoice_items)`
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Generating the ALV Grid)]
-Finally, you can display the invoice items as a SAP List Viewer ("`ALV Grid`")using the class `cl_salv_table`.
+Finally, you can display the invoice items as a SAP List Viewer - or "`ALV Grid`" - using the class `cl_salv_table`.
 
 In your program, `ZSO_INVOICE_ITEMS_EURO`:
 
@@ -395,7 +395,7 @@ Now run the program. You should get a SAP List Viewer roughly like this:
 
 
 [ACCORDION-BEGIN [Step 17: ](Test yourself)]
-Using the METHODS statement, create the definition of an instance method `get_customers_from_db` that returns a value `result` of type `ty_table_of_customers` (similar to `get_items_from_db` above. Do not define any new types).
+Using the METHODS statement, create the definition of an instance method `get_customers_from_db` that returns a value `result` of type `ty_table_of_customers` - similar to `get_items_from_db` above. Do not define any new types.
 
 Do not indent your code.
 
@@ -403,4 +403,10 @@ Enter your code in the box below and choose **Submit Answer**.
 
 [VALIDATE_1]
 [ACCORDION-END]
-u
+
+###More information  
+- [Old and new ABAP syntax – overview sheet](https://blogs.sap.com/2016/03/02/old-and-new-abap-syntax-overview-sheet/)
+- [ABAP News for Release 7.40 – Inline Declarations](https://blogs.sap.com/2013/05/23/abap-news-for-release-740-inline-declarations/)
+- [7.4 Release News - Inline Declaration I](https://itpfed.com/features-abap-74-declaring-creating-variables/)
+
+---

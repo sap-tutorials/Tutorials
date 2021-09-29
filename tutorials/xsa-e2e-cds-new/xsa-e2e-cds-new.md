@@ -7,6 +7,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 ---
 
 ## Prerequisites  
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Beginner
 
 ## Details
@@ -34,8 +35,6 @@ You will reuse the existing file to add two more tables and a view.
 Replace the existing code with following code into the editor to create two additional entities:
 
 ```sql
-
-@OData.publish : true
 
 context PO {
 

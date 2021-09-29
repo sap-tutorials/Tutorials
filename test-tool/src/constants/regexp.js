@@ -107,8 +107,10 @@ module.exports = {
         validate: /(?<=\[VALIDATE_)[0-9]+(?=\])/g,
         validate_vr: validationNumber => new RegExp(`\\[VALIDATE_${validationNumber}\\].*?\\[VALIDATE_${validationNumber}\\]`, 'sig'),
         done: /\[DONE\]/g,
+        multipleValidations: /((?:\[VALIDATE_)[0-9]+\]|\[DONE\])[\0-\uFFFF]*?((?:\[VALIDATE_)[0-9]+\]|\[DONE\])/g,
         codeBlock: /```.*?```/sgi,
-        codeLine: /`[^`].*`/gi,
+        codeLine: /(^|[^`])?(`[^`]+`)([^`]|$)?/gi,
+        inlineCodeBlock: /`?``.[^\n^\r]*`?``/gi,
         // not using g flag, to capture only the first --- .... --- entry
         metaData: /---[\0-\uFFFF]*?---/i,
         messages: {
@@ -122,6 +124,7 @@ module.exports = {
                 duplicates_vr: num => `VALIDATION: Duplicate VALIDATE_${num} in rules.vr file`,
                 not_defined: num => `VALIDATION: VALIDATE_${num} not defined in rules.vr file`,
                 missed_validation: stepNum => `VALIDATION: Step number ${stepNum} missing validate/done element`,
+                multiple_validations: stepNum => `VALIDATION: Step number ${stepNum} contains multiple [DONE] tags or [DONE] with [VALIDATE] tag exists in a step`,
             },
             rules_vr_missed: 'VALIDATION: Missing rules.vr file',
             validate_wo_property: 'VALIDATION: Tutorial has validation but no auto_validation property',

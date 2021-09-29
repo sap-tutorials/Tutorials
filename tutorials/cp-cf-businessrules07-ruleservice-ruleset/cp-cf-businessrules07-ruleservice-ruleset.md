@@ -3,8 +3,8 @@ title: Create Rule Services and Rulesets
 description: Create a rule service interface for an application to invoke the decision logic by associating the rule to a ruleset of the rule service.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, topic>cloud, topic>cloud,products>sap-cloud-platform,products>sap-cloud-platform-for-the-cloud-foundry-environment]
-primary_tag: products>sap-cloud-platform-business-rules
+tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+primary_tag: products>business-rules
 ---
 
 ## Details
@@ -12,9 +12,9 @@ primary_tag: products>sap-cloud-platform-business-rules
   - How to create a rule service as an interface
   - How to create a rule set and associate rules to a rule service
 
-A rule service is an interface or an end point that enables an application to invoke a decision logic. A rule set is a collection of rules related to a particular scenario. A rule set can be linked to a rule service so that the set of rules in the rule set gets executed when the rule service is deployed.
-In this tutorial, we will create the rule services and rule sets required to deploy the decision logic.
+A rule service is an interface or an end point that enables an application to invoke a decision logic. A rule set is a collection of rules related to a scenario, for example, assigning equipment to an employee in this tutorial. A rule set can be linked to a rule service so that the set of rules in the rule set gets executed when the rule service is deployed.
 
+In this tutorial, we will create the rule services and rule sets required to deploy the decision logic.
 
 ---
 
@@ -26,27 +26,23 @@ In this tutorial, we will create the rule services and rule sets required to dep
 
 2. In the **New Rule Service** page, enter the following details:
 
-    |  Field Name     | Value
-    |  :------------- | :-------------
-    |  Name           | **`DetermineEquipmentRuleservice`**
-    |  Label         | **`DetermineEquipmentRuleservice`**
-    |  Description    | **`Service to determine equipment for the new hire.`**
+    |  Name     | Label | Description
+    |  :------------- | :------------- | :-------------
+    | **`DetermineEquipmentRuleservice`** | **`DetermineEquipmentRuleservice`** | **`Service to determine equipment for the new hire.`**
 
     ![Rule service details](create_rule_service2.png)
 
 3. In the **Vocabulary** tab, choose + and select the following options:
 
-    |  Field Name     | Value
+    |  Name    | Usage
     |  :------------- | :-------------
-    |  Name           | **`Employee`**
-    |  Usage         | **`Input`**
+    | **`Employee`** | **`Input`**
 
     Similarly, choose + to add a new row and select the following options:
 
-    |  Field Name     | Value
+    |  Name     | Usage
     |  :------------- | :-------------
-    |  Name           | **`EquipmentInfo`**
-    |  Usage         | **`Result`**
+    | **`EquipmentInfo`** | **`Result`**
 
     Then, choose **Activate**.
 
@@ -54,11 +50,9 @@ In this tutorial, we will create the rule services and rule sets required to dep
 
 4. Navigate to the **Rule Service** tab and create and activate another rule service with the following details:
 
-    |  Field Name     | Value
+    |  Name    | Label | Description
     |  :------------- | :-------------
-    |  Name           | **`EquipmentApprovalRuleservice`**
-    |  Label         | **`EquipmentApprovalRuleservice`**
-    |  Description    | **`Rule service to determine if the approval is needed for the equipment or not.`**
+    | **`EquipmentApprovalRuleservice`** | **`EquipmentApprovalRuleservice`** | **`Rule service to determine if the approval is needed for the equipment or not.`**
 
     Vocabulary:
 
@@ -86,12 +80,9 @@ In this tutorial, we will create the rule services and rule sets required to dep
 
 2. In the **`New Ruleset`** page, enter the following details:
 
-    |  Field Name     | Value
-    |  :------------- | :-------------
-    |  Name           | **`DetermineRuleEquipmentRuleset`**
-    |  Label         | **`DetermineRuleEquipmentRuleset`**
-    |  Description    | **`Ruleset that contain the rules needed to determine the equipment required for a new hire.`**
-    |  Rule Service   |  **`DetermineEquipmentRuleservice`**
+    |  Name     | Label | Description | Rule Service
+    |  :------------- | :------------- | :------------- | :-------------
+    | **`DetermineRuleEquipmentRuleset`** | **`DetermineRuleEquipmentRuleset`** | **`Ruleset that contain the rules needed to determine the equipment required for a new hire.`** |  **`DetermineEquipmentRuleservice`**
 
     >You can leave the **Priority** and **Policy** fields and **Vocabulary** section as it is.
 
@@ -107,12 +98,9 @@ In this tutorial, we will create the rule services and rule sets required to dep
 
 5. Similarly, create and activate a rule set with the following details:
 
-    |  Field Name     | Value
-    |  :------------- | :-------------
-    |  Name           | **`EquipmentApprovalRuleset`**
-    |  Label         | **`EquipmentApprovalRuleset`**
-    |  Description    | **`Ruleset to contain rules that determine if the approval is needed for the list of equipment order or not.`**
-    |  Rule Service   |  **`EquipmentApprovalRuleservice`**
+    |  Name     | Label | Description | Rule Service
+    |  :------------- | :------------- | :------------- | :-------------
+    | **`EquipmentApprovalRuleset`** | **`EquipmentApprovalRuleset`** | **`Ruleset to contain rules that determine if the approval is needed for the list of equipment order or not.`** |  **`EquipmentApprovalRuleservice`**
 
     >You can leave the **Priority** and **Policy** fields and **Vocabulary** section as it is.
 

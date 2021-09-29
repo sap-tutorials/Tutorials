@@ -3,8 +3,8 @@ title: Update OData Entities with the SAP Cloud SDK's Virtual Data Model
 description: Update OData entities with the SAP Cloud SDK's virtual data model to build an address manager application.
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>javascript, topic>odata]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, products>sap-business-technology-platform, topic>javascript, topic>odata]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites
@@ -78,7 +78,7 @@ import { BusinessPartnerService } from './business-partner.service';
 })
 export class AppModule {}
 ```
-Note, that we used the `PUT` method to update a business-partner address. So we need to send a `PUT` request. Restart your server and send a `PUT` request to `http://localhost:3000/business-partners/1/address/2` with some body `{"key": "Some test body."}`. The server should response with:
+Note, that we used the `PUT` method to update a business-partner address. So we need to send a `PUT` request. Restart your server and send a `PUT` request to `http://localhost:3000/business-partners/1/address/2` with some body (e. g. `{"key": "Some test body."}`). The server should response with:
 ```
 This is your request data:
 businessPartnerId: 1
@@ -126,7 +126,7 @@ export class BusinessPartnerController {
 }
 ```
 
-Restart your server and send a `PUT` request to `http://localhost:3000/business-partners/1/address/1` with the following body (or replace the IDs with the ones you used in the previous tutorial):
+Restart your server and send a `PUT` request to `http://localhost:3000/business-partners/1003764/address/28238` with the following body (or replace the IDs with the ones you used in the previous tutorial):
 
 ```JSON
 {
@@ -154,7 +154,7 @@ For update requests, the VDM will handle version identifiers for you\. Whenever 
 ```JavaScript / TypeScript
 import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
 
-// pre-existing businessPartner
+// pre-existing businessPartner instance
 
 BusinessPartner.requestBuilder()
   .update(businessPartner)

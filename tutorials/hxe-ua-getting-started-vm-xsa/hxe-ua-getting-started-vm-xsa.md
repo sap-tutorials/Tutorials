@@ -19,7 +19,7 @@ You'll learn how to start the server. At the end of this tutorial you'll have a 
 
 ---
 
-This is an on-premise installation tutorial. Other installation methods are available. See [https://developers.sap.com/topics/sap-hana-express.resources.html#details](https://developers.sap.com/topics/sap-hana-express.resources.html#details).
+This is an on-premise installation tutorial. Other installation methods are available. See [https://developers.sap.com/topics/hana.resources.html#details](https://developers.sap.com/topics/hana.resources.html#details).
 
 [ACCORDION-BEGIN [Step 1: ](Note the VM IP address)]
 
@@ -29,8 +29,8 @@ The IP address of the VM is displayed on the login screen. Make a note of the IP
 
 > Note:
 > If the IP address and other information in this image does not show, wait few seconds and press `Enter`.
-> 
-> 
+>
+>
 
 [DONE]
 
@@ -71,8 +71,8 @@ For *Password*, enter the temporary password `HXEHana1`.
 
 > Note:
 > Is `VMWare` not recognizing your keyboard inputs? Press CTRL+G to redirect keyboard and mouse input to your VM.
-> 
-> 
+>
+>
 
 ![HXE_Login1_6](HXE_Login1_6.png)
 
@@ -82,8 +82,8 @@ When prompted for *(current) UNIX password*, enter the temporary password again:
 
 > Note:
 > When entering a password, the cursor doesn't move, and placeholder characters don't show. Don't worry – your password is being entered even though it may look like nothing is happening.
-> 
-> 
+>
+>
 
 [DONE]
 
@@ -95,15 +95,15 @@ When prompted for *New password*, enter a strong password with at least 8 charac
 
 > Note:
 > SAP HANA, express edition requires a `very strong password` -- even stronger than other editions of SAP HANA. Your password must comply with these rules:
-> 
+>
 > -   At least 8 characters
 > -   At least 1 uppercase letter
 > -   At least 1 lowercase letter
 > -   At least 1 number
 > -   Can contain special characters, but not backtick, `$` (dollar sign), `\` (backslash), `'` (single quote), or `"` (double quotes)
 > -   Cannot contain simplistic or systematic values, like strings in ascending or descending numerical or alphabetical order
-> 
-> 
+>
+>
 
 Strong password example: `E15342GcbaFd`. Do not use this password example, since it is public and not secure. This example is for illustrative purposes only and must not be used on your system. Define your own strong password.
 
@@ -174,17 +174,15 @@ SAP HANA 2.0, express edition is now running.
 
 > Note:
 > If the success message does not display, does this line appear in your system output?
-> 
+>
 > ```bash
 > Fail to retrieve certificate.
 > ```
-> 
+>
 > If you see this message, you might have a problem with `VMWare` bridge networking configuration. See step 2.
-> 
-> 
+>
+>
 
 [DONE]
 
 [ACCORDION-END]
-
-

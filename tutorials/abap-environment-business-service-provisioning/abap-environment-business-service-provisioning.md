@@ -1,12 +1,12 @@
 ---
 auto_validation: true
 title: Expose a Standard Core Data Service for ABAP Environment
-description: Create a service definition, service binding and communication scenario to expose a Core Data Services (CDS) view in SAP Cloud Platform ABAP Environment.
+description: Create a service definition, service binding and communication scenario to expose a Core Data Services (CDS) view in SAP Business Technology Platform ABAP Environment.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 15
-author_name: Niloofar Naseri
-author_profile: https://github.com/niloofar-naseri
+author_name: Niloofar Flothkoetter
+author_profile: https://github.com/niloofar-flothkoetter
 ---
 
 ## Details
@@ -15,14 +15,14 @@ author_profile: https://github.com/niloofar-naseri
   - How to create a service binding
   - How to create a communication scenario
 
-In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
+Always replace `XXX` with your initials or group number.
 
 Create all business services with ABAP namespace `Z...`.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
-You need to create an OData service by defining and binding a service based on the corresponding CDS view. As soon as the OData service is published in the local system repository, it is ready to be consumption using an OData client, such as a SAP Fiori app. To be able to use this exposed service and related service binding, you need to create a published Communication Scenario. This published Communication Scenario will be assigned in to a Communication Arrangement.
+You need to create an OData service by defining and binding a service based on the corresponding CDS view. As soon as the OData service is published in the local system repository, it is ready to be consumed by an OData client, such as a SAP Fiori app. To be able to use this exposed service and its related service binding, you need to create a published Communication Scenario. This published Communication Scenario will be assigned to a Communication Arrangement.
 
 ![Create ABAP package](Picture15.png)
 
@@ -50,7 +50,7 @@ Mark this steps as completed by pressing `Done` if you have already created the 
 
   1. Open Eclipse and connect to your system.
 
-  2. Right click on main package `ZLOCAL` choose **New** > **ABAP Package**.
+  2. Right click the main package `ZLOCAL` choose **New** > **ABAP Package**.
 
   3. Create your own ABAP development package `Z_PACKAGE_XXX`  as a sub package of `ZLOCAL`.
       - Name: `Z_PACKAGE_XXX`
@@ -78,7 +78,7 @@ Add your package to **Favorite Packages**.
 [ACCORDION-BEGIN [Step 4: ](Create a service definition)]
 We want to create service definition to expose CDS entities and their behavior.
 
-  1. Right click on your package and choose **New** > **Other ABAP Repository Object** > **Business Services** > **Service Definition**.
+  1. Right click your package and choose **New** > **Other ABAP Repository Object** > **Business Services** > **Service Definition**.
 
   2. Click **Next**.
 
@@ -118,7 +118,7 @@ define service Z_DEF_XXX {
 [ACCORDION-BEGIN [Step 6: ](Create a service binding)]
 We want to create service binding to bind service to a protocol and preview.
 
-  1. Right click on your package and choose **New** > **Other ABAP Repository Object** > **Business Services** > **Service Binding**.
+  1. Right click your package and choose **New** > **Other ABAP Repository Object** > **Business Services** > **Service Binding**.
 
   2. Click **Next**.
 
@@ -135,7 +135,7 @@ We want to create service binding to bind service to a protocol and preview.
 
 [DONE]
 [ACCORDION-END]
- 
+
 
 [ACCORDION-BEGIN [Step 7: ](Activate your service binding)]
 Click **Activate**, and then you will see the service name and service URL in the table.
@@ -181,7 +181,7 @@ After publishing the business service, you can preview the published business se
 
 
 [ACCORDION-BEGIN [Step 9: ](Create a communication scenario)]
-  1. Right click on your package and choose **New** > **Other ABAP Repository Object** > **Communication Management** > **Communication Scenario**.
+  1. Right click your package and choose **New** > **Other ABAP Repository Object** > **Communication Management** > **Communication Scenario**.
 
   2. Click **Next**.
 
@@ -206,7 +206,7 @@ After publishing the business service, you can preview the published business se
 
  3. Click **Add** inbound service.
 
- 4. Browse the service binding created before, `Z_BIND_XXX`, and select inbound service ID `Z_BIND_XXX_IWSG` instead (where `XXX` is your group number) .
+ 4. Browse the service binding created before, `Z_BIND_XXX`, and select inbound service ID `Z_BIND_XXX_IWSG` instead, where `XXX` is your group number.
 
       ![Add Inbound](Picture11.png)
 

@@ -8,6 +8,9 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 time: 15
 ---
 
+## Prerequisites
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
+
 ## Details
 ### You will learn  
 Describe what the user will learn from your tutorial and what the outcome will be.
@@ -21,7 +24,7 @@ If you are using SAP HANA, express edition, go to `https://hxehost:39030` to acc
 
 ![Cockpit log in](39030_cockpit.png)
 
->If you are not using SAP HANA, express edition, or you have changed the ports, you can find out the right URL using command `xs apps` on the Command Line Interface and look for the URL for application `xsa-cockpit`. You can access the CLI directly from an SSH console on the server or download using the Download Manager. You can get the Download Manager after registering at the [Download site](https://developers.sap.com/topics/sap-hana-express.html)
+>If you are not using SAP HANA, express edition, or you have changed the ports, you can find out the right URL using command `xs apps` on the Command Line Interface and look for the URL for application `xsa-cockpit`. You can access the CLI directly from an SSH console on the server or download using the Download Manager. You can get the Download Manager after registering at the [Download site](https://developers.sap.com/topics/hana.html)
 
 &nbsp;
 

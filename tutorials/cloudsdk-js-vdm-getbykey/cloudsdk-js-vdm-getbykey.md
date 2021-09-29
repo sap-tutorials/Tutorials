@@ -3,8 +3,8 @@ title: Use OData Navigation Properties with the SAP Cloud SDK's Virtual Data Mod
 description: Use OData navigation properties with the SAP Cloud SDK's virtual data model to duild an address manager application.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, topic>javascript, products>sap-cloud-platform, topic>odata]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, topic>javascript, products>sap-business-technology-platform, topic>odata]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites
@@ -24,7 +24,7 @@ The goal of this tutorial group is to show you how to implement a JavaScript app
 
 [ACCORDION-BEGIN [Step 1: ](Add an API endpoint)]
 
-In a [previous tutorial](cloudsdk-js-vdm-getall) we explained a bit the basics about `controller`, `service` and `module` of `NestJS` applications. Note: If you have already controller and service classes from the previous tutorial you can of course keep the existing files and just extend the classes by the new methods. Since, we want to expose a new endpoint, start by creating  a controller file called `business-partner.controller.ts` in the `src` folder of your project. Then, copy the following code into it:
+In a [previous tutorial](cloudsdk-js-vdm-getall) we explained a bit the basics about `controller`, `service` and `module` of `NestJS` applications. Note: If you have already controller and service classes from the previous tutorial you can of course keep the existing files and just extend the classes by the new methods. Since we want to expose a new endpoint, start by creating  a controller file called `business-partner.controller.ts` in the `src` folder of your project. Then, copy the following code into it:
 
 ```JavaScript / TypeScript
 import { Controller, Get, Param } from '@nestjs/common';
@@ -70,7 +70,11 @@ import { BusinessPartnerService } from './business-partner.service';
 export class AppModule {}
 ```
 
-Now you can start your app again with `npm start` and open `http://localhost:3000/business-partners/TestID`. You should see the response: `My id for query is: TestID`.
+Now you can restart your app with:
+```Shell
+npm start
+```
+And open `http://localhost:3000/business-partners/TestID`. You should see the response: `My id for query is: TestID`.
 
 [DONE]
 [ACCORDION-END]
@@ -106,7 +110,7 @@ As in the `getAll` case, we can again select the specific properties of the enti
 (for simplicity we omit the import and class declaration and focus on the method implementation)
 
 ```JavaScript / TypeScript
-getBusinessPartner(businessPartnerId: string): Promise<BusinessPartner> {
+getBusinessPartnerById(businessPartnerId: string): Promise<BusinessPartner> {
   return BusinessPartner.requestBuilder()
     .getByKey(businessPartnerId)
     .select(
@@ -134,7 +138,7 @@ To include navigation properties, OData offers the expand operation. The VDM all
 
 ```JavaScript / TypeScript
 
-getBusinessPartner(businessPartnerId: string): Promise<BusinessPartner> {
+getBusinessPartnerById(businessPartnerId: string): Promise<BusinessPartner> {
   return BusinessPartner.requestBuilder()
     .getByKey(businessPartnerId)
     .select(
@@ -156,7 +160,7 @@ As before, we're only interested in a subset of the properties. If the property 
 
 ```JavaScript / TypeScript
 
-getBusinessPartner(businessPartnerId: string): Promise<BusinessPartner> {
+getBusinessPartnerById(businessPartnerId: string): Promise<BusinessPartner> {
   return BusinessPartner.requestBuilder()
     .getByKey(businessPartnerId)
     .select(
@@ -208,7 +212,7 @@ export class BusinessPartnerController {
 }
 ```
 
-The function takes the ID from the URL and passes it to `getBusinessPartnerById` in the service class. If a business partner with the provided ID exists in the target system, it will be sent to the client. Otherwise, an error message is sent. Restart your server and open `http://localhost:3000/business-partners/1` to test it out! Of course you're free to use any other ID. Note that Nest application have a build in [exception filter](https://docs.nestjs.com/exception-filters), which maps exceptions to http messages shown to the client. By default the exceptions from the SDK are mapped to a server side error. So if you provide a non existing ID you will receive a 500 response and not a 404.
+The function takes the ID from the URL and passes it to `getBusinessPartnerById` in the service class. If a business partner with the provided ID exists in the target system, it will be sent to the client. Otherwise, an error message is sent. Restart your server and open `http://localhost:3000/business-partners/1003764` to test it out! Of course you're free to use any other ID. Note that Nest application have a build in [exception filter](https://docs.nestjs.com/exception-filters), which maps exceptions to http messages shown to the client. By default the exceptions from the SDK are mapped to a server side error. So if you provide a non existing ID you will receive a 500 response and not a 404.
 
 [DONE]
 [ACCORDION-END]

@@ -1,9 +1,9 @@
 ---
 title: Monitor Temperature Data by Calling APIs via Node.js
-description: Use Node.js to analyze temperature data in Leonardo IoT and raise an event.
+description: Use Node.js to analyze temperature data in SAP IoT and raise an event.
 auto_validation: true
-tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform ]
-primary_tag: products>sap-leonardo-iot
+primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-business-technology-platform, products>sap-iot-services-for-sap-btp, products>sap-analytics-cloud]
 time: 15
 ---
 
@@ -13,7 +13,7 @@ time: 15
 
 ## Details
 ### You will learn
-  - How to use Node.js script to read the measured values from SAP Leonardo IoT
+  - How to use Node.js script to read the measured values from SAP IoT
   - How to create a standard event if the measured values are beyond the defined threshold value
 
 ---
@@ -35,7 +35,7 @@ After you install `Node.js`, perform the following steps:
       }
     ```
 
-    > The SDK for SAP Leonardo IoT `iot-application-services-sdk-nodejs` is available open source. The SDK provides a `NodeJS` package that acts as thin wrapper over the API of SAP Leonardo IoT. In addition, you must include this as one of the dependencies in your `package.json` file.
+    > The SDK for SAP IoT `iot-application-services-sdk-nodejs` is available open source. The SDK provides a `NodeJS` package that acts as thin wrapper over the API of SAP IoT. In addition, you must include this as one of the dependencies in your `package.json` file.
 
  6. Run the command `npm install`. This creates the `package-lock.json` file and all other dependencies in the `node_modules` folder within the folder `greenhouse_project`.
 
@@ -275,9 +275,9 @@ The list of events in the result set is sorted by the business timestamp in desc
  You can create an IoT Application using the SAP Web IDE Full-Stack to view the events created as shown in the below image.
     ![Events in IoT Application](iotae-nodejs-webide-events.PNG)
 
-If you want to learn how to do this please consider this tutorial: [Build an IoT Condition Monitoring App](https://developers.sap.com/tutorials/iot-express-5-use-webide-template.html).
+If you want to learn how to do this please consider this tutorial: [Build an IoT Condition Monitoring App](iot-express-5-use-webide-template).
 
-To deploy the app for automatic operation please follow this tutorial: [Deploy Your Node.js App with the Cloud Foundry CLI](https://developers.sap.com/tutorials/cp-node-deploy-cf-cli.html).
+To deploy the app for automatic operation please follow this tutorial: [Deploy Your Node.js App with the Cloud Foundry CLI](cp-node-deploy-cf-cli).
 
 [VALIDATE_1]
 

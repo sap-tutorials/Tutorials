@@ -222,7 +222,7 @@ This error displays: "`XSA` cockpit apps failed to start at this point of time. 
 
 **Issue:** You have exceeded the 32GB memory limit of SAP HANA, express edition and you wish to use more memory on your local machine.
 
-**Solution:** SAP HANA, express edition is limited to 32GB of memory. If you've exceeded this limit and wish to use additional memory for your local installation, purchase a license. Go to the [SAP HANA, express edition](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition) license page to purchase a license.
+**Solution:** SAP HANA, express edition is limited to 32GB of memory. If you've exceeded this limit and wish to use additional memory for your local installation, purchase a license. Go to the [SAP HANA, express edition](https://www.sapstore.com/solutions/99055/SAP-HANA---express-edition) license page to purchase a license.
 
 [DONE]
 
@@ -232,9 +232,9 @@ This error displays: "`XSA` cockpit apps failed to start at this point of time. 
 
 **Issue:** You have exceeded the 32GB memory limit of SAP HANA, express edition and you wish to use more memory but you do not have any more available on your local machine.
 
-**Solution:** SAP HANA, express edition is limited to 32GB of memory. If you've exceeded this limit and wish to use additional memory but do not have any additional memory for your local installation, consider migrating to a cloud installation. Visit the [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html) homepage to view cloud offerings.
+**Solution:** SAP HANA, express edition is limited to 32GB of memory. If you've exceeded this limit and wish to use additional memory but do not have any additional memory for your local installation, consider migrating to a cloud installation. Visit the [SAP HANA, express edition](https://developers.sap.com/topics/hana.html) homepage to view cloud offerings.
 
-Additionally, you can add more memory to your local installation and then purchase a license. Go to the [SAP HANA, express edition](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition) license page to purchase a license.
+Additionally, you can add more memory to your local installation and then purchase a license. Go to the [SAP HANA, express edition](https://www.sapstore.com/solutions/99055/SAP-HANA---express-edition) license page to purchase a license.
 
 [DONE]
 
@@ -285,7 +285,7 @@ This will stop the XS app and free any resources it may have been using.
 
 **Solution:** You have a few options. You can physically install more disk space, make more disk available to your VM (for VM installations), or free up additional disk space by uninstalling and deleting unnecessary files and programs.
 
-You can also move your SAP HANA, express edition installation to a cloud provider. Visit the [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html) homepage to view cloud offerings.
+You can also move your SAP HANA, express edition installation to a cloud provider. Visit the [SAP HANA, express edition](https://developers.sap.com/topics/hana.html) homepage to view cloud offerings.
 
 [DONE]
 
@@ -297,7 +297,7 @@ You can also move your SAP HANA, express edition installation to a cloud provide
 
 **Solution:** If your virtual machine is limiting how much disk space SAP HANA, express edition is allowed to use, and you have exceeded that amount, visit the virtual machine's documentation to increase the virtual machine's disk space threshold.
 
-You can also move your SAP HANA, express edition installation to a cloud provider. Visit the [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html) homepage to view cloud offerings.
+You can also move your SAP HANA, express edition installation to a cloud provider. Visit the [SAP HANA, express edition](https://developers.sap.com/topics/hana.html) homepage to view cloud offerings.
 
 
 [DONE]

@@ -5,6 +5,8 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-fiori]
 primary_tag: topic>html5
+author_name: Lukas Harbarth
+author_profile: https://github.com/Lukas742
 ---
 
 ## Details
@@ -18,7 +20,7 @@ In this tutorial, you will learn how to apply styling to the UI5 Web Components.
 
 ---
 
-[ACCORDION-BEGIN [Step: ](Change style for existing components)]
+[ACCORDION-BEGIN [Step 1:](Change style for existing components)]
 You can change the appearance of the Web Components by using [CSS Variables](https://www.w3schools.com/Css/css3_variables.asp). Per default, the Fiori 3 theme parameters are injected into the document head as CSS Variables. If you want to change e.g. the color of all texts, you can do that by creating another style element.
 
 Open the `index.html` file inside of your `public` folder and add the following content inside of the `<head>` element:
@@ -37,12 +39,12 @@ The `sapTile_TitleTextColor` CSS Variable changes the style of the `Card` titles
 
 As a consequence, all HTML Elements in the subtree where this style was applied are now displaying their texts in `limegreen` instead of `#6a6d70` which would be the default value for Fiori 3. You can change CSS Variables on any level - in the head, or on every single element by using either CSS classes or element style.
 
-A full list of all supported CSS Variables can be found [here](https://github.com/SAP/ui5-webcomponents-react/blob/master/packages/base/src/styling/sap_fiori_3.ts).
+A full list of all supported CSS Variables can be found in the [`ThemingParameters`](https://github.com/SAP/ui5-webcomponents-react/blob/master/packages/base/src/styling/ThemingParameters.ts).
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step: ](Style your own component)]
+[ACCORDION-BEGIN [Step 2:](Style your own component)]
 
 If you want to add a custom component to your app, but still want to use the styling approach of the UI5 Web Components, you can import the `ThemingParameters` that contain the various CSS variables used in our theming. If you want to style your components with the [`react-jss`](https://cssinjs.org/react-jss/?v=v10.1.1) syntax, you can use the custom `jss` styling hook `createUseStyles`.
 
@@ -51,7 +53,7 @@ If you want to add a custom component to your app, but still want to use the sty
     ```JavaScript / JSX
     import React from "react";
     import { createUseStyles } from 'react-jss';
-    import { ThemingParameters } from "@ui5/webcomponents-react-base/lib/ThemingParameters";
+    import { ThemingParameters } from "@ui5/webcomponents-react-base";
 
     export const MyCustomElement = () => {
       return (
@@ -76,7 +78,7 @@ If you want to add a custom component to your app, but still want to use the sty
     ```JavaScript / JSX
     import React from "react";
     import { createUseStyles } from 'react-jss';
-    import { ThemingParameters } from "@ui5/webcomponents-react-base/lib/ThemingParameters";
+    import { ThemingParameters } from "@ui5/webcomponents-react-base";
 
     const styles = {
       container: {

@@ -5,6 +5,8 @@ auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-fiori]
 primary_tag: topic>html5
+author_name: Lukas Harbarth
+author_profile: https://github.com/Lukas742
 ---
 
 ## Details
@@ -34,39 +36,60 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add charts to Card component)]
-1. Start with the `LineChart` and add it underneath the `Text` component.
+1. Start with the `LineChart`. You can add it underneath the `Text` component. Then pass the `dimensions` and `measures` prop with an empty array as value.
 
     ```JavaScript / JSX
     <Text style={spacing.sapUiContentPadding}>
       This is the content area of the Card
     </Text>
-    <LineChart />
+    <LineChart measures={[]} dimensions={[]} />
     ```
 
-    Well, that didn't change much, didn't it? It's because the chart didn't receive any data, and therefore the content is empty.
+    Now you should see a placeholder for the `LineChart` within the `Card` content. The reason for this is that the chart has not received any data and therefore the placeholder is displayed.
 
-2. Add data and corresponding labels to your component (right above the `return` statement).
+2. Add data to your component, since `data` is static you can define it outside of the component, right above your `MyApp` component.
 
     ```JavaScript / JSX
-    const datasets = [{
-        label: "Stock Price",
-        data: [65, 59, 80, 81, 56, 55, 40]
-    }];
-    const labels = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July"
+    const dataset = [
+      {
+        month: "January",
+        data: 65
+      },
+      {
+        month: "February",
+        data: 59
+      },
+      {
+        month: "March",
+        data: 80
+      },
+      {
+        month: "April",
+        data: 81
+      },
+      {
+        month: "May",
+        data: 56
+      },
+      {
+        month: "June",
+        data: 55
+      },
+      {
+        month: "July",
+        data: 40
+      }
     ];
     ```
 
-3. Now add `datasets` and `labels` to your `LineChart` components.
+3. Now add the `dataset` to your `LineChart` and configure the `dimensions` and `measures` props.
 
     ```JavaScript / JSX
-    <LineChart datasets={datasets} labels={labels} />
+    <LineChart
+      dimensions={[{ accessor: "month" }]}
+      measures={[{ accessor: "data", label: "Stock Price" }]}
+      dataset={dataset}
+    />
     ```
 
     Congratulation, you implemented your first Chart component.
@@ -75,10 +98,14 @@ UI5 Web Components for React also comes with a chart library. In this tutorial, 
 
 4. Add a `BarChart` to the `Card`.
 
-    We want the same data just with a different representation, therefore you can use the same labels and datasets as you did with the `LineChart`.
+    We want the same data just with a different representation, therefore you can use the same props as you did with the `LineChart`.
 
     ```JavaScript / JSX
-    <BarChart datasets={datasets} labels={labels} />
+    <BarChart
+      dimensions={[{ accessor: "month" }]}
+      measures={[{ accessor: "data", label: "Stock Price" }]}
+      dataset={dataset}
+    />
     ```
 
     Two charts are rendered now with equal datasets but different representation.
@@ -87,42 +114,73 @@ Your `MyApp.jsx` component should look like this:
 
 ```JavaScript / JSX
 import React from "react";
-import { Card, Text } from "@ui5/webcomponents-react";
+import { Card, CardHeader, Text } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
 
+const dataset = [
+  {
+    month: "January",
+    data: 65
+  },
+  {
+    month: "February",
+    data: 59
+  },
+  {
+    month: "March",
+    data: 80
+  },
+  {
+    month: "April",
+    data: 81
+  },
+  {
+    month: "May",
+    data: 56
+  },
+  {
+    month: "June",
+    data: 55
+  },
+  {
+    month: "July",
+    data: 40
+  }
+];
+
 export function MyApp() {
-    const handleHeaderClick = () => {
-        alert("Header clicked");
-    };
-    const datasets = [{
-        label: "Stock Price",
-        data: [65, 59, 80, 81, 56, 55, 40]
-    }];
-    const labels = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July"
-    ];
-    return (
-        <div>
-            <Card
-                heading="Card"
-                style={{ width: "300px" }}
-                headerInteractive
-                onHeaderClick={handleHeaderClick} >
-                <Text style={spacing.sapUiContentPadding}>
-                    This is the content area of the Card
-                </Text>
-                <LineChart datasets={datasets} labels={labels} />
-                <BarChart datasets={datasets} labels={labels} />
-            </Card>
-        </div>
-    );
+  const handleHeaderClick = () => {
+    alert("Header clicked");
+  };
+  return (
+    <div>
+      <Card
+        header={
+          <CardHeader
+            titleText="Card"
+            interactive
+            onClick={handleHeaderClick}
+          />
+        }
+        style={{ width: "300px" }}
+      >
+        <Text style={spacing.sapUiContentPadding}>
+          This is the content area of the Card
+        </Text>
+        <LineChart
+          dimensions={[{ accessor: "month" }]}
+          measures={[{ accessor: "data", label: "Stock Price" }]}
+          dataset={dataset}
+        />
+        <BarChart
+          dimensions={[{ accessor: "month" }]}
+          measures={[{ accessor: "data", label: "Stock Price" }]}
+          dataset={dataset}
+        />
+      </Card>
+    </div>
+  );
 }
 ```  
 
@@ -133,8 +191,7 @@ export function MyApp() {
 [ACCORDION-BEGIN [Step 3: ](Add conditional rendering)]
 Two charts in one `Card` is a bit too much, don't you think? It would be nicer if the charts could be toggled by clicking on the header. Let's implement that!
 
-1. First add a state. It should control which chart is going to be rendered.
-Use the [State Hook logic](https://reactjs.org/docs/hooks-state.html) to implement the state and set `"lineChart"` as default value. Don't forget to import `useState` from React, otherwise you will get an error.
+1. First add a state. It should control, which chart is going to be rendered. Use the [State Hook logic](https://reactjs.org/docs/hooks-state.html) to implement the state and set `"lineChart"` as default value. Don't forget to import `useState` from React, otherwise you will get an error.
     - Import the `useState` function in the header of the `MyApp.jsx` file (replace the current import of React).
     ```JavaScript / JSX
       import React, { useState } from "react";
@@ -144,9 +201,9 @@ Use the [State Hook logic](https://reactjs.org/docs/hooks-state.html) to impleme
       const [toggleCharts, setToggleCharts] = useState("lineChart");
     ```
 
-2. By clicking on the `Card` header the state should be set corresponding to the chart which should be displayed.
+2. By clicking on the `CardHeader` the state should be set corresponding to the chart which should be displayed.
 
-    Rewrite your `handleHeaderClick` function so it will handle this logic.
+    Rewrite your `onClick` function so it will handle this logic.
     ```JavaScript / JSX
     const handleHeaderClick = () => {
       if (toggleCharts === "lineChart") {
@@ -159,55 +216,68 @@ Use the [State Hook logic](https://reactjs.org/docs/hooks-state.html) to impleme
 3. To only render the current chart, add the following lines to the render of the component:
     ```JavaScript / JSX
     <Card
-        heading="Card"
-        style={{ width: "300px" }}
-        headerInteractive
-        onHeaderClick={handleHeaderClick}>
+      header={
+        <CardHeader
+          titleText="Card"
+          interactive
+          onClick={handleHeaderClick}
+        />
+      }
+      style={{ width: "300px" }}
+    >
         <Text style={spacing.sapUiContentPadding}>
             This is the content area of the Card
         </Text>
         {toggleCharts === "lineChart" ? (
-            <LineChart datasets={datasets} labels={labels} />
+          <LineChart
+            dimensions={[{ accessor: "month" }]}
+            measures={[{ accessor: "data", label: "Stock Price" }]}
+            dataset={dataset}
+          />
         ) : (
-             <BarChart datasets={datasets} labels={labels} />
-         )}
+          <BarChart
+            dimensions={[{ accessor: "month" }]}
+            measures={[{ accessor: "data" }]}
+            dataset={dataset}
+          />
+        )}
     </Card>
     ```
 
     Done! Now you can toggle between charts by clicking on the header of the `Card`.
 
-4. You can further improve your `Card` component by using the `avatar` `prop` and adding an `Icon` to it.
+4. You can further improve your `CardHeader` component by using the `avatar` `prop` and adding an `Icon` to it.
 
     Add the following import to your component:
     ```JavaScript / JSX
-    import { Card, Text, Icon } from "@ui5/webcomponents-react";
+    import { Card, CardHeader, Text, Icon } from "@ui5/webcomponents-react";
     ```
 
     And the `avatar` prop, which receives an `Icon` as value, to the `Card` component:
     ```JavaScript / JSX
-    <Card
-      avatar={<Icon name="line-chart" />}
+    <CardHeader
       ...
-    </Card>
+      avatar={<Icon name="line-chart" />}
+    />
     ```
 
     To reduce bundle size, `Icons` need to be imported manually. As we used a `line-chart` add this to your imports.
 
     ```JavaScript / JSX
-    import '@ui5/webcomponents-icons/dist/icons/line-chart.js';
+    import '@ui5/webcomponents-icons/dist/line-chart.js';
     ```
 
     The `Icons` should also be conditionally rendered. Luckily this is easy. First add the `bar-chart` import:
     ```JavaScript / JSX
-    import '@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js';
+    import '@ui5/webcomponents-icons/dist/horizontal-bar-chart.js';
     ```
 
     Then change the `name` prop of the `Icon` to the following:
     ```JavaScript / JSX
-    <Card
+    <CardHeader
        avatar={ <Icon name={ toggleCharts === "lineChart" ? "line-chart" : "horizontal-bar-chart" } /> }
        ...
-     >
+     />
     ```
 
     Now the `Card` also changes the `Icon` by clicking on the header.
@@ -219,53 +289,84 @@ Use the [State Hook logic](https://reactjs.org/docs/hooks-state.html) to impleme
 If something went wrong you can compare your component to this code snippet:
 ```JavaScript / JSX
 import React, { useState } from "react";
-import { Card, Text, Icon } from "@ui5/webcomponents-react";
+import { Card, CardHeader, Text, Icon } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-import '@ui5/webcomponents-icons/dist/icons/line-chart.js';
-import '@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js';
+import "@ui5/webcomponents-icons/dist/line-chart.js";
+import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
+
+const dataset = [
+  {
+    month: "January",
+    data: 65
+  },
+  {
+    month: "February",
+    data: 59
+  },
+  {
+    month: "March",
+    data: 80
+  },
+  {
+    month: "April",
+    data: 81
+  },
+  {
+    month: "May",
+    data: 56
+  },
+  {
+    month: "June",
+    data: 55
+  },
+  {
+    month: "July",
+    data: 40
+  }
+];
 
 export function MyApp() {
-    const [toggleCharts, setToggleCharts] = useState("lineChart");
-    const handleHeaderClick = () => {
-        if (toggleCharts === "lineChart") {
-            setToggleCharts("barChart");
-        } else {
-            setToggleCharts("lineChart");
-        }
-    };
-    const datasets = [{
-        label: "Stock Price",
-        data: [65, 59, 80, 81, 56, 55, 40]
-    }];
-    const labels = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July"
-    ];
-    return (
-        <div>
-            <Card
-                avatar={<Icon name={toggleCharts === 'lineChart' ? "line-chart": "horizontal-bar-chart"} />}
-                heading="Card"
-                style={{ width: "300px" }}
-                headerInteractive
-                onHeaderClick={handleHeaderClick}>
-                <Text style={spacing.sapUiContentPadding}>
-                    This is the content area of the Card
-                </Text>
-                {toggleCharts === "lineChart" ? (
-                    <LineChart datasets={datasets} labels={labels} />
-                ) : (
-                    <BarChart datasets={datasets} labels={labels} />
-                )}
-            </Card>
-        </div>
-    );
+  const [toggleCharts, setToggleCharts] = useState("lineChart");
+  const handleHeaderClick = () => {
+    if (toggleCharts === "lineChart") {
+      setToggleCharts("barChart");
+    } else {
+      setToggleCharts("lineChart");
+    }
+  };
+  return (
+    <div>
+    <Card
+      header={
+        <CardHeader
+          titleText="Card"
+          interactive
+          onClick={handleHeaderClick}
+          avatar={ <Icon name={ toggleCharts === "lineChart" ? "line-chart" : "horizontal-bar-chart" } /> }
+        />
+      }
+      style={{ width: "300px" }}
+    >
+        <Text style={spacing.sapUiContentPadding}>
+          This is the content area of the Card
+        </Text>
+        {toggleCharts === "lineChart" ? (
+          <LineChart
+            dimensions={[{ accessor: "month" }]}
+            measures={[{ accessor: "data", label: "Stock Price" }]}
+            dataset={dataset}
+          />
+        ) : (
+          <BarChart
+            dimensions={[{ accessor: "month" }]}
+            measures={[{ accessor: "data", label: "Stock Price" }]}
+            dataset={dataset}
+          />
+        )}
+      </Card>
+    </div>
+  );
 }
 ```
 
@@ -304,11 +405,21 @@ One of the main advantages of React is how UI updates are handled. React will on
 3. Add `loading` to both of your charts.
 
     ```JavaScript / JSX
-     <LineChart datasets={datasets} labels={labels} loading={loading} />
+    <LineChart
+      dimensions={[{ accessor: "month" }]}
+      measures={[{ accessor: "data", label: "Stock Price" }]}
+      dataset={dataset}
+      loading={loading}
+    />
     ```
 
     ```JavaScript / JSX
-     <BarChart datasets={datasets} labels={labels} loading={loading} />
+    <BarChart
+      dimensions={[{ accessor: "month" }]}
+      measures={[{ accessor: "data", label: "Stock Price" }]}
+      dataset={dataset}
+      loading={loading}
+    />
     ```
 
 This updates the component every time you switch between charts and simulates a data call.
@@ -332,24 +443,47 @@ To make your `Card` look cleaner and to give the user the information that the h
 
 2. Change the title and add a subtitle to your `Card`
 
-    First change the value of `heading` to something that explains the content of the `Card` (e.g., `"Stock Price"`).
-    Then add a `subheading` prop. Here you can give the users the information that they can switch between charts by clicking the header.
+    First change the value of `titleText` to something that explains the content of the `Card` (e.g., `"Stock Price"`).
+    Then add a `subtitleText` prop. Here you can give the users the information that they can switch between charts by clicking the header.
 
     ```JavaScript / JSX
     <Card
-         avatar={<Icon name={toggleCharts === 'lineChart' ? "line-chart": "horizontal-bar-chart"} />}
-         heading="Stock Price"
-         style={{ width: "300px" }}
-         headerInteractive
-         onHeaderClick={handleHeaderClick}
-         subheading={`Click here to switch to ${switchToChart}`} >
-         <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
-         {toggleCharts === "lineChart" ? (
-             <LineChart datasets={datasets} labels={labels} loading={loading} />
-         ) : (
-             <BarChart datasets={datasets} labels={labels} loading={loading} />
-         )}
-     </Card>
+      header={
+        <CardHeader
+          titleText="Stock Prices"
+          subtitleText={`Click here to switch to ${switchToChart}`}
+          interactive
+          onClick={handleHeaderClick}
+          avatar={
+            <Icon
+              name={
+                toggleCharts === "lineChart"
+                  ? "line-chart"
+                  : "horizontal-bar-chart"
+              }
+            />
+          }
+        />
+      }
+      style={{ width: "300px" }}
+    >
+      <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
+      {toggleCharts === "lineChart" ? (
+        <LineChart
+          dimensions={[{ accessor: "month" }]}
+          measures={[{ accessor: "data", label: "Stock Price" }]}
+          dataset={dataset}
+          loading={loading}
+        />
+      ) : (
+        <BarChart
+          dimensions={[{ accessor: "month" }]}
+          measures={[{ accessor: "data" }]}
+          dataset={dataset}
+          loading={loading}
+        />
+      )}
+    </Card>
     ```
 
 [DONE]

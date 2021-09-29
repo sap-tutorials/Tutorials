@@ -1,0 +1,124 @@
+{
+    "items": [
+        {
+            "sourceId": "dc_atlanta",
+            "sourceName": "Atlanta",
+            "sourceType": "DC",
+            "attributes": {
+                "capacity": 100
+            },
+            "sourceCoordinates": {
+                "latitude": 33.7490,
+                "longitude": -84.3880
+            }
+        },
+        {
+            "sourceId": "dc_chicago",
+            "sourceName": "Chicago",
+            "sourceType": "DC",
+            "attributes": {
+                "capacity": 20
+            },
+            "sourceCoordinates": {
+                "latitude": 41.8781,
+                "longitude": -87.6298
+            }
+        },
+        {
+            "sourceId": "dc_houston",
+            "sourceName": "Houston",
+            "sourceType": "DC",
+            "attributes": {
+                "capacity": 80
+            },
+            "sourceCoordinates": {
+                "latitude": 29.7604,
+                "longitude": -95.3698
+            }
+        },
+        {
+            "sourceId": "dc_philadelphia",
+            "sourceName": "Philadelphia",
+            "sourceType": "DC",
+            "attributes": {
+                "capacity": 99
+            },
+            "sourceCoordinates": {
+                "latitude": 39.9526,
+                "longitude": -75.1652
+            }
+        },
+        {
+            "sourceId": "dc_detroit",
+            "sourceName": "Detroit",
+            "sourceType": "DC",
+            "attributes": {
+                "capacity": 50
+            },
+            "sourceCoordinates": {
+                "latitude": 42.3314,
+                "longitude": -83.0458
+            }
+        },
+        {
+            "sourceId": "dc_orlando",
+            "sourceName": "Orlando",
+            "sourceType": "DC",
+            "attributes": {
+                "capacity": 10
+            },
+            "sourceCoordinates": {
+                "latitude": 28.5383,
+                "longitude": -81.3792
+            }
+        },
+        {
+            "sourceId": "dc_sanJose",
+            "sourceName": "San Jose",
+            "sourceType": "DC",
+            "attributes": {
+                "capacity": 12
+            },
+            "sourceCoordinates": {
+                "latitude": 37.335480,
+                "longitude": -121.893028
+            }
+        },
+        {
+            "sourceId": "store_newYork",
+            "sourceName": "Store New York",
+            "sourceType": "STORE",
+            "attributes": {
+                "capacity": 90
+            },
+            "sourceCoordinates": {
+                "latitude": 40.7831,
+                "longitude": -73.9712
+            }
+        },
+        {
+            "sourceId": "store_losAngeles",
+            "sourceName": "Store Los Angeles",
+            "sourceType": "STORE",
+            "attributes": {
+                "capacity": 60
+            },
+            "sourceCoordinates": {
+                "latitude": 34.0522,
+                "longitude": -118.2437
+            }
+        },
+        {
+            "sourceId": "dc_toronto",
+            "sourceName": "Toronto",
+            "sourceType": "DC",
+            "attributes": {
+                "capacity": 70
+            },
+            "sourceCoordinates": {
+                "latitude": 43.6532,
+                "longitude": -79.3832
+            }
+        }
+    ]
+}

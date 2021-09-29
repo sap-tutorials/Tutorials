@@ -2,85 +2,24 @@
 title: Create a Basic Node.js App
 description: Build a basic Node.js app and run it locally on your machine.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner, topic>node-js ]
-time: 10
+primary_tag: products>sap-business-technology-platform
+tags: [ products>sap-business-technology-platform, topic>cloud, tutorial>beginner, topic>node-js ]
+time: 5
 ---
 
 ## Prerequisites  
 - A text editor (e.g., Notepad, Atom, Sublime)
-- [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account)
-- [Install the Cloud Foundry Command Line Interface](cp-cf-download-cli)
+- [Sign up for a free SAP Business Technology Platform trial account](hcp-create-trial-account)
+- [Configure Essential Local Development Tools](group.scp-local-tools)
 
 
 ## Details
 ### You will learn  
-  - How to install Node.js and npm (Node Package Manager)
   - How to create a basic web app
   - How to run an app on your machine
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prepare the infrastructure)]
-
->Node.js is an server-side runtime environment built on Chrome's V8 JavaScript engine. It provides an event-driven, non-blocking (asynchronous) I/O and cross-platform runtime environment. It enables you to build scalable server-side applications using JavaScript and is open-source.
->&nbsp;
->Node.js can be used to build various types of applications like command line applications, web applications, REST API server and many else. It is mostly used to create network programs like web servers. For more information visit the official site at <https://nodejs.org>.
-
-Before you can start building your `Node.js` app, you need to install `npm` and `Node.js`. `npm` is included in the `Node.js` installation.
-
-It is possible to download the libraries and organize the directories on your own and start that way. However, as your project (and list of dependencies) grows, this will quickly become messy. It also makes collaborating and sharing your code much more difficult.
-
-You can either use a package manager (recommended) on your OS or use an installer: **[Download Installer](https://nodejs.org/en/download/)**
-
-### Installation on Windows (Windows 7+ / Windows Server 2003+)
-
-**Install Chocolatey (Windows package manager), if not yet installed**
-
-```bash
-@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
-```
-
-**Install Node.js**
-
-```bash
-user@host:~
-=> choco install nodejs
-```
-
-### Installation on Mac
-
-**Install Homebrew (Mac package manager), if not yet installed**
-
-```bash
-user@host:~
-=> /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
-**Install Node.js**
-
-```bash
-user@host:~
-=> brew install node
-```
-
-[VALIDATE_1]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Verify your installation)]
-
-To verify if the installation was successful, check the `npm` and `node.js` version. Open the command line tool and ask for the version.
-
-```bash
-user@host:~
-=> node -v
-=> npm -v
-```
-
-[DONE]
-
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create your application)]
 

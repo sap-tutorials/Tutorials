@@ -59,9 +59,6 @@ time: 15
 
 [ACCORDION-BEGIN [Option 2: ](SAP HANA Studio)]
 
-> Note:
-> This option requires you to have completed the [How to download and install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html) How-To.
-
 1. On SAP HANA Studio, log on to your SAP HANA, express edition installation.
 
 2. Double-click the _Backup_ icon ![Backup](backup.png).

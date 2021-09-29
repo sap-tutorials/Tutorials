@@ -2,13 +2,12 @@
 title: SAP HANA XS Advanced - Clone and run SHINE applications
 description: This tutorial will walk you through the prerequisites and initial setup to enable the SHINE objects in XS Advanced
 auto_validation: true
-author_name: Thomas Jung
-author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana ]
 ---
 
 ## Prerequisites
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - **Proficiency:** Beginner
 
 ## Details
@@ -87,7 +86,7 @@ Finally, you will change the name of the service for the shine-container so you 
 
 [ACCORDION-BEGIN [Step 4: ](Create additional services)]
 
-If you look at the list of resources in the `mta.yaml` file, you will find instances of the User Account and Authentication, the audit log and the job scheduler services. In order to meet the dependencies, these services need to be created. You can use the Command Line Interface for this, available in the server by default in SAP HANA, express edition instances. You can also install it locally using the download manager after you register in the [SAP HANA, express edition site](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html)
+If you look at the list of resources in the `mta.yaml` file, you will find instances of the User Account and Authentication, the audit log and the job scheduler services. In order to meet the dependencies, these services need to be created. You can use the Command Line Interface for this, available in the server by default in SAP HANA, express edition instances. You can also install it locally using the download manager after you register in the [SAP HANA, express edition site](https://www.sap.com/products/hana/express-trial.html)
 
 First, locate the file `xs-security.json` that was cloned with the SHINE Git repository from an SSH console. Alternatively, you can export it from Web IDE and upload it to the directory from which you will be issuing the commands.
 

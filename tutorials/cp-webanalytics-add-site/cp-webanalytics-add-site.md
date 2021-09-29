@@ -3,8 +3,10 @@ title: Register Your Website in a Space
 description: Register your website in a SAP Web Analytics space to initiate usage tracking.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-web-analytics, products>sap-cloud-platform]
-primary_tag: products>sap-web-analytics
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-web-analytics-(pilot)
+author_name: Vikram Kulkarni
+author_profile: https://github.com/Vikramkulkarni01
 ---
 
 ## Prerequisites
@@ -31,8 +33,12 @@ Open SAP Web Analytics application. If you're the space admin, you must have rec
 
 [ACCORDION-BEGIN [Step 2: ](Register your website)]
 
+> If you don't have a web application, you can create a simple one with **SAP Business Application Studio**. Refer to this [Create an Empty SAPUI5 Project](sapui5-101-create-project).
+
 1. Select **Add Site**.
-2. Enter the domain name of your website. Don't include http:// or https:// (you saved the website URL at the end of the previous tutorial).
+    !![AddSite](AddSite.png)
+
+2. Enter the domain name of your website. Don't include http:// or https:// for the domain name.
 3. Enter a meaningful name or description that describes the website.
 4. Leave **Tracking Status** as its default, active (green).
 
@@ -46,7 +52,7 @@ Under the **Privacy Settings** header, do the following:
 1. Leave **Site Used by Employees Only** as its default, inactive (red).
 > In the production landscape, you can use this toggle if your website is used by employees only.
 
-2. Enter the number of days to remember the visitors. Do not enable **Set as session**.
+2. Enter the number of days to remember the visitors based on your organization's data protection and privacy regulations. Do not enable **Set as session** for trial usage.
 >If you enable **Set as session**, a new visitor ID is generated for every visit. Hence, you won't be able to differentiate new and returning visitors.
 
     |  Field Name       | Value

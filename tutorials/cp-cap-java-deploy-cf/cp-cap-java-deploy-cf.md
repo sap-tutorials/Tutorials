@@ -1,20 +1,20 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
-title: Deploy CAP Java App to SAP Cloud Platform
-description: Deploy the recently built bookstore application to SAP Cloud Platform using the Cloud Foundry CLI.
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
+title: Deploy CAP Java App to SAP Business Technology Platform
+description: Deploy the recently built bookstore application to SAP Business Technology Platform using the Cloud Foundry CLI.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-cloud-platform, topic>java, products>sap-business-application-studio]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>java, products>sap-business-application-studio]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Details
 ### You will learn
   - How to create a Cloud Foundry application manifest
-  - How to deploy an application to SAP Cloud Platform Cloud Foundry
+  - How to deploy an application to SAP Business Technology Platform Cloud Foundry (SAP BTP) environment
 
-In the previous tutorial you made your application ready to run with SAP HANA. In this tutorial, you'll deploy the application to SAP Cloud Platform Cloud Foundry environment and have it running fully in the cloud.
+In the previous tutorial you made your application ready to run with SAP HANA. In this tutorial, you'll deploy the application to SAP BTP Cloud Foundry environment and have it running fully in the cloud.
 
 ---
 
@@ -30,7 +30,7 @@ When deploying an application to Cloud Foundry, you can use a manifest to descri
     ---
     applications:
     - name: bookstore
-      path: srv/target/cds-services-archetype-exec.jar
+      path: srv/target/bookstore-exec.jar
       random-route: true
       services:
       - bookstore-hana
@@ -74,7 +74,7 @@ In the previous tutorial you added the additional Java system property `-Dspring
 
 [ACCORDION-BEGIN [Step 3: ](Push the application)]
 
-You are now ready to push your application to the cloud by running the following commands from the terminal in SAP Application Studio:
+You are now ready to push your application to the cloud by running the following commands from the terminal in SAP Business Application Studio:
 
 1. Make sure that you are in the root of the bookstore project:
 
@@ -100,7 +100,8 @@ You are now ready to push your application to the cloud by running the following
 
      The manifest will be [automatically picked up](https://cli.cloudfoundry.org/en-US/cf/push.html).
 
-     > Provide the credentials you usually log in to SAP Cloud Platform if you are asked to log in.
+
+    >Provide the credentials you usually log in to SAP BTP if you are asked to log in.
 
 4. To retrieve the application URL run the following command:
 

@@ -192,14 +192,6 @@ The output should look roughly like this.
 [ACCORDION-END]
 
 And that's it. You should now be familiar with the most important ABAP Repository objects and the relationship between them.
-You can now work through the tutorial mission [Get Started with ABAP Development](https://developers.sap.com/group.abap-basic-app.html), where you will learn how to create:
-
-  1. ABAP package
-  2. ABAP application
-  3. ABAP database table
-  4. Data Dictionary structure
-  5. Global ABAP class
-  6. Data element
-  7. ABAP documentation (`ABAPDocs`) for your class
+You can now work through the tutorial mission [Get Started with ABAP Development](mission.abap-dev-get-started).
 
 ---

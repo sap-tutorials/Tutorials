@@ -2,16 +2,15 @@
 auto_validation: true
 title: Create Behavior Definition for Managed Scenario
 description: Create behavior definition and implementation for managed scenario.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- You have created an SAP Cloud Platform ABAP environment trial user or
-- You have created a developer user in an SAP Cloud Platform ABAP Environment system.
+- You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - You have downloaded Eclipse Photon or Oxygen and installed ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
 
 ## Details
@@ -44,26 +43,29 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ```ABAP
     managed implementation in class ZCL_BP_I_TRAVEL_M_XXX unique;
 
-    define behavior for ZI_Travel_M_XXX alias Travel
+    define behavior for ZI_TRAVEL_M_XXX alias Travel
     persistent table ztravel_xxx
     etag master last_changed_at
     lock master
     {
-    // administrative fields (read only)
-    field ( readonly ) last_changed_at, last_changed_by, created_at, created_by;
 
-    // mandatory fields that are required to create a travel
-    field ( mandatory ) agency_id, overall_status, booking_fee, currency_code;
+      // semantic key is calculated in a determination
+      field ( readonly ) travel_id;
 
-    // semantic key is calculated in a determination
-    field ( readonly ) travel_id;
+      // administrative fields (read only)
+      field ( readonly ) last_changed_at, last_changed_by, created_at, created_by;
 
-    // standard operations for travel entity
-    create;
-    update;
-    delete;
-    }
+      // mandatory fields that are required to create a travel
+      field ( mandatory ) agency_id, overall_status, booking_fee, currency_code;
 
+      // mandatory fields that are required to create a travel
+      field ( mandatory ) Begin_Date, End_Date, Customer_ID;
+
+      // standard operations for travel entity
+      create;
+      update;
+      delete;
+    }  
     ```
 
   5. Save and activate.
@@ -101,14 +103,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     define behavior for ZC_TRAVEL_M_XXX alias TravelProcessor
     use etag
     {
-    // scenario specific field control
-    field ( mandatory ) BeginDate, EndDate, CustomerID;
-
-    use create;
-    use update;
-    use delete;
+      use create;
+      use update;
+      use delete;
     }
-
     ```
 
   5. Save and activate.

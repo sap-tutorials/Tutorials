@@ -3,9 +3,14 @@ title: Set Up Your Java Development Environment
 description: Learn how to set up your development environment.
 time: 25
 auto_validation: true
-tags: [tutorial>intermediate, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform
+tags: [tutorial>intermediate, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
+author_name: Yogitha
+author_profile: https://github.com/YogithaC
 ---
+
+## Prerequisites
+- You have [Set Up a BTP Account for Tutorials](group.btp-setup).
 
 
 ## Details
@@ -16,18 +21,12 @@ primary_tag: products>sap-cloud-platform
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Sign up for Account on SAP Cloud Platform)]
 
-Sign up for a Free Developer Account on the [SAP Cloud Platform](https://hcp.sap.com/try.html).
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Install Java Development Kit 8)]
+[ACCORDION-BEGIN [Step 1: ](Install Java Development Kit 8)]
 
 Install [Java JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and set up the `JAVA_HOME` and `PATH` environment variables on your local machine.
 
-Alternatively, if you want to use the SAP JVM, you can download it from the [SAP Development Tools for Eclipse](https://tools.hana.ondemand.com/#cloud) page, as well.
+Alternatively, if you want to use the SAP JVM, you can download it from the [SAP Development Tools for Eclipse](https://tools.hana.ondemand.com/#cloud) page, as well. Based on your operating system, select a suitable version.
 
 ![JVM](JVM.PNG)
 
@@ -35,7 +34,7 @@ Alternatively, if you want to use the SAP JVM, you can download it from the [SAP
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Download Java Web Tomcat)]
+[ACCORDION-BEGIN [Step 2: ](Download Java Web Tomcat)]
 
 Download [Java Web Tomcat 8 SDK](https://tools.hana.ondemand.com/#cloud) and extract the archive.
 
@@ -44,21 +43,21 @@ Download [Java Web Tomcat 8 SDK](https://tools.hana.ondemand.com/#cloud) and ext
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Install Eclipse)]
+[ACCORDION-BEGIN [Step 3: ](Install Eclipse)]
 
-Install [Eclipse Oxygen IDE](https://www.eclipse.org/oxygen).
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Install SAP Development Tools)]
-
-Follow the instructions how to install [Install SAP Development Tools for Eclipse Oxygen](https://help.hana.ondemand.com/help/frameset.htm?76137a37711e1014839a8273b0e91070.html).
+Install [Eclipse Oxygen IDE](https://www.eclipse.org/downloads/packages/release/oxygen/3a/eclipse-ide-java-ee-developers).
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Set up the Runtime Environment)]
+[ACCORDION-BEGIN [Step 4: ](Install SAP Development Tools)]
+
+Follow the instructions how to install [Install SAP Development Tools for Eclipse](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/4e974524dfc240a3b942e553e5ef44a0.html).
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Set up the Runtime Environment)]
 
  1. In the Eclipse IDE main menu, choose **Window** > **Preferences**.
 
@@ -85,14 +84,14 @@ Follow the instructions how to install [Install SAP Development Tools for Eclips
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Set Up SAP JVM in Eclipse)]
+[ACCORDION-BEGIN [Step 6: ](Set Up SAP JVM in Eclipse)]
 
-Follow the steps in order to [Set Up SAP JVM in Eclipse IDE](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7613eaad711e1014839a8273b0e91070.html).
+Follow the steps in order to [Set Up SAP JVM in Eclipse IDE](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/76137f42711e1014839a8273b0e91070.html).
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Configure Git)]
+[ACCORDION-BEGIN [Step 7: ](Configure Git)]
 
 Configure Git in Eclipse as per your environment.  
 
@@ -105,7 +104,7 @@ Configure Git in Eclipse as per your environment.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Configure Maven)]
+[ACCORDION-BEGIN [Step 8: ](Configure Maven)]
 
 1. Install [Maven](https://maven.apache.org/download.cgi).
 

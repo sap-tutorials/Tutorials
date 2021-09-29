@@ -1,92 +1,125 @@
 ---
-title: Getting started with the SAP API Business Hub
-description: Learn how to find and test the API Business Hub.
-primary_tag: products>sap-cloud-platform
-author_name: Marius Obert
-author_profile: https://github.com/IObert
+title: Tour the SAP API Business Hub
+description: Explore the various features of the SAP API Business Hub, and learn how to find and test APIs.
+primary_tag: products>sap-business-technology-platform
+author_name: Prathibha GC
+author_profile: https://github.com/Prathibha-Mouli
 auto_validation: true
 time: 15
-tags: [  tutorial>beginner, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap-api-business-hub  ]
 
 ---
 
 ## Details
-### You will learn  
-Want to learn more about the new SAP API Business Hub? Not sure where to get started? Find more about how to find and enable the SAP API Business Hub in your SAP Cloud Platform instance. Once you are in the SAP API Business Hub, start learning about and testing one of the many available APIs.
+### You will learn
+- How to get started with SAP API Business Hub
+
+SAP API Business Hub is a website to discover, explore, and test APIs from various SAP products such as SAP S/4HANA, SAP SuccessFactors, SAP Customer Experience, SAP BTP, and selected partners. Apart from various product APIs, you can find detailed information on business processes and partner assets. The new workspace feature also enables you to consume integration and workflow content.
+
+Want to learn more about the new SAP API Business Hub? Not sure where to get started? Go to [api.sap.com] (https://api.sap.com), and begin your journey.
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Open SAP API Business Hub)]
-Go to the [SAP API Business Hub](https://api.sap.com/).
+[ACCORDION-BEGIN [Step: 1](Go to the SAP API Business Hub)]
+In your browser, open [SAP API Business Hub](https://api.sap.com/).
 
-![SAP API Business Hub page](1.png)
+!![SAP API Business Hub page](1.png)
+
+You can explore products, business processes, as well as different categories of assets, along with partner and featured content.
+Choose Explore for quick access to the various sections of the SAP API Business Hub.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step : 2](Explore API content)]
+On the SAP API Business Hub homepage, choose **Categories**.
+
+!![SAP API Business Hub homepage API tile](2.png)
+
+Choose APIs from the different categories available.
+
+!![SAP API Business Hub APIs section](2a.png)
+
+[DONE]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step : 3](Search for an API)]
+
+Different APIs, policy templates, and API packages are available under the API category. An API package contains one or more APIs. You can browse through different types of APIs such as REST, ODATA, and SOAP APIs.
+
+!![Searching for types of APIs APIs](3.png)
+
+You can explore APIs either by selecting a type of an API or by selecting an API package.
+Navigate to the Packages tab. You can choose any package for testing.
+
+!![API Hub Packages search](4.png)
+
+For the purpose of this tutorial, we are going to choose the `SAP Cloud for Customer` package.
+
+!![SAP Cloud for Customer Package Search](4a.png)
 
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Find the APIS in the Hub)]
-On the SAP API Business Hub homepage, select **APIs** under **Content Types** to see the available packages in the API Business Hub.
 
-![SAP API Business Hub homepage API tile](2.png)
 
-This will take you to the APIs section on the Homepage. Select the **View More** link to see all available APIs.
+[ACCORDION-BEGIN [Step : ](Explore the API)]
 
-![API listing on homepage](3.png)
+On choosing the **SAP Cloud for Customer** package, you can view the available APIs in the package.
+Select the Campaign API to explore it in detail.
 
-This will take you to API listing on the SAP API Business Hub.
+!![SAP Cloud for Customer API package details](5.png)
 
-![Searchable API list page](4.png)
+The **`Overview`** section briefs you about the API. From here you can download the API reference file, view the documentation available, and check for the API version.
 
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Select an API to use)]
+The **`API Reference`** section provides information and functions that are offered to consume the API.
 
-In the search box, type **`SuccessFactors`** to find the all Success Factors APIs. Click the **Search Icon** or hit **Enter** to search.
+!![Campaign API References](5a.png)
 
-![Searching the discover all APIs](5.png)
+The API can contain one or more endpoints which are organized into groups. On the left-hand side of selected API - **Campaign**, you can see six groups of endpoints.
 
-This will bring up all the APIs relating to SuccessFactors.
+!![Campaign API](5b.png)
 
-![Success Factors API search results](6.png)
-
-Click on the **SAP Success Factors Foundation/Platform** package.
-
-![Selecting the SuccessFactors API](7.png)
-
-This will bring up the SAP SuccessFactors Foundation/Platform API artifact details.
-
-![SAP SuccessFactors API overview page](8.png)
+Various HTTP methods of API are used to address the functionality of endpoints. While exploring the endpoints, you may wish to collapse the information by selecting the `GET` operation row. You can explore the available endpoints for the API to understand it in detail.
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Test the API in the Hub)]
-Let's select an API to test and see some results. Select the **User Management** tile.
 
-![User Management tile on page](9.png)
+[ACCORDION-BEGIN [Step : 5](Test an API endpoint)]
 
-In order to test the API in the API Business Hub, you need to login. Click the **Log On** button at the top of the page to do so.
+The SAP API Business Hub allows you to test APIs. Sandbox environment is provided to test the Campaign API.
+To take advantage of this, ensure you are logged on. Select Login at the top of the page.
 
-![Log On button in SAP API Business Hub](10.png)
+!![Login](6.png)
 
-When you look at the API Documentation again for the `GET /User` endpoint, you will see a **Parameters** section with a bunch of fields. To test different query parameters, you need to click the **Try Out** button on the API endpoint.
+Once logged on, choose the Try Out button in the **`Overview`** section.   
 
-![try out button on API](11.png)
+!![The "Try out" button](6a.png)
 
-This will enable to Parameter fields to make them editable. You can test different query parameters by providing a value in the input of the specified data type for that parameter.
+Selecting this will open the Try Out View.
 
-![editable fields on User endpoint](12.png)
+For the purpose of this tutorial the **`GET /CampaignCollection`** operation has been selected for testing.
 
-The `GET /User` method will return a list of users from Success Factors. The top parameter tells the query to retrieve only the top _n_ results once all the other filtering is done. We don't want to see all a users data, only selected data points. In the `$select` parameter, using the _control_ key for Windows or _command_ key for MacOS, select `firstName`, `lastName`, and `jobTitle`. This will limit the data set returned to this 3 fields for the matching results and therefore reduce the size of the resulting data set. Also set an [OData Filtering Expression](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374625) to show only users named `Sami`: **`firstName eq 'Sami'`**.
+!![Get method for Campaign API](6b.png)
 
-![Query parameters populated in the API Hub](13.jpg)
+Calling the `GET` operation on the `/CampaignCollection` endpoint will return a list of entities from Campaign Collection. The `$top` parameter can be used to retrieve only the first _n_ results once all the other filtering is done. Specify a value of **20** for this parameter.
 
-Once your parameters are all set, click the **Execute** button at the bottom of the documentation for that method.
+!![editable fields on User endpoint](7.png)
 
-![Try it out button location](14.png)
+You can also select the `$orderby` to sort the display order based on `Object ID`, `Object ID description`, `Campaign Type`, and so on.
 
-If there aren't any issues, you will see the resulting request URL and the response body (in `JSON`) on your page.
+Once the required inputs are entered, Choose `Run` at the top right corner to view the response.
 
-Feel free to keep playing around in the SAP API Business Hub to better understand the methods available in the User Management API.
+!![API Run](8.png)
+
+The response section displays various entities fetched calling the `GET` method.
+
+!![Response Body](9.png)
+
+
+Feel free to explore other endpoints in this Campaign API.
 
 [VALIDATE_4]
 [ACCORDION-END]
+
+Congratulations, you have just taken your first steps with the SAP API Business Hub and should now be able to navigate it and the content within, confidently.

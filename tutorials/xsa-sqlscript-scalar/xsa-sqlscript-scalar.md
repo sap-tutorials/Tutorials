@@ -1,24 +1,20 @@
 ---
-title: Creating Scalar User Defined Functions
+title: Create Scalar User Defined Functions
 description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
+time: 15
 ---
-## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:**  [Intermediate Table Variables](https://developers.sap.com/tutorials/xsa-sqlscript-table-var.html)
 
-## Next Steps
-- [Creating Table User Defined Functions](https://developers.sap.com/tutorials/xsa-sqlscript-table-user.html)
+## Prerequisites
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud. 
+- **Tutorials:**  [Intermediate Table Variables](xsa-sqlscript-table-var)
 
 ## Details
 ### You will learn  
-In this exercise we are creating a scalar UDF for generating a full name from the last, first and middle name of the employee.
-
-### Time to Complete
-**15 Min**.
+- How to create a scalar UDF for generating a full name from the last, first and middle name of the employee
 
 ---
 

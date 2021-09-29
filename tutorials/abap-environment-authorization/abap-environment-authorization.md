@@ -1,14 +1,16 @@
 ---
 auto_validation: true
-title: Create Authorization Model and App in SAP Cloud Platform ABAP Environment
-description: Create IAM Apps, services and catalogs for authorization model in the SAP Cloud Platform ABAP, environment.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license]
+title: Create Authorization Model and App in SAP BTP, ABAP Environment
+description: Create IAM Apps, services and catalogs for authorization model in the SAP BTP, ABAP environment.
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license]
 time: 20
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-  - SAP Cloud Platform ABAP, environment user
+  - You need a SAP BTP, ABAP environment license.
   - ADT version 2.96 or higher
 
 ## Details
@@ -66,7 +68,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     ![Create authorization object](object2.png)
 
-2.  Create your **authorization object**:
+3.  Create your **authorization object**:
        - Name: **`Z_LOCAOXXX`**
        - Description: **`Location`**
 
@@ -74,17 +76,16 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
        ![Create authorization object](object3.png)
 
-3. Click **Finish**.
+4. Click **Finish**.
 
       ![Create authorization object](object4.png)
 
-4. Edit your authorization object and save it. The description and access category will appear then.
+5. Edit your authorization object and save it. The description and access category will appear then.
 
       ![Create authorization object](object5.png)
 
-5. Add `WDF` as value to authorization field `Z_LOCAFXXX`.
+      Save and activate.
 
-      ![Create authorization object](object6.png)
 
 [DONE]
 [ACCORDION-END]
@@ -150,15 +151,15 @@ Save and activate.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Edit authorization default values)]
-  1. Open your default authorization value `Z_I_ROOM_BND_XXX`.
+  1. Select your service binding`Z_I_ROOM_BND_XXX` and click **Default Authorization Values**.
 
       ![Edit authorization default values](default.png)
 
-  2. Copy `Z_LOCAOXXX` as an authorization and click on your error message on the top right corner. Check your result.
+  2. Define following objects:
 
       ![Edit authorization default values](default2.png)
 
-  3. Set your default values for objects `S_SERVICE` and  `Z_LOCAOXXX`.
+      Save and activate.
 
 
 [DONE]
@@ -206,30 +207,11 @@ Save and activate.
 
       ![Create Access Control](app8.png)
 
-  9. Add new authorization objects.
-
-      ![Create Access Control](app9.png)
-
- 10. Search `Z_LOCAOXXX` and click OK.
-
-      ![Create Access Control](app10.png)
-
- 11. Check your result.
-
-      ![Create Access Control](app11.png)
-
- 12. Select `Authorization_0001` and click **Edit...**.
-
-      ![Create Access Control](app12.png)
-
- 13. Check all field values and click **OK**.
-
-      ![Create Access Control](app13.png)
-
- 14. Add `WDF` to `Z_LOCAFXXX`.
-     Save and activate.
+  9. Select following activity:
 
       ![Create Access Control](app14.png)
+
+      Save and activate.
 
 [DONE]
 [ACCORDION-END]
@@ -280,9 +262,11 @@ Save and activate.
 
     ![Create restriction field and restriction type](restriction9.png)
 
-  10. Add **`Z_LOC_RF_XXX`** as restriction field, save and activate.
+  10. Add **`Z_LOC_RF_XXX`** as restriction field AND **`Z_LOCAOXXX`** as restriction object.
 
     ![Create restriction field and restriction type](restriction10.png)
+
+    Save and activate.
 
 
 [DONE]

@@ -1,9 +1,9 @@
 ---
 title: Build Your Mobile Development Kit Client Using Cloud Build Service
-description: Build the Mobile Development Kit client using cloud build service and connect to your SAP Cloud Platform mobile app.
+description: Build a standard or a customized Mobile Development Kit client using cloud build service and connect to your SAP mobile app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
 time: 35
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -15,55 +15,69 @@ author_profile: https://github.com/jitendrakansal
 
 ## Details
 ### You will learn
-  - How to create a custom MDK client using Cloud Build service
-  - How to add your company logo and company name to the custom client
+  - How to generate platform specific configurations required for your MDK client
+  - How to build a standard MDK client
+  - How to upload your local `.mdkproject` to the Cloud Build service to build a customized MDK client
+  - How to install the binary on your device
 
-There are 3 options for mobile development kit client:
+Cloud Build Service provides 2 options for creating a Mobile development kit client:
 
-1. Install the SAP Mobile Services client from the public store
-2. Use the Cloud Build feature in SAP Cloud Platform Mobile Services to generate a customized client
-3. [Build and customize a client on your local machine in your organization development environment](cp-mobile-dev-kit-build-client)
+1. Create a standard MDK client by providing your own app icon and app logo.
+2. Create a customized MDK client by importing your local `.mdkproject` similar to what you might have done via MDK SDK locally on your machine.
 
-In this tutorial, you will learn how to use Cloud Build service to generate a custom MDK client (option 2).
+You need to:
 
+- Add Cloud Build service feature to your MDK app configuration
+- Upload signing profiles and/or app information
+- Upload your local `.mdkproject` (applies for custom MDK client)
+- Initiate the build
+
+After a successful build, you can download the APK or IPA file.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Generate required configuration to build custom client)]
+[ACCORDION-BEGIN [Step 1: ](Generate required configuration to build the MDK client)]
 
 >Make sure you are choosing the right device platform tab above.
 
+
 [OPTION BEGIN [Android]]
 
-1. Open the [Firebase console](https://console.firebase.google.com/u/0/?pli=1), login with your Google account and click **Add Project**.
+> This step is required only if you will be using Push notification in your Android MDK client. If not using the Push, proceed to next step.
 
-    ![MDK](img_014.png)
+1. Open the [Firebase console](https://console.firebase.google.com/u/0/?pli=1), login with your Google account and click **Create Project** or **Add Project** (you will see this option if you already have any existing projects).
+
+    !![MDK](img_1.1.png)
 
 2. Provide a Project Name, click **Continue**.
 
-    ![MDK](img_015.png)
+    !![MDK](img_1.2.png)
 
 3. Uncheck **Enable Google Analytics for this project** option and click **Create Project**.
 
-    ![MDK](img_016.png)
+    !![MDK](img_1.3.png)
 
 4. Once the project is ready, click **Continue**.
 
+    !![MDK](img_1.4.png)
+
 5. Click **Android** icon to add Firebase to your Android app.
 
-    ![MDK](img_018.png)
+    !![MDK](img_1.5.png)
 
-7. Provide a unique name to Android package name, click **Register app**.
+6. Provide a unique name to Android package name, click **Register app**.
 
-    ![MDK](img_019.png)
+    !![MDK](img_1.6.png)
 
-8. `Download goole-services.json config file`, click **Next**.
+7. `Download goole-services.json` file, click **Next**.
 
-    ![MDK](img_020.png)
+    !![MDK](img_1.7.png)
+
+8. In **Add Firebase SDK** step, click **Next**.
 
 9. In the following step, click **Next** and then click **Continue to console**.
 
-    ![MDK](img_021.png)
+    !![MDK](img_1.9.png)
 
 [OPTION END]
 
@@ -75,8 +89,8 @@ To enable your app for push notifications, you need to carry out the following t
 
 * Obtain a certificate signing request
 * Register an iOS App ID
-* Create a new development certificate .CER file
-* Install the .CER file and create the .p12 file
+* Create a new development certificate `.cer` file
+* Install the `.cer` file and create the .p12 file
 * Register your device
 * Create a development provisioning profile
 
@@ -86,11 +100,11 @@ To enable your app for push notifications, you need to carry out the following t
 
     On your Mac, open the **Keychain Access** application, and navigate to **Keychain Access > Certificate Assistant > Request a Certificate From a Certificate Authority...**
 
-    ![MDK](img_029.png)
+    !![MDK](img_1.10.png)
 
     In the dialog, enter the email address which is associated with your Apple Developer account. Also, make sure you check the **Request is saved to disk** option.
 
-    ![MDK](img_030.png)
+    !![MDK](img_1.11.png)
 
     Click **Continue**.
 
@@ -98,142 +112,156 @@ To enable your app for push notifications, you need to carry out the following t
 
     Once you see a dialog saying the certificate is saved successfully, click **Done** to finish.
 
-    ![MDK](img_031.png)
+    !![MDK](img_1.12.png)
 
-2. Create a new development certificate .CER file
 
-      Go to your [Apple Developer Account](https://developer.apple.com/account) and Click **Certificates, Identifiers & Profiles**.
+2. Create a new development certificate `.cer` file
 
-      ![MDK](img_040.40.png)
+    Go to your [Apple Developer Account](https://developer.apple.com/account) and Click **Certificates, Identifiers & Profiles**.
 
-      Click **+** icon to create a **Certificate** for your app.
+    !![MDK](img_1.13.png)
 
-    ![MDK](img_060.png)
+    Click **+** icon to create a **Certificate** for your app.
+
+    !![MDK](img_1.14.png)
 
     Select **Apple Development** and click **Continue**.
 
-    ![MDK](img_061.png)
+    !![MDK](img-1.15.png)
 
     Click **Choose File** and browse to the downloaded Signing Request `CSR` file, click **Continue**.
 
-    Apple will now create a `.CER` file for you which is issued by the **Apple Worldwide Developer Relations Certification Authority**.
+    Apple will now create a `.cer` file for you which is issued by the **Apple Worldwide Developer Relations Certification Authority**.
 
-    ![MDK](img_035.png)
+    !![MDK](img_1.16.png)
 
     Click **Download** to download your certificate.
 
-    ![MDK](img_036.png)
+    !![MDK](img-1.17.png)
 
-3.  Install the .CER file and create the .p12 file
+3.  Install the `.cer` file and create the .p12 file
 
-    In order to create a signing profile on **SAP Cloud Platform Mobile Services**, you need to install the `.CER` file and create the needed `.p12` file.
+    In order to create a signing profile on **SAP Mobile Services**, you need to install the `.cer` file and create the needed `.p12` file.
 
     >A `.p12` file is a encrypted container for the certificate and private key. This file is needed by Mobile Services for creating a signing profile.
 
-    Locate your downloaded `.CER` file and double-click it in order to install the certificate.
+    Locate your downloaded `.cer` file and double-click it in order to install the certificate.
 
     >In case the **Add Certificate** dialog pops up make sure to choose **Login** from the dropdown and click **Add**.
 
     If the certificate is added correctly to the Keychain you should see it in the `MyCertificates` section, make sure you selected **login** as keychain.
 
-    ![MDK](img_037.png)
+    !![MDK](img-1.18.png)
 
-    Select the certificate as well as the private key and right-click to export those two items.
+    Select the certificate as well as the private key and right-click to export those 2 items.
 
-    ![MDK](img_038.png)
+    !![MDK](img-1.19.png)
 
     Make sure that in the dropdown **Personal Information Exchange (.p12)** is selected and click **Save**. You will be prompted to enter a password, click **OK** to export the files.
 
-    ![MDK](img_039.png)
+    !![MDK](img_1.20.png)
 
 4. Register an iOS App ID
 
-      Click **+** icon to register a unique **Identifiers** for your app.
+    Click **+** icon to register a unique **Identifiers** for your app.
 
-      ![MDK](img_040.png)
+    !![MDK](img_1.21.png)
 
-      Select **App IDs** and click **Continue**.
+    Select **App IDs** and click **Continue**.
 
-      ![MDK](img_041.png)
+    !![MDK](img-1.22.png)
 
-      Provide a unique **Bundle ID** name, **Description** and click **Continue**.
+    Provide a unique **Bundle ID** name, **Description** and click **Continue**.
 
-      ![MDK](img_042.png)
+    !![MDK](img-1.23.png)
 
-      In the following screen, select option for **Deployment Details** and then click **Continue**.
+    In the following screen, select option for **Deployment Details** and then click **Continue**.
 
-      Confirm your App ID by clicking on **Register**.
+    Confirm your App ID by clicking on **Register**.
 
 5. Register your device
 
     Click **+** icon to register your iOS device.
 
-    ![MDK](img_044.png)
+    !![MDK](img_1.24.png)
 
     Provide **Device Name** & **Device ID (UDID)** and then click **Continue**.
 
-    ![MDK](img_045.png)
+    !![MDK](img_1.25.png)
 
 6. Create a development provisioning profile
 
-      Click **+** icon to create a development provisioning profile.
+    Click **+** icon to create a development provisioning profile.
 
-      ![MDK](img_045.1.png)
+    !![MDK](img_1.26.png)    
 
-      Select **iOS App Development** to create a provisioning profile to install development apps on test devices and click **Continue**.
+    Select **iOS App Development** to create a provisioning profile to install development apps on test devices and click **Continue**.
 
-      ![MDK](img_045.2.png)
+    !![MDK](img_1.27.png)
 
-      Select an App ID from the dropdown list and click **Continue**.
+    Select an App ID from the dropdown list and click **Continue**.
 
-      ![MDK](img_045.3.png)
+    !![MDK](img_1.28.png)
 
-      Select the required certificate to include in this provisioning profile and click **Continue**.
+    Select the required certificate to include in this provisioning profile and click **Continue**.
 
-      ![MDK](img_045.4.png)
+    !![MDK](img_1.29.png)
 
-      Select the device to include in this provisioning profile and click **Continue**.
+    Select the device to include in this provisioning profile and click **Continue**.
 
-      ![MDK](img_045.5.png)
+    !![MDK](img_1.30.png)
 
-      Provide a unique name to the profile and click **Generate**.
+    Provide a unique name to the profile and click **Generate**.
 
-      ![MDK](img_045.7.png)
+    !![MDK](img_1.31.png)
 
-      In next step, download the generated provisioning profile on your local machine.
+    In next step, download the generated provisioning profile on your local machine.
 
-      ![MDK](img_045.8.png)
+    !![MDK](img_1.32.png)
 
 [OPTION END]
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure device platform signing profile in Mobile Services)]
+
+[ACCORDION-BEGIN [Step 2: ](Compress your .mdkproject (Required for a customized client))]
+
+If you haven't created your local `.mdkproject`, have a look at step 3 from [this](cp-mobile-dev-kit-build-client) tutorial.
+
+Compress your `.mdkproject` folder, the resulting zip file will be used to create a build job for a customized Mobile Development Kit client in Mobile Services cockpit.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 3: ](Configure device platform signing profile in Mobile Services)]
 
 >Make sure you are choosing the right device platform tab above.
 
+
+
 [OPTION BEGIN [Android]]
 
-1. Open the [SAP Cloud Platform Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and navigate to **Settings** | **Cloud Build**. Initialize the **Cloud Build Settings** if not done before.
+1. Open the [SAP Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and navigate to **Settings** | **Cloud Build**. Initialize the **Cloud Build Settings** if not done before.
 
-    ![MDK](img_022.2.png)
+    !![MDK](img-2.1.1.png)
 
-2. You now have an option to generate a new signing profile in the Mobile Services cockpit by providing mandatory info like Profile Name, Validity, Common Name (user name). Other information are optional.
+2. You have an option to generate a new signing profile in the Mobile Services cockpit by providing mandatory info like Profile Name, Validity, Common Name (user name). Other information are optional.
 
-    ![MDK](img_022.4.png)
+    !![MDK](img_2.2.png)
 
-    Or you now have an option to to upload Android Signing profile, if you already have one.
+    Or you have an option to to upload an Android Signing profile, if you already have one.
 
-    ![MDK](img_022.3.png)
+    !![MDK](img_2.3.png)
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-1. Open the [SAP Cloud Platform Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and navigate to **Settings** | **Cloud Build**. Initialize the **Cloud Build Settings** if not done before.
+1. Open the [SAP Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and navigate to **Settings** | **Cloud Build**. Initialise the **Cloud Build Settings** if not done before.
 
-    ![MDK](img_022.2.png)
+    !![MDK](img-2.1.1.png)
 
 2. Click **Upload** to upload iOS Signing profile and provide below information:
 
@@ -247,56 +275,119 @@ To enable your app for push notifications, you need to carry out the following t
 
     Click **OK**.
 
-    ![MDK](img_022.5.png)
+    !![MDK](img_2.4.png)
 
     [OPTION END]
 
-You can find more details about Cloud Build service in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/config.html).
+You can find more details about Cloud Build service in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/overview.html).
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a build job in Cloud Build service)]
+[ACCORDION-BEGIN [Step 4: ](Create a build job in Cloud Build service)]
 
-1. In Mobile Services cockpit, navigate to `Mobile Applications` | `Native/Hybrid` | `com.sap.mdk.demo` | `Mobile Cloud Build`. Click **Create Build Job** to build your first build job.
+>Make sure you are choosing the right tab above to build a MDK client as per your requirement.
 
-    ![MDK](img_022.9.png)
 
-2. Select **Mobile Development Kit Client** from **Client Type** dropdown.
+[OPTION BEGIN [Standard Client]]
 
-    ![MDK](img_023.1.png)
+1. In Mobile Services cockpit, navigate to `Mobile Applications` | `Native/Hybrid` | `com.sap.mdk.demo` | `Mobile Cloud Build`.
 
-3. Provide required values and click **Next**.
+    > If you do not see **Mobile Cloud Build** feature in the **Assigned Features** list, click the **+** icon to add it.
 
-    ![MDK](img_023.2.png)
+2. Click **Create Build Job** to build your first build job.
+
+    !![MDK](img-3.1.png)
+
+3. Select **Mobile Development Kit Client** from **Client Type** dropdown.
+
+    !![MDK](img-3.2.2.png)
+
+4. Provide required values and click **Next**.
+
+    !![MDK](img-3.3.3.png)
 
     >**Encrypt Database**: Whether the database must be encrypted. Unselect this field to extract the database for debugging purposes.
 
-4. Provide a unique value to the **URL Scheme** and browse to `google-services.json` file for Android build  values and click **Next**.
+4. In **Platform** step, provide a unique value to the **URL Scheme**.
 
-      ![MDK](img_023.3.png)
+    If you have a Firebase configuration for your client, browse to select the `google-services.json` file and click **Next**.
+
+
+    !![MDK](img-3.4.4.png)
 
     >**Google Services JSON File**: The Firebase Android configuration file associated with your app in your Firebase project.
 
+5. In **Multimedia** step, you may upload an image to use for the app logo and click **Next**.
 
-5. You may upload your company logo for the app icon and click **Next**.
+    !![MDK](img-3.5.5.png)
 
-      ![MDK](img_023.4.png)
-      ![MDK](img_023.5.png)
+6. In **Build Options step**, upload respective Signing profile(s), set minimum platform version and click **Finish**.
 
-6. Upload respective Signing profile(s), set minimum platform version and click **Finish**.
-
-    ![MDK](img_023.6.png)
+    !![MDK](img-3.6.6.png)
 
 7. Click **Build** to start the Build job.
 
-    ![MDK](img_023.7.png)
+    !![MDK](img-3.7.png)
 
     After few minutes, Build should be completed. You can select each cloud build history row to view its current state, install, and download binaries.
 
-    ![MDK](img_023.8.png)
+    !![MDK](img-3.7.1.png)
 
-You can find more details about packaging details in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/customization.html).
+    You can find more details about packaging details in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/admin/customization.html#packaging-details-overview).
+
+[OPTION END]
+
+
+[OPTION BEGIN [Custom Client]]
+
+1. In Mobile Services cockpit, navigate to `Mobile Applications` | `Native/Hybrid` | `com.sap.mdk.demo` | `Mobile Cloud Build`.
+
+    > If you do not see **Mobile Cloud Build** feature in the **Assigned Features** list, click the **+** icon to add it.
+
+2. Click **Create Build Job** to build your first build job.
+
+    !![MDK](img-3.1.png)
+
+3. Select **Customized Mobile Development Kit Client** from **Client Type** dropdown.
+
+    !![MDK](img-3.2.png)
+
+    >The build includes functionality to run customized extensions, application resources, and onboarding, and to include demo mode in your application.
+
+4. Browse to your compressed MDK project as previously created.
+
+    !![MDK](img-3.3.png)
+
+    Upon upload, Cloud Build service starts validating the ZIP file. If the ZIP file doesn't conform to the  `.mdkproject` structure, you may see build failures. Check the [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/admin/create.html#creating-a-build-job-for-customized-mobile-development-kit-clients) for more details.
+
+    Once validation is successful, you will notice the values like Device App Name, Device App Display Name, Device App Version, Device App Details, Bundle ID, and Encrypt Database have been auto-filled/selected. These values were provided in your `MDKProject.json` and `BrandedSettings.json` as part of your local `.mdkproject`.
+
+    !![MDK](img-3.4.png)
+
+    Click **Next**.
+
+5. In the **Platform** step, URL Scheme has been retrieved from the MDKProject.json. Click **Next**.    
+
+    !![MDK](img-3.5.png)
+
+6. In the **Build Options** step, select the Platforms, respective signing profile(s), set minimum Platform Version and click **Finish**.
+
+    !![MDK](img-3.6.png)
+
+7. Click **Build** to start the Build job.
+
+    !![MDK](img-3.7.png)
+
+    After few minutes, Build should be completed. You can select each cloud build history row to view its current state, install, and download binaries.
+
+    !![MDK](img-3.7.1.png)
+
+    You can find more details about packaging details in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/admin/customization.html#packaging-details-overview).
+
+[OPTION END]
+
+
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -307,29 +398,28 @@ You can find more details about packaging details in [help documentation](https:
 
 You can install this new custom MDK client app either by scanning QR code from Android phone camera app (click **Install**) or download binary (APK) locally and install in your device via IDEs like Android Studio or via other means.
 
-![MDK](img_023.9.1.png)
+!![MDK](img-4.1.png)
 
-![MDK](img_023.9.9.png)
-
-![MDK](img_023.10.10.png)
+![MDK](img-4.2.png)
+![MDK](img-4.3.png)
 
 [OPTION END]
+
 
 [OPTION BEGIN [iOS]]
 
 You can install this new custom MDK client app either by scanning QR code from iPhone phone camera app (click **Install**) or download binary (IPA) locally and install in your device via IDEs like Xcode or via other means.
 
-![MDK](img_023.9.1.png)
+!![MDK](img-4.1.png)
 
-![MDK](img_023.9.png)
-
-![MDK](img_023.10.png)
+![MDK](img-4.4.png)
+![MDK](img-4.5.png)
 
 [OPTION END]
 
-Congratulations, you have successfully built Your Mobile Development Kit Client Using Cloud Build Service and you are now all set to [Enable Push Notifications in Your Branded MDK Client](cp-mobile-dev-kit-push-customclient).
+Congratulations, you have successfully built Your Mobile Development Kit Client Using Cloud Build Service and and you can continue with the remaining tutorials in this mission.
 
-[DONE]
+[VALIDATE_4]
 [ACCORDION-END]
 
 

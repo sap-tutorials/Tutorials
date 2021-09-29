@@ -1,14 +1,18 @@
 ---
 title: Deploy the Fiori App to Cloud Foundry
-description: Now that the app is ready, it's time to deploy the application to the Cloud Foundry environment of the SAP Cloud Platform. After deploying, test the application in a non-test environment and to share it with coworkers.
+description: Deploy the application to the Cloud Foundry environment to be able to share it with your coworkers.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5,  products>sap-cloud-platform-portal, topic>user-interface, topic>html5, topic>cloud]
-primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
+tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5,   products>sap-launchpad-service, topic>user-interface, topic>html5, topic>cloud, tutorial>free-tier]
+primary_tag: products>sap-business-technology-platform
 ---
 
 ## Prerequisites
- - Make sure you have the [proper entitlements set](https://developers.sap.com/tutorials/cp-cf-entitlements-add.html). If you are unsure which services you need, please refer to the table of step 2.
+- You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
+    - **SAP Launchpad service**
+    - **Destination**
+    - **XSUAA**
+    - **HTML5 Application Repository Service**
 
 ## Details
 ### You will learn
@@ -36,6 +40,8 @@ Next, deploy the generated archive and track the deployment progress in the term
 cf deploy mta_archives/products_0.0.1.mtar
 ```
 
+> Use `cf login` to establish a connection to the Cloud Foundry endpoint if you haven't done so yet. [This tutorial](cp-cf-download-cli) might help you if you are not sure how to do so.
+
 The great thing about deploying a single `.mtar` file is that the Cloud Foundry environment will provision all required services for you. Here is a list of all services that are required for this project (you can see them enumerated in the `mta.yaml` file).
 
 
@@ -43,9 +49,7 @@ The great thing about deploying a single `.mtar` file is that the Cloud Foundry 
 |  :------------- | :-------------| :-------------
 |  `products_destination` |  `destination` |  `lite`
 |  `products_uaa` |  `xsuaa` |  `application`
-|  `products_html5_repo_runtime` |  `html5-apps-repo` |  `app-runtime`
 |  `products_html5_repo_host` | `html5-apps-repo`  |  `app-host`
-|  `products_portal` |  `portal` |  `standard`
 
 
 [DONE]
@@ -53,24 +57,77 @@ The great thing about deploying a single `.mtar` file is that the Cloud Foundry 
 [ACCORDION-BEGIN [Step: ](Access the running web app)]
 
 At the end of the deployment process log, you should see a line that looks similar to this one:
-```
-Application "products" started and available at "<prefix>-products.cfapps.eu10.hana.ondemand.com"
+```[4]
+Deploying content module "productsdestination-content" in target service "products_destination"...
+Deploying content module "webapp_deployer" in target service "products_html5_repo_host"...
+Skipping deletion of services, because the command line option "--delete-services" is not specified.
+Process finished.
+Use "cf dmol -i 0915a099-4130-11eb-b43e-eeee0a8f7188" to download the logs of the process.
 ```
 
-Copy this URL to your browser to access the app.
+This means you uploaded the app successfully. The URL of you web app will now follow this pattern: `https://<yourID>.launchpad.cfapps.<region>.hana.ondemand.com/productsservice.tutorialproducts`
+With this URL, you are able to access the `flpSandbox.html`
 
-> If you can't find the respective line in the log, run `cf apps` and look for the line that says "products" to retrieve the URL again.
+> You can also install [this plugin](cp-cf-install-cliplugin-html5) and run `cf html5-list -di products_destination -u --runtime launchpad` to print the full URL of your web app.
 
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Save a customer filter variant)]
+[ACCORDION-BEGIN [Step: ](Embed the application in the SAP Fiori Launchpad)]
 
-1. When opening the URL of the application (the approuter to be more precise), you are prompted for credentials. Use the same credentials you used to log in to SAP Cloud Platform.
 
-2. You are automatically redirected to the path `/cp.portal`, which is from where the SAP Fiori Launchpad resources of the "portal service instance" are served. This configuration can be different from the configuration of the `flpSandbox.html`, which explains why the Launchpad might look slightly different.
+Now it's time to embed the app in a full SAP Fiori Launchpad environment:
 
-    > Optional: You access still access the app in the `flpSandbox.html` if you want to. For this, replace the URL path with `tutorialproducts/flpSandbox.html`.
+1. Open the admin UI of the [SAP Launchpad service](cp-portal-cloud-foundry-getting-started)
+2. Access the **Content Provider** menu. You should now see the following screen and **hit the refresh button** to synchronize the Launchpad with HTML5 application repository.
+
+    !![contentProvider](contentProvider.png)
+
+3. Open the **Content Manager** menu and click on the tab **Content Explorer** and select the tile that says **HTML5 Apps**.
+
+    !![contentManager](contentManager.png)
+
+4. You should now see the following screen from where you can select the web app you just deployed. **Select the checkbox** next of Product List and hit the **Add to My Content** button.
+
+    !![contentExplorer](contentExplorer.png)
+
+4. Switch to the **My Content** and click on the group **default**. In case you don't see this group, use the **+ New** button to create a new one.
+
+    !![defaultGroup](defaultGroup.png)
+
+4. Select to the **Edit** button to edit the group and click in the search field in the appearing **Assignments** side panel. You should be able to add the Fiori app to the group via the **+** button after selecting this search box. Don't forget to **Save** the group before navigating back.
+
+    !![addToGroup](addToGroup.png)
+
+4. Now you need to make this application visible to your users. To keep it simple, we make the app visible to everyone. For this, select the **Everyone** role.
+
+    !![everyoneRole](everyoneRole.png)
+
+4. You are already familiar with the steps needed here. Select to the **Edit** button to edit the role and click in the search field in the appearing **Assignments** side panel. Add the Fiori app to the role via the **+** button and **Save** the change to the role.
+
+    !![addToRole](addToRole.png)
+
+4. Go to the menu **Site Directory** and use the **Create Site** button to create a new site if you don't have an existing one.
+
+    !![siteDirectory](siteDirectory.png)
+
+4. You can choose any name for the new site, e.g. **`ProductsTutorial`**.
+
+    !![createFLP](createFLP.png)
+
+4. There's not need to edit this site, all we need comes with the default configuration. Click the button on the top right corner to open your new site.
+
+    !![openFLP](openFLP.png)
+
+
+
+[DONE]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step: ](Save a custom filter variant)]
+
+1. Click on the **Products** to open your web application. Also note that you see your initials in the top-right user menu. This shows you that you have been signed in automatically via Single-Sign-On.
+
+      !![FLP](./FLP.png)
 
 3. Apply another filter with the following criteria:
     * The `ProductID` shall be less than 18
@@ -78,32 +135,16 @@ Copy this URL to your browser to access the app.
 
 4. **Open** the views dialog and save the current filter variant by clicking **Save as**.
 
-    !![View Popup](./myviews.png)
+      !![View Popup](./myviews.png)
 
 5. Name the view **`TutorialFilter`**, **check both checkboxes**, and hit **Save**. This user-specific variant is now stored in the backend.
 
-    !![Define name](./setname.png)
+      !![Define name](./setname.png)
 
-6. Open another browser or an incognito window and reopen the web app there. You notice the filter is still there. This is proof that the variant is persisted in the backend and not cached in the browser.
+
 
 
 [VALIDATE_1]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Further references)]
-
-With this, you have completed this tutorial mission, congrats!
-
-From here on, it's also possible to add the web app to a portal page. If you want to do so, please refer to the following tutorial:
-
-1. [Getting started with the Cloud Foundry portal service](https://developers.sap.com/tutorials/cp-portal-cloud-foundry-getting-started.html)
-2. [Create a new portal page](https://developers.sap.com/tutorials/cp-portal-cloud-foundry-create-site.html)
-3. [Integrate the app in a portal page](https://developers.sap.com/tutorials/cp-portal-cloud-foundry-sapui5-app.html) - Skip the first step of this tutorial and use the URL of the application you developed in this mission instead (see step 3).
-
-
-
-
-[DONE]
-[ACCORDION-END]
-
 
 ---

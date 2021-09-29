@@ -1,9 +1,9 @@
 ---
-title: Get Ready to Develop on Your Local Machine
+title: Get Ready for UI5-Development on Your Local Machine
 description: Prepare you local development environment to implement successful SAPUI5 projects.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-cloud-platform-for-the-cloud-foundry-environment]
+tags: [ tutorial>beginner, products>sap-cloud-platform-for-the-cloud-foundry-environment, tutorial>free-tier]
 primary_tag: topic>sapui5
 ---
 
@@ -36,7 +36,7 @@ npm install -g yo
 In order to use Yeoman to create SAPUI5 projects, we need to install a plugin (another `npm` module). Yeoman recognizes all plugins automatically on the basis of the `generator-` prefix of the module.
 
 ```Bash
-npm install -g yo generator-easy-ui5
+npm install -g generator-easy-ui5
 ```
 
 This plugin has also been published on [GitHub](https://github.com/SAP/generator-easy-ui5).

@@ -2,15 +2,15 @@
 title: Secure a Basic Node.js App with the Authorization and Trust Management Service (XSUAA)
 description: Secure a basic single-tenant Node.js application with the Authorization and Trust Management Service (XSUAA).
 auto_validation: true
-time: 20
-tags: [tutorial>intermediate, topic>node-js, products>sap-cloud-platform]
+time: 25
+tags: [tutorial>intermediate, topic>node-js, products>sap-business-technology-platform ]
 primary_tag: topic>security
-author_name: Dominik Nehse
-author_profile: https://github.com/nedo-SAP
+author_name: Michael Shea
+author_profile: https://github.com/MichaelPShea
 ---
 
 ## Prerequisites
-  - Download the product list application from [this repository](https://github.com/SAP-samples/teched2019-cloud-cf-product-list/tree/sap-tutorial-xsuaa).
+  - Download the product list application from [this repository](https://github.com/SAP-samples/teched2019-cloud-cf-product-list/tree/sap-tutorial-xsuaa) or clone the branch **sap-tutorial-xsuaa**.
   - For a better understanding, it is recommended to complete the tutorials [Create a Basic Node.js App](cp-node-create-basic-app) and [Deploy Your Node.js App with the Cloud Foundry CLI](cp-node-deploy-cf-cli) first.
 
 ## Details
@@ -80,7 +80,10 @@ To prevent a direct call to your application without authentication, it is neces
 #### Prepare the package.json file
 Since there are now more modules used beside the express module, you have to add the relevant dependencies to your `package.json` file. In this case the dependencies for the modules `passport`, `@sap/xsenv` and `@sap/xssec` have to be added.
 
-> If you want to use SAP modules locally, you need to add the npm configuration: `npm config set @sap:registry https://npm.sap.com`
+> If you want to use SAP modules locally, you need to add the npm configuration:
+```bash
+npm config set @sap:registry https://npm.sap.com
+```
 
 4. Open the `package.json` file.
 
@@ -89,8 +92,8 @@ Since there are now more modules used beside the express module, you have to add
     ```JSON
     "dependencies": {
       "express": "^4.17.1",
-      "@sap/xsenv": "^2.2.0",
-      "@sap/xssec": "^2.2.4",
+      "@sap/xsenv": "^3.1.0",
+      "@sap/xssec": "^3.0.10",
       "passport": "^0.4.1"    
     }
     ```
@@ -105,7 +108,7 @@ To use the XSUAA service, a file named `xs-security.json` is necessary. The file
 
 6. Add a folder named `security` to your `product-list` folder.
 
-7. Within the  folder, create a file named `xs-security.json`.
+7. Within the folder, create a file named `xs-security.json`.
 
 8. Add the following content:
 
@@ -165,7 +168,7 @@ The approuter will enable you to create a secure route to your application.
     {
         "name": "approuter",
         "dependencies": {
-            "@sap/approuter": "^6.7.1"
+            "@sap/approuter": "^9.0.2"
         },
         "scripts": {
             "start": "node node_modules/@sap/approuter/approuter.js"
@@ -227,7 +230,7 @@ product-list
     ├── package.json
 ├── security
     ├── xs-security.json
-├── manifest.yaml
+├── manifest.yaml    
 ```
 
 
@@ -242,9 +245,9 @@ In the manifest file you have to define a hostname for your application and add 
 
 1. Navigate to the `product-list` folder.
 
-1. Open the file `manifest.yaml`.
+2. Open the file `manifest.yaml`.
 
-1. Give your application a specific host name with the parameter `route`. **The route has to be unique in the whole Cloud Foundry landscape**, so make sure to add a random part to the route, for example your initials and your day of birth, like `product-list-ap25` and `approuter-product-list-ap25`. You also need the route to configure a destination later.
+3. Give your application a specific host name with the parameter `route`. **The route has to be unique in the whole Cloud Foundry landscape**, so make sure to add a random part to the route, for example your initials and your day of birth, like `product-list-ap25` and `approuter-product-list-ap25`. You also need the route to configure a destination later.
 
     ```YAML
     applications:
@@ -253,14 +256,14 @@ In the manifest file you have to define a hostname for your application and add 
       instances: 1
       memory: 128M
       routes:
-        - route: product-list-ap25.cf.eu10.hana.ondemand.com
+        - route: product-list-ap25.cfapps.eu10.hana.ondemand.com
       path: myapp
       buildpacks:
         - nodejs_buildpack  
       timeout: 180
     ```
 
-2. Add the binding for the XSUAA service to your application.
+4. Add the binding for the XSUAA service to your application.
 
     ```YAML
       ...
@@ -268,7 +271,7 @@ In the manifest file you have to define a hostname for your application and add 
         - xsuaa-service-tutorial
     ```
 
-3. Add the configuration data for the approuter:
+5. Add the configuration data for the approuter:
 
     ```YAML
     applications:
@@ -284,7 +287,7 @@ In the manifest file you have to define a hostname for your application and add 
       memory: 128M
     ```
 
-4. Add a destination to the approuter.
+6. Add a destination to the approuter.
 
     ```YAML
     # Application Router
@@ -300,14 +303,14 @@ In the manifest file you have to define a hostname for your application and add 
 
     The `name` parameter is the same as previously defined in the file `xs-app.json`. the `url` parameter is the result of the host name of your application and the region of your Cloud Foundry landscape (`https://<hostname>.cfapps.<region>.hana.ondemand.com`). The `forwardAuthToken` parameter set to true ensures that the approuter forwards the JWT token to the destination.
 
-4. Add the bindings for the XSUAA service to the approuter.
+7. Add the bindings for the XSUAA service to the approuter.
 
     ```YAML
     ...
       services:
         - xsuaa-service-tutorial
     ```
-5. Save the file.
+8. Save the file.
 
 When you completed the steps, your manifest.yml file should look like this:
 ```YAML
@@ -410,13 +413,13 @@ Your application has two routes that are defined in the `manifest.yml`. The dire
 
 Assign your user the role collection that contains the necessary role to view the products in the product list.
 
-3. Open the SAP Cloud Platform Cockpit.
+3. Open the SAP BTP cockpit.
 
 4. Navigate to your subaccount.
 
 5. Choose the **Security** tab and choose **Trust Configuration**.
 
-6. Choose **SAP ID Service**.
+6. Choose **Default identity provider**.
 
 7. Enter your e-mail address and choose **Show Assignments**.
 

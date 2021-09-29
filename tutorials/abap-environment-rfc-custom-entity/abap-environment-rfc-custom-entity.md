@@ -3,14 +3,18 @@ title: Get Data from a Remote System Using a Custom Entity
 description: Get data from an on-Premise System Using RFC, by Implementing a Custom Entity in ABAP Environment
 auto_validation: true
 time: 45
-tags: [ tutorial>advanced, topic>cloud, topic>abap-development, products>sap-cloud-platform, tutorial>license]
-primary_tag: products>sap-cloud-platform--abap-environment
+tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
+primary_tag: topic>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
 - You have done one of the following:
-    - Created an entitlement to [SAP Cloud Platform, ABAP Environment, Trial Version](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/)
-    - Created an entitlement to [SAP Cloud Platform, ABAP Environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d60#14a68d825.html), full version
+    - Created an instance of [SAP Business Technology Platform, ABAP Environment, Trial Version](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/)
+    - Created an entitlement to [SAP Business Technology Platform, ABAP Environment](https://www.sapstore.com/solutions/40191/SAP-BTP-ABAP-Environment), customer licensed version
+- **IMPORTANT**: If you are using the licensed version, then this tutorial is part of the mission [Connect Your On-Premise System with SAP BTP, ABAP Environment](mission.abap-env-connect-onpremise). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work. If you are using the trial version, we have provided mock data inside the class.
+
 
 ## Details
 ### You will learn
@@ -105,7 +109,7 @@ Add the following annotation to the view (immediately after the '@EndUserText.la
 
 2. Add the header information to the view, after the `@QueryImplementedBy` annotation.
 For more information on the UI Annotations used here, see
-[SAP Help Portal: SAP Cloud Platform: ABAP RESTful PM: Defining UI Annotations](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/fd95e7c9905e469bb176217f49e15e71.html)
+[SAP Help Portal: SAP BTP: ABAP RESTful PM: Defining UI Annotations](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/fd95e7c9905e469bb176217f49e15e71.html)
 
     ```CDS
 
@@ -203,7 +207,7 @@ Go back to the class.
 
     ```
 
-2. Create a variable, `lv_abap_trial`. **If** you are using the full version of SAP Cloud Platform, ABAP Environment, set it to **false**, otherwise **true**.
+2. Create a variable, `lv_abap_trial`. **If** you are using the full version of SAP BTP, ABAP Environment, set it to **false**, otherwise **true**.
 
     ```ABAP
 
@@ -217,6 +221,8 @@ Go back to the class.
 [ACCORDION-BEGIN [Step 7: ](Define the connection to the on-premise system)]
 If your are working in the full version of ABAP Environment: Define the connection as follows, replacing `XXX` in both `i_name` and `i_service_instance_name` to your initials or group number. Ignore the warning for now. Wrap this in a `TRY. ...CATCH... ENDTRY.`
 
+**IMPORTANT**: Always specify the authentication mode using the interface `if_a4c_cp_service`. Never hard-code your password in the class.
+
     ```ABAP
 
     IF lv_abap_trial = abap_false.
@@ -224,8 +230,7 @@ If your are working in the full version of ABAP Environment: Define the connecti
       TRY.
         DATA(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
                                     i_name                  = 'ES5_RFC_XXX'
-                                    i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
-           ).
+                                     ).
 
         DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name( ).
 
@@ -357,9 +362,7 @@ CLASS `zcl_product_via_rfc_xxx` IMPLEMENTATION.
 
       data(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
             i_name = 'ES5_RFC_XXX'
-            i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
-
-        ).
+            ).
 
       DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name(  ).
 
@@ -484,12 +487,12 @@ The service binding automatically references the service definition and thus the
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Display the Fiori Elements Preview)]
+[ACCORDION-BEGIN [Step 15: ](Display the Fiori Elements preview)]
 1. Select the entity set and choose **Preview**.
 
     ![Image depicting step14-preview](step14-preview.png)
 
-2. Log in using your ABAP Environment user and password; the Fiori Elements Preview appears.
+2. Log in using your ABAP Environment user and password; the Fiori Elements preview appears.
 
 3. Display the data by choosing **Go**.
 
@@ -541,7 +544,10 @@ The console output should look like this:
 
 - [Implement a custom entity in the ABAP RESTful Programming Model using RFC](https://blogs.sap.com/2019/03/01/how-to-implement-a-custom-entity-in-the-abap-restful-programming-model-using-remote-function-modules/) - includes handling a single record, filtering, and ordering
 
-- [Insert test data into tables in SAP Cloud Platform, ABAP Environment](https://blogs.sap.com/2019/09/30/how-to-insert-test-data-into-tables-in-sap-cloud-platform-abap-environment/)
+- [Insert test data into tables in SAP BTP, ABAP Environment](https://blogs.sap.com/2019/09/30/how-to-insert-test-data-into-tables-in-sap-cloud-platform-abap-environment/)
 
-- [Call a remote OData service from the trial version of SAP Cloud Platform ABAP environment](https://blogs.sap.com/2019/10/20/how-to-call-a-remote-odata-service-from-the-trial-version-of-sap-cloud-platform-abap-environment/)
+- [Call a remote OData service from the trial version of SAP BTP ABAP environment](https://blogs.sap.com/2019/10/20/how-to-call-a-remote-odata-service-from-the-trial-version-of-sap-cloud-platform-abap-environment/)
+
+- Find out more about SAP Business Technology Platform ABAP Environment on SAP Community: [SAP Business Technology Platform ABAP Environment](https://community.sap.com/topics/btp-abap-environment)
+
 ---

@@ -14,15 +14,22 @@ module.exports = {
         validate,
         validate_vr: validateVr,
         done,
+        multipleValidations,
         codeBlock,
+        inlineCodeBlock,
         codeLine,
         messages,
       },
     } = regexp;
     const autoValidationMatch = content.match(autoValidation);
-    const accordionMatches = content.replace(codeBlock, '').replace(codeLine, '').match(accordions);
+    let clearContent = content
+      .replace(codeBlock, ' ')
+      .replace(inlineCodeBlock, ' ');
+    clearContent = (clearContent.replace(codeLine, ' '));
+    const accordionMatches = clearContent.match(accordions);
     let validationFormExists;
     let accordionsWOAnyValidation;
+    let accordionsWMultipleValidations;
 
     if (accordionMatches) {
       validationFormExists = accordionMatches.some(step => step.match(validate));
@@ -30,8 +37,11 @@ module.exports = {
         step,
         id: index + 1,
       })).filter(({ step }) => !step.match(validate) && !step.match(done));
+      accordionsWMultipleValidations = accordionMatches.map((step, index) => ({
+        step,
+        id: index + 1,
+      })).filter(({ step }) => step.match(multipleValidations));
     }
-
     if (autoValidationMatch) {
       const [, value] = autoValidationMatch;
       const dirPath = path.dirname(filePath);
@@ -49,7 +59,6 @@ module.exports = {
         } else {
           const validationsMatch = accordionMatches
             .map((step) => {
-              // TODO: remove after electron v3 release
               const matches = step.match(validate);
 
               if (matches) {
@@ -85,6 +94,11 @@ module.exports = {
             ({ id }) => err.push(messages.validate_restrictions.missed_validation(id))
           );
         }
+        if (accordionsWMultipleValidations) {
+          accordionsWMultipleValidations.forEach(
+            ({ id }) => err.push(messages.validate_restrictions.multiple_validations(id))
+          );
+        }
       }
     } else if (validationFormExists) {
       err.push(messages.validate_wo_property);
@@ -92,3 +106,4 @@ module.exports = {
     return err;
   },
 };
+

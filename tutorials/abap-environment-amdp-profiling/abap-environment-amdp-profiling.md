@@ -1,10 +1,10 @@
 ---
-title: Create an AMDP and Analyze Its Performance
-description: Analyze the runtime performance of AMDPs and the executed SQL statements using the AMDP Profiler in ABAP Development Tools (ADT).
+title: Create an ABAP Managed Database Procedure (AMDP) and Analyze Its Performance
+description: Create an AMDP and analyze its runtime performance along with the performance of the executed SQL statements, using the AMDP Profiler in ABAP Development Tools (ADT).
 auto_validation: true
 time: 45
 primary_tag: topic>abap-development
-tags: [  tutorial>intermediate, products>sap-netweaver-7.5, products>sap-cloud-platform, products>sap-cloud-platform--abap-environment ]
+tags: [  tutorial>intermediate, products>sap-netweaver-7.5, products>sap-btp--abap-environment, products>sap-business-technology-platform ]
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 
@@ -12,8 +12,8 @@ author_profile: https://github.com/julieplummer20
 
 ## Prerequisites
 - You have one of the following:
-    - You have a sub-account with the entitlement SAP Cloud Platform, ABAP environment. For more details, see [Getting Started with a Customer Account: Workflow in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html). You have also created an ABAP Cloud Project pointing to this ABAP environment. For more details, see  [Connect to the ABAP System](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
-      - You have a valid instance of an on-premise AS ABAP server, version 7.54 or higher. For a free AS ABAP server, 7.54, SP01, see [SAP Developers: Trials and Downloads - 7.52](https://developers.sap.com/trials-downloads.html?search=7.52) - coming soon
+    - You have a sub-account with the entitlement SAP Business Technology Platform (BTP) ABAP environment. For more details, see [Getting Started with a Customer Account: Workflow in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html). You have also created an ABAP Cloud Project pointing to this ABAP environment. For more details, see  [Connect to the ABAP System](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
+      - You have a valid instance of SAP S/4HANA on-premise edition, version 1909 or higher. For a free Cloud Appliance Library (CAL) version, of SAP S/4HANA 1909, see [SAP S/4HANA Fully-Activated Cloud Appliance](https://blogs.sap.com/2019/04/23/sap-s4hana-fully-activated-appliance-demo-guides/)
 - You have installed [ABAP Development Tools 3.0](https://tools.hana.ondemand.com/#abap) or higher
 - You have downloaded or pulled the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
 
@@ -26,12 +26,8 @@ author_profile: https://github.com/julieplummer20
 Throughout this tutorial, objects name include the suffix `XXX`. Always replace this with your group number or initials.
 
 You should be familiar with ABAP Managed Database Procedures (AMDP). Briefly, AMDP allows you to optimize your ABAP code (for ABAP on SAP HANA) by calling HANA database procedures from a global ABAP class.
-For more details, see:
+For more details, see [ABAP Managed Database Procedures (AMDP): Short introductory blog with two videos and code snippets](https://blogs.sap.com/2014/01/22/abap-managed-database-procedures-introduction/)
 
-- [Short introductory blog with two videos and code snippets](https://blogs.sap.com/2014/01/22/abap-managed-database-procedures-introduction/)
-- [SAP Help Portal: ABAP Managed Database Procedures (AMDP)](https://help.sap.com/viewer/6811c09434084fd1bc4f40e66913ce11/7.52.0/en-US/3e7ce62892d243eca44499d3f5a54bff.html)
-- [ABAP Keyword Documentation: AMDP - ABAP Managed Database Procedures](https://help.sap.com/doc/abapdocu_753_index_htm/7.53/en-US/index.htm?file=abenamdp.htm)
-- [Working with the AMDP Profiler](https://help.sap.com/viewer/DRAFT/090a7cb96c1f45428741601c5c520be8/Dev/en-US/fe9233b2584b45e987b1993b4a9faef3.html?q=loiofe9233b2584b45e987b1993b4a9faef3)
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create an ABAP package)]
@@ -152,7 +148,7 @@ Both of these are AMDP methods.
       using
         /dmo/flight
         /dmo/carrier
-        zcl_amdp_xxx=>convert_currency.
+        ZCL_AMDP_DEMO_XXX=>convert_currency.
 
     ```
 
@@ -196,7 +192,7 @@ Both of these are AMDP methods.
       USING
         /dmo/flight
         /dmo/carrier
-        zcl_amdp_xxx=>convert_currency.
+        ZCL_AMDP_DEMO_XXX=>convert_currency.
 
       flights = select distinct
         c.name as airline,
@@ -207,7 +203,7 @@ Both of these are AMDP methods.
         inner join "/DMO/CARRIER" as c
           on f.carrier_id = c.carrier_id;
 
-      call "ZCL_AMDP_XXX=>CONVERT_CURRENCY"( :flights, result );
+      call "ZCL_AMDP_DEMO_XXX=>CONVERT_CURRENCY"( :flights, result );
 
     ENDMETHOD.
 ```
@@ -307,7 +303,7 @@ ENDMETHOD.
 Your code should look like this.
 
 ```ABAP
-CLASS zcl_amdp_xxx DEFINITION
+CLASS ZCL_AMDP_DEMO_XXX DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -356,7 +352,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_amdp_xxx IMPLEMENTATION.
+CLASS ZCL_AMDP_DEMO_XXX IMPLEMENTATION.
   METHOD get_flights BY DATABASE PROCEDURE
     FOR HDB
     LANGUAGE SQLSCRIPT
@@ -364,7 +360,7 @@ CLASS zcl_amdp_xxx IMPLEMENTATION.
     USING
       /dmo/flight
       /dmo/carrier
-      zcl_amdp_xxx=>convert_currency.
+      ZCL_AMDP_DEMO_XXX=>convert_currency.
 
 
     flights = select distinct
@@ -376,7 +372,7 @@ CLASS zcl_amdp_xxx IMPLEMENTATION.
       inner join "/DMO/CARRIER" as c
         on f.carrier_id = c.carrier_id;
 
-    call "ZCL_AMDP_XXX=>CONVERT_CURRENCY"( :flights, result );
+    call "ZCL_AMDP_DEMO_XXX=>CONVERT_CURRENCY"( :flights, result );
 
   ENDMETHOD.
 
@@ -433,8 +429,8 @@ ENDCLASS.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Save, activate, and test your code)]
-1. Save and activate your code by choosing **`Ctrl+S, Ctrl+3`**.
+[ACCORDION-BEGIN [Step 10: ](Format, save, activate, and test your code)]
+1. Format, save, and activate your code by choosing **`Shift+F1`, `Ctrl+S, Ctrl+F3`**.
 
 2. Test your class by running it the ABAP Console ( **`F9`** ).
 
@@ -491,6 +487,14 @@ The **Trace Results** view appears. The **ABAP Managed Database Procedures** tab
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+### More Information
+
+- SAP Help Portal: [ABAP Managed Database Procedures (AMDP)](https://help.sap.com/viewer/6811c09434084fd1bc4f40e66913ce11/7.52.0/en-US/3e7ce62892d243eca44499d3f5a54bff.html)
+
+- SAP Help Portal: [Working with the AMDP Profiler](https://help.sap.com/viewer/DRAFT/090a7cb96c1f45428741601c5c520be8/Dev/en-US/fe9233b2584b45e987b1993b4a9faef3.html?q=loiofe9233b2584b45e987b1993b4a9faef3)
+
+- ABAP Keyword Documentation: [AMDP - ABAP Managed Database Procedures](https://help.sap.com/doc/abapdocu_753_index_htm/7.53/en-US/index.htm?file=abenamdp.htm)
 
 
 ---

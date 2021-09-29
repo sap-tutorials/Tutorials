@@ -5,11 +5,14 @@ auto_validation: true
 time: 45
 tags: [ tutorial>beginner, products>sap-cloud-platform, topic>sapui5, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-fiori, products>sap-web-ide]
 primary_tag: products>sap-cloud-platform-portal
+author_name: Lindsay Bert
+author_profile: https://github.com/LindsayBert
 ---
 
 ## Prerequisites
- - You have a development space set up in the Cloud Foundry environment so that you can make use of the services you need to develop your app module.
- - You have launched SAP Web IDE from your trial subaccount, (or from your own subaccount that you want to use)
+ If you are using your own account and not a trial account, then do the following:
+    - Set up your Cloud Foundry environment for development by following the instructions in the tutorial: [Prepare the SAP Cloud Platform Cloud Foundry Environment for Developement (non-trial account)](https://developers.sap.com/tutorials/cp-portal-cloud-foundry-prepare-dev.html)
+    - Since we'll be using SAP Web IDE for development in your production account, you should access SAP Web IDE on SAP Cloud Platform on the Neo environment.
 
 
 ## Details
@@ -21,23 +24,25 @@ When developing apps in the Cloud Foundry environment, you create a Multi-Target
 
 In this tutorial, you will create an MTA with one SAPUI5 module as well as a launchpad module.
 
->**IMPORTANT:**  To develop your own assets on SAP Cloud Platform on the Cloud Foundry environment, you must first configure it.
 
->   - A trial account is configured by default for development.
+[ACCORDION-BEGIN [Step 1: ](Launch SAP Web IDE)]
 
->   - If you are working on a non-trial account, and have not set up your Cloud Foundry environment for development, follow the instructions in the tutorial [Prepare the SAP Cloud Platform Cloud Foundry Environment for Development (non-trial account)](cp-portal-cloud-foundry-prepare-dev).
+Select SAP Web IDE from your trial environment.
 
-> In addition, we will be using SAP Web IDE for development. As the SAP Web IDE service is available on SAP Cloud Platform on the Neo environment, you should have an SAP Cloud Platform Neo subaccount.
+![Launch SAP Web IDE](0_open_webide.png)
 
-[ACCORDION-BEGIN [Step 1: ](Create an MTA project with an SAPUI5 module)]
+[DONE]
+[ACCORDION-END]
 
-To do this step, follow this [tutorial](cp-cf-fioriapps-create).
+[ACCORDION-BEGIN [Step 2: ](Create an MTA project with an SAPUI5 module)]
+
+To do this step, follow this [tutorial](cp-cf-fioriapps-create). You need to ONLY do steps 1-5 (inclusive).
 
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure navigation for the UI module)]
+[ACCORDION-BEGIN [Step 3: ](Configure navigation for the UI module)]
 
 You've created your MTA project with an SAPUI5 app module called `FioriDemo` in step 1 and now you'll configure its navigation target. These navigation settings will enable your `FioriDemo` app to be launched from the launchpad module that you'll create in the next tutorial.
 
@@ -47,9 +52,13 @@ Configure the navigation settings as follows:
 
     ![Open manifest](2_select_manifest_json.png)
 
-2. Leave all the default values in the **Settings** tab as is, and click the **Navigation** tab to configure the target navigation settings.
+2. Switch to **Descriptor Editor** view and leave all the default values in the **Settings** tab as is.
 
-3. Create the navigation intent by clicking **+**.  Then enter the following intent values:  
+    ![Descriptor view](2_descriptor_editor.png)
+
+3.  Click the **Navigation** tab to configure the target navigation settings.
+
+4. Create the navigation intent by clicking **+**.  Then enter the following intent values:  
 
     -	**Semantic Object**: data
 

@@ -2,20 +2,19 @@
 auto_validation: true
 title: Define and Expose a CDS-Based Travel Data Model
 description: Define CDS-based data model and create projection view.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
 time: 20
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- You have created an SAP Cloud Platform ABAP environment trial user or
-- You have created a developer user in an SAP Cloud Platform ABAP Environment system.
+- You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
 - You have downloaded Eclipse Photon or Oxygen and installed ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
 
 ## Details
-### You will learn  
+### You will learn   
   - How to create CDS based data model
   - How to create projection view
   - How to create service definition
@@ -24,6 +23,9 @@ author_profile: https://github.com/mervey45
 In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 ---
+
+>**If you also want to deploy your SAP Fiori application, please finish this tutorial first and then continue with**
+[ Develop a Fiori App Using the ABAP RESTful Application Programming Model (Managed Scenario)](group.abap-env-restful-managed) **starting with following tutorial** [Create Behavior Definition for Managed Scenario](abap-environment-behavior).
 
 [ACCORDION-BEGIN [Step 1: ](Define CDS-based travel data model)]
   1. Right-click on your package `ZTRAVEL_APP_XXX`, select **New** > **Other ABAP Repository Object**.
@@ -47,21 +49,13 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Define CDS based travel data model](model4.png)
 
-  5. Define root view for `ZI_TRAVEL_M_XXX` and database table as source.
+
+  5. Replace your code with following:
 
     ```ABAP
-    define root view ZI_TRAVEL_M_XXX as select from ztravel_xxx            
-    ```
-
-  6. Your result should look like this. Replace your code with following:
-
-    ```ABAP
-    @AbapCatalog.sqlViewName: 'ZVI_TRAVEL_M_XXX'
-    @AbapCatalog.compiler.compareFilter: true
-    @AbapCatalog.preserveKey: true
-    @AccessControl.authorizationCheck: #CHECK
+    @AccessControl.authorizationCheck: #NOT_REQUIRED
     @EndUserText.label: 'Travel data - XXX'
-    define root view ZI_TRAVEL_M_XXX
+    define root view entity ZI_TRAVEL_M_XXX
 
       as select from ztravel_xxx as Travel
 
@@ -81,7 +75,6 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           booking_fee,
           @Semantics.amount.currencyCode: 'currency_code'
           total_price,
-          @Semantics.currencyCode: true
           currency_code,
           overall_status,
           description,
@@ -103,7 +96,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     }  
     ```
 
-  7. Save and activate.
+  6. Save and activate.
 
       ![save and activate](activate.png)
 
@@ -134,17 +127,11 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create projection view for travel](projection4.png)
 
-  5. Define root view entity for `ZC_TRAVEL_M_XXX`.
-
-    ```ABAP
-    define root view entity ZC_TRAVEL_M_XXX as projection on ZI_Travel_M_XXX        
-    ```
-
-  6. Your result should look like this. Replace your code with following:
+  5. Replace your code with following:
 
     ```ABAP
     @EndUserText.label: 'Travel projection view - Processor'
-    @AccessControl.authorizationCheck: #CHECK
+    @AccessControl.authorizationCheck: #NOT_REQUIRED
 
     @UI: {
      headerInfo: { typeName: 'Travel', typeNamePlural: 'Travels', title: { type: #STANDARD, value: 'TravelID' } } }
@@ -214,9 +201,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           currency_code      as CurrencyCode,
 
           @UI: {
-                lineItem:       [ { position: 60, importance: #HIGH },
-                                  { type: #FOR_ACTION, dataAction: 'acceptTravel', label: 'Accept Travel' } ],
-              identification: [ { position: 60, label: 'Status [O(Open)|A(Accepted)|X(Canceled)]' } ]  }
+          lineItem:       [ { position: 60, importance: #HIGH },
+                            { type: #FOR_ACTION, dataAction: 'acceptTravel', label: 'Accept Travel' } ],
+          identification: [ { position: 60, label: 'Status [O(Open)|A(Accepted)|X(Canceled)]' } ]  }
           overall_status     as TravelStatus,
 
           @UI.identification: [ { position: 70, label: 'Remarks' } ]
@@ -229,7 +216,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     ```
 
-  7. Save and activate.
+  6. Save and activate.
 
       ![save and activate](activate.png)
 
@@ -300,7 +287,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create service binding](binding3.png)
 
-  4. Activate your service binding.
+  4. **Activate** your service binding and then **publish** it.
 
       ![Create service binding](binding4.png)
 
@@ -308,19 +295,6 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      The **service binding** allows you to bind the service definition to an ODATA protocol. Therefore you are able to see the travel booking application on the UI.
 
-  5. Double-click on `TravelProcessor` to see the application on the UI.
-
-      ![Create service binding](binding5.png)
-
-  6. Logon to your ABAP system.
-
-      ![Create service binding](binding6.png)
-
-  7. Click **GO** to see your result.
-
-     Your columns are created. The annotation ensures that all columns are already selected. As you can see, buttons like, create and update are missing. Therefore you need to define your behavior definition.
-
-      ![Create service binding](binding7.png)
 
 [DONE]
 [ACCORDION-END]
@@ -330,4 +304,12 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
+
+If you want to deploy your SAP Fiori application, please continue with
+[Develop a Fiori App Using the ABAP RESTful Application Programming Model (Managed Scenario)](group.abap-env-restful-managed) **starting with following tutorial** [Create Behavior Definition for Managed Scenario](abap-environment-behavior).
+
+After completing this mission, you might be interested in the next in the series: [Level Up with SAP BTP, ABAP Environment](mission.abap-env-level-up)
+
 ---

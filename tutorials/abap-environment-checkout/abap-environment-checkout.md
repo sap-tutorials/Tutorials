@@ -1,17 +1,17 @@
 ---
 auto_validation: true
 title: Use Checkout Functionality of Branches to Switch Between Different Versions of Code
-description: Use the checkout functionality of branches to switch between different versions of your code with SAP Cloud Platform, ABAP environment.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license]
+description: Use the checkout functionality of branches to switch between different versions of your code with SAP BTP, ABAP environment.
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license ]
 time: 20
 ---
 
 ## Prerequisites  
-  - SAP Cloud Platform ABAP, environment user
+  - SAP BTP, ABAP environment user
   - ADT version 2.96 or higher
   - Administrator role assigned to user
-  - You have finished following tutorial:  [Create Branches with SAP Cloud Platform ABAP Environment](abap-environment-branch).
+  - You have finished following tutorial:  [Create Branches with SAP BTP, ABAP Environment](abap-environment-branch).
 
 ## Details
 ### You will learn

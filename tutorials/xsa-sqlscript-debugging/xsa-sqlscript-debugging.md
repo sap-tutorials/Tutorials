@@ -9,12 +9,14 @@ time: 10
 ---
 
 ## Prerequisites  
+- This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
 - **Tutorials:** [Anonymous Blocks](xsa-sqlscript-anonymous)
 
 ## Details
 ### You will learn  
-In the following exercise we will show how to debug a procedure using the SQLScript debugger. This includes setting breakpoints, evaluating expressions and intermediate results.
+- How to debug a procedure using the SQLScript debugger
 
+The debugging shown in this tutorial includes setting breakpoints, evaluating expressions and intermediate results.
 
 ---
 

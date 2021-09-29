@@ -11,41 +11,28 @@ time: 5
  - How to install and configure the [Postman](https://www.getpostman.com/) client
 
 
-[ACCORDION-BEGIN [Step 1: ](Uninstall Postman extension for Google Chrome)]
+[ACCORDION-BEGIN [Step 1: ](Install Postman)]
 
-Postman used to be available as a Google Chrome extension, but it is no longer supported and is being deprecated.
+Go to <https://www.getpostman.com/downloads/> to download Postman. Once downloaded, follow the installation instructions.
 
-If you haven't done so yet, please uninstall it.
-
-Open Google Chrome, go to **Apps**.
-
-![Google Chrome](01.png)
-
-If the **Postman** icon is present, then right click on it then select **Remove from Chrome**.
-
-![Google Chrome](02.png)
+![Download Postman](install-postman.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install Postman)]
+[ACCORDION-BEGIN [Step 2: ](Configure Postman)]
 
-Download and install Postman from <https://www.getpostman.com/downloads/>.
+Open Postman by searching for it in your programs.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Configure Postman)]
-
-Open Postman.
-
-![Postman](03.png)
+![Open Postman](open-postman.png)
 
 Click on the **Tools** icon ![Postman](06.png), then select **Settings** from the menu.
 
-Disable the **SSL certificate verification** and enable the **Automatically follow redirects**  option as highlighted.
+![Open Settings](open-settings.png)
 
-![Postman](05.png)
+Disable the **SSL certificate verification** and enable the **Automatically follow redirects** option as highlighted.
+
+![Settings](settings.png)
 
 You are now all set to move to your next tutorial.
 

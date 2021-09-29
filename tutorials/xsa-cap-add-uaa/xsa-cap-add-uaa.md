@@ -1,13 +1,15 @@
 ---
-title: XS Advanced, Add User Authentication to Your Application
+title: HANA Native, Add User Authentication to Your Application
 description: Define security and enable user authentication and authorization.
-auto_validation: true
 time: 15
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition]
 primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - You have [created a user interface](xsa-cap-create-ui).
  - You have administration access to the XS Advanced cockpit in SAP HANA (e.g., like user `XSA_ADMIN` in SAP HANA, express edition).
 
@@ -16,7 +18,7 @@ primary_tag: products>sap-hana
   - How to create an instance of the User Authentication and Authorization service
   - How to incorporate security into the routing endpoint of your application
 
-This tutorial can be completed in SAP HANA, express edition SPS03 or higher.
+This tutorial can be completed in SAP HANA, express edition SPS04 or higher.
 
 ---
 
@@ -31,9 +33,9 @@ Create a file called `xs-security.json` in the root folder of your application.
 Paste the following content into the file and save it
 
 ```JSON
-
 {
 	"xsappname": "myHanaApp",
+  "tenant-mode": "dedicated",
 	"scopes": [{
 		"name": "$XSAPPNAME.Display",
 		"description": "display"
@@ -59,6 +61,12 @@ Paste the following content into the file and save it
 		"valueType": "s"
 	}],
 	"role-templates": [{
+      "name": "Token_Exchange",
+      "description": "UAA",
+      "scope-references": [
+        "uaa.user"
+      ]
+    },{
 		"name": "Viewer",
 		"description": "View all records",
 		"scope-references": [
@@ -89,83 +97,18 @@ Paste the following content into the file and save it
 
 [ACCORDION-BEGIN [Step 2: ](Create an instance of the UAA service)]
 
-[OPTION BEGIN [XSA Cockpit]]
+
 The User Authentication and Authorization service is a backing service. You will create an instance of it and attach it to your application so that a user needs to authenticate before accessing it through your web module.
 
-Navigate to **Tools > SAP HANA XS Advanced Cockpit**
+Navigate to the Resource Manager in the Web IDE and delete the resource instance for the `uaa_MyHANAApp`.  This will cause the UAA instance to be recreated with the new xs-security.json settings upon next run of your modules.
 
-
-
-> Alternatively, log in to the command line interface to find out the URL for the XS Advanced Cockpit. For example:
->
-> ```CLI
-> xs login -a https://hxehost:39030 -u XSA_ADMIN
-> xs apps | grep xsa-cockpit
-> ```
-> You will get the host and port in which the XS Advanced Cockpit is running.
-
-Log in as `XSA_DEV`.
-
-![Use XSA Admin](5x.png)
-
-Navigate into the organization and the **development** space. Click **`Service > Service marketplace`** and then click **Authorization and Trust Management**.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sXO6dZsME_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-Click **New Instance**.
-
-![New instance](6.png)
-
-Choose plan **space** and click **Next**.
-
-![New instance](7.png)
-
-> Plan `space` means the scope of the instance is restricted to the space. `Default` means the instance can be used across different spaces.
-
-Copy the content of `xs-security.json` from SAP Web IDE and paste in the parameters. Then click **Next**.
-
-![New instance](8.png)
-
-Call your instance `app-uaa`. Click **Finish**.
-
-![New instance](9.png)
+![Resource Manager](5_2.png)
 
 > ### What is going on?
 >
 > You are creating an instance of the UAA service so that users authenticate and have different access restricted depending on the roles that are assigned to them.
 >&nbsp;
 >
-> Plan `space` means the scope of the instance is restricted to the space. `Default` means the instance can be used across different spaces.
-
-[OPTION END]
-
-[OPTION BEGIN [Command Line Interface]]
-
-The User Authentication and Authorization service is a backing service. You will create an instance of it and attach it to your application so that a user needs to authenticate before accessing it through your web module.
-
-You will need to either upload the file `xs-security.json` to a location where you can use it from the it or locate it in the filesystem with the `find` command.
-
-Log in to the Command Line Interface as `XSA_ADMIN`, switch to the development space and create the service.
-
-```CLI
-xs login -u XSA_ADMIN
-xs target -s development
-xs create-service xsuaa space app-uaa -c xs-security.json
-
-```
-
-For example:
-
-![Add UAA through CLI](10.png)
-
-> ### What is going on?
->
->You are creating an instance of the UAA service so that users authenticate and have different access restricted depending on the roles that are assigned to them.
->&nbsp;
->
->Plan `space` means the scope of the instance is restricted to the space. `Default` means the instance can be used across different spaces.
-
-[OPTION END]
 
 [DONE]
 [ACCORDION-END]
@@ -274,6 +217,8 @@ Add a comma after the last key-value pair and add the following within the route
 
 ![Approuter call](xsapp.png)
 
+If you are working in the SAP Web IDE Full-stack please add this entry to both routes.
+
 **Save** the changes.
 
 This will tell the `approuter` module that each route will define its own authentication method and that the Node.js module, referred to as the `srv_api` destination, needs authentication. This means that an authentication token will be needed before the request can be routed to and responded by the `srv_api` destination.
@@ -295,8 +240,7 @@ Before adding authentication, when you [created the CDS services and user interf
 
 ![Approuter call](18.png)
 
-
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 
 ---

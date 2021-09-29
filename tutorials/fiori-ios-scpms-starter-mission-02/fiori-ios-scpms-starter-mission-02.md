@@ -1,23 +1,26 @@
 ---
 title: Implement Your First Screen in an iOS App
-description: Implement the first screen of your SAP Cloud Platform SDK for iOS app.
+description: Implement the first screen of your SAP BTP SDK for iOS app.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: products>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 60
 ---
 
 ## Prerequisites
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0 or higher
+
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
+- **SAP BTP SDK for iOS:** Version 6.0 or higher
 
 ## Details
+
 ### You will learn  
-  - How to create your first iOS screen
-  - How to retrieve data and display it on the screen
-  - How to follow the SAP Fiori for iOS guidelines.
+
+- How to create your first iOS screen
+- How to retrieve data and display it on the screen
+- How to follow the SAP Fiori for iOS guidelines.
 
 ---
 
@@ -33,9 +36,9 @@ For this tutorial, you will implement an overview screen displaying a KPI Table 
 
 ![Overview Screen](fiori-ios-scpms-starter-mission-02-14.png)
 
-In [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup), you learned how to create an Xcode project using the SAP Cloud Platform SDK for iOS Assistant. You let the iOS Assistant generate a master-detail screen. Now you will change the generated UI to match the screen shown above, the overview screen of your app.
+In the [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup), you've learned how to create an Xcode project using the SAP BTP SDK Assistant for iOS. The result of the generation process of the Assistant can be a split view screen if chosen. In this tutorial you will change the generated UI to match the screen shown above, the overview screen of your app.
 
-1. First, open you Xcode project if not opened already and select the **`Main.storyboard`**. This will open the `Main.storyboard` in the Interface Builder of Xcode.
+1. First, open you Xcode project if not opened already and select the **`Main.storyboard`**, this will open the `Main.storyboard` in the Interface Builder of Xcode.
 
     > The Interface Builder allows you to create complete app flows including the UI for each screen of those flows.
 
@@ -49,7 +52,7 @@ In [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup), you learned
 
     !![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-3.gif)
 
-3. Thinking ahead, we know that we want to have navigation to various screens from the overview screen. Using a Navigation Controller and embedding the just-created View Controller in it allows us to use the power of the Navigation Controller for navigation. The Navigation Controller handles the navigation stack for you, which is exactly what we want.
+3. Thinking ahead, you know that you want to have navigation to various screens from the overview screen. Using a Navigation Controller and embedding the just-created View Controller in it allows us to use the power of the Navigation Controller for navigation. The Navigation Controller handles the navigation stack for you, which is exactly what you want.
 
     Select the added View Controller and click **Editor > Embed In > Navigation Controller**. This will embed your View Controller in a Navigation Controller. You should see the Navigation Bar appear in the View Controller.
 
@@ -104,7 +107,7 @@ In order to display the newly added overview screen right after the onboarding p
 
 2. Change the method code to the following:
 
-    ```Swift
+    ```Swift[15-16]
     func showApplicationScreen(completionHandler: @escaping (Error?) -> Void) {
         // Check if an application screen has already been presented
         guard self.isSplashPresented else {
@@ -132,7 +135,7 @@ In order to display the newly added overview screen right after the onboarding p
 
     ```
 
-Great you did all necessary steps to replace the generated UI with your own. Go ahead and run the app on **`iPhone 11 Pro Max`** or any other simulator to see the result.
+Great you did complete all necessary steps to replace the generated UI with your own. Go ahead and run the app on **`iPhone 12 Pro`** or any other simulator to see the result.
 
 > In case you haven't onboarded yet, go through the onboarding process before seeing your Overview Screen appear.
 
@@ -140,7 +143,6 @@ Great you did all necessary steps to replace the generated UI with your own. Go 
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](Implement basic functionality of overview screen)]
 
@@ -155,7 +157,7 @@ As you can see, the overview screen is a little bit more complicated then just s
 - `FUILoadingIndicatorView`: A SAP Fiori control used to display a loading indicator on screen. [`FUILoadingIndicatorView`](https://help.sap.com/doc/978e4f6c968c4cc5a30f9d324aa4b1d7/Latest/en-US/Documents/Frameworks/SAPFiori/Classes/FUILoadingIndicatorView.html)
 - `FUIItemCollectionViewCell`: A SAP Fiori control used to display business entity objects in a Collection View Cell. [`FUIItemCollectionViewCell`](https://help.sap.com/doc/978e4f6c968c4cc5a30f9d324aa4b1d7/Latest/en-US/Documents/Frameworks/SAPFiori/Classes/FUIItemCollectionViewCell.html)
 
-If you look at the list of controls you might recognize that we're picking from not only SAP Fiori controls but also from Apple `UIKit` controls. Because all of the SAP Fiori controls are written natively in Swift and inherit of `UIKit` controls, you can pick and choose the controls you need.
+If you look at the list of controls you might recognize that you're picking from not only SAP Fiori controls but also from Apple `UIKit` controls. Because all of the SAP Fiori controls are written natively in Swift and inherit of `UIKit` controls, you can pick and choose the controls you need.
 
 !![Control Inheritance Overview](fiori-ios-scpms-starter-mission-02-11.png)
 
@@ -169,12 +171,15 @@ You will now implement some code to set up the `OverviewTableViewController` for
     import SAPOData
     import SAPFioriFlows
     import SAPCommon
+    import ESPMContainerFmwk
 
     ```
 
-    We are going to use APIs and classes from all of those SAP iOS SDK frameworks to build the Overview screen.
+    You are going to use APIs and classes from all of those SAP BTP SDK for iOS frameworks to build the Overview screen.
 
     The overview screen will have a short list of products and a collection of customers. Implementing two arrays containing elements of type **Product** and **Customer** will do the job of storing the loaded entities later on.
+
+    The `ESPMContainerFmwk` is a helper framework which contains the OData proxy classes generated out of the Metadata document of the consumed OData service. Importing this framework allows you to access the OData proxy classes but also the generated dataservice.
 
 2. Instantiate two arrays as class properties:
 
@@ -185,7 +190,7 @@ You will now implement some code to set up the `OverviewTableViewController` for
 
     ```
 
-3. Because we want to use the logging API of the `SAPCommon` framework we have to retrieve and store an instance of the logger. Luckily the logger gets initialized in the `AppDelegate` through generated code by the iOS Assistant. The logger is initialized with a default log level of **`Debug`**.
+3. Because you want to use the logging API of the `SAPCommon` framework you have to retrieve and store an instance of the logger. Luckily the logger gets initialized in the `AppDelegate` through generated code by the Assistant. The logger is initialized with a default log level of **`Debug`**.
 
     Add the following line of code above the products array:
 
@@ -195,11 +200,11 @@ You will now implement some code to set up the `OverviewTableViewController` for
 
     ```
 
-4. Next, implement all the needed Table View data source and delegate methods you need. Fortunately we used a Table View Controller instead of a View Controller, and because we did that we can simply override those methods directly in class without declaring the needed protocols (`UITableViewDataSource, UITableViewDelegate`) in the class definition.
+4. Next, implement all the needed Table View data source and delegate methods you need. Fortunately you used a Table View Controller instead of a View Controller, and because you did that you can simply override those methods directly in class without declaring the needed protocols (`UITableViewDataSource, UITableViewDelegate`) in the class definition.
 
     Implement the needed methods below the `viewDidLoad()` method, so that your class looks like that:
 
-    ```Swift
+    ```Swift[32-81]
     //
     //  OverviewTableViewController.swift
     //  TutorialApp
@@ -236,11 +241,11 @@ You will now implement some code to set up the `OverviewTableViewController` for
       }
 
       /**
-        Here we tell the Table View how many rows we want to display for each section.
-        We can use the *Switch* statement to do so.
+        Here you tell the Table View how many rows you want to display for each section.
+        You can use the *Switch* statement to do so.
 
         - Case 1:   return 3 if the count of available products is equal or higher then 3
-        - Case 3:   return 1 if the count of available customers is equal or higher then 1. That is because we only display the FUICollectionViewTableViewCell here.
+        - Case 3:   return 1 if the count of available customers is equal or higher then 1. That is because you only display the FUICollectionViewTableViewCell here.
         - Default:  return 0 because those are the dividers which are not going to display any rows.
 
       */
@@ -288,14 +293,13 @@ You will now implement some code to set up the `OverviewTableViewController` for
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 4: ](Implement FUITableViewHeaderFooterView)]
 
-To finish building the screen's layout we are going to implement the dividers and the Header/Footer for the products and customers.
+To finish building the screen's layout you are going to implement the dividers and the Header/Footer for the products and customers.
 
 1. First, register the `FUITableViewHeaderFooterView` in the `viewDidLoad()` method:
 
-    ```Swift
+    ```Swift[4]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -312,8 +316,8 @@ To finish building the screen's layout we are going to implement the dividers an
     Dequeue the registered FUITableViewHeaderFooterView and force cast it to the respective class.
     Again use a Switch-statement to distinguish between the different sections.
 
-    - Case 1:   We want to see just the title for the Product section header
-    - Case 3:   We want to see title and an attribute for the Customer section header.
+    - Case 1:   You want to see just the title for the Product section header
+    - Case 3:   You want to see title and an attribute for the Customer section header.
     - Default:  Return the divider view.
 
     */
@@ -347,7 +351,7 @@ To finish building the screen's layout we are going to implement the dividers an
     ```Swift
 
     /**
-    For the Footer we display a FUITableViewHeaderFooterView set to style attribute like the customer section header.
+    For the Footer you display a FUITableViewHeaderFooterView set to style attribute like the customer section header.
     If it is not the product section then show an empty UIView.
     */
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -372,43 +376,79 @@ To finish building the screen's layout we are going to implement the dividers an
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 5: ](Load customer and product data)]
 
-Before we continue implementing the Table View's data source and delegate methods, we go and implement the data loading methods.
+Before you continue implementing the Table View's data source and delegate methods, you go and implement the data loading methods.
 
-Thanks to the generated data service and proxy classes, we don't have to implement much to load data from the sample OData service.
+Thanks to the generated data service and proxy classes, you don't have to implement much to load data from the sample OData service.
 
-1. Before you can actually call the data service, you need to retrieve an instance of the `ESPMContainer`. The data service is globally accessible through the onboarding session. Implement the following lines of code directly below the logger instance as class properties:
+1. You need to retrieve an instance of the `ESPMContainer` to be able to have access to the generated data layer. The data service is globally accessible through the onboarding session. Depending on how you generated your Xcode project you might support Online or Offline OData. This has an effect on what OData controller you use to retrieve the data service. Also importing the `SharedFmwk` is necessary to retrieve the data service as it holds information over the OData container which describes the model, and other central information of the OData service.
 
-    ```Swift
-    /// First retrieve the destinations your app can talk to from the AppParameters.
-    let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
+**For Online OData**
 
-    /// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course we only have one destination here. Handle the errors in case the OData controller is nil. We are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the iOS Assistant.
-    var dataService: ESPMContainer<OnlineODataProvider>? {
-        guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
-            AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
-            return nil
-        }
-        return dataService
+Add the following import statement to your class:
+
+```Swift
+import SAPOData
+import SharedFmwk
+
+```
+
+Implement the following lines of code directly below the logger instance as class properties:
+
+```Swift
+/// First retrieve the destinations your app can talk to from the AppParameters.
+let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
+
+/// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course you only have one destination here. Handle the errors in case the OData controller is nil. You are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the Assistant.
+var dataService: ESPMContainer<OnlineODataProvider>? {
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOnlineODataController, let dataService = odataController.dataService else {
+        AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
+        return nil
     }
+    return dataService
+}
 
-    ```
+```
 
-    > Important here is that the class `Comsapedmsampleservicev2OnlineODataController` can vary in name depending on your destination and if you're using online or offline OData. In example I am using Online OData as I have removed the Offline capability before generating the app, which is why my class name has Online in it. By default, the SAP Mobile Services creates each mobile app configuration with Offline OData, which changes the name to `Comsapedmsampleservicev2OfflineODataController` in the case of using the Sample ESPM Service.
+**For Offline OData**
+
+Add the following import statement to your class:
+
+```Swift
+import SAPOfflineOData
+import SharedFmwk
+
+```
+
+Implement the following lines of code directly below the logger instance as class properties:
+
+```Swift
+
+/// First retrieve the destinations your app can talk to from the AppParameters.
+let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
+
+var dataService: ESPMContainer<OfflineODataProvider>? {
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOfflineODataController, let dataService = odataController.dataService else {
+        AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
+        return nil
+    }
+    return dataService
+}
+
+```
 
 2. To fetch available customers, implement the following method below the closing bracket of the `viewDidLoad()` method:
 
     ```Swift
 
     /**
-    First we define a DataQuery to perform an expand for the customer's sales orders.
+    First you define a DataQuery to perform an expand for the customer's sales orders.
     This data query object you can simply pass into the fetchCustomers(:) method call. Handle the errors and display an Alert Dialogue to the user.
 
     Using a DispatchGroup allows us to sequentially run background tasks and perform a certain action as soon as all tasks are completed. First you enter the group and you have to leave the group in any place where you return out of the block.
 
-    In case we retrieve data from the backend sort the customers by the amount of sales orders they have and set them to the array.
+    In case you retrieve data from the backend sort the customers by the amount of sales orders they have and set them to the array.
     */
     private func fetchCustomers(_ group: DispatchGroup) {
         group.enter()
@@ -435,7 +475,7 @@ Thanks to the generated data service and proxy classes, we don't have to impleme
     /**
     Handle the errors and display an Alert Dialogue to the user.
 
-    In case we retrieve data from the backend sort the customers by the amount of sales orders they have and set them to the array.
+    In case you retrieve data from the backend sort the customers by the amount of sales orders they have and set them to the array.
     */
     private func fetchProducts(_ group: DispatchGroup) {
         group.enter()
@@ -500,12 +540,11 @@ Thanks to the generated data service and proxy classes, we don't have to impleme
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 6: ](Implement cellForRowAt method)]
 
 Now that you can fetch the needed data sets, you can go ahead and finish implementing the `tableView(_:cellForRowAt:)` method.
 
-Before we do this we have to take care of the product image lazy loading. We're going to use a simple image cache in the form of a Dictionary; also we need a property which holds the product image URLs.
+Before you do this you have to take care of the product image lazy loading. You're going to use a simple image cache in the form of a Dictionary; also you need a property which holds the product image URLs.
 
 1. Add the following lines of code directly above the product array class property:
 
@@ -552,9 +591,9 @@ Before we do this we have to take care of the product image lazy loading. We're 
 
     ```
 
-4. Before we can start dequeuing the needed cells, complete the `viewDidLoad()` method:
+4. Before you can start dequeuing the needed cells, complete the `viewDidLoad()` method:
 
-    ```Swift
+    ```Swift[4-15]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -565,7 +604,7 @@ Before we do this we have to take care of the product image lazy loading. We're 
         tableView.register(FUICollectionViewTableViewCell.self, forCellReuseIdentifier: FUICollectionViewTableViewCell.reuseIdentifier)
         tableView.register(FUITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: FUITableViewHeaderFooterView.reuseIdentifier)
 
-        // To make sure the FUICollectionViewTableViewCell gets displayed correctly we set the estimated row height to 180 and the row height to automatic dimension which will allow the table view to resize the cell.
+        // To make sure the FUICollectionViewTableViewCell gets displayed correctly you set the estimated row height to 180 and the row height to automatic dimension which will allow the table view to resize the cell.
         tableView.estimatedRowHeight = 180
         tableView.rowHeight = UITableView.automaticDimension
 
@@ -574,7 +613,7 @@ Before we do this we have to take care of the product image lazy loading. We're 
 
     ```
 
-5. Before you go ahead and implement the `tableView(_:viewDidLoad:)`, you need to retrieve the URL of your service. The data task we're going to use will use the URL to download the needed product images.
+5. Before you go ahead and implement the `tableView(_:viewDidLoad:)`, you need to retrieve the URL of your service. The data task you're going to use will use the URL to download the needed product images.
 
     Open your Mobile Services instance and select your app configuration in the `Native/Hybrid` screen. There you click  **Mobile Sample OData ESPM** in the **Assigned Features** section.
 
@@ -586,7 +625,7 @@ Before we do this we have to take care of the product image lazy loading. We're 
 
 7. Let's bring some life into our screen:
 
-    ```Swift
+    ```Swift[19]
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
       switch indexPath.section {
@@ -654,11 +693,11 @@ Before we do this we have to take care of the product image lazy loading. We're 
 
     ```
 
-    Inside the just implemented method, assign the copied `URL` to the `baseURL` instead of `<YOUR URL>` placeholder.
+    Inside the just implemented method, assign the copied `URL` as String to the `baseURL` instead of `<YOUR URL>` placeholder.
 
-8. At the moment won't compile because your class doesn't conform to the `UICollectionViewDataSource` or the `UICollectionViewDelegate` protocol.
+8. At the moment the code won't compile because your class doesn't conform to the `UICollectionViewDataSource` or the `UICollectionViewDelegate` protocol.
 
-    To conform to these protocols we will implement a class extension where we will implement the protocol methods.
+    To conform to these protocols you will implement a class extension where you will implement the protocol methods.
     Swift Extensions are declared outside the class's scope. Add the following extensions after the closing bracket of the `OverviewTableViewController` class:
 
     ```Swift
@@ -688,10 +727,18 @@ Before we do this we have to take care of the product image lazy loading. We're 
 [VALIDATE_6]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 7: ](Implement UICollectionViewDataSource)]
 
 To complete the UI, you need to implement the `UICollectionViewDataSource` protocol.
+
+Replace the `collectionView(_:numberOfItemsInSection:)` method in the class extension:
+
+```Swift
+func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return customers.count
+    }
+
+```
 
 Replace the `collectionView(_:cellForItemAt:)` method in the class extension:
 
@@ -711,7 +758,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
     if let customerDOB = customer.dateOfBirth {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
-        customerCollectionViewCell.subtitle.text = "\(dateFormatter.string(from: customerDOB.utc()))"
+        customerCollectionViewCell.subtitle.text = "\(dateFormatter.string(from: customerDOB.utc() ?? Date()))"
     }
 
     return customerCollectionViewCell
@@ -719,15 +766,14 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 
 ```
 
-We are using a system image that can be found in the **SF Symbols** app. You can download the app for free from the Apple Developer website [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/).
+You are using a system image that can be found in the **SF Symbols** app. You can download the app for free from the Apple Developer website [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/).
 
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 8: ](Add KPI Header to Table View)]
 
-To make the overview screen complete, we're going to add an `FUIKPIHeader` to the table view.
+To make the overview screen complete, you're going to add an `FUIKPIHeader` to the table view.
 
 >From the `FUIKPIHeader` documentation:
 
@@ -779,7 +825,7 @@ To make the overview screen complete, we're going to add an `FUIKPIHeader` to th
 
 3. Call the method in the `viewDidLoad()` method:
 
-    ```Swift
+    ```Swift[13]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -800,7 +846,7 @@ To make the overview screen complete, we're going to add an `FUIKPIHeader` to th
 
 4. Also you have to call the `setupKPIHeader()` method as soon as the data is loaded to update the `KPIs`. Add the method call to the `loadData()` method:
 
-    ```Swift
+    ```Swift[12]
     func loadData() {
         showFioriLoadingIndicator()
 

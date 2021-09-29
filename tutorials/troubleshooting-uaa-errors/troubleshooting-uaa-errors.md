@@ -3,21 +3,29 @@ title: Troubleshooting UAA Errors
 description: Troubleshooting authentication error message when using XS Advanced client to log in to  SAP HANA
 primary_tag: products>sap-hana
 tags: [  tutorial>how-to, tutorial>beginner, tutorial>intermediate, topic>cloud, topic>security, products>sap-hana, products>sap-hana\,-express-edition , products>sap-cloud-platform ]
+time: 20
 ---
+
+
 ## Prerequisites  
  - **Systems used:** SAP HANA SPS12, SAP HANA, express edition
 
 
-## How-To Details
-When attempting to log in to the XS Advanced engine from the XS Advanced Client, the following error occurs: `Authentication failed. UAA at http://your-host:30030 uaa-security is not up.`
+## Details
+When attempting to log in to the XS Advanced engine from the XS Advanced Client, the following error occurs:
 
-The error occurs when trying to log in to XS in HANA using the XS Advanced Client with command `xs login –a http://hostname:30030`.
+```
+Authentication failed. UAA at http://your-host:30030 uaa-security is not up.
+```
+
+The error occurs when trying to log in to XS in HANA using the XS Advanced Client with command:
+
+```
+xs login –a http://hostname:30030
+```
 
 There seem to be plenty of root causes for this issue, involving different components and, of course, different possible solutions. This How-To document covers some of the common root causes and how to identify them.
 
-
-### Time to Complete
-**20 Min**.
 
 ---
 
@@ -93,7 +101,7 @@ This means we need to make sure communications into those ports are free of bloc
 
   There are some quick ways to check network traffic is flowing freely without installing complex tools. The following commands can be executed from a terminal or command prompt and can help uncover a network issue:
   <ol type="i">
-    <li> - ping `hostname`, e.g: <i> ping http://vhcalhdbdb </i> </br>
+    <li> - ping `hostname`, e.g: <i> ping `http://vhcalhdbdb` </i> </br>
       If, for example, you forgot to configure your hosts file, the host name will not get resolved and you will get a message similar to `Ping request could not find host xxxxx. Please check the name and try again`. Please remember to configure your hosts file with the reachable, external IP of the server. </li>
 
     <li> - telnet  `hostname  port`, e.g., <i> telnet  google.com  80 </i> </br>

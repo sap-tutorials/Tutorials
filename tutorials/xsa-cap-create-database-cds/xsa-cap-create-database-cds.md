@@ -1,13 +1,16 @@
 ---
-title: XS Advanced, Create Database Artifacts Using Core Data and Services
+title: SAP HANA Native, Create Database Artifacts Using Core Data Services (CDS)
 description: Use core data services to generate SAP HANA basic database artifacts.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, products>sap-hana]
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
+tags: [tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
 primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
+ - This tutorial is designed for SAP HANA on premise and SAP HANA, express edition. It is not designed for SAP HANA Cloud.
  - You have created an application using the [Business Application wizard](xsa-cap-create-project).
 
 ## Details
@@ -115,6 +118,16 @@ Click **Save all**.
 >
 > You are declaring services to expose the database entities you declared in the previous step.
 
+Open the package.json file in the root of your project.  Add a section to the `cds` configuration to include the following
+
+```JSON
+"hana": {
+   "deploy-format": "hdbtable"
+}
+```
+
+![Edit package.json](package1.png)
+
 Right-click on the CDS declaration of the services and choose **Build > Build CDS**.
 
 ![Build database module](cds.png)
@@ -129,13 +142,31 @@ Look into the console to see the progress. You can scroll up and see what has be
 
 [ACCORDION-BEGIN [Step 3: ](Explore the generated design-time artifacts)]
 
-If you pay attention to the build log in the console, you will see the `CDS` artifacts were converted to `hdbcds` artifacts. You will find those artifacts in a new folder under `src` called `gen`.
+If you pay attention to the build log in the console, you will see the `CDS` artifacts were converted to `hdbtable` and `hdbview` artifacts. You will find those artifacts in a new folder under `src` called `gen`.
 
 ![Build database module](log.png)
 
 You will now convert those CDS files specific to SAP HANA into runtime objects (tables). Right-click on the database module and choose **Build**.
 
 ![Build database module](7.png)
+
+Note: If you get an error during the build process, this could be caused by an older version of the XSA Runtime in HANA, express edition.  If your XSA version still contains Node.js version 8.x; this can lead to errors when building because this version of Node.js is no longer supported at the OS level.  Newer versions of the XSA runtime only contain Node.js version 10.x and 12.x.  If you do receive an error at this point, we would suggest editing the `/db/package.json` like the following to force the usage of the newer version of the Node.js runtime.
+
+```json
+{
+	"name": "deploy",
+	"dependencies": {
+		"@sap/hdi-deploy": "^3"
+	},
+	"scripts": {
+		"postinstall": "node .build.js",
+		"start": "node node_modules/@sap/hdi-deploy/deploy.js"
+	},
+	"engines": {
+		"node": "^10 || ^12"
+	}
+}
+```
 
 Scroll up to in the console to see what the build process has done.
 
@@ -149,17 +180,21 @@ Scroll up to in the console to see what the build process has done.
 >&nbsp;
 > ![Build database module](cds1.png)
 >
->The original `.cds` file was translated into `hdbcds`, which is the Core Data and Services syntax specific to SAP HANA when you saved all of the files.
+>The original `.cds` file was translated into `hdbtable`, which is the SQLDDL syntax specific to SAP HANA when you saved all of the files.
 >&nbsp;
 > ![Build database module](cds2.png)
 >
->These `hdbcds` files were then translated into runtime objects such as tables in the HANA database.
+>These `hdbtable` files were then translated into runtime objects such as tables in the HANA database.
 >
 > ![Build database module](cds3.png)
 >
 > If you checked the services in your space, you would see the service for your [HDI container](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/e28abca91a004683845805efc2bf967c.html).
 >
 > ![Build database module](console.png)
+>
+> or for the HANA Cloud trial:
+>
+> ![Build database module](console2.png)
 >
 > You can also check the resources in your space using the resource manager in SAP Web IDE:
 >
@@ -180,7 +215,7 @@ Once open, navigate to the `Tables` section and double-click on the `Header` tab
 
 ![Build database module](9.png)
 
-Note the name of the table matches the generated `hdbcds` artifacts. You will also see the physical schema managed by the HDI container.
+Note the name of the table matches the generated `hdbtable` artifacts. You will also see the physical schema managed by the HDI container.
 
 > Unless a name is specified during deployment, HDI containers are automatically created with names relative to the project and user generating them. This allows developers to work on different versions of the same HDI container at the same time.
 > ![Build database module](8.png)
@@ -190,13 +225,13 @@ Note the name of the table matches the generated `hdbcds` artifacts. You will al
 
 [ACCORDION-BEGIN [Step 5: ](Load data into your tables)]
 
-Download the [header file](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/xsa-cap-create-database-cds/Header.xlsx) and the [items file](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/xsa-cap-create-database-cds/Items.xlsx) into your local file system.
+Download the [header file](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/xsa-cap-create-database-cds/Header.csv) and the [items file](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/xsa-cap-create-database-cds/Items.csv) into your local file system.
 
 Right-click again on the header table and choose **Import Data**.
 
 ![Import data](10.png)
 
-Browse for the `Header` file, select **Sheet 1** and click **Step 2**.
+Browse for the `Header` file and click **Step 2**.
 
 ![Import data](11.png)
 
@@ -216,7 +251,7 @@ You will see confirmation that 3 records have imported successfully.
 
 ![Import data](16.png)
 
-Repeat the process with the `Items.xlsx` file into the `Items` table.
+Repeat the process with the `Items.csv` file into the `Items` table.
 
 ![Import data](17.png)
 

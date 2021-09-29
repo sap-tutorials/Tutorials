@@ -1,23 +1,26 @@
 ---
 title: Create a Service Consumption Model
-description: Create an OData service consumption model in an SAP Cloud Platform, ABAP Environment instance. In a second instance, prepare it for consumption.
+description: Create an OData service consumption model in an SAP Business Technology Platform, ABAP Environment instance. In a second instance, prepare it for consumption.
 auto_validation: true
 time: 45
-tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, tutorial>license,topic>cloud]
-primary_tag: products>sap-cloud-platform--abap-environment
+tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
+primary_tag: topic>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites  
+- **IMPORTANT**: This tutorial cannot be completed on a trial account
 - The service definition **`/DMO/TRAVEL_U`** is available in the **provisioning** system - You can download the service as part of the ABAP Flight Reference Scenario, see [Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
 
 ## Details
 ### You will learn
   - How to create an XML file representing the remote service and save this locally
-  - How to create proxy artefacts representing the remote service in the client system, using this `metadata` file
+  - How to create proxy artifacts representing the remote service in the client system, using this `metadata` file
 
   This tutorial is based on:
 
-  - SAP Help Portal: [Preparing Access to the Remote OData Service](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/59a91c95137e4c42946d50b25dba3fd7.html#)
+  - SAP Help Portal: [Preparing Access to the Remote OData Service](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/59a91c95137e4c42946d50b25dba3fd7.html)
   - SAP Help Portal: [SAP Help Portal: Creating a Service Consumption Model](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/96132822b3554016b653d3601bb9ff1a.html)
 
 ---
@@ -89,7 +92,7 @@ The service binding opens in a new editor.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a package)]
+[ACCORDION-BEGIN [Step 4: ](Create package in client system)]
 1. As in step 1, create a package in your `ZLOCAL` package, in the **client** system: `Z_A4C_TO_A4C_XX2`.
 
 2. Add it to **Favorite Packages**.
@@ -97,8 +100,8 @@ The service binding opens in a new editor.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create proxy artefacts)]
-You will now use the `EDMX` file that you stored locally to create the necessary ABAP proxy artefacts in the client system.
+[ACCORDION-BEGIN [Step 5: ](Create proxy artifacts)]
+You will now use the `EDMX` file that you stored locally to create the necessary ABAP proxy artifacts in the client system.
 
 1. Select your package and choose **New > Other ABAP Repository Object** from the context menu.
 
@@ -110,7 +113,7 @@ You will now use the `EDMX` file that you stored locally to create the necessary
 
 5. Again, deselect all entity sets except **Travel**, make sure **`ETag` Support** is selected for it, then choose **Next**.
 
-6. The same list of ABAP artefacts appears. Choose **Next**.
+6. The same list of ABAP artifacts appears. Choose **Next**.
 
 7. Accept the transport request and choose **Finish**.
 

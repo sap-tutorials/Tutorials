@@ -4,24 +4,16 @@ author_profile: https://github.com/SupriyaCherukunnathu
 title: Install OpenSSL
 description: Install OpenSSL to send data to the SAP Cloud Platform Internet of Things Service Cloud using MQTT and REST.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-internet-of-things
-tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud ]
+primary_tag: topic>internet-of-things
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-business-technology-platform, products>sap-iot-services-for-sap-btp ]
+time: 10
 ---
-
-
-## Prerequisites
- - **Proficiency:** Beginner
 
 
 ## Details
 ### You will learn
 - How to install OpenSSL on Windows or macOS
 
-### Time to Complete
-10 min
-
-## Next Steps
-- **Tutorials:** [Send Data with MQTT](iot-cf-send-data-mqtt)
 
 ---
 
@@ -31,15 +23,22 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 2.  Extract the downloaded ZIP archive.
 
-3.  For ease of use we recommend that you add the directories from the OpenSSL binaries to your PATH environment variable. For example, you could enter the following in your terminal (only valid for one session):
+3.  For ease of use, we recommend that you add the directories from the OpenSSL binaries to your PATH environment variable. For example, you could enter the following in your terminal (only valid for one session):
 
     `set PATH=%PATH%;c:\<PATH_TO_OPENSSL.EXE>`
 
     `set PATH=%PATH%;c:\OpenSSL-Win32\bin\`
 
-    >On macOS OpenSSL is usually installed by default (`/user/bin/openssl`).
+    >On macOS, OpenSSL is usually installed by default (`/user/bin/openssl`).
 
+
+
+[DONE]
+[ACCORDION-END]
+
+
+
+[ACCORDION-BEGIN [Step 2: ](Test yourself)]
 
 [VALIDATE_1]
-
 [ACCORDION-END]

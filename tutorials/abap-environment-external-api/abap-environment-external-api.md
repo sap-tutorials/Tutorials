@@ -3,62 +3,80 @@ title: Call an External API
 description: Point to an external API and display its output in the console.
 auto_validation: true
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>intermediate, topic>abap-development, topic>cloud, products>sap-cloud-platform, tutorial>license ]
+tags: [  tutorial>beginner, topic>abap-development, topic>cloud, products>sap-cloud-platform, tutorial>license ]
 time: 30
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites  
-- **Tutorial**: [Create a Console Application](abap-environment-console-application)
-- **Tutorial**: [Create a Communication Arrangement for Outbound Communication](abap-env-create-comm-arrangement-api)
+- **IMPORTANT**: This tutorial cannot be completed on a trial account
+- You have set up SAP Cloud Platform, ABAP Environment, for example by using the relevant booster: [Using a Booster to Automate the Setup of the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cd7e7e6108c24b5384b7d218c74e80b9.html)
+- **Tutorial**: [Create Your First Console Application](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html), for a licensed user, steps 1-2
 
 ## Details
 ### You will learn  
-  - How to create a new destination for an existing communication arrangement
-  - How to call an external API from inside an ABAP system
+  - How to create a new destination in SAP Cloud Cockpit
+  - How to call an external API from inside an ABAP class by pointing to this destination
 
 ---
-Predefined communication scenarios allow you to, for example, exchange data between a SAP Cloud Platform system and an external system.
- A communication arrangement specifies the metadata for a communication scenario. For more information, see [Maintain a Communication Arrangement for an Exposed Service](https://developers.sap.com/tutorials/abap-environment-communication-arrangement.html).
-
-You will create a new destination for an existing communication arrangement, specifying the URL for an external API, user/password, and authentication.
+You will create a new destination service instance, specifying the URL for an external API, user/password, and authentication.
 You will then create a class that calls the API and displays the output from it in the console.
+This enables you to avoid hard-coding the URL of the external API in your ABAP class.
 
 Throughout this tutorial, objects name include the suffix `XXX`. Always replace this with your group number or initials.
 
-[ACCORDION-BEGIN [Step 1: ](Open the instance of the destination service)]
+[ACCORDION-BEGIN [Step 1: ](Create destination service)]
+You will now create a destination in the ABAP Environment. This must be created at subaccount (not Space) level.
 
-1. In your space in the **SAP Cloud Platform Cockpit** (e.g. **`Dev`**), open **Service Marketplace** and choose **Destination**.                          
+1. In the SAP Cloud Platform Cockpit of your Cloud Foundry subaccount, navigate to your subaccount.
 
-    ![Image depicting step-1a-destination](step-1a-destination.png)
+  !![step1a-subaccount](step1a-subaccount.png)
 
-2.  Choose **Instances**, then choose your instance, **`EXTERNAL_API_XXX`**.
+2. Choose **Destinations**, then choose **New Destinations**.
 
-    ![Image depicting step-1b-external-2](step-1b-external-2.png)
+    !![step1a-cf-cockpit-new-destination](step1a-cf-cockpit-new-destination.png)
+
+2. Enter the following values and choose **Save**:
+
+    |  Field Name     | Value
+    |  :------------- | :-------------
+    |  Name           | e.g. **`Z_STREETMAP_XXX`** as here
+    |  Type           | **`HTTP`**
+    |  Description    | Can be anything, here **`Streetmap`**
+    |  URL   | `https://www.openstreetmap.org/#map=18/49.29271/8.64401` (In your browser, this would display `Walldorf`, Germany)
+    |  Proxy Type   | Internet
+    |  Authentication | `NoAuthentication`
+
+    !![step2b-destination-streetmap](step2b-destination-streetmap.png)
+
+3. Choose **Check Connection**. You should get the following response.
+
+  !![step1c-check-connection-200](step1c-check-connection-200.png)
+
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a new destination)]
 
-1. From the left pane, choose **Destinations**, then choose **New Destination**:
+[ACCORDION-BEGIN [Step 2: ](Create new package)]
+1. In ABAP Development Tools (ADT), select the ABAP Cloud Project and choose **New > ABAP Package**.
 
-    ![Image depicting step-2a-new-destination](step-2a-new-destination.png)
+2. Enter the following and choose **Next**:
+    - Name = **`Z_EXTERNAL_API_XXX`**
+    - Description = **Call external API**
+    - Package type = **Development**
 
-2. Then enter the following (replacing **`xxx`** with your group number). Then choose **Save**:
-    - Name  = `Z_STREETMAP_XXX`
-    - URL = `https://nominatim.openstreetmap.org/`
-    - Proxy type = Internet
-    - Authentication = `NoAuthentication`
+    ![Image depicting step1a-create-package](step1a-create-package.png)
 
-    ![Image depicting step2c-destination-streetmap-nominatim](step2c-destination-streetmap-nominatim.png)
+3. Choose **Create new transport request**, enter a description, such as "External API", then choose **Finish**.
+
+    !![step1c-new-transport-request](step1c-new-transport-request.png)
 
 [DONE]
-
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create an ABAP class)]
+[ACCORDION-BEGIN [Step 3: ](Create ABAP class)]
 Now, you will create an ABAP class that will call your destination, and which you can run in the console.
 
 1. In the ABAP Development Tools `(ADT)`, in the Package Explorer, select your package and choose **New > ABAP Class** from the context menu.
@@ -81,7 +99,7 @@ The class is displayed in a new editor.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add an INTERFACES statement)]
+[ACCORDION-BEGIN [Step 4: ](Add INTERFACES statement)]
 Add the following `interfaces` statement to the public section:
 
 ```ABAP
@@ -95,36 +113,35 @@ This enables you to run the class in the console.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create HTTP client)]
-To be able to access the external service, you must maintain a cloud destination for the foreign system and create an HTTP client. Proceed as follows:
+[ACCORDION-BEGIN [Step 5: ](Copy code)]
+To be able to access the external service, you must:
+- maintain a cloud destination for the remote system
+- create an HTTP client
+- send an HTTP request
+- output the response in the ABAP console
+- wrap the code in an exception
 
-1. Add the method implementation below and wrap it in an exception.
+Copy the following code. Replace the `xxx` of `i_name` with your group number:
 
-2. Then replace the `xxx` of `i_name` and `i_service_instance_name` with your group number.
-  (To get the `i_service_instance_name`, see the tutorial [Create a Communication Arrangement for Outbound Communication](abap-env-create-comm-arrangement-api), step 7).
+```ABAP
+METHOD if_oo_adt_classrun~main.
+    TRY.
+        DATA(lo_destination) = cl_http_destination_provider=>create_by_cloud_destination(
+          i_name                  = 'Z_STREETMAP_XXX'
+          i_authn_mode = if_a4c_cp_service=>service_specific ).
 
-    ```ABAP
-    METHOD if_oo_adt_classrun~main.
-        TRY.
-            DATA(lo_destination) = cl_http_destination_provider=>create_by_cloud_destination(
-              i_name                  = 'Z_STREETMAP_XXX'
-              i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
-              i_authn_mode = if_a4c_cp_service=>service_specific ).
+        DATA(lo_http_client) = cl_web_http_client_manager=>create_by_http_destination( i_destination = lo_destination ).
+        DATA(lo_request) = lo_http_client->get_http_request( ).
 
-            DATA(lo_http_client) = cl_web_http_client_manager=>create_by_http_destination( i_destination = lo_destination ).
-            DATA(lo_request) = lo_http_client->get_http_request( ).
+        DATA(lo_response) = lo_http_client->execute( i_method = if_web_http_client=>get ).
+          out->write( lo_response->get_text( ) ).
 
+      CATCH cx_root INTO DATA(lx_exception).
+        out->write( lx_exception->get_text( ) ).
+    ENDTRY.
+  ENDMETHOD.
 
-
-            DATA(lo_response) = lo_http_client->execute( i_method = if_web_http_client=>get ).
-              out->write( lo_response->get_text( ) ).
-
-          CATCH cx_root INTO DATA(lx_exception).
-            out->write( lx_exception->get_text( ) ).
-        ENDTRY.
-      ENDMETHOD.
-
-    ```
+```
 
 [DONE]
 
@@ -138,7 +155,7 @@ To be able to access the external service, you must maintain a cloud destination
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Run the class in the console)]
+[ACCORDION-BEGIN [Step 7: ](Run class in ABAP Console)]
 Run your class in the console (`F9`).
 
 The output should look something like this:
@@ -148,46 +165,7 @@ The output should look something like this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add formatting)]
-The output is currently just an HTML dump. You will now format the output as JSON.
-
-1. Immediately after the `DATA(lo_request) = lo_http_client->get_http_request( ).` statement, add the following code:
-
-```ABAP
-
-lo_request->set_form_field(
-    i_name  = 'format'
-    i_value = 'json' ).
-lo_request->set_form_field(
-    i_name  = 'q'
-    i_value = 'SAP SE' ).
-lo_request->set_form_field(
-    i_name  = 'country'
-    i_value = 'Germany' ).
-lo_request->set_form_field(
-    i_name  = 'city'
-    i_value = 'Walldorf' ).
-lo_request->set_form_field(
-    i_name  = 'addressdetails'
-    i_value = '1' ).
-
-```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Check, save, activate, and test)]
-1. Check your syntax (`Ctrl+F2`).
-2. Save (`Ctrl+S`) and activate (`Ctrl+F3`) your class.
-3. Run your class in the console (`F9`).
-
-The output should now look something like this:
-![Image depicting step10-output-2](step10-output-2.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 10: ](Test yourself)]
+[ACCORDION-BEGIN [Step 8: ](Test yourself)]
 
 
 [VALIDATE_1]

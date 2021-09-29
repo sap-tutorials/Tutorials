@@ -11,7 +11,7 @@ author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites  
- - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
+ - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions). You can download a free ABAP application server, developer edition, from [SAP Developers Community - Trials and Downloads](https://developers.sap.com/trials-downloads.html?search=AS%20ABAP), e.g. AS ABAP 7.52 SP04
  - You have downloaded and installed the latest Eclipse IDE from [Eclipse IDE for Java Developers ](http://www.eclipse.org/) site, and opened the application.
 
 ## Details
@@ -54,9 +54,9 @@ In the ABAP Perspective, the ABAP tools are ideally positioned in the IDE to fac
 
 You need to create one ABAP project for each system connection. To do this:
 
-1. In the **File** menu, choose **New > Other ABAP Project**. Choose the ABAP backend system from the list of SAP System connections, then choose **Next**.
+1. In the **File** menu, choose **New > Other ABAP Project**. Choose the ABAP backend system from the list of SAP System connections, then choose **Next**. For example, if you are using the AS ABAP 7.5x developer edition, this will be **`NPL`** or **`A4H`**.
 
-    ![Image depicting step4-system-connection](step4-system-connection.png)
+    !![Image depicting step4-system-connection](step4-system-connection.png)
 
 2. In Connection Settings, accept the defaults and choose **Next**.
 
@@ -68,7 +68,7 @@ You need to create one ABAP project for each system connection. To do this:
 
 The ABAP Project has been created. It represents a system connection to your chosen SAP system.
 
-![Image depicting step4d-project-created](step4d-project-created.png)
+!![Image depicting step4d-project-created](step4d-project-created.png)
 
 [DONE]
 [ACCORDION-END]

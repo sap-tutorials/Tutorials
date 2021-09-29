@@ -1,72 +1,74 @@
 ---
-title: Create a Business Scenario for a Deployed Workflow
-description: Create a business scenario based on a workflow using the Business Scenario Configuration application.
+title: Create a Visibility Scenario for a Deployed Workflow
+description: Create a visibility scenario based on a workflow using the Configure Visibility Scenarios application.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform]
-primary_tag: topic>cloud
-author_name: Deeksha R
-author_profile: https://github.com/Deeksha-R
+tags: [tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
+author_name: Kavya M Gowda
+author_profile: https://github.com/I540620
 ---
 
 ## Prerequisites
- - Ensure that you have access to the Configure Business Scenarios application. For more information, see [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad](cp-cf-processvisibility-setup-flp).
- - You have a deployed workflow from SAP Cloud Platform Workflow on Cloud Foundry. If you do not have a workflow deployed, then refer to the following [blog](https://blogs.sap.com/2019/05/20/sap-cloud-platform-workflow-sample-application-in-cloud-foundry/).
+ 1. You have set up SAP Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
+ 2. You have a deployed workflow. If you do not have a workflow deployed, then refer to steps 5 and 6 in [Configure Business Rules, Workflow and Process Visibility](cp-starter-ibpm-employeeonboarding-2-configure) tutorial.
+ 3. You have set up business rules for determining equipment. To set up the business rules, see steps 1 to 4 in [Configure Business Rules, Workflow and Process Visibility](cp-starter-ibpm-employeeonboarding-2-configure) tutorial.
 
 ## Details
 ### You will learn
-  - How to use the Configure Business Scenarios application
-  - How to build a business scenario
-  - How to add workflows to business scenarios  
+  - How to use the Configure Visibility Scenarios application
+  - How to create a visibility scenario by adding workflows
+  - How to activate a visibility scenario  
 
-Business scenarios allows you to track the performance of end-to-end processes. In this tutorial, you can add workflows from SAP Cloud Platform Workflow to your business scenario to gain visibility on workflows. For more information, see [Creating a Business Scenario](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
+Visibility scenarios allow you to track the performance of end-to-end processes. You can configure the aspects of a scenario such as events and context of the processes, correlation conditions, status, attributes, and performance indicators for the end-to-end processes of a scenario.
+
+In this tutorial, you will learn how to add a workflow to your visibility scenario to gain visibility on the workflow. In this tutorial we create a visibility scenario named **Employee Onboarding Process** and then add the **onboard** workflow from workflow capability as a process participant to the  visibility scenario. For more information, see [Creating a Scenario](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
 
 ---
 
-[ACCORDION-BEGIN [Step 1:](Create a business scenario)]
-1. Log on to the **Configure Business Scenarios** application in SAP Fiori Launchpad.
+[ACCORDION-BEGIN [Step 1:](Create a scenario)]
+1. Open the **Workflow Management** dashboard and choose the **Configure Visibility Scenarios** tile present under **Development Tools**.
 
-    ![Login](Config-Step1-login.png)
+    !![Home screen](config-flp.png)
 
-2. Choose the **+** icon.
+2. Create a visibility scenario by choosing the **+** icon.
 
-    ![Add business scenario](Config-Step1-plus.png)
+    !![Add scenario](Config-Step1-plus.png)
 
-3. Provide the following details and create a new business scenario by saving the changes.
+3. In the **New Scenario** dialog, provide a **Namespace** and a **Name** for the scenario. On providing these values, the **ID** field gets populated automatically. You can choose to edit the **ID** if required. You can even provide a **Description** for your scenario and and choose **Create**.
 
-    |  Field Name     |  Value
-    |  :------------- | :-------------
-    |  Name           | `Employee Onboarding Process`
-    |  ID             | `EmployeeOnboardingProcess`
+    !![visibility scenario name](scenario-name.PNG)
 
-    ![Business scenario name](Config-Step1-name.png)
+    You can see the **Employee Onboarding Process** scenario listed in the **Scenarios** table in the **Draft** state.
 
-4. Now, select the **Employee Onboarding Process** business scenario which is in the **Draft** state to edit it.
+4. Now, select the **Employee Onboarding Process** scenario in the **Draft** state to edit it.
 
-    ![Draft](Config-Step1-draft.png)
+    !![Draft](Config-Step1-draft.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add workflows)]
+[ACCORDION-BEGIN [Step 2: ](Add workflow to the Visibility scenario)]
 
-1. Choose the **+** icon and then choose **Add SAP Cloud Platform Workflow** to add a workflow to the business scenario.
+In this step, you will add the **onboard** workflow to your **Employee Onboarding Process** scenario.
 
-    ![import workflow](Config-Step1-workflow.png)
+1. Under the **Processes** tab, choose the **+** icon and then choose **Add Workflow from SAP Workflow Service** to add a workflow to the visibility scenario.
 
-2. In the **Add SAP Cloud Platform Workflow** dialog, choose the workflow named **Onboard**.
+    !![import workflow](Add-workflow.png)
 
-    ![Choose workflow](Config-Step1-onboard.png)
+2. In the **Add Workflow from SAP Workflow Service** dialog, choose the workflow named **onboard**.
 
-    This adds the workflow as a process participant and automatically adds all the events provisioned by the added workflow. It also adds the corresponding context `(businessKey)` of the workflow into the business scenario.
+    !![Choose workflow](onboard.png)
 
-    ![After import](Config-Step1-onboardafter.png)
+    Now, the workflow is added as a process participant to your visibility scenario. By default all the events provisioned by the workflow along with the corresponding context of is added into the visibility scenario.
 
-    >Check the default **State**, **Status**, **Attributes** and **Performance Indicators** that are pre-created for the given workflow.
+    >Check the default **State**, **Status**, **Attributes**, and **Performance Indicators** that are pre-created for the given workflow.
 
-3. Save the changes.
+3. **Save** the changes.
 
-    You have now added created a business scenario with workflows.
+    !![After import](Config-Step1-onboardafter.png)
+
+  You have now created an **Employee Onboarding Process** visibility scenario with an **onboard** workflow as a process participant.
 
 [DONE]
 [ACCORDION-END]

@@ -56,7 +56,7 @@ Finally:
 
 For this tutorial you need a way of creating the calls to send to the server. We created this tutorial using Postman, although you can use whatever REST client you like.
 
-You can get Postman from <http://www.getpostman.com/>.
+You can get Postman from <http://www.postman.com/>.
 
 [DONE]
 

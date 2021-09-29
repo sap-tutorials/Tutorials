@@ -3,12 +3,14 @@ title: Add SAP Web Analytics Tracking Snippet
 description: Add SAP Web Analytics tracking snippet to your website to start usage tracking.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-web-analytics, products>sap-cloud-platform]
-primary_tag: products>sap-web-analytics
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-web-analytics-(pilot)
+author_name: Vikram Kulkarni
+author_profile: https://github.com/Vikramkulkarni01
 ---
 
 ## Prerequisites
-[Register your website in a space](https://developers.sap.com/tutorials/cp-webanalytics-add-site.html)
+[Register Your Website in a Space](cp-webanalytics-add-site)
 
 
 ## Details
@@ -28,11 +30,11 @@ For production landscape, please follow the instructions provided in the [offici
 
 2. Click on the **Snippet** icon for your website.
 
-    ![Snippet Icon](Snippet icon.png)
+    !![Snippet Icon](Snippet icon.png)
 
 3. Copy the code block from the Snippet box.
 
-    ![Copy Snippet](Copy Snippet.png)
+    !![Copy Snippet](Copy Snippet.png)
 
 
 [DONE]
@@ -40,23 +42,17 @@ For production landscape, please follow the instructions provided in the [offici
 
 [ACCORDION-BEGIN [Step 2: ](Add the tracking snippet to your website)]
 
-1. Locate the **index.html** file in your sample web application.
-
-    ![Index](Index file.png)
+1. Locate the **index.html** file in your web application.
 
 2. Open the file and paste the SAP Web Analytics tracking snippet within the **body** tag.
 
     ![Paste Snippet](Paste snippet.png)
 
-3. Save the file.
+3. Save the changes and redeploy your application
 
-4. Right-click the app folder and select **Deploy** > **Deploy to SAP Cloud Platform**.
+4. After successful redeployment, open the application.
 
-    ![Redeploy](Redeploy.png)
-
-5. After successful deployment, open the application.
-
-6. You'll see a consent banner appearing at the top of the page. Click **Allow** to start tracking.
+5. You'll see a consent banner appearing at the top of the page. Click **Allow** to start tracking.
 
     ![Consent Banner](Consent Banner.png)
 

@@ -7,6 +7,7 @@ const tagChecker = require('./tags-checker');
 const linkChecker = require('./link-checker');
 const syntaxChecker = require('./syntax-checker');
 const metadataChecker = require('./metadata-checker');
+const commonUtils = require('../utils/common');
 
 const { regexp, constraints } = require('../constants');
 const {
@@ -22,7 +23,7 @@ const {
     remoteImage,
     codeBlockInNote,
   },
-  validation: { accordions, codeLine, done },
+  validation: { accordions, codeLine, inlineCodeBlock },
   link: {
     pure: pureLink,
   },
@@ -66,10 +67,24 @@ const checkLocalImage = (absImgPath, altText) => {
   return result;
 };
 
-async function makeAsyncChecks({ lines, isCodeLine, isMeta, isCodeBlock, index, result }) {
-  const line = lines[index];
+const replaceCodeLines = (text) => {
+  let matches;
+  let result = text;
+  // eslint-disable-next-line no-cond-assign
+  while ((matches = codeLine.exec(text)) !== null) {
+    const [, , word] = matches;
+    const pureWord = word.replace(/`/g, '');
+    result = result.replace(word, pureWord);
+  }
 
-  if (!isCodeLine && !isCodeBlock) {
+  return result;
+};
+
+async function makeAsyncChecks({ lines, isMeta, isCodeBlock, index, result }) {
+  const originalLine = lines[index];
+  const line = replaceCodeLines(originalLine);
+
+  if (!isCodeBlock) {
     const remoteImageMatches = line.match(remoteImage.regexp);
 
     if (remoteImageMatches) {
@@ -89,7 +104,6 @@ async function makeAsyncChecks({ lines, isCodeLine, isMeta, isCodeBlock, index, 
   }
 
   if (isMeta) {
-    // async stuff should go last
     const authorProfileMatch = line.match(regexp.link.authorProfile);
     if (authorProfileMatch && authorProfileMatch.length > 0) {
       const authorUrlMatch = line.replace(authorProfileMatch[0], '')
@@ -111,10 +125,10 @@ module.exports = {
     let isCodeBlock = false;
     const result = {
       contentCheckResult: [],
+      linkCheckResult: [],
       tagsCheckResult: [],
       stepSpellCheckResult: [],
       syntaxCheckResult: [],
-      linkCheckResult: [],
     };
     const dir = path.dirname(filePath);
     // true because meta is in the very beginning
@@ -123,8 +137,9 @@ module.exports = {
     const metaLines = [];
 
     await Promise.all(lines.map(async (line, index) => {
-      const isCodeLine = (line.match(codeLine) || []).length > 0;
-      if (line.replace(/\n/g, '') === '---') {
+      const lineNoCode = replaceCodeLines(line);
+
+      if (lineNoCode.replace(/\n/g, '') === '---') {
         metaBoundaries += 1;
       }
       if (metaBoundaries >= 2) {
@@ -132,14 +147,16 @@ module.exports = {
         const metaValidationResult = metadataChecker.check(metaLines);
         result.contentCheckResult.push(...metaValidationResult);
       }
+
       const trimmedLine = line.trim();
       const isCodeInNote = trimmedLine.match(codeBlockInNote);
-      if (trimmedLine.startsWith('```') || isCodeInNote) {
+      const isInlineCodeBlock = trimmedLine.match(inlineCodeBlock);
+      if (!isInlineCodeBlock && (trimmedLine.startsWith('```') || isCodeInNote)) {
         isCodeBlock = !isCodeBlock;
       }
 
       common.forEach(({ regexp, message }) => {
-        const match = line.match(regexp);
+        const match = lineNoCode.match(regexp);
         if (match) {
           result.contentCheckResult.push({
             line: index + 1,
@@ -154,9 +171,10 @@ module.exports = {
         const tutorialLinkInvalidMatch = line.match(tutorialLinkInvalid.regexp);
         const tutorialLinkMatch = line.match(tutorialLink.regexp);
         const accordionMatch = line.match(accordions);
-        if (!isMeta && !isCodeLine) {
+        if (!isMeta) {
           // plain text URLs are allowed in meta
-          const match = line.match(link.regexp);
+          const noValidLinksLine = regexp.link.markdown.reduce(re => line.replace(re, ''));
+          const match = noValidLinksLine.match(link.regexp);
           if (match) {
             result.contentCheckResult.push({
               line: index + 1,
@@ -164,17 +182,7 @@ module.exports = {
             });
           }
         }
-
-        const doneMatch = line.match(done);
-
-        if (doneMatch && line.startsWith(' ')) {
-          result.contentCheckResult.push({
-            line: index + 1,
-            msg: 'Do not indent [DONE] button',
-          });
-        }
-
-        const h1Match = line.match(h1.regexp);
+        const h1Match = lineNoCode.match(h1.regexp);
         if (h1Match) {
           result.contentCheckResult.push({
             line: index + 1,
@@ -182,89 +190,83 @@ module.exports = {
           });
         }
 
-        if (!isCodeLine) {
-          emptyLink.forEach((i) => {
-            const match = line.match(i.regexp);
-            if (match) {
-              result.contentCheckResult.push({
-                line: index + 1,
-                msg: `${i.message} -> ${match[0]} -> ${i.description}`,
-              });
-            }
+        emptyLink.forEach((i) => {
+          let clearContent = commonUtils.removeCodeLines(line);
+
+          const match = clearContent.match(i.regexp);
+          if (match) {
+            result.contentCheckResult.push({
+              line: index + 1,
+              msg: `${i.message} -> ${match[0]} -> ${i.description}`,
+            });
+          }
+        });
+
+        const stepName = lineNoCode.includes('[ACCORDION');
+
+        if (tutorialLinkMatch && !stepName) {
+          const [, tutorialName] = tutorialLinkMatch[0]
+            .replace(/\)/g, '')
+            .split('](');
+          const exists = checkLocalTutorial(tutorialName, allTutorials);
+
+          if (!exists) {
+            result.contentCheckResult.push({
+              line: index + 1,
+              msg: `${tutorialLink.message} (${tutorialName})`,
+            });
+          }
+        }
+
+        if (tutorialLinkInvalidMatch) {
+          result.contentCheckResult.push({
+            line: index + 1,
+            msg: tutorialLinkInvalid.message,
           });
+        }
 
-          const stepName = line.includes('[ACCORDION');
+        if (imageMatches) {
+          imageMatches.forEach((item) => {
+            // using new RegExp to reset g flag
+            const [, imgName] = item.match(new RegExp(mdnImg.regexp, 'i'));
 
-          if (tutorialLinkMatch && !stepName) {
-            const [, tutorialName] = tutorialLinkMatch[0]
-              .replace(/\)/g, '')
-              .split('](');
-            const exists = checkLocalTutorial(tutorialName, allTutorials);
-
-            if (!exists) {
-              result.contentCheckResult.push({
-                line: index + 1,
-                msg: `${tutorialLink.message} (${tutorialName})`,
-              });
-            }
-          }
-
-          if (tutorialLinkInvalidMatch) {
-            result.contentCheckResult.push({
+            const altText = item
+            // eslint-disable-next-line no-useless-escape
+              .replace(/!?[\[\]]/g, '')
+              .trim()
+              .replace(`(${imgName})`, '');
+            const filePath = path.join(dir, imgName);
+            const errors = checkLocalImage(filePath, altText);
+            result.contentCheckResult.push(...errors.map(err => ({
               line: index + 1,
-              msg: tutorialLinkInvalid.message,
-            });
-          }
+              msg: err,
+            })));
+          });
+        }
 
-          if (imageMatches) {
-            imageMatches.forEach((item) => {
-              // using new RegExp to reset g flag
-              const [, imgName] = item.match(new RegExp(mdnImg.regexp, 'i'));
+        if (localFileMatch && !imageMatches && !accordionMatch && !tutorialLinkInvalidMatch) {
+          result.contentCheckResult.push({
+            line: index + 1,
+            msg: localFileLink.message,
+          });
+        }
 
-              const altText = item
-                .replace(/!?[\[\]]/g, '')
-                .trim()
-                .replace(`(${imgName})`, '');
-              const filePath = path.join(dir, imgName);
-              const errors = checkLocalImage(filePath, altText);
-              result.contentCheckResult.push(...errors.map(err => ({
-                line: index + 1,
-                msg: err,
-              })));
-            });
-          }
-
-
-          if (localFileMatch && !imageMatches && !accordionMatch && !tutorialLinkInvalidMatch) {
-            result.contentCheckResult.push({
-              line: index + 1,
-              msg: localFileLink.message,
-            });
-          }
-
-          const syntaxCheckResult = syntaxChecker.check(lines, index);
-          if (syntaxCheckResult) {
-            result.syntaxCheckResult.push(...syntaxCheckResult);
-          }
+        const syntaxCheckResult = syntaxChecker.check(lines, index);
+        if (syntaxCheckResult) {
+          result.syntaxCheckResult.push(...syntaxCheckResult);
         }
       }
 
-      if (!isCodeInNote && !isCodeLine) {
+      if (!isCodeInNote) {
         const backTicksCheckResult = syntaxChecker.checkBackticks(lines, index);
         result.syntaxCheckResult.push(...backTicksCheckResult);
       }
 
       if (isMeta) {
         metaLines.push(line);
-        const primaryTagError = tagChecker.checkPrimaryTag(line, index);
-        const xpTagError = tagChecker.checkExperienceTag(line, index);
 
-        if (xpTagError) {
-          result.tagsCheckResult.push({
-            msg: xpTagError,
-            line: index + 1,
-          });
-        }
+        const primaryTagError = tagChecker.checkPrimaryTag(lineNoCode, index);
+        const xpTagError = tagChecker.checkExperienceTag(lineNoCode, index);
 
         if (primaryTagError) {
           result.tagsCheckResult.push({
@@ -272,9 +274,22 @@ module.exports = {
             line: index + 1,
           });
         }
+
+        if (xpTagError) {
+          result.tagsCheckResult.push({
+            msg: xpTagError,
+            line: index + 1,
+          });
+        }
       }
 
-      return makeAsyncChecks({ lines, isCodeLine, isMeta, isCodeBlock, index, result });
+      return makeAsyncChecks({
+        lines,
+        isMeta,
+        isCodeBlock,
+        index,
+        result,
+      });
     }));
 
     return result;

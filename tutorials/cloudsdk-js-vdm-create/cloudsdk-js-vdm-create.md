@@ -3,8 +3,8 @@ title: Create OData Entities with the SAP Cloud SDK's Virtual Data Model
 description: Create OData entities with the SAP Cloud SDK's virtual data model to build an address manager application.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, topic>javascript, products>sap-cloud-platform, topic>odata]
-primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, topic>javascript, products>sap-business-technology-platform, topic>odata]
+primary_tag: products>sap-cloud-sdk
 ---
 
 ## Prerequisites
@@ -23,7 +23,7 @@ The goal of this tutorial group is to show you how to implement a JavaScript app
 
 [ACCORDION-BEGIN [Step 1: ](Add an API endpoint)]
 
-In a [previous tutorial](cloudsdk-js-vdm-getall) we explained the basics about `controller`, `service` and `module` of `NestJS` application. Note: If you have already controller and service classes from the previous tutorials you can of course keep the existing files and just extend the classes by the new methods. Create a file called `business-partner.controller.ts` in the `src` folder of your application. Then, copy the following code into it:
+In a [previous tutorial](cloudsdk-js-vdm-getall) we explained the basics of `controller`, `service` and `module` in `NestJS` applications. Note: If you already have controller and service classes from the previous tutorials you can of course keep the existing files and just extend the classes by the new methods. Create a file called `business-partner.controller.ts` in the `src` folder of your application. Then, copy the following code into it:
 
 ```JavaScript / TypeScript
 import { Controller, Post, Body, Param } from '@nestjs/common';
@@ -39,7 +39,7 @@ export class BusinessPartnerController {
 }
 ```
 
-Then prepare a service file called `business-partner.service.ts` and add this dummy implementation:
+Prepare a service file called `business-partner.service.ts` and add this initial implementation:
 
 ```JavaScript / TypeScript
 import { Injectable } from '@nestjs/common';
@@ -74,7 +74,11 @@ Following the best practices for RESTful APIs, we used the `POST` method to crea
 
 ![Example POST request using Postman](postman.png)
 
-Start your server using `npm start` and create a  `POST` request to `http://localhost:3000/business-partners/testID/address` with a JSON body: `{"key":"Some test body."}`. The server should respond with the ID and body from the request. In our case you should get `This is my id: testID and body for address creation: {"key":"Some test body."}`
+Start your server using
+```Shell
+npm start
+```
+And create a  `POST` request to `http://localhost:3000/business-partners/testID/address` with a JSON body: `{"key":"Some test body."}`. Don't forget to change the body type to JSON in the dropdown menu. The server should respond with the ID and body from the request. In our case you should get `This is my id: testID and body for address creation: {"key":"Some test body."}`
 
 [DONE]
 [ACCORDION-END]
@@ -107,7 +111,7 @@ The `create` function takes the entity that should be created as parameter. When
 
 [ACCORDION-BEGIN [Step 3: ](Build a business partner address from the request)]
 
-So far, there's an API endpoint and a function that takes an address and creates it in SAP S/4HANA Cloud. To connect the two, we need a function that constructs a `BusinessPartnerAddress` object. Add the following method to your service class:
+So far, there is an API endpoint and a function that takes an address and creates it in SAP S/4HANA Cloud. To connect the two, we need a function that constructs a `BusinessPartnerAddress` object. Add the following method to your service class:
 
 ```JavaScript / TypeScript
 buildAddress(requestBody: any, businessPartnerId: string): BusinessPartnerAddress {
@@ -118,7 +122,7 @@ buildAddress(requestBody: any, businessPartnerId: string): BusinessPartnerAddres
 }
 ```
 
-This function takes some form of body and a business partner ID. First, using the `BusinessPartnerAddress.builder().fromJson(body)`, you can create a new address from the given body. Note, that this requires the keys of the object passed to the `fromJson` function to match the respective keys of the business partner address object. We will present a working example later. Second, since we want the address to be related to a given business partner, we need to set the business partner ID on the entity.
+This function takes a request body and a business partner ID. First, using the `BusinessPartnerAddress.builder().fromJson(body)`, you can create a new address from the given body. Note, that this requires the keys of the object passed to the `fromJson` function to match the respective keys of the business partner address object. We will present a working example later. Second, since we want the address to be related to a given business partner, we need to set the business partner ID on the entity.
 
 [DONE]
 [ACCORDION-END]
@@ -147,7 +151,7 @@ export class BusinessPartnerController {
 
 `buildAddress()` takes the body of the incoming request as well as the ID from the URL and passes it to the SDK builder methods to construct a `BusinessPartnerAddress` entity. This is then passed to `createAddress()` to send the create request to SAP S/4HANA Cloud.
 
-Restart your server and send a `POST` request to `http://localhost:3000/business-partners/1/address` with the following body:
+Restart your server and send a `POST` request to `http://localhost:3000/business-partners/1003764/address` with the following body:
 
 ```JSON
 {
@@ -159,7 +163,7 @@ Restart your server and send a `POST` request to `http://localhost:3000/business
 }
 ```
 
-If there is a business partner with ID "1" in your destination system, this will create a new address. Alternatively, replace the ID in the URL with the ID of an existing business partner in your system.
+If there is a business partner with ID "1003764" in your destination system, this will create a new address. Alternatively, replace the ID in the URL with the ID of an existing business partner in your system.
 
 [DONE]
 [ACCORDION-END]
@@ -171,6 +175,7 @@ The VDM also supports creating an entity together with related entities in a sin
 ```JavaScript / TypeScript
 import { BusinessPartner, BusinessPartnerAddress } from '@sap/cloud-sdk-vdm-business-partner-service';
 
+// build a business partner instance with one linked address
 const businessPartner = BusinessPartner.builder()
   .firstName('John')
   .lastName('Doe')
@@ -186,6 +191,7 @@ const businessPartner = BusinessPartner.builder()
   ])
   .build();
 
+// execute a create request
 BusinessPartner.requestBuilder()
   .create(businessPartner)
   .execute({
