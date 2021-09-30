@@ -13,6 +13,12 @@ primary_tag: products>sap-cloud-sdk
  - Basic knowledge of OData is recommended, but not required
 
 ## Details
+
+> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/docs/js/getting-started)
+> This tutorial is not actively maintained and might be partially outdated.
+> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/docs/js/getting-started).
+> We will provide a link to the updated version of this tutorial as soon as we release it.
+> 
 ### You will learn
   - How to use the Virtual Data Model to update an existing entity
   - How to trigger an update request from an API endpoint exposed by your application
