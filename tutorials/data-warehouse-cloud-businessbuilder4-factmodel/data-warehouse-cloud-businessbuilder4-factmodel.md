@@ -24,7 +24,7 @@ primary_tag: products>sap-data-warehouse-cloud
 
 Fact models in the Business Builder of SAP Data Warehouse Cloud help you group analytical datasets and dimensions, so that it is easier to create a complete consumption model, and then visualize the data in SAP Analytics Cloud or equivalent.
 
-> It's not mandatory to create a fact model before creating a consumption model, but it can help you avoid re-work. For example, if you have 10 different analytical datasets that need to be used in several different consumption models, you can group them in a fact model, and then simply re-use this in every consumption model needed.
+> It is not mandatory to create a fact model before creating a consumption model, but it can help you avoid re-work. For example, if you have 10 different analytical datasets that need to be used in several different consumption models, you can group them in a fact model, and then simply re-use this in every consumption model needed.
 
 
 ---
