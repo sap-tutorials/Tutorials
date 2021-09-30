@@ -77,9 +77,9 @@ The subscription will now be created. Click on **View Subscription** to go to th
     !![DOX-UI](role-collection.png)
 
 
-You have now assigned the Document Information Extraction Trial UI role collection.
+You're now assigned to the **`Document_Information_Extraction_UI_Admin_User_trial`** role collection.
 
-!![DOX-UI](role-collection_done.png)
+!![DOX-UI](roles.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
