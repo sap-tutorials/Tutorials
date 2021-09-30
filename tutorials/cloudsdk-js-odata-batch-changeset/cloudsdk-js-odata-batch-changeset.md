@@ -19,7 +19,7 @@ primary_tag: products>sap-cloud-sdk
 > This tutorial is not actively maintained and might be partially outdated.
 > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/docs/js/getting-started).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
-> 
+
 ### You will learn
   - How to combine multiple write requests like requests to create, update and delete into changesets
   - How to combine read requests and changesets into batch requests and execute them
