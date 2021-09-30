@@ -15,9 +15,9 @@ primary_tag: products>sap-cloud-sdk
 
 ## Details
 
-> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/docs/js/getting-started)
+> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
 > This tutorial is not actively maintained and might be partially outdated.
-> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/docs/js/getting-started).
+> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
 
 ### You will learn

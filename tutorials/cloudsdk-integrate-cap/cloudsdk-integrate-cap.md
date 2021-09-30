@@ -14,6 +14,12 @@ author_profile: https://github.com/MatKuhr
  - An account on [Cloud Foundry](group.scp-1-get-ready)
 
 ## Details
+
+> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> This tutorial is not actively maintained and might be partially outdated.
+> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
+> We will provide a link to the updated version of this tutorial as soon as we release it.
+>
 ### You will learn
   - How to integrate the  SAP Cloud SDK into the SAP Cloud Application Programming Model
   - How to write a custom event handler for CAP Java
