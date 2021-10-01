@@ -36,7 +36,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 
 1. In SAP Business Application Studio project, right-click the **Pages** | **MDK: New Page**.
 
-    !![MDK](img_1.1.png)
+    !![MDK](img-1.1.png)
 
 2. Select | **Section Page** and click **Next**.
 
@@ -54,7 +54,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 
 5. In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Contact Cell Table** control onto the Page area.
 
-    !![MDK](img_1.5.gif)
+    !![MDK](img-1.5.gif)
 
     >A **Compound** control contains a group of other controls. Unlike in a container control where you can add your own child controls (container items), the child controls in a compound control are fixed. You can populate each of its child control by defining its data binding, depending on which the child controls are created.
 
@@ -62,45 +62,41 @@ To create the Customer List page, you will create a **Section page** and drag th
 
     | Field | Value |
     |----|----|
-    | `Service`| select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `EntitySet` | Select `Customers` from the dropdown |
     | `QueryOptions` | `$orderby=LastName` |
 
-    !![MDK](img_1.6.gif)
+    !![MDK](img-1.6.gif)
 
 7. In the **Properties** pane, click the **link icon** to open the Object Browser for the **Description** property. Double click the `City` property of the Customer entity to set it as the binding expression and click **OK**.
 
-    !![MDK](img_1.7.gif)
+    !![MDK](img-1.7.gif)
 
     >Be careful **not** to select `City` from `Address (ESPM.Address)`.
 
-    >!![MDK](img_1.7.1.png)
+    >!![MDK](img-1.7.1.png)
 
 8. Repeat the above steps for `Headline` and `Subheadline` properties binding to `LastName` and `FirstName` properties of the Customer entity respectively.
 
     You should have final results as below.
 
-    !![MDK](img_1.8.png)
+    !![MDK](img-1.8.png)
 
 9. In the **Search** section of the Properties pane, change both the **Search Enabled** property and **Barcode Scanner** property to **true**.
 
-    !![MDK](img_1.9.png)
+    !![MDK](img-1.9.png)
 
-10. In the **Activity Items** section of the Properties pane, change `VideoCall` on the first activity to **Phone**.
+10. In the **Activity Items** section of the Properties pane, click `+` icon to add a new activity item.
 
-    !![MDK](img_1.10.gif)
+    !![MDK](img-1.10.png)
 
 11. Click the **link icon** to open the Object browser for the **Phone** activity and bind it to the `PhoneNumber` property of the Customer entity.
 
-    !![MDK](img_1.11.png)
+    !![MDK](img-1.11.gif)
 
-12. Repeat the above step for **Email** activity and bind it to `EmailAddress` property of the Customer entity.
+12. Similarly, add one more activity item, select **Email** from the dropdown and bind it to `EmailAddress` property of the Customer entity.
 
-    !![MDK](img_1.12.png)
-
-13. Click the **trash** can icon for the Detail activity to remove it from the Activity list.
-
-    !![MDK](img_1.13.png)
+    !![MDK](img-1.12.png)
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -111,11 +107,11 @@ Now, you will create a Navigation action that opens the `Customers_List.page` wh
 
 1. In SAP Business Application Studio project, right-click the **Actions** | **MDK: New Action**.
 
-    !![MDK](img_2.1.png)
+    !![MDK](img-2.1.png)
 
 2. Choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
 
-    !![MDK](img_2.2.png)
+    !![MDK](img-2.2.png)
 
 2. Provide the below information:
 
@@ -124,7 +120,7 @@ Now, you will create a Navigation action that opens the `Customers_List.page` wh
     | `Action Name`| `NavToCustomers_List` |
     | `PageToOpen` | Select `Customers_List.page` from the dropdown |
 
-    !![MDK](img_2.3.png)
+    !![MDK](img-2.3.png)
 
 3. Click **Next** and then **Finish** on the confirmation step.
 
@@ -137,7 +133,7 @@ Now, that the Customer List page is created, you will add a button to the Main p
 
 1. In `Main.page`, drag and drop the **Section Button Table** container control onto the Page.
 
-    !![MDK](img_3.1.gif)
+    !![MDK](img-3.1.gif)
 
     >**Container** includes controls that act as containers for other controls, such as container items. A container is constant for all pages. The size of a container depends on the controls and contents included inside.
 
@@ -153,11 +149,11 @@ Now, that the Customer List page is created, you will add a button to the Main p
 
 3. In the Properties pane, set the **Title** of the button to **Customer List**.
 
-    !![MDK](img_3.3.png)
+    !![MDK](img-3.3.png)
 
 4. Under **Events** tab, click the **link icon** for the `OnPress Handler` property to open the Object Browser. Double click the `NavToCustomers_List` action and click **OK** to set it as the `OnPress Handler` Action.
 
-    !![MDK](img_3.4.gif)
+    !![MDK](img-3.4.gif)
 
 [DONE]
 [ACCORDION-END]
@@ -172,7 +168,7 @@ Deploy the updated application to your MDK client.
 
 2. Select deploy target as **Mobile & Cloud**.
 
-    !![MDK](img_4.2.png)
+    !![MDK](img-4.2.png)
 
     You should see success message for both deployments.
 
@@ -229,11 +225,11 @@ Deploy the updated application to your MDK client.
 
 1. Either click the highlighted button or refresh the web page to load the changes.
 
-    !![MDK](img_6.5.png)
+    !![MDK](img-6.5.png)
 
-    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+    >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
-    >!![MDK](img_6.8.png)
+    >!![MDK](img-6.8.png)
 
 2. You will notice, newly added button on the main page. Click **Customer List**.
 

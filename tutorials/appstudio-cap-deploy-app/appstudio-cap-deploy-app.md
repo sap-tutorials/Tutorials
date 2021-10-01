@@ -15,10 +15,11 @@ author_profile: https://github.com/Paolaufer
     To create a new instance in your trial account:
     1. Go to your space in the SAP Cloud Platform cockpit.
     2. Go to **Service Marketplace**.
-    3. Select **SAP HANA Schemas & HDI Containers (SAP HANA Trial)**.
-    4. Click **Create New Instance**.
-    5. Select `hdi-shared` as the service plan and provide a name for the new instance.
-    6. Click **Create Instance**.
+    3. Select **SAP HANA Schemas & HDI Containers Trial**.
+    4. Click **Create**.
+    !![Create instance](create-new-instance.png)
+    5. From the **Plan** dropdown menu, select `hdi-shared` as the service plan and provide a name for the new instance.
+    6. Click **Create**.
 
 
 ## Details
@@ -63,13 +64,13 @@ The result should look as follows:
 
 1. In the **Run Configurations** view, open the run configuration you previously created and make sure that the dependencies have changed and that you can see a dependency to `db(hana)`.
 
-    !![Run COnfiguration SAP HANA dependencies](db-dependency.png)
+    !![Run COnfiguration SAP HANA dependencies](run.png)
 
     The **Run Configuration** view allows you to bind to the specific SAP HANA instance with which you want your application to run. It will automatically install all the required dependencies and offer you to deploy your data model.  (It actually generates a deploy task that you can run at any given time.) Moreover, it generates a connection in the **SQLTOOLS** view, so you can instantly check the data in your database.
 
 2. Click the **Bind** icon to the right of the `db` dependency. A list of SAP HANA service instances from your space is presented (you may need to log into Cloud Foundry).
 
-    !![Bind to an SAP HANA service](bind-icon.png)
+    !![Bind to an SAP HANA service](run5.png)
 
 3.	Select the SAP HANA service instance to which you want to bind the dependency.
 
@@ -87,15 +88,15 @@ The result should look as follows:
 
 7.	Open the `Authors` tables, and click on the magnifier glass icon next to it.
 
-    !![Tables](authors-tables.png)
+    !![Tables](authors-tables2.png)
 
 8. In the editor tab that opens, browse the table data and make sure it is correct.
 
 9. Click the green arrow on the right of the configuration name to run the application.
 
-    !![Run the application](run-config.png)
+    !![Run the application](run2.png)
 
-10. When prompted, click **Open**.
+10. When prompted, click **Open in new tab**.
 
     The application opens in the browser and you can click to see the metadata and entities of the service. The data is now retrieved from the SAP HANA database in your Cloud Foundry space.
 
@@ -112,7 +113,7 @@ This adds an `mta.yaml` file to the root of your application.
 
     Note: If you are working on a trial account, open the `mta.yaml` file, and in the `resources` section change the `service` parameter to `hanatrial`. Save your changes.
 
-2.	Right-click the `mta.yaml` file and choose **Build MTA**.
+2.	Right-click the `mta.yaml` file and choose **Build MTA Project**.
 
     !![Build MTA](build-mta.png)
 
@@ -120,7 +121,7 @@ This adds an `mta.yaml` file to the root of your application.
 
 3. Right-click the `mtar` file and choose **Deploy MTA Archive**.
 
-    !![Deploy MTA](deploy-mta.png)
+    !![Deploy MTA](deploy-mta2.png)
 
 Once the task is complete, your application should be available in your Cloud Foundry space.
 To access your application, go to your space in the SAP Cloud Platform cockpit and select **Applications** from the side menu.

@@ -1,13 +1,12 @@
 ---
-title: Configure and Activate Process Visibility Scenario
-description: Configure process visibility scenario and activate it.
+title: Configure and Activate Visibility Scenario
+description: Configure a visibility scenario and activate it.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, products>sap-cloud-platform]
-primary_tag: products>sap-cloud-platform
+tags: [tutorial>beginner, products>sap-business-technology-platform]
+primary_tag: products>sap-business-technology-platform
 author_name: Deeksha R
 author_profile: https://github.com/Deeksha-R
-
 ---
 
 ## Prerequisites
@@ -18,9 +17,9 @@ author_profile: https://github.com/Deeksha-R
   - How to view visibility scenarios for the capital expenditure process
   - How to activate a visibility scenario
 
-Process visibility scenarios allow users to track the performance of end-to-end processes. You can create, edit, delete, and activate a scenario using the **Configure Visibility Scenarios** application. For more information, see [SAP Help Portal](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
+Visibility scenarios allow users to track the performance of end-to-end processes. You can create, edit, delete, and activate a visibility scenario using the **Configure Visibility Scenarios** application. For more information, see [SAP Help Portal](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
 
-In this tutorial, you explore the application, modify a performance indicator, and activate the visibility scenario.
+In this tutorial, you explore the application, modify a performance indicator, and activate the visibility scenario. You can choose to modify different entities of Configure Visibility Scenarios such as processes, phases, state, attributes and so on. For more information, see [SAP Help Portal](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
 
 ---
 
@@ -53,7 +52,7 @@ In this tutorial, you explore the application, modify a performance indicator, a
 
     !![Performance Indicators](cp-cf-wm-ppi.png)
 
-2. Choose **Approval Capital Expenditure** and change the **Representation** to **Bar Chart**. Once done, choose **Save**.
+2. Choose **Approved Capital Expenditure Requests** and change the **Representation** to **Bar Chart**. Once done, choose **Save**.
 
     !![Edit Performance Indicators](cp-cf-wm-ppiedit.png)
 
@@ -65,7 +64,7 @@ Choose **Activate**.
 
 !![Activate Visibility Scenario](cp-cf-wm-explorepv-activate.png)
 
-The successful activation message appears. You can choose to modify different entities of Configure Visibility Scenarios such as processes, phases, state, attributes and so on. For more information, see [SAP Help Portal](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
+The successful activation message appears.
 
 [VALIDATE_1]
 [ACCORDION-END]

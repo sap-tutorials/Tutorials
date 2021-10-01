@@ -95,6 +95,10 @@ Video tutorial version: </br>
 
     !![Paste Service Key details](paste_service_key.png)
 
+    It should look something like this:
+
+    !![Example default-env.json with Service Key Details](example_default_env.png)
+
 5. Next we need to enhance the CAP application configuration in the package.json file in the root of the project. Add an `uaa` section to the `cds.requires` section of the file.
 
     !![Add uaa to package.json](uaa_package_json.png)
@@ -153,7 +157,7 @@ Video tutorial version: </br>
 
 1. The `approuter` component implements the necessary handshake with XSUAA to let the user log in interactively. The resulting JWT token is sent to the application where it's used to enforce authorization.
 
-2. The application router configuration was generated in the previous tutorial via wizard.  We now want to extend that application router setup.  Start with the package.json file in the `/app` folder. We want to update the version of the `@sap/approuter` to at least version 9.1.
+2. The application router configuration was generated in the previous tutorial via wizard.  We now want to extend that application router setup.  Start with the package.json file in the `/app` folder. We want to update the version of the `@sap/approuter` to at least version 10
 
     !![Update app router version](approuter_version.png)
 
@@ -208,6 +212,9 @@ Video tutorial version: </br>
 
     !![Add UAA to SRV module](mta_srv.png)
 
+3. **OPTIONAL** If you want to use the mta.yaml text editor instead of the form based edition you could make this same change by adding the following line:
+
+    !![mta.yaml add UAA](mta_yaml_add_uaa.png)
 
 [DONE]
 [ACCORDION-END]

@@ -8,9 +8,9 @@ time: 15
 ---
 
 ## Prerequisites  
-- You have executed the previous tutorials in [Get started with SAP Workflow Service](group.cp-workflow-cf).
+- You have executed the previous tutorials in [Get started with the workflow capability](group.cp-workflow-cf).
 - Make sure that you use a dev space with the extension **Launchpad Module**.
-- You have created a destination to the workflow service instance with the authentication method `OAuth2JWTBearer`. See [Destinations Pointing to Service Instances](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/685f383cebb54c009b2fac633b32c90f.html).
+- You have created a destination to the workflow capability instance with the authentication method `OAuth2JWTBearer`. See [Destinations Pointing to Service Instances](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/685f383cebb54c009b2fac633b32c90f.html).
 
 ## Details
 ### You will learn  
@@ -141,7 +141,7 @@ These expressions refer to the attributes in the JSON file that you have created
 
 [ACCORDION-BEGIN [Step 7: ](Build and deploy)]
 
-1. Right-click the **mta.yaml** file in your **onboarding** project, and then select **Build MTA**.
+1. Right-click the **mta.yaml** file in your **onboarding** project, and then select **Build MTA Project**.
 
     Once the build is completed, the new folder **`mta_archives`** appears under your application folder.
 
@@ -163,7 +163,7 @@ These expressions refer to the attributes in the JSON file that you have created
 
 4. On the **Launchpad** tile, choose **Go to Application**.
 
-    ![Go to App](go-to-app.png)
+    ![Go to App](go-to-app1.png)
 
 5. On the **Site Directory** that opens, choose **Create Site**.
 
@@ -180,7 +180,7 @@ These expressions refer to the attributes in the JSON file that you have created
 
     ![Choose Provider Manager](choose-provider-manager.png)
 
-2. To make the default HTML5 Apps content provider load the standard apps of the workflow service, choose the **Refresh** action.
+2. To make the default HTML5 Apps content provider load the standard apps of the workflow capability, choose the **Refresh** action.
 
     ![Choose Refresh](choose-refresh.png)
 
@@ -291,7 +291,7 @@ After deployment is finished, open your launchpad site that contains the workflo
 ---
 Summary
 
-Now, you have created a custom end user UI for your workflow using a start form. To learn more about SAP Workflow service, see:
+Now, you have created a custom end user UI for your workflow using a start form. To learn more about the workflow capability, see:
 
-- [The SAP Help Portal](https://help.sap.com/viewer/product/WORKFLOW_SERVICE/Cloud/en-US) with entry points to our documentation and blogs
+- [The SAP Help Portal](https://help.sap.com/viewer/product/WORKFLOW/Cloud/en-US) with entry points to our documentation and blogs
 - The service catalog of [SAP Discovery Center](https://discovery-center.cloud.sap/#/serviceCatalog/workflow)

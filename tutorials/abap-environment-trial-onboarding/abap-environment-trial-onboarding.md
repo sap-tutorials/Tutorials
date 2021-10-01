@@ -63,7 +63,6 @@ This tutorial is part of a 3-part series of SAP BTP, ABAP Environment tutorials,
     ![Select ABAP Trial](boosters3.png)
 
 6. The booster is now executed successfully.
-   **Download** the service key for later use. The service key is needed to setup the connection in ABAP Development Tools (ADT).
 
     ![Select ABAP Trial](boosters4.png)
 
@@ -73,9 +72,9 @@ This tutorial is part of a 3-part series of SAP BTP, ABAP Environment tutorials,
 
 [ACCORDION-BEGIN [Step 2: ](Open ABAP Development Tools )]
 
-Open your local ABAP Development Tools (ADT). You can download the latest version from <https://tools.hana.ondemand.com/#abap>.
+Open Eclipse. Make sure you have installed ADT in your Eclipse. Find [here](abap-install-adt) the Eclipse installation instruction.
 
-![Create service definition](adt_logo.png)
+![Create service definition](eclipse.png)
 
 [DONE]
 [ACCORDION-END]
@@ -86,9 +85,9 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 
       ![Create ABAP cloud project](cloud.png)
 
-  2. Select **Use Cloud Foundry Environment** in section **SAP BTP Cloud Foundry Environment** and click **Next >**.
+  2. Select **Use Cloud Foundry Environment** and click **Next >**.
 
-      ![Create ABAP cloud project](project2.png)
+      ![Create ABAP cloud project](project2x.png)
 
   3. Enter your **connection settings**:
      - Region: choose your SAP BTP Cloud Foundry Environment region, for e.g. Europe (Frankfurt)

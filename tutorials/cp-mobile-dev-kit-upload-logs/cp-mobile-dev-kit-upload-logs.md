@@ -33,7 +33,7 @@ In this step, you will enable client log upload policy in **SAP Mobile Services 
 
 2. Check **Log Upload** option and click **Save**.
 
-    !![MDK](img_1.2.png)
+    !![MDK](img-1.2.png)
 
     >Other policy parameters like Log Level, Delete Uploaded Log After, Maximum Number of Logs and Maximum Log Size currently have no effect.
 
@@ -116,7 +116,7 @@ You will create 3 actions:
 
 Double click the `LogSetState.action` file | expand **Common Action Properties** | click the link icon for **Success Action** and bind it to  `LogSetLevel.action`
 
-!![MDK](img_3.png)
+!![MDK](img-3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -129,7 +129,7 @@ You will bind `LogSetState.action` at success of  `InitializeOffline.action`.
 
 Navigate to `DemoSampleApp` | `Actions` | `Service` | `InitializeOffline.action` | scroll-down and expand **Common Action Properties** section | click the link icon for **Success Action** and bind it to  `LogSetState.action`
 
-!![MDK](img_4.gif)
+!![MDK](img-4.gif)
 
 
 [DONE]
@@ -191,7 +191,7 @@ You will define two message actions for displaying success or failure when _Log 
     | `Show Activity Indicator` | Select `true` from the dropdown ||
     | `Activity Indicator Text`|  `Uploading Logs...` |
 
-    !![MDK](img_5.3.png)
+    !![MDK](img-5.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -208,18 +208,18 @@ You will add a toolbar item to the _main page_ called **Upload Logs**. You will 
 
     | Property | Value |
     |----|----|
-    | `Caption`| `upload Logs`  |
+    | `Caption`| `Upload Logs`  |
     | `Visible`| `$(PLT,true,true,false)`  |
 
-    !![MDK](img_6.2.png)
+    !![MDK](img-6.2.png)
 
     >Platform (PLT) function `$(PLT, <iOS>, <Android>, <Web>)` lets you to define a platform specific value for metadata property as Upload Logs functionality is not applicable in MDK Web environment, this option will not be visible in Web application. You can find more details on PLT function in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/property-binding/platform-specific-binding.html#plt-formatter-for-events-supported-for-both-mobile-and-web).
 
-3. In the Properties pane, click the **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
+3. In the Properties pane, click the **Events** tab, click the 3 dots icon for the `OnPress` property to open the **Object Browser**.
 
     Double click the `LogUpload.action` action and click **OK** to set it as the `OnPress` Action.
 
-    !![MDK](img_6.3.png)
+    !![MDK](img-6.3.png)
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -234,9 +234,9 @@ Deploy the updated application to your MDK client.
 
 2. Select deploy target as **Mobile Services**.
 
-    !![MDK](img_7.2.png)
+    !![MDK](img-7.2.png)
 
-    You should see **Deploy succeeded** message.
+    You should see **Deploy to Mobile Services successfully!** message.
 
     !![MDK](img-7.3.png)
 
@@ -278,13 +278,17 @@ Deploy the updated application to your MDK client.
 
 [ACCORDION-BEGIN [Step 9: ](Examine uploaded logs in Mobile Services cockpit)]
 
-Open SAP Mobile Services Cockpit, click **Mobile Applications** | **Native/Hybrid** | click `com.sap.mdk.demo` app | **Mobile Client Log Upload** | **Logs**.
+Open SAP Mobile Services Cockpit, click **Mobile Applications** | **Native/Hybrid** | click `com.sap.mdk.demo` app | **Mobile Client Log Upload** | **Log Files**.
 
-!![MDK](img_9.png)
+!![MDK](img-9.png)
 
-You may view log entries directly in Mobile Services Cockpit or download them locally.
+A log file is created for each upload. All the uploaded files, including all levels, not just error or fatal will be listed here.
 
->You can find more details about [Uploading and Viewing Client Logs](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/logging/admin/client-logs.html).
+You can view any Error and Fatal client logs under *Logs* tab.
+
+!![MDK](img-9.1.png)
+
+>Check [documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/662c8a51d3df48bb99baea65855f3441.html) for more details about Uploading and Viewing Client Logs.
 
 [VALIDATE_1]
 [ACCORDION-END]

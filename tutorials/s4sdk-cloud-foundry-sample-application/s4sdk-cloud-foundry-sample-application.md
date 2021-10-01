@@ -2,7 +2,7 @@
 title: Create a Sample Application on Cloud Foundry Using SAP Cloud SDK
 description: Create the very first Hello World example on Cloud Foundry using the SAP Cloud SDK.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-business-technology-platform, topic>cloud, topic>java ]
 primary_tag: products>sap-cloud-sdk
 time: 20
 ---
@@ -15,9 +15,10 @@ This tutorial will cover your first steps when developing applications for SAP C
 
 [ACCORDION-BEGIN [Step 1: ](Setup for Cloud Foundry)]
 
-In order to deploy applications to `SCP Cloud Foundry`, you need to create a free trial account. You can create your account by visiting <https://cloudplatform.sap.com/try.html>
+In order to deploy applications to `SCP Cloud Foundry`, you need to create a free trial account.
+You can create your account by following [this tutorial](hcp-create-trial-account).
 
-After creating your account and activating it via email, you can log in to your personal `Cloud Cockpit`. For your first visit, it should look like this:
+After creating your account and activating it via email, you can log in to your personal [Cloud Cockpit](https://cockpit.hanatrial.ondemand.com/trial/#/home/trial). For your first visit, it should look like this:
 
 ![SAP Cloud Platform Cockpit first view](cloudplatform-cockpit-first-view.png)
 

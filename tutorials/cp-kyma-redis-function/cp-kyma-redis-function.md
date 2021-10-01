@@ -145,9 +145,9 @@ In this step, you will deploy three resources into the Kyma runtime that were ob
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add event trigger to function)]
+[ACCORDION-BEGIN [Step 7: ](Add event subscription to function)]
 
-In this step, you will configure the function `cache-order`, deployed in the previous step, to be triggered when the **order.created** event is fired from the Commerce Mock application.
+In this step, you will configure the function `cache-order`, deployed in the previous step, to run when the **order.created** event is fired from the Commerce Mock application.
 
 1. In the `dev` namespace, choose **Workload > Functions**.
 
@@ -159,7 +159,7 @@ In this step, you will configure the function `cache-order`, deployed in the pre
 
     ![Cache Order](./assets/function-config-co.png)
 
-4. In the **Configuration** scroll down and choose **Add Event Triggers**.
+4. In the **Configuration** scroll down and choose **Create Event Subscription**.
 
 5. Choose the event **order.created** and then choose **Add**
 

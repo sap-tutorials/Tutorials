@@ -150,9 +150,11 @@ ENDCLASS.
     IF io_request->is_data_requested( ).
 
     DATA:
-        "abstract entity; receives data from remote servce
+
+        "abstract entity; receives data from remote service
         lt_travel    TYPE STANDARD TABLE OF ZTRAVEL,
-        "custom entity; fills output param of SELECT
+
+        "custom entity; fills output parameter of SELECT
         lt_travel_ce TYPE STANDARD TABLE OF zce_travel_data_pmd.
 
     ENDIF.

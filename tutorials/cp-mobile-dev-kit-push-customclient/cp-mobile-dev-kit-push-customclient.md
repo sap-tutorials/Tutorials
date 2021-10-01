@@ -75,8 +75,8 @@ To enable your app for push notifications, you need to carry out the following t
 
 * Obtain a certificate signing request
 * Register an iOS App ID
-* Create a new development certificate .CER file
-* Install the .CER file and create the .p12 file
+* Create a new development certificate `.cer` file
+* Install the `.cer` file and create the .p12 file
 * Register your device
 
 1. Obtain a certificate signing request
@@ -125,7 +125,7 @@ To enable your app for push notifications, you need to carry out the following t
 
     Confirm your App ID by clicking on **Register**.
 
-3. Create a new development certificate .CER file
+3. Create a new development certificate `.cer` file
 
     Under **Identifiers**, search for the App ID that you registered in previous step.
 
@@ -137,13 +137,13 @@ To enable your app for push notifications, you need to carry out the following t
 
     To configure push notifications for the App ID `com.sap.mdk.demo`, a Client SSL Certificate is required that will allow the notification server to connect to the Apple Push Notification Service. Each App ID requires its own Client SSL Certificate.
 
-    Click **Create Certificate** to start the process for creating the needed `.CER` file.
+    Click **Create Certificate** to start the process for creating the needed `.cer` file.
 
     !![MDK](img_1.12.8.png)
 
     Click **Choose File** and browse to the downloaded Signing Request `CSR` file, click **Continue**.
 
-    Apple will now create a `.CER` file for you which is issued by the **Apple Worldwide Developer Relations Certification Authority**.
+    Apple will now create a `.cer` file for you which is issued by the **Apple Worldwide Developer Relations Certification Authority**.
 
     !![MDK](img_1.12.9.png)
 
@@ -151,13 +151,13 @@ To enable your app for push notifications, you need to carry out the following t
 
     !![MDK](img_1.12.10.png)
 
-4. Install the .CER file and create the .p12 file
+4. Install the `.cer` file and create the .p12 file
 
-    In order to configure the `APNS` on **SAP Mobile Services**, you need to install the `.CER` file and create the needed `.p12` file.
+    In order to configure the `APNS` on **SAP Mobile Services**, you need to install the `.cer` file and create the needed `.p12` file.
 
     >A `.p12` file is a encrypted container for the certificate and private key. This file is needed by Mobile Services for the `APNS` configuration.
 
-    Locate your downloaded `.CER` file and double-click it in order to install the certificate.
+    Locate your downloaded `.cer` file and double-click it in order to install the certificate.
 
     >In case the **Add Certificate** dialog pops up make sure to choose **Login** from the dropdown and click **Add**.
 
@@ -205,7 +205,7 @@ To enable your app for push notifications, you need to carry out the following t
 
 3. In Mobile Services cockpit, navigate to `Mobile Applications` | `Native/Hybrid` | `com.sap.mdk.demo` | `Mobile Push Notification`. Paste the Server Key value in **Android** push settings in Mobile Services cockpit.
 
-    !![MDK](img_2.3.png)
+    !![MDK](img-2.3.png)
 
 4. Repeat the above step for **Sender ID** and then click **Save**.
 
@@ -217,7 +217,7 @@ To enable your app for push notifications, you need to carry out the following t
 
     !![MDK](img_2.4.png)
 
-2. Provide the following details to the **Apple** panel:
+2. Provide the following details to the **Apple** panel and click **Save**.
 
 
     |  Field Name     | Value |
@@ -227,9 +227,11 @@ To enable your app for push notifications, you need to carry out the following t
     |  Certificate | `Browse to the `.p12`certificate you just exported` |
     |  Password | Enter the password you provided during the export |
 
-3. Click **Save**. You have now successfully configured the APNS Endpoint on the server side in Mobile Services cockpit.
+    !![MDK](img-2.5.png)
 
-    !![MDK](img_2.5.png)
+You have now successfully configured the APNS Endpoint on the server side in Mobile Services cockpit.
+
+
 
 [OPTION END]
 

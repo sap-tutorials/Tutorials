@@ -26,16 +26,9 @@ For this tutorial, we use the new SAP Business Application Studio as the develop
 > ### What's great about using SAP Business Application Studio?
 > You get an editor, useful extensions and all the tools required to develop CAP applications and full access to the terminal.
 
-To make sure that everything is set up correctly, this tutorial also includes how to build and run a simple Hello World application. Cloud Application Programming Model (CAP) supports both Java and Node.js development. But for this tutorial, we're using Java. The [CAP Java SDK](https://cap.cloud.sap/docs/java/) is able to tightly integrate with [Spring Boot](https://spring.io/projects/spring-boot), which provides numerous features out of the box. This means, Spring Boot will be your runtime container.
+To make sure that everything is set up correctly, this tutorial also includes how to build and run a simple Hello World application. The SAP Cloud Application Programming Model (CAP) supports both Java and Node.js development. But for this tutorial, we're using Java. The [CAP Java SDK](https://cap.cloud.sap/docs/java/) is able to tightly integrate with [Spring Boot](https://spring.io/projects/spring-boot), which provides numerous features out of the box. This means, Spring Boot will be your runtime container.
 
-For a general overview about CAP, you might also want to check out at some blog posts or the live streams by Developer Advocates **`Max Streifeneder`** and **`DJ Adams`**.
-
- - [SAP Cloud Application Programming Model (CAP) for SAP BTP – start here](https://blogs.sap.com/2018/10/10/application-programming-model-start-here/)
- - [Max's Adventure in SAP BTP: CAP in Love.](https://blogs.sap.com/2019/11/21/maxs-adventure-in-sap-cloud-platform-cap-in-love./)
- - [`Live Stream`: Max's Adventure in SAP BTP](https://www.youtube.com/playlist?list=PLzLY5gikd9hCE52Xlz9e9tYGQj_U2ThYx)
- - [`Live Stream`: Hands-on SAP Dev with `qmacro`](https://www.youtube.com/playlist?list=PL6RpkC85SLQAIntm7MkNk78ysDm3Ua8t0)
-
-
+For a general overview about CAP, you might also want to have a look at the official [CAP documentation](https://cap.cloud.sap/docs/resources/) and the [CAP Community](https://community.sap.com/topics/cloud-application-programming).
 
 ---
 
@@ -47,33 +40,24 @@ For this tutorial, you'll create a dev space personalized for building services 
 
 1. Go to the [SAP BTP Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) on Trial.
 
-2. Click **Enter Your Trial Account**.
-
-3. Select your subaccount.
+2. Choose **SAP Business Application Studio** under **Quick Tool Access**.
 
     !![enter subaccount](enter-subaccount.png)
 
-4. Go to **Subscriptions** submenu and filter for **Business Application Studio**.
+3. On the welcome page choose **Create Dev Space**.
 
-    !![subscriptions filter for Business Application Studio](subscriptions-filter.png)
-
-5. Open the SAP Business Application Studio by clicking on **Go to Application** on the according tile.
-> If you aren't already subscribed, please subscribe first.
-
-6. Choose **Create Dev Space**
-
-    !![click on create dev space](create-dev-space.png)
-
-7. Choose **`CAPTutorial`** as the name for your dev space and **SAP Cloud Business Application** as the application type. Continue with **Create Dev Space**.
+4. Choose **`CAPTutorial`** as the name for your dev space and **Full Stack Cloud Application** as the application type. Continue with **Create Dev Space**.
 
     !![choose space name and type](select-app-type.png)
 
-    By selecting SAP Cloud Business Application, your space comes with several extensions out of the box that you'll need to develop CAP applications. For example, CDS tools are built in. This saves unnecessary setup time.
+    By selecting **Full Stack Cloud Application**, your space comes with several extensions out of the box that you'll need to develop CAP applications. For example, CDS tools are built in. This saves unnecessary setup time.
     The creation of the dev space takes a few seconds.
 
-8. When it's ready, open your dev space by clicking on the name.
+5. When it's ready, open your dev space by clicking on the name.
 
     !![open dev space](open-dev-space.png)
+
+    > Please note that you're using the trial version of SAP Business Application Studio. See section [Restrictions](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/a45742a719704bdea179b4c4f9afa07f.html) in the SAP Business Application Studio documentation for more details on how your development environment can be affected.
 
 [DONE]
 [ACCORDION-END]
@@ -98,7 +82,7 @@ For this tutorial, you'll create a dev space personalized for building services 
 
     ```Shell/Bash
     mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
-    -DarchetypeVersion=RELEASE \
+    -DarchetypeVersion=1.17.0 \
     -DgroupId=com.sap.cap -DartifactId=products-service -Dpackage=com.sap.cap.productsservice
     ```
 
@@ -127,7 +111,7 @@ For this tutorial, you'll create a dev space personalized for building services 
 
 CAP applications use [Core Data Services](https://cap.cloud.sap/docs/cds/) (CDS) to describe:
 
-- Data structures by using [entity definitions](https://cap.cloud.sap/docs/cds/cdl#entities-views)
+- Data structures by using [entity definitions](https://cap.cloud.sap/docs/cds/cdl#entity-and-type-definitions)
 - How data structures are consumed by using [service definitions](https://cap.cloud.sap/docs/cds/cdl#services)
 
 In this step, you'll define a simple service, which also defines its own entity. In more complex applications, services usually expose projections on entities defined in the data model.

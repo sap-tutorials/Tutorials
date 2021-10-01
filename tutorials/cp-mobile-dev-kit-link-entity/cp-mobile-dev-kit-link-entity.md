@@ -49,7 +49,7 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
 
 3. In the Properties pane, set the **Caption** to **Create Order**.
 
-    !![MDK](img_1.3.png)
+    !![MDK](img-1.3.png)
 
 4. Now, you will add the fields (like Currency Code, Net Amount, Tax Amount, Gross Amount, Life cycle status, Life cycle status name and order creation date) for creating a new sales order record by the end-user.
 
@@ -69,7 +69,7 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     | `Caption` | `CurrencyCode` |
     | `Value`| `EUR` |
 
-    !![MDK](img_1.6.png)
+    !![MDK](img-1.6.png)
 
     >Under **Value** property, you can set some default values.
 
@@ -81,7 +81,7 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     | `Caption` | `NetAmount` |
     | `Value`| `18.010` |
 
-    !![MDK](img_1.7.png)
+    !![MDK](img-1.7.png)
 
 8. Select the third **Simple Property control** and provide the below information:
 
@@ -91,7 +91,7 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     | `Caption` | `TaxAmount` |
     | `Value`| `108.010` |
 
-    !![MDK](img_1.8.png)
+    !![MDK](img-1.8.png)
 
 9. Select the forth **Simple Property control** and provide the below information:
 
@@ -101,7 +101,7 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     | `Caption` | `GrossAmount` |
     | `Value`| `126.02` |
 
-    !![MDK](img_1.9.png)
+    !![MDK](img-1.9.png)
 
 10. Select the fifth **Simple Property control** and provide the below information:
 
@@ -111,7 +111,7 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     | `Caption` | `LifeCycleStatus` |
     | `Value`| `N` |
 
-    !![MDK](img_1.10.png)
+    !![MDK](img-1.10.png)
 
 11. Select the sixth **Simple Property control** and provide the below information:
 
@@ -121,7 +121,7 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     | `Caption` | `LifeCycleStatusName` |
     | `Value`| `New` |
 
-    !![MDK](img_1.11.png)
+    !![MDK](img-1.11.png)
 
 12. Select the last control **Date Picker** and provide the below information:
 
@@ -131,7 +131,7 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     | `Caption` | `Creation Date` |
     | `Mode`| Select `datetime` from the dropdown |
 
-    !![MDK](img_1.12.png)
+    !![MDK](img-1.12.png)
 
 [DONE]
 [ACCORDION-END]
@@ -150,17 +150,17 @@ Now, you will add a button on the Create Order page and set its `onPress` to `Cl
 
     Double click the **Cancel** type and click **OK**.
 
-    !![MDK](img_2.2.png)
+    !![MDK](img-2.2.png)
 
     >System Item are predefined system-supplied icon or text. Overwrites _Text_ and _Icon_ if specified.
 
 3. Now, you will set the `onPress` event to `CloseModalPage_Cancel.action`.
 
-    In **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
+    In **Events** tab, click the 3 dots icon for the `OnPress` property to open the **Object Browser**.
 
     Double click the `CloseModalPage_Cancel.action` and click **OK** to set it as the `OnPress` Action.
 
-    !![MDK](img_2.3.png)
+    !![MDK](img-2.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -181,7 +181,7 @@ Now, you will add a button on the Create Order page and set its `onPress` to `Cl
     | `PageToOpen` | Select `SalesOrderHeaders_Create.page` from the dropdown |
     | `ModalPage`| Select `true` from the dropdown |
 
-    !![MDK](img_3.2.png)
+    !![MDK](img-3.2.png)
 
 3. Click **Next** and then **Finish** on the confirmation step.
 
@@ -194,17 +194,17 @@ You will add a toolbar item to the `Customers_Detail.page` called **Create Order
 
 1. In `Customers_Detail.page`, drag and drop a **Toolbar Item** to the lower left of the page.
 
-    !![MDK](img_4.1.gif)
+    !![MDK](img-4.1.gif)
 
 2. In the Properties pane, set **Caption** to **Create Order**.
 
-    !![MDK](img_4.2.png)
+    !![MDK](img-4.2.png)
 
-3. In the Properties pane, click the **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
+3. In the Properties pane, click the **Events** tab, click the 3 dots icon for the `OnPress` property to open the **Object Browser**.
 
     Double click the `NavToSalesOrderHeaders_Create.action` and click **OK** to set it as the `OnPress` Action.
 
-    !![MDK](img_4.3.png)
+    !![MDK](img-4.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -244,22 +244,22 @@ The next step is to store newly created record locally for an offline applicatio
 
     !![MDK](img_5.2.png)
 
-    Provide the below information:
+    In **Operation and Service Selection** step, provide the below information:
 
     | Property | Value |
     |----|----|
     | `Action Name`| `SalesOrderHeaders_CreateEntity` |
     | `Type` | Select `CreateRelatedEntity` from the dropdown |
-    | `Service`| Select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `EntitySet` | Select `SalesOrderHeaders` from the dropdown |
 
-    !![MDK](img_5.2.2.png)
+    !![MDK](img-5.2.2.png)
 
     >`CreateRelatedEntity` action creates the new entity against the navigation property of an existing entity with which the relationship is to be established.
 
 3. Click **Next**.
 
-4. In next step, provide the below information:
+4. In **Parent Link and Properties Selection** step, provide the below information:
 
     | Property | Value |
     |----|----|
@@ -268,7 +268,7 @@ The next step is to store newly created record locally for an offline applicatio
     | `ReadLink`| click link icon and double click `readLink` |
     | `Property` | Select `SalesOrders` from the dropdown |
 
-    !![MDK](img_5.3.png)
+    !![MDK](img-5.3.png)
 
     >In [Mobile Services sample backend](cp-mobile-dev-kit-ms-setup), click **Metadata URL** and you will find `SalesOrders` navigation property for `Customers` entity.
 
@@ -280,11 +280,13 @@ The next step is to store newly created record locally for an offline applicatio
 
     In the search box start typing the control name `FCCreatedate`. The list will filter down to show the matching values. Double click the **Value (Value)** entry under the `FCCreatedate` field and click **OK** to set binding.
 
-    !![MDK](img_5.4.gif)
+    !![MDK](img-5.4.gif)
 
 6. Repeat the above step for remaining properties: `CurrencyCode`, `GrossAmount`, `LifeCycleStatus`, `LifeCycleStatusName`, `NetAmount` and `TaxAmount`.
 
-    !![MDK](img_5.5.png)
+    !![MDK](img-5.5.png)
+
+    !![MDK](img-5.5.1.png)
 
       Click **Next** and **Finish** on the confirmation screen. The action editor will open with the `SalesOrderHeaders_CreateEntity.action` loaded.
 
@@ -299,7 +301,7 @@ The next step is to store newly created record locally for an offline applicatio
 
     >When `SalesOrderHeaders_CreateEntity.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered or if `SalesOrderHeaders_CreateEntity.action` fails then `CreateSalesOrderHeaderEntityFailureMessage.action` will be triggered.
 
-    !![MDK](img_5.7.png)
+    !![MDK](img-5.7.png)
 
 8. Now, that the `SalesOrderHeaders_CreateEntity.action` has been created, you will need to call this action when the end-user presses the **Save** button. You will add a **Save** button on the `SalesOrderHeaders_Create.page` and link it to the `SalesOrderHeaders_CreateEntity.action`.
 
@@ -311,11 +313,11 @@ The next step is to store newly created record locally for an offline applicatio
 
     Double click the **Save** type and click **OK**.
 
-    !![MDK](img_5.8.2.png)
+    !![MDK](img-5.8.2.png)
 
-    In the Properties pane | **Events** tab, click the **link** icon for the `OnPress` property to open the object browser, bind it to `SalesOrderHeaders_CreateEntity.action`.
+    In the Properties pane | **Events** tab, click the 3 dots icon for the `OnPress` property to open the **Object Browser**, bind it to `SalesOrderHeaders_CreateEntity.action`.
 
-    !![MDK](img_5.8.3.png)
+    !![MDK](img-5.8.3.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -328,7 +330,7 @@ In `Customers_Detail.page` you added total number of order counts for a given cu
 
 In `Customers_Detail.page`, select **Customer Orders** Object Table control. In **Properties** section, click **+** icon under **Misc** | `DataSubscriptions` and double click `SalesOrderHeaders` and click **OK**.
 
-!![MDK](img_6.gif)
+!![MDK](img-6.gif)
 
 [DONE]
 [ACCORDION-END]
@@ -343,7 +345,7 @@ Deploy the updated application to your MDK client.
 
 2. Select deploy target as **Mobile & Cloud**.
 
-    !![MDK](img_7.2.png)
+    !![MDK](img-7.2.png)
 
     You should see success message for both deployments.
 
@@ -364,19 +366,20 @@ Deploy the updated application to your MDK client.
 
 3. You will see the **CREATE ORDER** option in customer detail page. Tap it to create a new sales order.
 
-    ![MDK](img_8.1.png)
+    ![MDK](img-8.1.png)
 
 4. As you provided default values to the properties, you may change it if required. Tap **save** icon.
 
-    ![MDK](img_8.2.png)
+    ![MDK](img-8.2.png)
 
     Now, you will notice that new record has been created and count value for **SEE ALL** is now increased by one as you implemented in step 6.
 
-    ![MDK](img_8.3.png)
+    ![MDK](img-8.3.png)
 
 5. On Main page, tap **SYNC** to send local changes to the backend, a successful message will be shown.
 
-    ![MDK](img_8.4.png)
+    ![MDK](img-8.4.png)
+    ![MDK](img-8.5.png)
 
 [OPTION END]
 
@@ -388,19 +391,20 @@ Deploy the updated application to your MDK client.
 
 3. You will see the **Create Order** option in customer detail page. Tap on it to create a new sales order.
 
-    ![MDK](img_8.6.png)
+    ![MDK](img-8.6.png)
 
 4. As you provided default values to the properties, you may change it if required. Tap **Save**.
 
-    ![MDK](img_8.7.png)
+    ![MDK](img-8.7.png)
 
     Now, you will notice that new record has been created and count value for **See All** is increased by one as you implemented in step 6.
 
-    ![MDK](img_8.8.png)
+    ![MDK](img-8.8.png)
 
 5. On Main page, tap **Sync** to send local changes to the backend, a successful message will be shown.
 
-    ![MDK](img_8.9.png)  
+    ![MDK](img-8.9.png)  
+    ![MDK](img-8.10.png)  
 
 [OPTION END]
 
@@ -408,11 +412,11 @@ Deploy the updated application to your MDK client.
 
 1. Either click the highlighted button or refresh the web page to load the changes.
 
-    !![MDK](img_8.11.png)
+    !![MDK](img-8.12.png)
 
-    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+    >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
-    >!![MDK](img_8.12.png)
+    >!![MDK](img-8.11.png)
 
 2. Click **Customer List** | click one of the available customer record,  you will then navigate to Customer detail page.
 

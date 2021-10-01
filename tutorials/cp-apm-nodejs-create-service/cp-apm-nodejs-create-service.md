@@ -5,15 +5,15 @@ title: Create a Business Service with Node.js Using Visual Studio Code
 description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite, by using the SAP Cloud Application Programming Model (CAP) and developing on your local environment.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [ tutorial>beginner, topic>node-js, products>sap-business-technology-platform, software-product-function>sap-cloud-application-programming-model ]
+tags: [ tutorial>beginner, topic>node-js, products>sap-business-technology-platform,  software-product-function>sap-cloud-application-programming-model ]
 time: 50
 ---
 
 
 ## Prerequisites
-- You have installed [Node.js](https://nodejs.org/en/download/releases/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
+- You have installed [Node.js](https://nodejs.org/en/download/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
 - You have installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
-- (For Windows users only): You have installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation.
+- (For Windows) You have installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation.
 - You have installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
 - If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Business Technology Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **Europe (Frankfurt) or US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
 
@@ -53,7 +53,7 @@ Before you start, make sure that you've completed the prerequisites.
 
     ![cds commands](cds_commands.png)
 
-    > This lists the available `cds` commands. For example, use `cds version` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
+    > This lists the available `cds` commands. For example, use `cds v` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
 [DONE]
 
@@ -95,7 +95,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     > This creates a folder `my-bookshop` in the current directory.
 
-2. Open Visual Studio Code, go to **File** **&rarr;** **Open Folder** and choose the **`my-bookshop`** folder.
+2. In Visual Studio Code, go to **File** **&rarr;** **Open Folder** and choose the **`my-bookshop`** folder.
 
 3. Go to **Terminal** **&rarr;** **New Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
 
@@ -115,7 +115,8 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     ```Shell/Bash
     cds serve all --with-mocks --in-memory?
-    ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
+    watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env,css,gif,html,jpg,png,svg...
+    live reload enabled for browsers
 
 
         No models found in db/,srv/,app/,schema,services.
@@ -153,7 +154,8 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
     ```Shell/Bash
     cds serve all --with-mocks --in-memory?
-    ( watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env... )
+    watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env,css,gif,html,jpg,png,svg...
+    live reload enabled for browsers
 
 
         No models found in db/,srv/,app/,schema,services.
@@ -213,14 +215,14 @@ After initializing the project, you should see the following empty folders:
 3. As soon as you've saved your file, the still running `cds watch` reacts immediately with some new output as shown below:
 
     ```Shell/Bash
-    [cds] - using bindings from: { registry: '~/.cds-services.json' }
+    [cds] - connect using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
     /> successfully deployed to sqlite in-memory db
 
     [cds] - serving CatalogService { at: '/catalog' }
 
-    [cds] - launched in: 1557.190ms
     [cds] - server listening on { url: 'http://localhost:4004' }
+    [cds] - launched in: 1.043s
     [ terminate with ^C ]
     ```
     > This means, `cds watch` detected the changes in `srv/cat-service.cds` and automatically bootstrapped an in-memory SQLite database when restarting the server process.
@@ -360,16 +362,15 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
     > After you added these files, `cds watch`restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
 
     ```Shell/Bash
-    [cds] - using bindings from: { registry: '~/.cds-services.json' }
+    [cds] - connect using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
-    > filling my.bookshop.Authors from db/csv/my.bookshop-Authors.csv
-    > filling my.bookshop.Books from db/csv/my.bookshop-Books.csv
+     > filling my.bookshop.Authors from ./db/csv/my.bookshop-Authors.csv
     /> successfully deployed to sqlite in-memory db
 
-    [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
+    [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
-    [cds] - launched in: 1009.187ms
     [cds] - server listening on { url: 'http://localhost:4004' }
+    [cds] - launched in: 643.33ms
     [ terminate with ^C ]
     ```
 
@@ -434,12 +435,12 @@ Instead of using in-memory, you can also use persistent databases.
     ```
 
     ```Shell/Bash
-    [cds] - using bindings from: { registry: '~/.cds-services.json' }
-    [cds] - connect to db > sqlite { database: 'db/my-bookshop.db' }
-    [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
+    [cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+    [cds] - connect to db > sqlite { database: '/Users/xxxxxxx/my-bookshop/db/my-bookshop.db' }
+    [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
-    [cds] - launched in: 629.769ms
     [cds] - server listening on { url: 'http://localhost:4004' }
+    [cds] - launched in: 693.219ms
     [ terminate with ^C ]
     ```
 

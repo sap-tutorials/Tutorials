@@ -5,6 +5,8 @@ auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>invoice-object-recommendation]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 ## Prerequisites
@@ -18,11 +20,11 @@ primary_tag: topic>machine-learning
   - How to create a service key for your service instance
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
+[ACCORDION-BEGIN [Step 1: ](Go To Your Trial Account)]
 
 1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
+2. Navigate to the trial global account by clicking **Go To Your Trial Account**.
 
     !![Trial global account](png-files/01_Foundation20Onboarding_Home.png)
 

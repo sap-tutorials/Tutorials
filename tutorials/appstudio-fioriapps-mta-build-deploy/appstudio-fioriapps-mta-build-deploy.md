@@ -13,7 +13,7 @@ author_profile: https://github.com/raz-korn
 - The SAP Fiori dev space is in status `RUNNING` and you opened it.
 - You completed [Create an SAP Fiori App Using SAP Business Application Studio](appstudio-fioriapps-create).
 - For the deployment step, additional prerequisites apply. You need to have the following available in the Cloud Foundry space to which you will log on (see [Add a New Entitlement to Your Subaccount](cp-cf-entitlements-add)):
-    - Application Runtime: 1GB free
+    - Cloud Foundry Runtime: 1GB free
     - Destination: 1 free
     - HTML5 Applications: 1 free
 
@@ -69,15 +69,21 @@ If you are not logged in to a Cloud Foundry space - Before you can deploy your n
 
 Deploy your application to SAP BTP, Cloud Foundry environment.
 
-Right-click the `mtar` file and select **Deploy MTA Archive**.
+1. Right-click the `mtar` file and select **Deploy MTA Archive**.
 
-!![deploy mtar](03-AppStudio-Fiori-Project-Deploy-.png)
+    !![deploy mtar](03-AppStudio-Fiori-Project-Deploy-.png)
 
->The application deployment to the space you are connected to starts and a notification appears. The deployment process takes a few minutes. You can see that the deployment is still in progress in the **Task: Deploy** console at the bottom right of your screen.
+2. When prompted, provide the Cloud Foundry organization and space for your project.
 
->When the deployment process is complete, a notification will temporarily appear at the bottom-right part of the screen.
+    >A notifications that the Cloud Foundry organization and space are set will temporarily appear at the bottom right part of the screen.
 
->!![deploy success notification](AppStudio-Fiori-Project-Deploy-Success-Notification-.png)
+    >The application deployment to the space you are connected to starts and a notification appears. You can follow the deployment progress in the **Task: Deploy** console at the bottom of your screen.
+
+3. Wait for the deployment to complete.
+
+    >The deployment process takes a few minutes. When the deployment process is complete, the notifications **Process finished.** and **Terminal will be reused by tasks.** will appear at the bottom of the **Task: Deploy** console.
+
+    >!![deploy success](AppStudio-Fiori-Project-Deploy-Success-Console-.png)
 
 [DONE]
 [ACCORDION-END]

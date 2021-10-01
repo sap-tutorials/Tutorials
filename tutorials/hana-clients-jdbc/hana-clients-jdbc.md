@@ -3,8 +3,8 @@ title: Connect Using the SAP HANA JDBC Driver
 description: Create and debug a Java application that connects to SAP HANA using the SAP HANA client.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud, topic>java]
-primary_tag: products>sap-hana
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition, topic>java]
+primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -23,7 +23,7 @@ primary_tag: products>sap-hana
 
 [ACCORDION-BEGIN [Step 1: ](Install a JDK)]
 
-Ensure that you installed a Java Development Kit (JDK) and make sure it is accessible from your path.  Details on which Java versions are supported can be found in  SAP note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307) and [Oracle Java SE Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html).  
+Ensure that you have a Java Development Kit (JDK) installed and make sure it is accessible from your path.  Details on which Java versions are supported can be found in  SAP note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307) and [Oracle Java SE Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html).  
 
 A few options include:
 
@@ -91,7 +91,7 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
 
 [ACCORDION-BEGIN [Step 3: ](Create a Java application that queries SAP HANA)]
 
-1. The following commands will create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in notepad.
+1. The following commands create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in notepad.
 
     ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\HANAClientsTutorial\java
@@ -192,7 +192,7 @@ See [Connect to SAP HANA Cloud via JDBC](https://help.sap.com/viewer/db19c7071e5
 
 [ACCORDION-BEGIN [Step 4: ](Debug the application)]
 
-Visual Studio Code provides plugins for Python and can be used to debug an application.  
+Visual Studio Code provides plugins for Java and can be used to debug an application.  
 
 1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
 
@@ -200,11 +200,11 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
 
     ![Workspace](workspace.png)
 
-3. Open the file `JavaQuery.java` and if asked, install the recommended extensions.
+3. Open the file `JavaQuery.java`, and if asked, install the recommended extensions.
 
     ![Java extensions](extensions.png)
 
-4. Once the Java Extension Pack has been installed, expand the Java Project Explorer, and click on the **+** icon to add the JDBC driver as a referenced library.
+4. Once the Java Extension Pack has been installed, expand the Java Project Explorer and click on the **+** icon to add the JDBC driver as a referenced library.
 
     ![referenced libraries](ref-libraries.png)
 
@@ -226,7 +226,7 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
 [ACCORDION-BEGIN [Step 5: ](Browse SAP HANA using DBeaver)]
 `DBeaver` is a free and open source database tool and can be used with the SAP HANA JDBC driver.
 
-The following steps demonstrate how to configure it to connect to SAP HANA Cloud or SAP HANA, express edition using the JDBC driver.
+The following steps demonstrate how to configure `DBeaver` to connect to SAP HANA Cloud or SAP HANA, express edition using the JDBC driver.
 
 1. [Download](https://dbeaver.io/download/) and install the community edition of `DBeaver`.
 

@@ -1,21 +1,21 @@
 ---
 auto_validation: true
-title: Create Service Binding for Bonus Plan Scenario with SAP Cloud Platform ABAP environment
-description: Create service binding for bonus plan scenario with SAP Cloud Platform ABAP environment based on SAP S/4HANA Cloud data.
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
+title: Create Service Binding for Bonus Plan Scenario with SAP BTP, ABAP Environment
+description: Create service binding for bonus plan scenario with SAP BTP, ABAP Environment based on SAP S/4HANA Cloud data.
+primary_tag: products>sap-btp--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
 time: 45
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
- - Create a developer user in a SAP Cloud Platform ABAP Environment system.
- - Communication arrangement for scenario `SAP_COM_0027` is created in your SAP Cloud Platform, ABAP environment system
+ - Create a developer user in a SAP BTP, ABAP Environment system.
+ - Communication arrangement for scenario `SAP_COM_0027` is created in your SAP BTP, ABAP Environment system
 
 ## Details
 ### You will learn  
-  - How to create a bonus plan scenario with S/4HANA Cloud and SAP Cloud Platform, ABAP environment
+  - How to create a bonus plan scenario with S/4HANA Cloud and SAP BTP, ABAP Environment
 
 
 ---

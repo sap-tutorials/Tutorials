@@ -10,8 +10,8 @@ time: 20
 ---
 
 ## Prerequisites
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP BTP SDK for iOS:** Version 5.0 or higher
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
+- **SAP BTP SDK for iOS:** Version 6.0 or higher
 
 ## Details
 ### You will learn  

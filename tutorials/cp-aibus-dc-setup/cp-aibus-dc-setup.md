@@ -5,6 +5,8 @@ auto_validation: true
 time: 20
 tags: [ tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 ## Details
@@ -22,7 +24,7 @@ Additionally, a Jupyter Notebook is used in the following tutorials to make the 
 
 First, you need to install Anaconda. Anaconda is a platform that offers tools to process large datasets and is often used by data scientists. When installing Anaconda, the programming language Python is installed as well.
 
-If you are on Linux, there is a script available for the installation of Anaconda [here](https://github.com/SAP/business-document-processing/blob/main/examples/install_jupyterlab.sh). The first three commands are necessary to install Anaconda whereas the other commands are used in the following step of this tutorial.
+If you are on Linux, there is a script available for the installation of Anaconda [here](https://github.com/SAP/business-document-processing/blob/main/examples/document_classification_examples/install_jupyterlab.sh). The first three commands are necessary to install Anaconda whereas the other commands are used in the following step of this tutorial.
 
 If you are on a different operating system or the script does not work for you, head over to the [Anaconda installation guide](https://docs.anaconda.com/anaconda/install/) and look for your operating system. Once there, follow the installation guide.
 
@@ -48,7 +50,7 @@ You have successfully installed Anaconda.
 
 [ACCORDION-BEGIN [Step 2: ](Start a JupyterLab server)]
 
-As mentioned before, you now need to execute the other commands of the [script](https://github.com/SAP/business-document-processing/blob/main/examples/install_jupyterlab.sh).
+As mentioned before, you now need to execute the other commands of the [script](https://github.com/SAP/business-document-processing/blob/main/examples/document_classification_examples/install_jupyterlab.sh).
 
 [OPTION BEGIN [Windows]]
 
