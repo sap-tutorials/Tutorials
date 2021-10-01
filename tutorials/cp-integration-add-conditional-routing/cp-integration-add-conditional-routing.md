@@ -93,7 +93,7 @@ In this exercise, we terminate the processing in case we receive anything apart 
     | Field     | Value     |
     | :------------- | :------------- |
     | Expression Type       | XML       |
-    | Condition       | `//orders/order/order/code = 'KWA2PRBK5I'`       |
+    | Condition       | `//order/code = 'KWA2PRBK5I'`       |
 
     ![Route configuration](Route configuration.png)
 

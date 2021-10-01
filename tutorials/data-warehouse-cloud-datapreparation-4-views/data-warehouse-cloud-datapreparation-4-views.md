@@ -16,7 +16,7 @@ primary_tag: products>sap-data-warehouse-cloud
 
 
 SAP Data Warehouse Cloud already includes options to persist data from the remote tables and schedule its regular replication. You can also pre-compute the **`modeled views`** instead of the remote tables themselves by determining the data that a view uses and scheduling them for the required data replication.
-Whether you choose to persist a view or remote tables depends on your performance and data storage needs. Remote tables are always replicated as exact copies from the original source. On the other hand, replicating a view will replicate and persist only the data that is included in the view.
+Whether you choose to persist a view or remote tables depends on your performance and data storage needs. Remote tables are always replicated as exact copies from the original source. On the other hand, replicating a view will replicate and persist only the data that is included in the view. 
 
 > This way you can filter the original data from a remote source and replicate only the data that you need.
 
