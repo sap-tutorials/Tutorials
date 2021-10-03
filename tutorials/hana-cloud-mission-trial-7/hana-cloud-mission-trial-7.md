@@ -53,9 +53,14 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 In this tutorial, you will learn how to start preparations to create a calculation view by setting up a project in SAP Business Application Studio and establishing a connection to your database.
 
-You can follow the steps in this tutorial also by watching this video.
-
+> You can follow the steps in this tutorial also by watching this video:
+>
 <iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_rwt2s12t/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
+>
+> ### About this video
+>
+> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
+
 
 ---
 
@@ -75,7 +80,7 @@ To create your first development space, follow these steps:
 
 2.	On the top right-hand corner, click on **Create Dev Space**.
 
-    !![Create Dev Space](ss-01-sql-endpoint.gif)
+    !![Create Dev Space](LT01_07_01 Create Dev Space_resized.png)
 
 3.	Give your development space a name. You can choose any name you prefer, but you cannot use spaces in this name.
 
@@ -185,7 +190,36 @@ The most important one for SAP HANA Cloud, SAP HANA database development is the 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a user-provided service)]
+
+[ACCORDION-BEGIN [Step 4: ](Create a new user and roles)]
+
+To avoid using the super-user `DBADMIN`, we will now first create a new user that has limited rights but will be used for the subsequent steps of this tutorial.
+
+1.	Open your instance in the SAP HANA Database Explorer.
+2.	Open a SQL console and enter the following statements. These statements will first create two roles and assign these roles select privileges, the object owner role `genericRoleForOO` will be assigned a grant option. Then, a new user `UPSGRANTOR` will be created who will be assigned the object owner role.
+
+    ```SQL
+-- create SQL roles
+create role "genericRoleForOO";
+create role "genericRoleForAP";
+-- assign privileges that these roles should grant
+grant select on schema SFLIGHT to "genericRoleForOO" with grant option;
+grant select on schema SFLIGHT to "genericRoleForAP";
+-- create a database user that should assign these privileges
+create user UPS_GRANTOR password "DnATBG!1" NO FORCE_FIRST_PASSWORD_CHANGE;
+-- allow UPS_GRANTOR to grant the respective roles
+grant  "genericRoleForOO" to UPS_GRANTOR WITH ADMIN OPTION;
+grant  "genericRoleForAP" to UPS_GRANTOR WITH ADMIN OPTION;
+```
+
+3.	Execute the statements.
+4.	Go back to SAP Business Application Studio.
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Create a user-provided service)]
 
 Now that your project is created and you know the basics of how to navigate SAP Business Application Studio, your next step is to create a **user-provided service**, which will allow the project to access the data within the database.
 
@@ -200,9 +234,9 @@ Now that your project is created and you know the basics of how to navigate SAP 
 
 4.	Enter a name for your service, for example `MyConnection`.
 
-5.	Now you have two options to establish the connection to the database. Selecting **Use deployment target container database** only requires you to provide the credentials of the database your HDI container is in. In this case, enter **DBADMIN** and the **password** for this user and click on **Add**.
+5.	Now you have two options to establish the connection to the database. Selecting **Use deployment target container database** only requires you to provide the credentials of the database your HDI container is in. In this case, enter `UPS_GRANTOR` and the **password** for this user and click on **Add**.
 
-    !![USP UI1](ss-13-USP-UI1.png)
+    !![USP UI1](ss-13-USP-UI1_.png)
 
 6.	If you select the other option **Provide database information**, you can manually enter the database you want to connect to. In this case, you need to enter host name host port.
 
@@ -220,7 +254,7 @@ Now that your project is created and you know the basics of how to navigate SAP 
 >
 > The sequence of characters before the `:` represent your host name. `443` is the SAP HANA Cloud host port.
 
-    !![USP UI2](ss-14-USP-UI2.png)
+    !![USP UI2](ss-14-USP-UI2_.png)
 
 7.	Once you entered all your database information, click on **Add**. The user-provided service will be created.
 
@@ -231,7 +265,7 @@ Now that your project is created and you know the basics of how to navigate SAP 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Creating an hdbgrants file)]
+[ACCORDION-BEGIN [Step 6: ](Creating an hdbgrants file)]
 
 Now that you have a connection to your database, it is important to grant privileges to the object owner and application users so they can access the data in the database. You could do that by creating individual roles, which are `.hdbroles` database objects that you would have to assign to users in the SAP HANA Database Explorer.
 
@@ -248,7 +282,7 @@ We have prepared an `.hdbgrants` file that is ready for you to use and import to
 
 **Upload our file**
 
-1.	First, [download](https://github.com/SAP-samples/hana-cloud-learning/blob/e776385d3d2d21c7a888344a82aa15a8f8d308bd/Mission:%20SAP%20HANA%20Database%20in%20SAP%20HANA%20Cloud/Tutorial%207/SFLIGHT.hdbgrants.zip) the `.hdbgrants` file we have prepared for you from our public GitHub repository to your local machine and unzip it.
+1.	First, [download](https://github.com/SAP-samples/hana-cloud-learning/blob/e2d450e07fc577b61382dc0bd40823e3daff1649/Mission:%20SAP%20HANA%20Database%20in%20SAP%20HANA%20Cloud/Tutorial%207/SFLIGHT_Roles.hdbgrants.zip) the `.hdbgrants` file we have prepared for you from our public GitHub repository to your local machine and unzip it.
 
 2.	In SAP Business Application Studio, expand the `db` folder on the left-side panel. Then right-click on the `src` folder. Click on **Upload Files**.
 
@@ -256,11 +290,9 @@ We have prepared an `.hdbgrants` file that is ready for you to use and import to
 
 3.	Find the `.hdbgrants` file you downloaded and unpacked and select it for upload.
 
-4.	Once the file is there, click on it to open it. You can see that this file grants the privilege `SELECT` for the schema `SFLIGHT`.
+4.	Once the file is there, click on it to open it. You can see that this file grants the roles we have created in step 4 to the application user and object owner.
 
 5.	In line 2, `MyConnection` is a placeholder for the user-provided service instance name. Change the name of the user provided service if you have named it differently in the previous step.
-
-    !![hdbgrants adjustment](ss-17-hdbgrants-adjustment.png)
 
 [OPTION END]
 [OPTION BEGIN [Create `.hdbgrants`]]
@@ -283,31 +315,14 @@ We have prepared an `.hdbgrants` file that is ready for you to use and import to
 
 7.	Click on the file in the File explorer and the code of this file will open. Here, you can see a template of all different types of privileges you could grant to different user groups. There is a dedicated section for object owner users and application users.
 
-8.	For the purposes of this tutorial, we would like to grant the schema privilege `SELECT` on the schema `SFLIGHT` to both the object owner and application user.
+8.	For the purposes of this tutorial, we would like to grant the roles we have created in step 4 to object owners and application users. The object owner will be assigned the role `genericRoleForOO` and the application user the role `genericRoleForAP`.
 
-9.	That means, we will not need the lines for system privileges, global roles, object privileges, and global object privileges. So, you can **remove lines** `4-15` and `23-45` in the section **object owner**.
+9.	That means, we will not need the lines for schema privileges, system privileges, object privileges, and global object privileges. So, you can remove the respective lines in the sections "object owner" and "application user".
 
-    !![HDBGRANTS 1.1](ss-19-HDBGRANTS-1.1.gif)
+10.	Enter the two role names in the respective lines.
 
-10.	In the section **application user**, remove the lines `48`, `49`, and ` 51-53`. The only privileges you want are `schema_privileges`. Lastly, remove the `,` after the last `]` of each section.
+11.	Your last step is to enter the name of your user-provided service instead of the placeholder ´<UPS>´.
 
-    !![HDBGRANTS 1.2](ss-20-HDBGRANTS-1.2.gif)
-
-11.	This is what the file should look like after removing the lines you do not need:
-
-    !![HDBGRANTS delete rows](ss-21-HDBGRANTS-delete-rows.png)
-
-12.	Now, in `line 6`, enter the schema name `SFLIGHT` since we want to grant privileges on this schema.
-
-13.	Our goal is to grant privileges **with** grant option, so, you can **remove** `line 7` as well.
-
-14.	Since the `SELECT` privileges should also be granted to the application user, copy `lines 5-8` and paste it in `line 12` between the `[]`.
-
-15.	To clean up the formatting, right click anywhere in the file and select **Format document**.
-
-    !![HDBGRANTS 2](LT01_07_21_GIF HDBGRANTS2_loop.gif)
-
-16.	Your last step is to enter the name of your user-provided service instead of the placeholder `<UPS>`. In step 4, we named our user-provided service `MyConnection`.
 
 17.	At the end, your file should look like this:
 
@@ -315,22 +330,16 @@ We have prepared an `.hdbgrants` file that is ready for you to use and import to
 {
     "MyConnection": {
         "object_owner": {
-            "schema_privileges": [
+            "global_roles": [
                 {
-                    "schema": "SFLIGHT",
-                    "privileges_with_grant_option": [
-                        "SELECT"
-                    ]
+                    "roles": ["genericRoleForOO"]
                 }
             ]
         },
         "application_user": {
-            "schema_privileges": [
+            "global_roles": [
                 {
-                    "schema": "SFLIGHT",
-                    "privileges_with_grant_option": [
-                        "SELECT"
-                    ]
+                    "roles": ["genericRoleForAP"]
                 }
             ]
         }

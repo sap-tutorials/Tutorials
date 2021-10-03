@@ -1,6 +1,6 @@
 ---
 title: Set Up SAP Customer Order Sourcing Manually
-description: Learn to set up SAP Customer Order Sourcing start to finish, how to add Users and give them appropriate permissions.
+description: Learn how to set up SAP Customer Order Sourcing start to finish, how to add Users and give them appropriate permissions.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
@@ -18,9 +18,9 @@ primary_tag: topic>cloud
 
 In this tutorial you learn how to set up SAP Customer Order Sourcing from start to finish.
 
-This might help you in getting a better understanding on how the service works and shows you the options you have, when working with it.
+This might help you to get a better understanding on how the service works and shows you the options you have, when working with it.
 
-With this you'll learn exactly what you have to do to add Users to your service and how to give them the appropriate permissions.
+With this, you'll learn exactly what you have to do to add Users to your service and how to give them the appropriate permissions.
 
 But if you want an easy and quick way to setup SAP Customer Order Sourcing, use this tutorial: [Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing](cos-getting-started-trial).
 
@@ -35,7 +35,7 @@ But if you want an easy and quick way to setup SAP Customer Order Sourcing, use 
 3. Search for **SAP Customer Order Sourcing** and click on the tile.
 
 4. Choose **Create**, insert a name for the instance and finish the creating by clicking **Create**.
-   >Keep the preselected entries.
+>Keep the preselected entries.
 
 [DONE]
 [ACCORDION-END]
@@ -43,7 +43,7 @@ But if you want an easy and quick way to setup SAP Customer Order Sourcing, use 
 [ACCORDION-BEGIN [Step 2: ](Subscribe to SAP Customer Order Sourcing)]
 
 
-1. In the [SAP Business Technology Platform trial space](https://account.hanatrial.ondemand.com), enter your trial account.
+1. In the [SAP Business Technology Platform trial space](https://account.hanatrial.ondemand.com), go to your trial account.
 
 2. Navigate to your subaccount, probably named `trial`.
 

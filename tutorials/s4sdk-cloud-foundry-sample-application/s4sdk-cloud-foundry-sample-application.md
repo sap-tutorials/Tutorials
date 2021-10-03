@@ -15,9 +15,10 @@ This tutorial will cover your first steps when developing applications for SAP C
 
 [ACCORDION-BEGIN [Step 1: ](Setup for Cloud Foundry)]
 
-In order to deploy applications to `SCP Cloud Foundry`, you need to create a free trial account. You can create your account by visiting <https://cloudplatform.sap.com/try.html>
+In order to deploy applications to `SCP Cloud Foundry`, you need to create a free trial account.
+You can create your account by following [this tutorial](hcp-create-trial-account).
 
-After creating your account and activating it via email, you can log in to your personal `Cloud Cockpit`. For your first visit, it should look like this:
+After creating your account and activating it via email, you can log in to your personal [Cloud Cockpit](https://cockpit.hanatrial.ondemand.com/trial/#/home/trial). For your first visit, it should look like this:
 
 ![SAP Cloud Platform Cockpit first view](cloudplatform-cockpit-first-view.png)
 

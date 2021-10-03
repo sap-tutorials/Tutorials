@@ -95,7 +95,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-1. Select your **Global Account** and then the **Subaccount** to which you want to deploy your service and application.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 2. On the subaccount page, gather all the data to log in to Cloud Foundry (CF).
 
@@ -150,7 +156,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
 
-1. Select your **Global Account** and then the **Subaccount** to which you want to deploy your service and application.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 2. On the subaccount page, gather all the data to log in to Cloud Foundry (CF).
 
@@ -368,7 +380,9 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
     > You can also deploy a single module using `-m <module-name>` command line parameter.
 
 
-5. Enter the CAP application URL in your browser using the hostname displayed for `cpapp-srv` in the previous steps.
+5. Enter the route displayed for `cpapp-srv` in your browser.
+
+    ![cpapp-srv route](cpapp-srv-route.png)
 
     You see the CAP start page, like this:
 
