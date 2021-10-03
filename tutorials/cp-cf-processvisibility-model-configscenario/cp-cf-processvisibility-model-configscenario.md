@@ -22,7 +22,7 @@ author_profile: https://github.com/I540620
 
 Visibility scenarios allow you to track the performance of end-to-end processes. You can configure the aspects of a scenario such as events and context of the processes, correlation conditions, status, attributes, and performance indicators for the end-to-end processes of a scenario.
 
-In this tutorial, you will learn how to add a workflow to your visibility scenario to gain visibility on the workflow. In this tutorial we create a visibility scenario named **Employee Onboarding Process** and then add the **onboard** workflow from workflow capability as a process participant to the  visibility scenario. For more information, see [Creating a Scenario](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
+In this tutorial, you will learn how to add a workflow to your visibility scenario to gain visibility on the workflow. In this tutorial we create a visibility scenario named **Employee Onboarding Process** and then add the **onboard** workflow from workflow capability as a process participant to the  visibility scenario. For more information, see [Creating a Scenario](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html). 
 
 ---
 
@@ -35,9 +35,9 @@ In this tutorial, you will learn how to add a workflow to your visibility scenar
 
     !![Add scenario](Config-Step1-plus.png)
 
-3. In the **New Scenario** dialog, provide a **Namespace** and a **Name** for the scenario. On providing these values, the **ID** field gets populated automatically. You can choose to edit the **ID** if required. You can even provide a **Description** for your scenario and and choose **Create**.
+3. In the **New Scenario** dialog, provide **Namespace** and **Name** for your scenario. On providing these values, the **ID** field gets populated automatically. You can choose to edit the **ID** if required. Optionally provide a **Description** to the scenario and choose **Create**.
 
-    !![visibility scenario name](scenario-name.PNG)
+    !![scenario name](visibility-scenario-name.png)
 
     You can see the **Employee Onboarding Process** scenario listed in the **Scenarios** table in the **Draft** state.
 
