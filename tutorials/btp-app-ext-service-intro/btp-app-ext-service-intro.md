@@ -4,8 +4,8 @@ author_profile: https://github.com/iwonahahn
 title: Introduction to Consuming Remote Services using CAP
 description: Learn about external service APIs, how to get an API definition from the SAP API Business Hub, and how to import an API definition to your project.
 auto_validation: true
-time: 15
-tags: [tutorial>advanced, tutorial>license, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-api-management, products>sap-hana-cloud, products>sap-s-4hana-cloud]
+time: 10
+tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-api-management, products>sap-hana-cloud, products>sap-s-4hana-cloud]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
