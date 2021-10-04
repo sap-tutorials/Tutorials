@@ -150,12 +150,12 @@ Again, please accept the modification of the manifest file.
     **Replace** the empty array of the property `destinations` in the `uimodule/ui5.yaml` file to declare the local destination.
 
     ```YAML
-    destinations:
-      - name: "Northwind"
-        url: "https://services.odata.org/"
+            destinations:
+              - name: "Northwind"
+                url: "https://services.odata.org/"
     ```
 
-    > YAML is quite nice to read but writing can be cumbersome. If you do edit this file often, I recommend using IDE plugins to make your life easier like [this one](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) to [validate the format](https://sap.github.io/ui5-tooling/pages/Configuration/#validation-ide-support)
+    > YAML is quite nice to read but writing can be cumbersome as the indention of the lines is crucial. Please make sure your file looks exactly as shown in the next screenshot. If you edit these files often, I recommend using IDE plugins to make your life easier like [this one](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) to [validate the format](https://sap.github.io/ui5-tooling/pages/Configuration/#validation-ide-support)
 
 3. Switch to the first terminal session, stop the process and restart it. Restarting is necessary because the live-reload feature doesn't notice changes in the `ui5.yaml` file.
 

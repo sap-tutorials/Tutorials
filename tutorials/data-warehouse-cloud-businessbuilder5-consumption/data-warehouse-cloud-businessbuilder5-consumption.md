@@ -1,4 +1,6 @@
 ---
+author_name: Helena Nacinovic
+author_profile: https://github.com/helenanacinovic
 title: Create a Consumption Model in the Business Builder
 description: Create consumption models in the Business Builder of SAP Data Warehouse Cloud to use the output data in visualization tools, such as SAP Analytics Cloud.
 auto_validation: true
@@ -66,7 +68,7 @@ Your new consumption model is created.
 
 [ACCORDION-BEGIN [Step 2: ](Add business entities to the consumption model)]
 
-For your consumption model to have data in its output, you need to add add business entities to your consumption model, such as measures and attributes.
+For your consumption model to have data in its output, you need to add business entities to your consumption model, such as measures and attributes.
 
 1.	On the main canvas of the consumption model, click on the plus icon under **Fact Sources** or **Dimension Sources** on the right sidebar.
 
