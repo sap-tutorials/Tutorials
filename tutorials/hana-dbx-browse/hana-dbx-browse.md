@@ -34,10 +34,10 @@ primary_tag: products>sap-hana-cloud
 
     ```SQL
     SET SCHEMA USER1;
-    SELECT * FROM HOTEL.CITY;  --succeeds
-    SELECT * FROM CITY;  --fails
+    SELECT * FROM HOTEL.CUSTOMER;  --succeeds
+    SELECT * FROM CUSTOMER;  --fails
     SET SCHEMA HOTEL;
-    SELECT * FROM CITY; --succeeds
+    SELECT * FROM CUSTOMER; --succeeds
     ```
 
 2. When browsing objects in the database browser, the schema name is shown for each object if a schema filter is not set.

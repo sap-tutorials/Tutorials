@@ -17,6 +17,7 @@ primary_tag: products>sap-hana-cloud
   - How to use SAP HANA smart data access (SDA) to create connections (remote sources) to other databases
   - How to create virtual tables from a remote source
   - How to setup the Cloud Connector to enable a remote source from SAP HANA Cloud to an on-premise SAP HANA database
+  - Instances of SAP HANA, express edition, SAP HANA Cloud, SAP HANA database, and data lake IQ
 
 Remote sources are connections to other databases.  Virtual tables use a remote source to create a local table that points to data stored in another database.  Federated queries make use of virtual and non virtual tables.
 
@@ -372,7 +373,7 @@ The following commands were used to start the Cloud Connector.
 
     ![HANA Cloud to HANA, express connection](cloud-connector-connection.png)
 
-For further information, see [Data Replication and Data Virtualization](group.hana-cloud-extend-2-data-replication.html), [Access Data Across Your On-Premise and Cloud Data Sources](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&referrer=&eventid=2826629&sessionid=1&key=5B2F9AD591E22ABF731B366ABEFFB6B6&regTag=1812820&sourcepage=register), and [Getting Started with SAP HANA Cloud | Remote Data Source](https://blogs.sap.com/2020/08/03/getting-started-with-sap-hana-cloud-vii-smart-data-access/).
+For further information, see [Data Replication and Data Virtualization](group.hana-cloud-extend-2-data-replication), [Access Data Across Your On-Premise and Cloud Data Sources](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&referrer=&eventid=2826629&sessionid=1&key=5B2F9AD591E22ABF731B366ABEFFB6B6&regTag=1812820&sourcepage=register), and [Getting Started with SAP HANA Cloud | Remote Data Source](https://blogs.sap.com/2020/08/03/getting-started-with-sap-hana-cloud-vii-smart-data-access/).
 
 Congratulations!  You have now used remote sources to access data running on a different SAP HANA instance and on a SAP HANA Cloud, data lake IQ.
 
