@@ -3,8 +3,8 @@ title: Connect Using the SAP HANA Python Interface
 description: Create and debug a Python application that connects to SAP HANA using the SAP HANA client.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud, topic>python]
-primary_tag: products>sap-hana
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition, topic>python]
+primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -80,7 +80,7 @@ pip install hdbcli
 >
 > ```Shell
 > cd C:\SAP\hdbclient
-> pip install hdbcli-2.9.19.zip
+> pip install hdbcli-2.10.9.zip
 > ```
 
 > ---

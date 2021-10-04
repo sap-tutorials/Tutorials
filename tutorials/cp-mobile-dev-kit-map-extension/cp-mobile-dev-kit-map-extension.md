@@ -58,7 +58,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.4.png)
 
-    >You might notice an additional step *SAP BTP Connection* listed, this will be visible if the current Cloud Foundry token has been expired. In this case, you will be asked to login to your Cloud Foundry account in the following step.
+    >This screen will only show up when your CF login session has expired. Enter your login credentials, click Login icon and select the org & space where you have set up the initial configuration for your MDK app.
 
     >!![MDK](img-1.4.1.png)
 
@@ -554,9 +554,11 @@ In this step, you will run the app on an Android device.
 
     ![MDK](img_8.8.png)
 
-10. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
+10. Enter your credentials to login to SAP Business Technology Platform (BTP).
 
     ![MDK](img-8.9.png)
+    ![MDK](img-8.9.1.png)    
+
 
 11. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 

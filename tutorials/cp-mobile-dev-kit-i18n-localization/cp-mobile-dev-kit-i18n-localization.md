@@ -24,6 +24,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
+
 [ACCORDION-BEGIN [Step 1: ](Understand the Internationalization and Localization)]
 
 
@@ -64,7 +65,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.4.png)        
 
-    >You might notice an additional step *SAP BTP Connection* listed, this will be visible if the current Cloud Foundry token has been expired. In this case, you will be asked to login to your Cloud Foundry account in the following step.
+    >This screen will only show up when your CF login session has expired. Enter your login credentials, click Login icon and select the org & space where you have set up the initial configuration for your MDK app.
 
     >!![MDK](img-1.4.1.png)
 

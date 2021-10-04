@@ -1,4 +1,6 @@
 ---
+author_name: Helena Nacinovic
+author_profile: https://github.com/helenanacinovic
 title: Create a Dimension in the Business Builder
 description: Create a dimension in the Business Builder of SAP Data Warehouse Cloud.
 auto_validation: true
@@ -20,7 +22,7 @@ primary_tag: products>sap-data-warehouse-cloud
 - How to preview your data and adjust the perspective
 
 
-In this tutorial, we will use an example dataset that contains information about sales. Please keep in mind that any data that will be used in the Business Builder needs to first be connected to or imported into SAP Data Warehouse Cloud before you can start creating business objects with the Business Builder.
+In this tutorial, you will see an example dataset that contains information about sales. Please keep in mind that any data that will be used in the Business Builder needs to first be connected to or imported into SAP Data Warehouse Cloud before you can start creating business objects with Business Builder.
 
 ---
 

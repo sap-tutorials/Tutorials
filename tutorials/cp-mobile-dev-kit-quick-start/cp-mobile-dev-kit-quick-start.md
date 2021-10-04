@@ -42,13 +42,13 @@ This step includes creating the mobile development kit project in the editor.
     | Field | Value |
     |----|----|
     | `MDK Template Type`| Select `CRUD` from the dropdown |
-    | `Your Project Name` | `MDKApp` |
+    | `Your Project Name` | Provide a name of your choice. `MDKApp`is used for this tutorial |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
 
     !![MDK](img-1.4.png)
 
-    >You might notice an additional step *SAP BTP Connection* listed, this will be visible if the current Cloud Foundry token has been expired. In this case, you will be asked to login to your Cloud Foundry account in the following step.
+    >This screen will only show up when your CF login session has expired. Enter your login credentials, click Login icon and select the org & space where you have set up the initial configuration for your MDK app.
 
     >!![MDK](img-1.5.png)
 
@@ -69,7 +69,7 @@ This step includes creating the mobile development kit project in the editor.
 
     The generated application will be offline enabled in the MDK Mobile client and will run as online in Web environment.
 
-8. In the *Data Collections* step, select `Customers`, `Products`, `SalesOrderHeaders` and `SalesOrderItems`. Click **Finish** to complete the project creation.
+8. In the *Data Collections* step, select `Customers`, `Products`, `PurchaseOrderHeaders`, `PurchaseOrderItems` `SalesOrderHeaders` and `SalesOrderItems`. Click **Finish** to complete the project creation.
 
     !![MDK](img-1.8.png)
 
