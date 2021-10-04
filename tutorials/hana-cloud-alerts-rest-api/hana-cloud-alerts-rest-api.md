@@ -1,5 +1,5 @@
 ---
-title: Accessing SAP HANA Cloud Alerts and Metrics using a REST API
+title: Access SAP HANA Cloud Alerts and Metrics using a REST API
 description: Learn how to access details of triggered alerts, as well as how to access the list of available database metrics and values of a specified metric using a REST API.
 auto_validation: true
 time: 15
@@ -74,7 +74,7 @@ There are multiple tools that enable making calls to a REST API such as Postman,
 
     ![open folder and file](open-folder.png)
 
-7. Try calling the two sample REST APIs by clicking on the blue text `Send Request`.  
+7. Try calling the sample REST APIs by clicking on the blue text `Send Request`.  
 
     !![send request](send-request.png)
 
@@ -95,9 +95,11 @@ The following steps are required to create a bearer token that will be used in s
 
     ![HANA Cloud instance](HANA-Cloud-service.png)
 
-    Create a service key if one does not exist.  When creating a service key, a JSON file or parameters section is not needed and can be left empty.
+    Create a service key if one does not exist.
 
-    ![Create service key](create-service-key.png)
+    !![Create service key](create-service-key.png)
+
+    When creating a service key, a JSON file or parameters section is not needed and can be left empty.
 
 2. View the created service key.  The next step will require the `host`, `clientid`, `clientsecret`, and `url` fields.
 
@@ -134,7 +136,7 @@ The following steps are required to create a bearer token that will be used in s
     ###
     ```
 
-4. Execute the Request Bearer Token call using the Send Request link.  Copy the returned `access_token` value to the bearer variable in the file AlertsAndMetrics.http.
+4. Execute the Request Bearer Token call using the Send Request link.  Copy the returned `access_token` value to the bearer variable on line 18 of the file AlertsAndMetrics.http.
 
     ![start of the access_token to be Copied](access_token.png)
 
