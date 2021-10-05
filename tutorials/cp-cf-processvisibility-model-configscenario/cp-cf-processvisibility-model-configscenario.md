@@ -6,7 +6,7 @@ time: 10
 tags: [tutorial>beginner, products>sap-business-technology-platform]
 primary_tag: products>sap-business-technology-platform
 author_name: Kavya M Gowda
-author_profile: https://github.com/I540620
+author_profile: https://github.com/KavyaGowda-UA
 ---
 
 ## Prerequisites
@@ -22,7 +22,7 @@ author_profile: https://github.com/I540620
 
 Visibility scenarios allow you to track the performance of end-to-end processes. You can configure the aspects of a scenario such as events and context of the processes, correlation conditions, status, attributes, and performance indicators for the end-to-end processes of a scenario.
 
-In this tutorial, you will learn how to add a workflow to your visibility scenario to gain visibility on the workflow. In this tutorial we create a visibility scenario named **Employee Onboarding Process** and then add the **onboard** workflow from workflow capability as a process participant to the  visibility scenario. For more information, see [Creating a Scenario](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html). 
+In this tutorial, you will learn how to add a workflow to your visibility scenario to gain visibility on the workflow. In this tutorial we create a visibility scenario named **Employee Onboarding Process** and then add the **onboard** workflow from workflow capability as a process participant to the  visibility scenario. For more information, see [Creating a Scenario](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
 
 ---
 

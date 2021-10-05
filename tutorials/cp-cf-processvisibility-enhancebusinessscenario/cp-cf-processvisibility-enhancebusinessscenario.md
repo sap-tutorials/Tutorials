@@ -6,7 +6,7 @@ time: 15
 tags: [tutorial>beginner, products>sap-business-technology-platform]
 primary_tag: products>sap-business-technology-platform
 author_name: Kavya M Gowda
-author_profile: https://github.com/I540620
+author_profile: https://github.com/KavyaGowda-UA
 ---
 
 ## Prerequisites
