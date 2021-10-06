@@ -218,7 +218,7 @@ This grant type works in the following way: In a first call, the API client prov
 
 17. Paste the value of **`tokenurl`** as shown in the following screenshot.
 
-    >**Note**: Make sure that you append **`?grant_type=client_crendentials`** to the token URL that you pasted.
+    >**Note**: Make sure that you append **`?grant_type=client_credentials`** to the token URL that you pasted.
 
     !![tokenURL](031.png)
 
@@ -229,6 +229,10 @@ This grant type works in the following way: In a first call, the API client prov
 19. Select **Save**.
 
     !![Save](033.png)
+
+20. Select **Click to Deploy**.
+
+    !![Save](033_New.png)
 
     In this step you have assigned a policy template.
 
