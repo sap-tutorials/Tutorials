@@ -6,7 +6,7 @@ time: 10
 tags: [tutorial>beginner, products>sap-business-technology-platform]
 primary_tag: products>sap-business-technology-platform
 author_name: Kavya M Gowda
-author_profile: https://github.com/I540620
+author_profile: https://github.com/KavyaGowda-UA
 ---
 
 ## Prerequisites
@@ -35,11 +35,11 @@ In this tutorial, you will learn how to add a workflow to your visibility scenar
 
     !![Add scenario](Config-Step1-plus.png)
 
-3. In the **New Scenario** dialog, provide a **Name** and optionally a description for the scenario and choose **Create**. On providing the name, the **ID** field gets populated automatically.
+3. In the **New Scenario** dialog, provide **Namespace** and **Name** for your scenario. On providing these values, the **ID** field gets populated automatically. You can choose to edit the **ID** if required. Optionally provide a **Description** to the scenario and choose **Create**.
 
-    !![visibility scenario name](scenario-name.PNG)
+    !![scenario name](visibility-scenario-name.png)
 
-    You can see the **Employee Onboarding Process** scenario listed in the **Scenarios** table in **Draft** state.
+    You can see the **Employee Onboarding Process** scenario listed in the **Scenarios** table in the **Draft** state.
 
 4. Now, select the **Employee Onboarding Process** scenario in the **Draft** state to edit it.
 

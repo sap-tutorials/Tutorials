@@ -31,7 +31,7 @@ go version
 
 If Go is installed, then it will return the currently installed version, such as 1.15.2. It is required to have version 1.8 - 1.16 installed.
 
->For further details on supported versions, see SAP Note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307).
+>For further details on supported versions, see SAP Note [3006307 - SAP HANA Client Supported Platforms for 2.7 and Higher](https://launchpad.support.sap.com/#/notes/3006307).
 
 
 If it is not installed, download it from [Download Go](https://golang.org/dl/), run the installer, follow the provided instructions, and ensure that Go is in your path.

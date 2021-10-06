@@ -15,8 +15,8 @@ author_profile: https://github.com/jitendrakansal
 
 ## Details
 ### You will learn
-  - How to reference the `NativeScript` Geolocation plugin from a rule
-  - How to add a `NativeScript` plugin to your branded MDK client
+  - How to reference the NativeScript Geolocation plugin from a rule
+  - How to add a NativeScript plugin to your branded MDK client
   - How to build a Mobile development kit client for iOS & Android and connect to SAP Mobile application
   - How to capture the device's current location
 
