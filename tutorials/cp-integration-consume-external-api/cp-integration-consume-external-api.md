@@ -116,7 +116,7 @@ Feel free to replace the same with any externally available API.
 
     ![Configure Content Modifier Header](Configure Content Modifier Header.png)
 
-    > You can add ${in/body} in the Message Body if the system does not pick the value of the orderID.
+    > You can add ${in.body} in the Message Body if the system does not pick the value of the orderID.
 
   10. Add a Filter step to retrieve the address field from the incoming message:
     * Click on the design Palette.

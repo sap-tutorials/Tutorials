@@ -33,11 +33,11 @@ The period for idle time for Factory accounts is different than for trial accoun
 
 1. In the **Explorer** pane, right-click the `mta.yaml` file and select **Build MTA Project**.
 
-    <br><br>!![build mta](AppStudio-Context-Menu-Build-MTA-.png)<br>
+    <br><br>!![build mta](BAS-Build-1-.png)
 
     >The build process creates a multitarget archive (`MTAR`) file in your project that packages all the project modules for deployment. You can find the `MTAR` file in the `FioriDemo/mta_archives` folder.
 
-    !![terminal mbt build results](07-02-02-AppStudio-Terminal-MBT-Build-.png)
+    !![terminal mbt build results](BAS-Build-2-.png)
 
 [DONE]
 [ACCORDION-END]
@@ -48,19 +48,17 @@ If you are not logged in to a Cloud Foundry space - Before you can deploy your n
 
 1. In the menu bar, select **View | Find Command** to open the **command palette**.
 
-    !![Command Palette-Login to CF](08-01-AppStudio-CF-Login-.png)
+    !![Command Palette-Login to CF](BAS-CF-Login-1-.png)    
 
 2. Select the command **CF: Login to cloud foundry**.
 
     >Type `cf` to filter commands.
 
-    !![Command Palette-Login to CF](08-01-02-AppStudio-CF-Login-.png)
+    !![Command Palette-Login to CF](BAS-CF-Login-2-.png)
 
-3. When prompted, provide your credentials, select the API endpoint, organization, and space for your project.
+3. When prompted, select the API endpoint, provide your credentials, organization, and space for your project.
 
-    >The Cloud Foundry organization and space appear in the status line at the bottom left part of the screen.
-
-    !![Logged in to CF](AppStudio-CF-Login-.png)
+    !![Logged in to CF](BAS-CF-Login-3-.png)
 
 [DONE]
 [ACCORDION-END]
@@ -71,11 +69,7 @@ Deploy your application to SAP BTP, Cloud Foundry environment.
 
 1. Right-click the `mtar` file and select **Deploy MTA Archive**.
 
-    !![deploy mtar](03-AppStudio-Fiori-Project-Deploy-.png)
-
-2. When prompted, provide the Cloud Foundry organization and space for your project.
-
-    >A notifications that the Cloud Foundry organization and space are set will temporarily appear at the bottom right part of the screen.
+    !![deploy mtar](BAS-Deploy-1-.png)
 
     >The application deployment to the space you are connected to starts and a notification appears. You can follow the deployment progress in the **Task: Deploy** console at the bottom of your screen.
 
@@ -83,7 +77,7 @@ Deploy your application to SAP BTP, Cloud Foundry environment.
 
     >The deployment process takes a few minutes. When the deployment process is complete, the notifications **Process finished.** and **Terminal will be reused by tasks.** will appear at the bottom of the **Task: Deploy** console.
 
-    >!![deploy success](AppStudio-Fiori-Project-Deploy-Success-Console-.png)
+    >!![deploy success](BAS-Deploy-2-.png)
 
 [DONE]
 [ACCORDION-END]
@@ -94,38 +88,36 @@ Run the deployed app on SAP BTP. The steps below show you how to access your new
 
 1. On the menu bar select **Terminal | New Terminal**.
 
-    !![open new terminal tab](04-01-AppStudio-Open-Terminal-.png)
+    !![open new terminal tab](BAS-Access-App-On-CF-1-.png)
 
 2. A new terminal tab is opened.
 
-    !![new terminal tab opened](04-02-AppStudio-New-Terminal-Tab-Opened-.png)
+    !![new terminal tab opened](BAS-Access-App-On-CF-2-.png)
 
     >The folder it is opened in is the specific project folder. You can use the following command in the terminal to verify it:
     ```Shell/Bash
     pwd
     ```
-    !![pwd](04-02-AppStudio-PWD-.png)
+    !![pwd](BAS-Access-App-On-CF-3-.png)
 
-3. Open the `mta.yaml` file, and locate the destination service instance name. You can find it in the **modules > requires** section or in the **resources** section. In this tutorial it should be `FioriDemo-destination-service`.
+3. Open the `mta.yaml` file, and locate the destination service instance name. You can find it in the **modules > requires** section or in the **resources** section. In this tutorial it should be `FioriDemo-dest-srv`.
 
 4. Execute the following command in the terminal to get the details of the deployed application and its URL:
 
     ```Shell/Bash
-    cf html5-list -di FioriDemo-destination-service -u
+    cf html5-list -di FioriDemo-dest-srv -u -rt launchpad
     ```
 
-    !![details of deployed app on CF](AppStudio-CF-HTML5-List-.png)
-
-    <br><br>!![app url](AppStudio-CF-HTML5-List--.png)
+    !![details of deployed app on CF](BAS-Access-App-On-CF-4-.png)
 
     >To find out more about this command execute in the terminal:
     ```Shell/Bash
     cf help html5-list
     ```
 
-5. As a temporary step you need to edit the URL. Copy the app's URL, and paste it in a new browser tab (do not click [ENTER]). Replace `cpp` with `launchpad`.
+5. Press [CTRL] and click the app's link in the terminal.
 
-    !![app url](AppStudio-AppURL-in-New-Tab-.png)
+    !![app url](BAS-Access-App-On-CF-5-.png)
 
     >You can use this URL in any browser to access your new application in your space on SAP BTP, Cloud Foundry environment.
 
@@ -133,7 +125,7 @@ Run the deployed app on SAP BTP. The steps below show you how to access your new
 
 6. The app is running on SAP BTP, Cloud Foundry environment, accessing data from an on-premise backend.
 
-    !![app running on cf](AppStudio-App-Running-on-CF-.png)
+    !![app running on cf](BAS-Access-App-On-CF-6-.png)
 
 [VALIDATE_10]
 [ACCORDION-END]

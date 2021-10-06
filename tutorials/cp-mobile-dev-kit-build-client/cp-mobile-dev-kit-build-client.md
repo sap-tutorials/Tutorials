@@ -93,7 +93,7 @@ Make sure that you have download latest version of MDK SDK as described in Prere
 
     !![MDK](img_1.7.png)
 
-    >If MDK Dependencies Installer keeps showing `Loading...` then have a look at [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/troubleshooting/mdk/troubleshoot.html#loading-message-displays-while-running-mobile-development-kit-dependency-installer-on-windows-machine) troubleshooting guide.
+    >If you encounter any issue while running the MDK Dependencies Installer then have a look at [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/troubleshooting/mdk/troubleshoot.html#loading-message-displays-while-running-mobile-development-kit-dependency-installer-on-windows-machine) troubleshooting guide.
 
     >You might see different software versions depending on MDK SDK version you are using.
 

@@ -17,6 +17,12 @@ For getting started with Continuous Integration and Delivery (`Cx`) in your proj
 The General Purpose Pipeline of project "Piper" uses Docker images for each individual build step. Accordingly, you do not need to take care of installing any further dependencies on your host machine. All tools required for building, testing, quality checking, and deploying your applications, are dynamically retrieved in the form of Docker images.
 
 ## Details
+
+> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> This tutorial is not actively maintained and might be partially outdated.
+> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
+> We will provide a link to the updated version of this tutorial as soon as we release it.
+
 ### You will learn
   - How to develop and release your application in short cycles
   - How to use project "Piper" to set up a CI/CD pipeline for SAP Cloud SDK based projects on SAP Cloud Platform
