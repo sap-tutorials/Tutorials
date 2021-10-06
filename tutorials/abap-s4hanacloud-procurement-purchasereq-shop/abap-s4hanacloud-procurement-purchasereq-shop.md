@@ -310,6 +310,7 @@ In the online shop, customers can order various items. Once an item is ordered, 
       determination calculate_order_id on modify { create; }
       internal action create_pr;
       internal action set_inforecord;
+      internal action update_inforecord;
       create;
       update;
       delete;
