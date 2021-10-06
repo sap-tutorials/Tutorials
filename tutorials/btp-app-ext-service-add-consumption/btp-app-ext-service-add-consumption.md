@@ -73,7 +73,7 @@ Output:
 [cds] - imported API to srv/external/API_BUSINESS_PARTNER.csn
 > use it in your CDS models through the like of:
 
-using { API_BUSINESS_PARTNER as external } from './external/API_BUSINESS_PARTNER.csn';
+using { API_BUSINESS_PARTNER as external } from './external/API_BUSINESS_PARTNER';
 
 [cds] - updated ./package.json
 ```
@@ -136,7 +136,7 @@ In this step, you add some mock data for the business partner service. This allo
 
     ```Swift
     // using an external service from
-    using {  API_BUSINESS_PARTNER as bupa } from '../srv/external/API_BUSINESS_PARTNER.csn';
+    using {  API_BUSINESS_PARTNER as bupa } from '../srv/external/API_BUSINESS_PARTNER';
 
     entity Suppliers as projection on bupa.A_BusinessPartner {
       key BusinessPartner as ID,

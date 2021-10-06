@@ -26,7 +26,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to add SAP HANA client to your project
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`cap/roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/roles) branch.
+To start with this tutorial use the result in the [`cap/roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/roles) branch.
 
 ---
 
@@ -219,7 +219,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
 13. Choose **Next Step**.
 
-14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**. 
+14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**.
 
 14. Choose `Allow only BTP IP addresses`.
 
@@ -287,7 +287,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
 13. Choose **Next Step**.
 
-14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**. 
+14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**.
 
 14. Choose `Allow only BTP IP addresses`.
 

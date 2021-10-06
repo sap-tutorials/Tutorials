@@ -150,7 +150,7 @@ To connect to the SAP S/4HANA Cloud system, you create a service instance for th
 
 > CAP documentation about [Consuming Services](https://cap.cloud.sap/docs/guides/consuming-services)
 
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Deploy your CAP application)]
@@ -207,6 +207,12 @@ You need to perform step 16-18 from the tutorial [Add the SAP Launchpad service]
     !![RiskTitle](risk_title.png)
 
 [DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 4: ](Summary)]
+Congratulations! You have completed all tutorials.
+
+[VALIDATE_1]
 The result of this tutorial can be found in the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
 
 

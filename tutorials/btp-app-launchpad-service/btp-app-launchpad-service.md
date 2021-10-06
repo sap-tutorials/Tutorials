@@ -33,7 +33,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to test your SAP Launchpad site
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`mta`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/mta) branch.
+To start with this tutorial use the result in the [`mta`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/mta) branch.
 
 ---
 
