@@ -95,7 +95,7 @@ In this step, you will create a skeleton UI5 project for your UI5 micro-frontend
     npm install -g yo generator-easy-ui5
     ```
 
-4. Type `yo` in the terminal and use the following settings:
+4. Type `yo easy-ui5` in the terminal and choose `generator-ui5-project`. Use the following settings:
 
     ![UI5 Terminal](ui5-yo.png)
 
