@@ -67,7 +67,7 @@ SAP Business Application Studio is the next-generation web-based IDE hosted on S
 
     > !![Sucess toast message](img_3_4_note.png)
 
-5. Select the organisation in which you have enabled Mobile Services.
+5. Select the organization in which you have enabled Mobile Services.
 
     !![Org list](img-3.5.png)
 

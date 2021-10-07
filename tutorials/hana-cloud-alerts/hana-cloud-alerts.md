@@ -3,7 +3,7 @@ title: Alerts in SAP HANA Database and Data Lake
 description: Learn how to configure and view alerts in SAP HANA Cloud.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-alert-notification-service-for-sap-btp]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-alert-notification-service-for-sap-btp, software-product-function>sap-hana-cloud\,-data-lake]
 primary_tag: products>sap-hana-cloud
 ---
 
@@ -193,6 +193,8 @@ The following instructions will show how to view a triggered SAP HANA database a
 
     Additional details on the test alert are available at [SAP Note 3004477 - Usage of statistics server test alert (ID 999)](https://launchpad.support.sap.com/#/notes/3004477).
 
+    >Alerts can also be accessed via a REST API as shown at [Accessing SAP HANA Cloud Alerts and Metrics using a REST API](hana-cloud-alerts-rest-api).
+
 [DONE]
 [ACCORDION-END]
 
@@ -233,6 +235,8 @@ The following instructions show one example of triggering the [data lake locked 
     --DROP USER user2;
     --DROP LOGIN POLICY lp;
     ```
+
+    The tutorial [Monitor a Standalone Data Lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-4) may also be of interest as it demonstrates the data lake IQ monitoring views.
 
 [DONE]
 [ACCORDION-END]

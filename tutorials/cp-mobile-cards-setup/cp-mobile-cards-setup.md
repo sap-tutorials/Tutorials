@@ -47,7 +47,8 @@ You can see the list of templates shipped out of the box [here](https://github.c
 
     !![SAP BTP Log On Screen](img_2_2.png)
 
-3. Navigate to the trial global account by clicking **Enter Your Trial Account**.
+3. Navigate to the trial global account by clicking **Go To Your Trial Account**.
+
 
     !![Enter Global Account](img_2_3.png)
 

@@ -380,7 +380,9 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
     > You can also deploy a single module using `-m <module-name>` command line parameter.
 
 
-5. Enter the CAP application URL in your browser using the hostname displayed for `cpapp-srv` in the previous steps.
+5. Enter the route displayed for `cpapp-srv` in your browser.
+
+    ![cpapp-srv route](cpapp-srv-route.png)
 
     You see the CAP start page, like this:
 

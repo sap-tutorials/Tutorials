@@ -10,7 +10,7 @@ primary_tag: products>sap-fiori-tools
 ## Prerequisites
  - You must have access to the Gateway Demo System. This tutorial shows you how to access it: [Create an Account on the Gateway Demo System](gateway-demo-signup)
  - You must be able to access the following OData service URL (ES5 service): `https://sapes5.sapdevcenter.com/sap/opu/odata/sap/SEPMRA_PROD_MAN/`
- - You must have Visual Studio Code and SAP Fiori tools installed.
+ - You must have Visual Studio Code and SAP Fiori tools installed or have your SAP Business Application Studio environment configured.
 
 ## Details
 ### You will learn
@@ -45,8 +45,6 @@ The **Command Palette** will then close and a new tab for the Application Genera
 Select the **List Report Object Page** tile and press **Next**.
 
 !![Application Generator Tile](t2-lrop-tile.png)
-
-Now you need to select the page type you would like to use. Since this tutorial involves a list report, select **List Report Object Page**, and then click **Next**.
 
 [DONE]
 [ACCORDION-END]
@@ -90,7 +88,7 @@ With the page type and data source defined, the next step is to configure the ma
 |  **What is the description for your application?**          | **`SAP Fiori elements application for managing products`**
 |  **Choose your project folder**   | Click the folder selection icon and select where to save your project.
 
-Click **Finish**.
+Select `No` for the three radio button settings: **Add deployment configuration**, **Add FLP configuration**, and **Configure advanced options**. Click **Finish**.
 
 At this point, your application folder will be generated based on the input from above.
 
@@ -109,7 +107,7 @@ From the Visual Studio Code **Explorer** on your left, right-click your project 
 
 !![VSCode Open Preview Application](t2-open-preview-application.png)
 
-From the options, you will need to select a npm script. Select `start` and press **`Enter`** to preview your app with backend data. A new browser window will open with your List Report Object Page application running.
+From the options, you will need to select a npm script. Select `start` and press **`Enter`** to preview your app with backend data. A new browser window will open with your List Report Object Page application running. Click **Go** to see display the list of products.
 
 !![VSCode Select npm start](t2-select-npm-start.png)
 
@@ -127,6 +125,8 @@ To download the mock data we have provided for you, navigate to the [SAP Fiori t
 ![Download mock data from GitHub](t2-github-samples.png)
 
 Extract the zip file to a location of your choice. Drag the extracted folder into the `localService` folder in your app, under `**webapp**` > `**localService**`
+
+![Insert mock data into localService](t2_mockdata.png)
 
 From the Visual Studio Code **Explorer** on your left, right-click your project and select **Preview Application**.
 
