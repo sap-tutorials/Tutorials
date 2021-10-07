@@ -554,9 +554,11 @@ In this step, you will run the app on an Android device.
 
     ![MDK](img_8.8.png)
 
-10. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
+10. Enter your credentials to login to SAP Business Technology Platform (BTP).
 
     ![MDK](img-8.9.png)
+    ![MDK](img-8.9.1.png)    
+
 
 11. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
