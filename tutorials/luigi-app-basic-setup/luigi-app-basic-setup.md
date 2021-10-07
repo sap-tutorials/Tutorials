@@ -89,7 +89,7 @@ In this step, you will create a skeleton UI5 project for your UI5 micro-frontend
     cd ui5-mf
     ```
 
-3. Generate a new UI5 project:
+3. Install the UI5 project generator:
 
     ```Shell
     npm install -g yo generator-easy-ui5
