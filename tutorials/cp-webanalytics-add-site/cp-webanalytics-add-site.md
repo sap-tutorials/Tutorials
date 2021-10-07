@@ -4,7 +4,7 @@ description: Register your website in a SAP Web Analytics space to initiate usag
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-business-technology-platform]
-primary_tag: products>sap-web-analytics-(pilot)
+primary_tag: products>sap-web-analytics
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
 ---
