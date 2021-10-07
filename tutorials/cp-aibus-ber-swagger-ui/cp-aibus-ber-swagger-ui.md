@@ -30,7 +30,7 @@ This tutorial gives you an introduction to the service using a trial account and
 
 [ACCORDION-BEGIN [Step 1: ](Authorize Swagger UI)]
 
-You will use Swagger UI, via any web browser, to call the Business Entity Recognition APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).  
+You will use Swagger UI, via any web browser, to call the Business Entity Recognition service APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).  
 
 In the service key you created for Business Entity Recognition in the previous tutorial: [Create Service Instance for Business Entity Recognition](cp-aibus-ber-service-instance), you should find (outside the `uaa` section of the service key) an entry called `url` (as highlighted in the image below).
 
