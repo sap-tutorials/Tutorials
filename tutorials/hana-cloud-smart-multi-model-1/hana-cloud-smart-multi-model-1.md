@@ -58,7 +58,7 @@ These are the requirements to follow along:
 [ACCORDION-BEGIN [Step 2: ](Prepare your database in SAP HANA Cloud)]
 1. Sign-up for the SAP HANA Cloud trial. If you already have a trial account with SAP Cloud Platform, check your trial entitlements to add SAP HANA Cloud.
 
-2. Provision an SAP HANA Cloud, SAP HANA database in trial.
+2. [Provision an SAP HANA Cloud, SAP HANA database in trial](hana-cloud-mission-trial-2).
 
 3. Make sure your SAP HANA Cloud, SAP HANA database is running in your trial account.
 
