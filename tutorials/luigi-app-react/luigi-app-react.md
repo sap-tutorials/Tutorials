@@ -161,17 +161,21 @@ Go to `react-core-mf/public/index.html` and change its content to:
 
 ```HTML
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Luigi</title>
-  <link rel="stylesheet" href="/luigi-core/luigi.css" />
-</head>
-<body>
-<script src="/luigi-core/luigi.js"></script>
-<script src="/luigi-config.js"></script>
-</body>
+<html>
+  <head>
+    <title>Luigi</title>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"
+    />
+    <link rel="stylesheet" href="/luigi-core/luigi.css" />
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script src="/luigi-core/luigi.js"></script>
+    <script src="/luigi-config.js"></script>
+  </body>
 </html>
 ```
 
@@ -182,17 +186,19 @@ Go to `react-core-mf/public/index.html` and change its content to:
 
 In this step, you will create another HTML file which will serve as a template for React to create the React micro-frontends.
 
-Go to `react-core-mf/public` and create a new file called `app.html`. Paste this code into the file:
+Go to `react-core-mf/public` and create a new file called `sampleapp.html`. Paste this code into the file:
 
 ```HTML
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>React App</title>
   </head>
   <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
 </html>
