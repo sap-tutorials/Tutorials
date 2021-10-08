@@ -214,19 +214,13 @@ In this step, we configure `webpack` and adjust dependencies in order to make it
 
 1. Go to `react-core-mf/config/webpack-config.js`
 
-2. Around line 27, next to the other similar entries, add:
-
-    ```JavaScript
-    const CopyWebpackPlugin = require('copy-webpack-plugin');
-    ```
-
-3. Remove the following line from the file:
+2. Find the following line from the file and [comment it out](https://www.w3schools.com/js/js_comments.asp) by surrounding it with `/*` or `//` tags:
 
     ```JavaScript
     const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
     ```
 
-    In the second occurrence, remove the whole entry as well:
+3. In the second occurrence, comment out this whole entry as well:
 
     ```JavaScript
     new ModuleScopePlugin(paths.appSrc, [
@@ -235,53 +229,10 @@ In this step, we configure `webpack` and adjust dependencies in order to make it
     ]),
     ```
 
-4. Find the `plugins` section around line 510. Replace its content with:
-
-    ```JavaScript
-    new CopyWebpackPlugin(
-       {
-        patterns: [
-           {
-             context: 'public',
-             from: 'index.html',
-             to: 'index.html'
-           },
-           {
-             from: 'node_modules/@luigi-project/core',
-             to: './luigi-core'
-           }
-         ]
-       },
-       {
-         ignore: ['.gitkeep', '**/.DS_Store', '**/Thumbs.db'],
-         debug: 'warning'
-       }
-     ),
-     new HtmlWebpackPlugin(
-         {
-           inject: true,
-           template: __dirname + '/../public/app.html',
-           filename: 'app.html'
-         }
-     ),
-    ```
-
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 6: ](Create Luigi configuration file)]
-
-In this step, you will create a Luigi [configuration](https://www.youtube.com/watch?v=9hczgxJV1eU&t=3s) file. This is the central point of any Luigi app. It allows you to configure the consistent navigation and many other Luigi features.
-
-1. Go to `react-core-mf/public` and create a file called `luigi-config.js`.
-
-> In a real life implementation, you can give the configuration file any name you want or create more than one file. The only important thing is to use the correct Luigi parameters and syntax, which will be introduced in the next step.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7: ](Configure Luigi for "Home" node)]
+[ACCORDION-BEGIN [Step 6: ](Configure Luigi for "Home" node)]
 
 With the help of simple parameters pertaining to [navigation](https://docs.luigi-project.io/docs/navigation-parameters-reference) and [general settings](https://docs.luigi-project.io/docs/general-settings), you will create your first "Home" navigation node and make your application responsive.
 
@@ -292,7 +243,7 @@ These are the Luigi navigation parameters you will use:
   - `icon` - a SAP icon shown next to the label
   - `viewUrl`- the URL of your micro-frontend
 
-1. Copy and paste this to `luigi-config.js`:
+1. Go to the file `luigi-config.es6.js`. This is where you can find the Luigi configuration. Copy and paste this to :
 
     ```JavaScript
     Luigi.setConfig({
@@ -313,7 +264,7 @@ These are the Luigi navigation parameters you will use:
     ```JavaScript
     settings: {
       header: {
-        title: 'Luigi Application',
+        title: 'Luigi React App',
         logo: '/logo.png'
       },
       responsiveNavigation: 'simpleMobileOnly'
