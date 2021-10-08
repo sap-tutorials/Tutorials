@@ -105,10 +105,6 @@ In this step, you will create a React skeleton project which will be used to cre
     npm start
     ```
 
-    ```Shell
-    npx create-react-app react-core-mf
-    ```
-
 [DONE]
 [ACCORDION-END]
 
