@@ -2,23 +2,19 @@
 author_name: Supriya Cherukunnathu
 author_profile: https://github.com/SupriyaCherukunnathu
 title: Install the Paho Client
-description: Install the Paho client to send data to the SAP Cloud Platform Internet of Things Service Cloud using MQTT and REST.
+description: Install the Paho client to send data to the SAP IoT services for SAP BTP Cloud using MQTT and REST.
 auto_validation: true
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-business-technology-platform, products>sap-iot-services-for-sap-btp ]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, product>sap-edge-services, products>sap-iot-services for-sap-btp, products>sap-business-technology-platform ]
+time: 5
 ---
-
-
-## Prerequisites
- - **Proficiency:** Beginner
 
 
 ## Details
 ### You will learn
 - How to install the Paho client for MQTT on Windows or macOS
 
-### Time to Complete
-5 min
+
 
 ## Next Steps
 - **Tutorials:** [Install OpenSSL](iot-cf-install-openssl)

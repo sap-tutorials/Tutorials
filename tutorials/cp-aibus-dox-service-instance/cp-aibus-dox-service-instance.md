@@ -62,7 +62,7 @@ To try out Document Information Extraction, you need to make sure that your suba
 
     ![Add Service Plan](add-service-plans.png)
 
-  3. Select **Document Information Extraction Trial**, and choose the **default** service plan. Click **Add 1 Service Plan**.
+  3. Select **Document Information Extraction Trial**, and choose the **`blocks_of_100`** service plan. Click **Add 1 Service Plan**.
 
     ![Add Service Plan](add-entitlements.png)
 
@@ -78,18 +78,7 @@ You are now entitled to use Document Information Extraction and create instances
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Access your space)]
-
-You will find all applications and services in spaces. By default, trial accounts only have the **dev** space available.
-
-Click **Spaces** on the navigation side bar and select the **dev** space to open it.
-
-![Spaces](access-space.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Access service via Service Marketplace)]
+[ACCORDION-BEGIN [Step 3: ](Access service via Service Marketplace)]
 
 The **Service Marketplace** is where you find all the services available on SAP BTP.
 
@@ -97,14 +86,15 @@ The **Service Marketplace** is where you find all the services available on SAP 
 
     ![Service Marketplace](access-service-marketplace.png)
 
-2. Next, search for **Document Information Extraction** and click the tile to access the service.
+2. Next, search for **Document Information Extraction Trial** and click the tile to access the service.
 
     ![Document Information Extraction in Service Marketplace](access-dox.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create service instance)]
+
+[ACCORDION-BEGIN [Step 4: ](Create service instance)]
 
 You will now create an instance of your service.
 
@@ -112,32 +102,33 @@ Click **Create Instance** to start the creation dialog.
 
 ![Service Instance](create-instance.png)
 
-In the dialog, leave the default value for the service and the service plan. Enter a name for your new instance as `doc-info-extraction-inst` and click **Create Instance** to skip the other steps and create the instance.
+In the dialog, choose the **`blocks_of_100`** service plan. Enter a name for your new instance, for example, `doc-info-extraction-inst` and click **Create Instance**.
 
 ![Create Instance](create-instance-dialog.png)
 
 In the following dialog, click on **View Instance** to be navigated to the list of your service instances.
 
-![View Instances](view-instances.png)
+![View Instances](view-instance.png)
 
 You have successfully created a service instance for Document Information Extraction.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create service key)]
+
+[ACCORDION-BEGIN [Step 5: ](Create service key)]
 
 You are now able to create a service key for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
-  1. Click the navigation arrow to open the details of your service instance. Then, click the dots to open the menu and select **Create Service Key**.
+  1. Click the dots to open the menu and select **Create Service Key**.
 
       ![Service Key](create-service-keys.png)
 
-  2. In the dialog, enter `doc-info-extraction-key` as the name of your service key. Click **Create** to create the service key.
+  2. In the dialog, enter a name for your service key, for example, `doc-info-extraction-key`. Click **Create** to create the service key.
 
       ![Create Service Key](create-service-key-name.png)
 
-You have successfully created a service key for your service instance. You can now either view the service key in the browser or download it.
+You have successfully created a service key for your service instance. You can now view the service key in the browser or download it.
 
 ![View Service Key](view-service-key.png)
 
