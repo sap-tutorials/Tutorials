@@ -1,6 +1,6 @@
 ---
-title: Creation of Training and Serving Docker Images
-description: Learn to build Docker images and orchestrate their execution with for SAP AI Core.
+title: Create Training and Serving Docker Images (Postman)
+description: Build Docker images and orchestrate their execution with for SAP AI Core.
 auto_validation: true
 time: 20
 tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]

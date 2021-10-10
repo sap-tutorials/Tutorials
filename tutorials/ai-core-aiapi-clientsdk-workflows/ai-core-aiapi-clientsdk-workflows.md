@@ -1,6 +1,6 @@
 ---
-title: Creation of Training and Serving Docker Images
-description: Learn to build Docker images and orchestrate their execution with for SAP AI Core.
+title: Create Training and Serving Docker Images (client SDK)
+description: Build Docker images and orchestrate their execution with for SAP AI Core.
 auto_validation: true
 time: 20
 tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
@@ -35,7 +35,7 @@ Training Scripts
 | ---  | ----- |
 | `Dockerfile` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-clientsdk-workflows/files/train/Dockerfile) |
 | `evaluate_scikit.py` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-clientsdk-workflows/files/train/evaluate_scikit.py)
-| `requirements.txt` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-cliensdk-workflows/files/train/requirements.txt)
+| `requirements.txt` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-clientsdk-workflows/files/train/requirements.txt)
 | `train_scikit.py` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-clientsdk-workflows/files/train/train_scikit.py)
 
 
@@ -45,7 +45,7 @@ Inference/ Serving Scripts
 | -------- | ------------- |
 | `Dockerfile` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-clientsdk-workflows/files/infer/Dockerfile)
 | `infer_scikit.py` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-clientsdk-workflows/files/infer/infer_scikit.py)
-| `requirements.txt` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-cliensdk-workflows/files/infer/requirements.txt)
+| `requirements.txt` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-clientsdk-workflows/files/infer/requirements.txt)
 
 [DONE]
 [ACCORDION-END]

@@ -1,6 +1,6 @@
 ---
-title: Set Up Postman Client for SAP AI Core
-description: Get Postman Collections and environment variables for SAP AI Core. Learn to generate OAuth token to authorize API calls.
+title: Set Up Postman for SAP AI Core
+description: Get Postman Collections and environment variables for SAP AI Core, and generate OAuth token to authorize API calls.
 auto_validation: true
 time: 15
 tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]

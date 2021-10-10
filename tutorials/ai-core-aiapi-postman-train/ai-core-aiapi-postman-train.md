@@ -1,6 +1,6 @@
 ---
-title: Training Execution of ML Model
-description: Training execution a ML model in SAP AI Core with help of Postman client.
+title: Train Execution of ML Model (Postman)
+description: Train execution of an ML model in SAP AI Core with help of Postman client.
 auto_validation: true
 time: 20
 tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]

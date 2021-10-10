@@ -1,5 +1,5 @@
 ---
-title: Connect GitHub and Docker to SAP AI Core through Postman Client
+title: Connect GitHub and Docker to SAP AI Core through (Postman)
 description: Learn to enable SAP AI Core to auto-sync code and workflows files hosted on GitHub and Docker.
 auto_validation: true
 time: 20

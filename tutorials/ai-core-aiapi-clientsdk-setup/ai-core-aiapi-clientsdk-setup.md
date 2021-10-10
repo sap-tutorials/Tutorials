@@ -1,5 +1,5 @@
 ---
-title: Jupyter installation and Run SAP AI API Client SDK on Python
+title: Set Up Jupyter to Run SAP AI API Client SDK on Python
 description: Learn python installation and Jupyter setup. Invoke SAP AI API Client SDK.
 auto_validation: true
 time: 15

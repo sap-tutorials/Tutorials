@@ -1,6 +1,6 @@
 ---
-title: Training Execution of ML Model
-description: Training execution a ML model in SAP AI Core with help of SAP AI Client SDK.
+title: Train Execution of ML Model (client SDK)
+description: Train execution of an ML model in SAP AI Core with the help of SAP AI Client SDK.
 auto_validation: true
 time: 25
 tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]

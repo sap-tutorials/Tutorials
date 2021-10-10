@@ -1,5 +1,5 @@
 ---
-title: Create a resource group and connect AWS S3 object store to SAP AI Core
+title: Create a Resource Group and Connect AWS S3 Object Store to SAP AI (client SDK)
 description: Learn creation of resource group in SAP AI Core to enable multi-tenancy through SAP AI API Client SDK. Store datasets to AWS S3 and connect to SAP AI Core through SAP AI API Client SDK.
 auto_validation: true
 time: 15
