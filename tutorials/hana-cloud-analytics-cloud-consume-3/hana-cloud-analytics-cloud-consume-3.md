@@ -3,17 +3,16 @@ title: Create Live Data Model and a Story
 description: Live Data Model is created SAP Analytics Cloud and consume it to create a story for data analysis.
 auto_validation: true
 time: 10
-tags: [ tutorial>intermediate, products>sap-business-technology-platform, products>sap-business-application-studio, products>sap-analytics-cloud, products>sap-hana-cloud]
+tags: [ tutorial>intermediate, products>sap-business-technology-platform, products>sap-business-application-studio, products>sap-analytics-cloud, products>sap-hana-cloud ]
 primary_tag: software-product-function>sap-hana-cloud\,-sap-hana-database
-
 ---
+
 ## Prerequisites
  - You have a SAP Analytics cloud trial Account.
     - **SAP Analytics Cloud trial**
 
 ## Details  
 ### You will learn
-
 - How to create Live Data model in SAP Analytics Cloud.
 - How to create stories in SAP Analytics Cloud.
 
@@ -88,7 +87,7 @@ In this tutorial, you will learn about the creation of a Live Data Model in SAP 
 
 ---
 
-### Tutorials for further learning
+#### Tutorials for further learning
 
 [HANA Academy tutorials](https://www.youtube.com/playlist?list=PLkzo92owKnVzONfsNdQNmpPQvUT54UUAL)
 
