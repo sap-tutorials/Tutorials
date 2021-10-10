@@ -1,6 +1,6 @@
 ---
-title: Display Fetched Data in your AppGyver Application
-description: In this tutorial, you will learn how to display data fetched from a public API, such as product names and calorific information, in your AppGyver application.
+title: Display Fetched Data in Your AppGyver Application
+description: Display data fetched from a public API, such as product names and calorific information, in your AppGyver application.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, tutorial>license, topic>mobile]
