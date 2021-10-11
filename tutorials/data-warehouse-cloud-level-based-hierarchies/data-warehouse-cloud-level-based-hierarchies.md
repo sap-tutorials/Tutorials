@@ -20,7 +20,7 @@ primary_tag: products>sap-data-warehouse-cloud
 
 [ACCORDION-BEGIN [Step 1: ](What is a level-based hierarchy)]
 
-A level-based hierarchy is a hierarchy in a standard dimension that contains one or more levels of aggregation. They are rigid in nature, meaning that the root and the child nodes can only be accessed in the defined order. The members of the hierarchy roll up into the next higher level in a many-to-one relationship, and members at this higher level roll up into the next higher level, and so on to the top level.
+A level-based hierarchy is a hierarchy in a standard dimension that contains one or more levels of aggregation. They are rigid in nature, implying that the root and the child nodes can only be accessed in the defined order. The members of the hierarchy roll up into the next higher level in a many-to-one relationship, and members at this higher level roll up into the next higher level, and so on to the top level.
 
 In other words, the different levels of the hierarchy are kept in separate tables. Each level is fixed. These levels are linked to each other in a way that describes a special relationship: a level-based relationship. It is only used for level-based measures.
 
