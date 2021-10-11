@@ -1,6 +1,6 @@
 ---
-title: Connect GitHub and Docker to SAP AI Core (client SDK)
-description: Learn to setup GitHub and Docker registry. Syncing the same with SAP AI Core through SAP AI API Client SDK.
+title: Connect GitHub and Docker to SAP AI Core (Client SDK)
+description: Learn to setup GitHub and Docker registry, and sync them with SAP AI Core through SAP AI API Client SDK.
 auto_validation: true
 time: 15
 tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
@@ -12,64 +12,82 @@ author_profile: https://github.com/dhrubpaul
 
 ## Details
 ### You will learn
-- How to create GitHub repository and sync files
+- How to create GitHub repository and upload files to it
 - How to create Docker repository
 - How to connect GitHub and Docker using SAP AI API Client SDK
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Create a GitHub repository)]
+[ACCORDION-BEGIN [Step 1: ](Create GitHub repository)]
 
-Sign-up for GitHub, Go to [github.com](https://github.com/).
+A GitHub repository is a folder pertaining to your project.
 
-Create a repository. A repository is a folder pertaining to your project.
-Click **New**
+1. Sign-up for GitHub, visit [github.com](https://github.com/).
 
-!![Create repository](img/github/1.png)  
+2. Click **New**, in your GitHub page.
+
+	!![Create repository](img/github/1.png)  
+
+3. Set the repository name as `aicore-test`
+
+	!![Repository Name: aicore-test](img/github/2.png)
+
+Once finished your GitHub page will look like this.
 
 !![Repository Created](img/github/3.png)  
 
-Set the repository name as `aicore-test`
+[DONE]
+[ACCORDION-END]
 
-!![Repository Name: aicore-test](img/github/2.png)
 
-To manage GitHub repository from your computer
+[ACCORDION-BEGIN [Step 2: ](Clone GitHub using GitHub Desktop)]
 
-Install GitHub Desktop. [Download here](https://desktop.github.com/)  
+Cloning is the process of managing your GitHub repositories on you local computer
 
-Login using the GitHub-Desktop to your GitHub Account.
+GitHub Desktop helps you clone, create, edit and sync files of your GitHub repository from you local computer.
 
-Open GitHub Desktop and click **File > Clone a repository**
+1. Install GitHub Desktop. [Download here](https://desktop.github.com/)  
 
-!![clone repo](img/github/clone-repo.png)
+2. Open GitHub Desktop, from welcome screen sign in to your GitHub Account *(Alternative Sign-in on GitHub Desktop: **File** > **Options** > **Account** )*.
 
-Enter the repository we created. In the URL field, type `<your github username>/aicore-test`.
+3. Click **File > Clone a repository**
 
-!![repo url](img/github/local-repo-2.png)
+	!![clone repo](img/github/clone-repo.png)
 
-> **CAUTION**: In this tutorial, the sample images shown are two folders with same name `aicore-test`. We will notify your which one is used where.
+4. click on the  **URL** tab. Type the repository name we created, `<your github username>/aicore-test`.
+
+	!![repo url](img/github/local-repo-2.png)
+
+> **CAUTION**: In this tutorial, the sample images shown are two folders with same name `aicore-test`. Heres how you will differentiate them:
 >
-> GitHub synced *(C:/john/Documents/GitHub/aicore-test)* : **Screenshots with File Explorer** which will be used to upload workflows(explained later) and connected to SAP AI Core
+> **Screenshots showing File Explorer**, GitHub synced folder *(C:/john/Documents/GitHub/aicore-test)* which we will connect to SAP AI Core and upload workflows *(explained later)*.
 >
-> Local Un-synced *(C:/aicore-test)* : One which is depicted in **Screenshots with IDE** where we Jupyter notebook is running and private keys are located. **Because never upload/sync your private keys with GitHub.**
+> **Screenshots showing IDE**, Local Un-synced *(C:/aicore-test)*, where our Jupyter notebook is running and private keys *(files)* are located. **Never upload/sync your private keys with GitHub.**
 
 
-Create a folder name `workflows`. Inside the local copy of your GitHub *(cloned repository)*
+[DONE]
+[ACCORDION-END]
 
-!![folder creation](img/github/folder-1.png)
 
-Create **an empty file** named `training_workflow_tutorial.yaml` inside the `workflows` folder. *(We will fill its contents later)*
+[ACCORDION-BEGIN [Step 3: ](Upload files to GitHub using GitHub Desktop)]
 
-!![file creation](img/github/folder-2.png)
+1. Locate where you cloned your GitHub repository.
 
-Sync your local git repo with online. Open GitHub-Desktop.
-Click on **Commit to main** button
+2. Create a folder name `workflows`, inside `aicore-test`.
 
-!![commit](img/github/commit.png)
+	!![folder creation](img/github/folder-1.png)
 
-Then press **Push Origin** button. This will sync our local changes with online GitHub.
+3. Create **an empty file** named `training_workflow_tutorial.yaml` inside the `workflows` folder. *(We will fill its contents later)*
 
-!![push](img/github/push.png)
+	!![file creation](img/github/folder-2.png)
+
+4. Open GitHub-Desktop, Click on **Commit to main** button.
+
+	!![commit](img/github/commit.png)
+
+6. Click **Push Origin** button. This will sync our local changes with online GitHub.
+
+	!![push](img/github/push.png)
 
 GitHub Desktop will only show un-synced changes.
 
@@ -78,12 +96,11 @@ GitHub Desktop will only show un-synced changes.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Connect the Git repository to the SAP AI Core)]
+[ACCORDION-BEGIN [Step 4: ](Connect GitHub repository to SAP AI Core)]
 
-Create the `git_setup.json` with the following contents:
-> **CAUTION** Use your own GitHub URL and your credentials!
+Create file `git_setup.json` with the following contents, Use your own GitHub URL and your credentials! *(highlighted lines)*.
 
-```JSON
+```JSON[4, 5, 6, 10]
 {
 		"repo": {
 				"name": "aicore-test",
@@ -104,7 +121,7 @@ Store it inside the files folder: `files/git_setup.json`.
 
 !![git setup](img/github/git-setup.png)
 
-Execute the following python code on your Jupyter notebook cell, to connect your GitHub repository to your SAP AI Core service instance through SAP AI API Client SDK.
+Execute the following python code on your Jupyter notebook cell.
 
 > **IMPORTANT:** DO NOT Execute the following code, if your SAP AI Core Account is already connected to a GitHub Account. Contact the support if you want to connect to a different account.
 
@@ -168,7 +185,7 @@ Example Output
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](List Connected Git Repositories)]
+[ACCORDION-BEGIN [Step 5: ](List connected GitHub repositories)]
 
 Execute the following python code on your Jupyter notebook cell
 
@@ -196,9 +213,9 @@ Example Output
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](List the apps used to synchronize the Git repository)]
+[ACCORDION-BEGIN [Step 6: ](List connected applications)]
 
-The apps refers to directory inside the connected GitHub repository. This helps you manage multiple projects with same connected repository.
+Applications refers to directory inside connected GitHub repository. SAP AI Core will scan these directories for any workflows *(explained later)* you upload, it won't scan any sub-directories contained within. For any directories you intent SAP AI Core to scan, add as an application *(see parts for same in previous step)*.
 
 Execute the following python code on your Jupyter notebook cell
 
@@ -222,22 +239,20 @@ Example Output
 }
 ```
 
-
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a Docker account and repository)]
+[ACCORDION-BEGIN [Step 7: ](Create Docker repository)]
 
+1. Sign up on [docker.com](https://www.docker.com).
 
-Sign-up at [docker.com](https://www.docker.com)
+2. Click **Create Repository** on Docker website.  
 
-Create Repository  
+	!![docker create repository button](img/docker/repo_create.png)
 
-!![docker create repository button](img/docker/repo_create.png)
+3. Name the repository `text-clf-train`
 
-Name the repository `text-clf-train`
-
-!![docker repo for training](img/docker/repo_name.png)
+	!![docker repo for training](img/docker/repo_name.png)
 
 Create another repository similarly, named `text-clf-serve`.
 
@@ -247,7 +262,9 @@ Create another repository similarly, named `text-clf-serve`.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Install Docker on your machine)]
+[ACCORDION-BEGIN [Step 8: ](Install Docker Desktop)]
+
+Docker Desktop helps you manage build and upload Docker images to your Docker account.
 
 Download and Install Docker Desktop. [Download here](https://www.docker.com/products/docker-desktop)
 
@@ -255,7 +272,7 @@ After Installation. You will see Docker Desktop icon on your desktop tray.
 
 !![docker desktop icon](img/docker/dd-icon.png)
 
-Verify with your terminal *(command prompt)*. Execute the following on terminal.
+Verify successful Docker installation with your terminal *(command prompt)*. Execute the following on terminal.
 
 ```BASH
 docker --version
@@ -263,18 +280,16 @@ docker --version
 
 !![docker terminal version](img/docker/dd-terminal.png)
 
-
-
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Connect your Docker registry to the SAP AI Core)]
+[ACCORDION-BEGIN [Step 9: ](Connect Docker to SAP AI Core with docker registry secret)]
 
-Create a file `docker_secret.json`, with following contents .
+Docker Registry Secret is SAP AI Core entity that manages credentials to connect to your Docker repository.
 
-> **CAUTION**: Replace `$username` with your docker-hub username and `$password` with password.
+Create a file `docker_secret.json`, with following contents. Put your Docker credentials *(highlighted parts)*.
 
-```JSON
+```JSON[4]
 {
   "name": "docker-registry-secret",
   "data": {
@@ -283,11 +298,11 @@ Create a file `docker_secret.json`, with following contents .
 }
 ```
 
-Store it inside the files folder: `files/docker_secret.json`.
+Store `docker_secret.json` inside the `files` folder: `files/docker_secret.json`.
 
 !![docker secret.json](img/docker/docker-secret.png)
 
-Execute the following python code on your Jupyter notebook cell to connect your Docker repository to SAP AI Core with the help of SAP AI API Client SDK.
+Execute the following python code on your Jupyter notebook cell.
 
 ```PYTHON
 docker_secret_file_path = 'files/docker_secret.json'
@@ -318,10 +333,9 @@ Example Output
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](List connected Docker registry secret)]
+[ACCORDION-BEGIN [Step 10: ](List docker registry secret)]
 
 Execute the following python code on your Jupyter notebook cell
-
 
 ```PYTHON
 ai_api_client.rest_client.get(
@@ -340,9 +354,7 @@ Example Output
 }
 ```
 
-
 [DONE]
 [ACCORDION-END]
-
 
 ---
