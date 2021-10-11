@@ -1,6 +1,6 @@
 ---
 title: Subscribe to the Low-Code / No-Code Service in SAP BTP
-description: In this tutorial, you will learn how to subscribe to and open the Low-Code / No-Code service on SAP BTP. Subscribing to the service gives you access to the AppGyver Composer tool, an intuitive application development solution for users of all technical abilities.
+description: Subscribe to and open the Low-Code / No-Code service on SAP BTP, and get access to the AppGyver Composer tool, an intuitive application development solution for users of all technical abilities.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, tutorial>license, topic>mobile]

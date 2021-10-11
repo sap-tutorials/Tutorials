@@ -70,7 +70,7 @@ In the next step, you can decide which authentication method to use after readin
 
 [OPTION BEGIN [Connect with user credentials]]
 
->This step assumes that you are familiar with SAP Business Technology Platform and have a space that contains an SAP HANA Cloud, SAP HANA database instance.
+>This step assumes that you are familiar with SAP Business Technology Platform and have a space that contains an SAP HANA Cloud, SAP HANA database instance. If you would like to become more familiar with SAP HANA Cloud and provisioning instances, check out this [tutorial](hana-cloud-mission-trial-2).
 
 This is the simplest method to create a live connection because you only need to use your credentials to SAP HANA Cloud, SAP HANA database within SAP Analytics Cloud.
 

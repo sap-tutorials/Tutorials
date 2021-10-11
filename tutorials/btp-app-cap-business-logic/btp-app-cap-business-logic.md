@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`cap/fiori-elements-app`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/fiori-elements-app) branch.
+To start with this tutorial use the result in the [`cap/fiori-elements-app`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/fiori-elements-app) branch.
 
 ---
 
