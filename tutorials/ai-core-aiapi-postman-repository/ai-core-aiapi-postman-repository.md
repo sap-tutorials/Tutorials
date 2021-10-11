@@ -16,13 +16,13 @@ author_profile: https://github.com/dhrubpaul
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create GitHub Repository)]
+[ACCORDION-BEGIN [Step 1: ](Create GitHub repository)]
+
+A GitHub repository refers to a folder *(project)*, with Version-Control, which means you can track any changes to files contained within revert them.
 
 1. Sign up for GitHub, Go to [github.com](https://github.com/).
 
 2. Create a repository, Click **New**.
-
-    > A GitHub repository refers to a folder ( *project*), with Version-Control( i.e. track changes and are reversible ).
 
     !![Create repository](img/github/1.png)  
 
@@ -35,18 +35,23 @@ author_profile: https://github.com/dhrubpaul
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Manage GitHub(online) Locally)]
+[ACCORDION-BEGIN [Step 2: ](Clone GitHub using GitHub Desktop)]
 
+Cloning is the process of managing your GitHub repositories on you local computer
+
+GitHub Desktop helps you clone, create, edit and sync files of your GitHub repository from you local computer.
 
 1. Install GitHub Desktop. [Download here](https://desktop.github.com/)  
 
-2. Login using the GitHub Desktop to your GitHub Account.
+2. Open GitHub Desktop.
 
-3. Open GitHub Desktop and click **File > Clone a repository**
+3. From welcome screen login to your GitHub Account *(Alternative login: **File** > **Options** > **Accounts**).
+
+3. Click **File > Clone a repository**.
 
     !![clone repo](img/github/clone-repo.png)
 
-4. Enter the repository we created. In the URL field, type `<your github username>/aicore-test`.
+4. Go to **URL** tab. Type `<your github username>/aicore-test`.
 
     !![repo url](img/github/local-repo-2.png)
 
@@ -75,7 +80,7 @@ author_profile: https://github.com/dhrubpaul
 
     !![push](img/github/push.png)
 
-This will sync up your GitHub repository(online) with new changes you made locally.
+This will sync up your local files with GitHub repository(online).
 
 GitHub Desktop will only show **un-synced** changes.
 
@@ -87,14 +92,14 @@ GitHub Desktop will only show **un-synced** changes.
 
 
 
-[ACCORDION-BEGIN [Step 4: ](API to Connect GitHub SAP AI Core)]
+[ACCORDION-BEGIN [Step 4: ](API to connect GitHub SAP AI Core)]
 
 
 > **CAUTION** At present SAP AI Core can connect to single GitHub repository, skip this step if its already connected to one. Contact support to change if required.
 
-After we connect GitHub repository to our SAP AI Core account, whenever we will push changes ( *upload files*) to GitHub, the SAP AI Core can pull them automatically.
+After we connect GitHub repository to our SAP AI Core account, whenever we will push changes *(upload files)* to GitHub, the SAP AI Core can pull(sync) them automatically.
 
-Perform the below on Postman.
+Make the following API call using Postman
 
 > **COLLECTIONS** > admin > repositories > *POST* Create repository
 
@@ -104,9 +109,9 @@ Perform the below on Postman.
 
 ### Body
 
-> **CAUTION** Ensure you use your GitHub URL and your credentials, below.
+Edit your GitHub URL and your credentials, *(highlighted lines)* below.
 
-```JSON
+```JSON[3, 4, 5]
 {
     "name": "aicore-test",
     "url": "https://github.com/<your-username>/aicore-test",
@@ -114,10 +119,12 @@ Perform the below on Postman.
     "password": "$password"
 }
 ```
+!![create repository](img/postman/call-repo.png)
 
 **SEND**
 
 ### Response
+
 ```
 {'count': 1,
  'resources':[{'name': 'aicore-test',
@@ -127,13 +134,10 @@ Perform the below on Postman.
 }
 ```
 
-!![create repository](img/postman/call-repo.png)
-
-
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](API to List Connected GitHub Repository)]
+[ACCORDION-BEGIN [Step 5: ](API to list connected GitHub repository)]
 List Connected Git Repositories
 
 > **COLLECTIONS** > admin> repositories > *GET* List repositories
@@ -164,9 +168,9 @@ List Connected Git Repositories
 
 
 
-[ACCORDION-BEGIN [Step 6: ](API to Create Application on SAP AI Core)]
+[ACCORDION-BEGIN [Step 6: ](API to create application on SAP AI Core)]
 
-Application is an entity which links a sub-folder ( *representing project*) inside your connected GitHub repository.
+Application is an SAP AI Core entity which links a sub-folder inside your connected GitHub repository. SAP AI Core will look into these folders for any workflow *(explained later)*, and sub-folder within the same will not be searched for.
 
 > **COLLECTIONS** > admin > applications > *POST* Create application
 
@@ -175,8 +179,10 @@ Application is an entity which links a sub-folder ( *representing project*) insi
 `{{apiurl}}/v2/admin/applications`
 
 ### Body
-> **CAUTION** Ensure you use your GitHub username below
-```
+
+Edit your GitHub username *(highlighted lines)* below.
+
+```JSON[3]
 {
     "applicationName": "aicore-test-app",
     "repositoryUrl": "https://github.com/<your-username>/aicore-test",
@@ -201,7 +207,7 @@ Application is an entity which links a sub-folder ( *representing project*) insi
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](API to List Connected Applications)]
+[ACCORDION-BEGIN [Step 7: ](API to list connected Applications)]
 
 > **COLLECTIONS** > admin > applications > *GET* List applications
 
@@ -228,17 +234,17 @@ Application is an entity which links a sub-folder ( *representing project*) insi
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create Docker Repository)]
+[ACCORDION-BEGIN [Step 8: ](Create Docker repository)]
 
 1. Sign up at [docker.com](https://www.docker.com)
 
-2. Create Repository  
+2. Click **Create Repository**.
 
     !![docker create repository button](img/docker/repo_create.png)
 
 3. Name the repository "text-clf-train"  
 
-!![docker repo for training](img/docker/repo_name.png)
+    !![docker repo for training](img/docker/repo_name.png)
 
 4. Create another repository similarly, named **text-clf-serve**.
 
@@ -251,23 +257,21 @@ Application is an entity which links a sub-folder ( *representing project*) insi
 [ACCORDION-BEGIN [Step 9: ](Manage Docker locally)]
 
 1. Download and Install Docker Desktop. [Download here](https://www.docker.com/products/docker-desktop)
-<br>After Installation. You will see Docker Desktop icon on your desktop tray.
+
+2. After Installation. You will see Docker Desktop icon on your desktop tray.
 
     !![docker desktop icon](img/docker/dd-icon.png)
 
-2. Verify with your terminal *(command prompt)*. Execute the following on terminal.
+3. Verify with your terminal *(command prompt)*. Execute the following on terminal.
 
-```
-docker --version
-```
+    ```BASH
+    docker --version
+    ```
 
-!![docker terminal version](img/docker/dd-terminal.png)
-
-
+    !![docker terminal version](img/docker/dd-terminal.png)
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 10: ](Connect Docker to SAP AI Core)]
 
@@ -280,8 +284,10 @@ docker --version
 Create the following file `docker_secret.json` .
 
 ### Body
-> **CAUTION**: Replace `$username` with your Docker-Hub username and `$password` with password.
-```JSON
+
+Edit and replace `$username` with your Docker username and `$password` with password. *(highlighted line)*.
+
+```JSON[4]
 {
   "name": "docker-registry-secret",
   "data": {
@@ -291,6 +297,8 @@ Create the following file `docker_secret.json` .
 ```
 
 !![docker secret](img/postman/call-docker.png)
+
+**SEND**
 
 ### Response
 ```
@@ -311,7 +319,7 @@ Create the following file `docker_secret.json` .
 }
 ```
 
-**IMPORTANT:** Creating docker secret does not imply docker account gets connected. It only implies that whenever SAP AI Core search(if required) for docker images it will use these credentials to search docker repository. At that time it may happen that the provided credentials are incorrect.
+> **IMPORTANT:** Creating docker secret does not imply docker account gets connected. It only implies that whenever SAP AI Core search(if required) for docker images it will use these credentials to search docker repository. At that time it may happen that the provided credentials are incorrect.
 
 [VALIDATE_1]
 [ACCORDION-END]

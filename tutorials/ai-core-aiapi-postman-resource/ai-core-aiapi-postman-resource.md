@@ -16,7 +16,7 @@ author_profile: https://github.com/dhrubpaul
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Resource Group)]
+[ACCORDION-BEGIN [Step 1: ](Create resource group)]
 
 
 Resource groups represent a virtual collection of related resources within the scope of one SAP AI Core tenant.
@@ -54,7 +54,7 @@ The value of `tenant_id` is equal to the value of `identityzoneid` from service 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](API to List Resource Groups)]
+[ACCORDION-BEGIN [Step 2: ](API to list resource groups)]
 
 > **COLLECTIONS** > admin > *GET* List `resourcegroup`
 
@@ -83,13 +83,13 @@ The value of `tenant_id` is equal to the value of `identityzoneid` from service 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Connect to S3 Object Store using S3 Browser)]
+[ACCORDION-BEGIN [Step 3: ](Manage AWS S3 Object Store using S3 Browser)]
 
-1. Create a S3 Bucket. Two options
+1. You can get AWS S3 Bucket from either of two ways:
 
-    1. Through BTP Cockpit.
+	1. Through BTP Cockpit.
 
-    2. Through AWS. Refer [AWS User Guide to S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)
+	2. Through AWS. Refer [AWS User Guide to S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)
 
 
 2. Install S3 Browser. [Download here](https://s3browser.com/)
@@ -98,7 +98,7 @@ The value of `tenant_id` is equal to the value of `identityzoneid` from service 
 
     !![enter s3 credentials in s3 bucket](img/s3/init.png)
 
-4. If you don't have bucket create one and skip this step or else follow these.
+4. If you don't have bucket create one and skip to next step.
 
 	!![s3 bucket info](img/s3/bucket-1.png)  
 
@@ -109,9 +109,11 @@ The value of `tenant_id` is equal to the value of `identityzoneid` from service 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Upload Training Dataset to S3 Object Store)]
+[ACCORDION-BEGIN [Step 4: ](Upload dataset to AWS S3 Object Store)]
 
-1. Create a folder named `tutorial` in your S3 bucket.
+1. Open S3 Browser.
+
+2. Click **New Folder** and Create a folder named `tutorial`.
 
 	!![path prefix](img/s3/path-prefix.png)
 
@@ -121,28 +123,28 @@ The value of `tenant_id` is equal to the value of `identityzoneid` from service 
 
 3. Upload your datafile `travel.csv` inside `tutorial/data/`. This will be used for training the model.
 
-| File   | Link
-|  :------------- | :-------------
-|  `travel.csv` | [Download Here](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-resource/travel.csv)
+	| File   | Link |
+	|  :------------- | :------------- |
+	|  `travel.csv` | [Download Here](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-resource/travel.csv) |
 
 	!![upload](img/s3/data-2.png)
 
-4. Final look of S3 bucket.
 
-	!![final s3 look](img/s3/final.png)
+Final look of S3 bucket.
+
+!![final s3 look](img/s3/final.png)
 
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](API to Connect S3 Object Store to SAP AI Core)]
+[ACCORDION-BEGIN [Step 5: ](API to connect S3 Object Store to SAP AI Core)]
 
+Object Stores are connected to the resource groups, hence ensure you have the resource group created before proceeding.
 
-Object stores are connected to the resource groups, hence ensure you have the resource group created before proceeding.
+Get your AWS S3 Credentials in the format below.
 
-Get your S3 Credentials in the format below.
-
->  In case you are using the SAP object store you get the content from `BTP cockpit > BTP subaccount > Instances and Subscriptions > Instances > Credentials `.
+>  In case you are using the SAP Object Store, get the content from `SAP BTP cockpit > SAP BTP subaccount > Instances and Subscriptions > Instances > Credentials `.
 
 ```JSON
 {
@@ -156,6 +158,8 @@ Get your S3 Credentials in the format below.
 }
 ```
 
+Make the API call.
+
 > **COLLECTIONS** > *POST* create `objectstore`
 
 ### Endpoint
@@ -168,14 +172,15 @@ Create the body using above s3 credentials with following key-value, **(other ke
 | S3 Key | BODY Key | *Example Value*|
 | --- | -- | --- |
 | bucket | bucket | asd-11111111-2222-3333-4444-55555555555
-| `access_key_id` | data > `AWS_ACCESS_KEY_ID` | ASDFASDFASDFASDF
-| `secret_access_key` | data > `AWS_SECRET_ACCESS_KEY` | `asdfASDFqwerQWERasdfQWER`
+| `access_key_id` | `data` > `AWS_ACCESS_KEY_ID` | ASDFASDFASDFASDF
+| `secret_access_key` | `data` > `AWS_SECRET_ACCESS_KEY` | `asdfASDFqwerQWERasdfQWER`
 | `regiion` | region | us-east-1
 | `host` | endpoint | s3.amazonaws.com
 
 Example Body
 
-```
+Edit the highlighted lines.
+```JSON[4, 5, 7, 9, 10]
 {
     "name": "default",
     "type": "S3",
@@ -210,7 +215,7 @@ Example Body
 {'message': 'secret has been created'}
 ```
 
-This will connect our object store. The connection will be named `default` ( *see python code above*).
+This will connect our object store. The connection will be named `default`.
 
 [VALIDATE_1]
 [ACCORDION-END]
