@@ -19,11 +19,9 @@ author_profile: https://github.com/dhrubpaul
 
 Ensure your model training is completed without error, because the weights of the model are derived from training TUTORIAL ( Training the Model with SAP AI Core(Postman) ).
 
-[ACCORDION-BEGIN [Step 1: ](Create Serving Configuration for Deployment)]
+[ACCORDION-BEGIN [Step 1: ](Create serving configuration for deployment)]
 
-Similar to the training we will now create a serving configuration. This time the input artifact is the trained model.
-We also create a deployment in the same step, since that is just one more line of code.
-
+Similar to the training you will now create a serving configuration. This time the input artifact is the trained model.
 
 > **COLLECTIONS** > *POST* Create deployment configuration
 
@@ -39,7 +37,16 @@ We also create a deployment in the same step, since that is just one more line o
 | `AI-Resource-Group` | tutorial |
 
 ### BODY
-```
+
+**IMPORTANT:** Following is the key-value pairs to be changed in the body
+
+| Key | Where to get value from |
+| --- | --- |
+| `artifactId` | from `RESPONSE` of API call ` *GET* Get execution`,<br> the output artifact Id
+
+other values are used from `workflows\serving_workflow_tutorial.yaml`
+
+```JSON[10]
 {
   "name": "dev-tutorial-serving-configuration",
   "executableId": "text-clf-infer-tutorial",
@@ -54,14 +61,6 @@ We also create a deployment in the same step, since that is just one more line o
   ]
 }
 ```
-
-**IMPORTANT:** Following the key-value pairs to be changed in the body
-
-| Key | Where to get value from |
-| --- | --- |
-| `artifactId` | from `RESPONSE` of API call ` *GET* Get execution`,<br> the output artifact Id
-
-other values are used from `workflows\serving_workflow_tutorial.yaml`
 
 !![body of configuration](img/deploy/config-body.png)
 
@@ -78,9 +77,9 @@ other values are used from `workflows\serving_workflow_tutorial.yaml`
 
 !![config response](img/deploy/config-response.png)
 
-**IMPORTANT:** This `id` needs to be added in the Postman Environment Variable.
+**IMPORTANT:** This `id` from response needs to be added in the Postman Environment Variable.
 
-| VARIABLE| CURRENT VALUE |
+| VARIABLE| CURRENT VALUE *(example value)* |
 | --- | --- |
 | `configurationid` | 91809180-b3d6-433c-a930-8208940b9160
 
@@ -92,9 +91,9 @@ other values are used from `workflows\serving_workflow_tutorial.yaml`
 
 
 
-[ACCORDION-BEGIN [Step 2: ](Start Serving Deployment)]
+[ACCORDION-BEGIN [Step 2: ](Start serving deployment)]
 
-We had create the configuration ( *serving configuration*) of deployment in the previous step. Now we will use that configuration to deploy the model.
+The configuration *(serving configuration)* for deployment was created in the previous step. Now use that configuration to deploy the model.
 
 > **COLLECTIONS** > *POST* Start deployment
 
@@ -124,9 +123,9 @@ We had create the configuration ( *serving configuration*) of deployment in the 
 
 !![Deployment](img/deploy/dep-create.png)
 
-**IMPORTANT:** This `id` needs to be added in the Postman Environment Variable.
+**IMPORTANT:** This `id` from response needs to be added in the Postman Environment Variable.
 
-| VARIABLE| CURRENT VALUE |
+| VARIABLE| CURRENT VALUE *(example value)* |
 | --- | --- |
 | `deploymentid` | d3d1fa8ef2da16b1
 
@@ -160,9 +159,9 @@ If the previous call to start deployment configuration does not work try with fo
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Observe Deployment Status)]
+[ACCORDION-BEGIN [Step 3: ](Observe deployment status)]
 
-Since it again takes some time for the our trained model to be deployed and ready for inference we will periodically check the status.
+Since it again takes some time for your trained model to be deployed and ready for inference, periodically *(make the API call repeatedly)* to check the status.
 
 > **COLLECTIONS** > *GET* Get deployment
 
@@ -196,9 +195,9 @@ Since it again takes some time for the our trained model to be deployed and read
 ```
 !![deployment status response](img/deploy/dep-status.png)
 
-**IMPORTANT:** This `deploymenturl` needs to be added in the Postman Environment Variable. ( *Create a variable if not exists*)
+**IMPORTANT:** This `deploymenturl` from response needs to be added in the Postman Environment Variable. ( *Create a variable if not exists*)
 
-| VARIABLE| CURRENT VALUE |
+| VARIABLE| CURRENT VALUE *(example value)* |
 | --- | --- |
 | `deploymenturl` | `https://d3d1fa8ef2da16b1-rg-68cc91bf-db44ed99.serving.prod.eu-central-1.aws.ml.hana.ondemand.com`
 
@@ -207,19 +206,18 @@ Since it again takes some time for the our trained model to be deployed and read
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Use Deployed Model)]
+[ACCORDION-BEGIN [Step 4: ](Use deployed model)]
 
+Ensure that the deployment is complete before making inference.
 
-Inference the deployed model
-
-We will use the deployed model to perform inference. Ensure that the deployment is complete before we trigger the inference.
+Use the deployed model to make inference.
 
 ### Endpoint
 
 **POST**
 `{{deploymenturl}}/v1/models/{{modelName}}:predict`
 
-> Note: This URL endpoint along with model name is generated by the inference python script . Checkout `infer_scikit.py`
+> Note: This URL endpoint along with `modelName` is generated by the inference python script . Checkout `infer_scikit.py`
 
 ### ADD Postman Environment Variable
 
@@ -252,12 +250,10 @@ We will use the deployed model to perform inference. Ensure that the deployment 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Stop the deployed model)]
+[ACCORDION-BEGIN [Step 5: ](Stop deployed model)]
 
 
-Stop the deployment
-
-**The Inference service runs 24/7. In order to reduce costs we stop it.**
+The Inference service runs 24/7. In order to reduce costs you may stop the deployment.
 
 > **COLLECTIONS** > *PATCH* Stop deployment
 
@@ -269,7 +265,7 @@ Stop the deployment
 
 | Key | Value |
 | --- | --- |
-| `AI-Resource-Group` | tutorial |
+| `AI-Resource-Group` | `tutorial` |
 
 ### Body
 ```

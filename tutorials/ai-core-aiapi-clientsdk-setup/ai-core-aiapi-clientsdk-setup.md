@@ -1,5 +1,5 @@
 ---
-title: Set Up Jupyter to Run SAP AI API Client SDK on Python
+title: Install Jupyter and Run SAP AI API Client SDK on Python
 description: Learn python installation and Jupyter setup. Invoke SAP AI API Client SDK.
 auto_validation: true
 time: 15
@@ -18,14 +18,14 @@ author_profile: https://github.com/dhrubpaul
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Installing Python)]
+[ACCORDION-BEGIN [Step 1: ](Install python)]
 
 Install python. [Download here](https://www.python.org/downloads/)
 
-`pip` is the python package installer, it will get installed along.
+`pip` is the python package installer, it will be installed along python.
 
-Check for `pip` after installation completes Heres How:
-Execute the following on terminal *(command prompt)*
+To check for `pip` after installation completes,
+execute the following on terminal *(command prompt)*
 
 ```BASH
 pip --version
@@ -36,21 +36,21 @@ pip --version
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Installing SAP AI API Client SDK)]
+[ACCORDION-BEGIN [Step 2: ](Install SAP AI API Client SDK)]
 
 `SAP-AI-API-Client-SDK`  is python package which will enable us to talk to SAP AI API.
 Follow the steps to install the same
 
 1. Download `.whl` for `SAP-AI-API-Client-SDK` [Download Here](https://developers.sap.com/trials-downloads.html?search=AI+Core)
 
-2. Install .`.whl` using pip. Execute the following on terminal. ( *Change the path*)
+2. Install .`.whl` using pip. Execute the following on terminal. *(Change the path)*
 
-    ```BASH
-    pip install <path to downloaded whl>/ai-api-client-sdk-<version>.whl
+    ```BASH[1]
+    pip install <path_to_your_whl_folder>/ai-api-client-sdk-<version>.whl
     ```
     !![pip ai-api](img/pip/ai-api.png)
 
-Similarly Install `PyYaml`, *No `.whl` download required for `PyYaml`*. Execute the following on terminal.
+Similarly install `PyYaml`, (*No `.whl` download required for `PyYaml`*, it would be fetched automatically from public python repository). Execute the following on terminal.
 
 ```BASH
 pip install PyYaml
@@ -62,7 +62,8 @@ pip install PyYaml
 
 [ACCORDION-BEGIN [Step 3: ](Installing Jupyter)]
 
-Use pip to install Jupyter.
+Jupyter is used to execute python code pieces in form of cells. Use pip to install Jupyter.
+
 Execute the following on terminal.
 
 ```BASH
@@ -76,10 +77,6 @@ jupyter --version
 ```
 
 !![Jupyter version check](img/jupyter/jupy.png)
-
-
-Jupyter is used to execute python code pieces in form of cells. In the next steps we will learn this.
-
 
 [DONE]
 [ACCORDION-END]
@@ -96,7 +93,7 @@ jupyter notebook
 
 !![notebook](img/jupyter/notebook.png)
 
-This will automatically open a page in your default browser.
+This will automatically open a webpage in your default browser.
 
 
 [DONE]
@@ -104,38 +101,44 @@ This will automatically open a page in your default browser.
 
 [ACCORDION-BEGIN [Step 5: ](Create a Jupyter notebook)]
 
-Create a new notebook using the page opened on your browser. Click **New > Python 3 `(ipykernel)`**
+On Jupyter page(result of starting Jupyter) opened on your browser. Click **New > Python 3 `(ipykernel)`**
 
 !![new notebook](img/jupyter/new.png)
 
-Rename your notebook by Double-Click on `Untitled`, Change the name to `main`  
+Double-click on `Untitled`, Change the name to `main`  
 
 !![name jupyter notebook](img/jupyter/name-notebook.png)
 
-After renaming you can see your folder will have `main.ipynb`  
+After renaming you can see your folder(where you started Jupyter from terminal) will have `main.ipynb`.
+
+*(The below screenshot is of the folder from IDE)*
 
 !![notebook preview](img/jupyter/preview.png)
 
 Type your python codes inside the Jupyter notebook.
 
+```PYTHON
+from ai_api_client_sdk.ai_api_v2_client import AIAPIv2Client
+```
+
 !![notebook element](img/jupyter/cell.png)  
 
-- (1) Represents cell where your will write code. Throughout the tutorial if you encounter python code pieces, then click on **Insert > Insert Cell Below** and paste codes in those new cells.
+- (1) Represents cell where your will write code.
 
-- (2) Click on he Arrow button will execute the cell(*python piece of code*).
+- (2) Click on he Arrow button will execute the cell *(python piece of code)*.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Get SAP AI API Service Key and use with Python)]
+[ACCORDION-BEGIN [Step 6: ](Run SAP AI API Client SDK with python)]
 
 
 Follow the [provisioning steps](https://help.sap.com/viewer/product/AI_CORE/CLOUD/en-US) to get an SAP AI API service instance key.
 
-> If you already have an SAP AI API service instance you can get the service key from your BTP cockpit:
-**BTP cockpit > BTP subaccount > Instances and Subscriptions > Instances > Credentials**
+> If you already have an SAP AI API service instance you can get the service key from your SAP BTP cockpit:
+**SAP BTP cockpit > subaccount > Instances and Subscriptions > Instances > Credentials**
 
-The content of the AI-Core service file should look something like this:
+The content of your SAP AI API service file should look similar to this:
 
 ```JSON
 {
@@ -151,7 +154,7 @@ The content of the AI-Core service file should look something like this:
 }
 ```
 
-Store it inside the files folder: `files/aic_service_key.json`, we will use it to connect to the API in later steps, so ensure the path is correct.                    
+Store your SAP AI API service file inside the `files` folder: `files/aic_service_key.json`, Use it to connect to the SAP AI Core in later steps, so ensure the path is correct.                    
 
 !![aic service key](img/pip/aic_service_key.png)
 
@@ -182,12 +185,12 @@ ai_api_client = AIAPIV2Client(
 
     !![new cell](img/jupyter/new-cell.png)
 
-2. Paste and click the arrow *(Alternative `Run > Run Cells`)*.
+2. Paste the code snippet and click the arrow *(Alternative: **Run** > **Run Cells**)*.
 
     !![paste code](img/jupyter/paste-code.png)
 
-    - The code will create connection to your SAP AI API instance using your `aic_service_key.json` and store the connection to AI-Core in the variable `ai_api_client`.
-    - We will use this `ai_api_client` variable  throughout the tutorial to refer to our connection to SAP AI API, watch out for **Warning** in the tutorials, where the same is referred(used).
+    - The code will create connection to your SAP AI Core instance using your `aic_service_key.json` and store the connection to SAP AI API Client SDK instance variable `ai_api_client`.
+    - Use this `ai_api_client` variable  throughout the tutorial to refer to your connection to SAP AI API, watch out for **Warning** in the tutorials, where the same is referred(used).
 
 
 [DONE]
@@ -196,7 +199,7 @@ ai_api_client = AIAPIV2Client(
 
 [ACCORDION-BEGIN [Step 7: ](Test yourself)]
 
-Assuming you have the following file snippet from your service key JSON
+Assuming you have the following file snippet in your SAP AI API service key *(JSON file)*.
 
 ```
 {
@@ -205,11 +208,11 @@ Assuming you have the following file snippet from your service key JSON
       "ML_API_URL": "https://api.ai.ml.hana.ondemand.com"
 }
 ```
-Given that at present the API version for SAP AI API is `v2`.
+And given that at present the API version for SAP AI API is `v2`.
 
-What value would you set for the parameter `base_url` to create connection to SAP AI API, in the following code snippet.
+What value would you write for the parameter `base_url` in the following code snippet, to create connection to SAP AI Core using SAP AI API Client SDK ?
 
-```PYTHON
+```PYTHON[2]
 my_ai_core_connection = AIAPIV2Client(
     base_url =  # Your response
     ...

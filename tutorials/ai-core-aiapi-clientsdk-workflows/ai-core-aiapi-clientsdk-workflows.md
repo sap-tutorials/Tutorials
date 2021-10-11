@@ -1,6 +1,6 @@
 ---
-title: Create Training and Serving Docker Images (client SDK)
-description: Build Docker images and orchestrate their execution with for SAP AI Core.
+title: Create Training and Serving Docker Images (Client SDK)
+description: Build Docker images and orchestrate their execution with SAP AI Core.
 auto_validation: true
 time: 20
 tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
@@ -12,18 +12,18 @@ author_profile: https://github.com/dhrubpaul
 
 ## Details
 ### You will learn
-- How to build docker images for python code
-- How to upload docker image to docker hub.
-- How set write Workflows to train-serve your model over SAP AI Core
-- How to Set Computing Hardware for model using workflows
+- How to build Docker images for python code
+- How to upload Docker image to docker hub.
+- How set workflows to train and serve your ML model with SAP AI Core
+- How to set computing hardware resources, GPUs for your ML model
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create ML code and Docker files)]
 
-Docker will be used to store python code in form of containers( *portable environments*).
+Docker will be used to store python code in form of containers *(portable environments)*.
 
-Create files and **copy provided contents *(see below)*** as-it-is. Resulting directory structure may look like following:  
+Create files *(download links below)* as-it-is. Resulting directory structure may look like following:  
 
 !![folder structure](img/build-ml/folder.png)
 
@@ -50,7 +50,7 @@ Inference/ Serving Scripts
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Convert python to Docker Image)]
+[ACCORDION-BEGIN [Step 2: ](Convert python code to Docker image)]
 
 Connect your Docker Desktop to the Docker account.
 
@@ -62,14 +62,19 @@ Type your password *(nothing will appear on screen: just type your password and 
 
 !![docker login](img/docker/dd-login.png)
 
-Navigate to place where you have stored the code files.  
+Navigate to place where you have stored your ML code files.  
 
 !![directory](img/docker/build-1.png)
 
-Navigate inside `train` and build the docker image using the following command to build docker image for training the model.  
+Navigate inside `train` directory on terminal.
 
 ```BASH
 cd train
+```
+
+Build docker image using the following command to build docker image for training the model. *(change the highlighted line)*.
+
+```BASH[1]
 docker build -t <your-dockerhub-username>/text-clf-train:0.0.1 .
 ```
 
@@ -77,32 +82,21 @@ docker build -t <your-dockerhub-username>/text-clf-train:0.0.1 .
 
 Similarly navigate inside `infer` folder and execute the following command to build docker image for serving the model.:
 
-```BASH
+```BASH[1]
 docker build -t <your-dockerhub-username>/text-clf-serve:0.0.1 .
 ```
 
 !![docker build infer](img/docker/build-3.png)
 
-### [OPTIONAL] Viewing Local Built Docker images
-You can see your local docker images using the command.
-
-```BASH
-docker images
-```
-
-New images are listed on the top of the list. `Tag` refers to the version number.
-
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Upload the Docker images to the Docker repository)]
+[ACCORDION-BEGIN [Step 3: ](Upload Docker images to Docker repository)]
 
-Push your local docker image to docker cloud.
+Execute the following on terminal *(change highlighted line)*.
 
-Execute the following on terminal *(make changes below)*
-
-```BASH
+```BASH[1]
 docker push docker.io/<your-username>/text-clf-train:0.0.1
 ```
 
@@ -110,27 +104,29 @@ docker push docker.io/<your-username>/text-clf-train:0.0.1
 
 Similarly push your serving docker image.
 
-Execute the following on terminal *(make changes below)*
+Execute the following on terminal *(change highlighted line)*.
 
-```BASH
+```BASH[1]
 docker push docker.io/<your-docker-username>/text-clf-serve:0.0.1
 ```
 
-Visit <https://hub.docker.com>, go inside listed repository and view your uploads.  
+Visit <https://hub.docker.com>, Inside the repository `text-clf-train` you will see you Docker image with the `tag` representing the version.  
 
 !![docker uploads](img/docker/docker-final.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create Workflow files)]
+[ACCORDION-BEGIN [Step 4: ](Create workflow files)]
 
-Workflows will be used to tell how to execute the docker images, and what inputs to provide(data) and what outputs it gives.
- *(Further read [`ArgoWorkflows`](https://github.com/argoproj/argo-workflows) )*
+Workflows instructs SAP AI Core,
+  - how to execute the Docker images *(orchestrate)*
+  - what inputs to provide(datasets)
+  - what outputs to generate.
 
-Create a folder `workflows` locally and create the following file as depicted in the image **Contents of the file are provided below**  
+*(Further read [`ArgoWorkflows`](https://github.com/argoproj/argo-workflows) )*
 
-!![workflows folder](img/build-ml/workflows.png)
+Create a folder `workflows` locally and create the following file *(download links below)* as depicted in the image below.
 
 Download Files
 
@@ -139,14 +135,22 @@ Download Files
 | `training_workflow_tutorial.yaml` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-workflows/files/workflows/training_workflow_tutorial.yaml)  |
 | `serving_workflow_tutorial.yaml` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-workflows/files/workflows/serving_workflow_tutorial.yaml)
 
+!![workflows folder](img/build-ml/workflows.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Choosing Hardware Resources)]
+[ACCORDION-BEGIN [Step 5: ](Choose computing hardware resources)]
 
-For our example we used the `ai.sap.com/resourcePlan: starter`, *(mentioned inside the workflow YAML files)*   
+Inside YAML files from previous step find the line
 
-If you want to have a more powerful computer hardware, for example with GPUs you can use a different resource plan.
+```YAML[2]
+  ...
+  ai.sap.com/resourcePlan: starter
+  ...
+```
+
+The `starter` is the computing resource plan used in this tutorial. Below is the list of other available plans offered by SAP AI Core.
 
 |     `resourcePlan` ID    |     GPUs          |     CPU cores    |     Memory (Gb)    |
 |------------------------|-------------------|------------------|--------------------|
@@ -163,38 +167,38 @@ If you want to have a more powerful computer hardware, for example with GPUs you
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Adding docker information to Workflow files)]
+[ACCORDION-BEGIN [Step 6: ](Add Docker information to workflow)]
 
-Edit the following lines in the each workflow files
+Edit the following lines *(highlighted)* in each workflow file *(YAML)*.
 
 - `training_workflow_tutorial.yaml`
 
-  ```YAML[5]
-  ...
-  spec:
-      ...
-      container:
-        image: "<your_docker_repo_url>/<your_username_in_docker_repo>/text-clf-train:0.0.1"
-      ...
-  ```
+	```YAML[5]
+	...
+	spec:
+		...
+		container:
+		image: "<your_docker_repo_url>/<your_username_in_docker_repo>/text-clf-train:0.0.1"
+		...
+	```
 
   !![train docker image yaml](img/build-ml/train-img.png)
 
 - `serving_workflow_tutorial.yaml`
 
-  ```YAML[10]
-  ...
-  spec:
-      ...
-      template:
-          ...
-          spec:
-              predictor
-                  ...
-                  containers:
-                      image: "<your_docker_repo_url>/<your_username_in_docker_repo>/text-clf-serve:0.0.1"
-  ...
-  ```
+	```YAML[10]
+	...
+	spec:
+		...
+		template:
+			...
+			spec:
+				predictor
+					...
+					containers:
+						image: "<your_docker_repo_url>/<your_username_in_docker_repo>/text-clf-serve:0.0.1"
+	...
+	```
 
   !![train docker image yaml](img/build-ml/serve-img.png)
 
@@ -202,35 +206,33 @@ Edit the following lines in the each workflow files
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Upload Workflow files to your GitHub repository)]
+[ACCORDION-BEGIN [Step 7: ](Upload workflows to GitHub repository)]
 
-Copy the `workflows` folder that we created now to your cloned local GitHub folder.Ensure your files are placed as per image below  
+1. Copy the `workflows` folder *(from previous step)* to your cloned local GitHub folder. Ensure your files are placed as per image below  
 
-!![workflow GitHub local](img/build-ml/git-1.png)
+	!![workflow GitHub local](img/build-ml/git-1.png)
 
-Open GitHub Desktop. You should exactly see the same as the image below.  
+2. Open GitHub Desktop.
 
-!![GitHub commit](img/build-ml/git-2.png)  
+3. Type the commit message `workflows added`. And click on **Commit to main** button.
 
-1. Fill the message `workflows added`.
-2. Click on `Commit to main` button.
+	!![GitHub commit](img/build-ml/git-2.png)  
 
+4. Click on **Push origin**.  
 
-Click on `Push Origin`.  
+	!![GitHub push](img/build-ml/git-push.png)
 
-!![GitHub push](img/build-ml/git-push.png)
+Now SAP AI Core will automatically sync workflows from your GitHub through the Applications.
 
-Now SAP AI Core will auto sync workflows from your GitHub and associated docker images from Docker.
-
-> The SAP AI Core will automatically sync with the GitHub registered with it. (~3 minutes).
+> **IMPORTANT:** The SAP AI Core syncs in interval of 3 minutes.
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 1: ](Check Workflow sync status with SAP AI API Client SDK)]
+[ACCORDION-BEGIN [Step 8: ](Check workflow sync status with SAP AI API Client SDK)]
 
-> **Warning** ensure you have properly set up `files/aic_service_key.json` and `ai_api_client` from Tutorial 1 before executing this code.
+> **Warning** Ensure you have properly set up `files/aic_service_key.json` and `ai_api_client` previously.
 
 Execute the following python code on your Jupyter notebook cell
 
@@ -267,7 +269,7 @@ Example Output
 ```
 
 
-### Summary: What we have achieved.
+### Summary: what was achieved.
 
 - The training and serving docker images are pushed to the docker repository
 - The training and serving workflows(*templates*) are uploaded to the GitHub repository.

@@ -1,5 +1,5 @@
 ---
-title: Deploy ML Models with SAP AI API Client SDK
+title: Deploy ML Model (Client SDK)
 description: Learn serving of models created in SAP AI Core through SAP AI API Client SDK.
 auto_validation: true
 time: 20
@@ -16,17 +16,15 @@ author_profile: https://github.com/dhrubpaul
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Python Imports for SAP AI API Client SDK)]
+[ACCORDION-BEGIN [Step 1: ](Import python packages for SAP AI API Client SDK)]
 
 Ensure you have the following directory structure to complete this step **(contents of each file given in previous tutorials)**
 
 !![directory structure](img/training/folder-structure.png)
 
-Also ensure your model training is completed without error, because the weights of the model are derived from training Tutorial.
+Also ensure your model training is completed without error, because the weights of the model are derived from training tutorial.
 
 Execute the following python code on your Jupyter notebook cell
-
-
 
 ```PYTHON
 import sys, os
@@ -80,9 +78,7 @@ Example output
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create an ai_api_client instance)]
-
-Create an `ai_api_client` instance
+[ACCORDION-BEGIN [Step 3: ](Create SAP AI API Client SDK instance)]
 
 Execute the following python code on your Jupyter notebook cell
 
@@ -110,14 +106,12 @@ Example output
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create a serving configuration and deployment)]
+[ACCORDION-BEGIN [Step 4: ](Create serving configuration)]
 
 
-Similar to the training we will now create a serving configuration. This time the input artifact is the trained model.
-We also create a deployment in the same step, since that is just one more line of code.
+Similar to the training configuration *(previous tutorial)*, create a serving configuration, to bind the model with workflows. This time the input artifact is the trained model.
 
 Execute the following python code on your Jupyter notebook cell
-
 
 ```PYTHON
 artifact_binding = {
@@ -155,13 +149,11 @@ configuration for serving the model created
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create the serving deployment)]
+[ACCORDION-BEGIN [Step 5: ](Start serving deployment)]
 
-
-We create the serving deployment in a similar way that we did for the training execution.
+Start the configuration for serving from previous step, this will be called **deployment**, its similar to the training execution.
 
 Execute the following python code on your Jupyter notebook cell
-
 
 ```PYTHON
 deployment_resp = ai_api_v2_client.deployment.create(serve_config_resp.id)
@@ -181,9 +173,9 @@ Example output
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Observe the deployment status)]
+[ACCORDION-BEGIN [Step 6: ](Observe deployment status)]
 
-Since it again takes some time for the our trained model to be deployed and ready for inference we will periodically check the status.
+Since it again takes some time for the your trained model to be deployed and ready for inference, the following code periodically check the status.
 
 > **Note**: Do not worry about temporary errors in the status details. The deployment may take a few minutes.
 
@@ -223,17 +215,19 @@ Deployment with d4bdc7b8df3f71d7 complete!
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Using the deployed model)]
+[ACCORDION-BEGIN [Step 7: ](Using deployed ML model)]
 
-Inference the deployed model
+Ensure that the deployment is complete before using it.
 
-We will use the deployed model to perform inference. Ensure that the deployment is complete before we trigger the inference.
+Use the deployed model to infer customer reviews, with following code.
 
 ### Example 1
 
 Execute the following python code on your Jupyter notebook cell
 
-```PYTHON
+*(change the highlighted code)*
+
+```PYTHON[4]
 # Preparing the input for inference
 # prediciton: compliment
 test_input = {
@@ -313,11 +307,9 @@ Inference result: {'predictions': 'complaint'}
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Stop the deployed model)]
+[ACCORDION-BEGIN [Step 8: ](Stop deployed model)]
 
-Stop the deployment
-
-**The Inference service runs 24/7. In order to reduce costs we stop it.**
+The Inference service runs 24/7. In order to reduce costs, you may stop the deployment.
 
 
 ```PYTHON

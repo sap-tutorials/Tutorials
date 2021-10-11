@@ -1,6 +1,6 @@
 ---
 title: Train Execution of ML Model (Postman)
-description: Train execution of an ML model in SAP AI Core with help of Postman client.
+description: Train execution a ML model in SAP AI Core with help of Postman client.
 auto_validation: true
 time: 20
 tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
@@ -12,14 +12,14 @@ author_profile: https://github.com/dhrubpaul
 
 ## Details
 ### You will learn
-  - How to Create Execution Configuration for SAP AI Core
-  - How to Observe Execution on SAP AI Core
+  - How to create execution configuration for SAP AI Core
+  - How to observe execution on SAP AI Core
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](API to List Available Scenarios)]
+[ACCORDION-BEGIN [Step 1: ](API to list available scenarios)]
 
-Scenarios refers to the use-case. It is defined by an identifier within the workflows *(YAML files)* that we created-synced earlier. For all related workflows write the same scenario.
+Scenarios refers to the use case. It is created by an identifier within the workflows *(YAML files, see screenshots below)* that you synced with GitHub in previous tutorial. For all workflows of same use case, write the same scenario id.
 
 !![scenario definition inside worflows](img/training/scenario.png)
 
@@ -49,13 +49,13 @@ In the `RESPONSE`, you should see `id : text-clf-tutorial`
 
 
 
-[ACCORDION-BEGIN [Step 2: ](API to Register Train Dataset as Artifact)]
+[ACCORDION-BEGIN [Step 2: ](API to register train dataset as artifact)]
 
-Every data entity *(dataset, model weights)* in SAP AI Core is considered artifact.
+Every data entity *(dataset, model weights)* in SAP AI Core is considered **artifact**.
 
-Previous we uploaded our data to AWS S3 and connected S3 to SAP AI Core.
+Previously you uploaded your data to AWS S3 and connected S3 to SAP AI Core.
 
-Now we have specifically point to that dataset of S3.
+Now you will specifically point to that dataset in S3.
 
 > **COLLECTIONS** > *POST* Create artifact
 
@@ -102,11 +102,21 @@ Now we have specifically point to that dataset of S3.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create Training Configuration)]
+[ACCORDION-BEGIN [Step 3: ](Create training configuration)]
 
-The training configuration specifies the input artifact as well as scenario and executable id *(`name` mentioned in the training workflow)*.
+The training configuration specifies
+  - the input as `artifactId`
+  - the workflows to use  with `scenarioId` and `executableId` *(`name` mentioned in the training workflow)*.
 
 !![executable id in workflow](img/training/executable_id.png)
+
+
+| Key | Where to get value from |
+| --- | --- |
+| `artifactId` | from `RESPONSE` of API call `GET List artifacts`
+
+
+Make the API call.
 
 > **COLLECTIONS** > *POST* Create execution configuration
 
@@ -121,7 +131,10 @@ The training configuration specifies the input artifact as well as scenario and 
 | `AI-Resource-Group` | `tutorial`
 
 ### BODY
-```
+
+*(change the highlighted line)*
+
+```JSON[10]
 {
   "name": "dev-tutorial-training-configuration",
   "executableId": "text-clf-train-tutorial",
@@ -137,14 +150,6 @@ The training configuration specifies the input artifact as well as scenario and 
 }
 ```
 
-**IMPORTANT:** Following the key-value pairs to be changed in the body
-
-| Key | Where to get value from |
-| --- | --- |
-| `artifactId` | from `RESPONSE` of API call `GET List artifacts`
-
-other values are used from `workflows\training_workflow_tutorial.yaml`
-
 ### Response
 
 ```
@@ -156,9 +161,9 @@ other values are used from `workflows\training_workflow_tutorial.yaml`
 
 !![ response of configuration creation](img/training/config-response.png)
 
-**IMPORTANT:** This `id` needs to be added in the Postman Environment Variable.
+**IMPORTANT:** This `id` from response needs to be added in the Postman Environment Variable.
 
-| VARIABLE| CURRENT VALUE |
+| VARIABLE| CURRENT VALUE *(example value)* |
 | --- | --- |
 | `configurationid` | 1a10f5fd-27ed-486a-8f6e-4eed061b65d1
 
@@ -168,9 +173,9 @@ other values are used from `workflows\training_workflow_tutorial.yaml`
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create Training Execution)]
+[ACCORDION-BEGIN [Step 4: ](Start training execution)]
 
-After registering the artifact and creating a configuration for the execution, it is very simple to create an execution.
+After creating configuration for the execution, it is very simple to create an execution.
 
 > **COLLECTIONS** > *POST* Start execution
 
@@ -199,9 +204,9 @@ After registering the artifact and creating a configuration for the execution, i
 
 !![response of execution](img/training/execution-response.png)
 
-**IMPORTANT:** This `id` needs to be added in the Postman Environment Variable.
+**IMPORTANT:** This `id` from response needs to be added in the Postman Environment Variable.
 
-| VARIABLE| CURRENT VALUE |
+| VARIABLE| CURRENT VALUE *(example value)* |
 | --- | --- |
 | `executionid` | ec4e592e024c22e3
 
@@ -237,7 +242,8 @@ If the previous call to create training execution does not work try with followi
 
 [ACCORDION-BEGIN [Step 5: ](API to Observe Training Status)]
 
-Since the training of the model takes some time, we can periodically check on the status.
+Since the training of the model takes some time, periodically check on the status.
+
 Let's poll the status of the training and wait until it goes into one of the state - `COMPLETED` or `DEAD`.
 
 > **COLLECTIONS** > *GET* Get execution
@@ -246,7 +252,7 @@ Let's poll the status of the training and wait until it goes into one of the sta
 
 | Key | Value |
 | --- | --- |
-| AI-Resource-Group | tutorial |
+| `AI-Resource-Group` | `tutorial` |
 
 
 !![training status](img/postman/call-execu-status-1.png)
@@ -254,33 +260,34 @@ Let's poll the status of the training and wait until it goes into one of the sta
 **IMPORTANT:** Training the model takes time. Retry sending the request in intervals of 1 min.
 
 
-**NOTE** In the same response you will get `outputArtifacts`>`id` deployment of the serving model. These artifacts represents the data (model weights).
+**NOTE** In the same response you will get `outputArtifacts > id` deployment of the serving model. These artifacts represents the data (model weights).
 
 !![training status](img/postman/call-execu-status-2.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Store Training Metrics)]
+[ACCORDION-BEGIN [Step 6: ](Store training metrics)]
 
 SAP AI Core, maintains a persistent data related to each execution *(model training)*. This data is custom decided and can be anything.
 
-## Storing Metrics
-
-> **COllECTIONS** > metrics > *PATCH* > Update/create metric resources (add/modify value of existing ones) against some execution
+> **COLLECTIONS** > metrics > *PATCH* > Update/create metric resources (add/modify value of existing ones) against some execution
 
 ### Endpoint
 
-**PATCH**
+*PATCH*
 {{apiurl}}/v2/lm/metrics
 
 ### Header
 
 | KEY | VALUE |
+| --- | --- |
 | `AI-Resource-Group` | `tutorial` |
 | Content-Type | `application/merge-patch+json` |
 
 ### Body
+
+*(example body, manually generated)*
 
 ```
 {
@@ -327,13 +334,16 @@ SAP AI Core, maintains a persistent data related to each execution *(model train
 
 !![reponse of patch metrics](img/training/metrics-create-response.png)
 
-## Retrieving Metrics
+[DONE]
+[ACCORDION-END]
 
-1. Using SAP BTP Cockpit
+[ACCORDION-BEGIN [Step 7: ](Retrive training metrics)]
 
-        !![SAP BTP metrics](img/training/metrics.png)
+1. Using SAP BTP Cockpit.
 
-2. Using Postman
+	!![SAP BTP metrics](img/training/metrics.png)
+
+2. Using Postman API Call.
 
 ### Endpoint
 
@@ -344,7 +354,7 @@ SAP AI Core, maintains a persistent data related to each execution *(model train
 
 | Key | Value |
 | --- | --- |
-| `executionIds` | `ec4e592e024c22e3` |
+| `executionId` | `ec4e592e024c22e3` |
 
 ### Header
 
