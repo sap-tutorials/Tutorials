@@ -22,7 +22,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to start the application
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`cap/business-logic`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/business-logic) branch.
+To start with this tutorial use the result in the [`cap/business-logic`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/business-logic) branch.
 
 ---
 

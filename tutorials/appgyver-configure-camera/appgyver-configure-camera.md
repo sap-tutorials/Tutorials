@@ -1,6 +1,6 @@
 ---
-title: Configure your AppGyver Application to Open your Device Camera
-description: In this tutorial, you will learn how to configure the logic flow in your application to enable your device to open your camera on demand. The camera will then be used for scanning food item barcodes once the application is finished.
+title: Configure Your AppGyver Application to Open your Device Camera
+description: Configure the logic flow in your application to enable your device to open your camera on demand.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, tutorial>license, topic>mobile]
