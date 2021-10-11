@@ -32,11 +32,11 @@ primary_tag: topic>internet-of-things
 
 2.  Click on the **Add** button, or **Add Edge Node** and check all the checkboxes and press **Continue** if there is not yet any node onboarded in the platform.
 
-    ![addnode](addnode.png)
+    !![addnode](addnode.png)
 
 3.  The form is partially populated; you can click **Step3**.
 
-    ![step3](step3.png)
+    !![step3](step3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -49,7 +49,7 @@ To complete the registration process the UI is asking for some configuration par
 
     > Please remember to check the `server` configuration in your `kubeconfig.yaml` file. The server should be an IP address reachable (i.e. in the same network) from the machine where you will launch the onboard script (i.e. your computer)
 
-    ![kubeconfig](kubeconfig.png)
+    !![kubeconfig](kubeconfig.png)
 
 2.  The UI shows in a bubble message that the file has been accepted. Click **Step 4** to go to the next step
 
@@ -59,11 +59,11 @@ To complete the registration process the UI is asking for some configuration par
 
 5.  Keep clean the checkbox if your edge node is not in a proxied network, otherwise check it and specify all the proxy details for the **Provide HTTPS Proxy Details** configuration step. Click **Step 7** to go to the next operation.
 
-    ![step56](step56.png)
+    !![step56](step56.png)
 
 6.  The step **Set Up Cloud Connector** provide a description of what are the next operations you need to execute. Press **Download** to save the `context.cfg` file.
 
-    ![step7](step7.png)
+    !![step7](step7.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -79,31 +79,31 @@ The next operation is required to complete the onboarding process correctly. You
 
 3.  From the download directory open a bash and execute `elm init -c context.cfg`
 
-    ![bootstrapinit](bootstrapinit.png)
+    !![bootstrapinit](bootstrapinit.png)
 
 4.  Insert the **`master password`** specified in the element 3 of the **Step 2: Complete the registration**.
 
 5.  Review the provided details and type **`n`** and **`Enter key`** to continue the process.
 
-    ![bootstrapnext](bootstrapnext.png)
+    !![bootstrapnext](bootstrapnext.png)
 
 6.  The ELM bridge bootstrap process is now installing all the Edge Lifecycle Management components into your cluster.
 
-    ![bootstrapsuccess](bootstrapsuccess.png)
+    !![bootstrapsuccess](bootstrapsuccess.png)
 
 7.  Type **n** and **Enter key** to end the process.
 
-    ![bootstrapfinish](bootstrapfinish.png)
+    !![bootstrapfinish](bootstrapfinish.png)
 
 8.  If you are not planning to provide a feedback for your user experience just type **`3`** and press **`Enter key`**.
 
 9.  Go back in the UI of SAP IoT and over the navigation area **Edge Services**, click on the **Edge Lifecycle Management** application, select your node in the list. Verify that the node status is `Initializing` and the status of the Edge Lifecycle Management component is `Installing`. You need to wait till the end of the installation process. It will be completed in some minutes.
 
-    ![initialise](initialise.png)
+    !![initialise](initialise.png)
 
 When the onboarding is completed the result should be like in the following image.
 
-![done](done.png)
+!![done](done.png)
 
 [VALIDATE_2]
 [ACCORDION-END]

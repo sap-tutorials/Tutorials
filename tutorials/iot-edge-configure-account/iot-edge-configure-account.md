@@ -1,7 +1,7 @@
 ---
 author_name: Marco Porru
 author_profile: https://github.com/marco-porru
-title: Configure account
+title: Configure IoT Edge Account
 description: Create the technical users and configure your tenant for the onboarding process.
 auto_validation: true
 time: 15
@@ -33,7 +33,7 @@ For the first time initialisation, the Edge Lifecycle Management application req
 
 2.  Click on the **Add Edge Node**, check you have already satisfied all the prerequisites specified in the UI. Check all the checkboxes and press **Continue**
 
-   ![checklist](checklist.png)
+   !![checklist](checklist.png)
 
 An empty form will be shown. To start compiling the form you have to create several users and configurations.
 
@@ -46,7 +46,7 @@ The first section of the **Add Edge Node** form contains the details for the `Re
 
 1.  As also suggested in the tooltip, open the [repositories portal page](https://ui.repositories.cloud.sap/) and log in with your SAP S-user.
 
-    ![registry](registry.png)
+    !![registry](registry.png)
 
 2.  Click the button **Add User** or **Add New User** to start the creation of a new technical user
 
@@ -54,13 +54,13 @@ The first section of the **Add Edge Node** form contains the details for the `Re
 
 4.  Select the created user in the list of users and press the last icon in the line of **Basic Auth Password** to copy the user password in the clipboard.
 
-    ![repouser](repouser.png)
+    !![repouser](repouser.png)
 
 5.  Go back to the Edge `Lifecycle Management` UI and fill the form `Repository-Based Shipment Channel (Container Registry)` with the created user (e.g.: `sap-pmuser`) and the copied password
 
 6.  Press the **Test Connection** button to check the provided credentials are correct and after a validation success press **Update** to save the provided credentials
 
-    ![repouserok](repouserok.png)
+    !![repouserok](repouserok.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -74,19 +74,19 @@ The second section in the UI needs `SAP Business Technology Platform` technical 
 
 2.  Click **Get SAP Universal ID** to open the registration form
 
-    ![registerbtp](registerbtp.png)
+    !![registerbtp](registerbtp.png)
 
 3.  Complete the Registration form by using a **temporary email**, not business nor personal.
 
 4.  Open the temporary email and wait for the `verification code` sent by SAP.
 
-    ![verification](verification.png)
+    !![verification](verification.png)
 
 5.  Complete the verification process, using the verification code.
 
 6.  Login into the [SAP Universal ID user management](https://account.sap.com/manage/accounts) page. The technical P-user assigned is visible in the list of **Accounts**.
 
-    ![accountsbtp](accountsbtp.png)
+    !![accountsbtp](accountsbtp.png)
 
 7.  Open the [SAP BTP Cockpit](https://cockpit.sap.hana.ondemand.com/cockpit/#) and navigate to the sub-account of SAP IoT.
 
@@ -98,7 +98,7 @@ The second section in the UI needs `SAP Business Technology Platform` technical 
 
 11. Press the **Test Connection** button to check the provided credentials are correct and after a validation success press **Update** to save the provided credentials.
 
-    ![btpuserok](btpuserok.png)
+    !![btpuserok](btpuserok.png)
 
 12. Click **Step 2**.
 
@@ -117,23 +117,23 @@ The second section in the UI needs `SAP Business Technology Platform` technical 
 
  3. Click **Create** button to create a new application.
 
-    ![createapplication](createapplication.png)
+    !![createapplication](createapplication.png)
 
  4. Specify an **Application Display Name**  (e.g.: **`mpedge`**) and, optionally, the other fields.
 
  5. Select the created application.
 
-    ![application](application.png)
+    !![application](application.png)
 
  6. Set the **Protocol** to **`OpenID Connect`** and press **Save**. As further confirmation it has been applied, the field `SAML 2.0 Configuration` is now changed to `OpenID Connect Configuration`.
 
  7. Open **`OpenID Connect Configuration`** and set the **Name** for your configuration (e.g.: **`mpedge`**), then press **Save**.
 
-    ![openid](openid.png)
+    !![openid](openid.png)
 
  8. Go to **Assertion Attributes** and press the **Add** button, then add **`Groups`**
 
-    ![groups](groups.png)
+    !![groups](groups.png)
 
  9. Check all the attributes are correctly valued
 
@@ -147,23 +147,23 @@ The second section in the UI needs `SAP Business Technology Platform` technical 
 
  10. Go to **Client ID, Secrets and Certificates** and in the `Secret` section click the **Add** button to create a new secret.
 
-     ![secret](secret.png)
+     !![secret](secret.png)
 
  11. Optionally specify a description and press **Save**.
 
  12. A window will appear with the created credentials. Copy both the `Client Id` and the `Client Secret` in an note, you will need them later.
 
-     ![secretshown](secretshown.png)
+     !![secretshown](secretshown.png)
 
  13. Copy in a note the application id from the URL bar of your browser, you will need it later.
 
-     ![appid](appid.png)
+     !![appid](appid.png)
 
  14. Under **Users & Authorizations** click on **User Groups**, then click on **Create** to create a new group.
 
  15. Provide a **Name** and a **Display Name** (e.g.: **`mpedge`**) and press **Create** to complete the creation.
 
-     ![newgroup](newgroup.png)
+     !![newgroup](newgroup.png)
 
     > **Note:** You need to add as part of the user group all the Identity Authentication Service users who need to have access to the logging and monitoring dashboard. You can also add the technical user in the group, in this case everyone could access to the dashboards with his credentials.
 

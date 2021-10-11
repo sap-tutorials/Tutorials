@@ -1,10 +1,10 @@
 ---
 author_name: Marco Porru
 author_profile: https://github.com/marco-porru
-title: Get configuration for the Edge Gateway Service
+title: Get Configuration for the Edge Gateway Service
 description: Get all the configuration parameters required for the installation of the Edge Gateway Service.
 auto_validation: true
-time: 15
+time: 10
 tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment, tutorial>license]
 primary_tag: topic>internet-of-things
 ---
@@ -33,13 +33,13 @@ This step will show you how to get some service details to connect correctly you
 
 2.  Open **Instances and Subscriptions**
 
-    ![btp](btp.png)
+    !![btp](btp.png)
 
 3.  Click in the column **Credentials** for the instance of SAP IoT on the field **X Keys** to open the service keys.
 
     > If there are no key available for SAP IoT, you need to create them, see [Create service keys](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cdf4f200db3e4c248fa67401937b2f78.html)
 
-    ![servicekey](servicekey.png)
+    !![servicekey](servicekey.png)
 
 4.  A set of keys written as JSON object are shown. Scroll the list and search for the node `iot-device-connectivity`.
 
@@ -64,11 +64,11 @@ To complete the onboarding process you will need to generate an onboarding certi
 
 4.  fill the field **`tenantId - Unique identifier of tenant`** with the **`tenantid`** obtained in the element 5 of the **Step 1: Get Device Connectivity details**.
 
-    ![api](api.png)
+    !![api](api.png)
 
 5.  Press **Execute**.
 
-    ![payload](payload.png)
+    !![payload](payload.png)
 
 6.  Copy the payload returned by the API and convert it in base64 format.
 
@@ -83,7 +83,7 @@ To complete the onboarding process you will need to generate an onboarding certi
 
     > You can use any online/offline base64 encoder tool (i.e.: [online base 64 encoder](https://www.base64encode.org/)).
 
-    ![base64](base64.png)
+    !![base64](base64.png)
 
 The encoded certificate should look as follows.
 
