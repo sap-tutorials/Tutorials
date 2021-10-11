@@ -27,7 +27,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to access the application with a user and password
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`cap/launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/launchpage) branch.
+To start with this tutorial use the result in the [`cap/launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/launchpage) branch.
 
 ---
 
