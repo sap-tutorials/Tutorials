@@ -21,9 +21,7 @@ Ensure your model training is completed without error, because the weights of th
 
 [ACCORDION-BEGIN [Step 1: ](Create serving configuration for deployment)]
 
-Similar to the training we will now create a serving configuration. This time the input artifact is the trained model.
-We also create a deployment in the same step, since that is just one more line of code.
-
+Similar to the training you will now create a serving configuration. This time the input artifact is the trained model.
 
 > **COLLECTIONS** > *POST* Create deployment configuration
 
@@ -95,7 +93,7 @@ other values are used from `workflows\serving_workflow_tutorial.yaml`
 
 [ACCORDION-BEGIN [Step 2: ](Start serving deployment)]
 
-We had create the configuration ( *serving configuration*) of deployment in the previous step. Now we will use that configuration to deploy the model.
+The configuration *(serving configuration)* for deployment was created in the previous step. Now use that configuration to deploy the model.
 
 > **COLLECTIONS** > *POST* Start deployment
 
@@ -163,7 +161,7 @@ If the previous call to start deployment configuration does not work try with fo
 
 [ACCORDION-BEGIN [Step 3: ](Observe deployment status)]
 
-Since it again takes some time for the our trained model to be deployed and ready for inference we will periodically check the status.
+Since it again takes some time for your trained model to be deployed and ready for inference, periodically *(make the API call repeatedly)* to check the status.
 
 > **COLLECTIONS** > *GET* Get deployment
 
@@ -210,7 +208,9 @@ Since it again takes some time for the our trained model to be deployed and read
 
 [ACCORDION-BEGIN [Step 4: ](Use deployed model)]
 
-We will use the deployed model to make inference. Ensure that the deployment is complete before we trigger the inference.
+Ensure that the deployment is complete before making inference.
+
+Use the deployed model to make inference.
 
 ### Endpoint
 
@@ -253,7 +253,7 @@ We will use the deployed model to make inference. Ensure that the deployment is 
 [ACCORDION-BEGIN [Step 5: ](Stop deployed model)]
 
 
-The Inference service runs 24/7. In order to reduce costs we stop it.
+The Inference service runs 24/7. In order to reduce costs you may stop the deployment.
 
 > **COLLECTIONS** > *PATCH* Stop deployment
 

@@ -196,7 +196,7 @@ Example Output
 {'message': 'secret has been created'}
 ```
 
-This will connect our object store. The connection will be named `default`.
+This will connect your object store. The connection will be named `default`.
 
 [DONE]
 [ACCORDION-END]

@@ -54,15 +54,15 @@ GitHub Desktop helps you clone, create, edit and sync files of your GitHub repos
 
 	!![clone repo](img/github/clone-repo.png)
 
-4. click on the  **URL** tab. Type the repository name we created, `<your github username>/aicore-test`.
+4. click on the  **URL** tab. Type the repository name you created, `<your github username>/aicore-test`.
 
 	!![repo url](img/github/local-repo-2.png)
 
 > **CAUTION**: In this tutorial, the sample images shown are two folders with same name `aicore-test`. Heres how you will differentiate them:
 >
-> **Screenshots showing File Explorer**, GitHub synced folder *(C:/john/Documents/GitHub/aicore-test)* which we will connect to SAP AI Core and upload workflows *(explained later)*.
+> **Screenshots showing File Explorer**, GitHub synced folder *(C:/john/Documents/GitHub/aicore-test)* which will connect to SAP AI Core and upload workflows *(explained later)*.
 >
-> **Screenshots showing IDE**, Local Un-synced *(C:/aicore-test)*, where our Jupyter notebook is running and private keys *(files)* are located. **Never upload/sync your private keys with GitHub.**
+> **Screenshots showing IDE**, Local Un-synced *(C:/aicore-test)*, where your Jupyter notebook is running and private keys *(files)* are located. **Never upload/sync your private keys with GitHub.**
 
 
 [DONE]
@@ -77,7 +77,7 @@ GitHub Desktop helps you clone, create, edit and sync files of your GitHub repos
 
 	!![folder creation](img/github/folder-1.png)
 
-3. Create **an empty file** named `training_workflow_tutorial.yaml` inside the `workflows` folder. *(We will fill its contents later)*
+3. Create **an empty file** named `training_workflow_tutorial.yaml` inside the `workflows` folder.
 
 	!![file creation](img/github/folder-2.png)
 
@@ -85,7 +85,7 @@ GitHub Desktop helps you clone, create, edit and sync files of your GitHub repos
 
 	!![commit](img/github/commit.png)
 
-6. Click **Push Origin** button. This will sync our local changes with online GitHub.
+6. Click **Push Origin** button. This will sync your local changes with online GitHub.
 
 	!![push](img/github/push.png)
 

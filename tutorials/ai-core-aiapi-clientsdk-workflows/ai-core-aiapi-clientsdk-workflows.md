@@ -150,7 +150,7 @@ Inside YAML files from previous step find the line
   ...
 ```
 
-The `starter` is the computing resource plan we are using. Below is the list of other available plans offered by SAP AI Core.
+The `starter` is the computing resource plan used in this tutorial. Below is the list of other available plans offered by SAP AI Core.
 
 |     `resourcePlan` ID    |     GPUs          |     CPU cores    |     Memory (Gb)    |
 |------------------------|-------------------|------------------|--------------------|
@@ -269,7 +269,7 @@ Example Output
 ```
 
 
-### Summary: what we have achieved.
+### Summary: what was achieved.
 
 - The training and serving docker images are pushed to the docker repository
 - The training and serving workflows(*templates*) are uploaded to the GitHub repository.

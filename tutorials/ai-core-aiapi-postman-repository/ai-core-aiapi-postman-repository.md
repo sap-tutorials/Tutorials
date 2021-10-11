@@ -64,7 +64,7 @@ GitHub Desktop helps you clone, create, edit and sync files of your GitHub repos
 
     !![folder creation](img/github/folder-1.png)
 
-2. Create **an empty file** named `training_workflow_tutorial.yaml` inside the `workflows` folder. *(We will fill its contents later)*
+2. Create **an empty file** named `training_workflow_tutorial.yaml` inside the `workflows` folder.
 
     !![file creation](img/github/folder-2.png)
 
@@ -97,7 +97,7 @@ GitHub Desktop will only show **un-synced** changes.
 
 > **CAUTION** At present SAP AI Core can connect to single GitHub repository, skip this step if its already connected to one. Contact support to change if required.
 
-After we connect GitHub repository to our SAP AI Core account, whenever we will push changes *(upload files)* to GitHub, the SAP AI Core can pull(sync) them automatically.
+After connecting GitHub repository to your SAP AI Core account, whenever you will push changes *(upload files)* to GitHub, the SAP AI Core can pull(sync) them automatically.
 
 Make the following API call using Postman
 

@@ -1,6 +1,6 @@
 ---
 title: Create Training and Serving Docker Images (Postman)
-description: Build Docker images and orchestrate their execution with for SAP AI Core.
+description: Learn to build Docker images and orchestrate their execution with for SAP AI Core.
 auto_validation: true
 time: 20
 tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
@@ -159,7 +159,7 @@ Inside YAML files from previous step find the line
   ...
 ```
 
-The `starter` is the computing resource plan we are using. Below is the list of other available plans offered by SAP AI Core.
+The `starter` is the computing resource plan is used in this tutorial. Below is the list of other available plans offered by SAP AI Core.
 
 |     `resourcePlan` ID    |     GPUs          |     CPU cores    |     Memory (Gb)    |
 |------------------------|-------------------|------------------|--------------------|
@@ -190,7 +190,7 @@ Edit the following lines *(highlighted)* in each workflow file *(YAML)*.
 		...
 	```
 
-  !![train docker image yaml](img/build-ml/train-img.png)
+  !![train docker image yaml](img/postman/train-img.png)
 
 - `serving_workflow_tutorial.yaml`
 
@@ -208,12 +208,12 @@ Edit the following lines *(highlighted)* in each workflow file *(YAML)*.
 	...
 	```
 
-  !![train docker image yaml](img/build-ml/serve-img.png)
+  !![train docker image yaml](img/postman/serve-img.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ]Upload workflows to GitHub repository)]
+[ACCORDION-BEGIN [Step 7: ](Upload workflows to GitHub repository)]
 
 1. Copy the `workflows` folder *(from previous step)* to your cloned local GitHub folder. Ensure your files are placed as per image below  
 

@@ -19,7 +19,7 @@ author_profile: https://github.com/dhrubpaul
 
 [ACCORDION-BEGIN [Step 1: ](API to list available scenarios)]
 
-Scenarios refers to the use case. It is created by an identifier within the workflows *(YAML files, see screenshots below)* that we synced with GitHub in previous tutorial. For all workflows of same use case, write the same scenario id.
+Scenarios refers to the use case. It is created by an identifier within the workflows *(YAML files, see screenshots below)* that you synced with GitHub in previous tutorial. For all workflows of same use case, write the same scenario id.
 
 !![scenario definition inside worflows](img/training/scenario.png)
 
@@ -53,9 +53,9 @@ In the `RESPONSE`, you should see `id : text-clf-tutorial`
 
 Every data entity *(dataset, model weights)* in SAP AI Core is considered **artifact**.
 
-Previous we uploaded our data to AWS S3 and connected S3 to SAP AI Core.
+Previously you uploaded your data to AWS S3 and connected S3 to SAP AI Core.
 
-Now we have specifically point to that dataset of S3.
+Now you will specifically point to that dataset in S3.
 
 > **COLLECTIONS** > *POST* Create artifact
 
@@ -104,7 +104,7 @@ Now we have specifically point to that dataset of S3.
 
 [ACCORDION-BEGIN [Step 3: ](Create training configuration)]
 
-The training configuration specifies 
+The training configuration specifies
   - the input as `artifactId`
   - the workflows to use  with `scenarioId` and `executableId` *(`name` mentioned in the training workflow)*.
 
@@ -242,7 +242,8 @@ If the previous call to create training execution does not work try with followi
 
 [ACCORDION-BEGIN [Step 5: ](API to Observe Training Status)]
 
-Since the training of the model takes some time, we can periodically check on the status.
+Since the training of the model takes some time, periodically check on the status.
+
 Let's poll the status of the training and wait until it goes into one of the state - `COMPLETED` or `DEAD`.
 
 > **COLLECTIONS** > *GET* Get execution

@@ -109,7 +109,7 @@ Example output
 [ACCORDION-BEGIN [Step 4: ](Create serving configuration)]
 
 
-Similar to the training we will now create a serving configuration, to bind the model with workflows. This time the input artifact is the trained model.
+Similar to the training configuration *(previous tutorial)*, create a serving configuration, to bind the model with workflows. This time the input artifact is the trained model.
 
 Execute the following python code on your Jupyter notebook cell
 
@@ -151,7 +151,7 @@ configuration for serving the model created
 
 [ACCORDION-BEGIN [Step 5: ](Start serving deployment)]
 
-We will start the configuration for serving from previous step, this will be called **deployment**, its similar that we did for the training execution.
+Start the configuration for serving from previous step, this will be called **deployment**, its similar to the training execution.
 
 Execute the following python code on your Jupyter notebook cell
 
@@ -175,7 +175,7 @@ Example output
 
 [ACCORDION-BEGIN [Step 6: ](Observe deployment status)]
 
-Since it again takes some time for the our trained model to be deployed and ready for inference we will periodically check the status.
+Since it again takes some time for the your trained model to be deployed and ready for inference, the following code periodically check the status.
 
 > **Note**: Do not worry about temporary errors in the status details. The deployment may take a few minutes.
 
@@ -217,13 +217,17 @@ Deployment with d4bdc7b8df3f71d7 complete!
 
 [ACCORDION-BEGIN [Step 7: ](Using deployed ML model)]
 
-We will use the deployed model to perform inference. Ensure that the deployment is complete before we make the inference.
+Ensure that the deployment is complete before using it.
+
+Use the deployed model to infer customer reviews, with following code.
 
 ### Example 1
 
 Execute the following python code on your Jupyter notebook cell
 
-```PYTHON
+*(change the highlighted code)*
+
+```PYTHON[4]
 # Preparing the input for inference
 # prediciton: compliment
 test_input = {
@@ -305,7 +309,7 @@ Inference result: {'predictions': 'complaint'}
 
 [ACCORDION-BEGIN [Step 8: ](Stop deployed model)]
 
-The Inference service runs 24/7. In order to reduce costs we will stop it.
+The Inference service runs 24/7. In order to reduce costs, you may stop the deployment.
 
 
 ```PYTHON

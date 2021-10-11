@@ -154,7 +154,7 @@ The content of your SAP AI API service file should look similar to this:
 }
 ```
 
-Store your SAP AI API service file inside the `files` folder: `files/aic_service_key.json`, we will use it to connect to the SAP AI Core in later steps, so ensure the path is correct.                    
+Store your SAP AI API service file inside the `files` folder: `files/aic_service_key.json`, Use it to connect to the SAP AI Core in later steps, so ensure the path is correct.                    
 
 !![aic service key](img/pip/aic_service_key.png)
 
@@ -190,7 +190,7 @@ ai_api_client = AIAPIV2Client(
     !![paste code](img/jupyter/paste-code.png)
 
     - The code will create connection to your SAP AI Core instance using your `aic_service_key.json` and store the connection to SAP AI API Client SDK instance variable `ai_api_client`.
-    - We will use this `ai_api_client` variable  throughout the tutorial to refer to our connection to SAP AI API, watch out for **Warning** in the tutorials, where the same is referred(used).
+    - Use this `ai_api_client` variable  throughout the tutorial to refer to your connection to SAP AI API, watch out for **Warning** in the tutorials, where the same is referred(used).
 
 
 [DONE]

@@ -1,6 +1,6 @@
 ---
 title: Train Execution of ML Model (Client SDK)
-description: Train execution a ML model in SAP AI Core with help of SAP AI Client SDK.
+description: Training execution a ML model in SAP AI Core with help of SAP AI Client SDK.
 auto_validation: true
 time: 25
 tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
@@ -19,7 +19,7 @@ author_profile: https://github.com/dhrubpaul
 
 [ACCORDION-BEGIN [Step 1: ](Upload data to S3)]
 
-Previously we uploaded dataset `travel.csv` to AWS S3 Bucket, we will be using it here.
+Previously you uploaded dataset `travel.csv` to AWS S3 Bucket, you will be using it here.
 
 Ensure you have the following directory structure to complete this step **(contents of each file given in previous tutorials)**
 
@@ -85,7 +85,7 @@ Expected Outputs
 
 [ACCORDION-BEGIN [Step 4: ](Check the available scenarios.)]
 
-Scenarios refers to the use case. It is created by an identifier within the workflows *(YAML files, see screenshots below)* that we synced with GitHub in previous tutorial. For all workflows of same use case, write the same scenario id.
+Scenarios refers to the use case. It is created by an identifier within the workflows *(YAML files, see screenshots below)* that you synced with GitHub in previous tutorial. For all workflows of same use case, write the same scenario id.
 
 !![scenario definition inside worflows](img/training/scenario.png)
 
@@ -118,7 +118,7 @@ Scenario ID 1 -> [text-clf-tutorial]
 
 An **Artifact** is reference to data or a file that is produced or consumed by an execution *(training code)* or deployment.
 
-Previous we uploaded our dataset to AWS S3 and connected S3 to SAP AI Core. Now we have specifically point to that dataset of S3.
+Previously you uploaded dataset to AWS S3 and connected S3 to SAP AI Core. Now you will specifically point to that dataset in S3.
 
 Execute the following python code on your Jupyter notebook cell
 
@@ -152,7 +152,7 @@ assert artifact_resp.message == 'Artifact acknowledged'
 
 Expected Output
 
-> In the output below, `default` in the output below refers to the name of registered AWS S3 Object Store with SAP AI Core, that we created earlier.
+> In the output below, `default` in the output below refers to the name of registered AWS S3 Object Store with SAP AI Core *(created earlier)*.
 > The `id` refers to `artifact_id`.
 
 ```[4]
@@ -168,7 +168,7 @@ Artifacts registered for text-clf-tutorial scenario!
 
 [ACCORDION-BEGIN [Step 6: ](Create training configuration)]
 
-A **Configuration** will bind all the entities that we connected/ registered to SAP AI Core, i.e.
+A **Configuration** will bind all the entities *(you require)* that are connected/ registered to SAP AI Core, i.e.
     - the workflows, using `executable_id` and `scenario_id`
     - the dataset, using `artifact_id`.
 
@@ -219,7 +219,7 @@ Configuration created for running the training
 
 [ACCORDION-BEGIN [Step 7: ](Create training execution)]
 
-To run configuration we start the execution.
+To run configuration, start the execution.
 
 Execute the following python code on your Jupyter notebook cell
 
@@ -244,8 +244,8 @@ Expected Output
 
 [ACCORDION-BEGIN [Step 8: ](Observe training status)]
 
-Since the training of the model takes some time, we can periodically check on the status.
-Let's poll the status of the training and wait until it goes into one of the state - `COMPLETED` or `DEAD`.
+Since the training of the model takes some time, periodically check on the status.
+Poll the status *(the code below)* of the training and wait until it goes into one of the state - `COMPLETED` or `DEAD`.
 
 Execute the following python code on your Jupyter notebook cell
 

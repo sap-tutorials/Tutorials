@@ -1,6 +1,6 @@
 ---
-title: Set Up Postman for SAP AI Core
-description: Get Postman Collections and environment variables for SAP AI Core, and generate OAuth token to authorize API calls.
+title: Set Up Postman Client for SAP AI Core
+description: Get Postman Collections and environment variables for SAP AI Core. Learn to generate OAuth token to authorize API calls.
 auto_validation: true
 time: 15
 tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
@@ -53,7 +53,7 @@ Follow the same steps and import `AI-API_postman_environment.json` to Postman
 
 [ACCORDION-BEGIN [Step 2: ](Set Postman environment variables for SAP AI Core API)]
 
-To use environment variables for our API calls.
+To use environment variables for your API calls.
 
 1. Click the drop-down on the top right corner
 2. select `aicore-ai-env` ( *imported in previous step* )
