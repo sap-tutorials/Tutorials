@@ -215,7 +215,7 @@ Edit the highlighted lines.
 {'message': 'secret has been created'}
 ```
 
-This will connect our object store. The connection will be named `default`.
+This will connect your object store. The connection will be named `default`.
 
 [VALIDATE_1]
 [ACCORDION-END]
