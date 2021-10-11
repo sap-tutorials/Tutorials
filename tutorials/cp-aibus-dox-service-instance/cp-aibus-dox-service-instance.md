@@ -62,7 +62,7 @@ To try out Document Information Extraction, you need to make sure that your suba
 
     ![Add Service Plan](add-service-plans.png)
 
-  3. Select **Document Information Extraction Trial**, and choose the `blocks_of_100` service plan. Click **Add 1 Service Plan**.
+  3. Select **Document Information Extraction Trial**, and choose the **`blocks_of_100`** service plan. Click **Add 1 Service Plan**.
 
     ![Add Service Plan](add-entitlements.png)
 
@@ -102,7 +102,7 @@ Click **Create Instance** to start the creation dialog.
 
 ![Service Instance](create-instance.png)
 
-In the dialog, choose the `blocks_of_100` service plan. Enter a name for your new instance, for example, `doc-info-extraction-inst` and click **Create Instance**.
+In the dialog, choose the **`blocks_of_100`** service plan. Enter a name for your new instance, for example, `doc-info-extraction-inst` and click **Create Instance**.
 
 ![Create Instance](create-instance-dialog.png)
 
@@ -128,7 +128,7 @@ You are now able to create a service key for your new service instance. Service 
 
       ![Create Service Key](create-service-key-name.png)
 
-You have successfully created a service key for your service instance. You can now either view the service key in the browser or download it.
+You have successfully created a service key for your service instance. You can now view the service key in the browser or download it.
 
 ![View Service Key](view-service-key.png)
 

@@ -20,7 +20,7 @@ primary_tag: topic>machine-learning
 
 [ACCORDION-BEGIN [Step 1: ](Go To Your Trial Account)]
 
-1. In your web browser, open the [SAP BTP trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. Open the [SAP BTP trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
 2. Navigate to the trial global account by clicking **Go To Your Trial Account**.
 
@@ -96,7 +96,7 @@ Do the following to access your service instance and service key, without having
 
     !![Service Key](trial-account.png)
 
-3. Click **Subaccounts** on the navigation side bar and select **trial** to access your subaccount.
+3. Click **Account Explorer** on the navigation side bar and select **trial** to access your subaccount.
 
     !![Service Key](subaccounts.png)
 
