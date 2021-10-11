@@ -38,6 +38,7 @@ If you don't need to register with sap.com, you can skip to Step 4. Make sure to
 
 !![register dialog](option-register.png)
 
+
 You will see a message that an activation link has been sent to you.
 
 [DONE]

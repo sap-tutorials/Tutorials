@@ -4,7 +4,7 @@ description: Integrate SAP IoT with SAP Analytics Cloud to use IoT sensor data t
 auto_validation: true
 time: 60
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-business-technology-platform, products>sap-iot-services-for-sap-btp, products>sap-analytics-cloud]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-business-technology-platform, products>sap-iot-services-for-sap-btp, products>sap-analytics-cloud ]
 ---
 
 ## Prerequisites
