@@ -243,7 +243,7 @@ These are the Luigi navigation parameters you will use:
   - `icon` - a SAP icon shown next to the label
   - `viewUrl`- the URL of your micro-frontend
 
-1. Go to the file `luigi-config.es6.js`. This is where you can find the Luigi configuration. Copy and paste this to :
+1. Go to the file `react-core-mf/src/luigi-config/luigi-config.es6.js`. This is where you can find the Luigi configuration. Copy and paste this to :
 
     ```JavaScript
     Luigi.setConfig({
@@ -274,35 +274,9 @@ These are the Luigi navigation parameters you will use:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create "Home" view)]
-
-In this step, you will create your first micro-frontend (a.k.a. view) with React. It is a simple "Home" view with a welcome message.
-
-1. Navigate to `react-core-mf/src` and create a folder called `views`.
-
-2. Create a `Home.jsx` file in `views` with the following content:
-
-    ```XML
-    import React from 'react';
-    import { LayoutPanel } from 'fundamental-react';
-
-    export const Home = () => {
-       return (
-           <LayoutPanel>
-               <LayoutPanel.Body>
-                   <h2>Welcome to Luigi - a micro-frontend framework</h2>
-               </LayoutPanel.Body>
-           </LayoutPanel>
-       );
-    }
-    ```
-
-[DONE]
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 8: ](Configure router for "Home" view)]
 
-In this step, you will make changes to the entry point `index.js` for the React app. You will configure the router for the "Home" view created in the previous step, and import Luigi Client.
+In this step, you will make changes to the entry point `index.js` for the React app. You will configure the router for the "Home" view which can be found at `react-core-mf/src/views/home.js`, and import Luigi Client.
 
 Open `react-core-mf/src/index.js` and change its content to:
 
@@ -337,121 +311,11 @@ render(<App />, document.getElementById('root'));
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9:](Create more views with React)]
-
-In this step, you will create more React micro-frontends including a product list and product details.
-
-1. Navigate to `react-core-mf/src/views`and create a file `List.jsx` with the following content:
-
-    ```XML
-    import React from 'react';
-    import { MessageStrip, Avatar, LayoutPanel, LayoutGrid } from 'fundamental-react';
-
-    const NO_AVAILABLE_PRODUCT_MSG = 'Unfortunately, there is no available product at this moment.';
-    const panelStyle = { cursor: 'pointer' };
-
-    export const List = ({ items }) => (
-       (items.length === 0) ? <MessageStrip type='error'>{NO_AVAILABLE_PRODUCT_MSG}</MessageStrip>
-       : items.map(({id, name, price, icon, stock}) => {
-           return (
-                <LayoutPanel key={id} style={panelStyle}>
-                    <LayoutPanel.Header>
-                        <LayoutPanel.Head  title={name} />
-                    </LayoutPanel.Header>
-                    <LayoutPanel.Body>
-                        <LayoutGrid cols={2}>
-                            <div>
-                                <div>Price: &euro;{price}</div>
-                                <div>Stocks: {stock}</div>
-                            </div>
-                            <div><Avatar circle glyph={icon} size='s' /></div>
-                        </LayoutGrid>
-                    </LayoutPanel.Body>
-                </LayoutPanel>
-           )
-       })
-    );
-
-    ```
-
-2. Create a file named `Products.jsx` in the same folder:
-
-    ```XML
-    import React from 'react';
-    import { List } from './List.jsx';
-    import { ProductCollection } from '../../../ui5-mf/uimodule/webapp/model/products.json';
-    import { LayoutPanel, LayoutGrid } from 'fundamental-react';
-
-    export const Products = () => (
-       <section className="fd-section">
-           <LayoutPanel>
-               <LayoutPanel.Header>
-                   <h3>Items ({ProductCollection.length})</h3>
-               </LayoutPanel.Header>
-               <LayoutPanel.Body>
-                   <LayoutGrid cols={2}>
-                       <List items={ProductCollection} />
-                   </LayoutGrid>
-               </LayoutPanel.Body>
-           </LayoutPanel>
-       </section>
-    );
-
-    export default Products;
-    ```
-
-3. Create a `ProductDetail.jsx` file in the same folder:
-
-    ```XML
-    import React, { useState, useEffect } from 'react';
-    import { ProductCollection } from '../../../ui5-mf/uimodule/webapp/model/products.json';
-    import { LayoutPanel, MessageStrip } from 'fundamental-react';
-
-    const NO_MATCH_PRODUCT_MSG = 'This product is not available. Please check again.';
-
-    export const ProductDetail = ({ match }) => {
-     const itemId = parseInt(match.params.id);
-     const [item, setItem] = useState(null);
-
-     useEffect(()=> {
-         setItem(ProductCollection.find(product => product.id === itemId));
-     }, [itemId]);
-
-     const renderDetails = () => (
-       <LayoutPanel>
-           <LayoutPanel.Header>
-               <h1 className="fd-section__title">{item.name}</h1>
-           </LayoutPanel.Header>
-           <LayoutPanel.Filters>
-               <div>Price: &euro;{ item.price }</div>
-               <div>Stocks: { item.stock }</div>
-           </LayoutPanel.Filters>
-           <LayoutPanel.Body>
-               <p>{ item.description }</p>
-           </LayoutPanel.Body>
-       </LayoutPanel>
-     );
-
-     return (
-       <section className="fd-section">
-         {item
-           ? renderDetails()
-           : <MessageStrip type='error'>{ NO_MATCH_PRODUCT_MSG }</MessageStrip>
-         }
-       </section>
-     );
-    };
-    ```
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 10: ](Add "Products" view to Luigi app)]
+[ACCORDION-BEGIN [Step 9: ](Add "Products" view to Luigi app)]
 
 In this step, you will add a navigation node in Luigi for the "Products" micro-frontend.
 
-1. Open `react-core-mf/public/luigi-config.js`
+1. Open `react-core-mf/src/luigi-config/luigi-config.es6.js`
 
 2. Add a new "Products" node to your navigation:
 
@@ -462,12 +326,12 @@ In this step, you will add a navigation node in Luigi for the "Products" micro-f
           pathSegment: 'home',
           label: 'Home',
           icon: 'home',
-          viewUrl: '/app.html#/home',
+          viewUrl: '/sampleapp.html#/home',
           children: [{
             pathSegment: 'products',
             label: 'Products',
             icon: 'list',
-            viewUrl: '/app.html#/products'
+            viewUrl: '/sampleapp.html#/products'
           }]
         }
       ]
@@ -477,7 +341,7 @@ In this step, you will add a navigation node in Luigi for the "Products" micro-f
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Add "Product Detail" view to Luigi app)]
+[ACCORDION-BEGIN [Step 10: ](Add "Product Detail" view to Luigi app)]
 
 In this step, you will add the `ProductDetail.jsx` view to the app. You will be able to show details for each product via a Luigi [dynamic parameter](https://docs.luigi-project.io/docs/navigation-advanced?section=dynamically-changeable-paths), in this case named `:id`.
 
@@ -494,7 +358,7 @@ In this step, you will add the `ProductDetail.jsx` view to the app. You will be 
     <Route path='/productDetail/:id' component={ProductDetail} />
     ```
 
-3. In `luigi-config.js`, add a child node `:id` to Products:
+3. In `luigi-config.es6.js`, add a child node `:id` to Products:
 
     ```JavaScript
     pathSegment: 'products',
@@ -513,28 +377,29 @@ In this step, you will add the `ProductDetail.jsx` view to the app. You will be 
 
 [ACCORDION-BEGIN [Step 12: ](Use Luigi link manager for routing)]
 
-Instead of using React, in this step we we will use Luigi to provide routing on the micro-frontend side. Luigi Client's [`linkManager`](https://docs.luigi-project.io/docs/luigi-client-api/?section=linkmanager) function is the simplest way to navigate to the `id` page for each product.
+Instead of using React, in this step we we will see how Luigi is used to provide routing on the micro-frontend side. Luigi Client's [`linkManager`](https://docs.luigi-project.io/docs/luigi-client-api/?section=linkmanager) function is the simplest way to navigate to the `id` page for each product.
 
-1. Open `react-core-mf/src/views/List.jsx`
+1. Open `react-core-mf/src/views/product.js`
 
-2. Import [link manager](https://docs.luigi-project.io/docs/luigi-client-api/?section=linkmanager) from Luigi Client:
+2. Notice how the [link manager](https://docs.luigi-project.io/docs/luigi-client-api/?section=linkmanager) is imported from Luigi Client:
 
     ```JavaScript
     import { linkManager } from '@luigi-project/client';
     ```
 
-3. Copy and paste this into the `List.jsx` file:
+3. The link manager is used in `product.js` to handle user clicking events:
 
     ```JavaScript
-    const navigateToDetail = (id) => {
-       linkManager().navigate('/home/products/' + id);
-    }
+    const handleItemClick = event => {
+      console.log(event.detail.item.id);
+      linkManager().navigate('/home/product/' + event.detail.item.id.toString());
+    };
     ```
 
-4. Add `onClick` event at the `LayoutPanel` component:
+4. The `onItemClick` event is defined in the product list at the end of the file:
 
     ```JavaScript
-    <LayoutPanel key={id} style={panelStyle} onClick={()=>navigateToDetail(id)}>
+    <List headerText={"Product List with " + ProductCollection.length + " items"} onItemClick={handleItemClick}>
     ```
 
 [DONE]

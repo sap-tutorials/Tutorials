@@ -44,48 +44,51 @@ In this step, you will add a new navigation node in Luigi, then create the micro
     }
     ```
 
-2. Open the `ui5-mf/uimodule/webapp/view/Order.view.xml` file in your UI5 app, and replace the content with:
+2. Open the `ui5-mf/uimodule/webapp/view/MainView.view.xml` file in your UI5 app, and replace the content with:
 
     ```XML
-    <mvc:View controllerName="luigi.ui5.controller.Order"
-     displayBlock="true"
-     xmlns="sap.m"
-     xmlns:mvc="sap.ui.core.mvc">
-     <List
-       items="{/ProductCollection}">
-       <ObjectListItem
-         title="{name}"
-         type="Active"
-         press="onListItemPress"
-         number="{
-           parts:[{path:'price'},{path:'currencyCode'}],
-           type: 'sap.ui.model.type.Currency',
-           formatOptions: {showMeasure: false}
-         }"
-         numberUnit="{currencyCode}">
-         <ObjectAttribute text="Quantity: {orderQuantity}" />
-       </ObjectListItem>
-     </List>
-    </mvc:View>
+    <mvc:View controllerName="luigi.ui5.controller.MainView"
+      displayBlock="true"
+      xmlns="sap.m"
+      xmlns:mvc="sap.ui.core.mvc">
+      <List
+        items="{/ProductCollection}">
+        <ObjectListItem
+          title="{name}"
+          type="Active"
+          press="onListItemPress"
+          number="{
+            parts:[{path:'price'},{path:'currencyCode'}],
+            type: 'sap.ui.model.type.Currency',
+            formatOptions: {showMeasure: false}
+          }"
+          numberUnit="{currencyCode}">
+          <ObjectAttribute text="Quantity: {orderQuantity}" />
+        </ObjectListItem>
+      </List>
+      </mvc:View>
     ```
 
-3. Open `ui5-mf/uimodule/webapp/controller/Order.controller.js` and replace it with:
+3. Open `ui5-mf/uimodule/webapp/controller/MainView.controller.js` and replace it with:
 
     ```JavaScript
-    return Controller.extend("luigi.ui5.controller.Order", {
-       onInit: function (Controller) {
-         const oModel = new sap.ui.model.json.JSONModel();
+    sap.ui.define(["luigi/ui5/controller/BaseController"], function (Controller) {
+        "use strict";
 
-         oModel.loadData("../model/products.json");
-         this.getView().setModel(oModel);
-       },
+        return Controller.extend("luigi.ui5.controller.MainView", {
+            onInit: function (Controller) {
+                const oModel = new sap.ui.model.json.JSONModel();
 
-       onListItemPress: function (oEvent) {
-         const id = oEvent.getSource().getBindingContext().getProperty("id");
+                oModel.loadData("../model/products.json");
+                this.getView().setModel(oModel);
+            },
 
-         LuigiClient.linkManager().openAsModal('/home/products/' + id , {title:'Product Detail', size:'m'});
-       }
-     });
+            onListItemPress: function (oEvent) {
+                const id = oEvent.getSource().getBindingContext().getProperty("id");
+
+                LuigiClient.linkManager().openAsModal('/home/products/' + id, { title: 'Product Detail', size: 'm' });
+            }
+        });
     });
     ```
 
