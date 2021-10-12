@@ -4,8 +4,8 @@ description: Sign up for a free trial account on SAP BTP.
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
-primary_tag: products>sap-cloud-platform
-tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner ]
+primary_tag: products>sap-business-technology-platform
+tags: [ products>sap-business-technology-platform, topic>cloud, tutorial>beginner ]
 time: 15
 ---
 
