@@ -33,6 +33,8 @@ primary_tag: topic>machine-learning
 
     >Choose **Continue**.
 
+    >!![Account setup](02_Foundation20Onboarding_Processing.png)
+
     >For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
 [DONE]
