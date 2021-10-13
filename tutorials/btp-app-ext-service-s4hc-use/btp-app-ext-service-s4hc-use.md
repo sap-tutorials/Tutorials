@@ -17,16 +17,16 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     - You must be an administrator of the SAP BTP global account where you want to register your SAP S/4HANA Cloud system.
     - You need to [Setup your SAP BTP account](btp-app-prepare-btp) if you start with the result from the provided branch in [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption).
     - Your SAP BTP subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp).
-    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment you need to perform step 16-18 from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service).
+    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment you need to perform step 16-18 from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service). 
 - On SAP S/4HANA Cloud side:
-    - You have a dedicated SAP S/4HANA Cloud tenant.
+    - You have a dedicated SAP S/4HANA Cloud tenant. 
     - You must be an administrator of the SAP S/4HANA Cloud system.
     - You need to connect this system to your SAP BTP global account, if you'd like to build extension applications for your SAP S/4HANA Cloud system.
 
 ## Details
 ### You will learn
  - How to prepare your CAP application
- - How to deploy your CAP application
+ - How to deploy your CAP application 
  - How to test your CAP application with SAP S/4HANA Cloud connectivity
 
 
@@ -184,7 +184,7 @@ You need to perform step 16-18 from the tutorial [Add the SAP Launchpad service]
 
 2. Choose the **Risks** application.
 
-3. Choose **Go**.
+3. Choose **Go**. 
 
     You'll see a message `No data found. Try adjusting filter or search criteria.`
 
@@ -197,9 +197,9 @@ You need to perform step 16-18 from the tutorial [Add the SAP Launchpad service]
     !![Create Risk](create_risk.png)
 
 5. Fill in information for the new risk in the object page and choose **Create**.
-
+    
     !![Risk Object Page](risk_object_page.png)
-
+    
     > You can leave the **Mitigation** field empty, since there's no available mitigations to choose from.
 
 6. Check if the new risk is visible.
@@ -216,7 +216,7 @@ Congratulations! You have completed all tutorials.
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-ext-service-s4hc-use" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-ext-service-s4hc-use" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p> 
 <!--TAIL END-->
 The result of this tutorial can be found in the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
 
