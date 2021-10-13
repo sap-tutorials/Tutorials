@@ -20,7 +20,7 @@ primary_tag: products>sap-data-warehouse-cloud
 
 [ACCORDION-BEGIN [Step 1: ](What is a parent-child hierarchy)]
 
-A parent-child hierarchy (PCH) is a hierarchy in a standard dimension that contains a parent attribute. A parent attribute describes a self-referencing relationship, or self-join, within a dimension main table. In other words, child and parent tables are just normal database tables, but they are linked in a way that describes a special relationship: a parent-child relationship. This is used most often when one table's value refers to the value in another table (usually a primary key of another table).
+A parent-child hierarchy (PCH) is a hierarchy in a standard dimension that contains a parent attribute. A parent attribute describes a self-referencing relationship, or self-join, within a dimension main table. In other words, child and parent tables are just normal database tables, but linked in a way that describes a special relationship: a parent-child relationship. This is used most often when one table's value refers to the value in another table (usually a primary key of another table).
 
 For instance, most profit and loss statements have a native parent-child hierarchy for representing the list of accounts. Also, a list of components of a product, a car for instance, usually is a native parent-child hierarchy because each component has other sub-components, with different levels of depth in different branches of the hierarchy. And, of course, organizational structures of companies, are often represented as parent-child hierarchies, as well.
 
