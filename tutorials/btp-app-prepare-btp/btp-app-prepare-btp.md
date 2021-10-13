@@ -163,7 +163,7 @@ As the result of the previous steps there will be a Cloud Foundry space with req
 
 6. To fill the **New Subaccount** dialog, enter a **Display Name**.
 
-    > Use a short name for your project and add the prefix for the landscape, for example: `<project name>-cf-eu10`. Don't select the checkbox **Neo**!
+    > Use a short name for your project and add the prefix for the landscape, for example: `<project name>-cf-us10`. Don't select the checkbox **Neo**!
 
 7. Enter a subdomain.
 
