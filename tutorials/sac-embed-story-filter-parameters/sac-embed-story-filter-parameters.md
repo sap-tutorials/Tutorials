@@ -3,7 +3,7 @@ title: Apply Filters to an SAP Analytics Cloud Story
 description: Apply or change filter parameters of an embedded SAP Analytics Cloud story
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>node-js, topic>security, tutorial>license]
+tags: [  tutorial>beginner, topic>node-js, topic>security, tutorial>license]
 primary_tag: products>sap-analytics-cloud
 ---
 

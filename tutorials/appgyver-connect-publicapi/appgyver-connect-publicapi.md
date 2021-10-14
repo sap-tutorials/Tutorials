@@ -1,6 +1,6 @@
 ---
-title: Connect your AppGyver Application to a Public API
-description: In this tutorial, you will learn how to connect your application to a public API and then test that it's pulling the right information. Configuring these details allow your application to read a barcode from a food product, search for that product using an API, and then display the information available.
+title: Connect Your AppGyver Application to a Public API
+description: Connect your application to a public API and then test that it's pulling the right information.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, tutorial>license, topic>mobile]

@@ -3,7 +3,7 @@ title: Embed an SAP Analytics Cloud Story in a Simple Web App
 description: Create a simple Node.js web application that manages OAuth authorization and embed an SAP Analytics Cloud story into it.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, topic>node-js, topic>security, tutorial>license ]
+tags: [ tutorial>beginner, topic>node-js, topic>security, tutorial>license  ]
 primary_tag: products>sap-analytics-cloud
 ---
 

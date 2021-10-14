@@ -5,7 +5,7 @@ title: Configure and Run a Predefined SAP Continuous Integration and Delivery (C
 description: Enable SAP Continuous Integration and Delivery (CI/CD) service on SAP Business Technology Platform for your CAP application.
 auto_validation: true
 time: 15
-tags: [ tutorial>advanced, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform]
+tags: [ tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
