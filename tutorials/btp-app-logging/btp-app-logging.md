@@ -56,7 +56,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Access logs from SAP BTP cockpit)]
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
 
 2. Choose **Account Explorer**.
 
@@ -170,7 +170,7 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
         service: application-logs
         service-plan: standard
     ```
-
+    
 2. Bind the logging service instance to all `modules` of the `mta.yaml`.
 
     <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->

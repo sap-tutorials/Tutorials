@@ -219,7 +219,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
 13. Choose **Next Step**.
 
-14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**.
+14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**. 
 
 15. Choose `Allow only BTP IP addresses`.
 
@@ -285,7 +285,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
 13. Choose **Next Step**.
 
-14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**.
+14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**. 
 
 15. Choose `Allow only BTP IP addresses`.
 
