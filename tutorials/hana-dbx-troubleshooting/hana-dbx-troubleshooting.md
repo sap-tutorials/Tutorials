@@ -38,7 +38,7 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
     ![Set Breakpoints](DebuggerBreakpoints.png)
 
-  4. Right-click the procedure named `RESERVATION_GENERATOR` in the database browser and select **Generate Call Statement** or **Generate Call Statement with UI**.
+  4. Right-click the procedure named `RESERVATION_GENERATOR` in the database browser and select **Generate Call Statement**.
 
     ![Generate Call Statement](GenerateCallStatement.png)
 

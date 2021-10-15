@@ -97,11 +97,7 @@ Follow the below steps in order to create a database user:
 
 > **Well done!**
 
-> You have completed the 8th tutorial of this group. Now you know how to create a database user in SAP Data Warehouse Cloud.
-
-> Learn in the next tutorial [how to define a password lifetime for your database user in SAP Data Warehouse Cloud.](data-warehouse-cloud-intro9-password-lifetime)
-
-
+> You have completed this tutorial. Now you know how to create a database user in SAP Data Warehouse Cloud.
 
 [DONE]
 [ACCORDION-END]
