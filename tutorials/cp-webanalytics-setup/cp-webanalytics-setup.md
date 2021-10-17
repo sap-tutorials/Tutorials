@@ -4,7 +4,7 @@ description: Subscribe to the trial version of SAP Web Analytics on the SAP Busi
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-business-technology-platform]
-primary_tag: products>sap-web-analytics-(pilot)
+primary_tag: products>sap-web-analytics
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
 ---

@@ -44,7 +44,7 @@ Here are some of the tasks you can use the btp CLI for:
 
 [ACCORDION-BEGIN [Step 2: ](For which global accounts can I use the btp CLI?)]
 
-SAP is currently migrating all global accounts from the existing cloud management tools feature set A to the renovated cloud management tools feature set B. One of the innovations of feature set B is the command line interface (btp CLI) for account management. With a trial account, you can try out the btp CLI and other features of feature set B.  
+SAP is currently migrating all global accounts from the existing cloud management tools feature set A to the renovated cloud management tools feature set B. One of the innovations of feature set B is the command line interface (btp CLI) for account management. With a trial account, you can try out the btp CLI and other features of feature set B.
 
 Here you can read more about the [Cloud Management Tools Feature Set B Innovations](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html).
 
@@ -114,6 +114,8 @@ Once you're logged into your global account, it should look like this:
 
 ![CLI Login](sapcplogin.png)
 
+> If you get an error about your btp CLI client being "too new" and not supported by the server, please return to Step 4 of this tutorial and download an earlier version of the CLI, to either match the server version stated, or one version below. For example, if the server version is stated as 2.9.0 and you have version 2.10.0 of the btp CLI, you can download version 2.8.0 of the btp CLI and then continue with this tutorial. [This issue](https://github.com/SAP-samples/devtoberfest-2021/issues/53) may contain further information that you might find useful.
+
 [DONE]
 [ACCORDION-END]
 
@@ -181,7 +183,7 @@ The targeting mechanism works according to the hierarchy of entities in the glob
 
 - If a subaccount or directory is targeted and you run a command that only works on a higher level, the command will be executed in the parent directory or global account of the current target. For example, `create accounts/subaccount` creates a subaccount in the global account, even if a subaccount or directory is targeted.
 
-- If a subaccount or directory is targeted, you can execute commands in its parent directory or global account by adding parameters `-dir` or `-ga` without a value. For example, if a subaccount is targeted, `btp list security/user` lists the users of that subaccount. To list the users of the parent directory or global account, use: `btp list security/user -dir` or  `btp list security/user -ga`.  
+- If a subaccount or directory is targeted, you can execute commands in its parent directory or global account by adding parameters `-dir` or `-ga` without a value. For example, if a subaccount is targeted, `btp list security/user` lists the users of that subaccount. To list the users of the parent directory or global account, use: `btp list security/user -dir` or  `btp list security/user -ga`.
 
 >To find out your current target, use `btp --info`.
 
