@@ -35,15 +35,16 @@ In this step, you will create a React skeleton project which will be used to cre
 
     ```Shell
     npx create-react-app react-core-mf && cd react-core-mf
-​    ```
+    ```
 
-3.  Eject the project to customize webpack configs. If you get an error, you need to commit any changes before running the command. More information can be found [here](https://stackoverflow.com/questions/45671057/how-to-run-eject-in-my-react-app).:
+3.  Eject the project to customize the `webpack` configuration. If you get an error, you need to commit any changes before running the command. More information can be found [here](https://stackoverflow.com/questions/45671057/how-to-run-eject-in-my-react-app).:
 
     ```Shell
     echo yes | npm run eject
     ```
     ​
 4. Install dependencies:
+
     ```Shell
     npm i -P @luigi-project/core @luigi-project/client fundamental-styles@0.11.0 @sap-theming/theming-base-content react-router-dom @ui5/webcomponents
     npm i copy-webpack-plugin@5 webpack webpack-cli @babel/core @babel/preset-env babel-loader --save-dev
@@ -91,7 +92,7 @@ In this step, you will create a React skeleton project which will be used to cre
             "Luigi": "readonly"
         }
     }'>.eslintrc.json
-    ​```
+    ```
 
 6. Create a new folder:
 
@@ -106,7 +107,7 @@ In this step, you will create a React skeleton project which will be used to cre
    curl https://raw.githubusercontent.com/SAP/luigi/master/core/examples/luigi-example-react/public/luigi-config.js > src/luigi-config/luigi-config.es6.js
    ```
 
-8.  Ins​tall and run the config:
+8.  Ins​tall and run the configuration:
 
     ```Shell
     npm i

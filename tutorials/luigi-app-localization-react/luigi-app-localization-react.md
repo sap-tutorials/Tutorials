@@ -106,9 +106,6 @@ export const dict = {
     this.options = [{ key: 'en-US', text: 'en-US' }, { key: 'de-DE', text: 'de-DE' }];
     ```
 
-[DONE]
-[ACCORDION-END]
-
 [VALIDATE_1]
 [ACCORDION-END]
 

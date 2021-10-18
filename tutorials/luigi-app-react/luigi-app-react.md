@@ -828,7 +828,7 @@ In this step, you will add the `ProductDetail.js` view to the app. You will be a
        }
     ```
 
-2. Add the route config to the `index.js` by pasting below code into it:
+2. Add the route configuration to the `index.js` by pasting below code into it:
 
     ```JavaScript
        //PASTE THIS AROUND LINE 5
