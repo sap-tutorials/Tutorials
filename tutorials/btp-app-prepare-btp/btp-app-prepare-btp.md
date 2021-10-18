@@ -47,10 +47,6 @@ You can [register for a trial account](https://www.sap.com/cmp/td/sap-cloud-plat
 
 A global account, a subaccount, a Cloud Foundry org, and space with some entitlements that are sufficient to do this tutorial are set up for you.
 
-> If you use an existing `trial` account then service entitlements may be missing. If you encounter such situation, we suggest deleting your `trial` account and create a new one.
-
-> New service offerings are not added to existing `trial` accounts automatically.
-
 > In case you face a problem when creating a service instance or an application is missing for subscription later in the tutorial, please do the following:
 
 > 1. Choose **Go To Your Trial Account**.
@@ -167,7 +163,7 @@ As the result of the previous steps there will be a Cloud Foundry space with req
 
 6. To fill the **New Subaccount** dialog, enter a **Display Name**.
 
-    > Use a short name for your project and add the prefix for the landscape, for example: `<project name>-cf-eu10`. Don't select the checkbox **Neo**!
+    > Use a short name for your project and add the prefix for the landscape, for example: `<project name>-cf-us10`. Don't select the checkbox **Neo**!
 
 7. Enter a subdomain.
 

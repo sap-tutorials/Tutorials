@@ -3,7 +3,7 @@ title: Create an Account on the SAP Gateway Demo System
 description: Sign up for an account on our demo SAP Gateway server (ES5).
 auto_validation: true
 primary_tag: products>sap-gateway
-tags: [ products>sap-gateway, topic>cloud, topic>odata, tutorial>beginner ]
+tags: [ products>sap-gateway, topic>cloud, topic>odata, tutorial>beginner  ]
 time: 5
 ---
 
