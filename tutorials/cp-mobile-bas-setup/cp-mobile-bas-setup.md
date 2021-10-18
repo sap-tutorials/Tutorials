@@ -2,11 +2,11 @@
 title: Set Up SAP Business Application Studio for Multi-Channel Development
 description: Set up your SAP Business Application Studio to start developing mobile and web applications.
 auto_validation: true
-time: 15
+time: 5
 tags: [ tutorial>beginner, topic>mobile, operating-system>ios, operating-system>android, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment, products>sap-mobile-cards, products>sap-mobile-services, products>sap-business-application-studio, products>mobile-development-kit-client ]
 primary_tag: products>sap-business-technology-platform
-author_name: Sandeep T D S
-author_profile: https://github.com/sandeep-tds
+author_name: Jitendra Kansal
+author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
@@ -21,12 +21,9 @@ SAP Business Application Studio is the next-generation web-based IDE hosted on S
 
 ---
 
-
 [ACCORDION-BEGIN [Step 1: ](Create a development space)]
 
 1. Log into your Business Application Studio and click **Create Dev Space**.
-
-    > The number of extensions may differ if you are on trial or a production account.
 
 2. Select **SAP Mobile Application**, enter a name (`Tutorial`) for your dev space and click **Create Dev Space**.
 
@@ -70,9 +67,9 @@ SAP Business Application Studio is the next-generation web-based IDE hosted on S
 
     > !![Sucess toast message](img_3_4_note.png)
 
-5. Select the organisation in which you have enabled Mobile Services.
+5. Select the organization in which you have enabled Mobile Services.
 
-    !![Org list](img_3_5.png)
+    !![Org list](img-3.5.png)
 
 6. Select the space in which you have enabled Mobile Services.
 

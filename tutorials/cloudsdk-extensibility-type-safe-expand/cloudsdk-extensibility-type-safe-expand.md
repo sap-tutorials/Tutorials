@@ -15,6 +15,11 @@ primary_tag: topic>java
 
 ## Details
 
+> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> This tutorial is not actively maintained and might be partially outdated.
+> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
+> We will provide a link to the updated version of this tutorial as soon as we release it.
+>
 Use advanced features of the [Virtual Data Model for OData](https://sap.github.io/cloud-sdk/docs/java/features/odata/overview).
 
 ### You will learn

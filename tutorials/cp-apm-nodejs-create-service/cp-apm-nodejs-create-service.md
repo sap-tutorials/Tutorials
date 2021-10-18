@@ -15,7 +15,7 @@ time: 50
 - You have installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
 - (For Windows) You have installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation.
 - You have installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
-- If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Business Technology Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **Europe (Frankfurt) or US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
+- If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Business Technology Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
 
 ## Details
 ### You will learn
@@ -53,7 +53,7 @@ Before you start, make sure that you've completed the prerequisites.
 
     ![cds commands](cds_commands.png)
 
-    > This lists the available `cds` commands. For example, use `cds version` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
+    > This lists the available `cds` commands. For example, use `cds v` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
 [DONE]
 
@@ -215,14 +215,14 @@ After initializing the project, you should see the following empty folders:
 3. As soon as you've saved your file, the still running `cds watch` reacts immediately with some new output as shown below:
 
     ```Shell/Bash
+    [cds] - connect using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
-    [cds] - using bindings from: { registry: '~/.cds-services.json' }
     /> successfully deployed to sqlite in-memory db
 
     [cds] - serving CatalogService { at: '/catalog' }
 
-    [cds] - launched in: 1.016s
     [cds] - server listening on { url: 'http://localhost:4004' }
+    [cds] - launched in: 1.043s
     [ terminate with ^C ]
     ```
     > This means, `cds watch` detected the changes in `srv/cat-service.cds` and automatically bootstrapped an in-memory SQLite database when restarting the server process.
@@ -362,16 +362,15 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
     > After you added these files, `cds watch`restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
 
     ```Shell/Bash
+    [cds] - connect using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
-    [cds] - using bindings from: { registry: '~/.cds-services.json' }
      > filling my.bookshop.Authors from ./db/csv/my.bookshop-Authors.csv
-     > filling my.bookshop.Books from ./db/csv/my.bookshop-Books.csv
     /> successfully deployed to sqlite in-memory db
 
     [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
-    [cds] - launched in: 656.931ms
     [cds] - server listening on { url: 'http://localhost:4004' }
+    [cds] - launched in: 643.33ms
     [ terminate with ^C ]
     ```
 
@@ -436,12 +435,12 @@ Instead of using in-memory, you can also use persistent databases.
     ```
 
     ```Shell/Bash
-    [cds] - connect to db > sqlite { database: '/Users/xxxxxx/my-bookshop/db/my-bookshop.db' }
-    [cds] - using bindings from: { registry: '~/.cds-services.json' }
+    [cds] - connect using bindings from: { registry: '~/.cds-services.json' }
+    [cds] - connect to db > sqlite { database: '/Users/xxxxxxx/my-bookshop/db/my-bookshop.db' }
     [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
-    [cds] - launched in: 537.482ms
     [cds] - server listening on { url: 'http://localhost:4004' }
+    [cds] - launched in: 693.219ms
     [ terminate with ^C ]
     ```
 

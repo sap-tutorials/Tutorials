@@ -3,7 +3,7 @@ title: Set Up SAP Web Analytics
 description: Subscribe to the trial version of SAP Web Analytics on the SAP Business Technology Platform cockpit.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-web-analytics, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
 primary_tag: products>sap-web-analytics
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
@@ -34,7 +34,7 @@ For example, create a space named "E-commerce" to which you register your shoppi
 
 [ACCORDION-BEGIN [Step 1: ](Open the SAP BTP Cockpit)]
 
-In the [home page](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) of SAP BTP cockpit trial, select **Enter Your Trial Account**.
+In the [home page](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) of SAP BTP cockpit trial, select **Go To Your Trial Account**.
 
 !![Cloud Foundry](Step_1.png)
 

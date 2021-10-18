@@ -9,7 +9,7 @@ primary_tag: topic>machine-learning
 
 ## Prerequisites
 - You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
-- You have a subaccount and dev space with **Europe (Frankfurt)** or **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
+- You have a trial subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html). You can also use subaccounts created before October 11th, 2021 with **Europe (Frankfurt)** as region.
 
 ## Details
 ### You will learn
@@ -19,15 +19,15 @@ primary_tag: topic>machine-learning
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
+[ACCORDION-BEGIN [Step 1: ](Go to your trial account)]
 
 1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
+2. Navigate to your trial global account by clicking **Go To Your Trial Account**.
 
     !![Trial global account](01_Foundation20Onboarding_Home.png)
 
-    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select Europe (Frankfurt) or US East (VA)**. Your user profile will be set up for you automatically.
+    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select US East (VA)**. Your user profile will be set up for you automatically.
 
     >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
 
@@ -93,9 +93,9 @@ You are now all set to [Use Machine Learning to Extract Information from Documen
 
 Do the following to access your subscription to the Document Information Extraction Trial UI, without having to run the **Set up account for Document Information Extraction** booster once again:
 
-1. Access your trial account.
+1. Navigate to your trial global account by clicking **Go To Your Trial Account**.
 
-2. Click **Subaccounts** on the navigation side bar and select **trial** to access your subaccount.
+2. From your global account page, choose the `trial` tile to access your subaccount.
 
     !![UI application](subaccount.png)
 
@@ -103,11 +103,11 @@ Do the following to access your subscription to the Document Information Extract
 
     !![UI application](subscriptions.png)
 
-4. Look for **Document Information Extraction Trial UI** under **Subscriptions** and click the arrow on the right to access it.
+4. Search for **Document Information Extraction Trial UI** under **Subscriptions** and click the arrow on the right to access it.
 
     !![UI application](subscriptions-tile.png)
 
-5. Here, you can navigate to the application by clicking **Go to Application** but also manage the roles for the UI application.
+5. Here, you can navigate to the application by clicking **Go to Application** and also manage the **Document Information Extraction Trial UI** roles.
 
     !![UI application](subscriptions-action.png)
 

@@ -27,12 +27,12 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to set up user authentication and authorization (XSUAA)
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`cp/hana`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/hana) branch.
+To start with this tutorial use the result in the [`cp/hana`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/hana) branch.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enable authentication support)]
-The enable authentication support in CAP for SAP BTP, the `xssec` and `xsenv` modules need to be installed. If `cds watch`is still running stop it with `Ctrl+C`. In your project folder execute:
+The enable authentication support in CAP for SAP BTP, the `xssec` and `xsenv` modules need to be installed. If `cds watch`is still running stop it with <kbd>Ctrl</kbd> + <kbd>C</kbd>. In your project folder execute:
 
 ```Shell/Bash
 npm i --save  @sap/xssec  @sap/xsenv
@@ -42,7 +42,7 @@ npm i --save  @sap/xssec  @sap/xsenv
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Add UAA service)]
-We need to tell CAP that XSUAA is used. For this open the `package.json` in your `cpapp` project and add the following lines:
+We need to tell CAP that XSUAA is used. For this open the `package.json` in your `cpapp` project and add the following lines.
 
 <!-- cpes-file package.json:$.cds.requires -->
 ```JSON[7-10]
@@ -76,7 +76,7 @@ However, CAP recommends using roles only, and creating one-to-one mappings betwe
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](XSUAA security configuration)]
-Create the file `xs-security.json` in your `cpapp` project by executing:
+Create the file `xs-security.json` in your `cpapp` project by executing the following command.
 
 ```Shell/Bash
 cds compile srv --to xsuaa >xs-security.json

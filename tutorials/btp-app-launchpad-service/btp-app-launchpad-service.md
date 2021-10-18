@@ -22,7 +22,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
  - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa)
  - [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)
- - Your subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp)
+ - Your SAP BTP subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp)
 
 ## Details
 ### You will learn
@@ -33,7 +33,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to test your SAP Launchpad site
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`mta`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/mta) branch.
+To start with this tutorial use the result in the [`mta`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/mta) branch.
 
 ---
 
@@ -80,7 +80,7 @@ Navigation targets are required to navigate between applications, but also to st
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Add navigation target for Mitigations UI)]
-Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.json`, but with the `semanticObject` name `Mitigations`:
+Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.json`, but with the `semanticObject` name `Mitigations`.
 
 <!-- cpes-file app/mitigations/webapp/manifest.json:$["sap.app"].crossNavigation -->
 ```JSON[8-19]
@@ -265,12 +265,6 @@ modules:
     npm i -g mta
     ```
 
-4. Delete the file `app/mitigations/.yo-rc.json`, because this makes the SAP Fiori application generator fail.
-
-    ```Shell/Bash
-    rm app/mitigations/.yo-rc.json
-    ```
-
 [DONE]
 [ACCORDION-END]
 ---
@@ -313,7 +307,20 @@ Make sure the last entry in `"devDependencies"` doesn't end with a comma (`,`) c
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 11: ](Add SAPUI5 freestyle Mitigations application)]
+[ACCORDION-BEGIN [Step 11: ](Fix SAPUI5 Tools Version for Risks app)]
+The SAPUI5 CLI version added by the SAPUI5 freestyle generator is outdated. Open the `app/risks/package.json` file and update the version for it so that it requires a newer version:
+
+```JSON[2]
+    "devDependencies": {
+        "@ui5/cli": "^2.11.1",
+```
+
+Without this change, the MTA build would break later.
+
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 12: ](Add SAPUI5 freestyle Mitigations application)]
 Repeat the procedure from the previous step for the `app/mitigation` folder.
 
 1. Switch to `app/mitigations` folder:
@@ -328,84 +335,85 @@ Repeat the procedure from the previous step for the `app/mitigation` folder.
     fiori add deploy-config cf
     ```
 
-3. It will ask for the destination name.
+    It will ask for the destination name.
 
-4. Enter `cpapp-app-srv` for the destination name again.
+3. Enter `cpapp-app-srv` for the destination name again.
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 12: ](Check the results in mta.yaml)]
+[ACCORDION-BEGIN [Step 13: ](Check the results in mta.yaml)]
 The newly added modules `nsrisks` and `nsmitigations` do the build of the SAP Fiori application. Each build result is a ZIP file that contains optimized UI resources and a ZIP file `manifest-bundle.zip` with the `manifest.json` and the `i18n` files. The latter is required by the SAP Launchpad service.
 
 1. Check the `risks` application module `nsrisks`:
 
-<!-- snippet mta.yaml --branch launchpad-service modules: "- name: nsrisks" -->
-```YAML
-modules:
-  ...
-- name: nsrisks
-  type: html5
-  path: app/risks
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
-```
+    <!-- snippet mta.yaml --branch launchpad-service modules: "- name: nsrisks" -->
+    ```YAML
+    modules:
+      ...
+    - name: nsrisks
+      type: html5
+      path: app/risks
+      build-parameters:
+        build-result: dist
+        builder: custom
+        commands:
+        - npm install
+        - npm run build:cf
+        supported-platforms: []
+    ```
+
 
 2. Check the `mitigations` application module `nsmitigations`:
 
-<!-- snippet mta.yaml --branch launchpad-service modules: "- name: nsmitigations" -->
-```YAML
-modules:
-  ...
-- name: nsmitigations
-  type: html5
-  path: app/mitigations
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
-```
+    <!-- snippet mta.yaml --branch launchpad-service modules: "- name: nsmitigations" -->
+    ```YAML
+    modules:
+      ...
+    - name: nsmitigations
+      type: html5
+      path: app/mitigations
+      build-parameters:
+        build-result: dist
+        builder: custom
+        commands:
+        - npm install
+        - npm run build:cf
+        supported-platforms: []
+    ```
 
-3. Check the HTML5 application deployer:
+3. Check the HTML5 application deployer.
 
-The module `cpapp-app-content` deploys the ZIP files from the `nsrisks.zip` and `nsmitigations.zip` to the SAP HTML5 Application Repository service, where it can be accessed by the SAP Launchpad service using the previously added destinations.
+    The module `cpapp-app-content` deploys the ZIP files from the `nsrisks.zip` and `nsmitigations.zip` to the SAP HTML5 Application Repository service, where it can be accessed by the SAP Launchpad service using the previously added destinations.
 
-<!-- snippet mta.yaml --branch launchpad-service modules: cpapp-app-content -->
-```YAML
-modules:
-  ...
-- name: cpapp-app-content
-  type: com.sap.application.content
-  path: .
-  requires:
-  - name: cpapp-html5-repo-host
-    parameters:
-      content-target: true
-  build-parameters:
-    build-result: resources
-    requires:
-    - artifacts:
-      - nsrisks.zip
-      name: nsrisks
-      target-path: resources/
-    - artifacts:
-      - nsmitigations.zip
-      name: nsmitigations
-      target-path: resources/
-```
+    <!-- snippet mta.yaml --branch launchpad-service modules: cpapp-app-content -->
+    ```YAML
+    modules:
+      ...
+    - name: cpapp-app-content
+      type: com.sap.application.content
+      path: .
+      requires:
+      - name: cpapp-html5-repo-host
+        parameters:
+          content-target: true
+      build-parameters:
+        build-result: resources
+        requires:
+        - artifacts:
+          - nsrisks.zip
+          name: nsrisks
+          target-path: resources/
+        - artifacts:
+          - nsmitigations.zip
+          name: nsmitigations
+          target-path: resources/
+    ```
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 13: ](Add UI build files to .gitignore)]
+[ACCORDION-BEGIN [Step 14: ](Add UI build files to .gitignore)]
 The SAP Fiori build files do not need to be stored in GitHub. You can add it to your `.gitignore` file:
 
 ```Shell/Bash
@@ -421,12 +429,13 @@ app/*/package-lock.json
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 14: ](Re-build and re-deploy the .mtar file)]
+[ACCORDION-BEGIN [Step 15: ](Re-build and re-deploy the .mtar file)]
 1. Build your project with the MTA Build Tool (MBT) in the root folder of your project:
 
     ```Shell/Bash
     mbt build -t ./
     ```
+
 2. Deploy your project to SAP BTP:
 
     ```Shell/Bash
@@ -444,8 +453,14 @@ app/*/package-lock.json
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 15: ](Subscribe to SAP Launchpad service)]
-1. Log on to your **Global Account** and navigate to the **Subaccount** where you have deployed your service and application.
+[ACCORDION-BEGIN [Step 16: ](Subscribe to SAP Launchpad service)]
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount where you have deployed your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 2. Choose **Services** **&rarr;** **Service Marketplace** on the left.
 
@@ -462,7 +477,7 @@ You have now subscribed to the SAP Launchpad service.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 16: ](Create your SAP Launchpad site)]
+[ACCORDION-BEGIN [Step 17: ](Create your SAP Launchpad site)]
 1. Choose **Services** **&rarr;** **Instances and Subscriptions** on the left.
 
 2. Locate the **Launchpad Service** under **Subscriptions** and choose **Go to Application**.
@@ -478,7 +493,7 @@ You have now subscribed to the SAP Launchpad service.
     > 3. Enter your e-mail address and choose **Show Assignments**.
     > 4. Choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
 
-    > !![Add role](add_launchpad_admin_role.png)
+    >     !![Add role](add_launchpad_admin_role.png)
 
     > 5. Open another browser or clear your browser's cache.
 
@@ -506,11 +521,11 @@ You have now subscribed to the SAP Launchpad service.
 
     > `Everyone` is a role that has to be assigned to the `Risks` and `Mitigations` apps so all users can access them.
 
-8. Choose **Edit** and assign the `Risks` and `Mitigations` apps to the role and *Save*.
+8. Choose **Edit**, assign the `Risks` and `Mitigations` apps to the role, and choose **Save**.
 
     !![Add Apps to Role](apps_to_role_everyone.png)
 
-9. Navigate back to **My Content**.    
+9. Navigate back to **My Content**.
 
 10. Choose **New** **&rarr;** **Group**.
 
@@ -535,7 +550,7 @@ You have now subscribed to the SAP Launchpad service.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 17: ](Test your SAP Launchpad site)]
+[ACCORDION-BEGIN [Step 18: ](Test your SAP Launchpad site)]
 1. Choose **Go to site**.
 
     !![Go to site](go_to_site.png)

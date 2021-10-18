@@ -3,8 +3,8 @@ title: Connect Using the SAP HANA Node.js Interface
 description: Create and debug a Node.js application that connects to SAP HANA using the SAP HANA client.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud, topic>node-js]
-primary_tag: products>sap-hana
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition, topic>node-js]
+primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -84,6 +84,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     ```
 
     >The `hana-client` driver contains native libraries as shown below.
+
     >![pre built libraries](prebuilt.png)
 
     >When installed using NPM, the native libraries for all available platforms are downloaded.  The following environment variable can be used to remove the other platforms reducing the size of the project.  For additional details, see [Node.js Environment Variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/2dbfa39ecc364a65a6ab0fea9c8c8bd9.html).
@@ -196,11 +197,17 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
         //As of 2.7 trace info can be directed to stdout or stderr
         //traceFile: 'stdout',
         //traceOptions: 'sql=warning',
+
         //As of SAP HANA Client 2.6, connections on port 443 enable encryption by default (HANA Cloud).
         //encrypt: 'true',  //Must be set to true when connecting to HANA as a Service
         sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
-        //Used to specify where the trust store is located.  
-        //As of SAP HANA Client 2.6 for OpenSSL connections, this can be ignored as root certificates are read from the default OS location.
+        //Used to specify where the trust store is located.
+
+        //For encrypted connections, the default crypto provider is mscrypto on Windows or openSSL on Linux or macos
+        //To use the SAP crypto provider, uncomment the below line.
+        //sslCryptoProvider: 'commoncrypto',
+
+        //As of SAP HANA Client 2.6 for OpenSSL connections, the following settings can be ignored as root certificates are read from the default OS location.
         //ssltruststore: '/home/dan/.ssl/trust.pem',
         //Alternatively provide the contents of the certificate directly (DigiCertGlobalRootCA.pem)
         //DigiCert Global Root CA: https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem used for SAP HANA cloud
@@ -265,7 +272,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
                         console.log("disconnect");
                     });
                 });
-            });u
+            });
         });
     });
     ```  
@@ -317,7 +324,7 @@ node nodeQuery.js
 
 Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux.
 
-1. [Download Visual Studio Code.](https://code.visualstudio.com/Download)
+1. If required, download [Visual Studio Code.](https://code.visualstudio.com/Download).
 
 2. In Visual Studio Code, choose **File | Add Folder to Workspace** and then add the `HANAClientsTutorial` folder.
 

@@ -5,6 +5,8 @@ auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>business-entity-recognition]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 ## Prerequisites
@@ -24,7 +26,7 @@ primary_tag: topic>machine-learning
 
 2. Navigate to the trial global account by clicking **Go To Your Trial Account**.
 
-    ![Trial global account](png-files/01_Foundation20Onboarding_Home.png)
+    !![Trial global account](png-files/01_Foundation20Onboarding_Home.png)
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select Europe (Frankfurt)**. Your user profile will be set up for you automatically.
 
@@ -78,18 +80,7 @@ You are now entitled to use Business Entity Recognition and create instances of 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Access space)]
-
-You will find all applications and services in spaces. By default, trial accounts only have the **dev** space available.
-
-Click **Spaces** on the navigation side bar and select the **dev** space to open it.
-
-![Spaces](png-files/access-space.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Access service via Service Marketplace)]
+[ACCORDION-BEGIN [Step 3: ](Access service via Service Marketplace)]
 
 The **Service Marketplace** is where you find all the services available on SAP BTP.
 
@@ -104,7 +95,7 @@ The **Service Marketplace** is where you find all the services available on SAP 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create service instance)]
+[ACCORDION-BEGIN [Step 4: ](Create service instance)]
 
 You will now create an instance of your service.
 
@@ -112,7 +103,7 @@ Click **Create Instance** to start the creation dialog.
 
 ![Service Instance](png-files/create-instance.png)
 
-In the dialog, leave the default value for the service and the service plan. Enter a name for your new instance as `ber-inst` and click **Create Instance** to skip the other steps and create the instance.
+In the dialog, leave the default value for the service and the service plan. Enter a name for your new instance, for example, `ber-inst` and click **Create Instance**.
 
 ![Create Instance](png-files/create-instance-dialog.png)
 
@@ -125,7 +116,7 @@ You have successfully created a service instance for Business Entity Recognition
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create service key)]
+[ACCORDION-BEGIN [Step 5: ](Create service key)]
 
 You are now able to a create service key for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
@@ -137,7 +128,7 @@ You are now able to a create service key for your new service instance. Service 
 
       ![Create Service Key](png-files/create-service-key-name.png)
 
-You have successfully created a service key for your service instance. You can now either view the service key in the browser or download it.
+You have successfully created a service key for your service instance. You can now view the service key in the browser or download it.
 
 ![View Service Key](png-files/view-service-key.png)
 

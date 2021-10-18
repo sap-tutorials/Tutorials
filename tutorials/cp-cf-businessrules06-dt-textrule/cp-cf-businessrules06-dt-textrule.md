@@ -4,7 +4,7 @@ description: Create and activate the decision tables and text-based rules to cre
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
-primary_tag: products>sap-business-rules-service
+primary_tag: products>business-rules
 author_name: Vandana Vasudevan
 author_profile: https://github.com/VandanaVasudevan
 ---
@@ -14,11 +14,11 @@ author_profile: https://github.com/VandanaVasudevan
   - How to create decision table rules
   - How to create text rules
 
-A decision table rule is the collection of rule expressions in tabular format and sequentially executes each rule in the table.
+  A decision table rule is the collection of rule expressions in tabular format. The rule expressions are sequentially executed, and the matching rows are returned.
 
-A text rule is a decision logic in simple if-then format. The **If** condition of the text rule is evaluated by the system once the rule is triggered. Based on the result of the condition, the rule performs a set of operations.
+  A text rule is a decision logic in a simple if-then-else format. A text rule evaluates a single rule expression and returns the result that matches the condition.
 
-In this tutorial, we will create the decision logic required to assign equipment for the new hire, both as text rule as well as decision table.
+  In this tutorial, we will create the decision logic required to assign equipment for the new hire, both as a text rule as well as a decision table.
 
 ---
 
@@ -30,10 +30,9 @@ In this tutorial, we will create the decision logic required to assign equipment
 
 2. In the **New Rule** prompt, provide the following details:
 
-    |  Field Name     | Value
+    |  Name   | Type
     |  :------------- | :-------------
-    |  Name           | **`DetermineEquipmentRules`**
-    |  Type          | **`Decision Table`**
+    | **`DetermineEquipmentRules`** | **`Decision Table`**
 
     Then choose **Create**.
 
@@ -41,10 +40,9 @@ In this tutorial, we will create the decision logic required to assign equipment
 
 3. In the **New Rule** page, provide the following details and then choose **Settings** icon.
 
-    |  Field Name     | Value
+    |  Label     | Description
     |  :------------- | :-------------
-    |  Label           | **`DetermineEquipmentRules`**
-    |  Description     | **`Rule to determine equipment for the new hire based on the country and job title of the new hire.`**
+    | **`DetermineEquipmentRules`** | **`Rule to determine equipment for the new hire based on the country and job title of the new hire.`**
 
     ![New Rule Page](create_dt_3.png)
 
@@ -54,11 +52,13 @@ In this tutorial, we will create the decision logic required to assign equipment
 
     ![Hit Policy](create_dt_4.png)
 
+    > In this tutorial, we are using the **First Match** hit policy. If you select **All Match** hit policy, all the rows of the decision table that matches the condition are returned. In this case, the result data object **`EquipmentInfo`** should be of type **Table** to hold all the row values.
+
 5. Press **CTRL** + **SPACE** to load the autosuggestion list, and then choose **Employee** under **Vocabulary** section.
 
     ![Autosuggestion list](create_dt_5.png)
 
-6. Choose the attribute **`countryofCompany`** from the **Vocabulary** section and then in the **Label** field enter **Country or Region**.
+6. Choose the attribute **`Country or Region of Company`** from the **Vocabulary** section and then in the **Label** field enter **Country or Region**.
 
     ![Attribute in autosuggestion list](create_dt_6.png)
 
@@ -80,11 +80,9 @@ In this tutorial, we will create the decision logic required to assign equipment
 
     ![DT settings](create_dt_8.png)
 
-    A decision table gets created with the condition columns and result columns as shown:
+    A decision table gets created with the condition columns and result columns.
 
-    ![Empty Decision Table](empty_dt.png)
-
-9. In the **`Employee.countryofCompany`** column, press **CTRL** + **SPACE**. Under **Comparison Operators**, select **is equal**.
+9. In the **`Country or Region`** column, press **CTRL** + **SPACE**. Under **Comparison Operators**, select **is equal**.
 
     ![Comparison Operators](create_dt_9.png)
 
@@ -96,7 +94,7 @@ In this tutorial, we will create the decision logic required to assign equipment
 
     ![Value help1](create_dt_11.png)
 
-11. In the **`Employee.company`** column provide the following value using the autosuggestion list:
+11. In the **`Company`** column provide the following value using the autosuggestion list:
 
     `='ACE_USA'`
 
@@ -104,35 +102,21 @@ In this tutorial, we will create the decision logic required to assign equipment
 
 12. In the subsequent cells, provide the following values:
 
-    |  Field Name     | Value
-    |  :------------- | :-------------
-    |  **`Employee.jobTitle`**   | **`MATCHES '.*'`**
-    |  **`Employee.isFullTimeEmployee`**   | **`= true OR Employee.isFullTimeEmployee = false`**
-    |  **`Currency`**   | **`EUR`**
-    |  **`ProductID`**   | **`106743`**
-    |  **`Equipment Type`**   | **`Audio and Video`**
-    |  **`Equipment Price`**   | **`35.96`**
-    |  **`Product Desc`**   | **`Lovely Sound 5.1`**
+    | Job Title | Full Time/Part Time | Product ID | Equipment Type | Price | Product Description | Currency
+    |  :------------- | :------------- | :------------- | :------------- | :------------- | :------------- | :------------- | :-------------
+    | **`MATCHES '.*'`** | **`= true OR Employee.IsFullTimeEmployee = false`** | **`'A106743'`** | **`'Audio and Video'`** | **`35.96`** | **`'Lovely Sound 5.1'`** | **`EUR`**
 
     ![Company details](create_dt_13.png)
 
-13. Select the first row, then choose **Add Row** > **Insert First**.
+13. Select the first row, then choose **Add Row** > **Insert After**.
 
     ![Company details](create_dt_14.png)
 
 14. Enter the following values in the condition and result columns of the new row:
 
-    |  Field Name     | Value
-    |  :------------- | :-------------
-    |  **`Employee.countryofCompany`**   | **`= 'USA'`**
-    |  **`Employee.company`**   | **`MATCHES '.*'`**
-    |  **`Employee.jobTitle`**   | **`MATCHES '.*'`**
-    |  **`Employee.isFullTimeEmployee`**   | **`= true OR Employee.isFullTimeEmployee = false`**
-    |  **`Currency`**   | **`EUR`**
-    |  **`ProductID`**   | **`106875`**
-    |  **`Equipment Type`**   | **`Notebook`**
-    |  **`Equipment Price`**   | **`956.00`**
-    |  **`Product Desc`**   | **`Notebook Basic 15`**
+    |  Country or Region     | Company | Job Title | Full Time/Part Time | Product ID | Equipment Type | Price | Product Description | Currency
+    |  :------------- | :------------- | :------------- | :------------- | :------------- | :------------- | :------------- | :------------- | :-------------
+    | **`= 'USA'`** | **`MATCHES '.*'`** | **`MATCHES '.*'`** | **`= true OR Employee.IsFullTimeEmployee = false`** | **`'C106875'`** | **`'Notebook'`** | **`956.00`** | **`'Notebook Basic 15'`** | **`'EUR'`**
 
     Then, choose **Activate**.
 
@@ -143,26 +127,23 @@ In this tutorial, we will create the decision logic required to assign equipment
 
 [ACCORDION-BEGIN [Step 2: ](Create text rules)]
 
-1. Navigate to **Rules** > **Local Rules** tab, then choose +.
+1. Use the breadcrumb navigation to navigate to **Rules** > **Local Rules** tab, and then choose +.
 
     ![Create Text Rule](create_text_rule1.png)
 
 2. In the **New Rule** window, enter the following values and then choose **Create**.
 
-    |  Field Name     | Value
+    |  Name     | Type
     |  :------------- | :-------------
-    |  Name           | **`EquipmentApprovalRules`**
-    |  Type          | **`Text Rule`**
-    |  Mode    | **`Advanced`**
+    | **`EquipmentApprovalRules`** | **`Text Rule`**
 
     ![New text rule](create_text_rule2.png)
 
 3. In the **New Rule** page, enter the following details:
 
-    |  Field Name     | Value
+    |  Label   | Description
     |  :------------- | :-------------
-    |  Label          | **`EquipmentApprovalRules`**
-    |  Description   | **`Rules to determine if the approval is needed for the equipment list or not`**
+    | **`EquipmentApprovalRules`** | **`Rules to determine if the approval is needed for equipment or not`**
 
     In the **Text Rule** section, choose the **Settings** icon.
 
@@ -178,17 +159,11 @@ In this tutorial, we will create the decision logic required to assign equipment
 
     ![Text Rule if condition](create_text_rule5.png)
 
-     In the **Then** section, provide the following value:
-
-     `'true'`
-
-     Then, choose **Add Else** to an **Else** section.
+     In the **Then** section, enter `true`. Then, choose **Add Else** to an **Else** section.
 
      ![Else condition](create_text_rule6.png)
 
-6. In this **Else** section, enter the following value:
-
-    `'false'`
+6. In this **Else** section, enter `'false'`.
 
     ![Activate text rule](create_text_rule7.png)
 

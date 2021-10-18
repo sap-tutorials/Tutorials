@@ -154,6 +154,7 @@ You will start to create a dimension view that contains the different Airlines /
   5. Your final code should look like following:
 
     ```ZRAP500_I_Carrier_####
+
     @AccessControl.authorizationCheck: #CHECK
     @EndUserText.label: 'Dimension for Carrier'
     @Metadata.ignorePropagatedAnnotations: true
@@ -625,7 +626,6 @@ This annotation is part of the template **Define a View Entity for a Cube** that
 
 
           /* Associations */
-          _BookSupplement,
           _Carrier,
           _Connection,
           _Customer,
@@ -825,7 +825,6 @@ Now that you have created the query it is possible to use a data preview to test
     - **Name**: `ZRAP500_BOOKING_####`
     - **Description**: `IAM App for Booking Query`
     - choose **EXT-External App** as **Application Type**
-    - Check if Service Binding is your created service definition in last step
 
       ![new IAM APP](1191.png)
 
@@ -1097,7 +1096,33 @@ Adding a chart starts with picking a chart type. Then you select your model and 
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step 19: ](Test yourself)]
+
+[ACCORDION-BEGIN [Step 19: ](More analytics charts and tables)]
+  You can create more different and complicated analytics charts and tables with your query. Here there is some more examples.
+
+  1. Click the chart icon in the task menu, click **Correlation** and choose **Scatter plot**.
+
+      ![correlation](3520.png)
+
+  2. Choose **Flight Price** and **Total of Booking** as X and Y axis and **Customer ID** as dimension. You can choose **Country/Region Key** as Color dimension to have different colors for each country in this chart, you can make the chart bigger or move it around your dashboard too.
+
+      ![chart](3525.png)
+
+  3. Click again chart icon in the task menu, click **Distribution** and choose **Tree Map**.
+
+      ![Distribution](3535.png)
+
+  4. Choose **Total of Booking** as Size under Measures, **TRIP** as Label under Dimensions. You can change the title of the chart with double clicking the title or choose an other color for this chart.
+
+      ![trip](3530.png)
+
+  5. Do not forget to save your story.  
+
+      ![save](3540.png)
+
+[DONE]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step 20: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]

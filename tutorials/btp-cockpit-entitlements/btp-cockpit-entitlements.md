@@ -1,9 +1,9 @@
 ---
 title: Manage Entitlements Using the Cockpit
-description: Configure entitlements and quota using the cockpit.
+description: Configure entitlements and quota using the cockpit. (Free Tier ready)
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>cloud, software-product-function>sap-btp-cockpit]
+tags: [ tutorial>beginner, topic>cloud, software-product-function>sap-btp-cockpit, tutorial>free-tier]
 primary_tag: products>sap-business-technology-platform
 ---
 
@@ -21,7 +21,7 @@ You can do this tutorial with trial accounts or enterprise accounts with a globa
 If you are in a global account using cloud management tools feature set A, you can also do this tutorial but be aware that some UI elements might be called differently. For more information on the two feature sets, see [Cloud Management Tools — Feature Set Overview](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html).
 
 
-If you are in a global account using the consumption-based commercial model, you can try out services for free. To do that, you have to assign the entitlements using the **free** plan if it is available.
+If you are in a global account using the consumption-based commercial model, you can even try out services for free. To do that, you have to assign the entitlements using the **free** plan if it is available. Not sure what the consumption-based commercial model is and how it's different from a subscription account? In our documentation, you can find a lot of information on that! Have a look at [Commercial Models](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/263d40009a5a4237a62e8f5c05ee641e.html).
 
 Every service has its own available plans:
 

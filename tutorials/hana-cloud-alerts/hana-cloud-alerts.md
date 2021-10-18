@@ -3,7 +3,7 @@ title: Alerts in SAP HANA Database and Data Lake
 description: Learn how to configure and view alerts in SAP HANA Cloud.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-alert-notification-service-for-sap-btp]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-alert-notification-service-for-sap-btp, software-product-function>sap-hana-cloud\,-data-lake]
 primary_tag: products>sap-hana-cloud
 ---
 
@@ -65,7 +65,7 @@ In this step, the SAP HANA cockpit will be used to examine three alert definitio
     | Low |
     | Information |    
 
-    As an example, long-running statements (ID 39), has its threshold values set to 10 minutes for Medium, 5 minutes for Low, and 2 minutes for Info.
+    As an example, long-running statements (ID 39), has its threshold values set to 60 minutes for Medium, 45 minutes for Low, and 30 minutes for Info.  These will be set to much lower thresholds of 180, 120 and 60 seconds in step 2.
 
     ![long running statement updated thresholds](long-running-thresholds.png)
 
@@ -92,7 +92,7 @@ The following instructions demonstrate a few examples of triggering alerts in an
 
     ![Open the database explorer](open-dbxt.png)
 
-2. Execute the following SQL to trigger a high (indicated by the parameter value of 4) severity test alert.
+2. Execute the following SQL in the SQL Console to trigger a high (indicated by the parameter value of 4) severity test alert.
 
     ```SQL
     CALL _SYS_STATISTICS.Trigger_Test_Alert(?, 4, 'High test alert');  
@@ -100,7 +100,7 @@ The following instructions demonstrate a few examples of triggering alerts in an
 
     > The alert will be viewed in SAP HANA Cockpit in step 3.
 
-3. Execute the following SQL to trigger long-running statements (ID 39) at each threshold assuming the thresholds were set to 1, 2 and 3 minutes with an interval time set to 1 minute.
+3. Execute the following SQL to trigger long-running statements (ID 39) at each threshold assuming the thresholds were set to 3, 2, and 1 minutes with an interval time set to 1 minute.
 
     ```SQL
     DO BEGIN
@@ -193,11 +193,13 @@ The following instructions will show how to view a triggered SAP HANA database a
 
     Additional details on the test alert are available at [SAP Note 3004477 - Usage of statistics server test alert (ID 999)](https://launchpad.support.sap.com/#/notes/3004477).
 
+    >Alerts can also be accessed via a REST API as shown at [Accessing SAP HANA Cloud Alerts and Metrics using a REST API](hana-cloud-alerts-rest-api).
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Trigger an alert in SAP HANA Cloud data lake)]
-The following instructions show one example of triggering an alert in a data lake.  The alert will be triggered when a user becomes locked out because an incorrect password was provided too many times.     
+The following instructions show one example of triggering the [data lake locked user event](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/11b9ef0ed4dd4e1dae36147fe313b381.html).  The alert will be triggered when a user attempts to log in after the user account has been locked because an incorrect password was provided too many times.     
 
 1. In a SAP HANA database explorer that is connected to a data lake, execute the following SQL to create a login policy and a new user.
 
@@ -223,15 +225,18 @@ The following instructions show one example of triggering an alert in a data lak
 
     ![Locked user2](data-lake-user-locked.png)
 
-    The alert can pushed to a channel such as a specified email address which will be shown in step 5.
+    The alert can pushed to a channel such as a specified email address which will be shown in step 5 the first time an attempt is made to login to an already locked account.
 
-3. The user can be unlocked using the following SQL or via the UI in the SAP HANA cockpit.
+3. Additional details about users can be seen by calling the procedure `sa_get_user_status`.  The user can be unlocked using by resetting the login policy.
 
     ```SQL
+    CALL sa_get_user_status;
     ALTER USER user2 RESET LOGIN POLICY;
     --DROP USER user2;
     --DROP LOGIN POLICY lp;
     ```
+
+    The tutorial [Monitor a Standalone Data Lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-4) may also be of interest as it demonstrates the data lake IQ monitoring views.
 
 [DONE]
 [ACCORDION-END]
@@ -251,6 +256,12 @@ In this step, ANS will be configured to act on the incoming notifications by sen
     ![find the Alert Notification Service](ans.png)
 
     > The Alert Notification Service must be in the same cloud foundry org and space as the SAP HANA Cloud instances that it will be receiving notifications from.
+
+    >---
+
+    >If the Alert Notification service does not appear, it may be that the entitlement needs to be added to the subaccount.  To do so, navigate to the subaccount, select Entitlements, Configure Entitlements, Add Service Plans, and Alert Notification.
+
+    >![Add entitlements](entitlements.png)
 
 2. Provide a name for the alert notification service instance and press the **Create** button.
 
