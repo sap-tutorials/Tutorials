@@ -45,18 +45,18 @@ In the [home page](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) 
 
 Skip this step if you already have a trial subaccount.
 
-1. Select **New Subaccount**.
+1. Choose **Create** **>** **Subaccount**.
+    !![CreateSubaccount](Step2_Create_Subaccount.png)
 
 2. Add the following details and select **Create**. If you want to get a flavor of the beta features, enable the checkbox.
 
     |  Field Name       | Value
     |  :-------------   | :-------------
     |  **Display Name**     | **`Display name of your choice`**
-    |  **Provider**         | **`Amazon Web Services (AWS)`**
-    |  **Region**           | **`Europe (Frankfurt)`** or **`US East (VA)`**
+    |  **Region**           | **`US East (VA)`**
     |  **Subdomain**        | **`my-org-name`** (provide a generic value for your organization; this value will be prefixed to the URL that SAP Web Analytics provides for the application)
 
-    ![Subaccount](Step_2.png)
+    !![Subaccount](Step2_Enter_Details.png)
 
 
 [DONE]
@@ -70,7 +70,7 @@ Skip this step if you already have a trial subaccount.
 4. From the list of entitlements, select **Web Analytics** and choose an available plan. Select **Add 1 Service Plan**.
 5. Select **Save** to save your entitlements.
 
-    ![Entitlements](Step_3.png)
+    !![Entitlements](Step_3.png)
 
 
 [DONE]
