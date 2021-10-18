@@ -22,35 +22,39 @@ primary_tag: topic>user-interface
 
 2. Change the `label` attribute of the `products` and `order` node as shown below:
 
-   ```JavaScript
+    ```JavaScript
     children: [
-                {
-                    pathSegment: "products",
-                    //HERE
-                    label: "PRODUCTS",
-                    icon: "product",
-                    viewUrl: "/sampleapp.html#/products",
-                    keepSelectedForChildren: true,
-                    children: [{
-                        pathSegment: ':id',
-                        viewUrl: '/sampleapp.html#/productDetail/:id',
-                        context: { id: ':id' }
-                    }]
-                },
-                {
-                    pathSegment: 'order',
-                    //AND HERE
-                    label: 'ORDERHISTORY',
-                    icon: 'history',
-                    viewUrl: 'http://localhost:8080/index.html'
-                }
-            ],
+            {
+                pathSegment: "products",
+                //HERE
+                label: "PRODUCTS",
+                icon: "product",
+                viewUrl: "/sampleapp.html#/products",
+                keepSelectedForChildren: true,
+                children: [{
+                    pathSegment: ':id',
+                    viewUrl: '/sampleapp.html#/productDetail/:id',
+                    context: { id: ':id' }
+                }]
+            },
+            {
+                pathSegment: 'order',
+                //AND HERE
+                label: 'ORDERHISTORY',
+                icon: 'history',
+                viewUrl: 'http://localhost:8080/index.html'
+            }
+        ],
     ```
 
-3. Add following at around line 114:
+3. Add following at around line 111:
 
     ```JavaScript
-    "de-DE": { PRODUCTS: "Produkte", ORDERHISTORY: "Bestellungen" },
+    var dict = {
+      "en-US": { PRODUCTS: "Products", ORDERHISTORY: "Order History" },
+      //THIS LINE HERE HAS TO BE ADDED
+      "de-DE": { PRODUCTS: "Produkte", ORDERHISTORY: "Bestellungen" },
+    };
     ```
 
 [DONE]
@@ -85,7 +89,7 @@ export const dict = {
                 PRICE: "Price",
                 WELCOME_LUIGI: "Welcome to Luigi - a micro-frontend framework",
                 DESCRIPTION: "Description",
-                PRODUCTADDED: "Produkt has been added to cart",
+                PRODUCTADDED: "Product has been added to cart",
                 AVAILABLE: "Available",
                 AVAILABLEQUANT: "Available quantity: ",
                 ADDTOCART: "Add to cart",

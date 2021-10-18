@@ -21,7 +21,7 @@ In this step, you will import Luigi Client to the UI5 micro-frontend so you can 
 1. Open `ui5-mf/uimodule/webapp/index.html` and add this line in the head section of the file:
 
     ```HTML
-    <!--AROUND LINE 23-->
+    <!--AROUND LINE 22-->
     <script src="https://unpkg.com/@luigi-project/client@latest/luigi-client.js"></script>
     ```
 
@@ -101,7 +101,7 @@ In this step, you will add a new navigation node in Luigi, then create the micro
           <ObjectAttribute text="Quantity: {orderQuantity}" />
         </ObjectListItem>
       </List>
-      </mvc:View>
+    </mvc:View>
     ```
 
 3. Open `ui5-mf/uimodule/webapp/controller/MainView.controller.js` and replace it with:

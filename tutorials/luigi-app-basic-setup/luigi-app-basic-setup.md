@@ -46,7 +46,7 @@ In this step, you will create a React skeleton project which will be used to cre
 4. Install dependencies:
 
     ```Shell
-    npm i -P @luigi-project/core @luigi-project/client fundamental-styles@0.11.0 @sap-theming/theming-base-content react-router-dom @ui5/webcomponents
+    npm i -P @luigi-project/core @luigi-project/client fundamental-styles@0.11.0 @sap-theming/theming-base-content react-router-dom @ui5/webcomponents @ui5/webcomponents-react
     npm i copy-webpack-plugin@5 webpack webpack-cli @babel/core @babel/preset-env babel-loader --save-dev
     ```
     ​
@@ -74,8 +74,7 @@ In this step, you will create a React skeleton project which will be used to cre
     #This can throw a warning, it can be ignored
     sed "s/!isWsl/true/g" config/webpack.config.js > config/webpack.config.tmp.js && mv config/webpack.config.tmp.js config/webpack.config.js
     ​
-    echo "const path = require('path');
-    ​
+    echo "const path = require('path');​
     module.exports = {
         entry: './src/luigi-config/luigi-config.es6.js',
         output: {
@@ -127,7 +126,7 @@ In this step, you will create a React skeleton project which will be used to cre
 
 In this step, you will create a skeleton UI5 project for your UI5 micro-frontend.
 
-1. Navigate to the root folder of your project.
+1. If you didn't already, navigate to the root folder of your project in the terminal.
 
 2. Create a new folder:
 

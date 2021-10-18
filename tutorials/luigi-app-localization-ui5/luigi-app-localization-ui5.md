@@ -35,7 +35,7 @@ In this step, you will add a function to get the current language from Luigi Cli
                     const currentLanguage = LuigiClient.uxManager().getCurrentLocale();
                     sap.ui.getCore().getConfiguration().setLanguage(currentLanguage);
                 }
-                // LISTENER FOR LANGUAGE CHANGES
+                //THIS HAS BEEN ADDED - LISTENER FOR LANGUAGE CHANGES
                 LuigiClient.addInitListener(updateCurrentLanguage);
             },
 
