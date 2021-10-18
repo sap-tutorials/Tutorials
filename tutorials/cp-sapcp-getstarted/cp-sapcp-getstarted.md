@@ -44,7 +44,7 @@ Here are some of the tasks you can use the btp CLI for:
 
 [ACCORDION-BEGIN [Step 2: ](For which global accounts can I use the btp CLI?)]
 
-SAP is currently migrating all global accounts from the existing cloud management tools feature set A to the renovated cloud management tools feature set B. One of the innovations of feature set B is the command line interface (btp CLI) for account management. With a trial account, you can try out the btp CLI and other features of feature set B.  
+SAP is currently migrating all global accounts from the existing cloud management tools feature set A to the renovated cloud management tools feature set B. One of the innovations of feature set B is the command line interface (btp CLI) for account management. With a trial account, you can try out the btp CLI and other features of feature set B.
 
 Here you can read more about the [Cloud Management Tools Feature Set B Innovations](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html).
 
@@ -97,7 +97,7 @@ Now let's log in. Login is on global account level. Make sure you know the subdo
 
 ![Subdomain of the global account in the cockpit](subdomain-ga.png)
 
-You have two options for login. In both cases, the client proposes the CLI server URL for your trial, which you can confirm with ENTER. 
+You have two options for login. In both cases, the client proposes the CLI server URL for your trial, which you can confirm with ENTER.
 
 For login on the command-line, enter:
 
@@ -113,6 +113,8 @@ btp login --sso
 Once you're logged into your global account, it should look like this:
 
 ![CLI Login](sapcplogin.png)
+
+> If you get an error about your btp CLI client being "too new" and not supported by the server, please return to Step 4 of this tutorial and download an earlier version of the CLI, to either match the server version stated, or one version below. For example, if the server version is stated as 2.9.0 and you have version 2.10.0 of the btp CLI, you can download version 2.8.0 of the btp CLI and then continue with this tutorial. [This issue](https://github.com/SAP-samples/devtoberfest-2021/issues/53) may contain further information that you might find useful.
 
 [DONE]
 [ACCORDION-END]
@@ -181,7 +183,7 @@ The targeting mechanism works according to the hierarchy of entities in the glob
 
 - If a subaccount or directory is targeted and you run a command that only works on a higher level, the command will be executed in the parent directory or global account of the current target. For example, `create accounts/subaccount` creates a subaccount in the global account, even if a subaccount or directory is targeted.
 
-- If a subaccount or directory is targeted, you can execute commands in its parent directory or global account by adding parameters `-dir` or `-ga` without a value. For example, if a subaccount is targeted, `btp list security/user` lists the users of that subaccount. To list the users of the parent directory or global account, use: `btp list security/user -dir` or  `btp list security/user -ga`.  
+- If a subaccount or directory is targeted, you can execute commands in its parent directory or global account by adding parameters `-dir` or `-ga` without a value. For example, if a subaccount is targeted, `btp list security/user` lists the users of that subaccount. To list the users of the parent directory or global account, use: `btp list security/user -dir` or  `btp list security/user -ga`.
 
 >To find out your current target, use `btp --info`.
 
@@ -195,13 +197,13 @@ The targeting mechanism works according to the hierarchy of entities in the glob
 We recommend to enable command autocompletion so you won't have to remember or keep looking up individual commands. Command autocompletion saves you keystrokes when entering command actions, group-object combinations, and their parameters. Autocompletion is supported for  Bash, PowerShell, and Zsh.
 
 ```Bash
-btp enable autocompletion <SHELL>
+btp enable autocomplete <shell>
 ```
 Enter a partial command action, group-object combination, or parameter, and then press the Tab key. The command line either automatically completes your command or, when there's more than one option available, it displays a list of suggested command actions/options/parameters. When a suggestion list is displayed, use the Tab or arrow keys to move through the list and press Enter to make a selection.
 
 When you enable command autocompletion, a script containing all the autocomplete commands is downloaded and installed in your file system. Additionally, the RC file of your shell is modified so the script is called at startup.
 
-The autocompletion option remains enabled in future sessions in your current client, until you disable it. To disable command autocompletion and uninstall the autocomplete script, run `disable autocomplete <SHELL>`.
+The autocompletion option remains enabled in future sessions in your current client, until you disable it. To disable command autocompletion and uninstall the autocomplete script, run `disable autocomplete <shell>`.
 
 [DONE]
 [ACCORDION-END]

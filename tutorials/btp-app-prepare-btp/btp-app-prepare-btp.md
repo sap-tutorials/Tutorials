@@ -34,7 +34,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 You need an SAP BTP account to deploy the services and applications.
 In general, you have a choice of the following options:
 
-**Trial:** *(recommended)* Use a trial account if you just want to try out things and don't want to use any of the parts of this tutorial productively. The usage is free of cost and all the services that you need for this tutorial gets automatically assigned to your trial account.
+**Trial:** *(recommended)* Use a trial account if you just want to try out things and don't want to use any of the parts of this tutorial productively. The usage is free of cost and all the services that you need for this tutorial get automatically assigned to your trial account.
 
 **Live:** There are multiple live landscapes available in different data centers around the globe. Live landscapes are intended for productive usage and development projects.
 
@@ -47,13 +47,10 @@ You can [register for a trial account](https://www.sap.com/cmp/td/sap-cloud-plat
 
 A global account, a subaccount, a Cloud Foundry org, and space with some entitlements that are sufficient to do this tutorial are set up for you.
 
-> If you use an existing `trial` account then service entitlements may be missing. If you encounter such situation, we suggest deleting your `trial` account and create a new one.
-
-> New service offerings are not added to existing `trial` accounts automatically.
-
 > In case you face a problem when creating a service instance or an application is missing for subscription later in the tutorial, please do the following:
 
-> 1. Go to your **trial** subaccount.
+> 1. Choose **Go To Your Trial Account**.
+> 2. Choose **Account Explorer** and choose your **trial** subaccount in the **Subaccounts** tab.
 > 2. Choose **Entitlements**.
 > 3. Choose **Configure Entitlements**.
 > 4. Choose **Add Service Plans**.
@@ -90,7 +87,7 @@ The following services with their service plans and entitlements are required fo
 
 
 
-At least the services for the tutorials [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup) and [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment) need to be entitled.
+At least the services for the tutorials [Set Up the SAP HANA Cloud service](btp-app-hana-cloud-setup) and [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment) need to be entitled.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -162,9 +159,11 @@ As the result of the previous steps there will be a Cloud Foundry space with req
 
 5. Choose **Create** **&rarr;** **Subaccount**.
 
+    !![Create subaccount](create_subaccount.png)
+
 6. To fill the **New Subaccount** dialog, enter a **Display Name**.
 
-    > Use a short name for your project and add the prefix for the landscape, for example: `<project name>-cf-eu10`. Don't select the checkbox **Neo**!
+    > Use a short name for your project and add the prefix for the landscape, for example: `<project name>-cf-us10`. Don't select the checkbox **Neo**!
 
 7. Enter a subdomain.
 
@@ -249,7 +248,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-1. Select your **Global Account** and then the **Subaccount** to which you want to deploy your service and application.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 2. On the subaccount page, gather all the data to log in to Cloud Foundry (CF).
 
@@ -290,7 +295,13 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
 
-1. Select your **Global Account** and then the **Subaccount** to which you want to deploy your service and application.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount to which you want to deploy your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 2. On the subaccount page, gather all the data to log in to Cloud Foundry (CF).
 

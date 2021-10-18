@@ -3,7 +3,7 @@ title: Query with the SQL Console in SAP HANA Database Explorer
 description: Explore features of the SQL console and see how it facilitates querying an SAP HANA database.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition]
 primary_tag: products>sap-hana-cloud
 ---
 
@@ -32,7 +32,7 @@ primary_tag: products>sap-hana-cloud
 
     ```SQL
     SELECT * FROM HOTEL.HOTEL;
-    INSERT INTO HOTEL.HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '79872'); --will cause a unique constraint error when executed
+    INSERT INTO HOTEL.HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '79872', NEW ST_POINT('POINT(-90.076919 29.957531)', 4326)); --will cause a unique constraint error when executed
     ```
 
 4. Expand the **Run** dropdown menu.  Notice that there are multiple options along with their shortcut keys.
@@ -311,6 +311,10 @@ The statement library contains a mix of pre-populated system statements and user
     >![Import and Export to File](importAndExport.png)
     >
     >Files can then be shared using a version control system such as git.
+
+6. User-defined statements can be edited. From the Statement library, select the desired statement to open it within the SQL console and make the desired changed. Select **Add to Statement Library** to overwrite the previous statement.
+![Update Statement](UpdateStatement.png)
+
 
 Congratulations! You have now explored selected features of the SQL console.
 

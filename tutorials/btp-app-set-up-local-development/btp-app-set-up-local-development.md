@@ -204,7 +204,7 @@ Download the package for macOS and perform the following steps as described [her
 
     ![shell command](shell_command.png)
 
-3. Restart VS Code for the new `$PATH` value to take effect.   
+3. Restart VS Code for the new `$PATH` value to take effect.
 
 
 [OPTION END]
@@ -286,37 +286,20 @@ After a restart of VS Code, you can check for the tools by invoking **View** **&
 [VALIDATE_1]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 11: ](Install SAPUI5 freestyle app templates using Yeoman)]
-SAPUI5 comes with templates that kick start your development for SAPUI5 freestyle app development. You need these if you want to carry out the tutorial [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5).
-SAPUI5 templates are based on [Yeoman](https://yeoman.io/), a tool for scaffolding web apps. You need to install it first.
+[ACCORDION-BEGIN [Step 11: ](Install Yeoman)]
+[Yeoman](https://yeoman.io/) is a tool for scaffolding web apps. You'll need it if you want to carry out the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service).
 
-1. Check in a terminal whether you already have Yeoman installed.
+1. Check in a terminal whether you already have Yeoman installed:
 
     ```Shell/Bash
     yo --version
     ```
 
-2. If you don't get a version number, install Yeoman.
+2. If you don't get a version number, install Yeoman:
 
     ```Shell/Bash
     npm install -g yo
     ```
-
-3. Now, you can go ahead and install the [SAPUI5 templates](https://www.npmjs.com/package/@sapui5/generator-sapui5-templates).
-
-    ```Shell/Bash
-    npm install -g @sapui5/generator-sapui5-templates
-    ```
-
-4. Test whether everything works.
-
-    ```Shell/Bash
-    yo --generators
-    ```
-
-If the **@sapui5/sapui5-templates** generator is listed in the terminal, you're ready to go.
-
-![Generator](yeoman_generator.png)
 
 [DONE]
 [ACCORDION-END]

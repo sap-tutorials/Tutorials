@@ -33,7 +33,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to test the Logging Service
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`launchpad-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpad-service) branch.
+To start with this tutorial use the result in the [`launchpad-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpad-service) branch.
 
 ---
 
@@ -56,7 +56,13 @@ To continue with this tutorial you can find the result of the previous tutorial 
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Access logs from SAP BTP cockpit)]
-1. Go to your subaccount in **SAP BTP cockpit**.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
+
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount where you have deployed your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
 
@@ -164,7 +170,7 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
         service: application-logs
         service-plan: standard
     ```
-
+    
 2. Bind the logging service instance to all `modules` of the `mta.yaml`.
 
     <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->

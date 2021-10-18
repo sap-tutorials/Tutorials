@@ -3,7 +3,7 @@ title: SAP HANA Database Explorer Overview
 description: Learn about the SAP HANA database explorer and how to start using it with the SAP HANA Cloud trial or SAP HANA, express edition.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition]
 primary_tag: products>sap-hana-cloud
 ---
 
@@ -15,12 +15,14 @@ primary_tag: products>sap-hana-cloud
   - About the features provided by the SAP HANA database explorer
   - Details about the version differences between the SAP HANA database explorer in SAP HANA Cloud and in an on-premise installation (SAP HANA, express edition)
   - How to get started with the SAP HANA Cloud trial or SAP HANA, express edition
-
 ---
+
+> Access help from the SAP community or share your feedback on this tutorial by navigating to the "Provide Feedback" menu located on the left of this page under the table of contents. This menu is available for each tutorial.
+
 
 [ACCORDION-BEGIN [Step 1: ](Database explorer overview)]
 
-The SAP HANA database explorer is a web-based tool for browsing and working with SAP HANA database objects such as tables, views, functions, stored procedures, importing and exporting data, debugging SQLScript, viewing trace files, and executing SQL statements. It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP HANA 1.0 SPS 12. As it is web-based, individual users do not need to worry about installing the software or applying patches.  As of March 25, 2021 it also offers support for Data Lake IQ connections.
+The SAP HANA database explorer is a web-based tool for browsing and working with SAP HANA database objects such as tables, views, functions, stored procedures, importing and exporting data, debugging SQLScript, executing SQL statements, working with multi-model data such as graph, spatial and JSON collections, creating remote sources, viewing trace files, and troubleshooting.  It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP HANA 1.0 SPS 12. As it is web-based, individual users do not need to worry about installing the software or applying patches.  As of March 25, 2021 it also offers support for Data Lake IQ connections.
 
 ![database explorer](dbx.png)
 
@@ -62,12 +64,12 @@ The following are some related documentation links for SAP HANA and the SAP HANA
 |  [SAP HANA Platform 2.0, SAP HANA Database Explorer](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US) | Current version is 2.13, which was released in June 2021 |
 |  [SAP HANA Platform 2.0, SAP HANA Database Explorer What's New](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/7534f22d5bbf44c3a0de259478ad043b.html) | What's new since the previous on-premise release.  New features are released approximately twice per year |
 |  [SAP Web IDE for SAP HANA](https://help.sap.com/viewer/product/SAPWEBIDE/SAPWEBIDE4HANA/en-US) | SAP Help documentation set |
-|  [SAP HANA, express edition](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US)   | Released in September 2016.  Current version is 2.0 SPS 05 Revision 54 |
+|  [SAP HANA, express edition](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US)   | Released in September 2016.  Current version is 2.0 SPS 05 Revision 54 and was released in June 2021 |
 |  [SAP HANA, express edition, release notes for SPS 05, revision 54](https://www.sap.com/documents/2021/06/3abec5ed-e97d-0010-bca6-c68f7e60039b.html)  | Note that the version of the Database Explorer (HRTT) for this release is  2.12 |
 |  [SAP HANA, express edition, release history](https://search.sap.com/search.html?t=%22SAP%20HANA%2C%20express%20edition%202.0%20SPS%200%25%20Revision%22&n=1&s=boost&src=defaultSourceGroup)   | Query showing previous releases |
-|  [SAP HANA Cloud](https://help.sap.com/viewer/product/HANA_CLOUD)   | Released in March 2020 |
-|  [SAP HANA Cloud, SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US)   |  |
-|  [SAP HANA Cloud, SAP HANA Database Explorer What's New](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/7a0c586f5a4e442d976459e0f0a70c7a.html)   | What's new.  New features are released as often as every two weeks.  This link is also available from the Help menu in the database explorer  |
+|  [SAP HANA Cloud](https://help.sap.com/viewer/product/HANA_CLOUD)   | Released in March 2020 with quarterly new releases |
+|  [SAP HANA Cloud, SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US)   | New features are released as often as every two weeks. |
+|  [SAP HANA Cloud, SAP HANA Database Explorer What's New](https://help.sap.com/doc/a91f884257684c59923ef33c3fa6cf18/hanacloud/en-US/38cc9f70125646e0bb62b83b83e67564.html?sel4=SAP%20HANA%20Database%20Explorer)   | What's New.  This link is also available from the Help menu in the database explorer. A filter can be applied to limit results to SAP HANA database explorer updates only. |
 
 [DONE]
 [ACCORDION-END]
@@ -101,19 +103,19 @@ The SAP Software download links (requires an S-User ID to access) below are for 
 
 [ACCORDION-BEGIN [Step 3: ](SAP HANA Cloud trial)]
 
->To complete the tutorials in this group, an SAP HANA instance is needed. Step 3 and 4 in this tutorial provide two different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.
+>To complete the tutorials in this group, an SAP HANA instance is needed. Step 3 and 4 in this tutorial provide two different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance. When creating an SAP HANA instance, a Data Lake is not needed.  Creating a Data Lake will be covered in a later tutorial.
 
 Continue on to the next tutorial in this group once you have created an SAP HANA Cloud trial instance as shown below.
 
 !![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
->Note that the SAP HANA Cloud trial instances are shut down overnight and will need to be restarted before working with them the next day.
+>Note that the SAP HANA Cloud trial instances are shut down overnight and will need to be restarted before working with them the next day. Details on how to start or manage your trial instance can be viewed at [Provision an Instance of SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-2) or via the Cloud Foundry CLI in the next step.
 
 The instructions on how to setup a free SAP HANA Cloud trial within SAP BTP are well covered in a number of other sources listed below.  
 
   * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics) (Only the first 3 steps of this tutorial are needed for basic setup of SAP HANA Cloud trial.)
 
-  * [Getting Started with your trial of SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/)
+  * [Getting Started with your trial of SAP HANA Cloud](group.hana-cloud-get-started-1-trial.html)
 
   For more information on the SAP BTP see the following:
 
@@ -123,17 +125,62 @@ The instructions on how to setup a free SAP HANA Cloud trial within SAP BTP are 
 
   * <https://help.sap.com/viewer/product/BTP/Cloud/en-US>
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Start an SAP HANA Cloud instance via the Cloud Foundry CLI (Optional))]
+
+Another way to manage SAP HANA Cloud instances is via the Cloud Foundry Command Line Interface. The Cloud Foundry CLI is available on Windows, Linux, and macOS operating systems. The latest version of the CLI can be downloaded from the [Cloud Foundry Foundation](https://github.com/cloudfoundry/cli/releases).  The following steps will demonstrate how an SAP HANA Cloud instance can be stated using the CLI.
+
+1. Install the Cloud Foundry CLI by following the guide [Installing the CF CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
+
+2. The next step is to log into your SAP HANA Cloud account via the CLI. You will need an API endpoint from your SAP HANA Cloud account to do this. To find the API Endpoint, navigate to the Overview page of your SAP BTP Cockpit. Under the Cloud Foundry subheading, you will find an API Endpoint. Copy this information for use in the next step.
+
+    !![Find the API Endpoint from the BTP Cockpit](apiEndpoint.PNG)
+
+3. In your terminal, type the following command. Replace the API endpoint with the one you copied from the previous step:
+
+    ```Shell
+    cf api https://api.cf.XXXX.hana.ondemand.com
+    ```
+    You will be asked to login with the email and password on your SAP HANA Cloud account. Finally you will be prompted to select your targeted space within your account. Additional details on logging in can be found at [Getting Started with the CF CLI](https://docs.cloudfoundry.org/cf-cli/getting-started.html#user-cups).
+
+    !![Cloud CLI API](cf-api.png)
+
+4. Next, view the list of services.
+
+    ```Shell
+    cf services
+    ```
+
+    !![cloud foundry services](cf-services.png)
+
+5. The `hana` service can be started with a file named `start.json` with the below contents and the following command.
+
+    ```JSON
+    {
+    	"data":
+    	{
+    		"serviceStopped":false
+    	}
+    }
+    ```
+
+    ```Shell
+    cf update-service HC_HDB_Trial -c start.json
+    ```
+    !![starting a SAP HANA Cloud database](cf-start.png)
+
+    For more information on the operations available, refer to the documentation [Start and Stop an Instance Using the CLI](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/e6f3dcb8cae74577889cd51f4aa0eb08.html).
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](SAP HANA, express edition)]
+[ACCORDION-BEGIN [Step 5: ](SAP HANA, express edition)]
 
->This step only needs to be completed if you currently do not have access to an SAP HANA Instance and did not setup an SAP HANA instance through the SAP HANA Cloud Trial as explained in the previous step.
+>This step only needs to be completed if you currently do not have access to an SAP HANA instance and did not setup an SAP HANA instance through the SAP HANA Cloud Trial as explained in the previous step.
 
-An alternative option to using the SAP HANA Cloud trial is to use the SAP HANA, express edition.     
-
-SAP provides a free, streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/cmp/td/sap-hana-express-edition.html).
+An alternative option to using the SAP HANA Cloud trial is to use the SAP HANA, express edition.  SAP provides a free, streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/cmp/td/sap-hana-express-edition.html).
 
 SAP HANA runs on certain versions of Linux.  SAP HANA, express edition provides a binary install as well as virtual machine images that can be run on Microsoft Windows, macOS, and Linux machines.  This is described in the [SAP HANA, express edition](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US?task=implement_task) documentation under the implement section.  A database-only option and a database + XS Advanced Applications option are available. The database + XS Advanced Applications install includes the SAP HANA cockpit, the SAP HANA database explorer, and the SAP HANA Web IDE for SAP HANA.
 
@@ -148,9 +195,10 @@ It contains links to the SAP Web IDE for SAP HANA, SAP HANA cockpit, and the SAP
 [VALIDATE_1]
 [ACCORDION-END]
 
+
 ---
 
-Congratulations!  You have configured an instance of SAP HANA, either through the SAP HANA Cloud trial or SAP HANA, express edition.  
+Congratulations!  You have configured an instance of SAP HANA, either through the SAP HANA Cloud trial or SAP HANA, express edition. You've also learned how to start and manage an instance of SAP HANA Cloud via the Cloud Foundry Command Line Interface.
 
 
 

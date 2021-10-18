@@ -262,13 +262,13 @@ First, define a failure message.
 
     !![MDK](img_6.7.png)
 
-8. Provide the below information:
+8. In the **Operation and Service Selection** step, provide the below information:
 
     | Property | Value |
     |----|----|
     | `Action Name`| `Customers_UpdateEntity` |
     | `Type` | Select `UpdateEntity` from the dropdown |
-    | `Service`| Select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `EntitySet`| Select `Customers` from the dropdown |
     | `ReadLink`| click link icon and Double-click `readLink` |
 

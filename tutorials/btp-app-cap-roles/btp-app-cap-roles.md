@@ -27,7 +27,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to access the application with a user and password
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`cap/launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/launchpage) branch.
+To start with this tutorial use the result in the [`cap/launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/launchpage) branch.
 
 ---
 
@@ -148,13 +148,15 @@ When accessing the `Risks` service in your browser, you get a basic auth popup n
 
 !![Access Risk Application](risks_management_application.png)
 
-> Currently there's no logout functionality. You can clear your browser's cache or simply close all browser windows to get rid of the basic auth login data in your browser. For Chrome restart your browser (complete shutdown and restart) by entering `chrome: // restart` in the address line.
+> Currently there's no logout functionality. You can clear your browser's cache or simply close all browser windows to get rid of the login data in your browser. For Google Chrome, restart your browser (complete shutdown and restart) by entering `chrome://restart` in the address line.
 
 
 
 [DONE]
 The result of this tutorial can be found in the [`cap/roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/roles) branch.
 
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-cap-roles" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
 ---

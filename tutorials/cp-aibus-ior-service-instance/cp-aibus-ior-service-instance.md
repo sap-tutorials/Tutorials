@@ -5,6 +5,8 @@ auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>invoice-object-recommendation]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 ## Prerequisites
@@ -51,25 +53,25 @@ To try out Invoice Object Recommendation, you need to make sure that your subacc
 
     If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.
 
-    ![Entitlements](png-files/check-entitlements.png)
+    !![Entitlements](png-files/check-entitlements.png)
 
 >**Only if you do not find the service in your list, proceed as follows:**
 
 >1. Click **Configure Entitlements**.
 
->     ![Configure Entitlements](png-files/configure-entitlements.png)
+>     !![Configure Entitlements](png-files/configure-entitlements.png)
 
 >2. Click **Add Service Plans**.
 
->     ![Add Service Plan](png-files/add-service-plans.png)
+>     !![Add Service Plan](png-files/add-service-plans.png)
 
 >3. Select **Invoice Object Recommendation Trial**, and choose the **standard** service plan. Click **Add 1 Service Plan**.
 
->     ![Add Service Plan](png-files/add-entitlements.png)
+>     !![Add Service Plan](png-files/add-entitlements.png)
 
 >4. **Save** your **Entitlements** changes.
 
->     ![Add Service Plan](png-files/save-entitlements.png)    
+>     !![Add Service Plan](png-files/save-entitlements.png)    
 
 >You are now entitled to use Invoice Object Recommendation and create instances of the service.
 
@@ -79,43 +81,33 @@ To try out Invoice Object Recommendation, you need to make sure that your subacc
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Access space)]
-
-You will find all applications and services in spaces. By default, trial accounts only have the **dev** space available.
-
-Click **Spaces** on the navigation side bar and select the **dev** space to open it.
-
-![Spaces](png-files/access-space.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Access service via Service Marketplace)]
+[ACCORDION-BEGIN [Step 3: ](Access service via Service Marketplace)]
 
 The **Service Marketplace** is where you find all the services available on SAP BTP.
 
 1. To access it, click **Service Marketplace** on the navigation side bar.
 
-    !![Service Marketplace](png-files/access-service-marketplace.png)
+    ![Service Marketplace](png-files/access-service-marketplace.png)
 
 2. Next, search for **Invoice Object Recommendation** and click the tile to access the service.
 
-    ![Invoice Object Recommendation in Service Marketplace](png-files/access-ior.png)
+    !![Invoice Object Recommendation in Service Marketplace](png-files/access-ior.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create service instance)]
+
+[ACCORDION-BEGIN [Step 4: ](Create service instance)]
 
 You will now create an instance of your service.
 
 Click **Create Instance** to start the creation dialog.
 
-![Service Instance](png-files/create-instance.png)
+!![Service Instance](png-files/create-instance.png)
 
-In the dialog, leave the default value for the service and the service plan. Enter a name for your new instance as `ior-inst` and click **Create Instance** to skip the other steps and create the instance.
+In the dialog, leave the default value for the service and the service plan. Enter a name for your new instance, for example, `ior-inst` and click **Create Instance**.
 
-![Create Instance](png-files/create-instance-dialog.png)
+!![Create Instance](png-files/create-instance-dialog.png)
 
 In the following dialog, click on **View Instance** to be navigated to the list of your service instances.
 
@@ -126,21 +118,22 @@ You have successfully created a service instance for Invoice Object Recommendati
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create service key)]
+
+[ACCORDION-BEGIN [Step 5: ](Create service key)]
 
 You are now able to create a service key for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
   1. Click the navigation arrow to open the details of your service instance. Then, click the dots to open the menu and select **Create Service Key**.
 
-      ![Service Key](png-files/create-service-keys.png)
+      !![Service Key](png-files/create-service-keys.png)
 
   2. In the dialog, enter `ior-key` as the name of your service key. Click **Create** to create the service key.
 
       ![Create Service Key](png-files/create-service-key-name.png)
 
-You have successfully created a service key for your service instance. You can now either view the service key in the browser or download it.
+You have successfully created a service key for your service instance. You can now view the service key in the browser or download it.
 
-![View Service Key](png-files/view-service-key.png)
+!![View Service Key](png-files/view-service-key.png)
 
 You will need the service key values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Invoice Object Recommendation Using Any Web Browser](cp-aibus-ior-web-oauth-token).
 

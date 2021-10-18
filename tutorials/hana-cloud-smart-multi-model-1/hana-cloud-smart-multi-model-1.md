@@ -58,11 +58,11 @@ These are the requirements to follow along:
 [ACCORDION-BEGIN [Step 2: ](Prepare your database in SAP HANA Cloud)]
 1. Sign-up for the SAP HANA Cloud trial. If you already have a trial account with SAP Cloud Platform, check your trial entitlements to add SAP HANA Cloud.
 
-2. Provision an SAP HANA Cloud, SAP HANA database in trial.
+2. [Provision an SAP HANA Cloud, SAP HANA database in trial](hana-cloud-mission-trial-2).
 
 3. Make sure your SAP HANA Cloud, SAP HANA database is running in your trial account.
 
-4. Create a user and assign this user the privileges **CREATE SCHEMA** and **IMPORT**. If you are unsure how to create users and assign privileges, you can read more here.
+4. Create a user and assign this user the privileges **CREATE SCHEMA** and **IMPORT**. If you are unsure how to create users and assign privileges, [you can read more here](https://github.com/SAP-samples/teched2020-DAT260/tree/main/exercises/ex0#setup-sap-hana-cloud-trial-instance-).
 
 5. From BTP cockpit or SAP HANA Cloud Central, open your trial instance in the SAP HANA Database Explorer and log in with this user's credentials.
 

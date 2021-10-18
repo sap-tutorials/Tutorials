@@ -14,9 +14,9 @@ primary_tag: products>sap-hana-cloud
 
 ## Details
 ### You will learn
-- How to upload a spatial dataset to SAP HANA database in SAP HANA Cloud.
-- How to add a base map to QGIS project.
-- How to add vector data to base map.
+- How to upload a spatial dataset to SAP HANA database in SAP HANA Cloud
+- How to add a base map to QGIS project
+- How to add vector data to base map
 
 
 This tutorial group will comprise of the following tasks:
@@ -99,8 +99,6 @@ Follow these steps to add a base map to QGIS project:
 7. Locate **Google Satellite** in the browser under XYZ Tiles.
 
 8. Double-click on **Google Maps Satellite** to add the base layer with satellite imagery.
-
-If you would like to add a different service (e.g. OpenStreetMap), you can check [this blog](https://www.spatialbias.com/2018/02/qgis-3.0-xyz-tile-layers/) for more URLs.
 
 
 [DONE]

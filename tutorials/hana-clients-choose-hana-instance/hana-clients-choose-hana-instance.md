@@ -3,8 +3,8 @@ title: Choose an SAP HANA Database
 description: Learn about SAP HANA Cloud and SAP HANA, express edition and choose one that will be used with the SAP HANA client interfaces in subsequent tutorials.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud]
-primary_tag: products>sap-hana
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition]
+primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -20,7 +20,7 @@ This tutorial will provide guidance on setting up an instance of [SAP HANA](http
 
 For more information on SAP HANA, consult [What Is SAP HANA](https://help.sap.com/viewer/eb3777d5495d46c5b2fa773206bbfb46/latest/en-US/d3b1adcdbb571014a93eff11ad9a1d89.html).
 
->Note, for connections from additional sources such as SAP Analytics Cloud, Jupyter Notebooks, SAP Business Warehouse, SAP Data Intelligence Cloud, and SAP ERP Central Component see [Connection Guides for SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/connecting-guides-for-sap-hana-cloud).
+>Note, for connections from additional sources such as SAP Analytics Cloud, `Jupyter` Notebooks, SAP Business Warehouse, SAP Data Intelligence Cloud, and SAP ERP Central Component see [Connection Guides for SAP HANA Cloud](group.hana-cloud-database-connection-guides).
 
 >---
 
@@ -62,7 +62,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
   * The memory, compute and storage settings can be changed as your needs change.  
 
-  * The ability is provided to expand data storage from in-memory, to native storage extensions, to a data lake, while providing a common access layer that enables you to have further control over performance and cost.  See also [Lower Your Data Management Costs With SAP HANA Cloud](https://saphanajourney.com/hana-cloud/resources/lower-your-data-management-costs-with-sap-hana-cloud/).
+  * The ability is provided to expand data storage from in-memory, to native storage extensions, to a data lake, while providing a common access layer that enables you to have further control over performance and cost.  See also [Lower Your Data Management Costs With SAP HANA Cloud](https://blogs.sap.com/2019/10/29/lower-your-data-management-costs-with-sap-hana-cloud/).
 
 
   Here are a few differences between SAP HANA Cloud and an on-premise version:  
@@ -90,7 +90,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
     * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
 
-    * [Getting Started with your trial of SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/)
+    * [Jump Start Your SAP HANA Cloud, SAP HANA Database Trial](mission.hana-cloud-database-get-started)
 
 
     For more information on SAP BTP see the following:
@@ -115,7 +115,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
     ![authentication for dbx](dbx-authenticate.png)
 
-    >Note, the credentials can be persisted so they do not need to be entered again by entering them into the SAP HANA Cockpit app.  
+    >Note, the credentials can be persisted so they do not need to be entered again by entering them into the SAP HANA cockpit app.  
 
     The SAP HANA database explorer provides the ability to browse catalog objects and execute SQL statements from the SQL console.  For more information, see the tutorial group [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started) and SAP Help Portal topic [SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US).  
 

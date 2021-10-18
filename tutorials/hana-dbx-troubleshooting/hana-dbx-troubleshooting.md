@@ -3,7 +3,7 @@ title: Troubleshoot SQL with SAP HANA Database Explorer
 description: Explore the available tools to help diagnose and debug SQL or SQLScript.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition ]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition ]
 primary_tag: products>sap-hana-cloud
 ---
 
@@ -38,7 +38,7 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
     ![Set Breakpoints](DebuggerBreakpoints.png)
 
-  4. Right-click the procedure named `RESERVATION_GENERATOR` in the database browser and select **Generate Call Statement** or **Generate Call Statement with UI**.
+  4. Right-click the procedure named `RESERVATION_GENERATOR` in the database browser and select **Generate Call Statement**.
 
     ![Generate Call Statement](GenerateCallStatement.png)
 
