@@ -31,41 +31,50 @@ In this step, you will create a React skeleton project which will be used to cre
     cd luigi-react-ui5
     ```
 
-2. Run this command to install the React package for creating an app:
+2. Copy and paste this command into the Terminal/Command Prompt to create a React app. This may take a few minutes:
 
     ```Shell
-    npm i create-react-app
-    ```
+    npx create-react-app react-core-mf && cd react-core-mf
+​    ```
 
-3. Copy and paste this code into the Terminal/Command Prompt. This is a script which has been adapted from one of [Luigi's templates](https://docs.luigi-project.io/docs/application-setup?section=application-setup-for-react) to create a React app with sample views:
+3.  Eject the project to customize webpack configs. If you get an error, you need to commit any changes before running the command. More information can be found [here](https://stackoverflow.com/questions/45671057/how-to-run-eject-in-my-react-app).:
 
     ```Shell
-    npx create-react-app my-react-app && cd my-react-app
-
-    # eject project to customize webpack configs
     echo yes | npm run eject
-
-    # install dependencies
-    npm i -P @luigi-project/core @luigi-project/client fundamental-styles@0.11.0 @sap-theming/theming-base-content react-router-dom webcomponents-react
+    ```
+    ​
+4. Install dependencies:
+    ```Shell
+    npm i -P @luigi-project/core @luigi-project/client fundamental-styles@0.11.0 @sap-theming/theming-base-content react-router-dom @ui5/webcomponents
     npm i copy-webpack-plugin@5 webpack webpack-cli @babel/core @babel/preset-env babel-loader --save-dev
+    ```
+    ​
+5. Replace strings (these commands have been adapted from the standard [Luigi React example](https://github.com/SAP/luigi/blob/master/scripts/setup/react.sh).) Note that you may get a warning such as `event not found`, but this can safely be ignored. Copy and paste the following:
 
-    # replace strings in some places
+    ```Shell
     sed "s/const HtmlWebpackPlugin = require('html-webpack-plugin');/const HtmlWebpackPlugin = require('html-webpack-plugin');const CopyWebpackPlugin = require('copy-webpack-plugin');/g" config/webpack.config.js > config/webpack.config.tmp.js && mv config/webpack.config.tmp.js config/webpack.config.js
+    ​
     sed "s/new HtmlWebpackPlugin(/new CopyWebpackPlugin([\
     {context: 'public', to: 'index.html', from: 'index.html'  },\
     {context: 'node_modules\/@luigi-project\/core',to: '.\/luigi-core',from: {glob: '**',dot: true}}],\
     {ignore: ['.gitkeep', '**\/.DS_Store', '**\/Thumbs.db'],debug: 'warning'\
     }),\
     new HtmlWebpackPlugin(/g" config/webpack.config.js > config/webpack.config.tmp.js && mv config/webpack.config.tmp.js config/webpack.config.js
+    ​
     sed "s/template: paths.appHtml,/template: paths.appHtml,\
     filename: 'sampleapp.html',/g" config/webpack.config.js > config/webpack.config.tmp.js && mv config/webpack.config.tmp.js config/webpack.config.js
+    ​
     sed "s/public\/index.html/public\/sampleapp.html/g" config/paths.js > config/paths.tmp.js && mv config/paths.tmp.js config/paths.js
+    ​
     sed "s/publicUrl + '\/index.html',/publicUrl + '\/sampleapp.html',/g" config/webpack.config.js > config/webpack.config.tmp.js && mv config/webpack.config.tmp.js config/webpack.config.js
+    ​
     sed "s/const isWsl = require('is-wsl');//g" config/webpack.config.js > config/webpack.config.tmp.js && mv config/webpack.config.tmp.js config/webpack.config.js
+    ​
+    #This can throw a warning, it can be ignored
     sed "s/!isWsl/true/g" config/webpack.config.js > config/webpack.config.tmp.js && mv config/webpack.config.tmp.js config/webpack.config.js
-
+    ​
     echo "const path = require('path');
-
+    ​
     module.exports = {
         entry: './src/luigi-config/luigi-config.es6.js',
         output: {
@@ -73,36 +82,41 @@ In this step, you will create a React skeleton project which will be used to cre
             path: path.resolve(__dirname, 'public'),
         },
     };">webpack.config.js
-
+    ​
     sed 's/"scripts": {/"scripts": {\
     \    "buildConfig":"webpack --config webpack.config.js",/1' package.json > p.tmp.json && mv p.tmp.json package.json
-
+    ​
     echo '{
         "globals": {
             "Luigi": "readonly"
         }
     }'>.eslintrc.json
+    ​```
 
-    # downloads
+6. Create a new folder:
+
+    ```Shell
     mkdir -p src/luigi-config
-    curl https://github.com/SAP-samples/luigi-micro-frontend-application/blob/main/react-core-mf/src/views/home.js > public/index.html
-    curl https://github.com/SAP-samples/luigi-micro-frontend-application/blob/main/react-core-mf/src/views/product.js > public/sampleapp.html
-    curl https://github.com/SAP-samples/luigi-micro-frontend-application/blob/main/react-core-mf/src/views/productDetail.js > src/luigi-config/luigi-config.es6.js
-
-
-    # add index.js
-    curl https://raw.githubusercontent.com/SAP/luigi/master/core/examples/luigi-example-react/src/index.js > src/index.js
-    curl https://raw.githubusercontent.com/SAP/luigi/master/core/examples/luigi-example-react/src/index.css > src/index.css
-
-    # add views
     mkdir src/views
-    curl https://raw.githubusercontent.com/SAP/luigi/master/core/examples/luigi-example-react/src/views/home.js > src/views/home.js
-    curl https://raw.githubusercontent.com/SAP/luigi/master/core/examples/luigi-example-react/src/views/sample1.js > src/views/sample1.js
-    curl https://raw.githubusercontent.com/SAP/luigi/master/core/examples/luigi-example-react/src/views/sample2.js > src/views/sample2.js
+    ```
+    ​
+7. Download the Luigi React configuration:
 
+   ```Shell
+   curl https://raw.githubusercontent.com/SAP/luigi/master/core/examples/luigi-example-react/public/luigi-config.js > src/luigi-config/luigi-config.es6.js
+   ```
+
+8.  Ins​tall and run the config:
+
+    ```Shell
     npm i
     npm run buildConfig
-    npm start
+    ```
+    ​
+9.  Move back into the root directory:
+
+    ```Shell
+    cd ..
     ```
 
 [DONE]
@@ -117,8 +131,7 @@ In this step, you will create a skeleton UI5 project for your UI5 micro-frontend
 2. Create a new folder:
 
     ```Shell
-    mkdir ui5-mf
-    cd ui5-mf
+    mkdir ui5-mf && cd ui5-mf
     ```
 
 3. Install the UI5 project generator:
@@ -127,7 +140,13 @@ In this step, you will create a skeleton UI5 project for your UI5 micro-frontend
     npm install -g yo generator-easy-ui5
     ```
 
-4. Type `yo easy-ui5` in the terminal and choose `generator-ui5-project`. Use the following settings:
+4. Enter this command in the Terminal/Command Prompt:
+
+    ```Shell
+    yo easy-ui5
+    ```
+
+5. Choose `generator-ui5-project`. Use the following settings:
 
     ![UI5 Terminal](ui5-yo.png)
 

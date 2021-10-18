@@ -14,34 +14,69 @@ primary_tag: topic>user-interface
 
 ---
 
-[ACCORDION-BEGIN [Step 5: ](Add Luigi to UI5 micro-frontend)]
+[ACCORDION-BEGIN [Step 1: ](Add Luigi to UI5 micro-frontend)]
 
 In this step, you will import Luigi Client to the UI5 micro-frontend so you can use `linkManager` and other API function in the next steps.
 
-1. Open `ui5-mf/uimodule/webapp/index.html` and add:
+1. Open `ui5-mf/uimodule/webapp/index.html` and add this line in the head section of the file:
 
     ```HTML
+    <!--AROUND LINE 23-->
     <script src="https://unpkg.com/@luigi-project/client@latest/luigi-client.js"></script>
     ```
 
-2. In the same file, change the UI5 option from `data-sap-ui-frameOptions="trusted"` to `data-sap-ui-frameOptions="allow"`. Directly below, add `data-sap-ui-preload=""`.
+2. In the same file, change the UI5 option from `data-sap-ui-frameOptions="trusted"` to `data-sap-ui-frameOptions="allow"`. Directly below, add `data-sap-ui-preload=""`:
+
+    ```HTML
+    <script
+        id="sap-ui-bootstrap"
+        src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_fiori_3"
+        data-sap-ui-resourceroots='{
+                "luigi.ui5": "./"
+            }'
+        data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+        data-sap-ui-compatVersion="edge"
+        data-sap-ui-async="true"
+        <!-- CHANGE THESE 2 ATTRIBUTES -->
+        data-sap-ui-frameOptions="allow"
+        data-sap-ui-preload=""
+        <!-- TO THE SHOWN VALUES -->
+    ></script>
+    ```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create "Order History" view)]
+[ACCORDION-BEGIN [Step 2: ](Create "Order History" view)]
 
 In this step, you will add a new navigation node in Luigi, then create the micro-frontend content using UI5.
 
 1. Add an "Order History" node to your Luigi navigation in `luigi-config.js`:
 
     ```JavaScript
-    {
-      pathSegment: 'order',
-      label: 'Order History',
-      icon: 'history',
-      viewUrl: 'http://localhost:8080/index.html'
-    }
+    children: [
+              {
+                pathSegment: "products",
+                label: "Products",
+                icon: "product",
+                viewUrl: "/sampleapp.html#/products",
+                keepSelectedForChildren: true,
+                children: [{
+                    pathSegment: ':id',
+                    viewUrl: '/sampleapp.html#/productDetail/:id',
+                    context: { id: ':id' }
+                }]
+            }, // <--- DON'T FORGET TO ADD A "," HERE!
+            //THIS SECTION HAS TO BE ADDED
+            {
+                pathSegment: 'order',
+                label: 'Order History',
+                icon: 'history',
+                viewUrl: 'http://localhost:8080/index.html'
+            }
+            //UNTIL HERE
+          ],
     ```
 
 2. Open the `ui5-mf/uimodule/webapp/view/MainView.view.xml` file in your UI5 app, and replace the content with:
@@ -95,7 +130,7 @@ In this step, you will add a new navigation node in Luigi, then create the micro
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Run UI5 app)]
+[ACCORDION-BEGIN [Step 3: ](Run UI5 app)]
 
 You can run the UI5 project to check if it's assembled correctly. Open a terminal/command prompt and navigate to `ui5-mf`, then execute:
 
@@ -103,7 +138,7 @@ You can run the UI5 project to check if it's assembled correctly. Open a termina
 npm start
 ```
 
-You should be able to access the app at `http://localhost:8080/index.html`.
+You should be able to access the app at `http://localhost:8080/index.html`. If you want to see the UI5 project in the context of the larger app, open a new terminal window, navigate to `react-core-mf` and run `npm start`. Refresh your browser to see the changes.
 
 
 [VALIDATE_1]
