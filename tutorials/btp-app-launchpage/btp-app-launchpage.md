@@ -23,7 +23,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`cap/freestyle-ui5-app`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/freestyle-ui5-app) branch.
+To start with this tutorial use the result in the [`cap/freestyle-ui5-app`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/freestyle-ui5-app) branch.
 
 ---
 

@@ -43,6 +43,7 @@ Follow the steps to install the same
 
 1. Download `.tar.gz` for `SAP-AI-API-Client-SDK` [Download Here](https://developers.sap.com/trials-downloads.html?search=AI+Core)
 
+
 2. Install `.tar.gz` using pip. Execute the following on terminal. *(Change the path)*
 
     ```BASH[1]
@@ -51,6 +52,7 @@ Follow the steps to install the same
     !![pip ai-api](img/pip/ai-api.png)
 
 Similarly install `PyYaml`, (*No manual download required for `PyYaml`*, it would be fetched automatically from public python repository). Execute the following on terminal.
+
 
 ```BASH
 pip install PyYaml
