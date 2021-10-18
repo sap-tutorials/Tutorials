@@ -69,17 +69,17 @@ List all Cloud Foundry CLI plugins to see whether the installation worked.
 
 [OPTION BEGIN [macOS]]
 ```Bash
-cf plugins | grep html5   
+cf plugins | grep multiapps   
 ```
 [OPTION END]
 [OPTION BEGIN [Windows]]
 ```Terminal
-cf plugins | find /I "html5"
+cf plugins | find /I "multiapps"
 ```
 [OPTION END]
 [OPTION BEGIN [Linux]]
 ```Bash
-cf plugins | grep html5   
+cf plugins | grep multiapps   
 ```
 [OPTION END]
 

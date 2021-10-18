@@ -9,7 +9,7 @@ primary_tag: topic>machine-learning
 
 ## Prerequisites
 - You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
-- You have a subaccount and dev space with **Europe (Frankfurt)** or **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
+- You have a subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html). You can also use subaccounts created before October 11th, 2021 with **Europe (Frankfurt)** as region.
 
 ## Details
 ### You will learn
@@ -26,7 +26,7 @@ primary_tag: topic>machine-learning
 
     !![Trial global account](01_Foundation20Onboarding_Home.png)
 
-    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select Europe (Frankfurt) or US East (VA)**. Your user profile will be set up for you automatically.
+    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select US East (VA)**. Your user profile will be set up for you automatically.
 
     >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
 
@@ -62,7 +62,7 @@ To try out Document Information Extraction, you need to make sure that your suba
 
     ![Add Service Plan](add-service-plans.png)
 
-  3. Select **Document Information Extraction Trial**, and choose the `blocks_of_100` service plan. Click **Add 1 Service Plan**.
+  3. Select **Document Information Extraction Trial**, and choose the **`blocks_of_100`** service plan. Click **Add 1 Service Plan**.
 
     ![Add Service Plan](add-entitlements.png)
 
@@ -102,7 +102,7 @@ Click **Create Instance** to start the creation dialog.
 
 ![Service Instance](create-instance.png)
 
-In the dialog, choose the `blocks_of_100` service plan. Enter a name for your new instance, for example, `doc-info-extraction-inst` and click **Create Instance**.
+In the dialog, choose the **`blocks_of_100`** service plan. Enter a name for your new instance, for example, `doc-info-extraction-inst` and click **Create Instance**.
 
 ![Create Instance](create-instance-dialog.png)
 
@@ -128,7 +128,7 @@ You are now able to create a service key for your new service instance. Service 
 
       ![Create Service Key](create-service-key-name.png)
 
-You have successfully created a service key for your service instance. You can now either view the service key in the browser or download it.
+You have successfully created a service key for your service instance. You can now view the service key in the browser or download it.
 
 ![View Service Key](view-service-key.png)
 

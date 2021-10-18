@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to check the annotation files
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`cap/create-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/create-service) branch.
+To start with this tutorial use the result in the [`cap/create-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/create-service) branch.
 
 ---
 
