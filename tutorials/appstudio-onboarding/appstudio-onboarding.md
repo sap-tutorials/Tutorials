@@ -69,7 +69,7 @@ This tutorial is based on the procedure described in the [Getting Started](https
     <br>
     >**PAY ATTENTION:** If you reached this point in the tutorial, you have successfully on-boarded SAP Business Application Studio. Answer the validation question of the current tutorial step, and mark the rest of the steps as "Completed".
 
-[VALIDATE_4]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step: 3](Add SAP Business Application Studio subscription to subaccount)]
@@ -122,10 +122,10 @@ Depending on when you created the SAP BTP Trial account, this subscription might
 
     !![subscriptioninprogress](Cockpit-Subscription-in-Progress-.png)
 
-[DONE]
+[VALIDATE_4]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step: 5](Launch SAP Business Application Studio)]
+[ACCORDION-BEGIN [Step: 4](Launch SAP Business Application Studio)]
 
 1. Click **Go to Application**.
 

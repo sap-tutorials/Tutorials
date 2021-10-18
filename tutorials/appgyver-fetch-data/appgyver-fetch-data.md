@@ -3,8 +3,8 @@ title: Fetch Data from Public API to Your AppGyver Application
 description: Configure your application to fetch records from a public API when a food item is scanned, using a Get Record command, which first needs to be configured.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, tutorial>license, topic>mobile]
-primary_tag: products>sap-business-technology-platform
+tags: [ tutorial>beginner, tutorial>license, topic>mobile, products>sap-business-technology-platform]
+primary_tag: products>sap-appgyver
 author_name: Tom Beck
 author_profile: https://github.com/heytombeck
 ---
@@ -23,7 +23,7 @@ In the previous tutorial, you learned how to connect your application to a publi
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Remove Alert Component)]
+[ACCORDION-BEGIN [Step 1: ](Remove alert component)]
 
 Open your draft application in your AppGyver Composer account, displaying your barcode scanner app.
 
@@ -40,7 +40,7 @@ Remove the ***Alert*** component from your logic panel, as this is no longer nee
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Get Record Component)]
+[ACCORDION-BEGIN [Step 2: ](Add Get Record component)]
 
 You now need to add your new logic flow for what should happen after the barcode has been scanned. For your application, you want the barcode scanner to fetch data from the data resource you configured in the previous tutorial.
 
@@ -56,7 +56,7 @@ Add a connector from the top Scan QR/barcode option to the Get Record option, in
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Edit Binding)]
+[ACCORDION-BEGIN [Step 3: ](Edit binding)]
 
 Once the logic flow is set, you need to bind the information to the output of the scanner node.
 
@@ -82,7 +82,7 @@ The Get Record flow function should now be able to fetch data for any food barco
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add Data Variables)]
+[ACCORDION-BEGIN [Step 4: ](Add data variables)]
 
 You now need to configure your application to store the data it receives. To do this, you need to add data variables.
 
@@ -123,7 +123,7 @@ The data variables are now configured for your application.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Set Data Variable for Scan Button)]
+[ACCORDION-BEGIN [Step 5: ](Set data variable for scan button)]
 
 Now click **View** to switch back to your application interface view. From here, you will need to add the final piece to your logic flow.
 
