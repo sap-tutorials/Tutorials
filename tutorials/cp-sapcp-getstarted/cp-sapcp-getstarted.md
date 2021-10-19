@@ -193,7 +193,7 @@ The targeting mechanism works according to the hierarchy of entities in the glob
 
 >To find out your current target, use `btp --info`.
 
->To set the target back to the global account, use `btp -ga`.
+>To set the target back to the global account, use `btp target -ga`.
 
 [DONE]
 [ACCORDION-END]
