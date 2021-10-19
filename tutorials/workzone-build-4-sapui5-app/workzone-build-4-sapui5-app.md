@@ -40,15 +40,23 @@ To add business apps to SAP Work Zone, you need to configure them in a tool call
 
     !![Open content manager](3-open-content-manager.png)
 
->The Content Manager has two tabs:<div>&nbsp;</div><div> **My Content** where you can manually configure content items (such as apps, roles, groups, and catalogs) and view any other available content items in your subaccount.<div>&nbsp;</div><div>The **Content Explorer** where you can explore exposed content from available content providers and add it to your subaccount (displayed in **My Content**).<div>&nbsp;</div><div>
+The Content Manager has two tabs:
 
-<div>&nbsp;</div><div>
+- **My Content** where you can manually configure content items (such as apps, roles, groups, and catalogs) and view any other available content items in your subaccount.
 
->When you open the **Content Manager**, you'll see a side panel on the left with links to the  following tools:<div>&nbsp;</div><div>
-<div>&nbsp;</div><div> - The **Work Zone Directory** where the SAP Work Zone tile resides.<div>&nbsp;</div><div> - The **Content Manager** where you manage business apps that you can add to your work zone.
-<div>&nbsp;</div><div> - The **Provider Manager** where you manage content providers. Content providers expose business content that you can integrate into your work zone.
-<div>&nbsp;</div><div> - The **Work Zone Configurator** where you can set up your work zone when onboarding to the product if this isn't already done for you.
-<div>&nbsp;</div><div> - The **Settings** where you can configure various settings related to your subaccount.<div>&nbsp;</div><div>
+- The **Content Explorer** where you can explore exposed content from available content providers and add it to your subaccount (displayed in **My Content**).
+
+When you open the **Content Manager**, you'll see a side panel on the left with links to the  following tools:
+
+- The **Work Zone Directory** where the SAP Work Zone tile resides.
+
+- The **Content Manager** where you manage business apps that you can add to your work zone.
+
+- The **Provider Manager** where you manage content providers. Content providers expose business content that you can integrate into your work zone.
+
+- The **Work Zone Configurator** where you can set up your work zone when onboarding to the product if this isn't already done for you.
+
+-The **Settings** where you can configure various settings related to your subaccount.<div>&nbsp;</div><div>
 
 !![Tabs and tools](5-tabs-and-tools.png)
 
@@ -253,9 +261,9 @@ Now you're going to add your first app next to this header.
 
 6. Scroll to the top of the page, and click **Publish**.
 
-This is how your **Home** page looks with the app added to it:
+    This is how your **Home** page looks with the app added to it:
 
-  !![Home page with 1 app](29-homepage-with-app1.png)
+    !![Home page with 1 app](29-homepage-with-app1.png)
 
 7. Click the app to open it.
 

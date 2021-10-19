@@ -44,7 +44,7 @@ First download these image files so that they're on your computer ready for you 
 
 [ACCORDION-BEGIN [Step 2: ](Create a workspace)]
 
->A workspace is a membership of users who can upload, create, or reference material specific to a department, project, or team. Within a workspace you can communicate, interact easily, share knowledge with other members, and easily access the workspace-related information that you need from a single place.
+A workspace is a membership of users who can upload, create, or reference material specific to a department, project, or team. Within a workspace you can communicate, interact easily, share knowledge with other members, and easily access the workspace-related information that you need from a single place.
 
 1. In your work zone, click **Workspaces** in the top-level menu, and then click **New Workspace**.
 

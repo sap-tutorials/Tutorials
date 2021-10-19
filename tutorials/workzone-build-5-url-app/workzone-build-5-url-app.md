@@ -220,9 +220,9 @@ In the previous tutorial, you added a header to your **Home** page and underneat
 
 6. Scroll to the top of the screen and click **Publish**.
 
-This is how your **Home** page looks now with the 2 added apps:
+    This is how your **Home** page looks now with the 2 added apps:
 
-  !![View home page with 2 apps](25-homepage-apps2.png)
+    !![View home page with 2 apps](25-homepage-apps2.png)
 
 7. Click the apps to open them.
 
