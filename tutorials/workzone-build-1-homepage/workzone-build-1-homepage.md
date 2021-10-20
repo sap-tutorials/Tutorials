@@ -33,10 +33,10 @@ In this tutorial, you'll be designing a SAP Work Zone **Home** page. You'll add 
 
 First download these image files so that they're on your computer ready for you to add to your page:
 
-- [`home_row1_rotating_banner1.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/workzone-build-1-homepage/home_row1_rotating_banner1.png)
-- [`home_row1_rotating_banner2.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/workzone-build-1-homepage/home_row1_rotating_banner2.png)
-- [`home_row3_image1.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/workzone-build-1-homepage/home_row3_image1.png)
-- [`home_row3_image2.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/workzone-build-1-homepage/home_row3_image2.png)
+- [`home_row1_rotating_banner1.png`](Home_Page_Images/abc.png)
+- [`home_row1_rotating_banner2.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/workzone-build-1-homepage/Home_Page_Images/home_row1_rotating_banner1.png)
+- [`home_row3_image1.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/workzone-build-1-homepage/Home_Page_Images/home_row3_image1.png)
+- [`home_row3_image2.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/workzone-build-1-homepage/Home_Page_Images/home_row3_image2.png)
 
 
 [DONE]
