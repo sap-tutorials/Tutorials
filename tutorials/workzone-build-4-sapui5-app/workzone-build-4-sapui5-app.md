@@ -3,11 +3,10 @@ title: Add an SAPUI5 App to an SAP Work Zone Page
 description: Add an existing SAPUI5 app to an SAP Work Zone page.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-launchpad-service]
+tags: [ tutorial>beginner, products>sap-work-zone]
 primary_tag: products>sap-work-zone
 author_name: Lindsay Bert
 ---
-
 
 
 ## Prerequisites
@@ -56,7 +55,7 @@ When you open the **Content Manager**, you'll see a side panel on the left with 
 
 - The **Work Zone Configurator** where you can set up your work zone when onboarding to the product if this isn't already done for you.
 
--The **Settings** where you can configure various settings related to your subaccount.<div>&nbsp;</div><div>
+- The **Settings** where you can configure various settings related to your subaccount.<div>&nbsp;</div><div>
 
 !![Tabs and tools](5-tabs-and-tools.png)
 

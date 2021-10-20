@@ -3,7 +3,7 @@ title: Add a Workspace to SAP Work Zone
 description: Create a workspace and add content to it that you can share with other members of your workspace.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-launchpad-service]
+tags: [ tutorial>beginner, products>sap-work-zone]
 primary_tag: products>sap-work-zone
 author_name: Lindsay Bert
 ---
@@ -30,13 +30,13 @@ In this tutorial, you're going to create a workspace where employees who joined 
 
 First download these image files so that they're on your computer ready for you to add to your workspace pages:
 
-- [`workspace_row2_image1.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/workzone-build-2-workspace/workspace_row2_image1.png)
-- [`workspace_row2_image2.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/workzone-build-2-workspace/workspace_row2_image2.png)
-- [`workspace_header_image.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/workzone-build-2-workspace/workspace_header_image.png)
-- [`workspace_image_with_icon1.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/workzone-build-2-workspace/workspace_image_with_icon1.png)
-- [`workspace_image_with_icon2.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/workzone-build-2-workspace/workspace_image_with_icon2.png)
-- [`workspace_image_with_icon3.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/workzone-build-2-workspace/workspace_image_with_icon3.png)
-- [`workspace_image_with_icon4.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/workzone-build-2-workspace/workspace_image_with_icon4.png)
+- [`workspace_row2_image1.jpg`](Workspace_Images/workspace_row2_image1.jpg)
+- [`workspace_row2_image2.jpg`](Workspace_Images/workspace_row2_image2.jpg)
+- [`workspace_header_image.jpg`](Workspace_Images/workspace_header_image.jpg)
+- [`workspace_image_with_icon1.png`](Workspace_Images/workspace_image_with_icon1.png)
+- [`workspace_image_with_icon2.png`](Workspace_Images/workspace_image_with_icon2.png)
+- [`workspace_image_with_icon3.png`](Workspace_Images/workspace_image_with_icon3.png)
+- [`workspace_image_with_icon4.png`](Workspace_Images/workspace_image_with_icon4.png)
 
 [DONE]
 [ACCORDION-END]

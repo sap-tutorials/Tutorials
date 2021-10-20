@@ -3,7 +3,7 @@ title: Add a URL App to Your SAP Work Zone Page
 description: Create a URL app and add it to a page in SAP Work Zone.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-launchpad-service]
+tags: [ tutorial>beginner, products>sap-work-zone]
 primary_tag: products>sap-work-zone
 author_name: Lindsay Bert
 ---
