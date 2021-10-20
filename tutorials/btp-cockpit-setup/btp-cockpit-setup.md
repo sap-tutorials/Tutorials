@@ -1,8 +1,8 @@
 ---
 title: Get an SAP BTP Account for Tutorials
-description: Set up an SAP Business Technology Platform account so you can do the tutorials involving SAP BTP services and applications.
+description: Set up an SAP Business Technology Platform account so you can do the tutorials involving SAP BTP services and applications (trial or free-tier).
 time: 5
-tags: [ tutorial>beginner, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: products>sap-business-technology-platform
 ---
 
