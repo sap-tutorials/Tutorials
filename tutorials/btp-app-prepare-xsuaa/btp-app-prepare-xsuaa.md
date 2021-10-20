@@ -27,12 +27,12 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to set up user authentication and authorization (XSUAA)
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`cp/hana`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/hana) branch.
+To start with this tutorial use the result in the [`cp/hana`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/hana) branch.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enable authentication support)]
-The enable authentication support in CAP for SAP BTP, the `xssec` and `xsenv` modules need to be installed. If `cds watch`is still running stop it with `Ctrl+C`. In your project folder, execute the following command.
+The enable authentication support in CAP for SAP BTP, the `xssec` and `xsenv` modules need to be installed. If `cds watch`is still running stop it with <kbd>Ctrl</kbd> + <kbd>C</kbd>. In your project folder execute:
 
 ```Shell/Bash
 npm i --save  @sap/xssec  @sap/xsenv

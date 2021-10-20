@@ -30,7 +30,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to deploy your application as Multi-Target Application (MTA) to SAP BTP, Cloud Foundry runtime
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`cp/roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/roles) branch.
+To start with this tutorial use the result in the [`cp/roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/roles) branch.
 
 ---
 
@@ -95,7 +95,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
 
 2. Choose **Account Explorer**.
 
@@ -111,7 +111,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
     !![CF Data in SAP BTP Cockpit](cfdatacloudcockpit.png)
 
-
+        
     For your convenience, this is the API endpoint for your landscape:
 
     [https://api.cf.eu10.hana.ondemand.com](https://api.cf.eu10.hana.ondemand.com)
@@ -122,7 +122,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-
+    
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
@@ -130,7 +130,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-
+  
 
 6. Check if the `multiapps` plugin is already installed:
 
@@ -156,7 +156,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
 
 2. Choose **Account Explorer**.
 
@@ -172,7 +172,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
     !![CF Data in SAP BTP Cockpit](cfdatacloudcockpit.png)
 
-
+        
     For your convenience, this is the API endpoint for your landscape:
 
     [https://api.cf.eu10.hana.ondemand.com ](https://api.cf.eu10.hana.ondemand.com)
@@ -185,7 +185,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-
+    
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
@@ -193,7 +193,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-
+  
 
 6. Check if the `multiapps` plugin is already installed:
 
@@ -238,7 +238,7 @@ Open the file `package.json` and add the following snippet:
 ---
 [ACCORDION-BEGIN [Step 5: ](Generate MTA deployment descriptor (mta.yaml))]
 The MTA deployment is described in the MTA Deployment Descriptor, a file called  `mta.yaml`.
-As the first step, you let the CAP server generate an initial `mta.yaml` file.
+As the first step, you let the CAP server generate an initial `mta.yaml` file. 
 
 Run the following command from the project root folder:
 
@@ -343,7 +343,7 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Build, deploy, and test mtar file)]
-1. Build the MTA module from the project root folder:
+1. Build the MTA module from your project root folder:
 
     ```Shell/Bash
     mbt build -t ./
@@ -380,7 +380,9 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
     > You can also deploy a single module using `-m <module-name>` command line parameter.
 
 
-5. Enter the CAP application URL in your browser using the hostname displayed for `cpapp-srv` in the previous steps.
+5. Enter the route displayed for `cpapp-srv` in your browser.
+
+    ![cpapp-srv route](cpapp-srv-route.png)
 
     You see the CAP start page, like this:
 

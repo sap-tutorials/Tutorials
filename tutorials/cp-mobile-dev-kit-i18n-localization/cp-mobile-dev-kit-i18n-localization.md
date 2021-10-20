@@ -24,6 +24,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
+
 [ACCORDION-BEGIN [Step 1: ](Understand the Internationalization and Localization)]
 
 

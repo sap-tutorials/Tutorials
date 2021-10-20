@@ -5,14 +5,14 @@ title: Configure and Run a Predefined SAP Continuous Integration and Delivery (C
 description: Enable SAP Continuous Integration and Delivery (CI/CD) service on SAP Business Technology Platform for your CAP application.
 auto_validation: true
 time: 15
-tags: [ tutorial>advanced, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform]
+tags: [ tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
  - You have created a GitHub repository as described in step **Create a GitHub repository for your project** in the tutorial [Create a Directory for Development](btp-app-create-directory)
  - You have developed your CAP application and have prepared it for deployment using this collection of tutorials: [Build an Application End-to-End using CAP, Node.js and VS Code](mission.btp-application-cap-e2e)
- - You have to [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup) or use an existing SAP HANA Cloud instance
+ - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e)
 
 ## Details
 ### You will learn
@@ -323,7 +323,7 @@ You have to trigger your job manually the first time after creation.
     > In case you get any errors:
 
     
-    > Verify that your SAP HANA Cloud instance is running. Your SAP HANA Cloud instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day, before you start working with your trial.
+    > Verify that your SAP HANA Cloud service instance is running. Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day, before you start working with your trial.
     
     > Verify you have added all necessary entitlements to your account as specified in [Prepare for SAP BTP Development](btp-app-prepare-btp).
 

@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to check the annotation files
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`cap/create-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/create-service) branch.
+To start with this tutorial use the result in the [`cap/create-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/create-service) branch.
 
 ---
 
@@ -32,10 +32,11 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Generate the UI with an SAP Fiori elements template)]
-1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P** for macOS / **Ctrl** + **Shift** + **P** for Windows) and choose **Fiori: Open Application Generator**.
+1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
-    
-    > In case you get an error launching the Application Generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
+    !!! tip 
+        * VS Code will automatically install `@sap/generator-fiori` if missing and open the **Template Wizard**.
+        * In case you get an error launching the Application Generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
 
 2. Choose application type **SAP Fiori elements** and floor plan **List Report Object Page**.
 
@@ -55,7 +56,7 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 
     > See the [CAP Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for more details.
 
-5.    Select the **`RiskService`** as the OData service and choose **Next**.
+5.    Select the **`RiskService(Node.js)`** as the OData service and choose **Next**.
 
     ![CAPpro](datasourceselection.png)
 
