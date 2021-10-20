@@ -50,7 +50,7 @@ Some services are available to try out for free in both free-tier and a trial ac
 
 Do one of the following:
 
-- **Free Trial:** Following the instructions in the tutorial [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
+- **Free Trial:** If you do not have an account of any type yet and you want to try out services, follow the instructions on the tutorial [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).
 
 - **Free Tier:** If your company has an existing consumption-based BTP Global Account, you can explore free tier services there.  In such accounts, free tier plans will appear alongside paid service plans in the service marketplace.
 
