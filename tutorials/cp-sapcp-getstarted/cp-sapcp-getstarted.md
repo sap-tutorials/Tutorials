@@ -44,7 +44,7 @@ Here are some of the tasks you can use the btp CLI for:
 
 [ACCORDION-BEGIN [Step 2: ](For which global accounts can I use the btp CLI?)]
 
-SAP is currently migrating all global accounts from the existing cloud management tools feature set A to the renovated cloud management tools feature set B. One of the innovations of feature set B is the command line interface (btp CLI) for account management. With a trial account, you can try out the btp CLI and other features of feature set B.  
+SAP is currently migrating all global accounts from the existing cloud management tools feature set A to the renovated cloud management tools feature set B. One of the innovations of feature set B is the command line interface (btp CLI) for account management. With a trial account, you can try out the btp CLI and other features of feature set B.
 
 Here you can read more about the [Cloud Management Tools Feature Set B Innovations](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html).
 
@@ -93,11 +93,9 @@ btp --help
 
 [ACCORDION-BEGIN [Step 9: ](Log in to your global account)]
 
-Now let's log in. Login is on global account level. Make sure you know the subdomain of your global account, which you find in the cockpit:
+Now let's log in. At login, you need to connect to the btp CLI server URL and you need to enter the global account subdomain.
 
-![Subdomain of the global account in the cockpit](subdomain-ga.png)
-
-You have two options for login. In both cases, the client proposes the CLI server URL for your trial, which you can confirm with ENTER.
+You have two options for login:
 
 For login on the command-line, enter:
 
@@ -110,9 +108,19 @@ For login with single sign-on through a browser, enter:
 btp login --sso
 ```
 
+The server URL (https://cpcli.cf.eu10.hana.ondemand.com) is proposed at login, and you can just accept it with ENTER:
+
+![CLI server URL](server-url.png)
+
+The global account subdomain can be found in the cockpit:
+
+![Subdomain of the global account in the cockpit](subdomain-ga.png)
+
 Once you're logged into your global account, it should look like this:
 
 ![CLI Login](sapcplogin.png)
+
+> If you get an error about your btp CLI client being "too new" and not supported by the server, please return to Step 4 of this tutorial and download an earlier version of the CLI, to either match the server version stated, or one version below. For example, if the server version is stated as 2.9.0 and you have version 2.10.0 of the btp CLI, you can download version 2.8.0 of the btp CLI and then continue with this tutorial. [This issue](https://github.com/SAP-samples/devtoberfest-2021/issues/53) may contain further information that you might find useful.
 
 [DONE]
 [ACCORDION-END]
@@ -181,11 +189,11 @@ The targeting mechanism works according to the hierarchy of entities in the glob
 
 - If a subaccount or directory is targeted and you run a command that only works on a higher level, the command will be executed in the parent directory or global account of the current target. For example, `create accounts/subaccount` creates a subaccount in the global account, even if a subaccount or directory is targeted.
 
-- If a subaccount or directory is targeted, you can execute commands in its parent directory or global account by adding parameters `-dir` or `-ga` without a value. For example, if a subaccount is targeted, `btp list security/user` lists the users of that subaccount. To list the users of the parent directory or global account, use: `btp list security/user -dir` or  `btp list security/user -ga`.  
+- If a subaccount or directory is targeted, you can execute commands in its parent directory or global account by adding parameters `-dir` or `-ga` without a value. For example, if a subaccount is targeted, `btp list security/user` lists the users of that subaccount. To list the users of the parent directory or global account, use: `btp list security/user -dir` or  `btp list security/user -ga`.
 
 >To find out your current target, use `btp --info`.
 
->To set the target back to the global account, use `btp -ga`.
+>To set the target back to the global account, use `btp target -ga`.
 
 [DONE]
 [ACCORDION-END]

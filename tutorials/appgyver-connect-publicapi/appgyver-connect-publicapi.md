@@ -1,10 +1,10 @@
 ---
-title: Connect your AppGyver Application to a Public API
-description: In this tutorial, you will learn how to connect your application to a public API and then test that it's pulling the right information. Configuring these details allow your application to read a barcode from a food product, search for that product using an API, and then display the information available.
+title: Connect Your AppGyver Application to a Public API
+description: Connect your application to a public API and then test that it's pulling the right information.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>license, topic>mobile]
-primary_tag: products>sap-business-technology-platform
+tags: [ tutorial>beginner, tutorial>license, topic>mobile, products>sap-business-technology-platform]
+primary_tag: products>sap-appgyver
 author_name: Tom Beck
 author_profile: https://github.com/heytombeck
 ---
@@ -24,7 +24,7 @@ author_profile: https://github.com/heytombeck
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add Data Resources)]
+[ACCORDION-BEGIN [Step 1: ](Add data resources)]
 
 Open your draft application in your AppGyver Composer account, displaying your barcode scanner app.
 
@@ -50,7 +50,7 @@ Click **Save**, saving the data resource.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure Get Record Data)]
+[ACCORDION-BEGIN [Step 2: ](Configure Get Record data)]
 
 You now need to configure which information is taken from the Open Food Facts API. For your application, you need to configure this to fetch the barcode information, since that's what's being scanned with the device camera. This can be achieved using a 'Get Record' request.
 
@@ -77,7 +77,7 @@ Click the existing **URL placeholder key**, and then configure the following set
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test Data Sources)]
+[ACCORDION-BEGIN [Step 3: ](Test data sources)]
 
 To now test that the HTTPS is configured and able to fetch information, click **Test**.
 
@@ -106,7 +106,7 @@ The test now runs, displaying a Test API call response. In this response, you ca
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Set Schema From Response)]
+[ACCORDION-BEGIN [Step 4: ](Set schema from response)]
 
 After a successful test you should now set the data schema. This stores the data structure from the URL, enabling the application to easily identify the types of information it is fetching.
 

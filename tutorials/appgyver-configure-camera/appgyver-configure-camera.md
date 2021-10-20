@@ -1,10 +1,10 @@
 ---
-title: Configure your AppGyver Application to Open your Device Camera
-description: In this tutorial, you will learn how to configure the logic flow in your application to enable your device to open your camera on demand. The camera will then be used for scanning food item barcodes once the application is finished.
+title: Configure Your AppGyver Application to Open your Device Camera
+description: Configure the logic flow in your application to enable your device to open your camera on demand.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>license, topic>mobile]
-primary_tag: products>sap-business-technology-platform
+tags: [ tutorial>beginner, tutorial>license, topic>mobile, products>sap-business-technology-platform]
+primary_tag: products>sap-appgyver
 author_name: Tom Beck
 author_profile: https://github.com/heytombeck
 ---
@@ -23,7 +23,7 @@ author_profile: https://github.com/heytombeck
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add Logic to Button)]
+[ACCORDION-BEGIN [Step 1: ](Add logic to button)]
 
 Open your draft application in your AppGyver Composer account, displaying your barcode scanner app.
 
@@ -36,7 +36,7 @@ Click **Scan** button and then click **Add Logic to BUTTON 1**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Scan QR/Barcode Component)]
+[ACCORDION-BEGIN [Step 2: ](Add scan QR/barcode component)]
 
 In the logic panel, you can see the ***Event - Component Tap***, which is when a user taps on the button within the application. We now need to decide what this event triggers.
 
@@ -51,7 +51,7 @@ Click the existing ***Component Tap*** connection and manually draw a connection
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add an Alert Element)]
+[ACCORDION-BEGIN [Step 3: ](Add an alert element)]
 
 To test that the QR / barcode scanner is working, we now want to add an Alert component to our application. This will simply show a pop-up alert once a barcode has been scanned, returning the barcode number to the screen.
 
@@ -66,7 +66,7 @@ Add a connector between the top ***Scan QR / Barcode*** option and the ***Alert*
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Bind Elements)]
+[ACCORDION-BEGIN [Step 4: ](Bind elements)]
 
 As the alert is currently set to display a static text response only, we want to add a dynamic binding here. This allows us to tell the app what information to provide instead, which in our case is the barcode being scanned.
 
@@ -90,7 +90,7 @@ Click **Save**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Save and Preview)]
+[ACCORDION-BEGIN [Step 5: ](Save and preview)]
 
 Click **Save**.
 

@@ -3,12 +3,12 @@ title: Modify the Way an Embedded Story is Displayed
 description: Change the display mode of an embedded SAP Analytics Cloud story as well as page and language settings.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>javascript, products>sap-api-management]
+tags: [ tutorial>beginner, topic>javascript, products>sap-api-management, tutorial>license ]
 primary_tag: products>sap-analytics-cloud
 ---
 
 ## Prerequisites
- - 1.	You have created the web app from the [previous tutorial](sac-embed-story) and you have embedded an SAP Analytics Cloud story.
+ - 1.	You have created the web app from the [previous tutorial](sac-embed-story) and you have embedded an SAP Analytics Cloud story in it.
 
 ## Details
 ### You will learn
