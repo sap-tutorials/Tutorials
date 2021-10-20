@@ -1,5 +1,5 @@
 ---
-title: Connect SAP Private Link Service to Microsoft Azure Private Link Service
+title: Connect SAP Private Link Service (Beta) to Microsoft Azure Private Link Service
 author_profile: https://github.com/AnnikaGonnermann
 description: Connect SAP Private Link service (Beta) to Microsoft Azure Private Link Service with Cloud Foundry CLI and bind the service instance to your app or create a service key.
 auto_validation: true
@@ -25,7 +25,7 @@ SAP Private Link service (Beta) establishes a private connection between applica
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Check offerings of SAP Private Link Service )]
+[ACCORDION-BEGIN [Step 1: ](Check offerings of SAP Private Link Service (Beta))]
 
 After you've logged in as described in [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli), access the **Service Marketplace** of SAP BTP. Open a command prompt on your computer and type in the following:
 
@@ -131,7 +131,7 @@ You should now receive a success message that the approval is pending.
 
 [ACCORDION-BEGIN [Step 6: ](Check status of private link)]
 
-To check the current status of the newly created service instance, you need the name of your service instance (in this example `privatelink-test). Type in the following:
+To check the current status of the newly created service instance, you need the name of your service instance (in this example `privatelink-test`). Type in the following:
 
 ```Shell/Bash
 cf service privatelink-test
