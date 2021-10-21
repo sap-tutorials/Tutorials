@@ -3,8 +3,8 @@ title: Display Fetched Data in Your AppGyver Application
 description: Display data fetched from a public API, such as product names and calorific information, in your AppGyver application.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>license, topic>mobile]
-primary_tag: products>sap-business-technology-platform
+tags: [ tutorial>beginner, tutorial>license, topic>mobile, products>sap-business-technology-platform]
+primary_tag: products>sap-appgyver
 author_name: Tom Beck
 author_profile: https://github.com/heytombeck
 ---
@@ -22,7 +22,7 @@ In the previous tutorial, you learned how to configure your application to read 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add Text Components to your App)]
+[ACCORDION-BEGIN [Step 1: ](Add text components to app)]
 
 To start with, you'll add further visual information to your app in the form of a title and a paragraph of text. This will eventually be used to display specific calorific information obtained from scanning a food item.
 
@@ -43,7 +43,7 @@ From the core component panel, drag and drop a **Paragraph** component to undern
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Display Product Name)]
+[ACCORDION-BEGIN [Step 2: ](Display product name)]
 
 This paragraph now needs to be bound to the data variable you configured in earlier tutorials. This will allow you to define what food information to display once it has been fetched from the API, as you may not want to display all information available for each food item.
 
@@ -73,7 +73,7 @@ The paragraph will now display the product name of the scanned food item.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Display Calorific Information)]
+[ACCORDION-BEGIN [Step 3: ](Display calorific information)]
 
 We'll now add the calorific information to your app, using the same steps provided in for the product name information. Repeat Step 1 and Step 2, adding a new paragraph component to your interface.
 
@@ -100,7 +100,7 @@ Should you wish, you can now continue to add other information from the API usin
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Save and Test)]
+[ACCORDION-BEGIN [Step 4: ](Save and test)]
 
 Now click **Save**.
 
