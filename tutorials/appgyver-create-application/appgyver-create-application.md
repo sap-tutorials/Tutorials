@@ -12,7 +12,7 @@ author_profile: https://github.com/heytombeck
 ## Prerequisites
 - Access to an SAP BTP account in EU10 with Low-Code / No-Code entitlements
 - Previously followed the steps provided in [Subscribe to the Low-Code / No-Code Service in SAP BTP](appgyver-subscribe-service)
-- Access to the AppGyver Previewer App on a smart phone or tablet: [iOS](https://itunes.apple.com/us/app/appgyver/id1311492157) / [Android](https://play.google.com/store/apps/details?id=com.appgyver.agclient)
+- Access to the AppGyver Previewer App on a smart phone or tablet: [iOS](https://itunes.apple.com/us/app/appgyver/id1311492157) / [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release)
 
 
 ## Details
