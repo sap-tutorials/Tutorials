@@ -115,7 +115,7 @@ Note: The following process will set up several Postman environmental variables,
 
 12. Execute `openssl pkcs12 -export -in key.pem -out cert.p12` to convert the PEM certificate into a standard p12 certificate. Specify the certificate password when prompted by using the `secret` field of the payload returned in the step 10; use the same password for the p12 certificate.
 
-13. Execute `keytool -importkeystore -srckeystore cert.p12 -srcstoretype pkcs12 -destkeystore cert.jks` to create the JKS key store. Specify the certificate password when prompted; use the same password for the JKS key store.
+13. Execute `keytool -importkeystore -srckeystore cert.p12 -srcstoretype pkcs12 -destkeystore cert.jks -deststoretype jks` to create the JKS key store. Specify the certificate password when prompted; use the same password for the JKS key store.
 
 > You will use the `JKS` file store later on to authenticate against SAP IoT's Device Connectivity to send your EPCIS event and IoT measures via MQTT.
 
