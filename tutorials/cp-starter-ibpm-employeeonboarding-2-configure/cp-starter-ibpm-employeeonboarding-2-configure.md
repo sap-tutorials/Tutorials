@@ -28,7 +28,7 @@ The sample business rule used in this scenario is published in API Business Hub.
 
 1. From your global account page, choose the `trial` tile to access your subaccount.
 
-    !![Enter Trial Subaccount](entertrialaccount.png)
+    !![Enter Trial Subaccount](entertrialaccount_1.png)
 
 2. Click **Connectivity | Destinations** from the left-hand navigation and search for the destination with name `BUSINESSRULES_APIHUB`
 
@@ -227,7 +227,7 @@ In this section, you will create and activate a process visibility scenario to p
 
 1. Navigate into the newly created scenario and click the **Processes** tab, choose **+** and select **Add Workflow from SAP Workflow Service** to add workflow to business scenario.
 
-    !![Add Workflow](addworkflow.png)
+    !![Add Workflow](addworkflow_1.png)
 
 2. Select the `onboard` workflow from the choices.
 

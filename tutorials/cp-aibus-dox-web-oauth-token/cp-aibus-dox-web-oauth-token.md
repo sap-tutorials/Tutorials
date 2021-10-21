@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 
 [ACCORDION-BEGIN [Step 1: ](Get OAuth access token details)]
 
-To get your OAuth access token you will need the values listed below from the service key you created in the previous tutorial: [Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key).
+To get your OAuth access token you will need the values highlighted in the image below from the service key you created in the previous tutorial: [Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key).
 
 !![DOX Service Key](service-key-details.png)
 

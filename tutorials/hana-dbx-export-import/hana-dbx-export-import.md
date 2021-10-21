@@ -1,22 +1,21 @@
 ---
 title: Export and Import Data and Schema with SAP HANA Database Explorer
-description: Use wizards or SQL statements to export and import data and schema using CSV, Apache Parquet, or binary formats
+description: Use wizards or SQL statements to export and import data and schema using CSV, Apache Parquet, or binary formats.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition]
 primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
-  - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
-  - You have completed the first 3 tutorials in this group.
+- An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
+- You have completed the first 3 tutorials in this group.
 
 ## Details
 ### You will learn
-  - How to export and import data using the export and import data wizards, SQL statements export into and import from, and the download option in the SQL console results tab
-  - How to import `ESRI shapefiles` using the import data wizard
-  - How to export and import schema objects using export and import catalog wizards and the SQL statements export and import
-  - How to use cloud storage providers as a target when exporting or importing
+- How to export and import data using the export and import data wizards, SQL statements export into and import from, and the download option in the SQL console results tab
+- How to export and import schema objects using export and import catalog wizards and the SQL statements export and import
+- How to use cloud storage providers as a target when exporting or importing
 
 The following steps will demonstrate a few ways to export and import data such as the contents of tables or views as well how to export and import database schema.  
 
@@ -41,11 +40,11 @@ Methods to import into tables
 | ------- | -------------|------------------------| ----------------| ------------|
 | [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | All    | local computer         | CSV             | 1 GB max, 2 MB per row in SAP HANA Cloud, HANA database; 200 MB max SAP HANA on-premise |
 | [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA Cloud, HANA database    | S3, Azure, Alibaba OSS | CSV, Parquet    | |
-| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)    | SAP HANA Cloud, HANA database   | local computer         | `ESRI shapefiles` |  |
+| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)    | SAP HANA Cloud, HANA database   | local computer         | `ESRI shapefiles` | An example of importing an `ESRI shapefile` can be found in [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model) tutorial. |
 | [Import data wizard](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA on-premise    | SAP HANA file system         | CSV             | Target table can be created |
 | [Import from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA Cloud, HANA database | S3, Azure, Alibaba OSS | CSV, Parquet    | |
 | [Import from statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA on-premise  | SAP HANA file system    | CSV |  |
-| [Insert into table name select from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html) | All  | local or remote tables  | select statement |  |
+| [Insert into table name select from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/2020_04_QRC/en-US/20f7f70975191014a76da70c9181720e.html) | All  | local or remote tables  | select statement |  |
 
 > Export and import using cloud storage from Amazon, Microsoft Azure and Alibaba Cloud is covered in the final step of this tutorial.
 
@@ -132,59 +131,7 @@ The following steps will attempt to demonstrate some of these options.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Import ESRI shapefiles (optional))]
-
-This step will import an `ESRI shapefile` containing points of interest near the `Bella Ciente` hotel in the city of `Longview` Texas.  A search can then be performed to return the 3 closest golf courses to the hotel.
-
->The import option for `ESRI shapefiles` is available in the SAP HANA database explorer SP 13 or in the SAP HANA database explorer included with SAP HANA Cloud.
-
-1. At the [ARCGIS Hub](https://hub.arcgis.com/search), search for **`Points of Interest in and around Longview, Texas`**.
-
-    ![Search](search.png)
-
-    >There may be a delay before the search results are returned.
-
-    Scroll through the results and choose the selection below.
-
-    ![results for Longview](search2.png)
-
-2. Choose to download the data as a `shapefile`.
-
-    ![download shapefile](download-shapefile.png)
-
-
-3. Start the import data wizard, choose **Import ESRI Shapefiles** and select the `LongViewPOI.zip` file.
-
-    ![Import ESRI Shapefile](importESRI.png)
-
-4. Choose to import the `ESRI shapefile` into the schema **HOTEL**.  
-
-    Within the downloaded `ESRI shapefile`, there is a file named `Points_of_Interest.prj`.  This file mentions the spatial reference system used by this `ESRI shapefile`.  Specify **WGS 84** as the spatial reference system.
-
-    ![Choose schema and reference system](importESRI2.png)
-
-    Additional details on spatial reference systems can be found at [SAP HANA Spatial Reference for SAP HANA Cloud](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a2ea357787c101488ecd1b725836f07.html).
-
-5. The following statements rename the imported table and then show the 3 closest golf courses to the `Bella Cliente` hotel.
-
-    ```SQL
-    RENAME TABLE "HOTEL"."Points_of_Interest" TO HOTEL.POI_LONGVIEW;
-    SELECT TOP 3 NAME, ADDRESS, LINKED_URL, /* Bella Ciente location */ NEW ST_Point('POINT (-94.71868866754436 32.504451132677)', 4326).ST_Distance(NEW ST_Point(SHAPE.ST_AsWKT(), 4326), 'kilometer') * 0.621371 as dist from HOTEL.POI_LONGVIEW WHERE FCODE = 'GOLF COURSE' order by dist;
-    ```
-
-    ![golf query](golfCourses.png)
-
-    For additional details, see [ST_Point Type](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a29e653787c1014813b997510a8cc06.html) and [ST_Distance Method](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a182aa3787c101481f996e3d419c720.html).
-
-    The latitude and longitude used in the query can be obtained for a given address via context menu for a marker in Google Maps.
-
-    ![google maps](google.png)
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Export and import schema or catalog objects)]
+[ACCORDION-BEGIN [Step 3: ](Export and import schema or catalog objects)]
 
 The following tables list the different options available in the SAP HANA database explorer to export and import catalog objects.
 
@@ -255,7 +202,9 @@ Similar to the first section, the maintenance table will be exported and re-impo
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step : 5 ](Use cloud storage during export and import (optional))]
+[ACCORDION-BEGIN [Step 4: ](Use Azure cloud storage during export and import (optional))]
+
+>SAP HANA Cloud enables users to access cloud storage for database imports and exports. Users may choose to minimize the movement of their data by selecting the same cloud provider that their SAP HANA Cloud instance is running.
 
 The following steps walk through the process of using Microsoft Azure storage service as a target for an export catalog  operation.  Similar steps can be used for other storage providers and the export data wizard.
 
@@ -326,7 +275,7 @@ R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp-----END CERTIFICATE-----' COMMENT 'Azure';
 
     The Azure Path is of the format:
 
-    \<Storage Container Name>:<generated shared access string minus the leading?><@Storage Account>/\<File Name>
+    \<Storage Account Name>:<generated shared access string minus the leading?><@Container Name>\/<File Name>
 
     An example string is shown below:
 
@@ -372,3 +321,5 @@ Congratulations! You have imported and exported data and catalog objects as well
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+---

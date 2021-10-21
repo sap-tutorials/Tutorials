@@ -50,7 +50,7 @@ Now that you have an authorization scenario, please note that, on the top right 
 
 ![Warning icon](T06 - Picture 01.png)
 
-This usually means that you don't have yet any data restrictions. If you click on the warning icon, you will be then taken to the Data Restrictions tab and see the full warning message.
+This usually means that you don't have yet any data restrictions. If you click on the warning icon, you will be then taken to Data Restrictions tab and see the full warning message.
 
 ![Warning icon](T06 - Picture 02.png)
 

@@ -272,7 +272,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
                         console.log("disconnect");
                     });
                 });
-            });u
+            });
         });
     });
     ```  

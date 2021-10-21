@@ -69,7 +69,7 @@ The ODBC Data Source Administrator lists the installed ODBC drivers and the conf
     > Note that the saved values can also be viewed using the Microsoft Windows registry editor under the key `Computer\HKEY_CURRENT_USER\Software\ODBC\ODBC.INI`.
 
 
-For additional details see [ODBC Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/7cab593774474f2f8db335710b2f5c50.html).
+For additional details see [Connect to SAP HANA via ODBC](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/66a4169b84b2466892e1af9781049836.html).
 
 [DONE]
 [ACCORDION-END]
