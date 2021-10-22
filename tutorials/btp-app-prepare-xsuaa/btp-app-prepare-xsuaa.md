@@ -70,8 +70,6 @@ Make sure you have pasted the new lines within the `"requires": {` section and n
 [ACCORDION-BEGIN [Step 3: ](Roles and scopes)]
 In the context of Cloud Foundry, a single authorization is called scope. For example, there could be a scope "Read" and a scope "Write". The scope allows a user to read or write a certain business object. Scopes can't be assigned to users directly. They're packaged into roles. For example, there could a role "Editor" consisting of the "Read" and "Write" scopes, while the role "Viewer" consists only of the "Read" scope.
 
-However, CAP recommends using roles only, and creating one-to-one mappings between roles and scopes. We defined two roles like in section [Authorization](https://cap.cloud.sap/docs/guides/authorization#user-claims) in the CAP documentation.
-
 [DONE]
 [ACCORDION-END]
 ---

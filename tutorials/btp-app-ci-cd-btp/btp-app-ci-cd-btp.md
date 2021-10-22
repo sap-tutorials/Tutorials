@@ -226,7 +226,7 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
     !![Add repository](CICD_add_repository2.png)
 
-    > If your GitHub repository is private, enter the name of the credentials in **Repository Credentials** to access your GitHub Repository that you have already created. If your GitHub repository isn't private, leave this field empty.
+    > If your GitHub repository is private, enter the name of the GitHub credentials (`github` as created in step [Configure you GitHub credentials](#configure-your-github-credentials) above) in **Repository Credentials** to access your GitHub Repository that you have already created. If your GitHub repository isn't private, leave this field empty.
 
 5. Choose **Add**.
 
@@ -248,9 +248,9 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 13. Leave the execution of the **Additional Unit Tests** switched off.
 
-14. Switch the execution of the **Release** stage on.
+14. Leave **Acceptance Stage** switched off.
 
-15. Switch the execution of the **Deploy to Cloud Foundry** step on.
+14. Under the **Release** section, switch the execution of the **Deploy to Cloud Foundry Production Space** step on.
 
     !![CAP Job](CICD_CAP_job_stages.png)
 
@@ -258,7 +258,7 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
     !![Cockpit](CP_API_Endpoint.png)
 
-    `Credentials` is the name of the credentials you have created before for SAP BTP access. In the example we used **`cfdeploy`**.
+17. For `Credentials`, choose the name of the credentials you created before in step [Configure your SAP BTP credentials](#configure-your-sap-btp-credentials). In the example we used **`cfdeploy`**.
 
     > Use a technical user instead of your personal credentials.
 

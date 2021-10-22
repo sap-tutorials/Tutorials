@@ -477,7 +477,29 @@ You have now subscribed to the SAP Launchpad service.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 17: ](Create your SAP Launchpad site)]
+[ACCORDION-BEGIN [Step 17: ](Assing SAP Launchpad role collection)]
+You need to assign your user to the `Launchpad_Admin` role collection, so you don't get an error accessing the **Launchpad Service** site later on.
+
+1. Choose **Security** **&rarr;** **Trust Configuration** on the left.
+
+2. Choose your identity provider from the list.
+        
+3. Enter your e-mail address and choose **Show Assignments**.
+        
+4. Choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
+
+    !![Add role](add_launchpad_admin_role.png)
+
+5. Open another browser or clear your browser's cache.
+
+> See section [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html) in the SAP Launchpad service's documentation for more details.
+
+
+
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 18: ](Create your SAP Launchpad site)]
 1. Choose **Services** **&rarr;** **Instances and Subscriptions** on the left.
 
 2. Locate the **Launchpad Service** under **Subscriptions** and choose **Go to Application**.
@@ -550,7 +572,7 @@ You have now subscribed to the SAP Launchpad service.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 18: ](Test your SAP Launchpad site)]
+[ACCORDION-BEGIN [Step 19: ](Test your SAP Launchpad site)]
 1. Choose **Go to site**.
 
     !![Go to site](go_to_site.png)
