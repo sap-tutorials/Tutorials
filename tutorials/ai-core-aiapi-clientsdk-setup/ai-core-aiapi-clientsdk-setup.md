@@ -38,19 +38,21 @@ pip --version
 
 [ACCORDION-BEGIN [Step 2: ](Install SAP AI API Client SDK)]
 
-`SAP-AI-API-Client-SDK`  is python package which will enable us to talk to SAP AI API.
+Python packages have format `.whl` or `.tar.gz`, both can be installed in the same way. `SAP-AI-API-Client-SDK`  is python package which will enable us to talk to SAP AI API.
 Follow the steps to install the same
 
-1. Download `.whl` for `SAP-AI-API-Client-SDK` [Download Here](https://developers.sap.com/trials-downloads.html?search=AI+Core)
+1. Download `.tar.gz` for `SAP-AI-API-Client-SDK` [Download Here](https://developers.sap.com/trials-downloads.html?search=AI+Core)
 
-2. Install .`.whl` using pip. Execute the following on terminal. *(Change the path)*
+
+2. Install `.tar.gz` using pip. Execute the following on terminal. *(Change the path)*
 
     ```BASH[1]
-    pip install <path_to_your_whl_folder>/ai-api-client-sdk-<version>.whl
+    pip install <path_to_your_whl_folder>/ai-api-client-sdk-<version>.tar.gz
     ```
     !![pip ai-api](img/pip/ai-api.png)
 
-Similarly install `PyYaml`, (*No `.whl` download required for `PyYaml`*, it would be fetched automatically from public python repository). Execute the following on terminal.
+Similarly install `PyYaml`, (*No manual download required for `PyYaml`*, it would be fetched automatically from public python repository). Execute the following on terminal.
+
 
 ```BASH
 pip install PyYaml

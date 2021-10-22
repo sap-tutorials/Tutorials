@@ -93,11 +93,9 @@ btp --help
 
 [ACCORDION-BEGIN [Step 9: ](Log in to your global account)]
 
-Now let's log in. Login is on global account level. Make sure you know the subdomain of your global account, which you find in the cockpit:
+Now let's log in. At login, you need to connect to the btp CLI server URL and you need to enter the global account subdomain.
 
-![Subdomain of the global account in the cockpit](subdomain-ga.png)
-
-You have two options for login. In both cases, the client proposes the CLI server URL for your trial, which you can confirm with ENTER.
+You have two options for login:
 
 For login on the command-line, enter:
 
@@ -109,6 +107,14 @@ For login with single sign-on through a browser, enter:
 ```Bash
 btp login --sso
 ```
+
+The server URL (https://cpcli.cf.eu10.hana.ondemand.com) is proposed at login, and you can just accept it with ENTER:
+
+![CLI server URL](server-url.png)
+
+The global account subdomain can be found in the cockpit:
+
+![Subdomain of the global account in the cockpit](subdomain-ga.png)
 
 Once you're logged into your global account, it should look like this:
 
@@ -187,7 +193,7 @@ The targeting mechanism works according to the hierarchy of entities in the glob
 
 >To find out your current target, use `btp --info`.
 
->To set the target back to the global account, use `btp -ga`.
+>To set the target back to the global account, use `btp target -ga`.
 
 [DONE]
 [ACCORDION-END]
