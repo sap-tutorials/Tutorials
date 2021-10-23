@@ -21,7 +21,7 @@ Invoice Object Recommendation is available on Trial. Find Trial limitations [her
 
 [ACCORDION-BEGIN [Step 1: ](Authorize Swagger UI)]
 
-You will use Swagger UI, via any web browser, to call the Invoice Object Recommendation APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).   
+You will use Swagger UI, via any web browser, to call the Invoice Object Recommendation service APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).   
 
 In the service key you created for Invoice Object Recommendation in the previous tutorial: [Create Service Instance for Invoice Object Recommendation](cp-aibus-ior-service-instance), you should find (outside the `uaa` section of the service key) an entry called `url` (as highlighted in the image below).
 

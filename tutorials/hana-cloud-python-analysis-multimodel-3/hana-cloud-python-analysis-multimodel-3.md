@@ -46,7 +46,7 @@ In this example, let's focus on `IS_CONNECTED`, which indicates that you don't h
 
 [ACCORDION-BEGIN [Step 2: ](Analyze and process your graph using Algorithms)]
 
-The hana-ml library provides algorithms that can be executed on the graph like the shortest path, neighbors, topological sort or weakly connected components. You can be find them in the `hana_ml.graph.algorithms` package. The execution pattern for these algorithms is always the same as given below:
+The hana-ml library provides algorithms that can be executed on the graph like the shortest path, neighbors, topological sort or weakly connected components. You can find them in the `hana_ml.graph.algorithms` package. The execution pattern for these algorithms is always the same as given below:
 
 ```Python
 result = hana_ml.graph.algorithms.<algorithm_name>(graph=<graph_instance>).execute(<parameters>)
@@ -158,7 +158,7 @@ After completion, your notebook should look like this:
 
 !![Visualize two graphs](ss-06-graph-visualize.png)
 
-In the next step, you can learn to evaluate which sections of the water network could be the causal factor of a problem reported on a specific access point (i.e. vertex). In that step you will get to know the algorithms `Neighbors`, `NeighborsSubgraphs` and `ShortestPath`.
+In the next step, you learn how to evaluate which sections of the water network could be the causal factor of a problem reported on a specific access point (i.e. vertex). In that step you will get to know the algorithms `Neighbors`, `NeighborsSubgraphs` and `ShortestPath`.
 
 
 
@@ -201,7 +201,7 @@ neighbors.vertices.head(5)
 ```
 !![Neighbors algorithm](ss-08-neighbours.png)
 
-If you want to display the vertices on the map, you need one additional step. Unfortunately, the vertices data-frame can only return vertex IDs. So, you must read the additional columns you need for visualizing separately from the database. To do so, you can use the `filter()` method of the HANA data-frame:
+If you want to display the vertices on the map, you need one additional step. Here, the vertices data-frame can only return vertex IDs. So, you must read the additional columns you need for visualizing separately from the database. To do so, you can use the `filter()` method of the HANA data-frame:
 
 ```Python
 vkc=g_storm_comp2.vertex_key_column
@@ -278,8 +278,8 @@ With that information you can visualize it again:
 ```Python
 map = KeplerGl(height=600, width=800)
 map.add_data(start_vertex, 'Start Vertex')
-map.add_data(g_waste_comp1_neighbors_upstream_edges, 'Upstream')
-map.add_data(g_waste_comp1_neighbors_downstream_edges, 'Downstream')
+map.add_data(pdf_storm_comp2_neighbors_upstream_edges, 'Upstream')
+map.add_data(pdf_storm_comp2_neighbors_downstream_edges, 'Downstream')
 map
 ```
 

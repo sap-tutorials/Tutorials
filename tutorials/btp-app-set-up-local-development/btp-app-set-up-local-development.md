@@ -286,3 +286,21 @@ After a restart of VS Code, you can check for the tools by invoking **View** **&
 [VALIDATE_1]
 [ACCORDION-END]
 ---
+[ACCORDION-BEGIN [Step 11: ](Install Yeoman)]
+[Yeoman](https://yeoman.io/) is a tool for scaffolding web apps. You'll need it if you want to carry out the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service).
+
+1. Check in a terminal whether you already have Yeoman installed:
+
+    ```Shell/Bash
+    yo --version
+    ```
+
+2. If you don't get a version number, install Yeoman:
+
+    ```Shell/Bash
+    npm install -g yo
+    ```
+
+[DONE]
+[ACCORDION-END]
+---

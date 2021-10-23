@@ -383,9 +383,10 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     ![MDK](img-5.5.png)
 
-6. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
+6. Enter your credentials to login to SAP Business Technology Platform (BTP).
 
     ![MDK](img-5.7.png)
+    ![MDK](img-5.7.1.png)
 
 7. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
@@ -438,9 +439,10 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     Tap **Start** to connect MDK client to SAP Business Technology Platform (BTP).
 
-6. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
+6. Enter your credentials to login to SAP Business Technology Platform (BTP).
 
     ![MDK](img-5.15.png)
+    ![MDK](img-5.15.1.png)    
 
 7. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
