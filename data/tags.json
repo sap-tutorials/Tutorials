@@ -15,10 +15,10 @@
             "value": "topic>abap-connectivity"
         }, {
             "name": "ABAP Development",
-            "value": "topic>abap-development"
+            "value": "programming-tool>abap-development"
         }, {
             "name": "ABAP Extensibility",
-            "value": "topic>abap-extensibility"
+            "value": "programming-tool>abap-extensibility"
         }, {
             "name": "Android",
             "value": "operating-system>android"
@@ -36,7 +36,7 @@
             "value": "topic>cloud"
         }, {
             "name": "HTML5",
-            "value": "topic>html5"
+            "value": "programming-tool>html5"
         }, {
             "name": "Identity Authentication",
             "value": "software-product>identity-authentication"
@@ -48,10 +48,10 @@
             "value": "operating-system>ios"
         }, {
             "name": "Java",
-            "value": "topic>java"
+            "value": "programming-tool>java"
         }, {
             "name": "JavaScript",
-            "value": "topic>javascript"
+            "value": "programming-tool>javascript"
         }, {
             "name": "Machine Learning",
             "value": "topic>machine-learning"
@@ -60,10 +60,10 @@
             "value": "topic>mobile"
         }, {
             "name": "NodeJS",
-            "value": "topic>node-js"
+            "value": "programming-tool>node-js"
         }, {
             "name": "OData",
-            "value": "topic>odata"
+            "value": "programming-tool>odata"
         }, {
             "name": "SAP API Business Hub",
             "value": "topic>sap-api-business-hub"
@@ -72,13 +72,13 @@
             "value": "topic>sap-community"
         }, {
             "name": "SAPUI5",
-            "value": "topic>sapui5"
+            "value": "programming-tool>sapui5"
         }, {
             "name": "Security",
             "value": "topic>security"
         }, {
             "name": "SQL",
-            "value": "topic>sql"
+            "value": "programming-tool>sql"
         }, {
             "name": "User Interface",
             "value": "topic>user-interface"
