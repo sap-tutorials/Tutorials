@@ -59,7 +59,7 @@ Now, you will use the **Set up account for Document Information Extraction** boo
 
     >If you have more than one subaccount, the booster will choose automatically the correct subaccount and space, but this will require that you click **Next** twice and **Finish** once, before being able to see the **Success** dialog box.
 
-    !![UI application](booster-success.png)
+    ![UI application](booster-success.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -69,11 +69,11 @@ Now, you will use the **Set up account for Document Information Extraction** boo
 
 1. Right click **Go to Application**, then click ***Copy link*** to save the link to be able to open the application once again in the future.
 
-    !![UI application](booster-success-app-link.png)
+    ![UI application](booster-success-app-link.png)
 
 2. Click **Go to Application**.
 
-    !![UI application](booster-success-app.png)
+    ![UI application](booster-success-app.png)
 
 You have successfully used the booster **Set up account for Document Information Extraction** to subscribe to and access the Document Information Extraction Trial UI.
 
