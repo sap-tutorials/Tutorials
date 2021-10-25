@@ -16,7 +16,7 @@ primary_tag: products>sap-hana-cloud
   - How to configure, trigger, and access alerts
   - How to use the SAP BTP Alert Notification Service (ANS) to be notified of alerts
 
-Alerts can inform you of potential issues before they occur, such as when the number of rows in a SAP HANA database table is approaching 2 billion, or of an issue currently occurring, such as a user in a data lake is locked out.  You can find details of SAP HANA database alerts which have been raised by looking at the SAP HANA cockpit Alerts app. This is known as a pull approach.
+Alerts can inform you of potential issues before they occur, such as when the number of rows in a SAP HANA database table is approaching 2 billion, or of an issue currently occurring, such as a user in a data lake is locked out.  You can find details of SAP HANA database alerts which have been raised by looking at the SAP HANA cockpit Alerts app or using the [REST API](hana-cloud-alerts-rest-api). This is known as a pull approach.
 
 Alternatively, alert details can be pushed to several configured channels such as email, Slack, or Microsoft Teams.
 

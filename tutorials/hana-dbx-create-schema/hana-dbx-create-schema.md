@@ -281,7 +281,7 @@ Partitions can be created to divide the data in a large table into smaller parts
     ```SQL
     ALTER TABLE HOTEL.RESERVATION PARTITION BY RANGE(ARRIVAL)
     ((
-        PARTITION '2000-01-01' <= VALUES < '2019-01-01',
+        PARTITION '2000-01-01' <= VALUES < '2020-01-01',
         PARTITION OTHERS
     ));
     ```
