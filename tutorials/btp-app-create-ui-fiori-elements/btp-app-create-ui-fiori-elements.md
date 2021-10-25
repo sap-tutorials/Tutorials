@@ -17,7 +17,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ## Details
 ### You will learn
  - How to create an SAP Fiori elements app on top of your previously created CAP application
- - Hot to modify the UI with OData annotations
+ - How to modify the UI with OData annotations
+ - How to make header info editable 
  - How to check the annotation files
 
 
@@ -34,9 +35,9 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 [ACCORDION-BEGIN [Step 2: ](Generate the UI with an SAP Fiori elements template)]
 1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
-    !!! tip 
-        * VS Code will automatically install `@sap/generator-fiori` if missing and open the **Template Wizard**.
-        * In case you get an error launching the Application Generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
+    > VS Code will automatically install `@sap/generator-fiori` if missing and open the **Template Wizard**.
+
+    > In case you get an error launching the Application Generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
 
 2. Choose application type **SAP Fiori elements** and floor plan **List Report Object Page**.
 
@@ -118,7 +119,60 @@ You've now already finished a full blown service and a UI application on top run
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Check the annotation files)]
+[ACCORDION-BEGIN [Step 4: ](Make header info editable)]
+Let's say that at this point you'd like to edit some of the data or create a new risk in the table. By default, the header info is not editable. Hence, you'll be able to fill in data in the main group fields `Mitigation`, `Priority`, and `Impact`, but won't be able to fill data in any of the header fields `Title` or `Description`. Let's try it out.
+
+1. Choose **Create**.
+
+    !![Create Risk](createrisk.png)
+
+2. Try and fill in data in the main group fields `Mitigation`, `Priority`, and `Impact` and choose **Create**.
+
+    !![Fill Main Data](fillriskdata.png)
+
+3. The new risk is created but it has no title and it has no description.
+
+    !![No Title Risk](notitlerisk.png)
+
+In order to make also the header fields editable, you have to change the default setting for this in the `manifest.json` file on the `Risks` application.
+
+1. Open `app/risks/webapp/manifest.json` file.
+
+2. Change the value of the setting `editableHeaderContent` to `true`:
+
+```YAML[15]
+{
+    "_version": "1.32.0",
+    "sap.app": {
+    ...
+    "sap.ui5": {
+        ...
+        "routing": {
+            ...
+            "targets": {
+                ...
+                "RisksObjectPage": {
+                    ...
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": true,
+                            "entitySet": "Risks"
+                        }
+                    }
+                }
+            }
+        },
+        ...
+}
+```
+3. Create another risk with a title and description.
+
+!![My New Risk](mynewrisk.png)
+
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 5: ](Check the annotation files)]
 Let's have a look at the new `risk-service-ui.cds` file and the annotations in there. At the beginning we see:
 
 ```JavaScript

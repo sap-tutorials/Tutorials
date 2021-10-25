@@ -22,7 +22,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create and initialize the project)]
-1. Open a terminal.
+1. Open a command line window.
 
 2. Navigate to your tutorial root directory.
 

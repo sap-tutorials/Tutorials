@@ -39,7 +39,7 @@ For the tutorial, you need a directory to develop the app and you need access to
 [ACCORDION-BEGIN [Step 2: ](Download the tutorial)]
 Downloading the tutorial gives you easy access to template files that are required for some tutorials.
 
-1. Open a terminal.
+1. Open a command line window.
 
 2. Navigate to the previously decided tutorial root directory.
 
@@ -76,7 +76,7 @@ Go to [GitHub](https://github.com/) and create a new GitHub repository.
 [ACCORDION-BEGIN [Step 4: ](Clone your GitHub repository)]
 1. Copy the repository's URL you have created before.
 
-2. Open a terminal.
+2. Open a command line window.
 
 3. Navigate to the tutorial root directory.
 
@@ -106,7 +106,7 @@ If you don't want to start from scratch, but from a specific example of the tuto
 
 1. Look-up the branch in the tutorial.
 
-2. Open a terminal.
+2. Open a command line window.
 
 3. Navigate to the tutorial root directory.
 
