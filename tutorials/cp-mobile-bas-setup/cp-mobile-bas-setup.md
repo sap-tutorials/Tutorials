@@ -47,7 +47,7 @@ SAP Business Application Studio is the next-generation web-based IDE hosted on S
 
 2. Verify the URL and **Click Enter** on your keyboard.
 
-    !![CF API End-Point](img_3_2.png)
+    !![CF API End-Point](img-3_2.png)
 
     > SAP Business Application Studio pre-populates the end-point of the environment it is running in.
 
