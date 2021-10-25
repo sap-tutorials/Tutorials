@@ -3,7 +3,7 @@ title: Register Your Website in a Space
 description: Register your website in a SAP Web Analytics space to initiate usage tracking.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-web-analytics, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
 primary_tag: products>sap-web-analytics
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01

@@ -17,8 +17,6 @@ time: 15
 - How to read thing metadata
 - How to onboard a thing and create data
 
-In [previous tutorials](iot-express-4-create-thing-model), you learned about using Thing Modeler to onboard a thing, send data to the thing, and retrieve data from the thing. Now, you'll learn to access SAP IoT APIs using Postman.
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Retrieve OAuth Token)]
@@ -457,7 +455,7 @@ Using API endpoints is one of the ways to directly ingest data for a thing. Alte
       }
 ```
 
-    >Similarly, you can retrieve thing data in various other ways such as Snapshot data, using M4 algorithm, and aggregates using OData services. For more information, see https://help.sap.com/viewer/p/SAP_IoT > Develop > SAP IoT Services.
+    >Similarly, you can retrieve thing data in various other ways such as Snapshot data, using M4 algorithm, and aggregates using OData services. For more information, see https://help.sap.com/viewer/p/SAP_IoT > Develop > SAP IoT API Reference Guide.
 
 [VALIDATE_6]
 

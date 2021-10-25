@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to access your trial account
   - What are interactive guided boosters
-  - How to use the **Set up account for Service Ticket Intelligence** booster to assign entitlements, update your subaccount, create a service instance and the associated service key for Service Ticket Intelligence.
+  - How to use the **Set up account for Service Ticket Intelligence** booster to assign entitlements, update your subaccount, create a service instance and the associated service key for the Service Ticket Intelligence service.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Go To Your Trial Account)]
@@ -100,7 +100,7 @@ Do the following to access your service instance and service key, without having
 
     !![Service Key](trial-account.png)
 
-3. Click **Subaccounts** on the navigation side bar and select **trial** to access your subaccount.
+3. Click **Account Explorer** on the navigation side bar and select **trial** to access your subaccount.
 
     !![Service Key](subaccount.png)
 

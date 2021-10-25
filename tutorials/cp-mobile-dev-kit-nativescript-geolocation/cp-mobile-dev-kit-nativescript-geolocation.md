@@ -25,9 +25,9 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 ---
 
 
-To extend the functionality, or customize the look and feel, and behavior of your client app, you can use the existing NativeScript plugins like nativescript-geolocation, nativescript-nfc etc. , add this to the client and reference it from a rule.
+To extend the functionality, or customize the look and feel, and behavior of your client app, you can use the existing `NativeScript` plugins like nativescript-geolocation, nativescript-nfc etc. , add this to the client and reference it from a rule.
 
-In this tutorial, you will use the existing NativeScript plugin nativescript-geolocation to capture the device location: latitude & longitude.
+In this tutorial, you will use the existing `NativeScript` plugin nativescript-geolocation to capture the device location: latitude & longitude.
 
 ![MDK](img_8.2.png)
 
@@ -45,21 +45,20 @@ In this tutorial, you will use the existing NativeScript plugin nativescript-geo
 
     !![MDK](img-1.3.png)
 
-4. In *Type* step, select or provide the below information and click **Next**:
+4. In *Basic Information* step, select or provide the below information and click **Finish**:
 
     | Field | Value |
     |----|----|
-    | `MDK template type`| Select `Empty` from the dropdown |
-    | `Your project name` | `MDK_Geolocation` |
-    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |    
+    | `MDK Template Type`| Select `Empty` from the dropdown |
+    | `Your Project Name` | `MDK_Geolocation` |
+    | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |        
 
     !![MDK](img-1.4.png)
 
     >The _MDK Empty Project_ template creates a Logout action, Close page action, rule and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.  
-
-5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Geolocation` project in the project explorer.
+5. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Geolocation` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -82,8 +81,8 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 3. Replace the generated snippet with below code.
 
     ```JavaScript
-    import * as geolocation from "nativescript-geolocation";
-    import { Accuracy } from "tns-core-modules/ui/enums";
+    import * as geolocation from "@nativescript/geolocation";
+    import { CoreTypes } from "@nativescript/core";
     export default function GetCoordinates(context) {
         var logger = context.getLogger();
         console.log("Current Log Level: " + logger.getLevel());
@@ -94,7 +93,7 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
         }
         // Get current location with high accuracy
         return geolocation.getCurrentLocation({
-            desiredAccuracy: Accuracy.high, //This will return the finest location available
+            desiredAccuracy: CoreTypes.Accuracy.high, //This will return the finest location available
             updateDistance: 5, //Update distance filter in meters.
             timeout: 11000 //How long to wait for a location in ms.
         }).then(function (loc) {
@@ -159,11 +158,10 @@ In `GetCoordinates.js` file, you referred `nativescript-geolocation` and `tns-co
 
     !![MDK](img-3.6.png)
 
-3. Include below references in `MDK.bundlerExternals` and save the changes.
+3. Include below references in `mdk.bundlerExternals` and save the changes.
 
     ```JSON
-    "nativescript-geolocation",
-    "tns-core-modules/ui/enums"
+    "@nativescript/geolocation"
     ```
 
      !![MDK](img-3.7.png)        
@@ -189,7 +187,11 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 4. Select application from **Mobile Services**.
 
-    !![MDK](img-5.3.png)   
+    !![MDK](img-5.3.png)
+
+    If you want to enable source for debugging the deployed bundle, then choose **Yes**.
+
+    !![MDK](img-4.4.png)    
 
     You should see **Deploy to Mobile Services successfully!** message.
 
@@ -200,7 +202,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 [ACCORDION-BEGIN [Step 6: ](Add NativeScript plugin and External dependencies in your local .mdkproject)]
 
-In order to use the existing NativeScript plugin in MDK client, you will need to first add it in `.mdkproject` and then create your branded MDK client.
+In order to use the existing `NativeScript` plugin in MDK client, you will need to first add it in `.mdkproject` and then create your branded MDK client.
 
 1. Make sure that you have already completed steps 1 to 3 from [this](cp-mobile-dev-kit-build-client) tutorial.
 
@@ -210,9 +212,9 @@ In order to use the existing NativeScript plugin in MDK client, you will need to
     {
       "AppName": "DemoSampleApp",
       "AppVersion": "1.0.0",
-      "BundleID": "com.sap.mdk.demo",
-      "Externals": [],
-      "NSPlugins": ["nativescript-geolocation"],
+      "BundleID": "Enter your Bundle ID",
+      "Externals": ["@nativescript/geolocation"],
+      "NSPlugins": ["@nativescript/geolocation"],
       "UrlScheme": "mdkclient"
     }
     ```
@@ -249,7 +251,9 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
 
 [OPTION BEGIN [Android]]
 
-1. Follow steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client and run it in your device.
+1. Create your MDK client either using MDK SDK by following the steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial OR using SAP Cloud Build Service by following [this](cp-mobile-dev-kit-cbs-client) tutorial.
+
+and run it in your device.
 
 2. Once you have accepted the app update, allow your app to access your location.
 
@@ -263,7 +267,7 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
 
 [OPTION BEGIN [iOS]]
 
-1. Follow steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client and run it in your device.
+1. Create your MDK client either using MDK SDK by following the steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial OR using SAP Cloud Build Service by following [this](cp-mobile-dev-kit-cbs-client) tutorial.
 
 2. Once you have accepted the app update, allow your app to access your location.
 

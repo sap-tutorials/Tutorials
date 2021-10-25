@@ -21,13 +21,13 @@ The core functionality of Business Entity Recognition is to automatically detect
 
 After performing step 1 of the tutorial [Detect and Highlight Entities from Unstructured Text with Pre-trained Models](cp-aibus-ber-swagger-ui) to access and authorize the Business Entity Recognition Swagger UI, use the **POST /datasets** endpoint to create a dataset that will be used to train a custom model to extract entities from the text.
 
-1. Click the endpoint name to expand it. 
+1. Click the endpoint name to expand it.
 
 2. Click **Try it out**.
 
     !![BER](png-files/post-datasets-1.png)
 
-3. In **payload**, enter a `description` for your dataset, `"Tutorial dataset"`, for example.
+3. In **payload**, enter a `description` for your dataset, `"Tutorial dataset"`, for example. Leave the parameter `datasetType` as it is.
 
 4. Click **Execute**.
 

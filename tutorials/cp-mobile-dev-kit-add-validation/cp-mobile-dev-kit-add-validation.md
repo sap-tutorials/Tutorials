@@ -100,6 +100,7 @@ Now, that you have created the validation rule, you will add it to the Update ac
 [VALIDATE_3]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 4: ](Deploy the application)]
 
 Deploy the updated application to your MDK client.

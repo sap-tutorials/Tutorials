@@ -18,19 +18,6 @@ primary_tag: products>sap-data-warehouse-cloud
   - How to assign roles to users
   - How to edit users in bulk
 
-  This tutorial is part of a mission, in which you try to help Best Run Bikes to to get a holistic view of their sales data by using the power of SAP Data Warehouse Cloud. You will get the sales data of Best Run Bikes and it is your mission to use the features of SAP Data Warehouse Cloud to help the bike suppliers make the best possible business decisions.
-
-  This mission consists of 8 modules that contain the necessary steps you need to follow in your mission to help Best Run Bikes:
-
-  1. [Sign up for trial.](data-warehouse-cloud-1-begin-trial)
-  2. [Get to know the SAP Data Warehouse Cloud interface](data-warehouse-cloud-2-interface)
-  3. **You are here ->** [Add users and assign roles](data-warehouse-cloud-3-add-users)
-  4. [Create your Space](data-warehouse-cloud-4-spaces)
-  5. [Import your datasets](data-warehouse-cloud-5-import-dataset)
-  6. [Create an entity relationship model](data-warehouse-cloud-6-entityrelationship-model)
-  7. [Create a graphical view model](data-warehouse-cloud-7-graphicalview)
-  8. [Define measures, business semantics and preview your data](data-warehouse-cloud-8-define-measures)
-
   You can also follow the steps in this tutorial by watching this video
 
   <iframe width="560" height="315" src="https://www.youtube.com/embed/7i0rUE5d78s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -74,19 +61,19 @@ The next step is to assign roles to your users. The following standard roles are
 •	**System Owner** - Includes all user privileges to allow unrestricted access to all areas of the application. Only one user in the system can be assigned to this role, and it must always be assigned to a user.
 
 
-•	**DW Administrator** - Can create users and spaces and has full privileges across the whole of the SAP Data Warehouse Cloud tenant.
+•	**DW Administrator** - Can create users and Spaces and has full privileges across the whole of the SAP Data Warehouse Cloud tenant.
 
 
-•	**DW Space Administrator** - Manages all aspects of their spaces and can create data access controls and use the Content Network
+•	**DW Space Administrator** - Manages all aspects of their Spaces and can create data access controls and use the Content Network
 
 
-•	**DW Integrator** - Can create and edit connections, database users, and associate HDI containers in spaces of which they are a member.
+•	**DW Integrator** - Can create and edit connections, database users, and associate HDI containers in Spaces of which they are a member.
 
 
-•	**DW Modeler** - Can create and edit objects in the Data Builder and Business Builder in spaces of which they are a member.
+•	**DW Modeler** - Can create and edit objects in the Data Builder and Business Builder in Spaces of which they are a member.
 
 
-•	**DW Viewer** - Can view objects in spaces of which they are a member.
+•	**DW Viewer** - Can view objects in Spaces of which they are a member.
 
 You can either click on the two squares icon to see all the available user roles or start typing in the role in order to select it. Once you select all the relevant roles for your user, click on **OK** to confirm.
 
@@ -108,6 +95,15 @@ Once you're done, don't forget to click on the save icon on the top right of you
 If you wish to add multiple users at once, you have the option to import from a CSV. Simply click on the **Import Users** icon on the top right and upload your CSV file. It is also possible to export multiple users into a CSV file by clicking on the Export Users icon.
 
 ![Bulk Users](T03-Picture5.png)
+
+> **Well done!**
+
+> You have completed this tutorial and now know how to add users and assign them roles in SAP Data Warehouse Cloud.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]

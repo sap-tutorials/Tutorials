@@ -4,8 +4,8 @@ description: Sign up for a free trial account on SAP BTP.
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
-primary_tag: products>sap-cloud-platform
-tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner ]
+primary_tag: products>sap-business-technology-platform
+tags: [ products>sap-business-technology-platform, topic>cloud, tutorial>beginner ]
 time: 15
 ---
 
@@ -37,6 +37,7 @@ If you don't need to register with sap.com, you can skip to Step 4. Make sure to
 **If you don't have an account** you will see a **register dialog** on the left-hand side of the dialog. Fill in the required fields, and click **Submit**.
 
 !![register dialog](option-register.png)
+
 
 You will see a message that an activation link has been sent to you.
 

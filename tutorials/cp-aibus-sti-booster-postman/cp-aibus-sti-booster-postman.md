@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to access your trial account
   - What are interactive guided boosters
-  - How to use the **Set up account for Service Ticket Intelligence** booster to assign entitlements, update your subaccount, create a service instance, and also to download Postman environment and collection JSON sample code files.
+  - How to use the **Set up account for Service Ticket Intelligence** booster to assign entitlements, update your subaccount, create a service instance, and also to download Postman environment and collection JSON sample code files for the Service Ticket Intelligence service.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Go To Your Trial Account)]

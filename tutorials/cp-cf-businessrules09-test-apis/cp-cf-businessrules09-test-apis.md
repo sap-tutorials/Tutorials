@@ -17,9 +17,9 @@ author_profile: https://github.com/VandanaVasudevan
   - How to use Business Rules APIs
   - How to test Business Rules project
 
-Generally, after a rule service is deployed to a custom application, the rule service should be invoked to implement the decision logic. In this tutorial, we will simulate the rule service invocation by invoking the rule service from SAP API Business Hub.
+After a rule service is deployed to a custom application, the rule service should be invoked to implement the decision logic. In this tutorial, we will simulate the rule service invocation by invoking the rule service from SAP API Business Hub.
 
-Business Rules REST APIs are available on SAP API Business Hub which lets you execute rules from custom applications and external REST Clients. Since these APIs are based on OAuth 2.0 authorization, you need the client credentials to access them. You get the client credentials from the service key of the business rules service instance.
+Business Rules REST APIs are available on SAP API Business Hub which lets you execute rules from custom applications and external REST clients. Since these APIs are based on OAuth 2.0 authorization, you need the client credentials to access them. You get the client credentials from the service key of the business rules service instance.
 
 [ACCORDION-BEGIN [Step 1: ](Log on to SAP API Business Hub)]
 
@@ -44,7 +44,7 @@ Business Rules REST APIs are available on SAP API Business Hub which lets you ex
 
 [ACCORDION-BEGIN [Step 2: ](Determine the service key parameters to configure environment)]
 
-To try out the APIs, you need to configure the trial environment on SAP API Business Hub. The communication between a REST client (SAP API Business Hub in this case) and the service is achieved via a service instance. You can use service keys to generate credentials to communicate directly with a service instance. Since Business Rules APIs are based on OAuth 2.0 authentication, you need to configure the environment using the service key parameters or the client credentials.
+To try out the APIs, you need to configure your trial environment on SAP API Business Hub. The communication between a REST client (SAP API Business Hub in this case) and the service is achieved via a service instance. You can use the service keys to generate credentials to communicate with a service instance. Since Business Rules APIs are based on OAuth 2.0 authentication, you need to configure the environment using the service key parameters or the client credentials.
 
 1. Log on to [SAP BTP Cockpit](https://cockpit.hanatrial.ondemand.com/).
 
@@ -52,7 +52,7 @@ To try out the APIs, you need to configure the trial environment on SAP API Busi
 
     ![Log on screen](service_param1.png)
 
-3. Choose your trial subaccount.
+3. Choose the trial subaccount where you have the Workflow Management service subscription.
 
     ![subaccount](service_param2.png)
 
@@ -110,9 +110,9 @@ To try out the APIs, you need to configure the trial environment on SAP API Busi
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Invoke a rule service)]
+[ACCORDION-BEGIN [Step 4: ](Invoke the rule services and observe the results in the API response)]
 
-1. Fetch the rule service ID from Manage Rule Projects application. This is required for the API JSON payload.
+1. Fetch the ID of the **`DetermineEquipmentRuleservice`** rule service from Manage Rule Projects application. This is a required parameter in the body JSON payload of the API.
 
     In the **Rule services** tab, choose **Settings** icon.
 
@@ -122,7 +122,7 @@ To try out the APIs, you need to configure the trial environment on SAP API Busi
 
     ![Configure environment](testing10.png)
 
-    Copy the ID from the rule service.
+    Copy the ID of the **`DetermineEquipmentRuleservice`** rule service.
 
     ![Configure environment](testing11.png)
 
@@ -137,26 +137,44 @@ To try out the APIs, you need to configure the trial environment on SAP API Busi
             "IsFullTimeEmployee": true,
             "countryofCompany": "USA",
             "jobTitle": "Engineer II",
-             "company": "2000"
+             "company": "ACE_USA"
            }
         }
       ]
     }
     ```
 
-    Then choose **Execute**.
+    Then choose **Run**.
 
     ![Configure environment](testing12.png)
 
+3. Observe the API response in the response body of the API. You can view the equipment assigned to the employee.
 
-[DONE]
-[ACCORDION-END]
+    ![Configure environment](testing13.png)
 
-[ACCORDION-BEGIN [Step 5: ](Observe the API response)]
 
-You can view the equipment assigned to the employee in the response body of the API.
+4. Similarly, fetch the ID of **`EquipmentApprovalRuleservice`** from Manage Rule Projects application like in Step 3.1.
 
-  ![Configure environment](testing13.png)
+5. Paste the rule service ID in place of **`<rule-service-ID>`** in the following JSON payload and copy it to the **Body** of the same API:
+
+    ```JSON
+        {
+      "RuleServiceId": "<rule-service-ID>",
+      "Vocabulary": [
+        {
+          "Equipment": {
+            "TotalAmount": 780
+           }
+        }
+      ]
+    }
+    ```
+ 6. Observe the API response in the response body of the API.
+
+    ![Configure environment](testing14.png)
+
+    You also try changing the rule logic or the JSON payload values to see different results.
+
 
 [VALIDATE_1]
 

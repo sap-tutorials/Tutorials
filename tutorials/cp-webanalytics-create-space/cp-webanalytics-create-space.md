@@ -3,7 +3,7 @@ title: Create an SAP Web Analytics Space
 description: Create a space to register your website with SAP Web Analytics.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-web-analytics, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
 primary_tag: products>sap-web-analytics
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01

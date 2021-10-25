@@ -1,8 +1,8 @@
 ---
-title: Connect SAP Private Link Service to Microsoft Azure Private Link Service
+title: Connect SAP Private Link Service (Beta) to Microsoft Azure Private Link Service
 author_profile: https://github.com/AnnikaGonnermann
 description: Connect SAP Private Link service (Beta) to Microsoft Azure Private Link Service with Cloud Foundry CLI and bind the service instance to your app or create a service key.
-auto_validation: validation
+auto_validation: true
 time: 10
 tags: [tutorial>beginner, software-product-function>sap-btp-cockpit, tutorial>license, software-product-function>sap-private-link-service, software-product-function>sap-btp-command-line-interface]
 primary_tag: software-product-function>sap-private-link-service
@@ -25,7 +25,7 @@ SAP Private Link service (Beta) establishes a private connection between applica
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Check offerings of SAP Private Link Service )]
+[ACCORDION-BEGIN [Step 1: ](Check offerings of SAP Private Link Service (Beta))]
 
 After you've logged in as described in [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli), access the **Service Marketplace** of SAP BTP. Open a command prompt on your computer and type in the following:
 
@@ -103,9 +103,11 @@ status:    create in progress
 message:   Please approve the connection for Private Endpoint 'endpoint-name' in your Azure portal
 ```
 
+>  Execute this command again, in case there's no change in the current status. If you receive an error message, go back to the previous steps.
+
 Copy the *endpoint-name* from the success message. You need it in the next step.
 
-> Execute this command again, in case there's no change in the current status. If you receive an error message, go back to the previous steps.
+> **Security Info**: In a scenario in which the initiator of the private link connection doesn't have access to the Azure Portal to approve the newly private endpoint connection him- or herself, please reach out to the person responsible for approving the connection and share the endpoint name responsibly.
 
 [DONE]
 [ACCORDION-END]
@@ -122,12 +124,14 @@ Return to Microsoft Azure portal:
 
 You should now receive a success message that the approval is pending.
 
+> **Security Info**: In a scenario in which the person that approves the private endpoint connection wasn't the one that created the Private Link service in the first place, please verify that the connection originated from a trustworthy origin (for instance, a colleague asking for approval via e-mail). This verification process prevents malicious misuse of resource ids.
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Check status of private link)]
 
-To check the current status of the newly created service instance, you need the name of your service instance (in this example `privatelink-test). Type in the following:
+To check the current status of the newly created service instance, you need the name of your service instance (in this example `privatelink-test`). Type in the following:
 
 ```Shell/Bash
 cf service privatelink-test

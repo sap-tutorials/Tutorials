@@ -49,7 +49,7 @@ Entitlements and quota are managed at the global account and directory levels, d
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Assign entitlements)]
-1. In you global account, navigate to **Entitlements** > **Entity Assignments**.
+1. In your global account, navigate to **Entitlements** > **Entity Assignments**.
 2. In the **Select Entities** selection, choose the directory or subaccount that you want to assign entitlements to.
 3. Click **Go**.
 
