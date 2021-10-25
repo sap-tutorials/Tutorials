@@ -14,6 +14,7 @@ primary_tag: products>sap-business-technology-platform
  - You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)).
  - You have a subaccount in the Cloud Foundry environment, with Amazon Web Services (AWS) as provider and the Europe (Frankfurt) region.
 
+> Please be aware that temporarily new trial accounts cannot be created. You can only work with this tutorial if you already have an existing trial account for SAP Omnichannel Promotion Pricing.
 
 ## Details
 ### You will learn
