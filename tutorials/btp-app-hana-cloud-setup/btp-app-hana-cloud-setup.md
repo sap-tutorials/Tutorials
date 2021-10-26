@@ -47,14 +47,14 @@ To start with this tutorial use the result in the [`cap/roles`](https://github.c
         "name": "cpapp",
         ...
         "cds": {
-        "requires": {
-            "db": {
-            "kind": "sql"
+            "requires": {
+                "db": {
+                "kind": "sql"
+                }
+            },
+            "hana": {
+                "deploy-format": "hdbtable"
             }
-        },
-        "hana": {
-            "deploy-format": "hdbtable"
-        }
         }
     }
     ```

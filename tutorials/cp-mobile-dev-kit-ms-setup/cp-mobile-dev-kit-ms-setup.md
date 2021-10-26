@@ -127,6 +127,8 @@ MDK Web application accesses the data sources via BTP destination. You will now 
 
 5. Download the zip file from [here](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/0-Set-Up-for-the-Mobile-Development-Kit/SampleServiceV2.zip) and unzip it on your machine.
 
+    !![MDK](img-4.5.png)
+
 6. Navigate to ![Connectivity](icon-connectivity.png) **Connectivity** **&rarr;** **Destinations** to create a BTP destination, click **Import Destination** to import the extracted file and provide the required information and click **Save**.
 
     | Field | Value |
@@ -134,7 +136,7 @@ MDK Web application accesses the data sources via BTP destination. You will now 
     | `URL` | Paste the URL from step 4.2 |
     | `Client ID` | Paste the value from step 4.4  |
     | `Client Secret` | Paste the value from step 4.4 |
-    | `Token Service URL` | Paste the URL from step 4.4 and add **`/oauth/token`** suffix at the end |
+    | `Token Service URL` | Replace the Token URL placeholder with the URL from step 4.4 |
     | `Use Default JDK truststore` | Select the checkbox if not selected before |
 
     !![MDK](img-4.4.png)
