@@ -53,9 +53,14 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 In this tutorial, you will learn how to start preparations to create a calculation view by setting up a project in SAP Business Application Studio and establishing a connection to your database.
 
-You can follow the steps in this tutorial also by watching this video.
-
+> You can follow the steps in this tutorial also by watching this video:
+>
 <iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_rwt2s12t/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
+>
+> ### About this video
+>
+> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
+
 
 ---
 
@@ -75,7 +80,7 @@ To create your first development space, follow these steps:
 
 2.	On the top right-hand corner, click on **Create Dev Space**.
 
-    !![Create Dev Space](ss-01-sql-endpoint.gif)
+    !![Create Dev Space](LT01_07_01 Create Dev Space_resized.png)
 
 3.	Give your development space a name. You can choose any name you prefer, but you cannot use spaces in this name.
 

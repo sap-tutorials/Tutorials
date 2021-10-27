@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Set Up Local Development Using VS Code
-description: This tutorial shows you how to get started using VS Code as an editor. 
+description: This tutorial shows you how to get started using VS Code as an editor.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
@@ -37,7 +37,7 @@ You can choose the editor to develop your end-to-end CAP application. You can us
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Command line interpreters)]
-This tutorial contains a number of command line snippets that need to be pasted into a terminal. All snippets listed for macOS/Linux or without platform information can be executed in the `bash` or `zsh`, which are the default shells for these platforms. The Windows snippets are for the Windows Command Line and not for the PowerShell. Windows users are suggested to use the `Git BASH` instead, which is part of the Git for Windows installation and contains the basic UNIX command line tools. In the `Git BASH`, use the *macOS/Linux* snippets of the tutorial. VS Code supports the use of the `Git BASH` for the integrated terminal as well.
+This tutorial contains a number of command line snippets that need to be pasted into a command line window. All snippets listed for macOS/Linux or without platform information can be executed in the `bash` or `zsh`, which are the default shells for these platforms. The Windows snippets are for the Windows Command Line and not for the PowerShell. Windows users are suggested to use the `Git BASH` instead, which is part of the Git for Windows installation and contains the basic UNIX command line tools. In the `Git BASH`, use the *macOS/Linux* snippets of the tutorial. VS Code supports the use of the `Git BASH` for the integrated command line window (called **Terminal** in VS Code) as well.
 
 [DONE]
 [ACCORDION-END]
@@ -45,7 +45,7 @@ This tutorial contains a number of command line snippets that need to be pasted 
 [ACCORDION-BEGIN [Step 3: ](Install Git)]
 Git is the version control system that you need to download the files of this tutorial but also to develop anything in collaboration with others really.
 
-Check whether you already have Git installed. Open a terminal and execute the following command.
+Check whether you already have Git installed. Open a command line window and execute the following command.
 
 ```Shell/Bash
 git version
@@ -65,7 +65,7 @@ If not, go to [Git downloads](https://git-scm.com/downloads), pick the installer
 [ACCORDION-BEGIN [Step 4: ](Install Node.js)]
 Node.js is the JavaScript runtime the CAP backend part of the application runs on and that is needed for some of the tools involved to develop the application.
 
-In case you don't know whether you have Node.js installed and whether it has the right version (>=14), open a terminal and execute the following command.
+In case you don't know whether you have Node.js installed and whether it has the right version (>=14), open a command line window and execute the following command.
 
 ```Shell/Bash
 node -v
@@ -87,7 +87,7 @@ v14.x.x
 [ACCORDION-BEGIN [Step 5: ](Install the SAPUI5 command line interface)]
 A Node.js version 14 or higher is required to install the SAPUI5 CLI. See [SAPUI5 CLI](https://sap.github.io/ui5-tooling/pages/CLI/) for more details.
 
-1. Check in a terminal whether you already have the UI5 CLI installed.
+1. Check in a command line window whether you already have the UI5 CLI installed.
 
     ```Shell/Bash
     ui5 --version
@@ -113,7 +113,7 @@ A Node.js version 14 or higher is required to install the SAPUI5 CLI. See [SAPUI
 
 If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
 
-You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform. 
+You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
 
 1. Check whether the package manager `brew` is installed on your machine.
 
@@ -141,7 +141,7 @@ You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudf
 
 If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
 
-You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform. 
+You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
 
 Download a binary installer as described [here](https://github.com/cloudfoundry/cli#installers-and-compressed-binaries).
 
@@ -151,7 +151,7 @@ Download a binary installer as described [here](https://github.com/cloudfoundry/
 
 If you don't intend to deploy the service and apps to SAP BTP, you can skip this installation step.
 
-You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform. 
+You need the [Cloud Foundry command line interface (CF CLI)](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) if you want to use the services and applications that you create in this tutorial on SAP BTP. In this case, you need the CF CLI to deploy the services and apps to the platform.
 
 Follow the steps described [here](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html#pkg-linux).
 
@@ -164,7 +164,7 @@ Follow the steps described [here](https://docs.cloudfoundry.org/cf-cli/install-g
 [ACCORDION-BEGIN [Step 7: ](Add CAP tooling)]
 CAP provides you with all the tools to create your data model with entities and your services. It helps you tremendously to get these services running locally during development with an incredible speed. It also creates the connection to both local databases and databases in the cloud (SAP HANA). It comes with different tooling that is used in this tutorial. You can see the details in the [CAP documentation](https://cap.cloud.sap/docs/get-started/in-a-nutshell).
 
-1. Install CDS development kit globally in a terminal.
+1. Install CDS development kit globally in a command line window.
 
     ```Shell/Bash
     npm i -g @sap/cds-dk
@@ -176,7 +176,7 @@ CAP provides you with all the tools to create your data model with entities and 
 
 2. To verify that the installation was successful, run `cds` without arguments.
 
-    This lists the available `cds` commands. 
+    This lists the available `cds` commands.
 
 3. Check what versions of the CDS libraries have been installed.
 
@@ -196,15 +196,15 @@ VS Code is used to edit the code of the application project and it comes with a 
 
 In case you don't have it, go to the [Visual Studio Code](https://code.visualstudio.com/) homepage and find the version appropriate for your operating system.
 
-Download the package for macOS and perform the following steps as described [here](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac). To start it like any other application and to start it from the terminal on MacOS, follow these steps:
+Download the package for macOS and perform the following steps as described [here](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac). To start it like any other application and to start it from the command line window on MacOS, follow these steps:
 
 1. Move VS Code from your **Download** folder to the **Applications** folder.
 
 2. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P**) and type `shell command` to find the Shell Command: `Install 'code' command in PATH`.
 
     ![shell command](shell_command.png)
-          
-3. Restart VS Code for the new `$PATH` value to take effect.   
+
+3. Restart VS Code for the new `$PATH` value to take effect.
 
 
 [OPTION END]
@@ -286,37 +286,20 @@ After a restart of VS Code, you can check for the tools by invoking **View** **&
 [VALIDATE_1]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 11: ](Install SAPUI5 freestyle app templates using Yeoman)]
-SAPUI5 comes with templates that kick start your development for SAPUI5 freestyle app development. You need these if you want to carry out the tutorial [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5).
-SAPUI5 templates are based on [Yeoman](https://yeoman.io/), a tool for scaffolding web apps. You need to install it first.
+[ACCORDION-BEGIN [Step 11: ](Install Yeoman)]
+[Yeoman](https://yeoman.io/) is a tool for scaffolding web apps. You'll need it if you want to carry out the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service).
 
-1. Check in a terminal whether you already have Yeoman installed.
+1. Check in a terminal whether you already have Yeoman installed:
 
     ```Shell/Bash
     yo --version
     ```
 
-2. If you don't get a version number, install Yeoman.
+2. If you don't get a version number, install Yeoman:
 
     ```Shell/Bash
     npm install -g yo
     ```
-
-3. Now, you can go ahead and install the [SAPUI5 templates](https://www.npmjs.com/package/@sapui5/generator-sapui5-templates).
-
-    ```Shell/Bash
-    npm install -g @sapui5/generator-sapui5-templates
-    ```
-
-4. Test whether everything works.
-
-    ```Shell/Bash
-    yo --generators
-    ```
-
-If the **@sapui5/sapui5-templates** generator is listed in the terminal, you're ready to go.
-
-![Generator](yeoman_generator.png)
 
 [DONE]
 [ACCORDION-END]
