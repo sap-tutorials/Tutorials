@@ -231,7 +231,7 @@ The time filter is on the right top of the screen. Don't forget to choose *Refre
 
 
 [DONE]
-The result of this tutorial can be found in the [`cp/logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/logging) branch.
+The result of this tutorial can be found in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 

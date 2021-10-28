@@ -27,7 +27,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to access the application with a user and password
 
 
-To start with this tutorial use the result in the [`cap/launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/launchpage) branch.
+To start with this tutorial use the result in the [`launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpage) branch.
 
 ---
 
@@ -153,7 +153,7 @@ When accessing the `Risks` service in your browser, you get a basic auth popup n
 
 
 [DONE]
-The result of this tutorial can be found in the [`cap/roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/roles) branch.
+The result of this tutorial can be found in the [`cap-roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-roles) branch.
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 

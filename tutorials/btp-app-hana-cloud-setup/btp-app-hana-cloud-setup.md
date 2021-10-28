@@ -26,7 +26,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to add SAP HANA client to your project
 
 
-To start with this tutorial use the result in the [`cap/roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/roles) branch.
+To start with this tutorial use the result in the [`cap-roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-roles) branch.
 
 ---
 
@@ -308,7 +308,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
 
 [DONE]
-The result of this tutorial can be found in the [`cp/hana`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/hana) branch.
+The result of this tutorial can be found in the [`hana-cloud-setup`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/hana-cloud-setup) branch.
 
 
 [ACCORDION-END]
