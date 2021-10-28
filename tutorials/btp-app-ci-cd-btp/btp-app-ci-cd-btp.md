@@ -40,6 +40,11 @@ For more information on how to configure and run predefined pipelines for your o
 
     [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
+    > When running the tutorial with a trial account, please have in mind the following considerations:
+
+    > * Choose host region `cf-us10` when creating a new trial account. This will ensure that the SAP Continuous Integration and Delivery service is available to your account.
+    > * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, the SAP Continuous Integration and Delivery service might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP Cockpit.
+
 1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
 
 2. Choose **Account Explorer**.

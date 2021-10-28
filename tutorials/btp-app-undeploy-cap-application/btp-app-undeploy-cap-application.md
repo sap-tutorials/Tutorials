@@ -28,9 +28,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
-
  - How to undeploy your Multi-Target Application (MTA)
-
+ 
 
 ---
 

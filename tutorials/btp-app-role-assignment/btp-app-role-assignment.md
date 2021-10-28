@@ -25,11 +25,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Add the SAP Launchpad Service](btp-app-launchpad-service)
 
 ## Details
-
 ### You will learn
-
-- How to assign roles to users
-
+ - How to assign roles to users
+ 
 
 ---
 
