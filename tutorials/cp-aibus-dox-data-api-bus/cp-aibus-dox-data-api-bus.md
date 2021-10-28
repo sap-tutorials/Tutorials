@@ -3,7 +3,7 @@ title: Use Machine Learning to Enrich Business Data with Swagger UI
 description: Create, update, list and delete enrichment data using the Data API business entity from Document Information Extraction, one of the SAP AI Business Services in SAP Business Technology Platform (SAP BTP).
 auto_validation: true
 time: 25
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
@@ -119,32 +119,12 @@ Use the **POST /data/jobs** endpoint to add your own master data records to the 
           {
              "id":"BE0001",
              "name":"Sliced Invoices",
-             "accountNumber":"",
-             "address1":"123 Somewhere Street Your AZ 12345 123 Somewhere St Melbourne, VIC 3000",
-             "address2":"",
-             "city":"",
-             "countryCode":"",
-             "postalCode":"",
-             "state":"",
-             "email":"",
-             "phone":"",
-             "bankAccount":"",
-             "taxId":""
+             "address1":"123 Somewhere Street Your AZ 12345 123 Somewhere St Melbourne, VIC 3000"             
           },
           {
              "id":"BE0002",
              "name":"Sliced",
-             "accountNumber":"",
-             "address1":"123 Somewhere Street Your AZ 12345 123 Somewhere St Melbourne, VIC 3000",
-             "address2":"",
-             "city":"",
-             "countryCode":"",
-             "postalCode":"",
-             "state":"",
-             "email":"",
-             "phone":"",
-             "bankAccount":"",
-             "taxId":""
+             "address1":"123 Somewhere Street Your AZ 12345 123 Somewhere St Melbourne, VIC 3000"            
           }
        ]
     }
