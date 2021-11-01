@@ -20,7 +20,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to add value help to select a supplier
 
 
-To start with this tutorial use the result in the [`ext-service-add`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-add) branch.
+To start with this tutorial use the result in the [`ext-service-add-consumption`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-add-consumption) branch.
 
 ---
 
@@ -66,7 +66,7 @@ To start with this tutorial use the result in the [`ext-service-add`](https://gi
 [ACCORDION-BEGIN [Step 2: ](Handle expands to remote entities)]
 Add the following code to your `srv/risk-service.js` file to handle the expands for supplier data of `Risks`:
 
-```JavaScript[11-46]
+```JavaScript[11-49]
     this.after('READ', 'Risks', risksData => {
         const risks = Array.isArray(risksData) ? risksData : [risksData];
         risks.forEach(risk => {
@@ -79,6 +79,7 @@ Add the following code to your `srv/risk-service.js` file to handle the expands 
     });
     // Risks?$expand=supplier
     this.on("READ", 'Risks', async (req, next) => {
+        if (!req.query.SELECT.columns) return next();
         const expandIndex = req.query.SELECT.columns.findIndex(
             ({ expand, ref }) => expand && ref[0] === "supplier"
         );
@@ -88,10 +89,12 @@ Add the following code to your `srv/risk-service.js` file to handle the expands 
         req.query.SELECT.columns.splice(expandIndex, 1);
 
         // Make sure supplier_ID will be returned
-        if (!req.query.SELECT.columns.find(
-                column => column.ref.find((ref) => ref == "supplier_ID"))
-        )
-        req.query.SELECT.columns.push({ ref: ["supplier_ID"] });
+        if (!req.query.SELECT.columns.indexOf('*') >= 0 &&
+            !req.query.SELECT.columns.find(
+                column => column.ref && column.ref.find((ref) => ref == "supplier_ID"))
+        ) {
+            req.query.SELECT.columns.push({ ref: ["supplier_ID"] });
+        }
 
         const risks = await next();
 
@@ -268,7 +271,7 @@ The last thing you add is the value help to select a supplier from the remote sy
     !![Supplier Value List](supplier_value_list.png)
 
 [DONE]
-The result of this tutorial can be found in the [`ext-service-ui`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-ui) branch.
+The result of this tutorial can be found in the [`ext-service-consume-ui`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-consume-ui) branch.
 
 
 [ACCORDION-END]

@@ -3,7 +3,7 @@ title: Create an Application for Producing Messages
 description: Develop and deploy a basic Node.js-based messaging application for sending messages to an SAP Event Mesh Queue.
 time: 20
 auto_validation: true
-tags: [ tutorial>beginner, topic>node-js, topic>java, products>sap-business-technology-platform, tutorial>license]
+tags: [ tutorial>beginner, programming-tool>node-js, products>sap-business-technology-platform, tutorial>license]
 primary_tag: products>sap-event-mesh
 ---
 

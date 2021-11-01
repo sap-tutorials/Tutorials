@@ -84,9 +84,9 @@ Depending on when you created the SAP BTP Trial account, this subscription might
 
     >For the trial environment, SAP Business Application Studio is only available on:
 
-    > - Amazon Web Services (AWS) - Europe (Frankfurt) or US East (VA) regions.
+    > - Amazon Web Services (AWS) - US East (VA) region (US10 trial).
 
-    > - Microsoft Azure - Singapore region.
+    > - Microsoft Azure - Singapore region (AP21 trial).
 
     >An updated list of regions is available in [SAP Discovery Center > Service Plan > Trial](https://discovery-center.cloud.sap/#/serviceCatalog/business-application-studio?tab=service_plan&licenseModel=free).
 

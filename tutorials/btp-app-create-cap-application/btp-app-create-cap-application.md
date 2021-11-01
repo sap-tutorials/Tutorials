@@ -22,7 +22,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create and initialize the project)]
-1. Open a terminal.
+1. Open a command line window.
 
 2. Navigate to your tutorial root directory.
 
@@ -197,7 +197,7 @@ And that's it. You now have a full blown OData service, which complies to the OD
 
 
 [DONE]
-The result of this tutorial can be found in the [`cap/create-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/create-service) branch.
+The result of this tutorial can be found in the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch.
 
 
 [ACCORDION-END]
