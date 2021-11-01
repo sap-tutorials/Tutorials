@@ -1,8 +1,8 @@
 ---
 title: Get an SAP BTP Account for Tutorials
-description: Set up an SAP Business Technology Platform account so you can do the tutorials involving SAP BTP services and applications.
+description: Set up an SAP Business Technology Platform account so you can do the tutorials involving SAP BTP services and applications (trial or free-tier).
 time: 5
-tags: [ tutorial>beginner, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: products>sap-business-technology-platform
 ---
 
@@ -50,7 +50,7 @@ Some services are available to try out for free in both free-tier and a trial ac
 
 Do one of the following:
 
-- **Free Trial:** Following the instructions in the tutorial [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
+- **Free Trial:** If you do not have an account of any type yet and you want to try out services, follow the instructions on the tutorial [Get a Free Account on SAP BTP Trial](hcp-create-trial-account).
 
 - **Free Tier:** If your company has an existing consumption-based BTP Global Account, you can explore free tier services there.  In such accounts, free tier plans will appear alongside paid service plans in the service marketplace.
 

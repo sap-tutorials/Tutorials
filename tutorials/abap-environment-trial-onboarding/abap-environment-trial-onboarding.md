@@ -12,7 +12,7 @@ author_profile: https://github.com/mervey45
 ## Prerequisites
 - You have read the blog post [It's Trial Time for ABAP in SAP Cloud Platform](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/), including the section "Rules of the Game"
 - You have created a **trial account on SAP BTP**:  [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
-- You have a **subaccount and dev space with Europe (Frankfurt) or US East (VA) as region**
+- You have a **subaccount and dev space US East (VA) as region**
 - You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
 
 ## Details
@@ -20,7 +20,7 @@ author_profile: https://github.com/mervey45
   - How to create a trial user
   - How to create an ABAP Cloud project
 
-You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt) - AWS or US East (VA) -  AWS** as region. The ABAP environment service is currently **not available** for **Singapore - Azure**.
+You should have a subaccount on Cloud Foundry Trial with **US East (VA) -  AWS** as region. The ABAP environment service is currently **not available** for **Singapore - Azure**.
 
 This tutorial is part of a 3-part series of SAP BTP, ABAP Environment tutorials, each of which will earn you a badge:
 
@@ -40,7 +40,7 @@ This tutorial is part of a 3-part series of SAP BTP, ABAP Environment tutorials,
 
     !![Trial global account](trial_home.png)
 
-    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. Please select **Europe (Frankfurt) or US (VA) as a region**. Your user profile will be set up for you automatically.  
+    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. Please select **US East (VA) as a region**. Your user profile will be set up for you automatically.  
 
     >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
 
@@ -90,7 +90,7 @@ Open Eclipse. Make sure you have installed ADT in your Eclipse. Find [here](abap
       ![Create ABAP cloud project](project2x.png)
 
   3. Enter your **connection settings**:
-     - Region: choose your SAP BTP Cloud Foundry Environment region, for e.g. Europe (Frankfurt)
+     - Region: choose your SAP BTP Cloud Foundry Environment region, for e.g. US East (VA)
      - Email: your email address
      - Password: your password    
 

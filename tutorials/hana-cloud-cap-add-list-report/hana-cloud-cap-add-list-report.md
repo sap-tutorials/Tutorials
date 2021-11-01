@@ -68,7 +68,7 @@ primary_tag: products>sap-fiori
 2. You can use different methods in the OData v4 services you have created. Go back to the welcome page for the service and click **`Interactions_Items`**. Add the following to the URL:
 
     ```URL
-    &$search=DE
+    ?$search=DE
     ```
 
     !![Play with the OData Service](search.png)

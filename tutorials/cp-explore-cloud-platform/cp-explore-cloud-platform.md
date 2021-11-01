@@ -86,7 +86,8 @@ The SAP BTP is available in two different types of data centers.  First, SAP run
 
 !![Data center locations and types](map.png)
 
-This is a graphical representation of all the SAP data centers worldwide. You can open this map when you click on the globe icon on this page to [see a complete list of the types of centers and the services provided at each data center](https://discovery-center.cloud.sap/viewServices).
+This is a graphical representation of all the SAP data centers worldwide. You can open this map when you click on the globe icon on this page to [see a complete list of the types of centers and the services provided at each data center](https://discovery-center.cloud.sap/viewServices?provider=all&regions=all&showFilters=true).
+!![globe button](globe.png)
 
 The list of services and data centers is constantly updated, so please use the link to find the latest information.
 
