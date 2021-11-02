@@ -17,7 +17,7 @@ author_profile: https://github.com/jitendrakansal
 ## Details
 ### You will learn
   - How to register and consume an Extension control in MDK Metadata
-  - How to write an extension via NativeScript
+  - How to write an extension via `NativeScript`
   - How to build a Mobile development kit client for iOS and Android
   - How to connect to SAP Mobile application
 
@@ -25,11 +25,11 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 ---
 
-To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls using **NativeScript** (TypeScript/JavaScript applicable for both Android and iOS)
+To extend the functionality, or customise the look and feel, and behaviour of your client app, you can create extension controls other than the already existing MDK built-in controls using `NativeScript` (TypeScript/JavaScript applicable for both Android and iOS)
 
-In this tutorial, you will create a Map extension via NativeScript (in TypeScript language), you will view the Map in Apple Maps on iOS devices and in Google Maps on Android devices.
+In this tutorial, you will create a Map extension via `NativeScript` (in TypeScript language), you will view the Map in Apple Maps on iOS devices and in Google Maps on Android devices.
 
-![MDK](img_1.gif)
+![MDK](img-1.gif)
 
 [ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Business Application Studio)]
 
@@ -47,29 +47,31 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.3.png)
 
-4. In *Type* step, select or provide the below information and click **Next**:
+4. In *Basic Information* step, provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `MDK template type`| Select `List Detail` from the dropdown |
-    | `Your project name` | `MDK_Maps` |
-    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |    
+    | `MDK Template Type`| Select `List Detail` from the dropdown |
+    | `Your Project Name` | `MDK_Maps` |
+    | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |    
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |    
 
     !![MDK](img-1.4.png)
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.
+    >This screen will only show up when your CF login session has expired. Enter your login credentials, click Login icon and select the org & space where you have set up the initial configuration for your MDK app.
 
-5. In *Service Name* step, provide or select the below information and click **Next**:
+    >!![MDK](img-1.4.1.png)
+
+
+5. In *Service configuration* step, provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `Service File Name`| `<Provide any name of your choice>` |
-    | `OData Source` | Select `Mobile Services` from the dropdown |
+    | `Data Source` | Select `Mobile Services` from the dropdown |
     | `Mobile Services Landscape` | Select `standard` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
     | `Destination` | Select `SampleServiceV2` from the dropdown |
     | `Enter a path to the OData service` | Leave it as it is |
-    | `Language URL` | Leave it with the default value |
     | `Enable Offline` | Choose `No` |  
 
     !![MDK](img-1.5.png)
@@ -78,11 +80,11 @@ This step includes creating the mobile development kit project in the editor.
 
     Since you will create an online based app, hence _Enable Offline Store_ option is unchecked.
 
-6. In *Collection* step, select `Customers` (if not selected by default). Click **Next** to finish the project creation.
+6. In *Data Collections* step, select `Customers` (if not selected by default). Click **Finish** to finish the project creation.
 
     !![MDK](img-1.6.png)    
 
-7. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Maps` project in the project explorer.
+7. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Maps` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -192,7 +194,7 @@ You will add this registered control in the generated `Customers_Detail.page`.
 
   2. Remove the body section of the page.
 
-    !![MDK](img_3.2.gif)
+    !![MDK](img-3.2.gif)
 
   3. Drag & drop the registered `mdk_maps` control on the page area.
 
@@ -226,7 +228,7 @@ You will add this registered control in the generated `Customers_Detail.page`.
 1. Navigate to **Extensions** | `MyMapModule` | `controls` | `MyMapExtension.ts`, replace the code with the following.
 
     ```JavaScript / TypeScript
-    import * as app from 'tns-core-modules/application';
+    import * as app from '@nativescript/core/application';
     import { IControl } from 'mdk-core/controls/IControl';
     import { BaseObservable } from 'mdk-core/observables/BaseObservable';
     import { EventHandler } from 'mdk-core/EventHandler'
@@ -419,7 +421,7 @@ You will add this registered control in the generated `Customers_Detail.page`.
         }
     }
     ```
-    >In your import function, if you see errors related to `tns-core-modules` or `mdk-core`, you can ignore them. There is currently no reference of such libraries in the MDK editor.
+    >In your import function, if you see errors related to `@nativescript/core` or `mdk-core`, you can ignore them. There is currently no reference of such libraries in the MDK editor.
 
 2. Save the `MyMapExtension.ts` file.
 
@@ -438,10 +440,16 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     !![MDK](img-4.2.png)
 
+    If you want to enable source for debugging the deployed bundle, then choose **Yes**.
+
+    !![MDK](img-4.4.png)
+
     You should see **Deploy to Mobile Services successfully!** message.
 
     !![MDK](img-4.3.png)
 
+    >When deploying from VS Code to App Update and using an MDK 6.0+ client, you need to set the TS Target to use es6 instead of the default es5 version. See below for the setting in VS Code where you change it for es6.
+    !![MDK](img-4.3.1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -452,21 +460,13 @@ Since you will display the customer's address in Google Maps on Android device, 
 
   1. Visit the [Google Cloud Platform Console](https://cloud.google.com/console/google/maps-apis/overview).
 
-  2. Click the project drop-down and select or create the project for which you want to add an API key.
+  2. Click the project drop-down and select or create a new project for which you want to add an API key.
 
-    !![MDK](img_6.1.png)
+    !![MDK](img-6.1.png)
 
-2. Click **Explore and enable APIs**.
+3. Click **Maps SDK for Android** API.
 
-    !![MDK](img_6.2.png)
-
-3. Click **Enable APIS and SERVICES**.
-
-    !![MDK](img_6.3.png)    
-
-4. Click **Maps SDK for Android** API.
-
-    !![MDK](img_6.4.png)
+    !![MDK](img-6.4.png)
 
 5. Click **ENABLE**.
 
@@ -485,16 +485,19 @@ Since you will display the customer's address in Google Maps on Android device, 
 
 For iOS, you can just use the App store client. Continue with next step.
 
-For Android, you will pass the API key to the MDK client, there is no way public store client can access it, hence you will create a branded client using MDK SDK.
+For Android, you will pass the API key to the MDK client, there is no way public store client can access it, hence you will create a branded client using MDK SDK or SAP Cloud Build Service.
 
 1.  Follow steps 1 to 3 from [this tutorial](cp-mobile-dev-kit-build-client).
 
 2. Create below file structure under `DemoSampleApp.mdkproject`.
 
             DemoSampleApp.mdkproject
-            ├── App_Resources_Merge
-               └── Android
-                   ├── app.gradle
+              ├── App_Resources_Merge
+                  └── Android
+                      ├── app.gradle
+                      └── src
+                          └── main
+                              └── AndroidManifest.xml
 
 
       !![MDK](img-7.1.png)
@@ -507,7 +510,22 @@ For Android, you will pass the API key to the MDK client, there is no way public
     dependencies { implementation 'com.google.android.gms:play-services-maps:17.0.0' }
     ```
 
-4. Follow step 4 from [this tutorial](cp-mobile-dev-kit-build-client) to create your branded MDK client.
+4. Provide below information in the `AndroidManifest.xml` file. Save the changes.
+
+    ```XML
+    <?xml version="1.0" encoding="utf-8"?>
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="__PACKAGE__"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:versionCode="1"
+        android:versionName="1.0">
+        <application>
+              <meta-data android:name="com.google.android.geo.API_KEY" android:value="Enter your API Key generated in step 6" />
+        </application>
+    </manifest>
+    ```
+
+5. Create your MDK client either using MDK SDK by following the step 4 from [this](cp-mobile-dev-kit-build-client) tutorial OR using SAP Cloud Build Service by following [this](cp-mobile-dev-kit-cbs-client) tutorial.
 
 [DONE]
 [ACCORDION-END]
@@ -522,71 +540,57 @@ For Android, you will pass the API key to the MDK client, there is no way public
 In this step, you will run the app on an Android device.
 
 
-1. Navigate to `/DemoSampleApp/app/App_Resources/Android/src/main/AndroidManifest.xml`.
-
-    !![MDK](img_8.3.png)
-
-2. Provide below information before `application` closing tag.
-
-    ```XML
-     <meta-data android:name="com.google.android.geo.API_KEY" android:value="Enter your API Key generated in step 6" />
-    ```
-
-    !![MDK](img_8.4.png)
-
-3. Attach the device to your Mac or Windows machine and run `tns device android` command to print a list of attached devices.
+1. Attach the device to your Mac or Windows machine and run `tns device android` command to print a list of attached devices.
 
     !![MDK](img_8.5.png)
 
     >Make sure **Developer option** and **USB debugging** option is enabled in android device.
 
-6. Copy the **Device Identifier** value for your device.
+2. Copy the **Device Identifier** value for your device.
 
-7. In terminal or command line window, navigate to the app name folder **`DemoSampleApp`** (in `MDClient_SDK` path) and use `tns run android --device <device identifier>` command to run the MDK client on android device.
+3. In terminal or command line window, navigate to the app name folder **`DemoSampleApp`** (in `MDClient_SDK` path) and use `tns run android --device <device identifier>` command to run the MDK client on android device.
 
     !![MDK](img_8.6.png)
 
-8. Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
+4. Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
 
-    In Welcome screen, tap **START** to connect MDK client to SAP Business Technology Platform (BTP).
+    In Welcome screen, Tap **AGREE** on End User License Agreement.
+
+    ![MDK](img-8.7.png)
+
+5. Tap **START** to connect MDK client to SAP Business Technology Platform (BTP).
 
     ![MDK](img_8.8.png)
 
-9. Tap **AGREE** on End User License Agreement.
+6. Enter your credentials to login to SAP Business Technology Platform (BTP).
 
-    ![MDK](img_8.7.png)
+    ![MDK](img-8.9.png)
+    ![MDK](img-8.9.1.png)    
 
-10. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
 
-    ![MDK](img_8.9.png)
-
-11. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
+7. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
     ![MDK](img-8.11.png)
 
-12. Confirm the passcode and tap **DONE**.
+8. Confirm the passcode and tap **DONE**.
 
-    ![MDK](img_8.12.png)
+    ![MDK](img-8.12.png)
 
     Optionally, you can enable fingerprint to get faster access to the app data.
 
-    ![MDK](img_8.12.1.png)
+    ![MDK](img-8.12.1.png)
 
-13. Tap **OK** to update the client with new MDK metadata.
+9. Tap **OK** to update the client with new MDK metadata.
 
     ![MDK](img-8.13.png)    
 
-14. Tap **CUSTOMERS** to navigate to customer list.
+10. Tap any of customer record to navigate to details page.
 
-    ![MDK](img_8.14.png)  
+    ![MDK](img-8.15.png)    
 
-15. Tap any of customer record to navigate to details page.
+11. In Customer Details page, you will see the Customer's address loading in Google Maps.
 
-    ![MDK](img_8.15.png)    
-
-16. In Customer Details page, you will see the Customer's address loading in Google Maps.
-
-    ![MDK](img_8.16.png)  
+    ![MDK](img-8.16.png)  
 
 [OPTION END]
 
@@ -594,9 +598,15 @@ In this step, you will run the app on an Android device.
 
 1. SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-    Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
     !![MDK](img-8.17.png)
+
+2. Select `com.sap.mdk.demo` application from the list.
+
+    !![MDK](img-5.3.2.png)
+
+    The On-boarding QR code is now displayed.
 
     !![MDK](img-8.18.png)
 
@@ -604,17 +614,13 @@ In this step, you will run the app on an Android device.
 
 2. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-3. Once you have accepted the app update, tap **Customers** to navigate to customer list.
+3. Once you have accepted the app update, tap any of customer record to navigate to details page.
 
-    ![MDK](img_8.19.png)  
-
-4. Tap any of customer record to navigate to details page.
-
-    ![MDK](img_8.20.png)     
+    ![MDK](img-8.20.png)     
 
 5. In Customer Details page, you will see the Customer's address loading in Apple Maps.
 
-    ![MDK](img_8.21.png)  
+    ![MDK](img-8.21.png)  
 
 [OPTION END]
 

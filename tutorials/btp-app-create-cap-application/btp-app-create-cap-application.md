@@ -22,7 +22,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create and initialize the project)]
-1. Open a terminal.
+1. Open a command line window.
 
 2. Navigate to your tutorial root directory.
 
@@ -89,7 +89,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [VALIDATE_1]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Add Files to the project)]
+[ACCORDION-BEGIN [Step 2: ](Add files to the project)]
 1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Create a Directory for Development](btp-app-create-directory).
 
 2. Open the folder `templates` and keep it open as you copy a number of files from there. For this part of the tutorial and others, it's probably best if you place it next to your VS Code instance.
@@ -197,7 +197,7 @@ And that's it. You now have a full blown OData service, which complies to the OD
 
 
 [DONE]
-The result of this tutorial can be found in the [`cap/create-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/create-service) branch.
+The result of this tutorial can be found in the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch.
 
 
 [ACCORDION-END]

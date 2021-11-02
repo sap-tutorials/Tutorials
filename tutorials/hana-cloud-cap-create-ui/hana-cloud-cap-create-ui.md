@@ -68,10 +68,16 @@ Video tutorial version: </br>
 
     !![metadata document](metadata.png)
 
-2. You can use different methods in the OData v4 services you have created. Go back to the welcome page for the service and click `Interactions_Items`. Add the following to the URL:
+2. You can use different methods in the OData v4 services you have created. Go back to the welcome page for the service and click `Interactions_Items`. Different versions of the Cloud Application Programming Model preview page do different things at this point. Some add a $top limit to the generated URL for `Interactions_Items` automatically. Other and perhaps newer versions do not.  Have a look at the end of the URL when it opens. If it ends in `?$top=11` then add the following to the URL:
 
     ```URL
     &$search=DE
+    ```
+
+    Otherwise add the following to the URL:
+
+    ```URL
+    ?$search=DE
     ```
 
     !![Play with the OData Service](serach.png)

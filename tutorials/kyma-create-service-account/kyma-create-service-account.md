@@ -3,7 +3,7 @@ title: Create a Kyma service account
 description: Learn how to create a Kubernetes service account that you can leverage to interact with your Kyma cluster.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: products>sap-btp\\, kyma-runtime
 ---
 
@@ -57,6 +57,7 @@ A service account alone won't do the job. You also need to define a role that co
       - apiGroups:
           - ""
           - extensions
+          - batch
           - apps
           - gateway.kyma-project.io
           - servicecatalog.k8s.io
@@ -64,6 +65,7 @@ A service account alone won't do the job. You also need to define a role that co
           - deployments
           - replicasets
           - pods
+          - jobs
           - configmaps
           - apirules
           - serviceinstances

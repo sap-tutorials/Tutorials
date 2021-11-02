@@ -3,8 +3,8 @@ title: Create a Cloud Foundry or XS Advanced App that Queries SAP HANA
 description: Create a Node.js app that queries SAP HANA and can be run in Cloud Foundry or XS Advanced.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud, topic>node-js, products>sap-btp--cloud-foundry-environment, products>sap-business-technology-platform, products>sap-connectivity-service]
-primary_tag: products>sap-hana
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition, topic>node-js, products>sap-btp--cloud-foundry-environment, products>sap-business-technology-platform, products>sap-connectivity-service]
+primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites

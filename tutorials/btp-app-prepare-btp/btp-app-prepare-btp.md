@@ -36,6 +36,11 @@ In general, you have a choice of the following options:
 
 **Trial:** *(recommended)* Use a trial account if you just want to try out things and don't want to use any of the parts of this tutorial productively. The usage is free of cost and all the services that you need for this tutorial get automatically assigned to your trial account.
 
+> When running the tutorial with a trial account, please have in mind the following considerations:
+
+> * Choose host region `cf-us10` when creating a new trial account. This will ensure that all services required throughout the tutorial are available to your account.
+> * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, some services required throughout the tutorial might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP Cockpit.
+
 **Live:** There are multiple live landscapes available in different data centers around the globe. Live landscapes are intended for productive usage and development projects.
 
 
@@ -46,10 +51,6 @@ In general, you have a choice of the following options:
 You can [register for a trial account](https://www.sap.com/cmp/td/sap-cloud-platform-trial.html) and access it [here](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial).
 
 A global account, a subaccount, a Cloud Foundry org, and space with some entitlements that are sufficient to do this tutorial are set up for you.
-
-> If you use an existing `trial` account then service entitlements may be missing. If you encounter such situation, we suggest deleting your `trial` account and create a new one.
-
-> New service offerings are not added to existing `trial` accounts automatically.
 
 > In case you face a problem when creating a service instance or an application is missing for subscription later in the tutorial, please do the following:
 
@@ -91,7 +92,7 @@ The following services with their service plans and entitlements are required fo
 
 
 
-At least the services for the tutorials [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup) and [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment) need to be entitled.
+At least the services for the tutorials [Set Up the SAP HANA Cloud service](btp-app-hana-cloud-setup) and [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment) need to be entitled.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -155,7 +156,7 @@ As the result of the previous steps there will be a Cloud Foundry space with req
 
 2. Select your global account in the dropdown menu.
 
-3. Choose **Open in Cockpit**.
+3. Choose **Open in cockpit**.
 
     !![Open global account in cockpit](open_global_account.png)
 
@@ -167,7 +168,7 @@ As the result of the previous steps there will be a Cloud Foundry space with req
 
 6. To fill the **New Subaccount** dialog, enter a **Display Name**.
 
-    > Use a short name for your project and add the prefix for the landscape, for example: `<project name>-cf-eu10`. Don't select the checkbox **Neo**!
+    > Use a short name for your project and add the prefix for the landscape, for example: `<project name>-cf-us10`. Don't select the checkbox **Neo**!
 
 7. Enter a subdomain.
 
@@ -248,7 +249,7 @@ Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org
 Prepare for the next steps by logging on to Cloud Foundry and targeting your space in the account.
 
 
-If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a terminal to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
+If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
 
 [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
@@ -268,11 +269,9 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
     !![CF Data in SAP BTP Cockpit](cfdatacloudcockpit.png)
 
-        
-    For your convenience, this is the API endpoint for your landscape:
 
-    [https://api.cf.eu10.hana.ondemand.com](https://api.cf.eu10.hana.ondemand.com)
-3. Open a terminal.
+
+3. Open a command line window.
 
 4. Set the Cloud Foundry API endpoint.
 
@@ -294,7 +293,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 Prepare for the next steps by logging on to Cloud Foundry and targeting your space in the account.
 
 
-If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a terminal to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
+If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
 
 [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
@@ -315,13 +314,9 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
     !![CF Data in SAP BTP Cockpit](cfdatacloudcockpit.png)
 
-        
-    For your convenience, this is the API endpoint for your landscape:
-
-    [https://api.cf.eu10.hana.ondemand.com ](https://api.cf.eu10.hana.ondemand.com)
 
 
-3. Open a terminal.
+3. Open a command line window.
 
 4. Set the Cloud Foundry API endpoint.
 

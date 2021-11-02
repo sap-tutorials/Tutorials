@@ -37,7 +37,7 @@ cd ~/projects
 3. Now that you are in the correct folder, run the following command:
 ```Shell/Bash
 mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
--DarchetypeVersion=RELEASE \
+-DarchetypeVersion=1.17.0 \
 -DgroupId=com.sap.cap -DartifactId=bookstore
 ```
 

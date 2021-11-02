@@ -53,9 +53,13 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 In this tutorial, you will learn how to query data in your instance using the SAP HANA Database Explorer.
 
-You can follow the steps in this tutorial also by watching this video.
-
+> You can follow the steps in this tutorial also by watching this video:
+>
 <iframe width="560" height="315" src="https://microlearning.opensap.com/embed/secure/iframe/entryId/1_6r8ike0s/uiConfId/43091531" frameborder="0" allowfullscreen></iframe>
+>
+> ### About this video
+>
+> This video is meant as additional support material to complete the tutorial. However, we recommend that you only use it for visual guidance but primarily focus on the written steps in this tutorial.
 
 ---
 

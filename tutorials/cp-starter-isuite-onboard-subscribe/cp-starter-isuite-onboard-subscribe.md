@@ -3,8 +3,8 @@ title: Set Up Integration Suite Trial
 description: Get onboarded to SAP Integration Suite trial account.
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
-primary_tag: products>sap-integration-suite
+tags: [tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment]
+primary_tag: software-product>sap-integration-suite
 author_name: Karunaharan V
 author_profile: https://github.com/Karunaharan
 ---
@@ -19,7 +19,7 @@ author_profile: https://github.com/Karunaharan
 -	How to provision and activate the capabilities
 
 ## SAP Integration Suite
-SAP Integration Suite combines the integration capabilities such as Cloud Integration (Process Integration), API Management, Integration Advisor, and Open Connectors into a cohesive and simplified toolkit for enterprise integrations. To provide a comprehensive integration experience, these services are not available separately, but only as part of the Integration Suite service plan.
+SAP Integration Suite combines the integration capabilities such as Cloud Integration (Process Integration), API Management, Integration Advisor, and Open Connectors into a cohesive and simplified toolkit for enterprise integrations. To provide a comprehensive integration experience, these services are not available separately, but only as part of the Integration Suite.
 
 The Integration Suite includes all integration capabilities in simple service plans. To know more on these plans, see [Integration Suite](https://discovery-center.cloud.sap/#/serviceCatalog/f810c887-8d25-4942-9849-354837951066) service catalog.
 
@@ -30,7 +30,7 @@ This part of the series lets you experience few capabilities offered by SAP Inte
 ## The Use Case
 Using this scenario, you design and execute an integration flow that reads product details from a public product catalog (`WebShop`) for a given product identifier. Product details include data such as the product name and price, for example. To accomplish the scenario, you use SAP Integration Suite, and in particular, its capabilities *Cloud Integration* and *API Management*.
 
-You use *Cloud Integration* to design and deploy an integration flow. When you have finished designing, you use the API Explorer tool of *API Management* to expose the integration flow endpoint as an API.
+You use *Cloud Integration* to design and deploy an integration flow. Then, you use *API Management* to expose the integration flow endpoint as an API.
 
   - You also define how to access the API in terms of authentication by assigning a dedicated predefined policy template.
   - Using this policy template, you define API access based on the OAuth client credentials grant method.
@@ -40,30 +40,35 @@ You use *Cloud Integration* to design and deploy an integration flow. When you h
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
 
->**WHERE TO START**: If you are new to SAP BTP or SAP Integration Suite, skip this note and continue with the tutorial.
+>**WHERE TO START**:
 
-> If you have already activated Cloud Integration (Process Integration) or API Management services in your existing trial account, we recommend you to perform one of the following options:
+> - **Are you new to SAP BTP?** - skip the rest of the note and continue with the tutorial.
 
-> **Option 1**: If you are unable to activate **`Integration Suite`** service in an existing subaccount, create a **`New Subaccount`** and then proceed to **Step 2**. For a new subaccount, you must assign entitlements by adding service plans and the quotas. For more information, see [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/c90f3d522ee04e65bd87cdec8808e5ce.html).
+> - You already have a SAP BTP account but new to SAP Integration Suite:
 
-> **Option 2**: To continue with the same subaccount, unsubscribe from Cloud Integration and API Management services, and then proceed to **Step 2**.
+>     - If you have already activated Cloud Integration (Process Integration) or API Management services in a subaccount:
+          - **Option 1**:
+          Create a **`New Subaccount`** and then proceed to **Step 2** of this tutorial.
+          For a new subaccount, you must assign entitlements by adding service plans and the quotas. For more information, see [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/c90f3d522ee04e65bd87cdec8808e5ce.html).          
+          - **Option 2**:
+          To continue with an existing subaccount, unsubscribe from Cloud Integration and API Management services, and then proceed to **Step 2**.
 
-> If you have already activated Integration Suite in your existing trial account, proceed to **Step 3**. You can consume only one Integration Suite tenant per trial account.
+> - If you have already subscribed to Integration Suite in your existing trial account, proceed to **Step 3**. You can consume only one Integration Suite tenant per trial account.
 
 
 1. In your web browser, open the [SAP BTP trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-2. Navigate to the trial global account by choosing **Go To Your Trial Account**.
-
-    !![Trial global account](2-2-FoundationsCockpit_trial page.png)
-
-3. Choose the region that is closest to you. Click **Create Account** to create a subaccount.
+2. Choose the region that is closest to you. Choose **Create Account**.
 
     !![Select region](2-3-Screenshot_AP21.png)
 
-4. Choose **Continue**.
+3. Choose **Continue**.
 
     !![Account Setup](2-4-continue.png)
+
+4. Navigate to the trial global account by choosing **Go To Your Trial Account**.
+
+    !![Trial global account](2-2-FoundationsCockpit_trial page.png)
 
 5. From your global account page, choose the **trial** tile to access your subaccount.
 
