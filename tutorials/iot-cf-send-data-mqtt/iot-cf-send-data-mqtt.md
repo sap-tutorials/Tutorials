@@ -2,15 +2,15 @@
 author_name: Supriya Cherukunnathu
 author_profile: https://github.com/SupriyaCherukunnathu
 title: Send Data with MQTT
-description: Send data to the SAP Cloud Platform Internet of Things Service Cloud using MQTT. As a sample client for MQTT the Paho client is used.
+description: Send data to the SAP IoT services for SAP BTP Cloud using MQTT. As a sample client for MQTT the Paho client is used.
 auto_validation: true
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-business-technology-platform, products>sap-iot-services-for-sap-btp ]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, product>sap-edge-services, products>sap-iot-services for-sap-btp, products>sap-business-technology-platform ]
+time: 20
 ---
 
 
 ## Prerequisites
- - **Proficiency:** Beginner
  - **Tutorials:** You have completed [Install the Paho Client](iot-cf-install-paho-client) and [Install OpenSSL](iot-cf-install-openssl).
 
 ## Details
@@ -19,11 +19,6 @@ tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>clo
 - How to send data to the Internet of Things Service Cloud using MQTT
 - How to use the Paho client as a sample client for MQTT
 
-### Time to Complete
-20 min
-
-## Next Steps
-- **Tutorials:** [Consume Measures](iot-cf-consume-measures)
 
 ---
 
@@ -270,7 +265,8 @@ You have installed OpenSSL. A description on how to install OpenSSL can be found
         { "capabilityAlternateId": "2345", "sensorAlternateId": "5432", "measures": [{"temperature": "25"}] }
         ```
 
-      >The escaping of characters may not be needed depending on the client in use. Typically, clients getting an input from a command line require escaping, while clients providing a GUI (like Paho) do not.
+        >The escaping of characters may not be needed depending on the client in use. Typically, clients getting an input from a command line require escaping, while clients providing a GUI (like Paho) do not.
+
 
 17. Choose **Publish**.
 
@@ -284,7 +280,7 @@ You have installed OpenSSL. A description on how to install OpenSSL can be found
 
     The code `202` means the data is "provisionally accepted" by the Internet of Things Gateway (but may still be rejected further upstream), similar to the corresponding HTTP status code.
 
-18. You can check the incoming values using the **Data Visualization** of the device in the Internet of Things Service Cockpit or the Message Processing API. For more information, please refer to the tutorial [Consume Measures](iot-cf-consume-measures).
+18. You can check the incoming values using the **Data Visualization** of the device in the Internet of Things Service Cockpit or the Message Processing API.
 
 [DONE]
 

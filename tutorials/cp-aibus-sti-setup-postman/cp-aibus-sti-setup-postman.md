@@ -13,7 +13,7 @@ primary_tag: topic>machine-learning
   - How to adjust the Postman environment for your service instance
   - How to import Postman environments and collections
 
-In the following tutorials, Postman is used to communicate and interact with your Service Ticket Intelligence service instance. Postman is an API client you use to call APIs. For more information, see [Postman](https://learning.getpostman.com/).
+In the following tutorials, Postman is used to communicate and interact with your Service Ticket Intelligence service instance. Postman is an API client used to call APIs. For more information, see [Postman](https://learning.getpostman.com/).
 
 ---
 

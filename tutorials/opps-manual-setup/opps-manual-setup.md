@@ -14,6 +14,7 @@ primary_tag: products>sap-business-technology-platform
  - You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)).
  - You have a subaccount in the Cloud Foundry environment, with Amazon Web Services (AWS) as provider and the Europe (Frankfurt) region.
 
+> Please be aware that temporarily new trial accounts cannot be created. You can only work with this tutorial if you already have an existing trial account for SAP Omnichannel Promotion Pricing.
 
 ## Details
 ### You will learn
@@ -53,7 +54,7 @@ Once the subscription is finished, you can choose the three dot symbol **°°°*
 
 [ACCORDION-BEGIN [Step 2: ](Set up roles and authorizations)]
 
-In order to use the **Configure Omnichannel Promotion Pricing** app, you have to create a role collection and assign users to it. With the configuration app, you can maintain various parameters to influence the behavior of the **Calculation service**. <!-- Using the app is not part of the basic tutorial. -->
+In order to use the **Configure Omnichannel Promotion Pricing** app, you must create a role collection and assign users to it. With the configuration app, you can maintain various parameters to influence the behavior of the **Calculation service**. <!-- Using the app is not part of the basic tutorial. -->
 
 1. Navigate back to your subaccount.
 

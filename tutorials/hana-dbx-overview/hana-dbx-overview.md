@@ -103,7 +103,7 @@ The SAP Software download links (requires an S-User ID to access) below are for 
 
 [ACCORDION-BEGIN [Step 3: ](SAP HANA Cloud trial)]
 
->To complete the tutorials in this group, an SAP HANA instance is needed. Step 3 and 4 in this tutorial provide two different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance. When creating an SAP HANA instance, a Data Lake is not needed.  Creating a Data Lake will be covered in a later tutorial.
+>To complete the tutorials in this group, an SAP HANA instance is needed. Step 3 and 5 in this tutorial provide two different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance. When creating an SAP HANA instance, a Data Lake is not needed.  Creating a Data Lake will be covered in a later tutorial.
 
 Continue on to the next tutorial in this group once you have created an SAP HANA Cloud trial instance as shown below.
 
@@ -128,13 +128,13 @@ The instructions on how to setup a free SAP HANA Cloud trial within SAP BTP are 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Start an SAP HANA Cloud instance via the Cloud Foundry CLI (Optional))]
+[ACCORDION-BEGIN [Step 4: ](Manage SAP HANA Cloud using a CLI (optional))]
 
-Another way to manage SAP HANA Cloud instances is via the Cloud Foundry Command Line Interface. The Cloud Foundry CLI is available on Windows, Linux, and macOS operating systems. The latest version of the CLI can be downloaded from the [Cloud Foundry Foundation](https://github.com/cloudfoundry/cli/releases).  The following steps will demonstrate how an SAP HANA Cloud instance can be stated using the CLI.
+The Cloud Foundry Command Line Interface (CLI) provides users another option for managing their SAP HANA Cloud instances. The software can be downloaded from the [Cloud Foundry Foundation](https://github.com/cloudfoundry/cli/releases) and is available for Windows, Linux, and macOS operating systems. The following steps will demonstrate how to start and manage an SAP HANA Cloud instance using the CLI.
 
-1. Install the Cloud Foundry CLI by following the guide [Installing the CF CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
+1. Complete the installation process by following the guide [Installing the CF CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
 
-2. The next step is to log into your SAP HANA Cloud account via the CLI. You will need an API endpoint from your SAP HANA Cloud account to do this. To find the API Endpoint, navigate to the Overview page of your SAP BTP Cockpit. Under the Cloud Foundry subheading, you will find an API Endpoint. Copy this information for use in the next step.
+2. Copy the API endpoint from your SAP HANA Cloud account. This information can be found on the Overview page of your SAP BTP Cockpit. The API endpoint is listed under the Cloud Foundry subheading. Save the API endpoint for use in the next step.
 
     !![Find the API Endpoint from the BTP Cockpit](apiEndpoint.PNG)
 
@@ -171,7 +171,13 @@ Another way to manage SAP HANA Cloud instances is via the Cloud Foundry Command 
     ```
     !![starting a SAP HANA Cloud database](cf-start.png)
 
-    For more information on the operations available, refer to the documentation [Start and Stop an Instance Using the CLI](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/e6f3dcb8cae74577889cd51f4aa0eb08.html).
+For more information on the operations available with the CLI, refer to the documentation [Using the Cloud Foundry CLI with SAP HANA Cloud](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/921f3e46247947779d69b8c85c9b9985.html).  
+
+>Note that SAP HANA Cloud Central provides an option in the actions menu to copy the JSON configuration of a running instance.  This can be used with the `cf create-service` command perhaps to create multiple instances of a database configured in the same way.
+
+>![copy Configuration](hcc-copy-json.png)
+
+
 
 [DONE]
 [ACCORDION-END]

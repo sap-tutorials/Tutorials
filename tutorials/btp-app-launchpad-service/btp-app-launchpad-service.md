@@ -22,7 +22,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
  - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa)
  - [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)
- - Your subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp)
+ - Your SAP BTP subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp)
 
 ## Details
 ### You will learn
@@ -33,7 +33,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to test your SAP Launchpad site
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`mta`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/mta) branch.
+To start with this tutorial use the result in the [`cap-mta-deployment`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-mta-deployment) branch.
 
 ---
 
@@ -271,7 +271,7 @@ modules:
 [ACCORDION-BEGIN [Step 9: ](Remove broken dependency from Risks application)]
 Remove the following two lines from `app/risks/package.json`, because they produce build issues and are not needed:
 
-```JSON[3-5]
+```JSON[3,5]
     "devDependencies": {
       ...
       "@sap/ux-ui5-tooling": "1",
@@ -477,27 +477,34 @@ You have now subscribed to the SAP Launchpad service.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 17: ](Create your SAP Launchpad site)]
+[ACCORDION-BEGIN [Step 17: ](Assing SAP Launchpad role collection)]
+You need to assign your user to the `Launchpad_Admin` role collection, so you don't get an error accessing the **Launchpad Service** site later on.
+
+1. Choose **Security** **&rarr;** **Trust Configuration** on the left.
+
+2. Choose your identity provider from the list.
+        
+3. Enter your e-mail address and choose **Show Assignments**.
+        
+4. Choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
+
+    !![Add role](add_launchpad_admin_role.png)
+
+5. Open another browser or clear your browser's cache.
+
+> See section [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html) in the SAP Launchpad service's documentation for more details.
+
+
+
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 18: ](Create your SAP Launchpad site)]
 1. Choose **Services** **&rarr;** **Instances and Subscriptions** on the left.
 
 2. Locate the **Launchpad Service** under **Subscriptions** and choose **Go to Application**.
 
     !![Instances and Subscriptions](instances_and_subscriptions.png)
-
-    > In case you get the error: `Sorry, we couldn't find  the site`.
-
-    > If you get the error `Sorry, we couldn't find the site. Please contact your site administrator for assistance.` while opening the application, you have to assign your user to the `Launchpad_Admin` role collection:
-
-    > 1. Choose **Security** **&rarr;** **Trust Configuration** on the left.
-    > 2. Choose your identity provider from the list.
-    > 3. Enter your e-mail address and choose **Show Assignments**.
-    > 4. Choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
-
-    >     !![Add role](add_launchpad_admin_role.png)
-
-    > 5. Open another browser or clear your browser's cache.
-
-    > See section [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html) in the SAP Launchpad service's documentation for more details.
 
 3. Choose **Provider Manager** on the left and refresh the `HTML5 Apps` entry there.
 
@@ -550,7 +557,7 @@ You have now subscribed to the SAP Launchpad service.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 18: ](Test your SAP Launchpad site)]
+[ACCORDION-BEGIN [Step 19: ](Test your SAP Launchpad site)]
 1. Choose **Go to site**.
 
     !![Go to site](go_to_site.png)

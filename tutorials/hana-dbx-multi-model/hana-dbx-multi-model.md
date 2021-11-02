@@ -1,6 +1,6 @@
 ---
 title: Try Out Multi-Model Functionality with the SAP HANA Database Explorer
-description: Explore the graph, JSON document store, and spatial capabilities in the SAP HANA database explorer.
+description: Explore graph, JSON document store, and spatial capabilities in the SAP HANA database explorer.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-spatial, software-product-function>sap-hana-graph]
@@ -20,11 +20,11 @@ This tutorial is meant to be an introduction to this topic.  For a deeper dive o
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a graph)]
+[ACCORDION-BEGIN [Step 1: ](Create a graph workspace)]
 
-The following steps will create a graph that can display the distance between hotels in a state using a graph.
+The following steps will create a graph workspace that can display the distance between hotels in a state.
 
-1. Create a vertex table that is to represent the distances between hotels.
+1. Create a vertex table that represents distances between hotels by executing the following in the SQL Console.
 
     ```SQL
     CREATE COLUMN TABLE HOTEL.DISTANCES(
@@ -79,7 +79,7 @@ The following steps will create a graph that can display the distance between ho
     INSERT INTO HOTEL.DISTANCES VALUES (28, 23, 22, 163.2);
     ```
 
-3. Create the graph workspace.
+3. Create a graph workspace.
 
     ```SQL
     CREATE GRAPH WORKSPACE HOTEL.DISTANCEGRAPH
@@ -91,7 +91,7 @@ The following steps will create a graph that can display the distance between ho
         KEY COLUMN HNO;
     ```
 
-4. Navigate to the graph workspaces catalog object and open it to view the properties of the graph.
+4. Navigate to graph workspaces, select the previously created graph workspace, and open it to view its properties.
 
     ![DISTANCEGRAPH properties](distance-graph-workspace.png)
 
@@ -124,9 +124,9 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 
     ![DISTANCEGRAPH better viewing](graph-viewer-wider.png)
 
-4. Apply a filter to vertices where `STATE` is NY and edges where `DIST_KM` is less than 100 using the graph viewer filter.
+4. Apply a filter to vertices where `STATE` is NY and edges where `DIST_KM` is less than 100 using the graph viewer filter.  After specifying the filter, press the Add button and then apply it by pressing the Apply button.
 
-    ![DISTANCEGRAPH vertex filter](vertex-filter.png)
+    !![DISTANCEGRAPH vertex filter](vertex-filter.png)
 
     >Between filtering, the graph will reset.
 
@@ -136,13 +136,55 @@ For additional information, see [SAP HANA Cloud, SAP HANA Database Graph Referen
 
     ![DISTANCEGRAPH highlighted Long Island](long-island.png)
 
-Additional graph examples include the [Greek Mythology Graph Example](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/071d7b7349f04e419507387c271dce8f.html) and [Open Flights](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/latest/en-US/071d7b7349f04e419507387c271dce8f.html).  Note that the company graph example does not currently display in the database explorer graph viewer as it does not at this time support the display of homogeneous graphs.
+Additional graph examples include the [Greek Mythology Graph Example](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/071d7b7349f04e419507387c271dce8f.html) and [Open Flights](https://help.sap.com/viewer/11afa2e60a5f4192a381df30f94863f9/latest/en-US/071d7b7349f04e419507387c271dce8f.html).  Note that the company graph example does not currently display in the SAP HANA database explorer graph viewer as it does not at this time support the display of homogeneous graphs.
+
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create, populate, and query a JSON collection (optional))]
+[ACCORDION-BEGIN [Step 3: ](Use graph algorithms in the database explorer)]
+A recent release of SAP HANA database explorer provides the ability to apply algorithms to the graph viewer. The shortest path algorithm can be used to provide the optimal route between two vertices. The nearest neighbor algorithm can be used to show only the vertices that are connected to a specified vertex.
+
+The following steps will walk through using the shortest path algorithm to determine the optimal route from Airport Hotel in Rosemont, IL to Regency Hotel in Seattle, WA.
+
+1. Execute the following in SQL to add a few connections between hotels in different states.
+
+    ```SQL
+    --Midtown New York to Lake Michigan Chicago
+    INSERT INTO HOTEL.DISTANCES VALUES (29,14,16,1227);
+    INSERT INTO HOTEL.DISTANCES VALUES (30,16,14,1227);
+
+    --Long Island New York to Lake Michigan Chicago
+    INSERT INTO HOTEL.DISTANCES VALUES (31,12,16,1357);
+    INSERT INTO HOTEL.DISTANCES VALUES (32,16,12,1357);
+
+    --Long Island New York to Beach Florida
+    INSERT INTO HOTEL.DISTANCES VALUES (33,12,19,1738);
+    INSERT INTO HOTEL.DISTANCES VALUES (34,19,12,1738);
+
+    --Congress Seattle to Star California
+    INSERT INTO HOTEL.DISTANCES VALUES (35,10,23,1817);
+    INSERT INTO HOTEL.DISTANCES VALUES (36,23,10,1817);
+
+    --Indian Horse California to Beach Florida
+    INSERT INTO HOTEL.DISTANCES VALUES (37,22,19,3861);
+    INSERT INTO HOTEL.DISTANCES VALUES (38,19,22,3861);
+
+    --Atlantic Florida to Long Beach California
+    INSERT INTO HOTEL.DISTANCES VALUES (39,20,21,4348);
+    INSERT INTO HOTEL.DISTANCES VALUES (40,21,20,4348);
+    ```
+
+2. Navigate to the graph viewer, and select the algorithms tab. Update the Algorithm field to "Shortest Path".
+
+3. Set the following parameters from the image below and select Apply:
+    !![Graph Algorithms](graph-algorithms.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Create, populate, and query a JSON collection (optional))]
 
 The following steps will demonstrate how to create a JSON collection that can be used to collect notes about customers staying at a hotel.
 
@@ -194,7 +236,7 @@ The following steps will demonstrate how to create a JSON collection that can be
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Import and view spatial data)]
+[ACCORDION-BEGIN [Step 5: ](Import and view spatial data)]
 
 This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/b8dface938cd467bb5a224952ed9fcc8.html) containing points of interest near the `Bella Ciente` hotel in the city of `Longview` Texas.  A search can then be performed to return the 3 closest golf courses to the hotel.
 
@@ -252,7 +294,7 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Use spatial functions in a query)]
+[ACCORDION-BEGIN [Step 6: ](Use spatial functions in a query)]
 
 1. The following statement shows the list of points of interest within 3 kilometers of the `Bella Cliente` hotel.
 
