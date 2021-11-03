@@ -5,7 +5,7 @@ title: Set Up the SAP HANA Cloud Service
 description: This tutorial shows you how to set up the SAP HANA cloud service instance.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-hana-cloud]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-hana-cloud]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
