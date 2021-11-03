@@ -3,14 +3,14 @@ title: Set Up SAP Business Application Studio for Development
 description: SAP Business Application Studio is a development environment available on SAP Business Technology Platform. Before you can start developing using SAP Business Application Studio, administrators must perform the required onboarding steps that are described in this tutorial.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-business-technology-platform, products>sap-workflow, software-product-function>sap-cloud-application-programming-model, topic>mobile, products>sap-mobile-cards, products>mobile-development-kit-client]
+tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-fiori, products>sap-business-technology-platform, products>sap-workflow, software-product-function>sap-cloud-application-programming-model, topic>mobile, products>sap-mobile-cards, products>mobile-development-kit-client]
 primary_tag: products>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
 ---
 
 ## Prerequisites
- - You have an SAP BTP Trial account: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
+ - You have an SAP BTP Trial account ([Get a Free Account on SAP BTP Trial](hcp-create-trial-account))
 
 ## Details
 ### You will learn
