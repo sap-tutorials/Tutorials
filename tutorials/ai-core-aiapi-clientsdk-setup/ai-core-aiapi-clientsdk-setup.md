@@ -37,7 +37,7 @@ pip --version
 
 [ACCORDION-BEGIN [Step 2: ](Install SAP AI API Client SDK)]
 
-`SAP-AI-API-Client-SDK`  is python package which will enable us to talk to SAP AI API.
+`SAP-AI-API-Client-SDK` is a python package, which will enable you to talk to SAP AI API.
 
 | Package | Link |
 | --- | --- |
@@ -154,7 +154,7 @@ Get service key for your SAP AI Core. [Read How to create service key for SAP AI
 
 > If you have not provisioned SAP AI Core. Read [provisioning steps](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/38c4599432d74c1d94e70f7c955a717d.html) to provision SAP AI Core service.
 
-Here an example service key file. The content of your SAP AI API service file should look similar to this:
+Here an example service key file. Verify if your SAP AI API service file has the same keys as mentioned here:
 
 ```JSON
 {
@@ -178,33 +178,35 @@ You will use the saved location to load service key and use with SAP AI API clie
 
 !![aic service key](img/pip/aic_service_key.png)
 
-Now execute the following python code on your Jupyter notebook cell: *(You will get no output)*
 
-```PYTHON
-from ai_api_client_sdk.ai_api_v2_client import AIAPIV2Client
-import json
-
-# Your service key JSON file relative to this notebook
-aic_service_key_path = 'files/aic_service_key.json'
-
-# Loads the service key file
-with open(aic_service_key_path) as ask:
-    aic_service_key = json.load(ask)
-
-# Creating an SAP AI API client instance
-ai_api_client = AIAPIV2Client(
-    base_url = aic_service_key["serviceurls"]["AI_API_URL"] + "/v2", # The present SAP AI API version is 2
-    auth_url=  aic_service_key["url"] + "/oauth/token",
-    client_id = aic_service_key['clientid'],
-    client_secret = aic_service_key['clientsecret']
-)
-```
-
-1. Create a new cell.
+1. Create a new cell in jupyter notebook.
 
     !![new cell](img/jupyter/new-cell.png)
 
-2. Paste code snippet and click the arrow to execute. *(Alternative: **Run** > **Run Cells**)*.
+
+2. Paste the code snippet and click the arrow to execute. *(Alternative: **Run** > **Run Cells**)*.
+
+    ```PYTHON
+    from ai_api_client_sdk.ai_api_v2_client import AIAPIV2Client
+    import json
+
+    # Your service key JSON file relative to this notebook
+    aic_service_key_path = 'files/aic_service_key.json'
+
+    # Loads the service key file
+    with open(aic_service_key_path) as ask:
+        aic_service_key = json.load(ask)
+
+    # Creating an SAP AI API client instance
+    ai_api_client = AIAPIV2Client(
+        base_url = aic_service_key["serviceurls"]["AI_API_URL"] + "/v2", # The present SAP AI API version is 2
+        auth_url=  aic_service_key["url"] + "/oauth/token",
+        client_id = aic_service_key['clientid'],
+        client_secret = aic_service_key['clientsecret']
+    )
+    ```
+
+
 
     !![paste code](img/jupyter/paste-code.png)
 
