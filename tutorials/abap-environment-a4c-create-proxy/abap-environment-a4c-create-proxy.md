@@ -4,7 +4,7 @@ description: In the SAP Business Technology Platform, ABAP Environment, create a
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: topic>abap-development
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
