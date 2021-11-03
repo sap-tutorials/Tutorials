@@ -5,7 +5,7 @@ title: Create Custom Kanban Event, Rule Project and Action
 description: Create your own kanban Event Type and Rule Project, including Rule and Action that will allow you to process Auto-ID events and trigger kanban status updates.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, tutorial>license, topic>internet-of-things, products>sap-internet-of-things, products>sap-business-technology-platform]
+tags: [ tutorial>intermediate, tutorial>license, topic>internet-of-things, software-product>sap-internet-of-things, software-product>sap-business-technology-platform]
 primary_tag: topic>internet-of-things
 ---
 

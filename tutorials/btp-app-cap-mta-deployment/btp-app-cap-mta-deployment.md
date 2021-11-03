@@ -5,7 +5,7 @@ title: Deploy Your Multi-Target Application (MTA)
 description: This tutorial shows you how to deploy your CAP application as Multi-Target Application (MTA).
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform]
+tags: [ tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
