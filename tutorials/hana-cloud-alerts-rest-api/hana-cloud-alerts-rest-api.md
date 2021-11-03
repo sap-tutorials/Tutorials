@@ -213,9 +213,22 @@ The following instructions will show a few examples of how to view metrics throu
 
 2. Try out the definitions call to get a list of the available metrics
 
-    ![Result of request to show the available metrics](metrics-list.png)
+    !![Result of request to show the available metrics](metrics-list.png)
 
-    As seen above, there is a `resourceType` entry whose value is hana-cloud-hdb which indicates that this entry applies to an SAP HANA Cloud, SAP HANA database.  There is a `name` and `description` of the metric.  The `type` can be a gauge such `HDBMemoryUsed`, or a delta such as `HDBCSUnloadCount`.  A gauge reflects the current value of a metric at a specific time while a delta represents a value within an interval.  A `unit` such as %, ms (milliseconds), bytes, or an empty value for a count.  The `interval` or frequency that the metric is collected and the `retention` time (7 days) is shown in seconds.  Note that a count is shown at the end of the JSON request.  In this case there were 48 metrics available.
+    A few of the returned values are explained below:  
+
+    * `resourceType` whose value is hana-cloud-hdb indicates that this entry applies to an SAP HANA Cloud, SAP HANA database.
+
+    *  `type` can be a gauge such `HDBMemoryUsed`, or a delta such as `HDBCSUnloadCount`.  A
+     gauge reflects the current value of a metric at a specific time while a delta represents a value within an interval.
+
+    * `unit` such as %, ms (milliseconds), bytes, or an empty value for a count.
+
+    * `interval` or frequency that the metric is collected.
+
+    * `retention` time (7 days) is shown in seconds.  Note that if a start and end time are not specified, the default is to return values from the last hour.
+
+    * `count` is shown at the end of the JSON request.  In this case there were 48 metrics available.
 
 3. Try out the values call to see the values for a specific metric.
 
@@ -225,7 +238,7 @@ The following instructions will show a few examples of how to view metrics throu
 
     ![index server service](index-service.png)
 
-    >Metrics can also be accessed via SQL queries.  For additional details see [`M_LOAD_HISTORY_SERVICE` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/261022b7e22b4de9b04f931b78c4c6b4.html).
+    >Metrics can also be accessed via SQL queries.  For additional details see [`M_LOAD_HISTORY_SERVICE` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/261022b7e22b4de9b04f931b78c4c6b4.html).  Note that when accessing metrics via SQL queries, the database must be accessible as the data is stored in the tenant database.  When accessing metrics via the REST API, the metrics data is stored outside of the tenant database.
 
 For additional details on the metrics REST API, see [APIs for Metrics](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/c20295e8e76345da98f2c374a94bda3c.html).  
 

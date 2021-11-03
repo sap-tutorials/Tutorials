@@ -1,6 +1,6 @@
 ---
 title: Monitor a Standalone Data Lake in SAP HANA Cloud
-description: Learn to use monitoring views for a standalone data lake in SAP HANA Cloud using a trial account.
+description: Learn to use monitoring views for a standalone data lake in SAP HANA Cloud.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana-cloud, products>sap-hana-cloud-data-lake]
@@ -8,7 +8,7 @@ primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
-- You have completed the [provisioning of a standalone data lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-1) using a trial account.
+- You have completed the [provisioning of a standalone data lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-1) using a free tier model or trial account.
 - Make sure your data lake instance is running before you start.
 
 ## Details

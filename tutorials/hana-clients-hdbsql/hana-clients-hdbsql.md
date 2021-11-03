@@ -86,15 +86,16 @@ This step demonstrates how to connect to a SAP HANA instance using [HDBSQL](http
         REM Show the command help for the sapgenpse
         sapgenpse -h
         REM SECDIR environment variable is required when using the commoncrypto library
-        set SECUDIR=C:/SAP/hdbclient/
+        set SECUDIR=C:/SAP/hdbclient
         REM Create a PSE (Personal Security Environment) which will be used to contain the public root certificate of the HANA Client.  
         REM Press enter twice to not provide a pin
         sapgenpse gen_verify_pse -p "%SECUDIR%/sapcli.pse"
+        REM if the above command fails, try using the -log option for additional output.
         >```
 
         >```Shell (Windows)
         REM Add the certificate to the PSE
-        sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -a %USERPROFILE%/Downloads/DigiCertGlobalRootCA.crt.pem
+        sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -a %USERPROFILE%/Downloads/DigiCertGlobalRootCA.crt
         REM View the contents of the PSE
         sapgenpse maintain_pk -p "%SECUDIR%/sapcli.pse" -l
         REM Connect using the SAP commoncrypto library rather than OpenSSL.
