@@ -1,5 +1,5 @@
 ---
-title: Prepare Your SAP HANA Database Project for collaboration
+title: Prepare Your SAP HANA Database Project for Collaboration
 description: Create HDBROLEs and synchronize your SAP HANA Database Project with Git to prepare your project for collaboration.
 auto_validation: true
 time: 15

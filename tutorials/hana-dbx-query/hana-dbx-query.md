@@ -313,7 +313,8 @@ The statement library contains a mix of pre-populated system statements and user
     >Files can then be shared using a version control system such as git.
 
 6. User-defined statements can be edited. From the Statement library, select the desired statement to open it within the SQL console and make the desired changed. Select **Add to Statement Library** to overwrite the previous statement.
-![Update Statement](UpdateStatement.png)
+
+    ![Update Statement](UpdateStatement.png)
 
 
 Congratulations! You have now explored selected features of the SQL console.

@@ -30,6 +30,8 @@ In the online shop, customers can order various items. Once an item is ordered, 
 - How to create service definition & service binding
 - How to run SAP Fiori Elements Preview
 
+In this tutorial, wherever XXX appears, use a number (e.g. 000).
+
 ---
 [ACCORDION-BEGIN [Step 1: ](Logon to SAP S/4HANA Cloud ABAP Environment)]
 
@@ -667,6 +669,8 @@ You have 2 options to open the documentation inside ADT.
 
  1. Select `online_shop` in your service binding and click **Preview** to open SAP Fiori Elements preview.
 
+    ![preview](entity.png)
+
  2. Click **Create** to create a new entry.
 
      ![preview](create.png)
@@ -685,7 +689,11 @@ You have 2 options to open the documentation inside ADT.
 
 [ACCORDION-BEGIN [Step 13: ](Check purchase requisition)]
 
- 1. Copy the system URL without `-api`, paste it in a browser and **log in**.
+ 1. In the Project Explorer, select your system and right click on **Properties**.
+
+     ![preview](properties.png)
+
+ 1. Select **ABAP Development** and copy the system URL without `-api`, paste it in a browser and **log in**.
 
      ![preview](logonflp2.png)
 

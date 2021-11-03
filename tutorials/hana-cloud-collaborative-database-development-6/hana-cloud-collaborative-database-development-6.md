@@ -1,5 +1,5 @@
 ---
-title: Enhance Your project with Services, Synonyms and Grants
+title: Enhance Your Project with Services, Synonyms and Grants
 description: Create a user-provided service, grant privileges to the service and create a synonym to allows users of the template project to access data.
 auto_validation: true
 time: 10

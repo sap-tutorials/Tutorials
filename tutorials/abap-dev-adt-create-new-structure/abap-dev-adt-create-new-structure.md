@@ -2,7 +2,7 @@
 title: Create a New ABAP Dictionary Structure
 description: Create an ABAP Dictionary structure for retrieving data from a database
 auto_validation: true
-primary_tag: topic>abap-development
+primary_tag: programming-tool>abap-development
 tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
 time: 15
 author_name: Julie Plummer

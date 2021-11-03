@@ -4,7 +4,7 @@ description: Add features like value help, aggregations, and calculated fields t
 auto_validation: true
 time: 60
 tags: [ tutorial>beginner, products>sap-netweaver-7.5]
-primary_tag: topic>abap-development
+primary_tag: programming-tool>abap-development
 ---
 
 ## Prerequisites

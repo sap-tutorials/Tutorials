@@ -1,5 +1,5 @@
 ---
-title: Import Data Into a Table in SAP HANA Database Project
+title: Import Data into a Table in SAP HANA Database Project
 description: Create a table in SAP HANA Database Project and import sample data into the table.
 auto_validation: true
 time: 10

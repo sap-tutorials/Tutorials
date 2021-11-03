@@ -36,6 +36,11 @@ In general, you have a choice of the following options:
 
 **Trial:** *(recommended)* Use a trial account if you just want to try out things and don't want to use any of the parts of this tutorial productively. The usage is free of cost and all the services that you need for this tutorial get automatically assigned to your trial account.
 
+> When running the tutorial with a trial account, please have in mind the following considerations:
+
+> * Choose host region `cf-us10` when creating a new trial account. This will ensure that all services required throughout the tutorial are available to your account.
+> * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, some services required throughout the tutorial might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP Cockpit.
+
 **Live:** There are multiple live landscapes available in different data centers around the globe. Live landscapes are intended for productive usage and development projects.
 
 
@@ -151,7 +156,7 @@ As the result of the previous steps there will be a Cloud Foundry space with req
 
 2. Select your global account in the dropdown menu.
 
-3. Choose **Open in Cockpit**.
+3. Choose **Open in cockpit**.
 
     !![Open global account in cockpit](open_global_account.png)
 
@@ -244,11 +249,11 @@ Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org
 Prepare for the next steps by logging on to Cloud Foundry and targeting your space in the account.
 
 
-If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a terminal to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
+If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
 
 [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
 
 2. Choose **Account Explorer**.
 
@@ -265,17 +270,15 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     !![CF Data in SAP BTP Cockpit](cfdatacloudcockpit.png)
 
 
-    For your convenience, this is the API endpoint for your landscape:
 
-    [https://api.cf.eu10.hana.ondemand.com](https://api.cf.eu10.hana.ondemand.com)
-3. Open a terminal.
+3. Open a command line window.
 
 4. Set the Cloud Foundry API endpoint.
 
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-
+    
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
@@ -283,19 +286,19 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-
+  
 [OPTION END]
 [OPTION BEGIN [Live]]
 
 Prepare for the next steps by logging on to Cloud Foundry and targeting your space in the account.
 
 
-If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a terminal to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
+If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
 
 [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
 
 2. Choose **Account Explorer**.
 
@@ -312,19 +315,15 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     !![CF Data in SAP BTP Cockpit](cfdatacloudcockpit.png)
 
 
-    For your convenience, this is the API endpoint for your landscape:
 
-    [https://api.cf.eu10.hana.ondemand.com ](https://api.cf.eu10.hana.ondemand.com)
-
-
-3. Open a terminal.
+3. Open a command line window.
 
 4. Set the Cloud Foundry API endpoint.
 
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-
+    
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
@@ -332,7 +331,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-
+  
 [OPTION END]
 
 

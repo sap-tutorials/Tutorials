@@ -21,7 +21,7 @@ To sign up for a free trial of SAP Data Warehouse Cloud, go to this [link](https
 
 Enter your details and confirm your e-mail address. You will then receive an email with more instructions and a link to sign into your SAP Data Warehouse Cloud trial! Your trial will be available for 30 days, so make sure to make the most of this time.
 
-To learn more about how the trial works, please visit our [FAQ page](https://saphanajourney.com/data-warehouse-cloud/quick-answers/).
+To learn more about how the trial works, please visit the [FAQ section](https://www.sap.com/products/data-warehouse-cloud.html) of the product page.
 
 
 
