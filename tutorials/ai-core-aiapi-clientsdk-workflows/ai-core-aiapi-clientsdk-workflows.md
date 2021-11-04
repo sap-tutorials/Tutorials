@@ -3,7 +3,7 @@ title: Create Training and Serving Docker Images (Client SDK)
 description: Build Docker images and orchestrate their execution with SAP AI Core.
 auto_validation: true
 time: 20
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
 primary_tag: topic>artificial-intelligence
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
