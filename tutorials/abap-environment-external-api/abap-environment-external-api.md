@@ -2,9 +2,9 @@
 title: Call an External API
 description: Point to an external API and display its output in the console.
 auto_validation: true
-primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, topic>cloud, products>sap-cloud-platform, tutorial>license ]
-time: 30
+time: 20
+tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
@@ -12,11 +12,11 @@ author_profile: https://github.com/julieplummer20
 ## Prerequisites  
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
 - You have set up SAP Cloud Platform, ABAP Environment, for example by using the relevant booster: [Using a Booster to Automate the Setup of the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cd7e7e6108c24b5384b7d218c74e80b9.html)
-- **Tutorial**: [Create Your First Console Application](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html), for a licensed user, steps 1-2
+- **Tutorial**: [Create Your First Console Application](abap-environment-trial-onboarding), for a licensed user, steps 1-2
 
 ## Details
 ### You will learn  
-  - How to create a new destination in SAP Cloud Cockpit
+  - How to create a new destination in SAP Cloud cockpit
   - How to call an external API from inside an ABAP class by pointing to this destination
 
 ---
@@ -29,7 +29,7 @@ Throughout this tutorial, objects name include the suffix `XXX`. Always replace 
 [ACCORDION-BEGIN [Step 1: ](Create destination service)]
 You will now create a destination in the ABAP Environment. This must be created at subaccount (not Space) level.
 
-1. In the SAP Cloud Platform Cockpit of your Cloud Foundry subaccount, navigate to your subaccount.
+1. In the SAP Cloud Platform cockpit of your Cloud Foundry subaccount, navigate to your subaccount.
 
   !![step1a-subaccount](step1a-subaccount.png)
 
