@@ -15,7 +15,7 @@ primary_tag: topic>internet-of-things
 -   Your SAP User has at a minimum the `iot_role_collection` created during onboarding of your tenant and the associated roles (see [SAP Help on Providing Authorizations in](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest/en-US/2810dd61e0a8446d839c936f341ec46d.html) )
 -   You have created an empty `package` in SAP Internet of Things (see [SAP Help on Creating a Package](https://help.sap.com/viewer/e057ad687acc4d2d8f2893609aff248b/latest/en-US/5ba36c7bc9af4576997f72d6dddfc951.html) )
 -   You have created the destination for the SAP S/4HANA or SAP S/4HANA Cloud APIs as described in [Create SAP S/4HANA destination for Smart Sensing](iot-smartsensing-s4destinations)
--   You have created at least two Inbound Delivery in the [SAP S/4HANA](https://help.sap.com/viewer/2f36056ae9a044bba55bcbad204b7bc5/LATEST/en-US/439204028f9c4c7e9b91f04432db3879.html) or [SAP S/4HANA Cloud](hhttps://help.sap.com/viewer/588780cab2774a7ab9fffca3a7f919fe/LATEST/en-US/439204028f9c4c7e9b91f04432db3879.html) systems
+-   You have created at least two Inbound Delivery in the [SAP S/4HANA](https://help.sap.com/viewer/2f36056ae9a044bba55bcbad204b7bc5/LATEST/en-US/439204028f9c4c7e9b91f04432db3879.html) or [SAP S/4HANA Cloud](https://help.sap.com/viewer/588780cab2774a7ab9fffca3a7f919fe/LATEST/en-US/439204028f9c4c7e9b91f04432db3879.html) systems
 
 ## Details
 ### You will learn

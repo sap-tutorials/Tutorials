@@ -3,14 +3,14 @@ title: Set Up SAP Business Application Studio for Development
 description: SAP Business Application Studio is a development environment available on SAP Business Technology Platform. Before you can start developing using SAP Business Application Studio, administrators must perform the required onboarding steps that are described in this tutorial.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-business-technology-platform, products>sap-workflow, software-product-function>sap-cloud-application-programming-model, topic>mobile, products>sap-mobile-cards, products>mobile-development-kit-client]
+tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-fiori, products>sap-business-technology-platform, products>sap-workflow, software-product-function>sap-cloud-application-programming-model, topic>mobile, products>sap-mobile-cards, products>mobile-development-kit-client]
 primary_tag: products>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
 ---
 
 ## Prerequisites
- - You have an SAP BTP Trial account: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
+ - You have an SAP BTP Trial account ([Get a Free Account on SAP BTP Trial](hcp-create-trial-account))
 
 ## Details
 ### You will learn
@@ -69,7 +69,7 @@ This tutorial is based on the procedure described in the [Getting Started](https
     <br>
     >**PAY ATTENTION:** If you reached this point in the tutorial, you have successfully on-boarded SAP Business Application Studio. Answer the validation question of the current tutorial step, and mark the rest of the steps as "Completed".
 
-[VALIDATE_4]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step: 3](Add SAP Business Application Studio subscription to subaccount)]
@@ -84,9 +84,9 @@ Depending on when you created the SAP BTP Trial account, this subscription might
 
     >For the trial environment, SAP Business Application Studio is only available on:
 
-    > - Amazon Web Services (AWS) - Europe (Frankfurt) or US East (VA) regions.
+    > - Amazon Web Services (AWS) - US East (VA) region (US10 trial).
 
-    > - Microsoft Azure - Singapore region.
+    > - Microsoft Azure - Singapore region (AP21 trial).
 
     >An updated list of regions is available in [SAP Discovery Center > Service Plan > Trial](https://discovery-center.cloud.sap/#/serviceCatalog/business-application-studio?tab=service_plan&licenseModel=free).
 
@@ -122,10 +122,10 @@ Depending on when you created the SAP BTP Trial account, this subscription might
 
     !![subscriptioninprogress](Cockpit-Subscription-in-Progress-.png)
 
-[DONE]
+[VALIDATE_4]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step: 5](Launch SAP Business Application Studio)]
+[ACCORDION-BEGIN [Step: 4](Launch SAP Business Application Studio)]
 
 1. Click **Go to Application**.
 

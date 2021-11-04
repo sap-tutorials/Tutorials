@@ -1,4 +1,6 @@
 ---
+author_name: Helena Nacinovic
+author_profile: https://github.com/helenanacinovic
 title: Business Builder in SAP Data Warehouse Cloud
 description: Learn about the business modeling capabilities of the Business Builder in SAP Data Warehouse Cloud, including what you can use it for, who should use it, and some of the prerequisites.
 auto_validation: true
@@ -52,7 +54,7 @@ To create your business scenarios with the Business Builder, here are the object
 
 **Business Entities: Analytical Datasets or Dimensions**
 
-A business entity is based on a view created in the data layer, and it represents an object, such as information about products or sales, including all the selected attributes and measures. In the Business Builder, you can create associations between facts and attributes coming from a view in the data layer. Business entities can be either an analytical dataset – which is a fact table with measures and foreign keys - or a dimension – which is tables containing only attributes.
+A business entity is based on a view created in the data layer, and it represents an object, such as information about products or sales, including all selected attributes and measures. In the Business Builder, you can create associations between facts and attributes coming from a view in the data layer. Business entities can be either an analytical dataset – which is a fact table with measures and foreign keys - or a dimension – which is tables containing only attributes.
 
 [Learn here more about facts and dimensions](https://blogs.sap.com/2021/07/22/facts-measures-and-dimensions/)
 

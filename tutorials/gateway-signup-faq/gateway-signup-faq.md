@@ -2,7 +2,7 @@
 title: SAP Gateway demonstration system FAQ
 description: SAP Gateway Demo Consumption Service signup links, and other SAP Gateway trial-related FAQs
 primary_tag: products>sap-gateway
-tags: [  tutorial>how-to, tutorial>beginner, products>sap-gateway, topic>cloud, topic>odata ]
+tags: [  tutorial>how-to, tutorial>beginner, products>sap-gateway, topic>cloud, topic>odata  ]
 time: 5
 ---
 

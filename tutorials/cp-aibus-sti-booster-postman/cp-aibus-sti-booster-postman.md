@@ -3,7 +3,7 @@ title: Set Up Account for Service Ticket Intelligence and Download Postman Sampl
 description: Use a booster in SAP Business Technology Platform (SAP BTP) Trial to automatically create a service instance, and download Postman environment and collection JSON sample code files for Service Ticket Intelligence.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to access your trial account
   - What are interactive guided boosters
-  - How to use the **Set up account for Service Ticket Intelligence** booster to assign entitlements, update your subaccount, create a service instance, and also to download Postman environment and collection JSON sample code files.
+  - How to use the **Set up account for Service Ticket Intelligence** booster to assign entitlements, update your subaccount, create a service instance, and also to download Postman environment and collection JSON sample code files for the Service Ticket Intelligence service.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Go To Your Trial Account)]

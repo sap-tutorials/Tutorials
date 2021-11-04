@@ -3,7 +3,7 @@ title: Use Machine Learning to Extract Information from Documents with Document 
 description: Get machine learning model predictions for the documents you upload using the Document Information Extraction Trial UI.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, topic>user-interface, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
@@ -48,11 +48,11 @@ Upload to the service any document file in PDF or single-page PNG and JPEG forma
 
     !![DOX-UI-App](png-files/file-type.png)
 
-5. In **Step 2**, select the header fields you want to extract from the documents you uploaded in the previous step. Click **Step 3**.
+5. In **Step 2**, select the header fields you want to extract from the documents you've uploaded. Click **Step 3**.
 
     !![DOX-UI-App](png-files/step-2.png)
 
-6. In **Step 3**, select the line items you want to extract from the documents you uploaded in the previous step. Click **Review**.
+6. In **Step 3**, select the line items you want to extract from the documents you've uploaded. Click **Review**.
 
     !![DOX-UI-App](png-files/step-3.png)
 

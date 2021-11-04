@@ -3,7 +3,7 @@ title: Use Machine Learning to Enrich Employee Data with Swagger UI
 description: Create, update, list and delete enrichment data using the Data API employee entity from Document Information Extraction, one of the SAP AI Business Services in SAP Business Technology Platform (SAP BTP).
 auto_validation: true
 time: 25
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
@@ -118,16 +118,12 @@ Use the **POST /data/jobs** endpoint to add your own master data records to the 
        "value":[
           {
              "id":"E0001",
-             "email":"",
              "firstName":"Linda",
-             "middleName":"",
              "lastName":"Owens"
           },
           {
              "id":"E0002",
-             "email":"",
              "firstName":"Lin",
-             "middleName":"",
              "lastName":"Owens"
           }
        ]

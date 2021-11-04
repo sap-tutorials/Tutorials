@@ -3,13 +3,15 @@ title: Enhance the Handler Class With Filtering
 description: Add filtering by three values - product ID, supplier name, or category
 auto_validation: true
 time: 30
-tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: products>sap-cloud-platform--abap-environment
+tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
+primary_tag: programming-tool>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
-- **IMPORTANT**: This tutorial is part of the mission [Connect Your On-Premise System with SAP Cloud Platform, ABAP Environment](https://developers.sap.com/mission.abap-env-connect-onpremise.html). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work.
+- **IMPORTANT**: This tutorial is part of the mission [Connect Your On-Premise System with SAP Cloud Platform, ABAP Environment](mission.abap-env-connect-onpremise). Please work through the previous tutorials in the mission first; otherwise this tutorial may not work.
 
 ## Details
 ### You will learn

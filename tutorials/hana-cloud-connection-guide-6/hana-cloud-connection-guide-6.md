@@ -39,7 +39,7 @@ These are the overall steps needed to create the connection:
 
 [ACCORDION-BEGIN [Step 1: ](Create a Communication User in SAP S/4HANA)]
 
-Before you create the connection, you need to set up a communication scenario to allow CDS views to be accessed using SAP HANA Cloud, SAP HANA database. There are three main steps to complete this set up. This is the first step. You can also get more information in our [technical documentation](https://help.sap.com/viewer/e0cd7c1ecf3d4f2f9feb46ec1c5b68fb/LATEST/en-US/4a006b43551d4cb5aed6399c0ace6b98.html).
+Before you create the connection, you need to set up a communication scenario to allow CDS views to be accessed using SAP HANA Cloud, SAP HANA database. There are three main steps to complete this set up. This is the first step. You can also get more information in our [technical documentation](https://help.sap.com/viewer/0f69f8fb28ac4bf48d2b57b9637e81fa/LATEST/en-US/4a006b43551d4cb5aed6399c0ace6b98.html).
 
 1.	Search for and open the **Maintain Communication Users** app in SAP S/4HANA.
 
@@ -226,6 +226,8 @@ Your adapter is now registered, and you can continue to SAP HANA Database Explor
 And that is it for this connection. You will then be able to use the communication views from your SAP S/4HANA system within SAP HANA Cloud.
 
 > Congratulations! You have completed this tutorial group and learned how to create connections to and from SAP HANA Cloud, SAP HANA database.
+>
+> If you are interested to learn about how to **use clients to query an SAP HANA database** in SAP HANA Cloud, we recommend [this tutorial mission](mission.hana-cloud-clients).
 >
 > Follow our tag in the [SAP Community](https://blogs.sap.com/tags/73554900100800002881/) to stay up-to-date on the latest updates and newest content! For more learning materials on SAP HANA Cloud, [click here](https://community.sap.com/topics/hana-cloud).
 
