@@ -3,7 +3,7 @@ title: Create Custom Schema for Custom Documents
 description: Create a custom schema for custom documents (that are not supported out of the box) to extract information from similar documents using the Document Information Extraction service.
 auto_validation: true
 time: 15
-tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, topic>user-interface, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, topic>user-interface, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
