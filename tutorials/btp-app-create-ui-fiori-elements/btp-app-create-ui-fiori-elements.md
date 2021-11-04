@@ -5,7 +5,7 @@ title: Create an SAP Fiori Elements-Based UI
 description: This tutorial shows you how to create an SAP Fiori elements app on top of your previously created CAP service.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -22,7 +22,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to check the annotation files
 
 
-To start with this tutorial use the result in the [`cap/create-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/create-service) branch.
+To start with this tutorial use the result in the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch.
 
 ---
 
@@ -299,7 +299,7 @@ The line `Text: miti.description , TextArrangement: #TextOnly,` declares that th
 !![Fiori elements Object Page](feappobjectpage.png)
 
 [DONE]
-The result of this tutorial can be found in the [`cap/fiori-elements-app`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/fiori-elements-app) branch.
+The result of this tutorial can be found in the [`create-ui-fiori-elements`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-ui-fiori-elements) branch.
 
 
 [ACCORDION-END]

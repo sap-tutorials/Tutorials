@@ -1,10 +1,10 @@
 ---
-title: Connect ABAP On-Premise to a Central Check System for Custom Code Migration
-description: Connect an ABAP On-Premise System to a SAP Business Technology Platform (BTP), ABAP Environment containing the Custom Code Migration (CCM) App.
+title: Connect ABAP On-Premise to a Central Check System for Custom Code Migration Using ABAP Test Cockpit (ATC)
+description: Connect an ABAP On-Premise System to a SAP Business Technology Platform (BTP), ABAP Environment containing the Custom Code Migration (CCM) App, ABAP Test Cockpit (ATC)
 auto_validation: true
-time: 90
+time: 60
 tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: topic>abap-development
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---

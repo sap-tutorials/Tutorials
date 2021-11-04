@@ -4,7 +4,7 @@ description: Learn how to maintain ABAPDoc documentation for your class in SAP B
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: topic>abap-development
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
@@ -83,7 +83,7 @@ The comments should now appear in the Outline View:
     ```
     "! <ol>
     "!    <li>Reads flights from HANA DB</li>
-    "!    <li>Converts currency to EUR</li> 
+    "!    <li>Converts currency to EUR</li>
     "! </ol>
 
     ```

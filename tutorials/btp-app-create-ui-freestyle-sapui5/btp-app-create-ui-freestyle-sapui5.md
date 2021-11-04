@@ -5,7 +5,7 @@ title: Create a UI Using Freestyle SAPUI5
 description: This tutorial shows you how to create a Freestyle SAPUI5 app on top of your CAP application.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori-tools, products>sapui5]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori-tools, sogtware-product>sapui5]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -22,7 +22,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to start the application
 
 
-To start with this tutorial use the result in the [`cap/business-logic`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/business-logic) branch.
+To start with this tutorial use the result in the [`cap-business-logic`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-business-logic) branch.
 
 ---
 
@@ -187,7 +187,7 @@ Fortunately, you have also got a choice of several templates that get your appli
     !![SAPUI5 App Object](freestyleui5object.png)
 
 [DONE]
-The result of this tutorial can be found in the [`cap/freestyle-ui5-app`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/freestyle-ui5-app) branch.
+The result of this tutorial can be found in the [`create-ui-freestyle-sapui5`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-ui-freestyle-sapui5) branch.
 
 
 [ACCORDION-END]

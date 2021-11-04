@@ -5,7 +5,7 @@ title: Add the SAP Launchpad Service
 description: This tutorial shows you how to add the SAP Launchpad application.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -33,7 +33,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to test your SAP Launchpad site
 
 
-To start with this tutorial use the result in the [`mta`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/mta) branch.
+To start with this tutorial use the result in the [`cap-mta-deployment`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-mta-deployment) branch.
 
 ---
 
@@ -271,7 +271,7 @@ modules:
 [ACCORDION-BEGIN [Step 9: ](Remove broken dependency from Risks application)]
 Remove the following two lines from `app/risks/package.json`, because they produce build issues and are not needed:
 
-```JSON[3-5]
+```JSON[3,5]
     "devDependencies": {
       ...
       "@sap/ux-ui5-tooling": "1",
@@ -505,21 +505,6 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 2. Locate the **Launchpad Service** under **Subscriptions** and choose **Go to Application**.
 
     !![Instances and Subscriptions](instances_and_subscriptions.png)
-
-    > In case you get the error: `Sorry, we couldn't find  the site`.
-
-    > If you get the error `Sorry, we couldn't find the site. Please contact your site administrator for assistance.` while opening the application, you have to assign your user to the `Launchpad_Admin` role collection:
-
-    > 1. Choose **Security** **&rarr;** **Trust Configuration** on the left.
-    > 2. Choose your identity provider from the list.
-    > 3. Enter your e-mail address and choose **Show Assignments**.
-    > 4. Choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
-
-    >     !![Add role](add_launchpad_admin_role.png)
-
-    > 5. Open another browser or clear your browser's cache.
-
-    > See section [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html) in the SAP Launchpad service's documentation for more details.
 
 3. Choose **Provider Manager** on the left and refresh the `HTML5 Apps` entry there.
 

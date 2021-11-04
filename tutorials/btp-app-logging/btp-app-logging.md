@@ -5,7 +5,7 @@ title: Enable Logging Service for Your Application
 description: This tutorial shows you how to enable Logging Service for your application.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -231,7 +231,7 @@ The time filter is on the right top of the screen. Don't forget to choose *Refre
 
 
 [DONE]
-The result of this tutorial can be found in the [`cp/logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/logging) branch.
+The result of this tutorial can be found in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 

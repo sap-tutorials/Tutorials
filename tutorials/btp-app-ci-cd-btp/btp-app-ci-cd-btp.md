@@ -5,7 +5,7 @@ title: Configure and Run a Predefined SAP Continuous Integration and Delivery (C
 description: Enable SAP Continuous Integration and Delivery (CI/CD) service on SAP Business Technology Platform for your CAP application.
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform]
+tags: [ tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -39,6 +39,11 @@ For more information on how to configure and run predefined pipelines for your o
 1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
 
     [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
+
+    > When running the tutorial with a trial account, please have in mind the following considerations:
+
+    > * Choose host region `cf-us10` when creating a new trial account. This will ensure that the SAP Continuous Integration and Delivery service is available to your account.
+    > * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, the SAP Continuous Integration and Delivery service might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP Cockpit.
 
 1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
 
