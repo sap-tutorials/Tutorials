@@ -1,14 +1,16 @@
 ---
-title: Enhance an ABAP Core Data Services (CDS) View in SAP Cloud Platform, ABAP Environment
-description: Add features like value help, aggregations, and calculated fields to an existing CDS view
+title: Enhance an ABAP Core Data Services (CDS) View in SAP Business Technology Platform (BTP) ABAP Environment
+description: Add features like value help, aggregations, and calculated fields to an existing CDS entity
 auto_validation: true
 time: 60
-tags: [ tutorial>beginner, products>sap-cloud-platform--abap-environment]
-primary_tag: topic>abap-development
+tags: [ tutorial>beginner, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity]
+primary_tag: programming-tool>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
-**Tutorial**: [Create an ABAP Core Data Services (CDS) View in SAP Cloud Platform, ABAP Environment](abap-environment-create-cds-mde)
+**Tutorial**: [Create an ABAP Core Data Services (CDS) View in SAP BTP ABAP Environment](abap-environment-create-cds-mde)
 
 ## Details
 ### You will learn
@@ -32,7 +34,7 @@ Throughout this tutorial, objects name include a suffix, such as `XXX`. Always r
 [ACCORDION-BEGIN [Step 1: ](Add value help)]
 To make the input fields more useful, you will now add input value help to the field **`AgencyID`**.
 
-1. Specify the source of the value help. This works a bit like a join: You need to point to an entity, and field common to both the entity and your CDS view. In this case, you will point to **`AgencyID`** in the CDS entity **`/DMO/I_Agency`**. Add the following annotation to your field **`AgencyID`**.
+1. Specify the source of the value help. This works a bit like a join: You need to point to an entity, and field common to both the value help entity and your CDS entity. In this case, you will point to **`AgencyID`** in the CDS entity **`/DMO/I_Agency`**. Add the following annotation to your field **`AgencyID`**.
 
     ```CDS
     @Consumption.valueHelpDefinition: [{  entity: {name: '/DMO/I_Agency', element: 'AgencyID'}  }]
@@ -43,14 +45,14 @@ To make the input fields more useful, you will now add input value help to the f
 
     ```CDS
     @EndUserText.label: 'Service exposes Travel Data XXX'
-    define service Z_EXPOSE_TRAVEL_XXX {
-      expose Z_C_TRAVEL_DATA_XXX as Travel;
+    define service Z_EXPOSE_TRAVEL_R_XXX {
+      expose Z_I_TRAVEL_R_XXX as Travel;
       expose /DMO/I_Agency as Agency;
     }
 
     ```
 
-3. Format, save, and activate both CDS view and service definition ( **`Shift+F1, Ctrl+S, Ctrl+3`** ).
+3. Format, save, and activate both CDS entity and service definition ( **`Shift+F1, Ctrl+S, Ctrl+3`** ).
 
 4. Refresh your Fiori Elements preview and choose value help for the input field **`AgencyID`**.
 
@@ -85,7 +87,7 @@ CDS associations are simply specifications of joins, always in the same place in
 For more information, see:
 - ABAP Keyword Documentation: [CDS - Associations](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abencds.htm)
 
-1. Add the following 2 statements to your CDS view, **`Z_C_TRAVEL_DATA_XXX`**, just before the list of fields. The first statement creates an association from the source CDS entity **`Z_C_TRAVEL_DATA_XXX`** to the target CDS entity **`/DMO/I_Agency`**, joined on the field **`AgencyID`**. The source entity is represented by the alias **`$projection`**, because you cannot use the original name in a path statement. The target entity is represented by its alias name **`_Agency`**.
+1. Add the following 2 statements to your CDS entity, **`Z_I_TRAVEL_R_XXX`**, just before the list of fields. The first statement creates an association from the source CDS entity **`Z_I_TRAVEL_R_XXX`** to the target CDS entity **`/DMO/I_Agency`**, joined on the field **`AgencyID`**. The source entity is represented by the alias **`$projection`**, because you cannot use the original name in a path statement. The target entity is represented by its alias name **`_Agency`**.
 
     ```CDS
       association [1..1] to /DMO/I_Agency as _Agency on $projection.AgencyID = _Agency.AgencyID
@@ -160,7 +162,9 @@ You will use a simple one to easily merge two fields. The two fields are provide
 
     ```CDS
       concat_with_space(_Customer.Title, _Customer.LastName, 1) as Addressee,
+
     ```
+    !![step15a-concat](step15a-concat.png)
 
 3. Also make sure this association is added to the list of fields:
 
@@ -217,16 +221,20 @@ It would be nice to find out how much money each **Agency** has received in tota
     //Conversion to USD
     @Semantics.currencyCode: true
       cast( 'USD' as abap.cuky ) as TargetCurrency,
+
     ```
+5. Optional: Test in the Fiori Elements preview. Your app should look like this:
+
+    !![step16b-convert-to-dollars](step16b-convert-to-dollars.png)    
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check code for CDS view)]
+[ACCORDION-BEGIN [Step 5: ](Check code for CDS entity)]
 The code for your CDS entity should look like this:
 
 ```CDS
-@AbapCatalog.sqlViewName: 'ZCTRAVEL_xxx'
+@AbapCatalog.sqlViewName: 'ZITRAVEL_xxx'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
@@ -234,7 +242,7 @@ The code for your CDS entity should look like this:
 @Metadata.allowExtensions: true
 @Search.searchable: true
 
-define view Z_C_travel_xxx
+define view Z_I_TRAVEL_R_XXX
   as select from /DMO/I_Travel_U
 
   association [1..1] to /DMO/I_Agency   as _Agency       on $projection.AgencyID = _Agency.AgencyID
@@ -396,9 +404,9 @@ For more information on object pages, see SAP Help Portal: [Defining UI Annotati
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Create CDS view for booking)]
+[ACCORDION-BEGIN [Step 8: ](Create CDS entity for booking)]
 You will now add more information to the object page by creating:
-- A CDS view for bookings
+- A CDS entity for bookings
 - An association from Travel to Booking
 - Adding a second UI facet to the travel metadata extension
 
@@ -407,7 +415,7 @@ You will now add more information to the object page by creating:
     !![step7a-new-cds](step7a-new-cds.png)
 
 2. Enter the following:
-    - Name = **`Z_C_BOOKING_XXX`**
+    - Name = **`Z_I_BOOKING_R_XXX`**
     - Description = **`Consumption view from /DMO/I_BOOKING_U`**
     - Referenced Object = **`/DMO/I_BOOKING_U`**
 
@@ -415,9 +423,9 @@ You will now add more information to the object page by creating:
 
 4. Finally, choose **Use template** then choose **Define view**. Then choose **Finish**.
 
-Your CDS view appears in a new editor.
+Your CDS entity appears in a new editor.
 
-5. Change the **`sqlViewName`**, e.g. to **`ZC_BOOK_XXX`**.
+5. Change the **`sqlViewName`**, e.g. to **`ZI_BOOK_XXX`**.
 
 6. Change the `@AccessControl.authorizationCheck:` to **`#NOT_REQUIRED`**.
 
@@ -453,15 +461,27 @@ Your CDS view appears in a new editor.
 
     ```
 
-1.  In the Package Explorer, select the CDS entity **`Z_C_booking_XXX`**, then choose **New Metadata Extension** from the context menu.
+1.  In the Package Explorer, select the CDS entity **`Z_I_BOOKING_R_XXX`**, then choose **New Metadata Extension** from the context menu.
 
-2. Enter a name **`Z_C_booking_XXX`** and description **Metadata for` Z_C_booking_XXX`**; select the transport request and choose **Finish**.,
+2. Enter a name **`ZMDE_BOOKING_R_XXX`** and description **Metadata for` Z_I_BOOKING_R_XXX`**; select the transport request and choose **Finish**.,
 
 3. In the editor, enter the following code:
 
     ```CDS
     @Metadata.layer: #CORE
-    annotate view Z_C_BOOKING_XXX with
+
+    @UI: {
+    headerInfo: {
+    typeName: 'Travel',
+    typeNamePlural: 'Travels',
+              title: {
+                type: #STANDARD,
+                label: 'Travel',
+                value: 'TravelID'
+                    }
+              }
+          }
+    annotate view Z_I_BOOKING_R_XXX with
 
     {
 
@@ -501,31 +521,31 @@ Your CDS view appears in a new editor.
 
 
 [ACCORDION-BEGIN [Step 11: ](Add association from Travel to Booking)]
-1. In your CDS view **`Z_C_travel_XXX`**, add an association to this booking view:
+1. In your CDS entity **`Z_I_TRAVEL_R_XXX`**, add an association to this booking view:
 
     ```CDS
-    association [0..*] to Z_C_booking_XXX as _booking      on $projection.TravelID = _Booking.TravelId
+    association [0..*] to Z_I_BOOKING_R_XXX as _booking      on $projection.TravelID = _Booking.TravelId
 
     ```
 
 2. Add the association to the field list.
 
-3. Also, add the entity **`Z_C_booking_XXX`** to the service definition **`Z_EXPOSE_travel_XXX`**:
+3. Also, add the entity **`Z_I_BOOKING_R_XXX`** to the service definition **`Z_EXPOSE_TRAVEL_R_XXX`**:
 
 ```CDS
 @EndUserText.label: 'Expose travel Service XXX'
-define service Z_EXPOSE_travel_005 {
-  expose Z_C_travel_005 as Travel;
-  expose Z_C_booking_005 as Booking;
+define service Z_EXPOSE_TRAVEL_R_XXX {
+  expose Z_I_TRAVEL_R_XXX as Travel;
+  expose Z_I_BOOKING_R_XXX as Booking;
 }
 
 ```
 
-4. Check the service binding. It should now include a `to_Booking` association, like this:
+4. Format, save, and activate (**`Shift+F1, Ctrl+S, Ctrl+F3`**).
+
+5. Check the service binding. It should now include a `to_Booking` association, like this. If not, try choosing **Unpublish**, then **Publish** again.
 
     !![step10a-sb-w-booking-association](step10a-sb-w-booking-association.png)
-
-5. Format, save, and activate (**`Shift+F1, Ctrl+S, Ctrl+F3`**).
 
 
 [DONE]
@@ -533,7 +553,7 @@ define service Z_EXPOSE_travel_005 {
 
 
 [ACCORDION-BEGIN [Step 12: ](Add Booking information to object page)]
-1. Before the square bracket, insert a comma after the Travel facet, then insert the **Booking** facet to the Travel metadata extension:
+1. In metadata extension **`Z_MDE_TRAVEL_XXX`**, before the square bracket, insert a comma after the Travel facet, then insert the **Booking** facet to the Travel metadata extension, so that your code looks like this:
 
     ```CDS
     @UI.facet: [ { id:              'Travel',
@@ -552,7 +572,7 @@ define service Z_EXPOSE_travel_005 {
 
     !![step9a-add-facet-booking](step9a-add-facet-booking.png)
 
-2. Now specify which fields from Booking you want to include in the object page, again using an `identification` annotation as follows:
+2. Now, in the metadata extension **`ZMDE_BOOKING_R_XXX`**, specify which fields from Booking you want to include in the object page, again using an `identification` annotation as follows:
 
     ```CDS
     @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],
@@ -592,7 +612,7 @@ define service Z_EXPOSE_travel_005 {
 [ACCORDION-BEGIN [Step 13: ](Add association from Booking to Connection)]
 You can also display information from another entity using an association.
 
-1. Add an association from Booking to Connection.
+1. In the CDS entity **`Z_I_BOOKING_R_XXX`**, add an association from Booking to Connection.
 
     ```CDS
         association [1..1] to /DMO/I_Connection as _Connection on $projection.ConnectionId = _Connection.ConnectionID
@@ -606,7 +626,7 @@ You can also display information from another entity using an association.
 
     ```
 
-3. Now add the following two elements to the entity **`Z_C_BOOKING_XXX`**:
+3. Now add the following two elements to the CDS entity **`Z_I_BOOKING_R_XXX`**:
 
     ```CDS
     @Semantics.quantity.unitOfMeasure: 'DistanceUnit'
@@ -648,7 +668,7 @@ You can also display information from another entity using an association.
 
     !![step13b-add-where-clause](step13b-add-where-clause.png)
 
-3. Format, save, and activate the CDS view.
+3. Format, save, and activate the CDS entity.
 
 4. Test your Fiori Elements preview again. It should look like this:
 
@@ -661,5 +681,11 @@ You can also display information from another entity using an association.
 - Blog post: [From Open SQL Joins to CDS Associations](https://blogs.sap.com/2016/08/12/from-open-sql-joins-to-cds-associations/)
 
 - SAP Help Portal: [Defining UI Annotations](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/fd95e7c9905e469bb176217f49e15e71.html)
+
+- SAP Help Portal: [Defining CDS Annotations for Metadata-Driven UIs](https://help.sap.com/viewer/fc4c71aa50014fd1b43721701471913d/202009.001/en-US/9b4aa865c1e84634b6e105173fc3a5e7.html)
+
+- Troubleshooting: [Blog post: Find Errors in Metadata Extensions, by Andre Fischer](https://blogs.sap.com/2020/07/09/how-to-find-errors-in-metadata-extensions-no-item-data-shown-in-object-page/)
+
+- Troubleshooting: [Blog post: Use the SAP Gateway Error Log in ADT, by Andre Fischer](https://blogs.sap.com/2020/07/22/how-to-use-the-sap-gateway-error-log-in-adt/)
 
 ---

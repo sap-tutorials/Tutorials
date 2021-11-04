@@ -5,7 +5,7 @@ title: Register Your SAP S/4HANA Cloud System
 description: This tutorial shows you how to register your SAP S/4HANA Cloud system in your SAP BTP cockpit.
 auto_validation: true
 time: 15
-tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-api-management, products>sap-hana-cloud, products>sap-s-4hana-cloud]
+tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management, software-product>sap-hana-cloud, software-product>sap-s-4hana-cloud]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 ## Prerequisites

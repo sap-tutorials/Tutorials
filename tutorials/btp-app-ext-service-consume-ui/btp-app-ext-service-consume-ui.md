@@ -5,7 +5,7 @@ title: Consume the External Service in the UI of Your Application
 description: This tutorial shows you how to make supplier information visible in the SAP Fiori Elements UI.
 auto_validation: true
 time: 15
-tags: [tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-api-management, products>sap-api-management]
+tags: [tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management, software-product>sap-api-management]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 

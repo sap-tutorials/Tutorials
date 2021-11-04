@@ -4,7 +4,7 @@ description: Create and Run Unit Tests for your Fiori App Using ABAP Unit Tests.
 auto_validation: true
 time: 40
 tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity]
-primary_tag: topic>abap-development
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
@@ -521,6 +521,6 @@ You can check that the correct values have been passed to, for example, an inter
 - SAP Help Portal: [Unit Testing with ABAP Unit](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/08c60b52cb85444ea3069779274b43db.html)
 - In-depth: Complete openSAP Course [Writing Testable Code for ABAP](https://open.sap.com/courses/wtc1/items/2gzG0sRlN1yjkTUREB02L9)
 - SAP Help Portal: [Entity Manipulation Language (EML)](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/af7782de6b9140e29a24eae607bf4138.html)
-- In-depth: Complete openSAP Course [Building Apps with the ABAP RESTful Application Programming Model](https://open.sap.com/courses/cp13/items/2ic5xm4Fzn4MIVB6KnK1VE)
+- In-depth: Complete openSAP Course [Building Apps with the ABAP RESTful Application Programming Model](https://open.sap.com/courses/cp13/items/2ic5xm4Fzn4MIVB6KnK1VE), in particular: Week 3 Unit 4: [Understanding Entity Manipulation Language (EML)](https://open.sap.com/courses/cp13/items/1PQYUmWLxhSJ6jovoMOScA)
 
 ---

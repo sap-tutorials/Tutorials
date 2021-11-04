@@ -4,13 +4,14 @@ description: In the SAP Business Technology Platform, ABAP Environment, implemen
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: topic>abap-development
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
 
 ##Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
+- **IMPORTANT**: This tutorial is part 4 of a mission. You must complete the other 3 parts first; otherwise, you may experience errors or unexpected behavior. The link to the mission is available at the top right of the screen, immediately above the list of steps.
 
 ## Details
 ### You will learn
