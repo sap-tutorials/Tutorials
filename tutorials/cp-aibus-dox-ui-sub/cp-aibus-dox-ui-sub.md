@@ -3,7 +3,7 @@ title: Subscribe to Document Information Extraction Trial UI
 description: Get access to the Document Information Extraction user interface application, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
