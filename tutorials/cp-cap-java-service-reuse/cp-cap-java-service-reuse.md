@@ -5,7 +5,7 @@ title: Reuse a CAP Java Service
 description: Create a new application and reuse the existing CAP Java service.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>java]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 

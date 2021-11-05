@@ -93,7 +93,15 @@ btp --help
 
 [ACCORDION-BEGIN [Step 9: ](Log in to your global account)]
 
-Now let's log in. At login, you need to connect to the btp CLI server URL and you need to enter the global account subdomain.
+Now let's log in. To do so, you need the CLI server URL (https://cpcli.cf.eu10.hana.ondemand.com) and the subdomain of your global account:
+
+The **CLI server URL** is proposed at login - just accept it with ENTER. Note that there is just this one central CLI server, independent of the regions in which your subaccounts reside. This server is the back-end of the CLI that routes all requests to the platform services.
+
+   ![CLI server URL](server-url.png)
+
+You can find the **global account subdomain** in the cockpit:
+
+  ![Subdomain of the global account in the cockpit](subdomain-ga.png)
 
 You have two options for login:
 
@@ -108,15 +116,7 @@ For login with single sign-on through a browser, enter:
 btp login --sso
 ```
 
-The server URL (https://cpcli.cf.eu10.hana.ondemand.com) is proposed at login, and you can just accept it with ENTER:
-
-![CLI server URL](server-url.png)
-
-The global account subdomain can be found in the cockpit:
-
-![Subdomain of the global account in the cockpit](subdomain-ga.png)
-
-Once you're logged into your global account, it should look like this:
+Once you're logged into your global account, it should look similar to this:
 
 ![CLI Login](sapcplogin.png)
 

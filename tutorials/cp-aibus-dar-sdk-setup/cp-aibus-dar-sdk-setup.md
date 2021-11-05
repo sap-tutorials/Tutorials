@@ -3,7 +3,7 @@ title: Set Up the SDK for Data Attribute Recommendation
 description: Create a virtual environment and install the Python SDK (Software Development Kit) for Data Attribute Recommendation.
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais

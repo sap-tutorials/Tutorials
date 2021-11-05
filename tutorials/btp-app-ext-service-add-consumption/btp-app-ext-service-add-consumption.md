@@ -5,12 +5,12 @@ title: Add the Consumption of an External Service to Your CAP Application
 description: This tutorial shows you how to extend your CAP application to manage risks associated with suppliers. For that you will consume supplier information that is part of the SAP S/4HANA Business Partner to your CAP application.
 auto_validation: true
 time: 20
-tags: [tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-api-management]
+tags: [tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - You have developed your CAP application and have prepared it for deployment using this collection of tutorials [here](mission.btp-application-cap-e2e) or download the result from this [branch](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/logging) to start.
+ - You have developed your CAP application and have prepared it for deployment using this collection of tutorials [here](mission.btp-application-cap-e2e) or download the result from this [branch](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) to start.
 
 ## Details
 ### You will learn
@@ -22,7 +22,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to add the API key
 
 
-To start with this tutorial use the result in the [`cp/logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/logging) branch.
+To start with this tutorial use the result in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
 
 ---
 
@@ -45,7 +45,7 @@ SAP publishes service definitions for its major products on **SAP API Business H
 
     !![API Details](api_details.png)
 
-8.  Choose the download button for `EDMX` option in the Value column. Log on to SAP API Business Hub if you have to.
+8.  Choose the download button for `EDMX` option in the **Value** column. Log on to SAP API Business Hub if you have to.
 
     If you are using Google Chrome as a browser, you now see the downloaded EDMX file in the footer bar:
 
@@ -135,13 +135,12 @@ In this step, you add some mock data for the business partner service. This allo
 5. Open the `db/schema.cds` file and add the following entity at the end of the file:
 
     ```Swift
-    // using an external service from
     using {  API_BUSINESS_PARTNER as bupa } from '../srv/external/API_BUSINESS_PARTNER';
 
-    entity Suppliers as projection on bupa.A_BusinessPartner {
-      key BusinessPartner as ID,
-      BusinessPartnerFullName as fullName,
-      BusinessPartnerIsBlocked as isBlocked,
+        entity Suppliers as projection on bupa.A_BusinessPartner {
+            key BusinessPartner as ID,
+            BusinessPartnerFullName as fullName,
+            BusinessPartnerIsBlocked as isBlocked,
     }
     ```
 
@@ -149,14 +148,21 @@ In this step, you add some mock data for the business partner service. This allo
 
 6. Expose supplier information through your service by adding the following lines to your `srv/risk-service.cds` file:
 
-    ```Swift
-    @readonly
-    entity Suppliers @(restrict : [
-                {
-                    grant : [ 'READ' ],
-                    to : [ 'RiskViewer', 'RiskManager' ]
-                }
-            ]) as projection on my.Suppliers;
+    ```Swift[7-13]
+    service RiskService {
+        entity Risks @(restrict : [
+        ...
+              ]) as projection on my.Risks;
+          annotate Risks with @odata.draft.enabled;
+        ...
+        @readonly
+        entity Suppliers @(restrict : [
+                  {
+                      grant : [ 'READ' ],
+                      to : [ 'RiskViewer', 'RiskManager' ]
+                  }
+              ]) as projection on my.Suppliers;
+    }
     ```
 
     The service is limited to read accesses using `@readonly` and the read permission is given to the roles `RiskViewer` and `RiskManager`.
@@ -332,7 +338,7 @@ This code is required for the sandbox only. The authentication for SAP S/4HANA s
     !![Business Partner Data](bpartners_data.png)
 
 [VALIDATE_1]
-The result of this tutorial can be found in the [`ext-service-add`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-add) branch.
+The result of this tutorial can be found in the [`ext-service-add-consumption`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-add-consumption) branch.
 
 
 [ACCORDION-END]

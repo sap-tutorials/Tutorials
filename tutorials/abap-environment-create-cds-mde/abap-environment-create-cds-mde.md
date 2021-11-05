@@ -1,22 +1,24 @@
 ---
-title: Create an ABAP Core Data Services (CDS) View in SAP Cloud Platform, ABAP Environment
-description: Create a CDS View, display it in Fiori Elements preview, and enhance its appearances using built-in annotations
+title: Create an ABAP Core Data Services (CDS) View in SAP BTP, ABAP Environment
+description: Create a CDS View, display it in Fiori Elements preview, and enhance its appearances using built-in annotations in the Business Technology Platform, ABAP Environment
 auto_validation: true
 time: 45
-tags: [ tutorial>beginner, products>sap-cloud-platform--abap-environment]
-primary_tag: topic>abap-development
+tags: [ tutorial>beginner, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity]
+primary_tag: programming-tool>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
 - You have done one of the following:
-    - **Tutorial**: [Create an SAP Cloud Platform ABAP Environment Trial User](abap-environment-trial-onboarding)
-    - You have a licensed version of SAP Cloud Platform, ABAP Environment
+    - **Tutorial**: [Create an SAP BTP ABAP Environment Trial User](abap-environment-trial-onboarding)
+    - You have bought a licensed version of SAP BTP ABAP Environment
 - You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), latest version
-- You have downloaded the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
+- You have downloaded the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
 
 ## Details
 ### You will learn
-- How to create a CDS view with parameters
+- How to create a CDS view
 - How to display your CDS view in a Fiori Elements preview
 - How to add selection fields to Fiori Elements preview
 - How to extract the metadata of your CDS view
@@ -24,12 +26,13 @@ primary_tag: topic>abap-development
 - How to add a search function
 - How to add selection fields
 
-
-You can then use some of these features in productive development to make your applications more powerful and more user-friendly. By the end of this tutorial, your application should look like this.
+In summary, based on existing persistent data sources, you will create and implement a query for an OData service to get a running app with useful read-only features. You can then use some of these features in productive development to make your applications more powerful and more user-friendly. By the end of this tutorial, your application should look like this.
 
 !![final-app-create](final-app-create.png)
 
 Throughout this tutorial, object names may include a suffix or group number, such as `XXX`. Always replace this with your own group number or initials.
+
+For more information on creating a read-only app, see the SAP Help Portal: [Developing Read-Only List Reporting Apps](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/504035c0850f44f787f5b81e35791d10.html)
 
 ---
 
@@ -50,14 +53,12 @@ Throughout this tutorial, object names may include a suffix or group number, suc
 
     !![step2a-new-cds](step2a-new-cds.png)
 
-2. Add a name, **`Z_C_TRAVEL_DATA_XXX`**, and description **`Consumption view from /DMO/I_TRAVEL_U`**.
+    2. Add the following:
+        - Name: **`Z_I_TRAVEL_R_XXX`**
+        - Description: **`Travel Model View Entity - Read Only`**
+        - Referenced object: **`/DMO/I_TRAVEL_U`**
 
-    Your CDS view is a consumption view. It is based on the business object (BO) view, `/DMO/I_TRAVEL_U`. which view provides a given data model independent of the consumption layer. It contains all core information required by applications running on top of it.  
-
-    A consumption view is a CDS view defined on top of a BO view and is used:
-
-    - to expose the fields fitting to a given consumption use case
-    - to enrich the data model with metadata using annotations (e.g. for UI, search, and OData)
+        Your CDS view is a read-only view. It is based on the business object (BO) view, `/DMO/I_TRAVEL_U`.
 
 3. Choose or create a transport request, then choose **Next**. Do not choose **Finish.**
 
@@ -75,7 +76,7 @@ Your CDS view appears in a new editor.
 
 [ACCORDION-BEGIN [Step 3: ](Define CDS View)]
 1. Add the following:
-    - `sql_view_name` = **`ZCTRAVEL_XXX`**
+    - `sql_view_name` = **`ZITRAVEL_XXX`**
     - `data_source_name` = **`/DMO/I_Travel_U`**. You can use **Auto-Complete `Ctrl+Space`**
 
 2. Insert all the elements from `/DMO/I_TRAVEL_U` by placing your cursor inside the `as select from` statement (curly brackets) and again choosing **Auto-Complete `Ctrl+Space`** .
@@ -122,7 +123,7 @@ For more information, see:
     !![step4a-new-sd](step4a-new-sd.png)
 
 2. Choose a name and description:
-    - **`Z_EXPOSE_TRAVEL_XXX`**
+    - **`Z_EXPOSE_TRAVEL_R_XXX`**
     - **Service exposes Travel data**
 
     !![step4b-sd-travel-data](step4b-sd-travel-data.png)
@@ -136,7 +137,7 @@ For more information, see:
 5. To make the service definition more readable, add an alias to the **expose** statement:
 
     ```CDS
-    expose Z_C_TRAVELS_XXX as Travel;
+    expose Z_I_TRAVEL_R_XXX as Travel;
 
     ```
 
@@ -151,10 +152,10 @@ For more information, see:
     !![step5a-new-sb](step5a-new-sb.png)
 
 2. Choose:
-    - Name = **`Z_BIND_TRAVEL_XXX`**
+    - Name = **`Z_BIND_TRAVEL_R_XXX`**
     - Description = **Service binding for Travel data**
     - Binding Type = **ODATA V2 (UI...)**
-    - Service Definition = **`Z_EXPOSE_TRAVEL_XXX`**
+    - Service Definition = **`Z_EXPOSE_TRAVEL_R_XXX`**
 
       !![step5b-create-service-binding](step5b-create-service-binding.png)
 
@@ -180,7 +181,7 @@ The service binding automatically references the service definition and thus the
 
     !![step13e-service-xml-in-browser](step13e-service-xml-in-browser.png)
 
-4. In the browser, you can also see the **Metadata Document** of the Business Service by adding $metadata to the URL: `/sap/opu/odata/sap/Z_BIND_TRAVEL_XXX/$metadata`.
+4. In the browser, you can also see the **Metadata Document** of the Business Service by adding $metadata to the URL: `/sap/opu/odata/sap/Z_BIND_TRAVEL_R_XXX/$metadata`.
 
     !![step13f-service-metadata-in-browser](step13f-service-metadata-in-browser.png)
 
@@ -208,14 +209,11 @@ The service binding automatically references the service definition and thus the
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add annotation for automatic display)]
-1. It would be nice if at least some fields were displayed immediately for the user. To do this, simply add the following annotation to the relevant fields in **`Z_C_TRAVEL_DATA_XXX`**. The start of the CDS view will then look like this.
+1. It would be nice if at least some fields were displayed immediately for the user. To do this, simply add the following annotation to the relevant fields in **`Z_I_TRAVEL_R_XXX`**. The start of the CDS view will then look like this.
 
     > `BookingFee` is not automatically displayed. The numbers for each field are relative to the other fields and are responsive - they do not refer to a specific pixel position or similar. For larger entities, you can specify *HIGH*,*MEDIUM*, or *LOW*, so that less important fields are automatically hidden on a smaller screen, such as a mobile phone.
 
     ```CDS
-    @UI           : {
-    lineItem      : [{position: 10, importance: #HIGH}]
-    }
     @UI           : {
     lineItem      : [{position: 10, importance: #HIGH}]
     }
@@ -265,8 +263,8 @@ At present, you only have minimal annotations. As you add more, your CDS view wi
 
 3. Enter a name and description for your metadata extension object, clearly similar to your CDS view name, and choose **Next**:
 
-    - **`Z_TRAVEL_METADATA_XXX`**
-    - **`Metadata for Z_C_TRAVEL_DATA_XXX`**
+    - **`Z_MDE_TRAVEL_XXX`**
+    - **`Metadata for Z_I_TRAVEL_R_XXX`**
 
 4. Accept the transport request, choose **Next**, select all elements, then choose **Finish**.
 
@@ -431,7 +429,7 @@ As well as search fields, you can filter the list using an input field. In the n
 Your CDS entity code should look like this:
 
 ```CDS
-@AbapCatalog.sqlViewName: 'ZCTRAVEL_XXX'
+@AbapCatalog.sqlViewName: 'ZITRAVEL_XXX'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
@@ -439,7 +437,7 @@ Your CDS entity code should look like this:
 @Metadata.allowExtensions: true
 @Search.searchable: true
 
-define view Z_C_TRAVEL_DATA_XXX
+define view Z_I_TRAVEL_R_XXX
   as select from /DMO/I_Travel_U
 {
 
@@ -479,7 +477,7 @@ Your MDE code should look like this:
 
 ```CDS
 @Metadata.layer: #CORE
-annotate view Z_C_TRAVEL_DATA_XXX with
+annotate view Z_I_TRAVEL_R_XXX with
 {
 
 @UI           : {
