@@ -104,6 +104,8 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
     !![Org and Space Set Correctly](org_space_set_correctly.png)
 
+Alternatively, you can open a terminal and type cf login --sso in order to connect to cloud foundry dev space through your SSO provider with a temporary code generated on https://login.cf.us10.hana.ondemand.com/passcode
+
 [DONE]
 [ACCORDION-END]
 
