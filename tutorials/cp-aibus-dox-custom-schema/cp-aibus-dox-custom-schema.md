@@ -26,8 +26,6 @@ primary_tag: topic>machine-learning
 
 2. Navigate to your Document Information Extraction Application by clicking **Go To Application**.
 
-    !![Trial global account](01_Foundation20Onboarding_Home.png)
-
     >Click on the bottom left corner **Settings > Schema configuration**.
     
     !![Schema configuration](cp-aibus-dox-custom-schema_configuration.png)
