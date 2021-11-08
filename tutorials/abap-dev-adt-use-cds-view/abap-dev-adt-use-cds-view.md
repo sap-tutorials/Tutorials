@@ -3,7 +3,7 @@ title: Display a CDS View Using ALV with IDA
 description: Display a CDS view in the SAP List Viewer with Integrated Data Access (IDA).
 auto_validation: true
 primary_tag: programming-tool>abap-development
-tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
+tags: [  tutorial>beginner, software-product>sap-netweaver-7.5 ]
 time: 15
 
 ---
