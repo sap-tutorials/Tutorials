@@ -65,7 +65,7 @@ You will now explore how these concepts fit together.
 
     ![Image depicting step3-expand-programs](step3-expand-programs.png)
 
-2. Alternatively, choose **Open development object (`Alt+Shift+A`)** from the toolbar and choose the program **`DEMO_CREATE_STRUCTURED_DATA`**:
+2. Alternatively, choose **Open development object (`Ctrl+Shift+A`)** from the toolbar and choose the program **`DEMO_CREATE_STRUCTURED_DATA`**:
 
     ![Image depicting step3b-open-dev-object](step3b-open-dev-object.png)
     .
