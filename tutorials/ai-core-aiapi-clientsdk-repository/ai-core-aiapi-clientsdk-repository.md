@@ -3,7 +3,7 @@ title: Connect GitHub and Docker to SAP AI Core (Client SDK)
 description: Learn to setup GitHub and Docker registry, and sync them with SAP AI Core through SAP AI API Client SDK.
 auto_validation: true
 time: 15
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
 primary_tag: topic>artificial-intelligence
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
