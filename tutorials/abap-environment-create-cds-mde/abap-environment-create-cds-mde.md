@@ -3,7 +3,7 @@ title: Create an ABAP Core Data Services (CDS) View in SAP BTP, ABAP Environment
 description: Create a CDS View, display it in Fiori Elements preview, and enhance its appearances using built-in annotations in the Business Technology Platform, ABAP Environment
 auto_validation: true
 time: 45
-tags: [ tutorial>beginner, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity]
+tags: [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform]
 primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
