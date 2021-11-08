@@ -3,7 +3,7 @@ auto_validation: true
 title: Integrate List Report into ABAP Fiori Launchpad
 description: Integrate your list report application into ABAP Fiori launchpad.
 primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license]
+tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform, tutorial>license]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -72,7 +72,7 @@ Hint: Your Business Application Studio subscription needs to be in the same suba
       Click **Create**.
 
 
-  6. Click **Add**.
+  6. Go to **Assigned Business Catalogs** and click **Add**.
 
        ![role4](role4.png)
 
@@ -88,7 +88,15 @@ Hint: Your Business Application Studio subscription needs to be in the same suba
 
        ![role7](role7.png)
 
- 10. Click **Save**. Now your business catalog and business user is assigned to your business role.
+ 10. Select **Maintain Restrictions**.
+
+      ![role7](res1.png)
+
+ 11. Adjust Maintain Restrictions for **Write, Read, Value Help** to **Unrestricted**. Go back.
+
+      ![role7](res2.png)
+
+ 12. Click **Save**. Now your business catalog and business user is assigned to your business role.
 
        ![role8](role8.png)
 
