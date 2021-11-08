@@ -3,7 +3,7 @@ title: Create an ABAP Table Type
 description: Create a table type and use it to retrieve data from a database table.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity]
+tags: [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform]
 primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
