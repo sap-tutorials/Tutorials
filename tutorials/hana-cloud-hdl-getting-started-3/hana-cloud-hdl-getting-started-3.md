@@ -1,6 +1,6 @@
 ---
 title: Load Data into Standalone Data Lake in SAP HANA Cloud
-description: Learn to load data into tables in a standalone data lake in SAP HANA Cloud using a trial account.
+description: Learn to load data into tables in a standalone data lake in SAP HANA Cloud.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-hana-cloud, products>sap-hana-cloud-data-lake]
@@ -8,7 +8,7 @@ primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
- - You have completed the [provisioning of a standalone data lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-1) using a trial account.
+ - You have completed the [provisioning of a standalone data lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-1) using a free tier model or trial account.
  - Make sure your data lake instance is running before you start.
  - Download the **supporting files** to gain access to sample data required for loading tables.
 
@@ -167,6 +167,8 @@ Let's get started. Follow these steps:
 
 !![Create Tables](ss-01-create-tables.png)
 
+
+To verify, you can select `Tables` from the list of `Catalog` objects of your standalone data lake in the database menu. To view the list of tables, you must choose the schema.
 
 [OPTION END]
 

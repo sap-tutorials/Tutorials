@@ -3,7 +3,7 @@ auto_validation: true
 title: Create a Custom RAP Business Object to Trigger Purchase Requisitions API
 description: Create a custom RAP business object to trigger purchase requisitions API with SAP S/4HANA Cloud ABAP Environment.
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform ]
 time: 25
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -199,7 +199,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![cds](cds4.png)
 
-  5. Replace your code with following:
+  5. Replace the code for your behavior `ZI_ONLINE_SHOP_XXX` with following:
 
     ```ABAP
     @EndUserText.label: 'Data model for online shop'
@@ -238,7 +238,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![projection](projection3.png)
 
-  4. Replace your code with following:
+  4. Replace the code for your behavior `ZC_ONLINE_SHOP_XXX` with following:
 
     ```ABAP
     @EndUserText.label: 'shop projection'
@@ -395,6 +395,37 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   5. In your **Local Types**, replace your code with following:
 
     ```ABAP
+    CLASS lsc_zbp_i_online_shop_xxx DEFINITION INHERITING FROM cl_abap_behavior_saver.
+
+      PROTECTED SECTION.
+
+        METHODS save_modified REDEFINITION.
+
+    ENDCLASS.
+
+    CLASS lsc_zbp_i_online_shop_xxx IMPLEMENTATION.
+
+      METHOD save_modified.
+        DATA : lt_online_shop_as TYPE STANDARD TABLE OF zshop_as_xxx,
+               ls_online_shop_as TYPE                   zshop_as_xxx.
+        IF zbp_i_online_shop_xxx=>cv_pr_mapped-purchaserequisition IS NOT INITIAL.
+          LOOP AT zbp_i_online_shop_xxx=>cv_pr_mapped-purchaserequisition ASSIGNING FIELD-SYMBOL(<fs_pr_mapped>).
+            CONVERT KEY OF i_purchaserequisitiontp FROM <fs_pr_mapped>-%key TO DATA(ls_pr_key).
+            <fs_pr_mapped>-purchaserequisition = ls_pr_key-purchaserequisition.
+          ENDLOOP.
+        ENDIF.
+
+
+        IF create-online_shop IS NOT INITIAL.
+          " Creates internal table with instance data
+          lt_online_shop_as = CORRESPONDING #( create-online_shop ).
+          lt_online_shop_as[ 1 ]-purchasereqn =  ls_pr_key-purchaserequisition .
+
+          insert zshop_as_xxx FROM TABLE @lt_online_shop_as.
+        ENDIF.
+      ENDMETHOD.
+    ENDCLASS.
+
     CLASS lhc_zbp_i_online_shop_xxx  DEFINITION INHERITING FROM cl_abap_behavior_handler.
       PRIVATE SECTION.
 

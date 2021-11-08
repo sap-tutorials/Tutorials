@@ -3,7 +3,7 @@ title: Use Data Attribute Recommendation to Train a Machine Learning Model
 description: Train a machine learning model using the data that you uploaded to your Data Attribute Recommendation service instance.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [ tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
@@ -20,7 +20,7 @@ Business Use Case: After data preparation and upload, the next step is to train 
 
 [ACCORDION-BEGIN [Step 1: ](Create a training job)]
 
-Based on the uploaded data, you will now train a machine learning model. To create a model, it is necessary to create a training job. A training job is essentially the process whereby the model learns and recognizes the patterns in your data. In this case, it recognizes the patterns and connections between product information and certain product categories. 
+Based on the uploaded data, you will now train a machine learning model. To create a model, it is necessary to create a training job. A training job is essentially the process whereby the model learns and recognizes the patterns in your data. In this case, it recognizes the patterns and connections between product information and certain product categories.
 
 **Open** Postman and make sure that your `Data Attribute Recommendation environment` is selected.
 
