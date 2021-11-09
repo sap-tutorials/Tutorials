@@ -235,7 +235,10 @@ Now that you toured the Tutorial Navigator, you can get credit for doing this tu
 [VALIDATE_7]
 [ACCORDION-END]
 
+---
+
 [Download picture](abc.txt)
 
 [Download picture](abc.csv)
----
+
+[Download picture](person.png)
