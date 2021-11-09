@@ -3,7 +3,7 @@ title: Detect and Highlight Entities from Unstructured Text with Custom Models
 description: Train your own Business Entity Recognition custom model to get machine learning entity predictions for the text you submit to the service.
 auto_validation: true
 time: 30
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>business-entity-recognition]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition]
 primary_tag: topic>machine-learning
 ---
 

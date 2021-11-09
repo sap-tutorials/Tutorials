@@ -3,8 +3,8 @@ title: Enhance an ABAP Core Data Services (CDS) View in ABAP On-Premise
 description: Add features like value help, aggregations, and calculated fields to an existing CDS view
 auto_validation: true
 time: 60
-tags: [ tutorial>beginner, products>sap-netweaver-7.5]
-primary_tag: topic>abap-development
+tags: [ tutorial>beginner, software-product>sap-netweaver-7.5]
+primary_tag: programming-tool>abap-development
 ---
 
 ## Prerequisites

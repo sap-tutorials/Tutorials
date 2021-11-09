@@ -3,8 +3,8 @@ title: Set Up Integration Suite Trial
 description: Get onboarded to SAP Integration Suite trial account.
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
-primary_tag: products>sap-integration-suite
+tags: [tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment]
+primary_tag: software-product>sap-integration-suite
 author_name: Karunaharan V
 author_profile: https://github.com/Karunaharan
 ---

@@ -485,7 +485,7 @@ Since you will display the customer's address in Google Maps on Android device, 
 
 For iOS, you can just use the App store client. Continue with next step.
 
-For Android, you will pass the API key to the MDK client, there is no way public store client can access it, hence you will create a branded client using MDK SDK.
+For Android, you will pass the API key to the MDK client, there is no way public store client can access it, hence you will create a branded client using MDK SDK or SAP Cloud Build Service.
 
 1.  Follow steps 1 to 3 from [this tutorial](cp-mobile-dev-kit-build-client).
 
@@ -525,7 +525,7 @@ For Android, you will pass the API key to the MDK client, there is no way public
     </manifest>
     ```
 
-5. Follow step 4 from [this tutorial](cp-mobile-dev-kit-build-client) to create your branded MDK client.
+5. Create your MDK client either using MDK SDK by following the step 4 from [this](cp-mobile-dev-kit-build-client) tutorial OR using SAP Cloud Build Service by following [this](cp-mobile-dev-kit-cbs-client) tutorial.
 
 [DONE]
 [ACCORDION-END]
