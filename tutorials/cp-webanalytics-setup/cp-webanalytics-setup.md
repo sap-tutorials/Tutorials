@@ -110,13 +110,13 @@ Skip this step if you already have a trial subaccount.
     |  Name             | **My org's SAP Web Analytics customer admin**
     |  Description      | **Customer admin**
 
-    ![New Role](Step_5.1.png)
+    !![New Role](Step_5.1.png)
 
 5. Click the newly created role and select **Edit**.
 6. In the **Roles** section, select **Add a Role**.
 7. In the **Role Name** list, select **Web Analytics Admin**. If you've subscribed to multiple cloud services, you might see other entries as well in the list.
 
-    ![Add Role](Step_5.2.png)
+    !![Add Role](Step_5.2.png)
 
 8. Select **Save**.
 
@@ -126,14 +126,13 @@ Skip this step if you already have a trial subaccount.
 [ACCORDION-BEGIN [Step 6: ](Assign scope to the customer admin)]
 
 1. Select your subaccount to navigate back to subaccount overview page.
-2. In the left pane, select **Security** and then **Trust Configuration**.
-3. Select **Default identify provider**. If you've configured your own ID service with SAP BTP, select your custom ID service.
-4. Enter your e-mail address (or the attribute that you've configured in the custom ID service) so that you can onboard yourself as the customer admin and select **Show Assignments**.
-5. If your e-mail address is not part of the ID service, add the same.
-6. Select **Assign Role Collection**.
-7. In the **Role Collection** list, select the new role that you created for SAP Web Analytics and select **Assign Role Collection**.
-
-    ![Create Trust Configuration](Step_6.png)
+2. In the left pane, select **Security** and then **Role Collections**.
+3. Choose the role collection **My org's SAP Web Analytics customer admin**.
+5. Choose **Edit**.
+    !![Edit Role Collections](Edit_Role_Collection.png)
+4. Navigate to the **Users** tab and enter your e-mail address (or the attribute that you've configured in the custom ID service) so that you can onboard yourself as the customer admin. If your e-mail address is not part of the ID service, add the same.
+    !![Add users](Add_user.png)
+6. Choose **Save**.
 
 
 [VALIDATE_1]
