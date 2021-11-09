@@ -3,7 +3,7 @@ title: Get Started with SAP Application Logging Service in the Neo Environment
 description: Configure logs and view them in the SAP BTP cockpit.
 auto_validation: true
 primary_tag: software-product>sap-business-technology-platform
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform ]
+tags: [ tutorial>beginner, tutorial>license, software-product>sap-business-technology-platform ]
 author_name: Nikola Simeonov
 author_profile: https://github.com/nikolasimeonov77
 time: 30
