@@ -3,7 +3,7 @@ title: Enhance an ABAP Core Data Services (CDS) View in SAP Business Technology 
 description: Add features like value help, aggregations, and calculated fields to an existing CDS entity
 auto_validation: true
 time: 60
-tags: [ tutorial>beginner, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity]
+tags: [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform]
 primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20

@@ -3,7 +3,7 @@ title: Create and Run Unit Tests for a Fiori App
 description: Create and Run Unit Tests for your Fiori App Using ABAP Unit Tests.
 auto_validation: true
 time: 40
-tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity]
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform]
 primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20

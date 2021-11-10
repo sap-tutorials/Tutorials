@@ -2,10 +2,11 @@
 title: Design SAP Work Zone's Home Page
 description: Open the Home page, add content to it, and change the overall layout.
 auto_validation: true
-time: 15
-tags: [ tutorial>beginner, products>sap-work-zone]
+time: 20
+tags: [ tutorial>beginner, software-product>sap-work-zone]
 primary_tag: software-product>sap-work-zone
 author name: Lindsay Bert
+author_profile: https://github.com/LindsayBert
 ---
 
 ## Prerequisites
@@ -48,15 +49,15 @@ First download these image files so that they're on your computer ready for you 
 
 1. Open your browser and navigate to your subaccount in SAP BTP.
 
-2. Click **Service Marketplace** in the left navigation panel and in the search box, type in `work zone` to find the SAP Work Zone tile. Click the tile.
+2. Click **Instances & Subscriptions** in the left navigation panel.
 
-    !![Access work zone](1-access-work-zone.png)
+    !![Click Instances & Subscriptions](1-click-instances-subscriptions.png)
 
-3. Click **Go to Application** at the top right of the screen.
+3. Under the **Subscriptions** tab, click **SAP Work Zone**.
 
-    >Note that you can also go to the application by expanding the 3 dots next to the SAP Work Zone app under the **Application Plans** tab.
+    !![Open SAP Work Zone](2-open-work-zone.png)
 
-    !![Go to application](2-go-to-application.png)
+4. Enter your log on credentials.
 
     When you open SAP Work Zone, you'll see the runtime of the company's work zone with the **Home** page in focus. By default, SAP Work Zone is preconfigured with a shell with different content and features. You can configure SAP Work Zone and add your own content.
 
