@@ -107,7 +107,7 @@ Do the following to access your subscription to the Document Information Extract
 
     !![UI application](subscriptions-tile.png)
 
-5. Here, you can navigate to the application by clicking **Go to Application** and also manage the **Document Information Extraction Trial UI** roles.
+5. Here, you can click **Go to Application** to navigate to the application, and also manage the **Document Information Extraction Trial UI** roles.
 
     !![UI application](subscriptions-action.png)
 
