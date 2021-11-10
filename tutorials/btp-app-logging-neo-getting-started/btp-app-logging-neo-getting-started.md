@@ -157,13 +157,9 @@ The application now displays the `Hello World!` message.
 
 [ACCORDION-BEGIN [Step 11: ](View the logs)]
 
-1.   Go back to the **Logging** page, display the HTTP access log in a log viewer and search for the path `hello-world` to see the `helloworld` application logs. For more information, see [Log Viewers for Java Applications](https://help.sap.com/viewer/f88a032109f0429caea276fc6e3a95f9/Cloud/en-US/b7225bc6f8db42c4b3819aff9f5b3041.html).
+1. Go back to the **Logging** page, display the HTTP access log in a log viewer and search for the path `hello-world` to see the `helloworld` application logs. For more information, see [Log Viewers for Java Applications](https://help.sap.com/viewer/f88a032109f0429caea276fc6e3a95f9/Cloud/en-US/b7225bc6f8db42c4b3819aff9f5b3041.html). ![HTTP access logs](http_access_logs.png)
 
-![HTTP access logs](http_access_logs.png)
-
-2.   From the **Logging** page, display the default trace in a log viewer and search for text `Hello World!` to find the logs from the request operation.
-
-![Default trace logs](default_trace_logs.png)
+2.  From the **Logging** page, display the default trace in a log viewer and search for text `Hello World!` to find the logs from the request operation. ![Default trace logs](default_trace_logs.png)
 
 [DONE]
 
