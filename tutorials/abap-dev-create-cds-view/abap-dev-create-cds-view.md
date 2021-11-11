@@ -3,8 +3,8 @@ title: Create an ABAP Core Data Services (CDS) View in ABAP On-Premise
 description: Create a CDS View, display it in Fiori Elements preview, and enhance its appearance using built-in annotations
 auto_validation: true
 time: 45
-tags: [ tutorial>beginner, products>sap-netweaver-7.5]
-primary_tag: topic>abap-development
+tags: [ tutorial>beginner, software-product>sap-netweaver-7.5]
+primary_tag: programming-tool>abap-development
 ---
 
 ## Prerequisites
@@ -14,9 +14,9 @@ primary_tag: topic>abap-development
 
 ## Details
 ### You will learn
-- How to create a CDS view
-- How to display your CDS view in a Fiori Elements preview
-- How to extract the metadata of your CDS view
+- How to create a read-only CDS-based travel model
+- How to display this CDS entity in a Fiori Elements preview
+- How to extract the metadata of your CDS entity
 - How to add semantic annotations
 - How to add a search function
 - How to add selection fields to the Fiori Elements preview
@@ -44,15 +44,15 @@ Throughout this tutorial, object names may include a suffix or group number, suc
 
 
 [ACCORDION-BEGIN [Step 2: ](Create CDS View)]
-1. In your package, create a CDS view. Select the package, then choose **New > Other** from the context menu, then choose **Data Definition**.
+1. In your package, create a CDS entity. Select the package, then choose **New > Other** from the context menu, then choose **Data Definition**.
 
     !![step2a-new-cds](step2a-new-cds.png)
 
 2. Add a name, **`Z_C_TRAVEL_DATA_XXX`**, and description **`Consumption view from /DMO/I_TRAVEL_U`**.
 
-    Your CDS view a consumption view. It is based on the business object (BO) view, `/DMO/I_TRAVEL_U`. which view provides a given data model independent of the consumption layer. It contains all core information required by applications running on top of it.  
+    Your CDS entity a consumption view. It is based on the business object (BO) view, `/DMO/I_TRAVEL_U`. which view provides a given data model independent of the consumption layer. It contains all core information required by applications running on top of it.  
 
-    A consumption view is a CDS view defined on top of a BO view and is used:
+    A consumption view is a CDS entity defined on top of a BO view and is used:
 
     - to expose the fields fitting to a given consumption use case
     - to enrich the data model with metadata using annotations (e.g. for UI, search, and OData)
@@ -63,7 +63,7 @@ Throughout this tutorial, object names may include a suffix or group number, suc
 
 5. Finally, choose **Finish**.
 
-Your CDS view appears in a new editor.
+Your CDS entity appears in a new editor.
 
 [DONE]
 [ACCORDION-END]
@@ -111,7 +111,7 @@ Your CDS view appears in a new editor.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create a service definition)]
-You will now expose the CDS view as a **business service**. This will allow you to preview your changes in Fiori elements preview.
+You will now expose the CDS entity as a **business service**. This will allow you to preview your changes in Fiori elements preview.
 
 A **business service** consists of a **service definition** and a **service binding**.
 
@@ -125,7 +125,7 @@ For more information, see:
 
 - SAP Help Portal: [Creating a Service Binding](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/777e027f61c3490dba0433443d9143a6.html)
 
-1. First, create the service definition, by selecting your CDS view and choosing **New > Service Definition** from the context menu.
+1. First, create the service definition, by selecting your CDS entity and choosing **New > Service Definition** from the context menu.
 
     !![step4a-new-sd](step4a-new-sd.png)
 
@@ -217,8 +217,8 @@ The service binding automatically references the service definition and thus the
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Add annotation for automatic display)]
-1. It would be nice if at least some fields were displayed immediately for the user. To do this, simply add the following annotation to the relevant fields in **`Z_C_TRAVEL_DATA_XXX`**. The start of your CDS view will then look like this.
+[ACCORDION-BEGIN [Step 9: ](Add annotations for automatic display)]
+1. It would be nice if at least some fields were displayed immediately for the user. To do this, simply add the following annotation to the relevant fields in **`Z_C_TRAVEL_DATA_XXX`**. The start of your CDS entity will then look like this.
 
     > `BookingFee` is not automatically displayed. The numbers for each field are relative to the other fields and are responsive - they do not refer to a specific pixel position or similar. For larger entities, you can specify *HIGH*,*MEDIUM*, or *LOW*, so that less important fields are automatically hidden on a smaller screen, such as a mobile phone.
 
@@ -263,15 +263,15 @@ The service binding automatically references the service definition and thus the
 
 
 [ACCORDION-BEGIN [Step 10: ](Extract UI metadata)]
-At present, you only have minimal annotations. As you add more, your CDS view will start to get cluttered. So you should extract your UI annotations to a separate object, a **metadata extensions** object, as follows:
+At present, you only have minimal annotations. As you add more, your CDS entity will start to get cluttered. So you should extract your UI annotations to a separate object, a **metadata extensions** object, as follows:
 
-1. First add the annotation **`@Metadata.allowExtensions: true`** to your CDS view.
+1. First add the annotation **`@Metadata.allowExtensions: true`** to your CDS entity.
 
 2. Then, click anywhere in the editor, then choose **Source Code > Extract Metadata Extension** from the context menu.
 
     !![step9a-extract-metadata](step9a-extract-metadata.png)
 
-3. Enter a name and description for your metadata extension object, clearly similar to your CDS view name, and choose **Next**:
+3. Enter a name and description for your metadata extension object, clearly similar to your CDS entity name, and choose **Next**:
 
     - **`Z_TRAVEL_METADATA_XXX`**
     - **`Metadata for Z_C_TRAVEL_DATA_XXX`**
@@ -295,10 +295,11 @@ At present, you only have minimal annotations. As you add more, your CDS view wi
 
 
 [ACCORDION-BEGIN [Step 11: ](Add semantic metadata)]
+*change*
 If you define currency amounts and currency codes semantically, then the system will apply specific rules to handle these fields appropriately.
 For example, in this tutorial, if you define `TotalPrice` as a currency amount, and define `CurrencyCode` as a currency code field, then the system will add the appropriate currency to the `TotalPrice` column automatically. There is no need to display `CurrencyCode` as a separate column.
 
-1. To do this, add the following two annotations to your CDS view:
+1. To do this, add the following two annotations to your CDS entity:
 
     ```CDS
 
@@ -321,7 +322,7 @@ For example, in this tutorial, if you define `TotalPrice` as a currency amount, 
 [ACCORDION-BEGIN [Step 12: ](Add search field)]
 You will now add a fuzzy search capability.
 
-1. First, add the search annotation to your CDS view:
+1. First, add the search annotation to your CDS entity:
 
     ```CDS
     @Search.searchable: true
@@ -338,8 +339,7 @@ You will now add a fuzzy search capability.
 3. For convenience, add the following annotation to the metadata extension object, so that the **Memo** field appears by default in the preview, then format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+F3`** ):
 
     ```CDS
-    @UI           : {
-          lineItem      : [{position: 60, importance: #HIGH}]
+    @UI: { lineItem      : [{position: 60, importance: #HIGH}]
           }
     Memo;
 

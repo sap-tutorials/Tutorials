@@ -5,7 +5,7 @@ title: Prepare User Authentication and Authorization (XSUAA) Setup
 description: This tutorial shows you how to set up User Authentication and Authorization (XSUAA).
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -27,15 +27,15 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to set up user authentication and authorization (XSUAA)
 
 
-To start with this tutorial use the result in the [`cp/hana`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/hana) branch.
+To start with this tutorial use the result in the [`hana-cloud-setup`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/hana-cloud-setup) branch.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enable authentication support)]
-The enable authentication support in CAP for SAP BTP, the `xssec` and `xsenv` modules need to be installed. If `cds watch`is still running stop it with <kbd>Ctrl</kbd> + <kbd>C</kbd>. In your project folder execute:
+To enable authentication support in CAP for SAP BTP, the `xssec` module needs to be installed. If `cds watch`is still running stop it with <kbd>Ctrl</kbd> + <kbd>C</kbd>. In your project folder execute:
 
 ```Shell/Bash
-npm i --save  @sap/xssec  @sap/xsenv
+npm i --save  @sap/xssec
 ```
 
 [DONE]
@@ -69,8 +69,6 @@ Make sure you have pasted the new lines within the `"requires": {` section and n
 ---
 [ACCORDION-BEGIN [Step 3: ](Roles and scopes)]
 In the context of Cloud Foundry, a single authorization is called scope. For example, there could be a scope "Read" and a scope "Write". The scope allows a user to read or write a certain business object. Scopes can't be assigned to users directly. They're packaged into roles. For example, there could a role "Editor" consisting of the "Read" and "Write" scopes, while the role "Viewer" consists only of the "Read" scope.
-
-However, CAP recommends using roles only, and creating one-to-one mappings between roles and scopes. We defined two roles like in section [Authorization](https://cap.cloud.sap/docs/guides/authorization#user-claims) in the CAP documentation.
 
 [DONE]
 [ACCORDION-END]
@@ -139,7 +137,7 @@ And created scopes and roles for both in the `xs-security.json` file:
 ```
 
 [VALIDATE_1]
-The result of this tutorial can be found in the [`cp/roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/roles) branch.
+The result of this tutorial can be found in the [`prepare-xsuaa`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/prepare-xsuaa) branch.
 
 
 [ACCORDION-END]

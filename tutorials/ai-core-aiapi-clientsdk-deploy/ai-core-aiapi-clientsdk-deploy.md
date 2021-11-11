@@ -3,7 +3,7 @@ title: Deploy ML Model (Client SDK)
 description: Learn serving of models created in SAP AI Core through SAP AI API Client SDK.
 auto_validation: true
 time: 20
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
 primary_tag: topic>artificial-intelligence
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
@@ -91,7 +91,7 @@ with open(aic_service_key) as ask:
     aic_s_k = json.load(ask)
 
 ai_api_v2_client = AIAPIV2Client(
-    base_url=aic_s_k["serviceurls"]["ML_API_URL"] + "/v2/lm",
+    base_url=aic_s_k["serviceurls"]["AI_API_URL"] + "/v2/lm",
     auth_url=aic_s_k["url"] + "/oauth/token",
     client_id=aic_s_k['clientid'],
     client_secret=aic_s_k['clientsecret'],

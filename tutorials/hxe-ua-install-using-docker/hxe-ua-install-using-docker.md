@@ -22,7 +22,7 @@ Before you begin, ensure your proxy settings have been properly set up. See [**H
 
 SAP HANA, express edition is a streamlined version of the SAP HANA platform which enables developers to jump-start application development in the cloud or personal computer to build and deploy modern applications that use up to 32GB memory. SAP HANA, express edition includes the in-memory data engine with advanced analytical data processing engines for business, text, spatial, and graph data - supporting multiple data models on a single copy of the data.
 
-The software license allows for both non-production and production use cases, enabling you to quickly prototype, demo, and deploy next-generation applications using SAP HANA, express edition without incurring any license fees. Memory capacity increases beyond 32GB are available for purchase at the [SAP Store](https://www.sapstore.com/solutions/99055/SAP-HANA---express-edition).
+The software license allows for both non-production and production use cases, enabling you to quickly prototype, demo, and deploy next-generation applications using SAP HANA, express edition without incurring any license fees. Memory capacity increases beyond 32GB are available for purchase at the [SAP Store](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition).
 
 SAP HANA, express edition for Docker has been tested on the following Linux operating system versions:
 
@@ -236,16 +236,18 @@ Make a note of the path to the `json` file. You will need this to load the SAP H
 Use the SAP HANA, express edition image to create a container.
 
 ```bash
-sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129:1128-1129 -p 59013-59014:59013-59014 -v /data/<directory_name>:/hana/mounts \
---ulimit nofile=1048576:1048576 \
---sysctl kernel.shmmax=1073741824 \
---sysctl net.ipv4.ip_local_port_range='40000 60999' \
---sysctl kernel.shmmni=524288 \
---sysctl kernel.shmall=8388608 \
---name <container_name> \
-store/saplabs/hanaexpress:2.00.054.00.20210603.1 \
---passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>> \
+sudo docker run -p 49013:49013 -p 49015:49015 -p 49041-49045:49041-49045 -p 1138-1139:1128-1129 -p 59023-59024:59013-59014 -p 49030-49033:49030-49033 -p 51000-51060:51000-51060 -p 53075:53075 -h hxehost -v /data/hxe:/hana/mounts
+--ulimit nofile=1048576:1048576
+--sysctl kernel.shmmax=1073741824
+--sysctl net.ipv4.ip_local_port_range='60000 65535'
+--sysctl kernel.shmmni=524288
+--sysctl kernel.shmall=8388608
+--name <container_name>
 --agree-to-sap-license
+--passwords-url <file://<path_to_json_file>
+--proxy-host proxy.wdf.sap.corp
+--proxy-port 8080
+--no-proxy localhost,127.0.0.1,hxehost,hxehost.localdomain
 ```
 
 For information on the TCP/IP port ranges, see [TCP/IP Ports of All SAP Products](https://help.sap.com/viewer/ports). Filter the list by "SAP Cloud Platform".
@@ -254,15 +256,18 @@ Example:
 
 ```
 sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129:1128-1129 -p 59013-59014:59013-59014 -v /data/express_edition:/hana/mounts \
---ulimit nofile=1048576:1048576 \
---sysctl kernel.shmmax=1073741824 \
---sysctl net.ipv4.ip_local_port_range='40000 60999' \
---sysctl kernel.shmmni=524288 \
---sysctl kernel.shmall=8388608 \
---name express_edition \
-store/saplabs/hanaexpress:2.00.054.00.20210603.1 \
---passwords-url file:///hana/password.json \
+sudo docker run -p 49013:49013 -p 49015:49015 -p 49041-49045:49041-49045 -p 1138-1139:1128-1129 -p 59023-59024:59013-59014 -p 49030-49033:49030-49033 -p 51000-51060:51000-51060 -p 53075:53075 -h hxehost -v /data/hxe:/hana/mounts
+--ulimit nofile=1048576:1048576
+--sysctl kernel.shmmax=1073741824
+--sysctl net.ipv4.ip_local_port_range='60000 65535'
+--sysctl kernel.shmmni=524288
+--sysctl kernel.shmall=8388608
+--name hxexsa1 hanaexpressxsa:latest
 --agree-to-sap-license
+--passwords-url file:///hana/mounts/password.json
+--proxy-host proxy.wdf.sap.corp
+--proxy-port 8080
+--no-proxy localhost,127.0.0.1,hxehost,hxehost.localdomain
 ```
 
 This example creates the SAP HANA, express edition container with the name `express_edition`. This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.

@@ -2,8 +2,8 @@
 title: Create an ABAP Database Table and Relevant ABAP Dictionary Objects
 description: Create a database table from scratch using the ABAP Development Tools (ADT); use different Data Dictionary objects to define the fields; then fill the table with test data.
 auto_validation: true
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, products>sap-btp--abap-environment, products>sap-business-technology-platform, products>sap-netweaver-7.5 ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, software-product>sap-netweaver-7.5 ]
 time: 75
 ---
 

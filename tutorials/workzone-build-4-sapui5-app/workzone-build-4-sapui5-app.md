@@ -2,14 +2,16 @@
 title: Add an SAPUI5 App to an SAP Work Zone Page
 description: Add an existing SAPUI5 app to an SAP Work Zone page.
 auto_validation: true
-time: 10
-tags: [ tutorial>beginner, products>sap-work-zone]
-primary_tag: products>sap-work-zone
+time: 15
+tags: [ tutorial>beginner, software-product>sap-work-zone]
+primary_tag: software-product>sap-work-zone
 author_name: Lindsay Bert
+author_profile: https://github.com/LindsayBert
 ---
 
 
 ## Prerequisites
+ - A subaccount in SAP BTP that includes a subscription to the SAP Work Zone service has already been setup for you. Note that SAP Work Zone is not available in a trial account.
  - You've already designed the **Home** page where you'll add this app.   
 
 
@@ -19,7 +21,9 @@ author_name: Lindsay Bert
   - How to add an SAPUI5 app to SAP Work Zone's **Home** page.
 
 
-To add business apps to SAP Work Zone, you need to configure them in a tool called the **Content Manager**, located in the Work Zone Manager. The **Content Manager** includes various editors that you can use to configure apps, groups, roles, and catalogs. Once configured, the app appears as a tile in the **Applications** page of your work zone - a single page that acts as an embedded launchpad. The page is accessed from the top-level menu of SAP Work Zone and displays the business apps that a user has permissions to launch.
+To add business apps to SAP Work Zone, you need to configure them in a tool called the **Content Manager**, located in the Work Zone Manager. The **Content Manager** includes various editors that you can use to configure apps, groups, roles, and catalogs.
+
+Once configured, the app appears as a tile in the **Applications** page of your work zone - a single page that acts as an embedded launchpad. The page is accessed from the top-level menu of SAP Work Zone and displays the business apps that a user has permissions to launch.
 
 
 [ACCORDION-BEGIN [Step 1: ](Open the Content Manager)]
@@ -35,7 +39,7 @@ To add business apps to SAP Work Zone, you need to configure them in a tool call
 
     !![Open business content](2-business-content.png)
 
-3. Click **Content Manager** to open it with the **My Content** tab in focus.
+3. Click **Content Manager**.
 
     !![Open content manager](3-open-content-manager.png)
 
@@ -43,17 +47,17 @@ The Content Manager has two tabs:
 
 - **My Content** where you can manually configure content items (such as apps, roles, groups, and catalogs) and view any other available content items in your subaccount.
 
-- The **Content Explorer** where you can explore exposed content from available content providers and add it to your subaccount (displayed in **My Content**).
+- The **Content Explorer** where you can explore exposed content from available content providers and add it to your subaccount (added content is displayed in **My Content**).
 
-When you open the **Content Manager**, you'll see a side panel on the left with links to the  following tools:
+The **Content Manager** is part of the Work Zone Manager, and it allows SAP Work Zone administrators to configure SAP Work Zone. The Work Zone Manager includes the following tools:
 
-- The **Work Zone Directory** where the SAP Work Zone tile resides.
+- The **Work Zone Directory** where the SAP Work Zone tile resides. From here you can update the Work Zone settings - for example, assign the work zone to a specific role.
 
-- The **Content Manager** where you manage business apps that you can add to your work zone.
+- The **Content Manager** where you manage business content that you can add to your work zone.
 
 - The **Provider Manager** where you manage content providers. Content providers expose business content that you can integrate into your work zone.
 
-- The **Work Zone Configurator** where you can set up your work zone when onboarding to the product if this isn't already done for you.
+- The **Work Zone Configurator** where work zone administrators can set up SAP Work Zone when onboarding to the product. For the tutorial, we assume this configuration has already been done for you.
 
 - The **Settings** where you can configure various settings related to your subaccount.<div>&nbsp;</div><div>
 
@@ -149,12 +153,14 @@ The `Everyone` role already exists in the **Items** list of the **Content Manage
 
     !![Assign role to app](14-assign-role.png)
 
+Once an application is configured, it becomes available to be added as a widget to the SAP Work Zone home page and workspaces.
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create a group and assign the app to it)]
 
-A group is a set of one or more apps displayed together on the **Applications** page of your work zone. Assigning apps to groups, makes them visible to the user on this page. In this step you'll create a new group and assign the app to it.
+A group is a set of one or more apps displayed together on the **Applications** page of SAP Work Zone. Assigning apps to groups, makes them visible to the user on this page. In this step you'll create a new group and assign the app to it.
 
 1. Click the icon in the side panel to navigate back to the **Content Manager**.
 
@@ -198,9 +204,9 @@ Now that the app is configured, you're going to add it to your **Home** page.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create a header for your apps)]
+[ACCORDION-BEGIN [Step 7: ](Add a header for your most commonly used apps)]
 
-Before you add your app to the **Home** page, you'll create a header on the page and then you'll add the app under the header.
+To design your home page to be more practical, we'll add a header for the app and then add the app under it.
 
 1. From the **Applications** page, you can quickly navigate back to the **Home** page by clicking **Home** in the top navigation bar of your work zone. Then click **Home**.
 
@@ -220,33 +226,14 @@ Before you add your app to the **Home** page, you'll create a header on the page
 
 5. Design the text widget as follows:
 
-|  :------------- | :-------------
-| Text            | Type in the following: `Most Popular Apps`.
-| Font            | Select the text and change to Arial 14pt.
-| Color           | With the text still selected, choose the color black from the chart.
+    |  :------------- | :-------------
+    | Text            | Type in the following: `Most Popular Apps`.
+    | Font            | Select the text and change to Arial 14pt.
+    | Color           | With the text still selected, choose the color black from the chart.
 
-  !![Design the header](24-design-text-widget.png)
+    !![Design the header](24-design-text-widget.png)
 
-Now you're going to add your first app next to this header.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Add your app to the page)]
-
-1. In the same row but under the text widget that you've just added, click **Add Widget**.
-
-    !![Add another widget](25-add-another-widget.png)
-
-2. Under **Standard Tools**, select the **Applications** widget.
-
-3. In the Search box, start typing in the name of your app `New Orders`, select the app, and then click **Select**.
-
-    !![Select your app](26-select-application.png)
-
-4. Click outside of the row to see that your app has been added.
-
-5. To increase the spacing between this row and the row above, hover over the row to expose the row settings at the top right, and click **Edit row settings**.
+6. To increase the spacing between this row and the row above, hover over the row to expose the row settings at the top right, and click **Edit row settings**.
 
     !![Edit row settings](27-define-row-settings.png)
 
@@ -258,6 +245,27 @@ Now you're going to add your first app next to this header.
 
     !![Add values to settings](28-add-values.png)
 
+Now you're going to add your first app under this header.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Add your app to the page)]
+
+1. Click **+** to add another row.
+
+    !![Add another widget](25-add-another-widget.png)
+
+2. Click **Add Widget**.
+
+3. Under **Standard Tools**, select the **Applications** widget.
+
+4. In the Search box, start typing in the name of your app `New Orders`, select the app, and then click **Select**.
+
+    !![Select your app](26-select-application.png)
+
+5. Click outside of the row to see that your app has been added.
+
 6. Scroll to the top of the page, and click **Publish**.
 
     This is how your **Home** page looks with the app added to it:
@@ -266,5 +274,5 @@ Now you're going to add your first app next to this header.
 
 7. Click the app to open it.
 
-[VALIDATE_6]
+[VALIDATE_7]
 [ACCORDION-END]

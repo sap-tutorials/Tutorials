@@ -5,7 +5,7 @@ title: Use Your SAP S/4HANA Cloud Service for Your Deployed CAP Application
 description: This tutorial shows you how to prepare your application, deploy it as Multi-Target Application (MTA) and test it with SAP S/4HANA Cloud connectivity.
 auto_validation: true
 time: 30
-tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-api-management, products>sap-hana-cloud, products>sap-s-4hana-cloud]
+tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management, software-product>sap-hana-cloud, software-product>sap-s-4hana-cloud]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 ## Prerequisites
@@ -17,20 +17,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     - You must be an administrator of the SAP BTP global account where you want to register your SAP S/4HANA Cloud system.
     - You need to [Setup your SAP BTP account](btp-app-prepare-btp) if you start with the result from the provided branch in [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption).
     - Your SAP BTP subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp).
-    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment you need to perform step 16-18 from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service).
+    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment you need to perform step 16-18 from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service). 
 - On SAP S/4HANA Cloud side:
-    - You have a dedicated SAP S/4HANA Cloud tenant.
+    - You have a dedicated SAP S/4HANA Cloud tenant. 
     - You must be an administrator of the SAP S/4HANA Cloud system.
     - You need to connect this system to your SAP BTP global account, if you'd like to build extension applications for your SAP S/4HANA Cloud system.
 
 ## Details
 ### You will learn
  - How to prepare your CAP application
- - How to deploy your CAP application
+ - How to deploy your CAP application 
  - How to test your CAP application with SAP S/4HANA Cloud connectivity
 
 
-To start with this tutorial use the result in the [`ext-service-ui`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-ui) branch.
+To start with this tutorial use the result in the [`ext-service-consume-ui`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-consume-ui) branch.
 
 ---
 
@@ -110,7 +110,7 @@ To connect to the SAP S/4HANA Cloud system, you create a service instance for th
 
 5. The SAP S/4HANA Cloud Extensibility service creates a destination with the same name as the service instance. To set destination for `API_BUSINESS_PARTNER` service add the following lines for productive profile to your `package.json` file:
 
-    ```JSON
+    ```JSON[5-10]
         "API_BUSINESS_PARTNER": {
             ...
             "[sandbox]": {
@@ -120,6 +120,7 @@ To connect to the SAP S/4HANA Cloud system, you create a service instance for th
                 "credentials": {
                     "path": "/sap/opu/odata/sap/API_BUSINESS_PARTNER",
                     "destination": "cpapp-bupa"
+                }
             }
         }
     ```
@@ -133,9 +134,9 @@ To connect to the SAP S/4HANA Cloud system, you create a service instance for th
 
     The path is the part between `https://sandbox.api.sap.com/s4hanacloud` and the last path segment (`A_AddressEmailAddress` here).
 
-6. Add the **Destination** service to your CAP service by adding the `requires` section for the `cpapp-srv` module in `mta.yaml` file:
+6. Add the **Destination** service to the `requires` section for the `cpapp-srv` module in `mta.yaml` file:
 
-    ```YAML
+    ```YAML[6]
     modules:
     - name: cpapp-srv
       ...
@@ -184,9 +185,17 @@ You need to perform step 16-18 from the tutorial [Add the SAP Launchpad service]
 
 2. Choose the **Risks** application.
 
-3. Choose **Go**.
+3. Choose **Go**. 
 
     You'll see a message `No data found. Try adjusting filter or search criteria.`
+
+    > In case you get an error `Forbidden`. 
+
+    > The following error is displayed when you haven't assigned your user to the `RiskManager-<your space>` role:
+
+    > !![Forbidden](error_forbidden.png)
+
+    > Follow the instructions in [Assign a Role Collection to a User](btp-app-role-assignment) to do it.
 
     > Why there's no data in the `Risks` application?
 
@@ -197,9 +206,9 @@ You need to perform step 16-18 from the tutorial [Add the SAP Launchpad service]
     !![Create Risk](create_risk.png)
 
 5. Fill in information for the new risk in the object page and choose **Create**.
-
+    
     !![Risk Object Page](risk_object_page.png)
-
+    
     > You can leave the **Mitigation** field empty, since there's no available mitigations to choose from.
 
 6. Check if the new risk is visible.
@@ -216,7 +225,7 @@ Congratulations! You have completed all tutorials.
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-ext-service-s4hc-use" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-ext-service-s4hc-use" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p> 
 <!--TAIL END-->
 The result of this tutorial can be found in the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
 
