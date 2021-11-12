@@ -1,15 +1,15 @@
 ---
 title: Provision a Standalone Data Lake in SAP HANA Cloud
-description: Learn to provision a standalone data lake in SAP HANA Cloud using a trial account.
+description: Learn to provision a standalone data lake in SAP HANA Cloud.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-hana-cloud, products>sap-hana-cloud-data-lake]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\\,-data-lake]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
- - Access to SAP HANA Cloud, either with a free trial account or with a production account.
- - If you don't have a free trial account yet, sign up [here](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html).
+ - Access to SAP HANA Cloud, either with a free tier model, a trial account, or with a production account.
+ - If you don't have a trial account yet, sign up [here](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html).
 
 ## Details
 ### You will learn
@@ -35,11 +35,11 @@ SAP HANA Cloud, data lake was built to be scalable and accommodate increases in 
 The two main components of SAP HANA Cloud, data lake are:
 
 
-1.  **Data Lake, IQ**: Data Lake, IQ is an efficient disk-optimized relational store, based on SAP IQ on-premise. It's enabled by default when you provision data lake instance, whether it's a standalone or managed by an SAP HANA database instance within SAP HANA Cloud.
+1.  **Data Lake, IQ**: Data Lake, IQ is an efficient disk-optimized relational store, based on SAP IQ on-premise. It's enabled by default when you provision a data lake instance, whether it's standalone or managed by an SAP HANA database instance within SAP HANA Cloud.
 
 2.  **Data Lake Files**: Data Lake Files service provides a secure, managed object storage to host structured, semi-structured and unstructured data files. You can query files in a relational format stored in data lake files by using the Data Lake's **SQL on Files** feature. This allows you to analyze the data with a low-cost strategy, given that this data has an unknown value. It is also easy to share this data with other processing tools. It's enabled by default when you provision a data lake instance, whether it's a standalone or managed by an SAP HANA database instance.
 
-The Data Lake Files component is currently not available in trial.
+The Data Lake Files component is currently not available in the free tier model or trial.
 
 
 [DONE]
@@ -124,9 +124,9 @@ In this step, you can choose to activate the Data Lake, IQ component. Once you e
 
 4.	If you want to double-check your password, you can click on the **Show Password** checkbox.
 
-5.	Next, select the number of coordinators and workers for your data lake. The combination of these choices will result in the compute value, which you can see right under these fields.
+5.	For free tier model or trial, the number of coordinators and workers is fixed.  For production accounts, you can select the number of coordinators and workers for your data lake. The combination of these choices will result in the compute value, which you can see right under these fields.
 
-6.	Then, select the amount of storage you wish to allocate to this instance. The minimum in Microsoft Azure is 4TB, and in AWS is 1TB, the maximum is 90 TB.
+6.	For production accounts, you can also select the amount of storage you wish to allocate to this instance. The minimum in Microsoft Azure is 4TB, and in AWS is 1TB, the maximum is 90 TB.
 
 7.	Click on **Next Step** to continue.
 
@@ -158,7 +158,7 @@ In this step, you can choose to activate the Data Lake, IQ component. Once you e
 [ACCORDION-END]                
 
 [ACCORDION-BEGIN [Step 8: ](Edit storage size)]
-If you are using a trial account, you are not able to change the size of your data lake instance. But if you are using a production account, then you can also scale your data lake up or down even after it is provisioned. Keep in mind, however, that you cannot have a data lake that is smaller than the minimum size.
+If you are using a free tier model or trial account, you are not able to change the size of your data lake instance. But if you are using a production account, then you can also scale your data lake up or down even after it is provisioned. Keep in mind, however, that you cannot have a data lake that is smaller than the minimum size.
 
 >Once your data lake instance is provisioned, you can scale your compute settings up or down as you wish, and as often as you wish. **Although at present, you can only scale up the storage size settings, but not scale down.**
 
