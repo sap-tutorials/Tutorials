@@ -3,8 +3,8 @@ title: Install Jupyter and Run SAP AI API Client SDK on Python
 description: Learn python installation and Jupyter setup. Invoke SAP AI API Client SDK.
 auto_validation: true
 time: 15
-tags: [ tutorial>license, tutorial>advanced, programming-tool>artificial-intelligence, programming-tool>machine-learning, software-product>sap-business-technology-platform ]
-primary_tag: programming-tool>artificial-intelligence
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
+primary_tag: topic>artificial-intelligence
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
@@ -179,7 +179,7 @@ You will use the saved location to load service key and use with SAP AI API clie
 !![aic service key](img/pip/aic_service_key.png)
 
 
-1. Create a new cell in jupyter notebook.
+1. Create a new cell in Jupyter notebook.
 
     !![new cell](img/jupyter/new-cell.png)
 

@@ -3,7 +3,7 @@ title: Create an ABAP Package
 description: Create an ABAP package, which will enable you to structure your development objects.
 auto_validation: true
 primary_tag: programming-tool>abap-development
-tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
+tags: [  tutorial>beginner, software-product>sap-netweaver-7.5 ]
 time: 10
 ---
 ##Prerequisites
