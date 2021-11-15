@@ -4,7 +4,7 @@ description: Use routes to navigate between different pages using UI5 Web Compon
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-fiori]
-primary_tag: topic>html5
+primary_tag: programming-tool>html5
 author_name: Lukas Harbarth
 author_profile: https://github.com/Lukas742
 ---
@@ -337,15 +337,15 @@ export function Detail() {
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 4: ](Import Router components)]
 
-1. In `MyApp.jsx`, import `Switch`, `Route` and `Redirect` from `react-router-dom` and the `Home` and `Detail` components.
+1. In `MyApp.jsx`, import `Routes`, `Route` and `Navigate` from `react-router-dom` and the `Home` and `Detail` components.
 
     ```JavaScript / JSX
-    import { Switch, Route, Redirect } from "react-router-dom";
+    import { Routes, Route, Navigate } from "react-router-dom";
     import { Home } from "./Home";
     import { Detail } from "./Detail";
     ```
 
-2. Wrap your `ShellBar` component inside of [Fragments](https://reactjs.org/docs/fragments.html) and set up paths with `Switch` and the component displayed respectively.
+2. Wrap your `ShellBar` component inside of [Fragments](https://reactjs.org/docs/fragments.html) and set up paths with `Routes` and the component displayed respectively.
 
     ```JavaScript / JSX
     return (
@@ -361,16 +361,16 @@ export function Detail() {
         >
           <ShellBarItem icon="add" text="Add" />
         </ShellBar>
-        <Switch>
+        <Routes>
           <Route path="/home" component={Home} />
           <Route path="/detail" component={Detail} />
-          <Redirect from="/" to="/home" />
-        </Switch>
+          <Route path="/" element={<Navigate replace to="/home" />} />
+        </Routes>
       </>
     );
     ```
 
-The `Redirect` component will redirect the user if the URL doesn't match any given paths.
+The `Navigate` component will redirect the user if the URL doesn't match any given paths.
 
 Your current URL now displays the `#/home` path. If you replace `home` with `detail`, you will be routed to the detail page.
 
@@ -401,15 +401,15 @@ Except for changing the URL of the App the user doesn't have options to navigate
     >
     ```
 
-2. Define the `handleProgressHeaderClick` function as follows. And import the [`useHistory`](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/hooks.md#usehistory) hook from `react-router-dom`.
+2. Define the `handleProgressHeaderClick` function as follows. And import the `useNavigate` hook from `react-router-dom`.
 
     ```JavaScript / JSX
-    import { useHistory } from "react-router-dom";
+    import { useNavigate } from "react-router-dom";
     ```
     ```JavaScript / JSX
-    const history = useHistory();
+    const navigate = useNavigate();
     const handleProgressHeaderClick = () => {
-      history.push("/detail");
+      navigate("/detail");
     };
     ```
 
@@ -422,9 +422,9 @@ Except for changing the URL of the App the user doesn't have options to navigate
     Go into your `MyApp.jsx` file where your `ShellBar` is located and add an `onLogoClick` prop. The function is almost the same as for the `onHeaderClick`, but this time the destination should be the default page.
 
     ```JavaScript / JSX
-    const history = useHistory();
+    const navigate = useNavigate();
     const handleLogoClick = () => {
-      history.push("./");
+      navigate("./");
     };
     ```
 
@@ -449,15 +449,15 @@ If needed, you can compare your files with the following code references:
 import React from "react";
 import { Avatar, ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
 import "@ui5/webcomponents-icons/dist/add.js";
-import { Switch, Route, Redirect } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Home } from "./Home";
 import { Detail } from "./Detail";
 
 export function MyApp() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const handleLogoClick = () => {
-    history.push("./");
+    navigate("./");
   };
   return (
     <>
@@ -473,11 +473,11 @@ export function MyApp() {
       >
         <ShellBarItem icon="add" text="Add" />
       </ShellBar>
-      <Switch>
-        <Route path="/home" component={Home} />
-        <Route path="/detail" component={Detail} />
-        <Redirect from="/" to="/home" />
-      </Switch>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/detail" element={<Detail />} />
+        <Route path="/" element={<Navigate replace to="/home" />} />
+      </Routes>
     </>
   );
 }
@@ -487,7 +487,7 @@ export function MyApp() {
 
 ```JavaScript / JSX
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   AnalyticalTable,
   Card,
@@ -576,9 +576,9 @@ const tableColumns = [
 export function Home() {
   const [toggleCharts, setToggleCharts] = useState("lineChart");
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
   const handleProgressHeaderClick = () => {
-    history.push("/detail");
+    navigate("/detail");
   };
   const contentTitle =
     toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
