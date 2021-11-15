@@ -1,6 +1,6 @@
 ---
-title: Create a Data Model and Expose It as Using a Service
-description: Create a new application using low-code capabilities of SAP Business Application Studio.
+title: Create a Data Model and Expose It as a Service
+description: Create a capital expenditures data model and expose it via a service, using the low-code capabilities of SAP Business Application Studio.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>mobile, software-product>sap-btp--cloud-foundry-environment, software-product>sap-fiori, software-product>sap-hana-cloud, tutorial>license, tutorial>free-tier]
