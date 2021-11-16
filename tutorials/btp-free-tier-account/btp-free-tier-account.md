@@ -162,7 +162,7 @@ You are now in your global account, to be more precise in your **Account Explore
     - **Subdomain**: Added automatically. The subdomain will become part of the URL for accessing applications that you subscribe to from this subaccount. The subdomain can contain only letters, digits, and hyphens (not allowed at the beginning or at the end), and must be unique across all subaccounts in the same region.
     - **Region**: Select the region closest to you.
 
-    > **Caution:** Do not select *cf-eu10*.
+    > **Caution:** Unfortunately, Free Tier is currently not available for EU10. Please select any other region.
 
     - **Description** (optional): Add an additional description to identify your subaccount.
 
@@ -173,31 +173,10 @@ You are now in your global account, to be more precise in your **Account Explore
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Manage Entitlements for Cloud Foundry runtime)]
-To use Cloud Foundry services, you need to manage the entitlements and activate the free service plan.
-
-1. Enter your newly created subaccount by clicking on the tile.
-
-2. In the navigation menu on the left side, select **Entitlements**.
-
-3. Click **Configure Entitlements** and then **Add service plan**.
-
-4. From the list, select **Cloud Foundry Runtime** and enable the free service plan by checking the box.
-
-    !![Cloud Foundry Environment](btp-free-tier-account-entitlements.png)
-
-5. Select **Add 1 Service Plan**.
-
-6. Select **Save**.
-
-
-[DONE]
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 9: ](Enable Cloud Foundry environment)]
-Now that you've configured your entitlements, you can activate Cloud Foundry environment.
+You now need to activate Cloud Foundry environment.
 
-1. Go back to your subaccount by clicking on **Subaccount** in the navigation bar.
+1. Go to your subaccount by clicking on **Subaccount** in the navigation bar.
 
 2. Select **Cloud Foundry Environment**.
 
