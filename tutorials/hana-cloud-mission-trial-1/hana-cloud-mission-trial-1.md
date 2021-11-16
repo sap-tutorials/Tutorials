@@ -1,12 +1,12 @@
 ---
 author_name: Christopher Kollhed
 author_profile: https://github.com/chriskollhed
-title: Start Using an SAP HANA Cloud Trial in SAP BTP Cockpit
-description: Learn how to get a trial of SAP HANA Cloud or how to add it to an existing trial of SAP Business Technology Platform.
+title: Start Using SAP HANA Cloud Free Tier Model or Trial in SAP BTP Cockpit
+description: Learn how to get started with the free tier model or trial of SAP HANA Cloud or how to add it to an existing account on SAP Business Technology Platform.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-btp-cockpit]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-btp-cockpit]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -14,8 +14,8 @@ primary_tag: products>sap-hana-cloud
 
 ## Details
 ### You will learn
-- How to sign up for an SAP HANA Cloud trial
-- How to add SAP HANA Cloud to an existing SAP BTP trial
+- How to sign up for SAP HANA Cloud free tier model or trial
+- How to add SAP HANA Cloud to an existing SAP BTP trial account
 - How the SAP BTP cockpit is structured and where to find SAP HANA Cloud in it
 
 
@@ -36,7 +36,7 @@ This tutorial is part of a mission, in which you will learn in a hands-on, end-t
 
 This mission consists of 9 modules that contain the necessary steps you need to follow in your mission to help Alex:
 
-1.	You are here <sub-style="font-size:30px">&#9755;</sub> **Start using an SAP HANA Cloud trial in SAP BTP Cockpit**.
+1.	You are here <sub-style="font-size:30px">&#9755;</sub> **Start using SAP HANA Cloud free tier model or trial in SAP BTP Cockpit**.
 
 2.	Provision an instance of SAP HANA Cloud, SAP HANA database
 
@@ -54,7 +54,7 @@ This mission consists of 9 modules that contain the necessary steps you need to 
 
 9.	Grant access to Calculation Views
 
-In this tutorial, you will first learn how to sign up for a trial of SAP HANA Cloud, SAP HANA database or add it to an existing trial account of SAP BTP if you have one. This is the prerequisite for all other modules in this mission.
+In this tutorial, you will first learn how to sign up for the free tier model or trial of SAP HANA Cloud, SAP HANA database or add it to an existing trial account of SAP BTP if you have one. This is the prerequisite for all other modules in this mission.
 
 > If you have a **production environment** of SAP HANA Cloud, SAP HANA database, you may also follow the steps described in this mission.
 >
@@ -68,7 +68,24 @@ In this tutorial, you will first learn how to sign up for a trial of SAP HANA Cl
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get to know the SAP HANA Cloud trial)]
+[ACCORDION-BEGIN [Step 1: ](Get to know the SAP HANA Cloud free tier model)]
+
+-	Customers and partners with an existing CPEA or Pay-As-You-Go contract can start using the free tier model for SAP BTP to explore, learn, and try SAP BTP services (such as SAP HANA Cloud) with a path to productive use.
+
+-	With the free tier model for SAP BTP you start with a productive account right away. The free tier means you can try out selected services up to a specified capacity limit and switch easily to the paid tier, without losing any work.  In order to use the HANA Cloud free tier model, you will need to have the SAP HANA Cloud service entitlement available in your subaccount.  To provision a free tier instance, the free tier service plans must be enabled in your subaccount entitlement.  If you plan to upgrade your instance to a paid tier, the paid tier service plans must also be enabled.  No charges will occur if you are only making use of the free tier service plans.  However, if you decide to upgrade to a paid tier service plan, applicable charges will occur once the instance has been upgraded.   
+
+-	For the SAP HANA Cloud free tier model, simply choose the Free Tier license type when provisioning your instances as shown below.  
+
+    ![license options](licenses.png)
+
+-	In comparison, SAP BTP trial allows you to build full applications in a test environment to learn and explore of the capabilities of SAP BTP. However, once customers and partners are ready to move to the next phase and deploy to production, they will need to get a new productive account and start over.
+
+-	SAP HANA Cloud services are available for both free tier model and trial – customers and partners can choose the option based on their preferences.  Note that this learning journey contains details for both options.     
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Get to know the SAP HANA Cloud trial)]
 
 -	You can use your free trial account to test the components **SAP HANA Cloud, SAP HANA database** and **SAP HANA Cloud, data lake**.
 
@@ -89,7 +106,7 @@ In this tutorial, you will first learn how to sign up for a trial of SAP HANA Cl
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Sign up for the free trial)]
+[ACCORDION-BEGIN [Step 3: ](Sign up for the free trial)]
 
 In this step, you can learn how to sign up for the free trial of SAP HANA Cloud. There are two options indicated by the two tabs in this step.
 
@@ -166,7 +183,7 @@ Congratulations, you have added the SAP HANA Cloud entitlement to your existing 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Get to know SAP BTP cockpit)]
+[ACCORDION-BEGIN [Step 4: ](Get to know SAP BTP cockpit)]
 
 SAP BTP cockpit is a web-based interface used to manage SAP cloud applications, such as SAP HANA Cloud. This is where you can manage your SAP Business Technology Platform account and users as well as create new instances whenever necessary.  
 
@@ -189,7 +206,7 @@ This is where you can enter your account but also find helpful resources to get 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Understand Accounts, Subaccounts, and Spaces)]
+[ACCORDION-BEGIN [Step 5: ](Understand Accounts, Subaccounts, and Spaces)]
 
 Your account on SAP Business Technology Platform is called a **global account**. As the administrator, you will have full control of your global account and be able to create subaccounts, spaces, and instances. Subaccounts are a smaller part of your global account. Under subaccounts are spaces, in which your instances are located.
 
@@ -219,7 +236,7 @@ You have completed the first tutorial of this mission! Learn in the next tutoria
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+[ACCORDION-BEGIN [Step 6: ](Test yourself)]
 
 
 

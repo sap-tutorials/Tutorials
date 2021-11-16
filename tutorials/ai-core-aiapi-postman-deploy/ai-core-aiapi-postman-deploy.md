@@ -3,7 +3,7 @@ title: Deploy ML Models with Postman
 description: Use REST API with Postman to deploy text-classifier on SAP AI Core.
 auto_validation: true
 time: 20
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
 primary_tag: topic>artificial-intelligence
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
