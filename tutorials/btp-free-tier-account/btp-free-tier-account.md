@@ -161,6 +161,9 @@ You are now in your global account, to be more precise in your **Account Explore
 
     - **Subdomain**: Added automatically. The subdomain will become part of the URL for accessing applications that you subscribe to from this subaccount. The subdomain can contain only letters, digits, and hyphens (not allowed at the beginning or at the end), and must be unique across all subaccounts in the same region.
     - **Region**: Select the region closest to you.
+
+    > **Caution:** Do not select *cf-eu10*.
+
     - **Description** (optional): Add an additional description to identify your subaccount.
 
 4. Select **Create**.
@@ -170,10 +173,31 @@ You are now in your global account, to be more precise in your **Account Explore
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Enable Cloud Foundry environment)]
-To use Cloud Foundry services, you need to activate and enable Cloud Foundry environment.
+[ACCORDION-BEGIN [Step 9: ](Manage Entitlements for Cloud Foundry runtime)]
+To use Cloud Foundry services, you need to manage the entitlements and activate the free service plan.
 
 1. Enter your newly created subaccount by clicking on the tile.
+
+2. In the navigation menu on the left side, select **Entitlements**.
+
+3. Click **Configure Entitlements** and then **Add service plan**.
+
+4. From the list, select **Cloud Foundry Runtime** and enable the free service plan by checking the box.
+
+    !![Cloud Foundry Environment](btp-free-tier-account-entitlements.png)
+
+5. Select **Add 1 Service Plan**.
+
+6. Select **Save**.
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Enable Cloud Foundry environment)]
+Now that you've configured your entitlements, you can activate Cloud Foundry environment.
+
+1. Go back to your subaccount by clicking on **Subaccount** in the navigation bar.
 
 2. Select **Cloud Foundry Environment**.
 
@@ -181,7 +205,9 @@ To use Cloud Foundry services, you need to activate and enable Cloud Foundry env
 
     !![Cloud Foundry Environment](btp-free-tier-account-enable-cf.png)
 
-4. In the opening wizard, keep the settings as they are and proceed by clicking **Create**.
+4. In the opening wizard, select **free** as plan - any other configuration will generate costs. Keep the rest of settings as they are and proceed by clicking **Create**.
+
+    !![Cloud Foundry Free plan](btp-free-tier-cf-free-plan.png)
 
 > Enabling Cloud Foundry environment might take a couple of moments. Thank you for patience.
 
