@@ -3,7 +3,7 @@ title: Train Execution of ML Model (Postman)
 description: Train execution a ML model in SAP AI Core with help of Postman client.
 auto_validation: true
 time: 20
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
 primary_tag: topic>artificial-intelligence
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
@@ -122,7 +122,7 @@ Make the API call.
 
 ### Endpoint
 **POST**
-`{{apiurl}}/v2/lm/executions`
+`{{apiurl}}/v2/lm/configurations`
 
 ### HEADER
 
@@ -248,7 +248,11 @@ Let's poll the status of the training and wait until it goes into one of the sta
 
 > **COLLECTIONS** > *GET* Get execution
 
-`HEADER`
+### Endpoint
+**POST**
+`{{apiurl}}/v2/lm/executions`
+
+### HEADER
 
 | Key | Value |
 | --- | --- |

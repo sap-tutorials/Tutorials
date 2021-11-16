@@ -3,8 +3,8 @@ title: Load Data into Standalone Data Lake in SAP HANA Cloud
 description: Learn to load data into tables in a standalone data lake in SAP HANA Cloud.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-hana-cloud, products>sap-hana-cloud-data-lake]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\\,-data-lake]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
