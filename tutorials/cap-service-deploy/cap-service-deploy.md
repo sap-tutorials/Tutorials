@@ -27,7 +27,7 @@ It's now time to switch to SAP HANA as a database. To continue with this tutoria
 
 > ### Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day, before you start working with your trial.
 
-1. If `cds watch` is still running in VS Code, choose **CTRL+C** in the command line to stop the service.
+1. If `cds watch` is still running in VS Code, choose <kbd>Ctrl</kbd> + <kbd>C</kbd> in the command line to stop the service.
 
 2. To prepare the project, execute in the root level of your project in VS Code:
 
