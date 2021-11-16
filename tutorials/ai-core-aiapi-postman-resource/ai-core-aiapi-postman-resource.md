@@ -1,9 +1,9 @@
 ---
-title: Create a Resource Group and Connect AWS S3 Object Store to SAP AI (Postman)
+title: Create a Resource Group and Connect AWS S3 Object Store to SAP AI Core (Postman)
 description: Learn creation of resource group in SAP AI Core to enable multi-tenancy through Postman client. Store datasets to AWS S3 and connect to SAP AI Core through Postman client.
 auto_validation: true
 time: 15
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
 primary_tag: topic>artificial-intelligence
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
