@@ -3,8 +3,8 @@ title: Monitor An SAP BTP ABAP Environment Service Using SAP Focused Run (FRUN)
 description: Configure health monitoring and real user monitoring for an SAP BTP ABAP Environment service using SAP Focused Run (FRUN).
 auto_validation: true
 time: 45
-tags: [ tutorial>intermediate, topic>cloud-operations, software-product>sap-btp--abap-environment, tutorial>license]
-primary_tag: programming-tool>abap-development
+tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-btp--abap-environment, tutorial>license]
+primary_tag: topic>cloud-operations
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
