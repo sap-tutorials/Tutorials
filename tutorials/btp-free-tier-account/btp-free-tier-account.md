@@ -107,6 +107,8 @@ You are now asked to enter your credit card details, such as **card holder name*
 
 Proceed by selecting **Continue to Checkout Review**.
 
+> After you have signed up for an account, your credit card balance might show a reservation (for example, 1€ or 1$, depending on your currency) from SAP. However, this reservation will disappear after a couple of days and you won't be charged for creating an account.
+
 
 [DONE]
 [ACCORDION-END]
@@ -161,13 +163,11 @@ You are now in your global account, to be more precise in your **Account Explore
 
     - **Subdomain**: Added automatically. The subdomain will become part of the URL for accessing applications that you subscribe to from this subaccount. The subdomain can contain only letters, digits, and hyphens (not allowed at the beginning or at the end), and must be unique across all subaccounts in the same region.
     - **Region**: Select the region closest to you.
-
     > **Caution:** Unfortunately, Free Tier is currently not available for EU10. Please select any other region.
 
     - **Description** (optional): Add an additional description to identify your subaccount.
 
 4. Select **Create**.
-
 > The creation of your subaccount might take a couple of moments. Wait until the orange loading board "Onboarding" has disappeared.
 
 [DONE]
