@@ -38,7 +38,7 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
     ![Set Breakpoints](DebuggerBreakpoints.png)
 
-  4. Right-click the procedure named `RESERVATION_GENERATOR` in the database browser and select **Generate Call Statement** or **Generate Call Statement with UI**.
+  4. Right-click the procedure named `RESERVATION_GENERATOR` in the database browser and select **Generate Call Statement**.
 
     ![Generate Call Statement](GenerateCallStatement.png)
 
@@ -58,7 +58,7 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
     ![Debugger Navigation Icons](DebuggerNavigationIcons.png)
 
-    >For more information on the SAP database explorer debugger, see the [Debugger Tutorials](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/5f452e148e2440f89d6d94cdb1d73b70.html).
+    >For more information on the SAP database explorer debugger, see the [Debugger Tutorials](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/5f452e148e2440f89d6d94cdb1d73b70.html).
 
 [DONE]
 [ACCORDION-END]

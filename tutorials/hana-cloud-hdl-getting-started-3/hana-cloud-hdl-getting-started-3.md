@@ -1,14 +1,14 @@
 ---
 title: Load Data into Standalone Data Lake in SAP HANA Cloud
-description: Learn to load data into tables in a standalone data lake in SAP HANA Cloud using a trial account.
+description: Learn to load data into tables in a standalone data lake in SAP HANA Cloud.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-hana-cloud, products>sap-hana-cloud-data-lake]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\\,-data-lake]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
- - You have completed the [provisioning of a standalone data lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-1) using a trial account.
+ - You have completed the [provisioning of a standalone data lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-1) using a free tier model or trial account.
  - Make sure your data lake instance is running before you start.
  - Download the **supporting files** to gain access to sample data required for loading tables.
 
@@ -81,7 +81,7 @@ Let's get started. Follow these steps:
 2.	Copy the code given below into the SQL Console and execute the script after entering your password in the appropriate field. You can also find this code in `CreateTables.sql` file contained in the `SQL scripts.zip` [file](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/SQL%20Scripts.zip).
 
 ```SQL
-     /*==============================================================*/                       */
+     /*==============================================================*/                      
      /* Created on:     11/21/2008 2:40:41 PM                        */
      /*==============================================================*/
      /*==============================================================*/
@@ -167,6 +167,8 @@ Let's get started. Follow these steps:
 
 !![Create Tables](ss-01-create-tables.png)
 
+
+To verify, you can select `Tables` from the list of `Catalog` objects of your standalone data lake in the database menu. To view the list of tables, you must choose the schema.
 
 [OPTION END]
 

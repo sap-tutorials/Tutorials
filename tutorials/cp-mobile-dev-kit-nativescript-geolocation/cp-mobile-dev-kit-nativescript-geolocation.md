@@ -15,8 +15,8 @@ author_profile: https://github.com/jitendrakansal
 
 ## Details
 ### You will learn
-  - How to reference the `NativeScript` Geolocation plugin from a rule
-  - How to add a `NativeScript` plugin to your branded MDK client
+  - How to reference the NativeScript Geolocation plugin from a rule
+  - How to add a NativeScript plugin to your branded MDK client
   - How to build a Mobile development kit client for iOS & Android and connect to SAP Mobile application
   - How to capture the device's current location
 
@@ -251,7 +251,9 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
 
 [OPTION BEGIN [Android]]
 
-1. Follow steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client and run it in your device.
+1. Create your MDK client either using MDK SDK by following the steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial OR using SAP Cloud Build Service by following [this](cp-mobile-dev-kit-cbs-client) tutorial.
+
+and run it in your device.
 
 2. Once you have accepted the app update, allow your app to access your location.
 
@@ -265,7 +267,7 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
 
 [OPTION BEGIN [iOS]]
 
-1. Follow steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client and run it in your device.
+1. Create your MDK client either using MDK SDK by following the steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial OR using SAP Cloud Build Service by following [this](cp-mobile-dev-kit-cbs-client) tutorial.
 
 2. Once you have accepted the app update, allow your app to access your location.
 

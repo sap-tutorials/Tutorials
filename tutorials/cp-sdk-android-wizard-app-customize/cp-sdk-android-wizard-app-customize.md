@@ -10,6 +10,8 @@ time: 60
 ---
 
 ## Prerequisites
+- You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
+    - **SAP Mobile Services**
 - You completed [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app).
 
 

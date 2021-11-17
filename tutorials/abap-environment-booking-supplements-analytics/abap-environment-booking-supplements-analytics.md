@@ -161,7 +161,7 @@ The templates already contain certain annotations that are mandatory for the abo
 
     > `define view entity ZRAP500_I_Agency_#### as select from /dmo/agency as Agency`
 
-  6. Define a `foreignKey associaton` via `CountryCode` (the `representative key` of `I_Country`) to be able to fetch and expose country information (ID and text) as `AgencyCountry` in the cube and in the query.
+  6. Define a `foreignKey association` via `CountryCode` (the `representative key` of `I_Country`) to be able to fetch and expose country information (ID and text) as `AgencyCountry` in the cube and in the query.
 
     ![key](3030.png)
 
@@ -878,7 +878,7 @@ The templates already contain certain annotations that are mandatory for the abo
 
       ![association](3155.png)
 
-  9. In the created cube you define `foreignKey associatons` via `_Supplement`, `_Customer`, `_Agency`, `_AgencyCountry`, `_Carrier` and `_Connection` to be able to fetch and expose information in the cube and in the query. And you need to provide an end user text label.
+  9. In the created cube you define `foreignKey associations` via `_Supplement`, `_Customer`, `_Agency`, `_AgencyCountry`, `_Carrier` and `_Connection` to be able to fetch and expose information in the cube and in the query. And you need to provide an end user text label.
 
       - Add the annotation `@ObjectModel.foreignKey.association: '_Supplement'` and `@EndUserText.label: 'Product'` to the field `SupplementId`
       - Add the annotation `@ObjectModel.foreignKey.association: '_Customer'` and `@EndUserText.label: 'Customer'` to the field `CustomerId`

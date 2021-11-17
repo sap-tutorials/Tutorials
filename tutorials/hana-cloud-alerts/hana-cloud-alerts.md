@@ -16,7 +16,7 @@ primary_tag: products>sap-hana-cloud
   - How to configure, trigger, and access alerts
   - How to use the SAP BTP Alert Notification Service (ANS) to be notified of alerts
 
-Alerts can inform you of potential issues before they occur, such as when the number of rows in a SAP HANA database table is approaching 2 billion, or of an issue currently occurring, such as a user in a data lake is locked out.  You can find details of SAP HANA database alerts which have been raised by looking at the SAP HANA cockpit Alerts app. This is known as a pull approach.
+Alerts can inform you of potential issues before they occur, such as when the number of rows in a SAP HANA database table is approaching 2 billion, or of an issue currently occurring, such as a user in a data lake is locked out.  You can find details of SAP HANA database alerts which have been raised by looking at the SAP HANA cockpit Alerts app or using the [REST API](hana-cloud-alerts-rest-api). This is known as a pull approach.
 
 Alternatively, alert details can be pushed to several configured channels such as email, Slack, or Microsoft Teams.
 
@@ -193,6 +193,8 @@ The following instructions will show how to view a triggered SAP HANA database a
 
     Additional details on the test alert are available at [SAP Note 3004477 - Usage of statistics server test alert (ID 999)](https://launchpad.support.sap.com/#/notes/3004477).
 
+    >Alerts can also be accessed via a REST API as shown at [Accessing SAP HANA Cloud Alerts and Metrics using a REST API](hana-cloud-alerts-rest-api).
+
 [DONE]
 [ACCORDION-END]
 
@@ -233,6 +235,8 @@ The following instructions show one example of triggering the [data lake locked 
     --DROP USER user2;
     --DROP LOGIN POLICY lp;
     ```
+
+    The tutorial [Monitor a Standalone Data Lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-4) may also be of interest as it demonstrates the data lake IQ monitoring views.
 
 [DONE]
 [ACCORDION-END]

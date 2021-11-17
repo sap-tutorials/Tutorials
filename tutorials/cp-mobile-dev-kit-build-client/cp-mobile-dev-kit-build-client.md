@@ -93,7 +93,7 @@ Make sure that you have download latest version of MDK SDK as described in Prere
 
     !![MDK](img_1.7.png)
 
-    >If MDK Dependencies Installer keeps showing `Loading...` then have a look at [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/troubleshooting/mdk/troubleshoot.html#loading-message-displays-while-running-mobile-development-kit-dependency-installer-on-windows-machine) troubleshooting guide.
+    >If you encounter any issue while running the MDK Dependencies Installer then have a look at [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/troubleshooting/mdk/troubleshoot.html#loading-message-displays-while-running-mobile-development-kit-dependency-installer-on-windows-machine) troubleshooting guide.
 
     >You might see different software versions depending on MDK SDK version you are using.
 
@@ -178,7 +178,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     >`AppName`: Provide a name for example: `DemoSampleApp`. It is the name of the application on the home screen of the device and it is also the name of the folder where the client is created.
 
-    >`BundleID`: It should be a unique identifier for your application. This controls if the client can be installed side by side with other applications on the device. Two applications with the same Bundle ID cannot be installed at the same time on a device.  For iOS this is the Identifier `(AppID)` that is registered in Apple Developer account since that determines if the application can be installed alongside other applications. If the `XCode` project is set up to use _Automatically manage signing_ then when building, `XCode` will automatically generate a signing profile for the specified bundle id. Without matching them, trying to run the custom client in iOS device will result in failure. In Android, it is known as application ID.
+    >`BundleID`: It should be a unique identifier for your application. This controls if the client can be installed side by side with other applications on the device. Two applications with the same Bundle ID cannot be installed at the same time on a device.  For iOS this is the Identifier `(AppID)` that is registered in Apple Developer account since that determines if the application can be installed alongside other applications. If the `XCode` project is set up to use _Automatically manage signing_ then when building, `XCode` will automatically generate a signing profile for the specified bundle id. Without matching them, trying to run the custom client in iOS device will result in failure. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
 
     >`URLScheme`: Allows you to specify a custom URL scheme which opens the client. The default is `mdkclient`. This value also needs to be unique across applications on your device. If the value is not unique the wrong application may be referenced when redirecting.
 
@@ -247,7 +247,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     >`AppName`: Provide a name for example: `DemoSampleApp`. It is the name of the application on the home screen of the device and it is also be the name of the folder where the client is created.
 
-    >`BundleID`: It should be a unique identifier for your application. This controls if the client can be installed side by side with other applications on the device. Two applications with the same Bundle ID cannot be installed at the same time on a device. In Android, it is known as application ID.
+    >`BundleID`: It should be a unique identifier for your application. This controls if the client can be installed side by side with other applications on the device. Two applications with the same Bundle ID cannot be installed at the same time on a device. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
 
     >`URLScheme`: Allows you to specify a custom URL scheme which opens the client. The default is `mdkclient`. This value also needs to be unique across applications on your device.  If the value is not unique the wrong application may be referenced when redirecting.    
 
@@ -383,9 +383,10 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     ![MDK](img-5.5.png)
 
-6. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
+6. Enter your credentials to login to SAP Business Technology Platform (BTP).
 
     ![MDK](img-5.7.png)
+    ![MDK](img-5.7.1.png)
 
 7. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
@@ -438,9 +439,10 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     Tap **Start** to connect MDK client to SAP Business Technology Platform (BTP).
 
-6. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
+6. Enter your credentials to login to SAP Business Technology Platform (BTP).
 
     ![MDK](img-5.15.png)
+    ![MDK](img-5.15.1.png)    
 
 7. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
