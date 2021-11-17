@@ -3,7 +3,7 @@ title: Explore the ABAP Repository
 description: Open an ABAP package containing ABAP development objects and find out more about them.
 auto_validation: true
 primary_tag: programming-tool>abap-development
-tags: [  tutorial>beginner, software-product>sap-netweaver-7.5, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform,   ]
+tags: [  tutorial>beginner, software-product>sap-netweaver, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform ]
 time: 15
 ---
 
