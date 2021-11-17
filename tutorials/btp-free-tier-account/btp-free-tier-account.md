@@ -161,6 +161,9 @@ You are now in your global account, to be more precise in your **Account Explore
 
     - **Subdomain**: Added automatically. The subdomain will become part of the URL for accessing applications that you subscribe to from this subaccount. The subdomain can contain only letters, digits, and hyphens (not allowed at the beginning or at the end), and must be unique across all subaccounts in the same region.
     - **Region**: Select the region closest to you.
+
+    > **Caution:** Unfortunately, Free Tier is currently not available for EU10. Please select any other region.
+
     - **Description** (optional): Add an additional description to identify your subaccount.
 
 4. Select **Create**.
@@ -171,9 +174,9 @@ You are now in your global account, to be more precise in your **Account Explore
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Enable Cloud Foundry environment)]
-To use Cloud Foundry services, you need to activate and enable Cloud Foundry environment.
+You now need to activate Cloud Foundry environment.
 
-1. Enter your newly created subaccount by clicking on the tile.
+1. Go to your subaccount by clicking on **Subaccount** in the navigation bar.
 
 2. Select **Cloud Foundry Environment**.
 
@@ -181,7 +184,9 @@ To use Cloud Foundry services, you need to activate and enable Cloud Foundry env
 
     !![Cloud Foundry Environment](btp-free-tier-account-enable-cf.png)
 
-4. In the opening wizard, keep the settings as they are and proceed by clicking **Create**.
+4. In the opening wizard, select **free** as plan - any other configuration will generate costs. Keep the rest of settings as they are and proceed by clicking **Create**.
+
+    !![Cloud Foundry Free plan](btp-free-tier-cf-free-plan.png)
 
 > Enabling Cloud Foundry environment might take a couple of moments. Thank you for patience.
 
