@@ -345,7 +345,7 @@ export function Detail() {
     import { Detail } from "./Detail";
     ```
 
-2. Wrap your `ShellBar` component inside of [Fragments](https://reactjs.org/docs/fragments.html) and set up paths with `Routes` and the component displayed respectively.
+2. Wrap your `ShellBar` component inside of [Fragments](https://reactjs.org/docs/fragments.html) and set up paths with `Routes` and the component (`element`) displayed respectively.
 
     ```JavaScript / JSX
     return (
@@ -362,8 +362,8 @@ export function Detail() {
           <ShellBarItem icon="add" text="Add" />
         </ShellBar>
         <Routes>
-          <Route path="/home" component={Home} />
-          <Route path="/detail" component={Detail} />
+          <Route path="/home" element={Home} />
+          <Route path="/detail" element={Detail} />
           <Route path="/" element={<Navigate replace to="/home" />} />
         </Routes>
       </>
