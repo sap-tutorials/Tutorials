@@ -52,7 +52,7 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
     > You might get the error `Node module @sap/cds is not found. Please install it and try again.` after you have chosen your CAP project. This is an issue with the App Generator not finding the corresponding CAP modules, due to different repositories. This should be a temporary issue. For the meantime you can work around it by opening a command line and running the following command:
 
     > ```bash
-    > npm i -g @sap/cds-dk --@sap:registry=https://npmjs.org/
+    > npm install --global @sap/cds-dk --@sap:registry=https://npmjs.org/
     > ```
 
     > See the [CAP Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for more details.
@@ -100,7 +100,7 @@ The application is now generated and in a few seconds you can see it in the `app
 
     The table is empty because the application is currently missing UI annotations. You add them in the next step.
 
-4. To add the OData annotations, copy the file `risks-service-ui.cds` from `templates/cap/fiori-elements-app/srv` to the `srv` folder of your app.
+4. To add the OData annotations, copy the file `risks-service-ui.cds` from `templates/create-ui-fiori-elements/srv` to the `srv` folder of your app.
 
     As in the steps before, the CAP server has noticed the new file and compiled the service again, so now it contains the additional annotations.
 

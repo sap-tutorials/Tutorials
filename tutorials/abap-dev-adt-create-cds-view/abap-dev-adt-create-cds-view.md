@@ -3,7 +3,7 @@ title: Create a Simple ABAP CDS View in ADT
 description: You will learn how to create a CDS (Core Data Services) view using ABAP Development Tools (ADT).
 auto_validation: true
 primary_tag: programming-tool>abap-development
-tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
+tags: [  tutorial>beginner, software-product>sap-netweaver ]
 time: 20
 
 ---
