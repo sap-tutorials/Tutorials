@@ -362,8 +362,8 @@ export function Detail() {
           <ShellBarItem icon="add" text="Add" />
         </ShellBar>
         <Routes>
-          <Route path="/home" element={Home} />
-          <Route path="/detail" element={Detail} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/detail" element={<Detail />} />
           <Route path="/" element={<Navigate replace to="/home" />} />
         </Routes>
       </>
