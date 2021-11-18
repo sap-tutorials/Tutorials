@@ -57,7 +57,7 @@ The deployment is based on MTA ( *Multi-Target Application*, sometimes also call
 2. If you don't get back a version number, install the **MultiApps Archive Builder**:
 
     ```Shell/Bash
-    npm install -g mbt
+    npm install --global mbt
     ```
 
 > If you encounter a problem with the installation of the MBT, install it manually by following the instructions in the [MBT documentation](https://sap.github.io/cloud-mta-build-tool/download/).

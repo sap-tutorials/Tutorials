@@ -3,7 +3,7 @@ auto_validation: true
 title: Develop and Run SAP Fiori Application With SAP Business Application Studio
 description: Develop and run your SAP Fiori application with SAP Business Application Studio
 primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, products>sap-business-application-studio ]
+tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform, products>sap-business-application-studio ]
 time: 25
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -42,33 +42,17 @@ author_profile: https://github.com/mervey45
 
       ![assign role collection](bas2.png)
 
-  3. Now you are in the trial overview page. Click **Trust Configuration**.
+  3. Now you are in the trial overview page. Click **Users** and select your user.
 
-      ![assign role collection](basxnew.png)
+      ![assign role collection](user2.png)
 
-  4. Click **Default identity provider** to set up your trust.
+  4. Click **Assign Role Collection**.
 
-      ![assign role collection](bas3.png)
+      ![assign role collection](user3.png)
 
-      **HINT:** If you are using a licensed system, make sure you have the trust administrator role assigned to your user.
+  5. Select `Business_Application_Studio_Administrator`, `Business_Application_Studio_Developer` and `Business_Application_Studio_Extension_Deployer` and click **Assign Role Collection**.
 
-  5. Enter your e-mail address and click **Show Assignments**.
-
-      ![assign role collection](bas5.png)
-
-  5. Click **Assign Role Collection** .
-
-      ![assign role collection](bas6.png)
-
-  6. Select **`Business_Application_Studio_Developer`** and click **Assign Role Collection**.
-
-      ![assign role collection](bas7.png)
-
-  7. Check your result. Now your user should have the **`Business_Application_Studio_Developer`** role collection assigned.
-
-      ![assign role collection](bas8.png)
-
-      You are now able to develop on SAP Business Application Studio.
+      ![assign role collection](user4.png)
 
 
 [DONE]
@@ -78,21 +62,33 @@ author_profile: https://github.com/mervey45
 
   1.  Select **trial**.
 
-      ![dev](studio.png)
+      ![dev](trial2.png)
 
-  2.   Select **Service Marketplace** and search for **SAP Business Application Studio**. Select actions and click **Go to Application**.
+  2.   Select **Service Marketplace** and search for **SAP Business Application Studio** and select it.
 
-      ![dev](studio212.png)
+      ![dev](basx.png)
 
-  3.  Check the privacy statement and click **OK**.
+  3.  Click **Create**.
 
-      ![dev](studio2.png)
+      ![dev](bas.png)
 
-  4. Now the SAP Business Application Studio has started. Click **Create Dev Space**.
+  4.  Select the default entry and click **Create**.
+
+      ![dev](basxx.png)
+
+  5.  Click **View Subscription**.
+
+      ![dev](basx3.png)
+
+  6.  Click **Go to Application**.
+
+      ![dev](basx4.png)
+
+  7. Now the SAP Business Application Studio has started. Click **Create Dev Space**.
 
       ![dev](studio3.png)
 
-  5. Create a new dev space:
+  8. Create a new dev space:
        - Name: **Fiori**
        - Type: **SAP Fiori**
 
@@ -100,7 +96,7 @@ author_profile: https://github.com/mervey45
 
      ![dev](studio4.png)
 
-  6. When your status is **Running**, select your dev space **Fiori**.
+  9. When your status is **Running**, select your dev space **Fiori**.
 
       ![dev](studio5.png)
 

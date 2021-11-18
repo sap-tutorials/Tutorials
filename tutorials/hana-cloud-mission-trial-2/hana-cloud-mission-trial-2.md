@@ -5,26 +5,26 @@ title: Provision an Instance of SAP HANA Cloud, SAP HANA Database
 description: Learn how to provision an instance of SAP HANA Cloud, SAP HANA database.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
 - [Sign up](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html) for the SAP HANA Cloud trial.
-- If you have a production environment of SAP HANA Cloud, SAP HANA database, you may also follow the steps described in this tutorial.
+- If you have a free tier or production environment of SAP HANA Cloud, SAP HANA database, you may also follow the steps described in this tutorial.
 
 
 ## Details
 ### You will learn
 - How to provision an instance of SAP HANA Cloud, SAP HANA database.
 
-A few notes to remember about trial accounts:
+A few notes to remember about free tier model and trial accounts:
 
--	If you are using a trial account, you will only be able to create one instance with a predefined size (30GB of memory, 2vCPUs, and 120GB of storage). However, the process to create the instance is very similar to what you will in a production environment.
+-	If you are using a free tier model or trial account, you will only be able to create one instance with a predefined size (30GB of memory, 2vCPUs, and 120GB of storage). However, the process to create the instance is very similar to what you will in a production environment.
 
--	Trial instances will be **stopped every day** at midnight in the time zone of the server location you selected. Each time you start working with your trial instance, you need to restart it.
+-	Free tier model and trial instances will be **stopped every day** around midnight in the time zone of the server location you selected. Each time you start working with your free tier model or trial instance, you need to restart it.
 
--	If you do not restart your instances within **60 days**, they will be **deleted**. Your trial account, however, will continue to exist and you can easily provision an instance again, if you wish to do so.
+-	If you do not restart your instances within **60 days**, they will be **deleted**. Your BTP account, however, will continue to exist and you can easily provision an instance again, if you wish to do so.
 
 ---
 
@@ -54,21 +54,25 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 
 1.	Here you can see that your **Organization** and **Space** have been preselected. If you are part of multiple organizations or spaces, you can select others in the drop-down menu.
 
-2.	In the **Basics** section, enter a name for your instance in the field **Instance Name**.
+2.	If you have multiple types of service plans enabled in your SAP HANA Cloud entitlement, a License section will appear just before the Basics section.  To use the free tier model, click on the Free Tier option so that it is highlighted as shown below.  Also note – if you have enabled only one type of service plan in your SAP HANA Cloud entitlement (e.g. free tier only), the License section does not appear and that service plan type will be used automatically.
+
+    ![license options](licenses.png)
+
+3.	In the **Basics** section, enter a name for your instance in the field **Instance Name**.
 
     > This field does not allow any spaces in the name. Keep in mind that you will not be able to change the name after the instance has been created.
 
-3.	You can optionally insert a description of this instance in the **Description** field.
+4.	You can optionally insert a description of this instance in the **Description** field.
 
-4.	Then insert a password in the **Administrator Password** field.
+5.	Then insert a password in the **Administrator Password** field.
 
-5.	Confirm it by typing it again on the **Confirm Administrator Password** field.
+6.	Confirm it by typing it again on the **Confirm Administrator Password** field.
 
     > This password is the admin password for this instance, so make sure to use a strong password. You will be able to recover it only by opening a support ticket, so make sure you keep it safe as well.
     >
-    > For trial users: Once the instance is created, this super-user password cannot be recovered in a trial account.
+    > For free tier model or trial users: Once the instance is created, this super-user password cannot be recovered in a trial account.
 
-6.	Now click on **Next Step** to continue.  
+7.	Now click on **Next Step** to continue.  
 
     !![HDB General](ss-03-HDB General.png)
 
@@ -78,7 +82,7 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 
 [ACCORDION-BEGIN [Step 3: ](Set up the size of your database)]
 
-> There are different instructions available to you depending on whether you are using a trial account or production environment. Please make sure to select the one that applies to your situation to get the most out of this tutorial.
+> There are different instructions available to you depending on whether you are using a free tier model or trial account versus a production environment. Please make sure to select the one that applies to your situation to get the most out of this tutorial.
 
 In this step of the provisioning wizard, you can set up the size of your SAP HANA database in SAP HANA Cloud.
 
@@ -106,9 +110,9 @@ This is where, in a production environment, you would be able to set the initial
 
 [OPTION END]
 
-[OPTION BEGIN [Trial]]
+[OPTION BEGIN [Free Tier/Trial]]
 
-In trial environment the **Memory** allocation is predefined to the instance, which is as follows: 30GB for memory, 120GB for storage and 2vCPUs for computation.
+In a free tier model or trial environment the **Memory** allocation is predefined to the instance, which is as follows: 30GB for memory, 120GB for storage and 2vCPUs for computation.
 
 Click on **Next Step** to continue.
 
@@ -121,7 +125,7 @@ Click on **Next Step** to continue.
 [ACCORDION-BEGIN [Step 4: ](Specify database availability zone and replicas)]
 
 
-> There are different instructions are available to you depending on whether you are using a trial account or production environment. Please make sure to select the one that applies to your situation to get the most of this tutorial.
+> There are different instructions are available to you depending on whether you are using a free tier model or trial account versus a production environment. Please make sure to select the one that applies to your situation to get the most of this tutorial.
 
 Here, you can select in this step if you want to create **replicas** of your instance to increase your system availability. These replicas are exact duplicates of your instance that will be managed in the background and automatically synchronized. In case of issues, you can take over a replica of your instance to ensure minimal interruption.
 
@@ -135,16 +139,16 @@ Here, you can select in this step if you want to create **replicas** of your ins
 
     To read more about increasing system availability, you can check this [technical documentation](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/LATEST/en-US/2c325f7b30ba43ac93ca514eba505a33.html).
 
-3.	Next, select the number of replicas you wish to have for this instance under **Number of Replicas:"**.
+3.	Next, select the number of replicas you wish to have for this instance under **Number of Replicas:**.
 
 4.	Click on **Next Step** to continue.
 
 > One thing to keep in mind that, you cannot change the **availability zone of the instance** after it has been created. To update replicas, you need to delete and re-create them.
 
 [OPTION END]
-[OPTION BEGIN [Trial]]
+[OPTION BEGIN [Free Tier/Trial]]
 
-In trial environment there is availability of single zone list; **SAP HANA Cloud** and in availability zone there are four supported memory sizes to choose from.
+In a free tier model or trial environment, availability zone and replicas are not supported.
 
 To read more about increasing system availability, you can check this [technical documentation](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/LATEST/en-US/2c325f7b30ba43ac93ca514eba505a33.html).
 
@@ -160,7 +164,7 @@ Click on **Next Step** to continue.
 
 [ACCORDION-BEGIN [Step 5: ](Check the advanced settings)]
 
-> There are different instructions are available to you depending on whether you are using a trial account or production environment. Please make sure to select the one that applies to your situation to get the most of this tutorial.
+> There are different instructions are available to you depending on whether you are using a free tier model or trial account versus a production environment. Please make sure to select the one that applies to your situation to get the most of this tutorial.
 
 [OPTION BEGIN [Production]]
 
@@ -185,7 +189,7 @@ Click on **Next Step** to continue.
 5.	Click on **Next Step** in the bottom left corner to continue.
 
 [OPTION END]
-[OPTION BEGIN [Trial]]
+[OPTION BEGIN [Free Tier/Trial]]
 
 Now you can configure the **Advanced Settings** by managing the allowed connections for your SAP HANA Cloud, SAP HANA database instance.
 
@@ -238,7 +242,7 @@ In the last step of the provisioning wizard, you have the option of also provisi
 
 
 [OPTION END]
-[OPTION BEGIN [Trial]]
+[OPTION BEGIN [Free Tier/Trial]]
 
 1.  Once you select **Create Data Lake** option, two more menu options will appear in the wizard with additional steps.
 
@@ -246,7 +250,7 @@ In the last step of the provisioning wizard, you have the option of also provisi
 
     >When you add a managed data lake, the HDLADMIN user is automatically created and is given the same password as DBADMIN, which you set in the first step. If later you decide to change the password of one user, the password of the other user will **not** be automatically changed.   
 
-3.	In production environment this is where you can adjust how many **coordinators** and **workers** you want for your data lake, as well the amount of **storage** you wish to allocate to this instance. But in trial account, you can't change these as they are predefined settings.
+3.	In production environment this is where you can adjust how many **coordinators** and **workers** you want for your data lake, as well the amount of **storage** you wish to allocate to this instance. But in a free tier model or trial account, you can't change these as they are predefined settings.
 
     > Please remember that you can enable or disable the data lake later as well if you prefer.
     >
@@ -270,7 +274,7 @@ You are done! Your first SAP HANA Cloud, SAP HANA database and data lake instanc
 [ACCORDION-BEGIN [Step 7: ](Start and stop your instance)]
 The final step is learning how to stop and start your instance.
 
-> In a trial account, your instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance before you start working with your trial every day.
+> In a free tier or trial account, your instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance before you start working with your free tier model or trial every day.
 
 1.	To stop an instance, just click on **Stop** in the three dots menu next to the SAP HANA Cloud instance line in SAP HANA Cloud Central. Once your instance is stopped, the status will be updated to **Start**.
 
@@ -283,8 +287,24 @@ Now you know how to provision an instance of SAP HANA Cloud using SAP BTP cockpi
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 8: ]((Free Tier Only): Upgrade to Paid Tier)]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+When you are ready to upgrade your free tier instance to Paid Tier, you can also choose the three dots menu (under Actions) next to the SAP HANA Cloud instance line in SAP HANA Cloud Central.  From here, click on **Upgrade to Paid Tier**.  Note that paid tier plans must be enabled in your SAP HANA Cloud entitlement for the upgrade to properly work.
+
+![upgrade to paid tier](upgrade-paid-tier.png)
+
+A dialog box will appear indicating that there will be costs associated with the Paid Tier instance – an estimate is also included.  Click on **Upgrade to Paid Tier** to complete the process.
+
+![upgrade to paid tier](upgrade-paid-tier2.png)
+
+>Note that an **Upgrade to Test and Development** option is currently not available for free tier instances.  If you wish to move the contents from a Free Tier instance to a Test and Development production instance, consider the steps in the tutorial [Move Data from a Free Tier Model or Trial Instance to a Production Instance](hana-cloud-trial-2-production).
+
+Now you know how to provision an instance of SAP HANA Cloud using SAP BTP cockpit and SAP HANA Cloud Central. In the next tutorial, learn about the tools that help to manage and access your database instance  
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Test yourself)]
 
 
 [VALIDATE_1]
