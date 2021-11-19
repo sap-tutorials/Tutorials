@@ -32,7 +32,8 @@ author_profile: https://github.com/mervey45
 - How to create IAM apps and business catalogs
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Assign role collection to user)]
+
+[ACCORDION-BEGIN [Step 1: ](Create SAP Business Application Studio instance)]
 
   1. Login to [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
 
@@ -42,7 +43,32 @@ author_profile: https://github.com/mervey45
 
       ![assign role collection](bas2.png)
 
-  3. Now you are in the trial overview page. Click **Users** and select your user.
+  3. Select **Service Marketplace** and search for **SAP Business Application Studio** and select it.
+
+      ![dev](basx.png)
+
+  4. Click **Create**.
+
+      ![dev](bas.png)
+
+  5. Select the default entry and click **Create**.
+
+      ![dev](basxx.png)
+
+  6. Click **View Subscription**.
+
+      ![dev](basx3.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Assign role collection to user)]
+
+  1. Select **trial**.
+
+      ![assign role collection](trial3.png)
+
+  2. Now you are in the trial overview page. Click **Users** and select your user.
 
       ![assign role collection](user2.png)
 
@@ -58,37 +84,17 @@ author_profile: https://github.com/mervey45
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create dev space)]
+[ACCORDION-BEGIN [Step 3: ](Create dev space)]
 
-  1.  Select **trial**.
+  1.  On the left menu scroll to the top and select **Instances and Subscriptions** and open SAP Business Application Studio.
 
-      ![dev](trial2.png)
+      ![dev](instance.png)
 
-  2.   Select **Service Marketplace** and search for **SAP Business Application Studio** and select it.
-
-      ![dev](basx.png)
-
-  3.  Click **Create**.
-
-      ![dev](bas.png)
-
-  4.  Select the default entry and click **Create**.
-
-      ![dev](basxx.png)
-
-  5.  Click **View Subscription**.
-
-      ![dev](basx3.png)
-
-  6.  Click **Go to Application**.
-
-      ![dev](basx4.png)
-
-  7. Now the SAP Business Application Studio has started. Click **Create Dev Space**.
+  2. Now the SAP Business Application Studio has started. Click **Create Dev Space**.
 
       ![dev](studio3.png)
 
-  8. Create a new dev space:
+  3. Create a new dev space:
        - Name: **Fiori**
        - Type: **SAP Fiori**
 
@@ -96,7 +102,7 @@ author_profile: https://github.com/mervey45
 
      ![dev](studio4.png)
 
-  9. When your status is **Running**, select your dev space **Fiori**.
+  4. When your status is **Running**, select your dev space **Fiori**.
 
       ![dev](studio5.png)
 
@@ -133,15 +139,15 @@ author_profile: https://github.com/mervey45
 
       ![organization](neu5.png)
 
-  7. Select your global account and press enter.
+  8. Select your global account and press enter.
 
       ![organization](neu6.png)
 
-  8. Select dev as your space and press enter.
+  9. Select dev as your space and press enter.
 
       ![organization](neu7.png)
 
-  9. Check your result. Now your organization and space have been set.
+  10. Check your result. Now your organization and space have been set.
 
      ![organization](neumm.png)
 
@@ -162,7 +168,7 @@ author_profile: https://github.com/mervey45
 
     ![object](neu10.png)
 
-  5. Configure data source, system and service:
+  4. Configure data source, system and service:
      - Data source: **Connect to an SAP System**
      - System: **`ABAP Environment on SAP Business Technology Platform`**
      - ABAP Environment: **`default_abap-trial`**
@@ -174,11 +180,11 @@ author_profile: https://github.com/mervey45
 
      A destination for the `abap-trial` service instance is generated automatically.
 
-  6. Select your main entity **`TravelProcessor`** and click **Next >**.
+  5. Select your main entity **`TravelProcessor`** and click **Next >**.
 
     ![object](neu12.png)
 
-  7. Configure project attributes:  
+  6. Configure project attributes:  
      - Name: **`ztravel_app_xxx`**
      - Title: **Travel App XXX**
      - Description: **A Fiori application.**
@@ -192,7 +198,7 @@ author_profile: https://github.com/mervey45
 
     **HINT:** Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
 
-  8. Configure deployment:
+  7. Configure deployment:
 
        - Target: ABAP
        - Is this an SAP Business Technology Platform system? Yes
@@ -209,7 +215,7 @@ author_profile: https://github.com/mervey45
     >**HINT: If you want to copy your transport request, please do following:**  Open Eclipse, search your package **`ZTRAVEL_APP_XXX`** and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your **transport request** underneath the **Modifiable** folder.
     >      ![deploy](deploy3.png)
 
-  9. Configure Fiori Launchpad:
+  8. Configure Fiori Launchpad:
 
        - Semantic Object: `ztravel_app_xxx`
        - Action: display
@@ -219,7 +225,7 @@ author_profile: https://github.com/mervey45
 
       Click **Finish**.
 
- 10. Now all files have been generated.
+  9. Now all files have been generated.
 
       !![app](new4.png)
 
