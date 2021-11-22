@@ -2,8 +2,8 @@
 title: Explore the ABAP Repository
 description: Open an ABAP package containing ABAP development objects and find out more about them.
 auto_validation: true
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-netweaver, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform ]
 time: 15
 ---
 
@@ -65,7 +65,7 @@ You will now explore how these concepts fit together.
 
     ![Image depicting step3-expand-programs](step3-expand-programs.png)
 
-2. Alternatively, choose **Open development object (`Alt+Shift+A`)** from the toolbar and choose the program **`DEMO_CREATE_STRUCTURED_DATA`**:
+2. Alternatively, choose **Open development object (`Ctrl+Shift+A`)** from the toolbar and choose the program **`DEMO_CREATE_STRUCTURED_DATA`**:
 
     ![Image depicting step3b-open-dev-object](step3b-open-dev-object.png)
     .

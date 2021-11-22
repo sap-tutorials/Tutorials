@@ -3,8 +3,8 @@ title: Create ABAPDoc Comments in Your Class in ABAP Environment
 description: Learn how to maintain ABAPDoc documentation for your class in SAP Business Technology Platform (BTP), ABAP Environment so your comments appear in the Outline view.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: topic>abap-development
+tags: [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, tutorial>license]
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
@@ -83,7 +83,7 @@ The comments should now appear in the Outline View:
     ```
     "! <ol>
     "!    <li>Reads flights from HANA DB</li>
-    "!    <li>Converts currency to EUR</li> 
+    "!    <li>Converts currency to EUR</li>
     "! </ol>
 
     ```

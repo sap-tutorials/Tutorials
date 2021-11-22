@@ -3,7 +3,7 @@ title: Set Up Jupyter Notebook for Service Ticket Intelligence
 description: Set up a local JupyterLab instance as well as the Jupyter Notebook for Service Ticket Intelligence.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -65,7 +65,7 @@ git clone https://github.com/SAP-samples/service-ticket-intelligence-jupyter-not
 
 ![Clone Repository](clone-repository.png)
 
-Once the repository is cloned, you receive an output as above, saying that it's done. 
+Once the repository is cloned, you receive an output as above, saying that it's done.
 
 [DONE]
 [ACCORDION-END]
