@@ -5,7 +5,7 @@ title: Set Up Local Development Using VS Code
 description: This tutorial shows you how to get started using VS Code as an editor.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -65,16 +65,16 @@ If not, go to [Git downloads](https://git-scm.com/downloads), pick the installer
 [ACCORDION-BEGIN [Step 4: ](Install Node.js)]
 Node.js is the JavaScript runtime the CAP backend part of the application runs on and that is needed for some of the tools involved to develop the application.
 
-In case you don't know whether you have Node.js installed and whether it has the right version (>=14), open a command line window and execute the following command.
+In case you don't know whether you have Node.js installed and whether it has the right version (>=16), open a command line window and execute the following command.
 
 ```Shell/Bash
 node -v
 ```
 
-Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. You should get an output like:
+Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 16. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. You should get an output like:
 
 ```Shell/Bash
-v14.x.x
+v16.x.x
 ```
 
 > If you don't see the required version, go to [Node.js](https://nodejs.org/en/download/) download page, pick the installer appropriate for your operating system, and install it. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#node-version) for CAP for more details.
@@ -167,7 +167,7 @@ CAP provides you with all the tools to create your data model with entities and 
 1. Install CDS development kit globally in a command line window.
 
     ```Shell/Bash
-    npm i -g @sap/cds-dk
+    npm install --global @sap/cds-dk
     ```
 
     This process takes some minutes installing the `cds` command that you will use in the next steps. On macOS/Linux, you need to follow the steps as described [here](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
@@ -181,7 +181,7 @@ CAP provides you with all the tools to create your data model with entities and 
 3. Check what versions of the CDS libraries have been installed.
 
     ```Shell/Bash
-    cds v
+    cds --version
     ```
 
     To know what is the latest version of the CAP tooling, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
@@ -239,7 +239,7 @@ You need to install the [**SAP Language Support**](https://marketplace.visualstu
 
 2. Choose the **Extensions** icon in the left pane.
 
-3. Type **SAP CDS** in the search field and choose **SAP Language Support** from the search results.
+3. Type **SAP CDS** in the search field and choose **SAP CDS Language Support** from the search results.
 
 
     ![SAP CDS Language Support](sap_cds_language_support_extension.png)
@@ -298,7 +298,7 @@ After a restart of VS Code, you can check for the tools by invoking **View** **&
 2. If you don't get a version number, install Yeoman:
 
     ```Shell/Bash
-    npm install -g yo
+    npm install --global yo
     ```
 
 [DONE]

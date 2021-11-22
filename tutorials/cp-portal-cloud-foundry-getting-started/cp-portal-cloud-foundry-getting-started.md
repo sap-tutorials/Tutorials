@@ -3,14 +3,14 @@ title: Set Up the SAP Launchpad Service
 description: To get started with building a launchpad site in the SAP Launchpad service, you must perform the required onboarding steps.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>cloud, products>sap-fiori, products>sap-launchpad-service]
-primary_tag: products>sap-launchpad-service
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>cloud, software-product>sap-fiori, software-product>sap-launchpad-service]
+primary_tag: software-product>sap-launchpad-service
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 ---
 
 ## Prerequisites
-  - If you want to use a trial environment, you need to first register it. You can register to a trial account using this link: [Create a trial account](https://www.sap.com/cmp/td/sap-cloud-platform-trial.html).
+  - If you want to use a trial environment, you need to first register it. You can register to a trial account using this link: [Create a trial account](https://www.sap.com/germany/products/business-technology-platform/trial.html#individual-users).
   - If you're using a production environment, you should have a subaccount configured. If you don't have a configured subaccount, refer to this topic: [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
 
 
@@ -85,27 +85,31 @@ Before you can access the SAP Launchpad service, you first need to subscribe to 
 To be able to access the SAP Launchpad service, users must be assigned to the `Launchpad_Admin` role. In this step, you'll assign yourself to this role so that you can access the service and create a launchpad site.
 
 
-1. Click **Security > Trust Configuration** from the side menu.
+1. Click **Role Collections** from the side menu.
 
-    ![Trust configuration](10-trust-configuration.png)
+      !![Open role collections](a-role-collections.png)
 
-2. Click `Default identity provider` to select the SAP ID Service.
+2. In the Search field start typing Launchpad to find the `Launchpad_Admin` role collection.
 
-    ![Click default identity provider](11-default-identity-provider.png)
+    !![Search for launchpad admin](b-search-launchpad-admin.png)
 
-3. Enter your email address and then click **Show Assignments**.
+3. In the row with the `Launchpad_Admin` role collection, click the arrow at the far right of the row.
 
-    ![show assignments](12-show-assignments.png)
+    !![Click arrow](c-open-role-collection.png)
 
-4. Click **Assign Role Collection**.
+    The Overview page of the role collections opens.
 
-    ![Assign role collection](13-assign-role-collection.png)
+4. Click **Edit**
 
-5. Scroll down until you find the `Launchpad_Admin` role, select it, and then click **Assign Role Collection**.
+    !![Click Edit](d-click-edit.png)
 
-    ![Assign Launchpad Admin](14-assign-launchpad-admin.png)
+5. Under the **Users** tab, enter your email in both the **ID** and the **E-Mail** fields.
 
-You have now been assigned to the `Launchpad_Admin` role and you can access the SAP Launchpad service and carry out all your admin tasks.
+    !![Add emails](e-add-emails.png)
+
+6. Click **Save**.
+
+You have now been assigned to the `Launchpad_Admin` role collection and you can access the SAP Launchpad service and carry out all your admin tasks.
 
 [DONE]
 [ACCORDION-END]

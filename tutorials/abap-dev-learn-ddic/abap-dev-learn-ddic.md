@@ -1,9 +1,9 @@
 ---
-title: Learn about the ABAP Data Dictionary 
+title: Learn about the ABAP Data Dictionary
 description: Open an ABAP package containing Data Dictionary objects and find out more about them.
 auto_validation: true
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-netweaver ]
 ---
 
 ## Prerequisites  

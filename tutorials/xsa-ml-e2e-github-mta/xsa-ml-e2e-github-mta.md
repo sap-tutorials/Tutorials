@@ -1,7 +1,6 @@
 ---
 title: Connect to GitHub and create an MTA application
 description: Access SAP web IDE for SAP HANA and create an MTA application from a GitHub repository
-auto_validation: true
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
@@ -109,6 +108,5 @@ Finally, open the `mta.yaml` file that has been created automatically. Copy the 
 
 ![Validate](Code.png)
 
-[VALIDATE_1]
-
+[DONE]
 [ACCORDION-END]

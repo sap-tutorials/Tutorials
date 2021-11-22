@@ -3,7 +3,7 @@ title: Create a Resource Group and Connect AWS S3 Object Store to SAP AI (Client
 description: Learn creation of resource group in SAP AI Core to enable multi-tenancy through SAP AI API Client SDK. Store datasets to AWS S3 and connect to SAP AI Core through SAP AI API Client SDK.
 auto_validation: true
 time: 15
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
 primary_tag: topic>artificial-intelligence
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
@@ -44,7 +44,7 @@ Example Output
 
 ```
 
-> **IMPORTANT:** The `create resource group` request results in `Response: 202`, which means the backend server will take time(~30 sec) to create the group. List the resource group(*see below*) to see the status of creation
+> **IMPORTANT:** The `create resource group` request results in `Response: 202`, which means the backend server will take time(~30 sec) to create the group. List the resource group *(see below)* to see the status of creation
 
 [DONE]
 [ACCORDION-END]
@@ -135,11 +135,11 @@ Final look of your AWS S3 bucket.
 
 [ACCORDION-BEGIN [Step 5: ](Register AWS S3 Object Store to SAP AI Core resource group)]
 
-Object Stores are connected to the resource groups using Object Store Secret, an SAP AI Core entity, hence ensure you have the resource group created before proceeding.
+Object Store Secret links your S3 Object Store with your resource group, hence ensure you have the resource group created before proceeding.
 
 Get service key file for your AWS S3 bucket. The file will have contents similar to the snippet below.
 
-> In case you are using the SAP object store you get the content from `BTP cockpit > BTP subaccount > Instances and Subscriptions > Instances > Credentials `.
+> In case you are use SAP BTP to create AWS S3 object store, generate you service key for same from`BTP cockpit > BTP subaccount > Instances and Subscriptions > Instances > Credentials `.
 
 ```JSON
 {

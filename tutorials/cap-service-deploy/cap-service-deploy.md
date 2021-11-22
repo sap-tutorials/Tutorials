@@ -5,7 +5,7 @@ title: Deploy a CAP Business Application to SAP Business Technology Platform
 description: This tutorial shows you how to deploy your SAP Cloud Application Programming Model (CAP) application to SAP Business Technology Platform, Cloud Foundry environment using SAP HANA Cloud service.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [ tutorial>beginner, topic>node-js, products>sap-business-technology-platform, products>sap-fiori, products>sap-hana-cloud, software-product-function>sap-cloud-application-programming-model ]
+tags: [ tutorial>beginner, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori, software-product>sap-hana-cloud, software-product-function>sap-cloud-application-programming-model ]
 time: 30
 ---
 
@@ -27,7 +27,7 @@ It's now time to switch to SAP HANA as a database. To continue with this tutoria
 
 > ### Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day, before you start working with your trial.
 
-1. If `cds watch` is still running in VS Code, choose **CTRL+C** in the command line to stop the service.
+1. If `cds watch` is still running in VS Code, choose <kbd>Ctrl</kbd> + <kbd>C</kbd> in the command line to stop the service.
 
 2. To prepare the project, execute in the root level of your project in VS Code:
 
