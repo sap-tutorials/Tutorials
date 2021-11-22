@@ -3,8 +3,8 @@ author_name: René Jeglinsky
 author_profile: https://github.com/renejeglinsky
 title: Create a CAP Project with SAP Business Application Studio
 description: Use the project wizard and create a CAP project. You run the project and experience how fast you spin up an OData service with CAP.
-auto_validation: false
-time: 15
+auto_validation: true
+time: 20
 tags: [ tutorial>beginner, products>sap-business-application-studio]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
@@ -63,6 +63,7 @@ In the previous step you've created an already runnable application. To demo tha
 1. Choose *bookshop - development profile (CAP)*
 
       !![Create run configuration.](complete-run-conf.png)
+
 1. Name your run configuration `Run bookshop-local`
 1. Choose *Run Module* on *Run bookshop-local*
 

@@ -3,8 +3,8 @@ author_name: René Jeglinsky
 author_profile: https://github.com/renejeglinsky
 title: Learn About Selected CAP Conventions
 description: CAP comes with a set of defaults to support a "convention over configuration" paradigm. These defaults are designed to ease your start with any CAP project and let you focus on your business domain.
-auto_validation: false
-time: 30
+auto_validation: true
+time: 45
 tags: [ tutorial>beginner, programming-tool>node-js]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
@@ -35,7 +35,7 @@ Essentially every active thing in CAP is a service and lets you define services 
 [VALIDATE_6]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Events and Handlers)]
+[ACCORDION-BEGIN [Step 2: ](Events and handlers)]
 
 Everything happening at runtime is in response to events. Hence, all service implementations take place in event handlers.
 
@@ -95,11 +95,14 @@ CAP comes with a set of reuse content that we recommend to use. You benefit from
 * **Optimized** implementations and runtime performance
 * **Automatic** support for localized code lists and value helps
 * **Extensibility** using Aspects
----
 
-### What is the aspect `managed`?
 
-> ### Aspects
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 1: ](Conceptual modeling: Aspects)]
+
 Aspects give you shortcuts, for concise and comprehensible models, interoperability and out-of-the-box runtime features connected to them.
 
 The aspect [managed](https://cap.cloud.sap/docs/cds/common#aspect-managed) is defined in `@sap/cds/common` as follows:
@@ -134,11 +137,13 @@ This aspect is also [used](https://cap.cloud.sap/docs/cds/cdl#using) in your pro
 
 There are other common reuse aspects. Have a look at the [documentation for `cuid`](https://cap.cloud.sap/docs/cds/common#aspect-cuid) and [ for `temporal`](https://cap.cloud.sap/docs/cds/common#aspect-temporal).
 
----
 
-### How do reuse types work?
+[DONE]
+[ACCORDION-END]
 
-> ### Types
+
+[ACCORDION-BEGIN [Step 1: ](Conceptual modeling: Types)]
+
 Types are standard definitions of often needed entities. Using and reusing them fosters interoperability between applications but lets you enhance those definitions at the same time.
 
 The reuse type [`Currency`](https://cap.cloud.sap/docs/cds/common#type-currency) is defined in `@sap/cds/common` as a simple managed association to the [entity `sap.common.Currencies`](https://cap.cloud.sap/docs/cds/common#entity-sapcommoncurrencies) as follows:
@@ -199,13 +204,8 @@ _You can adapt aspects and types to your needs. Learn more in the [CAP documenta
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Modeling Relationships with CAP)]
+[ACCORDION-BEGIN [Step 1: ](Modeling relationships: Associations)]
 
-This step is about modeling relationships in your data model. Using associations and compositions are in focus here, which cover two different aspects of relationship in data models.
-
-### How do associations work?
-
-> ### Associations
 Associations help you capture your intent when modeling your data. As associations in CAP act like forward-declared JOINs, you can focus on what you want to express, instead of capturing relationships using foreign keys and the respective JOINs in each query. Queries just use them much like forward-declared table aliases. There's no need to repeat the respective JOINs and ON conditions all over the place.
 
 Let's see it in action.
@@ -234,11 +234,12 @@ This is a [_one-to-many_ association](https://cap.cloud.sap/docs/guides/domain-m
 
 > You can even deep read associated entities: `/admin/Authors?$expand=books($expand=currency)`
 
----
 
-### How do I use compositions?
+[DONE]
+[ACCORDION-END]
 
-> ### Compositions
+[ACCORDION-BEGIN [Step 1: ](Modeling relationships: Composition)]
+
 Compositions are used to model document structures through "contained-in" relationships.
 
 Compositions get a special treatment and [runtime support out-of-the-box](https://cap.cloud.sap/docs/guides/domain-models#compositions-capture-contained-in-relationships). This is done using our generic service providers. If you don't have special needs, no custom coding is necessary.
