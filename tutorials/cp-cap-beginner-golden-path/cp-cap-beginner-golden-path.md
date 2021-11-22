@@ -5,7 +5,7 @@ title: Learn About Selected CAP Conventions
 description: CAP comes with a set of defaults to support a "convention over configuration" paradigm. These defaults are designed to ease your start with any CAP project and let you focus on your business domain.
 auto_validation: true
 time: 45
-tags: [ tutorial>beginner, programming-tool>node-js, software-product>technology-platform>sap-hana-cloud]
+tags: [ tutorial>beginner, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>technology-platform>sap-hana-cloud]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 

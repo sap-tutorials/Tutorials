@@ -5,13 +5,13 @@ title: Create a CAP Project with SAP Business Application Studio
 description: Use the project wizard and create a CAP project. You run the project and experience how fast you spin up an OData service with CAP.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product>sap-business-application-studio]
+tags: [ tutorial>beginner, software-product>sap-business-application-studio, software-product>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
 - You've access to the SAP Business Application Studio in a trial account on SAP BTP, see [Set Up SAP Business Application Studio for Development](appstudio-onboarding)
-- You've created a Full Stack Cloud Application dev space in the Business Application Studio.
+- You've created a Full Stack Cloud Application dev space in the SAP Business Application Studio.
 
 
 ## Details
