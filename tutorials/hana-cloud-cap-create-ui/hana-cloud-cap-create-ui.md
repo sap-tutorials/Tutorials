@@ -245,9 +245,7 @@ We want to create a Fiori freestyle UI for our CAP service.  We will use the wiz
 			data-sap-ui-preload="async"
 			data-sap-ui-frameOptions="trusted">
 	</script>
-
 </head>
-
 <body class="sapUiBody">
 	<div data-sap-ui-component data-name="interactionitems" data-id="container" data-settings='{"id" : "interaction_items"}'></div>
 </body>
