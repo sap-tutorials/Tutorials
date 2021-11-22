@@ -3,13 +3,13 @@ title: Choose an SAP HANA Database
 description: Learn about SAP HANA Cloud and SAP HANA, express edition and choose one that will be used with the SAP HANA client interfaces in subsequent tutorials.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
  - A Microsoft Windows, Linux or Mac computer
- - A machine that can run SAP HANA, express edition if the SAP HANA Cloud trial is not used
+ - A machine that can run SAP HANA, express edition if the SAP HANA Cloud trial or free tier is not used
 
 ## Details
 ### You will learn
@@ -35,8 +35,6 @@ For more information on SAP HANA, consult [What Is SAP HANA](https://help.sap.co
 [ACCORDION-BEGIN [Step 1: ](Overview of SAP HANA Cloud and SAP HANA, express edition)]
 
 There are multiple versions of SAP HANA.  The information below is a list of links for the documentation of each version.  Note that this tutorial will discuss SAP HANA Cloud and SAP HANA, express edition.
-
-
 
 |  Version     | Notes
 |  :------------- | :-------------
@@ -81,16 +79,16 @@ Here are a few benefits of using SAP HANA Cloud:
 
 1. >To complete the tutorials in this mission, an SAP HANA instance is needed. Step 3 and 5 in this tutorial provide two different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.
 
-    Continue on with this tutorial once you have created an SAP HANA Cloud trial instance as shown below.
+    Continue on with this tutorial once you have created an SAP HANA Cloud trial or free tier instance as shown below.
 
     !![SAP HANA Cloud Trial instance](hana-cloud-instance.png)
 
 
-    The instructions on how to setup a free SAP HANA Cloud trial within the SAP Business Technology Platform (SAP BTP), are well covered in a number of other sources listed below.  
+    The instructions on how to setup a free SAP HANA Cloud trial or free tier within the SAP Business Technology Platform (SAP BTP), are well covered in a number of other sources listed below.  
 
     * [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
 
-    * [Jump Start Your SAP HANA Cloud, SAP HANA Database Trial](mission.hana-cloud-database-get-started)
+    * [Set Up Your SAP HANA Cloud, SAP HANA Database (free tier or trial) and Understand the Basics](group.hana-cloud-get-started-1-trial)
 
 
     For more information on SAP BTP see the following:
@@ -105,7 +103,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
     ![SQL Endpoint](SQLEndpoint.png)
 
-    >Note that the SAP HANA Cloud, HANA database trial instances are shut down overnight and will need to be restarted before working with them the next day.  
+    >Note that the SAP HANA Cloud, HANA database trial or free tier instances are shut down overnight and will need to be restarted before working with them the next day.  
 
 2. Open the SAP HANA database explorer by choosing **Actions > Open SAP HANA Database Explorer** from SAP HANA Cloud Central.
 
@@ -163,7 +161,9 @@ Congratulations! You have connected to SAP HANA Cloud and performed a few querie
 
 [ACCORDION-BEGIN [Step 4: ](SAP HANA, express edition)]
 
-SAP provides a free streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/cmp/td/sap-hana-express-edition.html).
+>This step only needs to be completed if you currently do not have access to an SAP HANA Instance and did not setup an SAP HANA instance through the SAP HANA Cloud Trial or free tier as explained in step 3.
+
+SAP provides a free streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/cmp/td/sap-hana-express-edition.html).  
 
 SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides virtual machine images that can be run on Microsoft Windows, macOS and Linux machines as well as binary installs as described at [SAP HANA, express edition - Implement](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US?task=implement_task).  In terms of availability, a choice between either the server or the server + applications can be made.  The applications include the SAP HANA cockpit, the SAP HANA database explorer and the SAP HANA Web IDE.  Further details about a specific version can be found in the [release notes](https://search.sap.com/search.html?t=%22SAP%20HANA%2C%20express%20edition%202.0%20SPS%200%25%20Revision%22&n=1&s=boost&src=defaultSourceGroup).    
 
@@ -176,7 +176,7 @@ At this point, you should have a running instance of SAP HANA, express edition.
 
 [ACCORDION-BEGIN [Step 5: ](Connect to SAP HANA, express edition)]
 
->This step only needs to be completed if you currently do not have access to an SAP HANA Instance and did not setup an SAP HANA instance through the SAP HANA Cloud Trial as explained in step 3.
+>This step only needs to be completed if you currently do not have access to an SAP HANA Instance and did not setup an SAP HANA instance through the SAP HANA Cloud Trial or free tier as explained in step 3.
 
 A default installation will contain one [system](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/39da3d057f56427ab1bb7f738ca9e7ce.html) database named **SYSTEMDB** and one [tenant](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/623afd167e6b48bf956ebb7f2142f058.html) database named **HXE**.
 

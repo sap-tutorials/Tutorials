@@ -3,8 +3,8 @@ title: Troubleshoot SQL with SAP HANA Database Explorer
 description: Explore the available tools to help diagnose and debug SQL or SQLScript.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition ]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition ]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
