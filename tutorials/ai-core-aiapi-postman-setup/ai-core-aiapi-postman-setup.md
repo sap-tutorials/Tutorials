@@ -3,7 +3,7 @@ title: Set Up Postman Client for SAP AI Core
 description: Get Postman Collections and environment variables for SAP AI Core. Learn to generate OAuth token to authorize API calls.
 auto_validation: true
 time: 15
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
 primary_tag: topic>artificial-intelligence
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
@@ -104,7 +104,7 @@ The service key file contents should look similar like this:
   "identityzoneid": "11111-dddd-444-888-888888",
   "clientsecret": "8MQWERTy=",
   "serviceurls": {
-  "ML_API_URL": "https://api.ai.prod.us-east-1.aws.ml.hana.ondemand.com"
+  "AI_API_URL": "https://api.ai.prod.us-east-1.aws.ml.hana.ondemand.com"
   },
   "url": "https://tutorial.authentication.us10.hana.ondemand.com"
 }
@@ -119,7 +119,7 @@ Edit your Postman environment variables w.r.t. to the SAP AI Core service key JS
 | `auth_url` | `url`
 | `client_id` | `clientid`
 | `client_secret` | `clientsecret`
-| `apiurl` | `ML_API_URL`
+| `apiurl` | `AI_API_URL`
 
 !![env variables](img/postman/env-set-1.png)
 

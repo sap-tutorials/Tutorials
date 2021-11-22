@@ -3,8 +3,8 @@ title: Set Up Integration Suite Trial
 description: Get onboarded to SAP Integration Suite trial account.
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
-primary_tag: products>sap-integration-suite
+tags: [tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment]
+primary_tag: software-product>sap-integration-suite
 author_name: Karunaharan V
 author_profile: https://github.com/Karunaharan
 ---
@@ -19,7 +19,7 @@ author_profile: https://github.com/Karunaharan
 -	How to provision and activate the capabilities
 
 ## SAP Integration Suite
-SAP Integration Suite combines the integration capabilities such as Cloud Integration (Process Integration), API Management, Integration Advisor, and Open Connectors into a cohesive and simplified toolkit for enterprise integrations. To provide a comprehensive integration experience, these services are not available separately, but only as part of the Integration Suite service plan.
+SAP Integration Suite combines the integration capabilities such as Cloud Integration (Process Integration), API Management, Integration Advisor, and Open Connectors into a cohesive and simplified toolkit for enterprise integrations. To provide a comprehensive integration experience, these services are not available separately, but only as part of the Integration Suite.
 
 The Integration Suite includes all integration capabilities in simple service plans. To know more on these plans, see [Integration Suite](https://discovery-center.cloud.sap/#/serviceCatalog/f810c887-8d25-4942-9849-354837951066) service catalog.
 
@@ -30,7 +30,7 @@ This part of the series lets you experience few capabilities offered by SAP Inte
 ## The Use Case
 Using this scenario, you design and execute an integration flow that reads product details from a public product catalog (`WebShop`) for a given product identifier. Product details include data such as the product name and price, for example. To accomplish the scenario, you use SAP Integration Suite, and in particular, its capabilities *Cloud Integration* and *API Management*.
 
-You use *Cloud Integration* to design and deploy an integration flow. When you have finished designing, you use the API Explorer tool of *API Management* to expose the integration flow endpoint as an API.
+You use *Cloud Integration* to design and deploy an integration flow. Then, you use *API Management* to expose the integration flow endpoint as an API.
 
   - You also define how to access the API in terms of authentication by assigning a dedicated predefined policy template.
   - Using this policy template, you define API access based on the OAuth client credentials grant method.

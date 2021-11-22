@@ -60,12 +60,6 @@ Video tutorial version: </br>
     ```
 
     !![Create XSUAA service](create_service.png)
-    
-    In case you already created the service instance during previous tutorials, you can update the service instance instead:
-
-    ```shell
-    cf update-service MyHANAApp-xsuaa-service -c xs-security.json
-    ```
 
 [DONE]
 [ACCORDION-END]

@@ -5,7 +5,7 @@ title: Add More Than One Application to the Launch Page
 description: This tutorial shows you how to create an SAP Fiori elements app on top of your previously created CAP service.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori-tools, products>sapui5]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori-tools, software-product>sapui5]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -23,7 +23,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 
-To start with this tutorial use the result in the [`cap/freestyle-ui5-app`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/freestyle-ui5-app) branch.
+To start with this tutorial use the result in the [`create-ui-freestyle-sapui5`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-ui-freestyle-sapui5) branch.
 
 ---
 
@@ -84,7 +84,7 @@ In the current implementation, the launch page is sitting inside the application
     !![Launch Page](launchpage2apps.png)
 
 [VALIDATE_1]
-The result of this tutorial can be found in the [`cap/launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/launchpage) branch.
+The result of this tutorial can be found in the [`launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpage) branch.
 
 
 [ACCORDION-END]

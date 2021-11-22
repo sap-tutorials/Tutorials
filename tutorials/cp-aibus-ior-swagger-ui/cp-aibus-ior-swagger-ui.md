@@ -3,7 +3,7 @@ title: Use Machine Learning to Get G/L Account Recommendations
 description: Get G/L account predictions for invoices without a purchase order reference attached with Invoice Object Recommendation.
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>invoice-object-recommendation]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>invoice-object-recommendation]
 primary_tag: topic>machine-learning
 ---
 

@@ -3,13 +3,13 @@ title: Set Up Account for Document Information Extraction and Go to Application
 description: Get access to the Document Information Extraction Trial UI using a booster in SAP Business Technology Platform (SAP BTP) Trial that automatically creates a service instance, and subscribes you to the UI application for Document Information Extraction.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
 - You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
-- You have a trial subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
+- You have a trial subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html). You can also use old trial subaccounts created before October 2021 with **Europe (Frankfurt)** as region.
 
 ## Details
 ### You will learn
@@ -59,7 +59,7 @@ Now, you will use the **Set up account for Document Information Extraction** boo
 
     >If you have more than one subaccount, the booster will choose automatically the correct subaccount and space, but this will require that you click **Next** twice and **Finish** once, before being able to see the **Success** dialog box.
 
-    !![UI application](booster-success.png)
+    ![UI application](booster-success.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -69,11 +69,11 @@ Now, you will use the **Set up account for Document Information Extraction** boo
 
 1. Right click **Go to Application**, then click ***Copy link*** to save the link to be able to open the application once again in the future.
 
-    !![UI application](booster-success-app-link.png)
+    ![UI application](booster-success-app-link.png)
 
 2. Click **Go to Application**.
 
-    !![UI application](booster-success-app.png)
+    ![UI application](booster-success-app.png)
 
 You have successfully used the booster **Set up account for Document Information Extraction** to subscribe to and access the Document Information Extraction Trial UI.
 
@@ -107,7 +107,7 @@ Do the following to access your subscription to the Document Information Extract
 
     !![UI application](subscriptions-tile.png)
 
-5. Here, you can navigate to the application by clicking **Go to Application** and also manage the **Document Information Extraction Trial UI** roles.
+5. Here, you can click **Go to Application** to navigate to the application, and also manage the **Document Information Extraction Trial UI** roles.
 
     !![UI application](subscriptions-action.png)
 
