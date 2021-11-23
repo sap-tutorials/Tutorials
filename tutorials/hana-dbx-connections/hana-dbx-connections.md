@@ -3,8 +3,8 @@ title: Add Databases to  the SAP HANA Database Explorer
 description: This tutorial will explore different database connections types, such as SAP HANA Cockpit Database, SAP HANA, Data Lake IQ, and SAP HANA Deployment Infrastructure (HDI), along with the different operations that can be performed on them.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition, software-product-function>sap-hana-cloud\,-data-lake]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, software-product-function>sap-hana-cloud\,-data-lake]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -307,7 +307,7 @@ The following steps demonstrate how to use the SAP Business Application Studio o
     |  Schema name:   | `mySchema`
     |  SAP HANA Database Version: | HANA Cloud    
 
-8.  Once the project generation finishes, open the tool palette (F1) and choose  **SAP HANA: Create SAP HANA Database Artifact**.  Provide the following values and click **Finish**.
+8.  Once the project generation finishes, open the tool palette (F1) and choose  **SAP HANA: Create SAP HANA Database Artifact**.  Provide the following values and click **Create**.
 
     |  Setting     | Value
     |  :------------- | :-------------

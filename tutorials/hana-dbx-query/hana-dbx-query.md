@@ -3,8 +3,8 @@ title: Query with the SQL Console in SAP HANA Database Explorer
 description: Explore features of the SQL console and see how it facilitates querying an SAP HANA database.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -116,16 +116,17 @@ primary_tag: products>sap-hana-cloud
 
     |  Action     | Shortcut
     |  :------------- | :-------------
-    |  Comment/Uncomment Line         | `Ctrl+/`
     |  Add Comment Block           | `Ctrl+Shift+/`
+    |  Comment/Uncomment Line         | `Ctrl+/`
     |  Format Code    | `Ctrl+B`
-    |  Switch tabs      | `Ctrl+Alt+Pageup` `Ctrl+Alt+Pagedown`
-    |  Close Window   | `Ctrl+W`
-    |  Run All | `F8`
-    |  Run Statement | `F9`
-    |  Increase/Decrease Font Size | `Crtl+Shift+Up` `Ctrl+Shift+Down`
     |  Go to Next Error | `Alt+E`
     |  Go to Previous Error | `Alt+Shift+E`
+    |  Increase/Decrease Font Size | `Crtl+Shift+Up` `Ctrl+Shift+Down`
+    |  Jump to Matching Brackets | `Ctrl+Shift+M`
+    |  Run All | `F8`
+    |  Run Statement | `F9`
+    |  Switch tabs      | `Ctrl+Alt+Pageup` `Ctrl+Alt+Pagedown`
+    |  Text Completion | `Ctrl+Space` (requires two characters to be entered)
 
 3. Shortcuts can be configured in **Global Preferences** under **Keyboard Shortcuts**.
 
