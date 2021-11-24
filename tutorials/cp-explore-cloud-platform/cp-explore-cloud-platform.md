@@ -4,10 +4,11 @@ description: Explore SAP BTP from a developer's perspective, and understand the 
 auto_validation: true
 author_name: Marius Obert
 author_profile: https://github.com/iobert
-primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+primary_tag: products>sap-business-technology-platform
+tags: [ tutorial>beginner, topic>cloud ]
 time: 10
 ---
+
 
 ## Prerequisites  
  - There are none. If you want to start learning about SAP BTP, this is the very beginning.
@@ -18,7 +19,6 @@ time: 10
   - What SaaS, PaaS, and IaaS mean and how they work
   - What services are, and where to find them
   - What the different environments of SAP BTP are
-
 
 [ACCORDION-BEGIN [Step](Introduction to SAP BTP)]
 
@@ -86,7 +86,8 @@ The SAP BTP is available in two different types of data centers.  First, SAP run
 
 !![Data center locations and types](map.png)
 
-This is a graphical representation of all the SAP data centers worldwide. You can open this map when you click on the globe icon on this page to [see a complete list of the types of centers and the services provided at each data center](https://discovery-center.cloud.sap/viewServices).
+This is a graphical representation of all the SAP data centers worldwide. You can open this map when you click on the globe icon on this page to [see a complete list of the types of centers and the services provided at each data center](https://discovery-center.cloud.sap/viewServices?provider=all&regions=all&showFilters=true).
+!![globe button](globe.png)
 
 The list of services and data centers is constantly updated, so please use the link to find the latest information.
 

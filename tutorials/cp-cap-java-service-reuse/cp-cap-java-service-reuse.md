@@ -5,7 +5,7 @@ title: Reuse a CAP Java Service
 description: Create a new application and reuse the existing CAP Java service.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>java]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -37,7 +37,7 @@ cd ~/projects
 3. Now that you are in the correct folder, run the following command:
 ```Shell/Bash
 mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
--DarchetypeVersion=RELEASE \
+-DarchetypeVersion=1.17.0 \
 -DgroupId=com.sap.cap -DartifactId=bookstore
 ```
 
@@ -58,7 +58,7 @@ mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -Darchety
 
 As the `product-service` should be reused for the bookstore, you need to add a dependency between those two projects. Reusable models can be published as NPM modules and imported through dependencies in the `package.json` of a project.
 
-> Make sure that you have followed all the sub-steps of step 9 in the previous tutorial [Set up for reuse](https://developers.sap.com/tutorials/cp-cap-java-reusable-service.html#585efa23-03de-4736-98d3-a4e22bf92511) before continuing.
+> ### Make sure that you have followed all the sub-steps of step 9 in the previous tutorial [Set up for reuse](https://developers.sap.com/tutorials/cp-cap-java-reusable-service.html#585efa23-03de-4736-98d3-a4e22bf92511) before continuing.
 
 First, we need to simulate a release of the `product-service` module, and consume this release in the bookstore application.
 

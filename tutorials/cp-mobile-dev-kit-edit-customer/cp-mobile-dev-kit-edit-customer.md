@@ -262,13 +262,13 @@ First, define a failure message.
 
     !![MDK](img_6.7.png)
 
-8. Provide the below information:
+8. In the **Operation and Service Selection** step, provide the below information:
 
     | Property | Value |
     |----|----|
     | `Action Name`| `Customers_UpdateEntity` |
     | `Type` | Select `UpdateEntity` from the dropdown |
-    | `Service`| Select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `EntitySet`| Select `Customers` from the dropdown |
     | `ReadLink`| click link icon and Double-click `readLink` |
 
@@ -376,7 +376,7 @@ Deploy the updated application to your MDK client.
 
     >**Mobile Applications** | **Native/Hybrid** | click the MDK App **com.sap.mdk.demo** | **Mobile Connectivity** | click **Launch in Browser** icon
 
-    >!![MDK](img_8.9.1.png)
+    >!![MDK](img-8.9.1.png)
 
     >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
@@ -421,7 +421,7 @@ Now, refresh the URL to check if record has been updated in the backend. As Sync
 
     >**Mobile Applications** | **Native/Hybrid** | click the MDK App **com.sap.mdk.demo** | **Mobile Connectivity** | click **Launch in Browser** icon
 
-    >!![MDK](img_8.9.1.png)
+    >!![MDK](img-8.9.1.png)
 
     >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
@@ -449,7 +449,7 @@ Now, refresh the URL to check if record has been updated in the backend. As Sync
 
     !![MDK](img-8.12.png)
 
-    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+    >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
     >!![MDK](img-8.12.2.png)
 
@@ -475,7 +475,7 @@ Now, refresh the URL to check if record has been updated in the backend. As Sync
 
     >**Mobile Applications** | **Native/Hybrid** | click the MDK App **com.sap.mdk.demo** | **Mobile Connectivity** | click **Launch in Browser** icon
 
-    >!![MDK](img_8.9.1.png)
+    >!![MDK](img-8.9.1.png)
 
     >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 

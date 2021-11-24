@@ -3,7 +3,7 @@ title: Call SAP IoT APIs with Postman
 description: Use a REST client (Postman) to call SAP IoT APIs.
 auto_validation: true
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform, products>sap-analytics-cloud]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, products>sap-edge-services, products>sap-iot-services-for-sap-btp, products>sap-business-technology-platform, products>sap-analytics-cloud]
 time: 15
 ---
 
@@ -16,8 +16,6 @@ time: 15
 - How to retrieve OAuth token to access APIs
 - How to read thing metadata
 - How to onboard a thing and create data
-
-In [previous tutorials](iot-express-4-create-thing-model), you learned about using Thing Modeler to onboard a thing, send data to the thing, and retrieve data from the thing. Now, you'll learn to access SAP IoT APIs using Postman.
 
 ---
 
@@ -457,7 +455,7 @@ Using API endpoints is one of the ways to directly ingest data for a thing. Alte
       }
 ```
 
-    >Similarly, you can retrieve thing data in various other ways such as Snapshot data, using M4 algorithm, and aggregates using OData services. For more information, see https://help.sap.com/viewer/p/SAP_IoT > Develop > SAP IoT Services.
+    >Similarly, you can retrieve thing data in various other ways such as Snapshot data, using M4 algorithm, and aggregates using OData services. For more information, see https://help.sap.com/viewer/p/SAP_IoT > Develop > SAP IoT API Reference Guide.
 
 [VALIDATE_6]
 

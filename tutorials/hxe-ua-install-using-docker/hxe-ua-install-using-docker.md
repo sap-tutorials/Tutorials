@@ -7,8 +7,6 @@ primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 10
 ---
-## Next Steps
-- [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html)
 
 ## Details
 ### You will learn
@@ -33,7 +31,7 @@ SAP HANA, express edition for Docker has been tested on the following Linux oper
 | `Ubuntu`  | `17.04 (Zesty Zapus)` | [Community](https://store.docker.com/editions/community/docker-ce-server-ubuntu),  [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-ubuntu) |
 | `openSUSE` | `openSUSE Leap` | [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-sles) |
 | `CentOS` | `7 (Core)` | [Community](https://store.docker.com/editions/community/docker-ce-server-centos),  [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-centos) |
-| `Debian` | `9 (Stretch)` | [Community](https://store.docker.com/editions/community/docker-ce-server-debian) |
+| `Debian` | `10 (Buster)` | [Community](https://store.docker.com/editions/community/docker-ce-server-debian) |
 | `Fedora` | `28 (Server Edition)` | [Community](https://store.docker.com/editions/community/docker-ce-server-fedora) |
 
 **This installation does not support Docker for Windows or Docker for Mac.**
@@ -110,7 +108,7 @@ Click on the **Setup Instructions** button.
 Copy the Docker pull address. Here is an example:
 
 ```bash
-sudo docker pull store/saplabs/hanaexpress:2.00.040.00.20190729.1
+sudo docker pull store/saplabs/hanaexpress:2.00.054.00.20210603.1
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
@@ -238,16 +236,18 @@ Make a note of the path to the `json` file. You will need this to load the SAP H
 Use the SAP HANA, express edition image to create a container.
 
 ```bash
-sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129:1128-1129 -p 59013-59014:59013-59014 -v /data/<directory_name>:/hana/mounts \
---ulimit nofile=1048576:1048576 \
---sysctl kernel.shmmax=1073741824 \
---sysctl net.ipv4.ip_local_port_range='40000 60999' \
---sysctl kernel.shmmni=524288 \
---sysctl kernel.shmall=8388608 \
---name <container_name> \
-store/saplabs/hanaexpress:2.00.040.00.20190729.1 \
---passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>> \
+sudo docker run -p 49013:49013 -p 49015:49015 -p 49041-49045:49041-49045 -p 1138-1139:1128-1129 -p 59023-59024:59013-59014 -p 49030-49033:49030-49033 -p 51000-51060:51000-51060 -p 53075:53075 -h hxehost -v /data/hxe:/hana/mounts
+--ulimit nofile=1048576:1048576
+--sysctl kernel.shmmax=1073741824
+--sysctl net.ipv4.ip_local_port_range='60000 65535'
+--sysctl kernel.shmmni=524288
+--sysctl kernel.shmall=8388608
+--name <container_name>
 --agree-to-sap-license
+--passwords-url <file://<path_to_json_file>
+--proxy-host proxy.wdf.sap.corp
+--proxy-port 8080
+--no-proxy localhost,127.0.0.1,hxehost,hxehost.localdomain
 ```
 
 For information on the TCP/IP port ranges, see [TCP/IP Ports of All SAP Products](https://help.sap.com/viewer/ports). Filter the list by "SAP Cloud Platform".
@@ -256,15 +256,18 @@ Example:
 
 ```
 sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129:1128-1129 -p 59013-59014:59013-59014 -v /data/express_edition:/hana/mounts \
---ulimit nofile=1048576:1048576 \
---sysctl kernel.shmmax=1073741824 \
---sysctl net.ipv4.ip_local_port_range='40000 60999' \
---sysctl kernel.shmmni=524288 \
---sysctl kernel.shmall=8388608 \
---name express_edition \
-store/saplabs/hanaexpress:2.00.040.00.20190729.1 \
---passwords-url file:///hana/password.json \
+sudo docker run -p 49013:49013 -p 49015:49015 -p 49041-49045:49041-49045 -p 1138-1139:1128-1129 -p 59023-59024:59013-59014 -p 49030-49033:49030-49033 -p 51000-51060:51000-51060 -p 53075:53075 -h hxehost -v /data/hxe:/hana/mounts
+--ulimit nofile=1048576:1048576
+--sysctl kernel.shmmax=1073741824
+--sysctl net.ipv4.ip_local_port_range='60000 65535'
+--sysctl kernel.shmmni=524288
+--sysctl kernel.shmall=8388608
+--name hxexsa1 hanaexpressxsa:latest
 --agree-to-sap-license
+--passwords-url file:///hana/mounts/password.json
+--proxy-host proxy.wdf.sap.corp
+--proxy-port 8080
+--no-proxy localhost,127.0.0.1,hxehost,hxehost.localdomain
 ```
 
 This example creates the SAP HANA, express edition container with the name `express_edition`. This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.
@@ -395,7 +398,7 @@ sudo docker run -p 10013:39013 -p 10017:39017 -p 10041-10045:39041-39045 -p 1002
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <additional_container_name> \
-store/saplabs/hanaexpress:2.00.040.00.20190729.1 \
+store/saplabs/hanaexpress:2.00.054.00.20210603.1 \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>>
 --agree-to-sap-license
 ```
@@ -455,7 +458,7 @@ Follow the prompts to complete the server update.
 The following is a list of options available for the `sudo docker run store/saplabs/hanaexpress` command.
 
 ```
-sudo docker run store/saplabs/hanaexpress:2.00.040.00.20190729.1 -h
+sudo docker run store/saplabs/hanaexpress:2.00.054.00.20210603.1 -h
 usage: [options]
 --dont-check-consistency Skip consistency check between mount points
 --dont-check-mount-points Skip check for allowed mount points
@@ -481,5 +484,4 @@ hdb_version
 [ACCORDION-END]
 
 ### Additional Information
-- [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html)
 -  [TCP/IP Ports of All SAP Products](https://help.sap.com/viewer/ports)

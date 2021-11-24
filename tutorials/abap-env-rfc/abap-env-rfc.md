@@ -3,8 +3,8 @@ title: Call a Remote Function Module From SAP Business Technology Platform (BTP)
 description: Call a remote function module located in an on-premise system, such as a SAP S/4HANA System, from the ABAP Environment.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: topic>abap-development
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, tutorial>license]
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
@@ -56,7 +56,7 @@ First, you need to connect your ABAP on-premise system to a Cloud Foundry subacc
 1. In your browser, log on to SAP Cloud Connector:
     - Address = e.g. `https://localhost:<port>` (Default = 8443)
     - User = Administrator
-    - Initial password = Manage (You will change this when you first log in)
+    - Initial password = manage (You will change this when you first log in)
 
 2. Choose **Add Subaccount**:
 

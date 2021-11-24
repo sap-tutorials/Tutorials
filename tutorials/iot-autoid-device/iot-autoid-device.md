@@ -5,7 +5,7 @@ title: Create Device Model and Thing and Ingest EPCIS Event
 description: Create device model and thing for EPCIS events in SAP IoT based on a Postman collection and ingest an EPCIS event via MQTT.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, tutorial>license, topic>internet-of-things, products>sap-internet-of-things, products>sap-business-technology-platform]
+tags: [ tutorial>intermediate, tutorial>license, topic>internet-of-things, software-product>sap-internet-of-things, software-product>sap-business-technology-platform]
 primary_tag: topic>internet-of-things
 ---
 
@@ -150,8 +150,6 @@ Open the Fiori launchpad of your SAP Internet of Things tenant and navigate to t
 At the end the result you look like this:
 
 !![Mapping created](MappingCreated.png)
-
-> The `epcis` package is shipped with Smart Sensing in SAP Internet of Things.
 
 [DONE]
 [ACCORDION-END]

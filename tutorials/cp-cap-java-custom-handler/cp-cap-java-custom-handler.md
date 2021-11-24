@@ -5,7 +5,7 @@ title: Add a Custom Event Handler
 description: Write your first CAP Java Custom Event Handler.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>java]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -71,8 +71,8 @@ This class now handles the `READ` and `CREATE` events that target the `Products`
 
 The event handler uses the following APIs, which are available for service providers in CAP Java:
 
-* [Event handler classes](https://cap.cloud.sap/docs/java/srv-impl#event-handler-classes) have to implement the marker interface `EventHandler` and register themselves as Spring Beans (`@Component`). The marker interface is important, because it enables the CAP Java runtime to identify these classes among all Spring Beans.
-* [Event handler methods](https://cap.cloud.sap/docs/java/srv-impl#event-handler-methods) are registered with `@On`, `@Before`, or `@After` annotations. Every event, such as an entity creation, runs through these three [phases](https://cap.cloud.sap/docs/java/srv-impl#event-phases). Each phase has a slightly different semantic. You'll learn more about these semantics in the subsequent tutorial.
+* [Event handler classes](https://cap.cloud.sap/docs/java/provisioning-api#handlerclasses) have to implement the marker interface `EventHandler` and register themselves as Spring Beans (`@Component`). The marker interface is important, because it enables the CAP Java runtime to identify these classes among all Spring Beans.
+* [Event Handler Methods](https://cap.cloud.sap/docs/java/provisioning-api#handlerannotations) are registered with `@Before`, `@On`, or `@After` annotations. Every event, such as an entity creation, runs through these three [phases](https://cap.cloud.sap/docs/java/srv-impl#event-phases). Each phase has a slightly different semantic. You'll learn more about these semantics in the subsequent tutorial.
 * The annotation `@ServiceName` specifies the default service name all event handler methods apply to. Here this is `AdminService`, as this was also the name when defining the service in the CDS model.
 * Event handler methods get an event-specific event context parameter, which provides access to the input parameters of the event and the ability to set the result. For example, let's look at the `CdsCreateEventContext context` parameter. The event we're extending is the `CREATE` event. The type of the context variable is specific to this extended `CREATE` event. The `onCreate` method returns `void`, as the result is set by running: `context.setResult(…)`.
 

@@ -9,18 +9,18 @@ primary_tag: products>sap-workflow-management
 
 ## Details
 ### You will learn
-  - How to import and manage rules using SAP Business Rules service
+  - How to import and manage rules using Business Rules
   - How to import, build and deploy a sample workflow from SAP Business Application Studio
-  - How to create and activate a visibility scenario using SAP Process Visibility service
+  - How to create and activate a visibility scenario using Process Visibility
 
-**SAP Workflow service** helps to digitalize workflows and quickly orchestrate tasks that span people, applications, and organizations. You can enhance productivity by automating and tracking coordinated, account-able tasks – including approvals, order fulfillment, or time-sensitive partner collaboration.
+**Workflow** helps to digitalize workflows and quickly orchestrate tasks that span people, applications, and organizations. You can enhance productivity by automating and tracking coordinated, account-able tasks – including approvals, order fulfillment, or time-sensitive partner collaboration.
 
-**SAP Business Rules service** enables business users and application developers to automate their decisions and enhance their decision-making experience. It offers a simplified Fiori-based rule authoring tool and a central rule repository with various deployment options to different platforms.
+**Business Rules** enables business users and application developers to automate their decisions and enhance their decision-making experience. It offers a simplified Fiori-based rule authoring tool and a central rule repository with various deployment options to different platforms.
 
-**SAP Process Visibility service** provides visibility into processes that run in the cloud, on-premise, or in hybrid environments. Process visibility works on events. SAP or non-SAP applications (cloud or on-premise) push events into Process Visibility. These events are persisted, processed and enhanced to form end-to-end process instances with insights, which are visualized by business users in their process workspace. The insights enable business users to identify process bottlenecks, track process performance, and operational issues and act on them.
+**Process Visibility** provides visibility into processes that run in the cloud, on-premise, or in hybrid environments. Process visibility works on events. SAP or non-SAP applications (cloud or on-premise) push events into Process Visibility. These events are persisted, processed and enhanced to form end-to-end process instances with insights, which are visualized by business users in their process workspace. The insights enable business users to identify process bottlenecks, track process performance, and operational issues and act on them.
 
 ---
-In this section, you will setup business rules to identify the list of equipment to be provisioned for the newly hired employee based on their role and work location using **SAP Business Rules service**.
+In this section, you will set up business rules to identify the list of equipment to be provisioned for the newly hired employee based on their role and work location using **Business Rules capability of SAP Workflow Management**.
 
 [ACCORDION-BEGIN [Step 1: ](Configure API Business Hub destination)]
 
@@ -28,7 +28,7 @@ The sample business rule used in this scenario is published in API Business Hub.
 
 1. From your global account page, choose the `trial` tile to access your subaccount.
 
-    !![Enter Trial Subaccount](entertrialaccount.png)
+    !![Enter Trial Subaccount](entertrialaccount_1.png)
 
 2. Click **Connectivity | Destinations** from the left-hand navigation and search for the destination with name `BUSINESSRULES_APIHUB`
 
@@ -51,7 +51,7 @@ To import the business rules project from API Business Hub, you need to configur
 
 1. In your web browser, open the Workflow Management application and click the **Manage Rule Projects** tile..
 
-    >You got the workflow management application link in the last step of the setup tutorial. The link would be like:  
+    >You got the workflow management application link in the last step of the set up tutorial. The link would be like:  
 
     > `https://<subdomain>.cockpit.workflowmanagement.cfapps.<eu10 or us10>.hana.ondemand.com/cp.portal/site#Shell-home`
 
@@ -68,7 +68,7 @@ To import the business rules project from API Business Hub, you need to configur
     |  Field Name     | Value
     |  :------------- | :-------------
     |  Name           | `APIHub`
-    |  Destination    | `BUSINESSRULES_APIHUB` or the name of the destination you created in the setup tutorial
+    |  Destination    | `BUSINESSRULES_APIHUB` or the name of the destination you created in the set up tutorial
 
 5. **Save** the system configuration.
 
@@ -94,6 +94,7 @@ To import the business rules project from API Business Hub, you need to configur
     !![Import Business Rules](ImportRules.png)
 
     > If you get Bad Gateway Error error, then check the username and password you have used in `BUSINESSRULES_APIHUB` destination. If your user is 2-Factor-Authentication enabled, then the password will be password+passcode. This passcode will expire in a minute.
+    > If you do not have 2-Factor-Authentication enabled and still get this error, then check if you are member of SAP API Business Hub. Log in to api.sap.com and try importing again.
 
 3. You will see the business rules project imported and in **Active** status.
 
@@ -102,7 +103,7 @@ To import the business rules project from API Business Hub, you need to configur
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy business rules)]
+[ACCORDION-BEGIN [Step 4: ](Deploy business rules)]
 
 1. Select the business rules project to navigate into the project.
 
@@ -127,7 +128,7 @@ To import the business rules project from API Business Hub, you need to configur
 
 In this section, you will use **SAP Business Application Studio** to import, configure, build and deploy workflow to get workplace approval from manager for newly hired employee.
 
-[ACCORDION-BEGIN [Step 6: ](Download and import workflow sample application)]
+[ACCORDION-BEGIN [Step 5: ](Download and import workflow sample application)]
 
 1. Download **cf-onboarding-sample.zip**  project from [GitHub](https://github.com/SAP-samples/cloud-workflow-samples/blob/master/cf-onboarding-sample/resources/cf-onboarding-sample.zip) in your local file system and extract the files.
 
@@ -135,7 +136,7 @@ In this section, you will use **SAP Business Application Studio** to import, con
 
 2. Open [SAP BTP Trial Homepage](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and choose **SAP Business Application Studio**.
 
-    !![Launch Studio](launchbas.png)
+    !![Launch Studio](launchbas_2.png)
 
     > If you get the privacy statement screen, then click `Ok` to accept it.
 
@@ -175,7 +176,7 @@ In this section, you will use **SAP Business Application Studio** to import, con
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Build and deploy workflow)]
+[ACCORDION-BEGIN [Step 6: ](Build and deploy workflow)]
 
 1. Right-click the **mta.yml** file inside the **cf-onboarding-sample** project, and choose the **Build MTA** option.
 
@@ -186,8 +187,8 @@ In this section, you will use **SAP Business Application Studio** to import, con
 
     !![Deploy Workflow](deployworkflow.png)
 
-    >The deployment will fail if you have not logged in to the trial account. Check in the bottom blue bar, if you have already logged in to your trial account. If it does not show organisation-name/space-name then click on the bar and follow the wizard to login to your trial account.
-    !![Login](trial-login.png)
+    >The deployment will fail if you have not logged in to the trial account. Click Function F1 to open the login wizard and follow the wizard to log in to your trial account.
+    !![Login](LoginToCF.png)
 
     >A successful deployment message will be shown in the terminal once the deployment has completed successfully.
     !![View Success Messages](success-message.png)
@@ -195,13 +196,13 @@ In this section, you will use **SAP Business Application Studio** to import, con
 [VALIDATE_1]
 [ACCORDION-END]
 
-In this section, you will create and activate a process visibility scenario to provide an out-of-box visibility into workflow using **SAP Process Visibility service**. The resulting insight helps you to track the process and focus on key business milestones so that you can actively improve the processes.
+In this section, you will create and activate a process visibility scenario to provide an out-of-box visibility into workflow using **Process Visibility capability of SAP Workflow Management**. The resulting insight helps you to track the process and focus on key business milestones so that you can actively improve the processes.
 
-[ACCORDION-BEGIN [Step 8: ](Create visibility scenario)]
+[ACCORDION-BEGIN [Step 7: ](Create visibility scenario)]
 
 1. In your web browser, open the Workflow Management application and choose **Configure Visibility Scenarios**.
 
-    >You should have gotten the workflow management application link in the last step of the setup tutorial. The link should be like this:
+    >You should have gotten the workflow management application link in the last step of the set up tutorial. The link should be like this:
 
     >`https://<subdomain>.cockpit.workflowmanagement.cfapps.<eu10 or us10>.hana.ondemand.com/cp.portal/site#Shell-home`
 
@@ -209,7 +210,7 @@ In this section, you will create and activate a process visibility scenario to p
 
 2. To create a new visibility scenario, choose **+**.
 
-    !![Create Scenarios](addscenario.png)
+    !![Create Scenarios](addscenario_1.png)
 
 3. Enter **Name** as `Employee Onboarding`, any **Description** of your choice, and click **Create**.
 
@@ -222,11 +223,11 @@ In this section, you will create and activate a process visibility scenario to p
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Add workflow to visibility scenario)]
+[ACCORDION-BEGIN [Step 8: ](Add workflow to visibility scenario)]
 
 1. Navigate into the newly created scenario and click the **Processes** tab, choose **+** and select **Add Workflow from SAP Workflow Service** to add workflow to business scenario.
 
-    !![Add Workflow](addworkflow.png)
+    !![Add Workflow](addworkflow_1.png)
 
 2. Select the `onboard` workflow from the choices.
 
@@ -241,7 +242,7 @@ In this section, you will create and activate a process visibility scenario to p
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Configure visibility scenario)]
+[ACCORDION-BEGIN [Step 9: ](Configure visibility scenario)]
 
 1. Switch to the **General** tab.
 
@@ -272,7 +273,7 @@ In this section, you will create and activate a process visibility scenario to p
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Activate visibility scenario)]
+[ACCORDION-BEGIN [Step 10: ](Activate visibility scenario)]
 
 To activate the business scenario, choose **Activate**.
 

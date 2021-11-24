@@ -37,11 +37,11 @@ In this step we will create a new Dev Space configured for SAP Cloud Application
 
     !![Create Dev Space](AppStudio_Dev_Space_Manager_.jpg)
 
-3. Enter any name you wish for your dev space name and choose **SAP Cloud Business Application** as the kind of application you are creating.
+3. Enter any name you wish for your dev space name and choose **Full Stack Cloud Application** as the kind of application you are creating.
 
     !![Create Dev Space](create_cap_dev_space.png)
 
-4. The Dev space will automatically be configured with the most common tools you need for the type of application you choose. However you can also choose additional, optional extensions. Since you want to combine CAP and HANA artefacts in the same project, we would ask that you also choose SAP HANA Calculation View Editor, SAP HANA Database Explorer, and SAP HANA Tools at minimum.
+4. The Dev space will automatically be configured with the most common tools you need for the type of application you choose. However you can also choose additional, optional extensions. Since you want to combine CAP and HANA artefacts in the same project, we would ask that you also choose SAP HANA Calculation View Editor and SAP HANA Tools at minimum.
 
     !![Configure Dev Space](configure_cap_dev_space.png)
 
@@ -176,6 +176,8 @@ The Cloud Application Programming Model wizard generates a project that supports
 
     !![Open package.json for editing](package_json.png)
 
+    > No need to worry about the yellow underlining below the name of the package. This is just a hint and doesn't have any impact on the tutorial.
+
 5. You can completely delete the `devDependencies` section of the `package.json`
 
 6. The rest of the changes will be in the `cds` section of the file. Replace this entire section of `package.json` with the following content
@@ -196,7 +198,7 @@ The Cloud Application Programming Model wizard generates a project that supports
     }
     ```
 
-    > these changes will alter the generated folder structure of the cds build operation. Content will no longer be placed into the gen folder but back into the source folders. This also will tell CAP to generate hdbtable artifacts instead of hdbcds. This is a critical change for SAP HANA Cloud compatibility. Finally the db.kind change to HANA tells CAP to use HANA at development time instead of SQLite.
+    > These changes will alter the generated folder structure of the cds build operation. Content will no longer be placed into the gen folder but back into the source folders. This also will tell CAP to generate hdbtable artifacts instead of hdbcds. This is a critical change for SAP HANA Cloud compatibility. Finally the db.kind change to HANA tells CAP to use HANA at development time instead of SQLite.
 
 7. Your `package.json` file should now look something like this. The exact version numbers in the `dependencies` section in your file might differ from this screenshot
 
@@ -246,13 +248,6 @@ We are using several dependent Node.js modules in our project. They are referenc
 
 You will use the local Git repository for basic version management.
 
-1. If this is the first time you have used Git in this Business Application Studio Dev Space, you need to do some basic configuration. Please open a terminal (Terminal -> New Terminal) and issue the two commands from the command line replacing the values for your email and name with the actual values.
-
-    ```shell
-    git config --global user.email "your@email.com"
-    git config --global user.name "Your Name"
-    ```
-
 2. Click on the **Source Control** icon
 
     !![Source Control](source_control.png)
@@ -273,11 +268,11 @@ You will use the local Git repository for basic version management.
 Each time you commit to the local or remote repository, you create a version. This will allow you to revert and compare any changes.
 **It is recommended that you perform commits at the end of each tutorial.**
 
-1. Choose **Stage All Changes** to include all the new or changed files in this commits
+1. Choose **Changes -> Stage All Changes** to include all the new or changed files in this commits
 
     !![Stage All](stage_all.png)
 
-2. Add a commit message and click **Commit (Signed Off)**:
+2. Add a commit message and click **Commit All (Signed Off)**:
 
     !![Commit](commit.png)
 

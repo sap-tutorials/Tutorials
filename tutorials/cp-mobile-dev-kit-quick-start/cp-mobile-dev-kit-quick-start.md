@@ -37,29 +37,30 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.3.png)
 
-4. In *Type* step, provide the below information and click **Next**:
+4. In *Basic Information* step, provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `MDK template type`| Select `CRUD` from the dropdown |
-    | `Your project name` | `MDKApp` |
-    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
+    | `MDK Template Type`| Select `CRUD` from the dropdown |
+    | `Your Project Name` | Provide a name of your choice. `MDKApp`is used for this tutorial |
+    | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
 
     !![MDK](img-1.4.png)
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.
+    >This screen will only show up when your CF login session has expired. Enter your login credentials, click Login icon and select the org & space where you have set up the initial configuration for your MDK app.
 
-5. In *Service Name* step, provide or select the below information and click **Next**:
+    >!![MDK](img-1.5.png)
+
+5. In *Service configuration* step, provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `Service File Name`| `<Provide any name of your choice>` |
-    | `OData Source` | Select `Mobile Services` from the dropdown |
+    | `Data Source` | Select `Mobile Services` from the dropdown |
     | `Mobile Services Landscape` | Select `standard` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown (this app was configured as per [this](cp-mobile-dev-kit-ms-setup) tutorial) |
     | `Destination` | Select `SampleServiceV2` from the dropdown |
-    | `Enter a path to the OData service` | Leave it as it is |
-    | `Language URL` | Leave it with the default value |
+    | `Enter a path to service` | Leave it as it is |
     | `Enable Offline` | It's enabled by default |
 
     !![MDK](img-1.7.png)
@@ -68,11 +69,11 @@ This step includes creating the mobile development kit project in the editor.
 
     The generated application will be offline enabled in the MDK Mobile client and will run as online in Web environment.
 
-8. In *Collection* step, select `Customers`, `Products`, `SalesOrderHeaders` and `SalesOrderItems`. Click **Finish** to complete the project creation.
+8. In the *Data Collections* step, select `Customers`, `Products`, `PurchaseOrderHeaders`, `PurchaseOrderItems` `SalesOrderHeaders` and `SalesOrderItems`. Click **Finish** to complete the project creation.
 
     !![MDK](img-1.8.png)
 
-9. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKApp` project in the project explorer.
+9. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKApp` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -144,11 +145,18 @@ You should see successful messages for both deployments.
 
 SAP Business Application Studio has a feature to generate QR code for onboarding the mobile app.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon.
 
-!![MDK](img-4.1.png)
+    !![MDK](img-4.1.png)
 
-!![MDK](img-4.2.png)
+2. Select `com.sap.mdk.demo` application from the list.
+
+    !![MDK](img-4.3.png)
+
+    The On-boarding QR code is now displayed.
+
+    !![MDK](img-4.2.png)
+
 
 >Leave the Onboarding dialog box open for step 5.
 
@@ -159,9 +167,11 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 [OPTION BEGIN [Android]]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
+
+>There is a [limit of total 3 user registrations per app in trial accounts](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/16439fd40a014138abc5dc262e816be5.html).
 
 Once you accept app update, you will see the list of entities on the **Main** page, **LOGOUT** and **SYNC** options at bottom of the page and Offline store is being initialized. click either entity, it navigates to detail page, you can create, update, delete a record. This record gets saved to offline request queue database, navigate back to main page and press **SYNC** to upload local changes to the backend. Once the upload is successful, it will also download the data from the backend to the offline store to have same dataset on both ends.
 
@@ -171,15 +181,17 @@ Additionally, you can search over all properties of the objects displayed in the
 
 !![MDK](img_5.3.gif)
 
->Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
+
+>There is a [limit of total 3 user registrations per app in trial accounts](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/16439fd40a014138abc5dc262e816be5.html).
 
 Once you accept app update, you will see the list of entities on the **Main** page, **Logout** and **Sync** options at bottom of the page and Offline store is being initialized. click either entity, it navigates to detail page, you can create, update, delete a record. This record gets saved to offline request queue database, navigate back to main page and press **Sync** to upload local changes to the backend. Once the upload is successful, it will also download the data from the backend to the offline store to have same dataset on both ends.
 
@@ -189,11 +201,14 @@ Additionally, you can search over all properties of the objects displayed in the
 
 !![MDK](img_5.4.gif)
 
->Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+
+>Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 [OPTION END]
 
 [OPTION BEGIN [Web]]
+
+>For this tutorial, MDK web app is going to connect to SAP Mobile Services' sample backend which will register your user in Mobile Services application. In case, if you see any registration count limit related error, please be note that there is a [total 3 user registrations per app in trial accounts](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/16439fd40a014138abc5dc262e816be5.html).
 
 1. Click the highlighted button to open the MDK Web application in a browser. Enter your SAP BTP credentials if asked.
 

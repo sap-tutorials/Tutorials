@@ -3,8 +3,8 @@ title: Create Communication Objects for a Remote OData Service
 description: Create an inbound communication scenario, arrangement, system, and user in the provisioning system of SAP BTP, ABAP Environment.
 auto_validation: true
 time: 45
-tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: topic>abap-development
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, tutorial>license]
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
@@ -41,8 +41,8 @@ You want to get data that is only available in a remote instance of SAP BTP, ABA
 
 You need to:
 
-1. Create inbound communication artefacts for an OData Service in the **provisioning system**
-2. Create a Service Consumption Model, and save this locally as a `$metadata` XML file; From this you will create proxy artefacts in the client system, representing the remote service, and use this model to generate an **abstract entity**
+1. Create inbound communication artifacts for an OData Service in the **provisioning system**
+2. Create a Service Consumption Model, and save this locally as a `$metadata` XML file; From this you will create proxy artifacts in the client system, representing the remote service, and use this model to generate an **abstract entity**
 3. Create a Remote Client Proxy
 4. Build a new OData service in the client system, using a CDS custom entity and query implementation class
 5. Finally, display the remote data in Fiori Elements preview in your browser

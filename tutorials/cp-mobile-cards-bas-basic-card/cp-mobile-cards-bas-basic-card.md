@@ -157,11 +157,7 @@ Click [here](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-
 
     !![Publish confirmation dialog](img_5_5.png)
 
-    > The status of the card should now be **Productive**.
-
-    > !![Card in productive status](img_5_5_note.png)
-
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](View card on your device)]

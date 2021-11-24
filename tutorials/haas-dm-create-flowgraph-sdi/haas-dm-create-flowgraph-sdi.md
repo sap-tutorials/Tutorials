@@ -21,8 +21,6 @@ primary_tag: products>sap-cloud-platform--sap-hana-service
   - How to Create a Virtual Table in SAP Web IDE
   - How to create a flowgraph to load data from the virtual table
 
->**This tutorial cannot currently be completed with a trial account.**
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a Virtual Table)]

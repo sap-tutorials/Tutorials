@@ -31,8 +31,6 @@ author_profile: https://github.com/SarahLendle
 - How to create a CI/CD pipeline with project "Piper"
 - How to add system tests as automated steps to your CI/CD pipeline
 
-> This tutorial only applies to SAPUI5 in version 1.74 or higher. If you use an older version of SAPUI5, have a look at [Add Automated System Tests to Your CI/CD Pipeline](cp-cicd-sytem-test), instead.
-
 ### What Is This Tutorial About?
 
 In this tutorial, you'll create and run automated system tests with UIVeri5 against a simple shopping app for electronic devices. Your test application has basic functions such as a product catalog sorted by categories, a search option, and an *add to cart* function.
