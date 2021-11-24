@@ -51,7 +51,7 @@ SAP publishes service definitions for its major products on **SAP API Business H
 
     !![API EDMX](edmxdownload.png)
 
-    > In case you have problems downloading the file, you can also find `API_BUSINESS_PARTNER.edmx` within your Finder/File Explorer in the directory `templates/cap/ext-service-add/srv/external`.
+    > In case you have problems downloading the file, you can also find `API_BUSINESS_PARTNER.edmx` within your Finder/File Explorer in the directory `templates/ext-service-add/srv/external`.
 
 
 

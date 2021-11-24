@@ -3,7 +3,7 @@ auto_validation: true
 title: Generate RFC Proxy Classes
 description: Create a service consumption model to generate proxies for a remote function call (RFC).
 time: 30
-tags: [ tutorial>beginner, topic>abap-connectivity, products>sap-business-technology-platform, tutorial>license]
+tags: [ tutorial>beginner, programming-tool>abap-connectivity, products>sap-business-technology-platform, tutorial>license]
 primary_tag: products>sap-btp--abap-environment
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter

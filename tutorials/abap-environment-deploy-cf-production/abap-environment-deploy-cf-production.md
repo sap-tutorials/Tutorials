@@ -3,7 +3,7 @@ auto_validation: true
 title: Develop and Run SAP Fiori Application With SAP Business Application Studio
 description: Develop and run your SAP Fiori application with SAP Business Application Studio
 primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, products>sap-business-application-studio ]
+tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform, products>sap-business-application-studio ]
 time: 25
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -32,7 +32,8 @@ author_profile: https://github.com/mervey45
 - How to create IAM apps and business catalogs
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Assign role collection to user)]
+
+[ACCORDION-BEGIN [Step 1: ](Create SAP Business Application Studio instance)]
 
   1. Login to [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
 
@@ -42,57 +43,58 @@ author_profile: https://github.com/mervey45
 
       ![assign role collection](bas2.png)
 
-  3. Now you are in the trial overview page. Click **Trust Configuration**.
+  3. Select **Service Marketplace** and search for **SAP Business Application Studio** and select it.
 
-      ![assign role collection](basxnew.png)
+      ![dev](basx.png)
 
-  4. Click **Default identity provider** to set up your trust.
+  4. Click **Create**.
 
-      ![assign role collection](bas3.png)
+      ![dev](bas.png)
 
-      **HINT:** If you are using a licensed system, make sure you have the trust administrator role assigned to your user.
+  5. Select the default entry and click **Create**.
 
-  5. Enter your e-mail address and click **Show Assignments**.
+      ![dev](basxx.png)
 
-      ![assign role collection](bas5.png)
+  6. Click **View Subscription**.
 
-  5. Click **Assign Role Collection** .
+      ![dev](basx3.png)
 
-      ![assign role collection](bas6.png)
+[DONE]
+[ACCORDION-END]
 
-  6. Select **`Business_Application_Studio_Developer`** and click **Assign Role Collection**.
+[ACCORDION-BEGIN [Step 2: ](Assign role collection to user)]
 
-      ![assign role collection](bas7.png)
+  1. Select **trial**.
 
-  7. Check your result. Now your user should have the **`Business_Application_Studio_Developer`** role collection assigned.
+      ![assign role collection](trial3.png)
 
-      ![assign role collection](bas8.png)
+  2. Now you are in the trial overview page. Click **Users** and select your user.
 
-      You are now able to develop on SAP Business Application Studio.
+      ![assign role collection](user2.png)
+
+  4. Click **Assign Role Collection**.
+
+      ![assign role collection](user3.png)
+
+  5. Select `Business_Application_Studio_Administrator`, `Business_Application_Studio_Developer` and `Business_Application_Studio_Extension_Deployer` and click **Assign Role Collection**.
+
+      ![assign role collection](user4.png)
 
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create dev space)]
+[ACCORDION-BEGIN [Step 3: ](Create dev space)]
 
-  1.  Select **trial**.
+  1.  On the left menu scroll to the top and select **Instances and Subscriptions** and open SAP Business Application Studio.
 
-      ![dev](studio.png)
+      ![dev](instance.png)
 
-  2.   Select **Service Marketplace** and search for **SAP Business Application Studio**. Select actions and click **Go to Application**.
-
-      ![dev](studio212.png)
-
-  3.  Check the privacy statement and click **OK**.
-
-      ![dev](studio2.png)
-
-  4. Now the SAP Business Application Studio has started. Click **Create Dev Space**.
+  2. Now the SAP Business Application Studio has started. Click **Create Dev Space**.
 
       ![dev](studio3.png)
 
-  5. Create a new dev space:
+  3. Create a new dev space:
        - Name: **Fiori**
        - Type: **SAP Fiori**
 
@@ -100,7 +102,7 @@ author_profile: https://github.com/mervey45
 
      ![dev](studio4.png)
 
-  6. When your status is **Running**, select your dev space **Fiori**.
+  4. When your status is **Running**, select your dev space **Fiori**.
 
       ![dev](studio5.png)
 
@@ -137,15 +139,15 @@ author_profile: https://github.com/mervey45
 
       ![organization](neu5.png)
 
-  7. Select your global account and press enter.
+  8. Select your global account and press enter.
 
       ![organization](neu6.png)
 
-  8. Select dev as your space and press enter.
+  9. Select dev as your space and press enter.
 
       ![organization](neu7.png)
 
-  9. Check your result. Now your organization and space have been set.
+  10. Check your result. Now your organization and space have been set.
 
      ![organization](neumm.png)
 
@@ -166,7 +168,7 @@ author_profile: https://github.com/mervey45
 
     ![object](neu10.png)
 
-  5. Configure data source, system and service:
+  4. Configure data source, system and service:
      - Data source: **Connect to an SAP System**
      - System: **`ABAP Environment on SAP Business Technology Platform`**
      - ABAP Environment: **`default_abap-trial`**
@@ -178,11 +180,11 @@ author_profile: https://github.com/mervey45
 
      A destination for the `abap-trial` service instance is generated automatically.
 
-  6. Select your main entity **`TravelProcessor`** and click **Next >**.
+  5. Select your main entity **`TravelProcessor`** and click **Next >**.
 
     ![object](neu12.png)
 
-  7. Configure project attributes:  
+  6. Configure project attributes:  
      - Name: **`ztravel_app_xxx`**
      - Title: **Travel App XXX**
      - Description: **A Fiori application.**
@@ -196,7 +198,7 @@ author_profile: https://github.com/mervey45
 
     **HINT:** Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
 
-  8. Configure deployment:
+  7. Configure deployment:
 
        - Target: ABAP
        - Is this an SAP Business Technology Platform system? Yes
@@ -213,7 +215,7 @@ author_profile: https://github.com/mervey45
     >**HINT: If you want to copy your transport request, please do following:**  Open Eclipse, search your package **`ZTRAVEL_APP_XXX`** and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your **transport request** underneath the **Modifiable** folder.
     >      ![deploy](deploy3.png)
 
-  9. Configure Fiori Launchpad:
+  8. Configure Fiori Launchpad:
 
        - Semantic Object: `ztravel_app_xxx`
        - Action: display
@@ -223,7 +225,7 @@ author_profile: https://github.com/mervey45
 
       Click **Finish**.
 
- 10. Now all files have been generated.
+  9. Now all files have been generated.
 
       !![app](new4.png)
 
