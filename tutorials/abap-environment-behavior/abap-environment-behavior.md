@@ -3,7 +3,7 @@ auto_validation: true
 title: Create Behavior Definition for Managed Scenario
 description: Create behavior definition and implementation for managed scenario.
 primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform ]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -113,12 +113,17 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![save and activate](activate.png)
 
-  6. Now switch to your service binding and double click on `TravelProcessor`.
+  6. Now switch to your service binding and activate your service binding again.
+
+     ![Create behavior definition for projection view](activate2.png)
+
+  7. Double-click on `TravelProcessor` to start your preview.
 
       ![Create behavior definition for projection view](projection4.png)
 
   7. **Refresh** your browser and check your result.
 
+    >**HINT**: If you don't see the create and delete buttons, then please unpublish your service binding, activate and publish it again.
      The create and delete button appears on the UI because of the managed scenario.
      You can create and edit travel bookings or you' re able to delete existing ones.
 

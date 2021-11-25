@@ -3,14 +3,14 @@ title: Create a Dev Space for SAP Fiori Apps
 description: Create an SAP Business Application Studio dev space, a preconfigured environment with the required tools and extensions tailored for a specific business scenario.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-business-technology-platform, products>sap-btp-cloud-foundry-environment]
+tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-fiori, products>sap-business-technology-platform, products>sap-btp-cloud-foundry-environment]
 primary_tag: products>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
 ---
 
 ## Prerequisites
-  - You have access to SAP Business Application Studio (see [Set Up SAP Business Application Studio for Development](appstudio-onboarding)).
+  - You have access to SAP Business Application Studio (to onboard SAP Business Application Studio in a trial account, see [Set Up SAP Business Application Studio for Development](appstudio-onboarding)).
 
 
 ## Details
@@ -23,7 +23,20 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 
 [ACCORDION-BEGIN [Step 1: ](Create a preconfigured SAP Fiori dev space)]
 
-1. Access SAP Business Application Studio, and choose **Create Dev Space** in the welcome page or dev space manager.
+1. Access SAP Business Application Studio.
+
+    >Options:
+
+    >1. Use a link, e.g. bookmark, to the dev space manager of SAP Business Application Studio if you have it.
+
+    >2. In a trial account, launch the SAP BTP trial landing page, and choose **SAP Business Application Studio**.
+    >!![launch sap business application studio](BTP-Access-AppStudio-.png)
+
+    >3. In a productive account (as well as a trial account), access SAP BTP cockpit, navigate to the subaccount with SAP Business Application Studio subscription, click **Subscriptions and Instances**, and click **SAP Business Application Studio**.
+    >!![launch bas from cockpit](Cockpit-Go-to-Application-.png)
+
+
+2. Choose **Create Dev Space** in the welcome page or dev space manager.
 
     >Welcome page for SAP Business Application Studio:
 
@@ -39,6 +52,8 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 3. Choose **SAP Fiori** as the application type.
 
 4. Click **Create Dev Space**.
+
+    >For development of UI5 Integration Cards that integrate with SAP Work Zone, check the **Development Tools for SAP Work Zone extension** in the **Additional SAP Extensions** section.
 
     !![Create Dev Space](AppStudio-Create-Dev-Space-Fiori-.png)
 

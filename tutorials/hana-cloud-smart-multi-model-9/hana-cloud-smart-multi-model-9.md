@@ -288,7 +288,7 @@ SELECT "ID", "SHAPE" FROM "F_SPOO_EDGES"(1433737988, 1794145673, 'ANY', 'bike');
 
     !![TWO PATHS](ss-05-two-paths.png)
 
-You now have used two more cost functions for path finding. You have wrapped the GRPAH procedure into a table function which can be called in a SQL SELECT statement. This is a nice way of mixing graph and relational processing.
+You now have used two more cost functions for path finding. You have wrapped the GRAPH procedure into a table function which can be called in a SQL SELECT statement. This is a nice way of mixing graph and relational processing.
 
 > In the next tutorial, learn how to calculate `isochrones` and closeness centrality.
 

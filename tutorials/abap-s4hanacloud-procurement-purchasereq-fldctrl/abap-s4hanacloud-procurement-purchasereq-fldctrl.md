@@ -3,8 +3,8 @@ title: Implement a Field Control Using a Business Add-in (BAdI)
 description: Hide Prices for a Specified User Using a Business Add-in (BAdI) for a Purchase Requisition
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, products>sap-btp--abap-environment]
-primary_tag: topic>abap-development
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment]
+primary_tag: programming-tool>abap-development
 ---
 
 ## Prerequisites
@@ -28,6 +28,8 @@ In this case, the `BAdI` is implemented in the SAP Fiori app as follows:
 1. Use an existing enhancement spot **`MM_PUR_S4_PR_FLDCNTRL_SIMPLE`**, with an existing `BADI` definition **`MM_PUR_S4_PR_FLDCNTRL_SIMPLE`**
 2. Create a container ( **enhancement implementation** ) in the enhancement spot
 3. Create a **`BADI` implementation** for the `BADI` definition.
+
+!![step0-badi-creation-enhancement-process](step0-badi-creation-enhancement-process.png)
 
 Throughout this tutorial, objects name include a prefix, such as **`xx`** or suffix, such as **`XXX`**. Always replace this with your group number or initials.
 

@@ -5,7 +5,7 @@ title: Set Up Local Development Using VS Code
 description: This tutorial shows you how to get started using VS Code as an editor.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -37,7 +37,7 @@ You can choose the editor to develop your end-to-end CAP application. You can us
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Command line interpreters)]
-This tutorial contains a number of command line snippets that need to be pasted into a terminal. All snippets listed for macOS/Linux or without platform information can be executed in the `bash` or `zsh`, which are the default shells for these platforms. The Windows snippets are for the Windows Command Line and not for the PowerShell. Windows users are suggested to use the `Git BASH` instead, which is part of the Git for Windows installation and contains the basic UNIX command line tools. In the `Git BASH`, use the *macOS/Linux* snippets of the tutorial. VS Code supports the use of the `Git BASH` for the integrated terminal as well.
+This tutorial contains a number of command line snippets that need to be pasted into a command line window. All snippets listed for macOS/Linux or without platform information can be executed in the `bash` or `zsh`, which are the default shells for these platforms. The Windows snippets are for the Windows Command Line and not for the PowerShell. Windows users are suggested to use the `Git BASH` instead, which is part of the Git for Windows installation and contains the basic UNIX command line tools. In the `Git BASH`, use the *macOS/Linux* snippets of the tutorial. VS Code supports the use of the `Git BASH` for the integrated command line window (called **Terminal** in VS Code) as well.
 
 [DONE]
 [ACCORDION-END]
@@ -45,7 +45,7 @@ This tutorial contains a number of command line snippets that need to be pasted 
 [ACCORDION-BEGIN [Step 3: ](Install Git)]
 Git is the version control system that you need to download the files of this tutorial but also to develop anything in collaboration with others really.
 
-Check whether you already have Git installed. Open a terminal and execute the following command.
+Check whether you already have Git installed. Open a command line window and execute the following command.
 
 ```Shell/Bash
 git version
@@ -65,16 +65,16 @@ If not, go to [Git downloads](https://git-scm.com/downloads), pick the installer
 [ACCORDION-BEGIN [Step 4: ](Install Node.js)]
 Node.js is the JavaScript runtime the CAP backend part of the application runs on and that is needed for some of the tools involved to develop the application.
 
-In case you don't know whether you have Node.js installed and whether it has the right version (>=14), open a terminal and execute the following command.
+In case you don't know whether you have Node.js installed and whether it has the right version (>=16), open a command line window and execute the following command.
 
 ```Shell/Bash
 node -v
 ```
 
-Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. You should get an output like:
+Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 16. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. You should get an output like:
 
 ```Shell/Bash
-v14.x.x
+v16.x.x
 ```
 
 > If you don't see the required version, go to [Node.js](https://nodejs.org/en/download/) download page, pick the installer appropriate for your operating system, and install it. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#node-version) for CAP for more details.
@@ -87,7 +87,7 @@ v14.x.x
 [ACCORDION-BEGIN [Step 5: ](Install the SAPUI5 command line interface)]
 A Node.js version 14 or higher is required to install the SAPUI5 CLI. See [SAPUI5 CLI](https://sap.github.io/ui5-tooling/pages/CLI/) for more details.
 
-1. Check in a terminal whether you already have the UI5 CLI installed.
+1. Check in a command line window whether you already have the UI5 CLI installed.
 
     ```Shell/Bash
     ui5 --version
@@ -164,10 +164,10 @@ Follow the steps described [here](https://docs.cloudfoundry.org/cf-cli/install-g
 [ACCORDION-BEGIN [Step 7: ](Add CAP tooling)]
 CAP provides you with all the tools to create your data model with entities and your services. It helps you tremendously to get these services running locally during development with an incredible speed. It also creates the connection to both local databases and databases in the cloud (SAP HANA). It comes with different tooling that is used in this tutorial. You can see the details in the [CAP documentation](https://cap.cloud.sap/docs/get-started/in-a-nutshell).
 
-1. Install CDS development kit globally in a terminal.
+1. Install CDS development kit globally in a command line window.
 
     ```Shell/Bash
-    npm i -g @sap/cds-dk
+    npm install --global @sap/cds-dk
     ```
 
     This process takes some minutes installing the `cds` command that you will use in the next steps. On macOS/Linux, you need to follow the steps as described [here](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
@@ -181,7 +181,7 @@ CAP provides you with all the tools to create your data model with entities and 
 3. Check what versions of the CDS libraries have been installed.
 
     ```Shell/Bash
-    cds v
+    cds --version
     ```
 
     To know what is the latest version of the CAP tooling, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
@@ -196,7 +196,7 @@ VS Code is used to edit the code of the application project and it comes with a 
 
 In case you don't have it, go to the [Visual Studio Code](https://code.visualstudio.com/) homepage and find the version appropriate for your operating system.
 
-Download the package for macOS and perform the following steps as described [here](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac). To start it like any other application and to start it from the terminal on MacOS, follow these steps:
+Download the package for macOS and perform the following steps as described [here](https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac). To start it like any other application and to start it from the command line window on MacOS, follow these steps:
 
 1. Move VS Code from your **Download** folder to the **Applications** folder.
 
@@ -239,7 +239,7 @@ You need to install the [**SAP Language Support**](https://marketplace.visualstu
 
 2. Choose the **Extensions** icon in the left pane.
 
-3. Type **SAP CDS** in the search field and choose **SAP Language Support** from the search results.
+3. Type **SAP CDS** in the search field and choose **SAP CDS Language Support** from the search results.
 
 
     ![SAP CDS Language Support](sap_cds_language_support_extension.png)
@@ -298,7 +298,7 @@ After a restart of VS Code, you can check for the tools by invoking **View** **&
 2. If you don't get a version number, install Yeoman:
 
     ```Shell/Bash
-    npm install -g yo
+    npm install --global yo
     ```
 
 [DONE]

@@ -3,8 +3,8 @@ title: Create an ABAP Managed Database Procedure (AMDP) and Analyze Its Performa
 description: Create an AMDP and analyze its runtime performance along with the performance of the executed SQL statements, using the AMDP Profiler in ABAP Development Tools (ADT).
 auto_validation: true
 time: 45
-primary_tag: topic>abap-development
-tags: [  tutorial>intermediate, products>sap-netweaver-7.5, products>sap-btp--abap-environment, products>sap-business-technology-platform ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>intermediate, software-product>sap-netweaver-7.5, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform ]
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 

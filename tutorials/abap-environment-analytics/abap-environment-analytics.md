@@ -3,8 +3,8 @@ title: Develop and Consume Queries on SAP Analytics Cloud
 description: Develop analytical queries from ABAP system as data sources and consume them in the SAP Analytics Cloud to create analytical models, stories and multi-dimensional reports.
 auto_validation: true
 time: 60
-tags: [ tutorial>intermediate, topic>abap-connectivity, products>sap-business-technology-platform, tutorial>license]
-primary_tag: products>sap-btp--abap-environment
+tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-business-technology-platform, software-product>sap-analytics-cloud, tutorial>license]
+primary_tag: software-product>sap-btp--abap-environment
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
 ---
