@@ -28,7 +28,7 @@ To start with this tutorial use the result in the [`create-ui-fiori-elements`](h
 [ACCORDION-BEGIN [Step 1: ](Add custom code)]
 In this tutorial, you add some custom code to the CAP application. Depending on the value of the property `impact`, the custom code changes the value of the property `criticality`. This property is used in OData annotations to control the color of some of the cells in the table of our work list page.
 
-1. Copy the file `risk-service.js` from `templates/cap/business-logic/srv` to the `srv` folder of your app.
+1. Copy the file `risk-service.js` from `templates/cap-business-logic/srv` to the `srv` folder of your app.
 
 2. In your browser, reload the page of the SAP Fiori elements app.
 

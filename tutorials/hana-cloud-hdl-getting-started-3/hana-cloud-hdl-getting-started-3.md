@@ -81,7 +81,7 @@ Let's get started. Follow these steps:
 2.	Copy the code given below into the SQL Console and execute the script after entering your password in the appropriate field. You can also find this code in `CreateTables.sql` file contained in the `SQL scripts.zip` [file](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/SQL%20Scripts.zip).
 
 ```SQL
-     /*==============================================================*/                       */
+     /*==============================================================*/                      
      /* Created on:     11/21/2008 2:40:41 PM                        */
      /*==============================================================*/
      /*==============================================================*/
