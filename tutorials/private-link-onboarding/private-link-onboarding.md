@@ -4,13 +4,13 @@ author_profile: https://github.com/AnnikaGonnermann
 description: Get onboarded to use SAP Private Link service (Beta) in SAP BTP.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-private-link-service, products>sap-business-technology-platform, tutorial>license, software-product-function>sap-btp-cockpit]
+tags: [tutorial>beginner, software-product-function>sap-private-link-service, products>sap-business-technology-platform, tutorial>license, software-product-function>sap-btp-cockpit]
 primary_tag: software-product-function>sap-private-link-service
 ---
 
 ## Prerequisites
 - You have a global account and subaccount on SAP Business Technology Platform. See [Getting Started with SAP Business Technology Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/144e1733d0d64d58a7176e817fa6aeb3.html).
-- You have enabled beta features for your subaccount. See [Create Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/05280a123d3044ae97457a25b3013918.html) or [Change Subaccount Details](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/567d4a84bfdc428f8f3640e07261f73a.html?q=beta%20features).
+- You have enabled beta features for your subaccount. See [Create Subaccount](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/05280a123d3044ae97457a25b3013918.html?q=create%20subaccount) or [Change Subaccount Details](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/567d4a84bfdc428f8f3640e07261f73a.html?q=subaccount%20details).
 
 ## Details
 ### You will learn
@@ -34,7 +34,7 @@ To be able to use the functionalities of SAP Private Link service (Beta), you fi
 3. Navigate to **Entitlements** in the left hand navigation bar. You can now see all the existing service assignments for this respective subaccount.  
 4. Select **Configure Entitlements**.
 
-    !![Configure Entitlements for SAP Private Link service](private-endpoint-configure-entitlements.png)  
+    !![Configure Entitlements for SAP Private Link service (Beta)](private-endpoint-configure-entitlements.png)  
 
 5. To add a new service assignment, select **Add Service Plans**. You see now all the offerings available to this specific subaccount.
 

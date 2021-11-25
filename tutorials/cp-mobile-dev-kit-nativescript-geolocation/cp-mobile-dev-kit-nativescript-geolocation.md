@@ -20,7 +20,7 @@ author_profile: https://github.com/jitendrakansal
   - How to build a Mobile development kit client for iOS & Android and connect to SAP Mobile application
   - How to capture the device's current location
 
-You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/2-Add-NativeScript-Plugin-in-an-MDK-App) and start directly with step 4 in this tutorial.
+You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/main/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/2-Add-NativeScript-Plugin-in-an-MDK-App) and start directly with step 4 in this tutorial.
 
 ---
 
@@ -83,13 +83,14 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
     ```JavaScript
     import * as geolocation from "@nativescript/geolocation";
     import { CoreTypes } from "@nativescript/core";
-    export default function GetCoordinates(context) {
+    export default async function GetCoordinates(context) {
         var logger = context.getLogger();
         console.log("Current Log Level: " + logger.getLevel());
         // check if geolocation is not enabled
-        if (!geolocation.isEnabled()) {
+            var locationIsEnabled = await geolocation.isEnabled();
+        if (!locationIsEnabled) {
             // request for the user to enable it
-            geolocation.enableLocationRequest();
+            await geolocation.enableLocationRequest();
         }
         // Get current location with high accuracy
         return geolocation.getCurrentLocation({
@@ -101,7 +102,6 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
                 console.log(loc);
                 console.log('\nCurrent Location: (' + loc.latitude + ',' + loc.longitude + ')');
                 logger.log(loc.toString());
-
                 var locMessage = '(' + "Latitude:" + loc.latitude + ',' + "Longitude:" + loc.longitude + ')';
                 logger.log('Current Location: ' + locMessage, 'INFO');
                 return locMessage;
@@ -214,7 +214,7 @@ In order to use the existing `NativeScript` plugin in MDK client, you will need 
       "AppVersion": "1.0.0",
       "BundleID": "Enter your Bundle ID",
       "Externals": ["@nativescript/geolocation"],
-      "NSPlugins": ["@nativescript/geolocation"],
+      "NSPlugins": ["@nativescript/geolocation@8.0.0"],
       "UrlScheme": "mdkclient"
     }
     ```
@@ -224,23 +224,17 @@ In order to use the existing `NativeScript` plugin in MDK client, you will need 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add googlePlayServicesVersion in Android App Resources (Required only for Android client))]
+[ACCORDION-BEGIN [Step 7: ](Add googlePlayServicesVersion and Permission in App Resources Merge folder(Required only for Android client))]
 
 With [Google Play services](https://developers.google.com/android/guides/overview), your app can take advantage of the latest, Google-powered features such as Maps, Google+, and more.
 
-1. Navigate to `/DemoSampleApp.mdkproject/App_Resources/Android` and create a new file `before-plugins.gradle`.
+Download the zip file from [here](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/main/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/2-Add-NativeScript-Plugin-in-an-MDK-App/App_Resources_Merge.zip), unzip it on your machine and place its content under `DemoSampleApp.mdkproject` folder.
 
-    !![MDK](img-6.png)
+You should have your project structure looking like below:
 
-2. Provide the below information:
+!![MDK](img-6.png)
 
-    ```Java
-    android {  
-      project.ext {
-          googlePlayServicesVersion = "16+"
-      }
-    }
-    ```
+>Files in the `App_Resources_Merge` folder overrides a part of resources files in `<generated-project in step 8>/app/App_Resources`. You can find more information in the [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/app-resources-merge.html).
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -251,9 +245,7 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
 
 [OPTION BEGIN [Android]]
 
-1. Create your MDK client either using MDK SDK by following the steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial OR using SAP Cloud Build Service by following [this](cp-mobile-dev-kit-cbs-client) tutorial.
-
-and run it in your device.
+1. Create your MDK client either using MDK SDK by following the steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial OR using SAP Cloud Build Service by following [this](cp-mobile-dev-kit-cbs-client) tutorial and run it in your device.
 
 2. Once you have accepted the app update, allow your app to access your location.
 
