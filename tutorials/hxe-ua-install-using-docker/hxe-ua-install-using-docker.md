@@ -29,11 +29,6 @@ SAP HANA, express edition for Docker has been tested on the following Linux oper
 | Linux OS | OS Version | Docker Editions
 | --- | --- | --- |
 | `SLES` | `12.2, 12.3, 12.4` | [Community](https://docs.docker.com/engine/install/sles/) |
-| `Ubuntu`  | `17.04 (Zesty Zapus)` | [Community](https://store.docker.com/editions/community/docker-ce-server-ubuntu),  [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-ubuntu) |
-| `openSUSE` | `openSUSE Leap` | [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-sles) |
-| `CentOS` | `7 (Core)` | [Community](https://store.docker.com/editions/community/docker-ce-server-centos),  [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-centos) |
-| `Debian` | `10 (Buster)` | [Community](https://store.docker.com/editions/community/docker-ce-server-debian) |
-| `Fedora` | `28 (Server Edition)` | [Community](https://store.docker.com/editions/community/docker-ce-server-fedora) |
 
 **This installation does not support Docker for Windows or Docker for Mac.**
 
