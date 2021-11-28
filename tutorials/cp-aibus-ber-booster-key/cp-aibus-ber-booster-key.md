@@ -1,9 +1,9 @@
 ---
-title: Set Up Account for Data Attribute Recommendation and Get Service Key
-description: Use a booster in SAP BTP Trial to automatically create a service instance, and the associated service key for Data Attribute Recommendation.
+title: Set Up Account for Business Entity Recognition and Get Service Key
+description: Use a booster in SAP BTP Trial to automatically create a service instance, and the associated service key for Business Entity Recognition.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition]
 primary_tag: topic>machine-learning
 ---
 
@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to access your trial account
   - What are interactive guided boosters
-  - How to use the **Set up account for Data Attribute Recommendation** booster to assign entitlements, update your subaccount, create a service instance and the associated service key for Data Attribute Recommendation.
+  - How to use the **Set up account for Business Entity Recognition** booster to assign entitlements, update your subaccount, create a service instance and the associated service key for Business Entity Recognition.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Go To Your Trial Account)]
@@ -32,8 +32,6 @@ primary_tag: topic>machine-learning
 
     >Choose **Continue**.
 
-    >!![Account setup](02_Foundation20Onboarding_Processing.png)
-
     >For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP BTP Trial, see [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements).
 
 [DONE]
@@ -44,13 +42,13 @@ primary_tag: topic>machine-learning
 
 SAP Business Technology Platform creates interactive guided boosters to automate trial cockpit steps, so users can save time when trying out the services.
 
-Now, you will use the **Set up account for Data Attribute Recommendation** booster to automatically assign entitlements, update your subaccount, create a service instance and the associated service key for Data Attribute Recommendation.
+Now, you will use the **Set up account for Business Entity Recognition** booster to automatically assign entitlements, update your subaccount, create a service instance and the associated service key for Business Entity Recognition.
 
 1. On the navigation side bar, click **Boosters**.
 
     !![Service Key](access-booster.png)
 
-2. Search for **Set up account for Data Attribute Recommendation** and click the tile to access the booster.
+2. Search for **Set up account for Business Entity Recognition** and click the tile to access the booster.
 
     !![Service Key](access-booster-tile.png)
 
@@ -68,15 +66,15 @@ Now, you will use the **Set up account for Data Attribute Recommendation** boost
 
 [ACCORDION-BEGIN [Step 3: ](Get service key)]
 
-You have successfully used the booster **Set up account for Data Attribute Recommendation** to create a service key for Data Attribute Recommendation.
+You have successfully used the booster **Set up account for Business Entity Recognition** to create a service key for Business Entity Recognition.
 
 Click **Download Service Key** to save the service key locally on your computer.
 
 !![Service Key](booster-success-key.png)
 
->If you face any issue with the booster **Set up account for Data Attribute Recommendation**, you can alternatively follow the steps in [Create Service Instance for Data Attribute Recommendation](cp-aibus-dar-service-instance) to create the service key for Data Attribute Recommendation manually.
+>If you face any issue with the booster **Set up account for Business Entity Recognition**, you can alternatively follow the steps in [Create Service Instance for Business Entity Recognition](cp-aibus-ber-service-instance) to create the service key for Business Entity Recognition manually.
 
-Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
+You are now all set to [Get OAuth Access Token for Business Entity Recognition via Web Browser](cp-aibus-ber-web-oauth-token). Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -84,9 +82,9 @@ Step 4 is optional. If you're not interested, you can set it to **Done** and go 
 
 [ACCORDION-BEGIN [Step 4: ](Access service instance and service key (optional))]
 
-> This is an optional step. Use it only if you want to access the service instance and service key, you created with the **Set up account for Data Attribute Recommendation** booster, without having to run it once again.
+> This is an optional step. Use it only if you want to access the service instance and service key, you created with the **Set up account for Business Entity Recognition** booster, without having to run it once again.
 
-Do the following to access your service instance and service key, without having to run the **Set up account for Data Attribute Recommendation** booster once again:
+Do the following to access your service instance and service key, without having to run the **Set up account for Business Entity Recognition** booster once again:
 
 1. Close the booster **Success** dialog box.
 
@@ -96,11 +94,11 @@ Do the following to access your service instance and service key, without having
 
     !![Service Key](trial-account.png)
 
-3. Click **Account Explorer** on the navigation side bar and select **trial** to access your subaccount.
+3. Click **Account Explorer** on the navigation side bar, and then click **trial** to access your subaccount.
 
     !![Service Key](subaccounts.png)
 
-4. Click **Instances and Subscriptions** on the navigation side bar. You see the service instance you created with the **Set up account for Data Attribute Recommendation** booster.
+4. Click **Instances and Subscriptions** on the navigation side bar. You see the service instance you created with the **Set up account for Business Entity Recognition** booster.
 
     !![Service Key](service-instance.png)
 
