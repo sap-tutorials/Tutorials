@@ -3,7 +3,7 @@ title: Secure a Basic Node.js App with the Authorization and Trust Management Se
 description: Secure a basic single-tenant Node.js application with the Authorization and Trust Management Service (XSUAA).
 auto_validation: true
 time: 25
-tags: [tutorial>intermediate, topic>node-js, products>sap-business-technology-platform ]
+tags: [tutorial>intermediate, programming-tool>node-js, products>sap-business-technology-platform ]
 primary_tag: topic>security
 author_name: Michael Shea
 author_profile: https://github.com/MichaelPShea
@@ -79,11 +79,6 @@ To prevent a direct call to your application without authentication, it is neces
 
 #### Prepare the package.json file
 Since there are now more modules used beside the express module, you have to add the relevant dependencies to your `package.json` file. In this case the dependencies for the modules `passport`, `@sap/xsenv` and `@sap/xssec` have to be added.
-
-> If you want to use SAP modules locally, you need to add the npm configuration:
-```bash
-npm config set @sap:registry https://npm.sap.com
-```
 
 4. Open the `package.json` file.
 

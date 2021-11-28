@@ -4,7 +4,7 @@ description: Learn how to access details of triggered alerts, as well as how to 
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database]
-primary_tag: products>sap-hana-cloud
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
