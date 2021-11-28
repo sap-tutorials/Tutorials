@@ -83,7 +83,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-3.2.png)
 
-    >If you do not see Welcome page, you can access it via **Help** menu.
+    >If you do not see the Welcome page, you can access it via **Help** menu or via **View** menu > Find Command > Welcome.
 
 3. Select **MDK Project** and click **Start**.
 
@@ -188,7 +188,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     MDK editor will deploy the metadata to Mobile Services (for Mobile application) followed by to Cloud Foundry (for Web application).
 
-    !![MDK](img-4.2.gif)
+    !![MDK](img-4.2.1.png)
 
     You should see successful messages for both deployments.
 
@@ -209,10 +209,6 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
     !![MDK](img-6.1.png)
-
-2. Select `com.sap.mdk.demo` application from the list.
-
-    !![MDK](img-5.3.2.png)
 
     The On-boarding QR code is now displayed.
 
@@ -240,10 +236,6 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
     !![MDK](img-6.1.png)
-
-2. Select `com.sap.mdk.demo` application from the list.
-
-    !![MDK](img-5.3.2.png)
 
     The On-boarding QR code is now displayed.
 

@@ -55,7 +55,6 @@ Once SAP Mobile Services is available, you can use its features in your Mobile d
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 2: ](Launch SAP Mobile Services cockpit)]
 
 1. Click subaccount available in your global account.

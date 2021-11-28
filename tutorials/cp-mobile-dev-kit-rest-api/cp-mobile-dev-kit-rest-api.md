@@ -104,6 +104,8 @@ With above details, you will next configure an app in Mobile Services, add root 
 
 1. Download the zip file from [here](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/4-Level-Up-with-the-Mobile-Development-Kit/8-Consume-rest-api-in-mdk-app/swagger_petstore.zip) and unzip it on your machine.
 
+    !![MDK](img-2.8.0.png)
+
 2. Navigate to ![Connectivity](icon-connectivity.png) **Connectivity** **&rarr;** **Destinations** to create a BTP destination, click **Import Destination** to import the extracted file and click **Save**.
 
     !![MDK](img-2.8.png)
@@ -120,7 +122,7 @@ With above details, you will next configure an app in Mobile Services, add root 
 
     !![MDK](img-3.2.png)
 
-    >If you do not see Welcome page, you can access it via **Help** menu.
+    >If you do not see the Welcome page, you can access it via **Help** menu or via **View** menu > Find Command > Welcome.
 
 3. Select **MDK Project** and click **Start**.
 
@@ -241,7 +243,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     MDK editor will deploy the metadata to Mobile Services (for Mobile application) followed by to Cloud Foundry (for Web application).
 
-    !![MDK](img-6.2.gif)
+    !![MDK](img-6.2.png)
 
     You should see successful messages for both deployments.
 
@@ -258,7 +260,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code. (Select `com.sap.mdk.restapi` application from the list)
+Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
 !![MDK](img-7.1.png)
 
@@ -278,7 +280,7 @@ Once you accept app update, you will see the Pets list on the **Main** page.
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code. (Select `com.sap.mdk.restapi` application from the list)
+Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
 !![MDK](img-7.1.png)
 

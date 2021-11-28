@@ -65,7 +65,7 @@ This page will display customer orders list, you will add an **Object Table** co
     |----|----|
     | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `Entity` | Select `SalesOrderHeaders` from the dropdown |
-    | `QueryOptions`| `$filter=CustomerId eq '{CustomerId}'&$top=5&$orderby=CreatedAt desc` |
+    | `QueryOptions`| `$top=5&$filter=CustomerId eq '{CustomerId}'&$orderby=CreatedAt desc` |
 
     !![MDK](img-1.5.png)
 

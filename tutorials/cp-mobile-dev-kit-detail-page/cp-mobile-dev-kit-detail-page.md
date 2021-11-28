@@ -110,9 +110,7 @@ This page will show related details for a customer. In this page, you will add a
 
     Start with first part of the binding for **Address** property.
 
-    Click the **link icon** next to the **Value** field to display the Object Browser and change the Format to **Binding Target Path**.
-
-    Click the **checkbox** for _Current Object_ and double click `HouseNumber` to set it as the first part of the binding. **Don't click OK as you will set second part of the binding too.**
+    Click the **link icon** next to the **Value** field to display the Object Browser and double click `HouseNumber` to set it as the first part of the binding. **Don't click OK as you will set second part of the binding too.**
 
     !![MDK](img-1.13.gif)
 
@@ -130,25 +128,17 @@ This page will show related details for a customer. In this page, you will add a
 
     >**Street** should be selected from **Customer** entity.
 
-14. Select the **upper right** Key Value Item and set the `KeyName` to **City**.
+14. Repeat the process and set the **upper right** Key Value Item `KeyName` to **City** and bind the value to the `City` entity property.
 
-    Click the link icon to display the Object Browser. Change the format to **Binding** and double click the **City** property of the Customer entity to set it as the binding expression.
+15. Repeat the process and set the **lower left** Key Value Item `KeyName` to **Postal Code** and bind the value to the `PostalCode` entity property.
 
-    Click **OK** to set the binding.
+16. Repeat the process and set the **lower right** Key Value Item `KeyName` to **Country** and bind the value to the `Country` entity property.
 
-    !![MDK](img-1.14.1.gif)
+    >Be careful not to select _City_, _Postal Code_ & _City_ from Customer.Address (ESPM.Address) collection, final expression should be as per below screenshot.
 
-    >Be careful not to select **City** from `Customer.Address (ESPM.Address)` collection, final expression should be as per above screenshot.
+    !![MDK](img-1.16.png)
 
-15. Repeat the process and set the **lower left** Key Value Item Key Name to **Postal Code** and bind the value to the `PostalCode` entity property.
-
-16. Repeat the process and set the **lower right** Key Value Item Key Name to **Country** and bind the value to the `Country` entity property.
-
-    >Be careful not to select _Postal Code_ & _City_ from Customer.Address (ESPM.Address) collection, final expression should be as per below screenshot.
-
-    ![MDK](img-1.16.png)
-
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a navigation action)]
@@ -159,7 +149,7 @@ Now, you will create a Navigation action that opens the `Customers_Detail.page` 
 
     !![MDK](img_2.1.png)
 
-2. Provide the below information:
+2. Provide the below information, click **Next** and then **Finish** on the confirmation step.
 
     | Field | Value |
     |----|----|
@@ -167,8 +157,6 @@ Now, you will create a Navigation action that opens the `Customers_Detail.page` 
     | `PageToOpen` | Select `Customers_Detail.page` from the dropdown |
 
     !![MDK](img-2.2.png)
-
-3. Click **Next** and then **Finish** on the confirmation step.
 
 [DONE]
 [ACCORDION-END]

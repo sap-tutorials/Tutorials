@@ -20,6 +20,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
+
 For this tutorial, you will use [Mobile Services sample backend](cp-mobile-dev-kit-ms-setup) (step 3) which has parent-child relationship setup among entities. For example, A customer can have `n` (>=0) number of sales orders.
 
 To create an entity and then link it to another entity, you need to carry out the following tasks:

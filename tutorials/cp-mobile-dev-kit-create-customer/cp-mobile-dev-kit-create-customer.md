@@ -97,9 +97,12 @@ In this step, you will create the `Customers_Create.page` as a **Form Cell Page*
     |----|----|
     | `Name`| `FCCreateEmail` |
     | `Caption` | `Email` |
+    | `KeyboardType` | `Email` |
     | `PlaceHolder`| `Enter Value` |
 
     !![MDK](img-1.9.png)
+
+    >[`KeyboardType`](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/FormCell/SimpleProperty.schema.html#keyboardtype) streamlines the data entry. When entering an email address, it would display the email address keyboard in mobile clients.
 
 10. Drag and drop a **Date Picker** control onto the page area for date of birth parameter.
 
@@ -365,7 +368,7 @@ Deploy the updated application to your MDK client.
 
     >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
-    >!![MDK](img-7.11.png)
+    >!![MDK](img-7.11.png)   
 
 2. Click **Customer List**, click **+ Add** icon to create a new record.
 

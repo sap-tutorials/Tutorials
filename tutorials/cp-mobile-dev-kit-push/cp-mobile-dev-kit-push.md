@@ -53,7 +53,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
     !![MDK](img-2.2.png)
 
-    >If you do not see Welcome page, you can access it via **Help** menu.
+    >If you do not see the Welcome page, you can access it via **Help** menu or via **View** menu > Find Command > Welcome.
 
 3. Select **MDK Project** and click **Start**.
 
@@ -217,18 +217,13 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
-    !![MDK](img-6.1.png)
+!![MDK](img-6.1.png)
 
-2. Select `com.sap.mdk.demo` application from the list.
+The On-boarding QR code is now displayed.
 
-    !![MDK](img-5.3.2.png)
-
-    The On-boarding QR code is now displayed.
-
-    !![MDK](img-6.2.png)
-
+!![MDK](img-6.2.png)
 
 >Leave the Onboarding dialog box open for step 7.
 

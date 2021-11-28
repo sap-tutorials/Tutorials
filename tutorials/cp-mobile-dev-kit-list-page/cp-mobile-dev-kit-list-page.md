@@ -86,11 +86,11 @@ To create the Customer List page, you will create a **Section page** and drag th
 
     !![MDK](img-1.9.png)
 
-10. In the **Activity Items** section of the Properties pane, click `+` icon to add a new activity item.
+10. In the **Activity Items** section of the Properties pane, click **Add** to add a new activity item.
 
     !![MDK](img-1.10.png)
 
-11. Click the **link icon** to open the Object browser for the **Phone** activity and bind it to the `PhoneNumber` property of the Customer entity.
+11. Expand the added item, click the 3 dots icon to open the Object browser to bind the `ActivityValue` to the `PhoneNumber` property of the Customer entity.
 
     !![MDK](img-1.11.gif)
 
