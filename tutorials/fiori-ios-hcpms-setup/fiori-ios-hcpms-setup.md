@@ -2,8 +2,8 @@
 title: Access SAP Mobile Services
 description: Access SAP Mobile Services within a SAP Business Technology Platform account and open the Mobile Services cockpit.
 auto_validation: true
-primary_tag: products>sap-mobile-services
-tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-business-technology-platform, products>sap-mobile-services, products>ios-sdk-for-sap-btp, products>android-sdk-for-sap-btp, products>sap-mobile-cards, products>mobile-development-kit-client]
+primary_tag: software-product>sap-mobile-services
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, software-product>sap-business-technology-platform, software-product>sap-mobile-services, software-product>ios-sdk-for-sap-btp, software-product>android-sdk-for-sap-btp, software-product>sap-mobile-cards, software-product>mobile-development-kit-client]
 time: 5
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -54,7 +54,6 @@ Once SAP Mobile Services is available, you can use its features in your Mobile d
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 2: ](Launch SAP Mobile Services cockpit)]
 
