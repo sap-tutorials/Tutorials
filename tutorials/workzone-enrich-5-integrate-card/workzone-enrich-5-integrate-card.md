@@ -1,5 +1,5 @@
 ---
-title: Integrate an UI5 Integration Card to Your SAP Work Zone Home Page
+title: Integrate a UI5 Integration Card to Your SAP Work Zone
 description: Add a custom UI5 integration card to your SAP Work Zone home page.
 auto_validation: true
 time: 10
