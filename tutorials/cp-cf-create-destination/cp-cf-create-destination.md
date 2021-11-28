@@ -3,7 +3,7 @@ title: Create a Destination in the SAP BTP Cockpit
 description: Create a destination in the SAP BTP cockpit to allow application access to the Northwind OData services.
 auto_validation: true
 primary_tag: products>sap-business-technology-platform
-tags: [ tutorial>beginner, topic>odata, software-product-function>sap-btp-cockpit, tutorial>free-tier]
+tags: [ tutorial>beginner, programming-tool>odata, software-product-function>sap-btp-cockpit, tutorial>free-tier]
 time: 5
 ---
 
@@ -71,7 +71,7 @@ And the following *Additional Properties*
 
 Property Name     | Value
 :------------- | :-------------
-`HTML5.DynamicDestination`           | **`true`** (enter this property manually as it is not available in the dropdown list)
+`HTML5.DynamicDestination`           | **`true`**
 `WebIDEEnabled`           | **`true`**
 
 > Do **not** use the entire path for the URL.  The URL should only be `https://services.odata.org`
