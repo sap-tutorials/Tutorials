@@ -303,7 +303,7 @@ In this step, you'll add an **Action** widget and a **Forum** widget.
 
     !![Add a forum widget](26-add-forum-widget.png)
 
-9. Under **Maximum Items to Display**, move the slider to number 2, change the title to `Ask Questions About the Hackathon`, and click **OK**. .
+9. Under **Maximum Items to Display**, move the slider to number 2, change the title to `Ask Questions About the Hackathon`, and click **OK**.
 
     !![Design the forum widget](27-design-forum-widget.png)
 
@@ -317,7 +317,7 @@ In this step, you'll add an **Action** widget and a **Forum** widget.
 
     !![Add feed display](27-add-feed-display.png)
 
-13. To increase the spacing between this row and the first row, hover over the row to expose the row settings on the right, click **Edit row settings**, and under **Row Padding**, add the value `30`pixels in the **Top** value box and click **Save**.
+13. To increase the spacing between this row and the row above, hover over the row to expose the row settings on the right, click **Edit row settings**, and under **Row Padding**, add the value `30`pixels in the **Top** value box and click **Save**.
 
 
 [DONE]
