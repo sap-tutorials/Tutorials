@@ -5,7 +5,7 @@ title: Implement Roles and Authorization Checks In CAP
 description: This tutorial shows you how to enable authentication and authorization for your CAP application.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -27,7 +27,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to access the application with a user and password
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`cap/launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/launchpage) branch.
+To start with this tutorial use the result in the [`launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpage) branch.
 
 ---
 
@@ -95,7 +95,7 @@ Since the authorization checks have been added to the CAP model, they apply not 
 
 CAP offers a possibility to add local users for testing as part of the `cds` configuration. In this tutorial, we use the `.cdsrc.json` file to add the users.
 
-1. Copy the file `templates/cap/roles/.cdsrc.json` to your project directory `cpapp`. If you're asked to replace an existing file with the same name, confirm.
+1. Copy the file `templates/cap-roles/.cdsrc.json` to your project directory `cpapp`. If you're asked to replace an existing file with the same name, confirm.
 
     > You have to make hidden files visible in your operating system in order to see the file.
 
@@ -153,8 +153,10 @@ When accessing the `Risks` service in your browser, you get a basic auth popup n
 
 
 [DONE]
-The result of this tutorial can be found in the [`cap/roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/roles) branch.
+The result of this tutorial can be found in the [`cap-roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-roles) branch.
 
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-cap-roles" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
 ---

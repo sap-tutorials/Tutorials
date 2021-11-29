@@ -70,7 +70,7 @@ If the entitlement for the Kyma runtime trial has not been activated, the button
 
     To learn more about the Kyma environment and its functionality, see:
 
-    - [kyma-project](https://kyma-project.io/docs/)
+    - [kyma-project](https://kyma-project.io/docs/kyma/latest)
     - [SAP Help Portal - Kyma Environment](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/468c2f3c3ca24c2c8497ef9f83154c44.html)
     - [SAP BTP, Kyma runtime](https://discovery-center.cloud.sap/serviceCatalog/kyma-runtime)
     - [Kyma - YouTube](https://www.youtube.com/channel/UC8Q8bBtYe9gQN-dQ-_L8JvQ)

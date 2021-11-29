@@ -11,6 +11,8 @@ primary_tag: topic>cloud
  - You have registered for a trial account on [SAP Business Technology Platform](https://cloudplatform.sap.com/index.html).
  - You should be familiar with the SAP Business Technology Platform trial landscape (see [Get Started with SAP Business Technology Platform Trial](cp-trial-quick-onboarding)).
  - You have a subaccount in the **Cloud Foundry** environment, with **Amazon Web Services (AWS)** as provider and the **Europe (Frankfurt)** region.
+    - **It is no longer possible to create new trial accounts on the AWS region Frankfurt (Europe) cf-eu10.**
+    - **Existing accounts still work.**
  - You have followed the tutorial [Set Up SAP Customer Order Sourcing Manually](cos-manual-setup) or steps 1 to 3 of tutorial [Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing](cos-getting-started-trial)
 
 ## Details

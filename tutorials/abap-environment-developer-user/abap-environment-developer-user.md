@@ -3,7 +3,7 @@ auto_validation: true
 title: Create a Developer User in SAP BTP ABAP Environment
 description: Create a developer user with the developer role in SAP Business Technology Platform ABAP Environment.
 primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development,  products>sap-business-technology-platform, tutorial>license ]
+tags: [  tutorial>beginner, programming-tool>abap-development,  products>sap-business-technology-platform, tutorial>license ]
 time: 10
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter

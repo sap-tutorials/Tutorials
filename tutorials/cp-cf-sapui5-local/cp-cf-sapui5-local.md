@@ -3,8 +3,8 @@ title: Create an SAPUI5 App from the Command Line
 description: Create and test a newly created SAPUI5 app on you local machine with the editor of your choice.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>html5, topic>cloud, topic>javascript, products>sap-business-technology-platform, tutorial>free-tier]
-primary_tag: topic>sapui5
+tags: [ tutorial>beginner, programming-tool>html5, topic>cloud, programming-tool>javascript, products>sap-business-technology-platform, tutorial>free-tier]
+primary_tag: programming-tool>sapui5
 ---
 
 ## Prerequisites
@@ -62,7 +62,7 @@ You can see that the wizard created a bunch of folders and files.
 
 ![vscode](./vscode.png)
 
-The main code for the SAPUI5 app can be found in the directory `webapp`. You might miss the folders `dist` and `mta_archieves` as they will be created later during the build step.
+The main code for the SAPUI5 app can be found in the directory `webapp`. You might miss the folders `dist` and `mta_archives` as they will be created later during the build step.
 
 
 The `package.json` file contains many useful information about the project. The `npm scripts` are especially interesting, since they wrap the command we'll use later.

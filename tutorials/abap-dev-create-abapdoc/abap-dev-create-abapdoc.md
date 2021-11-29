@@ -2,8 +2,8 @@
 title: Create ABAPDoc Comments in Your Class (On-Premise)
 description: Learn how to maintain ABAPDoc documentation for your class so your comments appear in the Outline view.
 auto_validation: true
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-netweaver ]
 time: 5
 ---
 

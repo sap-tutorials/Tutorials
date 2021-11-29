@@ -3,13 +3,13 @@ title: Set Up Account for Document Information Extraction and Get Service Key
 description: Get access to the service Swagger UI using a booster in SAP Business Technology Platform (SAP BTP) Trial that automatically creates a service instance, and the associated service key for Document Information Extraction.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
 - You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
-- You have a trial subaccount and dev space with **Europe (Frankfurt)** or **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
+- You have a trial subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html). You can also use old trial subaccounts created before October 2021 with **Europe (Frankfurt)** as region.
 
 ## Details
 ### You will learn
@@ -27,7 +27,7 @@ primary_tag: topic>machine-learning
 
     !![Trial global account](01_Foundation20Onboarding_Home.png)
 
-    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select Europe (Frankfurt) or US East (VA)**. Your user profile will be set up for you automatically.
+    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select US East (VA)**. Your user profile will be set up for you automatically.
 
     >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
 
@@ -71,13 +71,9 @@ Now, you will use the **Set up account for Document Information Extraction** boo
 
 You have successfully used the booster **Set up account for Document Information Extraction** to create a service key for Document Information Extraction.
 
-1. Click **Download Service Key**.
+Click **Download Service Key** to save the service key locally on your computer.
 
-    !![Service Key](booster-success-key.png)
-
-2. Make a local copy of the service key.
-
-    !![Service Key](booster-service-key.png)
+!![Service Key](booster-success-key.png)
 
 >If you face any issue with the booster **Set up account for Document Information Extraction**, you can alternatively follow the steps in [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance) to create a service key for Document Information Extraction manually.
 

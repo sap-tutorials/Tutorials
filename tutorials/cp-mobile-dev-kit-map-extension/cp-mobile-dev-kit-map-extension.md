@@ -448,6 +448,8 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     !![MDK](img-4.3.png)
 
+    >When deploying from VS Code to App Update and using an MDK 6.0+ client, you need to set the TS Target to use es6 instead of the default es5 version. See below for the setting in VS Code where you change it for es6.
+    !![MDK](img-4.3.1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -483,16 +485,19 @@ Since you will display the customer's address in Google Maps on Android device, 
 
 For iOS, you can just use the App store client. Continue with next step.
 
-For Android, you will pass the API key to the MDK client, there is no way public store client can access it, hence you will create a branded client using MDK SDK.
+For Android, you will pass the API key to the MDK client, there is no way public store client can access it, hence you will create a branded client using MDK SDK or SAP Cloud Build Service.
 
 1.  Follow steps 1 to 3 from [this tutorial](cp-mobile-dev-kit-build-client).
 
 2. Create below file structure under `DemoSampleApp.mdkproject`.
 
             DemoSampleApp.mdkproject
-            ├── App_Resources_Merge
-               └── Android
-                   ├── app.gradle
+              ├── App_Resources_Merge
+                  └── Android
+                      ├── app.gradle
+                      └── src
+                          └── main
+                              └── AndroidManifest.xml
 
 
       !![MDK](img-7.1.png)
@@ -505,7 +510,22 @@ For Android, you will pass the API key to the MDK client, there is no way public
     dependencies { implementation 'com.google.android.gms:play-services-maps:17.0.0' }
     ```
 
-4. Follow step 4 from [this tutorial](cp-mobile-dev-kit-build-client) to create your branded MDK client.
+4. Provide below information in the `AndroidManifest.xml` file. Save the changes.
+
+    ```XML
+    <?xml version="1.0" encoding="utf-8"?>
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="__PACKAGE__"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:versionCode="1"
+        android:versionName="1.0">
+        <application>
+              <meta-data android:name="com.google.android.geo.API_KEY" android:value="Enter your API Key generated in step 6" />
+        </application>
+    </manifest>
+    ```
+
+5. Create your MDK client either using MDK SDK by following the step 4 from [this](cp-mobile-dev-kit-build-client) tutorial OR using SAP Cloud Build Service by following [this](cp-mobile-dev-kit-cbs-client) tutorial.
 
 [DONE]
 [ACCORDION-END]
@@ -520,49 +540,39 @@ For Android, you will pass the API key to the MDK client, there is no way public
 In this step, you will run the app on an Android device.
 
 
-1. Navigate to `/DemoSampleApp/app/App_Resources/Android/src/main/AndroidManifest.xml`.
-
-    !![MDK](img_8.3.png)
-
-2. Provide below information before `application` closing tag.
-
-    ```XML
-     <meta-data android:name="com.google.android.geo.API_KEY" android:value="Enter your API Key generated in step 6" />
-    ```
-
-    !![MDK](img_8.4.png)
-
-3. Attach the device to your Mac or Windows machine and run `tns device android` command to print a list of attached devices.
+1. Attach the device to your Mac or Windows machine and run `tns device android` command to print a list of attached devices.
 
     !![MDK](img_8.5.png)
 
     >Make sure **Developer option** and **USB debugging** option is enabled in android device.
 
-6. Copy the **Device Identifier** value for your device.
+2. Copy the **Device Identifier** value for your device.
 
-7. In terminal or command line window, navigate to the app name folder **`DemoSampleApp`** (in `MDClient_SDK` path) and use `tns run android --device <device identifier>` command to run the MDK client on android device.
+3. In terminal or command line window, navigate to the app name folder **`DemoSampleApp`** (in `MDClient_SDK` path) and use `tns run android --device <device identifier>` command to run the MDK client on android device.
 
     !![MDK](img_8.6.png)
 
-8. Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
+4. Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
 
     In Welcome screen, Tap **AGREE** on End User License Agreement.
 
     ![MDK](img-8.7.png)
 
-9. Tap **START** to connect MDK client to SAP Business Technology Platform (BTP).
+5. Tap **START** to connect MDK client to SAP Business Technology Platform (BTP).
 
     ![MDK](img_8.8.png)
 
-10. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
+6. Enter your credentials to login to SAP Business Technology Platform (BTP).
 
     ![MDK](img-8.9.png)
+    ![MDK](img-8.9.1.png)    
 
-11. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
+
+7. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
     ![MDK](img-8.11.png)
 
-12. Confirm the passcode and tap **DONE**.
+8. Confirm the passcode and tap **DONE**.
 
     ![MDK](img-8.12.png)
 
@@ -570,15 +580,15 @@ In this step, you will run the app on an Android device.
 
     ![MDK](img-8.12.1.png)
 
-13. Tap **OK** to update the client with new MDK metadata.
+9. Tap **OK** to update the client with new MDK metadata.
 
     ![MDK](img-8.13.png)    
 
-14. Tap any of customer record to navigate to details page.
+10. Tap any of customer record to navigate to details page.
 
     ![MDK](img-8.15.png)    
 
-16. In Customer Details page, you will see the Customer's address loading in Google Maps.
+11. In Customer Details page, you will see the Customer's address loading in Google Maps.
 
     ![MDK](img-8.16.png)  
 
