@@ -13,7 +13,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 - You've access to the SAP Business Application Studio in a trial account on SAP BTP, see [Set Up SAP Business Application Studio for Development](appstudio-onboarding)
 - You've created a Full Stack Cloud Application dev space in the SAP Business Application Studio.
 
-
 ## Details
 ### You will learn
   - How to create a project in the SAP Business Application Studio using the project wizard.
@@ -21,7 +20,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
   - How to expose a port for your application.
   - How to use the graphical modeling tools, the code editor and the CDS command-line-interface.
   - How easy it is to use a database with your CAP service.
-
 
 ---
 
