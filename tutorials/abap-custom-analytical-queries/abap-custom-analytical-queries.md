@@ -1,14 +1,16 @@
 ---
 auto_validation: true
-title: Custom Analytical Queries
-description: Setup Custom Analytical Queries for use.
+title: Create Custom Analytical Queries
+description: Setup custom analytical queries for use.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 time: 15
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-The Business user requires the Role `SAP_BCR_CA_ANA_AQD_PC` to access the Query Designer.
+The Business user requires the Role `SAP_CA_BC_ANA_AQD_PC` to access the Query Designer.
 
 ## Details
 **Custom Analytical Queries** is a tool used for reporting and analysis.
