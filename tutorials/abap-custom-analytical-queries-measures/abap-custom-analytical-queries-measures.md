@@ -2,8 +2,8 @@
 auto_validation: true
 title: Create Custom Analytical Queries With Calculated Measures
 description: Create a Custom Analytical Queries with Calculated Measures.
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, programming-tool>abap-development, programming-tool>abap-extensibility ]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
