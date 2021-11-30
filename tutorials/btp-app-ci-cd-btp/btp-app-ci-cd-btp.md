@@ -255,7 +255,7 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 14. Leave **Acceptance Stage** switched off.
 
-14. Under the **Release** section, switch the execution of the **Deploy to Cloud Foundry Production Space** step on.
+14. Under the **Release** section, switch the execution of the **Deploy to Cloud Foundry Space** step on.
 
     !![CAP Job](CICD_CAP_job_stages.png)
 
@@ -307,7 +307,49 @@ To create a webhook in GitHub, you need some data that has been automatically cr
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 8: ](Verify the success of your build)]
+[ACCORDION-BEGIN [Step 8: ](Change specVersion to avoid build errors)]
+You have to change the `specVersion` parameter in files `ui5-deploy.yaml` and `ui5.yaml` in both the `app/risks` and `app/mitigations` folders to `2.3`. Otherwise, you might get an error when your job is built.
+
+1. Open the `app/risks/ui5-deploy.yaml` file and set the `specVersion` to `2.3`:
+
+    ```YAML[2]
+    # yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+    specVersion: '2.3'
+    metadata:
+        ...
+    ```
+
+2. Open the `app/risks/ui5.yaml` file and set the `specVersion` to `2.3`:
+
+    ```YAML[1]
+    specVersion: '2.3'
+    metadata:
+        ...
+    ```
+
+3. Open the `app/mitigations/ui5-deploy.yaml` file and set the `specVersion` to `2.3`:
+
+    ```YAML[2]
+    # yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+    specVersion: '2.3'
+    metadata:
+        ...
+    ```
+
+4. Open the `app/mitigations/ui5.yaml` file and set the `specVersion` to `2.3`:
+
+    ```YAML[1]
+    specVersion: '2.3'
+    metadata:
+        ...
+    ```
+    
+5. Commit the changes to your GitHub repo.
+
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 9: ](Verify the success of your build)]
 You have to trigger your job manually the first time after creation.
 
 1. In the **Jobs** tab in SAP Continuous Integration and Delivery, select your job and choose **Trigger Build**. 
@@ -344,7 +386,7 @@ You have now successfully created a CI/CD pipeline and deployed your application
 
 > Additional Information:
 
-> If you'd like to add more stages to your job, for example, additional unit tests, you can configure the job in your repository instead of using the job editor of the SAP Continuous Integration and Delivery. See [Configure an SAP Cloud Application Programming Model Job in Your Repository](https://help.sap.com/viewer/SAP-Cloud-Platform-Continuous-Integration-and-Delivery/bfe48a4b12ed41868f92fa564829f752.html#loiobfe48a4b12ed41868f92fa564829f752) for more details."
+> If you'd like to add more stages to your job, for example, additional unit tests, you can configure the job in your repository instead of using the job editor of the SAP Continuous Integration and Delivery. See [Configure an SAP Cloud Application Programming Model Job in Your Repository](https://help.sap.com/viewer/SAP-Cloud-Platform-Continuous-Integration-and-Delivery/bfe48a4b12ed41868f92fa564829f752.html#loiobfe48a4b12ed41868f92fa564829f752) for more details.
 
 > In case this is your first deployment of the `cpapp` project to the SAP BTP Cloud Foundry environment, please continue with the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service).  You will need to complete the configuration before you can use the application, because this part can't be automated with CI/CD tooling.
 

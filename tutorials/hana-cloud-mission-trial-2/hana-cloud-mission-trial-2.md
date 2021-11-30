@@ -54,7 +54,7 @@ To create your first instance of SAP HANA Cloud, SAP HANA database, you need to 
 
 1.	Here you can see that your **Organization** and **Space** have been preselected. If you are part of multiple organizations or spaces, you can select others in the drop-down menu.
 
-2.	For the free tier model, a License section will appear just before the Basics section.  To use the free tier model, click on the Free Tier option so that it is highlighted as shown below.
+2.	If you have multiple types of service plans enabled in your SAP HANA Cloud entitlement, a License section will appear just before the Basics section.  To use the free tier model, click on the Free Tier option so that it is highlighted as shown below.  Also note – if you have enabled only one type of service plan in your SAP HANA Cloud entitlement (e.g. free tier only), the License section does not appear and that service plan type will be used automatically.
 
     ![license options](licenses.png)
 
@@ -289,7 +289,7 @@ Now you know how to provision an instance of SAP HANA Cloud using SAP BTP cockpi
 
 [ACCORDION-BEGIN [Step 8: ]((Free Tier Only): Upgrade to Paid Tier)]
 
-When you are ready to upgrade your free tier instance to Paid Tier, you can also choose the three dots menu (under Actions) next to the SAP HANA Cloud instance line in SAP HANA Cloud Central.  From here, click on **Upgrade to Paid Tier**.  
+When you are ready to upgrade your free tier instance to Paid Tier, you can also choose the three dots menu (under Actions) next to the SAP HANA Cloud instance line in SAP HANA Cloud Central.  From here, click on **Upgrade to Paid Tier**.  Note that paid tier plans must be enabled in your SAP HANA Cloud entitlement in order for the **Upgrade to Paid Tier** menu item to appear.
 
 ![upgrade to paid tier](upgrade-paid-tier.png)
 
