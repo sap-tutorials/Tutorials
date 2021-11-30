@@ -289,7 +289,7 @@ Now you know how to provision an instance of SAP HANA Cloud using SAP BTP cockpi
 
 [ACCORDION-BEGIN [Step 8: ]((Free Tier Only): Upgrade to Paid Tier)]
 
-When you are ready to upgrade your free tier instance to Paid Tier, you can also choose the three dots menu (under Actions) next to the SAP HANA Cloud instance line in SAP HANA Cloud Central.  From here, click on **Upgrade to Paid Tier**.  Note that paid tier plans must be enabled in your SAP HANA Cloud entitlement for the upgrade to properly work.
+When you are ready to upgrade your free tier instance to Paid Tier, you can also choose the three dots menu (under Actions) next to the SAP HANA Cloud instance line in SAP HANA Cloud Central.  From here, click on **Upgrade to Paid Tier**.  Note that paid tier plans must be enabled in your SAP HANA Cloud entitlement in order for the **Upgrade to Paid Tier** menu item to appear.
 
 ![upgrade to paid tier](upgrade-paid-tier.png)
 
