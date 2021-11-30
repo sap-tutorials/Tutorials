@@ -2,8 +2,8 @@
 title: Extend an MDK App with Customer Orders
 description: Display a customer order list and its details.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 30
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -65,7 +65,7 @@ This page will display customer orders list, you will add an **Object Table** co
     |----|----|
     | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `Entity` | Select `SalesOrderHeaders` from the dropdown |
-    | `QueryOptions`| `$filter=CustomerId eq '{CustomerId}'&$top=5&$orderby=CreatedAt desc` |
+    | `QueryOptions`| `$top=5&$filter=CustomerId eq '{CustomerId}'&$orderby=CreatedAt desc` |
 
     !![MDK](img-1.5.png)
 

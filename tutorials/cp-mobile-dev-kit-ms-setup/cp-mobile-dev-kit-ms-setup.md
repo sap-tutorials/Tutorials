@@ -2,8 +2,8 @@
 title: Set Up Initial Configuration for an MDK App
 description: Configure initial setup for MDK Mobile and Web applications.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services ]
 time: 10
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -49,7 +49,6 @@ Make sure that you have completed required prerequisites mentioned in this tutor
     | `Name` | SAP MDK Demo App |
 
     !![MDK](img-2.3.png)
-
 
     > If you are configuring this app in a trial account, make sure to select **License Type** as *lite*.
 

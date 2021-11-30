@@ -70,13 +70,9 @@ Now, you will use the **Set up account for Service Ticket Intelligence** booster
 
 You have successfully used the booster **Set up account for Service Ticket Intelligence** to create a service key for Service Ticket Intelligence.
 
-1. Click **Download Service Key**.
+Click **Download Service Key** to save the service key locally on your computer.
 
-    !![Service Key](booster-success-key.png)
-
-2. Make a local copy of the service key.
-
-    !![Service Key](booster-service-key.png)
+!![Service Key](booster-success-key.png)
 
 >If you face any issue with the booster **Set up account for Service Ticket Intelligence**, you can alternatively follow the steps in [Create Service Instance for Service Ticket Intelligence](cp-aibus-sti-service-instance) to create a service key for Service Ticket Intelligence manually.
 
