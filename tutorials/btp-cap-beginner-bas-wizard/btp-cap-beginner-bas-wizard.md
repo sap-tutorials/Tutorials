@@ -55,7 +55,6 @@ You've just created a **runnable** CAP project. Nothing more is needed, it just 
 [VALIDATE_7]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 3: ](Run project)]
 
 In the previous step you've created an already runnable application. To demo that it's runnable and to see what's already available, create a run configuration and run the project.
@@ -73,7 +72,6 @@ In the previous step you've created an already runnable application. To demo tha
 1. Choose **Run Module** on `Run bookshop-local`.
 
     !![Create run configuration.](add-run-conf.png)
-
 
 When your application is running, you need to expose a port from the environment the studio is running in.
 
@@ -179,12 +177,8 @@ Open a terminal by going to **Terminal > New Terminal**.
 
 The data you see is now served from the file `sqlite.db` and is located in the root of your folder. The next step includes a proof that the file-based persistence is used.
 
-
-
-
 [VALIDATE_8]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 7: ](Add sample data)]
 

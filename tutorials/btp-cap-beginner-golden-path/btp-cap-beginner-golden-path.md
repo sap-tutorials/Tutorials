@@ -31,7 +31,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 Essentially every active thing in CAP is a service and lets you define services as endpoints to underlying capabilities. Application services usually expose projections / views on domain model entities. In that case services are layers over the underlying data. As CAP promotes to build services specific for use cases, services expose different aspects of the domain model tailored to those use cases.
 
-
 [VALIDATE_6]
 [ACCORDION-END]
 
@@ -45,7 +44,7 @@ CAP comes with basic implementations (generic handlers) that enable you to serve
 + deep READ, INSERT, UPDATE, DELETE
 + INSERT, UPDATE, DELETE with Associations
 
- [Learn more about generic handlers in CAP](https://cap.cloud.sap/docs/guides/generic)
+[Learn more about generic handlers in CAP](https://cap.cloud.sap/docs/guides/generic)
 
 Let's see it in action and go to your project.
 
@@ -61,6 +60,7 @@ GET http://localhost:4004/catalog/Books?
   # &sap-language=de
 
 ```
+
 Click on **Send Request** inside the `tests.http` file, to execute requests against your service.
 
 !![Shows the request and a pointer to the send request button.](request_1.png)
@@ -71,14 +71,12 @@ The REST client gives you the response of your service and you see immediately i
 
 >Curious what the OData queries, disabled by the '#', do? Not all of them work right now, they are relevant later in this tutorial. Nevertheless, you can try it out, remove the '#' one line at a time and send the request. More learning content about OData is available in [Learn about OData Fundamentals](odata-01-intro-origins).
 
-
 Those requests all work, just using the generic handlers CAP provides. So the need to add custom handlers is minimized.
 
 If you want to know more about custom handlers, our [Getting Started in a Nutshell](https://cap.cloud.sap/docs/get-started/in-a-nutshell#adding-custom-logic) is a good starting point.
 
 [VALIDATE_7]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](Conceptual modeling with CAP)]
 
@@ -92,10 +90,8 @@ CAP comes with a set of reuse content that we recommend to use. You benefit from
 * **Automatic** support for localized code lists and value helps
 * **Extensibility** using Aspects
 
-
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 4: ](Conceptual modeling: Aspects)]
 
@@ -133,10 +129,8 @@ This aspect is also [used](https://cap.cloud.sap/docs/cds/cdl#using) in your pro
 
 There are other common reuse aspects. Have a look at the [documentation for `cuid`](https://cap.cloud.sap/docs/cds/common#aspect-cuid) and [ for `temporal`](https://cap.cloud.sap/docs/cds/common#aspect-temporal).
 
-
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 5: ](Conceptual modeling: Types)]
 
@@ -154,8 +148,6 @@ The entity `sap.common.Currencies` uses the aspect `CodeList` defined in `@sap/c
 
 !![The definition of the aspect codelist.](common-codelist.png)
 
-
-
 Here's an example of how you [used](https://cap.cloud.sap/docs/cds/cdl#using) that reuse type in your project already:
 ```CDS
 using { Currency } from '@sap/cds/common';
@@ -171,6 +163,7 @@ entity Books : managed
     author : Association to one Authors;
 }
 ```
+
 > The element `currency` follows the recommended rule for writing regular elements in camel case. The type `Currency`, on the other hand, is defined in pascal case.
 
 To see the effect in your application add sample data to your project.
@@ -183,6 +176,7 @@ USD;$;US Dollar;United States Dollar
 GBP;£;British Pound;Great Britain Pound
 JPY;¥;Yen;Japanese Yen
 ```
+
 >The naming of the file is related to the name of the entity `Currencies` and not to the reuse type `Currency` used in your data model.
 
 Use the `GET` request on the catalog service you've included previously in your `tests.http` file. Enable the expand part of the query:
@@ -312,17 +306,12 @@ entity OrderItems {
 }
 ```
 
-
 [VALIDATE_8]
 [ACCORDION-END]
-
-
-
 
 [ACCORDION-BEGIN [Step 8: ](Authentication and Authorization)]
 
 For a use case like authentication and authorization, you just need to enrich models with additional metadata. Use [Annotations](https://cap.cloud.sap/docs/cds/annotations), it's as simple as that. In CAP annotations can serve several purposes. Those can be general purposes like defining the title or description, or more specific purposes like [input validation](https://cap.cloud.sap/docs/cds/annotations#input-validation), [persistence](https://cap.cloud.sap/docs/cds/annotations#persistence), [UIs](https://cap.cloud.sap/docs/advanced/fiori), or [authentication and authorization](https://cap.cloud.sap/docs/guides/authorization).
-
 
 For the `AdminService` you need to be a user with the admin role. That restriction is introduced by the annotation `@(requires:'admin')`. This requires you to authenticate and have the proper authorization (`admin`). In the following request, you add the authentication to the request header.
 
@@ -364,7 +353,6 @@ GET http://localhost:4004/catalog/Books?
 
 !![The response showing the successfully created book.](get-book-success.png)
 
-
 > For diving deeper into security topics, read [our Cookbook Authorization](https://cap.cloud.sap/docs/guides/authorization)
 
 Now you have access to a service exposing all books that are available and for everyone open to read (`CatalogService`). And you have a service for administrators, who can do all the basic Create Read Update Delete (CRUD) operations on the `Authors` as well as the `Books` entity (`AdminService`).
@@ -372,8 +360,6 @@ Now you have access to a service exposing all books that are available and for e
 
 [VALIDATE_9]
 [ACCORDION-END]
-
-
 
 [ACCORDION-BEGIN [Step 9: ](Localization)]
 
@@ -386,8 +372,6 @@ When you plan to internationalize your application and provide translation for y
 Text bundles can be placed in and are fetched from folders named `_i18n`, `i18n`, or `assets/i18n`. These folders are placed next to the model files or in a parent folder.
 
 How different layers of texts in your application or coming from reuse bundles are merged, is described in the [CAP documentation](https://cap.cloud.sap/docs/guides/i18n#merging-algorithm). This deep dive into this topic is not covered here.
-
-
 
 ### Localized data
 
@@ -408,7 +392,6 @@ entity Books : managed {
 ```
 
 During the build process the corresponding files are generated for you. Generic handlers make sure your users see the data in their preferred language.
-
 
 Let's see it in action.
 
@@ -507,6 +490,7 @@ Let's switch from our SQLite to the SAP HANA Cloud database.
     ```INI
     cds_requires_auth_kind=mocked-auth
     ```
+
     > ### What's going on?
     As you're using the production profile in your run configuration, this automatically requests the JWT authentication strategy. To become not too complex at this point, this environment configuration here, overrides the default (JWT) strategy and uses again mocked authentication strategy.
 
@@ -527,9 +511,6 @@ Let's switch from our SQLite to the SAP HANA Cloud database.
     : [cds] - serving AdminService {at: '/admin'}
     ...
     ```
-
-
-
 
 [VALIDATE_1]
 [ACCORDION-END]
