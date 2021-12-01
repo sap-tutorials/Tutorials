@@ -10,16 +10,28 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
+<<<<<<< HEAD
  - You've finished [Create a CAP Project with SAP Business Application Studio](cp-cap-beginner-bas-wizard)
+=======
+- You've finished [Create a CAP Project with SAP Business Application Studio](cp-cap-beginner-bas-wizard)
+>>>>>>> 825d48445a13943143a098cb89318b2e60ce3577
 
 
 ## Details
 ### You will learn
+<<<<<<< HEAD
   - The defaults CAP provides and how that speeds up development.
   - Why these defaults are build in and do make your life easier.
   - How to reuse content.
   - How to model relationships.
   - How to use CAP and SAP HANA Cloud.
+=======
+- The defaults CAP provides and how that speeds up development
+- Why these defaults are built-in and make your life easier
+- How to reuse content
+- How to model relationships
+- How to use CAP and SAP HANA Cloud
+>>>>>>> 825d48445a13943143a098cb89318b2e60ce3577
 
 > If you haven't set up your SAP HANA Cloud yet, follow this quick tutorial (Step 3) to set it up: [Help Thomas Get Started with SAP HANA](hana-trial-advanced-analytics)
 
@@ -170,7 +182,11 @@ To see the effect in your application add sample data to your project.
 
 Create the file `sap.common-Currencies.csv` in your `db/data` folder and add the following data:
 
+<<<<<<< HEAD
 ```csv
+=======
+```CSV
+>>>>>>> 825d48445a13943143a098cb89318b2e60ce3577
 code;symbol;name;descr
 USD;$;US Dollar;United States Dollar
 GBP;£;British Pound;Great Britain Pound
