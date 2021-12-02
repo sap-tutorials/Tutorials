@@ -47,7 +47,25 @@ The card is now enabled and can be added to SAP Work Zone pages.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add your UI5 integration card to your SAP Work Zone workspace)]
+[ACCORDION-BEGIN [Step 2: ](Configure the card settings )]
+
+Before we add the card to our workspace, let's configure one of the settings of the card.
+
+1. On the `Products by Vendor Card`, click **Configure**.
+
+    !![Click Configure](3a-click-configure.png)
+
+2. Under **General Settings**, change the **Maximum Items** to 2 and click **Save Changes**.
+
+    !![Change setting](3b-change-setting.png)
+
+In the next step you'll add the card to your SAP Work Zone workspace.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 3: ](Add your UI5 integration card to your SAP Work Zone workspace)]
 
 1. Click the **Workspaces** menu and select `Employee Innovation Hackathon` to navigate to your workspace.
 
@@ -74,7 +92,11 @@ The card is now enabled and can be added to SAP Work Zone pages.
 
     !![Add card](9-add-card.png)
 
-The card you created was added to your workspace. Let's add a title to it.
+The card you created was added to your workspace.
+
+> In the **Administration Console** in the **Cards** section where you configured the card, there are 3 dots on the card. If you open the 3 dots, you can click on **Where Used** to see all the pages that you've added the card to. 
+
+Now let's add a title for the card.
 
 >Note: you can also add UI integration cards to a SAP Work Zone Home page.
 
@@ -103,9 +125,7 @@ The card you created was added to your workspace. Let's add a title to it.
 
     !![Drag widget](11-drag-widget.png)
 
-6. Verify that your workspace looks like this:
-
-7. Click **Publish** to publish your workspace.
+6. Click **Publish** to publish your workspace.
 
     !![Publish workspace](12-publish.png)
 
