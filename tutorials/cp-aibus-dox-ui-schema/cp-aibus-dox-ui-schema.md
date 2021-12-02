@@ -3,7 +3,7 @@ title: Create Custom Schema for Purchase Order Documents
 description: Create a custom schema for your purchase order documents to extract information from similar documents using the Document Information Extraction service.
 auto_validation: true
 time: 20
-tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, topic>user-interface, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
@@ -27,7 +27,7 @@ If you are new to the Document Information Extraction Trial UI, try out first th
 
     >If you **HAVE NOT** just used the **Set up account for Document Information Extraction** booster to create a service instance for Document Information Extraction Trial, and subscribe to the Document Information Extraction Trial UI, observe the following:
 
-    >- To access the [Schema Configuration](https://help.sap.com/viewer/bad5390e4c4541f2a8d39a74b1d1cdb5/SHIP/en-US/3c7862e30fc2488ea95f58f1d77e424e.html) and [Template](https://help.sap.com/viewer/bad5390e4c4541f2a8d39a74b1d1cdb5/SHIP/en-US/1eeb08998f49409681c06a01febc3172.html) features, ensure that you use the `blocks_of_100` plan to create the service instance for Document Information Extraction Trial.
+    >- To access the [Schema Configuration](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/3c7862e30fc2488ea95f58f1d77e424e.html) and [Template](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/1eeb08998f49409681c06a01febc3172.html) features, ensure that you use the `blocks_of_100` plan to create the service instance for Document Information Extraction Trial.
 
     >!![Access](png-files/plan.png)
 

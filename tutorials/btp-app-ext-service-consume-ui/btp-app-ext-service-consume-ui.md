@@ -5,7 +5,7 @@ title: Consume the External Service in the UI of Your Application
 description: This tutorial shows you how to make supplier information visible in the SAP Fiori Elements UI.
 auto_validation: true
 time: 15
-tags: [tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-api-management, products>sap-api-management]
+tags: [tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management, software-product>sap-api-management]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -42,7 +42,7 @@ To start with this tutorial use the result in the [`ext-service-add-consumption`
 
     This managed association adds a property `supplier_ID` to the `Risks` entity under the hood, so that the key and the ID field of the supplier can be stored.
 
-2. Copy the file `templates/ext-service-ui/db/data/sap.ui.riskmanagement-Risks.csv` to `db/data` folder of your app, overwriting the existing file.
+2. Copy the file `templates/ext-service-consume-ui/db/data/sap.ui.riskmanagement-Risks.csv` to `db/data` folder of your app, overwriting the existing file.
 
 3. Run `cds watch` with the sandbox profile:
 

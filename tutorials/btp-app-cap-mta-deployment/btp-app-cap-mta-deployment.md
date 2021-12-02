@@ -5,7 +5,7 @@ title: Deploy Your Multi-Target Application (MTA)
 description: This tutorial shows you how to deploy your CAP application as Multi-Target Application (MTA).
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform]
+tags: [ tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -57,7 +57,7 @@ The deployment is based on MTA ( *Multi-Target Application*, sometimes also call
 2. If you don't get back a version number, install the **MultiApps Archive Builder**:
 
     ```Shell/Bash
-    npm install -g mbt
+    npm install --global mbt
     ```
 
 > If you encounter a problem with the installation of the MBT, install it manually by following the instructions in the [MBT documentation](https://sap.github.io/cloud-mta-build-tool/download/).
