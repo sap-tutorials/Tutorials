@@ -22,7 +22,7 @@ There are a couple of ways to do SAP BTP tutorials and to try out SAP BTP servic
 
     If you activate free tier plans only, you can try out our platform for free, without time limits. You can then easily upgrade to a paid plan without losing your data or work. Creating an instance using a paid plan will incur costs, however.
 
-    A plan limits the quantity of the service that's available.  Maybe you need a lot of some service in a production subaccount, and maybe you need less for development or test.  When you assign an entitlement to a subaccount, you also select the plan for use in that subaccount as well.
+    A plan limits the quantity of the service that's available.  Maybe you need a lot of some service in a production subaccount, and maybe you need less for development or testing.  When you assign an entitlement to a subaccount, you also select the plan for use in that subaccount as well.
 
     Many tutorials may require services that are not yet on our list of available free tier service plans. If you want to know which services currently offer free tier service plans, visit the [SAP Discovery Center](https://discovery-center.cloud.sap/#/serviceCatalog?provider=all&regions=all&category=freetierservices) and explore our offerings under **Free Tier Services**.
 
