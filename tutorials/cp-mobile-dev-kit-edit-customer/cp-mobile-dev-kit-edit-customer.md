@@ -2,8 +2,8 @@
 title: Modify a Customer Record in an MDK App
 description: Allow editing of customer details in an MDK app.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -68,10 +68,6 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
     | `Value`| click the link icon and bind it to `FirstName` property of the Customer entity |
 
     !![MDK](img-1.6.png)
-
-    >Make sure, Format should be set as _Binding_.
-
-    >!![MDK](img_1.6.1.png)
 
 7. Select the second Simple Property control and provide the below information:
 
