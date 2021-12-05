@@ -59,6 +59,9 @@ Before we add the card to our workspace, let's configure one of the settings of 
 
     !![Change setting](3b-change-setting.png)
 
+    > On the **Configure** screen, when you click the **More settings** icon there are more settings that you can configure for the end user.
+    !![More settings](14-more-settings.png)
+
 In the next step you'll add the card to your SAP Work Zone workspace.
 
 [DONE]
@@ -94,17 +97,16 @@ In the next step you'll add the card to your SAP Work Zone workspace.
 
 The card you created was added to your workspace.
 
-> In the **Administration Console** in the **Cards** section where you configured the card, there are 3 dots on the card. If you open the 3 dots, you can click on **Where Used** to see all the pages that you've added the card to. 
-
-Now let's add a title for the card.
 
 >Note: you can also add UI integration cards to a SAP Work Zone Home page.
+
+Now let's add a title for the card.
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Finalize the design of your workspace)]
+[ACCORDION-BEGIN [Step 4: ](Finalize the design of your workspace)]
 
 1. Click **Add Widget** below the card widget you just added.
 
@@ -128,6 +130,10 @@ Now let's add a title for the card.
 6. Click **Publish** to publish your workspace.
 
     !![Publish workspace](12-publish.png)
+
+Your workspace should look like this - note that the card is only showing 2 out of 20 products because you configured it that way.
+
+!![Final workspace](13-final-workspace.png)
 
 [VALIDATE_7]
 [ACCORDION-END]

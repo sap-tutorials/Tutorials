@@ -303,7 +303,7 @@ In this step, you'll add an **Action** widget and a **Forum** widget.
 
     !![Add a forum widget](26-add-forum-widget.png)
 
-9. Under **Maximum Items to Display**, move the slider to number 2, change the title to `Ask Questions About the Hackathon`, and click **OK**.
+9. Under **Maximum Items to Display**, move the slider to number **2**, change the title to `Ask Questions About the Hackathon`, and click **OK**.
 
     !![Design the forum widget](27-design-forum-widget.png)
 
@@ -311,7 +311,7 @@ In this step, you'll add an **Action** widget and a **Forum** widget.
 
     !![Add another widget](27-add-another-widget.png)
 
-11. Scroll down through the widget gallery and under the **Productivity** section, select the **Feed** widget.
+11. Scroll down the widget gallery and under the **Productivity** section, select the **Feed** widget.
 
 12. In the **Feed Widget** settings screen, change **Maximum Items to Display** to `2` and click **OK**.
 
