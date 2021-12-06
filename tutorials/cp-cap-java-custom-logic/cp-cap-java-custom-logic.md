@@ -5,7 +5,7 @@ title: Extend the Bookstore with Custom Code
 description: Extend the previously built bookstore with custom coding, for example, to validate requests.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>java, products>sap-business-application-studio]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java, products>sap-business-application-studio]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 

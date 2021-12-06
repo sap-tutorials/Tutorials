@@ -3,8 +3,8 @@ title: Create Database Objects with SAP HANA Database Explorer
 description: Create and populate a sample schema that includes tables, views, functions and procedures using the SQL console.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition, topic>sql]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>sql]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -281,7 +281,7 @@ Partitions can be created to divide the data in a large table into smaller parts
     ```SQL
     ALTER TABLE HOTEL.RESERVATION PARTITION BY RANGE(ARRIVAL)
     ((
-        PARTITION '2000-01-01' <= VALUES < '2019-01-01',
+        PARTITION '2000-01-01' <= VALUES < '2020-01-01',
         PARTITION OTHERS
     ));
     ```

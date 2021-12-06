@@ -1,5 +1,5 @@
 ---
-title: Apply Incentives (like coupon and loyalty points) with SAP Omnichannel Promotion Pricing
+title: Apply Incentives (Coupons and Loyalty Points) with SAP Omnichannel Promotion Pricing
 description: Learn how to use SAP Omnichannel Promotion Pricing for calculating the effective sales price by applying a coupon to the transaction and adding loyalty points.
 auto_validation: true
 time: 10
@@ -14,7 +14,7 @@ primary_tag: products>sap-business-technology-platform
 - You have a subaccount in the Cloud Foundry environment, with Amazon Web Services (AWS) as provider and the Europe (Frankfurt) region.
 - You have set up SAP Omnichannel Promotion Pricing as described in [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
 
-
+> Please be aware that temporarily new trial accounts cannot be created. You can only work with this tutorial if you already have an existing trial account for SAP Omnichannel Promotion Pricing.
 
 ## Details
 ### You will learn
@@ -22,7 +22,7 @@ primary_tag: products>sap-business-technology-platform
 - How to upload a **promotional rule** with the help of the SAP API Business Hub. The promotional rule includes an example about applying a coupon to a transaction and how to add loyalty points.
 - How to apply a promotional rule and execute the calculation request.
 
->This tutorial includes steps and screenshots based on the classic design of the SAP API Business Hub. To use the classic design, go to the upper right corner and disable the **New SAP API Business Hub** option.
+>This tutorial includes steps and screenshots based on the classic design of the SAP API Business Hub. To use the classic design, navigate to the upper right corner and disable the **New SAP API Business Hub** option.
 	![Switch API Business Hub Layout](Switch API Business Hub Layout.png)
 
 ---
