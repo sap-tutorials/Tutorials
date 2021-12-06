@@ -3,8 +3,8 @@ title: Display Data from the Northwind Service
 description: Learn how to add new views, to display more data, and how to navigate between them.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>sapui5, products>sap-launchpad-service, products>sap-fiori, topic>user-interface, topic>html5, topic>cloud, tutorial>free-tier]
-primary_tag: topic>odata
+tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-launchpad-service, products>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
+primary_tag: programming-tool>odata
 ---
 
 ## Details
@@ -39,25 +39,34 @@ The routes are added to the `uimodule/webapp/manifest.json` file. The generator 
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Inspect the modifications)]
 
-As you can see in the log, there are two new files and one modified file. As the generator is only able to create boilerplate code, we have to make some modifications to the `uimodule/webapp/manifest.json` application descriptor.
+1. As you can see in the log, there are two new files and one modified file. As the generator is only able to create boilerplate code, we have to make some modifications to the `uimodule/webapp/manifest.json` application descriptor.
 
-**Open** the file and replace the routing pattern of the new view with an empty string.
-```JSON [3]
-{
-  "name": "Products",
-  "pattern": "",
-  "target": [
-    "TargetProducts"
-  ]
-},
-```
+    **Open** the file and replace the routing pattern of the new view with an empty string.
+    ```JSON [3]
+    {
+      "name": "Products",
+      "pattern": "",
+      "target": [
+        "TargetProducts"
+      ]
+    },
+    ```
 !![product route](productroute.png)
+
+2. The following step is only required, if the file in `uimodule/webapp/model/formatter.js` doesn't exist in your project. If this is the case, create the `formatter.js` file manually and paste the following code:
+
+    ```JavaScript [0-4]
+    sap.ui.define([], function () {
+       "use strict";
+       return {};
+    });
+    ```
 
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Enable routing)]
 
-1. The `webapp/view/Mainview.view.xml` will be the outer container of the application. Therefore, **remove** the entire content (nested tags) of the `<App>` tag.
+1. The `webapp/view/Mainview.view.xml` will be the outer container of the application. Therefore, **remove** the entire content (nested tags) of the `<Shell>` tag and replace it with the below `<App>` tag.
 
     ```XML [5]
     <mvc:View controllerName="tutorial.products.controller.MainView"
@@ -70,7 +79,34 @@ As you can see in the log, there are two new files and one modified file. As the
 
     !![mainview](mainview.png)
 
-2. The newly generated view `webapp/view/Products.view.xml` defines one page of the whole application. **Replace** the current content of the view, the `<App>` tag, with a page that contains one list that uses an [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html).
+2. Because the `id` of the `<App>` tag in the `webapp/view/Mainview.view.xml` got changed, you have to make sure the routing settings in the `webapp/manifest.json` are still correct. Make sure the `controlId` and the `viewId` of the `TargetMainView` match the `id` of the `<App>`.
+
+    ```JSON [8, 17]
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "tutorial.products.view",
+        "controlAggregation": "pages",
+        "controlId": "idAppControl",
+        "clearControlAggregation": false
+      },
+      "routes": [...],
+      "targets": {
+        "TargetMainView": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "idAppControl",
+          "viewName": "MainView"
+        },
+        ...
+      }
+    }
+    ```
+
+3. The newly generated view `webapp/view/Mainview.view.xml` defines one page of the whole application. **Replace** the current content of the view, the `<App>` tag, with a page that contains one list that uses an [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html).
 
     ```XML [4-10]
     <mvc:View controllerName="tutorial.products.controller.Products" displayBlock="true"
@@ -94,7 +130,7 @@ You'll immediately be able to see that the `MainView` embeds the `Products` view
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Add a data source)]
 
-To populate the list with items, bind a data source to the application. For this, there exists another sub-generator:
+To populate the list with items, bind a data source to the application. For this, there exists another sub-generator. Please make sure you are in the `uimodule` directory when running the command:
 
 > You can find a list of all available sub-generator on [GitHub](https://github.com/SAP/generator-easy-ui5/#sub-generators-to-avoid-recurring-tasks)
 
