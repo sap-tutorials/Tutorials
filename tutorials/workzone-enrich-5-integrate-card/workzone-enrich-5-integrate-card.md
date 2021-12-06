@@ -42,14 +42,14 @@ You've already deployed a UI5 integration card. Now in this tutorial, you'll ena
 
 The card is now enabled and can be added to SAP Work Zone pages.
 
->Note: you can click on **Configure** to select a different destination for this UI5 integration card. As we used the same ES5 destination in this SAP BTP subaccount and also when we developed the card, this step is not required to complete this tutorial.
+>Note: you can click on **Configure** to select a different destination for this UI5 integration card. As you used the same ES5 destination in this SAP BTP subaccount and also when you developed the card, this step is not required to complete this tutorial.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Configure the card settings )]
 
-Before we add the card to our workspace, let's configure one of the settings of the card.
+Before you add the card to your workspace, let's configure one of the settings of the card.
 
 1. On the `Products by Vendor Card`, click **Configure**.
 
