@@ -39,7 +39,7 @@ The routes are added to the `uimodule/webapp/manifest.json` file. The generator 
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Inspect the modifications)]
 
-1. As you can see in the log, there are two new files and one modified file. As the generator is only able to create boilerplate code, we have to make some modifications to the `uimodule/webapp/manifest.json` application descriptor.
+1. As you can see in the log, there are two new files and one modified file. As the generator is only able to create boilerplate code, you have to make some modifications to the `uimodule/webapp/manifest.json` application descriptor.
 
     **Open** the file and replace the routing pattern of the new view with an empty string.
     ```JSON [3]
