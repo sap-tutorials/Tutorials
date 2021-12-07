@@ -130,7 +130,7 @@ You'll immediately be able to see that the `MainView` embeds the `Products` view
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Add a data source)]
 
-To populate the list with items, bind a data source to the application. For this, there exists another sub-generator. Please make sure you are in the `uimodule` directory when running the command:
+To populate the list with items, bind a data source to the application. For this, there exists another sub-generator.
 
 > You can find a list of all available sub-generator on [GitHub](https://github.com/SAP/generator-easy-ui5/#sub-generators-to-avoid-recurring-tasks)
 
