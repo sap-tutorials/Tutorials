@@ -9,8 +9,7 @@ tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cl
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 ## Prerequisites
- - [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption)
- - [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui)
+ - You need to use the result of the [`ext-service-consume-ui`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-consume-ui) branch before starting with this tutorial. If you don't want to use the content from the branch you can also go through the tutorials [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption) and [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui) to continue here.
  - On SAP BTP side:
     - You have an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) global account in SAP BTP.
     - You must be an administrator of the SAP BTP global account where you want to register your SAP S/4HANA system.

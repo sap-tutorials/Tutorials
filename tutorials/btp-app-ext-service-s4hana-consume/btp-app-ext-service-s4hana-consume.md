@@ -9,8 +9,7 @@ tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cl
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 ## Prerequisites
- - [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption)
- - [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui)
+- You need to use the result of the [`ext-service-consume-ui`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-consume-ui) branch before starting with this tutorial. If you don't want to use the content from the branch you can also go through the tutorials [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption) and [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui) to continue here.
  - [Prepare SAP S/4HANA System by Activating the Suitable OData Service](btp-app-ext-service-odata-service)
  - [Configure Systems in Cloud Connector](btp-app-ext-service-s4hana-consume)
  - On SAP BTP side:
@@ -53,31 +52,29 @@ resources:
      service-plan: lite
 ```
 
-> The Destination service is already added to the `mta.yaml`.
+> The Destination service is already added to the `mta.yaml`. If you look at the resources that already exist in the `mta.yaml`, you'll see that the Destination service is already there, so you don't have to add it yourself.
 
-> If you look at the resources that already exist in the `mta.yaml`, you'll see that the Destination service is already there, so you don't have to add it yourself.
-
->   ```yaml hl_lines="3-19"
->   resources:
->       ...
->     - name: cpapp-destination
->     type: org.cloudfoundry.managed-service
->     parameters:
->       config:
->         HTML5Runtime_enabled: true
->         init_data:
->           instance:
->             destinations:
->             - Authentication: NoAuthentication
->               Name: ui5
->               ProxyType: Internet
->               Type: HTTP
->               URL: https://ui5.sap.com
->             existing_destinations_policy: update
->         version: 1.0.0
->       service: destination
->       service-plan: lite
->   ```
+```YAML[3-19]
+resources:
+    ...
+  - name: cpapp-destination
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-plan: lite
+```
 
 [DONE]
 [ACCORDION-END]
