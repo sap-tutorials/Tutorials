@@ -9,7 +9,7 @@ tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cl
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 ## Prerequisites
- - You need to use the result of the [`ext-service-consume-ui`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-consume-ui) branch before starting with this tutorial. If you don't want to use the content from the branch you can also go through the tutorials [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption) and [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui) to continue here.
+ - You have developed your CAP application using the tutorials [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption) and [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui) or download the result from this [branch](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-consume-ui) to continue here.
  - On SAP BTP side:
     - You have an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) global account in SAP BTP.
     - You must be an administrator of the SAP BTP global account where you want to register your SAP S/4HANA system.
@@ -28,7 +28,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Activate Business Partner OData service in SAP S/4HANA)]
+[ACCORDION-BEGIN [Step 1: ](Introduction)]
+Welcome to this collection of tutorials for application development on SAP Business Technology Platform (SAP BTP). In the following tutorials, we provide information and examples on how to consume external services step by step using SAP S/4HANA. To get an overview about what is CAP, see
+
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 2: ](Activate Business Partner OData service in SAP S/4HANA)]
 With this tutorial, you expose the Business Partner service as an OData service and create a technical user with the required permissions to maintain business partners and to access the service. This user is later used to access the Business Partner service from the cloud.
 
 1. Open your SAP S/4HANA system and log in as an administrator.
@@ -66,7 +72,7 @@ Now, let's create a user in your SAP S/4HANA system and assign the required auth
 [VALIDATE_1]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Create a technical user)]
+[ACCORDION-BEGIN [Step 3: ](Create a technical user)]
 1. Choose **Exit** to go back to the initial screen.
 
 2. Enter `SU01` in the command field and hit <kbd>Enter</kbd> to start transaction **User Management**.
@@ -93,7 +99,7 @@ Now, let's create a user in your SAP S/4HANA system and assign the required auth
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Assign a role to your technical user)]
+[ACCORDION-BEGIN [Step 4: ](Assign a role to your technical user)]
 1.    On your initial screen, type in transaction name `/nPFCG` and hit <kbd>Enter</kbd>.
 
     !![Transaction /nPFCG](configure-oData-Service-7-2.png)
