@@ -137,10 +137,10 @@ import sys
 import os
 import json
 
-from hana_ml.dataFrame import ConnectionContext
+from hana_ml.dataframe import ConnectionContext
 ```
 
-
+ 
 
 
 [DONE]

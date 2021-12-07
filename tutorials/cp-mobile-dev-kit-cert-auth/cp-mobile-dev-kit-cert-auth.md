@@ -2,8 +2,8 @@
 title: Enable Certificate-Based Authentication
 description: Create a branded MDK client that can on-board using certificates for authentication.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services ]
 time: 20
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -20,6 +20,7 @@ author_profile: https://github.com/jitendrakansal
   - How to build a branded client
 
 ---
+
 
 [ACCORDION-BEGIN [Step 1: ](Configure a new MDK application in Mobile Services cockpit)]
 

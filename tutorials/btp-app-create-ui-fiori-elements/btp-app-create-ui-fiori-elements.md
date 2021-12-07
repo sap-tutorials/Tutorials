@@ -18,7 +18,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ### You will learn
  - How to create an SAP Fiori elements app on top of your previously created CAP application
  - How to modify the UI with OData annotations
- - How to make header info editable 
+ - How to make header info editable
  - How to check the annotation files
 
 
@@ -140,34 +140,35 @@ In order to make also the header fields editable, you have to change the default
 
 2. Change the value of the setting `editableHeaderContent` to `true`:
 
-```YAML[15]
-{
-    "_version": "1.32.0",
-    "sap.app": {
-    ...
-    "sap.ui5": {
+    ```YAML[15]
+    {
+        "_version": "1.32.0",
+        "sap.app": {
         ...
-        "routing": {
+        "sap.ui5": {
             ...
-            "targets": {
+            "routing": {
                 ...
-                "RisksObjectPage": {
+                "targets": {
                     ...
-                    "options": {
-                        "settings": {
-                            "editableHeaderContent": true,
-                            "entitySet": "Risks"
+                    "RisksObjectPage": {
+                        ...
+                        "options": {
+                            "settings": {
+                                "editableHeaderContent": true,
+                                "entitySet": "Risks"
+                            }
                         }
                     }
                 }
-            }
-        },
-        ...
-}
-```
+            },
+            ...
+    }
+    ```
+
 3. Create another risk with a title and description.
 
-!![My New Risk](mynewrisk.png)
+    !![My New Risk](mynewrisk.png)
 
 [DONE]
 [ACCORDION-END]
