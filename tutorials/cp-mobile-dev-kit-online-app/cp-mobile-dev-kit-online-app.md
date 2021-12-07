@@ -2,8 +2,8 @@
 title: Create an MDK Online App
 description: Use the mobile development kit editor to create a mobile app for online use case.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 20
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -40,7 +40,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-2.2.png)
 
-    >If you do not see Welcome page, you can access it via **Help** menu.
+    >If you do not see the Welcome page, you can access it via **Help** menu or via **View** menu > Find Command > Welcome.
 
 3. Select **MDK Project** and click **Start**.
 
@@ -138,17 +138,13 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon.
+Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon.
 
-    !![MDK](img-5.1.png)
+!![MDK](img-5.1.png)
 
-2. Select `com.sap.mdk.demo` application from the list.
+The On-boarding QR code is now displayed.
 
-    !![MDK](img-5.3.png)
-
-    The On-boarding QR code is now displayed.
-
-    !![MDK](img-5.2.png)
+!![MDK](img-5.2.png)
 
 >Leave the Onboarding dialog box open for step 6.
 
