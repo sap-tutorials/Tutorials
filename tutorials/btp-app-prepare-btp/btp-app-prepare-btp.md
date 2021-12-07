@@ -100,7 +100,7 @@ At least the services for the tutorials [Set Up the SAP HANA Cloud service](btp-
 
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Create subaccount)]
+[ACCORDION-BEGIN [Step 4: ](Create a subaccount)]
 1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
 
 4. Choose **Account Explorer** in the left navigation pane.
@@ -174,7 +174,7 @@ Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 8: ](User assignment in the Cloud Foundry space)]
+[ACCORDION-BEGIN [Step 8: ](Assign users in the Cloud Foundry space)]
 1. Open the space page in the SAP BTP cockpit (you can just choose the tile for the space that was created).
 
 2. Choose **Members** in the left navigation pane.
@@ -196,7 +196,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
 
 2. Choose **Account Explorer**.
 
@@ -221,7 +221,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-
+    
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
@@ -229,7 +229,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-
+  
 [OPTION END]
 [OPTION BEGIN [Live]]
 
@@ -241,7 +241,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
 
 2. Choose **Account Explorer**.
 
@@ -266,7 +266,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-
+    
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
@@ -274,7 +274,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-
+  
 [OPTION END]
 
 
