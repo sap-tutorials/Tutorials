@@ -3,8 +3,8 @@ title: Debug Your SAPUI5 App
 description: Debugging and logging are the nut and bolts to inspect your application. Learn how to debug and test your web apps with the Google Chrome Dev Tools.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>html5, topic>cloud, topic>javascript, products>sap-cloud-platform-for-the-cloud-foundry-environment, tutorial>free-tier]
-primary_tag: topic>sapui5
+tags: [ tutorial>beginner, programming-tool>html5, topic>cloud, programming-tool>javascript, products>sap-btp-cloud-foundry-environment, tutorial>free-tier]
+primary_tag: programming-tool>sapui5
 ---
 
 ## Details
@@ -54,7 +54,7 @@ onBeforeRendering: function() {
 
 [ACCORDION-BEGIN [Step 4: ](Add a breakpoint)]
 
-Add this `onAfterRendering` hook to the same file to place a breakpoint in your code. A breakpoint will cause your app to stop when the execution thread reaches it. This gives you the chance to inspect the state of you app.
+Add this `onAfterRendering` hook to the same file to place a breakpoint in your code. A breakpoint will cause your app to stop when the execution thread reaches it. This gives you the chance to inspect the state of your app.
 ```JavaScript
 ,
 

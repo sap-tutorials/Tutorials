@@ -35,7 +35,7 @@ To start with this tutorial use the result in the [`hana-cloud-setup`](https://g
 To enable authentication support in CAP for SAP BTP, the `xssec` module needs to be installed. If `cds watch`is still running stop it with <kbd>Ctrl</kbd> + <kbd>C</kbd>. In your project folder execute:
 
 ```Shell/Bash
-npm i --save  @sap/xssec
+npm install --save  @sap/xssec
 ```
 
 [DONE]

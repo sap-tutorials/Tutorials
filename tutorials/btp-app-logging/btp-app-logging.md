@@ -50,7 +50,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
     cf logs <appname>
     ```
 
-> Choose **Ctrl** + **C** to quit.
+> Choose <kbd>Ctrl</kbd> + <kbd>C</kbd> to quit.
 
 [VALIDATE_1]
 [ACCORDION-END]

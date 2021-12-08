@@ -57,7 +57,7 @@ The deployment is based on MTA ( *Multi-Target Application*, sometimes also call
 2. If you don't get back a version number, install the **MultiApps Archive Builder**:
 
     ```Shell/Bash
-    npm install -g mbt
+    npm install --global mbt
     ```
 
 > If you encounter a problem with the installation of the MBT, install it manually by following the instructions in the [MBT documentation](https://sap.github.io/cloud-mta-build-tool/download/).
@@ -209,9 +209,9 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Declare required Node.js version)]
-When you run your CAP application, your locally installed Node.js version is used. Cloud Foundry supports multiple Node.js major versions (like 12 and 14) and usually uses the lowest available by default. Therefore, it is important to declare which Node.js version should be used.
+When you run your CAP application, your locally installed Node.js version is used. Cloud Foundry supports multiple Node.js major versions (like 14 and 16) and usually uses the lowest available by default. Therefore, it is important to declare which Node.js version should be used.
 
-> Node.js 14 is sufficient for this tutorial.
+> Node.js 16 is sufficient for this tutorial.
 
 Open the file `package.json` and add the following snippet:
 
@@ -223,7 +223,7 @@ Open the file `package.json` and add the following snippet:
     ...
   },
   "engines": {
-    "node": ">=14"
+    "node": "^16"
   },
 ```
 
