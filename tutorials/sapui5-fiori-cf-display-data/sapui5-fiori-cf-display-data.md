@@ -5,6 +5,8 @@ auto_validation: true
 time: 20
 tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-launchpad-service, products>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
 primary_tag: programming-tool>odata
+author_name: Nico Geburek
+author_profile: https://github.com/nicogeburek
 ---
 
 ## Details
@@ -39,28 +41,19 @@ The routes are added to the `uimodule/webapp/manifest.json` file. The generator 
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Inspect the modifications)]
 
-1. As you can see in the log, there are two new files and one modified file. As the generator is only able to create boilerplate code, you have to make some modifications to the `uimodule/webapp/manifest.json` application descriptor.
+As you can see in the log, there are two new files and one modified file. As the generator is only able to create boilerplate code, you have to make some modifications to the `uimodule/webapp/manifest.json` application descriptor.
 
-    **Open** the file and replace the routing pattern of the new view with an empty string.
-    ```JSON [3]
-    {
-      "name": "Products",
-      "pattern": "",
-      "target": [
-        "TargetProducts"
-      ]
-    },
-    ```
+**Open** the file and replace the routing pattern of the new view with an empty string.
+```JSON [3]
+{
+  "name": "Products",
+  "pattern": "",
+  "target": [
+    "TargetProducts"
+  ]
+},
+```
 !![product route](productroute.png)
-
-2. The following step is only required, if the file in `uimodule/webapp/model/formatter.js` doesn't exist in your project. If this is the case, create the `formatter.js` file manually and paste the following code:
-
-    ```JavaScript [0-4]
-    sap.ui.define([], function () {
-       "use strict";
-       return {};
-    });
-    ```
 
 [DONE]
 [ACCORDION-END]
@@ -73,40 +66,13 @@ The routes are added to the `uimodule/webapp/manifest.json` file. The generator 
       displayBlock="true"
       xmlns="sap.m"
       xmlns:mvc="sap.ui.core.mvc">
-        <App id="idAppControl" />
+        <App id="app" />
     </mvc:View>
     ```
 
     !![mainview](mainview.png)
 
-2. Because the `id` of the `<App>` tag in the `webapp/view/Mainview.view.xml` got changed, you have to make sure the routing settings in the `webapp/manifest.json` are still correct. Make sure the `controlId` and the `viewId` of the `TargetMainView` match the `id` of the `<App>`.
-
-    ```JSON [8, 17]
-    "routing": {
-      "config": {
-        "routerClass": "sap.m.routing.Router",
-        "viewType": "XML",
-        "async": true,
-        "viewPath": "tutorial.products.view",
-        "controlAggregation": "pages",
-        "controlId": "idAppControl",
-        "clearControlAggregation": false
-      },
-      "routes": [...],
-      "targets": {
-        "TargetMainView": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "idAppControl",
-          "viewName": "MainView"
-        },
-        ...
-      }
-    }
-    ```
-
-3. The newly generated view `webapp/view/Mainview.view.xml` defines one page of the whole application. **Replace** the current content of the view, the `<App>` tag, with a page that contains one list that uses an [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html).
+2. The newly generated view `webapp/view/Mainview.view.xml` defines one page of the whole application. **Replace** the current content of the view, the `<App>` tag, with a page that contains one list that uses an [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html).
 
     ```XML [4-10]
     <mvc:View controllerName="tutorial.products.controller.Products" displayBlock="true"
@@ -158,11 +124,11 @@ Again, please accept the modification of the manifest file.
 
 1. All requests to the data source will be sent to `<webapp URL>/V2/Northwind/Northwind.svc/`.
 
-    **Modify** the `uimodule/webapp/xsapp.json` file to redirect the traffic to a destination. Also, turn off the authentication and replace the entire file with the following content.
+    **Modify** the `uimodule/webapp/xs-app.json` file to redirect the traffic to a destination. Also, turn off the authentication and replace the entire file with the following content.
 
     ```JSON [4-9]
     {
-      "welcomeFile": "/flpSandbox.html",
+      "welcomeFile": "/index.html",
       "routes": [
         {
           "source": "^/V2/(.*)$",
@@ -200,7 +166,7 @@ Again, please accept the modification of the manifest file.
 npm start
 ```
 
-> Alternatively, you can directly invoke `npx ui5 serve -o flpSandbox.html`, which is equivalent to `npm start` or run `npx ui5 serve`, the later one won't open a new page in the browser.
+> Alternatively, you can directly invoke `npx ui5 serve -o test/flpSandbox.html`, which is equivalent to `npm start` or run `npx ui5 serve`, the later one won't open a new page in the browser.
 
 Now you should see the Northwind products in the SAPUI5 list control:
 

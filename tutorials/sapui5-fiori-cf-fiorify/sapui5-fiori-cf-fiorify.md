@@ -3,8 +3,10 @@ title: Add Rich Enterprise Controls to the User Interface
 description: Replace the current  UI controls with more complex controls that fully leverage the OData protocol.
 auto_validation: true
 time: 25
-tags: [ tutorial>intermediate, topic>odata, topic>sapui5,   products>sap-launchpad-service, topic>user-interface, topic>html5, topic>cloud, tutorial>free-tier ]
+tags: [ tutorial>intermediate, programming-tool>odata, programming-tool>sapui5,   products>sap-launchpad-service, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier ]
 primary_tag: products>sap-fiori
+author_name: Nico Geburek
+author_profile: https://github.com/nicogeburek
 ---
 
 
@@ -50,7 +52,7 @@ Your page should now display product names and contain a smart header.
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Use the smart filter bar)]
 
-You've already learned about the cool expand-feature of OData in the previous step. In this step, you'll learn about the complex filter operations OData supports out-of-the-box. For this, click on the **Filters** button. A dialog pops up, and you'll be able to define filters on all properties of the displayed entities. Define a filter for the following criteria:
+You've already learned about the cool expand-feature of OData in the previous step. In this step, you'll learn about the complex filter operations OData supports out-of-the-box. For this, click on the **Filters** button. A dialog pops up, and you'll be able to define filters on all properties of the displayed entities. Select the grouped view and define a filter for the following criteria:
 
 * The `ProductID` shall be larger than 3
 * The `ProductID` shall also be less than 8
@@ -318,6 +320,7 @@ In this step, we add hierarchy information to the `Shellbar` to enable fast navi
 1. Add a method to the `uimodule/webapp/controller/BaseController.js` which we'll use to interface the hierarchy feature of the `Shellbar`. Note that we use a [JavaScript closure](https://www.w3schools.com/js/js_function_closures.asp) to store the history. Add this method after the `onNavBack` method.
 
     ```JavaScript
+    ,
     addHistoryEntry: (function() {
       let aHistoryEntries = [];
 
@@ -337,7 +340,7 @@ In this step, we add hierarchy information to the `Shellbar` to enable fast navi
           });
         }
       };
-    })(),
+    })()
     ```
 
     > Note that this implementation is used to display the history instead of the hierarchy of pages.
