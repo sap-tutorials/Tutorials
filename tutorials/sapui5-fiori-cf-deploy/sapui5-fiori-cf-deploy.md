@@ -101,7 +101,7 @@ Now it's time to embed the app in a full SAP Fiori Launchpad environment:
 
     !![addToGroup](addToGroup.png)
 
-4. Now you need to make this application visible to your users. To keep it simple, we make the app visible to everyone. For this, select the **Everyone** role.
+4. Now you need to make this application visible to your users. To keep it simple, make the app visible to everyone. For this, select the **Everyone** role.
 
     !![everyoneRole](everyoneRole.png)
 
@@ -117,7 +117,7 @@ Now it's time to embed the app in a full SAP Fiori Launchpad environment:
 
     !![createFLP](createFLP.png)
 
-4. There's not need to edit this site, all we need comes with the default configuration. Click the button on the top right corner to open your new site.
+4. There's no need to edit this site, all you need comes with the default configuration. Click the button on the top right corner to open your new site.
 
     !![openFLP](openFLP.png)
 

@@ -73,7 +73,7 @@ The main code for the SAPUI5 app can be found in the directory `webapp`. You can
 You might miss the folders `dist` and `mta_archives` as they will be created later during the build step.
 
 
-The `package.json` file contains much useful information about the project. The `npm scripts` are especially interesting since they wrap the command we'll use later.
+The `package.json` file contains much useful information about the project. The `npm scripts` are especially interesting since they wrap the command you will use later.
 
 [DONE]
 [ACCORDION-END]

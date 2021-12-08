@@ -44,7 +44,7 @@ Your page should now display product names and contain a smart header.
 
 !![smart list](smartlist.png)
 
-> Did you notice that the list items display the category names, even though the selected entity set [Products](https://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json) doesn't contain these values. We can still see it because we defined the property `expandFields="Category"` which expands the `CategoryID` to a full, nested entity. There is nothing we need to do, expect to define the field names to expand. All magic happens behind the scenes in the OData protocol.
+> Did you notice that the list items display the category names, even though the selected entity set [Products](https://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json) doesn't contain these values. You can still see it because the property `expandFields="Category"` was defined, which expands the `CategoryID` to a full, nested entity. There is nothing you need to do, expect to define the field names to expand. All magic happens behind the scenes in the OData protocol.
     Feel free to remove this property from the view to see how the displayed data changes.
 
 
@@ -290,7 +290,7 @@ You probably noticed empty fields that do not show data yet.
     },
     ```
 
-2. Now the only "picture" field should be the empty one. The field is still empty, as we need to add a custom formatter, to deal with a [quirk of the Northwind image encoding](https://blogs.sap.com/2017/02/08/displaying-images-in-sapui5-received-from-the-northwind-odata-service/).
+2. Now only the "picture" field should be the empty one. The field is still empty, as you need to add a custom formatter, to deal with a [quirk of the Northwind image encoding](https://blogs.sap.com/2017/02/08/displaying-images-in-sapui5-received-from-the-northwind-odata-service/).
 
     **Add** this formatter after the `markAsFav` method to complete the controller.
 
@@ -315,9 +315,9 @@ You probably noticed empty fields that do not show data yet.
 [ACCORDION-BEGIN [Step : ](Add hierarchy information)]
 
 
-In this step, we add hierarchy information to the `Shellbar` to enable fast navigation shortcuts.
+In this step, you add hierarchy information to the `Shellbar` to enable fast navigation shortcuts.
 
-1. Add a method to the `uimodule/webapp/controller/BaseController.js` which we'll use to interface the hierarchy feature of the `Shellbar`. Note that we use a [JavaScript closure](https://www.w3schools.com/js/js_function_closures.asp) to store the history. Add this method after the `onNavBack` method.
+1. Add a method to the `uimodule/webapp/controller/BaseController.js` which you will use to interface the hierarchy feature of the `Shellbar`. Note that a [JavaScript closure](https://www.w3schools.com/js/js_function_closures.asp) is being used to store the history. Add this method after the `onNavBack` method.
 
     ```JavaScript
     ,
@@ -345,7 +345,7 @@ In this step, we add hierarchy information to the `Shellbar` to enable fast navi
 
     > Note that this implementation is used to display the history instead of the hierarchy of pages.
 
-2. In the previous sub-step we used the `ShellUIService` which is not loaded by default. Change this in the `uimodule/webapp/manifest.json` and add a new configuration in the `sap.ui5` property after the `models` section.
+2. In the previous sub-step you used the `ShellUIService` which is not loaded by default. Change this in the `uimodule/webapp/manifest.json` and add a new configuration in the `sap.ui5` property after the `models` section.
 
     ```JSON[6-14]
     {
