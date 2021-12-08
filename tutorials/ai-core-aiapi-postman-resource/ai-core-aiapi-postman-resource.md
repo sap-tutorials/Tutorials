@@ -42,9 +42,9 @@ Resource groups represent a virtual collection of related resources within the s
 ### Response
 ```
 {
-    'resource_group_id': 'tutorial',
-    'tenant_id': '1111-dddd-444-888-888888',
-    'zone_id': ''
+  'resource_group_id': 'tutorial',
+  'tenant_id': '1111-dddd-444-888-888888',
+  'zone_id': ''
 }
 ```
 The value of `tenant_id` is equal to the value of `identityzoneid` from service key of SAP AI Core.
@@ -71,11 +71,11 @@ The value of `tenant_id` is equal to the value of `identityzoneid` from service 
 ```
 {'count': 1,
  'resources': [{
-    'resource_group_id': 'tutorial',
-    'status': 'PROVISIONED',
-    'status_message': 'All onboarding steps are completed.',
-    'tenant_id': '1111-dddd-444-888-888888',
-    'zone_id': ''
+  'resource_group_id': 'tutorial',
+  'status': 'PROVISIONED',
+  'status_message': 'All onboarding steps are completed.',
+  'tenant_id': '1111-dddd-444-888-888888',
+  'zone_id': ''
   ]}
 }
 ```
@@ -83,26 +83,58 @@ The value of `tenant_id` is equal to the value of `identityzoneid` from service 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Manage AWS S3 Object Store using S3 Browser)]
-
-1. You can get AWS S3 Bucket from either of two ways:
-
-	1. Through BTP Cockpit.
-
-	2. Through AWS. Refer [AWS User Guide to S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)
+[ACCORDION-BEGIN [Step 3: ](Manage AWS S3 Object Store)]
 
 
-2. Install S3 Browser. [Download here](https://s3browser.com/)
+You can get AWS S3 Bucket from either of two ways:
 
-3. Open S3 Browser and Enter your Credentials.  
+- Through SAP BTP Cockpit.
+
+- Through AWS. Refer [AWS User Guide to S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)
+
+
+[OPTION BEGIN [Using S3 Browser (Windows Only)]]
+
+1. Install S3 Browser. [Download here](https://s3browser.com/).
+
+2. Open S3 Browser and Enter your Credentials.  
 
     !![enter s3 credentials in s3 bucket](img/s3/init.png)
 
-4. If you don't have bucket create one and skip to next step.
+3. If you don't have bucket create one and skip to next step.
 
-	!![s3 bucket info](img/s3/bucket-1.png)  
+    !![s3 bucket info](img/s3/bucket-1.png)  
 
-	!![s3 bucket info2](img/s3/bucket-2.png)  
+
+    !![s3 bucket info2](img/s3/bucket-2.png)  
+
+[OPTION END]
+
+[OPTION BEGIN [Using AWS CLI (Mac/Linux/Windows)]]
+
+Follow the below steps for creating a path prefix through AWS CLI:
+
+1. Install AWS CLI. [Download here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+
+2. Check for `version` after installation completes, execute the following on terminal *(command prompt)*
+
+    ```BASH
+    aws --version
+    ```
+
+    !![aws version check](img/aws/aws-version.PNG)
+
+3. Execute the following on the terminal *(command prompt)*
+
+    ```BASH
+    aws configure
+    ```
+
+4. Enter your the AWS S3 Object Store details. You can leave the `Default output format` entry as blank *(press enter)*.
+
+    !![aws configure](img/aws/aws-configure.PNG)
+
+[OPTION END]
 
 
 [DONE]
@@ -111,29 +143,52 @@ The value of `tenant_id` is equal to the value of `identityzoneid` from service 
 
 [ACCORDION-BEGIN [Step 4: ](Upload dataset to AWS S3 Object Store)]
 
+
+| File   | Link |
+|  :------------- | :------------- |
+|  `travel.csv` | [Download Here](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-resource/travel.csv) |
+
+
+[OPTION BEGIN [Using S3 Browser (Windows Only)]]
+
 1. Open S3 Browser.
 
 2. Click **New Folder** and Create a folder named `tutorial`.
 
-	!![path prefix](img/s3/path-prefix.png)
+    !![path prefix](img/s3/path-prefix.png)
 
-2. Create another folder name `data` inside the `tutorial`.
+3. Create another folder name `data` inside the `tutorial`.
 
-	!![data folder](img/s3/data.png).
+    !![data folder](img/s3/data.png)
 
-3. Upload your datafile `travel.csv` inside `tutorial/data/`. This will be used for training the model.
+4. Upload your datafile `travel.csv` inside `tutorial/data/`. This will be used for training the model.
 
-	| File   | Link |
-	|  :------------- | :------------- |
-	|  `travel.csv` | [Download Here](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-resource/travel.csv) |
-
-	!![upload](img/s3/data-2.png)
+    !![upload](img/s3/data-2.png)
 
 
 Final look of S3 bucket.
 
 !![final s3 look](img/s3/final.png)
 
+[OPTION END]
+
+[OPTION BEGIN [Using AWS CLI (Mac/Linux/Windows)]]
+
+ 1. Replace `your-bucket-id` and execute the following on the terminal *(command prompt)* to create a path prefix(directory) and upload you datafile at the same time.
+
+    ```BASH[1]
+    aws s3 cp /local/path/to/travel.csv s3://your-bucket-id/tutorial/data/
+    ```
+
+2. Check your file. Replace `your-bucket-id` and execute the following on the terminal.
+
+    ```BASH[1]
+    aws s3 ls s3://your-bucket-id/tutorial/data/
+    ```
+
+    !![check dataset using aws cli](img/aws/check.png)
+
+[OPTION END]
 
 [DONE]
 [ACCORDION-END]
@@ -160,7 +215,7 @@ Get your AWS S3 Credentials in the format below.
 
 Make the API call.
 
-> **COLLECTIONS** > *POST* create `objectstore`
+> **COLLECTIONS** > admin > *POST* create `objectstoresecret`
 
 ### Endpoint
 **POST**
@@ -182,16 +237,16 @@ Example Body
 Edit the highlighted lines.
 ```JSON[4, 5, 7, 9, 10]
 {
-    "name": "default",
-    "type": "S3",
-    "bucket": "asd-11111111-2222-3333-4444-55555555555",
-    "endpoint": "s3.amazonaws.com",
-    "pathPrefix": "tutorial",
-    "region": "us-east-1",
-    "data": {
-        "AWS_ACCESS_KEY_ID": "ASDFASDFASDFASDF",
-        "AWS_SECRET_ACCESS_KEY": "asdfASDFqwerQWERasdfQWER"
-    }
+  "name": "default",
+  "type": "S3",
+  "bucket": "asd-11111111-2222-3333-4444-55555555555",
+  "endpoint": "s3.amazonaws.com",
+  "pathPrefix": "tutorial",
+  "region": "us-east-1",
+  "data": {
+  "AWS_ACCESS_KEY_ID": "ASDFASDFASDFASDF",
+  "AWS_SECRET_ACCESS_KEY": "asdfASDFqwerQWERasdfQWER"
+  }
 }
 ```
 **DONT SEND YET! You will require to set header as well**
