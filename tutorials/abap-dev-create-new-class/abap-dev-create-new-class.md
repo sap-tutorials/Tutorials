@@ -2,8 +2,8 @@
 title: Create a Global ABAP Class
 description: You will learn how to create a global ABAP class, in which you  will retrieve data from a database.
 auto_validation: true
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-netweaver ]
 time: 45  
 
 ---
@@ -22,7 +22,8 @@ time: 45
 
 [ACCORDION-BEGIN [Step 1: ](Open your ABAP program and remove the WRITE statement)]
 
-1. First, open your ABAP program, `ZSO_INVOICE_ITEMS_EURO` which you created in the previous tutorial, [Create and run an ABAP application](https://developers.sap.com/tutorials/abap-create-basic-app.html).
+1. First, open your ABAP program, `ZSO_INVOICE_ITEMS_EURO` which you created in the previous tutorial, [Create and run an ABAP application](abap-create-basic-app).
+
 
     ![Image depicting step1-open-abap-program](step1-open-abap-program.png)
 
@@ -56,9 +57,8 @@ data(invoices) = new ZCL_INVOICE_RETRIEVAL( ).
 
 A new editor will be opened showing the class you have created, `ZCL_INVOICE_RETRIEVAL`.
 
-> Since release 7.40, ABAP permits inline declarations. For more information, see:
-  - [Old and new ABAP syntax – overview sheet](https://blogs.sap.com/2016/03/02/old-and-new-abap-syntax-overview-sheet/)
-  - [7.4 Release News - Inline Declaration I](http://abapmentor.expertise-team.com/post/7-4-release-news-inline-declaration-i.aspx)
+> Since release 7.40, ABAP permits inline declarations. For more information, see the links at the end of this tutorial.
+
 
 [DONE]
 [ACCORDION-END]
@@ -403,4 +403,10 @@ Enter your code in the box below and choose **Submit Answer**.
 
 [VALIDATE_1]
 [ACCORDION-END]
-u
+
+###More information  
+- [Old and new ABAP syntax – overview sheet](https://blogs.sap.com/2016/03/02/old-and-new-abap-syntax-overview-sheet/)
+- [ABAP News for Release 7.40 – Inline Declarations](https://blogs.sap.com/2013/05/23/abap-news-for-release-740-inline-declarations/)
+- [7.4 Release News - Inline Declaration I](https://itpfed.com/features-abap-74-declaring-creating-variables/)
+
+---

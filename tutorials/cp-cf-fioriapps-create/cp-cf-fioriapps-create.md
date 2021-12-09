@@ -5,13 +5,12 @@ title: Develop SAP SAPUI5 Application for SAP BTP on Cloud Foundry
 description: Create an SAPUI5 application in SAP Web IDE Full-Stack and deploy it to your SAP BTP, Cloud Foundry environment.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-fiori, tutorial>license ]
+tags: [ tutorial>beginner, products>sap-fiori, tutorial>license ]
 primary_tag: products>sap-web-ide
 ---
 
 ## Prerequisites
  - Make sure you have access to the trial version of SAP Web IDE Full-Stack.
- - To access Web IDE go through the [Prepare SAP Web IDE for Cloud Foundry Development](sapui5-webide-open-webide) tutorial.
 
 ## Details
 ### You will learn
@@ -20,6 +19,7 @@ primary_tag: products>sap-web-ide
   - How to build and deploy your application to Cloud Foundry
 
   Create, configure, build, and deploy a simple application on Cloud Foundry in SAP Web IDE Full-Stack.
+
 
 ---
 

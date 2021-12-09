@@ -3,8 +3,8 @@ title: Connect to Data Lake IQ Using the JDBC Driver
 description: Create and debug a Java application that connects to data lake IQ.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>java, products>sap-iq]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, topic>java, products>sap-hana-cloud, products>sap-iq]
+primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
 ## Prerequisites
@@ -82,7 +82,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
             Connection connection = null;
             try {
                 //Option 1
-                connection = DriverManager.getConnection("jdbc:sqlanywhere:uid=HDLADMIN;pwd=myPassword;Host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC='TLS{tls_type=rsa;direct=yes}'");
+                connection = DriverManager.getConnection("jdbc:sqlanywhere:uid=USER1;pwd=Password1;Host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC='TLS{tls_type=rsa;direct=yes}'");
 
                 //Option 2, the connection properties can be loaded from an ODBC datasource.
                 //connection = DriverManager.getConnection("jdbc:sqlanywhere:DSN=HC_HDL_Trial;LOG=myLog.log");  
@@ -113,7 +113,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
     }
     ```
 
-3. Update the `uid`, `pwd`, and `host` values in the connection string.
+3. Update the `host` value in the connection string.
 
 4. Compile the `.java` file into a `.class` file using the following command:
 

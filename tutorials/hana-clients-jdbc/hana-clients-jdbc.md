@@ -3,8 +3,8 @@ title: Connect Using the SAP HANA JDBC Driver
 description: Create and debug a Java application that connects to SAP HANA using the SAP HANA client.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud, topic>java]
-primary_tag: products>sap-hana
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>java]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites

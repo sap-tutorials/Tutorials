@@ -3,8 +3,8 @@ title: Connect to Data Lake IQ Using the ODBC Driver
 description: Configure a data source to connect to the previously created data lake IQ and then use the data source in unixODBC, Microsoft Excel and DBeaver.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>sql, products>sap-iq]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-iq]
+primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
 ## Prerequisites
@@ -43,11 +43,11 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
     ![New data source](Create-new-data-source.png)
 
-6. Configure an example data source for data lake IQ.
+6. Configure the data source.
 
     ![specify the data source name](data-source1.png)  
 
-    Connect using the HDLADMIN user. The host and port values can be copied from the SAP BTP Cockpit or SAP HANA Cloud Central via the copy SQL endpoint option.
+    Connect using USER1. The host and port values can be copied from the SAP BTP Cockpit or SAP HANA Cloud Central via the copy SQL endpoint option.
 
     ![specify the credentials, host and port](data-source2.png)  
 
@@ -84,7 +84,7 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 
     ![unixODBC install](unixODBC-install.png)
 
-    For more details on how to accomplish this, please follow the second step of [this tutorial](tutorial.hxe-ua-dbfundamentals-odbc).
+    For more details on how to accomplish this, please follow the second step of [this tutorial](hxe-ua-dbfundamentals-odbc).
 
 2. The following commands can be used to confirm that unixODBC is installed and determine the location of the .odbc.ini file (if it exists).
     ```Shell (Linux)
@@ -112,8 +112,8 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 5. DBISQL or `isql`, which is a tool provided by unixODBC can be used to try out the data source. Ensure you are using the correct username and password.
 
     ```Shell (Linux)
-    dbisql -hdl -c "uid=HDLADMIN;pwd=myPassword;dsn=HC_DL_Trial" -nogui
-    isql -v HC_DL_Trial HDLADMIN myPassword
+    dbisql -hdl -c "uid=USER1;pwd=Password1;dsn=HC_DL_Trial" -nogui
+    isql -v HC_DL_Trial USER1 Password1
     ```
 
     DBISQL
@@ -122,7 +122,7 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 
     isql
 
-    ![isql query](isqlQuery.png)
+    ![isql query](isql-query.png)
 
     > To exit dbisql or isql type quit.
 
@@ -130,7 +130,7 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 
     > The column width when displaying results in isql can be set using the -m parameter.  
     > ```Shell (Linux)
-    isql -v HC_DL_Trial HDLADMIN myPassword -m6
+    isql -v HC_DL_Trial USER1 Password1 -m6
     >```
 
 [DONE]

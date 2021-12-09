@@ -3,8 +3,8 @@ title: Query with the SQL Console in SAP HANA Database Explorer
 description: Explore features of the SQL console and see how it facilitates querying an SAP HANA database.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -32,7 +32,7 @@ primary_tag: products>sap-hana-cloud
 
     ```SQL
     SELECT * FROM HOTEL.HOTEL;
-    INSERT INTO HOTEL.HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '79872'); --will cause a unique constraint error when executed
+    INSERT INTO HOTEL.HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '79872', NEW ST_POINT('POINT(-90.076919 29.957531)', 4326)); --will cause a unique constraint error when executed
     ```
 
 4. Expand the **Run** dropdown menu.  Notice that there are multiple options along with their shortcut keys.
@@ -48,6 +48,8 @@ primary_tag: products>sap-hana-cloud
 6. The **Messages** tab displays information about the executed queries as well as any errors.
 
     ![Messages Tab](MessagesTab.png)
+
+    > Note, for SAP HANA on-premise, if the peak memory consumed metric is not shown, follow the instructions at the end of the [expensive statements trace](hana-dbx-troubleshooting#bb71f9fe-ca96-439e-9881-ad6e411dd40f) step.
 
 7. The **History** tab displays the last 50 successfully executed queries.  A previously executed query can be searched for and recalled.
 
@@ -116,16 +118,17 @@ primary_tag: products>sap-hana-cloud
 
     |  Action     | Shortcut
     |  :------------- | :-------------
-    |  Comment/Uncomment Line         | `Ctrl+/`
     |  Add Comment Block           | `Ctrl+Shift+/`
+    |  Comment/Uncomment Line         | `Ctrl+/`
     |  Format Code    | `Ctrl+B`
-    |  Switch tabs      | `Ctrl+Alt+Pageup` `Ctrl+Alt+Pagedown`
-    |  Close Window   | `Ctrl+W`
-    |  Run All | `F8`
-    |  Run Statement | `F9`
-    |  Increase/Decrease Font Size | `Crtl+Shift+Up` `Ctrl+Shift+Down`
     |  Go to Next Error | `Alt+E`
     |  Go to Previous Error | `Alt+Shift+E`
+    |  Increase/Decrease Font Size | `Crtl+Shift+Up` `Ctrl+Shift+Down`
+    |  Jump to Matching Brackets | `Ctrl+Shift+M`
+    |  Run All | `F8`
+    |  Run Statement | `F9`
+    |  Switch tabs      | `Ctrl+Alt+Pageup` `Ctrl+Alt+Pagedown`
+    |  Text Completion | `Ctrl+Space` (requires two characters to be entered)
 
 3. Shortcuts can be configured in **Global Preferences** under **Keyboard Shortcuts**.
 
@@ -296,7 +299,7 @@ The statement library contains a mix of pre-populated system statements and user
 
     ![Show Statement Library](ShowStatementLibrary.png)
 
-4. In the statement library there are two types of statements:  user-defined and system. This is shown in the Type column. User-defined statements are statements that you have created and added, like Future check-ins, while system statements are already created and added to the library. System statements are often used for monitoring and diagnostic purposes.
+4. In the statement library there are two types of statements:  user-defined and system. This is shown in the Type column. User-defined statements are statements that you have created and added, like All Future Check-ins, while system statements are already created and added to the library. System statements are often used for monitoring and diagnostic purposes.
 
     ![Statement Library](StatementLibrary.png)
 
@@ -311,6 +314,11 @@ The statement library contains a mix of pre-populated system statements and user
     >![Import and Export to File](importAndExport.png)
     >
     >Files can then be shared using a version control system such as git.
+
+6. User-defined statements can be edited. From the Statement library, select the desired statement to open it within the SQL console and make the desired changed. Select **Add to Statement Library** to overwrite the previous statement.
+
+    ![Update Statement](UpdateStatement.png)
+
 
 Congratulations! You have now explored selected features of the SQL console.
 

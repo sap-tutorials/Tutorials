@@ -3,8 +3,11 @@ title: Display Data from the Northwind Service
 description: Learn how to add new views, to display more data, and how to navigate between them.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>sapui5, products>sap-launchpad-service, products>sap-fiori, topic>user-interface, topic>html5, topic>cloud]
-primary_tag: topic>odata
+tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-launchpad-service, products>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
+primary_tag: programming-tool>odata
+author_name: Nico Geburek
+author_profile: https://github.com/nicogeburek
+
 ---
 
 ## Details
@@ -39,7 +42,7 @@ The routes are added to the `uimodule/webapp/manifest.json` file. The generator 
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Inspect the modifications)]
 
-As you can see in the log, there are two new files and one modified file. As the generator is only able to create boilerplate code, we have to make some modifications to the `uimodule/webapp/manifest.json` application descriptor.
+As you can see in the log, there are two new files and one modified file. As the generator is only able to create boilerplate code, you have to make some modifications to the `uimodule/webapp/manifest.json` application descriptor.
 
 **Open** the file and replace the routing pattern of the new view with an empty string.
 ```JSON [3]
@@ -57,20 +60,19 @@ As you can see in the log, there are two new files and one modified file. As the
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Enable routing)]
 
-1. The `webapp/view/Mainview.view.xml` will be the outer container of the application. Therefore, **remove** the entire content (nested tags) of the `<App>` tag.
+1. The `webapp/view/Mainview.view.xml` will be the outer container of the application. Therefore, **remove** the entire content (nested tags) of the `<Shell>` tag and replace it with the below `<App>` tag.
 
     ```XML [5]
     <mvc:View controllerName="tutorial.products.controller.MainView"
       displayBlock="true"
       xmlns="sap.m"
       xmlns:mvc="sap.ui.core.mvc">
-        <App id="idAppControl" />
+        <App id="app" />
     </mvc:View>
     ```
-
     !![mainview](mainview.png)
 
-2. The newly generated view `webapp/view/Products.view.xml` defines one page of the whole application. **Replace** the current content of the view, the `<App>` tag, with a page that contains one list that uses an [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html).
+2. The newly generated view `webapp/view/Mainview.view.xml` defines one page of the whole application. **Replace** the current content of the view, the `<App>` tag, with a page that contains one list that uses an [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html).
 
     ```XML [4-10]
     <mvc:View controllerName="tutorial.products.controller.Products" displayBlock="true"
@@ -85,7 +87,6 @@ As you can see in the log, there are two new files and one modified file. As the
       </Page>
     </mvc:View>
     ```
-
 
 You'll immediately be able to see that the `MainView` embeds the `Products` view and displays an empty list. The list is still empty, because there is not data source bound to the application yet.
 
@@ -122,11 +123,11 @@ Again, please accept the modification of the manifest file.
 
 1. All requests to the data source will be sent to `<webapp URL>/V2/Northwind/Northwind.svc/`.
 
-    **Modify** the `uimodule/webapp/xsapp.json` file to redirect the traffic to a destination. Also, turn off the authentication and replace the entire file with the following content.
+    **Modify** the `uimodule/webapp/xs-app.json` file to redirect the traffic to a destination. Also, turn off the authentication and replace the entire file with the following content.
 
     ```JSON [4-9]
     {
-      "welcomeFile": "/flpSandbox.html",
+      "welcomeFile": "/index.html",
       "routes": [
         {
           "source": "^/V2/(.*)$",
@@ -150,12 +151,12 @@ Again, please accept the modification of the manifest file.
     **Replace** the empty array of the property `destinations` in the `uimodule/ui5.yaml` file to declare the local destination.
 
     ```YAML
-    destinations:
-      - name: "Northwind"
-        url: "https://services.odata.org/"
+            destinations:
+              - name: "Northwind"
+                url: "https://services.odata.org/"
     ```
 
-    > YAML is quite nice to read but writing can be cumbersome. If you do edit this file often, I recommend using IDE plugins to make your life easier like [this one](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) to [validate the format](https://sap.github.io/ui5-tooling/pages/Configuration/#validation-ide-support)
+    > YAML is quite nice to read but writing can be cumbersome as the indention of the lines is crucial. Please make sure your file looks exactly as shown in the next screenshot. If you edit these files often, I recommend using IDE plugins to make your life easier like [this one](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) to [validate the format](https://sap.github.io/ui5-tooling/pages/Configuration/#validation-ide-support)
 
 3. Switch to the first terminal session, stop the process and restart it. Restarting is necessary because the live-reload feature doesn't notice changes in the `ui5.yaml` file.
 
@@ -164,7 +165,7 @@ Again, please accept the modification of the manifest file.
 npm start
 ```
 
-> Alternatively, you can directly invoke `npx ui5 serve -o flpSandbox.html`, which is equivalent to `npm start` or run `npx ui5 serve`, the later one won't open a new page in the browser.
+> Alternatively, you can directly invoke `npx ui5 serve -o test/flpSandbox.html`, which is equivalent to `npm start` or run `npx ui5 serve`, the later one won't open a new page in the browser.
 
 Now you should see the Northwind products in the SAPUI5 list control:
 
@@ -294,7 +295,7 @@ In this step, you will add a detail page that shows some additional information.
 
 3. Once you saved the view, the web app should update automatically and display a view similar to this this one.
 
-!![detail view](detailview.png)
+!![detail view](detail.png)
 
 [DONE]
 [ACCORDION-END]

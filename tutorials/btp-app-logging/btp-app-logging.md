@@ -5,7 +5,7 @@ title: Enable Logging Service for Your Application
 description: This tutorial shows you how to enable Logging Service for your application.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -27,37 +27,42 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
- - How to access logs from terminal and SAP BTP cockpit
+ - How to access logs from command line window and SAP BTP cockpit
  - How to analyze logs using Kibana dashboard
  - How to enable Logging Service for your CAP application
  - How to test the Logging Service
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`launchpad-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpad-service) branch.
+To start with this tutorial use the result in the [`launchpad-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpad-service) branch.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access Logs from Terminal)]
+[ACCORDION-BEGIN [Step 1: ](Access logs from command line window)]
+1. Display recent logs.
 
-1. Display recent logs:
-  ```bash
-  cf logs --recent <appname>
-  ```
+    ```Shell/Bash
+    cf logs --recent <appname>
+    ```
 
-2. Follow logs live:
-  ```bash
-  cf logs <appname>
-  ```
+2. Follow logs live.
 
-> Choose **Ctrl** + **C** to quit.
+    ```Shell/Bash
+    cf logs <appname>
+    ```
+
+> Choose <kbd>Ctrl</kbd> + <kbd>C</kbd> to quit.
 
 [VALIDATE_1]
-
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Access Logs from SAP BTP Cockpit)]
+[ACCORDION-BEGIN [Step 2: ](Access logs from SAP BTP cockpit)]
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
 
-1. Go to your subaccount in **SAP BTP cockpit**.
+2. Choose **Account Explorer**.
+
+3. In the **Subaccounts** tab, choose the subaccount where you have deployed your service and application.
+
+    !![Choose Subaccount](choose_subaccount.png)
 
 2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
 
@@ -76,8 +81,7 @@ To continue with this tutorial you can find the result of the previous tutorial 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Analyze Logs Using Kibana Dashboard)]
-
+[ACCORDION-BEGIN [Step 3: ](Analyze logs using Kibana dashboard)]
 1. Go to your subaccount in **SAP BTP cockpit**.
 
 2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
@@ -98,7 +102,6 @@ To continue with this tutorial you can find the result of the previous tutorial 
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Enable Logging Service)]
-
 [OPTION BEGIN [Trial]]
 
 Logs are only kept for a short period and won't be visible in Kibana without the Logging Service. By binding the Logging Service to your application, logs will be kept for longer and will be available for further analysis via Kibana.
@@ -107,46 +110,45 @@ It's suggested to enable the Logging Service for all applications, so that error
 
 In our experience, the `development` plan wasn't sufficient for test scenarios. Probably, its okay for personal development spaces. However, this tutorial uses the `standard` plan to be on the safe side.
 
-1. Add an instance for the logging service to the `resources` section of your `mta.yaml`:
+1. Add an instance for the logging service to the `resources` section of your `mta.yaml`.
 
-```yaml hl_lines="4-9"
-...
-resources:
-...
-- name: cpapp-logs
-  type: org.cloudfoundry.managed-service
-  parameters:
-    service: application-logs
-    service-plan: lite
-```
-
-2. Bind the logging service instance to all `modules` of the `mta.yaml`:
-
-<!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->
-```YAML[9-9]
-_schema-version: '3.1'
-...
-modules:
-  ...
-  - name: cpapp-srv
+    ```YAML[4-9]
     ...
-    requires:
-      ...
-      - name: cpapp-logs
-```
-
-<!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-db-deployer")].requires[?(@.name=="cpapp-logs")] -->
-```YAML[9-9]
-_schema-version: '3.1'
-...
-modules:
-  ...
-  - name: cpapp-db-deployer
+    resources:
     ...
-    requires:
+    - name: cpapp-logs
+      type: org.cloudfoundry.managed-service
+      parameters:
+        service: application-logs
+        service-plan: lite
+    ```
+2. Bind the logging service instance to the following `modules` of the `mta.yaml`.
+
+    <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->
+    ```YAML[9-9]
+    _schema-version: '3.1'
+    ...
+    modules:
       ...
-      - name: cpapp-logs
-```
+      - name: cpapp-srv
+        ...
+        requires:
+          ...
+          - name: cpapp-logs
+    ```
+
+    <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-db-deployer")].requires[?(@.name=="cpapp-logs")] -->
+    ```YAML[9-9]
+    _schema-version: '3.1'
+    ...
+    modules:
+      ...
+      - name: cpapp-db-deployer
+        ...
+        requires:
+          ...
+          - name: cpapp-logs
+    ```
 [OPTION END]
 [OPTION BEGIN [Live]]
 
@@ -156,62 +158,61 @@ It's suggested to enable the Logging Service for all applications, so that error
 
 In our experience, the `development` plan wasn't sufficient for test scenarios. Probably, its okay for personal development spaces. However, this tutorial uses the `standard` plan to be on the safe side.
 
-1. Add an instance for the logging service to the `resources` section of your `mta.yaml`:
+1. Add an instance for the logging service to the `resources` section of your `mta.yaml`.
 
-```yaml hl_lines="4-9"
-...
-resources:
-...
-- name: cpapp-logs
-  type: org.cloudfoundry.managed-service
-  parameters:
-    service: application-logs
-    service-plan: standard
-```
-
-2. Bind the logging service instance to all `modules` of the `mta.yaml`:
-
-<!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->
-```YAML[9-9]
-_schema-version: '3.1'
-...
-modules:
-  ...
-  - name: cpapp-srv
+    ```YAML[4-9]
     ...
-    requires:
-      ...
-      - name: cpapp-logs
-```
-
-<!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-db-deployer")].requires[?(@.name=="cpapp-logs")] -->
-```YAML[9-9]
-_schema-version: '3.1'
-...
-modules:
-  ...
-  - name: cpapp-db-deployer
+    resources:
     ...
-    requires:
+    - name: cpapp-logs
+      type: org.cloudfoundry.managed-service
+      parameters:
+        service: application-logs
+        service-plan: standard
+    ```
+    
+2. Bind the logging service instance to the following `modules` of the `mta.yaml`.
+
+    <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->
+    ```YAML[9-9]
+    _schema-version: '3.1'
+    ...
+    modules:
       ...
-      - name: cpapp-logs
-```
+      - name: cpapp-srv
+        ...
+        requires:
+          ...
+          - name: cpapp-logs
+    ```
+
+    <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-db-deployer")].requires[?(@.name=="cpapp-logs")] -->
+    ```YAML[9-9]
+    _schema-version: '3.1'
+    ...
+    modules:
+      ...
+      - name: cpapp-db-deployer
+        ...
+        requires:
+          ...
+          - name: cpapp-logs
+    ```
 [OPTION END]
 
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Test It)]
-
-1. Build the MTAR file and deploy it to your Cloud Foundry space:
+[ACCORDION-BEGIN [Step 5: ](Test it)]
+1. Build the MTAR file and deploy it to your Cloud Foundry space.
 
     ```
     mbt build -t ./
     cf deploy cpapp_1.0.0.mtar
     ```
 
-2. Open Kibana after successful deployment. Your org should now be visible in the Kibana dashboard:
+2. Open Kibana after successful deployment. Your org should now be visible in the Kibana dashboard.
 
     !![Kibana: Filter Org](kibana_filter_org.png)
 
@@ -219,7 +220,7 @@ modules:
 
 4. The filter is added to the filter bar on the top of the screen and gets applied on the dashboard.
 
-5. You should see your newly applied applications:
+5. You should see your newly applied applications.
 
     !![Kibana: Components](kibana_components.png)
 
@@ -228,9 +229,12 @@ The available fields are displayed on the left side of the screen. You can add f
 
 The time filter is on the right top of the screen. Don't forget to choose *Refresh*.
 
+
 [DONE]
+The result of this tutorial can be found in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
 
-The result of this tutorial can be found in the [`cp/logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/logging) branch.
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-logging" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
 ---

@@ -5,7 +5,7 @@ title: Create a UI Using Freestyle SAPUI5
 description: This tutorial shows you how to create a Freestyle SAPUI5 app on top of your CAP application.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori-tools, products>sapui5]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori-tools, sogtware-product>sapui5]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -17,18 +17,16 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Add Business Logic to Your Application](btp-app-cap-business-logic)
 
 ## Details
-
 ### You will learn
  - How to create a Freestyle SAPUI5 app on top of your CAP application
  - How to start the application
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`cap/business-logic`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/business-logic) branch.
+To start with this tutorial use the result in the [`cap-business-logic`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-business-logic) branch.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](SAP Fiori Elements Application vs. Freestyle UI5 Application)]
-
+[ACCORDION-BEGIN [Step 1: ](SAP Fiori elements application vs. freestyle UI5 application)]
 What is the difference to an SAP Fiori elements based application that you have already built in the [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements) section? As mentioned, both the freestyle app and the SAP Fiori elements app are based on SAPUI5.
 
 An SAP Fiori elements app can be thought of like a giant player built with SAPUI5 where most of the code resides outside your own development project in central components. Much of its logic comes out of the box and is controlled by metadata from your OData service.
@@ -38,129 +36,62 @@ A freestyle UI5 application, on the other hand, lives mainly in your own project
 Fortunately, you have also got a choice of several templates that get your application kick started for freestyle UI5. They copy the initial code into your project and any change necessary for the app can be done manually by you in the code.
 
 [VALIDATE_1]
-
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Creating the Application)]
+[ACCORDION-BEGIN [Step 2: ](Creating the application)]
+1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P** for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
-In the next steps, you build an application using the `mitigations` part of our CAP-based service.
 
-1. Make sure that you've installed the SAPUI5 templates as described in section [Set Up Local Development using VS Code](btp-app-#install-the-ui5-command-line-interface).
+    > In case you get an error launching the Application Generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
 
-2. Open a terminal in VS Code via **Terminal** **&rarr;** **New Terminal**.
+2. Choose application type **SAPUI5 freestyle** and floor plan **SAP Fiori Worklist Application**.
 
-3. Navigate to your project folder.
+       ![SAPUI5 freestyle](createSAPUI5freestyle_app.png)
 
-4. Navigate to the `app` folder:
 
-    ```bash
-    cd app
-    ```
+4. Choose **Next**.
 
-5. Create a new `mitigations` folder for the new app:
+5. In the next dialog, choose **Use a Local CAP Project** and point to the folder of your current `cpapp` project.
 
-    ```bash
-    mkdir mitigations
-    ```
+    > In case you get the error: `Node module @sap/cds isn't found. Please install it and try again.`
 
-6. Navigate to the `mitigations` folder:
+    > You might get the error `Node module @sap/cds is not found. Please install it and try again.` after you have chosen your CAP project. This is an issue with the App Generator not finding the corresponding CAP modules, due to different repositories. This should be a temporary issue. For the meantime you can work around it by opening a command line and running the following command:
 
-    ```bash
-    cd mitigations
-    ```
+    > ```bash
+    > npm install --global @sap/cds-dk --@sap:registry=https://npmjs.org/
+    > ```
 
-7. Create a freestyle UI5 application:
+    > See the [CAP Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for more details.
 
-    ```bash
-    yo @sapui5/sapui5-templates
-    ```
-    A creation wizard starts.
+5. Select the **`RiskService (Node.js)`** as the OData service and choose **Next**.
 
-8. Follow the creation wizard and use the following values:
+    ![CAPpro](datasourceselection.png)
 
-    ```javascript
-    - "Provide the module name" mitigations
-    - "Provide the module namespace" ns
-    - "Select a template" SAP Fiori Worklist Application OData V4
-    - "Title" Mitigations
-    - "Description" Mitigations
-    - "Choose if your app should run in SAP Fiori Launchpad or standalone" Standalone App (optimized for individual deployment)
-    - "Select batch mode corresponding to selected OData Service" Auto: Requests are grouped in one batch request
-    - "Service Base URI" http://localhost:4004/service/risk
-    - "Datasource URL" /service/risk
-    - "Object Collection" Mitigations
-    - "Object Collection ID" ID
-    - "Object Title" ID
-    - "Object Numeric Attribute": <leave empty>
-    - "Object Unit of Measure": <leave empty>
-    ```
+6. On the **Entity Selection** screen, select the following values and choose **Next**.
 
-9. Open the newly created file `manifest.json` in your `cpapp/app/mitigations/webapp` folder.
+    ![Entity Selection](SAPUI5freestyle_entityselect.png)
 
-10. Add a `/` to the beginning of the value of the `uri` parameter:
+7. Enter `mitigations` as the module name and `Mitigations` as the application title.
 
-    ```javascript hl_lines="7"
-    {
-        ...
-        "sap.app": {
-            ...
-            "dataSources": {
-                "mainService": {
-                    "uri": "/service/risk/",
-                    "type": "OData",
-                    "settings": {
-                        "odataVersion": "4.0",
-                        "localUri": "localService/metadata.xml"
-                    }
-                }
-            }
-        },
-    ```
+8. Enter `ns` as the namespace and `Mitigations` as the description for the application.
+
+9. Choose **Finish** to generate the application.
+
+    ![Project Names Miti](SAPUI5freestyle_appgen.png)
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Summary)]
-
-What happened here? (You can skip this and carry on with [Starting the Application](#starting-the-application) if you aren't keen to know.)
-
-First, you created a new application from the work list template with a detail page based on a V4 OData service (the CAP service is V4). The result is a similar application layout like the one you have already chosen in the [Create a SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements) section. There are other templates available (a Worklist Application and a Master Detail one, both for V2 services).
-
-You chose to be able to run this app standalone, so without necessarily having to have an SAP Fiori launchpad to host it. On a technical level, you chose to send all the OData requests from the app using batches. A batch is a kind of a wrapper for requests. You can wrap multiple requests into one with a batch. Even when there's only one request, a batch is better for security reasons, as not all the data of the request is exposed in the URL. So, in essence, for performance and security reasons, it's always a good idea to choose batch.
-
-Then there's the section about the service base URI and the data source URL. It prepares your project for the optional use of more [SAPUI5 Tooling](https://sap.github.io/ui5-tooling/) for development. It ensures that the requests for the OData service from the application (all for our `risk` service, so starting with `/risk`) are mapped to the backend service, which is our CAP service, running under `http://localhost:4004/service/risk`.
-
-> Why is a mapping needed?
-
-> You might ask yourself why you have got to specify this here, when in the [Create a SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements) section you didn't. The answer is that the SAP Fiori elements case was streamlined to a CAP service already (you even told the app generator to get the service from a CAP project). Freestyle SAPUI5 templates don't have the special treatment of CAP yet and instead make no assumption where the OData service comes from, it could be a remote one based on another framework. To make the connection, the above mapping is needed. SAPUI5 has a so-called middleware that proxies to the remote service. You can see this by opening the `ui5.yaml` file under `cpapp/app/mitigations`:
-
-> ```yaml
-> ...
-> server:
->     customMiddleware:
->     - name: ui5-middleware-simpleproxy
->         mountPath: /risk
->         afterMiddleware: compression
->         configuration:
->         baseUri: http://localhost:4004/service/risk
-> ```
-
-The change in the `manifest.yaml` is to make sure that the data requests are used with an absolute URL at `/risk`. The original entry for the URI was `risk`. This would have triggered SAPUI5 to issue any data request relative to the path of the application itself, but we want the requests to be absolute to risk.
-
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 4: ](Starting the Application)]
-
+[ACCORDION-BEGIN [Step 3: ](Starting the application)]
 1. Make sure `cds watch` is still running in the project root folder:
 
-    ```bash
+    ```Shell/Bash
     cds watch
     ```
 
 2. Open the URL <http://localhost:4004/>.
 
-    You now see two new HTML pages.
+    You now see a new HTML page.
 
     !![UI5 App](freestylelaunch.png)
 
@@ -170,9 +101,9 @@ The change in the `manifest.yaml` is to make sure that the data requests are use
 
     As a result, you can see a list but you can only see the IDs of the mitigations both in the list view and on the detail page. This is because the freestyle template only got the information from you that the `Object Collection ID` is the `ID` property of the `mitigations` service. You now need to add additional SAPUI5 controls that are bound to additional properties of the `mitigations` service.
 
-4. Open the view of the work list `cpapp/app/mitigations/webapp/view/Worklist.view.xml`  and add the following code, removing the `ID` column and instead adding `Description`, `Owner` and `Timeline` columns:
+4. Open the view of the work list `cpapp/app/mitigations/webapp/view/Worklist.view.xml`  and add the following code, removing the `ID` and `<> (ObjectNumber)` columns and instead adding `Description`, `Owner` and `Timeline` columns:
 
-    ```XML hl_lines="2-10 19-23"
+    ```XML[2-10,19-23]
         <columns>
             <Column id="DescriptionColumn">
                 <Text text="Description" id="DescriptionColumnTitle"/>
@@ -203,7 +134,7 @@ The change in the `manifest.yaml` is to make sure that the data requests are use
 
 5. Open the view of the object `cpapp/app/mitigations/webapp/view/Object.view.xml` and also replace `ID` and add `Description`, `Owner`, and `Timeline` using SAPUI5 controls like `ObjectStatus` (you can copy the whole code and replace the existing code in the file):
 
-    ```XML hl_lines="4 16 28-34"
+    ```XML[4,16,28-34]
     <mvc:View
         controllerName="ns.mitigations.controller.Object"
         xmlns="sap.m"
@@ -256,221 +187,8 @@ The change in the `manifest.yaml` is to make sure that the data requests are use
     !![SAPUI5 App Object](freestyleui5object.png)
 
 [DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 5: ]((Optional) SAPUI5 Serve)]
+The result of this tutorial can be found in the [`create-ui-freestyle-sapui5`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-ui-freestyle-sapui5) branch.
 
-[OPTION BEGIN [macOS/Linux]]
-
-   > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
-
-While `cds watch` comes in handy for serving even the SAPUI5 based apps directly in your CAP projects, there's also an additional alternative, again from the SAPUI5 tools. They also provide a development server that can be used in any pure SAPUI5 project. So, you can use the SAPUI5 development server when there's no CAP service around and/or the service is provided by a different technology. Here are some advantages of the SAPUI5 development server compared to `cds watch`, depending on how deep you want to be involved in SAPUI5 freestyle programming.
-
-- You can run multiple servers at a time (`cds watch` can only run once).
-- A live reload (that is, automatic browser refresh on saving) of all the UI changes.
-- Loading local SAPUI5 resources from dependencies.
-- Serve middleware.
-    - Proxy for backend service
-    - Cache behavior for SAPUI5 resources
-    - Theme Build on-the-fly for library development
-    - Transpiling middleware
-
-If these are of interest to you, you can go on using `cds watch` and skip the rest of the section.
-
-You now add the capability of live reloading to the configuration of the SAPUI5 tools. After enabling it, every time you save a file in your `mitigations` app, the browser window will automatically reload the new sources and show them.
-
-1. Open the `package.json` file in your `cpapp/app/mitigations` folder.
-
-2. Add the following lines to add the live reload module:
-
-    ```JSON hl_lines="6 11"
-    {
-        ...
-        "devDependencies": {
-            "@ui5/cli": "^1.14.0",
-            "ui5-middleware-simpleproxy": "^0.2.1",
-            "ui5-middleware-livereload": "^0.1.10"
-        },
-        "ui5": {
-            "dependencies": [
-                "ui5-middleware-simpleproxy",
-                "ui5-middleware-livereload"
-            ]
-        }
-    }
-    ```
-
-3. Open the `ui5.yaml` file in your `cpapp/app/mitigations` folder.
-
-4. Add the following lines to configure SAPUI5 tools to use the live reload module:
-
-    ```YAML hl_lines="9-15"
-        ...
-        server:
-          customMiddleware:
-          - name: ui5-middleware-simpleproxy
-            mountPath: /service/risk
-            afterMiddleware: compression
-            configuration:
-              baseUri: http://localhost:4004/service/risk
-          - name: ui5-middleware-livereload
-            afterMiddleware: compression
-            configuration:
-              debug: true
-              ext: "xml,json,properties"
-              port: 35729
-              path: "webapp"
-
-    ```
-    > Additional Documentation:
-
-    > In a projects `ui5.yaml` file, you can define additional server middleware modules that will be executed when the request is received by the server. This configuration exclusively affects the server started in this project. See [UI5 Tooling](https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/) documentation for more details.
-
-5. From your `cpapp` folder, navigate to your `mitigations` folder:
-
-    ```bash
-    cd app/mitigations/
-    ```
-
-6. Check if a (hidden) file called `.npmrc` exists:
-
-    ```bash
-    ls -a
-    ```
-6. Delete the file `.npmrc` if it exists:
-
-    ```bash
-    rm .npmrc
-    ```
-7. Install the npm packages:
-
-    ```bash
-    npm install
-    ```
-
-8. Start the application. Make sure that `cds watch` is running in another terminal:
-
-    ```bash
-    ui5 serve
-    ```
-
-9. Open the new URL <http://localhost:8080/index.html>.
-
-    You now see the mitigations.
-
-    !![Mitigations](ui5serve_mitigations.png)
-[OPTION END]
-[OPTION BEGIN [Windows]]
-
-   > ### To earn your badge for the whole mission, you'll need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
-
-While `cds watch` comes in handy for serving even the SAPUI5 based apps directly in your CAP projects, there's also an additional alternative, again from the SAPUI5 tools. They also provide a development server that can be used in any pure SAPUI5 project. So, you can use the SAPUI5 development server when there's no CAP service around and/or the service is provided by a different technology. Here are some advantages of the SAPUI5 development server compared to `cds watch`, depending on how deep you want to be involved in SAPUI5 freestyle programming.
-
-- You can run multiple servers at a time (`cds watch` can only run once).
-- A live reload (that is, automatic browser refresh on saving) of all the UI changes.
-- Loading local SAPUI5 resources from dependencies.
-- Serve middleware.
-    - Proxy for backend service
-    - Cache behavior for SAPUI5 resources
-    - Theme Build on-the-fly for library development
-    - Transpiling middleware
-
-If these are of interest to you, you can go on using `cds watch` and skip the rest of the section.
-
-You now add the capability of live reloading to the configuration of the SAPUI5 tools. After enabling it, every time you save a file in your `mitigations` app, the browser window will automatically reload the new sources and show them.
-
-1. Open the `package.json` file in your `cpapp/app/mitigations` folder.
-
-2. Add the following lines to add the live reload module:
-
-    ```JSON hl_lines="6 11"
-    {
-        ...
-        "devDependencies": {
-            "@ui5/cli": "^1.14.0",
-            "ui5-middleware-simpleproxy": "^0.2.1",
-            "ui5-middleware-livereload": "^0.1.10"
-        },
-        "ui5": {
-            "dependencies": [
-                "ui5-middleware-simpleproxy",
-                "ui5-middleware-livereload"
-            ]
-        }
-    }
-    ```
-
-3. Open the `ui5.yaml` file in your `cpapp/app/mitigations` folder.
-
-4. Add the following lines to configure SAPUI5 tools to use the live reload module:
-
-    ```YAML hl_lines="9-15"
-        ...
-        server:
-          customMiddleware:
-          - name: ui5-middleware-simpleproxy
-            mountPath: /service/risk
-            afterMiddleware: compression
-            configuration:
-              baseUri: http://localhost:4004/service/risk
-          - name: ui5-middleware-livereload
-            afterMiddleware: compression
-            configuration:
-              debug: true
-              ext: "xml,json,properties"
-              port: 35729
-              path: "webapp"
-
-    ```
-    > Additional Documentation:
-
-    > In a projects `ui5.yaml` file, you can define additional server middleware modules that will be executed when the request is received by the server. This configuration exclusively affects the server started in this project. See [UI5 Tooling](https://sap.github.io/ui5-tooling/pages/extensibility/CustomServerMiddleware/) documentation for more details.
-
-5. From your `cpapp` folder, navigate to your `mitigations` folder:
-
-    ```bash
-    cd app/mitigations/
-    ```
-
-6. Check if a (hidden) file called `.npmrc` exists:
-
-    ```bash
-    Get-ChildItem -Hidden
-    ```
-    ```bash
-    dir
-    ```
-
-
-6. Delete the file `.npmrc` if it exists:
-
-    ```bash
-    del .npmrc
-    ```
-
-7. Install the npm packages:
-
-    ```bash
-    npm install
-    ```
-
-8. Start the application. Make sure that `cds watch` is running in another terminal:
-
-    ```bash
-    ui5 serve
-    ```
-
-9. Open the new URL <http://localhost:8080/index.html>.
-
-    You now see the mitigations.
-
-    !![Mitigations](ui5serve_mitigations.png)
-[OPTION END]
-
-
-[DONE]
-
-The result of this tutorial can be found in the [`cap/freestyle-ui5-app`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/freestyle-ui5-app) branch.
 
 [ACCORDION-END]
 ---

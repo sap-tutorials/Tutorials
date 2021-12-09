@@ -2,8 +2,8 @@
 title: Implement Deep Linking to Another App from an MDK App
 description: Open a web page or navigate to an installed app from an MDK app.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -42,27 +42,26 @@ If you are building a custom version of Mobile development kit client, there you
 
     !![MDK](img-1.2.png)
 
-    >If you do not see Welcome page, you can access it via **Help** menu.
+    >If you do not see the Welcome page, you can access it via **Help** menu or via **View** menu > Find Command > Welcome.
 
 3. Select **MDK Project** and click **Start**.
 
     !![MDK](img-1.3.png)  
 
-4. In *Type* step, select or provide the below information and click **Next**:
+4. In *Basic Information* step, select or provide the below information and click **Finish**:
 
     | Field | Value |
     |----|----|
-    | `MDK template type`| Select `Empty` from the dropdown |
-    | `Your project name` | `MDKDeepLink` |
-    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
+    | `MDK Template Type`| Select `Empty` from the dropdown |
+    | `Your Project Name` | `MDKDeepLink` |
+    | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
 
     !![MDK](img-1.4.png)
 
     >The _MDK Empty Project_ template creates a Logout action, Close page action, rule and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.  
-
-5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKDeepLink` project in the project explorer.
+5. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKDeepLink` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -264,6 +263,10 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     !![MDK](img-5.3.png)   
 
+5. If you want to enable source for debugging the deployed bundle, then choose **Yes**.
+
+    !![MDK](img-4.4.png)    
+
     You should see **Deploy to Mobile Services successfully!** message.
 
     !![MDK](img-5.4.png)
@@ -279,7 +282,10 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 
 !![MDK](img-6.1.png)
 
+The On-boarding QR code is now displayed.
+
 !![MDK](img-6.2.png)
+
 
 >Leave the Onboarding dialog box open for step 7.
 
@@ -288,7 +294,7 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 
 [ACCORDION-BEGIN [Step 7: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 [OPTION BEGIN [Android]]
 

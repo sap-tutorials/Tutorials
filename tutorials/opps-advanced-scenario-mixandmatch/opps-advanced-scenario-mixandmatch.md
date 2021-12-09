@@ -1,9 +1,9 @@
 ---
-title: Apply Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing
+title: Apply a Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing
 description: Use SAP Omnichannel Promotion Pricing to calculate the effective sales price by applying a mix-and-match promotion rule on top of the regular sales price.
 auto_validation: true
-time: 10
-tags: [ tutorial>advanced, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+time: 20
+tags: [tutorial>advanced, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
 primary_tag: products>sap-business-technology-platform
 ---
 
@@ -14,13 +14,16 @@ primary_tag: products>sap-business-technology-platform
 - You have a subaccount in the Cloud Foundry environment, with Amazon Web Services (AWS) as provider and the Europe (Frankfurt) region.
 - You have set up SAP Omnichannel Promotion Pricing as described in [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
 
-
+> Please be aware that temporarily new trial accounts cannot be created. You can only work with this tutorial if you already have an existing trial account for SAP Omnichannel Promotion Pricing.
 
 ## Details
 ### You will learn
 - How to use the SAP Omnichannel Promotion Pricing trial on SAP BTP
 - How to upload a **mix-and-match promotional rule** with the help of the SAP API Business Hub
 - How to execute a calculation request to determine the effective sales price
+
+>This tutorial includes steps and screenshots based on the classic design of the SAP API Business Hub. To use the classic design, navigate to the upper right corner and disable the **New SAP API Business Hub** option.
+	![Switch API Business Hub Layout](Switch API Business Hub Layout.png)
 
 ---
 

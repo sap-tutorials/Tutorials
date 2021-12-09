@@ -3,8 +3,8 @@ title: Troubleshoot SQL with SAP HANA Database Explorer
 description: Explore the available tools to help diagnose and debug SQL or SQLScript.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition ]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition ]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -38,7 +38,7 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
     ![Set Breakpoints](DebuggerBreakpoints.png)
 
-  4. Right-click the procedure named `RESERVATION_GENERATOR` in the database browser and select **Generate Call Statement** or **Generate Call Statement with UI**.
+  4. Right-click the procedure named `RESERVATION_GENERATOR` in the database browser and select **Generate Call Statement**.
 
     ![Generate Call Statement](GenerateCallStatement.png)
 
@@ -58,7 +58,7 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
     ![Debugger Navigation Icons](DebuggerNavigationIcons.png)
 
-    >For more information on the SAP database explorer debugger, see the [Debugger Tutorials](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/5f452e148e2440f89d6d94cdb1d73b70.html).
+    >For more information on the SAP database explorer debugger, see the [Debugger Tutorials](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/5f452e148e2440f89d6d94cdb1d73b70.html).
 
 [DONE]
 [ACCORDION-END]
@@ -90,7 +90,7 @@ The code coverage tool shows statements that have been run.  This can be helpful
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](SQLScript analysis)]
-The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18aef632687f0/2020_02_QRC/en-US/f7e1c7fbce6f4db49e29d7cc58b78384.html) can be used to identify patterns indicating problems in code quality, security, or performance.  Follow the steps below to try it out.
+The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18aef632687f0/latest/en-US/f7e1c7fbce6f4db49e29d7cc58b78384.html) can be used to identify patterns indicating problems in code quality, security, or performance.  Follow the steps below to try it out.
 
 1. Create a new procedure to generate fictitious hotel reservations. The procedure accepts a number of reservations to generate and a room type.
 
@@ -172,7 +172,7 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
 
 5. To address these issues, make the following changes and rerun the SQL in the SQL Console tab.  
     * The first issue can be resolved by commenting out `unusedVar` on lines 19 and 23.  
-    * The second issue can be resolved by checking the input parameter `rmType` with the [IS SQL INJECTION SAFE](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/2020_02_QRC/en-US/4496cc5717e847feb7daa41516047df9.html) function.  Uncomment lines 24 - 26 to try this.
+    * The second issue can be resolved by checking the input parameter `rmType` with the [IS SQL INJECTION SAFE](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/4496cc5717e847feb7daa41516047df9.html) function.  Uncomment lines 24 - 26 to try this.
 
 3. Right-click the procedure and choose **Analyze SQLScript Code**.
 
@@ -297,7 +297,17 @@ A SQL trace can be helpful when debugging a problem or in identifying SQL statem
     ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'SYSTEM') SET ('sqltrace', 'trace') = 'on', ('sqltrace', 'tracefile') = 'database_overview', ('sqltrace', 'application') = 'sap_xsac_hrtt', ('sqltrace', 'user') = 'SYSTEM' WITH RECONFIGURE;
     ```
 
-    >Additional details can be found in the [Configuration Parameter Reference](https://help.sap.com/viewer/138dcf7d779543608917a2307a6115f2/2020_03_QRC/en-US/514ab38a2e574c85a70ebba80ff16d99.html#loio514ab38a2e574c85a70ebba80ff16d99__configHC_id_30).
+    >Additional details can be found in the [Configuration Parameter Reference](https://help.sap.com/viewer/138dcf7d779543608917a2307a6115f2/latest/en-US/514ab38a2e574c85a70ebba80ff16d99.html#loio514ab38a2e574c85a70ebba80ff16d99__configHC_id_30).
+
+    >---
+
+    >The names of the configuration files, their contents, and a history of changes can be viewed by performing a select against the following monitoring views:
+    >
+    - M_INIFILES
+    - M_INIFILE_CONTENTS
+    - M_INIFILE_CONTENT_HISTORY
+    - CONFIGURATION_PARAMETER_PROPERTIES
+    - M_CONFIGURATION_PARAMETER_VALUES
 
 
 3. Press the refresh button on the database overview.
@@ -342,7 +352,7 @@ A SQL trace can be helpful when debugging a problem or in identifying SQL statem
 
     ![trace files](traceFiles.png)
 
->For additional details, consult the [Traces](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/7e31247372fb4dd7b8c6bbac758b8c91.html) topic in the SAP HANA Administration Guide for SAP HANA Platform and SAP Note [2119087 - How-To: Configuring SAP HANA Traces](https://launchpad.support.sap.com/#/notes/2119087).
+>For additional details, consult the [Traces](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/7e31247372fb4dd7b8c6bbac758b8c91.html) topic in the SAP HANA Administration Guide, SAP Note [2119087 - How-To: Configuring SAP HANA Traces](https://launchpad.support.sap.com/#/notes/2119087) and SAP Note [2186744 - FAQ: SAP HANA Parameters](https://launchpad.support.sap.com/#/notes/2186744).
 
 [DONE]
 [ACCORDION-END]
@@ -378,7 +388,7 @@ It can be important to examine SQL statements that consume large amounts of time
 
     ![expensive statements](expensiveTrace.png)
 
-3. When using SAP HANA Cloud or the on-premise SP 13 or higher database explorer, the messages tab also contains detailed information about the duration, CPU, and memory consumed by a statement.
+3. When using SAP HANA Cloud or the on-premise SP 13 or higher SAP HANA database explorer, the messages tab also contains detailed information about the duration, CPU, and memory consumed by a statement.
 
     ![Resource consumption](messages-tab.png)
 
@@ -389,12 +399,13 @@ It can be important to examine SQL statements that consume large amounts of time
     ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('resource_tracking', 'enable_tracking') = 'on' WITH RECONFIGURE;
     ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('resource_tracking', 'memory_tracking') = 'on' WITH RECONFIGURE;
     > ```
+    > For additional details see [SAP HANA Configuration Parameter Reference](https://help.sap.com/viewer/009e68bc5f3c440cb31823a3ec4bb95b/latest/en-US/514ab38a2e574c85a70ebba80ff16d99.html).
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Viewing trace files with SQL)]    
-The SAP HANA database provides a set of monitoring views enabling access to the trace files.  An example is [`M_MERGED_TRACES` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/2020_03_QRC/en-US/20b52c0075191014a43fb02951633999.html) which contains the content of multiple trace files enabling a query to be performed across trace files for a certain time period.  The following instructions provide some examples of accessing the views.
+The SAP HANA database provides a set of monitoring views enabling access to the trace files.  An example is [`M_MERGED_TRACES` System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20b52c0075191014a43fb02951633999.html) which contains the content of multiple trace files enabling a query to be performed across trace files for a certain time period.  The following instructions provide some examples of accessing the views.
 
 1. Information about the available trace files and content from individual trace files can be queried.
 

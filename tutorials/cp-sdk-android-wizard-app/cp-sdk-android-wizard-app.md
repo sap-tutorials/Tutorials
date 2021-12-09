@@ -10,10 +10,10 @@ time: 30
 ---
 
 ## Prerequisites
-- You [created a trial account on SAP BTP](hcp-create-trial-account).
-- [Enabled SAP Mobile Services](fiori-ios-hcpms-setup) on **Cloud Foundry**.
-- Installed [Android Studio 4.1.x](https://developer.android.com/studio/archive). Please use the specified version.
-- [Downloaded](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20android) and [Installed](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/android/setup.html) version 3.3.x of the SAP BTP SDK for Android.
+- You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
+    - **SAP Mobile Services**
+- Installed [Android Studio 4.2.x](https://developer.android.com/studio/archive). Please use the specified version.
+- [Downloaded](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20android) and [Installed](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/android/setup.html) version 3.4.x of the SAP BTP SDK for Android.
 - Created a Google account.
 
 ## Details
@@ -38,12 +38,12 @@ time: 30
 
     | Field | Value |
     |:----|:----|
-    | Account Name | **`SAP Mobile Services Trial`** |
+    | Account Name | **`SAP Mobile Services`** |
     | Admin API URL | **`See below for how to get this URL`** |
     | Admin UI URL | **`See below for how to get this URL`** |
     | Authentication Type | **`Basic`** |
-    | Username | **`Username for your trial account`** |
-    | Password | **`Password for your trial account`** |
+    | Username | **`Username for your account`** |
+    | Password | **`Password for your account`** |
     | Save Account Information | **`Check this so that you do not have to re-enter account information on subsequent runs of the wizard`** |
 
 4.  Go to the [SAP Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/) and under **Important Links**, both Admin URLs are present and can be copied.

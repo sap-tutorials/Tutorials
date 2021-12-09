@@ -5,7 +5,7 @@ title: Activate Kanban Business Template
 description: Activate the pre-delivered kanban template in your SAP Internet of Things tenant, which will create the Business Context, Business Context Hierarchy and Auto-ID Event Enrichment objects for you automatically.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, products>sap-internet-of-things, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, software-product>sap-internet-of-things, software-product>sap-business-technology-platform ]
 primary_tag: topic>internet-of-things
 ---
 

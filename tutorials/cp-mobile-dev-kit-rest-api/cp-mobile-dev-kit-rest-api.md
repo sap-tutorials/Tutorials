@@ -2,8 +2,8 @@
 title: Consume a REST API in an MDK App
 description: Create a fully functional multi-channel application consuming Petstore REST API.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 30
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -35,7 +35,7 @@ A publicly available `Petstore` API from [swagger.io](https://petstore.swagger.i
 
 [ACCORDION-BEGIN [Step 1: ](Understand the Petstore API to retrieve data)]
 
-1. Open [`Swagger Petstore`](https://petstore.swagger.io/), find all pets with status as `available`.
+1. Open *[`Swagger Petstore`](https://petstore.swagger.io/)*, find all pets with status as `available`.
 
     !![MDK](img_1.1.png)
 
@@ -63,7 +63,7 @@ With above details, you will next configure an app in Mobile Services, add root 
 
     !![MDK](img-2.2.png)
 
-3. Provide the required information and click **Next**.
+3. In **Basic Info** step, provide the required information and click **Next**.
 
     | Field | Value |
     |----|----|
@@ -100,12 +100,13 @@ With above details, you will next configure an app in Mobile Services, add root 
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 3: ](Create a new destination to your MDK Web application)]
 
 1. Download the zip file from [here](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/4-Level-Up-with-the-Mobile-Development-Kit/8-Consume-rest-api-in-mdk-app/swagger_petstore.zip) and unzip it on your machine.
 
-2. Navigate to **Destinations** to create a BTP destination, click **Import Destination** to import the extracted file and click **Save**.
+    !![MDK](img-2.8.0.png)
+
+2. Navigate to ![Connectivity](icon-connectivity.png) **Connectivity** **&rarr;** **Destinations** to create a BTP destination, click **Import Destination** to import the extracted file and click **Save**.
 
     !![MDK](img-2.8.png)
 
@@ -121,27 +122,26 @@ With above details, you will next configure an app in Mobile Services, add root 
 
     !![MDK](img-3.2.png)
 
-    >If you do not see Welcome page, you can access it via **Help** menu.
+    >If you do not see the Welcome page, you can access it via **Help** menu or via **View** menu > Find Command > Welcome.
 
 3. Select **MDK Project** and click **Start**.
 
     !![MDK](img-3.3.png)  
 
-4. In *Type* step, select or provide the below information and click **Next**:
+4. In *Basic Information* step, provide the below information and click **Finish**:
 
     | Field | Value |
     |----|----|
-    | `MDK template type`| Select `Empty` from the dropdown |
-    | `Your project name` | `MDK_Petstore` |
-    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
+    | `MDK Template Type`| Select `Empty` from the dropdown |
+    | `Your Project Name` | `MDK_Petstore` |
+    | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
 
     !![MDK](img-3.4.png)
 
     >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.
-
-5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Petstore` project in the project explorer.
+5. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Petstore` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -159,15 +159,15 @@ With above details, you will next configure an app in Mobile Services, add root 
 
 3. Select the application `com.sap.mdk.restapi` from Mobile Services.    
 
-    !![MDK](img_4.2.png)
+    !![MDK](img-4.2.png)
 
 4. Provide or select the below information:
 
     | Field | Value |
     |----|----|
     | `Name`| `<Provide any name of your choice>` |
-    | `Service Source Type` | Select `Mobile` from the dropdown |
-    | `Destination Name` | Select `swagger_petstore` from the dropdown |
+    | `Data Source` | Select `Mobile Services` from the dropdown |
+    | `Destination` | Select `swagger_petstore` from the dropdown |
     | `Path Suffix` | Leave it as it is |
     | `Language URL Param` | Leave it as it is |
     | `REST Service` | Check it |
@@ -243,7 +243,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     MDK editor will deploy the metadata to Mobile Services (for Mobile application) followed by to Cloud Foundry (for Web application).
 
-    !![MDK](img-6.2.gif)
+    !![MDK](img-6.2.png)
 
     You should see successful messages for both deployments.
 
@@ -256,7 +256,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 [OPTION BEGIN [Android]]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
@@ -276,7 +276,7 @@ Once you accept app update, you will see the Pets list on the **Main** page.
 
 [OPTION BEGIN [iOS]]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
@@ -285,6 +285,7 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 !![MDK](img-7.1.png)
 
 !![MDK](img-7.2.png)
+
 
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
@@ -417,7 +418,7 @@ In this step, you will create the `Pet_Create.page` as a **Form Cell Page**. Thi
 
     | Field | Value |
     |----|----|
-    | `action Name`| `CreatePet` |
+    | `Action Name`| `CreatePet` |
     | `Service` | Select `petstore.service` from the dropdown |
     | `Path` | `/pet` |
 
@@ -429,7 +430,7 @@ In this step, you will create the `Pet_Create.page` as a **Form Cell Page**. Thi
     |----|----|
     | `Method`| `POST` |
 
-4. Under `Body`, switch to `object type` by clicking the icon, once it's color has changed click on `Body[0]` to add array items, this should now display a create icon in front of `Body[0]`. Click Create icon to create an array item(0).
+4. Under `Body`, switch to `object type` by clicking the icon, once it's color has changed, click on `Body[0]` to add array items, this should now display a create icon in front of `Body[0]`. Click Create icon to create an array item(0).
 
     Provide the below information:
 
@@ -512,7 +513,7 @@ Now, create a navigation action that will open the `Pet_Create.page` when execut
     | `PageToOpen` | Select `Pet_Create.page` from the dropdown |
     | `ModalPage`| Select `true` from the dropdown |
 
-    !![MDK](img_14.png)
+    !![MDK](img-14.png)
 
 3. Click **Next** and then **Finish** on the confirmation step.
 

@@ -2,8 +2,8 @@
 title: Add Internationalization and Localization to an MDK App
 description: Localize the UI text strings and format the values according to device's or browser's or app's current locale.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -23,6 +23,7 @@ author_profile: https://github.com/jitendrakansal
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/7-Add-internationalization-and-localization-to-an-mdk-app) and start directly with step 8 in this tutorial.
 
 ---
+
 
 [ACCORDION-BEGIN [Step 1: ](Understand the Internationalization and Localization)]
 
@@ -47,44 +48,45 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.2.png)
 
-    >If you do not see Welcome page, you can access it via **Help** menu.
+    >If you do not see the Welcome page, you can access it via **Help** menu or via **View** menu > Find Command > Welcome.
 
 3. Select **MDK Project** and click **Start**.
 
     !![MDK](img-1.3.png)
 
-4. In *Type* step, select or provide the below information and click **Next**:
+4. In *Basic Information* step, provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `MDK template type`| Select `List Detail` from the dropdown |
-    | `Your project name` | `MDK_i18n_l10n` |
-    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
+    | `MDK Template Type`| Select `List Detail` from the dropdown |
+    | `Your Project Name` | `MDK_i18n_l10n` |
+    | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
 
     !![MDK](img-1.4.png)        
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.
+    >This screen will only show up when your CF login session has expired. Enter your login credentials, click Login icon and select the org & space where you have set up the initial configuration for your MDK app.
 
-5. In *Service Name* step, provide or select the below information and click **Next**:
+    >!![MDK](img-1.4.1.png)
+
+5. In *Service configuration* step, provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `Service File Name`| `<Provide any name of your choice>` |
-    | `OData Source` | Select `Mobile Services` from the dropdown |
+    | `Data Source` | Select `Mobile Services` from the dropdown |
     | `Mobile Services Landscape` | Select `standard` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
     | `Destination` | Select `SampleServiceV2` from the dropdown |
     | `Enter a path to the OData service` | Leave it as it is |
-    | `Language URL` | Leave it with the default value |
     | `Enable Offline` | It's enabled by default |
 
     !![MDK](img-1.5.png)       
 
-6. In *Collection* step, select `Customers` and `SalesOrderHeaders`. Click **Finish** to complete the project creation.
+6. In *Data Collections* step, select `Customers` (if not selected by default) and `SalesOrderHeaders`. Click **Finish** to complete the project creation.
 
     !![MDK](img-1.6.png)
 
-9. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_i18n_l10n` project in the project explorer.
+9. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_i18n_l10n` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -101,7 +103,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     MDK editor will deploy the metadata to Mobile Services (for Mobile application) followed by to Cloud Foundry (for Web application).
 
-    !![MDK](img-3.2.gif)
+    !![MDK](img-3.2.png)
 
     You should see successful messages for both deployments.
 
@@ -114,13 +116,15 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 [OPTION BEGIN [Android]]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-1. Click `Application.app` to open in the MDK Application editor and click **Application QR Code** icon to display the QR code.
+1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
     !![MDK](img-4.1.png)
+
+    The On-boarding QR code is now displayed.
 
     !![MDK](img-4.2.png)
 
@@ -130,7 +134,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
     ![MDK](img-5.1.png)
 
-    You will learn how to translate the UI texts on this screen (`Main`, `CUSTOMERS`, `SALESORDERHEADERS`, `LOGOUT` and `SYNC`) to their respective localized strings in the German language.
+    In next steps, you will learn how to translate the UI texts on this screen (`Main`, `CUSTOMERS`, `SALESORDERHEADERS`, `LOGOUT` and `SYNC`) to their respective localized strings in the German language.
 
 3. Tap **SALESORDERHEADERS** to navigate to Sales order List.
 
@@ -140,13 +144,15 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 [OPTION BEGIN [iOS]]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-1. Click `Application.app` to open in the MDK Application editor and click **Application QR Code** icon to display the QR code.
+1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
     !![MDK](img-4.1.png)
+
+    The On-boarding QR code is now displayed.
 
     !![MDK](img-4.2.png)
 
@@ -156,13 +162,14 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
     ![MDK](img-5.3.png)
 
-    You will learn how to translate the UI texts on this screen (`Main`, `Customers`, `SalesOrderHeaders`, `Logout` and `Sync`) to their respective localized strings in the German language.
+    In next steps, you will learn how to translate the UI texts on this screen (`Main`, `Customers`, `SalesOrderHeaders`, `Logout` and `Sync`) to their respective localized strings in the German language.
 
-3. Tap `SalesOrderHeaders` to navigate to Sales Order List. You will see that Title property has been styled.
+3. Tap `SalesOrderHeaders` to navigate to Sales Order List.
 
     ![MDK](img-5.4.png)
 
 [OPTION END]
+
 
 [OPTION BEGIN [Web]]
 
@@ -177,9 +184,9 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
     !![MDK](img-5.7.png)
 
-    You will learn how to translate the UI texts on this screen (`Main`, `Customers`, `SalesOrderHeaders`, and `Logout`) to their respective localized strings in the German language.
+    In next steps, you will learn how to translate the UI texts on this screen (`Main`, `Customers`, `SalesOrderHeaders`, and `Logout`) to their respective localized strings in the German language.
 
-2. Click `SalesOrderHeaders` to navigate to Sales Order List. You will see that Title property has been styled.
+2. Click `SalesOrderHeaders` to navigate to Sales Order List.
 
     !![MDK](img-5.8.png)
 
@@ -302,15 +309,25 @@ Let's start with Currency formatter:
 
 1. Click `SalesOrderHeaders_List.page` to open it in the MDK Page Editor.
 
-2. The Object Table control's **Footnote** property is bound to the OData property `{GrossAmount}`. You will format the property value using the `Currency` formatter. In the **Properties** pane, click **link** icon for the **Footnote** property.
+2. The Object Table control's **Status** property is bound to the OData property `{GrossAmount}`. You will format the property value using the `Currency` formatter. In the **Properties** pane, click **link** icon for the **Footnote** property.
 
 3. Cut or remove the default expression in the object browser.
 
 4. Select **i18n Objects** in the dropdown and then select **Currency** in the formatters dropdown.
 
-5.  Select **Euro Member Countries** for **Country Code**, click **Insert** to generate the expression, paste or type the `{GrossAmount}` for the currency value placeholder.
+5.  Select **Euro Member Countries** for **Country Code**, click **Insert** to generate the expression, **do not close the Object Browser window**.
 
     !![MDK](img-8.1.gif)
+
+    The generated expression looks like below:
+
+    ```JSON
+    $(C,,'EUR','',{minimumIntegerDigits:1,minimumFractionDigits:0,maximumFractionDigits:2,useGrouping:true})
+    ```
+
+6. You will now bind the Currency value placeholder with the `GrossAmount` property of the `SalesOrderHeaders` entity. Put the cursor before the second comma (from left side). Choose **OData Objects** option from the dropdown, select the `GrossAmount` property under the `SalesOrderHeader` and click **Insert** to generate the new expression.
+
+    !![MDK](img-8.0.gif)
 
     The new expression looks like below:
 
@@ -318,7 +335,7 @@ Let's start with Currency formatter:
     $(C,{GrossAmount},'EUR','',{minimumIntegerDigits:1,minimumFractionDigits:0,maximumFractionDigits:2,useGrouping:true})
     ```
 
-    Since there is already an OData property `CurrencyCode` part of `SalesOrderHeaders` entity, it would be best to use the value coming directly from the backend instead providing a constant value. So, replace the generated expression with below:
+    Since there is already an OData property `CurrencyCode` part of `SalesOrderHeaders` entity, it would be best to use the value coming directly from the backend instead providing a constant value. So, replace the 'EUR' with `{CurrencyCode}` so the final expression should look like below:
 
     ```JSON
     $(C,{GrossAmount},{CurrencyCode},'',{minimumIntegerDigits:1,minimumFractionDigits:0,maximumFractionDigits:2,useGrouping:true})
@@ -326,21 +343,29 @@ Let's start with Currency formatter:
 
 7. Click **OK**.
 
-8. You will now format the Title property's value `{CreatedAt}` using `DateTime` formatter.
+8. You will now format the **Subhead** property's value `{CreatedAt}` using `DateTime` formatter.
 
     `Syntax: $(DT, <Value>, <Locale>, <Timezone>)`
 
-9. Click **link** icon for the **Title** property.
+9. Click **link** icon for the **Subhead** property.
 
 10. Cut or remove the default expression in the object browser, select **i18n Objects** in the dropdown, select `DateTime` in the formatters dropdown.
 
-11. Select **Medium** for **Display Format** and click **Insert** to generate the expression.
-
-12. Paste or type the `{CreatedAt}` for the date time value placeholder.
+11. Select **Medium** for **Display Format** and click **Insert** to generate the expression, **do not close the Object Browser window**.
 
     !![MDK](img-8.2.gif)
 
-    The new expression should look like below:
+    The generated expression should look like below:
+
+    ```JSON
+    $(DT,,'','',{format:'medium'})
+    ```
+
+12. You will now bind the `DateTime` value placeholder with the `CreatedAt` property of the `SalesOrderHeaders` entity. Put the cursor before the second comma (from left side). Choose **OData Objects** option from the dropdown, select the `CreatedAt` property under the `SalesOrderHeader` and click **Insert** to generate the new expression.
+
+    !![MDK](img-8.3.gif)
+
+    The new expression looks like below:
 
     ```JSON
     $(DT,{CreatedAt},'','',{format:'medium'})

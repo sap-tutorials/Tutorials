@@ -2,15 +2,15 @@
 author_name: Supriya Cherukunnathu
 author_profile: https://github.com/SupriyaCherukunnathu
 title: Send Data with REST
-description: Send data to the SAP Cloud Platform Internet of Things Service Cloud using REST.
+description: Send data to the SAP IoT services for SAP BTP Cloud using REST.
 auto_validation: true
-primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform ]
+primary_tag: products>sap-iot-services for-sap-btp
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, product>sap-edge-services, products>sap-iot-services for-sap-btp, products>sap-business-technology-platform ]
+time: 20
 ---
 
 
 ## Prerequisites
- - **Proficiency:** Beginner
  - **Tutorials:** You have completed [Install cURL](iot-cf-install-curl) and [Install OpenSSL](iot-cf-install-openssl).
 
 ## Details
@@ -19,8 +19,6 @@ tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>clo
 - How to send data to the Internet of Things Service Cloud using REST
 - How to use cURL as a sample client for REST
 
-### Time to Complete
-20 min
 
 ---
 
@@ -191,6 +189,8 @@ Open the terminal (macOS) or command line tool CMD (Windows) and change the dire
 
 **Send data using cURL (only for cURL with OpenSSL on Windows or for cURL without SecureTransport using LibreSSL on macOS).**
 
+>You should not use -k option when using curl in production. This is presented in this document as part of testing tutorials. -k option allows insecure connection to the server. Therefore, make sure to omit -k option if you are using this in production. For more information, refer to curl documentation.
+
 1.  Enter and send the message string.
 
     ```JSON
@@ -218,7 +218,7 @@ Open the terminal (macOS) or command line tool CMD (Windows) and change the dire
 
     `< HTTP/1.1 202 Accepted`
 
-3.  You can check the incoming values using the **Data Visualization** of the device in the Internet of Things Service Cockpit or the Message Processing API. For more information, please refer to the tutorial [Consume Measures](iot-cf-consume-measures).
+3.  You can check the incoming values using the **Data Visualization** of the device in the Internet of Things Service Cockpit or the Message Processing API.
 
 
 **Send data using cURL (only for cURL with SecureTransport on macOS).**
@@ -251,7 +251,7 @@ Open the terminal (macOS) or command line tool CMD (Windows) and change the dire
 
     `< HTTP/1.1 202 Accepted`
 
-3.  You can check the incoming values using the **Data Visualization** of the device in the Internet of Things Service Cockpit or the Message Processing API. For more information, please refer to the tutorial [Consume Measures](iot-cf-consume-measures).
+3.  You can check the incoming values using the **Data Visualization** of the device in the Internet of Things Service Cockpit or the Message Processing API.
 
 [DONE]
 

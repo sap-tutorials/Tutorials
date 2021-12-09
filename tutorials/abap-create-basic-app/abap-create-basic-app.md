@@ -3,7 +3,7 @@ title: Create and Run an ABAP Application
 description: Create and run an ABAP application based on tables from the sample EPM data model.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, products>sap-netweaver-7.5  ]
+tags: [  tutorial>beginner, products>sap-netweaver  ]
 time: 15
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
@@ -11,7 +11,7 @@ author_profile: https://github.com/julieplummer20
 
 ## Prerequisites  
 - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
-- **Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](https://developers.sap.com/tutorials/abap-create-project.html)
+- **Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](abap-create-project)
 
 ## Details
 ### You will learn  

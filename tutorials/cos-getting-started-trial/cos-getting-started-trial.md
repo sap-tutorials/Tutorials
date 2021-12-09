@@ -11,6 +11,8 @@ primary_tag: topic>cloud
  - You have registered for a trial account on [SAP Business Technology Platform](https://cloudplatform.sap.com/index.html).
  - You should be familiar with the SAP Business Technology Platform trial landscape (see [Get Started with SAP Business Technology Platform Trial](cp-trial-quick-onboarding)).
  - You have a subaccount in the **Cloud Foundry** environment, with **Amazon Web Services (AWS)** as provider and the **Europe (Frankfurt)** region.
+    - **It is no longer possible to create new trial accounts on the AWS region Frankfurt (Europe) cf-eu10.**
+    - **Existing accounts still work.**
 
 ## Details
 ### You will learn
@@ -62,29 +64,31 @@ Having created a service instance and the corresponding credentials, you can now
 
 1. Open a new browser window, navigate to [SAP Customer Order Sourcing on SAP API Business Hub](https://api.sap.com/api/Sourcing_API/resource), and login with your email address.
 
-2. Choose **Configure Environments** and then click **Create New Environment**.
+2. Navigate to **Overview** and choose **Try Out**.
 
-3. As your starting URL choose `https://cpfs-dtrt-trial.cfapps.eu10.hana.ondemand.com/v1`.
+3. Choose **Select Environment** and **Add New Environment**.
 
-4. Enter a name for your environment, for example `trial_test`.
+4. As your starting URL choose `https://cpfs-dtrt-trial.cfapps.eu10.hana.ondemand.com/v1`.
 
-5. In your **SAP Business Technology Platform trial** **Subaccount** open **Spaces** and your already existing space, probably called `dev`.
+5. Enter a name for your environment, for example `trial_test`.
 
-6. In the navigation pane, open **Services > Service Marketplace**.
+6. In your **SAP Business Technology Platform trial** **Subaccount** open **Spaces** and your already existing space, probably called `dev`.
 
-7. Search for **SAP Customer Order Souring** and click on the tile.
+7. In the navigation pane, open **Services > Service Marketplace**.
 
-8. In the navigation pane, open **Instances** and open the already existing instance, probably called `default_customer-order-sourcing-trial`.
+8. Search for **SAP Customer Order Souring** and click on the tile.
 
-9. From your instance copy the following fields to your new environment in the API Business Hub:
+9. In the navigation pane, open **Instances** and open the already existing instance, probably called `default_customer-order-sourcing-trial`.
+
+10. From your instance copy the following fields to your new environment in the API Business Hub:
 
     - `clientid`
-    - `clientsecret` (called just **Secret** in environment)
+    - `clientsecret`
     - `identityzone`
 
-10. Scroll down and choose the **Save this environment for future sessions** radio button.
+11. Scroll down and choose the **Save this environment for future sessions** radio button.
 
-11. Click **Save**.
+12. Click **Configure**.
 
 ![Configure Environments](Config_Environments.png)
 
