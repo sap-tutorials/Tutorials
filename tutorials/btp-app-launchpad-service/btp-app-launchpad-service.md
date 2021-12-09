@@ -453,7 +453,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 1. Choose **Security** **&rarr;** **Users** on the left.
 
 2. Choose your user.
-
+        
 4. Under **Role Collections** on the right, choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
 
     !![Add role](add_launchpad_admin_role.png)
