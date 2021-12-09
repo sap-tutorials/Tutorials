@@ -8,10 +8,10 @@ primary_tag: products>sap-business-technology-platform
 ---
 
 ## Prerequisites
- - When you use a **trial account**, complete the following set-up tutorials first:
+ - If you use a **trial account**, complete the following set-up tutorials first:
     - [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
     - [Manage Entitlements](cp-trial-entitlements)
- - When you use an **enterprise account**, complete the following set-up tutorials first:
+ - If you use an **enterprise account**, complete the following set-up tutorials first:
     - [Manage Entitlements](cp-trial-entitlements)
 
 ## Details
@@ -70,8 +70,7 @@ Select **Services** from the filter to get only the service tiles and find the s
 
 [ACCORDION-BEGIN [Step 3: ](Create a service instance)]
 
-1. You can get information about the selected service and the available plans.
-Click on the tile. The page expands to show instance details, such as its overview, available documentation, and service plans.
+1. You can get information about the selected service and the available plans. Click on the tile. The page expands to show instance details, such as its overview, available documentation, and service plans.
 
 2. Click on **Create** in the upper-right corner.
 
@@ -85,14 +84,14 @@ Click on the tile. The page expands to show instance details, such as its overvi
 
     |  Parameter      | Description
     |  :------------- | :-------------
-    |  **Service**    | This is where you select the **name** of the respective service with which you want to work. <div>&nbsp;</div>The Services list displays all three types of offerings: services, environments, and applications from the service marketplace.<div>&nbsp;</div>The technical name for each item is displayed on the right side of the list. This is how services, environments, or applications are referred to when using the supported APIs or CLI commands. If an offering can be consumed as both a service and an application, you'll see two technical names next to its commercial name.<div>&nbsp;</div>Since you've already selected the service, this field is populated with the desired value.
-    |  **Plan**          | Select a **service plan**.<div>&nbsp;</div> Every service has its own available plans. Aside from the information about the plans you get from the service overview page in the SAP BTP cockpit, you can also get more detailed information by performing the following actions:<div><ol><li>Go to [SAP Discovery Center](https://discovery-center.cloud.sap/) to obtain information on which plans are available. To do so, search for the name of the product you are interested in.</li><li>Select the tile of the product you are interested in.</li><li>From the available tabs, select **Pricing**. You can now see all Service Plans available (such as **Free**, **Default** / **Standard** or **Trial** service plans).</li></ol>As an example, see the screenshot below.</div>
+    |  **Service**    | This is where you select the **name** of the respective service with which you want to work. <div>&nbsp;</div>The Services list displays all three types of offerings: services, environments, and applications from the service marketplace.<div>&nbsp;</div>The technical name for each item is displayed on the right side of the list. This is how services, environments, or applications are referred to when using the supported APIs or commands for the [SAP BTP Command Line Interface (CLI)](cp-sapcp-getstarted). If an offering can be consumed as both a service and an application, you'll see two technical names next to its commercial name.<div>&nbsp;</div>Since you've already selected the service, this field is populated with the desired value.
+    |  **Plan**          | Select a **service plan**.<div>&nbsp;</div> Every service has its own available plans. Aside from the information about the plans you get from the service overview page in the SAP BTP cockpit, you can also get more detailed information by performing the following actions:<div><ol><li>Go to [SAP Discovery Center](https://discovery-center.cloud.sap/) to obtain information on which plans are available. To do so, search for the name of the product you are interested in.</li><li>Select the tile of the product you are interested in.</li><li>From the available tabs, select **Pricing**. You can now see all Service Plans available (such as **Free**, **Default** / **Standard** or **Trial** service plans). <div>&nbsp;</div> **Important:** If you want to experience SAP BTP without generating cost, make sure to only enable services with **Free** service plans.</li></ol>As an example, see the screenshot below.</div>
 
     !![Discovery Center](tutorial-instance-4-discovery-center.png)
 
 4. Depending on the service and the plan you've selected, you will be asked to add information on the **runtime environment**, **spaces**, and the **instance name**.
 
-5. You can either select **Create** or proceed to the step 2 of the wizard.<div>&nbsp;</div>Some services provide additional configuration parameters to define in that step. Open the additional info next to **Configure instance parameters** to get more information about the available parameters.
+5. You can either select **Create** or proceed to step 2 of the wizard.<div>&nbsp;</div>Some services provide additional configuration parameters to define in that step. Open the additional info next to **Configure instance parameters** to get more information about the available parameters.
 
 6. Select **Create**. If the creation was successful, the table will be updated accordingly. Once the status bar has jumped from **Processing** to **Subscribed**, you've successfully created a service instance.<div>&nbsp;</div>This process might take a moment or two.
 
