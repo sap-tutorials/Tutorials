@@ -10,7 +10,7 @@ primary_tag: programming-tool>sql
 ## Prerequisites
  - Oracle DB instance (version >= 11), where a new user and SQL objects will be created with a script provided in the tutorial
  - Oracle JDBC driver (ojdbc7.jar)
- - SAP HANA or SAP HANA Cloud instance. Minimum versions are 2.0 rev31 and QRC3-2021 respectively.
+ - SAP HANA or SAP HANA Cloud instance. Minimum versions are 2.0 rev31 and QRC3-2021 respectively
  - SAP Advanced SQL Migration tool installed and configured properly as indicated in the installation guide:  <https://dam.sap.com/mac/app/p/pdf/asset/preview/cLmo5vJ?ltr=a>
  - Java >= 1.8 installed in the host where the migration tool is executed
 
@@ -127,13 +127,13 @@ The project folder is configured now, and a subfolder called `config` is created
 
 [ACCORDION-BEGIN [Step 3: ](Extract data model and SQL objects)]
 
-Data model and SQL objects extraction can be done either connecting to the source database via the migration tool gateway or using text files with object definitions (DDLS). Section 1 is mandatory and you will go through the extraction via the migration tool gateway. Then section 2 is optional, do it if you want to see the extraction using a text file as well.
+Data model and SQL objects extraction can be done either by connecting to the source database via the migration tool gateway or using text files with object definitions (DDLS). Section 1 is mandatory and you will go through the extraction via the migration tool gateway. Then section 2 is optional, do it if you want to see the extraction using a text file as well.
 
 > **IMPORTANT:** It is recommended for you to try both methods, go through the gateway first in section 1 and then go through optional steps in section 2
 
 ### Extract using the migration tool gateway
 
-The migration tool gateway is usually executed in a separate host, but for simplicity in this tutorial it will be executed in the same host where the migration tool is installed, notice that java version 1.8 minimum is required to run the gateway.
+The migration tool gateway is usually executed in a separate host, but for simplicity in this tutorial it will be executed in the same host where the migration tool is installed, notice that Java version 1.8 minimum is required to run the gateway.
 
 You are going to configure and start the gateway now.
 
@@ -174,7 +174,7 @@ You are going to configure and start the gateway now.
 
     > **IMPORTANT:** windows firewall or antivirus software can prevent the migration tool connecting to the gateway, if you have connectivity issues try stopping/configuring firewall/antivirus
 
-6. When you execute `extract` option for the first time in a new project folder you will get 2 popup windows to confirm that compliance with 3rd party rights has been verified. When each of those 2 popup windows appears just read and click on **I confirm**, then rerun the command again (you will have to rerun the command twice the first time).
+6. When you execute the `extract` option for the first time in a new project folder you will get 2 popup windows to confirm that compliance with 3rd party rights has been verified. When each of those 2 popup windows appears just read and click on **I confirm**, then rerun the command again (you will have to rerun the command twice the first time).
 
     ![Select Data Source](compliancy-popups.png)
 
@@ -327,7 +327,7 @@ Run some SQL stuff in Oracle to force a couple of errors and see how Oracle beha
 
     ![Select Data Source](ora-sql-1.png)
 
-    Modify the stored procedure call removing last letter (`D`) from `state` field:
+    Modify the stored procedure call by removing last letter (`D`) from `state` field:
 
     ```SQL
     call appdemo2.insert_author (
@@ -348,7 +348,7 @@ Run some SQL stuff in Oracle to force a couple of errors and see how Oracle beha
 
     ![Select Data Source](ora-sql-2.png)
 
-    Modify the stored procedure call again removing character `a` from `phone` field:
+    Modify the stored procedure call again by removing character `a` from `phone` field:
 
     ```SQL
     call appdemo2.insert_author (
@@ -395,11 +395,11 @@ Run some SQL stuff in Oracle to force a couple of errors and see how Oracle beha
     go
     ```
 
-    Notice that the same error we had in Oracle is appearing in SAP HANA as well.
+    Notice that the same error you had in Oracle is appearing in SAP HANA as well.
 
     ![Select Data Source](hana-sql-1.png)
 
-    Modify the stored procedure call removing `D` from `state` field:
+    Modify the stored procedure call by removing `D` from `state` field:
 
     ```SQL
     call appdemo2.insert_author (
@@ -420,7 +420,7 @@ Run some SQL stuff in Oracle to force a couple of errors and see how Oracle beha
 
     ![Select Data Source](hana-sql-2.png)
 
-    Modify the stored procedure call removing character `a` from the phone number:
+    Modify the stored procedure call by removing character `a` from the phone number:
 
     ```SQL
     call appdemo2.insert_author (
