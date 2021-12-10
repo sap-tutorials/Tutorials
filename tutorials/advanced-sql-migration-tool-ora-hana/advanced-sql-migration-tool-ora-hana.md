@@ -20,7 +20,7 @@ primary_tag: programming-tool>sql
 
 The SAP Advanced SQL Migration tool is SAP's migration tool to migrate custom applications running on top of non-SAP databases into SAP databases.
 
-!![Select Data Source](ad-sql-mig.png)
+  !![Select Data Source](ad-sql-mig.png)
 
 The tool can extract SQL data models (e.g., tables, views, indexes) and SQL objects containing SQL code (e.g., stored procedures, functions) via either accessing source database catalogs or using text files containing the object definitions (DDLS) and convert them to the chosen target SAP database.
 
