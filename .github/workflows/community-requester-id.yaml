@@ -1,0 +1,88 @@
+name: SAP Community profile URL requester
+
+# What the execution context is:
+# The assignment of a label to an issue or pull request indicating
+# that the contribution was valuable.
+
+# What it does:
+# Adds a comment to the issue or pull request asking the author for
+# their SAP Community profile URL ('community ID').
+
+# Why we need it:
+# So that we can properly recognize the contribution in SAP Community.
+
+# What's important to know:
+# The label is specified at the start of the 'community-id-requester'
+# job as an environment variable LABEL, and also in the job-level condition.
+# Also, it adds a comment only after the first time the label is added, and
+# only if there are no other issues / pull requests already labeled.
+
+on:
+  pull_request_target:
+    types: [labeled]
+  issues:
+    types: [labeled]
+
+jobs:
+
+  community-id-requester:
+
+    env:
+      LABEL: "contribution"
+    runs-on: ubuntu-20.04
+    if: contains(github.repositoryUrl, 'github.com') && github.event.label.name == 'contribution'
+
+    steps:
+
+      - id: token_gen
+        name: Generate app installation token
+        uses: machine-learning-apps/actions-app-token@0.21
+        with:
+          APP_PEM: ${{ secrets.SAP_TUTORIALS_APP_PEM_BASE64 }}
+          APP_ID: ${{ secrets.SAP_TUTORIALS_APP_ID }}
+
+      - id: checkout
+        name: Check out the repo
+        uses: actions/checkout@v2
+        with:
+          token: ${{ steps.token_gen.outputs.app_token }}
+
+      - id: issue_details
+        name: Determine related details if issue
+        if: github.event_name == 'issues'
+        run: |
+          echo "OBJECTTYPE=issue" >> $GITHUB_ENV
+          echo "CONTRIBUTIONTYPE=feedback" >> $GITHUB_ENV
+          echo "OBJECTNR=${{ github.event.issue.number }}" >> $GITHUB_ENV
+          echo "CONTRIBUTOR=${{ github.event.issue.user.login }}" >> $GITHUB_ENV
+      - id: pull_request_details
+        name: Determine related details if pull request
+        if: github.event_name == 'pull_request_target'
+        run: |
+          echo "OBJECTTYPE=pr" >> $GITHUB_ENV
+          echo "CONTRIBUTIONTYPE=content" >> $GITHUB_ENV
+          echo "OBJECTNR=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+          echo "CONTRIBUTOR=${{ github.event.pull_request.user.login }}" >> $GITHUB_ENV
+      - id: auth_gh
+        name: Authenticate gh to repo
+        run: echo -n ${{ steps.token_gen.outputs.app_token }} | gh auth login --with-token
+
+      - id: count_label_additions
+        name: Count number of times label has been added
+        run: |
+          endpoint="repos/${{ github.repository }}/issues/$OBJECTNR/events"
+          count=$(gh api --jq "[.[]|(select(.event==\"labeled\" and .label.name==\"$LABEL\"))] | length" $endpoint)
+          echo "LABELADDITIONCOUNT=$count" >> $GITHUB_ENV
+      - id: count_previous_labeled_objects
+        name: Count how many other issues / pull requests are so labeled
+        run: |
+          querystring="is:${OBJECTTYPE}+label:${LABEL}+author:${CONTRIBUTOR}+repo:${GITHUB_REPOSITORY}"
+          result=$(gh api --jq '.items[] | [.number, .title] | @tsv' "/search/issues?q=$querystring")
+          echo "$result"
+          echo "OBJECTCOUNT=$(wc -l <<< $result)" | tee -a $GITHUB_ENV
+      - id: requester
+        name: Ask for SAP Community profile URL if label added for first time and no prev labeled issue / pr
+        if: env.LABELADDITIONCOUNT == 1 && env.OBJECTCOUNT <= 1
+        run: |
+          printf "Thank you for your valuable ${CONTRIBUTIONTYPE} contribution, @${CONTRIBUTOR}! So that we can [recognize your contribution in SAP Community](https://github.com/SAP-docs/contribution-guidelines/blob/main/docs/recognition.md), please tell us your SAP Community profile URL in a reply to this comment; don't include any other text, just the URL on its own, like this:\n\n\`\`\`\nhttps://people.sap.com/your-user-name\n\`\`\`\n\nThanks!" \
+          | gh $OBJECTTYPE comment $OBJECTNR --body-file -
