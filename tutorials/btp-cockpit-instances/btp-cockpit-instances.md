@@ -1,6 +1,8 @@
 ---
 title: Create a Service Instance in SAP BTP
 description: Create a service instance for services, environments and applications in SAP Business Technology Platform.
+author_name: Annika Gonnermann
+author_profile: https://github.com/AnnikaGonnermann
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit, topic>cloud]
