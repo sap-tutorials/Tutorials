@@ -343,7 +343,9 @@ SAP AI Core, maintains a persistent data related to each execution *(model train
 
 [ACCORDION-BEGIN [Step 7: ](Retrive training metrics)]
 
-1. Using SAP BTP Cockpit.
+1. Using SAP AI Launchpad.
+
+    >**IMPORTANT** SAP AI Launchpad is a separate product of SAP. SAP AI Launchpad is not offered with subscription of SAP AI Core and vice versa. SAP AI Launchpad requires a separate subscription.
 
 	!![SAP BTP metrics](img/training/metrics.png)
 
