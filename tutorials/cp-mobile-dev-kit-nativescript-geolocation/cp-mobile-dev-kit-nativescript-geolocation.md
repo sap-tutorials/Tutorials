@@ -148,7 +148,7 @@ You will add this registered control in the `Main.page`.
 
 [ACCORDION-BEGIN [Step 4: ](List the NPM modules as external reference)]
 
-In `GetCoordinates.js` file, you referred `nativescript-geolocation` and `tns-core-modules/ui/enums`. You now need to list these modules as external references in BAS configuration so when bundling, MDK editor knows not to worry about these references.
+In `GetCoordinates.js` file, you referred `@nativescript/geolocation` plugin. You now need to list this module as external references in BAS configuration so when bundling, MDK editor knows not to worry about these references.
 
 1. Navigate **File** menu | **Settings** | **Open Preferences**.
 
