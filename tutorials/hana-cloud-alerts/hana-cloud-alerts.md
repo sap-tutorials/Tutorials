@@ -3,8 +3,8 @@ title: Alerts in SAP HANA Database and Data Lake
 description: Learn how to configure and view alerts in SAP HANA Cloud.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-alert-notification-service-for-sap-btp, software-product-function>sap-hana-cloud\,-data-lake]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-alert-notification-service-for-sap-btp, software-product-function>sap-hana-cloud\,-data-lake]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites

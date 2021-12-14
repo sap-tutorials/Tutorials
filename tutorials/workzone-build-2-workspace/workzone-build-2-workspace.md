@@ -55,7 +55,7 @@ Workspaces are the building blocks of SAP Work Zone. You can add pages, content 
 
     !![Select template](2-select-template.png)
 
-    >You can also select one of SAP's out-of-the-box templates. In this case, you'll get a professionally designed overview page with widgets including everything you need to get started quickly. You can then customize the content to suit your needs. For this tutorial we will not use a template.
+    >You can also select one of SAP's out-of-the-box templates. In this case, you'll get a professionally designed overview page with widgets including everything you need to get started quickly. You can then customize the content to suit your needs. For this tutorial you won't use a template.
 
 3. Enter this name for your workspace: `Employee Innovation Hackathon`.
 
@@ -303,7 +303,7 @@ In this step, you'll add an **Action** widget and a **Forum** widget.
 
     !![Add a forum widget](26-add-forum-widget.png)
 
-9. Under **Maximum Items to Display**, move the slider to number 2, change the title to `Ask Questions About the Hackathon`, and click **OK**. .
+9. Under **Maximum Items to Display**, move the slider to number **2**, change the title to `Ask Questions About the Hackathon`, and click **OK**.
 
     !![Design the forum widget](27-design-forum-widget.png)
 
@@ -311,13 +311,13 @@ In this step, you'll add an **Action** widget and a **Forum** widget.
 
     !![Add another widget](27-add-another-widget.png)
 
-11. Scroll down through the widget gallery and under the **Productivity** section, select the **Feed** widget.
+11. Scroll down the widget gallery and under the **Productivity** section, select the **Feed** widget.
 
 12. In the **Feed Widget** settings screen, change **Maximum Items to Display** to `2` and click **OK**.
 
     !![Add feed display](27-add-feed-display.png)
 
-13. To increase the spacing between this row and the first row, hover over the row to expose the row settings on the right, click **Edit row settings**, and under **Row Padding**, add the value `30`pixels in the **Top** value box and click **Save**.
+13. To increase the spacing between this row and the row above, hover over the row to expose the row settings on the right, click **Edit row settings**, and under **Row Padding**, add the value `30`pixels in the **Top** value box and click **Save**.
 
 
 [DONE]

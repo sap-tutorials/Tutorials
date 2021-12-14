@@ -289,7 +289,7 @@ Now you know how to provision an instance of SAP HANA Cloud using SAP BTP cockpi
 
 [ACCORDION-BEGIN [Step 8: ]((Free Tier Only): Upgrade to Paid Tier)]
 
-When you are ready to upgrade your free tier instance to Paid Tier, you can also choose the three dots menu (under Actions) next to the SAP HANA Cloud instance line in SAP HANA Cloud Central.  From here, click on **Upgrade to Paid Tier**.  Note that paid tier plans must be enabled in your SAP HANA Cloud entitlement for the upgrade to properly work.
+When you are ready to upgrade your free tier instance to Paid Tier, you can also choose the three dots menu (under Actions) next to the SAP HANA Cloud instance line in SAP HANA Cloud Central.  From here, click on **Upgrade to Paid Tier**.  Note that paid tier plans must be enabled in your SAP HANA Cloud entitlement in order for the **Upgrade to Paid Tier** menu item to appear.
 
 ![upgrade to paid tier](upgrade-paid-tier.png)
 
@@ -297,7 +297,7 @@ A dialog box will appear indicating that there will be costs associated with the
 
 ![upgrade to paid tier](upgrade-paid-tier2.png)
 
->Note that an **Upgrade to Test and Development** option is currently not available for free tier instances.  If you wish to move the contents from a Free Tier instance to a Test and Development production instance, consider the steps in the tutorial [Move Data from a Free Tier Model or Trial Instance to a Production Instance](hana-cloud-trial-2-production).
+>Note: For SAP partners who have SAP HANA Cloud "test and development" service plans enabled in their entitlements (e.g. hana-td, relational-data-lake-td), an **Upgrade to Test and Development** option is also available for free tier instances. Choose this option if you wish to upgrade your **free tier** instance to a **test and development** production instance.  
 
 Now you know how to provision an instance of SAP HANA Cloud using SAP BTP cockpit and SAP HANA Cloud Central. In the next tutorial, learn about the tools that help to manage and access your database instance  
 

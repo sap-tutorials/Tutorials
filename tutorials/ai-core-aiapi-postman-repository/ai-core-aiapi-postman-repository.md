@@ -109,16 +109,20 @@ Make the following API call using Postman
 
 ### Body
 
-Edit your GitHub URL and your credentials, *(highlighted lines)* below.
+- Get or generate GitHub Personal Access Tokens (PAT) [See how](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+>**IMPORTANT** Do not use your GitHub Passwords in the request body.
+
+- Edit your GitHub URL and your credentials, *(highlighted lines)* below.
 
 ```JSON[3, 4, 5]
 {
     "name": "aicore-test",
     "url": "https://github.com/<your-username>/aicore-test",
-    "username": "$username",
-    "password": "$password"
+    "username": "Your-github-username",
+    "password": "your-git-PAT-token"
 }
 ```
+
 !![create repository](img/postman/call-repo.png)
 
 **SEND**
@@ -270,7 +274,11 @@ Edit your GitHub username *(highlighted lines)* below.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Connect Docker to SAP AI Core)]
+[ACCORDION-BEGIN [Step 10: ](API to Create Docker Registry Secret.)]
+
+Secret hold your docker credentials which enables SAP AI Core to fetch your docker images (code files).
+
+You can create multiple secrets.
 
 > **COLLECTIONS** > admin > *POST* Create docker registry secret
 
