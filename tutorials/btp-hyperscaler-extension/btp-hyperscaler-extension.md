@@ -1,8 +1,6 @@
 ---
-author_name: LalithManokar
-author_profile: https://github.com/LalithManokar
-title: Consuming SAP BTP Services From Any Hyperscaler
-description: Deploy an SAP Fiori Application in any a hyperscaler, such as Google Cloud Platform (GCP), Amazon Web Services (AWS), Alibaba Cloud or Azure and use services from SAP BTP.
+title: Consume SAP BTP Services from Any Hyperscaler
+description: Deploy an SAP Fiori application in any hyperscaler, such as Google Cloud Platform (GCP), Amazon Web Services (AWS), Alibaba Cloud or Azure, and use services from SAP BTP.
 auto_validation: true
 time: 45
 tags: [ tutorial>intermediate, products>sap-btp\, kyma-runtime]
@@ -28,12 +26,12 @@ primary_tag: products>sap-btp--cloud-foundry-environment
 
 ## Details
 ### You will learn
-  - How to consume Services running on SAP BTP from other environments e.g K8S clusters managed by hyperscalers
-  - How to make use of SAP BTP API's , Service Manager and Service Operator to consume services from different environment
+- How to consume SAP BTP services running from other environments
+- How to use SAP BTP APIs, Service Manager and Service Operator to consume services from other environments
 
 Deploy an SAP Fiori Application in any a hyperscaler, such as Google Cloud Platform (GCP), Amazon Web Services (AWS), Alibaba Cloud or Azure, and still take advantage of the services provided by SAP Business Technology Platform (SAP BTP).
 
-In this tutorial, you use the **`fioriapp`** sample application to learn some best practices of setting up your Kubernetes cluster to communicate with SAP BTP so you can learn how to consume BTP services from any hyperscalers.
+In this tutorial, you use the **`fioriapp`** sample application to learn some best practices of setting up your Kubernetes cluster to communicate with SAP BTP so you can learn how to consume SAP BTP services from any hyperscaler.
 
 ---
 
@@ -329,9 +327,9 @@ Login to SAP BTP cockpit to verify cross consumable services from SAP Business T
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Build and Deploy the application into Kubernetes Cluster)]
+[ACCORDION-BEGIN [Step 7: ](Build and deploy app into Kubernetes Cluster)]
 
-   To build and deploy the **`fioriapp`** sample application in your cluster, you have to create a pod, which encapsulates the container and ensures that a specified quorum of running instances is fulfilled. To do that, use the `deployment.yaml`.
+To build and deploy the **`fioriapp`** sample application in your cluster, you have to create a pod, which encapsulates the container and ensures that a specified quorum of running instances is fulfilled. To do that, use the `deployment.yaml`.
 
 1. Build the docker image of the **`fioriapp`**.
 
@@ -339,13 +337,13 @@ Login to SAP BTP cockpit to verify cross consumable services from SAP Business T
 
     * docker build . -t `<docker-username>/fioriapp` -f Dockerfile
 
-    >Note: Replace `<docker-username>` with your username
+    >Replace `<docker-username>` with your username
 
 2. Push the docker image of the `fioriapp` to your Container Image Library.
 
     * docker push `<docker-username>/fioriapp`
 
-    >Note: Replace `<docker-username>` with your username
+    >Replace `<docker-username>` with your username
 
 3. Update the docker image in the `./btp-hyperscaler-extension/k8s/deployment.yaml` file. Line no 21
 
