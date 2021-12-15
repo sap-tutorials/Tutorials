@@ -1,14 +1,16 @@
 ---
 auto_validation: true
-title: Custom Analytical Queries Calculated Measures
+title: Create Custom Analytical Queries With Calculated Measures
 description: Create a Custom Analytical Queries with Calculated Measures.
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, programming-tool>abap-development, programming-tool>abap-extensibility ]
 time: 15
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-The Business user requires the Role `SAP_BCR_CA_ANA_AQD_PC` to access the Query Designer.
+The Business user requires the Role `SAP_CA_BC_ANA_AQD_PC` to access the Query Designer.
 Furthermore `ABAP Custom Analytical Queries` as a tutorial reveals another Prerequisite.
 
 ## Details
@@ -34,7 +36,7 @@ Furthermore you have to click on the **Edit** button to continue.
 
 ![start Custom CDS View App](select.png)
 
-[DONE] 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add Calculated Measures)]

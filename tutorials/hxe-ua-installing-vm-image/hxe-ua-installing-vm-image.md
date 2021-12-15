@@ -29,7 +29,7 @@ You'll decide whether the virtual machine installation method is best for you, y
 The SAP HANA 2.0, express edition VM image is platform-independent. You can install it to a Windows, OS X, or Linux machine, provided your laptop meets the storage and memory prerequisites. Choose the VM installation method if you want the simplest `on-premise` installation experience.
 
 > Note:
-> If you need a custom on-premise setup, use the Binary Installer Method, which is for Linux machines – running specific installations – that meet certain storage and memory prerequisites. 
+> If you need a custom on-premise setup, use the Binary Installer Method, which is for Linux machines – running specific installations – that meet certain storage and memory prerequisites.
 >
 >
 
@@ -113,11 +113,11 @@ Go to [Determine If Your Processor Supports Intel Virtualization Technology](htt
 
 Hypervisors are software products used for creating and running virtual machines. Install a supported hypervisor on your laptop if you don't have one already. SAP HANA 2.0, express edition has been tested on these hypervisors:
 
--   `VMware Workstation Player 15.x` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
+-   `VMware Workstation Player 16` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
 
--   `VMware Workstation Pro 15.x` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
+-   `VMware Workstation Pro 16` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
 
--   `VMware Fusion 8.x, 10.x, 11` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
+-   `VMware Fusion 11.x, 12.x` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
 
 Example installation procedure for `VMware Workstation Player 12.x`:
 
