@@ -3,8 +3,10 @@ title: Debug Your SAPUI5 App
 description: Debugging and logging are the nut and bolts to inspect your application. Learn how to debug and test your web apps with the Google Chrome Dev Tools.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, programming-tool>html5, topic>cloud, programming-tool>javascript, products>sap-cloud-platform-for-the-cloud-foundry-environment, tutorial>free-tier]
+tags: [ tutorial>beginner, programming-tool>html5, topic>cloud, programming-tool>javascript, products>sap-btp-cloud-foundry-environment, tutorial>free-tier]
 primary_tag: programming-tool>sapui5
+author_name: Nico Geburek
+author_profile: https://github.com/nicogeburek
 ---
 
 ## Details
@@ -36,11 +38,11 @@ Replace the existing page in the file `webapp/view/MainView.view.xml` with
 
 [ACCORDION-BEGIN [Step : ](Write a log message to the console)]
 
-Add this `onBeforeRendering` hook to the file `webapp/controller/MainView.controller.js`. This error function allows you to write error messages to the console. Error messages also write the stack trace to the console, which can be used to trace the message back to the line of invocation.
+Add this `onBeforeRendering` hook to the file `webapp/controller/MainView.controller.js` (before the `onInit` hook). This error function allows you to write error messages to the console. Error messages also write the stack trace to the console, which can be used to trace the message back to the line of invocation.
 ```JavaScript
 onBeforeRendering: function() {
-  jQuery.sap.log.error("A problem occurred!");
-}
+    jQuery.sap.log.error("A problem occurred!");
+},
 ```
 
 ![logger](./logger.png)
@@ -60,13 +62,13 @@ Add this `onAfterRendering` hook to the same file to place a breakpoint in your 
 
 onAfterRendering: function() {
 	debugger
-}
+},
 ```
 
 ![debugger](./debugger.png)
 
 
-> This `onAfterRendering` method is called every time the View is rendered, after the HTML is placed in the DOM-Tree. It can be used to apply additional changes to the DOM after the Renderer has finished.
+> This `onAfterRendering` method is called every time the view is rendered, after the HTML is placed in the DOM-Tree. It can be used to apply additional changes to the DOM after the Renderer has finished.
 
 [DONE]
 [ACCORDION-END]
@@ -91,9 +93,6 @@ You should now see that the app reached the breakpoint (the dev tools automatica
 
 Click **F8** to jump over the breakpoint and **switch** to the `Console` tab.
 Now you should see your error message printed in red. Click on the small triangle on the left side to expand the error message.
-
-
-Can you spot the line in which you invoked the error message?
 
 ![testlog](./testlog.png)
 
