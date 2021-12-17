@@ -4,6 +4,7 @@ description: Sign up for a productive account on SAP Business Technology Platfor
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-business-technology-platform; freetierservices]
+keywords: free, tier, account, BTP, global
 primary_tag: software-product-function>sap-btp-cockpit
 ---
 
