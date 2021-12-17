@@ -3,8 +3,8 @@ title: Design and Deploy Your First Integration Flow
 description: Design an integration flow to integrate an online webshop that exposes data via OData service and fetch the product details.
 auto_validation: true
 time: 40
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
-primary_tag: products>sap-integration-suite
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment]
+primary_tag: software-product>sap-integration-suite
 author_name: Karunaharan V
 author_profile: https://github.com/Karunaharan
 ---
@@ -117,9 +117,10 @@ You add this converter because the input to the integration flow is sent in JSON
     |  :------------- | :-------------
     |  **Action**           | **`Create`**
     |  **Name**           | **`productIdentifier`**
-    |  **Type**           | Select **`XPath`** from the dropdown list
+    |  **Source Type**        | Select **`XPath`** from the dropdown list
+    |  **Source Value**       | **`//productIdentifier`**
     |  **Data Type**    | **`java.lang.String`**
-    |  **Value**          | **`//productIdentifier`**
+
 
     !![Configure Content Modifier](6-2-configure-content-modifier.png)
 

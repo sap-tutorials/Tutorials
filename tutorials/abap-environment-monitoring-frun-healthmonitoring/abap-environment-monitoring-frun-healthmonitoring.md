@@ -3,16 +3,16 @@ title: Monitor An SAP BTP ABAP Environment Service Using SAP Focused Run (FRUN)
 description: Configure health monitoring and real user monitoring for an SAP BTP ABAP Environment service using SAP Focused Run (FRUN).
 auto_validation: true
 time: 45
-tags: [ tutorial>intermediate, products>sap-btp--abap-environment ]
-primary_tag: topic>abap-development
+tags: [ tutorial>intermediate, programming-tool>abap-development, software-product>sap-btp--abap-environment, tutorial>license]
+primary_tag: topic>cloud-operations
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
 - SAP BTP ABAP Environment instance with the Administrator role
-- On-Premise ABAP system with the Fiori app **Advanced Application Management> Health Monitoring**
-- On-Premise ABAP system with the Fiori app **Advanced Application Management> Cloud Service Management**
+- Access to the Fiori app  **Advanced Application Management> Health Monitoring**
+- Access to the Fiori app **Advanced Application Management> Cloud Service Management**
 
 ## Details
 ### You will learn
@@ -28,8 +28,6 @@ If you use FRUN as your monitoring and alerting infrastructure, you can integrat
 For more information, see SAP Help Portal[Integration in Central Monitoring and Alerting](https://help.sap.com/viewer/DRAFT/60f1b283f0fd4d0aa7b3f8cea4d73d1d/Internal/en-US/8d6e2e78f77540d6836cc63eea121966.html)
 
 Throughout this tutorial, objects name include a prefix, such as **`Zxx`** or suffix, such as **`XXX`**. Always replace this with your group number or initials.
-
-Similarly, replace **`<SID>`** with the System ID of your ABAP System.
 
 !![step0-overview](step0-overview.png)
 

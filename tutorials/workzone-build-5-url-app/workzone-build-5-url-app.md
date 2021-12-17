@@ -3,13 +3,16 @@ title: Add a URL App to Your SAP Work Zone Page
 description: Create a URL app and add it to a page in SAP Work Zone.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-work-zone]
-primary_tag: products>sap-work-zone
+tags: [ tutorial>beginner, software-product>sap-work-zone]
+primary_tag: software-product>sap-work-zone
 author_name: Lindsay Bert
+author_profile: https://github.com/LindsayBert
 ---
 
 ## Prerequisites
- - You've already designed the **Home** page where you'll add this app.
+- A subaccount in SAP BTP that includes a subscription to the SAP Work Zone service has already been setup for you. Note that SAP Work Zone is not available in a trial account.
+- You've already designed the **Home** page where you'll add this app.   
+
 
 
 
@@ -83,7 +86,7 @@ You've already added a SAPUI5 app to your **Home** page under the **Most Popular
       * **Icon**: Click the browse icon, type `visits`, click on the displayed icon, and click **OK**.
 
 7.  On the right, you can see a preview of the tile with all the properties you entered.
-    Click **Save**.
+     Click **Save**.
 
       !![Define visualization properties](7-vizualization-properties.png)
 
@@ -103,7 +106,7 @@ You can see your app in the list of content items in the **My Content** screen:
 
   !![View app in my content](9-view-app.png)
 
-To view the app in the **Applications** page of your work zone, you must assign the app to a role and to a group. This is described in the following steps.
+To view the app in runtime, you must assign the app to a role. You also need to assign the app to a group so that it'll be visible in the **Applications** page of your work zone. This is described in the following steps.
 
 
 
@@ -204,19 +207,31 @@ Now you're going to add this app to the **Home** page.
 
 [ACCORDION-BEGIN [Step 8: ](Add the URL app to the Home page)]
 
-In the previous tutorial, you added a header to your **Home** page and underneath it, you added a SAPUI5 app. You're now going to add the URL app under the existing app.
+In the previous tutorial, you added a header to your **Home** page and underneath it, you added a SAPUI5 app. You're now going to add the URL app next to the existing app.
 
-1. Scroll down to the bottom of the page and in the last row under the `New Orders` app, click **Add Widget** to open the widget gallery.
+1. Scroll down to the bottom of the page and in the last row, next to the `New Orders` app, click the **+** icon to add another column.
 
     !![Add Widget](22-add-widget.png)
 
-3. Under **Standard Tools**, select the **Applications** widget.
+2. Click **Add Widget** to open the widget gallery.
+
+2. Under **Standard Tools**, select the **Applications** widget.
 
     !![Add the Applications widget](23-applications-widget.png)
 
-4. In the Search box, start typing in the name of your app `Innovation at SAP`, select the app, and then click **Select**.
+    >Note that you can also select the **Applications Group** widget to add all the apps that are assigned to a specific group.
+
+3. In the Search box, start typing in the name of your app `Innovation at SAP`, select the app, and then click **Select**.
 
     !![Select the app](24-select-app.png)
+
+4. This is how the row with your apps looks:
+
+    !![View row with apps](25-view-second-widget.png)
+
+5. Hover between the 2 columns until you see the column separator and drag it until both apps are aligned.
+
+    !![Align apps](26-align-apps.png)
 
 6. Scroll to the top of the screen and click **Publish**.
 

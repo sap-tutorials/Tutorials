@@ -3,7 +3,7 @@ title: Use Data Attribute Recommendation With Your Own Dataset
 description: Classify your own data records in Data Attribute Recommendation using a custom dataset schema.
 auto_validation: true
 time: 30  
-tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 

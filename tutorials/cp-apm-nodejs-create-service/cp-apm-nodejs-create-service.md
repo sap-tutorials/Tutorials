@@ -1,17 +1,17 @@
 ---
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Create a Business Service with Node.js Using Visual Studio Code
+title: Create a CAP Business Service with Node.js Using Visual Studio Code
 description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite, by using the SAP Cloud Application Programming Model (CAP) and developing on your local environment.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [ tutorial>beginner, topic>node-js, products>sap-business-technology-platform,  software-product-function>sap-cloud-application-programming-model ]
+tags: [ tutorial>beginner, programming-tool>node-js, software-product>sap-business-technology-platform, software-product-function>sap-cloud-application-programming-model ]
 time: 50
 ---
 
 
 ## Prerequisites
-- You have installed [Node.js](https://nodejs.org/en/download/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 14. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
+- You have installed [Node.js](https://nodejs.org/en/download/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 16. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
 - You have installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
 - (For Windows) You have installed the [SQLite](https://sqlite.org/download.html) tools for Windows. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation.
 - You have installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
@@ -53,7 +53,7 @@ Before you start, make sure that you've completed the prerequisites.
 
     ![cds commands](cds_commands.png)
 
-    > This lists the available `cds` commands. For example, use `cds v` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
+    > This lists the available `cds` commands. For example, use `cds --version` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
 [DONE]
 
@@ -210,7 +210,7 @@ After initializing the project, you should see the following empty folders:
     }
     ```
 
-    > Remember to save your files (keyboard shortcut **CTRL+S**).
+    > Remember to save your files choosing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
 
 3. As soon as you've saved your file, the still running `cds watch` reacts immediately with some new output as shown below:
 
@@ -266,7 +266,7 @@ Add service provider logic to return mock data.
     }
     ```
 
-    > Remember to save your files (keyboard shortcut **CTRL+S**).
+    > Remember to save your files choosing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
 
 3. To test your service, click on these links:
 
@@ -325,7 +325,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
     }
     ```
 
-    > Remember to save your files (keyboard shortcut **CTRL+S**).
+    > Remember to save your files choosing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
 
 [DONE]
 
@@ -355,7 +355,7 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
     252;Eleonora;150;555
     271;Catweazle;170;22
     ```
-    > Remember to save your files (keyboard shortcut **CTRL+S**).
+    > Remember to save your files choosing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
 
     > Make sure that you now have a folder hierarchy `db/csv/...`. Remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/csv` folder.
 
@@ -398,7 +398,7 @@ Before you continue, make sure that you've completed the prerequisites and insta
 
 Instead of using in-memory, you can also use persistent databases.
 
-1. If `cds watch` is running, choose **CTRL+C** in the command line to stop the service.
+1. If `cds watch` is running, choose <kbd>Ctrl</kbd> + <kbd>C</kbd> in the command line to stop the service.
 
 2. Install `SQLite3` packages.
 
@@ -426,7 +426,7 @@ Instead of using in-memory, you can also use persistent databases.
 
     > If this doesn't work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db/my-bookshop.db -cmd .dump`. Find the steps how to install it in the Troubleshooting guide in section [How Do I Install SQLite](https://cap.cloud.sap/docs/advanced/troubleshooting#how-do-i-install-sqlite-on-windows) in the CAP documentation for more details.
 
-5. To stop `SQLite` and go back to your project directory, choose **CTRL+C**.
+5. To stop `SQLite` and go back to your project directory, choose <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 6. Run your service.
 
@@ -506,7 +506,7 @@ You can now see the generic handlers shipped with CAP in action.
 
     }
     ```
-    > Remember to save your files (keyboard shortcut **CTRL+S**).
+    > Remember to save your files choosing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
 
     > Whenever orders are created, this code is triggered. It updates the book stock by the given amount, unless there aren't enough books left.
 

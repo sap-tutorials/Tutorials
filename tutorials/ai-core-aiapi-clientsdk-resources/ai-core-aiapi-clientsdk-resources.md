@@ -3,7 +3,7 @@ title: Create a Resource Group and Connect AWS S3 Object Store to SAP AI (Client
 description: Learn creation of resource group in SAP AI Core to enable multi-tenancy through SAP AI API Client SDK. Store datasets to AWS S3 and connect to SAP AI Core through SAP AI API Client SDK.
 auto_validation: true
 time: 15
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
 primary_tag: topic>artificial-intelligence
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
@@ -44,7 +44,7 @@ Example Output
 
 ```
 
-> **IMPORTANT:** The `create resource group` request results in `Response: 202`, which means the backend server will take time(~30 sec) to create the group. List the resource group(*see below*) to see the status of creation
+> **IMPORTANT:** The `create resource group` request results in `Response: 202`, which means the backend server will take time(~30 sec) to create the group. List the resource group *(see below)* to see the status of creation
 
 [DONE]
 [ACCORDION-END]
@@ -77,69 +77,119 @@ Example Output
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create AWS S3 Object Store using S3 Browser)]
-
-AWS S3 Object Store is used to store data. Here will store dataset for training ML Models.
-
-There are two ways you can create AWS S3 Bucket.
-
-1. Through SAP BTP Cockpit.
-
-2. Through AWS. Refer [AWS User Guide to S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)
+[ACCORDION-BEGIN [Step 3: ](Manage AWS S3 Object Store)]
 
 
-Install S3 Browser to manage AWS S3 from your computer. [Download here](https://s3browser.com/)
+You can get AWS S3 Bucket from either of two ways:
 
-Open S3 Browser and enter your credentials.  
+- Through SAP BTP Cockpit.
 
-!![enter s3 credentials in s3 bucket](img/s3/init.png)
+- Through AWS. Refer [AWS User Guide to S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)
 
-If you don't have existing bucket create one and skip to next step.
 
-!![s3 bucket info](img/s3/bucket-1.png)  
+[OPTION BEGIN [Using S3 Browser (Windows Only)]]
 
-!![s3 bucket info2](img/s3/bucket-2.png)  
+1. Install S3 Browser. [Download here](https://s3browser.com/).
+
+2. Open S3 Browser and Enter your Credentials.  
+
+    !![enter s3 credentials in s3 bucket](img/s3/init.png)
+
+3. If you don't have bucket create one and skip to next step.
+
+    !![s3 bucket info](img/s3/bucket-1.png)  
+
+
+    !![s3 bucket info2](img/s3/bucket-2.png)  
+
+[OPTION END]
+
+[OPTION BEGIN [Using AWS CLI (Mac/Linux/Windows)]]
+
+Follow the below steps for creating a path prefix through AWS CLI:
+
+1. Install AWS CLI. [Download here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+
+2. Check for `version` after installation completes, execute the following on terminal *(command prompt)*
+
+    ```BASH
+    aws --version
+    ```
+
+    !![aws version check](img/aws/aws-version.png)
+
+3. Execute the following on the terminal *(command prompt)*
+
+    ```BASH
+    aws configure
+    ```
+
+4. Enter your the AWS S3 Object Store details. You can leave the `Default output format` entry as blank *(press enter)*.
+
+    !![aws configure](img/aws/aws-configure.png)
+
+[OPTION END]
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Upload training dataset to the S3 Object Store)]
+[ACCORDION-BEGIN [Step 4: ](Upload dataset to AWS S3 Object Store)]
+
+| File Name | Link |
+| --- | --- |
+| `travel.csv` | [Download Here](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-clientsdk-resources/travel.csv)
+
+[OPTION BEGIN [Using S3 Browser (Windows Only)]]
 
 1. Open S3 Browser.
 
-2. Click **New Folder**. Create a folder named `tutorial`.
+2. Click **New Folder** and Create a folder named `tutorial`.
 
     !![path prefix](img/s3/path-prefix.png)
 
 3. Create another folder name `data` inside the `tutorial`.
 
-    !![data folder](img/s3/data.png).
+    !![data folder](img/s3/data.png)
 
-4. Click on **Upload** > **Upload Files**. Upload `travel.csv` *(download from below)* inside `tutorial/data/`.
-
-    Download Files
-
-    | File Name | Link |
-    | --- | --- |
-    | `travel.csv` | [Download Here](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-clientsdk-resources/travel.csv)
+4. Upload your datafile `travel.csv` inside `tutorial/data/`. This will be used for training the model.
 
     !![upload](img/s3/data-2.png)
 
-Final look of your AWS S3 bucket.  
+Final look of S3 bucket.
 
 !![final s3 look](img/s3/final.png)
+
+[OPTION END]
+
+[OPTION BEGIN [Using AWS CLI (Mac/Linux/Windows)]]
+
+ 1. Replace `your-bucket-id` and execute the following on the terminal *(command prompt)* to create a path prefix(directory) and upload you datafile at the same time.
+
+    ```BASH[1]
+    aws s3 cp /local/path/to/travel.csv s3://your-bucket-id/tutorial/data/
+    ```
+
+2. Check your file. Replace `your-bucket-id` and execute the following on the terminal.
+
+    ```BASH[1]
+    aws s3 ls s3://your-bucket-id/tutorial/data/
+    ```
+
+    !![check dataset using aws cli](img/aws/check.png)
+
+[OPTION END]
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Register AWS S3 Object Store to SAP AI Core resource group)]
 
-Object Stores are connected to the resource groups using Object Store Secret, an SAP AI Core entity, hence ensure you have the resource group created before proceeding.
+Object Store Secret links your S3 Object Store with your resource group, hence ensure you have the resource group created before proceeding.
 
 Get service key file for your AWS S3 bucket. The file will have contents similar to the snippet below.
 
-> In case you are using the SAP object store you get the content from `BTP cockpit > BTP subaccount > Instances and Subscriptions > Instances > Credentials `.
+> In case you are use SAP BTP to create AWS S3 object store, generate you service key for same from`BTP cockpit > BTP subaccount > Instances and Subscriptions > Instances > Credentials `.
 
 ```JSON
 {

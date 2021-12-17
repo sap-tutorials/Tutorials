@@ -3,15 +3,17 @@ title: Create an ABAP Table Type
 description: Create a table type and use it to retrieve data from a database table.
 auto_validation: true
 time: 20
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, products>sap-cloud-platform--abap-environment, products>sap-cloud-platform, products>sap-netweaver-7.5 ]
+tags: [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform]
+primary_tag: programming-tool>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 ## Prerequisites
 - You have done one of the following:
-    - You have a valid instance of SAP Cloud Platform, ABAP Environment. For more information, see **Tutorial**: [Create Your First ABAP Console Application](abap-environment-console-application), steps 1-2
+    - You have a valid instance of SAP Business Technology Platform (BTP) ABAP Environment. For more information, see **Tutorial**: [Create Your First ABAP Console Application](abap-environment-console-application), steps 1-2
     - You have a valid instance of an on-premise AS ABAP server, version 7.52 or higher. (The text-based Table Editor is not available for earlier ABAP server versions). For a free AS ABAP server, 7.52, SP04, see [SAP Developers: Trials and Downloads - 7.52](https://developers.sap.com/trials-downloads.html?search=7.52)
 - You have installed [ABAP Development Tools 3.0](https://tools.hana.ondemand.com/#abap), latest version
-- You have downloaded or pulled the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
+- You have downloaded or pulled the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
 - **Tutorial**: [Create a Database Table](abap-dev-create-table)
 
 ## Details

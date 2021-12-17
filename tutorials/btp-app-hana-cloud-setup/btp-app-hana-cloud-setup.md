@@ -5,7 +5,7 @@ title: Set Up the SAP HANA Cloud Service
 description: This tutorial shows you how to set up the SAP HANA cloud service instance.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-hana-cloud]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-hana-cloud]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -26,7 +26,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to add SAP HANA client to your project
 
 
-To start with this tutorial use the result in the [`cap/roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/roles) branch.
+To start with this tutorial use the result in the [`cap-roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-roles) branch.
 
 ---
 
@@ -308,7 +308,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
 
 [DONE]
-The result of this tutorial can be found in the [`cp/hana`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/hana) branch.
+The result of this tutorial can be found in the [`hana-cloud-setup`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/hana-cloud-setup) branch.
 
 
 [ACCORDION-END]

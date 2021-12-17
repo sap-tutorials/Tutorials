@@ -2,8 +2,8 @@
 title: Create a Customer List Page in an MDK App
 description: Use the mobile development kit page editor to create a new page for displaying a customer list.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 10
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -86,11 +86,11 @@ To create the Customer List page, you will create a **Section page** and drag th
 
     !![MDK](img-1.9.png)
 
-10. In the **Activity Items** section of the Properties pane, click `+` icon to add a new activity item.
+10. In the **Activity Items** section of the Properties pane, click **Add** to add a new activity item.
 
     !![MDK](img-1.10.png)
 
-11. Click the **link icon** to open the Object browser for the **Phone** activity and bind it to the `PhoneNumber` property of the Customer entity.
+11. Expand the added item, click the 3 dots icon to open the Object browser to bind the `ActivityValue` to the `PhoneNumber` property of the Customer entity.
 
     !![MDK](img-1.11.gif)
 
