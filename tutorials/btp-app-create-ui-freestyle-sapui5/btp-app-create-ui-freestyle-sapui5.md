@@ -6,7 +6,7 @@ description: This tutorial shows you how to create a Freestyle SAPUI5 app on top
 keywords: cap
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori-tools, sogtware-product>sapui5]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori-tools, software-product>sapui5]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
