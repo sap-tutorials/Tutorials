@@ -5,7 +5,7 @@ description: Connect SAP Private Link service (Beta) to Microsoft Azure Private 
 auto_validation: true
 time: 10
 tags: [tutorial>beginner, software-product-function>sap-btp-cockpit, tutorial>license, software-product-function>sap-private-link-service, software-product-function>sap-btp-command-line-interface]
-keywords: private, link, Microsoft, Azure, connection, Cloud Foundry, CF, CLI, BTP, endpoint
+keywords: private, link, Microsoft, Azure, connection, Cloud Foundry, CF, CLI, BTP, endpoint, Business Technology Platform
 primary_tag: software-product-function>sap-private-link-service
 ---
 
@@ -114,7 +114,7 @@ message:   Please approve the connection for Private Endpoint 'privatelink-test'
 
 Copy the *endpoint-name* from the success message. You need it in the next step.
 
-> **Security Info**: In a scenario in which the initiator of the private link connection doesn't have access to the Azure Portal to approve the newly private endpoint connection him- or herself, please reach out to the person responsible for approving the connection and share the endpoint name responsibly.
+> **Security Info**: In a scenario in which the initiator of the private link connection doesn't have access to the Azure Portal to approve the newly private endpoint connection him- or herself, please reach out to the person responsible for approving the connection and share the endpoint name responsibly. See also: [Best Practices for Secure Endpoint Approval](https://help.sap.com/products/PRIVATE_LINK/42acd88cb4134ba2a7d3e0e62c9fe6cf/844bca7a51f04a15be865b9a6c1867b0.html?locale=en-US).
 
 [DONE]
 [ACCORDION-END]
