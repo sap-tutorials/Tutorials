@@ -268,7 +268,6 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
     > Use a technical user instead of your personal credentials.
 
-
     > Deployment will not work if you have activated Two-factor authentication for the user.
 
 17. Leave the **Upload to Cloud Transport Management** step switched off.
@@ -363,13 +362,11 @@ You have to trigger your job manually the first time after creation.
 
     > If you would like to check whether the job is triggered automatically after new changes, you can make a simple change in the code and verify if it's built.
 
-
 2. Wait until the job has finished and verify that the build tile is marked as successful.
 
     !![Successful Build](CICD_successful_build.png)
 
     > In case you get any errors:
-
 
     > Verify that your SAP HANA Cloud service instance is running. Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day, before you start working with your trial.
 
