@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Prepare SAP S/4HANA System by Activating the Business Partner OData Service
 description: This tutorial shows you how to activate your Business Partner OData service and creating a technical user.
+keywords: cap
 auto_validation: true
 time: 30
 tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-s-4hana]
@@ -47,7 +48,7 @@ With this tutorial, you expose the Business Partner service as an OData service 
 
     !![Add Service](configure-oData-Service-2.png)
 
-4. Type in `LOCAL` for **System Alias** and `API_BUSINESS_PARTNER` for **External Service Name**, and choose **Enter** to search for all matching services.
+4. Type in `LOCAL` for **System Alias** and `API_BUSINESS_PARTNER` for **External Service Name**, and hit <kbd>Enter</kbd> to search for all matching services.
 
     !![Search Service](configure-oData-Service-2-1.png)
 

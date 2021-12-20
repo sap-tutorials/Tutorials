@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Use Your SAP S/4HANA Cloud Service for Your Deployed CAP Application
 description: This tutorial shows you how to prepare your application, deploy it as Multi-Target Application (MTA) and test it with SAP S/4HANA Cloud connectivity.
+keywords: cap
 auto_validation: true
 time: 30
 tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management, software-product>sap-hana-cloud, software-product>sap-s-4hana-cloud]
@@ -200,7 +201,7 @@ When creating new entries in the **Risks** application, you should be able to us
 
     You'll see a message `No data found. Try adjusting filter or search criteria.`
 
-    > In case you get an error `Forbidden`. 
+    > In case you get an error `Forbidden`.
 
     > The following error is displayed when you haven't assigned your user to the `RiskManager-<your space>` role:
 

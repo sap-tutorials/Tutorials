@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Configure Systems in Cloud Connector
 description: This tutorial shows you how to configure the Cloud Connector to connect your SAP S/4HANA system to SAP BTP.
+keywords: cap
 auto_validation: true
 time: 10
 tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-s-4hana]

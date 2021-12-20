@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Add Services and Consume an External Service from SAP S/4HANA
 description: This tutorial shows you how to prepare and deploy your CAP application and test it with SAP S/4HANA connectivity.
+keywords: cap
 auto_validation: true
 time: 20
 tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-s-4hana]

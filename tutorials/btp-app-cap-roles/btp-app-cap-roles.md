@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Implement Roles and Authorization Checks In CAP
 description: This tutorial shows you how to enable authentication and authorization for your CAP application.
+keywords: cap
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]

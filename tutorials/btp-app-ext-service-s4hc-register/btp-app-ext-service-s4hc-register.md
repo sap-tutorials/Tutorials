@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Register Your SAP S/4HANA Cloud System
 description: This tutorial shows you how to register your SAP S/4HANA Cloud system in your SAP BTP cockpit.
+keywords: cap
 auto_validation: true
 time: 15
 tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management, software-product>sap-hana-cloud, software-product>sap-s-4hana-cloud]
@@ -33,7 +34,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Acquire an SAP BTP integration token for registration)]
-1. In your SAP BTP cockpit, under System Landscape choose **Systems**.
+1. In your SAP BTP cockpit, navigate to **System Landscape** &rarr; **Systems**.
 
 2. In the **Systems** panel, choose **Register System**.
 
@@ -45,11 +46,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
       ![s4h1](s4h1.png)
 
-6. Copy the generated token.
+6. Copy the generated token and keep this page open.
 
       !![s4h2](s4h2.png)
-
-7. Keep this page open.
 
 [DONE]
 [ACCORDION-END]
@@ -57,7 +56,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-BEGIN [Step 2: ](Add integration token to SAP S/4HANA Cloud system)]
 1. Log on to your SAP S/4HANA Cloud tenant.
 
-2. Navigate from **Home** **&rarr;** **Communication Management** tab and choose the tile **Maintain Extensions on SAP BTP**.
+2. Navigate from **Home** &rarr; **Communication Management** tab and choose the tile **Maintain Extensions on SAP BTP**.
 
       !![s4h3](s4h3.png)
 
@@ -94,7 +93,7 @@ After you have connected the SAP S/4HANA Cloud system to SAP BTP (with status **
 
 1. Enter your **Global Account**.
 
-2. Choose **Entitlements** **&rarr;** **Entity Assignments**.
+2. Choose **Entitlements** &rarr; **Entity Assignments**.
 
       !![Entity Assignments](entity_assignments.png)
 
@@ -108,7 +107,7 @@ After you have connected the SAP S/4HANA Cloud system to SAP BTP (with status **
 
       !![s4h8](s4h8.png)
 
-5. Choose **Configure Entitlements** and then **Add Service Plans**.
+5. Choose **Configure Entitlements** &rarr; **Add Service Plans**.
 
       !![s4h9](s4h9.png)
 

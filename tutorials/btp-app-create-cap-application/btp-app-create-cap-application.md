@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Create a CAP-Based Application
 description: This tutorial shows you how to create a new CAP-based application, which exposes the OData V4 protocol.
+keywords: cap
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]

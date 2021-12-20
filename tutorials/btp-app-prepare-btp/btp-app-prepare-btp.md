@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Prepare for SAP BTP Development
 description: Learn how to prepare SAP BTP and Cloud Foundry for application deployment.
+keywords: cap
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
@@ -196,7 +197,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -221,7 +222,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-    
+
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
@@ -229,7 +230,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-  
+
 [OPTION END]
 [OPTION BEGIN [Live]]
 
@@ -241,7 +242,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -266,7 +267,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-    
+
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
@@ -274,7 +275,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-  
+
 [OPTION END]
 
 

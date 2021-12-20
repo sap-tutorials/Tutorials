@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Prepare User Authentication and Authorization (XSUAA) Setup
 description: This tutorial shows you how to set up User Authentication and Authorization (XSUAA).
+keywords: cap
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
