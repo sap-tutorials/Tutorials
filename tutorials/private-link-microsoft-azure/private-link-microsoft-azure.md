@@ -5,7 +5,7 @@ description: Connect SAP Private Link service (Beta) to Microsoft Azure Private 
 auto_validation: true
 time: 10
 tags: [tutorial>beginner, software-product-function>sap-btp-cockpit, tutorial>license, software-product-function>sap-private-link-service, software-product-function>sap-btp-command-line-interface]
-keywords: private, link, Microsoft, Azure, connection, Cloud Foundry, CF, CLI, BTP, endpoint,
+keywords: private, link, Microsoft, Azure, connection, Cloud Foundry, CF, CLI, BTP, endpoint
 primary_tag: software-product-function>sap-private-link-service
 ---
 
