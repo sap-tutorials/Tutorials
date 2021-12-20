@@ -97,6 +97,12 @@
         }, {
             "name": "SAP AI Business Services",
             "value": "software-product>sap-ai-business-services"
+        }, {
+            "name": "SAP AI Core",
+            "value": "software-product>sap-ai-core"
+        }, {
+            "name": "SAP AI Launchpad",
+            "value": "software-product>sap-ai-launchpad"
         },  {
             "name": "SAP Analytics Cloud",
             "value": "software-product>sap-analytics-cloud"
