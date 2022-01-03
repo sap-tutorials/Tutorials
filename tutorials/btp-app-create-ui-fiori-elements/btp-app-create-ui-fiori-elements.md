@@ -62,7 +62,7 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 
     ![CAPpro](datasourceselection.png)
 
-6. Select **Risks** as the main entity and the option **No** to add table columns and choose **Next**.
+6. Select **Risks** as the main entity, choose the option **No** to avoid adding table columns automatically. Choose **Next**.
 
     ![entitySelection](entityselection.png)
 
