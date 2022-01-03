@@ -175,7 +175,7 @@ To make also the header fields editable, you have to change the default setting 
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 5: ](Check the annotation files)]
-Let's have a look at the new `risk-service-ui.cds` file and the annotations in there. At the beginning we see:
+Let's have a look at the new `risk-service-ui.cds` file and the annotations in there. At the beginning you see:
 
 ```JavaScript
 using RiskService from './risk-service';
@@ -270,7 +270,7 @@ The columns and their order in the work list are derived from the `LineItem` sec
 
 Next up is the `Facets` section. In this case, it defines the content of the object page. It contains only a single facet, a `ReferenceFacet`, of the field group `FieldGroup#Main`. This field group just shows up as a form. The properties of the `Data` array within `FieldGroup#Main` determine the fields in the form.
 
-At the end of the file we have:
+At the end of the file you see:
 
 ```JavaScript
 annotate RiskService.Risks with {
