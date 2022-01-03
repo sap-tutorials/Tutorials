@@ -15,13 +15,8 @@ primary_tag: software-product>sap-btp--cloud-foundry-environment
  - The [Cloud Foundry command line interface] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/4ef907afb1254e8286882a2bdef0edf4.html) is installed locally.
  - You have [npm] (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed locally.
  - You have installed the `virtualenv` tool. It creates a folder, which contains all the necessary executables to use the packages that your Python project would need. To install it locally, execute the following command in the Python installation path:   
-&nbsp;
-<<<<<<< HEAD
- `<Python_installation_path>\Python39\Scripts>pip install virtualenv`
+&nbsp; `<Python_installation_path>\Python39\Scripts>pip install virtualenv`
  - (Optional) You have an integrated development environment (IDE) installed locally. For example, Visual Studio Code.
-=======
- `<Python_installation_path>\Python39>pip install virtualenv`
->>>>>>> 501e2689dafdd0bd3cbd87a0879ad1b9500e2357
 
 
 ## Details
@@ -84,11 +79,7 @@ Now you'll create a simple Python application.
 
     The `manifest.yml` file represents the configuration describing your application and how it will be deployed to Cloud Foundry.
 
-<<<<<<< HEAD
     > **IMPORTANT**: Make sure you don't have another application with the name `mynewapp` in your `dev` space!
-=======
-    > Make sure you don't have another application with the name `myapp` in your `dev` space!
->>>>>>> 501e2689dafdd0bd3cbd87a0879ad1b9500e2357
 
 3. Specify the Python runtime version that your application will run on. To do that, create a `runtime.txt` file with the following content:
 
@@ -124,16 +115,12 @@ Now you'll create a simple Python application.
     cf push
     ```
 
-    >Make sure you always execute `cf push` in the directory where the `manifest.yml` is located.
+    > Make sure you always execute `cf push` in the directory where the `manifest.yml` is located.
 
-<<<<<<< HEAD
-7.  When the staging and deployment steps are complete, the `mynewapp` application should be successfully started and its details - displayed in the command console.
-=======
 7.	When the staging and deployment steps are complete, you can check the state and the URL of your application. Execute:
->>>>>>> 501e2689dafdd0bd3cbd87a0879ad1b9500e2357
 
     ```Bash
-    cf app myapp
+    cf app mynewapp
     ```
 
 8.	Now open a browser window and enter the URL of your application (the route).
@@ -273,13 +260,8 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
 
     ```JSON
     {
-<<<<<<< HEAD
       "xsappname" : "mynewapp",
       "tenant-mode" : "dedicated"
-=======
-      "xsappname" : "myapp",
-       "tenant-mode" : "dedicated"
->>>>>>> 501e2689dafdd0bd3cbd87a0879ad1b9500e2357
     }
     ```
 
@@ -309,11 +291,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
 
 4.	To create a second microservice (the application router), go to the `python-tutorial` directory and create a subdirectory named  `myweb`.
 
-<<<<<<< HEAD
-    > **IMPORTANT**: Make sure you don't have another application with the name `myweb` in your `dev` space!
-=======
     > Make sure you don't have another application with the name `web` in your `dev` space!
->>>>>>> 501e2689dafdd0bd3cbd87a0879ad1b9500e2357
 
 5.	Inside the `myweb` directory, create a subdirectory `resources`. This directory will provide the business application's static resources.
 
@@ -364,13 +342,8 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
         destinations: >
           [
             {
-<<<<<<< HEAD
               "name":"mynewapp",
-              "url":"https://mynewapp.cfapps.eu10.hana.ondemand.com",
-=======
-              "name":"myapp",
-              "url":" https://myapp.cfapps.eu10.hana.ondemand.com",
->>>>>>> 501e2689dafdd0bd3cbd87a0879ad1b9500e2357
+              "url":" https://mynewapp.cfapps.eu10.hana.ondemand.com",
               "forwardAuthToken": true
             }
           ]
@@ -405,11 +378,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
 
     >As of this point of the tutorial, the URL of the `myweb` application will be requested instead of the `mynewapp` URL. It will then forward the requests to the `mynewapp` application.
 
-<<<<<<< HEAD
-13.	When the staging and deployment steps are complete, the `myweb` application should be successfully started and its details - displayed in the command console.
-=======
 13.	Find the URL of the `web` application. Execute:
->>>>>>> 501e2689dafdd0bd3cbd87a0879ad1b9500e2357
 
     ```Bash
     cf app web
@@ -504,13 +473,9 @@ Authorization in the SAP BTP, Cloud Foundry environment is provided by the XSUAA
 
 5.	Try to access `mynewapp` again (in a browser) in both ways – directly, and through the `myweb` application router.
 
-<<<<<<< HEAD
 #### RESULT
 
 Accessing the `mynewapp` application results in the following:
-=======
-Accessing the `myapp` application results in the following:
->>>>>>> 501e2689dafdd0bd3cbd87a0879ad1b9500e2357
 
 - If you try to access it directly, a `403 Forbidden` response is displayed due to lack or permissions (lack of authorization header).
 
