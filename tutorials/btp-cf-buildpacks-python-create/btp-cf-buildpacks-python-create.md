@@ -1,7 +1,7 @@
 ---
 author_name: Gergana Tsakova
 author_profile: https://github.com/Joysie
-title: Create a Python Application via CF CLI
+title: Create a Python Application via Cloud Foundry Command Line Interface
 description: Create a simple Python application in the Cloud Foundry Command Line Interface (cf CLI) and enable services for it.
 auto_validation: true
 time: 40
@@ -30,7 +30,7 @@ primary_tag: software-product>sap-btp--cloud-foundry-environment
   - How to run authorization checks for your app
 
 
-This tutorial will guide you through creating and setting up a simple Python application by using the Cloud Foundry Command Line Interface ( **cf CLI**). You will start by building and deploying a Web application that returns sample data – a **Hello World!** message, and then invoking this app through another one - a Web microservice (application router).
+This tutorial will guide you through creating and setting up a simple Python application by using cf CLI. You will start by building and deploying a Web application that returns sample data – a **Hello World!** message, and then invoking this app through another one - a Web microservice (application router).
 
 ---
 
@@ -122,7 +122,7 @@ Now you'll create a simple Python application.
 
     > Make sure you always execute `cf push` in the directory where the `manifest.yml` is located.
 
-7.  When the staging and deployment steps are complete, the `mynewapp` application should be successfully started and its details - displayed in the command console.
+7.  When the staging and deployment steps are complete, the `mynewapp` application should be successfully started and its details displayed in the command console.
 
 8.	Now open a browser window and enter the URL of your application (the route).
 
@@ -381,7 +381,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
     >As of this point of the tutorial, the URL of the `myweb` application will be requested instead of the `mynewapp` URL. It will then forward the requests to the `mynewapp` application.
 
 
-13.	When the staging and deployment steps are complete, the `myweb` application should be successfully started and its details - displayed in the command console.
+13.	When the staging and deployment steps are complete, the `myweb` application should be successfully started and its details displayed in the command console.
 
 14.	Open a new browser tab or window, and enter the URL of the `web` application.
 
