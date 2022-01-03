@@ -58,11 +58,11 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 
     > See the [CAP Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for more details.
 
-5.    Select the **`RiskService(Node.js)`** as the OData service and choose **Next**.
+5. Select the **`RiskService(Node.js)`** as the OData service and choose **Next**.
 
     ![CAPpro](datasourceselection.png)
 
-6.    Select **Risks** as the main entity and the option **No** to add table columns and choose **Next**.
+6. Select **Risks** as the main entity and the option **No** to add table columns and choose **Next**.
 
     ![entitySelection](entityselection.png)
 
@@ -135,7 +135,7 @@ Let's say that at this point you'd like to edit some of the data or create a new
 
     !![No Title Risk](notitlerisk.png)
 
-In order to make also the header fields editable, you have to change the default setting for this in the `manifest.json` file on the `Risks` application.
+To make also the header fields editable, you have to change the default setting for this in the `manifest.json` file on the `Risks` application.
 
 1. Open `app/risks/webapp/manifest.json` file.
 
