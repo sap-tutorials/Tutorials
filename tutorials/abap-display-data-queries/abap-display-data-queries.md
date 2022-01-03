@@ -2,8 +2,8 @@
 title: Display Database Content and Run SQL Queries
 description: Use Data Preview to display the content of tables and SQL Console to perform ad-hoc SQL queries
 auto_validation: true
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-netweaver ]
 time: 15
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
@@ -11,6 +11,7 @@ author_profile: https://github.com/julieplummer20
 
 ## Prerequisites
 - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
+- **Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](abap-create-project)
 - You have generated the data for the relevant database table by running the transaction `SEPM_DG_OIA_NEW` (or program  `RS_EPM_DGC_HANA_NEW` ).
 
 
@@ -19,7 +20,7 @@ author_profile: https://github.com/julieplummer20
 - How to display the content of tables and views using Data Preview
 - How to perform ad hoc SQL queries using SQL Console
 
-The tutorial starts from scratch, based on tables of the SAP NetWeaver Demo sample EPM Model (you can find details in the SAP Community [The NetWeaver Enterprise Procurement Model – An Introduction](https://archive.sap.com/documents/docs/DOC-31458) ), so you can repeat the tutorial on any SAP NetWeaver 7.5 system.
+The tutorial starts from scratch, based on tables of the SAP NetWeaver Demo sample EPM Model. You can find details in the SAP Community [The NetWeaver Enterprise Procurement Model – An Introduction](https://archive.sap.com/kmuuid2/d0a7f673-59da-2f10-6e8b-bc7fe5dd4d0f/The%20NetWeaver%20Enterprise%20Procurement%20Model%20-%20An%20Introduction.pdf), so you can repeat the tutorial on any SAP NetWeaver 7.5 system.
 
 ---
 

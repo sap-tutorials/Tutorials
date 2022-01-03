@@ -3,9 +3,10 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Enable Logging Service for Your Application
 description: This tutorial shows you how to enable Logging Service for your application.
+keywords: cap
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -50,13 +51,13 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
     cf logs <appname>
     ```
 
-> Choose **Ctrl** + **C** to quit.
+> Choose <kbd>Ctrl</kbd> + <kbd>C</kbd> to quit.
 
 [VALIDATE_1]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Access logs from SAP BTP cockpit)]
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -170,7 +171,7 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
         service: application-logs
         service-plan: standard
     ```
-    
+
 2. Bind the logging service instance to the following `modules` of the `mta.yaml`.
 
     <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->

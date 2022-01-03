@@ -2,8 +2,8 @@
 auto_validation: true
 title: Create and Expose Core Data Services Based on a Database Table
 description: Build a list report app with the ABAP RESTful programming model for SAP Fiori and test your UI for demo usage.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-, software-product>sap-btp--abap-environment>sap-btp--abap-environment, software-product>sap-business-technology-platform]
 time: 10
 ---
 

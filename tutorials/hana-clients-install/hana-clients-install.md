@@ -3,8 +3,8 @@ title: Install the SAP HANA Client
 description: Learn about the multiple ways to install the SAP HANA client.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -37,7 +37,7 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
 [ACCORDION-BEGIN [Step 2: ](Install from SAP Development Tools)]
 
 1. Download the client installer for your platform (Microsoft Windows, Linux, or Mac) from the [SAP Development Tools](https://tools.hana.ondemand.com/#hanatools) website under the HANA tab and the SAP HANA Client 2.0 section.
->An alternate location to download the client installer (SAP Software Downloads) is described in step 3 which includes the SAP Common Crypto library and additional platforms such as Windows 32-bit and AIX.  
+>An alternate location to download the client installer (SAP Software Downloads) is described in step 3 which includes the SAP Common Crypto library and additional platforms such as Windows 32-bit and AIX.  SAP Software Downloads also may contain newer versions and patches before they are available on the SAP Development Tools site.
 
     ![Client Download](Client-install.png)
 
@@ -146,12 +146,12 @@ Another download location is the [Software Downloads](https://support.sap.com/en
     The command to extract a `.sar` file is shown below.  The command options are extract, verbose and file.
 
     ```Shell (Microsoft Windows Command Prompt)
-    SAPCAR_1010-70006231.EXE -xvf IMDB_CLIENT20_010_9-80002083.SAR
+    SAPCAR_1010-70006231.EXE -xvf IMDB_CLIENT20_011_14-80002083.SAR
     ```
 
     ```Shell (Linux or Mac)
     chmod u+x SAPCAR
-    ./SAPCAR_1010-70006178.EXE -xvf IMDB_CLIENT20_010_9-80002082.SAR
+    ./SAPCAR_1010-70006178.EXE -xvf IMDB_CLIENT20_011_14-80002082.SAR
     ```
 
     >For further information on SAPCAR or if you are having troubles using it, see [SAP HANA, SAPCAR, and macOS](https://blogs.sap.com/2020/03/18/sap-hana-sapcar-and-macos/).  

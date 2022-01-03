@@ -1,20 +1,20 @@
 ---
-title: Move Data from a Trial to a Production Instance
-description: Learn to move data, HDI containers, schemas and more from your trial instance to your production instance of SAP HANA Cloud, SAP HANA database.
+title: Move Data from a Free Tier Model or Trial Instance to a Production Instance
+description: Learn to move data, HDI containers, schemas and more from your free tier model or trial instance to your production instance of SAP HANA Cloud, SAP HANA database.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-business-application-studio]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-business-application-studio]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
-- You have access to a trial account and a production account in SAP HANA Cloud.
-- You have access to a trial and production environment in SAP Business Application Studio.
+- You have access to a free tier model or trial account and a production account in SAP HANA Cloud.
+- You have access to a free tier model or trial and production environment in SAP Business Application Studio.
 
 ## Details
 ### You will learn
-- To move development objects from a trial environment of SAP Business Application Studio
-- To export catalog objects like schemas and tables from a trial environment of SAP HANA Cloud, SAP HANA database
+- To move development objects from a free tier model or trial environment of SAP Business Application Studio
+- To export catalog objects like schemas and tables from a free tier model or trial environment of SAP HANA Cloud, SAP HANA database
 
 
 If you have data or any kinds of artifacts in your trial account and you would like to make sure you can keep these artifacts in a production environment, then this tutorial will help you. Please remember to follow these steps before your trial account expires, otherwise it won't be possible to recover this data.
@@ -25,7 +25,7 @@ In the first three steps of this article, you will learn how to move **developme
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Export artifacts from trial account)]
+[ACCORDION-BEGIN [Step 1: ](Export artifacts from free tier model or trial account)]
 
 The recommended way to move your artifacts within HDI containers is to deploy each of them to your production environment. To do that, you need to use the SAP Business Application Studio.
 
@@ -172,18 +172,56 @@ Alternatively, you can also export HDI Containers, if needed. Please see the doc
 -	[Export HDI Containers](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/LATEST/en-US/0394510cb4154e5494e6e44ae84a4478.html)
 -	[Export an SAP HDI Container for Copy Purposes](https://help.sap.com/viewer/c2cc2e43458d4abda6788049c58143dc/LATEST/en-US/c25ee286cee5496cb96fdf5875f444a2.html)
 
-> **You have completed this tutorial!**
->
-> Enjoy your production environment and make sure to [check out our other tutorials](https://developers.sap.com/tutorial-navigator.html?tag=products:technology-platform/sap-hana-cloud-services/sap-hana-cloud).
->
-> Follow our tag in the [SAP Community](https://blogs.sap.com/tags/73554900100800002881/) to stay up-to-date on the latest updates and newest content! For more learning materials on SAP HANA Cloud, [click here](https://community.sap.com/topics/hana-cloud).
-
 
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+[ACCORDION-BEGIN [Step 7: ](Import schemas, tables, and other catalog objects)]
+Next, you can import schemas, tables, and other catalog objects into your database by using the SAP HANA Database Explorer.
+
+> ### Prerequisites
+> The catalog objects imported must be compressed in `.tar.gz` format. They must have been exported using the export feature in the SAP HANA Database Explorer.
+>
+> You must have the necessary object privileges (INSERT, DROP, CREATE) for the catalog objects in the target database. Also, you must have the IMPORT system privilege for the user.
+
+1. In the SAP HANA database explorer, select **Schemas** from the list of **Catalog** objects in your target HDI container.
+
+2. Right-click on the schema to which you want to import the objects and choose **Import Catalog Objects**.
+
+3. Select the location of the file you want to import. You can select from the following available options shown in the image below:
+
+    !![Catalog object import options](ss-02-catalog-object-import-options.png)
+
+4. Browse for the location of the file you want to import. Select the file and click **Open**.
+
+5. Click on the arrow icon for the selected file to expand and view all the catalog objects present in it.
+
+6. Specify the scope of the import by choosing the relevant options from the table given below:
+
+    |  Option         | Description
+|  :------------- | :-------------
+| **Include dependencies**     | Dependent objects of the selected objects are also imported.
+|  **Include object data**     | Import the table data along with the table definitions. If left unselected, only the table definitions are imported.
+|  **Replace existing objects** | If objects with the same names already exist in the target database, then they are replaced by the imported objects.
+|  **Fail import if it contains invalid data** | If you have selected the option `Include object data`, then selecting this option ensures that your import is canceled if the object data is incomplete or corrupt.
+|  **Number of Parallel Threads** | Increasing the number of threads can speed up your import and affect database performance. Check [this link](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/LATEST/en-US/80f63855e7854cd3a6144e0021b5f748.html) for guidelines on how to choose the number of threads.
+
+7. Click on **Import**.
+
+Now, you have completed the process of importing catalog objects. The time taken to complete the import process depends on the number of objects being imported and the scope of the import.
+
+
+> **You have completed this tutorial!**
+>
+> Enjoy your production environment and make sure to [check out our other tutorials](https://developers.sap.com/tutorial-navigator.html?tag=software-product:technology-platform/sap-hana-cloud/sap-hana-cloud).
+>
+> Follow our tag in the [SAP Community](https://blogs.sap.com/tags/73554900100800002881/) to stay up-to-date on the latest updates and newest content! For more learning materials on SAP HANA Cloud, [click here](https://community.sap.com/topics/hana-cloud).
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Test yourself)]
 
 
 

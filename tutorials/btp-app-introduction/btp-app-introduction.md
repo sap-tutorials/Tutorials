@@ -3,9 +3,10 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Introduction to Application Development Using CAP and Node.js
 description: Learn about SAP Cloud Application Programming Model (CAP) and application development on SAP BTP.
+keywords: cap
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori, products>sap-fiori-tools, products>sapui5]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori, products>sap-fiori-tools, software-product>sapui5]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 

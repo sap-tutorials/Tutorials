@@ -3,9 +3,10 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Create a Directory for Development
 description: This tutorial shows you how to start building your application with CAP and VS Code.
+keywords: cap
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -140,7 +141,7 @@ If you don't want to start from scratch, but from a specific example of the tuto
     ```Shell/Bash
     cd ../cpapp
     ```
-    
+
 8. Install required Node.js modules in your app directory.
 
     ```Shell/Bash

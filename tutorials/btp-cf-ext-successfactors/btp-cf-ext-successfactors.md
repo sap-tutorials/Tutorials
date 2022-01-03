@@ -9,6 +9,7 @@ author_name: Ekaterina Mitova
 author_profile: https://github.com/ekaterina-mitova
 ---
 
+
 ## Prerequisites
  - Tools:
     - [JDK 8](https://www.oracle.com/java/technologies/javase/8all-relnotes.html) or later
@@ -22,7 +23,7 @@ author_profile: https://github.com/ekaterina-mitova
     - You have enabled the Cloud Foundry capabilities for your subaccount in SAP BTP.
  - On SAP SuccessFactors side:
     - You have a dedicated SAP SuccessFactors company instance.
-    - To configure the integration on the SAP SuccessFactors system side, you need a user with permissions to access SAP SuccessFactors Provisioning.
+    - You have a user with permissions to access Extension Center in SAP SuccessFactors Admin Center that include the Manage Extensions on SAP BTP permissions. See the **Prerequisites** section at [Register an SAP SuccessFactors System in a Global Account in SAP BTP](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/e956ba209f30447cb55140e38c15e345.html)
 
 ## Details
 ### You will learn
@@ -83,18 +84,17 @@ To do that, you must register your SAP SuccessFactors system in your global acco
 
 [ACCORDION-BEGIN [Step 2: ](Trigger registration in SAP SuccessFactors company)]
 
-1. Open SAP SuccessFactors Provisioning.
+1. In **SAP SuccessFactors Admin Center**, navigate to **Extension Center**.
 
-2. In the **List of Companies**, choose your SAP SuccessFactors company.
+>If you do not have permissions to access the Extension Center for the corresponding SAP SuccessFactors system, you need to send the integration token to a user with such permissions who will configure the integration on the SAP SuccessFactors system side.
 
-3. In the **Edit Company Settings** section, choose **Extension Management Configuration**.
+2. On the **Extensions on SAP BTP** tab page, navigate to the **Add Integration with SAP BTP** screen area, and paste the integration token in the **Integration Token** input field.
 
-4. In the **Integration Token** input field, paste the integration token.
+    ![In the **Integration Token** input field, paste the integration token.](screenshots.png/4-systems-view-new.png)
 
-    ![In the **Integration Token** input field, paste the integration token.](screenshots.png/4-systems-view.png)
+3. Choose **Add**.
 
-5. Choose **Add**.
-> Wait for the integration to finish. You can check the status of the process with the **Check Status** button next to your system name.
+>The system appears in the integration list in the Multi-Cloud Environment screen area, and the status of the integration is displayed in the Integration Status column. To refresh the status of the process, choose the Check Status icon. Wait for the integration to finish.
 
 6. In the SAP BTP cockpit, check the status of the registration process. To do so, navigate to your global account, and on the **Systems** page, check if the status of the SAP system has changed to **Registered**.
 
@@ -367,7 +367,11 @@ To configure the authentication for the **task management sample application for
 
 You have to use **Cloud Foundry Command Line Interface (cf CLI)** to deploy and run the **task management sample application for SAP SuccessFactors solutions**.
 
-1. Log on to the cf CLI, using this command:
+1. Open a console and navigate to the root folder of the project in local file system.
+
+    `cd <root folder of the project>`
+
+2. Log on to the cf CLI, using this command:
 
     ```Git
     cf login -a https://api.cf.eu10.hana.ondemand.com
@@ -375,13 +379,13 @@ You have to use **Cloud Foundry Command Line Interface (cf CLI)** to deploy and 
 
     The value `https://api.cf.eu10.hana.ondemand.com` represents the \<api_endpoint\>. To check it, go to the SAP BTP cockpit, navigate to the subaccount, go to **Overview** and copy the API endpoint from the **Cloud Foundry** section. See [Log On to the Cloud Foundry Environment Using the Cloud Foundry Command Line Interface](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7a37d66c2e7d401db4980db0cd74aa6b.html).
 
-2. Navigate to your Org by typing in the console the number that corresponds to your Org in the list with Orgs that is displayed after you log on to cf CLI.
+3. Navigate to your Org by typing in the console the number that corresponds to your Org in the list with Orgs that is displayed after you log on to cf CLI.  
 
-3. If you have more than one space, navigate to your space, by typing in the console the number that corresponds to your space in the list with spaces.
+4. If you have more than one space, navigate to your space, by typing in the console the number that corresponds to your space in the list with spaces.
 
     >If you have only one space, you will be redirected to it right after you specify your Org.
 
-4. In the cf CLI push the `vars.yml` file using this command:
+5. In the cf CLI push the `vars.yml` file using this command:
 
     `cf push --vars-file vars.yml`
 

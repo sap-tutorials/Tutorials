@@ -1,0 +1,229 @@
+---
+title: Capture Orders Management Web Application
+description: You will capture Orders Management application using SAP Intelligent Robotic Process Automation.
+auto_validation: true
+time: 30
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-intelligent-robotic-process-automation
+---
+
+## Prerequisites
+- [Subscribe to SAP Intelligent RPA Service in SAP BTP](irpa-setup-1-booster-subscription)
+- [Install SAP Intelligent RPA On-Premise Components](irpa-setup-2-onpremise-installation)
+
+## Details
+### You will learn
+  - Capture a web application
+  - Test an application using Application Tester
+
+
+>Please note:
+
+>- Desktop Agent must be installed and connected to SAP Intelligent RPA Cloud Factory.
+
+>- SAP Intelligent RPA Browser extension must be enabled.
+
+>If you followed the prerequisites, you should be set up properly.
+
+
+
+
+---
+
+[ACCORDION-BEGIN [Step 1: ](Open application to automate)]
+
+In a separate browser window, open the application you will automate by clicking the link [Browse Orders](https://openui5.hana.ondemand.com/test-resources/sap/m/demokit/orderbrowser/webapp/test/mockServer.html).
+
+>Make sure to open the application in its own window.
+
+!![Web Application](WebApplication.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 2: ](Create new project)]
+1.  In a new browser window, go to SAP Intelligent Robotic Process Automation Cloud Factory.
+
+2.  Click the **Projects** tab.
+
+    !![Projects](Projects.png)
+
+3.  Create a new project.
+
+    -	Click **New Project**.
+
+    - In the **New Project** popup, enter the following.
+
+    |  Field Name     | Value
+    |  :------------- | :-------------
+    |  Name           | **`Orders Management`**
+    |  Description    | **`A project to manage orders`**
+
+
+    -	Click **Create**.
+
+      !![New Project popup](New Project Popup.png)
+
+    The project opens in a new tab in Cloud Studio.
+
+
+[DONE]
+[ACCORDION-END]
+
+
+
+[ACCORDION-BEGIN [Step 3: ](Create application artifact)]
+Click **Create** and then, select **Application**.
+
+>Alternatively, you can choose to click !![Plus](Plus.png). Hover on **Create** and then, select **Application**.
+
+!![Project Overview](Overview.png)
+
+A new tab will open. The system starts detecting the applications and their screens currently running on your local machine. You'll see a list of screens in the **Picker panel** on the left.
+
+In the next step, you will select the orders application you already opened.
+
+!![Choose Browse Orders](Choose Browse Orders.png)
+
+> ### What's going on?
+In order to automate a web application, you need to: capture, declare and test the application, screens, and UI elements.
+
+>You will capture the application and its screens. Then, declare the screens and the elements within the screens that will be part of the automation. Finally, test the application to make sure all the applications, screens and elements are getting recognized.
+
+>This is an important step to make sure that the system knows which application to work on, which screen to open and which element to select.
+
+[DONE]
+[ACCORDION-END]
+
+
+
+
+
+[ACCORDION-BEGIN [Step 4: ](Capture application to automate)]
+>he artifact of type Application lets you capture an application and its screens for use in automations. Capturing means identifying the applications you want to control in an automation.
+
+1.  In the **Untitled** new application tab, click the `Browse Orders` application.
+
+    !![Choose Browse Orders](Choose Browse Orders.png)
+
+2.  Click **Capture** to start capturing the application. It will take a few seconds.
+
+    !![Capture Browse Orders](Capture Browse Orders.png)
+
+3.  The captured application is visible under the **Declared Application** section.
+
+    !![Browse Orders application](Browse Orders application.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Declare screens)]
+> To declare an application, you need to set recognition criteria -- which identifies the application, screens and UI elements correctly when your automation runs.
+
+1. Click on the **URL** (below) in the **Captured Data** to add them to **Recognition Criteria**    section .
+
+    Modify the criterion of URL as below and click **Apply**.
+
+    - **Property** `URL`
+    - **Operator** `contains`
+    - **URL** `https://openui5.hana.ondemand.com/test-resources/sap/m/demokit/orderbrowser/webapp/test/mockServer.html`
+
+      ![Modify Criteria](Modify Criteria.png)
+
+2.  Save your changes.
+
+    The Recognition Criteria should look like this:
+
+    !![Screen Declaration](Screen Declaration.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Declare screen elements)]
+1.  Click the first order number (here, **Order 7991**) to select. A green or red border will appear around the selected element.
+
+    You can take help from the **Both** view to drill-down to the specific element.
+
+    !![Select View](Select View.png)
+
+2.  In the **Element Information** panel, enter `Order Number` for the name of the element. The **Identifier** and **Element** are automatically detected.
+
+    !![Element Information](ElementInformation.png)
+
+3.  Remove any already existing criterion by clicking the **X**.
+
+4.  In **Captured Data**, click the data below to add them to the criteria. The selected data is then automatically added as a criterion in **Recognition Criteria**.
+
+    -	**class equals `sapMTextMaxLine sapMTextLineClamp`**
+
+5.  Click **Declare Element**.
+
+    !![Declare Element Order number](Declare Element Order number.png)
+
+6. From the **Declared Elements** area, click the **Is a collection** button &nbsp; !![Is a Collection](Is a Collection.png) &nbsp; to convert the **Order Number** element into a collection of elements. Your screen should look like this:
+
+    !![Declaration Order Number](Declaration Order Number.png)
+
+7.   Repeat steps 2-6 to further declare the element **Status**. Use the below criteria to declare:
+
+    -	class equals `sapMObjStatusText`
+
+    Make sure to declare the status as **Collection**.
+
+    !![Final Application](Final Application.png)
+
+8.  Save your work.
+
+[VALIDATE_3]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 7: ](Test the application)]
+> The purpose of testing an application before using it in an automation is to ensure that you have declared all of the elements correctly so that at runtime, they are correctly identified and can be controlled as intended. The application can be tested using **Application Tester**.
+
+1.  To test your application, click **Test** ![Test](Test.png)
+
+2.  Select an environment in the **Test Application** dialog box.
+
+    Click **Test**.
+
+    !![Choose Environment](Choose Environment.png)
+
+    The system launches the **Application Tester**.
+
+    !![Application Tester_1](Application Tester_1.png)
+
+    The applications declared in your project are displayed in **Declared Applications**.
+
+3.  Click the arrow next to the declared application to unfold the screen(s) to test.
+
+4.  Select the screen to test.
+
+    The elements getting successfully recognized will appear in **green**. If the declared application or screen or element is not recognized, you will see them in **red**.
+
+    The declared elements found on the selected screen are listed in the **Declared Elements** section. Click the arrow next to a declared element to display its collection.
+
+    !![Application Tester Declared Elements](Application Tester Declared Elements.png)
+
+6.  Test the elements.
+
+    -	Select the element `Order Number(0)` from the list.
+
+    -	Select **Get Element** activity.
+
+    -	Click **Execute**.
+
+    The result can be seen in **Output parameters** as **Order 7991**. This way you can test that the elements are getting recognized correctly.
+
+    !![Application Tester Activities](Application Tester Activities.png)
+
+Congratulations! You have successfully captured and declared the application for orders management.
+
+In next tutorial, you will learn how to build an automation with this captured application to automate the orders management process.
+
+[VALIDATE_4]
+[ACCORDION-END]
+
+---

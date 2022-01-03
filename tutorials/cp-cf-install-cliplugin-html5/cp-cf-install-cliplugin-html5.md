@@ -23,7 +23,6 @@ cf --version
 
 Now you should see the release number of the CLI you are using.
 
-
 > You can go to [this tutorial](cp-cf-download-cli) to install the Cloud Foundry CLI if necessary
 
 

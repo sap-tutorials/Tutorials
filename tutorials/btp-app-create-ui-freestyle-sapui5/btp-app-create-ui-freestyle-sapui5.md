@@ -3,9 +3,10 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Create a UI Using Freestyle SAPUI5
 description: This tutorial shows you how to create a Freestyle SAPUI5 app on top of your CAP application.
+keywords: cap
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori-tools, products>sapui5]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori-tools, software-product>sapui5]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -39,7 +40,7 @@ Fortunately, you have also got a choice of several templates that get your appli
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Creating the application)]
-1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P** for macOS / **Ctrl** + **Shift** + **P** for Windows) and choose **Fiori: Open Application Generator**.
+1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P** for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
 
     > In case you get an error launching the Application Generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.
@@ -58,7 +59,7 @@ Fortunately, you have also got a choice of several templates that get your appli
     > You might get the error `Node module @sap/cds is not found. Please install it and try again.` after you have chosen your CAP project. This is an issue with the App Generator not finding the corresponding CAP modules, due to different repositories. This should be a temporary issue. For the meantime you can work around it by opening a command line and running the following command:
 
     > ```bash
-    > npm i -g @sap/cds-dk --@sap:registry=https://npmjs.org/
+    > npm install --global @sap/cds-dk --@sap:registry=https://npmjs.org/
     > ```
 
     > See the [CAP Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for more details.

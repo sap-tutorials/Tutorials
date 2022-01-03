@@ -3,8 +3,8 @@ title: Get Data from a Remote System Using a Custom Entity
 description: Get data from an on-Premise System Using RFC, by Implementing a Custom Entity in ABAP Environment
 auto_validation: true
 time: 45
-tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: topic>abap-development
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, tutorial>license]
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
