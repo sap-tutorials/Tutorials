@@ -10,7 +10,7 @@ author_profile: https://github.com/MarcoEidinger
 ---
 
 ## Prerequisites
- - You have created a SAP Conversational AI chatbot, for example, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](https://bit.ly/3srXE1F).
+ - You have created a SAP Conversational AI chatbot, for example, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](https://bit.ly/3srXE1F)
  - You have generated a sample iOS application as described in the tutorial [Create a Sample iOS App](fiori-ios-scpms-create-sample-app)
 
 ## Details
@@ -29,7 +29,7 @@ Sign-in to your bot on [https://cai.tools.sap/](https://cai.tools.sap/) and perf
 
     ![Add SAP Conversational AI Mobile SDK channel](./connect-primaryChannel-mobilesdk-add.png)
 
-    A model popup opens.
+    A modal popup opens.
 
 2. Enter `Name` and `Application ID`.
 
