@@ -27,13 +27,13 @@ Sign-in to your bot on [https://cai.tools.sap/](https://cai.tools.sap/) and perf
 
 1. Click the `+` button.
 
-    ![Add SAP Conversational AI Mobile SDK channel](./connect-primaryChannel-mobilesdk-add.png)
+    !![Add SAP Conversational AI Mobile SDK channel](./connect-primaryChannel-mobilesdk-add.png)
 
     A modal popup opens.
 
 2. Enter `Name` and `Application ID`.
 
-    ![Add SAP Conversational AI Mobile SDK channel](./connect-primaryChannel-mobilesdk-create.png)
+    !![Add SAP Conversational AI Mobile SDK channel](./connect-primaryChannel-mobilesdk-create.png)
 
 3. Click `Create`, copy `Name` and the generated `Channel ID` and `Token` to reuse later.
 
@@ -47,7 +47,7 @@ Sign-in to your bot on [https://cai.tools.sap/](https://cai.tools.sap/) and perf
 
 1. Access `Tokens` through your bot's `Settings`.
 
-    !["Generate OAuth client"](./connect-settings-oauthclient-generate.png)
+    !!["Generate OAuth client"](./connect-settings-oauthclient-generate.png)
 
 2. Click `Generate` to create the OAuth client Runtime API.
 
@@ -61,7 +61,7 @@ Sign-in to your bot on [https://cai.tools.sap/](https://cai.tools.sap/) and perf
 
 5. Copy the generated `Auth URL`, `Client ID` and `Client Secret` to reuse later.
 
-    ![Generated OAuth client](./connect-settings-oauthclient-generated.png)
+    !![Generated OAuth client](./connect-settings-oauthclient-generated.png)
 
 [DONE]
 [ACCORDION-END]
@@ -70,11 +70,11 @@ Sign-in to your bot on [https://cai.tools.sap/](https://cai.tools.sap/) and perf
 
 1. Click on `Mobile Connectivity` in your application definition.
 
-    !["Navigate to Mobile Connectivity feature"](./ms-features.png)
+    !!["Navigate to Mobile Connectivity feature"](./ms-features.png)
 
 2. Click the `+` button to start the destination create wizard.
 
-    ![Create a new destination](./ms-destination-create.png)
+    !![Create a new destination](./ms-destination-create.png)
 
 3. In **Basic Info** enter the required `Destination Name` and `URL`.
 
@@ -115,7 +115,7 @@ Sign-in to your bot on [https://cai.tools.sap/](https://cai.tools.sap/) and perf
 
 8. Click `Ping` to test if the destination can reach its target.
 
-    ![Ping the target system to verify that destination works](./ms-destination-created_test.png)
+    !![Ping the target system to verify that destination works](./ms-destination-created_test.png)
 
 [VALIDATE_1]
 
@@ -130,7 +130,7 @@ Sign-in to your bot on [https://cai.tools.sap/](https://cai.tools.sap/) and perf
 
 3. Paste the following URL into the search field: `https://github.com/SAP/cloud-sdk-ios-cai`
 
-    ![Add Package](./xcode_addPackage.png)
+    !![Add Package](./xcode_addPackage.png)
 
 4. Click "Add Package".
 
@@ -252,11 +252,11 @@ You are now ready to test your iOS application and initiate a conversation with 
 
 2. Touch on the row in the `ODataContainers` view.
 
-    ![ODataContainers View](SampleAppODataContainers.png)
+    !![ODataContainers View](SampleAppODataContainers.png)
 
 3. Touch on the right bar button.
 
-    ![Collections View](SampleAppCollectionsModifiedRightBarButtonItem.png)
+    !![Collections View](SampleAppCollectionsModifiedRightBarButtonItem.png)
 
 4. Touch the input field on the bottom to open the keyboard.
 
