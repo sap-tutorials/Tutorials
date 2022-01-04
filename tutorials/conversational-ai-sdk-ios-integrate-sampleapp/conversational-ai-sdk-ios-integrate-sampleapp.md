@@ -35,7 +35,7 @@ Sign-in to your bot on [https://cai.tools.sap/](https://cai.tools.sap/) and perf
 
     !![Add SAP Conversational AI Mobile SDK channel](./connect-primaryChannel-mobilesdk-create.png)
 
-3. Click `Create`, copy `Name` and the generated `Channel ID` and `Token` to reuse later.
+3. Click `Create`, then copy `Name` and the generated `Channel ID` and `Token` to reuse later.
 
     ![Add SAP Conversational AI Mobile SDK channel](./connect-primaryChannel-mobilesdk-created.png)
 
