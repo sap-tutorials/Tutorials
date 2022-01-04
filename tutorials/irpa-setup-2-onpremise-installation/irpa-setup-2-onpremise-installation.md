@@ -30,13 +30,13 @@ Get the latest version of the SAP Intelligent RPA MSI from [SAP Development tool
 
 [ACCORDION-BEGIN [Step 2: ](Install components)]
 
-1. Double-click on the MSI, and click **Next**.
+1. Double-click on the MSI, and choose **Next**.
 
-2. Choose the components to install and click **Next** for the following steps.
+2. Choose the components to install and choose **Next** for the following steps.
 
 3. Wait for the installation to complete.
 
-4. Click **Finish**.
+4. Choose **Finish**.
 
   ![Desktop Agent Installation Progress](Step2-AgentInstallationProgress.png)
 
@@ -48,11 +48,11 @@ Get the latest version of the SAP Intelligent RPA MSI from [SAP Development tool
 
 
 [ACCORDION-BEGIN [Step 3: ](Register Desktop Agent Tenant)]
-In Windows search bar, search for **Desktop Agent** and click it.
+In Windows search bar, search for **Desktop Agent** and choose it.
 
 !![DesktopAgent Search](Step3-AgentSearch.PNG)
 
-Register the tenant in the Desktop Agent .
+Register the tenant in the Desktop Agent.
 
 
 1. Give a name for your tenant.
@@ -61,31 +61,25 @@ Register the tenant in the Desktop Agent .
 
     >This is the URL you saved in the previous tutorial, obtained after subscribing to SAP Intelligent RPA.
 
-3. Paste it in the domain area.
+3. Paste the domain in the domain area.
 
-4. Click **Finish**.
+4. Choose **Finish**.
 
    !![Agent Configuration](Step3-Agent Configuration.PNG)
 
-Log in with your email account and password which you have subscribed for SAP BTP.
+Log in with your email account and password.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Activate Desktop Agent Tenant)]
-Click **Tenants**. A list of tenants is displayed.
+Choose **Tenants**. A list of tenants is displayed.
 
-!![Tenants](Step4-Tenants.png)
+!![Tenats](Step4-Tenants.png)
 
-Click **Activate** to activate the trial account.
+Choose **Activate** to activate the trial account.
 
 !![Tenant Activation](Step4-TenantActivation.png)
-
-Open **SAP Intelligent RPA Cloud Factory** URL in a browser window.
-
-Click on **Agents** tab and check that your agent is listed with status **Idle**.
-
-!![Agent Idle](AgentIdle.png)
 
 [DONE]
 [ACCORDION-END]
@@ -99,7 +93,8 @@ Navigate to the extensions of the Google Chrome Browser and enable the **SAP Int
 
 !![RPA Extension](Step6-RPABrowserExtension.png)
 
-[DONE]
+
+[VALIDATE_5]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Configure Cloud Factory: Create an agent group)]
@@ -115,41 +110,41 @@ Once connected to the Cloud Factory, you need to declare your Desktop Agent in a
 
 1. Create an agent group, as follows:
 
-    -  Click the dropdown menu of the **Agents** tab and select the **Agent groups** tab.
+    -  Choose the dropdown menu of the **Agents** tab and select the **Agent groups** tab.
 
-    - Click **New Agent Group**.
+    - Choose **New Agent Group**.
 
     - In the **Name** field, type a name for your agent group.
 
     - Under **Type**, select **Login**.
 
-    - Click **Create**.
+    - Choose **Create**.
 
     !![Create Agent Group](Step5-create-agentgroup.png)
 
 2. Add a node to the agent group, as follows:
 
-    - In the agent group details view, click the `+` button to add a new node to the group.
+    - In the agent group details view, choose the `+` button to add a new node to the group.
 
     - Set **All** as the name.
 
-    - Click **Create**.
+    - Choose **Create**.
 
     !![Add Agent group](step5-add-node-group.png)
 
 3. Prepare to add an agent to the agent group, as follows:
 
-    - Click the new created node to select it.
+    - Choose the new created node to select it.
 
-    - Click the **+** button to add a new agent.
+    - Choose the `+` button to add a new agent.
 
     - Enter your login in the **Name** field.
 
     - Enter a name for the new agent in the **Label** field.
 
-    - Click **Create**.
+    - Choose **Create**.
 
-    - Click **Save**.
+    - Choose **Save**.
 
     !![Add new agent](step5-add-new-agent.png)
 
@@ -162,9 +157,9 @@ Once connected to the Cloud Factory, you need to declare your Desktop Agent in a
 [ACCORDION-BEGIN [Step 7: ](Configure Cloud Factory: Create an environment)]
 >An environment represents the functional landscape in which SAP Intelligent RPA is deployed.
 
-1. Click the **Environments** tab.
+1. Choose the **Environments** tab.
 
-2. Click **New Environment**.
+2. Choose **New Environment**.
 
 3. In the **New Environment** popup, enter the following:
 
@@ -174,7 +169,7 @@ Once connected to the Cloud Factory, you need to declare your Desktop Agent in a
     |  Description    | A description for the environment
     |  Type          | **Test**
 
-6. Click **Create**
+6. Choose **Create**
 
 !![Create Environment](step5-create-environment.png)
 
@@ -184,11 +179,11 @@ Once connected to the Cloud Factory, you need to declare your Desktop Agent in a
 [ACCORDION-BEGIN [Step 8: ](Configure Cloud Factory: Add agent to environment)]
 >An agent is a local component consisting of a computer system (PC, desktop or server) and a user session that executes an automation scenario.
 
-1. In your new environment PAGE, click the **Agents** section.
+1. In your new environment PAGE, choose the **Agents** section.
 
-2. Click **+ Add Agent**.
+2. Choose **+ Add Agent**.
 
-3. Click **Agent groups**.
+3. Choose **Agent groups**.
 
 4. Select your agent group.
 
@@ -200,8 +195,7 @@ Once connected to the Cloud Factory, you need to declare your Desktop Agent in a
 
 You have successfully installed and configured the Desktop Agent, completed the settings in SAP Intelligent RPA Cloud factory and ready to design your automation.
 
-
-[VALIDATE_8]
+[DONE]
 [ACCORDION-END]
 
 ---
