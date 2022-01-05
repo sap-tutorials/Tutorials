@@ -4,7 +4,7 @@ description: Build an entity list using SAP BTP SDK for iOS controls, with story
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>ios-sdk-for-sap-btp
+primary_tag: software-product>ios-sdk-for-sap-btp
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 35
 ---
