@@ -5,14 +5,14 @@ auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services, products>sap-mobile-services ]
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, products>sap-business-technology-platform, products>sap-mobile-services, products>sap-mobile-services ]
 time: 25
 ---
 
 ## Prerequisites
 
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
-- **SAP BTP SDK for iOS:** Version 6.0 or higher
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 13 or higher
+- **SAP BTP SDK for iOS:** Version 7.0 or higher
 
 ## Details
 
@@ -162,6 +162,7 @@ Because you already implemented a similar screen, the Product List, you can copy
     import SAPFiori
     import SAPFoundation
     import SAPOData
+    import SAPOfflineOData
     import SAPFioriFlows
     import SAPCommon
     import ESPMContainerFmwk
@@ -172,8 +173,8 @@ Because you already implemented a similar screen, the Product List, you can copy
 
         let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
-        var dataService: ESPMContainer<OnlineODataProvider>? {
-            guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOnlineODataController, let dataService = odataController.dataService else {
+        var dataService: ESPMContainer<OfflineODataProvider>? {
+            guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOfflineODataController, let dataService = odataController.dataService else {
                 AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
                 return nil
             }
