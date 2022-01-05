@@ -4,7 +4,7 @@ description: Use Xcode to change the generated UI and add your own views to the 
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>ios-sdk-for-sap-btp
+primary_tag: software-product>ios-sdk-for-sap-btp
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services ]
 time: 25
 ---
