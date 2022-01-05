@@ -5,7 +5,7 @@ auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services ]
 time: 15
 ---
 
@@ -249,7 +249,7 @@ In order to display the Charts, you're going to use the `FUIChartTitleTableViewC
           updateTable()
       }
 
-    }
+  }
 
     ```
 
@@ -362,7 +362,7 @@ In the last step, you've implemented the Table View's Data Source. The `FUIChart
       }
 
     }
-    
+
     ```
 
 2. Inside this extension, implement the following code and read the inline comments carefully:

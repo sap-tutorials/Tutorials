@@ -5,7 +5,7 @@ auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services ]
 time: 25
 ---
 
@@ -104,25 +104,28 @@ In order to display the newly added overview screen right after the onboarding p
     ```Swift[15-16]
     func showApplicationScreen(completionHandler: @escaping (Error?) -> Void) {
         // Check if an application screen has already been presented
-        guard self.isSplashPresented else {
+        guard isSplashPresented else {
             completionHandler(nil)
             return
         }
 
-        // Restore the saved application screen or create a new one
+        // set rootViewController only once ie after onboarding when app screen is about to be shown
+        // for restore, remove covering views previously added
         let appViewController: UIViewController
-        if let savedViewController = self._savedApplicationRootViewController {
-            appViewController = savedViewController
-        } else {
-            // This will retrieve an instance of the Main storyboard and instantiate the initial view controller which is the Navigation Controller. Force cast to UINavigationController and assign the instance as appViewController.
-
+        if isOnboarding {
             let overviewTVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as! UINavigationController
+
             appViewController = overviewTVC
+
+            isOnboarding = false
+            coveringViews.removeAll()
+
+            // maintain this boolean since no splash screen is present now
+            isSplashPresented = false
+            window.rootViewController = appViewController
+        } else {
+            removeCoveringViews()
         }
-        self.window.rootViewController = appViewController
-        self._onboardingSplashViewController = nil
-        self._savedApplicationRootViewController = nil
-        self._coveringViewController = nil
 
         completionHandler(nil)
     }
