@@ -58,6 +58,8 @@ You've already learned about the cool expand-feature of OData in the previous st
 * The `ProductID` shall also be less than 8
 * The name of the category should be "Beverages"
 
+Close the dialog by clicking **OK** and apply the filter by clicking **Go**.
+
 !![filter dialog](filters.png)
 
 
