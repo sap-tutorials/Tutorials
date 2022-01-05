@@ -5,14 +5,14 @@ auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 35
 ---
 
 ## Prerequisites
 
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
-- **SAP BTP SDK for iOS:** Version 6.0 or higher
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 13 or higher
+- **SAP BTP SDK for iOS:** Version 7.0 or higher
 
 ## Details
 
@@ -127,7 +127,6 @@ The Product List is a Table View Controller which means the structure is similar
     ```Swift
     import SAPFiori
     import SAPFoundation
-    import SAPOData
     import SAPFioriFlows
     import SAPCommon
     import ESPMContainerFmwk
@@ -153,13 +152,17 @@ The Product List is a Table View Controller which means the structure is similar
     let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
     /// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course you only have one destination here. Handle the errors in case the OData controller is nil. You are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the Assistant.
+
     var dataService: ESPMContainer<OnlineODataProvider>? {
-        guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOnlineODataController, let dataService = odataController.dataService else {
-            AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
-            return nil
-        }
-        return dataService
-    }
+          guard let odataController = OnboardingSessionManager
+                  .shared
+                  .onboardingSession?
+                  .odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOnlineODataController else {
+              AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
+              return nil
+          }
+          return odataController.dataService
+      }
 
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let logger = Logger.shared(named: "ProductsTableViewController")
@@ -188,12 +191,15 @@ The Product List is a Table View Controller which means the structure is similar
     let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
     var dataService: ESPMContainer<OfflineODataProvider>? {
-        guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOfflineODataController, let dataService = odataController.dataService else {
-            AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
-            return nil
-        }
-        return dataService
-    }
+          guard let odataController = OnboardingSessionManager
+                  .shared
+                  .onboardingSession?
+                  .odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOfflineODataController else {
+              AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
+              return nil
+          }
+          return odataController.dataService
+      }
 
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private let logger = Logger.shared(named: "ProductsTableViewController")
@@ -235,7 +241,7 @@ The Product List is a Table View Controller which means the structure is similar
 
     > In case you don't have the `Runtime Root URL` anymore you can find it in **Mobile Services**, select your **app configuration** in the **`Native/Hybrid`** screen. There you click on **`Mobile Sample OData ESPM`** in the **Assigned Features** section. The detail screen for the `Mobile Sample OData ESPM` will open. There you find the **`Runtime Root URL`** for this service, copy the whole URL.
 
-5. Add the following lines of code below the closing bracket of the `viewDidLoad()` method:
+5. Add the following lines of code below the closing bracket of the `viewDidLoad()` method, make sure to override/delete the existing method stubs:
 
     ```Swift[20]
     override func numberOfSections(in tableView: UITableView) -> Int {
