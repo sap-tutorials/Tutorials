@@ -7,8 +7,10 @@ tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-launchpad-servi
 primary_tag: programming-tool>odata
 author_name: Nico Geburek
 author_profile: https://github.com/nicogeburek
-
 ---
+
+## Prerequisites
+- You have previously created a SAPUI5 based project, e.g. with the [easy-ui5 generator](sapui5-fiori-cf-create-project)
 
 ## Details
 ### You will learn
@@ -70,6 +72,7 @@ As you can see in the log, there are two new files and one modified file. As the
         <App id="app" />
     </mvc:View>
     ```
+
     !![mainview](mainview.png)
 
 2. The newly generated view `webapp/view/Mainview.view.xml` defines one page of the whole application. **Replace** the current content of the view, the `<App>` tag, with a page that contains one list that uses an [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html).
@@ -87,6 +90,7 @@ As you can see in the log, there are two new files and one modified file. As the
       </Page>
     </mvc:View>
     ```
+
 
 You'll immediately be able to see that the `MainView` embeds the `Products` view and displays an empty list. The list is still empty, because there is not data source bound to the application yet.
 
