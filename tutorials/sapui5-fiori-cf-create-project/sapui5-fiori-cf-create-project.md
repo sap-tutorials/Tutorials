@@ -3,12 +3,14 @@ title: Create a Fiori Launchpad App
 description: After you set up the environment, use the generator to bootstrap a new SAPUI5 project. Learn about the main components of this basic project and the tools that support it.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, topic>user-interface, topic>html5, topic>cloud, tutorial>free-tier]
+tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
 primary_tag:  products>sap-launchpad-service
+author_name: Nico Geburek
+author_profile: https://github.com/nicogeburek
 ---
 
 ## Prerequisites
- - Install at least version 3.0.0 of the [easy-ui5 generator](cp-cf-sapui5-local-setup)
+ - Install at least version 3.1.4 of the [easy-ui5 generator](cp-cf-sapui5-local-setup)
 
 ## Details
 ### You will learn
@@ -39,6 +41,7 @@ Choose the following responses for the prompted parameters.
 |  Which view type do you want to use? | **`XML`**
 |  Where should your UI5 libs be served from?            | **`Content delivery network (SAPUI5)`**
 |  Would you like to create a new directory for the project?    | **`Yes`**
+|  Would you like to add JavaScript code assist libraries to the project?    | **`Yes`**
 |  What name should be displayed on the Fiori Launchpad tile| **`Products`**
 
 
@@ -67,10 +70,10 @@ The main code for the SAPUI5 app can be found in the directory `webapp`. You can
 - `deployer`: A Cloud Foundry tasks which uploads the static web resources to the HTML5 application repository service during deploy-time.
 - `uimodule`: The source file of your SAP Fiori app.
 
-You might miss the folders `dist` and `mta_archieves` as they will be created later during the build step.
+You might miss the folders `dist` and `mta_archives` as they will be created later during the build step.
 
 
-The `package.json` file contains much useful information about the project. The `npm scripts` are especially interesting since they wrap the command we'll use later.
+The `package.json` file contains much useful information about the project. The `npm scripts` are especially interesting since they wrap the command you will use later.
 
 [DONE]
 [ACCORDION-END]
@@ -96,10 +99,18 @@ npm start
 [ACCORDION-BEGIN [Step : ](Modify the title)]
 
 **Open** the i18n file [`uimodule/webapp/i18n/i18n_en.properties`](https://sapui5.hana.ondemand.com/#/topic/91f217c46f4d1014b6dd926db0e91070). **Replace** the content of this file with the following content.
-```TEXT
-title=Coming soon!
+```TEXT [6,9,11]
+# This is the resource bundle for tutorial.products
+
+#Texts for manifest.json
+
+#XTIT: Application name
 appTitle=Product List
+
+#YDES: Application description
 appDescription=App Description
+#XTIT: Main view title
+title=Coming soon!
 ```
 
 You should see the result of your action immediately in the browser.

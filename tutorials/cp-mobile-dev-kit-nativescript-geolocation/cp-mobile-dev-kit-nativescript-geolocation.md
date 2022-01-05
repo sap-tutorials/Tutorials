@@ -120,7 +120,7 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 
 [ACCORDION-BEGIN [Step 3: ](Display the coordinates on a page)]
 
-You will add this registered control in a Form Cell page.
+You will add this registered control in the `Main.page`.
 
   1. Click the `Main.page`, drag & drop **Static Key Value** container control to the page area.
 
@@ -148,7 +148,7 @@ You will add this registered control in a Form Cell page.
 
 [ACCORDION-BEGIN [Step 4: ](List the NPM modules as external reference)]
 
-In `GetCoordinates.js` file, you referred `nativescript-geolocation` and `tns-core-modules/ui/enums`. You now need to list these modules as external references in BAS configuration so when bundling, MDK editor knows not to worry about these references.
+In `GetCoordinates.js` file, you referred `@nativescript/geolocation` plugin. You now need to list this module as external references in BAS configuration so when bundling, MDK editor knows not to worry about these references.
 
 1. Navigate **File** menu | **Settings** | **Open Preferences**.
 
@@ -196,6 +196,9 @@ So far, you have learned how to build an MDK application in the SAP Business App
     You should see **Deploy to Mobile Services successfully!** message.
 
     !![MDK](img-5.4.png)
+
+    >When deploying from VS Code to App Update and using an MDK 6.0+ client, you need to set the TS Target to use es6 instead of the default es5 version. See below for the setting in VS Code where you change it for es6.
+    !![MDK](img-4.3.1.png)
 
 [DONE]
 [ACCORDION-END]

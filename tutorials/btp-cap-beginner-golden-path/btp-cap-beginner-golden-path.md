@@ -10,7 +10,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
-- You've finished [Create a CAP Project with SAP Business Application Studio](cp-cap-beginner-bas-wizard)
+ - You've finished [Create a CAP Project with SAP Business Application Studio](btp-cap-beginner-bas-wizard)
 
 
 ## Details

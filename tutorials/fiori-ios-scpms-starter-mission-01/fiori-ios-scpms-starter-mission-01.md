@@ -4,17 +4,16 @@ description: Get introduced to the SAP BTP SDK for iOS, SAP Mobile Services, and
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
+primary_tag: software-product>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services ]
 time: 15
 ---
 
 ## Prerequisites
 
 - **Group:** [Set Up the SAP BTP SDK for iOS](group.ios-sdk-setup)
-
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
-- **SAP BTP SDK for iOS:** Version 6.0 or higher
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 13 or higher
+- **SAP BTP SDK for iOS:** Version 7.0 or higher
 
 ## Details
 
@@ -85,23 +84,6 @@ In the Assistant, you can define a set of features you want to use as well as di
 The main benefit of the Assistant is that it generates your complete model and data service layer in your app based on the metadata document of your OData service. This leaves you far more time focusing on the user experience of your app.
 
 !![Development Time](fiori-ios-scpms-starter-mission-01-2.gif)
-
-**SAP Fiori Mentor app**
-
-The SAP Fiori Mentor app is developed by SAP to be a great addition to your development environment. It gives you an easy entry level to understand the different UI components of the `SAPFiori` framework.
-Currently the SAP Fiori Mentor app is available for iPad only and can be found for free in the Apple App Store [SAP Fiori Mentor](https://apps.apple.com/us/app/sap-fiori-mentor/id1215284965).
-
-!![SAP Mentor](fiori-ios-scpms-starter-mission-01-3.png)
-
-Using the SAP Fiori Mentor app allows you to take a look at the different UI controls, preview them for different size classes and manipulate its attributes to see how the control changes.
-
-!![SAP Mentor](fiori-ios-scpms-starter-mission-01-4.png)
-!![SAP Mentor](fiori-ios-scpms-starter-mission-01-4-1.png)
-!![SAP Mentor](fiori-ios-scpms-starter-mission-01-4-2.png)
-
-It also allows you to export code snippets of your customized control to use in your app project. To share the created code snippets, you can simply use **AirDrop**, **Universal Keyboard** and other common ways of sharing.
-
-!![SAP Mentor](fiori-ios-scpms-starter-mission-01-5.png)
 
 [VALIDATE_3]
 [ACCORDION-END]
