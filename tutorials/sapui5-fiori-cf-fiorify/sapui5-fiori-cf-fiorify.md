@@ -3,8 +3,8 @@ title: Add Rich Enterprise Controls to the User Interface
 description: Replace the current  UI controls with more complex controls that fully leverage the OData protocol.
 auto_validation: true
 time: 25
-tags: [ tutorial>intermediate, programming-tool>odata, programming-tool>sapui5,   products>sap-launchpad-service, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier ]
-primary_tag: products>sap-fiori
+tags: [ tutorial>intermediate, programming-tool>odata, programming-tool>sapui5,   software-product>sap-launchpad-service, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier ]
+primary_tag: software-product>sap-fiori
 author_name: Nico Geburek
 author_profile: https://github.com/nicogeburek
 ---
