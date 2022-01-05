@@ -37,7 +37,7 @@ Databases defined in the SAP BTP cockpit or the SAP HANA cockpit can be opened i
 
     >---
 
-    >Note that the credentials can be saved so they do not need to be re-entered if they are entered into the SAP HANA Cockpit.
+    >Note that the credentials can be saved so they do not need to be re-entered if they are entered into the SAP HANA cockpit.
 
     Notice that when the SAP HANA database explorer opens, the selected database is the one from the selected tile or administered database.  Also note that the URL contains a `?databaseid=`.  
 
@@ -215,7 +215,7 @@ For additional details on this parameter, see the `system_information` usage par
 
 
 [ACCORDION-BEGIN [Step 6: ](Database groups (Optional))]
-SAP HANA Cockpit databases can be grouped together.  This enables SQL statements to be run against a group of databases.
+SAP HANA cockpit databases can be grouped together.  This enables SQL statements to be run against a group of databases.
 
 !![run on multiple](run-on-multiple.png)  
 
@@ -251,7 +251,7 @@ SAP HANA Cockpit databases can be grouped together.  This enables SQL statements
 
     ![run on multiple databases in HXE](run-on-multiple-hxe.png)
 
-    >Note that the ability to see groups in the SAP HANA database explorer that have been created using the SAP HANA cockpit manager requires the SAP HANA database explorer to be opened from the SAP HANA Cockpit.
+    >Note that the ability to see groups in the SAP HANA database explorer that have been created using the SAP HANA cockpit manager requires the SAP HANA database explorer to be opened from the SAP HANA cockpit.
 
     >---
 

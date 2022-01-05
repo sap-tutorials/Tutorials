@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Add the SAP Launchpad Service
 description: This tutorial shows you how to add the SAP Launchpad application.
+keywords: cap
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
