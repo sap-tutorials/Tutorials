@@ -35,7 +35,7 @@ The Northwind OData services comes in several versions.  The tutorials currently
 
 - For Free Trial Accounts: <https://account.hanatrial.ondemand.com>
 - For Free Tier and Enterprise Accounts on **feature set A**: <https://account.hana.ondemand.com>
-- For Free Tier and Enterprise Accounts on **feature set B**: The link depends on your region. One option is <https://cockpit.eu10.hana.ondemand.com/cockpit/>
+- For Free Tier and Enterprise Accounts on **feature set B**: The link depends on your region. One option is <https://cockpit.eu10.hana.ondemand.com/cockpit/>. (Replace "eu10" with your region.)
 
 [DONE]
 [ACCORDION-END]
