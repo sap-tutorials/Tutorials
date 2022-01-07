@@ -2,8 +2,8 @@
 auto_validation: true
 title: Create Authorization Model and App in SAP BTP, ABAP Environment
 description: Create IAM Apps, services and catalogs for authorization model in the SAP BTP, ABAP environment.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform, tutorial>license]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license]
 time: 20
 author_name: Merve Temel
 author_profile: https://github.com/mervey45

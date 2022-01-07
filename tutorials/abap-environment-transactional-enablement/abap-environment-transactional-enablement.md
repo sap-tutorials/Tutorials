@@ -2,8 +2,8 @@
 auto_validation: true
 title: Add Transactional Behavior to Your Core Data Services
 description: Create a behavior implementation in SAP BTP, ABAP Environment.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner,  programming-tool>abap-development, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner,  programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
