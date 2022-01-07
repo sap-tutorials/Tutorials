@@ -47,7 +47,7 @@ Primarily SAP AI Launchpad has different component apps that cater to different 
 The text classification use case demonstrated here will classify text into categories:
 **complaint** or **compliment**
 
-Your organization would like to create and productise the example text classification scenario in an AI runtime (such as SAP AI Core). You are an ML Ops engineer, using SAP AI Launchpad, and you will manage operations and lifecycle tasks for the scenario for one of your organization's customer.
+Your organization would like to create and productize the example text classification scenario in an AI runtime (such as SAP AI Core). You are an ML Ops engineer, using SAP AI Launchpad, and you will manage operations and lifecycle tasks for the scenario for one of your organization's customer.
 
 ---
 
@@ -199,7 +199,7 @@ With **configuration** you bind text classification scenario's executable (AI pi
 
     !![Create configuration](img/config-2.png)
 
-4. Identify your dataset row by in the **Available Artifacts** pane using the unique ID. Select the drop-down next to it and check `text-data`.
+4. Identify your dataset row in the **Available Artifacts** pane by using the unique ID. Select the drop-down next to it and check `text-data`.
 
     > With **Input artifacts** you set values to **placeholder for artifacts** (dataset or models) in your executable. Here `text-data` is a placeholder name for which to set value for.
 
@@ -226,25 +226,25 @@ You will see the overview of your configuration. The configuration ID is uniquel
 
     !![Execution Create](img/train-1.png)
 
-2. Select configuration named `airlines-complaint-training`.
+2. Select the configuration named `airlines-complaint-training`.
 
-    Verify your configuration ID (may be different from show image) and click **Create**.
+    Verify your configuration ID and click **Create**.
 
     !![Execution Select Configuration](img/train-2.png)
 
-    You will be redirected to dashboard of the newly created **Execution**.
+    You will be redirected to the dashboard of your newly created **Execution**.
 
-2.	Observe each step of your training process.
+2.	Observe each step of execution that is, your training process.
 
     !![Execution Create](img/train-3.png)
 
 3.	Click **Refresh**.
 
-    Once your execution status changes to `COMPLETED`, it will generate **Output Artifact** that is, model for text classification.
+    Once the execution status changes to `COMPLETED`, it will generate **Output Artifact** that is, model for text classification.
 
     !![Execution Create](img/train-4.png)
 
-Take a note for your generated Output Artifact's (model) ID. You can always visit the execution details page to get this.
+Take a note of your generated Output Artifact's (model) ID. You can always visit the execution details page to get this.
 
 [DONE]
 [ACCORDION-END]
@@ -278,9 +278,9 @@ Now you will bind **Serving Executable** to the model using configuration to dep
 
     !![Create configuration](img/config-2.png)
 
-4. Identify your model row by in the **Available Artifacts** pane using the unique ID. Select the drop-down next to it and check `text-data`.
+4. Identify your model row in the **Available Artifacts** pane by using the unique ID. Select the drop-down next to it and check `text-data`.
 
-    > Input artifacts refers to placeholder for artifacts (dataset or models) in your executable. Here the `textmodel` is the placeholder name for you set the model (artifact) id.
+    > Input artifacts refers to placeholder for artifacts (dataset or models) in your executable. Here the `textmodel` is the placeholder name for artifact.
 
     !![Create configuration](img/deploy-3.png)
 
@@ -297,7 +297,7 @@ You will see the overview of your configuration. The configuration ID is uniquel
 
 > ### What's a deployment?
 >
-> A deployment refers to the serving/ hosting your model. For this tutorial, the runtime is SAP AI Core, so it will generate a REST endpoint using which you can classify text as `compliment` or `complaint` in real time (known as online inferencing).
+> A deployment refers to the serving/ hosting your model. For this tutorial, the runtime is SAP AI Core, so it will generate a REST API endpoint URL using which you can classify text as `compliment` or `complaint` in real time (known as online inferencing).
 >
 > Alike execution, a deployment is also one-life process, therefore you use the **configuration** to create another deployment having same settings (bindings of values). **But the endpoint URL will be different**.
 
@@ -306,9 +306,9 @@ You will see the overview of your configuration. The configuration ID is uniquel
     !![Create configuration for deployment](img/model-dep-1.png)
 
 
-2. Select configuration named `airlines-complaint-deploy`.
+2. Select the configuration named `airlines-complaint-deploy`.
 
-    Verify your configuration ID (may be different) and click **Create**.
+    Verify your configuration ID and click **Create**.
 
     !![Deployment Select Configuration](img/model-dep-2.png)
 
@@ -381,7 +381,7 @@ You will see the overview of your configuration. The configuration ID is uniquel
 
 [ACCORDION-BEGIN [Step 12: ](Stop model deployment to save cost)]
 
-Cost of running deployment depends upon on your SAP AI Core runtime and the resource quota mentioned in you serving executable.
+Cost of running deployment depends upon on your SAP AI Core runtime and the resource quota mentioned in your serving executable. For more information refer SAP AI Core product description guide.
 
 1. Click **Deployments** under **ML Operation**.
 
