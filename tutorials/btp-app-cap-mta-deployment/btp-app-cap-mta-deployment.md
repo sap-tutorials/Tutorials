@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Deploy Your Multi-Target Application (MTA)
 description: This tutorial shows you how to deploy your CAP application as Multi-Target Application (MTA).
+keywords: cap
 auto_validation: true
 time: 25
 tags: [ tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]
@@ -95,7 +96,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 
 [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
 
 2. Choose **Account Explorer**.
 
@@ -120,7 +121,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-
+    
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
@@ -128,7 +129,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-
+  
 
 6. Check if the `multiapps` plugin is already installed:
 
@@ -154,7 +155,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
 [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
 
 2. Choose **Account Explorer**.
 
@@ -179,7 +180,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-
+    
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
@@ -187,7 +188,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-
+  
 
 6. Check if the `multiapps` plugin is already installed:
 
