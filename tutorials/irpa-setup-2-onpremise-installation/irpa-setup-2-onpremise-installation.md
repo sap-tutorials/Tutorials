@@ -16,7 +16,7 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
 
 ## Details
 ### You will learn
-- About tools required for execution of your automation
+- How to use tools required for execution of your automation
 - How to enable the SAP Intelligent RPA Browser Extension
 - How to configure SAP Intelligent RPA Cloud Factory
 ---

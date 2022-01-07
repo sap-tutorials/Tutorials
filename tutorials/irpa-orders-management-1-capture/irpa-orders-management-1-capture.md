@@ -18,8 +18,8 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
 
 ## Details
 ### You will learn
-  - Capture a web application
-  - Test an application using Application Tester
+  - How to capture a web application
+  - How to test an application using Application Tester
 
 ---
 
