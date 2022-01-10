@@ -160,7 +160,7 @@ You will use each kind of these executables. You must know their name and versio
 
 [ACCORDION-BEGIN [Step 6: ](Explore dataset)]
 
-Select **Datasets** under **ML Operations**. This lists dataset artifacts of your selected connection contexts.
+Select **Datasets** under **ML Operations**. This list dataset artifacts present in your selected connection context.
 
 > ### What's an artifact?
 >
@@ -209,7 +209,7 @@ With **configuration** you bind text classification scenario's executable (AI pi
 
     !![Create configuration](img/config-4.png)
 
-You will see the overview of your configuration. The configuration ID is uniquely identifies your configuration.
+You will see the overview of your configuration. The configuration ID is a unique identification of your configuration.
 
 > You can create multiple **Configurations** on the same executable with different values for the placeholders, that is, **Input Artifacts** or **Parameters**.
 
@@ -288,7 +288,7 @@ Now you will bind **Serving Executable** to the model using configuration to dep
 
     !![Create configuration](img/deploy-4.png)
 
-You will see the overview of your configuration. The configuration ID is uniquely identifies your configuration.
+You will see the overview of your configuration.
 
 [DONE]
 [ACCORDION-END]
