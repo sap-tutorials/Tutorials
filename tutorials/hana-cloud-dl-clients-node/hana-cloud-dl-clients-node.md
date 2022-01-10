@@ -3,7 +3,7 @@ title: Connect to Data Lake IQ Using the Node.js Driver
 description: Create and debug a Node.js application that connects to data lake IQ.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>node-js, products>sap-hana-cloud, products>sap-iq]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>node-js]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
