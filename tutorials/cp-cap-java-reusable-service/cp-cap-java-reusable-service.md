@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Create a Reusable Service
 description: Create a service that will later on be reused in another CAP Java project.
+keywords: cap
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java]

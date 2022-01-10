@@ -4,8 +4,8 @@ description: Implement an Action Sheet and Popover (for regular size class on iP
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 auto_validation: true
-primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
+primary_tag: software-product>ios-sdk-for-sap-btp
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services ]
 time: 15
 ---
 
