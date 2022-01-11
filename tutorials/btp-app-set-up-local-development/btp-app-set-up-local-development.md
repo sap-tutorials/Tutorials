@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Set Up Local Development Using VS Code
 description: This tutorial shows you how to get started using VS Code as an editor.
+keywords: cap
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
@@ -65,7 +66,7 @@ If not, go to [Git downloads](https://git-scm.com/downloads), pick the installer
 [ACCORDION-BEGIN [Step 4: ](Install Node.js)]
 Node.js is the JavaScript runtime the CAP backend part of the application runs on and that is needed for some of the tools involved to develop the application.
 
-In case you don't know whether you have Node.js installed and whether it has the right version (>=16), open a command line window and execute the following command.
+In case you don't know whether you have Node.js installed and whether it has the right version (^16), open a command line window and execute the following command.
 
 ```Shell/Bash
 node -v
@@ -85,8 +86,6 @@ v16.x.x
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 5: ](Install the SAPUI5 command line interface)]
-A Node.js version 14 or higher is required to install the SAPUI5 CLI. See [SAPUI5 CLI](https://sap.github.io/ui5-tooling/pages/CLI/) for more details.
-
 1. Check in a command line window whether you already have the UI5 CLI installed.
 
     ```Shell/Bash
@@ -104,6 +103,8 @@ A Node.js version 14 or higher is required to install the SAPUI5 CLI. See [SAPUI
     ```Shell/Bash
     ui5 --version
     ```
+
+See [SAPUI5 CLI](https://sap.github.io/ui5-tooling/pages/CLI/) for more details.
 
 [DONE]
 [ACCORDION-END]

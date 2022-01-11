@@ -12,7 +12,7 @@ author_profile: https://github.com/julieplummer20
 
 ## Prerequisites  
  - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions). You can download a free ABAP application server, developer edition, from [SAP Developers Community - Trials and Downloads](https://developers.sap.com/trials-downloads.html?search=AS%20ABAP), e.g. AS ABAP 7.52 SP04
- - You have downloaded and installed the latest Eclipse IDE from [Eclipse IDE for Java Developers ](http://www.eclipse.org/) site, and opened the application.
+- **Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](abap-create-project)
 
 ## Details
 ### You will learn  

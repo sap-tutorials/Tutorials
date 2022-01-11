@@ -29,13 +29,17 @@ Dev spaces are like isolated virtual machines in the cloud that can be quickly s
 In this step we will create a new Dev Space configured for SAP Cloud Application Programming Model (CAP) development. If you already have a dev space configured for CAP and HANA development, you can skip this step as each dev space can hold multiple projects.
 
 
-1. Go to your [SAP Business Technology Platform trial homepage](https://account.hanatrial.ondemand.com/trial/#/home/trial) and click the **SAP Business Application Studio** link.
+1. Go to your SAP Business Technology Platform subaccount and click the **Services -> Instances and Subscriptions** option.
 
-    !![SAP BTP trial homepage](trial_homepage.png)
+    !![Subscriptions](BTP_Subscriptions.png)
 
-2. Choose **Create Dev Space**. Please **NOTE**: In the SAP BTP trial you are limited to only two Dev Spaces and only one can be active at a time. If you have performed other workshops, you might already have reached your maximum. In that case you might have to delete one of the other dev spaces in order to continue with this workshop.
+3. Locate the **SAP Business Application Studio** entry and click **Go to Application**
 
-    !![Create Dev Space](AppStudio_Dev_Space_Manager_.jpg)
+    !![Go To Application](go_to_application.png)
+
+4. Choose **Create Dev Space**. Please NOTE: In the SAP BTP trial and free tier you are limited to only two Dev Spaces and only one can be active at a time. If you have performed other tutorials, you might already have reached your maximum. In that case you might have to delete one of the other dev spaces in order to continue with this tutorial.
+
+    !![Create Dev Space](AppStudio Dev Space Manager_.png)
 
 3. Enter any name you wish for your dev space name and choose **Full Stack Cloud Application** as the kind of application you are creating.
 
@@ -110,29 +114,7 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
 [ACCORDION-BEGIN [Step 3: ](Create a new project)]
 
-
-> The wizard that is explained in this step currently doesn't work due to a [temporary problem](https://answers.sap.com/questions/13395658/issue-in-creating-cap-project.html). Please open a new terminal and execute the following command to achieve the same result without a GUI.
-
-> 1. Open a new terminal
->    !![New terminal](temp_new_terminal.png)
-> 1. Execute the following commands
->        
->        `npm i -g @sap/cds-dk`
->
->        `bash  # a bit strange, but makes sure the new cds-dk is active`
->
->        `cd projects/`
->
->        `cds init MyHANAApp --add hana,mta,pipeline`
->
-> 1. Open the project in a new workspace
->    !![New terminal](temp_open_ws1.png)
->    !![New terminal](temp_open_ws2.png)
-
-> 1. Proceed to step 5: Adjust CAP project for HANA development
-
-
-1. From the SAP Business Application Studio Welcome tab, click **Start from template Create a new project**.
+1. Return to the **Explorer** view. From the SAP Business Application Studio Welcome tab, click **Start from template Create a new project**.
 
     !![New project from template](start_from_template.png)
 

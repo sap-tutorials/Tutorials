@@ -4,15 +4,16 @@ description: Implement the first screen of your SAP BTP SDK for iOS app.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
+primary_tag: software-product>ios-sdk-for-sap-btp
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services ]
+
 time: 60
 ---
 
 ## Prerequisites
 
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
-- **SAP BTP SDK for iOS:** Version 6.0 or higher
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 13 or higher
+- **SAP BTP SDK for iOS:** Version 7.0 or higher
 
 ## Details
 
@@ -107,28 +108,31 @@ In order to display the newly added overview screen right after the onboarding p
 
 2. Change the method code to the following:
 
-    ```Swift[15-16]
+    ```Swift[12-15]
     func showApplicationScreen(completionHandler: @escaping (Error?) -> Void) {
         // Check if an application screen has already been presented
-        guard self.isSplashPresented else {
+        guard isSplashPresented else {
             completionHandler(nil)
             return
         }
 
-        // Restore the saved application screen or create a new one
+        // set rootViewController only once ie after onboarding when app screen is about to be shown
+        // for restore, remove covering views previously added
         let appViewController: UIViewController
-        if let savedViewController = self._savedApplicationRootViewController {
-            appViewController = savedViewController
-        } else {
-            // This will retrieve an instance of the Main storyboard and instantiate the initial view controller which is the Navigation Controller. Force cast to UINavigationController and assign the instance as appViewController.
-
+        if isOnboarding {
             let overviewTVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as! UINavigationController
+
             appViewController = overviewTVC
+
+            isOnboarding = false
+            coveringViews.removeAll()
+
+            // maintain this boolean since no splash screen is present now
+            isSplashPresented = false
+            window.rootViewController = appViewController
+        } else {
+            removeCoveringViews()
         }
-        self.window.rootViewController = appViewController
-        self._onboardingSplashViewController = nil
-        self._savedApplicationRootViewController = nil
-        self._coveringViewController = nil
 
         completionHandler(nil)
     }
@@ -339,7 +343,7 @@ To finish building the screen's layout you are going to implement the dividers a
            return headerFooterView
        default:
            let divider = UIView()
-           divider.backgroundColor = .preferredFioriColor(forStyle: .line)
+           divider.backgroundColor = .preferredFioriColor(forStyle: .separatorOpaque)
            return divider
        }
     }
@@ -386,7 +390,7 @@ Thanks to the generated data service and proxy classes, you don't have to implem
 
 **For Online OData**
 
-Add the following import statement to your class:
+Add the following import statement to your class, if not already done:
 
 ```Swift
 import SAPOData
@@ -397,17 +401,20 @@ import SharedFmwk
 Implement the following lines of code directly below the logger instance as class properties:
 
 ```Swift
-/// First retrieve the destinations your app can talk to from the AppParameters.
-let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
+  /// First retrieve the destinations your app can talk to from the AppParameters.
+  let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
-/// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course you only have one destination here. Handle the errors in case the OData controller is nil. You are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the Assistant.
-var dataService: ESPMContainer<OnlineODataProvider>? {
-    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOnlineODataController, let dataService = odataController.dataService else {
-        AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
-        return nil
+  /// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course you only have one destination here. Handle the errors in case the OData controller is nil. You are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the Assistant.
+  var dataService: ESPMContainer<OnlineODataProvider>? {
+        guard let odataController = OnboardingSessionManager
+                .shared
+                .onboardingSession?
+                .odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOnlineODataController else {
+            AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
+            return nil
+        }
+        return odataController.dataService
     }
-    return dataService
-}
 
 ```
 
@@ -417,6 +424,7 @@ Add the following import statement to your class:
 
 ```Swift
 import SAPOfflineOData
+import SAPOData
 import SharedFmwk
 
 ```
@@ -425,16 +433,19 @@ Implement the following lines of code directly below the logger instance as clas
 
 ```Swift
 
-/// First retrieve the destinations your app can talk to from the AppParameters.
-let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
+  /// First retrieve the destinations your app can talk to from the AppParameters.
+  let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
-var dataService: ESPMContainer<OfflineODataProvider>? {
-    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOfflineODataController, let dataService = odataController.dataService else {
-        AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
-        return nil
+  var dataService: ESPMContainer<OfflineODataProvider>? {
+        guard let odataController = OnboardingSessionManager
+                .shared
+                .onboardingSession?
+                .odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOfflineODataController else {
+            AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
+            return nil
+        }
+        return odataController.dataService
     }
-    return dataService
-}
 
 ```
 
@@ -522,7 +533,7 @@ var dataService: ESPMContainer<OfflineODataProvider>? {
 
     ```
 
-    > The code won't compile yet as you haven't conformed to the **`SAPFioriLoadingIndicator`** protocol yet.
+    > The code won't compile as you haven't conformed to the **`SAPFioriLoadingIndicator`** protocol yet.
 
 5. Let the `OverviewTableViewController` class conform to the **`SAPFioriLoadingIndicator`** protocol and implement the needed property:
 

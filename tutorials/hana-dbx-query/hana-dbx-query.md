@@ -3,8 +3,8 @@ title: Query with the SQL Console in SAP HANA Database Explorer
 description: Explore features of the SQL console and see how it facilitates querying an SAP HANA database.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -48,6 +48,8 @@ primary_tag: products>sap-hana-cloud
 6. The **Messages** tab displays information about the executed queries as well as any errors.
 
     ![Messages Tab](MessagesTab.png)
+
+    > Note, for SAP HANA on-premise, if the peak memory consumed metric is not shown, follow the instructions at the end of the [expensive statements trace](hana-dbx-troubleshooting#bb71f9fe-ca96-439e-9881-ad6e411dd40f) step.
 
 7. The **History** tab displays the last 50 successfully executed queries.  A previously executed query can be searched for and recalled.
 
@@ -116,16 +118,17 @@ primary_tag: products>sap-hana-cloud
 
     |  Action     | Shortcut
     |  :------------- | :-------------
-    |  Comment/Uncomment Line         | `Ctrl+/`
     |  Add Comment Block           | `Ctrl+Shift+/`
+    |  Comment/Uncomment Line         | `Ctrl+/`
     |  Format Code    | `Ctrl+B`
-    |  Switch tabs      | `Ctrl+Alt+Pageup` `Ctrl+Alt+Pagedown`
-    |  Close Window   | `Ctrl+W`
-    |  Run All | `F8`
-    |  Run Statement | `F9`
-    |  Increase/Decrease Font Size | `Crtl+Shift+Up` `Ctrl+Shift+Down`
     |  Go to Next Error | `Alt+E`
     |  Go to Previous Error | `Alt+Shift+E`
+    |  Increase/Decrease Font Size | `Crtl+Shift+Up` `Ctrl+Shift+Down`
+    |  Jump to Matching Brackets | `Ctrl+Shift+M`
+    |  Run All | `F8`
+    |  Run Statement | `F9`
+    |  Switch tabs      | `Ctrl+Alt+Pageup` `Ctrl+Alt+Pagedown`
+    |  Text Completion | `Ctrl+Space` (requires two characters to be entered)
 
 3. Shortcuts can be configured in **Global Preferences** under **Keyboard Shortcuts**.
 

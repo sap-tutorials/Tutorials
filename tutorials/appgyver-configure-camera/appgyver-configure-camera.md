@@ -3,10 +3,10 @@ title: Configure Your AppGyver Application to Open your Device Camera
 description: Configure the logic flow in your application to enable your device to open your camera on demand.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-product>sap-business-technology-platform ]
-primary_tag: software-product>sap-appgyver
-author_name: Tom Beck
-author_profile: https://github.com/heytombeck
+tags: [ tutorial>beginner, tutorial>license, topic>mobile, products>sap-business-technology-platform]
+primary_tag: products>sap-appgyver
+author_name: Akseli Virtanen
+author_profile: https://github.com/akseliv
 ---
 
 ## Prerequisites
