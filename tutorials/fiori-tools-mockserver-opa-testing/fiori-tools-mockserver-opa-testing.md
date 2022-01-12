@@ -8,7 +8,7 @@ primary_tag: software-product>sap-fiori
 ---
 
 ## Prerequisites
- - An OData V4 service and an SAP Fiori elements for OData V4 application that was generated based on that service
+ - An OData V4 service and an SAP Fiori elements for OData V4 application that was generated based on that service.
  To achieve this, we recommend that you run through the tutorial [Create a Travel App with SAP Fiori Elements Based on OData V4 RAP Service](fiori-tools-rap-prepare-service).
 
 ## Details
