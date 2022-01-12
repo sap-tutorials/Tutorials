@@ -9,9 +9,6 @@ tags: [  tutorial>beginner, topic>cloud, software-product>sap-business-technolog
 time: 10
 ---
 
-## Prerequisites  
-- SAP Web IDE Full-Stack is enabled
-
 ## Details
 ### You will learn  
 - How to change your settings
@@ -24,6 +21,9 @@ In this tutorial, you'll set your theme preferences, connect to your trial Cloud
 We would like to invite you to switch to SAP Business Application Studio. It supports the SAP Web IDE Full-Stack scenarios, including SAP HANA development, providing an improved development experience. New features are added regularly to SAP Business Application Studio to ensure it meets the needs of full stack and cloud application developers.
 
 ---
+
+## Prerequisites  
+- SAP Web IDE Full-Stack is enabled
 
 [ACCORDION-BEGIN [Step 1: ](Get to know SAP Web IDE)]
 When you open your SAP Web IDE Full-Stack, you will land on your home page.
