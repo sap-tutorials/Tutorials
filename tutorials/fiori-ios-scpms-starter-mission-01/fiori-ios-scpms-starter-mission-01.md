@@ -4,8 +4,8 @@ description: Get introduced to the SAP BTP SDK for iOS, SAP Mobile Services, and
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
+primary_tag: software-product>sap-btp-sdk-for-ios
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services ]
 time: 15
 ---
 
