@@ -150,7 +150,7 @@ Video version of tutorial: </br>
 
     !![Generated Service Name](generated_service_name.png)
 
-6. Select the first suggested Cloud Foundry service plan with the name **hdi-shared**
+6. If prompted, select the first suggested Cloud Foundry service plan with the name **hdi-shared**
 
     !![CF Plan](cf-plan.png)
 
@@ -166,7 +166,6 @@ Video version of tutorial: </br>
 
     !![Deploy](deploy.png)
 
-    > If the deployment fails, run `cds deploy` manually in the terminal to see an error log.
 
 10. Scroll up to in the console to see what the build process has done.
 
