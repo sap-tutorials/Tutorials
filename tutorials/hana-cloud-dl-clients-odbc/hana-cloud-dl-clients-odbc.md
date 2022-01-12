@@ -3,7 +3,7 @@ title: Connect to Data Lake IQ Using the ODBC Driver
 description: Configure a data source to connect to the previously created data lake IQ and then use the data source in unixODBC, Microsoft Excel and DBeaver.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-iq]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
@@ -19,7 +19,7 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure a data source using Mirosoft Windows ODBC Data Source Administrator)]
+[ACCORDION-BEGIN [Step 1: ](Configure a data source using Microsoft Windows ODBC Data Source Administrator)]
 
 The ODBC Data Source Administrator can be used to view the installed ODBC drivers and to create data sources for an installed driver.  
 
