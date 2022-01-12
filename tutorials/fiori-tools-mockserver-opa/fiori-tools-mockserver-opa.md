@@ -5,6 +5,8 @@ auto_validation: true
 time: 30
 tags: [ tutorial>beginner, software-product>sap-fiori-tools, software-product>sap-fiori-elements, software-product>sap-business-application-studio ]
 primary_tag: software-product>sap-fiori
+author_name: Regina Sheynblat
+author_profile: https://github.com/reginasheynblat
 ---
 
 ## Prerequisites

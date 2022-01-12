@@ -5,6 +5,8 @@ auto_validation: true
 time: 30
 tags: [ tutorial>beginner, software-product>sap-fiori-tools]
 primary_tag: software-product>sap-fiori
+author_name: Andreas Riesterer
+author_profile: https://github.com/ARiesterer
 ---
 
 ## Prerequisites
