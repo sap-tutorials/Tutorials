@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Set Up the SAP HANA Cloud Service
 description: This tutorial shows you how to set up the SAP HANA cloud service instance.
+keywords: cap
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-hana-cloud]
@@ -219,7 +220,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
 13. Choose **Next Step**.
 
-14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**. 
+14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**.
 
 15. Choose `Allow only BTP IP addresses`.
 
@@ -237,7 +238,10 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     > Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day before you start working with it.
 
-
+    > You can either use the SAP BTP cockpit or the Cloud Foundry CLI to restart the stopped instance:
+    > ```bash
+    > cf update-service cpapp -c '{"data":{"serviceStopped":false}}'
+    > ```
 [OPTION END]
 [OPTION BEGIN [Live]]
 
@@ -285,7 +289,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
 13. Choose **Next Step**.
 
-14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**. 
+14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**.
 
 15. Choose `Allow only BTP IP addresses`.
 
@@ -303,7 +307,10 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     > Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day before you start working with it.
 
-
+    > You can either use the SAP BTP cockpit or the Cloud Foundry CLI to restart the stopped instance:
+    > ```bash
+    > cf update-service cpapp -c '{"data":{"serviceStopped":false}}'
+    > ```
 [OPTION END]
 
 

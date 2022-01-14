@@ -4,14 +4,14 @@ description: Learn what Mac Catalyst is and what you should consider before tran
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp-sdk-for-ios
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform ]
 time: 20
 ---
 
 ## Prerequisites
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
-- **SAP BTP SDK for iOS:** Version 6.0 or higher
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 13 or higher
+- **SAP BTP SDK for iOS:** Version 7.0 or higher
 
 ## Details
 ### You will learn  
@@ -78,6 +78,8 @@ Before you do the necessary steps to make our app Mac ready let's take a look on
 !![Finished Apps](fiori-ios-scpms-starter-mission-05-1.png)
 
 You can see that you're going to change the appearance on MacOS to a split view having a side bar.
+
+> NOTE: If you have created the project with the SAP BTP SDK for iOS Assistant and did check for Mac Catalyst support the deployment info should already be set. You only have to set the **Signing & Capabilities** to your Team and provisioning profile.
 
 1. In your Xcode project click on the `TutorialApp.xcproj` file located in the project navigator and make sure that **Mac** is selected in the **Deployment Info** section.
 
