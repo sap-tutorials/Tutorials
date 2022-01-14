@@ -52,7 +52,7 @@ On top of open source technologies, CAP mainly adds:
 
 - Core Data Services (CDS) as our universal modeling language for both domain models and service definitions.
 
-- Service SDK and runtimes for Node.js and Java, offering libraries to implement and consume services as well as generic provider implementations serving many requests automatically.
+- Service SDK and runtime for Node.js and Java, offering libraries to implement and consume services as well as generic provider implementations serving many requests automatically.
 
 [VALIDATE_1]
 [ACCORDION-END]
