@@ -1,35 +1,38 @@
 ---
-title: Create an ABAP Core Data Services (CDS) View in ABAP On-Premise
-description: Create a CDS View, display it in Fiori Elements preview, and enhance its appearance using built-in annotations
+title: Create an ABAP Core Data Services (CDS) View in SAP BTP, ABAP Environment
+description: Create a CDS View, display it in Fiori Elements preview, and enhance its appearances using built-in annotations in the Business Technology Platform, ABAP Environment
 auto_validation: true
 time: 45
-tags: [ tutorial>beginner, software-product>sap-netweaver ]
+tags: [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform]
 primary_tag: programming-tool>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
-- You have a valid instance of SAP S/4HANA 1909 or later, on-premise edition - for example, [SAP ABAP Platform 1909, developer edition](https://blogs.sap.com/2021/02/15/sap-abap-platform-1909-developer-edition-available-soon/) or [SAP S/4HANA Fully-Activated Appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/)
+- You have done one of the following:
+    - **Tutorial**: [Create an SAP BTP ABAP Environment Trial User](abap-environment-trial-onboarding)
+    - You have bought a licensed version of SAP BTP ABAP Environment
 - You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), latest version
-- You have downloaded the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html). **IMPORTANT** This scenario is already included in SAP ABAP Platform 1909, developer edition
+- You have downloaded the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
 
 ## Details
 ### You will learn
 - How to create a read-only CDS-based travel model
-- How to display this CDS entity in a Fiori Elements preview
-- How to extract the metadata of your CDS entity
+- How to display your CDS view in a Fiori Elements preview
+- How to add selection fields to Fiori Elements preview
+- How to extract the metadata of your CDS view
 - How to add semantic annotations
 - How to add a search function
 - How to add selection fields to the Fiori Elements preview
-
 
 In summary, based on existing persistent data sources, you will create and implement a query for an OData service to get a running app with useful read-only features. You can then use some of these features in productive development to make your applications more powerful and more user-friendly. By the end of this tutorial, your application should look like this.
 
 !![final-app-create](final-app-create.png)
 
-For more information on creating a read-only app, see the SAP Help Portal:
-[Developing Read-Only List Reporting Apps](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/504035c0850f44f787f5b81e35791d10.html).
-
 Throughout this tutorial, object names may include a suffix or group number, such as `XXX`. Always replace this with your own group number or initials.
+
+For more information on creating a read-only app, see the SAP Help Portal: [Developing Read-Only List Reporting Apps](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/504035c0850f44f787f5b81e35791d10.html)
 
 ---
 
@@ -38,32 +41,29 @@ Throughout this tutorial, object names may include a suffix or group number, suc
 
     !![step1a-new-package](step1a-new-package.png)
 
-2. Enter the following then follow the wizard, choosing a **new** transport request:
-- Name: **`Z_ENHANCE_CDS_XXX`**
-- Description **Enhance CDS Tutorial 2020**
+    2. Enter the following then follow the wizard, choosing a **new** transport request:
+    - Name: **`Z_ENHANCE_CDS_XXX`**
+    - Description **Enhance CDS Tutorial 2020**
 
-    !![step1a-create-package](step1a-create-package.png)
-    !![step1b-new-tr](step1b-new-tr.png)
-
-
+        !![step1a-create-package](step1a-create-package.png)
+        !![step1b-new-tr](step1b-new-tr.png)
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 2: ](Create CDS View Entity)]
 1. In your package, create a CDS view entity. Select the package, then choose **New > Other** from the context menu, then choose **Data Definition**.
 
     !![step2a-new-cds](step2a-new-cds.png)
 
-2. Add the following:
-    - Name: **`Z_I_TRAVEL_R_XXX`**
-    - Description: **`Travel Model View Entity - Read Only`**
-    - Referenced object: **`/DMO/I_TRAVEL_U`**
+    2. Add the following:
+        - Name: **`Z_I_TRAVEL_R_XXX`**
+        - Description: **`Travel Model View Entity - Read Only`**
+        - Referenced object: **`/DMO/I_TRAVEL_U`**
 
-    Your CDS view is a read-only view. It is based on the business object (BO) view, `/DMO/I_TRAVEL_U`.
+        Your CDS view is a read-only view. It is based on the business object (BO) view, `/DMO/I_TRAVEL_U`.
 
-3. Choose or create a transport request, then choose **Next**. **Do not choose Finish.**
+3. Choose or create a transport request, then choose **Next**. Do not choose **Finish.**
 
 4. Choose **Use template** then choose **Define View Entity**.
 
@@ -77,6 +77,7 @@ Your CDS entity appears in a new editor, with the elements (fields and associati
 
 [DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 3: ](Define CDS View)]
 1. You will see 2 errors - at `BookingFee` and `TotalPrice`. Add the following annotations:
@@ -140,7 +141,6 @@ For example, in this tutorial, if you define `TotalPrice` as a currency amount, 
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 4: ](Display in Data Preview)]
 1. Click anywhere in the editor and choose **Open With > Data Preview** from the context menu.
 
@@ -155,7 +155,7 @@ For example, in this tutorial, if you define `TotalPrice` as a currency amount, 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create a service definition)]
-You will now expose the CDS entity as a **business service**. This will allow you to preview your changes in Fiori elements preview.
+You will now expose the CDS view as a **business service**. This will allow you to preview your changes in Fiori elements preview.
 
 A **business service** consists of a **service definition** and a **service binding**.
 
@@ -169,12 +169,12 @@ For more information, see:
 
 - SAP Help Portal: [Creating a Service Binding](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/777e027f61c3490dba0433443d9143a6.html)
 
-1. First, create the service definition, by selecting your CDS entity and choosing **New > Service Definition** from the context menu.
+1. First, create the service definition, by selecting your CDS view and choosing **New > Service Definition** from the context menu.
 
     !![step4a-new-sd](step4a-new-sd.png)
 
 2. Choose a name and description:
-    - **`Z_EXPOSE_TRAVEL_XXX`**
+    - **`Z_EXPOSE_TRAVEL_R_XXX`**
     - **Service exposes Travel data**
 
     !![step4b-sd-travel-data](step4b-sd-travel-data.png)
@@ -188,7 +188,7 @@ For more information, see:
 5. To make the service definition more readable, add an alias to the **expose** statement:
 
     ```CDS
-    expose Z_C_TRAVELS_XXX as Travels;
+    expose Z_I_TRAVEL_R_XXX as Travel;
 
     ```
 
@@ -197,17 +197,16 @@ For more information, see:
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 6: ](Create service binding)]
 1. Select your service definition, then choose **Service Binding** from the context menu, then choose **Next**.
 
     !![step5a-new-sb](step5a-new-sb.png)
 
 2. Choose:
-    - Name = `Z_BIND_TRAVEL_XXX`
-    - Description = Service binding for Travel data
-    - Binding Type = ODATA V2 (UI...)
-    - Service Definition = `Z_EXPOSE_TRAVEL_XXX`
+    - Name = **`Z_BIND_TRAVEL_R_XXX`**
+    - Description = **Service binding for Travel data**
+    - Binding Type = **ODATA V2 (UI...)**
+    - Service Definition = **`Z_EXPOSE_TRAVEL_R_XXX`**
 
       !![step5b-create-service-binding](step5b-create-service-binding.png)
 
@@ -217,7 +216,6 @@ The service binding automatically references the service definition and thus the
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 7: ](Activate service binding)]
 1. In the editor that appears, choose **Activate**.
@@ -234,7 +232,7 @@ The service binding automatically references the service definition and thus the
 
     !![step13e-service-xml-in-browser](step13e-service-xml-in-browser.png)
 
-4. In the browser, you can also see the **Metadata Document** of the Business Service by adding $metadata to the URL: `/sap/opu/odata/sap/Z_BIND_TRAVEL_XXX/$metadata`.
+4. In the browser, you can also see the **Metadata Document** of the Business Service by adding $metadata to the URL: `/sap/opu/odata/sap/Z_BIND_TRAVEL_R_XXX/$metadata`.
 
     !![step13f-service-metadata-in-browser](step13f-service-metadata-in-browser.png)
 
@@ -261,8 +259,8 @@ The service binding automatically references the service definition and thus the
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Add annotations for automatic display)]
-1. It would be nice if at least some fields were displayed immediately for the user. To do this, simply add the following annotation to the relevant fields in **`Z_I_TRAVEL_R_XXX`**. The start of your CDS entity will then look like this.
+[ACCORDION-BEGIN [Step 9: ](Add annotation for automatic display)]
+1. It would be nice if at least some fields were displayed immediately for the user. To do this, simply add the following annotation to the relevant fields in **`Z_I_TRAVEL_R_XXX`**. The start of the CDS view will then look like this.
 
     > `BookingFee` is not automatically displayed. The numbers for each field are relative to the other fields and are responsive - they do not refer to a specific pixel position or similar. For larger entities, you can specify *HIGH*,*MEDIUM*, or *LOW*, so that less important fields are automatically hidden on a smaller screen, such as a mobile phone.
 
@@ -305,19 +303,18 @@ The service binding automatically references the service definition and thus the
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 10: ](Extract UI metadata)]
-At present, you only have minimal annotations. As you add more, your CDS entity will start to get cluttered. So you should extract your UI annotations to a separate object, a **metadata extensions** object, as follows:
+At present, you only have minimal annotations. As you add more, your CDS view will start to get cluttered. So you should extract your UI annotations to a separate object, a **metadata extensions** object, as follows:
 
-1. First add the annotation **`@Metadata.allowExtensions: true`** to your CDS entity.
+1. First add the annotation **`@Metadata.allowExtensions: true`** to your CDS view.
 
 2. Then, click anywhere in the editor, then choose **Source Code > Extract Metadata Extension** from the context menu.
 
     !![step9a-extract-metadata](step9a-extract-metadata.png)
 
-3. Enter a name and description for your metadata extension object, clearly similar to your CDS entity name, and choose **Next**:
+3. Enter a name and description for your metadata extension object, clearly similar to your CDS view name, and choose **Next**:
 
-    - **`Z_TRAVEL_METADATA_XXX`**
+    - **`Z_MDE_TRAVEL_XXX`**
     - **`Metadata for Z_I_TRAVEL_R_XXX`**
 
 4. Accept the transport request, choose **Next**, select all elements, then choose **Finish**.
@@ -332,17 +329,16 @@ At present, you only have minimal annotations. As you add more, your CDS entity 
 
     > The metadata extensions are evaluated in a specific order. For more information, see [Annotation Propagation](https://help.sap.com/viewer/f859579898c7494dbe2449bb7f278dcc/Cloud/en-US/df5d534075254682a81b59fb67ebd686.html).
 
-6. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+F3`** ).
+6. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+3`** ).
 
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 11: ](Add semantic metadata)]
 If you define currency amounts and currency codes semantically, then the system will apply specific rules to handle these fields appropriately.
-For example, in this tutorial, if you define `TotalPrice` as a currency amount, then the system will add the appropriate currency to the `TotalPrice` column automatically. There is no need to display `CurrencyCode` as a separate column.
+For example, in this tutorial, if you define `TotalPrice` as a currency amount, and define `CurrencyCode` as a currency code field, then the system will add the appropriate currency to the `TotalPrice` column automatically. There is no need to display `CurrencyCode` as a separate column.
 
-1. To do this, add the following two annotations to your CDS entity:
+1. To do this, add the following two annotations to your CDS view:
 
     ```CDS
 
@@ -353,7 +349,7 @@ For example, in this tutorial, if you define `TotalPrice` as a currency amount, 
     CurrencyCode,
 
     ```
-2. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+F3`** ).
+2. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+3`** ).
 
 3. If you refresh the Fiori Elements preview, the **Total Price** column now looks like this.
 
@@ -365,13 +361,13 @@ For example, in this tutorial, if you define `TotalPrice` as a currency amount, 
 [ACCORDION-BEGIN [Step 12: ](Add search field)]
 You will now add a fuzzy search capability.
 
-1. First, add the search annotation to your CDS entity:
+1. First, add the search annotation to your CDS view:
 
     ```CDS
     @Search.searchable: true
     ```
 
-2. Then add the following two annotations to the field you want to search, in this case **Memo**:
+2. Then add the following two annotations to the field you want to search, in this case **`Memo`**:
 
     ```CDS
     @Search.defaultSearchElement: true
@@ -379,10 +375,11 @@ You will now add a fuzzy search capability.
 
     ```
 
-3. For convenience, add the following annotation to the metadata extension object, so that the **Memo** field appears by default in the preview, then format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+F3`** ):
+3. For convenience, add the following annotation to the metadata extension object, so that the **Memo** field appears by default in the preview, then format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+3`** ):
 
     ```CDS
-    @UI: { lineItem      : [{position: 60, importance: #HIGH}]
+    @UI           : {
+          lineItem      : [{position: 60, importance: #HIGH}]
           }
     Memo;
 
@@ -405,7 +402,6 @@ You will now add a fuzzy search capability.
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 13: ](Add selection fields)]
 As well as search fields, you can filter the list using an input field. In the next tutorial, you will provide input value help for these fields.
 
@@ -419,7 +415,7 @@ As well as search fields, you can filter the list using an input field. In the n
     TravelID;
     ```
 
-2. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+F3`** ). The Fiori elements preview should now look like this:
+2. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+3`** ). The Fiori elements preview should now look like this:
 
     !![step12a-selection-field](step12a-selection-field.png)
 
@@ -480,7 +476,6 @@ As well as search fields, you can filter the list using an input field. In the n
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 14: ](Check your code)]
 Your CDS entity code should look like this:
 
@@ -536,7 +531,7 @@ define view Z_I_TRAVEL_R_XXX as Travel
 
 ```
 
-Your metadata extension code should look like this:
+Your MDE code should look like this:
 
 ```CDS
 @Metadata.layer: #CORE
