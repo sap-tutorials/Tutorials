@@ -106,10 +106,12 @@ First, you will create a boilerplate file in the `src` folder, called `graph.js`
             return json;
         }
     }
+
     module.exports = Graph;
     ```
 
     > Note that the SAP Graph server that uses SAP API Business Hub sandbox is hard-coded. This allows you to focus here on the data access API, without requiring you to first configure your own SAP Graph business data graph and deal with all the complex aspects of security and authentication, which will be the subject of future tutorial parts.
+
     Since you are accessing the sandbox landscape data via SAP API Business Hub, you will need to insert your API Key (a short string) into the following code. Where do you get this key?
 
 2. Go and login to <https://api.sap.com/settings> and choose **Show API Key** to see and save it.
@@ -128,11 +130,14 @@ Now you are ready to write your first, simple server-side application that uses 
     const app = express();
     const Graph = require("./graph");
     const port = 3004;
+
     const graph = new Graph();
+
     app.get('/sap*', async (req, res) => {
         const response = await graph.get(req, `${req.url}`, "");
         res.send(`<pre><code>${JSON.stringify(response, null, 2)}</code></pre>`);
     });
+
     app.listen(port, () => { console.log(`Explore SAP Graph at http://localhost:${port}`) });
     ```
 
@@ -145,7 +150,10 @@ Now you are ready to write your first, simple server-side application that uses 
     ```
 
 The console will show:
-> _Explore SAP Graph at <http://localhost:3004>_
+```Shell / Bash
+Explore SAP Graph at <http://localhost:3004>
+```
+
 Now the fun begins. The application expects a well-formed query URL to function properly.
 
 3. Open a browser window or tab, and enter the following query URL:
