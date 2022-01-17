@@ -2,8 +2,8 @@
 auto_validation: true
 title: Add Transactional Behavior to Your Core Data Services
 description: Create a behavior implementation in SAP BTP, ABAP Environment.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner,  programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -26,7 +26,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
-  1. Go to your ABAP package created in [Create and Expose a Core Data Services Based on a Database Table](https://developers.sap.com/tutorials/abap-environment-create-cds-view.html) and open your data definition `ZI_BOOKING_XXX` to add following statement:
+  1. Go to your ABAP package `Z_BOOKING_XXX` and open your data definition `ZI_BOOKING_XXX` to add following statement:
   `root`.
 
       ![Open Eclipse](eclipse.png)
@@ -66,7 +66,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
     ```ABAP
     unmanaged implementation in class z_i_booking_xxx unique;
 
-    define behavior for ZI_Booking_xxx alias booking
+    define behavior for ZI_Booking_XXX alias booking
     lock master
     etag master LastChangedAt
     {
@@ -84,24 +84,24 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create behavior implementation)]
-  1. Right-click on your behavior definition and select **New Behavior Implementation**.
+  1. In your behavior definition **`ZI_Booking_XXX`**, set the cursor before **`z_i_booking_xxx`** and press **CTRL + 1**. Select **`Create behavior implementation class z_i_booking_xxx`**.
 
-      ![Create behavior implementation](behavior.png)
+      ![Create behavior implementation](behavex.png)
 
   2. Provide the name **`Z_I_BOOKING_XXX`** and a description and click **Next**.
 
-      ![Create behavior implementation](class.png)
+      ![Create behavior implementation](behave2.png)
 
   3. Provide a transport request if required and click **Finish**.
 
-      ![Create behavior implementation](transport.png)
+      ![Create behavior implementation](behave3.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Implement behavior class)]
 
-  1. Replace your code in local types with following:
+  1. In your implementation class `Z_I_BOOKING_XXX`, replace your code in local types with following:
 
     ```ABAP
     CLASS lcl_buffer DEFINITION.
