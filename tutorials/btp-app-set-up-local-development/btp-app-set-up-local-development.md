@@ -26,6 +26,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Editors)]
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+
 This tutorial contains all the installations steps that you would have to get started. It's likely that you have some of the software already installed, so you can just skip those steps.
 
 You can choose the editor to develop your end-to-end CAP application. You can use VS Code or set up SAP Business Application Studio. When using SAP Business Application Studio you benefit from not having to install additional extensions, but you need an SAP BTP account.
@@ -66,13 +68,15 @@ If not, go to [Git downloads](https://git-scm.com/downloads), pick the installer
 [ACCORDION-BEGIN [Step 4: ](Install Node.js)]
 Node.js is the JavaScript runtime the CAP backend part of the application runs on and that is needed for some of the tools involved to develop the application.
 
-In case you don't know whether you have Node.js installed and whether it has the right version (^16), open a command line window and execute the following command.
+> Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 16. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install.
+
+In case you don't know whether you have Node.js installed and whether it has the right version (^16), open a command line window and execute the following command:
 
 ```Shell/Bash
 node -v
 ```
 
-Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 16. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. You should get an output like:
+You should get an output like:
 
 ```Shell/Bash
 v16.x.x
