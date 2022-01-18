@@ -191,7 +191,7 @@ annotate RiskService.Risks with {
 
 It's referring to the definitions of the earlier `cds` file that exposes the service and its `Risks` and `Mitigations` entities. Then it annotates the `Risks` entity with a number of texts. These should be in a translatable file normally but for now we keep them here. These texts are used as labels in form fields and column headers by SAP Fiori elements.
 
-The following section is needed for the value help of the **Mitigation** field that is visible when you're editing the object page of the `Risks` app.
+The following section is needed for the value help of the **Mitigation** field that is visible when you are editing the object page of the `Risks` app.
 
 ```JavaScript
 annotate RiskService.Mitigations with {

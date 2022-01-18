@@ -113,7 +113,7 @@ To consume the external service from our cloud deployed application, we will cre
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Create a Destination in the SAP BTP cockpit)]
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
