@@ -219,7 +219,7 @@ If the previous call to create training execution does not work try with followi
 **ENDPOINT**
 
 *POST*
-`{{apiurl}}/v2/lm/configurations`
+`{{apiurl}}/v2/lm/executions`
 
 **HEADER**
 

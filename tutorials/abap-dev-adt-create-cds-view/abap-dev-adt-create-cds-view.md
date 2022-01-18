@@ -10,11 +10,12 @@ time: 20
 ## Prerequisites
 - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
 - You have run the transaction `SEPM_DG_OIA_NEW` or transaction `STC01 -> tasklist SAP_BASIS_EPM_OIA_CONFIG`. (If you do not, your CDS view will display empty.)
--	**Tutorial**: [Create an ABAP Package](abap-dev-create-package)
+-	**Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](abap-create-project)
+- **Tutorial**: [Create an ABAP Package](abap-dev-create-package)
 
 ## Details
 ### You will learn  
-- How to use the new Core Data Services (CDS) tools in ABAP in Eclipse.
+- How to use the new Core Data Services (CDS) tools in ABAP Development Tools for Eclipse (ADT).
 - How to use the following ABAP and SQL elements in a CDS view:
     - SELECT statement
     - CASE statement
