@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Deploy a CAP Business Service to SAP Business Technology Platform
 description: This tutorial shows you how to deploy your SAP Cloud Application Programming Model (CAP) application to SAP Business Technology Platform, Cloud Foundry environment using SAP HANA Cloud service.
+keywords: cap
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [ tutorial>beginner, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori, software-product>sap-hana-cloud, software-product-function>sap-cloud-application-programming-model ]

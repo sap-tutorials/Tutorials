@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Add a Custom Event Handler
 description: Write your first CAP Java Custom Event Handler.
+keywords: cap
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java]

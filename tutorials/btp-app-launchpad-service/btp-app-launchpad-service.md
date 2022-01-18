@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Add the SAP Launchpad Service
 description: This tutorial shows you how to add the SAP Launchpad application.
+keywords: cap
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
@@ -424,7 +425,7 @@ app/*/package-lock.json
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 14: ](Subscribe to SAP Launchpad service)]
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -453,7 +454,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 1. Choose **Security** **&rarr;** **Users** on the left.
 
 2. Choose your user.
-        
+
 4. Under **Role Collections** on the right, choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
 
     !![Add role](add_launchpad_admin_role.png)
@@ -510,7 +511,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
     !![Create Group](create_group.png)
 
-    > This way, you're telling the SAP Launchpad service to display the `Risks` and `Mitigations` apps in a group called `Risk Management`.
+    > This way, you are telling the SAP Launchpad service to display the `Risks` and `Mitigations` apps in a group called `Risk Management`.
 
 12. Choose **Site Directory** **&rarr;** **Create Site**.
 

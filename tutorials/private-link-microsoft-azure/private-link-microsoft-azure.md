@@ -50,13 +50,19 @@ Make sure you can see `privatelink` in the sample output.
 
 [ACCORDION-BEGIN [Step 2: ](Get Resource-ID for Azure Private Link Service)]
 
-To create and enable a private link, you need to define the connection to the Microsoft Azure Private Link Service first. To do so, you need the Resource-ID of your Microsoft Azure Private Link Service:
+To create and enable a private link, you need to define the connection to the service first. To do so, you need the Resource-ID Azure service:
 
-1. Go to the Azure portal and navigate to **Private Link Center** > **Private link services**.
-2. Click on the desired Azure Private Link service that you created as part of the prerequisites and select **Properties**.
-3.	Copy the **Resource ID** and save it for later use.
+1. Go to the Azure portal.
+2. Navigate to the Azure resource for which you want to find out the Resource ID, for example: **Private Link Center** > **Private link services**.
+3. Click on **Overview** in the menu on the left side of your screen.
 
-!![Get Resource-ID](private-endpoint-resource-ID.png)
+    !![Overview](private-endpoint-Microsoft-azure-overview.png)
+
+4. Click on **JSON View** in the upper right corner of the overview page.
+5. Search for the Resource ID in a field at the top of the resulting view in a text box labelled **Resource ID**.
+
+    !![ResourceID](private-endpoint-Microsoft-azure-overview-resource-id.png)
+
 
 [DONE]
 [ACCORDION-END]
@@ -65,10 +71,10 @@ To create and enable a private link, you need to define the connection to the Mi
 
 Currently, you do not have any service instances enabled. Therefore, you need to create one. To create a new private link, you need the following information:
 
-- offering (`privatelink`)
-- plans (`standard`)
-- a unique name (for instance, `privatelink-test`)
-- and the Resource-ID from Microsoft Azure (for instance, `/subscriptions/<subscription>/resourceGroups/<rg>/providers/Microsoft.Network/privateLinkServices/<my-private-link-service>`)
+- offering (`privatelink`),
+- plans (`standard`),
+- a unique name (for instance, `privatelink-test`),
+- and the Resource-ID from Microsoft Azure (for example, `/subscriptions/<subscription>/resourceGroups/<rg>/providers/Microsoft.Network/privateLinkServices/<my-private-link-service>`).
 
 Enter `cf create-service` and add that information. Your command should look like this:
 
@@ -77,7 +83,7 @@ cf create-service privatelink standard privatelink-test -c '{"resourceId": "Reso
 ```
 
 > **Example**:
-`cf create-service privatelink standard privatelink-test -c '{"resourceId":"/subscriptions/<subscription>/resourceGroups/<rg>/providers/Microsoft.Network/privateLinkServices/<my-private-link-service>"}'`
+`cf create-service privatelink standard privatelink-test -c '{"resourceId":"/subscriptions/<subscription>/resourceGroups/<rg>/providers/Microsoft.Network/privateLinkServices/<privatelink-test>"}'`
 
 If the creation of the service instance was accepted, you receive a success message telling you to proceed.
 
@@ -100,7 +106,7 @@ Under "message", you can see the current status. Renew the command after approxi
 Showing status of last operation from service verify-privatelink...
 
 status:    create in progress
-message:   Please approve the connection for Private Endpoint 'endpoint-name' in your Azure portal
+message:   Please approve the connection for Private Endpoint 'privatelink-test' in your Azure portal
 ```
 
 >  Execute this command again, in case there's no change in the current status. If you receive an error message, go back to the previous steps.
@@ -124,7 +130,7 @@ Return to Microsoft Azure portal:
 
 You should now receive a success message that the approval is pending.
 
-> **Security Info**: In a scenario in which the person that approves the private endpoint connection wasn't the one that created the Private Link service in the first place, please verify that the connection originated from a trustworthy origin (for instance, a colleague asking for approval via e-mail). This verification process prevents malicious misuse of resource ids.
+> **Security Info**: In a scenario in which the person that approves the private endpoint connection wasn't the one that created the Private Link service in the first place, please verify that the connection originated from a trustworthy origin (for instance, a colleague asking for approval via e-mail). This verification process prevents malicious misuse of resource ids. See also [Best Practices for Secure Endpoint Approval](https://help.sap.com/products/PRIVATE_LINK/42acd88cb4134ba2a7d3e0e62c9fe6cf/844bca7a51f04a15be865b9a6c1867b0.html?locale=en-US&version=CLOUD).
 
 [DONE]
 [ACCORDION-END]
@@ -142,7 +148,7 @@ You should see the following success message:
 ```Shell/Bash
 status:    create succeeded
 
-message:    Private Endpoint 'endpoint-name' to ResourceID 'resource-id' successfully provisioned, ready for binding.
+message:    Private Endpoint 'privatelink-test' to ResourceID 'resource-id' successfully provisioned, ready for binding.
 started:   <date>
 updated:   <date>
 ```
@@ -157,7 +163,7 @@ Upon the creation of a binding between a CF application and a private link servi
 To bind the service instance to your application, You need to know the name of your application and your service instance (in this example ```privatelink-test```). Then, execute the following command:
 
 ```Shell/Bash
-cf bind-service "app-name" "service-instance"
+cf bind-service "app-name" "privatelink-test"
 ```
 
 > If you do not have an app that you'd like to bind to your service instance, you can create a service key by running ```cf create-service-key <service-instance-name> <key-name>```.
