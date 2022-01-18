@@ -57,6 +57,7 @@ A service account alone won't do the job. You also need to define a role that co
       - apiGroups:
           - ""
           - extensions
+          - batch
           - apps
           - gateway.kyma-project.io
           - servicecatalog.k8s.io
@@ -64,6 +65,7 @@ A service account alone won't do the job. You also need to define a role that co
           - deployments
           - replicasets
           - pods
+          - jobs
           - configmaps
           - apirules
           - serviceinstances

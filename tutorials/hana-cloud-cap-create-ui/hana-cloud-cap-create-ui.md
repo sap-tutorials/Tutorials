@@ -68,10 +68,16 @@ Video tutorial version: </br>
 
     !![metadata document](metadata.png)
 
-2. You can use different methods in the OData v4 services you have created. Go back to the welcome page for the service and click `Interactions_Items`. Add the following to the URL:
+2. You can use different methods in the OData v4 services you have created. Go back to the welcome page for the service and click `Interactions_Items`. Different versions of the Cloud Application Programming Model preview page do different things at this point. Some add a $top limit to the generated URL for `Interactions_Items` automatically. Other and perhaps newer versions do not.  Have a look at the end of the URL when it opens. If it ends in `?$top=11` then add the following to the URL:
 
     ```URL
     &$search=DE
+    ```
+
+    Otherwise add the following to the URL:
+
+    ```URL
+    ?$search=DE
     ```
 
     !![Play with the OData Service](serach.png)
@@ -215,13 +221,35 @@ We want to create a Fiori freestyle UI for our CAP service.  We will use the wiz
 
     !![Project Attributes](project_attributes.png)
 
-6. The wizard will generate a new folder named `interaction_items` in the root of the project.  We want to drag that folder into the **app** folder.
-
-    !![Move to app folder](move_to_app.png)
-
-7. The new project structure and content should look like This
+6. The new project structure and content should look like This
 
     !![New Project Structure](new_structure.png)
+
+7. Add a file in the `/app/interaction_items/webapp` folder named `index.html`. Place the following content into this new file:
+
+    ```html
+    <html>
+    <head>
+	     <meta charset="utf-8">
+	      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	       <title>Interaction Items List</title>
+	       <script id="sap-ui-bootstrap"
+			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+			data-sap-ui-theme="sap_fiori_3_dark"
+			data-sap-ui-resourceroots='{
+				"interactionitems": "./"
+			}'
+			data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-async="true"
+			data-sap-ui-preload="async"
+			data-sap-ui-frameOptions="trusted">
+	</script>
+</head>
+<body class="sapUiBody">
+	<div data-sap-ui-component data-name="interactionitems" data-id="container" data-settings='{"id" : "interaction_items"}'></div>
+</body>
+    ```
 
 8. From the terminal you can stop your running CAP service with `CTRL+C`. Then run the service again with `npm start` to pickup the new content we added to the project.   
 

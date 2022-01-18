@@ -2,8 +2,8 @@
 title: Build Your Mobile Development Kit Client Using MDK SDK
 description: Set up your development environment that enable MDK SDK so that you can begin building your branded Mobile Development Kit client.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services ]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -12,6 +12,7 @@ author_profile: https://github.com/jitendrakansal
 ## Prerequisites
 - **Tutorial**: [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
 - **Download the latest version of Mobile Development Kit SDK** either from the SAP community [download page](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/Mobile%2520development%2520kit) if you are a SAP Mobile Services customer
+
 
 ## Details
 ### You will learn
@@ -383,9 +384,10 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     ![MDK](img-5.5.png)
 
-6. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
+6. Enter your credentials to login to SAP Business Technology Platform (BTP).
 
     ![MDK](img-5.7.png)
+    ![MDK](img-5.7.1.png)
 
 7. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
@@ -438,9 +440,10 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     Tap **Start** to connect MDK client to SAP Business Technology Platform (BTP).
 
-6. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
+6. Enter your credentials to login to SAP Business Technology Platform (BTP).
 
     ![MDK](img-5.15.png)
+    ![MDK](img-5.15.1.png)    
 
 7. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 

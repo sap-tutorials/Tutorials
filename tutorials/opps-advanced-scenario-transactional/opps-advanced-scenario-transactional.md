@@ -1,5 +1,5 @@
 ---
-title: Apply Transactional Promotion with SAP Omnichannel Promotion Pricing
+title: Apply a Transactional Promotion with SAP Omnichannel Promotion Pricing
 description: Use SAP Omnichannel Promotion Pricing to calculate the effective sales price by applying a transactional promotion rule on top of the regular sales price.
 auto_validation: true
 time: 10
@@ -11,7 +11,7 @@ primary_tag: products>sap-business-technology-platform
 - You have completed the tutorials [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario) and [Apply a Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing](opps-advanced-scenario-mixandmatch).
 - You have registered for a trial account on [SAP BTP](hcp-create-trial-account).
 - You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)).
-- You have a subaccount in the Cloud Foundry environment, with Amazon Web Services (AWS) as provider and the Europe (Frankfurt) region.
+- You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region.
 - You have set up SAP Omnichannel Promotion Pricing as described in [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
 
 
@@ -22,7 +22,7 @@ primary_tag: products>sap-business-technology-platform
 - How to upload a **promotional rule with a discount on transaction level** with the help of the SAP API Business Hub
 - How to execute a calculation request to determine the effective sales price that includes the discount on transaction level
 
->This tutorial includes steps and screenshots based on the classic design of the SAP API Business Hub. To use the classic design, go to the upper right corner and disable the **New SAP API Business Hub** option.
+>This tutorial includes steps and screenshots based on the classic design of the SAP API Business Hub. To use the classic design, navigate to the upper right corner and disable the **New SAP API Business Hub** option.
   ![Switch API Business Hub Layout](Switch API Business Hub Layout.png)
 
 ---

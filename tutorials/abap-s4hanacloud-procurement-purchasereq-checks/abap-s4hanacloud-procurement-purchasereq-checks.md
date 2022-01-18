@@ -1,10 +1,10 @@
 ---
-title: Implement a Business Add-in (BAdI) To Check a Purchase Requisition
-description: Define and implement a developer extension (BAdI), which performs checks during creation of a purchase requisition item.
+title: Implement a Business Add-in (`BAdI`) To Check a Purchase Requisition
+description: Define and implement a developer extension (`BAdI`), which performs checks during creation of a purchase requisition item.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-btp--abap-environment]
-primary_tag: topic>abap-development
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment]
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 
@@ -15,11 +15,11 @@ author_profile: https://github.com/julieplummer20
 - You have a license for SAP S/4HANA Cloud and have a developer user in this system
 - You have installed SAP ABAP Development Tools (ADT), version 3.16 or later, and have created an ABAP Cloud project for your SAP S/4HANA Cloud System in it
 - You are familiar with the concept of extensions to the SAP standard and with `BAdIs` in particular. If not, see the **More Information** section at the end of this tutorial
-- *To test BADI* In SAP Fiori launchpad, you have the authorization for the app **Process Purchase Requisitions - Professional**, i.e. **`SAP_BR_PURCHASER`**
+- To test the `BAdI`: In SAP Fiori launchpad, you have the authorization for the app **Process Purchase Requisitions - Professional**, i.e. **`SAP_BR_PURCHASER`**
 
 
 ## Details
-### You will learn  
+### You will learn
 - How to log on to SAP S/4HANA Cloud ABAP Environment
 - How to create an ABAP package
 - How to find relevant existing `BAdI` enhancement spots for your line of business, in this case **Materials-Management-Purchasing**
@@ -28,17 +28,23 @@ author_profile: https://github.com/julieplummer20
 ### Defining and implementing the enhancement: Overview
 A **Business Add-In (`BAdI`)** enables you to implement enhancements to standard SAP applications with out modifying the original code.
 
+In the Fiori App Manage Purchase Requisitions – Professional, there is one released enhancement spot **`MM_PUR_S4_PR`**.
+At this spot, there are multiple enhancement definitions.
+
 In this case, the `BAdI` is implemented in the SAP Fiori app as follows:
 
-1. Use an existing enhancement spot **`MM_PUR_S4_PR`**, with an existing `BADI` definition **`MM_PUR_S4_PR_CHECK`**
-2. Create a container ( **enhancement implementation** ) in the enhancement spot
-3. Create a **`BADI` implementation** for the `BADI` definition.
+1. At the `BAdI` definition **`MM_PUR_S4_PR_CHECK`**, you create a container/class.
+2. You then create a method (i.e. implementation) within this class.
+Thus it becomes a `BAdI` implementation for this `BAdI` definition.
+
+
+!![step0-badi-enhancement-creation-process](step0-badi-enhancement-creation-process.png)
 
 ### At runtime:
 1. The user creates a purchase requisition.
 2. The enhancement checks:
     - the quantity of items ordered is **10 or fewer**
-    - the date is **180 days or less in advance**
+    - the date is **180 days or fewer in advance**
 3. If not, the application returns an error.
 
 The application will look roughly like this:
@@ -67,7 +73,7 @@ Throughout this tutorial, objects name include a prefix, such as **`xx`** or suf
 
     ![logon](logon3.png)
 
-4. To log on, choose **Open Logon Page in Browser**, then choose **Next**.
+4. To log on, choose **Open Logon Page in Browser**, then choose **Next**. (Alternatively, e.g. if you have an admin user and a developer user in the SAP BTP Cloud landscape, you may need to choose **Copy Logon URL...** .)
 
     ![logon](logon4.png)
 
@@ -79,7 +85,7 @@ Throughout this tutorial, objects name include a prefix, such as **`xx`** or suf
 
 Your project is available in the Project Explorer.
 
-    ![logon](logon7.png)
+![logon](logon7.png)
 
 [DONE]
 [ACCORDION-END]
@@ -133,7 +139,7 @@ To help you create your own enhancements, example classes are provided (2).
 
 
 [ACCORDION-BEGIN [Step 4: ](Create enhancement implementation)]
-Now that you have identified the correct enhancement spot, you need a container within this enhancement spot for your `BADI` implementations. This is known as an enhancement implementation.
+Now that you have identified the correct enhancement spot, you need a container within this enhancement spot for your `BAdI` implementations. This is known as an enhancement implementation.
 
 1. Select your package **`Zxx_MM_PUR_S4_BADI`** and choose **New > Other ABAP Object** from the context menu.
 
@@ -166,6 +172,8 @@ Your `BAdI` enhancement implementation appears in a new editor. It implements th
     - `BAdI` Definition: **`MM_PUR_S4_PR_CHECK`** (Add by clicking on **Browse**)
     - `BAdI` Implementation Name: **`ZXX_IMPL_CHECK_PURCH_REQ`**
 
+    !![step5b-badi-input-values](step5b-badi-input-values.png)
+
 Ignore the error. You will fix this in the next step.
 
 [DONE]
@@ -178,8 +186,8 @@ Ignore the error. You will fix this in the next step.
 
 2. Add the following, then choose **Next**.
     - Name: **`ZCL_CHECK_PURCH_REQ_XXX`**
-    - Description: **Implement checks on creating `Purch Req`**
-    - Interfaces: **`IF_MM_PUR_S4_PR_CHECK`** (added automatically)
+    - Description: **Implement checks on creating Purchase Requisition**
+    - (Added automatically): Interfaces: **`IF_MM_PUR_S4_PR_CHECK`**
 
     !![step5b-implementing-class-name](step5b-implementing-class-name.png)
 
@@ -235,7 +243,7 @@ Check that yours is the implementation that will be called:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test BAdI)]
+[ACCORDION-BEGIN [Step 8: ](Test `BAdI`)]
 Now test that the checks are performed in the app.
 
 1. In SAP Fiori launchpad, open the app **Process Purchase Requisitions (Professional)**.
@@ -284,6 +292,7 @@ Your new order appears in the Overview List.
 ### More Information
 - Start here: SAP blog post: [How to Extend SAP Standard Using ADT](https://blogs.sap.com/2020/08/05/how-to-extend-sap-standard-using-adt/)
 - SAP Help Portal: [Working with Business Add-Ins (`BAdIs`)](https://help.sap.com/viewer/5371047f1273405bb46725a417f95433/Cloud/en-US/04a1d9415efd4e4fbc58534c99c3a0d3.html)
+- SAP Help Portal: Sourcing and Procurement: [Adaptation of App Behavior (Overview and List of Available `BAdIs`)](https://help.sap.com/viewer/DRAFT/0e602d466b99490187fcbb30d1dc897c/2111.500/en-US/259a396e6bdb4d08b130049880a3920f.html)
 
 
 ---

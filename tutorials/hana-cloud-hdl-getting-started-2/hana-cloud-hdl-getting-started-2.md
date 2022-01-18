@@ -1,14 +1,14 @@
 ---
 title: Access a Standalone Data Lake in SAP HANA Cloud
-description: Learn to access your standalone data lake in SAP HANA Cloud using a trial account.
+description: Learn to access your standalone data lake in SAP HANA Cloud.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-hana-cloud, products>sap-hana-cloud-data-lake]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\\,-data-lake]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
- - You have completed the tutorial [provisioning of a standalone data lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-1) using a trial or production account.
+ - You have completed the tutorial [provisioning of a standalone data lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-1) using a free tier model, trial, or production account.
 
 ## Details
 ### You will learn
@@ -70,6 +70,7 @@ In the next steps, you can learn how to use each of these connection methods. On
 [ACCORDION-BEGIN [Step 4: ](Connect to data lake)]
 
 > **For this step, select your preferred connection method by clicking on the options under the step title.**
+>
 > !![Options Screenshot](TabOptions-Screenshot.png)
 
 [OPTION BEGIN [SAP HANA Database Explorer]]

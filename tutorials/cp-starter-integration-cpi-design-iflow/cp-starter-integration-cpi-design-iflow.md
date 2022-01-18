@@ -3,8 +3,8 @@ title: Design and Deploy Your First Integration Flow
 description: Design an integration flow to integrate an online webshop that exposes data via OData service and fetch the product details.
 auto_validation: true
 time: 40
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
-primary_tag: products>sap-integration-suite
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment]
+primary_tag: software-product>sap-integration-suite
 author_name: Karunaharan V
 author_profile: https://github.com/Karunaharan
 ---
@@ -60,7 +60,7 @@ author_profile: https://github.com/Karunaharan
 
 4. Choose **Edit** to start editing the integration flow.
 
-    Choose **Restore** at the bottom right corner to bring up the **Property Sheet**. Property sheet is the place where you define the parameters for each step in the integration flow.
+    Choose **Restore** at the bottom right corner to bring up the **Property Sheet**. Property sheet is the place where you define the parameters for each step in your integration flow.
 
       !![Start editing the integration flow](3-1-edit-iflow.png)
 
@@ -73,7 +73,6 @@ In this step, you define your sender channel and sender adapter. In this case, w
 1. Choose the **Sender** step. Create the sender channel by clicking the arrow icon on **Sender** and dragging it to the **Start** step.
 
     !![Create the sender channel](4-1-connect-sender-channel.png)
-
 
 2. In the **Adapter Type** prompt, select the **HTTPS** adapter.
 
@@ -117,9 +116,10 @@ You add this converter because the input to the integration flow is sent in JSON
     |  :------------- | :-------------
     |  **Action**           | **`Create`**
     |  **Name**           | **`productIdentifier`**
-    |  **Type**           | Select **`XPath`** from the dropdown list
+    |  **Source Type**        | Select **`XPath`** from the dropdown list
+    |  **Source Value**       | **`//productIdentifier`**
     |  **Data Type**    | **`java.lang.String`**
-    |  **Value**          | **`//productIdentifier`**
+
 
     !![Configure Content Modifier](6-2-configure-content-modifier.png)
 

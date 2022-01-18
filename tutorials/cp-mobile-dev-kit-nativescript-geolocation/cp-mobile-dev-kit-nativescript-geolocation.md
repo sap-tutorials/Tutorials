@@ -2,8 +2,8 @@
 title: Add NativeScript Plugins in an MDK App
 description: Build and run the Mobile Development Kit client with a non-visual extension functionality for Android and iOS platforms.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>advanced, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>advanced, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 35
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -20,7 +20,7 @@ author_profile: https://github.com/jitendrakansal
   - How to build a Mobile development kit client for iOS & Android and connect to SAP Mobile application
   - How to capture the device's current location
 
-You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/2-Add-NativeScript-Plugin-in-an-MDK-App) and start directly with step 4 in this tutorial.
+You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/main/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/2-Add-NativeScript-Plugin-in-an-MDK-App) and start directly with step 4 in this tutorial.
 
 ---
 
@@ -39,7 +39,7 @@ In this tutorial, you will use the existing `NativeScript` plugin nativescript-g
 
     !![MDK](img-1.2.png)
 
-    >If you do not see Welcome page, you can access it via **Help** menu.
+    >If you do not see the Welcome page, you can access it via **Help** menu or via **View** menu > Find Command > Welcome.
 
 3. Select **MDK Project** and click **Next**.
 
@@ -83,13 +83,14 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
     ```JavaScript
     import * as geolocation from "@nativescript/geolocation";
     import { CoreTypes } from "@nativescript/core";
-    export default function GetCoordinates(context) {
+    export default async function GetCoordinates(context) {
         var logger = context.getLogger();
         console.log("Current Log Level: " + logger.getLevel());
         // check if geolocation is not enabled
-        if (!geolocation.isEnabled()) {
+            var locationIsEnabled = await geolocation.isEnabled();
+        if (!locationIsEnabled) {
             // request for the user to enable it
-            geolocation.enableLocationRequest();
+            await geolocation.enableLocationRequest();
         }
         // Get current location with high accuracy
         return geolocation.getCurrentLocation({
@@ -101,7 +102,6 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
                 console.log(loc);
                 console.log('\nCurrent Location: (' + loc.latitude + ',' + loc.longitude + ')');
                 logger.log(loc.toString());
-
                 var locMessage = '(' + "Latitude:" + loc.latitude + ',' + "Longitude:" + loc.longitude + ')';
                 logger.log('Current Location: ' + locMessage, 'INFO');
                 return locMessage;
@@ -120,7 +120,7 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 
 [ACCORDION-BEGIN [Step 3: ](Display the coordinates on a page)]
 
-You will add this registered control in a Form Cell page.
+You will add this registered control in the `Main.page`.
 
   1. Click the `Main.page`, drag & drop **Static Key Value** container control to the page area.
 
@@ -148,7 +148,7 @@ You will add this registered control in a Form Cell page.
 
 [ACCORDION-BEGIN [Step 4: ](List the NPM modules as external reference)]
 
-In `GetCoordinates.js` file, you referred `nativescript-geolocation` and `tns-core-modules/ui/enums`. You now need to list these modules as external references in BAS configuration so when bundling, MDK editor knows not to worry about these references.
+In `GetCoordinates.js` file, you referred `@nativescript/geolocation` plugin. You now need to list this module as external references in BAS configuration so when bundling, MDK editor knows not to worry about these references.
 
 1. Navigate **File** menu | **Settings** | **Open Preferences**.
 
@@ -197,6 +197,9 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     !![MDK](img-5.4.png)
 
+    >When deploying from VS Code to App Update and using an MDK 6.0+ client, you need to set the TS Target to use es6 instead of the default es5 version. See below for the setting in VS Code where you change it for es6.
+    !![MDK](img-4.3.1.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -214,7 +217,7 @@ In order to use the existing `NativeScript` plugin in MDK client, you will need 
       "AppVersion": "1.0.0",
       "BundleID": "Enter your Bundle ID",
       "Externals": ["@nativescript/geolocation"],
-      "NSPlugins": ["@nativescript/geolocation"],
+      "NSPlugins": ["@nativescript/geolocation@8.0.0"],
       "UrlScheme": "mdkclient"
     }
     ```
@@ -224,23 +227,59 @@ In order to use the existing `NativeScript` plugin in MDK client, you will need 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add googlePlayServicesVersion in Android App Resources (Required only for Android client))]
+[ACCORDION-BEGIN [Step 7: ](Add googlePlayServicesVersion and Permission in App Resources Merge folder(Required only for Android client))]
 
 With [Google Play services](https://developers.google.com/android/guides/overview), your app can take advantage of the latest, Google-powered features such as Maps, Google+, and more.
 
-1. Navigate to `/DemoSampleApp.mdkproject/App_Resources/Android` and create a new file `before-plugins.gradle`.
+1. Create below file structure under `DemoSampleApp.mdkproject`.
 
-    !![MDK](img-6.png)
+            DemoSampleApp.mdkproject
+              ├── App_Resources_Merge
+                  └── Android
+                      ├── app.gradle
+                      └── src
+                          └── main
+                              └── AndroidManifest.xml
 
-2. Provide the below information:
+
+      !![MDK](img-6.png)
+
+    >Files specified in the `.mdkproject/App_Resources_Merge` folder override a part of the files in `<generated-project>/app/App_Resources`. You can find more details about it in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/app-resources-merge.html).
+
+
+2. Provide below information in the `app.gradle` file. Save the changes.
 
     ```Java
-    android {  
-      project.ext {
-          googlePlayServicesVersion = "16+"
-      }
+    // add gradle dependencies here
+    project.ext {
+    	googlePlayServicesVersion = "16.+"
+    }
+    dependencies {
+    	def googlePlayServicesVersion = project.googlePlayServicesVersion
+    	compile "com.google.android.gms:play-services-location:$googlePlayServicesVersion"
     }
     ```
+
+3. Provide below information in the `AndroidManifest.xml` file. Save the changes.
+
+    ```XML
+    <?xml version="1.0" encoding="utf-8"?>
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    	<!-- Always include this permission -->
+      <!-- This permission is for "approximate" location data -->
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+      <!-- Include only if your app benefits from precise location access. -->
+      <!-- This permission is for "precise" location data -->
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+      <!-- Required only when requesting background location access on
+           Android 10 (API level 29) and higher. -->
+      <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    </manifest>
+    ```
+
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -251,7 +290,7 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
 
 [OPTION BEGIN [Android]]
 
-1. Follow steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client and run it in your device.
+1. Create your MDK client either using MDK SDK by following the steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial OR using SAP Cloud Build Service by following [this](cp-mobile-dev-kit-cbs-client) tutorial and run it in your device.
 
 2. Once you have accepted the app update, allow your app to access your location.
 
@@ -265,7 +304,7 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
 
 [OPTION BEGIN [iOS]]
 
-1. Follow steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client and run it in your device.
+1. Create your MDK client either using MDK SDK by following the steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial OR using SAP Cloud Build Service by following [this](cp-mobile-dev-kit-cbs-client) tutorial.
 
 2. Once you have accepted the app update, allow your app to access your location.
 

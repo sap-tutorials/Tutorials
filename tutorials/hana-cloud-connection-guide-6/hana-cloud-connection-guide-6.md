@@ -39,7 +39,7 @@ These are the overall steps needed to create the connection:
 
 [ACCORDION-BEGIN [Step 1: ](Create a Communication User in SAP S/4HANA)]
 
-Before you create the connection, you need to set up a communication scenario to allow CDS views to be accessed using SAP HANA Cloud, SAP HANA database. There are three main steps to complete this set up. This is the first step. You can also get more information in our [technical documentation](https://help.sap.com/viewer/e0cd7c1ecf3d4f2f9feb46ec1c5b68fb/LATEST/en-US/4a006b43551d4cb5aed6399c0ace6b98.html).
+Before you create the connection, you need to set up a communication scenario to allow CDS views to be accessed using SAP HANA Cloud, SAP HANA database. There are three main steps to complete this set up. This is the first step. You can also get more information in our [technical documentation](https://help.sap.com/viewer/0f69f8fb28ac4bf48d2b57b9637e81fa/LATEST/en-US/4a006b43551d4cb5aed6399c0ace6b98.html).
 
 1.	Search for and open the **Maintain Communication Users** app in SAP S/4HANA.
 

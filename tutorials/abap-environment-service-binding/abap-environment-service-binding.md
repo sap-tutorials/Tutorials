@@ -2,8 +2,8 @@
 auto_validation: true
 title: Create Business Configuration for Factory Calendar
 description: Create business configuration for public holidays.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 30
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -218,9 +218,9 @@ To use the [**Business Configuration Change Logs**](https://help.sap.com/viewer/
 
 >Note that table buffering for CDS view entities as defined in this tutorial is not supported. Consider reading directly from the customizing table in your application code.
 
-Select database table **`ZCAL_HOLIDAY_XXX`**, navigate to the technical table settings and open **`ZCAL_I_HOLIDAY_XXX`**. Enable log changes.
+Select database table **`ZCAL_HOLITXT_XXX`**, navigate to the technical table settings and open **`ZCAL_I_HOLITXT_XXX`**. Enable log changes.
 
-![log](log.png)
+![log](log2.png)
 
 Save and activate.
 
@@ -375,7 +375,7 @@ We want to create a business object with multi-inline-edit capabilities. As a fi
       as select from zcal_holitxt_xxx
       association        to parent zcal_i_mcal_xxx as _Public_Holiday on $projection.Holiday = _Public_Holiday.Holiday
       association [0..*] to I_LanguageText         as _LanguageText   on $projection.Language = _LanguageText.LanguageCode
-      association [1]    to zcal_i_mcal_all_xxx    as _HolidayAll     on $projection.HolidayAllID = _HolidayAll.HolidayAllID
+      association [1..1]    to zcal_i_mcal_all_xxx    as _HolidayAll     on $projection.HolidayAllID = _HolidayAll.HolidayAllID
     {
           @Semantics.language: true
       key spras            as Language,

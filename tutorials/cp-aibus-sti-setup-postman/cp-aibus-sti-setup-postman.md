@@ -3,7 +3,7 @@ title: Set Up Postman to Call Service Ticket Intelligence APIs
 description: Import Postman environment and collection JSON sample code files to call the Service Ticket Intelligence APIs.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>service-ticket-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -13,7 +13,7 @@ primary_tag: topic>machine-learning
   - How to adjust the Postman environment for your service instance
   - How to import Postman environments and collections
 
-In the following tutorials, Postman is used to communicate and interact with your Service Ticket Intelligence service instance. Postman is an API client you use to call APIs. For more information, see [Postman](https://learning.getpostman.com/).
+In the following tutorials, Postman is used to communicate and interact with your Service Ticket Intelligence service instance. Postman is an API client used to call APIs. For more information, see [Postman](https://learning.getpostman.com/).
 
 ---
 

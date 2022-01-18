@@ -11,7 +11,6 @@ primary_tag: products>sap-web-ide
 
 ## Prerequisites
  - Make sure you have access to the trial version of SAP Web IDE Full-Stack.
- - To access Web IDE go through the [Prepare SAP Web IDE for Cloud Foundry Development](sapui5-webide-open-webide) tutorial.
 
 ## Details
 ### You will learn
@@ -20,6 +19,7 @@ primary_tag: products>sap-web-ide
   - How to build and deploy your application to Cloud Foundry
 
   Create, configure, build, and deploy a simple application on Cloud Foundry in SAP Web IDE Full-Stack.
+
 
 ---
 

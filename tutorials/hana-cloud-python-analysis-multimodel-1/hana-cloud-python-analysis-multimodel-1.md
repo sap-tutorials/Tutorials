@@ -9,7 +9,7 @@ primary_tag: products>sap-hana-cloud
 
 ## Prerequisites
 - Access to SAP HANA Cloud, either with a [free trial account](https://www.sap.com/cmp/td/sap-hana-cloud-trial.html) or with a production account.
-- Provision an SAP HANA Cloud, SAP HANA database instance and ensure that it's **running**.
+- [Provision an SAP HANA Cloud, SAP HANA database instance](hana-cloud-mission-trial-2) and ensure that it's **running**.
 
 ## Details
 ### You will learn
@@ -137,10 +137,10 @@ import sys
 import os
 import json
 
-from hana_ml.DataFrame import ConnectionContext
+from hana_ml.dataframe import ConnectionContext
 ```
 
-
+ 
 
 
 [DONE]
