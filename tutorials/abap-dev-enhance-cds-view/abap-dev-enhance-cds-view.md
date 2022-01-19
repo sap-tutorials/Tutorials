@@ -544,11 +544,11 @@ Then **Save**, but **DO NOT yet activate your entity**.
 
     ```
 
-1.  In the Package Explorer, select the CDS entity **`Z_I_BOOKING_XXX`**, then choose **New Metadata Extension** from the context menu.
+2.  In the Package Explorer, select the CDS entity **`Z_I_BOOKING_XXX`**, then choose **New Metadata Extension** from the context menu.
 
-2. Enter a name **`ZMDE_I_BOOKING_XXX`** and description **Metadata for` Z_I_BOOKING_XXX`**; select the transport request and choose **Finish**.,
+3. Enter a name **`ZMDE_I_BOOKING_XXX`** and description **Metadata for` Z_I_BOOKING_XXX`**; select the transport request and choose **Finish**.,
 
-3. In the editor, enter the following code:
+4. In the editor, enter the following code:
 
     ```CDS
     @Metadata.layer: #CORE
@@ -600,7 +600,7 @@ Then **Save**, but **DO NOT yet activate your entity**.
 
     ```
 
-4. Format, save, and activate the metadata extension (**`Shift+F1, Ctrl+S, Ctrl+F3`**).
+5. Format, save, and activate the metadata extension (**`Shift+F1, Ctrl+S, Ctrl+F3`**).
 
 [DONE]
 [ACCORDION-END]
