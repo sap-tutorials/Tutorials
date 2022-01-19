@@ -2,8 +2,8 @@
 title: Implement Create Entity and Linking Entities in an MDK App
 description: Create relationship between two OData entities.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 30
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -19,6 +19,7 @@ author_profile: https://github.com/jitendrakansal
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Enhance-Your-First-MDK-App-with-Additional-Functionalities/4-cp-mobile-dev-kit-customer-order) to start with this tutorial.
 
 ---
+
 
 For this tutorial, you will use [Mobile Services sample backend](cp-mobile-dev-kit-ms-setup) (step 3) which has parent-child relationship setup among entities. For example, A customer can have `n` (>=0) number of sales orders.
 
@@ -392,6 +393,7 @@ Deploy the updated application to your MDK client.
 3. You will see the **Create Order** option in customer detail page. Tap on it to create a new sales order.
 
     ![MDK](img-8.6.png)
+
 
 4. As you provided default values to the properties, you may change it if required. Tap **Save**.
 

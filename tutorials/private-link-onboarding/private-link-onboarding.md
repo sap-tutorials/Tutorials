@@ -5,6 +5,7 @@ description: Get onboarded to use SAP Private Link service (Beta) in SAP BTP.
 auto_validation: true
 time: 10
 tags: [tutorial>beginner, software-product-function>sap-private-link-service, products>sap-business-technology-platform, tutorial>license, software-product-function>sap-btp-cockpit]
+keywords: private, link, Microsoft, Azure, connection, Cloud Foundry, CF, CLI, BTP, endpoint, 
 primary_tag: software-product-function>sap-private-link-service
 ---
 
