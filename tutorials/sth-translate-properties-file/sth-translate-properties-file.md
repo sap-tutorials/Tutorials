@@ -71,7 +71,7 @@ Target Languages   | **Chinese**, **French**, and **German**
 
 You can specify in the **Advanced Settings** if you want to use a company MLTR or a review process.
 
-To simplify the tutorial only select **YES** for **Review Required**. Leave all other fields and selection options as they are and then save your changes.
+To simplify the tutorial only select **YES** for **Review Required**. Leave all other fields and selection options as they are and click on the button **Proceed to upload file(s)**.
 
 ![Enter project configuration details](sth-translate-project-configuration-details.png)!
 
