@@ -3,8 +3,8 @@ title: Add Federated SAP S/4HANA Roles to Your Launchpad Site
 description: Create a content provider for your SAP S/4HANA system in the SAP Launchpad service provider manager and add the exposed roles to the My Content area and to the SAP Launchpad site, so that end users can access the federated apps and groups.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, products>sap-business-technology-platform, products>sap-s-4hana, products>sap-fiori, topic>abap-connectivity]
-primary_tag: products>sap-launchpad-service
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, software-product>sap-s-4hana, software-product>sap-fiori, topic>abap-connectivity]
+primary_tag: software-product>sap-launchpad-service
 ---
 
 ## Prerequisites
