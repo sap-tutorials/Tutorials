@@ -4,7 +4,7 @@ description: Translate and review properties files with the SAP Translation Hub 
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>machine-learning]
-primary_tag: products>sap-translation-hub
+primary_tag: software-product>sap-translation-hub
 ---
 
 ## Prerequisites  
@@ -71,7 +71,7 @@ Target Languages   | **Chinese**, **French**, and **German**
 
 You can specify in the **Advanced Settings** if you want to use a company MLTR or a review process.
 
-To simplify the tutorial only select **YES** for **Review Required**. Leave all other fields and selection options as they are and click on the button **Proceed to upload file(s)**.
+To simplify the tutorial only select **YES** for **Review Required**. Leave all other fields and selection options as they are and click the button **Proceed to upload file(s)**.
 
 ![Enter project configuration details](sth-translate-project-configuration-details.png)!
 
