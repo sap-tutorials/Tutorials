@@ -4,15 +4,15 @@ description: Import a trained Core ML model and use the Vision framework to prep
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 auto_validation: true
-primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
+primary_tag: products>sap-btp-sdk-for-ios
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services ]
 time: 25
 ---
 
 ## Prerequisites
 
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP BTP SDK for iOS:** Version 5.0
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
+- **SAP BTP SDK for iOS:** Version 6.0
 
 ## Details
 
@@ -58,6 +58,8 @@ import SAPOfflineOData
 import SAPCommon
 import SAPFoundation
 import SAPFioriFlows
+import ESPMContainerFmwk
+import SharedFmwk
 
 ```
 
@@ -71,8 +73,8 @@ private let logger = Logger.shared(named: "ProductClassificationTableViewControl
 let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
 var dataService: ESPMContainer<OfflineODataProvider>? {
-    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OfflineODataController, let dataService = odataController.espmContainer else {
-        AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOfflineODataController, let dataService = odataController.dataService else {
+        AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
         return nil
     }
     return dataService
@@ -389,7 +391,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
       // The data service will return the image url in the following format: /imgs/HT-2000.jpg
       // In order to build together the URL you have to define the base URL.
       // The Base URL is found in the Mobile Services App configuration's service.
-      let baseURL = "https://a9366ac9trial-dev-com-example.cfapps.eu10.hana.ondemand.com/SampleServices/ESPM.svc/v2"
+      let baseURL = <Base URL>
       let url = URL(string: baseURL.appending(productImageURLs[indexPath.row]))
 
       // Safe unwrap the URL, the code above could fail when the URL is not in the correct format, so you have to make sure it is safely unwrapped so you can react accordingly. You won't show the product image if the URL is nil.

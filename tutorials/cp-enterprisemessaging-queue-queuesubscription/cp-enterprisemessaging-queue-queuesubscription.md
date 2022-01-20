@@ -6,6 +6,9 @@ auto_validation: true
 tags: [ tutorial>beginner, topic>cloud, tutorial>license]
 primary_tag: products>sap-event-mesh
 ---
+## Prerequisites
+- An instance of SAP Event Mesh has already been created
+- User has been assigned with role collection "Enterprise Messaging Developer" [Assign Roles to Users](https://help.sap.com/viewer/bf82e6b26456494cbdd197057c09979f/Cloud/en-US/637d331010e54a2999e2f023d2de1130.html)
 
 ## Details
 ### You will learn
@@ -13,28 +16,50 @@ primary_tag: products>sap-event-mesh
 
 Queues and queue subscriptions are the core of asynchronous messaging. Messages are retained in queues until they are consumed by subscribing applications.
 
+The SAP Event Mesh management dashboard for the default service plan is provided as a multitenant business application. Subscription can be set up only by administrators of the global account.
 
 ---
+[ACCORDION-BEGIN [Step 1: ](Subscribe to Event Mesh)]
+You need to subscribe to SAP Event Mesh in order to access its management dashboard.
 
-[ACCORDION-BEGIN [Step 1: ](Open management dashboard)]
+To subscribe to SAP Event Mesh
 
-1. Open the SAP BTP Cockpit.
+1. Open your global account, then subaccount.
+2. Choose **Instances and Subscriptions** in the left pane.
+3. Choose *Create*.
+4. Choose *Event Mesh* and *standard* plan.
+5. Choose *Create*.
 
-2. Click on the **Subscriptions** menu.
+[DONE]
+[ACCORDION-END]
 
-3. Subscribe to SAP Event Mesh.
+[ACCORDION-BEGIN [Step 2: ](Open management dashboard)]
 
-4. Click on **Go to Application**.
+**For default Plan :**
+
+  1. Open the SAP BTP Cockpit.
+
+  2. Click on the **Subscriptions** menu.
+
+  3. Subscribe to SAP Event Mesh.
+
+  4. Click on **Go to Application**.
 
     ![Service Instance](LandingPage-MgmtDashboard.png)
 
     It opens the SAP Eventing Mesh management dashboard screen. The management dashboard allows you to manage different messaging clients as shown below.
 
-5. Select the message client.
-6. It will open the SAP Event Mesh Management Dashboard screen  **Overview** tab.
+  5. Select the message client.
+  6. It will open the SAP Event Mesh Management Dashboard screen  **Overview** tab.
 
 
     ![Management Dashboard Message Client Overview](em-overview.PNG)
+
+**For dev Plan :**
+
+  You need to click on **View Dashboard** to open the dashboard to manage queue or queue subscription as shown in the below screen.
+
+  ![Service Instance](instance-dashboard-devplan.png)
 
 [DONE]
 [ACCORDION-END]

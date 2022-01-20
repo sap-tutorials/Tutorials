@@ -2,25 +2,21 @@
 author_name: Supriya Cherukunnathu
 author_profile: https://github.com/SupriyaCherukunnathu
 title: Create a Device Model Using the API
-description: Create a device model for the SAP Cloud Platform Internet of Things Service using the Device Management API.
+description: Create a device model for the SAP IoT services for SAP BTP using the Device Management API.
 auto_validation: true
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, product>sap-edge-services, products>sap-iot-services for-sap-btp, products>sap-business-technology-platform ]
+time: 20
 ---
 
-
-## Prerequisites
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn
 - How to create a device model in the Internet of Things Service using the Device Management API
 
-### Time to Complete
-20 min
 
 ---
-You need a tenant and a user with administrator role. For more information, please refer to the tutorial [Create User and Tenant](iot-cf-create-user-tenant).
+You need a tenant and a user with administrator role.
 
 
 [ACCORDION-BEGIN [Step 1: ](Create a Capability)]
@@ -357,7 +353,7 @@ In the following, it is described how the payload looks like for sending data to
 
     The message is now sent. For more information on how to publish data, please refer to the tutorials [Send Data with MQTT](iot-cf-send-data-mqtt) and [Send Data with REST](iot-cf-send-data-rest).
 
-2.  You can check the incoming values using the **Data Visualization** of the device in the Internet of Things Service Cockpit or the Device Management API. For more information, please refer to the tutorial [Consume Measures](iot-cf-consume-measures).
+2.  You can check the incoming values using the **Data Visualization** of the device in the Internet of Things Service Cockpit or the Device Management API.
 
 [DONE]
 
@@ -395,7 +391,7 @@ In the following, it is described how the payload looks like for sending data to
 
     The message is now sent. For more information on how to publish data, please refer to the tutorials [Send Data with MQTT](iot-cf-send-data-mqtt) and [Send Data with REST](iot-cf-send-data-rest).
 
-2.  You can check the incoming values using the **Data Visualization** of the device in the Internet of Things Service Cockpit or the Device Management API. For more information, please refer to the tutorial [Consume Measures](iot-cf-consume-measures).
+2.  You can check the incoming values using the **Data Visualization** of the device in the Internet of Things Service Cockpit or the Device Management API.
 
 [VALIDATE_1]
 

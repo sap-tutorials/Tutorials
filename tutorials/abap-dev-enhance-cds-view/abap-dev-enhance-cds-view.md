@@ -3,8 +3,8 @@ title: Enhance an ABAP Core Data Services (CDS) View in ABAP On-Premise
 description: Add features like value help, aggregations, and calculated fields to an existing CDS view
 auto_validation: true
 time: 60
-tags: [ tutorial>beginner, products>sap-netweaver-7.5]
-primary_tag: topic>abap-development
+tags: [ tutorial>beginner, software-product>sap-netweaver-7.5]
+primary_tag: programming-tool>abap-development
 ---
 
 ## Prerequisites
@@ -85,7 +85,7 @@ CDS associations are simply specifications of joins, always in the same place in
 For more information, see:
 - ABAP Keyword Documentation: [CDS - Associations](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abencds.htm)
 
-1. Add the following 2 statements to your CDS view, **`Z_C_TRAVEL_DATA_XXX`**, just before the list of fields. The first statement creates an association from the source CDS entity **`Z_C_TRAVEL_DATA_XXX`** to the target CDS entity **`/DMO/I_Agency`**, joined on the field **`AgencyID`**. The source entity is represented by the alias **`$projection`**, because you cannot use the original name in a path statement. The target entity is represented by its alias name **`_Agency`**.
+1. Add the following statement to your CDS view, **`Z_C_TRAVEL_DATA_XXX`**, just before the list of fields. The first statement creates an association from the source CDS entity **`Z_C_TRAVEL_DATA_XXX`** to the target CDS entity **`/DMO/I_Agency`**, joined on the field **`AgencyID`**. The source entity is represented by the alias **`$projection`**, because you cannot use the original name in a path statement. The target entity is represented by its alias name **`_Agency`**.
 
     ```CDS
       association [1..1] to /DMO/I_Agency as _Agency on $projection.AgencyID = _Agency.AgencyID
@@ -101,7 +101,7 @@ For more information, see:
 
     ```
 
-3. Check that the association has been added to the field list. (This should have been done automatically when you inserted the signature of `/DMO/I_TRAVEL_U`.)
+3. Check that the association is included in the field list. (This should have been done automatically when you inserted the signature of `/DMO/I_TRAVEL_U`.)
 
     !![step14b-association-added](step14b-association-added.png)
 
@@ -150,13 +150,13 @@ For more information on these functions, see : ABAP Keyword Documentation: [SQL 
 
 You will use a simple one to easily merge two fields. The two fields are provided by the association **`_Customer`**.
 
-1. Add an association.
+1.Check that you have added the following association.
 
     ```CDS
         association [1..1] to /DMO/I_Customer as _Customer on $projection.CustomerID = _Customer.CustomerID
     ```
 
-2. Ensure there is a comma after `CustomerID`, then add the function **`concat_with_space`** using auto-complete ( **`Ctrl+Space`** ); then add the alias **`as Addressee`**.
+2. Ensure there is a comma after `CustomerID`, then add the function **`concat_with_space`** using auto-complete ( **`Ctrl+Space`** ); then add the alias **`as Addressee`** and end with a **comma**.
 
     ```CDS
       concat_with_space(_Customer.Title, _Customer.LastName, 1) as Addressee,
@@ -207,7 +207,7 @@ It would be nice to find out how much money each **Agency** has received in tota
 
     !![step16a-currency-conversion](step16a-currency-conversion.png)
 
-4. If you check it in Fiori Elements preview, it should look like this.
+4. If you check it in Fiori Elements preview, it should look like this. You may want to filter for a specific currency, e.g. Singapore Dollars (SGD).
 
     !![step16b-convert-to-dollars](step16b-convert-to-dollars.png)
 

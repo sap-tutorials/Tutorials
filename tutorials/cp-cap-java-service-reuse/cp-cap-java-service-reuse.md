@@ -3,9 +3,10 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Reuse a CAP Java Service
 description: Create a new application and reuse the existing CAP Java service.
+keywords: cap
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>java]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -37,7 +38,7 @@ cd ~/projects
 3. Now that you are in the correct folder, run the following command:
 ```Shell/Bash
 mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
--DarchetypeVersion=RELEASE \
+-DarchetypeVersion=1.17.0 \
 -DgroupId=com.sap.cap -DartifactId=bookstore
 ```
 

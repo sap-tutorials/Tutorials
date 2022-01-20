@@ -3,9 +3,10 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Use SAP HANA as the Database for a CAP Java Application
 description: Use SAP HANA in SAP Business Technology Platform as database for your CAP Java application instead of SQLite.
+keywords: cap
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>java, products>sap-business-application-studio]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java, software-product>sap-business-application-studio]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -22,7 +23,7 @@ In the previous tutorial, you have added custom coding to your bookstore applica
 
 The Cloud Foundry API endpoint is required so that you can log on to your SAP BTP Cloud Foundry space through Cloud Foundry CLI in the next step.
 
-1. Go to the [SAP BTP Trial Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) click on **Enter Your Trial Account**.
+1. Go to the [SAP BTP Trial Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) click on **Go To Your Trial Account**.
 
     !![business technology platform cockpit view](cockpit.png)
 
@@ -80,15 +81,15 @@ Log into the Cloud Foundry Environment using the Cloud Foundry CLI, as follows.
     { "hana" : { "deploy-format": "hdbtable" } }
     ```
 
-    >As an effect, `.hdbtable` and `.hdbview` files are generated in the `(gen/)db/src/gen/` folder.
-
 4. Create an SAP HANA service instance and implicitly push all artifacts to the database using:
 
     ```Shell/Bash
     cds deploy --to hana:bookstore-hana
     ```
 
-    In addition, the command initialized the database schemas inside the SAP HANA HDI container.
+    > As an effect, `.hdbtable` and `.hdbview` files are generated in the `(gen/)db/src/gen/` folder.
+
+    > In addition, the command initialized the database schemas inside the SAP HANA HDI container.
 
 [DONE]
 [ACCORDION-END]

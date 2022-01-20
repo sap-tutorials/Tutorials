@@ -3,8 +3,8 @@ title: Connect Using the SAP HANA Python Interface
 description: Create and debug a Python application that connects to SAP HANA using the SAP HANA client.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud, topic>python]
-primary_tag: products>sap-hana
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>python]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -17,9 +17,9 @@ primary_tag: products>sap-hana
 
 In the 2020 Stack Overflow's annual developer survey, Python ranked 4th in the [Most Popular Technologies](https://insights.stackoverflow.com/survey/2020#most-popular-technologies) section.  For further information on Python, see [Introduction to Python 3](https://realpython.com/python-introduction/).
 
-The [SAP HANA client for Python](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f3b8fabf34324302b123297cdbe710f0.html) supports Python 3.4+ and  Python 2.7.  For further details see SAP note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307).  
+Details on supported versions of Python for the [SAP HANA client for Python](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f3b8fabf34324302b123297cdbe710f0.html) can be found at SAP Note [3136015 - SAP HANA Client Supported Platforms for 2.11](https://launchpad.support.sap.com/#/notes/3136015).
 
-The following steps will create a simple Python app that can connect to and query an SAP HANA database.  
+The following steps create a simple Python app that can connect to and query an SAP HANA database.  
 
 ---
 
@@ -58,16 +58,17 @@ pip install --upgrade pip
 
 >On Linux or Mac, if you encounter permission issues, one way to solve the issue is to use `sudo` before the command.
 
+>---
+
+>On Linux, if Python is installed but pip is not, it can be installed on openSUSE using Zypper as shown below.
+
+>```Shell (Linux)
+zypper install python3-pip
+>```
 
 The repository that contains Python packages is [PyPI](https://pypi.org/) and includes a package for the SAP HANA client for Python.
 
 ![hdbcli on PyPI](PyPI.png)  
-
-The pip command can be used to list the currently available version of the SAP HANA database driver for Python on PyPI.  
-
-```Shell
-pip search hdbcli
-```
 
 Run the following command to download and install the SAP HANA client for Python from PyPI:
 
@@ -79,7 +80,7 @@ pip install hdbcli
 >
 > ```Shell
 > cd C:\SAP\hdbclient
-> pip install hdbcli-2.5.86.zip
+> pip install hdbcli-2.10.9.zip
 > ```
 
 > ---
@@ -159,6 +160,18 @@ pip install hdbcli
     cursor = conn.cursor()
     sql_command = "select TITLE, FIRSTNAME, NAME from HOTEL.CUSTOMER;"
     cursor.execute(sql_command)
+    rows = cursor.fetchall()
+    for row in rows:
+        for col in row:
+            print ("%s" % col, end=" ")
+        print ("  ")
+    cursor.close()
+    print("\n")
+
+    #Prepared statement example
+    sql_command2 = "call HOTEL.SHOW_RESERVATIONS(?,?);"
+    parameters = [11, "2020-12-24"]
+    cursor.execute(sql_command2, parameters)
     rows = cursor.fetchall()
     for row in rows:
         for col in row:

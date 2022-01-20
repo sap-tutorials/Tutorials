@@ -3,13 +3,13 @@ title: Create Service Instance for Data Attribute Recommendation
 description: Create a service instance and the associated service key for Data Attribute Recommendation, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
 - You have created a trial account on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
-- You have a subaccount and dev space with **Europe (Frankfurt)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
+- You have a subaccount and dev space with **US East (VA)** as region: [Manage Entitlements on SAP BTP Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html). You can also use old trial subaccounts created before October 2021 with **Europe (Frankfurt)** as region.
 
 ## Details
 ### You will learn
@@ -18,15 +18,15 @@ primary_tag: topic>machine-learning
   - How to create service key for your service instance
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
+[ACCORDION-BEGIN [Step 1: ](Go To Your Trial Account)]
 
 1. In your web browser, open the [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
+2. Navigate to the trial global account by clicking **Go To Your Trial Account**.
 
     !![Trial global account](01_Foundation20Onboarding_Home.png)
 
-    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select Europe (Frankfurt)**. Your user profile will be set up for you automatically.
+    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select US East (VA)**. Your user profile will be set up for you automatically.
 
     >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
 
@@ -78,21 +78,7 @@ You are now entitled to use the service and to create instances of the service.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Access space)]
-
-All applications and services live in spaces. By default, trial accounts only have the **dev** space available.
-
-To access your spaces, click **Spaces** on the navigation sidebar and select the **dev** space to open it.
-
-![Spaces](access-space.png)
-
-In this space you will create your service instance.
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 4: ](Access service via Service Marketplace)]
+[ACCORDION-BEGIN [Step 3: ](Access service via Service Marketplace)]
 
 The **Service Marketplace** is where you find the available services on SAP BTP.
 
@@ -100,7 +86,7 @@ To access it, click **Service Marketplace** on the navigation sidebar.
 
 ![Service Marketplace](access-service-marketplace.png)
 
-Next, search for **Data Attribute Recommendation**. Click the tile named `data-attribute-recommendation-trial` to access the service.
+Next, search for **Data Attribute Recommendation**. Click the tile to access the service.
 
 ![Data Attribute Recommendation in Service Marketplace](access-dar.png)
 
@@ -108,7 +94,7 @@ Next, search for **Data Attribute Recommendation**. Click the tile named `data-a
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create service instance)]
+[ACCORDION-BEGIN [Step 4: ](Create service instance)]
 
 You will now create an instance of your service.
 
@@ -116,7 +102,7 @@ Click **Create Instance** to start the creation dialog.
 
 ![Service Instance](create-instance.png)
 
-In the dialog, leave the default value for the service and the service plan. Enter a name for your new instance as `dar-demo` and click **Create Instance** to skip the other steps and create the instance.
+In the dialog, leave the default value for the service and the service plan. Enter a name for your new instance, for example, `dar-demo` and click **Create Instance**.
 
 ![Create Instance](create-instance-dialog.png)
 
@@ -130,11 +116,11 @@ You have successfully created a service instance for Data Attribute Recommendati
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Create service key)]
+[ACCORDION-BEGIN [Step 5: ](Create service key)]
 
 You are now able to create a service key for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
-  1. Click the navigation arrow to open the details of your service instance. Then, click the dots to open the menu and select **Create Service Key**.
+  1. Click the dots to open the menu and select **Create Service Key**.
 
       ![Service Key](create-service-keys.png)
 
@@ -142,7 +128,7 @@ You are now able to create a service key for your new service instance. Service 
 
       ![Create Service Key](create-service-key-name.png)
 
-You have successfully created a service key for your service instance. You can now either view the service key in the browser or download it.
+You have successfully created a service key for your service instance. You can now view the service key in the browser or download it.
 
 ![View Service Key](view-service-key.png)
 

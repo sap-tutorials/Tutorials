@@ -2,8 +2,10 @@
 title: Install the MultiApps Cloud Foundry CLI Plugin
 description: Download and install the Command Line Interface (CLI) plugin, which allows you to deploy MTA archives from the command line.
 auto_validation: true
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 time: 5
-tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, topic>cloud]
 primary_tag: products>sap-btp--cloud-foundry-environment
 
 ---
@@ -42,7 +44,7 @@ cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plu
 [OPTION END]
 [OPTION BEGIN [Windows 64 Bit]]
 ```Bash
-cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.win64
+cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.win64.exe
 ```
 [OPTION END]
 [OPTION BEGIN [Linux 64 Bit]]
@@ -52,7 +54,7 @@ cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plu
 [OPTION END]
 [OPTION BEGIN [Windows 32 Bit]]
 ```Bash
-cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.win32
+cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.win32.exe
 ```
 [OPTION END]
 [OPTION BEGIN [Linux 32 Bit]]
@@ -66,9 +68,23 @@ cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plu
 [ACCORDION-BEGIN [Step 4: ](Verify the installation of the plugin)]
 
 List all Cloud Foundry CLI plugins to see whether the installation worked.
+
+[OPTION BEGIN [macOS]]
 ```Bash
-cf plugins | grep multiapps
+cf plugins | grep multiapps   
 ```
+[OPTION END]
+[OPTION BEGIN [Windows]]
+```Terminal
+cf plugins | find /I "multiapps"
+```
+[OPTION END]
+[OPTION BEGIN [Linux]]
+```Bash
+cf plugins | grep multiapps   
+```
+[OPTION END]
+
 You should now see the following output:
 
 ![listed plugins](./cfplugins.png)

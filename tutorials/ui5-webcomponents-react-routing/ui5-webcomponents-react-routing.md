@@ -4,7 +4,7 @@ description: Use routes to navigate between different pages using UI5 Web Compon
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-fiori]
-primary_tag: topic>html5
+primary_tag: programming-tool>html5
 author_name: Lukas Harbarth
 author_profile: https://github.com/Lukas742
 ---
@@ -90,7 +90,7 @@ export function Detail() {
 
     ```JavaScript / JSX
     import React from "react";
-    import { ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
+    import { Avatar, ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
     import "@ui5/webcomponents-icons/dist/add.js";
 
     export function MyApp() {
@@ -98,8 +98,12 @@ export function Detail() {
         <div>
           <ShellBar
             logo={<img src="reactLogo.png" />}
-            profile={<Avatar image="profilePictureExample.png" />}
-            primaryTitle={"My App"}
+            profile={
+              <Avatar>
+                <img src="profilePictureExample.png" />
+              </Avatar>
+            }
+            primaryTitle="My App"
           >
             <ShellBarItem icon="add" text="Add" />
           </ShellBar>
@@ -113,32 +117,97 @@ export function Detail() {
     ```JavaScript / JSX
     import React, { useState } from "react";
     import {
+      AnalyticalTable,
       Card,
-      Text,
-      List,
-      StandardListItem,
-      ValueState,
-      ProgressIndicator,
-      Title,
-      TitleLevel,
+      CardHeader,
       FlexBox,
+      FlexBoxDirection,
       FlexBoxJustifyContent,
       FlexBoxWrap,
-      FlexBoxDirection,
-      AnalyticalTable,
-      Icon
+      Icon,
+      List,
+      ProgressIndicator,
+      StandardListItem,
+      Text,
+      Title,
+      TitleLevel,
+      ValueState
     } from "@ui5/webcomponents-react";
     import { spacing } from "@ui5/webcomponents-react-base";
     import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-    import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
     import "@ui5/webcomponents-icons/dist/line-chart.js";
+    import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
     import "@ui5/webcomponents-icons/dist/list.js";
     import "@ui5/webcomponents-icons/dist/table-view.js";
+
+    const dataset = [
+      {
+        month: "January",
+        data: 65
+      },
+      {
+        month: "February",
+        data: 59
+      },
+      {
+        month: "March",
+        data: 80
+      },
+      {
+        month: "April",
+        data: 81
+      },
+      {
+        month: "May",
+        data: 56
+      },
+      {
+        month: "June",
+        data: 55
+      },
+      {
+        month: "July",
+        data: 40
+      }
+    ];
+
+    const tableData = new Array(500).fill(null).map((_, index) => {
+      return {
+        name: `name${index}`,
+        age: Math.floor(Math.random() * 100),
+        friend: {
+          name: `friend.Name${index}`,
+          age: Math.floor(Math.random() * 100)
+        }
+      };
+    });
+
+    const tableColumns = [
+      {
+        Header: "Name",
+        accessor: "name" // String-based value accessors!
+      },
+      {
+        Header: "Age",
+        accessor: "age"
+      },
+      {
+        Header: "Friend Name",
+        accessor: "friend.name"
+      },
+      {
+        Header: "Friend Age",
+        accessor: "friend.age"
+      }
+    ];
 
     export function Home() {
       const [toggleCharts, setToggleCharts] = useState("lineChart");
       const [loading, setLoading] = useState(false);
-
+      const contentTitle =
+        toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
+      const switchToChart =
+        toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
       const handleHeaderClick = () => {
         if (toggleCharts === "lineChart") {
           setLoading(true);
@@ -154,155 +223,112 @@ export function Detail() {
           }, 2000);
         }
       };
-      const dataset = [
-        {
-          month: "January",
-          data: 65
-        },
-        {
-          month: "February",
-          data: 59
-        },
-        {
-          month: "March",
-          data: 80
-        },
-        {
-          month: "April",
-          data: 81
-        },
-        {
-          month: "May",
-          data: 56
-        },
-        {
-          month: "June",
-          data: 55
-        },
-        {
-          month: "July",
-          data: 40
-        }
-      ];
-      const tableData = new Array(500).fill(null).map((_, index) => {
-        return {
-          name: `name${index}`,
-          age: Math.floor(Math.random() * 100),
-          friend: {
-            name: `friend.Name${index}`,
-            age: Math.floor(Math.random() * 100)
-          }
-        };
-      });
-
-      const tableColumns = [
-        {
-          Header: "Name",
-          accessor: "name" // String-based value accessors!
-        },
-        {
-          Header: "Age",
-          accessor: "age"
-        },
-        {
-          Header: "Friend Name",
-          accessor: "friend.name"
-        },
-        {
-          Header: "Friend Age",
-          accessor: "friend.age"
-        }
-      ];
-      const contentTitle =
-        toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
-      const switchToChart =
-        toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
       return (
-        <FlexBox
-          justifyContent={FlexBoxJustifyContent.Center}
-          wrap={FlexBoxWrap.Wrap}
-          style={spacing.sapUiContentPadding}
-        >
-          <Card
-            avatar={
-              <Icon
-                name={
-                  toggleCharts === "lineChart"
-                    ? "line-chart"
-                    : "horizontal-bar-chart"
-                }
-              />
-            }
-            heading="Stock Price"
-            style={{ width: "300px" }}
-            headerInteractive
-            onHeaderClick={handleHeaderClick}
-            subheading={`Click here to switch to ${switchToChart}`}
+        <div>
+          <FlexBox
+            justifyContent={FlexBoxJustifyContent.Center}
+            wrap={FlexBoxWrap.Wrap}
+            style={spacing.sapUiContentPadding}
           >
-            <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
-            {toggleCharts === "lineChart" ? (
-              <LineChart
-                dimensions={[{ accessor: "month" }]}
-                measures={[{ accessor: "data", label: "Stock Price" }]}
-                dataset={dataset}
-                loading={loading}
+            <Card
+              header={
+                <CardHeader
+                  titleText="Stock Prices"
+                  subtitleText={`Click here to switch to ${switchToChart}`}
+                  interactive
+                  onClick={handleHeaderClick}
+                  avatar={
+                    <Icon
+                      name={
+                        toggleCharts === "lineChart"
+                          ? "line-chart"
+                          : "horizontal-bar-chart"
+                      }
+                    />
+                  }
+                />
+              }
+              style={{ width: "300px", ...spacing.sapUiContentPadding }}
+            >
+              <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
+              {toggleCharts === "lineChart" ? (
+                <LineChart
+                  dimensions={[{ accessor: "month" }]}
+                  measures={[{ accessor: "data", label: "Stock Price" }]}
+                  dataset={dataset}
+                  loading={loading}
+                />
+              ) : (
+                <BarChart
+                  dimensions={[{ accessor: "month" }]}
+                  measures={[{ accessor: "data" }]}
+                  dataset={dataset}
+                  loading={loading}
+                />
+              )}
+            </Card>
+            <Card
+              header={
+                <CardHeader
+                  titleText="Progress"
+                  subtitleText="List"
+                  avatar={<Icon name="list" />}
+                />
+              }
+              style={{ width: "300px", ...spacing.sapUiContentPadding }}
+            >
+              <List>
+                <StandardListItem
+                  additionalText="finished"
+                  additionalTextState={ValueState.Success}
+                >
+                  Activity 1
+                </StandardListItem>
+                <StandardListItem
+                  additionalText="failed"
+                  additionalTextState={ValueState.Error}
+                >
+                  Activity 2
+                </StandardListItem>
+                <StandardListItem
+                  additionalText="in progress"
+                  additionalTextState={ValueState.Warning}
+                  style={{ height: "80px" }}
+                >
+                  <FlexBox direction={FlexBoxDirection.Column}>
+                    <Title level={TitleLevel.H5}>Activity 3</Title>
+                    <ProgressIndicator value={89} valueState={ValueState.Success} />
+                  </FlexBox>
+                </StandardListItem>
+                <StandardListItem
+                  additionalText="in progress"
+                  additionalTextState={ValueState.Warning}
+                  style={{ height: "80px" }}
+                >
+                  <FlexBox direction={FlexBoxDirection.Column}>
+                    <Title level={TitleLevel.H5}>Activity 4</Title>
+                    <ProgressIndicator value={5} valueState={ValueState.Error} />
+                  </FlexBox>
+                </StandardListItem>
+              </List>
+            </Card>
+            <Card
+              header={
+                <CardHeader
+                  titleText="AnalyticalTable"
+                  avatar={<Icon name="table-view" />}
+                />
+              }
+              style={{ maxWidth: "900px", ...spacing.sapUiContentPadding }}
+            >
+              <AnalyticalTable
+                data={tableData}
+                columns={tableColumns}
+                visibleRows={5}
               />
-            ) : (
-              <BarChart
-                dimensions={[{ accessor: "month" }]}
-                measures={[{ accessor: "data", label: "Stock Price" }]}
-                dataset={dataset}
-                loading={loading}
-              />
-            )}
-          </Card>
-          <Card
-            heading="Progress"
-            subheading="List"
-            style={{ width: "300px", ...spacing.sapUiContentPadding }}
-            avatar={<Icon name="list" />}
-          >
-            <List>
-              <StandardListItem info="finished" infoState={ValueState.Success}>
-                Activity 1
-              </StandardListItem>
-              <StandardListItem info="failed" infoState={ValueState.Error}>
-                Activity 2
-              </StandardListItem>
-              <StandardListItem
-                info="in progress"
-                infoState={ValueState.Warning}
-                style={{ height: "80px" }}
-              >
-                <FlexBox direction={FlexBoxDirection.Column}>
-                  <Title level={TitleLevel.H5}>Activity 3</Title>
-                  <ProgressIndicator value={89} valueState={ValueState.Success} />
-                </FlexBox>
-              </StandardListItem>
-              <StandardListItem
-                info="in progress"
-                infoState={ValueState.Warning}
-                style={{ height: "80px" }}
-              >
-                <FlexBox direction={FlexBoxDirection.Column}>
-                  <Title level={TitleLevel.H5}>Activity 4</Title>
-                  <ProgressIndicator value={5} valueState={ValueState.Error} />
-                </FlexBox>
-              </StandardListItem>
-            </List>
-          </Card>
-          <Card
-            heading="AnalyticalTable"
-            style={{ maxWidth: "900px", ...spacing.sapUiContentPadding }}
-            avatar={<Icon name="table-view" />}
-          >
-            <AnalyticalTable
-              data={tableData}
-              columns={tableColumns}
-              visibleRows={5}
-            />
-          </Card>
-        </FlexBox>
+            </Card>
+          </FlexBox>
+        </div>
       );
     }
     ```
@@ -311,35 +337,40 @@ export function Detail() {
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 4: ](Import Router components)]
 
-1. In `MyApp.jsx`, import `Switch`, `Route` and `Redirect` from `react-router-dom` and the `Home` and `Detail` components.
+1. In `MyApp.jsx`, import `Routes`, `Route` and `Navigate` from `react-router-dom` and the `Home` and `Detail` components.
 
     ```JavaScript / JSX
-    import { Switch, Route, Redirect } from "react-router-dom";
+    import { Routes, Route, Navigate } from "react-router-dom";
     import { Home } from "./Home";
     import { Detail } from "./Detail";
     ```
 
-2. Wrap your `ShellBar` component inside of [Fragments](https://reactjs.org/docs/fragments.html) and set up paths with `Switch` and the component displayed respectively.
+2. Wrap your `ShellBar` component inside of [Fragments](https://reactjs.org/docs/fragments.html) and set up paths with `Routes` and the component (`element`) displayed respectively.
 
     ```JavaScript / JSX
     return (
-        <>
-            <ShellBar
-                logo={<img src="reactLogo.png" />}
-                profile={<Avatar image="profilePictureExample.png" />}
-                primaryTitle={"My App"}>
-                <ShellBarItem src="sap-icon://add" text="Add" />
-            </ShellBar>
-            <Switch>
-                <Route path="/home" component={Home} />
-                <Route path="/detail" component={Detail} />
-                <Redirect from="/" to="/home" />
-            </Switch>
-        </>
+      <>
+        <ShellBar
+          logo={<img src="reactLogo.png" />}
+          profile={
+            <Avatar>
+              <img src="profilePictureExample.png" />
+            </Avatar>
+          }
+          primaryTitle="My App"
+        >
+          <ShellBarItem icon="add" text="Add" />
+        </ShellBar>
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/detail" element={<Detail />} />
+          <Route path="/" element={<Navigate replace to="/home" />} />
+        </Routes>
+      </>
     );
     ```
 
-The `Redirect` component will redirect the user if the URL doesn't match any given paths.
+The `Navigate` component will redirect the user if the URL doesn't match any given paths.
 
 Your current URL now displays the `#/home` path. If you replace `home` with `detail`, you will be routed to the detail page.
 
@@ -353,26 +384,32 @@ Your current URL now displays the `#/home` path. If you replace `home` with `det
 
 Except for changing the URL of the App the user doesn't have options to navigate to the `Detail` page. The page could contain some more information about activities and should therefore be connected to the `Progress Card`.
 
-1. Go into your `Home` component and add `headerInteractive` and `onHeaderClick={handleProgressHeaderClick}` to your second `Card` component.
+1. Go into your `Home` component and add `interactive` and `onClick={handleProgressHeaderClick}` to your second `CardHeader` component.
 
     ```JavaScript / JSX
     <Card
-      heading="Progress"
-      subheading="List"
+      header={
+        <CardHeader
+          titleText="Progress"
+          subtitleText="List"
+          avatar={<Icon name="list" />}
+          interactive
+          onClick={handleProgressHeaderClick}
+        />
+      }
       style={{ width: "300px", ...spacing.sapUiContentPadding }}
-      headerInteractive
-      onHeaderClick={handleProgressHeaderClick} >
+    >
     ```
 
-2. Define the `handleProgressHeaderClick` function as follows. And import the [`useHistory`](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/hooks.md#usehistory) hook from `react-router-dom`.
+2. Define the `handleProgressHeaderClick` function as follows. And import the `useNavigate` hook from `react-router-dom`.
 
     ```JavaScript / JSX
-    import { useHistory } from "react-router-dom";
+    import { useNavigate } from "react-router-dom";
     ```
     ```JavaScript / JSX
-    const history = useHistory();
+    const navigate = useNavigate();
     const handleProgressHeaderClick = () => {
-      history.push("/detail");
+      navigate("/detail");
     };
     ```
 
@@ -385,9 +422,9 @@ Except for changing the URL of the App the user doesn't have options to navigate
     Go into your `MyApp.jsx` file where your `ShellBar` is located and add an `onLogoClick` prop. The function is almost the same as for the `onHeaderClick`, but this time the destination should be the default page.
 
     ```JavaScript / JSX
-    const history = useHistory();
+    const navigate = useNavigate();
     const handleLogoClick = () => {
-      history.push("./");
+      navigate("./");
     };
     ```
 
@@ -412,31 +449,35 @@ If needed, you can compare your files with the following code references:
 import React from "react";
 import { Avatar, ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
 import "@ui5/webcomponents-icons/dist/add.js";
-import { Switch, Route, Redirect } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Home } from "./Home";
 import { Detail } from "./Detail";
 
 export function MyApp() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const handleLogoClick = () => {
-    history.push("./");
+    navigate("./");
   };
   return (
     <>
       <ShellBar
         logo={<img src="reactLogo.png" />}
-        profile={<Avatar image="profilePictureExample.png" />}
+        profile={
+          <Avatar>
+            <img src="profilePictureExample.png" />
+          </Avatar>
+        }
         primaryTitle="My App"
         onLogoClick={handleLogoClick}
       >
-        <ShellBarItem src="sap-icon://add" text="Add" />
+        <ShellBarItem icon="add" text="Add" />
       </ShellBar>
-      <Switch>
-        <Route path="/home" component={Home} />
-        <Route path="/detail" component={Detail} />
-        <Redirect from="/" to="/home" />
-      </Switch>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/detail" element={<Detail />} />
+        <Route path="/" element={<Navigate replace to="/home" />} />
+      </Routes>
     </>
   );
 }
@@ -446,38 +487,103 @@ export function MyApp() {
 
 ```JavaScript / JSX
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
+  AnalyticalTable,
   Card,
-  Text,
-  List,
-  StandardListItem,
-  ValueState,
-  ProgressIndicator,
-  Title,
-  TitleLevel,
+  CardHeader,
   FlexBox,
+  FlexBoxDirection,
   FlexBoxJustifyContent,
   FlexBoxWrap,
-  FlexBoxDirection,
-  AnalyticalTable,
-  Icon
+  Icon,
+  List,
+  ProgressIndicator,
+  StandardListItem,
+  Text,
+  Title,
+  TitleLevel,
+  ValueState
 } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
-import { useHistory } from "react-router-dom";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
-import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
 import "@ui5/webcomponents-icons/dist/line-chart.js";
+import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
 import "@ui5/webcomponents-icons/dist/list.js";
 import "@ui5/webcomponents-icons/dist/table-view.js";
+
+const dataset = [
+  {
+    month: "January",
+    data: 65
+  },
+  {
+    month: "February",
+    data: 59
+  },
+  {
+    month: "March",
+    data: 80
+  },
+  {
+    month: "April",
+    data: 81
+  },
+  {
+    month: "May",
+    data: 56
+  },
+  {
+    month: "June",
+    data: 55
+  },
+  {
+    month: "July",
+    data: 40
+  }
+];
+
+const tableData = new Array(500).fill(null).map((_, index) => {
+  return {
+    name: `name${index}`,
+    age: Math.floor(Math.random() * 100),
+    friend: {
+      name: `friend.Name${index}`,
+      age: Math.floor(Math.random() * 100)
+    }
+  };
+});
+
+const tableColumns = [
+  {
+    Header: "Name",
+    accessor: "name" // String-based value accessors!
+  },
+  {
+    Header: "Age",
+    accessor: "age"
+  },
+  {
+    Header: "Friend Name",
+    accessor: "friend.name"
+  },
+  {
+    Header: "Friend Age",
+    accessor: "friend.age"
+  }
+];
 
 export function Home() {
   const [toggleCharts, setToggleCharts] = useState("lineChart");
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
   const handleProgressHeaderClick = () => {
-    history.push("/detail");
+    navigate("/detail");
   };
-
+  const contentTitle =
+    toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
+  const switchToChart =
+    toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
   const handleHeaderClick = () => {
     if (toggleCharts === "lineChart") {
       setLoading(true);
@@ -493,157 +599,114 @@ export function Home() {
       }, 2000);
     }
   };
-  const dataset = [
-    {
-      month: "January",
-      data: 65
-    },
-    {
-      month: "February",
-      data: 59
-    },
-    {
-      month: "March",
-      data: 80
-    },
-    {
-      month: "April",
-      data: 81
-    },
-    {
-      month: "May",
-      data: 56
-    },
-    {
-      month: "June",
-      data: 55
-    },
-    {
-      month: "July",
-      data: 40
-    }
-  ];
-  const tableData = new Array(500).fill(null).map((_, index) => {
-    return {
-      name: `name${index}`,
-      age: Math.floor(Math.random() * 100),
-      friend: {
-        name: `friend.Name${index}`,
-        age: Math.floor(Math.random() * 100)
-      }
-    };
-  });
-
-  const tableColumns = [
-    {
-      Header: "Name",
-      accessor: "name" // String-based value accessors!
-    },
-    {
-      Header: "Age",
-      accessor: "age"
-    },
-    {
-      Header: "Friend Name",
-      accessor: "friend.name"
-    },
-    {
-      Header: "Friend Age",
-      accessor: "friend.age"
-    }
-  ];
-  const contentTitle =
-    toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
-  const switchToChart =
-    toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
   return (
-    <FlexBox
-      justifyContent={FlexBoxJustifyContent.Center}
-      wrap={FlexBoxWrap.Wrap}
-      style={spacing.sapUiContentPadding}
-    >
-      <Card
-        avatar={
-          <Icon
-            name={
-              toggleCharts === "lineChart"
-                ? "line-chart"
-                : "horizontal-bar-chart"
-            }
-          />
-        }
-        heading="Stock Price"
-        style={{ width: "300px" }}
-        headerInteractive
-        onHeaderClick={handleHeaderClick}
-        subheading={`Click here to switch to ${switchToChart}`}
+    <div>
+      <FlexBox
+        justifyContent={FlexBoxJustifyContent.Center}
+        wrap={FlexBoxWrap.Wrap}
+        style={spacing.sapUiContentPadding}
       >
-        <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
-        {toggleCharts === "lineChart" ? (
-          <LineChart
-            dimensions={[{ accessor: "month" }]}
-            measures={[{ accessor: "data", label: "Stock Price" }]}
-            dataset={dataset}
-            loading={loading}
+        <Card
+          header={
+            <CardHeader
+              titleText="Stock Prices"
+              subtitleText={`Click here to switch to ${switchToChart}`}
+              interactive
+              onClick={handleHeaderClick}
+              avatar={
+                <Icon
+                  name={
+                    toggleCharts === "lineChart"
+                      ? "line-chart"
+                      : "horizontal-bar-chart"
+                  }
+                />
+              }
+            />
+          }
+          style={{ width: "300px", ...spacing.sapUiContentPadding }}
+        >
+          <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
+          {toggleCharts === "lineChart" ? (
+            <LineChart
+              dimensions={[{ accessor: "month" }]}
+              measures={[{ accessor: "data", label: "Stock Price" }]}
+              dataset={dataset}
+              loading={loading}
+            />
+          ) : (
+            <BarChart
+              dimensions={[{ accessor: "month" }]}
+              measures={[{ accessor: "data" }]}
+              dataset={dataset}
+              loading={loading}
+            />
+          )}
+        </Card>
+        <Card
+          header={
+            <CardHeader
+              titleText="Progress"
+              subtitleText="List"
+              avatar={<Icon name="list" />}
+              interactive
+              onClick={handleProgressHeaderClick}
+            />
+          }
+          style={{ width: "300px", ...spacing.sapUiContentPadding }}
+        >
+          <List>
+            <StandardListItem
+              additionalText="finished"
+              additionalTextState={ValueState.Success}
+            >
+              Activity 1
+            </StandardListItem>
+            <StandardListItem
+              additionalText="failed"
+              additionalTextState={ValueState.Error}
+            >
+              Activity 2
+            </StandardListItem>
+            <StandardListItem
+              additionalText="in progress"
+              additionalTextState={ValueState.Warning}
+              style={{ height: "80px" }}
+            >
+              <FlexBox direction={FlexBoxDirection.Column}>
+                <Title level={TitleLevel.H5}>Activity 3</Title>
+                <ProgressIndicator value={89} valueState={ValueState.Success} />
+              </FlexBox>
+            </StandardListItem>
+            <StandardListItem
+              additionalText="in progress"
+              additionalTextState={ValueState.Warning}
+              style={{ height: "80px" }}
+            >
+              <FlexBox direction={FlexBoxDirection.Column}>
+                <Title level={TitleLevel.H5}>Activity 4</Title>
+                <ProgressIndicator value={5} valueState={ValueState.Error} />
+              </FlexBox>
+            </StandardListItem>
+          </List>
+        </Card>
+        <Card
+          header={
+            <CardHeader
+              titleText="AnalyticalTable"
+              avatar={<Icon name="table-view" />}
+            />
+          }
+          style={{ maxWidth: "900px", ...spacing.sapUiContentPadding }}
+        >
+          <AnalyticalTable
+            data={tableData}
+            columns={tableColumns}
+            visibleRows={5}
           />
-        ) : (
-          <BarChart
-            dimensions={[{ accessor: "month" }]}
-            measures={[{ accessor: "data", label: "Stock Price" }]}
-            dataset={dataset}
-            loading={loading}
-          />
-        )}
-      </Card>
-      <Card
-        heading="Progress"
-        subheading="List"
-        style={{ width: "300px", ...spacing.sapUiContentPadding }}
-        avatar={<Icon name="list" />}
-        headerInteractive
-        onHeaderClick={handleProgressHeaderClick}
-      >
-        <List>
-          <StandardListItem info="finished" infoState={ValueState.Success}>
-            Activity 1
-          </StandardListItem>
-          <StandardListItem info="failed" infoState={ValueState.Error}>
-            Activity 2
-          </StandardListItem>
-          <StandardListItem
-            info="in progress"
-            infoState={ValueState.Warning}
-            style={{ height: "80px" }}
-          >
-            <FlexBox direction={FlexBoxDirection.Column}>
-              <Title level={TitleLevel.H5}>Activity 3</Title>
-              <ProgressIndicator value={89} valueState={ValueState.Success} />
-            </FlexBox>
-          </StandardListItem>
-          <StandardListItem
-            info="in progress"
-            infoState={ValueState.Warning}
-            style={{ height: "80px" }}
-          >
-            <FlexBox direction={FlexBoxDirection.Column}>
-              <Title level={TitleLevel.H5}>Activity 4</Title>
-              <ProgressIndicator value={5} valueState={ValueState.Error} />
-            </FlexBox>
-          </StandardListItem>
-        </List>
-      </Card>
-      <Card
-        heading="AnalyticalTable"
-        style={{ maxWidth: "900px", ...spacing.sapUiContentPadding }}
-        avatar={<Icon name="table-view" />}
-      >
-        <AnalyticalTable
-          data={tableData}
-          columns={tableColumns}
-          visibleRows={5}
-        />
-      </Card>
-    </FlexBox>
+        </Card>
+      </FlexBox>
+    </div>
   );
 }
 ```

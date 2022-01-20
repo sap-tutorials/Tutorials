@@ -3,7 +3,7 @@ title: Create an Application for Producing Messages
 description: Develop and deploy a basic Node.js-based messaging application for sending messages to an SAP Event Mesh Queue.
 time: 20
 auto_validation: true
-tags: [ tutorial>beginner, topic>node-js, topic>java, products>sap-business-technology-platform, tutorial>license]
+tags: [ tutorial>beginner, programming-tool>node-js, products>sap-business-technology-platform, tutorial>license]
 primary_tag: products>sap-event-mesh
 ---
 
@@ -44,7 +44,6 @@ You need to add domain, messaging service and your queue name in the indicated s
 applications:
   - name: producer
     host: producer-host
-    domain: <REPLACE WITH YOUR DOMAIN>
     buildpack: 'https://github.com/cloudfoundry/nodejs-buildpack'
     memory: 256M
     health-check-type: none

@@ -2,8 +2,8 @@
 title: Enable Push Notifications in Your Branded MDK Client
 description: Use the SAP Mobile Services to enable push notifications in your branded MDK client.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services ]
 time: 35
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -24,6 +24,7 @@ author_profile: https://github.com/jitendrakansal
 You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/5-Brand-Your-Customized-App-with-Mobile-Development-Kit-SDK/1-Enable-Push-Notifications-in-your-branded-MDK-client).
 
 ---
+
 
 [ACCORDION-BEGIN [Step 1: ](Generate push configuration for Android/iOS device)]
 
@@ -205,7 +206,7 @@ To enable your app for push notifications, you need to carry out the following t
 
 3. In Mobile Services cockpit, navigate to `Mobile Applications` | `Native/Hybrid` | `com.sap.mdk.demo` | `Mobile Push Notification`. Paste the Server Key value in **Android** push settings in Mobile Services cockpit.
 
-    !![MDK](img_2.3.png)
+    !![MDK](img-2.3.png)
 
 4. Repeat the above step for **Sender ID** and then click **Save**.
 
@@ -217,7 +218,7 @@ To enable your app for push notifications, you need to carry out the following t
 
     !![MDK](img_2.4.png)
 
-2. Provide the following details to the **Apple** panel:
+2. Provide the following details to the **Apple** panel and click **Save**.
 
 
     |  Field Name     | Value |
@@ -227,9 +228,11 @@ To enable your app for push notifications, you need to carry out the following t
     |  Certificate | `Browse to the `.p12`certificate you just exported` |
     |  Password | Enter the password you provided during the export |
 
-3. Click **Save**. You have now successfully configured the APNS Endpoint on the server side in Mobile Services cockpit.
+    !![MDK](img-2.5.png)
 
-    !![MDK](img_2.5.png)
+You have now successfully configured the APNS Endpoint on the server side in Mobile Services cockpit.
+
+
 
 [OPTION END]
 

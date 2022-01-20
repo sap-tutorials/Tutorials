@@ -4,16 +4,16 @@ description: Enable SAP Mobile Services, create a connection in the SAP BTP SDK 
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 auto_validation: true
-primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
+primary_tag: products>sap-btp-sdk-for-ios
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services ]
 time: 15
 ---
 
 ## Prerequisites
 
 - **Tutorials:** [Get a Free Trial Account on SAP BTP](hcp-create-trial-account) and [Enable SAP Mobile Services](fiori-ios-hcpms-setup)
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP BTP SDK for iOS:** Version 5.0
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 12 or higher
+- **SAP BTP SDK for iOS:** Version 6.0
 
 ## Details
 

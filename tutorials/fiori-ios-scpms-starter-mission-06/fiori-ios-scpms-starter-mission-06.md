@@ -4,15 +4,15 @@ description: Embed your app flow in a Split View Controller for Mac Catalyst onl
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
+primary_tag: software-product>sap-btp-sdk-for-ios
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
 time: 35
 ---
 
 ## Prerequisites
 
-- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP BTP SDK for iOS:** Version 5.0 or higher
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 13 or higher
+- **SAP BTP SDK for iOS:** Version 7.0 or higher
 
 ## Details
 
@@ -45,7 +45,7 @@ To implement the new flow you can attach our current app flow in storyboard to a
 
     !![Split View Controller](fiori-ios-scpms-starter-mission-06-2.png)
 
-3. With that in place you can connect the Split View Controller with our current app flow. Delete the View Controller Scene of the Split View Controller in Storyboard first.
+3. With that in place you can connect the Split View Controller with our current app flow. **Delete** the **View Controller Scene** of the Split View Controller in Storyboard first.
 
     !![Split View Controller](fiori-ios-scpms-starter-mission-06-3.png)
 
@@ -53,9 +53,9 @@ To implement the new flow you can attach our current app flow in storyboard to a
 
     !![Split View Controller](fiori-ios-scpms-starter-mission-06-3-1.png)
 
-4. Drag the Navigation Controller of the app flow right next to the Split View Controller and create a storyboard segue between the **Split View Controller** and the **Navigation Controller**. As the segue type, select **detail view controller** and safe.
+4. Drag the Navigation Controller of the app flow right next to the Split View Controller and create a storyboard segue between the **Split View Controller** and the **Navigation Controller**. As the segue type, select **secondary view controller** and safe.
 
-    !![Split View Controller](fiori-ios-scpms-starter-mission-06-4.gif)
+    !![Split View Controller](fiori-ios-scpms-starter-mission-06-4.png)
 
 5. Make the Main Split View Controller the initial view controller for the app by selecting the View controller and using the **Attributes Inspector** to check the box for **Is Initial View Controller**.
 
@@ -75,21 +75,19 @@ To implement the new flow you can attach our current app flow in storyboard to a
 
 6. Open the `ApplicationUIManager.swift` file and locate the `showApplicationScreen(completionHandler:)` method. Right now you can see that you're initializing the Navigation Controller as our initial screen but you have to change that to be adaptable to Mac Catalyst. Change the implement code to the following and read the inline comments carefully:
 
-    ```Swift[14-25]
+    ```Swift[12-25]
     func showApplicationScreen(completionHandler: @escaping (Error?) -> Void) {
         // Check if an application screen has already been presented
-        guard self.isSplashPresented else {
+        guard isSplashPresented else {
             completionHandler(nil)
             return
         }
 
-        // Restore the saved application screen or create a new one
+        // set rootViewController only once ie after onboarding when app screen is about to be shown
+        // for restore, remove covering views previously added
         let appViewController: UIViewController
-        if let savedViewController = self._savedApplicationRootViewController {
-            appViewController = savedViewController
-        } else {
-            // If running on Mac Catalyst initialize the Split View Controller and set it as new app view controller
-            #if targetEnvironment(macCatalyst)
+        if isOnboarding {
+#if targetEnvironment(macCatalyst)
             let splitViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as! UISplitViewController
 
             splitViewController.modalPresentationStyle = .currentContext
@@ -97,16 +95,20 @@ To implement the new flow you can attach our current app flow in storyboard to a
             appViewController = splitViewController
 
             // If running on iOS show the OverviewTableViewController
-            #else
+#else
             let overviewTVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "OverviewTableViewController") as! OverviewTableViewController
             appViewController = overviewTVC
-            #endif
+#endif
 
+            isOnboarding = false
+            coveringViews.removeAll()
+
+            // maintain this boolean since no splash screen is present now
+            isSplashPresented = false
+            window.rootViewController = appViewController
+        } else {
+            removeCoveringViews()
         }
-        self.window.rootViewController = appViewController
-        self._onboardingSplashViewController = nil
-        self._savedApplicationRootViewController = nil
-        self._coveringViewController = nil
 
         completionHandler(nil)
     }

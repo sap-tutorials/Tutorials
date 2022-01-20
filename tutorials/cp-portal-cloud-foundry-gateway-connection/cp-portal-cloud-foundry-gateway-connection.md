@@ -12,6 +12,10 @@ author_profile: https://github.com/LindsayBert
 ## Prerequisites
 - You've created an account on the Gateway Demo System: [Create an Account on the Gateway Demo System](gateway-demo-signup). Note that when you create your account, make a note of the user name and password that you entered -- you'll be needing it in this tutorial.
 
+>Note:<div>&nbsp;</div><div>
+- If you're using a trial environment, you need to first register it. You can register to a trial account using this link: [Create a trial account](https://www.sap.com/cmp/td/sap-cloud-platform-trial.html).<div>&nbsp;</div><div>
+  - If you're using a production environment, you should have a subaccount configured. If you don't have a configured subaccount, refer to this topic: [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
+
 ## Details
 ### You will learn
   - How to create a destination between SAP BTP and the SAP Gateway Demo System account
@@ -67,13 +71,13 @@ In this step, you'll create connectivity between SAP BTP and the SAP Gateway Dem
 
 5. Enter the following **Additional Properties** depending on your scenario. Click the **New Property** button each time to add a new property.
 
-    >If you are not sure which ones to enter, enter all of them.
+    >If you're not sure which ones to enter, enter all of them.
 
     |  Field     | Value
     |  :------------- | :-------------
     | `WebIDEEnabled`          | `true`
     | `WebIDESystem`    | `Gateway`
-    | `WebIDEUsage`           | `odata_abap`,`dev_abap` <div>Note that the `dev_abap` value is mandatory only if you're developing or deploying to the SAPUI5 ABAP repository.</div>    
+    | `WebIDEUsage`           | `odata_abap`,`dev_abap`     
     | `sap-platform`          | `ABAP` (enter this property manually as it is not available in the dropdown list)
     | `sap-client`          | `002`
     | `HTML5.DynamicDestination`          | `true`

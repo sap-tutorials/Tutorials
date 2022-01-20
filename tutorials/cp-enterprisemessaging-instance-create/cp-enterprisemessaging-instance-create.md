@@ -26,13 +26,17 @@ primary_tag: products>sap-event-mesh
 
 1. Open the SAP Business Technology Platform cockpit, Cloud Foundry environment.
 
-2. Navigate to a **Space** in your Cloud Foundry environment and select **Services >  Service Marketplace > Event Mesh**.
+2. Navigate to your subaccount.
 
-3. Click **Instances > New Instance**.
+3. Expand Services and choose **Instances and Subscriptions**.
 
-4. Select **default** type service plan from the dropdown and click **Next**.
+4. Choose **Create**.
 
-5. Specify parameters of the service descriptor using a JSON file.
+5. Select Event Mesh and then default service plan (for Factory landscape), else dev plan (for Trial landscape). 
+
+6. Select **Cloud Foundry** as the runtime environment. Select your space then, enter an instance name. Choose **Next**.(for this exercise, we will consider only **Cloud Foundry** runtime environment)
+
+7. Specify parameters using a JSON file (to create an instance of **default** plan)
 
     ```JSON
     {
@@ -79,17 +83,23 @@ primary_tag: products>sap-event-mesh
 
     - **rules** -  Defines the access privileges for the message client. In order to allow access to a queue or a topic, the namespace of the corresponding owner message client has to be added
 
-    Click **Next**.
+8. Specify parameters using a JSON file (to create an instance of **dev** plan)
+    ```JSON
+    {
+    	"emname": "<your-emname>",
+    	"options": {
+    		"management": true,
+    		"messagingrest": true
+    	}
+    }
+    ```
+9. Review the information you have provided and choose **Create**.
 
-6. Opens another screen. Click **Next**.
+      ![SAP Event Mesh Instance](em-instance-creation.PNG)
 
-7. Enter the instance name and click **Finish**. The instance name has to be the same as has been given against the **`emname`** parameter in the service descriptor.
+  An instance of SAP Event Mesh is created.
 
-    An instance of SAP Event Mesh is created.
-
-    ![SAP Event Mesh Instance](em-instance-creation.PNG)
-
-    >Each Event Mesh instance represents a message client. Each message client has a set of queues and topics to which it is associated. All these queues and topics belonging to one message client are exposed to other message clients using its unique credentials. This entire set of queues and topics within different message clients in a subaccount can send and receive messages or events to each other using the service.  
+>Each Event Mesh instance represents a message client. Each message client has a set of queues and topics to which it is associated. All these queues and topics belonging to one message client are exposed to other message clients using its unique credentials. This entire set of queues and topics within different message clients in a subaccount can send and receive messages or events to each other using the service.  
 
 [VALIDATE_1]
 [ACCORDION-END]

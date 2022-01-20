@@ -2,15 +2,15 @@
 author_name: Supriya Cherukunnathu
 author_profile: https://github.com/SupriyaCherukunnathu
 title: Send Commands with MQTT
-description: Send commands to the SAP Cloud Platform Internet of Things Service Cloud using MQTT.
+description: Send commands to the SAP IoT services for SAP BTP Cloud using MQTT.
 auto_validation: true
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-leonardo-iot, products>sap-edge-services, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>cloud, products>sap-internet-of-things, product>sap-edge-services, products>sap-iot-services for-sap-btp, products>sap-business-technology-platform ]
+time: 15
 ---
 
 
 ## Prerequisites
- - **Proficiency:** Beginner
  - **Tutorials:** You have completed [Install the Paho Client](iot-cf-install-paho-client) and [Install OpenSSL](iot-cf-install-openssl).
 
 ## Details
@@ -18,12 +18,11 @@ tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, topic>clo
 - How to send commands to the Internet of Things Service Cloud using MQTT
 - How to use Paho as a sample client for MQTT
 
-### Time to Complete
-15 min
+
 
 ---
 
-You need a tenant and a user with administrator role. For more information, please refer to the tutorial [Create User and Tenant](iot-cf-create-user-tenant).
+You need a tenant and a user with administrator role.
 
 You have to create a device model for the Internet of Things Service using the Device Management API. For detailed information about the entities of a device model, please refer to section [Device Model](https://help.sap.com/viewer/2f1daa938df84fd090fa2a4da6e4bc05/Cloud/en-US/41c5d53fee864f2482b965cf4127a730.html) in the **Introduction**.
 
@@ -163,7 +162,7 @@ In the following, a capability is created. A capability can be reused since it c
 
 7.  Choose **Execute**.
 
-8.  Scroll to the **Server response** body and **Code**. In case of success the response code is `200` and the **Response body** contains all information of the created sensor type
+8.  Scroll to the **Server response** body and **Code**. In case of success the response code is `200` and the **Response body** contains all information of the created sensor type.
 
     ```JSON
     {

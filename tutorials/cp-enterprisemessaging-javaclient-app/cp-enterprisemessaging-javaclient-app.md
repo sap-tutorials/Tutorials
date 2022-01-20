@@ -3,7 +3,7 @@ title: Create App for Sending and Receiving Messages Using a Java-Based Client
 description: Develop and deploy a basic Java-based messaging application for sending and receiving messages to a queue.
 time: 45
 auto_validation: true
-tags: [ tutorial>intermediate, topic>java, products>sap-business-technology-platform, tutorial>license]
+tags: [ tutorial>intermediate, programming-tool>java, products>sap-business-technology-platform, tutorial>license]
 primary_tag: products>sap-event-mesh
 ---
 

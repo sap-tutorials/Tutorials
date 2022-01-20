@@ -3,12 +3,18 @@ title: Deploy the Fiori App to Cloud Foundry
 description: Deploy the application to the Cloud Foundry environment to be able to share it with your coworkers.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5,   products>sap-launchpad-service, topic>user-interface, topic>html5, topic>cloud]
+tags: [ tutorial>beginner, products>sap-fiori, programming-tool>odata, programming-tool>sapui5,   products>sap-launchpad-service, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
 primary_tag: products>sap-business-technology-platform
+author_name: Nico Geburek
+author_profile: https://github.com/nicogeburek
 ---
 
 ## Prerequisites
- - Make sure you have the [proper entitlements](cp-cf-entitlements-add) set. If you are unsure which services you need, please refer to the table of step 2.
+- You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
+    - **SAP Launchpad service**
+    - **Destination**
+    - **XSUAA**
+    - **HTML5 Application Repository Service**
 
 ## Details
 ### You will learn
@@ -64,7 +70,7 @@ Use "cf dmol -i 0915a099-4130-11eb-b43e-eeee0a8f7188" to download the logs of th
 This means you uploaded the app successfully. The URL of you web app will now follow this pattern: `https://<yourID>.launchpad.cfapps.<region>.hana.ondemand.com/productsservice.tutorialproducts`
 With this URL, you are able to access the `flpSandbox.html`
 
-> You can also run `cf html5-list -di products_destination -u --runtime launchpad` to print the full URL of your web app.
+> You can also install [this plugin](cp-cf-install-cliplugin-html5) and run `cf html5-list -di products_destination -u --runtime launchpad` to print the full URL of your web app.
 
 
 [DONE]
@@ -91,15 +97,15 @@ Now it's time to embed the app in a full SAP Fiori Launchpad environment:
 
     !![defaultGroup](defaultGroup.png)
 
-4. Select to the **Edit** button to edit the group and click in the search field in the appearing **Assignments** side panel. You should be able to add the Fiori app to the group via the **+** button after selecting this search box. Don't forget to **Save** the group before navigating back.
+4. Select the **Edit** button to edit the group and click in the search field in the appearing **Assignments** side panel. You should be able to add the Fiori app to the group via the **+** button after selecting this search box. Don't forget to **Save** the group before navigating back.
 
     !![addToGroup](addToGroup.png)
 
-4. Now you need to make this application visible to your users. To keep it simple, we make the app visible to everyone. For this, select the **Everyone** role.
+4. Now you need to make this application visible to your users. To keep it simple, make the app visible to everyone. For this, select the **Everyone** role.
 
     !![everyoneRole](everyoneRole.png)
 
-4. You are already familiar with the steps needed here. Select to the **Edit** button to edit the role and click in the search field in the appearing **Assignments** side panel. Add the Fiori app to the role via the **+** button and **Save** the change to the role.
+4. You are already familiar with the steps needed here. Select the **Edit** button to edit the role and click in the search field in the appearing **Assignments** side panel. Add the Fiori app to the role via the **+** button and **Save** the change to the role.
 
     !![addToRole](addToRole.png)
 
@@ -111,7 +117,7 @@ Now it's time to embed the app in a full SAP Fiori Launchpad environment:
 
     !![createFLP](createFLP.png)
 
-4. There's not need to edit this site, all we need comes with the default configuration. Click the button on the top right corner to open your new site.
+4. There's no need to edit this site, all you need comes with the default configuration. Click the button on the top right corner to open your new site.
 
     !![openFLP](openFLP.png)
 

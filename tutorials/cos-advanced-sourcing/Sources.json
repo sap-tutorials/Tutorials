@@ -5,7 +5,7 @@
             "sourceName": "Atlanta",
             "sourceType": "DC",
             "attributes": {
-                "Capacity": 100
+                "capacity": 100
             },
             "sourceCoordinates": {
                 "latitude": 33.7490,
@@ -17,7 +17,7 @@
             "sourceName": "Chicago",
             "sourceType": "DC",
             "attributes": {
-                "Capacity": 20
+                "capacity": 20
             },
             "sourceCoordinates": {
                 "latitude": 41.8781,
@@ -29,7 +29,7 @@
             "sourceName": "Houston",
             "sourceType": "DC",
             "attributes": {
-                "Capacity": 80
+                "capacity": 80
             },
             "sourceCoordinates": {
                 "latitude": 29.7604,
@@ -41,7 +41,7 @@
             "sourceName": "Philadelphia",
             "sourceType": "DC",
             "attributes": {
-                "Capacity": 99
+                "capacity": 99
             },
             "sourceCoordinates": {
                 "latitude": 39.9526,
@@ -53,7 +53,7 @@
             "sourceName": "Detroit",
             "sourceType": "DC",
             "attributes": {
-                "Capacity": 50
+                "capacity": 50
             },
             "sourceCoordinates": {
                 "latitude": 42.3314,
@@ -65,7 +65,7 @@
             "sourceName": "Orlando",
             "sourceType": "DC",
             "attributes": {
-                "Capacity": 10
+                "capacity": 10
             },
             "sourceCoordinates": {
                 "latitude": 28.5383,
@@ -77,7 +77,7 @@
             "sourceName": "San Jose",
             "sourceType": "DC",
             "attributes": {
-                "Capacity": 12
+                "capacity": 12
             },
             "sourceCoordinates": {
                 "latitude": 37.335480,
@@ -89,7 +89,7 @@
             "sourceName": "Store New York",
             "sourceType": "STORE",
             "attributes": {
-                "Capacity": 90
+                "capacity": 90
             },
             "sourceCoordinates": {
                 "latitude": 40.7831,
@@ -101,7 +101,7 @@
             "sourceName": "Store Los Angeles",
             "sourceType": "STORE",
             "attributes": {
-                "Capacity": 60
+                "capacity": 60
             },
             "sourceCoordinates": {
                 "latitude": 34.0522,
@@ -113,7 +113,7 @@
             "sourceName": "Toronto",
             "sourceType": "DC",
             "attributes": {
-                "Capacity": 70
+                "capacity": 70
             },
             "sourceCoordinates": {
                 "latitude": 43.6532,
