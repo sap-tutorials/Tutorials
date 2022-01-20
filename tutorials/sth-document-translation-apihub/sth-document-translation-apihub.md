@@ -4,7 +4,7 @@ description: Use your trial account to translate documents with SAP API Business
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>sap-api-business-hub, products>sap-business-technology-platform]
-primary_tag: products>sap-translation-hub
+primary_tag: software-product>sap-translation-hub
 ---
 
 ## Prerequisites
@@ -63,7 +63,7 @@ The service offers a sandbox system out of the box, but the idea of this tutoria
 
     !![Configure](05_API_hub_configure.png)
 
-2. Click on the **Environment: Sandbox** to open the menu and select **+ Add New Environment**
+2. Click **Environment: Sandbox** to open the menu and select **+ Add New Environment**
 
     !![Configure](05a_API_hub_configure.png)
 
