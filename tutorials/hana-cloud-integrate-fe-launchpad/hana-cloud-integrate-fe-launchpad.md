@@ -3,8 +3,8 @@ title: Integrate Your SAP Fiori Elements App into a New Launchpad Site
 description: Add an SAP Fiori elements app to a launchpad site in the SAP Launchpad service.
 time: 30
 auto_validation: true
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-launchpad-service, products>sap-fiori, programming-tool>html5, programming-tool>sapui5]
-primary_tag: products>sap-launchpad-service
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-launchpad-service, software-product>sap-fiori, programming-tool>html5, programming-tool>sapui5]
+primary_tag: software-product>sap-launchpad-service
 ---
 
 ## Prerequisites
