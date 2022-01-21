@@ -29,9 +29,7 @@ You'll perform all subsequent activities with this new user.
 
 > You've specified a password for the SYSTEM user when you created an SAP HANA tenant database. You now use the SYSTEM user to log on to the SAP HANA cockpit and create your own database administration user.
 
-**Caution**
-
-> You should not use the SYSTEM user for day-to-day activities. Instead, use this user to create dedicated database users for administrative tasks and to assign privileges to these users.
+> **Caution:** You should not use the SYSTEM user for day-to-day activities. Instead, use this user to create dedicated database users for administrative tasks and to assign privileges to these users.
 
 1.  In the SAP BTP cockpit, navigate to a subaccount. For more information, see [Navigate in the Cockpit](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/fdeff7e68f64496eb8a1fb31f6a08b73.html).
 
@@ -39,8 +37,7 @@ You'll perform all subsequent activities with this new user.
 
     All databases available in the selected account are listed with their ID, type, version, and related database system.
 
-    **Tip**
-    > To view the details of a database, for example, its state and the number of existing bindings, select a database in the list and click the link on its name. On the overview of the database, you can perform further actions, for example, delete the database.
+    > **Tip:** To view the details of a database, for example, its state and the number of existing bindings, select a database in the list and click the link on its name. On the overview of the database, you can perform further actions, for example, delete the database.
 
 3.  Proceed as follows:
 
@@ -90,9 +87,7 @@ You'll perform all subsequent activities with this new user.
 
     17. Before you continue to work with the SAP HANA Web-based Development Workbench, you log out first and log on again with your new database user.
 
-        **Caution**
-
-        > At this point, you're still logged on with the SYSTEM user. You can only use your new database user to work with the SAP HANA Web-based Development Workbench by logging out from the SAP HANA cockpit first. Otherwise, you would automatically log in to the SAP HANA Web-based Development Workbench with the SYSTEM user instead of your new database user.
+        > **Caution:** At this point, you're still logged on with the SYSTEM user. You can only use your new database user to work with the SAP HANA Web-based Development Workbench by logging out from the SAP HANA cockpit first. Otherwise, you would automatically log in to the SAP HANA Web-based Development Workbench with the SYSTEM user instead of your new database user.
 
         > Therefore, choose the **Logout** button before you continue to work with the SAP HANA Web-based Development Workbench, where you need to log on again with the new database user.
 
@@ -122,9 +117,7 @@ After you add the SAP HANA system hosting the repository that stores your applic
 
       To add your database system to Eclipse, follow the steps in [Connect to SAP HANA Databases via the Eclipse IDE](https://help.sap.com/viewer/d4790b2de2f4429db6f3dff54e4d7b3a/Cloud/en-US/4efc124a0ccc42b3b502ad3a3908d23d.html).
 
-      **Remember**
-
-    > Make sure that the tunnel is open until you complete the tutorial.
+    > **Remember:** Make sure that the tunnel is open until you complete the tutorial.
 
     -	Workspace Name:
 
@@ -170,8 +163,7 @@ There are a variety of project types for different types of development objects.
 
 The **Project Explorer** view in the **SAP HANA Development** perspective in Eclipse displays the new project.
 
-**Tip**
-> If your XS Project isn't visible in the **Project Explorer**, choose the **`︙`** button in menu bar for the **Project Explorer** view to change the project presentation from **Hierarchical** to **Flat**.
+> **Tip:** If your XS Project isn't visible in the **Project Explorer**, choose the **`︙`** button in menu bar for the **Project Explorer** view to change the project presentation from **Hierarchical** to **Flat**.
 
 The system information in brackets to the right of the project node name in the **Project Explorer** view indicates that the project has been shared. Shared projects are regularly synchronized with the repository hosted on the SAP HANA system you're connected to.
 
@@ -184,8 +176,7 @@ SAP HANA Extended Application Services (SAP HANA XS) supports server-side applic
 
 1.  In the **Project Explorer** view in the **SAP HANA Development** perspective in Eclipse, right-click your XS project, and choose **New** > **Other**.
 
-    **Tip**
-    > If your XS Project isn't visible in the **Project Explorer**, choose the **`︙`** button in menu bar for the **Project Explorer** view to change the project presentation from **Hierarchical** to **Flat**.
+    > **Tip:** If your XS Project isn't visible in the **Project Explorer**, choose the **`︙`** button in menu bar for the **Project Explorer** view to change the project presentation from **Hierarchical** to **Flat**.
 
 2.  In the **Select a wizard** dialog, choose **SAP HANA** > **Application Development** > **XS JavaScript File**.
 
@@ -208,7 +199,6 @@ SAP HANA Extended Application Services (SAP HANA XS) supports server-side applic
     The application descriptors are mandatory and describe the framework in which an SAP HANA XS classic application runs.
 
     The `.xsapp` file indicates the root point in the package hierarchy where content is to be served to client requests; the `.xsaccess` file defines who has access to the exposed content and how.
-
 
     > By default, the project-creation Wizard creates the application descriptors automatically.  
      If they're not present, you see a 404 error message in the Web Browser when you call the XS JavaScript service. In this case, you need to create the application descriptors manually. For more information, see the [SAP HANA Developer Guide for SAP HANA Studio](https://help.sap.com/viewer/product/SAP_HANA_PLATFORM/2.0.06/en-US?task=discover_task).
@@ -273,7 +263,7 @@ The SQL statement returns one row with one field called **DUMMY**, whose value i
 
 2.  In the `MyFirstSourceFile.xsjs` file, replace your existing code with the following code:
 
-    ```
+    ``` JavaScript
 
     $.response.contentType = "text/html";
     var output = "Hello, World !";
@@ -294,6 +284,7 @@ The SQL statement returns one row with one field called **DUMMY**, whose value i
 
     $.response.setBody(output);
     ```
+
 3. Save the `MyFirstSourceFile.xsjs` file.
 
 4.  Open the context menu of the `MyFirstSourceFile.xsjs` file and choose **Team** > **Activate All**.

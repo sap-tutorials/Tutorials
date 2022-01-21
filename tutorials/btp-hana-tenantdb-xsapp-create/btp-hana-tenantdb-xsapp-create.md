@@ -16,7 +16,7 @@ author_profile: https://github.com/sapsy
 
 ## Details
 ### You will learn
-How to create and bind an SAP HANA tenant database to an SAP HANA XS classic application using the SAP BTP cockpit, the SAP HANA cockpit, and the SAP HANA Web-Based Development Workbench
+- How to create and bind an SAP HANA tenant database to an SAP HANA XS classic application using the SAP BTP cockpit, the SAP HANA cockpit, and the SAP HANA Web-Based Development Workbench
 
 To perform the different steps in this tutorial, you use different tools. You first create a tenant database, and then create the XS classic application on the database.
 
@@ -34,8 +34,8 @@ In your subaccount in the SAP BTP cockpit, you create a database on an SAP HANA 
 
     All databases available in the selected account are listed with their ID, type, version, and related database system.
 
-    **Tip**
-    > To view the details of a database, for example, its state and the number of existing bindings, select a database in the list and click the link on its name. On the overview of the database, you can perform further actions, for example, delete the database.
+
+    > **Tip:** To view the details of a database, for example, its state and the number of existing bindings, select a database in the list and click the link on its name. On the overview of the database, you can perform further actions, for example, delete the database.
 
 3.  From the **Databases & Schemas** page, choose **New**.
 
@@ -64,16 +64,13 @@ You'll perform all subsequent activities with this new user.
 
 > You've specified a password for the SYSTEM user when you created an SAP HANA tenant database. You now use the SYSTEM user to log on to SAP HANA cockpit and create your own database administration user.
 
-**Caution**
-
-> You should not use the SYSTEM user for day-to-day activities. Instead, use this user to create dedicated database users for administrative tasks and to assign privileges to these users.
+> **Caution:** You should not use the SYSTEM user for day-to-day activities. Instead, use this user to create dedicated database users for administrative tasks and to assign privileges to these users.
 
   1.  To log on to the SAP HANA cockpit, in the navigation area of the SAP BTP cockpit, choose **SAP HANA / SAP ASE** > **Databases & Schemas**.
 
     All databases available in the selected account are listed with their ID, type, version, and related database system.
 
-    **Tip**
-    >To view the details of a database, for example, its state and the number of existing bindings, select a database in the list and click the link on its name. On the overview of the database, you can perform further actions, for example, delete the database.
+    > **Tip:** To view the details of a database, for example, its state and the number of existing bindings, select a database in the list and click the link on its name. On the overview of the database, you can perform further actions, for example, delete the database.
 
   2.  Select the relevant SAP HANA tenant database in the list.
 
@@ -129,9 +126,7 @@ You'll perform all subsequent activities with this new user.
 
   18. Before you continue to work with the SAP HANA Web-based Development Workbench, you log out first and log on again with your new database user.
 
-    **Caution**
-
-    > At this point, you're still logged on with the SYSTEM user. You can only use your new database user to work with the SAP HANA Web-based Development Workbench by logging out from the SAP HANA cockpit first. Otherwise, you would automatically log in to the SAP HANA Web-based Development Workbench with the SYSTEM user instead of your new database user.
+    > **Caution:** At this point, you're still logged on with the SYSTEM user. You can only use your new database user to work with the SAP HANA Web-based Development Workbench by logging out from the SAP HANA cockpit first. Otherwise, you would automatically log in to the SAP HANA Web-based Development Workbench with the SYSTEM user instead of your new database user.
 
     > Therefore, choose the **Logout** button before you continue to work with the SAP HANA Web-based Development Workbench, where you need to log on again with the new database user.
 
