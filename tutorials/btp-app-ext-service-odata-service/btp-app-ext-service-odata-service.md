@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Prepare SAP S/4HANA System by Activating the Business Partner OData Service
 description: This tutorial shows you how to activate your Business Partner OData service and creating a technical user.
+keywords: cap
 auto_validation: true
 time: 30
 tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-s-4hana]
@@ -29,7 +30,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Introduction)]
-Welcome to this collection of tutorials for application development on SAP Business Technology Platform (SAP BTP). In the following tutorials, we provide information and examples on how to consume external services step by step using SAP S/4HANA. To get an overview about what is CAP, see
+Welcome to this collection of tutorials for application development on SAP Business Technology Platform (SAP BTP). In the following tutorials, we provide information and examples on how to consume external services step by step using SAP S/4HANA. To get an overview about what is CAP, see [Introduction to Consuming Remote Services using CAP](btp-app-ext-service-intro) for more details.
 
 [DONE]
 [ACCORDION-END]
@@ -47,7 +48,7 @@ With this tutorial, you expose the Business Partner service as an OData service 
 
     !![Add Service](configure-oData-Service-2.png)
 
-4. Type in `LOCAL` for **System Alias** and `API_BUSINESS_PARTNER` for **External Service Name**, and choose **Enter** to search for all matching services.
+4. Type in `LOCAL` for **System Alias** and `API_BUSINESS_PARTNER` for **External Service Name**, and hit <kbd>Enter</kbd> to search for all matching services.
 
     !![Search Service](configure-oData-Service-2-1.png)
 
@@ -194,7 +195,7 @@ Now, let's create a user in your SAP S/4HANA system and assign the required auth
 
     !![Change Pass](configure-oData-Service-20.png)
 
-    You've successfully logged in with your new technical user.
+    You have successfully logged in with your new technical user.
 
     !![Logged in](configure-oData-Service-21.png)
 

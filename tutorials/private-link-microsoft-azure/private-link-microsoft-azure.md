@@ -1,11 +1,10 @@
 ---
 title: Connect SAP Private Link Service (Beta) to Microsoft Azure Private Link Service
 author_profile: https://github.com/AnnikaGonnermann
-description: Connect SAP Private Link service (Beta) to Microsoft Azure Private Link service with Cloud Foundry CLI and bind the service instance to your app or create a service key.
+description: Connect SAP Private Link service (Beta) to Microsoft Azure Private Link Service with Cloud Foundry CLI and bind the service instance to your app or create a service key.
 auto_validation: true
 time: 10
 tags: [tutorial>beginner, software-product-function>sap-btp-cockpit, tutorial>license, software-product-function>sap-private-link-service, software-product-function>sap-btp-command-line-interface]
-keywords: private, link, Microsoft, Azure, connection, Cloud Foundry, CF, CLI, BTP, endpoint,
 primary_tag: software-product-function>sap-private-link-service
 ---
 
@@ -49,9 +48,9 @@ Make sure you can see `privatelink` in the sample output.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get Resource ID for Azure Private Link Service)]
+[ACCORDION-BEGIN [Step 2: ](Get Resource-ID for Azure Private Link Service)]
 
-To create and enable a private link, you need to define the connection to the service first. To do so, you need the Resource ID of the Azure service:
+To create and enable a private link, you need to define the connection to the service first. To do so, you need the Resource-ID Azure service:
 
 1. Go to the Azure portal.
 2. Navigate to the Azure resource for which you want to find out the Resource ID, for example: **Private Link Center** > **Private link services**.
@@ -75,7 +74,7 @@ Currently, you do not have any service instances enabled. Therefore, you need to
 - offering (`privatelink`),
 - plans (`standard`),
 - a unique name (for instance, `privatelink-test`),
-- and the Resource ID from Microsoft Azure (for example, `/subscriptions/<subscription>/resourceGroups/<rg>/providers/Microsoft.Network/privateLinkServices/<my-private-link-service>`).
+- and the Resource-ID from Microsoft Azure (for example, `/subscriptions/<subscription>/resourceGroups/<rg>/providers/Microsoft.Network/privateLinkServices/<my-private-link-service>`).
 
 Enter `cf create-service` and add that information. Your command should look like this:
 
@@ -131,7 +130,7 @@ Return to Microsoft Azure portal:
 
 You should now receive a success message that the approval is pending.
 
-> **Security Info**: In a scenario in which the person that approves the private endpoint connection wasn't the one that created the Private Link service in the first place, please verify that the connection originated from a trustworthy origin (for instance, a colleague asking for approval via e-mail). This verification process prevents malicious misuse of resource ids.
+> **Security Info**: In a scenario in which the person that approves the private endpoint connection wasn't the one that created the Private Link service in the first place, please verify that the connection originated from a trustworthy origin (for instance, a colleague asking for approval via e-mail). This verification process prevents malicious misuse of resource ids. See also [Best Practices for Secure Endpoint Approval](https://help.sap.com/products/PRIVATE_LINK/42acd88cb4134ba2a7d3e0e62c9fe6cf/844bca7a51f04a15be865b9a6c1867b0.html?locale=en-US&version=CLOUD).
 
 [DONE]
 [ACCORDION-END]

@@ -10,7 +10,7 @@ primary_tag: products>sap-hana
 ---
 
 ### You will learn
-  - How to start with your own free SAP HANA Cloud instance in the SAP Business Technology Platform trial
+  - How to start with your own free SAP HANA Cloud instance in the SAP Business Technology Platform
   - How to leverage SAP Business Application Studio to develop with advanced analytics features in SAP HANA Cloud, including JSON table, geospatial, graph and text search functions
 
 Ready to explore SAP HANA Cloud? As a fun exercise, you can first help our fictional developer, Thomas, work with other developers in the community to create his own database schema on SAP HANA Cloud to use text, graph and geospatial processing inside the database.
@@ -20,7 +20,7 @@ SAP HANA Cloud is a complete database and application development platform. It l
 
 By combining in-memory storage with columnar store, data operations are performed faster than in a traditional database with a disk-based storage. SAP HANA is also `translytical`, which means that developers can perform both transactional and analytical operations from the same structure, in real time, and without creating additional copies of the data such as materialized views.
 
-> ### This tutorial is based on an SAP HANA Cloud instance that you get in a free SAP BTP trial account.
+> ### This tutorial is based on an SAP HANA Cloud instance that you get in a free SAP BTP trial account or SAP BTP free tier.
 > If you do not want to use this method, you can check other [available options to download or install SAP HANA, express edition](https://developers.sap.com/topics/hana.html), and corresponding tutorials.
 
 ### How do we help Thomas?
@@ -33,8 +33,6 @@ Thanks to the multiple engines in SAP HANA Cloud, we will also combine text proc
 Finally, we will use the **geospatial capabilities** in SAP HANA Cloud to find developers closer to Thomas' location in Munich.
 
 !![How do we help Thomas](thomas.png)
-
-
 
 ---
 
@@ -53,74 +51,41 @@ This tutorial uses validations to track completion and make sure you are all set
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Sign up for a trial in the SAP Business Technology Platform)]
+[ACCORDION-BEGIN [Step 2: ](Sign up for a trial or free tier in the SAP Business Technology Platform)]
 
-1. Navigate to the [SAP BTP trial](https://hanatrial.ondemand.com).
-
-2. Follow steps to log in or register for an account. If you need detailed steps, you can [follow this tutorial](hcp-create-trial-account) or watch this video:
-
-    </br><iframe width="560" height="315" src="https://www.youtube.com/embed/n5luSQKYvQQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></br>
-
-    !![Log in to Community](log.png)
+While the free tier is the go-to option for individuals and enterprises wanting to try out SAP BTP, it is not yet available in all regions of the world.  Therefore we suggest you start by trying to use the Free Tier, but if it is unavailable to you; you can always still use the Free Trial for SAP HANA Cloud access. However both options are described in the following tutorial group. If you are completely new to SAP BTP and have neither a Free Trial nor a Free Tier account, you should go through this tutorial group in order to get started: [Set Up an SAP BTP Account for Tutorials](group.btp-setup). Otherwise you can skip ahead to the next step.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure your trial account and add SAP HANA Cloud)]
+[ACCORDION-BEGIN [Step 3: ](Configure your account and add SAP HANA Cloud)]
 
-1. If you haven't already, you will be prompted to validate your account using a phone number. Complete the validation.
+Now that you have an SAP BTP account (either Free Tier or Free Trial) you need to add SAP HANA Cloud to it.  While both free environments have access to SAP HANA Cloud, neither create an SAP HANA Cloud database instance by default.  If you've never setup SAP HANA Cloud in your SAP BTP Account, you must follow the steps in the list tutorial group in order to get started: [Provision an Instance of SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-2).
 
-    !![Validation](1.png)
-
-2. After completing the validation, click **Log On** again and choose your preferred region and **Create Account**.
-
-    !![Validation](02_200117.jpg)
-
-3. Once the provisioning is finished, click **Continue**:
-
-    !![Cloud trial](3.png)
-
-4. From the SAP BTP trial entry page, click on the **trial** Subaccount.
-
-    !![Sub Account](trial1.png)
-
-5. In the Subaccount page, click on the **dev** space.
-
-    !![dev Space](trial2.png)
-
-6. Once in your **dev** space page, click on **SAP HANA Cloud** in the side menu navigation.  You will then see a page listing all your SAP HANA Cloud instances; of which you should have none.  Click on the **Create SAP HANA database** button to begin the wizard to create a new instance.
-
-    !![dev Space](trial3.png)
-
-7. This wizard will walk you through the process of creating a SAP HANA Cloud instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Allowed connections" setting. This setting will allow you to develop against your SAP HANA Cloud trial using a variety of external development tools.
+1. Complete the tutorial steps in [Provision an Instance of SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-2) This wizard used in the above tutorial will walk you through the process of creating an SAP HANA Cloud instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Connections" setting. This setting will allow you to develop against your SAP HANA Cloud using a variety of external development tools.
 
     !![Allow All IP addresses](trial4.png)
 
-8. After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP BTP trial.
+2. After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP BTP trial or free tier.
 
     !![HANA Cloud Instance](trial5.png)
 
-9. If you get stuck at any point in this process, there is also this short video you can watch and follow along:
+3. Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent steps in this tutorial.
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Lv_40d1ZtsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-10. Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent steps in this tutorial.
-
-11. Finally it is important to take note that the SAP HANA Cloud trial instance shuts down at the end of each day automatically to save costs from unused systems. Therefore you must return to this SAP HANA Cloud administration screen each day you want to use the SAP HANA Cloud Trial and choose to start the system from the **Action** menu.  If you forget to restart the instance, you will receive HANA connection errors whenever you try to interact with it in later steps.
+4. Finally it is important to take note that the SAP HANA Cloud instance in both the free tier and free trial shuts down at the end of each day automatically to save costs from unused systems. Therefore you must return to this SAP HANA Cloud administration screen each day you want to use  SAP HANA Cloud and choose to start the system from the **Action** menu.  If you forget to restart the instance, you will receive HANA connection errors whenever you try to interact with it in later steps.
 
     !![HANA Cloud stopped](hana_stopped.png)
+
+5. As an optional step if you are completely new to the SAP HANA Cloud environment, you might want to consider also going through this tutorial: [Tools to Manage and Access the SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-3) in order to familiarize yourself with the various tools that can be used to manage and develop with SAP HANA Cloud.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create SAP Business Application Studio Dev Space)]
 
-1. Set Up SAP Business Application Studio for development (if you've never used SAP Business Application Studio) by following [this tutorial](appstudio-onboarding) and/or this video:
+1. Set Up SAP Business Application Studio for development (if you've never used SAP Business Application Studio) by following [this tutorial](appstudio-onboarding)
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/WW6z4AnYriw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-2. Creating SAP Business Application Studio Dev Space - Dev spaces are like isolated virtual machines in the cloud that can be quickly spun-up. Each dev space type contains tailored tools and pre-installed run-times for a target scenario such as SAP Fiori or mobile development. This simplifies and saves time in setting up the development environment as there's no need to install anything or upgrade; letting developers focus on their business domain, anytime, anywhere. Go to your SAP Business Technology Platform trial subaccount and click the **Services -> Instances and Subscriptions** option.
+2. Creating SAP Business Application Studio Dev Space - Dev spaces are like isolated virtual machines in the cloud that can be quickly spun-up. Each dev space type contains tailored tools and pre-installed run-times for a target scenario such as SAP Fiori or mobile development. This simplifies and saves time in setting up the development environment as there's no need to install anything or upgrade; letting developers focus on their business domain, anytime, anywhere. Go to your SAP Business Technology Platform subaccount and click the **Services -> Instances and Subscriptions** option.
 
     !![Subscriptions](BTP_Subscriptions.png)
 
@@ -128,9 +93,9 @@ This tutorial uses validations to track completion and make sure you are all set
 
     !![Go To Application](go_to_application.png)
 
-4. Choose **Create Dev Space**. Please NOTE: In the SAP BTP trial you are limited to only two Dev Spaces and only one can be active at a time. If you have performed other tutorials, you might already have reached your maximum. In that case you might have to delete one of the other dev spaces in order to continue with this tutorial.
+4. Choose **Create Dev Space**. Please NOTE: In the SAP BTP trial and free tier you are limited to only two Dev Spaces and only one can be active at a time. If you have performed other tutorials, you might already have reached your maximum. In that case you might have to delete one of the other dev spaces in order to continue with this tutorial.
 
-    !![Create Dev Space](AppStudio Dev Space Manager_.jpg)
+    !![Create Dev Space](AppStudio Dev Space Manager_.png)
 
 5. Enter **HANA** for your dev space name and choose **SAP HANA Native Application** as the kind of application you are creating.
 
@@ -207,7 +172,7 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
 You can now clone an existing GitHub repository into your workspace. This repository contains the artifacts to create a schema and a document store and add data into it.
 
-1. Choose **Clone from Git** from the SAP Business Application Studio Welcome screen
+1. Return to the **Explorer** view and choose **Clone Repository** from the SAP Business Application Studio Welcome screen
 
     !![Clone From Git](clone_from_git.png)
 
@@ -215,7 +180,11 @@ You can now clone an existing GitHub repository into your workspace. This reposi
 
     !![Confirm Clone](confirm_clone_URL.png)
 
-3. The clone log will be shown in the bottom of the screen. Upon completion, please press the **Open** button in the dialog in the bottom right.
+3. If asked for the project location, choose the **projects** folder and then press **Select Repository Location**
+
+    !![Choose Repository Location](repo_location.png)
+
+4. The clone log will be shown in the bottom of the screen. Upon completion, please press the **Open** button in the dialog in the bottom right.
 
     !![Complete Clone](clone_complete.png)
 
@@ -502,11 +471,11 @@ If you are ready to explore more features with your own local copy of SAP HANA, 
 
   -  [Register for a free download](https://www.sap.com/cmp/td/sap-hana-express-edition.html)
 
-Or you can continue to use the free SAP HANA Cloud trial as a part of your overall SAP BTP trial.
+Or you can continue to use the free SAP HANA Cloud trial as a part of your overall SAP BTP trial or free tier.
 
 Here's how you can get started with any developer-focused topic in SAP HANA and more:
 
--   **SAP Developer Center**: You'll find plenty of free downloads and tutorials to help you with different topics on [developers.sap.com](http://developers.sap.com). You can learn new topics like [geospatial](group.hana-aa-spatial-get-started), working with the various [HANA client interfaces](mission.hana-cloud-clients) or switch to a full SAP HANA, express edition, image with XS Advanced, to [create cloud native applications with micro-services](mission.xsa-get-started).
+-   **SAP Developer Center**: You'll find plenty of free downloads and tutorials to help you with different topics on [developers.sap.com](http://developers.sap.com). You can continue your journey with the basics of SAP HANA Cloud [Jump Start Your SAP HANA Cloud, SAP HANA Database (free tier model or trial)](mission.hana-cloud-database-get-started). Or you can learn new topics like [geospatial](group.hana-aa-spatial-get-started), working with the various [HANA client interfaces](mission.hana-cloud-clients) or switch to a full SAP HANA, express edition, image with XS Advanced, to [create cloud native applications with micro-services](mission.xsa-get-started).
 -   **The community**: Fellow developers write about their experiences and recommendations in [blog posts](https://blogs.sap.com/), and many are willing to answer your questions [in the Q&A](https://answers.sap.com).
 -   **Community events**: You can also check out [events](https://community.sap.com/events) closest to you in order to meet other developers.
 

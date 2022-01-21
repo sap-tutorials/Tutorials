@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Add Services and Consume an External Service from SAP S/4HANA
 description: This tutorial shows you how to prepare and deploy your CAP application and test it with SAP S/4HANA connectivity.
+keywords: cap
 auto_validation: true
 time: 20
 tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-s-4hana]
@@ -112,7 +113,7 @@ To consume the external service from our cloud deployed application, we will cre
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Create a Destination in the SAP BTP cockpit)]
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
