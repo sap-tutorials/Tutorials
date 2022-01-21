@@ -134,7 +134,7 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
     !![Activate capabilities](4-2-Activate_capabilities.png)
 
     The activation takes a while to complete.
-    >**IMPORTANT**: Before you proceed to **Step 5**, please wait for all the capabilities to be activated.
+    >**IMPORTANT**: Before you proceed to **Step 4**, please wait for all the capabilities to be activated.
 
     !![Activation dialog](4-2-Activation_Dial.png)
 
@@ -175,8 +175,6 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 5. In the **Select Activated Capabilities** tab, select **Design, Develop, and Operate Integration Scenarios** and **Design, Develop, and Manage APIs**. Choose **Next**.
 
     !![Select Capabilities](5-5-Select-Capabilities.png)
-
-    >**IMPORTANT**: Make sure that you select only the capabilities that you activated in step 3.
 
 6. In the **Review** tab, check your selections and choose **Finish**. You can see that the booster is being processed.
 

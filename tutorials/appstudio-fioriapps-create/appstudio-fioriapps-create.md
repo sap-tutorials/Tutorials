@@ -3,7 +3,7 @@ title: Create an SAP Fiori App Using SAP Business Application Studio
 description: Develop a simple SAPUI5 freestyle application, adhering to SAP Fiori design guidelines, that will present a list of suppliers from an on-premise backend.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-fiori, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
 primary_tag: products>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
@@ -61,8 +61,7 @@ The flow consists of the following parts:
     | A | Application router project path | **/home/user/projects** (default) |
     | B | MTA ID | **`FioriDemo`** |
     | C | MTA Description | Can be left empty (default) |
-    | D | MTA version | **0.0.1** (default) |
-    | E | Add route module | **Managed Approuter** |
+    | D | Add route module | **Managed Approuter** |
 
     !![Fill-in cf mta and approuter wizard](BAS-Create-MTA-4-.png)
 

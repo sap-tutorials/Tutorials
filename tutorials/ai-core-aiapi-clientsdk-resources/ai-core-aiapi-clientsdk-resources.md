@@ -1,17 +1,17 @@
 ---
-title: Create a Resource Group and Connect AWS S3 Object Store to SAP AI (Client SDK)
-description: Learn creation of resource group in SAP AI Core to enable multi-tenancy through SAP AI API Client SDK. Store datasets to AWS S3 and connect to SAP AI Core through SAP AI API Client SDK.
+title: Create Resource Group and Connect AWS S3 to SAP AI Core (AI API client SDK)
+description: Learn creation of resource group in SAP AI Core to enable multi-tenancy. Store datasets in AWS S3 and connect to SAP AI Core through AI API Client SDK.
 auto_validation: true
 time: 15
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
-primary_tag: topic>artificial-intelligence
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform, software-product>sap-ai-core ]
+primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
 
 ## Details
 ### You will learn
-- How to create Resource group using SAP AI API Client SDK
+- How to create Resource group using AI API Client SDK
 - How to upload data to AWS S3 bucket
 - How to connect AWS S3 to SAP AI Core with Object Store Secret
 
@@ -77,58 +77,59 @@ Example Output
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create AWS S3 Object Store using S3 Browser)]
+[ACCORDION-BEGIN [Step 3: ](Manage AWS S3 Object Store)]
 
-AWS S3 Object Store is used to store data. Here will store dataset for training ML Models.
+Use AWS S3 Object Store as a cloud storage for your datasets and models. You can get AWS S3 Bucket from either of two ways:
 
-There are two ways you can create AWS S3 Bucket.
+- Through SAP BTP Cockpit.
 
-1. Through SAP BTP Cockpit.
+- Through AWS. Refer [AWS User Guide to S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)
 
-2. Through AWS. Refer [AWS User Guide to S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)
+Follow the below steps for creating a path prefix through AWS CLI:
 
+1. Install AWS CLI for your platform (Mac/ Linux/ Windows). [Instructions here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
-Install S3 Browser to manage AWS S3 from your computer. [Download here](https://s3browser.com/)
+2. Check for `version` after installation completes, execute the following on terminal *(command prompt)*
 
-Open S3 Browser and enter your credentials.  
+    ```BASH
+    aws --version
+    ```
 
-!![enter s3 credentials in s3 bucket](img/s3/init.png)
+    !![aws version check](img/aws/aws-version.png)
 
-If you don't have existing bucket create one and skip to next step.
+3. Execute the following on the terminal *(command prompt)*
 
-!![s3 bucket info](img/s3/bucket-1.png)  
+    ```BASH
+    aws configure
+    ```
 
-!![s3 bucket info2](img/s3/bucket-2.png)  
+4. Enter your the AWS S3 Object Store details. You can leave the `Default output format` entry as blank *(press enter)*.
+
+    !![aws configure](img/aws/aws-configure.png)
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Upload training dataset to the S3 Object Store)]
+[ACCORDION-BEGIN [Step 4: ](Upload dataset to AWS S3 Object Store)]
 
-1. Open S3 Browser.
+| File Name | Link |
+| --- | --- |
+| `travel.csv` | [Download Here](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-clientsdk-resources/travel.csv)
 
-2. Click **New Folder**. Create a folder named `tutorial`.
+ 1. Replace `your-bucket-id` and execute the following on the terminal *(command prompt)* to create a path prefix(directory) and upload you datafile at the same time.
 
-    !![path prefix](img/s3/path-prefix.png)
+    ```BASH[1]
+    aws s3 cp /local/path/to/travel.csv s3://your-bucket-id/tutorial/data/
+    ```
 
-3. Create another folder name `data` inside the `tutorial`.
+2. Check your file. Replace `your-bucket-id` and execute the following on the terminal.
 
-    !![data folder](img/s3/data.png).
+    ```BASH[1]
+    aws s3 ls s3://your-bucket-id/tutorial/data/
+    ```
 
-4. Click on **Upload** > **Upload Files**. Upload `travel.csv` *(download from below)* inside `tutorial/data/`.
-
-    Download Files
-
-    | File Name | Link |
-    | --- | --- |
-    | `travel.csv` | [Download Here](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-clientsdk-resources/travel.csv)
-
-    !![upload](img/s3/data-2.png)
-
-Final look of your AWS S3 bucket.  
-
-!![final s3 look](img/s3/final.png)
+    !![check dataset using aws cli](img/aws/check.png)
 
 [DONE]
 [ACCORDION-END]

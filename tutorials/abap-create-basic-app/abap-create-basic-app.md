@@ -3,7 +3,7 @@ title: Create and Run an ABAP Application
 description: Create and run an ABAP application based on tables from the sample EPM data model.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, products>sap-netweaver  ]
+tags: [  tutorial>beginner, software-product>sap-netweaver  ]
 time: 15
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
