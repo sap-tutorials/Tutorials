@@ -2,7 +2,7 @@
 title: Introduce Resilience to your Application
 description: Introduce resilience to your application using the SAP Cloud SDK.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-business-technology-platform, topic>cloud, topic>java  ]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-business-technology-platform, topic>cloud, programming-tool>java  ]
 primary_tag: products>sap-cloud-sdk
 time: 15
 ---
@@ -12,7 +12,7 @@ time: 15
   - Why you should care about resilience
   - How to make the call to the OData service resilient by using resilience decorators
   - How to write Tests for code decorated with the new resilience decorators
-  - To deploy the application on SAP Cloud Platform Cloud Foundry
+  - To deploy the application on the Business Technology Platform Cloud Foundry
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Resilience)]

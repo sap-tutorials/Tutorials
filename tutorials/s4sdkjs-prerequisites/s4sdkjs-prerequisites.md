@@ -3,7 +3,7 @@ title: Get Set to Use SAP Cloud SDK for JavaScript
 description: Set up your environment to use SAP Cloud SDK for JavaScript.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-sdk, topic>javascript ]
+tags: [ tutorial>beginner, products>sap-cloud-sdk, programming-tool>javascript ]
 primary_tag: products>sap-cloud-sdk
 ---
 
@@ -37,16 +37,16 @@ We recommend to install **`Node.js`** using a [`package manager`](https://nodejs
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](SAP Cloud Platform account)]
+[ACCORDION-BEGIN [Step 2: ](SAP Business Technology Platform account)]
 
-For deploying your application to `Cloud Foundry in SAP Cloud Platform`, you will need an account. You can get a trial account [here](https://cloudplatform.sap.com/index.html) by clicking on "Start your free trial" or use an existing account, if you already have one.
+For deploying your application to `Cloud Foundry in SAP Business Technology Platform`, you will need an account. You can get a trial account [here](https://cloudplatform.sap.com/index.html) by clicking on "Start your free trial" or use an existing account, if you already have one.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Cloud Foundry command line interface)]
 
-You will need the `Cloud Foundry` command line interface (`cf` CLI) to later deploy your application to SAP Cloud Platform. To see whether it is already installed, you can run `cf -v` on your command line. If the command fails, you will need to install it.
+You will need the `Cloud Foundry` command line interface (`cf` CLI) to later deploy your application to SAP Business Technology Platform. To see whether it is already installed, you can run `cf -v` on your command line. If the command fails, you will need to install it.
 
 You can find installation instructions for all common platforms in the [`Cloud Foundry documentation`](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html). Again, we recommend to use a `package manager` for that. If you are using `chocolatey` on Windows, please find the instructions [here](https://chocolatey.org/packages/cloudfoundry-cli).
 

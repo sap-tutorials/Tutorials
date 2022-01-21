@@ -1,6 +1,6 @@
 ---
-title: Secure App on SAP Cloud Platform Neo
-description: Secure applications in SAP Cloud Platform Neo that are built based on the SAP Cloud SDK.
+title: Secure App on SAP Business Technology Platform Neo
+description: Secure applications in SAP Business Technology Platform Neo that are built based on the SAP Cloud SDK.
 auto_validation: true
 time: 20
 tags: [ tutorial>intermediate, products>sap-hana ]
@@ -8,7 +8,7 @@ primary_tag: products>sap-s-4hana
 ---
 
 ## Prerequisites
- - You did at least all steps until [Step 3 with SAP Cloud SDK: `HelloWorld` on SCP `CloudFoundry`] (https://blogs.sap.com/2017/05/19/step-3-with-sap-s4hana-cloud-sdk-helloworld-on-scp-cloudfoundry/).
+ - You did at least all steps until [Step 3 with SAP Cloud SDK: `HelloWorld` on SAP Business Technology Platform `CloudFoundry`] (https://blogs.sap.com/2017/05/19/step-3-with-sap-s4hana-cloud-sdk-helloworld-on-scp-cloudfoundry/).
 
 
 ## Details
@@ -20,7 +20,7 @@ primary_tag: products>sap-s-4hana
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enable authentication)]
-In fact, if you have used the archetype to generate your project for SAP Cloud Platform, Neo, the application is already enabled for authentication by default. To review the authentication go to your **`application/src/main/webapp/WEB-INF`** directory and look at the **`web.xml`** file.
+In fact, if you have used the archetype to generate your project for SAP Business Technology Platform (BTP), Neo, the application is already enabled for authentication by default. To review the authentication go to your **`application/src/main/webapp/WEB-INF`** directory and look at the **`web.xml`** file.
 
 ```
 <login-config>
@@ -37,7 +37,7 @@ In fact, if you have used the archetype to generate your project for SAP Cloud P
 
 <security-constraint>
     <web-resource-collection>
-        <web-resource-name>All SAP Cloud Platform users</web-resource-name>
+        <web-resource-name>All SAP BTP Platform users</web-resource-name>
         <url-pattern>/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
@@ -83,17 +83,17 @@ After you made all changes you are ready to deploy the application to Neo.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy to SAP Cloud Platform Neo)]
+[ACCORDION-BEGIN [Step 4: ](Deploy to SAP Business Technology Platform Neo)]
 
 ```
 cd application
 mvn clean install
 ```
-You can use the cockpit on SAP Cloud Platform to deploy or update your application as follows. Alternatively, use the deploy and start commands for Neo introduced in [step 2 of this tutorial series] (https://blogs.sap.com/2017/05/21/step-2-with-sap-s4hana-cloud-sdk-helloworld-on-scp-classic/).
+You can use the cockpit on SAP BTP to deploy or update your application as follows. Alternatively, use the deploy and start commands for Neo introduced in [step 2 of this tutorial series] (https://blogs.sap.com/2017/05/21/step-2-with-sap-s4hana-cloud-sdk-helloworld-on-scp-classic/).
 
 ![Figure1-3](Figure1-3.png)
 
-Go to your SCP account on `hanatrial.ondemand.com` and select **Applications / Java Applications / Deploy Application**. Select the recent build from your application/target directory:
+Go to your BTP account on `hanatrial.ondemand.com` and select **Applications / Java Applications / Deploy Application**. Select the recent build from your application/target directory:
 
 Hit "Deploy" and wait for the assembly to be uploaded. Once uploaded click the start button so that the application is going to be started.
 
@@ -167,7 +167,7 @@ You may want to consider the following additional attributes in your `web.xml` t
 	</cookie-config>
 </session-config>
 ```
-That's it for today. Now you have learned the basics to protect your application on SAP Cloud Platform, Neo which are based on the SAP Cloud SDK. Stay tuned for upcoming blog posts about more advanced usages of the SAP Cloud SDK.
+That's it for today. Now you have learned the basics to protect your application on SAP BTP, Neo which are based on the SAP Cloud SDK. Stay tuned for upcoming blog posts about more advanced usages of the SAP Cloud SDK.
 
 [DONE]
 [ACCORDION-END]

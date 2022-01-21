@@ -2,7 +2,7 @@
 title: Connect to OData service on Neo using SAP Cloud SDK
 description: Create a basic Java project to call OData services using the SAP Cloud SDK on Neo.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java, topic>odata ]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-business-technology-platform, topic>cloud, programming-tool>java, programming-tool>odata ]
 primary_tag: products>sap-cloud-sdk
 time: 20
 ---
@@ -11,9 +11,9 @@ time: 20
  - In order to follow this tutorial successfully, you need a working and reachable system of `SAP S/4HANA on-premise` or `S/4HANA Cloud`. You may substitute the cost center service introduced here with any other API published on the SAP API `BusinessHub`. If you do not have an `S/4HANA` system available, you may use a public service such as the [Northwind OData Service](http://services.odata.org/V2/Northwind/Northwind.svc) as a fallback solution.
 
 ## Details
-Please note that depending on the platform you are using (`Neo` or `Cloud Foundry`), the configuration to the respective `S/4HANA` system might be different. In this tutorial, you will find the methods using which you can access your system on `Neo`. For `SAP Cloud Platform Neo`, the following `S/4HANA` connection capabilities exist.
+Please note that depending on the platform you are using (`Neo` or `Cloud Foundry`), the configuration to the respective `S/4HANA` system might be different. In this tutorial, you will find the methods using which you can access your system on `Neo`. For `SAP Business Technology Platform Neo`, the following `S/4HANA` connection capabilities exist.
 
-|  | `SAP Cloud Platform, Neo`
+|  | `SAP Business Technology Platform, Neo`
 :-------------- | :-------------
 S/4HANA on-premise |	[SAP Cloud Connector required with HTTP Destination](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html)
 S/4HANA Cloud | [Direct Connection with BASIC Auth (technical user)](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e5c9867dbb571014957ef9d7a8846b1c.html); [Direct Connection with `SAMLOAuthBearer` (`PrincipalPropagation` with `BusinessUser`)](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e5c9867dbb571014957ef9d7a8846b1c.html)
@@ -21,7 +21,7 @@ S/4HANA Cloud | [Direct Connection with BASIC Auth (technical user)](https://hel
 Note that your application code is not dependent on the platform you are using. Using the `SAP Cloud SDK`, you can write your code once, and it will be capable of dealing with all different authentication and connectivity options.
 
 ### You will learn
-In this tutorial, you will enhance the `HelloWorld` project stub to call an existing `OData` service, deploy the project on `SAP Cloud Platform` based on `Neo`, and write an integration test.
+In this tutorial, you will enhance the `HelloWorld` project stub to call an existing `OData` service, deploy the project on the `SAP Business Technology Platform` (BTP) based on `Neo`, and write an integration test.
 If you want to follow this tutorial, it is highly recommended to check out the previous tutorials in the series. You will not need any additional software besides the setup explained in the first part of the series as the server will run on your local machine.
 **Note**: This tutorial requires access to an `SAP ERP` system or, as a fallback, any other `OData V2` service.
 
@@ -191,7 +191,7 @@ The code is fairly simple. In the servlet GET method, we initialize an instance 
 
 Finally, having prepared the query, we call the `execute` method. This method does a lot of the heavy lifting necessary to connect to an S/4HANA system and relieves us as developers from dealing with complex aspects such as:
 
-- the configuration which system to connect to (in a multi-tenant environment) – by transparently accessing the destination service of SAP Cloud Platform,
+- the configuration which system to connect to (in a multi-tenant environment) – by transparently accessing the destination service of the BTP,
 - the connectivity to this system, which may reside on-premise behind a corporate firewall, – by means of the connectivity service and the optional Cloud Connector, and
 - the authentication to this system using potentially vastly different authentication flows (basic authentication, principal propagation, OAuth2).
 
@@ -207,11 +207,11 @@ Any `ODataException` thrown by the OData call is caught and logged, before retur
 
 [ACCORDION-BEGIN [Step 5: ](Deploying the Project)]
 
-Depending on your chosen archetype and SAP Cloud Platform setup you can deploy the project on either `SAP Cloud Platform Neo` or `SAP Cloud Platform CloudFoundry`.
+Depending on your chosen archetype and the BTP setup you can deploy the project on either `SAP Cloud Platform Neo` or `SAP Cloud Platform CloudFoundry`.
 
 ![list of businesspartners from ERP](post-4-businesspartners-result.png)
 
-Now you can deploy your application to your local `SAP Cloud Platform Neo` using the following maven goals:
+Now you can deploy your application to your local `SAP Business Technology Platform Neo` using the following maven goals:
 
 ```bash
 cd /path/to/firstapp
@@ -369,7 +369,7 @@ As you can see, the properties `BusinessPartner` and `LastName` will be marked a
 
 [ACCORDION-BEGIN [Step 9: ](Systems.json and credentials)]
 
-If you run your application on SAP Cloud Platform, the SDK can simply read the ERP destinations from the destination service. However, since the tests should run locally, we need a way to supply our tests with an ERP destination.
+If you run your application on the BTP, the SDK can simply read the ERP destinations from the destination service. However, since the tests should run locally, we need a way to supply our tests with an ERP destination.
 
 Luckily, the SDK provides a utility class for such purposes – `MockUtil`. This class allows us to mock the ERP destinations we'd typically find on `CloudFoundry`. To provide `MockUtil` with the necessary information, you'll need to add a `systems.json` or `systems.yml` file to your test resources directory. `MockUtil` will read these files and provide your tests with the ERP destinations accordingly. Adapt the URL as before.
 

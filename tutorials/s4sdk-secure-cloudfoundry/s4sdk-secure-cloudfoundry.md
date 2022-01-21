@@ -1,9 +1,9 @@
 ---
-title: Secure Your Application on SAP Cloud Platform Cloud Foundry
+title: Secure Your Application on SAP Business Technology Platform Cloud Foundry
 description: Protect your Java-based Hello World microservice with authenticated and authorized users.
 auto_validation: true
 time: 50
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>java ]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-business-technology-platform, programming-tool>java ]
 primary_tag: products>sap-cloud-sdk
 ---
 
@@ -350,7 +350,7 @@ If you now call the `/businesspartners` endpoint of your application you will se
 
 [ACCORDION-BEGIN [Step 4: ](Assign users to scopes)]
 
-To regain access to your secured endpoint, you need to get the `Display` OAuth scope assigned. This is done using the SCP cockpit.
+To regain access to your secured endpoint, you need to get the `Display` OAuth scope assigned. This is done using the BTP cockpit.
 
 1. First, go to your account on Cloud Foundry and find the **Role Collections** menu under the **Security** module.
 
@@ -412,9 +412,9 @@ The following picture explains how the various concepts are related to each othe
 
 ![Roles, Scopes and Users](Figure9-3.png)
 
-Gray Box: As a SCP developer (e.g., SAP, partner, customer) of the business application (gray box), you define role templates which may contain multiple OAuth scopes. The developer here define the scope, role templates and additional attributes within the `xs-security.json` as explained in this tutorial which is used when creating the service instantiation to the XSUAA.
+Gray Box: As a BTP developer (e.g., SAP, partner, customer) of the business application (gray box), you define role templates which may contain multiple OAuth scopes. The developer here define the scope, role templates and additional attributes within the `xs-security.json` as explained in this tutorial which is used when creating the service instantiation to the XSUAA.
 
-Orange Box: As an SCP tenant administrator of the business application (customer), you can create a role collection which is spanning multiple roles reflecting the role templates. This way you can achieve, on the one hand, a fine-granular authorization control for the microservices and, on the other hand, compose them very flexibly in coarse-grained role collections. The idea behind this is, that, for example, the **Business Partner Manager** role collection may span multiple applications and microservices all having individual scopes. The role collections resolves the roles and scopes and returns a union of all scopes which are composed by the role collection.
+Orange Box: As an BTP tenant administrator of the business application (customer), you can create a role collection which is spanning multiple roles reflecting the role templates. This way you can achieve, on the one hand, a fine-granular authorization control for the microservices and, on the other hand, compose them very flexibly in coarse-grained role collections. The idea behind this is, that, for example, the **Business Partner Manager** role collection may span multiple applications and microservices all having individual scopes. The role collections resolves the roles and scopes and returns a union of all scopes which are composed by the role collection.
 
 Green Box: As an administrator of the users (customer), you can assign the role collection to the final user using the SAML attribute `Groups`.
 
@@ -471,7 +471,7 @@ Secondly, you need to import the metadata into your IdP. In the following exampl
 
 2. Import the SP's metadata and click **Save**.
 
-3. Back in the SCP account cockpit you need to add the IdP's metadata in the same manner.
+3. Back in the BTP account cockpit you need to add the IdP's metadata in the same manner.
 
 4. Click **New Trust Configuration** and add the metadata from the IdP and click **Save**.
 

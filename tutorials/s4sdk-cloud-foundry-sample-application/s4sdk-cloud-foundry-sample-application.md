@@ -2,31 +2,31 @@
 title: Create a Sample Application on Cloud Foundry Using SAP Cloud SDK
 description: Create the very first Hello World example on Cloud Foundry using the SAP Cloud SDK.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-business-technology-platform, topic>cloud, topic>java ]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-business-technology-platform, topic>cloud, programming-tool>java ]
 primary_tag: products>sap-cloud-sdk
 time: 20
 ---
 
 
 ### You will learn  
-This tutorial will cover your first steps when developing applications for SAP Cloud Platform (SCP) Cloud Foundry using SAP Cloud SDK. You will create an account for SCP Cloud Foundry and setup the Cloud Foundry command line interface for deploying and managing Cloud Foundry applications. Then you will generate your first project using the SAP Cloud SDK Maven archetype and deploy your first application to SCP Cloud Foundry.
+This tutorial will cover your first steps when developing applications for SAP Business Technology Platform (BTP) Cloud Foundry using SAP Cloud SDK. You will create an account for SAP BTP Cloud Foundry and setup the Cloud Foundry command line interface for deploying and managing Cloud Foundry applications. Then you will generate your first project using the SAP Cloud SDK Maven archetype and deploy your first application to SAP BTP Cloud Foundry.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Setup for Cloud Foundry)]
 
-In order to deploy applications to `SCP Cloud Foundry`, you need to create a free trial account.
+In order to deploy applications to `SAP Business Technology Platform Cloud Foundry`, you need to create a free trial account.
 You can create your account by following [this tutorial](hcp-create-trial-account).
 
 After creating your account and activating it via email, you can log in to your personal [Cloud Cockpit](https://cockpit.hanatrial.ondemand.com/trial/#/home/trial). For your first visit, it should look like this:
 
-![SAP Cloud Platform Cockpit first view](cloudplatform-cockpit-first-view.png)
+![SAP BTP Cockpit first view](cloudplatform-cockpit-first-view.png)
 
 After selecting your region, your account will be automatically set up for development with `Cloud Foundry`.
 
 Clicking on "Enter Your Trial Account" will lead you to your account overview:
 
-![SAP Cloud Platform account overview](cloudplatform-account-overview.png)
+![SAP BTP account overview](cloudplatform-account-overview.png)
 
 Now that your account is activated and configured, you will need the `Cloud Foundry` command line interface (CF CLI) to deploy and manage your `Cloud Foundry` applications.
 
@@ -217,7 +217,7 @@ public class HelloWorldServlet extends HttpServlet
 
 The `HelloWorldServlet` extends `HttpServlet`, so this will be a HTTP endpoint that customers can visit. It is mapped to the `/hello` route using `@WebServlet("/hello")`. By overriding the function `doGet`, you define what happens when a client performs an HTTP GET request on the `/hello` route. In this case the endpoint simply writes a response containing **`Hello World!`**
 
-**Note**: The application code runs seamlessly in `SCP Neo` as well as `SCP Cloud Foundry`. The `SAP Cloud SDK` is compatible with both versions and provides mechanisms to seamlessly transfer code between both environments.
+**Note**: The application code runs seamlessly in `SAP Business Technology Platform Neo` as well as `SAP Business Technology Platform Cloud Foundry`. The `SAP Cloud SDK` is compatible with both versions and provides mechanisms to seamlessly transfer code between both environments.
 
 [DONE]
 [ACCORDION-END]
@@ -258,9 +258,9 @@ applications:
 
 The manifest contains a list of applications that will be deployed to `Cloud Foundry`. In this example, there is only one application, `firstapp`, with the following parameters:
 
-  - **`name`**	- This is the identifier of your application within your organization and your space in `SCP Cloud Foundry`.
+  - **`name`**	- This is the identifier of your application within your organization and your space in `SAP Business Technology Platform Cloud Foundry`.
   - **`memory`** -	The amount of memory allocated for your application.
-  - **`random-route`** -	Determines the URLs of your application after deploying it, where it will be publicly reachable. Thus it needs to be unique across your `Cloud Foundry` region. For now, you can let the Cloud Platform generate a random route for your application by leaving this option unchanged.
+  - **`random-route`** -	Determines the URLs of your application after deploying it, where it will be publicly reachable. Thus it needs to be unique across your `Cloud Foundry` region. For now, you can let the SAP BTP generate a random route for your application by leaving this option unchanged.
   - **`path`** -	The relative path to the artifact to be deployed.
   - **`buildpack`** -	A `buildpack` is what `Cloud Foundry` uses to build and deploy your application. Since this is a Java application, `sap_java_buildpack` is used.
   - **`env`**	- Here you can provide additional application specific environment variables. By default, for example, your application is configured to use the `TomeEE` container as its target runtime.
@@ -305,7 +305,7 @@ mvn tomee:run -pl application
 
 Visit `http://localhost:8080/hello` on your local machine to view the response of our application. You can stop the server by pressing Ctrl + C.
 
-Now you have a strong basis for developing your own cloud application for `SCP Cloud Foundry` using the `SAP Cloud SDK`. In the following tutorials you will learn about more advanced uses of the `SAP Cloud SDK`.
+Now you have a strong basis for developing your own cloud application for `SAP Business Technology Platform Cloud Foundry` using the `SAP Cloud SDK`. In the following tutorials you will learn about more advanced uses of the `SAP Cloud SDK`.
 
 [DONE]
 [ACCORDION-END]
