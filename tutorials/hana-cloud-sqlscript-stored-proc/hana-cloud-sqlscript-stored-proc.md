@@ -9,9 +9,9 @@ time: 15
 ---
 
 ## Prerequisites  
-- This tutorial is designed for SAP HANA Cloud.
-- You have created a BTP trial, SAP HANA Cloud instance. [Deploy SAP HANA Cloud trial](hana-cloud-deploying)
-- You are logged in to SAP Business Application Studio and its configured [Configure the Development Environment](hana-cloud-configure-dev-env)
+- This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition.
+- You have created a BTP, SAP HANA Cloud instance. [Deploy SAP HANA Cloud trial](hana-cloud-deploying)
+- You have setup SAP Business Application Studio for development: [Set Up SAP Business Application Studio for Development](appstudio-onboarding)
 
 ## Details
 ### You will learn  
