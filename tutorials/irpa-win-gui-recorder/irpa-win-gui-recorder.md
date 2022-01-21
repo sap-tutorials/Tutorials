@@ -67,7 +67,7 @@ A new project is created in **SAP Intelligent RPA Cloud Studio**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Record an application)]
-1. Choose **Record** !![Record icon](step4-record-icon.PNG) to initiate the recording. You will be directed to the **SAP GUI for Windows** application you want to record.
+1. Choose **Record** !![Record icon](step4-record-icon.png) to initiate the recording. You will be directed to the **SAP GUI for Windows** application you want to record.
 2. Select **Client** and enter your credentials.
 3. Hit <kbd>Enter</kbd> button.
 

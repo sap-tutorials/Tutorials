@@ -29,7 +29,7 @@ Open the Cloud Studio project where you recorded the application using Recorder.
 4.  Rename the material field.
 5.  Select **Remove** the **Id** **Criteria**.
 6.  Select **Name** to add it as a **Criteria**.
-7.  Select **Is a collection** !![Is a Collection icon](step2-is-a-collection-icon.PNG).
+7.  Select **Is a collection** !![Is a Collection icon](step2-is-a-collection-icon.png).
 
     > **Is a collection** is used to declare a field as a column containing multiple fields rather than just one field.
 
