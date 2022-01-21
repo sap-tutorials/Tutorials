@@ -33,7 +33,7 @@ author_profile: https://github.com/cjbernal
 
 Make sure you are connected to a Cloud Foundry endpoint to which you will deploy the SAPUI5 application later.
 
-1. Enter the Cloud Foundry endpoint you want to use. If your environment runs in the EU10-region, this is `https://api.cf.eu10.hana.ondemand.com`. To do so, use the `cf: Login to Cloud Foundry` command. From the menu, select **View** and then **Find Command**. Type `CF: Login` and then select `CF: Login to Cloud Foundry`. Select your endpoint or enter the value for your region and then enter your email and password to proceed.
+1. Enter the Cloud Foundry endpoint you want to use. If your environment runs in the EU10-region, this is `https://api.cf.eu10.hana.ondemand.com`. To do so, use the `CF: Login to Cloud Foundry` command. From the menu, select **View** and then **Find Command**. Type `CF: Login` and then select `CF: Login to Cloud Foundry`. Select your endpoint or enter the value for your region and then enter your email and password to proceed.
 
     !![selectEndpoint](./selectEndpoint.png)
 
