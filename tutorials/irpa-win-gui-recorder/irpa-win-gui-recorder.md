@@ -1,7 +1,7 @@
 ---
 author_name: Chaitanya Priya Puvvada
 author_profile: https://github.com/chaitanya-priya-puvvada
-title: Create an automation using the Recorder
+title: Create automation using the Recorder
 description: Automate Sales order Creation in SAP GUI for Windows
 keywords: RPA
 auto_validation: true

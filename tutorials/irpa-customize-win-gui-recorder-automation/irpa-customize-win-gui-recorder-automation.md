@@ -11,7 +11,7 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
 ---
 
 ## Prerequisites
-  - [Create an automation using Recorder](irpa-win-gui-recorder)
+  - [Create automation using Recorder](irpa-win-gui-recorder)
 
 ## Details
 ### You will learn
