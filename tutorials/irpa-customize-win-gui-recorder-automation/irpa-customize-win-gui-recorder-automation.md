@@ -48,43 +48,45 @@ The application now recognizes *Material*, *Order Quantity* and *Storage Locatio
 
 1. Create an Excel file with the order details.
 
-!![Excel File](step3-excel-file.png)
+    !![Excel File](step3-excel-file.png)
 
-> This data is used to create the **Sales order** in SAP ERP. Change this data according to your **SAP ERP** system.
+    > This data is used to create the **Sales order** in SAP ERP. Change this data according to your **SAP ERP** system.
 
 2. Select **Sales Order Recorder Automation** in the project.
 
 3.  **Adding the required activities to the automation**.
 
-    1. Add **Open Excel Instance** Activity before the **Start Application** activity.
+    - Add **Open Excel Instance** Activity before the **Start Application** activity.
 
-    2. Add **Close Excel Instance** Activity before the **Terminate Application** activity.
+    - Add **Close Excel Instance** Activity before the **Terminate Application** activity.
 
-    3. Add **Excel Cloud Link** activity after the **Open Excel Instance** activity.
+    - Add **Excel Cloud Link** activity after the **Open Excel Instance** activity.
 
 4.  **Configure Excel Cloud Link activity**.
 
-    1.  Select the activity.
+    -  Select the activity.
 
-    2.  Select **Edit Activity**.
+    -  Select **Edit Activity**.
 
-    3.  Browse and select the Excel file.
+    -  Browse and select the Excel file.
 
     !![Configure ECL](step3-excel-cloud-link-configure.png)
 
     The file is loaded to the activity.
 
-    4.  Put the path of the file in the field.
+    -  Put the path of the file in the field.
 
-    5.  Select **+ From Excel Data** to create the Order details **Data Type**.
+    -  Select **+ From Excel Data** to create the Order details **Data Type**.
 
     !![Configure ECL PART2](step3-excel-cloud-link-configure2.png)
 
-    A pop-up window opens. Set a name and a description for the **Data Type**.
+    A pop-up window opens.
+
+    - Set a name and a description for the **Data Type**.
 
     !![Order Data Type](step3-order-data-type.png)
 
-    To add all the rows from the Excel file, you require adding a **For each** activity.
+    - To add all the rows from the Excel file, you require adding a **For each** activity.
 
     > The **For each** activity is used for *looping* through Data.
 
@@ -96,9 +98,9 @@ The application now recognizes *Material*, *Order Quantity* and *Storage Locatio
 
     Drag and drop the three **Set Element - X** activities inside the **For each** activity.
 
-    1. Select **For each** activity.
+    - Select **For each** activity.
 
-    2. Select **returned Values** option on **Set looping list**.
+    - Select **returned Values** option on **Set looping list**.
 
     > **returned Values** references the data returned from the **Excel Cloud link** activity.
 
@@ -106,46 +108,47 @@ The application now recognizes *Material*, *Order Quantity* and *Storage Locatio
 
     Map the excel data of the current row to the corresponding field.
 
-    1.  Select the first field (Corresponding to *Material*).
+    -  Select the first field (Corresponding to *Material*).
 
-    2.  Set the value as **current Member** and click **currentMember.material** on the drop down menu that shows up.
+    -  Set the value as **current Member** and click **currentMember.material** on the drop down menu that shows up.
 
         > **current Member** references the excel row used in the iteration of the **For each** loop.
 
         !![Set material Value](step3-set-element-material.png)
 
-    3.  Select **Open the target Editor**.
+    -  Select **Open the target Editor**.
 
-    4.  Select **Material Field**.
+    -  Select **Material Field**.
 
-    5.  Set **Index of the Element** to **index**.
+    -  Set **Index of the Element** to **index**.
 
-    6.  Select confirm.
+    -  Select confirm.
 
         !![Set Target index](step3-set-element-material-2.png)
 
     Some fields are stored as numbers in excel (such as **Order Quantity** and **Storage Location**). Convert them to strings (succession of characters).
 
-    1.  Select the second field (Corresponding to *Order Quantity*).
+    -  Select the second field (Corresponding to *Order Quantity*).
 
-    2.  Select **Open expression editor**.
+    -  Select **Open expression editor**.
 
         !![Set orderQuantity](step3-set-order-quantity.png)
 
-    3.  Enter **Step27.currentMember.orderQuantity.toString()**.
+    -   Enter **Step27.currentMember.orderQuantity.toString()**.
+
     > *Step27* references the **For each** **activity**.
 
-        !![Set orderQuantity Value](step3-set-order-quantity-value.png)
+      !![Set orderQuantity Value](step3-set-order-quantity-value.png)
 
-    4.  Select **Open the target Editor**.
+    -  Select **Open the target Editor**.
 
-    5.  Select **Order Quantity Field**.
+    -  Select **Order Quantity Field**.
 
-    6.  Set **Index of the Element** to index.
+    -  Set **Index of the Element** to index.
 
-    7.  Click confirm.
+    -  Choose **Confirm**.
 
-        > Repeat the same steps (1-7) for **Storage Location** field.
+        > Repeat the same steps for **Storage Location** field as for the **Order Quantity** field in the previous steps.
 
         !![Set orderQuantity Value](step3-set-order-quantity-2.png)
 
@@ -176,14 +179,14 @@ Create two **environment variables** (Password and Excel file path).
     >
     > **environment variables**' Identifier can't contain spaces. Replace spaces with *underscores*.
 
-|  Identifier      | Description (Optional)               | Type
-|  :-------------- | :----------------------------------- | :-----------
-|  password        | SAP Logon password                   | **Password**
-|  excel_ file_ path | Excel file Path for Excel Cloud Link | **String**
+    |  Identifier      | Description (Optional)               | Type
+    |  :-------------- | :----------------------------------- | :-----------
+    |  password        | SAP Logon password                   | **Password**
+    |    excel_ file_ path | Excel file Path for Excel Cloud Link | **String**
 
-The two **environment variables** are created.
+    The two **environment variables** are created.
 
-!![Create Environment Variable 2](step4-create-env-var-result.png)
+    !![Create Environment Variable 2](step4-create-env-var-result.png)
 
 [VALIDATE_3]
 [ACCORDION-END]
@@ -197,7 +200,7 @@ To use the created **environment variables** in the automation go to the activit
 
     > **Environment Variables** have the letter **E** on the left side to distinguish them. !![Distinguish Environment Variables](step4-E.png)
 
-!![Use password Environment Variable](step4-password-variable.png)
+    !![Use password Environment Variable](step4-password-variable.png)
 
 3.  Select the **Excel Cloud Link** activity in the **automation**.
 
@@ -205,9 +208,9 @@ To use the created **environment variables** in the automation go to the activit
 
 5.  Search and select the *excel_ file_ path* **environment variable**.
 
-!![Use excel_ file_ path Environment Variable](step4-file-variable.png)
+    !![Use excel_ file_ path Environment Variable](step4-file-variable.png)
 
-Both of the **environment variables** were assigned to their correct value fields.
+    Both of the **environment variables** were assigned to their correct value fields.
 
 [DONE]
 [ACCORDION-END]

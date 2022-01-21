@@ -13,7 +13,7 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
 ## Prerequisites
   - [Subscribe to SAP Intelligent RPA Service in SAP BTP](irpa-setup-1-booster-subscription)
   - [Install SAP Intelligent RPA On-Premise Components](irpa-setup-2-onpremise-installation)
-  - [Scripting enabled for SAP GUI for Windows](https://help.sap.com/viewer/8e71b41b9ea043c8bccee01a10d6ba72/Cloud/en-US/f0fe92f292c946bca1269f826cd682b3.html) on both the Client and the Server.
+  - [Scripting enabled for SAP GUI for Windows](https://help.sap.com/viewer/8e71b41b9ea043c8bccee01a10d6ba72/Cloud/en-US/f0fe92f292c946bca1269f826cd682b3.html) on the Client and the Server.
 
 ## Details
 ### You will learn
@@ -69,7 +69,7 @@ A new project is created in **SAP Intelligent RPA Cloud Studio**.
 [ACCORDION-BEGIN [Step 4: ](Record an application)]
 1. Choose **Record** !![Record icon](step4-record-icon.PNG) to initiate the recording. You will be directed to the **SAP GUI for Windows** application you want to record.
 2. Select **Client** and enter your credentials.
-3. Hit **Enter** button.
+3. Hit <kbd>Enter</kbd> button.
 
   !![Login](step4-login.png)
 
@@ -81,7 +81,7 @@ The screen has changed and warning at the bottom of the **Recorder** appeared.
 
 2. Enter the Sales Order transaction ID **VA01**.
 
-3. Hit **Enter** button.
+3. Hit <kbd>Enter</kbd> button.
 
   !![Select a transaction](step4-select-transaction.png)
 
@@ -98,7 +98,7 @@ The screen has changed and warning at the bottom of the **Recorder** appeared.
     |  Distribution Channel | 01
     |  Division             | 01
 
-3. Hit **Enter** button.
+3. Hit <kbd>Enter</kbd> button.
 
   !![Fill order type](step4-order-type.png)
 
@@ -108,15 +108,15 @@ The screen has changed and warning at the bottom of the **Recorder** appeared.
 
 2. Fill in the order details.
 
-3. Hit **Enter** button.
+3. Hit <kbd>Enter</kbd> button.
 
-> You can notice that the **Recorder** has generated the corresponding activities from the previous screen.
+    > You can notice that the **Recorder** has generated the corresponding activities from the previous screen.
 
-  !![Fill Order details](step4-order-details.png)
+    !![Fill Order details](step4-order-details.png)
 
-4. Choose **Save**.
+4. Choose **Save** to complete the process of recording the sales order application.
 
-You have completed the process of recording the sales order application. Choose **Stop** to stop the recording.
+5. Choose **Stop** to stop the recording.
 
   !![Stop recording](step4-stop-recording.png)
 
