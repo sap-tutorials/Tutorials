@@ -54,7 +54,8 @@ This step includes creating the mobile development kit project in the editor.
     | `MDK Template Type`| Select `List Detail` from the dropdown |
     | `Your Project Name` | `MDK_Maps` |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |    
-    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |    
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |  
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |  
 
     !![MDK](img-1.4.png)
 
@@ -196,7 +197,7 @@ You will add this registered control in the generated `Customers_Detail.page`.
 
     !![MDK](img-3.2.gif)
 
-  3. Drag & drop the registered `mdk_maps` control on the page area.
+  3. Expand **Section Registered Extension Control**, drag & drop the registered `mdk_maps` control on the page area.
 
     !![MDK](img_3.3.gif)
 

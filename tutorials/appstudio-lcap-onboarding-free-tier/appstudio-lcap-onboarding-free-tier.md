@@ -192,7 +192,7 @@ In this step, you will assign the role collections for your users to use low-cod
 
     !![check bas admin role](BAS LCAP Role Collections Assignment-5-.png)
 
-6. Verify your added role, choose **Save**.
+6. Verify your added role, choose **Save**. 
 
     !![bas admin role added](BAS LCAP Role Collections Assignment-6-.png)
 

@@ -195,7 +195,7 @@ Now, let's create a user in your SAP S/4HANA system and assign the required auth
 
     !![Change Pass](configure-oData-Service-20.png)
 
-    You've successfully logged in with your new technical user.
+    You have successfully logged in with your new technical user.
 
     !![Logged in](configure-oData-Service-21.png)
 

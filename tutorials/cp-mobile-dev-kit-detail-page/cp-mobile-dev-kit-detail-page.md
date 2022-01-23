@@ -237,7 +237,7 @@ Deploy the updated application to your MDK client.
 
 [OPTION END]
 
-[OPTION BEGIN [Web]]
+[OPTION BEGIN [Web]] 
 
 1. Either click the highlighted button or refresh the web page to load the changes.
 

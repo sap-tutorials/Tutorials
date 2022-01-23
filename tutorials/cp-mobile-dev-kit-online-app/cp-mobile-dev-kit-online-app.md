@@ -54,6 +54,7 @@ This step includes creating the mobile development kit project in the editor.
     | `Your Project Name` | `MDKOnlineApp` |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
 
     !![MDK](img-2.4.png)
 
