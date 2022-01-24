@@ -4,7 +4,7 @@ description: Create, build, and deploy an MTA project with an integrated SAPUI5 
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, programming-tool>javascript, programming-tool>sapui5, programming-tool>html5, software-product>sap-business-technology-platform, software-product>sap-business-application-studio]
-primary_tag: products>sap-btp--cloud-foundry-environment
+primary_tag: software-product>sap-btp--cloud-foundry-environment
 author_name: Conrad Bernal
 author_profile: https://github.com/cjbernal
 ---
