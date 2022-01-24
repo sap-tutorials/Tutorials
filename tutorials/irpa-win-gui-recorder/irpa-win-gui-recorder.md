@@ -28,7 +28,7 @@ You can automate complex workflows easily using the **Recorder** in **Cloud Stud
 
 Make sure your screen display settings (Scale and layout) are set to 100%.
 
-1.  Go to your desktop, right-click and select **Display Settings**.
+1.  Switch to your desktop, right-click and select **Display Settings**.
 
     !![Open Display Settings](step1-display-settings-1.png)
 
