@@ -152,7 +152,7 @@ To avoid clicking on **Go** option every time you want to present the informatio
 
     !![bas lcap list page update columns title - change contractor_contractor label](BAS-LCAP-Update-Column-Titles-5-.png)
 
-6. you can see that in the application's tab the column titles changed as per your updates.
+6. you can see that in the application's tab the column titles changed as per your updates. 
 
     !![bas lcap list page update columns title - preview app](BAS-LCAP-Update-Column-Titles-6-.png)
 
