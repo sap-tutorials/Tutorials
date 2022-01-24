@@ -1,4 +1,5 @@
----
+--- Checked and tested 1/24/2022
+
 title: Anonymous Blocks
 description: Leverage SQLScript in stored procedures, user-defined functions, and user-defined libraries.
 author_name: Rich Heilman
