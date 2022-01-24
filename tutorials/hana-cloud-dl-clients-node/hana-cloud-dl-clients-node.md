@@ -26,11 +26,11 @@ Node.js provides a JavaScript runtime outside of the browser and uses an asynchr
     node -v  
     ```  
 
-    If Node.js is installed, the currently installed version is returned, such as v12.14.1.
+    If Node.js is installed, the currently installed version is returned, such as v12.22.9.
 
-    > Note that the supported versions of Node.js are listed at [node sqlanywhere](https://www.npmjs.com/package/sqlanywhere).
+    > Note that the supported versions of Node.js are listed at [node sqlanywhere](https://www.npmjs.com/package/sqlanywhere).  
 
-    If Node.js is not installed, on Microsoft Windows, download the long-term support (LTS) version 12 of Node.js from [Download Node.js](https://nodejs.org/en/download/).
+    If Node.js is not installed, and you wish to install version 12 on Microsoft Windows, go to [Download Node.js](https://nodejs.org/en/download/). Under **Downloads**, go to **Previous Releases**, and search for **Node.js 12**.  Select the latest version and under Downloads, select for example `node-v12.22.9-x64.msi` to download the Microsoft Windows installer.
 
     The following command will install Node 12 on openSUSE Leap 15.2.
 
@@ -44,7 +44,7 @@ Node.js provides a JavaScript runtime outside of the browser and uses an asynchr
 
 [ACCORDION-BEGIN [Step 2: ](Install additional dependencies for native compilation on Linux)]
 
-The driver requires compilation on Linux.  On Microsoft Windows, these libraries are included when the driver is downloaded from NPM.  
+The driver requires compilation on Linux.  On Microsoft Windows, these libraries are included when the driver is downloaded from NPM, so there is no need to install the dependencies such as Python and C/C++ listed below.
 
 Compilation is managed by [node-gyp](https://github.com/nodejs/node-gyp).
 
@@ -91,7 +91,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
 1. Enter `sqlanywhere` and click **Search**.
 
-    ![Search for sqlanywhere](search-npm.png)  
+    !![Search for sqlanywhere](search-npm.png)  
 
     The page for the SQL Anywhere Node.js package on NPM is shown below. Note that this same driver is used for data lake IQ and SQL Anywhere.   
 
@@ -111,6 +111,8 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     npm init -y
     npm install sqlanywhere
     ```
+
+    >>Note that if the `npm install sqlanywhere` fails, then it could be because of an unsupported version of Node.js.
 
     >The driver is also available at [GitHub](https://github.com/sqlanywhere/node-sqlanywhere) and can alternatively be used as shown below.
 
@@ -205,6 +207,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     });
     ```  
 
+
 4. Update the `host` value in `connOptions`.
 
 5. Run the app.  
@@ -213,6 +216,8 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     node nodeQuery.js
     ```
 ![result of running app](node-query.png)
+
+> If the app fails due to a `TLS Handshake error`, it could be because the Data Lake Instance is not running. Make sure to start the Data Lake Instance before running the app.
 
 Note the above app makes use of some of the SAP SQL Anywhere Node.js driver classes and methods. Additional details can be found at [Node.js Application Programming](https://help.sap.com/viewer/09fbca22f0344633b8951c3e9d624d28/latest/en-US/815e3ccf6ce21014b8a4b4e18cbe9b3b.html).
 
