@@ -161,7 +161,7 @@ Once connected to the Cloud Factory, you need to declare your Desktop Agent in a
 
 2. Choose **New Environment**.
 
-3. In the **New Environment** popup, enter the following:
+3. In the **New Environment** popup, enter the following information:
 
     |  Field Name     | Value
     |  :------------- | :-------------
