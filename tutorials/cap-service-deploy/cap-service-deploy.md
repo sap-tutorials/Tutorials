@@ -35,9 +35,9 @@ It's now time to switch to SAP HANA as a database. To continue with this tutoria
     cds add hana
     ```
 
-    > This configures deployment for SAP HANA to use the `hdbtable` and `hdbview` formats. The previous command added the `@sap/hana-client` driver for SAP HANA as a dependency in `package.json`. Note that in the future, this might change to `hdb`, which is a leaner driver. See section [SAP Support for `hdb` and `@sap/hana-client`](https://www.npmjs.com/package/hdb#sap-support-for-hdb-and-saphana-client) for a feature comparison.
+    > This configures deployment for SAP HANA to use the `hdbtable` and `hdbview` formats. The default format of `hdbcds` is not available on SAP HANA Cloud.
 
-    > A data source of type `sql` is added in the `cds.requires.db` block. See section [Node.js configuration](https://cap.cloud.sap/docs/node.js/cds-env#profiles) in the CAP documentation for more details.
+    > The `hdb` driver for SAP HANA is added as a dependency. A data source of type `sql` is added in the `cds.requires.db` block. See section [Node.js configuration](https://cap.cloud.sap/docs/node.js/cds-env#profiles) in the CAP documentation for more details.
 
 3. (Optional) To enable SAP Fiori preview add the following configuration in the `package.json` of your `my-bookshop` project in VS Code:
 

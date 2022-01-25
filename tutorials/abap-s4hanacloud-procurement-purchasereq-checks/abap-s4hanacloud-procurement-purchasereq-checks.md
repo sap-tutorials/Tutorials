@@ -13,7 +13,7 @@ author_profile: https://github.com/julieplummer20
 ## Prerequisites
 - **IMPORTANT**: It is essential that you are a member of SAP Early Adopter program
 - You have a license for SAP S/4HANA Cloud and have a developer user in this system
-- You have installed SAP ABAP Development Tools (ADT), version 3.16 or later, and have created an ABAP Cloud project for your SAP S/4HANA Cloud System in it
+- You have installed [SAP ABAP Development Tools (ADT), latest version](https://tools.hana.ondemand.com/#abap), and have created an ABAP Cloud project for your SAP S/4HANA Cloud System in it
 - You are familiar with the concept of extensions to the SAP standard and with `BAdIs` in particular. If not, see the **More Information** section at the end of this tutorial
 - To test the `BAdI`: In SAP Fiori launchpad, you have the authorization for the app **Process Purchase Requisitions - Professional**, i.e. **`SAP_BR_PURCHASER`**
 

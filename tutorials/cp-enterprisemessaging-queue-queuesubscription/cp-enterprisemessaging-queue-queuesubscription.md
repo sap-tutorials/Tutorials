@@ -8,6 +8,7 @@ primary_tag: products>sap-event-mesh
 ---
 ## Prerequisites
 - An instance of SAP Event Mesh has already been created
+- User has been assigned with role collection "Enterprise Messaging Developer" [Assign Roles to Users](https://help.sap.com/viewer/bf82e6b26456494cbdd197057c09979f/Cloud/en-US/637d331010e54a2999e2f023d2de1130.html)
 
 ## Details
 ### You will learn

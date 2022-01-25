@@ -3,13 +3,15 @@ title: Create a Destination in the SAP BTP Cockpit
 description: Create a destination in the SAP BTP cockpit to allow application access to the Northwind OData services.
 auto_validation: true
 primary_tag: products>sap-business-technology-platform
-tags: [ tutorial>beginner, topic>odata, software-product-function>sap-btp-cockpit, tutorial>free-tier]
+tags: [ tutorial>beginner, programming-tool>odata, software-product-function>sap-btp-cockpit, tutorial>free-tier]
 time: 5
+author_name: Nico Geburek
+author_profile: https://github.com/nicogeburek
 ---
 
 ## Prerequisites
 - You have one of the following:
-    - **SAP BTP trial account:** You must have registered for a trial account on SAP Business Technology Platform: [Get a Free Trial Account on SAP BTP](hcp-create-trial-account).
+    - **SAP BTP free tier or free trial account:** You have [Set Up a BTP Account for Tutorials](group.btp-setup).
     - **SAP BTP enterprise account:** You have a subaccount for which you want to manage entitlements. If you need help setting up your subaccount, have a look at [Managing Subaccounts Using the Cockpit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/55d0b6d8b96846b8ae93b85194df0944.html).
 
 
@@ -31,8 +33,9 @@ The Northwind OData services comes in several versions.  The tutorials currently
 
 [ACCORDION-BEGIN [Step : ](Enter your BTP account)]
 
-Go to <https://account.hanatrial.ondemand.com> or  <https://account.hana.ondemand.com> and log in to the SAP BTP cockpit.
-
+- For Free Trial Accounts: <https://account.hanatrial.ondemand.com>
+- For Free Tier and Enterprise Accounts on **feature set A**: <https://account.hana.ondemand.com>
+- For Free Tier and Enterprise Accounts on **feature set B**: The link depends on your region. One option is <https://cockpit.eu10.hana.ondemand.com/cockpit/>. (Replace "eu10" with your region.)
 
 [DONE]
 [ACCORDION-END]
@@ -71,7 +74,7 @@ And the following *Additional Properties*
 
 Property Name     | Value
 :------------- | :-------------
-`HTML5.DynamicDestination`           | **`true`** (enter this property manually as it is not available in the dropdown list)
+`HTML5.DynamicDestination`           | **`true`**
 `WebIDEEnabled`           | **`true`**
 
 > Do **not** use the entire path for the URL.  The URL should only be `https://services.odata.org`

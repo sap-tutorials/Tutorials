@@ -5,8 +5,8 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, tutorial>license, topic>mobile, products>sap-business-technology-platform]
 primary_tag: products>sap-appgyver
-author_name: Tom Beck
-author_profile: https://github.com/heytombeck
+author_name: Akseli Virtanen
+author_profile: https://github.com/akseliv
 ---
 
 ## Prerequisites
