@@ -149,12 +149,13 @@ Now you are ready to write your first, simple server-side application that uses 
     node hellograph.js
     ```
 
-The console will show:
-```Shell / Bash
-Explore SAP Graph at <http://localhost:3004>
-```
+    The console will show:
 
-Now the fun begins. The application expects a well-formed query URL to function properly.
+    ```Shell / Bash
+    Explore SAP Graph at <http://localhost:3004>
+    ```
+
+    Now the fun begins. The application expects a well-formed query URL to function properly.
 
 3. Open a browser window or tab, and enter the following query URL:
 `http://localhost:3004/sap.graph/SalesQuote?$top=2`

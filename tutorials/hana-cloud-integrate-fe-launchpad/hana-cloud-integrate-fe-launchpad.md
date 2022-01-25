@@ -3,8 +3,8 @@ title: Integrate Your SAP Fiori Elements App into a New Launchpad Site
 description: Add an SAP Fiori elements app to a launchpad site in the SAP Launchpad service.
 time: 30
 auto_validation: true
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-launchpad-service, products>sap-fiori, topic>html5, topic>sapui5]
-primary_tag: products>sap-launchpad-service
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-launchpad-service, software-product>sap-fiori, programming-tool>html5, programming-tool>sapui5]
+primary_tag: software-product>sap-launchpad-service
 ---
 
 ## Prerequisites
@@ -26,7 +26,7 @@ Once you've deployed your SAPUI5 app to SAP BTP, it becomes available to add to 
 1. Open the [SAP BTP Cockpit](https://account.hanatrial.ondemand.com/cockpit#/home/trialhome).
 
 
-2. In the side navigation panel of your subaccount, click **Instances and Subscriptions**, and then from the **Subscriptions** tab, click the **Go to Application** icon.
+2. In the side navigation panel of your subaccount, click **Instances and Subscriptions**, and then from the **Subscriptions** tab, click **SAP Launchpad Service** and the **Go to Application** icon.
 
     The Site Manager opens with the Site Directory in focus. From here, you'll create your new site.
 
