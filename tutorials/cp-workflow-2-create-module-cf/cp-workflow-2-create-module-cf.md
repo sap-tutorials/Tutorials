@@ -2,7 +2,7 @@
 title: Create a Basic Workflow in SAP Business Application Studio
 description: Set up a dev space and create a workflow module that contains a workflow.
 auto_validation: true
-primary_tag: products>sap-business-technology-platform
+primary_tag: software-products>sap-business-technology-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-business-technology-platform ]
 time: 5
 ---
@@ -34,7 +34,7 @@ You create your workspace where you will later build the workflow.
     > Wait until the dev space is created and you see the RUNNING status.
     !![Dev Space Created](DevSpaceCreated.png)
 
-5. Click the **Dev Space** to access the workspace.
+5. Click your Dev Space, for example, `mydevspace` to access the workspace.
 
     > It takes 2-3 minutes to initialize your dev workspace for the first time. You will see a Welcome page once the dev space is initialized.
 
@@ -60,7 +60,7 @@ You need to create a multitarget application (MTA) project that contains a workf
 
 3. Enter a project name, for example, `onboarding`, and choose **Finish**.
 
-    The IDE opens again with MTA as a workspace. It contains an `mta.yaml` file, which describes the application.
+    The development environment opens again with MTA as a workspace. It contains an `mta.yaml` file, which describes the application.
 
     ![See YAML File](new-yaml2.png)
 
