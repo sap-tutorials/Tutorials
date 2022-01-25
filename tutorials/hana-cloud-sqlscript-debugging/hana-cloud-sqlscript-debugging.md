@@ -1,5 +1,5 @@
 ---
-title: Debugging Stored Procedures
+title: Debugging Stored Procedures 
 description: Leveraging SQLScript in stored procedures, user-defined functions, and user-defined libraries.
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman

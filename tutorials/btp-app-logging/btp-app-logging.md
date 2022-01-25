@@ -57,7 +57,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Access logs from SAP BTP cockpit)]
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
