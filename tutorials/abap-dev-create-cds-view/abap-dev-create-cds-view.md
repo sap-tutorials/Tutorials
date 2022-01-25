@@ -262,6 +262,7 @@ The service binding automatically references the service definition and thus the
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add annotations for automatic display)]
+
 1. It would be nice if at least some fields were displayed immediately for the user. To do this, simply add the following annotation to the relevant fields in **`Z_I_TRAVEL_R_XXX`**. The start of your CDS entity will then look like this.
 
     > `BookingFee` is not automatically displayed. The numbers for each field are relative to the other fields and are responsive - they do not refer to a specific pixel position or similar. For larger entities, you can specify *HIGH*,*MEDIUM*, or *LOW*, so that less important fields are automatically hidden on a smaller screen, such as a mobile phone.

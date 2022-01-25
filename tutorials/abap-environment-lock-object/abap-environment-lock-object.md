@@ -187,7 +187,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create table](definition2.png)
 
-  3.  Create your database table:
+  3.  Create your data definition:
      - Name: **`Z_I_ROOM_XXX`**
      - Description: **`Room XXX`**
 

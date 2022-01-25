@@ -25,9 +25,11 @@ primary_tag: programming-tool>abap-development
 You can then use some of these features in productive development to make your applications more powerful and more user-friendly. By the end of this tutorial, your application should look like this.
 
 !![fep-final-enhance](fep-final-enhance-no-CASE.png)
+
 !![step13c-fep-CASE](step13c-fep-CASE.png)
 
 You can see the code at the end of this tutorial. Throughout the tutorial, objects name include a suffix, such as `XXX`. Always replace this with your group number or initials.
+
 
 ---
 
@@ -88,6 +90,7 @@ For more information, see:
 - ABAP Keyword Documentation: [CDS - Associations](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abencds.htm)
 
 1. Add the following statement to your CDS view, **`Z_I_TRAVEL_R_XXX`**, just before the list of fields. The first statement creates an association from the source CDS entity **`Z_I_TRAVEL_R_XXX`** to the target CDS entity **`/DMO/I_Agency`**, joined on the field **`AgencyID`**. The source entity is represented by the alias **`$projection`**, because you cannot use the original name in a path statement. The target entity is represented by its alias name **`_Agency`**.
+
 
     ```CDS
       association [1..1] to /DMO/I_Agency as _Agency on $projection.AgencyID = _Agency.AgencyID
@@ -170,6 +173,7 @@ You will use a simple one to easily merge two fields. The two fields are provide
 
 3. Also make sure this association is added to the list of fields:
 
+
     ```CDS
 
     //Associations
@@ -183,6 +187,7 @@ You will use a simple one to easily merge two fields. The two fields are provide
 If not, make sure that you have selected the **Addressee** field in **Settings**.
 
       !![step3-settings-addressee](step3-settings-addressee.png)
+
       !![step15b-concat-result](step15b-concat-result.png)
 
 6. Now you have the addressee, you may want to comment out the text association for **`CustomerID`**.
@@ -200,7 +205,10 @@ It would be nice to find out how much money each **Agency** has received in tota
     You may get a warning: "Reference information missing...". Ignore this.
 
     ```CDS
+
     @Semantics.amount.currencyCode: 'CurrencyCode'
+
+
     currency_conversion(
     amount => TotalPrice,
     source_currency => CurrencyCode,
@@ -255,13 +263,16 @@ This displays a two-step grouping. You can browse and expand the companies and b
 
 > The grouping will be gone each time you refresh the application. To avoid this, add the following annotation to the metadata extension definition on view level (at the top):
 
+
 ```CDS
 @UI.presentationVariant: [{groupBy: [ 'AgencyID' , 'CustomerID' ]}]
 
 ```
 
+
 [DONE]
 [ACCORDION-END]
+
 
 
 
@@ -283,11 +294,14 @@ The code for your CDS entity should look like this:
 }
 
 define view entity Z_I_TRAVEL_R_XXX
+
+
   as select from /DMO/I_Travel_U as Travel
 
   association [1..1] to /DMO/I_Agency   as _Agency       on $projection.AgencyID = _Agency.AgencyID
   association [1..1] to /DMO/I_Customer as _Customer     on $projection.CustomerID = _Customer.CustomerID
   association [0..*] to I_CurrencyText  as _CurrencyText on $projection.CurrencyCode = _CurrencyText.Currency
+
 
 
 {
@@ -315,7 +329,7 @@ define view entity Z_I_TRAVEL_R_XXX
       @DefaultAggregation: #SUM
       TotalPrice,
 
-
+      //Currency Conversion
       @Semantics.amount.currencyCode: 'CurrencyCode'
       currency_conversion(
       amount => TotalPrice,
@@ -331,10 +345,12 @@ define view entity Z_I_TRAVEL_R_XXX
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.90
       Memo,
+
       Status,
       LastChangedAt,
 
       /* Associations */
+
       _Agency,
       _Booking,
       _Currency,
@@ -350,14 +366,17 @@ define view entity Z_I_TRAVEL_R_XXX
 
 [ACCORDION-BEGIN [Step 8: ](Test yourself)]
 
+
 [VALIDATE_1]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 9: ](Create object page)]
 At the moment, your application is a simple list. It would be nice to click on a row, i.e. a travel, and get more details in a separate page, known as an object page. Later you can add details from other CDS entities using associations.
 For more information on object pages, see SAP Help Portal: [Defining UI Annotations](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/fd95e7c9905e469bb176217f49e15e71.html)
 
 1. First add the page itself. Go to your metadata extension and add the following annotation, just after the opening curly bracket:
+
 
     ```CDS
     @UI.facet: [ { id:              'Travel',
@@ -445,6 +464,7 @@ For more information on object pages, see SAP Help Portal: [Defining UI Annotati
 [ACCORDION-END]
 
 
+
 [ACCORDION-BEGIN [Step 10: ](Create CDS entity for booking)]
 You will now add more information to the object page by creating:
 - A CDS entity for bookings
@@ -458,6 +478,7 @@ For more information on this relationship, see [Defining the Data Model in CDS V
     !![step7a-new-cds](step7a-new-cds.png)
 
 2. Enter the following:
+
     - Name = **`Z_I_BOOKING_XXX`**
     - Description = **`Consumption view from /DMO/I_BOOKING_U`**
     - Referenced Object = **`/DMO/I_BOOKING_U`**
@@ -518,7 +539,9 @@ Then **Save**, but **DO NOT yet activate your entity**.
 [ACCORDION-END]
 
 
+
 [ACCORDION-BEGIN [Step 11: ](Add annotations)]
+
 1. Add semantic annotations as follows:
 
     ```CDS
@@ -536,19 +559,23 @@ Then **Save**, but **DO NOT yet activate your entity**.
 [ACCORDION-END]
 
 
+
 [ACCORDION-BEGIN [Step 12: ](Create metadata extension for Z_I_BOOKING_XXX)]
 1. First, allow metadata extensions to `Z_I_BOOKING_XXX` by adding the following annotation just after the `@EndUserText.label: 'Consumption view from /DMO/I_BOOKING_U'` annotation:
+
 
     ```CDS
     @Metadata.allowExtensions: true
 
     ```
 
+
 2.  In the Package Explorer, select the CDS entity **`Z_I_BOOKING_XXX`**, then choose **New Metadata Extension** from the context menu.
 
 3. Enter a name **`ZMDE_I_BOOKING_XXX`** and description **Metadata for` Z_I_BOOKING_XXX`**; select the transport request and choose **Finish**.,
 
 4. In the editor, enter the following code:
+
 
     ```CDS
     @Metadata.layer: #CORE
@@ -564,6 +591,7 @@ Then **Save**, but **DO NOT yet activate your entity**.
                     }
               }
           }
+
     annotate view Z_I_BOOKING_XXX with
 
     {
@@ -596,11 +624,13 @@ Then **Save**, but **DO NOT yet activate your entity**.
              identification: [ { position: 60 } ] }
       FlightPrice;
 
+
     }
 
     ```
 
 5. Format, save, and activate the metadata extension (**`Shift+F1, Ctrl+S, Ctrl+F3`**).
+
 
 [DONE]
 [ACCORDION-END]
@@ -621,6 +651,7 @@ Then **Save**, but **DO NOT yet activate your entity**.
 
 3. Check the service binding. It should now include a `to_Booking` association, like this. If not, try choosing **Unpublish**, then **Publish** again.
 
+
     !![step10a-sb-w-booking-association](step10a-sb-w-booking-association.png)
 
 
@@ -629,6 +660,7 @@ Then **Save**, but **DO NOT yet activate your entity**.
 
 
 [ACCORDION-BEGIN [Step 14: ](Add Booking information to object page)]
+
 1. In metadata extension **`Z_TRAVEL_METADATA_XXX`**, before the square bracket, insert a comma after the Travel facet, then insert the **Booking** facet to the Travel metadata extension, so that your code looks like this:
 
     ```CDS
@@ -649,6 +681,7 @@ Then **Save**, but **DO NOT yet activate your entity**.
     !![step9a-add-facet-booking](step9a-add-facet-booking.png)
 
 2. Now, in the metadata extension **`ZMDE_I_BOOKING_XXX`**, specify which fields from Booking you want to include in the object page, again using an `identification` annotation as follows:
+
 
     ```CDS
     @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],
@@ -677,7 +710,9 @@ Then **Save**, but **DO NOT yet activate your entity**.
     Flight_Price;
 
     ```
+
 3. Test your new facet in the Fiori Elements preview. It should roughly look like this:
+
 
     !![step9b-fep-booking-facet](step9b-fep-booking-facet.png)
 
@@ -690,12 +725,15 @@ You can also display information from another entity using an association.
 
 1. In the CDS entity **`Z_I_BOOKING_XXX`**, add an association from Booking to Connection.
 
+
     ```CDS
         association [1..1] to /DMO/I_Connection as _Connection on $projection.ConnectionId = _Connection.ConnectionID
 
     ```
 
+
 2. You may get a warning. If so, choose **Problem Description**; you will see that this warning can be hidden, by adding the following pseudo-comment:
+ warning. If you choose **Problem Description**, you will see that this warning can be hidden, by adding the following pseudo-comment:
 
     ```CDS
       /*+[hideWarning] { "IDS" : [ "CARDINALITY_CHECK" ] }*/
@@ -704,10 +742,10 @@ You can also display information from another entity using an association.
 
 3. Now add the following two elements to the CDS entity **`Z_I_BOOKING_XXX`**:
 
+
     ```CDS
     @Semantics.quantity.unitOfMeasure: 'DistanceUnit'
     _Connection.Distance as Distance,
-
     _Connection.DistanceUnit as DistanceUnit,
 
     ```

@@ -10,7 +10,7 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
-- You have created a BTP trial, SAP HANA Cloud instance -- see [Deploy SAP HANA Cloud trial](hana-cloud-deploying).
+- You have created a BTP, SAP HANA Cloud instance -- see [Deploy SAP HANA Cloud trial](hana-cloud-deploying).
 - You are logged into SAP Business Application Studio and it's configured [Configure the Development Environment](hana-cloud-configure-dev-env).
 
 ## Details
@@ -70,7 +70,8 @@ This project will combine artifacts from an HDI container and a classic, replica
 You will first create a table to hold data from performance evaluations received by employees and the rating they give the company in terms of satisfaction.
 
 These are sample records that will be stored in this table:
-!![New DB artifact](9.png)
+
+    !![New DB artifact](9.png)
 
 1. Right-click on the `src` folder, choose `New File`
 
@@ -161,14 +162,14 @@ The table you have just defined will have a large text field with comments from 
 >&nbsp;
 > The console on the bottom will show the progress. First, an HDI container will be created and bound. Scroll up the log to see it in your screen:
 >&nbsp;
->  ![Build db](17.png)
+>    !![Build db](17.png)
 >&nbsp;
 > The container is called `hdi_db`, which is the name you specified in the deployment configuration file, `mta.yaml`.
 > If you continue to scroll down, you will see how the table and text index you have created using design-time artifacts are prepared for deployment.  A physical schema called `DM_HDI_DB_1` has been created. Finally, you will see a success message:
 >
 >&nbsp;
 >
->  ![Build db](18.png)
+>    !![Build db](18.png)
 >&nbsp;
 
 
