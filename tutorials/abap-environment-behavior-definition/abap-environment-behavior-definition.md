@@ -241,7 +241,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create service definition)]
-  1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**.
+  1. Right-click on data definition **`Z_I_ROOM_XXX`** and select **New Service Definition**.
 
       ![Create service definition](service.png)
 

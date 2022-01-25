@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Add the Consumption of an External Service to Your CAP Application
 description: This tutorial shows you how to extend your CAP application to manage risks associated with suppliers. For that you will consume supplier information that is part of the SAP S/4HANA Business Partner to your CAP application.
+keywords: cap
 auto_validation: true
 time: 20
 tags: [tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management]
@@ -130,7 +131,7 @@ In this step, you add some mock data for the business partner service. This allo
     !![API Business Partner service](api-business-partner-service.png)
 
 
-    For this application, you need only a few fields from the `A_BusinessPartner` entity. To do this, you create a projection on the external service. Since in this example, you're only interested in the business partners that are suppliers, you use the name `Suppliers` for your projection.
+    For this application, you need only a few fields from the `A_BusinessPartner` entity. To do this, you create a projection on the external service. Since in this example, you are only interested in the business partners that are suppliers, you use the name `Suppliers` for your projection.
 
 5. Open the `db/schema.cds` file and add the following entity at the end of the file:
 
@@ -144,7 +145,7 @@ In this step, you add some mock data for the business partner service. This allo
     }
     ```
 
-    In the projection, the fields are also given more appealing names. It is much easier to work with your own projection and by this you also avoid requesting data that you're not interested in.
+    In the projection, the fields are also given more appealing names. It is much easier to work with your own projection and by this you also avoid requesting data that you are not interested in.
 
 6. Expose supplier information through your service by adding the following lines to your `srv/risk-service.cds` file:
 

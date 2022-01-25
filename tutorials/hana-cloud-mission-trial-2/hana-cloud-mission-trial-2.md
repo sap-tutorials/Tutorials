@@ -297,7 +297,7 @@ A dialog box will appear indicating that there will be costs associated with the
 
 ![upgrade to paid tier](upgrade-paid-tier2.png)
 
->Note that an **Upgrade to Test and Development** option is currently not available for free tier instances.  If you wish to move the contents from a Free Tier instance to a Test and Development production instance, consider the steps in the tutorial [Move Data from a Free Tier Model or Trial Instance to a Production Instance](hana-cloud-trial-2-production).
+>Note: For SAP partners who have SAP HANA Cloud "test and development" service plans enabled in their entitlements (e.g. hana-td, relational-data-lake-td), an **Upgrade to Test and Development** option is also available for free tier instances. Choose this option if you wish to upgrade your **free tier** instance to a **test and development** production instance.  
 
 Now you know how to provision an instance of SAP HANA Cloud using SAP BTP cockpit and SAP HANA Cloud Central. In the next tutorial, learn about the tools that help to manage and access your database instance  
 
