@@ -3,7 +3,7 @@ title: Secure a Basic Node.js App with the Authorization and Trust Management Se
 description: Secure a basic single-tenant Node.js application with the Authorization and Trust Management Service (XSUAA).
 auto_validation: true
 time: 25
-tags: [tutorial>intermediate, programming-tool>node-js, products>sap-business-technology-platform ]
+tags: [tutorial>intermediate, programming-tool>node-js, software-product>sap-business-technology-platform ]
 primary_tag: topic>security
 author_name: Michael Shea
 author_profile: https://github.com/MichaelPShea
