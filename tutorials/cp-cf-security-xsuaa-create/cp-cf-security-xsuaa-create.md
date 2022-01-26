@@ -444,6 +444,6 @@ To resolve this error, please edit the `manifest.yml` file and change the `route
 ### Resources
 - [Info on the xs-app.json](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/c103fb414988447ead2023f768096dcc.html)
 - [Info on the xs-security.json](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/517895a9612241259d6941dbf9ad81cb.html)
-- [Access Management in the Cloud Foundry Environment](https://help.sap.com/viewer/60f1b283f0fd4d0aa7b3f8cea4d73d1d/Internal/en-US/649961f8d4ad463daca33b3a20deba4c.html)
+- [Access Management in the Cloud Foundry Environment](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/649961f8d4ad463daca33b3a20deba4c.html)
 
 ---
