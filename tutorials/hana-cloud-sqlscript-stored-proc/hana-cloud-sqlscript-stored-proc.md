@@ -1,5 +1,5 @@
 ---
-title: Create Stored Procedures
+title: Create Stored Procedures 
 description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
