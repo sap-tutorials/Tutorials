@@ -3,8 +3,8 @@ title: Create an SAP HANA XS Classic Hello World Application Using SAP HANA Stud
 description: Create and test a simple SAP HANA XS classic application that displays the "Hello World" message.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>Cloud, products>sap-business-technology-platform, tutorial>license]
-primary_tag: products>sap-hana-service-for-sap-btp  
+tags: [ tutorial>beginner, topic>Cloud, software-product>sap-business-technology-platform, tutorial>license]
+primary_tag: software-product>sap-hana-service-for-sap-btp  
 author_name: Sylvia Hördt
 author_profile: https://github.com/sapsy
 ---

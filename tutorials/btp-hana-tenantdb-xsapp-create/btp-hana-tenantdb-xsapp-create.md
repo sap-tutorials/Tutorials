@@ -3,8 +3,8 @@ title: Create an SAP HANA Tenant Database and an SAP HANA XS Classic Application
 description: Create and bind an SAP HANA tenant database to an SAP HANA XS classic application.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>Cloud, products>sap-business-technology-platform, tutorial>license]
-primary_tag: products>sap-hana-service-for-sap-btp
+tags: [ tutorial>beginner, topic>Cloud, software-product>sap-business-technology-platform, tutorial>license]
+primary_tag: software-product>sap-hana-service-for-sap-btp
 author_name: Sylvia Hördt
 author_profile: https://github.com/sapsy
 ---
