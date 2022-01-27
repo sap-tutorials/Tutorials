@@ -197,7 +197,7 @@ The targeting mechanism works according to the hierarchy of entities in the glob
 
 - After initial login, the global account is targeted.
 
-- If a subaccount or directory is targeted and you run a command that only works on a higher level, the command will be executed in the parent directory or global account of the current target. For example, `create accounts/subaccount` creates a subaccount in the global account, even if a subaccount or directory is targeted.
+- If a subaccount or directory is targeted and you run a command that only works on a higher level, the command will be executed in the parent directory or global account of the current target. For example, `list accounts/subaccount` lists all subaccounts of the global account, even if a subaccount or a directory is targeted.
 
 - If a subaccount or directory is targeted, you can execute commands in its parent directory or global account by adding parameters `-dir` or `-ga` without a value. For example, if a subaccount is targeted, `btp list security/user` lists the users of that subaccount. To list the users of the parent directory or global account, use: `btp list security/user -dir` or  `btp list security/user -ga`.
 

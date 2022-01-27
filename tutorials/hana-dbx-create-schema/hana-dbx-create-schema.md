@@ -379,7 +379,7 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 
 [ACCORDION-BEGIN [Step 5: ](Create functions and stored procedures)]
 
-1. User-created functions can be useful in saving a set of commands that return a value. They can also be used in other statements. Functions and procedures can also make use of control statements such as if else and loops.  
+1. User-defined functions and procedures can be used to save a set of SQL statements.  Functions are considered read-only in that they cannot make modifications to the data.  Stored procedures can modify the data through the use of DDL or DML statements.
 
     Execute the following SQL to create a function that calculates the average price of a specific room type.
 
