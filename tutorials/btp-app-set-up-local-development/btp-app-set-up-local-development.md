@@ -70,6 +70,8 @@ Node.js is the JavaScript runtime the CAP backend part of the application runs o
 
 > Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 16. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install.
 
+> If you don't have the required version, go to [Node.js](https://nodejs.org/en/download/) download page, pick the installer appropriate for your operating system, and install it. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#node-version) for CAP for more details.
+
 In case you don't know whether you have Node.js installed and whether it has the right version (^16), open a command line window and execute the following command:
 
 ```Shell/Bash
@@ -81,10 +83,6 @@ You should get an output like:
 ```Shell/Bash
 v16.x.x
 ```
-
-> If you don't see the required version, go to [Node.js](https://nodejs.org/en/download/) download page, pick the installer appropriate for your operating system, and install it. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#node-version) for CAP for more details.
-
-
 
 [DONE]
 [ACCORDION-END]

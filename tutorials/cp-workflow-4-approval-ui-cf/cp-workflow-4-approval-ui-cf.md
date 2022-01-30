@@ -2,14 +2,14 @@
 title: Create a Start Form and its Custom Tile for Your Workflow
 description: Create a start form for end users to start and complete the workflow application
 auto_validation: true
-primary_tag: products>sap-business-technology-platform
+primary_tag: software-products>sap-business-technology-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-business-technology-platform ]
 time: 15
 ---
 
 ## Prerequisites  
 - You have executed the previous tutorials in [Get started with the workflow capability](group.cp-workflow-cf).
-- Make sure that you use a dev space with the extension **Launchpad Module**.
+- Make sure that you use a dev space with the extension **Launchpad Module**. For new dev spaces this is automatically added.
 - You have created a destination to the workflow capability instance with the authentication method `OAuth2JWTBearer`. See [Destinations Pointing to Service Instances](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/685f383cebb54c009b2fac633b32c90f.html).
 
 ## Details
@@ -21,9 +21,11 @@ time: 15
 
 So that you can deploy the `WorkflowManagementFLP_0.0.1.mtar` later on, you need to assign the Application Runtime and Portal entitlements to your subaccount.
 
+> For new accounts, the booster already adds the launchpad subscription and you can skip this step or just check that you have the subscription.
+
 1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
+2. Navigate to the trial global account by clicking **Go to Your Trial Account**.
 
 3. Access your **trial** subaccount.
 
@@ -91,12 +93,12 @@ You see a popup that the subscription is created. To display the new status, cho
 
 4. You are prompted to enter the following:
 
-    | **Field**            | **Value**                         |
-    | :--------------------| :-------------------------------- |
-    | **Workflow module**  | **`approvals`**                   |
-    | **File name**        | **`onboardingapprovalform`**      |
-    | **Form type**        | **Start Form**                    |
-    | **Revision**         | **1.0**                           |
+    | **Field**            | **Value**                                                                                        |
+    | :--------------------| :----------------------------------------------------------------------------------------------- |
+    | **Workflow module**  | **`<The path to your workflow module>`**, for example `/home/user/projects/onboarding/approvals` |    
+    | **File name**        | **`onboardingapprovalform`**                                                                     |
+    | **Form type**        | **Start Form**                                                                                   |
+    | **Revision**         | **1.0**                                                                                          |
 
     The forms folder now contains your new form `onboardingapprovalform.form`.
 
@@ -147,7 +149,7 @@ These expressions refer to the attributes in the JSON file that you have created
 
 2. Right-click the `.mtar` file, and then select **Deploy MTA Archive**.
 
-    > Note: You might be asked to log in to your Cloud Foundry space. Enter the right API endpoint depending on your region, for example, `https://api.cf.eu10.hana.ondemand.com`, your username and password, and select your Cloud Foundry org and space.
+    > Note: You might be asked to log in to your Cloud Foundry space. Enter the right API endpoint depending on your region, for example, `https://api.cf.us10.hana.ondemand.com`, your username and password, and select your Cloud Foundry org and space.
 
 [DONE]
 [ACCORDION-END]
@@ -188,7 +190,7 @@ These expressions refer to the attributes in the JSON file that you have created
 
     ![Choose Content Manager](choose-content-manager.png)
 
-  >If the standard items are not displayed, check whether you have set up the destination correctly in the prerequisites.
+    >If the standard items are not displayed, check whether you have set up the destination correctly in the prerequisites.
 
 4. In the dropdown, choose the **HTML5 Apps** content provider.
 
@@ -219,7 +221,7 @@ These expressions refer to the attributes in the JSON file that you have created
        In the **Title - English (en)** field, enter **Onboarding**.
        In the **Subtitle - English (en)**, enter **Onboarding Employees**.
 
-    > You must not change the **Configuration** data.
+        > You must not change the **Configuration** data.
 
     3. To configure your local copy of the Start-Form-Based Workflow Start App, open its **NAVIGATION** tab.
     4. Set the parameters by adding new parameters that match the ones of your start form configuration:
@@ -263,7 +265,7 @@ These expressions refer to the attributes in the JSON file that you have created
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Start the workflow in your custom tile)]
-After deployment is finished, open your launchpad site that contains the workflow applications.
+After deployment is finished, open your launchpad site that contains the workflow applications. See step 8 above.
 
 1. In the **Site Directory**, open your site **`mysite`** icon.
 
