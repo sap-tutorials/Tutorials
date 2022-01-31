@@ -2,8 +2,8 @@
 title: Create a Start Form and its Custom Tile for Your Workflow
 description: Create a start form for end users to start and complete the workflow application
 auto_validation: true
-primary_tag: software-products>sap-business-technology-platform
-tags: [  tutorial>beginner, topic>cloud, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-business-technology-platform
+tags: [  tutorial>beginner, topic>cloud ]
 time: 15
 ---
 

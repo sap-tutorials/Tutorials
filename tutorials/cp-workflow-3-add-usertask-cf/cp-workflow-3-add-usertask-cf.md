@@ -2,8 +2,8 @@
 title: Add a User Task to Your Workflow and Deploy
 description: Enhance the workflow with with a form-based user task and deploy the workflow
 auto_validation: true
-primary_tag: software-products>sap-business-technology-platform
-tags: [  tutorial>beginner, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-business-technology-platform
+tags: [  tutorial>beginner, topic>cloud ]
 time: 15
 ---
 
