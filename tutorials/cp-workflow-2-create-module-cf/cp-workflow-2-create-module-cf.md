@@ -2,14 +2,14 @@
 title: Create a Basic Workflow in SAP Business Application Studio
 description: Set up a dev space and create a workflow module that contains a workflow.
 auto_validation: true
-primary_tag: software-products>sap-business-technology-platform
-tags: [  tutorial>beginner, topic>cloud, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-business-technology-platform
+tags: [  tutorial>beginner, topic>cloud ]
 time: 5
 ---
 
 ## Prerequisites
  - [Get a Trial Account](hcp-create-trial-account)
- - "Step 1: Setup your account using Booster" of the [Set Up Workflow Management in the Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial creates the entitlements for the Portal service as well as for the workflow capability and it enables SAP Business Application Studio.
+ - "Step 1: Set Up your account using Booster" of the [Set Up Workflow Management in the Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial creates the entitlements for the Portal service as well as for the workflow capability and it enables SAP Business Application Studio.
 
 ## Details
 ### You will learn  
