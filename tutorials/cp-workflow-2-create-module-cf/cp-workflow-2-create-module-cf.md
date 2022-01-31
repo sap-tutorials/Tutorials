@@ -9,7 +9,7 @@ time: 5
 
 ## Prerequisites
  - [Get a Trial Account](hcp-create-trial-account)
- - "Step 1: Setup your account using Booster" of the [Set Up Workflow Management in the Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial creates the entitlements for the SAP Cloud Portal service as well as for the workflow capability and it enables SAP Business Application Studio.
+ - "Step 1: Setup your account using Booster" of the [Set Up Workflow Management in the Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial creates the entitlements for the Portal service as well as for the workflow capability and it enables SAP Business Application Studio.
 
 ## Details
 ### You will learn  

@@ -14,7 +14,7 @@ time: 15
 
 ## Details
 ### You will learn  
-  - How to start an instance of the workflow definition that you have defined using a start form
+  - How to start an instance of the workflow definition that you have defined using a start form.
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Assign entitlements to your subaccount)]
