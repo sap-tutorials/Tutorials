@@ -3,7 +3,7 @@ title: Create a Custom Goal with SAP Customer Order Sourcing
 description: Learn how to create a custom goal from start to finish with SAP Customer Order Sourcing.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, topic>sap-api-business-hub]
+tags: [ tutorial>beginner, products>sap-business-technology-platform]
 primary_tag: topic>cloud
 ---
 
