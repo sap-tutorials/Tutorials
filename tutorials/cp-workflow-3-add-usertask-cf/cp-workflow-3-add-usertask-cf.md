@@ -11,7 +11,6 @@ time: 15
 ### You will learn  
   - How to create a simple approval task for your workflow.
   - How to deploy the workflow.
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add a user task)]
