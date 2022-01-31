@@ -3,7 +3,7 @@ title: Set Up Postman to Call Data Attribute Recommendation APIs
 description: Import Postman environment and collection JSON sample code files to call the Data Attribute Recommendation APIs.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 

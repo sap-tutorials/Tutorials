@@ -2,26 +2,27 @@
 title: Add a Workspace to SAP Work Zone
 description: Create a workspace and add content to it that you can share with other members of your workspace.
 auto_validation: true
-time: 15
-tags: [ tutorial>beginner, products>sap-work-zone]
-primary_tag: products>sap-work-zone
+time: 25
+tags: [ tutorial>beginner, software-product>sap-work-zone]
+primary_tag: software-product>sap-work-zone
 author_name: Lindsay Bert
+author_profile: https://github.com/LindsayBert
 ---
 
-In this tutorial, you're going to create a workspace where employees who joined the company hackathon challenge, can interact with other members of the workspace, ask questions, and find out all that they need to know.
+## Prerequisites
+- You have an environment set up and you can access your SAP Work Zone.
+&nbsp;
+**Note that SAP Work Zone is not available in a trial account.**
 
-
-## Prerequisite
- You have an environment set up and you can access your SAP Work Zone.
-
->Note that SAP Work Zone is not available in a trial account.
 
 ## Details
 ### You will learn
   - How to create a new workspace
   - How to add content to it and design the layout
 
+In this tutorial, you're going to create a workspace where employees who joined the company hackathon challenge, can interact with other members of the workspace, ask questions, and find out all that they need to know.
 
+>Note that SAP Work Zone is not available in a trial account.
 
 ---
 
@@ -44,7 +45,7 @@ First download these image files so that they're on your computer ready for you 
 
 [ACCORDION-BEGIN [Step 2: ](Create a workspace)]
 
-A workspace is a membership of users who can upload, create, or reference material specific to a department, project, or team. Within a workspace you can communicate, interact easily, share knowledge with other members, and easily access the workspace-related information that you need from a single place.
+Workspaces are the building blocks of SAP Work Zone. You can add pages, content such as widgets, apps, forums and more, and you can invite other members to join.
 
 1. In your work zone, click **Workspaces** in the top-level menu, and then click **New Workspace**.
 
@@ -54,11 +55,11 @@ A workspace is a membership of users who can upload, create, or reference materi
 
     !![Select template](2-select-template.png)
 
-    >You can also select one of SAP's out-of-the-box templates. In this case, you'll get a professionally designed overview page with widgets including everything you need to get started quickly. You can then customize the content to suit your needs. For this tutorial we will not use a template.
+    >You can also select one of SAP's out-of-the-box templates. In this case, you'll get a professionally designed overview page with widgets including everything you need to get started quickly. You can then customize the content to suit your needs. For this tutorial you won't use a template.
 
 3. Enter this name for your workspace: `Employee Innovation Hackathon`.
 
-    >Tip: Always use a name that would help users distinguish your workspace from others.
+    >**Tip:** Always use a name that would help users distinguish your workspace from others.
 
 4. Copy and paste this description for your workspace: `Get together and find the answers to your questions about the hackathon!`
 
@@ -76,7 +77,7 @@ Your workspace is created.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Join the workspace)]
+[ACCORDION-BEGIN [Step 3: ](Configure your workspace notifications)]
 
 When you create your workspace, you are prompted to define the frequency of email notifications.
 
@@ -89,9 +90,6 @@ When you create your workspace, you are prompted to define the frequency of emai
 You can now start building your workspace.
 
 !![Start building a workspace](3c-start-building.png)
-
-> When you want to access your workspace later, you can look for it under the **Workspaces** menu item by selecting **View All Workspaces**. You'll see all the workspaces that you have permissions to access.
-  !![View all workspaces](3b-view-workspace.png)
 
 Now, let's add content to the workspace.
 
@@ -119,7 +117,7 @@ When you create a new workspace the header has a dark and light blue background.
 
 [ACCORDION-BEGIN [Step 5: ](Create an Overview page for your workspace)]
 
-The **Overview** page is the first thing people see when they join your workspace. You can use it to present the workspace purpose, feature workspace members, and display workspace-related content. With the built-in Page Designer, you can add widgets and create multiple pages to help organize and enable users to quickly find the workspace-related information they need.
+The **Overview** page is the home page of a workspace. You can add all types of different content to it - its common to add content which describes the purpose of the workspace and to feature important content.
 
 1. Click **+** to add a page tab.
 
@@ -174,7 +172,7 @@ In this step, you'll add two text widgets next to each other in the first row of
 6. Design the **Text** widget as follows:
 
     |  :------------- | :-------------
-    | Text            | Type in the following: `More Information`.
+    | Text            | Type in the following: `More Information`
     | Font            | Select the text and change to Arial 14pt.
     | Color           | With the text already selected, choose black from the chart.
 
@@ -257,9 +255,11 @@ In this step, you'll add images to the second row.
 
     |  :-------------     | :-------------                
     | Caption             | First image: `Real Customer Challenges`<div>&nbsp;</div><div>Second image: `Product Documentation`<div>&nbsp;</div><div>Third image: `Submission Criteria`<div>&nbsp;</div><div>Fourth image: `Stay Involved`
+    | Link To        |Add this link to the **second** image widget that you named `Product Documentation`: <https://help.sap.com/viewer/product/WZ/Cloud/en-US> <div>&nbsp;</div><div> Once you've published your site you can click on this image to open the SAP Work Zone documentation product page.
     | Caption Layout        |All images: Overlay
     | Background Opacity    |All images: 0%
     | Caption Alignment        |All images: Left
+
 
 15. Click outside of the row to see how your page looks so far:
 
@@ -299,19 +299,26 @@ In this step, you'll add an **Action** widget and a **Forum** widget.
 
     !![Add a widget to 2nd column](25a-add-widget.png)
 
-7. Under the **Content & Documents** section, select the **Forum** widget.
+8. Under the **Content & Documents** section, select the **Forum** widget.
 
     !![Add a forum widget](26-add-forum-widget.png)
 
-8. Under **Maximum Items to Display**, move the slider to number 2, change the title to `Ask Questions About the Hackathon`, and click **OK**. .
+9. Under **Maximum Items to Display**, move the slider to number **2**, change the title to `Ask Questions About the Hackathon`, and click **OK**.
 
     !![Design the forum widget](27-design-forum-widget.png)
 
-9.  To increase the spacing between this row and the first row, hover over the row to expose the row settings on the right, click **Edit row settings**, and under **Row Padding**, add the value `30`pixels in the **Top** value box and click **Save**.
+10. In the same row, directly under the **Action** widget that you added, click **Add Widget**.
 
-This is how the **Overview** page of your workspace looks:
+    !![Add another widget](27-add-another-widget.png)
 
-!![View Workspace](27c-view-workspace.png)    
+11. Scroll down the widget gallery and under the **Productivity** section, select the **Feed** widget.
+
+12. In the **Feed Widget** settings screen, change **Maximum Items to Display** to `2` and click **OK**.
+
+    !![Add feed display](27-add-feed-display.png)
+
+13. To increase the spacing between this row and the row above, hover over the row to expose the row settings on the right, click **Edit row settings**, and under **Row Padding**, add the value `30`pixels in the **Top** value box and click **Save**.
+
 
 [DONE]
 [ACCORDION-END]
@@ -336,7 +343,7 @@ This is how the **Overview** page of your workspace looks:
 
 [ACCORDION-BEGIN [Step 9: ](View your workspace at runtime and ask a question in the forum)]
 
-At the bottom right of the screen, you'll see that there aren't any forum activities yet. Let's add a question to the forum.
+Next to the **Forum** widget, you'll see that there aren't any forum activities yet. Let's add a question to the forum.
 
   !![View your workspace](27b-view-workspace.png)
 
@@ -371,6 +378,12 @@ At the bottom right of the screen, you'll see that there aren't any forum activi
 You can see that your question has been added to the **Forum** widget in your overview page:
 
 !![View question](36-view-questions.png)
+
+This is how your workspace looks:
+
+!![Final workspace](37-final-workspace.png)
+
+
 
 [VALIDATE_7]
 

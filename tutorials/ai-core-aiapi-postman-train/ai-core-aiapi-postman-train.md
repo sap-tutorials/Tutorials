@@ -3,7 +3,7 @@ title: Train Execution of ML Model (Postman)
 description: Train execution a ML model in SAP AI Core with help of Postman client.
 auto_validation: true
 time: 20
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
 primary_tag: topic>artificial-intelligence
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
@@ -122,7 +122,7 @@ Make the API call.
 
 ### Endpoint
 **POST**
-`{{apiurl}}/v2/lm/executions`
+`{{apiurl}}/v2/lm/configurations`
 
 ### HEADER
 
@@ -219,7 +219,7 @@ If the previous call to create training execution does not work try with followi
 **ENDPOINT**
 
 *POST*
-`{{apiurl}}/v2/lm/configurations`
+`{{apiurl}}/v2/lm/executions`
 
 **HEADER**
 
@@ -248,7 +248,11 @@ Let's poll the status of the training and wait until it goes into one of the sta
 
 > **COLLECTIONS** > *GET* Get execution
 
-`HEADER`
+### Endpoint
+**POST**
+`{{apiurl}}/v2/lm/executions`
+
+### HEADER
 
 | Key | Value |
 | --- | --- |
@@ -339,7 +343,9 @@ SAP AI Core, maintains a persistent data related to each execution *(model train
 
 [ACCORDION-BEGIN [Step 7: ](Retrive training metrics)]
 
-1. Using SAP BTP Cockpit.
+1. Using SAP AI Launchpad.
+
+    >**IMPORTANT** SAP AI Launchpad is a separate product of SAP. SAP AI Launchpad is not offered with subscription of SAP AI Core and vice versa. SAP AI Launchpad requires a separate subscription.
 
 	!![SAP BTP metrics](img/training/metrics.png)
 

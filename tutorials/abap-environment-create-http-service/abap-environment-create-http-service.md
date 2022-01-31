@@ -1,17 +1,22 @@
 ---
 
-title: Create an HTTP Service  
-description: Create an HTTP service in the ABAP environment that can be called from the browser.
+title: Create an HTTP Service in SAP BTP ABAP Environment
+description: Create an HTTP service in SAP BTP ABAP environment that can be called from the browser.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: topic>abap-development
+tags: [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, tutorial>license]
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
 
 ##Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
+- You have set up SAP Business Technology Platform (BTP), ABAP Environment, for example by using the relevant booster: [Using a Booster to Automate the Setup of the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cd7e7e6108c24b5384b7d218c74e80b9.html)
+- **Tutorial**: [Create Your First Console Application](abap-environment-trial-onboarding), for a licensed user, steps 1-2
+- You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), latest version
+
+
 
 ## Details
 ### You will learn  

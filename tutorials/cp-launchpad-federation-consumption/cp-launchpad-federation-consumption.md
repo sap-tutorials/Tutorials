@@ -3,8 +3,8 @@ title: Add Federated SAP S/4HANA Roles to Your Launchpad Site
 description: Create a content provider for your SAP S/4HANA system in the SAP Launchpad service provider manager and add the exposed roles to the My Content area and to the SAP Launchpad site, so that end users can access the federated apps and groups.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, products>sap-business-technology-platform, products>sap-s-4hana, products>sap-fiori, topic>abap-connectivity]
-primary_tag: products>sap-launchpad-service
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, software-product>sap-s-4hana, software-product>sap-fiori, topic>abap-connectivity]
+primary_tag: software-product>sap-launchpad-service
 ---
 
 ## Prerequisites
@@ -149,45 +149,41 @@ To make the apps that come with the two federated roles available in your site, 
 
 [ACCORDION-BEGIN [Step 5: ](Assign roles to your user)]
 
-Apps are only displayed to users with the corresponding roles assigned. You assign those roles to users in the SAP BTP cockpit.
+Apps are only displayed to users with the corresponding roles assigned. You assign those roles as role collections to users in the SAP BTP cockpit.
 
 1. Open the SAP BTP cockpit of your trial account.
 
-2. Navigate to **Security > Trust Configuration**.
+2. Navigate to **Security > Role Collections** to go to a list of role collections on your subaccount. When you added the federated content, one role collection for each federated role was automatically created.
 
-    ![Trust Configuration](19-trust-configuration.png)
+    ![Role Collections](19-role-collections.png)
 
-3. Click **Default Identity Provider** to access the role collection assignment for users coming from this identity provider.
 
-    ![Default idp](20-default-idp.png)
+3. Click the name of the first federated role collection  ``~sap_s4hana_SAP_BR_AP_ACCOUNTANT`` to open this role collection and assign your user to it.
 
-4. Enter the ``E-Mail Address`` with which you login to the SAP Launchpad.
+    ![Select role collection](20a-select-role-collection.png)
 
-5. Then click **Show Assignments** to view already assigned role collections for your user.
+4. Click **Edit** to switch to Editing mode.
 
-    ![Show role assignments](21-show-assigned-roles.png)
+    ![Edit role collection](21a-edit-role-collection.png)
 
-6. To assign the new roles, click **Assign Role Collection**.
+5. Enter the ``E-Mail Address`` with which you login to the SAP Launchpad to the **ID** field in the **Users** section.
 
-    ![Assign Role Collection](22-assign-role-collections.png)
+    ![Enter Email addresss](22a-enter-email-address.png)
 
-    When adding the federated content to your account, one role collection for each role was automatically created.
+6. Then click **Save**.
 
-    Now add the two role collections one by one,  ``~sap_s4hana_SAP_BR_AP_ACCOUNTANT`` and ``~sap_s4hana_SAP_BR_MASTER_SPECIALIST_FIN``.
+    ![Save](23a-save-role-collection.png)
 
-7. Select the first role from the drop-down list.
+7. To open the next role, click the drop-down icon next to the current role name and select role collection  ``~sap_s4hana_SAP_BR_MASTER_SPECIALIST_FIN``.
 
-8. Click **Assign Role Collection**.
+    ![Open Next Federated Role](24a-switch-role-collection.png)
 
-    ![Assign first role collection](23-assign-ap-accountant.png)
 
-9. Add the second role in the same way.
+    Then add your user to the second federated role collection in the same way and save the role collection.
 
-    ![Assign master data specialist](24-assign-master-data.png)
+    ![Assign user to second role collection](25a-second-role.png)
 
 Now you are done in SAP BTP cockpit.
-
-  ![Link text e.g., Destination screen](25-assigned-role-collections.png)
 
 [DONE]
 [ACCORDION-END]

@@ -3,7 +3,7 @@ title: Create Service Instance for Document Classification with Customer Account
 description: Create a service instance and the associated service key for Document Classification, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP).
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-classification, tutorial>license]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-classification, tutorial>license]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
@@ -21,7 +21,7 @@ author_profile: https://github.com/Juliana-Morais
 
 This tutorial is intended for productive SAP BTP accounts. Make sure that you have an enterprise global account on SAP BTP and fulfill the prerequisites of this tutorial. If you don't have a global account yet, refer to this [guide](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/82f9ff522f754e26ae89e0cd7ec7aa11.html#loioa71a081b39e343e097046bf487f57af3).
 
-Additionally, find details about the pricing of the Document Classification service [here](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US/aaab8a7b64b745b0bdba9cfaa0fd264f.html) or use the [SAP BTP estimator](https://www.sap.com/products/cloud-platform/pricing/estimator-tool.html).
+Additionally, find details about the pricing of the Document Classification service [here](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US/aaab8a7b64b745b0bdba9cfaa0fd264f.html) or use the [SAP BTP estimator](https://discovery-center.cloud.sap/estimator/).
 
 The steps outlined in this tutorial follow the [Initial Setup guide](https://help.sap.com/viewer/ca60cd2ed44f4261a3ae500234c46f37/SHIP/en-US/88bdee94c7c94bc99de8484f5c2db04a.html) of the Document Classification service.
 

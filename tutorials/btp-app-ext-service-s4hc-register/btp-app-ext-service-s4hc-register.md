@@ -3,25 +3,26 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Register Your SAP S/4HANA Cloud System
 description: This tutorial shows you how to register your SAP S/4HANA Cloud system in your SAP BTP cockpit.
+keywords: cap
 auto_validation: true
 time: 15
-tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-api-management, products>sap-hana-cloud, products>sap-s-4hana-cloud]
+tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management, software-product>sap-hana-cloud, software-product>sap-s-4hana-cloud]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 ## Prerequisites
  - [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption)
  - [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui)
-- On SAP BTP side:
+ - On SAP BTP side:
     - You have an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) global account in SAP BTP.
     - You must be an administrator of the SAP BTP global account where you want to register your SAP S/4HANA Cloud system.
-    - You need to [Setup your SAP BTP account](btp-app-prepare-btp) if you start with the result from the provided branch in [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption).
+    - You need to [Prepare for SAP BTP Development](btp-app-prepare-btp) if you start with the result from the provided branch in [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption).
     - Your SAP BTP subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp).
-    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment you need to perform step 16-18 from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service). 
-- On SAP S/4HANA Cloud side:
-    - You have a dedicated SAP S/4HANA Cloud tenant. 
+    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment you need to perform step 16-18 from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service).
+ - On SAP S/4HANA Cloud side:
+    - You have a dedicated SAP S/4HANA Cloud tenant.
     - You must be an administrator of the SAP S/4HANA Cloud system.
     - You need to connect this system to your SAP BTP global account, if you'd like to build extension applications for your SAP S/4HANA Cloud system.
- 
+
 
 
 ## Details
@@ -33,7 +34,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Acquire an SAP BTP integration token for registration)]
-1. In your SAP BTP cockpit, open your enterprise global account and choose **Systems**.
+1. In your SAP BTP cockpit, navigate to **System Landscape** &rarr; **Systems**.
 
 2. In the **Systems** panel, choose **Register System**.
 
@@ -45,11 +46,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
       ![s4h1](s4h1.png)
 
-6. Copy the generated token.
+6. Copy the generated token and keep this page open.
 
       !![s4h2](s4h2.png)
-
-7. Keep this page open.
 
 [DONE]
 [ACCORDION-END]
@@ -57,7 +56,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-BEGIN [Step 2: ](Add integration token to SAP S/4HANA Cloud system)]
 1. Log on to your SAP S/4HANA Cloud tenant.
 
-2. Navigate from **Home** **&rarr;** **Communication Management** tab and choose the tile **Maintain Extensions on SAP BTP**.
+2. Navigate from **Home** &rarr; **Communication Management** tab and choose the tile **Maintain Extensions on SAP BTP**.
 
       !![s4h3](s4h3.png)
 
@@ -94,7 +93,7 @@ After you have connected the SAP S/4HANA Cloud system to SAP BTP (with status **
 
 1. Enter your **Global Account**.
 
-2. Choose **Entitlements** **&rarr;** **Entity Assignments**.
+2. Choose **Entitlements** &rarr; **Entity Assignments**.
 
       !![Entity Assignments](entity_assignments.png)
 
@@ -108,11 +107,11 @@ After you have connected the SAP S/4HANA Cloud system to SAP BTP (with status **
 
       !![s4h8](s4h8.png)
 
-5. Choose **Configure Entitlements** and then **Add Service Plans**.
+5. Choose **Configure Entitlements** &rarr; **Add Service Plans**.
 
       !![s4h9](s4h9.png)
 
-6. In the **Subaccount `<your-subaccount-name>` Entitlements** dialog box, select the service **SAP S/4HANA Cloud Extensibility**. 
+6. In the **Subaccount `<your-subaccount-name>` Entitlements** dialog box, select the service **SAP S/4HANA Cloud Extensibility**.
 
 7. In the **Service Details: SAP S/4HANA Cloud Extensibility** screen area, select your newly registered system name from the dropdown help to list the **Available Plans**.
 
@@ -127,7 +126,7 @@ After you have connected the SAP S/4HANA Cloud system to SAP BTP (with status **
       !![s4h10](s4h10.png)
 
 10. Choose **Save**.
-      
+
       !![s4h11](s4h11.png)
 
 

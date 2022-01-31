@@ -27,7 +27,7 @@ primary_tag: products>sap-translation-hub
 
     !![Trial global account](01_trial_account.png)
 
-    >Please make sure that you are using the region **Europe (Frankfurt) - AWS**.
+    >Please make sure that you are using the region **US East (VA) cf-us10 - AWS**.
 
 3. From your global account page, choose the `trial` tile to access your sub account.
 

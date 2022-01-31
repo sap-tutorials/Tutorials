@@ -3,7 +3,7 @@ auto_validation: true
 title: Create Behavior and Service in SAP BTP, ABAP Environment
 description: Create behavior and services in SAP BTP, ABAP environment.
 primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform ]
 time: 20
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -47,7 +47,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 4. Create your behavior definition with following coding:
 
     ```ABAP
-    implementation unmanaged;
+    unmanaged implementation in class Z_I_ROOM_BEHAVE_XXX unique;
     define behavior for Z_I_ROOM_XXX
       alias room
       lock master
@@ -68,9 +68,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 
 [ACCORDION-BEGIN [Step 2: ](Create behavior implementation)]
-1. Right-click on **`Z_I_ROOM_XXX`** (behavior definition) and select **New Behavior Implementation**.
+1. In your behavior definition `Z_I_ROOM_XXX` set the cursor before the implementation class `Z_I_ROOM_BEHAVE_XXX` and click **`CTRL` + 1**. Double-click on **Create behavior implementation class `Z_I_ROOM_BEHAVE_XXX`** to create your implementation class.
 
-      ![Create behavior implementation](implementation.png)
+    ![Create behavior implementation](class.png)
 
 2.  Create your **behavior implementation**:
        - Name: **`Z_I_ROOM_BEHAVE_XXX`**
@@ -79,7 +79,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
        Click **Next>**.
 
-       ![Create behavior implementation](implementation2.png)
+       ![Create behavior implementation](class2.png)
 
 3. Click **Finish**.
 
@@ -241,7 +241,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create service definition)]
-  1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**.
+  1. Right-click on data definition **`Z_I_ROOM_XXX`** and select **New Service Definition**.
 
       ![Create service definition](service.png)
 

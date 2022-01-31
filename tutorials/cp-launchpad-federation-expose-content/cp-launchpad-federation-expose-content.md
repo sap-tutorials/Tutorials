@@ -3,8 +3,8 @@ title: Expose Federation Content from SAP S/4HANA
 description: Select and expose roles in SAP S/4HANA to make them available with their assigned apps, groups, catalogs, and spaces in the SAP Launchpad site.
 auto_validation: true
 time: 10
-tags: [ tutorial>intermediate, products>sap-business-technology-platform, products>sap-s-4hana, products>sap-fiori]
-primary_tag: products>sap-launchpad-service
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, software-product>sap-s-4hana, software-product>sap-fiori]
+primary_tag: software-product>sap-launchpad-service
 ---
 
 ## Prerequisites

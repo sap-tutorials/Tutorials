@@ -3,8 +3,8 @@ title: Export and Import Data and Schema with SAP HANA Database Explorer
 description: Use wizards or SQL statements to export and import data and schema using CSV, Apache Parquet, or binary formats.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -53,7 +53,7 @@ Methods to import into tables
 | [Import data wizard](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA on-premise    | SAP HANA file system         | CSV             | Target table can be created |
 | [Import from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA Cloud, HANA database | S3, Azure, GCS, Alibaba OSS | CSV, Parquet    | |
 | [Import from statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA on-premise  | SAP HANA file system    | CSV |  |
-| [Insert into table name select from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/2020_04_QRC/en-US/20f7f70975191014a76da70c9181720e.html) | All  | local or remote tables  | select statement |  |
+| [Insert into table name select from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html) | All  | local or remote tables  | select statement |  |
 
 The following steps will attempt to demonstrate an export and import of data from the maintenance table using the download option from the SQL Console and the import data wizard.
 
@@ -65,11 +65,11 @@ The following steps will attempt to demonstrate an export and import of data fro
 
     Left-click on the download toolbar item.
 
-    ![Dwonaload](download.png)
+    ![Download](download.png)
 
     Choose **Download**.
 
-    ![Dwonaload options](downloadOptions.png)
+    !![Download options](downloadOptions1.png)
 
     >Note, there is a setting that controls the number of results displayed which may need to be adjusted for tables with larger results.
 
@@ -109,6 +109,8 @@ The following steps will attempt to demonstrate an export and import of data fro
 
 [ACCORDION-BEGIN [Step 2: ](Use cloud storage services for export and import (optional))]
 
+The following steps are for illustrative purposes only and are not meant to be followed. Complete steps for working with cloud storage services are provided in steps 3 and 5.
+
 1. With SAP HANA Cloud, an export data wizard is available.  
 
     ![Export Data Wizard](exportDataWizard.png)
@@ -125,7 +127,7 @@ The following steps will attempt to demonstrate an export and import of data fro
 
 2. The import data wizard provides a corresponding option to import from cloud storage providers.
 
-    ![Export Data Wizard](importDataWizard3.png)
+    ![Export Data Wizard](importDataWizard3-1.png)
 
     The wizard makes use of the import from statement.  An example is shown below:
 
@@ -200,7 +202,7 @@ The following steps walk through the process of exporting to and importing data 
     ```SQL[27]
     CREATE PSE HTTPS;
     CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----
-    MIIFVzCCAz+gAwIBAgINAgPlk29xsBNJiGuiFzANBgkqhkiG9w0BAQwFADBHMQsw
+    MIIFVzCCAz+gAwIBAgINAgPlk28xsBNJiGuiFzANBgkqhkiG9w0BAQwFADBHMQsw
     CQYDVQQGEwJVUzEiMCAGA1UEChMZR29vZ2xlIFRydXN0IFNlcnZpY2VzIExMQzEU
     MBIGA1UEAxMLR1RTIFJvb3QgUjEwHhcNMTYwNjIyMDAwMDAwWhcNMzYwNjIyMDAw
     MDAwWjBHMQswCQYDVQQGEwJVUzEiMCAGA1UEChMZR29vZ2xlIFRydXN0IFNlcnZp
@@ -222,7 +224,14 @@ The following steps walk through the process of exporting to and importing data 
     QkEzCzc9zolwFcq1JKjPa7XSQCGYzyI0zzvFIoTgxQ6KfF2I5DUkzps+GlQebtuy
     h6f88/qBVRRiClmpIgUxPoLW7ttXNLwzldMXG+gnoot7TiYaelpkttGsN/H9oPM4
     7HLwEXWdyzRSjeZ2axfG34arJ45JK3VmgRAhpuo+9K4l/3wV3s6MJT/KYnAK9y8J
-    ZgfIPxz88NtFMN9iiMG1D53Dn0reWVlHxYciNuaCp+0Ku' COMMENT 'GOOGLE_CERT';
+    ZgfIPxz88NtFMN9iiMG1D53Dn0reWVlHxYciNuaCp+0KueIHoI17eko8cdLiA6Ef
+    MgfdG+RCzgwARWGAtQsgWSl4vflVy2PFPEz0tv/bal8xa5meLMFrUKTX5hgUvYU/
+    Z6tGn6D/Qqc6f1zLXbBwHSs09dR2CQzreExZBfMzQsNhFRAbd03OIozUhfJFfbdT
+    6u9AWpQKXCBfTkBdYiJ23//OYb2MI3jSNwLgjt7RETeJ9r/tSQdirpLsQBqvFAnZ
+    0E6yove+7u7Y/9waLd64NnHi/Hm3lCXRSHNboTXns5lndcEZOitHTtNCjv0xyBZm
+    2tIMPNuzjsmhDYAPexZ3FL//2wmUspO8IFgV6dtxQ/PeEMMA3KgqlbbC1j+Qa3bb
+    bP6MvPJwNQzcmRk13NfIRmPVNnGuV/u3gm3c
+    -----END CERTIFICATE-----' COMMENT 'GOOGLE_CERT';
     SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'GOOGLE_CERT';
     ALTER PSE HTTPS ADD CERTIFICATE <SELECTED_CERTIFICATE_ID>;
     SET PSE HTTPS PURPOSE REMOTE SOURCE;
@@ -230,7 +239,7 @@ The following steps walk through the process of exporting to and importing data 
 
     The above commands create a personal security environment (PSE), create a certificate, add the certificate to the PSE, and set the purpose to remote source.
 
-    >The GTS Root R1 certificate used above was downloaded from [Google Trust Services' Repository](https://pki.goog/repository/) under Download CA certificates > Root CAs >.  It was downloaded in in the .PEM format.
+    >The GTS Root R1 certificate used above was downloaded from [Google Trust Services' Repository](https://pki.goog/repository/) under Download CA certificates > Root CAs >.  It was downloaded in the .PEM format.
 
     Additional details can be found at [Certificate Management in SAP HANA Cloud](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/latest/en-US/1e6042c4402545f7a0574f7bc91fab25.html).
 

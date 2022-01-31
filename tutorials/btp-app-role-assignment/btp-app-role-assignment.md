@@ -3,9 +3,10 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Assign a Role Collection to a User
 description: This tutorial shows you how to assign roles to users.
+keywords: cap
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -27,7 +28,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ## Details
 ### You will learn
  - How to assign roles to users
- 
+
 
 ---
 
@@ -58,7 +59,7 @@ Your user now appears in the list of the role collection's users.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Test it)]
-Go to the application and choose the tile `Risks`. You should be able to create entries in the `Risks` application. 
+Go to the application and choose the tile `Risks`. You should be able to create entries in the `Risks` application.
 
 If not, probably you have signed in before adding the role collection to your user. Sign out and sign in again to get the added roles in your login ticket.
 

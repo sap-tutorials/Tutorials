@@ -1,20 +1,20 @@
 ---
-title: Connect GitHub and Docker to SAP AI Core (Client SDK)
-description: Learn to setup GitHub and Docker registry, and sync them with SAP AI Core through SAP AI API Client SDK.
+title: Connect GitHub and Docker to SAP AI Core (AI API client SDK)
+description: Learn to setup GitHub and Docker registry, and connect them with SAP AI Core through AI API client SDK.
 auto_validation: true
 time: 15
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, products>sap-business-technology-platform ]
-primary_tag: topic>artificial-intelligence
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
+primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
----
 
+---
 
 ## Details
 ### You will learn
 - How to create GitHub repository and upload files to it
 - How to create Docker repository
-- How to connect GitHub and Docker using SAP AI API Client SDK
+- How to connect GitHub and Docker using AI API client SDK
 ---
 
 
@@ -98,19 +98,23 @@ GitHub Desktop will only show un-synced changes.
 
 [ACCORDION-BEGIN [Step 4: ](Connect GitHub repository to SAP AI Core)]
 
-Create file `git_setup.json` with the following contents, Use your own GitHub URL and your credentials! *(highlighted lines)*.
+Generate GitHub Personal Access Token (PAT), [see how to](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+
+Create file `git_setup.json` with the following contents. Replace content with your GitHub credentials.
+
+> **IMPORTANT** DO NOT use your GitHub account's password in below code pieces, instead use GitHub Personal Access Token.
 
 ```JSON[4, 5, 6, 10]
 {
 		"repo": {
 				"name": "aicore-test",
-				"url": "https://github.com/john/aicore-test",
-				"username": "$username",
-				"password": "$password"
+				"url": "https://github.com/<WRITE_YOUR_GITHUB_USERNAME>/aicore-test",
+				"username": "WRITE_YOUR_GITHUB_USERNAME",
+				"password": "WRITE_YOUR_GITHUB_PAT"
 		},
 		"app": {
 				"applicationName": "aicore-test-app",
-				"repositoryUrl": "https://github.com/john/aicore-test",
+				"repositoryUrl": "https://github.com/<WRITE_YOUR_GITHUB_USERNAME>/aicore-test",
 				"revision": "HEAD",
 				"path": "workflows"
 		}
@@ -122,8 +126,6 @@ Store it inside the files folder: `files/git_setup.json`.
 !![git setup](img/github/git-setup.png)
 
 Execute the following python code on your Jupyter notebook cell.
-
-> **IMPORTANT:** DO NOT Execute the following code, if your SAP AI Core Account is already connected to a GitHub Account. Contact the support if you want to connect to a different account.
 
 ```PYTHON
 # Read git_setup.json
@@ -162,6 +164,7 @@ response = ai_api_client.rest_client.post(
 ```
 
 Example Output
+
 ```PYTHON
 {
 	 'count': 1
@@ -288,6 +291,8 @@ docker --version
 Docker Registry Secret is SAP AI Core entity that manages credentials to connect to your Docker repository.
 
 Create a file `docker_secret.json`, with following contents. Put your Docker credentials *(highlighted parts)*.
+
+> **RECOMMENDATION** Use your docker access token instead of password in below code pieces. You can generate one from your profile settings in your docker account.
 
 ```JSON[4]
 {
