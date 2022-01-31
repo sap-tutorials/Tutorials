@@ -42,7 +42,7 @@ In a separate browser window, open the application you will automate by choosing
 
 3. Choose **New Project**.
 
-4. In the **New Project** popup, enter the following:
+4. In the **New Project** popup, enter the following information:
 
     |  Field Name     | Value
     |  :------------- | :-------------

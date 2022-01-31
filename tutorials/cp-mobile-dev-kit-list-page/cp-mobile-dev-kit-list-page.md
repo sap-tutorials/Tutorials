@@ -226,6 +226,7 @@ Deploy the updated application to your MDK client.
 1. Either click the highlighted button or refresh the web page to load the changes.
 
     !![MDK](img-6.5.png)
+    
 
     >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 

@@ -12,6 +12,11 @@ author_profile: https://github.com/julieplummer20
 
 ##Prerequisites
 - **IMPORTANT**: This tutorial cannot be completed on a trial account
+- You have set up SAP Business Technology Platform (BTP), ABAP Environment, for example by using the relevant booster: [Using a Booster to Automate the Setup of the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cd7e7e6108c24b5384b7d218c74e80b9.html)
+- **Tutorial**: [Create Your First Console Application](abap-environment-trial-onboarding), for a licensed user, steps 1-2
+- You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), latest version
+
+
 
 ## Details
 ### You will learn  
