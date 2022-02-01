@@ -64,7 +64,7 @@ Databases can also be added directly to the SAP HANA database explorer.  To conn
 
     >Note that an SAP HANA, express edition or on-premise database can have two types of databases; system and tenant.  This is known as multitenant.  System databases are used to manage one or more tenant databases and are only applicable to on-premise systems.  For further details, see [Server Architecture of Tenant Databases](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6/latest/en-US/f9aba40d6c4c4ae48cce461db4d42d88.html).
 
-3.  Provide the host, port, user name, password, and name to show in display.
+3.  Provide the host, port, user name, password, and name to show in display. Below are instructions on how to obtain the host name and port number.
 
     ![encrypted connection](encrypted.png)
 

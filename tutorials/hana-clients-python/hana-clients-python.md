@@ -17,8 +17,6 @@ primary_tag: software-product>sap-hana-cloud
 
 In the 2020 Stack Overflow's annual developer survey, Python ranked 4th in the [Most Popular Technologies](https://insights.stackoverflow.com/survey/2020#most-popular-technologies) section.  For further information on Python, see [Introduction to Python 3](https://realpython.com/python-introduction/).
 
-The [SAP HANA client for Python](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f3b8fabf34324302b123297cdbe710f0.html) supports Python 3.4+ and  Python 2.7.  For further details see SAP note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307).  
-
 The following steps create a simple Python app that can connect to and query an SAP HANA database.  
 
 ---
@@ -33,7 +31,11 @@ Enter the commands below.
 python --version
 python3 --version
 ```
-If Python is installed, the command will return a value such as Python 3.9.0.  Use whichever command returns a Python 3.4 or greater version number.   
+
+If Python is installed, the command will return a value such as Python 3.9.0.  
+
+Details on supported versions of Python for the [SAP HANA client for Python](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f3b8fabf34324302b123297cdbe710f0.html) can be found at SAP Note [3136015 - SAP HANA Client Supported Platforms for 2.11](https://launchpad.support.sap.com/#/notes/3136015).
+
 
 If Python is not installed, it can be downloaded from [Python downloads](https://www.python.org/downloads/).
 
@@ -80,8 +82,11 @@ pip install hdbcli
 >
 > ```Shell
 > cd C:\SAP\hdbclient
-> pip install hdbcli-2.10.9.zip
+> pip install hdbcli-2.11.14.zip
 > ```
+
+> If the install still fails, check [Supported Platforms](https://launchpad.support.sap.com/#/notes/3136015) to ensure that a supported version of Python installed.
+
 
 > ---
 
