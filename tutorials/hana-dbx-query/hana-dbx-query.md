@@ -49,7 +49,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Messages Tab](MessagesTab.png)
 
-    > Note, for SAP HANA on-premise, if the peak memory consumed metric is not shown, follow the instructions at the end of the [expensive statements trace](hana-dbx-troubleshooting#bb71f9fe-ca96-439e-9881-ad6e411dd40f) step.
+    > Note, for SAP HANA on-premise, if the peak memory consumed metric is not shown, follow the instructions at the end of the [expensive statements trace](hana-dbx-troubleshooting) step.
 
 7. The **History** tab displays the last 50 successfully executed queries.  A previously executed query can be searched for and recalled.
 

@@ -17,7 +17,7 @@ primary_tag: products>sap-hana-cloud
   - You will use the Cloud MTA Build tool to package your project for deployment
   - You will deploy your application to SAP BTP, Cloud Foundry runtime
 
-Note:  This is an optional tutorial as part of this mission on SAP HANA Cloud plus Cloud Application Programming Model for those that want to fully deploy like a production application. There are limited resources allocated in an SAP BTP trial account and you should consider deleting this content after deploying to avoid using up all of these resources.  
+Note:  This is an optional tutorial as part of this mission on SAP HANA Cloud plus Cloud Application Programming Model for those that want to fully deploy like a production application. There are limited resources allocated in an SAP BTP trial or free tier account and you should consider deleting this content after deploying to avoid using up all of these resources.  
 
 ---
 
@@ -25,23 +25,11 @@ Note:  This is an optional tutorial as part of this mission on SAP HANA Cloud pl
 
 1. In this tutorial mission we've combined several different development types (HANA, CAP, Fiori) and wizards into a single project. This has required several workarounds to the project structure to make it all work together.  Furthermore we will need a few more adjustments before we can deploy the complete application.
 
-2. We will begin with the `xs-security.json` file. We need to make two adjustments to this file. First of all we've already deployed the UAA service instance into our target space in trial.  Therefore if you package the complete application and deploy it; when trying to deploy the UAA service instance again you will receive an error that the Application with the given name already exists.
-
-    !![Deploy error if you don't change the application name](deploy_error_application_name.png)
-
-3. Only because we are going to be deploying the application into the same space where we did our initial development and testing we need to return the `xs-security.json` file in the root of the project and change the `xsappname` to a new, unique value. This will mean that later when you want to test the deployed application you will need to repeat the role collection setup and assignment steps from the [previous tutorial](hana-cloud-cap-add-authentication).  We will remind you of that later in this tutorial when you reach that point.
-
-    !![Change xsappname in xs-security.json](xs_security_adjust1.png)
-
-4. While we are in the `xs-security.json file`, we want to make one other adjustment.  Remember that we added the `oauth2-configuration` section to allow authentication redirection from the SAP Business Application Studio testing. We want to remove this configuration so that we will instead get the standard UAA `oAuth` configuration.
-
-    !![Remove oauth2-configuration](xs_security_adjust2.png)
-
-5. The `xs-security.json` file should now look like this:
+2. We will begin with the `xs-security.json` file. We need to make one adjustments to this file. Remember that we added the `oauth2-configuration` section to allow authentication redirection from the SAP Business Application Studio testing. We want to remove this configuration so that we will instead get the standard UAA `oAuth` configuration. The `xs-security.json` file should now look like this:
 
     ```JSON
     {
-      "xsappname": "myhanaappfinal",
+      "xsappname": "myhanaapp",
       "tenant-mode": "dedicated",
       "description": "Security profile of called application",
       "scopes": [
@@ -132,9 +120,7 @@ Note:  This is an optional tutorial as part of this mission on SAP HANA Cloud pl
 
     !![SAP BTP Cockpit application detail](cockpit_app_url.png)
 
-7. Before you test your deployed application, however, please remember that you will need to repeat the UAA role collection setup and assignment as we have a new application name. Please refer back to this tutorial for the necessary steps: [adding User Authentication to your application](hana-cloud-cap-add-authentication)
-
-8. After restoring your role collection assignment, you are ready to test your deployed application. Remember to test via the Application Router as only that application will have the redirect to the Login Screen to generate the security token. But other than the different URLs everything should work the same as when we tested with authorization from the SAP Business Application Studio.
+7. Remember to test via the Application Router as only that application will have the redirect to the Login Screen to generate the security token. But other than the different URLs everything should work the same as when we tested with authorization from the SAP Business Application Studio.  Also because the database container was deployed to a new HDI container instance; you will need to return to the Database Explorer, connect to this new instance and load the data from CSV files.  
 
 [DONE]
 [ACCORDION-END]

@@ -3,7 +3,7 @@ title: Display Data from the Northwind Service
 description: Learn how to add new views, to display more data, and how to navigate between them.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-launchpad-service, products>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
+tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-launchpad-service, software-product>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
 primary_tag: programming-tool>odata
 author_name: Nico Geburek
 author_profile: https://github.com/nicogeburek
@@ -75,7 +75,7 @@ As you can see in the log, there are two new files and one modified file. As the
 
     !![mainview](mainview.png)
 
-2. The newly generated view `webapp/view/Mainview.view.xml` defines one page of the whole application. **Replace** the current content of the view, the `<App>` tag, with a page that contains one list that uses an [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html).
+2. The newly generated view `webapp/view/Products.view.xml` defines one page of the whole application. **Replace** the current content of the view, the `<App>` tag, with a page that contains one list that uses an [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html).
 
     ```XML [4-10]
     <mvc:View controllerName="tutorial.products.controller.Products" displayBlock="true"

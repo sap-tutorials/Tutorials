@@ -423,7 +423,7 @@ Now, refresh the URL to check if record has been updated in the backend. As Sync
 
     But here result is pointing to old First Name (`Isabelle`).
 
-    ![MDK](img_8.9.png)
+    ![MDK](img_8.9.png) 
 
     Since this is an Offline application, new entry is added to the request queue of the local store which needs to be sent or uploaded to the backend explicitly.  
 

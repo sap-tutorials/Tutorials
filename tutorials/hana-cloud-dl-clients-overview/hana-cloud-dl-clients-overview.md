@@ -3,12 +3,13 @@ title: SAP HANA Cloud, Data Lake IQ Client Interfaces Overview
 description: Learn about the data lake IQ, how to create a trial instance, how to install the data lake IQ client, and how to connect to the data lake IQ using the SAP HANA cockpit, SAP HANA database explorer, and Interactive SQL Client.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>java, products>sap-hana-cloud, products>sap-iq]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>sql, software-product>sap-iq]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
 ## Prerequisites
  - A Microsoft Windows or Linux computer.
+ - An SAP HANA Cloud trial or free tier.
 
 ## Details
 ### You will learn
@@ -44,6 +45,9 @@ For additional details see [How & When to Use the New SAP HANA Cloud Database In
 
 
 [ACCORDION-BEGIN [Step 2: ](Create a data lake instance and connect to it)]
+
+>To complete the tutorials in this group, an SAP HANA Cloud, data lake instance is needed. There are two different free options including SAP HANA Cloud free tier and free trial.  For instructions on registering, see [Set Up Your SAP HANA Cloud, SAP HANA Database (free tier or trial) and Understand the Basics](group.hana-cloud-get-started-1-trial).
+
 The following steps provide instructions on how to create a data lake instance in the SAP Business Technology Platform (BTP) trial.  Additional content on this topic is available at [Quick Start Tutorial for Data Lake](https://help.sap.com/viewer/a89a80f984f21015b2b2c84d2498d36d/latest/en-US/b62bc948ad684e3a94b9e14b68318f2a.html).
 
 There are multiple ways to create a data lake:  
@@ -92,6 +96,8 @@ There are multiple ways to create a data lake:
 5. After a while, press the **Refresh** button and the status will change from CREATING to RUNNING.
 
     ![data lake running](data-lake-running.png)
+
+    >Note that the SAP HANA Cloud, HANA data lake trial or free tier instances are shut down overnight and will need to be restarted before working with them the next day.
 
 [DONE]
 [ACCORDION-END]
@@ -265,9 +271,9 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Install the data lake IQ client)]
-1.  In [SAP Software Downloads](https://support.sap.com/en/my-support/software-downloads.html), under **Support Packages & Patches**, search for **HANA DATALAKE CLIENT 1.0**.  Select the platform (Windows or Linux) and download the archive.
+1.  In [SAP Software Downloads](https://support.sap.com/en/my-support/software-downloads.html), under **Support Packages & Patches**, select **H | HANA CLOUD CLIENTS | HANA CLOUD CLIENTS 1.0 | HANA DATALAKE CLIENT 1.0**. Select the platform (Windows or Linux) and download the latest version of the archive.
 
-    ![data lake software downloads](dl-Software-Downloads.png)
+    ![data lake software downloads](dl-Software-Downloads-1.png)
 
     > Note access to the client install is currently limited to S-user IDs
 
@@ -277,10 +283,12 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
         ![data lake client](data-lake-client-install.png)
 
+        >In the Windows command line, if `setup.exe` fails with an 'Error Loading jvm.dll', see [SAP Support 3001812](https://launchpad.support.sap.com/#/notes/3001812) to resolve this issue.
+        
     * On Linux, extract the archive.
 
         ```Shell (Linux)
-        tar -zxvf HANADLCLIENT10000_0*.TGZ
+        tar -zxvf HANADLCLIENT10004_0*.TGZ
         ```
 
         Run `setup.bin` which will start either the GUI installer or text based installer.
@@ -339,6 +347,8 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
     echo $IQDIR17
     ```
 
+    > In the case that the Data Lake Client needs to be uninstalled, run the `uninstall.exe` file located in the directory `/path-to-data-lake-install/sybuninstall/IQClientSuite/`.
+
 [DONE]
 [ACCORDION-END]
 
@@ -348,20 +358,24 @@ The data lake IQ client install includes [Interactive SQL Client (DBISQL)](https
 
 1. Start the GUI version of DBISQL from the Microsoft Windows Start menu, by browsing to it under SAP > Interactive SQL and double clicking on it, or by entering `dbisql` in a terminal.
 
-    ![start dbisql](dbisql-start.png)
+    ![start dbisql](dbisql-start-1.png)
+
+    > If `dbisql` fails to run on Microsoft Windows, uninstall the client and reinstall it with administrator privilege (i.e. Run the installer in Step 5 as an administrator).
 
 2. Specify the connection type.
 
-    ![Connection type](dbisql-connection-type.png)
+    ![Connection type](dbisql-connection-type-1.png)
 
-3. Provide the connection details.  
+    > Note that the Connect window may appear enlarged on the screen. This can be adjusted by lowering the Scale and layout value in the device display settings.
+
+3. Provide the connection details. See below on how to obtain the instance ID and landscape values.
 
     ![instance ID and landscape](connect-to-dl-iq.png)
 
-    The BTP cockpit or SAP HANA Cloud Central can be used to get the instance ID and landscape values, as they are part of the SQL endpoint.
+    >The BTP cockpit or SAP HANA Cloud Central can be used to get the instance ID and landscape values, as they are part of the SQL endpoint.
 
-    ![copy sql endpoint](dbisql-copy-endpoint.png)
-
+    >![copy sql endpoint](dbisql-copy-endpoint.png)
+    >
     > A failure to connect could be caused by the allowed connections list, which is editable in SAP HANA Cloud Central.  
 
     ![DBISQL Connected](dbisql-connected.png)
@@ -369,16 +383,28 @@ The data lake IQ client install includes [Interactive SQL Client (DBISQL)](https
     >DBISQL can also be started without a GUI.
     >
     >```Shell (Windows)
-    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
+    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
     >```
     >
     > Note that in a Bash shell, strings in double quotes versus single quotes are treated [differently](https://stackoverflow.com/questions/6697753/difference-between-single-and-double-quotes-in-bash).
     >
     >```Shell (Linux)
-    dbisql -hdl -c 'uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)' -nogui
+    dbisql -hdl -c 'uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)' -nogui
     >```
 
     >![DBISQL connected nogui](dbisql-nogui.png)
+
+    >If `dbisql` fails to run with the `-nogui` flag, try running the following command to not register the HANA plugin.
+
+    >```Shell
+    dbisql -XUnRegister hana
+    >```
+
+    >The above command can be reverted with the below command.
+    >```Shell
+    dbisql -XRegisterPlugin hana
+    >```
+
 
 [DONE]
 [ACCORDION-END]
@@ -513,8 +539,8 @@ The data lake IQ client install includes [Interactive SQL Client (DBISQL)](https
 3. DBISQL can also execute SQL from the command line or from a provided file. A few examples are shown below.
 
     ```Shell
-    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" "select * from HOTEL.CUSTOMER;"
-    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" sql.sql
+    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" "select * from HOTEL.CUSTOMER;"
+    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" sql.sql
     ```
 
     ![DBISQL in batch mode](dbisql-batch.png)

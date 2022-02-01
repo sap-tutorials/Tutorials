@@ -440,7 +440,6 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_10.8.png)
 
-
 4. Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.  
 
     ![MDK](img_10.9.png)
