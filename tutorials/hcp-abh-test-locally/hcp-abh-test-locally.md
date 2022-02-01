@@ -18,7 +18,7 @@ tags: [  tutorial>beginner, products>sap-business-technology-platform, topic>sap
 ### You will learn
 - How to use command line tools like curl and jq with REST / OData APIs locally.
 
-You have already discovered the SAP API Business Hub and accomplished testing an API on the website. In this tutorial, you will learn how to use command-line tools like curl and jq to test REST/ODATA APIs locally on your machine.
+You have already discovered the SAP API Business Hub and accomplished testing an API on the website. In this tutorial, you will learn how to use command-line tools like curl and jq to test REST/OData APIs locally on your machine.
 
 ---
 
@@ -93,7 +93,7 @@ curl --request GET \
 
 Notice how the parameters are [encoded](https://en.wikipedia.org/wiki/Percent-encoding) in the query string.
 
-**Paste the entire command into your terminal again. This time the output is vastly reduced, as (apart from the metadata) there are only two properties returned for each of the campaigns.
+Paste the entire command into your terminal again. This time the output is vastly reduced, as (apart from the metadata) there are only two properties returned for each of the campaigns.
 
 ![text editor with parameter added](9.png)
 
