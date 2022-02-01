@@ -25,8 +25,7 @@ In your browser, open [SAP API Business Hub](https://api.sap.com/).
 
 !![SAP API Business Hub page](1.png)
 
-You can explore products, business processes, as well as different categories of assets, along with partner and featured content.
-Choose Explore for quick access to the various sections of the SAP API Business Hub.
+You can explore products, business processes, as well as different categories of assets, along with partner and featured content. Choose Explore for quick access to the various sections of the SAP API Business Hub.
 
 [DONE]
 [ACCORDION-END]
@@ -45,16 +44,15 @@ Choose APIs from the different categories available.
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : 3](Search for an API)]
 
-Different APIs, policy templates, and API packages are available under the API category. An API package contains one or more APIs. You can browse through different types of APIs such as REST, ODATA, and SOAP APIs.
+Different APIs, policy templates, and API packages are available under the API category. An API package contains one or more APIs. You can browse through different types of APIs such as REST, OData, and SOAP APIs.
 
 !![Searching for types of APIs APIs](3.png)
 
-You can explore APIs either by selecting a type of an API or by selecting an API package.
-Navigate to the Packages tab. You can choose any package for testing.
+You can explore APIs either by selecting a type of an API or by selecting an API package. Navigate to the Packages tab. You can choose any package for testing.
 
 !![API Hub Packages search](4.png)
 
-For the purpose of this tutorial, we are going to choose the `SAP Cloud for Customer` package.
+For the purpose of this tutorial, we are going to choose the `SAP Cloud for Customer` package (find it using the search facility).
 
 !![SAP Cloud for Customer Package Search](4a.png)
 
@@ -65,8 +63,7 @@ For the purpose of this tutorial, we are going to choose the `SAP Cloud for Cust
 
 [ACCORDION-BEGIN [Step : ](Explore the API)]
 
-On choosing the **SAP Cloud for Customer** package, you can view the available APIs in the package.
-Select the Campaign API to explore it in detail.
+On choosing the **SAP Cloud for Customer** package, you can view the available APIs in the package. Select the Campaign API to explore it in detail.
 
 !![SAP Cloud for Customer API package details](5.png)
 
@@ -87,12 +84,11 @@ Various HTTP methods of API are used to address the functionality of endpoints. 
 
 [ACCORDION-BEGIN [Step : 5](Test an API endpoint)]
 
-The SAP API Business Hub allows you to test APIs. Sandbox environment is provided to test the Campaign API.
-To take advantage of this, ensure you are logged on. Select Login at the top of the page.
+The SAP API Business Hub allows you to test APIs. A sandbox environment is provided to test the Campaign API. To take advantage of this, ensure you are logged on. Select Login at the top of the page.
 
 !![Login](6.png)
 
-Once logged on, choose the Try Out button in the **`Overview`** section.   
+Once logged on, choose the Try Out button in the **`Overview`** section.
 
 !![The "Try out" button](6a.png)
 
