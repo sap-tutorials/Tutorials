@@ -93,7 +93,7 @@ curl --request GET \
 
 Notice how the parameters are [encoded](https://en.wikipedia.org/wiki/Percent-encoding) in the query string.
 
-Paste the entire command into your terminal again. This time the output is vastly reduced, as (apart from the metadata) there are only two properties returned for each of the campaigns.
+Paste the entire command into your terminal again. This time the output is vastly reduced:
 
 ![text editor with parameter added](9.png)
 
