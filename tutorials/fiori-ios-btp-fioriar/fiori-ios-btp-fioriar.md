@@ -205,10 +205,10 @@ This tutorial uses a number of `utils` used to do different type of tasks for yo
 
 1. Download the Swift Util files:
 
-    - [`AuthenticationParams`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/fiori-ios-btp-fioriar/AuthenticationParams.swift)
-    - [`FileManager+Extensions`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/fiori-ios-btp-fioriar/FileManager+Extensions.swift)
-    - [`SAPURLSession+Extension`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/fiori-ios-btp-fioriar/SAPURLSession+Extension.swift)
-    - [`UserDefaultsHandler`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/fiori-ios-btp-fioriar/UserDefaultsHandler.swift)
+    - [`AuthenticationParams`](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/fiori-ios-btp-fioriar/Utils/AuthenticationParams.swift)
+    - [`FileManager+Extensions`](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/fiori-ios-btp-fioriar/Utils/FileManager+Extensions.swift)
+    - [`SAPURLSession+Extension`](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/fiori-ios-btp-fioriar/Utils/SAPURLSession+Extension.swift)
+    - [`UserDefaultsHandler`](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/fiori-ios-btp-fioriar/Utils/UserDefaultsHandler.swift)
 
 2. Extract the files into your project folder and drag them into the File Navigator of Xcode.
 
