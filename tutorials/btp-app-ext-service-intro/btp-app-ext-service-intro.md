@@ -45,7 +45,7 @@ CAP is a framework of languages, libraries, and tools for building enterprise-gr
 
 CAP-based projects benefit from a primary focus on domain. Instead of delving into overly technical disciplines, we focus on accelerated development and safeguarding investments in a world of rapidly changing cloud technologies.
 
-The CAP framework features a mix of proven and broadly adopted open-source and SAP technologies, as highlighted in the figure below.
+The CAP framework features a mix of proven and broadly adopted open-source and SAP technologies, as highlighted in the following figure.
 
 !![CAP Overview](cap_overview.png)
 
@@ -53,7 +53,7 @@ On top of open source technologies, CAP mainly adds:
 
 - Core Data Services (CDS) as our universal modeling language for both domain models and service definitions.
 
-- Service SDK and runtimes for Node.js and Java, offering libraries to implement and consume services as well as generic provider implementations serving many requests automatically.
+- Service SDK and runtime for Node.js and Java, offering libraries to implement and consume services as well as generic provider implementations serving many requests automatically.
 
 [VALIDATE_1]
 [ACCORDION-END]

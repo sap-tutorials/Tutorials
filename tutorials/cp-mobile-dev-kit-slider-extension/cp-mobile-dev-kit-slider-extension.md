@@ -51,6 +51,7 @@ In this tutorial, you will create a Slider extension via `NativeScript` (in Type
     | `Your Project Name` | `MDK_Slider` |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |    
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
 
     !![MDK](img-1.4.png)
 
@@ -177,7 +178,7 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img-3.5.png)
 
-7. Create a new Message action.
+5. Create a new Message action.
 
     Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
@@ -202,23 +203,23 @@ You will add this registered control in a Form Cell page.
 
     Click **Next** and then **Finish** on the confirmation step.
 
-8. You will add an item on action bar in `SliderExtension.page` and set `ShowMessage.action` on its `onPress` event.
+6. You will add an item on action bar in `SliderExtension.page` and set `ShowMessage.action` on its `onPress` event.
 
     In `SliderExtension.page`, **drag and drop** an **Action Bar Item** to the upper right corner of the action bar.
 
     !![MDK](img_3.8.gif)
 
-9. Click the **link** icon to open the object browser for the **System Item** property.
+7. Click the **link** icon to open the object browser for the **System Item** property.
 
     Double click the **Save** type and click **OK**.
 
     !![MDK](img-3.9.png)
 
-10. In the **Properties** pane | **Events** tab, click the 3 dots icon for the `OnPress` property to open the **Object Browser**, bind it to `ShowMessage.action`.
+8. In the **Properties** pane | **Events** tab, click the 3 dots icon for the `OnPress` property to open the **Object Browser**, bind it to `ShowMessage.action`.
 
     !![MDK](img-3.10.png)
 
-11. You can also add an input field where you can provide a manual entry for the slider value and the counter will adapt accordingly.
+9. You can also add an input field where you can provide a manual entry for the slider value and the counter will adapt accordingly.
 
     For this, first you will write a business logic to set the extension value and then bind it to the input field.
 
@@ -243,13 +244,13 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img_3.11.3.png)
 
-12. Save the changes to the `SetExtensionValue.js` file.
+10. Save the changes to the `SetExtensionValue.js` file.
 
-13. In `SliderExtension.page`, drag and drop a **Simple Property** item control below the slider control.
+11. In `SliderExtension.page`, drag and drop a **Simple Property** item control below the slider control.
 
     !![MDK](img_3.15.gif)
 
-14. Provide the following information:
+12. Provide the following information:
 
     | Property | Value |
     |----|----|
@@ -258,7 +259,7 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img-3.16.png)
 
-15. Navigate to **Events** tab, click the 3 dots icon for the `OnValueChange` property to open the **Object Browser**, bind it to `SetExtensionValue.js`.
+13. Navigate to **Events** tab, click the 3 dots icon for the `OnValueChange` property to open the **Object Browser**, bind it to `SetExtensionValue.js`.
 
     !![MDK](img-3.17.png)
 

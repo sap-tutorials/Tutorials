@@ -3,7 +3,7 @@ title: Connect to Data Lake IQ Using the ODBC Driver
 description: Configure a data source to connect to the previously created data lake IQ and then use the data source in unixODBC, Microsoft Excel and DBeaver.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>sql, products>sap-hana-cloud, products>sap-iq]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
@@ -19,7 +19,7 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure a data source using Mirosoft Windows ODBC Data Source Administrator)]
+[ACCORDION-BEGIN [Step 1: ](Configure a data source using Microsoft Windows ODBC Data Source Administrator)]
 
 The ODBC Data Source Administrator can be used to view the installed ODBC drivers and to create data sources for an installed driver.  
 
@@ -29,9 +29,9 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
 2. Click the **Drivers** tab and view the installed drivers.  
 
-    ![odbc admin drivers](drivers.png)
+    ![odbc admin drivers](drivers-1.png)
 
-    The Sybase IQ driver is visible.  
+    The SAP IQ driver is visible.
 
 3. Click the **User DSN** tab to view the data sources.  
 
@@ -39,9 +39,9 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
     ![Add ODBC user data source](ODBC-add.png)  
 
-5. Select **Sybase IQ** and click **Finish**.
+5. Select **SAP IQ** and click **Finish**.
 
-    ![New data source](Create-new-data-source.png)
+    !![New data source](Create-new-data-source-1.png)
 
 6. Configure the data source.
 
@@ -51,7 +51,7 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
     ![specify the credentials, host and port](data-source2.png)  
 
-    On the advanced tab, enter the following parameters.
+    Optional: On the advanced tab, enter the following parameters.
 
     ```Parameters
     ENC=TLS(tls_type=rsa;direct=yes)
@@ -88,9 +88,10 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 
 2. The following commands can be used to confirm that unixODBC is installed and determine the location of the .odbc.ini file (if it exists).
     ```Shell (Linux)
+    cd /etc/unixODBC
     odbcinst -j
     ```
-    ![odbcinst -j](odbcinst.png)
+    ![odbcinst -j](odbcinst-1.png)
 
 3. Navigate to the directory where the `.odbc.ini` file is located, similar to the one highlighted in the screenshot above. Open or create the `.odbc.ini` file with the following command:
 
@@ -104,7 +105,7 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
     [HC_DL_Trial]
     driver=/home/dan/dlclient/IQ-17_1/lib64/libdbodbc17.so
     encryption=TLS(trusted_certificates=*;direct=yes)
-    host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443
+    host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443
     integrated=NO
     log=/tmp/hdlclientlog.txt
     ```

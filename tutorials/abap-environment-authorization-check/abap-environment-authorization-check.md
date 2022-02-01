@@ -2,8 +2,8 @@
 auto_validation: true
 title: Implement Authorization Check for Modify Operations
 description: Provide authorizations for a business configuration and implement an authorization check for modify operations.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license ]
 time: 30
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -93,7 +93,7 @@ To protect data from unauthorized read access, the ABAP CDS provides its own aut
       as select from zcal_holitxt_xxx
       association        to parent zcal_i_mcal_xxx as _Public_Holiday on $projection.Holiday = _Public_Holiday.Holiday
       association [0..*] to I_LanguageText         as _LanguageText   on $projection.Language = _LanguageText.LanguageCode
-      association [1]    to ZCAL_I_MCAL_ALL_XXX    as _HolidayAll     on $projection.HolidayAllID = _HolidayAll.HolidayAllID
+      association [1..1]    to ZCAL_I_MCAL_ALL_XXX    as _HolidayAll     on $projection.HolidayAllID = _HolidayAll.HolidayAllID
     {
           @Semantics.language: true
       key spras            as Language,
@@ -774,7 +774,7 @@ Some configuration entries cannot or may not be physically deleted from a databa
         HolidayMonth = month_of_holiday;
       }
 
-      validation validateChanges on save { create; update; delete; }
+      validation validateChanges on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
     }
 
     define behavior for zcal_i_mcal_txt_xxx alias HolidayText
@@ -803,7 +803,7 @@ Some configuration entries cannot or may not be physically deleted from a databa
       }
 
 
-      validation validateChanges on save { create; update; delete; }
+      validation validateChanges on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
     }
     ```
 
@@ -866,7 +866,7 @@ Some configuration entries cannot or may not be physically deleted from a databa
         HolidayMonth = month_of_holiday;
       }
 
-      validation validateChanges on save { create; update; delete; }
+      validation validateChanges on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
     }
 
     define behavior for zcal_i_mcal_txt_xxx alias HolidayText
@@ -895,7 +895,7 @@ Some configuration entries cannot or may not be physically deleted from a databa
       }
 
 
-      validation validateChanges on save { create; update; delete; }
+      validation validateChanges on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
     }
     ```
 

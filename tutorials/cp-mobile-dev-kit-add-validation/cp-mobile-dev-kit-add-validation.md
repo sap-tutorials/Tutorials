@@ -17,7 +17,6 @@ author_profile: https://github.com/jitendrakansal
 
 ![MDK](img_1.gif)
 
-
 [ACCORDION-BEGIN [Step 1: ](Create a validation message)]
 
 When allowing end-users to make updates to data, it is important to add validation rules to verify that they are entering valid information.

@@ -3,7 +3,7 @@ title: Connect to Data Lake IQ Using the JDBC Driver
 description: Create and debug a Java application that connects to data lake IQ.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>java, products>sap-hana-cloud, products>sap-iq]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>java]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
@@ -68,7 +68,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
     ```
 
     ```Shell (Linux)
-    mkdir ~/DataLakeClientsTutorial/java
+    mkdir -p ~/DataLakeClientsTutorial/java
     cd ~/DataLakeClientsTutorial/java
     nano JavaQuery.java
     ```

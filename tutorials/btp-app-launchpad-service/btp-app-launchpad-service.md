@@ -425,7 +425,7 @@ app/*/package-lock.json
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 14: ](Subscribe to SAP Launchpad service)]
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -511,7 +511,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
     !![Create Group](create_group.png)
 
-    > This way, you're telling the SAP Launchpad service to display the `Risks` and `Mitigations` apps in a group called `Risk Management`.
+    > This way, you are telling the SAP Launchpad service to display the `Risks` and `Mitigations` apps in a group called `Risk Management`.
 
 12. Choose **Site Directory** **&rarr;** **Create Site**.
 

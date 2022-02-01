@@ -305,7 +305,7 @@ Login to SAP BTP cockpit to verify cross consumable services from SAP Business T
    *application* by running the below command.
 
     ```Shell/Bash
-    kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP/btp-hyperscaler-extension/master/k8s/createservice.yaml
+    kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP-samples/btp-hyperscaler-extension/master/k8s/createservice.yaml
     ```
     > The create service file is represented as declarative YAML object which describes what you want to run inside your namespace. You can find the file at `/btp-hyperscaler-extension/master/k8s/createservice.yaml`.
 
@@ -352,7 +352,7 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
 4. Execute the below command to deploy the application into hyperscaler.
 
     ```Shell/Bash
-    kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP/btp-hyperscaler-extension/master/k8s/deployment.yaml
+    kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP-samples/btp-hyperscaler-extension/master/k8s/deployment.yaml
     ```
     > The deployment file is represented as declarative YAML object which describes what you want to run inside your namespace. You can find the file at `/btp-hyperscaler-extension/master/k8s/deployment.yaml`.
 
@@ -380,7 +380,7 @@ To build and deploy the **`fioriapp`** sample application in your cluster, you h
 1. Execute the below command to deploy the application into hyperscaler.
 
     ```Shell/Bash
-    kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP/btp-hyperscaler-extension/master/k8s/loadbalancer.yaml
+    kubectl apply -n sapfiori -f https://raw.githubusercontent.com/SAP-samples/btp-hyperscaler-extension/master/k8s/loadbalancer.yaml
     ```
     > The deployment file is represented as declarative YAML object which describes what you want to run inside your namespace. You can find the file at `/btp-hyperscaler-extension/master/k8s/loadbalancer.yaml`.
 
