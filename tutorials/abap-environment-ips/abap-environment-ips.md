@@ -36,23 +36,23 @@ Additional information:
 [ACCORDION-BEGIN [Step 1: ](Create User in IAS Tenant)]
 To create your development user's identity in your IAS, log on with your User Management Administrator to your Identity Authentication tenant's administration UI (URL ends with path `/admin`, for example https://rapworkshop.accounts.ondemand.com/admin).
 
-Navigate to **Users & Authorizations** > **User Management**
+1. Navigate to **Users & Authorizations** > **User Management**
 
-![Open User Management in IAS](IAS_user_mgmt_open.png)
+    ![Open User Management in IAS](IAS_user_mgmt_open.png)
 
-Select **Add User** to start the creation process of a user.
+2. Select **Add User** to start the creation process of a user.
 
-![Press Add button for new user](IAS_user_add.png)
+    ![Press Add button for new user](IAS_user_add.png)
 
-Fill the personal information for the user and select **Save**
+3. Fill the personal information for the user and select **Save**
 
-![Configure properties of new user](IAS_user_configure_new.png)
+    ![Configure properties of new user](IAS_user_configure_new.png)
 
-The new user is now displayed in the list of users.
+4. The new user is now displayed in the list of users.
 
-![List entry for new user](IAS_user_created.png)
+    ![List entry for new user](IAS_user_created.png)
 
->Note that the user will receive an email to activate the account before being able to log on for the first time.
+>Note that the IAS user will receive an email to activate the account before being able to log on with a local user somewhere for the first time.
 
 [DONE]
 [ACCORDION-END]
@@ -60,26 +60,27 @@ The new user is now displayed in the list of users.
 [ACCORDION-BEGIN [Step 2: ](Create Developer Group and Assign User)]
 To bundle developers users, create a corresponding user group in the IAS and assign the users to it.
 
-Navigate to **Users & Authorizations** > **User Groups** and select **Create**
+1. Navigate to **Users & Authorizations** > **User Groups** and select **Create**
 
-![Start User Group creation](IAS_group_create.png)
+    ![Start User Group creation](IAS_group_create.png)
 
-In the Create Group dialog enter a **Name** and **Display Name** and select **Create**
-> For the group name, please use the identical name you have set for the business role in your ABAP environment (created from template `SAP_BR_DEVELOPER`, see prerequisites).
+2. In the Create Group dialog enter a **Name** and **Display Name** and select **Create**
 
-![Configure properties of new group](IAS_group_configure_new.png)
+    > For the group name, please use the identical name you have set for the business role in your ABAP environment (created from template `SAP_BR_DEVELOPER`, see prerequisites).
 
-To add users to the group select **Add**.
+    ![Configure properties of new group](IAS_group_configure_new.png)
 
-![Start user adding to group](IAS_group_add_user.png)
+3. To add users to the group select **Add**.
 
-Search for the user that you have created earlier, select it, and choose **Save**
+    ![Start user adding to group](IAS_group_add_user.png)
 
-![Save User Group](IAS_group_add_user_save.png)
+4. Search for the user that you have created earlier, select it, and choose **Save**
 
-The user is now displayed in the user group list.
+    ![Save User Group](IAS_group_add_user_save.png)
 
-![List entry for user in group](IAS_group_add_user_result.png)
+5. The user is now displayed in the user group list.
+
+    ![List entry for user in group](IAS_group_add_user_result.png)
 
 
 [DONE]
@@ -99,24 +100,24 @@ Navigate to **Users & Authorizations** > **Administrators** choose the Administr
 In this example the IAS itself is used as a source for users and user groups that can be provisioned to other systems.
 To allow identity provisioning to read users and groups from the IAS, you need a technical user with corresponding permissions.
 
-Navigate to **Users & Authorizations** > **Administrators**
+1. Navigate to **Users & Authorizations** > **Administrators**
 
-Select **Add** and choose **System**
+2. Select **Add** and choose **System**
 
-![Start Administrator creation](IAS_admin_add.png)
+    ![Start Administrator creation](IAS_admin_add.png)
 
-Provide a **Name** for the system, for example `ips_tutorial_admin`.
+3. Provide a **Name** for the system, for example `ips_tutorial_admin`.
 Make sure to only set authorizations for **Read Users** and **Manage Groups** which are both needed to read users and groups during identity provisioning, **Save** your changes.
 
-![Configure Administrator Authorizations](IAS_admin_configure.png)
+    ![Configure Administrator Authorizations](IAS_admin_configure.png)
 
-A new dialog to **Configure User ID and Password** is displayed. Set the password and select **Save**. The User ID is generated automatically.
+4. A new dialog to **Configure User ID and Password** is displayed. Set the password and select **Save**. The User ID is generated automatically.
 
-![Set Password](ias_admin_set_pw.png)
+    ![Set Password](ias_admin_set_pw.png)
 
-Go back to the **Configure User ID and Password** section and **Copy** the generated **User ID** of the technical user.
+5. Go back to the **Configure User ID and Password** section and **Copy** the generated **User ID** of the technical user.
 
-![Copy Technical User's ID](IAS_admin_copy_user_id.png)
+    ![Copy Technical User's ID](IAS_admin_copy_user_id.png)
 
 [DONE]
 [ACCORDION-END]
@@ -124,47 +125,47 @@ Go back to the **Configure User ID and Password** section and **Copy** the gener
 [ACCORDION-BEGIN [Step 5: ](Configure Source in Identity Provisioning Service)]
 Identity provisioning requires to configure a so-called source system for user and user group data.
 
-Logon with your Identity Provisioning Manager user to your Identity Authentication tenant's identity provisioning UI (URL ends with path `/ips`, for example https://rapworkshop.accounts.ondemand.com/ips).
+1. Log on with your Identity Provisioning Manager user to your Identity Authentication tenant's identity provisioning UI (URL ends with path `/ips`, for example https://rapworkshop.accounts.ondemand.com/ips).
 
-Select the **Source Systems** tile
+2. Select the **Source Systems** tile
 
-![Source System Tile](ips_source_systems_tile.png)
+    ![Source System Tile](ips_source_systems_tile.png)
 
-To start the creation, select **Add**
+3. To start the creation, select **Add**
 
-![Add Source System button](ips_source_system_add.png)
+    ![Add Source System button](ips_source_system_add.png)
 
-To simplify the system creation and to reduce the risk of errors, this tutorial provides a template JSON file for the source system. Download [`ips_system_template_source.json`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/abap-env-ips/ips_system_template_source.json) locally.
+4. To simplify the system creation and to reduce the risk of errors, this tutorial provides a template JSON file for the source system. Download [`ips_system_template_source.json`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/abap-env-ips/ips_system_template_source.json) locally.
 
-Define the system by uploading the JSON file via **Browse** in the IPS system UI.
+5. Define the system by uploading the JSON file via **Browse** in the IPS system UI.
 
-![Browse for source system template file](ips_source_systems_browse.png)
+    ![Browse for source system template file](ips_source_systems_browse.png)
 
-Adapt the values to your needs and provide the mandatory values for `URL`, `User` and `Password` as shown below.
+6. Adapt the values to your needs and provide the mandatory values for `URL`, `User` and `Password` as shown below.
 
-Alternatively, you can configure everything manually.
+    Alternatively, you can configure everything manually.
 
-Details:
+    Details:
 
-|  Label     | Value
-|  :------------- | :-------------
-|  Type           | Identity Authentication
-|  System Name           | For example **`My IAS ABAP Developers`**
+    |  Label     | Value
+    |  :------------- | :-------------
+    |  Type           | Identity Authentication
+    |  System Name           | For example **`My IAS ABAP Developers`**
 
-Properties:
+    Properties:
 
-|  Name     | Value
-|  :------------- | :-------------
-|  **`Type`**           | **`HTTP`**
-|  **`ProxyType`**           | **`Internet`**
-|  **`URL`**          | your IAS URL, for example <https://rapworkshop.accounts.ondemand.com>
-|  **`Authentication`** | **`BasicAuthentication`**
-|  **`User`**    | User ID of technical user
-|  **`Password`**   | Password of technical user
-|  **`ias.user.filter`**   | **`groups.display eq "BR_IPS_TUTORIAL_DEVELOPER"`**
-|  **`ias.group.filter`**   | **`displayName eq "BR_IPS_TUTORIAL_DEVELOPER"`**
+    |  Name     | Value
+    |  :------------- | :-------------
+    |  **`Type`**           | **`HTTP`**
+    |  **`ProxyType`**           | **`Internet`**
+    |  **`URL`**          | your IAS URL, for example <https://rapworkshop.accounts.ondemand.com>
+    |  **`Authentication`** | **`BasicAuthentication`**
+    |  **`User`**    | User ID of technical user
+    |  **`Password`**   | Password of technical user
+    |  **`ias.user.filter`**   | **`groups.display eq "BR_IPS_TUTORIAL_DEVELOPER"`**
+    |  **`ias.group.filter`**   | **`displayName eq "BR_IPS_TUTORIAL_DEVELOPER"`**
 
-**Save** your changes.
+7. **Save** your changes.
 
 [DONE]
 [ACCORDION-END]
@@ -172,90 +173,92 @@ Properties:
 [ACCORDION-BEGIN [Step 6: ](Configure access to Target via Communication User)]
 To enable the IAS to create users and assign business roles in the target system, that system has to provide the corresponding authorization to the IAS.
 
-Navigate to **Services > Instances and Subscriptions** in your SAP BTP subaccount, search for your ABAP environment instance and select **Create Service Key**
+1. Navigate to **Services > Instances and Subscriptions** in your SAP BTP subaccount, search for your ABAP environment instance and select **Create Service Key**
 
-![Start Service Key creation for ABAP instance ](btp_service_key_create.png)
+    ![Start Service Key creation for ABAP instance ](btp_service_key_create.png)
 
-In the **New Service Key** dialog, provide a name and copy & paste the following JSON code:
-
-```JSON
-{
-  "scenario_id":"SAP_COM_0193",
-  "type":"basic"
-}
-```
-**Create** the new service key
-
-![Configure new service key](btp_service_key_configure_new.png)
+2. In the **New Service Key** dialog, provide a name and copy & paste the following JSON code:
 
 
->This service key creation automatically creates a communication user (1), communication system (2) and communication arrangement (3) for communication scenario `SAP_COM_0193` (4) in the ABAP environment instance.
-![Communication Artefacts for IPS in ABAP instance](ABAP_FLP_CA_created.png)
->
-Communication scenario `SAP_COM_0193` exposes all the needed services for identity provisioning integration. With the communication user credentials, you can make inbound calls to that system to provision users and assign roles per groups.
+    ```JSON
+    {
+      "scenario_id":"SAP_COM_0193",
+      "type":"basic"
+    }
+    ```
 
-The credentials created for the communication user are also available in the subaccount. To view them, navigate to **Services > Instances and Subscriptions** and select your service instance.
+3. **Create** the new service key.
 
-![Open Service Instance Details](BTP_ABAP_env_view_details.png)
+    ![Configure new service key](btp_service_key_configure_new.png)
 
-From the Actions menu, choose **View Credentials**.
+    >This service key creation automatically creates a communication user (1), communication system (2) and communication arrangement (3) for communication scenario `SAP_COM_0193` (4) in the ABAP environment instance.
+    >
+    ![Communication Artefacts for IPS in ABAP instance](ABAP_FLP_CA_created.png)
+    >
+    Communication scenario `SAP_COM_0193` exposes all the needed services for identity provisioning integration. With the communication user credentials, you can make inbound calls to that system to provision users and assign roles per groups.
 
-![View Credentials of service instance](BTP_ABAP_env_view_credentials.png)
+4. The credentials created for the communication user are also available in the subaccount. To view them, navigate to **Services > Instances and Subscriptions** and select your service instance.
 
-Choose the credentials that you have set earlier as service key for IPS.
+    ![Open Service Instance Details](BTP_ABAP_env_view_details.png)
+
+5. From the Actions menu, choose **View Credentials**.
+
+    ![View Credentials of service instance](BTP_ABAP_env_view_credentials.png)
+
+6. Choose the credentials that you have set earlier as service key for IPS.
 Copy the **`username`**, **`password`** and **`url`** value for the next step.     
 
-![Get communication user credentials from service key](btp_service_key_get_credentials.png)
+    ![Get communication user credentials from service key](btp_service_key_get_credentials.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Configure Target in Identity Provisioning Service )]
+[ACCORDION-BEGIN [Step 7: ](Configure Target in Identity Provisioning Service )]
 Identity provisioning requires to configure a so-called target system for user and user group data.
 In this example, the target systems is an ABAP system in SAP BTP.
 
-Logon with your Identity Provisioning Manager user to your Identity Authentication tenant's identity provisioning UI (URL ends with path `/ips`, for example <https://rapworkshop.accounts.ondemand.com/ips>).
+1. Log on with your Identity Provisioning Manager user to your Identity Authentication tenant's identity provisioning UI (URL ends with path `/ips`, for example <https://rapworkshop.accounts.ondemand.com/ips>).
 
-Select the **Target Systems** tile
+2. Select the **Target Systems** tile
 
-![Source Target Tile](ips_target_systems_tile.png)
+    ![Source Target Tile](ips_target_systems_tile.png)
 
-To start the Creation, select **Add**
+3. To start the Creation, select **Add**
 
-![Add Target System button](ips_target_system_add.png)
+    ![Add Target System button](ips_target_system_add.png)
 
-To simplify the system creation and reduce the risk of errors, this tutorial provides a template JSON file for the source system. Download [`ips_system_template_target.json`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/abap-env-ips/ips_system_template_target.json) locally.
+4. To simplify the system creation and reduce the risk of errors, this tutorial provides a template JSON file for the source system. Download [`ips_system_template_target.json`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/abap-env-ips/ips_system_template_target.json) locally.
 
-Define the system by uploading the JSON file via **Browse** in the IPS System UI.
+5. Define the system by uploading the JSON file via **Browse** in the IPS System UI.
 
-![Browse for target system template file](ips_target_systems_browse.png)
+    ![Browse for target system template file](ips_target_systems_browse.png)
 
-Adapt the values to your needs and provide the mandatory values for `URL`, `User` and `Password` as shown below.
+6. Adapt the values to your needs and provide the mandatory values for `URL`, `User` and `Password` as shown below.
 
-Alternatively, you can configure everything manually.
+    Alternatively, you can configure everything manually.
 
-Details:
+    Details:
 
-|  Label     | Value
-|  :------------- | :-------------
-|  Type           | SAP BTP ABAP environment
-|  System Name           | For example **`My ABAP instance`**
-|  Description           | For example **`System to receive provisioned Developer Users`**
-|  Source System           | Choose the one created earlier from the dropdown
+    |  Label     | Value
+    |  :------------- | :-------------
+    |  Type           | SAP BTP ABAP environment
+    |  System Name           | For example **`My ABAP instance`**
+    |  Description           | For example **`System to receive provisioned Developer Users`**
+    |  Source System           | Choose the one created earlier from the dropdown
 
-Properties:
+    Properties:
 
-|  Name     | Value
-|  :------------- | :-------------
-|  **`Type`**           | **`HTTP`**
-|  **`ProxyType`**           | **`Internet`**
-|  **`URL`**          | The URL of your ABAP environment
-|  **`Authentication`** | **`BasicAuthentication`**
-|  **`User`**    | User name of ABAP instance communication user
-|  **`Password`**   | Password of ABAP instance communication user
-|  **`ips.date.variable.format`**   | **`yyyy-MM-dd`**
+    |  Name     | Value
+    |  :------------- | :-------------
+    |  **`Type`**           | **`HTTP`**
+    |  **`ProxyType`**           | **`Internet`**
+    |  **`URL`**          | The URL of your ABAP environment
+    |  **`Authentication`** | **`BasicAuthentication`**
+    |  **`User`**    | User name of ABAP instance communication user
+    |  **`Password`**   | Password of ABAP instance communication user
+    |  **`ips.date.variable.format`**   | **`yyyy-MM-dd`**
 
-**Save** your changes.
+7. **Save** your changes.
 
 [DONE]
 [ACCORDION-END]
@@ -264,23 +267,23 @@ Properties:
 [ACCORDION-BEGIN [Step 8: ](Run Identity Provisioning)]
 After the source and target Systems have been created and connected with each other you can run the Identity provisioning.
 
-Switch to **Source Systems**
+1. Switch to **Source Systems**
 
-![Navigate from Target System to Source Systems](IPS_target_system_2_source_systems.png)
+    ![Navigate from Target System to Source Systems](IPS_target_system_2_source_systems.png)
 
-Open your source system and select the **Jobs** tab.
+2. Open your source system and select the **Jobs** tab.
 
-Choose **Run Now**
+3. Choose **Run Now**
 
-![Run Identity Provisioning Job](IPS_source_system_run_job.png)
+    ![Run Identity Provisioning Job](IPS_source_system_run_job.png)
 
-To check the status of the job run, select **Job Logs** from the navigation pane.
+4. To check the status of the job run, select **Job Logs** from the navigation pane.
 
-![Navigate to Job Logs](IPS_Job_logs_open.png)
+    ![Navigate to Job Logs](IPS_Job_logs_open.png)
 
-Search for your log by checking the source system name and time and make sure the status is **Success**.
+5. Search for your log by checking the source system name and time and make sure the status is **Success**.
 
-![Job finished successfully](IPS_Job_log_success.png)
+    ![Job finished successfully](IPS_Job_log_success.png)
 
 >If the run did not finish successfully, you can navigate to the log and follow the instructions there to analyze and solve the problem. See also [Guided Answers: Identity Provisioning Troubleshooting](https://ga.support.sap.com/dtp/viewer/#/tree/2065/actions/26547:29111:29114:27412).
 
@@ -291,46 +294,46 @@ Search for your log by checking the source system name and time and make sure th
 [ACCORDION-BEGIN [Step 9: ](Log On to ABAP Environment in Eclipse)]
 Now that the Developer user has been provisioned and authorized in the ABAP environment for ABAP development, you can connect the user to the system by using ABAP Development Tools for Eclipse.
 
-Open your Eclipse and navigate to **File > New > Project**.
+1. Open your Eclipse and navigate to **File > New > Project**.
 
-![Start project creation in eclipse](ADT_project_new.png)
+    ![Start project creation in eclipse](ADT_project_new.png)
 
-Choose **ABAP Cloud Project** and select **Next**
+2. Choose **ABAP Cloud Project** and select **Next**
 
-![Choose to create ABAP Cloud project](ADT_project_new_cloud.png)
+    ![Choose to create ABAP Cloud project](ADT_project_new_cloud.png)
 
-Choose **SAP BTP ABAP Environment** > **Use a Service Key**  and select **Next**
+3. Choose **SAP BTP ABAP Environment** > **Use a Service Key**  and select **Next**
 
-![Choose to create from service key](ADT_project_new_service_key.png)
+    ![Choose to create from service key](ADT_project_new_service_key.png)
 
-Paste the service key for Eclipse integration (see prerequisites)
+4. Paste the service key for Eclipse integration (see prerequisites)
 
-![Paste Service Key for ADT usage](ADT_project_new_service_key_paste.png)
+    ![Paste Service Key for ADT usage](ADT_project_new_service_key_paste.png)
 
-**Copy Logon URL to Clipboard**
+5. **Copy Logon URL to Clipboard**
 
-![Copy Logon URL to Clipboard](ADT_project_new_open_logon.png)
+    ![Copy Logon URL to Clipboard](ADT_project_new_open_logon.png)
 
-Open an incognito browser window and paste the logon URL into the address line.
+6. Open an incognito browser window and paste the logon URL into the address line.
 Choose your right identity provider URL.
 
-![Identity Provider choice](ADT_project_new_logon_chose_idp.png)
+    ![Identity Provider choice](ADT_project_new_logon_chose_idp.png)
 
-Enter the credentials of the Developer User and log on.
+7. Enter the credentials of the Developer User and log on.
 
-![Log on with provisioned developer](ADT_project_new_logon_with_developer.png)
+    ![Log on with provisioned developer](ADT_project_new_logon_with_developer.png)
 
-A success message is displayed and the browser window can be closed.
+8. A success message is displayed and the browser window can be closed.
 
-![Log on for ADT succeeded](ADT_project_new_logon_with_developer_success.png)
+    ![Log on for ADT succeeded](ADT_project_new_logon_with_developer_success.png)
 
-In the project wizard in Eclipse, check the ABAP environment and user data, that are displayed in the **Service Instance Connection** dialog and select **Finish**
+9. In the project wizard in Eclipse, check the ABAP environment and user data, that are displayed in the **Service Instance Connection** dialog and select **Finish**
 
-![Finish ABAP Cloud project creation](ADT_project_new_finish.png)
+    ![Finish ABAP Cloud project creation](ADT_project_new_finish.png)
 
-The new project is displayed and you can start developing.
+10. The new project is displayed and you can start developing.
 
-![See ABAP Cloud project in ADT navigation](ADT_project_created.png)
+    ![See ABAP Cloud project in ADT navigation](ADT_project_created.png)
 
 
 
