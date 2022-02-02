@@ -2,8 +2,8 @@
 title: Add a User Task to Your Workflow and Deploy
 description: Enhance the workflow with with a form-based user task and deploy the workflow
 auto_validation: true
-primary_tag: products>sap-business-technology-platform
-tags: [  tutorial>beginner, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-business-technology-platform
+tags: [  tutorial>beginner, topic>cloud ]
 time: 15
 ---
 
@@ -11,15 +11,14 @@ time: 15
 ### You will learn  
   - How to create a simple approval task for your workflow.
   - How to deploy the workflow.
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add a user task)]
 1. In SAP Business Application Studio, access the `onboard.workflow` you created in the **projects** folder.
 
-2. In the workflow editor, select  **Tasks** | **User Tasks**, then click the connector between the Start and the End event to insert the task there.
+2. From the palette in the workflow editor, select  **Tasks** | **User Tasks**, then click the connector between the Start and the End event to insert the task there.
 
-    > Make sure that the connector color is green. Otherwise, your task is not correctly processed.
+    > Make sure that the connector color is blue. Otherwise, your task is not correctly processed.
 
     ![Insert User Task](insert-user-task2.png)
 
@@ -28,7 +27,7 @@ time: 15
 
     - Switch to the **DETAILS** tab, enter **`Assign and Approve Equipment for ${context.empData.firstName} ${context.empData.lastName}`** in the **Subject** field.
 
-        The subject will be shown in the task list in My Inbox.
+        Later, the subject will be shown to users in their task list in My Inbox.
 
     - Enter a description **`The manager assigns and approves equipment and relocation of the newly onboarded employee`**.
 
@@ -45,7 +44,7 @@ time: 15
 [ACCORDION-BEGIN [Step 2: ](Create a task form)]
 Define the form, which is shown when the task is opened in the My Inbox.
 
-1. On the **User Interface** tab of the **User Task Properties**, set the **Type** to **Form** and choose **Create File**.
+1. On the **User Interface** tab of the **User Task Properties**, set the **Type** to **Form** and click **Create File**.
 
     ![Create Form File](create-form-file.png)
 
@@ -103,7 +102,7 @@ Define the form, which is shown when the task is opened in the My Inbox.
 [ACCORDION-BEGIN [Step 4: ](Build and deploy)]
 Now, you are ready to build and deploy the workflow.
 
-1. Open the **mta.yaml** file of your **onboarding** project by double-clicking it. In  lines 9 and 13, replace `workflow_mta` with `wm_workflow`.
+1. Open the **mta.yaml** file of your **onboarding** project by double-clicking it. In  lines 9 and 13, replace `workflow` with `wm_workflow`.
 
     ![Update YAML File](update-yaml.png)
 
@@ -117,16 +116,21 @@ Now, you are ready to build and deploy the workflow.
 
     ![Open Login Dialog](blue-login-message.png)
 
-    If so, click it to open the entry field. Enter the right API endpoint depending on your region, for example, `https://api.cf.eu10.hana.ondemand.com`, your username and password, and select the Cloud Foundry org and space of your trial account.
+    If so, click it to open the entry field. Enter the right API endpoint depending on your region, for example, `https://api.cf.us10.hana.ondemand.com`, your username and password, and select the Cloud Foundry org and space of your trial account.
 
     > You can get the trial API Endpoint, organisation name, and space name from your trial account overview page.
         !![Set Env](SetOrgName.png)
 
-4. Right-click the `.mtar` file, and then select **Deploy MTA Archive**.
+4. Open the folder **`mta_archives`**. Then right-click the `.mtar` file, and  select **Deploy MTA Archive**.
 
     ![Deploy MTA Archive](deploy-mtar2.png)
 
     > It will take approximately 5 minutes to deploy the multitarget application.
+
+5. If you are not logged on to your Cloud Foundry space, you are prompted to log on. Enter the right API endpoint depending on your region, for example, `https://api.cf.us10.hana.ondemand.com`, your username and password, and select the Cloud Foundry org and space of your trial account.
+
+    > You can get the trial API Endpoint, organisation name, and space name from your trial account overview page.
+        !![Set Env](SetOrgName.png)
 
 [DONE]
 [ACCORDION-END]
@@ -137,7 +141,7 @@ After deployment is finished, open the SAP Fiori launchpad site that contains th
 
 1. In your web browser, open the [SAP Business Technology Platform (SAP BTP) Trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
+2. Navigate to the trial global account by clicking **Go to Your Trial Account**.
 
 3. Access your **trial** subaccount.
 
@@ -179,7 +183,7 @@ After deployment is finished, open the SAP Fiori launchpad site that contains th
 
     ![Show Execution Log](show-execution-log.png)
 
-10. Go back to the home page and open the **My Inbox** application.
+10. Click the back arrow next to the SAP logo to go back to the home page and open the **My Inbox** application. You might need to scroll up to see the **My Inbox** tile.
 
     You should see the **Approval** task with a form, showing the equipment name and an **Approve** button.
 

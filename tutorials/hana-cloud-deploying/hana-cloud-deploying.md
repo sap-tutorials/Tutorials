@@ -1,6 +1,6 @@
 ---
-title: Deploy SAP HANA Cloud Trial
-description: Create an instance of the SAP Hana Cloud trial.
+title: Deploy SAP HANA Cloud
+description: Create an instance of the SAP Hana Cloud in SAP BTP trial or free tier.
 time: 15
 author_name: Thomas Jung
 author_profile: https://github.com/jung-thomas
@@ -9,7 +9,7 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You have a free SAP Business Technology Platform trial account: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+ - You have an SAP Business Technology Platform free trial or free tier account: [Set Up an SAP BTP Account for Tutorials](group.btp-setup)
 
 ## Details
 ### You will learn
@@ -22,17 +22,17 @@ By combining in-memory storage with columnar store, data operations are performe
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add SAP HANA Cloud to your trial account)]
+[ACCORDION-BEGIN [Step 1: ](Add SAP HANA Cloud to your account)]
 
-1. From the SAP BTP cockpit entry page, click on the **trial** subaccount.
+1. From the SAP BTP cockpit entry page, click on the subaccount where you will work.
 
     !![Sub Account](trial1.png)
 
-2. In the Subaccount page, click on the **dev** space.
+2. In the Subaccount page, click on the space in which you want to work.
 
     !![dev Space](trial2.png)
 
-3. Once in your **dev** space page, click on **SAP HANA Cloud** in the side menu navigation.  You will then see a page listing all your SAP HANA Cloud instances; of which you should have none.  Click on the **Create Database** button to begin the wizard to create a new instance.
+3. Once in your space page, click on **SAP HANA Cloud** in the side menu navigation.  You will then see a page listing all your SAP HANA Cloud instances; of which you should have none.  Click on the **Create** button to begin the wizard to create a new instance.
 
     !![dev Space](trial3.png)
 
@@ -41,20 +41,23 @@ By combining in-memory storage with columnar store, data operations are performe
 
 [ACCORDION-BEGIN [Step 2: ](Create Database)]
 
-1. This wizard will walk you through the process of creating a SAP HANA Cloud instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Allowed connections" setting. This setting will allow you to develop against your SAP HANA Cloud trial using a variety of external development tools.
+1. Complete the tutorial steps in [Provision an Instance of SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-2) This wizard used in this tutorial will walk you through the process of creating an SAP HANA Cloud instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup, that you select "Allow all IP addresses" in the "Connections" setting. This setting will allow you to develop against your SAP HANA Cloud using a variety of external development tools.
 
     !![Allow All IP addresses](trial4.png)
 
-2. After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP BTP trial.
+2. After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP BTP trial or free tier.
 
     !![HANA Cloud Instance](trial5.png)
 
-3. If you get stuck at any point in this process, there is also this short video you can watch and follow along:
+3. Once the SAP HANA Cloud instance is created, take note of the admin user needed to connect to the database. This will be needed in subsequent steps in this tutorial.
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Lv_40d1ZtsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+4. Finally it is important to take note that the SAP HANA Cloud instance in both the free tier and free trial shuts down at the end of each day automatically to save costs from unused systems. Therefore you must return to this SAP HANA Cloud administration screen each day you want to use  SAP HANA Cloud and choose to start the system from the **Action** menu.  If you forget to restart the instance, you will receive HANA connection errors whenever you try to interact with it in later steps.
 
-4. Once the SAP HANA Cloud instance is created, take note of the admin user (DBADMIN) and password you supplied to connect to the database. This will be needed in subsequent tutorials.
+    !![HANA Cloud stopped](trial6.png)
 
+5. Once the SAP HANA Cloud instance is created, take note of the admin user (DBADMIN) and password you supplied to connect to the database. This will be needed in subsequent tutorials.
+
+6. As an optional step if you are completely new to the SAP HANA Cloud environment, you might want to consider also going through this tutorial: [Tools to Manage and Access the SAP HANA Cloud, SAP HANA Database](hana-cloud-mission-trial-3) in order to familiarize yourself with the various tools that can be used to manage and develop with SAP HANA Cloud.
 
 [DONE]
 [ACCORDION-END]

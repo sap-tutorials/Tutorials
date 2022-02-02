@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Create an SAP Fiori Elements-Based UI
 description: This tutorial shows you how to create an SAP Fiori elements app on top of your previously created CAP service.
+keywords: cap
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
@@ -18,7 +19,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ### You will learn
  - How to create an SAP Fiori elements app on top of your previously created CAP application
  - How to modify the UI with OData annotations
- - How to make header info editable 
+ - How to make header info editable
  - How to check the annotation files
 
 
@@ -57,11 +58,11 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 
     > See the [CAP Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for more details.
 
-5.    Select the **`RiskService(Node.js)`** as the OData service and choose **Next**.
+5. Select the **`RiskService(Node.js)`** as the OData service and choose **Next**.
 
     ![CAPpro](datasourceselection.png)
 
-6.    Select **Risks** as the main entity and choose **Next**.
+6. Select **Risks** as the main entity, choose the option **No** to avoid adding table columns automatically. Choose **Next**.
 
     ![entitySelection](entityselection.png)
 
@@ -134,46 +135,47 @@ Let's say that at this point you'd like to edit some of the data or create a new
 
     !![No Title Risk](notitlerisk.png)
 
-In order to make also the header fields editable, you have to change the default setting for this in the `manifest.json` file on the `Risks` application.
+To make also the header fields editable, you have to change the default setting for this in the `manifest.json` file on the `Risks` application.
 
 1. Open `app/risks/webapp/manifest.json` file.
 
 2. Change the value of the setting `editableHeaderContent` to `true`:
 
-```YAML[15]
-{
-    "_version": "1.32.0",
-    "sap.app": {
-    ...
-    "sap.ui5": {
+    ```YAML[15]
+    {
+        "_version": "1.32.0",
+        "sap.app": {
         ...
-        "routing": {
+        "sap.ui5": {
             ...
-            "targets": {
+            "routing": {
                 ...
-                "RisksObjectPage": {
+                "targets": {
                     ...
-                    "options": {
-                        "settings": {
-                            "editableHeaderContent": true,
-                            "entitySet": "Risks"
+                    "RisksObjectPage": {
+                        ...
+                        "options": {
+                            "settings": {
+                                "editableHeaderContent": true,
+                                "entitySet": "Risks"
+                            }
                         }
                     }
                 }
-            }
-        },
-        ...
-}
-```
+            },
+            ...
+    }
+    ```
+
 3. Create another risk with a title and description.
 
-!![My New Risk](mynewrisk.png)
+    !![My New Risk](mynewrisk.png)
 
 [DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 5: ](Check the annotation files)]
-Let's have a look at the new `risk-service-ui.cds` file and the annotations in there. At the beginning we see:
+Let's have a look at the new `risk-service-ui.cds` file and the annotations in there. At the beginning you see:
 
 ```JavaScript
 using RiskService from './risk-service';
@@ -189,7 +191,7 @@ annotate RiskService.Risks with {
 
 It's referring to the definitions of the earlier `cds` file that exposes the service and its `Risks` and `Mitigations` entities. Then it annotates the `Risks` entity with a number of texts. These should be in a translatable file normally but for now we keep them here. These texts are used as labels in form fields and column headers by SAP Fiori elements.
 
-The following section is needed for the value help of the **Mitigation** field that is visible when you're editing the object page of the `Risks` app.
+The following section is needed for the value help of the **Mitigation** field that is visible when you are editing the object page of the `Risks` app.
 
 ```JavaScript
 annotate RiskService.Mitigations with {
@@ -226,7 +228,10 @@ annotate RiskService.Risks with @(
         SelectionFields: [prio],
         LineItem: [
             {Value: title},
-            {Value: miti_ID},
+            {
+                Value: miti_ID,
+                ![@HTML5.CssDefaults] : {width : '100%'}
+            },
             {
                 Value: prio,
                 Criticality: criticality
@@ -268,7 +273,7 @@ The columns and their order in the work list are derived from the `LineItem` sec
 
 Next up is the `Facets` section. In this case, it defines the content of the object page. It contains only a single facet, a `ReferenceFacet`, of the field group `FieldGroup#Main`. This field group just shows up as a form. The properties of the `Data` array within `FieldGroup#Main` determine the fields in the form.
 
-At the end of the file we have:
+At the end of the file you see:
 
 ```JavaScript
 annotate RiskService.Risks with {

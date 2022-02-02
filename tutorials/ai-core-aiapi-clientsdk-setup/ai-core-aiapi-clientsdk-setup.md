@@ -1,10 +1,10 @@
 ---
-title: Install Jupyter and Run SAP AI API Client SDK on Python
+title: Install Jupyter and Run AI API Client SDK on Python
 description: Learn python installation and Jupyter setup. Invoke SAP AI API Client SDK.
 auto_validation: true
 time: 15
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
-primary_tag: topic>artificial-intelligence
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
+primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
@@ -13,7 +13,7 @@ author_profile: https://github.com/dhrubpaul
 ### You will learn
   - How to install packages for python
   - How to execute python code in Jupyter
-  - How to connect to SAP AI API Client SDK using python via Jupyter
+  - How to connect to AI Core using AI API Client SDK
 
 ---
 
@@ -35,30 +35,19 @@ pip --version
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install SAP AI API Client SDK)]
+[ACCORDION-BEGIN [Step 2: ](Install AI API client SDK)]
 
-`SAP-AI-API-Client-SDK` is a python package, which will enable you to talk to SAP AI API.
+`AI-API-Client-SDK` is a python package, which will enable you to control to SAP AI Core via the [AI API](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/716d4c38e3054c93a9d481b51cc66298.html).
 
-| Package | Link |
-| --- | --- |
-| `SAP-AI-API-Client-SDK` | [Download Here](https://developers.sap.com/trials-downloads.html?search=AI+Core) |
+Execute the following on terminal to install `AI API client SDK` package in python.
 
-Python packages have format `.whl` or `.tar.gz`, both can be installed in the same way.
+```BASH
+pip install ai-api-client-sdk
+```
 
-Follow the steps to install the same
+This fetches the python package from the public repository of python packages and installs in your system. Locate the public repository [here](https://pypi.org/project/ai-api-client-sdk/).
 
-1. Download `.tar.gz` for `SAP-AI-API-Client-SDK`
-
-2. Install `.tar.gz` using pip. Execute the following on terminal. *(Change the path)*
-
-    ```BASH[1]
-    pip install <path_to_your_whl_folder>/ai-api-client-sdk-<version>.tar.gz
-    ```
-    !![pip ai-api](img/pip/ai-api.png)
-
-Similarly install `PyYaml`, *(No `.tar.gz` or `.whl` download required for `PyYaml` , it would be fetched automatically from public python repository)*.
-
-Execute the following on terminal.
+Execute the following on terminal to install `PyYaml` package.
 
 ```BASH
 pip install PyYaml

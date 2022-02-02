@@ -2,8 +2,8 @@
 title: Quick Start with the Mobile Development Kit (MDK)
 description: Create and examine your first mobile (offline) and web application using the MDK template connecting against a sample service.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio]
 time: 15
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -31,7 +31,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.2.png)
 
-    >If you do not see Welcome page, you can access it via **Help** menu.
+    >If you do not see the Welcome page, you can access it via **Help** menu or via **View** menu > Find Command > Welcome.
 
 3. Select **MDK Project** and click **Start**.
 
@@ -45,6 +45,7 @@ This step includes creating the mobile development kit project in the editor.
     | `Your Project Name` | Provide a name of your choice. `MDKApp`is used for this tutorial |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
 
     !![MDK](img-1.4.png)
 
@@ -145,18 +146,13 @@ You should see successful messages for both deployments.
 
 SAP Business Application Studio has a feature to generate QR code for onboarding the mobile app.
 
-1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon.
+Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon.
 
-    !![MDK](img-4.1.png)
+!![MDK](img-4.1.png)
 
-2. Select `com.sap.mdk.demo` application from the list.
+The On-boarding QR code is now displayed.
 
-    !![MDK](img-4.3.png)
-
-    The On-boarding QR code is now displayed.
-
-    !![MDK](img-4.2.png)
-
+!![MDK](img-4.2.png)
 
 >Leave the Onboarding dialog box open for step 5.
 
@@ -175,7 +171,7 @@ Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/b
 
 Once you accept app update, you will see the list of entities on the **Main** page, **LOGOUT** and **SYNC** options at bottom of the page and Offline store is being initialized. click either entity, it navigates to detail page, you can create, update, delete a record. This record gets saved to offline request queue database, navigate back to main page and press **SYNC** to upload local changes to the backend. Once the upload is successful, it will also download the data from the backend to the offline store to have same dataset on both ends.
 
-![MDK](img_5.1.gif)
+!![MDK](img_5.1.gif)
 
 Additionally, you can search over all properties of the objects displayed in the section by entering manually or via barcode scanner. For example, in Products list, you can scan the barcode to search the products belong to _MP3 Players_ category.
 
