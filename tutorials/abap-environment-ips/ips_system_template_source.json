@@ -7,7 +7,7 @@
         {
             "Type":"HTTP",
             "ProxyType":"Internet",
-            "Authentication":"BasicAuthentication",            
+            "Authentication":"BasicAuthentication",
             "URL":"",
             "ias.user.filter":"groups.display eq \"BR_IPS_TUTORIAL_DEVELOPER\"",
             "ias.group.filter":"displayName eq \"BR_IPS_TUTORIAL_DEVELOPER\"",

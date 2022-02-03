@@ -11,7 +11,6 @@ author_profile: https://github.com/MichaelPShea
 
 ## Prerequisites
   - Download the product list application from [this repository](https://github.com/SAP-samples/teched2019-cloud-cf-product-list/tree/sap-tutorial-xsuaa) or clone the branch **sap-tutorial-xsuaa**.
-  - For a better understanding, it is recommended to complete the tutorials [Create a Basic Node.js App](cp-node-create-basic-app) and [Deploy Your Node.js App with the Cloud Foundry CLI](cp-node-deploy-cf-cli) first.
 
 ## Details
 ### You will learn
