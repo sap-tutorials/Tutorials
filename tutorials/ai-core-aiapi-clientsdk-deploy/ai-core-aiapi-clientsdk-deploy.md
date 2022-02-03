@@ -1,10 +1,10 @@
 ---
-title: Deploy ML Model (Client SDK)
+title: Deploy ML Model (AI API Client SDK)
 description: Learn serving of models created in SAP AI Core through SAP AI API Client SDK.
 auto_validation: true
 time: 20
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
-primary_tag: topic>artificial-intelligence
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
+primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---

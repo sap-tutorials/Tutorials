@@ -16,6 +16,8 @@ primary_tag: software-product>sap-hana-cloud
   - How to create a graph, a document store, and import spatial data.
   - How the SAP HANA database explorer can be used with multi-model data.
 
+In SAP HANA, a graph is made up of a set of vertices and a set of edges. Vertices are stored in vertex tables, while edges are stored in edge tables. Vertex and edge tables are collectively denoted as graph tables.
+
 This tutorial is meant to be an introduction to this topic.  For a deeper dive on the topics of graph and spatial, see the tutorial groups [Introduction to SAP HANA Spatial Data Types](group.hana-aa-spatial-get-started) and [Smart Multi-Model Data Processing with SAP HANA Cloud](group.hana-cloud-smart-multi-model-data).
 
 ---
