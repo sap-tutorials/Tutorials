@@ -24,8 +24,6 @@ This might help you to get a better understanding on how the service works and s
 
 With this, you'll learn exactly what you have to do to add Users to your service and how to give them the appropriate permissions.
 
-But if you want an easy and quick way to setup SAP Customer Order Sourcing, use this tutorial: [Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing](cos-getting-started-trial).
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a service instance)]
