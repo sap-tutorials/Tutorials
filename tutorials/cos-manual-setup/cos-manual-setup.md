@@ -3,7 +3,7 @@ title: Set Up SAP Customer Order Sourcing Manually
 description: Learn how to set up SAP Customer Order Sourcing start to finish, how to add Users and give them appropriate permissions.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: topic>cloud
 ---
 
