@@ -42,7 +42,7 @@ You are the owner of an e-commerce business or a web shop in the fashion industr
 
 [ACCORDION-BEGIN [Step 3: ](Create a new environment)]
 
-After creating a service instance and the corresponding credentials, for more information see [Set Up SAP Customer Order Sourcing Manually](cos-manual-setup), you can upload master data into **SAP Customer Order Sourcing**. You do this via a REST API.
+[After creating a service instance and the corresponding credentials](cos-manual-setup), you can upload master data into **SAP Customer Order Sourcing**. You do this via a REST API.
 
 1. Open a new browser window, navigate to [SAP Customer Order Sourcing on SAP API Business Hub](https://api.sap.com/api/Sourcing_API/resource), and login with your email address.
 
