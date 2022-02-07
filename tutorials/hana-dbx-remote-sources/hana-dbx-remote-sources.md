@@ -230,7 +230,7 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
 6. Right-click on **`HC_DL_TRIAL`** and choose **Open**.  Create a virtual table in SAP HANA Cloud named **`VT_DL_TOURIST_REVIEWS`** in the schema **HOTEL** that maps to the newly created table in SAP HANA Cloud, data lake IQ.
 
-    ![virtual data lake table](virtual-table-data-lake.png)
+    ![virtual data lake table](virtual-table-data-lake-1.png)
 
     This can be visualized as follows:
 
@@ -239,6 +239,7 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 7. Query the local SAP HANA table and the equivalent SAP HANA Cloud, data lake IQ  table.
 
     ```SQL
+    SELECT * FROM HOTEL.TOURIST_REVIEWS;
     SELECT * FROM HOTEL.VT_DL_TOURIST_REVIEWS;
     ```
 

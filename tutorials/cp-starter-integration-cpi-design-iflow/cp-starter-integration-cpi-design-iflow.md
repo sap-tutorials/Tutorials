@@ -20,9 +20,10 @@ author_profile: https://github.com/Karunaharan
 
 [ACCORDION-BEGIN [Step 1: ](Access your Cloud Integration workspace)]
 
-    In the Integration Suite home page, choose the **Design, Develop, and Operate Integration Scenarios** tile. Alternatively, in the provisioning app, use the URL available under the **Cloud Integration** section.
-    In the Cloud Integration application, choose the **Design** tab (pencil icon) to access your workspace.
-    This is where you will design your integration package and integration flow.
+In the Integration Suite home page, choose the **Design, Develop, and Operate Integration Scenarios** tile. Alternatively, in the provisioning app, use the URL available under the **Cloud Integration** section.
+
+In the Cloud Integration application, choose the **Design** tab (pencil icon) to access your workspace.
+This is where you will design your integration package and integration flow.
 
   !![Access workspace](1-1-access-workspace.png)
 
@@ -60,7 +61,7 @@ author_profile: https://github.com/Karunaharan
 
 4. Choose **Edit** to start editing the integration flow.
 
-    Choose **Restore** at the bottom right corner to bring up the **Property Sheet**. Property sheet is the place where you define the parameters for each step in your integration flow.
+    Choose **Restore** at the bottom right corner to bring up the **Property Sheet**. Property sheet is the place where you define the parameters for each step in the integration flow.
 
       !![Start editing the integration flow](3-1-edit-iflow.png)
 
@@ -73,6 +74,7 @@ In this step, you define your sender channel and sender adapter. In this case, w
 1. Choose the **Sender** step. Create the sender channel by clicking the arrow icon on **Sender** and dragging it to the **Start** step.
 
     !![Create the sender channel](4-1-connect-sender-channel.png)
+
 
 2. In the **Adapter Type** prompt, select the **HTTPS** adapter.
 
@@ -96,9 +98,6 @@ You add this converter because the input to the integration flow is sent in JSON
     !![JSON to XML Converter](5-1-json-to-xml-converter.png)
 
 2. Connect the converter to the message path by clicking on the message path.
-    >**TIP:** When you place your cursor on the message processing path, you see it change to green color.
-
-    !![Connect JSON to XML Converter to message path](5-2-connect-jsonxml-converter.png)
 
 [DONE]
 [ACCORDION-END]

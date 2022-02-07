@@ -3,7 +3,7 @@ title: Build Skeleton React and UI5 Projects
 description: Create skeleton React and UI5 projects and install Luigi.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, topic>javascript]
+tags: [ tutorial>beginner, programming-tool>javascript]
 primary_tag: topic>user-interface
 ---
 
@@ -102,9 +102,9 @@ In this step, you will create a React skeleton project which will be used to cre
     ​
 7. Download the Luigi React configuration:
 
-   ```Shell
-   curl https://raw.githubusercontent.com/SAP/luigi/master/core/examples/luigi-example-react/public/luigi-config.js > src/luigi-config/luigi-config.es6.js
-   ```
+    ```Shell
+     curl https://raw.githubusercontent.com/SAP/luigi/master/core/examples/luigi-example-react/public/luigi-config.js > src/luigi-config/luigi-config.es6.js
+    ```
 
 8.  Ins​tall and run the configuration:
 
