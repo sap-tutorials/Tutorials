@@ -58,7 +58,7 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     If it is not installed, on Linux install the System GNU C compiler.  
 
-    On Windows download it from [Download MinGW](https://www.mingw-w64.org/downloads/) and run the installer.
+    On Windows, it can be downloaded from [Download MinGW](https://www.mingw-w64.org/downloads/). Under **Mingw-builds**, select **Installation: Sourceforge** to run the installer.
 
     During the install, set the architecture option to `x86_64`.
 

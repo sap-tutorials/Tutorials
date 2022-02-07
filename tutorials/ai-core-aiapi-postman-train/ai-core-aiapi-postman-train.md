@@ -1,10 +1,10 @@
 ---
-title: Train Execution of ML Model (Postman)
+title: Train ML Model with Execution in SAP AI Core (Postman)
 description: Train execution a ML model in SAP AI Core with help of Postman client.
 auto_validation: true
 time: 20
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
-primary_tag: topic>artificial-intelligence
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
+primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---

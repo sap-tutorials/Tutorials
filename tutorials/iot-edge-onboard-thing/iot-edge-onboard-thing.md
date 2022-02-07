@@ -1,7 +1,7 @@
 ---
 author_name: Marco Porru
 author_profile: https://github.com/marco-porru
-title: Onboard a New Device and Thing
+title: Onboard a new Device and Thing
 description: Onboard a new Device and a Thing, complete the digital twin mapping  and test the ingestion services for an IoT Edge node using the Edge Gateway Service.
 auto_validation: true
 time: 15
