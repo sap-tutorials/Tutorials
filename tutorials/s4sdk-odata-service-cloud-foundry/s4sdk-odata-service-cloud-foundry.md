@@ -2,8 +2,8 @@
 title: Connect to OData Service on Cloud Foundry Using SAP Cloud SDK
 description: Create a basic Java project to call OData services using the SAP Cloud SDK on Cloud Foundry.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-business-technology-platform, products>sap-cloud-platform-connectivity, products>sap-s-4hana, topic>cloud, programming-tool>java, programming-tool>odata ]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-business-technology-platform, software-product>sap-cloud-platform-connectivity, software-product>sap-s-4hana, topic>cloud, programming-tool>java, programming-tool>odata ]
+primary_tag: software-product>sap-cloud-sdk
 time: 20
 ---
 
@@ -243,7 +243,7 @@ Depending on your chosen archetype and the BTP setup you can deploy the project 
 
 **Provide Destinations for your Application**
 
-In order for your application to run you need to provide it with information about your S/4HANA system. Your `BusinessPartnerService` needs an URL. Depending on the system you would like to use, you might need to define an authentication method as well. This information is provided in the form of a destination which we retrieve (in a multi-tenant environment) by transparently accessing the destination service of the BTP. This is done by retrieving the destination via the `DestinationAccessor` by name, in your case `MyErpSystem`. There are multiple ways to create such a destination. For now you will provide it to our application by creating an environment variable that holds the information. You will create such a variable now both for a local deployment and a deployment on the SAP BTP Cloud Foundry.
+In order for your application to run you need to provide it with information about your S/4HANA system. Your `BusinessPartnerService` needs an URL. Depending on the system you would like to use, you might need to define an authentication method as well. This information is provided in the form of a destination which is retrieved (in a multi-tenant environment) by transparently accessing the destination service of the BTP. This is done by retrieving the destination via the `DestinationAccessor` by name, in your case `MyErpSystem`. There are multiple ways to create such a destination. For now you will provide it to your application by creating an environment variable that holds the information. You will create such a variable now both for a local deployment and a deployment on the SAP BTP Cloud Foundry.
 
 **Run on a Local Server**
 
@@ -337,7 +337,7 @@ Visit `http://localhost:8080/businesspartners` to see your new feature in action
 
 **Connecting to SAP S/4HANA from SAP BTP Cloud Foundry**
 
-On SAP BTP Cloud Foundry, you can either supply the same environment variable `destinations` that we used for the local deployment above to the Cloud Foundry application, or use the [destination service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/7e306250e08340f89d6c103e28840f30.html) of the SAP BTP Cloud Foundry. Using the destination service is the recommended approach, because it already handles important aspects related to multi-tenancy, connectivity and security and is transparently integrated into the SAP Cloud SDK. Therefore, the usage of the destination service is explained in detail below.
+On SAP BTP Cloud Foundry, you can either supply the same environment variable `destinations` that you used for the local dep loyment above to the Cloud Foundry application, or use the [destination service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/7e306250e08340f89d6c103e28840f30.html) of the SAP BTP Cloud Foundry. Using the destination service is the recommended approach, because it already handles important aspects related to multi-tenancy, connectivity and security and is transparently integrated into the SAP Cloud SDK. Therefore, the usage of the destination service is explained in detail below.
 
 Nevertheless, there may be circumstances that make the approach via the environment variable easier to use or otherwise preferable for initial testing. To set the environment variable using the Cloud Foundry command line interface (CLI), execute the following command:
 

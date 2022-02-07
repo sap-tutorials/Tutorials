@@ -2,8 +2,8 @@
 title: Create a Sample Application on Cloud Foundry Using SAP Cloud SDK
 description: Create the very first Hello World example on Cloud Foundry using the SAP Cloud SDK.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-business-technology-platform, topic>cloud, programming-tool>java ]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-s-4hana, software-product>sap-business-technology-platform, topic>cloud, programming-tool>java ]
+primary_tag: software-product>sap-cloud-sdk
 time: 20
 ---
 
@@ -84,7 +84,7 @@ After providing these values, Maven will generate your project from the archetyp
 
 ![Maven generates project from archetype](maven-generates-project.png)
 
-**Note**: Here you have created an application which is based on the [`TomEE runtime`](http://tomee.apache.org/) which is a `Java EE 6` compliant open-source runtime that is available in the `Cloud Foundry` platform if your goal is to create a `Java EE` application. You may also initialize the project with [`Spring Boot`](https://spring.io/projects/spring-boot). To adapt the archetype simply change the `artifactId` to `scp-cf-spring`. Our tutorial series will be primarily based on the `TomEE` runtime. Nonetheless, the SAP Cloud SDK is compatible with these popular `runtimes` too.
+**Note**: Here you have created an application which is based on the [`TomEE runtime`](http://tomee.apache.org/) which is a `Java EE 6` compliant open-source runtime that is available in the `Cloud Foundry` platform if your goal is to create a `Java EE` application. You may also initialize the project with [`Spring Boot`](https://spring.io/projects/spring-boot). To adapt the archetype simply change the `artifactId` to `scp-cf-spring`. This tutorial series will be primarily based on the `TomEE` runtime. Nonetheless, the SAP Cloud SDK is compatible with these popular `runtimes` too.
 
 [DONE]
 [ACCORDION-END]
@@ -118,7 +118,7 @@ Additionally, there are utility scripts within the `cx-server` directory that ca
 #### Multiple modules project
 
 The advantage of operating a multiple modules project for your application becomes apparent as soon as the software complexity rises. Then it gets convenient to dedicate code distribution and responsibility to developers for either application or test environment. In terms of reliability and continuance, you will see that front-end testing and test automation are as important as classic back-end testing of your project. These fields of expertise require different programming paradigms, as well as different kinds of development life cycles. To ensure the overall software stability and reliability, a multiple modules setup is the best practice solution.
-To get you started, we take a look into the conventional application project, as well as the classic unit tests. Then the integration tests follow, used for code tests with external servers and resources. Once software testing is covered, we briefly introduce the `Cx server` for continuous integration and delivery.
+To get you started, lets take a look into the conventional application project, as well as the classic unit tests. Then the integration tests follow, used for code tests with external servers and resources. Once software testing is covered, this tutorial briefly introduces the `Cx server` for continuous integration and delivery.
 
 **`application`** contains the source code, unit tests, and configuration of your actual web application.
 
@@ -142,7 +142,7 @@ application [firstapp-application]
  |-- pom.xml
 ```
 
-  - **`src/main/java`** - Here goes your production code, nothing else. As you can see, there's already the `HelloWorldServlet`, which we will look at in more detail soon.
+  - **`src/main/java`** - Here goes your production code, nothing else. As you can see, there's already the `HelloWorldServlet`, which will be look at in more detail soon.
   - **`src/main/resources`** - Anything that you require in your production code but is not compilable code goes here (typically things like API definition files for `RAML` or `OpenAPI`, `Database Migration Files` for `Flyway` or `Liquibase`).
   - **`src/main/webapp`** - Contains the deployment descriptor for your web application `web.xml`.
   - **`src/test/java`** - Contains the unit tests for your application. The purpose of classes in here is to test and validate single aspects of data flow and computational operations of your application project.
@@ -187,7 +187,7 @@ Once a Jenkins server is configured for your personal needs, the files in the pr
 
 #### Unit tests and integration tests
 
-This separation of test modules makes it possible to just run unit tests and integrations test without deploying, as well as deploying the application without running time consuming tests. Unit tests can either be kept publicly inside the application module `application/src/test`, or in a separate `unit-tests` module that is not part of the archetype. For that topic we highly recommend the articles and educational videos by Martin Fowler. For a start we advise reading his post about [Unit Tests](https://martinfowler.com/bliki/UnitTest.html).
+This separation of test modules makes it possible to just run unit tests and integrations test without deploying, as well as deploying the application without running time consuming tests. Unit tests can either be kept publicly inside the application module `application/src/test`, or in a separate `unit-tests` module that is not part of the archetype. For that topic you can also refer to the articles and educational videos by Martin Fowler. His post about [Unit Tests](https://martinfowler.com/bliki/UnitTest.html) is a good starting point.
 
 During development it becomes important to test the code newly implemented to external services, i.e. logic running in a distributed environment. This is where the integration tests are an important tool to ensure correctness and stability over the whole internal and external deployment. Since the integration tests may contain confidential information, like business logic and test access tokens, it can be helpful to maintain their operation inside a dedicated Maven sub-module. That way the runnable application itself can be later shipped without tests and their dependency.
 
@@ -217,7 +217,7 @@ public class HelloWorldServlet extends HttpServlet
 
 The `HelloWorldServlet` extends `HttpServlet`, so this will be a HTTP endpoint that customers can visit. It is mapped to the `/hello` route using `@WebServlet("/hello")`. By overriding the function `doGet`, you define what happens when a client performs an HTTP GET request on the `/hello` route. In this case the endpoint simply writes a response containing **`Hello World!`**
 
-**Note**: The application code runs seamlessly in `SAP Business Technology Platform Neo` as well as `SAP Business Technology Platform Cloud Foundry`. The `SAP Cloud SDK` is compatible with both versions and provides mechanisms to seamlessly transfer code between both environments.
+> The application code runs seamlessly in `SAP Business Technology Platform Neo` as well as `SAP Business Technology Platform Cloud Foundry`. The `SAP Cloud SDK` is compatible with both versions and provides mechanisms to seamlessly transfer code between both environments.
 
 [DONE]
 [ACCORDION-END]
@@ -303,7 +303,7 @@ Then, run the following commands to start the local server:
 mvn tomee:run -pl application
 ```
 
-Visit `http://localhost:8080/hello` on your local machine to view the response of our application. You can stop the server by pressing Ctrl + C.
+Visit `http://localhost:8080/hello` on your local machine to view the response of your application. You can stop the server by pressing Ctrl + C.
 
 Now you have a strong basis for developing your own cloud application for `SAP Business Technology Platform Cloud Foundry` using the `SAP Cloud SDK`. In the following tutorials you will learn about more advanced uses of the `SAP Cloud SDK`.
 

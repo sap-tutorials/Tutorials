@@ -2,8 +2,8 @@
 title: Set Up Your Local Infrastructure to Develop with SAP Cloud SDK
 description: Set up your system to create an SAP Business Technology Platform application with the SAP Cloud SDK.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-business-technology-platform, topic>cloud, programming-tool>java ]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-s-4hana, software-product>sap-business-technology-platform, topic>cloud, programming-tool>java ]
+primary_tag: software-product>sap-cloud-sdk
 time: 10
 ---
 
@@ -31,11 +31,7 @@ If you have the required software installed already you can skip this step. You 
 
 For Windows 7+ or Windows Server 2003+ adhere to the following steps:
 
-1. Install `Chocolatey`. `Chocolatey` is a package manager for Windows which will be useful for installing necessary components. Install it by opening a console and issuing the following command:
-
-    ```shell
-    @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
-    ```
+1. Install `Chocolatey`. `Chocolatey` is a package manager for Windows which will be useful for installing necessary components. Install it by following the [Chocolatey installation guide](https://chocolatey.org/install).
 
 2. Install the Java Development Kit:
 
