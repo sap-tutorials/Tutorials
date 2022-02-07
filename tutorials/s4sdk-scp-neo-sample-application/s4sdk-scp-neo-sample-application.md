@@ -1,8 +1,8 @@
 ---
-title: Create a Sample Application on SCP Neo Using SAP Cloud SDK
-description: Create your very first Hello World sample application on SAP Cloud Platform Neo using the SAP Cloud SDK.
+title: Create a Sample Application on SAP Business Technology Platform Neo Using SAP Cloud SDK
+description: Create your very first Hello World sample application on the Business Technology Platform Neo using the SAP Cloud SDK.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
+tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-s-4hana, products>sap-business-technology-platform, topic>cloud, programming-tool>java ]
 primary_tag: products>sap-cloud-sdk
 time: 20
 ---
@@ -18,7 +18,7 @@ time: 20
  - How to implement and understand the integration test
  - How to deploy the project
 
-This tutorial shows you the first steps when developing applications for the SCP Neo using the SAP Cloud SDK.
+This tutorial shows you the first steps when developing applications for the SAP Business Technology Platform Neo using the SAP Cloud SDK.
 
 ![deployed application result](deployed_application_result.png)
 
@@ -248,7 +248,7 @@ mvn scp:clean scp:push -pl application
 
 The first command will cascade the goal execution of `clean` and `install` to both Maven `submodules`. It will break in case of any compilation errors or test failures.
 
-The second command will run a cleanup and startup for the `SCP Neo` application. The `-pl` argument defines the project location in which the Maven goals are being executed. If there is already a previously started instance of the application running, the goal `scp:clean` will try to stop it on `localhost:8080` and will remove the cached server files of the application. `scp:push` will start the application on `localhost:8080`. The web server is started as background process and will take additional seconds to initialize.
+The second command will run a cleanup and startup for the `SAP Business Technology Platform Neo` application. The `-pl` argument defines the project location in which the Maven goals are being executed. If there is already a previously started instance of the application running, the goal `scp:clean` will try to stop it on `localhost:8080` and will remove the cached server files of the application. `scp:push` will start the application on `localhost:8080`. The web server is started as background process and will take additional seconds to initialize.
 
 The second command will also ask for URL, user and password for the destination `ErpQueryEndpoint`. Since this destination is not used at this point of the tutorial, any arbitrary value can be entered here, e.g. `dummy`.
 
@@ -284,7 +284,7 @@ As a requirement make sure to have the [`Neo CLI`](https://help.sap.com/viewer/6
 In case you are missing this tool, feel free to download it. A traditional installation is not required:
 
 
-**Note:** The `Neo CLI` comes packaged with the `SAP Cloud Platform Neo Environment SDK`.
+**Note:** The `Neo CLI` comes packaged with the `SAP BTP Neo Environment SDK`.
 
   - Go to <https://tools.hana.ondemand.com/#cloud>
   - Download and unzip the latest `neo-javaee7-wp-sdk-######.zip` alias `Java EE 7 Web Profile`
