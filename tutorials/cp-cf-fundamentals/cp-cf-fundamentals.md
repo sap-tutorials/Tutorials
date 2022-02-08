@@ -42,15 +42,15 @@ We will discuss many of these new features in the sections below.
 
 [ACCORDION-BEGIN [Step](Cloud Foundry - Plaform as a Service PaaS)]
 
-Let's start with what Cloud Foundry provides to you, as a developers
+Let's start with what Cloud Foundry provides to you, as developers
 
 ![Power of a platform](power-of-platform.png)
 
-As you can see from the diagram, traditional development requires the entire system.  Hardware, Operating System, application servers, and software are all managed and maintained by the organization.  This is called "on premise".
+As you can see from the diagram, traditional development requires the entire system.  Hardware, operating system (OS), application servers, and software are all managed and maintained by the organization. This is called "on premises".
 
-Traditional Cloud development moved the hardware and infrastructure out of the organization.  The developers and administrators, however, still must maintain everything from the Operating System (OS) on up.
+Traditional Cloud development moved the hardware and infrastructure out of the organization.  The developers and administrators, however, still must maintain everything from the OS upwards.
 
-Platform as a Service PaaS moves control of the runtime - the application servers, databases, and other fundamental applications - away from the organization and back to the cloud.
+Platform as a Service PaaS moves control of the runtime - the application servers, databases, and other fundamental applications - away from the organization and to the cloud.
 
 [DONE]
 [ACCORDION-END]
@@ -82,7 +82,7 @@ Here is a partial list of services on the SAP BTP, Cloud Foundry environment:
 
 [ACCORDION-BEGIN [Step](Development made easy)]
 
-Cloud Platform makes running and testing an application in the cloud very easy.  In fact, it's a single command to upload and start an application in Cloud Foundry:  `cf push`.
+The Business Technology Platform makes running and testing an application in the cloud very easy.  In fact, it's a single command to upload and start an application in Cloud Foundry:  `cf push`.
 
 Take, for example, a Java web application.  Java web apps are deployed in a zip file called a WAR (for Web ARchive).  Creating a WAR is easy, most tools and IDE's will do it for you.  
 
@@ -103,7 +103,7 @@ Running the WAR file in the cloud is simple.  Just run the command `cf push WAR-
 
 SAP has provided a number of services for Cloud Foundry developers.  
 
-Our services include SAP software (for example [SAP HANA](https://help.sap.com/viewer/product/HANA_SERVICE/Cloud/en-US)), and also a number of software components to connect to 3rd party platforms (for example [Open Connectors](https://www.sap.com/products/cloud-platform/capabilities/integration.open-connectors.html)).
+Our services include SAP software (for example [SAP HANA](https://help.sap.com/viewer/product/HANA_SERVICE/Cloud/en-US)), and also a number of software components to connect to 3rd party platforms (for example [Open Connectors](https://help.sap.com/viewer/product/OPEN_CONNECTORS/Cloud/en-US)).
 
 ![Partial list of Cloud Foundry services from SAP](sap-cf-service-list.png)
 
@@ -129,7 +129,7 @@ Organizations can create spaces for individual projects as each space is separat
 
 ---
 
-That is a basic introduction to Cloud Platform on SAP.  Continue to the other tutorials to learn how easy it is to develop or customize using Cloud Platform.
+That is a basic introduction to the SAP BTP, Cloud Foundry environment. Continue to the other tutorials to learn how easy it is to develop or customize using the SAP Business Technology Platform.
 
 
 ---

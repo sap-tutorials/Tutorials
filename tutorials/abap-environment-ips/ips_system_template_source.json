@@ -1,0 +1,20 @@
+{
+    "connectorTypeString":"SAP_CLOUD_IDENTITY",
+    "accessMode":"READ",
+    "name":"My IAS ABAP Developers",
+    "alias":"Provisions my IAS Devlopers",
+    "properties":
+        {
+            "Type":"HTTP",
+            "ProxyType":"Internet",
+            "Authentication":"BasicAuthentication",
+            "URL":"",
+            "ias.user.filter":"groups.display eq \"BR_IPS_TUTORIAL_DEVELOPER\"",
+            "ias.group.filter":"displayName eq \"BR_IPS_TUTORIAL_DEVELOPER\"",
+            "User":[]
+        },
+    "encryptedProperties":
+    {
+        "Password":null
+    }
+}
