@@ -18,7 +18,7 @@ primary_tag: programming-tool>abap-development
   - How to generate the artifacts you need to create a RAP business service. (RAP is the ABAP RESTful Application Programming Model)
   - You can then implement your business logic much more quickly than if you had to create each artifact by hand
 
-Throughout this tutorial, object names may include a suffix or group number, such as `XXX`. Always replace this with your own group number or initials.
+Throughout this tutorial, object names may include a suffix or group number, such as `####`. Always replace this with your own group number or initials.
 
 For more information, see the links at the end of this tutorial.
 
@@ -31,12 +31,11 @@ For more information, see the links at the end of this tutorial.
     !![step1a-new-package](step1a-new-package.png)
 
 2. Enter the following then follow the wizard, choosing a **new** transport request:
-- Name: **`ZXXX_TRAVEL`**
-- Description: **Travel data generated**
-- Request description: **Travel service RAP Generator**
+    - Name: **`ZRAP_TRAVEL_####`**
+    - Description: **Travel data generated**
+    - Request description: **Travel service RAP Generator**
 
     !![step1a-create-package](step1a-create-package.png)
-    .
     !![step1b-new-tr](step1b-new-tr.png)
 
 
@@ -53,7 +52,7 @@ For more information, see the links at the end of this tutorial.
     !![step2b-choose-table](step2b-choose-table.png)
 
 3. Enter the following, then choose **Next**.
-    - Name: **`zrap_travel_xx`**
+    - Name: **`zrap_travel_####`**
     - Description: **Travel Data Generated**
 
 4. Choose the transport request, then choose **Finish**.
@@ -72,9 +71,9 @@ For more information, see the links at the end of this tutorial.
     customer_id           : /dmo/customer_id;
     begin_date            : /dmo/begin_date;
     end_date              : /dmo/end_date;
-    @Semantics.amount.currencyCode : 'ztravel_asug_03.currency_code'
+    @Semantics.amount.currencyCode : 'zrap_travel_####.currency_code'
     booking_fee           : /dmo/booking_fee;
-    @Semantics.amount.currencyCode : 'ztravel_asug_03.currency_code'
+    @Semantics.amount.currencyCode : 'zrap_travel_####.currency_code'
     total_price           : /dmo/total_price;
     currency_code         : /dmo/currency_code;
     description           : /dmo/description;
@@ -93,11 +92,13 @@ For more information, see the links at the end of this tutorial.
 
     !![step2c-data-preview](step2c-data-preview.png)
 
-> You must include a key field `client` with the type `abap.clnt`.
+    > You must include a key field `client` with the type `abap.clnt`.
 
-> You must include the following administrative fields with the following types.
+    > You **must not** use type `MANDT` since the generator will throw an error.
 
-> These are known as reuse data elements.
+    > In addition, you must include the following administrative fields with the following types.
+
+    > These are known as reuse data elements.
 
     ```ABAP
     local_created_by      : abp_creation_user;
@@ -128,7 +129,7 @@ For more information, see the SAP Help Portal: [ABAP RESTful Application Program
 
 3. Enter the following:
 
-    - Data definition name: **`ZI_TRAVEL_XXX`**
+    - Data definition name: **`ZI_TRAVEL_####X`**
     - Alias name: **Travel**
 
     !![step3b-enter-data-def](step3b-enter-data-def.png)
@@ -138,11 +139,11 @@ For more information, see the SAP Help Portal: [ABAP RESTful Application Program
 
     |  Artifact                   | Value     	        | Naming convention
     |  :--------------------------| :-------------------|:-----------------
-    |  ABAP implementation class  | `ZBP_I_TRAVEL_XXX`  | `ZBP_I_<entity>_<suffix>` (BP = Behavior pool; I = interface view)   
-    |  Draft Table Name:          | `ZRAP_TRAVEL_D_XXX` | `Z<prefix>__<entity>_<suffix>` (underscore is not permitted as a second or third character)
-    |  CDS projection view entity | `ZC_TRAVEL_XXX`     | `ZC__<entity>_<suffix>` (C = consumption view)
-    |  CDS service definition     | `ZUI_TRAVEL_XXX`    | `ZUI_<entity>_<suffix>` (UI for e.g. Fiori app as opposed to a Web API)
-    |  CDS service binding        | `ZUI_TRAVEL_O4_XXX` | `ZUI_<entity>_<OData version>_<suffix>`
+    |  ABAP implementation class  | `ZBP_I_TRAVEL_####`  | `ZBP_I_<entity>_<suffix>` (BP = Behavior pool; I = interface view)   
+    |  Draft Table Name:          | `ZRAP_TRAVEL_D_####X` | `Z<prefix>__<entity>_<suffix>` (underscore is not permitted as a second or third character)
+    |  CDS projection view entity | `ZC_TRAVEL_####`     | `ZC__<entity>_<suffix>` (C = consumption view)
+    |  CDS service definition     | `ZUI_TRAVEL_####`    | `ZUI_<entity>_<suffix>` (UI for e.g. Fiori app as opposed to a Web API)
+    |  CDS service binding        | `ZUI_TRAVEL_O4_####` | `ZUI_<entity>_<OData version>_<suffix>`
     |  Binding type:              | `OData V4 - UI`     |  n/a
 
     The naming convention in general is as follows:
@@ -169,14 +170,14 @@ The artifacts are generated. You can now see them in the **Project Explorer**.
 
     !![step4a-service-binding-unpublished](step4a-service-binding-unpublished.png)
 
-2. Publish the service binding. (If **Publish** is grayed out, activate **``( Ctrl+F3 )`**.)
+2. Publish the service binding.
 
     !![step4a-activate](step4a-activate.png)
     .
     !![step4c-sb-publish](step4c-sb-publish.png)
 
 
-3. You now have a fully-fledged business service that can later be deployed as a Fiori app. Test this in the Fiori Elements preview, by choosing the **Travel** entity set from the service binding, then choosing **Preview**.
+3. You now have a fully-fledged business service for which a Fiori app (based on the Fiori Elements List Reporting template) can be generated. Test this in the Fiori Elements preview, by choosing the **Travel** entity set from the service binding, then choosing **Preview**.
 
     !![step4d-sb-preview](step4d-sb-preview.png)
 
