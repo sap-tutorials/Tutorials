@@ -1,7 +1,7 @@
 ---
-author_name: Chaitanya Priya Puvvada
-author_profile: https://github.com/chaitanya-priya-puvvada
-title: Create automation using the Recorder
+author_name: Ilyes Yamoun
+author_profile: https://github.com/shielddz
+title: Create an automation using SAP WinGUI Recorder
 description: Automate Sales order Creation in SAP GUI for Windows
 keywords: RPA
 auto_validation: true
@@ -67,7 +67,7 @@ A new project is created in **SAP Intelligent RPA Cloud Studio**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Record an application)]
-1. Choose **Record** !![Record icon](step4-record-icon.png) to initiate the recording. You will be directed to the **SAP GUI for Windows** application you want to record.
+1. Choose **Record** !![Record icon](step4-record-icon.PNG) to initiate the recording. You will be directed to the **SAP GUI for Windows** application you want to record.
 2. Select **Client** and enter your credentials.
 3. Hit <kbd>Enter</kbd> button.
 
