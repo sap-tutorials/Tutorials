@@ -3,8 +3,8 @@ title: Create Your First Application with SAP Cloud SDK for JavaScript
 description: Learn the fundamentals of the SAP Cloud SDK for JavaScript and integrate with an SAP S/4HANA Cloud system.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-sdk, topic>javascript ]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>beginner, software-product>sap-cloud-sdk, programming-tool>javascript ]
+primary_tag: software-product>sap-cloud-sdk
 ---
 
 ## Details
@@ -102,7 +102,6 @@ In `business-partner.controller.ts` create a function `getAllBusinessPartners` a
 
 [OPTION BEGIN [Mock Server]]
 In the code snippet below, we assume that you have a mock server running locally on port 3000. Documentation on the mock server can be found [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html).
-
 ```JavaScript / TypeScript
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {
   return BusinessPartner.requestBuilder()
@@ -133,7 +132,6 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 
 [OPTION BEGIN [SAP API Business Hub sandbox]]
 To use the SAP API Business Hub sandbox for your requests, you will need to pass the API key to the VDM requests using the `withCustomHeaders` method, and you will need to add the correct URL to your destinations. Checkout the following example:
-
 ```JavaScript / TypeScript
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {
   return BusinessPartner.requestBuilder()
