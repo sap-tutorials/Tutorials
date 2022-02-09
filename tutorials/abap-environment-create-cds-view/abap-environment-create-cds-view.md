@@ -1,7 +1,7 @@
 ---
 auto_validation: true
 title: Create and Expose Core Data Services Based on a Database Table
-description: Build a list report app with the ABAP RESTful programming model for SAP Fiori and test your UI for demo usage.
+description: Build a list report app with the ABAP RESTful Application Programming Model (RAP) for SAP Fiori and test your UI for demo usage.
 primary_tag: programming-tool>abap-development
 tags: [  tutorial>beginner, software-, software-product>sap-btp--abap-environment>sap-btp--abap-environment, software-product>sap-business-technology-platform]
 time: 10
@@ -238,12 +238,12 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
   1. Expose the **`ZI_Booking_XXX`** and the **`I_Country`** view entities.
 
     ```ABAP
-      @EndUserText.label: 'Service Definition for Booking'
+    @EndUserText.label: 'Service Definition for Booking'
 
-      define service Z_I_Booking_XXX {
-      expose ZI_Booking_XXX as Booking;
-      expose I_Country  as Country;
-      }
+    define service ZI_Booking_XXX {
+    expose ZI_Booking_XXX as Booking;
+    expose I_Country  as Country;
+    }
     ```
 
   2. Save and activate your service definition.
