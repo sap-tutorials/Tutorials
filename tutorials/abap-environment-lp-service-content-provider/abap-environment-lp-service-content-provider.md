@@ -5,8 +5,8 @@ title: Set SAP BTP, ABAP Environment as a Content Provider for SAP Launchpad Ser
 description: Expose launchpad content of a SAP BTP, ABAP Environment system to the SAP Launchpad service of a subaccount on SAP Business Technology Platform.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform]
-primary_tag: products>sap-btp--abap-environment
+tags: [ tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp--abap-environment
 ---
 
 ## Prerequisites
