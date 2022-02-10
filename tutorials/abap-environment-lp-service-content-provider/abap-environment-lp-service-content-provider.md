@@ -241,7 +241,7 @@ The destination should look like this:
 
     !![Workflow](3-cp-overview.png)
 
-5. Add title, description, I,D and the destinations created in `Step 5-7` (Create Design-Time / Runtime destination) accordingly:
+5. Add title, description, ID, and the destinations created in `Step 5-7` (Create Design-Time / Runtime destination) accordingly:
 
     - Title: `Tutorial`
 
