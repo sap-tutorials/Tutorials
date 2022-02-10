@@ -3,8 +3,8 @@ title: Connect Your SAP BTP Trial Account to SAP S/4HANA for Content Consumption
 description: Set up SAP Cloud Connector to give your SAP BTP trial subaccount access to the SAP S/4HANA system that you configured for content exposure in the previous tutorial and create runtime and design-time destinations for the SAP S/4HANA system on SAP BTP.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-connectivity-service, topic>abap-connectivity, products>sap-business-technology-platform, products>sap-fiori]
-primary_tag: products>sap-launchpad-service
+tags: [ tutorial>beginner, software-product>sap-connectivity-service, topic>abap-connectivity, software-product>sap-business-technology-platform, software-product>sap-fiori]
+primary_tag: software-product>sap-launchpad-service
 
 ---
 

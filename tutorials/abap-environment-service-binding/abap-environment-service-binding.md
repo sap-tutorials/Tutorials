@@ -375,7 +375,7 @@ We want to create a business object with multi-inline-edit capabilities. As a fi
       as select from zcal_holitxt_xxx
       association        to parent zcal_i_mcal_xxx as _Public_Holiday on $projection.Holiday = _Public_Holiday.Holiday
       association [0..*] to I_LanguageText         as _LanguageText   on $projection.Language = _LanguageText.LanguageCode
-      association [1]    to zcal_i_mcal_all_xxx    as _HolidayAll     on $projection.HolidayAllID = _HolidayAll.HolidayAllID
+      association [1..1]    to zcal_i_mcal_all_xxx    as _HolidayAll     on $projection.HolidayAllID = _HolidayAll.HolidayAllID
     {
           @Semantics.language: true
       key spras            as Language,
