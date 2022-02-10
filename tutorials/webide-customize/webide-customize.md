@@ -18,7 +18,7 @@ time: 10
 
 In this tutorial, you'll set your theme preferences, connect to your trial Cloud Foundry endpoint on SAP Cloud Platform, and enable some extensions.
 
-We would like to invite you to switch to SAP Business Application Studio. It supports the SAP Web IDE Full-Stack scenarios, including SAP HANA development, providing an improved development experience. New features are added regularly to SAP Business Application Studio to ensure it meets the needs of full stack and cloud application developers.
+We would like to invite you to switch to SAP Business Application Studio, which provides an improved development experience. SAP Business Application Studio supports the SAP Web IDE Full-Stack scenarios, including SAP Fiori and SAPUI5 freestyle application development for SAP BTP Cloud Foundry and on-premise ABAP, full-stack apps leveraging the SAP Cloud Application Programming Model (CAP), and native application development for SAP HANA Cloud. New features are added regularly to SAP Business Application Studio that shorten the application development cycle by leveraging new SAP technologies and improving developer productivity. See the [SAP Business Application Studio Community page](https://community.sap.com/topics/business-application-studio) for more information.
 
 ---
 
