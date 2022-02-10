@@ -5,7 +5,7 @@ title: Create an automation using SAP WinGUI Recorder
 description: Automate Sales order Creation in SAP GUI for Windows
 keywords: RPA
 auto_validation: true
-time: 10
+time: 20
 tags: [ tutorial>beginner, software-product>sap-cloud-sdk]
 primary_tag: software-product>sap-intelligent-robotic-process-automation
 ---
