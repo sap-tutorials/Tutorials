@@ -310,7 +310,7 @@ You can find more details about Cloud Build service in [help documentation](http
 
     >**Encrypt Database**: Whether the database must be encrypted. Unselect this field to extract the database for debugging purposes.
 
-4. In **Platform** step, provide a unique value to the **URL Scheme**.
+5. In **Platform** step, provide a unique value to the **URL Scheme**.
 
     If you have a Firebase configuration for your client, browse to select the `google-services.json` file and click **Next**.
 
@@ -319,15 +319,17 @@ You can find more details about Cloud Build service in [help documentation](http
 
     >**Google Services JSON File**: The Firebase Android configuration file associated with your app in your Firebase project.
 
-5. In **Multimedia** step, you may upload an image to use for the app logo and click **Next**.
+6. In **Multimedia** step, you may upload an image to use for the app logo and click **Next**.
 
     !![MDK](img-3.5.5.png)
 
-6. In **Build Options step**, upload respective Signing profile(s), set minimum platform version and click **Finish**.
+7. In **Build Options** step, select respective Signing profile(s), set minimum platform version, select a supported SDK version and click **Finish**.
 
     !![MDK](img-3.6.6.png)
 
-7. Click **Build** to start the Build job.
+    >The default version is always recommended (it will vary over time), but you can select an older SDK version.
+
+8. Click **Build** to start the Build job.
 
     !![MDK](img-3.7.png)
 
@@ -368,17 +370,28 @@ You can find more details about Cloud Build service in [help documentation](http
 
     Click **Next**.
 
-5. In the **Platform** step, URL Scheme has been retrieved from the MDKProject.json. Click **Next**.    
+5. In the **Platform** step, URL Scheme has been retrieved from the MDKProject.json. Click **Next**.   
+
+    If you have a Firebase configuration for your client, browse to select the `google-services.json` file and click **Next**.
 
     !![MDK](img-3.5.png)
 
-6. In the **Build Options** step, select the Platforms, respective signing profile(s), set minimum Platform Version and click **Finish**.
+    >**Google Services JSON File**: The Firebase Android configuration file associated with your app in your Firebase project.
 
-    !![MDK](img-3.6.png)
 
-7. Click **Build** to start the Build job.
+6. In **Multimedia** step, you may upload an image to use for the app logo and click **Next**.
 
-    !![MDK](img-3.7.png)
+    !![MDK](img-3.5.5.png)
+
+7. In **Build Options** step, select respective Signing profile(s), set minimum platform version, select a supported SDK version and click **Finish**.
+
+    !![MDK](img-3.6.6.png)
+
+    >The default version is always recommended (it will vary over time), but you can select an older SDK version.
+
+8. Click **Build** to start the Build job.
+
+    !![MDK](img-3.7.2.png)
 
     After few minutes, Build should be completed. You can select each cloud build history row to view its current state, install, and download binaries.
 
