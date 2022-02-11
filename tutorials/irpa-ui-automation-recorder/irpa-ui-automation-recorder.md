@@ -10,7 +10,7 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
 ---
 
 ## Prerequisites
- - Basic understanding of how to record applications in Cloud Studio.
+ - Basic understanding of how to record applications in Cloud Studio
 
 ## Details
 ### You will learn
@@ -31,7 +31,7 @@ Open the calculator application on your desktop.
 
 [ACCORDION-BEGIN [Step 2: ](Create New Project)]
 
-1.  Logon to SAP Intelligent RPA Factory.
+1.  Log on to SAP Intelligent RPA Factory.
 
 2.  Click **Projects** to create a new project.
 
@@ -132,37 +132,37 @@ Open the calculator application on your desktop.
 
 > Once all the artifacts are moved to the Cloud Studio, the automation can be executed to replay the recorded steps. It can also be modified and then executed from the Cloud Studio.
 
-1.  You will see all the screens and steps are recorded in the automation in the Cloud Studio.
+  You will see all the screens and steps are recorded in the automation in the Cloud Studio.
 
-2.  Open the application **Calculator** in the Cloud Studio. Make the following changes in **Capture 1** screen.
+1.  Open the application **Calculator** in the Cloud Studio. Make the following changes in **Capture 1** screen.
 
     !![application result1](application_declare_result1.png)
 
-3.  Similarly, make the following changes in **Capture 5** screen.
+2.  Similarly, make the following changes in **Capture 5** screen.
 
     !![application result2](application_declare_result2.png)
 
-4.  Open the automation **Calculator Automation**. Drag and drop **Get Element** activity below step 9 in the automation and make the following changes to activity properties:
+3.  Open the automation **Calculator Automation**. Drag and drop **Get Element** activity below step 9 in the automation and make the following changes to activity properties:
 
     -	Step Name : **Get Add Result**
     -	Target : **`Calculator > Calculator > Result1`**
     -	Output Parameters : **addition**
 
-5.  Drag and drop the **Log message** activity right after the **Get Element** activity to display the result. Set the input parameter **message** as **addition**.
+4.  Drag and drop the **Log message** activity right after the **Get Element** activity to display the result. Set the input parameter **message** as **addition**.
 
     !![automation add result](automation_add_result.png)
 
-6.  Next, drag and drop the **Get Element** activity to fetch the converted minutes to seconds.
+5.  Next, drag and drop the **Get Element** activity to fetch the converted minutes to seconds.
 
     -	Step Name : **Get Conversion Result**
     -	Target : **`Calculator > Calculator > Result2`**
     -	Output Parameters : **seconds**
 
-7.  Drag and drop the **Log message** activity below the **Get Element** activity to display the result. Set the input parameter **message** as **seconds**.
+6.  Drag and drop the **Log message** activity below the **Get Element** activity to display the result. Set the input parameter **message** as **seconds**.
 
     !![automation get seconds](automation_get_seconds.png)
 
-8.  Your automation looks like the following one. Save your work.
+7.  Your automation looks like the following one. Save your work.
 
     !![automation complete](automation_complete.png)
 
