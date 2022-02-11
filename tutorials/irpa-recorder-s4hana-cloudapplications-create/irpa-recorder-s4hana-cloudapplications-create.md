@@ -17,8 +17,8 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
 
 ## Details
 ### You will learn
-  - How to use the SAP UI5 Recorder.
-  - How to automate applications in SAP S/4 HANA Cloud.
+  - How to use the SAP UI5 Recorder
+  - How to automate applications in SAP S/4 HANA Cloud
 
 [ACCORDION-BEGIN [Step 1: ](Open Manage Purchase Orders Application)]
 
@@ -219,7 +219,7 @@ You can then edit the automation to update the Step Details.
 
 !![Overview Automation](irpa-overviewAutomation.png)
 
->**Note**: As per your requirement, you can even record  the Step 1 : Open Manage Purchase Orders Application
+> As per your requirement, you can even record  the Step 1 : Open Manage Purchase Orders Application
 
 [VALIDATE_2]
 [ACCORDION-END]
