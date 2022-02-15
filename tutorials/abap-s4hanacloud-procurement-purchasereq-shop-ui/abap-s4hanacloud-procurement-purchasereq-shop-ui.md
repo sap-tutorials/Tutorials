@@ -3,7 +3,7 @@ auto_validation: true
 title: Develop a Custom UI with SAP S/4HANA Cloud ABAP Environment
 description:  Develop and run a custom UI with SAP Business Application Studio
 primary_tag: topic>abap-development
-tags: [ tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform, products>sap-business-application-studio ]
+tags: [ tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, software-product>sap-business-application-studio ]
 time: 25
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -32,7 +32,7 @@ author_profile: https://github.com/mervey45
 ---
 [ACCORDION-BEGIN [Step 1: ](Assign role collection to user)]
 
-  1. Login to [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
+  1. Log in to [SAP BTP Trial cockpit](https://cockpit.hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
 
       ![assign role collection](bas1.png)
 
