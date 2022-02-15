@@ -43,7 +43,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      Click **Next >**.
 
-      ![Define CDS based travel data model](model3.png)
+      ![Define CDS based travel data model](datadef.png)
 
   4. Click **Finish** to use your transport request.
 
@@ -122,7 +122,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      Click **Next >**.
 
-      ![Create projection view for travel](projection3.png)
+      ![Create projection view for travel](projectionview.png)
 
   4. Click **Finish** to use your transport request.
 
@@ -236,10 +236,12 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      - Name: `ZUI_C_TRAVEL_M_XXX`
      - Description: `Service definition for travel`
+     - Type: Definition
+     - Referenced Object: `ZC_TRAVEL_M_XXX`
 
      Click **Next >**.
 
-      ![Create service definition](definition2.png)
+      ![Create service definition](servicedef.png)
 
   3. Click **Finish** to use your transport request.
 
