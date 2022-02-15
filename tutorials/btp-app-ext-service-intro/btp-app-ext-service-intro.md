@@ -1,7 +1,7 @@
 ---
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Introduction to Consuming Remote Services using CAP
+title: Introduction to Consuming Remote Services Using CAP
 description: Learn about external service APIs, how to get an API definition from the SAP API Business Hub, and how to import an API definition to your project.
 keywords: cap
 auto_validation: true

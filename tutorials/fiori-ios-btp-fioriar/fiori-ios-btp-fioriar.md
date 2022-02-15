@@ -24,6 +24,8 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, software-product
 
 This tutorial is based on SwiftUI and will only reference to the use of `FioriAR` within a `UIKit` based app, hence the above mentioned prerequisites of setting up the SAP BTP SDK for iOS and downloading the SAP BTP SDK for iOS Assistant is optional. You can install the SDK and the assistant if you want to implement the app with `UIKit`.
 
+The project can be found in the SAP Samples on GitHub: [Mobile Augmented Reality GitHub](https://github.com/SAP-samples/mobile-augmented-reality)
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a New SwiftUI Xcode Project)]

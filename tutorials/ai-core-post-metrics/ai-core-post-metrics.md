@@ -17,7 +17,7 @@ author_profile: https://github.com/dhrubpaul
 ### You will learn
   - How to store model accuracy using Postman or Python in SAP AI Core
 
-With an execution in SAP AI Core, you can train a ML model and even do batch-inferencing on data. In this tutorial you will learn to store the model performance indicators after the execution has been completed. The steps demonstrated help you store any type of indicators, accuracy, mean-squared-loss or even your own custom information about the execution.
+Using **Execution** in SAP AI Core, you can train a ML model and even do batch-inferencing on data. In this tutorial you will learn to store the model performance indicators after the execution has been completed. The steps demonstrated help you store any type of indicators, accuracy, mean-squared-loss or even your own custom information about the execution.
 
 All the steps demonstrated here, will only send request to SAP AI Core from your local system to store metrics about an execution. Hence needs to be performed after your execution has been completed.
 
@@ -33,7 +33,7 @@ pip install ai-core-sdk
 
 !![install using pip](img/acs/pip-install.png)
 
-Replace with you SAP AI Core credentials and execute. This creates client to make API call to  SAP AI Core.
+Replace with your SAP AI Core credentials and execute. This creates client to make API call to  SAP AI Core.
 
 ```PYTHON[5, 7, 9, 11]
 from ai_core_sdk.ai_core_v2_client import AICoreV2Client
@@ -85,11 +85,11 @@ Identify the execution ID for which you want to create metrics. Use this executi
 
 [ACCORDION-BEGIN [Step 3: ](Add tags)]
 
-Tags are any qualitative information to attach to your execution. You can add multiple custom tags.
+Tags are any qualitative information to attach to your execution. You can associate multiple tags having custom information to an execution.
 
 Change the `execution_id` and execute.
 
-```PYTHON[5]
+```PYTHON[5, 8, 9]
 from ai_core_sdk.models import MetricTag
 
 ai_core_client.metrics.modify(
@@ -136,9 +136,13 @@ Alternatively, view over SAP AI Launchpad.
 
 [ACCORDION-BEGIN [Step 4: ](Add basic metric)]
 
+A basic metric will have a **name**, **value** and **timestamp**.
+
+Example usage of **step** and **labels** are explained in other steps.
+
 Change the `execution_id` and execute.
 
-```PYTHON[5]
+```PYTHON[5, 7-16]
 from ai_core_sdk.models import Metric
 from datetime import datetime
 
@@ -158,9 +162,9 @@ ai_core_client.metrics.modify(
 )
 ```
 
-The code creates an object of class **Metric** with name of a metric as `Accuracy`. Then passes this object to `metric` parameter of metric of the `.metrics.modify` function.
+The code creates an object of class **Metric** with name of a metric as `Accuracy`. Then passes this object to `metric` parameter of metric of the `.metrics.modify` function to update metrics information in your SAP AI Core instance.
 
-You may either supply list of multiple metrics in a single function call or in separate function call, in which case the update will append to the existing metrics data previously added.
+You may either supply list of multiple metrics in a single function call or in separate function calls, in all cases the update will append over existing metrics information.
 
 View stored metrics.
 
@@ -194,11 +198,13 @@ Alternatively, view over SAP AI Launchpad. The **Timestamp** is always converted
 
 [ACCORDION-BEGIN [Step 5: ](Specify epoch or batch)]
 
-Use the **step** parameter, although the metric **name** will remain same. You may call the function multiple time after training epoch, each call will be appended new metrics with the previous one.
+Use the **step** parameter, although the metric **name** will remain same.
+
+You may call the function `ai_core_client.metrics.modify` multiple times after each training epoch, each call will be appended new metrics to previous information.
 
 Change the `execution_id` and execute.
 
-```PYTHON[5]
+```PYTHON[5, 13, 20]
 from ai_core_sdk.models import Metric
 from datetime import datetime
 
@@ -260,11 +266,11 @@ Alternatively, view over SAP AI Launchpad.
 
 [ACCORDION-BEGIN [Step 6: ](Add custom metrics information)]
 
-Custom info can be used to store **Character Large Object (CLOB)**. As long as it can be retrieved, any way can be used. Base64 encoding can also be used to process, store and receive the image.
+Any Custom information structure stored as **Character Large Object (CLOB)** and hence must be converted to string `str` type while passing as argument to function call. Here you will store and retrieve a snippet of [classification report](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html) for your model.
 
 Change the `execution_id` and execute.
 
-```PYTHON[5]
+```PYTHON[5, 12-23]
 from ai_core_sdk.models import MetricCustomInfo
 from datetime import datetime
 
@@ -320,7 +326,7 @@ Alternatively, view over SAP AI Launchpad.
 
 !![View Tags](img/ail/6.png)
 
-[VALIDATE_6]
+[DONE]
 [ACCORDION-END]
 
 
@@ -328,11 +334,11 @@ Alternatively, view over SAP AI Launchpad.
 
 This step is similar to storing custom metric information. Here you will generate a demo visualization, save visualization locally in **Portable Network Graphics (PNG)** format, which you will load (as bytes) and encode to base64 then convert to string to store it SAP AI Core.
 
-> TIP: Another approach is to store visualization locally in **Scalable Vector Graphics (SVG)** format. The default read format for SVG (in python) is string which is the required format for storing custom metrics in SAP AI Core. Advantage of SVG image is it can be scaled (zoom) without blur.
+> TIP: Another approach is to store visualization locally in **Scalable Vector Graphics (SVG)** format. The default read format for SVG (in python) is string which is the required format for storing custom metrics in SAP AI Core. Advantage of SVG image is it can be scaled (zoom) without observing blur effect.
 
 Change the `execution_id` and execute.
 
-```PYTHON[25]
+```PYTHON[25, 28-31]
 # Create and save image
 import matplotlib.pyplot as plt
 y = [75, 73, 68.2, 67.2]
@@ -409,7 +415,7 @@ for execution in response.resources:
 
 !![image](img/acs/7.png)
 
-[DONE]
+[VALIDATE_7]
 [ACCORDION-END]
 
 
