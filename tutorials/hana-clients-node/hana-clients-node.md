@@ -480,7 +480,7 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
 4. Run the app.  
 
     ```Shell
-    node nodeQuery.js
+    node nodeQueryPromise.js
     ```
 ![Running nodeQueryPromise.js](Node-query-promise.png)
 
