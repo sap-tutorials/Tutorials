@@ -158,54 +158,54 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
 
     --Create the objects in the HOTEL schema
     CREATE TABLE HOTEL.HOTEL(
-        hno INTEGER PRIMARY KEY,
-        name VARCHAR(50) NOT NULL,
-        address VARCHAR(40) NOT NULL,
-        city VARCHAR(30) NOT NULL,
-        state VARCHAR(2) NOT NULL,
-        zip VARCHAR(6)
+        HNO INTEGER PRIMARY KEY,
+        NAME VARCHAR(50) NOT NULL,
+        ADDRESS VARCHAR(40) NOT NULL,
+        CITY VARCHAR(30) NOT NULL,
+        STATE VARCHAR(2) NOT NULL,
+        ZIP VARCHAR(6)
     );
 
     CREATE TABLE HOTEL.ROOM(
-        hno INTEGER,
-        type VARCHAR(6),
-        free NUMERIC(3),
-        price NUMERIC(6, 2),
-        PRIMARY KEY (hno, type),
-        FOREIGN KEY (hno) REFERENCES HOTEL.HOTEL
+        HNO INTEGER,
+        TYPE VARCHAR(6),
+        FREE NUMERIC(3),
+        PRICE NUMERIC(6, 2),
+        PRIMARY KEY (HNO, TYPE),
+        FOREIGN KEY (HNO) REFERENCES HOTEL.HOTEL
     );
 
     CREATE TABLE HOTEL.CUSTOMER(
-        cno INTEGER PRIMARY KEY,
-        title VARCHAR(7),
-        firstname VARCHAR(20),
-        name VARCHAR(40) NOT NULL,
-        address VARCHAR(40) NOT NULL,
-        zip VARCHAR(6)
+        CNO INTEGER PRIMARY KEY,
+        TITLE VARCHAR(7),
+        FIRSTNAME VARCHAR(20),
+        NAME VARCHAR(40) NOT NULL,
+        ADDRESS VARCHAR(40) NOT NULL,
+        ZIP VARCHAR(6)
     );
 
     CREATE TABLE HOTEL.RESERVATION(
-    resno INTEGER NOT NULL default autoincrement,
-        rno INTEGER NOT NULL,
-        cno INTEGER,
-        hno INTEGER,
-        type VARCHAR(6),
-        arrival DATE NOT NULL,
-        departure DATE NOT NULL,
+        RESNO INTEGER NOT NULL default autoincrement,
+        RNO INTEGER NOT NULL,
+        CNO INTEGER,
+        HNO INTEGER,
+        TYPE VARCHAR(6),
+        ARRIVAL DATE NOT NULL,
+        DEPARTURE DATE NOT NULL,
         PRIMARY KEY (
             "RESNO", "ARRIVAL"
         ),
-        FOREIGN KEY(hno) REFERENCES HOTEL.HOTEL,
-        FOREIGN KEY(cno) REFERENCES HOTEL.CUSTOMER
+        FOREIGN KEY(HNO) REFERENCES HOTEL.HOTEL,
+        FOREIGN KEY(CNO) REFERENCES HOTEL.CUSTOMER
     );
 
     CREATE TABLE HOTEL.MAINTENANCE(
-        mno INTEGER PRIMARY KEY,
-        hno INTEGER,
-        description VARCHAR(100),
-        date_performed DATE,
-        performed_by VARCHAR(40),
-        FOREIGN KEY(hno) REFERENCES HOTEL.HOTEL
+        MNO INTEGER PRIMARY KEY,
+        HNO INTEGER,
+        DESCRIPTION VARCHAR(100),
+        DATE_PERFORMED DATE,
+        PERFORMED_BY VARCHAR(40),
+        FOREIGN KEY(HNO) REFERENCES HOTEL.HOTEL
     );
 
     CREATE OR REPLACE VIEW HOTEL.HOTEL_ROOMS_VIEW AS
@@ -284,7 +284,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
         ![data lake client](data-lake-client-install.png)
 
         >In the Windows command line, if `setup.exe` fails with an 'Error Loading jvm.dll', see [SAP Support 3001812](https://launchpad.support.sap.com/#/notes/3001812) to resolve this issue.
-        
+
     * On Linux, extract the archive.
 
         ```Shell (Linux)
@@ -505,7 +505,7 @@ The data lake IQ client install includes [Interactive SQL Client (DBISQL)](https
     INSERT INTO HOTEL.MAINTENANCE VALUES(12, 26, 'Roof repair due to storm', null, null);
     ```
 
-    Additional details on the SQL used above can be found at [INSERT Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61fdeff84f21015aa66b9add387d7f9.html).
+    Additional details on the SQL used above can be found at [INSERT Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61fdeff84f21015aa66b9add387d7f9.html). Moreover, the [LOAD TABLE Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/7ca3f60902f3473296cb309533d89210.html) can be used for efficient mass insertion into a database table from a file with ASCII or binary data.
 
     > Note that autocommit is set to on in the SQL Console of the database explorer, while in DBISQL it is set to off.  A series of insert statements will run quicker in the SQL Console if they are surrounded with begin and end or if autocommit is set to off.
     >
