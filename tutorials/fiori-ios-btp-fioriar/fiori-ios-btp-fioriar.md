@@ -524,7 +524,7 @@ As previously mentioned the AR scenes the user creates are being published to SA
 
     !![App Run AR](fiori-ios-btp-fioriar-ar-ios-03.png)
 
-    1.2 Add an image anchor. Download the [QR Code](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/fiori-ios-btp-fioriar/qrImage.png) code included but you can use anything you want as an image anchor e.g. a gaming controller.
+    1.2 Add an image anchor. Download the [QR Code](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/fiori-ios-btp-fioriar/Utils/qrImage.png) code included but you can use anything you want as an image anchor e.g. a gaming controller.
 
     !![App Run AR](fiori-ios-btp-fioriar-ar-ios-04.png)            
 
