@@ -172,7 +172,9 @@ The following steps demonstrate how to use Microsoft Excel to query data in data
 
 [ACCORDION-BEGIN [Step 4: ](Browse data lake IQ using DBeaver with ODBC)]
 
-`DBeaver` is a free and open source database tool and can be used with the data lake IQ ODBC driver.
+`DBeaver` is a free and open source database tool and can be used with the data lake IQ ODBC driver.  
+
+>Note that the ODBC connectivity option is available in `DBeaver` on Microsoft Windows only.
 
 The following steps demonstrate how to configure `DBeaver` to connect to data lake IQ.
 
