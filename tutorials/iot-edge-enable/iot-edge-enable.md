@@ -25,7 +25,7 @@ primary_tag: topic>internet-of-things
 
 [ACCORDION-BEGIN [Step 1: ](Enable IoT Edge Feature)]
 
-1.  In the navigation area **Tenant Administrator**, click on the **Tenant Configuration** application in the SAP Internet of Things Fiori Launchpad
+1.  In the navigation area **Tenant Administrator**, choose the **Tenant Configuration** application in the SAP Internet of Things Fiori Launchpad
 
 2.  Click the slider button in the area of **Integrated Edge Functionality**.
 
@@ -37,7 +37,7 @@ primary_tag: topic>internet-of-things
 
 4.  Tick the checkbox and press **Confirm** to enable the feature.
 
-5.  Wait the process complete. The process could take some minutes.
+5.  Wait for the process complete. This could take some minutes.
 
     !![active](active.png)
 
@@ -47,7 +47,7 @@ primary_tag: topic>internet-of-things
 
 [ACCORDION-BEGIN [Step 2: ](Add Required User Roles)]
 
-Once the **Integrated Edge Functionality** is enabled, new roles will became available in your Business Technology Platform subaccount. These roles are required to make the IoT Edge applications visible in the SAP IoT Fiori Launchpad.
+Once the **Integrated Edge Functionality** is enabled, new roles will become available in your Business Technology Platform subaccount. These roles are required to make the IoT Edge applications visible in the SAP IoT Fiori Launchpad.
 
 1.  Open the sub-account containing your SAP IoT tenant in the Business Technology Platform Cockpit. In the left menu expand **Security** and click on **Role Collections**.
 
@@ -57,16 +57,16 @@ Once the **Integrated Edge Functionality** is enabled, new roles will became ava
 
     >Ensure the role collection is assigned to your BTP user. For further references see [Configure Role Collections for Users](https://help.sap.com/viewer/247022ddd1744053af376344471c0821/2109b/en-US)
 
-3.  Click on **Edit** and click on the textbox in the first line of **Role Name** column to start defining new roles.
+3.  Click on **Edit** and select the textbox in the first line of the **Role Name** column to start defining new roles.
 
     !![collection](collection.png)
 
-4.  Using the **Application Identifier** combo box, filter on the application identifier starting with `elmo-app-prod!`. Select the `EdgeLMAccess` role.
+4.  Using the **Application Identifier** combo box, filter by application identifier starting with `elmo-app-prod!`. Select the `EdgeLMAccess` role.
 
     !![elm](elm.png)
 
 
-4.  Using the **Application Identifier** combo box, filter on the application identifier starting with `les-admin-reuse-service!`. Select the `IoTEdge_Preprocessing` and `IoTEdge_Extensions` roles.
+4.  Using the **Application Identifier** combo box, filter by application identifier starting with `les-admin-reuse-service!`. Select the `IoTEdge_Preprocessing` and `IoTEdge_Extensions` roles.
 
     !![les](les.png)
 
