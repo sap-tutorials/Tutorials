@@ -5,7 +5,7 @@ title: Onboard an Edge Node
 description: Onboard a new Edge node with the Edge Lifecycle Management.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit, software-product>sap-business-technology-platform, software-product>sap-btp, software-product>sap-btp--cloud-foundry-environment, tutorial>license]
+tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment, tutorial>license]
 primary_tag: topic>internet-of-things
 ---
 
