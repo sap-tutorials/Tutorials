@@ -1,12 +1,12 @@
 ---
-author_name: Chaitanya Priya Puvvada
-author_profile: https://github.com/chaitanya-priya-puvvada
+author_name: Ilyes Yamoun
+author_profile: https://github.com/shielddz
 title: Customize automation generated through Recorder
 description: Customize Sales Orders Creation (SAP Win GUI) Bot which is generated using Recorder
 keywords: RPA
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, software-product>sap-cloud-sdk]
+tags: [ tutorial>beginner, software-product>sap-cloud-sdk]
 primary_tag: software-product>sap-intelligent-robotic-process-automation
 ---
 
@@ -29,7 +29,7 @@ Open the Cloud Studio project where you recorded the application using Recorder.
 4.  Rename the material field.
 5.  Select **Remove** the **Id** **Criteria**.
 6.  Select **Name** to add it as a **Criteria**.
-7.  Select **Is a collection** !![Is a Collection icon](step2-is-a-collection-icon.png).
+7.  Select **Is a collection** !![Is a Collection icon](step2-is-a-collection-icon.PNG).
 
     > **Is a collection** is used to declare a field as a column containing multiple fields rather than just one field.
 

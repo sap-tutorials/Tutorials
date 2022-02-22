@@ -314,24 +314,19 @@ Now that the Developer user has been provisioned and authorized in the ABAP envi
 
     ![Copy Logon URL to Clipboard](ADT_project_new_open_logon.png)
 
-6. Open an incognito browser window and paste the logon URL into the address line.
-Choose your right identity provider URL.
-
-    ![Identity Provider choice](ADT_project_new_logon_chose_idp.png)
-
-7. Enter the credentials of the Developer User and log on.
+6. Open an incognito browser window and paste the logon URL into the address line. Enter the credentials of the Developer User and log on.
 
     ![Log on with provisioned developer](ADT_project_new_logon_with_developer.png)
 
-8. A success message is displayed and the browser window can be closed.
+7. A success message is displayed and the browser window can be closed.
 
     ![Log on for ADT succeeded](ADT_project_new_logon_with_developer_success.png)
 
-9. In the project wizard in Eclipse, check the ABAP environment and user data, that are displayed in the **Service Instance Connection** dialog and select **Finish**
+8. In the project wizard in Eclipse, check the ABAP environment and user data, that are displayed in the **Service Instance Connection** dialog and select **Finish**
 
     ![Finish ABAP Cloud project creation](ADT_project_new_finish.png)
 
-10. The new project is displayed and you can start developing.
+9. The new project is displayed and you can start developing.
 
     ![See ABAP Cloud project in ADT navigation](ADT_project_created.png)
 

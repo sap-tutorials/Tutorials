@@ -101,7 +101,7 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
 
     ![remote sources](remote-source.png)
 
-    Additional details can be found at [CREATE REMOTE SOURCE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/20d48343751910149985a2c925e12190.html).
+    Additional details can be found at [CREATE REMOTE SOURCE Statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20d48343751910149985a2c925e12190.html).
 
 5. A virtual table named `vt_tourist_reviews` will be created in SAP HANA, express edition. This will enable access to the `tourist_reviews` table that was created in SAP HANA Cloud.   This can be visualized as follows:
 
@@ -184,7 +184,7 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     ![add a SAP HANA Data Lake](add-data-lake.png)
 
-2. Open the database explorer connected to the data lake IQ.
+2. Open the database explorer with a connection to the data lake by choosing **Open in SAP HANA Database Explorer**.
 
     ![open database explorer](open-dbx-data-lake.png)
 
@@ -224,6 +224,8 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     ![create remote source](create-remote-source-to-dl.png)
 
+    Additional details can be found at [CREATE REMOTE SOURCE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/20d48343751910149985a2c925e12190.html).
+
 5. After pressing refresh, notice that under remote sources, there is a remote source `HC_DL_Trial`.
 
     ![SAP HANA Data Lake Remote Source](remote-source-DL.png)
@@ -235,6 +237,26 @@ A benefit of a virtual table is that there is no data movement.  There is only o
     This can be visualized as follows:
 
     ![data lake and on-premise remote connection](dl-cloud-connection.png)
+
+    > Alternatively, the following SQL statement can be used to create the virtual table.  Additional details can be found at [CREATE VIRTUAL TABLE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d2a0406155f24a49aa6c549e0c428bd7.html).
+    >
+    ```SQL
+    CREATE VIRTUAL TABLE HOTEL.VT_DL_TOURIST_REVIEWS AT HC_DL_TRIAL.iqaas.HOTEL.TOURIST_REVIEWS;
+    ```
+    >
+    It is also possible to create the remote table and virtual table together in the same statement.
+    >
+    ```SQL
+    CREATE VIRTUAL TABLE HOTEL.VT_DL_TOURIST_REVIEWS (
+      REVIEW_ID INTEGER PRIMARY KEY,
+      REVIEW_DATE DATE NOT NULL,
+      DESTINATION_ID INTEGER,
+      DESTINATION_RATING INTEGER,
+      REVIEW VARCHAR(500) NOT NULL
+    ) AT HC_DL_TRIAL.iqaas.HOTEL.TOURIST_REVIEWS WITH REMOTE;
+    INSERT INTO HOTEL.VT_DL_TOURIST_REVIEWS VALUES(1, '2019-03-15', 1, 5, 'We had a great day swimming at the beach and exploring the beach front shops.  We will for sure be back next summer.');
+    INSERT INTO HOTEL.VT_DL_TOURIST_REVIEWS VALUES(2, '2019-02-02', 1, 4, 'We had an enjoyable meal.  The service and food was outstanding.  Would have liked to have slightly larger portions');
+    ```
 
 7. Query the local SAP HANA table and the equivalent SAP HANA Cloud, data lake IQ  table.
 
