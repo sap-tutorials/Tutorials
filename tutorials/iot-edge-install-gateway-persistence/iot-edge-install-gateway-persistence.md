@@ -5,7 +5,7 @@ title: Install Edge Gateway Service and Persistence Service
 description: Install Edge Gateway Service to enable data ingestion at the edge, and Persistence Service to deploy a local database to store measurements and custom application data in the edge node.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit, software-product>sap-business-technology-platform, software-product>sap-btp, software-product>sap-btp--cloud-foundry-environment, tutorial>license]
+tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment, tutorial>license]
 primary_tag: topic>internet-of-things
 ---
 

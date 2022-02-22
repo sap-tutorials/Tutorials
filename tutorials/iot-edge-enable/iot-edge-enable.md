@@ -5,7 +5,7 @@ title: Get Started IoT Edge
 description: Enable the integrated edge functionality (IoT Edge) for SAP Internet of Things.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit, software-product>sap-business-technology-platform, software-product>sap-btp, software-product>sap-btp--cloud-foundry-environment, tutorial>license]
+tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment, tutorial>license]
 primary_tag: topic>internet-of-things
 ---
 

@@ -5,7 +5,7 @@ title: Onboard a New Device and Thing
 description: Onboard a new Device and a Thing, complete the digital twin mapping  and test the ingestion services for an IoT Edge node using the Edge Gateway Service.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit, software-product>sap-business-technology-platform, software-product>sap-btp, software-product>sap-btp--cloud-foundry-environment, tutorial>license]
+tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment, tutorial>license]
 primary_tag: topic>internet-of-things
 ---
 
