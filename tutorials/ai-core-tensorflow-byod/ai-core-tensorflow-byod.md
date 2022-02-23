@@ -81,18 +81,18 @@ for rg in response.resources:
 
     !![img](img/aws-configure.png)
 
-3. Save the following model files to your local system.
+3. Save the following model files in your local system.
 
     These files are generated locally. They contain embeddings and other settings of the `Tensorflow` model which you will deploy.
 
     |  File     | Download
     |  :------------- | :-------------
     |  `model.h5`           | [LINK](https://www.sap.com)
-    |  `max_pad_len.txt`           | [LINK](https://www.sap.com)
-    |  `label_endcoded_classes.npy`           | [LINK](https://www.sap.com)
+    |  `max_pad_len.txt`           | [LINK](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-tensorflow-byod/files/model/max_pad_len.txt)
+    |  `label_endcoded_classes.npy`           | [LINK](https://github.com/sap-tutorials/Tutorials/blob/0644e8c1bf3fd54a18d47dc3be30899454eeae35/tutorials/ai-core-tensorflow-byod/files/model/label_encoded_classes.npy)
     |  `tokens.json`           | [LINK](https://www.sap.com)
 
-    The downloaded files directory may look like the following:
+    After download, your directory may look like the following:
 
     !![img](img/model-save.png)
 
@@ -190,14 +190,14 @@ Make a note of the ID. This ID uniquely identifies your artifact.
 
 [ACCORDION-BEGIN [Step 5: ](Set up serving code)]
 
-Download the following files and save in your local computer. These are the code files that you upload as docker image and later use as deployment in SAP AI Core.
+Save each of the following file in your local computer. These are the code files that you upload as docker image and later use as deployment in SAP AI Core.
 
 | File | Download | Note |
 | --- | --- |  --- |
-| `Dockerfile` | [LINK](https://www.sap.com) | No file extension required. Remove manually if automatically added upon save.
-| `requirements.md` | [LINK](https://www.sap.com)
-| `tf_template.py` | [LINK](https://www.sap.com)
-| `serve.py` | [LINK](https://www.sap.com)
+| `Dockerfile` | [LINK](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-tensorflow-byod/files/infer/Dockerfile) | No file extension required. Remove manually if automatically added upon save.
+| `requirements.md` | [LINK](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-tensorflow-byod/files/infer/requirements.txt)
+| `tf_template.py` | [LINK](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-tensorflow-byod/files/infer/tf_template.py)
+| `serve.py` | [LINK](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-tensorflow-byod/files/infer/serve.py)
 
 After download your local directory may look like following:
 
@@ -257,11 +257,11 @@ Follow the steps to upload downloaded files as docker image.
 
 [ACCORDION-BEGIN [Step 6: ](Create workflow to serve model)]
 
-Download the following executable.
+Save the following executable file in your local system.
 
 | Filename | Download link |
 | -------- | ------------- |
-| `serving_executable.yaml` | [LINK](https://www.sap.com) |
+| `serving_executable.yaml` | [LINK](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-tensorflow-byod/files/workflow/serving_executable.yaml) |
 
 In the executable, ensure the following.
 
