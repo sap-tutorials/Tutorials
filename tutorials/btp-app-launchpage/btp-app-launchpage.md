@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Add More Than One Application to the Launch Page
 description: This tutorial shows you how to create an SAP Fiori elements app on top of your previously created CAP service.
+keywords: cap
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori-tools, software-product>sapui5]

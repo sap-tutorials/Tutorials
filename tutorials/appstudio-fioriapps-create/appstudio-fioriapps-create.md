@@ -3,8 +3,8 @@ title: Create an SAP Fiori App Using SAP Business Application Studio
 description: Develop a simple SAPUI5 freestyle application, adhering to SAP Fiori design guidelines, that will present a list of suppliers from an on-premise backend.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
-primary_tag: products>sap-business-application-studio
+tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-fiori, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment]
+primary_tag: software-product>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
 ---
@@ -12,7 +12,7 @@ author_profile: https://github.com/raz-korn
 ## Prerequisites
   - You have created an SAP Fiori dev space in SAP Business Application Studio. See [Create a preconfigured dev space for developing SAP Fiori apps](appstudio-devspace-fiori-create).
   - The SAP Fiori dev space is in status `RUNNING` and you opened it.
-  - You configured a destination to SAP Gateway Demo System (ES5) (see [Connect SAP Cloud Platform to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection)).
+  - You configured a destination to SAP Gateway Demo System (ES5) (see [Connect SAP BTP to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection)).
 
 
 ## Details
@@ -61,8 +61,7 @@ The flow consists of the following parts:
     | A | Application router project path | **/home/user/projects** (default) |
     | B | MTA ID | **`FioriDemo`** |
     | C | MTA Description | Can be left empty (default) |
-    | D | MTA version | **0.0.1** (default) |
-    | E | Add route module | **Managed Approuter** |
+    | D | Add route module | **Managed Approuter** |
 
     !![Fill-in cf mta and approuter wizard](BAS-Create-MTA-4-.png)
 

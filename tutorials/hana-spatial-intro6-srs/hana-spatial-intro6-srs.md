@@ -146,7 +146,7 @@ CREATE SPATIAL REFERENCE SYSTEM "WGS 84 / World Mercator"
  STORAGE FORMAT 'Internal';
 ```
 
-Confused about the whole cryptic notation in the definition? No need to worry for now. All you need to know is that its definition comes from industry registry [EPSG Geodetic Parameter Registry](http://www.epsg.org) that you can search and download if needed.
+Confused about the whole cryptic notation in the definition? No need to worry for now. All you need to know is that its definition comes from industry registry [EPSG Geodetic Parameter Registry](http://epsg.org) that you can search and download if needed.
 
 Once SQL statements above are executed successfully you should see these new `SRS` ids in `ST_SPATIAL_REFERENCE_SYSTEMS` view.
 

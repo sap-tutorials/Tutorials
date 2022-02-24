@@ -138,10 +138,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 [ACCORDION-BEGIN [Step 4: ](Enhance behavior implementation)]
   1. Open your behavior implementation `ZCL_BP_I_TRAVEL_M_XXX` and switch to **global class** to replace your code.
 
-      ![Enhance behavior implementation](implementation4.png)
-
-
-  2. In your **global class** replace your code with following:
+    In your **global class** replace your code with following:
 
     ```ABAP
     CLASS zcl_bp_i_travel_m_xxx DEFINITION
@@ -157,11 +154,11 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     ```
 
-  3. Switch to **Local Types**.
+  2. Switch to **Local Types**.
 
       ![Enhance behavior implementation](implementation.png)
 
-  4. First you will implement a validation. This code checks that each `agencyID` is valid. In your **local types**, add the following code, so that the result looks like this:
+  3. First you will implement a validation. This code checks that each `agencyID` is valid. In your **local types**, add the following code, so that the result looks like this:
 
     ```ABAP
     *"* use this source file for the definition and implementation of

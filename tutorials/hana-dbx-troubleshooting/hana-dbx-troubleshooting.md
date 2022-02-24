@@ -352,7 +352,7 @@ A SQL trace can be helpful when debugging a problem or in identifying SQL statem
 
     ![trace files](traceFiles.png)
 
->For additional details, consult the [Traces](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/7e31247372fb4dd7b8c6bbac758b8c91.html) topic in the SAP HANA Administration Guide for SAP HANA Platform and SAP Note [2119087 - How-To: Configuring SAP HANA Traces](https://launchpad.support.sap.com/#/notes/2119087) and SAP Note [2186744 - FAQ: SAP HANA Parameters](https://launchpad.support.sap.com/#/notes/2186744).
+>For additional details, consult the [Traces](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/7e31247372fb4dd7b8c6bbac758b8c91.html) topic in the SAP HANA Administration Guide, SAP Note [2119087 - How-To: Configuring SAP HANA Traces](https://launchpad.support.sap.com/#/notes/2119087) and SAP Note [2186744 - FAQ: SAP HANA Parameters](https://launchpad.support.sap.com/#/notes/2186744).
 
 [DONE]
 [ACCORDION-END]
@@ -388,7 +388,7 @@ It can be important to examine SQL statements that consume large amounts of time
 
     ![expensive statements](expensiveTrace.png)
 
-3. When using SAP HANA Cloud or the on-premise SP 13 or higher database explorer, the messages tab also contains detailed information about the duration, CPU, and memory consumed by a statement.
+3. When using SAP HANA Cloud or the on-premise SP 13 or higher SAP HANA database explorer, the messages tab also contains detailed information about the duration, CPU, and memory consumed by a statement.
 
     ![Resource consumption](messages-tab.png)
 
@@ -399,6 +399,7 @@ It can be important to examine SQL statements that consume large amounts of time
     ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('resource_tracking', 'enable_tracking') = 'on' WITH RECONFIGURE;
     ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('resource_tracking', 'memory_tracking') = 'on' WITH RECONFIGURE;
     > ```
+    > For additional details see [SAP HANA Configuration Parameter Reference](https://help.sap.com/viewer/009e68bc5f3c440cb31823a3ec4bb95b/latest/en-US/514ab38a2e574c85a70ebba80ff16d99.html).
 
 [DONE]
 [ACCORDION-END]

@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Configure and Run a Predefined SAP Continuous Integration and Delivery (CI/CD) Pipeline
 description: Enable SAP Continuous Integration and Delivery (CI/CD) service on SAP Business Technology Platform for your CAP application.
+keywords: cap
 auto_validation: true
 time: 15
 tags: [ tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]
@@ -45,7 +46,7 @@ For more information on how to configure and run predefined pipelines for your o
     > * Choose host region `cf-us10` when creating a new trial account. This will ensure that the SAP Continuous Integration and Delivery service is available to your account.
     > * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, the SAP Continuous Integration and Delivery service might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP Cockpit.
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -81,7 +82,7 @@ For more information on how to configure and run predefined pipelines for your o
 
     !![Role](CICD_edit_role.png)
 
-11. In the **Users** section, enter your e-mail address in the fields **ID** and **E-Mail**. 
+11. In the **Users** section, enter your e-mail address in the fields **ID** and **E-Mail**.
 
 12. Select an **Identity Provider**.
 
@@ -101,7 +102,7 @@ For more information on how to configure and run predefined pipelines for your o
 
     [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -137,7 +138,7 @@ For more information on how to configure and run predefined pipelines for your o
 
     !![Role](CICD_edit_role.png)
 
-11. In the **Users** section, enter your e-mail address in the fields **ID** and **E-Mail**. 
+11. In the **Users** section, enter your e-mail address in the fields **ID** and **E-Mail**.
 
 12. Select an **Identity Provider**.
 
@@ -173,7 +174,7 @@ For more information on how to configure and run predefined pipelines for your o
 [ACCORDION-BEGIN [Step 4: ](Configure your GitHub credentials)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-If your GitHub repository is not private, you can skip this section. If your GitHub repository is private, configure credentials for it, so that SAP Continuous Integration and Delivery service can connect to it. 
+If your GitHub repository is not private, you can skip this section. If your GitHub repository is private, configure credentials for it, so that SAP Continuous Integration and Delivery service can connect to it.
 
 1. Navigate to the **Credentials** tab in SAP Continuous Integration and Delivery.
 
@@ -187,7 +188,7 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 5. For **Username**, enter your GitHub username.
 
-6. For **Password**, use a [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token). 
+6. For **Password**, use a [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
     > Select **repo** as scope when creating the token.
 
@@ -267,7 +268,6 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
     > Use a technical user instead of your personal credentials.
 
-    
     > Deployment will not work if you have activated Two-factor authentication for the user.
 
 17. Leave the **Upload to Cloud Transport Management** step switched off.
@@ -343,7 +343,7 @@ You have to change the `specVersion` parameter in files `ui5-deploy.yaml` and `u
     metadata:
         ...
     ```
-    
+
 5. Commit the changes to your GitHub repo.
 
 [DONE]
@@ -352,7 +352,7 @@ You have to change the `specVersion` parameter in files `ui5-deploy.yaml` and `u
 [ACCORDION-BEGIN [Step 9: ](Verify the success of your build)]
 You have to trigger your job manually the first time after creation.
 
-1. In the **Jobs** tab in SAP Continuous Integration and Delivery, select your job and choose **Trigger Build**. 
+1. In the **Jobs** tab in SAP Continuous Integration and Delivery, select your job and choose **Trigger Build**.
 
     !![Trigger Job](CICD_trigger_job.png)
 
@@ -362,19 +362,17 @@ You have to trigger your job manually the first time after creation.
 
     > If you would like to check whether the job is triggered automatically after new changes, you can make a simple change in the code and verify if it's built.
 
-    
 2. Wait until the job has finished and verify that the build tile is marked as successful.
 
     !![Successful Build](CICD_successful_build.png)
 
     > In case you get any errors:
 
-    
     > Verify that your SAP HANA Cloud service instance is running. Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day, before you start working with your trial.
-    
+
     > Verify you have added all necessary entitlements to your account as specified in [Prepare for SAP BTP Development](btp-app-prepare-btp).
 
-3. Navigate to your space in the SAP BTP Cockpit and check the list of installed applications. Now, you have a **cpapp-db-deployer** application and a **cpapp-srv** application. 
+3. Navigate to your space in the SAP BTP Cockpit and check the list of installed applications. Now, you have a **cpapp-db-deployer** application and a **cpapp-srv** application.
 
     !![Applications](CICD_cpapp_applications.png)
 

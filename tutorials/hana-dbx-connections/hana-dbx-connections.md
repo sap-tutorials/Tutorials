@@ -37,7 +37,7 @@ Databases defined in the SAP BTP cockpit or the SAP HANA cockpit can be opened i
 
     >---
 
-    >Note that the credentials can be saved so they do not need to be re-entered if they are entered into the SAP HANA Cockpit.
+    >Note that the credentials can be saved so they do not need to be re-entered if they are entered into the SAP HANA cockpit.
 
     Notice that when the SAP HANA database explorer opens, the selected database is the one from the selected tile or administered database.  Also note that the URL contains a `?databaseid=`.  
 
@@ -64,7 +64,7 @@ Databases can also be added directly to the SAP HANA database explorer.  To conn
 
     >Note that an SAP HANA, express edition or on-premise database can have two types of databases; system and tenant.  This is known as multitenant.  System databases are used to manage one or more tenant databases and are only applicable to on-premise systems.  For further details, see [Server Architecture of Tenant Databases](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6/latest/en-US/f9aba40d6c4c4ae48cce461db4d42d88.html).
 
-3.  Provide the host, port, user name, password, and name to show in display.
+3.  Provide the host, port, user name, password, and name to show in display. Below are instructions on how to obtain the host name and port number.
 
     ![encrypted connection](encrypted.png)
 
@@ -215,7 +215,7 @@ For additional details on this parameter, see the `system_information` usage par
 
 
 [ACCORDION-BEGIN [Step 6: ](Database groups (Optional))]
-SAP HANA Cockpit databases can be grouped together.  This enables SQL statements to be run against a group of databases.
+SAP HANA cockpit databases can be grouped together.  This enables SQL statements to be run against a group of databases.
 
 !![run on multiple](run-on-multiple.png)  
 
@@ -251,7 +251,7 @@ SAP HANA Cockpit databases can be grouped together.  This enables SQL statements
 
     ![run on multiple databases in HXE](run-on-multiple-hxe.png)
 
-    >Note that the ability to see groups in the SAP HANA database explorer that have been created using the SAP HANA cockpit manager requires the SAP HANA database explorer to be opened from the SAP HANA Cockpit.
+    >Note that the ability to see groups in the SAP HANA database explorer that have been created using the SAP HANA cockpit manager requires the SAP HANA database explorer to be opened from the SAP HANA cockpit.
 
     >---
 
