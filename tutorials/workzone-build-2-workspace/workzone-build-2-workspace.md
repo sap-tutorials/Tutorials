@@ -29,7 +29,7 @@ In this tutorial, you're going to create a workspace where employees who joined 
 
 [ACCORDION-BEGIN [Step 1: ](Download images for your workspace)]
 
-First download these image files so that they're on your computer ready for you to add to your workspace pages:
+Before you start, download these image files so that they're on your computer ready for you to add to your workspace pages:
 
 - [`workspace_row2_image1.jpg`](Workspace_Images/workspace_row2_image1.jpg)
 - [`workspace_row2_image2.jpg`](Workspace_Images/workspace_row2_image2.jpg)
