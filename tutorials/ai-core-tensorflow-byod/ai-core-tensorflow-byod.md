@@ -17,7 +17,7 @@ author_profile: https://github.com/dhrubpaul
 
 ## Details
 ### You will learn
-- How to learn to sync pre-trained models with SAP AI Core
+- How to sync pre-trained model to SAP AI Core
 - How to write a pipeline and necessary docker code to enable GPU deployment.
 - How to deploy an AI model and use it for online inferencing.
 
@@ -32,7 +32,7 @@ The model used in this example uses a pre-trained embedding layer of [`GloVe`](h
 - [Train your own word embeddings using a simple `Keras`](https://www.tensorflow.org/text/guide/word_embeddings#using_the_embedding_layer)
 - [Using pre-trained word embeddings in `Keras`](https://keras.io/examples/nlp/pretrained_word_embeddings/)
 
-By the end of this tutorial you will have movie review classification model deployed in SAP AI Core, using which you can make predictions in real-time.
+By the end of this tutorial you will have a movie review classification model deployed in SAP AI Core, using which you can make predictions in real-time.
 
 You may complete each step of this tutorial using any of the following tools to control operations in your SAP AI Core:
 
@@ -73,7 +73,7 @@ for rg in response.resources:
 
 2. Login to AWS using your AWS CLI.
 
-    Fill your AWS credentials. You can leave the `Default output format` entry blank. Press enter.
+    Enter your AWS credentials. You can leave the `Default output format` entry blank. Press enter.
 
     ```BASH
     aws configure
