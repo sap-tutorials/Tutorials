@@ -1,25 +1,25 @@
 ---
 title: Deploy Application to Cloud Foundry with SAP Cloud SDK for JavaScript
-description: Deploy an existing application and deploy it to Cloud Foundry in SAP Cloud Platform.
+description: Deploy an existing application and deploy it to Cloud Foundry in SAP Business Technology Platform.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-sdk, topic>javascript ]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>beginner, software-product>sap-cloud-sdk, programming-tool>javascript ]
+primary_tag: software-product>sap-cloud-sdk
 ---
 
 ## Details
 ### You will learn
- - How to deploy your application to Cloud Foundry in SAP Cloud Platform
- - How to configure a destination in the SAP Cloud Platform cockpit
+ - How to deploy your application to Cloud Foundry in SAP Business Technology Platform
+ - How to configure a destination in the SAP Business Technology cockpit
  - How to consume the destination in your application
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Deploy application to Cloud Foundry)]
 
->**Note:** If you don't have a [SAP Cloud Platform](https://account.hana.ondemand.com/) account, you need to create one.
+>If you don't have a [SAP Business Technology Platform](https://account.hana.ondemand.com/) account, you need to create one.
 
-In order to deploy our application, we first need to login to `Cloud Foundry` in `SAP Cloud Platform` using the **`cf` CLI**. First we need to set an `API` endpoint. The exact URL of this `API` endpoint depends on the region your `subaccount` is in. Open the [SAP Cloud Platform Cockpit](https://account.hana.ondemand.com/) and navigate to the `subaccount` you are planning to deploy your application to. Click on "Overview" on the left and you can see the URL of the `API` endpoint.
+In order to deploy your application, you first need to login to `Cloud Foundry` in `SAP Business Technology Platform` using the **`cf` CLI**. First you need to set an `API` endpoint. The exact URL of this `API` endpoint depends on the region your `subaccount` is in. Open the [SAP Business Technology Platform Cockpit](https://account.hana.ondemand.com/) and navigate to the `subaccount` you are planning to deploy your application to. Click on "Overview" on the left and you can see the URL of the `API` endpoint.
 
 ![API_Endpoint_in_Subaccount](subaccount_api_endpoint.png)
 
@@ -33,7 +33,7 @@ cf login
 `cf login` will prompt you for your username and your password. Should you have more then one organization or space, you will also have to select those.
 
 Finally, if you have logged in successfully, it is time to build and deploy your application.
-The `package.json` contains a few scripts that can be used for this purpose. In productive environments you would transpile the application from TypeScript to JavaScript using the `ci-build` script, package our deployment using the `ci-package` script and deploy the application using:
+The `package.json` contains a few scripts that can be used for this purpose. In productive environments you would transpile the application from TypeScript to JavaScript using the `ci-build` script, package your deployment using the `ci-package` script and deploy the application using:
 ```Shell
 cf push
 ```
@@ -94,7 +94,7 @@ cf logs <YOUR-APPLICATION-NAME> --recent
 
 >**Note:** If you have access to an SAP S/4HANA Cloud system, you can skip this step.
 
-If you have used the [`OData` Mock Service for the Business Partner `API`](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server) in the previous tutorial, you will now also have to deploy it to `Cloud Foundry in SAP Cloud Platform`. Navigate to the mock server's root folder, that already contains a `manifest.yml` and run:
+If you have used the [`OData` Mock Service for the Business Partner `API`](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server) in the previous tutorial, you will now also have to deploy it to `Cloud Foundry in SAP Business Technology Platform`. Navigate to the mock server's root folder, that already contains a `manifest.yml` and run:
 ```Shell
 cf push
 ```
@@ -103,14 +103,14 @@ Make sure that your [Mock Server](https://github.com/SAP/cloud-s4-sdk-book/tree/
 
 When the server has been pushed successfully, **`cf` CLI** will output the route where the server can be reached.
 
-Copy this route, as we will need it in the next step.
+Copy this route, as you will need it in the next step.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Configure destination)]
 
-Now that we have deployed our application, we need to configure a destination in the Cloud Cockpit so that it can be used by our application.
+Now that you have deployed your application, you need to configure a destination in the Cloud Cockpit so that it can be used by your application.
 
 Start by opening the [Cloud Cockpit](https://account.hana.ondemand.com) in your browser and logging in.
 
@@ -118,7 +118,7 @@ Next, navigate to your respective subaccount (in case of a trial account it shou
 
 ![SAP_Cloud_Platform_Cockpit](sap_cloud_platform_cockpit.png)
 
-For **Name**, choose a name that describes your system. For the tutorial, we will go with **`MockServer`**.
+For **Name**, choose a name that describes your system. This tutorial will go with **`MockServer`**.
 
 If you use the Business Partner mock server, enter for **URL** the URL that you have saved from the previous step and use **`NoAuthentication`** for **Authentication**. If you use an SAP S/4HANA Cloud system, enter the systems URL in the **URL** field and choose **`BasicAuthentication`** as authentication type. This will make the fields **User** and **Password** appear. Enter here the credentials of a technical user for your SAP S/4HANA Cloud system.
 
@@ -135,7 +135,7 @@ To create an instance of the destination service, execute the following command 
 cf create-service destination lite my-destination
 ```
 
-This tells `Cloud Foundry in SAP Cloud Platform` to create an instance of the destination service with service plan **lite** and make it accessible under the name **my-destination**. We can now use the name to bind this service to our application. To do this, open your `manifest.yml` and add a section called `services`, under which you can then add the name of the just created service.
+This tells `Cloud Foundry in SAP Business Technology Platform` to create an instance of the destination service with service plan **lite** and make it accessible under the name **my-destination**. You can now use the name to bind this service to your application. To do this, open your `manifest.yml` and add a section called `services`, under which you can then add the name of the just created service.
 
 The resulting `manifest.yml` should look like this:
 
@@ -152,7 +152,7 @@ applications:
       - my-destination
 ```
 
-Secondly, we need an instance of the `XSUAA service`. The `XSUAA service` is responsible for issuing access tokens that are necessary to talk to other services, like the destination service. For this service, we will need a bit of extra configuration in the form of a configuration file. Create a file called `xs-security.json` with the following content:
+Secondly, you need an instance of the `XSUAA service`. The `XSUAA service` is responsible for issuing access tokens that are necessary to talk to other services, like the destination service. For this service, you will need a bit of extra configuration in the form of a configuration file. Create a file called `xs-security.json` with the following content:
 
 ```JSON
 {
@@ -161,7 +161,7 @@ Secondly, we need an instance of the `XSUAA service`. The `XSUAA service` is res
 }
 ```
 
-The value for `xsappname` again has to be unique across the whole of `Cloud Foundry in SAP Cloud Platform`, so make sure to choose a unique name or prefix.
+The value for `xsappname` again has to be unique across the whole of `Cloud Foundry in SAP Business Technology Platform`, so make sure to choose a unique name or prefix.
 
 Now, execute the following command:
 
@@ -187,7 +187,7 @@ applications:
       - my-xsuaa
 ```
 
-Finally, we need to adapt the `getAllBusinessPartners` function in `business-partner.controller.ts` to use the destination defined in the Cloud Platform Cockpit.
+Finally, you need to adapt the `getAllBusinessPartners` function in `business-partner.controller.ts` to use the destination defined in the Business Technology Platform Cockpit.
 
 The new function now looks like this:
 
@@ -201,9 +201,9 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 }
 ```
 
-We replaced the parameter of `execute` with an object whose key `destinationName` refers to the name of the destination we defined earlier. If you followed step 5 in the previous tutorial, your code will already refer to the correct `destinationName`. If you chose a different name than `MockServer`, make sure to use it here accordingly.
+In the snippet, the parameter of `execute` is replaced with an object whose key `destinationName` refers to the name of the destination you defined earlier. If you followed step 5 in the previous tutorial, your code will already refer to the correct `destinationName`. If you chose a different name than `MockServer`, make sure to use it here accordingly.
 
-Now we can recompile and redeploy the application. In your command line, run:
+Now you can recompile and redeploy the application. In your command line, run:
 ```Shell
 npm run deploy
 ```

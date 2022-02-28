@@ -3,7 +3,7 @@ title: Get OAuth Access Token for Invoice Object Recommendation via Web Browser
 description: Retrieve your OAuth access token, which will grant you access to the service APIs.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>invoice-object-recommendation]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>invoice-object-recommendation]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
 author_profile: https://github.com/Juliana-Morais
@@ -23,6 +23,7 @@ To get your OAuth access token you will need the values listed below from the se
 
 [VALIDATE_1]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 2: ](Get OAuth access token)]
 
@@ -48,7 +49,7 @@ You should receive a response like the following:
 }
 ```
 
-You have successfully generated your OAuth access token for the service and you are now all set to [Use Machine Learning to Recommend G/L Accounts for Incoming Invoices](cp-aibus-ior-swagger-ui).
+You have successfully generated your OAuth access token for the Invoice Object Recommendation service and you are now all set to [Use Machine Learning to Recommend G/L Accounts for Incoming Invoices](cp-aibus-ior-swagger-ui).
 
 [DONE]
 [ACCORDION-END]

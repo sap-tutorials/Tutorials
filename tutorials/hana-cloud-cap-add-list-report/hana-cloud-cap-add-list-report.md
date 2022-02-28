@@ -3,7 +3,7 @@ title: Add a List Report Interface to the CAP App (SAP HANA Cloud)
 description: Run the CAP app locally and add an SAP Fiori elements list report to display the data
 time: 20
 auto_validation: true
-tags: [ tutorial>beginner, products>sap-hana, products>sap-business-application-studio, topic>user-interface,  software-product-function>sap-cloud-application-programming-model]
+tags: [ tutorial>beginner, software-product>sap-hana, software-product>sap-business-application-studio, topic>user-interface,  software-product-function>sap-cloud-application-programming-model]
 primary_tag: products>sap-fiori
 ---
 
@@ -68,7 +68,7 @@ primary_tag: products>sap-fiori
 2. You can use different methods in the OData v4 services you have created. Go back to the welcome page for the service and click **`Interactions_Items`**. Add the following to the URL:
 
     ```URL
-    &$search=DE
+    ?$search=DE
     ```
 
     !![Play with the OData Service](search.png)

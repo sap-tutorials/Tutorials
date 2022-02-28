@@ -2,23 +2,23 @@
 title: Receive Alerts in Your On-Premise System Using Java Web Tomcat 8
 description: Configure a connection with an on-premise system to receive alert notifications locally.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [ tutorial>intermediate, products>sap-cloud-platform ]
+primary_tag: software-product>sap-business-technology-platform
+tags: [ tutorial>intermediate, tutorial>license, software-product>sap-business-technology-platform ]
+author_name: Nikola Simeonov
+author_profile: https://github.com/nikolasimeonov77
 time: 50
 ---
 
 <!-- loio152a1abd1a1f4618baaa6e43f55e37df -->
 
 ## Prerequisites
-- You have a customer account.
+- **You have a productive global account and a subaccount.**
   For more information, See [Getting Started with a Customer Account in the Neo Environment](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/1b335bad21724350b0afca66b2db2ce6.html).
 - You have active resources (applications) to receive alerts for.
-- You have installed Maven.
-- You have downloaded and set up your Eclipse IDE, SAP BTP Tools for Java, and SDK.
-  For more information, see [Setting Up the Development Environment](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/e815ca4cbb5710148376c549fd74c0db.html).
-    > To build the project into a WAR file, you need `Maven Integration for Eclipse WTP`.
-- You have set up Java Web Tomcat 8 as a runtime environment.
-  For more information, see **Java Web Tomcat 8 Runtime** in [Set Up the Runtime Environment](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/7613f000711e1014839a8273b0e91070.html).
+- You have installed Maven. See [Welcome to Apache Maven](http://maven.apache.org/).
+- You have installed SAP BTP SDK for the Neo environment (Java Web Tomcat 8) and set up the Console Client. See [Setting Up the Development Environment](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/e815ca4cbb5710148376c549fd74c0db.html).
+- You have Installed SAP JVM. See [(Optional) Install SAP JVM](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/76137f42711e1014839a8273b0e91070.html).
+- You have configured the environment variables as you specify the **JAVA HOME** variable to the **`jre`** folder of the installed SAP JVM and the **Path** variable to the **bin** folder of the installed Apache Maven.
 - You have downloaded and initially configured the Cloud Connector.
   For this tutorial, you can use the portable version. For more information, see [Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html).
 
@@ -40,9 +40,9 @@ Download the project as a ZIP file from [https://github.com/SAP/cloud-sample-web
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Import the folder into Eclipse as a Maven project)]
+[ACCORDION-BEGIN [Step 2: ](Go to the folder)]
 
-Choose **File** > **Import…** > **Maven** > **Existing Maven Projects** and follow the steps from the wizard.
+Open the Command prompt and go to the project\'s local folder **`cloud-sample-webhooks-main`**.
 
 [DONE]
 
@@ -50,13 +50,11 @@ Choose **File** > **Import…** > **Maven** > **Existing Maven Projects** and fo
 
 [ACCORDION-BEGIN [Step 3: ](Build the project with Maven to generate a WAR file)]
 
-Choose **Run As** > **Maven build…**, specify **clean install** for the **Goals** field, and run the build.
+Run the command `mvn clean install` to compile, test, and package the `cloud-sample-webhooks-main` project.
 
-![loio1d5beb47d5f14d3eab086620ca3cd9aa_LowRes](loio1d5beb47d5f14d3eab086620ca3cd9aa_LowRes.png)
+You can now find your packaged `webhooks.cloud.to.onpremise-1.0.0-SNAPSHOT.war` file in the **target** folder.
 
-You should find the generated WAR file in a **target** directory of your local folder.
-
-In the text area below, enter the text you inserted in the **Goals** field, and then choose **Validate**.
+In the text area below, enter the command you used to compile, test, and package the `cloud-sample-webhooks-main` project.
 
 [VALIDATE_1]
 
@@ -91,33 +89,38 @@ You need the access token to call the Alerting Channels REST API. For more infor
 
 [ACCORDION-BEGIN [Step 7: ](Create POST request to get verification token)]
 
+Create a POST request with one of the following URIs:
+
+- Account level: `https://api.{host}/alerting/v2/channels/accounts/{subaccountName}/types/webhook`
+- Application level:
+`https://api.{host}/alerting/v2/channels//accounts/{subaccountName}/apps/{appName}/types/webhook`
+
+> The application parameter in the URI is optional, and you do not specify it for alerts on account level.
+
 Use the following code in the body of the Alerting Channels REST call:
 
 ```JSON
-
 {
- "type": "WEBHOOK",
-"application": "app_to_receive_alerts_for",
- "parameters": {
                     "url": "application_URL/webhook",
                     "authentication": {
-                        "authenticationType": "OAUTH2",
+                        "authenticationType": "oauth2",
                         "client": "registered_client_ID",
                         "secret": "registered_client_secret",
                         "oAuthServerUrl": "token_endpoint_URL?grant_type=client_credentials"
-                    }
-                }
+                      }
 }
-
 ```
 
-- Replace `application_URL` with the **webhook** application URL. You can find it in the cloud cockpit when you select the deployed **webhook** application.
+- Replace `application_URL` with the **webhook** application URL. You can find it in the SAP BTP cockpit when you select the deployed **webhook** application.
 
 - Replace `registered_client_ID` and `registered_client_secret` with the client ID and secret created when registering the OAuth client for the **webhook** application.
+> These are not the client ID and secret that you created for the platform API.
 
-- Replace `token_endpoint_URL` with the URL shown for the subaccount at **Security** > **OAuth** > **Branding** > **Token Endpoint** in the cloud cockpit.
+- Replace `token_endpoint_URL` with the URL shown for the subaccount at **Security** > **OAuth** > **Branding** > **Token Endpoint** in the SAP BTP cockpit.
 
-> The **application** parameter is optional, and you do not specify it for alerts on account level. For more information, see [Alerting Channels REST API](https://api.sap.com/api/HCP_Alerting).
+Furthermore, use the access token as a bearer token in the Authorization for the REST API call.
+
+For more information, see [Alerting Channels REST API](https://api.sap.com/api/HCP_Alerting).
 
 [DONE]
 
@@ -125,24 +128,20 @@ Use the following code in the body of the Alerting Channels REST call:
 
 [ACCORDION-BEGIN [Step 8: ](Provide the token as a system property)]
 
-Select the application in the cloud cockpit, choose the **Update** button, and enter the verification token as a JVM argument (`-DverificationToken=<verification_token>`).
+Select the application in the SAP BTP cockpit, choose the **Update** button, and enter the verification token as a JVM argument (`-DverificationToken=<verification_token>`).
 
-![loioab28913f28674c34ac412a924760f894_LowRes](loioab28913f28674c34ac412a924760f894_LowRes.png)
+![JVM Argument View](loioab28913f28674c34ac412a924760f894_LowRes.png)
 
 Finally, restart the application for your change to take effect.
 
-In the text area below, enter the text you inserted in the **JVM Arguments** field, and then choose **Validate**.
+In the text area below, enter the text you inserted in the **JVM Arguments** field.
 
 [VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Deploy the WAR file locally)]
 
-Use Java Web Tomcat 8 server and **`com.sap.cloud.samples.web.hooks.web`** > **`BackendSystemServlet.java`** servlet. Then, on the **Web Modules** page of **Java Web Tomcat 8 Server**, set the path `/`.
-
-For more information, see [Deploy Locally from Eclipse IDE](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/0f16c9db4a9c407abb1b4987c0afe714.html).
-
-![loio268839fdcfff424b88419150c824da78_LowRes](loio268839fdcfff424b88419150c824da78_LowRes.png)
+Use Java Web Tomcat 8 server and deploy the WAR file locally. See [Deploy Locally with the Console Client](https://help.sap.com/viewer/ea72206b834e4ace9cd834feed6c0e09/Cloud/en-US/937c833b72bb101490cf767db0e91070.html).
 
 [DONE]
 [ACCORDION-END]
@@ -151,20 +150,22 @@ For more information, see [Deploy Locally from Eclipse IDE](https://help.sap.com
 
 1.   Start the cloud connector.
 
+    > After you have configured the Cloud Connector as mentioned in **Prerequisites**, make sure that it connects to the internal system by using ![Check availability of internal host](Check_Availabiltity_Internal_Host.png).
+
 2.   Configure the access control.
 
-    Go to the **Cloud to On-Premise** view and add the mapping `/backend`.
+    Go to the **Cloud to On-Premise** view and add the resource `/webhooks.cloud.to.onpremise-1.0.0-SNAPSHOT/backend`.
 
-    ![loioaf64ea723b684ca090953b1ca309f996_LowRes](loioaf64ea723b684ca090953b1ca309f996_LowRes.png)
+    ![Resource mapping](Add_Resource.PNG)
 
-In the text area below, enter the text you inserted in the **URL Path** field, and then choose **Validate**.
+In the text area below, enter the text you inserted in the **URL Path** field.
 
 [VALIDATE_4]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Configure cloud destination to the on-premise system)]
 
-1.   Log on to the cloud cockpit.
+1.   Log on to the SAP BTP cockpit.
 
 2.   Select the subaccount.
 
@@ -172,19 +173,21 @@ In the text area below, enter the text you inserted in the **URL Path** field, a
 
 4.   Create a new destination with the following values:
 
-    |Field Name    |Value                                            |
-    |:-------------|:------------------------------------------------|
-    |Name          |`on-premise-destination`                         |
-    |Type          |`HTTP`                                           |
-    |URL           |`http://<virtual host>:<virtual port>/backend`   |
-    |Proxy Type    |`OnPremise`                                      |
-    |Authentication|`NoAuthentication`                               |
+    |Field Name    |Value                                                                                    |
+    |:-------------|:----------------------------------------------------------------------------------------|
+    |Name          |`on-premise-destination`                                                                 |
+    |Type          |`HTTP`                                                                                   |
+    |URL           |`http://<virtual host>:<virtual port>/webhooks.cloud.to.onpremise-1.0.0-SNAPSHOT/backend`|
+    |Proxy Type    |`OnPremise`                                                                              |
+    |Authentication|`NoAuthentication`                                                                       |
 
     For more information, see [Configure the Destination in the Cloud](https://help.sap.com/viewer/b865ed651e414196b39f8922db2122c7/Cloud/en-US/e76f9e75bb571014a7218bcd30a8771b.html#loioe76f9e75bb571014a7218bcd30a8771b__configure_destination_cloud).
 
     > The virtual host and port are configured in the cloud connector under **Cloud To On-Premise** > **Access Control** > **Mapping Virtual to Internal System**.
 
-In the text area below, enter the name you used for the destination, and then choose **Validate**.
+5. Check that the connection to the on-premise destination is successful.
+
+In the text area below, enter the name you used for the destination.
 
 [VALIDATE_5]
 
@@ -192,11 +195,7 @@ In the text area below, enter the name you used for the destination, and then ch
 
 [ACCORDION-BEGIN [Step 12: ](Test that you receive alerts)]
 
-Trigger an alert by setting low threshold values (for example, Warning Threshold = 0.00001 and Critical Threshold = 0.0001). You should receive the alert as an `alert_<timestamp>.json` file locally in the server's workspace folder.
-
-> You can set a custom location by updating the server and deploy paths in Eclipse. In that case, the file will be generated in the deploy path that is inside the server path.
->
-> !![loio2cd7767a93a44451a0857f761426788f_LowRes](loio2cd7767a93a44451a0857f761426788f_LowRes.png)
+Trigger an alert by setting low threshold values (for example, Warning Threshold = 0.00001 and Critical Threshold = 0.0001 for the availability check of the application). You should receive the alert as an `alert_<timestamp>.json` file locally in the server's workspace folder (usually in the **`…/webapps/webhooks.cloud.to.onpremise-1.0.0-SNAPSHOT`** folder).
 
 [DONE]
 

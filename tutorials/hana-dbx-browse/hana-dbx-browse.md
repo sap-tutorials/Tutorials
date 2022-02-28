@@ -3,8 +3,8 @@ title: Browse Schema with the Database Browser in SAP HANA Database Explorer
 description: See how the database browser can be used to explore and examine objects in an SAP HANA database.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -34,10 +34,10 @@ primary_tag: products>sap-hana-cloud
 
     ```SQL
     SET SCHEMA USER1;
-    SELECT * FROM HOTEL.CITY;  --succeeds
-    SELECT * FROM CITY;  --fails
+    SELECT * FROM HOTEL.CUSTOMER;  --succeeds
+    SELECT * FROM CUSTOMER;  --fails
     SET SCHEMA HOTEL;
-    SELECT * FROM CITY; --succeeds
+    SELECT * FROM CUSTOMER; --succeeds
     ```
 
 2. When browsing objects in the database browser, the schema name is shown for each object if a schema filter is not set.
@@ -96,7 +96,7 @@ primary_tag: products>sap-hana-cloud
 
     ![Table filter button](filterButton.png)
 
-    The following filter searches for hotels in California with a name containing `lo`.
+    The following filter searches for customer numbers `cno` less than or equal to 1005.
 
     ![Create And Apply Filters](CreateFilters.png)
 
@@ -133,7 +133,7 @@ We can see that reservations for suites only make up a small part of the overall
 
 [ACCORDION-BEGIN [Step 4: ](Additional features)]
 
-1. Right-click the tab of an open object such as CITY and choose  **Display In Database Browser** to reveal the object in the database browser.
+1. Right-click the tab of an open object such as CUSTOMER and choose  **Display In Database Browser** to reveal the object in the database browser.
 
     ![Display In Database Browser](DisplayInDatabaseBrowser.png)
 

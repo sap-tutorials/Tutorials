@@ -3,8 +3,8 @@ title: Troubleshoot SQL with SAP HANA Database Explorer
 description: Explore the available tools to help diagnose and debug SQL or SQLScript.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition ]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition ]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -38,7 +38,7 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
     ![Set Breakpoints](DebuggerBreakpoints.png)
 
-  4. Right-click the procedure named `RESERVATION_GENERATOR` in the database browser and select **Generate Call Statement** or **Generate Call Statement with UI**.
+  4. Right-click the procedure named `RESERVATION_GENERATOR` in the database browser and select **Generate Call Statement**.
 
     ![Generate Call Statement](GenerateCallStatement.png)
 
@@ -58,7 +58,7 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
     ![Debugger Navigation Icons](DebuggerNavigationIcons.png)
 
-    >For more information on the SAP database explorer debugger, see the [Debugger Tutorials](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/5f452e148e2440f89d6d94cdb1d73b70.html).
+    >For more information on the SAP database explorer debugger, see the [Debugger Tutorials](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/5f452e148e2440f89d6d94cdb1d73b70.html).
 
 [DONE]
 [ACCORDION-END]
@@ -352,7 +352,7 @@ A SQL trace can be helpful when debugging a problem or in identifying SQL statem
 
     ![trace files](traceFiles.png)
 
->For additional details, consult the [Traces](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/7e31247372fb4dd7b8c6bbac758b8c91.html) topic in the SAP HANA Administration Guide for SAP HANA Platform and SAP Note [2119087 - How-To: Configuring SAP HANA Traces](https://launchpad.support.sap.com/#/notes/2119087) and SAP Note [2186744 - FAQ: SAP HANA Parameters](https://launchpad.support.sap.com/#/notes/2186744).
+>For additional details, consult the [Traces](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/7e31247372fb4dd7b8c6bbac758b8c91.html) topic in the SAP HANA Administration Guide, SAP Note [2119087 - How-To: Configuring SAP HANA Traces](https://launchpad.support.sap.com/#/notes/2119087) and SAP Note [2186744 - FAQ: SAP HANA Parameters](https://launchpad.support.sap.com/#/notes/2186744).
 
 [DONE]
 [ACCORDION-END]
@@ -388,7 +388,7 @@ It can be important to examine SQL statements that consume large amounts of time
 
     ![expensive statements](expensiveTrace.png)
 
-3. When using SAP HANA Cloud or the on-premise SP 13 or higher database explorer, the messages tab also contains detailed information about the duration, CPU, and memory consumed by a statement.
+3. When using SAP HANA Cloud or the on-premise SP 13 or higher SAP HANA database explorer, the messages tab also contains detailed information about the duration, CPU, and memory consumed by a statement.
 
     ![Resource consumption](messages-tab.png)
 
@@ -399,6 +399,7 @@ It can be important to examine SQL statements that consume large amounts of time
     ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('resource_tracking', 'enable_tracking') = 'on' WITH RECONFIGURE;
     ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'DATABASE') SET ('resource_tracking', 'memory_tracking') = 'on' WITH RECONFIGURE;
     > ```
+    > For additional details see [SAP HANA Configuration Parameter Reference](https://help.sap.com/viewer/009e68bc5f3c440cb31823a3ec4bb95b/latest/en-US/514ab38a2e574c85a70ebba80ff16d99.html).
 
 [DONE]
 [ACCORDION-END]

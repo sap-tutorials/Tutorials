@@ -3,8 +3,8 @@ title: Connect Using the SAP HANA .NET Interface
 description: Create and debug a .NET application that connects to SAP HANA using the SAP HANA client.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -33,11 +33,11 @@ If the .NET SDK is not installed, download it from [Download .NET](https://dotne
 
 ![.NET Core SDK Install](install.png)
 
-On Linux, follow the instructions for the appropriate Linux version such as [openSUSE 15 Package Manager - Install .NET Core](https://docs.microsoft.com/en-us/dotnet/core/install/linux-package-manager-opensuse15).
+On Linux, follow the instructions for the appropriate Linux version such as [Install the .NET SDK or the .NET Runtime on openSUSE](https://docs.microsoft.com/en-us/dotnet/core/install/linux-opensuse).
 
 In order for the shell to recognize that the .NET SDK is installed and for any `dotnet` commands in future steps to be recognized, a new shell window needs to be opened.
 
->For further details on supported versions, see SAP Note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307).
+>For further details on supported versions, see SAP Note [3136015 - SAP HANA Client Supported Platforms for 2.11](https://launchpad.support.sap.com/#/notes/3136015).
 
 [DONE]
 [ACCORDION-END]

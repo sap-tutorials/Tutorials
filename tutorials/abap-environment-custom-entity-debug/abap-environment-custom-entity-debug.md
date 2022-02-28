@@ -1,10 +1,12 @@
 ---
-title: Inspect Your Class in the ABAP Debugger and Feed Reader
+title: Inspect Your Class in the ABAP Debugger
 description: Work with ABAP classes in the ABAP Debugger in (ADT) for both a console application and SAP Fiori application.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license]
-primary_tag: products>sap-cloud-platform--abap-environment
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, tutorial>license]
+primary_tag: programming-tool>abap-development
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ##Prerequisites
@@ -267,4 +269,8 @@ You can also debug your application, displayed in the SAP Fiori elements preview
 [VALIDATE_1]
 [ACCORDION-END]
 
+### More Information
+
+- [Blog post: Find Errors in Metadata Extensions, by Andre Fischer](https://blogs.sap.com/2020/07/09/how-to-find-errors-in-metadata-extensions-no-item-data-shown-in-object-page/)
+- [Use the SAP Gateway Error Log in ADT, by Andre Fischer](https://blogs.sap.com/2020/07/22/how-to-use-the-sap-gateway-error-log-in-adt/)
 ---

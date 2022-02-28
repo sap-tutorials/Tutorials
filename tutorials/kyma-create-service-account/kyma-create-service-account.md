@@ -39,7 +39,7 @@ kubectl create namespace tutorial
 
 [ACCORDION-BEGIN [Step : ](Create a service account)]
 
-A service account alone won't do the job. You also need to define a role that contains all the desired permissions and assign it to a service account with a role binding. You need to create all three artifacts to use a service account via `kubectl`.
+A service account alone won't do the job. You also need to define a Kubernetes `Role` or `ClusterRole` that contains all the desired permissions, which will be assigned to the service account using a `RoleBinding` or a `ClusterRoleBinding`. In this example a `ClusterRole` will be created which provides cluster wide access. A Role would be used if access to only a single namespace is desired. You need to create all three artifacts to use a service account via `kubectl`.
 
 1. Create a new file called `tutorial-sa.yaml` with the following payload to create all artifacts (service account, role, role binding, and a `ConfigMap` for verification).
 
@@ -49,7 +49,7 @@ A service account alone won't do the job. You also need to define a role that co
     metadata:
       name: tutorial-service-account
     ---
-    kind: Role
+    kind: ClusterRole
     apiVersion: rbac.authorization.k8s.io/v1
     metadata:
       name: tutorial-role
@@ -57,6 +57,7 @@ A service account alone won't do the job. You also need to define a role that co
       - apiGroups:
           - ""
           - extensions
+          - batch
           - apps
           - gateway.kyma-project.io
           - servicecatalog.k8s.io
@@ -64,6 +65,7 @@ A service account alone won't do the job. You also need to define a role that co
           - deployments
           - replicasets
           - pods
+          - jobs
           - configmaps
           - apirules
           - serviceinstances
@@ -78,7 +80,7 @@ A service account alone won't do the job. You also need to define a role that co
           - get
           - list
     ---
-    kind: RoleBinding
+    kind: ClusterRoleBinding
     apiVersion: rbac.authorization.k8s.io/v1
     metadata:
       name: tutorial-role-binding
@@ -86,7 +88,7 @@ A service account alone won't do the job. You also need to define a role that co
       - kind: ServiceAccount
         name: tutorial-service-account
     roleRef:
-      kind: Role
+      kind: ClusterRole
       name: tutorial-role
       apiGroup: rbac.authorization.k8s.io
     ---
@@ -118,18 +120,18 @@ preferences: {}
 clusters:
 - cluster:
     certificate-authority-data:
-    server: https://apiserver.<id>.kyma.shoot.live.k8s-hana.ondemand.com
-  name: <id>.kyma.shoot.live.k8s-hana.ondemand.com
+    server: https://apiserver.<id>.kyma.ondemand.com
+  name: <id>.kyma.ondemand.com
 users:
 - name:
   user:
     token:  
 contexts:
 - context:
-    cluster: <id>.kyma.shoot.live.k8s-hana.ondemand.com
+    cluster: <id>.kyma.ondemand.com
     user:
-  name: <id>.kyma.shoot.live.k8s-hana.ondemand.com
-current-context: <id>.kyma.shoot.live.k8s-hana.ondemand.com
+  name: <id>.kyma.ondemand.com
+current-context: <id>.kyma.ondemand.com
 ```
 
 You can see that this file is moderately easy to read. [The configuration file](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/#define-clusters-users-and-contexts) defines clusters (the location of the system), users (with authentication tokens), and contexts (to map users to clusters).
