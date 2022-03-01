@@ -35,7 +35,7 @@ Currently, the following topics are covered by the integration flow design guide
 - [Use Scripting Appropriately](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/d4dc13c927b044b2a38e458f4cea9da5.html)
 - [Enterprise Integration Patterns](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/eaf929e1e9ac4185b18b545df104f50f.html)
 
-In this tutorial, we are going to download the easiest integration scenario currently offered by Cloud Integration: **Modeling Basics - Timer-Initiated Scenario**. This scenario will show you how you can leverage integration flow design guidelines in integration scenarios - quickly and efficiently.
+In this tutorial, you are going to download the easiest integration scenario currently offered by Cloud Integration: **Modeling Basics - Timer-Initiated Scenario**. This scenario will show you how you can leverage integration flow design guidelines in integration scenarios - quickly and efficiently.
 
 ---
 
@@ -119,7 +119,7 @@ In this final step, check whether the data store entry "Hello world" has been wr
 
     You now see a list of all messages that have run on this tenant. Select the entry with artifact name **Modeling Basics – Timer-Initiated Scenario** and check whether the Status displays a green success message: "Message processing completed successfully."
 
-4. Now, let's download the message. Go back to the **Monitor** overview and this time select **Manage Stores** > **Data Stores**.
+4. Now, download the message. Go back to the **Monitor** overview and this time select **Manage Stores** > **Data Stores**.
 
 5. From the list, select the name of the data store. In this example **ModelingBasics-SmokeTest**.
 
