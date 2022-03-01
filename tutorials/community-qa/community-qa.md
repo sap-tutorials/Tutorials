@@ -6,7 +6,7 @@ author_profile: https://github.com/lenastodal
 
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, topic>sap-community ]
+tags: [ tutorial>beginner, topic>sap-community  ]
 primary_tag: topic>sap-community
 ---
 
