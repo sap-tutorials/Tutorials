@@ -208,7 +208,7 @@ In order to not repeat your destination configuration for every request executio
 destinations=[{"name": "<DESTINATIONNAME>", "url": "<URL to your system>", "username": "<USERNAME>", "password": "<PASSWORD>"}]
 ```
 
-This is what it would look like for the mock server:
+Please do not use this approach in production and also include the `.env` file in your `.gitignore` list, so that it is not accidentally checked in. This is what it would look like for the mock server:
 
 ```
 destinations=[{"name": "MockServer", "url": "http://localhost:3000"}]
