@@ -37,6 +37,12 @@ The tutorials cover a variety of topics and the tasks are bundled in step-by-ste
 - Register Your SAP S/4HANA Cloud System
 - Use Your SAP S/4HANA Cloud Service
 
+!![Solution Overview](solution_overview.png)
+
+> You can also have a look at the [demo](https://youtu.be/OQVUkCs7mzY?t=1819) presented during the SAP Community Call focusing on CAP.
+
+
+
 [DONE]
 [ACCORDION-END]
 ---
