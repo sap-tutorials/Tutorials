@@ -278,7 +278,7 @@ Option 2:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Optional: Execute transport task)]
+[ACCORDION-BEGIN [Step 5: ](Execute transport task (Optional))]
 
 If you want to execute your transport task, do following:
 
