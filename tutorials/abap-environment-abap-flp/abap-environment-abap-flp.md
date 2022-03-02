@@ -278,25 +278,42 @@ Option 2:
 [DONE]
 [ACCORDION-END]
 
->**HINT**: If you want to execute your transport task, do following:
+[ACCORDION-BEGIN [Step 5: ](Optional: Execute transport task)]
 
->  1. Select the **Export Customizing Transports** tile.
+If you want to execute your transport task, do following:
+
+1. Select the **Export Customizing Transports** tile.
+
        ![transport](brole10.png)
+
   2. Click **Go**.
+
        ![transport](brole11.png)
+
   3. Select your transport request.
+
       ![transport](brole12.png)
+
   4. Select your transport task.
+
       ![transport](brole13.png)
+
   5. Check your objects.
+
       ![transport](brole14.png)
+
   6. Go back.
+
       ![transport](brole15.png)
+
   7. Select your transport task and select execute. For testing select simulate.
+
       ![transport](brole16.png)
 
+[DONE]
+[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+[ACCORDION-BEGIN [Step 6: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]
