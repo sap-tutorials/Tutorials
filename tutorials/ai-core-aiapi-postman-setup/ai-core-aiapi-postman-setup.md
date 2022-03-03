@@ -24,7 +24,7 @@ Download the following files
 |  `AI-API_postman_collection.json` | [Download Here](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-setup/AI-API_postman_collection.json)
 |  `AI-API_postman_environment.json` | [Download Here](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-setup/AI-API_postman_environment.json)
 
-> Note: Look for the latest collection of APIs for SAP AI Core [here](https://api.sap.com).
+> Look for the latest collection of APIs for SAP AI Core [here](https://api.sap.com).
 
 
 Open Postman.
