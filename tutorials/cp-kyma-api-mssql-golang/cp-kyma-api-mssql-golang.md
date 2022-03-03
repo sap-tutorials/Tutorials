@@ -246,6 +246,7 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     ```Shell/Bash
     kubectl create namespace dev
     ```
+    > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
 
 2. Within the `deployment.yaml`, adjust the value of `spec.template.spec.containers.image`, commented with **#change it to your image**, to use your Docker image. Apply the Deployment which will cause an error which we will further explore:
 
@@ -274,10 +275,10 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     To find the reason for the **STATUS** `CreateContainerConfigError`, review the Pod definition:
 
     ```Shell/Bash
-    kubectl get pod api-mssql-go-c694bc847-tkthc -n dev -o yaml
+    kubectl describe pod api-mssql-go-c694bc847-tkthc -n dev
     ```
 
-    Find the `containerStatuses.state.waiting.message` property for the `api-mssql-go` image to determine the issue.
+    Within the Events of the pods you should find a message `Error: configmap "api-mssql-go" not found`.
 
 4. Apply the `ConfigMap`:
 
@@ -313,13 +314,15 @@ To access the API we can use the `APIRule` we created in the previous step.
 
 1. Open the Kyma runtime console
 
-2. Choose the `dev` Namespace.
+2. From the menu, choose **Namespaces**
 
-3. From the menu, choose **Discovery and Network > `APIRules`**.
+3. Choose the `dev` Namespace.
 
-4. Choose the **Host** entry for the **api-mssql-go** `APIRule` to open the application in the browser which will produce a **404** error. Append `/orders` to the end of the URL and refresh the page to successfully access the API. The URL should be similar to:
+4. From the menu, choose **Discovery and Network > `API Rules`**.
 
-    `https://api-mssql-go.<cluster>.kyma.shoot.live.k8s-hana.ondemand.com/orders`
+5. Choose the **Host** entry for the **api-mssql-go** `APIRule` to open the application in the browser which will produce a **404** error. Append `/orders` to the end of the URL and refresh the page to successfully access the API. The URL should be similar to:
+
+    `https://api-mssql-go.<cluster>.kyma.ondemand.com/orders`
 
     >A tool such as `curl` can be used to test the various HTTP methods of the API.
 

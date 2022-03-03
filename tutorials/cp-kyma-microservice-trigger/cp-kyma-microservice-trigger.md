@@ -64,11 +64,11 @@ In this step you will bind the mock application to the `dev` Namespace. This pro
 
 1. Open the Kyma runtime console.
 
-2. Choose the **Integration > Applications/Systems** menu options.
+2. Choose the **Integration > Applications** menu options.
 
 3. Choose **mp-commerce-mock**.
 
-4. Choose **Create Binding**.
+4. Choose **Create Namespace Binding**.
 
 5. Choose the `dev` Namespace.
 
@@ -93,15 +93,9 @@ In this step you will create a service instance of the events exposed by the moc
 
     ![Service Instance](service-instance-1.png)
 
-5. Choose the **SAP Commerce Cloud - Events** service plan.
+5. Choose **Add** and then choose the **SAP Commerce Cloud - Events** plan. Choose **Create** to create an instance.
 
     ![Service Instance Plan](service-instance-2.png)
-
-6. Choose **Add**.
-
-    ![Service Instance Plan](service-instance-3.png)
-
-7. Choose **Create** to create an instance.
 
 [DONE]
 [ACCORDION-END]
@@ -142,10 +136,10 @@ In this step you will define an event subscription which is used to create a sub
 
 With the configuration steps completed, you can now test the scenario to validate that it is working as intended.
 
-1. Open the mock application in the browser by choosing **Configuration > `APIRules`** from the menu.
+1. Open the mock application in the browser by choosing **Discovery and Network > `API Rules`** from the menu.
 
 2. Choose the **Host** entry for the **commerce-mock** `APIRule` to open it in the browser. This URL should be similar to:
-`https://commerce.*******.kyma.shoot.live.k8s-hana.ondemand.com`
+`https://commerce-mock.*******.kyma.ondemand.com`
 
 3. Choose the **Remote APIS** tab.
 
@@ -159,10 +153,10 @@ With the configuration steps completed, you can now test the scenario to validat
 
     ![Test the Scenario](test-scenario-2.png)
 
-7. With the Kyma console, choose **Configuration > `APIRules`** from the menu.
+7. With the Kyma console, choose **Discovery and Network > `API Rules`** from the menu.
 
 8. Choose the **Host** entry for the **fe-ui5-mssql** `APIRule` to open the application in the browser. This should be similar to:
-`https://fe-ui5-mssql.*******.kyma.shoot.live.k8s-hana.ondemand.com`
+`https://fe-ui5-mssql.*******.kyma.ondemand.com`
 
 9. You should now see the data received by the event as shown below:
 
