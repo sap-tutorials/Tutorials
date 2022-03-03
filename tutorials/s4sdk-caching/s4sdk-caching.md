@@ -72,7 +72,7 @@ In [the resilience tutorial](s4sdk-resilience), you introduced resilience into y
 
 Add the following lines at the end of the constructor of the `GetBusinessPartnerCommand`:
 
-`./application/src/main/java/com/sap/cloud/sdk/tutorial/GetBusinessPartnersCommand.java`
+`./application/src/main/java/com/sap/cloud/sdk/tutorial/GetBusinessPartnerCommand.java`
 
 ```Java
 final ResilienceConfiguration.CacheConfiguration cacheConfig =
