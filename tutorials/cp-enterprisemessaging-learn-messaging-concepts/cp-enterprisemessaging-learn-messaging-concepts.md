@@ -3,8 +3,8 @@ title: Learn about SAP Event Mesh
 description: Learn about SAP Event Mesh, central concepts, and the benefits of decoupled communication and capabilities supported.
 time: 10
 auto_validation: true
-tags: [ tutorial>beginner, programming-tool>node-js, programming-tool>java, products>sap-business-technology-platform]
-primary_tag: products>sap-event-mesh
+tags: [ tutorial>beginner, programming-tool>node-js, programming-tool>java, software-product>technology-platform>sap-business-technology-platform]
+primary_tag: software-product>sap-event-mesh
 ---
 
 ## Prerequisites
