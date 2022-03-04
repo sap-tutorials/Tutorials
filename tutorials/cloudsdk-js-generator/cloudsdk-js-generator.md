@@ -13,7 +13,7 @@ primary_tag: products>sap-cloud-sdk
 > This tutorial is not actively maintained and might be partially outdated.
 > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
-> In this tutorial, we use version 1 of the SAP Cloud SDK for TypeScript/JavaScript.
+> In this tutorial, version 1 of the SAP Cloud SDK for TypeScript/JavaScript is used.
 
 ### You will learn
 - What the SAP Cloud SDK offers for easily accessing OData services via its client libraries
@@ -74,7 +74,7 @@ sap-cloud-sdk generate-odata-client -i service-specification/ -o odata-client/
 
 Note that the generator relies on the `@sap-cloud-sdk/generator` package. If you have not installed this, on the first run a prompt will appear asking you to install it. The question looks like "Do you want to install the @sap-cloud-sdk/generator globally?". Choose "no" as it will install the `latest` version of the generator, which does not fit this tutorial. You should run the following command to install the `@sap-cloud-sdk/generator` by your own.
 
-```
+```Bash
 npm install -g @sap-cloud-sdk/generator@^1.54.0
 ```
 

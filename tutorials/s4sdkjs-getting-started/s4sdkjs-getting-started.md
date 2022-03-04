@@ -13,7 +13,7 @@ primary_tag: software-product>sap-cloud-sdk
 > This tutorial is not actively maintained and might be partially outdated.
 > Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
 > We will provide a link to the updated version of this tutorial as soon as we release it.
-> In this tutorial, we use version 1 of the SAP Cloud SDK for TypeScript/JavaScript.
+> In this tutorial, version 1 of the SAP Cloud SDK for TypeScript/JavaScript is used.
 
 ### You will learn
 
