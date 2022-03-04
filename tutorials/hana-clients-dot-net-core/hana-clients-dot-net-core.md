@@ -37,7 +37,7 @@ On Linux, follow the instructions for the appropriate Linux version such as [Ins
 
 In order for the shell to recognize that the .NET SDK is installed and for any `dotnet` commands in future steps to be recognized, a new shell window needs to be opened.
 
->For further details on supported versions, see SAP Note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307).
+>For further details on supported versions, see SAP Note [3136015 - SAP HANA Client Supported Platforms for 2.11](https://launchpad.support.sap.com/#/notes/3136015).
 
 [DONE]
 [ACCORDION-END]

@@ -51,17 +51,17 @@ Throughout this tutorial, object names may include a suffix or group number, suc
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create CDS View)]
-1. In your package, create a CDS entity. Select the package, then choose **New > Other** from the context menu, then choose **Data Definition**.
+[ACCORDION-BEGIN [Step 2: ](Create CDS View Entity)]
+1. In your package, create a CDS view entity. Select the package, then choose **New > Other** from the context menu, then choose **Data Definition**.
 
     !![step2a-new-cds](step2a-new-cds.png)
 
-    2. Add the following:
-        - Name: **`Z_I_TRAVEL_R_XXX`**
-        - Description: **`Travel Model View Entity - Read Only`**
-        - Referenced object: **`/DMO/I_TRAVEL_U`**
+2. Add the following:
+    - Name: **`Z_I_TRAVEL_R_XXX`**
+    - Description: **`Travel Model View Entity - Read Only`**
+    - Referenced object: **`/DMO/I_TRAVEL_U`**
 
-        Your CDS view is a read-only view. It is based on the business object (BO) view, `/DMO/I_TRAVEL_U`.
+    Your CDS view is a read-only view. It is based on the business object (BO) view, `/DMO/I_TRAVEL_U`.
 
 3. Choose or create a transport request, then choose **Next**. **Do not choose Finish.**
 
@@ -262,7 +262,8 @@ The service binding automatically references the service definition and thus the
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add annotations for automatic display)]
-1. It would be nice if at least some fields were displayed immediately for the user. To do this, simply add the following annotation to the relevant fields in **`Z_C_TRAVEL_DATA_XXX`**. The start of your CDS entity will then look like this.
+
+1. It would be nice if at least some fields were displayed immediately for the user. To do this, simply add the following annotation to the relevant fields in **`Z_I_TRAVEL_R_XXX`**. The start of your CDS entity will then look like this.
 
     > `BookingFee` is not automatically displayed. The numbers for each field are relative to the other fields and are responsive - they do not refer to a specific pixel position or similar. For larger entities, you can specify *HIGH*,*MEDIUM*, or *LOW*, so that less important fields are automatically hidden on a smaller screen, such as a mobile phone.
 
@@ -318,7 +319,7 @@ At present, you only have minimal annotations. As you add more, your CDS entity 
 3. Enter a name and description for your metadata extension object, clearly similar to your CDS entity name, and choose **Next**:
 
     - **`Z_TRAVEL_METADATA_XXX`**
-    - **`Metadata for Z_C_TRAVEL_DATA_XXX`**
+    - **`Metadata for Z_I_TRAVEL_R_XXX`**
 
 4. Accept the transport request, choose **Next**, select all elements, then choose **Finish**.
 

@@ -24,7 +24,6 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 ---
 
-
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can use the existing `NativeScript` plugins like nativescript-geolocation, nativescript-nfc etc. , add this to the client and reference it from a rule.
 
 In this tutorial, you will use the existing `NativeScript` plugin nativescript-geolocation to capture the device location: latitude & longitude.
@@ -52,7 +51,8 @@ In this tutorial, you will use the existing `NativeScript` plugin nativescript-g
     | `MDK Template Type`| Select `Empty` from the dropdown |
     | `Your Project Name` | `MDK_Geolocation` |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
-    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |        
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |  
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |      
 
     !![MDK](img-1.4.png)
 
@@ -159,6 +159,8 @@ In `GetCoordinates.js` file, you referred `@nativescript/geolocation` plugin. Yo
     !![MDK](img-3.6.png)
 
 3. Include below references in `mdk.bundlerExternals` and save the changes.
+
+    >You can beautify the file by right clicking on the file ->select `Format Document` if required.
 
     ```JSON
     "@nativescript/geolocation"

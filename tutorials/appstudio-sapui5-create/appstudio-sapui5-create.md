@@ -3,8 +3,8 @@ title: Deploy Your First SAPUI5 App
 description: Create, build, and deploy an MTA project with an integrated SAPUI5 module to SAP BTP, Cloud Foundry environment
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, topic>javascript, topic>sapui5, topic>html5, products>sap-business-technology-platform, products>sap-business-application-studio]
-primary_tag: products>sap-btp--cloud-foundry-environment
+tags: [ tutorial>beginner, programming-tool>javascript, programming-tool>sapui5, programming-tool>html5, software-product>sap-business-technology-platform, software-product>sap-business-application-studio]
+primary_tag: software-product>sap-btp--cloud-foundry-environment
 author_name: Conrad Bernal
 author_profile: https://github.com/cjbernal
 ---
@@ -33,15 +33,11 @@ author_profile: https://github.com/cjbernal
 
 Make sure you are connected to a Cloud Foundry endpoint to which you will deploy the SAPUI5 application later.
 
-1. Click on the bottom-left corner of the screen to start the connection flow.
-
-    !![notConnected](./notConnected.png)
-
-2. Enter the Cloud Foundry endpoint you want to use. If your environment runs in the EU10-region, this is `https://api.cf.eu10.hana.ondemand.com`. Enter your email and your password to proceed.
+1. Enter the Cloud Foundry endpoint you want to use. If your environment runs in the EU10-region, this is `https://api.cf.eu10.hana.ondemand.com`. To do so, use the `CF: Login to Cloud Foundry` command. From the menu, select **View** and then **Find Command**. Type `CF: Login` and then select `CF: Login to Cloud Foundry`. Select your endpoint or enter the value for your region and then enter your email and password to proceed.
 
     !![selectEndpoint](./selectEndpoint.png)
 
-3. Next, you need to select the Cloud Foundry Organization and space you want use. You will see that you are connected to the endpoint once these prompts have been answered.
+2. Next, you need to select the Cloud Foundry Organization and space you want use. You will see that you are connected to the endpoint once these prompts have been answered.
 
     !![connectedEndpoint](./connectedEndpoint.png)
 
@@ -136,7 +132,7 @@ Now that you created a `mtar` archive, you are all set to deploy the application
 [ACCORDION-BEGIN [Step : ](Test to the application)]
 
 1. **Open** the application in your browser. You might need to log in with your SAP ID (the same credentials you use for the SAP BTP Cockpit).
->There is temporarily a need to update the given URL to view the application. When pasting the URL into your browser, remove `cpp` from your URL and replace it with `launchpad`. 
+>There is temporarily a need to update the given URL to view the application. When pasting the URL into your browser, remove `cpp` from your URL and replace it with `launchpad`.
 
 
 2. See that the sample application consists of a header and an empty page. So you should see something like this:

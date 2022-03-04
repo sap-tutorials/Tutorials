@@ -63,6 +63,8 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
 
     ![Client-install](client-installer.png)
 
+    > If the install fails, try running the installer with administrator privilege (i.e. On Microsoft Windows, right-click on `hdbsetup.exe` and choose Run as an administrator).
+
     > If an older version is already installed, it can be upgraded or it can be uninstalled by running `hdbuninst` from the folder where the client is installed.  For example `c:\sap\hdbclient\install\hdbuninst`
 
 4. After the installation process is completed, update your path environment variable so that the SAP HANA client programs such as `hdbsql` can be found on your path.  On Microsoft Windows, click the **Start** icon and search for environment variables.
@@ -127,7 +129,7 @@ The SAP Cryptographic Library is only required when client-side data encryption 
 
 Another download location is the [Software Downloads](https://support.sap.com/en/my-support/software-downloads.html), which requires signing in before downloading.  Software Downloads provides additional platforms such as 32-bit Windows and AIX.  Versions of the SAP HANA client downloaded from here include the SAP Common Crypto Library.
 
-> For additional details on supported platforms, see SAP Note [3006307 - SAP HANA Client Supported Platforms for 2.7 and higher ](https://launchpad.support.sap.com/#/notes/3006307) and SAP Note [2938939 - SAP HANA Client Legacy Platforms](https://launchpad.support.sap.com/#/notes/2938939).
+> For additional details on supported platforms, see SAP Note [3136015 - SAP HANA Client Supported Platforms for 2.11](https://launchpad.support.sap.com/#/notes/3136015) and SAP Note [2938939 - SAP HANA Client Legacy Platforms](https://launchpad.support.sap.com/#/notes/2938939).
 
 1. Download the software.  
 
@@ -146,12 +148,12 @@ Another download location is the [Software Downloads](https://support.sap.com/en
     The command to extract a `.sar` file is shown below.  The command options are extract, verbose and file.
 
     ```Shell (Microsoft Windows Command Prompt)
-    SAPCAR_1010-70006231.EXE -xvf IMDB_CLIENT20_011_14-80002083.SAR
+    SAPCAR_1010-70006231.EXE -xvf IMDB_CLIENT*.SAR
     ```
 
     ```Shell (Linux or Mac)
     chmod u+x SAPCAR
-    ./SAPCAR_1010-70006178.EXE -xvf IMDB_CLIENT20_011_14-80002082.SAR
+    ./SAPCAR_1010-70006178.EXE -xvf IMDB_CLIENT*.SAR
     ```
 
     >For further information on SAPCAR or if you are having troubles using it, see [SAP HANA, SAPCAR, and macOS](https://blogs.sap.com/2020/03/18/sap-hana-sapcar-and-macos/).  

@@ -68,7 +68,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
     ```
 
     ```Shell (Linux)
-    mkdir ~/DataLakeClientsTutorial/java
+    mkdir -p ~/DataLakeClientsTutorial/java
     cd ~/DataLakeClientsTutorial/java
     nano JavaQuery.java
     ```
@@ -97,7 +97,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
                 try {
                     System.out.println("Connection to data lake IQ successful!");
                     Statement stmt = connection.createStatement();
-                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME from CUSTOMER;");
+                    ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM CUSTOMER;");
                     while (resultSet.next()) {
                         String title = resultSet.getString(1);
                         String firstName = resultSet.getString(2);
@@ -170,6 +170,51 @@ Visual Studio Code can run and debug a Java application. It is a lightweight but
     ![VS Code Debugging](debugging.png)
 
 Congratulations! You have now created and debugged a Java application that connects to and queries a data lake IQ database.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Browse data lake IQ using DBeaver with JDBC)]
+
+`DBeaver` is a free and open source database tool and can be used with the data lake IQ JDBC driver.  
+
+The following steps demonstrate how to configure `DBeaver` to connect to data lake IQ.
+
+1. [Download](https://dbeaver.io/download/) and install the community edition of `DBeaver`.
+
+    ![Install DBeaver](dbeaver-install1.png)
+
+2. In `DBeaver`, select **Database | Driver Manager | New** to create a new driver configuration.
+
+    ![New Driver](create-new-driver.png)
+
+3.  Under the **Libraries** tab, specify Java and native components that make up the driver.
+
+    ![Libraries](create-new-driver-libraries.png)
+
+    Select `sajdbc4.jar` and choose Find Class and press **OK** to save the new driver definition.
+
+    >On Linux, if an error occurs indicating that the library cannot load,  ensure that source IQ.sh has been added to your environment as described at [Step 5: Install the data lake IQ client](hana-cloud-dl-clients-overview).
+
+4. Select **Database | New Database Connection | All** and select the newly created driver definition.  
+
+    ![Database connection](dbeaver-connection.png)
+
+5. Provide the JDBC URL and credentials and press the **Test Connection** button.  An example of the URL is shown below.
+
+    ```JDBC URL
+    jdbc:sqlanywhere:uid=HDLADMIN;pwd=MyPasword1;Host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC='TLS{tls_type=rsa;direct=yes}'
+    ```
+
+    ![Database connection main tab](create-new-driver-test.png)
+
+6. A SQL Console can now be opened and queries can be executed.
+
+    ```SQL
+    SELECT TITLE, FIRSTNAME, NAME FROM CUSTOMER;
+    ```
+
+    ![query in DBeaver](dbeaver-select.png)
 
 
 [VALIDATE_1]

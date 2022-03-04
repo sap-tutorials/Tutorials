@@ -77,19 +77,19 @@ The following services with their service plans and entitlements are required fo
 
 | Service                           | Plan       | Amount | Unit         | Tutorial                                |
 | --------------------------------- | ---------- | ------ | ------------ | --------------------------------------- |
-| Application Runtime               | `MEMORY`     | 4      | GB           | [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)   |
-| Application Logging               | `standard`   | 1      | instances    | [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)   |
+| Cloud Foundry runtime             | `MEMORY`     | 4      | GB           | [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)   |
+| SAP Application Logging service   | `standard`   | 1      | instances    | [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)   |
 | SAP HANA Schemas & HDI Containers | `hdi-shared` | 1      | instances    | [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)   |
 | SAP HANA Cloud                    | `hana`       | 1      | instances    | [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)     |
-| Launchpad Service                 | `standard`   | 1      | active users | [Add the SAP Launchpad Service](btp-app-launchpad-service) |
+| SAP Launchpad service             | `standard`   | 1      | active users | [Add the SAP Launchpad Service](btp-app-launchpad-service) |
 
 
 > The services mentioned below are Utility Services, no entitlement needed
 
 | Service                          | Plan        | Amount | Unit         | Tutorial                                |
 | -------------------------------- | ----------- | ------ | ------------ | --------------------------------------- |
-| Launchpad Service                | `standard`    | 1      | active users | [Add the SAP Launchpad Service](btp-app-launchpad-service) |
-| Authorization & Trust Management | `application` | 1      | instances    | [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)   |
+| SAP HTML5 Application Repository service  | `app-host`    | 100    | MB        | [Add the SAP Launchpad Service](btp-app-launchpad-service)   |
+| SAP Authorization and Trust Management service | `application` | 1      | instances    | [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)   |
 
 
 
@@ -102,7 +102,7 @@ At least the services for the tutorials [Set Up the SAP HANA Cloud service](btp-
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Create a subaccount)]
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 4. Choose **Account Explorer** in the left navigation pane.
 
@@ -193,11 +193,11 @@ Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org
 Prepare for the next steps by logging on to Cloud Foundry and targeting your space in the account.
 
 
-If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
+If you don't know whether you are logged on to Cloud Foundry or if you are wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
 
 [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -222,7 +222,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-    
+
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
@@ -230,19 +230,19 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-  
+
 [OPTION END]
 [OPTION BEGIN [Live]]
 
 Prepare for the next steps by logging on to Cloud Foundry and targeting your space in the account.
 
 
-If you don't know whether you're logged on to Cloud Foundry or if you're wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
+If you don't know whether you are logged on to Cloud Foundry or if you are wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
 
 [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
 
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -267,7 +267,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```Shell/Bash
     cf api <API Endpoint of your landscape>
     ```
-    
+
 5. Log in to your Cloud Foundry account, using your SAP BTP credentials.
 
     ```Shell/Bash
@@ -275,7 +275,7 @@ If you don't know whether you're logged on to Cloud Foundry or if you're wonderi
     ```
 
 
-  
+
 [OPTION END]
 
 

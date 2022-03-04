@@ -2,8 +2,8 @@
 auto_validation: true
 title: Implement the Transport for Your Factory Calendar
 description: Maintain your business configuration and implement the save validation for your factory calendar.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license ]
 time: 30
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -145,8 +145,9 @@ The RAP business object is enhanced with the following steps by a transport sele
            RESULT DATA(all).
 
       result = VALUE #( ( %tky = all[ 1 ]-%tky
-                          %action-selecttransportrequest = COND #( WHEN all[ 1 ]-%is_draft = if_abap_behv=>mk-on THEN if_abap_behv=>mk-off
-                                                                   ELSE if_abap_behv=>mk-on  )   ) ).
+                     %action-selecttransportrequest = COND #( WHEN all[ 1 ]-%is_draft = if_abap_behv=>mk-on THEN if_abap_behv=>fc-o-enabled
+                                                              ELSE if_abap_behv=>fc-o-disabled  )   ) ).
+
 
       ENDMETHOD.
 
@@ -348,7 +349,7 @@ The RAP business object is enhanced with the following steps by a transport sele
         HolidayMonth = month_of_holiday;
       }
 
-      validation validateChanges on save { create; update; delete; }
+      validation validateChanges on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
     }
 
     define behavior for zcal_i_mcal_txt_xxx alias HolidayText
@@ -377,7 +378,7 @@ The RAP business object is enhanced with the following steps by a transport sele
       }
 
 
-      validation validateChanges on save { create; update; delete; }
+      validation validateChanges on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
     }
     ```
 
@@ -466,8 +467,8 @@ The RAP business object is enhanced with the following steps by a transport sele
              RESULT DATA(all).
 
         result = VALUE #( ( %tky = all[ 1 ]-%tky
-                            %action-selecttransportrequest = COND #( WHEN all[ 1 ]-%is_draft = if_abap_behv=>mk-on THEN if_abap_behv=>mk-off
-                                                                     ELSE if_abap_behv=>mk-on  )   ) ).
+                      %action-selecttransportrequest = COND #( WHEN all[ 1 ]-%is_draft = if_abap_behv=>mk-on THEN if_abap_behv=>fc-o-enabled
+                                                               ELSE if_abap_behv=>fc-o-disabled  )   ) ).
       ENDMETHOD.
 
       METHOD selecttransportrequest.

@@ -394,6 +394,7 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img-8.6.png)
 
+
 4. As you provided default values to the properties, you may change it if required. Tap **Save**.
 
     ![MDK](img-8.7.png)

@@ -26,7 +26,7 @@ The SAP HANA database explorer is a web-based tool for browsing and working with
 
 ![database explorer](dbx.png)
 
-> The SAP HANA Client install provides a text based tool named `hdbsql` that can used to query an SAP HANA database.  For additional details see [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
+> The SAP HANA Client install provides a text based tool named `hdbsql` that can be used to query an SAP HANA database.  For additional details see [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients). The SAP HANA Cloud, data lake client provides a text based tool named `dbisql` that can be used to query a data lake. For additional details see  [Use Clients to Query Data Lake IQ](group.hana-cloud-clients-data-lake).
 
 The SAP HANA database explorer can be opened from multiple locations as shown below:
 
