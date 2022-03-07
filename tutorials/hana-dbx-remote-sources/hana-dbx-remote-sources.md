@@ -83,7 +83,7 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
     CALL PUBLIC.CHECK_REMOTE_SOURCE('REMOTE_HC_TRIAL');
     ```  
 
-    > The ServerNode can be copied from SAP HANA Cloud Central by choosing **Actions > Copy > SQL Endpoint**.
+    > The ServerNode can be copied from SAP HANA Cloud Central by choosing **Actions > Copy SQL Endpoint**.
     >
     > ![Host and Port](host-and-port.png)
 

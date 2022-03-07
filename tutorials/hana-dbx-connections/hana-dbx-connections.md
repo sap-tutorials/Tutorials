@@ -29,7 +29,7 @@ SQL consoles are associated with a database connection.
 
 Databases defined in the SAP BTP cockpit or the SAP HANA cockpit can be opened in the SAP HANA database explorer.
 
-1.  From SAP HANA Cloud Central, choose **Open SAP HANA Database Explorer**.  
+1.  From SAP HANA Cloud Central, choose **Open in SAP HANA Database Explorer**.  
 
     ![Open in the database explorer](from-directory.png)
 
@@ -127,7 +127,7 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 
 1.  Add a Data Lake.
 
-    ![add a data lake](add-data-lake.png)
+    !![add a data lake](add-data-lake.png)
 
     Ensure that the allowed connections list is set to **Allow all IP addresses**.
 
