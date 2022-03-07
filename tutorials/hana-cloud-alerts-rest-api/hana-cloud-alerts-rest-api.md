@@ -168,13 +168,21 @@ The following instructions will show a few examples of how to view the list of t
     ###
 
     #Get the triggered alerts (events) for a specific instance for a specific time period
-    GET {{gateway_url}}.{{host}}/alerts/v1/serviceInstances/{{serviceInstance}}/events?alertState=All&severity=NOTICE,WARNING,ERROR&startTimestamp=2022-02-15T15:04:00Z&endTimestamp=2022-02-28T15:07:00Z
+    GET {{gateway_url}}.{{host}}/alerts/v1/serviceInstances/{{serviceInstance}}/events?alertState=All&severity=NOTICE,WARNING,ERROR&startTimestamp=2022-02-15T15:04:00Z&endTimestamp=2022-02-20T15:07:00Z
     Authorization: Bearer {{bearer}}
 
     ###
     ```
 
-    >Note the timestamps should be adjusted to current values.  Optionally remove the `endTimestamp`.
+    > Note the timestamps should be adjusted to current values.  
+
+    >---
+
+    > Note that alert data is only persisted for a fixed amount of time after the current date such as 7 days.
+
+    > ---
+
+    > The `endTimestamp` is optional.
 
 3. Try out the events calls.
 
@@ -207,13 +215,21 @@ The following instructions will show a few examples of how to view metrics throu
     ###
 
     #Get the metric HDBMemoryUsed for a time range (values)
-    GET {{gateway_url}}.{{host}}/metrics/v1/serviceInstances/{{serviceInstance}}/values?names=HDBMemoryUsed&startTimestamp=2022-02-15T13:00:00Z&endTimestamp=2022-02-26T13:03:00Z
+    GET {{gateway_url}}.{{host}}/metrics/v1/serviceInstances/{{serviceInstance}}/values?names=HDBMemoryUsed&startTimestamp=2022-02-15T13:00:00Z&endTimestamp=2022-02-20T13:03:00Z
     Authorization: Bearer {{bearer}}
 
     ###
     ```
 
-    >Note the timestamps should be adjusted to current values.
+    > Note the timestamps should be adjusted to current values.  
+
+    >---
+
+    > Note that metrics data is only persisted for a fixed amount of time after the current date such as 7 days.
+
+    > ---
+
+    > The `endTimestamp` is optional.
 
 2. Try out the definitions call to get a list of the available metrics
 
