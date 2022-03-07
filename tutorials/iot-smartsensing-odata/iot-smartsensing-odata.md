@@ -5,7 +5,7 @@ title: Use Custom OData Endpoints in SAP Internet of Things Smart Sensing
 description: Set up an SAP IoT Ssmart sensing scenario using custom OData services.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, tutorial>license, topic>internet-of-things, products>sap-internet-of-things, products>sap-business-technology-platform  ]
+tags: [ tutorial>intermediate, tutorial>license, topic>internet-of-things, software-product>sap-internet-of-things, software-product>sap-business-technology-platform, software-product>sap-s-4hana]
 primary_tag: topic>internet-of-things
 ---
 
@@ -30,7 +30,7 @@ primary_tag: topic>internet-of-things
 
 [ACCORDION-BEGIN [Step 1:](Add Destinations)]
 
-Create a Destination which will allow you to synchronise business data with your custom OData service. You will use it in the Smart Sensing application of SAP Internet of Things.
+Create a Destination which allow you to synchronise business data with your custom OData service. You will use it in the Smart Sensing application of SAP Internet of Things.
 
 1.  Go to your Cloud Foundry subaccount at <https://hana.ondemand.com/>, click **Connectivity** on the left panel and then click **Destinations** and **New Destination**
 
@@ -47,12 +47,12 @@ Create a Destination which will allow you to synchronise business data with your
     |  Proxy Type     | `Internet` or `OnPremise`| depending if the system is accessible trough the public internet |
     |  Authentication | `BasicAuthentication`, `OAuth2ClientCredentials` ... | based on your setup in the Communication Arrangement or Cloud Connector |
 
-    >The **URL** field is typical of your custom OData service. It could also refers to a custom implementation of a custom OData endpoint for S/4HANA or Decentralised SAP Extended Warehouse Management (SAP EWM).
-    >It could be applied to expose and use with Smart Sensing, a set of APIs which are not available for specific modules of your ERP system.
+    >The **URL** field depends on your custom OData service. It could also refer to the implementation of a custom OData endpoint for S/4HANA or Decentralised SAP Extended Warehouse Management (SAP EWM).
+    >You can also use it for exposing to Smart Sensing a set of REST APIs which are not available for the existing modules of your ERP system.
 
 
 
-3.  Choose **New Property** under Additional Properties and add the following property:
+3.  Under the **Additional Properties** section, choose **New Property** and add the following property:
 
     |  Property Name    | Sample Value |     Remark
     |  :-------------   | :-------------    | :-------------
@@ -60,7 +60,7 @@ Create a Destination which will allow you to synchronise business data with your
 
     This property permits to get the OData destination listed in the SAP IoT Destinations available for Smart Sensing, with type `custom`.
 
-    The following sample destination connect to a **Decentralized SAP EWM** custom OData APIs, and includes two additional properties:
+    In this sample, the destination created to connects to **Decentralized SAP EWM** custom OData APIs includes two additional properties:
 
     |  Property Name    | Sample Value |     Remark
     |  :-------------   | :-------------    | :-------------
@@ -69,7 +69,7 @@ Create a Destination which will allow you to synchronise business data with your
 
     !![destination](destination.png)
 
-4.  If you are planning to use a **Decentralized SAP EWM** system, you can expose several functionalities by implementing several custom OData APIs. An example of OData implementation for `Load` and `Unload` APIs for EWM is available [in our public GitHub](https://github.com/SAP-samples/sap-iot-samples/tree/main/iot-autoid-services-samples/EWM%20-%20Load%20Unload%20OData%20APIs).
+4.  If you are planning to use a **Decentralized SAP EWM** system, you can implement additional custom OData APIs to implement features which are not currently exposed as REST endpoint. An example of OData implementation for `Load` and `Unload` APIs for EWM is available [in our public GitHub](https://github.com/SAP-samples/sap-iot-samples/tree/main/iot-autoid-services-samples/EWM%20-%20Load%20Unload%20OData%20APIs).
 
     -  The **Destination** for the `Load`:
 
@@ -84,7 +84,7 @@ Create a Destination which will allow you to synchronise business data with your
 
     >The placeholder tokens `^{lastValue(${EWMstdENR.HandlingUnitExternalID})}` and `^{lastValue(${EWMstdENR.Warehouse})}` are  replaced at runtime by Actions in SAP Internet of Things with the actual values.
     >
-    >The value is set trough the event enrichment. The strings contain `EWMstdENR`, this is the event enrichment name you will reuse in the next steps. Replace it with the desired value if you are planning to use a different one.
+    >The value is set trough the event enrichment. The above placeholders contain the `EWMstdENR` string, this is the event enrichment name you will reuse in the next steps. Replace it with the desired value if you are planning to use a different one.
 
     -  The **Destination** for the `Unload`:
 
@@ -117,7 +117,7 @@ The creation of a Smart Sensing scenario is done using several applications avai
 
 -   **Auto-ID Event Enrichment**
 
-      Here you can configure the enrichment of incoming scanning events with information form the business objects as well as with additional properties that have been collected in the scanning event. This enriched Auto-ID events can then be used to design and run rules on them.
+      Here you can configure the enrichment of incoming scanning events with information form the business objects and with additional properties that have been collected in the scanning event. Enriched Auto-ID events can then be used to design and run rules against them.
 
 -   **Line of Business Templates**
 
@@ -134,6 +134,8 @@ The creation of a Smart Sensing scenario is done using several applications avai
     !![customep](customep.png)
 
 5.  Select your endpoint in the list, i.e. **`EWMstd`**.
+
+    !![context](context.png)
 
 6.  Fill the **General Information** with a **Name** of your choice, the previously created **Package** and the **Source Object Type**, i.e: `HandlingUnitType`.
 
@@ -156,13 +158,15 @@ The creation of a Smart Sensing scenario is done using several applications avai
 
 3.  Click **Add Root Node** to insert a new element in the hierarchy.
 
+    You can add other root nodes and children, based on the scenario you are implementing. In case of `Load` and `Unload` processes you just need to synchronise the list of handling units.
+
 4.  Select as **Object Type** the business context you have created previously.
 
     Probably you would also add a filter condition for it, i.e.: `Warehouse eq 'B9V1'`.
 
     You can also add a **Lifecycle Handling** configuration, i.e.: `Polling`.
 
-    >You can found further references on how to configure the **Lifecycle Handling** [in the following tutorial](iot-autoid-kanban-dls).
+    >You can find further references on how to configure the **Lifecycle Handling** [in the following tutorial](iot-autoid-kanban-dls).
 
     !![hierarchy](hierarchy.png)
 
@@ -197,7 +201,7 @@ The creation of a Smart Sensing scenario is done using several applications avai
 
 4.  Add all the required **Event Properties**, i.e.: `ReadpointID`.
 
-    >Only the properties added in the **Event Properties** will be included in the event enrichment and valued in the event which will be available and provide event data in your actions
+    >Only the properties added in the **Event Properties** will be included in the event enrichment and are valued in the runtime of your actions. Properties not included, if used in the actions have undefined as value.
 
     !![properties](properties.png)
 
