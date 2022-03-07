@@ -21,7 +21,7 @@ primary_tag: products>sap-btp\\, kyma-runtime
 
 [ACCORDION-BEGIN [Step 1: ](Create a namespace)]
 
-The [`kubeconfig`](https://rancher.com/learning-paths/how-to-manage-kubernetes-with-kubectl/) file that you are currently using is based on your [User Account](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/#user-accounts-versus-service-accounts), which represents a user that has been logged in the Kyma dashboard when you downloaded the `kubeconfig`. This file contains a token that expires after 8 hours.
+The [`kubeconfig`](https://rancher.com/learning-paths/how-to-manage-kubernetes-with-kubectl/) file that you are currently using is based on your [User Account](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/#user-accounts-versus-service-accounts), which represents a user that has been logged in the Kyma dashboard when you downloaded the `kubeconfig`.
 
 This tutorial will show you how to create a new `kubeconfig` file based on a service account. In contrast to the `kubeconfig` file from the Kyma dashboard, this token is not based on a user and is well-suited for scenarios like CI/CD pipelines. Please note that this could be a potential security issue.
 
