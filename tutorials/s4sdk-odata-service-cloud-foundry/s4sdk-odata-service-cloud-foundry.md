@@ -42,8 +42,9 @@ In order to make a call to an `OData` service, there needs to be a service to ca
 
 Once it is up and running you should see the list of services at `http://localhost:3000/`.
 
-Alternatively, many APIs can also be tested using the sandbox of the SAP API Business Hub. To use the sandbox, you need an API key. Go to [https://api.sap.com](https://api.sap.com) and click "Log On" in the top right corner. If you do not have an account, you will need to register first. When you are logged in, click on the [Business Partner OData V2 API reference](https://api.sap.com/api/API_BUSINESS_PARTNER/tryout) and find you API key under "Show API Key". You will use your API key later in this tutorial.
-The sandbox service URL can be found in _Try Out > Code Snippet > Java > URL (in the code)_:
+Alternatively, many APIs can also be tested using the sandbox of the SAP API Business Hub. To use the sandbox, you need an API key. Go to [https://api.sap.com](https://api.sap.com) and click "Log On" in the top right corner. If you do not have an account, you will need to register first. When you are logged in, click on the [Business Partner OData V2 API reference](https://api.sap.com/api/API_BUSINESS_PARTNER/tryout) and find you API key under "Show API Key". You will use your API key later in this tutorial. The sandbox service URL can be found in _Try Out > Code Snippet > Java > URL (in the code)_:
+
+>Make sure to use **only** the part before `/sap/opu/odata/...`.
 
 ![Sandbox URL](business-partner-sandbox-url.png)
 
@@ -252,7 +253,59 @@ In order for your application to run you need to provide it with information abo
 
 **Run on a Local Server**
 
-[OPTION BEGIN [Windows]]
+[OPTION BEGIN [Windows (PowerShell)]]
+
+As mentioned in the Tutorial `Create a sample application on Cloud Foundry using SAP Cloud SDK` of this tutorial series, you can run the project on a local `TomEE` server. Here, you need to supply the destinations as an environment variable on your local machine. How you set an environment variable depends on your OS. The following instructions target Windows. If you are using a Mac please select Mac OS at the switch above.
+
+```Shell
+$env:destinations='[{name: "MyErpSystem", url: "https://URL"}]'
+```
+
+**Note:** Some services, other than the sandbox service and the mock server, may require user credentials for the request execution.
+If you would like to connect to such a service, use the following snippet instead:
+```Shell
+$env:destinations='[{name: "MyErpSystem", url: "https://URL", "username": "USER", "password": "PASSWORD"}]'
+```
+Please change the values URL, USER and PASSWORD accordingly.
+
+You may use any name you like. If you do decide to change it though, remember to also adapt it in the code above. Make sure the variable has been properly set:
+
+```Shell
+echo $env:destinations
+```
+
+_Note: You can also add more ERP endpoints to this JSON representation, following the same schema._
+
+Be aware that the variable is only available in your current terminal session. If you are having trouble setting the variable, take a look at the troubleshooting section. Once the variable has been set, re-build and start the server as follows:
+
+```Shell
+cd /path/to/firstapp
+mvn clean install
+mvn tomee:run -pl application
+```
+
+Visit `http://localhost:8080/businesspartners` to see your new feature in action. It should look similar to this web page:
+
+![list of businesspartners from ERP](post-4-businesspartners-result.png)
+
+**Connecting to SAP S/4HANA from SAP BTP Cloud Foundry**
+
+On SAP BTP Cloud Foundry, you can either supply the same environment variable `destinations` that you used for the local deployment above to the Cloud Foundry application, or use the [destination service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/7e306250e08340f89d6c103e28840f30.html) of the BTP Cloud Foundry. Using the destination service is the recommended approach, because it already handles important aspects related to multi-tenancy, connectivity and security and is transparently integrated into the SAP Cloud SDK. Therefore, the usage of the destination service is explained in detail below.
+
+Nevertheless, there may be circumstances that make the approach via the environment variable easier to use or otherwise preferable for initial testing. To set the environment variable using the Cloud Foundry command line interface (CLI), execute the following command:
+
+
+```Shell
+cf set-env firstapp destinations '[{name: "MyErpSystem", url: "https://URL"}]'
+```
+
+Again, supply the correct values for your S/4HANA system. Afterwards, rebuild and deploy the application to Cloud Foundry (see below). Be aware that depending on your command line interface (for example, on Windows command prompt), you may need to use double quotes instead of single quotes and escape the double quotes.
+
+Whenever this environment variable is set, the SAP Cloud SDK will use it to determine destinations. Make sure to delete it with `cf unset-env firstapp destinations` as soon as you are done with the initial testing and when you want to use the real destination service. You can now push the application to CF and test it if you like.
+
+[OPTION END]
+
+[OPTION BEGIN [Windows (CMD)]]
 
 As mentioned in the Tutorial `Create a sample application on Cloud Foundry using SAP Cloud SDK` of this tutorial series, you can run the project on a local `TomEE` server. Here, you need to supply the destinations as an environment variable on your local machine. How you set an environment variable depends on your OS. The following instructions target Windows. If you are using a Mac please select Mac OS at the switch above.
 
