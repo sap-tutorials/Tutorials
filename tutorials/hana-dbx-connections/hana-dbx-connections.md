@@ -1,6 +1,6 @@
 ---
 title: Add Databases to  the SAP HANA Database Explorer
-description: This tutorial will explore different database connections types, such as SAP HANA Cockpit Database, SAP HANA, Data Lake IQ, and SAP HANA Deployment Infrastructure (HDI), along with the different operations that can be performed on them.
+description: This tutorial will explore different database connections types, such as SAP HANA Cockpit Database, SAP HANA Cloud, data lake Relational Engine, and SAP HANA Deployment Infrastructure (HDI), along with the different operations that can be performed on them.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, software-product-function>sap-hana-cloud\,-data-lake]
@@ -15,7 +15,7 @@ primary_tag: software-product>sap-hana-cloud
 - How to add different database types in the SAP HANA database explorer
 - Additional operations that can be performed on a database
 
-Database connections in the database explorer represent SAP HANA or Data Lake IQ databases that you browse and interact with.  
+Database connections in the database explorer represent SAP HANA or data lake Relational Engine databases that you browse and interact with.  
 
 ![SAP HANA Connections](connections.png)
 
@@ -122,8 +122,8 @@ Databases can also be added directly to the SAP HANA database explorer.  To conn
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add a Data Lake IQ database)]
-A Data Lake IQ is a column oriented, disk based relational store that can be used to economically  store data that is not updated frequently.  Additional details can be found at [What is SAP HANA Cloud, Data Lake](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/228c19ac890046ecbe8e38a540c0cb6b.html).
+[ACCORDION-BEGIN [Step 3: ](Add a data lake Relational Engine database)]
+A data lake Relational Engine is a column oriented, disk based relational store that can be used to economically  store data that is not updated frequently.  Additional details can be found at [What is SAP HANA Cloud, Data Lake](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/228c19ac890046ecbe8e38a540c0cb6b.html).
 
 1.  Add a Data Lake.
 
@@ -133,13 +133,13 @@ A Data Lake IQ is a column oriented, disk based relational store that can be use
 
     ![allowed connections](allow-all.png)
 
-2.  In the database explorer, choose to add a new connection of type **Data Lake, IQ**.
+2.  In the database explorer, choose to add a new connection of type **Data Lake Relational Engine**.
 
     ![add database](add-database-dl.png)
 
     The user name is HDLADMIN.
 
-    ![Add Data Lake IQ](add-data-lake-connection.png)
+    ![Add Data Lake Relational Engine](add-data-lake-connection.png)
 
     The connection details can be copied from the instance tile.
 
