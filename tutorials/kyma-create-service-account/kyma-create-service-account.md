@@ -23,7 +23,7 @@ primary_tag: products>sap-btp\\, kyma-runtime
 
 The [`kubeconfig`](https://rancher.com/learning-paths/how-to-manage-kubernetes-with-kubectl/) file that you are currently using is based on your [User Account](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/#user-accounts-versus-service-accounts), which represents a user that has been logged in the Kyma dashboard when you downloaded the `kubeconfig`. This file contains a token that expires after 8 hours.
 
-This tutorial will show you how to create a new `kubeconfig` file based on a service account. In contrast to the `kubeconfig` file from the Kyma dashboard, this token won't expire every 8 hours and are therefore well-suited for scenarios like CI/CD pipelines. Please note that this could be a potential security issue.
+This tutorial will show you how to create a new `kubeconfig` file based on a service account. In contrast to the `kubeconfig` file from the Kyma dashboard, this token is not based on a user and is well-suited for scenarios like CI/CD pipelines. Please note that this could be a potential security issue.
 
 Service accounts are bound to a namespace, so we need to create a new namespace before any service account can be created. Run the following command the create a new namespace "tutorial":
 
@@ -87,6 +87,7 @@ A service account alone won't do the job. You also need to define a Kubernetes `
     subjects:
       - kind: ServiceAccount
         name: tutorial-service-account
+        namespace: tutorial
     roleRef:
       kind: ClusterRole
       name: tutorial-role
@@ -154,23 +155,24 @@ Now that you understand how the `kubeconfig` file is structured, create a new on
 1.    Create a temporary file `temp.ps1` that will fetch all required information and create the `kubeconfig` file.
 
     ```PowerShell
-    $API_SERVER_URL = kubectl config current-context
+    $ns = "tutorial"
+    $API_SERVER_URL = kubectl config view -o=jsonpath='{.clusters[].cluster.server}'
 
-    $SECRET_NAME = kubectl get sa -n tutorial tutorial-service-account -ojsonpath='{.secrets[0].name}'
+    $SECRET_NAME = kubectl get sa -n $ns $id-tutorial-service-account -o jsonpath='{.secrets[0].name}'
 
-    $CA = kubectl get secret/$SECRET_NAME -n tutorial -o jsonpath='{.data.ca\.crt}'
+    $CA = kubectl get secret/$SECRET_NAME -n $ns -o jsonpath='{.data.ca\.crt}'
 
-    $TOKEN = kubectl get secret/$SECRET_NAME -n tutorial -o jsonpath='{.data.token}'
+    $TOKEN = kubectl get secret/$SECRET_NAME -n $ns -o jsonpath='{.data.token}'
     $DEC_TOKEN = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($TOKEN))
 
-    Add-Content -Path kubeconfig.yaml @"
+    Add-Content -Path templates/kubeconfig.yaml @"
     apiVersion: v1
     kind: Config
     clusters:
     - name: default-cluster
       cluster:
         certificate-authority-data: $CA
-        server: https://api.$API_SERVER_URL
+        server: $API_SERVER_URL
     users:
     - name: default-user
       user:
@@ -179,7 +181,7 @@ Now that you understand how the `kubeconfig` file is structured, create a new on
     - name: default-context
       context:
         cluster: default-cluster
-        namespace: default
+        namespace: $ns
         user: default-user
     current-context: default-context
     "@
@@ -210,34 +212,32 @@ Now that you understand how the `kubeconfig` file is structured, create a new on
 
     ```Shell
     # API server URL is api.KYMA_CLUSTER_DOMAIN
-    API_SERVER_URL=$(kubectl config current-context)
+    ns=tutorial
+    API_SERVER_URL=$(kubectl config view -o=jsonpath='{.clusters[].cluster.server}')
 
-    # the name of the secret containing the service account token goes here
-    SECRET_NAME=$(kubectl get sa -n tutorial tutorial-service-account -ojsonpath='{.secrets[0].name}')
+    SECRET_NAME=$(kubectl get sa -n $ns tutorial-service-account -ojsonpath='{.secrets[0].name}')
 
-    CA=$(kubectl get secret/${SECRET_NAME} -n tutorial -o jsonpath='{.data.ca\.crt}')
-    TOKEN=$(kubectl get secret/${SECRET_NAME} -n tutorial -o jsonpath='{.data.token}' | base64 --decode)
+    CA=$(kubectl get secret/${SECRET_NAME} -n $ns -o jsonpath='{.data.ca\.crt}')
+    TOKEN=$(kubectl get secret/${SECRET_NAME} -n $ns -o jsonpath='{.data.token}' | base64 --decode)
 
-    echo "
-    apiVersion: v1
+    echo "apiVersion: v1
     kind: Config
     clusters:
-    - name: default-cluster
-      cluster:
-        certificate-authority-data: ${CA}
-        server: https://api.${API_SERVER_URL}
+      - name: default-cluster
+        cluster:
+          certificate-authority-data: ${CA}
+          server: ${API_SERVER_URL}
     users:
-    - name: default-user
-      user:
-        token: ${TOKEN}
+      - name: default-user
+        user:
+          token: ${TOKEN}
     contexts:
-    - name: default-context
-      context:
-        cluster: default-cluster
-        namespace: default
-        user: default-user
-    current-context: default-context
-    "
+      - name: default-context
+        context:
+          cluster: default-cluster
+          namespace: $ns
+          user: default-user
+    current-context: default-context"
     ```
 
 2.   Run the following commands to replace the current `kubeconfig` file:
