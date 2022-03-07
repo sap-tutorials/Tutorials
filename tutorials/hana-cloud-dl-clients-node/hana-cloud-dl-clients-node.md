@@ -1,6 +1,6 @@
 ---
-title: Connect to Data Lake IQ Using the Node.js Driver
-description: Create and debug a Node.js application that connects to data lake IQ.
+title: Connect to Data Lake Relational Engine Using the Node.js Driver
+description: Create and debug a Node.js application that connects to data lake Relational Engine.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>node-js]
@@ -12,7 +12,7 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 
 ## Details
 ### You will learn
-  - How to create and debug a Node.js application that connects to and queries a data lake IQ database
+  - How to create and debug a Node.js application that connects to and queries a data lake Relational Engine database
 
 Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model. For more details, see [Introduction to Node.js](https://nodejs.dev/).  
 
@@ -93,7 +93,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     !![Search for sqlanywhere](search-npm.png)  
 
-    The page for the SQL Anywhere Node.js package on NPM is shown below. Note that this same driver is used for data lake IQ and SQL Anywhere.   
+    The page for the SQL Anywhere Node.js package on NPM is shown below. Note that this same driver is used for data lake Relational Engine and SQL Anywhere.   
 
 2. Create a folder named `node` and enter the newly created directory.
 
@@ -143,7 +143,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a Node.js application that queries data lake IQ)]
+[ACCORDION-BEGIN [Step 3: ](Create a Node.js application that queries data lake Relational Engine)]
 
 1. Open a file named `nodeQuery.js` in an editor.
 
@@ -246,7 +246,7 @@ Visual Studio Code can run and debug a Node.js application. It is a lightweight 
     ![VS Code Debugging](debugging.png)
 
 
-Congratulations! You have now created and debugged a Node.js application that connects to and queries a data lake IQ database.
+Congratulations! You have now created and debugged a Node.js application that connects to and queries a data lake Relational Engine database.
 
 [VALIDATE_1]
 [ACCORDION-END]
