@@ -16,9 +16,11 @@ primary_tag: software-product>sap-hana-cloud
   - How to configure, trigger, and access alerts
   - How to use the SAP BTP Alert Notification Service (ANS) to be notified of alerts
 
-Alerts can inform you of potential issues before they occur, such as when the number of rows in a SAP HANA database table is approaching 2 billion, or of an issue currently occurring, such as a user in a data lake is locked out.  You can find details of SAP HANA database alerts which have been raised by looking at the SAP HANA cockpit Alerts app or using the [REST API](hana-cloud-alerts-rest-api). This is known as a pull approach.
+Alerts can inform you of potential issues before they occur, such as when the number of rows in a SAP HANA database table is approaching 2 billion, or of an issue currently occurring, such as a user in a data lake Relational Engine is locked out.  You can find details of SAP HANA database alerts which have been raised by looking at the SAP HANA cockpit Alerts app or using the [REST API](hana-cloud-alerts-rest-api). This is known as a pull approach.
 
 Alternatively, alert details can be pushed to several configured channels such as email, Slack, or Microsoft Teams.
+
+> Access help from the SAP community or share your feedback on this tutorial by navigating to the "Provide Feedback" link located on the right of this page under the table of contents.
 
 ---
 
@@ -236,7 +238,7 @@ The following instructions show one example of triggering the [data lake locked 
     --DROP LOGIN POLICY lp;
     ```
 
-    The tutorial [Monitor a Standalone Data Lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-4) may also be of interest as it demonstrates the data lake IQ monitoring views.
+    The tutorial [Monitor a Standalone Data Lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-4) may also be of interest as it demonstrates the data lake Relational Engine monitoring views.
 
 [DONE]
 [ACCORDION-END]
@@ -247,9 +249,9 @@ The Business Technology Platform (BTP) includes a service called the Alert Notif
 
 ![BTP with HC and ANS](btp-hc-ans.png)
 
-For an overview of ANS and information about the different service plans including free tier, see [SAP Alert Notification Service for SAP BTP](https://discovery-center.cloud.sap/serviceCatalog/alert-notification-service?tab=feature&region=all&service_plan=standard) in the SAP Discovery center and watch the associated video [SAP Alert Notification service for SAP BTP - Overview](https://www.youtube.com/watch?v=_DInhi4Skn4).
+For an overview of ANS and information about the different service plans including free tier, see [SAP Alert Notification Service for SAP BTP](https://discovery-center.cloud.sap/serviceCatalog/alert-notification-service?tab=feature&region=all&service_plan=standard) in the SAP Discovery Center and watch the associated video [SAP Alert Notification service for SAP BTP - Overview](https://www.youtube.com/watch?v=_DInhi4Skn4).
 
-In this step, ANS will be configured to act on the incoming notifications by sending an email with the details of the alert.  First, an instance of the alert notification service will be created.  Then, two conditions will be created; one that matches notifications sent from an SAP HANA database and one for the data lake.  An email action will also be created that describes who to send an email to and what content to include in the email when one of the conditions occurs.  Finally, a subscription will be created that will use the two conditions and the action.  Having the conditions and actions separate from the subscription enables them to be reused in multiple subscriptions.   
+In this step, ANS will be configured to act on the incoming notifications by sending an email with the details of the alert.  First, an instance of the alert notification service will be created.  Then, two conditions will be created; one that matches notifications sent from an SAP HANA database and the other from a data lake.  An email action will also be created that describes who to send an email to and what content to include in the email when one of the conditions occurs.  Finally, a subscription will be created that will use the two conditions and the action.  Having the conditions and actions separate from the subscription enables them to be reused in multiple subscriptions.   
 
 1. Create an instance of the Alert Notification Service in the SAP BTP Cockpit.
 
