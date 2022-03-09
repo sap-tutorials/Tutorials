@@ -119,7 +119,7 @@ Follow the below steps for creating a path prefix through AWS CLI:
 
 [ACCORDION-BEGIN [Step 4: ](Upload dataset to AWS S3 Object Store)]
 
-> **DISCLAIMER:** The following data is a sample data that is being curated only for this tutorial. It is not be circulated or used for any commercial production projects or for experimentation other than the tutorial for SAP AI Core.
+> **DISCLAIMER:** The following data is sample data. It has been created only for this tutorial. It is not to be circulated or used for any commercial production projects or for experimentation other than the tutorial for SAP AI Core.
 
 | File   | Link |
 |  :------------- | :------------- |
