@@ -1,6 +1,6 @@
 ---
 title: Alerts in SAP HANA Database and Data Lake
-description: Learn how to configure and view alerts in SAP HANA Cloud.
+description: Learn how to configure and view alerts in SAP HANA Cloud and how the SAP BTP Alert Notification Service can be used to send alerts to other channels.
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-alert-notification-service-for-sap-btp, software-product-function>sap-hana-cloud\,-data-lake]
@@ -8,7 +8,7 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
- - Access to an SAP HANA Cloud trial or production instance with a version of 2021 QRC 2 or higher.
+ - Access to an SAP HANA Cloud trial or production instance.
 
 ## Details
 ### You will learn
@@ -148,7 +148,7 @@ The following instructions demonstrate a few examples of triggering alerts in an
     -- DROP TABLE MYTABLE;
     ```
 
-    As the default interval time for this check by default is set to 1 hour, it can be manually trigged by pressing the Check Now button in the alert definitions app within the SAP HANA cockpit.
+    As the default interval time for this check is 1 hour, the check can be manually trigged by pressing the Check Now button in the alert definitions app within the SAP HANA cockpit.
 
     ![check now](check-now.png)
 
@@ -213,21 +213,21 @@ The following instructions show one example of triggering the [data lake locked 
     ALTER USER user2 LOGIN POLICY lp;
     ```
 
-2. Create a new connection to the data lake using user2 but with an incorrect password.
+2. The instructions below will create a new connection to the data lake using user2 but with an incorrect password.
 
-    First choose **Properties** for the existing connection and copy the host value.
+    * First choose **Properties** for the existing connection and copy the host value.
 
-    ![properties of the existing connection](dl-properties.png)
+        ![properties of the existing connection](dl-properties.png)
 
-    Create a new connection using the copied host, port 443, user2 and an incorrect password.
+    * Create a new connection using the copied host, port 443, user2 and an incorrect password.
 
-    ![adding a connection with an incorrect password](add-data-lake.png)
+        ![adding a connection with an incorrect password](add-data-lake.png)
 
-    After pressing OK an attempt will be made to connect to the data lake.  After three failed attempts with the incorrect password, user2 will become locked.  This can be seen in the SAP HANA cockpit.
+    * After pressing OK an attempt will be made to connect to the data lake.  After three failed attempts with the incorrect password, user2 will become locked.  This can be seen in the SAP HANA cockpit.
 
-    ![Locked user2](data-lake-user-locked.png)
+        ![Locked user2](data-lake-user-locked.png)
 
-    The alert can pushed to a channel such as a specified email address which will be shown in step 5 the first time an attempt is made to login to an already locked account.
+    The alert can be pushed to a channel such as a specified email address which will be shown in step 5 the first time an attempt is made to login to an already locked account.
 
 3. Additional details about users can be seen by calling the procedure `sa_get_user_status`.  The user can be unlocked using by resetting the login policy.
 
@@ -257,7 +257,7 @@ In this step, ANS will be configured to act on the incoming notifications by sen
 
     ![find the Alert Notification Service](ans.png)
 
-    > The Alert Notification Service must be in the same cloud foundry org and space as the SAP HANA Cloud instances that it will be receiving notifications from.
+    > The Alert Notification Service must be in the same cloud foundry subaccount as the SAP HANA Cloud instances that it will be receiving notifications from.
 
     >---
 
@@ -379,7 +379,7 @@ In this step, ANS will be configured to act on the incoming notifications by sen
 
     ![test alert email](default-template-email.png)
 
-    > Notice that the `ans:status` is CLOSE. Events can have a status of CREATE, UPDATE or CLOSE.
+    > Notice that the `ans:status` is CLOSE. Events can have a status of CREATE, UPDATE or CLOSE.  Some alerts have multiple thresholds or severities so multiple CREATE and CLOSE alerts could be sent as a condition occurs and then is resolved.  If an alert is unresolved after a period of time such as 4 hours, an alert with a status of update is sent.
 
     Long-Running Statement
 
