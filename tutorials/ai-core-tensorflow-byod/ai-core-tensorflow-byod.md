@@ -87,10 +87,10 @@ for rg in response.resources:
 
     |  File     | Download
     |  :------------- | :-------------
-    |  `model.h5`           | [LINK](https://www.sap.com)
+    |  `model.h5`           | [LINK to ZIP](https://help.sap.com/doc/8f444170b7c044ac9db948f2c2a136a7/CLOUD/en-US/model.zip) | Please extract the files after download
     |  `max_pad_len.txt`           | [LINK](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-tensorflow-byod/files/model/max_pad_len.txt)
     |  `label_endcoded_classes.npy`           | [LINK](https://github.com/sap-tutorials/Tutorials/blob/0644e8c1bf3fd54a18d47dc3be30899454eeae35/tutorials/ai-core-tensorflow-byod/files/model/label_encoded_classes.npy)
-    |  `tokens.json`           | [LINK](https://www.sap.com)
+    |  `tokens.json`           | [LINK to ZIP](https://help.sap.com/doc/91fe42b8f21f47f390dd9b9a665bfd3f/CLOUD/en-US/tokens.zip) | Please extract the files after download
 
     After download, your directory should look like the following:
 
