@@ -148,7 +148,7 @@ While this statement is being executed, in the background all data from the sour
 To refresh the virtual table to also include changes in data definitions, you need to execute this statement:
 
 ```SQL
-create virtual table <VIRTUALTABLENAME> refresh definition;
+alter virtual table <VIRTUALTABLENAME> refresh definition;
 ```
 If you now query the virtual table, you will see the updated definitions in this virtual table as well.
 
