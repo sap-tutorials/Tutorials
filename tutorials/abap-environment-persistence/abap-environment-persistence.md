@@ -3,7 +3,7 @@ auto_validation: true
 title: Create Table Persistence and Generate Data
 description: Create table persistence and generate data for it.
 primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform ]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -11,7 +11,8 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
-- You have downloaded Eclipse Photon or Oxygen and installed ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
+- You have downloaded and installed the [latest ABAP Development Tools (ADT)] (https://tools.hana.ondemand.com/#abap).
+- You have done the [theoretical ABAP RESTful Application Programming Model tutorial](abap-environment-restful-programming-model).
 
 ## Details
 ### You will learn  

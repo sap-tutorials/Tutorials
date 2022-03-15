@@ -1,14 +1,14 @@
 ---
 title: Alerts in SAP HANA Database and Data Lake
-description: Learn how to configure and view alerts in SAP HANA Cloud.
+description: Learn how to configure and view alerts in SAP HANA Cloud and how the SAP BTP Alert Notification Service can be used to send alerts to other channels.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-alert-notification-service-for-sap-btp]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-alert-notification-service-for-sap-btp, software-product-function>sap-hana-cloud\,-data-lake]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
- - Access to an SAP HANA Cloud trial or production instance with a version of 2021 QRC 2 or higher.
+ - Access to an SAP HANA Cloud trial or production instance.
 
 ## Details
 ### You will learn
@@ -16,9 +16,11 @@ primary_tag: products>sap-hana-cloud
   - How to configure, trigger, and access alerts
   - How to use the SAP BTP Alert Notification Service (ANS) to be notified of alerts
 
-Alerts can inform you of potential issues before they occur, such as when the number of rows in a SAP HANA database table is approaching 2 billion, or of an issue currently occurring, such as a user in a data lake is locked out.  You can find details of SAP HANA database alerts which have been raised by looking at the SAP HANA cockpit Alerts app. This is known as a pull approach.
+Alerts can inform you of potential issues before they occur, such as when the number of rows in a SAP HANA database table is approaching 2 billion, or of an issue currently occurring, such as a user in a data lake Relational Engine is locked out.  You can find details of SAP HANA database alerts which have been raised by looking at the SAP HANA cockpit Alerts app or using the [REST API](hana-cloud-alerts-rest-api). This is known as a pull approach.
 
 Alternatively, alert details can be pushed to several configured channels such as email, Slack, or Microsoft Teams.
+
+> Access help from the SAP community or share your feedback on this tutorial by navigating to the "Provide Feedback" link located on the right of this page under the table of contents.
 
 ---
 
@@ -146,7 +148,7 @@ The following instructions demonstrate a few examples of triggering alerts in an
     -- DROP TABLE MYTABLE;
     ```
 
-    As the default interval time for this check by default is set to 1 hour, it can be manually trigged by pressing the Check Now button in the alert definitions app within the SAP HANA cockpit.
+    As the default interval time for this check is 1 hour, the check can be manually trigged by pressing the Check Now button in the alert definitions app within the SAP HANA cockpit.
 
     ![check now](check-now.png)
 
@@ -193,6 +195,8 @@ The following instructions will show how to view a triggered SAP HANA database a
 
     Additional details on the test alert are available at [SAP Note 3004477 - Usage of statistics server test alert (ID 999)](https://launchpad.support.sap.com/#/notes/3004477).
 
+    >Alerts can also be accessed via a REST API as shown at [Accessing SAP HANA Cloud Alerts and Metrics using a REST API](hana-cloud-alerts-rest-api).
+
 [DONE]
 [ACCORDION-END]
 
@@ -209,21 +213,21 @@ The following instructions show one example of triggering the [data lake locked 
     ALTER USER user2 LOGIN POLICY lp;
     ```
 
-2. Create a new connection to the data lake using user2 but with an incorrect password.
+2. The instructions below will create a new connection to the data lake using user2 but with an incorrect password.
 
-    First choose **Properties** for the existing connection and copy the host value.
+    * First choose **Properties** for the existing connection and copy the host value.
 
-    ![properties of the existing connection](dl-properties.png)
+        ![properties of the existing connection](dl-properties.png)
 
-    Create a new connection using the copied host, port 443, user2 and an incorrect password.
+    * Create a new connection using the copied host, port 443, user2 and an incorrect password.
 
-    ![adding a connection with an incorrect password](add-data-lake.png)
+        ![adding a connection with an incorrect password](add-data-lake.png)
 
-    After pressing OK an attempt will be made to connect to the data lake.  After three failed attempts with the incorrect password, user2 will become locked.  This can be seen in the SAP HANA cockpit.
+    * After pressing OK an attempt will be made to connect to the data lake.  After three failed attempts with the incorrect password, user2 will become locked.  This can be seen in the SAP HANA cockpit.
 
-    ![Locked user2](data-lake-user-locked.png)
+        ![Locked user2](data-lake-user-locked.png)
 
-    The alert can pushed to a channel such as a specified email address which will be shown in step 5 the first time an attempt is made to login to an already locked account.
+    The alert can be pushed to a channel such as a specified email address which will be shown in step 5 the first time an attempt is made to login to an already locked account.
 
 3. Additional details about users can be seen by calling the procedure `sa_get_user_status`.  The user can be unlocked using by resetting the login policy.
 
@@ -234,6 +238,8 @@ The following instructions show one example of triggering the [data lake locked 
     --DROP LOGIN POLICY lp;
     ```
 
+    The tutorial [Monitor a Standalone Data Lake in SAP HANA Cloud](hana-cloud-hdl-getting-started-4) may also be of interest as it demonstrates the data lake Relational Engine monitoring views.
+
 [DONE]
 [ACCORDION-END]
 
@@ -243,15 +249,15 @@ The Business Technology Platform (BTP) includes a service called the Alert Notif
 
 ![BTP with HC and ANS](btp-hc-ans.png)
 
-For an overview of ANS and information about the different service plans including free tier, see [SAP Alert Notification Service for SAP BTP](https://discovery-center.cloud.sap/serviceCatalog/alert-notification-service?tab=feature&region=all&service_plan=standard) in the SAP Discovery center and watch the associated video [SAP Alert Notification service for SAP BTP - Overview](https://www.youtube.com/watch?v=_DInhi4Skn4).
+For an overview of ANS and information about the different service plans including free tier, see [SAP Alert Notification Service for SAP BTP](https://discovery-center.cloud.sap/serviceCatalog/alert-notification-service?tab=feature&region=all&service_plan=standard) in the SAP Discovery Center and watch the associated video [SAP Alert Notification service for SAP BTP - Overview](https://www.youtube.com/watch?v=_DInhi4Skn4).
 
-In this step, ANS will be configured to act on the incoming notifications by sending an email with the details of the alert.  First, an instance of the alert notification service will be created.  Then, two conditions will be created; one that matches notifications sent from an SAP HANA database and one for the data lake.  An email action will also be created that describes who to send an email to and what content to include in the email when one of the conditions occurs.  Finally, a subscription will be created that will use the two conditions and the action.  Having the conditions and actions separate from the subscription enables them to be reused in multiple subscriptions.   
+In this step, ANS will be configured to act on the incoming notifications by sending an email with the details of the alert.  First, an instance of the alert notification service will be created.  Then, two conditions will be created; one that matches notifications sent from an SAP HANA database and the other from a data lake.  An email action will also be created that describes who to send an email to and what content to include in the email when one of the conditions occurs.  Finally, a subscription will be created that will use the two conditions and the action.  Having the conditions and actions separate from the subscription enables them to be reused in multiple subscriptions.   
 
 1. Create an instance of the Alert Notification Service in the SAP BTP Cockpit.
 
     ![find the Alert Notification Service](ans.png)
 
-    > The Alert Notification Service must be in the same cloud foundry org and space as the SAP HANA Cloud instances that it will be receiving notifications from.
+    > The Alert Notification Service must be in the same cloud foundry subaccount as the SAP HANA Cloud instances that it will be receiving notifications from.
 
     >---
 
@@ -373,7 +379,7 @@ In this step, ANS will be configured to act on the incoming notifications by sen
 
     ![test alert email](default-template-email.png)
 
-    > Notice that the `ans:status` is CLOSE. Events can have a status of CREATE, UPDATE or CLOSE.
+    > Notice that the `ans:status` is CLOSE. Events can have a status of CREATE, UPDATE or CLOSE.  Some alerts have multiple thresholds or severities so multiple CREATE and CLOSE alerts could be sent as a condition occurs and then is resolved.  If an alert is unresolved after a period of time such as 4 hours, an alert with a status of update is sent.
 
     Long-Running Statement
 

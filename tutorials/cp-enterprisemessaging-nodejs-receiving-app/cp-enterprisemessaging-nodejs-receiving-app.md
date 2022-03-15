@@ -3,8 +3,8 @@ title: Create an Application for Receiving Messages
 description: Develop and deploy a basic Node.js-based messaging application for receiving messages from an SAP Event Mesh Queue.
 time: 20
 auto_validation: true
-tags: [ tutorial>beginner, topic>node-js, products>sap-business-technology-platform, tutorial>license]
-primary_tag: products>sap-event-mesh
+tags: [ tutorial>beginner, programming-tool>node-js, software-product>technology-platform>sap-business-technology-platform, tutorial>license]
+primary_tag: software-product>sap-event-mesh
 ---
 
 ## Prerequisites
@@ -47,7 +47,6 @@ You need to add `domain`, `messaging service` and your `queue name` in the indic
 applications:
       - name: consumer
         host: consumer-host
-        domain: <REPLACE WITH YOUR DOMAIN>
         buildpack: https://github.com/cloudfoundry/nodejs-buildpack
         memory: 256M
         health-check-type: none

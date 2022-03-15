@@ -14,6 +14,13 @@ primary_tag: products>sap-cloud-sdk
  - Basic knowledge of OData is recommended, but not required.
 
 ## Details
+
+> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> This tutorial is not actively maintained and might be partially outdated.
+> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
+> We will provide a link to the updated version of this tutorial as soon as we release it.
+> In this tutorial, version 1 of the SAP Cloud SDK for TypeScript/JavaScript is used.
+
 ### You will learn
   - How to combine multiple write requests like requests to create, update and delete into changesets
   - How to combine read requests and changesets into batch requests and execute them
@@ -74,7 +81,7 @@ Note, that we have left any type declaration on the body object to keep the samp
 In case you have worked on the previous tutorials before the release of version `1.11.2` of the SAP Cloud SDK make sure to update your dependencies to the latest version (any version >= `1.11.2`). Just install the used libraries again:
 
 ```Shell
-npm install @sap-cloud-sdk/core @sap/cloud-sdk-vdm-business-partner-service
+npm install @sap-cloud-sdk/core@^1.54.1 @sap/cloud-sdk-vdm-business-partner-service@@^1.28.2
 ```
 
 [DONE]

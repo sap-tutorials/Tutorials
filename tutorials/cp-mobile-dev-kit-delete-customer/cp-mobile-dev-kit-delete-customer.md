@@ -2,8 +2,8 @@
 title: Delete a Customer Record in an MDK App
 description: Allow the user to delete a customer record in an MDK app.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 20
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -71,7 +71,7 @@ The next step is to store deleted record locally for an offline application or d
     |----|----|
     | `Action Name`| `Customers_DeleteEntity` |
     | `Type` | Select `DeleteEntity` from the dropdown |
-    | `Service`| Select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `EntitySet` | Select `Customers` from the dropdown |
     | `ReadLink`| click link icon and double click `readLink` |
 
@@ -181,6 +181,7 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-4.3.png)
 
+
 [DONE]
 [ACCORDION-END]
 
@@ -233,6 +234,7 @@ Deploy the updated application to your MDK client.
 [OPTION END]
 
 [OPTION BEGIN [Web]]
+
 
 1. Either click the highlighted button or refresh the web page to load the changes.
 

@@ -3,8 +3,8 @@ title: Trace an SAP HANA Client Connection
 description: Enable trace settings for applications using SAP HANA Client interfaces.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud]
-primary_tag: products>sap-hana
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -202,6 +202,8 @@ The following are some additional options for tracing.
     set HDB_SQLDBC_TRACEFILE=
     ```
 
+5.  Tracing can also be enabled in an applications connection properties.  For further details see `traceFile` and `traceOptions` in [SQLDBC Connection Properties](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f6fb06ffe4484f6fa61f10082b11663d.html).
+
 [DONE]
 [ACCORDION-END]
 
@@ -269,14 +271,15 @@ javac -version
     com.sap.db.jdbc.HanaStatement@47d9a273.execute("SELECT * FROM HOTEL.CUSTOMER")
     ```
 
-5.  Finally, tracing information can be sent to `stdout` or `stderr` as shown below.
+5.  Tracing information can be sent to `stdout` or `stderr` as shown below.
 
     ```shell
     java -jar c:\sap\hdbclient\ngdbc.jar -k User1UserKey -o traceFile=stdout -o traceOptions=CONNECTIONS -c "SELECT * FROM HOTEL.CUSTOMER"
     ```
 
+6.  Tracing can also be enabled via the connection parameters.  For further details see [Trace a JDBC Connection Using a Connection String](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/250544c4c9f74855862a40a78d4ee3b5.html).
 
-Congratulations, you have now configured tracing with the SAP HANA Client interfaces!
+Congratulations, you have now configured tracing with the SAP HANA Client!
 
 [VALIDATE_1]
 [ACCORDION-END]

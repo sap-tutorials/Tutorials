@@ -2,8 +2,8 @@
 title: Create a Customer Detail Page in an MDK App
 description: Create a new page for displaying customer details in an MDK app.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 20
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -73,7 +73,7 @@ This page will show related details for a customer. In this page, you will add a
 
     >Make sure to select values for the mentioned properties only from **Customer** Entity. You may find similar values from other entities. For example,
 
-    >!![MDK](img_1.6.png)
+    >!![MDK](img-1.6.png)
 
 7. As enough fields have been selected to be displayed on the detail page, `Substatus` and `Tags` are not required for this tutorial. In a real use case, you may need these properties.
 
@@ -110,9 +110,7 @@ This page will show related details for a customer. In this page, you will add a
 
     Start with first part of the binding for **Address** property.
 
-    Click the **link icon** next to the **Value** field to display the Object Browser and change the Format to **Binding Target Path**.
-
-    Click the **checkbox** for _Current Object_ and double click `HouseNumber` to set it as the first part of the binding. **Don't click OK as you will set second part of the binding too.**
+    Click the **link icon** next to the **Value** field to display the Object Browser and double click `HouseNumber` to set it as the first part of the binding. **Don't click OK as you will set second part of the binding too.**
 
     !![MDK](img-1.13.gif)
 
@@ -130,25 +128,17 @@ This page will show related details for a customer. In this page, you will add a
 
     >**Street** should be selected from **Customer** entity.
 
-14. Select the **upper right** Key Value Item and set the `KeyName` to **City**.
+14. Repeat the process and set the **upper right** Key Value Item `KeyName` to **City** and bind the value to the `City` entity property.
 
-    Click the link icon to display the Object Browser. Change the format to **Binding** and double click the **City** property of the Customer entity to set it as the binding expression.
+15. Repeat the process and set the **lower left** Key Value Item `KeyName` to **Postal Code** and bind the value to the `PostalCode` entity property.
 
-    Click **OK** to set the binding.
+16. Repeat the process and set the **lower right** Key Value Item `KeyName` to **Country** and bind the value to the `Country` entity property.
 
-    !![MDK](img-1.14.1.gif)
+    >Be careful not to select _City_, _Postal Code_ & _City_ from Customer.Address (ESPM.Address) collection, final expression should be as per below screenshot.
 
-    >Be careful not to select **City** from `Customer.Address (ESPM.Address)` collection, final expression should be as per above screenshot.
+    !![MDK](img-1.16.png)
 
-15. Repeat the process and set the **lower left** Key Value Item Key Name to **Postal Code** and bind the value to the `PostalCode` entity property.
-
-16. Repeat the process and set the **lower right** Key Value Item Key Name to **Country** and bind the value to the `Country` entity property.
-
-    >Be careful not to select _Postal Code_ & _City_ from Customer.Address (ESPM.Address) collection, final expression should be as per below screenshot.
-
-    ![MDK](img-1.16.png)
-
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a navigation action)]
@@ -159,16 +149,14 @@ Now, you will create a Navigation action that opens the `Customers_Detail.page` 
 
     !![MDK](img_2.1.png)
 
-2. Provide the below information:
+2. Provide the below information, click **Next** and then **Finish** on the confirmation step.
 
     | Field | Value |
     |----|----|
     | `Action Name`| `NavToCustomers_Detail` |
     | `PageToOpen` | Select `Customers_Detail.page` from the dropdown |
 
-    !![MDK](img_2.2.png)
-
-3. Click **Next** and then **Finish** on the confirmation step.
+    !![MDK](img-2.2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -249,7 +237,7 @@ Deploy the updated application to your MDK client.
 
 [OPTION END]
 
-[OPTION BEGIN [Web]]
+[OPTION BEGIN [Web]] 
 
 1. Either click the highlighted button or refresh the web page to load the changes.
 

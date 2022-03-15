@@ -2,8 +2,8 @@
 title: Build Your Mobile Development Kit Client Using MDK SDK
 description: Set up your development environment that enable MDK SDK so that you can begin building your branded Mobile Development Kit client.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services ]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -12,6 +12,7 @@ author_profile: https://github.com/jitendrakansal
 ## Prerequisites
 - **Tutorial**: [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
 - **Download the latest version of Mobile Development Kit SDK** either from the SAP community [download page](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/Mobile%2520development%2520kit) if you are a SAP Mobile Services customer
+
 
 ## Details
 ### You will learn
@@ -55,7 +56,7 @@ Make sure that you have download latest version of MDK SDK as described in Prere
 
 2. MDK Dependencies Installer checks the status of the MDK dependencies and will install or upgrade the dependencies for you. Double click `MDK Dependencies Installer.app` file, click **Open**.
 
-    !![MDK](img_1.2.png)
+    !![MDK](img-1.2.png)
 
     >If you find some issues (for example: app cant be opened because the identity of the developer cannot be confirmed) while opening this file, go to System Preferences > Security & Privacy and click **Open Anyway**.
 
@@ -67,7 +68,7 @@ Make sure that you have download latest version of MDK SDK as described in Prere
 
     The installer will list all required components for iOS and Android platform and automatically check if they are already installed in the machine. Follow the installer UI to install the components you selected.
 
-    !![MDK](img_1.4.gif)
+    !![MDK](img-1.4.gif)
 
     >You might see different software versions depending on MDK SDK version you are using.
 
@@ -93,15 +94,13 @@ Make sure that you have download latest version of MDK SDK as described in Prere
 
     !![MDK](img_1.7.png)
 
-    >If MDK Dependencies Installer keeps showing `Loading...` then have a look at [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/troubleshooting/mdk/troubleshoot.html#loading-message-displays-while-running-mobile-development-kit-dependency-installer-on-windows-machine) troubleshooting guide.
+    >If you encounter any issue while running the MDK Dependencies Installer then have a look at [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/troubleshooting/mdk/troubleshoot.html#loading-message-displays-while-running-mobile-development-kit-dependency-installer-on-windows-machine) troubleshooting guide.
 
     >You might see different software versions depending on MDK SDK version you are using.
 
     >You can look into console by clicking **Show Log** for execution of each dependencies.
 
 [OPTION END]
-
-
 
 Once you've installed these prerequisites, your machine is ready to generate and build an MDK project.
 
@@ -120,7 +119,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 2. From a terminal window, navigate to the `[path] -> MDKClient_SDK` folder and execute `./install.command`. If everything is fine, you will a success message in the console followed by next steps.
 
-    !![MDK](img_2.2.1.png)
+    !![MDK](img-2.2.1.png)
 
     !![MDK](img_2.2.2.png)
 
@@ -180,10 +179,9 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     >`AppName`: Provide a name for example: `DemoSampleApp`. It is the name of the application on the home screen of the device and it is also the name of the folder where the client is created.
 
-    >`BundleID`: It should be a unique identifier for your application.  This controls if the client can be installed side by side with other applications on the device.  Two applications with the same Bundle ID cannot be installed at the same time on a device.  For iOS this is the Identifier `(AppID)` that is registered in Apple Developer account since that determines if the application can be installed alongside other applications. If the `XCode` project is set up to use _Automatically manage signing_ then when building, `XCode` will automatically generate a signing profile for the specified bundle id. Without matching them, trying to run the custom client in iOS device will result in failure. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
+    >`BundleID`: It should be a unique identifier for your application. This controls if the client can be installed side by side with other applications on the device. Two applications with the same Bundle ID cannot be installed at the same time on a device.  For iOS this is the Identifier `(AppID)` that is registered in Apple Developer account since that determines if the application can be installed alongside other applications. If the `XCode` project is set up to use _Automatically manage signing_ then when building, `XCode` will automatically generate a signing profile for the specified bundle id. Without matching them, trying to run the custom client in iOS device will result in failure. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
 
-    >`URLScheme`: Allows you to specify a custom URL scheme which opens the client. This value is provided in step 2 for **Redirect URL**.
-     If the URL includes connection settings as URL parameters, these settings will override the ones used by the client. The default is `mdkclient`. This value needs to match the value provided in step 2 for the Redirect URL. This value also needs to be unique across applications on your device.  If the value is not unique the wrong application may be referenced when redirecting.
+    >`URLScheme`: Allows you to specify a custom URL scheme which opens the client. The default is `mdkclient`. This value also needs to be unique across applications on your device. If the value is not unique the wrong application may be referenced when redirecting.
 
     >You can find more details about configuration of `MDKProject.json` file in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html) help documentation.        
 
@@ -195,19 +193,19 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     4.1 Click `com.sap.mdk.demo` > **Security** tab.
 
-    Copy the Client ID, Redirect URL, OAuth Authorisation & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
+    Copy the Client ID, Redirect URL, OAuth Authorization, OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
 
-    !![MDK](img_3.4.1.png)
+    !![MDK](img-3.4.1.png)
 
     4.2 `AppId`: App ID from `Info` tab.
 
-    !![MDK](img_3.4.2.png)
+    !![MDK](img-3.4.2.png)
 
     4.3 `ServerUrl`: Server URL from `APIs` tab.
 
-    !![MDK](img_3.4.3.png)
+    !![MDK](img-3.4.3.png)
 
-    >For Android (7 and below), screen sharing or taking screen shots are disabled by default. To enable it, `add "EnableScreenSharing": true` in `ConnectionSettings` section. Screen sharing is already enabled in Android 8 and above. You can find more information about `Enable Screen Sharing` in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#enable-screen-sharing) help documentation.
+    >For Android (7 and below), screen sharing or taking screen shots are disabled by default. To enable it, add `"EnableScreenSharing": true` in `ConnectionSettings` section. Screen sharing is already enabled in Android 8 and above. You can find more information about `Enable Screen Sharing` in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#enable-screen-sharing) help documentation.
 
     Regarding other properties:
     **Debug settings**: The settings in the `DebugSettings` property are for development use and should not be enabled in a production setting.
@@ -225,7 +223,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
     | `DetailLabelViewText` | `My first custom MDK client` |
     | `SigninButtonText` | `Start` |
 
-    !![MDK](img_3.5.png)        
+    !![MDK](img-3.5.png)        
 
 
 [OPTION END]
@@ -250,40 +248,42 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     >`AppName`: Provide a name for example: `DemoSampleApp`. It is the name of the application on the home screen of the device and it is also be the name of the folder where the client is created.
 
-    >`BundleID`: It should be a unique identifier for your application.  This controls if the client can be installed side by side with other applications on the device.  Two applications with the same Bundle ID cannot be installed at the same time on a device. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
+    >`BundleID`: It should be a unique identifier for your application. This controls if the client can be installed side by side with other applications on the device. Two applications with the same Bundle ID cannot be installed at the same time on a device. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
 
     >`URLScheme`: Allows you to specify a custom URL scheme which opens the client. The default is `mdkclient`. This value also needs to be unique across applications on your device.  If the value is not unique the wrong application may be referenced when redirecting.    
 
     >You can find more details about configuration of `MDKProject.json` file in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html) help documentation.                    
 
-4. Now, open the `BrandedSettings.json` file and update it with information from your MDK Mobile Services application.
+  4. Now, open the `BrandedSettings.json` file and update the `ConnectionSettings` with the values for your MDK application in Mobile Services.
 
     !![MDK](img-3.4.png)
 
     To find the correct URLs for your client, you should navigate to  [Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and find your MDK application that you want to link to this client.
 
-  4.1  Click `com.sap.mdk.demo` > **Security** tab.
+    4.1 Click `com.sap.mdk.demo` > **Security** tab.
 
-    Copy the Client ID, Redirect URL, OAuth Authorisation & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
+    Copy the Client ID, Redirect URL, OAuth Authorization, OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
 
-    !![MDK](img_3.4.1.png)
+    !![MDK](img-3.4.1.png)
 
     4.2 `AppId`: App ID from `Info` tab.
 
-    !![MDK](img_3.4.2.png)
+    !![MDK](img-3.4.2.png)
 
     4.3 `ServerUrl`: Server URL from `APIs` tab.
 
-    !![MDK](img_3.4.3.png)
+    !![MDK](img-3.4.3.png)
 
-    >For Android (7 and below), screen sharing or taking screen shots are disabled by default. To enable it, `add "EnableScreenSharing": true` in `ConnectionSettings` section. Screen sharing is already enabled in Android 8 and above. You can find more information about `Enable Screen Sharing` in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#enable-screen-sharing) help documentation.
+    >For Android (7 and below), screen sharing or taking screen shots are disabled by default. To enable it, add `"EnableScreenSharing": true` in `ConnectionSettings` section. Screen sharing is already enabled in Android 8 and above. You can find more information about `Enable Screen Sharing` in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#enable-screen-sharing) help documentation.
 
     Regarding other properties:
     **Debug settings**: The settings in the `DebugSettings` property are for development use and should not be enabled in a production setting.
 
     **Log Settings**: Set this to the log level to be used when the client is launched.
 
-    **Demo**: If you want to access the app in the demo mode, you can configure required settings.                
+    **Demo**: If you want to access the app in the demo mode, you can configure required settings.        
+
+    >If you are connecting to `AliCloud` accounts, you will also need to add your custom domains under `URLWhitelist` property in the same file. You can find more details in [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#connection-settings-allowlist).
 
 5. In the last section of `BrandedSettings.json` file, make these changes:
 
@@ -292,7 +292,8 @@ Once you've installed these prerequisites, your machine is ready to generate and
     | `DetailLabelViewText` | `My first custom MDK client` |
     | `SigninButtonText` | `Start` |
 
-    !![MDK](img_3.5.png)                  
+    !![MDK](img-3.5.png)        
+
 
 [OPTION END]
 
@@ -318,12 +319,6 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     >**All** option was chosen in this tutorial as you will learn how to create the MDK client for iOS and Android.
 
-3. Then, you will be asked whether you would like to build for device or simulator?
-
-    !![MDK](img_4.3.png)
-
-    >**device** option was chosen for this tutorial.
-
     Once the `create-client.command` script executed successfully, you will see **Application ready** message in terminal console.
 
     !![MDK](img-4.3.1.png)
@@ -338,15 +333,15 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 1. You can create a client by running `create-client.cmd` and providing the path to a valid `.mdkproject` directory.
 
-    !![MDK](img_4.4.png)
+    !![MDK](img-4.4.png)
 
     >You can run the `create-client command` from any directory. The resulting MDK client will be created in the directory where the `create-client command` is run from.
 
 2. Once the `create-client.cmd` script executed successfully, you will see **Application ready** message in terminal console.
 
-    !![MDK](img_4.4.1.png)
+    !![MDK](img-4.4.1.png)
 
-    !![MDK](img_4.4.1.2.png)
+    !![MDK](img-4.4.1.2.png)
 
      You will also find your app created under the `MDKClient_SDK` folder.
 
@@ -381,17 +376,18 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
 
-4. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.4 & 3.5. Tap **START** to connect MDK client to SAP Business Technology Platform (BTP).
-
-    ![MDK](img_5.5.png)
-
-5. Tap **AGREE** on `End User License Agreement`.
+4. Tap **AGREE** on `End User License Agreement`.
 
     ![MDK](img-5.3.1.png)
 
-6. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
+5. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3. Tap **START** to connect MDK client to SAP Business Technology Platform (BTP).
 
-    ![MDK](img_5.7.png)
+    ![MDK](img-5.5.png)
+
+6. Enter your credentials to login to SAP Business Technology Platform (BTP).
+
+    ![MDK](img-5.7.png)
+    ![MDK](img-5.7.1.png)
 
 7. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
@@ -399,11 +395,11 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 8. Confirm the passcode and tap **DONE**.
 
-    ![MDK](img_5.9.png)
+    ![MDK](img-5.9.png)
 
 9. Optionally, you can enable biometric authentication to get faster access to the app data.
 
-    ![MDK](img_5.9.1.png)
+    ![MDK](img-5.9.1.png)
 
     If there is any app metadata already deployed to Mobile Services, you will see `Update Now?` dialog box Otherwise you will see an empty screen.
 
@@ -431,21 +427,23 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     >To run the MDK client on iOS simulator, use `tns run ios --emulator` command.
 
-    Once, above command gets successfully executed, you will see new MDK client up and running in your device.
+    Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
 
-    ![MDK](img-5.13.png)
 
 4. Tap **Agree** on `End User License Agreement`.
 
-5. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.4 & 3.5.
+    ![MDK](img-5.13.png)
+
+5. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.
 
     ![MDK](img-5.14.png)
 
     Tap **Start** to connect MDK client to SAP Business Technology Platform (BTP).
 
-6. Enter your credentials to login to SAP BTP and tap **Log On** to authenticate.
+6. Enter your credentials to login to SAP Business Technology Platform (BTP).
 
     ![MDK](img-5.15.png)
+    ![MDK](img-5.15.1.png)    
 
 7. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 

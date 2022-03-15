@@ -1,8 +1,10 @@
 ---
-title: Create and expose a custom CDS view  
+title: Create and Expose Custom CDS Views  
 description: Create a custom CDS view from an existing data source and expose it as a Web Service.
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, programming-tool>abap-development, programming-tool>abap-extensibility]
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  

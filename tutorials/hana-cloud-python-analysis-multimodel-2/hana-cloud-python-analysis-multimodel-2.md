@@ -86,7 +86,7 @@ import pandas as pd
 # example SHAPE column: POINT (1752440.6821975708 5439964.327102661)
 v_hdf = create_dataframe_from_pandas(
     connection_context=cc,
-    pandas_df=pd.read_csv("./datasets/wwc_wastewater_vertices.csv"),
+    pandas_df=pd.read_csv("./datasets/wwc_stormwater_vertices.csv"),
     table_name="CML_WASTE_WATER_VERTICES",
     primary_key="ID",
     geo_cols=["SHAPE"],
@@ -95,7 +95,7 @@ v_hdf = create_dataframe_from_pandas(
 # example SHAPE column: LINESTRING (1749169.286201477 5422260.568099976, 1749162.987197876 5422242.643096924)
 e_hdf = create_dataframe_from_pandas(
     connection_context=cc,
-    pandas_df=pd.read_csv("./datasets/wwc_wastewater_edges.csv"),
+    pandas_df=pd.read_csv("./datasets/wwc_stormwater_edges.csv"),
     table_name="CML_WASTE_WATER_EDGES",
     primary_key="ID",
     not_nulls=["SOURCE", "TARGET"],
@@ -165,7 +165,7 @@ When you print a graph using `g_storm`, you get **technical information about th
 
 [ACCORDION-BEGIN [Step 7: ](Visualize the graph using Kepler.gl)]
 
-Kepler.gl is a popular framework to **visualize geospatial data**. You will use it here to display the graph data you're working with.
+Kepler.gl is a popular framework to **visualize geospatial data**. You will use it here to display the graph data you're working with. Check [this link](https://docs.kepler.gl/docs/keplergl-jupyter#install) to know how to install Kepler.gl.
 
 Create a new cell with the following content:
 
@@ -195,7 +195,7 @@ Now your notebook should look like this:
 
 !![Notebook Graph P2](ss-03-notebook-graph-part2.png)
 
-> In this article, you have learned how to visualize a Graph Workspace in SAP HANA Cloud, SAP HANA database using Kepler.gl. In the next article, you will see the how to analyze a Graph Workspace using various algorithms in the hana-ml library.
+> In this tutorial, you have learned how to visualize a Graph Workspace in SAP HANA Cloud, SAP HANA database using Kepler.gl. In the next tutorial, you will see the how to analyze a Graph Workspace using various algorithms in the hana-ml library.
 
 
 

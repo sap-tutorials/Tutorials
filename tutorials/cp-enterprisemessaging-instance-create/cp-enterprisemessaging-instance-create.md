@@ -4,7 +4,7 @@ description:  Create an instance of SAP Event Mesh service from SAP Business Tec
 time: 15
 auto_validation: true
 tags: [ tutorial>beginner, topic>cloud, tutorial>license]
-primary_tag: products>sap-event-mesh
+primary_tag: software-product>sap-event-mesh
 ---
 
 ## Prerequisites
@@ -32,11 +32,11 @@ primary_tag: products>sap-event-mesh
 
 4. Choose **Create**.
 
-5. Select Event Mesh and then default service plan.
+5. Select Event Mesh and then default service plan (for Factory landscape), else dev plan (for Trial landscape).
 
 6. Select **Cloud Foundry** as the runtime environment. Select your space then, enter an instance name. Choose **Next**.(for this exercise, we will consider only **Cloud Foundry** runtime environment)
 
-7. Specify parameters using a JSON file.
+7. Specify parameters using a JSON file (to create an instance of **default** plan)
 
     ```JSON
     {
@@ -83,7 +83,17 @@ primary_tag: products>sap-event-mesh
 
     - **rules** -  Defines the access privileges for the message client. In order to allow access to a queue or a topic, the namespace of the corresponding owner message client has to be added
 
-8. Review the information you have provided and choose **Create**.
+8. Specify parameters using a JSON file (to create an instance of **dev** plan)
+    ```JSON
+    {
+    	"emname": "<your-emname>",
+    	"options": {
+    		"management": true,
+    		"messagingrest": true
+    	}
+    }
+    ```
+9. Review the information you have provided and choose **Create**.
 
       ![SAP Event Mesh Instance](em-instance-creation.PNG)
 

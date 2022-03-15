@@ -5,7 +5,7 @@ title: Adjust the Business Context Hierarchy for Kanban
 description: Adjust the business context hierarchy for kanban using SAP Event Mesh or polling and activate the Auto-ID event enrichment.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, products>sap-internet-of-things, products>sap-business-technology-platform products>sap-event-mesh, products>sap-s-4hana]
+tags: [ tutorial>beginner, tutorial>license, topic>internet-of-things, software-product>sap-internet-of-things, software-product>sap-business-technology-platform software-product>sap-event-mesh, products>sap-s-4hana]
 primary_tag: topic>internet-of-things
 ---
 

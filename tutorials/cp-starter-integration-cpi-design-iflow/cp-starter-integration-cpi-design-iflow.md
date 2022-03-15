@@ -3,8 +3,8 @@ title: Design and Deploy Your First Integration Flow
 description: Design an integration flow to integrate an online webshop that exposes data via OData service and fetch the product details.
 auto_validation: true
 time: 40
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
-primary_tag: products>sap-integration-suite
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment]
+primary_tag: software-product>sap-integration-suite
 author_name: Karunaharan V
 author_profile: https://github.com/Karunaharan
 ---
@@ -20,11 +20,12 @@ author_profile: https://github.com/Karunaharan
 
 [ACCORDION-BEGIN [Step 1: ](Access your Cloud Integration workspace)]
 
-    In the Integration Suite home page, choose the **Design, Develop, and Operate Integration Scenarios** tile. Alternatively, in the provisioning app, use the URL available under the **Cloud Integration** section.
-    In the Cloud Integration application, choose the **Design** tab (pencil icon) to access your workspace.
-    This is where you will design your integration package and integration flow.
+In the Integration Suite home page, choose the **Design, Develop, and Operate Integration Scenarios** tile. Alternatively, in the provisioning app, use the URL available under the **Cloud Integration** section.
 
-    !![Access workspace](1-1-access-workspace.png)
+In the Cloud Integration application, choose the **Design** tab (pencil icon) to access your workspace.
+This is where you will design your integration package and integration flow.
+
+  !![Access workspace](1-1-access-workspace.png)
 
 
 [DONE]
@@ -32,7 +33,7 @@ author_profile: https://github.com/Karunaharan
 
   [ACCORDION-BEGIN [Step 2: ](Create an integration package and integration flow)]
 
-1. Choose **Create** to create a new integration package.
+1. Choose **Create** to create an integration package.
 
     >An integration flow should be associated with an integration package.
 
@@ -97,9 +98,6 @@ You add this converter because the input to the integration flow is sent in JSON
     !![JSON to XML Converter](5-1-json-to-xml-converter.png)
 
 2. Connect the converter to the message path by clicking on the message path.
-    >**TIP:** When you place your cursor on the message processing path, you see it change to green color.
-
-    !![Connect JSON to XML Converter to message path](5-2-connect-jsonxml-converter.png)
 
 [DONE]
 [ACCORDION-END]
@@ -117,9 +115,10 @@ You add this converter because the input to the integration flow is sent in JSON
     |  :------------- | :-------------
     |  **Action**           | **`Create`**
     |  **Name**           | **`productIdentifier`**
-    |  **Type**           | Select **`XPath`** from the dropdown list
+    |  **Source Type**        | Select **`XPath`** from the dropdown list
+    |  **Source Value**       | **`//productIdentifier`**
     |  **Data Type**    | **`java.lang.String`**
-    |  **Value**          | **`//productIdentifier`**
+
 
     !![Configure Content Modifier](6-2-configure-content-modifier.png)
 

@@ -3,8 +3,8 @@ title: Expose Integration Flow Endpoint as API and Test the Flow
 description: Define the endpoint of the integration flow developed in the last tutorial as an application programming interface (API).
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
-primary_tag: products>sap-integration-suite
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment]
+primary_tag: software-product>sap-integration-suite
 author_name: Karunaharan V
 author_profile: https://github.com/Karunaharan
 ---
@@ -66,7 +66,7 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
     |  Parameter    | Settings
     |  :------------- | :-------------
-    |  URL           | Paste the integration flow endpoint address you have copied in **step 2**. It ends with **`/http/products/details`**. **Note:** paste only the endpoint URL till **`/http/products`** instead of **`/http/products/details`**.
+    |  URL           | Paste the integration flow endpoint address you have copied in **step 1**. It ends with **`/http/products/details`**. **Note:** paste only the endpoint URL till **`/http/products`** instead of **`/http/products/details`**.
     |  Name           | **`RequestProductDetails`**
     |  Title    | **`Product Details API`**
     |  API Base Path          | **`/products`**
@@ -111,21 +111,13 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
     !![change product identifier after](011-after.png)
 
-    Choose **Save**. You are navigated to the APIs list view.
+    Choose **Save**.
 
-12. To view or edit your API Proxy changes, choose the name of the API **`RequestProductDetails`**.
-
-    !![View API proxy](012.png)
-
-13. Go to tab **Resources**, and choose the **POST** request.
-
-    !![Resources Tab](013.png)
-
-    You notice the API changes, in particular, the request body contains now one element with a product identifier.
+12. Choose the **POST** request. You notice the API changes, in particular, the request body contains now one element with a product identifier.
 
     !![Resources Tab API Changes](014.png)
 
-14. When you choose **Try Out** and then **Execute**, since no authentication details have been configured, you get an error message with error code 401 (not authorized).
+13. When you choose **Try Out** and then **Execute**, since no authentication details have been configured, you get an error message with error code 401 (not authorized).
 
     !![Error message](015.png)
 
@@ -140,7 +132,7 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
 1. Navigate to your service instance page which you earlier opened at the end of [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe). You can access this from your subaccount. Choose **Services** > **Instances and Subscriptions**.
 
-2. Under the **Instances** section, look out for the service instance that was created by the booster. Usually the default name that the booster provides is **default-it-rt-integration**. Choose the key under the **Credentials** column to open the service key.
+2. Under the **Instances** section, look out for the service instance that was created by the booster. Usually the default name that the booster provides is **default-it-rt-integration-flow**. Choose the key under the **Credentials** column to open the service key.
 
       !![view key](3-2-key-view.png)
 
@@ -158,7 +150,7 @@ In this step, you assign a policy template to your API to specify authentication
 
 This grant type works in the following way: In a first call, the API client provides the values of **`clientid`** and **`clientsecret`** (from the service key generated in Step 1) to a token service (the URL of the token service is also contained in the service key definition). The token service provides an access token to the API client. In a subsequent call, the API client calls the integration flow endpoint providing the access token. If the access token is valid, the API client is authorized to call the integration flow.
 
-1. In the navigation area of API Portal, choose **Discover**.
+1. In the navigation area of API Portal, choose **View content packages**.
 
     !![Discover](016.png)
 
@@ -226,7 +218,7 @@ This grant type works in the following way: In a first call, the API client prov
 
 17. Paste the value of **`tokenurl`** as shown in the following screenshot.
 
-    >**Note**: Make sure that you append **`?grant_type=client_crendentials`** to the token URL that you pasted.
+    >**Note**: Make sure that you append **`?grant_type=client_credentials`** to the token URL that you pasted.
 
     !![tokenURL](031.png)
 
@@ -237,6 +229,10 @@ This grant type works in the following way: In a first call, the API client prov
 19. Select **Save**.
 
     !![Save](033.png)
+
+20. Select **Click to Deploy**.
+
+    !![Save](033_New.png)
 
     In this step you have assigned a policy template.
 

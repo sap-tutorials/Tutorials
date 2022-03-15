@@ -3,8 +3,8 @@ title: Create a Cloud Foundry or XS Advanced App that Queries SAP HANA
 description: Create a Node.js app that queries SAP HANA and can be run in Cloud Foundry or XS Advanced.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud, topic>node-js, products>sap-btp--cloud-foundry-environment, products>sap-business-technology-platform, products>sap-connectivity-service]
-primary_tag: products>sap-hana
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>node-js, software-product>sap-btp--cloud-foundry-environment, software-product>sap-business-technology-platform, software-product>sap-connectivity-service]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -35,7 +35,9 @@ The command line interface (CLI) for Cloud Foundry is named `cf` while the CLI u
     ![cf cli version](showVersion.png)  
 
 
-    To install the CLI, see [Installing the CLI](https://tutorials.cloudfoundry.org/trycf/docs/cli/) and [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html).
+    To install the CLI, see [Installing the CLI](https://tutorials.cloudfoundry.org/trycf/docs/cli/) and [Installing the cf CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html). After installing, add the `Cloud Foundry` folder to the path.
+
+    >Note that if a different version of CLI is installed, for instance version 7, then use `cf7 -v` instead of `cf -v`. Check the `Cloud Foundry` installation folder to find the CLI version.
 
     ```Shell
     xs -v

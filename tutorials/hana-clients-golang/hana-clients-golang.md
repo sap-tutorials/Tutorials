@@ -3,8 +3,8 @@ title: Connect Using the SAP HANA Go Interface
 description: Create and debug a Go application that connects to SAP HANA using the SAP HANA client.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud]
-primary_tag: products>sap-hana
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -31,7 +31,7 @@ go version
 
 If Go is installed, then it will return the currently installed version, such as 1.15.2. It is required to have version 1.8 - 1.16 installed.
 
->For further details on supported versions, see SAP Note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307).
+>For further details on supported versions, see SAP Note [3136015 - SAP HANA Client Supported Platforms for 2.11](https://launchpad.support.sap.com/#/notes/3136015).
 
 
 If it is not installed, download it from [Download Go](https://golang.org/dl/), run the installer, follow the provided instructions, and ensure that Go is in your path.
@@ -58,7 +58,7 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     If it is not installed, on Linux install the System GNU C compiler.  
 
-    On Windows download it from [Download MinGW](http://mingw-w64.org/doku.php/download) and run the installer.
+    On Windows, it can be downloaded from [Download MinGW](https://www.mingw-w64.org/downloads/). Under **Mingw-builds**, select **Installation: Sourceforge** to run the installer.
 
     During the install, set the architecture option to `x86_64`.
 

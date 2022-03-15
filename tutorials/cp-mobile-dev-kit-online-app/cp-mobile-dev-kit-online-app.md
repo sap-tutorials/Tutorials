@@ -2,8 +2,8 @@
 title: Create an MDK Online App
 description: Use the mobile development kit editor to create a mobile app for online use case.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 20
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -40,44 +40,47 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-2.2.png)
 
-    >If you do not see Welcome page, you can access it via **Help** menu.
+    >If you do not see the Welcome page, you can access it via **Help** menu or via **View** menu > Find Command > Welcome.
 
 3. Select **MDK Project** and click **Start**.
 
     !![MDK](img-2.3.png)
 
-4. In *Type* step, select or provide the below information and click **Next**:
+4. In *Basic Information* step, provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `MDK template type`| Select `Base` from the dropdown |
-    | `Your project name` | `MDKOnlineApp` |
-    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
+    | `MDK Template Type`| Select `Base` from the dropdown |
+    | `Your Project Name` | `MDKOnlineApp` |
+    | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
 
     !![MDK](img-2.4.png)
 
     >The `Base` template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.
+    >This screen will only show up when your CF login session has expired. Enter your login credentials, click Login icon and select the org & space where you have set up the initial configuration for your MDK app.
 
-5. In *Service Name* step, provide or select the below information and click **Next**:
+    >!![MDK](img-2.4.1.png)
+
+
+5. In *Service configuration* step, provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `Service File Name`| `<Provide any name of your choice>` |
-    | `OData Source` | Select `Mobile Services` from the dropdown |
+    | `Data Source` | Select `Mobile Services` from the dropdown |
     | `Mobile Services Landscape` | Select `standard` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
     | `Destination` | Select `SampleServiceV2` from the dropdown |
     | `Enter a path to the OData service` | Leave it as it is |
-    | `Language URL` | Leave it with the default value |
     | `Enable Offline` | Choose `No` |
 
     !![MDK](img-2.5.png)
 
     >Regardless of whether you are creating an online or offline application, this step is needed for the app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services.
 
-6. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKOnlineApp` project in the project explorer.
+6. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKOnlineApp` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -107,6 +110,7 @@ These are the metadata definitions available in the editor and the format in whi
 [DONE]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 4: ](Deploy the application)]
 
 So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
@@ -118,6 +122,10 @@ So far, you have learned how to build an MDK application in the SAP Business App
 2. Select deploy target as **Mobile Services**.
 
     !![MDK](img-4.2.png)
+
+    If you want to enable source for debugging the deployed bundle, then choose **Yes**.
+
+    !![MDK](img-4.4.png)
 
     You should see **Deploy to Mobile Services successfully!** message.
 
@@ -131,9 +139,11 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon.
 
 !![MDK](img-5.1.png)
+
+The On-boarding QR code is now displayed.
 
 !![MDK](img-5.2.png)
 
@@ -144,7 +154,7 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 
 [ACCORDION-BEGIN [Step 6: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and on-board again, you will be asked either to continue to use current application or to scan new QR code.
 
 [OPTION BEGIN [Android]]
 
@@ -166,7 +176,7 @@ Once you accept app update, you will see **Main** page being displayed and appli
 
 [OPTION END]
 
->Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and on-board again, you will be asked either to continue to use current application or to scan new QR code.
 
 
 [VALIDATE_1]

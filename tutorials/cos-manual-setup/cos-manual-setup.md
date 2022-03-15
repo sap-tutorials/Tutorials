@@ -3,7 +3,7 @@ title: Set Up SAP Customer Order Sourcing Manually
 description: Learn how to set up SAP Customer Order Sourcing start to finish, how to add Users and give them appropriate permissions.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: topic>cloud
 ---
 
@@ -11,6 +11,8 @@ primary_tag: topic>cloud
 - You have registered for a trial account on [SAP Business Technology Platform](https://cloudplatform.sap.com/index.html).
 - You should be familiar with the SAP Business Technology Platform trial landscape (see [Get Started with SAP Business Technology Platform Trial](cp-trial-quick-onboarding)).
 - You have a subaccount in the **Cloud Foundry** environment, with **Amazon Web Services (AWS)** as provider and the **Europe (Frankfurt)** region.
+    - **It is no longer possible to create new trial accounts on the AWS region Frankfurt (Europe) cf-eu10.**
+    - **Existing accounts still work.**
 
 ## Details
 ### You will learn
@@ -21,8 +23,6 @@ In this tutorial you learn how to set up SAP Customer Order Sourcing from start 
 This might help you to get a better understanding on how the service works and shows you the options you have, when working with it.
 
 With this, you'll learn exactly what you have to do to add Users to your service and how to give them the appropriate permissions.
-
-But if you want an easy and quick way to setup SAP Customer Order Sourcing, use this tutorial: [Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing](cos-getting-started-trial).
 
 ---
 

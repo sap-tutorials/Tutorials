@@ -3,11 +3,17 @@ title: Get Set to Use SAP Cloud SDK for JavaScript
 description: Set up your environment to use SAP Cloud SDK for JavaScript.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-sdk, topic>javascript ]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>beginner, software-product>sap-cloud-sdk, programming-tool>javascript ]
+primary_tag: software-product>sap-cloud-sdk
 ---
 
 ## Details
+
+> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> This tutorial is not actively maintained and might be partially outdated.
+> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
+> We will provide a link to the updated version of this tutorial as soon as we release it.
+> In this tutorial, version 1 of the SAP Cloud SDK for TypeScript/JavaScript is used.
 
 ### You will learn
 
@@ -26,7 +32,7 @@ node -v
 npm -v
 ```
 
-If one of those commands fails because the command was not found you will have to install **`Node.js`**. We recommend using at least **`Node.js`** version `11.0.0` and **`npm`** version `6.0.0`. The latest LTS version (10.15.3 as of today), will also work. If you have **`Node.js`** and **`npm`** installed at a current version, skip ahead and mark this step as done.
+If one of those commands fails because the command was not found you will have to install **`Node.js`**. It is recommend to use at least **`Node.js`** version `11.0.0` and **`npm`** version `6.0.0`. The latest LTS version (10.15.3 as of today), will also work. If you have **`Node.js`** and **`npm`** installed at a current version, skip ahead and mark this step as done.
 
 ### Install Node.js and npm
 
@@ -37,25 +43,25 @@ We recommend to install **`Node.js`** using a [`package manager`](https://nodejs
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](SAP Cloud Platform account)]
+[ACCORDION-BEGIN [Step 2: ](SAP Business Technology Platform account)]
 
-For deploying your application to `Cloud Foundry in SAP Cloud Platform`, you will need an account. You can get a trial account [here](https://cloudplatform.sap.com/index.html) by clicking on "Start your free trial" or use an existing account, if you already have one.
+For deploying your application to `Cloud Foundry in SAP Business Technology Platform`, you will need an account. You can get a trial account [here](https://cloudplatform.sap.com/index.html) by clicking on "Start your free trial" or use an existing account, if you already have one.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Cloud Foundry command line interface)]
 
-You will need the `Cloud Foundry` command line interface (`cf` CLI) to later deploy your application to SAP Cloud Platform. To see whether it is already installed, you can run `cf -v` on your command line. If the command fails, you will need to install it.
+You will need the `Cloud Foundry` command line interface (`cf` CLI) to later deploy your application to SAP Business Technology Platform. To see whether it is already installed, you can run `cf -v` on your command line. If the command fails, you will need to install it.
 
-You can find installation instructions for all common platforms in the [`Cloud Foundry documentation`](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html). Again, we recommend to use a `package manager` for that. If you are using `chocolatey` on Windows, please find the instructions [here](https://chocolatey.org/packages/cloudfoundry-cli).
+You can find installation instructions for all common platforms in the [`Cloud Foundry documentation`](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html). Again, it is recommend to use a `package manager` for that. If you are using `chocolatey` on Windows, please find the instructions [here](https://chocolatey.org/packages/cloudfoundry-cli).
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Editor / IDE)]
 
-Feel free to choose your favorite `IDE`. We recommend using [`Visual Studio Code`](https://code.visualstudio.com) for its excellent JavaScript and TypeScript support. However, this tutorial does not rely on any specific editor.
+Feel free to choose your favorite `IDE`. Internally, we are using [`Visual Studio Code`](https://code.visualstudio.com) for its excellent JavaScript and TypeScript support. However, this tutorial does not rely on any specific editor.
 
 [DONE]
 [ACCORDION-END]

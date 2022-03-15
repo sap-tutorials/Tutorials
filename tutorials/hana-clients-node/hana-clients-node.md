@@ -3,8 +3,8 @@ title: Connect Using the SAP HANA Node.js Interface
 description: Create and debug a Node.js application that connects to SAP HANA using the SAP HANA client.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud, topic>node-js]
-primary_tag: products>sap-hana
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>node-js]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -14,6 +14,7 @@ primary_tag: products>sap-hana
 ### You will learn
   - How to install Node.js and the SAP HANA client Node.js driver
   - How to create a Node.js application that queries a SAP HANA database
+  - How to use both the synchronous and asynchronous driver interfaces
 
 Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.dev/).  
 
@@ -27,7 +28,7 @@ Ensure you have Node.js installed and check its version. Enter the following com
 node -v  
 ```  
 
-If Node.js is installed, the currently installed version is returned, such as v15.3.0.
+If Node.js is installed, the currently installed version is returned, such as v14.17.5.
 
 If Node.js is not installed, download the long-term support (LTS) version of Node.js from [Download Node.js](https://nodejs.org/en/download/).
 
@@ -37,7 +38,7 @@ During the installation, there is no need to check the following box as you do n
 
 ![Chocolatey](Chocolatey.png)
 
->The SAP HANA client provides a 32-bit and a 64-bit install, as does Node.js.  The Node.js driver provided with the SAP HANA client is available for 64-bit only and supports Node.js versions 8.11.2 and higher.  For additional details see SAP note [3006307 - SAP HANA Client Supported Platforms for 2.7 and higher](https://launchpad.support.sap.com/#/notes/3006307).
+>The SAP HANA client provides a 32-bit and a 64-bit install, as does Node.js.  The Node.js driver provided with the SAP HANA client is available for 64-bit only.  For further details on supported versions, see SAP Note [3136015 - SAP HANA Client Supported Platforms for 2.11](https://launchpad.support.sap.com/#/notes/3136015).
 
 ---
 
@@ -162,7 +163,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a Node.js application that queries SAP HANA)]
+[ACCORDION-BEGIN [Step 3: ](Create a synchronous Node.js application that queries SAP HANA)]
 
 1. Open a file named `nodeQuery.js` in an editor.
 
@@ -186,10 +187,10 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     var connOptions = {
         //Option 1, retrieve the connection parameters from the hdbuserstore
-        serverNode: '@USER1UserKey',  //host,port, uid, and pwd retrieved from hdbuserstore
+        serverNode: '@USER1UserKey',  //host, port, uid, and pwd retrieved from hdbuserstore
 
         //Option 2, specify the connection parameters
-        //serverNode: 'your host:your port',
+        //serverNode: 'host:port',
         //UID: 'USER1',
         //PWD: 'Password1',
 
@@ -201,14 +202,13 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
         //As of SAP HANA Client 2.6, connections on port 443 enable encryption by default (HANA Cloud).
         //encrypt: 'true',  //Must be set to true when connecting to HANA as a Service
         sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
-        //Used to specify where the trust store is located.
 
         //For encrypted connections, the default crypto provider is mscrypto on Windows or openSSL on Linux or macos
         //To use the SAP crypto provider, uncomment the below line.
         //sslCryptoProvider: 'commoncrypto',
 
         //As of SAP HANA Client 2.6 for OpenSSL connections, the following settings can be ignored as root certificates are read from the default OS location.
-        //ssltruststore: '/home/dan/.ssl/trust.pem',
+        //ssltruststore: '/home/dan/.ssl/trust.pem', //Used to specify where the trust store is located
         //Alternatively provide the contents of the certificate directly (DigiCertGlobalRootCA.pem)
         //DigiCert Global Root CA: https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem used for SAP HANA cloud
         //on-premise cert can be retrieved using openssl s_client -connect localhost:39015
@@ -238,43 +238,6 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     var t1 = performance.now();
     console.log("time in ms " +  (t1 - t0));
     connection.disconnect();
-
-    //Asynchronous example calling a stored procedure
-    connection = hana.createConnection();
-    connection.connect(connOptions, function(err) {
-        if (err) {
-            return console.error(err);
-        }
-        //Prepared statement example
-        const statement = connection.prepare('CALL HOTEL.SHOW_RESERVATIONS(?,?)');
-        const parameters = [11, '2020-12-24'];
-        var results = statement.execQuery(parameters, function(err, results) {
-            if (err) {
-                return console.error(err);
-            }
-            while (results.next()) {
-                console.log(util.inspect(results.getValues(), { colors: false }));
-            }
-            results.close(function(err) {
-                if (err) {
-                    return console.error(err);
-                }
-                console.log("results.close");
-                statement.drop(function(err) {
-                    if (err) {
-                        return console.error(err);
-                    }
-                    console.log("statement.drop");
-                    return connection.disconnect(function(err) {
-                        if (err) {
-                            return console.error(err);
-                        }
-                        console.log("disconnect");
-                    });
-                });
-            });u
-        });
-    });
     ```  
 
 4. Run the app.  
@@ -282,11 +245,11 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     ```Shell
     node nodeQuery.js
     ```
-![SAP HANA Express result](Node-query.png)
+![Running nodeQuery.js](Node-query.png)
 
-Note the above app makes use of some of the SAP HANA client Node.js driver methods, such as [connect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d7226e57dbd943aa9d8cd0b840da3e3e.html), [execute](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/ef5564058b1747ce99fd3d1e03266b39.html) and [disconnect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/fdafeb1d881947bb99abd53623996b70.html).
+Note the above app makes use of some of the SAP HANA client Node.js driver methods, such as [connect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d7226e57dbd943aa9d8cd0b840da3e3e.html), [exec](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/ef5564058b1747ce99fd3d1e03266b39.html) and [disconnect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/fdafeb1d881947bb99abd53623996b70.html).
 
-In nodeQuery.js, synchronous and asynchronous queries are performed.  Notice that asynchronous method calls use callback functions.  See [JavaScript Asynchronous Programming and Callbacks](https://nodejs.dev/learn/javascript-asynchronous-programming-and-callbacks) for additional details.
+Notice in the documentation that the above methods support being called in a synchronous or asynchronous manner.  Two examples showing the drivers methods being used asynchronously are shown in the next two steps.
 
 >To enable debug logging of the SAP  HANA Node.js client, enter the following command and then rerun the app.
 
@@ -320,11 +283,218 @@ node nodeQuery.js
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Debug the application)]
+[ACCORDION-BEGIN [Step 4: ](Create an asynchronous app that uses callbacks)]
+Asynchronous programming enables non-blocking code execution which is demonstrated in the below example.
+
+1. Open a file named `nodeQueryCallback.js` in an editor.
+
+    ```Shell (Microsoft Windows)
+    notepad nodeQueryCallback.js
+    ```
+
+    Substitute `pico` below for your preferred text editor.  
+
+    ```Shell (Linux or Mac)
+    pico nodeQueryCallback.js
+    ```
+
+2. Add the code below to `nodeQueryCallback.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey.  
+
+    ```JavaScript
+    'use strict';
+    var util = require('util');
+    var hana = require('@sap/hana-client');
+
+    var connOptions = {
+        //Option 1, retrieve the connection parameters from the hdbuserstore
+        serverNode: '@USER1UserKey',  //host, port, uid, and pwd retrieved from hdbuserstore
+
+        //Option 2, specify the connection parameters
+        //serverNode: 'host:port',
+        //UID: 'USER1',
+        //PWD: 'Password1',
+
+        sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
+    };
+
+    //Asynchronous example calling a stored procedure with callbacks
+    var connection = hana.createConnection();
+
+    connection.connect(connOptions, function(err) {
+        if (err) {
+            return console.error(err);
+        }
+        //Prepared statement example
+        const statement = connection.prepare('CALL HOTEL.SHOW_RESERVATIONS(?,?)');
+        const parameters = [11, '2020-12-24'];
+        var results = statement.execQuery(parameters, function(err, results) {
+            if (err) {
+                return console.error(err);
+            }
+            processResults(results, function(err) {
+                if (err) {
+                    return console.error(err);
+                }
+                results.close(function(err) {
+                    if (err) {
+                        return console.error(err);
+                    }
+                    statement.drop(function(err) {
+                        if (err) {
+                            return console.error(err);
+                        }
+                        return connection.disconnect(function(err) {
+                            if (err) {
+                                return console.error(err);
+                            }
+                        });
+                    });
+                });
+            });
+        });
+    });
+
+    function processResults(results, cb) {
+        results.next(function (err, hasValues) {
+            if (err) {
+                return console.error(err);
+            }
+            if (hasValues) {
+                results.getValues(function (err, row) {
+                    console.log(util.inspect(row, { colors: false }));
+                    processResults(results, cb);
+                });
+            }
+            else {
+                return cb();
+            }
+        });
+    }
+    ```  
+
+4. Run the app.  
+
+    ```Shell
+    node nodeQueryCallback.js
+    ```
+![Running nodeQueryCallback.js](Node-query-callback.png)
+
+Notice that asynchronous method calls use callback functions.  See [JavaScript Asynchronous Programming and Callbacks](https://nodejs.dev/learn/javascript-asynchronous-programming-and-callbacks) for additional details.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Create an asynchronous app that uses promises)]
+The Node.js driver for the SAP HANA client added support for promises in the 2.11 release.  The following example demonstrates this.  Notice that there is less nesting of code then the previous example.
+
+1. Open a file named `nodeQueryPromise.js` in an editor.
+
+    ```Shell (Microsoft Windows)
+    notepad nodeQueryPromise.js
+    ```
+
+    Substitute `pico` below for your preferred text editor.  
+
+    ```Shell (Linux or Mac)
+    pico nodeQueryPromise.js
+    ```
+
+2. Add the code below to `nodeQueryPromise.js`.  Note that the values for host, port, user name and password are provided by the previously configured `hdbuserstore` key USER1UserKey.  
+
+    ```JavaScript
+    'use strict';
+    var util = require('util');
+    var hana = require('@sap/hana-client');
+    var PromiseModule = require('@sap/hana-client/extension/Promise.js');
+
+    var connOptions = {
+        //Option 1, retrieve the connection parameters from the hdbuserstore
+        serverNode: '@USER1UserKey',  //host, port, uid, and pwd retrieved from hdbuserstore
+
+        //Option 2, specify the connection parameters
+        //serverNode: 'host:port',
+        //UID: 'USER1',
+        //PWD: 'Password1',
+
+        sslValidateCertificate: 'false',  //Must be set to false when connecting to an SAP HANA, express edition instance that uses a self-signed certificate.
+    };
+
+    //Asynchronous example calling a stored procedure that uses the promise module
+    var connection = hana.createConnection();
+    var statement;
+
+    PromiseModule.connect(connection, connOptions)
+        .then(() => {
+             //Prepared statement example
+             return PromiseModule.prepare(connection, 'CALL HOTEL.SHOW_RESERVATIONS(?,?)');
+        })
+        .then((stmt) => {
+            statement = stmt;
+            const parameters = [11, '2020-12-24'];
+            return PromiseModule.executeQuery(stmt, parameters);
+        })
+        .then((results) => {
+            return processResults(results);
+        })
+        .then((results) => {
+            return PromiseModule.close(results);
+        })
+        .then(() => {
+            PromiseModule.drop(statement);
+        })
+        .then(() => {
+            PromiseModule.disconnect(connection);
+        })
+        .catch(err =>  {
+            console.error(err);
+        });
+
+    function processResults(results) {
+        return new Promise((resolve, reject) => {
+        var done = false;
+            PromiseModule.next(results)
+                .then((hasValues) => {
+                    if (hasValues) {
+                        return PromiseModule.getValues(results);
+                    }
+                    else {
+                        done = true;
+                    }
+                })
+                .then((values) => {
+                    if (done) {
+                        resolve(results);
+                    }
+                    else {
+                        console.log(util.inspect(values, { colors: false }));
+                        return processResults(results);
+                    }
+                })
+                .catch (err => {
+                    reject(err);
+                });
+        })
+    }
+    ```  
+
+4. Run the app.  
+
+    ```Shell
+    node nodeQueryPromise.js
+    ```
+![Running nodeQueryPromise.js](Node-query-promise.png)
+
+The above code makes use of the [promise module](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d7226e57dbd943aa9d8cd0b840da3e3e.html).  Additional details on promises can be found at [Understanding JavaScript Promises](https://nodejs.dev/learn/understanding-javascript-promises).
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 6: ](Debug the application)]
 
 Visual Studio Code can run and debug a Node.js application.  It is a lightweight but powerful source code editor which is available on Windows, macOS and Linux.
 
-1. [Download Visual Studio Code.](https://code.visualstudio.com/Download)
+1. If required, download [Visual Studio Code.](https://code.visualstudio.com/Download).
 
 2. In Visual Studio Code, choose **File | Add Folder to Workspace** and then add the `HANAClientsTutorial` folder.
 

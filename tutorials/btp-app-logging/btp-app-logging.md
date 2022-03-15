@@ -3,9 +3,10 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Enable Logging Service for Your Application
 description: This tutorial shows you how to enable Logging Service for your application.
+keywords: cap
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -27,17 +28,17 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
- - How to access logs from terminal and SAP BTP cockpit
+ - How to access logs from command line window and SAP BTP cockpit
  - How to analyze logs using Kibana dashboard
  - How to enable Logging Service for your CAP application
  - How to test the Logging Service
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`launchpad-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpad-service) branch.
+To start with this tutorial use the result in the [`launchpad-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpad-service) branch.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access logs from terminal)]
+[ACCORDION-BEGIN [Step 1: ](Access logs from command line window)]
 1. Display recent logs.
 
     ```Shell/Bash
@@ -50,13 +51,13 @@ To continue with this tutorial you can find the result of the previous tutorial 
     cf logs <appname>
     ```
 
-> Choose **Ctrl** + **C** to quit.
+> Choose <kbd>Ctrl</kbd> + <kbd>C</kbd> to quit.
 
 [VALIDATE_1]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Access logs from SAP BTP cockpit)]
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -122,7 +123,7 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
         service: application-logs
         service-plan: lite
     ```
-2. Bind the logging service instance to all `modules` of the `mta.yaml`.
+2. Bind the logging service instance to the following `modules` of the `mta.yaml`.
 
     <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->
     ```YAML[9-9]
@@ -170,8 +171,8 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
         service: application-logs
         service-plan: standard
     ```
-    
-2. Bind the logging service instance to all `modules` of the `mta.yaml`.
+
+2. Bind the logging service instance to the following `modules` of the `mta.yaml`.
 
     <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->
     ```YAML[9-9]
@@ -231,7 +232,7 @@ The time filter is on the right top of the screen. Don't forget to choose *Refre
 
 
 [DONE]
-The result of this tutorial can be found in the [`cp/logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cp/logging) branch.
+The result of this tutorial can be found in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 

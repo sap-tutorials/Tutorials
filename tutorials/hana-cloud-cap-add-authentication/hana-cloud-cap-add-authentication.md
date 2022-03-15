@@ -95,6 +95,10 @@ Video tutorial version: </br>
 
     !![Paste Service Key details](paste_service_key.png)
 
+    It should look something like this:
+
+    !![Example default-env.json with Service Key Details](example_default_env.png)
+
 5. Next we need to enhance the CAP application configuration in the package.json file in the root of the project. Add an `uaa` section to the `cds.requires` section of the file.
 
     !![Add uaa to package.json](uaa_package_json.png)
@@ -129,7 +133,7 @@ Video tutorial version: </br>
 
 1. Before we can test our application, we need to create a role that includes the XSUAA instance details and grant to that our user. We will do this from the SAP Business Technology Platform cockpit. In the cockpit, you set up the roles and role collections and assign the role collections to your users. This brings the necessary authorization information into the JWT token when the user logs on to your application through XSUAA and Application Router.
 
-2. Open the SAP BTP cockpit. If you are working in the SAP BTP trial, the URL will be: [https://cockpit.hanatrial.ondemand.com](https://cockpit.hanatrial.ondemand.com)
+2. Open the SAP BTP cockpit.
 
 3. The roles collections are created on subaccount level in the cockpit. Navigate to your subaccount and then to Security > Role Collections.
 
