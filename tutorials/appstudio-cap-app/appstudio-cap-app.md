@@ -4,7 +4,7 @@ description: Develop a simple CAP Node.js application using SAP Business Applica
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model]
-primary_tag: products>sap-business-application-studio
+primary_tag: software-product>sap-business-application-studio
 author_name: Paola Laufer
 author_profile: https://github.com/Paolaufer
 ---
