@@ -32,7 +32,7 @@ In this step, the SAP HANA cockpit will be used to examine three alert definitio
 
     ![Open SAP HANA Cockpit](open-cockpit.png)
 
-2. Open the Alert Definitions app.
+2. In the Monitoring view, open the Alert Definitions app.
 
     ![alerts app in the cockpit](alerts-app-cockpit.png)
 
@@ -67,7 +67,7 @@ In this step, the SAP HANA cockpit will be used to examine three alert definitio
     | Low |
     | Information |    
 
-    As an example, long-running statements (ID 39), has its threshold values set to 60 minutes for Medium, 45 minutes for Low, and 30 minutes for Info.  These will be set to much lower thresholds of 180, 120 and 60 seconds in step 2.
+    As an example, long-running statements (ID 39), has its threshold values set to 60 minutes for Medium, 45 minutes for Low, and 30 minutes for Info.  These will be set to much lower thresholds of 3, 2 and 1 minutes in step 2.
 
     ![long running statement updated thresholds](long-running-thresholds.png)
 
@@ -102,7 +102,7 @@ The following instructions demonstrate a few examples of triggering alerts in an
 
     > The alert will be viewed in SAP HANA Cockpit in step 3.
 
-3. Execute the following SQL to trigger long-running statements (ID 39) at each threshold assuming the thresholds were set to 3, 2, and 1 minutes with an interval time set to 1 minute.
+3. Execute the following SQL to trigger long-running statements (ID 39) at each threshold assuming the thresholds were set to 3, 2, and 1 minutes or 180, 120, and 60 seconds with an interval time set to 1 minute.
 
     ```SQL
     DO BEGIN
@@ -114,7 +114,7 @@ The following instructions demonstrate a few examples of triggering alerts in an
     END;
     ```
 
-    > Long running statements can be run as a background activity which will continue even if the machine the SAP HANA database explorer is running on loses internet connectivity or the tab is closed.  
+    >Long running statements can be run as a background activities in the SAP database explorer which will continue even if the browser's connection drops or the tab is closed.  
     >
     >![run as a background activity](run-as-background.png)
     >
@@ -152,7 +152,7 @@ The following instructions demonstrate a few examples of triggering alerts in an
 
     ![check now](check-now.png)
 
-    > Note that two other alerts may also be triggered by the above SQL; table growth of non-partitioned column-store tables and  record count of column-store table partitions.
+    > Note that two other alerts may also be triggered by the above SQL: table growth of non-partitioned column-store tables and record count of column-store table partitions.
 
 5. The Database Overview in the SAP HANA cockpit will indicate if a medium or high alert was triggered.  The refresh interval can be set to control how often the contents of the page are updated.
 
@@ -245,7 +245,7 @@ The following instructions show one example of triggering the [data lake locked 
 
 
 [ACCORDION-BEGIN [Step 5: ](Set up email notification when an alert occurs)]
-The Business Technology Platform (BTP) includes a service called the Alert Notification Service (ANS) that provides a common way for other services or applications running in the BTP to send out notifications such as an email, a post to a Microsoft Teams or Slack channel, the creation of a ticket in `ServiceNow`, or a webhook to send events to any Internet REST endpoint.  The SAP HANA Cloud database and data lake pass on events to (ANS) when an alert is triggered.  
+The Business Technology Platform (BTP) includes a service called the Alert Notification Service (ANS) that provides a common way for other services or applications running in the BTP to send out notifications such as an email, a post to a Microsoft Teams or Slack channel, the creation of a ticket in `ServiceNow`, or a webhook to send events to any Internet REST endpoint.  The SAP HANA Cloud database and data lake pass on events to ANS when an alert is triggered.  
 
 ![BTP with HC and ANS](btp-hc-ans.png)
 
@@ -514,7 +514,7 @@ This step will briefly show an example of how to receive a notification in Slack
 
     ![notification in Slack](slack-notification.png)
 
-Congratulations! You have now configured alerts, triggered and viewed them via the SAP HANA cockpit and  received them via email, Microsoft Teams, and Slack using the Alert Notification Service (ANS).  
+Congratulations! You have now configured alerts, triggered and viewed them via the SAP HANA cockpit and received them via email, Microsoft Teams, and Slack using the Alert Notification Service.  
 
 [VALIDATE_1]
 [ACCORDION-END]
