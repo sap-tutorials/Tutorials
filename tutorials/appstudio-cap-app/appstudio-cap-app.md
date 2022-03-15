@@ -199,7 +199,7 @@ You can also see the semantic structure of the application by expanding the CAP 
 
 [ACCORDION-BEGIN [Step 6: ](Test the application with local database)]
 
-You can explicitly deploy your application to a persistent local SQLite database, or you can run your application and it will implicitly use an in-memory database.
+You can explicitly deploy your application to a persistent local `SQLite` database, or you can run your application and it will implicitly use an in-memory database.
 
 This step describes how to run the application with an in-memory database.
 
@@ -239,11 +239,9 @@ You will first add all required dependencies, and the create and run a run confi
 5. Click the right green arrow on the right of the configuration name to run the application.
 
 
-6. When prompted, click **Expose and Open** for **port 4004**.
+6. When prompted, click **Open in a New Tab** for **port 4004**.
 
-    !![Expose and open](expose-and-open.png)
-
-      The port 4004 the application is running on is exposed to external access, in this case, to the browser.
+    The application opens in the browser.
 
 7. Press Enter to use the default description. The application opens in the browser and you can click to see the metadata and entities the service.
 
@@ -265,7 +263,8 @@ You will first add all required dependencies, and the create and run a run confi
 
     !![Stop the app](debug-processes.png)
 
-[VALIDATE_6]
+[DONE]
+
 [ACCORDION-END]
 
 ---
