@@ -1,10 +1,10 @@
 ---
-title: Create a Resource Group and Connect AWS S3 Object Store to SAP AI Core (Postman)
-description: Learn creation of resource group in SAP AI Core to enable multi-tenancy through Postman client. Store datasets to AWS S3 and connect to SAP AI Core through Postman client.
+title: Create Resource Group and Connect AWS S3 to SAP AI Core (Postman)
+description: Learn creation of resource group in SAP AI Core to enable multi-tenancy. Store datasets to AWS S3 and connect to SAP AI Core through Postman client.
 auto_validation: true
 time: 15
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
-primary_tag: topic>artificial-intelligence
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
+primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
@@ -42,9 +42,9 @@ Resource groups represent a virtual collection of related resources within the s
 ### Response
 ```
 {
-    'resource_group_id': 'tutorial',
-    'tenant_id': '1111-dddd-444-888-888888',
-    'zone_id': ''
+  'resource_group_id': 'tutorial',
+  'tenant_id': '1111-dddd-444-888-888888',
+  'zone_id': ''
 }
 ```
 The value of `tenant_id` is equal to the value of `identityzoneid` from service key of SAP AI Core.
@@ -71,11 +71,11 @@ The value of `tenant_id` is equal to the value of `identityzoneid` from service 
 ```
 {'count': 1,
  'resources': [{
-    'resource_group_id': 'tutorial',
-    'status': 'PROVISIONED',
-    'status_message': 'All onboarding steps are completed.',
-    'tenant_id': '1111-dddd-444-888-888888',
-    'zone_id': ''
+  'resource_group_id': 'tutorial',
+  'status': 'PROVISIONED',
+  'status_message': 'All onboarding steps are completed.',
+  'tenant_id': '1111-dddd-444-888-888888',
+  'zone_id': ''
   ]}
 }
 ```
@@ -83,27 +83,35 @@ The value of `tenant_id` is equal to the value of `identityzoneid` from service 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Manage AWS S3 Object Store using S3 Browser)]
+[ACCORDION-BEGIN [Step 3: ](Manage AWS S3 Object Store)]
 
-1. You can get AWS S3 Bucket from either of two ways:
+Use AWS S3 Object Store as a cloud storage for your datasets and models. You can get AWS S3 Bucket from either of two ways:
 
-	1. Through BTP Cockpit.
+- Through SAP BTP Cockpit.
 
-	2. Through AWS. Refer [AWS User Guide to S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)
+- Through AWS. Refer [AWS User Guide to S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)
 
+Follow the below steps for creating a path prefix through AWS CLI:
 
-2. Install S3 Browser. [Download here](https://s3browser.com/)
+1. Install AWS CLI for your platform (Mac/ Linux/ Windows). [Instructions here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
-3. Open S3 Browser and Enter your Credentials.  
+2. Check for `version` after installation completes, execute the following on terminal *(command prompt)*
 
-    !![enter s3 credentials in s3 bucket](img/s3/init.png)
+    ```BASH
+    aws --version
+    ```
 
-4. If you don't have bucket create one and skip to next step.
+    !![aws version check](img/aws/aws-version.PNG)
 
-	!![s3 bucket info](img/s3/bucket-1.png)  
+3. Execute the following on the terminal *(command prompt)*
 
-	!![s3 bucket info2](img/s3/bucket-2.png)  
+    ```BASH
+    aws configure
+    ```
 
+4. Enter your the AWS S3 Object Store details. You can leave the `Default output format` entry as blank *(press enter)*.
+
+    !![aws configure](img/aws/aws-configure.PNG)
 
 [DONE]
 [ACCORDION-END]
@@ -111,28 +119,25 @@ The value of `tenant_id` is equal to the value of `identityzoneid` from service 
 
 [ACCORDION-BEGIN [Step 4: ](Upload dataset to AWS S3 Object Store)]
 
-1. Open S3 Browser.
+> **DISCLAIMER:** The following data is sample data. It has been created only for this tutorial. It is not to be circulated or used for any commercial production projects or for experimentation other than the tutorial for SAP AI Core.
 
-2. Click **New Folder** and Create a folder named `tutorial`.
+| File   | Link |
+|  :------------- | :------------- |
+|  `travel.csv` | [Download Here](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-resource/travel.csv) |
 
-	!![path prefix](img/s3/path-prefix.png)
+ 1. Replace `your-bucket-id` and execute the following on the terminal *(command prompt)* to create a path prefix(directory) and upload you datafile at the same time.
 
-2. Create another folder name `data` inside the `tutorial`.
+    ```BASH[1]
+    aws s3 cp /local/path/to/travel.csv s3://your-bucket-id/tutorial/data/
+    ```
 
-	!![data folder](img/s3/data.png).
+2. Check your file. Replace `your-bucket-id` and execute the following on the terminal.
 
-3. Upload your datafile `travel.csv` inside `tutorial/data/`. This will be used for training the model.
+    ```BASH[1]
+    aws s3 ls s3://your-bucket-id/tutorial/data/
+    ```
 
-	| File   | Link |
-	|  :------------- | :------------- |
-	|  `travel.csv` | [Download Here](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-resource/travel.csv) |
-
-	!![upload](img/s3/data-2.png)
-
-
-Final look of S3 bucket.
-
-!![final s3 look](img/s3/final.png)
+    !![check dataset using aws cli](img/aws/check.png)
 
 
 [DONE]
@@ -160,7 +165,7 @@ Get your AWS S3 Credentials in the format below.
 
 Make the API call.
 
-> **COLLECTIONS** > *POST* create `objectstore`
+> **COLLECTIONS** > admin > *POST* create `objectstoresecret`
 
 ### Endpoint
 **POST**
@@ -182,16 +187,16 @@ Example Body
 Edit the highlighted lines.
 ```JSON[4, 5, 7, 9, 10]
 {
-    "name": "default",
-    "type": "S3",
-    "bucket": "asd-11111111-2222-3333-4444-55555555555",
-    "endpoint": "s3.amazonaws.com",
-    "pathPrefix": "tutorial",
-    "region": "us-east-1",
-    "data": {
-        "AWS_ACCESS_KEY_ID": "ASDFASDFASDFASDF",
-        "AWS_SECRET_ACCESS_KEY": "asdfASDFqwerQWERasdfQWER"
-    }
+  "name": "default",
+  "type": "S3",
+  "bucket": "asd-11111111-2222-3333-4444-55555555555",
+  "endpoint": "s3.amazonaws.com",
+  "pathPrefix": "tutorial",
+  "region": "us-east-1",
+  "data": {
+  "AWS_ACCESS_KEY_ID": "ASDFASDFASDFASDF",
+  "AWS_SECRET_ACCESS_KEY": "asdfASDFqwerQWERasdfQWER"
+  }
 }
 ```
 **DONT SEND YET! You will require to set header as well**

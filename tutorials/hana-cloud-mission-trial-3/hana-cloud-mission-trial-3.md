@@ -108,7 +108,7 @@ SAP HANA Cloud Central is your main administration area for all SAP HANA Cloud i
 
 -	You can open many options by clicking on the **three dots** next to each instance on the list. This includes options to edit, start or stop, or even delete an instance. From this menu, you can also open the other tools you can use with your instances, such as the SAP HANA Database Explorer.
 
--	One of the most important options you can get from here is the **SQL Endpoint** of your instance. To do so, just click on Copy, then on SQL Endpoint. You will need this for multiple tasks, such as connecting to other systems.
+-	One of the most important options you can get from here is the **SQL Endpoint** of your instance. To do so, just click **Copy SQL Endpoint**. You will need this for multiple tasks, such as connecting to other systems.
 
     !![HCC SQL Endpoint](ss-03-HCC-sql-endpoint.gif)
 
@@ -196,7 +196,7 @@ The SAP HANA Database Explorer offers a graphical interface and the SQL console,
 
 -	*Modeling data*
 
--	*Accessing, importing and exporting data*
+-	*Accessing, importing, and exporting data*
 
 Whenever you want to view, add or manage any of the items in the catalog, just right click on the item and choose from the options available there.
 
@@ -218,7 +218,7 @@ An important part of the SAP HANA Database Explorer is the **Catalog**. Each dat
 
 > In this mission, you will use the SAP HANA Database Explorer for many tasks, so we recommend you bookmark it for easy access.
 
-For more information on how to use the SAP HANA Database Explorer, you can also check out the tutorial group [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started.html) or refer to the [technical documentation](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/LATEST/en-US/7fa981c8f1b44196b243faeb4afb5793.html).
+For more information on how to use the SAP HANA Database Explorer, you can also check out the tutorial group [Get Started with the SAP HANA Database Explorer](group.hana-cloud-get-started) or refer to the [technical documentation](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/LATEST/en-US/7fa981c8f1b44196b243faeb4afb5793.html).
 
 
 

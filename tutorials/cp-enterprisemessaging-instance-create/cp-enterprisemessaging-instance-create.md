@@ -4,7 +4,7 @@ description:  Create an instance of SAP Event Mesh service from SAP Business Tec
 time: 15
 auto_validation: true
 tags: [ tutorial>beginner, topic>cloud, tutorial>license]
-primary_tag: products>sap-event-mesh
+primary_tag: software-product>sap-event-mesh
 ---
 
 ## Prerequisites

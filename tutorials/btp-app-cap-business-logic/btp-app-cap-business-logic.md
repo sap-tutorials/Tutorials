@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Add Business Logic to Your Application
 description: This tutorial shows you how to create an SAP Fiori Elements app on top of your previously created CAP application.
+keywords: cap
 auto_validation: true
 time: 5
 tags: [ tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]

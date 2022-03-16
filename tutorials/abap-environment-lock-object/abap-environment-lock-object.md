@@ -3,8 +3,10 @@ auto_validation: true
 title: Create Data Model and Lock Object in SAP BTP, ABAP Environment
 description: Create data model and lock object in SAP BTP, ABAP environment.
 primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license ]
+tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform, tutorial>license ]
 time: 15
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
@@ -185,7 +187,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create table](definition2.png)
 
-  3.  Create your database table:
+  3.  Create your data definition:
      - Name: **`Z_I_ROOM_XXX`**
      - Description: **`Room XXX`**
 
@@ -200,45 +202,45 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
   5. Create your data definition with following coding:
 
     ```ABAP
-      @AbapCatalog.sqlViewName: 'Z_M_ROOM_XXX'
-      @AbapCatalog.compiler.compareFilter: true
-      @AbapCatalog.preserveKey: true
-      @AccessControl.authorizationCheck: #CHECK
-      @EndUserText.label: 'Room XXX'
-      @Search.searchable
-      @UI.headerInfo: { typeName: 'Room', typeNamePlural: 'Rooms' , title : { value: 'ID' } }
-      define root view Z_I_ROOM_XXX as select from zroom_xxx as room
-      association [0..1] to I_BusinessUser as _SAPSysAdminDataChangeUser on _SAPSysAdminDataChangeUser.UserID = room.lastchangedbyuser
-      {
-      @UI.facet: [ { type: #COLLECTION, position: 1, id: 'ROOM', label: 'Room'  }, { type: #IDENTIFICATION_REFERENCE, position: 1, parentId: 'ROOM', label: 'General Information'}]
-      @EndUserText: { label: 'ID' }
-      @Search: { defaultSearchElement: true }
-      @UI: { lineItem: [{ position: 1 }], identification: [{ position: 1 }] }
-      key room.id,
-      @EndUserText: { label: 'Seats' }
-      @UI: { lineItem: [{ position: 3 }], identification: [{ position: 2 }] }
-      room.seats,
-      @EndUserText: { label: 'Location' }
-      @UI: { lineItem: [{ position: 4 }], identification: [{ position: 3 }] }
-      room.location,
-      @EndUserText: { label: 'Has Beamer' }
-      @UI: { lineItem: [{ position: 5 }], identification: [{ position: 4 }] }
-      room.hasbeamer,
-      @EndUserText: { label: 'Has Video' }
-      @UI: { lineItem: [{ position: 7 }], identification: [{ position: 5 }] }
-      room.hasvideo,
-      @EndUserText: { label: 'User Rating' }
-      @UI: { lineItem: [{ position: 8 }], identification: [{ position: 6 }] }
-      userrating,
-      @EndUserText: { label: 'Last Changed On' }
-      @UI: { identification: [{ position: 7 }] }
-      room.lastchangeddatetime,
-      @EndUserText: { label: 'Last Changed By' }
-      @UI: { identification: [{ position: 8 }], textArrangement: #TEXT_ONLY }
-      room.lastchangedbyuser,
-      @UI.hidden: true
-      _SAPSysAdminDataChangeUser  
-      }
+    @AbapCatalog.sqlViewName: 'Z_M_ROOM_XXX'
+    @AbapCatalog.compiler.compareFilter: true
+    @AbapCatalog.preserveKey: true
+    @AccessControl.authorizationCheck: #CHECK
+    @EndUserText.label: 'Room XXX'
+    @Search.searchable
+    @UI.headerInfo: { typeName: 'Room', typeNamePlural: 'Rooms' , title : { value: 'ID' } }
+    define root view Z_I_ROOM_XXX as select from zroom_xxx as room
+    association [0..1] to I_BusinessUserBasic as _SAPSysAdminDataChangeUser on _SAPSysAdminDataChangeUser.UserID = room.lastchangedbyuser
+    {
+    @UI.facet: [ { type: #COLLECTION, position: 1, id: 'ROOM', label: 'Room'  }, { type: #IDENTIFICATION_REFERENCE, position: 1, parentId: 'ROOM', label: 'General Information'}]
+    @EndUserText: { label: 'ID' }
+    @Search: { defaultSearchElement: true }
+    @UI: { lineItem: [{ position: 1 }], identification: [{ position: 1 }] }
+    key room.id,
+    @EndUserText: { label: 'Seats' }
+    @UI: { lineItem: [{ position: 3 }], identification: [{ position: 2 }] }
+    room.seats,
+    @EndUserText: { label: 'Location' }
+    @UI: { lineItem: [{ position: 4 }], identification: [{ position: 3 }] }
+    room.location,
+    @EndUserText: { label: 'Has Beamer' }
+    @UI: { lineItem: [{ position: 5 }], identification: [{ position: 4 }] }
+    room.hasbeamer,
+    @EndUserText: { label: 'Has Video' }
+    @UI: { lineItem: [{ position: 7 }], identification: [{ position: 5 }] }
+    room.hasvideo,
+    @EndUserText: { label: 'User Rating' }
+    @UI: { lineItem: [{ position: 8 }], identification: [{ position: 6 }] }
+    userrating,
+    @EndUserText: { label: 'Last Changed On' }
+    @UI: { identification: [{ position: 7 }] }
+    room.lastchangeddatetime,
+    @EndUserText: { label: 'Last Changed By' }
+    @UI: { identification: [{ position: 8 }], textArrangement: #TEXT_ONLY }
+    room.lastchangedbyuser,
+    @UI.hidden: true
+    _SAPSysAdminDataChangeUser  
+    }
     ```
 
       Save and activate.

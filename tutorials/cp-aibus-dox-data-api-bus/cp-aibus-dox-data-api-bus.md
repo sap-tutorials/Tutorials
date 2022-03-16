@@ -119,15 +119,19 @@ Use the **POST /data/jobs** endpoint to add your own master data records to the 
           {
              "id":"BE0001",
              "name":"Sliced Invoices",
-             "address1":"123 Somewhere Street Your AZ 12345 123 Somewhere St Melbourne, VIC 3000"             
+             "address1":"Suite 5A-1204 123 Somewhere Street Your City AZ 12345",
+             "bankAccount":"DE32245443233324",
+             "taxId":"DE123456788"
           },
           {
              "id":"BE0002",
              "name":"Sliced",
-             "address1":"123 Somewhere Street Your AZ 12345 123 Somewhere St Melbourne, VIC 3000"            
+             "address1":"Suite 9A-1204 123 Somewhere Boulevard Your City AZ 32323",
+             "bankAccount":"DE32245443233325",
+             "taxId":"DE123456789"
           }
        ]
-    }
+    }    
     ```
 
 4. Choose the enrichment data **`type`** `businessEntity`.

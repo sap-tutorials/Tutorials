@@ -4,12 +4,12 @@ description: Learn how to access details of triggered alerts, as well as how to 
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database]
-primary_tag: products>sap-hana-cloud
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
  - Access to an SAP HANA Cloud trial or production instance with a version of 2021 QRC 3 or higher.
- - A tool such as the REST Client extension for Visual Studio Code enabling the calling of a REST AP.
+ - A tool such as the REST Client extension for Visual Studio Code enabling the calling of a REST API.
 
 ## Details
 ### You will learn
@@ -82,7 +82,7 @@ There are multiple tools that enable making calls to a REST API such as Postman,
 
     ![sample RESP API Call](sample-REST-call.png)
 
-    Notice that the URL includes the URL parameters `firstname` and `lastname`.  The first parameter is indicated with a ?, while the subsequent parameters are indicated by an &.
+    Notice that the URL includes the URL parameters `firstname` and `lastname`.  The first parameter is indicated with a `?`, while the subsequent parameters are indicated by an `&`.
 
 [DONE]
 [ACCORDION-END]
@@ -168,11 +168,21 @@ The following instructions will show a few examples of how to view the list of t
     ###
 
     #Get the triggered alerts (events) for a specific instance for a specific time period
-    GET {{gateway_url}}.{{host}}/alerts/v1/serviceInstances/{{serviceInstance}}/events?alertState=All&severity=NOTICE,WARNING,ERROR&startTimestamp=2021-09-13T15:04:05Z&endTimestamp=2021-09-14T15:04:05Z
+    GET {{gateway_url}}.{{host}}/alerts/v1/serviceInstances/{{serviceInstance}}/events?alertState=All&severity=NOTICE,WARNING,ERROR&startTimestamp=2022-02-15T15:04:00Z&endTimestamp=2022-02-20T15:07:00Z
     Authorization: Bearer {{bearer}}
 
     ###
     ```
+
+    > Note the timestamps should be adjusted to current values.  
+
+    >---
+
+    > Note that alert data is only persisted for a fixed amount of time after the current date such as 7 days.
+
+    > ---
+
+    > The `endTimestamp` is optional.
 
 3. Try out the events calls.
 
@@ -183,7 +193,7 @@ The following instructions will show a few examples of how to view the list of t
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Access database metrics)]
+[ACCORDION-BEGIN [Step 4: ](Access database metrics)]
 
 The following instructions will show a few examples of how to view metrics through a REST API in SAP HANA Cloud, SAP HANA database.
 
@@ -205,11 +215,21 @@ The following instructions will show a few examples of how to view metrics throu
     ###
 
     #Get the metric HDBMemoryUsed for a time range (values)
-    GET {{gateway_url}}.{{host}}/metrics/v1/serviceInstances/{{serviceInstance}}/values?names=HDBMemoryUsed&startTimestamp=2021-09-06T13:00:00Z&endTimestamp=2021-09-06T13:03:00Z
+    GET {{gateway_url}}.{{host}}/metrics/v1/serviceInstances/{{serviceInstance}}/values?names=HDBMemoryUsed&startTimestamp=2022-02-15T13:00:00Z&endTimestamp=2022-02-20T13:03:00Z
     Authorization: Bearer {{bearer}}
 
     ###
     ```
+
+    > Note the timestamps should be adjusted to current values.  
+
+    >---
+
+    > Note that metrics data is only persisted for a fixed amount of time after the current date such as 7 days.
+
+    > ---
+
+    > The `endTimestamp` is optional.
 
 2. Try out the definitions call to get a list of the available metrics
 

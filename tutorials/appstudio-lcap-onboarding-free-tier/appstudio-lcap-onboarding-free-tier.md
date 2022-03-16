@@ -11,7 +11,7 @@ author_profile: https://github.com/raz-korn
 
 ## Prerequisites
  - You have a global account (Enterprise Account) that is CPEA enabled, see [Getting a Global Account](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/d61c2819034b48e68145c45c36acba6e.html)
- - Access to SAP BTP account in AWS (Frankfurt) (EU10) with Low-Code/No-Code entitlements
+ - The global account has Low-Code/No-Code entitlements (SAP AppGyver and SAP Business Application Studio)
  - 4 units of SAP BTP, Cloud Foundry Runtime
 
 ## Details
@@ -83,23 +83,25 @@ In this step, you will remove the SAP Business Application Studio subscription t
 
 This is to adjust SAP Business Application Studio Subscription for Free-Tier Plan.
 
-5. Choose **Navigate to Subaccount**.
+1. Choose **Navigate to Subaccount**.
 
     !![Navigate to subaccount](LCNC Booster-10-.png)
 
     >You're now in your newly created SAP BTP subaccount.
 
-1. In the navigation pane of your subaccount, choose **Instances and Subscriptions**.
+2. In the navigation pane of your subaccount, choose **Instances and Subscriptions**.
 
     !![locate bas subscription](BAS LCAP Delete Subscription-1-.png)
 
-2. In the Subscriptions section, choose **SAP Business Application Studio** subscription and choose **Delete**.
+3. In the Subscriptions section, choose **SAP Business Application Studio** subscription and choose **Delete**.
 
     !![delete bas subscription](BAS LCAP Delete Subscription-2-.png)
 
-3. Choose **Delete Subscription** to confirm.
+4. Choose **Delete Subscription** to confirm.
 
     !![confirm delete bas subscription](BAS LCAP Delete Subscription-3-.png)
+
+    The subscription to SAP AppGyver provides access to the Application Development Lobby that is used in order to launch SAP Business Application Studio for low-code development.
 
     Your SAP Business Application Studio subscription with the Standard edition (paid) plan is deleted.
 
@@ -190,7 +192,7 @@ In this step, you will assign the role collections for your users to use low-cod
 
     !![check bas admin role](BAS LCAP Role Collections Assignment-5-.png)
 
-6. Verify your added role, choose **Save**.
+6. Verify your added role, choose **Save**. 
 
     !![bas admin role added](BAS LCAP Role Collections Assignment-6-.png)
 
@@ -221,6 +223,11 @@ From the Application Development lobby, you can manage your low-code and no-code
     !![Open application development lobby](BAS LCAP Open the Application Development Lobby-3-.png)
 
     You're now in the Application Development lobby.
+
+    >**Bookmark this page!**
+
+    >If you create a bookmark to this page, it is easy to get back to Application Development Lobby later.
+
 
     !![application development lobby](BAS LCAP Open the Application Development Lobby-4-.png)
 
