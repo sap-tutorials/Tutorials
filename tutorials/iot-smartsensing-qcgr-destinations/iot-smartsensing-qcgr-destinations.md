@@ -39,8 +39,7 @@ Create a Destination which will allow you to create a Goods Receipt. You will in
     |  Name           | **`E5Z_PostGoodsReceipt_SAP_COM_0106`**  | of your choice, will be used in SAP IoT Action |
     |  Type           | `HTTP` |  |
     |  Description    |  | of your choice |
-    |  URL            | **`https://my300000.s4hana.ondemand.com/sap/opu/odata/sap/API_INBOUND_DELIVERY_SRV;
-    v=0002/PostGoodsReceipt?DeliveryDocument='^{lastValue(${thresholdCheck.deliveryDocument})}'`** | URL to the Goods Receipt API incl. placeholder tokens of your SAP S/4HANA Cloud system or Virtual Host for SAP S/4HANA |
+    |  URL            | **`https://my300000.s4hana.ondemand.com/sap/opu/odata/sap/API_INBOUND_DELIVERY_SRV;v=0002/PostGoodsReceipt?DeliveryDocument='^{lastValue(${thresholdCheck.deliveryDocument})}'`** | URL to the Goods Receipt API incl. placeholder tokens of your SAP S/4HANA Cloud system or Virtual Host for SAP S/4HANA |
     |  Proxy Type     | `Internet` or `OnPremise`| depending on Cloud or On-premise system |
     |  Authentication | `BasicAuthentication`, `OAuth2ClientCredentials` ... | based on your setup in the Communication Arrangement or Cloud Connector |
 
@@ -51,9 +50,8 @@ Create a Destination which will allow you to create a Goods Receipt. You will in
 
     |  Property Name    | Value |     Remark
     |  :-------------   | :-------------    | :-------------
-    |  `sap.iot.etagURL`          | **`https://my300000.s4hana.ondemand.com/sap/opu/odata/sap/API_INBOUND_DELIVERY_SRV;
-    v=0002/PostGoodsReceipt?DeliveryDocument='^{lastValue(${thresholdCheck.deliveryDocument})}'`** | URL to the Goods Receipt APIs incl. placeholder tokens of your SAP S/4HANA Cloud system or Virtual Host for SAP S/4HANA |
-    |  `sap.iot.XcsrfURL`     | **`https://my300000.s4hana.ondemand.com/sap/opu/odata/sap/API_INBOUND_DELIVERY_SRV;v=0002/PostGoodsReceipt?DeliveryDocument='^{lastValue(${thresholdCheck.deliveryDocument})}'`**  | URL to the Goods Receipt APIs incl. placeholder tokens of your SAP S/4HANA Cloud system or Virtual Host for SAP S/4HANA |
+    |  `sap.iot.etagURL`          | **`https://my300000.s4hana.ondemand.com/sap/opu/odata/sap/API_INBOUND_DELIVERY_SRV;v=0002/A_InbDeliveryHeader('^{lastValue(${thresholdCheck.deliveryDocument})}')`** | URL to the Goods Receipt APIs incl. placeholder tokens of your SAP S/4HANA Cloud system or Virtual Host for SAP S/4HANA |
+    |  `sap.iot.XcsrfURL`     | **`https://my300000.s4hana.ondemand.com/sap/opu/odata/sap/API_INBOUND_DELIVERY_SRV;v=0002/A_InbDeliveryHeader('^{lastValue(${thresholdCheck.deliveryDocument})}')`**  | URL to the Goods Receipt APIs incl. placeholder tokens of your SAP S/4HANA Cloud system or Virtual Host for SAP S/4HANA |
 
     > The property `sap.iot.etagURL` retrieves and adds an `ETag` Token during Action execution. It is an identifier for a specific version of a resource and helps to prevent simultaneous updates of a resource from overwriting each other.
     >
