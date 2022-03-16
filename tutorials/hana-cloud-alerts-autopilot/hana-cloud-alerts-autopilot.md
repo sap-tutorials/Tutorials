@@ -1,6 +1,6 @@
 ---
-title: Take Action Following an SAP HANA Cloud Database Alert with SAP Automation Pilot
-description: Learn how the SAP Automation Pilot can be used together with the SAP Alert Notification Service to react to an SAP HANA database alert.
+title: Take Action Following a SAP HANA Cloud Database Alert with SAP Automation Pilot
+description: Learn how the SAP Automation Pilot can be used together with the SAP Alert Notification Service to react to a SAP HANA database alert.
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product>sap-alert-notification-service-for-sap-btp]
@@ -14,16 +14,16 @@ primary_tag: software-product>sap-hana-cloud
 ## Details
 ### You will learn
   - How to setup and become familiar with the SAP Automation Pilot
-  - How to create a catalog, an input, and a custom command with multiple executors that will request a storage resize of an SAP HANA database instance
-  - How to trigger an SAP Automation Pilot command from the Alert Notification Service
+  - How to create a catalog, an input, and a custom command with multiple executors that will request a storage resize of a SAP HANA database instance
+  - How to trigger a SAP Automation Pilot command from the Alert Notification Service
 
-An SAP HANA Cloud database or a data lake Relational Engine instance have a set of built-in alerts that when triggered, are sent to the SAP Alert Notification Service (ANS).  This service, in addition to being able to forward details of the alert to various channels (email, Microsoft Teams, Slack, etc.), can trigger an [SAP Automation Pilot](https://discovery-center.cloud.sap/serviceCatalog/automation-pilot?region=all) command.  In this tutorial, a command will be created to attempt to resolve a disk use alert.
+A SAP HANA Cloud database or a data lake Relational Engine instance have a set of built-in alerts that when triggered, are sent to the SAP Alert Notification Service (ANS).  This service, in addition to being able to forward details of the alert to various channels (email, Microsoft Teams, Slack, etc.), can trigger a [SAP Automation Pilot](https://discovery-center.cloud.sap/serviceCatalog/automation-pilot?region=all) command.  In this tutorial, a command will be created to attempt to resolve a disk use alert.
 
 ![overview](overview.png)
 
-SAP Automation Pilot includes [provided commands](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/5bbe7dba99d24caeafddf7fa62dc63b9.html) for various services in the BTP, a [scheduler](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/96863a2380d24ba4bab0145bbd78e411.html), and the ability to create new commands.  Examples of the provided commands for an SAP HANA Cloud, SAP HANA database include start, stop, and restart and for Cloud Foundry include `GetCfServiceInstance` and `UpdateCfServiceInstance`.  Commands can be created using a BASH script, Python, Node.js or Perl as described at [Execute Script](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/d0854dbb80d84946bb57791db94b7e20.html).
+SAP Automation Pilot includes [provided commands](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/5bbe7dba99d24caeafddf7fa62dc63b9.html) for various services in the BTP, a [scheduler](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/96863a2380d24ba4bab0145bbd78e411.html), and the ability to create new commands.  Examples of the provided commands for a SAP HANA Cloud, SAP HANA database include start, stop, and restart and for Cloud Foundry include `GetCfServiceInstance` and `UpdateCfServiceInstance`.  Commands can be created using a BASH script, Python, Node.js or Perl as described at [Execute Script](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/d0854dbb80d84946bb57791db94b7e20.html).
 
-This tutorial will demonstrate the integration between a triggered database alert, SAP Alert Notification Service, SAP Automation Pilot, and concludes with an example of requesting a storage resize of an SAP HANA database instance based on a disk usage alert.
+This tutorial will demonstrate the integration between a triggered database alert, SAP Alert Notification Service, SAP Automation Pilot, and concludes with an example of requesting a storage resize of a SAP HANA database instance based on a disk usage alert.
 
 
 ---
@@ -57,9 +57,9 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
     > If you receive a permission error, you may need to log out and log in again for the role assigned in the previous step to take effect.
 
-4. Notice that it provides a set of catalogues containing provided commands and inputs including ones for Cloud Foundry and database lifecycle management.  Provided catalogs are groups of commands and inputs that are provided by the SAP Automation Pilot.  Own catalogues are those that are user created and contain user created commands and inputs.  Catalogues provide a way to group a collection of related commands and inputs.
+4. Notice that it provides a set of catalogs containing provided commands and inputs including ones for Cloud Foundry and database lifecycle management.  Provided catalogs are groups of commands and inputs that are provided by the SAP Automation Pilot.  Own catalogs are those that are user created and contain user created commands and inputs.  Catalogs provide a way to group a collection of related commands and inputs.
 
-    ![Provided catalogues](provided-catalogues.png)
+    ![Provided catalogs](provided-catalogues.png)
 
     >Commands can also be scheduled.  An example may be to schedule the start and stopping of a database instance.  
 
@@ -126,7 +126,7 @@ At this point, you should now have a subscription to the SAP Automation Pilot se
 
 [ACCORDION-BEGIN [Step 2: ](Create a catalog, an input, and a command)]
 
-This step will create a catalog that contains a command and an input.  The input will have a user name and password for the SAP Business Technology Platform, and the command when completed, will retrieve the details of an SAP HANA Cloud instance that sent a database alert such a `HDBDiskUsage` alert.
+This step will create a catalog that contains a command and an input.  The input will have a user name and password for the SAP Business Technology Platform, and the command when completed, will retrieve the details of a SAP HANA Cloud instance that sent a database alert such a `HDBDiskUsage` alert.
 
 1. Create a new catalog.
 
@@ -153,7 +153,7 @@ This step will create a catalog that contains a command and an input.  The input
 
     ![input with keys](input.png)
 
-    >Note these credentials will be used by a Cloud Foundry command to return the details of an SAP HANA database service.  Ensure the user can login successfully to a site such as [SAP Community](https://community.sap.com/) and not have two-factor authentication enabled.  The user should appear under the members list at the space level in the BTP Cockpit and have the role space developer.  Additional details on creating a technical user can be found at [Creating a Technical User for Cloud Platform Integration](https://blogs.sap.com/2018/08/17/creating-a-technical-user-for-cloud-platform-integration/).
+    >Note these credentials will be used by a Cloud Foundry command to return the details of a SAP HANA database service.  Ensure the user can log in successfully to a site such as [SAP Community](https://community.sap.com/) and not have two-factor authentication enabled.  The user should appear under the members list at the space level in the BTP Cockpit and have the role space developer.  Additional details on creating a technical user can be found at [Creating a Technical User for Cloud Platform Integration](https://blogs.sap.com/2018/08/17/creating-a-technical-user-for-cloud-platform-integration/).
 
     >![space members](space-members.png)
 
@@ -232,7 +232,7 @@ This step will create a catalog that contains a command and an input.  The input
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Trigger a command from an SAP Alert Notification Service alert)]
+[ACCORDION-BEGIN [Step 3: ](Trigger a command from a SAP Alert Notification Service alert)]
 
 This step will configure the SAP Alert Notification Service to invoke the previously created command when a database alert is received.  
 
@@ -382,7 +382,7 @@ This step will configure the SAP Alert Notification Service to invoke the previo
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Increase the storage size of an SAP HANA Cloud database using a command)]
+[ACCORDION-BEGIN [Step 4: ](Increase the storage size of a SAP HANA Cloud database using a command)]
 
 This step will add an executor to calculate a new storage size for the SAP HANA instance based on its current size and will then use a provided command to request the SAP HANA Cloud database to increase its storage size.  
 
@@ -390,7 +390,7 @@ This step will add an executor to calculate a new storage size for the SAP HANA 
 
 >---
 
->This example is for demonstration purposes only.  Consult the [SAP HANA Cloud Capacity Unit Estimator](https://hcsizingestimator.cfapps.eu10.hana.ondemand.com/) for further details on how the storage size affects capacity units.  It is not possible to decrease the storage size.  For additional details see [Change the Size of an SAP HANA Database Instance](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/85eb089a368b4d1eb5e4f8322d1a0b6b.html).
+>This example is for demonstration purposes only.  Consult the [SAP HANA Cloud Capacity Unit Estimator](https://hcsizingestimator.cfapps.eu10.hana.ondemand.com/) for further details on how the storage size affects capacity units.  It is not possible to decrease the storage size.  For additional details see [Change the Size of a SAP HANA Database Instance](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/85eb089a368b4d1eb5e4f8322d1a0b6b.html).
 
 1. In the SAP Automation Pilot, open the command `ResizeHANACloudStorage ` and add an executor.
 
@@ -479,7 +479,7 @@ This step will add an executor to calculate a new storage size for the SAP HANA 
 
     ![SAP HANA Cloud Storage](sap-hana-cloud-central.png)
 
-    >Note that there may be restrictions on how often an instance can have its storage resized within a period of time and there may be downtime required.  For additional details see [Change the Size of an SAP HANA Database Instance Using the CLI](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/5f4823c45d654d1da28682f03f58ccf7.html).
+    >Note that there may be restrictions on how often an instance can have its storage resized within a period of time and there may be downtime required.  For additional details see [Change the Size of a SAP HANA Database Instance Using the CLI](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/5f4823c45d654d1da28682f03f58ccf7.html).
 
 10. Now that the test of this command was successful using the `HDBTestAlert`, either disable the action in the subscription in the SAP Alert Notification Service or change the condition in the subscription to use `HDBDiskUsage`.  Additional details on this alert can be found at [HDB Disk Usage](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/807a9f0021354fcc856cbf29cb4f7f18.html).  By default the disk usage alert will create an alert with severity ERROR on 98 % disk usage, which then triggers a storage increase of 40 GB.
 

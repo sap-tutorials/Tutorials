@@ -8,7 +8,7 @@ primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
- - Access to an SAP HANA Cloud trial or production instance.
+ - Access to a SAP HANA Cloud trial or production instance.
 
 ## Details
 ### You will learn
@@ -40,7 +40,7 @@ In this step, the SAP HANA cockpit will be used to examine three alert definitio
 
     ![alerts definitions in the cockpit](alert-defintions-cockpit.png)  
 
-    Notice that alerts have a name, ID, description, category, and a suggested user action such as an SAP Note.
+    Notice that alerts have a name, ID, description, category, and a suggested user action such as a SAP Note.
 
     ![restarted-services-alert-details](alert-definitions-cockpit-details.png)
 
@@ -87,7 +87,7 @@ In this step, the SAP HANA cockpit will be used to examine three alert definitio
 
 [ACCORDION-BEGIN [Step 2: ](Trigger alerts in a SAP HANA database)]
 
-The following instructions demonstrate a few examples of triggering alerts in an SAP HANA database.      
+The following instructions demonstrate a few examples of triggering alerts in a SAP HANA database.      
 > Ensure these actions are performed on a non-production system such as a trial account or only use the test alert.
 
 1. Open the SAP HANA database explorer.
@@ -114,7 +114,7 @@ The following instructions demonstrate a few examples of triggering alerts in an
     END;
     ```
 
-    >Long running statements can be run as a background activities in the SAP database explorer which will continue even if the browser's connection drops or the tab is closed.  
+    >Long running statements can be run as background activities in the SAP database explorer which will continue even if the browser's connection drops or the tab is closed.  
     >
     >![run as a background activity](run-as-background.png)
     >
@@ -251,7 +251,7 @@ The Business Technology Platform (BTP) includes a service called the Alert Notif
 
 For an overview of ANS and information about the different service plans including free tier, see [SAP Alert Notification Service for SAP BTP](https://discovery-center.cloud.sap/serviceCatalog/alert-notification-service?tab=feature&region=all&service_plan=standard) in the SAP Discovery Center and watch the associated video [SAP Alert Notification service for SAP BTP - Overview](https://www.youtube.com/watch?v=_DInhi4Skn4).
 
-In this step, ANS will be configured to act on the incoming notifications by sending an email with the details of the alert.  First, an instance of the alert notification service will be created.  Then, two conditions will be created; one that matches notifications sent from an SAP HANA database and the other from a data lake.  An email action will also be created that describes who to send an email to and what content to include in the email when one of the conditions occurs.  Finally, a subscription will be created that will use the two conditions and the action.  Having the conditions and actions separate from the subscription enables them to be reused in multiple subscriptions.   
+In this step, ANS will be configured to act on the incoming notifications by sending an email with the details of the alert.  First, an instance of the alert notification service will be created.  Then, two conditions will be created; one that matches notifications sent from a SAP HANA database and the other from a data lake.  An email action will also be created that describes who to send an email to and what content to include in the email when one of the conditions occurs.  Finally, a subscription will be created that will use the two conditions and the action.  Having the conditions and actions separate from the subscription enables them to be reused in multiple subscriptions.   
 
 1. Create an instance of the Alert Notification Service in the SAP BTP Cockpit.
 
