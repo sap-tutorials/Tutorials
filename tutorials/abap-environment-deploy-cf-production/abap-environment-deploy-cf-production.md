@@ -263,7 +263,7 @@ author_profile: https://github.com/mervey45
 
     When the deployment is successful, you will get these two information back as a result: **UIAD details** and **deployment successful**.
 
->**HINT: If you want to update your SAP Fiori Launchpad configuration, then you can o following steps:**
+>**HINT: If you want to update your SAP Fiori Launchpad configuration, then you can do following steps:**
 > 1. Go back to SAP Business Application Studio, select projects, right-click your project **`ztravel_app_xxx`** and select **Open in Terminal**.
 
 >![deploy](deploy.png)

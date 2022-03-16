@@ -117,7 +117,7 @@ Congratulations, you have created and activated your first Document Information 
 
 [ACCORDION-BEGIN [Step 4: ](Use template)]
 
-1.  Access **Document** on the left navigation pane and click **+** to upload a new template.
+1.  Access **Document** on the left navigation pane and click **+** to upload a new document.
 
     !![Use Template](png-files/access-document.png)
 

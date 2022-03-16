@@ -1,5 +1,5 @@
 ---
-title: Create SQLScript User Defined Libraries
+title: Create SQLScript User Defined Libraries 
 description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman

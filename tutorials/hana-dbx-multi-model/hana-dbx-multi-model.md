@@ -3,8 +3,8 @@ title: Try Out Multi-Model Functionality with the SAP HANA Database Explorer
 description: Explore graph, JSON document store, and spatial capabilities in the SAP HANA database explorer.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-spatial, software-product-function>sap-hana-graph]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, software-product-function>sap-hana-multi-model-processing, software-product-function>sap-hana-spatial, software-product-function>sap-hana-graph]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -15,6 +15,8 @@ primary_tag: products>sap-hana-cloud
 ### You will learn
   - How to create a graph, a document store, and import spatial data.
   - How the SAP HANA database explorer can be used with multi-model data.
+
+In SAP HANA, a graph is made up of a set of vertices and a set of edges. Vertices are stored in vertex tables, while edges are stored in edge tables. Vertex and edge tables are collectively denoted as graph tables.
 
 This tutorial is meant to be an introduction to this topic.  For a deeper dive on the topics of graph and spatial, see the tutorial groups [Introduction to SAP HANA Spatial Data Types](group.hana-aa-spatial-get-started) and [Smart Multi-Model Data Processing with SAP HANA Cloud](group.hana-cloud-smart-multi-model-data).
 
@@ -192,7 +194,9 @@ The following steps will demonstrate how to create a JSON collection that can be
 
 1. Enable the JSON document store.  
 
-    For an SAP HANA Cloud database, in the creation wizard, enable the document store.  ![enable the document store](hc-document-store.png)
+    For an SAP HANA Cloud database, in the creation wizard, enable the document store.  
+
+    ![enable the document store](hc-document-store.png)
 
     For an on-premise server, add the document service as described at [Enable the SAP HANA JSON Document Store](https://help.sap.com/viewer/3e48dd3ad36e41efbdf534a89fdf278f/latest/en-US/28334f8e631c447598d2591305b28660.html).
 
@@ -226,7 +230,7 @@ The following steps will demonstrate how to create a JSON collection that can be
 
     ![collection queries](join-query.png)
 
-    For additional details see the [SELECT Statement](https://help.sap.com/viewer/f2d68919a1ad437fac08cc7d1584ff56/2021_2_QRC/en-US/991ab0d69db542e992a61b4b40f348e8.html) in the JSON Document Store guide.
+    For additional details see the [SELECT Statement](https://help.sap.com/viewer/f2d68919a1ad437fac08cc7d1584ff56/latest/en-US/991ab0d69db542e992a61b4b40f348e8.html) in the JSON Document Store guide.
 
 5. The properties of the collection can also be viewed.
 
@@ -267,7 +271,9 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     Within the downloaded `ESRI shapefile`, there is a file named `Points_of_Interest.prj`.  This file mentions the spatial reference system used by this `ESRI shapefile`.  Specify **WGS 84** as the spatial reference system.
 
-    ![Choose schema and reference system](importESRI2.png)
+    !![Choose schema and reference system](importESRI2.png)
+
+    >By default, the database server adds the following [spatial reference systems](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a2ea357787c101488ecd1b725836f07.html) to a new database. Additionally, the [`ST_SPATIAL_REFERENCE_SYSTEMS`](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloudC/en-US/d23499bcd2951014ad38a3bd89faf03e.html) System View can be queried for available spatial reference systems.
 
 5. Rename the imported table as it was created using mixed case.
 
@@ -315,7 +321,7 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     For additional details, see [ST_Point Type](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a29e653787c1014813b997510a8cc06.html), [ST_Distance](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a182aa3787c101481f996e3d419c720.html), and [ST_WithinDistance](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a1cc028787c1014b4afe2c72ff94316.html).
 
-    To view all access methods for spatial data, see [SAP HANA Spatial Reference for SAP HANA Cloud - Accessing and Manipulating Spatial Data](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/2020_04_QRC/en-US/7a2d11d7787c1014ac3a8663250814c2.html).
+    To view all access methods for spatial data, see [SAP HANA Spatial Reference for SAP HANA Cloud - Accessing and Manipulating Spatial Data](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a2d11d7787c1014ac3a8663250814c2.html).
 
     >Note that the latitude and longitude for a location in Google Maps can be obtained for a given address via the marker's context menu.  
 

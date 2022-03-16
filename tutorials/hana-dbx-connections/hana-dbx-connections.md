@@ -1,10 +1,10 @@
 ---
 title: Add Databases to  the SAP HANA Database Explorer
-description: This tutorial will explore different database connections types, such as SAP HANA Cockpit Database, SAP HANA, Data Lake IQ, and SAP HANA Deployment Infrastructure (HDI), along with the different operations that can be performed on them.
+description: This tutorial will explore different database connections types, such as SAP HANA Cockpit Database, SAP HANA Cloud, data lake Relational Engine, and SAP HANA Deployment Infrastructure (HDI), along with the different operations that can be performed on them.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition, software-product-function>sap-hana-cloud\,-data-lake]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, software-product-function>sap-hana-cloud\,-data-lake]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -15,7 +15,7 @@ primary_tag: products>sap-hana-cloud
 - How to add different database types in the SAP HANA database explorer
 - Additional operations that can be performed on a database
 
-Database connections in the database explorer represent SAP HANA or Data Lake IQ databases that you browse and interact with.  
+Database connections in the database explorer represent SAP HANA or data lake Relational Engine databases that you browse and interact with.  
 
 ![SAP HANA Connections](connections.png)
 
@@ -29,7 +29,7 @@ SQL consoles are associated with a database connection.
 
 Databases defined in the SAP BTP cockpit or the SAP HANA cockpit can be opened in the SAP HANA database explorer.
 
-1.  From SAP HANA Cloud Central, choose **Open SAP HANA Database Explorer**.  
+1.  From SAP HANA Cloud Central, choose **Open in SAP HANA Database Explorer**.  
 
     ![Open in the database explorer](from-directory.png)
 
@@ -37,7 +37,7 @@ Databases defined in the SAP BTP cockpit or the SAP HANA cockpit can be opened i
 
     >---
 
-    >Note that the credentials can be saved so they do not need to be re-entered if they are entered into the SAP HANA Cockpit.
+    >Note that the credentials can be saved so they do not need to be re-entered if they are entered into the SAP HANA cockpit.
 
     Notice that when the SAP HANA database explorer opens, the selected database is the one from the selected tile or administered database.  Also note that the URL contains a `?databaseid=`.  
 
@@ -64,7 +64,7 @@ Databases can also be added directly to the SAP HANA database explorer.  To conn
 
     >Note that an SAP HANA, express edition or on-premise database can have two types of databases; system and tenant.  This is known as multitenant.  System databases are used to manage one or more tenant databases and are only applicable to on-premise systems.  For further details, see [Server Architecture of Tenant Databases](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6/latest/en-US/f9aba40d6c4c4ae48cce461db4d42d88.html).
 
-3.  Provide the host, port, user name, password, and name to show in display.
+3.  Provide the host, port, user name, password, and name to show in display. Below are instructions on how to obtain the host name and port number.
 
     ![encrypted connection](encrypted.png)
 
@@ -122,24 +122,24 @@ Databases can also be added directly to the SAP HANA database explorer.  To conn
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add a Data Lake IQ database)]
-A Data Lake IQ is a column oriented, disk based relational store that can be used to economically  store data that is not updated frequently.  Additional details can be found at [What is SAP HANA Cloud, Data Lake](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/228c19ac890046ecbe8e38a540c0cb6b.html).
+[ACCORDION-BEGIN [Step 3: ](Add a data lake Relational Engine database)]
+A data lake Relational Engine is a column oriented, disk based relational store that can be used to economically  store data that is not updated frequently.  Additional details can be found at [What is SAP HANA Cloud, Data Lake](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/228c19ac890046ecbe8e38a540c0cb6b.html).
 
 1.  Add a Data Lake.
 
-    ![add a data lake](add-data-lake.png)
+    !![add a data lake](add-data-lake.png)
 
     Ensure that the allowed connections list is set to **Allow all IP addresses**.
 
     ![allowed connections](allow-all.png)
 
-2.  In the database explorer, choose to add a new connection of type **Data Lake, IQ**.
+2.  In the database explorer, choose to add a new connection of type **Data Lake Relational Engine**.
 
     ![add database](add-database-dl.png)
 
     The user name is HDLADMIN.
 
-    ![Add Data Lake IQ](add-data-lake-connection.png)
+    ![Add Data Lake Relational Engine](add-data-lake-connection.png)
 
     The connection details can be copied from the instance tile.
 
@@ -215,7 +215,7 @@ For additional details on this parameter, see the `system_information` usage par
 
 
 [ACCORDION-BEGIN [Step 6: ](Database groups (Optional))]
-SAP HANA Cockpit databases can be grouped together.  This enables SQL statements to be run against a group of databases.
+SAP HANA cockpit databases can be grouped together.  This enables SQL statements to be run against a group of databases.
 
 !![run on multiple](run-on-multiple.png)  
 
@@ -251,7 +251,7 @@ SAP HANA Cockpit databases can be grouped together.  This enables SQL statements
 
     ![run on multiple databases in HXE](run-on-multiple-hxe.png)
 
-    >Note that the ability to see groups in the SAP HANA database explorer that have been created using the SAP HANA cockpit manager requires the SAP HANA database explorer to be opened from the SAP HANA Cockpit.
+    >Note that the ability to see groups in the SAP HANA database explorer that have been created using the SAP HANA cockpit manager requires the SAP HANA database explorer to be opened from the SAP HANA cockpit.
 
     >---
 
@@ -307,7 +307,7 @@ The following steps demonstrate how to use the SAP Business Application Studio o
     |  Schema name:   | `mySchema`
     |  SAP HANA Database Version: | HANA Cloud    
 
-8.  Once the project generation finishes, open the tool palette (F1) and choose  **SAP HANA: Create SAP HANA Database Artifact**.  Provide the following values and click **Finish**.
+8.  Once the project generation finishes, open the tool palette (F1) and choose  **SAP HANA: Create SAP HANA Database Artifact**.  Provide the following values and click **Create**.
 
     |  Setting     | Value
     |  :------------- | :-------------

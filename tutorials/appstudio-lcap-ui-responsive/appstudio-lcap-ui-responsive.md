@@ -30,8 +30,9 @@ author_profile: https://github.com/raz-korn
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
-    | A | Application name | **`CapexReport`** |
-    | B | Description | **List of Expenses** |
+    | A | Display name | **`Capex Report`** |
+    | B | Application name | **`CapexReport`** |
+    | C | Description | **List of Expenses** |
 
     !![bas lcap launch create ui wizard - ui application details](BAS-LCAP-Add-UI-Responsive-2-.png)
 
@@ -58,22 +59,18 @@ author_profile: https://github.com/raz-korn
 
     The app is added to the **User Interface** tab in the home page.
 
-    The **Page Map** (`CapitalExpendituresCapexReport`) editor is opened side-by-side to the home page.
+    The **Page Map** (`CapexReport`) editor is opened side-by-side to the home page.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Preview the app)]
 
-1. Choose the **Preview** option to preview (test run) the app.
+1. If the preview is running, choose **Stop Preview**. If the **Project Preview** tab is open, close it.
 
-    !![bas lcap preview app - launch preview](BAS-LCAP-Preview-Generated-UI-Responsive-1-.png)
+2. Choose **Preview** > **With Sample Data** to preview (test run) the app.
 
-2. Select the **/launchpage.html** link to launch a launch page with the app's tile in it.
-
-    !![bas lcap preview app - launch launch page](BAS-LCAP-Preview-Generated-UI-Responsive-3-.png)
-
-3. Choose the application's tile to launch the app.
+3. In the **Project Preview** tab, choose the **`Capex Report`** application's tile to launch the app.
 
     !![bas lcap preview app - launch app](BAS-LCAP-Preview-Generated-UI-Responsive-4-.png)
 
@@ -101,13 +98,11 @@ author_profile: https://github.com/raz-korn
 
 To avoid clicking on **Go** option every time you want to present the information in the list page, in this section you'll configure the page to load the initial data as soon as it is loaded.
 
-1. Click the **Back** button until you return to the launch page.
+1. Close the browser tab where the **`Capex Report`** application is running.
 
-    !![bas lcap enable initial load - return to launch page](BAS-LCAP-Load-Initial-Data-1-.png)
+2. In the **Project Preview** tab, choose the **`Capex Report`** application's tile to launch the app.
 
-2. Choose the application tile to launch the app.
-
-    !![bas lcap enable initial load - launch app](BAS-LCAP-Load-Initial-Data-2-.png)
+    !![bas lcap preview app - launch app](BAS-LCAP-Preview-Generated-UI-Responsive-4-.png)
 
 3. The app is loaded with an empty list page.
 
@@ -157,7 +152,7 @@ To avoid clicking on **Go** option every time you want to present the informatio
 
     !![bas lcap list page update columns title - change contractor_contractor label](BAS-LCAP-Update-Column-Titles-5-.png)
 
-6. you can see that in the application's tab the column titles changed as per your updates.
+6. you can see that in the application's tab the column titles changed as per your updates. 
 
     !![bas lcap list page update columns title - preview app](BAS-LCAP-Update-Column-Titles-6-.png)
 

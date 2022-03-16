@@ -5,7 +5,7 @@ title: Configure IoT Edge Account
 description: Create the technical users and configure your tenant for the onboarding process.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment, tutorial>license]
+tags: [ tutorial>beginner, software-product-function>sap-btp-cockpit, software-product>sap-business-technology-platform, software-product>sap-btp--cloud-foundry-environment, tutorial>license]
 primary_tag: topic>internet-of-things
 ---
 
@@ -13,9 +13,8 @@ primary_tag: topic>internet-of-things
 
  -   You have licensed SAP Internet of Things (with the new capacity unit based licensing introduced in August 2020, your company has a Cloud Platform Enterprise Agreement or Pay-As-You-Go for SAP BTP and you have subscribed to the `oneproduct` service plan)
  -   You have setup the subscription for SAP IoT in your global account in a tenant (e.g. in the DEV tenant, the guide for the basic setup is at [Get Started with Your SAP IoT Account](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest/en-US/bfe6a46a13d14222949072bf330ff2f4.html) ).
- - Your tenant has been enrolled in the [SAP Early Adopter Care Program](http://help.sap.com/disclaimer?site=https://apps.support.sap.com/sap/support/ons/default.htm?ons_version=2&ons_hotlink_id=0894EF24669E1EDA8EA120ADCC1900E4)
  - You have knowledge how to [manage users](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/a3bc7e863ac54c23ab856863b681c9f8.html) and [role collections](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/9e1bf57130ef466e8017eab298b40e5e.html) in the SAP Business Technology Platform
- - Your SAP User has at a minimum the `iot_role_collection` created during onboarding of your tenant and the associated roles (see [SAP Help on Providing Authorizations in](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest/en-US/2810dd61e0a8446d839c936f341ec46d.html) ) and all the required roles for the SAP Internet of Things Edge feature, see [Configure Role Collections for Users](https://help.sap.com/viewer/247022ddd1744053af376344471c0821/2109b/en-US/7e0ddf3d1ef24a42b68cd75fc526302c.html#5f0427eab54d467bb18871ce0d41e862.html)
+ - Your SAP User has at a minimum the `iot_role_collection` created during onboarding of your tenant and the associated roles (see [SAP Help on Providing Authorizations](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest/en-US/2810dd61e0a8446d839c936f341ec46d.html) ) and all the required roles for the SAP Internet of Things Edge feature, see [Configure Role Collections for Users](https://help.sap.com/viewer/247022ddd1744053af376344471c0821/2109b/en-US/7e0ddf3d1ef24a42b68cd75fc526302c.html#5f0427eab54d467bb18871ce0d41e862.html)
  -   You have already completed the [initial setup for the Identity Authentication Service](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/31af7da133874e199a7df1d42905241b.html)
 
 ## Details
@@ -27,9 +26,9 @@ For the first time initialisation, the Edge Lifecycle Management application req
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Initialize Onboarding UI)]
+[ACCORDION-BEGIN [Step 1: ](Initialize onboarding UI)]
 
-1.  Over the navigation area **Edge Services**, click on the **Edge Lifecycle Management** application in the SAP Internet of Things Fiori Launchpad
+1.  In the navigation area **IoT Edge**, click on the **Edge Lifecycle Management** application in the SAP Internet of Things Fiori Launchpad
 
 2.  Click on the **Add Edge Node**, check you have already satisfied all the prerequisites specified in the UI. Check all the checkboxes and press **Continue**
 
@@ -40,7 +39,7 @@ An empty form will be shown. To start compiling the form you have to create seve
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Container Registry user)]
+[ACCORDION-BEGIN [Step 2: ](Create a container registry user)]
 
 The first section of the **Add Edge Node** form contains the details for the `Repository-Based Shipment Channel (Container Registry)`. It requires a technical user to authenticate the Edge Lifecycle Management component in the Container Registry to download the SAP container images.
 
