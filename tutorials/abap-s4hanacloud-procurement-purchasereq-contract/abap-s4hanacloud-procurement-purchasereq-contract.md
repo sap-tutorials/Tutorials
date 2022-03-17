@@ -2,7 +2,7 @@
 auto_validation: true
 title: Create Purchase Order and Purchase Contract
 description: Create a purchase contract via EML, then create a new purchase order with reference to the newly created purchase contract.
-primary_tag: topic>abap-development
+primary_tag: programming-tool>abap-development
 tags:  [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment]
 time: 25
 author_name: Merve Temel
