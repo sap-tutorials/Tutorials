@@ -2,8 +2,8 @@
 title: Introduce Caching to Your Application
 description: Introduce caching to your application using the SAP Cloud SDK.
 auto_validation: true
-primary_tag: products>sap-cloud-sdk
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-business-technology-platform, topic>cloud, programming-tool>java ]
+primary_tag: software-product>sap-cloud-sdk
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-business-technology-platform, topic>cloud, programming-tool>java ]
 time: 15
 ---
 
@@ -72,7 +72,7 @@ In [the resilience tutorial](s4sdk-resilience), you introduced resilience into y
 
 Add the following lines at the end of the constructor of the `GetBusinessPartnerCommand`:
 
-`./application/src/main/java/com/sap/cloud/sdk/tutorial/GetBusinessPartnersCommand.java`
+`./application/src/main/java/com/sap/cloud/sdk/tutorial/GetBusinessPartnerCommand.java`
 
 ```Java
 final ResilienceConfiguration.CacheConfiguration cacheConfig =
