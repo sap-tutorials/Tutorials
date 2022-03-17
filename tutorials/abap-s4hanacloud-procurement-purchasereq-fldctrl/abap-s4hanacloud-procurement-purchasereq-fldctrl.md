@@ -1,9 +1,9 @@
 ---
-title: Implement a Field Control Using a Business Add-in (BAdI)
+title: Implement a Field Control Using a Business Add-in (BAdI) 
 description: Hide Prices for a Specified User Using a Business Add-in (BAdI) for a Purchase Requisition
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment]
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment]
 primary_tag: programming-tool>abap-development
 ---
 

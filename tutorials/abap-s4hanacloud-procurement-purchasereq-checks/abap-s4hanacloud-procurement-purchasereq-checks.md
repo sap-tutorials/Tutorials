@@ -3,7 +3,7 @@ title: Implement a Business Add-in (`BAdI`) To Check a Purchase Requisition
 description: Define and implement a developer extension (`BAdI`), which performs checks during creation of a purchase requisition item.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment]
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment]
 primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
@@ -133,6 +133,10 @@ The `BAdI` enhancement spot appears in a new editor, showing you the available `
 To help you create your own enhancements, example classes are provided (2).
 
 !![step2d-enhancement-spot-editor](step2d-enhancement-spot-editor.png)    
+
+You can also call up the example class documentation by selecting the `BAdI` and choosing **ABAP Element Info**.
+
+!![step3d-open-docu](step3d-open-docu.png)
 
 [DONE]
 [ACCORDION-END]

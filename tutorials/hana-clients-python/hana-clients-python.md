@@ -110,6 +110,21 @@ pip install hdbcli
 > pip install hdbcli==2.4.167
 > ```
 
+> ---
+
+> The list of installed packages can be shown with the following command.
+>
+> ```Shell
+> pip list
+> ```
+
+> ---
+
+> Details of an installed package such as `hdbcli` can be shown with the following command.
+>
+> ```Shell
+> pip show hdbcli
+> ```
 
 [DONE]
 [ACCORDION-END]
