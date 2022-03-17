@@ -36,14 +36,6 @@ Let's first look at the toolbar. In the toolbar, you can save a copy, share with
 |  6              | **Controls**            | View all filters applied to the page and widgets.
 |  7              | **Edit/View**           | Toggle between Edit and View modes. Edit mode enables a Design panel and a larger toolbar filled with features and capabilities that you can use to build stunning and interactive dashboards and reports.  Note that Edit mode is available only if you have rights to edit the story.
 
-<!-- 1. **File** - Go here to export, share, schedule, and publish your story to the catalog.
-2. **Edit** - Reset your story to its original view state, refresh your story data, copy, and paste widgets.
-3. **Tools** - where you can **Edit Prompts** for your data models, **Bookmark** the current state of your story, run **Formulas** on table cells, and lastly create **Story Filters** that filter data story-wide.
-4. **Display** – Toggle Comment Mode and Tab Display (page navigation option) on or off. We'll use these in Step 2.
-5. **Quick Access Icons** – Apply story filters, refresh data, and add bookmarks with just one click.
-6. **Controls** - View all filters applied to the page and widgets.
-7. **Edit/View** – Toggle between Edit and View modes. Edit mode enables a Design panel and a larger toolbar filled with features and capabilities that you can use to build stunning and interactive dashboards and reports.  Note that Edit mode is available only if you have rights to edit the story. -->
-
 >If you have a Trial account, the File menu is not shown when in View mode for the Sample Story due to stricter permissions.
 
 >![File Access](File Access resized.png)

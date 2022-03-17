@@ -25,7 +25,7 @@ primary_tag: software-product>sap-analytics-cloud
 
 [ACCORDION-BEGIN [Step 1: ](Bookmark the State of the Story)]
 
-We can bookmark the state of a story to include the current selections in story filters, input controls, prompts, explorer views, and variances so that we don't need to make these selections repeatedly each time we open the story.
+You can bookmark the state of a story to include the current selections in story filters, input controls, prompts, explorer views, and variances so that you don't need to make these selections repeatedly each time you open the story.
 
 If you were only responsible for the performance of sales in Oregon, your manager would most likely share a bookmarked version of the story containing only Oregon data. To create a bookmark, click on **Tools** > **Bookmark** > **Bookmark Current State**.
 

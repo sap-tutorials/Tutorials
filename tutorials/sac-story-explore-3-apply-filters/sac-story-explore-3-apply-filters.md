@@ -97,7 +97,7 @@ Now that the Filter bar is enabled, let's go over the following scenario:
 **Scenario**: Analyze the performance of all sales managers except `Janet Bury`, `Nancy Miller`, and `Kiran Raj`.    
 
 
-1. Since we want to only see specific sales managers and exclude the rest, we need to filter on the Sales Manager dimension as seen below.  
+1. Since you want to only see specific sales managers and exclude the rest, you need to filter on the Sales Manager dimension as seen below.  
 
       ![Story Filter](Story Filter 1.gif)
 
@@ -107,7 +107,7 @@ Now that the Filter bar is enabled, let's go over the following scenario:
 
       ![Story Filter 2](Story Filter 2.png)
 
-Click **OK** and see how the results in the Story has changed. To remove this filter, click the **X** symbol in the Sales Manager filter we made.
+Click **OK** and see how the results in the Story has changed. To remove this filter, click the **X** symbol in the Sales Manager filter you made.
 
 ![Remove Filter](Remove Filter.png)
 

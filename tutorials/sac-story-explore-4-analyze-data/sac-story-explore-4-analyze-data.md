@@ -34,7 +34,7 @@ The difference is then displayed in absolute value and percentage. If you would 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Drill down on a Specific Segment)]
-Next, let's look at how we can drill up and down the data in the charts. If hierarchical dimensions are included in a chart, you can drill up or down through dimensions to explore the data at different levels.
+Next, let's look at how you can drill up and down the data in the charts. If hierarchical dimensions are included in a chart, you can drill up or down through dimensions to explore the data at different levels.
 
 <!-- For example, in most data models for sales data, you would have hierarchies defined for Dates and Locations. These hierarchies may look like this: Year > Month > Day and Country > Region > City. Below is an example of drilling into a hierarchy of a Location.    -->
 

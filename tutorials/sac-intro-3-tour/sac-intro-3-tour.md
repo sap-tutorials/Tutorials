@@ -25,7 +25,8 @@ primary_tag: software-product>sap-analytics-cloud
 
 After signing into SAP Analytics Cloud, you will see features and applications that can help you increase your work efficiency and productivity. These tools and applications are divided into three main parts.
 
-![Get to know SAC](Get to know SAC.png)  
+![Get to know SAC](Get to know SAC.png)
+
 
 1. Your personal **home screen** is the first page you see after signing into to SAP Analytics Cloud. You can personalize this page to suit your work style and needs and even pin visualizations to monitor specific key performance indicators better. We'll go over the home screen in more detail in the next section.
 

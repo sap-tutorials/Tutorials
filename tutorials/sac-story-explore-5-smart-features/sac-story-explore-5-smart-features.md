@@ -48,7 +48,7 @@ A tab will appear on the right displaying the contributors to the sales manager'
 
 ![Smart Insight](Insight Bottom 2.png)
 
-The first Insight summarizes the sales manager's performance over the most recent time period. The rest of the Insights for Quantity sold by `Kiran Raj` is listed clearly in the panel as well. We learn that the top contributors driving Quantity sold for `Kiran Raj` is the product `Orange Juice with Pulp`, the city of `Los Angeles`, and the `Montford Convenience` store. To learn more about this insight, click on ">" to expand the section.
+The first Insight summarizes the sales manager's performance over the most recent time period. The rest of the Insights for Quantity sold by `Kiran Raj` is listed clearly in the panel as well. It shows  that the top contributors driving Quantity sold for `Kiran Raj` is the product `Orange Juice with Pulp`, the city of `Los Angeles`, and the `Montford Convenience` store. To learn more about this insight, click on ">" to expand the section.
 
 ![Smart Insight](Insight Bottom 3.png)
 
@@ -75,13 +75,13 @@ Search to Insight is available from any story from the top right corner in the *
 
 To demonstrate Search to Insight, let's dive into another scenario: **Decide which Sales Manager should be promoted to Regional Sales Manager**.
 
-For this, we should take a look at our top performing sales managers. Let's type in "Show top 5 Gross Margin by Sales and Store".
+For this, you should take a look at our top performing sales managers. Let's type in "Show top 5 Gross Margin by Sales and Store".
 
 ![Search 2](Search 2.gif)
 
 It turns out that 4 out of the 5 stores with the highest gross margins are handled by `Janet Bury`. Thus, you learned that even though `Kiran Raj` has the most quantity sold out of the Sales Managers, `Janet Bury` sells to the 4 stores with highest Gross Margin.
 
-Furthermore, within Search to Insight, you can alter the mode, value, dimension, measure, cross calculation, and version of the chart that Search to Insight generated. In the above example, we changed the value of 5 to 10 to change the ranking from Top 5 to Top 10. Again, from here, you can filter, exclude, drill down, and copy the chart to your story.
+Furthermore, within Search to Insight, you can alter the mode, value, dimension, measure, cross calculation, and version of the chart that Search to Insight generated. In the above example, you changed the value of 5 to 10 to change the ranking from Top 5 to Top 10. Again, from here, you can filter, exclude, drill down, and copy the chart to your story.
 
 To learn more, here are more in-depth resources on Search to Insight:
 

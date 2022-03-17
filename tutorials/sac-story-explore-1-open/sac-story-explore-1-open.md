@@ -41,12 +41,6 @@ Here you'll find **My Files**, which contain files and folders created by you or
 |  **Public**         | Files publicly available to everyone in your organization
 |  **Input forms**    | Input tasks related to planning workflows
 
-<!--
-  1. **Personal Files** – Your private files.
-  2. **Samples** – Sample models and stories provided by the system.
-  3. **Public** – Files publicly available to everyone in your organization.
-  4. **Input forms** – Input tasks related to planning workflows. -->
-
 Below **My Files**, you'll find a subcategory of your SAP Analytics Cloud files.
 
 |  Folder     | Description
@@ -55,12 +49,6 @@ Below **My Files**, you'll find a subcategory of your SAP Analytics Cloud files.
 |  **Featured**   | Files marked as featured, and also seen in the Featured Files tile on the Home screen for quick access
 |  **System**     | Administration view, which is available to users who have Manage rights on either the Private Files or Public Files application privilege
 |  **Deleted**    | Files and folders that have been deleted. Deleted content is permanently deleted after 30 days by default, but administrators can configure the number of days that deleted content is stored for. Users with Manage rights on the Deleted Files application privilege can also manage other users' deleted files.
-
-<!--
-  1. **Favorites** – Files and folders marked as your favorites.
-  2. **Featured** – Files marked as featured, and also seen in the Featured Files tile on the Home screen for quick access.
-  3. **System** – Administration view, which is available to users who have Manage rights on either the Private Files or Public Files application privilege.
-  4. **Deleted** – Files and folders that have been deleted. Deleted content is permanently deleted after 30 days by default, but administrators can configure the number of days that deleted content is stored for. Users with Manage rights on the Deleted Files application privilege can also manage other users' deleted files. -->
 
 Last feature to note here are the Search options available for finding content.
 
@@ -75,14 +63,8 @@ Last feature to note here are the Search options available for finding content.
 [ACCORDION-BEGIN [Step 2: ](Open and Explore the Sample Story)]
 Now that you understand the files and folders system, open the **"Sample - Revenue Analysis"** Sample Story within the **Samples** folder or search for it using the Search bar.
 
-<!-- After clicking into the story, you'll find yourself looking at this: -->
-
-<!-- ![Sample](Sample.png)
-![Sample](Sample resized.png) -->
-
 Let's quickly revisit what stories are and why they're important. Stories are much like an analytics dashboard or report that allow stakeholders to analyze, report, and plan with the historical data of a business. Furthermore, it provides instant access and augmented analysis for monitoring and measuring business performance and metrics.
 
-<!-- ![Analysis](Analysis.png) -->
 ![Analysis resized](Analysis resized.png)
 
 This Story shows the "data story" of a beverage business called "The Best Run Juice Company" and demonstrates the performance of the business with different visualizations and features:
@@ -94,30 +76,8 @@ This Story shows the "data story" of a beverage business called "The Best Run Ju
 |3                | **Input Control Filters**            | Allows you to focus in on data segments.  Slide the Date Range filter to select your dates for analysis and the filter checkboxes helps you be precise in your analysis.
 |4                |  **Bar Charts**                      | Visualizes values across a Series of data.  As an example, the first chart on the left shows Gross Margin % by the Product and Location dimensions. They're easy to understand and interact with by drilling down, sorting, or analyzing with Smart Insights.  We'll use these together in the later tutorials.
 
-<!--
-1. Numeric Point Charts
-2. Bullet Chart
-3. Input Control Filters
-4. Time Series Chart
-5. Bar Charts -->
-
 [DONE]
 [ACCORDION-END]
-
-<!--
-[ACCORDION-BEGIN [Step 3: ](Explore the Story)]
-Let's look closer at the visualizations and interactive features of the story and how they help generate insights for business decisions in the "Best Run Juice Company".
-
-
-
-1. Numeric Point charts and Bullet charts are great for displaying the status of Key Performance Indicators (KPI).  You can immediately see the current KPI value compared to your business's performance thresholds.
-2. Time Series charts display trends in any kind of numeric data over time.  Is your business trending positively?  
-3. Input Control filters allow you to focus in on data segments.  Slide the Date Range filter to select your dates for analysis and the filter checkboxes helps you be precise in your analysis.
-4. Bar charts are great for visualizing values across a Series of data.  As an example, the first chart on the left shows Gross Margin % by the Product and Location dimensions. They're easy to understand and interact with by drilling down, sorting, or analyzing with Smart Insights.  We'll use these together in the later tutorials.
-
-
-[DONE]
-[ACCORDION-END] -->
 
 [ACCORDION-BEGIN [Step 3: ](Test Yourself)]
 In the question area below, pick one multiple choice answer and then click **Submit Answer**.
