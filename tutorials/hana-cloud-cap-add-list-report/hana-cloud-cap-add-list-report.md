@@ -42,7 +42,7 @@ primary_tag: products>sap-fiori
 
     !![run_config_connected](run_config_connected.png)
 
-6. Click on the green **play** button of the run configuration. This will switch the view to the debug panel, and scripts will be executed. A few moments later, a message will pop up and suggest exposing a new port. Accept this suggestion by selecting **Expose and Open**.
+6. Click on the green **play** button of the run configuration. This will switch the view to the debug panel, and scripts will be executed. A few moments later, a message will pop up and suggest exposing a new port. Accept this suggestion by selecting **Open in New Tab**.
 
     !![run_config_expose](run_config_expose.png)
 

@@ -2,8 +2,8 @@
 auto_validation: true
 title: Define and Expose a CDS-Based Travel Data Model
 description: Define CDS-based data model and create projection view.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 20
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -43,7 +43,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      Click **Next >**.
 
-      ![Define CDS based travel data model](model3.png)
+      ![Define CDS based travel data model](sc.png)
 
   4. Click **Finish** to use your transport request.
 
@@ -122,7 +122,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      Click **Next >**.
 
-      ![Create projection view for travel](projection3.png)
+      ![Create projection view for travel](sc2.png)
 
   4. Click **Finish** to use your transport request.
 
@@ -239,7 +239,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      Click **Next >**.
 
-      ![Create service definition](definition2.png)
+      ![Create service definition](sc3.png)
 
   3. Click **Finish** to use your transport request.
 
