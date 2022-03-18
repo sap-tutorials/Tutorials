@@ -48,7 +48,7 @@ primary_tag: software-product>sap-btp--abap-environment
 
     - Description: `Inbound user for communication system`
 
-    - Let the system generate a password. Do not forget to note the password for later use in `Step 5` (Create Design-Time destination).
+    - Let the system generate a password. Do not forget to note the password for later use in `Step 6` (Create Design-Time destination).
 
     !![Inbound User settings](4-Propose-pwd-3steps.png)
 
@@ -75,16 +75,18 @@ primary_tag: software-product>sap-btp--abap-environment
 
     - Communication System: `COMMSYS_CONTENTFEDERATION_DEMO`
 
-    !![Communication arrangement](7-communication-arrangement-settings.png)
+    - Logical Target Identifier: `LNCHPD_INTG_TGT`
 
-5. Enter the job execution details for scheduling the FLP Content Exposure job every 10 minutes.
+    !![Communication arrangement](7-1-communication-arrangement-settings.png)
+
+5. Enter the job execution details for scheduling the SAP Fiori Launchpad content exposure job every 10 minutes.
 
 6. Select `Save`.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Select Roles for exposure to Launchpad Service)]
+[ACCORDION-BEGIN [Step 3: ](Select Roles for Exposure to Launchpad Service)]
 
 1. In the `Maintain Business Roles` app, search for business role ID `SAP_BR_ADMINISTRATOR`.
 
@@ -94,12 +96,12 @@ primary_tag: software-product>sap-btp--abap-environment
 
     !![Expose to the SAP Launchpad Service](8-expose-to-launchpad-service.png)
 
-> The content related to the business role, such as groups, catalogs, pages, or spaces, can then be consumed by the SAP Launchpad Service. The content is available after 10 minutes, which you have configured in the previous step.
+> The content related to the exposed business role, such as groups, catalogs, pages, or spaces, can be consumed by the SAP Launchpad service as soon as the job, which you have configured in the previous step, has run successfully.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure communication between the SAP BTP Subaccount and the SAP BTP, ABAP Environment System)]
+[ACCORDION-BEGIN [Step 4: ](Configure Communication between the SAP BTP Subaccount and the SAP BTP, ABAP Environment System)]
 
 1. In the SAP BTP cockpit, download the trust certificate of the subaccount runtime destinations by navigating to `Connectivity` > `Destinations`.
 
@@ -130,7 +132,26 @@ primary_tag: software-product>sap-btp--abap-environment
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create the Design-Time Destination)]
+
+[ACCORDION-BEGIN [Step 5: ](Protect Launchpad Content Against Clickjacking)]
+
+1. Open the `Maintain Protection Allowlists` app from the SAP Fiori launchpad in your SAP BTP, ABAP environment system.
+
+2. On the Clickjacking Protection tab page, choose `Create` to add a new host. On the `Add Trusted Host` screen, enter the following data:
+
+    - Trusted Host Name: `<subdomain>.launchpad.cfapps.<region>.hana.ondemand.com`
+
+    - Schema: `HTTPS`
+
+    - Port: `443`
+
+3. Select `Save`.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 6: ](Create the Design-Time Destination)]
 You create a design-time destination to define the location from which the SAP Launchpad service should fetch the exposed content.
 
 1. Navigate to the subaccount in which you have subscribed to the SAP Launchpad Service.
@@ -153,19 +174,20 @@ You create a design-time destination to define the location from which the SAP L
 
     - Authentication: `BasicAuthentication`
 
-    - User: `COMMUNICATIONSYSTEM_INBOUND_USER` (Created in `Step 1` (Create the Communication System))
+    - User: `COMMUNICATIONSYSTEM_INBOUND_USER` (Created in `Step 1` (Create a Communication System))
 
     - Password: Maintain password created in `Step 1` (Create the Communication System).
 
     The destination should look like this:
     !![Settings for new Destination](1-Destination-settings.png)
 
-7. Click "Save".
+7. Select `Save`.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create Runtime Destination for Launching Apps in an iFrame)]
+[ACCORDION-BEGIN [Step 7: ](Create Runtime Destination for Launching Apps in an iFrame)]
+
 1. Create a new destination and fill in the following fields:
 
     - Name: `Tutorial_Ressources_rt`
@@ -194,7 +216,7 @@ Finally the destination should look like this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create Runtime Destination for Dynamic OData access)]
+[ACCORDION-BEGIN [Step 8: ](Create Runtime Destination for Dynamic OData access)]
 
 1. Create a new destination.
 
@@ -229,19 +251,21 @@ The destination should look like this:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Create Content Provider)]
+[ACCORDION-BEGIN [Step 9: ](Create Content Provider)]
 
-1. From the subaccount, navigate to `Services` > `Instances and Subscriptions` and search for the `Launchpad Service` in the search box
+1. Before you create the content provider, make sure the content is available. The content is synchronized every 10 minutes, as configured in step 2. It can take up to one hour until the first synchronization run is scheduled. To check the availability of the content, open the **Display Launchpad Content Exposure Logs** app from the SAP Fiori launchpad in your SAP BTP, ABAP environment system. Once everything has been synchronized successfully, the content is available for consumption.
 
-2. Access Launchpad Service.
+2. From the subaccount, navigate to `Services` > `Instances and Subscriptions` and search for the `Launchpad Service` in the search box
 
-3. Select **Provider Manager**.
+3. Access Launchpad Service.
 
-4. Create a new content provider.
+4. Select **Provider Manager**.
+
+5. Create a new content provider.
 
     !![Workflow](3-cp-overview.png)
 
-5. Add title, description, ID, and the destinations created in `Step 5-7` (Create Design-Time / Runtime destination) accordingly:
+6. Add title, description, ID, and the destinations created in `Step 6-8` (Create Design-Time / Runtime destination) accordingly:
 
     - Title: `Tutorial`
 
@@ -257,7 +281,7 @@ The destination should look like this:
 
     - Content Addition Mode: `Manual addition of selected content items`
 
-6. Select `Save`.
+7. Select `Save`.
 
     The content provider should look like this:
 
@@ -268,7 +292,7 @@ The destination should look like this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Choose Content in the Content Manager)]
+[ACCORDION-BEGIN [Step 10: ](Choose Content in the Content Manager)]
 
 1. Navigate to the **Content Manager**.
 
@@ -283,7 +307,7 @@ The destination should look like this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create Launchpad Site)]
+[ACCORDION-BEGIN [Step 11: ](Create Launchpad Site)]
 
 1. Navigate to the Site Directory.
 
@@ -309,7 +333,7 @@ The destination should look like this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Add Role Collection to User)]
+[ACCORDION-BEGIN [Step 12: ](Add Role Collection to User)]
 
 > To access the launchpad site you have to assign the role collection created in the previous step, to your SAP BTP, ABAP environment user in the SAP BTP cockpit.
 
@@ -328,14 +352,14 @@ The destination should look like this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Access Launchpad Site)]
+[ACCORDION-BEGIN [Step 13: ](Access Launchpad Site)]
 
-With your user, access the launchpad site via the URL stored in `Step 10`.
+1. With your user, access the launchpad site via the URL stored in `Step 11`.
+
+2. Log off and log on again. This makes sure the newly assigned role collection is taken into account.
 
 The launchpad site should look like this. The groups might be in different order:
 !![Launchpad](final-lp-view - Copy.png)
-
-> If the tiles of the `SAP_BR_ADMINISTRATOR` role do not appear, log off and log on again.
 
 [VALIDATE_3]
 

@@ -2,7 +2,7 @@
 auto_validation: true
 title: Create a Custom RAP Business Object to Trigger Purchase Requisitions API
 description: Create a custom RAP business object to trigger purchase requisitions API with SAP S/4HANA Cloud ABAP Environment.
-primary_tag: topic>abap-development
+primary_tag: software-product-function>s-4hana-cloud-abap-environment
 tags:  [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment]
 time: 25
 author_name: Merve Temel
