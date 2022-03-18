@@ -234,7 +234,9 @@ This grant type works in the following way: In a first call, the API client prov
 
     !![Save](033_New.png)
 
-    In this step you have assigned a policy template.
+21. Confirm the deployment.
+
+    You have assigned a policy template now.
 
 [VALIDATE_4]
 [ACCORDION-END]
