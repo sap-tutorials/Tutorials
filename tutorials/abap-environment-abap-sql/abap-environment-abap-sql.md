@@ -8,7 +8,6 @@ primary_tag: software-product>sap-btp--abap-environment
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
 ---
-
 ## Prerequisites
  - You need the standard developer authorization profile to create ABAP development objects.
  - A 64bit Excel version since the ODBC driver for ABAP is a 64bit driver.
@@ -22,10 +21,10 @@ author_profile: https://github.com/niloofar-flothkoetter
   - Create an ODBC data source
   - Open an ODBC connection in Microsoft Excel and access data
 
-Always replace `####` with your initials or group number.
+>Always replace `####` with your initials or group number.
 
 ---
-We would like to show you how you can access CDS view entities in an ABAP system using SQL via ODBC. Open Database Connectivity (ODBC) is a standard API for accessing databases.
+You will learn how you can access CDS view entities in an ABAP system using SQL via ODBC. Open Database Connectivity (ODBC) is a standard API for accessing databases.
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
 To access CDS view entities in an ABAP system via ODBC, these entities first need to be properly exposed in the back–end system before accessing them via the **ODBC driver for ABAP** in an ODBC application. The ODBC application could be any client tool capable of loading an ODBC driver or it could be a program written in a program language capable of using an ODBC driver (e.g. C, C++, python, node.js, PHP). In this tutorial, we will show the Microsoft Excel use case on Windows. The **ODBC driver for ABAP** itself is available on Windows and Linux.
@@ -189,7 +188,7 @@ You need first to create and fill two demo tables **ZORDERS** and **ZORDERITEMS*
 
   4. Copy the method code below in your class to fill both tables with some test data. Do not forget to replace `####` with your number.
 
-    ```ZCL_FILL_ORDERS_####
+    ```zcl_fill_orders_####
 
     class zcl_fill_orders_#### definition
     public
@@ -410,7 +409,7 @@ Therefore, you will now to create a communication scenario and a communication a
 
       ![URL](610.png)
 
-  2. Login with your username and password.
+  2. Log in with your username and password.
 
   3. Open **Communication System** under **Communication Management**. Click **New**.
 
@@ -559,7 +558,7 @@ Therefore, you will now to create a communication scenario and a communication a
     ```SQL statement
     SELECT OI.Item , SUM( OI.Amount )
     FROM ZOrders_####.Orders O
-    INNER JOIN ZOrders_####.Ordersitems OI
+    INNER JOIN ZOrders_####.Orderitems OI
     ON O.Id = OI.OrderId
     GROUP BY ITEM
 
