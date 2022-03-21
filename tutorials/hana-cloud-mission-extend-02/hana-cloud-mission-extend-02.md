@@ -5,8 +5,8 @@ title: Security and Backups in SAP HANA Cloud, SAP HANA Database
 description: Learn about the security and backup features of SAP HANA Cloud, SAP HANA database that are similar to SAP HANA on-premise.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
