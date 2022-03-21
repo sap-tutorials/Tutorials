@@ -361,7 +361,7 @@ Therefore, you will now to create a communication scenario and a communication a
 
     Since you want to use user/password authentication in your Windows Excel test case, select **Basic** as **Supported Authentication Methods**.
 
-  5. In section **Inbound Services**, click on the **Add…** button and enter `S_PRIVILEGED_SQL1` as **Inbound Service ID** and click **Finish**.
+  5. In section **Inbound Services**, choose the **Add…** button and enter `S_PRIVILEGED_SQL1` as **Inbound Service ID** and click **Finish**.
 
     The `S_PRIVILEGED_SQL1` inbound service is a pre-configured service for the privileged access to CDS view entities, that is, no DCL is applied. (DCL stands for Data Control Language. It provides an access control mechanism to restrict the results returned by the CDS view from the database according to conditions)
 
@@ -403,7 +403,7 @@ Therefore, you will now to create a communication scenario and a communication a
 
   The final preparation tasks in the ABAP system cannot be performed in ADT and need to be done in the administration UI of the system.
 
-  1. Right-click your Project, open **Properties**. In the popup select **ABAP Development** and click on **System URL**.
+  1. Right-click your Project, open **Properties**. In the popup select **ABAP Development** and select **System URL**.
 
     ![Properties](605.png)
 
@@ -536,7 +536,7 @@ Therefore, you will now to create a communication scenario and a communication a
 
     ![User](945.png)
 
-  4. The navigator shows all exposed objects in your SQL schema `ZOrders`. You can click on one of the CDS entities and Excel will show a preview of the data content.
+  4. The navigator shows all exposed objects in your SQL schema `ZOrders`. You can choose one of the CDS entities and Excel will show a preview of the data content.
 
     ![preview](920.png)
 
@@ -548,7 +548,7 @@ Therefore, you will now to create a communication scenario and a communication a
 
   6. As a last step, you can see that it is possible to execute a free style SQL query on the exposed entities.
 
-    Choose **Data** > **Get Data** > **From Other Sources** > **From ODBC** again in Excel, select your DSN and then click on **Advanced Options**. A new control is opened that allows you to enter a SELECT statement directly. In the SELECT statement, you must prefix all view names by your schema name `ZOrders_####`. Apart from this, you can use ANSI-like SQL syntax.
+    Choose **Data** > **Get Data** > **From Other Sources** > **From ODBC** again in Excel, select your DSN and then click **Advanced Options**. A new control is opened that allows you to enter a SELECT statement directly. In the SELECT statement, you must prefix all view names by your schema name `ZOrders_####`. Apart from this, you can use ANSI-like SQL syntax.
 
     ![advanced](950.png)
 
