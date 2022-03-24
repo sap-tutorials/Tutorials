@@ -4,7 +4,7 @@ description: Set up your SAP Business Technology Platform (BTP) account so you c
 primary_tag: software-product>sap-rad-by-mendix
 author_name: Paola Laufer
 auto_validation: true
-tags: [  tutorial>beginner, topic>cloud, software-product>sap-cloud-platform, software-product>sap-rad-by-mendix  ]
+tags: [  tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-rad-by-mendix  ]
 time: 10
 ---
 
