@@ -5,8 +5,8 @@ title: Virtualize Data from a Managed SAP HANA Cloud, Data Lake to an SAP HANA C
 description: Virtualize data in SAP HANA Cloud, SAP HANA database from different SAP HANA Cloud, data lake instances.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, software-product-function>sap-hana-cloud\,-data-lake]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product-function>sap-hana-cloud\,-data-lake]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 

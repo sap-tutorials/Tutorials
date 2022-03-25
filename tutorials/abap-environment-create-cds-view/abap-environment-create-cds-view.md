@@ -3,7 +3,7 @@ auto_validation: true
 title: Create and Expose Core Data Services Based on a Database Table
 description: Build a list report app with the ABAP RESTful Application Programming Model (RAP) for SAP Fiori and test your UI for demo usage.
 primary_tag: programming-tool>abap-development
-tags: [  tutorial>beginner, software-, software-product>sap-btp--abap-environment>sap-btp--abap-environment, software-product>sap-business-technology-platform]
+tags: [  tutorial>beginner, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45

@@ -139,7 +139,7 @@ primary_tag: software-product>sap-btp--abap-environment
 
 2. On the Clickjacking Protection tab page, choose `Create` to add a new host. On the `Add Trusted Host` screen, enter the following data:
 
-    - Trusted Host Name: <subdomain>.launchpad.cfapps.<region>.hana.ondemand.com
+    - Trusted Host Name: `<subdomain>.launchpad.cfapps.<region>.hana.ondemand.com`
 
     - Schema: `HTTPS`
 

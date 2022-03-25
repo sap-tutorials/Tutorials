@@ -3,8 +3,8 @@ title: Get Started with UI5 Web Components for React
 description: Start building a React web application leveraging UI5 Web Components for React.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-fiori]
-primary_tag: topic>html5
+tags: [ tutorial>beginner, software-product>sap-fiori]
+primary_tag: programming-tool>html5
 author_name: Lukas Harbarth
 author_profile: https://github.com/Lukas742
 ---

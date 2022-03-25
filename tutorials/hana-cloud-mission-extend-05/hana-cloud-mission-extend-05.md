@@ -5,8 +5,8 @@ title: Use Smart Data Access to Virtualise Data from the Cloud to an On-Premise 
 description: Create an SDA connection between SAP HANA Cloud, SAP HANA database and SAP HANA on-premise.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites

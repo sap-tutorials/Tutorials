@@ -165,7 +165,12 @@ author_profile: https://github.com/Paolaufer
 
 [ACCORDION-END][ACCORDION-BEGIN [Step 5: ](Add custom logic)]
 
-In the `srv` folder, create a new file called `cat-service.js`, and populate it with the following:
+1. In the `srv` folder, create a new file called `cat-service.js`.
+2. If asked if you want to allow the use of the ESLint library for validation, click **Allow**.
+
+  !![Allow ESLint](eslint.png)
+
+3. Populate the `cat-service.js` file with the following:
 
 ```JavaScript
 /**
@@ -239,7 +244,7 @@ You will first add all required dependencies, and the create and run a run confi
 5. Click the right green arrow on the right of the configuration name to run the application.
 
 
-6. When prompted, click **Open in a New Tab** for **port 4004**.
+6. When prompted, click **Open in New Tab**.
 
     The application opens in the browser.
 
