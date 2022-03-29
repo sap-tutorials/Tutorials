@@ -184,11 +184,11 @@ Now that you checked the dependencies, you can create your automation.
 
       !![expression editor icon](expression-editor-icon1.png)
 
-9. In the **Expression Editor**, enter this text:
+9. In the **Expression Editor**, enter this text below and click **Save Expression**:
 
-      ```Expression
-        Step7.index + 3` and click `Save Expression`.
-      ```
+    ```Expression
+    Step7.index + 3
+    ```
 
       !![edit-expression](edit-expression.png)
 
