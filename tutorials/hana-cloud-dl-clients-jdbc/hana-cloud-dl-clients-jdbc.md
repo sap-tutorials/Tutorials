@@ -13,6 +13,7 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ## Details
 ### You will learn
   - How to create and debug a Java application that connects to and queries a data lake Relational Engine database
+  - How to connect to a data lake Relational Engine in `DBeaver`
 
 [Java Database Connectivity](https://en.wikipedia.org/wiki/Java_Database_Connectivity) (JDBC) provides an [API](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) for accessing databases from Java. An application written to the JDBC standard can be ported to other databases. Database vendors provide JDBC drivers for their database products.
 
@@ -172,7 +173,7 @@ Visual Studio Code can run and debug a Java application. It is a lightweight but
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Browse data lake Relational Engine using DBeaver with JDBC)]
+[ACCORDION-BEGIN [Step 5: ](Browse a data lake Relational Engine using DBeaver with JDBC)]
 
 `DBeaver` is a free and open source database tool and can be used with the data lake Relational Engine JDBC driver.  
 
