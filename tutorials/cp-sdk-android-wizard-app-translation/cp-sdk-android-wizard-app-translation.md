@@ -5,8 +5,9 @@ title: Add New Languages to Your Android Application
 description: See how the SAP Translation Hub can be used to quickly add support for a new language to your app.
 auto_validation: true
 time: 20
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
-primary_tag: products>sap-btp-sdk-for-android
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, programming-tool>odata, software-product>sap-btp-sdk-for-android, software-product>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp-sdk-for-android
+keywords: sdkforandroid
 ---
 
 ## Prerequisites
