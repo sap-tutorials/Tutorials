@@ -2,8 +2,9 @@
 title: Create a List Report Floorplan
 description: Use the SAP BTP SDK for iOS to build a simple List Report Floorplan containing an FUISearchBar
 auto_validation: true
-primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
+primary_tag: software-product>sap-btp-sdk-for-ios
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services ]
+
 time: 60
 ---
 
@@ -84,6 +85,10 @@ with:
 
 ```
 
+
+
+
+
 Instead of instantiating the `MainSplitViewController` the `UIStoryboard` will instantiate the initial View Controller and cast it to the `UINavigationController`.
 
 Lastly, you have to create a new class inheriting from `UITableViewController`. Create a new **Cocoa Touch Class** and name it `SupplierTableViewController`.
@@ -104,11 +109,15 @@ Now that you have the first `UITableViewController` setup you will add code to l
 Open the `SupplierTableViewController.swift` class and add the following import statements for full usage of the SDK:
 
 ```Swift
+import UIKit
 import SAPOData
 import SAPFoundation
 import SAPFiori
 import SAPFioriFlows
 import SAPCommon
+import SAPOfflineOData
+import ESPMContainerFmwk
+import SharedFmwk
 
 ```
 
@@ -133,9 +142,11 @@ Implement the following lines of code directly below the loading indicator prope
 let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
 // Retrieve the data service using the destinations dictionary and return it.
-var dataService: ESPMContainer<OnlineODataProvider>? {
-    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
-        AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
+
+var dataService: ESPMContainer<OfflineODataProvider>? {
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOfflineODataController, let dataService = odataController.dataService else {
+        AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
         return nil
     }
     return dataService
@@ -143,7 +154,16 @@ var dataService: ESPMContainer<OnlineODataProvider>? {
 
 ```
 
-> In case you're using an `ODataOfflineProvider` you have to change the above-mentioned code to use `ODataOfflineProvider` instead of `ODataOnlineProvider`. You have to also import `SAPOfflineOData` in addition to the `SAPOData` framework.
+
+```Swift
+review
+
+```
+
+
+
+
+> In case you're using an `OfflineODataProvider` you have to change the above-mentioned code to use `OfflineODataProvider` instead of `OnlineODataProvider`. You have to also import `SAPOfflineOData` in addition to the `SAPOData` framework.
 
 Because we're good citizens we want to use an app logger to log important information. Fortunately, SAP is offering a simple-to-use Logging API with the `SAPCommon` framework.
 
@@ -247,7 +267,7 @@ Implement the following lines of code before the `updateTableView()` method call
 // Register the cell with the provided convenience reuse identifier.
 tableView.register(FUIContactCell.self, forCellReuseIdentifier: FUIContactCell.reuseIdentifier)
 
-// Set the seperator style of the table view to none and the background color to the standard Fiori background base color.
+// Set the separator style of the table view to none and the background colour to the standard Fiori background base colour.
 tableView.separatorStyle = .none
 tableView.backgroundColor = .preferredFioriColor(forStyle: .backgroundBase)
 
@@ -391,7 +411,7 @@ var supplier: Supplier!
 
 Next, we will implement the `prepare(:for:sender:)` method which is responsible for making necessary preparations before the navigation is fully executed. In our case, we will pass the selected supplier to the `SupplierProductsTableViewController`.
 
-Implement the `prepare(:for:sender:)` method:
+Implement the `prepare(:for:sender:)` method in `SupplierTableViewController`:
 
 ```Swift
 // MARK: - Navigation
@@ -415,7 +435,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
 ```
 
-You can utilize the `tableView(_:didSelectRowAt:)` method to trigger the navigation. Implement the override method:
+You can utilise the `tableView(_:didSelectRowAt:)` method to trigger the navigation. Implement the override method:
 
 ```Swift
 override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -431,7 +451,7 @@ You can now navigate back and forth between the `SupplierTableViewController` an
 
 [ACCORDION-BEGIN [Step 6: ](Implement the loading and displaying of supplier-specific products)]
 
-This view is similar to the `SupplierTableViewController` but instead of fetching all products, we will fetch supplier-specific products. To achieve that, we again can utilize the OData APIs. `SAPOData` provides the possibility to create so-called `DataQuery` objects which can define typical OData arguments for a backend call.
+This view is similar to the `SupplierTableViewController` but instead of fetching all products, we will fetch supplier-specific products. To achieve that, we again can utilise the OData APIs. `SAPOData` provides the possibility to create so-called `DataQuery` objects which can define typical OData arguments for a backend call.
 
 First, we need to make the needed import statements for that class:
 
@@ -441,6 +461,10 @@ import SAPFoundation
 import SAPFiori
 import SAPFioriFlows
 import SAPCommon
+import ESPMContainerFmwk
+import SharedFmwk
+import SAPOfflineOData
+
 
 ```
 
@@ -457,10 +481,9 @@ Add a couple of class properties necessary for the data service instance and the
 // The available destinations from Mobile Services are hold in the FileConfigurationProvider. Retrieve it to find the correct data service
 let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
-// Retrieve the data service using the destinations dictionary and return it.
-var dataService: ESPMContainer<OnlineODataProvider>? {
-    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
-        AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+var dataService: ESPMContainer<OfflineODataProvider>? {
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[ODataContainerType.eSPMContainer.description] as? ESPMContainerOfflineODataController, let dataService = odataController.dataService else {
+        AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
         return nil
     }
     return dataService
@@ -470,7 +493,7 @@ private var products = [Product]()
 
 ```
 
-Also, we want to utilize the provided loading indicator. Let the class conform to the `SAPFioriLoadingIndicator` protocol.
+Also, we want to utilise the provided loading indicator. Let the class conform to the `SAPFioriLoadingIndicator` protocol.
 
 ```Swift
 class SupplierProductsTableViewController: UITableViewController, SAPFioriLoadingIndicator { ... }
@@ -486,7 +509,7 @@ var loadingIndicator: FUILoadingIndicatorView?
 
 Let's load some data!
 
-We're using the same style we've used in the `SupplierTableViewController`. Implement the following two methods and read the inline comments carefully because you will see that we utilize the `DataQuery` object for making a filter as well as an expand.
+We're using the same style we've used in the `SupplierTableViewController`. Implement the following two methods and read the inline comments carefully because you will see that we utilise the `DataQuery` object for making a filter as well as an expand.
 
 > If you're not familiar with those OData specific terms please make yourself familiar with the OData specification:
 
@@ -630,7 +653,7 @@ tableView.backgroundColor = .preferredFioriColor(forStyle: .backgroundBase)
 
 As the last step, we have to implement the table views data source methods similar to the `SupplierTableViewController`.
 
-Add the following methods directly below the `loadProductImageFrom(_:completionHandler:)` method:
+Add the following methods directly below the `loadProductImageFrom(_:completionHandler:)` method and make sure to modify the value of `baseURL`
 
 ```Swift
 // MARK: - Table view data source
@@ -736,6 +759,19 @@ extension SupplierProductsTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         // to implement
     }
+}
+
+```
+
+
+Call the `setupSearchBar()` method inside the `viewDidLoad()`:
+
+```Swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    setupSearchBar()
+    updateTableView()
+
 }
 
 ```
