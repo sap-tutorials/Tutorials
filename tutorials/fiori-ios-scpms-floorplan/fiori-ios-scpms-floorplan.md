@@ -155,17 +155,9 @@ var dataService: ESPMContainer<OfflineODataProvider>? {
 ```
 
 
-```Swift
-review
-
-```
-
-
-
-
 > In case you're using an `OfflineODataProvider` you have to change the above-mentioned code to use `OfflineODataProvider` instead of `OnlineODataProvider`. You have to also import `SAPOfflineOData` in addition to the `SAPOData` framework.
 
-Because we're good citizens we want to use an app logger to log important information. Fortunately, SAP is offering a simple-to-use Logging API with the `SAPCommon` framework.
+SAP offers  a simple-to-use Logging API with the `SAPCommon` framework.
 
 Implement the following line of code below the data service declaration:
 
@@ -183,7 +175,7 @@ private var suppliers = [Supplier]()
 
 ```
 
-> From now on bigger code blocks are explained with inline comments. Read the inline comments carefully to fully understand what the code is doing and why we're implementing it.
+> From now on bigger code blocks are explained with inline comments. Read the inline comments carefully to fully understand what the code is doing and why you're implementing it.
 
 Loading all available suppliers is fairly easy using the generated data service. The generated code will handle all authentication and authorization challenges for you and the data service will construct all necessary requests to load, create and update entities in your backend.
 
@@ -244,7 +236,7 @@ First, implement two necessary `UITableViewDataSource` methods which are respons
 ```Swift
 // MARK: - Table view data source
 
-/// We are only displaying one section for this screen, return 1.
+/// Only one section is displayed for this screen, return 1.
 override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
 }
@@ -257,9 +249,9 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 ```
 
 Using the `SAPFiori` framework allows you to choose from a large variety of `UITableViewCell` classes.
-Because we're going to display suppliers, and those have a name, an address and probably contact data the `FUIContactCell` would be a perfect fit here. You can always use the **SAP Fiori Mentor** app, available in the App Store for iPad, to get an introduction to the control.
+Because you're going to display suppliers, and those have a name, an address and probably contact data the `FUIContactCell` would be a perfect fit here. You can always use the **SAP Fiori Mentor** app, available in the App Store for iPad, to get an introduction to the control.
 
-Before implementing the `tableView(_cellForRowAt:)` method responsible for dequeuing reusable cells and returning them to the `UITableView`, we want to register the `FUIContactCell` with the `UITableView` first. This is usually done in the `viewDidLoad()` method.
+Before implementing the `tableView(_cellForRowAt:)` method responsible for dequeuing reusable cells and returning them to the `UITableView`, You need to register the `FUIContactCell` with the `UITableView` first. This is usually done in the `viewDidLoad()` method.
 
 Implement the following lines of code before the `updateTableView()` method call in the `viewDidLoad()`:
 
@@ -288,7 +280,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
   cell.headlineText = supplier.supplierName ?? "No Name available!"
   cell.subheadlineText = "\(supplier.street ?? "") \(supplier.houseNumber ?? "") \(supplier.city ?? ""), \(supplier.postalCode ?? "") \(supplier.country ?? "")"
 
-  // Because we're going to implement navigation later this cell has the disclosure indicator as accessory type indicating that navigation to the user.
+  //Navigation will be implemented later. This cell has the disclosure indicator as accessory type indicating that navigation to the user.
   cell.accessoryType = .disclosureIndicator
 
   return cell
@@ -323,7 +315,7 @@ Go back to the `tableView(_cellForRowAt:)` method and add the following lines of
 cell.activityControl.addActivities(activities)
 cell.activityControl.maxVisibleItems = 3
 
-// The FUIActivityControl provides you two different ways of reacting to user's interaction. One would be with a change handler the other would be with a delegate. Because I don't want the communication logic being in the tableView(_cellForRowAt:) method we're using the delegation way.
+// The FUIActivityControl provides you two different ways of reacting to user's interaction. One would be with a change handler the other would be with a delegate. Because I don't want the communication logic being in the tableView(_cellForRowAt:) method you're using the delegation way.
 cell.activityControl.delegate = self
 
 ```
@@ -374,8 +366,8 @@ Tapping on one of the `FUIActivityItem` will result in an alert dialogue showing
 
 [ACCORDION-BEGIN [Step 5: ](Implement the Navigation Between the Supplier List and the Product List)]
 
-In this step, we will implement a second `UITableViewController` displaying all products a supplier provides.
-For this, we will use a storyboard segue to navigate to the `SupplierProductsTableViewController` and pass through the selected supplier.
+In this step, you will implement a second `UITableViewController` displaying all products a supplier provides.
+For this, you will use a storyboard segue to navigate to the `SupplierProductsTableViewController` and pass through the selected supplier.
 
 > In case you're not familiar with segues please visit, and carefully read the official documentation before continuing. [Using Segues](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/UsingSegues.html)
 
@@ -409,7 +401,7 @@ var supplier: Supplier!
 
 ```
 
-Next, we will implement the `prepare(:for:sender:)` method which is responsible for making necessary preparations before the navigation is fully executed. In our case, we will pass the selected supplier to the `SupplierProductsTableViewController`.
+Next, you will implement the `prepare(:for:sender:)` method which is responsible for making necessary preparations before the navigation is fully executed. In our case, you will pass the selected supplier to the `SupplierProductsTableViewController`.
 
 Implement the `prepare(:for:sender:)` method in `SupplierTableViewController`:
 
@@ -451,9 +443,9 @@ You can now navigate back and forth between the `SupplierTableViewController` an
 
 [ACCORDION-BEGIN [Step 6: ](Implement the loading and displaying of supplier-specific products)]
 
-This view is similar to the `SupplierTableViewController` but instead of fetching all products, we will fetch supplier-specific products. To achieve that, we again can utilise the OData APIs. `SAPOData` provides the possibility to create so-called `DataQuery` objects which can define typical OData arguments for a backend call.
+This view is similar to the `SupplierTableViewController` but instead of fetching all products, you will fetch supplier-specific products. To achieve that, you again can utilise the OData APIs. `SAPOData` provides the possibility to create so-called `DataQuery` objects which can define typical OData arguments for a backend call.
 
-First, we need to make the needed import statements for that class:
+First, you need to make the needed import statements for that class:
 
 ```Swift
 import SAPOData
@@ -493,7 +485,7 @@ private var products = [Product]()
 
 ```
 
-Also, we want to utilise the provided loading indicator. Let the class conform to the `SAPFioriLoadingIndicator` protocol.
+Also, you want to utilise the provided loading indicator. Let the class conform to the `SAPFioriLoadingIndicator` protocol.
 
 ```Swift
 class SupplierProductsTableViewController: UITableViewController, SAPFioriLoadingIndicator { ... }
@@ -509,7 +501,7 @@ var loadingIndicator: FUILoadingIndicatorView?
 
 Let's load some data!
 
-We're using the same style we've used in the `SupplierTableViewController`. Implement the following two methods and read the inline comments carefully because you will see that we utilise the `DataQuery` object for making a filter as well as an expand.
+You're using the same style you've used in the `SupplierTableViewController`. Implement the following two methods and read the inline comments carefully because you will see that you utilise the `DataQuery` object for making a filter as well as an expand.
 
 > If you're not familiar with those OData specific terms please make yourself familiar with the OData specification:
 
@@ -562,7 +554,7 @@ override func viewDidLoad() {
 
 ```
 
-We know that the products contain images for each product, it would be nice to display them as well, but to do so we have to write a little bit of code to make that happen.
+Products contain images for each product, it would be nice to display them as well, but to do so you have to write a little bit of code to make that happen.
 
 First, implement a class property holding the image URLs of all products.
 
@@ -571,7 +563,7 @@ private var productImageURLs = [String]()
 
 ```
 
-The user might want to scroll through the products even if the images are not fully loaded yet we have to implement a simple image cache as well as a placeholder image to keep the performance of the table stable.
+The user might want to scroll through the products even if the images are not fully loaded yet you have to implement a simple image cache as well as a placeholder image to keep the performance of the table stable.
 
 Add the following line of code directly below the `productImageURLs`:
 
@@ -614,7 +606,7 @@ private func loadProductImageFrom(_ url: URL, completionHandler: @escaping (_ im
 
 ```
 
-Now we have the foundation for fetching and caching images. You were probably wondering where the mapping from the fetched products to the product image URLs happens. We will implement that now.
+Now you have the foundation for fetching and caching images. You were probably wondering where the mapping from the fetched products to the product image URLs happens. You  will implement that now.
 
 Go back to the `loadData(:)` method and add the following line of code directly below the product assignment. Your `loadData(:)` should look like this now:
 
@@ -642,7 +634,7 @@ private func loadData(completionHandler: @escaping () -> Void) {
 
 ```
 
-Like the last time we have to register a `SAPFiori` cell with the `UITableView`, but this time it is a `FUIObjectTableViewCell`. Add the following lines of code to the `viewDidLoad()` method right before the `updateTableView(:)` method call.
+Like the last time you have to register a `SAPFiori` cell with the `UITableView`, but this time it is a `FUIObjectTableViewCell`. Add the following lines of code to the `viewDidLoad()` method right before the `updateTableView(:)` method call.
 
 ```Swift
 tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
@@ -651,7 +643,7 @@ tableView.backgroundColor = .preferredFioriColor(forStyle: .backgroundBase)
 
 ```
 
-As the last step, we have to implement the table views data source methods similar to the `SupplierTableViewController`.
+As the last step, you have to implement the table views data source methods similar to the `SupplierTableViewController`.
 
 Add the following methods directly below the `loadProductImageFrom(_:completionHandler:)` method and make sure to modify the value of `baseURL`
 
@@ -752,7 +744,7 @@ private func setupSearchBar() {
 
 Xcode will complain now because the `SupplierProductsTableViewController.swift` class is not conforming to the [`UISearchResultsUpdating`](https://developer.apple.com/documentation/uikit/uisearchresultsupdating) protocol.
 
-Add an extension to your class, like we did in the `SupplierTableViewController`:
+Add an extension to your class, like you did in the `SupplierTableViewController`:
 
 ```Swift
 extension SupplierProductsTableViewController: UISearchResultsUpdating {
@@ -780,7 +772,7 @@ If you run the app now you should see the `FUISearchBar` being displayed above t
 
 ![Supplier Product List](fiori-ios-scpms-floorplan-14.png)
 
-Now we have to implement some search logic to be called in the `updateSearchResults(for:)` method.
+Now you have to implement some search logic to be called in the `updateSearchResults(for:)` method.
 
 Implement the following methods right below the `setupSearchBar()` method and carefully read the inline comments.
 
@@ -811,7 +803,7 @@ Cool! Let's implement the `updateSearchResults(for:)` method:
 ```Swift
 extension SupplierProductsTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        // Get the searched-for term, note here that we don't have a time bouncer which waits for the user to finish its input. You could implement that if needed, for this simple example we do life searches for each character. I wouldn't recommend doing that over a large data set.
+        // Get the searched-for term, note here that you don't have a time bouncer which waits for the user to finish its input. You could implement that if needed, for this simple example you do life searches for each character. I wouldn't recommend doing that over a large data set.
         if let searchText = searchController.searchBar.text {
             // Feed it to the search logic.
             searchProducts(searchText)
