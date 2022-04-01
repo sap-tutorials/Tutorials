@@ -15,9 +15,9 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 
 ## Details
 ### You will learn
-  - How to create a text index on a text column.
-  - How to perform a text search on a text column.
-  - How to understand text search scoring.
+  - How to create a text index on a text column
+  - How to perform a text search on a text column
+  - How to understand text search scoring
 
 Searching long text for keywords may assist in filtering or analyzing important data from large data sets. Some data sets might have very large text columns where you do not know what words or partial words are contained. One good example is the [GDELT](https://www.gdeltproject.org/) data set. Today you will explore the events data from GDELT and learn how to use text search in an SAP HANA Cloud, data lake.
 

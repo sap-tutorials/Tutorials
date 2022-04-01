@@ -15,10 +15,10 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 
 ## Details
 ### You will learn
-  - How to set up the file container user to get access to the diagnostic files.
-  - How to download the diagnostic files to your local machine and read them.
-  - How to use the REST API to retrieve the diagnostic files.
-  - How to view the diagnostic files from a SQL Console.
+  - How to set up the file container user to get access to the diagnostic files
+  - How to download the diagnostic files to your local machine and read them
+  - How to use the REST API to retrieve the diagnostic files
+  - How to view the diagnostic files from a SQL Console
 
 ---
 
@@ -29,7 +29,7 @@ Start by heading to the Cloud Foundry space where the HDL instance is provisione
 
 ![Selecting the data lake instance in a Cloud Foundry space.](diag-files-1.png)
 
-Upon clicking "create" a modal should appear named "New Service Key". Give the service key a name and paste the following JSON into the parameters box and click create.
+Upon selecting "create" a modal should appear named "New Service Key". Give the service key a name and paste the following JSON into the parameters box and select create.
 
 ```JSON
 {
@@ -43,7 +43,7 @@ Use the ellipses on the created service key to view the certificates that will h
 
 ![Viewing the certificates created by the service.](diag-files-11.png)
 
-**Note**: You will need to manually remove each `\n` in the files and replace them with real like breaks. An alternative to this is to use a code editor like Visual Studio Code and use the find and replace function. Use the regex find option and search for `\\n` and replace it with '\n'.
+> You will need to manually remove each `\n` in the files and replace them with real like breaks. An alternative to this is to use a code editor like Visual Studio Code and use the find and replace function. Use the regex find option and search for `\\n` and replace it with '\n'.
 
 **[Optional]**: Use Visual Studio Code
 
@@ -122,11 +122,11 @@ Choose a file in from the diagnostic files container and paste its path into the
 
 [ACCORDION-BEGIN [Step 3: ](View the Diagnostic Files Using the REST API)]
 
-The diagnostic files can also be accessed using a REST API. For these examples I will use Python to write requests to the REST API. The SAP HANA Cloud, data lake Files REST API reference can be found [here](https://help.sap.com/doc/9d084a41830f46d6904fd4c23cd4bbfa/QRC_4_2021/en-US/html/index.html).
+The diagnostic files can also be accessed using a REST API. These examples will use Python to write requests to the REST API. The SAP HANA Cloud, data lake Files REST API reference can be found [here](https://help.sap.com/doc/9d084a41830f46d6904fd4c23cd4bbfa/QRC_4_2021/en-US/html/index.html).
 
 Create a file `datalake_diagnostic_files_api.py` and paste the following in the script. The information for the placeholders is the same as in the configuration from step 2.
 
-```python
+```Python
 import http.client
 import json
 
@@ -138,7 +138,7 @@ KEY_PATH = '<Path to Client Key>'
 
 Now, add the logic for using the `LISTSTATUS_RECURSIVE` endpoint, which will list all the items in your directory. You should also format the response so that it is easier to read.
 
-```python
+```Python
 # Setup the request
 file_path = '/diag/logs/'
 request_url = f'/webhdfs/v1/{file_path}?op=LISTSTATUS_RECURSIVE'
@@ -172,7 +172,7 @@ The output should look something like the following.
 
 Notice where the file name can be identified. Once the file name is known, you can use the OPEN endpoint to read the file and write the contents to a local file. Add the below code to your script and fill in `<diagnostic file name>` with the file you wish to read.
 
-```python
+```Python
 file_path = '/diag/logs/<diagnostic file name>'
 request_url=f'/webhdfs/v1/{file_path}?op=OPEN'
 request_headers = {
@@ -226,7 +226,7 @@ Using the `file_path` column you can identify which files exist and can be read 
 SELECT * FROM sa_split_list(cast( READ_SERVER_FILE('/diag/logs/<file_path>') as long varchar ), '\n');
 ```
 
-I the above SQL you cast the `read_server_file` result to a VARCHAR or else it will come back as a long binary and not be legible. You can also use the `sa_split_list` function to format the result so that the result is split by the newline character `\n`. Here is a sample result.
+In the above SQL you cast the `read_server_file` result to a VARCHAR or else it will come back as a long binary and not be legible. You can also use the `sa_split_list` function to format the result so that the result is split by the newline character `\n`. Here is a sample result.
 
 ![Sample output of read_server_file stored procedure.](diag-files-10.png)
 

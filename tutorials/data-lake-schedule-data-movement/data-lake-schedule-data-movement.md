@@ -13,8 +13,8 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 
 ## Details
 ### You will learn
-  - How to create and schedule events in a SAP HANA Cloud, data lake instance.
-  - How scheduling data movement from SAP HANA Cloud, HANA database (HDB) to SAP HANA Cloud, data lake (HDLRE) can be achieved through SQL.
+  - How to create and schedule events in a SAP HANA Cloud, data lake instance
+  - How scheduling data movement from SAP HANA Cloud, HANA database (HDB) to SAP HANA Cloud, data lake (HDLRE) can be achieved through SQL
 
 ---
 
