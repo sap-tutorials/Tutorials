@@ -55,7 +55,7 @@ Install command-line tool `pack`: [Install Pack](https://buildpacks.io/docs/tool
 
 For example (macOS):
 
-```
+```shell
 brew install buildpacks/tap/pack
 ```
 
@@ -66,7 +66,7 @@ As you can only create one private repository in a free Docker hub account, Dock
 
 Under the directory `kyma-multitenant-node`, build the image for the approuter app from source, for example:
 
-```
+```shell
 pack build multitenant-kyma-backend --builder paketobuildpacks/builder:full
 docker tag multitenant-kyma-backend <docker-hub-account>/multitenant-kyma-backend:v1
 ```
@@ -80,13 +80,13 @@ docker tag multitenant-kyma-backend <docker-hub-account>/multitenant-kyma-backen
 
 Log in to Docker using this command:
 
-```
+```shell
 docker login -u <docker-id> -p <password>
 ```
 
 Push the local image into the Docker Hub:
 
-```
+```shell
 docker push <docker-hub-account>/multitenant-kyma-backend:v1
 ```
 
@@ -100,7 +100,7 @@ docker push <docker-hub-account>/multitenant-kyma-backend:v1
 
 Then you are ready to deploy it into the Kubernetes cluster with Kyma runtime.
 
-Click on the `Link to dashboard` to open the Kyma dashboard.
+Select the `Link to dashboard` to open the Kyma dashboard.
 
 ![image-20220112154735200](image-20220112154735200.png)
 
@@ -118,7 +118,7 @@ Create a new namespace through the Kyma dashboard or `kubectl` CLI, for example,
 
 Since the OCI image is stored in your Docker hub, you need to provide the access information to your Kyma cluster that you can pull the images from those repositories:
 
-```
+```shell
 kubectl -n multitenancy-ns create secret docker-registry registry-secret --docker-server=https://index.docker.io/v1/  --docker-username=<docker-id> --docker-password=<password> --docker-email=<email>
 ```
 
@@ -126,7 +126,7 @@ kubectl -n multitenancy-ns create secret docker-registry registry-secret --docke
 
 Therefore, all deployment files contain an `imagePullSecret` entry, which should be set to `registry-secret`.
 
-```
+```yaml
 imagePullSecrets:
         - name: registry-secret # replace with your own registry secret
 ```
@@ -314,7 +314,7 @@ spec:
 
 Deploy the Node.js application by executing this command under the root directory `multitenancy-kyma-tutorial`:
 
-```
+```shell
 kubectl -n multitenancy-ns apply -f k8s-deployment-backend.yaml
 ```
 

@@ -23,14 +23,14 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 You can use the application generator tool [Node.js Express generator](https://expressjs.com/en/starter/generator.html) to quickly create a Node.js application skeleton.
 
 Before that, create a new directory for your project:
-```
+```shell
 mkdir multitenancy-kyma-tutorial
 ```
 
 Under the `multitenancy-kyma-tutorial` directory, create your own Node.js Application.
 
 **Option 1**: Run the application generator to create application skeleton with single one `npx` command (available in Node.js 8.2.0):
-```
+```shell
 npx express-generator --view=jade kyma-multitenant-node
 ```
 
@@ -38,7 +38,7 @@ npx express-generator --view=jade kyma-multitenant-node
 
 Install the tool:
 
-```
+```shell
 npm install -g express-generator
 ```
 
@@ -46,13 +46,13 @@ npm install -g express-generator
 
 Verify if you have successfully installed the tool:
 
-```
+```shell
 express --version
 ```
 
 Create an application skeleton:
 
-```
+```shell
 express --view=jade kyma-multitenant-node
 ```
 
@@ -139,7 +139,7 @@ router.get("/", function(req, res, next) {
 [ACCORDION-BEGIN [Step 3: ](Project Repository)]
 
 
-You can find the final Node.js project from repository: [here](https://github.com/SAP-samples/btp-kyma-runtime-multitenancy-tutorial/tree/main/Mission:%20Develop%20a%20Node.js%20Application%20in%20the%20SAP%20BTP%20Kyma%20Runtime).
+You can find the final Node.js project from [here](https://github.com/SAP-samples/btp-kyma-runtime-multitenancy-tutorial/tree/main/Mission:%20Develop%20a%20Node.js%20Application%20in%20the%20SAP%20BTP%20Kyma%20Runtime).
 
 
 
