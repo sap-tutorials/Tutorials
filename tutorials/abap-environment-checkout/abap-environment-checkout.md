@@ -2,8 +2,8 @@
 auto_validation: true
 title: Use Checkout Functionality of Branches to Switch Between Different Versions of Code
 description: Use the checkout functionality of branches to switch between different versions of your code with SAP BTP, ABAP environment.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform, tutorial>license ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license ]
 time: 20
 ---
 

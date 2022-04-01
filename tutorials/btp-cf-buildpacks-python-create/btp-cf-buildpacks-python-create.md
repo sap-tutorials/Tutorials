@@ -4,17 +4,17 @@ author_profile: https://github.com/Joysie
 title: Create a Python Application via Cloud Foundry Command Line Interface
 description: Create a simple Python application in the Cloud Foundry Command Line Interface (cf CLI) and enable services for it.
 auto_validation: true
-time: 30
-tags: [ tutorial>beginner, software-product>sap-hana]
-primary_tag: software-product>sap-btp--cloud-foundry-environment
+time: 40
+tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment, software-product>sap-hana]
+primary_tag: programming-tool>python
 ---
 
 ## Prerequisites
  - You have registered for a Cloud Foundry [trial account] (hcp-create-trial-account) on SAP Business Technology Platform.
- - [Python] (https://www.python.org/downloads/) version 3.6.x or higher is installed locally. In this tutorial, we use Python **3.9.6**.
+ - [Python] (https://www.python.org/downloads/) version 3.6.x or higher is installed locally. In this tutorial, we use Python **3.10.1**.
  - [cf CLI] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/4ef907afb1254e8286882a2bdef0edf4.html) is installed locally.
  - [npm] (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) is installed locally.
-- (Optional) You have an integrated development environment (IDE) installed locally. For example: [Visual Studio Code] (https://code.visualstudio.com/download)
+ - You have installed an integrated development environment, for example [Visual Studio Code] (https://code.visualstudio.com/).
  - You have installed the `virtualenv` tool. It creates a folder, which contains all the necessary executables to use the packages that your Python project would need. To install it locally, execute the following command in the Python installation path:   
 &nbsp;
  `<Python_installation_path>\Python39\Scripts>pip install virtualenv`
@@ -30,7 +30,7 @@ primary_tag: software-product>sap-btp--cloud-foundry-environment
   - How to run authorization checks for your app
 
 
-This tutorial will guide you through creating and setting up a simple Python application by using cf CLI. You will start by building and deploying a web application that returns sample data – a **Hello World!** message, and then invoking this app through another one - a web microservice (application router).
+This tutorial will guide you through creating and setting up a simple Python application by using cf CLI. You will start by building and deploying a web application that returns simple data – a **Hello World!** message, and then invoking this app through another one - a web microservice (application router).
 
 ---
 
@@ -65,9 +65,11 @@ In this tutorial, we use `eu10.hana.ondemand.com` as an example.
 
 You're going to create a simple Python application.
 
-1. On your local file system, create a new directory. For example: `python-tutorial`
+1. In your local file system, create a new directory (folder). For example: `python-tutorial`
 
-2. Inside this directory, create a `manifest.yml` file with the following content:
+2. From your Visual Studio Code, open the `python-tutorial` folder.
+
+3. In this folder, create a file `manifest.yml` with the following content:
 
     ```YAML
     ---
@@ -89,19 +91,19 @@ You're going to create a simple Python application.
 
 
 
-3. Specify the Python runtime version that your application will run on. To do that, create a `runtime.txt` file with the following content:
+4. Specify the Python runtime version that your application will run on. To do that, create a `runtime.txt` file with the following content:
 
     ```TXT
-    python-3.9.6
+    python-3.10.1
     ```
 
-4. This application will be a web server utilizing the Flask web framework. To specify Flask as an application dependency, create a `requirements.txt` file with the following content:
+5. This application will be a web server utilizing the Flask web framework. To specify Flask as an application dependency, create a `requirements.txt` file with the following content:
 
     ```TXT
     Flask==2.0.1
     ```
 
-5. Create a `server.py` file with the following application logic:
+6. Create a `server.py` file with the following application logic:
 
     ```Python
     import os
@@ -117,17 +119,17 @@ You're going to create a simple Python application.
 
     This is a simple server, which will return a **Hello World!** message when requested.
 
-6.	Deploy the application on Cloud Foundry. To do that, in the `python-tutorial` directory, execute:
+7.	Deploy the application on Cloud Foundry. To do that, in the `python-tutorial` directory, execute:
 
     ```Bash/Shell
     cf push
     ```
 
-    > Make sure you always execute `cf push` in the directory where the `manifest.yml` file is located - that is `python-tutorial`.
+    > Make sure you always execute `cf push` in the folder where the `manifest.yml` file is located! In this case, that's `python-tutorial`.
 
-7.  When the staging and deployment steps are complete, the `myapp` application should be successfully started and its details displayed in the command console.
+8.  When the staging and deployment steps are completed, the `myapp` application should be successfully started and its details displayed in the command console.
 
-8.	Now open a browser window and enter the URL of the `myapp` application (see the route).
+9.	Now open a browser window and enter the URL of the `myapp` application (see the route).
 
     That is:  `https://python-1234567trial.cfapps.eu10.hana.ondemand.com`
 
@@ -201,7 +203,7 @@ Now you're going to connect to SAP HANA - a service that runs on the SAP BTP, Cl
 
 3. Restage the application to bind and connect the `pyhana` service  to it. Execute:
 
-    ```bash
+    ```Bash/Shell
     cf restage myapp
     ```
 
@@ -246,7 +248,7 @@ Now you're going to connect to SAP HANA - a service that runs on the SAP BTP, Cl
 
 5.	In the `python-tutorial` directory, execute:
 
-    ```bash
+    ```Bash/Shell
     cf push
     ```
 
@@ -265,7 +267,7 @@ The current SAP HANA time is displayed, in UTC time zone.
 
 Authentication in the SAP BTP, Cloud Foundry environment is provided by the Authorization and Trust Management (XSUAA) service. In this example, OAuth 2.0 is used as the authentication mechanism. The simplest way to add authentication is to use the Node.js `@sap/approuter` package. To do that, a separate Node.js micro-service will be created, acting as an entry point for the application.
 
-1.	In the `python-tutorial` directory, create an `xs-security.json` file for your application with the following content:
+1.	In the `python-tutorial` folder, create an `xs-security.json` file for your application with the following content:
 
     ```JSON
     {
@@ -299,14 +301,14 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
 
     The `pyuaa` service instance will be bound to the `myapp` application during deployment.
 
-4.	To create a second microservice (the application router), go to the `python-tutorial` directory and create a subdirectory named  `web`.
+4.	To create a microservice (the application router), go to the `python-tutorial` folder and create a subfolder named  `web`.
 
     > **IMPORTANT**: Make sure you don't have another application with the name `web` in your `dev` space!
 
 
-5.	Inside the `web` directory, create a subdirectory `resources`. This directory will provide the business application's static resources.
+5.	Inside the `web` folder, create a subfolder `resources`. This folder will provide the business application's static resources.
 
-6.	Inside the `resources` directory, create an `index.html` file with the following content:
+6.	Inside the `resources` folder, create an `index.html` file with the following content:
 
     ```HTML
     <html>
@@ -320,21 +322,23 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
     </html>
     ```
 
+    > This will be the `myapp` application start page.
+
 7.	In the `web` directory, execute:
 
-    ```Bash
+    ```Bash/Shell
     npm init
     ```
 
-    This will walk you through creating a `package.json` file in the `web` directory. Press **Enter** on every step.
+    This will walk you through creating a `package.json` file in the `web` folder. Press **Enter** on every step.
 
 8.	Now you need to create a directory `web/node_modules/@sap` and install an `approuter` package in it. To do that, in the `web` directory execute:
 
-    ```Bash
+    ```Bash/Shell
     npm install @sap/approuter --save
     ```
 
-9.	In the `web` directory, open the `package.json` file and replace the **scripts** section with the following:
+9.	In the `web` folder, open the `package.json` file and replace the **scripts** section with the following:
 
     ```JSON
     "scripts": {
@@ -342,7 +346,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
     },
     ```
 
-10.	Now you need to add the `web` application to your project and bind the XSAUAA service name (`pyuaa`) to it. To do that, insert the following content at the end of your `manifest.yml` file.
+10.	Now you need to add the `web` application to your project and bind the XSAUAA service name (`pyuaa`) to it. To do that, insert the following content **at the end** of your `manifest.yml` file.
 
     ```YAML
     - name: web
@@ -365,7 +369,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
 
     >   Here you can follow the same pattern for constructing the technical name of the `web` application - by using your trial account ID.
 
-11.	In the `web` directory, create an `xs-app.json` file with the following content:
+11.	In the `web` folder, create an `xs-app.json` file with the following content:
 
     ```JSON
     {
@@ -383,7 +387,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
 
 12.	Go to the `python-tutorial` directory and execute:
 
-    ```Bash
+    ```Bash/Shell
     cf push
     ```
     This command will update the `myapp` application and deploy the `web` application.
@@ -410,7 +414,7 @@ A simple application page with title **Python Tutorial** is displayed. When you 
 
 [ACCORDION-BEGIN [Step 5: ](Run an Authorization Check)]
 
-Authorization in the SAP BTP, Cloud Foundry environment is provided by the XSUAA service. In the previous example, the `@sap/approuter` package was added to provide a central entry point for the business application and to enable authentication. Now to extend the example, authorization will be added.
+Authorization in the SAP BTP, Cloud Foundry environment is also provided by the XSUAA service. In the previous example, the `@sap/approuter` package was added to provide a central entry point for the business application and to enable authentication. Now to extend the example, authorization will be added.
 
 1.	Add the `sap-xssec` security library to the `requirements.txt` file, to place restrictions on the content you serve. The file should look like this:
 
@@ -471,9 +475,9 @@ Authorization in the SAP BTP, Cloud Foundry environment is provided by the XSUAA
       app.run(host='0.0.0.0', port=port)
     ```
 
-3.	Go to the `python-tutorial` directory and execute:
+3.	Go to the `python-tutorial` folder and execute:
 
-    ```Bash
+    ```Bash/Shell
     cf push
     ```
 

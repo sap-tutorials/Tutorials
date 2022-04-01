@@ -33,7 +33,7 @@ On the other hand, the App Router is mainly responsible for managing authenticat
 
 The JWT is passed by the App Router to the underlying microservices so that they are freed up from this task. At the same time, these microservices can only be accessed with a valid JWT, hence, are protected from unauthenticated traffic.
 
-The JWT contains a signature that needs to be verifiable by every microservice to establish trust. Hence, every service require a key (client-secrets or public keys) to verify this signature and reject any requests with non-valid JWTs. Therefore, every service has to maintain a service binding to the XSUAA that provides this information for runtime verification (Figure 2). To enable this, every microservice binds to a dedicated XSUAA instance which writes this information into the `VCAP_SERVICES` environment variable which the microservices can use to verify any token's validity.
+The JWT contains a signature that needs to be verifiable by every microservice to establish trust. Hence, every service requires a key (client-secrets or public keys) to verify this signature and reject any requests with non-valid JWTs. Therefore, every service has to maintain a service binding to the XSUAA that provides this information for runtime verification (Figure 2). To enable this, every microservice binds to a dedicated XSUAA instance which writes this information into the `VCAP_SERVICES` environment variable which the microservices can use to verify any token's validity.
 
 ![Provisioning view with XSUAA binding](Figure2-1.png)
 
@@ -354,16 +354,17 @@ To regain access to your secured endpoint, you need to get the `Display` OAuth s
 
 1. First, go to your account on Cloud Foundry and find the **Role Collections** menu under the **Security** module.
 
-2. Second, create a new role collection which you can give an arbitrary name. For example, you might call the role collection **Business Partner Manager**. ![Creating a Role Collection](Figure8-2.png)
+2. Second, create a new role collection which you can give an arbitrary name. For example, you might call the role collection **Business Partner Manager**.
+
+![Creating a Role Collection](Figure8-2.png)
 
 3. Afterwards, select the role collection **Business Partner Manager**, select **Edit**, and add a new role. From the menu, select your application and the corresponding role template and role. Finish up the process by adding the newly created role and saving the **Business Partner Manager** role collection.
+
 ![Creating a Role](Figure8-3.png)
 
-4. Afterwards, the user has to be assigned to the newly created **Business Partner Manager** in order to receive the **Display** scope. To do this, select the trust configuration from the security menu and select the **Default identity provider** from the list.
+4. Afterwards, the user has to be assigned to the newly created **Business Partner Manager** in order to receive the **Display** scope. To do this, select **Users** from the security menu and select the user that should receive the permissions from the list.
 
-5. In the opening dialog, enter your user ID as e-mail into the user field and click **Show Assignments** followed by **Add Assignments**.
-
-6. Select the **Business Partner Manager** role collection from the menu to assign it to your user. ![Add User Assignment](Figure8-4.png)
+5. On the right hand side, under the **Role Collections** headline, select **Assign Role Collection** and choose the **Business Partner Manager** collection. Confirm the selection by clicking on the **Assign Role Collection** button.
 
 Afterwards you have the `Display` OAuth scope assigned to your user, which allows you to access the secured endpoints again.
 
