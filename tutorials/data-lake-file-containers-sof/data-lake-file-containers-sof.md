@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 
 Querying structured data files (CSV, ORC, Parquet) in a HANA Data Lake file container can be done using SQL on Files. Below you will find all of the steps required to start using SQL on Files.
 
-If you've not yet provisioned an SAP HANA data lake, [here](https://developers.sap.com/tutorials/hana-cloud-hdl-getting-started-1.html) is a great tutorial on how to do so!
+If you've not yet provisioned an SAP HANA data lake, [here](hana-cloud-hdl-getting-started-1) is a great tutorial on how to do so!
 
 Also, the data files used in this tutorial can be found [here](https://github.com/SAP-samples/hana-cloud-relational-data-lake-onboarding/tree/main/TPCH).
 
@@ -108,7 +108,7 @@ AS CUSTOMER_DATASOURCE CSV(webhdfs('hdlfs:///TPCH/customer.tbl')) ENCODING 'utf-
 
 [ACCORDION-BEGIN [Step 2: ](Query the Structured File)]
 
-Now that we've created all the foundational database objects for querying our file, we can simply query the files as if it were a table.
+Now that you've created all the foundational database objects for querying our file, you can simply query the files as if it were a table.
 
 **Note**: the table name here will be the name of the **EXISTING** table created in the previous step.
 
@@ -130,7 +130,7 @@ ALTER TABLE TPCH.CUSTOMER_SOF IN FILES_SERVICE DROP DATASOURCE CUSTOMER_DATASOUR
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Clean Up or Remove SQL on Files Table)]
-To clean up the SQL on Files table created in step 1, we drop the existing table, then the files service table, and lastly the files service schema.
+To clean up the SQL on Files table created in step 1, you drop the existing table, then the files service table, and lastly the files service schema.
 
 ```SQL
 DROP TABLE CUSTOMER_SOF;
@@ -144,15 +144,15 @@ DROP SCHEMA TPCH IN FILES_SERVICE;
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Optimize SQL on Files Performance Using Folder Hierarchies)]
-Another way to declare a data source with SQL on Files is using folder hierarchies. Folder hierarchies allow us to skip (or prune) files that do not need to be parsed in a query. Take a look at the following example.
+Another way to declare a data source with SQL on Files is using folder hierarchies. Folder hierarchies allow you to skip (or prune) files that do not need to be parsed in a query. Take a look at the following example.
 
 ![Folder hierarchy definition.](sof-image-1.png)
 
-In this hierarchy, we define the N_REGIONKEY column with values 0, 1, 2, 3, and 4. In other words, all subdirectories within "N_REGIONKEY=0" have 0 as the region key value. Formatting our files this way allows the query `SELECT * FROM <TABLE_NAME> WHERE N_REGIONKEY=0` to skip parsing any data files under all the other directories for better performance.
+In this hierarchy, you define the `N_REGIONKEY` column with values 0, 1, 2, 3, and 4. In other words, all subdirectories within `N_REGIONKEY=0` have 0 as the region key value. Formatting our files this way allows the query `SELECT * FROM <TABLE_NAME> WHERE N_REGIONKEY=0` to skip parsing any data files under all the other directories for better performance.
 
 Let's create the simple folder hierarchy seen in the above image and create some data files. Create a root folder named "Nation", 5 subdirectories within the "Nation" folder, and create some data files.
 
-In subdirectory 1, "N_REGIONKEY=0" create a text file `nation.tbl` and paste the following contents.
+In subdirectory 1, `N_REGIONKEY=0` create a text file `nation.tbl` and paste the following contents.
 
 ```
 0|ALGERIA|0|final accounts wake quickly. special reques|
@@ -162,7 +162,7 @@ In subdirectory 1, "N_REGIONKEY=0" create a text file `nation.tbl` and paste the
 16|MOZAMBIQUE|0|ironic courts wake fluffily even, bold deposi|
 ```
 
-In subdirectory 2, "N_REGIONKEY=1" create a text file `nation.tbl` and paste the following contents.
+In subdirectory 2, `N_REGIONKEY=1` create a text file `nation.tbl` and paste the following contents.
 
 ```
 1|ARGENTINA|1|idly final instructions cajole stealthily. regular instructions wake carefully blithely express accounts. fluffi|
@@ -172,9 +172,9 @@ In subdirectory 2, "N_REGIONKEY=1" create a text file `nation.tbl` and paste the
 24|UNITED STATES|1|blithely regular deposits serve furiously blithely regular warthogs! slyly fi|
 ```
 
-Repeat the creation of subdirectories for each of "N_REGIONKEY=2", "N_REGIONKEY=3", "N_REGIONKEY=4" and paste the data in each file respectively.
+Repeat the creation of subdirectories for each of `N_REGIONKEY=2`, `N_REGIONKEY=3`, `N_REGIONKEY=4` and paste the data in each file respectively.
 
-"N_REGIONKEY=2"
+`N_REGIONKEY=2`
 
 ```
 8|INDIA|2|ironic packages should have to are slyly around the special, ironic accounts. iron|
@@ -184,7 +184,7 @@ Repeat the creation of subdirectories for each of "N_REGIONKEY=2", "N_REGIONKEY=
 21|VIETNAM|2|doggedly ironic requests haggle furiously ironic, ironic packages. furiously final courts wake fur|
 ```
 
-"N_REGIONKEY=3"
+`N_REGIONKEY=3`
 
 ```
 6|FRANCE|3|even requests detect near the pendin|
@@ -194,7 +194,7 @@ Repeat the creation of subdirectories for each of "N_REGIONKEY=2", "N_REGIONKEY=
 23|UNITED KINGDOM|3|fluffily regular pinto beans breach according to the ironic dolph|
 ```
 
-"N_REGIONKEY=4"
+`N_REGIONKEY=4`
 
 ```
 4|EGYPT|4|pending accounts haggle furiously. furiously bold accounts detect. platelets at the packages haggle caref|
@@ -212,7 +212,7 @@ You can verify that the upload was successful with the command `hdlfscli -config
 
 ![HDLFSCLI lsr output.](sof-image-1.5.png)
 
-Below we can see how this data source can be defined in SQL.
+Below you can see how this data source can be defined in SQL.
 
 ```SQL
 ALTER TABLE TPCH.NATION IN FILES_SERVICE ADD DATASOURCE AS NATION_DATASOURCE
@@ -224,7 +224,7 @@ ALTER TABLE TPCH.NATION IN FILES_SERVICE ADD DATASOURCE AS NATION_DATASOURCE
 ) CSV ('hdlfs:///Nation/') ENCODING 'UTF_8' DELIMITED BY '|';
 ```
 
-Notice that directories are located using a 0-index. The "N_REGIONKEY" column is directory "$0" and subsequent directories would be $1, $2, ... $n. This tells the parser to look at these directory levels to find the value for the corresponding column name. The value is parsed from what is placed after the "=" in the directory name.
+Notice that directories are located using a 0-index. The `N_REGIONKEY` column is directory `$0` and subsequent directories would be `$1, $2, ... $n`. This tells the parser to look at these directory levels to find the value for the corresponding column name. The value is parsed from what is placed after the "=" in the directory name.
 
 Let's query our files.
 
@@ -261,9 +261,9 @@ For the UI method, right click the Remote Sources item from the catalog list and
 
 `host=<SQL_ENDPOINT>:443;ENC=TLS(trusted_certificates=*;direct=yes;certificate_name=hanacloud.ondemand.com)`
 
-Use the SOF_TUTORIAL_USER as the user credentials.
+Use the `SOF_TUTORIAL_USER` as the user credentials.
 
-Once the remote connection has been established, we will use the SOF_CUSTOMER table that was created earlier. This table can be found as a Remote Source and added as a virtual table.
+Once the remote connection has been established, you will use the `SOF_CUSTOMER` table that was created earlier. This table can be found as a Remote Source and added as a virtual table.
 
 ![Finding the Remote Table in the Remote Source.](sof-image-3.png)
 
@@ -298,7 +298,7 @@ When a managed Data Lake is provisioned you will notice two remote sources `SYSH
 
 First, make sure that your data file is already loaded into your data lake's file container. For this example, I will use the TPCH customer file for my SQL on Files query. Feel free to use any data/table you have on hand.
 
-For a managed SAP HANA data lake, we open an SQL console connected to our SAP HANA database and use the `REMOTE_EXECUTE` procedure for running DDL on our data lake. Remember, this SQL is for the TPCH Customers table, adjust the table schema definition to match your scenario.
+For a managed SAP HANA data lake, you open an SQL console connected to your SAP HANA database and use the `REMOTE_EXECUTE` procedure for running DDL on our data lake. Remember, this SQL is for the TPCH Customers table, adjust the table schema definition to match your scenario.
 
 ```SQL
 CALL SYSRDL#CG.REMOTE_EXECUTE('
@@ -335,9 +335,9 @@ CALL SYSRDL#CG.REMOTE_EXECUTE('
 ');
 ```
 
-**Note**: In step 3 of the code above we notice a `sof…` in the EXISTING TABLE command. This `sof…` is the files service that the table will use. This files service is meant for the managed data lake and is used by the HANA user. For a data lake user, or in a standalone data lake, we can create our own files service. See the SAP Help note [here](https://help.sap.com/viewer/3ef213750ce94aac885ac4fc54ea212f/QRC_3_2021/en-US/5489722c6d8b411abd801b88e4d066e7.html).
+**Note**: In step 3 of the code above you notice a `sof…` in the EXISTING TABLE command. This `sof…` is the files service that the table will use. This files service is meant for the managed data lake and is used by the HANA user. For a data lake user, or in a standalone data lake, you can create our own files service. See the SAP Help note [here](https://help.sap.com/viewer/3ef213750ce94aac885ac4fc54ea212f/QRC_3_2021/en-US/5489722c6d8b411abd801b88e4d066e7.html).
 
-Now, we have created the SQL on Files table and need to find the remote source table in our SAP HANA database.
+Now, you have created the SQL on Files table and need to find the remote source table in our SAP HANA database.
 
 ![Finding the remote object in SYSRDL#CG schema.](sof-image-8.png)
 
@@ -345,7 +345,7 @@ Click the check box for the SQL on Files Table and then select "Create Virtual O
 
 ![Finding the recently created virtual object.](sof-image-9.png)
 
-And now, we have access to our file's data from an SAP HANA Database. Query and use this table as if it were any other HANA table.
+And now, you have access to our file's data from an SAP HANA Database. Query and use this table as if it were any other HANA table.
 
 [VALIDATE_7]
 [ACCORDION-END]
