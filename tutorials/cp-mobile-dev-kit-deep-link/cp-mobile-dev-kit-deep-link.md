@@ -13,12 +13,10 @@ author_profile: https://github.com/jitendrakansal
 - **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
 - **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by allowing custom domains.)
 - **Download and install** **SAP Mobile Cards** on your [iOS](https://apps.apple.com/us/app/sap-mobile-cards/id1168110623) or [Android](https://play.google.com/store/apps/details?id=com.sap.content2go&hl=en) device
-- **Download and install** **SAP Fiori Client** on your [iOS](https://apps.apple.com/us/app/sap-fiori-client/id824997258) or [Android](https://play.google.com/store/apps/details?id=com.sap.fiori.client&hl=en) device
 
 ## Details
 ### You will learn
-  - How to open SAP standard apps like Mobile Cards, Fiori Client from MDK public store client
-  - How to open an UI5 app running in a  Fiori Client from an MDK public store client
+  - How to open SAP standard app like Mobile Cards from MDK public store client
   - How to open a web page
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/4-Implement-Deep-Linking-to-Another-App-from-an-MDK-App) and start directly with step 5 in this tutorial.
@@ -31,7 +29,7 @@ If an app is already installed, you can specify a custom URL scheme (iOS Univers
 
 !![MDK](img_1.gif)
 
->**This tutorial has been executed using public store MDK client which has out of the box functionality to open the SAP standard apps like SAP Mobile Cards and SAP Fiori Client.
+>**This tutorial has been executed using public store MDK client which has out of the box functionality to open the SAP standard app like SAP Mobile Cards.
 If you are building a custom version of Mobile development kit client, there you can implement deep links by specifying related custom URL scheme.**
 
 [ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Business Application Studio)]
@@ -69,11 +67,9 @@ If you are building a custom version of Mobile development kit client, there you
 
 [ACCORDION-BEGIN [Step 2: ](Create a new rule)]
 
-In the MDK editor, you will create 4 new Rule files:
+In the MDK editor, you will create 2 new Rule files:
 
   * `OpenSAPMobileCards.js` to open SAP Mobile Cards app
-  * `OpenSAPFioriClient.js` to open SAP Fiori Client app
-  * `OpenUI5.js` to open an UI5 app running in SAP Fiori Client app
   * `OpenSAPcom.js` to open `SAP.com` web page
 
     >You can find more details about [writing a Rule](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/rules.html).
@@ -110,61 +106,7 @@ In the MDK editor, you will create 4 new Rule files:
 
 3. Save your changes to the `OpenSAPMobileCards.js` file.
 
-4. Repeat the above step and create another new Rule file:
-
-    Enter the file name `OpenSAPFioriClient`, click **OK**.
-
-    Replace the generated snippet with below code.
-
-    ```JavaScript
-    export default function OpenSAPFioriClient(context) {
-        // Get the Nativescript UI Dialogs Module
-        const dialogs = context.nativescript.uiDialogsModule;
-        // Get the Nativescript Utils Module
-        const utilsModule = context.nativescript.utilsModule;
-        return dialogs.confirm("Do you want to leave the current app?").then((result) => {
-            if (result === true) {
-                //This will open SAP Fiori Client App
-                return utilsModule.openUrl("com.sap.fiori.client.xcallbackurl://x-callback-url");
-            } else {
-                return Promise.reject('User Deferred');
-            }
-        });
-    }
-    ```
-
-    !![MDK](img_2.4.png)
-
-5. Save your changes to the `OpenSAPFioriClient.js` file.    
-
-6. Repeat the above step and create another new Rule file:
-
-    Enter the file name `OpenUI5`, click **OK**.
-
-    Replace the generated snippet with below code.
-
-    ```JavaScript
-    export default function OpenUI5(context) {
-        // Get the Nativescript UI Dialogs Module
-        const dialogs = context.nativescript.uiDialogsModule;
-        // Get the Nativescript Utils Module
-        const utilsModule = context.nativescript.utilsModule;
-        return dialogs.confirm("Do you want to leave the current app?").then((result) => {
-            if (result === true) {
-                //This will open Software Downloads app running in SAP Fiori Client
-                return utilsModule.openUrl("com.sap.fiori.client.xcallbackurl://x-callback-url/openFioriUrl?url=https://launchpad.support.sap.com/#/softwarecenter");
-            } else {
-                return Promise.reject('User Deferred');
-            }
-        });
-    }
-    ```
-
-    !![MDK](img_2.6.png)
-
-7. Save your changes to the `OpenUI5.js` file.   
-
-8. Create one more Rule file and name it to `OpenSAPcom`.
+4. Create one more Rule file and name it to `OpenSAPcom`.
 
     Replace the generated snippet with below code.
 
@@ -187,7 +129,7 @@ In the MDK editor, you will create 4 new Rule files:
 
     !![MDK](img_2.8.png)
 
-9. Save your changes to the `OpenSAPcom.js` file.
+5. Save your changes to the `OpenSAPcom.js` file.
 
 [DONE]
 [ACCORDION-END]
@@ -207,7 +149,7 @@ In the MDK editor, you will create 4 new Rule files:
 
     !![MDK](img_3.2.gif)
 
-3. Repeat the above step, and drag and drop 3 more such **Section Button** Container Item controls.
+3. Repeat the above step, and drag and drop one more such **Section Button** Container Item control.
 
     !![MDK](img_3.3.png)
 
@@ -215,12 +157,13 @@ In the MDK editor, you will create 4 new Rule files:
 
     !![MDK](img-3.4.png)
 
-5. Repeat the above step and change the title for other controls as below:
+5. Change the title for the second button as below:
 
     !![MDK](img_3.5.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 4: ](Set onPress handler to the buttons)]
 
@@ -230,15 +173,9 @@ In the MDK editor, you will create 4 new Rule files:
 
     Double-click the `OpenSAPMobileCards.js` and click **OK** to set it as the `OnPress` action.
 
-    !![MDK](img-4.1.gif)
+    !![MDK](img-4.1.png)
 
-3. Repeat the same and do the following:
-
-    Set the handler for **Open SAP Fiori Client** button to `OpenSAPFioriClient.js`.
-
-    Set the handler for **Open UI5 App** button to `OpenUI5.js`.
-
-    Set the handler for **Open SAP.com page** button to `OpenSAPcom.js`.
+2. Repeat the same and set the handler for **Open sap.com page** button to `OpenSAPcom.js`.
 
 [DONE]
 [ACCORDION-END]
@@ -303,31 +240,19 @@ The On-boarding QR code is now displayed.
 
     Once you accept app update, you will see **Main** page with the buttons you added in previous step 3.
 
-    !![MDK](img_7.1.png)
+    ![MDK](img_7.1.png)
 
 2. Tap **OPEN SAP MOBILE CARDS** and then tap **OK**.
 
-    !![MDK](img_7.2.png)
+    ![MDK](img_7.2.png)
 
     If you have already installed SAP Mobile Cards app, then MDK app will open it.
 
-    !![MDK](img_7.3.png)
+    ![MDK](img_7.3.png)
 
-3. Tapping **OPEN SAP FIORI CLIENT** will open **SAP Fiori Client** app.
+3. Tapping on **OPEN SAP.COM PAGE** will open SAP website.
 
-    >If you have access to any Fiori app or Fiori Launchpad page for example [SAP Support Launchpad](https://launchpad.support.sap.com), then enter that URL in your Fiori Client app.
-
-    !![MDK](img_7.4.png)
-
-4. Tapping on **OPEN UI5 APP** will open a specific app running in SAP Fiori Client as per `OpenUI5.js` file.
-
-    In below screenshot, there is one Software Downloads UI5 app part of SAP Support Launchpad.
-
-    !![MDK](img_7.5.png)
-
-5. Tapping on **OPEN SAP.COM PAGE** will open SAP website.
-
-    !![MDK](img_7.6.png)
+    ![MDK](img_7.4.png)
 
 [OPTION END]
 
@@ -347,23 +272,11 @@ The On-boarding QR code is now displayed.
 
     !![MDK](img_7.9.png)
 
-3. Tapping **Open SAP Fiori Client** will open **SAP Fiori Client** app.
-
-    >If you have access to any Fiori app or Fiori Launchpad page for example [SAP Support Launchpad](https://launchpad.support.sap.com), then enter that URL in your Fiori Client app.
-
-    !![MDK](img_7.10.png)
-
-4. Tapping on **Open UI5 App** will open a specific app running in SAP Fiori Client as per `OpenUI5.js` file.
-
-    In below screenshot, there is one Software Downloads UI5 app part of SAP Support Launchpad.
-
-    !![MDK](img_7.11.png)
-
-5. Tapping on **Open SAP.com page** will open SAP website.
+3. Tapping on **Open sap.com page** will open SAP website.
 
     !![MDK](img_7.12.png)
 
-    >To run this app in your branded client, you need to add Mobile Cards and Fiori Client app URL schemes (`com.sap.content2go`,`com.sap.fiori.client.xcallbackurl`)  in the info.plist.   
+    >To run this app in your branded client, you need to add Mobile Cards app URL schemes (`com.sap.content2go`)  in the info.plist.   
 
 [OPTION END]
 
