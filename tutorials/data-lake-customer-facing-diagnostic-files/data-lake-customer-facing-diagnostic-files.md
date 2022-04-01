@@ -195,7 +195,7 @@ response.close()
 
 Now, if you want to write the contents of the diagnostic file to a local file, replace the print statement in the above code to the following. Make sure that the parent directory `sample-diagnostic-file` exists or remove it from the open statement.
 
-```python
+```Python
 file_name = 'my-diagnostics-file.txt'
 f = open(f"sample-diagnostic-file/{file_name}", "w+")
 f.write(file_contents)
