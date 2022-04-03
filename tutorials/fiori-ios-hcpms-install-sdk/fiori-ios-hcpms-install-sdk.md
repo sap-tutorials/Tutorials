@@ -3,7 +3,7 @@ title: Install the SAP BTP SDK for iOS
 description: Install the SAP BTP SDK for iOS locally on your machine.
 auto_validation: true
 primary_tag: software-product>sap-btp-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services, software-product>sap-mobile-cards]
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services]
 time: 5
 
 
@@ -19,6 +19,7 @@ time: 5
 
 ### You will learn  
 
+- How to install the SAP BTP SDK for iOS
 - How to add the SAP BTP SDK for iOS framework files to your project
 - How to set the correct references
 
@@ -28,7 +29,7 @@ time: 5
 
 Download the `SAP_BTP_for_iOS_PKG_release` zip file . Unzip it and double-click the pkg file to install. Follow the installation instructions.
 
-The application `SAP BTP SDK Assistant for iOS`  will be installed  to the local `Applications` folder.
+The application `SAP BTP SDK Assistant for iOS`  will be installed to the local `Applications` folder.
 
 > The Assistant is a macOS app that rapidly generates object-oriented Swift proxy classes for OData services, eliminating exposure to low-level APIs. The Assistant also generates Mobile Services configuration and creates a ready to run Xcode project for iPhone or iPad.
 
