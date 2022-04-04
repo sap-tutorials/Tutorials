@@ -63,6 +63,11 @@ Now that you have a **Rule Project**, you can create a rule. In the **Rule Proje
 
     threshold:
     SAP_Stream_Derivation.BusinessTime
+
+    ELSE IF ISNULL( thresholdCheck.threshold )
+
+    threshold:
+    'Jan 1, 1970 1:00:00 AM'
     ```
 
 6.  Now you can **Save** and **Activate** the **Rule on Cloud**.
@@ -89,8 +94,10 @@ In the **Rule Projects** app navigate to the **Rules** tab and create a **Stream
 5.  Using the interactive editor create your rule condition. In this condition we are not providing any value to `IoT_Event_Name` that will be populated differently.
 
     ```Rule
-    IF  ISNULL( thresholdCheck.threshold ) AND ISNOTNULL( thresholdCheck.scanningTime )  
+    thresholdCheck.threshold > 'Jan 1, 1990 1:00:00 AM' AND ISNOTNULL( thresholdCheck.scanningTime )  
     ```
+
+    >In the rule we are checking the threshold date is valid (current BusinessTime) and higher from the intial value `'Jan 1, 1970 1:00:00 AM'`.
 
     Create another Rule:
 
@@ -105,8 +112,10 @@ In the **Rule Projects** app navigate to the **Rules** tab and create a **Stream
 10. Using the interactive editor create your rule condition. In this condition we are not providing any value to `IoT_Event_Name` that will be populated differently.
 
     ```Rule
-    IF  ISNOTNULL( thresholdCheck.threshold ) AND ISNOTNULL( thresholdCheck.scanningTime )  
+    thresholdCheck.threshold < 'Jan 1, 1990 1:00:00 AM' AND ISNOTNULL( thresholdCheck.scanningTime )
     ```
+
+    >In the rule we are checking the threshold date is the intial value `'Jan 1, 1970 1:00:00 AM'`.
 
 11. Activate both the rules.
 

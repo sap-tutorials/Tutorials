@@ -3,10 +3,9 @@ title: Ask and Answer Questions on SAP Community
 description: Get to know the Q&A section and learn how to ask great questions -- that get you the information you need and help the community at the same time.
 author_name: Lena Stodal
 author_profile: https://github.com/lenastodal
-
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, topic>sap-community ]
+tags: [ tutorial>beginner, topic>sap-community  ]
 primary_tag: topic>sap-community
 ---
 
@@ -15,9 +14,8 @@ primary_tag: topic>sap-community
 - How to prepare your question
 - Tips and tricks for asking your question
 - What to do after you asked your question
- ---
 
-This tutorial is version number 01.2022.001
+This tutorial is version number 03.2022.001
 
 SAP Community wants to create a valuable store of knowledge and it is our goal to provide content to our members in the form of advice, support, and guidance. The creation of such a reliable place is amongst other factors heavily dependent on questions, how they are asked and answered -- and this is why you are here.
 

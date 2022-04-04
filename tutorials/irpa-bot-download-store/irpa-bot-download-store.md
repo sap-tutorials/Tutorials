@@ -1,7 +1,7 @@
 ---
 author_name: Chaitanya Priya Puvvada
 author_profile: https://github.com/chaitanya-priya-puvvada
-title: Get a store package from SAP Intelligent RPA Store.
+title: Get a store package from SAP Intelligent RPA Store
 description: Get Orders Management package from the SAP Intelligent Robotic Process Automation store and reuse the package in the Cloud Studio.
 keywords: RPA
 auto_validation: true
@@ -11,8 +11,8 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
 ---
 
 ## Prerequisites
-  [Subscribe to SAP Intelligent RPA Service in SAP BTP](irpa-setup-1-booster-subscription)
-  [Install SAP Intelligent RPA On-Premise Components](irpa-setup-2-onpremise-installation)
+  - [Subscribe to SAP Intelligent RPA Service in SAP BTP](irpa-setup-1-booster-subscription)
+  - [Install SAP Intelligent RPA On-Premise Components](irpa-setup-2-onpremise-installation)
 
 ## Details
 ### You will learn
@@ -41,6 +41,7 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Acquire the Orders Management using SAPUI5 application package)]
+
 1. You will acquire the package titled **Orders Management using UI5 application**. by setting the following parameters.
 Under **Design Tool**, check **Cloud Studio** and under **Catalog**, check **Learning**.
 

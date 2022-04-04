@@ -55,11 +55,6 @@ You destination should look similar to this one at the end:
 
 > Further information on Destinations and supported Authentication methods see [SAP Help Portal of Internet of Things](https://help.sap.com/viewer/fbf2583f7bcf47fcb5107bf4d358770e/latest/en-US/87ec372e20ea48ba9843fc60a4723895.html) and [SAP Help Portal of SAP BTP Connectivity](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/42a0e6b966924f2e902090bdf435e1b2.html)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Test yourself)]
-
 [VALIDATE_5]
 [ACCORDION-END]
 
