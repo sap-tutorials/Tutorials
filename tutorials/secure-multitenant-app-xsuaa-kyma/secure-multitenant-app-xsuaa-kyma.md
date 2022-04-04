@@ -142,7 +142,7 @@ Now, mount the Secret just generated to the pods of both approuter and node appl
 
 [ACCORDION-BEGIN [Step 4: ](Add Authentication and Authorization Logic into Backend Application)]
 
-Add libraries for enabling authentication in the `kyma-multitenant-node/app.js` file:
+**1.** Add libraries for enabling authentication in the `kyma-multitenant-node/app.js` file:
 
 ```javascript[3-7]
 var app = express();
@@ -154,7 +154,7 @@ var JWTStrategy = require('@sap/xssec').JWTStrategy;
 //************************************************************************************************
 ```
 
-Enable authorization in the `kyma-multitenant-node/app.js` file:
+**2.** Enable authorization in the `kyma-multitenant-node/app.js` file:
 
 ```javascript[4-9]
 app.set('views', path.join(__dirname, 'views'));
@@ -167,7 +167,8 @@ app.use(passport.initialize());
 app.use(passport.authenticate('JWT', { session: false })); //Authenticate using JWT strategy
 //************************************************************************************************
 ```
-Add dependency `"@kubernetes/client-node"` in the `kyma-multitenant-node/package.js` file, for example:
+
+**3.** Add dependency `"@kubernetes/client-node"` in the `kyma-multitenant-node/package.js` file, for example:
 
 ```json[2-4]
     "dependencies": {
@@ -212,7 +213,7 @@ The application router must determine the tenant-specific subdomain for the UAA 
 
 **TENANT_HOST_PATTERN** is a string containing a regular expression with a capturing group. The request host is matched against this regular expression. The value of the first capturing group is used as the tenant subdomain. For more details, please visit: [Multitenancy](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/5310fc31caad4707be9126377e144627.html?locale=en-US).
 
-Add a new ConfigMap to provide your Kyma cluster domain in the `k8s-deployment-approuter.yaml` file:
+**1.** Add a new ConfigMap to provide your Kyma cluster domain in the `k8s-deployment-approuter.yaml` file:
 
 ```yaml
 ---
@@ -224,7 +225,7 @@ data:
   cluster-domain: <cluster-domain>  ## adapt to your Kyma cluster
 ```
 
-Refer to the ConfigMap and add environment variable **TENANT_HOST_PATTERN** in the `k8s-deployment-approuter.yaml` file:
+**2.** Refer to the ConfigMap and add environment variable **TENANT_HOST_PATTERN** in the `k8s-deployment-approuter.yaml` file:
 
 ```yaml[3-9]
       containers:

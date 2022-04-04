@@ -83,7 +83,7 @@ Payload of subscription PUT and DELETE methods:
 
 A tenant-specific URL should be provided to customers in the onboarding process, at the same time, the URL should be exposed to the Internet as well. Otherwise, customers still cannot access the tenant. URL is exposed in the Kyma runtime through APIRule, which needs to be created dynamically through the onboarding/offboarding process using [Kubernetes client for NodeJs](https://github.com/kubernetes-client/javascript).
 
-Under the `kyma-multitenant-node/routes/index.js` file, implement the subscription and unsubscription callbacks.
+In the `kyma-multitenant-node/routes/index.js` file, implement the subscription and unsubscription callbacks. Replace the placeholder with your cluster domain.
 
 ```javascript
 //******************************** API Callbacks for multitenancy ********************************
@@ -185,7 +185,6 @@ router.delete('/callback/v1.0/tenants/*', async function(req, res) {
 });
 //************************************************************************************************
 ```
-> Replace the placeholder with your cluster domain.
 
 
 [DONE]
@@ -194,7 +193,7 @@ router.delete('/callback/v1.0/tenants/*', async function(req, res) {
 
 [ACCORDION-BEGIN [Step 3: ](Define Logic for APIRule Creation)]
 
-Add constant values and variables in the `kyma-multitenant-node/routes/index.js`:
+**1.** Add constant values and variables in the `kyma-multitenant-node/routes/index.js`, replace <namespace> with your own namespace name:
 
 ```javascript[4-13]
 var express = require('express');
@@ -212,9 +211,8 @@ const createApiRule = require('./createApiRule');
 var kyma_cluster = process.env.CLUSTER_DOMAIN || "UNKNOWN";
 ```
 
-> Replace <namespace> with your own namespace name
 
-Create a new file named `createApiRule.js` under the directory `kyma-multitenant-node/routes/` to provide APIRule object:
+**2.** Create a new file named `createApiRule.js` under the directory `kyma-multitenant-node/routes/` to provide APIRule object:
 
 ```javascript
 module.exports = {
@@ -268,7 +266,7 @@ function createApiRule(svcName, svcPort, host, clusterName) {
 }
 ```
 
-Add dependency `"@kubernetes/client-node"` in the `kyma-multitenant-node/package.js` file, for example:
+**3.** Add dependency `"@kubernetes/client-node"` in the `kyma-multitenant-node/package.js` file, for example:
 
 ```json[2]
     "dependencies": {
@@ -283,7 +281,7 @@ Add dependency `"@kubernetes/client-node"` in the `kyma-multitenant-node/package
 
 [ACCORDION-BEGIN [Step 4: ](Grant Role to Pod)]
 
-To automatically create APIRule from a pod, proper RoleBinding should be granted. Add a RoleBinding in the `k8s-deployment-backend.yaml` with the following content:
+To automatically create APIRule from a pod, proper RoleBinding should be granted. Add a RoleBinding in the `k8s-deployment-backend.yaml` with the following content, replace <namespace> with your own namespace name:
 
 ```yaml
 ---
@@ -300,8 +298,6 @@ roleRef:
   name: kyma-namespace-admin
   apiGroup: rbac.authorization.k8s.io  
 ```
-
-> Replace <namespace> with your own namespace name
 
 
 [DONE]

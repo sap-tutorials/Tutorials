@@ -33,14 +33,14 @@ When a consumer accesses the application, their consumer tenant calls the multit
 
 [ACCORDION-BEGIN [Step 2: ](Create Approuter Application)]
 
-Create a folder `kyma-multitenant-approuter` under the root directory.
+**1.** Create a folder `kyma-multitenant-approuter` under the root directory.
 
-```shell
+```Shell / Bash
 mkdir kyma-multitenant-approuter
 cd kyma-multitenant-approuter
 ```
 
-Under the folder `kyma-multitenant-approuter`, create a file `package.json` with the following content:
+**2.** In the folder `kyma-multitenant-approuter`, create a file `package.json` with the following content:
 
 ```json
 {
@@ -66,7 +66,7 @@ Under the folder `kyma-multitenant-approuter`, create a file `package.json` with
 
 Then you should configure the **routes** in the security descriptor file `xs-app.json` of the application router so that application requests can be forwarded to the multitenant application destination.
 
-Under the folder `kyma-multitenant-approuter`, create a file `xs-app.json` with the following content:
+In the folder `kyma-multitenant-approuter`, create a file `xs-app.json` with the following content:
 
 ```json
 {
@@ -220,7 +220,7 @@ status: {}
 
 Now you can create a Service and APIRule to make the approuter application accessible to the internet.
 
-Add a Service for the approuter application in the `k8s-deployment-approuter.yaml` file:
+**1.** Add a Service for the approuter application in the `k8s-deployment-approuter.yaml` file:
 
 ```yaml
 ---
@@ -243,7 +243,7 @@ spec:
     release: multitenancy
 ```
 
-Add an APIRule for the approuter application in the `k8s-deployment-approuter.yaml` file:
+**2.** Add an APIRule for the approuter application in the `k8s-deployment-approuter.yaml` file:
 
 ```yaml
 ---

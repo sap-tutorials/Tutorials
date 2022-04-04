@@ -28,15 +28,15 @@ Create a new subaccount for the customer under the same Global Account with the 
 
 [ACCORDION-BEGIN [Step 2: ](Subscribe Multitenant Application)]
 
-Switch to the new subaccount `Customer`, you can see and subscribe the multitenant application in the **Service Marketplace**.
+**1.** Switch to the new subaccount `Customer`, you can see and subscribe the multitenant application in the **Service Marketplace**.
 
 ![image-20220114150155343](image-20220114150155343.png)
 
-Create an instance for the multitenant application:
+**2.** Create an instance for the multitenant application:
 
 ![image-20220114150240618](image-20220114150240618.png)
 
-Click **Create**:
+**3.** Select the service and click **Create**:
 
 ![image-20220114150307297](image-20220114150307297.png)
 
