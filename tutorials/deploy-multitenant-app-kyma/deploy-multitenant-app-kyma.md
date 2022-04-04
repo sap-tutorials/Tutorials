@@ -57,7 +57,7 @@ In order to run your code on the Kyma Runtime (or on any Kubernetes-based platfo
 
 The command-line tool `pack` supports providing a buildpack and your local source code and creating an OCI image from it. We are working on a process to provide recommended and supported buildpacks. In the meantime, you can use the community-supported [Paketo Buildpacks](https://paketo.io/).
 
-If you followed the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in the Kyma Runtime](deploy-nodejs-application-kyma), you have installed the command-line tool `pack`, if not, please follow this official guide: [Install Pack](https://buildpacks.io/docs/tools/pack/)
+**1.** If you followed the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in the Kyma Runtime](deploy-nodejs-application-kyma), you have installed the command-line tool `pack`, if not, please follow this official guide: [Install Pack](https://buildpacks.io/docs/tools/pack/)
 
 For example (macOS):
 
@@ -69,14 +69,14 @@ When we speak about repository name, we mean the combination of account and repo
 
 As you can only create one private repository in a free Docker hub account, Docker images stored in Docker hub will have different tag names so that they can be stored under one repository. Thus, addressing an image will include the tag name:`<docker-hub-account>/<repo-name>:<tag-name>`. An example would be `tiaxu/multitenant-kyma-backend:v1`.
 
-Under the directory `kyma-multitenant-approuter`, build the image for the approuter app from source, for example:
+**2.** In the directory `kyma-multitenant-approuter`, build the image for the approuter app from source, for example:
 
 ```
 pack build multitenant-approuter --builder paketobuildpacks/builder:full
 docker tag multitenant-approuter <docker-hub-account>/multitenant-approuter:v1
 ```
 
-Under the directory `kyma-multitenant-node`, build the image for the approuter app from source, for example:
+**3.** In the directory `kyma-multitenant-node`, build the image for the approuter app from source, for example:
 
 ```
 pack build multitenant-kyma-backend --builder paketobuildpacks/builder:full
@@ -90,13 +90,13 @@ docker tag multitenant-kyma-backend <docker-hub-account>/multitenant-kyma-backen
 
 [ACCORDION-BEGIN [Step 4: ](Push OCI Image to Docker Hub)]
 
-Log in to Docker using this command:
+**1.** Log in to Docker using this command:
 
 ```
 docker login -u <docker-id> -p <password>
 ```
 
-Push the local images into the Docker Hub:
+**2.** Push the local images into the Docker Hub:
 
 ```
 docker push <docker-hub-account>/multitenant-approuter:v1
@@ -150,19 +150,19 @@ imagePullSecrets:
 
 [ACCORDION-BEGIN [Step 7: ](Deploy Application into Kyma Runtime)]
 
-Deploy consumed services by executing this command:
+**1.** Deploy consumed services by executing this command:
 
 ```
 kubectl -n multitenancy-ns apply -f k8s-deployment-services.yaml
 ```
 
-Deploy the approuter applications by executing this command:
+**2.** Deploy the approuter applications by executing this command:
 
 ```
 kubectl -n multitenancy-ns apply -f k8s-deployment-approuter.yaml
 ```
 
-Deploy the backend applications by executing this command:
+**3.** Deploy the backend applications by executing this command:
 
 ```
 kubectl -n multitenancy-ns apply -f k8s-deployment-backend.yaml
