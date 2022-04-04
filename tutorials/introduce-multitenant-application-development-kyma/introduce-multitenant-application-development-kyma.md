@@ -70,13 +70,13 @@ For a consumer to use a tenant-aware application on SAP BTP, the application own
 
 Let's assume you are a multitenant application provider, for example: `Provider: TIA`. `Provider: TIA` would like to provide an application that displays the logged-in user’s name and customer's tenant-related information, shown as below:
 
-![image-20220114180726352](image-20220114180726352.png)
+!![image-20220114180726352](image-20220114180726352.png)
 
 **Persona**: <u>Customer</u>
 
 A consumer can subscribe to the multitenant application through the SAP BTP Account Cockpit.
 
-![image-20220114150135988](image-20220114150135988.png)
+!![image-20220114150135988](image-20220114150135988.png)
 
 
 

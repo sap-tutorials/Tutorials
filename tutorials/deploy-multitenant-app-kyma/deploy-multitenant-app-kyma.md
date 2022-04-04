@@ -31,7 +31,7 @@ Open your subaccount in the Cockpit. In the overview page, find the subdomain fo
 
 For example:
 
-![image-20211214133316133](image-20211214133316133.png)
+!![image-20211214133316133](image-20211214133316133.png)
 
 [DONE]
 [ACCORDION-END]
@@ -42,7 +42,7 @@ In your Kyma dashboard, find the full Kyma cluster domain in the downloaded `kub
 
 For example:
 
-![image-20211214133533870](image-20211214133533870.png)
+!![image-20211214133533870](image-20211214133533870.png)
 
 
 
@@ -61,7 +61,7 @@ The command-line tool `pack` supports providing a buildpack and your local sourc
 
 For example (macOS):
 
-```
+```Shell / Bash
 brew install buildpacks/tap/pack
 ```
 
@@ -71,14 +71,14 @@ As you can only create one private repository in a free Docker hub account, Dock
 
 **2.** In the directory `kyma-multitenant-approuter`, build the image for the approuter app from source, for example:
 
-```
+```Shell / Bash
 pack build multitenant-approuter --builder paketobuildpacks/builder:full
 docker tag multitenant-approuter <docker-hub-account>/multitenant-approuter:v1
 ```
 
 **3.** In the directory `kyma-multitenant-node`, build the image for the approuter app from source, for example:
 
-```
+```Shell / Bash
 pack build multitenant-kyma-backend --builder paketobuildpacks/builder:full
 docker tag multitenant-kyma-backend <docker-hub-account>/multitenant-kyma-backend:v1
 ```
@@ -92,13 +92,13 @@ docker tag multitenant-kyma-backend <docker-hub-account>/multitenant-kyma-backen
 
 **1.** Log in to Docker using this command:
 
-```
+```Shell / Bash
 docker login -u <docker-id> -p <password>
 ```
 
 **2.** Push the local images into the Docker Hub:
 
-```
+```Shell / Bash
 docker push <docker-hub-account>/multitenant-approuter:v1
 docker push <docker-hub-account>/multitenant-kyma-backend:v1
 ```
@@ -115,7 +115,7 @@ docker push <docker-hub-account>/multitenant-kyma-backend:v1
 
 If you followed the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in the Kyma Runtime](deploy-nodejs-application-kyma), you have created a namespace in the Kyma environment called `multitenancy-ns`. If not, create a new namespace through the Kyma dashboard or `kubectl` CLI, for example, called `multitenancy-ns`:
 
-![image-20220214150615225](image-20220214150615225.png)
+!![image-20220214150615225](image-20220214150615225.png)
 
 
 
@@ -127,17 +127,16 @@ If you followed the tutorials [Create a Basic Node.js Application with Express G
 
 Since the OCI image is stored in your Docker hub, you need to provide the access information to your Kyma cluster that you can pull the images from those repositories.
 
-If you followed the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in the Kyma Runtime](deploy-nodejs-application-kyma), you have configured the credential of your Docker Hub as a Secret. If not, create a new Secret with the following command:
+If you followed the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in the Kyma Runtime](deploy-nodejs-application-kyma), you have configured the credential of your Docker Hub as a Secret. If not, create a new Secret with the following command, replace the placeholder values according to your account:
 
-```
+```Shell / Bash
 kubectl -n multitenancy-ns create secret docker-registry registry-secret --docker-server=https://index.docker.io/v1/  --docker-username=<docker-id> --docker-password=<password> --docker-email=<email>
 ```
 
-> Replace the placeholder values according to your account.
 
 Therefore, all deployment files contain an `imagePullSecret` entry, which should be set to `registry-secret`.
 
-```
+```yaml
 imagePullSecrets:
         - name: registry-secret # replace with your own registry secret
 ```
@@ -152,19 +151,19 @@ imagePullSecrets:
 
 **1.** Deploy consumed services by executing this command:
 
-```
+```Shell / Bash
 kubectl -n multitenancy-ns apply -f k8s-deployment-services.yaml
 ```
 
 **2.** Deploy the approuter applications by executing this command:
 
-```
+```Shell / Bash
 kubectl -n multitenancy-ns apply -f k8s-deployment-approuter.yaml
 ```
 
 **3.** Deploy the backend applications by executing this command:
 
-```
+```Shell / Bash
 kubectl -n multitenancy-ns apply -f k8s-deployment-backend.yaml
 ```
 
