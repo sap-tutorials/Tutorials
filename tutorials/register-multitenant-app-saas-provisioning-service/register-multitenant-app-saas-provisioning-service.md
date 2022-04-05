@@ -22,7 +22,7 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 
 **1.** Create an instance and binding of SAP SaaS Provisioning Service by adding the following part to the deployment file `k8s-deployment-services.yaml`:
 
-```yaml
+```YAML
 ################### SaaS Provisioning Service ###################
 ---
 apiVersion: servicecatalog.k8s.io/v1beta1
@@ -81,7 +81,7 @@ spec:
 
 Mount the Secret as a volume to the pod in the `k8s-deployment-backend.yaml`:
 
-```yaml[3-5,9-11]
+```YAML[3-5,9-11]
         volumeMounts:
         ......
         - name: saas-registry-volume

@@ -33,7 +33,7 @@ When a consumer accesses the application, their consumer tenant calls the multit
 
 [ACCORDION-BEGIN [Step 2: ](Create Approuter Application)]
 
-**1.** Create a folder `kyma-multitenant-approuter` under the root directory.
+**1.** Create a folder `kyma-multitenant-approuter` in the root directory.
 
 ```Shell / Bash
 mkdir kyma-multitenant-approuter
@@ -42,7 +42,7 @@ cd kyma-multitenant-approuter
 
 **2.** In the folder `kyma-multitenant-approuter`, create a file `package.json` with the following content:
 
-```json
+```JSON
 {
     "name": "kyma_multitenant_approuter",
     "dependencies": {
@@ -68,7 +68,7 @@ Then you should configure the **routes** in the security descriptor file `xs-app
 
 In the folder `kyma-multitenant-approuter`, create a file `xs-app.json` with the following content:
 
-```json
+```JSON
 {
     "authenticationMethod": "none",
     "routes": [{
@@ -92,7 +92,7 @@ In order to provide `destinations` environment variable to the approuter applica
 
 Create a new deployment YAML file named `k8s-deployment-approuter.yaml` for the approuter app with the following content:
 
-```yaml
+```YAML
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -121,7 +121,7 @@ data:
 
 Create a YAML file for the approuter app called `k8s-deployment-approuter.yaml`:
 
-```yaml
+```YAML
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -222,7 +222,7 @@ Now you can create a Service and APIRule to make the approuter application acces
 
 **1.** Add a Service for the approuter application in the `k8s-deployment-approuter.yaml` file:
 
-```yaml
+```YAML
 ---
 apiVersion: v1
 kind: Service
@@ -245,7 +245,7 @@ spec:
 
 **2.** Add an APIRule for the approuter application in the `k8s-deployment-approuter.yaml` file:
 
-```yaml
+```YAML
 ---
 apiVersion: gateway.kyma-project.io/v1alpha1
 kind: APIRule

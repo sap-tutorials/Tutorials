@@ -39,7 +39,7 @@ To inform the application that a tenant has revoked its subscription to the mult
 
 Payload of subscription PUT and DELETE methods:
 
-```json
+```JSON
 {
     "subscriptionAppId": "<value>",                     
     # The application ID of the main subscribed application.
@@ -59,7 +59,7 @@ Payload of subscription PUT and DELETE methods:
 
 **GET** – `callback/v1.0/dependencies`
 
-```json
+```JSON
 [
    {
       "xsappname" : "<value>"   
@@ -85,7 +85,7 @@ A tenant-specific URL should be provided to customers in the onboarding process,
 
 In the `kyma-multitenant-node/routes/index.js` file, implement the subscription and unsubscription callbacks. Replace the placeholder with your cluster domain.
 
-```javascript
+```JavaScript
 //******************************** API Callbacks for multitenancy ********************************
 
 /**
@@ -195,7 +195,7 @@ router.delete('/callback/v1.0/tenants/*', async function(req, res) {
 
 **1.** Add constant values and variables in the `kyma-multitenant-node/routes/index.js`, replace <namespace> with your own namespace name:
 
-```javascript[4-13]
+```JavaScript[4-13]
 var express = require('express');
 var router = express.Router();
 
@@ -214,7 +214,7 @@ var kyma_cluster = process.env.CLUSTER_DOMAIN || "UNKNOWN";
 
 **2.** Create a new file named `createApiRule.js` under the directory `kyma-multitenant-node/routes/` to provide APIRule object:
 
-```javascript
+```JavaScript
 module.exports = {
     createApiRule: createApiRule
 }
@@ -268,7 +268,7 @@ function createApiRule(svcName, svcPort, host, clusterName) {
 
 **3.** Add dependency `"@kubernetes/client-node"` in the `kyma-multitenant-node/package.js` file, for example:
 
-```json[2]
+```JSON[2]
     "dependencies": {
         "@kubernetes/client-node": "~0.15.0",
         ...
@@ -283,7 +283,7 @@ function createApiRule(svcName, svcPort, host, clusterName) {
 
 To automatically create APIRule from a pod, proper RoleBinding should be granted. Add a RoleBinding in the `k8s-deployment-backend.yaml` with the following content, replace <namespace> with your own namespace name:
 
-```yaml
+```YAML
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding

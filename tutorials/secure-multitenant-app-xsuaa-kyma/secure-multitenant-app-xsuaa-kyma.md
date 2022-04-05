@@ -36,7 +36,7 @@ To use a multitenant application router, you must have a shared UAA service: [SA
 
 In Kubernetes, you can create and bind to a service instance using the Service Catalog. Create a new deployment file `k8s-deployment-services.yaml` to define objects for XSUAA instance and binding:
 
-```yaml
+```YAML
 ################### XSUAA ###################
 ---
 apiVersion: servicecatalog.k8s.io/v1beta1
@@ -113,7 +113,7 @@ For example, the following folder structure:
 
 Now, mount the Secret just generated to the pods of both approuter and node application as a volume in the `k8s-deployment-backend.yaml` and `k8s-deployment-approuter.yaml`:
 
-```yaml[2-4,12-14]
+```YAML[2-4,12-14]
         volumeMounts:
         - name: xsuaa-volume
           mountPath: "/etc/secrets/sapcp/xsuaa/xsuaa-service"
@@ -144,7 +144,7 @@ Now, mount the Secret just generated to the pods of both approuter and node appl
 
 **1.** Add libraries for enabling authentication in the `kyma-multitenant-node/app.js` file:
 
-```javascript[3-7]
+```JavaScript[3-7]
 var app = express();
 
 //**************************** Libraries for enabling authentication *****************************
@@ -156,7 +156,7 @@ var JWTStrategy = require('@sap/xssec').JWTStrategy;
 
 **2.** Enable authorization in the `kyma-multitenant-node/app.js` file:
 
-```javascript[4-9]
+```JavaScript[4-9]
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -170,7 +170,7 @@ app.use(passport.authenticate('JWT', { session: false })); //Authenticate using 
 
 **3.** Add dependency `"@kubernetes/client-node"` in the `kyma-multitenant-node/package.js` file, for example:
 
-```json[2-4]
+```JSON[2-4]
     "dependencies": {
         "@sap/xsenv": "^3",
         "@sap/xssec": "^3",
@@ -189,7 +189,7 @@ app.use(passport.authenticate('JWT', { session: false })); //Authenticate using 
 
 Update the `xs-app.json` file:
 
-```json[3,8]
+```JSON[3,8]
 {
     "authenticationMethod": "route",
     "routes": [{
@@ -215,7 +215,7 @@ The application router must determine the tenant-specific subdomain for the UAA 
 
 **1.** Add a new ConfigMap to provide your Kyma cluster domain in the `k8s-deployment-approuter.yaml` file:
 
-```yaml
+```YAML
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -227,7 +227,7 @@ data:
 
 **2.** Refer to the ConfigMap and add environment variable **TENANT_HOST_PATTERN** in the `k8s-deployment-approuter.yaml` file:
 
-```yaml[3-9]
+```YAML[3-9]
       containers:
       - env:
         - name: CLUSTER_DOMAIN

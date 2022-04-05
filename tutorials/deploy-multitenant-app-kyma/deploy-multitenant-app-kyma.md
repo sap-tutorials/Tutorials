@@ -67,7 +67,7 @@ brew install buildpacks/tap/pack
 
 When we speak about repository name, we mean the combination of account and repo name that is usual with Docker Hub: `<docker-hub-account>/<repo-name>`. An example would be `tiaxu/multitenant-kyma-backend`.
 
-As you can only create one private repository in a free Docker hub account, Docker images stored in Docker hub will have different tag names so that they can be stored under one repository. Thus, addressing an image will include the tag name:`<docker-hub-account>/<repo-name>:<tag-name>`. An example would be `tiaxu/multitenant-kyma-backend:v1`.
+As you can only create one private repository in a free Docker hub account, Docker images stored in Docker hub will have different tag names so that they can be stored in one repository. Thus, addressing an image will include the tag name:`<docker-hub-account>/<repo-name>:<tag-name>`. An example would be `tiaxu/multitenant-kyma-backend:v1`.
 
 **2.** In the directory `kyma-multitenant-approuter`, build the image for the approuter app from source, for example:
 
@@ -136,7 +136,7 @@ kubectl -n multitenancy-ns create secret docker-registry registry-secret --docke
 
 Therefore, all deployment files contain an `imagePullSecret` entry, which should be set to `registry-secret`.
 
-```yaml
+```YAML
 imagePullSecrets:
         - name: registry-secret # replace with your own registry secret
 ```
