@@ -85,9 +85,13 @@ There are multiple ways to create a data lake:
 
     ![Enable a data lake](enable-data-lake.png)
 
-    Take note that the administration user is HDLADMIN.  
+    Take note that the administration user is HDLADMIN.
 
-    >Note that it is also possible to create and manage data lake instances using the [Cloud Foundry CLI](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/921f3e46247947779d69b8c85c9b9985.html).
+    >The HDLADMIN user has a [login policy](https://help.sap.com/viewer/745778e524f74bb4af87460cca5e62c4/latest/en-US/a43f448484f21015924f9951e9b77e32.html) that enforces the [update of the password](https://help.sap.com/viewer/745778e524f74bb4af87460cca5e62c4/latest/en-US/a458edd784f2101580a1eca5042678f8.html) after 180 days.  
+
+    >---
+
+    >It is also possible to create and manage data lake instances using the [Cloud Foundry CLI](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/921f3e46247947779d69b8c85c9b9985.html).
 
 4. As this is a trial account, set allowed connections to **Allow all IP addresses** so that client applications can connect from any IP address.  
 
@@ -121,7 +125,7 @@ There are multiple ways to create a data lake:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create tables with SAP HANA database explorer)]
+[ACCORDION-BEGIN [Step 4: ](Create tables, views, functions, and procedures with SAP HANA database explorer)]
 In this step, a sample HOTEL dataset will be created comprising tables, a view, and a stored procedure.
 
 1. In SAP HANA Cloud Central, use the actions menu to open the SAP HANA database explorer.
@@ -132,12 +136,14 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
 
     ```SQL
     SELECT CURRENT USER FROM DUMMY;
-    SELECT * FROM SYS.SYSINFO;
     SELECT * FROM sa_db_properties() WHERE UPPER(PropName) LIKE '%NAME%';
     SELECT * FROM SYS.SYSOPTIONS WHERE UPPER("option") LIKE '%VERIFY%';
+    CALL sa_conn_properties(CONNECTION_PROPERTY('Number'));
     ```
 
     ![SAP HANA database explorer](dbx-query.png)
+
+    Additional details can be found at [System Functions](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a52da06984f21015bf279b4c69002e5e.html) and [System Procedures for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a598917d84f210159e1fff1a89345de9.html).
 
 
 3. In the SAP HANA database explorer, execute the following SQL statements.
@@ -195,8 +201,8 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
         PRIMARY KEY (
             "RESNO", "ARRIVAL"
         ),
-        FOREIGN KEY(HNO) REFERENCES HOTEL.HOTEL,
-        FOREIGN KEY(CNO) REFERENCES HOTEL.CUSTOMER
+        FOREIGN KEY(CNO) REFERENCES HOTEL.CUSTOMER,
+        FOREIGN KEY(HNO) REFERENCES HOTEL.HOTEL
     );
 
     CREATE TABLE HOTEL.MAINTENANCE(
@@ -217,6 +223,14 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
       FROM HOTEL.ROOM R
         LEFT JOIN HOTEL.HOTEL H ON R.HNO = H.HNO
             ORDER BY H.NAME;
+
+    CREATE OR REPLACE FUNCTION HOTEL.AVERAGE_PRICE(room_type CHAR(6))
+    RETURNS NUMERIC(6, 2)
+    BEGIN
+        DECLARE avg_price NUMERIC(6,2);  
+        SELECT CAST(ROUND(sum(PRICE)/COUNT(*), 2) as NUMERIC(6,2)) INTO avg_price FROM HOTEL.ROOM WHERE TYPE = room_type GROUP BY TYPE;
+        RETURN avg_price;
+    END;
 
     CREATE OR REPLACE PROCEDURE HOTEL.SHOW_RESERVATIONS(
         IN IN_HNO INTEGER, IN IN_ARRIVAL DATE)
@@ -241,9 +255,9 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
             HOTEL.CUSTOMER AS CUS
             ON CUS.CNO = R.CNO
             WHERE R.ARRIVAL = IN_ARRIVAL AND
-            H.HNO = IN_HNO;
-            -- ORDER BY H.NAME ASC, R.ARRIVAL DESC;  --order by ignored in views
-    END;
+            H.HNO = IN_HNO
+            ORDER BY CUS.NAME ASC;
+        END;
 
     --Specify the privileges for the role HOTEL
     GRANT SELECT, UPDATE, INSERT, DELETE ON HOTEL.HOTEL, HOTEL.ROOM, HOTEL.CUSTOMER, HOTEL.RESERVATION, HOTEL.MAINTENANCE, HOTEL.HOTEL_ROOMS_VIEW TO HOTEL;
@@ -527,11 +541,14 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
 
     ![auto complete](show-reservations.png)
 
-    Execute a stored procedure and query a table.
+    Query a table, a view, invoke a function, and call a stored procedure.
 
     ```SQL
-    CALL HOTEL.SHOW_RESERVATIONS(11, '2020-12-24');
     SELECT * FROM HOTEL.HOTEL;
+    SELECT * FROM HOTEL.HOTEL_ROOMS_VIEW;
+    SELECT HOTEL.AVERAGE_PRICE('single'), HOTEL.AVERAGE_PRICE('double'), HOTEL.AVERAGE_PRICE('suite') FROM DUMMY;
+    CALL HOTEL.SHOW_RESERVATIONS(11, '2020-12-24');
+
     ```
 
     ![Query in DBISQL](dbisql-query.png)
