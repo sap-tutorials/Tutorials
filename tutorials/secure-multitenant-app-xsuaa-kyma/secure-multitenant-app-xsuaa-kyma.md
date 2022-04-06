@@ -86,13 +86,13 @@ spec:
 
 [ACCORDION-BEGIN [Step 3: ](Access Instance Credential from Approuter and Backend Application)]
 
-SAP’s [approuter](https://www.npmjs.com/package/@sap/approuter) uses [@sap/xsenv](https://www.npmjs.com/package/@sap/xsenv) package internally to parse and load service keys and secrets bound to the application, this makes the process to load secrets easy.
+SAP's [approuter](https://www.npmjs.com/package/@sap/approuter) uses [`@sap/xsenv` package](https://www.npmjs.com/package/@sap/xsenv) internally to parse and load service keys and secrets bound to the application, this makes the process to load secrets easy.
 
-Kubernetes offers several ways of handling application configurations for bound services and certificates. @sap/xsenv expects that such configurations are handled as Kubernetes Secrets and mounted as files to the pod at a specific path. This path can be provided by the application developer, but the default is `/etc/secrets/sapcp`. From there, @sap/xsenv assumes that the directory structure is the following `/etc/secrets/sapcp/<service-name>/<instance-name>`. Here `<service-name>` and `<instance-name>` are both directories and the latter contains the credentials/configurations for the service instance as files, where the file name is the name of the configuration/credential and the content is respectively the value.
+Kubernetes offers several ways of handling application configurations for bound services and certificates. `@sap/xsenv` expects that such configurations are handled as Kubernetes Secrets and mounted as files to the pod at a specific path. This path can be provided by the application developer, but the default is `/etc/secrets/sapcp`. From there, `@sap/xsenv` assumes that the directory structure is the following `/etc/secrets/sapcp/<service-name>/<instance-name>`. Here `<service-name>` and `<instance-name>` are both directories and the latter contains the credentials/configurations for the service instance as files, where the file name is the name of the configuration/credential and the content is respectively the value.
 
 For example, the following folder structure:
 
-```
+```Shell / Bash
 /etc/
     /secrets/
             /sapcp/
@@ -109,7 +109,7 @@ For example, the following folder structure:
                                   /pass
 ```
 
-> For more details, please visit [@sap/xsenv](https://www.npmjs.com/package/@sap/xsenv).
+> For more details, please visit [`@sap/xsenv` package page](https://www.npmjs.com/package/@sap/xsenv).
 
 Now, mount the Secret just generated to the pods of both approuter and node application as a volume in the `k8s-deployment-backend.yaml` and `k8s-deployment-approuter.yaml`:
 
@@ -209,11 +209,11 @@ Update the `xs-app.json` file:
 [ACCORDION-BEGIN [Step 6: ](Configure TENANT_HOST_PATTERN to Determine Identity Zone for Authentication)]
 
 
-The application router must determine the tenant-specific subdomain for the UAA that in turn determines the identity zone, used for authentication. This determination is done by using a regular expression defined in the environment variable **TENANT_HOST_PATTERN**.
+The application router must determine the tenant-specific subdomain for the UAA that in turn determines the identity zone, used for authentication. This determination is done by using a regular expression defined in the environment variable **`TENANT_HOST_PATTERN`**.
 
-**TENANT_HOST_PATTERN** is a string containing a regular expression with a capturing group. The request host is matched against this regular expression. The value of the first capturing group is used as the tenant subdomain. For more details, please visit: [Multitenancy](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/5310fc31caad4707be9126377e144627.html?locale=en-US).
+**`TENANT_HOST_PATTERN`** is a string containing a regular expression with a capturing group. The request host is matched against this regular expression. The value of the first capturing group is used as the tenant subdomain. For more details, please visit: [Multitenancy](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/5310fc31caad4707be9126377e144627.html?locale=en-US).
 
-**1.** Add a new ConfigMap to provide your Kyma cluster domain in the `k8s-deployment-approuter.yaml` file:
+**1.** Add a new `ConfigMap` to provide your Kyma cluster domain in the `k8s-deployment-approuter.yaml` file:
 
 ```YAML
 ---
@@ -225,7 +225,7 @@ data:
   cluster-domain: <cluster-domain>  ## adapt to your Kyma cluster
 ```
 
-**2.** Refer to the ConfigMap and add environment variable **TENANT_HOST_PATTERN** in the `k8s-deployment-approuter.yaml` file:
+**2.** Refer to the `ConfigMap` and add environment variable **`TENANT_HOST_PATTERN`** in the `k8s-deployment-approuter.yaml` file:
 
 ```YAML[3-9]
       containers:
@@ -240,7 +240,7 @@ data:
 ```
 
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 ---

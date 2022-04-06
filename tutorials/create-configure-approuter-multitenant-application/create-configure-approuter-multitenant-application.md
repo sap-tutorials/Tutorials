@@ -33,15 +33,13 @@ When a consumer accesses the application, their consumer tenant calls the multit
 
 [ACCORDION-BEGIN [Step 2: ](Create Approuter Application)]
 
-**1.** Create a folder `kyma-multitenant-approuter` in the root directory.
-
+1. Create a folder `kyma-multitenant-approuter` in the root directory.
 ```Shell / Bash
 mkdir kyma-multitenant-approuter
 cd kyma-multitenant-approuter
 ```
 
-**2.** In the folder `kyma-multitenant-approuter`, create a file `package.json` with the following content:
-
+2. In the folder `kyma-multitenant-approuter`, create a file `package.json` with the following content:
 ```JSON
 {
     "name": "kyma_multitenant_approuter",
@@ -88,7 +86,7 @@ In the folder `kyma-multitenant-approuter`, create a file `xs-app.json` with the
 
 The destinations configuration can be provided by the `destinations` environment variable or by destination service.
 
-In order to provide `destinations` environment variable to the approuter application, you should create a ConfigMap object for reference later.
+In order to provide `destinations` environment variable to the approuter application, you should create a `ConfigMap` object for reference later.
 
 Create a new deployment YAML file named `k8s-deployment-approuter.yaml` for the approuter app with the following content:
 
@@ -105,11 +103,11 @@ data:
     ]
 ```
 
-> There are two alternatives to define the destination url:
+> There are two alternatives to define the destination URL:
 >
-> 1. Use external service url provided by Kyma APIRule (JWT enabled): `"url":"https://<subaccount-subdomain>-node.<clusterdomain>`
+> 1. Use external service URL provided by Kyma `APIRule` (JWT enabled): `"url":"https://<subaccount-subdomain>-node.<clusterdomain>`
 >
-> 2. Use internal service url of cluster: `"url":"http://<service-name>.<namespace>.svc.cluster.local:<service-port>`
+> 2. Use internal service URL of cluster: `"url":"http://<service-name>.<namespace>.svc.cluster.local:<service-port>`
 
 
 
@@ -218,9 +216,9 @@ status: {}
 
 [ACCORDION-BEGIN [Step 6: ](Define Service and APIRule)]
 
-Now you can create a Service and APIRule to make the approuter application accessible to the internet.
+Now you can create a `Service` and `APIRule` to make the approuter application accessible to the internet.
 
-**1.** Add a Service for the approuter application in the `k8s-deployment-approuter.yaml` file:
+Add a `Service` and an `APIRule` for the approuter application in the `k8s-deployment-approuter.yaml` file:  
 
 ```YAML
 ---
@@ -241,11 +239,6 @@ spec:
   selector:
     app: kyma-multitenant-approuter-multitenancy
     release: multitenancy
-```
-
-**2.** Add an APIRule for the approuter application in the `k8s-deployment-approuter.yaml` file:
-
-```YAML
 ---
 apiVersion: gateway.kyma-project.io/v1alpha1
 kind: APIRule
@@ -277,9 +270,7 @@ spec:
 > Replace the placeholder with your subaccount subdomain and cluster domain. Note that the host name of the approuter application must start with your subaccount subdomain so that the application can be redirected to the right authenticator.
 
 
-
-
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 

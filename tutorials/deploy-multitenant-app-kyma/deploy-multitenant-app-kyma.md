@@ -52,32 +52,32 @@ For example:
 
 [ACCORDION-BEGIN [Step 3: ](Build Application to OCI Image)]
 
+1. Install tool
+<p> </p>
+    In order to run your code on the Kyma Runtime (or on any Kubernetes-based platform), you need to provide an OCI image (aka Docker image) for your application. While you are in principle free to choose your image building tool, we recommend using [Cloud Native Buildpacks (CNB)](https://buildpacks.io/).  
+<p> </p>
+    The command-line tool `pack` supports providing a buildpack and your local source code and creating an OCI image from it. We are working on a process to provide recommended and supported buildpacks. In the meantime, you can use the community-supported [Paketo Buildpacks](https://paketo.io/).
+<p> </p>
+    If you followed the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in the Kyma Runtime](deploy-nodejs-application-kyma), you have installed the command-line tool `pack`, if not, please follow this official guide: [Install Pack](https://buildpacks.io/docs/tools/pack/).
 
-In order to run your code on the Kyma Runtime (or on any Kubernetes-based platform), you need to provide an OCI image (aka Docker image) for your application. While you are in principle free to choose your image building tool, we recommend using [Cloud Native Buildpacks (CNB)](https://buildpacks.io/).
-
-The command-line tool `pack` supports providing a buildpack and your local source code and creating an OCI image from it. We are working on a process to provide recommended and supported buildpacks. In the meantime, you can use the community-supported [Paketo Buildpacks](https://paketo.io/).
-
-**1.** If you followed the tutorials [Create a Basic Node.js Application with Express Generator](basic-nodejs-application-create) and [Deploy a Node.js Application in the Kyma Runtime](deploy-nodejs-application-kyma), you have installed the command-line tool `pack`, if not, please follow this official guide: [Install Pack](https://buildpacks.io/docs/tools/pack/)
-
-For example (macOS):
-
+    For example (macOS):  
 ```Shell / Bash
 brew install buildpacks/tap/pack
 ```
 
-When we speak about repository name, we mean the combination of account and repo name that is usual with Docker Hub: `<docker-hub-account>/<repo-name>`. An example would be `tiaxu/multitenant-kyma-backend`.
-
-As you can only create one private repository in a free Docker hub account, Docker images stored in Docker hub will have different tag names so that they can be stored in one repository. Thus, addressing an image will include the tag name:`<docker-hub-account>/<repo-name>:<tag-name>`. An example would be `tiaxu/multitenant-kyma-backend:v1`.
-
-**2.** In the directory `kyma-multitenant-approuter`, build the image for the approuter app from source, for example:
-
+2. Build image for applications
+<p> </p>
+    When we speak about repository name, we mean the combination of account and repo name that is usual with Docker Hub: `<docker-hub-account>/<repo-name>`. An example would be `tiaxu/multitenant-kyma-backend`.
+<p> </p>
+    As you can only create one private repository in a free Docker hub account, Docker images stored in Docker hub will have different tag names so that they can be stored in one repository. Thus, addressing an image will include the tag name:`<docker-hub-account>/<repo-name>:<tag-name>`. An example would be `tiaxu/multitenant-kyma-backend:v1`.
+<p> </p>
+    In the directory `kyma-multitenant-approuter`, build the image for the approuter app from source, for example:
 ```Shell / Bash
 pack build multitenant-approuter --builder paketobuildpacks/builder:full
 docker tag multitenant-approuter <docker-hub-account>/multitenant-approuter:v1
 ```
 
-**3.** In the directory `kyma-multitenant-node`, build the image for the approuter app from source, for example:
-
+    In the directory `kyma-multitenant-node`, build the image for the approuter app from source, for example:
 ```Shell / Bash
 pack build multitenant-kyma-backend --builder paketobuildpacks/builder:full
 docker tag multitenant-kyma-backend <docker-hub-account>/multitenant-kyma-backend:v1
@@ -171,7 +171,7 @@ kubectl -n multitenancy-ns apply -f k8s-deployment-backend.yaml
 
 
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 

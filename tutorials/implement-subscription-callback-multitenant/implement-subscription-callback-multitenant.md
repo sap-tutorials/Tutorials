@@ -21,9 +21,9 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 [ACCORDION-BEGIN [Step 1: ](Introduction to Subscription Callbacks)]
 
 
-To perform internal tenant onboarding activities, you must implement the Subscription and Ubsubscription callbacks of the SAP Software-as-a-Service Provisioning service (saas-registry) and use the information provided in the subscription event. You can also implement the getDependencies callback to obtain the dependencies of any SAP reuse services by your application. For more details, please read SAP Help Portal: [Develop the Multitenant Application](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/ff540477f5404e3da2a8ce23dcee602a.html?locale=en-US&q=TENANT_HOST_PATTERN).
+To perform internal tenant onboarding activities, you must implement the `subscription` and `unsubscription` callbacks of the SAP Software-as-a-Service Provisioning service (saas-registry) and use the information provided in the subscription event. You can also implement the `getDependencies` callback to obtain the dependencies of any SAP reuse services by your application. For more details, please read SAP Help Portal: [Develop the Multitenant Application](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/ff540477f5404e3da2a8ce23dcee602a.html?locale=en-US&q=TENANT_HOST_PATTERN).
 
-When a consumer tenant creates or revokes a subscription to your multitenant application via the cockpit, the SAP SaaS Provisioning service calls the multitenant application with Subscription callbacks:
+When a consumer tenant creates or revokes a subscription to your multitenant application via the cockpit, the SAP SaaS Provisioning service calls the multitenant application with subscription callbacks:
 
 **PUT** – `callback/v1.0/tenants/*`
 
@@ -70,7 +70,7 @@ Payload of subscription PUT and DELETE methods:
 ]
 ```
 
-> The callback must return a 200 response code and a JSON file with the dependent services appName and appId, or just the xsappname.
+> The callback must return a 200 response code and a JSON file with the dependent services **`appName`** and **`appId`**, or just the **`xsappname`**.
 >
 > The JSON response of the callback must be encoded as either UTF8, UTF16, or UTF32, otherwise an error is returned.
 
@@ -81,9 +81,9 @@ Payload of subscription PUT and DELETE methods:
 
 [ACCORDION-BEGIN [Step 2: ](Implement Subscription Callbacks)]
 
-A tenant-specific URL should be provided to customers in the onboarding process, at the same time, the URL should be exposed to the Internet as well. Otherwise, customers still cannot access the tenant. URL is exposed in the Kyma runtime through APIRule, which needs to be created dynamically through the onboarding/offboarding process using [Kubernetes client for NodeJs](https://github.com/kubernetes-client/javascript).
+A tenant-specific URL should be provided to customers in the onboarding process, at the same time, the URL should be exposed to the Internet as well. Otherwise, customers still cannot access the tenant. URL is exposed in the Kyma runtime through `APIRule`, which needs to be created dynamically through the onboarding/offboarding process using [Kubernetes client for NodeJs](https://github.com/kubernetes-client/javascript).
 
-In the `kyma-multitenant-node/routes/index.js` file, implement the subscription and unsubscription callbacks. Replace the placeholder with your cluster domain.
+In the `kyma-multitenant-node/routes/index.js` file, implement the `subscription` and `unsubscription` callbacks. Replace the placeholder with your cluster domain.
 
 ```JavaScript
 //******************************** API Callbacks for multitenancy ********************************
@@ -212,7 +212,7 @@ var kyma_cluster = process.env.CLUSTER_DOMAIN || "UNKNOWN";
 ```
 
 
-**2.** Create a new file named `createApiRule.js` under the directory `kyma-multitenant-node/routes/` to provide APIRule object:
+**2.** Create a new file named `createApiRule.js` in the directory `kyma-multitenant-node/routes/` to provide `APIRule` object:
 
 ```JavaScript
 module.exports = {
@@ -281,7 +281,7 @@ function createApiRule(svcName, svcPort, host, clusterName) {
 
 [ACCORDION-BEGIN [Step 4: ](Grant Role to Pod)]
 
-To automatically create APIRule from a pod, proper RoleBinding should be granted. Add a RoleBinding in the `k8s-deployment-backend.yaml` with the following content, replace <namespace> with your own namespace name:
+To automatically create `APIRule` from a pod, proper `RoleBinding` should be granted. Add a `RoleBinding` in the `k8s-deployment-backend.yaml` with the following content, replace <namespace> with your own namespace name:
 
 ```YAML
 ---
@@ -300,7 +300,7 @@ roleRef:
 ```
 
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 

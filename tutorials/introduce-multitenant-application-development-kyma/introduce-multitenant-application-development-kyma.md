@@ -68,7 +68,7 @@ For a consumer to use a tenant-aware application on SAP BTP, the application own
 
 **Persona**: <u>Multitenant Application Provider</u>
 
-Let's assume you are a multitenant application provider, for example: `Provider: TIA`. `Provider: TIA` would like to provide an application that displays the logged-in user’s name and customer's tenant-related information, shown as below:
+Let's assume you are a multitenant application provider, for example: `Provider: TIA`. `Provider: TIA` would like to provide an application that displays the logged-in user's name and customer's tenant-related information, shown as below:
 
 !![image-20220114180726352](image-20220114180726352.png)
 
@@ -77,8 +77,6 @@ Let's assume you are a multitenant application provider, for example: `Provider:
 A consumer can subscribe to the multitenant application through the SAP BTP Account Cockpit.
 
 !![image-20220114150135988](image-20220114150135988.png)
-
-
 
 
 
@@ -94,7 +92,8 @@ A consumer can subscribe to the multitenant application through the SAP BTP Acco
 - Deploy a Multitenant Application to a Provider subaccount, Kyma Runtime
 - Subscribe a Multitenant Application by a Consumer
 
-[DONE]
+[VALIDATE_1]
+
 [ACCORDION-END]
 
 ---

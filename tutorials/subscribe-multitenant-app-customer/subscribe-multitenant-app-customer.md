@@ -28,30 +28,28 @@ Create a new subaccount for the customer in the same Global Account with the mul
 
 [ACCORDION-BEGIN [Step 2: ](Subscribe Multitenant Application)]
 
-**1.** Switch to the new subaccount `Customer`, you can see and subscribe the multitenant application in the **Service Marketplace**.
-
+1. Switch to the new subaccount `Customer`, you can see and subscribe the multitenant application in the **Service Marketplace**.
+<p> </p>
 !![image-20220114150155343](image-20220114150155343.png)
 
-**2.** Create an instance for the multitenant application:
-
+2. Create an instance for the multitenant application:
+<p> </p>
 !![image-20220114150240618](image-20220114150240618.png)
 
-**3.** Select the service and click **Create**:
-
+3. Select the service and click **Create**:
+<p> </p>
 !![image-20220114150307297](image-20220114150307297.png)
 
-Once it is subscribed, you can try to access it by clicking **Go to Application**:
-
+4. Once it is subscribed, you can try to access it by clicking **Go to Application**:
+<p> </p>
 !![image-20220114180542931](image-20220114180542931.png)
-
-The multitenant application will display the logged-in user’s name and customer's tenant-related information, shown as below:
-
+    The multitenant application will display the logged-in user's name and customer's tenant-related information, shown as below:
+<p> </p>
 !![image-20220114180726352](image-20220114180726352.png)
 
 
 
-
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 
