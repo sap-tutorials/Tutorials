@@ -4,7 +4,7 @@ description: Set up your SAP Business Technology Platform (BTP) account so you c
 primary_tag: software-product>sap-rad-by-mendix
 author_name: Paola Laufer
 auto_validation: true
-tags: [  tutorial>beginner, topic>cloud, software-product>sap-cloud-platform, software-product>sap-rad-by-mendix  ]
+tags: [  tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-rad-by-mendix  ]
 time: 10
 ---
 
@@ -72,17 +72,17 @@ This opens the registration page.
 [ACCORDION-BEGIN [Step 3: ](Create a Mendix account)]
 Choose to **Sign in** with SAP.
 
-!![Sign in](signin2.png)
+!![Sign in](Step3-sign-in.png)
 
 
 
-Choose your SAP BTP region from the drop-down and click **Select region**.
+Choose your SAP BTP region from the drop-down and click **Select region**.  
 
-!![Select region](ChooseRegion.png)
+!![Select region](Step3-region.png)
 
 Choose **Sign in with the default identity provider**.
 
-!![Select Identity Provider](IDProvider.png)
+!![Select Identity Provider](Step3-IDprovider.png)
 
 This will redirect you to SAP BTP's login page. Enter your SAP BTP credentials and sign in.
 
