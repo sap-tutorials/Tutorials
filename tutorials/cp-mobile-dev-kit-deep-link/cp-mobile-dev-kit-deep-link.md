@@ -4,7 +4,7 @@ description: Open a web page or navigate to an installed app from an MDK app.
 auto_validation: true
 primary_tag: software-product>mobile-development-kit-client
 tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio]
-time: 25
+time: 20
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
@@ -27,7 +27,7 @@ Deep links are used to send users directly to an app instead of a website or a s
 
 If an app is already installed, you can specify a custom URL scheme (iOS Universal Links) or an intent URL (on Android devices) that opens that app. Using deep link, you can also navigate to specific events or pages, which could tie into campaigns that you may want to run.
 
-!![MDK](img_1.gif)
+![MDK](img_7.2.png)
 
 >**This tutorial has been executed using public store MDK client which has out of the box functionality to open the SAP standard app like SAP Mobile Cards.
 If you are building a custom version of Mobile development kit client, there you can implement deep links by specifying related custom URL scheme.**
