@@ -146,8 +146,8 @@ The following steps will create sample objects for a hotel database using create
       PRIMARY KEY (
         "RESNO", "ARRIVAL"
       ),
-      FOREIGN KEY(hno) REFERENCES HOTEL.HOTEL,
-      FOREIGN KEY(cno) REFERENCES HOTEL.CUSTOMER
+      FOREIGN KEY(cno) REFERENCES HOTEL.CUSTOMER,
+      FOREIGN KEY(hno) REFERENCES HOTEL.HOTEL
     );
     CREATE COLUMN TABLE HOTEL.MAINTENANCE(
       mno INTEGER PRIMARY KEY,
