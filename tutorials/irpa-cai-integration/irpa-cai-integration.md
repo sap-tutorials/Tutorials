@@ -1,7 +1,7 @@
 ---
 author_name: Ilyes YAMOUN
 author_profile: https://github.com/shielddz
-title: Integrate the SAP Conversational AI with the SAP Intelligent RPA
+title: Integrate the chatbot with the SAP Intelligent RPA
 description: Setup end-to-end integration between the SAP Conversational AI and the SAP Intelligent RPA. Information provided in a chatbot is used to run an automation in the background and update the user within the chatbot with different statuses.
 auto_validation: true
 time: 30
@@ -104,7 +104,7 @@ This step involves creating a trigger of type API and an API Key in your environ
 
 The API trigger and the API Key are created successfully.
 
-[VALIDATE_2]
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a Service Key in the SAP BTP)]
@@ -378,6 +378,6 @@ This step involves the creation of an **SAP Conversational AI Web Client** in yo
 
 7.  Check the automation job status in **Cloud Factory** > **Monitoring** > **Jobs**. Look out for your job and click on it to view details. This step is helpful to know about the error details of a failed integration.
 
-[VALIDATE_1]
+[VALIDATE_2]
 [ACCORDION-END]
 ---
