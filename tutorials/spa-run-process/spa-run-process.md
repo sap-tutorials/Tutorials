@@ -33,19 +33,19 @@ There are two ways to release individual projects once they are finished:
 
 1. In the Process Builder, choose **Release**.
 
-    !![Release](images/Deployment/Release/01_Process_final.png)
+    !![Release](01_Process_final.png)
 
 2. For the first version, add a **Version Comment** if needed and choose **Release**.
 
-    !![Release first](images/Deployment/Release/02_Release_first_version.png)
+    !![Release first](02_Release_first_version.png)
 
 2. For the additional version, choose the type of version, add a **Version** annotation if needed and select **Release**.
 
-    !![Release new](images/Deployment/Release/02_Release_second_version.png)
+    !![Release new](02_Release_second_version.png)
 
 3. The project released successfully and is ready to be deployed.
 
-    !![Released](images/Deployment/Release/03_Released_first_version.png)
+    !![Released](03_Released_first_version.png)
 
 [DONE]
 [ACCORDION-END]
@@ -57,11 +57,11 @@ You can deploy business process projects from each released version of the proje
 
 1. From the released version of the business process project in the Process Builder, choose **Deploy**.
 
-    !![Start Deploy](images/Deployment/Deploy/01_Released_first_version.png)
+    !![Start Deploy](01_Released_first_version.png)
 
 2. The project deployed successfully and is ready for running and monitoring.
 
-    !![Deployed](images/Deployment/Deploy/03_Deployed_first_version.png)
+    !![Deployed](03_Deployed_first_version.png)
 
 [DONE]
 [ACCORDION-END]
@@ -70,36 +70,36 @@ You can deploy business process projects from each released version of the proje
 
 1. From the deployed version of the Business Process Project in the Process Builder, open the process **Order Processing**.
 
-    !![Run](images/Deployment/Run/01_Open_Order_Processing.png)
+    !![Run](01_Open_Order_Processing.png)
 
 2. Select the Order Processing Form and choose the **Copy** icon aside the **Form Link**.
 
-    !![Run copy the form link](images/Deployment/Run/02_Process_Start.png)
+    !![Run copy the form link](02_Process_Start.png)
 
 3. Open the form by pasting the **Form Link** in a browser window.
 
-    !![Run open the form](images/Deployment/Run/03_Order_Processing_Form.png)
+    !![Run open the form](03_Order_Processing_Form.png)
 
 4. Fill the Order details and choose **Submit**.
 
-    !![Run open the form](images/Deployment/Run/Form_Inputs.png)
+    !![Run open the form](Form_Inputs.png)
 
 5. The process is triggered. You can now work on the tasks, monitor the process and gain insights.
 
-    !![Run form successfully submitted](images/Deployment/Run/Run_inputs_2.png)
+    !![Run form successfully submitted](Run_inputs_2.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Work on the tasks)]
 
-1. Go to the **Lobby** and open the **My Inbox** application by selecting the button ![Inbox Icon](images/02_Inbox_Icon.png) at the top right corner.
+1. Go to the **Lobby** and open the **My Inbox** application by selecting the button ![Inbox Icon](02_Inbox_Icon.png) at the top right corner.
 
-    !![Lobby](images/01_Lobby.png)
+    !![Lobby](01_Lobby.png)
 
 2. After opening the **My Inbox** application, you see on the left-hand side all the tasks listed. **Select the task** with the sales order number with which you triggered the process.
 
-    !![My Inbox Actions](images/03_MyInbox_Actions.png)
+    !![My Inbox Actions](03_MyInbox_Actions.png)
 
 3. Move on with one of the actions:
 
@@ -108,11 +108,9 @@ You can deploy business process projects from each released version of the proje
     - **Mail** (to forward this task via email).
 
 4. You can also **sort**, **filter** or **group** your tasks at the bottom of the task list with these buttons:
-    !![My Inbox Filter](images/05_MyInbox_Filter.png)
+    !![My Inbox Filter](05_MyInbox_Filter.png)
 
 5. Depending on your selected actions and the information you have provided at the start of the process, the next task could be to **Submit** the order.
-
-    > We have accessed the tasks now directly via the design environment. Of course, in real life this would most likely not be the case. The tasks will be accessed, for example, via the launchpad. Please follow the next steps to do so.
 
 [DONE]
 [ACCORDION-END]
@@ -121,11 +119,11 @@ You can deploy business process projects from each released version of the proje
 
 1. Navigate to the **Monitor** tab and choose **Process and Workflow Instances**.
 
-    !![Monitor](images/Deployment/Monitoring/01_Monitor.png)
+    !![Monitor](01_Monitor.png)
 
 2. Choose **Order Processing** instance to check the status of the **CONTEXT** and **EXECUTION LOG**.
 
-    !![Monitor](images/Deployment/Monitoring/02_Process_and_Workflow.png)
+    !![Monitor](02_Process_and_Workflow.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
