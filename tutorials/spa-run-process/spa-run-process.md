@@ -17,35 +17,25 @@ primary_tag: software-product>sap-process-automation
   - How to release and deploy the Process
   - How to run the Process
   - How to monitor the Process
+  - How to access the tasks
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Release Business Process Project)]
 
-There are two ways to release individual projects once they are finished:
 
-   - When you're releasing a new business process project, enter a brief summary of the changes in the release **Version Comment** section (optional) then choose **Release**.
-   - When you're releasing a modified version of a business process project that is already released, in the release **Version Contains** section, select one of the following:
+To run the process you have to first release and then deploy the business process project. Releasing a project creates a version or snapshot of the changes and deploying the project makes it available in runtime to be consumed. You can only deploy a released version of the project, and at a given time there can be multiple deployed version of the same project
 
-      - Select **Patches** to indicate bug fixes. It updates the third digit of the version number.
-      - Select **Minor Changes** to indicate small modifications. It updates the second digit of the version number.
-      - Select **Major Changes** to indicate important modifications potentially leading to incompatibility between versions. It updates the first digit of the version number.
+1. In the Process Builder, to release a project, click on the Release button on top-right corner of the screen and provide a description.
 
-1. In the Process Builder, choose **Release**.
+>Version have x.y.z format where x is a major version number, y is minor and z is the patch number. Every time you release a new version will be created. Version is incremented automatically based on the how you want to store the changes in the repository like major or minor update or just as a patch.
 
-    !![Release](01_Process_final.png)
+    !![FinalProcess](FinalProcess.png)
 
-2. For the first version, add a **Version Comment** if needed and choose **Release**.
+2. If you are releasing for the first time, then the version will start with 1.0.0. Next time you when you release there will be options to choose if it is a major, minor or patch update and version numbers will be automatically updated.
 
-    !![Release first](02_Release_first_version.png)
+    !![Link text e.g., Destination screen](unit3-42.png)
 
-2. For the additional version, choose the type of version, add a **Version** annotation if needed and select **Release**.
-
-    !![Release new](02_Release_second_version.png)
-
-3. The project released successfully and is ready to be deployed.
-
-    !![Released](03_Released_first_version.png)
 
 [DONE]
 [ACCORDION-END]
@@ -53,79 +43,81 @@ There are two ways to release individual projects once they are finished:
 
 [ACCORDION-BEGIN [Step 2: ](Deploy released project)]
 
-You can deploy business process projects from each released version of the project in the Process Builder or through the Lobby.
 
-1. From the released version of the business process project in the Process Builder, choose **Deploy**.
+1. Once the project is released successfully, you will find a **Deploy** option on the top-right corner of the screen.
 
-    !![Start Deploy](01_Released_first_version.png)
+  !![unit3-43](unit3-43.png)
 
-2. The project deployed successfully and is ready for running and monitoring.
+  >Deploy will take couple of seconds/minutes depending upon how big your project is and how many different artefacts it has. Any errors during the deployment will be shown in the Design Console.
 
-    !![Deployed](03_Deployed_first_version.png)
+2. Once the deployment is successful, you will see a changed status. You can also see all your deployed and/or released project versions from the project status list next to project name.
+
+  !![unit3-44](unit3-44.png)
+
+> You cannot edit released or deployed projects. To continue working on your project, you need to select the Editable option.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Run Business Process)]
 
-1. From the deployed version of the Business Process Project in the Process Builder, open the process **Order Processing**.
+Great, so you have successfully deployed your project as well. It is time to run the process and see the results.
 
-    !![Run](01_Open_Order_Processing.png)
+1. Open the process builder of the deployed version, and click on Order Processing Form to get the form URL which can be directly opened from the web browser.
 
-2. Select the Order Processing Form and choose the **Copy** icon aside the **Form Link**.
+!![unit3-formlink](unit3-formlink.PNG)
 
-    !![Run copy the form link](02_Process_Start.png)
+2. When you open the form in the browser, you will all the input fields as you have defined in the process trigger form. Fill the form and click **Submit**.
 
-3. Open the form by pasting the **Form Link** in a browser window.
+    !![unit3-46](unit3-46.png)
 
-    !![Run open the form](03_Order_Processing_Form.png)
+3. After you click submit button, you will receive a notification that the form has been successfully submitted. This means that the workflow has been triggered and the approval process has been started.
 
-4. Fill the Order details and choose **Submit**.
+  !![unit3-46b](unit3-46b.png)
 
-    !![Run open the form](Form_Inputs.png)
-
-5. The process is triggered. You can now work on the tasks, monitor the process and gain insights.
-
-    !![Run form successfully submitted](Run_inputs_2.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Work on the tasks)]
-
-1. Go to the **Lobby** and open the **My Inbox** application by selecting the button ![Inbox Icon](02_Inbox_Icon.png) at the top right corner.
-
-    !![Lobby](01_Lobby.png)
-
-2. After opening the **My Inbox** application, you see on the left-hand side all the tasks listed. **Select the task** with the sales order number with which you triggered the process.
-
-    !![My Inbox Actions](03_MyInbox_Actions.png)
-
-3. Move on with one of the actions:
-
-    - **Submit**, **Show Log** (to see what has been done so far),
-    - **Claim** (to reserve this task for you) or
-    - **Mail** (to forward this task via email).
-
-4. You can also **sort**, **filter** or **group** your tasks at the bottom of the task list with these buttons:
-    !![My Inbox Filter](05_MyInbox_Filter.png)
-
-5. Depending on your selected actions and the information you have provided at the start of the process, the next task could be to **Submit** the order.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Monitor the Process)]
-
-1. Navigate to the **Monitor** tab and choose **Process and Workflow Instances**.
-
-    !![Monitor](01_Monitor.png)
-
-2. Choose **Order Processing** instance to check the status of the **CONTEXT** and **EXECUTION LOG**.
-
-    !![Monitor](02_Process_and_Workflow.png)
 
 [VALIDATE_1]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Monitoring the process flow)]
+
+Monitoring business process is one of the key aspect of the automated processes. Technical monitoring is an Administrator job where an process admin proactively and consistently monitors the process performance, identifies any issues in the process and take necessary actions to ensure business process continuity.
+
+SAP Process Automation provides different application to monitor and manage different process artefacts. There applications are available under Monitor tab in Application Development studio.
+
+
+1. All deployed processes are be accessed from **Manage** > **Processes and Workflows** application. To monitor all the running instances of the process, you have to go into **Monitor** > **Processes and Workflow Instances** application.
+
+  !![unit3-50](unit3-50.png)
+
+2. In there, you will see all the running, erroneous and suspended process instances. Use the filter bar to get a more customized view of the process instances based on different statutes like running, completed,  suspended, terminated etc.
+
+  Click on your process instance that was just triggered via the start form.
+
+  >Explore different process monitoring options. Observe the process instance information, process context which is the actual process data flowing across different activities in the process and the execution logs where you can see entire trace of how the process has been progressing with some basic runtime information of each activity
+
+  !![unit3-51](unit3-51.png)
+
+3. As you can see that the process is now waiting for the task to be completed. These tasks are generated from the Forms that are added in the process and can be accessed via the **My Inbox**![Inbox](Myinbox.png) application (top-right corner of the screen).
+
+  Notice the Recipients list. This is the same as configured in the General section of the Approval Form. The task will go into the inboxes of all the recipients.
+
+  !![unit3-51b](unit3-51b.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Accessing the tasks)]
+
+1. Tasks are the request for the users to participate in an approval or review process. These tasks appear in the **My Inbox** application shipped with SAP Process Automation. User can claim, approve and reject the task from their inbox.
+
+    !![unit3-52](unit3-52.png)
+
+2. Once you approve or reject the approval task, refresh the inbox again to get the final notification based on action taken. Once you acknowledge the notification send via the approval process, the process will be completed.
+
+  !![unit3-53](unit3-53.png)
+
+[VALIDATE_2]
 [ACCORDION-END]
 
 
