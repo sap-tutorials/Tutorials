@@ -1,8 +1,8 @@
 ---
 author_name: Chaitanya Priya Puvvada
 author_profile: https://github.com/chaitanya-priya-puvvada
-title: Create a Business Process in SAP Process Automation
-description: Create Business Process that will automate the Sales Order Creation and Approvals
+title: Create a Business Process
+description: Create Business Process that will automate the Purchase Order process
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
