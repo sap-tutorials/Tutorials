@@ -1,6 +1,6 @@
 ---
-title: Debug your SAP HANA Cloud, data lake with Diagnostic Files
-description: SAP HANA data lake allows you access to diagnostic files that contain logs for server information, transactions, server checkpoints, errors and status messages. Learn how setup and access these files through the HDLFSCLI, REST API, and SQL Console.
+title: View your SAP HANA Cloud, data lake Diagnostic Files and Audit Logs
+description: SAP HANA data lake allows you access to diagnostic and audit files that contain logs for server information, transactions, server checkpoints, errors and status messages. Learn how setup and access these files through the HDLFSCLI, REST API, and SQL Console.
 auto_validation: true
 time: 60
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, tutorial>license]
@@ -235,9 +235,9 @@ That is how you can leverage Database Explorer and built in stored procedures to
 ```Python
 import sqlanydb
 
-conn = sqlanydb.connect(uid='HDLADMIN', pwd='DBpassword1', host='fdc6d49c-59b1-4fd8-a8a8-415e7e6d84d7.iq.hdl.demo-hc-3-hdl-hc-dev.dev-aws.hanacloud.ondemand.com:443', enc='tls(tls_type=rsa;direct=yes)')
+conn = sqlanydb.connect(uid='<User Name>', pwd='<Password>', host='<host>:443', enc='tls(tls_type=rsa;direct=yes)')
 curs = conn.cursor()
-curs.execute("select read_server_file('/diag/logs/mpx-coord-0/iqaas_20220225_211225.102_mpx-coord-0.iqmsg')")
+curs.execute("select read_server_file('/diag/logs/mpx-coord-0/<diagnostic file>')")
 s = curs.fetchall()[0][0].decode('utf-8')
 print(s)
 ```
@@ -245,4 +245,132 @@ print(s)
 [VALIDATE_1]
 [ACCORDION-END]
 
----
+[ACCORDION-BEGIN [Step 5: ](Enable and View SAP HANA, data lake Audit Logs)]
+
+Audit logs in SAP HANA, data lake are accessible using the same diagnostic user and retrieval methods as the diagnostic files. In order to find these files, you need to first enable audit logging. Navigate to your SAP HANA Database Explorer SQL Console and follow the steps below.
+
+1. Enable auditing for your SAP HANA Cloud, data lake.
+
+    ```SQL
+    SET OPTION PUBLIC.auditing = 'On';
+    ```
+
+2. Allow the data lake to write the audit logs to the file container by specifying an audit log prefix.
+
+    ```SQL
+    SET OPTION PUBLIC.audit_log='FILE(filename_prefix=audit_log)';
+    ```
+
+3. Select the auditing type that you would like to record and store in the file store. See the table below to review the available options.
+
+    ```SQL
+    CALL sa_enable_auditing_type( '<Auditing Type>' );
+    ```
+
+    |  Auditing Type    | Description
+    |  :-------------   | :-------------
+    |  `all`              | enables all types of auditing
+    |  `connect`          | enables auditing of both successful and failed connection attempts
+    |  `connectFailed`    | enables auditing of failed connection attempts
+    |  `DDL`              | enables auditing of DDL statements
+    |  `options`          | enables auditing of public options
+    |  `permission`       | enables auditing of permission checks, user checks, and SETUSER statement
+    |  `permissionDenied` | enables auditing of failed permission and user checks
+    |  `triggers`         | enables auditing of a trigger event
+    ---
+
+4. If you want to disable the auditing type you've selected above, use the following SQL.
+
+    ```SQL
+    CALL sa_disable_auditing_type( '<Auditing Type>' );
+    ```
+
+5. To turn off auditing all together set the public auditing option to off.
+
+    ```SQL
+    SET OPTION PUBLIC.auditing = 'Off';
+    ```
+
+6. For this tutorial, use the following options.
+
+    ```SQL
+    SET OPTION PUBLIC.auditing = 'On';
+
+    SET OPTION PUBLIC.audit_log='FILE(filename_prefix=audit_log)';
+
+    CALL sa_enable_auditing_type( 'all' );
+    ```
+
+Now, since the auditing type has been set to all, any changes to the public options will create an auditing event. So our data lake should have already created an audit log for that event. Using the HDLFSCLI and the same configuration that was used for the diagnostic files, run an `ls` command and notice if the audit folder has been created.
+
+![Image of list command in the diagnostics file container.](diag-files-12.png)
+
+If you run the `lsr` command you will be able to locate the full file path to any of the audit logs.
+
+![Image of list recursively command in the diagnostics file container](diag-files-13.png)
+
+To read the file use the `cat` command and write the contents to a local file. The command below will copy the contents of the audit file of your choosing to a local file.
+
+`hdlfscli -config tut-diagconfig cat diag/audit/<Audit File Name> > myauditfile.etd`
+
+When the SAP HANA data lake Client was installed, a tool named `dbmanageetd` came with the package. This tool can be used to read `etd` files. To ensure that you have the utility, open a command prompt or terminal and type `dbmanageetd`. There should be some output describing the usage of the utility. You can read the file `myauditfile.etd` using the utility and write the output to a new file. Use the below command in a command prompt or terminal.
+
+`dbmanageetd myauditfile > humanreadableetd.txt`
+
+Now, open the `humanreadableetd.txt` text file in your favorite text editor to read the file. However, if the file is short or you only care able a glimpse of the log the log can be read from a SQL console. First, in a SQL Console connected to the SAP HANA, data lake instance use the below SQL to list the available audit files.
+
+```SQL
+SELECT * FROM sp_list_etd_files();
+```
+
+![Sample output SQL result for listing audit files.](diag-files-14.png)
+
+Then, select a file from the results and read it.
+
+```SQL
+SELECT * FROM dbo.sp_read_etd('<Audit File>');
+```
+
+![Sample output SQL result for reading an audit file.](diag-files-15.png)
+
+Another way to access the audit files is through the REST API. However, due to the format of the audit files the response from the API will need to be written to a file and then read with the `dbmanageetd` utility. Below is an example of how to write the audit file contents to a local file using Python and the REST API. Use the same credentials and variable values as you did in Step 3.
+
+```Python
+import http.client
+
+FILES_REST_API = '<File Container REST API>'
+CONTAINER = '<File Container ID>-diag'
+CRT_PATH = '<Path to Client Certificate>'
+KEY_PATH = '<Path to Client Key>'
+
+file_path = '/diag/audit/<Audit File Name>'
+request_url=f'/webhdfs/v1/{file_path}?op=OPEN'
+request_headers = {
+    'x-sap-filecontainer': CONTAINER,
+    'Content-Type': 'application/json'
+}
+
+connection = http.client.HTTPSConnection(
+    FILES_REST_API, port=443, key_file=KEY_PATH, cert_file=CRT_PATH)
+
+connection.request(
+    method="GET", url=request_url, body=None, headers=request_headers)
+
+response = connection.getresponse()
+
+file_contents = response.read()
+file_name = 'restapi-myauditfile.etd'
+f = open(f"{file_name}", "w+b")
+f.write(file_contents)
+f.close()
+response.close()
+```
+
+Once the files are written, in this case in a file named `restapi-myauditfile.txt`, use the `dbmanageetd` utility to write the audit logs to a local human readable file. In a command prompt use the following command.
+
+`dbmanageetd restapi-myauditfile.etd > restapi-humanreadableetd.txt`
+
+For more information on reading the audit files you can checkout the [SAP Help documentation](https://help.sap.com/viewer/a89a0a8384f21015b1e7adbeca456f73/2022_1_QRC/en-US/4c20fb59d0e848e09ffb191c9d2c0b16.html).
+
+[DONE]
+[ACCORDION-END]
