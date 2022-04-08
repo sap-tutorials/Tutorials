@@ -117,9 +117,11 @@ As your blog posts draw readers, you can complete missions and earn badges. Plea
 
 ![Blogging missions](badges.png)
 
+**Thank you for taking part in our Blogging Tutorial! Stay tuned to receive your Blogging Savvy badge!**
+
+**Happy Blogging!**
+
 [VALIDATE_9]
 [ACCORDION-END]
 
-**Thank you for taking part in our Blogging Tutorial! Stay tuned to receive your Blogging Savvy badge!**
-**Happy Blogging!**
 ---
