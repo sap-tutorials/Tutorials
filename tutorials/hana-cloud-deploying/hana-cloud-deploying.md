@@ -9,13 +9,10 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
-
 - You have an SAP Business Technology Platform free trial or free tier account: [Set Up an SAP BTP Account for Tutorials](group.btp-setup)
 
 ## Details
-
 ### You will learn
-
 - How to use the SAP BTP cockpit as a graphical tool to provision your free SAP HANA Cloud instance
 
 ### Get to know SAP HANA Cloud
