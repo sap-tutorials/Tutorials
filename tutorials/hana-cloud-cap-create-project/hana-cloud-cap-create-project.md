@@ -208,11 +208,7 @@ The Cloud Application Programming Model wizard generates a project that supports
 
     > These changes will alter the generated folder structure of the cds build operation. Content will no longer be placed into the gen folder for the db module but back into the source folders. This also will tell CAP to generate hdbtable artifacts instead of hdbcds. This is a critical change for SAP HANA Cloud compatibility. Finally the db.kind change to HANA tells CAP to use HANA at development time instead of SQLite.
 
-6. Your `package.json` file should now look something like this. The exact version numbers in the `dependencies` section in your file might differ from this screenshot
-
-    !![new package.json contents](new_package_json.png)
-
-7. Save the file
+6. Save the file
 
 [DONE]
 [ACCORDION-END]
