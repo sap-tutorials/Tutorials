@@ -26,7 +26,8 @@ It increases organizations capacity to drive process automation by empowering bu
 
 >Booster is a guided set of automatic instructions to achieve a specific goal. SAP Process Automation fully automates the onboarding of SAP Process Automation service in your account without the need of any manual configurations. It will configure entitlement, enable SAP Process Automation subscription, and will assign all the relevant role collections to the given users for administrator or developer personas – and all this setup with just one click.
 
-    !![1.PNG](1.png)
+
+!![1.PNG](1.png)
 
 
 2. You would be navigated to the overview page of the booster .

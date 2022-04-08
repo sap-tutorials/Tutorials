@@ -15,9 +15,9 @@ primary_tag: software-product>sap-process-automation
 
 ## Details
 ### You will learn
-  - how to add interactive forms in the process.
-  - how to design the form with layout and input fields using drag-and-drop approach.
-  - how to configure the forms as the process steps.
+  - How to add interactive forms in the process.
+  - How to design the form with layout and input fields using drag-and-drop approach.
+  - How to configure the forms as the process steps.
 
 
 Tasks are vital part of any business process. **SAP Process Automation** helps you to easily and quickly create forms that are made available to the business users in their inboxes to take relevant action. Forms have one layout, once access point, traceable actions and are designed to involve right kind of stakeholders.  
@@ -25,9 +25,9 @@ Tasks are vital part of any business process. **SAP Process Automation** helps y
 These interactive forms can be created by just dragging and dropping the text elements and input fields to the canvas. Once a form has been created, it can then be used as process trigger to start the process or added as an approval step in the business process.
 
 Let us now explore how these different forms are created. In the steps below you will create 3 forms which will be used to:
-1. start the approval process
-2. send a task in the inbox of the business user for the approval
-3. notify the requester for approval or rejection.
+1. Start the approval process
+2. Send a task in the inbox of the business user for the approval
+3. Notify the requester for approval or rejection.
 
 ---
 

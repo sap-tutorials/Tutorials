@@ -15,8 +15,8 @@ primary_tag: software-product>sap-process-automation
 
 ## Details
 ### You will learn
-  - how to create and configure process condition
-  - how to define different process flows for each conditional criteria
+  - How to create and configure process condition
+  - How to define different process flows for each conditional criteria
 
 **Process condition** routes the business process based on certain criteria. These conditions apply an If or Else rule to the process content and respond according to the rules defined as settings in the process builder.
 
@@ -29,9 +29,9 @@ In this unit, you will learn how to use process condition in a business process 
 Now that you have designed the process with forms, let us define which process flow should run based on If/else condition criteria.  
 
 1. To add a condition to a process,
-    - open the **Process Builder**.
-    - select **+** after the start form.
-    - choose **Controls > Condition**.
+    - Open the **Process Builder**.
+    - Select **+** after the start form.
+    - Choose **Controls > Condition**.
 
     !![Process Condition](unit5-00.png)
 
@@ -44,10 +44,10 @@ Now that you have designed the process with forms, let us define which process f
     With this process condition, the sales order above a specific amount only will be sent for approval and rest will be auto-approved.
 
     On the right **Condition** configuration page, do the following:
-    - click on **If** text box.
-    - select **Order Amount** from the process content.
-    - select **Less Than** operator.
-    - enter **100000** as the value.
+    - Click on **If** text box.
+    - Select **Order Amount** from the process content.
+    - Select **Less Than** operator.
+    - Enter **100000** as the value.
 
     > Process content will contain list of attributes that have been defined in previous skills. For Example: In the screenshot, you can see attributes from the trigger form. You will use these process content to configure different skills during business process modelling.
 
