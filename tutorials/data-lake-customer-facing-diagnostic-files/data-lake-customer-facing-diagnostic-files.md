@@ -249,57 +249,57 @@ print(s)
 
 Audit logs in SAP HANA, data lake are accessible using the same diagnostic user and retrieval methods as the diagnostic files. In order to find these files, you need to first enable audit logging. Navigate to your SAP HANA Database Explorer SQL Console and follow the steps below.
 
-Enable auditing for your SAP HANA Cloud, data lake.
+1. Enable auditing for your SAP HANA Cloud, data lake.
 
-```SQL
-SET OPTION PUBLIC.auditing = 'On';
-```
+    ```SQL
+    SET OPTION PUBLIC.auditing = 'On';
+    ```
 
-Allow the data lake to write the audit logs to the file container by specifying an audit log prefix.
+2. Allow the data lake to write the audit logs to the file container by specifying an audit log prefix.
 
-```SQL
-SET OPTION PUBLIC.audit_log='FILE(filename_prefix=audit_log)';
-```
+    ```SQL
+    SET OPTION PUBLIC.audit_log='FILE(filename_prefix=audit_log)';
+    ```
 
-Then select the auditing type that you would like to record and store in the file store. See the table below to review the available options.
+3. Select the auditing type that you would like to record and store in the file store. See the table below to review the available options.
 
-```SQL
-CALL sa_enable_auditing_type( '<Auditing Type>' );
-```
+    ```SQL
+    CALL sa_enable_auditing_type( '<Auditing Type>' );
+    ```
 
-|  Auditing Type    | Description
-|  :-------------   | :-------------
-|  `all`              | enables all types of auditing
-|  `connect`          | enables auditing of both successful and failed connection attempts
-|  `connectFailed`    | enables auditing of failed connection attempts
-|  `DDL`              | enables auditing of DDL statements
-|  `options`          | enables auditing of public options
-|  `permission`       | enables auditing of permission checks, user checks, and SETUSER statement
-|  `permissionDenied` | enables auditing of failed permission and user checks
-|  `triggers`         | enables auditing of a trigger event
----
+    |  Auditing Type    | Description
+    |  :-------------   | :-------------
+    |  `all`              | enables all types of auditing
+    |  `connect`          | enables auditing of both successful and failed connection attempts
+    |  `connectFailed`    | enables auditing of failed connection attempts
+    |  `DDL`              | enables auditing of DDL statements
+    |  `options`          | enables auditing of public options
+    |  `permission`       | enables auditing of permission checks, user checks, and SETUSER statement
+    |  `permissionDenied` | enables auditing of failed permission and user checks
+    |  `triggers`         | enables auditing of a trigger event
+    ---
 
-If you want to disable the auditing type you've selected above, use the following SQL.
+4. If you want to disable the auditing type you've selected above, use the following SQL.
 
-```SQL
-CALL sa_disable_auditing_type( '<Auditing Type>' );
-```
+    ```SQL
+    CALL sa_disable_auditing_type( '<Auditing Type>' );
+    ```
 
-To turn off auditing all together set the public auditing option to off.
+5. To turn off auditing all together set the public auditing option to off.
 
-```SQL
-SET OPTION PUBLIC.auditing = 'Off';
-```
+    ```SQL
+    SET OPTION PUBLIC.auditing = 'Off';
+    ```
 
-For this tutorial, use the following options.
+6. For this tutorial, use the following options.
 
-```SQL
-SET OPTION PUBLIC.auditing = 'On';
+    ```SQL
+    SET OPTION PUBLIC.auditing = 'On';
 
-SET OPTION PUBLIC.audit_log='FILE(filename_prefix=audit_log)';
+    SET OPTION PUBLIC.audit_log='FILE(filename_prefix=audit_log)';
 
-CALL sa_enable_auditing_type( 'all' );
-```
+    CALL sa_enable_auditing_type( 'all' );
+    ```
 
 Now, since the auditing type has been set to all, any changes to the public options will create an auditing event. So our data lake should have already created an audit log for that event. Using the HDLFSCLI and the same configuration that was used for the diagnostic files, run an `ls` command and notice if the audit folder has been created.
 
@@ -311,7 +311,7 @@ If you run the `lsr` command you will be able to locate the full file path to an
 
 To read the file use the `cat` command and write the contents to a local file. The command below will copy the contents of the audit file of your choosing to a local file.
 
-`hdlfscli -config tut-diagconfig cat audit/<Audit File Name> > myauditfile.etd`
+`hdlfscli -config tut-diagconfig cat diag/audit/<Audit File Name> > myauditfile.etd`
 
 When the SAP HANA data lake Client was installed, a tool named `dbmanageetd` came with the package. This tool can be used to read `etd` files. To ensure that you have the utility, open a command prompt or terminal and type `dbmanageetd`. There should be some output describing the usage of the utility. You can read the file `myauditfile.etd` using the utility and write the output to a new file. Use the below command in a command prompt or terminal.
 
