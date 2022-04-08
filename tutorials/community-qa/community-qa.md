@@ -21,9 +21,6 @@ SAP Community wants to create a valuable store of knowledge and it is our goal t
 
 In this tutorial, you will get to know the Q&A section, processes and guidelines. Ultimately, it will help you to prepare questions that draw more precise and helpful responses from our members and teach you how to easily gain - and share - knowledge in SAP Community. You will also earn the Q&A Savvy badge!
 
-
-## **Before asking your question**
-
 [ACCORDION-BEGIN [Step 1: ](Browse for questions in the SAP Community)]
 
 SAP Community is a rich resource of information, containing years' worth of discussions. So before asking a question, you should search first -- as the answer to your question may already be available.
@@ -53,11 +50,9 @@ You can also react to answers that were given by community members, for example 
 [VALIDATE_2]
 [ACCORDION-END]
 
-## **Asking your question**
+[ACCORDION-BEGIN [Step 3: ](Follow Rules of Engagement -- and be a good community citizen)]
 
 If searching doesn't yield the answer you need, then you'll want to ask a question yourself. The [Ask a Question](https://answers.sap.com/questions/ask.html) page includes several fields that you need to fill out before submitting, as well as some helpful advice for asking good questions.
-
-[ACCORDION-BEGIN [Step 3: ](Follow Rules of Engagement -- and be a good community citizen)]
 
 Before asking a question, you should familiarize yourself with the SAP Community [Rules of Engagement](https://community.sap.com/resources/rules-of-engagement). The rules explain the etiquette that you should follow when interacting with other community members. They also outline which content is considered unacceptable.
 
@@ -78,8 +73,6 @@ You can learn more on the [About Tags](https://community.sap.com/resources/using
 
 [DONE]
 [ACCORDION-END]
-
-## **After asking your question**
 
 [ACCORDION-BEGIN [Step 5:](Regularly check your question)]
 There is an easy way to check on your question -- if you correctly adjusted your notifications on your profile, you will be automatically notified via e-mail and won't miss any reactions to your question.
@@ -149,6 +142,7 @@ After you accepted the answer, you will be given an individual code to enter int
 4. Enter the code (given by the moderator) in the question field below.
 
 **Thank you for taking part in our Q&A Tutorial! Stay tuned to receive your Q&A Savvy badge!**
+
 
 ### More Information
 
