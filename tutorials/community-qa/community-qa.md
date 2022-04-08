@@ -35,7 +35,6 @@ SAP Community is a rich resource of information, containing years' worth of disc
 
     ![Screenshot_homepage2](Screenshot_homepage2.png)
 
-
 [DONE]
 [ACCORDION-END]
 
@@ -149,10 +148,6 @@ After you accepted the answer, you will be given an individual code to enter int
 
 4. Enter the code (given by the moderator) in the question field below.
 
-[VALIDATE_7]
-[ACCORDION-END]
-
-
 **Thank you for taking part in our Q&A Tutorial! Stay tuned to receive your Q&A Savvy badge!**
 
 ### More Information
@@ -166,3 +161,6 @@ By taking [this tutorial](community-blogging), you'll discover how to prepare an
 **Maintain your SAP profile at [people.sap.com](https://people.sap.com/)**
 
 By taking [this tutorial](community-profile), you'll explore, set up, and manage the sections of your SAP profile ([people.sap.com](https://people.sap.com/)). You'll also earn the Profile Savvy badge.
+
+[VALIDATE_7]
+[ACCORDION-END]
