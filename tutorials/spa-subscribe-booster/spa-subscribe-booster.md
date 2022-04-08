@@ -17,10 +17,14 @@ primary_tag: software-product>sap-process-automation
   - How to activate SAP Process Automation in SAP BTP Free tier
 ---
 
+>SAP Process Automation on the SAP Business Technology Platform combines the powerful capabilities of SAP Workflow Management and SAP Intelligent RPA in an easy-to-use, no-code AI-powered experience.
+It increases organizations capacity to drive process automation by empowering business experts to become citizen developers. Leveraging the power of no-code, citizen developers can build, adapt, improve, and innovate business processes with minimum assistance from scarce IT resources.
+
 [ACCORDION-BEGIN [Step 1: ](Subscribe to SAP Process Automation Booster)]
 
 1. After successful creation of SAP BTP account using Free tier, navigate to Boosters and search for **free** to find the **SAP Process Automation** booster. Once the tile is shown, Select the tile .
 
+>Booster is a guided set of automatic instructions to achieve a specific goal. SAP Process Automation fully automates the onboarding of SAP Process Automation service in your account without the need of any manual configurations. It will configure entitlement, enable SAP Process Automation subscription, and will assign all the relevant role collections to the given users for administrator or developer personas – and all this setup with just one click.
 
     !![1.PNG](1.png)
 
@@ -63,10 +67,11 @@ primary_tag: software-product>sap-process-automation
 
 9. In the sub-.account ,click on **Instances and Subscriptions** in the menu.
     You get now an overview on the activated services and you can move directly to the **SAP Process Automation** application by clicking on the icon.
+    > SAP Process Automation Application Development workbench which will be your one-stop studio to develop, test, deploy and monitor your processes with different skills like decision, automation, forms etc.
 
     !![10.1](10.1.png)
 
-10. SAP Process Automation is now shown up and you can start to automate your Business processes.
+10. You will have the access to the Application Development studio which is a no-code environment from where you can start your development of the business processes.
 
     !![11.png](11.PNG)
 
