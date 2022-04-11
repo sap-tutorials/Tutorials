@@ -30,7 +30,7 @@ To run the process you have to first release and then deploy the business proces
 
 >Version have x.y.z format where x is a major version number, y is minor and z is the patch number. Every time you release a new version will be created. Version is incremented automatically based on the how you want to store the changes in the repository like major or minor update or just as a patch.
 
-    !![FinalProcess](FinalProcess.png)
+  !![FinalProcess](FinalProcess.png)
 
 2. If you are releasing for the first time, then the version will start with 1.0.0. Next time you when you release there will be options to choose if it is a major, minor or patch update and version numbers will be automatically updated.
 
