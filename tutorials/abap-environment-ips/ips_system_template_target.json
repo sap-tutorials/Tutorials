@@ -6,15 +6,10 @@
     "alias":"System to receive provisioned Developer Users",
     "properties":
     {
-        "Authentication":"BasicAuthentication",
-        "User":"",
+        "Authentication":"ClientCertificateAuthentication",
         "ProxyType":"Internet",
         "URL":"",
         "Type":"HTTP",
         "ips.date.variable.format":"yyyy-MM-dd"
-    },
-    "encryptedProperties":
-    {
-        "Password":null
     }
 }
