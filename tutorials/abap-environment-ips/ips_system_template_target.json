@@ -3,7 +3,7 @@
     "accessMode":"WRITE",
     "relatedSystems":[],
     "name":"My ABAP instance",
-    "alias":"System to receive provisioned Developer Users",
+    "alias":"Target system to provision users and role assignment to",
     "properties":
     {
         "Authentication":"ClientCertificateAuthentication",

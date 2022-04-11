@@ -2,7 +2,7 @@
     "connectorTypeString":"SAP_CLOUD_IDENTITY",
     "accessMode":"READ",
     "name":"My Identity Authentication service ABAP Developers",
-    "alias":"Provisions my Identity Authentication service Developers",
+    "alias":"Source system to read users and role assignment from",
     "properties":
         {
             "Type":"HTTP",
