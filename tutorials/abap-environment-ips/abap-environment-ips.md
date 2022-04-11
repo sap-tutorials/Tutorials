@@ -17,7 +17,7 @@ primary_tag: software-product>sap-btp--abap-environment
         - A service key for ADT integration
  - You have one or more users with authorization for
     - User and Group Management in your **SAP Cloud Identity Services - Identity Authentication tenant**
-    - Space development in your ABAP system service instance's Cloud Foundry space
+    <!--- Space development in your ABAP system service instance's Cloud Foundry space-->
     - **Communication Management** in your ABAP environment service instance (business catalog ID `SAP_CORE_BC_COM` or business role template ID `SAP_BR_ADMINISTRATOR`)
 
 ## Details
