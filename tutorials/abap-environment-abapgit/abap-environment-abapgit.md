@@ -30,7 +30,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 
       ![new repository](github1.png)
 
-  3. Enter a name and description and check the checkbox **Add a README file** under **Initialize this repository with:** and click **Create repository**.
+  3. Enter a name and description and check the checkbox **Add a README file** under **Initialize this repository with:**, select the visibility of the repository and click **Create repository**.
 
       ![create repository](github2.png)
 
