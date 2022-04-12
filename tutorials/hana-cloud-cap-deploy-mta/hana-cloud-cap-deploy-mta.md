@@ -56,10 +56,6 @@ Note:  This is an optional tutorial as part of this mission on SAP HANA Cloud pl
 
     !![mta.yaml database module build parameters](mta_db_adjustments.png)
 
-8. Now move up to the `srv` module in the `mta.yaml` file.  Remember we had to restructure the generated output of the CAP project so that it would be compatible with the HANA tooling in SAP Business Application Studio. This means we no longer have a separate `/gen` folder with all the output that CAP needs at deploy and runtime.  Therefore we want to change the path for the module to point the root of the project. But this will cause this module to include too much content.  Therefore we will use the `build-parameters` on this module as well to exclude the temporary build files, the `default-env.json` (like in the `db` module), the `node_modules` folder from the `db` module (that way we get the `cds` model files not the deployer itself) and the entire `app` folder.
-
-    !![mta.yaml CAP service module adjustments](mta_srv_adjustments.png)
-
 9. The next adjustment to `mta.yaml` is rather substantial. There are different ways to deploy the UI content of our project. We could use standalone application router, managed application router, Fiori launchpad, and/or the HTML5 repository. The wizard that we've used previously setup our project to use a standalone application router but also the HTML5 repository. For your project needs you might decide on different combination of these options and you should explore the impact that each choice has on your deployment approach. However for this tutorial, we've chosen to stay with the standalone application router, but not to use the HTML5 repository. This is a choice that simplifies the setup and is good for small scale applications where you don't mind keeping the UI5 content local within the application router service itself. Therefore we can simply remove all the references and dependencies to the HTML5 Repository and UI Deployer in your `mta.yaml` file.
 
     !![Remove UI Deployer and HTML5 Repo from mta.yaml services](mta_approuter_adjustments.png)
