@@ -2,7 +2,7 @@
 author_name: Archana Shukla
 author_profile: https://github.com/ArchanaShukla/
 title: Create and Configure Forms
-description: Add forms to start the sales order process, send the new sales order request to the approver and inform the requester that the sales order is approved or rejected.
+description: Add forms to start the business process, send tasks for approvals and to notify business users.
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
@@ -10,8 +10,8 @@ primary_tag: software-product>sap-process-automation
 ---
 
 ## Prerequisites
- - Access to SAP Process Automation Lobby.
- - Business process project and process must be created.
+ - [Subscribe to SAP Process Automation using Booster in SAP BTP Free Tier](spa-subscribe-booster)
+ - Complete [Create a Business Process](spa-create-process)
 
 ## Details
 ### You will learn
@@ -55,19 +55,22 @@ Let us now explore how these different forms are created. In the steps below you
 
 3. Now it is time to design the **Form** with available layout and input fields options using drag-and-drop feature and simple configurations. All you need to do is drag-and-drop the form fields and enter the given names and field settings.
 
-    | Form Fields | Field Settings with Label |
-    |---|--|
-    | Headline 1 | Order Approval Request Form |
-    | Paragraph  | Please provide the necessary information of your order and submit for approvals.|
+
+    |  Form Fields    | Field Settings with Label
+    |  :------------- | :-------------
+    |  Headline 1         | Order Approval Request Form
+    |  Paragraph          |Please provide the necessary information of your order and submit for approvals.
+
 
     - For all below **Input Fields** enter the labels and select the **Required** checkbox
-    | Form Fields| Field Settings with Label |
-    |---|---|
-    | Text | Customer Name|
-    | Text | Order Number|
-    | Number | Order Amount|
-    | Date | Order Date|
-    | Text | Expected Delivery Date|
+
+    |  Form Fields   |  Field Settings with Label
+    |  :------------- | :-------------
+    | Text | Customer Name
+    | Text | Order Number
+    | Number | Order Amount
+    | Date | Order Date
+    | Text | Expected Delivery Date
 
     ![Design Form](unit3-03.png)
 
@@ -101,28 +104,31 @@ You can create these different forms using **Form Builder** embedded in the proc
 
 3. Design the **Approval Form** in the form builder by simply dragging-and-dropping fields onto the form editor and configuring respective field settings.
 
-  | Form Fields | Field Settings with Label |
-  |---|--|
-  | Headline 1 | Approve Sales Order |
-  | Paragraph  | A new order has been received. Please review and confirm whether the requirements can be met or not.|
-  | Paragraph  | Sales Order Details:|
+
+  |  Form Fields    | Field Settings with Label
+  |  :------------- | :-------------
+  | Headline 1 | Approve Sales Order
+  | Paragraph  | A new order has been received. Please review and confirm whether the requirements can be met or not.
+  | Paragraph  | Sales Order Details:
 
   - For all below **Input Fields** enter the labels and select the **Read Only** checkbox
-  | Form Fields| Field Settings with Label |
-  |---|---|
-  | Text | Customer Name|
-  | Text | Order Number|
-  | Number | Order Amount|
-  | Date | Order Delivery Date|
+
+    |  Form Fields   | Field Settings with Label
+    |  :------------- | :-------------
+    | Text | Customer Name
+    | Text | Order Number
+    | Number | Order Amount
+    | Date | Order Delivery Date
 
     ![03-027](unit3-12.png)
 
   - For all below **Input Fields** enter **only the labels**
-  | Form Fields| Field Settings with Label |
-  |---|---|
-  | Paragraph | Supplier Acknowledgment|
-  | Checkbox | I acknowledge that we have received your order and will process it based on the availability|
-  | Text Area | Message to buyer:|
+
+    |  Form Fields|   | Field Settings with Label
+    |  :------------- | :-------------
+    | Paragraph | Supplier Acknowledgment
+    | Checkbox | I acknowledge that we have received your order and will process it based on the availability
+    | Text Area | Message to buyer:
 
     ![03-027](unit3-12b.png)
 
@@ -140,12 +146,12 @@ You can create these different forms using **Form Builder** embedded in the proc
 
   > The process content will highlight the entries with same data type of the input field. For Example: If the input field is of Number type then Process Content will show only number-type entries.
 
-    | Form Input Fields| Process Content Entry |
-    |---|---|
-    | Customer Name | Order Processing Form > Customer Name|
-    | Order Delivery Date | Order Processing Form > Expected Delivery Date|
-    | Order Amount | Order Processing Form > Order Amount|
-    | Order Number | Order Processing Form > Order Number|
+    | Form Input Fields| Process Content Entry
+    |  :------------- | :-------------
+    | Customer Name | Order Processing Form > Customer Name
+    | Order Delivery Date | Order Processing Form > Expected Delivery Date
+    | Order Amount | Order Processing Form > Order Amount
+    | Order Number | Order Processing Form > Order Number
 
     ![03-027](unit3-14.png)
 
@@ -172,19 +178,20 @@ Once the user can approve or reject the request, a notification will be send to 
 
 3. Double click the form in the process builder to open the form builder. In the form builder, design the form to notify the requester of the order confirmation.
 
-  | Form Fields | Field Settings with Label |
-  |---|--|
-  | Headline 1 | Order Confirmation |
-  | Paragraph  |Your order has been received and accepted for delivery. We will send you the details as soon as the order is shipped. You can find the details of your order below, please review and verify your request: |
-  | Text Area  | Message from the supplier:|
-  | Paragraph  | Sales Order Details:|
+  | Form Fields | Field Settings with Label
+  |  :------------- | :-------------
+  | Headline 1 | Order Confirmation
+  | Paragraph  |Your order has been received and accepted for delivery. We will send you the details as soon as the order is shipped. You can find the details of your order below, please review and verify your request:
+  | Text Area  | Message from the supplier:
+  | Paragraph  | Sales Order Details:
 
   - For all below **Input Fields** enter the labels and select the **Read Only** checkbox
-  | Form Fields| Field Settings with Label |
-  |---|---|
-  | Text | Order Number|
-  | Number | Order Amount|
-  | Date | Expected Delivery Date|
+
+  | Form Fields| Field Settings with Label
+  |  :------------- | :-------------
+  | Text | Order Number
+  | Number | Order Amount
+  | Date | Expected Delivery Date
 
     ![03-027](unit3-22.png)
 
@@ -202,12 +209,12 @@ Once the user can approve or reject the request, a notification will be send to 
 
   > The process content will highlight the entries with same data type of the input field. For Example: If the input field is of Number type then Process Content will show only number-type entries.
 
-    | Form Input Fields| Process Content Entry |
-    |---|---|
-    | Order Number | Order Processing Form > Order Number|
-    | Message from the supplier | Approval Form > Message to buyer|
-    | Expected Delivery Date | Order Processing Form > Expected Delivery Date|
-    | Order Amount | Order Processing Form > Order Amount|
+    | Form Input Fields| Process Content Entry
+    |  :------------- | :-------------
+    | Order Number | Order Processing Form > Order Number
+    | Message from the supplier | Approval Form > Message to buyer
+    | Expected Delivery Date | Order Processing Form > Expected Delivery Date
+    | Order Amount | Order Processing Form > Order Amount
 
     ![03-027](unit3-24.png)
 
@@ -232,20 +239,21 @@ With this you completed designing and configuring the notification form. You can
 10. Design the order rejection form in the form builder.
   - Do not forget the **Save** the form once completed.
 
-    | Form Fields | Field Settings with Label |
-    |---|--|
-    | Headline 1 | Order Rejection |
-    | Paragraph  |We are sorry to inform you that your order cannot not be accepted. Any inconvenience caused due to refusal of order is regretted. You can find the reason of rejection and the details of your order below, please confirm the request: |
-    | Text Area  | Message from the supplier:|
-    | Paragraph  | Sales Order Details:|
+    | Form Fields | Field Settings with Label
+    |  :------------- | :-------------
+    | Headline 1 | Order Rejection
+    | Paragraph  |We are sorry to inform you that your order cannot not be accepted. Any inconvenience caused due to refusal of order is regretted. You can find the reason of rejection and the details of your order below, please confirm the request:
+    | Text Area  | Message from the supplier:
+    | Paragraph  | Sales Order Details:
 
     - For all below **Input Fields** enter the labels and select the **Read Only** checkbox
-    | Form Fields| Field Settings with Label |
-    |---|---|
-    | Text | Order Number|
-    | Number | Order Amount|
-    | Date | Expected Delivery Date|
-    | Paragraph | please press the SUBMIT button to acknowledge the order status.|
+
+    | Form Fields| Field Settings with Label
+    |  :------------- | :-------------
+    | Text | Order Number
+    | Number | Order Amount
+    | Date | Expected Delivery Date
+    | Paragraph | please press the SUBMIT button to acknowledge the order status.
 
     ![03-026](unit3-31.png)
 
@@ -257,22 +265,23 @@ With this you completed designing and configuring the notification form. You can
 
     - Configure **General** section
 
-      | Property| Value |
-      |---|---|
-      | Subject | Your order `select order number from the process content` is rejected by the supplier |
-      | Priority| High|
-      | Recipients | Process Metadata > Process Started By|
+      | Property| Value
+      |  :------------- | :-------------
+      | Subject | Your order `select order number from the process content` is rejected by the supplier
+      | Priority| High
+      | Recipients | Process Metadata > Process Started By
 
       ![03-026](unit3-34.png)
 
     - Configure **Inputs** section
 
-      | Form Input Fields| Process Content Entry |
-      |---|---|
-      | Expected Delivery Date | Order Processing Form > Expected Delivery Date|
-      | Message from the supplier | Approval Form > Message to buyer|
-      | Order Amount | Order Processing Form > Order Amount|
-      | Order Number | Order Processing Form > Order Number|
+
+      |  Form Input Fields  | Process Content Entry
+      |  :------------- | :-------------
+      | Expected Delivery Date | Order Processing Form > Expected Delivery Date
+      | Message from the supplier | Approval Form > Message to buyer
+      | Order Amount | Order Processing Form > Order Amount
+      | Order Number | Order Processing Form > Order Number
 
       ![03-026](unit3-35.png)
 
@@ -280,8 +289,7 @@ With this you completed designing and configuring the notification form. You can
 
     ![03-026](unit3-36.png)
 
-
-### With this you complete the process design of your business process. You have experienced building a process in quick time in a completely no-code environment and with no technical know-how. You used our new enhanced process builder to create an one-step approval process with trigger form, approval form and notification forms.
+ With this you complete the process design of your business process. You have experienced building a process in quick time in a completely no-code environment and with no technical know-how. You used our new enhanced process builder to create an one-step approval process with trigger form, approval form and notification forms.
 
 [VALIDATE_1]
 [ACCORDION-END]
