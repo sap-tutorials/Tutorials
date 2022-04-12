@@ -1,8 +1,8 @@
 ---
 author_name: Chaitanya Priya Puvvada
 author_profile: https://github.com/chaitanya-priya-puvvada
-title: Subscribe to SAP Process Automation using Booster in SAP BTP Free tier
-description: Activate the SAP Process Automation service in the SAP BTP with  booster
+title: Subscribe to SAP Process Automation using Booster in SAP BTP Free Tier
+description: Activate the SAP Process Automation service in the SAP BTP with Booster
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
@@ -22,9 +22,9 @@ It increases organizations capacity to drive process automation by empowering bu
 
 [ACCORDION-BEGIN [Step 1: ](Subscribe to SAP Process Automation Booster)]
 
-1. After successful creation of SAP BTP account using Free tier, navigate to Boosters and search for **free** to find the **SAP Process Automation** booster. Once the tile is shown, Select the tile .
+1. After successful creation of SAP BTP account using Free Tier, navigate to Boosters and search for **free** to find the **SAP Process Automation** booster. Once the tile is shown, Select the tile .
 
->Booster is a guided set of automatic instructions to achieve a specific goal. SAP Process Automation fully automates the onboarding of SAP Process Automation service in your account without the need of any manual configurations. It will configure entitlement, enable SAP Process Automation subscription, and will assign all the relevant role collections to the given users for administrator or developer personas – and all this setup with just one click.
+    >Booster is a guided set of automatic instructions to achieve a specific goal. SAP Process Automation fully automates the onboarding of SAP Process Automation service in your account without the need of any manual configurations. It will configure entitlement, enable SAP Process Automation subscription, and will assign all the relevant role collections to the given users for administrator or developer personas – and all this setup with just one click.
 
 
 !![1.PNG](1.png)
@@ -41,15 +41,14 @@ It increases organizations capacity to drive process automation by empowering bu
 
     !![3.PNG](3.png)
 
-4. In this step you can create a new sub-account or use an existing one. Here ,we will create new sub-
+4. In this step you can create a new sub-account or use an existing one. Here, we will create new sub-
     account scenario and click on **Next** .
 
     >You cannot have SAP Process Automation and SAP Intelligent RPA in same subaccount.
 
     !![4.PNG](4.png)
 
-5. System shows you all generated IDs which can be changed or accepted in the next page. The most
-    important point here is that you can see correct service and the plan in the green box then click **Next**.
+5. System shows you all generated IDs which can be changed or accepted in the next page. The most important point here is that you can see correct service and the plan in the green box then click **Next**.
 
     !![5.PNG](5.png)
 
@@ -62,11 +61,11 @@ It increases organizations capacity to drive process automation by empowering bu
 
    !![7.PNG](7.png)  
 
-8. The booster starts the deployment which can take up to five minutes to get  the service ready.
+8. The booster starts the deployment which can take up to five minutes to get the service ready.
 
     !![8.PNG](8.png)
 
-9. In the sub-.account ,click on **Instances and Subscriptions** in the menu.
+9. In the sub-account, click on **Instances and Subscriptions** in the menu.
     You get now an overview on the activated services and you can move directly to the **SAP Process Automation** application by clicking on the icon.
     > SAP Process Automation Application Development workbench which will be your one-stop studio to develop, test, deploy and monitor your processes with different skills like decision, automation, forms etc.
 
@@ -76,7 +75,7 @@ It increases organizations capacity to drive process automation by empowering bu
 
     !![11.png](11.PNG)
 
-Your are now ready to use SAP Process Automation in SAP BTP free tier .
+Your are now ready to use SAP Process Automation in SAP BTP Free Tier .
 
 [VALIDATE_1]
 [ACCORDION-END]

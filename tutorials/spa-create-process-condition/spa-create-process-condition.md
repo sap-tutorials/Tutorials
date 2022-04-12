@@ -2,7 +2,7 @@
 author_name: Archana Shukla
 author_profile: https://github.com/ArchanaShukla/
 title: Create a Process Condition
-description: Create a Process Condition to route the process for auto-approval and one-level approval flow.
+description: Create a process condition to route the process based on business criteria.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
@@ -10,8 +10,8 @@ primary_tag: software-product>sap-process-automation
 ---
 
 ## Prerequisites
- - Access to SAP Process Automation lobby
- - Business project and process must be created
+ - [Subscribe to SAP Process Automation using Booster in SAP BTP Free Tier](spa-subscribe-booster)
+ - Complete [Create a Business Process](spa-create-process) and [Create and Configure Forms](spa-create-forms)
 
 ## Details
 ### You will learn
@@ -72,19 +72,20 @@ Now that you have designed the process with forms, let us define which process f
 
 5. Design the notification form, in the same way as you did in previous chapter, to send yet another notification to the requester about auto-approval.
 
-  | Form Fields | Field Settings with Label |
-  |---|--|
-  | Headline 1 | Automatic Order Confirmation |
-  | Paragraph  | Your order has been received and we will send you the details as soon as the order is shipped. You can find the details of your order below, please review and verify your request:|
-  | Paragraph  |Sales Order Details: |
+  | Form Fields | Field Settings with Label
+  |  :------------- | :-------------
+  | Headline 1 | Automatic Order Confirmation
+  | Paragraph  | Your order has been received and we will send you the details as soon as the order is shipped. You can find the details of your order below, please review and verify your request:
+  | Paragraph  |Sales Order Details:
 
   - For all below **Input Fields** enter the labels and select the **Read Only** checkbox
-  | Form Fields| Field Settings with Label |
-  |---|---|
-  | Text | Order Number|
-  | Number | Order Amount|
-  | Date | Expected Delivery Date|
-  | Paragraph | please press the SUBMIT button to acknowledge the order status.|
+
+  | Form Fields| Field Settings with Label
+  |  :------------- | :-------------
+  | Text | Order Number
+  | Number | Order Amount
+  | Date | Expected Delivery Date
+  | Paragraph | please press the SUBMIT button to acknowledge the order status.
 
   ![Design Form](unit5-05.png)
 
@@ -93,19 +94,19 @@ Now that you have designed the process with forms, let us define which process f
     - Configure **General** section
 
       | Property| Value |
-      |---|---|
-      | Subject | Your order `select order number from the process content` has been successfully received |
-      | Recipients | Process Metadata > Process Started By|
+      |  :------------- | :-------------
+      | Subject | Your order `select order number from the process content` has been successfully received
+      | Recipients | Process Metadata > Process Started By
 
       ![03-026](unit5-06.png)
 
     - Configure **Inputs** section
 
-      | Form Input Fields| Process Content Entry |
-      |---|---|
-      | Order Number | Order Processing Form > Order Number|
-      | Order Amount | Order Processing Form > Order Amount|
-      | Expected Delivery Date | Order Processing Form > |
+      | Form Input Fields| Process Content Entry
+      |  :------------- | :-------------
+      | Order Number | Order Processing Form > Order Number
+      | Order Amount | Order Processing Form > Order Amount
+      | Expected Delivery Date | Order Processing Form >
 
       ![03-026](unit5-07.png)
 
@@ -114,7 +115,7 @@ Now that you have designed the process with forms, let us define which process f
 
     ![03-026](unit5-08.png)
 
-### This completes the process design with condition criteria that will decide what process flow is executed and whether there will be an auto-approval or one-step approval route.
+This completes the process design with condition criteria that will decide what process flow is executed and whether there will be an auto-approval or one-step approval route.
 
 [VALIDATE_1]
 [ACCORDION-END]

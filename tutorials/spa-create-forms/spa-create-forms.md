@@ -2,7 +2,7 @@
 author_name: Archana Shukla
 author_profile: https://github.com/ArchanaShukla/
 title: Create and Configure Forms
-description: Add forms to start the sales order process, send the new sales order request to the approver and inform the requester that the sales order is approved or rejected.
+description: Add forms to start the business process, send tasks for approvals and to notify business users.
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
@@ -10,8 +10,8 @@ primary_tag: software-product>sap-process-automation
 ---
 
 ## Prerequisites
- - Access to SAP Process Automation Lobby.
- - Business process project and process must be created.
+ - [Subscribe to SAP Process Automation using Booster in SAP BTP Free Tier](spa-subscribe-booster)
+ - Complete [Create a Business Process](spa-create-process)
 
 ## Details
 ### You will learn
@@ -265,11 +265,11 @@ With this you completed designing and configuring the notification form. You can
 
     - Configure **General** section
 
-      | Property| Value |
-      |---|---|
-      | Subject | Your order `select order number from the process content` is rejected by the supplier |
-      | Priority| High|
-      | Recipients | Process Metadata > Process Started By|
+      | Property| Value
+      |  :------------- | :-------------
+      | Subject | Your order `select order number from the process content` is rejected by the supplier
+      | Priority| High
+      | Recipients | Process Metadata > Process Started By
 
       ![03-026](unit3-34.png)
 
@@ -289,8 +289,7 @@ With this you completed designing and configuring the notification form. You can
 
     ![03-026](unit3-36.png)
 
-
-### With this you complete the process design of your business process. You have experienced building a process in quick time in a completely no-code environment and with no technical know-how. You used our new enhanced process builder to create an one-step approval process with trigger form, approval form and notification forms.
+ With this you complete the process design of your business process. You have experienced building a process in quick time in a completely no-code environment and with no technical know-how. You used our new enhanced process builder to create an one-step approval process with trigger form, approval form and notification forms.
 
 [VALIDATE_1]
 [ACCORDION-END]
