@@ -17,16 +17,15 @@ primary_tag: software-product>sap-hana-cloud
   - How to get started with the SAP HANA Cloud trial, free tier, or SAP HANA, express edition
 ---
 
-> Access help from the SAP community or share your feedback on this tutorial by navigating to the "Provide Feedback" menu located on the left of this page under the table of contents. This menu is available for each tutorial.
-
+> Access help from the SAP community or share your feedback on this tutorial by navigating to the "Provide Feedback" link located on the right of this page under the table of contents.
 
 [ACCORDION-BEGIN [Step 1: ](Database explorer overview)]
 
-The SAP HANA database explorer is a web-based tool for browsing and working with SAP HANA database objects such as tables, views, functions, stored procedures, importing and exporting data, debugging SQLScript, executing SQL statements, working with multi-model data such as graph, spatial and JSON collections, creating remote sources, viewing trace files, and troubleshooting.  It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP HANA 1.0 SPS 12. As it is web-based, individual users do not need to worry about installing the software or applying patches.  As of March 25, 2021 it also offers support for Data Lake IQ connections.
+The SAP HANA database explorer is a web-based tool for browsing and working with SAP HANA database objects such as tables, views, functions, stored procedures, importing and exporting data, debugging SQLScript, executing SQL statements, working with multi-model data such as graph, spatial and JSON collections, creating remote sources, viewing trace files, and troubleshooting.  It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP HANA 1.0 SPS 12. As it is web-based, individual users do not need to worry about installing the software or applying patches.  As of March 25, 2021 it also offers support for data lake Relational Engine connections, and as of March 14, support for data lake File Containers.  There is now also a an [extension](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer&ssr=false#overview) for Visual Studio Code that offers a subset of functionality.  
 
 ![database explorer](dbx.png)
 
-> The SAP HANA Client install provides a text based tool named `hdbsql` that can used to query an SAP HANA database.  For additional details see [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
+> The SAP HANA Client install provides a text based tool named `hdbsql` that can be used to query an SAP HANA database.  For additional details see [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients). The SAP HANA Cloud, data lake client provides a text based tool named `dbisql` that can be used to query a data lake. For additional details see  [Use Clients to Query Data Lake Relational Engine](group.hana-cloud-clients-data-lake).
 
 The SAP HANA database explorer can be opened from multiple locations as shown below:
 
@@ -34,7 +33,7 @@ The SAP HANA database explorer can be opened from multiple locations as shown be
 
     ![opening the SAP HANA database explorer from the SAP BTP Cockpit](open-dbx-from-hana-cloud.png)
 
-* From SAP HANA Cloud Central on either a SAP HANA or Data Lake with IQ enabled.
+* From SAP HANA Cloud Central on either a SAP HANA or Data Lake with Relational Engine enabled.
 
     ![opening the SAP HANA database explorer from SAP HANA Cloud Central](from-directory.png)
 

@@ -4,7 +4,7 @@ description:  Create an instance of SAP Event Mesh service from SAP Business Tec
 time: 15
 auto_validation: true
 tags: [ tutorial>beginner, topic>cloud, tutorial>license]
-primary_tag: products>sap-event-mesh
+primary_tag: software-product>sap-event-mesh
 ---
 
 ## Prerequisites
@@ -32,7 +32,7 @@ primary_tag: products>sap-event-mesh
 
 4. Choose **Create**.
 
-5. Select Event Mesh and then default service plan (for Factory landscape), else dev plan (for Trial landscape). 
+5. Select Event Mesh and then default service plan (for Factory landscape), else dev plan (for Trial landscape).
 
 6. Select **Cloud Foundry** as the runtime environment. Select your space then, enter an instance name. Choose **Next**.(for this exercise, we will consider only **Cloud Foundry** runtime environment)
 

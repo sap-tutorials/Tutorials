@@ -4,16 +4,18 @@ author_profile: https://github.com/flyingfish162
 title: Try Out the SAP BTP SDK Wizard for Android
 description: Use the Android Studio-integrated SAP BTP SDK Wizard for Android to create a mobile app and configure it to make use of SAP Mobile Services features.
 auto_validation: true
-primary_tag: products>sap-btp-sdk-for-android
-tags: [ tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp-sdk-for-android
+tags: [ tutorial>beginner, operating-system>android, topic>mobile, programming-tool>odata, software-product>sap-btp-sdk-for-android, software-product>sap-business-technology-platform ]
+keywords: sdkforandroid
 time: 30
 ---
 
 ## Prerequisites
 - You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
-    - **SAP Mobile Services**
-- Installed [Android Studio 4.2.x](https://developer.android.com/studio/archive). Please use the specified version.
-- [Downloaded](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20android) and [Installed](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/android/setup.html) version 3.4.x of the SAP BTP SDK for Android.
+    - **Mobile Services**
+- Make sure you can [Access SAP Mobile Services](fiori-ios-hcpms-setup).
+- Installed [Android Studio 2020.3.1](https://developer.android.com/studio/archive). Please use the specified version.
+- [Downloaded](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20android) and [Installed](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/android/setup.html) version 4.0.x of the SAP BTP SDK for Android.
 - Created a Google account.
 
 ## Details
@@ -30,7 +32,7 @@ time: 30
 
 1.  Open **Android Studio**.
 
-2.  Choose **Start a new SAP Business Technology Platform Android project**, which is an option created by the SAP BTP SDK Wizard for Android.
+2.  Choose **New SAP BTP Android App**, which is an option created by the SAP BTP SDK Wizard for Android.
 
     !![New project](new-project.png)
 
@@ -78,6 +80,7 @@ time: 30
 
     | Field | Value |
     |:----|:----|
+    | Enable Multiple Users | **`uncheck`** |
     | Use Discovery Service as Configuration Provider | **`uncheck`** |
     | OData | **`Online`** |
     | Create a Sample User Experience for the Selected OData Destination | **`check`** |
@@ -152,11 +155,11 @@ If you check the **Enable Push** checkbox, an error message is displayed explain
 
     !![Welcome screen](welcome-screen.png)
 
-4.  Click **GET STARTED** and the license agreement screen is displayed.
+4.  Click **Get Started** and the license agreement screen is displayed.
 
     !![License agreement screen](license-agreement.png)
 
-    Read it and click **AGREE**, you will see the **Sign-In** screen of the app. If you select **DISAGREE**, you will be asked to confirm whether to terminate onboarding. If you confirm, you will return to the **Welcome** screen. Otherwise, you can still select **AGREE** to complete onboarding and start to use the app.
+    Read it and click **Agree**, you will see the **Sign-In** screen of the app. If you select **Disagree**, you will be asked to confirm whether to terminate onboarding. If you confirm, you will return to the **Welcome** screen. Otherwise, you can still select **Agree** to complete onboarding and start to use the app.
 
     !![License agreement disagree](license-agreement-disagree.png)
 
@@ -176,11 +179,11 @@ If you check the **Enable Push** checkbox, an error message is displayed explain
 
     !![Passcode Policy](passcode-policy.png)
 
-7.  Because **Enable Usage Reporting** is checked, this screen can be used to show details of how the collected data will be used. For now, select either **ALLOW** or **DENY**. **Usage Reporting** is covered in a later tutorial in this mission.
+7.  Because **Enable Usage Reporting** is checked, this screen can be used to show details of how the collected data will be used. For now, select either **Allow** or **Deny**. **Usage Reporting** is covered in a later tutorial in this mission.
 
     !![Usage Reporting Consent Screen](usage-reporting-consent-screen.png)
 
-8.  Just like usage reporting, since **Enable Crash Reporting** is checked as well, this screen will be used to display details of how the collected information will be used. Select either **ALLOW** or **DENY**. If you select **DENY**, the crash information will only be stored locally.
+8.  Just like usage reporting, since **Enable Crash Reporting** is checked as well, this screen will be used to display details of how the collected information will be used. Select either **Allow** or **Deny**. If you select **Deny**, the crash information will only be stored locally.
 
     !![Crash Reporting Consent Screen](crash-reporting-consent-screen.png)
 

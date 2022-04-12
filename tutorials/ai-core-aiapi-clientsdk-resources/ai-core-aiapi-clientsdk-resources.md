@@ -3,7 +3,7 @@ title: Create Resource Group and Connect AWS S3 to SAP AI Core (AI API client SD
 description: Learn creation of resource group in SAP AI Core to enable multi-tenancy. Store datasets in AWS S3 and connect to SAP AI Core through AI API Client SDK.
 auto_validation: true
 time: 15
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform, software-product>sap-ai-core ]
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
 primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
@@ -115,7 +115,7 @@ Follow the below steps for creating a path prefix through AWS CLI:
 
 | File Name | Link |
 | --- | --- |
-| `travel.csv` | [Download Here](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-clientsdk-resources/travel.csv)
+| `travel.csv` | [Download Here](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-resource/travel.csv)
 
  1. Replace `your-bucket-id` and execute the following on the terminal *(command prompt)* to create a path prefix(directory) and upload you datafile at the same time.
 

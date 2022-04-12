@@ -3,7 +3,7 @@ title: Add Routing to a UI5 Web Components for React Project
 description: Use routes to navigate between different pages using UI5 Web Components for React.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-fiori]
+tags: [ tutorial>beginner, software-product>sap-fiori]
 primary_tag: programming-tool>html5
 author_name: Lukas Harbarth
 author_profile: https://github.com/Lukas742

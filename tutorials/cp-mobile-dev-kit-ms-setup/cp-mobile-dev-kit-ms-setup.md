@@ -140,6 +140,8 @@ MDK Web application accesses the data sources via BTP destination. You will now 
 
     !![MDK](img-4.4.png)
 
+    >When checking the connection, if all your configurations are correct, you will see a success message saying `Connection to "SampleServiceV2" established. Response returned: "400: Bad Request"`. In this particular case, it is safe to ignore the `"400: Bad Request"` part of this message.
+
 
 [DONE]
 [ACCORDION-END]

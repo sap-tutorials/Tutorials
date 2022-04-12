@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9c6b7816-1263-43f2-8e2d-ab87d2d1a6ee",
+		"_postman_id": "82360b3b-c5e4-4877-9606-77abedfb71fb",
 		"name": "AI-API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -551,11 +551,12 @@
 							"raw": "{\n  \"executionId\": \"aa97b177-9383-4934-8543-0f91b7a0283a\",\n  \"metrics\": [\n    {\n      \"name\": \"Error Rate\",\n      \"value\": 0.98,\n      \"timestamp\": \"2021-06-28T07:50:24.589Z\",\n      \"step\": 2,\n      \"labels\": [\n        {\n          \"name\": \"group\",\n          \"value\": \"tree-82\"\n        }\n      ]\n    }\n  ],\n  \"tags\": [\n    {\n      \"name\": \"Artifact Group\",\n      \"value\": \"RFC-1\"\n    }\n  ],\n  \"customInfo\": [\n    {\n      \"name\": \"Confusion Matrix\",\n      \"value\": \"[{'Predicted': 'False',  'Actual': 'False','value': 34},{'Predicted': 'False','Actual': 'True',  'value': 124}, {'Predicted': 'True','Actual': 'False','value': 165},{  'Predicted': 'True','Actual': 'True','value': 36}]\"\n    }\n  ]\n}"
 						},
 						"url": {
-							"raw": "{{apiurl}}/lm/metrics",
+							"raw": "{{apiurl}}/v2/lm/metrics",
 							"host": [
 								"{{apiurl}}"
 							],
 							"path": [
+								"v2",
 								"lm",
 								"metrics"
 							]
@@ -574,11 +575,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{apiurl}}/lm/metrics?executionIds=aa97b177-9383-4934-8543-0f91b7a0283a",
+							"raw": "{{apiurl}}/v2/lm/metrics?executionIds=aa97b177-9383-4934-8543-0f91b7a0283a",
 							"host": [
 								"{{apiurl}}"
 							],
 							"path": [
+								"v2",
 								"lm",
 								"metrics"
 							],
@@ -608,11 +610,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{apiurl}}/lm/metrics?executionId=aa97b177-9383-4934-8543-0f91b7a0283a",
+							"raw": "{{apiurl}}/v2/lm/metrics?executionId=aa97b177-9383-4934-8543-0f91b7a0283a",
 							"host": [
 								"{{apiurl}}"
 							],
 							"path": [
+								"v2",
 								"lm",
 								"metrics"
 							],

@@ -2,8 +2,8 @@
 title: Introduce Caching to Your Application
 description: Introduce caching to your application using the SAP Cloud SDK.
 auto_validation: true
-primary_tag: products>sap-cloud-sdk
-tags: [ tutorial>intermediate, products>sap-cloud-sdk, products>sap-business-technology-platform, topic>cloud, topic>java ]
+primary_tag: software-product>sap-cloud-sdk
+tags: [ tutorial>intermediate, software-product>sap-cloud-sdk, software-product>sap-business-technology-platform, topic>cloud, programming-tool>java ]
 time: 15
 ---
 
@@ -24,7 +24,7 @@ Sometimes service calls from your application to external servers turn out to be
 
 To improve responsiveness to the users, the data requested internally by your application can often be stored for subsequent calls. This can be achieved in such a way, that for every request the information previously stored by the application can be reused. This general behavior is called a cache. A cache stores copies of information passing through it. Besides serving improved responsiveness, the technical goal is to reduce the overall required bandwidth and processing requirements, thus eventually lessening the server load and perceived lag. This way the amount of information, that needs to be transmitted across networks, can be reduced.
 
-Caches are very important in a wide variety of use cases. It is one of the reasons for the advancements of our modern internet experience, like on-demand multimedia streaming and persistent cloud storage. Unlike web caches, which save whole request and response documents, an internal application cache serves the purpose of persisting interim data for multiple intended uses. Whenever information is expensive to compute or retrieve, and its value on a certain input is needed more than once, a cache should be considered.
+Caches are very important in a wide variety of use cases. It is one of the reasons for the advancements of modern internet experience, like on-demand multimedia streaming and persistent cloud storage. Unlike web caches, which save whole request and response documents, an internal application cache serves the purpose of persisting interim data for multiple intended uses. Whenever information is expensive to compute or retrieve, and its value on a certain input is needed more than once, a cache should be considered.
 
 [DONE]
 [ACCORDION-END]
@@ -41,7 +41,7 @@ Caching is applicable whenever:
 - Your cache will not need to store more data than what would fit in RAM. (By default, the cache is local to a single run of your application. It does not store data in files, or on outside servers.)
 
 
-If these requirements apply to your use case, then we highly recommend that you use the caching features provided by the SAP Cloud SDK in your application. Now that you have seen why caching is useful, you will learn what the Cloud SDK provides to enable it.
+If these requirements apply to your use case, then it is highly recommend that you use the caching features provided by the SAP Cloud SDK in your application. Now that you have seen why caching is useful, you will learn what the Cloud SDK provides to enable it.
 
 [DONE]
 [ACCORDION-END]
@@ -66,13 +66,13 @@ In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology.
 
 [ACCORDION-BEGIN [Step 4: ](Cache your OData call)]
 
-Now that we have covered why caching is important and how it can help us improve performance and responsiveness, it's finally time to introduce it into your application.
+Now that you know why caching is important and how it can help to improve performance and responsiveness, it's finally time to introduce it into your application.
 
-In [the resilience tutorial](s4sdk-resilience), you introduced resilience into your application using `resilience4j`. Now, in order to make our OData calls cacheable, you will enhance the `ResilienceConfiguration` and add a `CacheConfiguration` to it.
+In [the resilience tutorial](s4sdk-resilience), you introduced resilience into your application using `resilience4j`. Now, in order to make your OData calls cacheable, you will enhance the `ResilienceConfiguration` and add a `CacheConfiguration` to it.
 
 Add the following lines at the end of the constructor of the `GetBusinessPartnerCommand`:
 
-`./application/src/main/java/com/sap/cloud/sdk/tutorial/GetBusinessPartnersCommand.java`
+`./application/src/main/java/com/sap/cloud/sdk/tutorial/GetBusinessPartnerCommand.java`
 
 ```Java
 final ResilienceConfiguration.CacheConfiguration cacheConfig =
@@ -101,7 +101,7 @@ Feel free to test that subsequent requests respond faster compared to the first 
 
 Now that you have a working command with caching functionality you also have to adapt your test. Recall the test you prepared to check your resilient command falls back to an empty list in case of failure. Note that this behavior has now changed slightly.
 
-If your servlet got the desired result cached from a previous call, and the ERP system is temporarily not available, your cache will still return the data. But the test expects the result to be empty in that case. In order to account for this behavior and to see if our cache is working as expected let's adapt the test to account for caching. Replace the `testWithFallback` test with the following code:
+If your servlet got the desired result cached from a previous call, and the ERP system is temporarily not available, your cache will still return the data. But the test expects the result to be empty in that case. In order to account for this behavior and to see if your cache is working as expected let's adapt the test to account for caching. Replace the `testWithFallback` test with the following code:
 
 `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
 

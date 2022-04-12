@@ -24,11 +24,17 @@ For more information on SAP HANA, consult [What Is SAP HANA](https://help.sap.co
 
 >---
 
->For connections to the SAP HANA Cloud, Data Lake, see the tutorial [Use Clients to Query Data Lake IQ](group.hana-cloud-clients-data-lake).
+>For connections to the SAP HANA Cloud, Data Lake, see the tutorial [Use Clients to Query Data Lake Relational Engine](group.hana-cloud-clients-data-lake).
+
+>---
+
+> Access help from the SAP community or share your feedback on this tutorial by navigating to the "Provide Feedback" link located on the right of this page under the table of contents.
 
 >---
 
 >**IMPORTANT**: Complete the first 3 tutorials, and then you can select any of the following tutorials about connecting with different client interfaces.
+
+
 
 ---
 
@@ -71,13 +77,15 @@ Here are a few benefits of using SAP HANA Cloud:
 
   * The administration user for SAP HANA Cloud is named DBADMIN while for an SAP HANA 2.0 database it is SYSTEM.  For additional details see [Predefined Users](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/cloud/en-US/de4ee8bbbb5710148a04f023da147c8d.html), [SAP HANA Cloud Administrator DBADMIN](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/5b35402c47b344d882ac13c661aff1c0.html), and [Predefined Users in HANA 2.0](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/latest/en-US/de4ee8bbbb5710148a04f023da147c8d.html).  
 
+  Information on the instance size steps for SAP HANA Cloud, SAP HANA databases can be found at [Create an SAP HANA Database Instance Using SAP HANA Cloud Central](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/f7febb16072b41f7ac90abf5ea1d4b86.html).  Service plan, pricing and data center availability can be found at [SAP HANA Cloud Service (SAP Discovery Center)](https://discovery-center.cloud.sap/serviceCatalog/sap-hana-cloud?region=all&tab=service_plan).  Details on limitations can be found at [System Limitations](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20a760537519101497e3cfe07b348f3c.html).  Compatibility information can be found at [Compatibility with Other SAP HANA Versions](https://help.sap.com/viewer/3c53bc7b58934a9795b6dd8c7e28cf05/hanacloud/en-US/11cc86c44d0b4dd3bf70e16870d9d4df.html).
+
 [DONE]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 3: ](Connect to SAP HANA Cloud)]
 
-1. >To complete the tutorials in this mission, an SAP HANA instance is needed. Step 3 and 5 in this tutorial provide two different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.
+1. >To complete the tutorials in the mission, an SAP HANA instance is needed. Step 3 and 5 in this tutorial provide two different, free options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.
 
     Continue on with this tutorial once you have created an SAP HANA Cloud trial or free tier instance as shown below.
 
@@ -102,7 +110,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
     * [https://help.sap.com/viewer/product/BTP/Cloud/en-US](https://help.sap.com/viewer/product/BTP/Cloud/en-US)
 
-    Once the SAP HANA Cloud instance is created, take note of the endpoint (host:port) needed to connect to the database.  The endpoint can be obtained via the copy menu item.  This will be needed in subsequent tutorials in this mission.  
+    Once the SAP HANA Cloud instance is created, take note of the endpoint (host:port) needed to connect to the database.  The endpoint can be obtained via the copy menu item.  This will be needed in subsequent tutorials in the mission.  
 
     ![SQL Endpoint](SQLEndpoint.png)
 
@@ -170,7 +178,7 @@ SAP provides a free streamlined version of SAP HANA that runs on developer lapto
 
 SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides virtual machine images that can be run on Microsoft Windows, macOS and Linux machines as well as binary installs as described at [SAP HANA, express edition - Implement](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US?task=implement_task).  In terms of availability, a choice between either the server or the server + applications can be made.  The applications include the SAP HANA cockpit, the SAP HANA database explorer and the SAP HANA Web IDE.  Further details about a specific version can be found in the [release notes](https://search.sap.com/search.html?t=%22SAP%20HANA%2C%20express%20edition%202.0%20SPS%200%25%20Revision%22&n=1&s=boost&src=defaultSourceGroup).    
 
-Choose an option and proceed to install SAP HANA, express edition.  The server-only install, which requires less memory, is sufficient to complete the tutorials in this mission.  Be sure to note the SAP HANA database master password, as it will be needed later for connecting.
+Choose an option and proceed to install SAP HANA, express edition.  The server-only install, which requires less memory, is sufficient to complete the tutorials in the mission.  Be sure to note the SAP HANA database master password, as it will be needed later for connecting.
 
 At this point, you should have a running instance of SAP HANA, express edition.
 
@@ -208,7 +216,7 @@ The following steps will demonstrate connecting to and examining a SAP HANA, exp
     ```
     If the hdbsql command cannot be found, simply read through the following examples.  The installation and further examples of running HDBSQL will be covered in subsequent tutorials.
 
-2.  Determine the IP address of the machine that is running SAP HANA, express edition.  Record the value as it will be needed in later tutorials in this mission.  It is important to note the IP address or host name of the machine, as this will be needed in later tutorials.
+2.  Determine the IP address of the machine that is running SAP HANA, express edition.  Record the value as it will be needed in later tutorials in the mission.  It is important to note the IP address or host name of the machine, as this will be needed in later tutorials.
 
     ```Shell
     ip addr
