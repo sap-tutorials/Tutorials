@@ -70,9 +70,9 @@ The btp CLI is the CLI for working with global accounts on SAP BTP. You use the 
     - macOS: Open the tar.gz file with a double click.
     - Windows: Use PowerShell to extract the tar.gz archive with `tar -vxzf <tar.gz name>`. Alternatively, use an external tool to extract the executable file to your system.
 3. Copy the client executable from the unpacked folder to a directory of your choice. We recommend the following:
-    - Linux: `opt`
-    - macOS: `usr\local\bin`
-    - Windows: `C:\Users\<your-user>`
+    - Linux: `/usr/local/bin`
+    - macOS: `/usr/local/bin`
+    - Windows: `C:/Users/<your-user>`
 4. Ensure that the directory with the btp executable is in your PATH.
     - macOS: Start the terminal and try executing `btp`. The above-mentioned location should be part of your PATH by default. Note that btp CLI may be blocked because it is "from an unidentified developer". Please refer to the macOS documentation to learn how to bypass this.
     - Windows: We recommend to add the location of the btp.exe to your path. In Windows search, enter "System Properties" and, under **Advanced**, open **Environment Variables**. Under **User variables**, open **Path** and add the file location of the btp.exe (C:\Users\<your-user>). Now you can run the btp CLI by entering `btp`into Command Prompt or PowerShell.
