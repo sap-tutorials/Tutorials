@@ -76,7 +76,7 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 
     ```Text/Javascript
     {
-      "API_URL": "https://api-mssql-go.*******.kyma.shoot.live.k8s-hana.ondemand.com"
+      "API_URL": "https://api-mssql-go.*******.kyma.ondemand.com"
     }
     ```
 
@@ -124,6 +124,7 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     ```Shell/Bash
     kubectl create namespace dev
     ```
+    > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
 
 2. Within the project, open the `k8s/configmap.yaml` file and adjust `API_URL` by replacing `<cluster domain>` to match the Kyma runtime cluster domain:
 
@@ -137,7 +138,7 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     data:
       config.json: |-
         {
-          "API_URL": "https://api-mssql-go.*******.kyma.shoot.live.k8s-hana.ondemand.com"
+          "API_URL": "https://api-mssql-go.*******.kyma.ondemand.com"
         }
     ```
 
@@ -166,14 +167,16 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
 
 To access the application we can use the `APIRule` we created in the previous step.
 
-1. Open the Kyma runtime console
+1. Open the Kyma runtime console.
 
-2. Choose the `dev` Namespace.
+2. From the menu, choose **Namespaces**.
 
-3. From the menu, choose **Discovery and Network > `APIRules`**.
+3. Choose the `dev` Namespace.
 
-4. Choose the **Host** entry for the **fe-ui5-mssql** `APIRule` to open the application in the browser. This should be similar to:
-`https://fe-ui5-mssql.*******.kyma.shoot.live.k8s-hana.ondemand.com`
+4. From the menu, choose **Discovery and Network > `API Rules`**.
+
+5. Choose the **Host** entry for the **fe-ui5-mssql** `APIRule` to open the application in the browser. This should be similar to:
+`https://fe-ui5-mssql.*******.kyma.ondemand.com`
 
 [VALIDATE_2]
 [ACCORDION-END]

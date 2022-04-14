@@ -1,10 +1,10 @@
 ---
-title: Create Training and Serving Docker Images (Client SDK)
+title: Create Training and Serving Docker Images (AI API Client SDK)
 description: Build Docker images and orchestrate their execution with SAP AI Core.
 auto_validation: true
 time: 20
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
-primary_tag: topic>artificial-intelligence
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
+primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
@@ -169,32 +169,46 @@ The `starter` is the computing resource plan used in this tutorial. Below is the
 
 [ACCORDION-BEGIN [Step 6: ](Add Docker information to workflow)]
 
-Edit the following lines *(highlighted)* in each workflow file *(YAML)*.
 
-- `training_workflow_tutorial.yaml`
+1. Add the docker registry secret name. This will authorize while pull image from your docker registry. The docker registry secret must be created before. See [API to create docker registry secret](https://developers.sap.com/tutorials/ai-core-aiapi-postman-repository.html#b8f76aa7-69d4-4287-8e69-b275fc6a59f7)
 
-	```YAML[5]
-	...
-	spec:
-		...
-		container:
-		image: "<your_docker_repo_url>/<your_username_in_docker_repo>/text-clf-train:0.0.1"
-		...
-	```
+    Edit the following lines *(highlighted)* in each workflow file *(YAML)*.
 
-  !![train docker image yaml](img/build-ml/train-img.png)
+    ```YAML[3]
+    ...
+    imagePullSecrets
+      - name: docker-registry-secret
+    ...
+    ```
 
-- `serving_workflow_tutorial.yaml`
+    ![Docker secret](img/docker-secret.png)
 
-	```YAML[10]
-	...
-	spec:
-		...
-		template:
-			...
-			spec:
-				predictor
-					...
+2. Add the training docker image information. Edit the following lines *(highlighted)* in each workflow file *(YAML)*.
+
+    - `training_workflow_tutorial.yaml`
+
+    	```YAML[5]
+    	...
+    	spec:
+    		...
+    		container:
+    		image: "<your_docker_repo_url>/<your_username_in_docker_repo>/text-clf-train:0.0.1"
+    		...
+    	```
+
+      !![train docker image yaml](img/build-ml/train-img.png)
+
+    - `serving_workflow_tutorial.yaml`
+
+    	```YAML[10]
+    	...
+    	spec:
+    		...
+    		template:
+    			...
+    			spec:
+    				predictor
+    					...
 					containers:
 						image: "<your_docker_repo_url>/<your_username_in_docker_repo>/text-clf-serve:0.0.1"
 	...

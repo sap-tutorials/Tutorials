@@ -5,6 +5,7 @@ auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud, software-product-function>sap-btp-command-line-interface]
 primary_tag: products>sap-business-technology-platform
+keywords: btp, btp cli, btpcli, command line, command line interface, command line tool, sap btp command line interface
 ---
 
 ## Prerequisites
@@ -27,7 +28,7 @@ primary_tag: products>sap-business-technology-platform
 
 [ACCORDION-BEGIN [Step 1: ](What is the btp CLI?)]
 
-The btp CLI is **an alternative to the cockpit** for users who prefer working on the command line. It consists of a client and a server. The client is installed on your computer and it interacts with SAP BTP through a server. You connect to this CLI server when you log on to your global account through the btp CLI.
+The btp CLI is **an alternative to the cockpit** for users who prefer working on the command line. It consists of a client and a server. The client is installed on your computer and it interacts with SAP BTP through a server. You connect to this CLI server (https://cpcli.cf.eu10.hana.ondemand.com) when you log on to your global account through the btp CLI.
 
 The base call to enter on the command line is `btp`.
 
@@ -61,31 +62,50 @@ The btp CLI is the CLI for working with global accounts on SAP BTP. You use the 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Download and install the CLI client)]
+[ACCORDION-BEGIN [Step 4: ](Download and install the btp CLI client)]
 
-1. Go to the <a href="https://tools.hana.ondemand.com/#cloud-btpcli">SAP Development Tools</a> page to download the latest version of the CLI client for your operating system.
+1. Go to the <a href="https://tools.hana.ondemand.com/#cloud-btpcli">SAP Development Tools</a> page to download the latest version of the btp CLI client for your operating system.
 2. Extract the client executable from the tar.gz archive as follows:
     - Linux: Use the terminal to extract the tar.gz archive with `tar -vxzf <tar.gz name>`
-    - macOS: Open the tar.gz file with a double click
+    - macOS: Open the tar.gz file with a double click.
     - Windows: Use PowerShell to extract the tar.gz archive with `tar -vxzf <tar.gz name>`. Alternatively, use an external tool to extract the executable file to your system.
-3. Run btp from within the extracted folder or ensure that it's in your PATH. In Windows, for example, you can open the folder and type `cmd` or `powershell` into the address bar. On macOS, make sure that the client file is in your PATH and open a terminal session. Note that btp CLI may be blocked because it is "from an unidentified developer". Please refer to the macOS documentation to learn how to bypass this.
+3. Copy the client executable from the unpacked folder to a directory of your choice. We recommend the following:
+    - Linux: `opt`
+    - macOS: `usr\local\bin`
+    - Windows: `C:\Users\<your-user>`
+4. Ensure that the directory with the btp executable is in your PATH.
+    - macOS: Start the terminal and try executing `btp`. The above-mentioned location should be part of your PATH by default. Note that btp CLI may be blocked because it is "from an unidentified developer". Please refer to the macOS documentation to learn how to bypass this.
+    - Windows: We recommend to add the location of the btp.exe to your path. In Windows search, enter "System Properties" and, under **Advanced**, open **Environment Variables**. Under **User variables**, open **Path** and add the file location of the btp.exe (C:\Users\<your-user>). Now you can run the btp CLI by entering `btp`into Command Prompt or PowerShell.
+5. Open a terminal and enter `btp`.
+
+The output should look similar to this screenshot:
 
 ![CLI info screen](sapcp.png)
-
-You get version and usage information, you learn where the configuration file is located, and you get useful tips how to log in and get help in the client.
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Display the help overview)]
+[ACCORDION-BEGIN [Step 5: ](Display help)]
 
-Now type in the following to show a list of all available commands and options:
+Now type in the following to get syntax instructions and examples help calls:
 
 ```Bash
-btp --help
+btp help
 ```
-![CLI help overview](sapcp--help.png)
+
+![btp help](btp-help.png)
+
+You can call up help in the client on different levels, from an introductory help page `btp help`, over help for individual actions, to quite extensive command-specific help. You can either type `btp help [...]` or append `--help` to the end of (incomplete) commands:
+
+|  Syntax     | Example
+|  :------------- | :-------------
+|  `btp help <ACTION>`           | `btp help list`
+|  `btp help <GROUP>`           | `btp help accounts`
+|  `btp help <GROUP/OBJECT>`    | `btp help accounts/subaccount`
+|  `btp help <ACTION> <GROUP/OBJECT>`            | `btp help list accounts/subaccount`
+|  `btp <ACTION> <GROUP/OBJECT> --help`            | `btp list accounts/subaccount --help`
+|  `btp <ACTION> --help`            | `btp list --help`
 
 [DONE]
 [ACCORDION-END]
@@ -137,11 +157,7 @@ Each command starts with the base call `btp`. The syntax of the command itself i
 
 [ACCORDION-BEGIN [Step 7: ](Understand the command syntax: options)]
 
-Additionally, **options** and **parameters** can be added to a command. As you've seen in the overview of all commands, there are the following options that you can add at the beginning of each command. For example, to get help on a specific command or to use the verbose mode.
-
-```Bash
-btp --help list accounts/subaccount
-```
+Additionally, **options** and **parameters** can be added to a command. As you've seen in the overview of all commands, there are the following options that you can add at the beginning of each command. For example, to use the verbose mode.
 
 ```Bash
 btp --verbose list accounts/subaccount
@@ -149,9 +165,9 @@ btp --verbose list accounts/subaccount
 
 ![CLI options](options.png)
 
->The `--help` option can also be placed at the end of a command, for example `btp list accounts/subaccount --help`.
+>To call help, you can always place `--help` at the end of a command, even if it's not complete. For example, `btp list --help`, `btp accounts --help`.
 
-[VALIDATE_3]
+[DONE]
 [ACCORDION-END]
 
 
@@ -175,19 +191,19 @@ btp assign security/role-collection "Global Account Administrator" --to-user exa
 Your first login takes you into the global account whose subdomain you've entered at login. Now, all commands are executed on global account level, unless you specify a different context. Remember you can manage the global account and its directories and subaccounts with the btp CLI. So if you want to change the context in which commands are executed to a directory or a subaccount, you can do so using the target command:
 
 ```Bash
-btp target --subaccount <subaccount ID>
+btp target --subaccount <my-subaccount-ID>
 ```
 OR
 
 ```Bash
-btp target --directory <directory ID>
+btp target --directory <my-directory-ID>
 ```
 
 The targeting mechanism works according to the hierarchy of entities in the global account:
 
 - After initial login, the global account is targeted.
 
-- If a subaccount or directory is targeted and you run a command that only works on a higher level, the command will be executed in the parent directory or global account of the current target. For example, `create accounts/subaccount` creates a subaccount in the global account, even if a subaccount or directory is targeted.
+- If a subaccount or directory is targeted and you run a command that only works on a higher level, the command will be executed in the parent directory or global account of the current target. For example, `list accounts/subaccount` lists all subaccounts of the global account, even if a subaccount or a directory is targeted.
 
 - If a subaccount or directory is targeted, you can execute commands in its parent directory or global account by adding parameters `-dir` or `-ga` without a value. For example, if a subaccount is targeted, `btp list security/user` lists the users of that subaccount. To list the users of the parent directory or global account, use: `btp list security/user -dir` or  `btp list security/user -ga`.
 
@@ -226,11 +242,11 @@ Here are a few simple examples of commands on global account level that you can 
 |  List role collections                  | `btp list security/role-collection`
 
 
-Or go through the documentation to learn more:
+To learn more:
 
-- [Account Administration Using the SAP BTP Command Line Interface](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7c6df2db6332419ea7a862191525377c.html)
-- [Commands in the btp CLI](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/a03a5550cdd44fa48ff78d70ca7c9651.html)
-- Check out this tutorial: [Automate Account Operations with the Command Line Interface (CLI)](cp-cli-automate-operations)
+- See the documentation on SAP Help Portal: [Account Administration Using the SAP BTP Command Line Interface](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7c6df2db6332419ea7a862191525377c.html).
+- Check out this tutorial: [Automate Account Operations with the Command Line Interface (CLI)](cp-cli-automate-operations).
+- And watch the videos in this [series of live streams on YouTube about the btp CLI](https://help.sap.com/products/link-disclaimer?site=https%3A%2F%2Fwww.youtube.com%2Fplaylist%3Flist%3DPL6RpkC85SLQDXx827kdjKc6HRvdMRZ8P5).
 
 [DONE]
 [ACCORDION-END]

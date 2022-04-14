@@ -136,7 +136,8 @@ With above details, you will next configure an app in Mobile Services, add root 
     | `Your Project Name` | `MDK_Petstore` |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
-
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
+    
     !![MDK](img-3.4.png)
 
     >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).

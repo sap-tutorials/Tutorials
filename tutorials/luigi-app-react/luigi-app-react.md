@@ -3,7 +3,7 @@ title: Build Luigi App with React
 description: Create a mock shopping application with React and configure it using Luigi.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, topic>javascript]
+tags: [ tutorial>beginner, programming-tool>javascript]
 primary_tag: topic>user-interface
 ---
 
@@ -386,7 +386,7 @@ In this step, you will make changes to the entry point `index.js` for the React 
     render(<App />, document.getElementById("root"));
     ```
 
-  2. Next create a new file in `react-core-mf/views` called `home.js` and paste the following code into it:
+  2. Next, go to the `react-core-mf/src/views` directory created in step 6 of the [previous tutorial](luigi-app-basic-setup). Create a file called `home.js` and paste the following code into it:
 
     ```JavaScript
     import React, { Component, useState } from "react";

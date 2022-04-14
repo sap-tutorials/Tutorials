@@ -93,16 +93,17 @@ Trace settings can also be configured using environment variables.
     Notice that the trace settings are shown at the top of the file.  
 
     ```
-    libSQLDBCHDB 2.7.17.1607722875
+    libSQLDBCHDB 2.12.13.1642791468
     SYSTEM: Microsoft Windows / X64
-    BUILD AT: 2020-12-21 18:56:04
+    BUILD AT: 2022-01-28 19:09:11
     BRANCH: unknown
-    APPLICATION: C:\SAP\hdbclient\hdbsql.exe
+    BUILD MODE: rel
+    APPLICATION: c:\SAP\hdbclient\hdbsql.exe
     HOST: W-R90XC65K
     OS USER: dan
-    CURRENT DIRECTORY: C:\Users\dan\HANAClientsTutorial
-    TRACE FILE NAME: c:\temp\traces\SQLDBC-35724.txt
-    PROCESS ID: 35724
+    CURRENT DIRECTORY: c:\SAP\hdbclient
+    TRACE FILE NAME: c:\temp\traces\SQLDBC-23380.txt
+    PROCESS ID: 23380
     TRACE FILE WRAP COUNT: 0
 
     ---
@@ -110,6 +111,8 @@ Trace settings can also be configured using environment variables.
 
     SQL Trace: Level DEBUG
     Distribution Trace: Level DEBUG
+
+    ---
     ```
 
     If the trace settings change while tracing is enabled, the Enabled Traces section will appear again in the trace file.  

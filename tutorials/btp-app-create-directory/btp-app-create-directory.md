@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Create a Directory for Development
 description: This tutorial shows you how to start building your application with CAP and VS Code.
+keywords: cap
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]
@@ -129,6 +130,8 @@ If you don't want to start from scratch, but from a specific example of the tuto
     cp -r .gitignore $(ls -1A | grep -v .git) ../cpapp
     ```
 
+    > If you get an error, make sure you are not using PowerShell to execute the command. Checkout [Command Line Interpreters](btp-app-#command-line-interpreters) to see the recommended command line interpreters for this tutorial.
+
 6. Check out the `master` branch to get access to the template files again.
 
     ```Shell/Bash
@@ -140,7 +143,7 @@ If you don't want to start from scratch, but from a specific example of the tuto
     ```Shell/Bash
     cd ../cpapp
     ```
-    
+
 8. Install required Node.js modules in your app directory.
 
     ```Shell/Bash

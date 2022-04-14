@@ -1,41 +1,42 @@
 ---
-title: SAP HANA Cloud, Data Lake IQ Client Interfaces Overview
-description: Learn about the data lake IQ, how to create a trial instance, how to install the data lake IQ client, and how to connect to the data lake IQ using the SAP HANA cockpit, SAP HANA database explorer, and Interactive SQL Client.
+title: SAP HANA Cloud, Data Lake Client Interfaces Overview
+description: Learn about the SAP HAN Cloud, data lake, how to create a trial instance, how to install the data lake client, and how to connect to the data lake Relational Engine using the SAP HANA cockpit, SAP HANA database explorer, and Interactive SQL Client.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>java, products>sap-hana-cloud, products>sap-iq]
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>sql, software-product>sap-iq]
 primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
 ## Prerequisites
  - A Microsoft Windows or Linux computer.
+ - An SAP HANA Cloud trial or free tier.
 
 ## Details
 ### You will learn
-  - Information about SAP HANA Cloud data lake IQ
-  - How to install the data lake IQ client
+  - Information about SAP HANA Cloud, data lake Relational Engine
+  - How to install the data lake client
   - How to create sample tables, views, and procedures
   - How to connect using SAP HANA cockpit, SAP HANA database explorer and the Interactive SQL Client
 
-This tutorial group will provide guidance on setting up a trial instance of [SAP HANA Cloud, data lake IQ](https://help.sap.com/viewer/product/SAP_HANA_DATA_LAKE/latest/en-US) so that it can then be connected to and queried using a few of the data lake IQ client interfaces as described in [SAP HANA Cloud, Data Lake Developer Guide for Data Lake IQ](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US).  
+This tutorial group will provide guidance on setting up a trial instance of [SAP HANA Cloud, data lake](https://help.sap.com/viewer/product/SAP_HANA_DATA_LAKE/latest/en-US) so that it can then be connected to and queried using a few of the data lake client interfaces as described in [SAP HANA Cloud, Data Lake Developer Guide for Data Lake Relational Engine](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US).  
+
+> Access help from the SAP community or share your feedback on this tutorial by navigating to the "Provide Feedback" menu located on the right of this page under the table of contents. This menu is available for each tutorial.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Overview of Data Lake IQ)]
+[ACCORDION-BEGIN [Step 1: ](Overview of SAP HANA Cloud, data lake)]
 
-SAP HANA Cloud is composed of multiple components, including data lake IQ.
+SAP HANA Cloud is composed of multiple components.
 
   * SAP HANA is an in-memory, multi-model, column-based, relational database. For further details see [Introduction to SAP HANA Cloud](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/latest/en-US/7a27607b08ba46d5b253365e703b1c1a.html) and the tutorial mission [Use Clients to Query an SAP HANA Database](mission.hana-cloud-clients).
 
-  * [SAP HANA Cloud, data lake](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/228c19ac890046ecbe8e38a540c0cb6b.html) is composed of two components:  data lake IQ and data lake Files.    
+  * [SAP HANA Cloud, data lake](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/228c19ac890046ecbe8e38a540c0cb6b.html) is composed of two components:  data lake Relational Engine and data lake Files.    
 
-    [Data Lake IQ](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/bedae75d1482413d92af8ca7f43d430b.html) is a disk-based, column-oriented relational database for storing and analyzing high volumes of infrequently updated data. Data lake IQ descends from [SAP IQ](https://help.sap.com/viewer/product/SAP_IQ/latest/en-US), which was previously named Sybase IQ. Because of its heritage, there are commonalities with other Sybase products. Many client interface drivers are shared with [SAP SQL Anywhere](https://help.sap.com/viewer/product/SAP_SQL_Anywhere/17.0/en-US) and SAP Adaptive Server Enterprise. Details on compatibility can be found at [Compatibility with Other SAP Database Products](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a5d9e97d84f210158efdd7e4092eac36.html).
+    [Data Lake Relational Engine](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/bedae75d1482413d92af8ca7f43d430b.html) is a disk-based, column-oriented relational database for storing and analyzing high volumes of infrequently updated data. It was previously named Data lake IQ and descends from [SAP IQ](https://help.sap.com/viewer/product/SAP_IQ/latest/en-US), which was previously named Sybase IQ. Because of its heritage, there are commonalities with other Sybase products. Many client interface drivers are shared with [SAP SQL Anywhere](https://help.sap.com/viewer/product/SAP_SQL_Anywhere/17.0/en-US) and SAP Adaptive Server Enterprise. Details on compatibility can be found at [Compatibility with Other SAP Database Products](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a5d9e97d84f210158efdd7e4092eac36.html).
 
     [Data Lake Files](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/502642d7fd0e4a5b9b3a61c8ac4d5ce5.html) can be used to store and access unstructured data such as trace files and structured files like CSV, Parquet, or ORC. Structured files can use [SQL on Files](https://help.sap.com/viewer/a896c6a184f21015b5bcf4c7a967df07/latest/en-US/b8ed121f351a4a56a451b9ba6f10f88e.html), which enables SQL queries to be performed on them.  
 
     >Note, that the data lake Files component is currently not available in trial accounts.
-
-  * [SAP HANA Cloud, adaptive server enterprise](https://help.sap.com/viewer/46353c3b724f4934bb0671dd82044acd/latest/en-US/7817022aff40482abc431d20275984bb.html) is a disk based, row-oriented, relational database providing extreme online transaction processing.
 
 For additional details see [How & When to Use the New SAP HANA Cloud Database Instances](https://saphanajourney.com/hana-cloud/resources/sap-hana-cloud-new-services-adaptive-server-enterprise-and-data-lake/).
 
@@ -44,6 +45,9 @@ For additional details see [How & When to Use the New SAP HANA Cloud Database In
 
 
 [ACCORDION-BEGIN [Step 2: ](Create a data lake instance and connect to it)]
+
+>To complete the tutorials in this group, an SAP HANA Cloud, data lake instance is needed. There are two different free options including SAP HANA Cloud free tier and free trial.  For instructions on registering, see [Set Up Your SAP HANA Cloud, SAP HANA Database (free tier or trial) and Understand the Basics](group.hana-cloud-get-started-1-trial).
+
 The following steps provide instructions on how to create a data lake instance in the SAP Business Technology Platform (BTP) trial.  Additional content on this topic is available at [Quick Start Tutorial for Data Lake](https://help.sap.com/viewer/a89a80f984f21015b2b2c84d2498d36d/latest/en-US/b62bc948ad684e3a94b9e14b68318f2a.html).
 
 There are multiple ways to create a data lake:  
@@ -81,9 +85,13 @@ There are multiple ways to create a data lake:
 
     ![Enable a data lake](enable-data-lake.png)
 
-    Take note that the administration user is HDLADMIN.  
+    Take note that the administration user is HDLADMIN.
 
-    >Note that it is also possible to create and manage data lake instances using the [Cloud Foundry CLI](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/921f3e46247947779d69b8c85c9b9985.html).
+    >The HDLADMIN user has a [login policy](https://help.sap.com/viewer/745778e524f74bb4af87460cca5e62c4/latest/en-US/a43f448484f21015924f9951e9b77e32.html) that enforces the [update of the password](https://help.sap.com/viewer/745778e524f74bb4af87460cca5e62c4/latest/en-US/a458edd784f2101580a1eca5042678f8.html) after 180 days.  
+
+    >---
+
+    >It is also possible to create and manage data lake instances using the [Cloud Foundry CLI](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/921f3e46247947779d69b8c85c9b9985.html).
 
 4. As this is a trial account, set allowed connections to **Allow all IP addresses** so that client applications can connect from any IP address.  
 
@@ -92,6 +100,8 @@ There are multiple ways to create a data lake:
 5. After a while, press the **Refresh** button and the status will change from CREATING to RUNNING.
 
     ![data lake running](data-lake-running.png)
+
+    >Note that the SAP HANA Cloud, HANA data lake trial or free tier instances are shut down overnight and will need to be restarted before working with them the next day.
 
 [DONE]
 [ACCORDION-END]
@@ -115,7 +125,7 @@ There are multiple ways to create a data lake:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create tables with SAP HANA database explorer)]
+[ACCORDION-BEGIN [Step 4: ](Create tables, views, functions, and procedures with SAP HANA database explorer)]
 In this step, a sample HOTEL dataset will be created comprising tables, a view, and a stored procedure.
 
 1. In SAP HANA Cloud Central, use the actions menu to open the SAP HANA database explorer.
@@ -126,12 +136,14 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
 
     ```SQL
     SELECT CURRENT USER FROM DUMMY;
-    SELECT * FROM SYS.SYSINFO;
     SELECT * FROM sa_db_properties() WHERE UPPER(PropName) LIKE '%NAME%';
     SELECT * FROM SYS.SYSOPTIONS WHERE UPPER("option") LIKE '%VERIFY%';
+    CALL sa_conn_properties(CONNECTION_PROPERTY('Number'));
     ```
 
     ![SAP HANA database explorer](dbx-query.png)
+
+    Additional details can be found at [System Functions](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a52da06984f21015bf279b4c69002e5e.html) and [System Procedures for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a598917d84f210159e1fff1a89345de9.html).
 
 
 3. In the SAP HANA database explorer, execute the following SQL statements.
@@ -152,54 +164,54 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
 
     --Create the objects in the HOTEL schema
     CREATE TABLE HOTEL.HOTEL(
-        hno INTEGER PRIMARY KEY,
-        name VARCHAR(50) NOT NULL,
-        address VARCHAR(40) NOT NULL,
-        city VARCHAR(30) NOT NULL,
-        state VARCHAR(2) NOT NULL,
-        zip VARCHAR(6)
+        HNO INTEGER PRIMARY KEY,
+        NAME VARCHAR(50) NOT NULL,
+        ADDRESS VARCHAR(40) NOT NULL,
+        CITY VARCHAR(30) NOT NULL,
+        STATE VARCHAR(2) NOT NULL,
+        ZIP VARCHAR(6)
     );
 
     CREATE TABLE HOTEL.ROOM(
-        hno INTEGER,
-        type VARCHAR(6),
-        free NUMERIC(3),
-        price NUMERIC(6, 2),
-        PRIMARY KEY (hno, type),
-        FOREIGN KEY (hno) REFERENCES HOTEL.HOTEL
+        HNO INTEGER,
+        TYPE VARCHAR(6),
+        FREE NUMERIC(3),
+        PRICE NUMERIC(6, 2),
+        PRIMARY KEY (HNO, TYPE),
+        FOREIGN KEY (HNO) REFERENCES HOTEL.HOTEL
     );
 
     CREATE TABLE HOTEL.CUSTOMER(
-        cno INTEGER PRIMARY KEY,
-        title VARCHAR(7),
-        firstname VARCHAR(20),
-        name VARCHAR(40) NOT NULL,
-        address VARCHAR(40) NOT NULL,
-        zip VARCHAR(6)
+        CNO INTEGER PRIMARY KEY,
+        TITLE VARCHAR(7),
+        FIRSTNAME VARCHAR(20),
+        NAME VARCHAR(40) NOT NULL,
+        ADDRESS VARCHAR(40) NOT NULL,
+        ZIP VARCHAR(6)
     );
 
     CREATE TABLE HOTEL.RESERVATION(
-    resno INTEGER NOT NULL default autoincrement,
-        rno INTEGER NOT NULL,
-        cno INTEGER,
-        hno INTEGER,
-        type VARCHAR(6),
-        arrival DATE NOT NULL,
-        departure DATE NOT NULL,
+        RESNO INTEGER NOT NULL default autoincrement,
+        RNO INTEGER NOT NULL,
+        CNO INTEGER,
+        HNO INTEGER,
+        TYPE VARCHAR(6),
+        ARRIVAL DATE NOT NULL,
+        DEPARTURE DATE NOT NULL,
         PRIMARY KEY (
             "RESNO", "ARRIVAL"
         ),
-        FOREIGN KEY(hno) REFERENCES HOTEL.HOTEL,
-        FOREIGN KEY(cno) REFERENCES HOTEL.CUSTOMER
+        FOREIGN KEY(CNO) REFERENCES HOTEL.CUSTOMER,
+        FOREIGN KEY(HNO) REFERENCES HOTEL.HOTEL
     );
 
     CREATE TABLE HOTEL.MAINTENANCE(
-        mno INTEGER PRIMARY KEY,
-        hno INTEGER,
-        description VARCHAR(100),
-        date_performed DATE,
-        performed_by VARCHAR(40),
-        FOREIGN KEY(hno) REFERENCES HOTEL.HOTEL
+        MNO INTEGER PRIMARY KEY,
+        HNO INTEGER,
+        DESCRIPTION VARCHAR(100),
+        DATE_PERFORMED DATE,
+        PERFORMED_BY VARCHAR(40),
+        FOREIGN KEY(HNO) REFERENCES HOTEL.HOTEL
     );
 
     CREATE OR REPLACE VIEW HOTEL.HOTEL_ROOMS_VIEW AS
@@ -211,6 +223,14 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
       FROM HOTEL.ROOM R
         LEFT JOIN HOTEL.HOTEL H ON R.HNO = H.HNO
             ORDER BY H.NAME;
+
+    CREATE OR REPLACE FUNCTION HOTEL.AVERAGE_PRICE(room_type CHAR(6))
+    RETURNS NUMERIC(6, 2)
+    BEGIN
+        DECLARE avg_price NUMERIC(6,2);  
+        SELECT CAST(ROUND(sum(PRICE)/COUNT(*), 2) as NUMERIC(6,2)) INTO avg_price FROM HOTEL.ROOM WHERE TYPE = room_type GROUP BY TYPE;
+        RETURN avg_price;
+    END;
 
     CREATE OR REPLACE PROCEDURE HOTEL.SHOW_RESERVATIONS(
         IN IN_HNO INTEGER, IN IN_ARRIVAL DATE)
@@ -235,9 +255,9 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
             HOTEL.CUSTOMER AS CUS
             ON CUS.CNO = R.CNO
             WHERE R.ARRIVAL = IN_ARRIVAL AND
-            H.HNO = IN_HNO;
-            -- ORDER BY H.NAME ASC, R.ARRIVAL DESC;  --order by ignored in views
-    END;
+            H.HNO = IN_HNO
+            ORDER BY CUS.NAME ASC;
+        END;
 
     --Specify the privileges for the role HOTEL
     GRANT SELECT, UPDATE, INSERT, DELETE ON HOTEL.HOTEL, HOTEL.ROOM, HOTEL.CUSTOMER, HOTEL.RESERVATION, HOTEL.MAINTENANCE, HOTEL.HOTEL_ROOMS_VIEW TO HOTEL;
@@ -255,7 +275,7 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
 
     ![DBX Create](sql-commands.png)
 
-    Additional details on the SQL used above can be found at [CREATE TABLE Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a619764084f21015b8039a8346dc622c.html), [CREATE VIEW Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61a051684f210158cced2d83231bd8a.html), and [CREATE PROCEDURE Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a6185b2184f21015b2419a5444b55609.html).
+    Additional details on the SQL used above can be found at [CREATE TABLE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a619764084f21015b8039a8346dc622c.html), [CREATE VIEW Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61a051684f210158cced2d83231bd8a.html), and [CREATE PROCEDURE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a6185b2184f21015b2419a5444b55609.html).
 
     > Note that the identifiers such as the column names in a table are [case-insensitive](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a5e4ad6a84f21015ab0c854d2822461a.html).
 
@@ -264,10 +284,10 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Install the data lake IQ client)]
-1.  In [SAP Software Downloads](https://support.sap.com/en/my-support/software-downloads.html), under **Support Packages & Patches**, search for **HANA DATALAKE CLIENT 1.0**.  Select the platform (Windows or Linux) and download the archive.
+[ACCORDION-BEGIN [Step 5: ](Install the data lake client)]
+1.  In [SAP Software Downloads](https://support.sap.com/en/my-support/software-downloads.html), under **Support Packages & Patches**, select **H | HANA CLOUD CLIENTS | HANA CLOUD CLIENTS 1.0 | HANA DATALAKE CLIENT 1.0**. Select the platform (Windows or Linux) and download the latest version of the archive.
 
-    ![data lake software downloads](dl-Software-Downloads.png)
+    ![data lake software downloads](dl-Software-Downloads-1.png)
 
     > Note access to the client install is currently limited to S-user IDs
 
@@ -277,10 +297,12 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
         ![data lake client](data-lake-client-install.png)
 
+        >In the Windows command line, if `setup.exe` fails with an 'Error Loading jvm.dll', see [SAP Support 3001812](https://launchpad.support.sap.com/#/notes/3001812) to resolve this issue.
+
     * On Linux, extract the archive.
 
         ```Shell (Linux)
-        tar -zxvf HANADLCLIENT10000_0*.TGZ
+        tar -zxvf HANADLCLIENT10004_0*.TGZ
         ```
 
         Run `setup.bin` which will start either the GUI installer or text based installer.
@@ -339,29 +361,35 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
     echo $IQDIR17
     ```
 
+    > In the case that the Data Lake Client needs to be uninstalled, run the `uninstall.exe` file located in the directory `/path-to-data-lake-install/sybuninstall/IQClientSuite/`.
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Connect with the Interactive SQL Client (DBISQL))]
 
-The data lake IQ client install includes [Interactive SQL Client (DBISQL)](https://help.sap.com/viewer/a895964984f210158925ce02750eb580/latest/en-US/4abee782576b4bff9f1a1274d662f74b.html), which can be used to connect and query a data lake IQ. The following steps will provide instructions on how to connect to the data lake IQ using DBISQL and then populate the previously created tables with sample data.
+The data lake client install includes [Interactive SQL Client (DBISQL)](https://help.sap.com/viewer/a895964984f210158925ce02750eb580/latest/en-US/4abee782576b4bff9f1a1274d662f74b.html), which can be used to connect and query a data lake Relational Engine. The following steps will provide instructions on how to connect to the data lake Relational Engine using DBISQL and then populate the previously created tables with sample data.
 
 1. Start the GUI version of DBISQL from the Microsoft Windows Start menu, by browsing to it under SAP > Interactive SQL and double clicking on it, or by entering `dbisql` in a terminal.
 
-    ![start dbisql](dbisql-start.png)
+    ![start dbisql](dbisql-start-1.png)
+
+    > If `dbisql` fails to run on Microsoft Windows, uninstall the client and reinstall it with administrator privilege (i.e. Run the installer in Step 5 as an administrator).
 
 2. Specify the connection type.
 
-    ![Connection type](dbisql-connection-type.png)
+    ![Connection type](dbisql-connection-type-1.png)
 
-3. Provide the connection details.  
+    > Note that the Connect window may appear enlarged on the screen. This can be adjusted by lowering the Scale and layout value in the device display settings.
+
+3. Provide the connection details. See below on how to obtain the instance ID and landscape values.
 
     ![instance ID and landscape](connect-to-dl-iq.png)
 
-    The BTP cockpit or SAP HANA Cloud Central can be used to get the instance ID and landscape values, as they are part of the SQL endpoint.
+    >The BTP cockpit or SAP HANA Cloud Central can be used to get the instance ID and landscape values, as they are part of the SQL endpoint.
 
-    ![copy sql endpoint](dbisql-copy-endpoint.png)
-
+    >![copy sql endpoint](dbisql-copy-endpoint.png)
+    >
     > A failure to connect could be caused by the allowed connections list, which is editable in SAP HANA Cloud Central.  
 
     ![DBISQL Connected](dbisql-connected.png)
@@ -369,16 +397,28 @@ The data lake IQ client install includes [Interactive SQL Client (DBISQL)](https
     >DBISQL can also be started without a GUI.
     >
     >```Shell (Windows)
-    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
+    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
     >```
     >
     > Note that in a Bash shell, strings in double quotes versus single quotes are treated [differently](https://stackoverflow.com/questions/6697753/difference-between-single-and-double-quotes-in-bash).
     >
     >```Shell (Linux)
-    dbisql -hdl -c 'uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)' -nogui
+    dbisql -hdl -c 'uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)' -nogui
     >```
 
     >![DBISQL connected nogui](dbisql-nogui.png)
+
+    >If `dbisql` fails to run with the `-nogui` flag, try running the following command to not register the HANA plugin.
+
+    >```Shell
+    dbisql -XUnRegister hana
+    >```
+
+    >The above command can be reverted with the below command.
+    >```Shell
+    dbisql -XRegisterPlugin hana
+    >```
+
 
 [DONE]
 [ACCORDION-END]
@@ -479,7 +519,7 @@ The data lake IQ client install includes [Interactive SQL Client (DBISQL)](https
     INSERT INTO HOTEL.MAINTENANCE VALUES(12, 26, 'Roof repair due to storm', null, null);
     ```
 
-    Additional details on the SQL used above can be found at [INSERT Statement for Data Lake IQ](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61fdeff84f21015aa66b9add387d7f9.html).
+    Additional details on the SQL used above can be found at [INSERT Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61fdeff84f21015aa66b9add387d7f9.html). Moreover, the [LOAD TABLE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/7ca3f60902f3473296cb309533d89210.html) can be used for efficient mass insertion into a database table from a file with ASCII or binary data.
 
     > Note that autocommit is set to on in the SQL Console of the database explorer, while in DBISQL it is set to off.  A series of insert statements will run quicker in the SQL Console if they are surrounded with begin and end or if autocommit is set to off.
     >
@@ -501,11 +541,14 @@ The data lake IQ client install includes [Interactive SQL Client (DBISQL)](https
 
     ![auto complete](show-reservations.png)
 
-    Execute a stored procedure and query a table.
+    Query a table, a view, invoke a function, and call a stored procedure.
 
     ```SQL
-    CALL HOTEL.SHOW_RESERVATIONS(11, '2020-12-24');
     SELECT * FROM HOTEL.HOTEL;
+    SELECT * FROM HOTEL.HOTEL_ROOMS_VIEW;
+    SELECT HOTEL.AVERAGE_PRICE('single'), HOTEL.AVERAGE_PRICE('double'), HOTEL.AVERAGE_PRICE('suite') FROM DUMMY;
+    CALL HOTEL.SHOW_RESERVATIONS(11, '2020-12-24');
+
     ```
 
     ![Query in DBISQL](dbisql-query.png)
@@ -513,15 +556,15 @@ The data lake IQ client install includes [Interactive SQL Client (DBISQL)](https
 3. DBISQL can also execute SQL from the command line or from a provided file. A few examples are shown below.
 
     ```Shell
-    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" "select * from HOTEL.CUSTOMER;"
-    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.hana.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" sql.sql
+    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" "select * from HOTEL.CUSTOMER;"
+    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" sql.sql
     ```
 
     ![DBISQL in batch mode](dbisql-batch.png)
 
     See [Connection Parameters](https://help.sap.com/viewer/a895964984f210158925ce02750eb580/latest/en-US/a6d47d6e84f210158d4980b069eff5dd.html) for additional documentation on the parameters used to connect.
 
-Congratulations! You have created and connected to a data lake IQ. In the following tutorials, the client interfaces will be used to connect from ODBC, JDBC and Node.js.
+Congratulations! You have created and connected to a data lake Relational Engine. In the following tutorials, the client interfaces will be used to connect from ODBC, JDBC and Node.js.
 
 [VALIDATE_1]
 [ACCORDION-END]
