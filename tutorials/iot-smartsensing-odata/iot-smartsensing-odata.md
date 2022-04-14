@@ -123,6 +123,11 @@ The creation of a Smart Sensing scenario is done using several applications avai
 
       In this app, you can choose between various predefined templates (e.g. `Inbound Delivery Scenario`) representing selected business scenarios. Since this application permits to create standard scenarios, it cannot be used with custom OData endpoints.
 
+
+-   **Edge Node Descriptor**      
+
+      This application permits you to define data partitioning used when you are deploying Smart Sensing to edge nodes in the **IoT Edge**. It permits to partition data based on Plant(s) or Warehouse(s).
+
 1.  Open the **Business Context** application and press **Create** to create a new business context.
 
 2.  Click on **External Service** to start defining the OData endpoint used for this business context.
