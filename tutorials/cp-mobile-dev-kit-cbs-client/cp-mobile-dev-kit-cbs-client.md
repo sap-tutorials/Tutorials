@@ -2,8 +2,8 @@
 title: Build Your Mobile Development Kit Client Using Cloud Build Service
 description: Build a standard or a customized Mobile Development Kit client using cloud build service and connect to your SAP mobile app.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services ]
 time: 35
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -284,6 +284,7 @@ You can find more details about Cloud Build service in [help documentation](http
 [DONE]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 4: ](Create a build job in Cloud Build service)]
 
 >Make sure you are choosing the right tab above to build a MDK client as per your requirement.
@@ -309,7 +310,7 @@ You can find more details about Cloud Build service in [help documentation](http
 
     >**Encrypt Database**: Whether the database must be encrypted. Unselect this field to extract the database for debugging purposes.
 
-4. In **Platform** step, provide a unique value to the **URL Scheme**.
+5. In **Platform** step, provide a unique value to the **URL Scheme**.
 
     If you have a Firebase configuration for your client, browse to select the `google-services.json` file and click **Next**.
 
@@ -318,15 +319,17 @@ You can find more details about Cloud Build service in [help documentation](http
 
     >**Google Services JSON File**: The Firebase Android configuration file associated with your app in your Firebase project.
 
-5. In **Multimedia** step, you may upload an image to use for the app logo and click **Next**.
+6. In **Multimedia** step, you may upload an image to use for the app logo and click **Next**.
 
     !![MDK](img-3.5.5.png)
 
-6. In **Build Options step**, upload respective Signing profile(s), set minimum platform version and click **Finish**.
+7. In **Build Options** step, select respective Signing profile(s), set minimum platform version, select a supported SDK version and click **Finish**.
 
     !![MDK](img-3.6.6.png)
 
-7. Click **Build** to start the Build job.
+    >The default version is always recommended (it will vary over time), but you can select an older SDK version.
+
+8. Click **Build** to start the Build job.
 
     !![MDK](img-3.7.png)
 
@@ -367,17 +370,28 @@ You can find more details about Cloud Build service in [help documentation](http
 
     Click **Next**.
 
-5. In the **Platform** step, URL Scheme has been retrieved from the MDKProject.json. Click **Next**.    
+5. In the **Platform** step, URL Scheme has been retrieved from the MDKProject.json. Click **Next**.   
+
+    If you have a Firebase configuration for your client, browse to select the `google-services.json` file and click **Next**.
 
     !![MDK](img-3.5.png)
 
-6. In the **Build Options** step, select the Platforms, respective signing profile(s), set minimum Platform Version and click **Finish**.
+    >**Google Services JSON File**: The Firebase Android configuration file associated with your app in your Firebase project.
 
-    !![MDK](img-3.6.png)
 
-7. Click **Build** to start the Build job.
+6. In **Multimedia** step, you may upload an image to use for the app logo and click **Next**.
 
-    !![MDK](img-3.7.png)
+    !![MDK](img-3.5.5.png)
+
+7. In **Build Options** step, select respective Signing profile(s), set minimum platform version, select a supported SDK version and click **Finish**.
+
+    !![MDK](img-3.6.6.png)
+
+    >The default version is always recommended (it will vary over time), but you can select an older SDK version.
+
+8. Click **Build** to start the Build job.
+
+    !![MDK](img-3.7.2.png)
 
     After few minutes, Build should be completed. You can select each cloud build history row to view its current state, install, and download binaries.
 

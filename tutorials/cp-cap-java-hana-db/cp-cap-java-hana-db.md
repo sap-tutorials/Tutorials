@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Use SAP HANA as the Database for a CAP Java Application
 description: Use SAP HANA in SAP Business Technology Platform as database for your CAP Java application instead of SQLite.
+keywords: cap
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java, software-product>sap-business-application-studio]

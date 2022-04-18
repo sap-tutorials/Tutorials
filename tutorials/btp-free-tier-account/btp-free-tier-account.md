@@ -15,7 +15,7 @@ primary_tag: software-product-function>sap-btp-cockpit
 
 ### How Does Free Tier Work?
 
-The global account you will create in this tutorial gives you access to a productive environment with both free and paid plans. If you activate **free tier** plans only, you can try out our platform for free, without time limits. You can then easily upgrade to a paid plan without losing your data or work. Creating an instance using a paid plan will incur costs, however. For more information, see [Enterprise Accounts](https://help.sap.com/viewer/DRAFT/65de2977205c403bbc107264b8eccf4b/Dev/en-US/171511cc425c4e079d0684936486eee6.html) and [Using Free Service Plans](https://help.sap.com/viewer/DRAFT/65de2977205c403bbc107264b8eccf4b/Dev/en-US/524e1081d8dc4b0f9d055a6bec383ec3.html#loio524e1081d8dc4b0f9d055a6bec383ec3__Upgrade-FreeServices).
+The global account you will create in this tutorial gives you access to a productive environment with both free and paid plans. If you activate **free tier** plans only, you can try out our platform for free, without time limits. You can then easily upgrade to a paid plan without losing your data or work. Creating an instance using a paid plan will incur costs, however. For more information, see [Enterprise Accounts](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/171511cc425c4e079d0684936486eee6.html?locale=en-US&version=Cloud) and [Using Free Service Plans](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/524e1081d8dc4b0f9d055a6bec383ec3.html?locale=en-US&version=Cloud).
 
 If you want to know which services currently offer free tier service plans, visit the [SAP Discovery Center](https://discovery-center.cloud.sap/#/serviceCatalog?provider=all&regions=all&category=freetierservices) and explore our offerings under **Free Tier Services**.
 
@@ -163,7 +163,7 @@ You are now in your global account, to be more precise in your **Account Explore
 
     - **Subdomain**: Added automatically. The subdomain will become part of the URL for accessing applications that you subscribe to from this subaccount. The subdomain can contain only letters, digits, and hyphens (not allowed at the beginning or at the end), and must be unique across all subaccounts in the same region.
     - **Region**: Select the region closest to you.
-    > **Caution:** Unfortunately, Free Tier is currently not available for EU10. Please select any other region.
+    > **Caution:** Unfortunately, Cloud Foundry Runtime is currently not available for cf-eu10 (Europe Frankfurt, Amazon Web Services).
 
     - **Description** (optional): Add an additional description to identify your subaccount.
 
@@ -173,10 +173,25 @@ You are now in your global account, to be more precise in your **Account Explore
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Enable Cloud Foundry environment)]
+[ACCORDION-BEGIN [Step 9: ](Assign entitlements for Cloud Foundry environment)]
+In your global account, you now need to assign entitlements before you can enable Cloud Foundry
+
+1. In your global account, navigate to **Entitlements** > **Entity Assignments.**
+2. In the **Select Entities** selection, choose the directory or subaccount that you want to assign entitlements to.
+3. Click **Go**. You'll see a table for the directory/ subaccount with all entitlements it already has.
+4. Click **Configure Entitlements**, then select **Add Service Plans**. A popover appears with all entitlements available for your directory/ subaccount.
+5. Select the service and then the plan you want to entitle. In the search, type in **Cloud Foundry Runtime**.
+6. Select the plan called **Free** here to use the service without any costs.
+7. Click **Add Service Plans** to exit the popover.
+8. Click **Save**.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Enable Cloud Foundry environment)]
 You now need to activate Cloud Foundry environment.
 
-1. Go to your subaccount by clicking on **Subaccount** in the navigation bar.
+1. Go back to your subaccount by clicking on **Subaccount** in the navigation bar.
 
 2. Select **Cloud Foundry Environment**.
 
@@ -194,7 +209,7 @@ You now need to activate Cloud Foundry environment.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create a space)]
+[ACCORDION-BEGIN [Step 11: ](Create a space)]
 As a last step, you now need to create a space to develop in.
 
 1. In your subaccount, stay with **Overview** > **Cloud Foundry Environment**.

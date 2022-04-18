@@ -106,7 +106,7 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Provision the capabilities)]
->**IMPORTANT**: Ensure that you unsubscribe from the standalone services (like Open Connectors, Cloud Integration or API Management services) if you have already subscribed to it.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
+>**IMPORTANT**: Ensure that you unsubscribe from the standalone services (like Open Connectors, Cloud Integration, or API Management) if you have already subscribed to it.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
 
 >**Navigational Steps**: Go to Service Marketplace, search for the service name and click `unsubscribe`.
 

@@ -29,11 +29,21 @@ In this tutorial, you will rebuild a small part of the `GWSAMPLE_BASIC` OData se
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. Assuming you start from your `projects` folder, select **File** &rarr; **New Folder**.
+2. Open your workspace's default projects folder.
+
+    Click **Files & Folders** on the **Welcome** screen or **File** &rarr; **Open**.
+
+    Select **projects** in the popup window and click **Open**.
+
+    ![Open projects folder](img_open_projects_folder.png)
+
+3. Select **File** &rarr; **New Folder**.
 
     Name the folder `MBTEPMDemoService`.
 
     Select **File** &rarr; **Open**, select the folder, and click **Open**.
+
+    > This will be the root folder of the OData service. It is important that this is specifically opened, because the following commands will deploy files to the currently opened folder.
 
 3. Select **View** &rarr; **Find Command**.
 
@@ -57,7 +67,11 @@ The command creates a blank metadata file for you that you can now open and edit
 
 [ACCORDION-BEGIN [Step 2: ](Add entities to the OData service)]
 
-In the end of this step, the content of the CSDL file is linked, so you do not have to build all the properties. Anyway you are encouraged to create complex type, entities, some properties and especially the association yourself in Graphical Modeler.
+> In the end of this step, the full content of the CSDL file is linked, so you **do not have to build all the properties**. Nevertheless you are encouraged to create a complex type, the entities, some properties and especially the association yourself in Graphical Modeler.
+
+> You can also open the CSDL file as XML document instead of the graphical editor - either by clicking **Switch Editor** (icon) button in the top left corner of the graphical modeler or by right-clicking the file &rarr; **Open with** &rarr; **Code Editor**. This is especially helpful if you want to import parts of existing models or perform advanced changes which exceed the graphical modeler's capabilities.
+
+0. Click the file `metadata.csdl.xml` on the left panel in order to open it by default in the Graphical Modeler. Please note that the graphical modeler is only available when the file ending is `.csdl.xml`.
 
 1. Having **complex Types** selected, click the **+** button to add a new complex type with name ``CT_Address``
 
@@ -92,7 +106,7 @@ In the end of this step, the content of the CSDL file is linked, so you do not h
     | ``FaxNumber`` | *String* | *30* |
     | ``EmailAddress`` | *String* | *255* |
 
-5. Repeat sub-step **3** and **4** for the entity ``SalesOrder`` and the following attributes. Tick the checkbox **nullable** for the marked properties.
+5. Repeat sub-step **4** and **5** for the entity ``SalesOrder`` and the following attributes. Tick the checkbox **nullable** for the marked properties.
 
     | **Name** | **Type** | **Max Length** | **Nullable** |
     |----|----|----|----|
@@ -124,7 +138,7 @@ In the end of this step, the content of the CSDL file is linked, so you do not h
 
     ![Animation create relationship](gif_add_navigation.gif)
 
-> You can also open the CSDL file as XML document instead of the graphical editor - either by clicking **Switch Editor** (icon) button in the top left corner of the graphical modeler or by right-clicking the file &rarr; **Open with** &rarr; **Code Editor**. This is especially helpful if you want to import parts of existing models or perform advanced changes which exceed the graphical modeler's capabilities.
+> If you built not all the properties as described, please complete the CSDL file with the file content below.
 
   <details>
   <summary> **Click to expand** to see the full CSDL file.</summary>
@@ -206,7 +220,11 @@ In the end of this step, the content of the CSDL file is linked, so you do not h
 
 [ACCORDION-BEGIN [Step 3: ](Generate and run the service)]
 
-1. Log in to Cloud Foundry and follow the prompts to select your organization and space by clicking on the home button in the lower-left corner.
+1. Select **View** &rarr; **Find Command** (or press **Shift + CTRL/CMD + P**).
+
+2. Type `cf login`, click **CF: Login to Cloud Foundry**
+
+    Follow the prompts to select your organization and space by clicking on the home button in the lower-left corner.
 
     ![CF Login](img_cf_login.png)
 
@@ -216,17 +234,16 @@ In the end of this step, the content of the CSDL file is linked, so you do not h
 
 4. In the input dialog, confirm the options as given in the following table:
 
-    > **Important:** Replace the application name `<subaccount><space>` with a string actually representing your BTP sub account and space, e.g. `d00xxxxxtrialdev`:
-
     | Prompt | Value |
     |----|----|
     | `Generate odata service for Cloud Foundry`| *Yes, Cloud Foundry* |
-    | `applicationName` | `<subaccount><space>MbtEpmDemoService` |
+    | `applicationName` | `MbtEpmDemoService` |
     | `application version` | *1.0.0* |
     | `Generate odata service with Spring Boot style` | *No (Java EE style)* |
     | `Select database type` | *H2 Database* |
     | `Target folder where generate odata service` | *Keep Default* |
-    | `Do you want to add MTA support` | *No* |
+    | `Do you want to add MTA support` | *Yes* |
+    | `Enter the module name of MTA project` | `srv` |
 
     > Make sure to not use underscores in the application name
 
@@ -236,13 +253,29 @@ In the end of this step, the content of the CSDL file is linked, so you do not h
 
     ![SAP Business Application Studio Wizard](img_open_csdl_file.png)
 
+6. Select **Terminal** &rarr; **Run Task** and select the task `csdl-to-war-nodeploy` to generate and compile the service.
+
+7. Open the file `manifest.yml` in `srv` folder and add a line with `random-route: true`, as in the following:
+
+    ```YAML
+    ---
+    applications:
+      - buildpack: sap_java_buildpack
+        name: MbtEpmDemoService
+        path: target/odata-service-1.0.0.war
+        random-route: true
+        env:    
+          SET_LOGGING_LEVEL: '{odata: TRACE, sap.xs.console: TRACE, sap.xs.odata: TRACE}'
+          TARGET_RUNTIME: tomee7
+    ```
+
 6. Select **Terminal** &rarr; **Run Task** and select the task `csdl-to-war` to generate, deploy and run the service to your space. You can observe in the Terminal if the run was successful.
 
     ![Deployment log](img_run_log.png)
 
-7. If you want your service to load test data, you can switch `TEST_MODE` to `true`. Therefore you execute task `csdl-to-war-test` or edit the variable in file `TestSettings.java` from your workspace at the path `src` &rarr; `main` &rarr; `java` &rarr; `com` &rarr; `sap` &rarr; `mbtepmdemo` &rarr; `TestSettings.java`.
+7. (Optional) If you want your service to load test data, you can switch `TEST_MODE` to `true`. Therefore you execute task `csdl-to-war-test` or edit the variable in file `TestSettings.java` from your workspace at the path `srv` &rarr; `src` &rarr; `main` &rarr; `java` &rarr; `com` &rarr; `sap` &rarr; `mbtepmdemo` &rarr; `TestSettings.java`.
 
-    You can also edit the generated test data inside the folder `src` &rarr; `main` &rarr; `resources` &rarr; `test-data`. The test data is stored in the `.json` files. You will have to re-run the build task `csdl-to-war` again to reflect this change.
+    You can also edit the generated test data inside the folder `srv` &rarr; `src` &rarr; `main` &rarr; `resources` &rarr; `test-data`. The test data is stored in the `.json` files. You will have to re-run the build task `csdl-to-war` again to reflect this change.
 
     ![Test Mode and Test Data](img_test_data.png)
 
@@ -261,29 +294,13 @@ If the service shall be accessible independently and authentication is required,
 
     >Due to this change, after generating the service again it will not only require XSUAA authentication, but also create a default ``xs-security.json`` file.
 
-2. To update the project and generate the file, select **Terminal** &rarr; **Run Task** and select the task `csdl-to-war`.
+2. To update the project and generate the file, select **Terminal** &rarr; **Run Task** and select the task `csdl-to-war-nodeploy`.
 
-    >In your workspace a file ``xs-security.json`` will appear that contains two basic roles: ``Everyone`` (for users) and ``ViewMetrics`` (for administrators). Use this file to create a service instance via Terminal in the next sub-step.
+    >In your workspace a file ``xs-security.json`` will be generated inside `srv` folder. It contains two basic roles and corresponding scopes: ``Everyone`` (for users) and ``ViewMetrics`` (for administrators). Use this file to create a service instance via MTA.
 
     >If you do not find the file, try to close and re-open `tasks.json` file. This will refresh the file system cache. Then re-run the task.
 
-3. Select **Terminal** &rarr; **New Terminal** and type the following after the *$* character.
-
-    > **Important:** In the snippet below, replace ``<subaccount><space>MbtEpmDemoService`` with your actual application name which is defined in ``tasks.json`` or `manifest.yml`.
-
-    > This will be the service instance name and should look like e.g. `d00xxxxxtrialdevMbtEpmDemoService-xsuaa`.
-
-    ```Terminal
-    cf create-service xsuaa application <subaccount><space>MbtEpmDemoService-xsuaa -c xs-security.json
-    ```
-
-    ![Create XSUAA service instance from the console](img_create_xsuaa_instance.png)
-
-    >The service will require an app router to handle authentication for it. The following sub-steps will show you how.
-
-4. Select a file in project root -- e.g. `metadata.csdl.xml` -- then select **File** &rarr; *New Folder* and name it ``approuter``.
-
-    >The file selection is only intended to make sure the folder is created in the project root.
+4. Right-click the `srv` folder in your workspace, then click **New Folder**, name it `approuter` and confirm with **OK**.
 
 5. Right-click the folder `approuter` in your workspace and select **New File** for two files `package.json` and `xs-app.json` with the content below.
 
@@ -311,21 +328,16 @@ If the service shall be accessible independently and authentication is required,
 
     ![Create new files](animation_create_approuter_files4.gif)
 
-6. Find out application **route** for your deployment via deployment log. When scrolling up the terminal log after executing the task ``csdl-to-war``, you can find the application route as in the screenshot below. Mark and copy it to your clipboard, then save it somewhere for later as it will be required for the next sub-step.
+7. Finally, the XSUAA service binding need to be reflected for deployment. You can achieve this by adding them to the ``manifest.yml`` that was generated in your workspace.
 
-    ![Find application route in logs](img_find_application_route.png)
-
-    The application **route** is the same that you can also obtain when investigating on your application in SAP BTP Cockpit, within your space.
-
-7. Finally, the app router and XSUAA service binding need to be reflected for deployment. You can achieve this by adding them to the ``manifest.yml`` that was generated in your workspace.
-
-    - Initially, your `manifest.yml` should look like this, just having a different application **name** instead of `<subaccount><space>MbtEpmDemoService`.
+    - Initially, your `manifest.yml` should look like the following:
 
     ```YAML
     applications:
       - buildpack: sap_java_buildpack
-        name: <subaccount><space>MbtEpmDemoService
+        name: MbtEpmDemoService
         path: target/odata-service-1.0.0.war
+        random-route: true
         env:
           TARGET_RUNTIME: tomee7
     ```
@@ -334,85 +346,105 @@ If the service shall be accessible independently and authentication is required,
 
     >**Hint:** You can indent multiple line back or forward by selecting them and pressing **(Shift + TAB)** or **(TAB)** on your keyboard.
 
-    - To bind the XSUAA service instance, add the following lines, replacing `<subaccount><space>MbtEpmDemoService` with your own application name:
+    - To bind the XSUAA service instance, add the following lines:
 
     ```YAML
         services:    
-          - <subaccount><space>MbtEpmDemoService-xsuaa
+          - MbtEpmDemoService-xsuaa
     ```
 
-    - To also reflect your app router, add the following lines, adjusting the URL path to what you copied in the last sub-step. Don't forget to replace ``<subaccount><space>MbtEpmDemoService`` with your actual application name in all the instance names.
-
-    ```YAML
-      - name: <subaccount><space>MbtEpmDemoService-approuter
-        path: approuter
-        buildpacks:    
-          - nodejs_buildpack
-        memory: 128M
-        services:    
-          - <subaccount><space>MbtEpmDemoService-xsuaa
-        env:
-          destinations: >
-            [
-              {
-                "name":"odata",
-                "url":"https://<subaccount><space>mbtepmdemoservice.cfapps.eu10.hana.ondemand.com",
-                "forwardAuthToken": true
-              }
-            ]
-    ```
-
-    ![Animation - adjust manifest.yml](animation_adjust_manifest3.gif)
-
-    >**Important:** Temporarily, do not execute ``csdl-to-war`` tasks anymore, as those might remove the destination in *manifest.yml*. Instead use ``cf push`` from *Terminal*.
-
-    >**Hint:** Make sure that the service name bound to both application as well as app router exactly match the name you defined in sub-step 3 when you created the XSUAA service instance via terminal.
+    >**Important:** Do not execute the ``csdl-to-war`` tasks anymore. First we need to create the service instances via the Mutli-Target-Archive. When they are created, you can work with ``csdl-to-war`` again in order to push just the OData service. This will be quicker than deploying the full MTA.
 
       <details>
-      <summary> **Click to expand** - for reference please see the following manifest file content. </summary>
-
-      - Each occurrence of `d00xxxxxtrialdevMbtEpmDemoService` must be replaced with your application **name**
-
-      - The URL `https://d00xxxxxtrialdevmbtepmdemoservice.cfapps.eu10.hana.ondemand.com` must be changed to reflect your application **route**.
+      <summary> **Click to expand** - for reference check the full `manifest.yml` file content. </summary>
 
     ```YAML
     ---
     applications:
       - buildpack: sap_java_buildpack
-        name: d00xxxxxtrialdevMbtEpmDemoService
+        name: MbtEpmDemoService
         path: target/odata-service-1.0.0.war
         env:    
           SET_LOGGING_LEVEL: '{odata: TRACE, sap.xs.console: TRACE, sap.xs.odata: TRACE}'
           TARGET_RUNTIME: tomee7
         services:    
-          - d00xxxxxtrialdevMbtEpmDemoService-xsuaa
-      - name: d00xxxxxtrialdevMbtEpmDemoService-approuter
-        path: approuter
-        buildpacks:    
-          - nodejs_buildpack
-        memory: 128M
-        services:    
-          - d00xxxxxtrialdevMbtEpmDemoService-xsuaa
-        env:
-          destinations: >
-            [
-              {
-                "name":"odata",
-                "url":"https://d00xxxxxtrialdevmbtepmdemoservice.cfapps.eu10.hana.ondemand.com",
-                "forwardAuthToken": true
-              }
-            ]
+          - MbtEpmDemoService-xsuaa
     ```
       </details>
 
-8. Execute ``cf push`` from Terminal to deploy everything including the binding defined in ``manifest.yml``
+8. Create a MTA deployment descriptor.
 
-    ![CF PUSH](animation_cf_push2.gif)
+    Right-click the file `mta.yaml` in the root project folder and click **Duplicate**.
 
-    **Congratulations!** You have successfully created a standalone OData service and are now ready for client development. Alternatively you can continue customizing it into a cache database.
+    Rename the copy file to `mtad.yaml`.
+
+    Replace the content with the following to include all required resources:
+
+    ```YAML mtad.yaml
+    ---
+    ID: MbtEpmDemoService
+    _schema-version: '3.3'
+    version: 1.0.0
+    modules:
+      -
+        # application
+        name: MbtEpmDemoService
+        # module
+        path: srv/target/odata-service-1.0.0.war
+        type: java
+        parameters:    
+          memory: 1G
+          disk: 2G
+          instances: 1
+        properties:    
+          SET_LOGGING_LEVEL: '{odata: TRACE, sap.xs.console: TRACE, sap.xs.odata: TRACE}'
+          TARGET_RUNTIME: tomee7
+        requires:
+          - name: MbtEpmDemoService-xsuaa
+        # Providing default-url to be re-used for the app router's destination
+        provides:
+          -
+            name: mbtepmdemo-odata
+            properties:
+              url: ${default-url}
+      -
+        # approuter
+        name: MbtEpmDemoService-approuter
+        type: nodejs
+        path: srv/approuter
+        requires:
+          - name: MbtEpmDemoService-xsuaa
+          # require
+          - name: mbtepmdemo-odata
+        parameters:
+          buildpack: nodejs_buildpack
+          instances: 1
+          memory: 128M
+        properties:
+        # Here we reference the provided URL for automatic linking
+          destinations: >
+            [
+              {"name":"odata","url":"~{mbtepmdemo-odata/url}","forwardAuthToken": true}
+            ]  
+    resources:
+      -
+        name: MbtEpmDemoService-xsuaa
+        type: org.cloudfoundry.managed-service   
+        parameters:
+          service: xsuaa
+          service-plan: application
+          path: srv/xs-security.json
+    ```
+
+9. Click **Terminal** &rarr; **New Terminal**, type `cf deploy` and press Enter.
+
+    Wait for the deployment to be finished. MTA deployment may take a while, especially when it is initially deployed.
 
 [VALIDATE_4]
 [ACCORDION-END]
 
+---
+
+**Congratulations!** You have now created a stand-alone OData service with Mobile Back-End Tools. You can now continue with the next Tutorial of the mission to configure the service as Cache-DB and integrate data from another system.
 
 ---

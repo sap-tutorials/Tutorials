@@ -2,8 +2,8 @@
 auto_validation: true
 title: Develop and Run SAP Fiori Application With SAP Business Application Studio
 description: Develop and run your SAP Fiori application with SAP Business Application Studio
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform, products>sap-business-application-studio ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, software-products>sap-business-application-studio ]
 time: 25
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -263,7 +263,7 @@ author_profile: https://github.com/mervey45
 
     When the deployment is successful, you will get these two information back as a result: **UIAD details** and **deployment successful**.
 
->**HINT: If you want to update your SAP Fiori Launchpad configuration, then you can o following steps:**
+>**HINT: If you want to update your SAP Fiori Launchpad configuration, then you can do following steps:**
 > 1. Go back to SAP Business Application Studio, select projects, right-click your project **`ztravel_app_xxx`** and select **Open in Terminal**.
 
 >![deploy](deploy.png)

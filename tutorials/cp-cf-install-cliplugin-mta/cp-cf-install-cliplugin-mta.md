@@ -2,6 +2,8 @@
 title: Install the MultiApps Cloud Foundry CLI Plugin
 description: Download and install the Command Line Interface (CLI) plugin, which allows you to deploy MTA archives from the command line.
 auto_validation: true
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 time: 5
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: products>sap-btp--cloud-foundry-environment
@@ -42,7 +44,7 @@ cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plu
 [OPTION END]
 [OPTION BEGIN [Windows 64 Bit]]
 ```Bash
-cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.win64
+cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.win64.exe
 ```
 [OPTION END]
 [OPTION BEGIN [Linux 64 Bit]]
@@ -52,7 +54,7 @@ cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plu
 [OPTION END]
 [OPTION BEGIN [Windows 32 Bit]]
 ```Bash
-cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.win32
+cf install-plugin -f https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/latest/download/multiapps-plugin.win32.exe
 ```
 [OPTION END]
 [OPTION BEGIN [Linux 32 Bit]]
