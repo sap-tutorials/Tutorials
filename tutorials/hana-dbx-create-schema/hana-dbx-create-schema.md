@@ -39,6 +39,10 @@ The following steps will create sample objects for a hotel database using create
     CREATE USER USER2 PASSWORD Password2 no force_first_password_change SET USERGROUP DEFAULT;
     >```
 
+    >--
+
+    >It is recommended to not use the DBADMIN user for day to day operations in production environments.  For additional details see [Deactivate the DBADMIN User](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/c511ddf1767947f0adfc9636148718d9.html).
+
     For additional detail on creating users see [CREATE USER Statement (Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5ddb075191014b594f7b11ff08ee2.html). Note that the user USER1 will be used in tutorial 5 and tutorial 7 of this tutorial group.
 
 3. The list of users can be seen by executing the following statement:
