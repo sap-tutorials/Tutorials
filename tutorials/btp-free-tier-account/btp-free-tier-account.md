@@ -163,7 +163,7 @@ You are now in your global account, to be more precise in your **Account Explore
 
     - **Subdomain**: Added automatically. The subdomain will become part of the URL for accessing applications that you subscribe to from this subaccount. The subdomain can contain only letters, digits, and hyphens (not allowed at the beginning or at the end), and must be unique across all subaccounts in the same region.
     - **Region**: Select the region closest to you.
-    > **Caution:** Unfortunately, Free Tier is currently not available for EU10. Please select any other region.
+    > **Caution:** Unfortunately, Cloud Foundry Runtime is currently not available for cf-eu10 (Europe Frankfurt, Amazon Web Services).
 
     - **Description** (optional): Add an additional description to identify your subaccount.
 
@@ -181,7 +181,7 @@ In your global account, you now need to assign entitlements before you can enabl
 3. Click **Go**. You'll see a table for the directory/ subaccount with all entitlements it already has.
 4. Click **Configure Entitlements**, then select **Add Service Plans**. A popover appears with all entitlements available for your directory/ subaccount.
 5. Select the service and then the plan you want to entitle. In the search, type in **Cloud Foundry Runtime**.
-6. Select the plan called **Free** here to test out the service without any costs.
+6. Select the plan called **Free** here to use the service without any costs.
 7. Click **Add Service Plans** to exit the popover.
 8. Click **Save**.
 

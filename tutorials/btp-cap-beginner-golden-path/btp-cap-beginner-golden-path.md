@@ -75,7 +75,7 @@ Those requests all work, just using the generic handlers CAP provides. So the ne
 
 If you want to know more about custom handlers, our [Getting Started in a Nutshell](https://cap.cloud.sap/docs/get-started/in-a-nutshell#adding-custom-logic) is a good starting point.
 
-[VALIDATE_7]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Conceptual modeling with CAP)]
