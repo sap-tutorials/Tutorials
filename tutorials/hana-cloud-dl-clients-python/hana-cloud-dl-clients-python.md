@@ -74,13 +74,13 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
     ```
 
     ```Shell (Linux)
-    cd $IQDIR17/SDK/Python
+    cd $IQDIR17/sdk/python
     python setup.py install
     ```
 
     This should create additional build directories in the current folder.
 
-2. Set the environment variable `SQLANY_API_DLL`.
+2. On Microsoft Windows, set the environment variable `SQLANY_API_DLL`.
 
     Navigate to your system environment variables and set `SQLANY_API_DLL=%IQDIR17%\Bin64\dbcapi.dll`.
 
@@ -149,7 +149,7 @@ For further information on the Python Driver, visit [Python and Database Access]
 
 This is an alternate method of connecting to a data lake Relation Engine from a Python app. The Python ODBC bridge is an open source Python module available on [PyPI](https://pypi.org/project/pyodbc/).  The performance characteristics between the two drivers may vary depending on the use case.
 
-1. Ensure that you have created a connection to the data lake Relational Engine using the ODBC Data Source Administrator as shown in step 1 of the [Connect to Data Lake Relational Engine Using the ODBC Driver](hana-cloud-dl-clients-odbc) tutorial.
+1. Ensure that you have created a connection to the data lake Relational Engine using ODBC as shown in step 1 or 2 of the [Connect to Data Lake Relational Engine Using the ODBC Driver](hana-cloud-dl-clients-odbc) tutorial.
 
 
 
@@ -168,7 +168,7 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
 
     >---
 
-    >If this command fails on Linux, you may need to install gcc-c++, and python3-devel.
+    >If this command fails on Linux, you may need to install gcc-c++, python3-devel, and unixodbc-dev.
 
 [DONE]
 [ACCORDION-END]
@@ -216,7 +216,7 @@ This is an alternate method of connecting to a data lake Relation Engine from a 
     conn.close()
     ```
 
-3. The `dsn` value refers to the data source name in the Microsoft Windows ODBC Administrator or the Linux `.odbc.ini` file for the data lake Relational Engine created in step 1.
+3. The `dsn` value refers to the data source name in the Microsoft Windows ODBC Administrator or the Linux `.odbc.ini` file.
 
     ![ODBC Administrator](odbcWindow.png)
 
