@@ -1,6 +1,6 @@
 ---
 title: SAP HANA Cloud, Data Lake Client Interfaces Overview
-description: Learn about the SAP HAN Cloud, data lake, how to create a trial instance, how to install the data lake client, and how to connect to the data lake Relational Engine using the SAP HANA cockpit, SAP HANA database explorer, and Interactive SQL Client.
+description: Learn about the SAP HANA Cloud, data lake, how to create a trial instance, how to install the data lake client, and how to connect to the data lake Relational Engine using the SAP HANA cockpit, SAP HANA database explorer, and Interactive SQL Client.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>sql, software-product>sap-iq]
