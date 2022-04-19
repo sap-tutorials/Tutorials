@@ -3,12 +3,12 @@ title: Get Ready for UI5-Development on Your Local Machine
 description: Prepare you local development environment to implement successful SAPUI5 projects.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-cloud-platform-for-the-cloud-foundry-environment]
+tags: [ tutorial>beginner, products>sap-btp--cloud-foundry-environment, tutorial>free-tier]
 primary_tag: topic>sapui5
 ---
 
 ## Prerequisites
- - [Install Node.js](https://nodejs.org/en/download/)
+ - [Install the latest Node.js LTS version (currently 16)](https://nodejs.org/en/download/)
  - [[Only for Windows users] Install Chocolatey](https://chocolatey.org/)
 
 ## Details

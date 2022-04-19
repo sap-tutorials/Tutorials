@@ -3,7 +3,7 @@ title: Use Data Attribute Recommendation With Your Own Dataset
 description: Classify your own data records in Data Attribute Recommendation using a custom dataset schema.
 auto_validation: true
 time: 30  
-tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
@@ -23,7 +23,7 @@ Please note that trial mode has limits on number of schemas, datasets and models
 
 In order to use your own dataset, you need to define a dataset schema that fits your dataset.
 
-In your dataset, you need to decide which columns will be `features`, for example the inputs for the machine learning model and which columns will be `labels`, for example the fields that will be predicted by the machine learning model. For further definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/fe501df6d9f94361bfea066f9a6f6712.html).
+In your dataset, you need to decide which columns will be `features`, for example the inputs for the machine learning model and which columns will be `labels`, for example the fields that will be predicted by the machine learning model. For further definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/cff2de73bc9c4625b35eb036439ae70a.html).
 
 After you have defined the features and the labels, you will need to note down your dataset schema. Paste the example below into a text file and adapt it to your needs.
 

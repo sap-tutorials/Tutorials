@@ -3,8 +3,10 @@ title: Use Machine Learning to Classify Documents
 description: Get the machine learning model category predictions for the documents you upload to Document Classification.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-classification]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-classification]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 ## Details
@@ -13,7 +15,7 @@ primary_tag: topic>machine-learning
   - How to access and use Swagger UI (User Interface)
   - How to classify documents into categories with Document Classification
 
-The core functionality of Document Classification is to automatically classify documents into categories. The categories are not predefined and can be chosen by the user.
+The core functionality of the Document Classification service is to automatically classify documents into categories. The categories are not predefined and can be chosen by the user.
 
 In the trial version of Document Classification, however, a predefined and pre-trained machine learning model is made available for all users. Thus, the classification categories cannot be customized. This tutorial gives you an introduction to the service. If you want to try out the Document Classification training endpoints to create your own classification model, you can use an Enterprise Account (see [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) versus [Enterprise Accounts](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/171511cc425c4e079d0684936486eee6.html)) or an enterprise global account on SAP Business Technology Platform (SAP BTP) Trial.
 
@@ -60,7 +62,7 @@ In the Document Classification trial, there is a pre-trained model available for
 
 > - [Invoice](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/bejing_2008.pdf) ("Beijing Olympics logo" by sha3bi1Beijing)
 > - [Payment Advice](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/flickr.pdf) ("Logo of Flickr" by `topgold`)
-> - [Purchase Order](https://www.google.com) ("`umbro` logo" by `sefcmpa`)
+> - [Purchase Order](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/umbro.pdf) ("`umbro` logo" by `sefcmpa`)
 > - [Other](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dc-swagger-ui/data/twitter.pdf) ("Logo of Twitter" by `topgold`)
 
 >Please note that those files are fake invoices, purchase orders, payment advices and other business documents for demo purposes. Logos were downloaded from search.creativecommons.org, all licensed under CC BY 2.0. Logos were embedded in the documents unaltered. The creators of the logos are denoted in brackets.
@@ -74,7 +76,7 @@ Next, click **Try it out** to try the request.
 
 Once you click the button, several input fields show up:
 
-  1.  In the field `document`, upload the document you want to classify. 
+  1.  In the field `document`, upload the document you want to classify.
 
   2.  The field `parameters` should be empty. In case the field has any pre-filled content, go ahead and delete it.
 

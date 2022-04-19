@@ -2,8 +2,8 @@
 auto_validation: true
 title: Create Your First ABAP Console Application
 description: Create an ABAP package and an ABAP class in the SAP BTP, ABAP Environment with the ABAP Development Tools (ADT) in Eclipse.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform]
 time: 5
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -164,7 +164,7 @@ Or select the icon.
 
     CLASS z_class_xxx IMPLEMENTATION.
       METHOD if_oo_adt_classrun~main.
-        out->write('Hello world!').
+        out->write( 'Hello world!' ).
       ENDMETHOD.
     ENDCLASS.
     ```

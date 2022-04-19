@@ -3,14 +3,14 @@ title: Call a Remote Function Module From SAP Business Technology Platform (BTP)
 description: Call a remote function module located in an on-premise system, such as a SAP S/4HANA System, from the ABAP Environment.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: topic>abap-development
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, tutorial>license]
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
-- **IMPORTANT**: This tutorial cannot be completed on a trial account. If you want to explore some of the concepts of this mission on a trial account, see the following workshop: [SAP BTP, ABAP Environment: Connectivity and Integration](https://github.com/SAP-samples/abap-platform-rap-workshops/tree/main/managed_extensibility ), parts 1-2
+- **IMPORTANT**: This tutorial cannot be completed on a trial account. If you want to explore some of the concepts of this mission on a trial account, using OData or SOAP rather than RFC, see the following workshop: [SAP BTP, ABAP Environment: Connectivity and Integration](https://github.com/SAP-samples/teched2020-DEV268).
 - You have set up SAP Business Technology Platform (BTP), ABAP Environment, for example by using the relevant booster: [Using a Booster to Automate the Setup of the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/cd7e7e6108c24b5384b7d218c74e80b9.html)
 - **Tutorial**: [Create Your First Console Application](abap-environment-trial-onboarding), for a licensed user, steps 1-2
 -	You have developer rights to an ABAP on-premise system, such as:
@@ -32,7 +32,7 @@ Throughout this tutorial, replace `XXX` or `JP` with your initials or group numb
 There are two problems when setting up connectivity between the SAP BTP, ABAP Environment and an on-premise:
 
 - The ABAP Environment "lives" in the Internet, but customer on-premise systems are behind a firewall
-- RFC is not internet-enabled
+- Remote Function Call (RFC) is not internet-enabled
 
 **The solution:**
 
@@ -56,7 +56,7 @@ First, you need to connect your ABAP on-premise system to a Cloud Foundry subacc
 1. In your browser, log on to SAP Cloud Connector:
     - Address = e.g. `https://localhost:<port>` (Default = 8443)
     - User = Administrator
-    - Initial password = Manage (You will change this when you first log in)
+    - Initial password = manage (You will change this when you first log in)
 
 2. Choose **Add Subaccount**:
 
@@ -350,10 +350,14 @@ ENDCLASS.
 [ACCORDION-END]
 
 ## More Information
-For more information on SAP Business Technology Platform (BTP)
-- SAP Help Portal: [What is SAP Business Technology Platform (BTP)](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html)
+This tutorial mission is based on a blog post series by Andre Fischer, which is well worth a look:
 
-- SAP Help Portal: [Getting Started With a Customer Account](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html) - If you use the booster, these steps are performed automatically for you, but you may be interested in the background information
+- [How to call a remote function module in your on-premise SAP system from SAP BTP ABAP Environment](https://blogs.sap.com/2019/02/28/how-to-call-a-remote-function-module-in-your-on-premise-sap-system-from-sap-cloud-platform-abap-environment/)
+
+For more information on OData services and SAP Gateway in general, see:
+- [OData service development with SAP Gateway using CDS](https://blogs.sap.com/2016/06/01/odata-service-development-with-sap-gateway-using-cds-via-referenced-data-sources/) - pertains to on-premise Systems, but contains lots of useful background information on the relationships between CDS views and OData services
+
+- [OData – Everything that you need to know](https://blogs.sap.com/2016/02/08/odata-everything-that-you-need-to-know-part-1/) - especially Parts 1-3 (Community content)
 
 For more information on connectivity in this context, see:
 - SAP Help Portal: [SAP Cloud Connector](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/642e87f1492146998a8eb0779cd07289.html)
@@ -362,10 +366,15 @@ For more information on connectivity in this context, see:
 
 - SAP Help Portal: [Set Up an RFC Destination](https://help.sap.com/viewer/DRAFT/60f1b283f0fd4d0aa7b3f8cea4d73d1d/Internal/en-US/a69e99c457a54ff881adcff843eea950.html)
 
-For more information on OData services and SAP Gateway in general, see:
+For more information on SAP Business Technology Platform (BTP)
+- SAP Help Portal: [What is SAP Business Technology Platform (BTP)](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html)
 
-- [OData service development with SAP Gateway using CDS](https://blogs.sap.com/2016/06/01/odata-service-development-with-sap-gateway-using-cds-via-referenced-data-sources/) - pertains to on-premise Systems, but contains lots of useful background information on the relationships between CDS views and OData services
+- SAP Help Portal: [Getting Started With a Customer Account](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html) - If you use the booster, these steps are performed automatically for you, but you may be interested in the background information
 
-- [OData – Everything that you need to know](https://blogs.sap.com/2016/02/08/odata-everything-that-you-need-to-know-part-1/) - especially Parts 1-3 (Community content)
+
+
+
+
+
 
 ---

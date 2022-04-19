@@ -1,5 +1,5 @@
 ---
-title: Creating Table User Defined Functions
+title: Creating Table User Defined Functions 
 description: Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman

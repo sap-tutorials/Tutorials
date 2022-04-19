@@ -3,8 +3,10 @@ title: Detect and Highlight Entities from Unstructured Text with Pre-trained Mod
 description: Use the Business Entity Recognition pre-trained models to get machine learning entity predictions for the text you submit to the service.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>business-entity-recognition]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 ## Details
@@ -28,7 +30,7 @@ This tutorial gives you an introduction to the service using a trial account and
 
 [ACCORDION-BEGIN [Step 1: ](Authorize Swagger UI)]
 
-You will use Swagger UI, via any web browser, to call the Business Entity Recognition APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).  
+You will use Swagger UI, via any web browser, to call the Business Entity Recognition service APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).  
 
 In the service key you created for Business Entity Recognition in the previous tutorial: [Create Service Instance for Business Entity Recognition](cp-aibus-ber-service-instance), you should find (outside the `uaa` section of the service key) an entry called `url` (as highlighted in the image below).
 
@@ -36,7 +38,7 @@ In the service key you created for Business Entity Recognition in the previous t
 
     !![BER](png-files/service-key-details.png)
 
-2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**. 
+2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
 
     !![BER](png-files/swagger0.png)
 

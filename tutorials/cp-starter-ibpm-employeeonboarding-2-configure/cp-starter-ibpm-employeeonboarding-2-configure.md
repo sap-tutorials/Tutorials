@@ -28,7 +28,7 @@ The sample business rule used in this scenario is published in API Business Hub.
 
 1. From your global account page, choose the `trial` tile to access your subaccount.
 
-    !![Enter Trial Subaccount](entertrialaccount.png)
+    !![Enter Trial Subaccount](entertrialaccount_1.png)
 
 2. Click **Connectivity | Destinations** from the left-hand navigation and search for the destination with name `BUSINESSRULES_APIHUB`
 
@@ -94,6 +94,7 @@ To import the business rules project from API Business Hub, you need to configur
     !![Import Business Rules](ImportRules.png)
 
     > If you get Bad Gateway Error error, then check the username and password you have used in `BUSINESSRULES_APIHUB` destination. If your user is 2-Factor-Authentication enabled, then the password will be password+passcode. This passcode will expire in a minute.
+    > If you do not have 2-Factor-Authentication enabled and still get this error, then check if you are member of SAP API Business Hub. Log in to api.sap.com and try importing again.
 
 3. You will see the business rules project imported and in **Active** status.
 
@@ -102,7 +103,7 @@ To import the business rules project from API Business Hub, you need to configur
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy business rules)]
+[ACCORDION-BEGIN [Step 4: ](Deploy business rules)]
 
 1. Select the business rules project to navigate into the project.
 
@@ -127,7 +128,7 @@ To import the business rules project from API Business Hub, you need to configur
 
 In this section, you will use **SAP Business Application Studio** to import, configure, build and deploy workflow to get workplace approval from manager for newly hired employee.
 
-[ACCORDION-BEGIN [Step 6: ](Download and import workflow sample application)]
+[ACCORDION-BEGIN [Step 5: ](Download and import workflow sample application)]
 
 1. Download **cf-onboarding-sample.zip**  project from [GitHub](https://github.com/SAP-samples/cloud-workflow-samples/blob/master/cf-onboarding-sample/resources/cf-onboarding-sample.zip) in your local file system and extract the files.
 
@@ -135,7 +136,7 @@ In this section, you will use **SAP Business Application Studio** to import, con
 
 2. Open [SAP BTP Trial Homepage](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and choose **SAP Business Application Studio**.
 
-    !![Launch Studio](launchbas.png)
+    !![Launch Studio](launchbas_2.png)
 
     > If you get the privacy statement screen, then click `Ok` to accept it.
 
@@ -175,7 +176,7 @@ In this section, you will use **SAP Business Application Studio** to import, con
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Build and deploy workflow)]
+[ACCORDION-BEGIN [Step 6: ](Build and deploy workflow)]
 
 1. Right-click the **mta.yml** file inside the **cf-onboarding-sample** project, and choose the **Build MTA** option.
 
@@ -197,7 +198,7 @@ In this section, you will use **SAP Business Application Studio** to import, con
 
 In this section, you will create and activate a process visibility scenario to provide an out-of-box visibility into workflow using **Process Visibility capability of SAP Workflow Management**. The resulting insight helps you to track the process and focus on key business milestones so that you can actively improve the processes.
 
-[ACCORDION-BEGIN [Step 8: ](Create visibility scenario)]
+[ACCORDION-BEGIN [Step 7: ](Create visibility scenario)]
 
 1. In your web browser, open the Workflow Management application and choose **Configure Visibility Scenarios**.
 
@@ -222,11 +223,11 @@ In this section, you will create and activate a process visibility scenario to p
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Add workflow to visibility scenario)]
+[ACCORDION-BEGIN [Step 8: ](Add workflow to visibility scenario)]
 
 1. Navigate into the newly created scenario and click the **Processes** tab, choose **+** and select **Add Workflow from SAP Workflow Service** to add workflow to business scenario.
 
-    !![Add Workflow](addworkflow.png)
+    !![Add Workflow](addworkflow_1.png)
 
 2. Select the `onboard` workflow from the choices.
 
@@ -241,7 +242,7 @@ In this section, you will create and activate a process visibility scenario to p
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Configure visibility scenario)]
+[ACCORDION-BEGIN [Step 9: ](Configure visibility scenario)]
 
 1. Switch to the **General** tab.
 
@@ -272,7 +273,7 @@ In this section, you will create and activate a process visibility scenario to p
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Activate visibility scenario)]
+[ACCORDION-BEGIN [Step 10: ](Activate visibility scenario)]
 
 To activate the business scenario, choose **Activate**.
 

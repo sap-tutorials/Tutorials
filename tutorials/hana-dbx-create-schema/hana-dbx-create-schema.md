@@ -3,8 +3,8 @@ title: Create Database Objects with SAP HANA Database Explorer
 description: Create and populate a sample schema that includes tables, views, functions and procedures using the SQL console.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, topic>sql]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition, programming-tool>sql]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -38,8 +38,6 @@ The following steps will create sample objects for a hotel database using create
     CREATE USER USER1 PASSWORD Password1 no force_first_password_change SET USERGROUP DEFAULT;
     CREATE USER USER2 PASSWORD Password2 no force_first_password_change SET USERGROUP DEFAULT;
     >```
-
-    >---
 
     For additional detail on creating users see [CREATE USER Statement (Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5ddb075191014b594f7b11ff08ee2.html). Note that the user USER1 will be used in tutorial 5 and tutorial 7 of this tutorial group.
 
@@ -91,7 +89,7 @@ The following steps will create sample objects for a hotel database using create
     >
     --USER2 can only select
     CONNECT USER2 PASSWORD Password2;
-    SELECT * FROM HOTEL.MAINTENANCE; --succeeds
+    SELECT * FROM HOTEL.TEST; --succeeds
     INSERT INTO HOTEL.TEST VALUES('Value2'); --fails
     CONNECT DBADMIN PASSWORD myPassword;
     >
@@ -118,7 +116,8 @@ The following steps will create sample objects for a hotel database using create
       address VARCHAR(40) NOT NULL,
       city VARCHAR(30) NOT NULL,
       state VARCHAR(2) NOT NULL,
-      zip VARCHAR(6)
+      zip VARCHAR(6),
+      location ST_Point(4326)
     );
     CREATE COLUMN TABLE HOTEL.ROOM(
       hno INTEGER,
@@ -147,8 +146,8 @@ The following steps will create sample objects for a hotel database using create
       PRIMARY KEY (
         "RESNO", "ARRIVAL"
       ),
-      FOREIGN KEY(hno) REFERENCES HOTEL.HOTEL,
-      FOREIGN KEY(cno) REFERENCES HOTEL.CUSTOMER
+      FOREIGN KEY(cno) REFERENCES HOTEL.CUSTOMER,
+      FOREIGN KEY(hno) REFERENCES HOTEL.HOTEL
     );
     CREATE COLUMN TABLE HOTEL.MAINTENANCE(
       mno INTEGER PRIMARY KEY,
@@ -168,23 +167,23 @@ The following steps will create sample objects for a hotel database using create
 2. Execute the following SQL statements to add data into the tables in the `HOTEL` schema.
 
     ```SQL
-    INSERT INTO HOTEL.HOTEL VALUES(10, 'Congress', '155 Beechwood St.', 'Seattle', 'WA', '20005');
-    INSERT INTO HOTEL.HOTEL VALUES(11, 'Regency', '477 17th Avenue', 'Seattle', 'WA', '20037');
-    INSERT INTO HOTEL.HOTEL VALUES(12, 'Long Island', '1499 Grove Street', 'Long Island', 'NY', '11788');
-    INSERT INTO HOTEL.HOTEL VALUES(13, 'Empire State', '65 Yellowstone Dr.', 'Albany', 'NY', '12203');
-    INSERT INTO HOTEL.HOTEL VALUES(14, 'Midtown', '12 Barnard St.', 'New York', 'NY', '10019');
-    INSERT INTO HOTEL.HOTEL VALUES(15, 'Eighth Avenue', '112 8th Avenue', 'New York', 'NY', '10019');
-    INSERT INTO HOTEL.HOTEL VALUES(16, 'Lake Michigan', '354 OAK Terrace', 'Chicago', 'IL', '60601');
-    INSERT INTO HOTEL.HOTEL VALUES(17, 'Airport', '650 C Parkway', 'Rosemont', 'IL', '60018');
-    INSERT INTO HOTEL.HOTEL VALUES(18, 'Sunshine', '200 Yellowstone Dr.', 'Clearwater', 'FL', '33575');
-    INSERT INTO HOTEL.HOTEL VALUES(19, 'Beach', '1980 34th St.', 'Daytona Beach', 'FL', '32018');
-    INSERT INTO HOTEL.HOTEL VALUES(20, 'Atlantic', '111 78th St.', 'Deerfield Beach', 'FL', '33441');
-    INSERT INTO HOTEL.HOTEL VALUES(21, 'Long Beach', '35 Broadway', 'Long Beach', 'CA', '90804');
-    INSERT INTO HOTEL.HOTEL VALUES(22, 'Indian Horse', '16 MAIN STREET', 'Palm Springs', 'CA', '92262');
-    INSERT INTO HOTEL.HOTEL VALUES(23, 'Star', '13 Beechwood Place', 'Hollywood', 'CA', '90029');
-    INSERT INTO HOTEL.HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '70112');
-    INSERT INTO HOTEL.HOTEL VALUES(25, 'Ocean Star', '45 Pacific Avenue', 'Atlantic City', 'NJ', '08401');
-    INSERT INTO HOTEL.HOTEL VALUES(26, 'Bella Ciente', '1407 Marshall Ave', 'Longview', 'TX', '75601');
+    INSERT INTO HOTEL.HOTEL VALUES(10, 'Congress', '155 Beechwood St.', 'Seattle', 'WA', '98121', NEW ST_POINT('POINT(-122.347340 47.610546)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(11, 'Regency', '477 17th Avenue', 'Seattle', 'WA', '98177', NEW ST_POINT('POINT(-122.371104 47.715210)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(12, 'Long Island', '1499 Grove Street', 'Long Island', 'NY', '11716', NEW ST_POINT('POINT(-73.133741 40.783602)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(13, 'Empire State', '65 Yellowstone Dr.', 'Albany', 'NY', '12203', NEW ST_POINT('POINT(-73.816182 42.670334)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(14, 'Midtown', '12 Barnard St.', 'New York', 'NY', '10019', NEW ST_POINT('POINT(-73.987388 40.766153)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(15, 'Eighth Avenue', '112 8th Avenue', 'New York', 'NY', '10019', NEW ST_POINT('POINT(-73.982495 40.767161)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(16, 'Lake Michigan', '354 OAK Terrace', 'Chicago', 'IL', '60601', NEW ST_POINT('POINT(-87.623608 41.886403)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(17, 'Airport', '650 C Parkway', 'Rosemont', 'IL', '60018', NEW ST_POINT('POINT(-87.872209 41.989378)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(18, 'Sunshine', '200 Yellowstone Dr.', 'Clearwater', 'FL', '33755', NEW ST_POINT('POINT(-82.791689 27.971218)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(19, 'Beach', '1980 34th St.', 'Daytona Beach', 'FL', '32018', NEW ST_POINT('POINT(-81.043091 29.215968)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(20, 'Atlantic', '111 78th St.', 'Deerfield Beach', 'FL', '33441', NEW ST_POINT('POINT(-80.106612 26.312141)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(21, 'Long Beach', '35 Broadway', 'Long Beach', 'CA', '90804', NEW ST_POINT('POINT(-118.158403 33.786721)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(22, 'Indian Horse', '16 MAIN STREET', 'Palm Springs', 'CA', '92262', NEW ST_POINT('POINT(-116.543342 33.877537)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(23, 'Star', '13 Beechwood Place', 'Hollywood', 'CA', '90029', NEW ST_POINT('POINT(-118.295017 34.086975)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(24, 'River Boat', '788 MAIN STREET', 'New Orleans', 'LA', '70112', NEW ST_POINT('POINT(-90.076919 29.957531)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(25, 'Ocean Star', '45 Pacific Avenue', 'Atlantic City', 'NJ', '08401', NEW ST_POINT('POINT(-74.416135 39.361078)', 4326));
+    INSERT INTO HOTEL.HOTEL VALUES(26, 'Bella Ciente', '1407 Marshall Ave', 'Longview', 'TX', '75601', NEW ST_POINT('POINT(-94.724051 32.514183)', 4326));
 
     INSERT INTO HOTEL.ROOM VALUES(10, 'single', 20, 135.00);
     INSERT INTO HOTEL.ROOM VALUES(10, 'double', 45, 200.00);
@@ -272,18 +271,96 @@ The following steps will create sample objects for a hotel database using create
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Explore autocommit)]
+`Autocommit` is a setting that when enabled, causes each SQL statement to be immediately committed to the database.  When auto-commit is turned off, multiple statements can be executed and then they can all be `commited` together or they can all be rolled back.  There are two auto-commit settings in an SAP HANA database.   The first setting which can be set in the SQL Console, applies to SQL statements that manipulate data such as insert, update, or delete statements.  These types of statements are known as Data Manipulation Language (DML).  The second setting can be set via SQL applies to SQL statements that modify database schema such create table statements or alter table statements.  These types of statements are known as Data Definition Language (DDL).
 
-[ACCORDION-BEGIN [Step 3: ](Create a partition)]
+
+The following steps will demonstrate these settings.
+
+1. Execute the following SQL statements.  By default, auto-commit is on.
+
+    ```SQL
+    CREATE COLUMN TABLE HOTEL.TEST1(
+      ID INTEGER PRIMARY KEY,
+      FIRSTNAME VARCHAR(50) NOT NULL
+    );
+    INSERT INTO HOTEL.TEST1 VALUES (1, 'Bob');
+    INSERT INTO HOTEL.TEST1 VALUES (2, 'Sue');
+    INSERT INTO HOTEL.TEST1 VALUES (2, 'John');
+    ```
+
+    An error will occur and the table TEST1 will exist with two rows.  To undo the operation, the table can be deleted.  Notice that the table TEST1 appears in the catalog browser.
+
+    ![test1 result](auto-commit-test1.png)
+
+2. In the SQL Console, set auto-commit off.
+
+    ![turn auto-commit off](autocommit-off.png)
+
+3. Execute the following SQL statements.
+
+    ```SQL
+    CREATE COLUMN TABLE HOTEL.TEST2(
+    ID INTEGER PRIMARY KEY,
+        FIRSTNAME VARCHAR(50) NOT NULL
+    );
+    INSERT INTO HOTEL.TEST2 VALUES (1, 'Bob');
+    INSERT INTO HOTEL.TEST2 VALUES (2, 'Sue');
+    INSERT INTO HOTEL.TEST2 VALUES (2, 'John');
+    ```
+
+    An error will occur and you can then decide to undo all the inserted rows from the table TEST1 by executing a `ROLLBACK;` or you have the option to keep the successfully inserted rows by executing a `COMMIT`.
+
+    ![auto-commit test3](auto-commit-test3.png)
+
+    Note that until a COMMIT is executed, the table will appear to have no rows inserted when viewed from another SQL Console.
+
+    Additional details can be found at [ROLLBACK Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20fcc453751910149557fc90fe781449.html) and [COMMIT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d39db97519101480e7f9b76f48c2c4.html).
+
+3. Execute the following SQL statements.
+
+    ```SQL
+    SET TRANSACTION AUTOCOMMIT DDL OFF;
+    CREATE COLUMN TABLE HOTEL.TEST3(
+      ID INTEGER PRIMARY KEY,
+      FIRSTNAME VARCHAR(50) NOT NULL
+    );
+    INSERT INTO HOTEL.TEST3 VALUES (1, 'Bob');
+    INSERT INTO HOTEL.TEST3 VALUES (2, 'Sue');
+    SELECT * FROM HOTEL.TEST3;
+    INSERT INTO HOTEL.TEST3 VALUES (2, 'John');
+    ```
+
+    An error will occur and you can then decide to undo the inserted rows and the table creation by executing a `ROLLBACK;` or you have the option to keep the successfully created table and rows by executing a `COMMIT`.
+
+    Note that until a COMMIT is executed, the table will not appear from another SQL Console or in the catalog browser.
+
+    >The following query can be used to determine if AUTOCOMMIT DDL is enabled.  
+    >
+    ```SQL
+    SELECT 	key, value
+    FROM m_session_context
+    WHERE connection_id = current_connection
+    	AND key = 'DDL_AUTO_COMMIT';
+    ```
+
+    Additional details can be found at [SET TRANSACTION AUTOCOMMIT DDL Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d538d11053bd4f3f847ec5ce817a3d4c.html).
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Create a partition)]
 
 Partitions can be created to divide the data in a large table into smaller parts.  
 
 1. Execute the following SQL statement to create one partition that contains older reservations and one that contains reservations made in 2019 or later.  
 
     ```SQL
-    alter table HOTEL.RESERVATION partition by range(ARRIVAL)
+    ALTER TABLE HOTEL.RESERVATION PARTITION BY RANGE(ARRIVAL)
     ((
-        partition '2000-01-01' <= VALUES < '2019-01-01',
-        partition others
+        PARTITION '2000-01-01' <= VALUES < '2020-01-01',
+        PARTITION OTHERS
     ));
     ```
 
@@ -292,7 +369,7 @@ Partitions can be created to divide the data in a large table into smaller parts
 2. Execute the following SQL to make the partition containing older reservations  loadable from disk using [Native Storage Extensions (NSE)](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/786c621dd35e4534a2f955bf2f04a2e2.html).
 
     ```SQL
-    alter table HOTEL.RESERVATION ALTER PARTITION 1 PAGE LOADABLE;
+    ALTER TABLE HOTEL.RESERVATION ALTER PARTITION 1 PAGE LOADABLE;
     ```
 
     The partition information can be seen in the **Runtime Information** tab of the reservation table, which can be shown by right-clicking on the reservation table and choosing **Open**.
@@ -317,7 +394,7 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create views)]    
+[ACCORDION-BEGIN [Step 5: ](Create views)]    
 
 1. Views can be created to combine columns from multiple tables into one view or to provide access to certain columns of a table.  Executing the following SQL statements creates a view that displays all information from the reservation table. The joins allow for more information about the customer and hotel to be displayed.
 
@@ -372,14 +449,15 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
 
     ![HOTEL_ROOMS_VIEW](rooms-view.png)
 
-    For additional details see [CREATE VIEW Statement (Data Definition)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/fd3e0d24c7794cb5968d53cacf4ddb6d.html).
+    For additional details see [CREATE VIEW Statement (Data Definition)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5fa9b75191014a33eee92692f1702.html).
+
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create functions and stored procedures)]
+[ACCORDION-BEGIN [Step 6: ](Create functions and stored procedures)]
 
-1. User-created functions can be useful in saving a set of commands that return a value. They can also be used in other statements. Functions and procedures can also make use of control statements such as if else and loops.  
+1. User-defined functions and procedures can be used to save a set of SQL statements.  Functions are considered read-only in that they cannot make modifications to the data.  Stored procedures can modify the data through the use of DDL or DML statements.
 
     Execute the following SQL to create a function that calculates the average price of a specific room type.
 
@@ -487,7 +565,7 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
     For additional details see [Procedures](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18aef632687f0/cloud/en-US/d43d91578c3b42b3bacfd89aacf0d62f.html).
 
 
-    >Procedures can also be scheduled in SAP HANA Cloud.  An example follows.  For additional details see [Scheduling Administrative Tasks](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/be4c214b87e54a08bd8047f6149645ec.html).
+    >Procedures can also be scheduled in SAP HANA Cloud.  An example follows.  For additional details see [Scheduling Administrative Tasks](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/be4c214b87e54a08bd8047f6149645ec.html) and [CREATE SCHEDULER JOB Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d7d43d818366460dae1328aab5d5df4f.html).
     >
     ```SQL
        SELECT current_date, current_time FROM dummy;  --be sure to schedule an event in the future

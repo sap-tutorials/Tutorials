@@ -2,13 +2,14 @@
 title: Create a Data Element
 description: Create a data element, which you will use in a later tutorial.
 auto_validation: true
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-netweaver ]
 time: 5
 ---
 
 ## Prerequisites  
  - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
+ - **Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](abap-create-project)
 
 ## Details
 ### You will learn  
@@ -90,7 +91,7 @@ The ABAP Dictionary structure `zso_invoice_item` is now activated.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Use your data element in the ABAP class)]
-Go back to the class, `**ZCL_INVOICE_RETRIEVAL**`, which you created in the previous tutorial, ([Create an ABAP class](https://developers.sap.com/tutorials/abap-dev-create-new-class.html)).
+Go back to the class, `**ZCL_INVOICE_RETRIEVAL**`, which you created in the previous tutorial, [Create an ABAP class](abap-dev-create-new-class).
 
 You will now transform the values of `payment_status` from **P** to a flag that is set to **X** (true) when the invoice has been paid.
 

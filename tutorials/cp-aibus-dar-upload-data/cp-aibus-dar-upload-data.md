@@ -3,7 +3,7 @@ title: Upload Data to Data Attribute Recommendation
 description: Upload a dataset to your Data Attribute Recommendation service instance to afterwards be able to train your machine learning model.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
@@ -12,7 +12,7 @@ primary_tag: topic>machine-learning
   - How to authorize your client to communicate with your Data Attribute Recommendation service instance
   - How to do upload data to your Data Attribute Recommendation service instance to train a machine learning model
 
-To try out Data Attribute Recommendation, the first step is to upload data that will be used to train a machine learning model. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/dar). For further definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/fe501df6d9f94361bfea066f9a6f6712.html).
+To try out Data Attribute Recommendation, the first step is to upload data that will be used to train a machine learning model. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/dar). For further definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/cff2de73bc9c4625b35eb036439ae70a.html).
 
 Business Use Case: When creating the master data of a product, classifying the product into correct category and product hierarchy is a manual process that involves a product expert.
 

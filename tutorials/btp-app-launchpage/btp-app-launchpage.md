@@ -3,9 +3,10 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Add More Than One Application to the Launch Page
 description: This tutorial shows you how to create an SAP Fiori elements app on top of your previously created CAP service.
+keywords: cap
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori-tools, products>sapui5]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori-tools, software-product>sapui5]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -23,7 +24,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 
-To continue with this tutorial you can find the result of the previous tutorial in the [`cap/freestyle-ui5-app`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/freestyle-ui5-app) branch.
+To start with this tutorial use the result in the [`create-ui-freestyle-sapui5`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-ui-freestyle-sapui5) branch.
 
 ---
 
@@ -44,7 +45,7 @@ In the current implementation, the launch page is sitting inside the application
 
 3. Open the file `index.html` in an editor and change the following lines:
 
-    ```JavaScript[5,10,12-20]
+    ```JavaScript[5,10,12-19]
         <script>
             window["sap-ushell-config"] = {
                 defaultRenderer: "fiori2",
@@ -79,12 +80,12 @@ In the current implementation, the launch page is sitting inside the application
 
 5. With `cds watch` running, open the app in your browser at <http://localhost:4004/launchpage.html#Shell-home>.
 
-6. You now see the `mitigations` app next to the `risks` app on the launch page.
+6. You now see the `Mitigations` app next to the `Risks` app on the launch page.
 
     !![Launch Page](launchpage2apps.png)
 
 [VALIDATE_1]
-The result of this tutorial can be found in the [`cap/launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap/launchpage) branch.
+The result of this tutorial can be found in the [`launchpage`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/launchpage) branch.
 
 
 [ACCORDION-END]

@@ -6,34 +6,36 @@ time: 10
 tags: [tutorial>beginner, products>sap-business-technology-platform]
 primary_tag: products>sap-business-technology-platform
 author_name: Kavya M Gowda
-author_profile: https://github.com/I540620
+author_profile: https://github.com/KavyaGowda-UA
 ---
 ## Prerequisites
- - You have set up the **Workflow Management** service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
- - You have set up the business rules for determining equipment. To setup business rules, see steps 1 to 4 in [Configure Business Rules, Workflow and Process Visibility](cp-starter-ibpm-employeeonboarding-2-configure) tutorial.
+ - You have set up **SAP Workflow Management** service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
+ - You have created a visibility scenario named **Employee Onboarding Process** with **onboard** workflow as a process Participant. For more information, see [Create a Visibility Scenario for a Deployed Workflow](cp-cf-processvisibility-model-configscenario) tutorial.
+ - You have set up business rules for determining equipment. To setup business rules, see steps 1 to 4 in [Configure Business Rules, Workflow and Process Visibility](cp-starter-ibpm-employeeonboarding-2-configure) tutorial.
+
 
 ## Details
 ### You will learn
-  - How to start a workflow instance for a scenario
+  - How to start a workflow instance for a visibility scenario
 
-Once you have modelled and activated the visibility scenario, navigate to the Monitor Workflows application and start a new instance of the workflow. Once the workflow has started, you will see the start and other events being received in the Event Acquisition application. You can process them using the Monitor Visibility Scenarios application.
+Once you have modelled and activated your visibility scenario, navigate to the **Monitor Workflows** application to start a new instance of the workflow. Once the workflow has started, you will see the start events and other events being received in the **Event Acquisition** application. You can process them using the **Monitor Visibility Scenarios** application.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Start a new instance of workflow)]
-1. Log on to the Workflow Management home screen and choose the **Monitor Workflows** tile.
+1. Open the **Workflow Management** dashboard and choose the **Monitor Workflows** tile under **Monitoring Tools**.
 
     !![Home screen](FLP.png)
 
-2. Search and select the workflow definition **onboard** for which you want to create an instance and click **Start New Instance**.
+2. Search for the workflow using the workflow definition ID as the keyword. In this tutorial, we search for the **onboard** workflow definition ID for which we need to start the instance. Now, choose **Start New Instance** to start a new instance for the workflow.
 
     !![New instance creation](Start-New-Instance-03.png)
 
-2. In the available payload, provide your trial email ID in the highlighted snippet and then click **Start New Instance**.
+2. In the available payload, provide your trial email ID in the highlighted snippet and then choose **Start New Instance and Close**.
 
-    !![Payload](Payload-04.png)
+    !![Payload](payload.png)
 
-3. Click **Show Instances** to view the created instance.
+3. Choose **Show Instances** to view the created instance.
 
     !![Show instances](Show-Instance-05.png)
 
@@ -46,21 +48,21 @@ Once you have modelled and activated the visibility scenario, navigate to the Mo
 
 [ACCORDION-BEGIN [Step 2: ](Open new workflow)]
 
-1. Click **Home** and navigate to the home screen.
+1. Choose **Home** to navigate to the **Workflow Management** dashboard.
 
     !![Home](home.png)
 
-    You should be able to see a new task in the **My Inbox** tile in the running state.
+    You can see a new task created in the **My Inbox** tile in the running state.
 
     !![My Inbox](cp-cf-workflowmanagement-runcapex-myinbox.png)
 
-2. Click the **My Inbox** tile to open the application. You can see the new task in the list.
+2. Open the **My Inbox** application. You can see the new task in the list.
 
     !![approve](approve-equipment.png)
 
-    Before you **Confirm** the task, access the Event Acquisition application to familiarize yourself with the acquired events. For more information on Event Acquisition application, refer to [Monitor Events Acquired Using the Event Acquisition Application](cp-cf-processvisibility-model-manageevents).
+    Before you **Confirm** the task, access the **Event Acquisition** application to familiarize yourself with the acquired events. For more information on Event Acquisition application, refer to [Monitor Events Acquired Using the Event Acquisition Application](cp-cf-processvisibility-model-manageevents).
 
-    You can move forward in the workflow by choosing the **Confirm** button in **My Inbox**.
+    You can move forward in the workflow by choosing the **Confirm** button.
 
     !![Approve equipment](approve-equipment2.png)
 

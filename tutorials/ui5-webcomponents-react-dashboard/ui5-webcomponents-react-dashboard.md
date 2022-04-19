@@ -3,8 +3,8 @@ title: Create an Analytical Dashboard via UI5 Web Components for React
 description: Create an analytical dashboard with different components using UI5 Web Components for React.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-fiori]
-primary_tag: topic>html5
+tags: [ tutorial>beginner, software-product>sap-fiori]
+primary_tag: programming-tool>html5
 author_name: Lukas Harbarth
 author_profile: https://github.com/Lukas742
 ---
@@ -26,6 +26,7 @@ To make things easier, first import all the components you will need in this ste
 import {
   Avatar,
   Card,
+  CardHeader,
   Text,
   ShellBar,
   ShellBarItem,
@@ -74,7 +75,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
     ```JavaScript / JSX
     <ShellBar
       logo={<img src="" />}
-      profile={<Avatar image="" />}
+      profile={<Avatar><img src="" /></Avatar>}
       primaryTitle="My App"
     />
     ```
@@ -88,8 +89,12 @@ The `ShellBar` is the central navigation element in your Web Application and sho
     ```JavaScript / JSX
     <ShellBar
       logo={<img src="reactLogo.png" />}
-      profile={<Avatar image="profilePictureExample.png" />}
-      primaryTitle={"My App"}  
+      profile={
+        <Avatar>
+          <img src="profilePictureExample.png" />
+        </Avatar>
+      }
+      primaryTitle="My App"
     />
     ```
 
@@ -100,9 +105,14 @@ The `ShellBar` is the central navigation element in your Web Application and sho
     ```JavaScript / JSX
     <ShellBar
       logo={<img src="reactLogo.png" />}
-      profile={<Avatar image="profilePictureExample.png" />}
-      primaryTitle={"My App"}>
-       <ShellBarItem icon="add" text="Add" />
+      profile={
+        <Avatar>
+          <img src="profilePictureExample.png" />
+        </Avatar>
+      }
+      primaryTitle="My App"
+    >
+      <ShellBarItem icon="add" text="Add" />
     </ShellBar>
     ```
 
@@ -127,6 +137,7 @@ import React, { useState } from "react";
 import {
   Avatar,
   Card,
+  CardHeader,
   Text,
   ShellBar,
   ShellBarItem,
@@ -147,9 +158,37 @@ import { spacing } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
 import "@ui5/webcomponents-icons/dist/line-chart.js";
 import "@ui5/webcomponents-icons/dist/horizontal-bar-chart.js";
-import "@ui5/webcomponents-icons/dist/add.js";
-import "@ui5/webcomponents-icons/dist/list.js";
-import "@ui5/webcomponents-icons/dist/table-view.js";
+
+const dataset = [
+  {
+    month: "January",
+    data: 65
+  },
+  {
+    month: "February",
+    data: 59
+  },
+  {
+    month: "March",
+    data: 80
+  },
+  {
+    month: "April",
+    data: 81
+  },
+  {
+    month: "May",
+    data: 56
+  },
+  {
+    month: "June",
+    data: 55
+  },
+  {
+    month: "July",
+    data: 40
+  }
+];
 
 export function MyApp() {
   const [toggleCharts, setToggleCharts] = useState("lineChart");
@@ -158,7 +197,6 @@ export function MyApp() {
     toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
   const switchToChart =
     toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
-
   const handleHeaderClick = () => {
     if (toggleCharts === "lineChart") {
       setLoading(true);
@@ -174,78 +212,56 @@ export function MyApp() {
       }, 2000);
     }
   };
-  const dataset = [
-    {
-      month: "January",
-      data: 65
-    },
-    {
-      month: "February",
-      data: 59
-    },
-    {
-      month: "March",
-      data: 80
-    },
-    {
-      month: "April",
-      data: 81
-    },
-    {
-      month: "May",
-      data: 56
-    },
-    {
-      month: "June",
-      data: 55
-    },
-    {
-      month: "July",
-      data: 40
-    }
-  ];
   return (
     <div>
       <ShellBar
         logo={<img src="reactLogo.png" />}
-        profile={<Avatar image="profilePictureExample.png" />}
+        profile={
+          <Avatar>
+            <img src="profilePictureExample.png" />
+          </Avatar>
+        }
         primaryTitle="My App"
       >
         <ShellBarItem icon="add" text="Add" />
       </ShellBar>
-        <Card
-          avatar={
-            <Icon
-              name={
-                toggleCharts === "lineChart"
-                  ? "line-chart"
-                  : "horizontal-bar-chart"
-              }
-            />
-          }
-          heading="Stock Price"
-          style={{ width: "300px" }}
-          headerInteractive
-          onHeaderClick={handleHeaderClick}
-          subheading={`Click here to switch to ${switchToChart}`}
-        >
-          <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
-          {toggleCharts === "lineChart" ? (
-            <LineChart
-              dimensions={[{ accessor: "month" }]}
-              measures={[{ accessor: "data", label: "Stock Price" }]}
-              dataset={dataset}
-              loading={loading}
-            />
-          ) : (
-            <BarChart
-              dimensions={[{ accessor: "month" }]}
-              measures={[{ accessor: "data", label: "Stock Price" }]}
-              dataset={dataset}
-              loading={loading}
-            />
-          )}
-        </Card>
+      <Card
+        header={
+          <CardHeader
+            titleText="Stock Prices"
+            subtitleText={`Click here to switch to ${switchToChart}`}
+            interactive
+            onClick={handleHeaderClick}
+            avatar={
+              <Icon
+                name={
+                  toggleCharts === "lineChart"
+                    ? "line-chart"
+                    : "horizontal-bar-chart"
+                }
+              />
+            }
+          />
+        }
+        style={{ width: "300px" }}
+      >
+        <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
+        {toggleCharts === "lineChart" ? (
+          <LineChart
+            dimensions={[{ accessor: "month" }]}
+            measures={[{ accessor: "data", label: "Stock Price" }]}
+            dataset={dataset}
+            loading={loading}
+          />
+        ) : (
+          <BarChart
+            dimensions={[{ accessor: "month" }]}
+            measures={[{ accessor: "data" }]}
+            dataset={dataset}
+            loading={loading}
+          />
+        )}
+      </Card>
     </div>
   );
 }
@@ -259,12 +275,15 @@ export function MyApp() {
 
     ```JavaScript / JSX
     <Card
-        heading="Progress"
-        subheading="List"
-        style={{ width: "300px" }}
-        avatar={<Icon name="list" />}
-    >
-    </Card>
+      header={
+        <CardHeader
+          titleText="Progress"
+          subtitleText="List"
+          avatar={<Icon name="list" />}
+        />
+      }
+      style={{ width: "300px" }}
+    ></Card>
     ```
 
 2. Add the list `Icon` to your imports.
@@ -287,13 +306,13 @@ export function MyApp() {
      </List>
     ```
 
-5. The user should know the status of the activities. Add the `info` prop to the `StandardListItem`. To visualize if the status is neutral, positive or negative, also add the `infoState` prop.
+5. The user should know the status of the activities. Add the `additionalText` prop to the `StandardListItem`. To visualize if the status is neutral, positive or negative, also add the `additionalTextState` prop.
 
     ```JavaScript / JSX
-     <StandardListItem info="finished" infoState={ValueState.Success}>
+     <StandardListItem additionalText="finished" additionalTextState={ValueState.Success}>
        Activity 1
      </StandardListItem>
-     <StandardListItem info="failed" infoState={ValueState.Error}>
+     <StandardListItem additionalText="failed" additionalTextState={ValueState.Error}>
        Activity 2
      </StandardListItem>
     ```
@@ -308,13 +327,13 @@ export function MyApp() {
     - `valueState`: The value-state (color) of the indicator  
 
     ```JavaScript / JSX
-    <StandardListItem info="in progress" infoState={ValueState.Warning}>
-        <Title level={TitleLevel.H5}>Activity 3</Title>
-        <ProgressIndicator value={89} valueState={ValueState.Success} />
+    <StandardListItem additionalText="in progress" additionalTextState={ValueState.Warning}>
+      <Title level={TitleLevel.H5}>Activity 3</Title>
+      <ProgressIndicator value={89} valueState={ValueState.Success} />
     </StandardListItem>
-    <StandardListItem info="in progress" infoState={ValueState.Warning}>
-        <Title level={TitleLevel.H5}>Activity 4</Title>
-        <ProgressIndicator value={5} valueState={ValueState.Error} />
+    <StandardListItem additionalText="in progress" additionalTextState={ValueState.Warning}>
+      <Title level={TitleLevel.H5}>Activity 4</Title>
+      <ProgressIndicator value={5} valueState={ValueState.Error} />
     </StandardListItem>
     ```
 
@@ -327,15 +346,21 @@ export function MyApp() {
 
     ```JavaScript / JSX
     <List>
-      <StandardListItem info="finished" infoState={ValueState.Success}>
+      <StandardListItem
+        additionalText="finished"
+        additionalTextState={ValueState.Success}
+      >
         Activity 1
       </StandardListItem>
-      <StandardListItem info="failed" infoState={ValueState.Error}>
+      <StandardListItem
+        additionalText="failed"
+        additionalTextState={ValueState.Error}
+      >
         Activity 2
       </StandardListItem>
       <StandardListItem
-        info="in progress"
-        infoState={ValueState.Warning}
+        additionalText="in progress"
+        additionalTextState={ValueState.Warning}
         style={{ height: "80px" }}
       >
         <FlexBox direction={FlexBoxDirection.Column}>
@@ -344,8 +369,8 @@ export function MyApp() {
         </FlexBox>
       </StandardListItem>
       <StandardListItem
-        info="in progress"
-        infoState={ValueState.Warning}
+        additionalText="in progress"
+        additionalTextState={ValueState.Warning}
         style={{ height: "80px" }}
       >
         <FlexBox direction={FlexBoxDirection.Column}>
@@ -367,7 +392,15 @@ Now the components inside the card fit (we'll arrange the cards themselves later
 1. The last tile should contain a `AnalyticalTable` component. Again, create a `Card` to wrap the Table and set the `max-width` to `900px`.
 
     ```JavaScript / JSX
-    <Card heading="AnalyticalTable" style={{maxWidth: "900px"}} avatar={<Icon name="table-view" />}>
+    <Card
+      header={
+        <CardHeader
+          titleText="AnalyticalTable"
+          avatar={<Icon name="table-view" />}
+        />
+      }
+      style={{ maxWidth: "900px" }}
+    >
       <AnalyticalTable />
     </Card>
     ```
@@ -377,9 +410,9 @@ Now the components inside the card fit (we'll arrange the cards themselves later
     ```JavaScript / JSX
     import "@ui5/webcomponents-icons/dist/table-view.js";
     ```
-2. Add data and columns to the table. The `columns` prop expects an array of objects that include at least the `accessor` to the data. The value of `Header` will be shown as column header.
+2. Add data and columns to the table. The `columns` prop expects an array of objects that include at least the `accessor` to the data or a unique `id` property. The value of `Header` will be shown as column header.
 
-    You can create your own data or just use the code below and paste it right after the definition of the `labels` of the chart.
+    You can create your own data or just use the code below and paste it right after the definition of the `dataset` of the chart.
 
     ```JavaScript / JSX
     const tableData = new Array(500).fill(null).map((_, index) => {
@@ -416,9 +449,7 @@ Now the components inside the card fit (we'll arrange the cards themselves later
 3. Display the data by replacing the current table with.
 
     ```JavaScript / JSX
-    <AnalyticalTable
-      data={tableData}
-      columns={tableColumns} />
+    <AnalyticalTable data={tableData} columns={tableColumns} />
     ```
 
     ![Table](04_table.png)
@@ -442,27 +473,44 @@ Now the components inside the card fit (we'll arrange the cards themselves later
 
 At the moment, the dashboard doesn't really look like a dashboard. The components are way too close to each other and not aligned correctly. Let's change that.
 
-1. Add padding to each `Card` and the `ShellBar`
+1. Add padding to each `Card`
 
     To add a padding to the cards, you can use `spacing` again. Inside of the style property [spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) the `spacing` object and append the style. Do this for each `Card` component.
 
     ```JavaScript / JSX
     <Card
+      header={
+        <CardHeader
+          titleText="Stock Prices"
+          ...
+        />
+      }
       style={{ width: "300px", ...spacing.sapUiContentPadding }}
-      avatar={<Icon name={toggleCharts === "lineChart" ? "line-chart" : "horizontal-bar-chart"} />}
-      heading="Stock Price"
-      headerInteractive
-      onHeaderClick={handleHeaderClick}
-      subheading={`Click here to switch to ${switchToChart}`}
     >
     ```
 
     ```JavaScript / JSX
-    <Card heading="Progress" subheading="List" style={{ width: "300px", ...spacing.sapUiContentPadding }} avatar={<Icon name="list" />}>
+    <Card
+      header={
+        <CardHeader
+          titleText="Progress"
+          ...
+        />
+      }
+      style={{ width: "300px", ...spacing.sapUiContentPadding }}
+    >
     ```
 
     ```JavaScript / JSX
-    <Card heading="AnalyticalTable" subheading="List" style={{ width: "900px", ...spacing.sapUiContentPadding }} avatar={<Icon name="table-view" />}>
+    <Card
+      header={
+        <CardHeader
+          titleText="AnalyticalTable"
+          ...
+        />
+      }
+      style={{ maxWidth: "900px", ...spacing.sapUiContentPadding }}
+    >
     ```
 
 2. Align the elements
@@ -472,7 +520,7 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
     ```JavaScript / JSX
     <FlexBox
         justifyContent={FlexBoxJustifyContent.Center}
-        wrap={FlexBoxWrap.Wrap} >
+        wrap={FlexBoxWrap.Wrap}
         style={spacing.sapUiContentPadding}
         ...
     </FlexBox>
@@ -487,6 +535,7 @@ import React, { useState } from "react";
 import {
   Avatar,
   Card,
+  CardHeader,
   Text,
   ShellBar,
   ShellBarItem,
@@ -511,6 +560,67 @@ import "@ui5/webcomponents-icons/dist/add.js";
 import "@ui5/webcomponents-icons/dist/list.js";
 import "@ui5/webcomponents-icons/dist/table-view.js";
 
+const dataset = [
+  {
+    month: "January",
+    data: 65
+  },
+  {
+    month: "February",
+    data: 59
+  },
+  {
+    month: "March",
+    data: 80
+  },
+  {
+    month: "April",
+    data: 81
+  },
+  {
+    month: "May",
+    data: 56
+  },
+  {
+    month: "June",
+    data: 55
+  },
+  {
+    month: "July",
+    data: 40
+  }
+];
+
+const tableData = new Array(500).fill(null).map((_, index) => {
+  return {
+    name: `name${index}`,
+    age: Math.floor(Math.random() * 100),
+    friend: {
+      name: `friend.Name${index}`,
+      age: Math.floor(Math.random() * 100)
+    }
+  };
+});
+
+const tableColumns = [
+  {
+    Header: "Name",
+    accessor: "name" // String-based value accessors!
+  },
+  {
+    Header: "Age",
+    accessor: "age"
+  },
+  {
+    Header: "Friend Name",
+    accessor: "friend.name"
+  },
+  {
+    Header: "Friend Age",
+    accessor: "friend.age"
+  }
+];
+
 export function MyApp() {
   const [toggleCharts, setToggleCharts] = useState("lineChart");
   const [loading, setLoading] = useState(false);
@@ -518,35 +628,6 @@ export function MyApp() {
     toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
   const switchToChart =
     toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
-  const tableData = new Array(500).fill(null).map((_, index) => {
-    return {
-      name: `name${index}`,
-      age: Math.floor(Math.random() * 100),
-      friend: {
-        name: `friend.Name${index}`,
-        age: Math.floor(Math.random() * 100)
-      }
-    };
-  });
-
-  const tableColumns = [
-    {
-      Header: "Name",
-      accessor: "name" // String-based value accessors!
-    },
-    {
-      Header: "Age",
-      accessor: "age"
-    },
-    {
-      Header: "Friend Name",
-      accessor: "friend.name"
-    },
-    {
-      Header: "Friend Age",
-      accessor: "friend.age"
-    }
-  ];
   const handleHeaderClick = () => {
     if (toggleCharts === "lineChart") {
       setLoading(true);
@@ -562,41 +643,15 @@ export function MyApp() {
       }, 2000);
     }
   };
-  const dataset = [
-    {
-      month: "January",
-      data: 65
-    },
-    {
-      month: "February",
-      data: 59
-    },
-    {
-      month: "March",
-      data: 80
-    },
-    {
-      month: "April",
-      data: 81
-    },
-    {
-      month: "May",
-      data: 56
-    },
-    {
-      month: "June",
-      data: 55
-    },
-    {
-      month: "July",
-      data: 40
-    }
-  ];
   return (
     <div>
       <ShellBar
         logo={<img src="reactLogo.png" />}
-        profile={<Avatar image="profilePictureExample.png" />}
+        profile={
+          <Avatar>
+            <img src="profilePictureExample.png" />
+          </Avatar>
+        }
         primaryTitle="My App"
       >
         <ShellBarItem icon="add" text="Add" />
@@ -607,20 +662,24 @@ export function MyApp() {
         style={spacing.sapUiContentPadding}
       >
         <Card
-          avatar={
-            <Icon
-              name={
-                toggleCharts === "lineChart"
-                  ? "line-chart"
-                  : "horizontal-bar-chart"
+          header={
+            <CardHeader
+              titleText="Stock Prices"
+              subtitleText={`Click here to switch to ${switchToChart}`}
+              interactive
+              onClick={handleHeaderClick}
+              avatar={
+                <Icon
+                  name={
+                    toggleCharts === "lineChart"
+                      ? "line-chart"
+                      : "horizontal-bar-chart"
+                  }
+                />
               }
             />
           }
-          heading="Stock Price"
-          style={{ width: "300px" }}
-          headerInteractive
-          onHeaderClick={handleHeaderClick}
-          subheading={`Click here to switch to ${switchToChart}`}
+          style={{ width: "300px", ...spacing.sapUiContentPadding }}
         >
           <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
           {toggleCharts === "lineChart" ? (
@@ -633,28 +692,38 @@ export function MyApp() {
           ) : (
             <BarChart
               dimensions={[{ accessor: "month" }]}
-              measures={[{ accessor: "data", label: "Stock Price" }]}
+              measures={[{ accessor: "data" }]}
               dataset={dataset}
               loading={loading}
             />
           )}
         </Card>
         <Card
-          heading="Progress"
-          subheading="List"
+          header={
+            <CardHeader
+              titleText="Progress"
+              subtitleText="List"
+              avatar={<Icon name="list" />}
+            />
+          }
           style={{ width: "300px", ...spacing.sapUiContentPadding }}
-          avatar={<Icon name="list" />}
         >
           <List>
-            <StandardListItem info="finished" infoState={ValueState.Success}>
+            <StandardListItem
+              additionalText="finished"
+              additionalTextState={ValueState.Success}
+            >
               Activity 1
             </StandardListItem>
-            <StandardListItem info="failed" infoState={ValueState.Error}>
+            <StandardListItem
+              additionalText="failed"
+              additionalTextState={ValueState.Error}
+            >
               Activity 2
             </StandardListItem>
             <StandardListItem
-              info="in progress"
-              infoState={ValueState.Warning}
+              additionalText="in progress"
+              additionalTextState={ValueState.Warning}
               style={{ height: "80px" }}
             >
               <FlexBox direction={FlexBoxDirection.Column}>
@@ -663,8 +732,8 @@ export function MyApp() {
               </FlexBox>
             </StandardListItem>
             <StandardListItem
-              info="in progress"
-              infoState={ValueState.Warning}
+              additionalText="in progress"
+              additionalTextState={ValueState.Warning}
               style={{ height: "80px" }}
             >
               <FlexBox direction={FlexBoxDirection.Column}>
@@ -675,9 +744,13 @@ export function MyApp() {
           </List>
         </Card>
         <Card
-          heading="AnalyticalTable"
+          header={
+            <CardHeader
+              titleText="AnalyticalTable"
+              avatar={<Icon name="table-view" />}
+            />
+          }
           style={{ maxWidth: "900px", ...spacing.sapUiContentPadding }}
-          avatar={<Icon name="table-view" />}
         >
           <AnalyticalTable
             data={tableData}

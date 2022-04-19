@@ -3,9 +3,10 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Create a Directory for Development
 description: This tutorial shows you how to start building your application with CAP and VS Code.
+keywords: cap
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -39,15 +40,15 @@ For the tutorial, you need a directory to develop the app and you need access to
 [ACCORDION-BEGIN [Step 2: ](Download the tutorial)]
 Downloading the tutorial gives you easy access to template files that are required for some tutorials.
 
-1. Open a terminal.
+1. Open a command line window.
 
-2. Navigate to the previously decided tutorial root directory:
+2. Navigate to the previously decided tutorial root directory.
 
     ```Shell/Bash
     cd <tutorial root directory>
     ```
 
-3. Clone the tutorial:
+3. Clone the tutorial.
 
     ```Shell/Bash
     git clone https://github.com/SAP-samples/cloud-cap-risk-management tutorial
@@ -76,15 +77,15 @@ Go to [GitHub](https://github.com/) and create a new GitHub repository.
 [ACCORDION-BEGIN [Step 4: ](Clone your GitHub repository)]
 1. Copy the repository's URL you have created before.
 
-2. Open a terminal.
+2. Open a command line window.
 
-3. Navigate to the tutorial root directory:
+3. Navigate to the tutorial root directory.
 
     ```Shell/Bash
     cd <tutorial root directory>
     ```
 
-4. Clone your new repository:
+4. Clone your new repository.
 
     ```Shell/Bash
     git clone <git-repository-url> cpapp
@@ -106,15 +107,15 @@ If you don't want to start from scratch, but from a specific example of the tuto
 
 1. Look-up the branch in the tutorial.
 
-2. Open a terminal.
+2. Open a command line window.
 
-3. Navigate to the tutorial root directory:
+3. Navigate to the tutorial root directory.
 
     ```Shell/Bash
     cd <tutorial root directory>
     ```
 
-4. Check out the example's branch:
+4. Check out the example's branch.
 
     ``` bash
     cd tutorial
@@ -129,19 +130,21 @@ If you don't want to start from scratch, but from a specific example of the tuto
     cp -r .gitignore $(ls -1A | grep -v .git) ../cpapp
     ```
 
-6. Check out the `master` branch to get access to the template files again:
+    > If you get an error, make sure you are not using PowerShell to execute the command. Checkout [Command Line Interpreters](btp-app-#command-line-interpreters) to see the recommended command line interpreters for this tutorial.
+
+6. Check out the `master` branch to get access to the template files again.
 
     ```Shell/Bash
     git checkout master
     ```
 
-7. Switch to your app directory:
+7. Switch to your app directory.
 
     ```Shell/Bash
     cd ../cpapp
     ```
 
-8. Install required Node.js modules in your app directory:
+8. Install required Node.js modules in your app directory.
 
     ```Shell/Bash
     npm install

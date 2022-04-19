@@ -2,13 +2,14 @@
 title: Display a CDS View Using ALV with IDA
 description: Display a CDS view in the SAP List Viewer with Integrated Data Access (IDA).
 auto_validation: true
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-netweaver ]
 time: 15
 
 ---
 ## Prerequisites
 - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
+- **Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](abap-create-project)
 - **Tutorial**: [Create and Run an ABAP Program](abap-create-basic-app)
 
 ## Details
@@ -82,7 +83,7 @@ The invoice items are displayed in ALV with IDA. (Ignore the Generic Node Key fi
 
 Try to display the tooltip information for the Paid column by positioning the cursor on the column heading.
 Notice that, in our case, the information is either missing or incorrect (depending on your version).
-We will change this information in the CDS view using an annotation. (For more information, see [Create a CDS view](https://developers.sap.com/tutorials/abap-dev-adt-create-cds-view.html) )
+We will change this information in the CDS view using an annotation. For more information, see [Create a CDS view](abap-dev-adt-create-cds-view)
 
 **NOTE: Write the annotation before the CASE statement.**
 

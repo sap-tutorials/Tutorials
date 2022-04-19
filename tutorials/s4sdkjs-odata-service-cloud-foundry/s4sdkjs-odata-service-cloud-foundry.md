@@ -3,11 +3,18 @@ title: Create Your First Application with SAP Cloud SDK for JavaScript
 description: Learn the fundamentals of the SAP Cloud SDK for JavaScript and integrate with an SAP S/4HANA Cloud system.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-sdk, topic>javascript ]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>beginner, software-product>sap-cloud-sdk, programming-tool>javascript ]
+primary_tag: software-product>sap-cloud-sdk
 ---
 
 ## Details
+
+> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> This tutorial is not actively maintained and might be partially outdated.
+> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
+> We will provide a link to the updated version of this tutorial as soon as we release it.
+> In this tutorial, version 1 of the SAP Cloud SDK for TypeScript/JavaScript is used.
+
 ### You will learn
  - How to extend a scaffolded application by another route
  - How to call the Business Partner Service of SAP S/4HANA Cloud using SAP Cloud SDK for JavaScript
@@ -79,7 +86,7 @@ If you've terminated your application, you can restart it by running the start c
 In order to use the `SAP Cloud SDK for JavaScript` to make a call to an `OData` service, add the `virtual data model` (`VDM`) for this service to your dependencies. For this tutorial we are using the `VDM` for the business partner service. Install it with the following command:
 
 ```Shell
-npm install @sap/cloud-sdk-vdm-business-partner-service
+npm install @sap/cloud-sdk-vdm-business-partner-service@^1.28.2
 ```
 
 Import the entity you want to make a call to into your application. In this tutorial we are importing the business partner entity of the business partner service. Add the following line to the top of the `business-partner.controller.ts`.
@@ -102,7 +109,6 @@ In `business-partner.controller.ts` create a function `getAllBusinessPartners` a
 
 [OPTION BEGIN [Mock Server]]
 In the code snippet below, we assume that you have a mock server running locally on port 3000. Documentation on the mock server can be found [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html).
-
 ```JavaScript / TypeScript
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {
   return BusinessPartner.requestBuilder()
@@ -133,7 +139,6 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 
 [OPTION BEGIN [SAP API Business Hub sandbox]]
 To use the SAP API Business Hub sandbox for your requests, you will need to pass the API key to the VDM requests using the `withCustomHeaders` method, and you will need to add the correct URL to your destinations. Checkout the following example:
-
 ```JavaScript / TypeScript
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {
   return BusinessPartner.requestBuilder()
@@ -210,7 +215,7 @@ In order to not repeat your destination configuration for every request executio
 destinations=[{"name": "<DESTINATIONNAME>", "url": "<URL to your system>", "username": "<USERNAME>", "password": "<PASSWORD>"}]
 ```
 
-This is what it would look like for the mock server:
+Please do not use this approach in production and also include the `.env` file in your `.gitignore` list, so that it is not accidentally checked in. This is what it would look like for the mock server:
 
 ```
 destinations=[{"name": "MockServer", "url": "http://localhost:3000"}]

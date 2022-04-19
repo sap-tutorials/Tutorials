@@ -3,8 +3,8 @@ title: Connect Using the SAP HANA Go Interface
 description: Create and debug a Go application that connects to SAP HANA using the SAP HANA client.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud]
-primary_tag: products>sap-hana
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -29,9 +29,9 @@ go version
 ![go version](version.png)
 
 
-If Go is installed, then it will return the currently installed version, such as 1.15.2. It is required to have at least version 1.8 or later installed.
+If Go is installed, then it will return the currently installed version, such as 1.16.  
 
->For further details on supported versions, see SAP Note [3006307 - SAP HANA Client Supported Platforms for 2.7](https://launchpad.support.sap.com/#/notes/3006307).
+>For further details on supported versions, see SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
 
 If it is not installed, download it from [Download Go](https://golang.org/dl/), run the installer, follow the provided instructions, and ensure that Go is in your path.
@@ -58,7 +58,7 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     If it is not installed, on Linux install the System GNU C compiler.  
 
-    On Windows download it from [Download MinGW](http://mingw-w64.org/doku.php/download) and run the installer.
+    On Windows, it can be downloaded from [Download MinGW](https://www.mingw-w64.org/downloads/). Under **Mingw-builds**, select **Installation: Sourceforge** to run the installer.
 
     During the install, set the architecture option to `x86_64`.
 
@@ -91,16 +91,19 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     ![Result of copying source](hana-client-in-go-src.png)
 
-4. Set the `CGO_LDFLAGS` environment variable to point to the location of `libdbcapiHDB` library as shown below.  Preferably, set these values in the Microsoft Windows environment variables dialog or on Linux/Mac in the `.profile` or `.bash_profile` file so these values persist and can be seen by other applications such as Visual Studio Code.
+4. Set the `CGO_LDFLAGS` environment variable to point to the location of `libdbcapiHDB` library as shown below.  The GO111MODULE variable is required in GO versions >= 1.16 and is described further at [New module changes in Go 1.16](https://blog.golang.org/go116-module-changes).  Preferably, set these values in the Microsoft Windows environment variables dialog or on Linux/Mac in the `.profile` or `.bash_profile` file so these values persist and can be seen by other applications such as Visual Studio Code.
 
     ```Shell (Windows)
     set CGO_LDFLAGS=c:\sap\hdbclient\libdbcapiHDB.dll
+    set GO111MODULE=auto
     ```
     ```Shell (Linux)
     export CGO_LDFLAGS=$HOME/sap/hdbclient/libdbcapiHDB.so
+    export GO111MODULE=auto
     ```
     ```Shell (Mac)
     export CGO_LDFLAGS=$HOME/sap/hdbclient/libdbcapiHDB.dylib
+    export GO111MODULE=auto
     ```
 
 5. Run the install for the driver:
@@ -114,7 +117,7 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
     go install SAP/go-hdb/driver
     ```
 
-    The result of this should be that a new go-hdb package is installed into `$HOME/go`
+    The result of this should be that a new go-hdb package is installed into the GOPATH folder.
 
     ![result of installing the driver](driver-built.png)
 

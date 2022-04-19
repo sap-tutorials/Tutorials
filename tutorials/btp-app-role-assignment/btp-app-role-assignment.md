@@ -3,9 +3,10 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Assign a Role Collection to a User
 description: This tutorial shows you how to assign roles to users.
+keywords: cap
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, topic>node-js, products>sap-business-technology-platform, products>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -28,10 +29,11 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ### You will learn
  - How to assign roles to users
 
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Assign roles)]
-To be able to access the application, your user needs to be assigned to a role collection that provides the requires scopes.
+To be able to access the application, your user needs to be assigned to a role collection that provides the required scopes.
 
 1. Open the **SAP BTP Cockpit**.
 
@@ -91,11 +93,11 @@ The new role collection appears now in the list, but it doesn't contain any role
 
 3. Open the value help for **Role Name**.
 
-    !!![RoleName value help](role_name_value_help.png)
+    !![RoleName value help](role_name_value_help.png)
 
 4. Select `cpapp-...!...` in **Application Identifier** dropdown.
 
-    !!![Application Identifier](app_identifier.png)
+    !![Application Identifier](app_identifier.png)
 
     > The **App Identifier** is the **XSAPPID** of your application. It consists of the **XSAPPNAME** that's been used to create the XSUAA service followed by an exclamation mark (`!`) and a landscape-wide unique ID.
 
@@ -105,10 +107,6 @@ The new role collection appears now in the list, but it doesn't contain any role
 
 7. Choose **Save**.
 
-
 [DONE]
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-cap-roles" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
 ---

@@ -3,13 +3,16 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: See How Logging Can Be Used in Your Android Application
 description: Explore how the logging component can help make deployed applications more supportable.
-primary_tag: products>sap-btp-sdk-for-android
+primary_tag: software-product>sap-btp-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, software-product>sap-btp-sdk-for-android, software-product>sap-business-technology-platform ]
+keywords: sdkforandroid
 time: 15
 ---
 
 ## Prerequisites
+- You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
+    - **SAP Mobile Services**
 - You completed [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app).
 
 ## Details
@@ -39,11 +42,6 @@ time: 15
                 LOGGER.debug("settings screen menu item selected.");
                 this.startActivity(new Intent(this, SettingsActivity.class));
                 return true;
-
-            default:
-                return false;
-        }
-    }
     ```
 
     These messages will be logged when the app's log level is set to **Debug** or **Path** and the app's **Settings** menu item is opened.
@@ -69,9 +67,6 @@ time: 15
                 }
                 true
             }
-            else -> false
-        }
-    }
     ```
 
     These messages will be logged when the app's log level is set to **Debug** or **Path** and the app's **Settings** menu item is opened.
@@ -136,7 +131,7 @@ The SDK libraries also log output based on the app's log level.
 
     !![Mobile Applications > Native/Hybrid > com.sap.wizapp > Mobile Client Log Upload](select_and_download_log.png)
 
-3.  Select the **Logs** tab and you will see the log you just uploaded in the list. You can download the text messages of the logs by clicking the **Download** sign. If the log doesn't appear immediately, wait for a few moments, then click **Go** to refresh the view.
+3.  Select the **Logs** tab and you will see the log you just uploaded in the list (only the **Error** level can be viewed here). If the log doesn't appear immediately, wait for a few moments, then click **Go** to refresh the view.
 
     !![View log](view_log.png)
 
@@ -144,11 +139,15 @@ The SDK libraries also log output based on the app's log level.
 
     !![View log details](view_log_details.png)
 
-5.  Additionally, you can access the logs locally on an emulator. You can browse the file system of an Android emulator using the **Device File Explorer** to view the log files as shown below, in **data** > **data** > **com.sap.wizapp** (or the package name of your project) > **files**.
+5.  Select the **Log Files** tab and you will see the log files you just uploaded in the list. You can download the files by clicking **Download**.
+
+    !![View log details](view_log_files.png)
+
+6.  Additionally, you can access the logs locally on an emulator. You can browse the file system of an Android emulator using the **Device File Explorer** to view the log files as shown below, in **data** > **data** > **com.sap.wizapp** (or the package name of your project) > **files**.
 
     !![View logs in emulator](local_log_location.png)
 
-6.  You can manage the initial log level of the application and the ability for mobile services to accept logs on the **Configuration** page, as shown below.
+7.  You can manage the initial log level of the application and the ability for mobile services to accept logs on the **Configuration** page, as shown below.
 
     !![Log Policy](client_policies.png)
 

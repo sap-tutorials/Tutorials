@@ -3,15 +3,15 @@ auto_validation: true
 title: Generate RFC Proxy Classes
 description: Create a service consumption model to generate proxies for a remote function call (RFC).
 time: 30
-tags: [ tutorial>beginner, topic>abap-connectivity, products>sap-cloud-platform, tutorial>license]
-primary_tag: products>sap-cloud-platform--abap-environment
+tags: [ tutorial>beginner, programming-tool>abap-connectivity, products>sap-business-technology-platform, tutorial>license]
+primary_tag: products>sap-btp--abap-environment
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
 ---
 
 ## Prerequisites
  - You need the standard developer authorization profile to create ABAP development objects.
- - You need a SAP Cloud Connector account, connected with the subaccount. See [Configure SAP Cloud Connector](https://developers.sap.com/tutorials/abap-env-rfc.html) for more details.
+ - You need a SAP Cloud Connector account, connected with the subaccount. See <https://developers.sap.com/tutorials/abap-env-rfc.html> for more details.
 
 ## Details
 ### You will learn

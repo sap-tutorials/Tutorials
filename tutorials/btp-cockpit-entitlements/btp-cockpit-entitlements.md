@@ -1,16 +1,16 @@
 ---
 title: Manage Entitlements Using the Cockpit
-description: Configure entitlements and quota using the cockpit.
+description: Configure entitlements and quota using the cockpit. (Free Tier ready)
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>cloud, software-product-function>sap-btp-cockpit]
+tags: [ tutorial>beginner, topic>cloud, software-product-function>sap-btp-cockpit, tutorial>free-tier]
 primary_tag: products>sap-business-technology-platform
 ---
 
 ## Prerequisites
 - You have one of the following:
     - **SAP BTP trial account:** You must have registered for a trial account on SAP Business Technology Platform: [Get a Free Trial Account on SAP BTP](hcp-create-trial-account).
-    - **SAP BTP enterprise account:** You have a subaccount for which you want to manage entitlements. If you need help setting up your subaccount, have a look at [Managing Subaccounts Using the Cockpit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/55d0b6d8b96846b8ae93b85194df0944.html).
+    - **SAP BTP consumption based enterprise account:** You have a subaccount for which you want to manage entitlements. If you need help setting up your subaccount, have a look at [Managing Subaccounts Using the Cockpit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/55d0b6d8b96846b8ae93b85194df0944.html).
 
 ## Details
 ### You will learn
@@ -21,7 +21,7 @@ You can do this tutorial with trial accounts or enterprise accounts with a globa
 If you are in a global account using cloud management tools feature set A, you can also do this tutorial but be aware that some UI elements might be called differently. For more information on the two feature sets, see [Cloud Management Tools — Feature Set Overview](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html).
 
 
-If you are in a global account using the consumption-based commercial model, you can try out services for free. To do that, you have to assign the entitlements using the **free** plan if it is available.
+If you are in a global account using the consumption-based commercial model, you can even try out services for free. To do that, you have to assign the entitlements using the **free** plan if it is available. Not sure what the consumption-based commercial model is and how it's different from a subscription account? In our documentation, you can find a lot of information on that! Have a look at [Commercial Models](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/263d40009a5a4237a62e8f5c05ee641e.html).
 
 Every service has its own available plans:
 
@@ -42,14 +42,14 @@ Before you get started, you should understand the difference between entitlement
 
 - **Quota** is the numeric quantity that defines the maximum allowed consumption of that resource. In other words, **how much** of a service plan you're entitled to use.
 
-Entitlements and quota are managed at the global account and directory levels, distributed to directories and subaccounts, and consumed by the subaccounts.
+Entitlements and quota are managed at the global account and directory levels, distributed to directories and subaccounts, and consumed by the subaccounts. See also [Entitlements and Quotas](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/00aa2c23479d42568b18882b1ca90d79.html)
 
 
 [VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Assign entitlements)]
-1. In you global account, navigate to **Entitlements** > **Entity Assignments**.
+1. In your global account, navigate to **Entitlements** > **Entity Assignments**.
 2. In the **Select Entities** selection, choose the directory or subaccount that you want to assign entitlements to.
 3. Click **Go**.
 

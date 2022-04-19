@@ -2,8 +2,8 @@
 title: Extend an MDK App with Customer Orders
 description: Display a customer order list and its details.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 30
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -59,15 +59,13 @@ This page will display customer orders list, you will add an **Object Table** co
 
     >A **Compound** control contains a group of other controls. Unlike in a container control where you can add your own child controls (container items), the child controls in a compound control are fixed. You can populate each of its child control by defining its data binding, depending on which the child controls are created.
 
-5. In the **Properties** pane, select the previously added service from the **Service** drop down and then select `SalesOrderHeaders` entity set from the dropdown. This way, the Object Table has been bound to `SalesOrderHeaders` entity.
-
-    Provide below Properties:
+5. In the **Properties** pane, provide the below information:
 
     | Property | Value |
     |----|----|
-    | `Service`| Select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `Entity` | Select `SalesOrderHeaders` from the dropdown |
-    | `QueryOptions`| `$filter=CustomerId eq '{CustomerId}'&$top=5&$orderby=CreatedAt desc` |
+    | `QueryOptions`| `$top=5&$filter=CustomerId eq '{CustomerId}'&$orderby=CreatedAt desc` |
 
     !![MDK](img-1.5.png)
 
@@ -109,7 +107,7 @@ This page will display customer orders list, you will add an **Object Table** co
 
     !![MDK](img-1.8.png)
 
-9. In the `EmptySection` of the **Properties** pane, provide **`No Orders Found`** for the **caption** property.
+9. In the `EmptySection` of the **Properties** pane, provide **`No Orders Found`** for the **Caption** property.
 
     !![MDK](img-1.9.png)
 
@@ -206,7 +204,7 @@ This page will show related details for an order. In this page, you will add an 
     | `Action Name`| `NavToCustomers_Orders` |
     | `PageToOpen` | Select `Customers_Orders.page` from the dropdown |
 
-    !![MDK](img_3.1.png)
+    !![MDK](img-3.1.png)
 
     Click **Next** and then **Finish** on the confirmation step.
 
@@ -219,7 +217,7 @@ This page will show related details for an order. In this page, you will add an 
     | `Action Name`| `NavToSalesOrders_Details` |
     | `PageToOpen` | Select `SalesOrders_Details.page` from the dropdown |
 
-    !![MDK](img_3.2.png)
+    !![MDK](img-3.2.png)
 
     Click **Next** and then **Finish** on the confirmation step.
 
@@ -256,7 +254,7 @@ You will show a total count of orders for a customer in `Customers_Detail.page`.
         //The following currentCustomer will retrieve the current customer record
         const currentCustomer = context.getPageProxy().binding.CustomerId;
         //The following expression will retrieve the total count of the orders for a given customer
-        return context.count('/DemoSampleApp/Services/Sample.service', 'SalesOrderHeaders', `$filter=CustomerId eq '${currentCustomer}'`).then((count) => {
+        return context.count('/DemoSampleApp/Services/SampleServiceV2.service', 'SalesOrderHeaders', `$filter=CustomerId eq '${currentCustomer}'`).then((count) => {
             return count;
         });
     }    
@@ -275,13 +273,10 @@ You will show a total count of orders for a customer in `Customers_Detail.page`.
 
     !![MDK](img-6.1.gif)
 
-2. In the **Properties** pane, select the previously added service from the **Service** drop down.
+2. In the **Properties** pane, provide below information:
 
-    Provide below Properties:
-
-    | Property | Value |
     |----|----|
-    | `Service`| Select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `Entity` | Select `{@odata.readLink}/SalesOrders` from the dropdown |
     | `QueryOptions`| `$top=5&$orderby=CreatedAt desc` |
 
@@ -293,13 +288,12 @@ You will show a total count of orders for a customer in `Customers_Detail.page`.
 
     >!![MDK](img_6.2.1.png)
 
-    >**Query** expression will filter order entries returned in descending when sorted by the order creation date property.
+    >**`QueryOptions`** expression will filter order entries returned in descending when sorted by the order creation date property.
 
 3. Now, start binding Object Table properties with `SalesOrderHeaders` entity set properties.
 
     In the **Appearance** section of the **Properties** pane, provide the below information:
 
-    | Property | Value |
     |----|----|
     | `Description`| Remove the default value and leave it blank  |
     | `DetailImage`| Remove the default value and leave it blank  |
@@ -446,7 +440,6 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_10.8.png)
 
-
 4. Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.  
 
     ![MDK](img_10.9.png)
@@ -461,7 +454,7 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-10.11.png)
 
-    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+    >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
     >!![MDK](img-10.12.png)
 

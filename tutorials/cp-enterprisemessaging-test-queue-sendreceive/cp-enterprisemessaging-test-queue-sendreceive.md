@@ -3,8 +3,8 @@ title: Send and Receive Test SAP Event Mesh
 description: Test send and receive of message with REST protocol using the Postman tool for a SAP Event Mesh instance.   
 time: 15
 auto_validation: true
-tags: [ tutorial>beginner, topic>cloud, tutorial>license]
-primary_tag: products>sap-event-mesh
+tags: [ tutorial>beginner, topic>cloud, software-product>technology-platform>sap-business-technology-platform, tutorial>license]
+primary_tag: software-product>sap-event-mesh
 ---
 
 ## Prerequisites
@@ -36,24 +36,24 @@ primary_tag: products>sap-event-mesh
 
     So the final postman URL should look like this:
 
-    ```URL
-    https://<***space name***>
-    .authentication.sap.hana.ondemand.com/oauth/token
-    ?grant_type=client_credentials&response_type=token
-    ```
+```
+<<tokenendpoint>>?grant_type=client_credentials&response_type=token
 
-    In the **Headers** tab, enter `Content-Type` as **KEY** and `application/x-www-form-urlencoded` as **VALUE**.
+<<tokenendpoint>> is to be replaced with the 'tokenendpoint' field of the service key.
+In the Headers tab, enter `Content-Type` as KEY and `application/x-www-form-urlencoded` as VALUE.
 
-    ![postman headers](postman-header.PNG)
+```
 
-    In the **Authorization** tab, select the **Type** as `Basic Auth` from the dropdown.
+![postman headers](postman-header.PNG)
 
-      - In **Username**, provide the <`clientid`> value from the **Service Keys** for httprest protocol.
-      - In **Password**, provide the <`clientsecret`> value from the **Service Keys** for httprest protocol.
+In the **Authorization** tab, select the **Type** as `Basic Auth` from the dropdown.
+
+- In **Username**, provide the <`clientid`> value from the **Service Keys** for `httprest` protocol.
+- In **Password**, provide the <`clientsecret`> value from the **Service Keys** for `httprest` protocol.
 
       ![postman authorization](postman-authorization.PNG)
 
-    Select the **POST** option in **Postman** and click on the **Send** button. You will get the `access_token`.
+Select the **POST** option in **Postman** and click on the **Send** button. You will get the `access_token`.
 
 [DONE]
 [ACCORDION-END]
