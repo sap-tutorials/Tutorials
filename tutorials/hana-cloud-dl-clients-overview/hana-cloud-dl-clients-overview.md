@@ -1,6 +1,6 @@
 ---
 title: SAP HANA Cloud, Data Lake Client Interfaces Overview
-description: Learn about the SAP HAN Cloud, data lake, how to create a trial instance, how to install the data lake client, and how to connect to the data lake Relational Engine using the SAP HANA cockpit, SAP HANA database explorer, and Interactive SQL Client.
+description: Learn about the SAP HANA Cloud, data lake, how to create a trial instance, how to install the data lake client, and how to connect to the data lake Relational Engine using the SAP HANA cockpit, SAP HANA database explorer, and Interactive SQL Client.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>sql, software-product>sap-iq]
@@ -20,7 +20,7 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 
 This tutorial group will provide guidance on setting up a trial instance of [SAP HANA Cloud, data lake](https://help.sap.com/viewer/product/SAP_HANA_DATA_LAKE/latest/en-US) so that it can then be connected to and queried using a few of the data lake client interfaces as described in [SAP HANA Cloud, Data Lake Developer Guide for Data Lake Relational Engine](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US).  
 
-> Access help from the SAP community or share your feedback on this tutorial by navigating to the "Provide Feedback" menu located on the right of this page under the table of contents. This menu is available for each tutorial.
+> Access help from the SAP community or provide feedback on this tutorial by navigating to the "Feedback" link located on the top right of this page.
 
 ---
 
@@ -77,15 +77,9 @@ There are multiple ways to create a data lake:
 
     ![SAP BTP Cockpit](BTP-cockpit2.png)
 
-3. If a data lake is not already present, add one using one of the three methods previously described, for example **Create | SAP HANA Database**.
+3. If a data lake is not already present, add one using one of the three methods previously described.
 
-    ![Create a HANA database](create-hana-db.png)
-
-    Enable data lake.
-
-    ![Enable a data lake](enable-data-lake.png)
-
-    Take note that the administration user is HDLADMIN.
+    Take note when creating the data lake that the administration user is HDLADMIN.
 
     >The HDLADMIN user has a [login policy](https://help.sap.com/viewer/745778e524f74bb4af87460cca5e62c4/latest/en-US/a43f448484f21015924f9951e9b77e32.html) that enforces the [update of the password](https://help.sap.com/viewer/745778e524f74bb4af87460cca5e62c4/latest/en-US/a458edd784f2101580a1eca5042678f8.html) after 180 days.  
 
@@ -97,7 +91,7 @@ There are multiple ways to create a data lake:
 
     ![Allowed connections](allowed-connections.png)
 
-5. After a while, press the **Refresh** button and the status will change from CREATING to RUNNING.
+5. After a while, press the **Refresh** button or enable auto-refresh and the status will change from CREATING to RUNNING.
 
     ![data lake running](data-lake-running.png)
 
@@ -287,7 +281,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 [ACCORDION-BEGIN [Step 5: ](Install the data lake client)]
 1.  In [SAP Software Downloads](https://support.sap.com/en/my-support/software-downloads.html), under **Support Packages & Patches**, select **H | HANA CLOUD CLIENTS | HANA CLOUD CLIENTS 1.0 | HANA DATALAKE CLIENT 1.0**. Select the platform (Windows or Linux) and download the latest version of the archive.
 
-    ![data lake software downloads](dl-Software-Downloads-1.png)
+    ![data lake software downloads](dl-software-downloads.png)
 
     > Note access to the client install is currently limited to S-user IDs
 
@@ -302,7 +296,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
     * On Linux, extract the archive.
 
         ```Shell (Linux)
-        tar -zxvf HANADLCLIENT10004_0*.TGZ
+        tar -zxvf HANADLCLIENT100*.TGZ
         ```
 
         Run `setup.bin` which will start either the GUI installer or text based installer.
@@ -328,11 +322,11 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
     ECHO %IQDIR17%
     ```
 
-    >Note that this tutorial uses notepad and `nano` as default text editors, but any text editor will do.
-    >`nano` can be installed on SUSE Linux with
+    >Note that this tutorial uses notepad and `pico` as default text editors, but any text editor will do.
+    >`pico` can be installed on SUSE Linux with
 
     >```Shell (Linux SUSE)
-    sudo zypper nano
+    sudo zypper install pico
     >```
 
     On Linux, this environment variable and others are set in a file named `IQ.sh`.  Configure it to be run each time the Bash shell is started by referencing it in `.bash_profile` or possibly `.bashrc`.
@@ -340,7 +334,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
     Open the `.bash_profile`.
 
     ```Shell (Linux)
-    nano ~/.bash_profile
+    pico ~/.bash_profile
     ```
 
     Add the following line to point to the location where the SAP data lake client is installed.
@@ -355,7 +349,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
     source ~/.bash_profile
     ```
 
-    Once the shell is closed and re-opened the following command should display the install location of the data lake client.
+    The following command should display the install location of the data lake client.
 
     ```Shell (Linux)
     echo $IQDIR17
@@ -378,7 +372,7 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
 
 2. Specify the connection type.
 
-    ![Connection type](dbisql-connection-type-1.png)
+    ![Connection type](dbisql-connection-type.png)
 
     > Note that the Connect window may appear enlarged on the screen. This can be adjusted by lowering the Scale and layout value in the device display settings.
 

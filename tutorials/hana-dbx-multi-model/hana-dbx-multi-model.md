@@ -329,6 +329,7 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     >It should also be noted that when a used in a ST_POINT, x is longitude and y is latitude so the above point would be represented as `NEW ST_Point('POINT (-94.71832 32.50459)', 4326)`.
 
+Congratulations! You have explored multi-model features such as graph workspaces, JSON collections, and spatial data using the SAP HANA database explorer.
 
 [VALIDATE_1]
 [ACCORDION-END]

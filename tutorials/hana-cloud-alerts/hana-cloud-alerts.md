@@ -20,7 +20,7 @@ Alerts can inform you of potential issues before they occur, such as when the nu
 
 Alternatively, alert details can be pushed to several configured channels such as email, Slack, or Microsoft Teams.
 
-> Access help from the SAP community or share your feedback on this tutorial by navigating to the "Provide Feedback" link located on the right of this page under the table of contents.
+> Access help from the SAP community or provide feedback on this tutorial by navigating to the "Feedback" link located on the top right of this page.
 
 ---
 
