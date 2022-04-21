@@ -5,12 +5,9 @@ title: Install and Setup the Desktop Agent
 description: Install and Setup the Desktop Agent to run your automation
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, software-product>sap-business-technology-platform]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
 primary_tag: software-product>sap-process-automation
 ---
-
-## Prerequisites
- - Prerequisite 1
 
 ## Details
 ### You will learn
@@ -79,7 +76,7 @@ Once you've completed the installation steps of the SAP Robotic Process Automati
 
 >Once the Desktop Agent is installed, the icon will be available on your System Tray.
 
-1. Click on the Desktop Agent icon, choose the 3 dots and select **Tenants**.
+1. Select the Desktop Agent icon, choose the 3 dots and select **Tenants**.
     !![Desktop Agent Installation](08-desktop-agent-installation.png)
 
 2.  Choose **Add**

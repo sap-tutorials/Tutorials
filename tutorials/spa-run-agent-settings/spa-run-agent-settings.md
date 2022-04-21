@@ -1,14 +1,14 @@
 ---
-title:  Agent Management settings to execute the process with an automation
-description: Agent Management settings to execute the process with an automation
+title:  Agent Management Settings to Execute the Process with an Automation
+description: Create an agent attribute in the tenant to add it to your agent and project
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, software-product>sap-business-technology-platform]
-primary_tag: software-product>sap-intelligent-robotic-process-automation
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-process-automation
 ---
 
 ## Prerequisites
- - Prerequisite 1
+ - Access to a SAP BTP tenant with SAP Process Automation
 
 ## Details
 ### You will learn
@@ -18,7 +18,7 @@ primary_tag: software-product>sap-intelligent-robotic-process-automation
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create an Agent Attribute in the tenant)]
+[ACCORDION-BEGIN [Step 1: ](Create an Agent Attribute in the Tenant)]
 
 Now that you have your project free of errors, ready to be released, you need to add an **Attribute** to your project. But first, you need to create an Agent Attribute.
 
@@ -43,7 +43,7 @@ To do so, please follow these steps:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add the attribute to your agent)]
+[ACCORDION-BEGIN [Step 2: ](Add the Attribute to your Agent)]
 
 1. Choose **Agent List** to verify that your Agent is idle or ready and connected in unattended mode then click on it.
 
@@ -74,7 +74,7 @@ To do so, please follow these steps:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add the attribute to your project)]
+[ACCORDION-BEGIN [Step 3: ](Add the Attribute to your Project)]
 
 1. Navigate back to your project in the Process Builder.
 
@@ -92,10 +92,10 @@ To do so, please follow these steps:
 
       !![Release](00-adding-attribute-value.png)
 
-[VALIDATE_3]
+[VALIDATE_1]
 [ACCORDION-END]      
 
-[ACCORDION-BEGIN [Step 4: ](Desktop Agent in unattended mode)]
+[ACCORDION-BEGIN [Step 4: ](Desktop Agent in Unattended Mode)]
 
 When you are running the process make sure to have the Desktop Agent in unattended mode.
 
