@@ -9,7 +9,6 @@ metadata:
     executables.ai.sap.com/name: "text-clf-infer-tutorial-exec"
   labels:
     scenarios.ai.sap.com/id: "text-clf-tutorial"
-    executables.ai.sap.com/id: "text-clf-infer-tutorial"
     ai.sap.com/version: "1.0.0"
 spec:
   inputs:
