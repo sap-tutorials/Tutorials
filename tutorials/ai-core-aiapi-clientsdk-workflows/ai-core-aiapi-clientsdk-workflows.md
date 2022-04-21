@@ -137,6 +137,23 @@ Download Files
 
 !![workflows folder](img/build-ml/workflows.png)
 
+### Give unique ID to the workflows
+
+Edit `training_workflow_tutorial.yaml`. The key `metadata > name` is termed **executable ID** (highlighted in the image below). This executable ID is a unique identifier of your workflow not the file name of the workflow in SAP AI Core. The workflow's **Executable ID** needs to be unique across all the workflows (even from different GitHub repos) you sync with your SAP AI Core instance. Edit the value to some unique value
+
+```YAML
+...
+
+metadata:
+  name: text-clf-train-tutorial-772  # Executable ID (max length 64 lowercase-hypen-separated), please modify this to any value if you are not the only user of your SAP AI Core instance. Example: `text-clf-train-tutorial-1234`
+...
+```
+
+!![image](img/exec_id.png)
+
+
+Edit the `serving_workflow_tutorial.yaml` for the executable ID similarly.
+
 [DONE]
 [ACCORDION-END]
 
