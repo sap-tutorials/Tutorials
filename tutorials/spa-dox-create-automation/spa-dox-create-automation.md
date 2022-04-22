@@ -1,7 +1,7 @@
 ---
 author_name: Chaitanya Priya Puvvada
 author_profile: https://github.com/chaitanya-priya-puvvada
-title: Extract Invoice Details
+title: Create an automation to extract Invoice Details
 description: Extract invoice document using Document Extraction Template to send the invoice details to the process
 auto_validation: true
 time: 25
