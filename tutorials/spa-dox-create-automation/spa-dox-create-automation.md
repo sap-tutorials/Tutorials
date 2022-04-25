@@ -5,7 +5,7 @@ title: Create an automation to extract Invoice Details
 description: Extract invoice document using Document Extraction Template to send the invoice details to the process
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform , tutorial>free-tier]
+tags: [ tutorial>intermediate , software-product>sap-business-technology-platform , tutorial>free-tier]
 primary_tag: software-product>sap-process-automation
 ---
 

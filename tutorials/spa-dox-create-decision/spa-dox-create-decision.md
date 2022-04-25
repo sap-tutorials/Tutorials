@@ -5,7 +5,7 @@ title: Create a Decision for Invoice Approval Process
 description: Create a decision to determine the approver of the invoices
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform ,tutorial>free-tier]
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform ,tutorial>free-tier]
 primary_tag: software-product>sap-process-automation
 ---
 
