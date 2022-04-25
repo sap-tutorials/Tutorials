@@ -1,6 +1,6 @@
 ---
-title: Connect to Data Lake IQ Using the JDBC Driver
-description: Create and debug a Java application that connects to data lake IQ.
+title: Connect to Data Lake Relational Engine Using the JDBC Driver
+description: Create and debug a Java application that connects to data lake Relational Engine.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>java]
@@ -12,7 +12,8 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 
 ## Details
 ### You will learn
-  - How to create and debug a Java application that connects to and queries a data lake IQ database
+  - How to create and debug a Java application that connects to and queries a data lake Relational Engine database
+  - How to connect to a data lake Relational Engine in `DBeaver`
 
 [Java Database Connectivity](https://en.wikipedia.org/wiki/Java_Database_Connectivity) (JDBC) provides an [API](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) for accessing databases from Java. An application written to the JDBC standard can be ported to other databases. Database vendors provide JDBC drivers for their database products.
 
@@ -57,7 +58,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a Java application that queries data lake IQ)]
+[ACCORDION-BEGIN [Step 3: ](Create a Java application that queries data lake Relational Engine)]
 
 1. The following commands create a folder named `java`, enter the newly created directory, create a file named `JavaQuery.java`, and open the file in notepad.
 
@@ -70,7 +71,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
     ```Shell (Linux)
     mkdir -p ~/DataLakeClientsTutorial/java
     cd ~/DataLakeClientsTutorial/java
-    nano JavaQuery.java
+    pico JavaQuery.java
     ```
 
 2. Copy the following code into `JavaQuery.java`:
@@ -95,7 +96,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
             }
             if (connection != null) {
                 try {
-                    System.out.println("Connection to data lake IQ successful!");
+                    System.out.println("Connection to data lake Relational Engine successful!");
                     Statement stmt = connection.createStatement();
                     ResultSet resultSet = stmt.executeQuery("SELECT TITLE, FIRSTNAME, NAME FROM CUSTOMER;");
                     while (resultSet.next()) {
@@ -169,16 +170,14 @@ Visual Studio Code can run and debug a Java application. It is a lightweight but
 
     ![VS Code Debugging](debugging.png)
 
-Congratulations! You have now created and debugged a Java application that connects to and queries a data lake IQ database.
-
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Browse data lake IQ using DBeaver with JDBC)]
+[ACCORDION-BEGIN [Step 5: ](Browse a data lake Relational Engine using DBeaver with JDBC)]
 
-`DBeaver` is a free and open source database tool and can be used with the data lake IQ JDBC driver.  
+`DBeaver` is a free and open source database tool and can be used with the data lake Relational Engine JDBC driver.  
 
-The following steps demonstrate how to configure `DBeaver` to connect to data lake IQ.
+The following steps demonstrate how to configure `DBeaver` to connect to data lake Relational Engine.
 
 1. [Download](https://dbeaver.io/download/) and install the community edition of `DBeaver`.
 
@@ -216,6 +215,7 @@ The following steps demonstrate how to configure `DBeaver` to connect to data la
 
     ![query in DBeaver](dbeaver-select.png)
 
+Congratulations! You have now created and debugged a Java application that connects to and queries a data lake Relational Engine database and used the driver in `DBeaver`.
 
 [VALIDATE_1]
 [ACCORDION-END]

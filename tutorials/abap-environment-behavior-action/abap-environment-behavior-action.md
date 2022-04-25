@@ -2,8 +2,8 @@
 auto_validation: true
 title: Enhance Behavior With Action and Validation
 description: Enhance behavior definition and implementation with action and validation.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -788,5 +788,5 @@ You can [deploy your ABAP application with SAP Business Application Studio](abap
 
 [Implicit Returning Parameters](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/aceaf8453d4b4e628aa29aa7dfd7d948.html )
 
-[openSAP RAP](https://open.sap.com/courses/cp13 )
+[`openSAP` RAP](https://open.sap.com/courses/cp13 )
 ---

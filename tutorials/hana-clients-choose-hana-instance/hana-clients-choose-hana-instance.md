@@ -20,15 +20,20 @@ This tutorial will provide guidance on setting up an instance of [SAP HANA](http
 
 For more information on SAP HANA, consult [What Is SAP HANA](https://help.sap.com/viewer/eb3777d5495d46c5b2fa773206bbfb46/latest/en-US/d3b1adcdbb571014a93eff11ad9a1d89.html).
 
+> Access help from the SAP community or provide feedback on this tutorial by navigating to the "Feedback" link located on the top right of this page.
+
+>---
+
 >Note, for connections from additional sources such as SAP Analytics Cloud, `Jupyter` Notebooks, SAP Business Warehouse, SAP Data Intelligence Cloud, and SAP ERP Central Component see [Connection Guides for SAP HANA Cloud](group.hana-cloud-database-connection-guides).
 
 >---
 
->For connections to the SAP HANA Cloud, Data Lake, see the tutorial [Use Clients to Query Data Lake IQ](group.hana-cloud-clients-data-lake).
+>For connections to the SAP HANA Cloud, Data Lake, see the tutorial [Use Clients to Query Data Lake Relational Engine](group.hana-cloud-clients-data-lake).
 
 >---
 
 >**IMPORTANT**: Complete the first 3 tutorials, and then you can select any of the following tutorials about connecting with different client interfaces.
+
 
 ---
 
@@ -71,7 +76,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
   * The administration user for SAP HANA Cloud is named DBADMIN while for an SAP HANA 2.0 database it is SYSTEM.  For additional details see [Predefined Users](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/cloud/en-US/de4ee8bbbb5710148a04f023da147c8d.html), [SAP HANA Cloud Administrator DBADMIN](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/5b35402c47b344d882ac13c661aff1c0.html), and [Predefined Users in HANA 2.0](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/latest/en-US/de4ee8bbbb5710148a04f023da147c8d.html).  
 
-  Information on the instance size steps for SAP HANA Cloud, SAP HANA databases can be found at [Create an SAP HANA Database Instance Using SAP HANA Cloud Central](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/f7febb16072b41f7ac90abf5ea1d4b86.html).  Service plan, pricing and data center availability can be found at [SAP HANA Cloud Service (SAP Discovery Center)](https://discovery-center.cloud.sap/serviceCatalog/sap-hana-cloud?region=all&tab=service_plan).  Details on limitations can be found at [System Limitations](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20a760537519101497e3cfe07b348f3c.html).
+  Information on the instance size steps for SAP HANA Cloud, SAP HANA databases can be found at [Create an SAP HANA Database Instance Using SAP HANA Cloud Central](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/f7febb16072b41f7ac90abf5ea1d4b86.html).  Service plan, pricing and data center availability can be found at [SAP HANA Cloud Service (SAP Discovery Center)](https://discovery-center.cloud.sap/serviceCatalog/sap-hana-cloud?region=all&tab=service_plan).  Details on limitations can be found at [System Limitations](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20a760537519101497e3cfe07b348f3c.html).  Compatibility information can be found at [Compatibility with Other SAP HANA Versions](https://help.sap.com/viewer/3c53bc7b58934a9795b6dd8c7e28cf05/hanacloud/en-US/11cc86c44d0b4dd3bf70e16870d9d4df.html).
 
 [DONE]
 [ACCORDION-END]
@@ -104,7 +109,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
     * [https://help.sap.com/viewer/product/BTP/Cloud/en-US](https://help.sap.com/viewer/product/BTP/Cloud/en-US)
 
-    Once the SAP HANA Cloud instance is created, take note of the endpoint (host:port) needed to connect to the database.  The endpoint can be obtained via the copy menu item.  This will be needed in subsequent tutorials in this mission.  
+    Once the SAP HANA Cloud instance is created, take note of the endpoint (host:port) needed to connect to the database.  The endpoint can be obtained via the copy menu item.  This will be needed in subsequent tutorials in the mission.  
 
     ![SQL Endpoint](SQLEndpoint.png)
 
@@ -210,7 +215,7 @@ The following steps will demonstrate connecting to and examining a SAP HANA, exp
     ```
     If the hdbsql command cannot be found, simply read through the following examples.  The installation and further examples of running HDBSQL will be covered in subsequent tutorials.
 
-2.  Determine the IP address of the machine that is running SAP HANA, express edition.  Record the value as it will be needed in later tutorials in this mission.  It is important to note the IP address or host name of the machine, as this will be needed in later tutorials.
+2.  Determine the IP address of the machine that is running SAP HANA, express edition.  Record the value as it will be needed in later tutorials in the mission.  It is important to note the IP address or host name of the machine, as this will be needed in later tutorials.
 
     ```Shell
     ip addr
@@ -263,7 +268,7 @@ The following steps will demonstrate connecting to and examining a SAP HANA, exp
 
     ![hdbsql commands](hdbsql-commands2.png)
 
-For further information, see [Port Assignment in Tenant Databases](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/440f6efe693d4b82ade2d8b182eb1efb.html) and [Connecting to SAP HANA Databases and Servers](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/b250e7fef8614ea0a0973d58eb73bda8.html).  
+    For further information, see [Port Assignment in Tenant Databases](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/440f6efe693d4b82ade2d8b182eb1efb.html) and [Connecting to SAP HANA Databases and Servers](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/b250e7fef8614ea0a0973d58eb73bda8.html).  
 
 Congratulations!  You now have access to an SAP HANA instance and understand some of the differences between SAP HANA Cloud and SAP HANA, express edition.
 

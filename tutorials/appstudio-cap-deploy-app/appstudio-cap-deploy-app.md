@@ -4,7 +4,7 @@ description: Deploy your CAP Node.js application to Cloud Foundry using SAP Busi
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model]
-primary_tag: products>sap-business-application-studio
+primary_tag: software-product>sap-business-application-studio
 author_name: Paola Laufer
 author_profile: https://github.com/Paolaufer
 
@@ -91,6 +91,8 @@ The result should look as follows:
     !![Tables](authors-tables2.png)
 
 8. In the editor tab that opens, browse the table data and make sure it is correct.
+
+9. Open the **Run Configurations** view.
 
 9. Click the green arrow on the right of the configuration name to run the application.
 
