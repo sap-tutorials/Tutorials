@@ -5,7 +5,7 @@ title: Create Forms for Invoice Approval Process
 description: Create the needed approval and notifications forms for the Invoice Approval Process
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier]
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: software-product>sap-process-automation
 ---
 
