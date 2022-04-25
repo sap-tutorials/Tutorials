@@ -5,6 +5,7 @@ auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud, software-product-function>sap-btp-command-line-interface]
 primary_tag: products>sap-business-technology-platform
+keywords: btp, btp cli, btpcli, command line, command line interface, command line tool, sap btp command line interface
 ---
 
 ## Prerequisites
@@ -66,15 +67,20 @@ The btp CLI is the CLI for working with global accounts on SAP BTP. You use the 
 1. Go to the <a href="https://tools.hana.ondemand.com/#cloud-btpcli">SAP Development Tools</a> page to download the latest version of the btp CLI client for your operating system.
 2. Extract the client executable from the tar.gz archive as follows:
     - Linux: Use the terminal to extract the tar.gz archive with `tar -vxzf <tar.gz name>`
-    - macOS: Open the tar.gz file with a double click
+    - macOS: Open the tar.gz file with a double click.
     - Windows: Use PowerShell to extract the tar.gz archive with `tar -vxzf <tar.gz name>`. Alternatively, use an external tool to extract the executable file to your system.
-3. Run btp from within the extracted folder or ensure that it's in your PATH. In Windows, for example, you can open the folder and type `cmd` or `powershell` into the address bar. On macOS, make sure that the client file is in your PATH and open a terminal session. Note that btp CLI may be blocked because it is "from an unidentified developer". Please refer to the macOS documentation to learn how to bypass this.
+3. Copy the client executable from the unpacked folder to a directory of your choice. We recommend the following:
+    - Linux: `/usr/local/bin`
+    - macOS: `/usr/local/bin`
+    - Windows: `C:/Users/<your-user>`
+4. Ensure that the directory with the btp executable is in your PATH.
+    - macOS: Start the terminal and try executing `btp`. The above-mentioned location should be part of your PATH by default. Note that btp CLI may be blocked because it is "from an unidentified developer". Please refer to the macOS documentation to learn how to bypass this.
+    - Windows: We recommend to add the location of the btp.exe to your path. In Windows search, enter "System Properties" and, under **Advanced**, open **Environment Variables**. Under **User variables**, open **Path** and add the file location of the btp.exe (C:\Users\<your-user>). Now you can run the btp CLI by entering `btp`into Command Prompt or PowerShell.
+5. Open a terminal and enter `btp`.
+
+The output should look similar to this screenshot:
 
 ![CLI info screen](sapcp.png)
-
-You get version and usage information, you learn where the configuration file is located, and you get useful tips how to log in and get help in the client.
-
->To use the examples provided here in PowerShell, you may want to configure an alias for btp.exe with `btp <path-to-folder-with-btp.exe>\btp`.
 
 [DONE]
 [ACCORDION-END]

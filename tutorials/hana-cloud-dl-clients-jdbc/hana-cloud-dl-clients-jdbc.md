@@ -71,7 +71,7 @@ See [JDBC Drivers](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/
     ```Shell (Linux)
     mkdir -p ~/DataLakeClientsTutorial/java
     cd ~/DataLakeClientsTutorial/java
-    nano JavaQuery.java
+    pico JavaQuery.java
     ```
 
 2. Copy the following code into `JavaQuery.java`:

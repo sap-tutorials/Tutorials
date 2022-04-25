@@ -441,9 +441,9 @@ The following steps demonstrate how to use the SAP Business Application Studio o
 
     >![connect as admin](hdi-admin.png)
 
-For an example of creating a calculation view inside an HDI container, see the video titled Develop Apps at the end of the blog post [Getting Started with SAP HANA Cloud II | Basics](https://blogs.sap.com/2020/03/29/getting-started-with-sap-hana-cloud-part-ii/)
+    For an example of creating a calculation view inside an HDI container, see the video titled Develop Apps at the end of the blog post [Getting Started with SAP HANA Cloud II | Basics](https://blogs.sap.com/2020/03/29/getting-started-with-sap-hana-cloud-part-ii/)
 
-The mission [Get Started with XS Advanced Development](mission.xsa-get-started) provides further examples of using an HDI container.
+    The mission [Get Started with XS Advanced Development](mission.xsa-get-started) provides further examples of using an HDI container.
 
 In the next tutorial, additional tables, views, functions, and procedures that will be used in subsequent tutorials in this group will be created directly in the database rather than in an HDI container.
 

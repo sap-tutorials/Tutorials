@@ -1,7 +1,7 @@
 ---
 title: Get Started with SAP Rapid Application Development by Mendix
 description: Set up your SAP Business Technology Platform (BTP) account so you can use SAP Rapid Application Development by Mendix to build applications to be deployed on SAP BTP.
-primary_tag: software-product>sap-rad-by-mendix
+primary_tag: software-product>sap-rapid-application-development-by-mendix
 author_name: Paola Laufer
 auto_validation: true
 tags: [  tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-rad-by-mendix  ]
