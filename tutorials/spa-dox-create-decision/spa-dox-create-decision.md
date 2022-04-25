@@ -5,13 +5,12 @@ title: Create a Decision for Invoice Approval Process
 description: Create a decision to determine the approver of the invoices
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform ,tutorial>free-tier]
 primary_tag: software-product>sap-process-automation
 ---
 
 ## Prerequisites
- - Access to a SAP BTP tenant with SAP Process Automation
- - You have created the process, the form to trigger the process and the automation to extract the invoice data
+ - You have [created the process](spa-dox-create-process), the form to trigger the process and the [automation](spa-dox-create-automation) to extract the invoice data
 
 ## Details
 With a Decision you can include several policies, guidelines, business rules and so on into your process flow.

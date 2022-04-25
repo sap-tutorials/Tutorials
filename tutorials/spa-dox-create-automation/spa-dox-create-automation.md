@@ -5,13 +5,14 @@ title: Create an automation to extract Invoice Details
 description: Extract invoice document using Document Extraction Template to send the invoice details to the process
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform , tutorial>free-tier]
 primary_tag: software-product>sap-process-automation
 ---
 
 ## Prerequisites
+ - Complete the tutorial of creating a process[Create an Invoice Approval Process](spa-dox-create-process)
  - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
- - Download the Invoice Document
+ - Download the Invoice Document to your local machine
 
 ## Details
 ### You will learn
@@ -97,6 +98,8 @@ primary_tag: software-product>sap-process-automation
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create Document Template)]
+
+To work on Document Template please check if you have been assigned to `Document_Information_Extraction_UI_Templates_Admin`  role in SAPBTP Cockpit. Otherwise, add  the role  manually.
 
 1. Create an artifact of type **Document Template**.
 
