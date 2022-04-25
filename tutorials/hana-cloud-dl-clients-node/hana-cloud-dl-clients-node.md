@@ -152,7 +152,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     ```
 
     ```Shell (Linux)
-    nano nodeQuery.js
+    pico nodeQuery.js
     ```
 
 2. Add the code below to `nodeQuery.js`.

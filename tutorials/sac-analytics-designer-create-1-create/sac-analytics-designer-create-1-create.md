@@ -35,11 +35,11 @@ On the home page of the Analytics Application, click on **Create New**.
 
 ![2.1.2](2.1.2.jpg)
 
-Unlike a story, which can have multiple pages, an app comprises of a single canvas where all content is configured. However, to this canvas, we you can add various pop-ups.
+Unlike a story, which can have multiple pages, an app comprises of a single canvas where all content is configured. However, to this canvas, you can add various pop-ups. A Popup is usually a small window on top of the main page of the application. It communicates information to the user or prompts them for inputs. For instance, a Popup can show a description of the application, and another Popup can ask the user to perform configurations. Because the popup acts as a container widget, you can put any other widget into the popup, such as a table, button, or checkbox.
 
-![2.1.3](2.1.3.jpg)
+![2.1.3](2.1.3.2.jpg)
 
-You can also play around with the visibility of widgets based on specific conditions, so you can layer them on top of each other. In addition to the canvas, you can use the Outline panel to help select, manage, and configure widgets and work with scripts and services and the Info Panel to troubleshoot the app using the Errors and Reference List tabs.
+You can also play around with the visibility of widgets based on specific conditions, so you can layer them on top of each other. In addition to the canvas, you can use the **Outline panel** to help select, manage, and configure widgets and work with scripts and services. The **Info Panel** to troubleshoot the app using the Errors and Reference List tabs. We'll show you how to do each with examples below.
 
 [DONE]
 [ACCORDION-END]
@@ -48,25 +48,25 @@ You can also play around with the visibility of widgets based on specific condit
 
 You can add multiple widgets to the app such as charts, tables, and other objects that are also available in stories, along with a variety of analytic application-specific controls.
 
+In order to retrieve the right model, go to **Content Network / Samples** in the side Navigation Bar and import the **Analytics Designer** Sample Content.
+
 ![2.1.4](2.1.4.jpg)
 
-As with stories, the main way to display data in apps is by using charts and tables. You will add one of each.
-
-Before you move on, go to **Content Network / Samples** in the side Navigation Bar and import the **Analytics Designer** Sample Content.
+As with stories, the main way to display data in apps is by using charts and tables. You should now click on each to add both a chart and table.
 
 ![2.1.4](2.1.4.2.png)
 
-Now go back to the analytic application and navigate through the folder structure to find the `BestRun_Advanced`.
+Now go back to the analytic application and create a chart and table, then select `BestRun_Advanced` as the model for both.
 
 ![2.1.5](2.1.5.png)
 
 The Designer panel then opens automatically so you can configure and style the widget.  
 
-In Builder mode, you can define the measures and dimensions you want to display. Here, let's show `Quality Sold` and `Gross Margin` by state in both a bar chart and table format.
+In Builder mode, you can define the measures and dimensions you want to display. Here, let's select `Quality Sold` and `Gross Margin` as the Measures and `Location` as the Dimension for both the bar chart and table you created.  
 
 ![2.1.6](2.1.6.jpg)
 
-Now that the application contains data, let's add other controls and scripts to define how and when certain types of content display.
+Now that the application contains data, let's add other controls and scripts to define how and when certain types of content display. Now save the application with the name `FirstApplication`.
 
 [DONE]
 [ACCORDION-END]
@@ -74,11 +74,11 @@ Now that the application contains data, let's add other controls and scripts to 
 
 [ACCORDION-BEGIN [Step 3: ](Add Scripting in the Application)]
 
-You can add logic in the application to display either the chart or table. Let's add a button at the top of the canvas and name it "Show Table".
+You can add logic in the application to display either the chart or table. Add a button at the top of the canvas and name it "Show Table".
 
 ![2.1.7](2.1.7.jpg)
 
-We then create a script variable called `isChart` and set the default value to `false`.
+Create a script variable called `isChart` and set the type to `Boolean` and the default value to `false`.
 
 ![2.1.8](2.1.8.jpg)
 
@@ -114,7 +114,7 @@ Run the application and click the button multiple times. The table or the chart 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](XXXXX)]
+[ACCORDION-BEGIN [Step 4: ](Test Yourself)]
 
 [VALIDATE_1]
 

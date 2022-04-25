@@ -127,7 +127,7 @@ The following steps are for illustrative purposes only and are not meant to be f
 
 2. The import data wizard provides a corresponding option to import from cloud storage providers.
 
-    ![Export Data Wizard](importDataWizard3-1.png)
+    ![Export Data Wizard](importDataWizard3.png)
 
     The wizard makes use of the import from statement.  An example is shown below:
 
@@ -189,9 +189,6 @@ The following steps walk through the process of exporting to and importing data 
     SELECT * FROM CREDENTIALS;
     --DROP CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'gcsImport' TYPE 'PASSWORD';
     ```
-
-    >There is a known bug where SQL console may erroneously display a message with the text "CREDENTIAL is not supported." This can be ignored.
-
 
     !![Create Credential](createCredential.png)
 
@@ -361,7 +358,7 @@ Similar to the first section, the maintenance table will be exported and re-impo
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Use Azure cloud storage for exports and imports of catalogue objects (optional))]
+[ACCORDION-BEGIN [Step 5: ](Use Azure cloud storage for exports and imports of catalog objects (optional))]
 
 The following steps walk through the process of using Microsoft Azure storage service as a target for an export catalog operation.
 
@@ -381,7 +378,7 @@ The following steps walk through the process of using Microsoft Azure storage se
 
 5. Generate an API key.
 
-    ![Generate API Key](GenerateAPIKey.png)
+    ![Generate API Key](GenerateAPIKey1.png)
 
     Specify that the permissions and the expiry time.
 
@@ -431,7 +428,7 @@ The following steps walk through the process of using Microsoft Azure storage se
 
     The Azure Path is of the format:
 
-    \<Storage Account Name>:<generated shared access string minus the leading?><@Container Name>/\<File Name>
+    `<Storage Account Name>:<generated shared access string>@<Container Name>/<File Name>`
 
     An example string is shown below:
 
@@ -470,6 +467,182 @@ The following steps walk through the process of using Microsoft Azure storage se
     ```SQL
     IMPORT HOTEL.MAINTENANCE FROM 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance' WITH REPLACE;
     ```
+
+    For additional details see the topic [Importing and Exporting Data](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/261937915fa5438ca545b8278b2979b7.html) in the SAP HANA Cloud Administration Guide.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Use Amazon Web Services (AWS) S3 for exports and imports of catalog objects (optional))]
+
+The following steps walk through the process of AWS S3 storage service as a target for an export catalog operation.
+
+1. Log in to the [AWS S3 Management Console](https://console.aws.amazon.com/s3/home).
+
+2. Navigate to the S3 storage service.
+
+    ![S3 storage service](awsStorageS3.png)
+
+3. Create an AWS bucket.
+
+    ![Bucket](createAWSBucket1.png)
+
+    Provide a unique bucket name, choose your AWS region, and finish creating the bucket.
+
+    ![Bucket](createAWSBucket2.png)
+
+4. Create a IAM User.
+
+    It is recommended that you create an IAM User instead of using the root account to manage the S3 bucket. If you already have an existing IAM User, then feel free to skip this step, and go ahead and [generate an access key and secret key for an existing IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+
+    To create an IAM User, begin by logging in with your root credentials, and navigate to the **Security Credentials** tab.
+
+    ![Security Credentials Tab](securityCredentialsPage.png)
+
+    Select add users.
+
+    ![New User](addUser.png)
+
+    Specify user details such as **User name** and select the **AWS credential type**.
+
+    ![User Details](addUserDetails.png)
+
+    Select **Attach existing policies directly** and provide full Amazon S3 Access.
+
+    ![User Permissions](addUserPermissions.png)
+
+    Finish creating the user.
+
+    !![Finish creating user](finishCreatingUser.png)
+
+    **Copy and Save** the ***Access key ID*** and ***Secret access key***, as it will be required in step 5.
+
+    ![Access Key](accessKey.png)
+
+5. In the SAP HANA database explorer, add the certificate used by AWS to the HANA Cloud PSE. Replace the \<SELECTED_CERTIFICATE_ID> with the value returned from the previous select statement.
+
+    The certificate below is the [Baltimore `CyberTrust` Root certificate](https://www.digicert.com/kb/digicert-root-certificates.htm).
+
+    ```SQL[6]
+    SELECT * FROM PSES;
+    CREATE PSE HTTPS;
+    SELECT * FROM CERTIFICATES;
+    CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----
+    MIIDdzCCAl+gAwIBAgIEAgAAuTANBgkqhkiG9w0BAQUFADBaMQswCQYDVQQGEwJJ
+    RTESMBAGA1UEChMJQmFsdGltb3JlMRMwEQYDVQQLEwpDeWJlclRydXN0MSIwIAYD
+    VQQDExlCYWx0aW1vcmUgQ3liZXJUcnVzdCBSb290MB4XDTAwMDUxMjE4NDYwMFoX
+    DTI1MDUxMjIzNTkwMFowWjELMAkGA1UEBhMCSUUxEjAQBgNVBAoTCUJhbHRpbW9y
+    ZTETMBEGA1UECxMKQ3liZXJUcnVzdDEiMCAGA1UEAxMZQmFsdGltb3JlIEN5YmVy
+    VHJ1c3QgUm9vdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKMEuyKr
+    mD1X6CZymrV51Cni4eiVgLGw41uOKymaZN+hXe2wCQVt2yguzmKiYv60iNoS6zjr
+    IZ3AQSsBUnuId9Mcj8e6uYi1agnnc+gRQKfRzMpijS3ljwumUNKoUMMo6vWrJYeK
+    mpYcqWe4PwzV9/lSEy/CG9VwcPCPwBLKBsua4dnKM3p31vjsufFoREJIE9LAwqSu
+    XmD+tqYF/LTdB1kC1FkYmGP1pWPgkAx9XbIGevOF6uvUA65ehD5f/xXtabz5OTZy
+    dc93Uk3zyZAsuT3lySNTPx8kmCFcB5kpvcY67Oduhjprl3RjM71oGDHweI12v/ye
+    jl0qhqdNkNwnGjkCAwEAAaNFMEMwHQYDVR0OBBYEFOWdWTCCR1jMrPoIVDaGezq1
+    BE3wMBIGA1UdEwEB/wQIMAYBAf8CAQMwDgYDVR0PAQH/BAQDAgEGMA0GCSqGSIb3
+    DQEBBQUAA4IBAQCFDF2O5G9RaEIFoN27TyclhAO992T9Ldcw46QQF+vaKSm2eT92
+    9hkTI7gQCvlYpNRhcL0EYWoSihfVCr3FvDB81ukMJY2GQE/szKN+OMY3EU/t3Wgx
+    jkzSswF07r51XgdIGn9w/xZchMB5hbgF/X++ZRGjD8ACtPhSNzkE1akxehi/oCr0
+    Epn3o0WC4zxe9Z2etciefC7IpJ5OCBRLbf1wbWsaY71k5h+3zvDyny67G7fyUIhz
+    ksLi4xaNmjICq44Y3ekQEe5+NauQrz4wlHrQMz2nZQ/1/I6eYs9HRCwBXbsdtTLS
+    R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp-----END CERTIFICATE-----' COMMENT 'S3';
+    SELECT CERTIFICATE_ID FROM CERTIFICATES WHERE COMMENT = 'S3';
+    ALTER PSE HTTPS ADD CERTIFICATE <SELECTED_CERTIFICATE_ID>;
+    SET PSE HTTPS PURPOSE REMOTE SOURCE;
+    ```
+
+    Additional details can be found at [Certificate Management in SAP HANA Cloud](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/latest/en-US/1e6042c4402545f7a0574f7bc91fab25.html).
+
+6. Create Credentials (Optional)
+
+    Execute the following SQL to store the access key and secret key as a credential in the database.  
+
+    ```SQL
+    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'AWS' TYPE 'PASSWORD' USING 'user=<access_key>;password=<secret_key>';
+    SELECT * FROM CREDENTIALS;
+    --DROP CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'AWS' TYPE 'PASSWORD';
+    ```
+
+    Use the `access_key` and `secret_key` from Step 3. Additionally, if you didn't follow step 3 as you have an existing IAM user, then [generate an access key and secret key for an existing IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+
+    !![Create Credential](createAWSCredential.png)
+
+    Additional details can be found at [CREATE CREDENTIAL Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d3f464751910148968e73782586ed0.html) and [CREDENTIALS System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209fabf875191014b8f2a4731c564884.html).
+
+7. Start the export catalog wizard and export the maintenance table to the storage service.
+
+    The AWS S3 Path (in the Export Catalog Objects Wizard) is of the format:
+
+    `<access_key>:<secret_key>@<bucket_name>/<object_id>`
+
+    Use the `access_key` and `secret_key` from Step 3. Additionally, if you didn't follow step 3 as you have an existing IAM user, then [generate an access key and secret key for an existing IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+
+    An example string is shown below:
+
+    `AKIA3JHRPYB6KY3LSI76:dW9q+KxA0rgtaoBY3MnAAQIS96ypVEDvgxE8rIpt@maitrysawsbucket/maintenance`
+
+    ![Export Data Wizard](exportAWSStorageWizard.png)
+
+    Pressing the Compose button shows the parsed AWS S3 path.
+
+    ![Compose](exportAWSCompose.png)
+
+    After the Export button is pressed, the results can be seen in the AWS S3 Console.
+
+    ![Export Result](exportAWSResult.png)
+
+    The equivalent SQL statement is shown below:
+
+    ```SQL
+    --EXPORT HOTEL.MAINTENANCE AS PARQUET INTO 's3-<region>://<access_key>:<secret_key>@<bucket>/<object_id>' WITH REPLACE;
+    EXPORT HOTEL.MAINTENANCE AS PARQUET INTO 's3-us-east-1://AKIA3JHRPYB6KY3LSI76:dW9q+KxA0rgtaoBY3MnAAQIS96ypVEDvgxE8rIpt@maitrysawsbucket/maintenance' WITH REPLACE;
+    ```
+
+    Alternatively, the previously stored credentials can be used for export:
+
+    ```SQL
+    --EXPORT HOTEL.MAINTENANCE AS PARQUET INTO 's3-<region>://<bucket>/<objectKey>' WITH CREDENTIAL 'AWS';
+    EXPORT HOTEL.MAINTENANCE AS PARQUET INTO 's3-us-east-1://maitrysawsbucket/maintenance' WITH CREDENTIAL 'AWS';
+    ```    
+
+    > An error regarding an invalid SSL certificate indicates an incorrect SSL certificate is being used.  Additionally, if MFA (Multi-factor Authentication) is enabled, then the export may fail, so ensure that MFA is disabled before exporting.
+
+8. Enter the SQL statement below to drop the table. It will be added back in the next step.
+
+    ```SQL
+    DROP TABLE HOTEL.MAINTENANCE;
+    ```
+
+9. Import the table using the import catalog objects wizard.
+
+    The AWS S3 Path (in the Import Catalog Objects Wizard) is of the format:
+
+    `<access_key>:<secret_key>@<bucket_name>/<object_id>`
+
+    An example string is shown below:
+
+    `AKIA3JHRPYB6KY3LSI76:dW9q+KxA0rgtaoBY3MnAAQIS96ypVEDvgxE8rIpt@maitrysawsbucket/maintenance`
+
+    Select **Load** to load the catalog object in the wizard.
+
+    ![Import Catalog Wizard](importAWSStorageWizard.png)
+
+    The contents of the maintenance table should now be the same as it was before the previously executed drop statement.
+
+    The equivalent SQL statement is shown below:
+
+    ```SQL
+    --IMPORT HOTEL.MAINTENANCE AS PARQUET FROM 's3-<region>://<access_key>:<secret_key>@<bucket>/<object_id>' WITH REPLACE;
+    IMPORT HOTEL.MAINTENANCE AS PARQUET FROM 's3-us-east-1://AKIA3JHRPYB6KY3LSI76:dW9q+KxA0rgtaoBY3MnAAQIS96ypVEDvgxE8rIpt@maitrysawsbucket/maintenance' WITH REPLACE;
+    ```    
+
+    Alternatively, the previously stored credentials can be used for import:
+
+    ```SQL
+    --EXPORT HOTEL.MAINTENANCE AS PARQUET FROM 's3-<region>://<bucket>/<objectKey>' WITH CREDENTIAL 'AWS';
+    IMPORT HOTEL.MAINTENANCE AS PARQUET FROM 's3-us-east-1://maitrysawsbucket/maintenance' WITH CREDENTIAL 'AWS';
+    ```    
 
     For additional details see the topic [Importing and Exporting Data](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/latest/en-US/261937915fa5438ca545b8278b2979b7.html) in the SAP HANA Cloud Administration Guide.
 

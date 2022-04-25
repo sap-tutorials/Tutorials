@@ -149,9 +149,10 @@ Your workspace is an entity containing your project's settings, debug configurat
     | C | Application namespace | **ns** |
     | D | Description | **An SAPUI5 freestyle app to view a list of suppliers (demo)** |
     | E | Project folder path | **`/home/user/projects/FioriDemo`** |
-    | F | Add deployment configuration | **Yes** (default after setting the project folder path)|
-    | G | Add FLP configuration | **Yes** |
-    | H | Configure advanced options | **No** (default) |
+    | F | Minimum SAPUI5 version | **1.84.14 (Source system version)** (default) |
+    | G | Add deployment configuration | **Yes** (default after setting the project folder path)|
+    | H | Add FLP configuration | **Yes** |
+    | I | Configure advanced options | **No** (default) |
 
     !![Project Attributes](BAS-Generate-App-6-1-.png)
 
@@ -170,12 +171,12 @@ Your workspace is an entity containing your project's settings, debug configurat
     |:-----|:----------|:------|
     | A | Semantic Object | **Object** |
     | B | Action | **display** |
-    | B | Title | **`{{appTitle}}`** |
-    | B | Subtitle (optional) | **`{{appSubTitle}}`** |
+    | B | Title | **Suppliers** |
+    | B | Subtitle (optional) | **Our Suppliers** |
 
     !![launchpad configuration](BAS-Generate-App-8-1-.png)
 
-9. Wait until the installation of project dependencies is completed. A notification that "The project has been generated" appears at the bottom right of the screen and the files and project structure in the **Explorer** view are updated.
+9. Wait until the installation of project dependencies is completed. A notification that "The project has been generated" appears at the bottom right of the screen, The **Application Information** tab is opened, and the files and project structure in the **Explorer** view are updated.
 
     !![application generated](BAS-Generate-App-10-1-.png)
 
