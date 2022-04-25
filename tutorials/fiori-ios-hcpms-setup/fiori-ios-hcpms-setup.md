@@ -62,7 +62,7 @@ Once SAP Mobile Services is available, you can use its features in your Mobile d
 
     !![enter subaccount](img-1.2.png)
 
-2. In the left pane, choose ![Services](icon-services.png) **Services** **&rarr;** **Service Marketplace**.
+2. In the left pane, choose **Services** **&rarr;** **Service Marketplace**.
 
     >The **Service Marketplace** is where you can find services to attach to any of your applications. These services are provided by SAP BTP to create, and produce applications quickly and easily. Once a service has been created, it is known as a `service instance`.
 
