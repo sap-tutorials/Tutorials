@@ -1,6 +1,6 @@
 ---
 auto_validation: true
-title: Create a SAP Fiori app and deploy it to SAP S/4HANA Cloud, ABAP Environment
+title: Create a SAP Fiori App and Deploy it to SAP S/4HANA Cloud, ABAP Environment
 description: Create a SAP Fiori app for a RAP business object in SAP Business Application Studio and deploy it to SAP S/4HANA Cloud, ABAP Environment.
 primary_tag: software-product-function>s-4hana-cloud-abap-environment
 tags:  [ tutorial>beginner, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment, programming-tool>abap-development]

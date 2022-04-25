@@ -1,9 +1,9 @@
 ---
 auto_validation: true
-title: Develop SAP Fiori App & Deploy to Cloud Foundry Using SAP-managed App Router​
-description: Develop SAP Fiori App & Deploy to Cloud Foundry Using SAP-managed App Router​
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform, products>sap-business-application-studio ]
+title: Create a SAP Fiori App and Deploy it to SAP BTP, Cloud Foundry environment
+description: Create a SAP Fiori app using SAP-managed app router for a RAP business object from SAP BTP, ABAP Environment in SAP Business Application Studio and deploy it to SAP BTP, Cloud Foundry environment.
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, software-products>sap-business-application-studio ]
 time: 45
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
