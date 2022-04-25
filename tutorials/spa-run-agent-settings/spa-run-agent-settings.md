@@ -3,14 +3,16 @@ title:  Agent Management Settings to Execute the Process with an Automation
 description: Create an agent attribute in the tenant to add it to your agent and project
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: software-product>sap-process-automation
 ---
 
 ## Prerequisites
- - Access to a SAP BTP tenant with SAP Process Automation
+ - Access to a [SAP BTP tenant with SAP Process Automation](spa-subscribe-booster)
 
 ## Details
+Agent attributes allow you to sort agents  and make sure that a specific agent executes the job of your choice.
+
 ### You will learn
   - How to create an Agent Attribute in the tenant.
   - How to add the attribute to your agent.
