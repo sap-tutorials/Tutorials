@@ -12,7 +12,7 @@ primary_tag: software-product>sap-process-automation
 ## Prerequisites
  - Complete the tutorial of creating a process[Create an Invoice Approval Process](spa-dox-create-process)
  - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
- - Download the Invoice Document to your local machine
+ - Download the [Invoice Document](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/spa-dox-create-automation/invoice.pdf) to your local machine
 
 ## Details
 ### You will learn
@@ -99,7 +99,9 @@ primary_tag: software-product>sap-process-automation
 
 [ACCORDION-BEGIN [Step 4: ](Create Document Template)]
 
-To work on Document Template please check if you have been assigned to `Document_Information_Extraction_UI_Templates_Admin`  role in SAPBTP Cockpit. Otherwise, add  the role  manually.
+  You are now navigated to Document Information Extractor. It allows you to edit and annotate the template. To work on Document Information Extractor, please check if you have been assigned to `Document_Information_Extraction_UI_Templates_Admin` role in SAPBTP Cockpit. Otherwise, add the role manually. You would error as below if you do not have DOX roles.
+
+    !![DOX error](DOXroleserror.png)
 
 1. Create an artifact of type **Document Template**.
 
