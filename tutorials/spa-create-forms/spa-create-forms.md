@@ -76,7 +76,7 @@ Let us now explore how these different forms are created. In the steps below you
 
 4. Save the form using **Save** button on top-right corner of the screen.
 
-    ### Your Trigger form are ready!
+    ### Your trigger form is ready!
 
     ![Trigger Form](unit3-04.png)
 
