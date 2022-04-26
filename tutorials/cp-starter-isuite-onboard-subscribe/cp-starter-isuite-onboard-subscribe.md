@@ -44,7 +44,7 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 
 > - **Are you new to SAP BTP?** - skip the rest of the note and continue with the tutorial.
 
-> - You already have a SAP BTP account but new to SAP Integration Suite:
+> - You already have a SAP BTP trial account but new to SAP Integration Suite:
 
 >     - If you have already activated Cloud Integration (Process Integration) or API Management services in a subaccount:
           - **Option 1**:
@@ -98,9 +98,22 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 
     !![Create Subscription](3-4-Create_Subscription.png)
 
-5. You are subscribed to the service now. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the **Integration Suite Launchpad**.
+5. You are subscribed to the service now. In the **Roles** section of your subscription, check if a Role Template by the name **Integration Provisioning Admin** is added automatically. If added, skip the next two sub-steps and proceed to sub-step 8. Else, continue with the next sub-step.
 
-    !![Go to Application](3-5-Go-to-Application.png)
+    !![Check Roles](3-5-Check-Roles.png)
+
+6. Select **Security > Users**. Choose the entry against your name. In the **Role Collections** section, choose **Assign Role Collection**.
+
+    !![Assign Roles](3-6-Assign-Roles.png)
+
+7. In the dialog that appears, select **Integration Provisioner**. Choose **Assign Role Collection**.
+
+    !![Assign Role Collection](3-7-Assign-Role-Collection.png)
+
+8. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the **Integration Suite Launchpad**.
+
+    !![Assign Role Collection](3-8-Go-to-Application.png)
+
 
 [DONE]
 [ACCORDION-END]
