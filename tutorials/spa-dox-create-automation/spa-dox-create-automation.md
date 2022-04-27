@@ -136,7 +136,7 @@ primary_tag: software-product>sap-process-automation
 
 [ACCORDION-BEGIN [Step 5: ](Annotate and Activate the Document Template)]
 
-1. You are now navigated to Document Information Extractor. It allows you to edit and annotate the template. To work on Document Information Extractor, please check if you have been assigned to `Document_Information_Extraction_UI_Templates_Admin` role in SAPBTP Cockpit. Otherwise, add the role manually. You would error as below if you do not have DOX roles.
+1. You are now navigated to Document Information Extractor. It allows you to edit and annotate the template. To work on Document Information Extractor, please check if you have been assigned to `Document_Information_Extraction_UI_Templates_Admin` role in SAP BTP Cockpit. Otherwise, add the role manually. You would get an error as below if you do not have DOX roles.
 
     !![DOX roles error](DOXroleserror.png)
 
