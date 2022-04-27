@@ -138,7 +138,7 @@ Video version of tutorial: </br>
 
     !![Bind Project](start_bind.png)
 
-4. If you receive either of these two following warning dialogs, please just choose **Continue** (nothing will be deleted because we are create a new HDI Container Instance) and **Enable** (automatic undelploy is quite helpful during the development process for the reasons described in this dialog)
+4. If you receive either of these two following warning dialogs, please just choose **Continue** (nothing will be deleted because we are create a new HDI Container Instance) and **Enable** (automatic undeploy is quite helpful during the development process for the reasons described in this dialog)
 
     !![Binding Warning #1](warning1.png)
 
