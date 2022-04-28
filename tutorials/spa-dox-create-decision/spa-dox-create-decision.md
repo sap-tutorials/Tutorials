@@ -22,7 +22,7 @@ With a Decision you can include several policies, guidelines, business rules and
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add a Decision and Create a Data Type)]
+[ACCORDION-BEGIN [Step 1: ](Add a decision and create a data type)]
 
 You will now add a decision to the flow of your process. With this you are able to include business logic.
 
@@ -79,68 +79,70 @@ You will now add a decision to the flow of your process. With this you are able 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Decision Table)]
+[ACCORDION-BEGIN [Step 2: ](Create a decision table)]
 
 There are many ways to express a business rule, in this case you will create a decision table to determine the approver of the invoice based on certain criteria.
 
-1. Choose **Add Decision Table**.
+1. Choose **Add Rule**.
 
     !![Add Decision Table](14.png)
 
-2. Maintain the **Name** **`DT Determine Approver`** and also the **Description**. Choose **Add**.
+2. Set the **Rule Name** to **DT Determine Approver** and the **Description** to **Decision Table to determine approver**. Choose **Next Step**.
 
     !![Decision Table Name](15.png)
 
-3. Open the decision table **DT Determine Approver**.
+3. You will now configure the conditions. Under **Data Types**, choose **Determine Approver Input** and select **Sender Name**.
 
-    !![Open decision table](16.png)
+    !![Determine Approver Input](16.png)
 
-4. To make it easier to maintain the following configuration steps, select **Enter Full Screen Mode**.
+4. Choose **Next Step** to configure the results.
 
-    !![Full Screen Mode](17.png)
+    !![Next Step](16bis.png)
 
-5. First, define the **Decision Table Settings**.
+5. Under **Data Types**, select **Determine Approver Output**
 
-    !![Decision Table Settings](18.png)
+    !![Determine Approver Output](17.png)
 
-6. Select the box underneath **Condition Expressions** and press space bar to access the **Suggestions**. There select **Determine Approver Input**.
+6. Select **eMail**.
 
-    !![Determine Approver Input](19.png)
+    !![Select Email](18.png)
 
-7. Select **Sender Name**.
+7. Select **Next Step** to review.
 
-    !![Select Sender Name](20.png)
+    !![Next Step](19.png)
+
+8. Choose **Create** to create the rule.
+
+    !![Create](20.png)
+
+5. Lets define the **Decision Table Settings**.
+
+    !![Decision Table Settings](21.png)
 
 8. The **Condition Expression** needs a label, maintain **Company Name**. This will be the label of the "If" column in the decision table.
 
-    !![Company Name](21.png)
+    The settings are done, **Condition Expressions**, **Label** as well as **Result** are defined. Choose **Apply**.
 
-9. Below, open **Result** and select the result **Determine Approver Output**. This will be the output parameter of the result of your decision table.
+    !![Company Name](22.png)
 
-    !![Result](22.png)
-
-10. Now the settings are done, **Condition Expressions**, **Label** as well as **Result** are defined. Notice it automatically selects **eMail** as output, as you have defined it earlier after creating the new data type. Choose **Apply**.
-
-    !![Apply Decision Table settings](23.png)
-
-11. Define the attributes for **Company Name** **`EXISTSIN['ABC Communication']`** and **eMail** **`<your SAP BTP user ID, e.g. diana.smith@mail.com>`**. You can also make use of the value help, by pressing the space bar before maintaining the expression in the first column.
+9. Define the attributes for **Company Name** **`EXISTSIN['ABC Communication']`** and **eMail** **`<your SAP BTP user ID, e.g. diana.smith@mail.com>`**. You can also make use of the value help, by pressing the space bar before maintaining the expression in the first column.
 
     This means, if the company name in the invoice is "ABC Communication", then the approval request will be sent to you. Otherwise...follow the next step.
 
-    !![If Then](24.png)
+    !![If Then](23.png)
 
-12. In case the **Company Name** is defined as **`EXISTSIN['Telecommunications']`**, the approval request should be sent to **`'jane.doe@sap.com'`** or whatever recipient you might want to choose. Select the first row and **Add Row** to **Insert After**. Then maintain the row accordingly.
+10. In case the **Company Name** is defined as **`EXISTSIN['Telecommunications']`**, the approval request should be sent to **`'jane.doe@sap.com'`** or whatever recipient you might want to choose. Select the first row and **Add Row** to **Insert After**. Then maintain the row accordingly.
 
-    !![Add Row](25.png)
+    !![Add Row](24.png)
 
-13. **Save** your work, your decision table is ready.
+11. **Save** your work, your decision table is ready.
 
-    !![Decision ready](27.png)
+    !![Decision ready](25.png)
 
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Maintain Input and Output of the Decision)]
+[ACCORDION-BEGIN [Step 3: ](Maintain input and output of the decision)]
 
 Though the Decision is ready, you need to connect it to the data flow of your process and define which data should be the input and output here. Also to get rid of this error marker.
 
