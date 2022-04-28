@@ -12,7 +12,7 @@ primary_tag: software-product>sap-process-automation
 ## Prerequisites
  - Complete the tutorial of creating a process[Create an Invoice Approval Process](spa-dox-create-process)
  - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
- - Download the Invoice Document to your local machine
+ - Download the [Invoice Document](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/spa-dox-create-automation/invoice.pdf) to your local machine
 
 ## Details
 ### You will learn
@@ -99,8 +99,6 @@ primary_tag: software-product>sap-process-automation
 
 [ACCORDION-BEGIN [Step 4: ](Create Document Template)]
 
-To work on Document Template please check if you have been assigned to `Document_Information_Extraction_UI_Templates_Admin`  role in SAPBTP Cockpit. Otherwise, add  the role  manually.
-
 1. Create an artifact of type **Document Template**.
 
     !![7-png](7.png)
@@ -138,17 +136,19 @@ To work on Document Template please check if you have been assigned to `Document
 
 [ACCORDION-BEGIN [Step 5: ](Annotate and Activate the Document Template)]
 
-    You are now navigated to Document Information Extractor. It allows you to edit and annotate the template.
+1. You are now navigated to Document Information Extractor. It allows you to edit and annotate the template. To work on Document Information Extractor, please check if you have been assigned to `Document_Information_Extraction_UI_Templates_Admin` role in SAP BTP Cockpit. Otherwise, add the role manually. You would get an error as below if you do not have DOX roles.
 
-1. Select the **Document Name**.
+    !![DOX roles error](DOXroleserror.png)
+
+2. Select the **Document Name**.
 
     !![12-png](12.png)
 
-2. Choose  **Annotate**.
+3. Choose  **Annotate**.
 
     !![14-png](14.png)
 
-3.  Choose **Edit**.
+4.  Choose **Edit**.
 
     !![Link text e.g., Destination screen](15.png)
 
@@ -169,7 +169,7 @@ To work on Document Template please check if you have been assigned to `Document
 
         !![18-png](18.png)
 
-  4. The mapping of the data in the invoice and fields are mapped. Choose **Save** and **Activate** the template.
+  5. The mapping of the data in the invoice and fields are mapped. Choose **Save** and **Activate** the template.
 
     !![Save](SaveActivate.png)
 
