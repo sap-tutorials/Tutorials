@@ -96,7 +96,7 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 3. Navigate to the directory where the `.odbc.ini` file is located, similar to the one highlighted in the screenshot above. Open or create the `.odbc.ini` file with the following command:
 
     ```Shell (Linux)
-    nano .odbc.ini
+    pico .odbc.ini
     ```
 
 4. Configure the values of `driver` and `host` so that they conform with your setup.

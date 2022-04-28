@@ -51,33 +51,33 @@ Using this application, you can:
 
 To do that, you must register your SAP S/4HANA Cloud system in your global account in SAP BTP. During this process, an integration token is created and then used by the SAP S/4HANA Cloud system tenant administrator to configure the integration on the SAP S/4HANA Cloud system side.
 
-1. In the SAP BTP cockpit, navigate to your global account, and then choose **System Landscape** > **Systems**.
+1. In the SAP BTP cockpit, navigate to your global account, and then choose **System Landscape**.
 
-2. In the **Systems** panel, choose **Register System**.
+2. In the **Systems** tab, choose **Add System**.
 
-    ![In the **Systems** panel, choose **Register System**.](screenshots.png/1-systems-view.png)
+    ![In the **Systems** panel, choose **Add System**.](screenshots.png/1-systems-view-new.png)
 
-3. In the **Register** System dialog box:
+3. In the **Add System** dialog box:
 
     - Enter a name for the system you want to register.
 
         >Use only printable ASCII characters.
 
-        ![Enter a name for the system you want to register.](screenshots.png/2-systems-view.png)
+        ![Enter a name for the system you want to register.](screenshots.png/2-systems-view-new.png)
 
     - In the **Type** dropdown list, select the system type.
 
-        ![In the **Type** dropdown list, select the system type.](screenshots.png/3-systems-view.png)
+        ![In the **Type** dropdown list, select the system type.](screenshots.png/3-systems-view-new.png)
 
-    - Choose **Register**.
+    - Choose **Add**.
 
         > SAP BTP generates an integration token that the tenant administrator of the extended SAP S/4HANA Cloud system uses when configuring the integration between your SAP S/4HANA Cloud system and the cloud platform on the respective SAP S/4HANA Cloud system side.
 
-4. Copy the integration token. You need it for configuring the integration on the extended SAP S/4HANA Cloud system side.
+4. To get a token to register this system with global account, choose **Get Token**. You need it for configuring the integration on the extended SAP S/4HANA Cloud system side.
 
-5. Close the dialog box.
+5. Copy the registration token and close the dialog box.
 
-    > The SAP S/4HANA Cloud system appears in the list of registered systems. Its status is **Pending** because the registration process is not yet completed.
+    > The SAP S/4HANA Cloud system appears in the list of added systems. Its status is **Pending** because the registration process is not yet completed.
 
 [DONE]
 [ACCORDION-END]
@@ -100,13 +100,13 @@ To do that, you must register your SAP S/4HANA Cloud system in your global accou
 
     > The status of the integration should have changed to **Enabled**.
 
-6. In the SAP BTP cockpit, check the status of the registration process. To do so, navigate to your global account, and on the **Systems** page, check if the status of the SAP system has changed to **Registered**.
+6. In the SAP BTP cockpit, check the status of the registration process. To do so, navigate to your global account, and on the **System Landscape** page, check if the status of the SAP system has changed to **Registered**.
 
-    > If you are already on the **Systems** page, refresh the page to check if the status has changed.
+    > If you are already on the **System Landscape** page, refresh the page to check if the status has changed.
 
     > You can register a system only once with the same name per global account.
 
-    ![Check if the status of the SAP System has changed to **Registered**.](screenshots.png/5-systems-view.png)
+    ![Check if the status of the SAP System has changed to **Registered**.](screenshots.png/5-systems-view-new.png)
 
 [DONE]
 [ACCORDION-END]

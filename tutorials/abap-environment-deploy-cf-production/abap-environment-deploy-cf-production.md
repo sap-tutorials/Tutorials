@@ -1,7 +1,7 @@
 ---
 auto_validation: true
-title: Develop and Run SAP Fiori Application With SAP Business Application Studio
-description: Develop and run your SAP Fiori application with SAP Business Application Studio
+title: Create a SAP Fiori App and Deploy it to SAP BTP, ABAP Environment
+description: Create a SAP Fiori app for a RAP business object from SAP BTP, ABAP Environment in SAP Business Application Studio and deploy it to SAP BTP, ABAP Environment.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, software-products>sap-business-application-studio ]
 time: 25

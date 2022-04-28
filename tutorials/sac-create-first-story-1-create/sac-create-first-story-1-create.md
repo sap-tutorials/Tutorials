@@ -11,7 +11,7 @@ primary_tag: software-product>sap-analytics-cloud
 
 ## Prerequisites
  - You have access to an SAP Analytics Cloud account
- - Download this [sample dataset](https://github.com/andrewliu-SAP/Dataset-for-Developer-Tutorial) that details the products, sales, and Geo codes for a fashion retail store
+ - Download this [sample dataset](https://d.dam.sap.com/a/fAJmXck?rc=10) that details the products, sales, and Geo codes for a fashion retail store.
  - Please use the latest version of Google Chrome or Microsoft Edge to access your SAP Analytics Cloud
 
 ## Details
@@ -26,11 +26,15 @@ primary_tag: software-product>sap-analytics-cloud
 
   By the end of this tutorial group, you will have a sales dashboard that looks like this:  
 
-  ![Sneak peak](Sneakpeak.png)
+  ![Sneak peak](sneakpeak resized.png)
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a Story)]
+<!--
+| File   | Link |
+|  :------------- | :------------- |
+|  `fashiondataset.csv` | [Download Here](https://github.com/andrewliu-SAP/Dataset-for-Developer-Tutorial) | -->
 **Stories** represent the dashboard and reporting features of SAP Analytics Cloud and provide you with a way to bring data and visualizations together to tell the story of your business.
 
 **1.** Click **Stories** from the Main Menu/Navigation bar  
@@ -120,7 +124,7 @@ After enriching the Country coordinate, you will see a new column added with bot
 
 **12.** Repeat the same process for the City coordinates and call the Dimension name **`City_Location`**
 
-![Enrich Cities](Enrich Cities.png)
+![Enrich Cities](Enrich Cities resized.png)
 
 Lastly, let's enrich our Regions, Countries, and Cities by Area Name.
 

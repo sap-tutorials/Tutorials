@@ -61,7 +61,7 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
 
     ![Provided catalogs](provided-catalogues.png)
 
-    >Commands can also be scheduled.  An example may be to schedule the start and stopping of a database instance.  
+    >Commands can also be scheduled.  An example may be to schedule the starting and stopping of a database instance.  
 
 5. It is possible to create commands using BASH, Node.js, Python or Perl.  A provided example command is included for each type as shown below.
 
@@ -192,6 +192,8 @@ This step will create a catalog that contains a command and an input.  The input
 
     ![Add an executor](getHANACloudDBDetails.png)
 
+    > :1 indicates that this is version 1 of the command.
+
 7. Select the newly created executor.
 
     ![parameters](getHANACloudDBDetails-parameters.png)
@@ -209,6 +211,8 @@ This step will create a catalog that contains a command and an input.  The input
     | `serviceInstance` | `$(.execution.input.alertJSON.resource.tags.resourceId)` |
     | space | `$(.execution.input.alertJSON.resource.tags.spaceId)` |
     | `includeParameters` | `true` |
+
+    > For additional details on the use of the $(...) used above, see [Dynamic Expression](https://help.sap.com/viewer/de3900c419f5492a8802274c17e07049/Cloud/en-US/22621f87e7574f9e9fd1b1b95fe7a61d.html).
 
 8. Select the **output**, then select **Edit**.  
 

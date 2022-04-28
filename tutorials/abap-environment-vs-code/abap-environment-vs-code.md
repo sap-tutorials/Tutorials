@@ -1,7 +1,7 @@
 ---
 auto_validation: true
-title: Develop and Run SAP Fiori Application with Visual Studio Code
-description: Develop and run your SAP Fiori Application with Visual Studio Code.
+title: Create a SAP Fiori App in Visual Studio Code and Deploy it to SAP BTP, ABAP Environment
+description: Create a SAP Fiori Elements app for a RAP business object from SAP BTP, ABAP Environment in Visual Studio Code and deploy it to SAP BTP, ABAP Environment.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 15
