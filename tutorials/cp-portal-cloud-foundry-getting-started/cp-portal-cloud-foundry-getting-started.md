@@ -108,7 +108,7 @@ To be able to access the SAP Launchpad service, users must be assigned to the `L
     !![Add emails](14-add-emails.png)
 
 
-You have now been assigned to the `Launchpad_Admin` role collection and you can access the SAP Launchpad service and carry out all your admin tasks.
+You've now been assigned to the `Launchpad_Admin` role collection and you can access the SAP Launchpad service and carry out all your admin tasks.
 
 [DONE]
 [ACCORDION-END]
