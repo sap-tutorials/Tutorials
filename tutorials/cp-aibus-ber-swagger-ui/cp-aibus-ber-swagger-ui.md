@@ -2,7 +2,7 @@
 title: Detect and Highlight Entities from Unstructured Text with Pre-trained Models
 description: Use the Business Entity Recognition pre-trained models to get machine learning entity predictions for the text you submit to the service.
 auto_validation: true
-time: 15
+time: 20
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition]
 primary_tag: topic>machine-learning
 author_name: Juliana Morais
@@ -50,11 +50,11 @@ In the service key you created for Business Entity Recognition in the previous t
     bearer <access_token>
     ```
 
-    !![BER](png-files/authorize.png)
+    !![BER](png-files/authorize-bearer.png)
 
 4. Click **Authorize** and then click **Close**.
 
-    !![BER](png-files/close.png)
+    !![BER](png-files/authorize-close.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
