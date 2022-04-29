@@ -12,7 +12,7 @@ author_profile: https://github.com/akseliv
 ## Prerequisites
  - Access to an SAP BTP account in EU10 with Low-Code / No-Code entitlements
  - Previously followed the steps provided in [Configure your AppGyver Application to Open your Device Camera](appgyver-configure-camera)
- - Access to the AppGyver Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [macOS](https://apps.apple.com/fi/app/appgyver/id1485395192)/ [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release)
+ - Access to the AppGyver Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [macOS](https://downloads.appgyver.com/SAP_AppGyver_preview_v3.4.4.zip)/ [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release)
 
 
 ## Details
