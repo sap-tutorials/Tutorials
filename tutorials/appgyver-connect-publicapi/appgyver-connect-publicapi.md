@@ -3,8 +3,8 @@ title: Connect Your AppGyver Application to a Public API
 description: Connect your application to a public API and then test that it's pulling the right information.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>license, topic>mobile, products>sap-business-technology-platform]
-primary_tag: products>sap-appgyver
+tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-products>sap-business-technology-platform]
+primary_tag: software-products>sap-appgyver
 author_name: Akseli Virtanen
 author_profile: https://github.com/akseliv
 ---
