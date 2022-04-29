@@ -17,6 +17,8 @@ The core functionality of Business Entity Recognition is to automatically detect
 
 In this tutorial, you will learn how to use the service APIs to create a dataset, upload training data, and submit a training job to finally create your own custom machine learning model to classify any given type of named entity, such as mobile number, first name, last name and address, in the texts you will submit to the service in the next tutorial: [Deploy Model and Get Prediction Results](cp-aibus-ber-custom-deploy).
 
+Check out the tutorial group [Use Pre-Trained Machine Learning Models to Process Unstructured Text](group.cp-aibus-business-entity-detect) to try out the Business Entity Recognition pre-trained machine learning models.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Authorize Swagger UI)]
