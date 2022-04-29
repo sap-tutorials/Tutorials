@@ -3,8 +3,8 @@ title: Subscribe to the Low-Code / No-Code Service in SAP BTP
 description: Subscribe to and open the Low-Code / No-Code service on SAP BTP, and get access to the AppGyver Composer tool, an intuitive application development solution for users of all technical abilities.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-products>sap-business-technology-platform]
-primary_tag: software-products>sap-appgyver
+tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-appgyver
 author_name: Akseli Virtanen
 author_profile: https://github.com/akseliv
 ---

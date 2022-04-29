@@ -3,8 +3,8 @@ title: Create an Application with SAP AppGyver
 description: Create an application with SAP AppGyver on SAP BTP. The application, created in a browser, can be used with the AppGyver Previewer App to scan physical barcodes on food packaging to display calorific information.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-products>sap-business-technology-platform]
-primary_tag: software-products>sap-appgyver
+tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-appgyver
 author_name: Akseli Virtanen
 author_profile: https://github.com/akseliv
 ---
