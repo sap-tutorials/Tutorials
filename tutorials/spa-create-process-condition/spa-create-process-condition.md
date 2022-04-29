@@ -2,10 +2,10 @@
 author_name: Archana Shukla
 author_profile: https://github.com/ArchanaShukla/
 title: Create a Process Condition
-description: Create a process condition to route the process based on business criteria.
+description: Create a process condition to route the process based on business criteria
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, tutorial>free-tier ]
 primary_tag: software-product>sap-process-automation
 ---
 
@@ -18,104 +18,123 @@ primary_tag: software-product>sap-process-automation
   - How to create and configure process condition
   - How to define different process flows for each conditional criteria
 
+---
 **Process condition** routes the business process based on certain criteria. These conditions apply an If or Else rule to the process content and respond according to the rules defined as settings in the process builder.
 
 In this unit, you will learn how to use process condition in a business process to get rid of unnecessary approvals when the process is routed for auto-approval or one-step-approval flow based on the sales order criteria.
 
----
+[ACCORDION-BEGIN [Step 1: ](Create and configure process condition)]
 
-[ACCORDION-BEGIN [Step 1: ](Create and Configure Process Condition)]
+Now that you have designed the process with forms, let us define which process flow should run based on if/else condition criteria.  
 
-Now that you have designed the process with forms, let us define which process flow should run based on If/else condition criteria.  
+1. To add a condition to a process:
 
-1. To add a condition to a process,
     - Open the **Process Builder**.
     - Select **+** after the start form.
     - Choose **Controls > Condition**.
 
     !![Process Condition](unit5-00.png)
 
-    This adds the condition to the process, giving access to the Configure screen.
+    This adds the condition to the process.
 
-    !![Configure Condition](unit5-00a.png)
+2. To configure your condition, choose **Open Condition Editor**.
 
-2. Now let us configure the condition settings to select If criteria as **Order Amount Less Than 100000** and **select Approval Form as else** criteria.
+    !![Configure Condition](configure-condition.png)
 
-    With this process condition, the sales order above a specific amount only will be sent for approval and rest will be auto-approved.
+3. Edit your branch condition by setting **Order Amount** from the process content.
 
-    On the right **Condition** configuration page, do the following:
-    - Click on **If** text box.
-    - Select **Order Amount** from the process content.
-    - Select **Less Than** operator.
-    - Enter **100000** as the value.
+    !![Edit Branch Condition](edit-branch-condition.png)
 
-    > Process content will contain list of attributes that have been defined in previous skills. For Example: In the screenshot, you can see attributes from the trigger form. You will use these process content to configure different skills during business process modelling.
+    > Process content will contain list of attributes that have been defined in previous skills. For Example: in the screenshot, you can see attributes from the trigger form. You will use these process content to configure different skills during business process modelling.
 
-    !![Process Content](unit5-01.png)
+4. Select **is less than**.
 
-3.	Now it is time to decide the process flow if the condition criteria is met. For that, first you have to remove the connection from If-route to Approval Form and then create a new form to notify the requester of the auto-approval.
+    !![Less than](less-than.png)
 
-    !![Process Content](unit5-02.png)
+5. Enter **100000** as the value and choose **Save**
 
-4. To create the new form, add the **New Form** from the **If-route** with any given name and description.
+    You have configured your **if** branch to: **if Order Amount is less than 100000**.
+
+    !![Value and save](value-save.png)
+
+6. Now, link your **Default** branch to **Approval Form**.
+
+    !![Process Content](process-content.png)
+
+    With this process condition, the sales order above a specific amount only will be sent for approval and rest will be auto-approved.    
+
+7.	Lets decide the process flow if the condition criteria is met. For that, first you have to remove the connection from If-route to Approval Form and then create a new form to notify the requester of the auto-approval.
+
+    !![Delete branch](delete-branch.png)
+
+4. To create the new form, add the **New Form** from the **If-route**.
 
     !![Process Content](unit5-03.png)
 
     In the pop-up for new form, do the following:
-        - Enter the **Name** as **Auto Approval Notification**.
-        - Enter a **Description** of your choice.
-        - Choose **Create**.
 
-      > The form **Identifier** field is auto-filled.
+    - Enter the **Name** as **Auto Approval Notification**.
+    - Enter a **Description** as **Notification form to inform auto approval of the sales order**.
+    - Choose **Create**.
 
-      !![Process Content](unit5-04.png)
+    > The form **Identifier** field is auto-filled.
 
-5. Design the notification form, in the same way as you did in previous chapter, to send yet another notification to the requester about auto-approval.
+    !![Process Content](unit5-04.png)
 
-  | Form Fields | Field Settings with Label
-  |  :------------- | :-------------
-  | Headline 1 | Automatic Order Confirmation
-  | Paragraph  | Your order has been received and we will send you the details as soon as the order is shipped. You can find the details of your order below, please review and verify your request:
-  | Paragraph  |Sales Order Details:
+5. Design the notification form, in the same way as you did in the previous chapter, to send another notification to the requester about auto-approval.
 
-  - For all below **Input Fields** enter the labels and select the **Read Only** checkbox
+    | Form Fields | Field Settings with Label
+    |  :------------- | :-------------
+    | Headline 1 | Automatic Order Confirmation
+    | Paragraph  | Your order has been received and we will send you the details as soon as the order is shipped. You can find the details of your order below, please review and verify your request:
+    | Paragraph  | Your Sale's Order Details:
 
-  | Form Fields| Field Settings with Label
-  |  :------------- | :-------------
-  | Text | Order Number
-  | Number | Order Amount
-  | Date | Expected Delivery Date
-  | Paragraph | please press the SUBMIT button to acknowledge the order status.
+    - For all below **Input Fields** enter the labels and select the **Read Only** checkbox.
 
-  ![Design Form](unit5-05.png)
+    | Form Fields| Field Settings with Label
+    |  :------------- | :-------------
+    | Text | Order Number
+    | Number | Order Amount
+    | Date | Expected Delivery Date
+    | Paragraph | Please press the SUBMIT button to acknowledge the order status.
 
-6. Go back to the process builder and configure the auto approval form.
+6. Save your work.
 
-    - Configure **General** section
+    !![Design Form](design-form.png)
 
-      | Property| Value |
-      |  :------------- | :-------------
-      | Subject | Your order `select order number from the process content` has been successfully received
-      | Recipients | Process Metadata > Process Started By
+7. Go back to the process builder and configure the auto approval form.
 
-      ![03-026](unit5-06.png)
+    - Configure the **General** section.
 
-    - Configure **Inputs** section
+    | Property| Value |
+    |  :------------- | :-------------
+    | Subject | Your order **Order Number > Order Processing Form** has been successfully received
+    | Recipients | **Process Started By > Process Metadata**
 
-      | Form Input Fields| Process Content Entry
-      |  :------------- | :-------------
-      | Order Number | Order Processing Form > Order Number
-      | Order Amount | Order Processing Form > Order Amount
-      | Expected Delivery Date | Order Processing Form >
+    !![General](general.png)
 
-      ![03-026](unit5-07.png)
+    - Configure the **Inputs** section.
 
-7. Finally connect the outgoing flow of the auto-approval form to the **End** activity.
+    | Form Input Fields| Process Content Entry
+    |  :------------- | :-------------
+    | Order Number | Order Number > Order Processing Form
+    | Order Amount | Order Amount > Order Processing Form
+    | Expected Delivery Date | Expected Delivery Date > Order Processing Form
+
+    !![Inputs](inputs.png)
+
+8. Finally, connect the outgoing flow of the auto-approval form to the **End** activity.
+
     - Do not forget to **Save** the process once done.  
 
-    ![03-026](unit5-08.png)
+    !![End](end-process.png)
 
-This completes the process design with condition criteria that will decide what process flow is executed and whether there will be an auto-approval or one-step approval route.
+    This completes the process design with condition criteria that will decide what process flow is executed and whether there will be an auto-approval or a one-step approval route.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Validation)]
 
 [VALIDATE_1]
 [ACCORDION-END]
