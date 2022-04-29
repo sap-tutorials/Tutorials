@@ -49,6 +49,7 @@ This step includes creating the mobile development kit project in the editor.
     | `Your Project Name` | `MDK_Styling` |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
 
     !![MDK](img-1.4.png)
 
@@ -132,8 +133,7 @@ The `LESS` stylesheet provides the ability to define styling styles that can be 
 
     //// below snippet is to style Title property of an Object Table control in Customers_List.page
     .ObjectTableTitle {
-      font-color: @mdkYellow1;
-      background-color: @mdkRed1;
+     color: @mdkYellow1;
     }
 
     //// below snippet is to style Object Header control in Customers_Detail.page
@@ -141,25 +141,25 @@ The `LESS` stylesheet provides the ability to define styling styles that can be 
     /* Object Header - BodyText */
     /* iOS Only */
     .objectHeaderBodyText {
-      font-color: red;
+      color: red;
     }
 
     /* Object Header - Description */
     /* iOS Only */
     .objectHeaderDescription {
-      font-color: blue;
+      color: blue;
     }
 
     /* Object Header - Footnote */
     /* iOS Only */
     .objectHeaderFootNote {
-      font-color: green;
+      color: green;
     }
 
     /* Object Header - Headline */
     /* iOS Only */
     .objectHeaderHeadline {
-      font-color: #ff00ff;
+      color: #ff00ff;
     }
 
     /* Object Header - Background */
@@ -170,9 +170,7 @@ The `LESS` stylesheet provides the ability to define styling styles that can be 
     /* Object Header - StatusText */
     /* iOS Only */
     .objectHeaderStatus {
-      background-color: #cccccc;
-      font-color: red;
-      font-name: italicSystem;
+      color: red;
       font-style: italic;
       font-size: 18;
     }
@@ -180,15 +178,13 @@ The `LESS` stylesheet provides the ability to define styling styles that can be 
     /* Object Header - Subhead */
     /* iOS Only */
     .objectHeaderSubhead {
-      font-color: yellow;
+      color: yellow;
     }
 
     /* Object Header - SubstatusText */
     /* iOS Only */
     .objectHeaderSubStatus {
-      background-color: #cccccc;
-      font-color: blue;
-      font-name: italicSystem;
+      color: blue;
       font-style: italic;
       font-size: 18;
     }

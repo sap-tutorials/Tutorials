@@ -2,10 +2,10 @@
 title: Create Sales Order App with SAP RAD by Mendix
 description: Create a sales order app that consumes a service from the SAP Gateway Demo System (ES5).
 auto_validation: true
-primary_tag: products>sap-rapid-application-development-by-mendix
+primary_tag: software-product>sap-rapid-application-development-by-mendix
 author_name: Paola Laufer
 author_profile: https://github.com/Paolaufer
-tags: [  tutorial>beginner, topic>cloud, topic>Odata, products>sap-business-technology-platform  ]
+tags: [  tutorial>beginner, topic>cloud, programming-tool>odata, software-product>sap-business-technology-platform  ]
 
 time: 20
 ---
@@ -71,7 +71,7 @@ To generate the service module, follow these steps:
 
 1. Save the metadata file to your hard drive.
 
-2. Open the SAP [OData Model Creator](https://sapodatamodelcreator.mendixcloud.com/).
+2. Open the SAP [OData Model Creator](https://sapmodelcreator.mendixcloud.com/).
 
 3. Select the **Manual** option.
 

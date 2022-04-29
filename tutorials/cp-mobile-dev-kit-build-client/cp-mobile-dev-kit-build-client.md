@@ -177,7 +177,9 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img-3.3.png)
 
-    >`AppName`: Provide a name for example: `DemoSampleApp`. It is the name of the application on the home screen of the device and it is also the name of the folder where the client is created.
+    >`AppDisplayName`: This is the name of the application on the home screen of the device.
+
+    >`AppName`: This is the name of the folder where the client is created.
 
     >`BundleID`: It should be a unique identifier for your application. This controls if the client can be installed side by side with other applications on the device. Two applications with the same Bundle ID cannot be installed at the same time on a device.  For iOS this is the Identifier `(AppID)` that is registered in Apple Developer account since that determines if the application can be installed alongside other applications. If the `XCode` project is set up to use _Automatically manage signing_ then when building, `XCode` will automatically generate a signing profile for the specified bundle id. Without matching them, trying to run the custom client in iOS device will result in failure. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
 
@@ -246,13 +248,15 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img-3.3.png)
 
-    >`AppName`: Provide a name for example: `DemoSampleApp`. It is the name of the application on the home screen of the device and it is also be the name of the folder where the client is created.
+    >`AppDisplayName`: This is the name of the application on the home screen of the device.
+
+    >`AppName`: This is the name of the folder where the client is created.
 
     >`BundleID`: It should be a unique identifier for your application. This controls if the client can be installed side by side with other applications on the device. Two applications with the same Bundle ID cannot be installed at the same time on a device. In Android, it is known as [application ID](https://developer.android.com/studio/build/application-id).
 
     >`URLScheme`: Allows you to specify a custom URL scheme which opens the client. The default is `mdkclient`. This value also needs to be unique across applications on your device.  If the value is not unique the wrong application may be referenced when redirecting.    
 
-    >You can find more details about configuration of `MDKProject.json` file in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html) help documentation.                    
+    >You can find more details about configuration of `MDKProject.json` file in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html#configuration-of-mdkprojectjson-file) help documentation.                    
 
   4. Now, open the `BrandedSettings.json` file and update the `ConnectionSettings` with the values for your MDK application in Mobile Services.
 
@@ -376,11 +380,12 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
 
-4. Tap **AGREE** on `End User License Agreement`.
+4. Tap **Agree** on `End User License Agreement`.
 
     ![MDK](img-5.3.1.png)
 
-5. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3. Tap **START** to connect MDK client to SAP Business Technology Platform (BTP).
+
+5. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3. Tap **Start** to connect MDK client to SAP Business Technology Platform (BTP).
 
     ![MDK](img-5.5.png)
 
@@ -389,11 +394,11 @@ Once you've installed these prerequisites, your machine is ready to generate and
     ![MDK](img-5.7.png)
     ![MDK](img-5.7.1.png)
 
-7. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
+7. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
     ![MDK](img-5.8.png)
 
-8. Confirm the passcode and tap **DONE**.
+8. Confirm the passcode and tap **Done**.
 
     ![MDK](img-5.9.png)
 
@@ -466,8 +471,6 @@ Once you've installed these prerequisites, your machine is ready to generate and
     >To build an **IPA for an iOS device**, use `tns build ios --for-device --release`. This can also be accomplished in Xcode by opening the workspace and selecting the Archive option. More information about archiving can be found in Apple's documentation [here](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/UploadingYourApptoiTunesConnect/UploadingYourApptoiTunesConnect.html).
 
 [OPTION END]
-
-Congratulations, you have successfully built Your Mobile Development Kit Client Using MDK SDK and and you can continue with the remaining tutorials in this mission.
 
 [VALIDATE_3]
 [ACCORDION-END]

@@ -3,8 +3,8 @@ title: Take a Tour of SAP BTP Trial
 description: Get familiar with the SAP Business Technology Platform basics to make the most of your trial experience.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-business-technology-platform
+tags: [ tutorial>beginner, topic>cloud, software product>sap-business-technology-platform]
+primary_tag: software product>sap-business-technology-platform
 author_name: Jessica Katz
 author_profile: https://github.com/Jessica-Katz
 ---
@@ -83,7 +83,7 @@ When you remove quotas or entitlements from a subaccount, they become available 
 
 For more information on entitlements, you can always consult documentation on [Entitlements](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/00aa2c23479d42568b18882b1ca90d79.html).
 
-If you run into problems regarding entitlements and quotas, can check out the [Guided Answers](https://gad5158842f.us2.hana.ondemand.com/dtp/viewer/#/tree/2065/actions/27066?version=current).
+If you run into problems regarding entitlements and quotas, you can check out the [Guided Answers](https://gad5158842f.us2.hana.ondemand.com/dtp/viewer/#/tree/2065/actions/27066?version=current).
 
 [DONE]
 [ACCORDION-END]

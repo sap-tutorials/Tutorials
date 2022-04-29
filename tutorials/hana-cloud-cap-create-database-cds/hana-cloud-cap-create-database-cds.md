@@ -138,37 +138,42 @@ Video version of tutorial: </br>
 
     !![Bind Project](start_bind.png)
 
-4. The bind process will start a wizard where you will be prompted for values via the command pallet at the top of the SAP Business Application Studio screen. You might be asked to confirm your Cloud Foundry endpoint and credentials depending upon how long it has been since you last login.
+4. If you receive either of these two following warning dialogs, please just choose **Continue** (nothing will be deleted because we are create a new HDI Container Instance) and **Enable** (automatic undeploy is quite helpful during the development process for the reasons described in this dialog)
+
+    !![Binding Warning #1](warning1.png)
+
+    !![Binding Warning #2](warning2.png)
+
+5. The bind process will start a wizard where you will be prompted for values via the command pallet at the top of the SAP Business Application Studio screen. You might be asked to confirm your Cloud Foundry endpoint and credentials depending upon how long it has been since you last login.
 
     !![Confirm Credentials](confirm_credentials.png)
 
-5. You might be presented with options for existing service instances (if you've completed other tutorials or have performed other HANA development). But for this exercise we want to choose **Create a new service instance**
+6. You might be presented with options for existing service instances (if you've completed other tutorials or have performed other HANA development). But for this exercise we want to choose **Create a new service instance**
 
     !![Create a new service instance](create_Service_instance.png)
 
-6. Press enter to accept the generated service name
+7. Press enter to accept the generated service name
 
     !![Generated Service Name](generated_service_name.png)
 
-6. Select the first suggested Cloud Foundry service plan with the name **hdi-shared**
+8. If prompted, select the first suggested Cloud Foundry service plan with the name **hdi-shared**
 
     !![CF Plan](cf-plan.png)
 
-7. It will take a minute or two for the service to be created in HANA. A progress bar will be shown in the message dialog
+9.  It will take a minute or two for the service to be created in HANA. A progress bar will be shown in the message dialog
 
     !![Service Creation Progress](progress.png)
 
-8. Upon completion, the Database Connections will now show the service bound to the instance the wizard just created.
+10. Upon completion, the Database Connections will now show the service bound to the instance the wizard just created.
 
     !![Bound Connection](bound_connection.png)
 
-9. We are now ready to deploy the development content into the database. Press the **Deploy** button (which looks like a rocket) at the **db** folder level in the SAP HANA Projects view.
+11. We are now ready to deploy the development content into the database. Press the **Deploy** button (which looks like a rocket) at the **db** folder level in the SAP HANA Projects view.
 
     !![Deploy](deploy.png)
 
-    > If the deployment fails, run `cds deploy` manually in the terminal to see an error log.
 
-10. Scroll up to in the console to see what the build process has done.
+12. Scroll up to in the console to see what the build process has done.
 
 > ### What is going on?
 >

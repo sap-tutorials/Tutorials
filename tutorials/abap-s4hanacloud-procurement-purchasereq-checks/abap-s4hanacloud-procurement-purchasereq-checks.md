@@ -3,7 +3,7 @@ title: Implement a Business Add-in (`BAdI`) To Check a Purchase Requisition
 description: Define and implement a developer extension (`BAdI`), which performs checks during creation of a purchase requisition item.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment]
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product-function>s-4hana-cloud-abap-environment]
 primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
@@ -13,7 +13,7 @@ author_profile: https://github.com/julieplummer20
 ## Prerequisites
 - **IMPORTANT**: It is essential that you are a member of SAP Early Adopter program
 - You have a license for SAP S/4HANA Cloud and have a developer user in this system
-- You have installed SAP ABAP Development Tools (ADT), version 3.16 or later, and have created an ABAP Cloud project for your SAP S/4HANA Cloud System in it
+- You have installed [SAP ABAP Development Tools (ADT), latest version](https://tools.hana.ondemand.com/#abap), and have created an ABAP Cloud project for your SAP S/4HANA Cloud System in it
 - You are familiar with the concept of extensions to the SAP standard and with `BAdIs` in particular. If not, see the **More Information** section at the end of this tutorial
 - To test the `BAdI`: In SAP Fiori launchpad, you have the authorization for the app **Process Purchase Requisitions - Professional**, i.e. **`SAP_BR_PURCHASER`**
 
@@ -133,6 +133,10 @@ The `BAdI` enhancement spot appears in a new editor, showing you the available `
 To help you create your own enhancements, example classes are provided (2).
 
 !![step2d-enhancement-spot-editor](step2d-enhancement-spot-editor.png)    
+
+You can also call up the example class documentation by selecting the `BAdI` and choosing **ABAP Element Info**.
+
+!![step3d-open-docu](step3d-open-docu.png)
 
 [DONE]
 [ACCORDION-END]
