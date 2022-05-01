@@ -3,7 +3,7 @@ title: Build and Deploy Your SAP Fiori App to SAP Business Technology Platform
 description: Build and deploy your SAP Fiori MTA project to your SAP BTP, Cloud Foundry environment.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-fiori, topic>sapui5, products>sap-btp-cloud-foundry-environment]
+tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-fiori, programming-tool>sapui5, products>sap-btp-cloud-foundry-environment]
 primary_tag: products>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
@@ -100,12 +100,12 @@ Run the deployed app on SAP BTP. The steps below show you how to access your new
     ```
     !![pwd](BAS-Access-App-On-CF-3-.png)
 
-3. Open the `mta.yaml` file, and locate the destination service instance name. You can find it in the **modules > requires** section or in the **resources** section. In this tutorial it should be `FioriDemo-dest-srv`.
+3. Open the `mta.yaml` file, and locate the destination service instance name. You can find it in the **modules > requires** section or in the **resources** section. In this tutorial it should be `FioriDemo-destination-service`.
 
 4. Execute the following command in the terminal to get the details of the deployed application and its URL:
 
     ```Shell/Bash
-    cf html5-list -di FioriDemo-dest-srv -u -rt launchpad
+    cf html5-list -di FioriDemo-destination-service -u -rt launchpad
     ```
 
     !![details of deployed app on CF](BAS-Access-App-On-CF-4-.png)
