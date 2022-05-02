@@ -269,7 +269,7 @@ modules:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 9: ](Add SAP Fiori elements Risks application)]
+[ACCORDION-BEGIN [Step 9: ](Add SAP Fiori Elements Risks application)]
 1. Switch to `app/risks` folder:
 
     ```Shell/Bash
@@ -419,7 +419,7 @@ app/*/package-lock.json
 
     > [How to build an MTA archive from the project sources](https://sap.github.io/cloud-mta-build-tool/usage/#how-to-build-an-mta-archive-from-the-project-sources)
 
-3. Go to SAP BTP cockpit to check the deployed content.
+3. Go to [SAP BTP Cockpit](https://account.hana.ondemand.com/) to check the deployed content.
 
 [DONE]
 [ACCORDION-END]
@@ -448,7 +448,7 @@ You have now subscribed to the SAP Launchpad service.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 15: ](Assing SAP Launchpad role collection)]
+[ACCORDION-BEGIN [Step 15: ](Assigning SAP Launchpad role collection)]
 You need to assign your user to the `Launchpad_Admin` role collection, so you don't get an error accessing the **Launchpad Service** site later on.
 
 1. Choose **Security** **&rarr;** **Users** on the left.
