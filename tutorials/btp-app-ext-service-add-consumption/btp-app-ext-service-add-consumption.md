@@ -12,6 +12,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Prerequisites
  - You have developed your CAP application and have prepared it for deployment using this collection of tutorials [here](mission.btp-application-cap-e2e) or download the result from this [branch](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) to start.
+ - When starting with the result from this [branch](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging), refer to [Create a Directory for Development](btp-app-create-directory) to see a recommended approach for organizing directories and details how to copy the contents of the branch.
 
 ## Details
 ### You will learn
@@ -52,7 +53,7 @@ SAP publishes service definitions for its major products on **SAP API Business H
 
     !![API EDMX](edmxdownload.png)
 
-    > In case you have problems downloading the file, you can also find `API_BUSINESS_PARTNER.edmx` within your Finder/File Explorer in the directory `templates/ext-service-add/srv/external`.
+    > In case you have problems downloading the file, you can also find `API_BUSINESS_PARTNER.edmx` within your Finder/File Explorer in the directory `tutorial/templates/ext-service-add/srv/external`.
 
 
 
@@ -100,7 +101,7 @@ Additionally, the file will be registered as service definition in the `package.
 [ACCORDION-BEGIN [Step 3: ](Add mock data for Business Partner)]
 In this step, you add some mock data for the business partner service. This allows you to perform tests using the service without the need to connect to an actual remote service.
 
-1. Copy the folder `data` from `templates/ext-service-add/srv/external` to the `srv/external` folder of your app. If VS Code asks you whether to copy the folder, confirm.
+1. Copy the folder `data` from `tutorial/templates/ext-service-add/srv/external` to the `srv/external` folder of your app. If VS Code asks you whether to copy the folder, confirm.
 
     The folder contains a CSV file `API_BUSINESS_PARTNER-A_BusinessPartner.csv` with some business partner data.
 

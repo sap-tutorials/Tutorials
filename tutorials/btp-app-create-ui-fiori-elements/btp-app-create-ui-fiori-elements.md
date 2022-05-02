@@ -127,11 +127,15 @@ Let's say that at this point you'd like to edit some of the data or create a new
 
     !![Create Risk](createrisk.png)
 
-2. Try and fill in data in the main group fields `Mitigation`, `Priority`, and `Impact` and choose **Create**.
+2. To add a `Mitigation`, click on the value help icon in the input field, select a mitigation, and choose **OK**.
+
+    !![Add Mitigation](addmitigation.png)
+
+3. Try and fill in data in the main group fields `Priority` and `Impact` and choose **Create**.
 
     !![Fill Main Data](fillriskdata.png)
 
-3. The new risk is created but it has no title and it has no description.
+4. The new risk is created but it has no title and it has no description.
 
     !![No Title Risk](notitlerisk.png)
 

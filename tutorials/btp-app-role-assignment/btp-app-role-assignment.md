@@ -35,7 +35,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-BEGIN [Step 1: ](Assign roles)]
 To be able to access the application, your user needs to be assigned to a role collection that provides the required scopes.
 
-1. Open the **SAP BTP Cockpit**.
+1. Open **SAP BTP Cockpit**.
 
 2. Go to the **Subaccount** where you have deployed your service and application.
 
@@ -73,7 +73,7 @@ If not, probably you have signed in before adding the role collection to your us
 [ACCORDION-BEGIN [Step 3: ](Additional Information: Create a role collection manually)]
 Instead of creating the role collection automatically using the `xs-security.json`, it's also possible to create a role collection manually. For example:
 
-1. Open the **SAP BTP Cockpit**.
+1. Open **SAP BTP Cockpit**.
 
 2. Go to the **Subaccount**.
 
