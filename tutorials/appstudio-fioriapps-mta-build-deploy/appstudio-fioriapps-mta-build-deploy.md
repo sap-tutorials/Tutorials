@@ -3,8 +3,8 @@ title: Build and Deploy Your SAP Fiori App to SAP Business Technology Platform
 description: Build and deploy your SAP Fiori MTA project to your SAP BTP, Cloud Foundry environment.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-business-technology-platform, products>sap-fiori, programming-tool>sapui5, products>sap-btp-cloud-foundry-environment]
-primary_tag: products>sap-business-application-studio
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, software-product>sap-fiori, programming-tool>sapui5, software-product>sap-btp-cloud-foundry-environment]
+primary_tag: software-product>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
 ---
