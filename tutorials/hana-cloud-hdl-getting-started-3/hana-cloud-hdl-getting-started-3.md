@@ -81,17 +81,12 @@ Let's get started. Follow these steps:
 2.	Copy the code given below into the SQL Console and execute the script after entering your password in the appropriate field. You can also find this code in `CreateTables.sql` file contained in the `SQL scripts.zip` [file](https://github.com/SAP-samples/hana-cloud-learning/blob/main/Mission:%20Get%20Started%20with%20a%20Standalone%20Datalake/SQL%20Scripts.zip).
 
 ```SQL
-     /*==============================================================*/                      
-     /* Created on:     11/21/2008 2:40:41 PM                        */
-     /*==============================================================*/
-     /*==============================================================*/
-
-     /*==============================================================*/
+/*==============================================================*/
      /* User: TPCH                                                   */
      /*==============================================================*/
      CREATE USER TPCH IDENTIFIED BY "<your_password>";
 
-     /*==============================================================*/
+     /*=============================================================*/
      /* Table: CUSTOMER                                              */
      /*==============================================================*/
      create table TPCH.CUSTOMER (
@@ -99,9 +94,9 @@ Let's get started. Follow these steps:
        C_NAME               varchar(25)                    not null,
        C_ADDRESS            varchar(40)                    not null,
        C_NATIONKEY          integer                        not null iq unique (25),
-       C_PHONE              char(15)                       not null,
+       C_PHONE              varchar(15)                       not null,
        C_ACCTBAL            decimal(15,2)                  not null,
-       C_MKTSEGMENT         char(10)                       not null,
+       C_MKTSEGMENT         varchar(10)                       not null,
        C_COMMENT            varchar(117)                   not null,
        constraint PK_CUSTOMER primary key (C_CUSTKEY)
      );
@@ -111,7 +106,7 @@ Let's get started. Follow these steps:
      /*==============================================================*/
      create table TPCH.NATION (
        N_NATIONKEY          integer                        not null iq unique (25),
-       N_NAME               char(25)                       not null,
+       N_NAME               varchar(25)                       not null,
        N_REGIONKEY          integer                        not null iq unique (5),
        N_COMMENT            varchar(152)                   not null,
        constraint PK_NATION primary key (N_NATIONKEY)
@@ -122,7 +117,7 @@ Let's get started. Follow these steps:
      /*==============================================================*/
      create table TPCH.REGION (
        R_REGIONKEY          integer                        not null iq unique (5),
-       R_NAME               char(25)                       not null,
+       R_NAME               varchar(25)                       not null,
        R_COMMENT            varchar(152)                   not null,
        constraint PK_REGION primary key (R_REGIONKEY)
      );
@@ -132,10 +127,10 @@ Let's get started. Follow these steps:
      /*==============================================================*/
      create table TPCH.SUPPLIER (
        S_SUPPKEY            integer                        not null iq unique (10000),
-       S_NAME               char(25)                       not null,
+       S_NAME               varchar(25)                       not null,
        S_ADDRESS            varchar(40)                    not null,
        S_NATIONKEY          integer                        not null iq unique (25),
-       S_PHONE              char(15)                       not null,
+       S_PHONE              varchar(15)                       not null,
        S_ACCTBAL            decimal(15,2)                  not null,
        S_COMMENT            varchar(101)                   not null,
        constraint PK_SUPPLIER primary key (S_SUPPKEY)
@@ -155,7 +150,6 @@ Let's get started. Follow these steps:
        add foreign key FK_SUPPLIER_REFERENCE_NATION (S_NATIONKEY)
           references TPCH.NATION (N_NATIONKEY)
           on delete restrict on update restrict;
-
 
 ```
 
