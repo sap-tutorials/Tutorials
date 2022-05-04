@@ -33,7 +33,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ### You will learn
  - How to add an event topic to your event channel
 
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add the Business Partner topic to your event channel)]

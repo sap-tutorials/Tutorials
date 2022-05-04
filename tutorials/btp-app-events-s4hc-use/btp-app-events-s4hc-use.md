@@ -29,12 +29,10 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     - You must be an administrator of the SAP S/4HANA Cloud system.
     - You need to connect this system to your SAP BTP global account, if you'd like to build extension applications for your SAP S/4HANA Cloud system.
 
-
 ## Details
 ### You will learn
  - How to create and change a Business Partner in your SAP S/4HANA Cloud system
  - How to check if the Business Partner creation and change events sent from your SAP S/4HANA Cloud system have updated your CAP application
-
 
 ---
 
