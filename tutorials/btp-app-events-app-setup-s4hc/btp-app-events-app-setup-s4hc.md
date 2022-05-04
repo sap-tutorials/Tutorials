@@ -20,7 +20,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - On SAP BTP side:
     - You have an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) global account in SAP BTP.
     - You must be an administrator of the SAP BTP global account where you want to register your SAP S/4HANA Cloud system.
-    - You need to [Prepare for SAP BTP Development](btp-app-prepare-btp) if you start with a result from an example branch.
+    - You need to [Prepare for SAP BTP Development](btp-app-prepare-btp) if you start with the result from an example branch.
     - Your SAP BTP subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp).
     - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment, you need to perform step 14–17, starting with step [Subscribe to SAP Launchpad Service](https://developers.sap.com/de/tutorials/btp-app-launchpad-service.html#57352c79-1a09-4054-a77d-626fac957404) from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service).
  - On SAP S/4HANA Cloud side:
@@ -47,7 +47,7 @@ Using the Business Partner service that you added in `Step 1: Get the Business P
 
 1. Copy the files `API_BUSINESS_PARTNER.js` and `API_BUSINESS_PARTNER-extended.cds` from `tutorial/templates/events-s4hc-use/srv/external` to the `srv/external` folder of your app.
 
-    `API_BUSINESS_PARTNER.js` extends the default behavior of the Business Partner service to also emit events, this allows us to test the events-related behaviors locally.
+    `API_BUSINESS_PARTNER.js` extends the default behavior of the Business Partner service to also emit events. This allows you to test the events-related behaviors locally.
 
     Let's look at the `API_BUSINESS_PARTNER-extended.cds` file.
 
@@ -120,7 +120,7 @@ Using the Business Partner service that you added in `Step 1: Get the Business P
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Add a status field)]
-Currently, business partner (that is, supplier) data is stored only in the SAP S/4HANA Cloud system and it would be slow to call the Business Partner API every time you want to show the status. To keep it fast, you will add a `status` field to reflect the assessment status of the supplier. Let's update the application logic with event handling to keep this value updated as it changes in the remote SAP S/4HANA Cloud system.
+Currently, business partner (that is, supplier) data is stored only in the SAP S/4HANA Cloud system and it would be slow to call the Business Partner API every time you want to show the status. To keep it fast, you will add a `status` field to reflect the assessment status of the supplier and update the application logic with event handling to keep this value updated as it changes in the remote SAP S/4HANA Cloud system.
 
 1. Add the following properties and persistence for `BusinessPartners` entity to the `db/schema.cds` file:
 
@@ -255,7 +255,7 @@ Currently, business partner (that is, supplier) data is stored only in the SAP S
 [ACCORDION-BEGIN [Step 3: ](Test your changes locally)]
 So, you have added logic to create a new risk when an event for a newly created supplier is received.You have also added logic to update our risks when an event for an updated supplier is received from our SAP HANA Cloud system. This is achieved by listening to events from the SAP S/4HANA Cloud system.
 
-Let's simulate locally business partner creation and update, and see the results:
+Now simulate locally business partner creation and update, and see the results:
 
 1. Run `cds watch` and open the **Risks** application: [http://localhost:4004/launchpage.html#risks-app](http://localhost:4004/launchpage.html#risks-app).
 
