@@ -9,7 +9,6 @@ time: 20
 tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management, software-product>sap-hana-cloud, software-product>sap-s-4hana-cloud]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
-
 ## Prerequisites
  - [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption)
  - [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui)
@@ -28,11 +27,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     - You must be an administrator of the SAP S/4HANA Cloud system.
     - You need to connect this system to your SAP BTP global account, if you'd like to build extension applications for your SAP S/4HANA Cloud system.
 
-
 ## Details
 ### You will learn
  - How to add an event topic to your event channel
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add the Business Partner topic to your event channel)]
