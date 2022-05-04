@@ -43,7 +43,7 @@ To start with this tutorial use the result in the [`ext-service-s4hc-use`](https
 [ACCORDION-BEGIN [Step 1: ](Configure your CAP application for eventing)]
 CAP provides native support for emitting and receiving events. Hence, CAP applications can receive events for changes in remote systems. In CAP, the messaging follows a publish subscribe (pub/sub) model. Pub/sub means that sources publish messages and interested consumers can subscribe to receive them. This helps with scalability, decoupling of services, and robustness.
 
-Using the Business Partner service that we added in `Step 1: Get the Business Partner service definition` from the tutorial [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption), we will configure the CAP application to listen and react to events from your SAP S/4HANA Cloud system. As in the previous tutorials, let's again use the example of business partners that are suppliers. So, we'll use suppliers when referring to business partners. First we'll add event definitions for the SAP S/4HANA events.
+Using the Business Partner service that you added in `Step 1: Get the Business Partner service definition` from the tutorial [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption), you will configure the CAP application to listen and react to events from your SAP S/4HANA Cloud system. As in the previous tutorials, let's again use the example of business partners that are suppliers. So, you will use suppliers when referring to business partners. First you will add event definitions for the SAP S/4HANA events.
 
 1. Copy the files `API_BUSINESS_PARTNER.js` and `API_BUSINESS_PARTNER-extended.cds` from `tutorial/templates/events-s4hc-use/srv/external` to the `srv/external` folder of your app.
 
@@ -68,7 +68,7 @@ Using the Business Partner service that we added in `Step 1: Get the Business Pa
     }
     ```
 
-    For event `Created`, there's a `@topic` annotation with content `sap.s4.beh.businesspartner.v1.BusinessPartner.Created.v1`. This is specific to the outbound topic `sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1` in the SAP S/4HANA Cloud system that we will configure in [Enable Events from SAP S/4HANA Cloud to SAP BTP](btp-app-events-enable-s4hc). Similarly, event `Changed` also has a topic annotation with content `sap.s4.beh.businesspartner.v1.BusinessPartner.Changed.v1`.
+    For event `Created`, there's a `@topic` annotation with content `sap.s4.beh.businesspartner.v1.BusinessPartner.Created.v1`. This is specific to the outbound topic `sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1` in the SAP S/4HANA Cloud system that you will configure in [Enable Events from SAP S/4HANA Cloud to SAP BTP](btp-app-events-enable-s4hc). Similarly, event `Changed` also has a topic annotation with content `sap.s4.beh.businesspartner.v1.BusinessPartner.Changed.v1`.
 
 2. Open the `package.json` file and add the `model` and `messaging` configurations:
 
@@ -101,16 +101,16 @@ Using the Business Partner service that we added in `Step 1: Get the Business Pa
 
     * `"model": "srv/external/API_BUSINESS_PARTNER-extended"` specifies the model that is extended with event declarations for business partners with the respective SAP S4/HANA topic annotations.
     * `"kind": "local-messaging"` Allows services running in the same process to send and receive messages locally. Other options for local testing are [`file` for services running in different processes](https://cap.cloud.sap/docs/guides/messaging/#1-use-file-based-messaging-in-development) and [connecting to an event mesh instance on BTP](https://cap.cloud.sap/docs/guides/messaging/event-mesh#run-tests-in-hybrid-setup).
-    * In production we will use the [SAP Event Mesh service](https://help.sap.com/docs/SAP_EM?locale=en-US), hence the line `"kind": "enterprise-messaging-shared"`.
+    * In production you will use the [SAP Event Mesh service](https://help.sap.com/docs/SAP_EM?locale=en-US), hence the line `"kind": "enterprise-messaging-shared"`.
     * `"format": "cloudevents"` configures the format of the event data, which allows [CAP to fill in required fields](https://cap.cloud.sap/docs/guides/messaging/#cloudevents) behind the scenes.
     * The `publishPrefix` is specified for all events emitted from the application (`$namespace/ce/`). This is not used in this application as we don't emit any events.
     * `subscribePrefix` is specified to match all the Cloud Events sent to the subaccount. The `ce/` part in the expression `+/+/+/ce/` refers to the cloud events.
 
     > Namespace info for `subscribePrefix` and `publishPrefix`
 
-    >   The `$namespace` of the event topic name will be generated for SAP S/4HANA when deploying the `cpapp-bupa-messaging` service where we specify the client name, for example, `sap/S4HANAOD/RISK/`. To match the namespace we are specifying the pattern with 3 `+`'s separated by `/`.
+    >   The `$namespace` of the event topic name will be generated for SAP S/4HANA when deploying the `cpapp-bupa-messaging` service where you specify the client name, for example, `sap/S4HANAOD/RISK/`. To match the namespace you are specifying the pattern with 3 `+`'s separated by `/`.
 
-3. Since SAP S/4HANA integrates SAP Event Mesh for messaging, we need an AMQP (Advanced Message Queuing Protocol) client so our app can communicate with SAP Event Mesh. Run the following command to install it:
+3. Since SAP S/4HANA integrates SAP Event Mesh for messaging, you need an AMQP (Advanced Message Queuing Protocol) client so our app can communicate with SAP Event Mesh. Run the following command to install it:
 
     ```Shell/Bash
     npm install @sap/xb-msg-amqp-v100
@@ -120,7 +120,7 @@ Using the Business Partner service that we added in `Step 1: Get the Business Pa
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Add a status field)]
-Currently, business partner (that is, supplier) data is stored only in the SAP S/4HANA Cloud system and it would be slow to call the Business Partner API every time we want to show the status. To keep it fast, we will add a `status` field to reflect the assessment status of the supplier. Let's update the application logic with event handling to keep this value updated as it changes in the remote SAP S/4HANA Cloud system.
+Currently, business partner (that is, supplier) data is stored only in the SAP S/4HANA Cloud system and it would be slow to call the Business Partner API every time you want to show the status. To keep it fast, you will add a `status` field to reflect the assessment status of the supplier. Let's update the application logic with event handling to keep this value updated as it changes in the remote SAP S/4HANA Cloud system.
 
 1. Add the following properties and persistence for `BusinessPartners` entity to the `db/schema.cds` file:
 
@@ -155,7 +155,7 @@ Currently, business partner (that is, supplier) data is stored only in the SAP S
 
 4. Copy the file `tutorial/templates/events-s4hc-use/db/data/sap.ui.riskmanagement-Risks.csv` to the `db/data` folder. When prompted whether to replace the already existing file and confirm.
 
-5. Next, we have to configure the CAP application to process incoming events. When a new supplier is created in the SAP S/4HANA Cloud system, a corresponding risk will be created in the CAP application. Add the following code to the `srv/risk-service.js` file:
+5. Next, you have to configure the CAP application to process incoming events. When a new supplier is created in the SAP S/4HANA Cloud system, a corresponding risk will be created in the CAP application. Add the following code to the `srv/risk-service.js` file:
 
     <!-- cpes-file srv/risk-service.js -->
     ```JavaScript[2-3,14-44]
@@ -253,7 +253,7 @@ Currently, business partner (that is, supplier) data is stored only in the SAP S
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Test your changes locally)]
-So, we have added logic to create a new risk when an event for a newly created supplier is received. We have also added logic to update our risks when an event for an updated supplier is received from our SAP HANA Cloud system. This is achieved by listening to events from the SAP S/4HANA Cloud system.
+So, you have added logic to create a new risk when an event for a newly created supplier is received.You have also added logic to update our risks when an event for an updated supplier is received from our SAP HANA Cloud system. This is achieved by listening to events from the SAP S/4HANA Cloud system.
 
 Let's simulate locally business partner creation and update, and see the results:
 
@@ -308,7 +308,7 @@ The results of these steps can be found in the [eventing](https://github.tools.s
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Deploy your CAP application)]
-The SAP Event Mesh service is the messaging service that helps applications running on the SAP BTP to send and receive events. To work with events from SAP S/4HANA Cloud, we need an instance of the messaging service, which will act as a client to the SAP Event Mesh service.
+The SAP Event Mesh service is the messaging service that helps applications running on the SAP BTP to send and receive events. To work with events from SAP S/4HANA Cloud, you need an instance of the messaging service, which will act as a client to the SAP Event Mesh service.
 
 1. Add the following lines to the `mta.yaml` file:
 
@@ -350,9 +350,9 @@ The SAP Event Mesh service is the messaging service that helps applications runn
 
 2. Copy the configuration files for the messaging services `bupa-messaging.json` and `enterprise-messaging.json` from `tutorial/templates/events-s4hc-use/` to your project folder.
 
-    * The `bupa-messaging.json` file has the name of the SAP S/4HANA Cloud system that was configured in [Register Your SAP S/4HANA Cloud System](btp-app-ext-service-s4hc-register) and the client ID, which will be used to generate the communications arrangement and channel with the SAP S/4HANA Cloud system. In this tutorial, we use the ID `RISK` and the corresponding channel for event binding is `SAP_CP_XF_RISK`.
+    * The `bupa-messaging.json` file has the name of the SAP S/4HANA Cloud system that was configured in [Register Your SAP S/4HANA Cloud System](btp-app-ext-service-s4hc-register) and the client ID, which will be used to generate the communications arrangement and channel with the SAP S/4HANA Cloud system. In this tutorial, you use the ID `RISK` and the corresponding channel for event binding is `SAP_CP_XF_RISK`.
 
-    * The `enterprise-messaging.json` file has the SAP Event Mesh service instance name and the application namespace for publishing events. Since we are consuming events from SAP S/4HANA Cloud, the subscribe filter is set as `*` allowing all the received events. The publishing filter adds the application namespace for all events that maybe emitted from our `cpapp` application.
+    * The `enterprise-messaging.json` file has the SAP Event Mesh service instance name and the application namespace for publishing events. Since you are consuming events from SAP S/4HANA Cloud, the subscribe filter is set as `*` allowing all the received events. The publishing filter adds the application namespace for all events that maybe emitted from our `cpapp` application.
 
 3. Build the MTA module:
 
@@ -368,7 +368,7 @@ The SAP Event Mesh service is the messaging service that helps applications runn
     cf deploy cpapp_1.0.0.mtar
     ```
 
-    In the next section, we will continue with connecting our CAP application to the SAP S/4HANA Cloud system.
+    In the next section, you will continue with connecting our CAP application to the SAP S/4HANA Cloud system.
 
 [DONE]
 The result of this tutorial can be found in the [`events-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/events-s4hc-use) branch.
