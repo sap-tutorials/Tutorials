@@ -34,7 +34,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to configure your CAP application for eventing
  - How to locally test your changes
  - How to deploy your CAP application
-To start with this tutorial use the result in the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Configure your CAP application for eventing)]
