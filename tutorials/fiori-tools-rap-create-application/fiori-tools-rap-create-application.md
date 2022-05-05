@@ -50,6 +50,11 @@ Up to now you have used the preview mode within the ABAP Development Tools to ch
     >Note: If you see an error within the footer indicating that your organization and space in Cloud Foundry have not been set, please have a look at **Step 3: Set up organization and space** of the tutorial [Develop and Run SAP Fiori Application With SAP Business Application Studio](abap-environment-deploy-cf-production).
 
 
+
+ 4. Before generating an application you must open up a workspace: select menu option **File** > **Open Workspace...** and choose the **projects** folder.
+
+    !![Open new workspace](DevSpace_5.png)
+
 &nbsp;
 
 [DONE]
@@ -78,7 +83,7 @@ Using SAP Fiori tools, you will now create an SAP Fiori elements application bas
 
     !![Select service related parameters](CreateApp_4.png)
 
-    >Note: If you cannot find your system and service in the drop-down fields, please ensure that your organization and space in Cloud Foundry have been set. Have a look at **Step 3: Set up organization and space** of the tutorial [Develop and Run SAP Fiori Application With SAP Business Application Studio](abap-environment-deploy-cf-production).
+    >Note: If you cannot find your system and service in the drop-down fields, please ensure that your organization and space in Cloud Foundry have been set. Have a look at **Step 4: Set up organization and space** of the tutorial [Develop and Run SAP Fiori Application With SAP Business Application Studio](abap-environment-deploy-cf-production).
 
     Click **Next**.
 
@@ -110,23 +115,16 @@ Using SAP Fiori tools, you will now create an SAP Fiori elements application bas
 
 [ACCORDION-BEGIN [Step 3: ](Start the application)]
 
-1. Open the generated application in a new workspace: select menu option **File** > **Open Workspace...** and choose your application. It is displayed in the **Open Workspace** dialog with name `travellist` which is the module name you entered as an application parameter.
-
-    Select your application and confirm the dialog by choosing **Open**.
-
-    !![Choose in popup Open new workspace](StartApp_1.png)
-
-    Your application is now opened within the tree-view on the left of the Business Application Studio.
+1.Your application is now opened within the tree-view on the left of the Business Application Studio.
 
     !![Review the generated artifacts](StartApp_2.png)
-
 
 
 2. To start your application, you need to switch to the `Run Configurations` view by pressing the arrow-button on the left side toolbar.
 
     !![Run Configuration](StartApp_3.png)
 
-    There are two run configurations for you application. Start the first one named `Start travellist` by pressing the green arrow.
+    There are three run configurations for you application. Start the first one named `Start travellist` by pressing the green arrow.
 
     !![Start application](StartApp_4.png)
 
@@ -156,8 +154,6 @@ With the flexible column layout you can have the list report and the object page
     !![Right-click on webapp folder](SetFCL_1.png)
 
 2. In the left area of the page map you see the UI structure of your application listing the tiles of the list report and the object page. In the right area labeled **Global Page Settings** you can select the **Layout Settings**. Choose option **Flexible Column Layout** and then select the **Mid-Expanded** option for the two columns layout. Leave the default for the three columns layout unchanged.
-
-    When done, choose **Apply** and wait for the confirmation message.
 
     !![The Page Map with page map and layout settings](SetFCL_2.png)
 
