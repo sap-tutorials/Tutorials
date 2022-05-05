@@ -1,6 +1,6 @@
 ---
-title: Use Service Ticket Intelligence and Jupyter Notebook to Classify Service Requests
-description: Train a machine learning model based on historical service requests in order to classify new requests.
+title: Use Service Ticket Intelligence and Jupyter Notebook to generate Clusters and Keywords in Service Requests
+description: Train a machine learning model based on historical service requests in order to identify trends or patterns in new requests.
 auto_validation: true
 time: 40
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>service-ticket-intelligence, tutorial>free-tier]
@@ -12,8 +12,8 @@ author_profile: https://github.com/Juliana-Morais
 ## Details
 ### You will learn
   - How to analyze datasets and upload the training data
-  - How to train a machine learning model to classify service requests
-  - How to classify service requests into categories
+  - How to train a machine learning model to generate clusters and keywords in service requests
+  - How to identify trends or patterns in new requests based on the clusters and keywords you generated
   - How to evaluate the performance of your machine learning model
 
 Service Ticket Intelligence provides machine learning functionalities to effectively deal with service requests. Thereby, the service offers three main functionalities:
@@ -22,9 +22,9 @@ Service Ticket Intelligence provides machine learning functionalities to effecti
 
 2. The service is able to recommend solutions for service requests based on historical data.
 
-3. The service is able to identify in unstructured data trends or patterns in service tickets from the clusters and keywords you have created.
+3. The service is able to identify in unstructured data trends or patterns in service tickets from the clusters and keywords you have generated.
 
-This tutorial deals with classifying service requests. Find more details on the Service Ticket Intelligence features [here](https://help.sap.com/docs/SERVICE_TICKET_INTELLIGENCE/934ccff77ddb4fa2bf268a0085984db0/2f0e49ac91c24d54acb694d967e0cfc0.html).
+This tutorial deals with clustering text in service requests. Find more details on the Service Ticket Intelligence features [here](https://help.sap.com/docs/SERVICE_TICKET_INTELLIGENCE/934ccff77ddb4fa2bf268a0085984db0/2f0e49ac91c24d54acb694d967e0cfc0.html).
 
 ---
 
@@ -32,16 +32,17 @@ This tutorial deals with classifying service requests. Find more details on the 
 
 First, start your local Jupyter server.
 
-The first page that you see shows the content of the repository that you cloned from GitHub in [Set Up Jupyter Notebook for Service Ticket Intelligence](cp-aibus-sti-jupyter-setup), including the notebooks, datasets and configuration file that you edited in the previous tutorial. To open the notebook for classification, click **Classification** to navigate into the folder.
+The first page that you see shows the content of the repository that you cloned from GitHub in [Set Up Jupyter Notebook for Service Ticket Intelligence](cp-aibus-sti-jupyter-setup), including the notebooks, datasets and configuration file that you edited in the previous tutorial. To open the notebook for clustering, click **Clustering** to navigate into the folder.
 
 ![Jupyter Home](jupyter-home.png)
 
-Next, click **Classification_demo.ipynb** to open the notebook. You can recognize Jupyter notebooks by their `.ipynb` file extension.
+Next, click **Clustering_demo.ipynb** to open the notebook. You can recognize Jupyter notebooks by their `.ipynb` file extension.
 
 ![Open Notebook](open-notebook.png)
 
 [DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 2: ](What is a Jupyter notebook)]
 
@@ -72,10 +73,8 @@ Go through the notebook by executing the cells and reading the explanations that
 [DONE]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 4: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]
-
-
----
