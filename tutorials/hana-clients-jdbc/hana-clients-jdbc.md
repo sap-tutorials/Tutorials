@@ -23,7 +23,7 @@ primary_tag: software-product>sap-hana-cloud
 
 [ACCORDION-BEGIN [Step 1: ](Install a JDK)]
 
-Ensure that you have a Java Development Kit (JDK) installed and make sure it is accessible from your path.  Details on supported versions can be found at SAP Note [3136015 - SAP HANA Client Supported Platforms for 2.11](https://launchpad.support.sap.com/#/notes/3136015) and [Oracle Java SE Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html).  
+Ensure that you have a Java Development Kit (JDK) installed and make sure it is accessible from your path.  Details on supported versions can be found at SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810) and [Oracle Java SE Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html).  
 
 A few options include:
 

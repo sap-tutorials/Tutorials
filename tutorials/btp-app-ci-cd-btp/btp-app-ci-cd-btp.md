@@ -5,7 +5,7 @@ title: Configure and Run a Predefined SAP Continuous Integration and Delivery (C
 description: Enable SAP Continuous Integration and Delivery (CI/CD) service on SAP Business Technology Platform for your CAP application.
 keywords: cap
 auto_validation: true
-time: 15
+time: 30
 tags: [ tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
@@ -391,7 +391,7 @@ You have now successfully created a CI/CD pipeline and deployed your application
 [VALIDATE_1]
 
 
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
 
 <p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-ci-cd-btp" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]

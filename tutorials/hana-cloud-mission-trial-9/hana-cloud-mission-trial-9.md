@@ -190,13 +190,9 @@ After you are done, deploy the whole project again. When that is completed succe
 
 Now that you have the role created and granted privileges to this role, it's time to grant this role to a user. We will create the public user `report` that shall have read-only access to the calculation view.
 
-1.	Go back to your tab with the **SAP HANA Database Explorer** open or click on the HDI container icon (![Container](icon-container.png)) in the SAP HANA Projects panel.
+1.	Go back to your tab with the **SAP HANA Database Explorer** and open a SQL Console by clicking on the SQL icon (![SQL](icon-sql.png)) at the top left corner. Make sure that the connection is opened for an user that has system privileges `ROLE ADMIN` and `USER ADMIN`, e.g., database user `DBADMIN`.
 
-2.	Open a SQL Console by clicking on the SQL icon (![SQL](icon-sql.png)) at the top left corner.
-
-    !![SQL console](ss-06-sql-console.png)
-
-3.	Paste the following statement in the SQL Console. Change the password in the statement and then run.
+2.	Paste the following statement in the SQL Console. Change the password in the statement and then run.
 
     ```SQL
 CREATE USER report PASSWORD <your_password> NO FORCE_FIRST_PASSWORD_CHANGE set usergroup default;
@@ -204,17 +200,17 @@ CREATE USER report PASSWORD <your_password> NO FORCE_FIRST_PASSWORD_CHANGE set u
 
     > Using the clause `NO FORCE_FIRST_PASSWORD_CHANGE` is not considered a security best practice! We will only use this option for the purpose of this tutorial, in our example to make a user available to multiple individuals. If you create users in your productive environment, please consider forcing a password change for the first log in and giving individuals different users.
 
-4.	Now that our new user `report` is created, we need to grant the user access to the role `PublicAccessSchema`.
+3.	Now that our new user `report` is created, we need to grant the user access to the role `PublicAccessSchema`.
 
-5.	Use the following statement.
+4.	Use the following statement.
 
     ```SQL
 GRANT <SCHEMA_NAME>."PublicAccessSchema" to report;
 ```
 
-6. Replace the `<schema name>` with the calculation view schema you copied in the beginning of this tutorial.
+5. Replace the `<schema name>` with the calculation view schema you copied in the beginning of this tutorial.
 
-7. Make sure to remove the `<>` characters and then run the statement.
+6. Make sure to remove the `<>` characters and then run the statement.
 
 > ### Custom vs. default roles
 >

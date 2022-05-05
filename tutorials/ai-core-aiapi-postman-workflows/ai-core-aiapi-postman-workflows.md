@@ -11,8 +11,8 @@ author_profile: https://github.com/dhrubpaul
 
 ## Details
 ### You will learn
-  - Build docker images and host on Docker Hub Repository
-  - Write ML Pipeline via Workflows.
+  - How to build docker images and host them in a Docker Hub Repository
+  - To write ML Pipeline via Workflows.
 
 ---
 
@@ -21,12 +21,7 @@ author_profile: https://github.com/dhrubpaul
 
 Docker will be used to store python code in form of containers *(portable environments)*.
 
-Create following files *(download link below)* as-it-is. Resulting directory structure may look like following:
-
-!![folder structure](img/postman/code-folder.png)
-
-
-File Links
+Create a directory called `train`, and another called `infer`. Download the following files to their respective directories.
 
 Training Scripts
 
@@ -46,34 +41,35 @@ Inference/ Serving Scripts
 | `infer_scikit.py` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-workflows/files/infer/infer_scikit.py)
 | `requirements.txt` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-workflows/files/infer/requirements.txt)
 
+The resulting directory structure should look something like:
+
+!![folder structure](img/postman/code-folder.png)
+
 [DONE]
 [ACCORDION-END]
 
-
-
 [ACCORDION-BEGIN [Step 2: ](Build Docker image)]
 
-1. Execute following line on terminal, to connect to you Docker account.
-    Edit the highlighted line   
+1. Edit and execute the following line on the terminal, to connect to you Docker account.
     ```BASH[1]
     docker login docker.io -u <your-dockerhub-username>
     ```
 
-2. Type your password *(nothing will appear on screen: just type your password and press enter)*
+2. Enter your password when prompted. Note that nothing will appear on the screen. Press enter once you have typed your password.
 
     !![docker login](img/docker/dd-login.png)
 
-3. Navigate to place where you have stored the code files.  
+3. Navigate to the directory where you stored the code files.  
 
     !![directory](img/docker/build-1.png)
 
-4. Navigate inside `train`
+4. Navigate to your `train` directory.
 
     ```BASH
     cd train
     ```
 
-5. Build Docker image *(change the highlighted line)*.
+5. To build the Docker image, edit and execute the code below:
 
     ```BASH[1]
     docker build -t <your-dockerhub-username>/text-clf-train:0.0.1 .
@@ -82,7 +78,7 @@ Inference/ Serving Scripts
     !![docker build train](img/docker/build-2.png)
 
 
-Similarly navigate inside `infer` folder and execute the following command to build docker image for serving the model.:
+Similarly navigate to your `infer` folder and edit and execute the following command to a build Docker image for inferencing *(or serving)* the model.
 
 ```BASH
 docker build -t <your-dockerhub-username>/text-clf-serve:0.0.1 .
@@ -96,25 +92,23 @@ docker build -t <your-dockerhub-username>/text-clf-serve:0.0.1 .
 
 [ACCORDION-BEGIN [Step 3: ](Upload docker image to docker repository)]
 
-Push your local docker image to Docker Hub cloud.
-
-Execute the following on you terminal. *(change the highlighted line)*
+Edit and execute the following command on you terminal, to push your local docker image to Docker Hub cloud.
 
 ```BASH[1]
 docker push docker.io/<your-dockerhub-username>/text-clf-train:0.0.1
 ```
 
-*(sample image if previously uploaded)*
+You should see something like:
 
 !![docker push](img/docker/docker-push.png)
 
-Similarly push your serving docker image. *(change the highlighted line)*.
+Edit and execute the code to push your inferencing Docker image again.
 
 ```BASH[1]
 docker push docker.io/<your-dockerhub-username>/text-clf-serve:0.0.1
 ```
 
-Visit <https://hub.docker.com>, inside the repository `text-clf-serve` you will see you uploads.
+Visit <https://hub.docker.com>, if your images have pushed successfully, you will see them inside their respective repositories.
 
 !![docker uploads](img/docker/docker-final.png)
 
@@ -123,27 +117,37 @@ Visit <https://hub.docker.com>, inside the repository `text-clf-serve` you will 
 
 [ACCORDION-BEGIN [Step 4: ](Create Workflow Files)]
 
-Workflows will instruct SAP AI Core
-    - how to execute the docker images
-    - what inputs to provide(datasets)
-    - what outputs it gives.
+Workflows will instruct SAP AI Core on:
+  - how to execute the docker images.
+  - what inputs to provide (such as datasets and models).
+  - what outputs to give.
 
-*(Further read [`ArgoWorkflows`](https://github.com/argoproj/argo-workflows) )*
-
-
-Create a folder `workflows` inside to your cloned local GitHub folder.
-
-Create the following file *(download links below)* as depicted in the image
-
-Download Files
+Create a folder called `workflows` inside to your cloned local GitHub folder. Download the following files to this folder:
 
 | File | Link |
 | --- | --- |
 | `training_workflow_tutorial.yaml` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-workflows/files/workflows/training_workflow_tutorial.yaml)  |
 | `serving_workflow_tutorial.yaml` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-workflows/files/workflows/serving_workflow_tutorial.yaml)
 
-
+Your directory should look something like:
 !![workflow GitHub local](img/build-ml/git-1.png)
+
+### Give unique ID to the workflows
+
+Edit `training_workflow_tutorial.yaml`. The key `metadata > name` is termed **executable ID** (highlighted in the image below). This executable ID is a unique identifier of your workflow not the file name of the workflow in SAP AI Core. The workflow's **Executable ID** needs to be unique across all the workflows (even from different GitHub repos) you sync with your SAP AI Core instance. Edit the value to some unique value
+
+```YAML
+...
+
+metadata:
+  name: text-clf-train-tutorial-772  # Executable ID (max length 64 lowercase-hypen-separated), please modify this to any value if you are not the only user of your SAP AI Core instance. Example: `text-clf-train-tutorial-1234`
+...
+```
+
+!![image](img/exec_id.png)
+
+
+Edit the `serving_workflow_tutorial.yaml` for the executable ID similarly.
 
 
 [DONE]
@@ -151,7 +155,7 @@ Download Files
 
 [ACCORDION-BEGIN [Step 5: ](Choose computing hardware resources)]
 
-Inside YAML files from previous step find the line
+Inside each of the YAML files from previous step, find the line:
 
 ```YAML[2]
   ...
@@ -159,7 +163,7 @@ Inside YAML files from previous step find the line
   ...
 ```
 
-The `starter` is the computing resource plan is used in this tutorial. Below is the list of other available plans offered by SAP AI Core.
+`starter` refers to your computing resource plan. For this tutorial, you can use the Starter plan. For your reference, these are the other available plans offered by SAP AI Core:
 
 |     `resourcePlan` ID    |     GPUs          |     CPU cores    |     Memory (Gb)    |
 |------------------------|-------------------|------------------|--------------------|
@@ -176,9 +180,7 @@ The `starter` is the computing resource plan is used in this tutorial. Below is 
 
 [ACCORDION-BEGIN [Step 6: ](Add Docker details to workflows)]
 
-1. Add the docker registry secret name. This will authorize while pull image from your docker registry. The docker registry secret must be created before. See [API to create docker registry secret](https://developers.sap.com/tutorials/ai-core-aiapi-postman-repository.html#b8f76aa7-69d4-4287-8e69-b275fc6a59f7)
-
-    Edit the following lines *(highlighted)* in each workflow file *(YAML)*.
+1. Edit the following line of code in your YAML files, to include your docker registry secret name that you defined in [create docker registry secret](https://developers.sap.com/tutorials/ai-core-aiapi-postman-repository.html#b8f76aa7-69d4-4287-8e69-b275fc6a59f7). This will allow Docker images to be pulled from your docker registry.
 
     ```YAML[3]
     ...
@@ -189,9 +191,7 @@ The `starter` is the computing resource plan is used in this tutorial. Below is 
 
     ![Docker secret](img/docker-secret.png)
 
-2. Add the training docker image information. Edit the following lines *(highlighted)* in each workflow file *(YAML)*.
-
-    - `training_workflow_tutorial.yaml`
+2. Edit the following line in the training file to specify the Docker image.
 
     	```YAML[5]
     	...
@@ -204,7 +204,7 @@ The `starter` is the computing resource plan is used in this tutorial. Below is 
 
       !![train docker image yaml](img/postman/train-img.png)
 
-    - `serving_workflow_tutorial.yaml`
+3. Similarly, specify the Docker image in the serving file:
 
     	```YAML[10]
     	...
@@ -227,54 +227,43 @@ The `starter` is the computing resource plan is used in this tutorial. Below is 
 
 [ACCORDION-BEGIN [Step 7: ](Upload workflows to GitHub repository)]
 
-1. Copy the `workflows` folder *(from previous step)* to your cloned local GitHub folder. Ensure your files are placed as per image below  
+1. Open GitHub Desktop and choose the repository that you made for this tutorial.
 
-	!![workflow GitHub local](img/build-ml/git-1.png)
-
-2. Open GitHub Desktop.
-
-3. Type the commit message `workflows added`. And click on **Commit to main** button.
+2. In the commit Summary, type `workflows added`. Click on **Commit to main** button.
 
 	!![GitHub commit](img/build-ml/git-2.png)  
 
-4. Click on **Push origin**.  
+3. Click on **Push origin**.  
 
 	!![GitHub push](img/build-ml/git-push.png)
 
-Now SAP AI Core will automatically sync workflows from your GitHub through the Applications.
+Now SAP AI Core will automatically sync workflows from your GitHub through the Postman application commands.
 
 > **IMPORTANT:** The SAP AI Core syncs in interval of 3 minutes.
+
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](API to check workflow sync status)]
 
-> **IMPORTANT:** WAIT ATLEAST 3 MINS before sync is done.
+When three minutes has passed, add your application to the environment variables:
 
-Check the sync status of your workflows with postman.
-
-### ADD POSTMAN Environment Variable
+> Environments aicore-ai-env >
 
 | Key | Value |
 | --- | --- |
 | `appName` | `aicore-test-app`
 
+and press Save.
+
 !![add environment variable](img/postman/add-env.png)
 
+Check the sync status of your workflows by editing and executing:
 
-> **COLLECTIONS** > admin > applications > *GET* get application status
+> **COLLECTIONS** > admin > applications > *GET* get application status             `{{apiurl}}/v2/admin/applications/{{appName}}/status`
 
-### Endpoint
-**GET**
-`{{apiurl}}/v2/admin/applications/{{appName}}/status`
-
-
-**SEND**
-
-### RESPONSE
-
-*(if 404, See troubleshooting below.)*
+This should return:
 
 ```
 {
@@ -300,19 +289,9 @@ Check the sync status of your workflows with postman.
 }
 ```
 
-!![get app status](img/postman/call-app-status.png)
+If you receive the error: `"message": "KeyError : 'operationState'"` instead, your repository folder is empty. You must wait for 3 minutes after uploading something to GitHub for it to sync.
 
-
-
-### Troubleshooting
-
-1. `"message": "KeyError : 'operationState'"`
-
-    Your repository folder is empty from last sync. Wait for 3 minutes after uploading something to GitHub.
-
-2. `"message": "Error retrieving status for application aicore-test-app"`
-
-    Unable to reach out application(SAP AI Core) named `aicore-test-app`, check if you have registered the GitHub directory as application.
+If you receive the error: `"message": "Error retrieving status for application aicore-test-app"`, check that you have successfully registered the GitHub directory as application.
 
 [DONE]
 [ACCORDION-END]
@@ -321,8 +300,9 @@ Check the sync status of your workflows with postman.
 
 **A small recap of what has been done so far.**
 
-- The training and serving docker images are pushed to the docker repository
-- The training and serving workflows(*templates*) are uploaded to the GitHub repository.
+- Postman, Docker,  AWS and GitHub have been connected.
+- The training and serving docker images have been pushed to the docker repository.
+- The training and serving workflows (*templates*) have been uploaded to the GitHub repository.
 
 !![AIF Setup](img/aifexercisesetup.png)
 

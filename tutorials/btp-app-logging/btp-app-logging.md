@@ -57,7 +57,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Access logs from SAP BTP cockpit)]
-1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
+1. In [SAP BTP Cockpit](https://account.hana.ondemand.com/) enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -83,7 +83,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Analyze logs using Kibana dashboard)]
-1. Go to your subaccount in **SAP BTP cockpit**.
+1. In SAP BTP cockpit navigate to your **Subaccount**.
 
 2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
 
@@ -234,7 +234,7 @@ The time filter is on the right top of the screen. Don't forget to choose *Refre
 [DONE]
 The result of this tutorial can be found in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
 
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
 
 <p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-logging" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]

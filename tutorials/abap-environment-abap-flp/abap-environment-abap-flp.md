@@ -2,8 +2,8 @@
 auto_validation: true
 title: Integrate List Report into ABAP Fiori Launchpad
 description: Integrate your list report application into ABAP Fiori launchpad.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, programming-tool>abap-development, products>sap-business-technology-platform, tutorial>license]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45

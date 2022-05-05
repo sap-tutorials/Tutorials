@@ -83,7 +83,9 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
     CALL PUBLIC.CHECK_REMOTE_SOURCE('REMOTE_HC_TRIAL');
     ```  
 
-    > The ServerNode can be copied from SAP HANA Cloud Central by choosing **Actions > Copy > SQL Endpoint**.
+    Additional details can be found at [CREATE REMOTE SOURCE Statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20d48343751910149985a2c925e12190.html).
+
+    > The ServerNode can be copied from SAP HANA Cloud Central by choosing **Actions > Copy SQL Endpoint**.
     >
     > ![Host and Port](host-and-port.png)
 
@@ -100,8 +102,6 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
 4. After executing the create remote source SQL statement, the result can be seen in the **Remote Sources** folder, as shown below.  You may need to press the refresh button.
 
     ![remote sources](remote-source.png)
-
-    Additional details can be found at [CREATE REMOTE SOURCE Statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20d48343751910149985a2c925e12190.html).
 
 5. A virtual table named `vt_tourist_reviews` will be created in SAP HANA, express edition. This will enable access to the `tourist_reviews` table that was created in SAP HANA Cloud.   This can be visualized as follows:
 
@@ -135,6 +135,8 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
     ```SQL
     CREATE VIRTUAL TABLE HOTEL.VT_TOURIST_REVIEWS AT "REMOTE_HC_TRIAL"."HC_HDB_Trial"."HOTEL"."TOURIST_REVIEWS";
     ```
+    >
+    >Additional details can be found at [CREATE VIRTUAL TABLE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d2a0406155f24a49aa6c549e0c428bd7.html).
 
 9. Open the virtual table `VT_TOURIST_REVIEWS` and notice that its type is virtual.
 
@@ -224,8 +226,6 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     ![create remote source](create-remote-source-to-dl.png)
 
-    Additional details can be found at [CREATE REMOTE SOURCE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/20d48343751910149985a2c925e12190.html).
-
 5. After pressing refresh, notice that under remote sources, there is a remote source `HC_DL_Trial`.
 
     ![SAP HANA Data Lake Remote Source](remote-source-DL.png)
@@ -238,7 +238,7 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     ![data lake and on-premise remote connection](dl-cloud-connection.png)
 
-    > Alternatively, the following SQL statement can be used to create the virtual table.  Additional details can be found at [CREATE VIRTUAL TABLE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/d2a0406155f24a49aa6c549e0c428bd7.html).
+    > Alternatively, the following SQL statement can be used to create the virtual table.  
     >
     ```SQL
     CREATE VIRTUAL TABLE HOTEL.VT_DL_TOURIST_REVIEWS AT HC_DL_TRIAL.iqaas.HOTEL.TOURIST_REVIEWS;
@@ -384,7 +384,7 @@ The following commands were used to start the Cloud Connector.
     CALL PUBLIC.CHECK_REMOTE_SOURCE('REMOTE_HANA_EXPRESS');
     ```  
 
-    Additional details can be found at [CREATE REMOTE SOURCE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/20d48343751910149985a2c925e12190.html) and [Create an SAP HANA On-Premise Remote Source](https://help.sap.com/viewer/477aa413a36c4a95878460696fcc8896/latest/en-US/20d299d2f5224e8590982e8ad97362a2.html).
+    Additional details can be found at [Create an SAP HANA On-Premise Remote Source](https://help.sap.com/viewer/477aa413a36c4a95878460696fcc8896/latest/en-US/20d299d2f5224e8590982e8ad97362a2.html).
 
 8. After executing the create remote source SQL statement, the result can be seen in the **Remote Sources** folder, as shown below.  You may need to press the refresh button.
 
