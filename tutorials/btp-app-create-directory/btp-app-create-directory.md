@@ -130,7 +130,7 @@ If you don't want to start from scratch, but from a specific example of the tuto
     cp -r .gitignore $(ls -1A | grep -v .git) ../cpapp
     ```
 
-    > If you get an error, make sure you are not using PowerShell to execute the command. Checkout [Command Line Interpreters](btp-app-#command-line-interpreters) to see the recommended command line interpreters for this tutorial.
+    > If you get an error, make sure you are not using PowerShell to execute the command. Checkout `Step 2: Command Line Interpreters` in this [tutorial](btp-app-set-up-local-development) to see the recommended command line interpreters for this tutorial.
 
 6. Check out the `master` branch to get access to the template files again.
 
@@ -153,7 +153,7 @@ If you don't want to start from scratch, but from a specific example of the tuto
 [VALIDATE_1]
 
 
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
 
 <p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-create-directory" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
