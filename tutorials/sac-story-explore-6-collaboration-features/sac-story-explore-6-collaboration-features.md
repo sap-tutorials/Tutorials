@@ -1,6 +1,6 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 title: Start a Discussion, Comment and Share your Story
 description: Explore the collaboration features of SAP Analytics Cloud
 auto_validation: true
