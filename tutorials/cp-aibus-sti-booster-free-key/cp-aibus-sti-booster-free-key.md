@@ -20,7 +20,7 @@ author_profile: https://github.com/Juliana-Morais
   - How to use the **Set up account for Service Ticket Intelligence** booster to assign entitlements, update your subaccount, create a service instance and the associated service key for Service Ticket Intelligence.
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Go To Your SAP BTP Account)]
+[ACCORDION-BEGIN [Step 1: ](Go to your SAP BTP account)]
 
 1. Open the [SAP BTP cockpit](https://account.hana.ondemand.com/cockpit#/home/allaccounts).
 
@@ -70,13 +70,13 @@ Now, you will use the **Set up account for Service Ticket Intelligence** booster
 
     !![Service Key](booster-finish.png)
 
-Follow the progress of the booster automated tasks.
+    Follow the progress of the booster automated tasks.
 
-!![Service Key](booster-progress.png)
+    !![Service Key](booster-progress.png)
 
-When the automated tasks are done, see the **Success** dialog box.
+    When the automated tasks are done, see the **Success** dialog box.
 
-!![Service Key](booster-success.png)
+    !![Service Key](booster-success.png)
 
 [DONE]
 [ACCORDION-END]
