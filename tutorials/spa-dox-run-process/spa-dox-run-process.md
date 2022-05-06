@@ -10,7 +10,7 @@ primary_tag: software-product>sap-process-automation
 ---
 
 ## Prerequisites
--  Complete creating the E2E process by creating  the [trigger](spa-dox-create-process), the [automation](spa-dox-create-automation), the [decision](spa-dox-create-decision) and forms[Create Forms for Invoice Approval Process](spa-dox-forms)
+-  Complete creating the E2E process by creating  the [trigger](spa-dox-create-process), the [automation](spa-dox-create-automation), the [decision](spa-dox-create-decision) and [forms](spa-dox-forms)
 - [Agent Management settings to execute the process with an automation](spa-run-agent-settings)
 - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
 
