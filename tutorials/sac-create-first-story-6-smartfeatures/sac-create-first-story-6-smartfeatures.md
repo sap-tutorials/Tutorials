@@ -1,6 +1,6 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 title: Augment your Story with Smart Features
 description: Utilize Smart Insights and Smart Discovery to uncover valuable insights to drive smarter decision making
 auto_validation: true
@@ -30,7 +30,7 @@ Let's run Smart Insights on the Gross Margin per Product Category chart to help 
 
 **2.** Click **Add Smart Insights**
 
-![Smart Insight 1](Smart Insight 1.png)
+![Smart Insight 1](Smart Insight 1 new.png)
 
 Smart Insights then analyzes the underlying dataset and runs various statistical algorithms to uncover the top contributors influencing Gross Margin per Product Category.
 

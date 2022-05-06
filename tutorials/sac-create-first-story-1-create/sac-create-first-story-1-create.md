@@ -1,6 +1,6 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 title: Create Your First Story
 description: Create your first story and import a dataset
 auto_validation: true
@@ -31,23 +31,21 @@ primary_tag: software-product>sap-analytics-cloud
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a Story)]
-<!--
-| File   | Link |
-|  :------------- | :------------- |
-|  `fashiondataset.csv` | [Download Here](https://github.com/andrewliu-SAP/Dataset-for-Developer-Tutorial) | -->
 **Stories** represent the dashboard and reporting features of SAP Analytics Cloud and provide you with a way to bring data and visualizations together to tell the story of your business.
-
-**1.** Click **Stories** from the Main Menu/Navigation bar  
-
-![Navigate](Navigate.png)
 
 You can create a story with a template or from scratch. With a template, the theme, branding, layout, and object placeholders are already in the story to help you build your story faster. When building from scratch, you can choose to begin blank with a Responsive page, Canvas page, Grid page, or from a Smart Discovery. Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/f0cc6e14392e4b18b0f1bcaab839cc2d.html) to learn more.
 
 We will focus on creating a responsive story page.
 
-**2.** Click **Responsive** under **Create New**
+**1.** In **Stories** from the Main Menu/Navigation bar, click **Responsive**
 
-![Story Types](Story Types.png)
+![Navigate](Navigate new.png)
+
+**2.** Select **Classic Design Experience**, then **Create New**
+
+![Story Types](Classic Design Experience.png)
+
+The Optimized Design Experience improves performance within SAP Analytics Cloud stories and enables content within an SAP Analytics Cloud story to load faster, but not all features and story options will be available in the Optimized Design Experience features. A new tutorial will be created in the future for Optimized Designed Experience stories.
 
 [DONE]
 [ACCORDION-END]
@@ -103,7 +101,7 @@ To change a measure to a dimension:
 
 ![Measure to Dimension rest](Measure to Dimension rest.png)
 
-Now that they are dimensions, we can Geo enrich them. Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/b396a6eb42e3491aac1791e2d10de68f.html)to learn more.
+Now that they are dimensions, we can Geo enrich them. Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/b396a6eb42e3491aac1791e2d10de68f.html) to learn more.
 
 [DONE]
 [ACCORDION-END]

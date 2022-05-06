@@ -75,7 +75,7 @@ SAP Process Automation in the SAP Business Technology Platform combines the capa
 
 10. You will have access to the Application Development studio which is a no-code environment from where you can start your development of the business processes.
 
-    !![11.png](11.PNG)
+    !![Studio](110.png)
 
     Your are now ready to use SAP Process Automation in SAP BTP Free Tier.
 
