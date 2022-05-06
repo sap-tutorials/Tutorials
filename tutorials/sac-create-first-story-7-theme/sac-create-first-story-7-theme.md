@@ -1,6 +1,6 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 title: Apply a Theme and Next Steps
 description: Apply a customized theme to your story and learn about the next steps to take in your journey of learning SAP Analytics Cloud
 auto_validation: true
@@ -157,7 +157,7 @@ Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/releas
 
 ![Update Titles](Update Titles 2.png)
 
-**31.**	In the Sales Summary page, update the left lane title to "Page Filters"  
+**31.**	In the Sales Manager Overview page, update the left lane title to "Page Filters"  
 
 **32.**	Select **Remove** in the **Chart Action Menu** of the empty text object
 

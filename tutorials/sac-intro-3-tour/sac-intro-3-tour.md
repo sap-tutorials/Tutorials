@@ -1,6 +1,6 @@
 ---
-author_name: Megan Hoy
-author_profile: https://github.com/meganhoy
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 title: Take a Tour of SAP Analytics Cloud
 description: Learn how to navigate the user interface of SAP Analytics Cloud
 auto_validation: true
