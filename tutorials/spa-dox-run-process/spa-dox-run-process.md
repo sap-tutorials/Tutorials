@@ -5,15 +5,18 @@ title: Release, Deploy and Run the Process
 description: Release, deploy and run the Process to work on Tasks and monitor the Process
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: software-product>sap-process-automation
 ---
 
 ## Prerequisites
+-  Complete creating the E2E process by creating  the [trigger](spa-dox-create-process), the [automation](spa-dox-create-automation), the [decision](spa-dox-create-decision) and [forms](spa-dox-forms)
 - [Agent Management settings to execute the process with an automation](spa-run-agent-settings)
 - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
 
 ## Details
+Till now ,you have developed a Business Process where you will start with a form to enter your name as the processor and the file path where the invoice is stored. Then you would need to upload and annotate the invoice in order to get the data from the relevant fields by the bot: company name, invoice amount and document number. Bot will extract this data. After this we need to decide, who would be the approver (so you need to enter your email). Then we need to build the approval form to review the submitted data and approve it for further processing.
+
 ### You will learn
   - How to release, deploy and run the Process
   - How to work on the Tasks

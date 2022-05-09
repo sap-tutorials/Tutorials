@@ -77,7 +77,7 @@ Video version of tutorial: </br>
 
 [ACCORDION-BEGIN [Step 2: ](Create service interface)]
 
-1. In the `srv` (**not `scr`!**) folder created another file and name it `interaction_srv.cds`
+1. In the `srv` (**not `src`!**) folder created another file and name it `interaction_srv.cds`
 
     ```Name
     interaction_srv.cds
@@ -138,7 +138,7 @@ Video version of tutorial: </br>
 
     !![Bind Project](start_bind.png)
 
-4. If you receive either of these two following warning dialogs, please just choose **Continue** (nothing will be deleted because we are create a new HDI Container Instance) and **Enable** (automatic undelploy is quite helpful during the development process for the reasons described in this dialog)
+4. If you receive either of these two following warning dialogs, please just choose **Continue** (nothing will be deleted because we are create a new HDI Container Instance) and **Enable** (automatic undeploy is quite helpful during the development process for the reasons described in this dialog)
 
     !![Binding Warning #1](warning1.png)
 

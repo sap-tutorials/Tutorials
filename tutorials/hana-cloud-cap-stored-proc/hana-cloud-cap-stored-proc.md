@@ -83,7 +83,7 @@ Video tutorial version: </br>
 
     !![Create JavaScript Exit Handler](create_exit.png)
 
-3. In `interaction_srv.js` we will implement the call to the Stored Procedure.  This logic will implement the exit handler for this function which in turn uses the standard `@sap/hdbext` Node.js module to call the Stored Procedure from SAP HANA Cloud.  Save the file.
+3. In `interaction_srv.js` we will implement the call to the Stored Procedure.  This logic will implement the exit handler for this function which in turn uses the standard `hdb` Node.js module to call the Stored Procedure from SAP HANA Cloud.  Save the file.
 
     !![Call Stored Procedure](call_stored_procedure.png)    
 
@@ -109,7 +109,7 @@ Video tutorial version: </br>
 4. But since we used two additional SAP provided Node.js modules in our code, we need to add those to our root **package.json**. From a terminal in the root of the project use the following command:
 
     ```shell
-    npm install -save @sap/hdbext sap-hdbext-promisfied
+    npm install -save sap-hdb-promisfied
     ```
 
     !![Extend package.json](extend_package_json.png)

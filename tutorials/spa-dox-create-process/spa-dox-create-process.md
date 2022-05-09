@@ -5,14 +5,18 @@ title: Create an Invoice Approval Process
 description: Create the project and the first form for the Invoice Approval Process
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: software-product>sap-process-automation
 ---
 
 ## Prerequisites
- - You have setup SAP Process Automation in your SAP BTP account
+ - You have setup [SAP Process Automation in your SAP BTP Free Tier](spa-subscribe-booster)
 
 ## Details
+You work in the finance department of the company and need to regularly process incoming scanned invoices.
+This is actually causing a lot of manual effort in order to extract the data out of the pdf or image, send to the approval of the manager before the data would be actually entered into the system.
+This needs to be automated since we are talking about multiple invoices which are coming every single day. Also we need to define the approval flow depending on the specific criteria (in this tutorial series, company is considered as criteria).
+
 ### You will learn
   - How to create a project and the related process
   - How to add a form to trigger this process

@@ -10,6 +10,11 @@ primary_tag: software-product>sap-process-automation
 ---
 
 ## Details
+The Desktop Agent is a component of SAP Intelligent Robotic Process Automation that is installed locally on user desktops. It executes automation projects that launch and run applications of various kinds, read information from screens, enter data, click options, and process data.
+
+## Prerequisites
+ - Windows machine
+
 ### You will learn
 
   - How to install Desktop Agent
@@ -25,7 +30,10 @@ Among the SAP Process Automation, the Desktop Agent is an On-Premise component. 
 
 >The minimum version of the Desktop Agent supported by SAP Process automation is **2.0.20**.
 
-1. Launch the MSI file execution.
+1. Download the **latest version**  of  [MSI file execution](https://tools.hana.ondemand.com/#cloud)
+>  MSI version will be updated for every new release. Always download the latest version.
+
+  !![Link text e.g., Destination screen](tools.png)
 
 2. Select **Next** to begin the installation process.
 

@@ -5,13 +5,12 @@ title: Create Forms for Invoice Approval Process
 description: Create the needed approval and notifications forms for the Invoice Approval Process
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, tutorial>free-tier]
 primary_tag: software-product>sap-process-automation
 ---
 
 ## Prerequisites
- - Access to a SAP BTP tenant with SAP Process Automation
- - Created the trigger, the automation and also the decision to come to this point in the process
+ - Created the [trigger](spa-dox-create-process), the [automation](spa-dox-create-automation) and also the [decision](spa-dox-create-decision) to come to this point in the process
 
 ## Details
 There are different requirements and business situations when a form is needed in a business process. You have already created a form to start the process.

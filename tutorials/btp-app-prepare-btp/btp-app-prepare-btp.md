@@ -49,7 +49,7 @@ In general, you have a choice of the following options:
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Create a Trial account)]
-You can [register for a trial account](https://www.sap.com/cmp/td/sap-cloud-platform-trial.html) and access it [here](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial).
+You can [register for a trial account](https://www.sap.com/cmp/td/sap-cloud-platform-trial.html) and have [access](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial).
 
 A global account, a subaccount, a Cloud Foundry org, and space with some entitlements that are sufficient to do this tutorial are set up for you.
 
@@ -81,8 +81,8 @@ The following services with their service plans and entitlements are required fo
 | SAP Application Logging service   | `standard`   | 1      | instances    | [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)   |
 | SAP HANA Schemas & HDI Containers | `hdi-shared` | 1      | instances    | [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)   |
 | SAP HANA Cloud                    | `hana`       | 1      | instances    | [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)     |
-| SAP Launchpad service             | `standard`   | 1      | active users | [Add the SAP Launchpad Service](btp-app-launchpad-service) |
-
+| Launchpad Service                 | `standard`   | 1      | active users | [Add the SAP Launchpad Service](btp-app-launchpad-service) |
+| SAP Event Mesh                    | `default`    | 1      | instances    | [Set Up Your CAP Application for Eventing](btp-app-events-app-setup-s4hc) |
 
 > The services mentioned below are Utility Services, no entitlement needed
 
@@ -162,7 +162,7 @@ In this section, you assign a portion of the entitlements that you've bought for
 [ACCORDION-BEGIN [Step 7: ](Create a Cloud Foundry space)]
 Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org/concepts/roles.html#spaces). Each Cloud Foundry org can have 0 to n spaces, you create just one here.
 
-1. Open the subaccount page in the SAP BTP cockpit.
+1. Open the subaccount page in SAP BTP Cockpit.
 
 2. Choose **Spaces** in the left pane under the section **Cloud Foundry**.
 
@@ -176,7 +176,7 @@ Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Assign users in the Cloud Foundry space)]
-1. Open the space page in the SAP BTP cockpit (you can just choose the tile for the space that was created).
+1. Open the **Spaces** overview in SAP BTP cockpit (you can just choose the tile for the space that was created).
 
 2. Choose **Members** in the left navigation pane.
 

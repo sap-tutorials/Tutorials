@@ -13,7 +13,7 @@ primary_tag: software-product>sap-btp\, kyma-runtime
 ## Details
 ### You will learn
 - How to implement the Subscribe/Unsubscribe callbacks for the SAP SaaS Provisioning Service
-- How to automatically create APIRule for tenant-specific URL in the Kyma runtime
+- How to automatically create `APIRule` for tenant-specific URL in the Kyma runtime
 
 
 ---
@@ -81,7 +81,7 @@ Payload of subscription PUT and DELETE methods:
 
 [ACCORDION-BEGIN [Step 2: ](Implement Subscription Callbacks)]
 
-A tenant-specific URL should be provided to customers in the onboarding process, at the same time, the URL should be exposed to the Internet as well. Otherwise, customers still cannot access the tenant. URL is exposed in the Kyma runtime through `APIRule`, which needs to be created dynamically through the onboarding/offboarding process using [Kubernetes client for NodeJs](https://github.com/kubernetes-client/javascript).
+A tenant-specific URL should be provided to customers in the onboarding process, at the same time, the URL should be exposed to the Internet as well. Otherwise, customers still cannot access the tenant. URL is exposed in the Kyma runtime through `APIRule`, which needs to be created dynamically through the onboarding/offboarding process using [Kubernetes client for NodeJS](https://github.com/kubernetes-client/javascript).
 
 In the `kyma-multitenant-node/routes/index.js` file, implement the `subscription` and `unsubscription` callbacks. Replace the placeholder with your cluster domain.
 
