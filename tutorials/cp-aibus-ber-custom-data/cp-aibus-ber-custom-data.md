@@ -103,9 +103,9 @@ Please bear in mind that Business Entity Recognition requires your data to be in
 
 >As an alternative to uploading your own JSON file to the service, you can use the following sample files (right click on the link, then click ***Save link as*** to download the files locally):
 
->- [Sample Training Data 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ber-swagger-ui-custom/data/Tutorial_training_data_1.json)
+>- [Sample Training Data 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ber-custom-data/data/Tutorial_training_data_1.json)
 
->- [Sample Training Data 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ber-swagger-ui-custom/data/Tutorial_training_data_2.json)
+>- [Sample Training Data 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ber-custom-data/data/Tutorial_training_data_2.json)
 
 >Please repeat this step twice and upload one document each time. The more data is available the better predictions the model can give you.
 
