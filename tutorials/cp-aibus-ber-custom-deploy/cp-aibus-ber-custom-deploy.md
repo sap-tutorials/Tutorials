@@ -3,7 +3,7 @@ title: Deploy Model and Get Prediction Results
 description: Perform the final steps to train your own Business Entity Recognition custom model to get machine learning entity predictions for the text you submit to the service.
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition, tutorial>free-tier]
 primary_tag: topic>machine-learning
 ---
 
@@ -18,7 +18,7 @@ The core functionality of Business Entity Recognition is to automatically detect
 
 [ACCORDION-BEGIN [Step 1: ](List models)]
 
-To see all your models, you can use the **GET /models** endpoint to see the list of them.
+Use the **GET /models** endpoint to see all the available models (pre-trained and custom) including the one you've created.
 
 1. Click the endpoint name to expand it.
 
@@ -38,7 +38,7 @@ The response includes the Business Entity Recognition pre-trained machine learni
 
 [ACCORDION-BEGIN [Step 2: ](List model versions)]
 
-Use the **GET /models/{`modelName`}/versions** endpoint to see the available versions and other details about a specific model.
+Use the **GET /models/{`modelName`}/versions** endpoint to see the available versions and other details about the custom model you've created.
 
 1. Click the endpoint name to expand it.
 
@@ -50,9 +50,9 @@ Use the **GET /models/{`modelName`}/versions** endpoint to see the available ver
 
     !![BER](png-files/get-models-versions-1.png)
 
-You should receive a response like the following:
+    You should receive a response like the following:
 
-!![BER](png-files/get-models-versions-2.png)
+    !![BER](png-files/get-models-versions-2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -82,7 +82,7 @@ Finally, to make actual predictions, you have to deploy your model. You can do s
 
 [ACCORDION-BEGIN [Step 4: ](See deployment status)]
 
-As with training jobs, you now have to check the status of the deployment every now and then. Use the **GET /deployments/{`deploymentId`}** endpoint to do so.
+As with training jobs, you can now check the status of the deployment every now and then. Use the **GET /deployments/{`deploymentId`}** endpoint to do so.
 
 1. Click the endpoint name to expand it.
 
@@ -94,9 +94,9 @@ As with training jobs, you now have to check the status of the deployment every 
 
     !![BER](png-files/get-deploy-1.png)
 
-You should receive a response like below. Note that, compared to training jobs, deployments do not have a status `SUCCEEDED`. The status `RUNNING` indicates that the deployment is live and the model can be used for predictions.
+    You should receive a response like below. Note that, compared to training jobs, deployments do not have a status `SUCCEEDED`. The status `RUNNING` indicates that the deployment is live and the model can be used for predictions.
 
-!![BER](png-files/get-deploy-2.png)
+    !![BER](png-files/get-deploy-2.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -144,87 +144,94 @@ Use the **GET /inference/jobs/{`jobId`}** endpoint to see the text extraction re
 
       !![BER](png-files/get-inf-1.png)
 
-You should receive a response like the following:
+      You should receive a response like the following:
 
-!![BER](png-files/get-inf-2.png)
+      !![BER](png-files/get-inf-2.png)
 
-In the response, you will find the prediction for the extracted entities. The prediction is made with a probability indicated by the **confidence** field which represents how certain the model is about the value provided. A confidence of 1 means that the model is 100% sure about its prediction. The model tries to provide a value for all its capabilities. Thus, you may see a different result depending on your model's capabilities. In case the model cannot identify an entity in the text, it returns an empty value.
+      In the response, you will find the prediction for the extracted entities. The prediction is made with a probability indicated by the **confidence** field which represents how certain the model is about the value provided. A confidence of 1 means that the model is 100% sure about its prediction. The model tries to provide a value for all its capabilities. Thus, you may see a different result depending on your model's capabilities. In case the model cannot identify an entity in the text, it returns an empty value.
 
-Below, you find an example of a full prediction:
+      Below, you find an example of a full prediction:
 
-```JSON
-{
-  "data": {
-    "id": "5a183e26-4e5c-4139-ae44-9d17d09648eb",
-    "status": "SUCCESS",
-    "result": [
+      ```JSON
       {
-        "title": [],
-        "firstname": [
-          {
-            "value": "Mrs. Hardi",
-            "confidence": 0.73
-          }
-        ],
-        "lastname": [
-          {
-            "value": "Shah",
-            "confidence": 0.8
-          }
-        ],
-        "emailID": [
-          {
-            "value": "hardi.shah@yuhu.com, hdshah@xy.com",
-            "confidence": 0.97
-          }
-        ],
-        "mobile": [
-          {
-            "value": "9000900090",
-            "confidence": 1
-          }
-        ],
-        "designation": [
-          {
-            "value": "Sales & Marketing",
-            "confidence": 0.97
-          }
-        ],
-        "address": [
-          {
-            "value": "Naranpura",
-            "confidence": 0.9
-          }
-        ],
-        "city": [
-          {
-            "value": "Ahmedabad",
-            "confidence": 0.9
-          }
-        ],
-        "country": [
-          {
-            "value": "India",
-            "confidence": 1
-          }
-        ],
-        "zip": [
-          {
-            "value": "380013",
-            "confidence": 1
-          }
-        ]
+        "data": {
+          "result": [
+            {
+              "mobile": [
+                {
+                  "confidence": 1,
+                  "value": "9000900090"
+                }
+              ],
+              "title": [
+                {
+                  "confidence": 0.79,
+                  "value": "Mrs"
+                }
+              ],
+              "firstname": [
+                {
+                  "confidence": 0.93,
+                  "value": "Hardi"
+                }
+              ],
+              "lastname": [
+                {
+                  "confidence": 0.8,
+                  "value": "Shah"
+                }
+              ],
+              "address": [
+                {
+                  "confidence": 0.9,
+                  "value": "Naranpura"
+                }
+              ],
+              "zip": [
+                {
+                  "confidence": 1,
+                  "value": "380013"
+                }
+              ],
+              "city": [
+                {
+                  "confidence": 0.9,
+                  "value": "Ahmedabad"
+                }
+              ],
+              "country": [
+                {
+                  "confidence": 1,
+                  "value": "India"
+                }
+              ],
+              "emailID": [
+                {
+                  "confidence": 0.97,
+                  "value": "hardi.shah@yuhu.com, hdshah@xy.com"
+                }
+              ],
+              "designation": [
+                {
+                  "confidence": 0.97,
+                  "value": "Sales & Marketing"
+                }
+              ]
+            }
+          ],
+          "freePlanUsage": {
+            "inferenceRequestsUsage": "Maximum limit of 30 , utilized 1 Inference count and remaining 29",
+            "inferenceCharactersUsage": "Maximum limit of 120000 , utilized 1157 Inference characters and remaining 118843"
+          },
+          "id": "2819e45f-302d-4737-a390-c00cb186cf51",
+          "status": "SUCCESS",
+          "createdAt": "2022-05-09T13:44:58Z",
+          "modifiedAt": "2022-05-09T13:45:03Z"
+        }
       }
-    ],
-    "trialUsage": {
-      "inferenceRequestsUsage": "Maximum limit of 40 , utilized 2 Inference count and remaining 38",
-      "inferenceCharactersUsage": "Maximum limit of 140000 , utilized 1812 Inference characters and remaining 138188"
-    }
-  }
-}
-```
+      ```
 
-You have now successfully used your own custom model to get text entity predictions for the unstructured text you submitted to Business Entity Recognition.
+      You have now successfully used your own custom model to get text entity predictions for the unstructured text you submitted to Business Entity Recognition.
 
 [DONE]
 [ACCORDION-END]
