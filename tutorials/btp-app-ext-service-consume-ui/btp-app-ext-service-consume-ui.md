@@ -48,7 +48,7 @@ To start with this tutorial use the result in the [`ext-service-add-consumption`
 
 3. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -194,7 +194,7 @@ Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 
 5. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -254,7 +254,7 @@ The last thing you add is the value help to select a supplier from the remote sy
 
 3. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 

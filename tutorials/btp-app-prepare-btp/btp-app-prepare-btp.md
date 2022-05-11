@@ -104,25 +104,25 @@ At least the services for the tutorials [Set Up the SAP HANA Cloud service](btp-
 [ACCORDION-BEGIN [Step 4: ](Create a subaccount)]
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
-4. Choose **Account Explorer** in the left navigation pane.
+2. Choose **Account Explorer** in the left navigation pane.
 
-5. Choose **Create** **&rarr;** **Subaccount**.
+3. Choose **Create** **&rarr;** **Subaccount**.
 
     !![Create subaccount](create_subaccount.png)
 
-6. To fill the **New Subaccount** dialog, enter a **Display Name**.
+4. To fill the **New Subaccount** dialog, enter a **Display Name**.
 
     > Use a short name for your project and add the prefix for the landscape, for example: `<project name>-cf-us10`. Don't select the checkbox **Neo**!
 
-7. Enter a subdomain.
+5. Enter a subdomain.
 
     > Only valid HTTP domain characters are allowed.
 
-8. Choose **Create**.
+6. Choose **Create**.
 
-9. Wait for the completion of the subaccount creation.
+7. Wait for the completion of the subaccount creation.
 
-10. Choose the tile with your new subaccount.
+8. Choose the tile with your new subaccount.
 
 [DONE]
 [ACCORDION-END]
@@ -152,7 +152,7 @@ In this section, you assign a portion of the entitlements that you've bought for
 
 4. Go through the Entitlements according to the table in the previous step **Create a Live Account** and add the required plans for each of them.
 
-5. Choose the + or - symbol to change the quota for the services according to the table in the previous step **Create a Live Account**.
+5. Choose the ( &#x2B; ) or ( &#8209; ) symbol to change the quota for the services according to the table in the previous step **Create a Live Account**.
 
 6. Choose **Save**.
 
@@ -168,7 +168,9 @@ Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org
 
 3. Choose **Create Space**.
 
-4. Enter a space name (suggestion: If different sub projects exist in the org: `<sub project name>-<stage name>`, otherwise: `<stage name>`; where stage name is the release stage, for example: `dev`, `val`, `prod`)
+4. Enter a space name.
+
+    > If different sub projects exist in the org, use `<sub project name>-<stage name>`, otherwise use `<stage name>`; where stage name is the release stage, for example: `dev`, `val`, `prod`.
 
 5. Choose **Create**.
 
@@ -176,13 +178,13 @@ Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Assign users in the Cloud Foundry space)]
-1. Open the **Spaces** overview in SAP BTP cockpit (you can just choose the tile for the space that was created).
+1. Open the **Spaces** overview in SAP BTP cockpit. You can just choose the tile for the space that was created.
 
 2. Choose **Members** in the left navigation pane.
 
 3. (Optional) Choose **Add Members** to add all required users, again your own user should already be part of the list.
 
-4. (Optional) Add a DL of your `CFDeployment` technical user as Space Manager if you have one.
+4. (Optional) Add a distribution list of your `CFDeployment` technical user as Space Manager if you have one.
 
 [DONE]
 [ACCORDION-END]
