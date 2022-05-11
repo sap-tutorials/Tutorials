@@ -17,7 +17,6 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
-
 ![MDK](img_1.gif)
 
 [ACCORDION-BEGIN [Step 1: ](Create a new page for modifying customer data)]
@@ -25,7 +24,6 @@ author_profile: https://github.com/jitendrakansal
 Regardless of whether your application is online or offline, you can allow users to modify data in the application.
 
 For online applications, the changes are saved to the backend immediately.
-
 
 For offline applications, the changes are stored locally until they are synced using an Upload action.
 
@@ -353,7 +351,7 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-2. Tap **CUSTOMER LIST**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap `edit` icon.
+2. Tap **Customer List**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap `edit` icon.
 
     ![MDK](img_8.2.1.png)
     ![MDK](img_8.2.2.png)
@@ -384,7 +382,7 @@ Deploy the updated application to your MDK client.
 
     >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-5. On Main page, tap **SYNC**, a successful message will be shown.
+5. On Main page, tap **Sync**, a successful message will be shown.
 
     ![MDK](img_8.5.png)
 
@@ -423,7 +421,7 @@ Now, refresh the URL to check if record has been updated in the backend. As Sync
 
     But here result is pointing to old First Name (`Isabelle`).
 
-    ![MDK](img_8.9.png) 
+    ![MDK](img_8.9.png)
 
     Since this is an Offline application, new entry is added to the request queue of the local store which needs to be sent or uploaded to the backend explicitly.  
 
@@ -479,9 +477,5 @@ Now, refresh the URL to check if record has been updated in the backend. As Sync
 
 [DONE]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully modified a Customer Record and you are now all set to [define a Validation Rule in an MDK App](cp-mobile-dev-kit-add-validation).
 
 ---
