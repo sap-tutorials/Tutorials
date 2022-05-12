@@ -9,13 +9,13 @@ primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
-- This tutorial is designed for SAP HANA Cloud. It is not designed for SAP HANA on premise or SAP HANA, express edition.
-- You have created a BTP trial, SAP HANA Cloud instance. [Deploy SAP HANA Cloud trial](hana-cloud-deploying)
+- This tutorial is designed for [SAP HANA Cloud](https://community.sap.com/topics/hana). It is not designed for SAP HANA on premise or SAP HANA, express edition.
+- You have created a BTP, SAP HANA Cloud instance. [Deploy SAP HANA Cloud](hana-cloud-deploying)
 - You have setup SAP Business Application Studio for development: [Set Up SAP Business Application Studio for Development](appstudio-onboarding)
 
 ## Details
 ### You will learn
-- How to create an application with the wizard for the Cloud Application Programming model
+- How to create an application with the wizard for the [SAP Cloud Application Programming model](https://cap.cloud.sap/docs/)
 - How to use the local Git repository for development/testing purposes
 
 Video version of tutorial: </br>
@@ -136,7 +136,7 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
     !![New CAP Project Details](cap_project_details.png)
 
-4. Choose to open the project in a new workspace once the generation is complete.
+4. The new project should be added to your workspace automatically.
 
     !![Open in New Workspace](new_workspace.png)
 
@@ -166,30 +166,34 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
 The Cloud Application Programming Model wizard generates a project that supports HANA development but is not fully configured to target HANA during the development phase. In this step we will adjust the generated project to fully compatible to also contain HANA native artifacts as well.
 
-1. From the `mta.yaml` file we were just looking at the in the previous step, edit the path of the service module from `gen/srv` to just `srv`
-
-    !![Adjust service module path](service_path.png)
-
-2. Make a similar change to the database module, adjusting the path from `gen/db` to just `db`
+1. From the `mta.yaml` file we were just looking at the in the previous step, edit the path of the database module, adjusting the path from `gen/db` to just `db`
 
     !![Adjust db module path](db_path.png)
 
-3. Save these changes
+2. Save these changes
 
-4. In the root of the project there is another important configuration file - the package.json. We are going to need to make several changes to this file as well.
+3. In the root of the project there is another important configuration file - the package.json. We are going to need to make several changes to this file as well.
 
     !![Open package.json for editing](package_json.png)
 
     > No need to worry about the yellow underlining below the name of the package. This is just a hint and doesn't have any impact on the tutorial.
 
-5. You can completely delete the `devDependencies` section of the `package.json`
+4. You can completely delete the `devDependencies` section of the `package.json`
 
-6. The rest of the changes will be in the `cds` section of the file. Replace this entire section of `package.json` with the following content
+5. The rest of the changes will be in the `cds` section of the file. Replace this entire section of `package.json` with the following content
 
     ```json
     "cds": {
         "build": {
-           "target": "."
+            "tasks": [
+                {
+                    "for": "hana",
+                    "dest": "../db"
+                },
+                {
+                    "for": "node-cf"
+                }
+            ]
         },
         "hana": {
             "deploy-format": "hdbtable"
@@ -202,13 +206,9 @@ The Cloud Application Programming Model wizard generates a project that supports
     }
     ```
 
-    > These changes will alter the generated folder structure of the cds build operation. Content will no longer be placed into the gen folder but back into the source folders. This also will tell CAP to generate hdbtable artifacts instead of hdbcds. This is a critical change for SAP HANA Cloud compatibility. Finally the db.kind change to HANA tells CAP to use HANA at development time instead of SQLite.
+    > These changes will alter the generated folder structure of the cds build operation. Content will no longer be placed into the gen folder for the db module but back into the source folders. This also will tell CAP to generate hdbtable artifacts instead of hdbcds. This is a critical change for SAP HANA Cloud compatibility. Finally the db.kind change to HANA tells CAP to use HANA at development time instead of SQLite.
 
-7. Your `package.json` file should now look something like this. The exact version numbers in the `dependencies` section in your file might differ from this screenshot
-
-    !![new package.json contents](new_package_json.png)
-
-8. Save the file
+6. Save the file
 
 [DONE]
 [ACCORDION-END]

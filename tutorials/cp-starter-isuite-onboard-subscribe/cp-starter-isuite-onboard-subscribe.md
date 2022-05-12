@@ -44,7 +44,7 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 
 > - **Are you new to SAP BTP?** - skip the rest of the note and continue with the tutorial.
 
-> - You already have a SAP BTP account but new to SAP Integration Suite:
+> - You already have a SAP BTP trial account but new to SAP Integration Suite:
 
 >     - If you have already activated Cloud Integration (Process Integration) or API Management services in a subaccount:
           - **Option 1**:
@@ -98,15 +98,28 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 
     !![Create Subscription](3-4-Create_Subscription.png)
 
-5. You are subscribed to the service now. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the **Integration Suite Launchpad**.
+5. You are subscribed to the service now. In the **Roles** section of your subscription, check if a Role Template by the name **Integration Provisioning Admin** is added automatically. If added, skip the next two sub-steps and proceed to sub-step 8. Else, continue with the next sub-step.
 
-    !![Go to Application](3-5-Go-to-Application.png)
+    !![Check Roles](3-5-Check-Roles.png)
+
+6. Select **Security > Users**. Choose the entry against your name. In the **Role Collections** section, choose **Assign Role Collection**.
+
+    !![Assign Roles](3-6-Assign-Roles.png)
+
+7. In the dialog that appears, select **Integration Provisioner**. Choose **Assign Role Collection**.
+
+    !![Assign Role Collection](3-7-Assign-Role-Collection.png)
+
+8. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the **Integration Suite Launchpad**.
+
+    !![Assign Role Collection](3-8-Go-to-Application.png)
+
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Provision the capabilities)]
->**IMPORTANT**: Ensure that you unsubscribe from the standalone services (like Open Connectors, Cloud Integration or API Management services) if you have already subscribed to it.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
+>**IMPORTANT**: Ensure that you unsubscribe from the standalone services (like Open Connectors, Cloud Integration, or API Management) if you have already subscribed to it.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
 
 >**Navigational Steps**: Go to Service Marketplace, search for the service name and click `unsubscribe`.
 
@@ -134,7 +147,7 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
     !![Activate capabilities](4-2-Activate_capabilities.png)
 
     The activation takes a while to complete.
-    >**IMPORTANT**: Before you proceed to **Step 4**, please wait for all the capabilities to be activated.
+    >**IMPORTANT**: Before you proceed to **Step 5**, please wait for all the capabilities to be activated.
 
     !![Activation dialog](4-2-Activation_Dial.png)
 
@@ -175,6 +188,8 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 5. In the **Select Activated Capabilities** tab, select **Design, Develop, and Operate Integration Scenarios** and **Design, Develop, and Manage APIs**. Choose **Next**.
 
     !![Select Capabilities](5-5-Select-Capabilities.png)
+
+    >**IMPORTANT**: Make sure that you select only the capabilities that you activated in step 3.
 
 6. In the **Review** tab, check your selections and choose **Finish**. You can see that the booster is being processed.
 

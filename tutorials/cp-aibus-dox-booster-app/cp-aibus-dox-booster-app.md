@@ -95,7 +95,7 @@ Do the following to access your subscription to the Document Information Extract
 
 1. Navigate to your trial global account by clicking **Go To Your Trial Account**.
 
-2. From your global account page, choose the `trial` tile to access your subaccount.
+2. From your global account page, choose `trial` to access your subaccount.
 
     !![UI application](subaccount.png)
 

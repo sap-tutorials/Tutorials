@@ -16,6 +16,8 @@ primary_tag: software-product>sap-hana-cloud
   - How to create a graph, a document store, and import spatial data.
   - How the SAP HANA database explorer can be used with multi-model data.
 
+In SAP HANA, a graph is made up of a set of vertices and a set of edges. Vertices are stored in vertex tables, while edges are stored in edge tables. Vertex and edge tables are collectively denoted as graph tables.
+
 This tutorial is meant to be an introduction to this topic.  For a deeper dive on the topics of graph and spatial, see the tutorial groups [Introduction to SAP HANA Spatial Data Types](group.hana-aa-spatial-get-started) and [Smart Multi-Model Data Processing with SAP HANA Cloud](group.hana-cloud-smart-multi-model-data).
 
 ---
@@ -192,7 +194,9 @@ The following steps will demonstrate how to create a JSON collection that can be
 
 1. Enable the JSON document store.  
 
-    For an SAP HANA Cloud database, in the creation wizard, enable the document store.  ![enable the document store](hc-document-store.png)
+    For an SAP HANA Cloud database, in the creation wizard, enable the document store.  
+
+    ![enable the document store](hc-document-store.png)
 
     For an on-premise server, add the document service as described at [Enable the SAP HANA JSON Document Store](https://help.sap.com/viewer/3e48dd3ad36e41efbdf534a89fdf278f/latest/en-US/28334f8e631c447598d2591305b28660.html).
 
@@ -267,7 +271,9 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     Within the downloaded `ESRI shapefile`, there is a file named `Points_of_Interest.prj`.  This file mentions the spatial reference system used by this `ESRI shapefile`.  Specify **WGS 84** as the spatial reference system.
 
-    ![Choose schema and reference system](importESRI2.png)
+    !![Choose schema and reference system](importESRI2.png)
+
+    >By default, the database server adds the following [spatial reference systems](https://help.sap.com/viewer/bc9e455fe75541b8a248b4c09b086cf5/latest/en-US/7a2ea357787c101488ecd1b725836f07.html) to a new database. Additionally, the [`ST_SPATIAL_REFERENCE_SYSTEMS`](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloudC/en-US/d23499bcd2951014ad38a3bd89faf03e.html) System View can be queried for available spatial reference systems.
 
 5. Rename the imported table as it was created using mixed case.
 
@@ -323,6 +329,7 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     >It should also be noted that when a used in a ST_POINT, x is longitude and y is latitude so the above point would be represented as `NEW ST_Point('POINT (-94.71832 32.50459)', 4326)`.
 
+Congratulations! You have explored multi-model features such as graph workspaces, JSON collections, and spatial data using the SAP HANA database explorer.
 
 [VALIDATE_1]
 [ACCORDION-END]
