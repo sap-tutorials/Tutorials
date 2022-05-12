@@ -1,6 +1,6 @@
 ---
 title: Visualize Data from the Northwind Service
-description: Learn how to visualize data with a `VizFrame`.
+description: Learn how to visualize data with a VizFrame.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-launchpad-service, software-product>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
@@ -51,7 +51,7 @@ As you can see in the log, the generator created a new view with its correspondi
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add the `VizFrame`)]
+[ACCORDION-BEGIN [Step : ](Add the VizFrame)]
 
 The `webapp/view/Sales.view.xml` will hold the `VizFrame` that visualizes the data from the Northwind Service. **Remove** the entire content view and replace it with the below code.
 
@@ -71,9 +71,9 @@ The `webapp/view/Sales.view.xml` will hold the `VizFrame` that visualizes the da
     <content>
       <layout:FixFlex id="chartFixFlex" minFlexSize="250">
         <layout:flexContent>
-            <viz:Popover id="idPopOver" connect="id`VizFrame`"></viz:Popover>
-            <viz:`VizFrame`
-              id="id`VizFrame`"
+            <viz:Popover id="idPopOver" connect="idVizFrame"></viz:Popover>
+            <viz:VizFrame
+              id="idVizFrame"
               uiConfig="{applicationSet:'fiori'}"
               height="100%"
               width="100%"
@@ -119,7 +119,7 @@ The `webapp/view/Sales.view.xml` will hold the `VizFrame` that visualizes the da
                       type="Dimension"
                       values="ShippedDate" />
                 </viz:feeds>
-            </viz:`VizFrame`>
+            </viz:VizFrame>
         </layout:flexContent>
       </layout:FixFlex>
     </content>
@@ -127,9 +127,9 @@ The `webapp/view/Sales.view.xml` will hold the `VizFrame` that visualizes the da
 </mvc:View>
 ```
 
-This new code uses additional SAPUI5 libraries that are referenced at the top of the file. These are necessary in order to use the layout and `VizFrame` related controls. If you look at the code closely, you will notice that it defines a new ``VizFrame`` of type `timeseries_line`. The dataset (`FlattenedDataSet`) is bound to the `/Summary_of_Sales_by_Years` entity of the Northwind OData Service. The dimension (`DimensionDefinition`) is `ShippedDate`, which represents time and is therefore of type `date`. The measure (`MeasureDefinition`) is the `Subtotal` of sales.
+This new code uses additional SAPUI5 libraries that are referenced at the top of the file. These are necessary in order to use the layout and `VizFrame` related controls. If you look at the code closely, you will notice that it defines a new `VizFrame` of type `timeseries_line`. The dataset (`FlattenedDataSet`) is bound to the `/Summary_of_Sales_by_Years` entity of the Northwind OData Service. The dimension (`DimensionDefinition`) is `ShippedDate`, which represents time and is therefore of type `date`. The measure (`MeasureDefinition`) is the `Subtotal` of sales.
 
-You can read more about `VizFrame`s in the [SAPUI5 API Reference](https://sapui5.hana.ondemand.com/#/api/sap.viz.ui5.controls.`VizFrame`%23overview) and check out some samples in the [SAPUI5 Samples](https://sapui5.hana.ondemand.com/#/entity/sap.viz.ui5.controls.`VizFrame`). `VizFrame`s even have their own [documentation](https://sapui5.hana.ondemand.com/docs/vizdocs/index.html) that lists all available properties, events, bindings, and scales.
+You can read more about `VizFrame`s in the [SAPUI5 API Reference](https://sapui5.hana.ondemand.com/#/api/sap.viz.ui5.controls.VizFrame%23overview) and check out some samples in the [SAPUI5 Samples](https://sapui5.hana.ondemand.com/#/entity/sap.viz.ui5.controls.VizFrame). `VizFrame`s even have their own [documentation](https://sapui5.hana.ondemand.com/docs/vizdocs/index.html) that lists all available properties, events, bindings, and scales.
 
 [DONE]
 [ACCORDION-END]
@@ -154,9 +154,9 @@ sap.ui.define([
 
     return Controller.extend("tutorial.products.controller.Sales", {
         onAfterRendering: function () {
-            const o`VizFrame` = this.o`VizFrame` = this.getView().byId("id`VizFrame`");
+            const oVizFrame = this.oVizFrame = this.getView().byId("idVizFrame");
             const oPopOver = this.getView().byId("idPopOver");
-            oPopOver.connect(o`VizFrame`.getVizUid());
+            oPopOver.connect(oVizFrame.getVizUid());
         }
     });
 });
