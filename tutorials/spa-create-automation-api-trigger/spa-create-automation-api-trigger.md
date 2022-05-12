@@ -4,7 +4,7 @@ author_profile: https://github.com/shielddz
 title: Integrate Chatbot with SAP Process Automation
 description: Integrate SAP Process Automation with SAP Conversational AI using API Triggers and Notifiers
 auto_validation: true
-time: 15
+time: 30
 tags: [tutorial>intermediate, software-product>sap-conversational-ai]
 primary_tag: software-product>sap-process-automation
 ---
