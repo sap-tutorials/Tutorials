@@ -143,7 +143,7 @@ In order to see the new view in your application in the browser, you have to nav
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Implement a popover)]
 
-You might have noticed that you can hover over the single data points of the line chart and click them, but nothing happens yet. Insert the below `onAfterRendering` method into the `Sales.controller.js` to connect the `VizFrame` with the popover, which we already defined in our `Sales.view.xml` (step 3).
+You might have noticed that you can hover over the single data points of the line chart and click them, but nothing happens yet. Insert the below `onAfterRendering` method into the `Sales.controller.js` to connect the `VizFrame` with the popover, which is already defined in the `uimodule/webapp/view/Sales.view.xml` (step 3).
 
 ```javascript [7-11]
 
