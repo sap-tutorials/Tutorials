@@ -26,7 +26,7 @@ author_profile: https://github.com/LindsayBert
 
 [ACCORDION-BEGIN [Step 1: ](Open your subaccount)]
 
-1. Log on to SAP BTP and click **Enter Your Trial Account**.
+1. Log on to SAP BTP and click **Go To Your Trial Account**.
 
     !![Log on to SAP Cloud Platform](1-enter-trial-account.png)
 

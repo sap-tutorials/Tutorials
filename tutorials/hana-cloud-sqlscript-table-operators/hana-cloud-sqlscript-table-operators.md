@@ -1,5 +1,5 @@
 ---
-title: Use Table Variable Operators
+title: Use Table Variable Operators 
 description: Leverage SQLScript in stored procedures, user defined functions, and user defined libraries.
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman

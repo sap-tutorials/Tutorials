@@ -3,8 +3,8 @@ title: Create Queues and Queue Subscriptions for SAP Event Mesh
 description: Navigate and explore the SAP Event Mesh management dashboard to implement messaging concepts like queues and queue subscriptions.
 time: 30
 auto_validation: true
-tags: [ tutorial>beginner, topic>cloud, tutorial>license]
-primary_tag: products>sap-event-mesh
+tags: [ tutorial>beginner, topic>cloud, tutorial>license, software-product>technology-platform>sap-business-technology-platform]
+primary_tag: software-product>sap-event-mesh
 ---
 ## Prerequisites
 - An instance of SAP Event Mesh has already been created

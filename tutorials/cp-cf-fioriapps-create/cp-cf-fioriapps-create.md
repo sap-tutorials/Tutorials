@@ -1,25 +1,27 @@
 ---
 author_name: Paola Laufer
 author_profile: https://github.com/Paolaufer
-title: Develop SAP SAPUI5 Application for SAP BTP on Cloud Foundry
+title: Develop an SAPUI5 Application for SAP BTP on Cloud Foundry
 description: Create an SAPUI5 application in SAP Web IDE Full-Stack and deploy it to your SAP BTP, Cloud Foundry environment.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-fiori, tutorial>license ]
-primary_tag: products>sap-web-ide
+tags: [ tutorial>beginner, software-product>sap-fiori, tutorial>license ]
+primary_tag: software-product>sap-web-ide
 ---
 
 ## Prerequisites
- - Make sure you have access to the trial version of SAP Web IDE Full-Stack.
+- Make sure you have access to the trial version of SAP Web IDE Full-Stack.
+
 
 ## Details
 ### You will learn
-  - How to create a new SAPUI5 application for SAP Business Technology Platform (BTP), Cloud Foundry environment
-  - How to configure your Cloud Foundry settings in SAP Web IDE
-  - How to build and deploy your application to Cloud Foundry
+- How to create a new SAPUI5 application for SAP Business Technology Platform (BTP), Cloud Foundry environment
+- How to configure your Cloud Foundry settings in SAP Web IDE
+- How to build and deploy your application to Cloud Foundry
 
-  Create, configure, build, and deploy a simple application on Cloud Foundry in SAP Web IDE Full-Stack.
+Create, configure, build, and deploy a simple application on Cloud Foundry in SAP Web IDE Full-Stack.
 
+We would like to invite you to switch to SAP Business Application Studio since it's better suited for developing applications for Cloud Foundry. SAP Business Application Studio has built-in productivity tools for the Cloud Foundry environment, such as command line and command palette dedicated tools. During development, SAP Business Application Studio saves you a lot of time since you can test run the app locally in the dev space without needing to go through a time consuming build and deploy.
 
 ---
 
@@ -32,7 +34,6 @@ primary_tag: products>sap-web-ide
 2. In the template wizard that opens, in the **Environment** dropdown list, make sure that **Cloud Foundry** is selected and **Category** should be **Featured** otherwise the SAPUI5 Application tile will not appear.
 
     ![Select environment](step1-environment.png)
-
 
 3. Scroll down and click the **SAPUI5 Application** tile and then click **Next**.
 
@@ -48,7 +49,7 @@ primary_tag: products>sap-web-ide
 
 A new MTA project called `mta_FioriDemo` containing the `FioriDemo` HTML5 module now appears in your SAP Web IDE workspace. When developing apps in the Cloud Foundry environment, you create a Multi-Target Application (MTA) file in SAP Web IDE. Each SAP Fiori app is developed as an SAPUI5 module of the MTA.
 
-  ![View MTA file](step1-view-mta.png)
+![View MTA file](step1-view-mta.png)
 
 > You can alternatively choose the Multi-Target Application template which will create an MTA project structure and then add new modules to the project.
 

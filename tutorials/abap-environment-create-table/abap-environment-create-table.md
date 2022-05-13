@@ -2,8 +2,8 @@
 auto_validation: true
 title: Create a Simple Database Table for ABAP Environment
 description: Create a database table in SAP BTP, ABAP Environment and prefill it with data.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp--abap-environment
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -82,7 +82,6 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
   1. Define the table columns (client, booking, `customername`, `numberofpassengers`, …). Specify client and booking as key fields, and the field `currencycode` as currency key for cost as displayed below. The table annotations (beginning with @) remain unchanged. For that, you can copy the database table definition provided below.
 
     ```ABAP
-
     @EndUserText.label : 'Demo: Booking Data'
     @AbapCatalog.enhancementCategory : #NOT_EXTENSIBLE
     @AbapCatalog.tableCategory : #TRANSPARENT
@@ -102,7 +101,6 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
     currencycode       : abap.cuky;
     lastchangedat      : timestampl;
     }
-
     ```
 
   2. Save and activate the database table.
@@ -119,14 +117,14 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 
   2. Provide the required information and click **Next**.
 
-    - Name: **`ZCL_GENERATE_BOOKINGS_XXX`**
+    - Name: **`ZBP_GENERATE_BOOKINGS_XXX`**
     - Description: **Class to generate bookings**
 
-      ![Create ABAP class](class2.png)
+      ![Create ABAP class](classnew.png)
 
   3. Provide a transport request and click **Finish**.
 
-      ![Create ABAP class](class3.png)
+      ![Create ABAP class](classnew2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -135,8 +133,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
   1. Replace the source code of your class with the one provided below:
 
     ```ABAP
-
-    CLASS zcl_generate_bookings_xxx DEFINITION
+    CLASS zbp_generate_bookings_xxx DEFINITION
       PUBLIC
       FINAL
       CREATE PUBLIC .
@@ -148,7 +145,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
     ENDCLASS.
 
 
-    CLASS zcl_generate_bookings_xxx IMPLEMENTATION.
+    CLASS zbp_generate_bookings_xxx IMPLEMENTATION.
 
       METHOD if_oo_adt_classrun~main.
         DATA:it_bookings TYPE TABLE OF ztbooking_xxx.
@@ -176,8 +173,6 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
       ENDMETHOD.
 
     ENDCLASS.
-
-
     ```
 
   2. Save and active your class.

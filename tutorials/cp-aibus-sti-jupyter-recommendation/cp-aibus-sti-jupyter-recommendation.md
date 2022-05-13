@@ -3,8 +3,10 @@ title: Use Service Ticket Intelligence and Jupyter Notebook to Get Solution Reco
 description: Train a machine learning model based on historical service requests in order to get solution recommendations for new requests.
 auto_validation: true
 time: 40
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>service-ticket-intelligence, tutorial>free-tier]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 ## Details
@@ -14,21 +16,23 @@ primary_tag: topic>machine-learning
   - How to recommend solutions for an incoming service request
   - How to evaluate the performance of your machine learning model
 
-  Service Ticket Intelligence provides machine learning functionalities to effectively deal with service requests. Thereby, the service offers two main functionalities:
+Service Ticket Intelligence provides machine learning functionalities to effectively deal with service requests. Thereby, the service offers three main functionalities:
 
-  1. The service is able to analyze the unstructured information in service requests and classify the requests into categories.
+1. The service is able to analyze the unstructured information in service requests and classify the requests into categories.
 
-  2. The service is able to recommend solutions for service requests based on historical data.
+2. The service is able to recommend solutions for service requests based on historical data.
 
-  The following tutorial deals with retrieving recommendations for service requests. Find more details on the Service Ticket Intelligence concepts [here](https://help.sap.com/viewer/934ccff77ddb4fa2bf268a0085984db0/SHIP/en-US/c8e6afbe13f74d53ab1ecc221d8a92be.html).
+3. The service is able to identify in unstructured data trends or patterns in service tickets from the clusters and keywords you have created.
+
+This tutorial deals with retrieving recommendations for service requests. Find more details on the Service Ticket Intelligence features [here](https://help.sap.com/docs/SERVICE_TICKET_INTELLIGENCE/934ccff77ddb4fa2bf268a0085984db0/2f0e49ac91c24d54acb694d967e0cfc0.html).
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open the Jupyter notebook)]
 
-First, start your local Jupyter server. Review step 4 of [Set Up Jupyter Notebook for Service Ticket Intelligence](cp-aibus-sti-jupyter-setup) to see how to do it.
+First, start your local Jupyter server.
 
-The first page that you see shows the content of the repository that you cloned from GitHub, including the notebooks, datasets and configuration file that you edited in the previous tutorial. To open the notebook for classification, click **Recommendation** to navigate into the folder.
+The first page that you see shows the content of the repository that you cloned from GitHub in [Set Up Jupyter Notebook for Service Ticket Intelligence](cp-aibus-sti-jupyter-setup), including the notebooks, datasets and configuration file that you edited in the previous tutorial. To open the notebook for classification, click **Recommendation** to navigate into the folder.
 
 ![Jupyter Home](jupyter-home.png)
 

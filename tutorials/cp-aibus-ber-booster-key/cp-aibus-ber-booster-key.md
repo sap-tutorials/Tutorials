@@ -1,5 +1,5 @@
 ---
-title: Set Up Account for Business Entity Recognition and Get Service Key
+title: Use Trial to Set Up Account for Business Entity Recognition and Get Service Key
 description: Use a booster in SAP BTP Trial to automatically create a service instance, and the associated service key for Business Entity Recognition.
 auto_validation: true
 time: 5
@@ -72,7 +72,7 @@ Click **Download Service Key** to save the service key locally on your computer.
 
 !![Service Key](booster-success-key.png)
 
->If you face any issue with the booster **Set up account for Business Entity Recognition**, you can alternatively follow the steps in [Create Service Instance for Business Entity Recognition](cp-aibus-ber-service-instance) to create the service key for Business Entity Recognition manually.
+>If you face any issue with the booster **Set up account for Business Entity Recognition**, you can alternatively follow the steps in [Use Trial to Create a Service Instance for Business Entity Recognition](cp-aibus-ber-service-instance).
 
 You are now all set to [Get OAuth Access Token for Business Entity Recognition via Web Browser](cp-aibus-ber-web-oauth-token). Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
 

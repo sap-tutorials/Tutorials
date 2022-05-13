@@ -155,8 +155,8 @@ When you are opening the HDI container in the SAP HANA Database Explorer, you wi
 
 
 ```SQL
-SELECT CURRENT_USER "current user" FROM DUMMY;
-	```
+  SELECT CURRENT_USER "current user" FROM DUMMY
+```
 
 
 This shows the statement being used in a connection opened from SAP BTP cockpit or SAP HANA Cloud Central:

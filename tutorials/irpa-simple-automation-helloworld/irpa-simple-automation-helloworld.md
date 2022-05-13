@@ -27,7 +27,7 @@ Open the **SAP Intelligent RPA Cloud Factory URL** which you would have saved in
 
 2. Choose **New Project**.
 
-3. In the **New Project** popup, enter the following:
+3. In the **New Project** popup, enter the following information:
 
     |  Field Name     | Value
     |  :------------- | :-------------
@@ -38,7 +38,7 @@ Open the **SAP Intelligent RPA Cloud Factory URL** which you would have saved in
 
     !![Set up a new project](new-project.png)
 
-The **Cloud Studio** opens with your new project.
+    The **Cloud Studio** opens with your new project.
 
 > **Cloud Studio** is a component of SAP Intelligent RPA to build your automation.
 
@@ -74,7 +74,7 @@ You will now start building your automation by dragging activities from the pane
 
 3. Drop it into the workflow.
 
-  !![Information Dialog](information-dialog.png)
+    !![Information Dialog](information-dialog.png)
 
 4. Choose the **Information Dialog** activity to edit the activity's properties.
 
@@ -86,7 +86,7 @@ You will now start building your automation by dragging activities from the pane
 
 8. Choose **Save Expression**.
 
-  !![Information Dialog](information-dialog2.png)
+    !![Information Dialog](information-dialog2.png)
 
 9. Choose `Save` (upper right) to save the project.
 

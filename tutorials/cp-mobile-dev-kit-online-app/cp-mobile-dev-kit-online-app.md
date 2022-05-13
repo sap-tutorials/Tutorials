@@ -22,7 +22,6 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
-
 [ACCORDION-BEGIN [Step 1: ](Get familiar with use case)]
 
 With Mobile Development Kit, you can also create applications that are online or always connected and make calls to the backend servers for each action you take in the application.
@@ -178,12 +177,7 @@ Once you accept app update, you will see **Main** page being displayed and appli
 
 >Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and on-board again, you will be asked either to continue to use current application or to scan new QR code.
 
-
 [VALIDATE_1]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully created an MDK online app and you can continue with the remaining tutorials in this mission.
 
 ---
