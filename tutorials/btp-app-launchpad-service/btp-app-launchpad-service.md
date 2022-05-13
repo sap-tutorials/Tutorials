@@ -334,7 +334,6 @@ The newly added modules `nsrisks` and `nsmitigations` do the build of the SAP Fi
         supported-platforms: []
     ```
 
-
 2. Check the `mitigations` application module `nsmitigations`:
 
     <!-- snippet mta.yaml --branch launchpad-service modules: "- name: nsmitigations" -->
@@ -433,13 +432,13 @@ app/*/package-lock.json
 
     !![Choose Subaccount](choose_subaccount.png)
 
-2. Choose **Services** **&rarr;** **Service Marketplace** on the left.
+4. Choose **Services** **&rarr;** **Service Marketplace** on the left.
 
-3. Search for the **Launchpad Service** tile and choose **Create**.
+5. Search for the **Launchpad Service** tile and choose **Create**.
 
     !![Create Launchpad Service](create_launchpad_service.png)
 
-4. Keep the default settings for **Service** and **Plan** and choose **Create**.
+6. Keep the default settings for **Service** and **Plan** and choose **Create**.
 
     !![New Instance or Subscription](new_instance_dialog.png)
 
@@ -455,11 +454,11 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
 2. Choose your user.
 
-4. Under **Role Collections** on the right, choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
+3. Under **Role Collections** on the right, choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
 
     !![Add role](add_launchpad_admin_role.png)
 
-5. Open another browser or clear your browser's cache.
+4. Open another browser or clear your browser's cache.
 
 > See section [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html) in the SAP Launchpad service's documentation for more details.
 
