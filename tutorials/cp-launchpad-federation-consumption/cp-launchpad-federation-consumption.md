@@ -162,13 +162,10 @@ Apps are only displayed to users with the corresponding roles assigned. You assi
 
     ![Select your user](20a-select-user.png)
 
-4. In the user details panel on the right, click the three dots in the **Role Collections** section to open the menu.
+4. In the user details panel on the right, click the three dots in the **Role Collections** section to open the menu. Then select ``Assign Role Collection``.
 
-    ![Open role collection menu](21c-open-menu.png)
+    ![Open menu and assign role collection](21e-open-and-assign-role-collection.png)
 
-Then select ``Assign Role Collection``.
-
-    ![Assign role collection](21d-assign-role-collection.png)
 
 5. In the pop-up window select the checkboxes in front of the two federated roles ``~sap_s4hana_SAP_BR_MASTER_SPECIALIST_FIN`` and ``~sap_s4hana_SAP_BR_AP_ACCOUNTANT``. Then click **Assign Role Collection**.
 
