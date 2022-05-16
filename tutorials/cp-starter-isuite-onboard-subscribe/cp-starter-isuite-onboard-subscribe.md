@@ -94,23 +94,19 @@ You use *Cloud Integration* to design and deploy an integration flow. Then, you 
 
     >- Select the service plan, add it to your subaccount, and continue with this tutorial.
 
-4. Choose the default plan which is **trial** and then choose **Create**.
+4. Choose the default plan which is **trial** and then choose **Create**. You are subscribed to the service now.
 
     !![Create Subscription](3-4-Create_Subscription.png)
 
-5. You are subscribed to the service now. In the **Roles** section of your subscription, check if a Role Template by the name **Integration Provisioning Admin** is added automatically. If added, skip the next two sub-steps and proceed to sub-step 8. Else, continue with the next sub-step.
-
-    !![Check Roles](3-5-Check-Roles.png)
-
-6. Select **Security > Users**. Choose the entry against your name. In the **Role Collections** section, choose **Assign Role Collection**.
+5. Select **Security > Users**. Choose the entry against your name. In the **Role Collections** section, choose **Assign Role Collection**.
 
     !![Assign Roles](3-6-Assign-Roles.png)
 
-7. In the dialog that appears, select **Integration Provisioner**. Choose **Assign Role Collection**.
+6. In the dialog that appears, select **Integration Provisioner**. Choose **Assign Role Collection**.
 
     !![Assign Role Collection](3-7-Assign-Role-Collection.png)
 
-8. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the **Integration Suite Launchpad**.
+7. Click **Go to Application** in the **Integration Suite** overview page. Now you are directed to the **Integration Suite Launchpad**.
 
     !![Assign Role Collection](3-8-Go-to-Application.png)
 
