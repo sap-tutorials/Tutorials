@@ -61,7 +61,7 @@ The resulting RSS content of this resource should look something like this (redu
     <item>
       <title>NASA, ESA Astronauts Safely Return to Earth</title>
       <link>http://www.nasa.gov/press-release/nasa-esa-astronauts-safely-return-to-earth</link>
-      <description>NASA’s SpaceX Crew-3 astronauts aboard the Dragon Endurance spacecraft safely splashed down Friday in the Gulf of Mexico off the coast of Florida, completing the agency’s third long-duration commercial crew mission to the International Space Station.</description>
+      <description>NASA's SpaceX Crew-3 astronauts aboard the Dragon Endurance spacecraft safely splashed down Friday in the Gulf of Mexico off the coast of Florida, completing the agency's third long-duration commercial crew mission to the International Space Station.</description>
       <enclosure url="http://www.nasa.gov/sites/default/files/styles/1x1_cardfeed/public/thumbnails/image/nhq202205060003.jpg?itok=nJXN4A_c" length="3817815" type="image/jpeg"/>
       <guid isPermaLink="false">http://www.nasa.gov/press-release/nasa-esa-astronauts-safely-return-to-earth</guid>
       <pubDate>Fri, 06 May 2022 01:04 EDT</pubDate>
