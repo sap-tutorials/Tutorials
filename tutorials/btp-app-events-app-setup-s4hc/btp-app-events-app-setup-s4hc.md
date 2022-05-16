@@ -9,6 +9,8 @@ time: 40
 tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management, software-product>sap-hana-cloud, software-product>sap-s-4hana-cloud]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
+
+
 ## Prerequisites
  - [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption)
  - [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui)
@@ -26,14 +28,21 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     - You must be an administrator of the SAP S/4HANA Cloud system.
     - You need to connect this system to your SAP BTP global account, if you'd like to build extension applications for your SAP S/4HANA Cloud system.
 
+
 ## Details
 ### You will learn
  - How to configure your CAP application for eventing
  - How to locally test your changes
  - How to deploy your CAP application
+
+
+To start with this tutorial use the result in the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Configure your CAP application for eventing)]
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+
 CAP provides native support for emitting and receiving events. Hence, CAP applications can receive events for changes in remote systems. In CAP, the messaging follows a publish subscribe (pub/sub) model. Pub/sub means that sources publish messages and interested consumers can subscribe to receive them. This helps with scalability, decoupling of services, and robustness.
 
 Using the Business Partner service that you added in `Step 1: Get the Business Partner service definition` from the tutorial [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption), you will configure the CAP application to listen and react to events from your SAP S/4HANA Cloud system. As in the previous tutorials, let's again use the example of business partners that are suppliers. So, you will use suppliers when referring to business partners. First you will add event definitions for the SAP S/4HANA events.
@@ -246,7 +255,7 @@ Currently, business partner (that is, supplier) data is stored only in the SAP S
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Test your changes locally)]
-So, you have added logic to create a new risk when an event for a newly created supplier is received.You have also added logic to update our risks when an event for an updated supplier is received from our SAP HANA Cloud system. This is achieved by listening to events from the SAP S/4HANA Cloud system.
+So, you have added logic to create a new risk when an event for a newly created supplier is received. You have also added logic to update our risks when an event for an updated supplier is received from our SAP HANA Cloud system. This is achieved by listening to events from the SAP S/4HANA Cloud system.
 
 Now simulate locally business partner creation and update, and see the results:
 

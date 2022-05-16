@@ -205,7 +205,7 @@ Later in the tutorial [Use SAP S/4HANA Cloud Service](btp-app-ext-service-s4hc-u
 
 4. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -258,7 +258,7 @@ To solve this issue, you add some handler code to delegate the call from the `Su
 
 2. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -329,7 +329,7 @@ This code is required for the sandbox only. The authentication for SAP S/4HANA s
 
 6. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
