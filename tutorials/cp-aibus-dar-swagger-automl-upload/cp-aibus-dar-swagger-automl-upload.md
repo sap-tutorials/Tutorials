@@ -82,7 +82,7 @@ Use the following dataset schema:
   ],
   "labels": [
       {
-        "label": "level1_category",
+        "label": "F3_readable",
         "type": "CATEGORY"
       }
   ],

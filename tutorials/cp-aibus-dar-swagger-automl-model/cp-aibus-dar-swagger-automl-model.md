@@ -46,7 +46,7 @@ For this tutorial, copy the URL of the Swagger UI for `mm` and open it in a brow
 
 [ACCORDION-BEGIN [Step 2: ](Create a training job)]
 
-To train a machine learning model using the data that you uploaded in [Use the AutoML Model Template to Upload Data to Data Attribute Recommendation with Swagger UI](cp-aibus-dar-swagger-automl-upload), you create a training job. With each training job you provide a model template which combines data processing rules and machine learning model architecture. You can find the list of available model templates [here](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/1e76e8c636974a06967552c05d40e066.html).
+To train a machine learning model using the data that you uploaded in [Use an AutoML Dataset Schema to Upload Training Data to Data Attribute Recommendation](cp-aibus-dar-swagger-automl-upload), you create a training job. With each training job you provide a model template which combines data processing rules and machine learning model architecture. You can find the list of available model templates [here](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/1e76e8c636974a06967552c05d40e066.html).
 
 The AutoML model template that you use in this tutorial is suited for datasets with single labels, meaning that the machine learning model only predicts a single field.
 
@@ -56,7 +56,7 @@ To create the training job, proceed as follows:
 
     !![Training Job Endpoint](png-files/job-endpoint.png)
 
-2. In the text area, replace the parameter value for `datasetId` with the ID of your dataset that you have created in [Use the AutoML Model Template to Upload Data to Data Attribute Recommendation with Swagger UI](cp-aibus-dar-swagger-automl-upload). Replace the parameter value for `modelTemplateId` with `188df8b2-795a-48c1-8297-37f37b25ea00`. Finally, replace the parameter value `modelName` with your model name, `automl_tutorial_model`, for example. Leave the parameter value for `businessBlueprintId` empty. Click **Execute** to create the training job.
+2. In the text area, replace the parameter value for `datasetId` with the ID of your dataset that you have created in [Use an AutoML Dataset Schema to Upload Training Data to Data Attribute Recommendation](cp-aibus-dar-swagger-automl-upload). Replace the parameter value for `modelTemplateId` with `188df8b2-795a-48c1-8297-37f37b25ea00`. Finally, replace the parameter value `modelName` with your model name, `automl_tutorial_model`, for example. Delete the `businessBlueprintId` line from the **Request body**. Click **Execute** to create the training job.
 
     !![Training Job Execute](png-files/job-execute.png)
 
@@ -82,7 +82,7 @@ To know when your training job has ended, you have to frequently check its statu
 
     !![Training Job Status Execute](png-files/job-status-execute.png)
 
-3. In the response, you find again the current status of your training job along with other details. Immediately after creation of the training job, the status is `PENDING`. Shortly after, it changes to `RUNNING` which means that the model is being trained. The training of the sample data usually takes about 5 minutes to complete but may run longer, up to a few hours due to limited availability of resources in the production environment. You can check the status every now and then. Once training is finished, the status changes to `SUCCEEDED` which means the service has created a machine learning model and you can proceed.
+3. In the response, you find again the current status of your training job along with other details. Immediately after creation of the training job, the status is `PENDING`. Shortly after, it changes to `RUNNING` which means that the model is being trained. The training of the sample data usually takes about 5 minutes to complete but may run longer, up to a few hours due to limited availability of resources in the production or trial environments. You can check the status every now and then. Once training is finished, the status changes to `SUCCEEDED` which means the service has created a machine learning model and you can proceed.
 
     !![Training Job Status Response](png-files/job-status-response.png)
 

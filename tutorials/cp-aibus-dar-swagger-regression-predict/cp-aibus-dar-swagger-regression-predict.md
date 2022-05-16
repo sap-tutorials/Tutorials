@@ -84,7 +84,7 @@ To predict data records, proceed as follows:
 
     !![Inference Execute](png-files/inference-execute.png)
 
-5. In the response of the service, you find the values that the model predicted.
+In the response of the service, you find the values that the model predicted.
 
 !![Inference Response](png-files/inference-response.png)
 

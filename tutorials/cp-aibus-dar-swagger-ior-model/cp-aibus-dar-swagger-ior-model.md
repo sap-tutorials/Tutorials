@@ -46,9 +46,9 @@ For this tutorial, copy the URL of the Swagger UI for `mm` and open it in a brow
 
 [ACCORDION-BEGIN [Step 2: ](Create a training job)]
 
-To train a machine learning model using the data that you uploaded in [Use the Invoice Object Recommendation Business Blueprint to Upload Data to Data Attribute Recommendation with Swagger UI](cp-aibus-dar-swagger-ior-upload), you create a training job.
+To train a machine learning model using the data that you uploaded in [Use an Invoice Object Recommendation Dataset Schema to Upload Training Data to Data Attribute Recommendation](cp-aibus-dar-swagger-ior-upload), you create a training job.
 
-With each training job you provide a model template or a business blueprint which combines data processing rules and machine learning model architecture. You can find the list of available model templates [here](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/1e76e8c636974a06967552c05d40e066.html). The only business blueprint currently available is Invoice Object Recommendation, as you can see [here](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/091eace025e14793be0e83ef2109b349.html).
+With each training job you provide a model template or a business blueprint which combines data processing rules and machine learning model architecture. You can find the list of available model templates [here](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/1e76e8c636974a06967552c05d40e066.html). The only business blueprint currently available is Invoice Object Recommendation, as you can see [here](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/091eace025e14793be0e83ef2109b349.html).
 
 The Invoice Object Recommendation business blueprint that you use in this tutorial is suited to assign G/L (general ledger) accounts and other financial objects to incoming invoices without a purchase order reference.
 
@@ -58,7 +58,7 @@ To create the training job, proceed as follows:
 
     !![Training Job Endpoint](png-files/job-endpoint.png)
 
-2. In the text area, replace the parameter value for `datasetId` with the `id` of your dataset that you have created in [Use the Invoice Object Recommendation Business Blueprint to Upload Data to Data Attribute Recommendation with Swagger UI](cp-aibus-dar-swagger-ior-upload). Delete the `modelTemplateId` line from the **Request body**. Replace the parameter value `modelName` with your model name, `ior_tutorial_model`, for example. Make sure the parameter value for `businessBlueprintId` is `4788254b-0bad-4757-a67f-92d5b55f322d`. Click **Execute** to create the training job.
+2. In the text area, replace the parameter value for `datasetId` with the `id` of your dataset that you have created in [Use an Invoice Object Recommendation Dataset Schema to Upload Training Data to Data Attribute Recommendation](cp-aibus-dar-swagger-ior-upload). Delete the `modelTemplateId` line from the **Request body**. Replace the parameter value `modelName` with your model name, `ior_tutorial_model`, for example. Make sure the parameter value for `businessBlueprintId` is `4788254b-0bad-4757-a67f-92d5b55f322d`. Click **Execute** to create the training job.
 
     !![Training Job Execute](png-files/job-execute.png)
 
@@ -84,7 +84,7 @@ To know when your training job has ended, you have to frequently check its statu
 
     !![Training Job Status Execute](png-files/job-status-execute.png)
 
-3. In the response, you find again the current status of your training job along with other details. Immediately after creation of the training job, the status is `PENDING`. Shortly after, it changes to `RUNNING` which means that the model is being trained. The training of the sample data usually takes about 5 minutes to complete but may run longer, up to a few hours due to limited availability of resources in the production environment. You can check the status every now and then. Once training is finished, the status changes to `SUCCEEDED` which means the service has created a machine learning model and you can proceed.
+3. In the response, you find again the current status of your training job along with other details. Immediately after creation of the training job, the status is `PENDING`. Shortly after, it changes to `RUNNING` which means that the model is being trained. The training of the sample data usually takes about 5 minutes to complete but may run longer, up to a few hours due to limited availability of resources in the production or trial environments. You can check the status every now and then. Once training is finished, the status changes to `SUCCEEDED` which means the service has created a machine learning model and you can proceed.
 
     !![Training Job Status Response](png-files/job-status-response.png)
 

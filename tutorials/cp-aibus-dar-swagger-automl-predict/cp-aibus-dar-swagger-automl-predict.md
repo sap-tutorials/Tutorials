@@ -85,7 +85,47 @@ To classify records, proceed as follows:
 
     !![Inference Execute](png-files/inference-execute.png)
 
-5. In the response of the service, you find ..
+In the response of the service, you find the values that the model predicted. The probability represents how certain the model is about its prediction. The higher the probability the more confident the model is that the prediction is actually correct. If the probability is close to 1, the model is very certain.
+
+!![Inference Execute](png-files/inference-response.png)
+
+```JSON
+{
+  "id": "8caba3f2-f2af-4bb6-7f4c-079b9f87caee",
+  "predictions": [
+    {
+      "labels": [
+        {
+          "name": "F3_readable",
+          "results": [
+            {
+              "probability": 1,
+              "value": "Household Batteries"
+            }
+          ]
+        }
+      ],
+      "objectId": "optional-identifier-1"
+    },
+    {
+      "labels": [
+        {
+          "name": "F3_readable",
+          "results": [
+            {
+              "probability": 1,
+              "value": "Sheet Music"
+            }
+          ]
+        }
+      ],
+      "objectId": "optional-identifier-2"
+    }
+  ],
+  "processedTime": "2022-05-16T09:51:36.321470",
+  "status": "DONE"
+}
+```
 
 You have successfully classified products into product categories. Feel free to adapt the examples above and retry the classification.
 
