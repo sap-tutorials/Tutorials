@@ -2,8 +2,8 @@
 title: Download and Prepare App for Cloud Foundry Deployment
 description: Download files for a simple app, maintain the deployment descriptor, and bundle everything together ready for deployment.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform, topic>nodejs ]
+primary_tag: software-product>sap-business-technology-platform
+tags: [  tutorial>beginner, software-product>sap-business-technology-platform, topic>nodejs ]
 time: 10
 ---
 
