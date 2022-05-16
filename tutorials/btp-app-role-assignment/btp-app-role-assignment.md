@@ -79,7 +79,7 @@ Instead of creating the role collection automatically using the `xs-security.jso
 
 3. Choose **Security** **&rarr;** **Role Collections** on the left.
 
-4. Choose the **+** (new role collection) button.
+4. Choose the ( &#x2B; ) icon to create a new role collection.
 
 5. Enter **Name** `RiskManager`.
 

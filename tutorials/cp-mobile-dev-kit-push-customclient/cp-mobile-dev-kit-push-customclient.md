@@ -25,7 +25,6 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 ---
 
-
 [ACCORDION-BEGIN [Step 1: ](Generate push configuration for Android/iOS device)]
 
 >Make sure you are choosing the right device platform tab above.

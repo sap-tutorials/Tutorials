@@ -22,6 +22,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
+
 Mobile Development Kit brings OData annotations capabilities to your multi-channel applications. MDK editor supports generating List-Detail pages based on annotations. List-Detail pages are similar to a Master-Detail page, but it is two pages instead of one. The MDK editor parses existing annotations to give you a huge leap forward in your multi-channel applications.
 
 ![MDK](img-1.gif)
@@ -217,7 +218,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 3. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see the **Main** page with **LOGOUT** and **PRODUCTS** options at bottom of the page. Tap **PRODUCTS**, you will navigate to Product List page.
+    Once you accept app update, you will see the **Main** page with **Logout** and **Products** options at bottom of the page. Tap **Products**, you will navigate to Product List page.
 
     ![MDK](img_7.1.png)
 
@@ -277,9 +278,5 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 [VALIDATE_2]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully created a fully functional CRUD multi-channel application based on OData annotations and you can continue with the remaining tutorials in this mission.
 
 ---
