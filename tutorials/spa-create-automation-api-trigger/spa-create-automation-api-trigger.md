@@ -23,7 +23,7 @@ primary_tag: software-product>sap-process-automation
 
 In this tutorial you will retrieve the specific **Sales Order** details through a chatbot ( **SAP Conversational AI** ) that interacts with your **SAP Process Automation** project.
 
-[ACCORDION-BEGIN [Step 1: ](Release and Deploy the Project)]
+[ACCORDION-BEGIN [Step 1: ](Release and deploy the project)]
 
 1.  Open the project you created in [SAP Process Automation Application Capture](spa-create-automation-application-capture).
 
@@ -65,7 +65,7 @@ The project is now deployed.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create API Key)]
+[ACCORDION-BEGIN [Step 2: ](Create API key)]
 
 1.  Go to lobby landing page of **SAP Process Automation**.
 
@@ -101,7 +101,7 @@ Your **API Key** is now created and ready to be used.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create Service Binding)]
+[ACCORDION-BEGIN [Step 3: ](Create service binding)]
 1.  Log in to your **SAP BTP Cockpit** and navigate to your Subaccount.
 
 2.  Create a new **Service Binding** by navigating to **Services** > **Instances and Subscriptions** > **Instances** > Click on your **SAP Process Automation Service** instance > Click **...** > **Create Service Binding**.
@@ -123,7 +123,7 @@ Your **API Key** is now created and ready to be used.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Get API Trigger URL)]
+[ACCORDION-BEGIN [Step 4: ](Get API trigger URL)]
 
 1.  Navigate to **SAP Process Automation > Monitor > Manage > Automations**.
 2.  From the shown triggers:
@@ -141,7 +141,7 @@ Your **API Key** is now created and ready to be used.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Configure CAI bot API Call)]
+[ACCORDION-BEGIN [Step 5: ](Configure CAI bot API call)]
 A ready CAI bot is used here.
 This bot has a goal of emitting an API Call to **SAP Process Automation** using **API Trigger**, **API Key** and **Service Binding** we created previously.
 
@@ -189,7 +189,7 @@ Using **CONSUME API SERVICE** feature in **Conversational AI** bot we can make A
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Get CAI Bot Tokens)]
+[ACCORDION-BEGIN [Step 6: ](Get CAI bot tokens)]
 
 1.  To get **Bot Developer Token**:
     - Go to **Settings > Tokens**.
@@ -210,7 +210,7 @@ We now have the proper tokens to create **Notifiers**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create Notifiers)]
+[ACCORDION-BEGIN [Step 7: ](Create notifiers)]
 1.  Navigate to **SAP Process Automation > Monitor > Manage > Automations**.
 
     !![Find Trigger](Step7-1.png)
@@ -301,7 +301,7 @@ The three notifiers are now created.
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test Automation with CAI Bot)]
+[ACCORDION-BEGIN [Step 8: ](Test automation with CAI bot)]
 1.  Open your SAP Conversational AI chatbot.
 
 2.  Click **Connect** tab.

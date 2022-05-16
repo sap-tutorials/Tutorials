@@ -21,7 +21,7 @@ primary_tag: software-product>sap-process-automation
 
 In this tutorial, a Sales Orders web application is captured and details will be retrieved for a specific sales order through an automation.
 
-[ACCORDION-BEGIN [Step 1: ](Create an Application)]
+[ACCORDION-BEGIN [Step 1: ](Create an application)]
 
 1.  Open the following link in a new browser window: [Sales Order Application](https://openui5.hana.ondemand.com/test-resources/sap/m/demokit/orderbrowser/webapp/test/mockServer.html).
 
@@ -80,7 +80,7 @@ The application is now created with its two screens.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Declare Order List Screen Elements)]
+[ACCORDION-BEGIN [Step 2: ](Declare order list screen elements)]
 
 1.  In **Order Management** Application, click on **Orders List** Screen.
 
@@ -129,7 +129,7 @@ The application is now created with its two screens.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Declare Order Details Screen Elements)]
+[ACCORDION-BEGIN [Step 3: ](Declare order details screen elements)]
 
 1.  In **Order Management** Application, click on **Order Details** Screen.
 
@@ -169,7 +169,7 @@ The application is now created with its two screens.
 [VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create Sales Order Data Type)]
+[ACCORDION-BEGIN [Step 4: ](Create sales order datatype)]
 
 1.  Create a new **Data Type**.
 
@@ -206,7 +206,7 @@ Now, declare its fields.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create Automation & Set Input/Output)]
+[ACCORDION-BEGIN [Step 5: ](Create automation & set input/output)]
 
 Create a new **Automation** artifact and name it **Get Order Details From Application**.
 
@@ -233,7 +233,7 @@ Create a new **Automation** artifact and name it **Get Order Details From Applic
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Building Automation)]
+[ACCORDION-BEGIN [Step 6: ](Building automation)]
 
 1.  Add **Order List** Screen to the automation.
 
@@ -364,7 +364,7 @@ The final automation looks like the following:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test Automation)]
+[ACCORDION-BEGIN [Step 7: ](Test automation)]
 
 1.  Click **Test**.
 2.  Set **`orderNumber`** to an existing order in the website (ex. 7991) to test the automation with it.
