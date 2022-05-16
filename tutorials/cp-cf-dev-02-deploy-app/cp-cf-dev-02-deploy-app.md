@@ -2,8 +2,8 @@
 title: Deploy an App to SAP BTP, Cloud Foundry runtime
 description: Use SAP BTP cockpit to deploy an app to the Cloud Foundry runtime, then explore what was deployed and created.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform ]
+primary_tag: software-product>sap-business-technology-platform
+tags: [  tutorial>beginner, software-product>sap-business-technology-platform ]
 time: 5
 ---
 
