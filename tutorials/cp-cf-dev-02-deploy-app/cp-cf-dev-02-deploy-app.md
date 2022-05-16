@@ -19,12 +19,12 @@ This tutorial assumes you've completed the [Download and Prepare App for Cloud F
 
 To deploy your sample application on SAP BTP, create a zip file that contains the necessary files.
 
- 1. Open the folder `cf-sample-app-nodejs-master` which contains your sample app.
- 1. Select the entire contents of this folder -- all folders & files -- and add them to a new `hello-nodejs.zip` file.
+ 1. Open the folder `cf-sample-app-nodejs-main` which contains your sample app.
+ 1. Select the entire contents of this folder -- all folders & files -- and add them to a new `hello-nodejs.zip` file (if you're on macOS, you can use the "Compress" feature and then change the filename from `Archive.zip` to `hello-nodejs.zip`).
 
-![Create zip](Create-zip.png)
+![Create zip](add-to-archive.png)
 
-> Be sure not to include the containing folder in the zip file -- you must explicitly select only the contents of the `cf-sample-app-nodejs-master` folder and not that folder itself.
+> Be sure not to include the containing folder in the zip file -- you must explicitly select only the contents of the `cf-sample-app-nodejs-main` folder and not that folder itself.
 
 [DONE]
 [ACCORDION-END]
@@ -50,13 +50,13 @@ Make sure that the **Applications** tab is selected in the navigation menu.
 
  1. Enable **Use Manifest**.
 
- 1.  Choose **Browse** to select the **`manifest.yml`** file in your **`hello-nodejs`** folder.
+ 1.  Choose **Browse** to select the **`manifest.yml`** file (the one that you edited in the previous tutorial) in the same folder.
 
     ![Deployment dialog](Deploy-dialog.PNG)
 
  1.  Choose **Deploy**.
 
-The application is deployed to SAP BTP and starts automatically. It appears in the list of applications. The requested state is initially red, but turns green if the application starts without problem.
+The application is deployed to SAP BTP and starts automatically. It appears in the list of applications and the status will turn green if the application starts without problem.
 
 ![Result of started application](Started-app2.PNG)
 
@@ -85,4 +85,3 @@ At this stage, you have your sample app deployed and running in Cloud Foundry on
 
 ---
 <p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-cf-dev-02-deploy-app&graphics=true" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
-
