@@ -44,8 +44,8 @@ You should receive a response like the following:
     "access_token": "<< your access token >>",
     "token_type": "bearer",
     "expires_in": 43199,
-    "scope": "uaa.resource ner-trial!b49985.default",
-    "jti": "ab76a0adefbc4ddda6da2e5f382862d1"
+    "scope": "<< granted access >>",
+    "jti": "<< unique identifier >>"
 }
 ```
 
