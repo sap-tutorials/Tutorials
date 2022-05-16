@@ -196,10 +196,11 @@ Now you are done in SAP BTP cockpit.
 
     ![App Manage outgoing checks](29-manage-checks.png)
 
+<!---
 5. Launch the SAP GUI app **Maintain Business Partner** in the **Business Data Master** group.
 
     ![Maintain business partner](30-maintain-business-partner.png)
-
+--->
 
 [VALIDATE_7]
 [ACCORDION-END]
