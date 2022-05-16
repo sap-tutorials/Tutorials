@@ -70,7 +70,6 @@ The deployment is based on MTA ( *Multi-Target Application*, sometimes also call
 [ACCORDION-BEGIN [Step 2: ]((For Windows) Install make tool)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-
 The `make` tool is required by the `mbt` tool. Linux and macOS are already shipped with `make`. For Windows you can download it from the GNU Make site:
 
 1. Go to <http://gnuwin32.sourceforge.net/packages/make.htm>.

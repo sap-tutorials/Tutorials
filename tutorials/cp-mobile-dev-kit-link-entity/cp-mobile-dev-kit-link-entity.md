@@ -363,9 +363,9 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a confirmation pop-up, tap **OK**.
 
-2. Tap **CUSTOMER LIST**, tap one of the available customer record, you will then navigate to Customer detail page.
+2. Tap **Customer List**, tap one of the available customer record, you will then navigate to Customer detail page.
 
-3. You will see the **CREATE ORDER** option in customer detail page. Tap it to create a new sales order.
+3. You will see the **Create Order** option in customer detail page. Tap it to create a new sales order.
 
     ![MDK](img-8.1.png)
 
@@ -373,11 +373,11 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img-8.2.png)
 
-    Now, you will notice that new record has been created and count value for **SEE ALL** is now increased by one as you implemented in step 6.
+    Now, you will notice that new record has been created and count value for **See All** is now increased by one as you implemented in step 6.
 
     ![MDK](img-8.3.png)
 
-5. On Main page, tap **SYNC** to send local changes to the backend, a successful message will be shown.
+5. On Main page, tap **Sync** to send local changes to the backend, a successful message will be shown.
 
     ![MDK](img-8.4.png)
     ![MDK](img-8.5.png)
@@ -436,11 +436,10 @@ Deploy the updated application to your MDK client.
 
 [OPTION END]
 
+Once you complete this tutorial, you can continue with [Level Up with the Mobile Development Kit](mission.mobile-dev-kit-level-up) mission.
+
 [VALIDATE_4]
 [ACCORDION-END]
 
----
-
-Congratulations, you have successfully completed **Enhance Your First MDK App with Additional Functionalities** mission and you are now all set to [Level Up with the Mobile Development Kit](mission.mobile-dev-kit-level-up) mission.
 
 ---

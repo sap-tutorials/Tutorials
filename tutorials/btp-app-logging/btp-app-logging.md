@@ -83,7 +83,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Analyze logs using Kibana dashboard)]
-1. In SAP BTP cockpit navigate to your **Subaccount**.
+1. In SAP BTP Cockpit, navigate to your **Subaccount**.
 
 2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
 
@@ -206,9 +206,9 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 5: ](Test it)]
-1. Build the MTAR file and deploy it to your Cloud Foundry space.
+1. Build the MTAR file and deploy it to your Cloud Foundry space:
 
-    ```
+    ```Shell/Bash
     mbt build -t ./
     cf deploy cpapp_1.0.0.mtar
     ```
@@ -225,10 +225,11 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 
     !![Kibana: Components](kibana_components.png)
 
-You can also browse all logs using the *Discover* button (compass icon) on the left navigation bar.
+You can also browse all logs using the **Discover** button (compass icon) on the left navigation bar.
 The available fields are displayed on the left side of the screen. You can add fields to the message display or quickly filter for any of the top values.
 
-The time filter is on the right top of the screen. Don't forget to choose *Refresh*.
+The time filter is on the right top of the screen. Don't forget to choose **Refresh**.
+
 
 
 [DONE]

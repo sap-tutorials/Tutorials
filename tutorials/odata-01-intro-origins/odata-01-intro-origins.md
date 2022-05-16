@@ -4,8 +4,8 @@ author_profile: https://github.com/qmacro
 title: Learn about OData Fundamentals
 description: Discover OData's origins and learn about the fundamentals of OData by exploring a public OData service.
 auto_validation: false
-primary_tag: products>sap-cloud-platform
-tags: [ products>sap-cloud-platform, topic>cloud, programming-tool>odata, tutorial>beginner ]
+primary_tag: software-product>sap-business-technology-platform
+tags: [ software-product>sap-business-technology-platform, topic>cloud, programming-tool>odata, tutorial>beginner ]
 time: 15
 ---
 
