@@ -3,7 +3,7 @@ title: Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing
 description: Use SAP Customer Order Sourcing to reduce delivery costs by applying an efficient sourcing strategy.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>sap-api-business-hub, products>sap-btp--cloud-foundry-environment]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>sap-api-business-hub, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: topic>cloud
 ---
 
@@ -11,6 +11,9 @@ primary_tag: topic>cloud
  - You have registered for a trial account on [SAP Business Technology Platform](https://cloudplatform.sap.com/index.html).
  - You should be familiar with the SAP Business Technology Platform trial landscape (see [Get Started with SAP Business Technology Platform Trial](cp-trial-quick-onboarding)).
  - You have a subaccount in the **Cloud Foundry** environment, with **Amazon Web Services (AWS)** as provider and the **Europe (Frankfurt)** region.
+    - **It is no longer possible to create new trial accounts on the AWS region Frankfurt (Europe) cf-eu10.**
+    - **Existing accounts still work.**
+ - You have set up your **SAP Customer Order Sourcing** trial system. For more information see [Set Up SAP Customer Order Sourcing Manually](cos-manual-setup).
 
 ## Details
 ### You will learn
@@ -37,54 +40,37 @@ You are the owner of an e-commerce business or a web shop in the fashion industr
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up SAP Customer Order Sourcing via Booster)]
-
-1. Log on to the **SAP Business Technology Platform trial** cockpit and open your global account for the Cloud Foundry environment.
-
-2. In the navigation pane of the SAP Business Technology Platform cockpit, choose **Boosters**.
-
-3. Choose the booster **Prepare an Account for SAP Customer Order Sourcing**.
-
-4. Choose **Start**.
-
->In case you are not able to subscribe to **SAP Customer Order Sourcing**, you need to [assign quota to a Subaccount](https://help.sap.com/viewer/cd03af1a94a440f1b5dbc0dc50a0989b/Cloud/en-US/bdf64a959a5249cf88b414a7c01391df.html).
-
-The configuration and set-up of your new **SAP Customer Order Sourcing** trial system starts and finishes automatically.
-
-You want to learn how to setup SAP Customer Order Sourcing yourself? This tutorial can help: [Set Up SAP Customer Order Sourcing Manually](cos-manual-setup).
-
-[DONE]
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 3: ](Create a new environment)]
 
-Having created a service instance and the corresponding credentials, you can now upload master data into SAP Customer Order Sourcing. You do this via a REST API.
+[After creating a service instance and the corresponding credentials](cos-manual-setup), you can upload master data into **SAP Customer Order Sourcing**. You do this via a REST API.
 
 1. Open a new browser window, navigate to [SAP Customer Order Sourcing on SAP API Business Hub](https://api.sap.com/api/Sourcing_API/resource), and login with your email address.
 
-2. Choose **Configure Environments** and then click **Create New Environment**.
+2. Navigate to **Overview** and choose **Try Out**.
 
-3. As your starting URL choose `https://cpfs-dtrt-trial.cfapps.eu10.hana.ondemand.com/v1`.
+3. Choose **Select Environment** and **Add New Environment**.
 
-4. Enter a name for your environment, for example `trial_test`.
+4. As your starting URL choose `https://cpfs-dtrt-trial.cfapps.eu10.hana.ondemand.com/v1`.
 
-5. In your **SAP Business Technology Platform trial** **Subaccount** open **Spaces** and your already existing space, probably called `dev`.
+5. Enter a name for your environment, for example `trial_test`.
 
-6. In the navigation pane, open **Services > Service Marketplace**.
+6. In your **SAP Business Technology Platform trial** **Subaccount** open **Spaces** and your already existing space, probably called `dev`.
 
-7. Search for **SAP Customer Order Souring** and click on the tile.
+7. In the navigation pane, open **Services > Service Marketplace**.
 
-8. In the navigation pane, open **Instances** and open the already existing instance, probably called `default_customer-order-sourcing-trial`.
+8. Search for **SAP Customer Order Souring** and click on the tile.
 
-9. From your instance copy the following fields to your new environment in the API Business Hub:
+9. In the navigation pane, open **Instances** and open the already existing instance, probably called `default_customer-order-sourcing-trial`.
+
+10. From your instance copy the following fields to your new environment in the API Business Hub:
 
     - `clientid`
-    - `clientsecret` (called just **Secret** in environment)
+    - `clientsecret`
     - `identityzone`
 
-10. Scroll down and choose the **Save this environment for future sessions** radio button.
+11. Scroll down and choose the **Save this environment for future sessions** radio button.
 
-11. Click **Save**.
+12. Click **Configure**.
 
 ![Configure Environments](Config_Environments.png)
 

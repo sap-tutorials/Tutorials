@@ -2,8 +2,8 @@
 title: Create a Customer List Page in an MDK App
 description: Use the mobile development kit page editor to create a new page for displaying a customer list.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 10
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -54,7 +54,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 
 5. In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Contact Cell Table** control onto the Page area.
 
-    !![MDK](img_1.5.gif)
+    !![MDK](img-1.5.gif)
 
     >A **Compound** control contains a group of other controls. Unlike in a container control where you can add your own child controls (container items), the child controls in a compound control are fixed. You can populate each of its child control by defining its data binding, depending on which the child controls are created.
 
@@ -62,7 +62,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 
     | Field | Value |
     |----|----|
-    | `Service`| select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `EntitySet` | Select `Customers` from the dropdown |
     | `QueryOptions` | `$orderby=LastName` |
 
@@ -76,7 +76,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 
     >!![MDK](img-1.7.1.png)
 
-8. Repeat the above steps for `Headline` and `Subheadline` properties binding to `LastName` and `FirstName` properties of the Customer entity respectively.
+8. Remove the default value for the `DetailImage` property. Repeat the above steps for `Headline` and `Subheadline` properties binding to `LastName` and `FirstName` properties of the Customer entity respectively.
 
     You should have final results as below.
 
@@ -86,21 +86,17 @@ To create the Customer List page, you will create a **Section page** and drag th
 
     !![MDK](img-1.9.png)
 
-10. In the **Activity Items** section of the Properties pane, change `VideoCall` on the first activity to **Phone**.
+10. In the **Activity Items** section of the Properties pane, click **Add** to add a new activity item.
 
-    !![MDK](img-1.10.gif)
+    !![MDK](img-1.10.png)
 
-11. Click the **link icon** to open the Object browser for the **Phone** activity and bind it to the `PhoneNumber` property of the Customer entity.
+11. Expand the added item, click the 3 dots icon to open the Object browser to bind the `ActivityValue` to the `PhoneNumber` property of the Customer entity.
 
-    !![MDK](img-1.11.png)
+    !![MDK](img-1.11.gif)
 
-12. Repeat the above step for **Email** activity and bind it to `EmailAddress` property of the Customer entity.
+12. Similarly, add one more activity item, select **Email** from the dropdown and bind it to `EmailAddress` property of the Customer entity.
 
     !![MDK](img-1.12.png)
-
-13. Click the **trash** can icon for the Detail activity to remove it from the Activity list.
-
-    !![MDK](img-1.13.png)
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -124,7 +120,7 @@ Now, you will create a Navigation action that opens the `Customers_List.page` wh
     | `Action Name`| `NavToCustomers_List` |
     | `PageToOpen` | Select `Customers_List.page` from the dropdown |
 
-    !![MDK](img_2.3.png)
+    !![MDK](img-2.3.png)
 
 3. Click **Next** and then **Finish** on the confirmation step.
 
@@ -189,9 +185,9 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-    ![MDK](img-5.1.png)
+    ![MDK](img_5.1.png)
 
-2. You will notice, newly added button on the main page. Tap **CUSTOMER LIST**.
+2. You will notice, newly added button on the main page. Tap **Customer List**.
 
     ![MDK](img_5.2.png)
 
@@ -231,7 +227,8 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-6.5.png)
 
-    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+
+    >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
     >!![MDK](img-6.8.png)
 
@@ -247,9 +244,5 @@ Deploy the updated application to your MDK client.
 
 [VALIDATE_3]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully created a Customer List page and you are now all set to [create a Customer Detail Page](cp-mobile-dev-kit-detail-page).
 
 ---

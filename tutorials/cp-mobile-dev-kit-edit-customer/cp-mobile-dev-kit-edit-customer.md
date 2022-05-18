@@ -2,8 +2,8 @@
 title: Modify a Customer Record in an MDK App
 description: Allow editing of customer details in an MDK app.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -17,7 +17,6 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
-
 ![MDK](img_1.gif)
 
 [ACCORDION-BEGIN [Step 1: ](Create a new page for modifying customer data)]
@@ -25,7 +24,6 @@ author_profile: https://github.com/jitendrakansal
 Regardless of whether your application is online or offline, you can allow users to modify data in the application.
 
 For online applications, the changes are saved to the backend immediately.
-
 
 For offline applications, the changes are stored locally until they are synced using an Upload action.
 
@@ -68,10 +66,6 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
     | `Value`| click the link icon and bind it to `FirstName` property of the Customer entity |
 
     !![MDK](img-1.6.png)
-
-    >Make sure, Format should be set as _Binding_.
-
-    >!![MDK](img_1.6.1.png)
 
 7. Select the second Simple Property control and provide the below information:
 
@@ -262,13 +256,13 @@ First, define a failure message.
 
     !![MDK](img_6.7.png)
 
-8. Provide the below information:
+8. In the **Operation and Service Selection** step, provide the below information:
 
     | Property | Value |
     |----|----|
     | `Action Name`| `Customers_UpdateEntity` |
     | `Type` | Select `UpdateEntity` from the dropdown |
-    | `Service`| Select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `EntitySet`| Select `Customers` from the dropdown |
     | `ReadLink`| click link icon and Double-click `readLink` |
 
@@ -357,7 +351,7 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-2. Tap **CUSTOMER LIST**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap `edit` icon.
+2. Tap **Customer List**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap `edit` icon.
 
     ![MDK](img_8.2.1.png)
     ![MDK](img_8.2.2.png)
@@ -376,7 +370,7 @@ Deploy the updated application to your MDK client.
 
     >**Mobile Applications** | **Native/Hybrid** | click the MDK App **com.sap.mdk.demo** | **Mobile Connectivity** | click **Launch in Browser** icon
 
-    >!![MDK](img_8.9.1.png)
+    >!![MDK](img-8.9.1.png)
 
     >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
@@ -388,7 +382,7 @@ Deploy the updated application to your MDK client.
 
     >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-5. On Main page, tap **SYNC**, a successful message will be shown.
+5. On Main page, tap **Sync**, a successful message will be shown.
 
     ![MDK](img_8.5.png)
 
@@ -421,7 +415,7 @@ Now, refresh the URL to check if record has been updated in the backend. As Sync
 
     >**Mobile Applications** | **Native/Hybrid** | click the MDK App **com.sap.mdk.demo** | **Mobile Connectivity** | click **Launch in Browser** icon
 
-    >!![MDK](img_8.9.1.png)
+    >!![MDK](img-8.9.1.png)
 
     >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
@@ -449,7 +443,7 @@ Now, refresh the URL to check if record has been updated in the backend. As Sync
 
     !![MDK](img-8.12.png)
 
-    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+    >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
     >!![MDK](img-8.12.2.png)
 
@@ -475,7 +469,7 @@ Now, refresh the URL to check if record has been updated in the backend. As Sync
 
     >**Mobile Applications** | **Native/Hybrid** | click the MDK App **com.sap.mdk.demo** | **Mobile Connectivity** | click **Launch in Browser** icon
 
-    >!![MDK](img_8.9.1.png)
+    >!![MDK](img-8.9.1.png)
 
     >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
@@ -483,9 +477,5 @@ Now, refresh the URL to check if record has been updated in the backend. As Sync
 
 [DONE]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully modified a Customer Record and you are now all set to [define a Validation Rule in an MDK App](cp-mobile-dev-kit-add-validation).
 
 ---

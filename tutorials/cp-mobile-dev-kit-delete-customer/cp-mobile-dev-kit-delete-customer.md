@@ -2,8 +2,8 @@
 title: Delete a Customer Record in an MDK App
 description: Allow the user to delete a customer record in an MDK app.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 20
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -71,7 +71,7 @@ The next step is to store deleted record locally for an offline application or d
     |----|----|
     | `Action Name`| `Customers_DeleteEntity` |
     | `Type` | Select `DeleteEntity` from the dropdown |
-    | `Service`| Select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `EntitySet` | Select `Customers` from the dropdown |
     | `ReadLink`| click link icon and double click `readLink` |
 
@@ -102,30 +102,48 @@ The next step is to store deleted record locally for an offline application or d
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a new dialog confirmation)]
+[ACCORDION-BEGIN [Step 2: ](Create a new message confirmation)]
 
-In the MDK editor, you will write a rule in JavaScript called `Customers_DeleteConfirmation.js` to display a dialog to confirm if user wants to delete current record. On it's confirmation, _customer delete entity action_ is executed.
+In the MDK editor, you will write a rule in JavaScript called `Customers_DeleteConfirmation.js` to display a message to confirm if user wants to delete current record. On it's confirmation, _customer delete entity action_ is executed.
 
-1. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
+1. Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
+
+    !![MDK](img_1.1.png)
+
+    Provide the below information:
+
+    | Property | Value |
+    |----|----|
+    | `Action Name`| `DeleteConfirmation` |
+    | `Type` | Select `Message` from the dropdown |
+    | `Message` | `Delete current entity?` |
+    | `Title` | `Delete Confirmation` |
+    | `OKCaption` | `OK` |
+    | `OnOK` | `--None--` |
+    | `CancelCaption` | `CANCEL` |
+    | `OnCancel` | `--None--` |
+
+    !![MDK](img_2.2.1.png)
+
+2. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
     !![MDK](img_2.1.png)
 
-2. Enter the Rule name `Customers_DeleteConfirmation`, click **Next** and then **Finish** on the confirmation step.
+3. Enter the Rule name `Customers_DeleteConfirmation`, click **Next** and then **Finish** on the confirmation step.
 
     Copy and paste the following code.
 
     ```JavaScript
     export default function DeleteConfirmation(context) {
-    	let dialogs = context.nativescript.uiDialogsModule;
-    	return dialogs.confirm("Delete current record?").then((result) => {
-    		if (result === true) {
-    			return context.executeAction('/DemoSampleApp/Actions/Customers_DeleteEntity.action').then(
-    				(success) => Promise.resolve(success),
-    				(failure) => Promise.reject('Delete entity failed ' + failure));
-    		} else {
-    			return Promise.reject('User Deferred');
-    		}
-    	});
+        return context.executeAction('/DemoSampleApp/Actions/DeleteConfirmation.action').then((result) => {
+            if (result.data) {
+                return context.executeAction('/DemoSampleApp/Actions/Customers_DeleteEntity.action').then(
+                    (success) => Promise.resolve(success),
+                    (failure) => Promise.reject('Delete entity failed ' + failure));
+            } else {
+                return Promise.reject('User Deferred');
+            }
+        });
     }
     ```
 
@@ -181,6 +199,7 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-4.3.png)
 
+
 [DONE]
 [ACCORDION-END]
 
@@ -192,7 +211,7 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-2. Tap **CUSTOMER LIST** | tap any record | tap trash icon.
+2. Tap **Customer List** | tap any record | tap trash icon.
 
     ![MDK](img_5.1.png)
 
@@ -204,7 +223,7 @@ Deploy the updated application to your MDK client.
 
     >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-4. On Main page, tap **SYNC**, a successful message will be shown.
+4. On Main page, tap **Sync**, a successful message will be shown.
 
     ![MDK](img_5.3.png)
 
@@ -234,11 +253,12 @@ Deploy the updated application to your MDK client.
 
 [OPTION BEGIN [Web]]
 
+
 1. Either click the highlighted button or refresh the web page to load the changes.
 
     !![MDK](img-5.8.png)
 
-    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+    >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
     >!![MDK](img-5.9.png)
 
@@ -258,15 +278,11 @@ You can cross verify if this record has been deleted in the backend.
 
 >**Mobile Applications** | **Native/Hybrid** | click the MDK App **com.sap.mdk.demo** | **Mobile Connectivity** | click **Launch in Browser** icon
 
->!![MDK](img_5.7.png)
+>!![MDK](img-5.7.png)
 
 >It will open the URL in a new tab, remove `?auth=uaa` and add `/Customers` at the end of the URL.
 
 [VALIDATE_3]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully deleted a Customer Record and you are now all set to [upload Logs from an MDK Mobile App](cp-mobile-dev-kit-upload-logs).
 
 ---

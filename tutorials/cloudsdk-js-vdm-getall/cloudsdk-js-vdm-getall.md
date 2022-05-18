@@ -13,6 +13,13 @@ primary_tag: products>sap-cloud-sdk
  - Basic knowledge of OData is recommended, but not required.
 
 ## Details
+
+> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> This tutorial is not actively maintained and might be partially outdated.
+> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
+> We will provide a link to the updated version of this tutorial as soon as we release it.
+> In this tutorial, version 1 of the SAP Cloud SDK for TypeScript/JavaScript is used.
+
 ### You will learn
   - What the OData Virtual Data Model for SAP S/4HANA Cloud is
   - How to use the Virtual Data Model to query the business partner service
@@ -43,7 +50,7 @@ This tutorial and the following ones in this group are based on the SAP Cloud SD
 For each OData service in SAP S/4HANA Cloud, there is a corresponding npm package in the SAP Cloud SDK. You can find an overview of [all packages here](https://help.sap.com/doc/9dbcab0600b346c2b359a8c8978a45ba/1.0/en-US/globals.html). All of the VDM packages are prefixed with `@sap/cloud-sdk-vdm`. The package for the business partner service can be installed by executing the following command on your command line:
 
 ```Shell
-npm install @sap/cloud-sdk-vdm-business-partner-service
+npm install @sap/cloud-sdk-vdm-business-partner-service@^1.28.2
 ```
 
 Starting with version `1.4.0` of the SAP Cloud SDK for JavaScript, you can also use our generator for your own custom OData services.
@@ -182,6 +189,8 @@ getAllBusinessPartners(): Promise<BusinessPartner[]> {
     });
 }
 ```
+
+In the examples above the `username`, `password` and `APIKey` are hard coded. This is only done to keep this tutorial brief. You should have a look at the [destination API](https://sap.github.io/cloud-sdk/docs/js/features/connectivity/destination) of the SAP cloud SDK to learn how to avoid hard coding credentials. Please do not use hard coded credentials in any productive solution.
 
 [DONE]
 [ACCORDION-END]

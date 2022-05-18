@@ -3,9 +3,10 @@ author_name: Bruce Meng
 author_profile: https://github.com/flyingfish162
 title: Offline-Enable Your Android Application
 description: Enable offline OData in your Android application, resulting in an application that can be used without a network connection and that performs data requests with less latency.
-primary_tag: products>sap-btp-sdk-for-android
+primary_tag: software-product>sap-btp-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, programming-tool>odata, software-product>sap-btp-sdk-for-android, software-product>sap-business-technology-platform ]
+keywords: sdkforandroid
 time: 30
 ---
 
@@ -65,32 +66,36 @@ time: 30
 
 [ACCORDION-BEGIN [Step 2: ](Examine the encryption key)]
 
+>Make sure you are selecting the right language above.
+
 To protect the data in offline store, you must enable offline store encryption by supplying an encryption key.
 
 [OPTION BEGIN [Java]]
 1.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`OfflineWorkerUtil`**, to open `OfflineWorkerUtil.java`.
 
-2.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`initializeOffline`**, to move to the `initializeOffline` method. Call the **`setStoreEncryptionKey`** method of **`OfflineODataParameters`** instance to encrypt offline store.
+2.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`initializeOffline`**, to move to the `initializeOffline` method. Call the `setStoreEncryptionKey` method of the `OfflineODataParameters` instance to encrypt the offline store. In single user mode, before you can get the encryption key using `UserSecureStoreDelegate`, you must generate and save an encryption key to `UserSecureStore` first.
 
     !![Parameter setting Java](offline-key-java.png)
+
 
 [OPTION END]
 
 [OPTION BEGIN [Kotlin]]
 1.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`OfflineWorkerUtil`**, to open `OfflineWorkerUtil.kt`.
 
-2.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`initializeOffline`**, to move to the `initializeOffline` method. Call the **`setStoreEncryptionKey`** method of **`OfflineODataParameters`** instance to encrypt offline store.
+2.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`initializeOffline`**, to move to the `initializeOffline` method. Call the `setStoreEncryptionKey` method of the `OfflineODataParameters` instance to encrypt the offline store. In single user mode, before you can get the encryption key using `UserSecureStoreDelegate`, you must generate and save an encryption key to `UserSecureStore` first.
 
-    !![Parameter setting Kotlin](offline-key-kotlin.png)
+    !![Parameter setting Java](offline-key-kotlin.png)
+
 
 [OPTION END]
+
+>For additional information about multiple user mode, see [Enable Multi-User Mode for Your Android Application](cp-sdk-android-wizard-app-multiuser).
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Examine the defining queries)]
-
->Make sure you are selecting the right language above.
 
 [OPTION BEGIN [Java]]
 The offline store is populated based on objects called in using `OfflineODataDefiningQuery`. The defining queries are located in `OfflineWorkerUtil.java`, in the `initializeOffline` method.
@@ -121,8 +126,6 @@ Defining queries tell the `OfflineODataProvider` (the class that manages the off
 
 [ACCORDION-BEGIN [Step 4: ](Examine the offline service and service manager)]
 
->Make sure you are selecting the right language above.
-
 The application allows users to make changes against a local offline store and synchronize manually at any time. The sync operation is performed by a [worker](https://developer.android.com/topic/libraries/architecture/workmanager/basics). There are three operations that must be implemented in order to use the offline store functionality: `open`, `download`, and `upload`. As their names suggest, the operations open the offline store, download server changes, and upload user changes, respectively. In the wizard-generated application, `OfflineOpenWorker` implements `open` during initialization and `OfflineSyncWorker` implements a sync operation, which requires `download` first, and then `upload`.
 
 [OPTION BEGIN [Java]]
@@ -133,7 +136,7 @@ The application allows users to make changes against a local offline store and s
 
     The worker's work is to call the `open` method of the `OfflineODataProvider` class to perform the open operation and pass the given callbacks through.
 
-    The `OfflineOpenWorker` class is called by `open` method in `OfflineWorkerUtil.java` which is called by `WizardFlowStateListener` when the user logs into the application.
+    The `OfflineOpenWorker` class is called by the `open` method in `OfflineWorkerUtil.java`, which is called by `MainBusinessActivity` when the user logs in to the application.
 
     !![Open method calls OfflineOpenWorker](method_calls_offline_open_worker_java.png)
 
@@ -161,7 +164,7 @@ The application allows users to make changes against a local offline store and s
 
     The worker's work is to call the `open` method of the `OfflineODataProvider` class to perform the open operation and pass the given callbacks through.
 
-    The `OfflineOpenWorker` class is called by `open` method in `OfflineWorkerUtil.kt` which is called by `WizardFlowStateListener` when the user logs into the application.
+    The `OfflineOpenWorker` class is called by the `open` method in `OfflineWorkerUtil.kt`, which is called by `MainBusinessActivity` when the user logs in to the application.
 
     !![Open method calls OfflineOpenWorker](method_calls_offline_open_worker_kotlin.png)
 
@@ -260,12 +263,10 @@ In this section we will create an **Error Information** screen that displays the
         </com.google.android.material.appbar.AppBarLayout>
 
         <ScrollView
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
 
             <LinearLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:orientation="vertical">
@@ -410,6 +411,7 @@ In this section we will create an **Error Information** screen that displays the
     ```Java
     package com.sap.wizapp.mdui;
 
+    import androidx.annotation.NonNull;
     import androidx.appcompat.app.AppCompatActivity;
     import androidx.appcompat.widget.Toolbar;
     import android.os.Bundle;
@@ -432,7 +434,7 @@ In this section we will create an **Error Information** screen that displays the
             String requestURL = getIntent().getStringExtra("ERROR_URL");
             String errorMessage = getIntent().getStringExtra("ERROR_MESSAGE");
             String body = getIntent().getStringExtra("ERROR_BODY");
-            ((TextView) (findViewById(R.id.requestStatusTextView))).setText("" + errorCode);
+            ((TextView) (findViewById(R.id.requestStatusTextView))).setText(String.valueOf(errorCode));
 
             if (errorMethod != null) {
                 ((TextView) (findViewById(R.id.requestMethodTextView))).setText(errorMethod);
@@ -449,7 +451,7 @@ In this section we will create an **Error Information** screen that displays the
         }
 
         @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
+        public boolean onOptionsItemSelected(@NonNull MenuItem item) {
             finish();
             return super.onOptionsItemSelected(item);
         }
@@ -458,9 +460,7 @@ In this section we will create an **Error Information** screen that displays the
 
 7.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.java`.
 
-8.  In the `synchronize` method, find the line that performs the `OfflineWorkerUtil.sync` method call.
-
-    !![OfflineWorkerUtil synchronize](offlineWorkerUtil_synchronize_call_java.png)
+8.  In the `updateProgressForSync` method, find the line `progressBar.setVisibility(View.INVISIBLE);`.
 
 9.  Right after the `progressBar.setVisibility(View.INVISIBLE);` line, in the `SUCCEEDED` case of sync work state, add the following code, which queries the error archive and displays information to the user about the first error encountered:
 
@@ -555,7 +555,7 @@ In this section we will create an **Error Information** screen that displays the
       break;
     ```
 
-10.  Run the app again, and re-attempt the sync. When the sync fails, you should see the following error screen.
+10.  Run the app again, and re-attempt the sync. When the sync ends, you should see the following error screen.
 
     !![Error screen](error_screen.png)
 
@@ -610,12 +610,10 @@ In this section we will create an **Error Information** screen that displays the
         </com.google.android.material.appbar.AppBarLayout>
 
         <ScrollView
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
 
             <LinearLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:orientation="vertical">
@@ -806,11 +804,9 @@ In this section we will create an **Error Information** screen that displays the
 
 7.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.kt`.
 
-8.  In the `synchronize` method, find the line that performs the `OfflineWorkerUtil.sync` method call.
+8.  In the `updateProgressForSync` method, find the line `this.visibility = View.INVISIBLE`.
 
-    !![OfflineWorkerUtil synchronize](offlineWorkerUtil_synchronize_call_kotlin.png)
-
-9.  Right after the `sync_determinate.visibility = View.INVISIBLE` line, in the `WorkInfo.State.SUCCEEDED` block, add the following code, which queries the error archive and displays information to the user about the first error encountered:
+9.  Right after the `this.visibility = View.INVISIBLE` line, in the `WorkInfo.State.SUCCEEDED` block, add the following code, which queries the error archive and displays information to the user about the first error encountered:
 
     ```Kotlin
     val provider = OfflineWorkerUtil.offlineODataProvider

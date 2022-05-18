@@ -2,8 +2,8 @@
 title: Define a Validation Rule in an MDK App
 description: Write a JavaScript logic to validate an email address format in an MDK app.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 10
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -16,7 +16,6 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ![MDK](img_1.gif)
-
 
 [ACCORDION-BEGIN [Step 1: ](Create a validation message)]
 
@@ -100,6 +99,7 @@ Now, that you have created the validation rule, you will add it to the Update ac
 [VALIDATE_3]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 4: ](Deploy the application)]
 
 Deploy the updated application to your MDK client.
@@ -134,6 +134,7 @@ Deploy the updated application to your MDK client.
 
 [OPTION END]
 
+
 [OPTION BEGIN [iOS]]
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, click **OK**.
@@ -151,7 +152,7 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-5.6.png)
 
-    >If you see the error `404 Not Found: Requested route ('xxxxxtrial-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
+    >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
     >!![MDK](img-5.3.png)
 
@@ -160,13 +161,12 @@ Deploy the updated application to your MDK client.
     !![MDK](img_5.4.png)
     !![MDK](img_5.5.png)
 
+
 [OPTION END]
+
+Once you complete this tutorial you can continue with [enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
 
 [VALIDATE_1]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully completed **create Your First MDK Application** mission and you are now all set to [enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
 
 ---

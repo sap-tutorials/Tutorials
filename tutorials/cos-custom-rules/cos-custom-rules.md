@@ -3,7 +3,7 @@ title: Create a Custom Goal with SAP Customer Order Sourcing
 description: Learn how to create a custom goal from start to finish with SAP Customer Order Sourcing.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, topic>sap-api-business-hub]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
 primary_tag: topic>cloud
 ---
 
@@ -11,6 +11,8 @@ primary_tag: topic>cloud
  - You have registered for a trial account on [SAP Business Technology Platform](https://cloudplatform.sap.com/index.html).
  - You should be familiar with the SAP Business Technology Platform trial landscape (see [Get Started with SAP Business Technology Platform Trial](cp-trial-quick-onboarding)).
  - You have a subaccount in the **Cloud Foundry** environment, with **Amazon Web Services (AWS)** as provider and the **Europe (Frankfurt)** region.
+    - **It is no longer possible to create new trial accounts on the AWS region Frankfurt (Europe) cf-eu10.**
+    - **Existing accounts still work.**
  - You have followed the tutorial [Set Up SAP Customer Order Sourcing Manually](cos-manual-setup) or steps 1 to 3 of tutorial [Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing](cos-getting-started-trial)
 
 ## Details
@@ -19,7 +21,7 @@ primary_tag: topic>cloud
   - How to create a custom goal using the custom attribute
 
 
-  In this tutorial you learn create a custom goal in SAP Customer Order Sourcing from start to finish.
+  In this tutorial you learn how to create a custom goal in SAP Customer Order Sourcing from start to finish.
 
   Custom Goals allow you to extend the goal based sourcing according to your needs.
 
@@ -78,7 +80,7 @@ primary_tag: topic>cloud
 
     Search for **SAP Customer Order Sourcing**.
 
-4. Open the SAP Customer Order Service tile, choose **Go to Application**, and log in.
+4. Open the SAP Customer Order Service tile, choose **Go to Application** ![Go To Application](Go_To_Application.png), and log in.
 
 5. Open the Strategy Builder app and open an existing strategy or create a new one via **+**.
 
@@ -91,7 +93,7 @@ primary_tag: topic>cloud
     |  Field Name     | Value
     |  :------------- | :-------------
     |  **Name**           | **`Highest Sustainability Rating`**
-    |  **Description**    | **`The focus of this goal is to deliver products only from the source with the highest (best) sustainability rating.`**
+    |  **Description**    | **`The focus of this goal is to deliver products only from the source with the highest sustainability rating.`**
     |  **Numeric Attribute**    | **`sustainabilityrating`**
     |  **Comparator**          | **`Highest Value`**
 

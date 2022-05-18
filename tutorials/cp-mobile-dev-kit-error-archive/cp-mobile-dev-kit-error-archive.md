@@ -2,8 +2,8 @@
 title: Handle Error Archive in an MDK App
 description: Create an MDK app to display errors occurred while uploading local changes and implement some logic on how to handle such errors and then let users to fix it from the app by providing correct values.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 30
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -21,13 +21,14 @@ author_profile: https://github.com/jitendrakansal
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/2-Handle-Error-Archive-in-an-MDK-App) and start directly with step 7 in this tutorial.
 
+
 ---
 
 You have built an MDK app with offline functionality. In offline store, you make a change to a local record and upload this change (from request queue) to backend but backend prevents this change to accept due to some business logic failure. This error is recorded in an Offline OData specific entity set named as `ErrorArchive`. This entity set has detailed information about the errors. It's now up-to developers how they handle such errors and then let users to fix it from the app by providing the correct values.
 
 >`ErrorArchive` is exposed to the application as an OData entity set and is accessible through the OData API in the same way that the application accesses any other entity sets from the offline store.
 
-!![MDK](img_1.png)
+!![MDK](img_1.gif)
 
  In this tutorial, you need to carry out the following tasks in order to understand how to display and handle such errors:
 
@@ -37,7 +38,7 @@ You have built an MDK app with offline functionality. In offline store, you make
 *  Create a business logic to find the affected entity
 *  Navigate to the affected record to handle the error
 
-> For this tutorial, you will use **Mobile Services sample backend** destination. You will modify a `PurchaseOrderHeaders` record by changing `SupplierId` field. Offline store saves this record in request queue database and when you sync it with backend, backend prevents updating this record due to business logic failure. This failure record will be listed in Error list page, from here, you can navigate to details page for more information. You will implement a logic to navigate from details page to the affected record.
+> For this tutorial, you will use **Mobile Services sample backend** destination. You will modify a `PurchaseOrderHeaders` record by changing `CurrencyCode` field. Offline store saves this record in request queue database and when you sync it with backend, backend prevents updating this record due to business logic failure. This failure record will be listed in Error list page, from here, you can navigate to details page for more information. You will implement a logic to navigate from details page to the affected record.
 
 ![MDK](img_1.gif)
 
@@ -51,37 +52,39 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.2.png)
 
-    >If you do not see Welcome page, you can access it via **Help** menu.
+    >If you do not see the Welcome page, you can access it via **Help** menu or via **View** menu > Find Command > Welcome.
 
 3. Select **MDK Project** and click **Start**.
 
     !![MDK](img-1.3.png)    
 
-4. In *Type* step, select or provide the below information and click **Next**:
+4. In *Basic Information* step, select or provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `MDK template type`| Select `CRUD` from the dropdown |
-    | `Your project name` | `MDK_ErrorArchive` |
-    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
+    | `MDK Template Type`| Select `CRUD` from the dropdown |
+    | `Your Project Name` | `MDK_ErrorArchive` |
+    | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
 
     !![MDK](img-1.4.png)
 
     >The `CRUD` template creates the offline or online actions, rules, messages, List Detail Pages with editable options. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).  
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set up the Cloud Foundry environment again by navigating to **View** menu > **Find Command**> **CF: Login to Cloud foundry** to initiate a valid session and click Start Over.
+    >This screen will only show up when your CF login session has expired. Enter your login credentials, click Login icon and select the org & space where you have set up the initial configuration for your MDK app.
 
-5. In *Service Name* step, provide or select the below information and click **Next**:
+    >!![MDK](img-1.4.1.png)
+
+5. In *Service configuration* step, provide or select the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `Service File Name`| `<Provide any name of your choice>` |
-    | `OData Source` | Select `Mobile Services` from the dropdown |
+    | `Data Source` | Select `Mobile Services` from the dropdown |
     | `Mobile Services Landscape` | Select `standard` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
     | `Destination` | Select `SampleServiceV2` from the dropdown |
     | `Enter a path to the OData service` | Leave it as it is |
-    | `Language URL` | Leave it with the default value |
     | `Enable Offline` | It's enabled by default |
 
     !![MDK](img-1.5.png)
@@ -90,20 +93,20 @@ This step includes creating the mobile development kit project in the editor.
 
     Since you will create an offline based app, hence **Enable Offline** option is selected.        
 
-6. In *Collection* step, unselect `Customers`, select `PurchaseOrderHeaders` and `PurchaseOrderItems`.
+6. In *Data Collections* step, unselect `Customers`, select `Suppliers`, `PurchaseOrderHeaders` and `PurchaseOrderItems`.
 
     !![MDK](img-1.6.png)
 
-    Click **Next** to complete the project creation.
+    Click **Finish** to complete the project creation.
 
-7. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_ErrorArchive` project in the project explorer.
+7. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_ErrorArchive` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new page to display Error list)]
 
-Generated project is offline enabled and includes two entity sets (`PurchaseOrderHeaders` and `PurchaseOrderItems`) on main page and these entities are fully CRUD enabled. You can create a new record and also modify an existing one.
+Generated project is offline enabled and includes three entity sets (`Suppliers`, `PurchaseOrderHeaders` and `PurchaseOrderItems`) on main page and these entities are fully CRUD enabled. You can create a new record and also modify an existing one.
 
 !![MDK](img-2.png)
 
@@ -137,7 +140,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
     | Property | Value |
     |----|----|
-    | `Service`| Select `Sample.service` from the dropdown |
+    | `Service`| Select `SampleServiceV2.service` from the dropdown |
     | `EntitySet` | Select `ErrorArchive` from the dropdown |
 
     !![MDK](img-2.4.png)
@@ -279,7 +282,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
     Now, bind its **Caption** property to `GetAffectedEntityHeaderCaption.js` file.
 
-    !![MDK](img-3.12.1.gif)
+    !![MDK](img-3.12.1.png)
 
 12. Next, you can also display additional information like detailed error message, request body, request URL etc.
 
@@ -512,6 +515,10 @@ Now, that the **Error List** page is created, you will add a button on the **Mai
 
     !![MDK](img-7.2.png)
 
+    If you want to enable source for debugging the deployed bundle, then choose **Yes**.
+
+    !![MDK](img-4.4.png)
+
     You should see **Deploy to Mobile Services successfully!** message.
 
     !![MDK](img-7.3.png)
@@ -527,6 +534,8 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 
 !![MDK](img-8.1.png)
 
+The On-boarding QR code is now displayed.
+
 !![MDK](img-8.2.png)
 
 >Leave the Onboarding dialog box open for step 9.
@@ -534,9 +543,10 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 [VALIDATE_1]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 9: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and on-board again, you will be asked either to continue to use current application or to scan new QR code.
 
 [OPTION BEGIN [Android]]
 
@@ -546,25 +556,25 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 
     ![MDK](img_9.1.png)
 
-2. You will modify a `PURCHASEORDERHEADERS` record, save it locally, sync it to the backend and if backend doesn't accept this change due to some business logic failure, this record will appear in **Error Archive** list.
+2. You will modify a `PurchaseOrderHeaders` record, save it locally, sync it to the backend and if backend doesn't accept this change due to some business logic failure, this record will appear in **Error Archive** list.
 
-    Navigate to `PURCHASEORDERHEADERS` list, tap either one of the record.
+    Navigate to `PurchaseOrderHeaders` list, tap either one of the record.
 
     ![MDK](img_9.2.png)
 
     ![MDK](img_9.3.png)
 
-3. Tap edit icon. Make some changes to `SUPPLIERID` value and **SAVE** it.
+3. Tap edit icon. Make some changes to `CurrencyCode` value (update it to `EUROOO`) and tap the save icon.
 
     ![MDK](img_9.4.png)
 
-    You will see **Entity Updated** toast message. You can always see this updated record reflecting in `PURCHASEORDERHEADERS` list which means offline store has accepted this change.
+    You will see **Entity Updated** toast message. You can always see this updated record reflecting in `PurchaseOrderHeaders` list which means offline store has accepted this change.
 
-4. Navigate to `Main.page`, click **SYNC** to upload local changes from device to the backend and to download the latest changes from backend to the device.
+4. Navigate to `Main.page`, click **Sync** to upload local changes from device to the backend and to download the latest changes from backend to the device.
 
     ![MDK](img_9.5.png)
 
-5. Once you see Sync success message, navigate to **ERROR ARCHIVE** list.
+5. Once you see `Upload Successful` message, navigate to **Error Archive** list.
 
     There you will find affected entity which couldn't get accepted by backend due to some business logic failure.
 
@@ -572,17 +582,17 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 
 6. Tapping any record navigates to **Error Details** page with more information about error.
 
-    ![MDK](img_9.7.png)
+    ![MDK](img_9.7.1.png)
 
-    Here in **ERROR MESSAGE** you will see `SQLDatabaseException` and in **REQUEST BODY**, it shows the property that caused this failure.
+    Here in **Error Message** you will see `SQLDatabaseException` and in **REQUEST BODY**, it shows the property that caused this failure.
 
 7. Its now up-to developers how to handle such errors and let users to modify record with correct values.
 
-    In this tutorial, you have added a business logic to find out which is affected entity and how to navigate to respective record to let users to modify this record with correct values. Once done, user can again **SYNC** it with backend.
+    In this tutorial, you have added a business logic to find out which is affected entity and how to navigate to respective record to let users to modify this record with correct values. Once done, user can again **Sync** it with backend.
 
     Tap **Edit Affected Entity** and modify record with correct values.
 
-    ![MDK](img_9.7.1.png)
+    ![MDK](img_9.7.png)
 
     ![MDK](img_9.8.png)
 
@@ -604,7 +614,7 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 
     ![MDK](img_9.11.png)
 
-3. Tap **Edit**. Make some changes to `SupplierId` value and **Save** it.
+3. Tap **Edit**. Make some changes to `CurrencyCode` value (update it to `EUROOO`) and **Save** it.
 
     ![MDK](img_9.12.png)
 
@@ -614,7 +624,7 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 
     ![MDK](img_9.13.png)
 
-5. Once you see Sync success message, navigate to **Error Archive** list.
+5. Once you see `Upload Successful` message, navigate to **Error Archive** list.
 
     There you will find affected entity which couldn't get accepted by backend due to some business logic failure.
 
@@ -624,7 +634,7 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 
     Here in **Error Message** you will see `SQL Exception: Foreign key constraint violation occurred` and in **Request Body**, it shows the property that caused this failure.
 
-    ![MDK](img_9.15.png)
+    ![MDK](img_9.15.1.png)
 
 7. It's now up-to developers how to handle such errors and let users to modify record with correct values.
 
@@ -632,19 +642,15 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 
     Tap **Edit Affected Entity** and modify record with correct values.
 
-    ![MDK](img_9.15.1.png)
+    ![MDK](img_9.15.png)
 
     ![MDK](img_9.16.png)
 
 [OPTION END]
 
->Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and on-board again, you will be asked either to continue to use current application or to scan new QR code.
 
 [VALIDATE_2]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully set up your app to handle Error Archive and you can continue with the remaining tutorials in this mission.
 
 ---

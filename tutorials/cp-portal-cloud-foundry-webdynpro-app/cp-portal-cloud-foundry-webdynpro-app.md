@@ -23,11 +23,11 @@ In this tutorial, you'll use the **Content Manager** in the SAP Launchpad servic
 
 [ACCORDION-BEGIN [Step 1: ](Open the Content Manager)]
 
-1. To get to the **Content Manager**, first click **Service Marketplace** in the left navigation panel of your trial account and in the search box, enter `launchpad` to find the **Launchpad Service** tile. Then click the **Launchpad Service** service tile.
+1. To get to the Content Manager, first click **Service Marketplace** in the left navigation panel of your trial account and in the search box, enter `launchpad` to find the **Launchpad Service** tile. Then click the **Launchpad Service** service tile.
     ![Click subscriptions](1-find-launchpad.png)
 
 
-2. From the **Overview** tab on the right, click the Actions icon (...) and in the opened menu, click **Go to Application**.
+2. Under the **Application Plans** tab on the right, click the Actions icon (...) and click **Go to Application**.
 
     ![Go to application](2-go-to-application.png)
 
@@ -162,11 +162,11 @@ A group is a set of one or more apps displayed together in your site. Assigning 
 
     ![Go to site](14-go-to-site.png)
 
-3. Enter your logon details if prompted to do so.
-
-4. In the `Purchase Orders` group, click the Web Dynpro ABAP app called `Search POs` to launch it.
+3. In the `Purchase Orders` group, click the Web Dynpro ABAP app called `Search POs` to launch it.
 
     ![View my apps](15-my-apps.png)
+
+4.  Enter your logon details if prompted to do so.
 
 And this is what you'll see:
 

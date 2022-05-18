@@ -2,8 +2,8 @@
 title: Upload Logs from an MDK App
 description: Allow users to upload logs from an MDK app to SAP Mobile Services.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 20
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -33,7 +33,7 @@ In this step, you will enable client log upload policy in **SAP Mobile Services 
 
 2. Check **Log Upload** option and click **Save**.
 
-    !![MDK](img_1.2.png)
+    !![MDK](img-1.2.png)
 
     >Other policy parameters like Log Level, Delete Uploaded Log After, Maximum Number of Logs and Maximum Log Size currently have no effect.
 
@@ -86,9 +86,7 @@ You will create 3 actions:
     |----|----|
     | `Action Name`| `LogSetLevel` |
     | `Type` | Select `SetLevel` from the dropdown |
-    | `Level`| Select `Debug` from the dropdown |
-
-    >Setting log level to debug is not recommended for productive environment.
+    | `Level`| Select `Trace` from the dropdown |
 
     !![MDK](img_2.2.png)
 
@@ -249,9 +247,9 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-    At `OnLaunch` event, app starts gathering logs.
+    Once the reinitialization is completed, app starts gathering the client logs.
 
-2. Tap **UPLOAD LOGS** to upload client logs from app to SAP Mobile Services.
+2. Tap **Upload Logs** to upload client logs from app to SAP Mobile Services.
 
     ![MDK](img_8.1.png)
 
@@ -263,7 +261,7 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-    At `OnLaunch` event, app starts gathering logs.
+    Once the reinitialization is completed, app starts gathering the client logs.
 
 2. Tap **Upload Logs** to upload client logs from app to SAP Mobile Services.
 
@@ -278,19 +276,19 @@ Deploy the updated application to your MDK client.
 
 [ACCORDION-BEGIN [Step 9: ](Examine uploaded logs in Mobile Services cockpit)]
 
-Open SAP Mobile Services Cockpit, click **Mobile Applications** | **Native/Hybrid** | click `com.sap.mdk.demo` app | **Mobile Client Log Upload** | **Logs**.
+Open SAP Mobile Services Cockpit, click **Mobile Applications** | **Native/Hybrid** | click `com.sap.mdk.demo` app | **Mobile Client Log Upload** | **Log Files**.
 
-!![MDK](img_9.png)
+!![MDK](img-9.png)
 
-You may view log entries directly in Mobile Services Cockpit or download them locally.
+A log file is created for each upload. All the uploaded files, including all levels, not just error or fatal will be listed here.
 
->You can find more details about [Uploading and Viewing Client Logs](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/logging/admin/client-logs.html).
+You can view any Error and Fatal client logs under *Logs* tab.
+
+!![MDK](img-9.1.png)
+
+>Check [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/logging/admin/config.html) for more details about Uploading and Viewing Client Logs.
 
 [VALIDATE_1]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully uploaded client logs to SAP Mobile Services and you are now all set to [extend an MDK App with Customer Orders](cp-mobile-dev-kit-customer-order).
 
 ---

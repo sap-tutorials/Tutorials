@@ -3,7 +3,7 @@ title: Use Data Attribute Recommendation to Train a Machine Learning Model
 description: Train a machine learning model using the data that you uploaded to your Data Attribute Recommendation service instance.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation]
+tags: [ tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]
 primary_tag: topic>machine-learning
 ---
 
@@ -12,7 +12,7 @@ primary_tag: topic>machine-learning
   - How to create a training job using your Data Attribute Recommendation service instance
   - How to deploy a machine learning model using your Data Attribute Recommendation service instance
 
-To use the data uploaded in [Upload Data to Data Attribute Recommendation](cp-aibus-dar-upload-data), it is necessary to create a training job and deploy the resulting machine learning model. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/dar). For further definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/fe501df6d9f94361bfea066f9a6f6712.html).
+To use the data uploaded in [Upload Data to Data Attribute Recommendation](cp-aibus-dar-upload-data), it is necessary to create a training job and deploy the resulting machine learning model. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/docs/Data_Attribute_Recommendation). For further definition of specific terms, see [Concepts](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/cff2de73bc9c4625b35eb036439ae70a.html).
 
 Business Use Case: After data preparation and upload, the next step is to train a model using historical data. In this tutorial, you will focus on model training using the training job concept. You will create a training job, check status, get model details, and also deploy the trained model at the end.   
 
@@ -20,7 +20,7 @@ Business Use Case: After data preparation and upload, the next step is to train 
 
 [ACCORDION-BEGIN [Step 1: ](Create a training job)]
 
-Based on the uploaded data, you will now train a machine learning model. To create a model, it is necessary to create a training job. A training job is essentially the process whereby the model learns and recognizes the patterns in your data. In this case, it recognizes the patterns and connections between product information and certain product categories. 
+Based on the uploaded data, you will now train a machine learning model. To create a model, it is necessary to create a training job. A training job is essentially the process whereby the model learns and recognizes the patterns in your data. In this case, it recognizes the patterns and connections between product information and certain product categories.
 
 **Open** Postman and make sure that your `Data Attribute Recommendation environment` is selected.
 

@@ -95,6 +95,10 @@ Video tutorial version: </br>
 
     !![Paste Service Key details](paste_service_key.png)
 
+    It should look something like this:
+
+    !![Example default-env.json with Service Key Details](example_default_env.png)
+
 5. Next we need to enhance the CAP application configuration in the package.json file in the root of the project. Add an `uaa` section to the `cds.requires` section of the file.
 
     !![Add uaa to package.json](uaa_package_json.png)
@@ -129,9 +133,9 @@ Video tutorial version: </br>
 
 1. Before we can test our application, we need to create a role that includes the XSUAA instance details and grant to that our user. We will do this from the SAP Business Technology Platform cockpit. In the cockpit, you set up the roles and role collections and assign the role collections to your users. This brings the necessary authorization information into the JWT token when the user logs on to your application through XSUAA and Application Router.
 
-2. Open the SAP BTP cockpit. If you are working in the SAP BTP trial, the URL will be: [https://cockpit.hanatrial.ondemand.com](https://cockpit.hanatrial.ondemand.com)
+2. Open the SAP BTP cockpit.
 
-3. The roles collections are created on subaccount level in the cockpit. Navigate to your subaccount and then to Security > Role Collections.
+3. The roles collections are created on subaccount level in the cockpit. Navigate to your subaccount and then to Security > Role Collections. Then press the `+` to create a new Role Collection.
 
     !![New Role Collection](new_role_collection.png)
 
@@ -153,13 +157,9 @@ Video tutorial version: </br>
 
 1. The `approuter` component implements the necessary handshake with XSUAA to let the user log in interactively. The resulting JWT token is sent to the application where it's used to enforce authorization.
 
-2. The application router configuration was generated in the previous tutorial via wizard.  We now want to extend that application router setup.  Start with the package.json file in the `/app` folder. We want to update the version of the `@sap/approuter` to at least version 10
+2. From the terminal change to the /app folder and run `npm install` to update to this newer version.
 
-    !![Update app router version](approuter_version.png)
-
-3. From the terminal change to the /app folder and run `npm install` to update to this newer version.
-
-4. Next open the xs-app.json file in the /app folder.  Here want to make several adjustments. Change the `authenicationMethod` to `route`. This will turn on authentication. You can deactivate it later by switching back to `none`.  Also add/update the routes.  We are adding authentication to CAP service route.  We are also adding the Application Router User API route (which is nice for testing the UAA connection).  Finally add the route to the local directory to serve the UI5/Fiori web content.
+3. Next open the xs-app.json file in the /app folder.  Here want to make several adjustments. Change the `authenicationMethod` to `route`. This will turn on authentication. You can deactivate it later by switching back to `none`.  Also add/update the routes.  We are adding authentication to CAP service route.  We are also adding the Application Router User API route (which is nice for testing the UAA connection).  Finally add the route to the local directory to serve the UI5/Fiori web content.
 
     ```json
     {
@@ -183,7 +183,7 @@ Video tutorial version: </br>
     }
     ```    
 
-5. The application router is going to need a `default-env.json` file as well so during testing it can connect to the UAA instance. Copy the `default-env.json` file from the root of the project into the /app folder. Edit this file and add a destinations section:
+4. The application router is going to need a `default-env.json` file as well so during testing it can connect to the UAA instance. Copy the `default-env.json` file from the root of the project into the /app folder. Edit this file and add a destinations section:
 
     ```json
     "destinations": [{

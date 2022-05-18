@@ -1,9 +1,9 @@
 ---
-title: Add Multitenancy to a Node.js Application Secured by the Authorization and Trust Management service (XSUAA)
+title: Add Multitenancy to a Node.js Application Secured by the SAP Authorization and Trust Management service (XSUAA)
 description: Learn how to add multitenancy to your application and make it available for other subaccounts using the SaaS Provisioning service and the XSUAA.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, products>sap-business-technology-platform, topic>node-js]
+tags: [ tutorial>intermediate, products>sap-business-technology-platform, programming-tool>node-js ]
 primary_tag: topic>security
 author_name: Michael Shea
 author_profile: https://github.com/MichaelPShea
@@ -11,7 +11,7 @@ author_profile: https://github.com/MichaelPShea
 
 
 ## Prerequisites
- - [Secure a Basic Node.js App with the Authorization and Trust Management Service (XSUAA)](cp-cf-security-xsuaa-create)
+ - [Secure a Basic Node.js App with the SAP Authorization and Trust Management Service (XSUAA)](cp-cf-security-xsuaa-create)
  - You must have a second subaccount within the **same** trial account that you can use to subscribe to the application.
 
 ## Details

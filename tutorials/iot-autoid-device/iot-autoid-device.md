@@ -5,7 +5,7 @@ title: Create Device Model and Thing and Ingest EPCIS Event
 description: Create device model and thing for EPCIS events in SAP IoT based on a Postman collection and ingest an EPCIS event via MQTT.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, tutorial>license, topic>internet-of-things, products>sap-internet-of-things, products>sap-business-technology-platform]
+tags: [ tutorial>intermediate, tutorial>license, topic>internet-of-things, software-product>sap-internet-of-things, software-product>sap-business-technology-platform]
 primary_tag: topic>internet-of-things
 ---
 
@@ -39,7 +39,7 @@ You can access the SAP IoT APIs using an OAuth Token. After you subscribe your s
 
     Postman is a popular and easy to use REST client which you can use to access the SAP IoT APIs. Please refer to the introduction guide for understanding the usage of Postman.
 
-      We have provided a set of sample Postman collections on GitHub for you to download. Please clone or download/unzip the repository [sap-iot-samples](https://github.com/SAP-samples/sap-iot-samples/tree/master/iot-autoid-services-samples). The Postman collections and environment (in folder `iot-autoid-services-samples`) includes all the API calls used in the tutorials of this tutorial group and the payload structures for the same. Import both into your Postman.
+      We have provided a set of sample Postman collections on GitHub for you to download. Please clone or download/unzip the repository [sap-iot-samples](https://github.com/SAP-samples/sap-iot-samples/tree/main/iot-autoid-services-samples/Update%20SAP%20S4HANA%20Kanban%20Container). The Postman collections and environment includes all the API calls used in the tutorials of this tutorial group and the payload structures for the same. Import both into your Postman.
 
 
 3.    Generate OAuth token

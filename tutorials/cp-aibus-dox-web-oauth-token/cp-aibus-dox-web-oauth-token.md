@@ -3,7 +3,7 @@ title: Get OAuth Access Token for Document Information Extraction via Web Browse
 description: Retrieve your OAuth access token, which will grant you access to the service APIs.
 auto_validation: true
 time: 5
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-ai-business-services, products>sap-business-technology-platform, products>document-information-extraction, topic>artificial-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-ai-business-services, software-product>sap-business-technology-platform, software-product>document-information-extraction, topic>artificial-intelligence]
 primary_tag: topic>machine-learning
 ---
 
@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 
 [ACCORDION-BEGIN [Step 1: ](Get OAuth access token details)]
 
-To get your OAuth access token you will need the values listed below from the service key you created in the previous tutorial: [Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key).
+To get your OAuth access token you will need the values highlighted in the image below from the service key you created in the previous tutorial: [Set Up Account for Document Information Extraction and Get Service Key](cp-aibus-dox-booster-key).
 
 !![DOX Service Key](service-key-details.png)
 
@@ -42,8 +42,8 @@ You should receive a response like the following:
     "access_token": "<< your access token >>",
     "token_type": "bearer",
     "expires_in": 43199,
-    "scope": "uaa.resource na-9e50499f-78dd-40ca-ad8d-60acf02cff8b!b30417.technicalscope",
-    "jti": "71c4d44ea1094875a1c3d3a6489dafd6"
+    "scope": "<< granted access >>",
+    "jti": "<< unique identifier >>"
 }
 ```
 

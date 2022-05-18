@@ -5,11 +5,14 @@ title: Enable Multi-User Mode for Your Android Application
 description: Learn how to configure a wizard-generated application to enable the multi-user mode, available as part of the Flows component of the Android SDK.
 auto_validation: true
 time: 60
-tags: [ tutorial>beginner, operating-system>android, topic>mobile, products>sap-business-technology-platform]
-primary_tag: products>sap-btp-sdk-for-android
+tags: [ tutorial>beginner, operating-system>android, topic>mobile, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp-sdk-for-android
+keywords: sdkforandroid
 ---
 
 ## Prerequisites
+- You have [Set Up a BTP Account for Tutorials](group.btp-setup). Follow the instructions to get an account, and then to set up entitlements and service instances for the following BTP services.
+    - **SAP Mobile Services**
 - You completed [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app).
 - You completed [Offline-Enable Your Android Application](cp-sdk-android-wizard-app-offline).
 
@@ -30,7 +33,9 @@ The Flows component of the SAP BTP SDK for Android provides the following functi
 
 - Handle user information and user data management.
 
-- To enable multi-user for an online application developed using Flows component, you only need need turn on `multipleUserMode` in `FlowContext` class.
+- To enable multi-user for an application developed using Flows component, you only need follow the instructions at [Try Out the SAP BTP SDK Wizard for Android](cp-sdk-android-wizard-app) to create a new application using the SAP BTP SDK Wizard for Android and check **Enable Multiple Users** for the **Multiple Users** on the **Project Features** tab. Or you can follow **Step 2** and **3** to enable multi-user mode for online and offline, respectively.
+
+  !![Enable multi-user mode](enable_multiuser_mode.png)
 
 The following cases are not supported in multi-user mode:
 
@@ -57,13 +62,9 @@ The following cases are not supported in multi-user mode:
     FlowContext flowContext = new FlowContextBuilder()
                 .setApplication(appConfig)
                 .setMultipleUserMode(true)
-                .setFlowStateListener(new WizardFlowStateListener(
-                        (SAPWizardApplication) context.getApplication()))
-                .build();
     ```
 
-    Notice that the setting will only take effect when the very first user onboards. Once a user is onboarded,  
-    this setting will be saved in the local database. All subsequent flows will use the same setting from the database and ignore the one inside **`flowContext`**. To change this setting, you need to reset the application to bring up the onboarding process, and the new setting will be updated in the local database after onboarding.
+    Notice that the setting will only take effect when the very first user onboards. Once a user is onboarded, this setting will be saved in the local database. All subsequent flows will use the same setting from the database and ignore the one inside **`flowContext`**. To change this setting, you need to reset the application to bring up the onboarding process, and the new setting will be updated in the local database after onboarding.
 
 4.  Re-run (quit first) the app and notice that the onboarding process is the same as for single-user mode, except that no biometric authentication screen is shown. After onboarding, put the app in background until the unlock screen appears. In multi-user mode, there is a **SWTICH OR ADD USER** button at the bottom of the screen.
 
@@ -88,8 +89,6 @@ The following cases are not supported in multi-user mode:
                 FlowContextBuilder()
                     .setApplication(appConfig)
                     .setMultipleUserMode(true)
-                    .setFlowStateListener(WizardFlowStateListener(activity.application as SAPWizardApplication))
-                    .build()
     ```
 
     Notice that the setting will only take effect when the very first user onboards. Once a user is onboarded, this setting will be saved in the local database. All subsequent flows will use the same setting from the database and ignore the one inside **`flowContext`**. To change this setting, you need to reset the application to bring up the onboarding process, and the new setting will be updated in the local database after onboarding.
@@ -115,7 +114,7 @@ The following cases are not supported in multi-user mode:
 
     !![Cockpit app screen](cockpit-app.png)
 
-    Scroll down to the bottom of the **Client Configuration** tab and enable the **Allow Upload of Pending Changes from Previous User** option:
+    Scroll down to the bottom of the **Client Configuration** tab and enable the **Allow Upload of Pending Changes from Previous User** option (remember to click **`Save`** to save the change):
 
     !![Cockpit app setting screen](cockpit-app-setting.png)
 
@@ -125,7 +124,7 @@ The following cases are not supported in multi-user mode:
 
 4.  In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`OfflineWorkerUtil`** to open `OfflineWorkerUtil.java`.
 
-5.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`initializeOffline`** to move to the `initializeOffline` method. Notice that for the **`OfflineODataParameters`** instance, the value of the **`isForceUploadOnUserSwitch`** parameter is set based on the value of `runtimeMultipleUserMode`. This value is retrieved from the **`UserSecureStoreDelegate.getInstance().getRuntimeMultipleUserModeAsync()`** API call.
+5.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`initializeOffline`** to move to the `initializeOffline` method. Notice that for the **`OfflineODataParameters`** instance, the value of the **`setForceUploadOnUserSwitch`** parameter is set based on the value of `runtimeMultipleUserMode`. This value is retrieved from the **`UserSecureStoreDelegate.getInstance().getRuntimeMultipleUserModeAsync()`** API call.
 
     !![Parameter setting Java](offline-para-java.png)
 
@@ -141,7 +140,7 @@ The following cases are not supported in multi-user mode:
 
     !![Cockpit app screen](cockpit-app.png)
 
-    Scroll down to the bottom of the **Client Configuration** tab and enable the **Allow Upload of Pending Changes from Previous User** option:
+    Scroll down to the bottom of the **Client Configuration** tab and enable the **Allow Upload of Pending Changes from Previous User** option (remember to click **`Save`** to save the change):
 
     !![Cockpit app setting screen](cockpit-app-setting.png)
 
@@ -168,7 +167,7 @@ The following cases are not supported in multi-user mode:
 
 [OPTION BEGIN [Java]]
 
-1.  In the offline multi-user mode scenario, when a user makes changes to the local offline store, the changes may not be uploaded to the server when the device is handed over to another user. After the new user clicks **SWTICH OR ADD USER** button to sign in or do onboarding, the pending changes will be uploaded to the server automatically.
+1.  In the offline multi-user mode scenario, when a user makes changes to the local offline store, the changes may not be uploaded to the server when the device is handed over to another user. After the new user clicks **Switch Or Add User** button to sign in or do onboarding, the pending changes will be uploaded to the server automatically.
 
 2.  If there is an error during synchronization, a screen will be displayed, notifying the user about the synchronization failure.
 
@@ -182,21 +181,21 @@ The following cases are not supported in multi-user mode:
 
 3.  The SDK provides a UI component for the two screens and apps can reference the screens to provide error handling.
 
-    Open the project you previously created using the SAP BTP SDK Wizard for Android, press **`Shift`** twice and type **`activity_main_business.xml`** to open `res\layout\activity_main_business.xml`. To reference the two screens, the layout XML file includes **`com.sap.cloud.mobile.fiori.onboarding.OfflineNetworkErrorScreen`** and **`com.sap.cloud.mobile.fiori.onboarding.OfflineTransactionIssueScreen`**.
+    Open the project you previously created using the SAP BTP SDK Wizard for Android, press **`Shift`** twice and type **`activity_main_business.xml`** to open `res\layout\activity_main_business.xml`. To reference the two screens, the layout XML file includes `com.sap.cloud.mobile.fiori.onboarding.OfflineNetworkErrorScreen` and `com.sap.cloud.mobile.fiori.onboarding.OfflineTransactionIssueScreen`.
 
     !![Layout XML file](main-activity-xml.png)
 
-4.  For the **`OfflineNetworkErrorScreen`**, the client code implements the logic for button click events.   
+4.  For the **Offline Network Error Screen**, the client code implements the logic for button click events.   
 
     On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`MainBusinessActivity`** to open `MainBusinessActivity.java`.
 
-    On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`offlineNetworkErrorAction`** to move to the `offlineNetworkErrorAction` method. When the network error occurs, make the **`OfflineNetworkErrorScreen`** visible and provide your logic for the button click event.
+    On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`offlineNetworkErrorAction`** to move to the `offlineNetworkErrorAction` method. When the network error occurs, make the **Offline Network Error Screen** visible and provide your logic for the button click event.
 
     !![Network error Java](main-activity-network-java.png)
 
-5.  For **`OfflineTransactionIssueScreen`**, the client code needs to set the user information of previous user and implement the logic for button click events.
+5.  For **Offline Transaction Issue Screen**, the client code needs to set the user information of previous user and implement the logic for button click events.
 
-    On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`offlineTransactionIssueAction`** to move to the `offlineTransactionIssueAction` method. When the transaction error occurs, make the **`OfflineTransactionIssueScreen`** visible, set the information of the previous user and provide your logic for the button click event. To get the information of the previous user, call the `getPreviousUser` method of the `OfflineODataProvider` class to get the user ID and then call the `getUserInfoByIdAsync` method of the `UserSecureStoreDelegate` class to get the user information.
+    On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`offlineTransactionIssueAction`** to move to the `offlineTransactionIssueAction` method. When the transaction error occurs, make the **Offline Transaction Issue Screen** visible, set the information of the previous user and provide your logic for the button click event. To get the information of the previous user, call the `getPreviousUser` method of the `OfflineODataProvider` class to get the user ID and then call the `getUserInfoByIdAsync` method of the `UserSecureStoreDelegate` class to get the user information.
 
     !![Transaction error Java](main-activity-transaction-java.png)
 
@@ -218,21 +217,21 @@ The following cases are not supported in multi-user mode:
 
 3.  The SDK provides a UI component for the two screens and apps can reference the screens to provide error handling.
 
-    Open the project you previously created using the SAP BTP SDK Wizard for Android, press **`Shift`** twice and type **`activity_main_business.xml`** to open `res\layout\activity_main_business.xml`. To reference the two screens, the layout XML file includes **`com.sap.cloud.mobile.fiori.onboarding.OfflineNetworkErrorScreen`** and **`com.sap.cloud.mobile.fiori.onboarding.OfflineTransactionIssueScreen`**.
+    Open the project you previously created using the SAP BTP SDK Wizard for Android, press **`Shift`** twice and type **`activity_main_business.xml`** to open `res\layout\activity_main_business.xml`. To reference the two screens, the layout XML file includes `com.sap.cloud.mobile.fiori.onboarding.OfflineNetworkErrorScreen` and `com.sap.cloud.mobile.fiori.onboarding.OfflineTransactionIssueScreen`.
 
     !![Layout XML file](main-activity-xml.png)
 
-4.  For the **`OfflineNetworkErrorScreen`**, the client code implements the logic for button click events.   
+4.  For the **Offline Network Error Screen**, the client code implements the logic for button click events.   
 
     On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`MainBusinessActivity`** to open `MainBusinessActivity.kt`.
 
-    On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`offlineNetworkErrorAction`** to move to the `offlineNetworkErrorAction` method. When the network error occurs, make the **`OfflineNetworkErrorScreen`** visible and provide your logic for the button click event.
+    On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`offlineNetworkErrorAction`** to move to the `offlineNetworkErrorAction` method. When the network error occurs, make the **Offline Network Error Screen** visible and provide your logic for the button click event.
 
     !![Network error Kotlin](main-activity-network-kt.png)
 
-5.  For **`OfflineTransactionIssueScreen`**, the client code needs to set the user information of previous user and implement the logic for button click events.
+5.  For **Offline Transaction Issue Screen**, the client code needs to set the user information of previous user and implement the logic for button click events.
 
-    On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`offlineTransactionIssueAction`** to move to the `offlineTransactionIssueAction` method. When the transaction error occurs, make the **`OfflineTransactionIssueScreen`** visible, set the information of the previous user and provide your logic for the button click event. To get the information of the previous user, call the `getPreviousUser` method of the `OfflineODataProvider` class to get the user ID and then call the `getUserInfoByIdAsync` method of the `UserSecureStoreDelegate` class to get the user information.
+    On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`offlineTransactionIssueAction`** to move to the `offlineTransactionIssueAction` method. When the transaction error occurs, make the **Offline Transaction Issue Screen** visible, set the information of the previous user and provide your logic for the button click event. To get the information of the previous user, call the `getPreviousUser` method of the `OfflineODataProvider` class to get the user ID and then call the `getUserInfoById` method of the `UserSecureStoreDelegate` class to get the user information.
 
     !![Transaction error Kotlin](main-activity-transaction-kt.png)
 
@@ -245,77 +244,77 @@ The following cases are not supported in multi-user mode:
 
 [OPTION BEGIN [Java]]
 
-1.  The Flows component exposes two APIs in the **`UserSecureStoreDelegate`** class for you to acquire user information by ID, such as user name and email:
+1.  The Flows component exposes two APIs in the `UserSecureStoreDelegate` class for you to acquire user information by ID, such as user name and email:
 
-    **`fun getUserInfoByIdAsync(userId: String) : DeviceUser?`**
+    `fun getUserInfoByIdAsync(userId: String) : DeviceUser?`
 
-    **`fun getUserInfoById(userId: String): DeviceUser?`**
+    `fun getUserInfoById(userId: String): DeviceUser?`
 
-    The **`getUserInfoByIdAsync`** function is mainly used by the Java code. Notice that this function can only be called after the onboarding or restore flow.
+    The `getUserInfoByIdAsync` function is mainly used by the Java code. Notice that this function can only be called after the onboarding or restore flow.
 
-2.  After onboarding, the setting for multi-user mode enablement is saved in the local database. To get this setting, the **`UserSecureStoreDelegate`** class exposes the following API:
+2.  After onboarding, the setting for multi-user mode enablement is saved in the local database. To get this setting, the `UserSecureStoreDelegate` class exposes the following API:
 
-    **`suspend fun getRuntimeMultipleUserMode(): Boolean?`**
+    `suspend fun getRuntimeMultipleUserMode(): Boolean?`
 
-    **`fun getRuntimeMultipleUserModeAsync(): Boolean?`**
+    `fun getRuntimeMultipleUserModeAsync(): Boolean?`
 
-    The **`getRuntimeMultipleUserModeAsync`** function is mainly used by the Java code.
+    The `getRuntimeMultipleUserModeAsync` function is mainly used by the Java code.
 
-3.  The Flows component exposes two APIs in **`FlowActionHandler`** class for you to obfuscate the user name and email displayed on the Sign-in screen:
+3.  The Flows component exposes two APIs in `FlowActionHandler` class for you to obfuscate the user name and email displayed on the Sign-in screen:
 
-    **`open fun obfuscateUserName(name: String): String`**
+    `open fun obfuscateUserName(name: String): String`
 
-    **`fun obfuscateEmail(email: String): String`**
+    `fun obfuscateEmail(email: String): String`
 
     Notice that a default obfuscate algorithm is provided in the APIs. You can override the APIs to provide your own obfuscate algorithm.
 
-4.  The **`FlowStateListener`** class provides one callback, **`onUserSwitched(newUser: DeviceUser, oldUser: DeviceUser?)`**, for you to handle the user switch event.
+4.  The `FlowStateListener` class provides one callback, `onOfflineEncryptionKeyReady(key: String?)`, for you to handle the encryption key ready event.
 
     As a sample implementation of this callback, you can examine a wizard-generated offline app. In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`WizardFlowStateListener`** to open `WizardFlowStateListener.java`.
 
-    On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onUserSwitched`** to move to the `onUserSwitched` method. Examine the code and notice that it does some clean and reset work:
+    On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onOfflineEncryptionKeyReady`** to move to the `onOfflineEncryptionKeyReady` method. Examine the code and notice that it does some clean and reset work:
 
-    !![User switch method](offline-user-switch-java.png)
+    !![Encryption key ready method](offline-encryption-key-ready-java.png)
 
-    You can provide your own logic in this callback when the user switch event is notified.
+    You can provide your own logic in this callback.
 
 [OPTION END]
 
 [OPTION BEGIN [Kotlin]]
 
-1.  The Flows component exposes two APIs in the **`UserSecureStoreDelegate`** class for you to acquire user information by ID, such as user name and email:
+1.  The Flows component exposes two APIs in the `UserSecureStoreDelegate` class for you to acquire user information by ID, such as user name and email:
 
-    **`fun getUserInfoByIdAsync(userId: String) : DeviceUser?`**
+    `fun getUserInfoByIdAsync(userId: String) : DeviceUser?`
 
-    **`fun getUserInfoById(userId: String): DeviceUser?`**
+    `fun getUserInfoById(userId: String): DeviceUser?`
 
-    The **`getUserInfoByIdAsync`** function is mainly used by the Java code. Notice that this function can only be called after the onboarding or restore flow.
+    The `getUserInfoByIdAsync` function is mainly used by the Java code. Notice that this function can only be called after the onboarding or restore flow.
 
-2.  After onboarding, the setting for multi-user mode enablement is saved in the local database. To get this setting, the **`UserSecureStoreDelegate`** class exposes the following API:
+2.  After onboarding, the setting for multi-user mode enablement is saved in the local database. To get this setting, the `UserSecureStoreDelegate` class exposes the following API:
 
-    **`suspend fun getRuntimeMultipleUserMode(): Boolean?`**
+    `suspend fun getRuntimeMultipleUserMode(): Boolean?`
 
-    **`fun getRuntimeMultipleUserModeAsync(): Boolean?`**
+    `fun getRuntimeMultipleUserModeAsync(): Boolean?`
 
-    The **`getRuntimeMultipleUserModeAsync`** function is mainly used by the Java code.
+    The `getRuntimeMultipleUserModeAsync` function is mainly used by the Java code.
 
-3.  The Flows component exposes two APIs in **`FlowActionHandler`** class for you to obfuscate the user name and email displayed on the Sign-in screen:
+3.  The Flows component exposes two APIs in `FlowActionHandler` class for you to obfuscate the user name and email displayed on the Sign-in screen:
 
-    **`open fun obfuscateUserName(name: String): String`**
+    `open fun obfuscateUserName(name: String): String`
 
-    **`fun obfuscateEmail(email: String): String`**
+    `fun obfuscateEmail(email: String): String`
 
     Notice that a default obfuscate algorithm is provided in the APIs. You can override the APIs to provide your own obfuscate algorithm.
 
-4.  The **`FlowStateListener`** class provides one callback, **`onUserSwitched(newUser: DeviceUser, oldUser: DeviceUser?)`**, for you to handle the user switch event.
+4.  The `FlowStateListener` class provides one callback, `onOfflineEncryptionKeyReady(key: String?)`, for you to handle the encryption key ready event.
 
     As a sample implementation of this callback, you can examine a wizard-generated offline app. In Android Studio, on Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`WizardFlowStateListener`** to open `WizardFlowStateListener.kt`.
 
-    On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onUserSwitched`** to move to the `onUserSwitched` method. Examine the code and notice that it does some clean and reset work:
+    On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onOfflineEncryptionKeyReady`** to move to the `onOfflineEncryptionKeyReady` method. Examine the code and notice that it does some clean and reset work:
 
-    !![User switch method](offline-user-switch-kotlin.png)
+    !![Encryption key ready method](offline-encryption-key-ready-kotlin.png)
 
-    You can provide your own logic in this callback when user switch event is notified.
+    You can provide your own logic in this callback.
 
 [OPTION END]
 

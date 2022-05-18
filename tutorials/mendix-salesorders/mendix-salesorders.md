@@ -2,9 +2,11 @@
 title: Create Sales Order App with SAP RAD by Mendix
 description: Create a sales order app that consumes a service from the SAP Gateway Demo System (ES5).
 auto_validation: true
-primary_tag: products>sap-rad-by-mendix
+primary_tag: software-product>sap-rapid-application-development-by-mendix
 author_name: Paola Laufer
-tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platform  ]
+author_profile: https://github.com/Paolaufer
+tags: [  tutorial>beginner, topic>cloud, programming-tool>odata, software-product>sap-business-technology-platform  ]
+
 time: 20
 ---
 
@@ -17,7 +19,7 @@ time: 20
 
 ## Details
 ### You will learn  
-- How to create an SAP Blank application in SAP BTP Rapid Application Development.
+- How to create an SAP blank application in SAP BTP Rapid Application Development.
 - How to create the application data model using the SAP OData Model Creator.
 - How to consume an OData service using the SAP OData Connector.
 - How to deploy the application to SAP Business Technology Platform (BTP).
@@ -69,7 +71,7 @@ To generate the service module, follow these steps:
 
 1. Save the metadata file to your hard drive.
 
-2. Open the SAP [OData Model Creator](https://sapodatamodelcreator.mendixcloud.com/).
+2. Open the SAP [OData Model Creator](https://sapmodelcreator.mendixcloud.com/).
 
 3. Select the **Manual** option.
 
@@ -185,15 +187,26 @@ The **Get List** action retrieves a list of entities described in the domain mod
 
 2. Fill in the required fields of the **Get List** action. For this tutorial, use the following settings:
 
+**Input Values**
+
     | Field | Value |
     |:-------|:-------|
-    | Query  | The URL to which you want to execute your request. In our case:<br><br> `https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/SalesOrderSet` <br><br> And it's constructed by entering the following code:<br><br> `@GWSAMPLE_BASIC.GWSAMPLE_BASIC + '/' + toString(GWSAMPLE_BASIC.EntitySetNames.SalesOrderSet)` |
     | Response type | The type you want to query from the OData service. Select the `SalesOrder` entity. |
+    | Destination | empty |
+    | Query  | The URL to which you want to execute your request. In our case:<br><br> `https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/SalesOrderSet` <br><br> And it's constructed by entering the following code:<br><br> `@GWSAMPLE_BASIC.GWSAMPLE_BASIC + '/' + toString(GWSAMPLE_BASIC.EntitySetNames.SalesOrderSet)` |
     | Request&nbsp;parameters | `$RequestParams` variable |
     | Parent |empty|
+    | Parent association name |empty|
     | Result info |empty|
     | Use&nbsp;Cloud&nbsp;Connector | `false` |
-    | Output Variable | `SalesOrders` |
+
+**Output Values**
+
+    | Field | Value |
+    |:-------|:-------|
+    | Return type | List of GWSAMPLE_BASIC.SalesOrder |
+    | Use return value | `Yes` |
+    | List Name | `SalesOrders` |
 
     > In our case, the `Use cloud connector` is set to `false` because ES5 is a publicly accessible system. <br>
     > If you would like to consume a service from your on-premise back-end system, you need to setup and configure the SAP Cloud Connector and then mark this field as `true`. <br>
@@ -201,11 +214,7 @@ The **Get List** action retrieves a list of entities described in the domain mod
     > For more information, see the [SAP Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html) documentation.
 
 
-3. Verify the **Get List** dialog matches the following:
-
-    ![Get List](mendix-salesorders14.png)
-
-4. Click **OK** to close the dialog.
+3. Click **OK** to close the dialog.
 
 [DONE]
 [ACCORDION-END]

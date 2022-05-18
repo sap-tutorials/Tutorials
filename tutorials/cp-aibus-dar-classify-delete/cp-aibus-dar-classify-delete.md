@@ -3,7 +3,7 @@ title: Use Data Attribute Recommendation to Classify Records, Delete Model and D
 description: Classify data records you uploaded to Data Attribute Recommendation using your machine learning model.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>data-attribute-recommendation ]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation ]
 primary_tag: topic>machine-learning
 ---
 
@@ -13,7 +13,7 @@ primary_tag: topic>machine-learning
   - How to undeploy and delete your model
   - How to delete datasets and dataset schemas
 
-Based on your deployed machine learning model you can now classify records. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/dar). For further definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/fe501df6d9f94361bfea066f9a6f6712.html).
+Based on your deployed machine learning model you can now classify records. For more information, see [Data Attribute Recommendation help portal documentation](https://help.sap.com/docs/Data_Attribute_Recommendation). For further definition of specific terms, see [Concepts](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/cff2de73bc9c4625b35eb036439ae70a.html).
 
 Business Use Case: After you upload data and train a machine learning model using Data Attribute Recommendation, you will be able to classify the product data. In this tutorial, you will focus on product data classification, including options to undeploy the model, delete dataset and dataset schemas.
 
@@ -23,7 +23,7 @@ Business Use Case: After you upload data and train a machine learning model usin
 
 To classify records, you need to send an inference request to your model.
 
-**Open** Postman and make sure that your `Data Attribute Recommendation environment` is selected. 
+**Open** Postman and make sure that your `Data Attribute Recommendation environment` is selected.
 
 Expand the subfolder `Classify Records` and select the request `Send inference request`. Click on the `Body` tab to see the sample data that you will send to the service.
 

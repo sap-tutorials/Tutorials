@@ -3,8 +3,8 @@ title: Configure Your SAP S/4HANA System for Content Federation
 description: Configure the allow list to enable SAP S/4HANA applications to be run in an iFrame in an SAP Launchpad site and set an SAP Fiori launchpad parameter for the exposure of classic apps.
 auto_validation: true
 time: 15
-tags: [ tutorial>intermediate, products>sap-fiori, topic>abap-connectivity, products>sap-business-technology-platform, products>sap-s/4hana]
-primary_tag: products>sap-launchpad-service
+tags: [ tutorial>intermediate, software-product>sap-fiori, topic>abap-connectivity, software-product>sap-business-technology-platform, software-product>sap-s/4hana]
+primary_tag: software-product>sap-launchpad-service
 ---
 
 ## Prerequisites

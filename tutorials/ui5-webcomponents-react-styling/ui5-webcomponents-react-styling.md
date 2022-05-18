@@ -3,8 +3,8 @@ title: Add Custom Styles and Components for UI5 Web Components for React
 description: Add custom styles and custom components to your application using UI5 Web Components for React.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-fiori]
-primary_tag: topic>html5
+tags: [ tutorial>beginner, software-product>sap-fiori]
+primary_tag: programming-tool>html5
 author_name: Lukas Harbarth
 author_profile: https://github.com/Lukas742
 ---
@@ -53,7 +53,7 @@ If you want to add a custom component to your app, but still want to use the sty
     ```JavaScript / JSX
     import React from "react";
     import { createUseStyles } from 'react-jss';
-    import { ThemingParameters } from "@ui5/webcomponents-react-base/dist/ThemingParameters";
+    import { ThemingParameters } from "@ui5/webcomponents-react-base";
 
     export const MyCustomElement = () => {
       return (
@@ -78,7 +78,7 @@ If you want to add a custom component to your app, but still want to use the sty
     ```JavaScript / JSX
     import React from "react";
     import { createUseStyles } from 'react-jss';
-    import { ThemingParameters } from "@ui5/webcomponents-react-base/dist/ThemingParameters";
+    import { ThemingParameters } from "@ui5/webcomponents-react-base";
 
     const styles = {
       container: {

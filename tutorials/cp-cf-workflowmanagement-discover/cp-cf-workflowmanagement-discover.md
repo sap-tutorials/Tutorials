@@ -19,7 +19,7 @@ author_profile: https://github.com/Deeksha-R
 
 SAP Workflow Management allows you to digitize workflows, manage decisions, gain end-to-end process visibility, and configure processes in a low-code approach.
 
-The capital expenditure (CAPEX) process automates CAPEX request approvals in a transparent way and provides end-to-end visibility across all the steps. A workflow is triggered when the capital expenditure request is submitted by the user. This workflow internally calls business rules to determine number of approval steps based on the amount of investment and other related attributes of the request.
+The capital expenditure (CAPEX) process automates CAPEX request approvals in a transparent way and provides end-to-end visibility across all the steps. A workflow is triggered when the capital expenditure request is submitted by the user. This workflow calls business rules to determine number of approval steps based on the amount of investment and other related attributes of the request.
 
 In this tutorial, you can import a sample package with different artifacts using the Process Flexibility Cockpit. For more information, see [Discover and Import Packages](https://help.sap.com/viewer/6f55baaf330443bd8132d071581bbae6/Cloud/en-US/bf54c54a7522465788728e6a33c88a8b.html).
 
@@ -37,10 +37,13 @@ In this tutorial, you can import a sample package with different artifacts using
 
     !![Destination screen](cp-cf-wm-discover-trialdestination.png)
 
-3. Choose the edit icon for the destination with name `WM_CF_SPACE_PROVIDER`. In the **Destination Configuration** section, enter your SAP BTP trial user password and save the changes.
+3. Search for the `WM_CF_SPACE_PROVIDER` destination, then choose the edit icon. In the **Destination Configuration** section, enter your SAP BTP trial user password and save the changes.
 
     !![Edit Destination](cp-cf-wm-discover-editdestination.png)
+
     !![Destination Password](cp-cf-wm-discover-destinationpassword.png)
+
+    Ensure to replace the dummy password that is provided upon running the booster.
     > Ensure that the credentials of the trial user that are entered in the destination do not have **Two Factor Authentication enabled**.
 
 [DONE]

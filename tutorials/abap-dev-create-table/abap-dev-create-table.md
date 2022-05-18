@@ -2,8 +2,8 @@
 title: Create an ABAP Database Table and Relevant ABAP Dictionary Objects
 description: Create a database table from scratch using the ABAP Development Tools (ADT); use different Data Dictionary objects to define the fields; then fill the table with test data.
 auto_validation: true
-primary_tag: topic>abap-development
-tags: [  tutorial>beginner, products>sap-btp--abap-environment, products>sap-business-technology-platform, products>sap-netweaver-7.5 ]
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, software-product>sap-netweaver ]
 time: 75
 ---
 
@@ -12,7 +12,7 @@ time: 75
     - You have a valid instance of SAP Business Technology Platform (BTP) ABAP Environment. For more information, see **Tutorial**: [Create Your First ABAP Console Application](abap-environment-console-application), steps 1-2. On this instance, you have pulled the SAP ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
     - You have a valid instance of an on-premise [SAP AS ABAP Platform 1909, developer edition on Docker](https://blogs.sap.com/2021/02/15/sap-abap-platform-1909-developer-edition-available-soon/). (The ABAP Flight Reference Scenario is included pre-installed on this server)
     - You have a valid instance of an on-premise [SAP AS ABAP Platform 1909, developer edition in SAP Cloud Appliance Library (CAL)](https://cal.sap.com/subscription?sguid=7bd4548f-a95b-4ee9-910a-08c74b4f6c37)
-- You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), version 3.16 or later
+- **Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](abap-create-project)
 
 
 ## Details
@@ -28,9 +28,9 @@ Tables are defined independently of the database in the ABAP Dictionary. When yo
 
 The table in this tutorial will store bank account details for customers. The table will have the following columns (or **fields**):
 
-- `client`
+- `client` (key field)
+- `account_number` (key account number)
 - `bank_customer_id`
-- `account_number`
 - `bank_name`
 - `city`
 - `balance`
@@ -103,7 +103,7 @@ Now you will add the field **`account_number`**, based on a primitive type.
       key account_number : abap.
     ```
 
-    !![Image depicting step3-create-accnum-field](step3-create-accnum-field.png)
+    !![step3a-create-accnum-field](step3a-create-accnum-field.png)
 
 2. From the dropdown list, choose `numc(len)` and specify `len` as 8. Also, specify this key field as not null:
   `key account_number : abap.numc(8) not null;`
@@ -233,7 +233,7 @@ Before you activate the table, change the technical settings at the top as follo
 
 2. **`EnhancementCategory`** : Place your cursor immediately after the hash symbol (#), delete the existing text, then choose **Auto-complete (`Ctrl+Space`)**:
 
-    ![Image depicting step9a-tech-settings](step9a-tech-settings.png)
+    ![step9a-tech-settings](step9a-tech-settings.png)
 
 3. Then choose `#EXTENSIBLE_CHARACTER_NUMERIC` from the dropdown list. Your table contains both character-type and numeric-type fields but does not contain any deep structures (such as a structure included within a table row).
 
@@ -279,7 +279,8 @@ Now you will add a check table for the field `bank_customer_id`. This checks the
 ```ABAP
 @AbapCatalog.foreignKey.keyType : #KEY
 @AbapCatalog.foreignKey.screenCheck : true
-key bank_customer_id : /dmo/customer_id not null
+
+bank_customer_id : /dmo/customer_id not null
   with foreign key [0..*,1] /dmo/customer
     where customer_id = ZACCOUNTS_XXX.bank_customer_id;
 ```
@@ -298,14 +299,14 @@ Now, save (`Ctrl+S`) and activate (`Ctrl+F3`) your table. Your code should look 
 @AbapCatalog.dataMaintenance : #LIMITED
 define table ZACCOUNTS_XXX {
   key client           : mandt not null;
+  key account_number       : abap.numc(8) not null;
 
   @AbapCatalog.foreignKey.keyType : #KEY
   @AbapCatalog.foreignKey.screenCheck : true
-  key bank_customer_id : /dmo/customer_id not null
+  bank_customer_id : /dmo/customer_id not null
     with foreign key [0..*,1] /dmo/customer
       where customer_id = ZACCOUNTS_XXX.bank_customer_id;
 
-  account_number       : abap.numc(8) not null;
   bank_name            : z_bank_name_xxx;
   city                 : /dmo/city;
   @Semantics.amount.currencyCode : 'ZACCOUNTS_XXX.currency'

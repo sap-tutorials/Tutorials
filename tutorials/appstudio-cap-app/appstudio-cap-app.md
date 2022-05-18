@@ -4,7 +4,7 @@ description: Develop a simple CAP Node.js application using SAP Business Applica
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model]
-primary_tag: products>sap-business-application-studio
+primary_tag: software-product>sap-business-application-studio
 author_name: Paola Laufer
 author_profile: https://github.com/Paolaufer
 ---
@@ -21,7 +21,7 @@ author_profile: https://github.com/Paolaufer
 - How to develop business applications based on the SAP Cloud Programming Model (CAP)
 - How to run and test your application using the Run Configurations tool
 
-  The application you'll develop is a simple bookshop app that consists of a data model with three entities:
+  The application you'll develop is a simple bookshop app consisting of a data model with three entities:
 
   - Books
   - Authors
@@ -43,15 +43,12 @@ author_profile: https://github.com/Paolaufer
 
 2. Leave the default target folder path.
 
-3. Select the **CAP Project** template, and click **Next**.
-
-    !![Select CAP Template](select-template.png)
+3. Select the **CAP Project** template, and click **Start**.
 
 4. Enter **`bookshop`** as the name for the project, and leave all other options not checked.
 
-    Click **Next**.
+5. Click **Finish**.
 
-5.	When prompted, click **Open in New Workspace**. The new workspace loads and is displayed in the file explorer.
 
 
 [DONE]
@@ -100,9 +97,6 @@ author_profile: https://github.com/Paolaufer
 
 3. Save your changes.
 
-    The `schema.cds` file is shown with an error. That's expected and will be resolved in the next section.
-
-
 
 
 [DONE]
@@ -123,7 +117,7 @@ author_profile: https://github.com/Paolaufer
         author.name as author
         } excluding { createdBy, modifiedBy };
 
-        action submitOrder (book : Books.ID, amount: Integer);
+        action submitOrder (book:Books:ID, amount: Integer);
       }
 
     ```
@@ -171,7 +165,12 @@ author_profile: https://github.com/Paolaufer
 
 [ACCORDION-END][ACCORDION-BEGIN [Step 5: ](Add custom logic)]
 
-In the `srv` folder, create a new file called `cat-service.js`, and populate it with the following:
+1. In the `srv` folder, create a new file called `cat-service.js`.
+2. If asked if you want to allow the use of the ESLint library for validation, click **Allow**.
+
+  !![Allow ESLint](eslint.png)
+
+3. Populate the `cat-service.js` file with the following:
 
 ```JavaScript
 /**
@@ -191,13 +190,13 @@ module.exports = function (){
 
 Your application should look similar to the structure shown in the picture below.
 
-!![Project structure](explorer.png)
+!![Project structure](explorer2.png)
 
 Save your changes.
 
-You can also see the semantic structure of the application by expanding the CAP Project explorer located at the bottom of the *EXPLORER* view.
+You can also see the semantic structure of the application by expanding the CAP DATA MODELS AND SERVICES section located at the bottom of the *EXPLORER* view.
 
-!![Project structure](CAPProjectExplorer.png)
+!![Project structure](CAPProjectExplorer2.png)
 
 [VALIDATE_7]
 [ACCORDION-END]
@@ -205,7 +204,7 @@ You can also see the semantic structure of the application by expanding the CAP 
 
 [ACCORDION-BEGIN [Step 6: ](Test the application with local database)]
 
-You can explicitly deploy your application to a persistent local SQLite database, or you can run your application and it will implicitly use an in-memory database.
+You can explicitly deploy your application to a persistent local `SQLite` database, or you can run your application and it will implicitly use an in-memory database.
 
 This step describes how to run the application with an in-memory database.
 
@@ -224,7 +223,7 @@ You will first add all required dependencies, and the create and run a run confi
 
 1. From the left side menu, open the Run Configurations view.
 
-    !![Open Run Configurations view](open-run-configs.png)
+    !![Open Run Configurations view](open-run-configs3.png)
 
 2. Click **+** at the top of the view to add a new configuration.
 
@@ -245,15 +244,13 @@ You will first add all required dependencies, and the create and run a run confi
 5. Click the right green arrow on the right of the configuration name to run the application.
 
 
-6. When prompted, click **Expose and Open** for **port 4004**.
+6. When prompted, click **Open in New Tab**.
 
-    !![Expose and open](expose-and-open.png)
-
-      The port 4004 the application is running on is exposed to external access, in this case, to the browser.
+    The application opens in the browser.
 
 7. Press Enter to use the default description. The application opens in the browser and you can click to see the metadata and entities the service.
 
-    !![Open app](open-app.png)
+    !![Open app](open-app2.png)
 
     You can also debug your application to check your code logic. For example, to debug the custom logic for this application, perform the following steps:
 
@@ -271,7 +268,8 @@ You will first add all required dependencies, and the create and run a run confi
 
     !![Stop the app](debug-processes.png)
 
-[VALIDATE_6]
+[DONE]
+
 [ACCORDION-END]
 
 ---

@@ -3,7 +3,7 @@ title: Secure a Basic Node.js App with the Authorization and Trust Management Se
 description: Secure a basic single-tenant Node.js application with the Authorization and Trust Management Service (XSUAA).
 auto_validation: true
 time: 25
-tags: [tutorial>intermediate, topic>node-js, products>sap-business-technology-platform]
+tags: [tutorial>intermediate, programming-tool>node-js, software-product>sap-business-technology-platform ]
 primary_tag: topic>security
 author_name: Michael Shea
 author_profile: https://github.com/MichaelPShea
@@ -11,7 +11,6 @@ author_profile: https://github.com/MichaelPShea
 
 ## Prerequisites
   - Download the product list application from [this repository](https://github.com/SAP-samples/teched2019-cloud-cf-product-list/tree/sap-tutorial-xsuaa) or clone the branch **sap-tutorial-xsuaa**.
-  - For a better understanding, it is recommended to complete the tutorials [Create a Basic Node.js App](cp-node-create-basic-app) and [Deploy Your Node.js App with the Cloud Foundry CLI](cp-node-deploy-cf-cli) first.
 
 ## Details
 ### You will learn
@@ -79,11 +78,6 @@ To prevent a direct call to your application without authentication, it is neces
 
 #### Prepare the package.json file
 Since there are now more modules used beside the express module, you have to add the relevant dependencies to your `package.json` file. In this case the dependencies for the modules `passport`, `@sap/xsenv` and `@sap/xssec` have to be added.
-
-> If you want to use SAP modules locally, you need to add the npm configuration:
-```bash
-npm config set @sap:registry https://npm.sap.com
-```
 
 4. Open the `package.json` file.
 
@@ -449,6 +443,6 @@ To resolve this error, please edit the `manifest.yml` file and change the `route
 ### Resources
 - [Info on the xs-app.json](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/c103fb414988447ead2023f768096dcc.html)
 - [Info on the xs-security.json](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/517895a9612241259d6941dbf9ad81cb.html)
-- [Info on the Authorization and Trust Management service](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/649961f8d4ad463daca33b3a20deba4c.html)
+- [Access Management in the Cloud Foundry Environment](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/649961f8d4ad463daca33b3a20deba4c.html)
 
 ---

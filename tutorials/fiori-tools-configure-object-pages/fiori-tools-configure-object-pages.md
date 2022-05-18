@@ -3,8 +3,8 @@ title: Configure Object Pages Using SAP Fiori Tools
 description: Configure the object pages that can be accessed from your app using the various extensions available in SAP Fiori tools.
 auto_validation: true
 time: 40
-tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5, topic>user-interface, products>sap-fiori-tools]
-primary_tag: products>sap-fiori-tools
+tags: [ tutorial>beginner, software-product>sap-fiori, programming-tool>odata, programming-tool>sapui5, topic>user-interface, software-product>sap-fiori-tools]
+primary_tag: software-product>sap-fiori-tools
 ---
 
 ## Prerequisites
@@ -17,9 +17,7 @@ primary_tag: products>sap-fiori-tools
 
 Now that you have created a list report page featuring a list of items, your end users need to be able to drill down for more information on a single item.
 
-In this tutorial, you are going to add a supplemental data to the object page that accompanies your list report. This way your users can learn more about an item in the list.
-
-You are going to add a section of technical data, as well as a chart and a table. After that, you will add another object page so that your end-users can drill down for even more information pertaining to the sale of the item.
+In this tutorial, you are going to add a supplemental data to the object page that accompanies your list report. This way your users can learn more about an item in the list. The object page contains some preconfigured annotations that you will modify to meet your end users' needs. These modifications include adding a section for technical data, as well as a chart and a table. After that, you will add another object page so that your end-users can drill down for even more information pertaining to the sale of the item.
 
 ---
 
@@ -37,9 +35,9 @@ To begin, you need to create a **`FieldGroup`** for the technical information th
 
     Click the **Copy** button next to it. You will notice a new entry has been created under `annotation.xml` and the entry under `SEPMRA_PROD_MAN_ANNO_MDL.xml` has been formatted with a strike through.
 
-     A tab with your local annotation file will open. The annotation term `UI.FieldGroup#TechnicalData` will be copied inside it. It is currently missing the field **Dimensions Unit**. Since a measurement is not as helpful without a unit, you will add this new data field now.
+     A tab with your local annotation file will open. The annotation term `UI.FieldGroup#TechnicalData` will be copied and highlighted inside it. It is currently missing the field **Dimensions Unit**. Since a measurement is not as helpful without a unit, you will add this new data field now.
 
-4. Your local annotation file has been highlighted and features the copied `UI.FieldGroup#TechnicalData`. To add a new data field, create a new line after the following section.
+4. To add a new data field, create a new line after the following section.
 
     ```XML
     <Record Type="UI.DataField">
@@ -48,8 +46,8 @@ To begin, you need to create a **`FieldGroup`** for the technical information th
     </Record>
     ```
 
-    Use the Code Complete feature: Press **CMD/Ctrl + Space** and then choose **`<Record DataField>`**.
-    Press **CMD/Ctrl + Space** again to choose **`Path`**.
+    Use the Code Complete feature: Press **CMD/Ctrl + Space** and then choose **`<Record "DataField">`**.
+    Press **CMD/Ctrl + Space** again to choose **`Path=''`**.
     Lastly, for providing value for Path, press **CMD/Ctrl + Space** to select `DimensionUnit`.
     Your added code should look like below:
 
@@ -152,11 +150,11 @@ Next, you are going to add a section to your object page that shows the sales hi
 
 3. Add the annotation term `UI.LineItem` using **CMD/Ctrl + Space**. Press **Tab** to move your cursor to the line below `<Collection>`. Then, using **CMD/Ctrl + Space** again, add a column to the table (`Record "DataField"`).
 
-4. Press **CMD/Ctrl + Space** and add a **`Path`**. Enter an **`ID`** for this **`Path`**.
+4. Press **CMD/Ctrl + Space** and add a **`Path`**. Enter **`ID`** for this **`Path`**.
 
-    Press **Enter** to move your cursor to the next line and use **CMD/Ctrl + Space** to add a **Label** property.
+    Insert a new line after the end of `<PropertyValue Property="Value" Path="ID"/>`
 
-    Use **CMD/Ctrl + Space** again and select **String**. Enter **`Sales ID`** for the **String**.
+    Use **CMD/Ctrl + Space** to add a **Label** property. Enter **`Sales ID`** for the **String**.
 
 5. Now you are going to add another column.
 
@@ -238,7 +236,7 @@ Copy and paste the following code in the new line you inserted above.
         <PropertyValue Property="TypeNamePlural" String="Sales Orders"/>
         <PropertyValue Property="Title">
             <Record Type="UI.DataField">
-                <PropertyValue Property="Value" Path="ID"/>
+                <PropertyValue Property="Value" Path="Product"/>
             </Record>
         </PropertyValue>
     </Record>
@@ -353,7 +351,7 @@ Between the `<Schema>` and `</Schema>` tags, your code should look like the foll
                         <PropertyValue Property="TypeNamePlural" String="Sales Orders"/>
                         <PropertyValue Property="Title">
                             <Record Type="UI.DataField">
-                                <PropertyValue Property="Value" Path="ID"/>
+                                <PropertyValue Property="Value" Path="Product"/>
                             </Record>
                         </PropertyValue>
                     </Record>

@@ -3,7 +3,7 @@ title: Use Machine Learning to Extract Information from Documents with Swagger U
 description: Get machine learning model predictions for the documents you upload to Document Information Extraction.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-business-technology-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
@@ -31,10 +31,10 @@ In the service key you created for Document Information Extraction in the previo
 
     !![DOX](png-files/swagger0.png)
 
-3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), then add **bearer** in front of it, and enter in the **Value** field.
+3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), then add **Bearer** in front of it, and enter in the **Value** field.
 
     ```
-    bearer <access_token>
+    Bearer <access_token>
     ```
 
     !![DOX](png-files/Authorize.png)
@@ -61,7 +61,7 @@ You should receive a response like the following:
 
 !![DOX](png-files/capabilitiesResponse.png)
 
->If you get an error response code 401 (Unauthorized), your token is probably incorrect. Check if you have added the word **`bearer`** before the token and if the token value is complete and has been properly copied from the **`access_token`** value you received in the previous tutorial: [Get OAuth Access Token for Document Information Extraction via Web Browser](cp-aibus-dox-web-oauth-token).
+>If you get an error response code 401 (Unauthorized), your token is probably incorrect. Check if you have added the word **`Bearer`** before the token and if the token value is complete and has been properly copied from the **`access_token`** value you received in the previous tutorial: [Get OAuth Access Token for Document Information Extraction via Web Browser](cp-aibus-dox-web-oauth-token).
 
 [DONE]
 [ACCORDION-END]
@@ -258,7 +258,7 @@ The prediction is made with a probability indicated by the **confidence** field 
 
 If the status of the document (indicated by the **status** field) is **PENDING** instead of **DONE**, then it means that the service is still extracting some fields and the returned JSON file does not yet contain all the requested fields.
 
-You have now successfully used our machine learning model to get field value predictions for the document you uploaded to Document Information Extraction.
+You have now successfully used our machine learning model to get field value predictions for the document you uploaded to the Document Information Extraction service.
 
 You can repeat step 4 and delete the client you created in step 5.
 

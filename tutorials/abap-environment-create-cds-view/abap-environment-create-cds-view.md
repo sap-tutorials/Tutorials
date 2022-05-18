@@ -1,10 +1,12 @@
 ---
 auto_validation: true
 title: Create and Expose Core Data Services Based on a Database Table
-description: Build a list report app with the ABAP RESTful programming model for SAP Fiori and test your UI for demo usage.
-primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-business-technology-platform]
+description: Build a list report app with the ABAP RESTful Application Programming Model (RAP) for SAP Fiori and test your UI for demo usage.
+primary_tag: programming-tool>abap-development
+tags: [  tutorial>beginner, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform]
 time: 10
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
@@ -221,13 +223,13 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
 
       ![Create service definition](servicedef.png)
 
-  2. Create a service definition and call it **`Z_I_BOOKING_XXX`**.
+  2. Create a service definition and call it **`ZI_BOOKING_XXX`**.
 
-      ![Create service definition](service2.png)
-
+      ![Create service definition](sbinding.png)
+ 
   3. Click **Finish** to complete your transport request.
 
-      ![Create service definition](transport2.png)
+      ![Create service definition](sbinding2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -236,12 +238,12 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
   1. Expose the **`ZI_Booking_XXX`** and the **`I_Country`** view entities.
 
     ```ABAP
-      @EndUserText.label: 'Service Definition for Booking'
+    @EndUserText.label: 'Service Definition for Booking'
 
-      define service Z_I_Booking_XXX {
-      expose ZI_Booking_XXX as Booking;
-      expose I_Country  as Country;
-      }
+    define service ZI_Booking_XXX {
+    expose ZI_Booking_XXX as Booking;
+    expose I_Country  as Country;
+    }
     ```
 
   2. Save and activate your service definition.
@@ -270,55 +272,38 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Activate your service binding)]
-Click **Activate** to publish your service binding.
+[ACCORDION-BEGIN [Step 8: ](Publish service binding)]
 
-![Publish locally](activate.png)
+1. **Activate** your service binding.
 
-[DONE]
-[ACCORDION-END]
+    ![Publish locally](activate2.png)
 
-[ACCORDION-BEGIN [Step 9: ](Check your metadata)]
-  1. Click on the Service URL to see your result.
+2. Click **Publish**.
 
-      ![Check your metadata](serviceurl.png)
-
-  2. Sign in with your communication user and password.
-
-      ![Check your metadata](system.png)
-
-  3. Check your result:
-
-      ![Check your metadata](metadata.png)
+      ![Open SAP Fiori elements view](publish.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Open SAP Fiori elements view)]
-  1. Go back to your service binding **`Z_I_BOOKING_XXX`**
-   Open the preview for SAP Fiori elements app on the right side with double-clicking or right click.
 
-      ![Open SAP Fiori elements view](preview.png)
+[ACCORDION-BEGIN [Step 9: ](Open SAP Fiori elements view)]
+
+  1. In your service binding, check your result. Select **`to_Country`** and click **Preview**.
+
+      ![Open SAP Fiori elements view](preview2.png)
 
   2. Login with your username and password.
 
       ![Login](fiori2.png)
 
-  3. To set some filter click on settings icon.
+  3. Click on **GO**.
 
-      ![Settings](fiori3.png)
+      ![Settings](fiorix.png)
 
-  4. Select fields that shall be displayed or select all and click on **OK**.
+  4.  Check your result.
 
-      ![Select filter](fiori4.png)
+      ![Select filter](fiorix2.png)
 
-  5. Click on **GO**.
-
-      ![GO button](fiori5.png)
-
-  6. Check your result:
-
-      ![Open SAP Fiori elements view](fiori6.png)
 
 [DONE]
 [ACCORDION-END]

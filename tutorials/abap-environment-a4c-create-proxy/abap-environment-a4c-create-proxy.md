@@ -3,8 +3,8 @@ title: Create a Remote Client Proxy
 description: In the SAP Business Technology Platform, ABAP Environment, create a local class that instantiates a proxy, which passes an OData request to a remote service.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, products>sap-btp--abap-environment, products>sap-business-technology-platform, topic>abap-connectivity, tutorial>license]
-primary_tag: topic>abap-development
+tags: [ tutorial>intermediate, software-product>sap-btp--abap-environment, software-product>sap-business-technology-platform, tutorial>license]
+primary_tag: programming-tool>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
@@ -519,7 +519,7 @@ ENDCLASS.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Test yourself)]
-Create a `CONSTANT` structure named **`agency_unkown`** for an exception class, specifying the message class **`/DMO/CM_FLIGHTS`**, message number **`010`**, and four attributes. The first attribute should have the value **`MV_AGENCY_ID`**. Enter your code in the space below and choose **Submit Answer**.
+Create a `CONSTANT` structure named **`agency_unknown`** for an exception class, specifying the message class **`/DMO/CM_FLIGHTS`**, message number **`010`**, and four attributes. The first attribute should have the value **`MV_AGENCY_ID`**. Enter your code in the space below and choose **Submit Answer**.
 
 [VALIDATE_1]
 [ACCORDION-END]
