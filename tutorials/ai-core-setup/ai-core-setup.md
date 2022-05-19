@@ -1,5 +1,5 @@
 ---
-title: Set up tools to connect and operate with SAP AI Core
+title: Set Up Tools to Connect With and Operate SAP AI Core
 description: Use SAP AI Launchpad, Postman or python to connect with SAP AI Core.
 auto_validation: true
 time: 20
