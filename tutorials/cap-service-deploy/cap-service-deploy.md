@@ -10,20 +10,22 @@ time: 30
 ---
 
 ## Prerequisites
-- You have finished the tutorial [Create a CAP Business Service with Node.js using Visual Studio Code](cp-apm-nodejs-create-service).  
+- You have finished the tutorial [Create a CAP Business Service with Node.js using Visual Studio Code](cp-apm-nodejs-create-service).
 - If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP BTP Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements).
 - You have downloaded and installed the [cf command line client](https://github.com/cloudfoundry/cli#downloads) for Cloud Foundry as described in the tutorial [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
+- You have downloaded and installed the [MBT Built Tool](https://sap.github.io/cloud-mta-build-tool/download/)
+- You have downloaded and installed the [MultiApps CF CLI plugin](https://github.com/cloudfoundry/multiapps-cli-plugin/blob/master/README.md).
 - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) to deploy your CAP application
 
 ## Details
-### You will learn  
+### You will learn
   - How to deploy your CAP business service on SAP Business Technology Platform (SAP BTP) and binding appropriate service instances. See the [Developer Guide for Cloud Foundry](https://docs.cloudfoundry.org/devguide/) for more details.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enhance project configuration for SAP HANA)]
+[ACCORDION-BEGIN [Step 1: ](Enhance project configuration for production)]
 
-It's now time to switch to SAP HANA as a database. To continue with this tutorial you need to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) to deploy your CAP application.
+It's now time to switch to SAP HANA as a database and prepare your project for an MTA deployment to SAP BTP Cloud Foundry. To continue with this tutorial you need to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) to deploy your CAP application.
 
 > ### Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day, before you start working with your trial.
 
@@ -32,12 +34,20 @@ It's now time to switch to SAP HANA as a database. To continue with this tutoria
 2. To prepare the project, execute in the root level of your project in VS Code:
 
     ```Shell/Bash
-    cds add hana
+    cds add hana,mta,xsuaa,approuter --for production
     ```
 
-    > This configures deployment for SAP HANA to use the `hdbtable` and `hdbview` formats. The default format of `hdbcds` is not available on SAP HANA Cloud.
+    > `--for production` adds all configuration added by this command in the `package.json` file into a `cds.requires.[production]` block.
 
-    > The `hdb` driver for SAP HANA is added as a dependency. A data source of type `sql` is added in the `cds.requires.db` block. See section [Node.js configuration](https://cap.cloud.sap/docs/node.js/cds-env#profiles) in the CAP documentation for more details.
+    > `hana` configures deployment for SAP HANA to use the `hdbtable` and `hdbview` formats. The default format of `hdbcds` is not available on SAP HANA Cloud. In addition, the `hdb` driver for SAP HANA is added as a dependency. A data source of type `hana-cloud` is added in the `cds.requires.[production].db` block. See section [Node.js configuration](https://cap.cloud.sap/docs/node.js/cds-env#profiles) in the CAP documentation for more details.
+
+    > `mta` adds the `mta.yaml` file. This file reflects your project configuration.
+
+    > `xsuaa` creates an `xs-security.json` and also the needed configuration in the `mta.yaml` file. An authentication of kind `xsuaa` is added in the `cds.requires.[production].auth` block.
+
+    > `approuter` adds the configuration and needed files for a standalone AppRouter so that the authentication flow works after deployment.
+
+    Learn more about those steps in the [Deploy to Cloud Foundry](https://cap.cloud.sap/docs/guides/deployment/to-cf#prepare-for-production) guide in the CAP documentation.
 
 3. (Optional) To enable SAP Fiori preview add the following configuration in the `package.json` of your `my-bookshop` project in VS Code:
 
@@ -47,11 +57,8 @@ It's now time to switch to SAP HANA as a database. To continue with this tutoria
         "fiori_preview": true
       },
     }
+
     ```
-
-    > `fiori_preview:true` enables SAP Fiori preview also in `production` mode as you saw it in your local application in the previous tutorial in step 4 when using `cds watch`. This feature is meant to help you during development and should not be used in productive applications.
-
-    > Don't edit the `gen/db/package.json` file.
 
 [DONE]
 
@@ -90,88 +97,41 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP BT
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Deploy using cf push)]
+[ACCORDION-BEGIN [Step 3: ](Deploy using cf deploy)]
 
-SAP BTP, Cloud Foundry environment has a built-in [cf push](https://docs.cloudfoundry.org/devguide/push.html) command to deploy applications. It needs the application files plus an optional `manifest.yml` file to push the application code and to bind the relevant services to the application.
+SAP provides an application format that respects the single modules and their technologies and keeps those modules in the same lifecycle: [Multitarget Application](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/d04fc0e2ad894545aebfd7126384307c.html?version=Cloud)
 
-[OPTION BEGIN [Windows]]
+The MBT Build tool uses the `mta.yaml` file that has been created using `cds add mta` before, to build the deployable archive. The MultiApps CF CLI plugin adds the `deploy` command and orchestrates the deployment steps.
 
-1. As `cf push` can only bind but not create services, you need to create the SAP HANA service manually (along with an HDI container and a database schema). In the command line add:
+1. In VS Code, in the root of your project, execute the following command to build the archive.
+    ```Shell/Bash
+    mbt build -t gen --mtar mta.tar
+    ```
+    The `-t` option defines the target folder of the build result as the `gen` folder of your project. As part of this build implicitly `cds build --production` is executed. This implicit build uses then all the configuration you've added in the step 1.2 when using `--for production`.
+
+2. Deploy the archive using `cf deploy`.
+    ```Shell/Bash
+    cf deploy gen/mta.tar
+    ```
+    During deployment all needed service instances are created and the applications as well as database artifacts are deployed.
+
+    > This process takes some minutes. In this one step the archive is uploaded to Cloud Foundry, service instances are created, the applications are staged, and then deployed to their target runtimes.
+
+3. In the deploy log, find the application URL of `my-bookshop`:
 
     ```Shell/Bash
-    cf create-service hana hdi-shared my-bookshop-db
+    Application "my-bookshop" started and available at "[org]-[space]-my-bookshop.cfapps.[region].hana.ondemand.com"
     ```
-
-    > This process takes some minutes.
-
-    > Check the status of your service using `cf service my-bookshop-db`.
-
-    > If service creation fails, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#hana) in the CAP documentation for more details.
-
-2. Now, build and deploy both the database part and the actual application and add:
-
-    ```Shell/Bash
-    cds build --production
-    cf push -f gen/db
-    cf push -f gen/srv --random-route
-    ```
-
-    > This process takes some minutes.
-
-    > The first part of the command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db` service that you've created in the previous step.
-
-
-3. In the deploy log, find the application URL in the `routes` line at the end:
-
-    ```Shell/Bash
-    name:              my-bookshop-srv
-    requested state:   started
-    routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
-    ```
+    This is the URL of the AppRouter, which enforces the authentication flow.
 
 4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA. If enabled in step 1.3 you can also try the **Fiori preview**.
 
     !![application preview](application_cloud_fiori.png)
 
-[OPTION END]
+> What you achieved
+>
+> You've deployed your CAP application as multitarget application including deployment to SAP HANA Cloud, using the standalone AppRouter, and using authentication (XSUAA). Congratulations!
 
-[OPTION BEGIN [MacOS and Linux]]
-
-1. As `cf push` can only bind but not create services, you need to create the SAP HANA service manually (along with an HDI container and a database schema). In the command line add:
-
-    ```Shell/Bash
-    cf create-service hana hdi-shared my-bookshop-db
-    ```
-
-    > This process takes some minutes.
-
-    > Check the status of your service using `cf service my-bookshop-db`.
-
-    > If service creation fails, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#hana) in the CAP documentation for more details.
-
-2. Now, build and deploy both the database part and the actual application and add:
-
-    ```Shell/Bash
-    cds build --production && cf push -f gen/db && cf push -f gen/srv --random-route
-    ```
-
-    > This process takes some minutes.
-
-    > The first part of the command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db` service that you've created in the previous step.
-
-3. In the deploy log, find the application URL in the `routes` line at the end:
-
-    ```Shell/Bash
-    name:              my-bookshop-srv
-    requested state:   started
-    routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
-    ```
-
-4. Open this URL in your browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA. If enabled in step 1.3 you can also try the **Fiori preview**.
-
-    !![application preview](application_cloud_fiori.png)
-
-[OPTION END]
 
 [VALIDATE_1]
 
