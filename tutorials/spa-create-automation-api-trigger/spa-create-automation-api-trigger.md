@@ -17,7 +17,7 @@ primary_tag: software-product>sap-process-automation
 ## Details
 ### You will learn
   - How to add API Trigger and Notifiers to an automation
-  - How to send data from a chatbot and trigger an automation in *Unattended* mode 
+  - How to send data from a chatbot and trigger an automation in *Unattended* mode
 
 ---
 
