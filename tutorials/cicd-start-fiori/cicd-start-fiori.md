@@ -1,4 +1,6 @@
 ---
+author_name: Sarah Lendle
+author_profile: https://github.com/SarahLendle
 title: Get Started with an SAP Fiori Project in SAP Continuous Integration and Delivery
 description: Configure and run a basic CI/CD pipeline for your SAP Fiori project.
 auto_validation: true
