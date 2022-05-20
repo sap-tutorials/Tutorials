@@ -5,8 +5,8 @@ title: Connect SAP Continuous Integration and Delivery with Your Corporate Git
 description: Set up SAP Continuous Integration and Delivery, use SAP Connectivity service to connect it with your corporate Git repository that is not directly accessible from the Internet, and create and run a basic CI/CD job.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, topic>cloud, programming-tool>sapui5, products>sap-connectivity-service, products>sap-fiori, products>sap-business-technology-platform]
-primary_tag: products>sap-connectivity-service
+tags: [ tutorial>beginner, topic>cloud, programming-tool>sapui5, sotware-product>sap-connectivity-service, software-product>sap-fiori, software-product>sap-business-technology-platform]
+primary_tag: sotware-product>sap-connectivity-service
 ---
 
 ## Prerequisites
