@@ -37,11 +37,11 @@ Make sure that you have completed required prerequisites mentioned in this tutor
 
 1. Navigate to [SAP Mobile Services cockpit](fiori-ios-hcpms-setup).
 
-2. On the home screen, select **Create new app**.
+2. On the home screen, select **Create new app** or navigate to **Mobile Applications** **&rarr;** **Native/MDK** **&rarr;** **New**.
 
     !![MDK](img-2.2.png)
 
-3. In **Basic Info** step, provide the required information and click **Next**.
+3. In the **Basic Info** step, provide the required information and click **Next**.
 
     | Field | Value |
     |----|----|
@@ -54,7 +54,11 @@ Make sure that you have completed required prerequisites mentioned in this tutor
 
     >Other fields are optional. For more information about these fields, see [Creating Applications](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/admin/manage.html#creating-applications) in the SAP documentation.
 
-4. In **Assign Features** step, choose **Mobile Development Kit Application** from the dropdown, select **Mobile Sample OData ESPM** to add a sample backend to your MDK app and then click **Finish**.
+4. In the **XSUAA Settings** step, continue with the default settings and click **Next** to navigate to further steps.
+
+    !![MDK](img-2.3.1.png)
+
+4. In the **Assign Features** step, choose **Mobile Development Kit Application** from the dropdown, select **Mobile Sample OData ESPM** to add a sample backend to your MDK app and then click **Finish**.
 
     !![MDK](img-2.4.png)
 
@@ -116,7 +120,7 @@ MDK Web application accesses the data sources via BTP destination. You will now 
 
     !![MDK](img-4.1.1.png)
 
-3. In your SAP BTP space cockpit page, navigate to the ![Services](icon-services.png) **Services** **&rarr;**  **Instances and Subscriptions**, select **Authorization and Trust Management service** from the list, click `com-sap-mdk-demo-xsuaa` instance, choose ![Security icon in the cockpit](icon-dots.png) **&rarr;** **View** to open the configuration details.
+3. In your SAP BTP space cockpit page, navigate to the **Services** **&rarr;**  **Instances**, select **Authorization and Trust Management service** from the list, click `com-sap-mdk-demo-xsuaa` instance, choose trip dot icon **&rarr;** **View** to open the configuration details.
 
     !![MDK](img-4.2.png)
 
@@ -128,26 +132,22 @@ MDK Web application accesses the data sources via BTP destination. You will now 
 
     !![MDK](img-4.5.png)
 
-6. Navigate to ![Connectivity](icon-connectivity.png) **Connectivity** **&rarr;** **Destinations** to create a BTP destination, click **Import Destination** to import the extracted file and provide the required information and click **Save**.
+6. Navigate to **Connectivity** **&rarr;** **Destinations** to create a BTP destination, click **Import Destination** to import the extracted file and provide the required information and click **Save**.
 
     | Field | Value |
     |----|----|
     | `URL` | Paste the URL from step 4.2 |
     | `Client ID` | Paste the value from step 4.4  |
     | `Client Secret` | Paste the value from step 4.4 |
-    | `Token Service URL` | Replace the Token URL placeholder with the URL from step 4.4 |
+    | `Token Service URL` | Replace the Token URL placeholder with the URL from step 4.4 , make sure the Token URL is appended by `/oauth/token` |
     | `Use Default JDK truststore` | Select the checkbox if not selected before |
 
     !![MDK](img-4.4.png)
 
+    >When checking the connection, if all your configurations are correct, you will see a success message saying `Connection to "SampleServiceV2" established. Response returned: "400: Bad Request"`. In this particular case, it is safe to ignore the `"400: Bad Request"` part of this message.
+
 
 [DONE]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully configured the setup for your MDK Mobile and Web applications.
-
-You can now continue with [this tutorial](cp-mobile-bas-setup) to set up the development environment in the SAP Business Application Studio.
 
 ---

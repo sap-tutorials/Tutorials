@@ -5,7 +5,7 @@ title: Configure and Run a Predefined SAP Continuous Integration and Delivery (C
 description: Enable SAP Continuous Integration and Delivery (CI/CD) service on SAP Business Technology Platform for your CAP application.
 keywords: cap
 auto_validation: true
-time: 15
+time: 30
 tags: [ tutorial>intermediate, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
@@ -25,6 +25,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Introduction)]
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+
 [SAP Continuous Integration and Delivery (CI/CD)](https://help.sap.com/viewer/product/CONTINUOUS_DELIVERY/Cloud/en-US) is a service on SAP BTP, which lets you configure and run predefined continuous integration and delivery pipelines. It connects with your Git SCM repository and builds, tests, and deploys your code changes. In its user interface, you can easily monitor the status of your builds and detect errors as soon as possible, which helps you prevent integration problems before completing your development.
 
 SAP Continuous Integration and Delivery has a ready-to-use pipeline for CAP, that is applicable to multi-target application (MTA) and Node.js based projects. It does not require you to host your own Jenkins instance and it provides an easy, UI-guided way to configure your pipelines.
@@ -178,7 +180,7 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 1. Navigate to the **Credentials** tab in SAP Continuous Integration and Delivery.
 
-2. Choose **+** to create credentials.
+2. Choose ( &#x2B; ) to create credentials.
 
     !![Credentials](CICD_credentials.png)
 
@@ -218,7 +220,7 @@ If your GitHub repository is not private, you can skip this section. If your Git
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 6: ](Configure a CI/CD job)]
-1. In the **Jobs** tab in SAP Continuous Integration and Delivery, choose **+** to create a new job.
+1. In the **Jobs** tab in SAP Continuous Integration and Delivery, choose ( &#x2B; ) to create a new job.
 
     !![Jobs](CICD_jobs.png)
 
@@ -391,7 +393,7 @@ You have now successfully created a CI/CD pipeline and deployed your application
 [VALIDATE_1]
 
 
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
 
 <p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-ci-cd-btp" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]

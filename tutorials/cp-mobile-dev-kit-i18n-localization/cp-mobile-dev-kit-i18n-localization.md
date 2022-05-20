@@ -24,9 +24,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
-
 [ACCORDION-BEGIN [Step 1: ](Understand the Internationalization and Localization)]
-
 
 **Internationalization (i18n)** is the process of designing and developing your software or mobile application product so it can be adapted and localized to different cultures, regions, and languages.
 
@@ -131,13 +129,13 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 2. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see the `Main` page (with `LOGOUT` and `SYNC` options at bottom of the page) and `CUSTOMERS` and `SALESORDERHEADERS` entity sets to navigate to List-Detail page.
+    Once you accept app update, you will see the `Main` page (with `Logout` and `Sync` options at bottom of the page) and `Customers` and `SalesOrderHeaders` entity sets to navigate to List-Detail page.
 
     ![MDK](img-5.1.png)
 
-    In next steps, you will learn how to translate the UI texts on this screen (`Main`, `CUSTOMERS`, `SALESORDERHEADERS`, `LOGOUT` and `SYNC`) to their respective localized strings in the German language.
+    In next steps, you will learn how to translate the UI texts on this screen (`Main`, `Customers`, `SalesOrderHeaders`, `Logout` and `Sync`) to their respective localized strings in the German language.
 
-3. Tap **SALESORDERHEADERS** to navigate to Sales order List.
+3. Tap `SalesOrderHeaders` to navigate to Sales order List.
 
     ![MDK](img-5.2.png)
 
@@ -401,7 +399,7 @@ Right-click the `Application.app` file in the project explorer pane,  select **M
 
     ![MDK](img-10.3.png)
 
-4. Tap **`KUNDENAUFTRÄGE`** to navigate to Sales order list page. You will notice the updated formatter values as per device's current locale and timezone.    
+4. Tap **`Kundenaufträge`** to navigate to Sales order list page. You will notice the updated formatter values as per device's current locale and timezone.    
 
     ![MDK](img-10.5.png)
 
@@ -425,7 +423,6 @@ Right-click the `Application.app` file in the project explorer pane,  select **M
 
 [OPTION END]
 
-
 [OPTION BEGIN [Web]]
 
 1. Either click the highlighted button or refresh the web page to load the changes.
@@ -448,9 +445,5 @@ Right-click the `Application.app` file in the project explorer pane,  select **M
 
 [VALIDATE_2]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully added Internationalization and Localization to your MDK App and you can continue with the remaining tutorials in this mission.
 
 ---

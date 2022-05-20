@@ -3,11 +3,17 @@ title: Get Started with SAP Cloud SDK for JavaScript
 description: Scaffold an application that is ready to be used with the SAP Cloud SDK for JavaScript.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-sdk, topic>javascript ]
-primary_tag: products>sap-cloud-sdk
+tags: [ tutorial>beginner, software-product>sap-cloud-sdk, programming-tool>javascript ]
+primary_tag: software-product>sap-cloud-sdk
 ---
 
 ## Details
+
+> ### We migrate tutorials to our [documentation](https://sap.github.io/cloud-sdk/)
+> This tutorial is not actively maintained and might be partially outdated.
+> Always up-to-date documentation is published on our [documentation portal](https://sap.github.io/cloud-sdk/).
+> We will provide a link to the updated version of this tutorial as soon as we release it.
+> In this tutorial, version 1 of the SAP Cloud SDK for TypeScript/JavaScript is used.
 
 ### You will learn
 
@@ -19,7 +25,7 @@ primary_tag: products>sap-cloud-sdk
 
 [ACCORDION-BEGIN [Step 1: ](Scaffold an application)]
 
-Personally, we are fans of `TypeScript` and recommend using it for most applications. However, if you prefer using plain `JavaScript`, we recommend looking at step 4.
+Personally, we are fans of `TypeScript` and recommend using it for most applications. However, if you prefer using plain `JavaScript`, please look at step 4.
 
 The main differences you will notice between `TypeScript` and `JavaScript` are the type annotations and module definitions - ES6 modules in `TypeScript` vs. `commonJS` modules in `JavaScript`. To migrate a `TypeScript` file to `JavaScript`, you only need to change the file extension from `.ts` to `.js`, remove all type annotations and change the `import`s and `export`s.
 
@@ -74,7 +80,7 @@ The project contains the following files and folders, among others, to get you s
 
 ### Cloud Foundry
 
-- **`manifest.yml`**: The deployment descriptor file for `Cloud Foundry in SAP Cloud Platform`.
+- **`manifest.yml`**: The deployment descriptor file for `Cloud Foundry in SAP Business Technology Platform`.
 
 ### Local development
 

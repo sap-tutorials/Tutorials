@@ -42,10 +42,12 @@ You should receive a response like the following:
     "access_token": "<< your access token >>",
     "token_type": "bearer",
     "expires_in": 43199,
-    "scope": "uaa.resource na-9e50499f-78dd-40ca-ad8d-60acf02cff8b!b30417.technicalscope",
-    "jti": "71c4d44ea1094875a1c3d3a6489dafd6"
+    "scope": "<< granted access >>",
+    "jti": "<< unique identifier >>"
 }
 ```
+
+Once the token has been generated, make sure to copy and save it locally for easy access. The token is valid for 12 hours (43199 seconds). After that, you'll need to generate a new one.
 
 You have successfully generated your OAuth access token for the service and you are now all set to [Use Machine Learning to Extract Information from Documents with Swagger UI](cp-aibus-dox-swagger-ui).
 

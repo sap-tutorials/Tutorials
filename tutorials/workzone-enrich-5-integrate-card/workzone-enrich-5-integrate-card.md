@@ -75,7 +75,7 @@ In the next step you'll add the card to your SAP Work Zone workspace.
     !![Access workspace](4-select-workspace.png)
 
 
-2. Click the **Expand page settings** wand on the right of the page to expose various icons and then click the pencil icon directly under the wand to open the Page Designer.
+2. Click the pencil icon on the right side of the screen to open the Page Designer.
 
     !![Open in edit mode](5-open-page-designer.png)
 

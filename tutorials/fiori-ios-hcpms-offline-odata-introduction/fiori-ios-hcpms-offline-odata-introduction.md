@@ -2,8 +2,8 @@
 title: Introduction to Offline OData
 description: Offline OData consists of many pieces at the back-end and the front-end that eventually make offline OData work, without being in the way of the developer. This tutorial will explain how all components work together to achieve this.
 auto_validation: true
-primary_tag: products>ios-sdk-for-sap-btp
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-business-technology-platform, products>sap-mobile-services ]
+primary_tag: software-product>sap-btp-sdk-for-ios
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, programming-tool>odata, software-product>sap-business-technology-platform, software-product>sap-mobile-services]
 time: 15
 ---
 

@@ -38,7 +38,7 @@ Open the pipeline which you have created in the previous tutorial `(test.myFirst
     - Connect one of the out port of **1:2 Multiplexer** operator to **Wiretap** in port.
     - Connect the other out port of the **1:2 Multiplexer** to the `filename` in port of the **SAP HANA Client** data input.
 
-    !![Add more operators](datahub-trial-v2-pipelines-part04-1.png)
+    !![Add more operators](datahub-trial-v2-pipelines-part04-1_updated.png)
 
 2. In the popup dialog, select the **From File**, click **OK**.
 

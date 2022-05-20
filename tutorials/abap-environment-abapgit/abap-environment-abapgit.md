@@ -3,7 +3,7 @@ auto_validation: true
 title: Use abapGit to Transfer Your On-Premise ABAP Source Code to the Cloud
 description: Transfer Your ABAP Source Code from your on-premise SAP system to your SAP Business Technology Platform ABAP Environment instance over a Github Repository using the abapGit report and the ADT plugin for abapGit.
 primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>beginner,  topic>abap-development, products>sap-business-technology-platform, tutorial>license]
+tags: [  tutorial>beginner,  programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license]
 time: 15
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
@@ -14,7 +14,7 @@ author_profile: https://github.com/niloofar-flothkoetter
  - SAP BTP ABAP Environment system and user with developer role
  - on-premise system with user and required root CA of Git server (STRUST)
  - Download Eclipse Photon or Oxygen and install ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
- - For More information see [Working with abapGit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/d62ed9d54a764c53990f25f0ab6c27f9.html)
+ - For More information see [Working with `abapGit`](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/d62ed9d54a764c53990f25f0ab6c27f9.html)
 
 ## Details
 ### You will learn  
@@ -30,7 +30,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 
       ![new repository](github1.png)
 
-  3. Enter a name and description and check the checkbox **Add a README file** under **Initialize this repository with:** and click **Create repository**.
+  3. Enter a name and description and choose **Private**, check the checkbox **Add a README file** under **Initialize this repository with:** and click **Create repository**.
 
       ![create repository](github2.png)
 
@@ -199,7 +199,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 
       ![finish](clone4.png)
 
-  6. Open **abapGit Repositories** tab, right-click your package and click **pull**. It takes some minutes to pull successfully.
+  6. Open **`abapGit` Repositories** tab, right-click your package and click **pull**. It takes some minutes to pull successfully.
 
       ![finish](pull.png)
 

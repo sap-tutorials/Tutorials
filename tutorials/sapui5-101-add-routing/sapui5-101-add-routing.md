@@ -2,10 +2,10 @@
 title: Add Views and Define Routes to Access Them
 description: Add new views to the SAPUI5 web application and declare them in the manifest.
 auto_validation: true
-primary_tag: topic>sapui5
-author_name: Conrad Bernal
-author_profile: https://github.com/cjbernal
-tags: [  tutorial>beginner, topic>html5, topic>sapui5,  products>sap-btp-cloud-foundry-environment, products>sap-business-application-studio  ]
+primary_tag: programming-tool>sapui5
+author_name: Nico Geburek
+author_profile: https://github.com/nicogeburek
+tags: [  tutorial>beginner, programming-tool>html5, programming-tool>sapui5, software-product>sap-btp-cloud-foundry-environment, software-product>sap-business-application-studio  ]
 time: 20
 ---
 
@@ -24,15 +24,15 @@ In SAPUI5, each view is represented by a dedicated file in the `view` folder.
 
 1. Add a new view with a right-click on the `view` folder and select **New File**. Name this file `List.view.xml`.
 
-    !![newFile](./newView.png) 
+    !![newFile](./newView.png)
 
 2. The name already suggests that this view fill contain a [list](https://sapui5.hana.ondemand.com/#/topic/295e44b2d0144318bcb7bdd56bfa5189) of products. Add the following file content that defines the views and the list. Note the list already uses [data binding](https://sapui5.hana.ondemand.com/#/topic/68b9644a253741e8a4b9e4279a35c247) to show the product entities as list items.
 
     ```XML
     <mvc:View controllerName="sap.btp.sapui5.controller.List" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-    	<Page id="listPage" title="{i18n>ListTitle}" >
+      <Page id="listPage" title="{i18n>ListTitle}" >
             <List id="list" items="{/Products}">
-                <StandardListItem type="Navigation" press="handleListItemPress" title="{ProductName}"/>
+              <StandardListItem id="_IDGenStandardListItem1" type="Navigation" press="handleListItemPress" title="{ProductName}"/>
             </List>
         </Page>
     </mvc:View>
@@ -47,14 +47,14 @@ In SAPUI5, each view is represented by a dedicated file in the `view` folder.
 
     ```XML
     <mvc:View controllerName="sap.btp.sapui5.controller.Detail" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-    	<Page id="detail" title="{i18n>DetailTitle}" showNavButton="true" navButtonPress="handleNavButtonPress" >
-    		<VBox>
-    			<Text text="{ProductName}" />
-    			<Text text="{UnitPrice}" />
-    			<Text text="{QuantityPerUnit}" />
-    			<Text text="{UnitsInStock}" />
-    		</VBox>
-    	</Page>
+      <Page id="detail" title="{i18n>DetailTitle}" showNavButton="true" navButtonPress="handleNavButtonPress" >
+          <VBox id="_IDGenVBox1">
+              <Text id="_IDGenText1" text="{ProductName}" />
+              <Text id="_IDGenText2" text="{UnitPrice}" />
+              <Text id="_IDGenText3" text="{QuantityPerUnit}" />
+              <Text id="_IDGenText4" text="{UnitsInStock}" />
+          </VBox>
+      </Page>
     </mvc:View>
     ```
 
@@ -89,7 +89,7 @@ In this step we'll define so-called [routes and targets](https://sapui5.hana.ond
 
 **Add** the new targets and routes to the existing `webapp/manifest.json` file.
 
-```JSON[14-27,36-47]
+```JSON[14-27,36-50]
 {
     "_version": "1.12.0",
     "sap.app": {
@@ -130,13 +130,15 @@ In this step we'll define so-called [routes and targets](https://sapui5.hana.ond
                     "viewType": "XML",
                     "transition": "slide",
                     "clearControlAggregation": false,
-                    "viewName": "List"
+                    "viewName": "List",
+                    "viewId" : "List"
                 },
                 "TargetDetail": {
                     "viewType": "XML",
                     "transition": "slide",
                     "clearControlAggregation": false,
-                    "viewName": "Detail"
+                    "viewName": "Detail",
+                    "viewId": "Detail"
                 }
             }
         }
@@ -149,6 +151,9 @@ In this step we'll define so-called [routes and targets](https://sapui5.hana.ond
 [ACCORDION-BEGIN [Step : ](Add two new controllers)]
 
 This is the crucial step of this tutorial that ties everything together. Each view specifies its controller with the `controllerName` property in the first line. Controllers contain the business logic of web apps, bind models to views, and use the router to navigate between views.
+
+You may see a prompt to enable `ESLint extension`, select **Do Not Allow** to proceed as it is not relevant for this tutorial.
+
 
 1. Right-click on the `controller` folder and select **New File** to create a new   `List.controller.js` controller for the list view. The controller defines one method that is the event listener for the press-item event of the product list. It will trigger the navigation to the second view and attached the product ID of the pressed item.
 
@@ -176,7 +181,8 @@ This is the crucial step of this tutorial that ties everything together. Each vi
     ```JavaScript
     sap.ui.define([
       "sap/ui/core/mvc/Controller"
-  ],
+    ],
+
       function (Controller) {
           "use strict";
 
