@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to access your SAP BTP account
   - What are interactive guided boosters
-  - How to use the **Set up account for Business Entity Recognition** booster to assign entitlements, update your subaccount (or create a new one), create a service instance and the associated service key for Business Entity Recognition.
+  - How to use the **Set up account for Business Entity Recognition** booster to assign entitlements, update your subaccount (or create a new one), create a service instance and the associated service key for Business Entity Recognition
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Go to your SAP BTP account)]

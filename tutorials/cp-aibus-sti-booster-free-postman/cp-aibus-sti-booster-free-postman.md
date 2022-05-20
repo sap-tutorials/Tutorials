@@ -17,7 +17,7 @@ author_profile: https://github.com/Juliana-Morais
 ### You will learn
   - How to access your SAP BTP account
   - What are interactive guided boosters
-  - How to use the **Set up account for Service Ticket Intelligence** booster to assign entitlements, update your subaccount (or create a new one), create a service instance and the associated service key, and also to download Postman environment and collection JSON sample code files for Service Ticket Intelligence.
+  - How to use the **Set up account for Service Ticket Intelligence** booster to assign entitlements, update your subaccount (or create a new one), create a service instance and the associated service key, and also to download Postman environment and collection JSON sample code files for Service Ticket Intelligence
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Go to your SAP BTP account)]
