@@ -11,6 +11,7 @@ author_profile: https://github.com/beyhan
 
 ## Prerequisites
  - **Tutorials** [Fundamentals of the SAP BTP, Cloud Foundry environment](cp-cf-fundamentals)
+ - **Tutorials** [Download and Prepare App for Cloud Foundry Deployment](cp-cf-dev-01-prepare-app)
  - **Tutorials** [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli)
 
 
