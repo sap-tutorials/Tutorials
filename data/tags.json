@@ -182,6 +182,9 @@
             "name": "SAP Data Intelligence",
             "value": "software-product>sap-data-intelligence"
         }, {
+            "name": "SAP Digital Manufacturing Cloud",
+            "value": "software-product>sap-digital-manufacturing-cloud"
+        }, {
             "name": "SAP Data Warehouse Cloud",
             "value": "software-product>sap-data-warehouse-cloud"
         },  {
@@ -281,6 +284,12 @@
             "name": "SAP Lumira",
             "value": "software-product>sap-lumira"
         }, {
+            "name": "SAP Manufacturing Execution",
+            "value": "software-product>sap-manufacturing-execution"
+        }, {
+            "name": "SAP Manufacturing Integration and Intelligence",
+            "value": "software-product>sap-manufacturing-integration-and-intelligence"
+        }, {
             "name": "SAP Mobile Cards",
             "value": "software-product>sap-mobile-cards"
         }, {
@@ -301,6 +310,9 @@
         }, {
             "name": "SAP S/4HANA Cloud",
             "value": "software-product>sap-s-4hana-cloud"
+        }, {
+            "name": "SAP S/4HANA Cloud for Manufacturing",
+            "value": "software-product>sap-s-4hana-cloud-for-manufacturing"
         }, {
             "name": "SAP Screen Personas",
             "value": "software-product>sap-screen-personas"
