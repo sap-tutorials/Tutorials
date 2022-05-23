@@ -44,7 +44,7 @@ SAP HANA Cloud is composed of multiple components.
 
 [ACCORDION-BEGIN [Step 2: ](Create a data lake instance and connect to it)]
 
->To complete the tutorials in this group, an SAP HANA Cloud, data lake instance is needed which is created within the SAP Business Technology Platform (BTP). There are two different free options available which are the SAP BTP free-tier and SAP BTP trial.  For instructions on registering, see [Start Using SAP HANA Cloud Free Tier Model or Trial in SAP BTP Cockpit](hana-cloud-mission-trial-1).
+>To complete the tutorials in this group, a SAP HANA Cloud, data lake instance is needed, which is created within the SAP Business Technology Platform (BTP). There are two different free options available, which are the SAP BTP free-tier and SAP BTP trial.  For instructions on registering, see [Start Using SAP HANA Cloud Free Tier Model or Trial in SAP BTP Cockpit](hana-cloud-mission-trial-1).
 
 The following steps provide instructions on how to create a data lake instance in the SAP Business Technology Platform (BTP) trial.  Additional content on this topic is available at [Quick Start Tutorial for Data Lake](https://help.sap.com/viewer/a89a80f984f21015b2b2c84d2498d36d/latest/en-US/b62bc948ad684e3a94b9e14b68318f2a.html).
 
