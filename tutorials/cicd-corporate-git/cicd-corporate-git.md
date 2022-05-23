@@ -1,12 +1,12 @@
 ---
+author_name: Sarah Lendle
+author_profile: https://github.com/SarahLendle
 title: Connect SAP Continuous Integration and Delivery with Your Corporate Git
 description: Set up SAP Continuous Integration and Delivery, use SAP Connectivity service to connect it with your corporate Git repository that is not directly accessible from the Internet, and create and run a basic CI/CD job.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, topic>cloud, topic>sapui5, products>sap-connectivity-service, products>sap-fiori, products>sap-business-technology-platform]
-primary_tag: products>sap-connectivity-service
-author_name: Sarah Lendle
-author_profile: https://github.com/SarahLendle
+tags: [ tutorial>beginner, topic>cloud, programming-tool>sapui5, software-product>sap-connectivity-service, software-product>sap-fiori, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-connectivity-service
 ---
 
 ## Prerequisites
@@ -70,25 +70,21 @@ Enable SAP Continuous Integration and Delivery, assign yourself the administrato
 
 5. Choose **Create**.
 
-6. From the navigation pane, choose ![Security icon in the cockpit](icon-security.png) **Security** **&rarr;** **Trust Configuration**.
+6. From the navigation pane, choose ![Security icon in the cockpit](icon-security.png) **Security** **&rarr;** **Users**.
 
     >If you use an enterprise account, you need to be a User & Role Administrator of your subaccount to view the ![Security icon in the cockpit](icon-security.png) **Security** section. See [Managing Subaccounts Using the Cockpit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/55d0b6d8b96846b8ae93b85194df0944.html).
 
-7. Choose the name of your identity provider.
+7. Choose the name of your user.
 
-8. Enter your e-mail address.
+8. From the **Role Collections** section, choose **Assign Role Collection**.
 
-9. Choose **Show Assignments**.
+9. From the dropdown list, select **CICD Service Administrator** and confirm your choice with **Assign Role Collection**.
 
-10. Choose **Assign Role Collection**.
+10. Navigate back to your subaccount overview and from the navigation pane, choose **Service Marketplace**.
 
-11. From the dropdown list, select **CICD Service Administrator** and confirm your choice with **Assign Role Collection**.
+11. In the **Extension Suite – Development Efficiency** category, choose **Continuous Integration & Delivery**.
 
-12. Navigate back to your subaccount overview and from the navigation pane, choose **Service Marketplace**.
-
-13. In the **Extension Suite – Development Efficiency** category, choose **Continuous Integration & Delivery**.
-
-14. Choose ![Security icon in the cockpit](icon-dots.png) *(Actions)* **&rarr;** **Go to Application**.
+12. Choose ![Security icon in the cockpit](icon-dots.png) *(Actions)* **&rarr;** **Go to Application**.
 
 [DONE]
 [ACCORDION-END]

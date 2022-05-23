@@ -376,13 +376,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Implement determination)]
+[ACCORDION-BEGIN [Step 6: ](Implement action)]
 
-  1. Now you will implement a determination. In your `CLASS lhc_travel IMPLEMENTATION` implement method `set_status_completed`:
-
-    >**HINT:** A determination modifies instances of business objects based on trigger conditions. Here, the code updates the relevant data instance of travel by setting the `overall_status` to A (for accepted.)
-    To avoid authorization checks, you add the suffix `IN LOCAL MODE`.
-    Determinations must be idempotent – i.e. the result must not differ, even if the determination is executed multiple times for the same key.
+  1. Now you will implement an action. In your `CLASS lhc_travel IMPLEMENTATION` implement method `set_status_completed`:
 
     ```ABAP
       ********************************************************************************
@@ -442,7 +438,12 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Implement action)]
+[ACCORDION-BEGIN [Step 7: ](Implement determination)]
+
+  >**HINT:** A determination modifies instances of business objects based on trigger conditions. Here, the code updates the relevant data instance of travel by setting the `overall_status` to A (for accepted.)
+  To avoid authorization checks, you add the suffix `IN LOCAL MODE`.
+  Determinations must be idempotent – i.e. the result must not differ, even if the determination is executed multiple times for the same key.
+
   1. Implement method `CalculateTravelKey`:
 
     ```ABAP

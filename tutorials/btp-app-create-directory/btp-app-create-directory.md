@@ -117,7 +117,7 @@ If you don't want to start from scratch, but from a specific example of the tuto
 
 4. Check out the example's branch.
 
-    ``` bash
+    ```Shell/Bash
     cd tutorial
     git checkout <branch>
     ```

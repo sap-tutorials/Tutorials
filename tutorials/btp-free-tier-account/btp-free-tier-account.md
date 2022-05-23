@@ -10,7 +10,7 @@ primary_tag: software-product-function>sap-btp-cockpit
 ## Prerequisites
 - To activate your consumption-based SAP BTP global account with free tier service plans, you need a:
     - **Functioning e-mail address**
-    - **Credit card** for authentication and eventually later for billing purposes (if you do not own a credit card, create a Trial Account on SAP BTP as described in [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)).
+    - **Credit card** for authentication and eventually later for billing purposes (if you do not own a credit card, you can create a trial account which allows you to try out BTP services in a separated environment but without the free tier model on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)).
 
 
 ### How Does Free Tier Work?
@@ -36,7 +36,7 @@ If you're interested in further information about Free Tier, or if you want to e
 [ACCORDION-BEGIN [Step 1: ](Register at sap.com)]
 Start your SAP journey in the SAP Store and create an account for the SAP Store. You need this account in order to be able to sign up for an account.
 
-1. Visit the [SAP Store](https://storefront.s1.store.net.sap/dcp/en/product/display-9999951781_live_v1/Pay-As-You-Go%20for%20SAP%20BTP).
+1. Visit the [SAP Store](https://store.sap.com/dcp/en/product/display-9999951781_live_v1/SAP%20Business%20Technology%20Platform).
 
 2. Scroll down to **Plans and Pricing** and select **Start Now**.
 > If you already have an existing user for the SAP Store, select **Manage Orders**.

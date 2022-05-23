@@ -165,7 +165,7 @@ The On-boarding QR code is now displayed.
 
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-Once you accept app update, you will see the **Main** page (with **LOGOUT** and **SYNC** options at bottom of the page) being displayed and Offline store is being initialized. **Since you selected the Base template during the project creation, which generated this empty page without any UI controls on it. In next tutorials, you will add some UI controls to this page and create more pages.**
+Once you accept app update, you will see the **Main** page (with **Logout** and **Sync** options at bottom of the page) being displayed and Offline store is being initialized. **Since you selected the Base template during the project creation, which generated this empty page without any UI controls on it. In next tutorials, you will add some UI controls to this page and create more pages.**
 
 ![MDK](img-5.1.png)
 
@@ -200,9 +200,5 @@ Once you accept app update, you will see the **Main** page (with **Logout** and 
 
 [VALIDATE_1]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully started your MDK application in the editor and you are now all set to [Create a new page displaying Customers List](cp-mobile-dev-kit-list-page).
 
 ---
