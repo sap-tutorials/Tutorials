@@ -23,7 +23,7 @@ author_profile: https://github.com/beyhan
   - How Cloud Foundry handles crashes and shutdowns, and the process of evacuation
 
 ---
-[ACCORDION-BEGIN [Step 1: ](CF Push)]
+[ACCORDION-BEGIN [Step 1: ](Push your application to Cloud Foundry)]
 
 When you push an application to Cloud Foundry (`cf push`), by default it uses a [buildpack](https://docs.cloudfoundry.org/buildpacks/) (either specified by you or auto-detected by Cloud Foundry) to download required dependencies, compile everything needed for your application, and produce a [droplet](https://docs.cloudfoundry.org/concepts/glossary.html) - an artifact - that can be used to run your application in a container. A `cf push` goes through three phases:
 
@@ -35,7 +35,7 @@ When you push an application to Cloud Foundry (`cf push`), by default it uses a 
 
 You can see the full application lifecycle documented at [How Apps are Staged](https://docs.cloudfoundry.org/concepts/how-applications-are-staged.html). Using the `manifest.yml` file, you can specify what actually happens during each phase, such as what buildpacks to use, the command to be run on startup, and more. A list of all the possible manifest settings can be found in the [official documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html).
 
-To see each phase in action, you can push the [cf-nodejs](https://github.com/SAP-samples/cf-sample-app-nodejs) app you worked with before. Make sure to change [random-route](https://github.com/SAP-samples/cf-sample-app-nodejs/blob/8c5da6ab1b56323a9febbc67216a12c58f1c784f/manifest.yml#L6) to `true` in the `manifest.yml` or have a unique name for the app by changing the [app name](https://github.com/SAP-samples/cf-sample-app-nodejs/blob/8c5da6ab1b56323a9febbc67216a12c58f1c784f/manifest.yml#L3) in the `manifest.yml`, and then run:
+To see each phase in action, follow [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli) to set up the CF CLI and then get the [cf-nodejs](https://github.com/SAP-samples/cf-sample-app-nodejs) app as described in [Download and Prepare App for Cloud Foundry Deployment](cp-cf-dev-01-prepare-app). Make sure to change [random-route](https://github.com/SAP-samples/cf-sample-app-nodejs/blob/8c5da6ab1b56323a9febbc67216a12c58f1c784f/manifest.yml#L6) to `true` in the `manifest.yml` or have a unique name for the app by changing the [app name](https://github.com/SAP-samples/cf-sample-app-nodejs/blob/8c5da6ab1b56323a9febbc67216a12c58f1c784f/manifest.yml#L3) in the `manifest.yml`, and then run:
 
 ```
 cd <path-to>/cf-sample-app-nodejs
@@ -65,7 +65,7 @@ And finally you see the starting phase:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](The Three R's - Restarting, Re-staging, and Re-pushing)]
+[ACCORDION-BEGIN [Step 2: ](Understand when and how to re-start, re-stage, or re-push your application)]
 
 Knowing when to re-stage, restart, or re-push is useful in properly maintaining your application with minimal downtime or even without a downtime. All this can be a little confusing, so here's a quick summary and overview:
 
@@ -79,7 +79,7 @@ Knowing when to re-stage, restart, or re-push is useful in properly maintaining 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Crashes, Shutdowns, and Evacuation)]
+[ACCORDION-BEGIN [Step 4: ](Understand application crashes, shutdowns, and evacuations)]
 
 Every application stops running at some point, whether from a normal shutdown, a crash, or a restart. Cloud Foundry handles all of these scenarios as follows:
 
