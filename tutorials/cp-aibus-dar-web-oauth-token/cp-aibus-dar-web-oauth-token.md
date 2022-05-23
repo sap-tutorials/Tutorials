@@ -49,6 +49,8 @@ You should receive a response like the following:
 }
 ```
 
+Once the token has been generated, make sure to copy and save it locally for easy access. The token is valid for 12 hours (43199 seconds). After that, you'll need to generate a new one.
+
 You have successfully generated your OAuth access token for the service and you are now all set to try out Data Attribute Recommendation.
 
 [DONE]
