@@ -66,11 +66,9 @@ For this tutorial, you'll create a dev space personalized for building services 
 
 1. Change the color theme to your preferences.
 
-    Go to **File** > **Settings** > **Color Theme** and choose an item from the list. We used **Dark (Visual Studio)**.
+    Go to **File** **&rarr;** **Settings** **&rarr;** **Color Theme** and choose an item from the list. We used **Dark (Visual Studio)**.
 
-    !![color-theme](color-theme.png)
-
-2. From the main menu, choose **Terminal** > **New Terminal**.
+2. From the main menu, choose **Terminal** **&rarr;** **New Terminal**.
 
     !![open new terminal](new-terminal.png)
 
@@ -82,8 +80,8 @@ For this tutorial, you'll create a dev space personalized for building services 
 
     ```Shell/Bash
     mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
-    -DarchetypeVersion=1.17.0 \
-    -DgroupId=com.sap.cap -DartifactId=products-service -Dpackage=com.sap.cap.productsservice
+    	-DarchetypeVersion=1.23.1 \
+    	-DgroupId=com.sap.cap -DartifactId=products-service -Dpackage=com.sap.cap.productsservice
     ```
 
     This will initialize the application using the [maven archetype](http://maven.apache.org/guides/introduction/introduction-to-archetypes.html) `cds-services-archetype` and create your project as follows:
@@ -94,7 +92,7 @@ For this tutorial, you'll create a dev space personalized for building services 
 
       !![project creation done](project-creation-done.png)
 
-5. From the main menu, choose **File** > **Open Workspace**.
+5. From the main menu, choose **File** **&rarr;** **Open Workspace**.
 
 6. Choose **products-service** and then **Open**.
 
@@ -139,7 +137,7 @@ In this step, you'll define a simple service, which also defines its own entity.
 
 [ACCORDION-BEGIN [Step 4: ](Compile model definition)]
 
-1. From the main menu, open a terminal with **Terminal** > **New Terminal**.
+1. From the main menu, open a terminal with **Terminal** **&rarr;** **New Terminal**.
  You should be in the **products-service** project but in order to be sure run `pwd`.
 
     ```Shell/Bash
@@ -172,7 +170,7 @@ While creating the project skeleton, the application `Application.java` file was
 
     !![open Application.java class](application-class.png)
 
-    >If you use **CTRL+P** in SAP Business Application Studio, you open a search bar. Start typing `Application.java` to find and open the file.
+    > If you use **CTRL+P** in SAP Business Application Studio, you open a search bar. Start typing `Application.java` to find and open the file.
 
     As you can see, the file doesn't contain CAP-specific startup instructions. It's the typical boilerplate code found in every Spring Boot application. The initialization of the CAP Java runtime is done by Spring automatically, based on the dependencies defined in the `pom.xml`.
 
@@ -182,7 +180,7 @@ While creating the project skeleton, the application `Application.java` file was
     cd ~/projects/products-service
     ```
 
-3. Start the application:
+3. Start the application by running the following command in the terminal:
 
     ```Shell/Bash
     mvn clean spring-boot:run
@@ -192,13 +190,9 @@ While creating the project skeleton, the application `Application.java` file was
 
       !![expose and open notification appearing](expose-and-open.png)
 
-      If you have issues exposing the port or opening the application, take a look at the next step where alternative ways to expose the port and open the application are explained.
+4. Choose **Open New Tab**.
 
-4. Choose **Expose and Open**.
-
-5. Provide **app-port** as the unique description.
-
-6. Hit the **Enter** key to open the application in a new tab.
+5. The application start page will be opened in a new tab.
 
     !![service startpage](service-startpage.png)
 
@@ -207,13 +201,11 @@ While creating the project skeleton, the application `Application.java` file was
 
 [ACCORDION-BEGIN [Step 6: ](Manually open the application)]
 
-1. Make sure that your application is running. From the main menu, go to **View** > **Find Command** to open the command palette.
+1. Make sure that your application is running. From the main menu, go to **View** **&rarr;** **Find Command** to open the command palette.
 
     !![find command](find-command.png)
 
-2. Type **Ports: Expose** and select or enter `8080`. Provide `app-port` as the unique description. If you don't see port `8080` listed in the **Ports: Expose** view, use **View** > **Find Command** again and type **Ports: Preview** instead. Then click on the port `8080` to open the application.
-
-    !![expose or preview port](ports-expose-preview.png)
+2. Type **Ports: Expose** and select or enter `8080`. There will be one application visible and you can open new tab for it.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -222,9 +214,9 @@ While creating the project skeleton, the application `Application.java` file was
 
 1. Choose **`$metadata`** from the welcome page to inspect the OData metadata that is automatically served by the CAP Java runtime.
 
-    !![metadata option](metadata-option.png)
+  !![metadata option](metadata-option.png)
 
-    > Alternatively add `/odata/v4/AdminService/$metadata` to your app URL. Your URL should be the same either way.
+> Alternatively add `/odata/v4/AdminService/$metadata` to your app URL. Your URL should be the same either way.
 
 In the next tutorial, you'll learn how to add custom logic. Specifically, so that your application can read and create Products.
 
