@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Introduction to Application Development Using CAP and Node.js
 description: Learn about SAP Cloud Application Programming Model (CAP) and application development on SAP BTP.
+keywords: cap
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori, products>sap-fiori-tools, software-product>sapui5]
@@ -51,7 +52,7 @@ On top of open source technologies, CAP mainly adds:
 
 - Core Data Services (CDS) as our universal modeling language for both domain models and service definitions.
 
-- Service SDK and runtimes for Node.js and Java, offering libraries to implement and consume services as well as generic provider implementations serving many requests automatically.
+- Service SDK and runtime for Node.js and Java, offering libraries to implement and consume services as well as generic provider implementations serving many requests automatically.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -61,7 +62,7 @@ SAP BTP is an open set of Software, Platform, and Infrastructure as a Service sy
 
 SAP BTP is also constantly evolving. SAP continuously updates the services we provide, the platforms that run the custom code, and the infrastructure that supports everything. This allows developers to focus on the custom code, and not worry about hardware maintenance or software upgrades. SAP BTP offers you the ability to turn data into business value, compose end-to-end business processes, and build and extend SAP applications quickly.
 
-The central point of entry to the cloud platform is the SAP BTP cockpit, where you can access your accounts and applications and manage all activities associated with them.
+The central point of entry to the cloud platform is SAP BTP cockpit, where you can access your accounts and applications and manage all activities associated with them.
 
 [DONE]
 [ACCORDION-END]

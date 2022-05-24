@@ -5,8 +5,8 @@ title: Monitoring an SAP HANA Cloud, SAP HANA Database
 description: Learn what you can monitor in SAP HANA Cloud, SAP HANA database and how to do that in SAP HANA cockpit.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product>sap-hana-cloud, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites

@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Enable Logging Service for Your Application
 description: This tutorial shows you how to enable Logging Service for your application.
+keywords: cap
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
@@ -56,7 +57,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Access logs from SAP BTP cockpit)]
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**. 
+1. In [SAP BTP Cockpit](https://account.hana.ondemand.com/) enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -82,7 +83,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Analyze logs using Kibana dashboard)]
-1. Go to your subaccount in **SAP BTP cockpit**.
+1. In SAP BTP Cockpit, navigate to your **Subaccount**.
 
 2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
 
@@ -170,7 +171,7 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
         service: application-logs
         service-plan: standard
     ```
-    
+
 2. Bind the logging service instance to the following `modules` of the `mta.yaml`.
 
     <!-- cpes-file mta.yaml:$.modules[?(@.name=="cpapp-srv")].requires[?(@.name=="cpapp-logs")] -->
@@ -205,9 +206,9 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 5: ](Test it)]
-1. Build the MTAR file and deploy it to your Cloud Foundry space.
+1. Build the MTAR file and deploy it to your Cloud Foundry space:
 
-    ```
+    ```Shell/Bash
     mbt build -t ./
     cf deploy cpapp_1.0.0.mtar
     ```
@@ -224,16 +225,17 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 
     !![Kibana: Components](kibana_components.png)
 
-You can also browse all logs using the *Discover* button (compass icon) on the left navigation bar.
+You can also browse all logs using the **Discover** button (compass icon) on the left navigation bar.
 The available fields are displayed on the left side of the screen. You can add fields to the message display or quickly filter for any of the top values.
 
-The time filter is on the right top of the screen. Don't forget to choose *Refresh*.
+The time filter is on the right top of the screen. Don't forget to choose **Refresh**.
+
 
 
 [DONE]
 The result of this tutorial can be found in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
 
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
 
 <p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-logging" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]

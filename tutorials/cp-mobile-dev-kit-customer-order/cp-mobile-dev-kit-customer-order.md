@@ -402,11 +402,11 @@ Deploy the updated application to your MDK client.
 
 [OPTION BEGIN [Android]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. When you see a confirmation pop-up, tap **OK**. Tap **CUSTOMER LIST**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. When you see a confirmation pop-up, tap **OK**. Tap **Customer List**.
 
     ![MDK](img_10.1.png)
 
-    You will see the **CUSTOMER ORDERS** area in customer detail page and also total count of orders.
+    Click a customer record, you will see the **Customer Orders** area in customer detail page and also total count of orders.
 
     ![MDK](img_10.2.png)
 
@@ -439,7 +439,6 @@ Deploy the updated application to your MDK client.
 3. Tapping on any order navigates to its details page.
 
     ![MDK](img_10.8.png)
-
 
 4. Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.  
 
@@ -479,9 +478,5 @@ Deploy the updated application to your MDK client.
 
 [VALIDATE_4]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully extended MDK app with Customer orders and you are now all set to [implement Create Entity and Linking Entities in an MDK App](cp-mobile-dev-kit-link-entity).
 
 ---

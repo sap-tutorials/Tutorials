@@ -312,7 +312,7 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-2. Tap **CUSTOMER LIST**, click **+** icon to create a new record.
+2. Tap **Customer List**, click **+** icon to create a new record.
 
     ![MDK](img_7.1.png)
 
@@ -328,7 +328,7 @@ Deploy the updated application to your MDK client.
 
     >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-4. On Main page, tap **SYNC**, a successful message will be shown.
+4. On Main page, tap **Sync**, a successful message will be shown.
 
     ![MDK](img_7.4.png)
 
@@ -376,7 +376,11 @@ Deploy the updated application to your MDK client.
 
 3. Enter the values, and click **Save**.
 
-    !![MDK](img_7.13.gif)
+    !![MDK](img_7.13.png)
+
+    Local record gets created accordingly.
+
+    !![MDK](img_7.14.png)
 
 [OPTION END]
 
@@ -394,9 +398,5 @@ You can cross verify if a record has been updated in the backend.
 
 [VALIDATE_1]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully created a Customer Record and you are now all set to [delete a Customer Record in an MDK App](cp-mobile-dev-kit-delete-customer).
 
 ---

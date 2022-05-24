@@ -19,7 +19,6 @@ author_profile: https://github.com/jitendrakansal
   - How to use predefined push configuration for the public store version of SAP Mobile Services client (MDK client)
   - How to send push notification to an MDK app
 
-
 You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/6-Enable-Push-Notifications-in-the-MDK-Public-Store-Client) and start directly with step 4 in this tutorial.
 
 ---
@@ -67,6 +66,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
     | `Your Project Name` | `MDK_Push` |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
 
     !![MDK](img-2.4.png)
 
@@ -308,9 +308,5 @@ The On-boarding QR code is now displayed.
 
 [VALIDATE_2]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully implemented Enable Push Notifications in the MDK Public Store Client and you can continue with the remaining tutorials in this mission.
 
 ---

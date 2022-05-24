@@ -1,5 +1,5 @@
 ---
-title: Set Up Account for Data Attribute Recommendation and Get Service Key
+title: Use Trial to Set Up Account for Data Attribute Recommendation and Get Service Key
 description: Use a booster in SAP BTP Trial to automatically create a service instance, and the associated service key for Data Attribute Recommendation.
 auto_validation: true
 time: 5

@@ -1,10 +1,10 @@
 ---
-title: Train Execution of ML Model (Postman)
+title: Train ML Model with Execution in SAP AI Core (Postman)
 description: Train execution a ML model in SAP AI Core with help of Postman client.
 auto_validation: true
 time: 20
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
-primary_tag: topic>artificial-intelligence
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
+primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
@@ -17,12 +17,21 @@ author_profile: https://github.com/dhrubpaul
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](API to list available scenarios)]
+[ACCORDION-BEGIN [Step 1: ](List scenarios)]
 
-Scenarios refers to the use case. It is created by an identifier within the workflows *(YAML files, see screenshots below)* that you synced with GitHub in previous tutorial. For all workflows of same use case, write the same scenario id.
+Scenario refers to an ML use case. It gets automatically created when you upload workflows *(YAML files, see screenshots below)* to your GitHub repository connected to SAP AI Core.
+
+Following are the annotations within your training workflow `training_workflow_tutorial.yaml` that define a scenario.
 
 !![scenario definition inside worflows](img/training/scenario.png)
 
+1. `name` refers to the **Executable ID**, an identifier for your workflow. This must be unique for each executable even if they are part of the same scenario.
+2. `scenarios.ai.sap.com/id` refers to the **Scenario ID**. All the workflows related to the same scenario whether intended for training or serving must have the same value for this parameter.
+3. `ai.sap.com/version` refers to the version of the scenario. Helps you create and track multiple versions within scenario.
+
+The same annotations with similar values are used within the serving workflow `serving_workflow_tutorial.yaml`.
+
+List your synced scenarios.
 
 > **COLLECTIONS** > *GET* List scenario
 
@@ -219,7 +228,7 @@ If the previous call to create training execution does not work try with followi
 **ENDPOINT**
 
 *POST*
-`{{apiurl}}/v2/lm/configurations`
+`{{apiurl}}/v2/lm/executions`
 
 **HEADER**
 

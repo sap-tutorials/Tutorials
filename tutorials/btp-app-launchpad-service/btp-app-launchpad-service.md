@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Add the SAP Launchpad Service
 description: This tutorial shows you how to add the SAP Launchpad application.
+keywords: cap
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
@@ -268,7 +269,7 @@ modules:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 9: ](Add SAP Fiori elements Risks application)]
+[ACCORDION-BEGIN [Step 9: ](Add SAP Fiori Elements Risks application)]
 1. Switch to `app/risks` folder:
 
     ```Shell/Bash
@@ -332,7 +333,6 @@ The newly added modules `nsrisks` and `nsmitigations` do the build of the SAP Fi
         - npm run build:cf
         supported-platforms: []
     ```
-
 
 2. Check the `mitigations` application module `nsmitigations`:
 
@@ -418,13 +418,13 @@ app/*/package-lock.json
 
     > [How to build an MTA archive from the project sources](https://sap.github.io/cloud-mta-build-tool/usage/#how-to-build-an-mta-archive-from-the-project-sources)
 
-3. Go to SAP BTP cockpit to check the deployed content.
+3. Go to [SAP BTP Cockpit](https://account.hana.ondemand.com/) to check the deployed content.
 
 [DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 14: ](Subscribe to SAP Launchpad service)]
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -432,13 +432,13 @@ app/*/package-lock.json
 
     !![Choose Subaccount](choose_subaccount.png)
 
-2. Choose **Services** **&rarr;** **Service Marketplace** on the left.
+4. Choose **Services** **&rarr;** **Service Marketplace** on the left.
 
-3. Search for the **Launchpad Service** tile and choose **Create**.
+5. Search for the **Launchpad Service** tile and choose **Create**.
 
     !![Create Launchpad Service](create_launchpad_service.png)
 
-4. Keep the default settings for **Service** and **Plan** and choose **Create**.
+6. Keep the default settings for **Service** and **Plan** and choose **Create**.
 
     !![New Instance or Subscription](new_instance_dialog.png)
 
@@ -447,18 +447,18 @@ You have now subscribed to the SAP Launchpad service.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 15: ](Assing SAP Launchpad role collection)]
+[ACCORDION-BEGIN [Step 15: ](Assigning SAP Launchpad role collection)]
 You need to assign your user to the `Launchpad_Admin` role collection, so you don't get an error accessing the **Launchpad Service** site later on.
 
 1. Choose **Security** **&rarr;** **Users** on the left.
 
 2. Choose your user.
-        
-4. Under **Role Collections** on the right, choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
+
+3. Under **Role Collections** on the right, choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
 
     !![Add role](add_launchpad_admin_role.png)
 
-5. Open another browser or clear your browser's cache.
+4. Open another browser or clear your browser's cache.
 
 > See section [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html) in the SAP Launchpad service's documentation for more details.
 
@@ -510,7 +510,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
     !![Create Group](create_group.png)
 
-    > This way, you're telling the SAP Launchpad service to display the `Risks` and `Mitigations` apps in a group called `Risk Management`.
+    > This way, you are telling the SAP Launchpad service to display the `Risks` and `Mitigations` apps in a group called `Risk Management`.
 
 12. Choose **Site Directory** **&rarr;** **Create Site**.
 

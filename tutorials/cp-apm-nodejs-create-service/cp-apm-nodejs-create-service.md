@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Create a CAP Business Service with Node.js Using Visual Studio Code
 description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite, by using the SAP Cloud Application Programming Model (CAP) and developing on your local environment.
 auto_validation: true
@@ -106,7 +106,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 4. In the command line window run the following:
 
     ```Shell/Bash
-      cds watch
+    cds watch
     ```
 
     > This command tries to start a `cds` server. Whenever you feed your project with new content, for example, by adding or modifying `.cds`, `.json`, or `.js` files, the server automatically restarts to serve the new content.
@@ -117,6 +117,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
     cds serve all --with-mocks --in-memory?
     watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env,css,gif,html,jpg,png,svg...
     live reload enabled for browsers
+            _______________________
 
 
         No models found in db/,srv/,app/,schema,services.
@@ -137,7 +138,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
 2. Open Visual Studio Code, go to **File** **&rarr;** **Open** and choose the **`my-bookshop`** folder.
 
-3. Go to **View** **&rarr;** **Command Palette** **&rarr;** **Terminal: Create New Integrated Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
+3. Go to **View** **&rarr;** **Command Palette** **&rarr;** **Terminal: Create New Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
 
     ```Shell/Bash
     npm install
@@ -145,7 +146,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 4. In the command line window run the following:
 
     ```Shell/Bash
-      cds watch
+    cds watch
     ```
 
     > This command tries to start a `cds` server. Whenever you feed your project with new content, for example, by adding or modifying `.cds`, `.json`, or `.js` files, the server automatically restarts to serve the new content.
@@ -156,6 +157,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
     cds serve all --with-mocks --in-memory?
     watching: cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env,css,gif,html,jpg,png,svg...
     live reload enabled for browsers
+            _______________________
 
 
         No models found in db/,srv/,app/,schema,services.
@@ -217,13 +219,14 @@ After initializing the project, you should see the following empty folders:
     ```Shell/Bash
     [cds] - connect using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
+     > init from ./db/csv/my.bookshop-Authors.csv
     /> successfully deployed to sqlite in-memory db
 
-    [cds] - serving CatalogService { at: '/catalog' }
+    [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
     [cds] - server listening on { url: 'http://localhost:4004' }
-    [cds] - launched in: 1.043s
-    [ terminate with ^C ]
+    [cds] - launched at 18/05/2022, 19:49:32, in: 874.456ms
+    [cds] - [ terminate with ^C ]
     ```
     > This means, `cds watch` detected the changes in `srv/cat-service.cds` and automatically bootstrapped an in-memory SQLite database when restarting the server process.
 
@@ -364,14 +367,14 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
     ```Shell/Bash
     [cds] - connect using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
-     > filling my.bookshop.Authors from ./db/csv/my.bookshop-Authors.csv
+     > init from ./db/csv/my.bookshop-Books.csv
     /> successfully deployed to sqlite in-memory db
 
     [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
     [cds] - server listening on { url: 'http://localhost:4004' }
-    [cds] - launched in: 643.33ms
-    [ terminate with ^C ]
+    [cds] - launched at 18/05/2022, 19:49:47, in: 861.036ms
+    [cds] - [ terminate with ^C ]
     ```
 
 3. Remove the code with mock data in `cat-service.js`, because you want to see the data loaded from the `csv` files.
@@ -436,12 +439,12 @@ Instead of using in-memory, you can also use persistent databases.
 
     ```Shell/Bash
     [cds] - connect using bindings from: { registry: '~/.cds-services.json' }
-    [cds] - connect to db > sqlite { database: '/Users/xxxxxxx/my-bookshop/db/my-bookshop.db' }
+    [cds] - connect to db > sqlite { url: 'sqlite.db', database: 'db/my-bookshop.db' }
     [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
     [cds] - server listening on { url: 'http://localhost:4004' }
-    [cds] - launched in: 693.219ms
-    [ terminate with ^C ]
+    [cds] - launched at 18/05/2022, 19:54:53, in: 830.398ms
+    [cds] - [ terminate with ^C ]
     ```
 
 [DONE]

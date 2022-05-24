@@ -26,7 +26,6 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
-
 Mobile Development Kit allows you to consume REST APIs. You need to first define REST endpoint as a destination and then easily bind a `RestServiceTarget` to an MDK control e.g., `ObjectTable`, `ContactCell`, `ObjectCollection` etc. This assumes the REST service returns JSON similar to how OData requests are returned.
 
 A publicly available `Petstore` API from [swagger.io](https://petstore.swagger.io) is used as an example in this tutorial.
@@ -59,11 +58,11 @@ With above details, you will next configure an app in Mobile Services, add root 
 
 1. Navigate to [SAP Mobile Services cockpit on Cloud Foundry environment](fiori-ios-hcpms-setup).
 
-2. On the home screen, select **Create new app**.
+2. On the home screen, select **Create new app** or navigate to **Mobile Applications** **&rarr;** **Native/MDK** **&rarr;** **New**.
 
     !![MDK](img-2.2.png)
 
-3. In **Basic Info** step, provide the required information and click **Next**.
+3. In the **Basic Info** step, provide the required information and click **Next**.
 
     | Field | Value |
     |----|----|
@@ -72,9 +71,15 @@ With above details, you will next configure an app in Mobile Services, add root 
 
     !![MDK](img-2.3.png)
 
+    > If you are configuring this app in a trial account, make sure to select **License Type** as *lite*.
+
     >Other fields are optional. For more information about these fields, see [Creating Applications](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/admin/manage.html#creating-applications) in the help documentation.
 
-4. Select **Mobile Development Kit Application** from the dropdown and Click **Finish**.
+4. In the **XSUAA Settings** step, continue with the default settings and click **Next** to navigate to further steps.
+
+    !![MDK](img-2.3.1.png)
+
+4. In the **Assign Features** step, choose **Mobile Development Kit Application** from the dropdown and Click **Finish**.
 
     !![MDK](img_2.4.png)
 
@@ -106,7 +111,7 @@ With above details, you will next configure an app in Mobile Services, add root 
 
     !![MDK](img-2.8.0.png)
 
-2. Navigate to ![Connectivity](icon-connectivity.png) **Connectivity** **&rarr;** **Destinations** to create a BTP destination, click **Import Destination** to import the extracted file and click **Save**.
+2. Navigate to **Connectivity** **&rarr;** **Destinations** to create a BTP destination, click **Import Destination** to import the extracted file and click **Save**.
 
     !![MDK](img-2.8.png)
 
@@ -136,6 +141,7 @@ With above details, you will next configure an app in Mobile Services, add root 
     | `Your Project Name` | `MDK_Petstore` |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
 
     !![MDK](img-3.4.png)
 
@@ -632,9 +638,5 @@ You have created a new record consuming REST API. Similarly, you can also modify
 
 [VALIDATE_2]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully consumed the REST API in your MDK app and you can continue with the remaining tutorials in this mission.
 
 ---

@@ -3,12 +3,14 @@ title: Display Data from the Northwind Service
 description: Learn how to add new views, to display more data, and how to navigate between them.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, programming-tool>sapui5, products>sap-launchpad-service, products>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
+tags: [ tutorial>beginner, programming-tool>sapui5, software-product>sap-launchpad-service, software-product>sap-fiori, topic>user-interface, programming-tool>html5, topic>cloud, tutorial>free-tier]
 primary_tag: programming-tool>odata
 author_name: Nico Geburek
 author_profile: https://github.com/nicogeburek
-
 ---
+
+## Prerequisites
+- You have previously created a SAPUI5 based project, e.g. with the [easy-ui5 generator](sapui5-fiori-cf-create-project).
 
 ## Details
 ### You will learn
@@ -60,7 +62,7 @@ As you can see in the log, there are two new files and one modified file. As the
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Enable routing)]
 
-1. The `webapp/view/Mainview.view.xml` will be the outer container of the application. Therefore, **remove** the entire content (nested tags) of the `<Shell>` tag and replace it with the below `<App>` tag.
+1. The `webapp/view/MainView.view.xml` will be the outer container of the application. Therefore, **remove** the entire content (nested tags) of the `<Shell>` tag and replace it with the below `<App>` tag.
 
     ```XML [5]
     <mvc:View controllerName="tutorial.products.controller.MainView"
@@ -70,9 +72,10 @@ As you can see in the log, there are two new files and one modified file. As the
         <App id="app" />
     </mvc:View>
     ```
+
     !![mainview](mainview.png)
 
-2. The newly generated view `webapp/view/Mainview.view.xml` defines one page of the whole application. **Replace** the current content of the view, the `<App>` tag, with a page that contains one list that uses an [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html).
+2. The newly generated view `webapp/view/Products.view.xml` defines one page of the whole application. **Replace** the current content of the view, the `<App>` tag, with a page that contains one list that uses an [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html).
 
     ```XML [4-10]
     <mvc:View controllerName="tutorial.products.controller.Products" displayBlock="true"
@@ -88,6 +91,7 @@ As you can see in the log, there are two new files and one modified file. As the
     </mvc:View>
     ```
 
+
 You'll immediately be able to see that the `MainView` embeds the `Products` view and displays an empty list. The list is still empty, because there is not data source bound to the application yet.
 
 
@@ -97,7 +101,7 @@ You'll immediately be able to see that the `MainView` embeds the `Products` view
 
 To populate the list with items, bind a data source to the application. For this, there exists another sub-generator:
 
-> You can find a list of all available sub-generator on [GitHub](https://github.com/SAP/generator-easy-ui5/#sub-generators-to-avoid-recurring-tasks)
+> You can find a list of all available sub-generators on [GitHub](https://github.com/SAP/generator-easy-ui5/#sub-generators-to-avoid-recurring-tasks).
 
 ```Terminal
 yo easy-ui5 project newmodel
@@ -146,7 +150,7 @@ Again, please accept the modification of the manifest file.
 
     ```
 
-2. You already created a destination named Northwind in Cloud Foundry environment of SAP BTP. Now it's time to add a mocked destination to your local setup as well.
+2. You already created a destination named "Northwind" in Cloud Foundry environment of SAP BTP. Now it's time to add a mocked destination to your local setup as well.
 
     **Replace** the empty array of the property `destinations` in the `uimodule/ui5.yaml` file to declare the local destination.
 
