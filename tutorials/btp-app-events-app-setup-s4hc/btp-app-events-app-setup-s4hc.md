@@ -268,7 +268,7 @@ Now simulate locally business partner creation and update, and see the results:
 
       !![New Status Column](status_column.png)
 
-    > See section [Implement Roles and Authorization Checks In CAP](btp-app-cap-roles) to learn more about authentication and role restrictions in CAP.
+    > See tutorial [Implement Roles and Authorization Checks In CAP](btp-app-cap-roles) to learn more about authentication and role restrictions in CAP.
 
 3. With `cds watch` running, open another terminal and execute the following command to locally simulate a business partner creation event:
 
