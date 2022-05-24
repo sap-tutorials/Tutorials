@@ -190,7 +190,7 @@ Now, let's create a user in your SAP S/4HANA system and assign the required auth
 
 22.    Choose **System** &rarr; **Log Off** from the menu.
 
-23.    Log in to your SAP S/4HANA system using your newly created technical user (CPAPP) and the password you generated in sub-step 2.5 of section [Create a technical user](#create-a-technical-user). Change the initial password when prompted.
+23.    Log in to your SAP S/4HANA system using your newly created technical user (CPAPP) and the password you generated in sub-step 2.5 [Create a technical user](#create-a-technical-user). Change the initial password when prompted.
 
     > For the purposes of the tutorial, we're going to set the password to `Welcome1`. You can set your own password, but make sure you note it because you'll need it in the upcoming tutorials.
 
