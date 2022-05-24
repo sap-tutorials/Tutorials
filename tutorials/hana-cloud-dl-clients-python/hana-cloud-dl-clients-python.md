@@ -80,9 +80,9 @@ The `sqlanydb` package is the python driver for the data lake Relational Engine 
 
     This should create additional build directories in the current folder.
 
-2. On Microsoft Windows, set the environment variable `SQLANY_API_DLL`.
+2. On Microsoft Windows, create a user environment variable named `SQLANY_API_DLL` and set it to `%IQDIR17%\Bin64\dbcapi.dll`.
 
-    Navigate to your system environment variables and set `SQLANY_API_DLL=%IQDIR17%\Bin64\dbcapi.dll`.
+    ![add a variable named SQLANY_API_DLL](add-variable.png)
 
 [DONE]
 [ACCORDION-END]
