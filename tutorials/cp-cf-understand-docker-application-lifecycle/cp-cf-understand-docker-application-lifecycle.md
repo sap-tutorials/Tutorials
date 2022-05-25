@@ -31,7 +31,7 @@ When you push an application to Cloud Foundry (`cf push`), it uses a [buildpack]
 
   2. Access to the registry is also required when the application needs to be re-staged or restarted. If the registry is not accessible, these operations will fail. For this reason it is required to re-push your application if the credentials for a private container registry change.
 
-  3. Additionally, when you use a buildpack, your main concern is your application code. The buildpack takes care of the work of downloading dependencies, compiling code, and creating a droplet from which your application can run. However, when using a docker image, you have to do all this yourself (set up the image, define dependencies, provide settings the image/app needs to start, etc.)
+  3. Additionally, when you use a buildpack, your main concern is your application code. The buildpack takes care of the work of downloading dependencies, compiling code, and creating a droplet from which your application can run. However, when using a Docker image, you have to do all this yourself (set up the image, define dependencies, provide settings the image/app needs to start, etc.)
 
   4. Related to the above, buildpacks are generally maintained and updated by the Cloud Foundry community, but this is not the case for referenced Docker base images. Here you will need to keep track of security vulnerabilities and update the base images. If a base image is not maintained any more you will need to maintain your own base images. Moral of the story: don't take on more than you absolutely have to, but be certain you trust the source of all your base images and buildpacks.
 
@@ -41,7 +41,7 @@ When you push an application to Cloud Foundry (`cf push`), it uses a [buildpack]
 
 [ACCORDION-BEGIN [Step 2 ](Push a Docker based application)]
 
-To see how docker based applications work you will take the [cf-nodejs](https://github.com/SAP-archive/cf-sample-app-nodejs) application you deployed before and create a docker image of it, which you will then deploy. To do this, the first thing you need to do is create a `Dockerfile` in the same directory as your application files. The path to the `Dockerfile` should be `<path-to-cf-sample-app-nodejs>/Dockerfile` Once the file is created, open the `Dockerfile` with your favorite editor, and add the following (lines beginning with `#` are comments explaining what the line below it does):
+To see how Docker based applications work you will take the [cf-nodejs](https://github.com/SAP-archive/cf-sample-app-nodejs) application you deployed before and create a Docker image of it, which you will then deploy. To do this, the first thing you need to do is create a `Dockerfile` in the same directory as your application files. The path to the `Dockerfile` should be `<path-to-cf-sample-app-nodejs>/Dockerfile` Once the file is created, open the `Dockerfile` with your favorite editor, and add the following (lines beginning with `#` are comments explaining what the line below it does):
 
 ```
 # specify the node base image with your desired version node:<version>
@@ -58,9 +58,9 @@ COPY . .
 CMD [ "node", "server.js" ]
 ```
 
-In the above code we begin with the official Node image from Docker. We then proceed to add onto this base image, adding files, downloading dependencies, and providing the start command for the `cf-nodejs` app. Make sure to save the file once you have added the code above. Once that is done you then need to tell Docker to build your image. Run the following command (the `username` is your `Dockerhub` username and some commands may require you to enter your `Dockerhub` password):
+The code above begins with the official Node image from Docker. We then proceed to add onto this base image, adding files, downloading dependencies, and providing the start command for the `cf-nodejs` app. Make sure to save the file once you have added the code above. Once that is done you then need to tell Docker to build your image. Run the following command (the `username` is your `Dockerhub` username and some commands may require you to enter your `Dockerhub` password):
 
-```
+```Bash
 cd <path-to-cf-sample-app-nodejs>
 docker build -t <username>/cf-nodejs-app .
 ```
@@ -71,7 +71,7 @@ You should see output similar to the following:
 
 Now that the image is built, you need to push it to a repository on `Dockerhub`. Running the following commands, a repository will be created for your user called `cf-nodejs-app` and your image will be uploaded to it:
 
-```
+```Bash
 docker login -u <docker-id>
 docker push <username>/cf-nodejs-app
 ```
@@ -80,7 +80,7 @@ docker push <username>/cf-nodejs-app
 
 Finally, once the image has been uploaded, you can push the image to Cloud Foundry (you can replace the name `docker-nodejs` with whatever you want to name your application).
 
-```
+```Bash
 cf push docker-nodejs --docker-image <username>/cf-nodejs-app:latest --docker-username <username>
 ```
 
@@ -88,11 +88,11 @@ cf push docker-nodejs --docker-image <username>/cf-nodejs-app:latest --docker-us
 
 Finally, once the application has started you should be able to access the app through a browser and see the same output as when you ran the `cf-nodejs` app using a buildpack. You can also validate that your application is actually using the docker image by running:
 
-```
+```Bash
 cf app docker-nodejs
 ```
 
-You should then see the `docker image` field with the name your docker image next to it, similar to the output below.
+You should then see the `docker image` field with the name your Docker image next to it, similar to the output below.
 
 !![Link text e.g., Destination screen](docker-image.png)
 
