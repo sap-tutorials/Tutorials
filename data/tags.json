@@ -335,6 +335,9 @@
             "name": "SAP Work Zone",
             "value": "software-product>sap-work-zone"
         }, {
+            "name": "UI SAP Business Client (NWBC)",
+            "value": "software-product>ui-sap-business-client--nwbc-"
+        }, {
             "name": "License Required",
             "value": "tutorial>license"
         }, {
