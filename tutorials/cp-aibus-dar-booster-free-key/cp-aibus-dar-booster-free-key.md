@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to access your SAP BTP account
   - What are interactive guided boosters
-  - How to use the **Set up account for Data Attribute Recommendation** booster to assign entitlements, update your subaccount, create a service instance and the associated service key for Data Attribute Recommendation.
+  - How to use the **Set up account for Data Attribute Recommendation** booster to assign entitlements, update your subaccount (or create a new one), create a service instance and the associated service key for Data Attribute Recommendation
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Go to your SAP BTP account)]

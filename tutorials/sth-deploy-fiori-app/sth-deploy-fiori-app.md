@@ -1,27 +1,27 @@
 ---
 author_name: Beatrice Pasch
 author_profile: https://github.com/beapasch
-title: Deploy an SAP Fiori App to SAP Cloud Platform
-description: Deploy an SAP Fiori app by committing and pushing it to the Git repository in your account on SAP Cloud Platform.
+title: Deploy an SAP Fiori App to SAP BTP
+description: Deploy an SAP Fiori app by committing and pushing it to the Git repository in your account on SAP BTP.
 auto_validation: true
-primary_tag: products>sap-translation-hub
-tags: [ tutorial>intermediate, products>sap-cloud-platform, products>sap-web-ide, products>sap-translation-hub, tutorial>license ]
+primary_tag: software-product>sap-translation-hub
+tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, software-product>sap-web-ide, software-product>sap-translation-hub, tutorial>license ]
 time: 10
 ---
 
 ## Prerequisites  
-  - **IMPORTANT:**: This tutorial cannot be completed on a trial account.
+  - **IMPORTANT:** This tutorial cannot be completed on a trial account.
 
 ## Details
 ### You will learn  
-  - How to create a Git repository on SAP Cloud Platform and synchronize your project in SAP Web IDE with the Git repository on SAP Cloud Platform
+  - How to create a Git repository on SAP BTP and synchronize your project in SAP Web IDE with the Git repository on SAP BTP
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open overview screen of cockpit)]
 
-To go to the overview screen of the SAP Cloud Platform cockpit, choose your user ID at the top of the screen.
-![User ID in SAP Cloud Platform cockpit](sth-deploy-fiori-app-account-overview.png)
+To go to the overview screen of the SAP BTP cockpit, choose your user ID at the top of the screen.
+![User ID in SAP BTP cockpit](sth-deploy-fiori-app-account-overview.png)
 
 [DONE]
 
@@ -87,7 +87,7 @@ Choose **Set Remote** in the alert.
 
 In the **Configure Git Repository** dialog box, paste the **repository URL** that you copied in step 3 in the URL field by choosing Ctrl + V. Leave the **Add configuration for Gerrit** checkbox deselected and then choose **OK**.
 
-This will initialize your local repository and link it to the Git repository on SAP Cloud Platform.
+This will initialize your local repository and link it to the Git repository on SAP BTP.
 ![Initialize with remote git URL](sth-link-remote-repository.png)
 
 When the **Changes Fetched** dialog box opens, choose **OK**.
@@ -176,20 +176,20 @@ You'll also see the decorations change to green dots, which indicate that the fi
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Start the deployment to SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step 14: ](Start the deployment to SAP BTP)]
 
 Now it's time to deploy your app.
-Right-click the root folder, `sample.shop`, and choose **Deploy | Deploy to SAP Cloud Platform**.
+Right-click the root folder, `sample.shop`, and choose **Deploy | Deploy to SAP BTP**.
 
-![deploy to SAP Cloud Platformmenu](sth-deploy.png)
+![deploy to SAP BTP menu](sth-deploy.png)
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Finalize the deployment to SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step 15: ](Finalize the deployment to SAP BTP)]
 
-In the **Deploy Application to SAP Cloud Platform** dialog box, confirm that the **Deploy a new application** and **Activate** checkboxes are selected. Then choose **Deploy**.
+In the **Deploy Application to SAP BTP** dialog box, confirm that the **Deploy a new application** and **Activate** checkboxes are selected. Then choose **Deploy**.
 
 ![deploy app options](sth-deploy-popup.png)
 

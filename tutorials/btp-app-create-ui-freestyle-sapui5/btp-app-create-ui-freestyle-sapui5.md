@@ -28,7 +28,7 @@ To start with this tutorial use the result in the [`cap-business-logic`](https:/
 ---
 
 [ACCORDION-BEGIN [Step 1: ](SAP Fiori elements application vs. freestyle UI5 application)]
-What is the difference to an SAP Fiori elements based application that you have already built in the [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements) section? As mentioned, both the freestyle app and the SAP Fiori elements app are based on SAPUI5.
+What is the difference to an SAP Fiori elements based application that you have already built in the tutorial [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)? As mentioned, both the freestyle app and the SAP Fiori elements app are based on SAPUI5.
 
 An SAP Fiori elements app can be thought of like a giant player built with SAPUI5 where most of the code resides outside your own development project in central components. Much of its logic comes out of the box and is controlled by metadata from your OData service.
 
