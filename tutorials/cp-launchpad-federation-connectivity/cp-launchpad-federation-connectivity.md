@@ -223,7 +223,7 @@ The runtime destination is used to launch federated applications at runtime.
 
 2. Change the **Name** of the new destination to **`s4hanart`**.
 
-3. Remove the part after the port from the **URL**.
+3. Change the **URL** to **`http://s4hana:44300`** .
 
 4. Enter the password again.
 
