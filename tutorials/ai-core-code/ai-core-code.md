@@ -257,7 +257,7 @@ print(response.__dict__)
 
 [ACCORDION-BEGIN [Step 8: ](Reference a Docker image in your AI workflow)]
 
-This step requires the GitHub folder that you synced in [this tutorial](https://developers-qa.sap.com/tutorials/ai-launchpad-github-setup.html). In this folder, create another YAML file called `code-pipeline.yaml`. (This filename is not used as an identifier within SAP AI Core.)
+This step requires the GitHub folder that you synced in [this tutorial](https://developers.sap.com/tutorials/ai-core-helloworld.html/#). In this folder, create another YAML file called `code-pipeline.yaml`. (This filename is not used as an identifier within SAP AI Core.)
 
 !![image](img/file-new.png)
 
@@ -328,7 +328,7 @@ Under scenarios, you will also see a scenario named `Code (Tutorial)`.
 
 [OPTION BEGIN [Postman]]
 
-Click though **Collections** > GET Returns the ArgoCD application status.
+Click though **Collections** > GET Returns the `ArgoCD` application status.
 
 !![image](img/postman/status.png)
 
@@ -347,7 +347,7 @@ Click though **Collections** > GET Returns the ArgoCD application status.
 
 List all available scenarios by clicking through **Collections** > **Scenarios** > GET get list of scenarios.
 
-!![image](img/ail/listscenarios.png)
+!![image](img/postman/listscenarios.png)
 
 **Response**
 
@@ -494,7 +494,7 @@ After a while, the status will show as **DEAD**.
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-Creat a configuration using the following code snippet:
+Create a configuration using the following code snippet:
 
 ```PYTHON
 # Create configuration
