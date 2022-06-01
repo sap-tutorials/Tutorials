@@ -3,7 +3,7 @@ title: Get an Account on SAP BTP to Try Out Free Tier Service Plans
 description: Sign up for a productive account on SAP Business Technology Platform and try out SAP's services with free tier service plans.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-business-technology-platform; freetierservices]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform; freetierservices]
 primary_tag: software-product-function>sap-btp-cockpit
 ---
 
