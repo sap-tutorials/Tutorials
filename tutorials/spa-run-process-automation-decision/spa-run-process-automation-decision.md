@@ -2,7 +2,7 @@
 author_name: Céline Audin
 author_profile: https://github.com/celineaudinsap
 title: Run the Process with an Automation
-description: Run the Business Process with an Automation
+description: Run the business process with a full monitoring of the workflow instances and automation jobs
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, software-product>sap-business-technology-platform, tutorial>free-tier]
@@ -24,7 +24,7 @@ primary_tag: software-product>sap-process-automation
   - How to gain visibility into the Business Process
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Release and deploy the Business process)]
+[ACCORDION-BEGIN [Step 1: ](Release and deploy the business process)]
 
 You must first release and then deploy the business process project in order to run the process.
 
@@ -36,7 +36,7 @@ You must first release and then deploy the business process project in order to 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 1: ](Run the Business Process)]
+[ACCORDION-BEGIN [Step 2: ](Run the business process)]
 
 You will now run the process and learn how to monitor the process and work on the tasks. You have released and deployed the business process project.
 
@@ -67,7 +67,7 @@ You will now run the process and learn how to monitor the process and work on th
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Work on the Tasks)]
+[ACCORDION-BEGIN [Step 3: ](Work on the tasks)]
 
 Tasks are requests for users to participate in an approval or review process. These tasks appear in the **My Inbox** application shipped with SAP Process Automation. Users can claim, approve, and/or reject the task from their inbox.
 
@@ -90,7 +90,7 @@ Tasks are requests for users to participate in an approval or review process. Th
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Monitor Process and Automation)]
+[ACCORDION-BEGIN [Step 4: ](Monitor process and automation)]
 
 Monitoring business processes is one of the key aspects of successful automation. Using monitoring capabilities, you can proactively and consistently monitor process performance, identify any issues in the process and take necessary actions to ensure business process continuity.
 
@@ -133,7 +133,7 @@ SAP Process Automation provides different applications for monitoring and managi
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Gain Visibility into the Business Process )]
+[ACCORDION-BEGIN [Step 5: ](Gain visibility into the business process)]
 
 You will need to configure your launchpad service. To do so, please [Configure your Launchpad](spa-configure-launchpad)
 
