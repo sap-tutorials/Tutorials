@@ -3,8 +3,8 @@ title: Send and Receive Test SAP Event Mesh
 description: Test send and receive of message with REST protocol using the Postman tool for a SAP Event Mesh instance.   
 time: 15
 auto_validation: true
-tags: [ tutorial>beginner, topic>cloud, tutorial>license]
-primary_tag: products>sap-event-mesh
+tags: [ tutorial>beginner, topic>cloud, software-product>technology-platform>sap-business-technology-platform, tutorial>license]
+primary_tag: software-product>sap-event-mesh
 ---
 
 ## Prerequisites

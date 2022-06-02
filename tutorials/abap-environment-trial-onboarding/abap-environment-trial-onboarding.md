@@ -129,8 +129,64 @@ Open Eclipse. Make sure you have installed ADT in your Eclipse. Find [here](abap
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Alternative 2: Create ABAP cloud project)]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+You can also create your ABAP cloud project with a service key. For that, follow the instruction:
+
+  1. Log in to [SAP BTP trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+
+  2. Select your **trial** subaccount.
+
+      ![Create ABAP cloud project](keytrial.png)
+
+  3. Click **Instances and Subscriptions**.
+
+      ![Create ABAP cloud project](keytrial2.png)
+
+  4. Select **Instances**, navigate to **`default_abap-trial`** and select the arrow on the right side.
+
+      ![Create ABAP cloud project](keytrial3.png)
+
+  5. Select **Service Key**, the menu and click **Download**.
+
+      ![Create ABAP cloud project](keytrial4.png)
+
+      Now your service key gets downloaded. You can use it in the next steps.
+
+  6. Switch to Eclipse and select **File** > **New** > **Other** > **ABAP Cloud Project** and click **Next >**.
+
+      ![Create ABAP cloud project](cloud.png)
+
+  7. Select **Use a Service Key** and click **Next >**.
+
+      ![Create ABAP cloud project](key5.png)
+
+  8. Paste your service key and click **Next >**.
+
+      ![Create ABAP cloud project](key6.png)
+
+  9. Click **Open Logon Page in Browser**.
+
+      ![Create ABAP cloud project](key7.png)
+
+ 10. Now you've been authenticated automatically. Provide your credentials if requested. The credentials are the same you used to create your trial account on SAP BTP.
+
+     Go back to ADT.
+
+      ![Create ABAP cloud project](project52.png)
+
+      Click **Finish**.
+
+
+  7. Your trial system appears on the project explorer.
+
+      ![Create ABAP cloud project](project62.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]

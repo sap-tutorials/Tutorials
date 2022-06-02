@@ -3,7 +3,7 @@ title: Create Resource Group and Connect AWS S3 to SAP AI Core (Postman)
 description: Learn creation of resource group in SAP AI Core to enable multi-tenancy. Store datasets to AWS S3 and connect to SAP AI Core through Postman client.
 auto_validation: true
 time: 15
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform, software-product>sap-ai-core ]
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
 primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
@@ -119,6 +119,7 @@ Follow the below steps for creating a path prefix through AWS CLI:
 
 [ACCORDION-BEGIN [Step 4: ](Upload dataset to AWS S3 Object Store)]
 
+> **DISCLAIMER:** The following data is sample data. It has been created only for this tutorial. It is not to be circulated or used for any commercial production projects or for experimentation other than the tutorial for SAP AI Core.
 
 | File   | Link |
 |  :------------- | :------------- |

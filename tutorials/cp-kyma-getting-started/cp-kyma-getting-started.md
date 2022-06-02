@@ -50,6 +50,10 @@ To open the Kyma runtime console UI, click on **Link to Dashboard** under the **
 
 The Kyma Dashboard should open in a new Browser Tab.
 
+The dashboard or Kyma console UI is your graphical playground for managing and deploying applications or services on the Kyma runtime. With the dashboard you can not only deploy or delete deployments but also manage them for scale, expose them over self-defined API Rules and much more.
+
+To learn more about the capabilities and features of the SAP BTP, Kyma runtime, follow the Kyma tutorials, blog posts, read the documentation or check out the YouTube videos. If you aren't aware, there is also a [Kyma slack channel](https://kyma-community.slack.com/) where you can ask questions to the active community.
+
 !![Kyma Free Tier](cp-kyma-getting-started-05.png)
 
 [VALIDATE_4]

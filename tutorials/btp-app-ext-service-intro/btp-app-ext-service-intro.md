@@ -1,7 +1,7 @@
 ---
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Introduction to Consuming Remote Services using CAP
+title: Introduction to Consuming Remote Services Using CAP
 description: Learn about external service APIs, how to get an API definition from the SAP API Business Hub, and how to import an API definition to your project.
 keywords: cap
 auto_validation: true
@@ -36,6 +36,12 @@ The tutorials cover a variety of topics and the tasks are bundled in step-by-ste
 - Consume the External Service in Your UI Application
 - Register Your SAP S/4HANA Cloud System
 - Use Your SAP S/4HANA Cloud Service
+
+!![Solution Overview](solution_overview.png)
+
+> You can also have a look at the [demo](https://youtu.be/OQVUkCs7mzY?t=1819) presented during the SAP Community Call focusing on CAP.
+
+
 
 [DONE]
 [ACCORDION-END]

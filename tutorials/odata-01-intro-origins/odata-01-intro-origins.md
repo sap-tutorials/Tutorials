@@ -4,8 +4,8 @@ author_profile: https://github.com/qmacro
 title: Learn about OData Fundamentals
 description: Discover OData's origins and learn about the fundamentals of OData by exploring a public OData service.
 auto_validation: false
-primary_tag: products>sap-cloud-platform
-tags: [ products>sap-cloud-platform, topic>cloud, topic>odata, tutorial>beginner ]
+primary_tag: software-product>sap-business-technology-platform
+tags: [ software-product>sap-business-technology-platform, topic>cloud, programming-tool>odata, tutorial>beginner ]
 time: 15
 ---
 
@@ -33,49 +33,60 @@ The origin of OData's format comes from the world of weblogs, blogging and syndi
 
 > RSS is also known as "RDF Site Summary" or "Really Simple Syndication".
 
-Look at an example of the RSS representation of blog posts - in particular, the posts tagged **ABAP Development** with this URL:
+Let's look at an example of RSS. The National Aeronautics and Space Administration (NASA) maintains many RSS feeds, and you can see a list of them on the [NASA RSS Feeds](https://www.nasa.gov/content/nasa-rss-feeds) page. Go there now and select the [Breaking News](https://www.nasa.gov/rss/dyn/breaking_news.rss) feed which is at this URL:
 
-<https://blogs.sap.com/tags/833755570260738661924709785639136/>
+<https://www.nasa.gov/rss/dyn/breaking_news.rss>
 
-and select the **RSS** link as shown in the screenshot.
-
-![RSS link on page of blog posts](blogposts-with-abap-development-tag.png)
-
-
-The resulting RSS content of this resource should look something like this:
+The resulting RSS content of this resource should look something like this (reduced here for brevity):
 
 ```xml
-<feed xmlns="http://www.w3.org/2005/Atom">
-<title>Latest blog posts for ABAP Development</title>
-<link rel="alternate" type="text/html" href="https://community.sap.com/"/>
-<id>https://community.sap.com/</id>
-<rights>© 2018 SAP SE https://www.sap.com/about/legal/copyright.html</rights>
-<logo>https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg</logo>
-<updated>2021-01-26T18:59:22Z</updated>
-<entry>
-<title>Getting Started with ABAP in 2021</title>
-<link rel="alternate" href="https://blogs.sap.com/?p=1259056"/>
-<category term="ABAP Development"/>
-<category term="#ABAP"/>
-<category term="#CDS"/>
-<category term="ABAP Beginner"/>
-<category term="abap beginners guide"/>
-<category term="beginner guide to HANA"/>
-<category term="Core Data Services (CDS)"/>
-<category term="Virtual Data Model"/>
-<author>
-<name>Markus Haug</name>
-</author>
-<id>https://blogs.sap.com/?p=1259056</id>
-<updated>2021-01-26T18:59:22Z</updated>
-<published>2021-01-26T18:59:22Z</published>
-<summary type="text">Whether you are new to ABAP or just want to learn something new this year, this blog post will give you an overview and a handful of helpful resources about all the new technologies in the ABAP cosmos. Not only the universe is expanding, but the ABAP world is also. ...</summary>
-</entry>
-...
-</feed>
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" version="2.0" xml:base="http://www.nasa.gov/">
+  <channel>
+    <title>NASA Breaking News</title>
+    <description>A RSS news feed containing the latest NASA news articles and press releases.</description>
+    <link>http://www.nasa.gov/</link>
+    <atom:link rel="self" href="http://www.nasa.gov/rss/dyn/breaking_news.rss"/>
+    <language>en-us</language>
+    <item>
+      <title>NASA Administrator to Visit Florida Students, Industry</title>
+      <link>http://www.nasa.gov/press-release/nasa-administrator-to-visit-florida-students-industry</link>
+      <description>NASA Administrator Bill Nelson will speak to elementary school students about the future of space exploration Monday, May 9, and tour a lab working on robotic construction technologies Tuesday, May 10, during a trip to Florida.</description>
+      <enclosure url="http://www.nasa.gov/sites/default/files/styles/1x1_cardfeed/public/thumbnails/image/nasa-logo-web-rgb_0.jpg?itok=mrBnB_c9" length="189751" type="image/jpeg"/>
+      <guid isPermaLink="false">http://www.nasa.gov/press-release/nasa-administrator-to-visit-florida-students-industry</guid>
+      <pubDate>Fri, 06 May 2022 11:13 EDT</pubDate>
+      <source url="http://www.nasa.gov/rss/dyn/breaking_news.rss">NASA Breaking News</source>
+      <dc:identifier>479411</dc:identifier>
+    </item>
+    <item>
+      <title>NASA, ESA Astronauts Safely Return to Earth</title>
+      <link>http://www.nasa.gov/press-release/nasa-esa-astronauts-safely-return-to-earth</link>
+      <description>NASA's SpaceX Crew-3 astronauts aboard the Dragon Endurance spacecraft safely splashed down Friday in the Gulf of Mexico off the coast of Florida, completing the agency's third long-duration commercial crew mission to the International Space Station.</description>
+      <enclosure url="http://www.nasa.gov/sites/default/files/styles/1x1_cardfeed/public/thumbnails/image/nhq202205060003.jpg?itok=nJXN4A_c" length="3817815" type="image/jpeg"/>
+      <guid isPermaLink="false">http://www.nasa.gov/press-release/nasa-esa-astronauts-safely-return-to-earth</guid>
+      <pubDate>Fri, 06 May 2022 01:04 EDT</pubDate>
+      <source url="http://www.nasa.gov/rss/dyn/breaking_news.rss">NASA Breaking News</source>
+      <dc:identifier>479399</dc:identifier>
+    </item>
+  </channel>
+</rss>
 ```
 
-Observe the structure of the XML document. It describes a `feed` that has some metadata such as title, id, logo and information as to when it was last updated. That `feed` contains one or more `entry` elements, each of them representing a post in the list tagged with "ABAP Development". Think of this like a document, with a header and items.
+Observe the structure of the XML document. Within the outermost `<rss>` element, it describes a `<channel>` that has some metadata such as title and description. That `<channel>` contains one or more `<item>` elements, each of them representing a breaking news item. 
+
+```
+rss
+  |
+  +-- channel
+        |
+        +-- item
+        |
+        +-- item
+        |
+        +-- ...
+```
+
+Think of this overall structure like a document, with a header and items.
 
 [VALIDATE_1]
 
@@ -258,4 +269,3 @@ Finally, use the OData system query option $count to retrieve the number of orde
 
 [VALIDATE_9]
 [ACCORDION-END]
-

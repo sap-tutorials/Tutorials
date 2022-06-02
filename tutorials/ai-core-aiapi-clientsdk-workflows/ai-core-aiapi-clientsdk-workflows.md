@@ -1,10 +1,10 @@
 ---
-title: Create Training and Serving Docker Images (Client SDK)
+title: Create Training and Serving Docker Images (AI API Client SDK)
 description: Build Docker images and orchestrate their execution with SAP AI Core.
 auto_validation: true
 time: 20
-tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-business-technology-platform ]
-primary_tag: topic>artificial-intelligence
+tags: [ tutorial>license, tutorial>advanced, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-core ]
+primary_tag: software-product>sap-ai-core
 author_name: Dhrubajyoti Paul
 author_profile: https://github.com/dhrubpaul
 ---
@@ -136,6 +136,23 @@ Download Files
 | `serving_workflow_tutorial.yaml` | [Download](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ai-core-aiapi-postman-workflows/files/workflows/serving_workflow_tutorial.yaml)
 
 !![workflows folder](img/build-ml/workflows.png)
+
+### Give unique ID to the workflows
+
+Edit `training_workflow_tutorial.yaml`. The key `metadata > name` is termed **executable ID** (highlighted in the image below). This executable ID is a unique identifier of your workflow not the file name of the workflow in SAP AI Core. The workflow's **Executable ID** needs to be unique across all the workflows (even from different GitHub repos) you sync with your SAP AI Core instance. Edit the value to some unique value
+
+```YAML
+...
+
+metadata:
+  name: text-clf-train-tutorial-772  # Executable ID (max length 64 lowercase-hypen-separated), please modify this to any value if you are not the only user of your SAP AI Core instance. Example: `text-clf-train-tutorial-1234`
+...
+```
+
+!![image](img/exec_id.png)
+
+
+Edit the `serving_workflow_tutorial.yaml` for the executable ID similarly.
 
 [DONE]
 [ACCORDION-END]

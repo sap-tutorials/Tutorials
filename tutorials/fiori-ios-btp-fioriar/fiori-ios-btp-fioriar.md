@@ -24,6 +24,8 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, software-product
 
 This tutorial is based on SwiftUI and will only reference to the use of `FioriAR` within a `UIKit` based app, hence the above mentioned prerequisites of setting up the SAP BTP SDK for iOS and downloading the SAP BTP SDK for iOS Assistant is optional. You can install the SDK and the assistant if you want to implement the app with `UIKit`.
 
+The project can be found in the SAP Samples on GitHub: [Mobile Augmented Reality GitHub](https://github.com/SAP-samples/mobile-augmented-reality)
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a New SwiftUI Xcode Project)]
@@ -205,10 +207,10 @@ This tutorial uses a number of `utils` used to do different type of tasks for yo
 
 1. Download the Swift Util files:
 
-    - [`AuthenticationParams`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/fiori-ios-btp-fioriar/AuthenticationParams.swift)
-    - [`FileManager+Extensions`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/fiori-ios-btp-fioriar/FileManager+Extensions.swift)
-    - [`SAPURLSession+Extension`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/fiori-ios-btp-fioriar/SAPURLSession+Extension.swift)
-    - [`UserDefaultsHandler`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/fiori-ios-btp-fioriar/UserDefaultsHandler.swift)
+    - [`AuthenticationParams`](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/fiori-ios-btp-fioriar/Utils/AuthenticationParams.swift)
+    - [`FileManager+Extensions`](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/fiori-ios-btp-fioriar/Utils/FileManager+Extensions.swift)
+    - [`SAPURLSession+Extension`](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/fiori-ios-btp-fioriar/Utils/SAPURLSession+Extension.swift)
+    - [`UserDefaultsHandler`](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/fiori-ios-btp-fioriar/Utils/UserDefaultsHandler.swift)
 
 2. Extract the files into your project folder and drag them into the File Navigator of Xcode.
 
@@ -522,7 +524,7 @@ As previously mentioned the AR scenes the user creates are being published to SA
 
     !![App Run AR](fiori-ios-btp-fioriar-ar-ios-03.png)
 
-    1.2 Add an image anchor. Download the [QR Code](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/fiori-ios-btp-fioriar/qrImage.png) code included but you can use anything you want as an image anchor e.g. a gaming controller.
+    1.2 Add an image anchor. Download the [QR Code](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/fiori-ios-btp-fioriar/Utils/qrImage.png) code included but you can use anything you want as an image anchor e.g. a gaming controller.
 
     !![App Run AR](fiori-ios-btp-fioriar-ar-ios-04.png)            
 

@@ -23,6 +23,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
+
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls by using `NativeScript` (TypeScript/JavaScript applicable for both Android and iOS)
 
 In this tutorial, you will create a Slider extension via `NativeScript` (in TypeScript language) which will be common for both device platforms.
@@ -870,8 +871,6 @@ Once you accept app update, you see Slider control.
 ![MDK](img_8.1.gif)
 
 [OPTION END]
-
-Congratulations, you have successfully created a Slider Custom Control in your MDK App Using Metadata Approach and you can continue with the remaining tutorials in this mission.
 
 [VALIDATE_4]
 [ACCORDION-END]
