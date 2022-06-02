@@ -438,57 +438,57 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
     ![result](select.png)
 
-For further information, see [CREATE TABLE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d58a5f75191014b2fe92141b7df228.html) and [INSERT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html).
+    For further information, see [CREATE TABLE Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d58a5f75191014b2fe92141b7df228.html) and [INSERT Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html).
 
 
-> ### Some Tips
+    > ### Some Tips
 
->Note that the identifiers such as table names are automatically upper cased unless they are within "".  
->
-```SQL
-SELECT * FROM HoTeL.RoOm;  --succeeds
-SELECT * FROM "HoTeL"."RoOm"; --fails
-SELECT * FROM "HOTEL"."ROOM"; --succeeds
-```
+    >Note that the identifiers such as table names are automatically upper cased unless they are within "".  
+    >
+    ```SQL
+    SELECT * FROM HoTeL.RoOm;  --succeeds
+    SELECT * FROM "HoTeL"."RoOm"; --fails
+    SELECT * FROM "HOTEL"."ROOM"; --succeeds
+    ```
 
->For further details, consult [Identifiers and case sensitivity](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209f5020751910148fd8fe88aa4d79d9.html?q=case#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
+    >For further details, consult [Identifiers and case sensitivity](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209f5020751910148fd8fe88aa4d79d9.html?q=case#loio209f5020751910148fd8fe88aa4d79d9__identifiers_case).
 
-> ---
+    > ---
 
->Should you wish to remove the contents of a table, the table itself, a schema or a user, the following statements can be executed.  Do not execute these now as `USER1` and the hotel data set will be used subsequently in this tutorial.  
+    >Should you wish to remove the contents of a table, the table itself, a schema or a user, the following statements can be executed.  Do not execute these now as `USER1` and the hotel data set will be used subsequently in this tutorial.  
 
->```SQL
-DELETE FROM HOTEL.CITY;
-DROP TABLE HOTEL.CITY;
-DROP SCHEMA HOTEL CASCADE;
-DROP USER USER1 CASCADE;
-```
+    >```SQL
+    DELETE FROM HOTEL.CITY;
+    DROP TABLE HOTEL.CITY;
+    DROP SCHEMA HOTEL CASCADE;
+    DROP USER USER1 CASCADE;
+    ```
 
-> ---
+    > ---
 
 
-> HDBSQL can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/6097e699826343d0879244185d680a0d.html) interactively, or non-interactively.  A few examples are shown below.
-> ```SQL
-> SELECT * FROM HOTEL.CUSTOMER; -- interactive
-> hdbsql -U USER1UserKey "SELECT * FROM HOTEL.CUSTOMER"; -- non-interactive
-> hdbsql -U USER1UserKey -I hotel.sql -- batch file
->```
+    > HDBSQL can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/6097e699826343d0879244185d680a0d.html) interactively, or non-interactively.  A few examples are shown below.
+    > ```SQL
+    > SELECT * FROM HOTEL.CUSTOMER; -- interactive
+    > hdbsql -U USER1UserKey "SELECT * FROM HOTEL.CUSTOMER"; -- non-interactive
+    > hdbsql -U USER1UserKey -I hotel.sql -- batch file
+    >```
 
-> ---
+    > ---
 
-> [Substitution variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  Given the following file:
+    > [Substitution variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  Given the following file:
 
-> ```SQL (find_customers.sql)
-> select * from HOTEL.CUSTOMER where FIRSTNAME LIKE '&nameParam'
-> ```
+    > ```SQL (find_customers.sql)
+    > select * from HOTEL.CUSTOMER where FIRSTNAME LIKE '&nameParam'
+    > ```
 
-> It could be called using:
+    > It could be called using:
 
-> ```Shell
-> hdbsql -A -U user1UserKey -V nameParam=J% -I sql.sql
-> ```
+    > ```Shell
+    > hdbsql -A -U user1UserKey -V nameParam=J% -I sql.sql
+    > ```
 
-> ![example of substitution parameters](subst.png)
+    > ![example of substitution parameters](subst.png)
 
 Congratulations! You have now created a user and some tables using HDBSQL.  This user will be used to connect and query the data in the following tutorials.
 

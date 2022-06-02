@@ -3,8 +3,8 @@ title: Refine the List Report with Additional Annotations
 description: Add more annotations to the list report to show additional columns and selection fields, implement a Value Help and configure the application to load data automatically.
 auto_validation: true
 time: 15
-tags: [products>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner, products>sap-fiori, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, products>sap-business-technology-platform]
-primary_tag: products>sap-fiori
+tags: [software-product>sap-fiori-elements, software-product>sap-fiori-tools, tutorial>beginner, software-product>sap-fiori, software-product>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-fiori
 ---
 
 ## Prerequisites
@@ -28,7 +28,7 @@ Open the `annotations.cds` file located in the `app` folder of your service.
 
 !![Annotation Cursor](t3-annotation-service-cds-file.PNG)
 
->There´s a second `annotations.cds` file below folder `app/incidents`. This file was created during the generation of the application and is not meant to be modified within this tutorial.
+>There's a second `annotations.cds` file below folder `app/incidents`. This file was created during the generation of the application and is not meant to be modified within this tutorial.
 
 The annotation `SelectionFields` defines the filter fields offered in the filter bar.
 
@@ -185,9 +185,9 @@ After saving and refreshing the application, you will see the column added to th
 
 In this step you will learn how to configure the application to load data automatically when started without the need of pressing the Go button.
 
-1. Open the context menu by right mouse click on the `webapp` folder and select **Show Page Map** to start the page map tool.
+1. From the Application Information page, click on the **`ListReport`** page
 
-    !![Annotation Cursor](t3-flexible-column-layout-show-page-map-small.PNG)
+!![Annotation Cursor](t3-open-list-report-page.png)
 
     Now you see the structure of your application containing the list report and the object page.
 

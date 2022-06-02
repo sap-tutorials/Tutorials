@@ -17,7 +17,6 @@ author_profile: https://github.com/jitendrakansal
 
 ![MDK](img_1.gif)
 
-
 [ACCORDION-BEGIN [Step 1: ](Create a validation message)]
 
 When allowing end-users to make updates to data, it is important to add validation rules to verify that they are entering valid information.
@@ -135,6 +134,7 @@ Deploy the updated application to your MDK client.
 
 [OPTION END]
 
+
 [OPTION BEGIN [iOS]]
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, click **OK**.
@@ -161,13 +161,12 @@ Deploy the updated application to your MDK client.
     !![MDK](img_5.4.png)
     !![MDK](img_5.5.png)
 
+
 [OPTION END]
+
+Once you complete this tutorial you can continue with [enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
 
 [VALIDATE_1]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully completed **create Your First MDK Application** mission and you are now all set to [enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
 
 ---

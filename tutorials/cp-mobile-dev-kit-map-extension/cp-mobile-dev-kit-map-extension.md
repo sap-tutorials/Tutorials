@@ -17,7 +17,6 @@ author_profile: https://github.com/jitendrakansal
 ## Details
 ### You will learn
   - How to register and consume an Extension control in MDK Metadata
-  - How to write an extension via `NativeScript`
   - How to build a Mobile development kit client for iOS and Android
   - How to connect to SAP Mobile application
 
@@ -46,6 +45,7 @@ This step includes creating the mobile development kit project in the editor.
 3. Select **MDK Project** and click **Next**.
 
     !![MDK](img-1.3.png)
+    
 
 4. In *Basic Information* step, provide the below information and click **Next**:
 
@@ -54,7 +54,8 @@ This step includes creating the mobile development kit project in the editor.
     | `MDK Template Type`| Select `List Detail` from the dropdown |
     | `Your Project Name` | `MDK_Maps` |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |    
-    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |    
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |  
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |  
 
     !![MDK](img-1.4.png)
 
@@ -196,7 +197,7 @@ You will add this registered control in the generated `Customers_Detail.page`.
 
     !![MDK](img-3.2.gif)
 
-  3. Drag & drop the registered `mdk_maps` control on the page area.
+  3. Expand **Section Registered Extension Control**, drag & drop the registered `mdk_maps` control on the page area.
 
     !![MDK](img_3.3.gif)
 
@@ -476,7 +477,7 @@ Since you will display the customer's address in Google Maps on Android device, 
 
     !![MDK](img_6.5.png)
 
-7. Copy this generated key and save it locally. This will be required in step 8.
+7. Copy this generated key and save it locally. This will be required in step 7.
 
 [DONE]
 [ACCORDION-END]
@@ -546,7 +547,6 @@ For Android, you will pass the API key to the MDK client, there is no way public
 
 In this step, you will run the app on an Android device.
 
-
 1. Attach the device to your Mac or Windows machine and run `tns device android` command to print a list of attached devices.
 
     !![MDK](img_8.5.png)
@@ -561,11 +561,11 @@ In this step, you will run the app on an Android device.
 
 4. Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
 
-    In Welcome screen, Tap **AGREE** on End User License Agreement.
+    In Welcome screen, Tap **Agree** on End User License Agreement.
 
     ![MDK](img-8.7.png)
 
-5. Tap **START** to connect MDK client to SAP Business Technology Platform (BTP).
+5. Tap **Start** to connect MDK client to SAP Business Technology Platform (BTP).
 
     ![MDK](img_8.8.png)
 
@@ -575,21 +575,23 @@ In this step, you will run the app on an Android device.
     ![MDK](img-8.9.1.png)    
 
 
-7. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
+7. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
     ![MDK](img-8.11.png)
 
-8. Confirm the passcode and tap **DONE**.
+8. Confirm the passcode and tap **Done**.
 
     ![MDK](img-8.12.png)
 
     Optionally, you can enable fingerprint to get faster access to the app data.
 
+    ![MDK](img-5.9.1.png)
+
 9. Tap **OK** to update the client with new MDK metadata.
 
     ![MDK](img-8.13.png)    
 
-10. Tap `CUSTOMERS` to navigate to customers list.
+10. Tap `Customers` to navigate to customers list.
 
     ![MDK](img-8.14.png)  
 
@@ -619,7 +621,7 @@ In this step, you will run the app on an Android device.
 
 2. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-3. Once you have accepted the app update, tap any of customer record to navigate to details page.
+3. Once you have accepted the app update, tap `Customers` to navigate to customers list and then tap any of customer record to navigate to details page.
 
     ![MDK](img-8.20.png)     
 
@@ -628,8 +630,6 @@ In this step, you will run the app on an Android device.
     ![MDK](img-8.21.png)  
 
 [OPTION END]
-
-Congratulations, you have extended Your MDK App With a Map Custom Control and you can continue with the remaining tutorials in this mission.
 
 [VALIDATE_4]
 [ACCORDION-END]

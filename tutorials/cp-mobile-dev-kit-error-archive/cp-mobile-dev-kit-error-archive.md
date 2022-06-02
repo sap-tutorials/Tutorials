@@ -21,6 +21,7 @@ author_profile: https://github.com/jitendrakansal
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/2-Handle-Error-Archive-in-an-MDK-App) and start directly with step 7 in this tutorial.
 
+
 ---
 
 You have built an MDK app with offline functionality. In offline store, you make a change to a local record and upload this change (from request queue) to backend but backend prevents this change to accept due to some business logic failure. This error is recorded in an Offline OData specific entity set named as `ErrorArchive`. This entity set has detailed information about the errors. It's now up-to developers how they handle such errors and then let users to fix it from the app by providing the correct values.
@@ -65,6 +66,7 @@ This step includes creating the mobile development kit project in the editor.
     | `Your Project Name` | `MDK_ErrorArchive` |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
 
     !![MDK](img-1.4.png)
 
@@ -554,25 +556,25 @@ The On-boarding QR code is now displayed.
 
     ![MDK](img_9.1.png)
 
-2. You will modify a `PURCHASEORDERHEADERS` record, save it locally, sync it to the backend and if backend doesn't accept this change due to some business logic failure, this record will appear in **Error Archive** list.
+2. You will modify a `PurchaseOrderHeaders` record, save it locally, sync it to the backend and if backend doesn't accept this change due to some business logic failure, this record will appear in **Error Archive** list.
 
-    Navigate to `PURCHASEORDERHEADERS` list, tap either one of the record.
+    Navigate to `PurchaseOrderHeaders` list, tap either one of the record.
 
     ![MDK](img_9.2.png)
 
     ![MDK](img_9.3.png)
 
-3. Tap edit icon. Make some changes to `CURRENCYCODE` value (update it to `EUROOO`) and **SAVE** it.
+3. Tap edit icon. Make some changes to `CurrencyCode` value (update it to `EUROOO`) and tap the save icon.
 
     ![MDK](img_9.4.png)
 
-    You will see **Entity Updated** toast message. You can always see this updated record reflecting in `PURCHASEORDERHEADERS` list which means offline store has accepted this change.
+    You will see **Entity Updated** toast message. You can always see this updated record reflecting in `PurchaseOrderHeaders` list which means offline store has accepted this change.
 
-4. Navigate to `Main.page`, click **SYNC** to upload local changes from device to the backend and to download the latest changes from backend to the device.
+4. Navigate to `Main.page`, click **Sync** to upload local changes from device to the backend and to download the latest changes from backend to the device.
 
     ![MDK](img_9.5.png)
 
-5. Once you see `Upload Successful` message, navigate to **ERROR ARCHIVE** list.
+5. Once you see `Upload Successful` message, navigate to **Error Archive** list.
 
     There you will find affected entity which couldn't get accepted by backend due to some business logic failure.
 
@@ -582,11 +584,11 @@ The On-boarding QR code is now displayed.
 
     ![MDK](img_9.7.1.png)
 
-    Here in **ERROR MESSAGE** you will see `SQLDatabaseException` and in **REQUEST BODY**, it shows the property that caused this failure.
+    Here in **Error Message** you will see `SQLDatabaseException` and in **REQUEST BODY**, it shows the property that caused this failure.
 
 7. Its now up-to developers how to handle such errors and let users to modify record with correct values.
 
-    In this tutorial, you have added a business logic to find out which is affected entity and how to navigate to respective record to let users to modify this record with correct values. Once done, user can again **SYNC** it with backend.
+    In this tutorial, you have added a business logic to find out which is affected entity and how to navigate to respective record to let users to modify this record with correct values. Once done, user can again **Sync** it with backend.
 
     Tap **Edit Affected Entity** and modify record with correct values.
 
@@ -650,9 +652,5 @@ The On-boarding QR code is now displayed.
 
 [VALIDATE_2]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully set up your app to handle Error Archive and you can continue with the remaining tutorials in this mission.
 
 ---

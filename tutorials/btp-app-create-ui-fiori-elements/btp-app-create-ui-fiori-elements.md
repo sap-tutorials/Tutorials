@@ -127,11 +127,15 @@ Let's say that at this point you'd like to edit some of the data or create a new
 
     !![Create Risk](createrisk.png)
 
-2. Try and fill in data in the main group fields `Mitigation`, `Priority`, and `Impact` and choose **Create**.
+2. To add a `Mitigation`, click on the value help icon in the input field, select a mitigation, and choose **OK**.
+
+    !![Add Mitigation](addmitigation.png)
+
+3. Try and fill in data in the main group fields `Priority` and `Impact` and choose **Create**.
 
     !![Fill Main Data](fillriskdata.png)
 
-3. The new risk is created but it has no title and it has no description.
+4. The new risk is created but it has no title and it has no description.
 
     !![No Title Risk](notitlerisk.png)
 
@@ -191,7 +195,7 @@ annotate RiskService.Risks with {
 
 It's referring to the definitions of the earlier `cds` file that exposes the service and its `Risks` and `Mitigations` entities. Then it annotates the `Risks` entity with a number of texts. These should be in a translatable file normally but for now we keep them here. These texts are used as labels in form fields and column headers by SAP Fiori elements.
 
-The following section is needed for the value help of the **Mitigation** field that is visible when you're editing the object page of the `Risks` app.
+The following section is needed for the value help of the **Mitigation** field that is visible when you are editing the object page of the `Risks` app.
 
 ```JavaScript
 annotate RiskService.Mitigations with {
@@ -228,7 +232,10 @@ annotate RiskService.Risks with @(
         SelectionFields: [prio],
         LineItem: [
             {Value: title},
-            {Value: miti_ID},
+            {
+                Value: miti_ID,
+                ![@HTML5.CssDefaults] : {width : '100%'}
+            },
             {
                 Value: prio,
                 Criticality: criticality

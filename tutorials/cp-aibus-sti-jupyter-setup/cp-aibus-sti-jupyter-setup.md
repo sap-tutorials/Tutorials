@@ -3,8 +3,10 @@ title: Set Up Jupyter Notebook for Service Ticket Intelligence
 description: Set up a local JupyterLab instance as well as the Jupyter Notebook for Service Ticket Intelligence.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>service-ticket-intelligence]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>service-ticket-intelligence, tutorial>free-tier]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 ## Details
@@ -30,7 +32,7 @@ To verify the installation, search for `Anaconda Prompt` in your programs and op
 
 [OPTION BEGIN [Mac and Linux]]
 
-To verify the installation, open a new Terminal or Command Prompt. In the command prompt, enter `conda --version` and the version is printed as in the image below.
+To verify the installation, open a new Terminal or Command Prompt. In the command prompt, enter `conda --version` and the version appears as in the image below.
 
 [OPTION END]
 
@@ -43,7 +45,7 @@ You have successfully installed Anaconda.
 
 [ACCORDION-BEGIN [Step 2: ](Clone the repository)]
 
-All you will need throughout the tutorial is within this [repository](https://github.com/SAP-samples/service-ticket-intelligence-jupyter-notebook) on GitHub. It includes two Jupyter notebooks, one for each of the use cases of Service Ticket Intelligence, as well as some dataset that can be used. In the following, you will clones this repository to your local computer.
+All you will need throughout the tutorial is within this [repository](https://github.com/SAP-samples/service-ticket-intelligence-jupyter-notebook) on GitHub. It includes three Jupyter notebooks, one for each of the use cases of Service Ticket Intelligence, as well as some dataset that can be used. Now, you will clone this repository to your local computer.
 
 [OPTION BEGIN [Windows]]
 
@@ -82,30 +84,31 @@ Next, enter the command `jupyter notebook` to start the server.
 
 ![Start Server](start-server.png)
 
-Once the server started, the site automatically opens in browser. In case it does not, you can use the URLs that were printed in the command prompt.
+Once the server started, the Jupyter notebook automatically opens in the browser. In case it does not, you can use one of the URLs that appear in the command prompt.
 
-With that, you are done with setup and can proceed with the following tutorials.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add credentials)]
 
-Finally, you need to upload the service key file that you received in [Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-key).
+Finally, you need to upload the service key file that you obtained in [Use Free Tier to Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-free-key) or [Use Trial to Set Up Account for Service Ticket Intelligence and Get Service Key](cp-aibus-sti-booster-key).
 
-On the website that you opened in the previous step, click **Upload**.
+On the Jupyter notebook page that you opened in the previous step, click **Upload**.
 
 ![Upload](upload-key-file.png)
 
 In the dialog that opens, select the file that contains the service key.
 
-![Select File](select-file.png)
+![Upload](select-file.png)
 
-Finally, ensure that the file is named `default_key.json` and click **Upload** again.
+Finally, edit the file name and update it to `default_key.json`. Click **Upload** again.
 
-![Name and Upload](name-and-upload.png)
+![Upload](name-and-upload.png)
 
-Now, the file shows in the list of documents and folders. With that, you are ready to proceed with the next tutorial.
+Now, the file shows in the list of documents and folders. With that, you are done with the setup and ready for the next tutorial.
+
+![Upload](list.png)
 
 [DONE]
 [ACCORDION-END]

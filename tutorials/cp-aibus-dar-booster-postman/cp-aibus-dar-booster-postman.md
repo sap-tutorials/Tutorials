@@ -1,6 +1,6 @@
 ---
-title: Set Up Account for Data Attribute Recommendation and Download Postman Sample Files
-description: Use a booster in SAP Business Technology Platform (SAP BTP) Trial to automatically create a service instance, and download Postman environment and collection JSON sample code files for Data Attribute Recommendation.
+title: Use Trial to Set Up Account for Data Attribute Recommendation and Download Postman Sample Files
+description: Use a booster in SAP BTP Trial to automatically create a service instance, and download Postman environment and collection JSON sample code files for Data Attribute Recommendation.
 auto_validation: true
 time: 5
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]

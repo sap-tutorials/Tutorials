@@ -24,7 +24,6 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 ---
 
-
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can use the existing `NativeScript` plugins like nativescript-geolocation, nativescript-nfc etc. , add this to the client and reference it from a rule.
 
 In this tutorial, you will use the existing `NativeScript` plugin nativescript-geolocation to capture the device location: latitude & longitude.
@@ -52,7 +51,8 @@ In this tutorial, you will use the existing `NativeScript` plugin nativescript-g
     | `MDK Template Type`| Select `Empty` from the dropdown |
     | `Your Project Name` | `MDK_Geolocation` |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
-    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |        
+    | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |  
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |      
 
     !![MDK](img-1.4.png)
 
@@ -146,6 +146,22 @@ You will add this registered control in the `Main.page`.
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 4: ](Enable the Loading Indicator on Sectioned Table in the Main page)]
+
+When the Main page loads, you can display a loading indicator informing about something is being processed before the data appears.  
+
+Enable the loading indicator at the Sectioned Table level by providing the following information:
+
+| Property | Value |
+|----|----|
+| `Enabled`| `true` |
+| `Text`| Bind it to rule `Loading, please wait...` |
+
+!![MDK](img-3.4.1.png)
+
+[DONE]
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 4: ](List the NPM modules as external reference)]
 
 In `GetCoordinates.js` file, you referred `@nativescript/geolocation` plugin. You now need to list this module as external references in BAS configuration so when bundling, MDK editor knows not to worry about these references.
@@ -159,6 +175,8 @@ In `GetCoordinates.js` file, you referred `@nativescript/geolocation` plugin. Yo
     !![MDK](img-3.6.png)
 
 3. Include below references in `mdk.bundlerExternals` and save the changes.
+
+    >You can beautify the file by right clicking on the file ->select `Format Document` if required.
 
     ```JSON
     "@nativescript/geolocation"
@@ -213,6 +231,7 @@ In order to use the existing `NativeScript` plugin in MDK client, you will need 
 
     ```JSON
     {
+      "App Display Name": "Demo Sample App",
       "AppName": "DemoSampleApp",
       "AppVersion": "1.0.0",
       "BundleID": "Enter your Bundle ID",
@@ -256,7 +275,7 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
     }
     dependencies {
     	def googlePlayServicesVersion = project.googlePlayServicesVersion
-    	compile "com.google.android.gms:play-services-location:$googlePlayServicesVersion"
+    	implementation "com.google.android.gms:play-services-location:$googlePlayServicesVersion"
     }
     ```
 
@@ -315,8 +334,6 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
     ![MDK](img_8.4.png)
 
 [OPTION END]
-
-Congratulations, you have learned how to capture device's current location in your MDK app and you can continue with the remaining tutorials in this mission.
 
 [VALIDATE_4]
 [ACCORDION-END]

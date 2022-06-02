@@ -11,14 +11,15 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 ## Prerequisites
  - You have developed your CAP application using the tutorials [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption) and [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui) or download the result from this [branch](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-consume-ui) to continue here.
+ - When starting with the result from the [`ext-service-consume-ui`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-consume-ui) branch, refer to [Create a Directory for Development](btp-app-create-directory) to see a recommended approach for organizing directories and details how to copy the contents of the branch.
  - [Prepare SAP S/4HANA System by Activating the Suitable OData Service](btp-app-ext-service-odata-service)
- - [Configure Systems in Cloud Connector](btp-app-ext-service-s4hana-consume)
+ - [Configure Systems in Cloud Connector](btp-app-ext-service-cloud-connector)
  - On SAP BTP side:
     - You have an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) global account in SAP BTP.
     - You must be an administrator of the SAP BTP global account where you want to register your SAP S/4HANA system.
-    - You need to [Prepare for SAP BTP Development](btp-app-prepare-btp) if you start with the result from the provided branch in [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption).
+    - You need to [Prepare for SAP BTP Development](btp-app-prepare-btp) if you start with the result from an example branch.
     - Your SAP BTP subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp).
-    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment you need to perform steps 16-18 from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service).
+    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment, you need to perform steps 14–17, starting with step [Subscribe to SAP Launchpad Service](https://developers.sap.com/de/tutorials/btp-app-launchpad-service.html#57352c79-1a09-4054-a77d-626fac957404) from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service).
  - On SAP S/4HANA side:
     - You have a dedicated SAP S/4HANA system.
     - You must be an administrator of the SAP S/4HANA system.
@@ -112,8 +113,8 @@ To consume the external service from our cloud deployed application, we will cre
 [VALIDATE_1]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Create a Destination in the SAP BTP cockpit)]
-1. Enter your **Global Account**. If you're using a trial account, choose **Go To Your Trial Account**.
+[ACCORDION-BEGIN [Step 3: ](Create a Destination in SAP BTP cockpit)]
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -136,10 +137,10 @@ To consume the external service from our cloud deployed application, we will cre
     | URL  | http://{Virtual host}:{Virtual port}
     | Proxy Type | On Premise
     | Authentication | `BasicAuthentication`
-    | User | `CPAPP` (as defined in [Create a technical user](btp-app-#create-a-technical-user))
-    | Password | `Welcome1` (as defined in [Create a technical user](btp-app-#create-a-technical-user))
+    | User | `CPAPP` (as defined in `Step 3: Create a technical user` [from this tutorial](btp-app-ext-service-odata-service))
+    | Password | `Welcome1` (as defined in `Step 3: Create a technical user` [from this tutorial](btp-app-ext-service-odata-service))
 
-    > Replace `{Virtual host}` and `{Virtual port}` in the URL with the values you defined in [Add system mapping](btp-app-#add-system-mapping).
+    > Replace `{Virtual host}` and `{Virtual port}` in the URL with the values that you defined in `Step 3: Add system mapping` [from this tutorial](btp-app-ext-service-cloud-connector).
 
     !![Configure Settings](configure_settings.png)
 
@@ -195,7 +196,7 @@ Otherwise, deploy your application as [Multi-Target Application (MTA)](btp-app-c
 [ACCORDION-BEGIN [Step 6: ](Test your CAP application with SAP S/4HANA connectivity)]
 When creating new entries in the **Risks** application, you should be able to use the value help for **Supplier** to see all the values from the remote SAP S/4HANA system.
 
-> Don't forget to perform steps 16-18 from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service) before you continue with this step to be able to create entries in the **Risks** application.
+> Don't forget to perform steps 14–17 from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service) before you continue with this step to be able to create entries in the **Risks** application.
 
 1. Open your **SAP BTP Launchpad Service** site as described in [Add the SAP Launchpad Service](btp-app-launchpad-service).
 
@@ -224,14 +225,12 @@ When creating new entries in the **Risks** application, you should be able to us
 Congratulations! You have completed all tutorials.
 
 
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-ext-service-s4hana-consume" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
-<!--TAIL END-->
 
 [DONE]
 The result of this tutorial can be found in the [`ext-service-s4hana-consume`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hana-consume) branch.
 
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
 
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-ext-service-s4hana-consume" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
 ---

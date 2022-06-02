@@ -83,9 +83,6 @@
             "name": "User Interface",
             "value": "topic>user-interface"
         },  {
-            "name": "iOS SDK for SAP BTP",
-            "value": "software-product>ios-sdk-for-sap-btp"
-        }, {
             "name": "Mobile Development Kit Client",
             "value": "software-product>mobile-development-kit-client"
         }, {
@@ -184,6 +181,9 @@
         }, {
             "name": "SAP Data Intelligence",
             "value": "software-product>sap-data-intelligence"
+        }, {
+            "name": "SAP Digital Manufacturing Cloud",
+            "value": "software-product>sap-digital-manufacturing-cloud"
         }, {
             "name": "SAP Data Warehouse Cloud",
             "value": "software-product>sap-data-warehouse-cloud"
@@ -284,6 +284,12 @@
             "name": "SAP Lumira",
             "value": "software-product>sap-lumira"
         }, {
+            "name": "SAP Manufacturing Execution",
+            "value": "software-product>sap-manufacturing-execution"
+        }, {
+            "name": "SAP Manufacturing Integration and Intelligence",
+            "value": "software-product>sap-manufacturing-integration-and-intelligence"
+        }, {
             "name": "SAP Mobile Cards",
             "value": "software-product>sap-mobile-cards"
         }, {
@@ -305,6 +311,9 @@
             "name": "SAP S/4HANA Cloud",
             "value": "software-product>sap-s-4hana-cloud"
         }, {
+            "name": "SAP S/4HANA Cloud for Manufacturing",
+            "value": "software-product>sap-s-4hana-cloud-for-manufacturing"
+        }, {
             "name": "SAP Screen Personas",
             "value": "software-product>sap-screen-personas"
         }, {
@@ -325,6 +334,9 @@
         }, {
             "name": "SAP Work Zone",
             "value": "software-product>sap-work-zone"
+        }, {
+            "name": "UI SAP Business Client (NWBC)",
+            "value": "software-product>ui-sap-business-client--nwbc-"
         }, {
             "name": "License Required",
             "value": "tutorial>license"

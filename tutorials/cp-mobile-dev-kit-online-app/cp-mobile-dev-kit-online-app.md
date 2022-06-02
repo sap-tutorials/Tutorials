@@ -22,7 +22,6 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
-
 [ACCORDION-BEGIN [Step 1: ](Get familiar with use case)]
 
 With Mobile Development Kit, you can also create applications that are online or always connected and make calls to the backend servers for each action you take in the application.
@@ -54,6 +53,7 @@ This step includes creating the mobile development kit project in the editor.
     | `Your Project Name` | `MDKOnlineApp` |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
 
     !![MDK](img-2.4.png)
 
@@ -177,12 +177,7 @@ Once you accept app update, you will see **Main** page being displayed and appli
 
 >Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and on-board again, you will be asked either to continue to use current application or to scan new QR code.
 
-
 [VALIDATE_1]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully created an MDK online app and you can continue with the remaining tutorials in this mission.
 
 ---

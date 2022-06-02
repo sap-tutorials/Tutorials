@@ -220,7 +220,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
 13. Choose **Next Step**.
 
-14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**.
+14. At **SAP HANA Database Availability Zone and Replicas**, choose again **Next Step**.
 
 15. Choose `Allow only BTP IP addresses`.
 
@@ -238,7 +238,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     > Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day before you start working with it.
 
-    > You can either use the SAP BTP cockpit or the Cloud Foundry CLI to restart the stopped instance:
+    > You can either use SAP BTP cockpit or the Cloud Foundry CLI to restart the stopped instance:
     > ```bash
     > cf update-service cpapp -c '{"data":{"serviceStopped":false}}'
     > ```
@@ -289,7 +289,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
 13. Choose **Next Step**.
 
-14. In the **Availability Zone** field, leave the default setting **Assign Automatically** unchanged and choose **Next Step**.
+14. At **SAP HANA Database Availability Zone and Replicas**, choose again **Next Step**.
 
 15. Choose `Allow only BTP IP addresses`.
 
@@ -307,7 +307,7 @@ If you need to create a SAP HANA Cloud service instance first **&rarr;** continu
 
     > Your SAP HANA Cloud service instance will be automatically stopped overnight, according to the server region time zone. That means you need to restart your instance every day before you start working with it.
 
-    > You can either use the SAP BTP cockpit or the Cloud Foundry CLI to restart the stopped instance:
+    > You can either use SAP BTP cockpit or the Cloud Foundry CLI to restart the stopped instance:
     > ```bash
     > cf update-service cpapp -c '{"data":{"serviceStopped":false}}'
     > ```
