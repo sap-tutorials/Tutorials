@@ -1,6 +1,6 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 title: Visualize your Data with Charts
 description: Learn how to visualize data through charts, create custom calculations, and query with Search to Insight
 auto_validation: true
@@ -31,7 +31,7 @@ We ended the last tutorial with a completed data model; now, we will begin explo
 
 **1.** Switch to **Data Exploration** mode by clicking the icon shown below
 
-![Data Exploration](Data Exploration.png)
+![Data Exploration](Data Exploration 2.png)
 
 This opens the Story Explorer and lets you explore the data to understand the available measures, dimensions, and values. In the Story Explorer, you see a faceted view of your data in the top pane along with a visualization area in the lower pane. When you select measures and dimensions in the upper pane, the visualization in the lower pane updates in real-time. Once you are happy with your results, you can copy the visualization to your Story.
 
@@ -81,7 +81,7 @@ Let's try another chart, gross margin by product category, but with a filter on 
 
 **15.**	Click the **Copy** icon and select **Copy to Page 1**
 
-![Gross Margin per Product Category rename and copy](Gross Margin per Product Category rename and copy.png)
+![Gross Margin per Product Category rename and copy](Gross Margin per Product Category rename and copy 2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -268,7 +268,7 @@ Let's finish this tutorial by adding a company logo to the dashboard.
 
 Your dashboard should now look like this.
 
-![Dashboard update](Dashboard update.png)
+![Dashboard update](Dashboard update 2.png)
 
 [DONE]
 [ACCORDION-END]

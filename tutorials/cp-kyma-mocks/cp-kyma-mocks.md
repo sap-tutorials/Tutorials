@@ -8,7 +8,7 @@ primary_tag: products>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
-  - [GIT](https://git-scm.com/downloads) installed
+  - [GIT](https://git-scm.com/downloads) installed 
 
 ## Details
 ### You will learn

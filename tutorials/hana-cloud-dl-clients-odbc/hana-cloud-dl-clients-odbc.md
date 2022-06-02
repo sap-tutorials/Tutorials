@@ -137,7 +137,7 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Use data lake data source from Microsoft Excel)]
+[ACCORDION-BEGIN [Step 3: ](Use a data lake data source from Microsoft Excel)]
 
 An application that supports ODBC can now make use of the created data source. One example on Windows is Microsoft Excel.  
 

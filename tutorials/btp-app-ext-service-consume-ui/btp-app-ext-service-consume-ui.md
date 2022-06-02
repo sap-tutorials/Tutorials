@@ -12,6 +12,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Prerequisites
  - [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption)
+ - When starting with the result from the [`ext-service-add-consumption`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-add-consumption) branch, refer to [Create a Directory for Development](btp-app-create-directory) to see a recommended approach for organizing directories and details how to copy the contents of the branch.
 
 ## Details
 ### You will learn
@@ -43,11 +44,11 @@ To start with this tutorial use the result in the [`ext-service-add-consumption`
 
     This managed association adds a property `supplier_ID` to the `Risks` entity under the hood, so that the key and the ID field of the supplier can be stored.
 
-2. Copy the file `templates/ext-service-consume-ui/db/data/sap.ui.riskmanagement-Risks.csv` to `db/data` folder of your app, overwriting the existing file.
+2. Copy the file `tutorial/templates/ext-service-consume-ui/db/data/sap.ui.riskmanagement-Risks.csv` to `db/data` folder of your app, overwriting the existing file.
 
 3. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -136,7 +137,7 @@ All the required suppliers are read with one request from `API_BUSINESS_PARTNER`
 [ACCORDION-BEGIN [Step 3: ](Add supplier information to the Risks UI)]
 Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 
-1. Open the `srv/risks-service-ui.cds` file in the `cpapp` folder.
+1. Open the `srv/risks-service-ui.cds` file.
 
 2. Add the `supplier` annotations:
 
@@ -193,7 +194,7 @@ Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 
 5. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 
@@ -215,7 +216,7 @@ Next, you add the name of the supplier and the blocked status to the `Risks` UI.
 [ACCORDION-BEGIN [Step 4: ](Add value help to select a supplier)]
 The last thing you add is the value help to select a supplier from the remote system.
 
-1. Open the `srv/risks-service-ui.cds` file in the `cpapp` folder.
+1. Open the `srv/risks-service-ui.cds` file.
 
 2. Add the following annotations to the end of the file:
 
@@ -253,7 +254,7 @@ The last thing you add is the value help to select a supplier from the remote sy
 
 3. Run `cds watch` with the sandbox profile:
 
-    ```
+    ```Shell/Bash
     cds watch --profile sandbox
     ```
 

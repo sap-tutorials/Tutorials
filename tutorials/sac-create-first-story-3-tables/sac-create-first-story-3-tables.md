@@ -1,6 +1,6 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 title: Visualize your Data with Tables
 description: Learn how to create tables with your data
 auto_validation: true
@@ -27,7 +27,7 @@ To start, let's create a new responsive page.
 
 **1.** On the Tab bar, click the **+** icon and select **Responsive**
 
-![New page](New page.png)
+![New page](New page 2.png)
 
 **2.** Add a top lane and left lane just like we did for Page 1 as shown below
 
@@ -96,7 +96,7 @@ Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/releas
 
 **14.**	Select **Sort Options** > **Sort Descending**
 
-![Sort 1](Sort 1.png)
+![Sort 1](Sort 1 new.png)
 
 [DONE]
 [ACCORDION-END]

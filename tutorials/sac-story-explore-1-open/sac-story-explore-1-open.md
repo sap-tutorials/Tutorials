@@ -1,6 +1,6 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 title: Open the SAP Analytics Cloud Story
 description: Learn how to navigate and explore the different visualizations of a story
 auto_validation: true

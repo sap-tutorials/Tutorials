@@ -150,6 +150,10 @@ Though the Decision is ready, you need to connect it to the data flow of your pr
 
     !![Error](28.png)
 
+    > You might not see entries in the Input. This is due to a bug. As a workaround, click on the three-vertical-dot and delete the decision. Add the decision again in the process.
+
+    > Please refer to [the Knowledge Base Article](https://launchpad.support.sap.com/#/notes/3207153) for the complete workaround.
+
 2. Define the input, select the text field of **Document Number**.
 
     !![Input Decision](29.png)
