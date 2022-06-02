@@ -14,7 +14,6 @@ author_profile: https://github.com/jitendrakansal
   - How to create a new page and add some controls to display customer information
   - How to navigate from one page to another page
 
-
 ---
 
 To enhance your MDK app with customer details information, you need to carry out the following tasks:
@@ -203,7 +202,7 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_5.1.png)
 
-2. Tap **CUSTOMER LIST**, you will navigate to Customer List page.
+2. Tap **Customer List**, you will navigate to Customer List page.
 
     ![MDK](img_5.2.png)
 
@@ -237,7 +236,7 @@ Deploy the updated application to your MDK client.
 
 [OPTION END]
 
-[OPTION BEGIN [Web]] 
+[OPTION BEGIN [Web]]
 
 1. Either click the highlighted button or refresh the web page to load the changes.
 
@@ -260,9 +259,5 @@ Deploy the updated application to your MDK client.
 
 [VALIDATE_2]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully created a Customer Detail page and you are now all set to [modify a Customer Record in an MDK App](cp-mobile-dev-kit-edit-customer).
 
 ---

@@ -76,7 +76,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 
     >!![MDK](img-1.7.1.png)
 
-8. Repeat the above steps for `Headline` and `Subheadline` properties binding to `LastName` and `FirstName` properties of the Customer entity respectively.
+8. Remove the default value for the `DetailImage` property. Repeat the above steps for `Headline` and `Subheadline` properties binding to `LastName` and `FirstName` properties of the Customer entity respectively.
 
     You should have final results as below.
 
@@ -185,9 +185,9 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-    ![MDK](img-5.1.png)
+    ![MDK](img_5.1.png)
 
-2. You will notice, newly added button on the main page. Tap **CUSTOMER LIST**.
+2. You will notice, newly added button on the main page. Tap **Customer List**.
 
     ![MDK](img_5.2.png)
 
@@ -226,7 +226,7 @@ Deploy the updated application to your MDK client.
 1. Either click the highlighted button or refresh the web page to load the changes.
 
     !![MDK](img-6.5.png)
-    
+
 
     >If you see the error `404 Not Found: Requested route ('xxxxx-dev-nsdemosampleapp-approuter.cfapps.xxxx.hana.ondemand.com') does not exist.` while accessing the web application, make sure that in your space cockpit, highlight applications are in started state.
 
@@ -244,9 +244,5 @@ Deploy the updated application to your MDK client.
 
 [VALIDATE_3]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully created a Customer List page and you are now all set to [create a Customer Detail Page](cp-mobile-dev-kit-detail-page).
 
 ---

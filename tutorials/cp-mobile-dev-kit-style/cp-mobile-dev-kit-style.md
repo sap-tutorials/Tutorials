@@ -279,11 +279,11 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 3. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see the **Main** page (with **LOGOUT** and **SYNC** options at bottom of the page), **CUSTOMERS** and **PRODUCTS** entity sets to navigate to List-Detail page. In Main page, you will notice styling on action bar, tool bar, items (Logout & Sync) available on tool bar, `CUSTOMERS` button.
+    Once you accept app update, you will see the **Main** page (with **Logout** and **Sync** options at bottom of the page), **Customers** and **Products** entity sets to navigate to List-Detail page. In Main page, you will notice styling on action bar, tool bar, items (Logout & Sync) available on tool bar, `Customers` button.
 
     ![MDK](img-6.4.png)
 
-4. Tap **CUSTOMERS** to navigate to Customer List. You will see that Title property has been styled.
+4. Tap **Customers** to navigate to Customer List. You will see that Title property has been styled.
 
     ![MDK](img_6.5.png)
 
@@ -350,9 +350,5 @@ The On-boarding QR code is now displayed.
 
 [VALIDATE_4]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully styled your MDK app and you can continue with the remaining tutorials in this mission.
 
 ---
