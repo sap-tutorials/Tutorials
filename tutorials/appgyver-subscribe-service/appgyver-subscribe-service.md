@@ -10,11 +10,9 @@ author_profile: https://github.com/akseliv
 ---
 
 ## Prerequisites
- - Access to an SAP BTP account in EU10 with paid Low-Code / No-Code entitlements.
+ - Access to an SAP BTP account in EU10 with paid Low-Code / No-Code entitlements. See [SAP Discovery Center]  (https://discovery-center.cloud.sap/serviceCatalog/sap-appgyver?region=europe(frankfurt)&service_plan=standard&tab=feature)
 
- Note: This is a paid service, with further details available at [SAP Discovery Center]  (https://discovery-center.cloud.sap/serviceCatalog/sap-appgyver?region=europe(frankfurt)&service_plan=standard&tab=feature)
-
- For access to SAP AppGyver's free Community Edition, which includes the same features needed to complete the rest of the mission, see [AppGyver.com] (https://www.appgyver.com)
+Alternatively you can use SAP AppGyver's free Community Edition, which includes the same features needed to complete the rest of the mission. You can sign up here: [AppGyver.com] (https://www.appgyver.com)
 
 ## Details
 ### You will learn
