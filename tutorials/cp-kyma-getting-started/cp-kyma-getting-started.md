@@ -11,7 +11,7 @@ primary_tag: products>sap-btp\\, kyma-runtime
 
 ## Details
 ### You will learn
-  - How to enable the [SAP BTP, Kyma runtime Free Tier]().
+  - How to enable the SAP BTP, Kyma runtime Free Tier.
 
 ---
 
