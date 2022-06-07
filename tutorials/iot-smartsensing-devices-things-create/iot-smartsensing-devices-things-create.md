@@ -41,14 +41,14 @@ You can access the SAP IoT APIs using an OAuth Token. After you subscribe your s
 
     Postman is a popular and easy to use REST client which you can use to access the SAP IoT APIs. Please refer to the introduction guide for understanding the usage of Postman.
 
-      We have provided a set of sample Postman collections on GitHub for you to download. Please clone or download/unzip the repository [sap-iot-samples](https://github.com/SAP-samples/sap-iot-samples/tree/master/iot-autoid-services-samples/Smart%20Sensing%20-%20Quality%20Control%20of%20Goods%20Receipt%20-%20Postman). The Postman collections and environment (in folder `iot-autoid-services-samples/Smart Sensing - Quality Control of Goods Receipt - Postman`) includes all the API calls used in these tutorials and the payload structures for the same. Import both into your Postman.
+      We have provided a set of sample Postman collections on GitHub for you to download. Please clone or download/unzip the repository [sap-iot-samples](https://github.com/SAP-samples/sap-iot-samples/tree/main/iot-smart-sensing-samples/Smart%20Sensing%20-%20Quality%20Control%20of%20Goods%20Receipt%20-%20Postman). The Postman collections and environment (in folder `iot-smart-sensing-samples/Smart Sensing - Quality Control of Goods Receipt - Postman`) includes all the API calls used in these tutorials and the payload structures for the same. Import both into your Postman.
 
 
 3.  Generate OAuth token
 
     To retrieve the OAuth token, you must do the following:
 
-    - Select the environment you have imported as active--------
+    -   Select the environment you have imported as active
 
     -   Update the tenant name (your subaccount name - for example, trainingf954d) to the `tenant_name` Postman environment variable.
 
