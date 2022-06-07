@@ -3,7 +3,7 @@ title: Enable SAP BTP, Kyma Runtime
 description: The SAP Kyma runtime is a Kubernetes cluster which is comprised of a collection of projects united together to simplify the extension, and integration of software.
 auto_validation: true
 tags: [ tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform]
-primary_tag: software-product>sap-btp\\, kyma-runtime
+primary_tag: software-product>sap-btp-kyma-runtime
 ---
 
 ## Prerequisites
