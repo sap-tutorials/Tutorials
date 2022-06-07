@@ -1,5 +1,5 @@
 ---
-title: Ingest live data into your House Price Predictor with SAP AI Core
+title: Ingest Live Data into your House Price Predictor with SAP AI Core
 description: Build data pipelines and reuse code to train and generate models on different datasets.
 auto_validation: true
 time: 45
