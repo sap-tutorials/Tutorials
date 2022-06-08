@@ -20,7 +20,7 @@ primary_tag: topic>internet-of-things
 
 ## Details
 ### You will learn
--   How to install Smart Sensing Edge for an existing edge node
+-   How to install Smart Sensing Edge for an existing configured edge node
 -   How to configure Smart Sensing Edge
 
 ---
