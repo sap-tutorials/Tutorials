@@ -373,9 +373,13 @@ Enter your AWS credentials. Note that the appearance of the screen will not chan
 
 [ACCORDION-BEGIN [Step 7: ](Upload datasets to AWS S3)]
 
-For our data, we will use a toy dataset from `Scikit Learn`. Download [this dataset](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_california_housing.html).
+ Download the `train.csv` [dataset](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-data/train.csv). You need to right click, and save the page as `train.csv`.
 
-Download the `train.csv` [dataset](https://raw.githubusercontent.com/sap-tutorials/Tutorials/master/tutorials/ai-core-data/train.csv)
+!![image](img/download.png)
+
+!![image](img/save.png)
+
+> **INFORMATION** The data used is from `Scikit Learn`. The source of the data is [here](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_california_housing.html).
 
 To upload the datasets to you AWS S3 Storage, paste and edit the following command in the terminal:
 
@@ -679,7 +683,7 @@ modified_at : 2022-04-18 12:31:34
 
 [OPTION END]
 
-> Information: Artifacts appear in the `default` resource group and the **Datasets** menu, because you had registered artifacts with `resource_group = default` and `Kind = Dataset` in Step 9.
+> **INFORMATION** Artifacts appear in the `default` resource group and the **Datasets** menu, because you had registered artifacts with `resource_group = default` and `Kind = Dataset` in Step 9.
 
 Copy the artifact ID of the January dataset. You will use this value in the placeholders of your workflows, to create your execution. The **ID** of artifacts allows SAP AI Core to ingest data into workflows.
 
