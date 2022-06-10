@@ -44,10 +44,12 @@ You should receive a response like the following:
     "access_token": "<< your access token >>",
     "token_type": "bearer",
     "expires_in": 43199,
-    "scope": "uaa.resource ner-trial!b49985.default",
-    "jti": "ab76a0adefbc4ddda6da2e5f382862d1"
+    "scope": "<< granted access >>",
+    "jti": "<< unique identifier >>"
 }
 ```
+
+Once the token has been generated, make sure to copy and save it locally for easy access. The token is valid for 12 hours (43199 seconds). After that, you'll need to generate a new one.
 
 You have successfully generated your OAuth access token for the Business Entity Recognition service and you are now all set to [Detect and Highlight Entities from Unstructured Text with Pre-trained Models](cp-aibus-ber-swagger-ui), and [Create Dataset and Upload Training Data](cp-aibus-ber-custom-data) followed by [Deploy Model and Get Prediction Results](cp-aibus-ber-custom-deploy).
 

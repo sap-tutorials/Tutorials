@@ -202,7 +202,7 @@ When creating new entries in the **Risks** application, you should be able to us
 
     You'll see a message `No data found. Try adjusting filter or search criteria.`
 
-    > In case you get an error `Forbidden`.
+    > In case you get an error `Forbidden`. 
 
     > The following error is displayed when you haven't assigned your user to the `RiskManager-<your space>` role:
 
@@ -232,12 +232,11 @@ Congratulations! You have completed all tutorials.
 
 [VALIDATE_1]
 
+
+The result of this tutorial can be found in the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
+
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
 
 <p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-ext-service-s4hc-use" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
-<!--TAIL END-->
-The result of this tutorial can be found in the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
-
-
 [ACCORDION-END]
 ---

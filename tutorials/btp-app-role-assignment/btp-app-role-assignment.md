@@ -65,7 +65,7 @@ If not, probably you have signed in before adding the role collection to your us
 
 > Why there's no data in the `Risks` application?
 
-> As explained in section [Exclude CSV files from deployment](btp-app-cap-mta-deployment), test files should never be deployed to an SAP HANA database as table data. For this reason, we've excluded the test files from the deployment archive before deployment.
+> As explained in step 6 [Exclude CSV files from deployment](btp-app-cap-mta-deployment), test files should never be deployed to an SAP HANA database as table data. For this reason, we've excluded the test files from the deployment archive before deployment.
 
 [DONE]
 [ACCORDION-END]
@@ -79,7 +79,7 @@ Instead of creating the role collection automatically using the `xs-security.jso
 
 3. Choose **Security** **&rarr;** **Role Collections** on the left.
 
-4. Choose the **+** (new role collection) button.
+4. Choose the ( &#x2B; ) icon to create a new role collection.
 
 5. Enter **Name** `RiskManager`.
 

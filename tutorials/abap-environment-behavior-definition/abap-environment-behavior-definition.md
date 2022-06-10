@@ -58,7 +58,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
         delete;
 
         field (mandatory) id;
-        field (read only) lastchangedbyuser, lastchangeddatetime;
+        field (readonly) lastchangedbyuser, lastchangeddatetime;
       }
     ```
    Save and activate.

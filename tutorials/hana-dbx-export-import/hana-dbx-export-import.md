@@ -197,6 +197,7 @@ The following steps walk through the process of exporting to and importing data 
 10. A Google Storage SSL certificate is required to connect to the Google Cloud Storage bucket via the SAP HANA Cloud, SAP HANA database. Open your SQL console within SAP HANA database explorer, and run the first 3 commands.  Then replace \<SELECTED_CERTIFICATE_ID> with the value returned from the previous select statement.
 
     ```SQL[27]
+    SELECT * FROM PSES;
     CREATE PSE HTTPS;
     CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----
     MIIFVzCCAz+gAwIBAgINAgPlk28xsBNJiGuiFzANBgkqhkiG9w0BAQwFADBHMQsw

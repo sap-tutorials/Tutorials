@@ -9,6 +9,7 @@ time: 30
 tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-api-management, software-product>sap-hana-cloud, software-product>sap-s-4hana-cloud]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
+
 ## Prerequisites
  - [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption)
  - [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui)
@@ -32,10 +33,11 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ### You will learn
  - How to create and change a Business Partner in your SAP S/4HANA Cloud system
  - How to check if the Business Partner creation and change events sent from your SAP S/4HANA Cloud system have updated your CAP application
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a Business Partner and check updates in your CAP application)]
-1. In your S/4HANA Cloud system, go to **Maintain Business Partner**. You can also use the **Search** field in the upper right corner of the screen.
+1. In your SAP S/4HANA Cloud system, go to **Maintain Business Partner**. You can also use the **Search** field in the upper right corner of the screen.
 
     !![s4h20](s4h20.png)
 
@@ -67,9 +69,9 @@ Congratulations! You have completed all tutorials.
 
 [VALIDATE_1]
 
+
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
 
 <p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-events-s4hc-use" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
-<!--TAIL END-->
 [ACCORDION-END]
 ---
