@@ -22,11 +22,11 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 
 [ACCORDION-BEGIN [Step 1: ](Download the SAP HANA data lake Client)]
 
-The HDLFSCLI is included in the HANA Data Lake Client download from the [SAP software center](https://launchpad.support.sap.com/#/softwarecenter/search/HANA%2520Data%2520lake%2520client). The first step is to download and install the latest version of the HANA data lake client.
+The HDLFSCLI is included in the HANA Data Lake Client download from the [SAP software center](https://launchpad.support.sap.com/#/softwarecenter/template/products/_APP=00200682500000001943&_EVENT=NEXT&HEADER=Y&FUNCTIONBAR=Y&EVENT=TREE&NE=NAVIGATE&ENR=73555000100800003274&V=MAINT&TA=ACTUAL/HANA%20CLOUD%20CLIENTS). The first step is to download and install the latest version of the HANA data lake client.
 
 ![HANA data lake client search](image-1.png)
 
-The latest HANA Data Lake Client package can by identified by the most recent release date and highest SP number.
+The latest HANA Data Lake Client package can by identified by the most recent release date.
 
 ![HANA data lake software center client installer](image-2.png)
 
@@ -84,7 +84,7 @@ Some HDLFSCLI help documentation should appear if it is successfully installed a
 
 [OPTION BEGIN [Windows]]
 
-The HDLFSCLI is included in the HANA Data Lake Client download in the [SAP software center](https://launchpad.support.sap.com/#/softwarecenter/search/HANA%2520Data%2520lake%2520client). The first step is to download and install the latest version of the HANA Data Lake Client. Once the compressed client is downloaded, extract the components, and run the installer.
+The HDLFSCLI is included in the HANA Data Lake Client download in the [SAP software center](https://launchpad.support.sap.com/#/softwarecenter/template/products/_APP=00200682500000001943&_EVENT=NEXT&HEADER=Y&FUNCTIONBAR=Y&EVENT=TREE&NE=NAVIGATE&ENR=73555000100800003274&V=MAINT&TA=ACTUAL/HANA%20CLOUD%20CLIENTS). The first step is to download and install the latest version of the HANA Data Lake Client. Once the compressed client is downloaded, extract the components, and run the installer with Admin Privileges.
 
 ![Windows installer executable](image-4.png)
 
@@ -102,7 +102,9 @@ Some HDLFSCLI help documentation should appear if it is successfully installed a
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Generate Certificates)]
-To connect the HDLFSCLI to a HANA Data Lake file container, a certificate will need to be generated to make a secure connection. Below are the steps required to create a self-signed certificate to get started using the HDLFSCLI. You will require an installation of OpenSSL. Use your preferred Linux package installer to install OpenSSL if it is not already installed. If you're using a Windows machine, then Windows Subsystem Linux will have OpenSSL installed. Alternatively, OpenSSL can be installed for Windows. Then, follow these steps to creating your self-signed certificate.
+To connect the HDLFSCLI to a HANA Data Lake file container, a certificate will need to be generated to make a secure connection. Below are the steps required to create a self-signed certificate to get started using the HDLFSCLI. You will require an installation of OpenSSL. Use your preferred Linux package installer to install OpenSSL if it is not already installed. If you're using a Windows machine, then Windows Subsystem Linux will have OpenSSL installed. Alternatively, OpenSSL can be installed for Windows. OpenSSL for Windows can be downloaded from [Here](https://slproweb.com/products/Win32OpenSSL.html).  
+
+Then, follow these steps to creating your self-signed certificate.
 
 **Note**: Make sure the certificate fields are not all exactly the same between the Certificate Authority (CA) and client certificates, otherwise it is assumed to be a self-signed cert and the cert validation below will fail.
 
@@ -114,7 +116,9 @@ Create the CA's public certificate (valid for 200 days). Provide at least a comm
 
 `openssl req -x509 -new -key ca.key -days 200 -out ca.crt`
 
-Create a signing request for the client certificate. Provide at least a common name and fill other fields as desired.
+Create a signing request for the client certificate.
+
+**Note**: Provide at least a common name and fill other fields as desired. Also, leave the email-Id field blank.
 
 `openssl req -new -nodes -newkey rsa:2048 -out client.csr -keyout client.key`
 
@@ -150,19 +154,21 @@ You may need to scroll down to find these.
 
 ![Edit file container page displaying the Trusts and Authorization locations.](image-8.png)
 
-Add the contents of the `ca.crt` to the trusts configuration. The alias can be anything, but the certificate should be exactly what is in the generated `ca.crt`.
+Click on **"Add"** under Trusts configuration and hit on **"Upload"** file button and browse to the location where your `ca.crt` is located and upload that file and click on apply.
+
+**Note:** The alias can be anything, but the certificate should be exactly what is in the generated `ca.crt`.
 
 ![Add Trust modal.](image-9.png)
 
-Add the `client.crt` signature to the Authorizations configuration. Add the roles "Admin" or "User" and copy the pattern from the output of the following command. (exclude the "subject=" prefix):
+Click on **"Add"** under Authorizations and select the roles as **"Admin"** or **"User"** and then click on **"Generate pattern"** from the output of the following command. (exclude the "subject=" prefix):
 
 `openssl x509 -in client.crt -nameopt RFC2253 -subject -noout`
 
-Alternatively, you can use the "Generate Pattern" option in the UI and past the contents of your client certificate to automatically generate the certificate signature:
+Alternatively, you can use the **"Generate Pattern"** option and similarly upload the `client.crt` file after clicking on the "Upload" file option. It will automatically generate a pattern like above.
 
 ![Authorizations Generate Patter modal.](image-10.png)
 
-Now click save at the top of the page.
+Now click save at the bottom of the page.
 
 ![Manage file container save button.](image-11.png)
 
@@ -173,15 +179,16 @@ Now click save at the top of the page.
 
 Next, we will verify that the configuration we did in Steps 5 & 6 work.
 
-The `<REST API Endpoint>` and `<Instance ID>` can be found in the SAP HANA Cloud Central Cockpit. `<PATH>` is the path to the corresponding certificate. Expect nothing to be returned by the below command.
+The `<REST API Endpoint>` and `<Instance ID>` can be found in the SAP HANA Cloud Central Cockpit. `<PATH>` is the path to the corresponding certificate.
+The following command wont return anything in the output.
 
-`hdlfscli -cert <PATH>/client.crt -key <PATH>/client.key -cacert <PATH>/ca.crt -k -s https://<REST API Endpoint> -filecontainer <Instance ID> ls`
+`hdlfscli -cert <PATH>\client.crt -key <PATH>\client.key -cacert <PATH>\ca.crt -k -s https://<REST API Endpoint> -filecontainer <Instance ID> ls`
 
 **[Optional]**: Configure a configuration file to make using the CLI simpler.
 
 **Note**: The configuration will be placed in the user's root directory. It is saved as a JSON file that can be modified in any text editor.
 
-`hdlfscli -cert <PATH>/client.crt -key <PATH>/client.key -k -s <REST API Endpoint> -config myconfig -dump-config ls`
+`hdlfscli -cert <PATH>\client.crt -key <PATH>\client.key -k -s <REST API Endpoint> -config myconfig -dump-config ls`
 
 Test the configuration that was just created.
 
@@ -189,13 +196,22 @@ Test the configuration that was just created.
 
 Upload a file to the SAP HANA data lake file container. Ensure you know the path to the TPCH data files that were downloaded in the prerequisites.
 
-`hdlfscli -config myconfig upload <Your Local Path>/TPCH <Target File Path>/TPCH`
+`hdlfscli -config myconfig upload <Your Local Path>\TPCH <Target File Path>\TPCH`
 
 Verify that the files has been uploaded.
 
 `hdlfscli -config myconfig lsr`
 
 Now that the TPCH data files are in the data lake file container we can use SQL on Files to query the data. Learn how to do this in the tutorial "Use SQL on Files to Query Structured Data Files".
+
+
+**Troubleshoot** If anyone receives the following error while verifying the configuration, please do the needful as mentioned
+
+![Troubleshoot the configuration error.](image-12.png)
+
+Copy the content of the **Client** field which is mentioned inside [ ] brackets and then go to your Data lake Instance, Edit configuration and scroll down to Authorizations and first **delete** the entire value from the "Pattern" field and now paste the Client field value here.
+
+Now, re-verify the configuration. It should work.
 
 [VALIDATE_6]
 [ACCORDION-END]
