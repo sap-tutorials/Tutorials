@@ -3,14 +3,21 @@ title: Set Up SAP Web Analytics
 description: Subscribe to the trial version of SAP Web Analytics on the SAP Business Technology Platform cockpit.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-business-technology-platform]
-primary_tag: products>sap-web-analytics
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-web-analytics
 author_name: Vikram Kulkarni
 author_profile: https://github.com/Vikramkulkarni01
 ---
 
 ## Prerequisites  
-[Get a Free Trial Account on SAP BTP](hcp-create-trial-account)
+
+1.  [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account): Make sure to create a subaccount in "enter region".
+
+2.  [Manage Entitlements Using the Cockpit](btp-cockpit-entitlements): Assign the service plan for "service". You can select the service plan called **Free** here to test out the service without any costs.
+
+3. [Create a Service Instance in SAP BTP](btp-cockpit-instances): Create a service instance for " Service Name" to able to complete the following tutorial.
+
+
 
 ## Details
 ### You will learn
@@ -34,7 +41,7 @@ For example, create a space named "E-commerce" to which you register your shoppi
 
 [ACCORDION-BEGIN [Step 1: ](Open the SAP BTP Cockpit)]
 
-In the [home page](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) of SAP BTP cockpit trial, select **Go To Your Trial Account**.
+In the **home page** of SAP BTP cockpit, select **Go To Your Trial Account**.
 
 !![Cloud Foundry](Step_1.png)
 

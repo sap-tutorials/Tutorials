@@ -73,9 +73,9 @@ The implementation of an extension service is composed in multiple parts as desc
 
 [ACCORDION-BEGIN [Step 2: ](Create a container image)]
 
-In this tutorial you will implement a simple **Extension**. This service will expose the [**Edge Gateway Service** APIs](https://help.sap.com/viewer/DRAFT/70108a557bb24b5da8e0ac9cfb344067/2112a/en-US/a5dc24ca73e04853aadc62316f05b564.html) normally available to containers running in the same Kubernetes cluster to non-containerized applications, leveraging a sample published in the [SAP IoT Edge - Samples GitHub repository](https://github.com/SAP-samples/iot-edge-samples/tree/main/IoT_Edge/edge-gateway-service-ref-app). This makes the development and debugging cycle of other **Extensions** much faster and easier.
+In this tutorial you will implement a simple **Extension**. This service will expose the [**Edge Gateway Service** APIs](https://help.sap.com/viewer/DRAFT/70108a557bb24b5da8e0ac9cfb344067/2112a/en-US/a5dc24ca73e04853aadc62316f05b564.html) normally available to containers running in the same Kubernetes cluster to non-containerized applications, leveraging a sample published in the [SAP IoT - Samples GitHub repository](https://github.com/SAP-samples/sap-iot-samples/tree/main/iot-edge-samples/edge-gateway-service-ref-app). This makes the development and debugging cycle of other **Extensions** much faster and easier.
 
-1.  Download the **SAP Edge Gateway Service Reference Application** from the official [SAP IoT Edge - Samples GitHub repository](https://github.com/SAP-samples/iot-edge-samples/tree/main/IoT_Edge/edge-gateway-service-ref-app#download-the-code).
+1.  Download the **SAP Edge Gateway Service Reference Application** from the official [SAP IoT - Samples GitHub repository](https://github.com/SAP-samples/sap-iot-samples/tree/main/iot-edge-samples/edge-gateway-service-ref-app#download-the-code).
 
 2.  Navigate to the folder `app` and open the file `Dockerfile`.
 

@@ -3,8 +3,8 @@ title: Create Service Instance for Document Translation
 description: Create a service instance and the service keys for Document Translation (one of the SAP Translation Hub services) using the SAP Business Technology Platform cockpit.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>machine-learning]
-primary_tag: products>sap-translation-hub
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>machine-learning]
+primary_tag: software-product>sap-translation-hub
 ---
 
 ## Prerequisites

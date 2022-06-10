@@ -65,7 +65,7 @@ When working with AppGyver Composer Pro, the majority of your time will be spent
 - Integrate with external data resources
 - Bind data to your components to create dynamic views, and more
 
-For more detailed coverage of the features available in AppGyver's Composer Pro, view: [AppGyver Documentation](https://docs.appgyver.com/overview/introduction)
+For more detailed coverage of the features available in AppGyver's Composer Pro, view: [AppGyver Documentation](https://docs.appgyver.com/)
 
 [DONE]
 [ACCORDION-END]

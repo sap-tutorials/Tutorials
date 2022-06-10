@@ -38,6 +38,8 @@ Before you can start using SAP Business Application Studio, you need to create y
 
 For this tutorial, you'll create a dev space personalized for building services and applications with CAP.
 
+Before you begin, check the settings of your browser. You need to add domains `ondemand.com` and `cloud.sap.com` to the list of the exceptions to enable pop-ups and new tabs and disable the ad blocker extension if you use one.
+
 1. Go to the [SAP BTP Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) on Trial.
 
 2. Choose **SAP Business Application Studio** under **Quick Tool Access**.
@@ -87,7 +89,7 @@ For this tutorial, you'll create a dev space personalized for building services 
     This will initialize the application using the [maven archetype](http://maven.apache.org/guides/introduction/introduction-to-archetypes.html) `cds-services-archetype` and create your project as follows:
 
     - The project is named `products-service`.
-    - The `db` folder stores database-related artifacts.
+    - The `db` folder stores database-related artefacts.
     - The `srv` folder stores your Java application.
 
       !![project creation done](project-creation-done.png)
@@ -118,7 +120,7 @@ In this step, you'll define a simple service, which also defines its own entity.
 
     !![new file](new-file.png)
 
-2. Call it `admin-service.cds` and click **OK** to create the file.
+2. Call it `admin-service.cds` and choose **OK** to create the file.
 
 3. Add the following service definition to the file and make sure you **Save** the file (keyboard shortcut **CTRL+S**):
 
@@ -229,21 +231,19 @@ Sometimes it happens that your CAP Project can't be started. Does your log outpu
 
 !![application failed to start](application-failed-to-start.png)
 
-This means that your application is still running in another terminal. Check if you have multiple terminals opened.
+This means that your application is still running in another terminal. Check if you have multiple terminals opened or use **Ports: Preview** to check if you have another application running on same port.
 
 !![close terminal](close-terminal.png)
 
-1. Stop the application in the other terminal by using **CTRL+C** or
+1. Stop the application in the other terminal by using **CTRL+C** or ...
 
 2. Click on the **x** icon next to the terminal to close the terminal window and implicitly stop all inherited processes.
 
 !![icon to close terminal](icon-close-terminal.png)
 
-[DONE]
-[ACCORDION-END]
-
 Great Job! You have built your CAP Java application skeleton and are good to serve some data.
 
-
+[DONE]
+[ACCORDION-END]
 
 ---
