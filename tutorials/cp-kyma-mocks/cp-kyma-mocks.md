@@ -3,8 +3,8 @@ title: Deploy Commerce Mock Application in the Kyma Runtime
 description: Deploy and connect the Commerce mock application to the Kyma runtime.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
