@@ -10,7 +10,7 @@ primary_tag: software-product>sap-launchpad-service
 ## Prerequisites
 - [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)
 - To integrate federated content into an SAP Launchpad site, you already need a launchpad site available in your SAP BTP trial account. Please follow at least the first two tutorials of the [Create your First SAP Launchpad site group](group.launchpad-cf-create-site) or the full [Deliver your First SAP Fiori launchpad site with integrated apps mission](mission.launchpad-cf) to set up the SAP Launchpad service on your SAP BTP trial account.
-- To test content federation, you need an SAP S/4HANA system on release 2020 and have administrator access to it. This tutorial describes the configuration of an [SAP S/4 HANA Fully Activated Appliance 30-day trial system](https://www.sap.com/products/s4hana-erp/trial.html). You can find more details about the process to start your SAP S/4HANA trial in this [Quick Start Document](https://www.sap.com/documents/2019/04/4276422b-487d-0010-87a3-c30de2ffd8ff.html#page=1).
+- To test content federation, you need an SAP S/4HANA system on release 2020 or 2021 and have administrator access to it. This tutorial describes the configuration of an SAP S/4HANA 2020 system which you can also get as [SAP S/4 HANA Fully Activated Appliance 30-day trial system](https://www.sap.com/products/s4hana-erp/trial.html). You can find more details about the process to start your SAP S/4HANA trial in this [Quick Start Document](https://www.sap.com/documents/2019/04/4276422b-487d-0010-87a3-c30de2ffd8ff.html#page=1).
 &nbsp;
 To avoid reconfiguration of the SAP Cloud Connector after each restart, we recommend to use the system with a static public IP address.
 &nbsp;
@@ -35,7 +35,7 @@ You will learn how to combine federated content from SAP S/4HANA with apps from 
 [ACCORDION-BEGIN [Step 1: ](Login to your SAP S/4HANA system)]
 
 
-1. If you are using your own instance of the SAP S/4HANA 2020, Fully Activated Appliance solution in SAP Cloud Appliance Library, click **Connect**.
+1. If you are using your own instance of the SAP S/4HANA 2020 or 2021, Fully Activated Appliance solution in SAP Cloud Appliance Library, click **Connect**.
 
     ![Connect instance](1-connect-to-cal.png)
 
@@ -77,20 +77,22 @@ Start the transaction ``uconcockpit``.
 
 1. In the drop-down list, select **HTTP Whitelist Scenario**.
 
-    ![Open HTTP whitelist](4-open-http-whitelist.png)
+>In an SAP S/4HAnA 2021 system, this is called "HTTP Allowlist Scenario"
+
+    ![Open HTTP allowlist](4-open-http-whitelist.png)
 
 
 2. If the **Clickjacking Framing Protection** scenario is not available in the list, you need to activate it. To do so, select **HTTP Whitelist** > **Setup** in the menu bar.
 
-    ![Start HTTP Whitelist setup](5a-setup-http-whitelist.png)
+    ![Start HTTP Allowlist setup](5a-setup-http-whitelist.png)
 
 3. In the pop-up, check the entry **activate Clickjacking Protection (Context Type 02) for all clients (recommended)**. Then click the **Continue** icon.
 
     ![Activate clickjacking protection](6a-activate-clickjacking-protection.png)
 
-    >For more details, see [Using a Whitelist for Clickjacking Framing Protection](https://help.sap.com/viewer/864321b9b3dd487d94c70f6a007b0397/7.51.8/en-US/966b6233e5404ebe80513ae082131132.html)
+    >For more details, see [Using an Allowlist for Clickjacking Framing Protection](https://help.sap.com/viewer/864321b9b3dd487d94c70f6a007b0397/7.51.8/en-US/966b6233e5404ebe80513ae082131132.html)
 
-You now see the **Clickjacking Framing Protection** entry in the table. It is currently set to **Logging** mode. This means that connections are only logged, but not checked. With this setting, connectivity from your SAP BTP trial account will work. However, this is not a secure setting. In a productive environment, you would need to add the patterns for your SAP Launchpad service to the allowlist and then set the scenario to **Active check** mode.
+You now see the **Clickjacking Framing Protection** entry in the table. It is currently set to **Logging** mode. This means that connections are only logged, but not checked. With this setting, connectivity from your SAP BTP trial account will work. However, this is not a secure setting. In a productive environment, you would need to add the patterns for your SAP Launchpad service to the whitelist and then set the scenario to **Active check** mode.
 
 ![Result clickjacking](7-result-clickjacking.png)
 
@@ -113,6 +115,8 @@ This parameter must only be set in an embedded scenario where the SAP Fiori fron
 
 3. In the tree, open **SAP NetWeaver** > **UI Technologies** > **SAP Fiori** > **SAP Fiori Launchpad Settings**.
 
+> In an SAP S/4HANA 2020 system the path to choose would be ABAP Platform > UI Technologies > SAP Fiori > SAP Fiori Launchpad Settings.
+
 4. Then click the **IMG Activity** icon in front of **Change Client-Specific Settings**.
 
     ![Change Settings](10-change-FLP-settings.png)
@@ -124,23 +128,23 @@ This parameter must only be set in an embedded scenario where the SAP Fiori fron
 
 5. Click **New Entries** to create one new entry.
 
-    ![New Entries](11-new-entries.png)
+    ![New Entries](11a-new-entries.png)
 
 6. For the new entry, make the following inputs in the first row of the table:
 
     FLP Property ID: `EXPOSURE_SYSTEM_ALIASES_MODE`
 
-    Type: `String type`
-
-    Category: `FLP UI Server Settings`
-
     Property Value:  `CLEAR`
 
-    > Don't worry if the values for Type and Category are not displayed in this view although you made them. They will show up after saving.
+    > The values for Type and Category will be added automatically when you save the new entry.
 
-7. Click the **Save** icon.
+7. Click **Save**.
 
-    ![Save](12-save-settings.png)
+    ![Exit](12-save-settings.png)
+
+8. If you see a pop-up window informing you about a refresh of the text index, just confirm it.
+
+    ![Close pop-up](12b-confirm-popup.png)
 
     To save your settings, you need to assign a customizing request.
 

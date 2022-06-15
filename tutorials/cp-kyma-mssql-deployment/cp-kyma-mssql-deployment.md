@@ -3,8 +3,8 @@ title: Deploy MSSQL in the Kyma Runtime
 description: Configure and deploy an MSSQL database within the Kyma runtime to be used for a test or development scenario.
 time: 45
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
