@@ -1,6 +1,7 @@
 ---
 title: Create Custom Dimensions and Measures
 description: Create custom dimensions and measures to collect and track analytics data in API Management.
+auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-api-management, software-product-function>sap-btp-cockpit, software-product>sap-btp--cloud-foundry-environment]
 primary_tag: software-product>sap-api-management
@@ -82,7 +83,7 @@ To enable data collection, you must reuse the name of the custom metric created 
 10. Select **Click to Deploy**.
   !![Click to deploy](Click-to-deploy.png)
 
-[DONE]
+[VALIDATE_1]
 
 [ACCORDION-END]
 
