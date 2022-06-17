@@ -1,5 +1,5 @@
 ---
-title: Introduction and Preparation
+title: Prepare to Develop the SAP SuccessFactors Extension
 description: Business scenario and preparation steps to develop the SAP SuccessFactors extension.
 auto_validation: true
 time: 10
