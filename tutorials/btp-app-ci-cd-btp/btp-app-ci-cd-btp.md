@@ -391,6 +391,5 @@ You have now successfully created a CI/CD pipeline and deployed your application
 > In case this is your first deployment of the `cpapp` project to the SAP BTP Cloud Foundry environment, please continue with the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service).  You will need to complete the configuration before you can use the application, because this part can't be automated with CI/CD tooling.
 
 [VALIDATE_1]
-
 [ACCORDION-END]
 ---

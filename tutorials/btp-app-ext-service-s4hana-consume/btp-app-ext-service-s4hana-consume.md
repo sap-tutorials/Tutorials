@@ -224,10 +224,9 @@ When creating new entries in the **Risks** application, you should be able to us
 
 Congratulations! You have completed all tutorials.
 
-
-
 [DONE]
 The result of this tutorial can be found in the [`ext-service-s4hana-consume`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hana-consume) branch.
+
 
 [ACCORDION-END]
 ---
