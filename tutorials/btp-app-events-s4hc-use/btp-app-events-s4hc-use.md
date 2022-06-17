@@ -68,6 +68,5 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 Congratulations! You have completed all tutorials.
 
 [VALIDATE_1]
-
 [ACCORDION-END]
 ---

@@ -231,8 +231,6 @@ When creating new entries in the **Risks** application, you should be able to us
 Congratulations! You have completed all tutorials.
 
 [VALIDATE_1]
-
-
 The result of this tutorial can be found in the [`ext-service-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-s4hc-use) branch.
 
 

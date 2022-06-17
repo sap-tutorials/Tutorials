@@ -151,6 +151,5 @@ If you don't want to start from scratch, but from a specific example of the tuto
     ```
 
 [VALIDATE_1]
-
 [ACCORDION-END]
 ---
