@@ -106,7 +106,7 @@ To connect the HDLFSCLI to a HANA Data Lake file container, a certificate will n
 
 Then, follow these steps to creating your self-signed certificate.
 
-**Note**: Make sure the certificate fields are not all exactly the same between the Certificate Authority (CA) and client certificates, otherwise it is assumed to be a self-signed cert and the cert validation below will fail.
+Make sure the certificate fields are not all exactly the same between the Certificate Authority (CA) and client certificates, otherwise it is assumed to be a self-signed cert and the cert validation below will fail.
 
 Create a private key for the CA (2048 bits).
 
@@ -118,7 +118,7 @@ Create the CA's public certificate (valid for 200 days). Provide at least a comm
 
 Create a signing request for the client certificate.
 
-**Note**: Provide at least a common name and fill other fields as desired. Also, leave the email-Id field blank.
+Provide at least a common name and fill other fields as desired. Also, leave the email-Id field blank.
 
 `openssl req -new -nodes -newkey rsa:2048 -out client.csr -keyout client.key`
 
@@ -132,7 +132,7 @@ Verify the certificate was signed by the CA.
 
 To obtain the subject string of a certificate in the RFC2253 format used in HDL Files authorizations (omit the "subject="prefix).
 
-**Note:** you will need this later when you configure authentication for HDL Files.
+You will need this later when you configure authentication for HDL Files.
 
 `openssl x509 -in client.crt -nameopt RFC2253 -subject -noout`
 
@@ -156,7 +156,7 @@ You may need to scroll down to find these.
 
 Click on **"Add"** under Trusts configuration and hit on **"Upload"** file button and browse to the location where your `ca.crt` is located and upload that file and click on apply.
 
-**Note:** The alias can be anything, but the certificate should be exactly what is in the generated `ca.crt`.
+The **alias** can be anything, but the certificate should be exactly what is in the generated `ca.crt`.
 
 ![Add Trust modal.](image-9.png)
 
@@ -186,7 +186,7 @@ The following command wont return anything in the output.
 
 **[Optional]**: Configure a configuration file to make using the CLI simpler.
 
-**Note**: The configuration will be placed in the user's root directory. It is saved as a JSON file that can be modified in any text editor.
+The configuration will be placed in the **user's root directory**. It is saved as a JSON file that can be modified in any text editor.
 
 `hdlfscli -cert <PATH>\client.crt -key <PATH>\client.key -k -s <REST API Endpoint> -config myconfig -dump-config ls`
 
