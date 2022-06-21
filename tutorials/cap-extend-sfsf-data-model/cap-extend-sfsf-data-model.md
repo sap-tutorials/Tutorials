@@ -23,7 +23,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 [ACCORDION-BEGIN [Step 1: ](Review the Data Model)]
 
-Before you move on with the coding, let's just quickly review the conceptual data model of your solution:
+Before you move on with the coding, just quickly review the conceptual data model of your solution:
 
 ![Figure 1 – Data Model Diagram](data-model.png)
 
@@ -36,7 +36,7 @@ The logical model depicted in the diagram above has been conceived to comply wit
 5. Projects and activities have one status each (i.e. not started, in progress, overdue, completed etc.);
 6. And last, but not least, whenever a team member is assigned to a project, a special assignment is registered to the employee's background to signal that such employee has participated in the project, acting in a specific role, as part of the employee's professional experience.
 
-Now, having that model in mind, let's make its definition into the CAP project.
+Now, having that model in mind, you can make its definition into the CAP project.
 
 [DONE]
 [ACCORDION-END]
@@ -58,7 +58,7 @@ On the **dialog**, name the file `projman-model.cds` and click **OK**.
 
 Copy and paste the **code snippet below** into the recently created file:
 
-```
+```CDS Data Modeling Language
 using {
     cuid,
     sap
@@ -120,7 +120,7 @@ entity Status : sap.common.CodeList {
 }
 ```
 
-Let's quickly analyze the model code:
+Quickly analyze the model code:
 
 First you import some **ready-to-use common aspects** from the CAP framework: `cuid` (common universal unique id) and `sap` (from where we get the `Codelist` aspect). To learn more about the common types and aspects you can read [**this section**](https://cap.cloud.sap/docs/cds/common) from the **CAP official documentation**. The `cuid` aspect automatically **defines a UID primary key** for entities Project, Member and Activity.
 
@@ -135,7 +135,7 @@ You specify that the entities **Employee** (the "bridge" between SAP SuccessFact
 
 [ACCORDION-BEGIN [Step 4: ](Load Initial Test Data)]
 
-Now, let's populate your data model with some initial test data. This can be done by creating some **files in CSV format** into a **subfolder** of the `db` folder named "**data**" with the specific naming convention of `<namespace>-<entity name>.csv`.
+Now, populate your data model with some initial test data. This can be done by creating some **files in CSV format** into a **subfolder** of the `db` folder named "**data**" with the specific naming convention of `<namespace>-<entity name>.csv`.
 
 In the **root folder** of your project on the **Terminal**, type `cd db` and press **Enter**.
 
@@ -166,7 +166,7 @@ On the **left-hand pane**, expand the `data` folder to view the recently created
 
 Copy & paste the content below into the `sfsf.projman.model.db-Role.csv` file:
 
-```
+```CSV File Content
 ID;name;descr
 1;Project Manager;Project Manager Role
 2;Project Lead;Project Lead Role
@@ -183,7 +183,7 @@ ID;name;descr
 
 On the **left-hand pane**, click on the `sfsf.projman.model.db-Status.csv` file to open it, then copy & paste the content below:
 
-```
+```CSV File Content
 ID;name;descr;criticality
 1;Not Started;Activity has not been started yet;2
 2;In Progress;Activity is in progress;5
@@ -196,7 +196,7 @@ ID;name;descr;criticality
 
 On the **left-hand pane**, click on the `sfsf.projman.model.db-Employee.csv` file to open it, then copy & paste the content below:
 
-```
+```CSV File Content
 userId;username;defaultFullName;email;division;department;title
 100093;rsmolla;Rick Smolla;Rick.Smolla@bestrunsap.com;Corporate Services (CORP_SVCS);Employee Development (50012007);Development Analyst
 100095;kholliston;Kay Holliston;Kay.Holliston@bestrunsap.com;Corporate Services (CORP_SVCS);Human Resources US (50150001);Program Manager
@@ -210,7 +210,7 @@ userId;username;defaultFullName;email;division;department;title
 
 On the **left-hand pane**, click on the `sfsf.projman.model.db-Project.csv` file to open it, then copy & paste the content below:
 
-```
+```CSV File Content
 ID;name;description;startDate;endDate;status_ID
 3ca47b3e-eff3-430e-9ae0-1937dd094212;S/4HANA Cloud implementation;Global implementation of the S/4HANA Cloud ERP in the organization;2022-01-02;2022-09-30;1
 b85cf0b8-2ff3-40a7-af20-52fa024fbce6;Resource allocation app development;Development of a cloud application to manage presales resources allocation;2022-08-02;2022-11-30;2
@@ -219,7 +219,7 @@ b5c6bc42-6f95-4876-9658-13aaecb28008;BTP enablement program development;Developm
 
 On the **left-hand pane**, click on the `sfsf.projman.model.db-Member.csv` file to open it, then copy & paste the content below:
 
-```
+```CSV File Content
 ID;parent_ID;member_userId;role_ID;hasAssignment
 df87d8d4-16df-48da-a8bf-5b2218f62602;3ca47b3e-eff3-430e-9ae0-1937dd094212;100093;1;true
 3470cf57-b0b9-49ce-b568-52f44df3b09c;3ca47b3e-eff3-430e-9ae0-1937dd094212;100095;2;true
@@ -233,7 +233,7 @@ d2696b36-3413-4522-a73b-f00560dc3fe5;b5c6bc42-6f95-4876-9658-13aaecb28008;100115
 
 On the **left-hand pane**, click on the `sfsf.projman.model.db-Activity.csv` file to open it, then copy & paste the content below:
 
-```
+```CSV File Content
 ID;parent_ID;assignedTo_ID;name;description;dueDate;status_ID
 4dae162a-56ea-4e99-8061-70ec3f30a2fd;3ca47b3e-eff3-430e-9ae0-1937dd094212;df87d8d4-16df-48da-a8bf-5b2218f62602;Do project planning;Plan the whole project;2022-01-05;7
 fcba3d35-013a-4ab6-9ab9-9fb938eff8a4;3ca47b3e-eff3-430e-9ae0-1937dd094212;3470cf57-b0b9-49ce-b568-52f44df3b09c;Assign team to project;Look for the appropriate experts to work on project;2022-01-05;3
