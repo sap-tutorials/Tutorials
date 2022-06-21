@@ -42,7 +42,7 @@ On the **dialog** name the file `projman-service.cds` and click **OK**.
 
 Copy and paste the **code snippet below** into the recently created file:
 
-```
+```CDS Service Definition Language
 using sfsf.projman.model.db as model from '../db/projman-model';
 using PLTUserManagement as UM_API from '../srv/external/PLTUserManagement.csn';
 
@@ -81,7 +81,7 @@ service ProjectManager @(path : '/projman') {
 
 [ACCORDION-BEGIN [Step 3: ](Understand the Definition Code)]
 
-Let's quickly analyze the service definition code:
+Quickly analyze the service definition code:
 
 First you import the solution model from the file you created in the previous tutorial as well as the `PLTUserManagement` OData service you imported in the [**third tutorial**](cap-extend-sfsf-import-services), referencing them through the aliases: `model` and `UM_API`, respectively.
 
