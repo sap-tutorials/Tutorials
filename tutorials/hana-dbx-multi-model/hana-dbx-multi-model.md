@@ -291,7 +291,7 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
     SELECT NAME, SHAPE.ST_ASWKT(), SHAPE FROM HOTEL.POI_LONGVIEW;
     ```
 
-    Notice that the location data can be formatted in a more readable format using the methods `ST_AsText` or `ST_AsEText` which in addition shows the SRID.
+    Notice that the location data can be formatted in a more readable format using the methods `ST_AsText` or `ST_ASEWKT` which in addition shows the SRID.
 
     ![view the spatial data](long-point-data.png)
 

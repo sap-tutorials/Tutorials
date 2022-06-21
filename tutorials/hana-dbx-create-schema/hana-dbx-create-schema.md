@@ -584,7 +584,7 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
     ```SQL
        SELECT current_date, current_time FROM dummy;  --be sure to schedule an event in the future
        CREATE SCHEDULER JOB GEN_RESERVATIONS_JOB CRON '2021 12 23 * 14 25 0' ENABLE PROCEDURE "HOTEL"."RESERVATION_GENERATOR" PARAMETERS numtogenerate=10;
-       SELECT * FROM M_SCHEDULER_JOBS WHERE SCHEDULER_JOB_NAME = 'GEN_RESERVATIONS_JOB';
+       SELECT * FROM SCHEDULER_JOBS WHERE SCHEDULER_JOB_NAME = 'GEN_RESERVATIONS_JOB';
     ```
 
 
