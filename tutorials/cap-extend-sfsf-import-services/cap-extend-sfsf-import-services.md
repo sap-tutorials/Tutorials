@@ -67,7 +67,7 @@ Now that you've got both EDMX files in our local computer, it's time to import t
 
 [ACCORDION-BEGIN [Step 3: ](Checkout the Import Results)]
 
-Let's now inspect what happened after executing those command lines. First, click on the `ECEmployeeProfile.csn` file in the `srv/external` folder:
+Now, inspect what happened after executing those command lines. First, click on the `ECEmployeeProfile.csn` file in the `srv/external` folder:
 
 ![Figure 7 – CSN of the ECEmployeeProfile service](csn-employee-profile.png)
 
@@ -85,7 +85,7 @@ Now, open the `PLTUserManagement.csn` file and search for `PLTUserManagement.Use
 
 That's the entity you are going to use to fetch the **relevant employee data** (you won't use all of its attributes) to assign to the **projects teams**.
 
-Let's now look at the `package.json` file to see how CAP is referencing those OData services. Open that file and scroll down to the bottom:
+Now, look at the `package.json` file to see how CAP is referencing those OData services. Open that file and scroll down to the bottom:
 
 ![Figure 10 – Services reference](services-reference.png)
 
@@ -100,7 +100,7 @@ With that, you are simply setting the **destination name** and the **path** wher
 
 [ACCORDION-BEGIN [Step 4: ](Create Destination and XSUAA service instances)]
 
-In order to use that destination for testing your application during development, you need to **bind your project** to **two service instances** in BTP: one for the **destination service** and another for the **XSUAA service**. So, let's start by creating those service instances and a service key (credentials) for each one in BTP.
+In order to use that destination for testing your application during development, you need to **bind your project** to **two service instances** in BTP: one for the **destination service** and another for the **XSUAA service**. So, start by creating those service instances and a service key (credentials) for each one in BTP.
 
 In the **BTP cockpit** of your trial account, on the left-hand pane click on **Instances and Subscriptions** then on the **Create** button at the **top-right corner**.
 
@@ -155,7 +155,7 @@ Whenever you **deploy** an application to **Cloud Foundry**, that variable is au
 
 2- On the left-hand pane, click on the `default-env.json` file to open it. Then, **copy & paste** the following **code snippet**:
 
-```
+```JSON File Content
 {
 	"VCAP_SERVICES": {
 		"destination": [
