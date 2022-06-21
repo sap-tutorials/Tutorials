@@ -184,7 +184,7 @@ The following command wont return anything in the output.
 
 `hdlfscli -cert <PATH>\client.crt -key <PATH>\client.key -cacert <PATH>\ca.crt -k -s https://<REST API Endpoint> -filecontainer <Instance ID> ls`
 
-**[Optional]**: Configure a configuration file to make using the CLI simpler.
+Optional: Configure a configuration file to make using the CLI simpler.
 
 The configuration will be placed in the **user's root directory**. It is saved as a JSON file that can be modified in any text editor.
 
@@ -205,7 +205,7 @@ Verify that the files has been uploaded.
 Now that the TPCH data files are in the data lake file container we can use SQL on Files to query the data. Learn how to do this in the tutorial "Use SQL on Files to Query Structured Data Files".
 
 
-**Troubleshoot** If anyone receives the following error while verifying the configuration, please do the needful as mentioned
+Troubleshoot: If anyone receives the following error while verifying the configuration, please do the needful as mentioned.
 
 ![Troubleshoot the configuration error.](image-12.png)
 
