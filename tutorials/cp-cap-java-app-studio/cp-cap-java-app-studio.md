@@ -82,8 +82,8 @@ Before you begin, check the settings of your browser. You need to add domains `o
 
     ```Shell/Bash
     mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
-    	-DarchetypeVersion=1.23.1 \
-    	-DgroupId=com.sap.cap -DartifactId=products-service -Dpackage=com.sap.cap.productsservice
+      -DarchetypeVersion=1.17.0 \
+      -DgroupId=com.sap.cap -DartifactId=products-service -Dpackage=com.sap.cap.productsservice
     ```
 
     This will initialize the application using the [maven archetype](http://maven.apache.org/guides/introduction/introduction-to-archetypes.html) `cds-services-archetype` and create your project as follows:
@@ -207,7 +207,7 @@ While creating the project skeleton, the application `Application.java` file was
 
     !![find command](find-command.png)
 
-2. Type **Ports: Expose** and select or enter `8080`. There will be one application visible and you can open new tab for it.
+2. Type **Port: Preview** and select or enter `8080`. There will be one application visible and you can open new tab for it.
 
 [VALIDATE_1]
 [ACCORDION-END]
