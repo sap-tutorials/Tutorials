@@ -268,7 +268,7 @@ Now simulate locally business partner creation and update, and see the results:
 
       !![New Status Column](status_column.png)
 
-    > See section [Implement Roles and Authorization Checks In CAP](btp-app-cap-roles) to learn more about authentication and role restrictions in CAP.
+    > See tutorial [Implement Roles and Authorization Checks In CAP](btp-app-cap-roles) to learn more about authentication and role restrictions in CAP.
 
 3. With `cds watch` running, open another terminal and execute the following command to locally simulate a business partner creation event:
 
@@ -370,7 +370,7 @@ The SAP Event Mesh service is the messaging service that helps applications runn
     cf deploy cpapp_1.0.0.mtar
     ```
 
-    In the next section, you will continue with connecting our CAP application to the SAP S/4HANA Cloud system.
+    In the next tutorial, you will continue with connecting our CAP application to the SAP S/4HANA Cloud system.
 
 [DONE]
 The result of this tutorial can be found in the [`events-s4hc-use`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/events-s4hc-use) branch.

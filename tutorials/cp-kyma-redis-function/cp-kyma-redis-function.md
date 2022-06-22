@@ -3,9 +3,10 @@ title: Use Redis in the Kyma Runtime to Store and Retrieve Data
 description: Deploy Redis and configure two serverless functions to cache and retrieve data from the Redis instance within the Kyma runtime.
 time: 30
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
+
 
 ## Prerequisites
   - [Provision Kyma](cp-kyma-getting-started)
