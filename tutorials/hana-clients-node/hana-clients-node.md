@@ -16,7 +16,7 @@ primary_tag: software-product>sap-hana-cloud
   - How to create a Node.js application that queries a SAP HANA database
   - How to use both the synchronous and asynchronous driver interfaces
 
-Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.dev/).  
+Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.dev/learn).  
 
 ---
 
@@ -28,15 +28,19 @@ Ensure you have Node.js installed and check its version. Enter the following com
 node -v  
 ```  
 
-If Node.js is installed, the currently installed version is returned, such as v16.14.2.
+If Node.js is installed, the currently installed version is returned, such as v16.15.1.
 
 If Node.js is not installed, download the long-term support (LTS) version of Node.js from [Download Node.js](https://nodejs.org/en/download/).
 
->An install for Node.js is not provided on Linux. You may choose to install it via a package manager. For more details, please navigate to [this link](https://nodejs.org/en/download/package-manager/).
+>If an install for Node.js is not provided on Linux, you may choose to install it via a package manager. For more details, please navigate to [this link](https://nodejs.org/en/download/package-manager/).
 
-During the installation, there is no need to check the following box as you do not need to install Chocolatey.  
+---
 
-![Chocolatey](Chocolatey.png)
+>During the installation, there is no need to install Chocolatey.  
+>
+>![Chocolatey](Chocolatey.png)
+
+---
 
 >The SAP HANA client provides a 32-bit and a 64-bit install, as does Node.js.  The Node.js driver provided with the SAP HANA client is available for 64-bit only.  For further details on supported versions, see SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
@@ -107,12 +111,15 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     >The hana-client driver is also available from the HANA client install folder.  The install location was set during the install.
 
     >```Shell
+    cd C:\SAP\hdbclient\node
+    npm install
+    cd %HOMEPATH%\HANAClientsTutorial\node
     npm install C:\SAP\hdbclient\node
     >```
 
     >If you encounter an error about permissions, on Microsoft Windows, run or open the command prompt as an administrator, or use `sudo` on Linux or Mac.
 
-4. The following command lists the Node.js modules that are now installed locally into the `HANAClientsTutorial\node` folder.  Note that the extraneous message can be ignored.  
+4. The following command lists the Node.js modules that are now installed locally into the `HANAClientsTutorial\node` folder.  
 
     ```Shell
     npm list
@@ -153,7 +160,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 >```Shell
 >npm view @sap/hana-client version
 >npm uninstall @sap/hana-client
->npm install @sap/hana-client@2.4.167
+>npm install @sap/hana-client@2.12.25
 >npm list @sap/hana-client
 >npm update @sap/hana-client
 >npm list @sap/hana-client
@@ -224,7 +231,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
     var traceCB = function (buf) {
         console.log(buf);
     };
-    connection.onTrace("sql=error,debug=fatal,OutBufferSize=64k", traceCB);  
+    connection.onTrace("sql=error,api=debug,OutBufferSize=64k", traceCB);  
     */
 
     connection.connect(connOptions);
@@ -484,7 +491,7 @@ The Node.js driver for the SAP HANA client added support for promises in the 2.1
     ```
 ![Running nodeQueryPromise.js](Node-query-promise.png)
 
-The above code makes use of the [promise module](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d7226e57dbd943aa9d8cd0b840da3e3e.html).  Additional details on promises can be found at [Understanding JavaScript Promises](https://nodejs.dev/learn/understanding-javascript-promises).
+The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_CLIENT/f1b440ded6144a54ada97ff95dac7adf/dfca4b049d844fa8b44bb7bf3e163e2a.html).  Additional details on promises can be found at [Understanding JavaScript Promises](https://nodejs.dev/learn/understanding-javascript-promises).
 
 [DONE]
 [ACCORDION-END]

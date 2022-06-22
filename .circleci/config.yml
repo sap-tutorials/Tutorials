@@ -52,11 +52,11 @@ workflows:
   version: 2
   nightly:
     triggers:
-    - schedule:
-        cron: "0 1 * * 0-5"
-        filters:
-          branches:
-            only:
-              - master
+      - schedule:
+          cron: "0 1 * * 0-5"
+          filters:
+            branches:
+              only:
+                - master
     jobs:
       - build-all

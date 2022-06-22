@@ -3,8 +3,8 @@ title: Trigger a Microservice with an Event
 description: Trigger a microservice to run when an event is published into the Kyma runtime.
 time: 20
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites

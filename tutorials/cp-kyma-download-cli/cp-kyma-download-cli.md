@@ -3,8 +3,8 @@ title: Install the Kubernetes Command Line Tool
 description: Download and install kubectl - the Kubernetes command line tool which allows access to the SAP BTP, Kyma runtime via the command line.
 time: 15
 auto_validation: true
-tags: [ tutorial>beginner, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>beginner, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites

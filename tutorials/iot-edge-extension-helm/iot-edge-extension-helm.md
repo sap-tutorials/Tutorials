@@ -34,7 +34,7 @@ The second step consists in the creation of a new Helm solution (chart), storing
 
 [ACCORDION-BEGIN [Step 1: ](Create Helm chart)]
 
-1.  Open the folder of your copy of **SAP Edge Gateway Service Reference Application** downloaded from the official [SAP IoT Edge - Samples GitHub repository](https://github.com/SAP-samples/iot-edge-samples/tree/main/IoT_Edge/edge-gateway-service-ref-app#download-the-code) while executing the tutorial [Create Extension Service Container Image](iot-edge-extension-registry) and navigate to the folder `helm` then open the file `values.yaml` with a text editor.
+1.  Open the folder of your copy of **SAP Edge Gateway Service Reference Application** downloaded from the official [SAP IoT - Samples GitHub repository](https://github.com/SAP-samples/sap-iot-samples/tree/main/iot-edge-samples/edge-gateway-service-ref-app#download-the-code) while executing the tutorial [Create Extension Service Container Image](iot-edge-extension-registry) and navigate to the folder `helm` then open the file `values.yaml` with a text editor.
 
 2.  Change the values of `image.name` and `image.tag` with the values defined in the step 2 of the tutorial [Create Extension Service Container Image](iot-edge-extension-registry), i.e.: `image.name` used in the tutorial is `saptestpm/gw-ref-app` and `image.tag` is `1.0.0`. Define a parameter called `bindings: ""` and save it.
 
@@ -172,7 +172,7 @@ The second step consists in the creation of a new Helm solution (chart), storing
 
     ```Shell/Bash
     % helm package .
-    Successfully packaged chart and saved it to: /******/iot-edge-samples/IoT_Edge/edge-gateway-service-ref-app/helm/edge-gateway-service-ref-app-1.0.0.tgz
+    Successfully packaged chart and saved it to: /******/sap-iot-samples/iot-edge-samples/edge-gateway-service-ref-app/helm/edge-gateway-service-ref-app-1.0.0.tgz
     ```
 
     Your solution has been compressed in one single file stored at the path provided in the output of your command. This is the file you will need it in the next step while uploading the file in the **SAP IoT Edge Extensions** UI.
@@ -242,7 +242,7 @@ The second step consists in the creation of a new Helm solution (chart), storing
 
         - Default Value: `9000`
 
-            This is the port exposed by the extension service to access to the [published APIs](https://github.com/SAP-samples/iot-edge-samples/tree/main/IoT_Edge/edge-gateway-service-ref-app#description-services-functionalities).
+            This is the port exposed by the extension service to access to the [published APIs](https://github.com/SAP-samples/sap-iot-samples/tree/main/iot-edge-samples/edge-gateway-service-ref-app#description-services-functionalities).
 
     >The value of the parameters defined in the UI `bindings` and `service.port` will automatically override the value defined in the HELM chart for the corresponding parameters `bindings` and `service.port`. This operation is done at the deploy time to permit the user to specify a different value from the one defined as **Default Value** (which is also a not mandatory field).
 
@@ -258,7 +258,7 @@ Let's assume you have made any kind of changes to the Helm chart (and, optionall
 
 The Extension Service supports the versioning, as explained with the following steps.
 
-1.  Open the folder of your copy of **SAP Edge Gateway Service Reference Application** downloaded from the official [SAP IoT Edge - Samples GitHub repository](https://github.com/SAP-samples/iot-edge-samples/tree/main/IoT_Edge/edge-gateway-service-ref-app#download-the-code) while executing the tutorial [Create Extension Service Container Image](iot-edge-extension-registry) and navigate to the folder `helm`. Open the file `Chart.yaml` with a text editor.
+1.  Open the folder of your copy of **SAP Edge Gateway Service Reference Application** downloaded from the official [SAP IoT - Samples GitHub repository](https://github.com/SAP-samples/sap-iot-samples/tree/main/iot-edge-samples/edge-gateway-service-ref-app#download-the-code) while executing the tutorial [Create Extension Service Container Image](iot-edge-extension-registry) and navigate to the folder `helm`. Open the file `Chart.yaml` with a text editor.
 
 2.  Update `version` and `appVersion` with a different number, i.e. the version number `1.0.1`, and save it.
 
