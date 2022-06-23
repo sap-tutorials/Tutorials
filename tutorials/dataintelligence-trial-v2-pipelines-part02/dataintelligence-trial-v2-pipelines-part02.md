@@ -37,7 +37,7 @@ Open the pipeline which you have created in the [previous tutorial](dataintellig
     - Add **Write File** operator.
     - Drag and drop **Write File** operator to the existing graph.
     - Remove the connection between Data Generator and Terminal.
-    - Connect output port of the Data Generator to the `inFile` input port of the **Write File**.
+    - Connect output port of the Data Generator to the `File` input port of the **Write File**.
 
     ![Add Write File operator](datahub-trial-v2-pipelines-part02-1.png)
 
@@ -60,7 +60,7 @@ Open the pipeline which you have created in the [previous tutorial](dataintellig
 
     To specify connection details you can utilize the connections established in the Configuration Manager.
 
-    Click on the **Connection** input field and select **Configuration Type** as **Configuration Manager** and select the desired connection from the **Connection ID** dropdown box. Suggest to use `CLOUD_STORAGE`.
+    Click on the **Connection** input field and select **Configuration Type** as **Connection Management** and select the desired connection from the **Connection ID** dropdown box. Suggest to use `CLOUD_STORAGE`.
 
     The **Write File** operator will write the received data to file in the `/sensordata` directory in the specified GCS or AWS S3 bucket or Azure container.
 
@@ -72,7 +72,7 @@ Open the pipeline which you have created in the [previous tutorial](dataintellig
 
 1. Add **Read File** operator to the graph.
     - Now drag and drop **Read File** operator to the existing graph `(test.myFirstPipeline)`.
-    - Connect the **file** output to input of **Read File** operator.
+    - Connect the `file` output of the **Write File** Operator to input of **Read File** operator.
     - Instead of the previous Terminal operator, find the **Wiretap** operator, connect its input to the Read File operator output.
     - Delete the Terminal operator.
 
@@ -100,8 +100,7 @@ Open the pipeline which you have created in the [previous tutorial](dataintellig
 1. Click **Run** to execute the pipeline.
 
 2. View Data.
-    - When the **Status** tab indicates that the pipeline is running.
-    - Use the context menu **Open UI** of the **Wiretap** operator to see the generated sensor data.
+    - When the **Status** tab indicates that the pipeline is running. Use the context menu **Open UI** of the **Wiretap** operator to see the generated sensor data.
 
     !![View Wiretap](datahub-trial-v2-pipelines-part02-3.png)
 
@@ -119,7 +118,7 @@ For Azure open [https://portal.azure.com/](https://portal.azure.com/) and naviga
 
 ![Azure Cloud](datahub-trial-v2-pipelines-part02-6.png)
 
-Open the output **Wiretap**. Copy any row from the output and paste it in the frame below and click on **Submit Answer**.
+Open the output **Wiretap**. Copy any row from the output and paste it in the frame below and click on **Check Answer**.
 
 [VALIDATE_1]
 
