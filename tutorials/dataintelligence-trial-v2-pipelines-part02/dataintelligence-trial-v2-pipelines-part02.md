@@ -2,8 +2,8 @@
 title: Store Sensor Data in Cloud Storage in SAP Data Intelligence, Trial Edition
 description: Use Cloud Storage to store sensor data by using SAP Data Intelligence, Trial Edition.
 auto_validation: true
-primary_tag: products>SAP-data-intelligence
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-intelligence ]
+primary_tag: software-product>sap-data-intelligence
+tags: [  tutorial>beginner, topic>big-data, software-product>sap-data-intelligence ]
 time: 30
 author_name: Roy Zhong
 author_profile: https://github.com/roy-zhong
@@ -106,7 +106,7 @@ Open the pipeline which you have created in the [previous tutorial](dataintellig
 
     >**Hint** In contrast to the previous tutorial, this time the generated sensor data is not sent from the **Data Generator** operator to the **Terminal** operator directly, but via **GCS or AWS S3 or WASB**. Hence the **Wiretap** also shows you information about the created files.
 
-For GCP open [https://console.cloud.google.com](https://console.cloud.google.com) and navigate to **GCP Left menu** > **Storage** > **Browser** > **Your Bucket name** > `sensordata folder`. The longer the pipeline runs, the more files you will find there.
+For GCP open [https://console.cloud.google.com](https://console.cloud.google.com) and navigate to **GCP Left menu** > **Cloud Storage** > **Browser** > **Your Bucket name** > `sensordata folder`. The longer the pipeline runs, the more files you will find there.
 
 !![Google cloud](datahub-trial-v2-pipelines-part02-4.png)
 
