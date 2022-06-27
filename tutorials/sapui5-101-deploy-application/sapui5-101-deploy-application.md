@@ -29,7 +29,7 @@ Build (aka package) the project to a `mtar` archive to deploy it to Cloud Foundr
 
 2. Once the build is complete, you can see a message in the log. You can now find the generated `mtar` archive in the project tree under `mta_archives`.
 
-    !![buildSuccess](./buildSuccess.png)
+    !![buildSuccess](buildsuccess.png)
 
 [DONE]
 [ACCORDION-END]
@@ -39,7 +39,7 @@ Build (aka package) the project to a `mtar` archive to deploy it to Cloud Foundr
 
     !![deploy](./deployTile.png)
 
-2. When the process if completed, you can see the URL of the deployed app when running `cf html5-list -u -di sap-btp-sapui5-destination-service -u --runtime launchpad` in a new terminal session.
+2. When the process is completed, you can see the URL of the deployed app when running `cf html5-list -u -di sap-btp-sapui5-destination-service -u --runtime launchpad` in a new terminal session.
 
     !![cfapps](./deployedAppUrl.png)
 

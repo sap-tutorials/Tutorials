@@ -3,8 +3,8 @@ title: Deploy a Go MSSQL API Endpoint in the Kyma Runtime
 description: Develop and deploy an MSSQL API endpoint written in Go to the Kyma runtime.
 auto_validation: true
 time: 40
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
