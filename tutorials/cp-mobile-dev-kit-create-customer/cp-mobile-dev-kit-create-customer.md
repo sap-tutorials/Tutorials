@@ -23,7 +23,6 @@ If you didn't follow the prerequisite then you may clone an existing project fro
 
 ---
 
-
 ![MDK](img_1.gif)
 
 
@@ -49,9 +48,7 @@ In this step, you will create the `Customers_Create.page` as a **Form Cell Page*
 
     Now, you will add the fields (like first name, last name, phone, email address & date of birth) for creating a new customer record by the end-user.
 
-4. In the Layout Editor, expand the **Control** | **Container Item** section.
-
-    Drag and drop a **Simple Property** onto the Page area.
+4. In the Layout Editor, expand the **Controls** section, drag and drop a **Simple Property** onto the Page area.
 
     !![MDK](img_1.4.gif)
 
@@ -300,6 +297,9 @@ Deploy the updated application to your MDK client.
     You should see success message for both deployments.
 
     !![MDK](img-6.3.png)
+
+    >Alternatively, you can select MDK: Redeploy in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+    !![MDK](img-4.3.1.png)
 
 [DONE]
 [ACCORDION-END]
