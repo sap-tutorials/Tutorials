@@ -39,6 +39,8 @@ primary_tag: software-product>sap-fiori
 
     In your application, start with `Incidents`. As your application will not have a sub-object page, you do not need a navigation entity.
 
+    Leave `Yes` selected for the prompt `Automatically add table columns to the list page and a section to the object page if none already exists?`.
+
     When finished, click **Next**.
 
 5. Maintain specific attributes of the application project as follows:
