@@ -291,7 +291,12 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
         ![data lake client](data-lake-client-install.png)
 
-        >In the Windows command line, if `setup.exe` fails with an 'Error Loading jvm.dll', see [SAP Support 3001812](https://launchpad.support.sap.com/#/notes/3001812) to resolve this issue.
+        >If the install fails on Microsoft Windows, you may need to run the install as an administrator.  See also the following SAP Notes:
+        >
+        >* [3001764 - SAP IQ 16.x - `InvocationTargetException` Installer Error (WINDOWS)](https://launchpad.support.sap.com/#/notes/3001764)
+        >
+        >* [3001813 - SAP IQ 16.1 SP 04 Rev08 - 'Error Loading sylapij.dll' Installer Error (WINDOWS)](https://launchpad.support.sap.com/#/notes/3001813)
+
 
     * On Linux, extract the archive.
 

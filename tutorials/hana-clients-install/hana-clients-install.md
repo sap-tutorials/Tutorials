@@ -29,7 +29,7 @@ For a complete list, see [SAP HANA Client Interface Programming Reference](https
 
 For a list of newly added features, see [New and Changed Features in the SAP HANA Client](https://help.sap.com/viewer/79ae9d3916b84356a89744c65793b924/latest/en-US) or the [release notes](https://launchpad.support.sap.com/#/notes/2941449).
 
-The SAP HANA client can be used to connect to different versions of SAP HANA.  For example, a `2.12.x` client can connect to SAP HANA Cloud, SAP HANA Service, SAP HANA 2.0 or an SAP HANA 1.0 SPS 09 or higher server.  For more information, see [SAP HANA client and server cross-version compatibility](https://launchpad.support.sap.com/#/notes/0001906576).
+The SAP HANA client can be used to connect to different versions of SAP HANA.  For example, a `2.13.x` client can connect to SAP HANA Cloud, SAP HANA Service, or SAP HANA 2.0.  For more information, see [SAP HANA client and server cross-version compatibility](https://launchpad.support.sap.com/#/notes/0001906576).
 
 [DONE]
 [ACCORDION-END]
@@ -37,7 +37,8 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
 [ACCORDION-BEGIN [Step 2: ](Install from SAP Development Tools)]
 
 1. Download the client installer for your platform (Microsoft Windows, Linux, or Mac) from the [SAP Development Tools](https://tools.hana.ondemand.com/#hanatools) website under the HANA tab and the SAP HANA Client 2.0 section.
->An alternate location to download the client installer (SAP Software Downloads) is described in step 3 which includes the SAP Common Crypto library and additional platforms such as Windows 32-bit and AIX.  SAP Software Downloads also may contain newer versions and patches before they are available on the SAP Development Tools site.
+
+    >An alternate location to download the client installer (SAP Software Downloads) is described in step 3 which includes the SAP Common Crypto library and additional platforms such as Windows 32-bit and AIX.  SAP Software Downloads also may contain newer versions and patches before they are available on the SAP Development Tools site.
 
     ![Client Download](Client-install.png)
 
@@ -73,6 +74,8 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
 
 
     >For details on how to configure your path on a Mac see [this](https://blogs.sap.com/2020/04/03/quick-tip-how-to-add-hdbsql-to-a-path-on-macos/) blog post.
+
+    >---
 
     >To configure your path on Linux:
 

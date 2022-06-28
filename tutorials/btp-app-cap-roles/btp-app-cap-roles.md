@@ -156,4 +156,6 @@ When accessing the `Risks` service in your browser, you get a basic auth popup n
 [DONE]
 The result of this tutorial can be found in the [`cap-roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-roles) branch.
 
+
+[ACCORDION-END]
 ---
