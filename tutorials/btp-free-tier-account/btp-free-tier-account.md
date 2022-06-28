@@ -225,11 +225,10 @@ As a last step, you now need to create a space to develop in.
 
 You will receive a success message "Space created successfully."
 
+**Congratulations! You have successfully set up your global account. Continue with [Manage Entitlements Using the Cockpit](btp-cockpit-entitlements) and learn how to add entitlements to your newly created subaccount.**
+
+
 [VALIDATE_5]
 [ACCORDION-END]
-
----
-
-**Congratulations! You have successfully set up your global account. Continue with [Manage Entitlements Using the Cockpit](btp-cockpit-entitlements) and learn how to add entitlements to your newly created subaccount.**
 
 ---
