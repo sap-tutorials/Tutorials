@@ -1,7 +1,7 @@
 ---
 auto_validation: true
-title: Use Maintain Business Configurations app
-description: Learn how to use the Maintain Business Configurations app to maintain configurations.
+title: Use Custom Business Configurations app
+description: Learn how to use the Custom Business Configurations app to maintain configurations.
 primary_tag: software-product>sap-btp--abap-environment
 tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 30
@@ -16,10 +16,10 @@ author_profile: https://github.com/mervey45
 
 ## Details
 ### You will learn  
-- How to maintain business configurations
+- How to use the Custom Business Configurations app to maintain configurations
 
 
-The [**Maintain Business Configurations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76384d8e68e646d6ae5ce8977412cbb4.html) app serves as an entry point to the configuration objects provided by different applications or partners. You can use the app to adjust these configuration objects to change and influence the system behavior.
+The [**Custom Business Configurations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76384d8e68e646d6ae5ce8977412cbb4.html) app serves as an entry point to the configuration objects provided by different applications or partners. You can use the app to adjust these configuration objects to change and influence the system behavior.
 
 The required business catalog is contained in business role template `SAP_BR_BPC_EXPERT (Configuration Expert - Business Process Configuration)`. Ensure the user responsible for maintaining the error codes has this role assigned.
 
@@ -28,7 +28,7 @@ The required business catalog is contained in business role template `SAP_BR_BPC
 > Don't forget to replace all occurrences of the placeholder ### with your ID of choice in the exercise steps below. You can use the ADT function Replace All (`CTRL+F`) for the purpose.
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Maintain business configurations)]
+[ACCORDION-BEGIN [Step 1: ](Custom Business Configurations)]
 
   1. Start the Fiori Launchpad. Or right-click on your ABAP system and select **Properties**.
 
@@ -36,9 +36,9 @@ The required business catalog is contained in business role template `SAP_BR_BPC
 
   3. Logon with the user responsible for maintaining the error codes.
 
-  4. Select **Maintain Business Configurations** tile.
+  4. Select **Custom Business Configurations** tile.
 
-      ![Start Maintain Business Configurations app](m.png)
+      ![Start Custom Business Configurations app](m.png)
 
   5. Select your business configuration.
 
@@ -102,9 +102,9 @@ The required business catalog is contained in business role template `SAP_BR_BPC
 
     Click **Create**.
 
-18. Back in the **Maintain Business Configurations** app click again on the **Select Transport** action. Use the input help to select a Transport Request and click **OK** and then click **Select Transport**. The selected Transport Request is now shown in the section **Transport**. If you miss a Transport Request, try to refresh the **Maintain Business Configurations** app.
+18. Back in the **Custom Business Configurations** app click again on the **Select Transport** action. Use the input help to select a Transport Request and click **OK** and then click **Select Transport**. The selected Transport Request is now shown in the section **Transport**. If you miss a Transport Request, try to refresh the **Custom Business Configurations** app.
 
-    ![Select transport request in Maintain Business Configurations app](m16.png)
+    ![Select transport request in Custom Business Configurations app](m16.png)
 
 19. Click **Save**. The data has been recorded on the transport request.
 
