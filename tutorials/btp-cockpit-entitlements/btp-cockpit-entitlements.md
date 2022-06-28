@@ -4,7 +4,7 @@ description: Configure entitlements and quota using the cockpit. (Free Tier read
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud, software-product-function>sap-btp-cockpit, tutorial>free-tier]
-primary_tag: products>sap-business-technology-platform
+primary_tag: software-product>sap-business-technology-platform
 ---
 
 ## Prerequisites
@@ -25,9 +25,9 @@ If you are in a global account using the consumption-based commercial model, you
 
 Every service has its own available plans:
 
-1. Go to [SAP Discovery Center](https://discovery-center.cloud.sap/) to obtain information on which plans are available. To do so, search for the name of the product you are interested in.
+1. Go to [SAP Discovery Center](https://discovery-center.cloud.sap/) to obtain information on which plans are available. To do so, search for the name of the service you are interested in.
 
-2. Select the tile of the product you are interested in.
+2. Select the tile of the service you are interested in.
 
 3. From the available tabs, select **Pricing**. You can now see all Service Plans available (such as **Free**, **Default** / **Standard** or **Trial** service plans). As an example, see the screenshot below.
 

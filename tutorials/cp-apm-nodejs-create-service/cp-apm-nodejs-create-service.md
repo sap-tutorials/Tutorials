@@ -138,7 +138,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
 2. Open Visual Studio Code, go to **File** **&rarr;** **Open** and choose the **`my-bookshop`** folder.
 
-3. Go to **View** **&rarr;** **Command Palette** **&rarr;** **Terminal: Create New Integrated Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
+3. Go to **View** **&rarr;** **Command Palette** **&rarr;** **Terminal: Create New Terminal** to open a command line window within Visual Studio Code and run the following command in the root level of your project:
 
     ```Shell/Bash
     npm install
@@ -219,12 +219,13 @@ After initializing the project, you should see the following empty folders:
     ```Shell/Bash
     [cds] - connect using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
+     > init from ./db/csv/my.bookshop-Authors.csv
     /> successfully deployed to sqlite in-memory db
 
-    [cds] - serving CatalogService { at: '/catalog' }
+    [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
     [cds] - server listening on { url: 'http://localhost:4004' }
-    [cds] - launched at 03/03/2022, 15:47:28, in: 952.896ms
+    [cds] - launched at 18/05/2022, 19:49:32, in: 874.456ms
     [cds] - [ terminate with ^C ]
     ```
     > This means, `cds watch` detected the changes in `srv/cat-service.cds` and automatically bootstrapped an in-memory SQLite database when restarting the server process.
@@ -366,13 +367,13 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
     ```Shell/Bash
     [cds] - connect using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: ':memory:' }
-     > filling my.bookshop.Books from ./db/csv/my.bookshop-Books.csv
+     > init from ./db/csv/my.bookshop-Books.csv
     /> successfully deployed to sqlite in-memory db
 
     [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
     [cds] - server listening on { url: 'http://localhost:4004' }
-    [cds] - launched at 03/03/2022, 15:51:30, in: 756.665ms
+    [cds] - launched at 18/05/2022, 19:49:47, in: 861.036ms
     [cds] - [ terminate with ^C ]
     ```
 
@@ -442,7 +443,7 @@ Instead of using in-memory, you can also use persistent databases.
     [cds] - serving CatalogService { at: '/catalog', impl: './srv/cat-service.js' }
 
     [cds] - server listening on { url: 'http://localhost:4004' }
-    [cds] - launched at 03/03/2022, 15:53:43, in: 767.816ms
+    [cds] - launched at 18/05/2022, 19:54:53, in: 830.398ms
     [cds] - [ terminate with ^C ]
     ```
 
@@ -529,7 +530,3 @@ You can now see the generic handlers shipped with CAP in action.
 [DONE]
 
 [ACCORDION-END]
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-apm-nodejs-create-service" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

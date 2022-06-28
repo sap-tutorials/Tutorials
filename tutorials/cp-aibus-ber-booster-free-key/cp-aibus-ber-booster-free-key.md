@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to access your SAP BTP account
   - What are interactive guided boosters
-  - How to use the **Set up account for Business Entity Recognition** booster to assign entitlements, update your subaccount, create a service instance and the associated service key for Business Entity Recognition.
+  - How to use the **Set up account for Business Entity Recognition** booster to assign entitlements, update your subaccount (or create a new one), create a service instance and the associated service key for Business Entity Recognition
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Go to your SAP BTP account)]
@@ -54,11 +54,11 @@ Now, you will use the **Set up account for Business Entity Recognition** booster
 
     !![Service Key](booster-next.png)
 
-5. If you want to create a dedicated subaccount for the service instance, choose **Create Subaccount**. If you want to use an already created subaccount, choose **Select Subaccount** (the selection comes in the next step). For this tutorial, we'll create a dedicated subaccount. When you're done if the selection, click **Next**.
+5. If you want to create a dedicated subaccount for the service instance, choose **Create Subaccount**. If you want to use an already created subaccount, choose **Select Subaccount** (the selection comes in the next step). For this tutorial, we'll create a dedicated subaccount. When you're done with the selection, click **Next**.
 
     !![Service Key](booster-scenario.png)
 
-6. Choose the **free** plan. You can also rename the subaccount to `ber-free-tier-service-plan-tutorial`, for example. Click **Next**.
+6. Choose the **free** plan. You can also rename the subaccount to `ber-free-tier-service-plan-tutorial`, for example. Choose the region closest to you. For this tutorial, we'll use **Europe (Frankfurt) - AWS**. Click **Next**.
 
     !![Service Key](booster-subaccount.png)
 

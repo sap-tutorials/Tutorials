@@ -3,14 +3,15 @@ title: Get an Account on SAP BTP to Try Out Free Tier Service Plans
 description: Sign up for a productive account on SAP Business Technology Platform and try out SAP's services with free tier service plans.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-business-technology-platform; freetierservices]
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform; freetierservices]
 primary_tag: software-product-function>sap-btp-cockpit
 ---
 
 ## Prerequisites
-- To activate your consumption-based SAP BTP global account with free tier service plans, you need a:
-    - **Functioning e-mail address**
-    - **Credit card** for authentication and eventually later for billing purposes (if you do not own a credit card, you can create a trial account which allows you to try out BTP services in a separated environment but without the free tier model on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account)).
+- To activate your consumption-based SAP BTP global account with free tier service plans, you need:
+    - an **e-mail address**
+    - and a **credit card** for authentication and eventually later for billing purposes.
+    **Note:** If you do not own a credit card, you can create a trial account which allows you to try out BTP services in a separate environment but without the free tier model on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account). Note that the trial landscape offers different service plans than the free tier model for BTP, see: [Get an SAP BTP Account for Tutorials](btp-cockpit-setup). To see which services are currently available in trial, go to [SAP Discovery Center](https://discovery-center.cloud.sap), select the service you are interested in and explore our offerings under **Pricing** and **Trial**.
 
 
 ### How Does Free Tier Work?
@@ -36,7 +37,7 @@ If you're interested in further information about Free Tier, or if you want to e
 [ACCORDION-BEGIN [Step 1: ](Register at sap.com)]
 Start your SAP journey in the SAP Store and create an account for the SAP Store. You need this account in order to be able to sign up for an account.
 
-1. Visit the [SAP Store](https://storefront.s1.store.net.sap/dcp/en/product/display-9999951781_live_v1/Pay-As-You-Go%20for%20SAP%20BTP).
+1. Visit the [SAP Store](https://store.sap.com/dcp/en/product/display-9999951781_live_v1/SAP%20Business%20Technology%20Platform).
 
 2. Scroll down to **Plans and Pricing** and select **Start Now**.
 > If you already have an existing user for the SAP Store, select **Manage Orders**.

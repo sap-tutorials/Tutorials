@@ -311,7 +311,8 @@ This step will configure the SAP Alert Notification Service to invoke the previo
 
     >---
 
-    >Note, that multiple alerts will be triggered.  For example, alerts are sent with a status of  CREATE, UPDATE, or CLOSE.  Some alerts also have different thresholds or severity values such as ERROR, WARNING, or NOTICE.  See also [Alerts in SAP HANA Cloud](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/Cloud/en-US/8eca57e7e82e4b788246b6d9db020937.html).
+    >Note, that multiple alerts will be triggered.  For example, alerts are sent with a status of  CREATE, UPDATE, or CLOSE.  Some alerts also have different thresholds or severity values such as ERROR, WARNING, or NOTICE.  See also [Alerts in SAP HANA Cloud](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/8eca57e7e82e4b788246b6d9db020937.html).
+
 
 6. In the SAP HANA database explorer, trigger the test alert.
 

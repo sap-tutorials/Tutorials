@@ -20,6 +20,8 @@ Agent attributes allow you to sort agents  and make sure that a specific agent e
 
 ---
 
+Agent attributes allow you to sort agents registered within the same tenant and make sure that a specific agent executes the job of your choice.
+
 [ACCORDION-BEGIN [Step 1: ](Create an Agent Attribute in the Tenant)]
 
 Now that you have your project free of errors, ready to be released, you need to add an **Attribute** to your project. But first, you need to create an Agent Attribute.
@@ -35,6 +37,9 @@ To do so, please follow these steps:
 4. In the **Create Agent Attribute** dialog box, please enter **My Agent Attribute** in the **Name** field.
 
 5. From the **Type** dropdown list, select **Predefined** if you wish to add values or else leave **Free** as **Type**.
+
+    > **Free** – In this type of attribute, you won't be able to add any predefined value. Whenever you want to use this attribute, you will be able to parametrize the value of this attribute.
+    > **Predefined** – In this type of attribute, you will be able to populate values for any specific attribute.
 
 6. In the **Values** field, you may enter any value you wish (i.e. employee ID).
 

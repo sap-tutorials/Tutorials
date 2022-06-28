@@ -46,7 +46,6 @@ If the Update action fails due to the validation rule, the application will disp
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 2: ](Create a new rule)]
 
 In the MDK editor, you will create a new JavaScript file called `EmailValidation.js` to handle validation if a **@** symbol exists in the email address. In the validation rule, you will grab the data entered by the end-user, validate it and check for the **@** symbol then return true if the email address is of a valid format or false if it is not. The returning result of the validation rule can be used in the Update action to determine whether the action succeeds or fails.
@@ -115,6 +114,9 @@ Deploy the updated application to your MDK client.
     You should see success message for both deployments.
 
     !![MDK](img-4.3.png)
+
+    >Alternatively, you can select MDK: Redeploy in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+    !![MDK](img-4.3.1.png)
 
 [DONE]
 [ACCORDION-END]

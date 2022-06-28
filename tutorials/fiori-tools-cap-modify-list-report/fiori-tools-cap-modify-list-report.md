@@ -3,8 +3,8 @@ title: Refine the List Report with Additional Annotations
 description: Add more annotations to the list report to show additional columns and selection fields, implement a Value Help and configure the application to load data automatically.
 auto_validation: true
 time: 15
-tags: [products>sap-fiori-elements, products>sap-fiori-tools, tutorial>beginner, products>sap-fiori, products>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, products>sap-business-technology-platform]
-primary_tag: products>sap-fiori
+tags: [software-product>sap-fiori-elements, software-product>sap-fiori-tools, tutorial>beginner, software-product>sap-fiori, software-product>sap-business-application-studio, software-product-function>sap-cloud-application-programming-model, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-fiori
 ---
 
 ## Prerequisites
@@ -28,7 +28,7 @@ Open the `annotations.cds` file located in the `app` folder of your service.
 
 !![Annotation Cursor](t3-annotation-service-cds-file.PNG)
 
->There´s a second `annotations.cds` file below folder `app/incidents`. This file was created during the generation of the application and is not meant to be modified within this tutorial.
+>There's a second `annotations.cds` file below folder `app/incidents`. This file was created during the generation of the application and is not meant to be modified within this tutorial.
 
 The annotation `SelectionFields` defines the filter fields offered in the filter bar.
 
@@ -183,27 +183,17 @@ After saving and refreshing the application, you will see the column added to th
 
 [ACCORDION-BEGIN [Step 4: ](Configure the application to load data automatically)]
 
-In this step you will learn how to configure the application to load data automatically when started without the need of pressing the Go button.
+In this step you will learn how to configure the application to load data automatically when started without needing to press the **Go** button.
 
-1. Open the context menu by right mouse click on the `webapp` folder and select **Show Page Map** to start the page map tool.
+1. From the Application Information page, click on the **`ListReport`** page.  
 
-    !![Annotation Cursor](t3-flexible-column-layout-show-page-map-small.PNG)
+    !![Annotation Cursor](t3-open-list-report-page.png)
 
-    Now you see the structure of your application containing the list report and the object page.
-
-2. To configure the list report for automated loading click the pencil icon on the list report tile.
-
-    !![Annotation Cursor](t3-initial-load-configure-page-icon.PNG)
-
-    Select the **table** node on the tree-structure to show the properties of the table.
+2. The **Page Editor** will open. Select the **table** node on the tree-structure to show the properties of the table. Set **Initial Load**, which controls whether or not the table automatically loads, to `Enabled`.
 
     !![Annotation Cursor](t3-initial-load-table-properties.PNG)
 
-    Set the **Initial Load** property to **True**.
-
-    !![Annotation Cursor](t3-initial-load-table-properties-initial-load-true.PNG)
-
- 3. You just need to refresh your application and the data will be loaded automatically.
+3. You just need to refresh your application and the data will be loaded automatically.
 
 [DONE]
 

@@ -17,6 +17,7 @@ author_profile: https://github.com/jitendrakansal
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Enhance-Your-First-MDK-App-with-Additional-Functionalities/2-cp-mobile-dev-kit-delete-customer) to start with this tutorial.
 
+
 ---
 
 ![MDK](img_1.gif)
@@ -237,6 +238,9 @@ Deploy the updated application to your MDK client.
     You should see **Deploy to Mobile Services successfully!** message.
 
     !![MDK](img-7.3.png)
+
+    >Alternatively, you can select MDK: Redeploy in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+    !![MDK](img-4.3.1.png)
 
 [DONE]
 [ACCORDION-END]

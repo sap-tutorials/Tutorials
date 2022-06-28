@@ -3,9 +3,9 @@ author_name: Beatrice Pasch
 author_profile: https://github.com/beapasch
 title: Enable the SAP Translation Hub Service
 description: Enable the SAP Translation Hub service in the SAP BTP cockpit.
-primary_tag: products>sap-translation-hub
+primary_tag: software-product>sap-translation-hub
 auto_validation: true
-tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-business-technology-platform, tutorial>license ]
+tags: [  tutorial>beginner, software-product>sap-translation-hub, software-product>sap-business-technology-platform, tutorial>license ]
 time: 5
 ---
 

@@ -51,14 +51,6 @@ The ODBC Data Source Administrator can be used to view the installed ODBC driver
 
     ![specify the credentials, host and port](data-source2.png)  
 
-    Optional: On the advanced tab, enter the following parameters.
-
-    ```Parameters
-    ENC=TLS(tls_type=rsa;direct=yes)
-    ```
-
-    ![specify the credentials, host and port](data-source3.png)  
-
 7. Verify the connection by clicking on **Test Connection**.
 
     ![test connection](data-source4.png)  
@@ -137,7 +129,7 @@ For additional details see [Connection Properties](https://help.sap.com/viewer/a
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Use data lake data source from Microsoft Excel)]
+[ACCORDION-BEGIN [Step 3: ](Use a data lake data source from Microsoft Excel)]
 
 An application that supports ODBC can now make use of the created data source. One example on Windows is Microsoft Excel.  
 
