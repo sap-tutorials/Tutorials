@@ -94,5 +94,5 @@ To create the Service Key:
 
   You can now use the `clientId`, `clientSecret`, and `tokenUrl` to fetch the token, and the application URL to perform operation on the APIs.
 
-    [VALIDATE_2]
-    [ACCORDION-END]  
+[VALIDATE_2]
+[ACCORDION-END]  
