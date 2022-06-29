@@ -3,7 +3,7 @@ title: Add Automated System Tests for CAP-Based Projects to Your CI/CD Pipeline
 description: Use UIVeri5 to create system tests against a CAP-based sample application. Automate your tests through a CI/CD pipeline.
 auto_validation: true
 time: 60
-tags: [ tutorial>beginner, topic>cloud, topic>user-interface, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, topic>cloud, topic>user-interface, software-product>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 ## Note
