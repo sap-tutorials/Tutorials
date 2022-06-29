@@ -14,7 +14,7 @@ author_profile: https://github.com/LindsayBert
   - If you're using a production environment, you should have a subaccount configured. If you don't have a configured subaccount, refer to this topic: [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
 
 
->Note that you can also do this tutorial using a SAP BTP free plan option. If you do this, please refer to the following tutorial: [Set Up SAP Launchpad Service Using the Free Tier Model for SAP BTP](cp-portal-cloud-foundry-setup-freetier).
+
 
 
 ## Details
