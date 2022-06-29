@@ -5,8 +5,8 @@ title: Set Up SAP Private Link Service
 description: Get onboarded to use SAP Private Link service in SAP BTP.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, software-product-function>sap-private-link-service, products>sap-business-technology-platform, tutorial>license, software-product-function>sap-btp-cockpit]
-primary_tag: software-product-function>sap-private-link-service
+tags: [tutorial>beginner, software-product-function>sap-private-link-service, products>sap-business-technology-platform, tutorial>license, software-product-function>sap-btp-cockpit, software-product>sap-integration-suite]
+primary_tag: software-product>sap-business-technology-platform
 ---
 
 ## Prerequisites
