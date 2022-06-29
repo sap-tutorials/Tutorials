@@ -3,8 +3,8 @@ title: Add Automated System Tests with the SAPUI5 Test Recorder to Your CI/CD Pi
 description: Use the SAPUI5 Test Recorder to create system tests with UIVeri5 against the user interface of an SAPUI5/SAP Fiori application. Add the tests to a continuous integration and delivery pipeline to run them automatically.
 auto_validation: true
 time: 60
-tags: [ tutorial>beginner, topic>cloud, topic>sapui5, products>sap-fiori]
-primary_tag: products>sap-business-technology-platform
+tags: [ tutorial>beginner, topic>cloud, topic>sapui5, software-product>sap-fiori]
+primary_tag: software-product>sap-business-technology-platform
 author_name: Sarah Lendle
 author_profile: https://github.com/SarahLendle
 ---
