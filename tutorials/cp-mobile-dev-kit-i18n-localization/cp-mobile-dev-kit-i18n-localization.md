@@ -382,6 +382,10 @@ Let's start with Currency formatter:
 
 Right-click the `Application.app` file in the project explorer pane,  select **MDK: Deploy** and then select deploy target as **Mobile & Cloud**.
 
+>Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+>!![MDK](img-4.3.1.png)
+
 [DONE]
 [ACCORDION-END]
 
