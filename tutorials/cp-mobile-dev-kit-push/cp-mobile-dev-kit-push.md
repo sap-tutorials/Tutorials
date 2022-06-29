@@ -23,6 +23,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 ---
 
+
 ![MDK](img_7.7.png)
 
 [ACCORDION-BEGIN [Step 1: ](Define push notification settings in app configuration)]

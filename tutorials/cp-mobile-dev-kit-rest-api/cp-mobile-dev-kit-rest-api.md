@@ -378,7 +378,7 @@ In this step, you will create the `Pet_Create.page` as a **Form Cell Page**. Thi
 
 4. Now, you will add the fields (Pet name and Status) for creating a new pet record by the end-user.
 
-    In the Layout Editor, expand the **Control** | **Container Item** section. Drag and drop a **Simple Property** onto the Page area.
+    In the Layout Editor, expand the **Controls** group, drag and drop a **Simple Property** onto the Page area.
 
     >You can find more details about [available controls in Form Cell page](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/FormCell/Container.schema.html).
 
@@ -584,6 +584,10 @@ Now, you will create a new action `ClosePage_Complete.action` that will be calle
 [ACCORDION-BEGIN [Step 17: ](Redeploy the application)]
 
 Right-click the `Application.app` file in the project explorer pane,  select **MDK: Deploy** and then select deploy target as **Mobile & Cloud**.
+
+>Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+>!![MDK](img-4.3.1.png)
 
 [DONE]
 [ACCORDION-END]

@@ -87,7 +87,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 10. In the **Activity Items** section of the Properties pane, click **Add** to add a new activity item.
 
     !![MDK](img-1.10.png)
-    
+
 
 11. Expand the added item, click the 3 dots icon to open the Object browser to bind the `ActivityValue` to the `PhoneNumber` property of the Customer entity.
 
@@ -173,8 +173,9 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-4.3.png)
 
-    >Alternatively, you can select MDK: Redeploy in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
-    !![MDK](img-4.3.1.png)
+    >Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+    >!![MDK](img-4.3.1.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
