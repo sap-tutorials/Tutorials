@@ -38,7 +38,7 @@ You can access the SAP IoT APIs using an OAuth Token. After you subscribe your s
 
      Postman is a popular and easy to use REST client which you can use to access the SAP IoT APIs. Please refer to the introduction guide for understanding the usage of Postman.
 
-       We have provided a set of sample Postman collections on GitHub for you to download. Please clone or download/unzip the repository [iot-edge-sample](https://github.com/SAP-samples/iot-edge-samples). The Postman collection and environment (in folder `blob/main/tools/Postman collections/SAP IoT Edge - Create Device and Thing`) includes all the API calls used in these tutorials and the payload structures for the same. Import both into your Postman.
+       We have provided a set of sample Postman collections on GitHub for you to download. Please clone or download/unzip the repository [sap-iot-samples](https://github.com/SAP-samples/sap-iot-samples). The Postman collection and environment (in folder `/tools/Postman collections/SAP IoT Edge - Create Device and Thing`) includes all the API calls used in these tutorials and the payload structures for the same. Import both into your Postman.
 
      Review and if required update the URL for the following endpoints in the Postman environment:
 

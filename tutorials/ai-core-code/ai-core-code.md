@@ -112,7 +112,7 @@ The code builds a model using the [California Housing Dataset](https://scikit-le
 
 [ACCORDION-BEGIN [Step 4: ](Transform your AI code into a Docker image)]
 
-In the same directory, create a file named `Dockerfile` **(no extension to be added after the filename)**. This file stores instructions for Docker to build an image. Your Docker image is a Linux distribution, therefore commands in this `Dockerfile` are similar to Linux commands with verbs for Docker as the suffix. Paste the following content into the file:
+In the same directory, create a file named `Dockerfile` **(no extension to be added after the filename)**. This file stores instructions for Docker to build an image. Your Docker image is a Linux distribution, therefore commands in this `Dockerfile` are similar to Linux commands with verbs for Docker as the suffix. Paste the following content into the file:  *** tell them that they cannot change it***
 
 ```TEXT
 # Specify which base layers (default dependencies) to use
@@ -136,7 +136,7 @@ RUN chgrp -R 65534 /app && \
 
 !![image](img/code-docker.png)
 
-You may notice that you did not specify the command to run the script `main.py` in the `Dockerfile`. This command will be written into the AI workflow and is covered later in this tutorial.
+You may notice that you did not specify the command to run the script `main.py` in the `Dockerfile`. This command will be written into the AI workflow and is covered later in this tutorial. ***customer must write exactly this***
 
 Open your terminal and navigate to your `hello-aicore-code` directory.  You will use the terminal to build your Docker image.
 

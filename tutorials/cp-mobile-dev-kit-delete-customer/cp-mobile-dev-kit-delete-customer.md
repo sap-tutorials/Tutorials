@@ -19,6 +19,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
+
 ![MDK](img_1.gif)
 
 
@@ -199,6 +200,9 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-4.3.png)
 
+    >Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+    >!![MDK](img-4.3.1.png)
 
 [DONE]
 [ACCORDION-END]

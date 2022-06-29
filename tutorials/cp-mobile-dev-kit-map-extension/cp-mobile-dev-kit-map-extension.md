@@ -45,7 +45,7 @@ This step includes creating the mobile development kit project in the editor.
 3. Select **MDK Project** and click **Next**.
 
     !![MDK](img-1.3.png)
-    
+
 
 4. In *Basic Information* step, provide the below information and click **Next**:
 
@@ -199,7 +199,7 @@ You will add this registered control in the generated `Customers_Detail.page`.
 
   3. Expand **Section Registered Extension Control**, drag & drop the registered `mdk_maps` control on the page area.
 
-    !![MDK](img_3.3.gif)
+    !![MDK](img_3.3.png)
 
     >You can find more details about the **Section Extension** in [this](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/Container/Extension.schema.html) guide.
 
@@ -215,8 +215,7 @@ You will add this registered control in the generated `Customers_Detail.page`.
 
     Repeat the above step and bind other properties.
 
-    !![MDK](img-3.5.png)  
-    !![MDK](img-3.6.png)  
+    !![MDK](img-3.5.png) 
 
     >Be careful not to bind properties from Address (ESPM.Address).
 

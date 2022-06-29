@@ -3,8 +3,8 @@ title: Deploy the SAPUI5 Frontend in the Kyma Runtime
 description: Develop and deploy the SAPUI5 frontend app in the Kyma runtime.
 auto_validation: true
 time: 40
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites

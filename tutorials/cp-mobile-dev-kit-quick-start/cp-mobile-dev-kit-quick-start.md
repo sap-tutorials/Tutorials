@@ -19,6 +19,7 @@ author_profile: https://github.com/jitendrakansal
   - How to deploy an MDK app to Mobile Services and run it in mobile client
   - How to deploy an MDK app to Cloud Foundry and run it as a Web application
 
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Business Application Studio)]
@@ -70,11 +71,11 @@ This step includes creating the mobile development kit project in the editor.
 
     The generated application will be offline enabled in the MDK Mobile client and will run as online in Web environment.
 
-8. In the *Data Collections* step, select `Customers`, `Products`, `PurchaseOrderHeaders`, `PurchaseOrderItems` `SalesOrderHeaders` and `SalesOrderItems`. Click **Finish** to complete the project creation.
+6. In the *Data Collections* step, select `Customers`, `Products`, `PurchaseOrderHeaders`, `PurchaseOrderItems` `SalesOrderHeaders` and `SalesOrderItems`. Click **Finish** to complete the project creation.
 
     !![MDK](img-1.8.png)
 
-9. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKApp` project in the project explorer.
+7. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKApp` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
