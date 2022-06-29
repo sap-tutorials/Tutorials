@@ -160,6 +160,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-4.6.png)
 
+
 7. Now, you will set the `onPress` event to `NavToProduct_List.action`.
 
     In **Events** tab, click the 3 dots icon for the `OnPress` property to open the **Object Browser**.

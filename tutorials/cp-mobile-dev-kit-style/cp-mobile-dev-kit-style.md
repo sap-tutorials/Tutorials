@@ -228,7 +228,7 @@ In this step, you will bind style classes:
 
     In Object browser, double-click `ObjectTableTitle` class to bind style property and click **OK**.
 
-    !![MDK](img-3.2.gif)
+    !![MDK](img-3.2.png)
 
 3. Navigate to **Pages** | **Customers**, click `Customers_Detail.page`, select **Object Header** control, scroll-down to **Style** section and bind control properties to style properties.
 
