@@ -12,7 +12,7 @@ author_profile: https://github.com/Juliana-Morais
 ## Details
 ### You will learn
   - How to predict financial objects using your machine learning model
-  - How to undeploy and delete your model
+  - How to `undeploy` and delete your model
   - How to delete datasets and dataset schemas
 
 ---
@@ -223,9 +223,9 @@ You have successfully used a machine learning model to predict financial objects
 
 [ACCORDION-BEGIN [Step 3: ](Undeploy your model)]
 
-Now that you have learned the whole process about how to use the Invoice Object Recommendation Business Blueprint from the Data Attribute Recommendation service, it's time to clean up. This way, the technical limits won't get in your way when trying out other Data Attribute Recommendation tutorials. See [Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/686d2ae094014c8085cebecdb1d37e37.html) and [Free Service Plan and Trial Account Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/c03b561eea1744c9b9892b416037b99a.html).
+Now that you have learned the whole process about how to use the Invoice Object Recommendation Business Blueprint from the Data Attribute Recommendation service, it's time to clean up. This way, the technical limits won't get in your way when trying out other Data Attribute Recommendation tutorials. See [Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/686d2ae094014c8085cebecdb1d37e37.html) and [Free Tier Option Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/c03b561eea1744c9b9892b416037b99a.html).
 
-First, undeploy your model. For that, go back to the Swagger UI for `mm` and:
+First, `undeploy` your model. For that, go back to the Swagger UI for `mm` and:
 
  1. Expand the endpoint `DELETE /deployments/{deploymentId}` by clicking on it. Then click **Try it out**.
 
@@ -235,11 +235,11 @@ First, undeploy your model. For that, go back to the Swagger UI for `mm` and:
 
      !![Inference Endpoint](png-files/deploy-execute.png)
 
-If the response code is `204`, the model has been successfully undeployed.
+If the response code is `204`, the model has been successfully `undeployed`.
 
 !![Inference Endpoint](png-files/deploy-response.png)
 
-You have successfully undeployed your model, but the model is not yet deleted. Instead it isn't in production which means that you cannot make inference requests. You can deploy it again at any time using the `POST /deployments` endpoint.
+You have successfully `undeployed` your model, but the model is not yet deleted. Instead it isn't in production which means that you cannot make inference requests. You can deploy it again at any time using the `POST /deployments` endpoint.
 
 [DONE]
 [ACCORDION-END]
@@ -247,7 +247,7 @@ You have successfully undeployed your model, but the model is not yet deleted. I
 
 [ACCORDION-BEGIN [Step 4: ](Delete your model)]
 
-Once undeployed, you can delete your model.
+Once `undeployed`, you can delete your model.
 
 1. Expand the endpoint `DELETE /models/{modelName}` by clicking on it. Then click **Try it out**.
 
