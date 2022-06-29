@@ -196,9 +196,10 @@ The following steps walk through the process of exporting to and importing data 
 
 10. A Google Storage SSL certificate is required to connect to the Google Cloud Storage bucket via the SAP HANA Cloud, SAP HANA database. Open your SQL console within SAP HANA database explorer, and run the first 3 commands.  Then replace \<SELECTED_CERTIFICATE_ID> with the value returned from the previous select statement.
 
-    ```SQL[27]
+    ```SQL[35]
     SELECT * FROM PSES;
     CREATE PSE HTTPS;
+    SELECT * FROM CERTIFICATES;
     CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----
     MIIFVzCCAz+gAwIBAgINAgPlk28xsBNJiGuiFzANBgkqhkiG9w0BAQwFADBHMQsw
     CQYDVQQGEwJVUzEiMCAGA1UEChMZR29vZ2xlIFRydXN0IFNlcnZpY2VzIExMQzEU
@@ -391,7 +392,7 @@ The following steps walk through the process of using Microsoft Azure storage se
 
 6. In the SAP HANA database explorer, add the certificate used by Microsoft to the HANA Cloud PSE.  Replace the \<SELECTED_CERTIFICATE_ID> with the value returned from the previous select statement.
 
-    ```SQL[6]
+    ```SQL[24]
     SELECT * FROM PSES;
     CREATE PSE HTTPS;
     SELECT * FROM CERTIFICATES;
@@ -524,7 +525,7 @@ The following steps walk through the process of AWS S3 storage service as a targ
 
     The certificate below is the [Baltimore `CyberTrust` Root certificate](https://www.digicert.com/kb/digicert-root-certificates.htm).
 
-    ```SQL[6]
+    ```SQL[35]
     SELECT * FROM PSES;
     CREATE PSE HTTPS;
     SELECT * FROM CERTIFICATES;
