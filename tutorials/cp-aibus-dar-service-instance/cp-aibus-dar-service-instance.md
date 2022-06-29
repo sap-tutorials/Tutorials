@@ -1,5 +1,5 @@
 ---
-title: Create Service Instance for Data Attribute Recommendation
+title: Use Trial to Create a Service Instance for Data Attribute Recommendation
 description: Create a service instance and the associated service key for Data Attribute Recommendation, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 15
