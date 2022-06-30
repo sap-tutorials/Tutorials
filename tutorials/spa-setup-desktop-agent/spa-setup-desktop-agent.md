@@ -1,7 +1,7 @@
 ---
 author_name: Chaitanya Priya Puvvada
 author_profile: https://github.com/chaitanya-priya-puvvada
-title: Install and Setup the Desktop Agent
+title: Install and Set Up the Desktop Agent
 description: Install and setup the Desktop Agent to run your automation
 auto_validation: true
 time: 15
@@ -13,7 +13,7 @@ primary_tag: software-product>sap-process-automation
 The Desktop Agent is a component of SAP Intelligent Robotic Process Automation that is installed locally on user desktops. It executes automation projects that launch and run applications of various kinds, read information from screens, enter data, click options, and process data.
 
 ## Prerequisites
- - A windows machine
+ - A Windows PC
  - If you are using a MAC, please install a VDI
 
 ### You will learn
