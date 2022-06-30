@@ -1,5 +1,5 @@
 ---
-title: Jumpstart the SAP SuccessFactors Extension CAP Project
+title: Jump start the SAP SuccessFactors Extension CAP Project
 description: First step to start developing the SAP SuccessFactors extension
 auto_validation: true
 time: 6
