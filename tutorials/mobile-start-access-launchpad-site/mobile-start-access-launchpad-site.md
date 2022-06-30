@@ -7,7 +7,8 @@ tags: [ tutorial>beginner, software-product>sap-launchpad-service, software-prod
 primary_tag: software-product>sap-launchpad-service
 
 ---
-
+## Prerequisites
+  - You already created a Launchpad site & added some apps to it.
 
 ## Details
 ### You will learn
