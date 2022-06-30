@@ -10,6 +10,8 @@ primary_tag: software-product>sap-process-automation
 ---
 
 ## Prerequisites
+  - A windows machine
+  - If you are using a MAC, please install a VDI
   - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
   - Complete the mission: [Build Your First Business Process with SAP Process Automation](mission.sap-process-automation)
 
