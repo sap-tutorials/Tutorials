@@ -11,7 +11,7 @@ primary_tag: software-product>sap-api-management
 - You already have a subaccount and have the required entitlements for API Management, API Portal and API Business Hub Enterprise. For more information, see [ Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/5ba357b4fa1e4de4b9fcc4ae771609da.html?q=entitlements)
 
 -	You've subscribed to Integration Suite, and have enabled API Management, API Portal and API business hub enterprise capability.
-  Note: If you're using the API Management stand-alone service, ensure that you've already subscribed to API Management, API portal and API business hub enterprise.
+  >If you're using the API Management stand-alone service, ensure that you've already subscribed to API Management, API portal and API business hub enterprise.
 
 -	Ensure that the `Kyma environment` has already been enabled.
   To enable `Kyma Runtime` in SAP BTP Cockpit:  
@@ -30,8 +30,8 @@ primary_tag: software-product>sap-api-management
 4. On the **New Instance and Subscription** dialog, change the instance name or keep the default name.
    The default plan assigned to your account is pre-populated.
 
-   **Note**: The default plan and its specification can differ depending on your global account type.
-   Confirm changes by selecting **Create**. For more information on how to set up a fully operational `Kyma environment`, click [`Kyma Environment`](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/468c2f3c3ca24c2c8497ef9f83154c44.html)
+   >The default plan and its specification can differ depending on your global account type.
+   Confirm changes by selecting **Create**. For more information on how to set up a fully operational `Kyma environment`, click [`Kyma Environment`](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/468c2f3c3ca24c2c8497ef9f83154c44.html).
 
    !![Create Kyma Runtime](Kyma-Create-2.png)
 
@@ -89,10 +89,10 @@ To create the Service Key:
      The service instance name, secret, and external name appears under **Binding Data**. Select the link next to **Secret**.
      !![Binding Data](Binding-Data.png)
 
- Make a note of the `clientId`, `clientSecret`, `orgId`, `tokenUrl` and the `url` details.
+ Copy the `clientId`, `clientSecret`, `orgId`, `tokenUrl` and the `url` details.
     !![Copy the Client ID and Client Secret](ClientID-ClientSecret.png)
 
   You can now use the `clientId`, `clientSecret`, and `tokenUrl` to fetch the token, and the application URL to perform operation on the APIs.
 
-    [VALIDATE_2]
-    [ACCORDION-END]  
+[VALIDATE_2]
+[ACCORDION-END]  

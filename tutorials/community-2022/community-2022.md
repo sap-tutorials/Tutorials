@@ -88,7 +88,7 @@ As just mentioned, you can follow a tag from the topic page to get notified (via
 
 1. Click the blue **Follow** button on the topic page.
 
-    ![topic_page_overview](topic_page_overview.png) 
+    ![topic_page_overview](topic_page_overview.png)
 
 2. Some topic pages have multiple tags mapped (there can be up to 7 tags). In such a case you can choose which tags you would like to follow:
 
@@ -183,7 +183,7 @@ To learn more about community Events, watch this video.
 
 The new event listings make it easy for you to save the event to your calendar. Let your fellow community members know when you will be attending an event and see who else is coming.
 
-  ![event_listing](event_listing.png)
+  ![event_listing_2](event_listing_2.png)
 
 Explore a variety of different events, such as SAP Community Call, SAP CodeJam, and SAP Inside Track and indicate whether you will be attending the event.
 
