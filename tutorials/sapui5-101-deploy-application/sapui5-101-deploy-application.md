@@ -29,7 +29,7 @@ Build (aka package) the project to a `mtar` archive to deploy it to Cloud Foundr
 
 2. Once the build is complete, you can see a message in the log. You can now find the generated `mtar` archive in the project tree under `mta_archives`.
 
-    !![buildSuccess](buildsuccess.png)
+    !![buildSuccess](buildSuccess.png)
 
 [DONE]
 [ACCORDION-END]
