@@ -20,6 +20,8 @@ author_profile: https://github.com/lenastodal
   - About the Rules of Engagement
   - About questions and blog posts
 
+Please note that since July 1st, we have an updated version of the Tour the SAP Community tutorial that is replacing this version. The new version for 2022 will help you to refresh your knowledge about various SAP Community features and will teach you about new areas and offerings. With the completion of the new tutorial, you will receive the Tour the SAP Community 2022 badge! Have a look at our new [Tour the SAP Community 2022](community-2022) tutorial!
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Set your profile to public)]

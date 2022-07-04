@@ -11,7 +11,7 @@ primary_tag: software-product-function>sap-btp-cockpit
 - To activate your consumption-based SAP BTP global account with free tier service plans, you need:
     - an **e-mail address**
     - and a **credit card** for authentication and eventually later for billing purposes.
-    **Note:** If you do not own a credit card, you can create a trial account which allows you to try out BTP services in a separate environment but without the free tier model on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account). Note that the trial landscape offers different service plans than the free tier model for BTP, see: [Get an SAP BTP Account for Tutorials](btp-cockpit-setup). To see which services are currently available in trial, go to [SAP Discovery Center](https://discovery-center.cloud.sap), select the service you are interested in and explore our offerings under **Pricing** and **Trial**.
+    **Important:** If you do not own a credit card, you can create a trial account which allows you to try out BTP services in a separate environment but without the free tier model on SAP BTP: [Get a Free Account on SAP BTP Trial](hcp-create-trial-account). Note that the trial landscape offers different service plans than the free tier model for BTP, see: [Get an SAP BTP Account for Tutorials](btp-cockpit-setup). To see which services are currently available in trial, go to [SAP Discovery Center](https://discovery-center.cloud.sap), select the service you are interested in and explore our offerings under **Pricing** and **Trial**.
 
 
 ### How Does Free Tier Work?
@@ -225,11 +225,10 @@ As a last step, you now need to create a space to develop in.
 
 You will receive a success message "Space created successfully."
 
+**Congratulations! You have successfully set up your global account. Continue with [Manage Entitlements Using the Cockpit](btp-cockpit-entitlements) and learn how to add entitlements to your newly created subaccount.**
+
+
 [VALIDATE_5]
 [ACCORDION-END]
-
----
-
-**Congratulations! You have successfully set up your global account. Continue with [Manage Entitlements Using the Cockpit](btp-cockpit-entitlements) and learn how to add entitlements to your newly created subaccount.**
 
 ---

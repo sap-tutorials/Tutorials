@@ -124,7 +124,7 @@ To make a prediction, or in machine learning terms an inference, you use the **P
 
     !![BER](png-files/post-inf-1.png)
 
-5. Copy the **`id`** from the **Response body** to see the result of the extraction in the next step. Please also note the remark regarding limits in Trial. See [Trial Account Input Limits](https://help.sap.com/viewer/b43f8f61368d455793a241d2b10baeb2/SHIP/en-US/c80a45cc7416409eb9bf64667487c375.html).
+5. Copy the **`id`** from the **Response body** to see the result of the extraction in the next step. Please also note the remark regarding free tier technical limits. See [Free Tier Option Technical Constraints](https://help.sap.com/viewer/b43f8f61368d455793a241d2b10baeb2/SHIP/en-US/c80a45cc7416409eb9bf64667487c375.html).
 
     !![BER](png-files/post-inf-2.png)
 

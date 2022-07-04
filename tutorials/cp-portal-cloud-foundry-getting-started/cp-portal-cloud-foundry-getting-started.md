@@ -1,5 +1,5 @@
 ---
-title: Set Up the SAP Launchpad Service
+title: Set Up SAP Launchpad Service Using a Trial Account
 description: To get started with building a launchpad site in the SAP Launchpad service, you must perform the required onboarding steps.
 auto_validation: true
 time: 5
@@ -12,7 +12,9 @@ author_profile: https://github.com/LindsayBert
 ## Prerequisites
   - If you want to use a trial environment, you need to first register it. You can register to a trial account using this link: [Create a trial account](https://www.sap.com/israel/products/business-technology-platform/trial.html). Scroll down and click **Get trial now**.
   - If you're using a production environment, you should have a subaccount configured. If you don't have a configured subaccount, refer to this topic: [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
-  - If you're using a SAP BTP free plan, refer to this tutorial: [Set Up SAP Launchpad Service on SAP BTP Free Tier](cp-portal-cloud-foundry-setup-freetier)
+
+
+
 
 
 ## Details

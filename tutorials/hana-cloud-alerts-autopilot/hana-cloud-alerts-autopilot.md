@@ -37,6 +37,7 @@ The following steps demonstrate how to subscribe to the SAP Automation Pilot ser
     ![create SAP Automation Pilot](create-autopilot-service.png)
 
     >If the Automation Pilot service does not appear, it may be that the entitlement needs to be added to the subaccount.  To do so, navigate to the subaccount, select **Entitlements**, **Configure Entitlements**, **Add Service Plans**, select **Automation Pilot**, and add a plan such as free or standard.
+
     > ![add entitlement](add-entitlement.png)
 
     > ---
