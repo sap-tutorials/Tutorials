@@ -11,8 +11,8 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
+- This is the first tutorial of group [Create an Error Code Maintenance App](group.abap-env-factory). You must complete the tutorials in the given order.
 - Install [ABAP Development Tools](https://tools.hana.ondemand.com/#abap) (3.26.2 or higher). You can also follow **step 1** of this [tutorial](abap-install-adt) to install ADT.
-- Inform yourself about the [naming conventions for Development Objects](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/8b8f9d8f3cb948b2841d6045a255e503.html)
 
 ## Details
 ### You will learn  
@@ -207,15 +207,36 @@ You can use the [ABAP Repository Generator](https://help.sap.com/docs/BTP/65de29
 
   5. Select a Transport Request and click **Finish**.
 
-  6. When the generation is completed, the new Business Configuration Maintenance Object is shown. Refresh your project explorer and check the other generated objects.
+  6. When the generation is completed, the new Business Configuration Maintenance Object is shown. Refresh your project explorer and check the other generated objects. If you publish the `Local Service Endpoint` of service binding `ZUI_ERRORCODE###_O4` you can already start the [**Custom Business Configurations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76384d8e68e646d6ae5ce8977412cbb4.html) app from the Fiori Launchpad and select the created Business Configuration Maintenance Object. However you will not be able to read or edit the configuration entries because your user is missing authorizations. Instead you will [provide authorization control for a Business Configuration Maintenance Object](abap-environment-authorization-control) in the next tutorial and then finally [use the Custom Business Configurations app](abap-environment-maintain-bc-app).
 
-  - More information about the Business Configuration Maintenance Object configuration can be found [here](https://help.sap.com/docs/BTP/5371047f1273405bb46725a417f95433/8ea18fd0f93f4cd48578d2c75f3c8c89.html)
-  - More information about defining CDS annotations for metadata-driven UIs can be found [here](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/9b4aa865c1e84634b6e105173fc3a5e7.html)
-  -   Additional information about RAP BO with multi-inline-edit capabilities can be found [here](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/f713ec52bcb8405ca9262918cffa5d25.html)
-  -  The content of a text table can also be maintained using the [**Maintain translations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e2ca05c69dc94b98bf725396a0b13ace.html?q=maintain%20translations) app
-  -  [Draft business objects](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/a81081f76c904b878443bcdaf7a4eb10.html) requires a total `Etag` field to ensure optimistic concurrency comparison.
-     The [augment](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/fc374ac9b02e4dbcba356afc77432dc2.html) statement is used to enable the end user to maintain language dependent texts in their logon language
-  -  UI labels are defined in the Metadata Extension objects and derived from the field labels of the Data Elements
+  7. If you only have a trial account you need to perform the following adjustments because you are not able to create Customizing Transport Requests or Business Roles. You can then also skip the following tutorial [Provide authorization control for a Business Configuration Maintenance Object](abap-environment-authorization-control) and continue with tutorial [Use Custom Business Configurations app](abap-environment-maintain-bc-app).
+      - Edit class `ZBP_I_ERRORCODE###_S`, section **Local Types**. Delete the content of the following methods. Afterwards save and activate the class.
+        - `GET_GLOBAL_AUTHORIZATIONS`
+        - `LSC_ZI_ERRORCODE###_S→SAVE_MODIFIED`
+        - `LHC_ZI_ERRORCODE###→VALIDATERECORDCHANGES`
+        - `LHC_ZI_ERRORCODE###TEXT→VALIDATERECORDCHANGES`
+
+      - Delete the generated `Access Control` objects
+
+      ![Delete Access Controls](del-ddlx.png)
+
+      - Publish the `Local Service Endpoint` of service binding `ZUI_ERRORCODE###_O4`
+
+      ![Publish Service Binding](publish-srvb.png)
+
+>More information about the Business Configuration Maintenance Object configuration can be found [here](https://help.sap.com/docs/BTP/5371047f1273405bb46725a417f95433/8ea18fd0f93f4cd48578d2c75f3c8c89.html). For example you can enable or disable [inline creation of table entries](https://help.sap.com/viewer/468a97775123488ab3345a0c48cadd8f/latest/en-US/cfb04f0c58e7409992feb4c91aa9410b.html).
+
+>More information about defining CDS annotations for metadata-driven UIs can be found [here](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/9b4aa865c1e84634b6e105173fc3a5e7.html). For example you can adjust the visibility, positioning and labels of the fields. By default the field label is derived from the Data Element.
+
+>Additional information about RAP BO with multi-inline-edit capabilities can be found [here](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/f713ec52bcb8405ca9262918cffa5d25.html)
+
+>The content of a text table can also be maintained using the [**Maintain translations**](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e2ca05c69dc94b98bf725396a0b13ace.html?q=maintain%20translations) app
+
+>[Draft business objects](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/a81081f76c904b878443bcdaf7a4eb10.html) requires a total `Etag` field to ensure optimistic concurrency comparison.
+
+>The [augment](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/fc374ac9b02e4dbcba356afc77432dc2.html) statement is used to enable the end user to maintain language dependent texts in their logon language
+
+>See also [naming conventions for Development Objects](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/8b8f9d8f3cb948b2841d6045a255e503.html)
 
 
 [DONE]

@@ -11,6 +11,7 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment [trial user](abap-environment-trial-onboarding) or a license.
+- This is the fourth tutorial of group [Create an Error Code Maintenance App](group.abap-env-factory). You must complete the tutorials in the given order.
 - Install [ABAP Development Tools](https://tools.hana.ondemand.com/#abap). You can also follow **step 1** of this [tutorial](abap-install-adt) to install ADT.
 
 
@@ -19,8 +20,6 @@ author_profile: https://github.com/mervey45
 - How to use the paste function to copy from Microsoft Excel documents
 - How to create business configuration documentation
 - How to make use of intent navigation
-
->**Hint:** Don't forget to replace all occurrences of the placeholder ### with your ID of choice in the exercise steps below. You can use the ADT function Replace All (`CTRL+F`) for the purpose.
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Use copy and paste functionality)]
