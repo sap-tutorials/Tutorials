@@ -228,39 +228,6 @@ NAME                 COMPLETIONS   DURATION   AGE
 cpapp-hana-deployer  0/1           3m7s       3m7s
 ```
 
-<!--
-     HOW TO MAKE A DB DEPLOYMENT FAIL:
-
-     1. Build CAP App
-
-          ```
-          cds build --production
-          ```
-
-     2. Open `gen/db/src/gen/sap.ui.riskmanagement.Risks.hdbtable`
-
-     3. Change any of the types to an invalid type, for example:
-
-          ```
-          createdAt AAAAAAAA,
-          ```
-
-     4. Build the DB docker container
-
-          ```
-          pack ...
-          ```
-
-     5. Deploy the application
-
-          ```
-          helm upgrade ...
-          ```
-
-     6. It will take some minutes until the deployment fail because of multiple attempts that are taken. But you can already check it after a minute or so.
-
--->
-
 In such a case, you can check the logs for the `deployer`. First, print the pods:
 
 ```
