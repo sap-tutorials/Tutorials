@@ -1,6 +1,6 @@
 ---
-title: Log and Compare Machine Learning Model Quality in SAP AI Core
-description: Explore different ways of logging model quality metrics during training and associate custom tags with the generated model for identification.
+title: Generate metrics and compare models in SAP AI Core
+description: Different ways of Log metrics during training and tag the generated model with the same.
 auto_validation: true
 time: 45
 tags: [ tutorial>license, tutorial>beginner, topic>artificial-intelligence, topic>machine-learning, software-product>sap-ai-launchpad, software-product>sap-ai-core ]
@@ -135,7 +135,7 @@ aic_connection.metrics.log_metrics(
 )
 ```
 
-This reflects as shown in SAP AI Launchpad,  Please zoom in to view.
+This reflects, after execution, as shown in SAP AI Launchpad, please zoom in to view.
 
 !![image](img/ail/basic.png)
 
@@ -163,7 +163,7 @@ The variable `i` in is already present in your code to pass to the parameter `st
 
 [ACCORDION-BEGIN [Step 5: ](Attach metrics to generated model)]
 
-Add the following snippet to store metrics on step information. The parameter `value="housepricemodel"` is reference of the artifact name, which references the model that is to be stored in AWS S3. Same name (that is `housepricemodel`) to be used in your workflow.
+Add the following snippet to store metrics on step information.
 
 ```PYTHON
 aic_connection.metrics.log_metrics(
@@ -180,16 +180,21 @@ aic_connection.metrics.log_metrics(
 )
 ```
 
+The parameter `value="housepricemodel"` refers to the artifact name, which references the model that will be stored in AWS S3. It is vital that the name of this parameter matches the name that you defined in your YAML workflow.
+
+Your code should resemble:
+
+!![image](img/ail/modelA.png)
+
 This reflects as shown in SAP AI Launchpad, when executed:
-!![image](img/ail/model.png)
+!![image](img/ail/modelB.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Custom Metrics for model inspection)]
+[ACCORDION-BEGIN [Step 6: ](Custom Metrics for model inspection)]
 
-Add the following snippet to store metrics based on customized structure. The structure must be type-cast to `str` (string). Here the structure used is [**permutation feature importance**](https://scikit-learn.org/stable/modules/permutation_importance.html#permutation-importance).
-The variable `r` and `feature_importances` are already created in the template code.
+Add the following snippet to store metrics based on a customized structure.
 
 ```PYTHON
 aic_connection.metrics.set_custom_info(
@@ -200,6 +205,12 @@ aic_connection.metrics.set_custom_info(
 )
 ```
 
+The structure must be type-cast to `str` (string). Here, the structure used is [**permutation feature importance**](https://scikit-learn.org/stable/modules/permutation_importance.html#permutation-importance).
+
+The variables `r` and `feature_importances` are already created in the starter code.
+
+This reflects as shown in SAP AI Launchpad, when executed:
+
 !![image](img/ail/custom.png)
 
 > ### Permutation Feature Importance
@@ -208,25 +219,28 @@ aic_connection.metrics.set_custom_info(
 >
 > What it is?
 >
-> - Indicates which feature is important relative to the model
-> - How much change in "error" (loss) can be expected in prediction of the model relative to a feature
+> - Indicates, for a given target, model, dataset and task, how much the model depends on a given feature.
+> - Gives an empirical estimate of how much loss is attributed to the removal of a given feature.
 >
-> What it is not?
+> What it is not:
 >
-> - Importance of feature in predicting relative to all the models/ dataset in general.
-> - Measure of how good a feature is towards predicting the target.
+> - A model, dataset or task agnostic indication of the importance of a given feature. While the method is agnostic, the results are applicable only to the specific input combination.
+> - A perfectly accurate indication of the importance of a given feature for a specific prediction. While this is the goal of the method, it does not account for weaknesses in the model.
 >
-> Advantage in using
+> Advantages:
 >
-> - Model agonist, global `explainability`.
-> - "error" can be customized, with reference to `scikit` package implementation.
+> - Model agnostic,
+> - provides global `explainability` - meaning that it estimates each feature's importance to the prediction task.
+> - contributes to model transparency.
+> - The method or function used to measure "error" can be customized, with reference to `scikit` package implementation.
+
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Tags for execution meta after training)]
 
-Add the following snippet to tag you execution. The `tags` are customizable key-value.
+Add the following snippet to tag you execution. The `tags` are customizable key-values.
 
 ```PYTHON
 aic_connection.metrics.set_tags(
@@ -237,6 +251,8 @@ aic_connection.metrics.set_tags(
 )
 ```
 
+This reflects as shown in SAP AI Launchpad, when executed:
+
 !![image](img/ail/tag.png)
 
 [DONE]
@@ -244,7 +260,7 @@ aic_connection.metrics.set_tags(
 
 [ACCORDION-BEGIN [Step 7: ](Complete Files)]
 
-Check you modified `main.py` with the following expected `main.py`.
+Check your modified `main.py` by comparing it with the following expected `main.py`.
 
 ```PYTHON
 import os
@@ -348,7 +364,7 @@ aic_connection.metrics.set_tags(
 )
 ```
 
-Create `requirements.txt` with following snippet.
+Check your modified `main.py` by comparing it with the following expected `main.py`.
 
 ```TEXT
 sklearn==0.0
@@ -356,7 +372,7 @@ pandas
 ai-core-sdk>=1.12.0
 ```
 
-Create `Dockerfile` with following snippet.
+Create a file called `Dockerfile` with following snippet. This file must not have a file extension or alternative name.
 
 ```TEXT
 # Specify which base layers (default dependencies) to use
@@ -381,14 +397,14 @@ RUN chgrp -R 65534 /app && \
     chmod -R 777 /app
 ```
 
-Build Docker image and push contents to cloud.
+Build your Docker image and push the contents to the cloud, using the following commands in the terminal.
 
 ```BASH
 docker build -t <YOUR_DOCKER_REGISTRY>/<YOUR_DOCKER_USERNAME>/house-price:04 .
 docker push <YOUR_DOCKER_REGISTRY>/<YOUR_DOCKER_USERNAME>/house-price:04
 ```
 
-Create a AI workflow file in you GitHub repository named `hello-metrics.yaml` with following snippet. Edit with you own Docker registry secret and username.
+Paste the following snippet to a file named `hello-metrics.yaml` in your GitHub repository. Edit it with you own Docker registry secret and username. This file is your AI workflow file.
 
 ```YAML
 apiVersion: argoproj.io/v1alpha1
@@ -444,9 +460,9 @@ spec:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Create configuration and execution)]
+[ACCORDION-BEGIN [Step 9: ](Create configuration and execution)]
 
-Create configuration using the following information. The information is taken from the workflow from previous step.
+Create a configuration using the following information. The information is taken from the workflow from previous steps. For a reminder of how to create a configuration, see step 11 of [this tutorial](https://developers.sap.com/tutorials/ai-core-data.html/#).
 
 |  | Value |
 | --- | --- |
@@ -457,24 +473,27 @@ Create configuration using the following information. The information is taken f
 | Scenario ID | `learning-datalines`
 | Executable ID | `house-metrics-train`
 
-You can type any value for `Input Parameters` `DT_MAX_DEPTH`.
-Attach your registered artifact to `Input Artifact` `housedataset`.
+The value for `Input Parameters` `DT_MAX_DEPTH` is your choice. Until now, this was set using an environment variable. If no variable is specified, this parameter will continue to be defined by the environment variables.
 
-Create execution from the configuration.
+> Information: This parameter can be defined using an integer to set a maximum depth or as `None`, which means that nodes are expanded until all leaves are single nodes, or contain all contain fewer data points than specified in the `min_samples_split samples`, if specified. For more information, see [the Scikit learn documentation](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html\#)
+
+Attach your registered artifact to `Input Artifact`, by specifying `housedataset` for this value.
+
+Create an execution from this configuration.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Retrieve metrics)]
+[ACCORDION-BEGIN [Step 10: ](Retrieve metrics)]
 
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Click on the `Metrics Resource` tab of your execution.
+Navigate through `ML Operations` >  `Executions` > `Metrics Resource` tab of your execution.
 
 !![image](img/ail/locate.png)
 
-For metrics tagged with the artifact name, you can also locate in the **Models** details page of the artifact.
+For metrics tagged with the artifact name, you can also locate the metrics in the **Models** details page of the artifact.
 
 !![image](img/ail/artifact.png)
 
@@ -483,11 +502,15 @@ For metrics tagged with the artifact name, you can also locate in the **Models**
 
 [OPTION BEGIN [Postman]]
 
+Navigate through `AI Core` > `lm` > `metrics` > `Get metrics` and double check the `executionId`.
+
 !![image](img/postman/metric.png)
 
 [OPTION END]
 
 [OPTION BEGIN [SAP AI Core SDK]]
+
+Paste and edit, and execute the following snippet:
 
 ```PYTHON
 response = ai_core_client.metrics.query(
@@ -543,18 +566,19 @@ Unnamed: 0: 0.000 +/- 0.000
 [OPTION END]
 
 [DONE]
+
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 11: ](Compare metrics (optional))]
 
-[ACCORDION-BEGIN [Step 10: ](Compare metrics)]
-
-Create two configurations one with `DT_MAX_DEPTH = 3` and another with `DT_MAX_DEPTH = 6`. Then create execution of those configurations.
+Create two configurations: one with `DT_MAX_DEPTH = 3` and another with `DT_MAX_DEPTH = 6`. Then create executions for both of those configurations.
 
 !![image](img/ail/compare-1.png)
 
-You can then get a metric wise comparison between the execution from the two different configurations.
+You can then get a metric wise comparison of the executions from the two different configurations.
 
 !![image](img/ail/compare-2.png)
 
 [VALIDATE_1]
+
 [ACCORDION-END]
