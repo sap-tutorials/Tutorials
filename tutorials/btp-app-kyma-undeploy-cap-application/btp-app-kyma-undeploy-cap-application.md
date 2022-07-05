@@ -6,7 +6,7 @@ description: This tutorial shows you how to undeploy your CAP application from K
 keywords: cap
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp-kyma-runtime, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
  - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
- - [Setup HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
+ - [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
  - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-kyma-prepare-xsuaa)
  - [Add Helm Chart](btp-app-kyma-add-helm-chart)
  - [Deploy Your Application to Kyma](btp-app-kyma-deploy-application)
