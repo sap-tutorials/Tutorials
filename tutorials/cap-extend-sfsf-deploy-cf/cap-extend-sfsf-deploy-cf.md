@@ -28,7 +28,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Build the MTA Archive)]
+[ACCORDION-BEGIN [Step 1: ](Build the MTA archive)]
 
 Before you build the MTA Archive for deployment, do not forget to switch back the database from **in-memory `SQLite`** to **SAP HANA** (if not already). For that, just open the `package.json` file from the CAP service and set the `cds.requires.db.kind` parameter to `hana` like demonstrated below:
 
@@ -74,7 +74,7 @@ It's going to take a while until the deployment process finishes. When it does, 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Assign Admin Role to your Business User)]
+[ACCORDION-BEGIN [Step 3: ](Assign Admin role to your business user)]
 
 Before you jump into testing the application, you must remember that it's meant for **project administrators**, meaning, users with the Admin role assigned. So, assign the role to your user in SAP BTP.
 
@@ -91,9 +91,9 @@ Now you are OK to test the application.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test the Deployed Application)]
+[ACCORDION-BEGIN [Step 4: ](Test the deployed application)]
 
-On the **left-hand pane**, click on **HTML5 Applications** and locate your **Business Solution** (`sfsf-projman-<your subdomain>`). Then, click on the link of the **Application Name**.
+On the **left-hand pane**, (1) click on **HTML5 Applications** and locate your **Business Solution** (`sfsf-projman-<your subdomain>`). Then, (2) click on the link of the **Application Name**.
 
 ![Figure 10 – Start application](launch-app.png)
 
@@ -118,7 +118,7 @@ Finally, the last step in the journey of this tutorial group is to add your appl
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check Your Knowledge)]
+[ACCORDION-BEGIN [Step 5: ](Check your knowledge)]
 
 [VALIDATE_1]
 [ACCORDION-END]
