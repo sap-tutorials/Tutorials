@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Deploy Your Application to Kyma
-description: Learn how to add Authorization and Trust Management service to your app, build Docker images and push them to your container registry, deploy your app to your Kyma cluster, and troubleshoot it, if needed.
+description: Learn how to add Authorization and Trust Management service to your CAP app, build Docker images and push them to your container registry, deploy your app to your Kyma cluster, and troubleshoot it, if needed.
 keywords: cap
 auto_validation: true
 time: 20
@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
  - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
- - [Setup HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
+ - [Setup SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
  - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-kyma-prepare-xsuaa)
  - [Add Helm Chart](btp-app-kyma-add-helm-chart)
  - You have created a DB secret as specified in [Setup HANA Cloud](btp-app-#setup-hana-cloud).
