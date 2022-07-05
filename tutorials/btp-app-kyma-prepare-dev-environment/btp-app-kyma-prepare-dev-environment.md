@@ -27,7 +27,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ## Details
 
 ### You will learn
- - How to prepare your K... development environment
+ - How to prepare your Kyma development environment
 
 
 ---
@@ -64,7 +64,7 @@ You should see something like `Client Version: version.Info{Major:"1", Minor:"19
 [OPTION END]
 [OPTION BEGIN [Linux]]
 
-Follow the instructions for your preferred way of installing `kubectl` at [Install and Set Up `kubectl` on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).
+Follow the instructions for your preferred way of installing kubectl at [Install and Set Up kubectl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).
 
 [OPTION END]
 
@@ -78,6 +78,7 @@ Follow the instructions for your preferred way of installing `kubectl` at [Insta
 ```Shell/Bash
 brew install int128/kubelogin/kubelogin
 ```
+
 Find more info and detailed instructions in [int128/`kubelogin`](https://github.com/int128/kubelogin#setup).
 [OPTION END]
 [OPTION BEGIN [Windows]]
@@ -89,6 +90,7 @@ choco install kubelogin
 ```
 
 Find more info and detailed instructions in [int128/`kubelogin`](https://github.com/int128/kubelogin#setup).
+
 [OPTION END]
 [OPTION BEGIN [Linux]]
 
@@ -104,7 +106,7 @@ Find more info and detailed instructions in [int128/`kubelogin`](https://github.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Login to your Kyma cluster)]
-1. Choose **`KubeconfigURL`** under the **`Kyma Environment`** tab in your subaccount.
+1. Choose **KubeconfigURL** under the **Kyma Environment** tab in your subaccount.
 
     !![Kubeconfig URL](kubeconfigURL.png)
 
@@ -125,6 +127,7 @@ Find more info and detailed instructions in [int128/`kubelogin`](https://github.
 >     mv $HOME/.kube/config-new $HOME/.kube/config
 >     chmod 600 $HOME/.kube/config
 >     ```
+
 >     In case you experience problems running the commands, check [Command Line Interpreters](btp-app-#command-line-interpreters) for more details on recommended CLIs.
 
 
@@ -158,9 +161,9 @@ Find more info and detailed instructions in [int128/`kubelogin`](https://github.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 5: ](Create container registry secret)]
-The container registry secret is needed to access docker container images in your registry from your K... cluster.
+The container registry secret is needed to access docker container images in your registry from your Kyma cluster.
 
-Kubernetes has a special type of secret for container registries and its `kubectl` command line supports it with the required options:
+Kubernetes has a special type of secret for container registries and its kubectl command line supports it with the required options:
 
 ```Shell/Bash
 kubectl create secret docker-registry container-registry \
@@ -176,20 +179,21 @@ kubectl create secret docker-registry container-registry \
 
     > Can't run the `kubectl create secret docker-registry container-registry \` command?
 
-    > * If you encounter any errors running this command, make sure you are using the `Git BASH` command line interpreter, as advised in `Step 2: Command Line Interpreters` in this [tutorial](btp-app-set-up-local-development).
+    > * If you encounter any errors running this command, make sure you are using the `Git BASH` command line interpreter, as advised in Step 2: Command Line Interpreters in this [tutorial](btp-app-set-up-local-development).
 
 
 2. When prompted, provide the required details.
 
-    - ```Docker Server```: Use the full qualified hostname for the docker server.
-    - ```User``` and ```Email``` - provide your username and e-mail that you used to create your container registry.
-    - ```API Key``` - as part of the authentication settings of your container registry, you should be able to generate an API key to provide here.
+    - `Docker Server`: Use the full qualified hostname for the docker server.
+    - `User` and `Email` - provide your username and e-mail that you used to create your container registry.
+    - `API Key` - as part of the authentication settings of your container registry, you should be able to generate an API key to provide here.
 
 3. Check if the secret was successfully created:
 
     ```
     kubectl get secret
     ```
+    
     You should be able to see the newly created secret.
 
     ![New Secret](new_secret.png)
@@ -218,10 +222,12 @@ You can install it using chocolatey.
 ```Shell/Bash
 choco install kubernetes-helm
 ```
+
 2. Check if the installation is successful:
 ```Shell/Bash
 helm version
 ```
+
 You should see something like `version.BuildInfo{Version:"v3.8.0", GitCommit:"d14138609b01886f544b2025f5000351c9eb092e", GitTreeState:"clean", GoVersion:"go1.17.5"}`.
 
 [OPTION END]
@@ -249,9 +255,11 @@ Pack lets you build container images, which are collaboratively maintained makin
 Install the [pack CLI](https://buildpacks.io/docs/tools/pack/#install).
 
 You can install it using chocolatey with the command:
+
 ```Shell/Bash
 choco install pack
 ```
+
 As an alternative, you can install `pack` manually:
 
 1. Download `pack` for your platform from [GitHub](https://github.com/buildpacks/pack/releases).
@@ -272,7 +280,7 @@ Install the [pack CLI](https://buildpacks.io/docs/tools/pack/#install).
 
 Follow the instructions to install the [pack CLI](https://buildpacks.io/docs/tools/pack/#install).
 
-> in case you do not have helm (it is installed as part of rancher desktop) installed follow the [instructions](https://helm.sh/docs/intro/install/#through-package-managers) to install helm
+> In case you do not have Helm (it is installed as part of rancher desktop) installed follow the [instructions](https://helm.sh/docs/intro/install/#through-package-managers) to install helm
 
 
 
@@ -283,7 +291,7 @@ Follow the instructions to install the [pack CLI](https://buildpacks.io/docs/too
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Docker)]
-K... runs on containers. Hence, for this tutorial, you'll need an application that enables you to build containerized applications and a docker-compatible command line interface. In the following we provide two examples - Docker Desktop and Rancher Desktop.
+Kyma runs on containers. Hence, for this tutorial, you'll need an application that enables you to build containerized applications and a docker-compatible command line interface. In the following we provide two examples - Docker Desktop and Rancher Desktop.
 
 [DONE]
 [ACCORDION-END]
@@ -317,7 +325,6 @@ Here's how to install Docker Desktop:
 
 Follow the instructions to install Rancher Desktop:
 
-
 1. Go to the [releases](https://github.com/rancher-sandbox/rancher-desktop/releases) page.
 
 2. Download the Rancher Desktop installer for macOS.
@@ -350,7 +357,6 @@ Follow the instructions to install Rancher Desktop:
 [OPTION BEGIN [Linux]]
 
 Follow the instructions to install Rancher Desktop:
-
 
 There are several different ways to install Rancher Desktop on Linux. You can find details about installation requirements and install/uninstall steps in [Linux](https://docs.rancherdesktop.io/getting-started/installation#linux).
 
