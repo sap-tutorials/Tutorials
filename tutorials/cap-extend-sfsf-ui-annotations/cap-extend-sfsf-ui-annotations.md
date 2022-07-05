@@ -26,11 +26,11 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create the Annotations File)]
+[ACCORDION-BEGIN [Step 1: ](Create the annotations file)]
 
 It is a best practice to maintain the UI annotations in a separate file referencing your CAP service. So, go ahead and create that file.
 
-On the **left-hand pane** of **SAP Business Application Studio**, select the `srv` folder, then click on the **three dots** to the right of the project name and select **New File**.
+On the **left-hand pane** of **SAP Business Application Studio**, (1) select the `srv` folder, then (2) click on the **three dots** to the right of the project name and (3) select **New File**.
 
 ![Figure 1 – Create New File](create-file.png)
 
@@ -41,7 +41,7 @@ On the **dialog** name the file `projman-service-ui.cds` and click **OK**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Code the CDS Annotations)]
+[ACCORDION-BEGIN [Step 2: ](Code the CDS annotations)]
 
 Copy and paste the **code snippet below** into the recently created file:
 
@@ -639,7 +639,7 @@ annotate service.Status @(Capabilities : {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Understand the Value Help Annotations)]
+[ACCORDION-BEGIN [Step 3: ](Understand the value help annotations)]
 
 The code from the previous step contains all required CDS annotations to make the UI look and behave like expected by the business rules defined in the [**group introduction and preparation**](cap-extend-sfsf-intro).
 
@@ -662,7 +662,7 @@ Therefore, to filter the records in the second value help so only members of the
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test the Application UI)]
+[ACCORDION-BEGIN [Step 4: ](Test the application UI)]
 
 Finally, it's come the time to test everything that you have done so far! For that, you can rely on the nice **Fiori Preview** feature that's available during development.
 
@@ -717,7 +717,7 @@ Click on the **Save** button in the bottom-right corner to **save the project** 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check Operation Result on SAP SuccessFactors)]
+[ACCORDION-BEGIN [Step 5: ](Check operation result on SAP SuccessFactors)]
 
 You'll now check what happened on the **SAP SuccessFactors side** after this operation.
 
@@ -738,7 +738,7 @@ Now, search for the Special Assignments block from the profile to verify whether
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Execute Other Tests)]
+[ACCORDION-BEGIN [Step 6: ](Execute other tests)]
 
 The **test sequence** you've executed is the **most important** in the context of extending the SAP SuccessFactors solution with **data flowing in both directions**: from and to SAP SuccessFactors.
 
@@ -759,7 +759,7 @@ If all those tests are successful, then you can say your application is working 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Check Your Knowledge)]
+[ACCORDION-BEGIN [Step 7: ](Check your knowledge)]
 
 [VALIDATE_1]
 [ACCORDION-END]
