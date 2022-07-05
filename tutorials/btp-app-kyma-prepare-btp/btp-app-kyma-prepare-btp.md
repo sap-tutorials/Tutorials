@@ -24,7 +24,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ### You will learn
  - How to create an account for SAP BTP
  - How to assign entitlements
- - How to configure K... in your SAP BTP subaccount
+ - How to configure Kyma in your SAP BTP subaccount
 
 
 ---
@@ -51,7 +51,7 @@ In general, you have a choice of the following options:
 [ACCORDION-BEGIN [Step 2: ](Create a Trial account)]
 You can [register for a trial account](https://www.sap.com/cmp/td/sap-cloud-platform-trial.html) and access it in [SAP BTP Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial).
 
-A global account, a subaccount, a Cloud Foundry org, and space with some entitlements that are sufficient to do this tutorial are set up for you. You will only need to enable K... as described below.
+A global account, a subaccount, a Cloud Foundry org, and space with some entitlements that are sufficient to do this tutorial are set up for you. You will only need to enable Kyma as described.
 
 > In case you face a problem when creating a service instance or an application is missing for subscription later in the tutorial, please do the following:
 
@@ -77,9 +77,9 @@ The following services with their service plans and entitlements are required fo
 
 | Service                           | Plan       | Amount | Unit         | Tutorial                                |
 | --------------------------------- | ---------- | ------ | ------------ | --------------------------------------- |
-| `Kyma` runtime             | `Kyma Runtime Trial`     | 1      | GB           | [Prepare for SAP BTP Development](btp-app-#configure-kyma-in-your-subaccount)   |
-| SAP HANA Schemas & HDI Containers | `hdi-shared` | 1      | instances    | [Setup HANA Cloud for `Kyma`](btp-app-kyma-hana-cloud-setup)   |
-| SAP HANA Cloud                    | `hana`       | 1      | instances    | [Setup HANA Cloud for `Kyma`](btp-app-kyma-hana-cloud-setup)     |
+| Kyma runtime             | `Kyma Runtime Trial`     | 1      | GB           | [Prepare for SAP BTP Development](btp-app-#configure-kyma-in-your-subaccount)   |
+| SAP HANA Schemas & HDI Containers | `hdi-shared` | 1      | instances    | [Setup HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)   |
+| SAP HANA Cloud                    | `hana`       | 1      | instances    | [Setup HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)     |
 | SAP Launchpad service             | `standard`   | 1      | active users | [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service) |
 
 
@@ -88,7 +88,7 @@ The following services with their service plans and entitlements are required fo
 | Service                          | Plan        | Amount | Unit         | Tutorial                                |
 | -------------------------------- | ----------- | ------ | ------------ | --------------------------------------- |
 | SAP HTML5 Application Repository service  | `app-host`    | 100    | MB        | [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service)   |
-| SAP Authorization and Trust Management service | `application` | 1      | instances    | [Deploy Your Application to `Kyma`](btp-app-kyma-deploy-application)   |
+| SAP Authorization and Trust Management service | `application` | 1      | instances    | [Deploy Your Application to Kyma](btp-app-kyma-deploy-application)   |
 
 
 
@@ -142,13 +142,13 @@ In this section, you assign a portion of the entitlements that you've bought for
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 6: ](Configure Kyma in your subaccount)]
-This creates a `Kyma` instance in your subaccount that is a full-blown `kubernetes` cluster with `Kyma` on top.
+This creates a Kyma instance in your subaccount that is a full-blown `kubernetes` cluster with Kyma on top.
 
-1. In your subaccount's **Overview** page, choose the **`Kyma` Environment** tab and choose **Enable `Kyma`**.
+1. In your subaccount's **Overview** page, choose the **Kyma Environment** tab and choose **Enable Kyma**.
 
     !![Enable Kyma](enable_kyma.png)
 
-2. In the **Enable `Kyma`** dialog, a plan, an instance name, and a cluster name are automatically filled for you. You can keep the default settings and choose **Create**.
+2. In the **Enable Kyma** dialog, a plan, an instance name, and a cluster name are automatically filled for you. You can keep the default settings and choose **Create**.
 
 
     !![Set plan, instance name, and cluster name](kyma_instance_name.png)
@@ -159,7 +159,7 @@ This creates a `Kyma` instance in your subaccount that is a full-blown `kubernet
 
     > A CLI-friendly name is a short string (up to 32 characters) that contains only alphanumeric characters (A-Z, a-z, 0-9), periods, underscores, and hyphens. It can't contain white spaces.
 
-    > As mentioned above, when you create an environment instance that enables an environment you want to use, the name is generated automatically for you. You can use that name or replace it with the name of your choice.
+    > As mentioned, when you create an environment instance that enables an environment you want to use, the name is generated automatically for you. You can use that name or replace it with the name of your choice.
 
 3. The creation of the cluster takes some time. When done, you should see a `Console URL`, a `KubeconfigURL`, and the name of your cluster.
 
