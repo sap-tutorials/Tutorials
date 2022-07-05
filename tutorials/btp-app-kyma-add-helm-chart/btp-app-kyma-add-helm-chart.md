@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
  - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
- - [Setup HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
+ - [Setup SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
  - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-kyma-prepare-xsuaa)
 
 
@@ -95,7 +95,7 @@ To start with this tutorial use the result in the [`prepare-xsuaa`](https://gith
             repository: <your-container-registry>/cpapp-srv
             ...
     ```
-    > The name of the secret created in ([Create container registry secret](btp-app-#create-container-registry-secret)) and the entry for `imagePullSecret` should match.
+    > The name of the secret created in [Create container registry secret](btp-app-#create-container-registry-secret) and the entry for `imagePullSecret` should match.
 
 
 
@@ -103,7 +103,7 @@ To start with this tutorial use the result in the [`prepare-xsuaa`](https://gith
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Configure cluster domain)]
-The HTML5 applications need the Internet-accessible URL of the CAP service. For that the Helm chart needs to know the domain name to access the cluster.
+The HTML5 applications need the via pubic internet accessible URL of the CAP service. For that the Helm chart needs to know the domain name to access the cluster.
 
 1. Get the host name pattern of the cluster with the following command:
 
