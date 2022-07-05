@@ -143,7 +143,7 @@ The HTML5 applications need the Internet-accessible URL of the CAP service. For 
               fromSecret: cpapp-db
     ```
 
-3. Point the binding `hana` of the SAP HANA `deployer` to the SAP HANA HDI container secret:
+3. Point the binding `hana` of the SAP HANA deployer to the SAP HANA HDI container secret:
 
     ```YAML[5]
     hana_deployer:
