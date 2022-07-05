@@ -180,7 +180,7 @@ aic_connection.metrics.log_metrics(
 )
 ```
 
-The parameter `value="housepricemodel"` refers to the artifact name, which references the model that will be stored in AWS S3. It is vital that the name of this parameter matches the name that you defined in your yaml workflow.
+The parameter `value="housepricemodel"` refers to the artifact name, which references the model that will be stored in AWS S3. It is vital that the name of this parameter matches the name that you defined in your YAML workflow.
 
 Your code should resemble:
 
@@ -473,7 +473,7 @@ Create a configuration using the following information. The information is taken
 | Scenario ID | `learning-datalines`
 | Executable ID | `house-metrics-train`
 
-The value for `Input Parameters` `DT_MAX_DEPTH` is your choice. Until now, we have set this using an environment variable. If no variable is specified, this parameter will continue to be defined by the environment variables.
+The value for `Input Parameters` `DT_MAX_DEPTH` is your choice. Until now, this was set using an environment variable. If no variable is specified, this parameter will continue to be defined by the environment variables.
 
 > Information: This parameter can be defined using an integer to set a maximum depth or as `None`, which means that nodes are expanded until all leaves are single nodes, or contain all contain fewer data points than specified in the `min_samples_split samples`, if specified. For more information, see [the Scikit learn documentation](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html\#)
 
@@ -489,7 +489,7 @@ Create an execution from this configuration.
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Click through `ML Operations` >  `Executions` > `Metrics Resource` tab of your execution.
+Navigate through `ML Operations` >  `Executions` > `Metrics Resource` tab of your execution.
 
 !![image](img/ail/locate.png)
 
@@ -502,7 +502,7 @@ For metrics tagged with the artifact name, you can also locate the metrics in th
 
 [OPTION BEGIN [Postman]]
 
-Click through `AI Core` > `lm` > `metrics` > `Get metrics` and double check the `executionId`.
+Navigate through `AI Core` > `lm` > `metrics` > `Get metrics` and double check the `executionId`.
 
 !![image](img/postman/metric.png)
 
