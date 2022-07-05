@@ -21,8 +21,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Use a Local Launch Page](btp-app-launchpage)
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
- - [Prepare Your K... Development Environment](btp-app-kyma-prepare-dev-environment)
- - [Setup HANA Cloud for K...](btp-app-kyma-hana-cloud-setup)
+ - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
+ - [Setup HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
 
 ## Details
 ### You will learn
