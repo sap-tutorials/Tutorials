@@ -30,68 +30,68 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access the Launchpad Service Site Manager)]
+[ACCORDION-BEGIN [Step 1: ](Access the launchpad service site manager)]
 
-In the **SAP BTP cockpit**, on the **left-hand pane** expand the **Services** menu and click on **Instances and Subscriptions**. On the right side, locate the **Launchpad Service** under **Subscriptions** and click on the **Go to Application** icon next to it.
+In the **SAP BTP cockpit**, on the **left-hand pane** expand the **Services** menu and (1) click on **Instances and Subscriptions**. On the right side, locate the **Launchpad Service** under **Subscriptions** and (2) click on the **Go to Application** icon next to it.
 
 ![Figure 1 – Go to Application on Launchpad Service subscription](launch-service.png)
 
 The **Site Manager UI** will open-up in a new browser tab. So, the first thing you need to do is to **refresh** (grab) the content from the **HTML5 applications** repository for bring in our application from there.
 
-Click on the **sandwich menu** at the top-left corner of the page to expand the app menu and click on the **Provider Manager** option. Then, click on the **refresh button** at the far right of the **HTML5 apps** provider to bring-in the content from there.
+(1) Click on the **sandwich menu** at the top-left corner of the page to expand the app menu and (2) click on the **Provider Manager** option. Then, (3) click on the **refresh button** at the far right of the **HTML5 apps** provider to bring-in the content from there.
 
 ![Figure 2 – Refresh content from the HTML5 apps repository](refresh-content.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Prepare Business Content: Application, Group and Catalog)]
+[ACCORDION-BEGIN [Step 2: ](Prepare the business content - application, group and catalog)]
 
 To learn about the **concepts** managed by the **SAP Launchpad Service**, please refer to the official documentation in [**this link**](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/3f619a13ca2a4a59a14bec8507c3fb69.html).
 
-Click on the **Content Manager** option, then on the **Content Explorer** tab and, finally, on the **HTML5 Apps** tile.
+(1) Click on the **Content Manager** option, then (2) on the **Content Explorer** tab and, finally, (3) on the **HTML5 Apps** tile.
 
 ![Figure 3 – Access HTML5 Apps Repository](access-repo.png)
 
-Select the **Manage Projects** app, then click on the **Add to My Content** button.
+(1) Select the **Manage Projects** app, then (2) click on the **Add to My Content** button.
 
 ![Figure 4 – Add Manage Projects App to My Content](add-app.png)
 
-Click on the **My Content** tab, then on the **New** button and select **Catalog** from the menu.
+(1) Click on the **My Content** tab, then (2) on the **New** button and (3) select **Catalog** from the menu.
 
 ![Figure 5 – Add New Catalog](add-catalog.png)
 
-Type **Project Management** as **Title** and **Project Management Catalog** as **Description**. Click on the **Assign Items** search bar and, then, on the "**+**" icon to the right of the **Manage Projects** app. Finally, click on the **Save** button.
+Type **Project Management** as **Title** and **Project Management Catalog** as **Description**. (1) Click on the **Assign Items** search bar and, then, (2) on the "**+**" icon to the right of the **Manage Projects** app. Finally, (3) click on the **Save** button.
 
 ![Figure 6 – Project Management Catalog Information](catalog-info.png)
 
-Go back to the **Content Manager** home page, click on the **New** button and select **Group** from the menu.
+Go back to the **Content Manager** home page, (1) click on the **New** button and (2) select **Group** from the menu.
 
 ![Figure 7 – Add New Group](add-group.png)
 
-Type **SuccessFactors Extensions** as **Title** and **SuccessFactors Extensions Group** as **Description**. Click on the **Assign Items** search bar and, then, on the "**+**" icon to the right of the **Manage Projects** app. Finally, click on the **Save** button.
+Type **SuccessFactors Extensions** as **Title** and **SuccessFactors Extensions Group** as **Description**. (1) Click on the **Assign Items** search bar and, then, (2) on the "**+**" icon to the right of the **Manage Projects** app. Finally, (3) click on the **Save** button.
 
 ![Figure 8 – SuccessFactors Extensions Group Information](group-info.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Assign the Application to Everyone)]
+[ACCORDION-BEGIN [Step 3: ](Assign the application to everyone)]
 
 Go back to the **Content Manager** home page and click on the **Everyone** role in the list.
 
 ![Figure 9 – Access the Everyone Role](access-role.png)
 
-Click on the **Edit** button at the top-right and then on the **Assign Items** search bar. Click on the "**+**" icon to the right of the **Manage Projects** app. Finally, click on the **Save** button.
+Click on the **Edit** button at the top-right and then (1) on the **Assign Items** search bar. (2) Click on the "**+**" icon to the right of the **Manage Projects** app. Finally, (3) click on the **Save** button.
 
 ![Figure 10 – Assign the Manage Projects app to the Everyone Role](assign-app.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create the Launchpad Site)]
+[ACCORDION-BEGIN [Step 4: ](Create the launchpad site)]
 
-Click on the **Site Directory** option and then on the **Create Site** button.
+(1) Click on the **Site Directory** option and then (2) on the **Create Site** button.
 
 ![Figure 11 – Create New Site](create-site.png)
 
@@ -102,7 +102,7 @@ Name the site **BTP Extensions** and click on the **Create** button.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test the Site and Application)]
+[ACCORDION-BEGIN [Step 5: ](Test the site and application)]
 
 Click on the link below the **URL** field to **launch the site**, which will open-up in a new browser tab.
 
@@ -131,12 +131,12 @@ And this is the **final step** to **Extend SAP SuccessFactors on SAP BTP with CA
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check Your Knowledge)]
+[ACCORDION-BEGIN [Step 6: ](Check your knowledge)]
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Stretch Yourself)]
+[ACCORDION-BEGIN [Step 7: ](Stretch yourself)]
 
 **Congratulations**! After having gone through and completed the tutorials in this group you should have successfully **Extended SAP SuccessFactors on SAP BTP with CAP** with a **simple project management application**!
 
