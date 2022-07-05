@@ -1,7 +1,7 @@
 ---
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Setup SAP HANA Cloud for Kyma
+title: Set Up SAP HANA Cloud for Kyma
 description: Learn how to add SAP HANA client and configuration, create an HDI container for a SAP HANA Cloud instance on Cloud Foundry, and create credentials for this SAP HANA Cloud instance in your Kyma cluster.
 keywords: cap
 auto_validation: true
