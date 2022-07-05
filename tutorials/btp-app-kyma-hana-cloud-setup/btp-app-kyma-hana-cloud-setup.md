@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Setup SAP HANA Cloud for Kyma
-description: Learn how to add SAP HANA client and configuration, create an HDI container for a SAP HANA Cloud instance on Cloud Foundry, and create credentials for the Cloud Foundry SAP HANA Cloud instance in your Kyma cluster.
+description: Learn how to add SAP HANA client and configuration, create an HDI container for a SAP HANA Cloud instance on Cloud Foundry, and create credentials for this SAP HANA Cloud instance in your Kyma cluster.
 keywords: cap
 auto_validation: true
 time: 5
@@ -26,7 +26,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
- - How to create an HDI container for a SAP HANA Cloud instance on Cloud Foundry and create credentials for the SAP HANA Cloud instance in your Kyma cluster.
+ - How to create an HDI container for a SAP HANA Cloud instance on Cloud Foundry and create credentials for this SAP HANA Cloud instance in your Kyma cluster.
 
 
 ---
