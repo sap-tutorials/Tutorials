@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
  - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
- - [Setup SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
+ - [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
  - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-kyma-prepare-xsuaa)
  - [Add Helm Chart](btp-app-kyma-add-helm-chart)
  - You have created a DB secret as specified in [Setup HANA Cloud](btp-app-#setup-hana-cloud).
