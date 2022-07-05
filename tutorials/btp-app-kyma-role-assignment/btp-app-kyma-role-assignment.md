@@ -20,11 +20,11 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Use a Local Launch Page](btp-app-launchpage)
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
- - [Prepare Your K... Development Environment](btp-app-kyma-prepare-dev-environment)
- - [Setup HANA Cloud for K...](btp-app-kyma-hana-cloud-setup)
+ - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
+ - [Setup HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
  - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-kyma-prepare-xsuaa)
  - [Add Helm Chart](btp-app-kyma-add-helm-chart)
- - [Deploy Your Application to K...](btp-app-kyma-deploy-application)
+ - [Deploy Your Application to Kyma](btp-app-kyma-deploy-application)
  - [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service)
 
 ## Details
