@@ -140,7 +140,7 @@ Identity provisioning requires to configure a so-called source system for user a
 
 7. **Save** your changes.
 
-8. Switch to the **Certificate** tab and **Download** the certificate for later usage.
+8. Switch to the **Outbound C...** (C... like Certificate) tab and **Download** the certificate for later usage.
 
     ![Download certificate of source system](ips_source_systems_download_cert.png)
 
@@ -216,13 +216,13 @@ In this example, the target systems is an ABAP system in SAP BTP.
     |  :------------- | :-------------
     |  **`Type`**           | **`HTTP`**
     |  **`ProxyType`**           | **`Internet`**
-    |  **`URL`**          | The URL of your ABAP environment
+    |  **`URL`**          | The API URL of your ABAP environment
     |  **`Authentication`** | **`ClientCertificateAuthentication`**
-    |  **`Identity Provisioning service.date.variable.format`**   | **`yyyy-MM-dd`**
+    |  **`Identity Provisioning ips.date.variable.format`**   | **`yyyy-MM-dd`**
 
 7. **Save** your changes.
 
-8. Switch to the **Certificate** tab and **Download** the certificate for later usage.
+8. Switch to the **Outbound C...** (C... like Certificate) tab and **Download** the certificate for later usage.
 
     ![Download certificate of target system](ips_target_systems_download_cert.png)
 
