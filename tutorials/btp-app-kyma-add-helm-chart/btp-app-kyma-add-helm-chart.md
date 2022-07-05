@@ -20,18 +20,18 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Add More Than One Application to the Launch Page](btp-app-launchpage)
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
- - [Prepare Your K... Development Environment](btp-app-kyma-prepare-dev-environment)
- - [Setup HANA Cloud for K...](btp-app-kyma-hana-cloud-setup)
+ - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
+ - [Setup HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
  - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-kyma-prepare-xsuaa)
 
 
 ## Details
 ### You will learn
- - How to add a Helm chart to your project.
- - How to configure container image.
- - How to configure pull secret.
- - How to configure cluster domain.
- - How to configure HANA secret.
+ - How to add a Helm chart to your project
+ - How to configure container image
+ - How to configure pull secret
+ - How to configure cluster domain
+ - How to configure SAP HANA secret
 
 
 
