@@ -20,18 +20,18 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Use a Local Launch Page](btp-app-launchpage)
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
- - [Prepare Your K... Development Environment](btp-app-kyma-prepare-dev-environment)
- - [Setup HANA Cloud for K...](btp-app-kyma-hana-cloud-setup)
+ - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
+ - [Setup HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
  - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-kyma-prepare-xsuaa)
  - [Add Helm Chart](btp-app-kyma-add-helm-chart)
  - You have created a DB secret as specified in [Setup HANA Cloud](btp-app-#setup-hana-cloud).
 
 ## Details
 ### You will learn
- - How to add the Authorization and Trust Management service (XSUAA) to your project.
- - How to build docker images for your CAP service and database `deployer`.
- - How to push the docker images to your container registry.
- - How to deploy your app to your K... cluster.
+ - How to add the Authorization and Trust Management service (XSUAA) to your project
+ - How to build docker images for your CAP service and database deployer
+ - How to push the docker images to your container registry
+ - How to deploy your app to your Kyma cluster
 
 
 ---
@@ -139,8 +139,6 @@ The configuration for XSUAA is read from the `xs-security.json` file that was cr
      ```Shell/Bash
      Successfully built image <Container Registry>/cpapp-hana-deployer
      ```
-
-<!-- Split tutorial here and deploy the app only and the UI afterwards - this is just an alternative -->
 
 [DONE]
 [ACCORDION-END]
@@ -298,7 +296,7 @@ This is helpful if the pod couldn't be started.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 11: ](Check SAP HANA cloud trusted IP addresses)]
-A possible error cause is that your SAP HANA Cloud instance doesn't allow your K...'s cluster IP address.
+A possible error cause is that your SAP HANA Cloud instance doesn't allow your Kyma's cluster IP address.
 
 You can check and adjust the settings for [the trusted source IP addresses](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/0610e4440c7643b48d869a6376ccaecd.html) in SAP HANA Cloud Central.
 
