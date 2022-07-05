@@ -228,7 +228,7 @@ NAME                 COMPLETIONS   DURATION   AGE
 cpapp-hana-deployer  0/1           3m7s       3m7s
 ```
 
-In such a case, you can check the logs for the `deployer`. First, print the pods:
+In such a case, you can check the logs for the deployer. First, print the pods:
 
 ```
 kubectl get pods
