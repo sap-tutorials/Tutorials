@@ -83,7 +83,7 @@ Click on the **small notifications icon** in the bottom right corner to view the
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create the CAP Project)]
+[ACCORDION-BEGIN [Step 3: ](Create the CAP project)]
 Now it's time to create the CAP Project and understand it's structure.
 
 From the **top menu**, click on **Terminal** and select **New Terminal**
@@ -104,14 +104,14 @@ From the **top menu**, click on **File** and select **Open Workspace…**
 
 ![Figure 17 – Open Workspace](open-workspace.png)
 
-In the **dialog**, select the `sfsf-projman` folder under projects and the **VS Code Workspace (*.code-workspace)** from the **Format dropdown**, then click **Open**
+In the **dialog**, (1) select the `sfsf-projman` folder under projects (2) and the **VS Code Workspace (*.code-workspace)** from the **Format dropdown**, then (3) click **Open**
 
 ![Figure 18 – Set Workspace](set-workspace.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Understand the Project Structure)]
+[ACCORDION-BEGIN [Step 4: ](Understand the project structure)]
 SAP Business Application Studio will restart and, after a few seconds, you should see the **following structure** at the bottom of the left-hand side pane:
 
 ![Figure 19 – Project Structure](project-structure.png)
@@ -128,7 +128,7 @@ You can see that, under the project folder, `cds` has created three folders: `ap
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check Your Knowledge)]
+[ACCORDION-BEGIN [Step 5: ](Check your knowledge)]
 
 [VALIDATE_1]
 [ACCORDION-END]
