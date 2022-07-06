@@ -3,6 +3,7 @@ author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Prepare User Authentication and Authorization (XSUAA) Setup
 description: This tutorial shows you how to set up User Authentication and Authorization (XSUAA).
+keywords: cap
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
@@ -35,7 +36,7 @@ To start with this tutorial use the result in the [`hana-cloud-setup`](https://g
 To enable authentication support in CAP for SAP BTP, the `xssec` module needs to be installed. If `cds watch`is still running stop it with <kbd>Ctrl</kbd> + <kbd>C</kbd>. In your project folder execute:
 
 ```Shell/Bash
-npm i --save  @sap/xssec
+npm install --save  @sap/xssec
 ```
 
 [DONE]

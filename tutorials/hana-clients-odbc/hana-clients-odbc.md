@@ -3,8 +3,8 @@ title: Connect Using the SAP HANA ODBC Driver
 description: Connect to SAP HANA using an ODBC data source.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, products>sap-hana, products>sap-hana\,-express-edition]
-primary_tag: products>sap-hana-cloud
+tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-sap-hana-database, software-product>sap-hana, software-product>sap-hana\,-express-edition]
+primary_tag: software-product>sap-hana-cloud
 ---
 
 ## Prerequisites
@@ -49,8 +49,6 @@ The ODBC Data Source Administrator lists the installed ODBC drivers and the conf
 6. Example data source configuration for SAP HANA Cloud.   
 
     ![ODBC HANA Cloud](ODBC-HC.png)  
-
-    To connect to SAP HANA Cloud, **Multitenant** can be unchecked and the **Validate TLS/SSL certificate** option must be checked.
 
 7. Example data source configuration for SAP HANA, express edition.    
 
@@ -178,7 +176,7 @@ The following steps demonstrate how to use Microsoft Excel to query data in SAP 
 
     ![Excel ODBC Connection String](ExcelCS.png)  
 
-For further information on programming an application to use the ODBC client driver, see [ODBC Application Programming](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/73f03d62240f435880ade3bc1242cc05.html).
+    For further information on programming an application to use the ODBC client driver, see [ODBC Application Programming](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/73f03d62240f435880ade3bc1242cc05.html).
 
 Congratulations! You have configured an ODBC data source to contain connection information for a SAP HANA database and used that data source from Microsoft Excel.
 

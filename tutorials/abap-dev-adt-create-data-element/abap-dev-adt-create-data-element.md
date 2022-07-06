@@ -3,12 +3,13 @@ title: Create a Data Element
 description: Create a data element, which you will use in a later tutorial.
 auto_validation: true
 primary_tag: programming-tool>abap-development
-tags: [  tutorial>beginner, software-product>sap-netweaver-7.5 ]
+tags: [  tutorial>beginner, software-product>sap-netweaver ]
 time: 5
 ---
 
 ## Prerequisites  
  - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
+ - **Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](abap-create-project)
 
 ## Details
 ### You will learn  

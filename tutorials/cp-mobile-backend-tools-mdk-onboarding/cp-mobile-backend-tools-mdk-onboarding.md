@@ -58,25 +58,22 @@ This step includes creating the mobile development kit project in the editor.
 
     | Field | Value |
     |----|----|
-    | `Service File Name`| `EpmCacheService` |
-    | `OData Source` | Select `Mobile Services` from the dropdown |
+    | `Data Source` | Select `Mobile Services` from the dropdown |
     | `Mobile Services Landscape` | `standard` |
-    | `Application Id` | As specified in the previous tutorial, e.g. `com.sap.MbtEpmDemo` |
-    | `Destination` | As specified in the previous tutorial, e.g. `com.sap.MbtEpmDemo` |
-    | `Language URL` | Delete field content |
-    | `Enable Offline` | Leave **Yes** |
+    | `Application Id` | As specified in the previous tutorial: `com.sap.MbtEpmDemo` |
+    | `Destination` | As specified in the previous tutorial: `com.sap.MbtEpmDemo` |
+    | `Enter a path to service` | Blank (leave it empty) |
+    | `Enable Offline` | **Yes** |
 
     !![MDK](img_template_service.png)
 
-    The generated application will be offline enabled in the MDK Mobile client.
-
-8. In **OData Collections** step, select all collections. Click **Next** to complete the project creation.
+8. In **OData Collections** step, click **Select all data collections** &rarr; **Yes**.
 
     !![MDK](img_template_collections.png)
 
     >In [this tutorial](cp-mobile-backend-tools-cache-db), server-side configuration for this MDK app was already done.
 
-9. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `EpmCacheApp` project in the project explorer.
+9. After clicking **Finish**, the wizard will generate your MDK Application based on your selections and open it in a new workspace. You should now see the `EpmCacheApp` project in the workspace.
 
 [DONE]
 [ACCORDION-END]
@@ -93,7 +90,7 @@ These are the metadata definitions available in the editor and the format in whi
 
 - **`DownloadOffline.action`** and **`UploadOffline.action`**: These actions are applicable to Mobile client only. Using app initialization, data is downloaded to the offline store. If you want to have the application download any updated data from the backend server or upload changed data to the backend server, these actions will be needed.
 
-- **`InitializeOfflineSuccessMessage.action`**, **`IninitializeOfflineFailureMessage.action`** and other *Success* or *Failure* **Message actions**: These are messages showing up in the app on a successful or failure of data initialization, sync etc.
+- **`InitializeOfflineSuccessMessage.action`**, **`IninitializeOfflineFailureMessage.action`** and other *Success* or *Failure* *Message actions*: These are messages showing up in the app on a successful or failure of data initialization, sync etc.
 
 - **`Main.page`**: This is the first page of your MDK application that is shown. For this application you will use this as a launching page to get to application functionality.
 
@@ -175,13 +172,15 @@ The procedure consists of an additional MDK Service for online communication, ad
 
 [ACCORDION-BEGIN [Step 4: ](Create MDK Service for online and map rules)]
 
-1. Duplicate Service `EpmCacheService.service` and `.EpmCacheService.xml` via right-click &rarr; **duplicate** and rename them to `EpmCacheServiceOnline` keeping the corresponding endings.
-
-2. Open `EpmCacheServiceOnline.service` and uncheck **Use Offline Store** and save.
+1. Duplicate Service `com_sap_MbtEpmDemo.service` and `.com_sap_MbtEpmDemo.xml` via right-click &rarr; **duplicate** and rename them to `com_sap_MbtEpmDemoOnline.service` and `.com_sap_MbtEpmDemoOnline.xml` keeping the corresponding endings.
 
     ![Duplicate files](gif_duplicate_service.gif)
 
-3. Edit `EpmCacheService` to reflect the created rule for custom header. Therefore open `EpmCacheService.service`, expand **Headers** and enter the following:
+2. Open `com_sap_MbtEpmDemoOnline.service` and uncheck **Enable Offline Store** and save.
+
+    ![Uncheck Enable Offline Store flag](img_service_uncheck_offline.png)
+
+3. Edit `com_sap_MbtEpmDemo` to reflect the created rule for custom header. Therefore open `com_sap_MbtEpmDemo.service`, expand **Headers** and enter the following:
 
     | Name | Value |
     | ---- | ----- |
@@ -193,15 +192,13 @@ The procedure consists of an additional MDK Service for online communication, ad
 
 4. Expand folders **Actions** &rarr; **Service**, right-click &rarr; **duplicate** ``InitializeOffline.action`` and rename the copy to `InitializeOnline.action`.
 
-5. Click it to open and switch **Service** to `EpmCacheServiceOnline.service`. Remove all the **Defining Requests**.
+5. Click it to open and switch **Service** through dropdown to `EpmCacheServiceOnline.service`. Remove all the **Defining Requests**.
 
     ![Create initialize online action](gif_action_initialize_online.gif)
 
 6. Click `ClientRegistrationSet_CreateEntity.action` from folder `Actions` &rarr; `ClientRegistrationSet` to open the file.
 
 7. Switch service to `/EpmCacheApp/Services/EpmCacheServiceOnline.service`
-
-8. Uncheck `AuthorizedUser` and `ClientGUID`. They will be populated by the OData service.
 
 9. Via **Object Browser**, locate and insert rule `RandomInt64.js` as value for `ClientId`. Alternatively you can paste `/EpmCacheApp/Rules/RandomInt64.js`
 
@@ -224,7 +221,7 @@ To allow proper upload of a filter entity, modify `BusinessPartnerFilterSet_Crea
 
 1. Click `BusinessPartnerFilterSet_Create.page` from **Pages** &rarr; `BusinessPartnerFilterSet` folder to open it with **MDK page Editor**.
 
-2. Expand **Container Item** on the **Controls** pane and drag a list picker control it into the page.
+2. Expand **Container Item** on the **Controls** pane and drag a list picker control it into the existing section.
 
 3. Via right-click, delete the `CountryFilter` and `FilterID` elements.
 
@@ -234,7 +231,7 @@ To allow proper upload of a filter entity, modify `BusinessPartnerFilterSet_Crea
     | - | - |
     | Name | `CountryPicker` |
     | Caption | `Choose Country for subscription` |
-    | `IsPickerDismissedOnSelection` | **true** |
+    | Behavior &rarr; `IsPickerDismissedOnSelection` | **true** |
 
 5. In **Data** section add three exemplary values for picker items (for which data exists in the referenced system)
 

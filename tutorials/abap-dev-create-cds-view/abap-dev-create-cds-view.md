@@ -3,7 +3,7 @@ title: Create an ABAP Core Data Services (CDS) View in ABAP On-Premise
 description: Create a CDS View, display it in Fiori Elements preview, and enhance its appearance using built-in annotations
 auto_validation: true
 time: 45
-tags: [ tutorial>beginner, software-product>sap-netweaver-7.5]
+tags: [ tutorial>beginner, software-product>sap-netweaver ]
 primary_tag: programming-tool>abap-development
 ---
 
@@ -22,9 +22,12 @@ primary_tag: programming-tool>abap-development
 - How to add selection fields to the Fiori Elements preview
 
 
-You can then use some of these features in productive development to make your applications more powerful and more user-friendly. By the end of this tutorial, your application should look like this.
+In summary, based on existing persistent data sources, you will create and implement a query for an OData service to get a running app with useful read-only features. You can then use some of these features in productive development to make your applications more powerful and more user-friendly. By the end of this tutorial, your application should look like this.
 
 !![final-app-create](final-app-create.png)
+
+For more information on creating a read-only app, see the SAP Help Portal:
+[Developing Read-Only List Reporting Apps](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/504035c0850f44f787f5b81e35791d10.html).
 
 Throughout this tutorial, object names may include a suffix or group number, such as `XXX`. Always replace this with your own group number or initials.
 
@@ -35,63 +38,104 @@ Throughout this tutorial, object names may include a suffix or group number, suc
 
     !![step1a-new-package](step1a-new-package.png)
 
-2. Enter a name **`Package Z_ENHANCE_CDS_XXX`** and description **Enhance CDS Tutorial 2020**, then follow the wizard.
+2. Enter the following then follow the wizard, choosing a **new** transport request:
+- Name: **`Z_ENHANCE_CDS_XXX`**
+- Description **Enhance CDS Tutorial 2020**
 
     !![step1a-create-package](step1a-create-package.png)
+    !![step1b-new-tr](step1b-new-tr.png)
+
+
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Create CDS View)]
-1. In your package, create a CDS entity. Select the package, then choose **New > Other** from the context menu, then choose **Data Definition**.
+[ACCORDION-BEGIN [Step 2: ](Create CDS View Entity)]
+1. In your package, create a CDS view entity. Select the package, then choose **New > Other** from the context menu, then choose **Data Definition**.
 
     !![step2a-new-cds](step2a-new-cds.png)
 
-2. Add a name, **`Z_C_TRAVEL_DATA_XXX`**, and description **`Consumption view from /DMO/I_TRAVEL_U`**.
+2. Add the following:
+    - Name: **`Z_I_TRAVEL_R_XXX`**
+    - Description: **`Travel Model View Entity - Read Only`**
+    - Referenced object: **`/DMO/I_TRAVEL_U`**
 
-    Your CDS entity a consumption view. It is based on the business object (BO) view, `/DMO/I_TRAVEL_U`. which view provides a given data model independent of the consumption layer. It contains all core information required by applications running on top of it.  
+    Your CDS view is a read-only view. It is based on the business object (BO) view, `/DMO/I_TRAVEL_U`.
 
-    A consumption view is a CDS entity defined on top of a BO view and is used:
+3. Choose or create a transport request, then choose **Next**. **Do not choose Finish.**
 
-    - to expose the fields fitting to a given consumption use case
-    - to enrich the data model with metadata using annotations (e.g. for UI, search, and OData)
+4. Choose **Use template** then choose **Define View Entity**.
 
-3. Choose or create a transport request, then choose **Next**. Do not choose **Finish.**
-
-4. Choose **Use template** then choose **Define view**.
+    !![step2b-choose-view-entity](step2b-choose-view-entity.png)
 
 5. Finally, choose **Finish**.
 
-Your CDS entity appears in a new editor.
+Your CDS entity appears in a new editor, with the elements (fields and associations) from the referenced data object, **``**, already inserted. Ignore the error for now.
+
+!![step2b-cds-editor](step2b-cds-editor.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Define CDS View)]
-1. Add the following:
-    - `sql_view_name` = **`ZCTRAVEL_XXX`**
-    - `data_source_name` = **`/DMO/I_Travel_U`**. You can use **Auto-Complete `Ctrl+Space`**
+1. You will see 2 errors - at `BookingFee` and `TotalPrice`. Add the following annotations:
 
-2. Insert all the elements from `/DMO/I_TRAVEL_U` by placing your cursor inside the `as select from` statement (curly brackets) and again choosing **Auto-Complete `Ctrl+Space`** .
+    ```CDS
+    @Semantics.amount.currencyCode: 'CurrencyCode'
+    BookingFee,
 
-      !![step3b-insert-all-elements](step3b-insert-all-elements.png)
-
-3. Add the alias  **`as Travel`** to the **`define View`** statement, so that your code looks like this:
-
-    ```ABAP
-    @AbapCatalog.sqlViewName: 'ZCTRAVEL_XXX'
-    @AbapCatalog.compiler.compareFilter: true
-    @AbapCatalog.preserveKey: true
-    @AccessControl.authorizationCheck: #NOT_REQUIRED
-    @EndUserText.label: 'Consumption view from /DMO/I_TRAVEL_U'
-
-    define view Z_C_TRAVEL_DATA_XXX
-    as select from /DMO/I_Travel_U as Travel
+    @Semantics.amount.currencyCode: 'CurrencyCode'
+    TotalPrice,
 
     ```
 
-3. Format, save, and activate your code by choosing **`Shift+F1`, `Ctrl+S, Ctrl+F3`**.
+2. Format, save, and activate your code by choosing **`Shift+F1`, `Ctrl+S, Ctrl+F3`**. It should look like this:
+
+```CDS
+@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Travel Model View Entity - Read Only'
+@Metadata.ignorePropagatedAnnotations: true
+@ObjectModel.usageType:{
+  serviceQuality: #X,
+  sizeCategory: #S,
+  dataClass: #MIXED
+}
+
+define view entity Z_I_TRAVEL_R_XXX
+  as select from /DMO/I_Travel_U as Travel
+
+{
+  key TravelID,
+      AgencyID,
+      CustomerID,
+      BeginDate,
+      EndDate,
+
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      BookingFee,
+
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      TotalPrice,
+
+      CurrencyCode,
+      Memo,
+      Status,
+      LastChangedAt,
+
+      /* Associations */
+      _Agency,
+      _Booking,
+      _Currency,
+      _Customer,
+      _TravelStatus
+}
+
+```
+
+> If you define currency amounts and currency codes semantically, then the system will apply specific rules to handle these fields appropriately.
+For example, in this tutorial, if you define `TotalPrice` as a currency amount, then the system will add the appropriate currency to the `TotalPrice` column automatically. There is no need to display `CurrencyCode` as a separate column.
 
 [DONE]
 [ACCORDION-END]
@@ -218,7 +262,8 @@ The service binding automatically references the service definition and thus the
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add annotations for automatic display)]
-1. It would be nice if at least some fields were displayed immediately for the user. To do this, simply add the following annotation to the relevant fields in **`Z_C_TRAVEL_DATA_XXX`**. The start of your CDS entity will then look like this.
+
+1. It would be nice if at least some fields were displayed immediately for the user. To do this, simply add the following annotation to the relevant fields in **`Z_I_TRAVEL_R_XXX`**. The start of your CDS entity will then look like this.
 
     > `BookingFee` is not automatically displayed. The numbers for each field are relative to the other fields and are responsive - they do not refer to a specific pixel position or similar. For larger entities, you can specify *HIGH*,*MEDIUM*, or *LOW*, so that less important fields are automatically hidden on a smaller screen, such as a mobile phone.
 
@@ -274,7 +319,7 @@ At present, you only have minimal annotations. As you add more, your CDS entity 
 3. Enter a name and description for your metadata extension object, clearly similar to your CDS entity name, and choose **Next**:
 
     - **`Z_TRAVEL_METADATA_XXX`**
-    - **`Metadata for Z_C_TRAVEL_DATA_XXX`**
+    - **`Metadata for Z_I_TRAVEL_R_XXX`**
 
 4. Accept the transport request, choose **Next**, select all elements, then choose **Finish**.
 
@@ -295,9 +340,8 @@ At present, you only have minimal annotations. As you add more, your CDS entity 
 
 
 [ACCORDION-BEGIN [Step 11: ](Add semantic metadata)]
-*change*
 If you define currency amounts and currency codes semantically, then the system will apply specific rules to handle these fields appropriately.
-For example, in this tutorial, if you define `TotalPrice` as a currency amount, and define `CurrencyCode` as a currency code field, then the system will add the appropriate currency to the `TotalPrice` column automatically. There is no need to display `CurrencyCode` as a separate column.
+For example, in this tutorial, if you define `TotalPrice` as a currency amount, then the system will add the appropriate currency to the `TotalPrice` column automatically. There is no need to display `CurrencyCode` as a separate column.
 
 1. To do this, add the following two annotations to your CDS entity:
 
@@ -328,7 +372,7 @@ You will now add a fuzzy search capability.
     @Search.searchable: true
     ```
 
-2. Then add the following two annotations to the field you want to search, in this case **`Memo`**:
+2. Then add the following two annotations to the field you want to search, in this case **Memo**:
 
     ```CDS
     @Search.defaultSearchElement: true
@@ -442,16 +486,20 @@ As well as search fields, you can filter the list using an input field. In the n
 Your CDS entity code should look like this:
 
 ```CDS
-@AbapCatalog.sqlViewName: 'ZCTRAVEL_XXX'
-@AbapCatalog.compiler.compareFilter: true
-@AbapCatalog.preserveKey: true
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Consumption view from /DMO/I_TRAVEL_U'
+@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Travel Model View Entity - Read Only'
+@Metadata.ignorePropagatedAnnotations: true
 @Metadata.allowExtensions: true
 @Search.searchable: true
+@ObjectModel.usageType:{
+  serviceQuality: #X,
+  sizeCategory: #S,
+  dataClass: #MIXED
 
-define view Z_C_TRAVEL_DATA_XXX as Travel
-  as select from /DMO/I_Travel_U
+define view Z_I_TRAVEL_R_XXX as Travel
+  as select from /DMO/I_Travel_U  as Travel
+
 {
 
       ///DMO/I_Travel_U
@@ -462,17 +510,19 @@ define view Z_C_TRAVEL_DATA_XXX as Travel
       CustomerID,
       BeginDate,
       EndDate,
+
+      @Semantics.amount.currencyCode: 'CurrencyCode'
       BookingFee,
 
       @Semantics.amount.currencyCode: 'CurrencyCode'
       TotalPrice,
 
-      @Semantics.currencyCode
       CurrencyCode,
 
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.90
       Memo,
+
       Status,
       LastChangedAt,
 
@@ -487,11 +537,11 @@ define view Z_C_TRAVEL_DATA_XXX as Travel
 
 ```
 
-Your MDE code should look like this:
+Your metadata extension code should look like this:
 
 ```CDS
 @Metadata.layer: #CORE
-annotate view Z_C_TRAVEL_DATA_XXX with
+annotate view Z_I_TRAVEL_R_XXX with
 {
 
 @UI           : {

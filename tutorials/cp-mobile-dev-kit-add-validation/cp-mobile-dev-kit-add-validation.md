@@ -2,8 +2,8 @@
 title: Define a Validation Rule in an MDK App
 description: Write a JavaScript logic to validate an email address format in an MDK app.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 10
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -16,7 +16,6 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ![MDK](img_1.gif)
-
 
 [ACCORDION-BEGIN [Step 1: ](Create a validation message)]
 
@@ -46,7 +45,6 @@ If the Update action fails due to the validation rule, the application will disp
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 2: ](Create a new rule)]
 
@@ -117,6 +115,10 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-4.3.png)
 
+    >Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+    >!![MDK](img-4.3.1.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -134,6 +136,7 @@ Deploy the updated application to your MDK client.
     ![MDK](img_5.2.2.png)
 
 [OPTION END]
+
 
 [OPTION BEGIN [iOS]]
 
@@ -161,13 +164,12 @@ Deploy the updated application to your MDK client.
     !![MDK](img_5.4.png)
     !![MDK](img_5.5.png)
 
+
 [OPTION END]
+
+Once you complete this tutorial you can continue with [enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
 
 [VALIDATE_1]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully completed **create Your First MDK Application** mission and you are now all set to [enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
 
 ---

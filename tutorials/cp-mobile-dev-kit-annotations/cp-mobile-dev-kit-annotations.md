@@ -2,8 +2,8 @@
 title: Use OData Annotations to Add CRUD Functionality to an MDK App
 description: Generate a fully functional CRUD multi-channel application based on OData annotations.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -21,6 +21,7 @@ author_profile: https://github.com/jitendrakansal
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/5-Use-OData-Annotations-to-Add-CRUD-Functionality-to-an-MDK-App) and start directly with step 5 in this tutorial but make sure you complete step 2.
 
 ---
+
 
 Mobile Development Kit brings OData annotations capabilities to your multi-channel applications. MDK editor supports generating List-Detail pages based on annotations. List-Detail pages are similar to a Master-Detail page, but it is two pages instead of one. The MDK editor parses existing annotations to give you a huge leap forward in your multi-channel applications.
 
@@ -83,7 +84,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-3.2.png)
 
-    >If you do not see Welcome page, you can access it via **Help** menu.
+    >If you do not see the Welcome page, you can access it via **Help** menu or via **View** menu > Find Command > Welcome.
 
 3. Select **MDK Project** and click **Start**.
 
@@ -97,6 +98,7 @@ This step includes creating the mobile development kit project in the editor.
     | `Your Project Name` | `MDK_Annotations` |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
+    | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
 
     !![MDK](img-3.4.png)
 
@@ -158,6 +160,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-4.6.png)
 
+
 7. Now, you will set the `onPress` event to `NavToProduct_List.action`.
 
     In **Events** tab, click the 3 dots icon for the `OnPress` property to open the **Object Browser**.
@@ -188,7 +191,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     MDK editor will deploy the metadata to Mobile Services (for Mobile application) followed by to Cloud Foundry (for Web application).
 
-    !![MDK](img-4.2.gif)
+    !![MDK](img-4.2.1.png)
 
     You should see successful messages for both deployments.
 
@@ -210,17 +213,13 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
     !![MDK](img-6.1.png)
 
-2. Select `com.sap.mdk.demo` application from the list.
-
-    !![MDK](img-5.3.2.png)
-
     The On-boarding QR code is now displayed.
 
     !![MDK](img-5.2.png)
 
 3. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see the **Main** page with **LOGOUT** and **PRODUCTS** options at bottom of the page. Tap **PRODUCTS**, you will navigate to Product List page.
+    Once you accept app update, you will see the **Main** page with **Logout** and **Products** options at bottom of the page. Tap **Products**, you will navigate to Product List page.
 
     ![MDK](img_7.1.png)
 
@@ -240,10 +239,6 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
 
     !![MDK](img-6.1.png)
-
-2. Select `com.sap.mdk.demo` application from the list.
-
-    !![MDK](img-5.3.2.png)
 
     The On-boarding QR code is now displayed.
 
@@ -284,9 +279,5 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 [VALIDATE_2]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully created a fully functional CRUD multi-channel application based on OData annotations and you can continue with the remaining tutorials in this mission.
 
 ---

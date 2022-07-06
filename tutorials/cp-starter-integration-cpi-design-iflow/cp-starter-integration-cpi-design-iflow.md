@@ -117,9 +117,10 @@ You add this converter because the input to the integration flow is sent in JSON
     |  :------------- | :-------------
     |  **Action**           | **`Create`**
     |  **Name**           | **`productIdentifier`**
-    |  **Type**           | Select **`XPath`** from the dropdown list
+    |  **Source Type**        | Select **`XPath`** from the dropdown list
+    |  **Source Value**       | **`//productIdentifier`**
     |  **Data Type**    | **`java.lang.String`**
-    |  **Value**          | **`//productIdentifier`**
+
 
     !![Configure Content Modifier](6-2-configure-content-modifier.png)
 
@@ -210,8 +211,3 @@ Later in the mission, you will use the endpoint of the deployed integration flow
 
 [DONE]
 [ACCORDION-END]
-
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-starter-integration-cpi-design-iflow" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

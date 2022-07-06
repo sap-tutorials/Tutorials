@@ -3,10 +3,12 @@ title: Add Automated System Tests for CAP-Based Projects to Your CI/CD Pipeline
 description: Use UIVeri5 to create system tests against a CAP-based sample application. Automate your tests through a CI/CD pipeline.
 auto_validation: true
 time: 60
-tags: [ tutorial>beginner, topic>cloud, topic>user-interface, products>sap-business-technology-platform]
+tags: [ tutorial>beginner, topic>cloud, topic>user-interface, software-product>sap-business-technology-platform]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
- 
+## Note
+Please note that this step is deprecated and will be removed or replaced soon. Even though existing test will continue to work, we recomment that you remove the deprecated configurations. For more details, see [GitHub](https://github.com/SAP/ui5-uiveri5#readme)
+
 ## Prerequisites
 - You use [SAPUI5](https://sapui5.hana.ondemand.com/#/topic/2535ef9272064cb6bd6b44e5402d531d) in version 1.74 or higher.
 - You have installed and configured a local Git client.

@@ -2,8 +2,8 @@
 title: Enable Certificate-Based Authentication
 description: Create a branded MDK client that can on-board using certificates for authentication.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services ]
 time: 20
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -20,6 +20,7 @@ author_profile: https://github.com/jitendrakansal
   - How to build a branded client
 
 ---
+
 
 [ACCORDION-BEGIN [Step 1: ](Configure a new MDK application in Mobile Services cockpit)]
 
@@ -39,6 +40,10 @@ author_profile: https://github.com/jitendrakansal
     !![MDK](img-1.3.png)    
 
     > If you are configuring this app in a trial account, make sure to select **License Type** as *lite*.  
+
+4. In the **XSUAA Settings** step, continue with the default settings and click **Next** to navigate to further steps.
+
+    !![MDK](img-2.3.1.png)
 
 4. In **Assign Features** step, choose **Mobile Development Kit Application** from the dropdown, and click **Finish**.
 
@@ -283,11 +288,11 @@ Make sure that you have already completed steps 1 & 2 from [this](cp-mobile-dev-
 
     Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
 
-4. Tap **AGREE** on `End User License Agreement`.
+4. Tap **Agree** on `End User License Agreement`.
 
     ![MDK](img-5.19.1.png)    
 
-5. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.4 & 3.6. Tap **START** to connect the MDK client to SAP Business Technology Platform (BTP).
+5. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.4 & 3.6. Tap **Start** to connect the MDK client to SAP Business Technology Platform (BTP).
 
     ![MDK](img-5.20.1.png)
 
@@ -297,11 +302,11 @@ Make sure that you have already completed steps 1 & 2 from [this](cp-mobile-dev-
 
     >If the user certificate is not valid or not detectable, then you will see an SAP BTP login page.
 
-8. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
+8. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
     ![MDK](img-5.22.1.png)
 
-9. Confirm the passcode and tap **DONE**.
+9. Confirm the passcode and tap **Done**.
 
     ![MDK](img-5.24.1.png)
 
@@ -333,13 +338,13 @@ Make sure that you have already completed steps 1 & 2 from [this](cp-mobile-dev-
 
     Once, above command gets successfully executed, you will see new MDK client up and running in your device.
 
-    ![MDK](img-5.13.png)
-
 4. Tap **Agree** on `End User License Agreement`.
+
+    !![MDK](img-5.13.png)
 
 5. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.4 & 3.6.
 
-    ![MDK](img-5.14.png)
+    !![MDK](img-5.14.png)
 
 6. Tap **Start** to connect the MDK client to SAP Business Technology Platform (BTP). As you enabled the certificate based authentication, MDK client detects a valid certificate installed on the device and connects successfully to the SAP BTP.
 
@@ -350,24 +355,22 @@ Make sure that you have already completed steps 1 & 2 from [this](cp-mobile-dev-
 
 7. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
-    ![MDK](img-5.29.png)
+    !![MDK](img-5.29.png)
 
 8. Confirm the passcode and tap **Done**.
 
-    ![MDK](img-5.16.png)
+    !![MDK](img-5.16.png)
 
 
 9. Optionally, you can enable biometric authentication to get faster access to the app data, tap **Enable**.
 
-    ![MDK](img-5.17.png)
+    !![MDK](img-5.17.png)
 
     Since you have not deployed any metadata yet you will not see the `Update Now?` dialog.
 
-    ![MDK](img-5.18.png)
+    !![MDK](img-5.18.png)
 
 [OPTION END]
-
-Congratulations, you have successfully built Your Mobile Development Kit Client that enables Certificate based authentication and you can continue with the remaining tutorials in this mission.
 
 [VALIDATE_4]
 [ACCORDION-END]

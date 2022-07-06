@@ -11,10 +11,10 @@ primary_tag: products>sap-business-technology-platform
 - You have completed the tutorials [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario) and [Apply a Mix-and-Match Promotion with SAP Omnichannel Promotion Pricing](opps-advanced-scenario-mixandmatch).
 - You have registered for a trial account on [SAP BTP](hcp-create-trial-account).
 - You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)).
-- You have a subaccount in the Cloud Foundry environment, with Amazon Web Services (AWS) as provider and the Europe (Frankfurt) region.
+- You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region (AP21).
 - You have set up SAP Omnichannel Promotion Pricing as described in [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
 
-> Please be aware that temporarily new trial accounts cannot be created. You can only work with this tutorial if you already have an existing trial account for SAP Omnichannel Promotion Pricing.
+
 
 ## Details
 ### You will learn

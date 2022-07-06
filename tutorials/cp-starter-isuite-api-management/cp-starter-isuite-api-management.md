@@ -113,7 +113,9 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
     Choose **Save**.
 
-12. Choose the **POST** request. You notice the API changes, in particular, the request body contains now one element with a product identifier.
+12. Choose **`RequestProductDetails`** and then the **Resources** tab.
+
+    Choose the **POST** request. You notice the API changes, in particular, the request body contains now one element with a product identifier.
 
     !![Resources Tab API Changes](014.png)
 
@@ -132,7 +134,7 @@ In this step, you define and expose an integration flow endpoint as an applicati
 
 1. Navigate to your service instance page which you earlier opened at the end of [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe). You can access this from your subaccount. Choose **Services** > **Instances and Subscriptions**.
 
-2. Under the **Instances** section, look out for the service instance that was created by the booster. Usually the default name that the booster provides is **default-it-rt-integration**. Choose the key under the **Credentials** column to open the service key.
+2. Under the **Instances** section, look out for the service instance that was created by the booster. Usually the default name that the booster provides is **default-it-rt-integration-flow**. Choose the key under the **Credentials** column to open the service key.
 
       !![view key](3-2-key-view.png)
 
@@ -234,7 +236,9 @@ This grant type works in the following way: In a first call, the API client prov
 
     !![Save](033_New.png)
 
-    In this step you have assigned a policy template.
+21. Confirm the deployment.
+
+    You have assigned a policy template now.
 
 [VALIDATE_4]
 [ACCORDION-END]

@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 
 In this tutorial, you will use machine learning to classify your own data records and prepare a corresponding dataset schema. The steps that you have already learned in the previous tutorials will be once again needed to perform this tutorial. You will be given instructions, but if you need more details for each task, please review the respective tutorial.
 
-Please note that trial mode has limits on number of schemas, datasets and models. In order to be able to run this tutorial end-to-end without hitting limits, it is recommended to perform a cleanup as described [here](cp-aibus-dar-classify-delete) or just re-create the service instance in SAP BTP Trial as described below.
+Please note that the free tier option for Data Attribute Recommendation has limits on number of schemas, datasets and models. In order to be able to run this tutorial end-to-end without hitting limits, it is recommended to perform a cleanup as described in the tutorial: [Use Data Attribute Recommendation to Classify Records, Delete Model and Dataset](cp-aibus-dar-classify-delete). See also [Free Tier Option Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/c03b561eea1744c9b9892b416037b99a.html).
 
 ---
 
@@ -23,11 +23,11 @@ Please note that trial mode has limits on number of schemas, datasets and models
 
 In order to use your own dataset, you need to define a dataset schema that fits your dataset.
 
-In your dataset, you need to decide which columns will be `features`, for example the inputs for the machine learning model and which columns will be `labels`, for example the fields that will be predicted by the machine learning model. For further definition of specific terms, see [Concepts](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/fe501df6d9f94361bfea066f9a6f6712.html).
+In your dataset, you need to decide which columns will be `features`, for example the inputs for the machine learning model and which columns will be `labels`, for example the fields that will be predicted by the machine learning model. For further definition of specific terms, see [Concepts](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/cff2de73bc9c4625b35eb036439ae70a.html).
 
 After you have defined the features and the labels, you will need to note down your dataset schema. Paste the example below into a text file and adapt it to your needs.
 
-Each column in your dataset is represented by a `label` (that is not a label in machine learning sense but rather a field name) and a `type`. The available types are `category`, `text` and `number`. Assign the correct type to each of your features and labels. Please find further description on each type in the [FAQ](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/f7683574a792413faff6f82055152c91.html) under `What kinds of training data can be processed by Data Attribute Recommendation?`
+Each column in your dataset is represented by a `label` (that is not a label in machine learning sense but rather a field name) and a `type`. The available types are `category`, `text` and `number`. Assign the correct type to each of your features and labels. Please find further description on each type in the [FAQ](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/f7683574a792413faff6f82055152c91.html) under `What kinds of training data can be processed by Data Attribute Recommendation?`
 
 Note that in `labels` section only `category` types are allowed.
 
@@ -67,7 +67,7 @@ Now that you have created your dataset schema, make sure that you save the file.
 }
 ```
 
-Last but not least, you have to make sure that your dataset meets the [prerequisites](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/dbfbd4a0bd2a4a7a8ed9aa25bace7d91.html). The dataset has to:
+Last but not least, you have to make sure that your dataset meets the [prerequisites](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/dbfbd4a0bd2a4a7a8ed9aa25bace7d91.html). The dataset has to:
 
   - be in the CSV format
 

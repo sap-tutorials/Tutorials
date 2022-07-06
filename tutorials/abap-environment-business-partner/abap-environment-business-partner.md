@@ -3,7 +3,7 @@ auto_validation: true
 title: Create business partner in S/4HANA Cloud using ABAP Environment data
 description: Create a business partner in an S/4HANA Cloud system based on a business user in SAP Business Technology Platform ABAP Environment.
 primary_tag: products>sap-btp--abap-environment
-tags: [  tutorial>intermediate, topic>abap-development, products>sap-business-technology-platform, topic>abap-extensibility, tutorial>license ]
+tags: [  tutorial>intermediate, programming-tool>abap-development, products>sap-business-technology-platform, tutorial>license ]
 time: 20
 author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
@@ -241,7 +241,7 @@ CLASS zcl_s4_bupa_xxx IMPLEMENTATION.
         DATA(lo_create_response) = lo_create_request->execute( ).
         lo_create_response->get_business_data( IMPORTING es_business_data = ls_bupa ).
 
-        response->set_text( |Business parter { ls_bupa-businesspartner } was created| ).
+        response->set_text( |Business partner { ls_bupa-businesspartner } was created| ).
 
       CATCH cx_root INTO DATA(lx_exception).
         response->set_text( lx_exception->get_text( ) ).

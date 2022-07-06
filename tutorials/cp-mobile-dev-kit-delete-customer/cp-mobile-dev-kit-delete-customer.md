@@ -2,8 +2,8 @@
 title: Delete a Customer Record in an MDK App
 description: Allow the user to delete a customer record in an MDK app.
 auto_validation: true
-primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-business-technology-platform, products>mobile-development-kit-client, products>sap-mobile-services, products>sap-business-application-studio ]
+primary_tag: software-product>mobile-development-kit-client
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, software-product>sap-business-technology-platform, software-product>mobile-development-kit-client, software-product>sap-mobile-services, software-product>sap-business-application-studio ]
 time: 20
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -18,6 +18,7 @@ author_profile: https://github.com/jitendrakansal
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Enhance-Your-First-MDK-App-with-Additional-Functionalities/1-cp-mobile-dev-kit-create-customer) to start with this tutorial.
 
 ---
+
 
 ![MDK](img_1.gif)
 
@@ -102,30 +103,48 @@ The next step is to store deleted record locally for an offline application or d
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a new dialog confirmation)]
+[ACCORDION-BEGIN [Step 2: ](Create a new message confirmation)]
 
-In the MDK editor, you will write a rule in JavaScript called `Customers_DeleteConfirmation.js` to display a dialog to confirm if user wants to delete current record. On it's confirmation, _customer delete entity action_ is executed.
+In the MDK editor, you will write a rule in JavaScript called `Customers_DeleteConfirmation.js` to display a message to confirm if user wants to delete current record. On it's confirmation, _customer delete entity action_ is executed.
 
-1. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
+1. Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
+
+    !![MDK](img_1.1.png)
+
+    Provide the below information:
+
+    | Property | Value |
+    |----|----|
+    | `Action Name`| `DeleteConfirmation` |
+    | `Type` | Select `Message` from the dropdown |
+    | `Message` | `Delete current entity?` |
+    | `Title` | `Delete Confirmation` |
+    | `OKCaption` | `OK` |
+    | `OnOK` | `--None--` |
+    | `CancelCaption` | `CANCEL` |
+    | `OnCancel` | `--None--` |
+
+    !![MDK](img_2.2.1.png)
+
+2. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
     !![MDK](img_2.1.png)
 
-2. Enter the Rule name `Customers_DeleteConfirmation`, click **Next** and then **Finish** on the confirmation step.
+3. Enter the Rule name `Customers_DeleteConfirmation`, click **Next** and then **Finish** on the confirmation step.
 
     Copy and paste the following code.
 
     ```JavaScript
     export default function DeleteConfirmation(context) {
-    	let dialogs = context.nativescript.uiDialogsModule;
-    	return dialogs.confirm("Delete current record?").then((result) => {
-    		if (result === true) {
-    			return context.executeAction('/DemoSampleApp/Actions/Customers_DeleteEntity.action').then(
-    				(success) => Promise.resolve(success),
-    				(failure) => Promise.reject('Delete entity failed ' + failure));
-    		} else {
-    			return Promise.reject('User Deferred');
-    		}
-    	});
+        return context.executeAction('/DemoSampleApp/Actions/DeleteConfirmation.action').then((result) => {
+            if (result.data) {
+                return context.executeAction('/DemoSampleApp/Actions/Customers_DeleteEntity.action').then(
+                    (success) => Promise.resolve(success),
+                    (failure) => Promise.reject('Delete entity failed ' + failure));
+            } else {
+                return Promise.reject('User Deferred');
+            }
+        });
     }
     ```
 
@@ -181,6 +200,9 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-4.3.png)
 
+    >Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+    >!![MDK](img-4.3.1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -193,7 +215,7 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-2. Tap **CUSTOMER LIST** | tap any record | tap trash icon.
+2. Tap **Customer List** | tap any record | tap trash icon.
 
     ![MDK](img_5.1.png)
 
@@ -205,7 +227,7 @@ Deploy the updated application to your MDK client.
 
     >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-4. On Main page, tap **SYNC**, a successful message will be shown.
+4. On Main page, tap **Sync**, a successful message will be shown.
 
     ![MDK](img_5.3.png)
 
@@ -234,6 +256,7 @@ Deploy the updated application to your MDK client.
 [OPTION END]
 
 [OPTION BEGIN [Web]]
+
 
 1. Either click the highlighted button or refresh the web page to load the changes.
 
@@ -265,9 +288,5 @@ You can cross verify if this record has been deleted in the backend.
 
 [VALIDATE_3]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully deleted a Customer Record and you are now all set to [upload Logs from an MDK Mobile App](cp-mobile-dev-kit-upload-logs).
 
 ---

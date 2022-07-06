@@ -3,16 +3,16 @@ title: Fetch Data from Public API to Your AppGyver Application
 description: Configure your application to fetch records from a public API when a food item is scanned, using a Get Record command, which first needs to be configured.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, tutorial>license, topic>mobile, products>sap-business-technology-platform]
-primary_tag: products>sap-appgyver
-author_name: Tom Beck
-author_profile: https://github.com/heytombeck
+tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-appgyver
+author_name: Akseli Virtanen
+author_profile: https://github.com/akseliv
 ---
 
 ## Prerequisites
 - Access to an SAP BTP account in EU10 with Low-Code / No-Code entitlements
 - Previously followed the steps provided in [Connect your AppGyver Application to a Public API](appgyver-connect-publicapi)
- - Access to the AppGyver Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [macOS](https://apps.apple.com/fi/app/appgyver/id1485395192)/ [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release)
+ - Access to the AppGyver Previewer App on a smart phone or tablet: [iOS](https://apps.apple.com/us/app/sap-appgyver-preview/id1585856868) / [macOS](https://downloads.appgyver.com/SAP_AppGyver_preview_v3.4.4.zip)/ [Android](https://play.google.com/store/apps/details?id=com.sap.appgyver.preview.release)
 
 ## Details
 ### You will learn

@@ -4,7 +4,7 @@ description: Deploy and run an existing CAP application in Kyma runtime by using
 auto_validation: true
 time: 45
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model]
-primary_tag: products>sap-btp\\, kyma-runtime
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
@@ -241,6 +241,8 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
     kubectl create namespace dev
     ```
 
+    > Namespaces separate objects inside a Kubernetes cluster. Choosing a different namespace will require adjustments to the provided samples.
+
 2. Within the `deployment.yaml`, adjust the value of `spec.template.spec.containers.image` to use your Docker image. Apply the Deployment:
 
     ```Shell/Bash
@@ -267,7 +269,7 @@ You can find the resource definitions in the `k8s` folder. If you performed any 
 
 5. The `APIRule` will be create endpoint with the following format:
 
-  `https://cap-service.<cluster>.kyma.shoot.live.k8s-hana.ondemand.com`
+  `https://cap-service.<cluster>.kyma.ondemand.com`
 
   This can also be determined, by referencing the virtual service the `APIRule` creates by running:
 
@@ -279,7 +281,7 @@ kubectl get virtualservice -n dev
 
 ```Shell/Bash
 NAME               GATEWAYS                                      HOSTS                                                       AGE
-cap-service-****   [kyma-gateway.kyma-system.svc.cluster.local]  [cap-service.******.kyma.shoot.live.k8s-hana.ondemand.com]  1d
+cap-service-****   [kyma-gateway.kyma-system.svc.cluster.local]  [cap-service.******.kyma.ondemand.com]  1d
 ```
 
   Copy the value of the **HOSTS** field, making sure to append `https://` to it, to test the application in your browser.

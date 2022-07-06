@@ -5,9 +5,9 @@ title: Use Usage Reporting in Your Android Application
 description: See how the Usage Reporting feature can help provide information on how your app is being used.
 auto_validation: true
 time: 30
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-btp-sdk-for-android, products>sap-business-technology-platform ]
-primary_tag: products>sap-btp-sdk-for-android
-
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, programming-tool>odata, software-product>sap-btp-sdk-for-android, software-product>sap-business-technology-platform ]
+primary_tag: software-product>sap-btp-sdk-for-android
+keywords: sdkforandroid
 ---
 
 ## Prerequisites
@@ -186,7 +186,11 @@ The following steps record how often users start adding or updating products but
 4. Then add the following code segment immediately after:
 
     ```Java
-    UsageService.getInstance().eventBehaviorUserInteraction(ProductsCreateFragment.class.getSimpleName(), "elementId", "createOrEditProductClicked", "Begin Create or Edit Product");
+    UsageService usageService = SDKInitializer.INSTANCE.getService(JvmClassMappingKt.getKotlinClass(UsageService.class));
+    if (usageService != null) {
+        usageService.eventBehaviorUserInteraction(ProductsCreateFragment.class.getSimpleName(), "elementId",
+                "createOrEditProductClicked", "Begin Create or Edit Product");
+    }
     ```
 
     This generates a usage event record for when a user taps the **Add** or **Edit** icon within **Products**.
@@ -195,8 +199,13 @@ The following steps record how often users start adding or updating products but
 
     ```Java
     case android.R.id.home:
-      UsageService.getInstance().eventBehaviorUserInteraction(ProductsCreateFragment.class.getSimpleName(), "elementId", "onBackPressed", "Create or Edit Product Cancelled");
-      return super.onOptionsItemSelected(item);
+        UsageService usageService = SDKInitializer.INSTANCE.getService(JvmClassMappingKt.getKotlinClass(UsageService.class));
+        if (usageService != null) {
+            usageService.eventBehaviorUserInteraction(
+                    ProductsCreateFragment.class.getSimpleName(), "elementId",
+                    "onBackPressed", "Create or Edit Product Cancelled");
+        }
+        return super.onOptionsItemSelected(item);
     ```
 
     This generates the usage event record whenever the user navigates away from an editing screen without saving.
@@ -266,7 +275,7 @@ The following steps record how often users start adding or updating products but
 4. Add the following code segment immediately after:
 
     ```Kotlin
-    UsageService.getInstance().eventBehaviorUserInteraction(ProductsCreateFragment::class.java.simpleName, "elementId", "createOrEditProductClicked", "Begin Create or Edit Product")
+    SDKInitializer.getService(UsageService::class)?.eventBehaviorUserInteraction(ProductsCreateFragment::class.java.simpleName, "elementId", "createOrEditProductClicked", "Begin Create or Edit Product")
     ```
 
     This generates a usage event record for when a user taps the **Add** or **Edit** icon within **Products**.
@@ -275,8 +284,8 @@ The following steps record how often users start adding or updating products but
 
     ```Kotlin
     android.R.id.home -> {
-      UsageService.getInstance().eventBehaviorUserInteraction(ProductsCreateFragment::class.java.simpleName, "elementId", "onBackPressed", "Create or Edit Product Cancelled")
-      super.onOptionsItemSelected(item)
+        SDKInitializer.getService(UsageService::class)?.eventBehaviorUserInteraction(ProductsCreateFragment::class.java.simpleName, "elementId", "onBackPressed", "Create or Edit Product Cancelled")
+        super.onOptionsItemSelected(item)
     }
     ```
 
@@ -420,7 +429,7 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
 8.  On Windows, press **Ctrl+F**, or, on a Mac, press **command+F**, to find:
 
     ```Java
-    UsageBroker.upload(getContext(), false);
+    usageService.uploadUsage(false, this, serviceResult -> {
     ```
 
 9.  Change **false** to **true**.
@@ -513,7 +522,7 @@ Mobile Services provides a **Client Usage Configuration** under **Mobile Client 
 8.  On Windows, press **Ctrl+F**, or, on a Mac, press **command+F**, to find:
 
     ```Kotlin
-    UsageBroker.upload(requireContext(), false)
+    usageService.uploadUsageData(forceUpload = false, owner = this,
     ```
 
 9.  Change **false** to **true**.

@@ -18,13 +18,13 @@ author_profile: https://github.com/julieplummer20
 
 ## Details
 ### You will learn
-- How to create a CDS view
+- How to create a read-only CDS-based travel model
 - How to display your CDS view in a Fiori Elements preview
 - How to add selection fields to Fiori Elements preview
 - How to extract the metadata of your CDS view
 - How to add semantic annotations
 - How to add a search function
-- How to add selection fields
+- How to add selection fields to the Fiori Elements preview
 
 In summary, based on existing persistent data sources, you will create and implement a query for an OData service to get a running app with useful read-only features. You can then use some of these features in productive development to make your applications more powerful and more user-friendly. By the end of this tutorial, your application should look like this.
 
@@ -41,15 +41,18 @@ For more information on creating a read-only app, see the SAP Help Portal: [Deve
 
     !![step1a-new-package](step1a-new-package.png)
 
-2. Enter a name **`Package Z_ENHANCE_CDS_XXX`** and description **Enhance CDS Tutorial 2020**, then follow the wizard.
+    2. Enter the following then follow the wizard, choosing a **new** transport request:
+    - Name: **`Z_ENHANCE_CDS_XXX`**
+    - Description **Enhance CDS Tutorial 2020**
 
-    !![step1a-create-package](step1a-create-package.png)
+        !![step1a-create-package](step1a-create-package.png)
+        !![step1b-new-tr](step1b-new-tr.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create CDS View)]
-1. In your package, create a CDS view. Select the package, then choose **New > Other** from the context menu, then choose **Data Definition**.
+[ACCORDION-BEGIN [Step 2: ](Create CDS View Entity)]
+1. In your package, create a CDS view entity. Select the package, then choose **New > Other** from the context menu, then choose **Data Definition**.
 
     !![step2a-new-cds](step2a-new-cds.png)
 
@@ -62,30 +65,78 @@ For more information on creating a read-only app, see the SAP Help Portal: [Deve
 
 3. Choose or create a transport request, then choose **Next**. Do not choose **Finish.**
 
-4. Finally, choose **Use template** then choose **Define view**. Then choose **Finish**.
+4. Choose **Use template** then choose **Define View Entity**.
 
-    !![step2b-view-with-params](step2b-view-with-params.png)
+    !![step2b-choose-view-entity](step2b-choose-view-entity.png)
 
-Your CDS view appears in a new editor.
+5. Finally, choose **Finish**.
 
-!![step3a-view-name-data-source](step3a-view-name-data-source.png)
+Your CDS entity appears in a new editor, with the elements (fields and associations) from the referenced data object, **``**, already inserted. Ignore the error for now.
+
+!![step2b-cds-editor](step2b-cds-editor.png)
 
 [DONE]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 3: ](Define CDS View)]
-1. Add the following:
-    - `sql_view_name` = **`ZITRAVEL_XXX`**
-    - `data_source_name` = **`/DMO/I_Travel_U`**. You can use **Auto-Complete `Ctrl+Space`**
+1. You will see 2 errors - at `BookingFee` and `TotalPrice`. Add the following annotations:
 
-2. Insert all the elements from `/DMO/I_TRAVEL_U` by placing your cursor inside the `as select from` statement (curly brackets) and again choosing **Auto-Complete `Ctrl+Space`** .
+    ```CDS
+    @Semantics.amount.currencyCode: 'CurrencyCode'
+    BookingFee,
 
-      !![step3b-insert-all-elements](step3b-insert-all-elements.png)
+    @Semantics.amount.currencyCode: 'CurrencyCode'
+    TotalPrice,
 
-3. Comment out the statement **`with parameters parameter_name : parameter_type`** for now, so that the error disappears.
+    ```
 
-4. Format, save, and activate your code by choosing **`Shift+F1`, `Ctrl+S, Ctrl+3`**.
+2. Format, save, and activate your code by choosing **`Shift+F1`, `Ctrl+S, Ctrl+F3`**. It should look like this:
+
+```CDS
+@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Travel Model View Entity - Read Only'
+@Metadata.ignorePropagatedAnnotations: true
+@ObjectModel.usageType:{
+  serviceQuality: #X,
+  sizeCategory: #S,
+  dataClass: #MIXED
+}
+
+define view entity Z_I_TRAVEL_R_XXX
+  as select from /DMO/I_Travel_U as Travel
+
+{
+  key TravelID,
+      AgencyID,
+      CustomerID,
+      BeginDate,
+      EndDate,
+
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      BookingFee,
+
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      TotalPrice,
+
+      CurrencyCode,
+      Memo,
+      Status,
+      LastChangedAt,
+
+      /* Associations */
+      _Agency,
+      _Booking,
+      _Currency,
+      _Customer,
+      _TravelStatus
+}
+
+```
+
+> If you define currency amounts and currency codes semantically, then the system will apply specific rules to handle these fields appropriately.
+For example, in this tutorial, if you define `TotalPrice` as a currency amount, then the system will add the appropriate currency to the `TotalPrice` column automatically. There is no need to display `CurrencyCode` as a separate column.
 
 [DONE]
 [ACCORDION-END]
@@ -429,36 +480,43 @@ As well as search fields, you can filter the list using an input field. In the n
 Your CDS entity code should look like this:
 
 ```CDS
-@AbapCatalog.sqlViewName: 'ZITRAVEL_XXX'
-@AbapCatalog.compiler.compareFilter: true
-@AbapCatalog.preserveKey: true
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Consumption view from /DMO/I_TRAVEL_U'
+@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Travel Model View Entity - Read Only'
+@Metadata.ignorePropagatedAnnotations: true
 @Metadata.allowExtensions: true
 @Search.searchable: true
+@ObjectModel.usageType:{
+  serviceQuality: #X,
+  sizeCategory: #S,
+  dataClass: #MIXED
 
-define view Z_I_TRAVEL_R_XXX
-  as select from /DMO/I_Travel_U
+define view Z_I_TRAVEL_R_XXX as Travel
+  as select from /DMO/I_Travel_U  as Travel
+
 {
 
       ///DMO/I_Travel_U
+
 
   key TravelID,
       AgencyID,
       CustomerID,
       BeginDate,
       EndDate,
+
+      @Semantics.amount.currencyCode: 'CurrencyCode'
       BookingFee,
 
       @Semantics.amount.currencyCode: 'CurrencyCode'
       TotalPrice,
 
-      @Semantics.currencyCode
       CurrencyCode,
 
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.90
       Memo,
+
       Status,
       LastChangedAt,
 

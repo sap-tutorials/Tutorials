@@ -1,16 +1,18 @@
 ---
 title: Subscribe to the Low-Code / No-Code Service in SAP BTP
-description: Subscribe to and open the Low-Code / No-Code service on SAP BTP, and get access to the AppGyver Composer tool, an intuitive application development solution for users of all technical abilities.
+description: Subscribe to and open the paid Low-Code / No-Code service on SAP BTP, and get access to the AppGyver Composer tool, an intuitive application development solution for users of all technical abilities.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, tutorial>license, topic>mobile, products>sap-business-technology-platform]
-primary_tag: products>sap-appgyver
-author_name: Tom Beck
-author_profile: https://github.com/heytombeck
+tags: [ tutorial>beginner, tutorial>license, topic>mobile, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-appgyver
+author_name: Akseli Virtanen
+author_profile: https://github.com/akseliv
 ---
 
 ## Prerequisites
- - Access to an SAP BTP account in EU10 with Low-Code / No-Code entitlements
+ - Access to an SAP BTP account in EU10 with paid Low-Code / No-Code entitlements. See [SAP Discovery Center]  (https://discovery-center.cloud.sap/serviceCatalog/sap-appgyver?region=europe(frankfurt)&service_plan=standard&tab=feature)
+
+Alternatively you can use SAP AppGyver's free Community Edition, which includes the same features needed to complete the rest of the mission. You can sign up here: [AppGyver.com] (https://www.appgyver.com)
 
 ## Details
 ### You will learn

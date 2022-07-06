@@ -3,8 +3,8 @@ title: Set Up and Generate a New SAP Fiori App Project
 description: Create a simple SAP Fiori elements List Report Object Page using SAP Fiori tools.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5, topic>user-interface, products>sap-fiori-tools]
-primary_tag: products>sap-fiori-tools
+tags: [ tutorial>beginner, software-product>sap-fiori, programming-tool>odata, programming-tool>sapui5, topic>user-interface, software-product>sap-fiori-tools]
+primary_tag: software-product>sap-fiori-tools
 ---
 
 ## Prerequisites
@@ -23,7 +23,16 @@ In this case, you will create an SAP Fiori elements list report page displaying 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Launch Application Generator)]
+[ACCORDION-BEGIN [Step 1: ](Set up the work environment)]
+
+Before generating the application, create a root folder for your project wherever you would like to store it. Name it whatever you like. For the sake of this tutorial, we will call it **`lroptutorial`**. Open this folder in your development environment.
+
+!![Create root folder](t2-root-folder.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Launch Application Generator)]
 
 SAP Fiori tools includes an Application Generator that provides a wizard-style approach for creating applications based on SAP Fiori elements page types. You are going to use it to create your List Report Object Page app.
 
@@ -33,10 +42,14 @@ In Visual Studio Code, open the Command Palette using **CMD/CTRL + Shift + P**, 
 
 >In Visual Studio Code, the **Command Palette** provides convenient access to a variety of commands. These commands give you access to certain functionality in Visual Studio Code, including the custom commands that are part of SAP Fiori tools.
 
+>If this is the first time SAP Fiori Generator is being installed, you will see the following screen while the installation is in process. Installation is still in progress while the loading indicator is visible. This may take a few minutes.
+
+!![Application Generator installation](t2-lrop-generator-install.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Select application template)]
+[ACCORDION-BEGIN [Step 3: ](Select application template)]
 
 The **Command Palette** will then close and a new tab for the Application Generator will open. Since the purpose of this tutorial is to create an SAP Fiori elements List Report Object Page app, ensure that **SAP Fiori elements** is selected in the Application Type menu.
 
@@ -50,7 +63,7 @@ Select the **List Report Object Page** tile and press **Next**.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Configure service for List Report Object Page)]
+[ACCORDION-BEGIN [Step 4: ](Configure service for List Report Object Page)]
 
 With the page type selected, it is time to connect a data source. You will use the OData service mentioned in the prerequisite section of this tutorial.
 
@@ -60,7 +73,7 @@ Select **Connect to an OData Service** from the dropdown menu. A field to enter 
 https://sapes5.sapdevcenter.com/sap/opu/odata/sap/SEPMRA_PROD_MAN/
 ```
 
-You may be prompted to enter credentials to access the service. Enter your username and password, and click the **Next** button.
+You may be prompted to enter credentials to access the service. Enter your username and password, and click the **Login** button.
 
 ![VSCode Login Button](t2-login-logo.png)
 
@@ -75,37 +88,43 @@ Click  **Next**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure the main project attributes)]
+[ACCORDION-BEGIN [Step 5: ](Configure the main project attributes)]
 
 With the page type and data source defined, the next step is to configure the main project attributes:
 
 
-|  Field Name     | Value
-|  :------------- | :-------------
-|  **What is the module name for your application?**           | **`myfioriapp`**
-|  **What is the title for your application?**           | **`Manage Products`**
-|  **What is the namespace for your application?**    | **`Namespace1`**
-|  **What is the description for your application?**          | **`SAP Fiori elements application for managing products`**
-|  **Choose your project folder**   | Click the folder selection icon and select where to save your project.
+|  Project Attribute     | Description     | Value
+|  :------------- | :------------- | :-------------
+| **Module name** |  **Set the name of the module for this application that will be loaded at runtime. It also determines the directory name of generated application**           | **`myfioriapp`**
+| **Application title** |  **Set the application title that will be displayed in the header of the application**           | **`Manage Products`**
+| **Application namespace** |  **Set a unique package name for the application module being created**    | **`Namespace1`**
+| **Description** |  **Add a description for your project**          | **`SAP Fiori elements application for managing products`**
+| **Project folder path** |  **Select the folder where you would like to save your project**   | Click the folder selection icon and select the root folder you created in step 1.
+| **Minimum SAPUI5 version** |  **Choose minimum SAPUI5 version for your application**   | Use the default suggested value
 
-Select `No` for the three radio button settings: **Add deployment configuration**, **Add FLP configuration**, and **Configure advanced options**. Click **Finish**.
+Select **No** for the three radio button settings: **Add deployment configuration**, **Add FLP configuration**, and **Configure advanced options**. Click **Finish**.
+
 
 At this point, your application folder will be generated based on the input from above.
 
-Once your project has been generated, you will have the option to add it to your existing workspace. Verify that your project has been created and looks similar to this:
+Your project structure should look like the image below.    
 
-!![VSCode Project Folder](t2-project-structure.png)
+!![VSCode Project Folder](t2-project-structure-1.png)
+
+Once your project has been generated, **Application Information** page will be shown for the project you have created. **Application Information** page gives you a quick overview of the most essential information for your project. You can find more information on **Application Information** page here: `https://help.sap.com/viewer/17d50220bcd848aa854c9c182d65b699/Latest/en-US/c3e0989caf6743a88a52df603f62a52a.html`.
+
+>Do not close the Application Information page as it will be needed later. In case you do, open the Command Palette using **CMD/CTRL + Shift + P**, type **Application Info**, and select **Fiori: Open Application Info**
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Preview app with real backend data)]
+[ACCORDION-BEGIN [Step 6: ](Preview app with real backend data)]
 
 Since the given OData service came with pre-configured backend annotations, you can preview your app right away.
 
-From the Visual Studio Code **Explorer** on your left, right-click your project and select **Preview Application**.
+From the **Application Information** page, click on the tile **Preview Application**.
 
-!![VSCode Open Preview Application](t2-open-preview-application.png)
+!![Application Information Open Preview Application](t2-applicationInfo-preview.png)
 
 From the options, you will need to select a npm script. Select `start` and press **`Enter`** to preview your app with backend data. A new browser window will open with your List Report Object Page application running. Click **Go** to see display the list of products.
 
@@ -116,9 +135,9 @@ From the options, you will need to select a npm script. Select `start` and press
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Preview your application with mock Data)]
+[ACCORDION-BEGIN [Step 7: ](Preview your application with mock Data)]
 
-During your app development, you may face a slow internet connection or an unavailable backend system. SAP Fiori tools provides the option to run your application with mock data.
+SAP Fiori tools also provides the option to run your application with mock data, which can be used when you face a slow internet connection or an unavailable backend system. For the best learning experience with this tutorial, we will use this option to preview the app.
 
 To download the mock data we have provided for you, navigate to the [SAP Fiori tools Sample repository on GitHub](https://github.com/SAP-samples/fiori-tools-samples/blob/main/V2/mockData/SEPMRA_PROD_MAN/mockdata.zip). Click **Download** to download the zip file of the project.
 
@@ -126,7 +145,7 @@ To download the mock data we have provided for you, navigate to the [SAP Fiori t
 
 Extract the zip file to a location of your choice. Drag the extracted folder into the `localService` folder in your app, under `**webapp**` > `**localService**`
 
-![Insert mock data into localService](t2_mockdata.png)
+![Insert mock data into localService](t2-mockdata-1.png)
 
 From the Visual Studio Code **Explorer** on your left, right-click your project and select **Preview Application**.
 
@@ -135,8 +154,6 @@ From the options, you will need to select a npm script. Select `start-mock` and 
 !![VSCode Select npm start mock](t2-select-npm-start-mock.png)
 
 A new browser window opens with your List Report Object Page application running with mock data.
-
->For the remainder of this tutorial group, if the backend service becomes unavailable at any point or you have trouble viewing data, you can preview your application with mock data.
 
 At this point, you should have the following:
 

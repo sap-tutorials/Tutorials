@@ -3,7 +3,7 @@ title: Create a New ABAP Dictionary Structure
 description: Create an ABAP Dictionary structure for retrieving data from a database
 auto_validation: true
 primary_tag: programming-tool>abap-development
-tags: [  tutorial>beginner, software-product>sap-netweaver-7.5 ]
+tags: [  tutorial>beginner, software-product>sap-netweaver ]
 time: 15
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
@@ -11,6 +11,7 @@ author_profile: https://github.com/julieplummer20
 
 ## Prerequisites  
  - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
+ - **Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](abap-create-project)
 
 ## Details
 ### You will learn  

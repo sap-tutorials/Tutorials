@@ -19,6 +19,7 @@ author_profile: https://github.com/julieplummer20
 - How to concatenate two elements, using a built-in function for CDS
 - How to convert currencies using a built-in function for CDS
 - How to create an object page
+- How to create a parent-child hierarchy in your business object
 - How to add a CASE statement
 
 
@@ -27,7 +28,7 @@ You can then use some of these features in productive development to make your a
 !![fep-final-enhance](fep-final-enhance-no-CASE.png)
 !![step13c-fep-CASE](step13c-fep-CASE.png)
 
-Throughout this tutorial, objects name include a suffix, such as `XXX`. Always replace this with your group number or initials.
+You can see the code at the end of this tutorial. Throughout the tutorial, objects name include a suffix, such as `XXX`. Always replace this with your group number or initials.
 
 ---
 
@@ -87,7 +88,7 @@ CDS associations are simply specifications of joins, always in the same place in
 For more information, see:
 - ABAP Keyword Documentation: [CDS - Associations](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abencds.htm)
 
-1. Add the following 2 statements to your CDS entity, **`Z_I_TRAVEL_R_XXX`**, just before the list of fields. The first statement creates an association from the source CDS entity **`Z_I_TRAVEL_R_XXX`** to the target CDS entity **`/DMO/I_Agency`**, joined on the field **`AgencyID`**. The source entity is represented by the alias **`$projection`**, because you cannot use the original name in a path statement. The target entity is represented by its alias name **`_Agency`**.
+1. Add the following statement to your CDS entity, **`Z_I_TRAVEL_R_XXX`**, just before the list of fields. The first statement creates an association from the source CDS entity **`Z_I_TRAVEL_R_XXX`** to the target CDS entity **`/DMO/I_Agency`**, joined on the field **`AgencyID`**. The source entity is represented by the alias **`$projection`**, because you cannot use the original name in a path statement. The target entity is represented by its alias name **`_Agency`**.
 
     ```CDS
       association [1..1] to /DMO/I_Agency as _Agency on $projection.AgencyID = _Agency.AgencyID
@@ -117,26 +118,23 @@ For more information, see:
 
     !![step14c-fep-agency-by-name](step14c-fep-agency-by-name.png)
 
-7. Repeat for the fields **`CustomerID`** and **`Currency_Code`**:
+7. Repeat for the field **`CustomerID`**:
 
     ```CDS
     association [1..1] to /DMO/I_Customer as _Customer    on $projection.CustomerID =   _Customer.CustomerID
-    association [0..*] to I_CurrencyText as _CurrencyText on $projection.CurrencyCode = _CurrencyText.Currency
 
     ```
 
     ```CDS
     @ObjectModel.text.association: '_Customer'
-    @ObjectModel.text.association: '_CurrencyText'
 
     ```
 
-8. Also make sure these associations are added to the list of fields:
+8. Also make sure this association are added to the list of fields:
 
     ```CDS
     //Associations
     _Customer
-    _CurrencyText
 
     ```
 
@@ -176,6 +174,7 @@ You will use a simple one to easily merge two fields. The two fields are provide
 
 5. Check the result in the data preview, by clicking in the editor and choosing **Open With > Data Preview** from the context menu. The result should look like this.
 
+      !![step3-settings-addressee](step3-settings-addressee.png)
       !![step15b-concat-result](step15b-concat-result.png)
 
 6. Now you have the addressee, you may want to comment out the text association for **`CustomerID`**.
@@ -193,6 +192,7 @@ It would be nice to find out how much money each **Agency** has received in tota
     You may get a warning: "Reference information missing...". Ignore this for now.
 
     ```CDS
+    @Semantics.amount.currencyCode: 'CurrencyCode'
     currency_conversion(
     amount => TotalPrice,
     source_currency => CurrencyCode,
@@ -201,6 +201,7 @@ It would be nice to find out how much money each **Agency** has received in tota
     exchange_rate_date => cast('20200429' as abap.dats),
     error_handling => 'SET_TO_NULL' )
     as PriceInUSD,  
+
     ```
 2. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+3`** )
 
@@ -234,20 +235,22 @@ It would be nice to find out how much money each **Agency** has received in tota
 The code for your CDS entity should look like this:
 
 ```CDS
-@AbapCatalog.sqlViewName: 'ZITRAVEL_xxx'
-@AbapCatalog.compiler.compareFilter: true
-@AbapCatalog.preserveKey: true
+@AbapCatalog.viewEnhancementCategory: [#NONE]
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Consumption view for travel XXX'
+@EndUserText.label: 'Travel Model View Entity - Read Only'
+@Metadata.ignorePropagatedAnnotations: true
 @Metadata.allowExtensions: true
 @Search.searchable: true
+@ObjectModel.usageType:{
+  serviceQuality: #X,
+  sizeCategory: #S,
+  dataClass: #MIXED
 
-define view Z_I_TRAVEL_R_XXX
+define view entity Z_I_TRAVEL_R_XXX
   as select from /DMO/I_Travel_U
 
   association [1..1] to /DMO/I_Agency   as _Agency       on $projection.AgencyID = _Agency.AgencyID
   association [1..1] to /DMO/I_Customer as _Customer     on $projection.CustomerID = _Customer.CustomerID
-  association [0..*] to I_CurrencyText  as _CurrencyText on $projection.CurrencyCode = _CurrencyText.Currency
 
 {
 
@@ -279,7 +282,6 @@ define view Z_I_TRAVEL_R_XXX
       exchange_rate_date => cast('20200429' as abap.dats),
       error_handling => 'SET_TO_NULL' )                         as PriceInUSD,
 
-      @Semantics.currencyCode
       @ObjectModel.text.association: '_CurrencyText'
       CurrencyCode,
 
@@ -288,7 +290,6 @@ define view Z_I_TRAVEL_R_XXX
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.90
       Memo,
-
       Status,
       LastChangedAt,
 
@@ -298,7 +299,9 @@ define view Z_I_TRAVEL_R_XXX
       _Booking,
       _Currency,
       _Customer,
-      _CurrencyText
+      _CurrencyText,
+      _Customer,
+      _TravelStatus
 
 }
 
@@ -407,8 +410,10 @@ For more information on object pages, see SAP Help Portal: [Defining UI Annotati
 [ACCORDION-BEGIN [Step 8: ](Create CDS entity for booking)]
 You will now add more information to the object page by creating:
 - A CDS entity for bookings
-- An association from Travel to Booking
 - Adding a second UI facet to the travel metadata extension
+
+You will also create a parent-child hierarchy for these two entities. Your business object will then consist of a tree of nodes linked by a special associations known as a composition.
+For more information on this relationship, see [Defining the Data Model in CDS Views](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/f851d987fe0d43d4886e54ca98034aa5.html), particularly the first two sections,  Travel Root View `/DMO/I_Travel_U` and Booking View `/DMO/I_Booking_U`.
 
 1. In the Package Explorer, select **Data Definition**, then choose **New Data Definition** from the context menu.
 
@@ -423,19 +428,61 @@ You will now add more information to the object page by creating:
 
 4. Finally, choose **Use template** then choose **Define view**. Then choose **Finish**.
 
-Your CDS entity appears in a new editor.
-
-5. Change the **`sqlViewName`**, e.g. to **`ZI_BOOK_XXX`**.
+Your CDS entity appears in a new editor. We will fix the errors now.
 
 6. Change the `@AccessControl.authorizationCheck:` to **`#NOT_REQUIRED`**.
-
-    !![step7b-cds-editor](step7b-cds-editor.png)
 
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 9: ](Specify hierarchy)]
 
-[ACCORDION-BEGIN [Step 9: ](Add annotations)]
+[DONE]
+[ACCORDION-END]
+1. Add the following to **`Z_I_BOOKING_XXX`**, using Auto-complete (`Ctrl+Space`).
+Then **Save**, but **DO NOT yet activate your entity**.
+
+    ```CDS
+    association to parent Z_I_TRAVEL_R_XXX as _Travel
+      on $projection.TravelID = _Travel.TravelID
+
+
+    ```
+2. Change **`Z_I_TRAVEL_R_XXX`** to a root view entity and add the composition association as follows. Again, **Save**, but **DO NOT yet activate your entity**.
+
+    ```CDS
+    define root view entity Z_I_TRAVEL_R_XXX
+      as select from /DMO/I_Travel_U as Travel
+
+    composition [0..*] of Z_I_BOOKING_XXX as _Booking
+
+    ```
+
+3. Now, choose **Activate All `(Shift+Ctrl+F3)`**.
+
+    !![step10a-activate-all-toolbar](step10a-activate-all-toolbar.png)
+
+4. Choose **Deselect All**, then choose your two entities `Z_I_TRAVEL_R_XXX` and `Z_I_BOOKING_XXX`, then choose **Activate**.
+
+    !![step10-activate-all](step10-activate-all.png)
+
+5. Change the `@AccessControl.authorizationCheck:` to **`#NOT_REQUIRED`**.
+
+6. Add an alias to the **`define view`** statement, so that your code looks like this:
+
+    ```CDS
+    @AccessControl.authorizationCheck: #CHECK
+    @EndUserText.label: 'Read-only view from /DMO/I_BOOKING_U'
+    define view entity Z_I_BOOKING_XXX as select from /DMO/I_Booking_U as Booking
+
+    ```
+
+7. Format, save, and activate the CDS entity (**`Shift+F1, Ctrl+S, Ctrl+F3`**) `Z_I_BOOKING_XXX`.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Add annotations)]
 1. Add semantic annotations as follows:
 
     ```CDS
@@ -453,7 +500,7 @@ Your CDS entity appears in a new editor.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Create metadata extension)]
+[ACCORDION-BEGIN [Step 11: ](Create metadata extension for Z_I_BOOKING_XXX)]
 1. First, allow metadata extensions to your CDS entity by adding the following annotation just after the `@EndUserText.label: 'Consumption view from /DMO/I_BOOKING_U'` annotation:
 
     ```CDS
@@ -484,6 +531,9 @@ Your CDS entity appears in a new editor.
     annotate view Z_I_BOOKING_R_XXX with
 
     {
+      @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],
+             identification: [ { position: 10 } ] }
+     TravelID;
 
       @UI: { lineItem:       [ { position: 10, importance: #HIGH } ],
              identification: [ { position: 10 } ] }
@@ -520,17 +570,8 @@ Your CDS entity appears in a new editor.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11: ](Add association from Travel to Booking)]
-1. In your CDS entity **`Z_I_TRAVEL_R_XXX`**, add an association to this booking view:
-
-    ```CDS
-    association [0..*] to Z_I_BOOKING_R_XXX as _booking      on $projection.TravelID = _Booking.TravelId
-
-    ```
-
-2. Add the association to the field list.
-
-3. Also, add the entity **`Z_I_BOOKING_R_XXX`** to the service definition **`Z_EXPOSE_TRAVEL_R_XXX`**:
+[ACCORDION-BEGIN [Step 12: ](Add association from Travel to Booking)]
+1. Also, add the entity **`Z_I_BOOKING_R_XXX`** to the service definition **`Z_EXPOSE_TRAVEL_R_XXX`**:
 
 ```CDS
 @EndUserText.label: 'Expose travel Service XXX'
@@ -541,9 +582,9 @@ define service Z_EXPOSE_TRAVEL_R_XXX {
 
 ```
 
-4. Format, save, and activate (**`Shift+F1, Ctrl+S, Ctrl+F3`**).
+2. Format, save, and activate (**`Shift+F1, Ctrl+S, Ctrl+F3`**).
 
-5. Check the service binding. It should now include a `to_Booking` association, like this. If not, try choosing **Unpublish**, then **Publish** again.
+3. Check the service binding. It should now include a `to_Booking` association, like this. If not, try choosing **Unpublish**, then **Publish** again.
 
     !![step10a-sb-w-booking-association](step10a-sb-w-booking-association.png)
 
@@ -552,7 +593,7 @@ define service Z_EXPOSE_TRAVEL_R_XXX {
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 12: ](Add Booking information to object page)]
+[ACCORDION-BEGIN [Step 13: ](Add Booking information to object page)]
 1. In metadata extension **`Z_MDE_TRAVEL_XXX`**, before the square bracket, insert a comma after the Travel facet, then insert the **Booking** facet to the Travel metadata extension, so that your code looks like this:
 
     ```CDS
@@ -609,7 +650,7 @@ define service Z_EXPOSE_TRAVEL_R_XXX {
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 13: ](Add association from Booking to Connection)]
+[ACCORDION-BEGIN [Step 14: ](Add association from Booking to Connection)]
 You can also display information from another entity using an association.
 
 1. In the CDS entity **`Z_I_BOOKING_R_XXX`**, add an association from Booking to Connection.
