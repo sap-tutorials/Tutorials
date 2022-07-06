@@ -79,7 +79,7 @@ Setting up a SAP HANA Cloud instance directly on Kyma is not possible. Hence, in
 
 2. Copy the folder `scripts` from `templates/kyma-add-helm-chart` to your project root folder.
 
-2. In your project root folder, execute:
+3. In your project root folder, execute:
 
     ```
     ./scripts/create-db-secret.sh cpapp-db
