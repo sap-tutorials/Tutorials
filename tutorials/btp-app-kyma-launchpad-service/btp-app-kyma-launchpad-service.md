@@ -43,10 +43,6 @@ To start with this tutorial use the result in the [`kyma-add-helm-chart`](https:
 
 [ACCORDION-BEGIN [Step 1: ](Prepare UI Applications)]
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 2: ](Add navigation targets)]
 In this tutorial, you will use the SAP Launchpad service to access your CAP service and its UI. Additionally, the SAP Launchpad service provides features like personalization, role-based visibility, theming, and more. You can add multiple applications to one launchpad, including subscribed ones and applications from SAP S/4HANA or SAP BTP.
 
 Navigation targets are required to navigate between applications, but also to start the applications from SAP Launchpad service. In the next steps, you add the navigation targets `Risks-display` and `Mitigations-display` to the application manifest (`manifest.json`) file.
@@ -54,7 +50,7 @@ Navigation targets are required to navigate between applications, but also to st
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Add navigation target for Risks UI)]
+[ACCORDION-BEGIN [Step 2: ](Add navigation target for Risks UI)]
 1. Open the file `app/risks/webapp/manifest.json`.
 
 2. Add the external navigation target to the `sap.app` JSON object. You can add it right behind the `sourceTemplate` object:
@@ -88,7 +84,7 @@ Navigation targets are required to navigate between applications, but also to st
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Add navigation target for Mitigations UI)]
+[ACCORDION-BEGIN [Step 3: ](Add navigation target for Mitigations UI)]
 Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.json`, but with the `semanticObject` name `Mitigations`.
 
 <!-- cpes-file app/mitigations/webapp/manifest.json:$["sap.app"].crossNavigation -->
@@ -120,7 +116,7 @@ Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Install required UI tools)]
+[ACCORDION-BEGIN [Step 4: ](Install required UI tools)]
 1. Install [SAPUI5 tooling](https://www.npmjs.com/package/@sap/ux-ui5-tooling) package as global module in the root folder of your project:
 
     ```Shell/Bash
@@ -136,12 +132,12 @@ Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 6: ](Add deployment config for HTML5 applications)]
+[ACCORDION-BEGIN [Step 5: ](Add deployment config for HTML5 applications)]
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 7: ](Add SAP Fiori elements Risks application)]
+[ACCORDION-BEGIN [Step 6: ](Add SAP Fiori elements Risks application)]
 1. Switch to `app/risks` folder:
 
     ```Shell/Bash
@@ -181,7 +177,7 @@ Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 8: ](Add SAP Fiori elements Mitigations application)]
+[ACCORDION-BEGIN [Step 7: ](Add SAP Fiori elements Mitigations application)]
 1. Switch to the `app/mitigations` folder
 
     ```Shell/Bash
@@ -202,7 +198,7 @@ Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 9: ](Change cloud service)]
+[ACCORDION-BEGIN [Step 8: ](Change cloud service)]
 The `fiori` command automatically sets some value to the SAP Cloud service property in both  `app/risks/webapp/manifest.json` and `app/mitigations/webapp/manifest.json` files. Change the `sap.cloud.service` property in `app/risks/webapp/manifest.json` and `app/mitigations/webapp/manifest.json`:
 
 ```JSON[3]
@@ -215,7 +211,7 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 10: ](Create package.json and build script for app deployer)]
+[ACCORDION-BEGIN [Step 9: ](Create package.json and build script for app deployer)]
 1. Create a file `app/package.json` for the HTML5 application `deployer` application and add the following code to it:
 
     ```JSON
@@ -261,7 +257,6 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 
     This script calls the UI5 build for the two SAP Fiori applications and copies the result into the `resources` directory.
 
-
 3. Navigate back to your project root folder:
 
     ```Shell/Bash
@@ -285,7 +280,7 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 11: ](Build HTML5 application deployer image)]
+[ACCORDION-BEGIN [Step 10: ](Build HTML5 application deployer image)]
 1. Set container registry environment variable:
 
     ```Shell/Bash
@@ -313,7 +308,7 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 12: ](Configure Helm chart for HTML5 application deployment)]
+[ACCORDION-BEGIN [Step 11: ](Configure Helm chart for HTML5 application deployment)]
 1. Add the HTML5 Application `deployer` to your Helm chart:
 
     ```
@@ -349,15 +344,17 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 
      The backend destination configuration creates a destination with the name `cpapp-srv` pointing to the URL for your CAP service `srv`.
 
-[DONE]
+[VALIDATE 1]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 13: ](Re-Deploy your application)]
+[ACCORDION-BEGIN [Step 12: ](Re-Deploy your application)]
 ```Shell/Bash
 helm upgrade cpapp ./chart --install
 ```
-
-## Subscribe to SAP Launchpad service
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 13: ](Subscribe to SAP Launchpad service)]
 
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
@@ -378,8 +375,10 @@ helm upgrade cpapp ./chart --install
     !![New Instance or Subscription](new_instance_dialog.png)
 
 You have now subscribed to the SAP Launchpad service.
-
-## Assign SAP Launchpad role collection
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 14: ](Assign SAP Launchpad role collection)]
 
 You need to assign your user to the `Launchpad_Admin` role collection, so you don't get an error accessing the **Launchpad Service** site later on.
 
@@ -387,15 +386,17 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
 2. Choose your user.
 
-4. Under **Role Collections** on the right, choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
+3. Under **Role Collections** on the right, choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
 
     !![Add role](add_launchpad_admin_role.png)
 
-5. Open another browser or clear your browser's cache.
+4. Open another browser or clear your browser's cache.
 
 > See section [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html) in the SAP Launchpad service's documentation for more details.
-
-## Create your SAP Launchpad site
+> [DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 15: ](Create your SAP Launchpad site)]
 
 1. Choose **Services** **&rarr;** **Instances and Subscriptions** on the left.
 
@@ -448,9 +449,10 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 13. Type in `Risk Management Site` for the site name and choose **Create**.
 
     > The new site gets the `Everyone` role by default, so you don't have to assign it explicitly. The default site properties are sufficient for the purposes of this tutorial.
-
-
-## Test your SAP Launchpad site
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 16: ](Test your SAP Launchpad site)]
 
 1. Choose **Go to site**.
 
@@ -468,8 +470,7 @@ You have launched your `Risks` app through the SAP Launchpad service.
 
 > If you choose **Go**, you will get an error because you haven't assigned a role collection to your user yet. We'll do it in the next tutorial.
 
-
-[VALIDATE_1]
+[DONE]
 The result of this tutorial can be found in the [`kyma-launchpad-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/kyma-launchpad-service) branch.
 
 
