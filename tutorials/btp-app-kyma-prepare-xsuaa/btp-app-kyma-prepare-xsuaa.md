@@ -11,8 +11,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prerequisites)]
-- [Set Up Local Development using VS Code](btp-app-set-up-local-development)
+## Prerequisites
+ - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
  - [Create a Directory for Development](btp-app-create-directory)
  - [Create a CAP-Based Application](btp-app-create-cap-application)
  - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
@@ -26,15 +26,14 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
-
  - How to set up user authentication and authorization (XSUAA)
 
 ---
 
 
-## Setup XSUAA
+[ACCORDION-BEGIN [Step 1: ](Setup XSUAA)]
 
-Run the following command in your project folder:
+1. Run the following command in your project folder:
 
 ```Shell/Bash
 cds add xsuaa --for production
@@ -45,9 +44,7 @@ What happens here? Running `cds add xsuaa` does two things:
 - Adds the XSUAA service to the `package.json` file of your project
 - Creates the XSUAA security configuration for your project
 
-### Adding the XSUAA service
-
-Check if the following lines have been added to the `package.json` in your `cpapp` project:
+2. Check if the following lines have been added to the `package.json` in your `cpapp` project:
 
 <!-- cpes-file package.json:$.cds.requires -->
 ```JSON[7-9]
@@ -66,13 +63,19 @@ Check if the following lines have been added to the `package.json` in your `cpap
 }
 ```
 
-### Roles and scopes
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 2: ](Roles and scopes)]
 
 A scope represents a single authorization to perform an action. For example, there could be a scope "Read" and a scope "Write". The scope allows a user to read or write a certain business object. Scopes can't be assigned to users directly. They're packaged into roles. For example, there could a role "Editor" consisting of the "Read" and "Write" scopes, while the role "Viewer" consists only of the "Read" scope.
 
-### XSUAA security configuration
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 3: ](XSUAA security configuration)]
 
-Check the file `xs-security.json` that was created in your `cpapp` project. The file contains the configuration of the XSUAA (XS User Authentication and Authorization service). The CAP server takes the authorization parts `@(restrict ... )` from our service definition form and creates scopes and role templates from it. For example, it found the roles `RiskViewer` and `RiskManager` in the `srv/risk-service.cds` file:
+Check the `xs-security.json` file that was created in your `cpapp` project. The file contains the configuration of the XSUAA (XS User Authentication and Authorization service). The CAP server takes the authorization parts `@(restrict ... )` from our service definition form and creates scopes and role templates from it. For example, it found the roles `RiskViewer` and `RiskManager` in the `srv/risk-service.cds` file:
 
 ```JavaScript[4,8]
   entity Risks @(restrict : [
@@ -121,8 +124,6 @@ And created scopes and roles for both in the `xs-security.json` file:
   ]
 }
 ```
-
-[VALIDATE_1]
 
 [VALIDATE_1]
 [ACCORDION-END]
