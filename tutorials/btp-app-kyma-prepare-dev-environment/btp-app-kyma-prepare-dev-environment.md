@@ -35,11 +35,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-BEGIN [Step 1: ](Install kubectl)]
 [OPTION BEGIN [macOS]]
 
+
+
 1. Run:
 ```Shell/Bash
 brew install kubectl
 ```
-1. Check if the installation is successful:
+2. Check if the installation is successful:
 ```Shell/Bash
 kubectl version --client
 ```
