@@ -51,7 +51,7 @@ In the current implementation, the applications are launched without a launch pa
 [VALIDATE_1]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Check the `launchpage.html` file)]
+[ACCORDION-BEGIN [Step 3: ](Check the launchpage.html file)]
 Let's have a look at the `launchpage.html` file and the configuration in there. In the first script you will see:
 
 ```JavaScript[5,10,13,18]
