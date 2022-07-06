@@ -132,12 +132,7 @@ Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Add deployment config for HTML5 applications)]
-
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 6: ](Add SAP Fiori elements Risks application)]
+[ACCORDION-BEGIN [Step 5: ](Add SAP Fiori elements Risks application)]
 1. Switch to `app/risks` folder:
 
     ```Shell/Bash
@@ -177,7 +172,7 @@ Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 7: ](Add SAP Fiori elements Mitigations application)]
+[ACCORDION-BEGIN [Step 6: ](Add SAP Fiori elements Mitigations application)]
 1. Switch to the `app/mitigations` folder
 
     ```Shell/Bash
@@ -198,7 +193,7 @@ Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 8: ](Change cloud service)]
+[ACCORDION-BEGIN [Step 7: ](Change cloud service)]
 The `fiori` command automatically sets some value to the SAP Cloud service property in both  `app/risks/webapp/manifest.json` and `app/mitigations/webapp/manifest.json` files. Change the `sap.cloud.service` property in `app/risks/webapp/manifest.json` and `app/mitigations/webapp/manifest.json`:
 
 ```JSON[3]
@@ -211,7 +206,7 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 9: ](Create package.json and build script for app deployer)]
+[ACCORDION-BEGIN [Step 8: ](Create package.json and build script for app deployer)]
 1. Create a file `app/package.json` for the HTML5 application `deployer` application and add the following code to it:
 
     ```JSON
@@ -269,7 +264,7 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
     npm install --prefix app @sap/html5-app-deployer
     ```
 
-3. Delete `node_modules` and `package-lock.json` files within `app` folder and its subfolders.
+5. Delete `node_modules` and `package-lock.json` files within `app` folder and its subfolders.
 
     When switching to the `npm` workspace feature old `package-lock.json` and `node_modules` cause problems. Therefore, execute the following command:
 
@@ -280,7 +275,7 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 10: ](Build HTML5 application deployer image)]
+[ACCORDION-BEGIN [Step 9: ](Build HTML5 application deployer image)]
 1. Set container registry environment variable:
 
     ```Shell/Bash
@@ -308,7 +303,7 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 11: ](Configure Helm chart for HTML5 application deployment)]
+[ACCORDION-BEGIN [Step 10: ](Configure Helm chart for HTML5 application deployment)]
 1. Add the HTML5 Application `deployer` to your Helm chart:
 
     ```
@@ -347,14 +342,14 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 [VALIDATE 1]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 12: ](Re-Deploy your application)]
+[ACCORDION-BEGIN [Step 11: ](Re-Deploy your application)]
 ```Shell/Bash
 helm upgrade cpapp ./chart --install
 ```
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 13: ](Subscribe to SAP Launchpad service)]
+[ACCORDION-BEGIN [Step 12: ](Subscribe to SAP Launchpad service)]
 
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
@@ -378,7 +373,7 @@ You have now subscribed to the SAP Launchpad service.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 14: ](Assign SAP Launchpad role collection)]
+[ACCORDION-BEGIN [Step 13: ](Assign SAP Launchpad role collection)]
 
 You need to assign your user to the `Launchpad_Admin` role collection, so you don't get an error accessing the **Launchpad Service** site later on.
 
@@ -396,7 +391,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 > [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 15: ](Create your SAP Launchpad site)]
+[ACCORDION-BEGIN [Step 14: ](Create your SAP Launchpad site)]
 
 1. Choose **Services** **&rarr;** **Instances and Subscriptions** on the left.
 
@@ -452,7 +447,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 16: ](Test your SAP Launchpad site)]
+[ACCORDION-BEGIN [Step 15: ](Test your SAP Launchpad site)]
 
 1. Choose **Go to site**.
 
