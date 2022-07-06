@@ -23,15 +23,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
  - For Windows, you'll need Chocolatey. This is a package manager that will speed up and ease installation of the tools in this tutorial. See how to install Chocolatey in [Setup/Install](https://docs.chocolatey.org/en-us/choco/setup).
  - You have prepared a container registry and you've logged in to the container registry through your CLI. A container registry is a repo where you can push your docker images. SAP BTP doesn't currently provide a container registry. You can use any container registry offering as long as it can be reached from public Internet.
-- Make sure your `package.json` is using `@sap/cds 6.0.1` or newer and you have `@sap/cds-dk 6.0.1` or newer globally installed:
 
-    To check it, do the following in your project directory:
-    1. Run `npm install` to install your local package
-    2. Run `cds version` to see the globally installed `@sap/cds-dk` and your locally installed `@sap/cds`
-
-    To upgrade, run:
-    1. `npm install @sap/cds@>=6`
-    2. `npm install -g @sap/cds-dk@>=6` 
 
 ## Details
 
@@ -44,38 +36,74 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-BEGIN [Step 1: ](Install kubectl)]
 [OPTION BEGIN [macOS]]
 
+1. Make sure your `package.json` is using `@sap/cds 6.0.1` or newer and you have `@sap/cds-dk 6.0.1` or newer globally installed:
 
+    To check it, do the following in your project directory:
+    1. Run `npm install` to install your local package
+    2. Run `cds version` to see the globally installed `@sap/cds-dk` and your locally installed `@sap/cds`
 
-1. Run:
+    To upgrade, run:
+    1. `npm install @sap/cds@>=6`
+    2. `npm install -g @sap/cds-dk@>=6` 
+
+2. To install kubectl run:
+
 ```Shell/Bash
 brew install kubectl
 ```
-2. Check if the installation is successful:
+
+3. Check if the installation was successful:
+4. 
 ```Shell/Bash
 kubectl version --client
 ```
+
 You should see a version number.
 
 [OPTION END]
 [OPTION BEGIN [Windows]]
 
-You can install it using chocolatey.
+1. Make sure your `package.json` is using `@sap/cds 6.0.1` or newer and you have `@sap/cds-dk 6.0.1` or newer globally installed:
 
-1. Run the following command:
+    To check it, do the following in your project directory:
+    1. Run `npm install` to install your local package
+    2. Run `cds version` to see the globally installed `@sap/cds-dk` and your locally installed `@sap/cds`
+
+    To upgrade, run:
+    1. `npm install @sap/cds@>=6`
+    2. `npm install -g @sap/cds-dk@>=6` 
+    
+You can install kubectl using chocolatey.
+
+2. Run the following command:
+
 ```Shell/Bash
 choco install kubernetes-cli
 ```
-2. Check if the installation is successful:
+
+3. Check if the installation is successful:
+4. 
 ```Shell/Bash
 kubectl version --client
 ```
+
 You should see something like `Client Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.3", GitCommit:"1e11e4a2108024935ecfcb2912226cedeafd99df", GitTreeState:"clean", BuildDate:"2020-10-14T12:50:19Z", GoVersion:"go1.15.2", Compiler:"gc", Platform:"windows/amd64"}`.
 
 
 [OPTION END]
 [OPTION BEGIN [Linux]]
 
-Follow the instructions for your preferred way of installing kubectl at [Install and Set Up kubectl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).
+1. Make sure your `package.json` is using `@sap/cds 6.0.1` or newer and you have `@sap/cds-dk 6.0.1` or newer globally installed:
+
+    To check it, do the following in your project directory:
+    1. Run `npm install` to install your local package
+    2. Run `cds version` to see the globally installed `@sap/cds-dk` and your locally installed `@sap/cds`
+
+    To upgrade, run:
+    1. `npm install @sap/cds@>=6`
+    2. `npm install -g @sap/cds-dk@>=6` 
+
+2. Follow the instructions for your preferred way of installing kubectl at [Install and Set Up kubectl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).
 
 [OPTION END]
 
@@ -90,7 +118,7 @@ Follow the instructions for your preferred way of installing kubectl at [Install
 brew install int128/kubelogin/kubelogin
 ```
 
-Find more info and detailed instructions in [int128/`kubelogin`](https://github.com/int128/kubelogin#setup).
+See [kubelogin](https://github.com/int128/kubelogin#setup) docs for more details.
 [OPTION END]
 [OPTION BEGIN [Windows]]
 
@@ -100,7 +128,7 @@ You can install it using chocolatey:
 choco install kubelogin
 ```
 
-Find more info and detailed instructions in [int128/`kubelogin`](https://github.com/int128/kubelogin#setup).
+See [kubelogin](https://github.com/int128/kubelogin#setup) docs for more details.
 
 [OPTION END]
 [OPTION BEGIN [Linux]]
@@ -109,7 +137,7 @@ Find more info and detailed instructions in [int128/`kubelogin`](https://github.
 brew install int128/kubelogin/kubelogin
 ```
 
-Find more info and detailed instructions in [int128/`kubelogin`](https://github.com/int128/kubelogin#setup).
+See [kubelogin](https://github.com/int128/kubelogin#setup) docs for more details.
 [OPTION END]
 
 
@@ -141,14 +169,11 @@ Find more info and detailed instructions in [int128/`kubelogin`](https://github.
 
 >     In case you experience problems running the commands, check [Command Line Interpreters](btp-app-#command-line-interpreters) for more details on recommended CLIs.
 
+4. (for Windows only) There are two additional steps:
 
-=== "Windows"
+    1. Go to `C:\ProgramData\chocolatey\bin`.
 
-    There are two additional steps for Windows users.
-
-    5. Go to `C:\ProgramData\chocolatey\bin`.
-
-    6. Rename `kubelogin.exe` to `kubectl-oidc_login.exe`.
+    2. Rename `kubelogin.exe` to `kubectl-oidc_login.exe`.
 
 [DONE]
 [ACCORDION-END]
@@ -161,7 +186,7 @@ Find more info and detailed instructions in [int128/`kubelogin`](https://github.
     ```
   You should get a message `namespace/risk-management created`.
 
-2. Now, let's switch to the namespace. Run:
+2. Now, let's switch to the namespace and run:
 
     ```Shell/Bash
     kubectl config set-context --current --namespace risk-management
@@ -218,6 +243,7 @@ kubectl create secret docker-registry container-registry \
 There's a multitude of options to install helm. You can see the full list at [Installing Helm](https://helm.sh/docs/intro/install/). We have also listed some options:
 
 Run the following command:
+
 ```Shell/Bash
 brew install helm
 ```
@@ -230,11 +256,13 @@ There's a multitude of options to install helm. You can see the full list at [In
 You can install it using chocolatey.
 
 1. Run the following command:
+2. 
 ```Shell/Bash
 choco install kubernetes-helm
 ```
 
-2. Check if the installation is successful:
+2. Check if the installation was successful:
+
 ```Shell/Bash
 helm version
 ```
@@ -313,16 +341,16 @@ Kyma runs on containers. Hence, for this tutorial, you'll need an application th
 [ACCORDION-BEGIN [Step 9: ](Docker Desktop)]
 [OPTION BEGIN [macOS]]
 
-Here's how to install Docker Desktop:
+To install Docker Desktop:
 
-1. Download the installer from [Install Docker Desktop on Mac](https://docs.docker.com/desktop/mac/install/).
+1. Download the installer from [Install Docker Desktop on MacOS](https://docs.docker.com/desktop/mac/install/).
 
 2. Follow the instructions to install and set up docker desktop.
 
 [OPTION END]
 [OPTION BEGIN [Windows]]
 
-Here's how to install Docker Desktop:
+To install Docker Desktop:
 
 1. Download the installer from [Install Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/).
 
@@ -337,7 +365,7 @@ Here's how to install Docker Desktop:
 [ACCORDION-BEGIN [Step 10: ](Rancher Desktop)]
 [OPTION BEGIN [macOS]]
 
-Follow the instructions to install Rancher Desktop:
+To install Rancher Desktop:
 
 1. Go to the [releases](https://github.com/rancher-sandbox/rancher-desktop/releases) page.
 
@@ -353,7 +381,7 @@ Follow the instructions to install Rancher Desktop:
 [OPTION END]
 [OPTION BEGIN [Windows]]
 
-Follow the instructions to install Rancher Desktop:
+To install Rancher Desktop:
 
 1. Go to the [releases](https://github.com/rancher-sandbox/rancher-desktop/releases) page.
 
@@ -368,8 +396,6 @@ Follow the instructions to install Rancher Desktop:
 [VALIDATE_1]
 [OPTION END]
 [OPTION BEGIN [Linux]]
-
-Follow the instructions to install Rancher Desktop:
 
 There are several different ways to install Rancher Desktop on Linux. You can find details about installation requirements and install/uninstall steps in [Linux](https://docs.rancherdesktop.io/getting-started/installation#linux).
 
