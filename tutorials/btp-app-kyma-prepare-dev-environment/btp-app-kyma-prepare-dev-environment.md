@@ -274,12 +274,12 @@ choco install pack
 As an alternative, you can install `pack` manually:
 
 1. Download `pack` for your platform from [GitHub](https://github.com/buildpacks/pack/releases).
-1. Extract the `pack` binary.
-4. Enter **Edit the System Environment Variables** in the Windows search box (Windows icon in the task bar). The **System Properties** dialog is opened.
-5. Choose **Environment Variables...**.
-6. Choose your `Path` environment variable under *User Variables for `<your_user_name>`* and choose **Edit**.
-7. Choose **Browse** and navigate to the folder where you extracted the `pack` binary.
-8. Choose **OK** to add `pack` to your `Path` environment variable.
+2. Extract the `pack` binary.
+3. Enter **Edit the System Environment Variables** in the Windows search box (Windows icon in the task bar). The **System Properties** dialog is opened.
+4. Choose **Environment Variables...**.
+5. Choose your `Path` environment variable under *User Variables for `<your_user_name>`* and choose **Edit**.
+6. Choose **Browse** and navigate to the folder where you extracted the `pack` binary.
+7. Choose **OK** to add `pack` to your `Path` environment variable.
 
 
 [OPTION END]
@@ -302,6 +302,9 @@ Follow the instructions to install the [pack CLI](https://buildpacks.io/docs/too
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Docker)]
+
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+
 Kyma runs on containers. Hence, for this tutorial, you'll need an application that enables you to build containerized applications and a docker-compatible command line interface. In the following we provide two examples - Docker Desktop and Rancher Desktop.
 
 [DONE]
@@ -351,7 +354,6 @@ Follow the instructions to install Rancher Desktop:
 [OPTION BEGIN [Windows]]
 
 Follow the instructions to install Rancher Desktop:
-
 
 1. Go to the [releases](https://github.com/rancher-sandbox/rancher-desktop/releases) page.
 
