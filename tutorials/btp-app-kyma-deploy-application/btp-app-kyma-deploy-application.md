@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Deploy Your Application to Kyma
-description: Learn how to add Authorization and Trust Management service to your CAP app, build Docker images and push them to your container registry, deploy your app to your Kyma cluster, and troubleshoot it, if needed.
+description: Learn how to add Authorization and Trust Management service to your CAP app, build Docker images and push them to your container registry, deploy your app to your Kyma cluster.
 keywords: cap
 auto_validation: true
 time: 20
