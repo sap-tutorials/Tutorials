@@ -23,6 +23,16 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
  - For Windows, you'll need Chocolatey. This is a package manager that will speed up and ease installation of the tools in this tutorial. See how to install Chocolatey in [Setup/Install](https://docs.chocolatey.org/en-us/choco/setup).
  - You have prepared a container registry and you've logged in to the container registry through your CLI. A container registry is a repo where you can push your docker images. SAP BTP doesn't currently provide a container registry. You can use any container registry offering as long as it can be reached from public Internet.
+- Make sure your `package.json` is using `@sap/cds 6.0.1` or newer and you have `@sap/cds-dk 6.0.1` or newer globally installed:
+    To check it, do the following in your project directory:
+
+    1. Run `npm install` to install your local package
+    2. Run `cds version` to see the globally installed `@sap/cds-dk` and your locally installed `@sap/cds`
+
+    To upgrade, run:
+
+    1. `npm install @sap/cds@>=6`
+    2. `npm install -g @sap/cds-dk@>=6` 
 
 ## Details
 
