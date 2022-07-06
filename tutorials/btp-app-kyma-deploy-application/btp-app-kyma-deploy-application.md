@@ -93,7 +93,7 @@ You need to set the environment variable for the container registry.
     cds build --production
     ```
 
-You should get an output like: `[cds] - build completed in XXX ms`.
+    You should get an output like: `[cds] - build completed in XXX ms`.
 
 2. (Optional) Run the following command to remove the test data:
 
