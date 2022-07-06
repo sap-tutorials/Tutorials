@@ -5,8 +5,8 @@ title: Assign a Role Collection to a User
 description: This tutorial shows you how to assign roles to users.
 keywords: cap
 auto_validation: true
-time: 10
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
+time: 5
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp-kyma-runtime, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -19,11 +19,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
  - [Use a Local Launch Page](btp-app-launchpage)
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
- - [Prepare for SAP BTP Development](btp-app-prepare-btp)
- - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
- - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-prepare-xsuaa)
- - [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment)
- - [Add the SAP Launchpad Service](btp-app-launchpad-service)
+ - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
+ - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
+ - [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
+ - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-kyma-prepare-xsuaa)
+ - [Add Helm Chart](btp-app-kyma-add-helm-chart)
+ - [Deploy Your Application to Kyma](btp-app-kyma-deploy-application)
+ - [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service)
 
 ## Details
 ### You will learn
@@ -41,17 +43,13 @@ To be able to access the application, your user needs to be assigned to a role c
 
 3. Choose **Security** **&rarr;** **Role Collections** on the left.
 
-4. Select `RiskManager-<your space>` in the list of role collections.
+4. Select `RiskManager` in the list of role collections.
 
 5. Choose **Edit**.
 
 5. Enter the **E-Mail Address** of your user.
 
 6. Choose **Save**.
-
-> The name of the role collection includes the name of your space
-
-> The role collections are created automatically using the `xs-security.json` file. Hence, the name of the role collection includes the name of your space where you have deployed your service and application. For example, if the space name is `dev`, then the name of the role collection will be `RiskManager-dev`.
 
 Your user now appears in the list of the role collection's users.
 
@@ -60,19 +58,18 @@ Your user now appears in the list of the role collection's users.
 ---
 [ACCORDION-BEGIN [Step 2: ](Test it)]
 
-> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 Go to the application and choose the tile `Risks`. You should be able to create entries in the `Risks` application.
 
 If not, probably you have signed in before adding the role collection to your user. Sign out and sign in again to get the added roles in your login ticket.
 
-> Why there's no data in the `Risks` application?
+> Why there's no data in the `Risks` application
 
 > As explained in section [Exclude CSV files from deployment](btp-app-cap-mta-deployment), test files should never be deployed to an SAP HANA database as table data. For this reason, we've excluded the test files from the deployment archive before deployment.
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Additional Information: Create a role collection manually)
+[ACCORDION-BEGIN [Step 3: ](Additional Information: Create a role collection manually)]
 
 Instead of creating the role collection automatically using the `xs-security.json`, it's also possible to create a role collection manually. For example:
 

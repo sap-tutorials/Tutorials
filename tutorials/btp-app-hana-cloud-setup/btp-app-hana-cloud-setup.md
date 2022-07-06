@@ -17,7 +17,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
  - [Add Business Logic to Your Application](btp-app-cap-business-logic)
  - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
+ - [Use a Local Launch Page](btp-app-launchpage)
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-prepare-btp)
 
@@ -35,7 +35,7 @@ To start with this tutorial use the result in the [`cap-roles`](https://github.c
 1. Add SAP HANA support to your project by running.
 
     ```Shell/Bash
-    cds add hana
+    cds add hana --for production
     ```
 
     This adds the `hdb` module for SAP HANA access to your `package.json` file and will configure kind `sql` as the database service.
@@ -49,20 +49,20 @@ To start with this tutorial use the result in the [`cap-roles`](https://github.c
         ...
         "cds": {
             "requires": {
+                "[production]": {
+                    "db": {
+                        "kind": "hana-cloud"
+                    }
+                },
                 "db": {
-                "kind": "sql"
+                    "kind": "sql"
                 }
-            },
-            "hana": {
-                "deploy-format": "hdbtable"
             }
         }
     }
     ```
 
     Different to CAP default behavior, kind `sql` uses the SQLite in-memory database for local testing and the SAP HANA database for productive usage in the cloud.
-
-    The `deploy-format` setting is required to create the required artifacts for SAP HANA Cloud in the build, which are different from the artifacts for the previous SAP HANA offering.
 
     > Additional Documentation:
 
@@ -200,7 +200,7 @@ If you need to create an SAP HANA Cloud service instance first **&rarr;** contin
 
 7. Choose **Create** **&rarr;** **SAP HANA database**.
 
-8. Sign in with your SAP BTP Cockpit username/email.
+8. Sign in with your SAP BTP cockpit username/e-mail.
 
 9. Choose **SAP HANA Cloud, SAP HANA Database** and choose **Next Step**.
 
@@ -269,7 +269,7 @@ If you need to create an SAP HANA Cloud service instance first **&rarr;** contin
 
 7. Choose **Create** **&rarr;** **SAP HANA database**.
 
-8. Sign in with your SAP BTP Cockpit username/email.
+8. Sign in with your SAP BTP cockpit username/e-mail.
 
 9. Choose **SAP HANA Cloud, SAP HANA Database** and choose **Next Step**.
 
