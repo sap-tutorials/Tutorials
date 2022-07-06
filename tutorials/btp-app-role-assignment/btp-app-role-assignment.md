@@ -60,6 +60,7 @@ Your user now appears in the list of the role collection's users.
 ---
 [ACCORDION-BEGIN [Step 2: ](Test it)]
 
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 Go to the application and choose the tile `Risks`. You should be able to create entries in the `Risks` application.
 
 If not, probably you have signed in before adding the role collection to your user. Sign out and sign in again to get the added roles in your login ticket.
