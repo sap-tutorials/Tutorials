@@ -76,8 +76,8 @@ Setting up a SAP HANA Cloud instance directly on Kyma is not possible. Hence, in
 [ACCORDION-BEGIN [Step 3: ](Setup HANA Cloud)]
 1. Make sure you're logged in both your Cloud Foundry space and your Kyma cluster.
 
-    - Cloud Foundry: run `cf login` and provide credentials. As an alternative, you can directly run `cf login --sso`. You'll have to follow a link to get a temporary authentication code that you can provide instead of manually entering credentials.
-    - Kyma: you should be already logged in, if you've followed the instructions in [Login to your Kyma cluster](btp-app-#login-to-your-kyma-cluster). If you want to double check, run a simple command to see if you get any output. For example, if you run `kubectl get secret`, you should get an output similar to the one in Step 3 of [Create container registry secret](btp-app-#create-container-registry-secret).
+    - **Cloud Foundry**: Run `cf login` and provide credentials. As an alternative, you can directly run `cf login --sso`. You'll have to follow a link to get a temporary authentication code that you can provide instead of manually entering credentials.
+    - **Kyma**: You should be already logged in, if you've followed the instructions in [Login to your Kyma cluster](btp-app-#login-to-your-kyma-cluster). If you want to double check, run a simple command to see if you get any output. For example, if you run `kubectl get secret`, you should get an output similar to the one in Step 3 of [Create container registry secret](btp-app-#create-container-registry-secret).
 
 2. Copy the folder `scripts` from `templates/kyma-add-helm-chart` to your project root folder.
 

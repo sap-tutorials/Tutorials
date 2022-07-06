@@ -37,7 +37,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add Authorization and Trust Management service (XSUAA))]
-The next step is to add the Authorization and Trust Management service to `values.yaml` to allow user login, authorization, and authentication checks. Open the `chart/values.yaml` file and add the following snippet:
+The next step is to add the Authorization and Trust Management service to `values.yaml` to allow user login, authorization, and authentication checks. 
+
+Open the `chart/values.yaml` file and add the following snippet:
 
 
 ```YAML[9-17]
@@ -75,9 +77,9 @@ You need to set the environment variable for the container registry.
 
 1. Open a terminal and run the following command:
 
-     ```
-     CONTAINER_REGISTRY=<Container Registry>
-     ```
+```Shell/Bash
+CONTAINER_REGISTRY=<Container Registry>
+```
 
 2. Refer to [Configure Container Image](btp-app-#configure-container-image) for details on finding `<Container Registry>`.
 
@@ -87,16 +89,17 @@ You need to set the environment variable for the container registry.
 [ACCORDION-BEGIN [Step 3: ](CAP build)]
 1. Execute the following command in your project folder:
 
-     ```Shell/Bash
-     cds build --production
-     ```
-     You should get an output like: `[cds] - build completed in XXX ms`.
+```Shell/Bash
+cds build --production
+```
 
-1. (Optional) Run the following command to remove the test data:
+You should get an output like: `[cds] - build completed in XXX ms`.
 
-     ```
-     rm -rf gen/db/data
-     ```
+2. (Optional) Run the following command to remove the test data:
+
+```Shell/Bash
+rm -rf gen/db/data
+```
 
 > Although the app will work with the test data, usually test data should be removed before deployment.
 
@@ -108,17 +111,17 @@ You need to set the environment variable for the container registry.
 [ACCORDION-BEGIN [Step 4: ](Build CAP service)]
 1. Run the following command:
 
-     ```Shell/Bash
-     pack build $CONTAINER_REGISTRY/cpapp-srv --path gen/srv \
-          --buildpack gcr.io/paketo-buildpacks/nodejs \
-          --builder paketobuildpacks/builder:base
-     ```
+```Shell/Bash
+pack build $CONTAINER_REGISTRY/cpapp-srv --path gen/srv \
+--buildpack gcr.io/paketo-buildpacks/nodejs \
+--builder paketobuildpacks/builder:base
+```
 
 2. You should get an output like:
 
-     ```Shell/Bash
-     Successfully built image <Container Registry>/cpapp-srv
-     ```
+```Shell/Bash
+Successfully built image <Container Registry>/cpapp-srv
+```
 
 [DONE]
 [ACCORDION-END]
@@ -126,17 +129,17 @@ You need to set the environment variable for the container registry.
 [ACCORDION-BEGIN [Step 5: ](Build DB deployer)]
 1. Run the following command:
 
-     ```Shell/Bash
-     pack build $CONTAINER_REGISTRY/cpapp-hana-deployer --path gen/db \
-          --buildpack gcr.io/paketo-buildpacks/nodejs \
-          --builder paketobuildpacks/builder:base
-     ```
+```Shell/Bash
+pack build $CONTAINER_REGISTRY/cpapp-hana-deployer --path gen/db \
+--buildpack gcr.io/paketo-buildpacks/nodejs \
+--builder paketobuildpacks/builder:base
+```
 
 2. You should get an output like:
 
-     ```Shell/Bash
-     Successfully built image <Container Registry>/cpapp-hana-deployer
-     ```
+```Shell/Bash
+Successfully built image <Container Registry>/cpapp-hana-deployer
+```
 
 [DONE]
 [ACCORDION-END]
@@ -146,16 +149,16 @@ Now that we've build the docker images, let's push them to the container registr
 
 1. Make sure you're logged in to your container registry:
 
-     ```Shell/Bash
-     docker login
-     ```
+```Shell/Bash
+docker login
+```
 
 2. Push the images to container registry:
 
-     ```Shell/Bash
-     docker push $CONTAINER_REGISTRY/cpapp-srv
-     docker push $CONTAINER_REGISTRY/cpapp-hana-deployer
-     ```
+```Shell/Bash
+docker push $CONTAINER_REGISTRY/cpapp-srv
+docker push $CONTAINER_REGISTRY/cpapp-hana-deployer
+```
 
 [DONE]
 [ACCORDION-END]
@@ -163,9 +166,9 @@ Now that we've build the docker images, let's push them to the container registr
 [ACCORDION-BEGIN [Step 7: ](Deploy)]
 1. Deploy your app:
 
-     ```Shell/Bash
-     helm upgrade cpapp ./chart --install
-     ```
+```Shell/Bash
+helm upgrade cpapp ./chart --install
+```
 
 2. Copy the app URL when done and paste it into a new browser window:
 
@@ -262,7 +265,7 @@ You can check and adjust the settings for [the trusted source IP addresses](http
 
 You can get your clusters outbound IP address with the following command:
 
-```
+```Shell/Bash
 kubectl run -it --rm --restart=Never --image alpine/curl nat-ip-probe --overrides='{ "apiVersion": "v1", "metadata": {"annotations": { "sidecar.istio.io/inject":"false" } } }' -- curl https://httpbin.org/ip
 ```
 

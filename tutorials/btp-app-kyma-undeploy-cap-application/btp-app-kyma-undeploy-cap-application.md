@@ -42,7 +42,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     helm uninstall cpapp
     ```
 
-2. Delete DB secret:
+2. Delete database secret:
 
     ```Shell/Bash
     kubectl delete secret cpapp-db
