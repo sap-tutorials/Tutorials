@@ -78,12 +78,12 @@ The following services with their service plans and entitlements are required fo
 | Service                           | Plan       | Amount | Unit         | Tutorial                                |
 | --------------------------------- | ---------- | ------ | ------------ | --------------------------------------- |
 | Kyma runtime             | `Kyma Runtime Trial`     | 1      | GB           | [Prepare for SAP BTP Development](btp-app-#configure-kyma-in-your-subaccount)   |
-| SAP HANA Schemas & HDI Containers | `hdi-shared` | 1      | instances    | [Setup HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)   |
-| SAP HANA Cloud                    | `hana`       | 1      | instances    | [Setup HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)     |
+| SAP HANA Schemas & HDI Containers | `hdi-shared` | 1      | instances    | [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)   |
+| SAP HANA Cloud                    | `hana`       | 1      | instances    | [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)     |
 | SAP Launchpad service             | `standard`   | 1      | active users | [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service) |
 
 
-> The services mentioned below are Utility Services, no entitlement needed
+> The following services are utility services, no entitlement needed:
 
 | Service                          | Plan        | Amount | Unit         | Tutorial                                |
 | -------------------------------- | ----------- | ------ | ------------ | --------------------------------------- |
@@ -94,7 +94,7 @@ The following services with their service plans and entitlements are required fo
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Create a subaccount)]
-1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
+1. In SAP BTP cockpit enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer** in the left navigation pane.
 
@@ -157,7 +157,7 @@ This creates a Kyma instance in your subaccount that is a full-blown `kubernetes
 
     > As mentioned, when you create an environment instance that enables an environment you want to use, the name is generated automatically for you. You can use that name or replace it with the name of your choice.
 
-3. The creation of the cluster takes some time. When done, you should see a `Console URL`, a `KubeconfigURL`, and the name of your cluster.
+3. The creation of the cluster takes some time. When done, you should see a **Console URL**, a **KubeconfigURL**, and the name of your cluster.
 
     !![Kyma Enabled](kyma_enabled.png)
 
