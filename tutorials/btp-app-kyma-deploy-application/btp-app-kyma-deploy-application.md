@@ -71,10 +71,8 @@ The configuration for XSUAA is read from the `xs-security.json` file that was cr
 ---
 [ACCORDION-BEGIN [Step 2: ](Build docker images)]
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 3: ](Set the environment variable for the container registry)]
+You need to set the environment variable for the container registry.
+
 1. Open a terminal and run the following command:
 
      ```
@@ -86,7 +84,7 @@ The configuration for XSUAA is read from the `xs-security.json` file that was cr
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](CAP build)]
+[ACCORDION-BEGIN [Step 3: ](CAP build)]
 1. Execute the following command in your project folder:
 
      ```Shell/Bash
@@ -107,7 +105,7 @@ The configuration for XSUAA is read from the `xs-security.json` file that was cr
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Build CAP service)]
+[ACCORDION-BEGIN [Step 4: ](Build CAP service)]
 1. Run the following command:
 
      ```Shell/Bash
@@ -125,7 +123,7 @@ The configuration for XSUAA is read from the `xs-security.json` file that was cr
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 6: ](Build DB deployer)]
+[ACCORDION-BEGIN [Step 5: ](Build DB deployer)]
 1. Run the following command:
 
      ```Shell/Bash
@@ -143,7 +141,7 @@ The configuration for XSUAA is read from the `xs-security.json` file that was cr
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 7: ](Push docker images)]
+[ACCORDION-BEGIN [Step 6: ](Push docker images)]
 Now that we've build the docker images, let's push them to the container registry.
 
 1. Make sure you're logged in to your container registry:
@@ -162,7 +160,7 @@ Now that we've build the docker images, let's push them to the container registr
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 8: ](Deploy)]
+[ACCORDION-BEGIN [Step 7: ](Deploy)]
 1. Deploy your app:
 
      ```Shell/Bash
@@ -179,14 +177,13 @@ Now that we've build the docker images, let's push them to the container registr
 
      If the error message "no healthy upstream" is shown, wait a few seconds and try again.
 
-6. When you choose the **Mitigation** or **Risk** service entity, you will see an error message:
+4. When you choose the **Mitigation** or **Risk** service entity, you will see an error message:
 
      !![CAP 401 error](cap_mta_403_error.png)
 
-
      The service expects a so called `JWT` (JSON Web Token) in the HTTP `Authorization` header that contains the required authentication and authorization information to access the service. In the next tutorial, you will deploy the SAP Fiori UIs, so that you can access your UIs from SAP Fiori Launchpad. The Launchpad will trigger the authentication flow to provide the required token to access the service.
 
-7. List installed helm charts:
+5. List installed helm charts:
 
      ```Shell/Bash
      helm list
@@ -199,18 +196,14 @@ Now that we've build the docker images, let's push them to the container registr
      cpapp   risk-management 5               yyyy-mm-dd time timezone                deployed        cpapp-1.0.0     1.0.0
      ```
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 9: ](Troubleshooting)]
-The Helm chart starts a job that deploys the database content and a deployment with the CAP service. After successful execution, the job is deleted.
-
+> Troubleshooting:
+> The Helm chart starts a job that deploys the database content and a deployment with the CAP service. After successful execution, the job is deleted.
 In case you encounter an error during the deployment process, follow the instructions to troubleshoot.
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 10: ](Check your database deployment)]
+[ACCORDION-BEGIN [Step 8: ](Check your database deployment)]
 ```
 kubectl get jobs
 ```
@@ -262,7 +255,7 @@ This is helpful if the pod couldn't be started.
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 11: ](Check SAP HANA cloud trusted IP addresses)]
+[ACCORDION-BEGIN [Step 9: ](Check SAP HANA cloud trusted IP addresses)]
 A possible error cause is that your SAP HANA Cloud instance doesn't allow your Kyma's cluster IP address.
 
 You can check and adjust the settings for [the trusted source IP addresses](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/0610e4440c7643b48d869a6376ccaecd.html) in SAP HANA Cloud Central.
@@ -278,7 +271,7 @@ The command takes a few second to execute and will print a JSON object with an I
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 12: ](Check your CAP service)]
+[ACCORDION-BEGIN [Step 10: ](Check your CAP service)]
 If the deployment was successful, you should see the running CAP service in the list of pods:
 
 ```
