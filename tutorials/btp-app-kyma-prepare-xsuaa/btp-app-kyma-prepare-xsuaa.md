@@ -68,6 +68,8 @@ What happens here? Running `cds add xsuaa` does two things:
 ---
 [ACCORDION-BEGIN [Step 2: ](Roles and scopes)]
 
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+
 A scope represents a single authorization to perform an action. For example, there could be a scope "Read" and a scope "Write". The scope allows a user to read or write a certain business object. Scopes can't be assigned to users directly. They're packaged into roles. For example, there could a role "Editor" consisting of the "Read" and "Write" scopes, while the role "Viewer" consists only of the "Read" scope.
 
 [DONE]
