@@ -90,35 +90,31 @@ The following services with their service plans and entitlements are required fo
 | SAP HTML5 Application Repository service  | `app-host`    | 100    | MB        | [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service)   |
 | SAP Authorization and Trust Management service | `application` | 1      | instances    | [Deploy Your Application to Kyma](btp-app-kyma-deploy-application)   |
 
-
-
-
-
 [DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Create a subaccount)]
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
-4. Choose **Account Explorer** in the left navigation pane.
+2. Choose **Account Explorer** in the left navigation pane.
 
-5. Choose **Create** **&rarr;** **Subaccount**.
+3. Choose **Create** **&rarr;** **Subaccount**.
 
     !![Create subaccount](create_subaccount.png)
 
-6. To fill the **New Subaccount** dialog, enter a **Display Name**.
+4. To fill the **New Subaccount** dialog, enter a **Display Name**.
 
     > Use a short name for your project and add the prefix for the landscape, for example: `<project name>-cf-us10`. Don't select the checkbox **Neo**!
 
-7. Enter a subdomain.
+5. Enter a subdomain.
 
     > Only valid HTTP domain characters are allowed.
 
-8. Choose **Create**.
+6. Choose **Create**.
 
-9. Wait for the completion of the subaccount creation.
+7. Wait for the completion of the subaccount creation.
 
-10. Choose the tile with your new subaccount.
+8. Choose the tile with your new subaccount.
 
 [DONE]
 [ACCORDION-END]
