@@ -39,10 +39,10 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 cds add xsuaa --for production
 ```
 
-What happens here? Running `cds add xsuaa` does two things:
+> What happens here? Running `cds add xsuaa` does two things:
 
-- Adds the XSUAA service to the `package.json` file of your project
-- Creates the XSUAA security configuration for your project
+> - Adds the XSUAA service to the `package.json` file of your project
+> - Creates the XSUAA security configuration for your project
 
 2. Check if the following lines have been added to the `package.json` in your `cpapp` project:
 
