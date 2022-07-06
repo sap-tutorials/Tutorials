@@ -25,7 +25,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Setup Project for SAP HANA)]
+[ACCORDION-BEGIN [Step 1: ](Setup project for SAP HANA)]
 
 So far, all data persistence of your application has been utilizing a **default `SQLite` in-memory database**, which means that, each time you restart the application, all data that has been added/updated is completely lost.
 
@@ -48,7 +48,7 @@ In the **Terminal** type `npm install` and press **Enter** to install the newly 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Deploy the Database to SAP HANA Cloud)]
+[ACCORDION-BEGIN [Step 2: ](Deploy the database to SAP HANA Cloud)]
 
 > **IMPORTANT NOTE**: before executing the next steps first make sure:
 >
@@ -81,7 +81,7 @@ If you click on the **Cloud Foundry icon** (small light bulb) on the left-hand p
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Run Project locally with the Database in the Cloud)]
+[ACCORDION-BEGIN [Step 3: ](Run project locally with the database in the cloud)]
 
 Now, checkout what happens when you execute the application.
 
@@ -100,7 +100,7 @@ If you want to **switch to the `SQLite` in-memory database** again for developme
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Check Your Knowledge)]
+[ACCORDION-BEGIN [Step 4: ](Check your knowledge)]
 
 [VALIDATE_1]
 [ACCORDION-END]

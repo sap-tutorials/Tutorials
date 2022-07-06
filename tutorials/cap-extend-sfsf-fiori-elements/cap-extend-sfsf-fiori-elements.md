@@ -28,7 +28,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add MTA Configuration to the Project)]
+[ACCORDION-BEGIN [Step 1: ](Add MTA configuration to the project)]
 
 To deploy your application to Cloud Foundry on SAP BTP, you are going to use the **MTA** (Multi-Target Application) approach, which facilitates the deployment as it **pushes everything at once** to the platform: UI application, backend service, database, service instances creation and binding, etc.
 
@@ -55,7 +55,7 @@ The next step is to create an `approuter` module with a **unique route name** (i
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add AppRouter Configuration to the MTA file)]
+[ACCORDION-BEGIN [Step 2: ](Add AppRouter configuration to the MTA file)]
 
 Before you move forward with the creation of the `approuter` module, you need to make a **copy** of your `xs-security.json` file as the **module generator will overwrite it** with some specific `approuter` configuration.
 
@@ -120,7 +120,7 @@ And that's it! This completes the `approuter` configuration.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create the Fiori Elements App as an MTA Module)]
+[ACCORDION-BEGIN [Step 3: ](Create the Fiori elements app as an MTA Module)]
 
 Now it's finally come the time to create your **SAP Fiori Elements app** (the front-end of your project management solution) and, to facilitate and speed-up the project configuration, you will **add it** to your project directly as an **MTA module**.
 
@@ -167,7 +167,7 @@ Also, the **actual SAP Fiori application** has been created under the `app` fold
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Launch the Fiori Elements App)]
+[ACCORDION-BEGIN [Step 4: ](Launch the Fiori elements app)]
 
 You can, now, test the newly created SAP Fiori app. In the **Terminal**, run `cds watch` and `CTRL+Click` the `http://localhost:4004` link to open the CAP application home page. Notice that under **Web Applications** the link to the **SAP Fiori app home page** is listed:
 
@@ -194,7 +194,7 @@ You can, now, test it at your will, in the same way you did using the **Fiori Pr
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add Additional MTA Configuration)]
+[ACCORDION-BEGIN [Step 5: ](Add additional MTA configuration)]
 
 A few more configurations are required to get the solution fully ready for deployment.
 
@@ -260,7 +260,7 @@ And that concludes the **full project configuration** required to **deploy** the
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check Your Knowledge)]
+[ACCORDION-BEGIN [Step 6: ](Check your knowledge)]
 
 [VALIDATE_1]
 [ACCORDION-END]

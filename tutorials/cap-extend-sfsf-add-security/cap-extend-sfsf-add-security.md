@@ -25,7 +25,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set Service to Require Authentication)]
+[ACCORDION-BEGIN [Step 1: ](Set service to require authentication)]
 
 So far, you have been working on a local project which only developers would have access to. Therefore, it's OK to leave your service "unprotected" as it's not yet publicly available. But, as soon as you deploy it to the cloud, it will be available to anyone who knows the service endpoint (which is not quite difficult).
 
@@ -46,7 +46,7 @@ As you are still in development you can provide whatever information you like an
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set Authorization for Service Entities Access)]
+[ACCORDION-BEGIN [Step 2: ](Set authorization for service entities access)]
 
 But, in an **administrative scenario** like this one, just **being an authenticated user is not enough**. It's appropriate that, additionally, the authenticated user must be granted some **administrative role** (i.e. an **Admin** role).
 
@@ -119,7 +119,7 @@ After deployment, you just need to assign it to the user who should be granted s
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add Required Dependencies)]
+[ACCORDION-BEGIN [Step 4: ](Add required dependencies)]
 
 Now, you just need to add four dependencies to the CAP service for it to properly handle security and other related stuff – such as the user JSON Web Token (JWT) – during runtime. Those are:
 
@@ -142,7 +142,7 @@ When the commands complete, your `package.json` file should like the screenshot 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check Your Knowledge)]
+[ACCORDION-BEGIN [Step 5: ](Check your knowledge)]
 
 
 

@@ -24,13 +24,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create the Service Module Code File)]
+[ACCORDION-BEGIN [Step 1: ](Create the service module code file)]
 
 The **business logic** of the application is implemented via **custom service handlers** for the various operations executed on its entities (create, read, update, delete, etc.). Those handlers are defined in a **module** within a `JavasScript` file with the **same name** of the service but with the `.js` extension.
 
 So, now it's time for you to create it.
 
-On the **left-hand pane** of **SAP Business Application Studio**, select the `srv` folder, then click on the **three dots** to the right of the project name and select **New File**.
+On the **left-hand pane** of **SAP Business Application Studio**,  (1) select the `srv` folder, then (2) click on the **three dots** to the right of the project name and (3) select **New File**.
 
 ![Figure 1 – Create New File](create-file.png)
 
@@ -41,7 +41,7 @@ On the **dialog** name the file `projman-service.js` and click **OK**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Code the Service Module)]
+[ACCORDION-BEGIN [Step 2: ](Code the service module)]
 
 Copy and paste the **code snippet below** into the recently created file:
 
@@ -71,7 +71,7 @@ Finally, you make some **comments** as **placeholders** to mark where you will f
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Organize Your Code)]
+[ACCORDION-BEGIN [Step 3: ](Organize your code)]
 
 It is a best practice to have your code organized into **files** representing the nature of the code (i.e. **utility functions** should go into some `utils` file, **handlers** should go into some `handlers` file and so on). Those files represent your "code library", so it's appropriate to store them into some `lib` folder.
 
@@ -96,11 +96,11 @@ Type `touch lib/handlers.js` and press **Enter**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Code the Service Handlers)]
+[ACCORDION-BEGIN [Step 4: ](Code the service handlers)]
 
 Now, you'll develop the required service handlers according to the business rules that have been defined in the [**group introduction and preparation**](cap-extend-sfsf-intro).
 
-### Users Read Handler
+### Users READ handler
 
 On the **left-hand pane** expand the `lib` folder, then click on the `hanlers.js` file to open it.
 
@@ -204,7 +204,7 @@ Click on the `SFSF_User` link
 
 Now, you should be able to view the users that are being read from **SAP SuccessFactors** via the **User entity** from the `PLTUserManagement` service.
 
-### Other Handlers
+### Other handlers
 
 That was the most important handler you should first implement as it's the one responsible for bringing the SAP SuccessFactors' employees into your application.
 
@@ -508,7 +508,7 @@ The code logic is well explained in the comments details.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Attach the Service Handlers to the Service Module Events)]
+[ACCORDION-BEGIN [Step 5: ](Attach the service handlers to the service module events)]
 
 Open the `srv/projman-service.js` file, then copy and paste the **following code** over (overwrite) the current content:
 
@@ -560,7 +560,7 @@ And, with that, you completed the coding of the business logic for your applicat
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check Your Knowledge)]
+[ACCORDION-BEGIN [Step 6: ](Check your knowledge)]
 
 [VALIDATE_1]
 [ACCORDION-END]
