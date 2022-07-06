@@ -24,9 +24,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
-- How to activate your Business Partner OData service.
-- How to create a technical user in your SAP S/4HANA system.
-- How to assign a role to your technical user.
+- How to activate your Business Partner OData service
+- How to create a technical user in your SAP S/4HANA system
+- How to assign a role to your technical user
 
 ---
 
