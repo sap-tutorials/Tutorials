@@ -32,6 +32,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+
 Setting up a SAP HANA Cloud instance directly on Kyma is not possible. Hence, in this tutorial, we will setup a SAP HANA Cloud instance on Cloud Foundry (or use an existing one). Afterwards, we'll create an HDI container on Cloud Foundry and will use a script in the templates to create credentials for the Cloud Foundry SAP HANA Cloud instance in your Kyma cluster.
 
 [DONE]
