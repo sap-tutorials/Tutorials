@@ -42,7 +42,7 @@ To start with this tutorial use the result in the [`prepare-xsuaa`](https://gith
 [ACCORDION-BEGIN [Step 1: ](Add Helm chart)]
 1. In the root directory of your project, run:
 
-    ```
+    ```Shell/Bash
     cds add helm
     ```
 
