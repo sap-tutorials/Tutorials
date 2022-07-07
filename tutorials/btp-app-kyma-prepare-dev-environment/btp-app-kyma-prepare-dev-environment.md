@@ -32,14 +32,20 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Verify your cds and cds-dk versions before installing kubectl)]
+[ACCORDION-BEGIN [Step 1: ](Verify your @sap/cds and @sap/cds-dk versions)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-Make sure your `package.json` is using `@sap/cds 6.0.1` or newer and you have `@sap/cds-dk 6.0.1` or newer globally installed. To check it, do the following in your project directory:
+Make sure your `package.json` is using `@sap/cds 6.0.1` or newer and you have `@sap/cds-dk 6.0.1` or newer globally installed. 
 
-1. Run `npm install` to install your local package.
-2. Run `cds version` to see the globally installed `@sap/cds-dk` and your locally installed `@sap/cds`.
-3. To upgrade, run `npm install @sap/cds@>=6` and `npm install -g @sap/cds-dk@>=6`. 
+Run the following commands in your project directory:
+
+1. `npm install` to install your local package.
+2. `cds version` to check the globally installed `@sap/cds-dk` version and your locally installed `@sap/cds` version.
+
+To upgrade, run the following commands in your project directory:
+
+- `npm install @sap/cds@>=6`
+- `npm install -g @sap/cds-dk@>=6`
    
 [DONE]
 [ACCORDION-END]
