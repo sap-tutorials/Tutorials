@@ -32,60 +32,51 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 
 ---
+[ACCORDION-BEGIN [Step 1: ](Verify your cds and cds-dk versions before installing kubectl)]
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-[ACCORDION-BEGIN [Step 1: ](Install kubectl)]
+Make sure your `package.json` is using `@sap/cds 6.0.1` or newer and you have `@sap/cds-dk 6.0.1` or newer globally installed. To check it, do the following in your project directory:
+
+1. Run `npm install` to install your local package.
+2. Run `cds version` to see the globally installed `@sap/cds-dk` and your locally installed `@sap/cds`.
+3. To upgrade, run `npm install @sap/cds@>=6` and `npm install -g @sap/cds-dk@>=6`. 
+   
+[DONE]
+[ACCORDION-END]
+---
+
+[ACCORDION-BEGIN [Step 2: ](Install kubectl)]
 [OPTION BEGIN [macOS]]
+1. To install kubectl run:
 
-1. Make sure your `package.json` is using `@sap/cds 6.0.1` or newer and you have `@sap/cds-dk 6.0.1` or newer globally installed:
+    ```Shell/Bash
+    brew install kubectl
+    ```
 
-    To check it, do the following in your project directory:
-    1. Run `npm install` to install your local package
-    2. Run `cds version` to see the globally installed `@sap/cds-dk` and your locally installed `@sap/cds`
+2. Check if the installation was successful:
 
-    To upgrade, run:
-    1. `npm install @sap/cds@>=6`
-    2. `npm install -g @sap/cds-dk@>=6` 
-
-2. To install kubectl run:
-
-```Shell/Bash
-brew install kubectl
-```
-
-3. Check if the installation was successful:
-4. 
-```Shell/Bash
-kubectl version --client
-```
+    ```Shell/Bash
+    kubectl version --client
+    ```
 
 You should see a version number.
 
 [OPTION END]
 [OPTION BEGIN [Windows]]
-
-1. Make sure your `package.json` is using `@sap/cds 6.0.1` or newer and you have `@sap/cds-dk 6.0.1` or newer globally installed:
-
-    To check it, do the following in your project directory:
-    1. Run `npm install` to install your local package
-    2. Run `cds version` to see the globally installed `@sap/cds-dk` and your locally installed `@sap/cds`
-
-    To upgrade, run:
-    1. `npm install @sap/cds@>=6`
-    2. `npm install -g @sap/cds-dk@>=6` 
     
 You can install kubectl using chocolatey.
 
-2. Run the following command:
+1. Run the following command:
 
-```Shell/Bash
-choco install kubernetes-cli
-```
+    ```Shell/Bash
+    choco install kubernetes-cli
+    ```
 
-3. Check if the installation is successful:
-4. 
-```Shell/Bash
-kubectl version --client
-```
+2. Check if the installation is successful:
+ 
+    ```Shell/Bash
+    kubectl version --client
+    ```
 
 You should see something like `Client Version: version.Info{Major:"1", Minor:"19", GitVersion:"v1.19.3", GitCommit:"1e11e4a2108024935ecfcb2912226cedeafd99df", GitTreeState:"clean", BuildDate:"2020-10-14T12:50:19Z", GoVersion:"go1.15.2", Compiler:"gc", Platform:"windows/amd64"}`.
 
@@ -93,17 +84,7 @@ You should see something like `Client Version: version.Info{Major:"1", Minor:"19
 [OPTION END]
 [OPTION BEGIN [Linux]]
 
-1. Make sure your `package.json` is using `@sap/cds 6.0.1` or newer and you have `@sap/cds-dk 6.0.1` or newer globally installed:
-
-    To check it, do the following in your project directory:
-    1. Run `npm install` to install your local package
-    2. Run `cds version` to see the globally installed `@sap/cds-dk` and your locally installed `@sap/cds`
-
-    To upgrade, run:
-    1. `npm install @sap/cds@>=6`
-    2. `npm install -g @sap/cds-dk@>=6` 
-
-2. Follow the instructions for your preferred way of installing kubectl at [Install and Set Up kubectl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).
+Follow the instructions for your preferred way of installing kubectl at [Install and Set Up kubectl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).
 
 [OPTION END]
 
@@ -111,7 +92,7 @@ You should see something like `Client Version: version.Info{Major:"1", Minor:"19
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 2: ](Install kubelogin)]
+[ACCORDION-BEGIN [Step 3: ](Install kubelogin)]
 [OPTION BEGIN [macOS]]
 
 ```Shell/Bash
@@ -144,7 +125,7 @@ See [kubelogin](https://github.com/int128/kubelogin#setup) docs for more details
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Login to your Kyma cluster)]
+[ACCORDION-BEGIN [Step 4: ](Login to your Kyma cluster)]
 1. Choose **KubeconfigURL** under the **Kyma Environment** tab in your subaccount.
 
     !![Kubeconfig URL](kubeconfigURL.png)
@@ -178,7 +159,7 @@ See [kubelogin](https://github.com/int128/kubelogin#setup) docs for more details
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Create a namespace for your app)]
+[ACCORDION-BEGIN [Step 5: ](Create a namespace for your app)]
 1. Run the following command to create a namespace `risk-management`:
 
     ```Shell/Bash
@@ -196,7 +177,7 @@ See [kubelogin](https://github.com/int128/kubelogin#setup) docs for more details
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 5: ](Create container registry secret)]
+[ACCORDION-BEGIN [Step 6: ](Create container registry secret)]
 The container registry secret is needed to access docker container images in your registry from your Kyma cluster.
 
 Kubernetes has a special type of secret for container registries and its kubectl command line supports it with the required options:
@@ -237,7 +218,7 @@ kubectl create secret docker-registry container-registry \
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 6: ](Install helm)]
+[ACCORDION-BEGIN [Step 7: ](Install helm)]
 [OPTION BEGIN [macOS]]
 
 There's a multitude of options to install helm. You can see the full list at [Installing Helm](https://helm.sh/docs/intro/install/). We have also listed some options:
@@ -275,7 +256,7 @@ You should see something like `version.BuildInfo{Version:"v3.8.0", GitCommit:"d1
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 7: ](Install Paketo (pack))]
+[ACCORDION-BEGIN [Step 8: ](Install Paketo (pack))]
 [OPTION BEGIN [macOS]]
 
 Pack lets you build container images, which are collaboratively maintained making it easier to maintain and update.
@@ -329,16 +310,14 @@ Follow the instructions to install the [pack CLI](https://buildpacks.io/docs/too
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 8: ](Docker)]
-
-> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
+[ACCORDION-BEGIN [Step 9: ](Docker)]
 
 Kyma runs on containers. Hence, for this tutorial, you'll need an application that enables you to build containerized applications and a docker-compatible command line interface. In the following we provide two examples - Docker Desktop and Rancher Desktop.
 
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 9: ](Docker Desktop)]
+[ACCORDION-BEGIN [Step 10: ](Docker Desktop)]
 [OPTION BEGIN [macOS]]
 
 To install Docker Desktop:
@@ -362,7 +341,7 @@ To install Docker Desktop:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 10: ](Rancher Desktop)]
+[ACCORDION-BEGIN [Step 11: ](Rancher Desktop)]
 [OPTION BEGIN [macOS]]
 
 To install Rancher Desktop:
