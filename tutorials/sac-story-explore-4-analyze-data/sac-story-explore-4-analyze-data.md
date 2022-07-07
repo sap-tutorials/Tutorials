@@ -1,6 +1,6 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 title: Analyze Data in Charts and Tables
 description: Discover more from your charts with analytical features provided in SAP Analytics Cloud stories
 auto_validation: true

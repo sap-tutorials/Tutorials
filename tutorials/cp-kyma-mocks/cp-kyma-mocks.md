@@ -3,8 +3,8 @@ title: Deploy Commerce Mock Application in the Kyma Runtime
 description: Deploy and connect the Commerce mock application to the Kyma runtime.
 auto_validation: true
 time: 30
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
@@ -88,15 +88,15 @@ The Kyma mock application contains lightweight substitutes for SAP applications 
 
 In this step, you will create a System in the SAP BTP which will be used to pair the mock application to the Kyma runtime. This step will be performed at the **Global** account level of your SAP BTP account.
 
-1. Open your global SAP BTP account and choose the **System Landscape > Systems** menu options.
+1. Open your global SAP BTP account and choose the **System Landscape** menu option.
 
-2. Choose the **Register System** option, provide the name **commerce-mock**, set the type to **SAP Commerce Cloud** and then choose **Register**.
+2. Under the tab **Systems**, Choose the **Add System** option, provide the name **commerce-mock**, set the type to **SAP Commerce Cloud** and then choose **Add**.
 
     ![Pairing Step 2](pair1.png)
 
-3. Copy the **Token** value and close the window. This value will expire in five minutes and will be needed in a subsequent step.
+3. Choose the option **Get Token**, copy the **Token** value and close the window. This value will expire in five minutes and will be needed in a subsequent step.
 
-    > If the token expires before use, you can obtain a new one by choosing the `Display Token` option shown next to the entry in the Systems list.
+    > If the token expires before use, you can obtain a new one by choosing the `Get Token` option shown next to the entry in the Systems list.
 
     ![Pairing Step 3](pair2.png)
 
@@ -108,11 +108,15 @@ In this step, you will create a System in the SAP BTP which will be used to pair
 
 In this step, you will create a Formation. A Formation is used to connect one or more Systems created in the SAP BTP to a runtime. This step will be performed at the **Global** account level of your SAP BTP account.
 
-1. Within your global SAP BTP account, choose the **System Landscape > Formations** menu options. Choose the **Create Formation** option.
+1. Within your global SAP BTP account, choose the **System Landscape** menu option. Choose the tab **Formations** and choose the **Create Formation** option.
 
-2. Provide a **Name**, choose your **Subaccount** where the Kyma runtime is enabled, choose the **commerce-mock** System. Choose **Create**.
+2. Provide a **Name** and choose your **Subaccount** where the Kyma runtime is enabled. Choose **Create**.
 
     ![Formation Step 2](formation1.png)
+
+3. Choose the option **Include System**, select **commerce-mock** for the system and choose **Include**.
+
+    ![Formation Step 3](formation2.png)
 
 [VALIDATE_1]
 [ACCORDION-END]

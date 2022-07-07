@@ -15,6 +15,9 @@ author_profile: https://github.com/dhrubpaul
   - How to execute python code in Jupyter
   - How to connect to AI Core using AI API Client SDK
 
+## Prerequisites
+- Follow the instructions from [Provision SAP AI Core](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/38c4599432d74c1d94e70f7c955a717d.html), to generate keys for the SAP AI Core instance, using your SAP Business Technology Platform (BTP).
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Install python)]

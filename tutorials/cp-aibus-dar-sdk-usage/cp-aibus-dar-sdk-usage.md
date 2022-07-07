@@ -5,6 +5,8 @@ auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>data-attribute-recommendation]
 primary_tag: topic>machine-learning
+author_name: Juliana Morais
+author_profile: https://github.com/Juliana-Morais
 ---
 
 ## Details
@@ -63,7 +65,7 @@ Enter `touch dar_service_key.json` to create an empty JSON file.
 
 [OPTION END]
 
-Go ahead and open the newly created file in a simple text editor. Then, paste the complete service key that you created in [Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-key) into the file and save it.
+Go ahead and open the newly created file in a simple text editor. Then, paste the complete service key that you created in [Use Free Tier to Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-free-key) or [Use Trial to Set Up Account for Data Attribute Recommendation and Get Service Key](cp-aibus-dar-booster-key) into the file and save it.
 
 ![Service Key](service-key.png)
 
@@ -171,7 +173,7 @@ The execution of the code might take a while but you can easily follow the proce
 
   4.  The data from the Best Buy dataset gets uploaded into the dataset container.
 
-  5.  Once the training data is uploaded, it is validated by the service whether the data is in the right format and fulfills the requirements. See [here](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/dbfbd4a0bd2a4a7a8ed9aa25bace7d91.html) for all requirements.
+  5.  Once the training data is uploaded, it is validated by the service whether the data is in the right format and fulfills the requirements. See all requirements [here](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/dbfbd4a0bd2a4a7a8ed9aa25bace7d91.html).
 
   6.  If the validation is successful, a training job is triggered. During this, a machine learning model is trained based on the uploaded data. As explained above, which parts of the data serve as input and output for the training is determined by the dataset schema. The training may take about 10 minutes so a little patience is needed here.
 
@@ -186,7 +188,7 @@ Now you have successfully uploaded the training data and trained a machine learn
 
 Next, the machine learning model must be deployed. That means, the model becomes available for productive usage and can serve inference requests, for example, to make predictions.
 
-Please note that deploying models can occur costs if you are not using the trial account. See [here](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/c03b561eea1744c9b9892b416037b99a.html) for the limits in trial and [here](https://help.sap.com/viewer/105bcfd88921418e8c29b24a7a402ec3/SHIP/en-US/1e093326a2764c298759fcb92c5b0500.html) for the pricing in productive accounts.
+Please note that deploying models can incur costs. See [Free Tier Option Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/c03b561eea1744c9b9892b416037b99a.html) and [Metering and Pricing](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/1e093326a2764c298759fcb92c5b0500.html).
 
 [OPTION BEGIN [Windows]]
 
@@ -480,7 +482,7 @@ mm_client = ModelManagerClient.construct_from_credentials(
 mm_client.ensure_model_is_undeployed(MODEL_NAME)
 ```
 
-The above code will make sure that the specified model is undeployed. More specifically, the method `ensure_model_is_undeployed` first checks whether a deployment exists for the model and if so, it triggers the deletion of the deployment.
+The above code will make sure that the specified model is `undeployed`. More specifically, the method `ensure_model_is_undeployed` first checks whether a deployment exists for the model and if so, it triggers the deletion of the deployment.
 
 Now go back into the command prompt and run `python undeploy_model.py` to run the code.
 

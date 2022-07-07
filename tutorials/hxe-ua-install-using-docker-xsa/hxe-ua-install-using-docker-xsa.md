@@ -3,8 +3,8 @@ title: Installing SAP HANA, express edition Server + Apps, with Docker
 description: How to install SAP HANA, express edition with XSA on your preferred Docker setup.
 author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
-primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+primary_tag: software-product>sap-hana\,-express-edition
+tags: [  tutorial>beginner,software-product>sap-hana\,-express-edition ]
 time: 10
 ---
 
@@ -23,7 +23,7 @@ Before you begin, ensure your proxy settings have been properly set up. See [**H
 
 SAP HANA, express edition is a streamlined version of the SAP HANA platform which enables developers to jump-start application development in the cloud or personal computer to build and deploy modern applications that use up to 32GB memory. SAP HANA, express edition includes the in-memory data engine with advanced analytical data processing engines for business, text, spatial, and graph data - supporting multiple data models on a single copy of the data.
 
-The software license allows for both non-production and production use cases, enabling you to quickly prototype, demo, and deploy next-generation applications using SAP HANA, express edition without incurring any license fees. Memory capacity increases beyond 32GB are available for purchase at the [SAP Store](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition).
+The software license allows for both non-production and production use cases, enabling you to quickly prototype, demo, and deploy next-generation applications using SAP HANA, express edition without incurring any license fees. Memory capacity increases beyond 32GB are available for purchase at the **SAP Store**.
 
 SAP HANA, express edition for Docker has been tested on the following Linux operating system versions:
 
@@ -123,17 +123,9 @@ sudo docker image rm alpine -f
 
 [ACCORDION-BEGIN [Step 5: ](Download the SAP HANA, express edition Image from the Docker Library)]
 
-Go to the [Docker Store](https://store.docker.com/).
+Go to [https://hub.docker.com/r/saplabs/hanaexpressxsa](https://hub.docker.com/r/saplabs/hanaexpressxsa).
 
-Click on the search bar and search for "SAP HANA".
-
-Choose **SAP HANA, express edition (database and application services)**.
-
-![Docker Store](choose_dockerxsa.png)
-
-Click on the **Setup Instructions** button.
-
-Copy the Docker pull address. Here is an example:
+Copy the Docker pull address. Here's an example:
 
 ```bash
 sudo docker pull store/saplabs/hanaexpressxsa:2.00.040.00.20190729.1

@@ -3,8 +3,8 @@ title: Installing SAP HANA, express edition with Docker
 description: Install SAP HANA, express edition with Docker.
 author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
-primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+primary_tag: software-product>sap-hana\,-express-edition
+tags: [  tutorial>beginner,software-product>sap-hana\,-express-edition ]
 time: 10
 ---
 
@@ -91,17 +91,9 @@ sudo docker image rm alpine -f
 
 [ACCORDION-BEGIN [Step 4: ](Download the SAP HANA, express edition Image from the Docker Library)]
 
-Go to the [Docker Store](https://store.docker.com/).
+Go to  [https://hub.docker.com/r/saplabs/hanaexpress](https://hub.docker.com/r/saplabs/hanaexpress).
 
-Click on the search bar and search for "SAP HANA".
-
-Choose **SAP HANA, express edition (database services)**.
-
-![Docker Store](choose_docker.png)
-
-Click on the **Setup Instructions** button.
-
-Copy the Docker pull address. Here is an example:
+Copy the Docker pull address. Here's an example:
 
 ```bash
 sudo docker pull store/saplabs/hanaexpress:2.00.054.00.20210603.1

@@ -1,6 +1,6 @@
 ---
 title: SAP HANA Cloud, Data Lake Client Interfaces Overview
-description: Learn about the SAP HAN Cloud, data lake, how to create a trial instance, how to install the data lake client, and how to connect to the data lake Relational Engine using the SAP HANA cockpit, SAP HANA database explorer, and Interactive SQL Client.
+description: Learn about the SAP HANA Cloud, data lake, how to create a trial instance, how to install the data lake client, and how to connect to the data lake Relational Engine using the SAP HANA cockpit, SAP HANA database explorer, and Interactive SQL Client.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, software-product-function>sap-hana-cloud\,-data-lake, software-product>sap-hana-cloud, programming-tool>sql, software-product>sap-iq]
@@ -9,7 +9,6 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 
 ## Prerequisites
  - A Microsoft Windows or Linux computer.
- - An SAP HANA Cloud trial or free tier.
 
 ## Details
 ### You will learn
@@ -20,7 +19,7 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 
 This tutorial group will provide guidance on setting up a trial instance of [SAP HANA Cloud, data lake](https://help.sap.com/viewer/product/SAP_HANA_DATA_LAKE/latest/en-US) so that it can then be connected to and queried using a few of the data lake client interfaces as described in [SAP HANA Cloud, Data Lake Developer Guide for Data Lake Relational Engine](https://help.sap.com/viewer/a894a54d84f21015b142ffe773888f8c/latest/en-US).  
 
-> Access help from the SAP community or share your feedback on this tutorial by navigating to the "Provide Feedback" menu located on the right of this page under the table of contents. This menu is available for each tutorial.
+> Access help from the SAP community or provide feedback on this tutorial by navigating to the "Feedback" link located on the top right of this page.
 
 ---
 
@@ -38,7 +37,6 @@ SAP HANA Cloud is composed of multiple components.
 
     >Note, that the data lake Files component is currently not available in trial accounts.
 
-For additional details see [How & When to Use the New SAP HANA Cloud Database Instances](https://saphanajourney.com/hana-cloud/resources/sap-hana-cloud-new-services-adaptive-server-enterprise-and-data-lake/).
 
 [DONE]
 [ACCORDION-END]
@@ -46,7 +44,7 @@ For additional details see [How & When to Use the New SAP HANA Cloud Database In
 
 [ACCORDION-BEGIN [Step 2: ](Create a data lake instance and connect to it)]
 
->To complete the tutorials in this group, an SAP HANA Cloud, data lake instance is needed. There are two different free options including SAP HANA Cloud free tier and free trial.  For instructions on registering, see [Set Up Your SAP HANA Cloud, SAP HANA Database (free tier or trial) and Understand the Basics](group.hana-cloud-get-started-1-trial).
+>To complete the tutorials in this group, a SAP HANA Cloud, data lake instance is needed, which is created within the SAP Business Technology Platform (BTP). There are two different free options available, which are the SAP BTP free-tier and SAP BTP trial.  For instructions on registering, see [Start Using SAP HANA Cloud Free Tier Model or Trial in SAP BTP Cockpit](hana-cloud-mission-trial-1).
 
 The following steps provide instructions on how to create a data lake instance in the SAP Business Technology Platform (BTP) trial.  Additional content on this topic is available at [Quick Start Tutorial for Data Lake](https://help.sap.com/viewer/a89a80f984f21015b2b2c84d2498d36d/latest/en-US/b62bc948ad684e3a94b9e14b68318f2a.html).
 
@@ -77,23 +75,21 @@ There are multiple ways to create a data lake:
 
     ![SAP BTP Cockpit](BTP-cockpit2.png)
 
-3. If a data lake is not already present, add one using one of the three methods previously described, for example **Create | SAP HANA Database**.
+3. If a data lake is not already present, add one using one of the three methods previously described.
 
-    ![Create a HANA database](create-hana-db.png)
+    Take note when creating the data lake that the administration user is HDLADMIN.
 
-    Enable data lake.
+    >The HDLADMIN user has a [login policy](https://help.sap.com/viewer/745778e524f74bb4af87460cca5e62c4/latest/en-US/a43f448484f21015924f9951e9b77e32.html) that enforces the [update of the password](https://help.sap.com/viewer/745778e524f74bb4af87460cca5e62c4/latest/en-US/a458edd784f2101580a1eca5042678f8.html) after 180 days.  
 
-    ![Enable a data lake](enable-data-lake.png)
+    >---
 
-    Take note that the administration user is HDLADMIN.  
-
-    >Note that it is also possible to create and manage data lake instances using the [Cloud Foundry CLI](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/921f3e46247947779d69b8c85c9b9985.html).
+    >It is also possible to create and manage data lake instances using the [Cloud Foundry CLI](https://help.sap.com/viewer/9ae9104a46f74a6583ce5182e7fb20cb/hanacloud/en-US/921f3e46247947779d69b8c85c9b9985.html).
 
 4. As this is a trial account, set allowed connections to **Allow all IP addresses** so that client applications can connect from any IP address.  
 
     ![Allowed connections](allowed-connections.png)
 
-5. After a while, press the **Refresh** button and the status will change from CREATING to RUNNING.
+5. After a while, press the **Refresh** button or enable auto-refresh and the status will change from CREATING to RUNNING.
 
     ![data lake running](data-lake-running.png)
 
@@ -121,7 +117,7 @@ There are multiple ways to create a data lake:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create tables with SAP HANA database explorer)]
+[ACCORDION-BEGIN [Step 4: ](Create tables, views, functions, and procedures with SAP HANA database explorer)]
 In this step, a sample HOTEL dataset will be created comprising tables, a view, and a stored procedure.
 
 1. In SAP HANA Cloud Central, use the actions menu to open the SAP HANA database explorer.
@@ -132,12 +128,14 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
 
     ```SQL
     SELECT CURRENT USER FROM DUMMY;
-    SELECT * FROM SYS.SYSINFO;
     SELECT * FROM sa_db_properties() WHERE UPPER(PropName) LIKE '%NAME%';
     SELECT * FROM SYS.SYSOPTIONS WHERE UPPER("option") LIKE '%VERIFY%';
+    CALL sa_conn_properties(CONNECTION_PROPERTY('Number'));
     ```
 
     ![SAP HANA database explorer](dbx-query.png)
+
+    Additional details can be found at [System Functions](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a52da06984f21015bf279b4c69002e5e.html) and [System Procedures for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a598917d84f210159e1fff1a89345de9.html).
 
 
 3. In the SAP HANA database explorer, execute the following SQL statements.
@@ -195,8 +193,8 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
         PRIMARY KEY (
             "RESNO", "ARRIVAL"
         ),
-        FOREIGN KEY(HNO) REFERENCES HOTEL.HOTEL,
-        FOREIGN KEY(CNO) REFERENCES HOTEL.CUSTOMER
+        FOREIGN KEY(CNO) REFERENCES HOTEL.CUSTOMER,
+        FOREIGN KEY(HNO) REFERENCES HOTEL.HOTEL
     );
 
     CREATE TABLE HOTEL.MAINTENANCE(
@@ -217,6 +215,14 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
       FROM HOTEL.ROOM R
         LEFT JOIN HOTEL.HOTEL H ON R.HNO = H.HNO
             ORDER BY H.NAME;
+
+    CREATE OR REPLACE FUNCTION HOTEL.AVERAGE_PRICE(room_type CHAR(6))
+    RETURNS NUMERIC(6, 2)
+    BEGIN
+        DECLARE avg_price NUMERIC(6,2);  
+        SELECT CAST(ROUND(sum(PRICE)/COUNT(*), 2) as NUMERIC(6,2)) INTO avg_price FROM HOTEL.ROOM WHERE TYPE = room_type GROUP BY TYPE;
+        RETURN avg_price;
+    END;
 
     CREATE OR REPLACE PROCEDURE HOTEL.SHOW_RESERVATIONS(
         IN IN_HNO INTEGER, IN IN_ARRIVAL DATE)
@@ -241,9 +247,9 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
             HOTEL.CUSTOMER AS CUS
             ON CUS.CNO = R.CNO
             WHERE R.ARRIVAL = IN_ARRIVAL AND
-            H.HNO = IN_HNO;
-            -- ORDER BY H.NAME ASC, R.ARRIVAL DESC;  --order by ignored in views
-    END;
+            H.HNO = IN_HNO
+            ORDER BY CUS.NAME ASC;
+        END;
 
     --Specify the privileges for the role HOTEL
     GRANT SELECT, UPDATE, INSERT, DELETE ON HOTEL.HOTEL, HOTEL.ROOM, HOTEL.CUSTOMER, HOTEL.RESERVATION, HOTEL.MAINTENANCE, HOTEL.HOTEL_ROOMS_VIEW TO HOTEL;
@@ -259,6 +265,8 @@ In this step, a sample HOTEL dataset will be created comprising tables, a view, 
     GRANT ROLE HOTEL TO USER1;
     ```
 
+    Select **Tables**, and set the schema filter to be **HOTEL** to limit the returned tables to be those that were just created in the HOTEL schema.
+
     ![DBX Create](sql-commands.png)
 
     Additional details on the SQL used above can be found at [CREATE TABLE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a619764084f21015b8039a8346dc622c.html), [CREATE VIEW Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a61a051684f210158cced2d83231bd8a.html), and [CREATE PROCEDURE Statement for Data Lake Relational Engine](https://help.sap.com/viewer/19b3964099384f178ad08f2d348232a9/latest/en-US/a6185b2184f21015b2419a5444b55609.html).
@@ -273,7 +281,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 [ACCORDION-BEGIN [Step 5: ](Install the data lake client)]
 1.  In [SAP Software Downloads](https://support.sap.com/en/my-support/software-downloads.html), under **Support Packages & Patches**, select **H | HANA CLOUD CLIENTS | HANA CLOUD CLIENTS 1.0 | HANA DATALAKE CLIENT 1.0**. Select the platform (Windows or Linux) and download the latest version of the archive.
 
-    ![data lake software downloads](dl-Software-Downloads-1.png)
+    ![data lake software downloads](dl-software-downloads.png)
 
     > Note access to the client install is currently limited to S-user IDs
 
@@ -283,12 +291,17 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
 
         ![data lake client](data-lake-client-install.png)
 
-        >In the Windows command line, if `setup.exe` fails with an 'Error Loading jvm.dll', see [SAP Support 3001812](https://launchpad.support.sap.com/#/notes/3001812) to resolve this issue.
+        >If the install fails on Microsoft Windows, you may need to run the install as an administrator.  See also the following SAP Notes:
+        >
+        >* [3001764 - SAP IQ 16.x - `InvocationTargetException` Installer Error (WINDOWS)](https://launchpad.support.sap.com/#/notes/3001764)
+        >
+        >* [3001813 - SAP IQ 16.1 SP 04 Rev08 - 'Error Loading sylapij.dll' Installer Error (WINDOWS)](https://launchpad.support.sap.com/#/notes/3001813)
+
 
     * On Linux, extract the archive.
 
         ```Shell (Linux)
-        tar -zxvf HANADLCLIENT10004_0*.TGZ
+        tar -zxvf HANADLCLIENT100*.TGZ
         ```
 
         Run `setup.bin` which will start either the GUI installer or text based installer.
@@ -314,11 +327,11 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
     ECHO %IQDIR17%
     ```
 
-    >Note that this tutorial uses notepad and `nano` as default text editors, but any text editor will do.
-    >`nano` can be installed on SUSE Linux with
+    >Note that this tutorial uses notepad and `pico` as default text editors, but any text editor will do.
+    >`pico` can be installed on SUSE Linux with
 
     >```Shell (Linux SUSE)
-    sudo zypper nano
+    sudo zypper install pico
     >```
 
     On Linux, this environment variable and others are set in a file named `IQ.sh`.  Configure it to be run each time the Bash shell is started by referencing it in `.bash_profile` or possibly `.bashrc`.
@@ -326,7 +339,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
     Open the `.bash_profile`.
 
     ```Shell (Linux)
-    nano ~/.bash_profile
+    pico ~/.bash_profile
     ```
 
     Add the following line to point to the location where the SAP data lake client is installed.
@@ -341,7 +354,7 @@ For additional details on the SAP HANA database explorer, see the tutorial [Get 
     source ~/.bash_profile
     ```
 
-    Once the shell is closed and re-opened the following command should display the install location of the data lake client.
+    The following command should display the install location of the data lake client.
 
     ```Shell (Linux)
     echo $IQDIR17
@@ -364,7 +377,7 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
 
 2. Specify the connection type.
 
-    ![Connection type](dbisql-connection-type-1.png)
+    ![Connection type](dbisql-connection-type.png)
 
     > Note that the Connect window may appear enlarged on the screen. This can be adjusted by lowering the Scale and layout value in the device display settings.
 
@@ -383,13 +396,13 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
     >DBISQL can also be started without a GUI.
     >
     >```Shell (Windows)
-    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
+    dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" -nogui
     >```
     >
     > Note that in a Bash shell, strings in double quotes versus single quotes are treated [differently](https://stackoverflow.com/questions/6697753/difference-between-single-and-double-quotes-in-bash).
     >
     >```Shell (Linux)
-    dbisql -hdl -c 'uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)' -nogui
+    dbisql -c 'uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)' -nogui
     >```
 
     >![DBISQL connected nogui](dbisql-nogui.png)
@@ -413,7 +426,7 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
 
 1. Execute the following insert statements to provide some sample data.
 
-    >If you do not wish to use the GUI mode, paste the insert statements into a file first and then run `dbisql -hdl -c "uid..." sql.sql`.
+    >If you do not wish to use the GUI mode, paste the insert statements into a file first and then run `dbisql -c "uid..." sql.sql`.
 
     ```SQL
     INSERT INTO HOTEL.HOTEL VALUES(10, 'Congress', '155 Beechwood St.', 'Seattle', 'WA', '20005');
@@ -527,11 +540,14 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
 
     ![auto complete](show-reservations.png)
 
-    Execute a stored procedure and query a table.
+    Query a table, a view, invoke a function, and call a stored procedure.
 
     ```SQL
-    CALL HOTEL.SHOW_RESERVATIONS(11, '2020-12-24');
     SELECT * FROM HOTEL.HOTEL;
+    SELECT * FROM HOTEL.HOTEL_ROOMS_VIEW;
+    SELECT HOTEL.AVERAGE_PRICE('single'), HOTEL.AVERAGE_PRICE('double'), HOTEL.AVERAGE_PRICE('suite') FROM DUMMY;
+    CALL HOTEL.SHOW_RESERVATIONS(11, '2020-12-24');
+
     ```
 
     ![Query in DBISQL](dbisql-query.png)
@@ -539,8 +555,8 @@ The data lake client install includes [Interactive SQL Client (DBISQL)](https://
 3. DBISQL can also execute SQL from the command line or from a provided file. A few examples are shown below.
 
     ```Shell
-    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" "select * from HOTEL.CUSTOMER;"
-    dbisql -hdl -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" sql.sql
+    dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" "select * from HOTEL.CUSTOMER;"
+    dbisql -c "uid=USER1;pwd=Password1;host=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.iq.hdl.trial-XXXX.hanacloud.ondemand.com:443;ENC=TLS(tls_type=rsa;direct=yes)" sql.sql
     ```
 
     ![DBISQL in batch mode](dbisql-batch.png)

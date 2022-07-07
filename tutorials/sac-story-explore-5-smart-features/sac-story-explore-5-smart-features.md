@@ -1,6 +1,6 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 title: Leverage Smart Features for Automated Insights and Search
 description: Automatically discover more insights with the power of Smart Features available in SAP Analytics Cloud
 auto_validation: true

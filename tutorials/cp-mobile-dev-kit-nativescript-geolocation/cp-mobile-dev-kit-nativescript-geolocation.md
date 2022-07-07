@@ -15,8 +15,8 @@ author_profile: https://github.com/jitendrakansal
 
 ## Details
 ### You will learn
-  - How to reference the NativeScript Geolocation plugin from a rule
-  - How to add a NativeScript plugin to your branded MDK client
+  - How to reference the `NativeScript` Geolocation plugin from a rule
+  - How to add a `NativeScript` plugin to your branded MDK client
   - How to build a Mobile development kit client for iOS & Android and connect to SAP Mobile application
   - How to capture the device's current location
 
@@ -122,7 +122,7 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 
 You will add this registered control in the `Main.page`.
 
-  1. Click the `Main.page`, drag & drop **Static Key Value** container control to the page area.
+  1. Click the `Main.page`, drag & drop **Static Key Value** container to the page area.
 
     !![MDK](img-3.1.gif)
 
@@ -142,6 +142,22 @@ You will add this registered control in the `Main.page`.
     | `Value`| Bind it to rule `GetCoordinates.js` |
 
     !![MDK](img-3.4.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Enable the Loading Indicator on Sectioned Table in the Main page)]
+
+When the Main page loads, you can display a loading indicator informing about something is being processed before the data appears.  
+
+Enable the loading indicator at the Sectioned Table level by providing the following information:
+
+| Property | Value |
+|----|----|
+| `Enabled`| `true` |
+| `Text`| Bind it to rule `Loading, please wait...` |
+
+!![MDK](img-3.4.1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -215,6 +231,7 @@ In order to use the existing `NativeScript` plugin in MDK client, you will need 
 
     ```JSON
     {
+      "App Display Name": "Demo Sample App",
       "AppName": "DemoSampleApp",
       "AppVersion": "1.0.0",
       "BundleID": "Enter your Bundle ID",
@@ -258,7 +275,7 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
     }
     dependencies {
     	def googlePlayServicesVersion = project.googlePlayServicesVersion
-    	compile "com.google.android.gms:play-services-location:$googlePlayServicesVersion"
+    	implementation "com.google.android.gms:play-services-location:$googlePlayServicesVersion"
     }
     ```
 
@@ -317,8 +334,6 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
     ![MDK](img_8.4.png)
 
 [OPTION END]
-
-Congratulations, you have learned how to capture device's current location in your MDK app and you can continue with the remaining tutorials in this mission.
 
 [VALIDATE_4]
 [ACCORDION-END]

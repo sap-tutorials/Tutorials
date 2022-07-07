@@ -21,6 +21,7 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
+
 [ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Business Application Studio)]
 
 
@@ -81,6 +82,7 @@ This step includes creating the mobile development kit project in the editor.
 
 [DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 2: ](Get familiar with generated project structure)]
 
@@ -161,11 +163,11 @@ The On-boarding QR code is now displayed.
 
 [OPTION BEGIN [Android]]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-Once you accept app update, you will see the **Main** page (with **LOGOUT** and **SYNC** options at bottom of the page) being displayed and Offline store is being initialized. **Since you selected the Base template during the project creation, which generated this empty page without any UI controls on it. In next tutorials, you will add some UI controls to this page and create more pages.**
+Once you accept app update, you will see the **Main** page (with **Logout** and **Sync** options at bottom of the page) being displayed and Offline store is being initialized. **Since you selected the Base template during the project creation, which generated this empty page without any UI controls on it. In next tutorials, you will add some UI controls to this page and create more pages.**
 
 ![MDK](img-5.1.png)
 
@@ -200,9 +202,5 @@ Once you accept app update, you will see the **Main** page (with **Logout** and 
 
 [VALIDATE_1]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully started your MDK application in the editor and you are now all set to [Create a new page displaying Customers List](cp-mobile-dev-kit-list-page).
 
 ---

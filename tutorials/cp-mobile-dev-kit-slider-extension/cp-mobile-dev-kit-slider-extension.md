@@ -23,6 +23,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
+
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls by using `NativeScript` (TypeScript/JavaScript applicable for both Android and iOS)
 
 In this tutorial, you will create a Slider extension via `NativeScript` (in TypeScript language) which will be common for both device platforms.
@@ -152,7 +153,7 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img_3.1.png)
 
-    >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add form sections, multiple containers or action controls to this page. Under each container section, you can add various container items.
+    >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add form sections, multiple containers or action controls to this page. Under each container section, you can add various controls.
 
     >You can find more details about [Form Cell page](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/mdk/formcell-page.html).
 
@@ -162,7 +163,7 @@ You will add this registered control in a Form Cell page.
 
 3. In MDK Page Editor, drag & drop the registered `mdk_slider` control on the page area.
 
-    !![MDK](img_3.3.gif)
+    !![MDK](img_3.3.png)
 
     >You can find more details about the **Section Extension** in [this](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/FormCell/Extension.schema.html) guide.    
 
@@ -246,7 +247,7 @@ You will add this registered control in a Form Cell page.
 
 10. Save the changes to the `SetExtensionValue.js` file.
 
-11. In `SliderExtension.page`, drag and drop a **Simple Property** item control below the slider control.
+11. In `SliderExtension.page`, drag and drop a **Simple Property** control below the slider control.
 
     !![MDK](img_3.15.gif)
 
@@ -870,8 +871,6 @@ Once you accept app update, you see Slider control.
 ![MDK](img_8.1.gif)
 
 [OPTION END]
-
-Congratulations, you have successfully created a Slider Custom Control in your MDK App Using Metadata Approach and you can continue with the remaining tutorials in this mission.
 
 [VALIDATE_4]
 [ACCORDION-END]

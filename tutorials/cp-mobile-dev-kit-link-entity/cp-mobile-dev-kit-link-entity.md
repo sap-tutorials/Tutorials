@@ -20,7 +20,6 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
-
 For this tutorial, you will use [Mobile Services sample backend](cp-mobile-dev-kit-ms-setup) (step 3) which has parent-child relationship setup among entities. For example, A customer can have `n` (>=0) number of sales orders.
 
 To create an entity and then link it to another entity, you need to carry out the following tasks:
@@ -54,7 +53,7 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
 
 4. Now, you will add the fields (like Currency Code, Net Amount, Tax Amount, Gross Amount, Life cycle status, Life cycle status name and order creation date) for creating a new sales order record by the end-user.
 
-    In the Layout Editor, expand the **Control** | **Container Item** section. Drag and drop a **Simple Property** onto the Page area.
+    In the Layout Editor, expand the **Controls** group. Drag and drop a **Simple Property** onto the Page area.
 
     !![MDK](img_1.4.gif)
 
@@ -130,7 +129,7 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     |----|----|
     | `Name`| `FCCreatedate` |
     | `Caption` | `Creation Date` |
-    | `Mode`| Select `datetime` from the dropdown |
+    | `Mode`| Select `Datetime` from the dropdown if not selected by default |
 
     !![MDK](img-1.12.png)
 
@@ -145,7 +144,7 @@ Now, you will add a button on the Create Order page and set its `onPress` to `Cl
 
     >Action Bar Item is a button that users can use to fire actions when pressed. You can add an Action Bar Item only to the Action Bar (at the top of the page).
 
-    !![MDK](img_2.1.gif)
+    !![MDK](img_2.1.png)
 
 2. In the **Properties** pane, click the **link icon** to open the object browser for the **System Item** property.
 
@@ -308,7 +307,7 @@ The next step is to store newly created record locally for an offline applicatio
 
     In `SalesOrderHeaders_Create.page`, **drag and drop** an **Action Bar Item** to the upper right corner of the action bar.
 
-    !![MDK](img_5.8.gif)
+    !![MDK](img_5.8.png)
 
     Click the **link** icon to open the object browser for the **System Item** property.
 
@@ -352,6 +351,10 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-7.3.png)
 
+    >Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+    >!![MDK](img-4.3.1.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -363,9 +366,9 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a confirmation pop-up, tap **OK**.
 
-2. Tap **CUSTOMER LIST**, tap one of the available customer record, you will then navigate to Customer detail page.
+2. Tap **Customer List**, tap one of the available customer record, you will then navigate to Customer detail page.
 
-3. You will see the **CREATE ORDER** option in customer detail page. Tap it to create a new sales order.
+3. You will see the **Create Order** option in customer detail page. Tap it to create a new sales order.
 
     ![MDK](img-8.1.png)
 
@@ -373,11 +376,11 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img-8.2.png)
 
-    Now, you will notice that new record has been created and count value for **SEE ALL** is now increased by one as you implemented in step 6.
+    Now, you will notice that new record has been created and count value for **See All** is now increased by one as you implemented in step 6.
 
     ![MDK](img-8.3.png)
 
-5. On Main page, tap **SYNC** to send local changes to the backend, a successful message will be shown.
+5. On Main page, tap **Sync** to send local changes to the backend, a successful message will be shown.
 
     ![MDK](img-8.4.png)
     ![MDK](img-8.5.png)
@@ -436,11 +439,10 @@ Deploy the updated application to your MDK client.
 
 [OPTION END]
 
+Once you complete this tutorial, you can continue with [Level Up with the Mobile Development Kit](mission.mobile-dev-kit-level-up) mission.
+
 [VALIDATE_4]
 [ACCORDION-END]
 
----
-
-Congratulations, you have successfully completed **Enhance Your First MDK App with Additional Functionalities** mission and you are now all set to [Level Up with the Mobile Development Kit](mission.mobile-dev-kit-level-up) mission.
 
 ---

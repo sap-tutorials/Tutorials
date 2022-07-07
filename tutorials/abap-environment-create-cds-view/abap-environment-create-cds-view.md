@@ -223,13 +223,13 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
 
       ![Create service definition](servicedef.png)
 
-  2. Create a service definition and call it **`Z_I_BOOKING_XXX`**.
+  2. Create a service definition and call it **`ZI_BOOKING_XXX`**.
 
-      ![Create service definition](service2.png)
-
+      ![Create service definition](sbinding.png)
+ 
   3. Click **Finish** to complete your transport request.
 
-      ![Create service definition](transport2.png)
+      ![Create service definition](sbinding2.png)
 
 [DONE]
 [ACCORDION-END]

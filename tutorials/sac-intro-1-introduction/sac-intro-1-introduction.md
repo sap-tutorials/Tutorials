@@ -1,6 +1,6 @@
 ---
-author_name: Megan Hoy
-author_profile: https://github.com/meganhoy
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 title: Introduction to SAP Analytics Cloud
 description: Get an overview of SAP Analytics Cloud's top capabilities and features
 auto_validation: true

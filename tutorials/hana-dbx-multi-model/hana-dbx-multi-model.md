@@ -291,7 +291,7 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
     SELECT NAME, SHAPE.ST_ASWKT(), SHAPE FROM HOTEL.POI_LONGVIEW;
     ```
 
-    Notice that the location data can be formatted in a more readable format using the methods `ST_AsText` or `ST_AsEText` which in addition shows the SRID.
+    Notice that the location data can be formatted in a more readable format using the methods `ST_AsText` or `ST_ASEWKT` which in addition shows the SRID.
 
     ![view the spatial data](long-point-data.png)
 
@@ -329,6 +329,7 @@ This step will import an [`ESRI shapefile`](https://help.sap.com/viewer/bc9e455f
 
     >It should also be noted that when a used in a ST_POINT, x is longitude and y is latitude so the above point would be represented as `NEW ST_Point('POINT (-94.71832 32.50459)', 4326)`.
 
+Congratulations! You have explored multi-model features such as graph workspaces, JSON collections, and spatial data using the SAP HANA database explorer.
 
 [VALIDATE_1]
 [ACCORDION-END]

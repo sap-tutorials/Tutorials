@@ -367,10 +367,13 @@ The following steps demonstrate how to use the SAP Business Application Studio o
     An alternative way to determine the URL for the SAP Web IDE for SAP HANA is to run the below command on the machine where SAP HANA on-premise is installed.
 
     ```Shell
+    su hxeadm
     xs apps
     ```
 
     ![SAP Web IDE URL](web-ide-url.png)
+
+    The user name is `XSA_ADMIN`.
 
 2.  Ensure that the SAP HANA extensions are enabled.
 
@@ -384,10 +387,6 @@ The following steps demonstrate how to use the SAP Business Application Studio o
 
     Right-click **Workspace** and choose **New** | **Project from Template**.
 
-    In the **Search** field, enter **HANA**.  
-
-    If you are using SAP HANA Cloud, in the **Environment** dropdown, select **Cloud Foundry**.
-
     Select the template **SAP HANA Database Application**.
 
     ![new HANA proj](new-hana-proj.png)  
@@ -398,12 +397,13 @@ The following steps demonstrate how to use the SAP Business Application Studio o
     |  :------------- | :-------------
     |  Project Name:  | `myHANAProj`
     |  Space:         | development
-    |  SAP HANA Database Version: | Choose the appropriate version such as HANA Cloud or 2.0 SPS 04
+    |  Namespace:     | Clear the default value
+    |  SAP HANA Database Version: | Choose the appropriate version such as 2.0 SPS 06
 
 
 5.  After the wizard finishes, create a table by right-clicking on the `src` folder and choosing **New** | **Database Artifact**.  
 
-    Specify a file name of **test** and a file type of `.hdbtable`.
+    Specify a file name of `test` and a file type of `.hdbtable`.
 
     Paste the below content into the file and choose **File** | **Save**.
 
@@ -441,9 +441,9 @@ The following steps demonstrate how to use the SAP Business Application Studio o
 
     >![connect as admin](hdi-admin.png)
 
-For an example of creating a calculation view inside an HDI container, see the video titled Develop Apps at the end of the blog post [Getting Started with SAP HANA Cloud II | Basics](https://blogs.sap.com/2020/03/29/getting-started-with-sap-hana-cloud-part-ii/)
+    For an example of creating a calculation view inside an HDI container, see the video titled Develop Apps at the end of the blog post [Getting Started with SAP HANA Cloud II | Basics](https://blogs.sap.com/2020/03/29/getting-started-with-sap-hana-cloud-part-ii/)
 
-The mission [Get Started with XS Advanced Development](mission.xsa-get-started) provides further examples of using an HDI container.
+    The mission [Get Started with XS Advanced Development](mission.xsa-get-started) provides further examples of using an HDI container.
 
 In the next tutorial, additional tables, views, functions, and procedures that will be used in subsequent tutorials in this group will be created directly in the database rather than in an HDI container.
 

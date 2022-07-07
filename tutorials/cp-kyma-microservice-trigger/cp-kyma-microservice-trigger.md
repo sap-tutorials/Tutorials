@@ -3,8 +3,8 @@ title: Trigger a Microservice with an Event
 description: Trigger a microservice to run when an event is published into the Kyma runtime.
 time: 20
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, products>sap-business-technology-platform]
-primary_tag: products>sap-btp\\, kyma-runtime
+tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-technology-platform]
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites
@@ -58,49 +58,7 @@ git clone https://github.com/SAP-samples/kyma-runtime-extension-samples
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Bind Commerce mock to Namespace)]
-
-In this step you will bind the mock application to the `dev` Namespace. This process is used to enable the usage of the APIs and events of the mock application to the bounded Namespace. The API and events will then appear within the **Service Catalog** of the Namespace.
-
-1. Open the Kyma runtime console.
-
-2. Choose the **Integration > Applications** menu options.
-
-3. Choose **mp-commerce-mock**.
-
-4. Choose **Create Namespace Binding**.
-
-5. Choose the `dev` Namespace.
-
-6. Choose **Create**.
-
-    ![Binding](binding.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Create a ServiceInstance)]
-
-In this step you will create a service instance of the events exposed by the mock application. This is done to enable the consumption of the events within the `dev` Namespace.
-
-1. Open the Kyma runtime console.
-
-2. Choose the `dev` Namespace.
-
-3. Choose the **Service Management > Catalog** menu options.
-
-4. Choose **mp-commerce-mock**.
-
-    ![Service Instance](service-instance-1.png)
-
-5. Choose **Add** and then choose the **SAP Commerce Cloud - Events** plan. Choose **Create** to create an instance.
-
-    ![Service Instance Plan](service-instance-2.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Apply an event subscription)]
+[ACCORDION-BEGIN [Step 3: ](Apply an event subscription)]
 
 In this step you will define an event subscription which is used to create a subscriber of an event. This will allow you to specify that your **api-mssql-go** API application, by referencing its service, should receive the payload of the **order.created** event.
 
@@ -132,7 +90,7 @@ In this step you will define an event subscription which is used to create a sub
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test scenario)]
+[ACCORDION-BEGIN [Step 4: ](Test scenario)]
 
 With the configuration steps completed, you can now test the scenario to validate that it is working as intended.
 

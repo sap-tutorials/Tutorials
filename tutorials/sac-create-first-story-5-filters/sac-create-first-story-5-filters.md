@@ -1,6 +1,6 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 title: Apply Filters to your Story
 description: Learn how to apply filters and linked analysis to narrow the scope of your analysis
 auto_validation: true
@@ -135,7 +135,7 @@ Let's create an Input Control filter where you can choose to look at the data in
 
 **20.**	Copy this Input Control filter to the left lane of the Sales Manager Overview page
 
-![Input Control Filter to page 2](Input Control Filter to page 2.png)
+![Input Control Filter to page 2](Input Control Filter to page 2 new.png)
 
 Click [here](https://help.sap.com/viewer/00f68c2e08b941f081002fd3691d86a7/release/en-US/6b8e8e8bbe5f4571886df58d9fa79127.html) to learn more.
 

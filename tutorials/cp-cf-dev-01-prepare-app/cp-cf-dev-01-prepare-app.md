@@ -2,8 +2,8 @@
 title: Download and Prepare App for Cloud Foundry Deployment
 description: Download files for a simple app, maintain the deployment descriptor, and bundle everything together ready for deployment.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform, topic>nodejs ]
+primary_tag: software-product>sap-business-technology-platform
+tags: [  tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>node-js ]
 time: 10
 ---
 
@@ -21,7 +21,7 @@ In this tutorial, you'll download a simple Node.js app from GitHub that returns 
 
 The sample app is available in a repository on GitHub.
 
-Open it up at this URL: <https://github.com/SAP/cf-sample-app-nodejs>.
+Open it up at this URL: <https://github.com/SAP-samples/cf-sample-app-nodejs>.
 
 [DONE]
 [ACCORDION-END]
@@ -32,7 +32,7 @@ This tutorial is preparing the app for deployment to the SAP BTP, Cloud Foundry 
 
 Choose **Clone or download** and then choose **Download ZIP**.
 
-![Download sample files](Download-sample-files2.png)
+![Download sample files](download-zip.png)
 
 Enter the name of the file you just downloaded and choose **Validate**.
 
@@ -42,9 +42,7 @@ Enter the name of the file you just downloaded and choose **Validate**.
 
 [ACCORDION-BEGIN [Step 3: ](Extract sample files)]
 
-Open the zip file and extract its content to a folder on your local computer. You will have extracted a folder named `cf-sample-app-nodejs-master`.
-
-![Download sample files](Extraction-sample-files.PNG)
+Open the zip file and extract its content to a folder on your local computer. You will have extracted a folder named `cf-sample-app-nodejs-main`.
 
 [DONE]
 [ACCORDION-END]
@@ -69,18 +67,21 @@ The host name for your app must be unique within a combination of region and run
 
 If someone else is already using that hostname within that region and runtime, you won't be able to deploy your application.
 
-  1. Add a parameter named `host` to the `manifest.yml` file and provide a unique value. For example, use your birth date or a random number or string or incorporate your user ID:
+Add a parameter named `host` to the `manifest.yml` file and provide a unique value. For example, use your birth date or a random number or string. The contents of the file should look something like this when you're done (and don't forget to save your changes!):
 
-    ![Some alternative text](Add-Code.jpg)
+```yaml
+---
+applications:
+- name: cf-nodejs
+  memory: 192M
+  instances: 1
+  random-route: false
+  host: my-unique-app-name-12345
+```
 
-    > The YAML format uses whitespace significantly -- make sure you format this new parameter correctly, as shown.
-
-  2. Don't forget to save your changes.
+> The YAML format uses whitespace significantly -- make sure you add this new parameter correctly, as shown.
 
 [VALIDATE_5]
 [ACCORDION-END]
 
 ---
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-cf-dev-01-prepare-app&graphics=true" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
-

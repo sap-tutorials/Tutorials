@@ -17,7 +17,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
  - [Add Business Logic to Your Application](btp-app-cap-business-logic)
  - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
+ - [Use a Local Launch Page](btp-app-launchpage)
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-prepare-btp)
  - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
@@ -35,7 +35,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-BEGIN [Step 1: ](Assign roles)]
 To be able to access the application, your user needs to be assigned to a role collection that provides the required scopes.
 
-1. Open the **SAP BTP Cockpit**.
+1. Open **SAP BTP Cockpit**.
 
 2. Go to the **Subaccount** where you have deployed your service and application.
 
@@ -59,6 +59,8 @@ Your user now appears in the list of the role collection's users.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Test it)]
+
+> ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 Go to the application and choose the tile `Risks`. You should be able to create entries in the `Risks` application.
 
 If not, probably you have signed in before adding the role collection to your user. Sign out and sign in again to get the added roles in your login ticket.
@@ -70,16 +72,17 @@ If not, probably you have signed in before adding the role collection to your us
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Additional Information: Create a role collection manually)]
+[ACCORDION-BEGIN [Step 3: ](Additional Information: Create a role collection manually)
+
 Instead of creating the role collection automatically using the `xs-security.json`, it's also possible to create a role collection manually. For example:
 
-1. Open the **SAP BTP Cockpit**.
+1. Open **SAP BTP Cockpit**.
 
 2. Go to the **Subaccount**.
 
 3. Choose **Security** **&rarr;** **Role Collections** on the left.
 
-4. Choose the **+** (new role collection) button.
+4. Choose the ( &#x2B; ) icon to create a new role collection.
 
 5. Enter **Name** `RiskManager`.
 

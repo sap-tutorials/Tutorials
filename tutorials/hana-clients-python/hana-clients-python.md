@@ -32,14 +32,14 @@ python --version
 python3 --version
 ```
 
-If Python is installed, the command will return a value such as Python 3.9.0.  
+If Python is installed, the command will return a value such as Python 3.10.3.  
 
 Details on supported versions of Python for the [SAP HANA client for Python](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f3b8fabf34324302b123297cdbe710f0.html) can be found at SAP Note [3165810 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/3165810).
 
 
 If Python is not installed, it can be downloaded from [Python downloads](https://www.python.org/downloads/).
 
-Check the box that says **Add Python 3.x to PATH** as shown below to ensure that the interpreter will be placed in your path.   
+On Microsoft Windows, check the box that says **Add Python 3.x to PATH** as shown below to ensure that the interpreter will be placed in your path.   
 
 ![python-install](python-install.png)
 
@@ -50,7 +50,7 @@ You should now be able to open a new shell and verify that Python is installed.
 
 [ACCORDION-BEGIN [Step 2: ](Install SAP HANA client for Python using pip and PyPI)]
 
-The standard package installer for Python is [pip](https://pypi.org/project/pip/).  The following commands will check the version of pip and attempt to upgrade it to the latest available version.  Again, use the pip or pip3 command that returns a version 3.4 or greater of Python.
+The standard package installer for Python is [pip](https://pypi.org/project/pip/).  The following commands will check the version of pip and attempt to upgrade it to the latest available version.
 
 ```Shell
 pip --version
@@ -209,7 +209,7 @@ pip install hdbcli
     python pythonQuery.py
     ```
 
-    You may replace `python` with `python3` if the above command doesn't work.
+    >On some Linux distributions, python refers to a 2.x version of Python.  If so, replace `python` with `python3`.
 
     ![python Query](python-app.png)
 
