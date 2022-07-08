@@ -343,11 +343,11 @@ Deploy the updated application to your MDK client.
     >Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
 
     >!![MDK](img-4.3.1.png)
-    
+
 [VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test the application)]
+[ACCORDION-BEGIN [Step 8: ](Run the app)]
 
 >Make sure you are choosing the right device platform tab above.
 

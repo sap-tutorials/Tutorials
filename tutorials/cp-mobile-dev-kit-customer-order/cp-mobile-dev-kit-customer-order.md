@@ -399,7 +399,7 @@ Deploy the updated application to your MDK client.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test the application)]
+[ACCORDION-BEGIN [Step 10: ](Run the app)]
 
 [OPTION BEGIN [Android]]
 
