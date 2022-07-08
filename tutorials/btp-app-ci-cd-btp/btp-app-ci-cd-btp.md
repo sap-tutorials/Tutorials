@@ -46,7 +46,7 @@ For more information on how to configure and run predefined pipelines for your o
     > When running the tutorial with a trial account, please have in mind the following considerations:
 
     > * Choose host region `cf-us10` when creating a new trial account. This will ensure that the SAP Continuous Integration and Delivery service is available to your account.
-    > * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, the SAP Continuous Integration and Delivery service might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP Cockpit.
+    > * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, the SAP Continuous Integration and Delivery service might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP cockpit.
 
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
@@ -374,7 +374,7 @@ You have to trigger your job manually the first time after creation.
 
     > Verify you have added all necessary entitlements to your account as specified in [Prepare for SAP BTP Development](btp-app-prepare-btp).
 
-3. Navigate to your space in the SAP BTP Cockpit and check the list of installed applications. Now, you have a **cpapp-db-deployer** application and a **cpapp-srv** application.
+3. Navigate to your space in the SAP BTP cockpit and check the list of installed applications. Now, you have a **cpapp-db-deployer** application and a **cpapp-srv** application.
 
     !![Applications](CICD_cpapp_applications.png)
 

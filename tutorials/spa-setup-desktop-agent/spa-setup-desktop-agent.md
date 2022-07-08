@@ -2,7 +2,7 @@
 author_name: Chaitanya Priya Puvvada
 author_profile: https://github.com/chaitanya-priya-puvvada
 title: Install and Set Up the Desktop Agent
-description: Install and setup the Desktop Agent to run your automation
+description: Install and Set Up the Desktop Agent to run your automation
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform]

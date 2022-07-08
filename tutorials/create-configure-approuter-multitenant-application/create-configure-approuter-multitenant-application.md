@@ -86,7 +86,7 @@ In the folder `kyma-multitenant-approuter`, create a file `xs-app.json` with the
 
 The destinations configuration can be provided by the `destinations` environment variable or by destination service.
 
-In order to provide `destinations` environment variable to the approuter application, you should create a `ConfigMap` object for reference later.
+In order to provide `destinations` environment variable to the approuter application, you should create a `ConfigMap` object for the approuter's reference.
 
 Create a new deployment YAML file named `k8s-deployment-approuter.yaml` for the approuter app with the following content:
 
@@ -117,7 +117,7 @@ data:
 
 [ACCORDION-BEGIN [Step 5: ](Define Deployment)]
 
-Create a YAML file for the approuter app called `k8s-deployment-approuter.yaml`:
+Define the deployment object by adding the following code snippets in the file `k8s-deployment-approuter.yaml`:
 
 ```YAML
 ---

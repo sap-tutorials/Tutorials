@@ -105,7 +105,7 @@ Where:
 - `PATH` is a path on the server.
 - `HANDLER` is the function executed when the route is matched.
 
-Add basic logic into the default get endpoint with the following code snippets:
+Add basic logic into the default get endpoint. To make the necessary changes you should navigate to `kyma-multitenant-node/routes/index.js` and add the logic with the following code snippets:
 
 ```javascript
 /**
