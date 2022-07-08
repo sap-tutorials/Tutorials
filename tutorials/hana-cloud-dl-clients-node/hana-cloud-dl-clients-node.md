@@ -48,6 +48,8 @@ If Node.js is not installed, download the long-term support (LTS) version of Nod
 
 [ACCORDION-BEGIN [Step 2: ](Install the data lake Relational Engine client for Node.js)]
 
+In addition to the Node.js driver covered in this tutorial which is `@sap\iq-client`, there is also the [SQK Anywhere](https://github.com/sqlanywhere/node-sqlanywhere) driver.  The @sap\iq-client driver supports newer Node.js versions and includes a promise library.
+
 1. Add the dependencies to the driver.
 
     ```Shell (Microsoft Windows)
@@ -143,40 +145,40 @@ If Node.js is not installed, download the long-term support (LTS) version of Nod
     ```Shell
     node nodeQuery.js
     ```
-![Running nodeQuery.js](Node-query.png)
 
-Note the above app makes use of some of the data lake Relational Engine client Node.js driver methods, such as [connect](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/13e47ad9748d4d4d9536a0518b8ecd67.html), [exec](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/1bec2bc5259d4e9da54a2e1908f246ee.html) and [disconnect](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/8dee077765f5476b8b481ab1de864f14.html).
+    ![Running nodeQuery.js](node-query-sync.png)
 
-Two examples showing the drivers methods being used asynchronously are shown in the next two steps.
+    Note the above app makes use of some of the data lake Relational Engine client Node.js driver methods, such as [connect](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/13e47ad9748d4d4d9536a0518b8ecd67.html), [exec](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/1bec2bc5259d4e9da54a2e1908f246ee.html) and [disconnect](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/8dee077765f5476b8b481ab1de864f14.html).
 
->To enable debug logging of the SAP IQ Node.js client, enter the following command and then rerun the app.
+    Two examples showing the drivers methods being used asynchronously are shown in the next two steps.
 
->```Shell (Microsoft Windows)
->set DEBUG=*
->node nodeQuery.js
->```  
+    >To enable debug logging of the SAP IQ Node.js client, enter the following command and then rerun the app.
 
->```Shell (Linux or Mac)
->export DEBUG=*
->node nodeQuery.js
->```    
+    >```Shell (Microsoft Windows)
+    >set DEBUG=*
+    >node nodeQuery.js
+    >```  
 
-> ![debug output](debug-flag.png)
+    >```Shell (Linux or Mac)
+    >export DEBUG=*
+    >node nodeQuery.js
+    >```    
 
-> The value of the environment variable DEBUG can be seen and removed with the commands below.
+    > ![debug output](debug-flag.png)
 
->```Shell (Microsoft Windows)
->set DEBUG
->set DEBUG=
->set DEBUG
->```  
+    > The value of the environment variable DEBUG can be seen and removed with the commands below.
 
->```Shell (Linux or Mac)
->printenv | grep DEBUG
->unset DEBUG
->printenv | grep DEBUG
->```
+    >```Shell (Microsoft Windows)
+    >set DEBUG
+    >set DEBUG=
+    >set DEBUG
+    >```  
 
+    >```Shell (Linux or Mac)
+    >printenv | grep DEBUG
+    >unset DEBUG
+    >printenv | grep DEBUG
+    >```
 
 [DONE]
 [ACCORDION-END]
@@ -265,17 +267,16 @@ Asynchronous programming enables non-blocking code execution which is demonstrat
             }
         });
     }
-
     ```  
 
-4. Run the app.  
+3. Run the app.  
 
     ```Shell
     node nodeQueryCallback.js
     ```
-![Running nodeQueryCallback.js](Node-query-callback.png)
+    ![Running nodeQueryCallback.js](Node-query-callback.png)
 
-Notice that asynchronous method calls use callback functions.  See [JavaScript Asynchronous Programming and Callbacks](https://nodejs.dev/learn/javascript-asynchronous-programming-and-callbacks) for additional details.
+    Notice that asynchronous method calls use callback functions.  See [JavaScript Asynchronous Programming and Callbacks](https://nodejs.dev/learn/javascript-asynchronous-programming-and-callbacks) for additional details.
 
 [DONE]
 [ACCORDION-END]
@@ -376,9 +377,9 @@ The Node.js driver for the data lake Relational Engine client provides support f
     ```Shell
     node nodeQueryPromise.js
     ```
-![Running nodeQueryPromise.js](Node-query-promise.png)
+    ![Running nodeQueryPromise.js](Node-query-promise.png)
 
-The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/5410af3b00414269988301ba78d38e43.html).  Additional details on promises can be found at [Understanding JavaScript Promises](https://nodejs.dev/learn/understanding-javascript-promises).
+    The above code makes use of the [promise module](https://help.sap.com/docs/SAP_HANA_DATA_LAKE/a894a54d84f21015b142ffe773888f8c/5410af3b00414269988301ba78d38e43.html).  Additional details on promises can be found at [Understanding JavaScript Promises](https://nodejs.dev/learn/understanding-javascript-promises).
 
 [DONE]
 [ACCORDION-END]

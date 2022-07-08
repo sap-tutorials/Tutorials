@@ -11,6 +11,8 @@ primary_tag: software-product>sap-process-automation
 
 ## Prerequisites
  - Complete the tutorial of creating an [Invoice Approval Process](spa-dox-create-process)
+ - A Windows PC
+ - If you are using a MAC, please install a VDI
  - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
  - Download the [Invoice Document](https://github.com/sap-tutorials/Tutorials/blob/master/tutorials/spa-dox-create-automation/invoice.pdf) to your local machine
 
