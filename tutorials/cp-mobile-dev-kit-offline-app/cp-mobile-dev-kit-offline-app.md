@@ -111,7 +111,7 @@ These are the [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264ac
 
 [ACCORDION-BEGIN [Step 3: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services and Cloud Foundry to consume it as Mobile and Web application respectively.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy the application definitions to Mobile Services and Cloud Foundry to use it in the Mobile client and Web application respectively.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
@@ -144,9 +144,9 @@ You should see successful messages for both deployments.
 
 [ACCORDION-BEGIN [Step 4: ](Display the QR code for onboarding the Mobile app)]
 
-SAP Business Application Studio has a feature to generate QR code for onboarding the mobile app.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon.
+Click the `Application.app` to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
 !![MDK](img-4.1.png)
 
@@ -154,12 +154,12 @@ The On-boarding QR code is now displayed.
 
 !![MDK](img-4.2.png)
 
->Leave the Onboarding dialog box open for step 5.
+>Leave the Onboarding dialog box open for the next step.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test the application)]
+[ACCORDION-BEGIN [Step 5: ](Run the app)]
 
 [OPTION BEGIN [Android]]
 
@@ -167,7 +167,7 @@ The On-boarding QR code is now displayed.
 
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-Once you accept app update, you will see the **Main** page (with **Logout** and **Sync** options at bottom of the page) being displayed and Offline store is being initialized. **Since you selected the Base template during the project creation, which generated this empty page without any UI controls on it. In next tutorials, you will add some UI controls to this page and create more pages.**
+After you accept the app update, you will see the **Main** page (with **Logout** and **Sync** options at bottom of the page) being displayed and Offline store will be initialized. **Since you selected the Base template during the project creation, which generated this empty page without any UI controls on it. In next tutorials, you will add some UI controls to this page and create more pages.**
 
 ![MDK](img-5.1.png)
 
@@ -179,7 +179,7 @@ Once you accept app update, you will see the **Main** page (with **Logout** and 
 
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-Once you accept app update, you will see the **Main** page (with **Logout** and **Sync** options at bottom of the page) being displayed and Offline store is being initialized. **Since you selected the Base template during the project creation, which generated this empty page without any UI controls on it. In next tutorials, you will add some UI controls to this page and create more pages.**
+After you accept the app update, you will see the **Main** page (with **Logout** and **Sync** options at bottom of the page) being displayed and Offline store will be initialized. **Since you selected the Base template during the project creation, which generated this empty page without any UI controls on it. In next tutorials, you will add some UI controls to this page and create more pages.**
 
 ![MDK](img-5.2.png)
 
@@ -194,7 +194,7 @@ Once you accept app update, you will see the **Main** page (with **Logout** and 
     >You can also open the MDK web application by accessing its URL in *CF* from `.project.json` file.
     !![MDK](img-5.4.png)
 
-    You will see the **Main** page (with **Logout** option at bottom of the page) and application data service is being initialized. **Since you selected the Base template during the project creation, which generated this empty page without any UI controls on it. In next tutorials, you will add some UI controls to this page and create more pages.**
+    You will see the **Main** page (with **Logout** option at bottom of the page) and application data service will be initialized. **Since you selected the Base template during the project creation, which generated this empty page without any UI controls on it. In next tutorials, you will add some UI controls to this page and create more pages.**
 
     !![MDK](img_5.5.png)
 

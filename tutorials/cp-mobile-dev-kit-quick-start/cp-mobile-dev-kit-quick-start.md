@@ -111,7 +111,7 @@ These are the [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264ac
 
 [ACCORDION-BEGIN [Step 3: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services and Cloud Foundry to consume it as Mobile and Web application respectively.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy the application definitions to Mobile Services and Cloud Foundry to use it in the Mobile client and Web application respectively.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
@@ -145,9 +145,9 @@ You should see successful messages for both deployments.
 
 [ACCORDION-BEGIN [Step 4: ](Display the QR code for onboarding the Mobile app)]
 
-SAP Business Application Studio has a feature to generate QR code for onboarding the mobile app.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon.
+Click the `Application.app` to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
 !![MDK](img-4.1.png)
 
@@ -155,7 +155,7 @@ The On-boarding QR code is now displayed.
 
 !![MDK](img-4.2.png)
 
->Leave the Onboarding dialog box open for step 5.
+>Leave the Onboarding dialog box open for the next step.
 
 [DONE]
 [ACCORDION-END]
@@ -170,7 +170,7 @@ Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/b
 
 >There is a [limit of total 3 user registrations per app in trial accounts](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/16439fd40a014138abc5dc262e816be5.html).
 
-Once you accept app update, you will see the list of entities on the **Main** page, **Logout** and **Sync** options at bottom of the page and Offline store is being initialized. click either entity, it navigates to detail page, you can create, update, delete a record. This record gets saved to offline request queue database, navigate back to main page and press **Sync** to upload local changes to the backend. Once the upload is successful, it will also download the data from the backend to the offline store to have same dataset on both ends.
+After you accept the app update, you will see the list of entities on the **Main** page, **Logout** and **Sync** options at bottom of the page and Offline store will be initialized. Tap any entity, it navigates to a list page.  If you select one of the items, the detail page will be displayed where you can create, update, delete the record. This record gets saved to offline request queue database.  You can navigate back to main page and press **Sync** to upload any local changes to the backend. Once the upload is successful, it will also download the data from the backend to the offline store to have the same dataset on both sides.
 
 !![MDK](img_5.1.gif)
 
@@ -190,7 +190,7 @@ Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/b
 
 >There is a [limit of total 3 user registrations per app in trial accounts](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/16439fd40a014138abc5dc262e816be5.html).
 
-Once you accept app update, you will see the list of entities on the **Main** page, **Logout** and **Sync** options at bottom of the page and Offline store is being initialized. click either entity, it navigates to detail page, you can create, update, delete a record. This record gets saved to offline request queue database, navigate back to main page and press **Sync** to upload local changes to the backend. Once the upload is successful, it will also download the data from the backend to the offline store to have same dataset on both ends.
+After you accept the app update, you will see the list of entities on the **Main** page, **Logout** and **Sync** options at bottom of the page and Offline store will be initialized. Tap any entity, it navigates to a list page.  If you select one of the items, the detail page will be displayed where you can create, update, delete the record. This record gets saved to offline request queue database.  You can navigate back to main page and press **Sync** to upload any local changes to the backend. Once the upload is successful, it will also download the data from the backend to the offline store to have the same dataset on both sides.
 
 ![MDK](img_5.2.gif)
 
@@ -213,7 +213,7 @@ Additionally, you can search over all properties of the objects displayed in the
     >You can also open the MDK web application by accessing its URL from `.project.json` file.
     !![MDK](img-5.6.png)
 
-    You will see the list of entities on the **Main** page, **Logout** option at bottom of the page and application data service is being initialized. click either entity, it navigates to detail page, you can create, update, delete a record.
+    You will see the list of entities on the **Main** page, **Logout** option at bottom of the page and application data service will be initialized. click either entity, it navigates to detail page, you can create, update, delete a record.
 
     !![MDK](img_5.7.gif)
 
