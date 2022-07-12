@@ -33,14 +33,14 @@ To start with this tutorial use the result in the [`hana-cloud-setup`](https://g
 [ACCORDION-BEGIN [Step 1: ](Setup XSUAA)]
 1. Run the following command in your project folder:
 
-```Shell/Bash
-cds add xsuaa --for production
-```
+    ```Shell/Bash
+    cds add xsuaa --for production
+    ```
 
-What happens here? Running `cds add xsuaa` does two things:
+    What happens here? Running `cds add xsuaa` does two things:
 
-- Adds the XSUAA service to the `package.json` file of your project
-- Creates the XSUAA security configuration for your project
+    - Adds the XSUAA service to the `package.json` file of your project
+    - Creates the XSUAA security configuration for your project
 
 2. Check if the following lines have been added to the `package.json` in your `cpapp` project:
 
