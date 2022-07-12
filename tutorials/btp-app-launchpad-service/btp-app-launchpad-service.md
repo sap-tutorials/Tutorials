@@ -352,7 +352,7 @@ The newly added modules `nsrisks` and `nsmitigations` do the build of the SAP Fi
         supported-platforms: []
     ```
 
-3. Check the HTML5 application `deployer`.
+3. Check the HTML5 application deployer.
 
     The module `cpapp-app-content` deploys the ZIP files from the `nsrisks.zip` and `nsmitigations.zip` to the SAP HTML5 Application Repository service, where it can be accessed by the SAP Launchpad service using the previously added destinations.
 
