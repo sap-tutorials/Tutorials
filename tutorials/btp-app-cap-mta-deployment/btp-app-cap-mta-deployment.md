@@ -127,9 +127,6 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
     cf login
     ```
 
-
-
-
 6. Check if the `multiapps` plugin is already installed:
 
     ```Shell/Bash
@@ -170,8 +167,6 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
 
     !![CF Data in SAP BTP Cockpit](cfdatacloudcockpit.png)
 
-
-
 3. Open a command line window.
 
 4. Set the Cloud Foundry API endpoint.
@@ -185,9 +180,6 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
     ```Shell/Bash
     cf login
     ```
-
-
-
 
 6. Check if the `multiapps` plugin is already installed:
 
@@ -211,7 +203,7 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
 [ACCORDION-BEGIN [Step 4: ](Declare required Node.js version)]
 When you run your CAP application, your locally installed Node.js version is used. Cloud Foundry supports multiple Node.js major versions (like 14 and 16) and usually uses the lowest available by default. Therefore, it is important to declare which Node.js version should be used.
 
-> Node.js 16 is sufficient for this tutorial.
+> Node.js v16 is sufficient for this tutorial.
 
 Open the file `package.json` and add the following snippet:
 
@@ -343,7 +335,7 @@ Alternatively, role collections can be manually assigned in the SAP BTP cockpit.
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Build, deploy, and test mtar file)]
-!!! delete your older package-lock.json to avoid errors due to use of older versions.
+!!! Delete your older `package-lock.json` to avoid errors due to use of older versions.
 
 1. Build the MTA module from your project root folder:
 
