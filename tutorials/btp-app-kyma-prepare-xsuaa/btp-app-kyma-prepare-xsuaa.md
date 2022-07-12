@@ -6,7 +6,7 @@ description: This tutorial shows you how to set up User Authentication and Autho
 keywords: cap
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp-kyma-runtime, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -35,14 +35,14 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-BEGIN [Step 1: ](Setup XSUAA)]
 1. Run the following command in your project folder:
 
-    ```Shell/Bash
-    cds add xsuaa --for production
-    ```
+```Shell/Bash
+cds add xsuaa --for production
+```
 
-    What happens here? Running `cds add xsuaa` does two things:
+What happens here? Running `cds add xsuaa` does two things:
 
-    - Adds the XSUAA service to the `package.json` file of your project
-    - Creates the XSUAA security configuration for your project
+- Adds the XSUAA service to the `package.json` file of your project
+- Creates the XSUAA security configuration for your project
 
 2. Check if the following lines have been added to the `package.json` in your `cpapp` project:
 
