@@ -1,6 +1,6 @@
 ---
-title: Use the Free Tier Service Plan to Set Up Account for Personalized Recommendation and Get Service Key
-description: Use an SAP BTP booster to automatically create a service instance, and the associated service key for Personalized Recommendation.
+title: Use Free Tier to Set Up Account for Personalized Recommendation and Get Service Key
+description: Use the Free Tier service plan and an SAP BTP booster to automatically create a service instance, and the associated service key for Personalized Recommendation.
 auto_validation: true
 time: 5
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>personalized-recommendation, tutorial>free-tier]
