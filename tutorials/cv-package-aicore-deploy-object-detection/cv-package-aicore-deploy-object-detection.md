@@ -53,7 +53,7 @@ workflow_config = {
        "scenarios.ai.sap.com/id": "sap-cv-package-tutorial",
        "ai.sap.com/version": "0.0.1"
    },
-   "imagePullSecret": "my-docker-repo",
+   "imagePullSecret": "<YOUR_DOCKER_SECRET>",
    "objectStoreSecret": "default-object-store-secret"
 }
 ```
@@ -132,7 +132,7 @@ metadata:
 spec:
     ...
     imagePullSecrets:
-      - name: my-docker-repo
+      - name: <YOUR_DOCKER_SECRET>
     template:
         ...
         spec:

@@ -112,7 +112,7 @@ workflow_config = {
    "annotations": {
        "scenarios.ai.sap.com/name": "SAP CV Package Tutorial",
    },
-   "imagePullSecret": "docker-registry-secret",
+   "imagePullSecret": "<YOUR_DOCKER_SECRET>",
    "objectStoreSecret": "default-object-store-secret"
 }
 ```

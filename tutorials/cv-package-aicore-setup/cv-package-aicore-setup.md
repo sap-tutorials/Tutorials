@@ -1,5 +1,5 @@
 ---
-title: Set Up Computer Vision package for SAP AI Core
+title: Set Up Computer Vision Package for SAP AI Core
 description: Set Up Python and install computer vision package and its dependencies like PyTorch and Detectron2. Install the SAP AI Core SDK to interact with SAP AI Core using Python.
 auto_validation: true
 time: 30
@@ -17,6 +17,10 @@ author_profile: https://github.com/kannankumar
 
 ## Prerequisites
   - You have completed the [Create Your First Machine Learning Project using SAP AI Core tutorial series](group.ai-core-get-started-basics)
+  - You have [provisioned SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/38c4599432d74c1d94e70f7c955a717d.html)
+  - You have [set up your Git Repository with SAP AI Core](https://help.sap.com/viewer/808d9d442fb0484e9b818924feeb9add/LATEST/en-US/3269092e37d141a293f0dbd7eaafc829.html).
+  - You have [created Docker registry secret in SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/b29c7437a54f46f39c911052b05aabb1.html)
+  - You have [registered your Object Store secret in SAP AI Core](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/b083d73f672c428faac3048b74733546.html)
 
 ### Pre-read
 
@@ -28,22 +32,6 @@ Python package `detectron2` currently [only supports Linux or MacOS](https://det
 
 
 ---
-
-[ACCORDION-BEGIN [Step 1: ](Check Prerequisites)]
-
-> NOTE: If you have not provisioned SAP AI Core. Read [provisioning steps](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/38c4599432d74c1d94e70f7c955a717d.html) to provision SAP AI Core service.
-
-Please ensure the following components for SAP AI Core are setup:
- - You have [set up your Git Repository with SAP AI Core](https://help.sap.com/viewer/808d9d442fb0484e9b818924feeb9add/LATEST/en-US/3269092e37d141a293f0dbd7eaafc829.html).
-
- - You have [created docker registry secret in SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/b29c7437a54f46f39c911052b05aabb1.html)
-
- - You have [registered your Object Store secret in SAP AI Core](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/b083d73f672c428faac3048b74733546.html)
-
-This tutorial also uses a few Python packages for implementing the Computer Vision use-case. One of
-
-[DONE]
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Install Python)]
 
