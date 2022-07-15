@@ -248,6 +248,8 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 10. For **Build Tool**, leave **`mta`** as preselected.
 
+11. For **Build Tool Version**, select the latest version.
+
 11. Leave the execution of the **Maven Static Code Checks** step switched off.
 
 12. Leave the execution of the **Lint Check** step switched off.

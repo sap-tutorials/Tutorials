@@ -74,7 +74,7 @@ Your code reads the data file `train.csv` from the location `/app/data`. This da
 
 !![image](img/code-main.png)
 
-Create file `requirement.txt` as shown below. Here, if you don't specify a particular version like `pandas` then the latest version of the package will be fetched automatically.
+Create file `requirements.txt` as shown below. Here, if you don't specify a particular version like `pandas` then the latest version of the package will be fetched automatically.
 
 ```TEXT
 sklearn==0.0
@@ -110,7 +110,7 @@ RUN chgrp -R 65534 /app && \
 
 !![image](img/code-docker.png)
 
-> **IMPORTANT** Your `Dockerfile` createS empty folders to store your datasets and models (example above `/app/data` and `/app/model/` ). Contents from cloud storage will be copied to and from these folders later. If you place any contents in these folders during time of Docker image building, then the contents will be overwritten.
+> **IMPORTANT** Your `Dockerfile` creates empty folders to store your datasets and models (example above `/app/data` and `/app/model/` ). Contents from cloud storage will be copied to and from these folders later. If you place any contents in these folders during time of Docker image building, then the contents will be overwritten.
 
 Build and upload your Docker image to Docker repository, using the following code in the terminal.
 
@@ -124,7 +124,7 @@ docker push docker.io/<YOUR_DOCKER_USERNAME>/house-price:03
 
 [ACCORDION-BEGIN [Step 2: ](Create placeholders for datasets in workflows)]
 
-Create a pipeline (yaml file) named `house-price-train.yaml` in your GitHub repository. You may use the existing GitHub path which is already tracked (auto synced) by your application of SAP AI Core.
+Create a pipeline (YAML file) named `house-price-train.yaml` in your GitHub repository. You may use the existing GitHub path which is already tracked (auto synced) by your application of SAP AI Core.
 
 ```YAML
 apiVersion: argoproj.io/v1alpha1
@@ -696,11 +696,11 @@ Copy the artifact ID of the January dataset. You will use this value in the plac
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-Click through **ML Operations** > **Configuration** > **Create**. Enter the following details as shown in the image below. Click **Next**
+Click through **ML Operations** > **Configuration** > **Create**. Enter the following details as shown in the image below. Click **Next**.
 
 !![image](img/ail/config-1.png)
 
-The field for `DT_MAX_DEPTH` allows your to use the configuration to pass values to placeholders of hyper-parameters that your prepared earlier in your workflows. In this case, type `3`. Click **Next**.
+The field for `DT_MAX_DEPTH` allows you to use the configuration to pass values to placeholders of hyper-parameters that you prepared earlier in your workflows. In this case, type `3`. Click **Next**.
 
 !![image](img/ail/config-2.png)
 
@@ -749,7 +749,7 @@ Use the artifact ID of the `jan` dataset and the placeholder names to create a c
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-Paste and edit the code snippet. The key value pair for `DT_MAX_DEPTH` allows your to use the configuration to pass values to placeholders of hyper-parameters that your prepared earlier in your workflows. In this case, type `3`.
+Paste and edit the code snippet. The key value pair for `DT_MAX_DEPTH` allows your to use the configuration to pass values to placeholders of hyper-parameters that your prepared earlier in your workflows. In this case, type `3`. You should locate your `jan` dataset artifact ID by listing all artifacts and use the relevant ID.
 
 ```PYTHON
 from ai_api_client_sdk.models.parameter_binding import ParameterBinding
@@ -1029,7 +1029,7 @@ Paste and edit the snippet below. You should locate your `feb` dataset artifact 
 
 [OPTION BEGIN [SAP AI Core SDK]]
 
-Paste and edit the snippet below. You should locate your `feb` dataset artifact ID by listing all artifacts and using the relevant ID.
+Paste and edit the snippet below. You should locate your `feb` dataset artifact ID by listing all artifacts and use the relevant ID.
 
 ```PYTHON
 from ai_api_client_sdk.models.parameter_binding import ParameterBinding
