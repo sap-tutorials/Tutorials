@@ -336,7 +336,7 @@ kubectl -n multitenancy-ns apply -f k8s-deployment-backend.yaml
 [ACCORDION-BEGIN [Step 10: ](Project Repository)]
 
 
-You can find the final Node.js project from repository: [here](https://github.com/SAP-samples/btp-kyma-runtime-multitenancy-tutorial/tree/main/Mission:%20Develop%20a%20Node.js%20Application%20in%20the%20SAP%20BTP%20Kyma%20Runtime).
+You can find the final Node.js project from repository: [here](https://github.com/SAP-samples/btp-kyma-runtime-multitenancy-tutorial/tree/main/Mission%20-%20Develop%20a%20Node.js%20Application%20in%20the%20SAP%20BTP%20Kyma%20Runtime).
 
 
 
