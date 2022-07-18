@@ -34,11 +34,7 @@ For example:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Determine Kyma Cluster Domain)]
-In your Kyma dashboard, find the full Kyma cluster domain in the downloaded `kubeconfig.yml` file or in the URL of the Kyma dashboard.
-
-For example:
-
-![image-20211214133533870](image-20211214133533870.png)
+Find the full Kyma cluster domain in the downloaded `kubeconfig.yml` file. For example: `e6803e4.kyma.shoot.live.k8s-hana.ondemand.com`.
 
 
 [DONE]
@@ -51,22 +47,21 @@ In order to run your code on the Kyma Runtime (or on any Kubernetes-based platfo
 
 The command-line tool `pack` supports providing a buildpack and your local source code and creating an OCI image from it. We are working on a process to provide recommended and supported buildpacks. In the meantime, you can use the community-supported [Paketo Buildpacks](https://paketo.io/).
 
-Install command-line tool `pack`: [Install Pack](https://buildpacks.io/docs/tools/pack/)
+**1.** Install command-line tool `pack`: [Install Pack](https://buildpacks.io/docs/tools/pack/)
 
 For example (macOS):
 
-```shell
+```Shell / Bash
 brew install buildpacks/tap/pack
 ```
-
 
 When we speak about repository name, we mean the combination of account and repo name that is usual with Docker Hub: `<docker-hub-account>/<repo-name>`. An example would be `tiaxu/multitenant-kyma-backend`.
 
 As you can only create one private repository in a free Docker hub account, Docker images stored in Docker hub will have different tag names so that they can be stored under one repository. Thus, addressing an image will include the tag name:`<docker-hub-account>/<repo-name>:<tag-name>`. An example would be `tiaxu/multitenant-kyma-backend:v1`.
 
-Under the directory `kyma-multitenant-node`, build the image for the approuter app from source, for example:
+**2.** In the directory `kyma-multitenant-node`, build the image for the approuter app from source, for example:
 
-```shell
+```Shell / Bash
 pack build multitenant-kyma-backend --builder paketobuildpacks/builder:full
 docker tag multitenant-kyma-backend <docker-hub-account>/multitenant-kyma-backend:v1
 ```
@@ -78,15 +73,15 @@ docker tag multitenant-kyma-backend <docker-hub-account>/multitenant-kyma-backen
 
 [ACCORDION-BEGIN [Step 4: ](Push OCI Image to Docker Hub)]
 
-Log in to Docker using this command:
+**1.** Log in to Docker using this command:
 
-```shell
+```Shell / Bash
 docker login -u <docker-id> -p <password>
 ```
 
-Push the local image into the Docker Hub:
+**2.** Push the local image into the Docker Hub:
 
-```shell
+```Shell / Bash
 docker push <docker-hub-account>/multitenant-kyma-backend:v1
 ```
 
@@ -100,11 +95,11 @@ docker push <docker-hub-account>/multitenant-kyma-backend:v1
 
 Then you are ready to deploy it into the Kubernetes cluster with Kyma runtime.
 
-Select the `Link to dashboard` to open the Kyma dashboard.
+**1.** Select the `Link to dashboard` to open the Kyma dashboard.
 
 ![image-20220112154735200](image-20220112154735200.png)
 
-Create a new namespace through the Kyma dashboard or `kubectl` CLI, for example, called `multitenancy-ns`:
+**2.** Create a new namespace through the Kyma dashboard or `kubectl` CLI, for example, called `multitenancy-ns`:
 
 ![image-20220214150615225](image-20220214150615225.png)
 
@@ -116,13 +111,12 @@ Create a new namespace through the Kyma dashboard or `kubectl` CLI, for example,
 
 [ACCORDION-BEGIN [Step 6: ](Deploy Secret for Docker Hub)]
 
-Since the OCI image is stored in your Docker hub, you need to provide the access information to your Kyma cluster that you can pull the images from those repositories:
+Since the OCI image is stored in your Docker hub, you need to provide the access information to your Kyma cluster that you can pull the images from those repositories, replace the placeholder values according to your account:
 
-```shell
+```Shell / Bash
 kubectl -n multitenancy-ns create secret docker-registry registry-secret --docker-server=https://index.docker.io/v1/  --docker-username=<docker-id> --docker-password=<password> --docker-email=<email>
 ```
 
-> Replace the placeholder values according to your account.
 
 Therefore, all deployment files contain an `imagePullSecret` entry, which should be set to `registry-secret`.
 
@@ -140,7 +134,7 @@ imagePullSecrets:
 
 Based on the previous preparation steps, you can define the description file for deployment.
 
-Under the root directory `multitenancy-kyma-tutorial`, create a new YAML file called `k8s-deployment-backend.yaml` with the following content:
+In the root directory `multitenancy-kyma-tutorial`, create a new YAML file called `k8s-deployment-backend.yaml` with the following content:
 
 ```yaml
 
@@ -314,7 +308,7 @@ spec:
 
 Deploy the Node.js application by executing this command under the root directory `multitenancy-kyma-tutorial`:
 
-```shell
+```Shell / Bash
 kubectl -n multitenancy-ns apply -f k8s-deployment-backend.yaml
 ```
 
@@ -327,22 +321,22 @@ kubectl -n multitenancy-ns apply -f k8s-deployment-backend.yaml
 [ACCORDION-BEGIN [Step 9: ](Access Application in Browser)]
 
 
-Find the URL address of your application in the Kyma dashboard:
+**1.** Find the URL address of your application in the Kyma dashboard:
 
 ![image-20220214153901104](1645680425240.jpg)
 
-Access it in the browser, then the application will return the message that you defined before.
+**2.** Access it in the browser, then the application will return the message that you defined before.
 
 
 
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Project Repository)]
 
 
-You can find the final Node.js project from repository: [here](https://github.com/SAP-samples/btp-kyma-runtime-multitenancy-tutorial/tree/main/Mission:%20Develop%20a%20Node.js%20Application%20in%20the%20SAP%20BTP%20Kyma%20Runtime).
+You can find the final Node.js project from repository: [here](https://github.com/SAP-samples/btp-kyma-runtime-multitenancy-tutorial/tree/main/Mission%20-%20Develop%20a%20Node.js%20Application%20in%20the%20SAP%20BTP%20Kyma%20Runtime).
 
 
 

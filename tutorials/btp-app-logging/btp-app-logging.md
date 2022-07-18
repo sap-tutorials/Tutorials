@@ -17,7 +17,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
  - [Add Business Logic to Your Application](btp-app-cap-business-logic)
  - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
+ - [Use a Local Launch Page](btp-app-launchpage)
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-prepare-btp)
  - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
@@ -57,7 +57,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Access logs from SAP BTP cockpit)]
-1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
+1. In [SAP BTP Cockpit](https://account.hana.ondemand.com/) enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 
@@ -83,7 +83,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 3: ](Analyze logs using Kibana dashboard)]
-1. Go to your subaccount in **SAP BTP cockpit**.
+1. In SAP BTP Cockpit, navigate to your **Subaccount**.
 
 2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
 
@@ -206,9 +206,9 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 5: ](Test it)]
-1. Build the MTAR file and deploy it to your Cloud Foundry space.
+1. Build the MTAR file and deploy it to your Cloud Foundry space:
 
-    ```
+    ```Shell/Bash
     mbt build -t ./
     cf deploy cpapp_1.0.0.mtar
     ```
@@ -225,17 +225,14 @@ In our experience, the `development` plan wasn't sufficient for test scenarios. 
 
     !![Kibana: Components](kibana_components.png)
 
-You can also browse all logs using the *Discover* button (compass icon) on the left navigation bar.
+You can also browse all logs using the **Discover** button (compass icon) on the left navigation bar.
 The available fields are displayed on the left side of the screen. You can add fields to the message display or quickly filter for any of the top values.
 
-The time filter is on the right top of the screen. Don't forget to choose *Refresh*.
-
+The time filter is on the right top of the screen. Don't forget to choose **Refresh**.
 
 [DONE]
 The result of this tutorial can be found in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
 
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-logging" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
 ---

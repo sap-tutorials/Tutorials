@@ -91,11 +91,7 @@ The application is now generated and in a few seconds you can see it in the `app
 
 2. Choose the link [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html) for the HTML page.
 
-3. On the launch page that now comes up, choose the **Risks** tile.
-
-    !![Index HTML Page](feapptile.png)
-
-    You can now see the application without any data.
+3. You can now see the application without any data.
 
     !![Index HTML Page](feappempty.png)
 
@@ -127,11 +123,15 @@ Let's say that at this point you'd like to edit some of the data or create a new
 
     !![Create Risk](createrisk.png)
 
-2. Try and fill in data in the main group fields `Mitigation`, `Priority`, and `Impact` and choose **Create**.
+2. To add a `Mitigation`, click on the value help icon in the input field, select a mitigation, and choose **OK**.
+
+    !![Add Mitigation](addmitigation.png)
+
+3. Try and fill in data in the main group fields `Priority` and `Impact` and choose **Create**.
 
     !![Fill Main Data](fillriskdata.png)
 
-3. The new risk is created but it has no title and it has no description.
+4. The new risk is created but it has no title and it has no description.
 
     !![No Title Risk](notitlerisk.png)
 

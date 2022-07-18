@@ -1,6 +1,6 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 title: Visualize your Data with Geo Maps
 description: Learn how to create, interact with, and filter through a Geo Map
 auto_validation: true
@@ -100,7 +100,7 @@ Furthermore, you can also filter data directly on the map by drawing a polygon, 
 
 Before we move on, your dashboard should now look like this:
 
-![Dashboard Update](dashboard update.png)
+![Dashboard Update](dashboard update 2.png)
 
 [DONE]
 [ACCORDION-END]

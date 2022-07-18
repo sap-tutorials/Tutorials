@@ -3,7 +3,7 @@ title: Create Dataset and Upload Training Data
 description: Perform the initial steps to train your own Business Entity Recognition custom model to get machine learning entity predictions for the text you submit to the service.
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, software-product>sap-business-technology-platform, software-product>sap-ai-business-services, software-product>business-entity-recognition, tutorial>free-tier]
 primary_tag: topic>machine-learning
 ---
 
@@ -16,6 +16,8 @@ primary_tag: topic>machine-learning
 The core functionality of Business Entity Recognition is to automatically detect and highlight any given type of named entity in unstructured text and classify it in accordance with predefined categories.
 
 In this tutorial, you will learn how to use the service APIs to create a dataset, upload training data, and submit a training job to finally create your own custom machine learning model to classify any given type of named entity, such as mobile number, first name, last name and address, in the texts you will submit to the service in the next tutorial: [Deploy Model and Get Prediction Results](cp-aibus-ber-custom-deploy).
+
+Check out the tutorial group [Use Pre-Trained Machine Learning Models to Process Unstructured Text](group.cp-aibus-business-entity-detect) to try out the Business Entity Recognition pre-trained machine learning models.
 
 ---
 
@@ -31,7 +33,7 @@ In the service key you created for Business Entity Recognition in the previous t
 
 2. To be able to use the Swagger UI endpoints, you need to authorize yourself. In the top right corner, click **Authorize**.
 
-    !![BER](png-files/swagger0.png)
+    !![BER](png-files/swagger.png)
 
 3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Business Entity Recognition Using Any Web Browser](cp-aibus-ber-web-oauth-token), then add **bearer** in front of it, and enter in the **Value** field.
 
@@ -85,9 +87,9 @@ To see the details of your newly created dataset, use the **GET /datasets/{`data
 
     !![BER](png-files/get-datasets-1.png)
 
-You receive a response like below. Among the `datasetId` and the `description`, you see the number of documents. Those documents include your training data and you upload some in the following step.
+    You should receive a response like below. Among the `datasetId` and the `description`, you see the `documentCount`. The number of documents include the training data files that you'll upload in the next step.
 
-!![BER](png-files/get-datasets-2.png)
+    !![BER](png-files/get-datasets-2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -101,9 +103,9 @@ Please bear in mind that Business Entity Recognition requires your data to be in
 
 >As an alternative to uploading your own JSON file to the service, you can use the following sample files (right click on the link, then click ***Save link as*** to download the files locally):
 
->- [Sample Training Data 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ber-swagger-ui-custom/data/Tutorial_training_data_1.json)
+>- [Sample Training Data 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ber-custom-data/data/Tutorial_training_data_1.json)
 
->- [Sample Training Data 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ber-swagger-ui-custom/data/Tutorial_training_data_2.json)
+>- [Sample Training Data 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-ber-custom-data/data/Tutorial_training_data_2.json)
 
 >Please repeat this step twice and upload one document each time. The more data is available the better predictions the model can give you.
 
@@ -144,9 +146,9 @@ Using the `datasetId` obtained in the previous step, you can obtain the details 
 
     !![BER](png-files/get-datasets-docs-1.png)
 
-You should receive a response, with the document details, like below. This shows you the size of the document in bytes.
+    You should receive a response, with the document details, like below. This shows you the size of the document in bytes.
 
-!![BER](png-files/get-datasets-docs-2.png)
+    !![BER](png-files/get-datasets-docs-2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -166,7 +168,7 @@ Once the training documents are uploaded, you can submit a training job. This tr
 
     >Be aware of the following **`modelName`** guidelines:​
 
-    >- You cannot use the same name as a Business Entity Recognition pre-trained model (`sap_email_business_entity` and `sap_invoice_header`)
+    >- You cannot use the same name as one of the Business Entity Recognition pre-trained models (see [Extracted Entities by Pre-trained Model](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/7eb1408001564d679adcd3bc4796800f.html))
 
     >- You cannot use `"sap_"` as a prefix
 
@@ -184,7 +186,7 @@ Once the training documents are uploaded, you can submit a training job. This tr
 
     !![BER](png-files/post-training-jobs-2.png)
 
-This indicates that your training job has been successfully submitted.
+    This indicates that your training job has been successfully submitted.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -196,7 +198,7 @@ To check whether your training already succeeded, you can use the **GET /trainin
 
 >**CAUTION:**
 
->In the Trial version of the service, only one training job with `SUCCEEDED` status is allowed. See [Trial Account Input Limits](https://help.sap.com/viewer/b43f8f61368d455793a241d2b10baeb2/SHIP/en-US/c80a45cc7416409eb9bf64667487c375.html). Use the endpoint **DELETE /training/jobs/{`jobId`}** to delete a training job before its status changes to `SUCCEEDED`.
+>In the free tier version of the service, only one training job with `SUCCEEDED` status is allowed. See [Free Tier Option Technical Constraints](https://help.sap.com/docs/Business_Entity_Recognition/b43f8f61368d455793a241d2b10baeb2/c80a45cc7416409eb9bf64667487c375.html). Use the endpoint **DELETE /training/jobs/{`jobId`}** to delete a training job before its status changes to `SUCCEEDED`.
 
 1. Click the endpoint name to expand it.
 
@@ -208,13 +210,13 @@ To check whether your training already succeeded, you can use the **GET /trainin
 
     !![BER](png-files/get-training-jobs-1.png)
 
-You should receive a response like below. The status `RUNNING` indicates that the training is still in progress. In case the status is `PENDING`, then the training has not started yet.
+    You should receive a response like below. The status `RUNNING` indicates that the training is still in progress. In case the status is `PENDING`, then the training has not started yet.
 
-!![BER](png-files/get-training-jobs-2.png)
+    !![BER](png-files/get-training-jobs-2.png)
 
-You may check the status now and then. Please note that the training may take up to 5 hours. Afterwards, the training status changes to `SUCCEEDED`. Along with that, you receive all the capabilities of the model, that are the entities the model can recognize.
+    You may check the status now and then. Please note that the training may take up to 5 hours. Afterwards, the training status changes to `SUCCEEDED`. Along with that, you receive all the capabilities of the model, that are the entities the model can recognize.
 
-!![BER](png-files/get-training-jobs-3.png)
+    !![BER](png-files/get-training-jobs-3.png)
 
 [DONE]
 [ACCORDION-END]

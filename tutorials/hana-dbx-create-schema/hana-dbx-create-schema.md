@@ -39,7 +39,21 @@ The following steps will create sample objects for a hotel database using create
     CREATE USER USER2 PASSWORD Password2 no force_first_password_change SET USERGROUP DEFAULT;
     >```
 
-    For additional detail on creating users see [CREATE USER Statement (Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5ddb075191014b594f7b11ff08ee2.html). Note that the user USER1 will be used in tutorial 5 and tutorial 7 of this tutorial group.
+    >---
+
+    >The following shows an example of creating a USERGROUP, assigning USER1 to the group, and querying the password policy of the user.
+
+    >```SQL
+    CREATE USERGROUP HOTEL_USER_GROUP SET PARAMETER 'minimal_password_length' = '8', 'force_first_password_change' = 'FALSE';
+    ALTER USER USER1 SET USERGROUP HOTEL_USER_GROUP;
+    SELECT * from "PUBLIC"."M_EFFECTIVE_PASSWORD_POLICY" where USER_NAME = 'USER1';
+    >```
+
+    >---
+
+    >It is recommended to not use the DBADMIN user for day to day operations in production environments.  For additional details see [Deactivate the DBADMIN User](https://help.sap.com/docs/HANA_CLOUD_DATABAS/f9c5015e72e04fffa14d7d4f7267d897/c511ddf1767947f0adfc9636148718d9.html).
+
+    For additional detail on creating users see [CREATE USER Statement (Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5ddb075191014b594f7b11ff08ee2.html) and [CREATE USERGROUP Statement](https://help.sap.com/docs/HANA_CLOUD_DATABASE/c1d3f60099654ecfb3fe36ac93c121bb/9869125ea93548009820702f5bd897d8.html). Note that the user USER1 will be used in tutorial 5 and tutorial 7 of this tutorial group.
 
 3. The list of users can be seen by executing the following statement:
 
@@ -570,7 +584,7 @@ Another option for data that is accessed less frequently is the SAP HANA Data La
     ```SQL
        SELECT current_date, current_time FROM dummy;  --be sure to schedule an event in the future
        CREATE SCHEDULER JOB GEN_RESERVATIONS_JOB CRON '2021 12 23 * 14 25 0' ENABLE PROCEDURE "HOTEL"."RESERVATION_GENERATOR" PARAMETERS numtogenerate=10;
-       SELECT * FROM M_SCHEDULER_JOBS WHERE SCHEDULER_JOB_NAME = 'GEN_RESERVATIONS_JOB';
+       SELECT * FROM SCHEDULER_JOBS WHERE SCHEDULER_JOB_NAME = 'GEN_RESERVATIONS_JOB';
     ```
 
 

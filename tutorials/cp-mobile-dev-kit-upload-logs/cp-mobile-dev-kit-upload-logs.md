@@ -17,6 +17,7 @@ author_profile: https://github.com/jitendrakansal
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Enhance-Your-First-MDK-App-with-Additional-Functionalities/2-cp-mobile-dev-kit-delete-customer) to start with this tutorial.
 
+
 ---
 
 ![MDK](img_1.gif)
@@ -86,9 +87,7 @@ You will create 3 actions:
     |----|----|
     | `Action Name`| `LogSetLevel` |
     | `Type` | Select `SetLevel` from the dropdown |
-    | `Level`| Select `Debug` from the dropdown |
-
-    >Setting log level to debug is not recommended for productive environment.
+    | `Level`| Select `Trace` from the dropdown |
 
     !![MDK](img_2.2.png)
 
@@ -240,18 +239,22 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-7.3.png)
 
+    >Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+    >!![MDK](img-4.3.1.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test the application)]
+[ACCORDION-BEGIN [Step 8: ](Run the app)]
 
 [OPTION BEGIN [Android]]
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-    At `OnLaunch` event, app starts gathering logs.
+    Once the reinitialization is completed, app starts gathering the client logs.
 
-2. Tap **UPLOAD LOGS** to upload client logs from app to SAP Mobile Services.
+2. Tap **Upload Logs** to upload client logs from app to SAP Mobile Services.
 
     ![MDK](img_8.1.png)
 
@@ -263,7 +266,7 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
-    At `OnLaunch` event, app starts gathering logs.
+    Once the reinitialization is completed, app starts gathering the client logs.
 
 2. Tap **Upload Logs** to upload client logs from app to SAP Mobile Services.
 
@@ -288,13 +291,9 @@ You can view any Error and Fatal client logs under *Logs* tab.
 
 !![MDK](img-9.1.png)
 
->Check [documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/662c8a51d3df48bb99baea65855f3441.html) for more details about Uploading and Viewing Client Logs.
+>Check [documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/logging/admin/config.html) for more details about Uploading and Viewing Client Logs.
 
 [VALIDATE_1]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully uploaded client logs to SAP Mobile Services and you are now all set to [extend an MDK App with Customer Orders](cp-mobile-dev-kit-customer-order).
 
 ---

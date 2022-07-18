@@ -81,7 +81,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Multiple Databases Result](MultipleDatabasesResult.png)
 
-14. Returned results in HTML, XML, JSON, or binary can be displayed in a separate viewer.  Enter the SQL statements below and execute the query.
+14. Returned results in HTML, XML, JSON, extended well-known binary formatted spatial data, or binary data can be displayed in a separate viewer.  Enter the SQL statements below and execute the query.
 
     ```SQL
     SELECT
@@ -96,6 +96,8 @@ primary_tag: software-product>sap-hana-cloud
     Choose **View data** to open a viewer.
 
     ![JSON Viewer](ViewJSON.png)
+
+    To learn more about viewing spatial data, see [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model).
 
 15. The results of a query can be downloaded and exported.
 

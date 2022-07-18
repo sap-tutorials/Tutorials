@@ -67,12 +67,29 @@ If you are building a custom version of Mobile development kit client, there you
 
 [ACCORDION-BEGIN [Step 2: ](Create a new rule)]
 
-In the MDK editor, you will create 2 new Rule files:
+In the MDK editor, you will first create a message to display a confirmation dialog if user wants to leave the current app and then will create 2 new Rule files:
 
   * `OpenSAPMobileCards.js` to open SAP Mobile Cards app
   * `OpenSAPcom.js` to open `SAP.com` web page
 
-    >You can find more details about [writing a Rule](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/rules.html).
+  >You can find more details about [writing a Rule](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/rules.html).
+
+1. Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
+
+    !![MDK](img_1.1.png)
+
+    Provide the below information:
+
+    | Property | Value |
+    |----|----|
+    | `Action Name`| `Confirmation` |
+    | `Type` | Select `Message` from the dropdown |
+    | `Message` | `Do you want to leave the current app?` |
+    | `Title` | `Confirm` |
+    | `OKCaption` | `OK` |
+    | `OnOK` | `--None--` |
+    | `CancelCaption` | `CANCEL` |
+    | `OnCancel` | `--None--` |
 
 1. Right-click the **Rules** folder | **MDK: New Rule File** | select **Empty JS Rule**.
 
@@ -86,12 +103,10 @@ In the MDK editor, you will create 2 new Rule files:
 
     ```JavaScript
     export default function OpenSAPMobileCards(context) {
-        // Get the Nativescript UI Dialogs Module
-        const dialogs = context.nativescript.uiDialogsModule;
         // Get the Nativescript Utils Module
         const utilsModule = context.nativescript.utilsModule;
-        return dialogs.confirm("Do you want to leave the current app?").then((result) => {
-            if (result === true) {
+        return context.executeAction('/MDKDeepLink/Actions/Confirmation.action').then((result) => {
+            if (result.data) {
                 //This will open SAP Mobile Cards app
                 return utilsModule.openUrl("com.sap.content2go://");
             } else {
@@ -112,12 +127,10 @@ In the MDK editor, you will create 2 new Rule files:
 
     ```JavaScript
     export default function OpenSAPcom(context) {
-        // Get the Nativescript UI Dialogs Module
-        const dialogs = context.nativescript.uiDialogsModule;
         // Get the Nativescript Utils Module
         const utilsModule = context.nativescript.utilsModule;
-        return dialogs.confirm("Do you want to leave the current app?").then((result) => {
-            if (result === true) {
+        return context.executeAction('/MDKDeepLink/Actions/Confirmation.action').then((result) => {
+            if (result.data) {
                 //This will open SAP.com website
                 return utilsModule.openUrl("https://www.sap.com");
             } else {
@@ -136,7 +149,7 @@ In the MDK editor, you will create 2 new Rule files:
 
 [ACCORDION-BEGIN [Step 3: ](Add buttons on main page to open other apps or web pages)]
 
-1. Next, on `Main.page`, drag and drop the **Section Button Table** Container control onto the Page.
+1. Next, on `Main.page`, drag and drop the **Button Table** Static Container control onto the Page.
 
     !![MDK](img_3.1.gif)
 
@@ -145,11 +158,11 @@ In the MDK editor, you will create 2 new Rule files:
 
 2. Now, you will add items to this Container control.
 
-    Drag and drop the **Section Button** Container Item control onto the page.
+    Drag and drop the **Button** Static Item control onto the page.
 
     !![MDK](img_3.2.gif)
 
-3. Repeat the above step, and drag and drop one more such **Section Button** Container Item control.
+3. Repeat the above step, and drag and drop one more such **Button** Static Item control.
 
     !![MDK](img_3.3.png)
 
@@ -182,8 +195,7 @@ In the MDK editor, you will create 2 new Rule files:
 
 [ACCORDION-BEGIN [Step 5: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
-
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy the application definitions to Mobile Services to use in the Mobile client.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
@@ -212,11 +224,11 @@ So far, you have learned how to build an MDK application in the SAP Business App
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Display the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 6: ](Display the QR code for onboarding the Mobile app)]
 
-SAP Business Application Studio has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+Click the **Application.app** to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
 !![MDK](img-6.1.png)
 
@@ -225,12 +237,12 @@ The On-boarding QR code is now displayed.
 !![MDK](img-6.2.png)
 
 
->Leave the Onboarding dialog box open for step 7.
+>Leave the Onboarding dialog box open for the next step.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Run the app in MDK client)]
+[ACCORDION-BEGIN [Step 7: ](Run the app)]
 
 >Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
@@ -238,11 +250,11 @@ The On-boarding QR code is now displayed.
 
 1. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see **Main** page with the buttons you added in previous step 3.
+    After you accept app update, you will see the **Main** page with the buttons you added in previous step 3.
 
     ![MDK](img_7.1.png)
 
-2. Tap **OPEN SAP MOBILE CARDS** and then tap **OK**.
+2. Tap **Open SAP Mobile Cards** and then tap **OK**.
 
     ![MDK](img_7.2.png)
 
@@ -250,7 +262,7 @@ The On-boarding QR code is now displayed.
 
     ![MDK](img_7.3.png)
 
-3. Tapping on **OPEN SAP.COM PAGE** will open SAP website.
+3. Tapping on **Open SAP.com page** will open SAP website.
 
     ![MDK](img_7.4.png)
 
@@ -260,13 +272,15 @@ The On-boarding QR code is now displayed.
 
 1. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see **Main** page with the buttons you added in previous step 3.
+    After you accept app update, you will see the **Main** page with the buttons you added in previous step 3.
 
     !![MDK](img_7.7.png)
 
 2. Tap **Open SAP Mobile Cards** and then tap **OK**.
 
     !![MDK](img_7.8.png)
+
+    !![MDK](img_7.8.1.png)
 
     If you already installed SAP Mobile Cards app, then MDK app will open it.
 
@@ -282,9 +296,5 @@ The On-boarding QR code is now displayed.
 
 [VALIDATE_3]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully implemented Deep Linking to Another App from your MDK App and you can continue with the remaining tutorials in this mission.
 
 ---

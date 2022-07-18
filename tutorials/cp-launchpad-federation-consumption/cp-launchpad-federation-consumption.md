@@ -48,17 +48,17 @@ In a first step, you will add the SAP S/4HANA system as a content provider.
 
    5. Click **Save**.
 
-       ![Provider creation form](3a-new-content-provider-form.png)
+       ![Provider creation form](3b-new-content-provider.png)
 
     > If you select *Automatic addition of all content items*, all exposed content items will be automatically selected in the Content Explorer and added to the My Content tab, as soon as you create the content provider. In this case, when updating a provider, all the new content items are automatically added. In this exercise, you will add content items manually.
 
+    > If you select *Include group and catalog assignments to roles*, the relationship of groups and catalogs to roles from the SAP S/4HANA system is taken into account for the display of the groups and catalogs on the Launchpad service. For more details see [the documentation](https://help.sap.com/docs/Launchpad_Service/8c8e1958338140699bd4811b37b82ece/215517e6d4f44c96b790bbcb56d63572.html).
+
     The content provider is added to the list and the content is loaded. This might take some seconds.
 
-  6. Wait till the status says **Created** and **Partial content was created**. If this takes long, try refreshing the browser page.
+  6. Wait till the status says **Created**. If this takes long, try refreshing the browser page.
 
-    ![Provider created](4a-provider-created.png)
-
-    > The message *Partial content was created* refers to the fact that currently Smart Business apps are not part of the exposed content. As soon as they are supported for federation, you will be able to update your content provider and this message will disappear.
+    ![Provider created](4b-provider-created.png)
 
 [DONE]
 [ACCORDION-END]
@@ -67,7 +67,7 @@ In a first step, you will add the SAP S/4HANA system as a content provider.
 
 1. Click the **Content Manager** icon to manually assign content from your SAP S/4HANA system to ``My Content``, so you can add it to a site.
 
-    !![Content Manager Icon](5-go-to-content-manager.png)
+    !![Content Manager Icon](5a-go-to-content-manager.png)
 
 2. On top of the page, click **Content Explorer** to access content coming from content providers.
 
@@ -153,35 +153,23 @@ Apps are only displayed to users with the corresponding roles assigned. You assi
 
 1. Open the SAP BTP cockpit of your trial account.
 
-2. Navigate to **Security > Role Collections** to go to a list of role collections on your subaccount. When you added the federated content, one role collection for each federated role was automatically created.
+2. Navigate to **Security > Users** to assign the role collections to your user. When you added the federated content, one role collection for each federated role was automatically created.
 
-    ![Role Collections](19-role-collections.png)
-
-
-3. Click the name of the first federated role collection  ``~sap_s4hana_SAP_BR_AP_ACCOUNTANT`` to open this role collection and assign your user to it.
-
-    ![Select role collection](20a-select-role-collection.png)
-
-4. Click **Edit** to switch to Editing mode.
-
-    ![Edit role collection](21a-edit-role-collection.png)
-
-5. Enter the ``E-Mail Address`` with which you login to the SAP Launchpad to the **ID** field in the **Users** section.
-
-    ![Enter Email addresss](22a-enter-email-address.png)
-
-6. Then click **Save**.
-
-    ![Save](23a-save-role-collection.png)
-
-7. To open the next role, click the drop-down icon next to the current role name and select role collection  ``~sap_s4hana_SAP_BR_MASTER_SPECIALIST_FIN``.
-
-    ![Open Next Federated Role](24a-switch-role-collection.png)
+    ![Users](19a-users.png)
 
 
-    Then add your user to the second federated role collection in the same way and save the role collection.
+3. In the list of users available in your subaccount, click on the name of your user.
 
-    ![Assign user to second role collection](25a-second-role.png)
+    ![Select your user](20a-select-user.png)
+
+4. In the user details panel on the right, click the three dots in the **Role Collections** section to open the menu. Then select ``Assign Role Collection``.
+
+    ![Open menu and assign role collection](21e-open-and-assign-role-collection.png)
+
+
+5. In the pop-up window select the checkboxes in front of the two federated roles ``~sap_s4hana_SAP_BR_MASTER_SPECIALIST_FIN`` and ``~sap_s4hana_SAP_BR_AP_ACCOUNTANT``. Then click **Assign Role Collection**.
+
+    ![Select role collections](22c-select-role-collections.png)
 
 Now you are done in SAP BTP cockpit.
 
@@ -208,7 +196,10 @@ Now you are done in SAP BTP cockpit.
 
     ![App Manage outgoing checks](29-manage-checks.png)
 
-5. Launch the SAP GUI app **Maintain Business Partner** in the **Business Data Master** group.
+5. Click the SAP icon to go back to the launchpad homepage.
+
+
+6. Launch the SAP GUI app **Maintain Business Partner** in the **Business Data Master** group.
 
     ![Maintain business partner](30-maintain-business-partner.png)
 

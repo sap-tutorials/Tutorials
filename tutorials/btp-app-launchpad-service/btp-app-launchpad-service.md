@@ -17,7 +17,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
  - [Add Business Logic to Your Application](btp-app-cap-business-logic)
  - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
+ - [Use a Local Launch Page](btp-app-launchpage)
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-prepare-btp)
  - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
@@ -269,7 +269,7 @@ modules:
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 9: ](Add SAP Fiori elements Risks application)]
+[ACCORDION-BEGIN [Step 9: ](Add SAP Fiori Elements Risks application)]
 1. Switch to `app/risks` folder:
 
     ```Shell/Bash
@@ -333,7 +333,6 @@ The newly added modules `nsrisks` and `nsmitigations` do the build of the SAP Fi
         - npm run build:cf
         supported-platforms: []
     ```
-
 
 2. Check the `mitigations` application module `nsmitigations`:
 
@@ -419,12 +418,11 @@ app/*/package-lock.json
 
     > [How to build an MTA archive from the project sources](https://sap.github.io/cloud-mta-build-tool/usage/#how-to-build-an-mta-archive-from-the-project-sources)
 
-3. Go to SAP BTP cockpit to check the deployed content.
+3. Go to [SAP BTP Cockpit](https://account.hana.ondemand.com/) to check the deployed content.
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 14: ](Subscribe to SAP Launchpad service)]
+
+## Subscribe to SAP Launchpad service
+
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
@@ -445,10 +443,8 @@ app/*/package-lock.json
 
 You have now subscribed to the SAP Launchpad service.
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 15: ](Assing SAP Launchpad role collection)]
+## Assign SAP Launchpad role collection
+
 You need to assign your user to the `Launchpad_Admin` role collection, so you don't get an error accessing the **Launchpad Service** site later on.
 
 1. Choose **Security** **&rarr;** **Users** on the left.
@@ -463,12 +459,8 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
 > See section [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html) in the SAP Launchpad service's documentation for more details.
 
+## Create your SAP Launchpad site
 
-
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 16: ](Create your SAP Launchpad site)]
 1. Choose **Services** **&rarr;** **Instances and Subscriptions** on the left.
 
 2. Locate the **Launchpad Service** under **Subscriptions** and choose **Go to Application**.
@@ -522,11 +514,8 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
     > The new site gets the `Everyone` role by default, so you don't have to assign it explicitly. The default site properties are sufficient for the purposes of this tutorial.
 
 
+## Test your SAP Launchpad site
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 17: ](Test your SAP Launchpad site)]
 1. Choose **Go to site**.
 
     !![Go to site](go_to_site.png)

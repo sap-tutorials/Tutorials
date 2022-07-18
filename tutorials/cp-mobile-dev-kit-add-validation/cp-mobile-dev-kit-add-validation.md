@@ -46,7 +46,6 @@ If the Update action fails due to the validation rule, the application will disp
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 2: ](Create a new rule)]
 
 In the MDK editor, you will create a new JavaScript file called `EmailValidation.js` to handle validation if a **@** symbol exists in the email address. In the validation rule, you will grab the data entered by the end-user, validate it and check for the **@** symbol then return true if the email address is of a valid format or false if it is not. The returning result of the validation rule can be used in the Update action to determine whether the action succeeds or fails.
@@ -116,10 +115,14 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-4.3.png)
 
+    >Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+    >!![MDK](img-4.3.1.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test the application)]
+[ACCORDION-BEGIN [Step 5: ](Run the app)]
 
 >Make sure you are choosing the right device platform tab above.
 
@@ -133,6 +136,7 @@ Deploy the updated application to your MDK client.
     ![MDK](img_5.2.2.png)
 
 [OPTION END]
+
 
 [OPTION BEGIN [iOS]]
 
@@ -160,13 +164,12 @@ Deploy the updated application to your MDK client.
     !![MDK](img_5.4.png)
     !![MDK](img_5.5.png)
 
+
 [OPTION END]
+
+Once you complete this tutorial you can continue with [enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
 
 [VALIDATE_1]
 [ACCORDION-END]
-
----
-
-Congratulations, you have successfully completed **create Your First MDK Application** mission and you are now all set to [enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
 
 ---

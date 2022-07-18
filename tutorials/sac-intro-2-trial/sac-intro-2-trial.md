@@ -1,6 +1,6 @@
 ---
-author_name: Megan Hoy
-author_profile: https://github.com/meganhoy
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 title: Set up your SAP Analytics Cloud Trial Account
 description: Sign up for a free trial SAP Analytics Cloud Trial account
 auto_validation: true

@@ -1,6 +1,6 @@
 ---
-author_name: Andrew Liu
-author_profile: https://github.com/andrewliu-SAP
+author_name: Katryn Cheng
+author_profile: https://github.com/katmcheng
 title: Get Familiar with the Story Interface
 description: Get familiar with SAP Analytics Cloud's story interface and learn how to interact with a story
 auto_validation: true

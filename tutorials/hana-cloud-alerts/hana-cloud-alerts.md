@@ -20,7 +20,7 @@ Alerts can inform you of potential issues before they occur, such as when the nu
 
 Alternatively, alert details can be pushed to several configured channels such as email, Slack, or Microsoft Teams.
 
-> Access help from the SAP community or share your feedback on this tutorial by navigating to the "Provide Feedback" link located on the right of this page under the table of contents.
+> Access help from the SAP community or provide feedback on this tutorial by navigating to the "Feedback" link located on the top right of this page.
 
 ---
 
@@ -303,11 +303,11 @@ In this step, ANS will be configured to act on the incoming notifications by sen
 
     See also [Managing Actions](https://help.sap.com/viewer/5967a369d4b74f7a9c2b91f5df8e6ab6/Cloud/en-US/8a7e092eebc74b3ea01d506265e8c8f8.html) for details on other available action types.
 
-9. Provide a **Name** and then scroll to the additional properties section.
+9. Provide a **Name** and then scroll to the **Advanced Action Properties** section.
 
     ![email action details](create-action-email-details.png)
 
-    In the **Additional Properties** section, provide values for **Email Address**, **Subject Template** and **Payload Template**.
+    In the **Advanced Action Properties** section, provide values for **Email Address**, **Subject Template** and **Payload Template**.
 
     ![advanced action details](create-action-email-details-advanced.png)
 

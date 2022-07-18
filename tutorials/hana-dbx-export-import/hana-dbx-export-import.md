@@ -40,7 +40,7 @@ Methods to export tables or views
 | ------- | -------------|------------------------| ----------------|
 | Export from SQL Console | All | local computer         | CSV      |
 | [Export data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/97e8ec0306eb4a12a4fd72de8bdd6a62.html)   | SAP HANA Cloud, HANA database  | S3, Azure, GCS,  Alibaba OSS | CSV, Parquet    |
-| [Export into statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA Cloud, HANA database  | S3, Azure, GCS, Alibaba OSS | CSV, Parquet    |  
+| [Export into statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA Cloud, HANA database  | S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON    |  
 | [Export into statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA on-premise  | SAP HANA file system    | CSV |
 
 Methods to import into tables
@@ -48,10 +48,10 @@ Methods to import into tables
 | Method  | Version       | Source          | Format(s)       | Notes |
 | ------- | -------------|------------------------| ----------------| ------------|
 | [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | All    | local computer         | CSV             | 1 GB max, 2 MB per row in SAP HANA Cloud, HANA database; 200 MB max SAP HANA on-premise |
-| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA Cloud, HANA database    | S3, Azure, GCS, Alibaba OSS | CSV, Parquet    | |
+| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA Cloud, HANA database    | S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON    | |
 | [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)    | SAP HANA Cloud, HANA database   | local computer, S3, Azure, GCS, Alibaba OSS   | `ESRI shapefiles` | An example of importing an `ESRI shapefile` can be found in [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model) tutorial. |
 | [Import data wizard](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA on-premise    | SAP HANA file system         | CSV             | Target table can be created |
-| [Import from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA Cloud, HANA database | S3, Azure, GCS, Alibaba OSS | CSV, Parquet    | |
+| [Import from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA Cloud, HANA database | S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON    | |
 | [Import from statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA on-premise  | SAP HANA file system    | CSV |  |
 | [Insert into table name select from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html) | All  | local or remote tables  | select statement |  |
 
@@ -144,43 +144,41 @@ The following steps are for illustrative purposes only and are not meant to be f
 
 The following steps walk through the process of exporting to and importing data from Google Cloud Storage service with a SAP HANA Cloud, SAP HANA database.
 
->This section of the tutorial will require at least the 2021 QRC 3 Release of SAP HANA Database Explorer. To determine whether or not your system is compatible, from the database context menu, select **Show Overview**.  An example value for version might be 2021.30 which indicates that it was from calendar week 30 (1st week of August) of 2021.
-
 1. Sign in to the [Google Cloud Console](https://console.cloud.google.com/).
 
 2. Create a project.
 
-    !![Create a Google Cloud Platform project](createGCPProject.png)
+    ![Create a Google Cloud Platform project](create-GCP-project.png)
 
 3. Navigate to Cloud Storage.
 
-    !![Cloud Storage](cloudStorage.png)
+    ![Cloud Storage](cloud-storage.png)
 
 4. Create a bucket.
 
-    !![Create a storage bucket](createBucket.png)
+    ![Create a storage bucket](create-bucket.png)
 
 5. Navigate to IAM & Admin.
 
-    !![Identity Access Management](IAMConsole.png)
+    ![Identity Access Management](IAM-console.png)
 
 6. Create a service account.  
 
-    !![Create a service account](serviceAccount.png)
+    ![Create a service account](service-account.png)
 
     Add the Owner role so that the service account can access the resources in the project.
 
-    !![create a service account](createServiceAccount.png)
+    ![create a service account](create-service-account.png)
 
 7. In the generated service account, add a key.
 
-    !![add a key to the service account](serviceAccountAddKey.png)
+    ![add a key to the service account](service-account-add-key.png)
 
     Once complete, a JSON file will be downloaded that contains the `client_email` and `private_key` which will be used when accessing the bucket.
 
 8. Remove any line breaks (i.e. \n) from the private key.  This can be done by pasting the private key into a new SQL Console and opening the search and replace menu (Ctrl-F).
 
-    !![Remove line breaks](remove-line-breaks.png)
+    ![Remove line breaks](remove-line-breaks.png)
 
 9. Execute the following SQL to store the private key and service account as a credential in the database.  
 
@@ -190,14 +188,16 @@ The following steps walk through the process of exporting to and importing data 
     --DROP CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'gcsImport' TYPE 'PASSWORD';
     ```
 
-    !![Create Credential](createCredential.png)
+    ![Create Credential](createCredential.png)
 
     Additional details can be found at [CREATE CREDENTIAL Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d3f464751910148968e73782586ed0.html) and [CREDENTIALS System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209fabf875191014b8f2a4731c564884.html).
 
 10. A Google Storage SSL certificate is required to connect to the Google Cloud Storage bucket via the SAP HANA Cloud, SAP HANA database. Open your SQL console within SAP HANA database explorer, and run the first 3 commands.  Then replace \<SELECTED_CERTIFICATE_ID> with the value returned from the previous select statement.
 
-    ```SQL[27]
+    ```SQL[35]
+    SELECT * FROM PSES;
     CREATE PSE HTTPS;
+    SELECT * FROM CERTIFICATES;
     CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----
     MIIFVzCCAz+gAwIBAgINAgPlk28xsBNJiGuiFzANBgkqhkiG9w0BAQwFADBHMQsw
     CQYDVQQGEwJVUzEiMCAGA1UEChMZR29vZ2xlIFRydXN0IFNlcnZpY2VzIExMQzEU
@@ -261,7 +261,7 @@ The following steps walk through the process of exporting to and importing data 
 
 12. Verify the export was completed successfully by refreshing your bucket within Google Cloud Console.
 
-    !![Successful Export](successfulExport.png)
+    ![Successful Export](successfulExport.png)
 
 13. Enter the SQL statement below to delete the rows in the table.  They will be added back in the next step when the import command is shown.
 
@@ -523,7 +523,7 @@ The following steps walk through the process of AWS S3 storage service as a targ
 
     The certificate below is the [Baltimore `CyberTrust` Root certificate](https://www.digicert.com/kb/digicert-root-certificates.htm).
 
-    ```SQL[6]
+    ```SQL[25]
     SELECT * FROM PSES;
     CREATE PSE HTTPS;
     SELECT * FROM CERTIFICATES;

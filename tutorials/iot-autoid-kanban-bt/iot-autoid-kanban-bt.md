@@ -26,7 +26,7 @@ Smart Sensing Services in SAP Internet of Things allow you to enable business pr
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Get to know Smart Sensing Fiori apps)]
-As of the 2104b version of SAP Internet of Things four new Fiori Apps on Smart Sensing have been released.
+Currently Smart Sensing is a set of five applications.
 
 !![Smart Sensing Apps in Fiori Launchpad](SmartSensing.png)
 
@@ -45,6 +45,11 @@ As of the 2104b version of SAP Internet of Things four new Fiori Apps on Smart S
   - **Line of Business Templates**
 
       In this app, you can choose between various predefined templates (e.g. Kanban Scenario) representing selected business scenarios. You are going to use this app in the next steps.
+
+  -   **Edge Node Descriptor**      
+
+      This application permits you to define data partitioning used when you are deploying Smart Sensing to edge nodes in the **IoT Edge**. It permits to partition data based on Plant(s) or Warehouse(s).
+
 
 [DONE]
 [ACCORDION-END]

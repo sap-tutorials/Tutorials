@@ -69,7 +69,7 @@ Create a Destination which allows you to synchronize business data with your cus
 
     !![destination](destination.png)
 
-4.  If you are planning to use a **Decentralized SAP EWM** system, you can implement additional custom OData APIs to implement features which are not currently exposed as REST endpoint. An example of OData implementation for `Load` and `Unload` APIs for EWM is available [in our public GitHub](https://github.com/SAP-samples/sap-iot-samples/tree/main/iot-autoid-services-samples/EWM%20-%20Load%20Unload%20OData%20APIs).
+4.  If you are planning to use a **Decentralized SAP EWM** system, you can implement additional custom OData APIs to implement features which are not currently exposed as REST endpoint. An example of OData implementation for `Load` and `Unload` APIs for EWM is available [in our public GitHub](https://github.com/SAP-samples/sap-iot-samples/tree/main/iot-smart-sensing-samples/EWM%20-%20Load%20Unload%20OData%20APIs).
 
     -  The **Destination** for the `Load`:
 
@@ -78,7 +78,8 @@ Create a Destination which allows you to synchronize business data with your cus
     |  Name           | **`EWM_custom_load`**  | of your choice |
     |  Type           | `HTTP` |  |
     |  Description    | **`EWM_custom_load`**  | of your choice |
-    |  URL            | **`http://myonprem.com:44320/sap/opu/odata/sap/Z_HU_SMART_SENSING_SRV/load?huident='^{lastValue(${EWMstdENR.HandlingUnitExternalID})}'&lgnum='^{lastValue(${EWMstdENR.Warehouse})}'`** | URL of the custom OData `Load` service incl. placeholder tokens for `Handling Unit` and `Warehouse`. The sample is built considering `EWMstdENR` will be your event enrichment name, defined in the next steps of the tutorial.  |
+    |  URL            | **`http://myonprem.com:44320/sap/opu/odata/sap/Z_HU_SMART_SENSING_SRV/load?huident=
+    '^{lastValue(${EWMstdENR.HandlingUnitExternalID})}'&lgnum='^{lastValue(${EWMstdENR.Warehouse})}'`** | URL of the custom OData `Load` service incl. placeholder tokens for `Handling Unit` and `Warehouse`. The sample is built considering `EWMstdENR` will be your event enrichment name, defined in the next steps of the tutorial.  |
     |  Proxy Type     | `Internet` or `OnPremise`| depending if the system is accessible trough the public internet |
     |  Authentication | `BasicAuthentication`, `OAuth2ClientCredentials` ... | based on your setup in the Communication Arrangement or Cloud Connector |
 
@@ -93,7 +94,8 @@ Create a Destination which allows you to synchronize business data with your cus
     |  Name           | **`EWM_custom_unload`**  | of your choice |
     |  Type           | `HTTP` |  |
     |  Description    | **`EWM_custom_unload`**  | of your choice |
-    |  URL            | **`http://myonprem.com:44320/sap/opu/odata/sap/Z_HU_SMART_SENSING_SRV/unload?huident='^{lastValue(${EWMstdENR.HandlingUnitExternalID})}'&lgnum='^{lastValue(${EWMstdENR.Warehouse})}'`** | URL of the custom OData `Unload` service incl. placeholder tokens for `Handling Unit` and `Warehouse`. The sample is built considering `EWMstdENR` will be your event enrichment name, defined in the next steps of the tutorial.  |
+    |  URL            | **`http://myonprem.com:44320/sap/opu/odata/sap/Z_HU_SMART_SENSING_SRV/unload?huident=
+    '^{lastValue(${EWMstdENR.HandlingUnitExternalID})}'&lgnum='^{lastValue(${EWMstdENR.Warehouse})}'`** | URL of the custom OData `Unload` service incl. placeholder tokens for `Handling Unit` and `Warehouse`. The sample is built considering `EWMstdENR` will be your event enrichment name, defined in the next steps of the tutorial.  |
     |  Proxy Type     | `Internet` or `OnPremise`| depending if the system is accessible trough the public internet |
     |  Authentication | `BasicAuthentication`, `OAuth2ClientCredentials` ... | based on your setup in the Communication Arrangement or Cloud Connector |
 
@@ -122,6 +124,10 @@ The creation of a Smart Sensing scenario is done using several applications avai
 -   **Line of Business Templates**
 
       In this app, you can choose between various predefined templates (e.g. `Inbound Delivery Scenario`) representing selected business scenarios. Since this application permits to create standard scenarios, it cannot be used with custom OData endpoints.
+
+-   **Edge Node Descriptor**      
+
+      This application permits you to define data partitioning used when you are deploying Smart Sensing to edge nodes in the **IoT Edge**. It permits to partition data based on Plant(s) or Warehouse(s).
 
 1.  Open the **Business Context** application and press **Create** to create a new business context.
 
