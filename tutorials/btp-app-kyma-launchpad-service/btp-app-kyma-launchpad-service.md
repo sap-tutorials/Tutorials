@@ -346,6 +346,7 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 ```Shell/Bash
 helm upgrade cpapp ./chart --install
 ```
+
 [DONE]
 [ACCORDION-END]
 ---
@@ -370,6 +371,7 @@ helm upgrade cpapp ./chart --install
     !![New Instance or Subscription](new_instance_dialog.png)
 
 You have now subscribed to the SAP Launchpad service.
+
 [DONE]
 [ACCORDION-END]
 ---
@@ -388,7 +390,8 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 4. Open another browser or clear your browser's cache.
 
 > See section [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html) in the SAP Launchpad service's documentation for more details.
-> [DONE]
+
+[DONE]
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 14: ](Create your SAP Launchpad site)]
@@ -444,6 +447,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 13. Type in `Risk Management Site` for the site name and choose **Create**.
 
     > The new site gets the `Everyone` role by default, so you don't have to assign it explicitly. The default site properties are sufficient for the purposes of this tutorial.
+ 
 [DONE]
 [ACCORDION-END]
 ---

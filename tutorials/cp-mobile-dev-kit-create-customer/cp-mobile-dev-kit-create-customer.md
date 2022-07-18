@@ -305,7 +305,7 @@ Deploy the updated application to your MDK client.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test the application)]
+[ACCORDION-BEGIN [Step 7: ](Run the app)]
 
 >Make sure you are choosing the right device platform tab above.
 
