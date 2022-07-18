@@ -10,7 +10,8 @@ primary_tag: software-product>sap-business-technology-platform
 ---
 
 ## Prerequisites
- - You have an account on SAP Business Technology Platform. See [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) or [Enterprise Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html).
+ - You have an account on SAP Business Technology Platform. See [Set Up an SAP BTP Account for Tutorials](https://developers.sap.com/group.btp-setup.html).
+     **Note:** Make sure to create a subaccount in US East (VA) - AWS. Also, assign entitlements to create a service instance for SAP Continuous Integration and Delivery to be able to complete the following tutorial.
  - You're an administrator of your global account and Org Manager of your subaccount on SAP Business Technology Platform.
  - In your public GitHub repository, you have an SAP Fiori project in the Cloud Foundry environment. See [Create an SAP Fiori Project](https://help.sap.com/viewer/584e0bcbfd4a4aff91c815cefa0bce2d/Cloud/en-US/46664de4d6944471b6c29a0681bfd0fc.html).
     **Note:** You can also use SAP Continuous Integration and Delivery with private GitHub repositories and other source code management systems. For more information, see [SAP Continuous Integration and Delivery](https://help.sap.com/viewer/product/CONTINUOUS_DELIVERY/Cloud/en-US).
