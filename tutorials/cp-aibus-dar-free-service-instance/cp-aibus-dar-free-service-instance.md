@@ -1,5 +1,5 @@
 ---
-title: Use the Free Tier Service Plan to Create a Service Instance for Data Attribute Recommendation
+title: Use Free Tier to Create a Service Instance for Data Attribute Recommendation
 description: Create a service instance and the associated service key for Data Attribute Recommendation using the free tier service plan.
 auto_validation: true
 time: 15
