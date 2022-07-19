@@ -68,11 +68,11 @@ Now, you will use the **Set up account for Business Entity Recognition** booster
 
     !![Service Key](booster-finish.png)
 
-    Follow the progress of the booster automated tasks.
+    Follow the progress of the booster automated tasks:
 
     !![Service Key](booster-progress.png)
 
-    When the automated tasks are done, see the **Success** dialog box.
+    When the automated tasks are done, see the **Success** dialog box:
 
     !![Service Key](booster-success.png)
 
@@ -88,7 +88,7 @@ Click **Download Service Key** to save the service key locally on your computer.
 
 !![Service Key](booster-success-key.png)
 
->If you face any issue with the booster **Set up account for Business Entity Recognition**, you can alternatively follow the steps in [Set Up a BTP Account for Tutorials](group.btp-setup) to manually create the service instance and service key for Business Entity Recognition using the free tier service plan.
+>If you face any issue with the booster **Set up account for Business Entity Recognition**, you can alternatively follow the steps in [Use Free Tier to Create a Service Instance for Business Entity Recognition](cp-aibus-ber-free-service-instance) to manually create the service instance and service key for Business Entity Recognition using the free tier service plan.
 
 Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
 
