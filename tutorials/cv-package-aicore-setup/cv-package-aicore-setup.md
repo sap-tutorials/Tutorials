@@ -1,6 +1,6 @@
 ---
 title: Set Up Computer Vision Package for SAP AI Core
-description: Set Up Python and install computer vision package and its dependencies like PyTorch and Detectron2. Install the SAP AI Core SDK to interact with SAP AI Core using Python.
+description: Set up Python and install computer vision package and its dependencies like PyTorch and Detectron2. Install the SAP AI Core SDK to interact with SAP AI Core using Python.
 auto_validation: true
 time: 30
 primary_tag: topic>artificial-intelligence
@@ -11,38 +11,42 @@ author_profile: https://github.com/kannankumar
 
 
 ### You will learn
-  - How to install packages for python for computer vision package
+  - How to install Python packages for computer vision AI pipelines
   - How to execute python code in Jupyter
   - How to connect to SAP AI Core using the SAP AI Core SDK
 
 ## Prerequisites
   - You have completed the [Create Your First Machine Learning Project using SAP AI Core tutorial series](group.ai-core-get-started-basics)
   - You have [provisioned SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/38c4599432d74c1d94e70f7c955a717d.html)
-  - You have [set up your Git Repository with SAP AI Core](https://help.sap.com/viewer/808d9d442fb0484e9b818924feeb9add/LATEST/en-US/3269092e37d141a293f0dbd7eaafc829.html).
+  - You have [set up your Git repository with SAP AI Core](https://help.sap.com/viewer/808d9d442fb0484e9b818924feeb9add/LATEST/en-US/3269092e37d141a293f0dbd7eaafc829.html).
   - You have [created Docker registry secret in SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/b29c7437a54f46f39c911052b05aabb1.html)
-  - You have [registered your Object Store secret in SAP AI Core](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/b083d73f672c428faac3048b74733546.html)
+  - You have [registered your object store secret in SAP AI Core](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/b083d73f672c428faac3048b74733546.html)
 
 ### Pre-read
+The computer vision package provides a fast and easy way to train computer vision models and set up a serving infrastructure. The computer vision package works with the SAP AI Core SDK (ai-core-sdk) to provide a command line interface to create SAP AI Core templates for training and serving. The package bundles capabilities, such as extensions for detectron2 (library for object detection and image segmentation), and image classification and feature extraction.
+In this tutorial, you first create a virtual Python environment and link it to a Jupyter notebook. You then install Python packages in the virtual Python environment so that you can run computer vision pipelines on SAP AI Core from the Jupyter notebook. 
+After set up, you can train and serve an AI model for object detection. The aim of the model is to recognise objects (numbers) on electricity meter readings. See the tutorials for training and serving.
 
-In this tutorial, you create an virtual Python environment with Jupyter notebook. Then you install required Python packages into the virtual Python environment to run computer vision pipelines on SAP AI Core from your Jupyter notebook.
+
+
 
 #### For Windows users
 
-Python package `detectron2` currently [only supports Linux or MacOS](https://detectron2.readthedocs.io/en/latest/tutorials/install.html#requirements). For this reason, you are recommended to setup a Linux Virtual Machine (VM) in your Windows OS to use the computer vision package and complete the tutorial. For more information about how to install Linux VM, see [guide to install Ubuntu VM on VirtualBox here](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview).
+Python package `detectron2` currently [only supports Linux or MacOS](https://detectron2.readthedocs.io/en/latest/tutorials/install.html#requirements). For this reason, it's recommended that you set up a Linux Virtual Machine (VM) in your Windows OS to use the computer vision package and complete the tutorial. For more information about how to install Linux VM, see [guide to install Ubuntu VM on VirtualBox here](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview).
 
 
 ---
 
 [ACCORDION-BEGIN [Step 2: ](Install Python)]
 
-Download and Install Python 3.9.X from [python.org v3.9.13](https://www.python.org/downloads/release/python-3913/)
+Download and install Python 3.9.X from [python.org v3.9.13](https://www.python.org/downloads/release/python-3913/).
 
-> **CAUTION**: Only python version `3.9` is supported for computer vision package.
+> **CAUTION**: Python version `3.9` is required for the computer vision package.
 
 
 `pip` is the Python package installer. It is required to install `sap-computer-vision-package` and other required packages. `pip` is installed along with Python.
 
-Check `pip` presence using the following snippet on your terminal.
+Check `pip` presence using the following snippet.
 
 ```BASH
 pip --version
@@ -54,16 +58,16 @@ pip --version
 
 [ACCORDION-BEGIN [Step 3: ](Create Python virtual environment)]
 
-Python virtual environment helps you install Python packages inside a sandbox like environment such that you maintain required versions of the packages for your project.
+The virtual Python environment helps you install Python packages inside a sandbox-like environment. You use the environment to maintain required versions of the packages for your project.
 
-Create and activate virtual environment using the following snippet on your terminal. The keyword `sap_cv_env` is name of your environment.
+Create and activate a virtual Python environment using the following snippet. Note, `sap_cv_env` is the name of your environment.
 
 ```BASH
 $ python -m venv sap_cv_env
 $ source sap_cv_env/bin/activate
 ```
 
-You may check which python is used by your virtual environment by running the following snippet.
+Check which Python is used by your virtual environment by running the following snippet.
 
 ```Shell
 $ which python
@@ -80,9 +84,9 @@ You should get path of the Python executable in use by your virtual environment.
 
 [ACCORDION-BEGIN [Step 4: ](Install SAP AI Core SDK)]
 
-The Python package `ai-core-sdk` is an interface to content packages for computer vision task.
+The `ai-core-sdk` Python package is an interface to content packages for computer vision tasks.
 
-Install `SAP AI Core SDK` package in by running the snippet below in your terminal. The command `pip install <package_name>` download the package from [public python repository]((https://pypi.org/project/ai-core-sdk/).) and installs in your virtual environment.
+Install `SAP AI Core SDK` package by running the snippet below. The command `pip install <package_name>` downloads the package from [public python repository]((https://pypi.org/project/ai-core-sdk/).) and installs it in your virtual environment.
 
 ```BASH
 pip install "ai-core-sdk[aicore-content]"
@@ -128,13 +132,13 @@ pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cpu/t
 
 [OPTION BEGIN [Windows]]
 
-> NOTE: Unfortunately, `detectron2` currently does not support Windows OS. We recommend to use a Linux VM for the tutorial. If you need some assistance check out the [Guide to install Ubuntu VM on VirtualBox here](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview).
+> NOTE: `detectron2` does not currently support Windows OS. We recommend that you use a Linux VM for the tutorial. If you need assistance, check [Guide to install Ubuntu VM on VirtualBox here](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview).
 
-On the Linux Virtual Machine you can follow the installation steps listed under the Linux tab.
+On the Linux Virtual Machine, follow the installation steps listed under the Linux tab.
 
 [OPTION END]
 
-> **INFORMATION** Detailed instructions on Torch installation can be found [here](https://pytorch.org/get-started/locally/). After the installation of Torch the matching version of `detectron2` must be installed. Please check the [detectron2 installation guide](https://detectron2.readthedocs.io/en/latest/tutorials/install.html) to select the proper version. The package is tested with `detectron2=0.6`.
+> **INFORMATION** For detailed Torch installation instructions, see [here](https://pytorch.org/get-started/locally/). After installing Torch, the matching version of `detectron2` must be installed. Check the [detectron2 installation guide](https://detectron2.readthedocs.io/en/latest/tutorials/install.html) to select the required version. Test the package with `detectron2=0.6`.
 
 [DONE]
 [ACCORDION-END]
@@ -154,9 +158,9 @@ pip install sap-computer-vision-package
 
 [ACCORDION-BEGIN [Step 7: ](Configure Metaflow)]
 
-Computer vision package uses Metaflow library for SAP AI Core. Metaflow is installed along with `sap-computer-vision-package`. You are required need to configure Metaflow on your system to set your AWS connection to it.
+Computer vision package uses Metaflow library for SAP AI Core. Metaflow is installed along with `sap-computer-vision-package`. You need to configure Metaflow on your system and set your AWS connection to it.
 
-Paste and run the snippet in your terminal. Provide the details to prompts with your AWS Object Store (example: S3) credentials.
+Paste and run the snippet. When prompted, provide the details of your AWS object store (example: S3) credentials.
 
 > **CAUTION** For Windows users, run the snippet within your Linux VM.
 
@@ -164,7 +168,7 @@ Paste and run the snippet in your terminal. Provide the details to prompts with 
 metaflow configure aws
 ```
 
-After this configuration you should have a Metaflow configuration file (`~/.metaflowconfig/config.json`) at the home directory of your user. The contents of that file should look something like this.
+You should now have a Metaflow configuration file (`~/.metaflowconfig/config.json`) in the home directory of your user. The contents of the configuration file should look something like this.
 
 (Template for Metaflow configuration file)
 
@@ -191,19 +195,19 @@ If you don't have `awscli` installed, you can [install AWS CLI](https://docs.aws
 aws configure
 ```
 
-On prompt, provide details of your AWS Object Store (S3) account details similar to the one shown in the screenshot.
+When prompted, provide account details for your AWS object store (S3). It is similar to the example below.
 
 !![image](img/aws_configure.png)
 
-For more details about configuring AWS CLI, see [Official AWS user guide for configuring `awscli`](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
+For more details about configuring AWS CLI, see [Official AWS user guide for configuring `awscli`](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html).
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Install Jupyter)]
-Jupyter is used to execute python code pieces in form of cells.
+Jupyter is used to execute Python code pieces in form of cells.
 
-Run the snippet on your terminal.
+Run the snippet.
 
 ```BASH
 pip install notebook
@@ -211,7 +215,7 @@ pip install notebook
 
 !![image](img/install-jupyter-notebook.png)
 
-Verify Jupyter installation using the below snippet.
+Verify Jupyter installation using the snippet.
 
 ```BASH
 jupyter --version
@@ -234,7 +238,7 @@ nbformat         : 5.0.4
 traitlets        : 4.3.3
 ```
 
-Add the `sap_cv_env` environment to the Jupyter using below snippet.
+Add the `sap_cv_env` environment to the Jupyter using the snippet.
 
 ```BASH
 python -m ipykernel install --name=sap_cv_env
@@ -252,22 +256,22 @@ Installed kernelspec sap_cv_env in /usr/local/share/jupyter/kernels/sap_cv_env
 
 [ACCORDION-BEGIN [Step 10: ](Start Jupyter Notebook)]
 
-On the terminal, navigate to folder which you will be using for this the tutorial (must not be GitHub synced, as in the folder you will store sensitive information). Here my folder is `C:/aicore-test`
+Navigate to folder that you are using for this the tutorial (must not be GitHub synced, as in the folder you will store sensitive information). Here the folder is `C:/aicore-test`
 
-Execute the following on terminal.
+Execute the following to start the Jupyter notebook.
 
 ```BASH
 jupyter notebook
 ```
 
-This would start the Jupyter environment like shown below and automatically open the Jupyter Environment in your default browser.
+This starts the Jupyter notebook like shown below and automatically opens the notebook in your default browser.
 
 !![image](img/start-jupyter-notebook.png)
 
-> **IMPORTANT:** DO NOT close the terminal which started the Jupyter notebook while using the notebook. The webpage is just an interface to this terminal.
+> **IMPORTANT:** DO NOT close the terminal which started the Jupyter notebook while using the notebook. The webpage is an interface to this terminal.
 
 
-The Jupyter environment should look similar to the screenshot below.
+The Jupyter notebook should look similar to the screenshot below.
 
 !![image](img/jupyter-start-screen.png)
 
