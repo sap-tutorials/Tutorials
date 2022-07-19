@@ -21,7 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Review the Data Model)]
+[ACCORDION-BEGIN [Step 1: ](Review the data model)]
 
 Before you move on with the coding, just quickly review the conceptual data model of your solution:
 
@@ -41,9 +41,9 @@ Now, having that model in mind, you can make its definition into the CAP project
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create CDS Data Model File)]
+[ACCORDION-BEGIN [Step 2: ](Create CDS data model file)]
 
-On the **left-hand pane** of **SAP Business Application Studio**, select the `db` folder, then click on the **three dots** to the right of the project name and select **New File**.
+On the **left-hand pane** of **SAP Business Application Studio**, (1) select the `db` folder, then (2) click on the **three dots** to the right of the project name and (3) select **New File**.
 
 ![Figure 2 – Create New File](create-file.png)
 
@@ -54,7 +54,7 @@ On the **dialog**, name the file `projman-model.cds` and click **OK**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Perform the Model Coding)]
+[ACCORDION-BEGIN [Step 3: ](Perform the model coding)]
 
 Copy and paste the **code snippet below** into the recently created file:
 
@@ -133,7 +133,7 @@ You specify that the entities **Employee** (the "bridge" between SAP SuccessFact
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Load Initial Test Data)]
+[ACCORDION-BEGIN [Step 4: ](Load initial test data)]
 
 Now, populate your data model with some initial test data. This can be done by creating some **files in CSV format** into a **subfolder** of the `db` folder named "**data**" with the specific naming convention of `<namespace>-<entity name>.csv`.
 
@@ -246,7 +246,7 @@ fcba3d35-013a-4ab6-9ab9-9fb938eff8a4;3ca47b3e-eff3-430e-9ae0-1937dd094212;3470cf
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Execute the First Test)]
+[ACCORDION-BEGIN [Step 5: ](Execute the first test)]
 
 Now it has come the time to test the project as it is so far. You will start by installing the required project dependencies.
 
@@ -266,7 +266,7 @@ Type `cds watch` and press **Enter** to **run the project** and **watch for chan
 
 ![Figure 12 – Project first run](first-run.png)
 
-Notice that CDS has **automatically set the database** to an **in-memory SQLite database** and filled it with the **CSV files**. It also says that it could not find any service definitions from the loaded models: that's because you really haven't defined any yet (you will do it in the next tutorial from this group).
+Notice that CDS has **automatically set the database** to an **in-memory `SQLite` database** and filled it with the **CSV files**. It also says that it could not find any service definitions from the loaded models: that's because you really haven't defined any yet (you will do it in the next tutorial from this group).
 
 `CTRL+Click` on the `http://localhost:4004` link that is displayed in the terminal to open the project home page in a new browser tab.
 
@@ -281,7 +281,7 @@ But don't worry! They will show up in this page as soon as you complete the next
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check Your Knowledge)]
+[ACCORDION-BEGIN [Step 6: ](Check your knowledge)]
 
 [VALIDATE_1]
 [ACCORDION-END]

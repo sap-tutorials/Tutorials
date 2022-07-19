@@ -105,7 +105,7 @@ Where:
 - `PATH` is a path on the server.
 - `HANDLER` is the function executed when the route is matched.
 
-Add basic logic into the default get endpoint with the following code snippets:
+Add basic logic into the default get endpoint. To make the necessary changes you should navigate to `kyma-multitenant-node/routes/index.js` and add the logic with the following code snippets:
 
 ```javascript
 /**
@@ -139,7 +139,7 @@ router.get("/", function(req, res, next) {
 [ACCORDION-BEGIN [Step 3: ](Project Repository)]
 
 
-You can find the final Node.js project from [here](https://github.com/SAP-samples/btp-kyma-runtime-multitenancy-tutorial/tree/main/Mission:%20Develop%20a%20Node.js%20Application%20in%20the%20SAP%20BTP%20Kyma%20Runtime).
+You can find the final Node.js project from [here](https://github.com/SAP-samples/btp-kyma-runtime-multitenancy-tutorial/tree/main/Mission%20-%20Develop%20a%20Node.js%20Application%20in%20the%20SAP%20BTP%20Kyma%20Runtime).
 
 
 
