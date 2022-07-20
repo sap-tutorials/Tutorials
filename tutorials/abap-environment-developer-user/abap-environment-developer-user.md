@@ -41,6 +41,9 @@ To be connected to your system in ADT, expose an ABAP service and consume this s
 
     ![System URL](Picture18.png)
 
+
+>If you do not have already an existing ADT project, you need to find the URL to the launchpad in the BTP cockpit. For more information see the [link] (https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/11e765e8af6d476f99ce014b3f02bd64.html)
+
  3. Copy this URL in a browser and change the URL like this:
 
     Add `-web` after `.abap` and `/ui` at the end of URL.
