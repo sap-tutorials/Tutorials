@@ -1,6 +1,6 @@
 ---
 author_name: Win Acharya
-author_profile: https://github.com/WinAcharya/
+author_profile: https://github.com/WinAcharya
 title: Add Mail Notifications to a Process
 description: Add mail notifications to your business process via the process builder
 auto_validation: true
@@ -15,7 +15,7 @@ primary_tag: software-product>sap-process-automation
 
 ## Details
 ### You will learn
-  - How to create and send **Mail** notification
+ - How to create and send Mail notification
 ---
 **Mail** feature allows you to add mail notifications to your business process via the process builder, allowing you to send preconfigured emails to recipients while a process is running.
 
@@ -64,16 +64,12 @@ Now that you have designed the process with forms, let us define the mail notifi
 
 5. Configure the Mail Header fields
 
-   - **Field	Description** : To	The recipient of the mail notifications. Either add specific mail addresses or use  information taken from process metadata or context.
-   - **Subject** :The subject of the mail itself. Either add specific text here or use information taken from process metadata or context.
-   - **CC**	: The copied recipient of the mail notifications. Either add specific mail addresses or use information taken from process metadata or context.
-   - **BCC** : The blind copied recipient of the mail notifications. Either add specific mail addresses or use information taken from process metadata or context.
+    - **Field	Description** : To	The recipient of the mail notifications. Either add specific mail addresses or use  information taken from process metadata or context.
+    - **Subject** :The subject of the mail itself. Either add specific text here or use information taken from process metadata or context.
+    - **CC**	: The copied recipient of the mail notifications. Either add specific mail addresses or use information taken from process metadata or context.
+    - **BCC** : The blind copied recipient of the mail notifications. Either add specific mail addresses or use information taken from process metadata or context.
 
     !![Approval Mail Details](Approval-Mail-Details.png)
-
-    After adding the **Approval Mail** and **Rejection Mail**, the process should look like following:
-
-    !![Approval and Rejection Mail Added](Approval-and-Rejection-Mail-Added.png)
 
     > The mail notification is added to the process, with mails sent to recipients when a process is running. You might need to drag the components after the artifacts are deleted in the process builder
 
