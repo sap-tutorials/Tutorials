@@ -189,7 +189,7 @@ In this step you will learn how to configure the application to load data automa
 
     !![Annotation Cursor](t3-open-list-report-page.png)
 
-2. The **Page Editor** will open. Select the **table** node on the tree-structure to show the properties of the table.
+2. The **Page Editor** will open. Select the **table** node on the tree-structure to show the properties of the table. Set **Initial Load**, which controls whether or not the table automatically loads, to `Enabled`.
 
     !![Annotation Cursor](t3-initial-load-table-properties.PNG)
 

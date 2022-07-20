@@ -128,11 +128,9 @@ Generated project is offline enabled and includes three entity sets (`Suppliers`
 
 3. Next, add an **Object Table** control to display information like HTTP status code, HTTP method for the affected record.
 
-    In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Table** control onto the page area.
+    In the Layout Editor, expand the **Controls** | **Data Bound Container** group, drag and drop the **Object Table** control onto the page area.
 
     !![MDK](img_2.3.gif)
-
-    >A **Compound** control contains a group of other controls. Unlike in a container control where you can add your own child controls (container items), the child controls in a compound control are fixed. You can populate each of its child control by defining its data binding, depending on which the child controls are created.
 
 4. In the **Properties** pane, select the previously added service from the **Service** drop down and then select `ErrorArchive` entity set from the dropdown. This way, the Object Table has been bound to `ErrorArchive` entity.
 
@@ -242,7 +240,7 @@ Generated project is offline enabled and includes three entity sets (`Suppliers`
 
 6. Next, add an **Object Table** control in `ErrorDetails.page` to display some information like affected entity and id for affected record.
 
-    Open `ErrorDetails.page`, in the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Table** control onto the page area.
+    Open `ErrorDetails.page`, in the Layout Editor, expand the **Controls** | **Data Bound Container** group, drag and drop the **Object Table** control onto the page area.
 
     !![MDK](img_3.8.gif)
 
@@ -286,7 +284,7 @@ Generated project is offline enabled and includes three entity sets (`Suppliers`
 
 12. Next, you can also display additional information like detailed error message, request body, request URL etc.
 
-    In the Layout Editor, expand the **Controls** | **Container** section, drag and drop the **Static Key Value** control on the page area.
+    In the Layout Editor, expand the **Controls** | **Static Container** group, drag and drop the **Static Key Value** control on the page area.
 
     !![MDK](img-3.13.gif)
 
@@ -298,7 +296,7 @@ Generated project is offline enabled and includes three entity sets (`Suppliers`
 
 14. Next, you will add items to the container.
 
-    In the Layout Editor, expand the **Controls** | **Container Item** section, drag and drop the **Key Value Item** control in the **Static Key Value** control.
+    In the Layout Editor, expand the **Controls** | **Static Items** group, drag and drop the **Key Value Item** control in the **Static Key Value** control.
 
     !![MDK](img-3.14.gif)
 
@@ -486,7 +484,7 @@ Now, that the **Error List** page is created, you will add a button on the **Mai
 
     !![MDK](img_6.1.png)
 
-2. On **Main page**, drag and drop the **Section Button** Container Item control onto the Page.
+2. On **Main page**, drag and drop the **Button** static Item control onto the Page.
 
     !![MDK](img_6.2.gif)
 
@@ -526,11 +524,11 @@ Now, that the **Error List** page is created, you will add a button on the **Mai
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Display the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 8: ](Display the QR code for onboarding the Mobile app)]
 
-SAP Business Application Studio has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+Click the **Application.app** to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
 !![MDK](img-8.1.png)
 
@@ -538,7 +536,7 @@ The On-boarding QR code is now displayed.
 
 !![MDK](img-8.2.png)
 
->Leave the Onboarding dialog box open for step 9.
+>Leave the Onboarding dialog box open for the next step.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -552,7 +550,7 @@ The On-boarding QR code is now displayed.
 
 1. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see **Main** page with some entity sets being displayed and Offline store is being initialized.
+    After you accept app update, you will see **Main** page with some entity sets being displayed and Offline store will be initialized.
 
     ![MDK](img_9.1.png)
 
@@ -602,7 +600,7 @@ The On-boarding QR code is now displayed.
 
 1. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see **Main** page with some entity sets being displayed and Offline store is being initialized.
+    After you accept app update, you will see **Main** page with some entity sets being displayed and Offline store will be initialized.
 
     ![MDK](img_9.9.png)
 

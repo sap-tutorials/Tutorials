@@ -480,10 +480,10 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
 
 1. HDBSQL can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/6097e699826343d0879244185d680a0d.html) interactively, or non-interactively.  A few examples are shown below.
 
-     ```SQL
-     SELECT * FROM HOTEL.CUSTOMER; -- interactive
-     hdbsql -U USER1UserKey "SELECT * FROM HOTEL.CUSTOMER"; -- non-interactive
-     hdbsql -U USER1UserKey -I hotel.sql -- batch file
+    ```SQL
+    SELECT * FROM HOTEL.CUSTOMER; -- interactive
+    hdbsql -U USER1UserKey "SELECT * FROM HOTEL.CUSTOMER"; -- non-interactive
+    hdbsql -U USER1UserKey -I hotel.sql -- batch file
     ```
 
 2. [Substitution variables](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/18ce51f468bc4cfe9112e6be79953e93.html) can used to pass parameters.  

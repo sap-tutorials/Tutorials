@@ -68,7 +68,7 @@ Entitlements and quota are managed at the global account and directory levels, d
 7. Click **Add Service Plans** to exit the popover.
 8. Click **Save**.
 
-  You have now successfully configured entitlements.
+  **You have now successfully configured entitlements.**
 
 [DONE]
 [ACCORDION-END]

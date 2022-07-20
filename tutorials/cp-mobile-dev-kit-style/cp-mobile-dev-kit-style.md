@@ -228,7 +228,7 @@ In this step, you will bind style classes:
 
     In Object browser, double-click `ObjectTableTitle` class to bind style property and click **OK**.
 
-    !![MDK](img-3.2.gif)
+    !![MDK](img-3.2.png)
 
 3. Navigate to **Pages** | **Customers**, click `Customers_Detail.page`, select **Object Header** control, scroll-down to **Style** section and bind control properties to style properties.
 
@@ -241,7 +241,7 @@ In this step, you will bind style classes:
 
 [ACCORDION-BEGIN [Step 4: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services and Cloud Foundry to consume it as Mobile and Web application respectively.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy the application definitions to Mobile Services and Cloud Foundry to use it in the Mobile client and Web application respectively.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
@@ -249,7 +249,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 2. Select deploy target as **Mobile & Cloud**.
 
-    MDK editor will deploy the metadata to Mobile Services (for Mobile application) followed by to Cloud Foundry (for Web application).
+    MDK editor will deploy the metadata to Mobile Services (for Mobile client) followed by to Cloud Foundry (for Web application).
 
     !![MDK](img-4.2.png)
 
@@ -267,9 +267,9 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 >Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-SAP Business Application Studio has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon.
+1. Click the **Application.app** to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
     !![MDK](img-5.1.png)
 
@@ -279,7 +279,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 3. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see the **Main** page (with **Logout** and **Sync** options at bottom of the page), **Customers** and **Products** entity sets to navigate to List-Detail page. In Main page, you will notice styling on action bar, tool bar, items (Logout & Sync) available on tool bar, `Customers` button.
+    After you accept the app update, you will see the list of entities on the **Main** page, **Logout** and **Sync** options at bottom of the page. Tap any entity, it navigates to a list page.  If you select one of the items, the detail page will be displayed. In Main page, you will notice styling on action bar, tool bar, items (Logout & Sync) available on tool bar and `Customers` button.
 
     ![MDK](img-6.4.png)
 
@@ -309,7 +309,7 @@ The On-boarding QR code is now displayed.
 
 3. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see the **Main** page (with **Logout** and **Sync** options at bottom of the page), `Customers` and `Products` entity sets to navigate to List-Detail page. In Main page, you will notice styling on action bar, tool bar, items (Logout & Sync) available on tool bar, `Customers` button.
+    After you accept the app update, you will see the list of entities on the **Main** page, **Logout** and **Sync** options at bottom of the page. Tap any entity, it navigates to a list page.  If you select one of the items, the detail page will be displayed. In Main page, you will notice styling on action bar, tool bar, items (Logout & Sync) available on tool bar and `Customers` button.
 
     ![MDK](img-6.1.png)
 
@@ -333,7 +333,7 @@ The On-boarding QR code is now displayed.
     >You can also open the MDK web application by accessing its URL from `.project.json` file.
     !![MDK](img-6.5.2.png)
 
-    You will see the **Main** page (with **Logout** option at bottom of the page), `Customers` and `Products` entity sets to navigate to List-Detail page. In Main page, you will notice styling on action bar, tool bar, items (Logout) available on tool bar, `Customers` button.
+    You will see the list of entities on the **Main** page, **Logout** and **Sync** options at bottom of the page. Click any entity, it navigates to a list page.  If you select one of the items, the detail page will be displayed. In Main page, you will notice styling on action bar, tool bar, items (Logout & Sync) available on tool bar and `Customers` button.
 
     !![MDK](img-6.7.png)
 
