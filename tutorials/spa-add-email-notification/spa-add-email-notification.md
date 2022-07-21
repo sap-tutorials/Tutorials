@@ -16,6 +16,7 @@ primary_tag: software-product>sap-process-automation
 ## Details
 ### You will learn
  - How to create and send Mail notification
+
 ---
 **Mail** feature allows you to add mail notifications to your business process via the process builder, allowing you to send preconfigured emails to recipients while a process is running.
 
@@ -23,13 +24,13 @@ In this tutorial, you will learn how to use **Mail** in a business process to in
 
 [ACCORDION-BEGIN [Step 1: ](Create and configure mail notification)]
 
-Now that you have designed the process with forms, let us define the mail notifications to send when the sales order is approved manually. We intend to replace the existing **Order Confirmation Form** with the **Mail**.
+Now that you have designed the process with forms, you can define the mail notifications to send when the sales order is approved manually. We intend to replace the existing **Order Confirmation Form** with the **Mail**.
 
 1. The current process looks like the following:
 
     !![The Sales Order Process](Current-Process.png)
 
-2. First, let us remove the  **Order Confirmation Form**.
+2. First, remove the  **Order Confirmation Form**.
 
     - Open the **Process Builder**.
     - Select **Order Confirmation Form**.
@@ -37,9 +38,8 @@ Now that you have designed the process with forms, let us define the mail notifi
 
     !![Remove Order Confirmation Form](Remove-Order-Confirmation.png)
 
-3. Let us now add Mail for approval flow. To add a **Mail** do the following:
+3. Now add Mail for approval flow. To add a **Mail** do the following:
 
-    - Open the **Process Builder**.
     - Select **+** corresponding to **Approve** of the **Approval Form**.
     - Choose **Mail**.
 
@@ -54,6 +54,7 @@ Now that you have designed the process with forms, let us define the mail notifi
     !![Click Open Mail Body Editor](Click-Open-Mail-Body-Editor.png)
 
     The mail body can include the following:
+
     - Text
     - Process context information (such as the Form fields in the example)
     - Process metadata (such as the 'Process Started By' information)
@@ -79,19 +80,16 @@ Now that you have designed the process with forms, let us define the mail notifi
 
     !![Sales Order with Mail Notifications](Final-Outcome.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Validation)]
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Release, deploy and run the business process)]
+[ACCORDION-BEGIN [Step 2: ](Release, deploy and run the business process)]
 
 1. Run the business process.
 
-    [Release, deploy and run the business process](spa-run-process) with the **Order Processing Form** details as below:
+    Release, deploy and run the business process with the **Order Processing Form** details as below:
 
     !![Add inputs to Approval Form](Order-Approval-Request-Form.png)
 
@@ -103,7 +101,7 @@ Now that you have designed the process with forms, let us define the mail notifi
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step 4: ](Test Results)]
+[ACCORDION-BEGIN [Step 3: ](Test Results)]
 
   You will receive the below mail in your inbox after the workflow is successfully approved by the approver:
 
