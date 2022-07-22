@@ -9,6 +9,7 @@ time: 5
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
+
 ## Prerequisites
  - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
  - [Create a Directory for Development](btp-app-create-directory)
@@ -22,9 +23,12 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
 
 ## Details
+
 ### You will learn
  - How to enable authentication support
  - How to set up User Authentication and Authorization (XSUAA)
+
+
 
 To start with this tutorial use the result in the [`hana-cloud-setup`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/hana-cloud-setup) branch.
 
@@ -33,7 +37,7 @@ To start with this tutorial use the result in the [`hana-cloud-setup`](https://g
 [ACCORDION-BEGIN [Step 1: ](Setup XSUAA)]
 1. Run the following command in your project folder:
 
-    ```Shell/Bash
+        ```Shell/Bash
     cds add xsuaa --for production
     ```
 
