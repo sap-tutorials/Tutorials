@@ -65,7 +65,7 @@ Now that you have designed the process with forms, you can define the mail notif
 
 5. Configure the Mail Header fields
 
-    - **Field	Description** : To	The recipient of the mail notifications. Either add specific mail addresses or use  information taken from process metadata or context.
+    - **To** : The recipient of the mail notifications. Either add specific mail addresses or use  information taken from process metadata or context.
     - **Subject** :The subject of the mail itself. Either add specific text here or use information taken from process metadata or context.
     - **CC**	: The copied recipient of the mail notifications. Either add specific mail addresses or use information taken from process metadata or context.
     - **BCC** : The blind copied recipient of the mail notifications. Either add specific mail addresses or use information taken from process metadata or context.
