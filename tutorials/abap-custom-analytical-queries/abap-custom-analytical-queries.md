@@ -10,7 +10,7 @@ author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-The Business user requires the Role `SAP_CA_BC_ANA_AQD_PC` to access the Query Designer.
+The Business user requires the role `SAP_BR_ANALYTICS_SPECIALIST` to access the Query Designer. The according business catalog is `SAP_CA_BC_ANA_AQD`.
 
 ## Details
 **Custom Analytical Queries** is a tool used for reporting and analysis.
