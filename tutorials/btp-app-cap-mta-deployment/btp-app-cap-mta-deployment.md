@@ -127,6 +127,9 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
     cf login
     ```
 
+
+
+
 6. Check if the `multiapps` plugin is already installed:
 
     ```Shell/Bash
@@ -167,6 +170,8 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
 
     !![CF Data in SAP BTP Cockpit](cfdatacloudcockpit.png)
 
+
+
 3. Open a command line window.
 
 4. Set the Cloud Foundry API endpoint.
@@ -180,6 +185,9 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
     ```Shell/Bash
     cf login
     ```
+
+
+
 
 6. Check if the `multiapps` plugin is already installed:
 

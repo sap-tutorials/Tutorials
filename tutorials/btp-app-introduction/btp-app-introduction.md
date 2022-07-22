@@ -36,6 +36,8 @@ The tutorials cover a variety of topics starting from basic onboarding tasks to 
 - Creating an SAP BTP trial account
 - Deployment on SAP BTP
 
+!![Solution diagram](solutions_diagram.png)
+
 [DONE]
 [ACCORDION-END]
 ---
