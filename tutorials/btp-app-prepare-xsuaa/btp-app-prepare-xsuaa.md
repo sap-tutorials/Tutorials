@@ -37,7 +37,7 @@ To start with this tutorial use the result in the [`hana-cloud-setup`](https://g
 [ACCORDION-BEGIN [Step 1: ](Setup XSUAA)]
 1. Run the following command in your project folder:
 
-        ```Shell/Bash
+    ```Shell/Bash
     cds add xsuaa --for production
     ```
 
