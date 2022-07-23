@@ -79,9 +79,9 @@ To start with this tutorial use the result in the [`cap-roles`](https://github.c
 
 SAP HANA Cloud service instances are not created automatically for any type of account. Therefore, you will have to create an SAP HANA Cloud service instance first, if you don't have one yet.
 
-If you already have an SAP HANA Cloud service instance in your Cloud Foundry space **&rarr;** continue with **Use an Existing SAP HANA Cloud service instance**.
+If you already have an SAP HANA Cloud service instance in your Cloud Foundry space &rarr; continue with **Use an Existing SAP HANA Cloud service instance**.
 
-If you need to create an SAP HANA Cloud service instance first **&rarr;** continue with **Create an SAP HANA Cloud service instance**.
+If you need to create an SAP HANA Cloud service instance first &rarr; continue with **Create an SAP HANA Cloud service instance**.
 
 > Additional Documentation:
 
@@ -106,7 +106,7 @@ If you need to create an SAP HANA Cloud service instance first **&rarr;** contin
 
     !![Choose Subaccount](choose_subaccount.png)
 
-4. Choose **Cloud Foundry** **&rarr;** **Spaces** in the left-hand pane.
+4. Choose **Cloud Foundry** &rarr; **Spaces** in the left-hand pane.
 
 5. Choose the space where you already have the SAP HANA Cloud service instance.
 
@@ -144,7 +144,7 @@ If you need to create an SAP HANA Cloud service instance first **&rarr;** contin
 
     !![Choose Subaccount](choose_subaccount.png)
 
-4. Choose **Cloud Foundry** **&rarr;** **Spaces** in the left-hand pane.
+4. Choose **Cloud Foundry** &rarr; **Spaces** in the left-hand pane.
 
 5. Choose the space where you already have the SAP HANA Cloud service instance.
 
@@ -188,7 +188,7 @@ If you need to create an SAP HANA Cloud service instance first **&rarr;** contin
 
     !![Choose Subaccount](choose_subaccount.png)
 
-4. Choose **Cloud Foundry** **&rarr;** **Spaces** in the left-hand pane.
+4. Choose **Cloud Foundry** &rarr; **Spaces** in the left-hand pane.
 
 5. Choose the **Space** that you want to deploy to.
 
@@ -198,7 +198,7 @@ If you need to create an SAP HANA Cloud service instance first **&rarr;** contin
 
     !![SAP HANA Cloud](hana_cloud_empty.png)
 
-7. Choose **Create** **&rarr;** **SAP HANA database**.
+7. Choose **Create***&rarr; **SAP HANA database**.
 
 8. Sign in with your SAP BTP cockpit username/e-mail.
 
@@ -257,7 +257,7 @@ If you need to create an SAP HANA Cloud service instance first **&rarr;** contin
 
     !![Choose Subaccount](choose_subaccount.png)
 
-4. Choose **Cloud Foundry** **&rarr;** **Spaces** in the left-hand pane.
+4. Choose **Cloud Foundry** &rarr; **Spaces** in the left-hand pane.
 
 5. Choose the **Space** that you want to deploy to.
 
@@ -267,7 +267,7 @@ If you need to create an SAP HANA Cloud service instance first **&rarr;** contin
 
     !![SAP HANA Cloud](hana_cloud_empty.png)
 
-7. Choose **Create** **&rarr;** **SAP HANA database**.
+7. Choose **Create***&rarr; **SAP HANA database**.
 
 8. Sign in with your SAP BTP cockpit username/e-mail.
 

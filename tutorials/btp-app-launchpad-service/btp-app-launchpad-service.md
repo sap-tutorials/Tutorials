@@ -394,7 +394,7 @@ app/*/package-lock.json
 
 > Can't see `.gitignore`?
 
-> `.gitignore` files are excluded by default from the file types shown in the VS Code workspace. In VS Code, go to **File** (for macOS: **Code**) **&rarr;** **Preferences** **&rarr;** **Settings**, search for `fileexclude`, and delete the setting for `.gitignore` files under the **Workspace** tab.
+> `.gitignore` files are excluded by default from the file types shown in the VS Code workspace. In VS Code, go to **File** (for macOS: **Code**) &rarr; **Preferences** &rarr; **Settings**, search for `fileexclude`, and delete the setting for `.gitignore` files under the **Workspace** tab.
 
 [DONE]
 [ACCORDION-END]
@@ -431,7 +431,7 @@ app/*/package-lock.json
 
     !![Choose Subaccount](choose_subaccount.png)
 
-2. Choose **Services** **&rarr;** **Service Marketplace** on the left.
+2. Choose **Services** &rarr; **Service Marketplace** on the left.
 
 3. Search for the **Launchpad Service** tile and choose **Create**.
 
@@ -447,7 +447,7 @@ You have now subscribed to the SAP Launchpad service.
 
 You need to assign your user to the `Launchpad_Admin` role collection, so you don't get an error accessing the **Launchpad Service** site later on.
 
-1. Choose **Security** **&rarr;** **Users** on the left.
+1. Choose **Security** &rarr; **Users** on the left.
 
 2. Choose your user.
 
@@ -461,7 +461,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
 ## Create your SAP Launchpad site
 
-1. Choose **Services** **&rarr;** **Instances and Subscriptions** on the left.
+1. Choose **Services** &rarr; **Instances and Subscriptions** on the left.
 
 2. Locate the **Launchpad Service** under **Subscriptions** and choose **Go to Application**.
 
@@ -481,7 +481,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
     !![Add Apps to My Content](add_apps_to_my_content.png)
 
-6. Choose **Content Manager** **&rarr;** **My Content**.
+6. Choose **Content Manager** &rarr; **My Content**.
 
 7. In the item list, choose the item `Everyone`.
 
@@ -495,7 +495,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
 9. Navigate back to **My Content**.
 
-10. Choose **New** **&rarr;** **Group**.
+10. Choose **New** &rarr; **Group**.
 
     !![New Group](new_group.png)
 
@@ -505,7 +505,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
     > This way, you are telling the SAP Launchpad service to display the `Risks` and `Mitigations` apps in a group called `Risk Management`.
 
-12. Choose **Site Directory** **&rarr;** **Create Site**.
+12. Choose **Site Directory** &rarr; **Create Site**.
 
     !![Create Site](create_site.png)
 

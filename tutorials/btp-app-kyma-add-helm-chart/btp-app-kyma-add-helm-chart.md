@@ -42,11 +42,11 @@ To start with this tutorial use the result in the [`prepare-xsuaa`](https://gith
 [ACCORDION-BEGIN [Step 1: ](Add Helm chart)]
 1. In the root directory of your project, run:
 
-    ```Shell/Bash
+    ```
     cds add helm
     ```
 
-2. This creates a directory `chart` with the CAP Helm chart in your project directory.
+    This creates a directory `chart` with the CAP Helm chart in your project directory.
 
 [DONE]
 [ACCORDION-END]
@@ -103,7 +103,7 @@ To start with this tutorial use the result in the [`prepare-xsuaa`](https://gith
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 4: ](Configure cluster domain)]
-The HTML5 applications need the via pubic internet accessible URL of the CAP service. For that the Helm chart needs to know the domain name to access the cluster.
+The HTML5 applications need the Internet-accessible URL of the CAP service. For that the Helm chart needs to know the domain name to access the cluster.
 
 1. Get the host name pattern of the cluster with the following command:
 

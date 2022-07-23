@@ -108,7 +108,7 @@ modules:
 
 
 The Destination service lets you find the destination information that is required to access a remote service or system from your Cloud Foundry application.
-To consume the external service from our cloud deployed application, we will create a Destination and a Destination Service.
+To consume the external service from our cloud deployed application, you will create a Destination and a Destination Service.
 
 [VALIDATE_1]
 [ACCORDION-END]

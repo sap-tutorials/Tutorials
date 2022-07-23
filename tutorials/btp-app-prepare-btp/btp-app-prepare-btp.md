@@ -106,7 +106,7 @@ At least the services for the tutorials [Set Up the SAP HANA Cloud service](btp-
 
 2. Choose **Account Explorer** in the left navigation pane.
 
-3. Choose **Create** **&rarr;** **Subaccount**.
+3. Choose **Create** &rarr; **Subaccount**.
 
     !![Create subaccount](create_subaccount.png)
 
