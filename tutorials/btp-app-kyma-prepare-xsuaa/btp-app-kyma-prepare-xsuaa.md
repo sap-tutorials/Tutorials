@@ -35,9 +35,9 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-BEGIN [Step 1: ](Setup XSUAA)]
 1. Run the following command in your project folder:
 
-```Shell/Bash
-cds add xsuaa --for production
-```
+    ```Shell/Bash
+    cds add xsuaa --for production
+    ```
 
 What happens here? Running `cds add xsuaa` does two things:
 
