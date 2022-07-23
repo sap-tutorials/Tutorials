@@ -74,7 +74,7 @@ You need to set the environment variable for the container registry.
 
 1. Open a terminal and run the following command:
 
-     ```
+     ```Shell/Bash
      CONTAINER_REGISTRY=<Container Registry>
      ```
 
