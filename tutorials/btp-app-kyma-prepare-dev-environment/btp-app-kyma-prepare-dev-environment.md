@@ -150,9 +150,7 @@ See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more detai
 >     In case you experience problems running the commands, check [Command Line Interpreters](btp-app-#command-line-interpreters) for more details on recommended CLIs.
 
 
-=== "Windows"
-
-    There are two additional steps for Windows users.
+    There are two additional steps for Windows users:
 
     3. Go to `C:\ProgramData\chocolatey\bin`.
 
