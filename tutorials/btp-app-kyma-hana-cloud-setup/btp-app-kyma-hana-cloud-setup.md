@@ -2,7 +2,7 @@
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
 title: Set Up SAP HANA Cloud for Kyma
-description: Learn how to add SAP HANA client and configuration, create an HDI container for a SAP HANA Cloud instance on Cloud Foundry, and create credentials for this SAP HANA Cloud instance in your Kyma cluster.
+description: Learn how to add SAP HANA client and configuration, create an HDI container for an SAP HANA Cloud instance on Cloud Foundry, and create credentials for the Cloud Foundry SAP HANA Cloud instance in your Kyma cluster.
 keywords: cap
 auto_validation: true
 time: 5
@@ -21,12 +21,12 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
  - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
- - You have a SAP HANA Cloud instance on Cloud Foundry in your SAP BTP subaccount. You can follow the steps in [Create an SAP HANA Cloud service instance](btp-app-hana-cloud-setup-#create-an-sap-hana-cloud-service-instance) to create one if you haven't already.
- - If you'd like to use an existing SAP HANA Cloud instance from a different SAP BTP subaccount, follow the steps in [Use an existing SAP HANA Cloud service instance](btp-app-#use-an-existing-sap-hana-cloud-service-instance) to map the HANA Cloud instance to your Cloud Foundry space.
+ - You have a HANA Cloud instance on Cloud Foundry in your SAP BTP subaccount. You can follow the step number 4 *Create an SAP HANA Cloud service instance* in [this tutorial](btp-app-hana-cloud-setup) to create one if you haven't already.
+ - If you'd like to use an existing HANA Cloud instance from a different SAP BTP subaccount, follow the step 3 *Use an existing SAP HANA Cloud service instance* in [this tutorial](btp-app-hana-cloud-setup) to map the HANA Cloud instance to your Cloud Foundry space.
 
 ## Details
 ### You will learn
- - How to create an HDI container for a SAP HANA Cloud instance on Cloud Foundry and create credentials for this SAP HANA Cloud instance in your Kyma cluster.
+ - How to create an HDI container for an SAP HANA Cloud instance on Cloud Foundry and create credentials for the SAP HANA cloud instance in your Kyma cluster.
 
 
 ---
@@ -34,7 +34,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-BEGIN [Step 1: ](Overview)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
-Setting up a SAP HANA Cloud instance directly on Kyma is not possible. Hence, in this tutorial, we will setup a SAP HANA Cloud instance on Cloud Foundry (or use an existing one). Afterwards, we'll create an HDI container on Cloud Foundry and will use a script in the templates to create credentials for the Cloud Foundry SAP HANA Cloud instance in your Kyma cluster.
+Setting up an SAP HANA Cloud instance directly on Kyma is not possible. Hence, in this tutorial, you will set up an SAP HANA Cloud instance on Cloud Foundry (or use an existing one). Afterwards, we'll create an HDI container on Cloud Foundry and will use a script in the templates to create credentials for the SAP HANA Cloud instance in your Kyma cluster.
 
 [DONE]
 [ACCORDION-END]
@@ -73,15 +73,15 @@ Setting up a SAP HANA Cloud instance directly on Kyma is not possible. Hence, in
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Setup HANA Cloud)]
+[ACCORDION-BEGIN [Step 3: ](Set Up SAP HANA Cloud)]
 1. Make sure you're logged in both your Cloud Foundry space and your Kyma cluster.
 
-    - **Cloud Foundry**: Run `cf login` and provide credentials. As an alternative, you can directly run `cf login --sso`. You'll have to follow a link to get a temporary authentication code that you can provide instead of manually entering credentials.
-    - **Kyma**: You should be already logged in, if you've followed the instructions in [Login to your Kyma cluster](btp-app-#login-to-your-kyma-cluster). If you want to double check, run a simple command to see if you get any output. For example, if you run `kubectl get secret`, you should get an output similar to the one in Step 3 of [Create container registry secret](btp-app-#create-container-registry-secret).
+    - Cloud Foundry: run `cf login` and provide credentials. As an alternative, you can directly run `cf login --sso`. You'll have to follow a link to get a temporary authentication code that you can provide instead of manually entering credentials.
+    - Kyma: you should be already logged in, if you've followed the instructions in [Login to your Kyma cluster](btp-app-#login-to-your-kyma-cluster). If you want to double check, run a simple command to see if you get any output. For example, if you run `kubectl get secret`, you should get an output similar to the one in Step 3 of [Create container registry secret](btp-app-#create-container-registry-secret).
 
 2. Copy the folder `scripts` from `templates/kyma-add-helm-chart` to your project root folder.
 
-3. In your project root folder, execute:
+3. In the root folder of your project, execute:
 
     ```
     ./scripts/create-db-secret.sh cpapp-db
@@ -89,7 +89,7 @@ Setting up a SAP HANA Cloud instance directly on Kyma is not possible. Hence, in
 
     What happens here? The script completes several tasks:
 
-    - Creates a HDI container on your already existing SAP HANA database instance in your Cloud Foundry space. This is represented by a SAP HANA service instance with plan `hdi-shared`. If you use the name `cpapp` for your project, then this service should be called `cpapp-db`.
+    - Creates an HDI container on your already existing SAP HANA database instance in your Cloud Foundry space. This is represented by a HANA service instance with plan `hdi-shared`. If you use the name `cpapp` for your project, then this service should be called `cpapp-db`.
     - Creates a service key (`cpapp-db-key` if your HDI container service is called `cpapp-bd`) on Cloud Foundry.
     - Creates a secret with the service key's credentials on your Kyma cluster.
 

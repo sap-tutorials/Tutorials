@@ -6,7 +6,7 @@ description: Learn how to prepare your UI applications, add deployment configura
 keywords: cap
 auto_validation: true
 time: 45
-tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-fiori]
+tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model, programming-tool>node-js, software-product>sap-business-technology-platform, software-product>sap-btp-kyma-runtime, software-product>sap-fiori]
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
@@ -20,20 +20,19 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Use a Local Launch Page](btp-app-launchpage)
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
- - [Prepare Your K... Development Environment](btp-app-kyma-prepare-dev-environment)
- - [Setup HANA Cloud for K...](btp-app-kyma-hana-cloud-setup)
+ - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
+ - [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
  - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-kyma-prepare-xsuaa)
  - [Add Helm Chart](btp-app-kyma-add-helm-chart)
- - [Deploy Your Application to K...](btp-app-kyma-deploy-application)
+ - [Deploy Your Application to Kyma](btp-app-kyma-deploy-application)
 
 ## Details
 ### You will learn
- - How to add navigation targets and prepare your UI applications.
- - How to build and push the docker image for HTML5 application `deployer`.
- - How to configure your Helm chart for HTML5 application deployment.
- - How to subscribe to SAP Launchpad service.
- - How to test your SAP Launchpad site.
-
+ - How to add navigation targets and prepare your UI applications
+ - How to build and push the docker image for HTML5 application deployer
+ - How to configure your Helm chart for HTML5 application deployment
+ - How to subscribe to SAP Launchpad service
+ - How to test your SAP Launchpad site
 
 
 
@@ -42,7 +41,6 @@ To start with this tutorial use the result in the [`kyma-add-helm-chart`](https:
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Prepare UI Applications)]
-
 In this tutorial, you will use the SAP Launchpad service to access your CAP service and its UI. Additionally, the SAP Launchpad service provides features like personalization, role-based visibility, theming, and more. You can add multiple applications to one launchpad, including subscribed ones and applications from SAP S/4HANA or SAP BTP.
 
 Navigation targets are required to navigate between applications, but also to start the applications from SAP Launchpad service. In the next steps, you add the navigation targets `Risks-display` and `Mitigations-display` to the application manifest (`manifest.json`) file.
@@ -207,7 +205,7 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 8: ](Create package.json and build script for app deployer)]
-1. Create a file `app/package.json` for the HTML5 application `deployer` application and add the following code to it:
+1. Create a file `app/package.json` for the HTML5 application deployer application and add the following code to it:
 
     ```JSON
     {
@@ -252,13 +250,14 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 
     This script calls the UI5 build for the two SAP Fiori applications and copies the result into the `resources` directory.
 
+
 3. Navigate back to your project root folder:
 
     ```Shell/Bash
     cd ../..
     ```
 
-4. Add the HTML5 application `deployer` package `@sap/html5-app-deployer` to the `app/package.json` file:
+4. Add the HTML5 application deployer package `@sap/html5-app-deployer` to the `app/package.json` file:
 
     ```Shell/Bash
     npm install --prefix app @sap/html5-app-deployer
@@ -304,7 +303,7 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 10: ](Configure Helm chart for HTML5 application deployment)]
-1. Add the HTML5 Application `deployer` to your Helm chart:
+1. Add the HTML5 Application Deployer to your Helm chart:
 
     ```
     cds add helm:html5_apps_deployer
@@ -339,18 +338,17 @@ The `fiori` command automatically sets some value to the SAP Cloud service prope
 
      The backend destination configuration creates a destination with the name `cpapp-srv` pointing to the URL for your CAP service `srv`.
 
-[VALIDATE 1]
+[DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 11: ](Re-Deploy your application)]
+[ACCORDION-BEGIN [Step 11: ](Redeploy your application)]
+You can redeploy your application:
+
 ```Shell/Bash
 helm upgrade cpapp ./chart --install
 ```
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 12: ](Subscribe to SAP Launchpad service)]
+## Subscribe to SAP Launchpad service
 
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
@@ -360,7 +358,7 @@ helm upgrade cpapp ./chart --install
 
     !![Choose Subaccount](choose_subaccount.png)
 
-2. Choose **Services** **&rarr;** **Service Marketplace** on the left.
+2. Choose **Services** &rarr; **Service Marketplace** on the left.
 
 3. Search for the **Launchpad Service** tile and choose **Create**.
 
@@ -372,31 +370,25 @@ helm upgrade cpapp ./chart --install
 
 You have now subscribed to the SAP Launchpad service.
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 13: ](Assign SAP Launchpad role collection)]
+## Assign SAP Launchpad role collection
 
 You need to assign your user to the `Launchpad_Admin` role collection, so you don't get an error accessing the **Launchpad Service** site later on.
 
-1. Choose **Security** **&rarr;** **Users** on the left.
+1. Choose **Security** &rarr; **Users** on the left.
 
 2. Choose your user.
 
-3. Under **Role Collections** on the right, choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
+4. Under **Role Collections** on the right, choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
 
     !![Add role](add_launchpad_admin_role.png)
 
-4. Open another browser or clear your browser's cache.
+5. Open another browser or clear your browser's cache.
 
 > See section [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html) in the SAP Launchpad service's documentation for more details.
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 14: ](Create your SAP Launchpad site)]
+## Create your SAP Launchpad site
 
-1. Choose **Services** **&rarr;** **Instances and Subscriptions** on the left.
+1. Choose **Services** &rarr; **Instances and Subscriptions** on the left.
 
 2. Locate the **Launchpad Service** under **Subscriptions** and choose **Go to Application**.
 
@@ -416,7 +408,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
     !![Add Apps to My Content](add_apps_to_my_content.png)
 
-6. Choose **Content Manager** **&rarr;** **My Content**.
+6. Choose **Content Manager** &rarr; **My Content**.
 
 7. In the item list, choose the item `Everyone`.
 
@@ -430,7 +422,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
 9. Navigate back to **My Content**.
 
-10. Choose **New** **&rarr;** **Group**.
+10. Choose **New** &rarr; **Group**.
 
     !![New Group](new_group.png)
 
@@ -440,18 +432,16 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
     > This way, you are telling the SAP Launchpad service to display the `Risks` and `Mitigations` apps in a group called `Risk Management`.
 
-12. Choose **Site Directory** **&rarr;** **Create Site**.
+12. Choose **Site Directory** &rarr; **Create Site**.
 
     !![Create Site](create_site.png)
 
 13. Type in `Risk Management Site` for the site name and choose **Create**.
 
     > The new site gets the `Everyone` role by default, so you don't have to assign it explicitly. The default site properties are sufficient for the purposes of this tutorial.
- 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 15: ](Test your SAP Launchpad site)]
+
+
+## Test your SAP Launchpad site
 
 1. Choose **Go to site**.
 
@@ -469,7 +459,8 @@ You have launched your `Risks` app through the SAP Launchpad service.
 
 > If you choose **Go**, you will get an error because you haven't assigned a role collection to your user yet. We'll do it in the next tutorial.
 
-[DONE]
+
+[VALIDATE_1]
 The result of this tutorial can be found in the [`kyma-launchpad-service`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/kyma-launchpad-service) branch.
 
 

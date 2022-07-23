@@ -39,7 +39,7 @@ To be able to access the application, your user needs to be assigned to a role c
 
 2. Go to the **Subaccount** where you have deployed your service and application.
 
-3. Choose **Security** **&rarr;** **Role Collections** on the left.
+3. Choose **Security** &rarr; **Role Collections** on the left.
 
 4. Select `RiskManager-<your space>` in the list of role collections.
 
@@ -67,7 +67,7 @@ If not, probably you have signed in before adding the role collection to your us
 
 > As explained in section [Exclude CSV files from deployment](btp-app-cap-mta-deployment), test files should never be deployed to an SAP HANA database as table data. For this reason, we've excluded the test files from the deployment archive before deployment.
 
-## Additional Information: Create a role collection manually
+## (Optional) Create a role collection manually
 
 Instead of creating the role collection automatically using the `xs-security.json`, it's also possible to create a role collection manually. For example:
 
@@ -75,7 +75,7 @@ Instead of creating the role collection automatically using the `xs-security.jso
 
 2. Go to the **Subaccount**.
 
-3. Choose **Security** **&rarr;** **Role Collections** on the left.
+3. Choose **Security** &rarr; **Role Collections** on the left.
 
 4. Choose the ( &#x2B; ) icon to create a new role collection.
 

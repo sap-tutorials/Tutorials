@@ -30,31 +30,31 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
- - How to `undeploy` your CAP application from Kyma
+ - How to undeploy your CAP application from Kyma
 
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Undeploy your CAP application from Kyma)]
-1. Uninstall CAP application:
+1. Uninstall the CAP application:
 
     ```Shell/Bash
     helm uninstall cpapp
     ```
 
-2. Delete database secret:
+2. Delete the database secret:
 
     ```Shell/Bash
     kubectl delete secret cpapp-db
     ```
 
-3. Delete container registry secret:
+3. Delete the container registry secret:
 
     ```Shell/Bash
     kubectl delete secret container-registry
     ```
 
-4. Delete namespace:
+4. Delete the namespace:
 
     ```Shell/Bash
     kubectl delete namespace  risk-management

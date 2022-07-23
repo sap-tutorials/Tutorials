@@ -40,7 +40,7 @@ Fortunately, you have also got a choice of several templates that get your appli
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Creating the application)]
-1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P** for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
+1. In VS Code, invoke the Command Palette ( **View** &rarr; **Command Palette** or **⇧⌘P** for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
 
     > In case you get an error launching the Application Generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.

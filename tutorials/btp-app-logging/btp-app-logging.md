@@ -65,7 +65,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 
     !![Choose Subaccount](choose_subaccount.png)
 
-2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
+2. Choose **Cloud Foundry** &rarr; **Spaces**.
 
 3. Choose your space.
 
@@ -85,7 +85,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 [ACCORDION-BEGIN [Step 3: ](Analyze logs using Kibana dashboard)]
 1. In SAP BTP Cockpit, navigate to your **Subaccount**.
 
-2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
+2. Choose **Cloud Foundry** &rarr; **Spaces**.
 
 3. Choose your space.
 
