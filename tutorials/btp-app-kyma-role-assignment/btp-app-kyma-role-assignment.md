@@ -54,9 +54,9 @@ To be able to access the application, your user needs to be assigned to a role c
 Your user now appears in the list of the role collection's users.
 
 [VALIDATE_1]
-
-## Test it
-
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 2: ](Test it)]
 Go to the application and choose the tile `Risks`. You should be able to create entries in the `Risks` application.
 
 If not, probably you have signed in before adding the role collection to your user. Sign out and sign in again to get the added roles in your login ticket.
@@ -65,8 +65,10 @@ If not, probably you have signed in before adding the role collection to your us
 
 > As explained in section [Exclude CSV files from deployment](btp-app-cap-mta-deployment), test files should never be deployed to an SAP HANA database as table data. For this reason, we've excluded the test files from the deployment archive before deployment.
 
-## (Optional) Create a role collection manually
-
+[DONE]
+[ACCORDION-END]
+---
+[ACCORDION-BEGIN [Step 3: ]((Optional) Create a role collection manually)]
 Instead of creating the role collection automatically using the `xs-security.json`, it's also possible to create a role collection manually. For example:
 
 1. Open **SAP BTP Cockpit**.
@@ -103,5 +105,6 @@ The new role collection appears now in the list, but it doesn't contain any role
 
 7. Choose **Save**.
 
+[DONE]
 [ACCORDION-END]
 ---
