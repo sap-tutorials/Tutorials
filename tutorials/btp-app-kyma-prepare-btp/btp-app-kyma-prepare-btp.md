@@ -78,12 +78,12 @@ The following services with their service plans and entitlements are required fo
 | Service                           | Plan       | Amount | Unit         | Tutorial                                |
 | --------------------------------- | ---------- | ------ | ------------ | --------------------------------------- |
 | Kyma runtime             | `Kyma Runtime Trial`     | 1      | GB           | [Prepare for SAP BTP Development](btp-app-#configure-kyma-in-your-subaccount)   |
-| SAP HANA Schemas & HDI Containers | `hdi-shared` | 1      | instances    | [Setup HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)   |
-| SAP HANA Cloud                    | `hana`       | 1      | instances    | [Setup HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)     |
+| SAP HANA Schemas & HDI Containers | `hdi-shared` | 1      | instances    | [Set Up HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)   |
+| SAP HANA Cloud                    | `hana`       | 1      | instances    | [Set Up HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)     |
 | SAP Launchpad service             | `standard`   | 1      | active users | [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service) |
 
 
-> The services mentioned below are Utility Services, no entitlement needed
+> The following services are Utility Services, no entitlement needed:
 
 | Service                          | Plan        | Amount | Unit         | Tutorial                                |
 | -------------------------------- | ----------- | ------ | ------------ | --------------------------------------- |

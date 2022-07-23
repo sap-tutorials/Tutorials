@@ -93,7 +93,7 @@ You need to set the environment variable for the container registry.
 
 1. (Optional) Run the following command to remove the test data:
 
-     ```
+     ```Shell/Bash
      rm -rf gen/db/data
      ```
 
@@ -204,7 +204,7 @@ Troubleshooting: The Helm chart starts a job that deploys the database content a
 [ACCORDION-BEGIN [Step 8: ](Check your database deployment)]
 Check you database deployment using:
 
-```
+```Shell/Bash
 kubectl get jobs
 ```
 
@@ -223,7 +223,7 @@ cpapp-hana-deployer  0/1           3m7s       3m7s
 
 In such a case, you can check the deployer's logs. First, print the pods:
 
-```
+```Shell/Bash
 kubectl get pods
 ```
 
@@ -240,13 +240,13 @@ cpapp-hana-deployer-zc9c2      0/1     Error     0          6m56s
 
 Just pick one of the pod names to receive its logs. For example:
 
-```
+```Shell/Bash
 kubectl logs cpapp-hana-deployer-6s7fl
 ```
 
 With the `describe` command you can inspect the state of the pod:
 
-```
+```Shell/Bash
 kubectl describe pod cpapp-hana-deployer-6s7fl
 ```
 
@@ -262,7 +262,7 @@ You can check and adjust the settings for [the trusted source IP addresses](http
 
 You can get your clusters outbound IP address with the following command:
 
-```
+```Shell/Bash
 kubectl run -it --rm --restart=Never --image alpine/curl nat-ip-probe --overrides='{ "apiVersion": "v1", "metadata": {"annotations": { "sidecar.istio.io/inject":"false" } } }' -- curl https://httpbin.org/ip
 ```
 
@@ -274,7 +274,7 @@ The command takes a few second to execute and will print a JSON object with an I
 [ACCORDION-BEGIN [Step 10: ](Check your CAP service)]
 If the deployment was successful, you should see the running CAP service in the list of pods:
 
-```
+```Shell/Bash
 kubectl get pods
 ```
 
@@ -287,7 +287,7 @@ You can use the `logs` and `describe` commands as described above to inspect the
 
 Your service is made externally available using the `VirtualService` resource from `Istio`. You can check your externally exposed hostname:
 
-```
+```Shell/Bash
 kubectl get virtualservice
 ```
 
