@@ -22,7 +22,7 @@ primary_tag: software-product>sap-hana-cloud
 
 [ACCORDION-BEGIN [Step 1: ](Database explorer overview)]
 
-The SAP HANA database explorer is a web-based tool for browsing and working with SAP HANA database objects such as tables, views, functions, stored procedures, importing and exporting data, debugging SQLScript, executing SQL statements, working with multi-model data such as graph, spatial and JSON collections, creating remote sources, viewing trace files, and troubleshooting.  It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP HANA 1.0 SPS 12. As it is web-based, individual users do not need to worry about installing the software or applying patches.  As of March 25, 2021 it also offers support for data lake Relational Engine connections, and as of March 14, support for data lake File Containers.  There is now also an [extension](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer&ssr=false#overview) for Visual Studio Code that offers a subset of functionality.  
+The SAP HANA database explorer is a web-based tool for browsing and working with SAP HANA database objects such as tables, views, functions, stored procedures, importing and exporting data, debugging SQLScript, executing SQL statements, working with multi-model data such as graph, spatial and JSON collections, creating remote sources, viewing trace files, and troubleshooting.  It was previously named SAP HANA Runtime Tools (HRTT) and was introduced in SAP HANA 1.0 SPS 12. As it is web-based, individual users do not need to worry about installing the software or applying patches.  The SAP HANA Cloud version offers support for data lake Relational Engine connections, and as of March 14 2022, support for the data lake Files container.  There is now also an [extension](https://marketplace.visualstudio.com/items?itemName=SAPSE.hana-database-explorer&ssr=false#overview) for Visual Studio Code that offers a subset of functionality.
 
 ![database explorer](dbx.png)
 
@@ -181,7 +181,13 @@ For more information on the operations available with the CLI, refer to the docu
 
 >![copy Configuration](hcc-copy-json.png)
 
+>---
 
+>Another tool that can be used to manage a SAP HANA Cloud instance is the SAP Automation Pilot.  It provides commands for working with an SAP HANA Cloud instances as well as Cloud Foundry applications.  The below is an example command used to stop an SAP HANA Cloud instance.  
+
+>![stop SAP HANA Cloud command](automation-pilot.png)
+
+>The Automation Pilot also provides a scheduler and integration with SAP Alert Notification Service.  For further details see [Take Action Following a SAP HANA Cloud Database Alert with SAP Automation Pilot](hana-cloud-alerts-autopilot).
 
 [DONE]
 [ACCORDION-END]

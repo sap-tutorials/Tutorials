@@ -65,7 +65,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Run As Background Activity](RunAsBackgroundActivity.png)
 
-10. To view the results of a query that was run in the background, open the Background Activities Monitor, select the query, and then choose the Open Details button.  A new SQL console will open displaying the SQL, the results, and any messages from the execution period.
+10. To view the results of a query that was run in the background, open the Background Activities Monitor, select the query, and then choose the Open Details button.  A new SQL console will open displaying the SQL, the results, and any messages from the execution period. 
 
     ![View Results](ViewResults.png)
 
@@ -77,9 +77,13 @@ primary_tag: software-product>sap-hana-cloud
 
     ![Database Groups](DatabaseGroups.png)
 
-13. To view the results of a query run on multiple databases, open the Background Activities Monitor, select the query to view the result of, and then choose the Open Details button.
+13. To view the results of a query run on multiple databases, open the Background Activities Monitor, select the query to view the result of, and then choose the Open Details button or Download button.
 
     ![Multiple Databases Result](MultipleDatabasesResult.png)
+
+    The download button provides the results in a JSON document.
+
+    ![Downloaded results](SQLResultsJSON.png)
 
 14. Returned results in HTML, XML, JSON, extended well-known binary formatted spatial data, or binary data can be displayed in a separate viewer.  Enter the SQL statements below and execute the query.
 
@@ -97,7 +101,7 @@ primary_tag: software-product>sap-hana-cloud
 
     ![JSON Viewer](ViewJSON.png)
 
-    To learn more about viewing spatial data, see [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model).
+    To see an example on viewing spatial data, see [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model).
 
 15. The results of a query can be downloaded and exported.
 
