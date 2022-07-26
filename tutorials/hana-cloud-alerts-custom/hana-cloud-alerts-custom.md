@@ -592,7 +592,9 @@ In this step, the command will be scheduled to run once a week.
 
     Additional details can be found at [Scheduled Execution](https://help.sap.com/docs/AUTOMATION_PILOT/de3900c419f5492a8802274c17e07049/96863a2380d24ba4bab0145bbd78e411.html).
 
-2. Provided commands such as `StopHanaCloudInstance` and `StartHanaCloudIntance` can also be scheduled perhaps to shut down and restart a development SAP HANA Cloud instance on weekends.
+2. Provided commands such as `StopHanaCloudInstance` and `StartHanaCloudIntance` can also be scheduled perhaps to shut down and restart a development SAP HANA Cloud instance on weekends.  The `StopHanaCloudInstance` command is shown below.
+
+    ![stop HANA Cloud command](automation-pilot.png)
 
 Congratulations! You have now used the SAP Automation Pilot to schedule a query against an SAP HANA Cloud database and to send a notification that reflects the result of the query.
 
