@@ -156,21 +156,19 @@ The following steps walk through the process of exporting to and importing data 
 
 1. Complete steps 3 and 4 in the [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli) tutorial to configure the trust setup of the data lake Files container.
 
-2. Add the data lake File container to the SAP HANA database explorer.
+2. Add the data lake Files container to the SAP HANA database explorer.
 
-    * Add the Data Lake File container to the SAP HANA database explorer.
+    ![Add Connection](addConnection.png)
 
-        ![Add Connection](addConnection.png)
+    The REST API endpoint can be copied from the instances actions menu in SAP HANA Cloud Central.
 
-        The REST API endpoint can be copied from the instances actions menu in SAP HANA Cloud Central.
+    ![Add data lake Files](add-data-lake-files.png)
 
-        ![Add data lake files](add-data-lake-files.png)
+    After the data lake Files container has been added, files can be uploaded, viewed, or deleted.
 
-    * After the data lake file container has been added, files can be uploaded, viewed, or deleted.
+    ![File container added](file-container-added.png)
 
-        ![File container ddded](file-container-added.png)
-
-3. Create a database credential for the data lake File container.  Further details are described at [Importing and Exporting with SAP HANA Cloud Data Lake Files Storage](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/462c861413b043bd93b9e8e838249b6e.html).
+3. Create a database credential for the data lake Files container.  Further details are described at [Importing and Exporting with SAP HANA Cloud Data Lake Files Storage](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/462c861413b043bd93b9e8e838249b6e.html).
 
     ```SQL
     SELECT * FROM PSES;
@@ -215,9 +213,9 @@ The following steps walk through the process of exporting to and importing data 
     CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DBADMIN_DL_CREDENTIAL' TYPE 'X509' PSE HTTPS;
     ```
 
-4. Export `HOTEL.MAINTENANCE` into the data lake files container.
+4. Export `HOTEL.MAINTENANCE` into the data lake Files container.
 
-    ![Export to data lake files](export-data-lake-files.png)
+    ![Export to data lake Files](export-data-lake-files.png)
 
     The wizard makes use of the export from statement.  An example is shown below:
 
@@ -242,7 +240,7 @@ The following steps walk through the process of exporting to and importing data 
 
     From the Import data from drop down, select **Data Lake Files**.
 
-    ![Import form data lake files](importDataWizardDataLakeFiles.png)
+    ![Import form data lake Files](importDataWizardDataLakeFiles.png)
 
     The wizard makes use of the import from statement.  An example is shown below:
 
