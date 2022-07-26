@@ -181,7 +181,13 @@ For more information on the operations available with the CLI, refer to the docu
 
 >![copy Configuration](hcc-copy-json.png)
 
+>---
 
+>Another tool that can be used to manage a SAP HANA Cloud instance is the SAP Automation Pilot.  It provides commands for working with an SAP HANA Cloud instances as well as Cloud Foundry applications.  The below is an example command used to stop an SAP HANA Cloud instance.  
+
+>![stop SAP HANA Cloud command](automation-pilot.png)
+
+>The Automation Pilot also provides a scheduler and integration with SAP Alert Notification Service.  For further details see [Take Action Following a SAP HANA Cloud Database Alert with SAP Automation Pilot](hana-cloud-alerts-autopilot).
 
 [DONE]
 [ACCORDION-END]
