@@ -497,6 +497,7 @@ module.exports = {
     deleteUnassignedEmployees,
     beforeSaveProject,
     afterSaveProject
+}
 ```
 
 You just added three additional helpers: two for employee creation/update and one for the special assignment creation in SAP SuccessFactors.
