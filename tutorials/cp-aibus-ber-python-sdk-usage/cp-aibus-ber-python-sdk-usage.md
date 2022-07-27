@@ -91,7 +91,7 @@ pprint(my_ber_client.get_trained_model_versions(model_name).json())
 
 The above code first opens the file containing your service key and reads its values. It then creates an instance of the `BER_API_Client` using your service key.
 
-Afterwards it lists all models that exist in your subaccount. If you have not used this service before and have not done any retraining, only the four pre-trained models sap_address_entity, sap_email_business_entity, sap_generic_entities and sap_invoice_header should be listed.
+Afterwards it lists all models that exist in your subaccount. If you have not used this service before and have not done any retraining, only the four pre-trained models `sap_address_entity`, `sap_email_business_entity`, `sap_generic_entities` and `sap_invoice_header` should be listed.
 
 Finally, each model is listed with it's version, supported languages, and capabilities (i.e. entities to be extracted).
 
@@ -149,7 +149,7 @@ with open('inference_response.json', 'w') as f:
 
 As in the previous code snippet, the above code first opens the file containing your service key and reads its values. Then, it creates an instance of the `BER_API_Client` using your service key.
 
-Afterwards, it posts an inference job to the business entity recognition service specifying the sap_email_business_entity model and version 1 of that model.
+Afterwards, it posts an inference job to the business entity recognition service specifying the `sap_email_business_entity` model and version 1 of that model.
 If you want to use a different pre-trained model or one of your own models simply change the variables `model_name` and `model_version` to your preferred values.
 
 Finally it saves the response of your inference job to the `inference_response.json`.

@@ -37,18 +37,21 @@ For more information on how to configure and run predefined pipelines for your o
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Enable SAP Continuous Integration and Delivery service)]
-[OPTION BEGIN [Trial]]
+[OPTION BEGIN [Free Tier]]
 
 1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
 
     [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-    > When running the tutorial with a trial account, please have in mind the following considerations:
+    > If you do not have an SAP BTP account that enables you to test out SAP Continuous Integration and Delivery for free yet, complete the following steps:
 
-    > * Choose host region `cf-us10` when creating a new trial account. This will ensure that the SAP Continuous Integration and Delivery service is available to your account.
-    > * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, the SAP Continuous Integration and Delivery service might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP Cockpit.
+    > 1. [Get an Account on SAP BTP to Try Out Free Tier Service Plans](https://developers.sap.com/tutorials/btp-free-tier-account.html): Make sure to create a subaccount in `cf-us10`. This will ensure that the SAP Continuous Integration and Delivery service is available to your account.
+    > 2. [Manage Entitlements Using the Cockpit](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html): Assign the service plan for SAP Continuous Integration & Delivery. You can select the service plan called **Free** to test out the service without any costs.
+    > 3.  [Create a Service Instance in SAP BTP](https://developers.sap.com/tutorials/btp-cockpit-instances.html): Create a service instance for SAP Continuous Integration & Delivery to be able to complete the following tutorial. 
 
-1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
+﻿
+
+1. Enter your **Global Account**.
 
 2. Choose **Account Explorer**.
 
@@ -248,6 +251,8 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 10. For **Build Tool**, leave **`mta`** as preselected.
 
+11. For **Build Tool Version**, select the latest version.
+
 11. Leave the execution of the **Maven Static Code Checks** step switched off.
 
 12. Leave the execution of the **Lint Check** step switched off.
@@ -374,7 +379,7 @@ You have to trigger your job manually the first time after creation.
 
     > Verify you have added all necessary entitlements to your account as specified in [Prepare for SAP BTP Development](btp-app-prepare-btp).
 
-3. Navigate to your space in the SAP BTP Cockpit and check the list of installed applications. Now, you have a **cpapp-db-deployer** application and a **cpapp-srv** application.
+3. Navigate to your space in the SAP BTP cockpit and check the list of installed applications. Now, you have a **cpapp-db-deployer** application and a **cpapp-srv** application.
 
     !![Applications](CICD_cpapp_applications.png)
 

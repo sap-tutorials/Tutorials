@@ -21,13 +21,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create the Service Definition File)]
+[ACCORDION-BEGIN [Step 1: ](Create the service definition file)]
 
 In the previous tutorial from this group, you have defined the data model for your solution and populated it with some initial test data. But, when you first run the application you noticed no services have been defined, thus the entities where not exposed.
 
 In this step you will create the service definition file for further coding.
 
-On the **left-hand pane** of **SAP Business Application Studio**, select the `srv` folder, then click on the **three dots** to the right of the project name and select **New File**.
+On the **left-hand pane** of **SAP Business Application Studio**, (1) select the `srv` folder, then (2) click on the **three dots** to the right of the project name and (3) select **New File**.
 
 ![Figure 1 – Create New File](create-file.png)
 
@@ -38,7 +38,7 @@ On the **dialog** name the file `projman-service.cds` and click **OK**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Code the Service Definition)]
+[ACCORDION-BEGIN [Step 2: ](Code the service definition)]
 
 Copy and paste the **code snippet below** into the recently created file:
 
@@ -79,7 +79,7 @@ service ProjectManager @(path : '/projman') {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Understand the Definition Code)]
+[ACCORDION-BEGIN [Step 3: ](Understand the definition code)]
 
 Quickly analyze the service definition code:
 
@@ -98,7 +98,7 @@ You also annotate the **Project** entity (the **root entity** of your model) wit
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test the Service)]
+[ACCORDION-BEGIN [Step 4: ](Test the service)]
 
 Now that you have properly defined a service and exposed the desired entities, you should notice that, in the **Terminal**, `cds watch` has updated:
 
@@ -119,7 +119,7 @@ If you click the `SFSF_User` link you'll get an error, because that's not an ent
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check Your Knowledge)]
+[ACCORDION-BEGIN [Step 5: ](Check your knowledge)]
 
 [VALIDATE_1]
 [ACCORDION-END]

@@ -144,6 +144,8 @@ To get full insights into the features of Q&A, watch this video.
 
 When you follow a question, activities related to the question, such as comments and/or answers will appear in your [Activity Stream](https://activities.sap.com/). Depending on your [Communication settings](https://people.sap.com/#communications), you will also get notified via e-mail and/or your SAP Community inbox.
 
+> Keep in mind: To ensure harmonious interactions amongst each other, it is important to understand the SAP Community [Rules of Engagement](https://community.sap.com/resources/rules-of-engagement) that will allow you to be active in the community without encountering issues or negative feedback when you post a question, answer, or blog post.
+
 [DONE]
 [ACCORDION-END]
 
@@ -165,7 +167,11 @@ To get full insights into the features of Blogging, watch this video.
 
 When you follow a blog post, activities related to the blog post (such as comments) will appear in your **Activity Stream**.  Depending on your [Communication settings](https://people.sap.com/#communications), you will also get notified via e-mail and/or your SAP Community inbox.
 
-There is one prerequisite before you can start blogging: In order for your blogging permissions to change from **Subscriber** to **Contributor** ([learn more](https://community.sap.com/resources/blogging)), you need to receive the **Hello World** badge. You will be awarded the **Hello World** badge by performing at least one of the **`follow activities`** mentioned during the previous steps (follow person, follow tag, follow question, follow blog post). Learn more under [Missions & Badges](https://community.sap.com/resources/missions-badges).
+There is one prerequisite before you can start blogging: In order for your blogging permissions to change from **Subscriber** to **Contributor** ([learn more](https://community.sap.com/resources/blogging)), you need to receive the **Hello World** badge. You will be awarded the **Hello World** badge by performing at least one of the **`follow activities`** mentioned during the previous steps (follow person, follow tag, follow question, follow blog post). Find out more under [Missions & Badges](https://community.sap.com/resources/missions-badges). Simply log out and log back into your SAP user account from the [Blogging area](https://blogs.sap.com/) to see the changes in your blogging permissions. Go to the [Write a Blog Post](https://blogs.sap.com/wp-admin/post-new.php) page to confirm your permissions.
+
+If your blogging permissions haven't changed or you have other questions related to this tutorial, please contact <a href="mailto:community@sap.com">community@sap.com</a>.
+
+> Keep in mind: To ensure harmonious interactions amongst each other, it is important to understand the SAP Community [Rules of Engagement](https://community.sap.com/resources/rules-of-engagement) that will allow you to be active in the community without encountering issues or negative feedback when you post a question, answer, or blog post.
 
 [DONE]
 [ACCORDION-END]

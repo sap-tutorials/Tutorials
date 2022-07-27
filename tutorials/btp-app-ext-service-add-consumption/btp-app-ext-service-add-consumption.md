@@ -185,7 +185,7 @@ Later in the tutorial [Use SAP S/4HANA Cloud Service](btp-app-ext-service-s4hc-u
 
 1. Open again the [**Business Partner (A2X)**](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) page on the **SAP API Business Hub**.
 
-2. Under **Overview** **&rarr;** **Configuration Details**, you find the **Sandbox URL**. Keep the page open, you'll need it later again.
+2. Under **Overview** &rarr; **Configuration Details**, you find the **Sandbox URL**. Keep the page open, you'll need it later again.
 
     !![Sandbox](sandbox.png)
 

@@ -17,7 +17,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
  - [Add Business Logic to Your Application](btp-app-cap-business-logic)
  - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
+ - [Use a Local Launch Page](btp-app-launchpage)
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - You have an SAP BTP global account, a subaccount, and a Cloud Foundry space with the required entitlements to deploy the application.
 
@@ -40,7 +40,7 @@ In general, you have a choice of the following options:
 > When running the tutorial with a trial account, please have in mind the following considerations:
 
 > * Choose host region `cf-us10` when creating a new trial account. This will ensure that all services required throughout the tutorial are available to your account.
-> * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, some services required throughout the tutorial might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP Cockpit.
+> * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, some services required throughout the tutorial might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP cockpit.
 
 **Live:** There are multiple live landscapes available in different data centers around the globe. Live landscapes are intended for productive usage and development projects.
 
@@ -106,7 +106,7 @@ At least the services for the tutorials [Set Up the SAP HANA Cloud service](btp-
 
 2. Choose **Account Explorer** in the left navigation pane.
 
-3. Choose **Create** **&rarr;** **Subaccount**.
+3. Choose **Create** &rarr; **Subaccount**.
 
     !![Create subaccount](create_subaccount.png)
 
@@ -162,7 +162,7 @@ In this section, you assign a portion of the entitlements that you've bought for
 [ACCORDION-BEGIN [Step 7: ](Create a Cloud Foundry space)]
 Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org/concepts/roles.html#spaces). Each Cloud Foundry org can have 0 to n spaces, you create just one here.
 
-1. Open the subaccount page in SAP BTP Cockpit.
+1. Open the subaccount page in SAP BTP cockpit.
 
 2. Choose **Spaces** in the left pane under the section **Cloud Foundry**.
 
@@ -195,7 +195,7 @@ Next to Cloud Foundry orgs there are also [Spaces](https://docs.cloudfoundry.org
 Prepare for the next steps by logging on to Cloud Foundry and targeting your space in the account.
 
 
-If you don't know whether you are logged on to Cloud Foundry or if you are wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
+If you don't know whether you are logged on to Cloud Foundry or if you are wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to deploy to:
 
 [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
@@ -239,7 +239,7 @@ If you don't know whether you are logged on to Cloud Foundry or if you are wonde
 Prepare for the next steps by logging on to Cloud Foundry and targeting your space in the account.
 
 
-If you don't know whether you are logged on to Cloud Foundry or if you are wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP Cockpit by using one of the following links, depending on the landscape you want to deploy to SAP BTP cockpit:
+If you don't know whether you are logged on to Cloud Foundry or if you are wondering to which Cloud Foundry org and space are you logged on, you can always use `cf target` in a command line window to find out. If you aren't logged on already, go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to deploy to:
 
 [https://account.hana.ondemand.com/](https://account.hana.ondemand.com/)
 
