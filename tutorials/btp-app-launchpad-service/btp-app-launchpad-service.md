@@ -17,7 +17,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
  - [Add Business Logic to Your Application](btp-app-cap-business-logic)
  - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
+ - [Use a Local Launch Page](btp-app-launchpage)
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-prepare-btp)
  - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
@@ -394,7 +394,7 @@ app/*/package-lock.json
 
 > Can't see `.gitignore`?
 
-> `.gitignore` files are excluded by default from the file types shown in the VS Code workspace. In VS Code, go to **File** (for macOS: **Code**) **&rarr;** **Preferences** **&rarr;** **Settings**, search for `fileexclude`, and delete the setting for `.gitignore` files under the **Workspace** tab.
+> `.gitignore` files are excluded by default from the file types shown in the VS Code workspace. In VS Code, go to **File** (for macOS: **Code**) &rarr; **Preferences** &rarr; **Settings**, search for `fileexclude`, and delete the setting for `.gitignore` files under the **Workspace** tab.
 
 [DONE]
 [ACCORDION-END]
@@ -420,10 +420,9 @@ app/*/package-lock.json
 
 3. Go to [SAP BTP Cockpit](https://account.hana.ondemand.com/) to check the deployed content.
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 14: ](Subscribe to SAP Launchpad service)]
+
+## Subscribe to SAP Launchpad service
+
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
@@ -432,43 +431,37 @@ app/*/package-lock.json
 
     !![Choose Subaccount](choose_subaccount.png)
 
-4. Choose **Services** **&rarr;** **Service Marketplace** on the left.
+2. Choose **Services** &rarr; **Service Marketplace** on the left.
 
-5. Search for the **Launchpad Service** tile and choose **Create**.
+3. Search for the **Launchpad Service** tile and choose **Create**.
 
     !![Create Launchpad Service](create_launchpad_service.png)
 
-6. Keep the default settings for **Service** and **Plan** and choose **Create**.
+4. Keep the default settings for **Service** and **Plan** and choose **Create**.
 
     !![New Instance or Subscription](new_instance_dialog.png)
 
 You have now subscribed to the SAP Launchpad service.
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 15: ](Assigning SAP Launchpad role collection)]
+## Assign SAP Launchpad role collection
+
 You need to assign your user to the `Launchpad_Admin` role collection, so you don't get an error accessing the **Launchpad Service** site later on.
 
-1. Choose **Security** **&rarr;** **Users** on the left.
+1. Choose **Security** &rarr; **Users** on the left.
 
 2. Choose your user.
 
-3. Under **Role Collections** on the right, choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
+4. Under **Role Collections** on the right, choose **Assign Role Collection** and assign the `Launchpad_Admin` role collection to your user.
 
     !![Add role](add_launchpad_admin_role.png)
 
-4. Open another browser or clear your browser's cache.
+5. Open another browser or clear your browser's cache.
 
 > See section [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html) in the SAP Launchpad service's documentation for more details.
 
+## Create your SAP Launchpad site
 
-
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 16: ](Create your SAP Launchpad site)]
-1. Choose **Services** **&rarr;** **Instances and Subscriptions** on the left.
+1. Choose **Services** &rarr; **Instances and Subscriptions** on the left.
 
 2. Locate the **Launchpad Service** under **Subscriptions** and choose **Go to Application**.
 
@@ -488,7 +481,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
     !![Add Apps to My Content](add_apps_to_my_content.png)
 
-6. Choose **Content Manager** **&rarr;** **My Content**.
+6. Choose **Content Manager** &rarr; **My Content**.
 
 7. In the item list, choose the item `Everyone`.
 
@@ -502,7 +495,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
 9. Navigate back to **My Content**.
 
-10. Choose **New** **&rarr;** **Group**.
+10. Choose **New** &rarr; **Group**.
 
     !![New Group](new_group.png)
 
@@ -512,7 +505,7 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
     > This way, you are telling the SAP Launchpad service to display the `Risks` and `Mitigations` apps in a group called `Risk Management`.
 
-12. Choose **Site Directory** **&rarr;** **Create Site**.
+12. Choose **Site Directory** &rarr; **Create Site**.
 
     !![Create Site](create_site.png)
 
@@ -521,11 +514,8 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
     > The new site gets the `Everyone` role by default, so you don't have to assign it explicitly. The default site properties are sufficient for the purposes of this tutorial.
 
 
+## Test your SAP Launchpad site
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 17: ](Test your SAP Launchpad site)]
 1. Choose **Go to site**.
 
     !![Go to site](go_to_site.png)

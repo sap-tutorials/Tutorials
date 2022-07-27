@@ -128,7 +128,7 @@ Running your application has several advantages over deploying it. Among others,
 
     !![preview of the data coming from the server](inspector.png)
 
-Expand the nodes **`<edmx:Edmc>`**, **`<edmx: DataServices>`** and the **`first <Schema> node`** in the Chrome Network trace.
+Expand the nodes **`<edmx:Edmx>`**, **`<edmx: DataServices>`** and the **`first <Schema> node`** in the Chrome Network trace.
 
 [VALIDATE_1]
 [ACCORDION-END]

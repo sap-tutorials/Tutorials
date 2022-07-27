@@ -11,9 +11,6 @@ primary_tag: software-product>sap-process-automation
 
 ## Prerequisites
  - Complete [Agent Management settings to execute the process with an automation](spa-run-agent-settings)
- - Complete [Create an Automation to Extract Data](spa-create-automation)
- - Complete [Create a Decision](spa-create-decision)
- - Complete [Create Process Visibility Scenario](spa-create-process-visibility)
  - Complete [Configure Launchpad](spa-configure-launchpad)
 
 ## Details

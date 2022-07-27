@@ -88,7 +88,7 @@ Click **Download Service Key** to save the service key locally on your computer.
 
 !![Service Key](booster-success-key.png)
 
->If you face any issue with the booster **Set up account for Data Attribute Recommendation**, you can alternatively follow the steps in [Set Up a BTP Account for Tutorials](group.btp-setup) to manually create the service instance and service key for Data Attribute Recommendation using the free tier service plan.
+>If you face any issue with the booster **Set up account for Data Attribute Recommendation**, you can alternatively follow the steps in [Use Free Tier to Create a Service Instance for Data Attribute Recommendation](cp-aibus-dar-free-service-instance) to manually create the service instance and service key for Da
 
 Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
 

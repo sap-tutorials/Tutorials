@@ -48,7 +48,7 @@ If Node.js is not installed, download the long-term support (LTS) version of Nod
 
 [ACCORDION-BEGIN [Step 2: ](Install the data lake Relational Engine client for Node.js)]
 
-In addition to the Node.js driver covered in this tutorial which is `@sap\iq-client`, there is also the [SQK Anywhere](https://github.com/sqlanywhere/node-sqlanywhere) driver.  The @sap\iq-client driver supports newer Node.js versions and includes a promise library.
+In addition to the Node.js driver covered in this tutorial which is `@sap\iq-client`, there is also the [SQL Anywhere](https://github.com/sqlanywhere/node-sqlanywhere) driver.  The @sap\iq-client driver supports newer Node.js versions and includes a promise library.
 
 1. Add the dependencies to the driver.
 

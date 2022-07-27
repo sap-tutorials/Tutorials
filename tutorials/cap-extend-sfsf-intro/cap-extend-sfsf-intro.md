@@ -23,7 +23,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand the Business Scenario)]
+[ACCORDION-BEGIN [Step 1: ](Understand the business scenario)]
 You will build a simple **project management** application on top of **SAP SuccessFactors** following these business rules:
 
 1. Each project is composed by members (team) and activities;
@@ -36,7 +36,7 @@ You will build a simple **project management** application on top of **SAP Succe
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understand the Application Architecture)]
+[ACCORDION-BEGIN [Step 2: ](Understand the application architecture)]
 Here's a diagram representing the overall architecture for the application:
 
 ![Figure 1 – Application Architecture](architecture.png)
@@ -45,12 +45,12 @@ The solution is a standalone application that will read the basic employee (SF u
 
 The application data model will be stored in an **SAP HANA Cloud** database.
 
-In this tutorial group, the application will be deployed on **Cloud Foundry**, although it could be also deployed to the **Kyma Runtime** as depicted in the architecture.
+In this tutorial group, the application will be deployed on **Cloud Foundry**, although it could be also deployed to the **`Kyma` Runtime** as depicted in the architecture.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Understand the Data Model)]
+[ACCORDION-BEGIN [Step 3: ](Understand the data model)]
 Here's a diagram representing the data model for the application:
 
 ![Figure 2 – Data Model Diagram](data-model.png)
@@ -66,7 +66,7 @@ In the same way, there's no direct association between the projects and the back
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Perform Initial Preparation)]
+[ACCORDION-BEGIN [Step 4: ](Perform initial preparation)]
 From the **global account** page on SAP BTP cockpit, click on the **trial** subaccount
 
 ![Figure 3 – SAP BTP trial access](trial.png)
@@ -106,7 +106,7 @@ Click on **Close**
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check Your Understanding)]
+[ACCORDION-BEGIN [Step 5: ](Check your knowledge)]
 
 [VALIDATE_1]
 [ACCORDION-END]
