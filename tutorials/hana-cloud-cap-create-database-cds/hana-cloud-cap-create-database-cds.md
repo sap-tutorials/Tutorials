@@ -152,7 +152,7 @@ Video version of tutorial: </br>
 
     !![Create a new service instance](create_Service_instance.png)
 
-7. Press enter to accept the generated service name
+7. To make subsequent steps easier, shorten the generated name to `MyHANAApp-dev`
 
     !![Generated Service Name](generated_service_name.png)
 
@@ -160,7 +160,7 @@ Video version of tutorial: </br>
 
     !![CF Plan](cf-plan.png)
 
-9.  It will take a minute or two for the service to be created in HANA. A progress bar will be shown in the message dialog
+9. It will take a minute or two for the service to be created in HANA. A progress bar will be shown in the message dialog
 
     !![Service Creation Progress](progress.png)
 
@@ -210,7 +210,7 @@ You can now check the generated tables and views in the Database Explorer.
 
     !![Press Open HDI Container](open_hdi_container.png)
 
-2. The Database Explorer will open in a new browser tab and automatically select the database entry for your project's HDI container.    
+2. The Database Explorer will open in a new browser tab and automatically select the database entry for your project's HDI container.
 
 3. Once open, navigate to the `Tables` section and click on the `Header` table.
 
