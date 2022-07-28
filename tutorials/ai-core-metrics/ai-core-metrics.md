@@ -475,7 +475,7 @@ Create a configuration using the following information. The information is taken
 
 The value for `Input Parameters` `DT_MAX_DEPTH` is your choice. Until now, this was set using an environment variable. If no variable is specified, this parameter will continue to be defined by the environment variables.
 
-> Information: This parameter can be defined using an integer to set a maximum depth or as `None`, which means that nodes are expanded until all leaves are single nodes, or contain all contain fewer data points than specified in the `min_samples_split samples`, if specified. For more information, see [the Scikit learn documentation](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html\#)
+> Information: This parameter can be defined using an integer to set a maximum depth or as `None`, which means that nodes are expanded until all leaves are single nodes, or contain all contain fewer data points than specified in the `min_samples_split samples`, if specified. For more information, see [the Scikit learn documentation](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html)
 
 Attach your registered artifact to `Input Artifact`, by specifying `housedataset` for this value.
 
