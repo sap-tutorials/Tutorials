@@ -85,18 +85,16 @@ Video tutorial version: </br>
 
 3. In `interaction_srv.js` we will implement the call to the Stored Procedure.  This logic will implement the exit handler for this function which in turn uses the standard `hdb` Node.js module to call the Stored Procedure from SAP HANA Cloud.  Save the file.
 
-    !![Call Stored Procedure](call_stored_procedure.png)    
+    !![Call Stored Procedure](call_stored_procedure.png)
 
     ```JavaScript
     const cds = require('@sap/cds')
     module.exports = cds.service.impl(function () {
         this.on('sleep', async () => {
         try {
-            const dbClass = require("sap-hdb-promisfied")
-            let dbConn = new dbClass(await dbClass.createConnectionFromEnv())
-            const sp = await dbConn.loadProcedurePromisified(null, '"sleep"')
-            const output = await dbConn.callProcedurePromisified(sp, [])
-            console.log(output.results)
+            let dbQuery = ' Call "sleep"( )'
+            let result = await cds.run(dbQuery, { })
+            console.log(result)
             return true
         } catch (error) {
             console.error(error)
@@ -106,23 +104,15 @@ Video tutorial version: </br>
     })
     ```
 
-4. But since we used two additional SAP provided Node.js modules in our code, we need to add those to our root **package.json**. From a terminal in the root of the project use the following command:
-
-    ```shell
-    npm install -save sap-hdb-promisfied
-    ```
-
-    !![Extend package.json](extend_package_json.png)
-
-5. From the terminal return to the root of the project and issue the command: `cds build`
+4. From the terminal return to the root of the project and issue the command: `cds build`
 
     ```shell
     cds build
-    ```          
+    ```
 
-6. From the console in the project root run `npm start` to start the CAP service layer for testing.  If you have performed the tutorial [SAP HANA Cloud, Add User Authentication to Your Application](hana-cloud-cap-add-authentication), remember you must also run the application router to test your service with authentication.
+5. From the console in the project root hopefully you still have the `cds watch ...` running. Otherwise start it again with `cds watch --profile hybrid` to start the CAP service layer for testing.  If you have performed the tutorial [SAP HANA Cloud, Add User Authentication to Your Application](hana-cloud-cap-add-authentication), remember you must also run the application router to test your service with authentication.
 
-7. The CAP preview UI doesn't list functions or actions, however. Manually add `/catalog/sleep()` to the end of the URL. If it works correctly it should take 10 seconds to respond since the procedure is running a sleep operation for that long.
+6. The CAP preview UI doesn't list functions or actions, however. Manually add `/catalog/sleep()` to the end of the URL. If it works correctly it should take 10 seconds to respond since the procedure is running a sleep operation for that long.
 
     !![Test Service](sleep_true.png)
 
