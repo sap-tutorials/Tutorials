@@ -37,21 +37,18 @@ For more information on how to configure and run predefined pipelines for your o
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Enable SAP Continuous Integration and Delivery service)]
-[OPTION BEGIN [Free Tier]]
+[OPTION BEGIN [Trial]]
 
 1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use:
 
     [https://cockpit.hanatrial.ondemand.com/](https://cockpit.hanatrial.ondemand.com/)
 
-    > If you do not have an SAP BTP account that enables you to test out SAP Continuous Integration and Delivery for free yet, complete the following steps:
+    > When running the tutorial with a trial account, please have in mind the following considerations:
 
-    > 1. [Get an Account on SAP BTP to Try Out Free Tier Service Plans](https://developers.sap.com/tutorials/btp-free-tier-account.html): Make sure to create a subaccount in `cf-us10`. This will ensure that the SAP Continuous Integration and Delivery service is available to your account.
-    > 2. [Manage Entitlements Using the Cockpit](https://developers.sap.com/tutorials/btp-cockpit-entitlements.html): Assign the service plan for SAP Continuous Integration & Delivery. You can select the service plan called **Free** to test out the service without any costs.
-    > 3.  [Create a Service Instance in SAP BTP](https://developers.sap.com/tutorials/btp-cockpit-instances.html): Create a service instance for SAP Continuous Integration & Delivery to be able to complete the following tutorial. 
+    > * Choose host region `cf-us10` when creating a new trial account. This will ensure that the SAP Continuous Integration and Delivery service is available to your account.
+    > * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, the SAP Continuous Integration and Delivery service might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP cockpit.
 
-﻿
-
-1. Enter your **Global Account**.
+1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
 2. Choose **Account Explorer**.
 

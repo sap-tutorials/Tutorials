@@ -10,8 +10,7 @@ primary_tag: software-product>sap-connectivity-service
 ---
 
 ## Prerequisites
- - You have an account on SAP Business Technology Platform. See [Set Up an SAP BTP Account for Tutorials](https://developers.sap.com/group.btp-setup.html).
-     **Note:** Make sure to create a subaccount in US East (VA) - AWS (`cf-us10`). Also, assign entitlements to create a service instance for SAP Continuous Integration and Delivery to be able to complete the following tutorial.
+ - You have an account on SAP Business Technology Platform. See [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) or [Enterprise Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html).
  - You're an administrator of your global account and Org Manager of your subaccount on SAP Business Technology Platform. See [About Roles in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/09076385086b4da3bd1808d5ef572862.html).
  - You've installed the Cloud Connector of the SAP Connectivity service. See [SAP BTP Connectivity > Installation](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/57ae3d62f63440f7952e57bfcef948d3.html).
  - You have an SAP Fiori project in the Cloud Foundry environment in a public Git repository in your corporate network. See [Create an SAP Fiori Project](https://help.sap.com/viewer/584e0bcbfd4a4aff91c815cefa0bce2d/Cloud/en-US/46664de4d6944471b6c29a0681bfd0fc.html).
