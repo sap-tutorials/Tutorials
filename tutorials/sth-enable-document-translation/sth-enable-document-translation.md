@@ -12,6 +12,7 @@ primary_tag: software-product>sap-translation-hub
  - Please make sure that you are using one of the following Amazon Web Services (AWS) regions:
      - Europe (Frankfurt) cf-eu10
      - or US East (VA) cf-us10 region
+     Description how to create a new subaccount is available [here](https://help.sap.com/docs/SAP_TRANSLATION_HUB/9f73362817cd48339dd8a6acba160f7f/892c6d71f35f414e9aed44bece574e57.html)
 
 
 ## Details
@@ -29,6 +30,9 @@ primary_tag: software-product>sap-translation-hub
 
     !![Global account](01_account.png)
 
+    Please make sure that you are using one of the following Amazon Web Services (AWS) regions:
+        - Europe (Frankfurt) cf-eu10
+        - or US East (VA) cf-us10 region
 
 [DONE]
 [ACCORDION-END]
