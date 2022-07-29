@@ -106,7 +106,7 @@ Your **API Key** is now created and ready to be used.
 
 2.  Choose **Create**.
 
-    !![navigate to instances and subscriptions](Step3-1.png)
+    !![Navigate to instances and subscriptions](Step3-1.png)
 
 3.  For the new instance:
     -  Select **SAP Process Automation** as **Service**.
