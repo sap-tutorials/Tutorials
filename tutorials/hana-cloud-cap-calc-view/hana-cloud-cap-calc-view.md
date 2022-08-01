@@ -98,13 +98,11 @@ Calculation Views and other HANA native artifacts allow you to leverage HANA spe
     !![Connect to Projection #2](connect_projection2.png)
 
 10.  Click on the **Projection** node and double-click on the join parent to add all the columns to the output
-
     !![Projection Join](projection_join.png)
 
 11.  Save your View
 
 12.  From the SAP HANA Projects view, press the Deploy button
-
     !![Deploy](deploy.png)
 
 13. Check the deployment log to make sure everything was successfully created in the database.
@@ -121,7 +119,7 @@ Calculation Views and other HANA native artifacts allow you to leverage HANA spe
 
 16. Go to the **Raw Data** and you should see the header and item data joined together.
 
-    !![Raw Data of view](raw_data.png)             
+    !![Raw Data of view](raw_data.png) 
 
 [DONE]
 [ACCORDION-END]
@@ -177,7 +175,7 @@ We now want to expose our Calculation View to the Cloud Application Programming 
 
     !![Deploy](deploy.png)
 
-10. From the console in the project root run `npm start` to start the CAP service layer for testing.  If you have performed the tutorial [SAP HANA Cloud, Add User Authentication to Your Application](hana-cloud-cap-add-authentication), remember you must also run the application router to test your service with authentication.
+10. From the console in the project root hopefully you still have the `cds watch ...` running. Otherwise start it again with `cds watch --profile hybrid` to start the CAP service layer for testing.  If you have performed the tutorial [SAP HANA Cloud, Add User Authentication to Your Application](hana-cloud-cap-add-authentication), remember you must also run the application router to test your service with authentication.
 
 11. You can test your view via the service layer by adding `/catalog/V_Interaction` to the path.
 

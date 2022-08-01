@@ -39,13 +39,20 @@ Video tutorial version: </br>
     cds compile srv/ --to xsuaa
     ```     
 
-3. Since we want to test the security setup from the Business Application Studio, we are going to have add some additional configuration to the xs-security.json. You need to add another property to the xs-security.json to configure which redirect URIs are allowed.
+3. Since we want to test the security setup from the Business Application Studio, we are going to have add some additional configuration to the xs-security.json. You need to add another property to the xs-security.json to configure which redirect URIs are allowed. Also while editing, add an `xsappname` with the value `myhanaapp` and a `tenant-mode` of `dedicated` as well
 
     ```json
-    "oauth2-configuration": {
-        "redirect-uris": [
-            "https://*.applicationstudio.cloud.sap/**"
-        ]
+    {
+        "xsappname": "myhanaapp",
+        "tenant-mode": "dedicated",
+        "scopes": [],
+        "attributes": [],
+        "role-templates": [],
+        "oauth2-configuration": {
+            "redirect-uris": [
+                "https://*.applicationstudio.cloud.sap/**"
+            ]
+        }
     }
     ```
 
@@ -56,7 +63,7 @@ Video tutorial version: </br>
 4. Open a terminal and create the XSUAA services instance with the xs-security.json configuration using the following command:
 
     ```shell
-    cf create-service xsuaa application MyHANAApp-xsuaa-service -c xs-security.json
+    cf create-service xsuaa application MyHANAApp-auth -c xs-security.json
     ```
 
     !![Create XSUAA service](create_service.png)
@@ -66,32 +73,34 @@ Video tutorial version: </br>
 
 [ACCORDION-BEGIN [Step 2: ](Configure the application)]
 
-1. In the previous tutorial, we used a default-env.json file in the root of the project, to configure the connection to the SAP HANA Cloud database. We will now extend that same file to do the same for the XSUAA instance we just created in the previous step.
+1. In the previous tutorial, the application router wizard created a `default-env.json` file in the root of the project, to configure the connection to the service instance when running locally for testing. We will now extend that same file to do the same for the XSUAA instance we just created in the previous step.
 
 2. Open the default-env.json and add an `xsuaa` section with a placeholder for the credentials which we will fill soon:
 
     ```json
-    "xsuaa": [{
-            "name": "MyHANAApp-xsuaa-service",
+    "VCAP_SERVICES":{
+        "xsuaa": [{
+            "name": "MyHANAApp-auth",
             "label": "xsuaa",
             "tags": ["xsuaa"],
             "credentials": {
-                [...]
+                ...
             }
-        }],
+        }]
     ```
+
     !![default-env.json xsuaa placeholder](xsuaa_placeholder.png)
 
 3. From the terminal, we need to create a service key. This will give us access to the credentials for your XSUAA instance.
 
     ```shell
-    cf create-service-key MyHANAApp-xsuaa-service default
-    cf service-key MyHANAApp-xsuaa-service default
-    ```    
+    cf create-service-key MyHANAApp-auth default
+    cf service-key MyHANAApp-auth default
+    ```
 
     !![Create service key](create_service_key.png)
 
-4.  Copy the output of the service-key command and paste it into the credentials section of the default-env.json file.
+4. Copy the output of the service-key command and paste it into the credentials section of the default-env.json file.
 
     !![Paste Service Key details](paste_service_key.png)
 
@@ -99,25 +108,15 @@ Video tutorial version: </br>
 
     !![Example default-env.json with Service Key Details](example_default_env.png)
 
-5. Next we need to enhance the CAP application configuration in the package.json file in the root of the project. Add an `uaa` section to the `cds.requires` section of the file.
+5. Change back to the root of your project in the terminal and issue the command `cds bind -2 MyHANAApp-auth:default`.  This is the same command that we used to bind our running CAP application to HANA DB earlier. Now we are adding a binding to the security XSUAA service as well.
 
-    !![Add uaa to package.json](uaa_package_json.png)
+    !![CDS Bind](cds_bind.png)
 
-6. While in the package.json, also change the scripts section.  Change the start script to the following:
-
-    ```json
-    "scripts": {
-      "start": "NODE_ENV=production cds run"
-    }
-    ```  
-
-    We make this change because otherwise CAP will try to mock the authentication.  But we want to test with the real production security of the XSUAA and this change will tell CAP to run in Production mode and use the XSUAA instance.
-
-7.  Open the `srv/interaction_srv.cds` file. You need to add `@requires: 'authenticated-user'` to the service definition. Authentication and scopes can also be applied at the individual entity level.
+6. Open the `srv/interaction_srv.cds` file. You need to add `@requires: 'authenticated-user'` to the service definition. Authentication and scopes can also be applied at the individual entity level.
 
     !![Add Authentication to CDS Service](cds_auth.png)
 
-8. Finally we are going to need some additional Node.js modules for CAP to process the authentication. We can both add them to the package.json dependencies and install them all in one step from the terminal.
+7. Finally we are going to need some additional Node.js modules for CAP to process the authentication. We can both add them to the package.json dependencies and install them all in one step from the terminal.
 
     ```shell
     npm install -save passport @sap/xssec @sap/xsenv @sap/audit-logging
@@ -127,7 +126,6 @@ Video tutorial version: </br>
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](Create and grant roles for application)]
 
@@ -147,7 +145,7 @@ Video tutorial version: </br>
 
     !![Assign Role](assign_role.png)
 
-    See [Assign Role Collections](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/9e1bf57130ef466e8017eab298b40e5e.html) in SAP BTP documentation for more details.   
+    See [Assign Role Collections](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/9e1bf57130ef466e8017eab298b40e5e.html) in SAP BTP documentation for more details.
 
 
 [DONE]
@@ -157,99 +155,65 @@ Video tutorial version: </br>
 
 1. The `approuter` component implements the necessary handshake with XSUAA to let the user log in interactively. The resulting JWT token is sent to the application where it's used to enforce authorization.
 
-2. From the terminal change to the /app folder and run `npm install` to update to this newer version.
-
-3. Next open the xs-app.json file in the /app folder.  Here want to make several adjustments. Change the `authenicationMethod` to `route`. This will turn on authentication. You can deactivate it later by switching back to `none`.  Also add/update the routes.  We are adding authentication to CAP service route.  We are also adding the Application Router User API route (which is nice for testing the UAA connection).  Finally add the route to the local directory to serve the UI5/Fiori web content.
+2. Next open the xs-app.json file in the /app folder.  Here want to make several adjustments. Change the `authenicationMethod` to `route`. This will turn on authentication. You can deactivate it later by switching back to `none`.  Also add/update the routes.  We are adding authentication to CAP service route.  We are also adding the Application Router User API route (which is nice for testing the UAA connection).  Finally add the route to the local directory to serve the UI5/Fiori web content.
 
     ```json
     {
     "authenticationMethod": "route",
-    "routes": [{
-            "source": "/catalog/(.*)",
-            "destination": "srv-api",
-            "csrfProtection": true,
-            "authenticationType": "xsuaa"
+    "routes": [
+        {
+        "source": "^/app/(.*)$",
+        "target": "$1",
+        "localDir": ".",
+        "cacheControl": "no-cache, no-store, must-revalidate",
+        "authenticationType": "xsuaa"
         },
         {
-            "source": "^/user-api(.*)",
-            "target": "$1",
-            "service": "sap-approuter-userapi"
-        }, {
-            "source": "/(.*)",
-            "localDir": ".",
-            "authenticationType": "xsuaa"
+        "source": "^/user-api(.*)",
+        "target": "$1",
+        "service": "sap-approuter-userapi"
+        },
+        {
+        "source": "^/(.*)$",
+        "target": "$1",
+        "destination": "srv-api",
+        "csrfProtection": true,
+        "authenticationType": "xsuaa"
         }
-        ]
+    ]
     }
-    ```    
-
-4. The application router is going to need a `default-env.json` file as well so during testing it can connect to the UAA instance. Copy the `default-env.json` file from the root of the project into the /app folder. Edit this file and add a destinations section:
-
-    ```json
-    "destinations": [{
-      "name": "srv-api",
-      "url": "http://localhost:4004",
-      "forwardAuthToken": true
-    }],
     ```
-
-    This is setting up the internal routing from the Application Router to the CAP since we will run each separately. If you are working where the localhost:4004 came from, you can see that in the CAP log when you test the service.
-
-    !![default-env.json destinations](default_env_dest.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Adjust mta.yaml)]
-
-1. We have done all the setup to make testing from the Business Application Studio possible, but it's important to also update the mta.yaml file. Unlike the old Web IDE, the Business Application Studio does not use the mta.yaml while test running services. However this file is still critical for packaging and deploying your application. Therefore we will to also make sure that the XSUAA instance is bound to the modules in the mta.yaml.
-
-2. Open the mta.yaml in the MTA editor. The wizard from the previous tutorial already added the UAA resource to our project.  We now just need to bind it to our modules. Select the `MyHANAApp-srv` module and add a requires entry for the `uaa_MyHANAApp (resource)`.
-
-    !![Add UAA to SRV module](mta_srv.png)
-
-3. **OPTIONAL** If you want to use the mta.yaml text editor instead of the form based edition you could make this same change by adding the following line:
-
-    !![mta.yaml add UAA](mta_yaml_add_uaa.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Test)]
 
-1. We are assuming you have no services running from previous tutorials. If you do, then please stop them with CTRL+C. From the Terminal in the root of the project, issue the command `npm start` to start the CAP service.
-
-    !![Run CAP Service](run_cap.png)
-
-2. If you open the CAP service test page and try to access one of the service endpoints or metadata, you should receive an Unauthorized error.
+1. If you open the CAP service test page and try to access one of the service endpoints or metadata, you should receive an Unauthorized error.
 
     !![Unauthorized](unauthorized_cap.png)
 
     This means your security setup is working. Accessing the CAP service directly will always produce an error now as there is no authentication token present.  We need to run via the Application Router to generate and forward the authentication token.
 
-3. Without stopping the CAP service, open a second terminal. In this terminal change to the `/app` folder and then run `npm start` to start the Application Router.
+1. Without stopping the CAP service, open a second terminal. In this terminal change to the `/app` folder and then run `npm start` to start the Application Router.
 
     !![Run Application Router](run_app_router.png)
 
-4. Open the application router in a new tab.  We've not configured any default entry page so it's normal that you will receive a not found page.  But this gives us the place where we can start testing.
-
-    !![Not Found](approuter_not_found.png)
-
-5. Add `/user-api/attributes` to the URL and you should see your Email and other User details. This is testing that the application router is actually getting the security token from the UAA instance.
-
-    !![User Attributes](user_attributes.png)
-
-6. Change the URL path to `/catalog/Interactions_Header?$top=11`. Now instead of the Unauthorized error you received when testing CAP service directly, you should see the data returned normally.     
+1. Open the application router in a new tab. Click on the Interactions_Header. Now instead of the Unauthorized error you received when testing CAP service directly, you should see the data returned normally.
 
     !![CAP Service successful](cap_successful.png)
 
-7. Finally change the ULR path to `/interaction_items/webapp/index.html`. You are now testing the Fiori free style application from the previous tutorial with data from the CAP service but all with authentication.
+1. Finally change the ULR path to `/interaction_items/webapp/index.html`. You are now testing the Fiori free style application from the previous tutorial with data from the CAP service but all with authentication.
 
     !![Fiori with authentication](fiori_with_authentication.png)
 
-Congratulations! You have now successfully configured and tested with production level authentication and authorization for the SAP HANA Cloud and Cloud Business Application based project.   
+1. Add /user-api/attributes to the end of the URL and you should see your Email and other User details. This is testing that the application router is actually getting the security token from the UAA instance.
 
-If you are wanting to learn about packaging and deploying this complete application as a Multi-Target Application to SAP BTP, Cloud Foundry runtime; there is a separate, optional tutorial which is not part of this mission that covers this step.  Note: that this is an advanced topic and does allocate a large amount of your available resources in an SAP BTP trial account. [Deploy CAP with SAP HANA Cloud project as MTA](hana-cloud-cap-deploy-mta)       
+    !![test auth details](user_attributes.png)
+
+Congratulations! You have now successfully configured and tested with production level authentication and authorization for the SAP HANA Cloud and Cloud Business Application based project.
+
+If you are wanting to learn about packaging and deploying this complete application as a Multi-Target Application to SAP BTP, Cloud Foundry runtime; there is a separate, optional tutorial which is not part of this mission that covers this step.  Note: that this is an advanced topic and does allocate a large amount of your available resources in an SAP BTP trial account. [Deploy CAP with SAP HANA Cloud project as MTA](hana-cloud-cap-deploy-mta)
 
 [DONE]
 [ACCORDION-END]

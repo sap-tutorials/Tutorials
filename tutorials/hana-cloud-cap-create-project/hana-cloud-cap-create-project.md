@@ -82,7 +82,7 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
     !![Login Required](cf_login_required.png)
 
-1. The command window will then open at the top of the SAP Business Application Studio. The first input will prompt you for the API endpoint
+1. The Cloud Foundry Sign In and Targets window will then open in a side panel of the SAP Business Application Studio. The first input will prompt you for the API endpoint and your credentials
 
     !![API Endpoint](api_endpoint.png)
 
@@ -90,15 +90,11 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
     !![Finding the API Endpoint](api_endpoint_from_subaccount.png)
 
-1. Press **Enter** to confirm your input of the API endpoint. The next input field will ask you for the email address you used to create your SAP BTP trial account
+1. Once you have verified the API endpoint, input the email address you used to create your SAP BTP account and password and press Sign In.
 
     !![Email](email.png)
 
-1. The next input will ask you for your SAP BTP trial account password
-
-    !![Password](password.png)
-
-1. The next input will ask you for your Organization. In most situations you will have a single choice. But like the API endpoint earlier, if you need to confirm the correct value it will be displayed in the top navigation of the SAP BTP cockpit
+1. If successful, the next input will ask you for your Organization. In most situations you will have a single choice. But like the API endpoint earlier, if you need to confirm the correct value it will be displayed in the top navigation of the SAP BTP cockpit
 
     !![Organization](organization.png)
 
@@ -179,6 +175,10 @@ The Cloud Application Programming Model wizard generates a project that supports
 
 1. You can completely delete the `devDependencies` section of the `package.json`
 
+1. In the `dependencies` section, update the `@sap/cds` version to `^6`
+
+    !![package.json dependencies](package_json_dependencies.png)
+
 1. The rest of the changes will be in the `cds` section of the file. Replace this entire section of `package.json` with the following content
 
     ```json
@@ -194,12 +194,9 @@ The Cloud Application Programming Model wizard generates a project that supports
                 }
             ]
         },
-        "hana": {
-            "deploy-format": "hdbtable"
-        },
         "requires": {
             "db": {
-                "kind": "hana"
+                "kind": "hana-cloud"
             }
         }
     }
