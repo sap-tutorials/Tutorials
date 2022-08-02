@@ -99,7 +99,7 @@ To install `kubelogin`, run the following command:
 ```Shell/Bash
 brew install int128/kubelogin/kubelogin
 ```
-See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more details.
+See the [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more details.
 [OPTION END]
 [OPTION BEGIN [Windows]]
 
@@ -109,7 +109,7 @@ You can install `kubelogin` using chocolatey:
 choco install kubelogin
 ```
 
-See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more details.
+See the [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more details.
 [OPTION END]
 [OPTION BEGIN [Linux]]
 
@@ -118,7 +118,7 @@ To install `kubelogin`, run the following command:
 brew install int128/kubelogin/kubelogin
 ```
 
-See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more details.
+See the [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more details.
 [OPTION END]
 
 
@@ -147,14 +147,14 @@ See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more detai
 >     mv $HOME/.kube/config-new $HOME/.kube/config
 >     chmod 600 $HOME/.kube/config
 >     ```
->     In case you experience problems running the commands, check [Command Line Interpreters](btp-app-#command-line-interpreters) for more details on recommended CLIs.
+>     In case you experience problems running the commands, check Step 2: `Command Line Interpreters` from [Set Up Local Development Using VS Code](btp-app-set-up-local-development) for more details on recommended CLIs.
 
 
-There are two additional steps for Windows users:
+There are two additional steps for Windows users only:
 
-3. Go to `C:\ProgramData\chocolatey\bin`.
+    3. Go to `C:\ProgramData\chocolatey\bin`.
 
-4. Rename `kubelogin.exe` to `kubectl-oidc_login.exe`.
+    4. Rename `kubelogin.exe` to `kubectl-oidc_login.exe`.
 
 [DONE]
 [ACCORDION-END]
