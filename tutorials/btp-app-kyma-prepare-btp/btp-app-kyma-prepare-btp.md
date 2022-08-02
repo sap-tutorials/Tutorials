@@ -77,9 +77,9 @@ The following services with their service plans and entitlements are required fo
 
 | Service                           | Plan       | Amount | Unit         | Tutorial                                |
 | --------------------------------- | ---------- | ------ | ------------ | --------------------------------------- |
-| Kyma runtime             | `Kyma Runtime Trial`     | 1      | GB           | [Prepare for SAP BTP Development](btp-app-#configure-kyma-in-your-subaccount)   |
-| SAP HANA Schemas & HDI Containers | `hdi-shared` | 1      | instances    | [Set Up HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)   |
-| SAP HANA Cloud                    | `hana`       | 1      | instances    | [Set Up HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)     |
+| Kyma runtime             | `Kyma Runtime Trial`     | 1      | GB           | Step 6: Configure Kyma in your subaccount|
+| SAP HANA Schemas & HDI Containers | `hdi-shared` | 1      | instances    | [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)   |
+| SAP HANA Cloud                    | `hana`       | 1      | instances    | [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)     |
 | SAP Launchpad service             | `standard`   | 1      | active users | [Add the SAP Launchpad Service](btp-app-kyma-launchpad-service) |
 
 
