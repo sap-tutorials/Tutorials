@@ -15,17 +15,17 @@ author_profile: https://github.com/dhrubpaul
 
 ## Details
 ### You will learn
-  - How to store model accuracy data using Postman or Python in SAP AI Core
+  - How to store model accuracy using Postman or Python in SAP AI Core
 
-In SAP AI Core, you use an **Execution** to train an ML model and even do batch inferencing on data. In this tutorial, you will learn to store the performance indicators for a model after the execution has been completed. The steps demonstrate how to store any type of indicator, such as accuracy, mean-squared-loss, or your own custom information about the execution.
+Using **Execution** in SAP AI Core, you can train a ML model and even do batch-inferencing on data. In this tutorial you will learn to store the model performance indicators after the execution has been completed. The steps demonstrated help you store any type of indicators, accuracy, mean-squared-loss or even your own custom information about the execution.
 
-The steps demonstrated in the tutorial, send requests to store metrics about an execution from your local system to SAP AI Core. Therefore, these steps need to be performed after the execution is completed.
+All the steps demonstrated here, will only send request to SAP AI Core from your local system to store metrics about an execution. Hence needs to be performed after your execution has been completed.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create client)]
 
-Install `SAP AI Core SDK` to use APIs available for SAP AI Core functions.
+Install `SAP AI Core SDK` to use APIs available for using SAP AI Core functionalities.
 
 ```BASH
 pip install ai-core-sdk
@@ -33,12 +33,12 @@ pip install ai-core-sdk
 
 !![install using pip](img/acs/pip-install.png)
 
-Replace with your SAP AI Core credentials and execute. This creates a client to make API calls to SAP AI Core.
+Replace with your SAP AI Core credentials and execute. This creates client to make API call to  SAP AI Core.
 
 ```PYTHON[5, 7, 9, 11]
-from ai_core_sdk.tracking import Tracking
+from ai_core_sdk.ai_core_v2_client import AICoreV2Client
 
-tracking_client = Tracking(
+ai_core_client = AICoreV2Client(
     # `AI_API_URL`
     base_url = "https://api.ai.ml.hana.ondemand.com" + "/v2", # The present SAP AI Core API version is 2
     # `URL`
@@ -58,7 +58,7 @@ tracking_client = Tracking(
 
 [ACCORDION-BEGIN [Step 2: ](List executions)]
 
-List all executions for your **resource group**.
+List all executions of your **resource group**.
 
 Change the `resource_group` and execute.
 
@@ -127,7 +127,7 @@ for execution in response.resources:
 
 !![View Tags](img/acs/3.png)
 
-Alternatively, you can view the tags using SAP AI Launchpad.
+Alternatively, view over SAP AI Launchpad.
 
 !![View Tags](img/ail/3.png)
 
@@ -136,7 +136,7 @@ Alternatively, you can view the tags using SAP AI Launchpad.
 
 [ACCORDION-BEGIN [Step 4: ](Add basic metric)]
 
-A basic metric has a **name**, **value** and **timestamp**.
+A basic metric will have a **name**, **value** and **timestamp**.
 
 Example usage of **step** and **labels** are explained in other steps.
 
@@ -162,9 +162,9 @@ ai_core_client.metrics.modify(
 )
 ```
 
-The code creates an object of class **Metric** with metric name of `Accuracy`. Then passes this object to `metric` parameter of metric of the `.metrics.modify` function to update metrics information in your SAP AI Core instance.
+The code creates an object of class **Metric** with name of a metric as `Accuracy`. Then passes this object to `metric` parameter of metric of the `.metrics.modify` function to update metrics information in your SAP AI Core instance.
 
-You may either supply a list of multiple metrics in a single function call or in separate function calls. In either case, the update will append over existing metrics information.
+You may either supply list of multiple metrics in a single function call or in separate function calls, in all cases the update will append over existing metrics information.
 
 View stored metrics.
 
@@ -189,7 +189,7 @@ for execution in response.resources:
 
 !![img](img/acs/4.png)
 
-Alternatively, check the metric data using SAP AI Launchpad. The **Timestamp** is always converted to the local time of the user.
+Alternatively, view over SAP AI Launchpad. The **Timestamp** is always converted to local time of the user.
 
 !![View Tags](img/ail/4.png)
 
@@ -200,7 +200,7 @@ Alternatively, check the metric data using SAP AI Launchpad. The **Timestamp** i
 
 Use the **step** parameter, although the metric **name** will remain same.
 
-You may call the function `ai_core_client.metrics.modify` multiple times after each training epoch, each call will append new metrics to previous information.
+You may call the function `ai_core_client.metrics.modify` multiple times after each training epoch, each call will be appended new metrics to previous information.
 
 Change the `execution_id` and execute.
 
@@ -266,7 +266,7 @@ Alternatively, view over SAP AI Launchpad.
 
 [ACCORDION-BEGIN [Step 6: ](Add custom metrics information)]
 
-Any custom information structure stored as **Character Large Object (CLOB)** and hence must be converted to string `str` type while passing as argument to function call. Here you will store and retrieve a snippet of [classification report](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html) for your model.
+Any Custom information structure stored as **Character Large Object (CLOB)** and hence must be converted to string `str` type while passing as argument to function call. Here you will store and retrieve a snippet of [classification report](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html) for your model.
 
 Change the `execution_id` and execute.
 
@@ -322,7 +322,7 @@ for execution in response.resources:
 
 !![img](img/acs/6.png)
 
-Alternatively, you can view the metric data using SAP AI Launchpad.
+Alternatively, view over SAP AI Launchpad.
 
 !![View Tags](img/ail/6.png)
 
@@ -332,9 +332,9 @@ Alternatively, you can view the metric data using SAP AI Launchpad.
 
 [ACCORDION-BEGIN [Step 7: ](Store visualization)]
 
-This step is similar to storing custom metric information. Here you will generate a demo visualization, save the visualization locally in **Portable Network Graphics (PNG)** format, which you will load (as bytes) and encode to base64 then convert to string to store it SAP AI Core.
+This step is similar to storing custom metric information. Here you will generate a demo visualization, save visualization locally in **Portable Network Graphics (PNG)** format, which you will load (as bytes) and encode to base64 then convert to string to store it SAP AI Core.
 
-> TIP: Another approach is to store the visualization locally in **Scalable Vector Graphics (SVG)** format. The default read format for SVG (in python) is string which is the required format for storing custom metrics in SAP AI Core. The advantage of SVG images is that they can be scaled (zoom) without a blur effect.
+> TIP: Another approach is to store visualization locally in **Scalable Vector Graphics (SVG)** format. The default read format for SVG (in python) is string which is the required format for storing custom metrics in SAP AI Core. Advantage of SVG image is it can be scaled (zoom) without observing blur effect.
 
 Change the `execution_id` and execute.
 

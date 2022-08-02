@@ -95,7 +95,7 @@ print(f"Test Data Score {test_r2_score}")
 
 Create another file `requirements.txt` in the same directory. Here you will mention which python libraries are required to execute your code.
 
-> **RECOMMENDED** In production you should use the terminal command `pip list --format freeze > requirements.txt` to auto generate `requirements.txt`.
+> **RECOMMENDED** In production you should use the terminal command `pip list --format freeze > requirements.txt` to auto generate `requirement.txt`.
 
 Paste the following snippet into `requirements.txt`.
 
