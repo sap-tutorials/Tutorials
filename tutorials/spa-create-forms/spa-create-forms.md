@@ -233,18 +233,35 @@ These notifications will appear in the inbox of the requester as a task.
 
     > If copy is not available then create the form in the same way and modify the texts wherever relevant as shown below.
 
-8. Add the new form to the rejection route of the approval form.
+8. To add the new rejection form , we will use the **Duplicate** feature.
 
-    !![03-027](unit3-30.png)
+    **Duplicate** feature is used to copy artifacts within the Business Process whereas **Copy** feature is used to copy artifacts across the business processes.
 
-9. In the **Create Form** dialog box, do the following:
-    - Enter **Order Rejection Form** in the **Name** field.
-    - Enter **Notification form to inform that the sales order is rejected by the supplier** in the **Description** field.
-    - Choose **Create**.
+    Click on the **Overview**.
 
-    !![03-026](unit3-31a.png)
+    !![Click Overview](Click-Overview.png)
 
-10. Design the order rejection form in the form builder.
+9. In the **Overview** screen, do the following:
+    - Find **Order Confirmation Notification** under the **Artifacts** section and click on **...**.
+    - Choose **Duplicate**.
+
+    !![Duplicate Form](DuplicateForm.png)
+
+11. The duplicate artifact pop-up will appear.
+
+    - !![Duplicate Artifact](DuplicateArtifact.png)
+
+    Change the name to **Order Rejection Notification** and click **Duplicate**.
+
+    - !![Order Rejection Form](NameOrderRejectionNotification.png)
+
+12. The **Order Rejection Notification** form is automatically opened in the form builder.
+
+    The screen shown will be same as **Order Confirmation Notification**.
+
+    - !![Order Rejection Form](DuplicatedForm.png)
+
+13. Change the order rejection form in the form builder to reflect the data for rejection case.
 
     - Do not forget the **Save** the form once completed.
 
@@ -252,25 +269,29 @@ These notifications will appear in the inbox of the requester as a task.
     |  :------------- | :-------------
     | Headline 1 | Order Rejection
     | Paragraph  |We are sorry to inform you that your order cannot not be accepted. Any inconvenience caused due to refusal of order is regretted. You can find the reason of rejection and the details of your order below, please confirm the request:
-    | Text Area  | Message from the supplier:
-    | Paragraph  | Your Sale's Order Details:
 
-    - For all below **Input Fields** enter the labels and select the **Read Only** checkbox.
+    - For the below **Input Field** enter the label and select the **Read Only** checkbox.
 
     | Form Fields| Field Settings with Label
     |  :------------- | :-------------
-    | Text | Order Number
-    | Number | Order Amount
-    | Date | Expected Delivery Date
     | Paragraph | Please press the SUBMIT button to acknowledge the order status.
 
-    !![Order Rejection](order-rejection.png)
+    !![Order Rejection](ChangeOrderRejectionNotification.png)
 
     - Do not forget the **Save** the form once completed.
 
-    !![Save Order Rejection](save-order-rejection.png)
+    !![Save Order Rejection](OrderRejectionNotificationAfterSave.png)
 
-11.	Go back to the process builder and configure the order rejection form.
+    Rest all fields can be left as is.
+
+14. Go back to the process builder and add the order rejection notification form to the process.
+
+    - Select **Approval Form** and Choose **+** option for the **Reject**
+    - Choose **Forms** and select **Order Rejection Notification**
+
+    - !![Add Order Rejection Notification](AddOrderRejectionNotification.png)
+
+15.	Configure the order rejection form.
 
     - Configure the **General** section.
 
@@ -293,7 +314,7 @@ These notifications will appear in the inbox of the requester as a task.
 
     !![03-026](unit3-35.png)
 
-12.	Finally, connect the outgoing flow of the order rejection form to the **End** activity.
+16.	Finally, connect the outgoing flow of the order rejection form to the **End** activity.
 
     !![03-026](unit3-36.png)
 
