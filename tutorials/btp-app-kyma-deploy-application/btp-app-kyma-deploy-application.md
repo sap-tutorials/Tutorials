@@ -24,7 +24,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
  - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-kyma-prepare-xsuaa)
  - [Add Helm Chart](btp-app-kyma-add-helm-chart)
- - You have created a DB secret as specified in [Setup HANA Cloud](btp-app-#setup-hana-cloud).
+ - You have created a DB secret as specified in Step 3: `Setup SAP HANA Cloud` in [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup).
 
 ## Details
 ### You will learn
@@ -78,7 +78,7 @@ You need to set the environment variable for the container registry.
     CONTAINER_REGISTRY=<Container Registry>
     ```
 
-2. Refer to [Configure Container Image](btp-app-#configure-container-image) for details on finding `<Container Registry>`.
+2. Refer to Step 2: `Configure Container Image` of [Add Helm Chart](btp-app-kyma-add-helm-chart) for details on finding `<Container Registry>`.
 
 [DONE]
 [ACCORDION-END]
@@ -100,7 +100,7 @@ You need to set the environment variable for the container registry.
 
 > Although the app will work with the test data, usually test data should be removed before deployment.
 
->  Test files should never be deployed to an SAP HANA database as table data. This can cause the deletion of all files of the affected database table with a change of a data file. You can find more details in [Exclude CSV files from deployment](btp-app-#exclude-csv-files-from-deployment).
+>  Test files should never be deployed to an SAP HANA database as table data. This can cause the deletion of all files of the affected database table with a change of a data file. You can find more details in Step 6: `Exclude CSV files from deployment` of [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment).
 
 [DONE]
 [ACCORDION-END]
