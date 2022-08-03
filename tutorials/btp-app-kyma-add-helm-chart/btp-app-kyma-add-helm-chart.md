@@ -70,7 +70,7 @@ To start with this tutorial use the result in the [`prepare-xsuaa`](https://gith
 
     > Looking for your docker server URL?
 
-    > The docker server URL is the same as provided in Step 2 of [Create container registry secret](btp-app-#create-container-registry-secret). It's also the path used for docker login, so you can quickly check it by running the following command in your terminal:
+    > The docker server URL is the same as provided in Step 6: `Create container registry secret` of [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment). It's also the path used for docker login, so you can quickly check it by running the following command in your terminal:
 
     > ```json
     > cat ~/.docker/config.json
@@ -95,7 +95,7 @@ To start with this tutorial use the result in the [`prepare-xsuaa`](https://gith
             repository: <your-container-registry>/cpapp-srv
             ...
     ```
-    > The name of the secret created in [Create container registry secret](btp-app-#create-container-registry-secret) and the entry for `imagePullSecret` should match.
+    > The name of the secret created in Step 6: `Create container registry secret` of [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment) and the entry for `imagePullSecret` should match.
 
 
 
