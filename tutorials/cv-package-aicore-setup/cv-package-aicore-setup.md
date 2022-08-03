@@ -18,7 +18,7 @@ author_profile: https://github.com/kannankumar
 ## Prerequisites
   - You have completed the [Create Your First Machine Learning Project using SAP AI Core tutorial series](group.ai-core-get-started-basics)
   - You have [provisioned SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/38c4599432d74c1d94e70f7c955a717d.html)
-  - You have [set up your Git repository with SAP AI Core](https://help.sap.com/viewer/808d9d442fb0484e9b818924feeb9add/LATEST/en-US/3269092e37d141a293f0dbd7eaafc829.html).
+  - You have [set up your Git repository with SAP AI Core](https://help.sap.com/viewer/808d9d442fb0484e9b818924feeb9add/LATEST/en-US/3269092e37d141a293f0dbd7eaafc829.html)
   - You have [created Docker registry secret in SAP AI Core](https://help.sap.com/viewer/2d6c5984063c40a59eda62f4a9135bee/LATEST/en-US/b29c7437a54f46f39c911052b05aabb1.html)
   - You have [registered your object store secret in SAP AI Core](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/b083d73f672c428faac3048b74733546.html)
 
@@ -28,7 +28,7 @@ The package bundles capabilities of detectron2 (library for object detection and
 
 In this tutorial, you first create a Python virtual environment and install Python packages in the Python virtual environment. You then link the virtual environment to a Jupyter notebook so that you can run computer vision pipelines on SAP AI Core from a Jupyter notebook.
 
-After set up, you can train and serve an AI model for object detection. The aim of the model is to recognise objects (numbers) on electricity meter readings. See the related computer vision tutorials for training and serving an object detection model.
+After setup, you can train and serve an AI model for object detection. The aim of the model is to recognise objects (numbers) on electricity meter readings. See the related computer vision tutorials for training and serving an object detection model.
 
 
 
