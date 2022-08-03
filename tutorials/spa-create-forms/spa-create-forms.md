@@ -164,6 +164,12 @@ You can create these different forms using the **Form Builder** embedded in the 
 
 7. **Save** the process.
 
+    The process should look like the following.
+
+    !![Approval Form Added](ApprovalFormAdded.png)
+
+    Note that there is an error in the Approval Form, which will be addressed in the subsequent steps.
+
 [VALIDATE_2]
 [ACCORDION-END]
 
@@ -233,7 +239,7 @@ These notifications will appear in the inbox of the requester as a task.
 
     > If copy is not available then create the form in the same way and modify the texts wherever relevant as shown below.
 
-8. To add the new rejection form , we will use the **Duplicate** feature.
+8. To add the new rejection form, you will use the **Duplicate** feature.
 
     **Duplicate** feature is used to copy artifacts within the Business Process whereas **Copy** feature is used to copy artifacts across the business processes.
 
@@ -282,7 +288,7 @@ These notifications will appear in the inbox of the requester as a task.
 
     !![Save Order Rejection](OrderRejectionNotificationAfterSave.png)
 
-    Rest all fields can be left as is.
+    The remaining fields can be left as is.
 
 14. Go back to the process builder and add the order rejection notification form to the process.
 
