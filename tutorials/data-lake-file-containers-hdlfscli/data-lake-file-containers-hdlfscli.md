@@ -1,6 +1,6 @@
 ---
 title: Getting Started with Data Lake Files HDLFSCLI
-description: Learn how to setup the SAP HANA data lake file container command line interface and use the it to manage your data files.
+description: Learn how to setup the SAP HANA Data Lake file container command line interface and use the it to manage your data files.
 auto_validation: true
 time: 60
 tags: [ tutorial>beginner, software-product>sap-hana-cloud, tutorial>license]
@@ -8,7 +8,7 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
 ## Prerequisites
- - A licensed SAP HANA data lake instance (non-trial / non-free tier)
+ - A licensed SAP HANA Data Lake instance (non-trial / non-free tier)
  - Access to SAP Software Center
  - Basic understanding of the public key infrastructure (PKI)
  - [Download the sample TPCH Data](https://help.sap.com/viewer/a89a80f984f21015b2b2c84d2498d36d/QRC_4_2021/en-US/6e1dd06335704f4c96d48279ca1ed555.html)
@@ -16,19 +16,19 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ## Details
 ### You will learn
   - How to install and use the SAP HANA Data Lake file container Command Line Interface (HDLFSCLI)
-  - Use the HDLFSCLI to put, manage, and remove files from an [SAP HANA data lake File Container](https://help.sap.com/viewer/683a53aec4fc408783bbb2dd8e47afeb/alibabacloud/en-US/f4eae33ffb7a44f7af823ee6b70e3598.html)
+  - Use the HDLFSCLI to put, manage, and remove files from an [SAP HANA Data Lake File Container](https://help.sap.com/viewer/683a53aec4fc408783bbb2dd8e47afeb/alibabacloud/en-US/f4eae33ffb7a44f7af823ee6b70e3598.html)
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download the SAP HANA data lake Client)]
+[ACCORDION-BEGIN [Step 1: ](Download the SAP HANA Data Lake Client)]
 
-The HDLFSCLI is included in the HANA Data Lake Client download from the [SAP software center](https://launchpad.support.sap.com/#/softwarecenter/template/products/_APP=00200682500000001943&_EVENT=NEXT&HEADER=Y&FUNCTIONBAR=Y&EVENT=TREE&NE=NAVIGATE&ENR=73555000100800003274&V=MAINT&TA=ACTUAL/HANA%20CLOUD%20CLIENTS). The first step is to download and install the latest version of the HANA data lake client.
+The HDLFSCLI is included in the HANA Data Lake Client download from the [SAP software center](https://launchpad.support.sap.com/#/softwarecenter/template/products/_APP=00200682500000001943&_EVENT=NEXT&HEADER=Y&FUNCTIONBAR=Y&EVENT=TREE&NE=NAVIGATE&ENR=73555000100800003274&V=MAINT&TA=ACTUAL/HANA%20CLOUD%20CLIENTS). The first step is to download and install the latest version of the HANA Data Lake client.
 
-![HANA data lake client search](image-1.png)
+![HANA Data Lake client search](image-1.png)
 
 The latest HANA Data Lake Client package can by identified by the most recent release date.
 
-![HANA data lake software center client installer](image-2.png)
+![HANA Data Lake software center client installer](image-2.png)
 
 Once you've identified the correct package for your operating system, download it.
 
@@ -52,7 +52,7 @@ Then, run the setup file.
 ### GUI Installation
 If you are using a Linux distribution with a GUI, and installer GUI should appear.
 
-![HANA data lake client installer](image-3.png)
+![HANA Data Lake client installer](image-3.png)
 
 Proceed with the installer to complete the installation. Take note of the installation directory that is chosen during the installation setup. This is where necessary environment setup scripts are placed.
 
@@ -132,14 +132,14 @@ Verify the certificate was signed by the CA.
 
 To obtain the subject string of a certificate in the RFC2253 format used in HDL Files authorizations (omit the "subject="prefix).
 
-You will need this later when you configure authentication for HDL Files.
+**Note:** You will need this later when you configure authentication for HDL Files.
 
 `openssl x509 -in client.crt -nameopt RFC2253 -subject -noout`
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Update the SAP HANA data lake Trust Configuration)]
+[ACCORDION-BEGIN [Step 4: ](Update the SAP HANA Data Lake Trust Configuration)]
 
 Navigate to the SAP HANA Cloud Central Cockpit and select "Manage File Container" on the HDL instance.
 
@@ -184,9 +184,9 @@ The following command wont return anything in the output.
 
 `hdlfscli -cert <PATH>\client.crt -key <PATH>\client.key -cacert <PATH>\ca.crt -k -s https://<REST API Endpoint> -filecontainer <Instance ID> ls`
 
-Optional: Configure a configuration file to make using the CLI simpler.
+**[Optional]:** Configure a configuration file to make using the CLI simpler.
 
-The configuration will be placed in the **user's root directory**. It is saved as a JSON file that can be modified in any text editor.
+**Note:** The configuration will be placed in the **user's root directory**. It is saved as a JSON file that can be modified in any text editor.
 
 `hdlfscli -cert <PATH>\client.crt -key <PATH>\client.key -k -s <REST API Endpoint> -config myconfig -dump-config ls`
 
@@ -194,7 +194,7 @@ Test the configuration that was just created.
 
 `hdlfscli -config myconfig ls`
 
-Upload a file to the SAP HANA data lake file container. Ensure you know the path to the TPCH data files that were downloaded in the prerequisites.
+Upload a file to the SAP HANA Data Lake file container. Ensure you know the path to the TPCH data files that were downloaded in the prerequisites.
 
 `hdlfscli -config myconfig upload <Your Local Path>\TPCH <Target File Path>\TPCH`
 
@@ -202,14 +202,14 @@ Verify that the files has been uploaded.
 
 `hdlfscli -config myconfig lsr`
 
-Now that the TPCH data files are in the data lake file container we can use SQL on Files to query the data. Learn how to do this in the tutorial "Use SQL on Files to Query Structured Data Files".
+Now that the TPCH data files are in the Data Lake file container we can use SQL on Files to query the data. Learn how to do this in the tutorial "Use SQL on Files to Query Structured Data Files".
 
 
-Troubleshoot: If anyone receives the following error while verifying the configuration, please do the needful as mentioned.
+**[Troubleshoot]:** If anyone receives the following error while verifying the configuration, please do the needful as mentioned.
 
 ![Troubleshoot the configuration error.](image-12.png)
 
-Copy the content of the **Client** field which is mentioned inside [ ] brackets and then go to your Data lake Instance, Edit configuration and scroll down to Authorizations and first **delete** the entire value from the "Pattern" field and now paste the Client field value here.
+Copy the content of the **Client** field which is mentioned inside [ ] brackets and then go to your Data Lake Instance, click on edit configuration and scroll down to Authorizations and first **delete** the entire value from the "Pattern" field and now paste the Client field value here.
 
 Now, re-verify the configuration. It should work.
 
