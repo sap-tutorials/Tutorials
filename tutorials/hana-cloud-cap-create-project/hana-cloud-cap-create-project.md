@@ -154,6 +154,10 @@ Before we create our SAP HANA project, we want to do a few more one-time configu
 
     > This file is very sensitive to indentation and does not allow for tabs.
 
+1. NOTE: if your mta.yaml doesn't look like the screenshot in the previous step (it is missing the HANA DB module and resources), this could be a current bug in the wizard. If so you can correct the project easily. Open a terminal with the option `Terminal -> New Terminal`. From the terminal issue the command `cds add hana`. This should correct your mta.yaml.
+
+    !![cds add hana](cds_add_hana.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -165,21 +169,21 @@ The Cloud Application Programming Model wizard generates a project that supports
 
     !![Adjust db module path](db_path.png)
 
-1. Save these changes
+2. Save these changes
 
-1. In the root of the project there is another important configuration file - the package.json. We are going to need to make several changes to this file as well.
+3. In the root of the project there is another important configuration file - the package.json. We are going to need to make several changes to this file as well.
 
     !![Open package.json for editing](package_json.png)
 
     > No need to worry about the yellow underlining below the name of the package. This is just a hint and doesn't have any impact on the tutorial.
 
-1. You can completely delete the `devDependencies` section of the `package.json`
+4. You can completely delete the `devDependencies` section of the `package.json`
 
-1. In the `dependencies` section, update the `@sap/cds` version to `^6`
+5. In the `dependencies` section, update the `@sap/cds` version to `^6`
 
     !![package.json dependencies](package_json_dependencies.png)
 
-1. The rest of the changes will be in the `cds` section of the file. Replace this entire section of `package.json` with the following content
+6. The rest of the changes will be in the `cds` section of the file. Replace this entire section of `package.json` with the following content
 
     ```json
     "cds": {
@@ -204,7 +208,7 @@ The Cloud Application Programming Model wizard generates a project that supports
 
     > These changes will alter the generated folder structure of the cds build operation. Content will no longer be placed into the gen folder for the db module but back into the source folders. This also will tell CAP to generate hdbtable artifacts instead of hdbcds. This is a critical change for SAP HANA Cloud compatibility. Finally the db.kind change to HANA tells CAP to use HANA at development time instead of SQLite.
 
-1. Save the file
+7. Save the file
 
 [DONE]
 [ACCORDION-END]
