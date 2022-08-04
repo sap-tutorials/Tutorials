@@ -66,7 +66,8 @@ Destinations are predefined endpoints used in the Business Technology Platform (
 
 The destination can be accessed in the **Business Process** project  by creating an Environment variable of the type Destination.
 
-You will now create a **Business Process** from the Lobby.
+Create a **Business Process** from the Lobby.
+After creating the Business Process , create the Environment variable of the type Destination.
 
 1.  Navigate to Settings>Environment Variables.
 
@@ -74,7 +75,7 @@ You will now create a **Business Process** from the Lobby.
 
     !![Environment Variable](4.png)
 
-    Your Destination has been successfully created.
+    The Destination can be accessed successfully in your Business Process Project.
 
 [DONE]
 [ACCORDION-END]
