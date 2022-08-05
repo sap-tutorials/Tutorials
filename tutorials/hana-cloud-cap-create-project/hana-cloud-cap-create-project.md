@@ -50,7 +50,7 @@ In this step we will create a new Dev Space configured for SAP Cloud Application
 
     ![Create Dev Space](create_cap_dev_space.png)
 
-1. The Dev space will automatically be configured with the most common tools you need for the type of application you choose. However you can also choose additional, optional extensions. Since you want to combine CAP and HANA artefacts in the same project, we would ask that you also choose SAP HANA Calculation View Editor and SAP HANA Tools at minimum.
+1. The Dev space will automatically be configured with the most common tools you need for the type of application you choose. However you can also choose additional, optional extensions. Since you want to combine CAP and HANA artifacts in the same project, we would ask that you also choose SAP HANA Calculation View Editor and SAP HANA Tools at minimum.
 
     ![Configure Dev Space](configure_cap_dev_space.png)
 
