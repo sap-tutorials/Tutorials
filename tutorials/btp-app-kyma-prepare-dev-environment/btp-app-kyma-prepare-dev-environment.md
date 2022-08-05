@@ -99,7 +99,7 @@ To install `kubelogin`, run the following command:
 ```Shell/Bash
 brew install int128/kubelogin/kubelogin
 ```
-See the [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more details.
+See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more details.
 [OPTION END]
 [OPTION BEGIN [Windows]]
 
@@ -109,7 +109,7 @@ You can install `kubelogin` using chocolatey:
 choco install kubelogin
 ```
 
-See the [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more details.
+See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more details.
 [OPTION END]
 [OPTION BEGIN [Linux]]
 
@@ -118,7 +118,7 @@ To install `kubelogin`, run the following command:
 brew install int128/kubelogin/kubelogin
 ```
 
-See the [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more details.
+See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more details.
 [OPTION END]
 
 
@@ -190,9 +190,14 @@ kubectl create secret docker-registry container-registry \
         "--docker-password=..."
 ```
 
-1. Run the script to create the secret.
+1. Copy the folder `scripts` from `templates/Kyma-Prepare-Dev-Environment` to your project root folder.
 
-    Run the bash script ´./kyma-add-helm-chart/scripts/create-container-registry-secret.sh´ in the `templates` folder, which will prompt you for the required inputs. By using the script, you avoid storing your password in your shell's history.
+1. Run the script to create the secret. In the root folder of your project, execute:
+
+    ```Shell/Bash
+    ./scripts/create-container-registry-secret.sh
+    ```
+    Running this script will prompt you for the required inputs. By using the script, you avoid storing your password in your command line interpreter's history.
 
     > Can't run the `kubectl create secret docker-registry container-registry \` command?
 
