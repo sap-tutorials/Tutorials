@@ -167,6 +167,21 @@ Now that we've build the docker images, let's push them to the container registr
      helm upgrade cpapp ./chart --install
      ```
 
+    > In case you get an error message about the CPU limits, update the values for CPU in the file `chart/values.yaml`.
+
+    > ```yaml hl_lines="5 9"
+    > global:
+    > ...
+    >     resources:
+    >         limits:
+    >             cpu: 100m
+    >             ephemeral-storage: 1G
+    >             memory: 500M
+    >         requests:
+    >             cpu: 100m
+    > ...
+    > ```
+
 2. Copy the app URL when done and paste it into a new browser window:
 
      ![CPAPP URL](cpappURL.png)
