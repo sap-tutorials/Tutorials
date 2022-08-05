@@ -38,6 +38,8 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.3.png)
 
+    >If you do not see the **MDK Project** option check if your Dev Space has finished loading or reload the page in your browser and try again.
+
 4. In *Basic Information* step, provide the below information and click **Next**:
 
     | Field | Value |
@@ -69,7 +71,7 @@ This step includes creating the mobile development kit project in the editor.
 
     Regardless of whether you are creating an online or offline application, this step is needed for app to connect to an OData service. When building an MDK Mobile application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services. For MDK Web application, destination is set up in SAP BTP cockpit.
 
-    The generated application will be offline enabled in the MDK Mobile client and will run as online in Web environment.
+    Since we have Enable Offline set to Yes, the generated application will be offline enabled in the MDK Mobile client and will run as online in Web environment.
 
 6. In the *Data Collections* step, select `Customers`, `Products`, `PurchaseOrderHeaders`, `PurchaseOrderItems` `SalesOrderHeaders` and `SalesOrderItems`. Click **Finish** to complete the project creation.
 
