@@ -8,7 +8,7 @@ primary_tag: software-product-function>sap-hana-cloud\,-data-lake
 ---
 
 ## Prerequisites
- - A licensed SAP HANA data lake instance (non-trial / non-free tier).
+ - A licensed SAP HANA Data Lake instance (non-trial / non-free tier).
  - Access to SAP Software Center.
  - Basic understanding of the public key infrastructure (PKI).
  - Should have completed the [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli) tutorial.
