@@ -73,7 +73,7 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
     ```
 
-    > ### What is going on?
+    > What is going on?
     >
     > You are declaring two entities with relationships between each other. The design-time artifacts declared in this file will be converted to run-time, physical artifacts in the database. In this example, the entities will become tables.
 
