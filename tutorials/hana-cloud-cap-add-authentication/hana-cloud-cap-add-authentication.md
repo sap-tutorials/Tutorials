@@ -73,7 +73,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
     ![Create XSUAA service](create_service.png)
 
-### Configure the application)
+### Configure the application
 
 1. In the previous tutorial, the application router wizard created a `default-env.json` file in the root of the project, to configure the connection to the service instance when running locally for testing. We will now extend that same file to do the same for the XSUAA instance we just created in the previous step.
 
@@ -136,7 +136,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
     ![New Role Collection](new_role_collection.png)
 
-1. Name your role collection `MyHANAApp`. Then go into edit mode on the role collection. Use the value help for the Role. Use the Application Identifier to find your service instance (`myhanaapp!#####`). Select the role and press **Add**
+1. Name your role collection `MyHANAApp`. Then go into edit mode on the role collection. Use the value help for the Role. Use the Application Identifier to find your service instance (`myhanaapp!XXXXX`). Select the role and press **Add**
 
     ![Select Role](select_role.png)
 
