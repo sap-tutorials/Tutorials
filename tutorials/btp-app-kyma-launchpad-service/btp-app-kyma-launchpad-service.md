@@ -39,6 +39,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 To start with this tutorial use the result in the [`kyma-add-helm-chart`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/kyma-add-helm-chart) branch.
 
 ---
+
 [ACCORDION-BEGIN [Step 1: ](Prepare UI Applications)]
 In this tutorial, you will use the SAP Launchpad service to access your CAP service and its UI. Additionally, the SAP Launchpad service provides features like personalization, role-based visibility, theming, and more. You can add multiple applications to one launchpad, including subscribed ones and applications from SAP S/4HANA or SAP BTP.
 
@@ -142,7 +143,7 @@ Do the same with the mitigations manifest file `app/mitigations/webapp/manifest.
     fiori add deploy-config cf
     ```
 
-    > If the SAP Fiori generator fails, make sure to remove other `.yo-rc.json` files you might have in any of your project's directories and try again.
+    > If the SAP Fiori generator fails, check if the file `app/risks/ui5-deploy.yaml` is generated. If so, you can continue with the next part of the tutorial. If not, make sure to remove other `.yo-rc.json` files you might have in any of your project's directories and try again.
 
 3. Enter the following settings:
 
@@ -347,10 +348,7 @@ You can redeploy your application:
 helm upgrade cpapp ./chart --install
 ```
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 12 ](Subscribe to SAP Launchpad service)]
+## Subscribe to SAP Launchpad service
 
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
@@ -372,10 +370,7 @@ helm upgrade cpapp ./chart --install
 
 You have now subscribed to the SAP Launchpad service.
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 13: ](Assign SAP Launchpad role collection)]
+## Assign SAP Launchpad role collection
 
 You need to assign your user to the `Launchpad_Admin` role collection, so you don't get an error accessing the **Launchpad Service** site later on.
 
@@ -391,10 +386,8 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
 > See section [Initial Setup](https://help.sap.com/viewer/8c8e1958338140699bd4811b37b82ece/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html) in the SAP Launchpad service's documentation for more details.
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 14: ](Create your SAP Launchpad site)]
+## Create your SAP Launchpad site
+
 1. Choose **Services** &rarr; **Instances and Subscriptions** on the left.
 
 2. Locate the **Launchpad Service** under **Subscriptions** and choose **Go to Application**.
@@ -447,10 +440,8 @@ You need to assign your user to the `Launchpad_Admin` role collection, so you do
 
     > The new site gets the `Everyone` role by default, so you don't have to assign it explicitly. The default site properties are sufficient for the purposes of this tutorial.
 
-[DONE]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 15: ](Test your SAP Launchpad site)]
+
+## Test your SAP Launchpad site
 
 1. Choose **Go to site**.
 
