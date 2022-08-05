@@ -178,6 +178,6 @@ We now want to expose our Calculation View to the Cloud Application Programming 
 
 1. You can test your view via the service layer by adding `/catalog/V_Interaction` to the path.
 
-   ![Test](test_view.png)
+    ![Test](test_view.png)
 
 Congratulations! You have now successfully combined HANA native artifacts with the SAP Cloud Application Programming Model and learned the modern HANA way to expose Calculation Views via OData.
