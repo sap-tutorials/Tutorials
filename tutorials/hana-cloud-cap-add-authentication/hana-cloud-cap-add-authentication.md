@@ -64,7 +64,7 @@ The UAA will provide user identity, as well as assigned roles and user attribute
 
     ![Updated xs-security.json](updated_xs_security.png)
 
-1. Since we want to test the security setup from the Business Application Studio, we are going to have add some additional configuration to the `xs-security.json`. You need to add another property to the `xs-security.json` to configure which redirect URIs are allowed by the `OAuth` configuration. Also while editing, add an `xsappname` with the value `myhanaapp` and a `tenant-mode` of `dedicated` as well. We can also add `credential-types` as a security best practice. You can read more about the [Credential Types in this blog post](https://blogs.sap.com/2022/07/05/why-developers-should-care-about-credential-types-for-xsuaa/) by [Dinu PAVITHRAN](https://people.sap.com/dinu.pavithran)
+1. Since we want to test the security setup from the Business Application Studio, we are going to have add some additional configuration to the `xs-security.json`. You need to add another property to the `xs-security.json` to configure which redirect URIs are allowed by the `OAuth` configuration. Also while editing, add an `xsappname` with the value `myhanaapp` and a `tenant-mode` of `dedicated` as well. We can also add `credential-types` as a security best practice. You can read more about the [Credential Types in this blog post](https://blogs.sap.com/2022/07/05/why-developers-should-care-about-credential-types-for-xsuaa/) by [`Dinu PAVITHRAN`](https://people.sap.com/dinu.pavithran)
 
     ```json
     {
