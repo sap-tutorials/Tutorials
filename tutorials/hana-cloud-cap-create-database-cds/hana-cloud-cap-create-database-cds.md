@@ -46,7 +46,7 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
 1. Use the following content in this new file:
 
-    ```CDS
+    ```CAP CDS
     namespace app.interactions;
 
     using { Country } from '@sap/cds/common';
@@ -89,7 +89,7 @@ The SAP Cloud Application Programming model utilizes core data services to defin
 
 1. Use the following content in this new file:
 
-    ```CDS
+    ```CAP CDS
 
     using app.interactions from '../db/interactions';
     service CatalogService {
@@ -213,7 +213,7 @@ You can now check the generated tables and views in the Database Explorer.
 1. Note the name of the table matches the generated `hdbtable` artifacts. You will also see the physical schema managed by the HDI container.
 
     > Unless a name is specified during deployment, HDI containers are automatically created with names relative to the project and user generating them. This allows developers to work on different versions of the same HDI container at the same time.
-    > !![Build database module](8.png)
+    > ![Build database module](8.png)
 
 ### Load data into your tables
 
