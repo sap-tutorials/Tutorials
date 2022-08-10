@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Configure Authentication and Authorization on SAP BTP
 description: Set up authentication and authorization on SAP BTP and deploy your secured application there.
 keywords: cap

@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Use SAP HANA as the Database for a CAP Java Application
 description: Use SAP HANA in SAP Business Technology Platform as database for your CAP Java application.
 auto_validation: true
