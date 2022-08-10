@@ -92,7 +92,7 @@ You first need to provision your SAP HANA Cloud instance, which is a prerequisit
 4. Create an SAP HANA service instance and implicitly push all artefacts to the database using:
 
     ```Shell/Bash
-    cds deploy --to hana:bookstore-hana
+    cds deploy --to hana:bookstore-hana --store-credentials
     ```
 
     > As an effect, `.hdbtable` and `.hdbview` files are generated in the `(gen/)db/src/gen/` folder.
