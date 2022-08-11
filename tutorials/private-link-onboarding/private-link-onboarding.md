@@ -1,6 +1,6 @@
 ---
 author_name: Madeline Schaefer
-author_profile: https://github.com/Madeline-Schaefer
+author_ profile: https://github.com/Madeline-Schaefer
 title: Set Up SAP Private Link Service
 description: Get onboarded to use SAP Private Link service in SAP BTP.
 auto_validation: true
