@@ -149,7 +149,7 @@ In the MDK editor, you will first create a message to display a confirmation dia
 
 [ACCORDION-BEGIN [Step 3: ](Add buttons on main page to open other apps or web pages)]
 
-1. Next, on `Main.page`, drag and drop the **Section Button Table** Container control onto the Page.
+1. Next, on `Main.page`, drag and drop the **Button Table** Static Container control onto the Page.
 
     !![MDK](img_3.1.gif)
 
@@ -158,11 +158,11 @@ In the MDK editor, you will first create a message to display a confirmation dia
 
 2. Now, you will add items to this Container control.
 
-    Drag and drop the **Section Button** Container Item control onto the page.
+    Drag and drop the **Button** Static Item control onto the page.
 
     !![MDK](img_3.2.gif)
 
-3. Repeat the above step, and drag and drop one more such **Section Button** Container Item control.
+3. Repeat the above step, and drag and drop one more such **Button** Static Item control.
 
     !![MDK](img_3.3.png)
 

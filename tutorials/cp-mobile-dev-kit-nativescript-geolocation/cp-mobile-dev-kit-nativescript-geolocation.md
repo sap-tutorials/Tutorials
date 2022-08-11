@@ -15,8 +15,8 @@ author_profile: https://github.com/jitendrakansal
 
 ## Details
 ### You will learn
-  - How to reference the NativeScript Geolocation plugin from a rule
-  - How to add a NativeScript plugin to your branded MDK client
+  - How to reference the `NativeScript` Geolocation plugin from a rule
+  - How to add a `NativeScript` plugin to your branded MDK client
   - How to build a Mobile development kit client for iOS & Android and connect to SAP Mobile application
   - How to capture the device's current location
 
@@ -122,7 +122,7 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 
 You will add this registered control in the `Main.page`.
 
-  1. Click the `Main.page`, drag & drop **Static Key Value** container control to the page area.
+  1. Click the `Main.page`, drag & drop **Static Key Value** container to the page area.
 
     !![MDK](img-3.1.gif)
 
