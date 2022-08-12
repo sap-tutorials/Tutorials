@@ -48,7 +48,7 @@ For that, select the request `Get Job by id` within the folder `Train Job`. Clic
 
 In the response, you find again the current status of your training job along with other details. Immediately after creation of the training job, the status is `PENDING`. Shortly after, it changes to `RUNNING` which means that the model is being trained.
 
-The training of the sample data usually takes about 5 minutes to complete but may run longer, up to a few hours due to limited availability of resources in the trial environment. You can check the status every now and then. Once training is finished, the status changes to `SUCCEEDED`.
+The training of the sample data usually takes about 5 minutes to complete but may run longer, up to a few hours due to limited availability of resources in the free tier environment. You can check the status every now and then. Once training is finished, the status changes to `SUCCEEDED`.
 
 ![Get Training Job Response](get-job-responseR.png)
 

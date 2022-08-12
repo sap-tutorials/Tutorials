@@ -1,5 +1,5 @@
 ---
-title: Create Service Instance for Document Information Extraction
+title: Use Trial to Create a Service Instance for Document Information Extraction
 description: Create a service instance and the associated service key for Document Information Extraction, one of the SAP AI Business Services, using SAP Business Technology Platform (SAP BTP) Trial.
 auto_validation: true
 time: 15

@@ -34,7 +34,7 @@ An SAP Fiori elements app is an application that leverages SAPUI5, SAPUI5 contro
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Generate the UI with an SAP Fiori elements template)]
-1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
+1. In VS Code, invoke the Command Palette ( **View** &rarr; **Command Palette** or <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>P</kbd> for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
     > VS Code will automatically install `@sap/generator-fiori` if missing and open the **Template Wizard**.
 
@@ -91,11 +91,7 @@ The application is now generated and in a few seconds you can see it in the `app
 
 2. Choose the link [http://localhost:4004/risks/webapp/index.html](http://localhost:4004/risks/webapp/index.html) for the HTML page.
 
-3. On the launch page that now comes up, choose the **Risks** tile.
-
-    !![Index HTML Page](feapptile.png)
-
-    You can now see the application without any data.
+3. You can now see the application without any data.
 
     !![Index HTML Page](feappempty.png)
 

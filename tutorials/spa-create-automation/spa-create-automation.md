@@ -10,6 +10,8 @@ primary_tag: software-product>sap-process-automation
 ---
 
 ## Prerequisites
+  - A windows machine
+  - If you are using a MAC, please install a VDI
   - [Install and Setup the Desktop Agent](spa-setup-desktop-agent)
   - Complete the mission: [Build Your First Business Process with SAP Process Automation](mission.sap-process-automation)
 
@@ -139,15 +141,17 @@ You will now design the automation in the Automation Editor by dragging-and-drop
 
     > A pop up appears to create a data type. A **Sales Order** variable is needed to collect the data from the excel sheet columns. In this step, a variable is automatically created from the excel file columns.
 
+    !![Pop Up For Sales Order Data Type](DataTypePopUp.png)
+
  7. Enter the **Name** of the data type as **Sales Order** and choose **Create**.
 
-    > Framework creates a data type with the columns of the Excel as the field names.
+    > Framework creates a data type with the columns of the Excel as the field names. You can see it in the Artifacts section in the Overview tab.
 
-    ![00-01](Step4.3-ValdiatedDataType.png)
+    !![Sales Order Data Type Created](SalesOrderDataTypeCreated.png)
 
- 8. Change the variable name to **Orders** in the **Output Parameters** of the **Excel Cloud Link** activity.
+ 8. In the **Get Order Details** automation, change the variable name to **Orders** in the **Output Parameters** of the **Excel Cloud Link** activity.
 
-    ![00-01](Step4-ExcelCloudLinkOutputParm.png)
+    !![Change to orders](ChangeToOrders.png)
 
     Once Excel is no longer required, close the excel instance. **Close Excel Instance** activity closes an instance of Excel. To close the opened instance of the excel file, do the following:
 
@@ -165,7 +169,7 @@ Input and output parameters allow you to exchange data in the workflow of your a
 
 1. Click on the canvas and select the **Input/Output** section in **Automation Details**.
 
-    ![00-05](Step11-InputOutput.png)
+    !![Click on Canvas](ClickOnCanvas.png)
 
 2. Add Input and Output parameters as following:
 
@@ -188,6 +192,8 @@ Variables that are used, build your automation, and are data storage that have a
     ![00-01](Step6-CreateSalesOrderVaraibleV2.png)
 
 2.  Drag and drop the **Sales Order** into the canvas.
+
+    !![Drag and Drop Sales Order](DragAndDropSalesOrder.png)
 
     > A variable of the data type **Sales Order** is created.
 

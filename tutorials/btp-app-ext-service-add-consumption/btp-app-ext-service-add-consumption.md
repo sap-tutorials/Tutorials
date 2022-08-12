@@ -115,7 +115,7 @@ In this step, you add some mock data for the business partner service. This allo
 
     ```
     ...
-    > filling API_BUSINESS_PARTNER.A_BusinessPartner from ./srv/external/data/API_BUSINESS_PARTNER-A_BusinessPartner.csv
+    > init from ./srv/external/data/API_BUSINESS_PARTNER-A_BusinessPartner.csv
     ...
     [cds] - mocking API_BUSINESS_PARTNER { at: '/api-business-partner' }
     [cds] - serving RiskService { at: '/service/risk', impl: './srv/risk-service.js' }
@@ -183,9 +183,15 @@ In this step, you add some mock data for the business partner service. This allo
 [ACCORDION-BEGIN [Step 4: ](Connect to the sandbox service)]
 Later in the tutorial [Use SAP S/4HANA Cloud Service](btp-app-ext-service-s4hc-use), you will learn how to connect the business partner service with a real SAP S/4HANA system. In this tutorial here, you use the sandbox system to try out your application with a real remote system.
 
+1. Install the node packages to mock the external services:
+
+    ```
+    npm install @sap-cloud-sdk/http-client @sap-cloud-sdk/util
+    ```
+
 1. Open again the [**Business Partner (A2X)**](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) page on the **SAP API Business Hub**.
 
-2. Under **Overview** **&rarr;** **Configuration Details**, you find the **Sandbox URL**. Keep the page open, you'll need it later again.
+2. Under **Overview** &rarr; **Configuration Details**, you find the **Sandbox URL**. Keep the page open, you'll need it later again.
 
     !![Sandbox](sandbox.png)
 

@@ -1,4 +1,6 @@
 ---
+author_name: Annika Gonnermann
+author_profile: https://github.com/AnnikaGonnermann
 title: Getting Started with Integration Flow Design Guidelines - Timer-Initiated Scenario
 description: In Cloud Integration, copy and deploy a very simple out-of-the-box integration flow design guideline with a timer-initiated integration flow that writes an entry to the data store.
 auto_validation: true
@@ -137,3 +139,5 @@ In this final step, check whether the data store entry "Hello world" has been wr
 **Congratulations! You've successfully copied and deployed a very simple timer-initiated integration flow which is part of the Learn the Basics integration flow guideline.**
 
 ---
+
+

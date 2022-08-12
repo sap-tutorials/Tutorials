@@ -52,12 +52,14 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.3.png)
 
+    >If you do not see the **MDK Project** option check if your Dev Space has finished loading or reload the page in your browser and try again.
+
 4. In *Basic Information* step, provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
     | `MDK Template Type`| Select `List Detail` from the dropdown |
-    | `Your Project Name` | `MDK_i18n_l10n` |
+    | `Your Project Name` | Provide a name of your choice. `MDK_i18n_l10n` is used for this tutorial |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
     | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
@@ -92,7 +94,7 @@ This step includes creating the mobile development kit project in the editor.
 
 [ACCORDION-BEGIN [Step 3: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services and Cloud Foundry to consume it as Mobile and Web application respectively.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy the application definitions to Mobile Services and Cloud Foundry to use it in the Mobile client and Web application respectively.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
@@ -117,9 +119,9 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 >Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-SAP Business Application Studio has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+1. Click the **Application.app** to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
     !![MDK](img-4.1.png)
 
@@ -129,7 +131,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 2. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see the `Main` page (with `Logout` and `Sync` options at bottom of the page) and `Customers` and `SalesOrderHeaders` entity sets to navigate to List-Detail page.
+    After you accept app update, you will see the `Main` page (with `Logout` and `Sync` options at bottom of the page) and `Customers` and `SalesOrderHeaders` entity sets to navigate to List-Detail page.
 
     ![MDK](img-5.1.png)
 
@@ -145,9 +147,9 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 >Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-SAP Business Application Studio has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-1. Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+1. Click the **Application.app** to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
     !![MDK](img-4.1.png)
 
@@ -157,7 +159,7 @@ SAP Business Application Studio has a feature to generate QR code for app onboar
 
 2. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-    Once you accept app update, you will see the `Main` page (with `Logout` and `Sync` options at bottom of the page) and `Customers` and `SalesOrderHeaders` entity sets to navigate to List-Detail page.
+    After you accept app update, you will see the `Main` page (with `Logout` and `Sync` options at bottom of the page) and `Customers` and `SalesOrderHeaders` entity sets to navigate to List-Detail page.
 
     ![MDK](img-5.3.png)
 
@@ -382,10 +384,14 @@ Let's start with Currency formatter:
 
 Right-click the `Application.app` file in the project explorer pane,  select **MDK: Deploy** and then select deploy target as **Mobile & Cloud**.
 
+>Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+>!![MDK](img-4.3.1.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Update the MDK app with new metadata)]
+[ACCORDION-BEGIN [Step 9: ](Update the app)]
 
 [OPTION BEGIN [Android]]
 

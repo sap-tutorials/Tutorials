@@ -95,7 +95,7 @@ print(f"Test Data Score {test_r2_score}")
 
 Create another file `requirements.txt` in the same directory. Here you will mention which python libraries are required to execute your code.
 
-> **RECOMMENDED** In production you should use the terminal command `pip list --format freeze > requirements.txt` to auto generate `requirement.txt`.
+> **RECOMMENDED** In production you should use the terminal command `pip list --format freeze > requirements.txt` to auto generate `requirements.txt`.
 
 Paste the following snippet into `requirements.txt`.
 
@@ -246,7 +246,7 @@ print(response.__dict__)
 [OPTION END]
 
 1. **Name**: Enter `credstutorialrepo`. This is becomes an identifier for your Docker credentials within SAP AI Core. This value is your docker registry secret.
-2. **URL**: If you have used your organization's Docker registry then use its URL, otherwise, enter `docker.io`.
+2. **URL**: If you have used your organization's Docker registry then use its URL, otherwise, enter `https://index.docker.io`.
 3. **Username**: Your Docker username.
 4. **Access Token**: The access token generated previously, in the Docker account settings.
 
