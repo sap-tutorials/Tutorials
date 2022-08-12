@@ -155,7 +155,7 @@ aic_connection.log_metrics(
 )
 ```
 
-The variable `i` in is already present in your code to pass to the parameter `step=i`.  This is also shown in SAP AI Launchpad. You can zoom in to view.
+The variable `i` is already present in your code to pass to the parameter `step=i`.  This is also shown in SAP AI Launchpad. You can zoom in to view.
 
 !![image](img/ail/step.png)
 
@@ -164,7 +164,7 @@ The variable `i` in is already present in your code to pass to the parameter `st
 
 [ACCORDION-BEGIN [Step 5: ](Attach metrics to generated model)]
 
-Add the following snippet to store metrics for step information.
+Add the following snippet to store metrics for artifact information.
 
 ```PYTHON
 aic_connection.log_metrics(
@@ -207,7 +207,7 @@ aic_connection.set_custom_info(
 )
 ```
 
-The structure must be type-cast to `str` (string). Here, the structure used is [**permutation feature importance**](https://scikit-learn.org/stable/modules/permutation_importance.html#permutation-importance).
+The structure must be type-cast to `str` (a string). Here, the structure used is [**permutation feature importance**](https://scikit-learn.org/stable/modules/permutation_importance.html#permutation-importance).
 
 The variables `r` and `feature_importances` are already created in the starter code.
 
@@ -240,7 +240,7 @@ After execution, you can see this in SAP AI Launchpad.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add tags for execution meta after training)]
+[ACCORDION-BEGIN [Step 6: ](Add tags for execution meta after training)]
 
 Add the following snippet to tag your execution. The `tags` are customizable key-values.
 
@@ -260,7 +260,7 @@ After execution, you can see this in SAP AI Launchpad.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Complete files)]
+[ACCORDION-BEGIN [Step 7: ](Complete files)]
 
 Check your modified `main.py` by comparing it with the following expected `main.py`.
 
@@ -366,12 +366,12 @@ aic_connection.set_tags(
 )
 ```
 
-Check your modified `main.py` by comparing it with the following expected `main.py`.
+Check your modified `requirements.txt` by comparing it with the following expected `requirements.txt`.
 
 ```TEXT
 sklearn==0.0
 pandas
-ai-core-sdk>=1.15.1
+ai-core-sdk>=1.12.0
 ```
 
 Create a file called `Dockerfile` with the following snippet. This file must not have a file extension or alternative name.
@@ -477,7 +477,7 @@ Create a configuration using the following values. The values are taken from the
 
 The value for `Input Parameters` `DT_MAX_DEPTH` is your choice. Until now, this has been set using an environment variable. If a variable is not specified, this parameter continues to be defined by the environment variables.
 
-> Information: This parameter can be defined using an integer to set a maximum depth or as `None`, which means that nodes are expanded until all leaves are single nodes, or contain all contain fewer data points than specified in the `min_samples_split samples`, if specified. For more information, see [the Scikit learn documentation](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html).
+> Information: This parameter can be defined using an integer as a string, to set a maximum depth or as `None`, which means that nodes are expanded until all leaves are single nodes, or contain all contain fewer data points than specified in the `min_samples_split samples`, if specified. For more information, see the [Scikit learn documentation](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html).
 
 Attach your registered artifact to `Input Artifact`, by specifying `housedataset` for this value.
 
@@ -504,7 +504,7 @@ For metrics tagged with the artifact name, you can also locate the metrics in th
 
 [OPTION BEGIN [Postman]]
 
-Navigate through `AI Core` > `lm` > `metrics` > `Get metrics` and double check the `executionId`.
+Click `AI Core` > `lm` > `metrics` > `Get metrics` and double check the `executionId`.
 
 !![image](img/postman/metric.png)
 
@@ -573,7 +573,7 @@ Unnamed: 0: 0.000 +/- 0.000
 
 [ACCORDION-BEGIN [Step 11: ](Compare metrics (optional))]
 
-Create two configurations: one with `DT_MAX_DEPTH = 3` and the other with `DT_MAX_DEPTH = 6`. Then create executions for both configurations.
+Create two configurations: one with `DT_MAX_DEPTH = 3` and the other with `DT_MAX_DEPTH = 6`, then create executions for both configurations.
 
 !![image](img/ail/compare-1.png)
 
