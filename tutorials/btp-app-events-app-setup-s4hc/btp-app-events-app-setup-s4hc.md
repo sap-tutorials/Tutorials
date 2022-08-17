@@ -105,7 +105,7 @@ Using the Business Partner service that you added in `Step 1: Get the Business P
     * `"kind": "local-messaging"` Allows services running in the same process to send and receive messages locally. Other options for local testing are [`file` for services running in different processes](https://cap.cloud.sap/docs/guides/messaging/#1-use-file-based-messaging-in-development) and [connecting to an event mesh instance on BTP](https://cap.cloud.sap/docs/guides/messaging/event-mesh#run-tests-in-hybrid-setup).
     * In production you will use the [SAP Event Mesh service](https://help.sap.com/docs/SAP_EM?locale=en-US), hence the line `"kind": "enterprise-messaging-shared"`.
     * `"format": "cloudevents"` configures the format of the event data, which allows [CAP to fill in required fields](https://cap.cloud.sap/docs/guides/messaging/#cloudevents) behind the scenes.
-    * The `publishPrefix` is specified for all events emitted from the application (`$namespace/ce/`). This is not used in this application as we don't emit any events.
+    * The `publishPrefix` is specified for all events emitted from the application (`$namespace/ce/`). This is not used in this application as you don't emit any events.
     * `subscribePrefix` is specified to match all the Cloud Events sent to the subaccount. The `ce/` part in the expression `+/+/+/ce/` refers to the cloud events.
 
     > Namespace info for `subscribePrefix` and `publishPrefix`

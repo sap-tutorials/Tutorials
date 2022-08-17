@@ -74,7 +74,7 @@ Download Postman environment and collection sample files. Make a local copy of t
 
 !![Postman](booster-success-postman.png)
 
->If you face any issue with the booster **Set up account for Service Ticket Intelligence**, you can alternatively follow the steps in [Create Service Instance for Service Ticket Intelligence](cp-aibus-sti-service-instance) to create the service key for Service Ticket Intelligence manually, and download and edit the Postman environment and collection sample files, as described in [Set Up Postman to Call Service Ticket Intelligence APIs](cp-aibus-sti-setup-postman).
+>If you face any issue with the booster **Set up account for Service Ticket Intelligence**, you can alternatively follow the steps in [Use Trial to Create a Service Instance for Service Ticket Intelligence](cp-aibus-sti-service-instance) to create the service key for Service Ticket Intelligence manually, and download and edit the Postman environment and collection sample files, as described in [Set Up Postman to Call Service Ticket Intelligence APIs](cp-aibus-sti-setup-postman).
 
 Congratulations, you have completed this tutorial. You are now all set to [Install Postman REST Client](api-tools-postman-install) and [Set Up Postman to Call Service Ticket Intelligence APIs](cp-aibus-sti-setup-postman).
 

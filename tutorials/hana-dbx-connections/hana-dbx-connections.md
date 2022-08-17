@@ -156,11 +156,13 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 
     ![A few queries](iq-query.png)
 
+    Diagnostic files can also be viewed in the Logs directory.
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add a data lake file container (Optional))]
-A [data lake file container](https://help.sap.com/viewer/b239ed4bb73a4f07886657e237f1875f/latest/en-US/125cccac948c4b42a09a9d5695366ffb.html) provides storage for non structured files such as images or PDF documents.  It can also store structured files such as CSV, parquet, or ORC files and with the use of [SQL on Files](https://help.sap.com/viewer/3ef213750ce94aac885ac4fc54ea212f/latest/en-US/c6f12cb258b646aa81b3482e7efeddcf.html), queries can be performed on the data contained in those files.
+A [data lake file container](https://help.sap.com/viewer/b239ed4bb73a4f07886657e237f1875f/latest/en-US/125cccac948c4b42a09a9d5695366ffb.html) provides storage for non structured files such as images or PDF documents.  It can also store structured files such as CSV, parquet, or ORC files and with the use of [SQL on Files](https://help.sap.com/viewer/3ef213750ce94aac885ac4fc54ea212f/latest/en-US/c6f12cb258b646aa81b3482e7efeddcf.html), queries can be performed on the data contained in those files.  An example of using the data lake File container is shown as a target for an export operation at [Export and Import Data and Schema with SAP HANA Database Explorer](hana-dbx-export-import).
 
 1. A connection can be added to a data lake file container.  Note that this feature is currently not available in the free-tier or trial instances of SAP HANA Cloud.
 
@@ -367,10 +369,13 @@ The following steps demonstrate how to use the SAP Business Application Studio o
     An alternative way to determine the URL for the SAP Web IDE for SAP HANA is to run the below command on the machine where SAP HANA on-premise is installed.
 
     ```Shell
+    su hxeadm
     xs apps
     ```
 
     ![SAP Web IDE URL](web-ide-url.png)
+
+    The user name is `XSA_ADMIN`.
 
 2.  Ensure that the SAP HANA extensions are enabled.
 
@@ -384,10 +389,6 @@ The following steps demonstrate how to use the SAP Business Application Studio o
 
     Right-click **Workspace** and choose **New** | **Project from Template**.
 
-    In the **Search** field, enter **HANA**.  
-
-    If you are using SAP HANA Cloud, in the **Environment** dropdown, select **Cloud Foundry**.
-
     Select the template **SAP HANA Database Application**.
 
     ![new HANA proj](new-hana-proj.png)  
@@ -398,12 +399,13 @@ The following steps demonstrate how to use the SAP Business Application Studio o
     |  :------------- | :-------------
     |  Project Name:  | `myHANAProj`
     |  Space:         | development
-    |  SAP HANA Database Version: | Choose the appropriate version such as HANA Cloud or 2.0 SPS 04
+    |  Namespace:     | Clear the default value
+    |  SAP HANA Database Version: | Choose the appropriate version such as 2.0 SPS 06
 
 
 5.  After the wizard finishes, create a table by right-clicking on the `src` folder and choosing **New** | **Database Artifact**.  
 
-    Specify a file name of **test** and a file type of `.hdbtable`.
+    Specify a file name of `test` and a file type of `.hdbtable`.
 
     Paste the below content into the file and choose **File** | **Save**.
 

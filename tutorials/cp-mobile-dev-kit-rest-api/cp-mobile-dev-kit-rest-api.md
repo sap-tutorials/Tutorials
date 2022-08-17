@@ -133,12 +133,14 @@ With above details, you will next configure an app in Mobile Services, add root 
 
     !![MDK](img-3.3.png)  
 
+    >If you do not see the **MDK Project** option check if your Dev Space has finished loading or reload the page in your browser and try again.
+
 4. In *Basic Information* step, provide the below information and click **Finish**:
 
     | Field | Value |
     |----|----|
     | `MDK Template Type`| Select `Empty` from the dropdown |
-    | `Your Project Name` | `MDK_Petstore` |
+    | `Your Project Name` | Provide a name of your choice. `MDK_Petstore` is used for this tutorial |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
     | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
@@ -238,7 +240,7 @@ You will add an **Object Table** control  item on `Main.page` to display the lis
 
 [ACCORDION-BEGIN [Step 7: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services and Cloud Foundry to consume it as Mobile and Web application respectively.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy the application definitions to Mobile Services and Cloud Foundry to use it in the Mobile client and Web application respectively.
 
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
@@ -264,9 +266,9 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
 >Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-SAP Business Application Studio has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+Click the **Application.app** to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
 !![MDK](img-7.1.png)
 
@@ -274,7 +276,7 @@ Click the `Application.app` to open it in MDK Application Editor and click **App
 
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-Once you accept app update, you will see the Pets list on the **Main** page.
+After you accept the app update, you will see the Pets list on the **Main** page.
 
 ![MDK](img_8.1.png)
 
@@ -284,9 +286,9 @@ Once you accept app update, you will see the Pets list on the **Main** page.
 
 >Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-SAP Business Application Studio has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+Click the **Application.app** to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
 !![MDK](img-7.1.png)
 
@@ -295,7 +297,7 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-Once you accept app update, you will see the Pets list on the **Main** page.
+After you accept the app update, you will see the Pets list on the **Main** page.
 
 ![MDK](img-8.2.png)
 
@@ -378,7 +380,7 @@ In this step, you will create the `Pet_Create.page` as a **Form Cell Page**. Thi
 
 4. Now, you will add the fields (Pet name and Status) for creating a new pet record by the end-user.
 
-    In the Layout Editor, expand the **Control** | **Container Item** section. Drag and drop a **Simple Property** onto the Page area.
+    In the Layout Editor, expand the **Controls** group, drag and drop a **Simple Property** onto the Page area.
 
     >You can find more details about [available controls in Form Cell page](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/FormCell/Container.schema.html).
 
@@ -585,10 +587,14 @@ Now, you will create a new action `ClosePage_Complete.action` that will be calle
 
 Right-click the `Application.app` file in the project explorer pane,  select **MDK: Deploy** and then select deploy target as **Mobile & Cloud**.
 
+>Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+>!![MDK](img-4.3.1.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](Update the MDK app with new metadata)]
+[ACCORDION-BEGIN [Step 18: ](Update the app)]
 
 [OPTION BEGIN [Android]]
 

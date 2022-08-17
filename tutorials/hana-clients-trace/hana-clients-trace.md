@@ -52,6 +52,8 @@ Trace settings can also be configured using environment variables.
 
     The %p will be replaced with the process ID of the traced application. Including %p in the file name ensures that each process can write its own trace file.
 
+    >The next step provides an example of sending the trace output to `stdout` or `stderr`.  Another option for Node.js applications is to specify a callback to receive the trace output to using the `onTrace` method which is shown in the tutorial [Connect Using the SAP HANA Node.js Interface](hana-clients-node)
+
     Trace categories:  
 
     - SQL
@@ -191,7 +193,7 @@ The following are some additional options for tracing.
 
     ![Environment Variable Values](EnvironmentVariable.png)
 
-4.  As of version 2.7, trace information can be directed to `stdout` or `stderr`.  The following are a few examples.
+4.  Trace information can be directed to `stdout` or `stderr`.  See below for a few examples.
 
     ```Shell
     hdbsql -U User1UserKey -Z traceFile=stdout -Z traceOptions=sql=warning "SELECT * FROM HOTEL.CUSTOMER"

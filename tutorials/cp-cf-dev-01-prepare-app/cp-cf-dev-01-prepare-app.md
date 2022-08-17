@@ -3,7 +3,7 @@ title: Download and Prepare App for Cloud Foundry Deployment
 description: Download files for a simple app, maintain the deployment descriptor, and bundle everything together ready for deployment.
 auto_validation: true
 primary_tag: software-product>sap-business-technology-platform
-tags: [  tutorial>beginner, software-product>sap-business-technology-platform, topic>nodejs ]
+tags: [  tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>node-js ]
 time: 10
 ---
 
@@ -85,5 +85,3 @@ applications:
 [ACCORDION-END]
 
 ---
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-cf-dev-01-prepare-app&graphics=true" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

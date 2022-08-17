@@ -46,7 +46,7 @@ For more information on how to configure and run predefined pipelines for your o
     > When running the tutorial with a trial account, please have in mind the following considerations:
 
     > * Choose host region `cf-us10` when creating a new trial account. This will ensure that the SAP Continuous Integration and Delivery service is available to your account.
-    > * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, the SAP Continuous Integration and Delivery service might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP Cockpit.
+    > * If you use an existing trial account, make sure the host region is different from `cf-ap21`. Otherwise, the SAP Continuous Integration and Delivery service might be missing from your account. To check the host region for your account, choose **About** from the dropdown under your user in the top right corner of the SAP BTP cockpit.
 
 1. Enter your **Global Account**. If you are using a trial account, choose **Go To Your Trial Account**.
 
@@ -248,6 +248,8 @@ If your GitHub repository is not private, you can skip this section. If your Git
 
 10. For **Build Tool**, leave **`mta`** as preselected.
 
+11. For **Build Tool Version**, select the latest version.
+
 11. Leave the execution of the **Maven Static Code Checks** step switched off.
 
 12. Leave the execution of the **Lint Check** step switched off.
@@ -374,7 +376,7 @@ You have to trigger your job manually the first time after creation.
 
     > Verify you have added all necessary entitlements to your account as specified in [Prepare for SAP BTP Development](btp-app-prepare-btp).
 
-3. Navigate to your space in the SAP BTP Cockpit and check the list of installed applications. Now, you have a **cpapp-db-deployer** application and a **cpapp-srv** application.
+3. Navigate to your space in the SAP BTP cockpit and check the list of installed applications. Now, you have a **cpapp-db-deployer** application and a **cpapp-srv** application.
 
     !![Applications](CICD_cpapp_applications.png)
 
@@ -391,10 +393,5 @@ You have now successfully created a CI/CD pipeline and deployed your application
 > In case this is your first deployment of the `cpapp` project to the SAP BTP Cloud Foundry environment, please continue with the tutorial [Add the SAP Launchpad Service](btp-app-launchpad-service).  You will need to complete the configuration before you can use the application, because this part can't be automated with CI/CD tooling.
 
 [VALIDATE_1]
-
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-ci-cd-btp" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
 ---

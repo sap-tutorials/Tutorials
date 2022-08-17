@@ -27,7 +27,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
 ## Details
 ### You will learn
-- How to configure the Cloud Connector to connect your SAP S/4HANA system to SAP BTP.
+- How to configure the Cloud Connector to connect your SAP S/4HANA system to SAP BTP
 - How to add subaccount, system mapping and resource
 
 ---

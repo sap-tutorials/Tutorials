@@ -17,7 +17,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
  - [Add Business Logic to Your Application](btp-app-cap-business-logic)
  - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
+ - [Use a Local Launch Page](btp-app-launchpage)
  - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-prepare-btp)
  - [Set Up the SAP HANA Cloud Service](btp-app-hana-cloud-setup)
@@ -65,7 +65,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 
     !![Choose Subaccount](choose_subaccount.png)
 
-2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
+2. Choose **Cloud Foundry** &rarr; **Spaces**.
 
 3. Choose your space.
 
@@ -85,7 +85,7 @@ To start with this tutorial use the result in the [`launchpad-service`](https://
 [ACCORDION-BEGIN [Step 3: ](Analyze logs using Kibana dashboard)]
 1. In SAP BTP Cockpit, navigate to your **Subaccount**.
 
-2. Choose **Cloud Foundry** **&rarr;** **Spaces**.
+2. Choose **Cloud Foundry** &rarr; **Spaces**.
 
 3. Choose your space.
 
@@ -230,13 +230,9 @@ The available fields are displayed on the left side of the screen. You can add f
 
 The time filter is on the right top of the screen. Don't forget to choose **Refresh**.
 
-
-
 [DONE]
 The result of this tutorial can be found in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
 
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
 
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-logging" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
 ---

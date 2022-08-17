@@ -5,12 +5,13 @@ title: Create a Python Application via Cloud Foundry Command Line Interface
 description: Create a simple Python application in the Cloud Foundry Command Line Interface (cf CLI) and enable services for it.
 auto_validation: true
 time: 40
-tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment, software-product>sap-hana]
+tags: [ tutorial>beginner, software-product>sap-btp--cloud-foundry-environment, software-product>sap-hana, software-product-function>sap-btp-cockpit]
 primary_tag: programming-tool>python
 ---
 
 ## Prerequisites
- - You have a productive account for SAP Business Technology Platform (SAP BTP). If you don't have such yet, you can create one so you can [try out services for free] (https://developers.sap.com/tutorials/btp-free-tier-account.html). You'll need a subaccount and a space on Cloud Foundry Environment.
+ - You have a productive account for SAP Business Technology Platform (SAP BTP). If you don't have such yet, you can create one so you can [try out services for free] (https://developers.sap.com/tutorials/btp-free-tier-account.html).
+ - You have created a subaccount and a space on Cloud Foundry Environment.
  - You have created a service instance for [SAP HANA Cloud] (https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/f7febb16072b41f7ac90abf5ea1d4b86.html) with `hana-free` plan.
  - [Python] (https://www.python.org/downloads/) version 3.6.x or higher is installed locally. In this tutorial, we use Python **3.10.1**.
  - [cf CLI] (https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/4ef907afb1254e8286882a2bdef0edf4.html) is installed locally.
@@ -61,7 +62,7 @@ In this tutorial, we use `eu20.hana.ondemand.com` as an example.
 
 #### RESULT
 
-Details about your personal SAP BTP subaccount is displayed (API endpoint, user, organization, space).
+Details about your personal SAP BTP subaccount are displayed (API endpoint, user, organization, space).
 
 [DONE]
 [ACCORDION-END]
@@ -90,7 +91,7 @@ You're going to create a simple Python application.
 
     The `manifest.yml` file represents the configuration describing your application and how it will be deployed to Cloud Foundry.
 
-    > **IMPORTANT**: Make sure you don't have another application with the name `myapp` in your space.   
+    > **IMPORTANT**: Make sure you don't have another application with the name `myapp` in your space. If you do, use a different name and adjust the whole tutorial according to it.
 
     > Also bear in mind that your application's technical name (in the route) must be **unique** in the whole Cloud Foundry landscape. We advice that you use, for example, your subdomain name or part of your subaccount ID to construct the technical name. In this tutorial, we use:  `python-1234-aaaa-5678`
 
@@ -150,10 +151,16 @@ Your Python application is successfully deployed and running on the SAP BTP, Clo
 
 You have created a service instance for SAP HANA Cloud (see **Prerequisites** at the beginning). Now you're going to make a connection to your SAP HANA database from SAP HANA Schemas & HDI Containers - a service that runs on the SAP BTP, Cloud Foundry environment - and consume this service in your application.
 
-1.	Create a `hana` service instance named `pyhana` with plan `securestore`, by executing the following command:
+1.	Create a `hana` service instance named `pyhana`. As a service plan, you can use `securestore` or `hdi-shared`. They both work for this scenario, so - whichever you prefer (or whichever is available in your subaccount). Execute one of the following commands, respectively:
 
     ```Bash/Shell
     cf create-service hana securestore pyhana
+    ```
+
+    or
+
+    ```Bash/Shell
+    cf create-service hana hdi-shared pyhana
     ```
 
 2.	Bind this service instance to the application. Add `pyhana` in the `manifest.yml` file so that its content looks like this:
@@ -277,7 +284,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
 
 4.	To create a microservice (the application router), go to the `python-tutorial` folder and create a subfolder named  `web`.
 
-    > **IMPORTANT**: Make sure you don't have another application with the name `web` in your space! If you do, rename this one.
+    > **IMPORTANT**: Make sure you don't have another application with the name `web` in your space! If you do, use a different name and adjust the rest of the tutorial according to it.
 
 
 5.	Inside the `web` folder, create a subfolder `resources`. This folder will provide the business application's static resources.
@@ -338,7 +345,7 @@ Authentication in the SAP BTP, Cloud Foundry environment is provided by the Auth
             }
           ]
       services:
-        - pyuaa
+      - pyuaa
     ```
 
     Here you can follow the same pattern for constructing the technical name of the `web` application - by using your subaccount ID.

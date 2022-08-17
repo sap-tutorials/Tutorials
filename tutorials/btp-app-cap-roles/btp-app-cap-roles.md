@@ -17,7 +17,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
  - [Add Business Logic to Your Application](btp-app-cap-business-logic)
  - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
+ - [Use a Local Launch Page](btp-app-launchpage)
  - You need to install [passport](http://www.passportjs.org/)
 
 ## Details
@@ -156,8 +156,6 @@ When accessing the `Risks` service in your browser, you get a basic auth popup n
 [DONE]
 The result of this tutorial can be found in the [`cap-roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-roles) branch.
 
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve.</p>
 
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=btp-app-cap-roles" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
 [ACCORDION-END]
 ---

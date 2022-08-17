@@ -54,11 +54,11 @@ Now, you will use the **Set up account for Business Entity Recognition** booster
 
     !![Service Key](booster-next.png)
 
-5. If you want to create a dedicated subaccount for the service instance, choose **Create Subaccount**. If you want to use an already created subaccount, choose **Select Subaccount** (the selection comes in the next step). For this tutorial, we'll create a dedicated subaccount. When you're done if the selection, click **Next**.
+5. If you want to create a dedicated subaccount for the service instance, choose **Create Subaccount**. If you want to use an already created subaccount, choose **Select Subaccount** (the selection comes in the next step). For this tutorial, we'll create a dedicated subaccount. When you're done with the selection, click **Next**.
 
     !![Service Key](booster-scenario.png)
 
-6. Choose the **free** plan. You can also rename the subaccount to `ber-free-tier-service-plan-tutorial`, for example. Click **Next**.
+6. Choose the **free** plan. You can also rename the subaccount to `ber-free-tier-service-plan-tutorial`, for example. Choose the region closest to you. For this tutorial, we'll use **Europe (Frankfurt) - AWS**. Click **Next**.
 
     !![Service Key](booster-subaccount.png)
 
@@ -68,11 +68,11 @@ Now, you will use the **Set up account for Business Entity Recognition** booster
 
     !![Service Key](booster-finish.png)
 
-    Follow the progress of the booster automated tasks.
+    Follow the progress of the booster automated tasks:
 
     !![Service Key](booster-progress.png)
 
-    When the automated tasks are done, see the **Success** dialog box.
+    When the automated tasks are done, see the **Success** dialog box:
 
     !![Service Key](booster-success.png)
 
@@ -88,7 +88,7 @@ Click **Download Service Key** to save the service key locally on your computer.
 
 !![Service Key](booster-success-key.png)
 
->If you face any issue with the booster **Set up account for Business Entity Recognition**, you can alternatively follow the steps in [Set Up a BTP Account for Tutorials](group.btp-setup) to manually create the service instance and service key for Business Entity Recognition using the free tier service plan.
+>If you face any issue with the booster **Set up account for Business Entity Recognition**, you can alternatively follow the steps in [Use Free Tier to Create a Service Instance for Business Entity Recognition](cp-aibus-ber-free-service-instance) to manually create the service instance and service key for Business Entity Recognition using the free tier service plan.
 
 Step 4 is optional. If you're not interested, you can set it to **Done** and go directly to the next tutorial.
 
