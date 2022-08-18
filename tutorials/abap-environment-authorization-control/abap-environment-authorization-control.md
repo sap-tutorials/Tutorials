@@ -3,7 +3,7 @@ auto_validation: true
 title: Provide authorization control for a Business Configuration Maintenance Object
 description: Provide authorization control for a Business Configuration Maintenance Object
 primary_tag: software-product>sap-btp--abap-environment
-tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license ]
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 30
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
