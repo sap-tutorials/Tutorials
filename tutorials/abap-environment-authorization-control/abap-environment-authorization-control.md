@@ -3,7 +3,7 @@ auto_validation: true
 title: Provide authorization control for a Business Configuration Maintenance Object
 description: Provide authorization control for a Business Configuration Maintenance Object
 primary_tag: software-product>sap-btp--abap-environment
-tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform, tutorial>license ]
+tags: [  tutorial>beginner, programming-tool>abap-development, software-product>sap-business-technology-platform ]
 time: 30
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -11,7 +11,7 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
 - You need an SAP BTP, ABAP environment license. If you have only a trial account, you can skip this tutorial.
-- This is the second tutorial of group [Create an Error Code Maintenance App](group.abap-env-factory). You must complete the tutorials in the given order.
+- This is the second tutorial of group [Create a SAP Fiori based Table Maintenance app](group.abap-env-factory). You must complete the tutorials in the given order.
 - Install [ABAP Development Tools](https://tools.hana.ondemand.com/#abap). You can also follow **step 1** of this [tutorial](abap-install-adt) to install ADT.
 
 
