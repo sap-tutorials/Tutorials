@@ -127,7 +127,7 @@ To configure the access to your Kyma-runtime cluster, you have to set the `kubec
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create service instances)]
+[ACCORDION-BEGIN [Step 3: ](Create service instances)]
 
    In the **`fioriapp`** sample application, the Destination and the SAP Authorization & Trust Management services will be consumed in Kyma-runtime. To use these SAP BTP services you have to create the respective service instances and service bindings. Use the `createservice.yaml` file which will create the `destination` service instance with plan `lite` and the `xsuaa` service instance with plan `application`.
 
