@@ -153,7 +153,7 @@ The following instructions will show a few examples of how to view the list of t
     @host = trial-us10.hanacloud.ondemand.com
     ```
 
-2. Add the following calls to the bottom of the REST API calls section of the `AlertsAndMetrics.http` file after the last line with ###.
+2. Add the following calls to the bottom of the `AlertsAndMetrics.http` file after the line with ###.
 
     ```HTTP
     #Alerts REST API calls --------------------------
@@ -187,34 +187,34 @@ The following instructions will show a few examples of how to view the list of t
 
 4. Available alert rules can also be accessed with the REST API. Add the following content to `AlertsAndMetrics.http` above the `#Authorization REST API call` line.
 
-  ```
-  #A specific alert rule
-  @alertRule = HDBDiskUsage
-  ```
+    ```
+    #A specific alert rule
+    @alertRule = HDBDiskUsage
+    ```
 
 5. Add the following calls to the bottom of the REST API calls section of the `AlertsAndMetrics.http` file after the last line with ###.
 
-  ```
-  #Get the list of alerts (rules) for a specific instance
-  GET {{gateway_url}}.{{host}}/alerts/v1/serviceInstances/{{serviceInstance}}/rules
-  Authorization: Bearer {{bearer}}
+    ```
+    #Get the list of alerts (rules) for a specific instance
+    GET {{gateway_url}}.{{host}}/alerts/v1/serviceInstances/{{serviceInstance}}/rules
+    Authorization: Bearer {{bearer}}
 
-  ###
+    ###
 
-  # Get the alert rules for a specific alert rule and for a specific instance
-  GET {{gateway_url}}.{{host}}/alerts/v1/serviceInstances/{{serviceInstance}}/rules/{{alertRule}}
-  Authorization: Bearer {{bearer}}
+    #Get the alert rules for a specific alert rule and for a specific instance
+    GET {{gateway_url}}.{{host}}/alerts/v1/serviceInstances/{{serviceInstance}}/rules/{{alertRule}}
+    Authorization: Bearer {{bearer}}
 
-  ###
-  ```
+    ###
+    ```
 
 6. Try out the alert rules calls. The first call will return a list of all alert rules.
 
-  ![Result of request to return alert rules](all_alert_rules.png)
+    ![Result of request to return alert rules](all_alert_rules.png)
 
-  The second call will return only the information for the `HDBDiskUsage` alert rule.
+    The second call will return only the information for the `HDBDiskUsage` alert rule.
 
-  ![Result of request to return the HDBDiskUsage alert rule](disk_usage_alert_rule.png)
+    ![Result of request to return the HDBDiskUsage alert rule](disk_usage_alert_rule.png)
 
 [DONE]
 [ACCORDION-END]
