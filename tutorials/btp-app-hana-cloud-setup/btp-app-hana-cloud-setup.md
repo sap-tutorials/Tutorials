@@ -11,70 +11,17 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development Using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Use a Local Launch Page](btp-app-launchpage)
- - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
- - [Prepare for SAP BTP Development](btp-app-prepare-btp)
+ - [Add SAP HANA Support to Your Project](btp-app-hana-app-setup)
+
 
 ## Details
 ### You will learn
  - How to set up the SAP HANA cloud service instance
- - How to add SAP HANA client to your project
 
-
-To start with this tutorial use the result in the [`cap-roles`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-roles) branch.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add SAP HANA client and configuration to your project)]
-1. Add SAP HANA support to your project by running.
-
-    ```Shell/Bash
-    cds add hana --for production
-    ```
-
-    This adds the `hdb` module for SAP HANA access to your `package.json` file and will configure kind `sql` as the database service.
-
-    Changes in the `package.json` file done by `cds add hana`:
-
-    <!-- cpes-file package.json:$.cds -->
-    ```JSON[4-13]
-    {
-        "name": "cpapp",
-        ...
-        "cds": {
-            "requires": {
-                "[production]": {
-                    "db": {
-                        "kind": "hana-cloud"
-                    }
-                },
-                "db": {
-                    "kind": "sql"
-                }
-            }
-        }
-    }
-    ```
-
-    Different to CAP default behavior, kind `sql` uses the SQLite in-memory database for local testing and the SAP HANA database for productive usage in the cloud.
-
-    > Additional Documentation:
-
-    > - [Using Databases](https://cap.cloud.sap/docs/guides/databases#get-hana)
-    > - [CAP Configuration](https://cap.cloud.sap/docs/node.js/cds-env)
-
-2. Run `cds watch` in your project folder and check that your app still works locally as it used to work before at <http://localhost:4004/>.
-
-[VALIDATE_1]
-[ACCORDION-END]
----
-[ACCORDION-BEGIN [Step 2: ](Prepare to use SAP HANA Cloud service)]
+[ACCORDION-BEGIN [Step 1: ](Prepare to use SAP HANA Cloud service)]
 > ### To earn your badge for the whole mission, you will need to mark all steps in a tutorial as done, including any optional ones that you may have skipped because they are not relevant for you.
 
 SAP HANA Cloud service instances are not created automatically for any type of account. Therefore, you will have to create an SAP HANA Cloud service instance first, if you don't have one yet.
@@ -91,7 +38,7 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 3: ](Use an existing SAP HANA Cloud service instance)]
+[ACCORDION-BEGIN [Step 2: ](Use an existing SAP HANA Cloud service instance)]
 [OPTION BEGIN [Trial]]
 
 1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use.
@@ -173,7 +120,7 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 [DONE]
 [ACCORDION-END]
 ---
-[ACCORDION-BEGIN [Step 4: ](Create an SAP HANA Cloud service instance)]
+[ACCORDION-BEGIN [Step 3: ](Create an SAP HANA Cloud service instance)]
 [OPTION BEGIN [Trial]]
 
 1. Go to your SAP BTP cockpit by using one of the following links, depending on the landscape you want to use.
@@ -198,7 +145,7 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
     !![SAP HANA Cloud](hana_cloud_empty.png)
 
-7. Choose **Create***&rarr; **SAP HANA database**.
+7. Choose **Create** &rarr; **SAP HANA database**.
 
 8. Sign in with your SAP BTP cockpit username/e-mail.
 
@@ -226,7 +173,7 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
     !![Create SAP HANA Cloud: Step 4](hana_cloud_create_4.png)
 
-    > Do not create a Data Lake. It's useful for ingesting, storing, and analyzing high volumes of data but you don't needed it for the tutorial application.
+    > Do not create a Data Lake. It's useful for ingesting, storing, and analyzing high volumes of data but you don't need it for the tutorial application.
 
 16. Choose **Review and Create** to review your HANA Cloud instance configuration and choose **Create Instance**.
 
@@ -242,6 +189,9 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
     > ```bash
     > cf update-service cpapp -c '{"data":{"serviceStopped":false}}'
     > ```
+
+
+[VALIDATE_1]
 [OPTION END]
 [OPTION BEGIN [Live]]
 
@@ -267,7 +217,7 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
     !![SAP HANA Cloud](hana_cloud_empty.png)
 
-7. Choose **Create***&rarr; **SAP HANA database**.
+7. Choose **Create** &rarr; **SAP HANA database**.
 
 8. Sign in with your SAP BTP cockpit username/e-mail.
 
@@ -295,7 +245,7 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
 
     !![Create SAP HANA Cloud: Step 4](hana_cloud_create_4.png)
 
-    > Do not create a Data Lake. It's useful for ingesting, storing, and analyzing high volumes of data but you don't needed it for the tutorial application.
+    > Do not create a Data Lake. It's useful for ingesting, storing, and analyzing high volumes of data but you don't need it for the tutorial application.
 
 16. Choose **Review and Create** to review your HANA Cloud instance configuration and choose **Create Instance**.
 
@@ -311,10 +261,11 @@ If you need to create an SAP HANA Cloud service instance first &rarr; continue w
     > ```bash
     > cf update-service cpapp -c '{"data":{"serviceStopped":false}}'
     > ```
+
+
+[VALIDATE_1]
 [OPTION END]
 
-
-[DONE]
 The result of this tutorial can be found in the [`hana-cloud-setup`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/hana-cloud-setup) branch.
 
 
