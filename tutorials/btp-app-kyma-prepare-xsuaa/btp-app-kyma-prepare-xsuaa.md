@@ -11,22 +11,11 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Use a Local Launch Page](btp-app-launchpage)
- - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
- - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
- - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
  - [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
 
- ## Details
+## Details
 
 ### You will learn
- - How to enable authentication support
  - How to set up User Authentication and Authorization (XSUAA)
 
 
@@ -39,29 +28,31 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
     cds add xsuaa --for production
     ```
 
-What happens here? Running `cds add xsuaa` does two things:
+    What happens here? Running `cds add xsuaa` does two things:
 
-- Adds the XSUAA service to the `package.json` file of your project
-- Creates the XSUAA security configuration for your project
+    - Adds the XSUAA service to the `package.json` file of your project
+    - Creates the XSUAA security configuration for your project
+
+
 
 2. Check if the following lines have been added to the `package.json` in your `cpapp` project:
 
-<!-- cpes-file package.json:$.cds.requires -->
-```JSON[7-9]
-{
-  ...
-  "cds": {
-    "requires": {
-      "[production]": {
-        ...
-        "auth": {
-          "kind": "xsuaa"
+  <!-- cpes-file package.json:$.cds.requires -->
+  ```JSON[7-9]
+  {
+    ...
+    "cds": {
+      "requires": {
+        "[production]": {
+          ...
+          "auth": {
+            "kind": "xsuaa"
+          }
         }
       }
     }
   }
-}
-```
+  ```
 
 [DONE]
 [ACCORDION-END]
