@@ -11,7 +11,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - You have created a GitHub repository as described in step **Create a GitHub repository for your project** in the tutorial [Create a Directory for Development](btp-app-create-directory)
+ - You have created your GitHub repository as described in **Step 14 Create a GitHub repository for your project** of the tutorial [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
+ - You have cloned your GitHub repository to your `cpapp` folder as described in **Step 15 Clone your GitHub repository** of the tutorial [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
  - You have developed your CAP application and have prepared it for deployment using this collection of tutorials: [Build an Application End-to-End using CAP, Node.js and VS Code](mission.btp-application-cap-e2e)
  - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e)
 
