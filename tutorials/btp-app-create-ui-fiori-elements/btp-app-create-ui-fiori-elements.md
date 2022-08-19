@@ -11,9 +11,10 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
+ - For this tutorial, you have two options:
+     - Start from this page following the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch and continue with the following steps in this tutorial.
+    - Complete the previous tutorial [Create a CAP-Based Application](btp-app-create-cap-application) with all its prerequisites.
+
 
 ## Details
 ### You will learn
@@ -21,9 +22,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to modify the UI with OData annotations
  - How to make header info editable
  - How to check the annotation files
-
-
-To start with this tutorial use the result in the [`create-cap-application`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/create-cap-application) branch.
 
 ---
 
