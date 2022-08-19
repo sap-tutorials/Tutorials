@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Add Authentication and Authorization to the Application
 description: Add authentication and authorization to the application and test it locally with mock users
 keywords: cap
@@ -22,7 +22,7 @@ In the previous tutorial you have added authentication to your application by ad
 
 1. Start the application with the command `mvn spring-boot:run`.
 
-2. Open the `requests.http` file and execute the first **Create Order** request by choosing **Send Request** above it. 
+2. Open the `requests.http` file and execute the first **Create Order** request by choosing **Send Request** above it.
 
 3. Observe that the response contains status `HTTP/1.1 401 `.
 
@@ -32,7 +32,7 @@ In the previous tutorial you have added authentication to your application by ad
 
     ```HTTP
     ### Create Order
-    
+
     POST http://localhost:8080/odata/v4/OrdersService/Orders
     Content-Type: application/json
     Authorization: Basic authenticated:
@@ -97,11 +97,11 @@ Built-in mock users are good for initial local testing, but you may need separat
 
     ```HTTP
     ### Create Order
-    
+
     POST http://localhost:8080/odata/v4/OrdersService/Orders
     Content-Type: application/json
     Authorization: Basic klaus:pass_klaus
-    
+
     {
       "items": [
         {
@@ -171,7 +171,7 @@ You will now add a user role `Administrators` to your application.
 
     ```HTTP
     ### Read Products
-    
+
     GET http://localhost:8080/odata/v4/AdminService/Products
     Accept: application/json
     Authorization: Basic sabine:pass_sabine
@@ -220,7 +220,7 @@ You can use the `@restrict` annotation to add more sophisticated authorization c
 
     ```HTTP
     ### Create Order as Mia
-    
+
     POST http://localhost:8080/odata/v4/OrdersService/Orders
     Content-Type: application/json
     Authorization: Basic mia:pass_mia
@@ -239,7 +239,7 @@ You can use the `@restrict` annotation to add more sophisticated authorization c
 
     ```HTTP
     ### Read Orders as Mia
-    
+
     GET http://localhost:8080/odata/v4/OrdersService/Orders?$expand=items
     Accept: application/json
     Authorization: Basic mia:pass_mia
@@ -249,17 +249,17 @@ You can use the `@restrict` annotation to add more sophisticated authorization c
 
     ```HTTP
     ### Read Orders as Klaus
-    
+
     GET http://localhost:8080/odata/v4/OrdersService/OrderItems
     Accept: application/json
     Authorization: Basic klaus:pass_klaus
     ```
 
     You will not see any items.
-    
+
     ```HTTP
     ### Read Orders as Sabine (Administrator)
-    
+
     GET http://localhost:8080/odata/v4/OrdersService/Orders?$expand=items
     Accept: application/json
     Authorization: Basic sabine:pass_sabine

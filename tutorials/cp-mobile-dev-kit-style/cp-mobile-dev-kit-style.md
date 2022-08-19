@@ -41,12 +41,14 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.3.png)
 
+    >If you do not see the **MDK Project** option check if your Dev Space has finished loading or reload the page in your browser and try again.
+
 4. In *Type* step, select or provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
     | `MDK Template Type`| Select `CRUD` from the dropdown |
-    | `Your Project Name` | `MDK_Styling` |
+    | `Your Project Name` | Provide a name of your choice. `MDK_Styling` is used for this tutorial |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
     | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
@@ -72,9 +74,7 @@ This step includes creating the mobile development kit project in the editor.
 
     !![MDK](img-1.7.png)
 
-    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services.
-
-    Since you will create an offline based app, hence **Enable Offline** option is selected.
+    Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is set up in Mobile Services. Since we have Enable Offline set to Yes, the generated application will be offline enabled in the MDK Mobile client.
 
 8. In *Data Collections* step, select `Customers` and `Products`. Click **Finish** to complete the project creation.
 
