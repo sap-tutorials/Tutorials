@@ -11,19 +11,16 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
+ - For this tutorial, you have two options:
+     - Start from this page following the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`cap-business-logic`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-business-logic) branch and continue with the following steps in this tutorial.
+    - Complete the previous tutorial [Add Business Logic to Your Application](btp-app-cap-business-logic) with all its prerequisites.
+
+
 
 ## Details
 ### You will learn
  - How to create a Freestyle SAPUI5 app on top of your CAP application
  - How to start the application
-
-
-To start with this tutorial use the result in the [`cap-business-logic`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-business-logic) branch.
 
 ---
 
