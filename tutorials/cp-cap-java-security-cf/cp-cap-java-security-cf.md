@@ -1,6 +1,6 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Configure Authentication and Authorization on SAP BTP
 description: Set up authentication and authorization on SAP BTP and deploy your secured application there.
 keywords: cap
@@ -136,7 +136,7 @@ To test the secure endpoints of your application, you need a REST client like [P
 
     > You will also need your application URL for the REST client. You can get it with the `cf app bookstore` command.
 
-4. Open Postman and create a new collection for your requests. On the collection level, select the **Authorization** tab and select **OAuth 2.0** for the field **Type**.
+4. Open Postman and create a new collection for your requests. On the collection level, select the **Authorization** tab and select **OAuth 2.0** for the field **Type**. Make sure that **Add auth data to** is set to **Request Headers**.
 
 5. In the section **Configure New Token**, select **Authorization Code** for field **Grant Type**.
 

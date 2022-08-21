@@ -12,17 +12,11 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Use a Local Launch Page](btp-app-launchpage)
- - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
  - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
- - For Windows, you need Chocolatey. This is a package manager that will speed up and ease installation of the tools in this tutorial. See how to install Chocolatey in [Setup/Install](https://docs.chocolatey.org/en-us/choco/setup).
- - You have prepared a container registry and you have logged in to the container registry through your CLI. A container registry is a repo where you can push your docker images. SAP BTP doesn't currently provide a container registry. You can use any container registry offering as long as it can be reached from public Internet.
+ - For Windows, you'll need Chocolatey. This is a package manager that will speed up and ease installation of the tools in this tutorial. See how to install Chocolatey in [Setup/Install](https://docs.chocolatey.org/en-us/choco/setup).
+ - You have prepared a container registry and you've logged in to the container registry through your CLI. A container registry is a repo where you can push your docker images. SAP BTP doesn't currently provide a container registry. You can use any container registry offering as long as it can be reached from public Internet.
+
+
 
 ## Details
 
@@ -147,14 +141,14 @@ See [`kubelogin` docs](https://github.com/int128/kubelogin#setup) for more detai
 >     mv $HOME/.kube/config-new $HOME/.kube/config
 >     chmod 600 $HOME/.kube/config
 >     ```
->     In case you experience problems running the commands, check [Command Line Interpreters](btp-app-#command-line-interpreters) for more details on recommended CLIs.
+>     In case you experience problems running the commands, check Step 2: `Command Line Interpreters` from [Set Up Local Development Using VS Code](btp-app-set-up-local-development) for more details on recommended CLIs.
 
 
-There are two additional steps for Windows users:
+There are two additional steps for Windows users only:
 
-3. Go to `C:\ProgramData\chocolatey\bin`.
+    3. Go to `C:\ProgramData\chocolatey\bin`.
 
-4. Rename `kubelogin.exe` to `kubectl-oidc_login.exe`.
+    4. Rename `kubelogin.exe` to `kubectl-oidc_login.exe`.
 
 [DONE]
 [ACCORDION-END]
@@ -190,9 +184,14 @@ kubectl create secret docker-registry container-registry \
         "--docker-password=..."
 ```
 
-1. Run the script to create the secret.
+1. Copy the folder `scripts` from `templates/Kyma-Prepare-Dev-Environment` to your project root folder.
 
-    Run the bash script ´./kyma-add-helm-chart/scripts/create-container-registry-secret.sh´ in the `templates` folder, which will prompt you for the required inputs. By using the script, you avoid storing your password in your shell's history.
+1. Run the script to create the secret. In the root folder of your project, execute:
+
+    ```Shell/Bash
+    ./scripts/create-container-registry-secret.sh
+    ```
+    Running this script will prompt you for the required inputs. By using the script, you avoid storing your password in your command line interpreter's history.
 
     > Can't run the `kubectl create secret docker-registry container-registry \` command?
 

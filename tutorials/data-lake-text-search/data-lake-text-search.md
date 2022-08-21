@@ -218,8 +218,8 @@ ALTER TEXT CONFIGURATION MyTextIndxConfig MAXIMUM TERM LENGTH 3;
 The above SQL creates a text configuration that will use non-NCHAR data that will break the string down into `NGRAMs` of maximum length 3. The text configuration will use any non alphanumeric characters to separate terms. Now, use your configuration and create a text index on both actor columns. **Note**: Alternatively to using the MAXIMUM term length, you can use the MINIMUM term length.
 
 ```SQL
-CREATE TEXT INDEX Actor1Idx ON EVENTS (Actor1Geo_FullName) configuration MyTextIndxConfig;
-CREATE TEXT INDEX Actor2Idx ON EVENTS (Actor2Geo_FullName) configuration MyTextIndxConfig;
+CREATE TEXT INDEX Actor1Idx ON EVENT (Actor1Geo_FullName) configuration MyTextIndxConfig;
+CREATE TEXT INDEX Actor2Idx ON EVENT (Actor2Geo_FullName) configuration MyTextIndxConfig;
 ```
 
 The above creates the index on both columns using the configuration that you defined earlier.

@@ -11,17 +11,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Add More Than One Application to the Launch Page](btp-app-launchpage)
- - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
- - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
- - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
- - [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
  - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-kyma-prepare-xsuaa)
 
 
@@ -33,9 +22,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to configure cluster domain
  - How to configure SAP HANA secret
 
-
-
-To start with this tutorial use the result in the [`prepare-xsuaa`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/prepare-xsuaa) branch.
 
 ---
 
@@ -70,7 +56,7 @@ To start with this tutorial use the result in the [`prepare-xsuaa`](https://gith
 
     > Looking for your docker server URL?
 
-    > The docker server URL is the same as provided in Step 2 of [Create container registry secret](btp-app-#create-container-registry-secret). It's also the path used for docker login, so you can quickly check it by running the following command in your terminal:
+    > The docker server URL is the same as provided in Step 6: `Create container registry secret` of [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment). It's also the path used for docker login, so you can quickly check it by running the following command in your terminal:
 
     > ```json
     > cat ~/.docker/config.json
@@ -95,7 +81,7 @@ To start with this tutorial use the result in the [`prepare-xsuaa`](https://gith
             repository: <your-container-registry>/cpapp-srv
             ...
     ```
-    > The name of the secret created in [Create container registry secret](btp-app-#create-container-registry-secret) and the entry for `imagePullSecret` should match.
+    > The name of the secret created in Step 6: `Create container registry secret` of [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment) and the entry for `imagePullSecret` should match.
 
 
 

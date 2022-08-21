@@ -88,14 +88,16 @@ This step includes creating the mobile development kit project in the editor.
 
 3. Select **MDK Project** and click **Start**.
 
-    !![MDK](img-3.3.png)  
+    !![MDK](img-3.3.png)
+
+    >If you do not see the **MDK Project** option check if your Dev Space has finished loading or reload the page in your browser and try again.
 
 4. In *Basic Information* step, select or provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
     | `MDK Template Type`| Select `Base` from the dropdown |
-    | `Your Project Name` | `MDK_Annotations` |
+    | `Your Project Name` | Provide a name of your choice. `MDK_Annotations` is used for this tutorial |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
     | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |

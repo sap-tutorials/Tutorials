@@ -1,8 +1,8 @@
 ---
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Deploy Your Application to Kyma
-description: Learn how to add Authorization and Trust Management service to your app, build Docker images and push them to your container registry, deploy your app to your Kyma cluster, and troubleshoot it, if needed.
+title: Deploy Your CAP Application to Kyma
+description: Learn how to add Authorization and Trust Management service to your app, build Docker images and push them to your container registry, deploy your CAP app to your Kyma cluster, and troubleshoot it, if needed.
 keywords: cap
 auto_validation: true
 time: 20
@@ -11,20 +11,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
- - [Create a UI Using Freestyle SAPUI5](btp-app-create-ui-freestyle-sapui5)
- - [Use a Local Launch Page](btp-app-launchpage)
- - [Implement Roles and Authorization Checks in CAP](btp-app-cap-roles)
- - [Prepare for SAP BTP Development](btp-app-kyma-prepare-btp)
- - [Prepare Your Kyma Development Environment](btp-app-kyma-prepare-dev-environment)
- - [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup)
- - [Prepare User Authentication and Authorization (XSUAA) Setup](btp-app-kyma-prepare-xsuaa)
  - [Add Helm Chart](btp-app-kyma-add-helm-chart)
- - You have created a DB secret as specified in [Setup HANA Cloud](btp-app-#setup-hana-cloud).
+ - You have created a DB secret as specified in Step 3: `Setup SAP HANA Cloud` in [Set Up SAP HANA Cloud for Kyma](btp-app-kyma-hana-cloud-setup).
 
 ## Details
 ### You will learn
@@ -78,7 +66,7 @@ You need to set the environment variable for the container registry.
     CONTAINER_REGISTRY=<Container Registry>
     ```
 
-2. Refer to [Configure Container Image](btp-app-#configure-container-image) for details on finding `<Container Registry>`.
+2. Refer to Step 2: `Configure Container Image` of [Add Helm Chart](btp-app-kyma-add-helm-chart) for details on finding `<Container Registry>`.
 
 [DONE]
 [ACCORDION-END]
@@ -100,7 +88,7 @@ You need to set the environment variable for the container registry.
 
 > Although the app will work with the test data, usually test data should be removed before deployment.
 
->  Test files should never be deployed to an SAP HANA database as table data. This can cause the deletion of all files of the affected database table with a change of a data file. You can find more details in [Exclude CSV files from deployment](btp-app-#exclude-csv-files-from-deployment).
+>  Test files should never be deployed to an SAP HANA database as table data. This can cause the deletion of all files of the affected database table with a change of a data file. You can find more details in Step 6: `Exclude CSV files from deployment` of [Deploy Your Multi-Target Application (MTA)](btp-app-cap-mta-deployment).
 
 [DONE]
 [ACCORDION-END]
@@ -166,6 +154,21 @@ Now that we've build the docker images, let's push them to the container registr
      ```Shell/Bash
      helm upgrade cpapp ./chart --install
      ```
+
+    > In case you get an error message about the CPU limits, update the values for CPU in the file `chart/values.yaml`.
+
+    > ```yaml hl_lines="5 9"
+    > global:
+    > ...
+    >     resources:
+    >         limits:
+    >             cpu: 100m
+    >             ephemeral-storage: 1G
+    >             memory: 500M
+    >         requests:
+    >             cpu: 100m
+    > ...
+    > ```
 
 2. Copy the app URL when done and paste it into a new browser window:
 

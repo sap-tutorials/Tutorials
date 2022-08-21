@@ -20,6 +20,7 @@ author_profile: https://github.com/akseliv
 
 In the previous tutorial, you learned how to configure your application to read specific information from an API once a barcode has been scanned. Now, in this final tutorial for this mission, you will learn how to display the fetched information on your application interface.
 
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add text components to app)]
@@ -53,17 +54,27 @@ To display the product name, click your **Paragraph** component and then click *
 
 ![Click to bind paragraph](bind_paragraph.png)
 
-Select **Data and Variables**.
+>**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the AppGyver editor to hang (you can click to exit). So we have provided a second way to store the data using a formula.
 
-![Select data and variables](data_variables.png)
+- Select **Data and Variables**.
 
-Select **Data Variables** and then click your ***Open food facts*** variable.
+    ![Select data and variables](data_variables.png)
 
-Scroll down to and select the `product_name` field. For this, we suggest using the 'Find text' function within your browser.
+    Select **Data Variables** and then click your ***Open food facts*** variable.
 
-![Product name variable](product_name.png)
+    Scroll down to and select the `product_name` field. For this, we suggest using the 'Find text' function within your browser.
 
-Then click **Save**.
+    ![Product name variable](product_name.png)
+
+- Instead, you can do the same thing with a formula. Most, if not all, bindings can be done with the UI or manually with a formula.
+
+    Select **Formula**, and then enter for the formula the following:
+
+    ```
+    data.OpenFoodFacts1.product.product_name
+    ```
+
+Click **Save**.
 
 ![Save paragraph](save_paragraph.png)
 
@@ -81,15 +92,25 @@ Click your **Paragraph** component and then click **Currently bound to: Static t
 
 ![Click to bind paragraph](bind_secondpara.png)
 
-Select **Data and Variables**.
+>**IMPORTANT:** The following provides 2 ways to do this. The first way is the standard way, but for some people this may cause the AppGyver editor to hang (you can click to exit). So we have provided a second way to store the data using a formula.
 
-![Select data and variables](data_variables.png)
+- Select **Data and Variables**.
 
-Select **Data Variables** and then click your ***Open food facts*** variable.
+    ![Select data and variables](data_variables.png)
 
-Scroll down to and select the `energy` field. For this, we suggest using the 'Find text' function within your browser.
+    Select **Data Variables** and then click your ***Open food facts*** variable.
 
-Then click **Save**.
+    Scroll down to and select the `energy` field. For this, we suggest using the 'Find text' function within your browser.
+
+- Instead, you can do the same thing with a formula. Most, if not all, bindings can be done with the UI or manually with a formula.
+
+    Select **Formula**, and then enter for the formula the following:
+
+    ```
+    data.OpenFoodFacts1.product.nutriments.energy
+    ```
+
+Click **Save**.
 
 ![Add calorific information](add_calories.png)
 
@@ -100,7 +121,28 @@ Should you wish, you can now continue to add other information from the API usin
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Save and test)]
+[ACCORDION-BEGIN [Step 4: ](Display image)]
+
+We'll now display the image for the product (if there is one).
+
+1. Add an image component after the calorific text field you added in the previous step.
+
+2. Click the **Source** binding in the **Properties** pane.
+
+    ![Add image countrol](addimage.png)
+
+    Select **Formula**, and then enter for the formula the following:
+
+    ```
+    data.OpenFoodFacts1.product.image_front_url
+    ```
+
+    Click **Save**.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Save and test)]
 
 Now click **Save**.
 
@@ -110,11 +152,11 @@ Your draft application is now complete, allowing you to scan a food item and the
 
 In this example, we are scanning some confectionery:
 
-![Scan chocolate](appgyver_scan_chocolate.png)
+![Scan](Scan.png)
 
 With the app returning the product name and the calorific information:
 
-![Scan results](appgyver_scan_result.png)
+![Scan results](ScanDisplay.png)
 
 [VALIDATE_4]
 [ACCORDION-END]

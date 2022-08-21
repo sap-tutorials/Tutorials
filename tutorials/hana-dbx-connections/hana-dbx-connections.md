@@ -15,7 +15,7 @@ primary_tag: software-product>sap-hana-cloud
 - How to add different database types in the SAP HANA database explorer
 - Additional operations that can be performed on a database
 
-Database connections in the database explorer represent SAP HANA or data lake Relational Engine databases that you browse and interact with.  
+Database connections in the SAP HANA database explorer represent SAP HANA or data lake Relational Engine databases that you browse and interact with.  
 
 ![SAP HANA Connections](connections.png)
 
@@ -82,7 +82,7 @@ Databases can also be added directly to the SAP HANA database explorer.  To conn
 
     >For a HANA Cloud database, the host and port values can be copied from SAP HANA Cloud Central.  
 
-    >!![copy host and port](host-and-port.png)
+    >![copy host and port](host-and-port.png)
 
     >---
 
@@ -127,13 +127,13 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 
 1.  Add a Data Lake.
 
-    !![add a data lake](add-data-lake.png)
+    ![add a data lake](add-data-lake.png)
 
     Ensure that the allowed connections list is set to **Allow all IP addresses**.
 
     ![allowed connections](allow-all.png)
 
-2.  In the database explorer, choose to add a new connection of type **Data Lake Relational Engine**.
+2.  In the SAP HANA database explorer, choose to add a new connection of type **Data Lake Relational Engine**.
 
     ![add database](add-database-dl.png)
 
@@ -161,18 +161,22 @@ A data lake Relational Engine is a column oriented, disk based relational store 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add a data lake file container (Optional))]
-A [data lake file container](https://help.sap.com/viewer/b239ed4bb73a4f07886657e237f1875f/latest/en-US/125cccac948c4b42a09a9d5695366ffb.html) provides storage for non structured files such as images or PDF documents.  It can also store structured files such as CSV, parquet, or ORC files and with the use of [SQL on Files](https://help.sap.com/viewer/3ef213750ce94aac885ac4fc54ea212f/latest/en-US/c6f12cb258b646aa81b3482e7efeddcf.html), queries can be performed on the data contained in those files.  An example of using the data lake File container is shown as a target for an export operation at [Export and Import Data and Schema with SAP HANA Database Explorer](hana-dbx-export-import).
+[ACCORDION-BEGIN [Step 4: ](Add a data lake Files container (Optional))]
+A [data lake Files container](https://help.sap.com/viewer/b239ed4bb73a4f07886657e237f1875f/latest/en-US/125cccac948c4b42a09a9d5695366ffb.html) provides storage for non structured files such as images or PDF documents.  It can also store structured files such as CSV, parquet, or ORC files and with the use of [SQL on Files](https://help.sap.com/viewer/3ef213750ce94aac885ac4fc54ea212f/latest/en-US/c6f12cb258b646aa81b3482e7efeddcf.html), queries can be performed on the data contained in those files.  An example of using the data lake Files container is shown as a target for an export operation at [Export and Import Data and Schema with SAP HANA Database Explorer](hana-dbx-export-import).
 
-1. A connection can be added to a data lake file container.  Note that this feature is currently not available in the free-tier or trial instances of SAP HANA Cloud.
+1. A connection can be added to a data lake Files container.  Note that this feature is currently not available in the free-tier or trial instances of SAP HANA Cloud.
 
-    ![Add a data lake file container](add-data-lake-file-container.png)
+    ![Add a data lake Files container](add-data-lake-file-container.png)
 
-    Additional details on how to configure the data lake file container including the certificates and how to perform queries using SQL on Files can be found at [Managing a Data Lake File Container](https://help.sap.com/viewer/b239ed4bb73a4f07886657e237f1875f/latest/en-US/afe91bfba419464a84b7a05e7960d6f9.html) and [Getting to know SAP HANA data lake File Containers](group.hana-data-lake-containers).
+    Additional details on how to configure the data lake Files container including the certificates and how to perform queries using SQL on Files can be found at [Managing Data Lake Files](https://help.sap.com/viewer/b239ed4bb73a4f07886657e237f1875f/latest/en-US/afe91bfba419464a84b7a05e7960d6f9.html) and [Getting to know SAP HANA data lake Files](group.hana-data-lake-containers).
 
 2. Once added, the contents of the file container can be browsed.  Files can be added, deleted or viewed.
 
-    ![data lake file container](data-lake-file-container.png)
+    ![data lake Files container](data-lake-file-container.png)
+
+    When files are added, if a path is specified that does not exist, it will create the necessary folders.
+
+    ![upload a file](upload-data-lake-file-container.png)
 
 [DONE]
 [ACCORDION-END]
@@ -201,13 +205,15 @@ Databases have additional actions that can be performed on them such as renaming
 
     > Subsequent tutorials assume the connected user is DBADMIN or SYSTEM.
 
-4.  To see information about a database, right-click a database and choose **Show Overview**.  This provides a quick overview of the database that you are connected to including the QRC version.
+4.  To see information about an SAP HANA database, right-click a database and choose **Show Overview**.  This provides a quick overview of the database that you are connected to including the database version.
 
     ![database overview](overview.png)
 
 5.  Groups and filters can be used to organize and quickly find databases.
 
     ![Using groups](groups.png)
+
+    >These groups are separate from the mechanism used in the on-premise SAP HANA Cockpit Manager or the groups seen in Run SQL on Multiple Databases dialog which use groups based on the cloud foundry space name for SAP HANA Cloud instances.  For further details, see step 7.
 
 [DONE]
 [ACCORDION-END]
@@ -232,6 +238,7 @@ For additional details on this parameter, see the `system_information` usage par
 
 
 [ACCORDION-BEGIN [Step 7: ](Database groups (Optional))]
+
 SAP HANA cockpit databases can be grouped together.  This enables SQL statements to be run against a group of databases.
 
 !![run on multiple](run-on-multiple.png)  
@@ -240,7 +247,7 @@ SAP HANA cockpit databases can be grouped together.  This enables SQL statements
 
     ![group by space](group-by-space.png)
 
-    SAP HANA Cloud Cockpit or SAP HANA Cloud Central contain in their URL, a parameter that indicates the unique name (GUID) for the space.
+    SAP BTP Cockpit or SAP HANA Cloud Central contain in their URL, a parameter that indicates the unique name (GUID) for the space.
 
     ```
     https://host/trial/#/globalaccount/GUID/subaccount/GUID/org/GUID/space/GUID/hanaCloud
@@ -254,7 +261,7 @@ SAP HANA cockpit databases can be grouped together.  This enables SQL statements
 
     ![run on multiple databases in HXE](run-on-multiple-hc.png)
 
-2. With SAP HANA, express edition or an on-premise install, a tool called SAP HANA cockpit manager can be used to register databases and organize them into groups.
+2. With SAP HANA, express edition or an on-premise install, a tool called SAP HANA Cockpit Manager can be used to register databases and organize them into groups.
 
     ![registered resources](cockpit-manager.png)
 
@@ -268,7 +275,7 @@ SAP HANA cockpit databases can be grouped together.  This enables SQL statements
 
     ![run on multiple databases in HXE](run-on-multiple-hxe.png)
 
-    >Note that the ability to see groups in the SAP HANA database explorer that have been created using the SAP HANA cockpit manager requires the SAP HANA database explorer to be opened from the SAP HANA cockpit.
+    >Note that the ability to see groups in the SAP HANA database explorer that have been created using the SAP HANA Cockpit Manager requires the SAP HANA database explorer to be opened from the SAP HANA cockpit.
 
     >---
 
@@ -297,7 +304,7 @@ The following steps demonstrate how to use the SAP Business Application Studio o
 
     ![create a dev space](dev-space.png)
 
-3.  Once the dev space has been created, open it.  
+3.  Once the dev space is running, open it.  
 
 4.  Set the cloud foundry org and space by pressing F1 or Ctrl + Shift + P to open the command palette.  Search for the command **CF Set Org and Space**.
 
@@ -317,12 +324,14 @@ The following steps demonstrate how to use the SAP Business Application Studio o
 
 7.  Provide the following values and click **Finish**.
 
-    |  Setting     | Value
+    |  Setting        | Value
     |  :------------- | :-------------
     |  Project name:  | `myHANAProj`
     |  Module name:   | `db`
+    |  Namespace:     |
     |  Schema name:   | `mySchema`
     |  SAP HANA Database Version: | HANA Cloud    
+    |  Bind database  | Yes
 
 8.  Once the project generation finishes, open the tool palette (F1) and choose  **SAP HANA: Create SAP HANA Database Artifact**.  Provide the following values and click **Create**.
 
@@ -330,7 +339,7 @@ The following steps demonstrate how to use the SAP Business Application Studio o
     |  :------------- | :-------------
     |  Path:    | `/home/user/projects/myHANAProj/db/src`
     |  Version: | HANA Cloud
-    |  Type:    | `Table (hdbtable)`
+    |  Artifact Type:    | `Table (hdbtable)`
     |  Name:    | `myTable`   
 
 
@@ -344,11 +353,11 @@ The following steps demonstrate how to use the SAP Business Application Studio o
     )
     ```
 
-10.  Use the SAP HANA Projects Explorer to deploy the table.
+10. Use the SAP HANA Projects Explorer to deploy the table.
 
     ![deploy the table](deploy-hc.png)
 
-11.  Open the database explorer to view the deployed HDI container and table.
+11. Open the SAP HANA database explorer to view the deployed HDI container and table.
 
     ![view the hdi container](dbx-hdi-hc.png)
 
@@ -375,7 +384,9 @@ The following steps demonstrate how to use the SAP Business Application Studio o
 
     ![SAP Web IDE URL](web-ide-url.png)
 
-    The user name is `XSA_ADMIN`.
+    >The user name for login is `XSA_ADMIN`.
+    >
+    >![login for XSA](hxe-login.png)
 
 2.  Ensure that the SAP HANA extensions are enabled.
 
