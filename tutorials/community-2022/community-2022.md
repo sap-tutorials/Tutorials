@@ -35,9 +35,9 @@ Welcome to SAP Community:
 
 Within this first step, you will be guided through the entry point of [SAP Community](https://community.sap.com), our homepage and will find out what it has to offer. SAP Community is a place for members to engage and build influence, make meaningful connections, share insights and knowledge, and develop a personal reputation in an inclusive and supportive way.
 
-In the following, you will get an overview of the SAP Community homepage.
+In the following, you will get an overview of the SAP Community homepage. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EatnEDXjwpw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EatnEDXjwpw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [VALIDATE_1]
 [ACCORDION-END]
