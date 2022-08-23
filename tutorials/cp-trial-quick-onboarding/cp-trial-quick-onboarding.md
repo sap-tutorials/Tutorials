@@ -48,7 +48,7 @@ SAP BTP currently offers these [environments](https://help.sap.com/viewer/65de29
 To become familiar with the specifics of the trial offerings regarding, have a look at the following resources:
 
 - [Getting Started with a Trial Account in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e50ab7b423f04a8db301d7678946626e.html)
-- [Getting Started with a Trial Account in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/720c423ef1a8498ab690cf0e5512ba50.html)
+- [Getting Started with a Trial Account in the ABAP Environment](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/2ffdd2412aff494dbf3de31089c965d4.html?locale=en-US&version=Cloud)
 - [Getting Started with a Trial Account in the Kyma Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/ccb83c700e8d4bb8aa545d7307b8b08a.html)
 
 ### Cloud Foundry
