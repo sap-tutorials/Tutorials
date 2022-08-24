@@ -5,12 +5,12 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud, software product>sap-business-technology-platform]
 primary_tag: software product>sap-business-technology-platform
-author_name: Jessica Katz
-author_profile: https://github.com/Jessica-Katz
+author_name: Annika Gonnermann
+author_profile: https://github.com/AnnikaGonnermann
 ---
 
 ## Prerequisites
- - You must have registered for a trial account on SAP Business Technology Platform.
+ - You must have registered for a trial account on SAP Business Technology Platform (SAP BTP).
 [Sign up](hcp-create-trial-account) for a free trial.
 
 ## Details
@@ -28,7 +28,7 @@ author_profile: https://github.com/Jessica-Katz
 
 So you've signed up for SAP BTP trial but are not quite sure where to start? This tutorial is here to help!
 
-A trial account on SAP Business Technology Platform enables you to experience it for free, offering access to a comprehensive set of platform services, as well as early access to beta functionality.
+A trial account on SAP BTP enables you to experience it for free, offering access to a comprehensive set of platform services, as well as early access to beta functionality.
 
 Trial accounts are intended for personal exploration, and not for production use or team development. They allow restricted use of the platform resources and services.
 
@@ -48,7 +48,7 @@ SAP BTP currently offers these [environments](https://help.sap.com/viewer/65de29
 To become familiar with the specifics of the trial offerings regarding, have a look at the following resources:
 
 - [Getting Started with a Trial Account in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e50ab7b423f04a8db301d7678946626e.html)
-- [Getting Started with a Trial Account in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/720c423ef1a8498ab690cf0e5512ba50.html)
+- [Getting Started in the ABAP Environment](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/2ffdd2412aff494dbf3de31089c965d4.html?locale=en-US&version=Cloud)
 - [Getting Started with a Trial Account in the Kyma Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/ccb83c700e8d4bb8aa545d7307b8b08a.html)
 
 ### Cloud Foundry
@@ -74,7 +74,7 @@ Kyma environment is a runtime you can use to build cloud-native Kubernetes-based
 [ACCORDION-BEGIN [Step: ](Entitlements)]
 You should understand the difference between entitlements and quota, because you'll encounter these 2 terms quite often.
 
-- **Entitlements** are your right to provision and consume a resource. They refer to what you're entitled to use (e.g., which services and service plans).
+- **Entitlements** are your right to provision and consume a resource. They refer to what you're entitled to use (for example, which services and service plans).
 - **Quota** is the numeric quantity that defines the maximum allowed consumption of that resource. In other words, how much of a service plan you're entitled to use.
 
 Entitlements and quotas are managed at the global account level, distributed to directories and subaccounts, and consumed by the subaccounts.
