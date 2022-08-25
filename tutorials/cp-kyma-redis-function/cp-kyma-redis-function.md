@@ -7,7 +7,6 @@ tags: [ tutorial>intermediate, topic>cloud, software-product>sap-business-techno
 primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
-
 ## Prerequisites
   - [Provision Kyma](cp-kyma-getting-started)
   - [Setup Mock Application](cp-kyma-mocks)
@@ -76,9 +75,7 @@ In this step, you will deploy Redis into the Kyma runtime that were obtained in 
 
 1. In the `dev` namespace, choose the menu option **Overview**.
 
-2. Choose **Deploy a new workload > Create Deployment**. Choose the **YAML** tab and copy the contents of the file **`redis-function/k8s/redis.yaml`** over-writing the preexisting content found within the **Deployment** pane. Collapse the **Deployment** pane and enable the option **Expose a separate Service**. Copy the contents of the file **`redis-function/k8s/redis-service.yaml`** over-writing the preexisting content found within the **Service** section and then choose **Create**.
-
-    ![Deployment Status](./assets/redis-deployment.png)
+2. Choose **Upload YAML**. Upload or copy the contents of the file **`redis-function/k8s/redis.yaml`** and choose **Submit**. Perform the same procedure to upload the contents of the file **`redis-function/k8s/redis-service.yaml`**.
 
 3. Choose the menu option **Configuration > Secrets**. Choose **Create Secret** and choose the **YAML** tab. Copy the contents of the file **`redis-function/k8s/redis-secret.yaml`** over-writing the preexisting content found within the pane and then choose **Create**.
 
