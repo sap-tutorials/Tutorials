@@ -188,7 +188,7 @@ Now you have successfully uploaded the training data and trained a machine learn
 
 Next, the machine learning model must be deployed. That means, the model becomes available for productive usage and can serve inference requests, for example, to make predictions.
 
-Please note that deploying models can occur costs if you are not using a trial account. See [Free Service Plan and Trial Account Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/c03b561eea1744c9b9892b416037b99a.html) and [Metering and Pricing](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/1e093326a2764c298759fcb92c5b0500.html).
+Please note that deploying models can incur costs. See [Free Tier Option Technical Constraints](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/c03b561eea1744c9b9892b416037b99a.html) and [Metering and Pricing](https://help.sap.com/docs/Data_Attribute_Recommendation/105bcfd88921418e8c29b24a7a402ec3/1e093326a2764c298759fcb92c5b0500.html).
 
 [OPTION BEGIN [Windows]]
 
@@ -482,7 +482,7 @@ mm_client = ModelManagerClient.construct_from_credentials(
 mm_client.ensure_model_is_undeployed(MODEL_NAME)
 ```
 
-The above code will make sure that the specified model is undeployed. More specifically, the method `ensure_model_is_undeployed` first checks whether a deployment exists for the model and if so, it triggers the deletion of the deployment.
+The above code will make sure that the specified model is `undeployed`. More specifically, the method `ensure_model_is_undeployed` first checks whether a deployment exists for the model and if so, it triggers the deletion of the deployment.
 
 Now go back into the command prompt and run `python undeploy_model.py` to run the code.
 

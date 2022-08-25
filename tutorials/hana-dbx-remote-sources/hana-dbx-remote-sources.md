@@ -108,7 +108,9 @@ The example in step 1 demonstrates connectivity from an on-premise, SAP HANA, ex
     ![on-premise to cloud remote connection](onprem-to-cloud-connection.png)
 
 
-    Open the SAP HANA database explorer from the SAP HANA, express edition.  If needed, create the HOTEL schema and a user who can access the schema.
+    Open the SAP HANA database explorer from the SAP HANA, express edition.  
+    
+    >If needed, create the HOTEL schema and a user who can access the schema.
 
     ```SQL
     CREATE USER USER1 PASSWORD Password1 no force_first_password_change;

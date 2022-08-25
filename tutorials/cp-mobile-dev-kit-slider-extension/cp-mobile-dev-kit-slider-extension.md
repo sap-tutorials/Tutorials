@@ -44,12 +44,14 @@ In this tutorial, you will create a Slider extension via `NativeScript` (in Type
 
     !![MDK](img-1.3.png)
 
+    >If you do not see the **MDK Project** option check if your Dev Space has finished loading or reload the page in your browser and try again.
+
 4. In *Type* step, select or provide the below information and click **Finish**:
 
     | Field | Value |
     |----|----|
     | `MDK Template Type`| Select `Empty` from the dropdown |
-    | `Your Project Name` | `MDK_Slider` |
+    | `Your Project Name` | Provide a name of your choice. `MDK_Slider` is used for this tutorial |
     | `Your Application Name` | <default name is same as project name, you can provide any name of your choice> |    
     | `Target MDK Client Version` | Leave the default selection as `MDK 6.0+ (For use with MDK 6.0 or later clients)` |
     | `Choose a target folder` | By default, the target folder uses project root path. However, you can choose a different folder path |
@@ -153,7 +155,7 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img_3.1.png)
 
-    >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add form sections, multiple containers or action controls to this page. Under each container section, you can add various container items.
+    >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add form sections, multiple containers or action controls to this page. Under each container section, you can add various controls.
 
     >You can find more details about [Form Cell page](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/mdk/formcell-page.html).
 
@@ -163,7 +165,7 @@ You will add this registered control in a Form Cell page.
 
 3. In MDK Page Editor, drag & drop the registered `mdk_slider` control on the page area.
 
-    !![MDK](img_3.3.gif)
+    !![MDK](img_3.3.png)
 
     >You can find more details about the **Section Extension** in [this](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/FormCell/Extension.schema.html) guide.    
 
@@ -247,7 +249,7 @@ You will add this registered control in a Form Cell page.
 
 10. Save the changes to the `SetExtensionValue.js` file.
 
-11. In `SliderExtension.page`, drag and drop a **Simple Property** item control below the slider control.
+11. In `SliderExtension.page`, drag and drop a **Simple Property** control below the slider control.
 
     !![MDK](img_3.15.gif)
 
@@ -802,7 +804,7 @@ Click the `Application.app` file, select the `SliderExtension.page` for the **Ma
 
 [ACCORDION-BEGIN [Step 6: ](Deploy the application)]
 
-So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, you will deploy the application definitions to Mobile Services to use in the Mobile client.
 
 1. Right-click `Application.app` and select **MDK: Deploy**.
 
@@ -831,11 +833,11 @@ So far, you have learned how to build an MDK application in the SAP Business App
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Display the QR code for app onboarding)]
+[ACCORDION-BEGIN [Step 7: ](Display the QR code for onboarding the Mobile app)]
 
-SAP Business Application Studio has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to display the QR code for onboarding in the Mobile client.
 
-Click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to display the QR code.
+Click the **Application.app** to open it in MDK Application Editor and then click the **Application QR Code** icon.
 
 !![MDK](img-7.1.png)
 
@@ -843,12 +845,12 @@ The On-boarding QR code is now displayed.
 
 !![MDK](img-6.2.png)
 
->Leave the Onboarding dialog box open for step 7.
+>Leave the Onboarding dialog box open for the next step.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Run the app in MDK client)]
+[ACCORDION-BEGIN [Step 8: ](Run the app)]
 
 >Make sure you are choosing the right device platform tab above. Once you have scanned and on-boarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 

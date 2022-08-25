@@ -62,7 +62,7 @@ It's now time to switch to SAP HANA as a database and prepare your project for a
     > `fiori_preview:true` enables SAP Fiori preview also in `production` mode as you saw it in your local application in the previous tutorial in step 4 when using `cds watch`. This feature is meant to help you during development and should not be used in productive applications.
 
     > Don't edit the `gen/db/package.json` file.
-    
+
 [DONE]
 
 [ACCORDION-END]
@@ -139,7 +139,3 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
 [VALIDATE_1]
 
 [ACCORDION-END]
-
-<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
-
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cap-service-deploy" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

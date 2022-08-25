@@ -14,7 +14,7 @@ author_profile: https://github.com/LindsayBert
 ### You will learn
   - How to create a URL app and add it to your site.
 
-In this tutorial you'll use the **Content Manager** to add a URL app to your site.
+Use the **Content Manager** to add a URL app to your site.
 
 [ACCORDION-BEGIN [Step 1: ](Open the Content Manager)]
 

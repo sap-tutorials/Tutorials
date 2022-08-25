@@ -14,7 +14,7 @@ primary_tag: topic>sap-community
 - Log into the [SAP Community](https://community.sap.com) before starting the tutorial.
 - If you do not already have an SAP user account and profile, [register for an account](https://accounts.sap.com/ui/public/showRegisterForm?spName=https%3A%2F%2Fhana.ondemand.com%2Fskywalker).
 - Achieve the _Contributor_ or _Author_ blogger level.
-- If you don't have one of these blogger levels, please complete the [Tour the SAP Community](community-start) tutorial before beginning this one.
+- If you don't have one of these blogger levels, please complete the [Tour the SAP Community 2022](community-2022) tutorial before beginning this one.
 
 
 ## Details
@@ -24,8 +24,6 @@ primary_tag: topic>sap-community
 -	Ways to manage your blog content
 -	How to connect with your audience
 -	Which blogging missions you can complete
-
-Awarded on a weekly basis, **Blogging Savvy** may not appear in the **Reputation** section of your profile immediately, so please expect a slight delay before you see the badge.
 
 ---
 

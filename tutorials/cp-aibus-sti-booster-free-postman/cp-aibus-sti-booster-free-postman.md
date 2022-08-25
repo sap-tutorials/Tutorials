@@ -56,11 +56,11 @@ Now, you will use the **Set up account for Service Ticket Intelligence** booster
 
     !![Postman](booster-next.png)
 
-5. If you want to create a dedicated subaccount for the service instance, choose **Create Subaccount**. If you want to use an already created subaccount, choose **Select Subaccount** (the selection comes in the next step). For this tutorial, we'll create a dedicated subaccount. When you're done if the selection, click **Next**.
+5. If you want to create a dedicated subaccount for the service instance, choose **Create Subaccount**. If you want to use an already created subaccount, choose **Select Subaccount** (the selection comes in the next step). For this tutorial, we'll create a dedicated subaccount. When you're done with the selection, click **Next**.
 
     !![Postman](booster-scenario.png)
 
-6. Choose the **free** plan. You can also rename the subaccount to `sti-free-tier-service-plan-tutorial`, for example. Click **Next**.
+6. Choose the **free** plan. You can also rename the subaccount to `sti-free-tier-service-plan-tutorial`, for example. Choose the region closest to you. For this tutorial, we'll use **Europe (Frankfurt) - AWS**. Click **Next**.
 
     !![Postman](booster-subaccount.png)
 
@@ -88,7 +88,7 @@ Download Postman environment and collection sample files. Make a local copy of t
 
 !![Postman](booster-success-postman.png)
 
->If you face any issue with the booster **Set up account for Service Ticket Intelligence**, you can alternatively follow the steps in [Set Up a BTP Account for Tutorials](group.btp-setup) to manually create the service instance and service key for Service Ticket Intelligence using the free tier service plan, and download and edit the Postman environment and collection sample files, as described in [Set Up Postman to Call Service Ticket Intelligence APIs](cp-aibus-sti-setup-postman).
+>If you face any issue with the booster **Set up account for Service Ticket Intelligence**, you can alternatively follow the steps in [Use Free Tier to Create a Service Instance for Service Ticket Intelligence](cp-aibus-sti-free-service-instance) to manually create the service instance and service key for Service Ticket Intelligence using the free tier service plan, and download and edit the Postman environment and collection sample files, as described in [Set Up Postman to Call Service Ticket Intelligence APIs](cp-aibus-sti-setup-postman).
 
 Congratulations, you have completed this tutorial. You are now all set to [Install Postman REST Client](api-tools-postman-install) and [Set Up Postman to Call Service Ticket Intelligence APIs](cp-aibus-sti-setup-postman).
 

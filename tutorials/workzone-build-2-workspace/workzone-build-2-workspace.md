@@ -98,13 +98,15 @@ Now, let's add content to the workspace.
 
 [ACCORDION-BEGIN [Step 4: ](Change the image in the workspace header)]
 
-When you create a new workspace the header has a dark and light blue background. You can replace this background with your own.
+When you create a new workspace, the header has a dark and light blue background. You can replace this background with your own.
 
-1. Hover over the background in the workspace header to expose the  **Upload cover photo** icon and click it.
+1. Hover over the background in the workspace header to expose the  **Edit cover photo** button and select **Upload Photo**.
 
     !![New cover photo](4-new-header-image.png)
 
-2. The **Edit Workspace** screen opens with the **Setup** tab in focus. Scroll down until you see **Cover Photo**, click **Choose File**, and add the following image: `worspace_header-image`. Click **Save**.
+2. Browse for the following image that you downloaded: `worspace_header-image`.
+
+3. Reposition your photo to display it as you want, and then click **Save**.
 
     !![Save cover image](5-save-cover-image.png)
 
