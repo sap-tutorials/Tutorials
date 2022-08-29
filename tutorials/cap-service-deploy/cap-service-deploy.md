@@ -111,7 +111,6 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
     ```Shell/Bash
     mbt build -t gen --mtar mta.tar
     ```
-
     > For this you need the MBT Build Tool, see Prerequisites.
 
     The `-t` option defines the target folder of the build result as the `gen` folder of your project. As part of this build implicitly `cds build --production` is executed. This implicit build uses then all the configuration you've added in the step 1.2 when using `--for production`.
@@ -120,6 +119,7 @@ The MBT Build tool uses the `mta.yaml` file that has been created using `cds add
     ```Shell/Bash
     cf deploy gen/mta.tar
     ```
+    During deployment all needed service instances are created and the applications as well as database artifacts are deployed.
 
     > For this you need the MultiApps CF CLI plugin, see Prerequisites.
 

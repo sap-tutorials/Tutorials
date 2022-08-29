@@ -19,7 +19,7 @@ primary_tag: software-product>sap-process-automation
   - How to build an automation using a captured application
 ---
 
-In this tutorial, a Sales Orders web application is captured and details will be retrieved for a specific sales order through an automation. 
+In this tutorial, a Sales Orders web application is captured and details will be retrieved for a specific sales order through an automation.
 
 [ACCORDION-BEGIN [Step 1: ](Create an application)]
 

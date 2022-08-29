@@ -17,6 +17,7 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
+
 ![MDK](img_1.gif)
 
 [ACCORDION-BEGIN [Step 1: ](Create a new page for modifying customer data)]
@@ -33,7 +34,7 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
 
     !![MDK](img_1.1.png)
 
-    >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add multiple containers or action controls to this page. Under each container section, you can add various container items.
+    >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add multiple containers or action controls to this page. Under each container section, you can add various controls.
 
     >You can find more details about [Form Cell page](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/mdk/formcell-page.html).
 
@@ -47,7 +48,7 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
 
 4. Now, you will add the fields (like first name, last name, phone & email address) that will be editable by the end-user.
 
-    In the Layout Editor, expand the **Control** | **Container Item** section.
+    In the Layout Editor, expand the **Controls** group.
 
     Drag and drop a **Simple Property** onto the Page area.
 
@@ -78,7 +79,6 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
     !![MDK](img-1.7.png)
 
 8. Select the third Simple Property control and provide the below information:
-
 
     | Property | Value |
     |----|----|
@@ -150,7 +150,7 @@ Now, you will add a button on the Edit Customer page and set it's `onPress` to `
 
     Double-click the `CloseModalPage_Cancel.action` and click **OK** to set it as the `OnPress` Action.
 
-    !![MDK](img-3.3.gif)
+    !![MDK](img-3.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -184,7 +184,7 @@ You will add a button to the `Customers_Detail.page` called **Edit**. You will l
 
 1. In `Customers_Detail.page`, drag and drop an **Action Bar Item** to the upper right of the action bar.
 
-    !![MDK](img_5_1.gif)
+    !![MDK](img_5.1.1.png)
 
 2. Click the **link icon** to open the object browser for the **System Item** property.
 
@@ -309,7 +309,7 @@ First, define a failure message.
 
     In `Customers_Edit.page`, **drag and drop** an **Action Bar Item** to the upper right corner of the action bar.
 
-    !![MDK](img_6.14.png)
+    !![MDK](img_5.1.png)
 
     Click the **link** icon to open the object browser for the **System Item** property.
 
@@ -340,10 +340,14 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-7.3.png)
 
+    >Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+    >!![MDK](img-4.3.1.png)
+    
 [VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test the application)]
+[ACCORDION-BEGIN [Step 8: ](Run the app)]
 
 >Make sure you are choosing the right device platform tab above.
 

@@ -4,7 +4,7 @@ description: Deploy and run an existing CAP application in Kyma runtime by using
 auto_validation: true
 time: 45
 tags: [ tutorial>beginner, software-product-function>sap-cloud-application-programming-model]
-primary_tag: products>sap-btp\\, kyma-runtime
+primary_tag: software-product>sap-btp\\, kyma-runtime
 ---
 
 ## Prerequisites

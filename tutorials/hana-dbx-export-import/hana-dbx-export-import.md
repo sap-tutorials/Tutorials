@@ -39,8 +39,8 @@ Methods to export tables or views
 | Method  | Version       | Target                 | Format(s)      |
 | ------- | -------------|------------------------| ----------------|
 | Export from SQL Console | All | local computer         | CSV      |
-| [Export data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/97e8ec0306eb4a12a4fd72de8bdd6a62.html)   | SAP HANA Cloud, HANA database  | S3, Azure, GCS,  Alibaba OSS | CSV, Parquet    |
-| [Export into statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA Cloud, HANA database  | S3, Azure, GCS, Alibaba OSS | CSV, Parquet    |  
+| [Export data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/97e8ec0306eb4a12a4fd72de8bdd6a62.html)   | SAP HANA Cloud, HANA database  | data lake Files, S3, Azure, GCS,  Alibaba OSS | CSV, Parquet, JSON (for document stores)    |
+| [Export into statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA Cloud, HANA database  | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON (for document stores)  |  
 | [Export into statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/6a6f59bbfbb64ade84d83d7f87789753.html)  | SAP HANA on-premise  | SAP HANA file system    | CSV |
 
 Methods to import into tables
@@ -48,10 +48,10 @@ Methods to import into tables
 | Method  | Version       | Source          | Format(s)       | Notes |
 | ------- | -------------|------------------------| ----------------| ------------|
 | [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | All    | local computer         | CSV             | 1 GB max, 2 MB per row in SAP HANA Cloud, HANA database; 200 MB max SAP HANA on-premise |
-| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA Cloud, HANA database    | S3, Azure, GCS, Alibaba OSS | CSV, Parquet    | |
-| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)    | SAP HANA Cloud, HANA database   | local computer, S3, Azure, GCS, Alibaba OSS   | `ESRI shapefiles` | An example of importing an `ESRI shapefile` can be found in [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model) tutorial. |
+| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA Cloud, HANA database    | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON (for document stores)   | |
+| [Import data wizard](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)    | SAP HANA Cloud, HANA database   | data lake Files, local computer, S3, Azure, GCS, Alibaba OSS   | `ESRI shapefiles` | An example of importing an `ESRI shapefile` can be found in [Try Out Multi-Model Functionality with the SAP HANA Database Explorer](hana-dbx-multi-model) tutorial. |
 | [Import data wizard](https://help.sap.com/viewer/e8d0ddfb84094942a9f90288cd6c05d3/latest/en-US/ee0e1389fde345fa8ccf937f19c99c30.html)   | SAP HANA on-premise    | SAP HANA file system         | CSV             | Target table can be created |
-| [Import from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA Cloud, HANA database | S3, Azure, GCS, Alibaba OSS | CSV, Parquet    | |
+| [Import from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA Cloud, HANA database | data lake Files, S3, Azure, GCS, Alibaba OSS | CSV, Parquet, JSON  (for document stores)  | |
 | [Import from statement](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f712e175191014907393741fadcb97.html) | SAP HANA on-premise  | SAP HANA file system    | CSV |  |
 | [Insert into table name select from statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f7f70975191014a76da70c9181720e.html) | All  | local or remote tables  | select statement |  |
 
@@ -75,7 +75,7 @@ The following steps will attempt to demonstrate an export and import of data fro
 
     >![Maximum rows to display setting](maxRows.png)
 
-2. Enter the SQL statement below to delete the rows in the table.  They will be added back in the next step.
+2. Enter the SQL statement below to delete the rows in the table.  They will be added back in the next sub-step.
 
     ```SQL
     DELETE FROM HOTEL.MAINTENANCE;
@@ -109,20 +109,31 @@ The following steps will attempt to demonstrate an export and import of data fro
 
 [ACCORDION-BEGIN [Step 2: ](Use cloud storage services for export and import (optional))]
 
-The following steps are for illustrative purposes only and are not meant to be followed. Complete steps for working with cloud storage services are provided in steps 3 and 5.
+The following steps are for illustrative purposes only and are not meant to be followed. Complete steps for working with cloud storage services are provided in steps 3, 4, 6, and 7.
 
 1. With SAP HANA Cloud, an export data wizard is available.  
 
     ![Export Data Wizard](exportDataWizard.png)
 
-    It can be used to export data to cloud storage providers such as Amazon S3, Microsoft Azure, Google Cloud Storage, and Alibaba Cloud OSS.  Additionally, the SAP BTP offers an [object store](https://help.sap.com/viewer/product/ObjectStore/Cloud/en-US).  
+    It can be used to export data to cloud storage providers such as SAP HANA Cloud, data lake Files, Amazon S3, Microsoft Azure, Google Cloud Storage, and Alibaba Cloud OSS.  
+
+    >Additionally, the SAP BTP offers an [object store](https://help.sap.com/viewer/product/ObjectStore/Cloud/en-US).  
+
+    ![available cloud storage providers](available-cloud-storage-providers.png)
+
+    The screenshot below shows the data lake Files target being used and in the bottom left, you can see the result of the export, the maintenance.csv file in the HANA DL File Container.
 
     ![Export Data Wizard](exportDataWizard2.png)
 
     The wizard makes use of the export into statement.  An example is shown below:
 
     ```SQL
-    EXPORT INTO PARQUET FILE 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance.parquet' FROM HOTEL.MAINTENANCE;
+    EXPORT INTO CSV FILE
+        'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/maintenance.csv'
+    FROM HOTEL.MAINTENANCE
+    WITH
+        CREDENTIAL 'DBADMINCREDENTIAL'
+        COLUMN LIST IN FIRST ROW;
     ```
 
 2. The import data wizard provides a corresponding option to import from cloud storage providers.
@@ -132,55 +143,153 @@ The following steps are for illustrative purposes only and are not meant to be f
     The wizard makes use of the import from statement.  An example is shown below:
 
     ```SQL
-    DELETE FROM HOTEL.MAINTENANCE;
+    --DELETE FROM HOTEL.MAINTENANCE;
     IMPORT FROM PARQUET FILE 'azure://danstestsa:sp=racwdl&st=2021-01-09T13:00:46Z&se=2021-01-10T13:00:46Z&sv=2019-12-12&sr=c&sig=TP%2BVYhcvSPDc4DZxcls6vN%2BCLHDNagedbei2IuEZsWU%3D@myblobcontainer/maintenance.parquet' INTO HOTEL.MAINTENANCE WITH FAIL ON INVALID DATA;
     ```
-
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Use Google Cloud Storage (GCS) for data exports and imports (optional))]
+[ACCORDION-BEGIN [Step 3: ](Use data lake Files for export and import (optional))]
+
+The following steps walk through the process of exporting to and importing data using data lake Files with a SAP HANA Cloud, SAP HANA database. Note that a licensed SAP HANA data lake instance (non trial / non free-tier) is needed for this step.
+
+1. Complete steps 3 and 4 in the [Getting Started with Data Lake Files HDLFSCLI](data-lake-file-containers-hdlfscli) tutorial to configure the trust setup of the data lake Files container.
+
+2. Add the data lake Files container to the SAP HANA database explorer.
+
+    ![Add Connection](addConnection.png)
+
+    The REST API endpoint can be copied from the instances actions menu in SAP HANA Cloud Central.
+
+    ![Add data lake Files](add-data-lake-files.png)
+
+    After the data lake Files container has been added, files can be uploaded, viewed, or deleted.
+
+    ![File container added](file-container-added.png)
+
+3. Create a database credential for the data lake Files container.  Further details are described at [Importing and Exporting with SAP HANA Cloud Data Lake Files Storage](https://help.sap.com/docs/HANA_CLOUD_DATABASE/f9c5015e72e04fffa14d7d4f7267d897/462c861413b043bd93b9e8e838249b6e.html).
+
+    ```SQL
+    SELECT * FROM PSES;
+    CREATE PSE HTTPS;
+    SELECT * FROM PSES;
+
+    SELECT * FROM CERTIFICATES;
+    --cert from https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem and is the CA for HANA Cloud
+    CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh
+    MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+    d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD
+    QTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVT
+    MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j
+    b20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG
+    9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsB
+    CSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97
+    nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt
+    43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7P
+    T19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4
+    gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAO
+    BgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbR
+    TLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUw
+    DQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/Esr
+    hMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg
+    06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJF
+    PnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0ls
+    YSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk
+    CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=-----END CERTIFICATE-----' COMMENT 'SAP_HC';
+    SELECT * FROM CERTIFICATES WHERE COMMENT = 'SAP_HC';
+
+    SELECT * FROM PSE_CERTIFICATES;
+    ALTER PSE HTTPS ADD CERTIFICATE CERTIFICATE_ID_FROM_SELECT_ABOVE;
+    SELECT * FROM PSE_CERTIFICATES;
+
+    ALTER PSE HTTPS SET OWN CERTIFICATE
+    'Contents from client.key
+    Contents from client.crt
+    Contents from ca.crt'
+
+    --GRANT REFERENCES ON PSE HTTPS TO USER1;
+
+    CREATE CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'DBADMIN_DL_CREDENTIAL' TYPE 'X509' PSE HTTPS;
+    ```
+
+4. Export `HOTEL.MAINTENANCE` into the data lake Files container.
+
+    ![Export to data lake Files](export-data-lake-files.png)
+
+    The wizard makes use of the export from statement.  An example is shown below:
+
+    ```SQL
+    EXPORT INTO CSV FILE
+        'hdlfs://1234-567-890-1234-56789.files.hdl.prod-us10.hanacloud.ondemand.com/maintenance.csv'
+    FROM HOTEL.MAINTENANCE
+    WITH
+        CREDENTIAL 'DBADMINCREDENTIAL'
+        COLUMN LIST IN FIRST ROW;
+    ```
+
+5. Enter the SQL statement below to delete the rows in the table.  They will be added back in the next sub-step when the import command is shown.
+
+    ```SQL
+    DELETE FROM HOTEL.MAINTENANCE;
+    ```
+
+6. Right-click on the maintenance table and choose **Import Data**.  
+
+    ![Open Import Data Wizard](importDataWizard.png)
+
+    From the Import data from drop down, select **Data Lake Files**.
+
+    ![Import form data lake Files](importDataWizardDataLakeFiles.png)
+
+    The wizard makes use of the import from statement.  An example is shown below:
+
+    ```SQL
+    IMPORT FROM CSV FILE 'hdlfs://example-file-container.files.hdl.demo-hc-3-hdl-hc-dev.dev-aws.hanacloud.ondemand.com/directory/data.csv' INTO HOTEL.MAINTENANCE WITH CREDENTIAL 'myCredential'
+    ```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Use Google Cloud Storage (GCS) for data exports and imports (optional))]
 
 The following steps walk through the process of exporting to and importing data from Google Cloud Storage service with a SAP HANA Cloud, SAP HANA database.
-
->This section of the tutorial will require at least the 2021 QRC 3 Release of SAP HANA Database Explorer. To determine whether or not your system is compatible, from the database context menu, select **Show Overview**.  An example value for version might be 2021.30 which indicates that it was from calendar week 30 (1st week of August) of 2021.
 
 1. Sign in to the [Google Cloud Console](https://console.cloud.google.com/).
 
 2. Create a project.
 
-    !![Create a Google Cloud Platform project](createGCPProject.png)
+    ![Create a Google Cloud Platform project](create-GCP-project.png)
 
 3. Navigate to Cloud Storage.
 
-    !![Cloud Storage](cloudStorage.png)
+    ![Cloud Storage](cloud-storage.png)
 
 4. Create a bucket.
 
-    !![Create a storage bucket](createBucket.png)
+    ![Create a storage bucket](create-bucket.png)
 
 5. Navigate to IAM & Admin.
 
-    !![Identity Access Management](IAMConsole.png)
+    ![Identity Access Management](IAM-console.png)
 
 6. Create a service account.  
 
-    !![Create a service account](serviceAccount.png)
+    ![Create a service account](service-account.png)
 
     Add the Owner role so that the service account can access the resources in the project.
 
-    !![create a service account](createServiceAccount.png)
+    ![create a service account](create-service-account.png)
 
 7. In the generated service account, add a key.
 
-    !![add a key to the service account](serviceAccountAddKey.png)
+    ![add a key to the service account](service-account-add-key.png)
 
     Once complete, a JSON file will be downloaded that contains the `client_email` and `private_key` which will be used when accessing the bucket.
 
 8. Remove any line breaks (i.e. \n) from the private key.  This can be done by pasting the private key into a new SQL Console and opening the search and replace menu (Ctrl-F).
 
-    !![Remove line breaks](remove-line-breaks.png)
+    ![Remove line breaks](remove-line-breaks.png)
 
 9. Execute the following SQL to store the private key and service account as a credential in the database.  
 
@@ -190,14 +299,16 @@ The following steps walk through the process of exporting to and importing data 
     --DROP CREDENTIAL FOR USER DBADMIN COMPONENT 'SAPHANAIMPORTEXPORT' PURPOSE 'gcsImport' TYPE 'PASSWORD';
     ```
 
-    !![Create Credential](createCredential.png)
+    ![Create Credential](createCredential.png)
 
     Additional details can be found at [CREATE CREDENTIAL Statement](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d3f464751910148968e73782586ed0.html) and [CREDENTIALS System View](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/209fabf875191014b8f2a4731c564884.html).
 
 10. A Google Storage SSL certificate is required to connect to the Google Cloud Storage bucket via the SAP HANA Cloud, SAP HANA database. Open your SQL console within SAP HANA database explorer, and run the first 3 commands.  Then replace \<SELECTED_CERTIFICATE_ID> with the value returned from the previous select statement.
 
-    ```SQL[27]
+    ```SQL[35]
+    SELECT * FROM PSES;
     CREATE PSE HTTPS;
+    SELECT * FROM CERTIFICATES;
     CREATE CERTIFICATE FROM '-----BEGIN CERTIFICATE-----
     MIIFVzCCAz+gAwIBAgINAgPlk28xsBNJiGuiFzANBgkqhkiG9w0BAQwFADBHMQsw
     CQYDVQQGEwJVUzEiMCAGA1UEChMZR29vZ2xlIFRydXN0IFNlcnZpY2VzIExMQzEU
@@ -261,9 +372,9 @@ The following steps walk through the process of exporting to and importing data 
 
 12. Verify the export was completed successfully by refreshing your bucket within Google Cloud Console.
 
-    !![Successful Export](successfulExport.png)
+    ![Successful Export](successfulExport.png)
 
-13. Enter the SQL statement below to delete the rows in the table.  They will be added back in the next step when the import command is shown.
+13. Enter the SQL statement below to delete the rows in the table.  They will be added back in the next sub-step when the import command is shown.
 
     ```SQL
     DELETE FROM HOTEL.MAINTENANCE;
@@ -287,7 +398,7 @@ For additional details see the topic [Importing and Exporting Data](https://help
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Export and import schema or catalog objects)]
+[ACCORDION-BEGIN [Step 5: ](Export and import schema or catalog objects)]
 
 The following tables list the different options available in the SAP HANA database explorer to export and import catalog objects.
 
@@ -338,7 +449,7 @@ Similar to the first section, the maintenance table will be exported and re-impo
 
     ![Exported file](targz.png)
 
-3. Enter the SQL statement below to drop the table.  It will be added back in the next step.
+3. Enter the SQL statement below to drop the table.  It will be added back in the next sub-step.
 
     ```SQL
     DROP TABLE HOTEL.MAINTENANCE;
@@ -354,11 +465,17 @@ Similar to the first section, the maintenance table will be exported and re-impo
 
     The contents of the maintenance table should now be the same as it was before the previously executed drop statement.
 
+    ```SQL
+    SELECT * FROM HOTEL.MAINTENANCE;
+    ```
+
+    ![Import succeeded](import_success.png)
+
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Use Azure cloud storage for exports and imports of catalog objects (optional))]
+[ACCORDION-BEGIN [Step 6: ](Use Azure cloud storage for exports and imports of catalog objects (optional))]
 
 The following steps walk through the process of using Microsoft Azure storage service as a target for an export catalog operation.
 
@@ -390,7 +507,7 @@ The following steps walk through the process of using Microsoft Azure storage se
 
 6. In the SAP HANA database explorer, add the certificate used by Microsoft to the HANA Cloud PSE.  Replace the \<SELECTED_CERTIFICATE_ID> with the value returned from the previous select statement.
 
-    ```SQL[6]
+    ```SQL[24]
     SELECT * FROM PSES;
     CREATE PSE HTTPS;
     SELECT * FROM CERTIFICATES;
@@ -473,7 +590,7 @@ The following steps walk through the process of using Microsoft Azure storage se
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Use Amazon Web Services (AWS) S3 for exports and imports of catalog objects (optional))]
+[ACCORDION-BEGIN [Step 7: ](Use Amazon Web Services (AWS) S3 for exports and imports of catalog objects (optional))]
 
 The following steps walk through the process of AWS S3 storage service as a target for an export catalog operation.
 
@@ -523,7 +640,7 @@ The following steps walk through the process of AWS S3 storage service as a targ
 
     The certificate below is the [Baltimore `CyberTrust` Root certificate](https://www.digicert.com/kb/digicert-root-certificates.htm).
 
-    ```SQL[6]
+    ```SQL[25]
     SELECT * FROM PSES;
     CREATE PSE HTTPS;
     SELECT * FROM CERTIFICATES;

@@ -1,10 +1,12 @@
 ---
 title: Manage Entitlements Using the Cockpit
+author_name: Anja Nicole Kretz
+author_profile: https://github.com/AnjaNicoleKretz
 description: Configure entitlements and quota using the cockpit. (Free Tier ready)
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud, software-product-function>sap-btp-cockpit, tutorial>free-tier]
-primary_tag: products>sap-business-technology-platform
+primary_tag: software-product>sap-business-technology-platform
 ---
 
 ## Prerequisites
@@ -20,14 +22,13 @@ You can do this tutorial with trial accounts or enterprise accounts with a globa
 
 If you are in a global account using cloud management tools feature set A, you can also do this tutorial but be aware that some UI elements might be called differently. For more information on the two feature sets, see [Cloud Management Tools — Feature Set Overview](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/caf4e4e23aef4666ad8f125af393dfb2.html).
 
-
 If you are in a global account using the consumption-based commercial model, you can even try out services for free. To do that, you have to assign the entitlements using the **free** plan if it is available. Not sure what the consumption-based commercial model is and how it's different from a subscription account? In our documentation, you can find a lot of information on that! Have a look at [Commercial Models](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/263d40009a5a4237a62e8f5c05ee641e.html).
 
 Every service has its own available plans:
 
-1. Go to [SAP Discovery Center](https://discovery-center.cloud.sap/) to obtain information on which plans are available. To do so, search for the name of the product you are interested in.
+1. Go to [SAP Discovery Center](https://discovery-center.cloud.sap/) to obtain information on which plans are available. To do so, search for the name of the service you are interested in.
 
-2. Select the tile of the product you are interested in.
+2. Select the tile of the service you are interested in.
 
 3. From the available tabs, select **Pricing**. You can now see all Service Plans available (such as **Free**, **Default** / **Standard** or **Trial** service plans). As an example, see the screenshot below.
 
@@ -38,11 +39,11 @@ Every service has its own available plans:
 [ACCORDION-BEGIN [Step 1: ](Understanding entitlements and quota)]
 Before you get started, you should understand the difference between entitlements and quota, because you'll encounter these two terms quite often.
 
-- **Entitlements** are your right to provision and consume a resource. They refer to **what** you're entitled to use (e.g., which services and service plans).
+- **Entitlements** are your right to provision and consume a resource. They refer to **what** you're entitled to use (for example, which services and service plans).
 
 - **Quota** is the numeric quantity that defines the maximum allowed consumption of that resource. In other words, **how much** of a service plan you're entitled to use.
 
-Entitlements and quota are managed at the global account and directory levels, distributed to directories and subaccounts, and consumed by the subaccounts. See also [Entitlements and Quotas](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/00aa2c23479d42568b18882b1ca90d79.html)
+Entitlements and quota are managed at the global account and directory levels, distributed to directories and subaccounts, and consumed by the subaccounts. See also [Entitlements and Quotas](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/00aa2c23479d42568b18882b1ca90d79.html).
 
 
 [VALIDATE_1]
@@ -51,12 +52,12 @@ Entitlements and quota are managed at the global account and directory levels, d
 [ACCORDION-BEGIN [Step 2: ](Assign entitlements)]
 1. In your global account, navigate to **Entitlements** > **Entity Assignments**.
 2. In the **Select Entities** selection, choose the directory or subaccount that you want to assign entitlements to.
-3. Click **Go**.
+3. Select **Go**.
 
     You'll see a table for the directory/ subaccount with all entitlements it already has.
-4. Click **Configure Entitlements**, then select **Add Service Plans**.
+4. Select **Configure Entitlements** > **Add Service Plans**.
 
-    A popover appears with all entitlements available for your directory/ subaccount.
+    A popover appears with all entitlements available for your directory/subaccount.
 
     !![Configure Subaccount Entitlements](subaccounts.gif)
 
@@ -65,10 +66,10 @@ Entitlements and quota are managed at the global account and directory levels, d
     > If you are in a global account using the consumption-based commercial model, you can select the service plan called **Free** here to test out the service without any costs.
 
 6. Select the amount of quota you need.
-7. Click **Add Service Plans** to exit the popover.
-8. Click **Save**.
+7. Select **Add Service Plans** to exit the popover.
+8. Select **Save**.
 
-  You have now successfully configured entitlements.
+  **Congrats! You have now successfully configured entitlements.**
 
 [DONE]
 [ACCORDION-END]

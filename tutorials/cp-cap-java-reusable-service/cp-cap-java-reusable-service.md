@@ -1,9 +1,8 @@
 ---
-author_name: Iwona Hahn
-author_profile: https://github.com/iwonahahn
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Create a Reusable Service
 description: Create a service that will later on be reused in another CAP Java project.
-keywords: cap
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, software-product>sap-business-technology-platform, programming-tool>java]
@@ -13,14 +12,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ## Details
 ### You will learn
   - How to write an entity definition
-  - How to use some use generic CAP artifacts like aspects and types
+  - How to use some generic CAP artefacts like aspects and types
   - What associations and compositions are
-  - How to deploy to a SQLite database
   - How to make the project reusable
 
   The previous tutorial was about quickly setting up a working CAP application and read/write some mock data. This tutorial is about learning how to extend the application to a complete products service.
 
-  You'll take advantage of all the out-of-the-box features provided by the CAP Java SDK such as using SQLite as a database for local development. As a result, you'll remove your custom handlers written in the first tutorial. In subsequent tutorials you will swap out SQLite with the SAP HANA service, when preparing your application for the cloud.
+  You will take advantage of many of the out-of-the-box features provided by the CAP Java SDK such as using H2 as a database for local development. As a result, you will remove your custom handlers written in the first tutorial. In subsequent tutorials you will swap out H2 with the SAP HANA service, when preparing your application for the cloud.
 
 ---
 
@@ -37,24 +35,24 @@ Therefore, you will now define the complete domain model that is used by the pro
 2. Add the following code to your newly created `schema.cds` file and make sure you **Save** the file:
 
     ```CDS
-        namespace sap.capire.products;
+    namespace sap.capire.products;
 
-        using { Currency, cuid, managed, sap.common.CodeList } from '@sap/cds/common';
+    using { Currency, cuid, managed, sap.common.CodeList } from '@sap/cds/common';
 
-        entity Products : cuid, managed {
-            title    : localized String(111);
-            descr    : localized String(1111);
-            stock    : Integer;
-            price    : Decimal(9,2);
-            currency : Currency;
-            category : Association to Categories;
-        }
+    entity Products : cuid, managed {
+        title    : localized String(111);
+        descr    : localized String(1111);
+        stock    : Integer;
+        price    : Decimal(9,2);
+        currency : Currency;
+        category : Association to Categories;
+    }
 
-        entity Categories : CodeList {
-            key ID   : Integer;
-            parent   : Association to Categories;
-            children : Composition of many Categories on children.parent = $self;
-        }
+    entity Categories : CodeList {
+        key ID   : Integer;
+        parent   : Association to Categories;
+        children : Composition of many Categories on children.parent = $self;
+    }
     ```
 
 [DONE]
@@ -108,13 +106,13 @@ The [`Currency`](https://cap.cloud.sap/docs/cds/common#type-currency) definition
 
 Look at these explained keywords yourself and learn more about it.
 
-1. To jump to the imported definitions directly in your editor, press **CTRL**, hover over the keyword, and click. This will open the source file in a separate editor tab.
+1. To jump to the imported definitions directly in your editor, press **`CTRL`**, hover over the keyword, and click. This will open the source file in a separate editor tab.
 
-2. Hold **CTRL** and hover over a keyword, then move the hand cursor over the keyword. This opens up you a tiny overlay with the definition of this particular item.
+2. Hold **`CTRL`** and hover over a keyword, then move the hand cursor over the keyword. This opens up you a tiny overlay with the definition of this particular item.
 
     !![overlay of definition](overlay-commons.png)
 
-3. A right-click (or F12) on the definition opens up the context menu. There you can find, for example,  **Peek definition** to get a much bigger overlay.  Not only the definition of this particular item is displayed, you also have the ability to navigate through the whole source file of this definition without opening the file itself.
+3. A right-click (or use **`F12`**) on the definition opens up the context menu. There you can find, for example, **Peek definition** to get a much bigger overlay.  Not only the definition of this particular item is displayed, you also have the ability to navigate through the whole source file of this definition without opening the file itself.
 
     !![right-click to peek definition information](rightclick-peek.png)
 
@@ -145,104 +143,52 @@ In this example you will use the most simple projection, which exposes the domai
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy the domain model)]
+[ACCORDION-BEGIN [Step 5: ](Use CAP's generic persistence handling)]
 
-Let's deploy the domain model to a database. Now, you will use SQLite, a light-weight file-based database, which fits the needs for local development perfectly.
+The CAP Java SDK provides out-of-the-box capabilities to store and retrieve entities from a database. Therefore, no custom coding is required if entities are stored in the database. The entities defined in your `AdminService` will be automatically served via OData and you can just delete the `AdminService.java` file that was created earlier.
 
-1. First, install SQLite to the project. Go to the terminal where your application is running and use **CTRL+C** to stop the application.
+1. Delete the `AdminService.java` file in the `handlers` folder.
 
-    Execute the following command in the terminal:
+By default, the CAP Java SDK uses an in-memory H2 database. The content of this database will be lost when the application is stopped.
 
-    ```Shell/Bash
-    npm install --save-dev sqlite3
-    ```
-
-2. To initialize the database with the defined domain model, execute the following command in the terminal:
-
-    ```Shell/Bash
-    cds deploy --to sqlite
-    ```
-
-    !![cds deploy](cds-deploy.png)
-
-    This will create a file called `sqlite.db` in your project root. The name of this database is defined by an entry in your `package.json`.
+In case you need a persistent database between application runs you can use a file-based `SQLite` database as described in section [Using Databases](https://cap.cloud.sap/docs/guides/databases) in the CAP documentation.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Configure CAP application to use SQLite database)]
+[ACCORDION-BEGIN [Step 6: ](Run and test your application)]
 
-Right now, the Java application itself isn't aware of the SQLite database.
+1. Stop your application if it is still running. Now restart your application by running `mvn spring-boot:run` in the terminal and open it in a new tab.
 
-Configure your Java application to use the `sqlite.db` database file.
+2. You will now create some `Categories` through a HTTP request. Add the following request to the `requests.http` file you have created earlier by pasting the following content:
 
-1. Go to `srv/src/main/resources`, locate, and open the `application.yaml` file. This file was created when you initialized the application.
+    ```HTTP
+    ### Create Categories
 
-2. For the field `url`, replace the string `"jdbc:sqlite::memory:?cache=shared"` with a reference to your local database file `"jdbc:sqlite:/home/user/projects/products-service/sqlite.db"`
+    POST http://localhost:8080/odata/v4/AdminService/Categories
+    Content-Type: application/json
 
-3. Set the value of `initialization-mode` from `always` to `never`, because you've already initialized the database when running `cds deploy --to sqlite`.
-
-Your `application.yaml` file should look like this:
-
-```YAML
----
-spring:
-  profiles: default
-  datasource:
-    url: "jdbc:sqlite:/home/user/projects/products-service/sqlite.db"
-    driver-class-name: org.sqlite.JDBC
-    initialization-mode: never
-    hikari:
-      maximum-pool-size: 1
-```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7: ](Use CAP's generic persistence handling)]
-
-The CAP Java SDK has a Persistence Service that provides out-of-the-box capabilities to store and retrieve entities from a database. Therefore, no custom coding is required for this. The entities defined in your `AdminService` will be automatically served via OData and you can just delete the `AdminService.java` file that was created earlier.
-
-Delete the `AdminService.java` file in the `handlers` folder.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Run and test your application)]
-
-1. Start your application by running `mvn spring-boot:run` in the terminal and open it in a new tab.
-
-2. Test your application by using Curl from the terminal.
-
-    You can open additional terminals by choosing **Terminal** > **New Terminal** from the main menu.
-
-    This request will create multiple, nested categories, at once through a deep insert:
-
-    ```Shell/Bash
-    curl -X POST http://localhost:8080/odata/v4/AdminService/Categories \
-    -H "Content-Type: application/json" \
-    -d '{"ID": 1, "name": "TechEd", "descr": "TechEd related topics", "children": [{"ID": 10, "name": "CAP Java", "descr": "Run on Java"}, {"ID": 11, "name": "CAP Node.js", "descr": "Run on Node.js"}]}'
+    {"ID": 1, "name": "TechEd", "descr": "TechEd related topics", "children": [{"ID": 10, "name": "CAP Java", "descr": "Run on Java"}, {"ID": 11, "name": "CAP Node.js", "descr": "Run on Node.js"}]}
     ```
+
+    Choose `Send Request` which appears over the new request. This request will create multiple, nested categories, at once through a deep insert.
 
 3. Try to query individual categories, for example by adding the following to the end of your app URL:
 
     **`/odata/v4/AdminService/Categories(10)`**
 
-4. Restart your application by switching to the terminal, using **CTRL+C**, and running `mvn spring-boot:run` again.
+4. You can also expand the nested structures. Add the following to the end of your app URL:
 
-5. Query the categories again using the URL from step 3. You'll see that the categories are stored in a persistent database.
-
-6. You can also expand the nested structures. Add the following to the end of your app URL:
     - `/odata/v4/AdminService/Categories?$expand=children`
     - `/odata/v4/AdminService/Categories(10)?$expand=parent`
     - `/odata/v4/AdminService/Categories(1)?$expand=children`
 
-7. Make sure to stop your application after testing it by using **CTRL+C**.
+5. Make sure to stop your application after testing it by using **`CTRL+C`**.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Set up for reuse)]
+[ACCORDION-BEGIN [Step 7: ](Set up for reuse)]
 
 In the following tutorial, the application will be reused by a bookstore application. The reuse of models can be achieved by publishing NPM modules with the models and defining dependencies to these NPM modules in other applications. There are a two steps we need to perform to prepare the `products-service` application for reuse.
 
@@ -250,18 +196,17 @@ In the following tutorial, the application will be reused by a bookstore applica
 
     !![adjust the package.json in the root folder of your project](package-json.png)
 
-2. To make it easier to reuse the module, an `index.cds` file can be added to the `products-service`. This ensures a better decoupling from other applications.
-
-    Create a new file `index.cds` in the `~/projects/products-service` folder and place the following content inside this file, making sure you **Save** the file:
+2. To make it easier to reuse the module, an `index.cds` file can be added to the `products-service`. This ensures a better decoupling from other applications. Create a new file `index.cds` in the `~/projects/products-service` folder and place the following content inside this file, making sure you **Save** the file:
 
     ```CDS
     using from './db/schema';
     using from './srv/admin-service';
     ```
 
-[DONE]
-[ACCORDION-END]
-
 Congratulations! You have successfully developed the products service application, which is based on a CDS domain model and service definition.
 
 In the next tutorial, you will build a bookstore application, reusing the products service application. You will later extend the bookstore application with custom business logic and deploy it to the cloud, using SAP HANA as the database.
+
+[DONE]
+[ACCORDION-END]
+---

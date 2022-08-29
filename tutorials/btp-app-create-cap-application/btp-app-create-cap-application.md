@@ -11,8 +11,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
+ - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
 
 ## Details
 ### You will learn
@@ -53,7 +52,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     ![VS Code](vscode.png)
 
-6. In VS Code choose **Terminal** **&rarr;** **New Terminal** from its menu.
+6. In VS Code choose **Terminal** &rarr; **New Terminal** from its menu.
 
     A new terminal opens in the lower right part of the VS Code screen.
 
@@ -97,7 +96,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 
     !![Windows](codeandfinder.png)
 
-    Alternatively, you can open it as a second folder in your VS Code project: **File** **&rarr;** **Add Folder to Workspace...**.
+    Alternatively, you can open it as a second folder in your VS Code project: **File** &rarr; **Add Folder to Workspace...**.
 
 3. Copy the file `schema.cds` from `templates/create-cap-application/db` to the `db` folder of your app.
 

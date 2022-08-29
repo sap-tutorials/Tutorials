@@ -20,7 +20,6 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
-
 For this tutorial, you will use [Mobile Services sample backend](cp-mobile-dev-kit-ms-setup) (step 3) which has parent-child relationship setup among entities. For example, A customer can have `n` (>=0) number of sales orders.
 
 To create an entity and then link it to another entity, you need to carry out the following tasks:
@@ -54,7 +53,7 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
 
 4. Now, you will add the fields (like Currency Code, Net Amount, Tax Amount, Gross Amount, Life cycle status, Life cycle status name and order creation date) for creating a new sales order record by the end-user.
 
-    In the Layout Editor, expand the **Control** | **Container Item** section. Drag and drop a **Simple Property** onto the Page area.
+    In the Layout Editor, expand the **Controls** group. Drag and drop a **Simple Property** onto the Page area.
 
     !![MDK](img_1.4.gif)
 
@@ -130,7 +129,7 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
     |----|----|
     | `Name`| `FCCreatedate` |
     | `Caption` | `Creation Date` |
-    | `Mode`| Select `datetime` from the dropdown |
+    | `Mode`| Select `Datetime` from the dropdown if not selected by default |
 
     !![MDK](img-1.12.png)
 
@@ -145,7 +144,7 @@ Now, you will add a button on the Create Order page and set its `onPress` to `Cl
 
     >Action Bar Item is a button that users can use to fire actions when pressed. You can add an Action Bar Item only to the Action Bar (at the top of the page).
 
-    !![MDK](img_2.1.gif)
+    !![MDK](img_2.1.png)
 
 2. In the **Properties** pane, click the **link icon** to open the object browser for the **System Item** property.
 
@@ -308,7 +307,7 @@ The next step is to store newly created record locally for an offline applicatio
 
     In `SalesOrderHeaders_Create.page`, **drag and drop** an **Action Bar Item** to the upper right corner of the action bar.
 
-    !![MDK](img_5.8.gif)
+    !![MDK](img_5.8.png)
 
     Click the **link** icon to open the object browser for the **System Item** property.
 
@@ -352,10 +351,14 @@ Deploy the updated application to your MDK client.
 
     !![MDK](img-7.3.png)
 
+    >Alternatively, you can select *MDK: Redeploy* in the command palette (View menu>Find Command OR press Command+Shift+p on Mac OR press Ctrl+Shift+P on Windows machine), it will perform the last deployment.
+
+    >!![MDK](img-4.3.1.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test the application)]
+[ACCORDION-BEGIN [Step 8: ](Run the app)]
 
 >Make sure you are choosing the right device platform tab above.
 

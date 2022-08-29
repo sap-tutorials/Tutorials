@@ -11,24 +11,21 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - [Set Up Local Development using VS Code](btp-app-set-up-local-development)
- - [Create a Directory for Development](btp-app-create-directory)
- - [Create a CAP-Based Application](btp-app-create-cap-application)
- - [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)
- - [Add Business Logic to Your Application](btp-app-cap-business-logic)
+ - For this tutorial, you have two options:
+    - Before you start with this tutorial, follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`cap-business-logic`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-business-logic) branch.
+    - Complete the previous tutorial [Add Business Logic to Your Application](btp-app-cap-business-logic) with all its prerequisites.
+
+
 
 ## Details
 ### You will learn
  - How to create a Freestyle SAPUI5 app on top of your CAP application
  - How to start the application
 
-
-To start with this tutorial use the result in the [`cap-business-logic`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/cap-business-logic) branch.
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](SAP Fiori elements application vs. freestyle UI5 application)]
-What is the difference to an SAP Fiori elements based application that you have already built in the [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements) section? As mentioned, both the freestyle app and the SAP Fiori elements app are based on SAPUI5.
+What is the difference to an SAP Fiori elements based application that you have already built in the tutorial [Create an SAP Fiori Elements-Based UI](btp-app-create-ui-fiori-elements)? As mentioned, both the freestyle app and the SAP Fiori elements app are based on SAPUI5.
 
 An SAP Fiori elements app can be thought of like a giant player built with SAPUI5 where most of the code resides outside your own development project in central components. Much of its logic comes out of the box and is controlled by metadata from your OData service.
 
@@ -40,7 +37,7 @@ Fortunately, you have also got a choice of several templates that get your appli
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Creating the application)]
-1. In VS Code, invoke the Command Palette ( **View** **&rarr;** **Command Palette** or **⇧⌘P** for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
+1. In VS Code, invoke the Command Palette ( **View** &rarr; **Command Palette** or **⇧⌘P** for macOS / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> for Windows) and choose **Fiori: Open Application Generator**.
 
 
     > In case you get an error launching the Application Generator, refer to the [FAQ](https://help.sap.com/viewer/42532dbd1ebb434a80506113970f96e9/Latest/en-US) to find a solution.

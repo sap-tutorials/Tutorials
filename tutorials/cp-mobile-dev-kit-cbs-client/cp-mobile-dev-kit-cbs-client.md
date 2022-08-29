@@ -40,7 +40,6 @@ After a successful build, you can download the APK or IPA file.
 
 >Make sure you are choosing the right device platform tab above.
 
-
 [OPTION BEGIN [Android]]
 
 > This step is required only if you will be using Push notification in your Android MDK client. If not using the Push, proceed to next step.
@@ -292,7 +291,7 @@ You can find more details about Cloud Build service in [help documentation](http
 
 [OPTION BEGIN [Standard Client]]
 
-1. In Mobile Services cockpit, navigate to `Mobile Applications` | `Native/Hybrid` | `com.sap.mdk.demo` | `Mobile Cloud Build`.
+1. In Mobile Services cockpit, navigate to `Mobile Applications` | `Native/MDK` | `com.sap.mdk.demo` | `Mobile Cloud Build`.
 
     > If you do not see **Mobile Cloud Build** feature in the **Assigned Features** list, click the **+** icon to add it.
 
@@ -308,16 +307,15 @@ You can find more details about Cloud Build service in [help documentation](http
 
     !![MDK](img-3.3.3.png)
 
-    >**Encrypt Database**: Whether the database must be encrypted. Unselect this field to extract the database for debugging purposes.
-
 5. In **Platform** step, provide a unique value to the **URL Scheme**.
 
     If you have a Firebase configuration for your client, browse to select the `google-services.json` file and click **Next**.
 
-
     !![MDK](img-3.4.4.png)
 
     >**Google Services JSON File**: The Firebase Android configuration file associated with your app in your Firebase project.
+
+    >For Android builds: The packaging format to use for the build, including APK (Android Package Kit, the default) or AAB (Android App Bundle). Since Google requires applications uploaded to the Google Play Store be built in the AAB format, select this option if that is your plan. To install an AAB binary without using Google Play Store, you must download the AAB and use Google's `bundletool` to extract an install-ready binary from the AAB and to install that binary. Refer to their documentation on `bundletool` for more details.
 
 6. In **Multimedia** step, you may upload an image to use for the app logo and click **Next**.
 
@@ -344,7 +342,7 @@ You can find more details about Cloud Build service in [help documentation](http
 
 [OPTION BEGIN [Custom Client]]
 
-1. In Mobile Services cockpit, navigate to `Mobile Applications` | `Native/Hybrid` | `com.sap.mdk.demo` | `Mobile Cloud Build`.
+1. In Mobile Services cockpit, navigate to `Mobile Applications` | `Native/MDK` | `com.sap.mdk.demo` | `Mobile Cloud Build`.
 
     > If you do not see **Mobile Cloud Build** feature in the **Assigned Features** list, click the **+** icon to add it.
 
@@ -377,7 +375,9 @@ You can find more details about Cloud Build service in [help documentation](http
     !![MDK](img-3.5.png)
 
     >**Google Services JSON File**: The Firebase Android configuration file associated with your app in your Firebase project.
+    If the google-services.json is available in the uploaded ZIP file, you will see option _Show Contents_ to view the contents of the JSON file. If it is not the right file, click _Remove File_ and then you can upload a new google-services.json file to override it.
 
+    >For Android builds: The packaging format to use for the build, including APK (Android Package Kit, the default) or AAB (Android App Bundle). Since Google requires applications uploaded to the Google Play Store be built in the AAB format, select this option if that is your plan. To install an AAB binary without using Google Play Store, you must download the AAB and use Google's `bundletool` to extract an install-ready binary from the AAB and to install that binary. Refer to their documentation on `bundletool` for more details.
 
 6. In **Multimedia** step, you may upload an image to use for the app logo and click **Next**.
 
@@ -400,8 +400,6 @@ You can find more details about Cloud Build service in [help documentation](http
     You can find more details about packaging details in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/admin/customization.html#packaging-details-overview).
 
 [OPTION END]
-
-
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -430,8 +428,6 @@ You can install this new custom MDK client app either by scanning QR code from i
 ![MDK](img-4.5.png)
 
 [OPTION END]
-
-Congratulations, you have successfully built Your Mobile Development Kit Client Using Cloud Build Service and and you can continue with the remaining tutorials in this mission.
 
 [VALIDATE_4]
 [ACCORDION-END]

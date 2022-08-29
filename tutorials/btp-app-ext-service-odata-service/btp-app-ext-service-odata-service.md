@@ -10,23 +10,21 @@ tags: [tutorial>intermediate, tutorial>license, software-product-function>sap-cl
 primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 ## Prerequisites
- - You have developed your CAP application using the tutorials [Add the Consumption of an External Service to Your CAP Application](btp-app-ext-service-add-consumption) and [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui) or download the result from this [branch](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-consume-ui) to continue here.
- - When starting with the result from the [`ext-service-consume-ui`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/ext-service-consume-ui) branch, refer to [Create a Directory for Development](btp-app-create-directory) to see a recommended approach for organizing directories and details how to copy the contents of the branch.
+ - [Consume the External Service in the UI of Your Application](btp-app-ext-service-consume-ui)
  - On SAP BTP side:
-    - You have an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) global account in SAP BTP.
+    - You have an [enterprise](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/171511cc425c4e079d0684936486eee6.html) global account in SAP BTP
     - You must be an administrator of the SAP BTP global account where you want to register your SAP S/4HANA system.
-    - You need to [Prepare for SAP BTP Development](btp-app-prepare-btp) if you start with the result from an example branch.
-    - Your SAP BTP subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp).
-    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment, you need to perform step 14–17, starting with step [Subscribe to SAP Launchpad Service](https://developers.sap.com/de/tutorials/btp-app-launchpad-service.html#57352c79-1a09-4054-a77d-626fac957404) from the tutorial [Add the SAP Launchpad service](btp-app-launchpad-service).
+    - Your SAP BTP subaccount has quota for the services `SAP Launchpad service` and `SAP HTML5 Applications Repository service` as described in [Prepare for SAP BTP Development](btp-app-prepare-btp)
+    - You have to [Use an existing SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#42a0e8d7-8593-48f1-9a0e-67ef7ee4df18) or [Set up a new SAP HANA Cloud service instance](https://developers.sap.com/tutorials/btp-app-hana-cloud-setup.html#3b20e31c-e9eb-44f7-98ed-ceabfd9e586e) for the deployment. After the deployment, you need to [Subscribe to the SAP Launchpad Service](btp-app-launchpad-service).
 - On SAP S/4HANA side:
-    - You have a dedicated SAP S/4HANA system.
-    - You must be an administrator of the SAP S/4HANA system.
+    - You have a dedicated SAP S/4HANA system
+    - You must be an administrator of the SAP S/4HANA system
 
 ## Details
 ### You will learn
-- How to activate your Business Partner OData service.
-- How to create a technical user in your SAP S/4HANA system.
-- How to assign a role to your technical user.
+- How to activate your Business Partner OData service
+- How to create a technical user in your SAP S/4HANA system
+- How to assign a role to your technical user
 
 ---
 
@@ -190,7 +188,7 @@ Now, let's create a user in your SAP S/4HANA system and assign the required auth
 
 22.    Choose **System** &rarr; **Log Off** from the menu.
 
-23.    Log in to your SAP S/4HANA system using your newly created technical user (CPAPP) and the password you generated in sub-step 2.5 of section [Create a technical user](#create-a-technical-user). Change the initial password when prompted.
+23.    Log in to your SAP S/4HANA system using your newly created technical user (CPAPP) and the password you generated in sub-step 2.5 [Create a technical user](#create-a-technical-user). Change the initial password when prompted.
 
     > For the purposes of the tutorial, we're going to set the password to `Welcome1`. You can set your own password, but make sure you note it because you'll need it in the upcoming tutorials.
 

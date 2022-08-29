@@ -1,15 +1,18 @@
 ---
 title: Create Service Instance for Document Translation
-description: Create a service instance and the service keys for Document Translation (one of the SAP Translation Hub services) using the SAP Business Technology Platform trial cockpit.
+description: Create a service instance and the service keys for Document Translation (one of the SAP Translation Hub services) using the SAP Business Technology Platform cockpit.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-business-technology-platform, topic>machine-learning]
-primary_tag: products>sap-translation-hub
+tags: [ tutorial>beginner, software-product>sap-business-technology-platform, topic>machine-learning]
+primary_tag: software-product>sap-translation-hub
 ---
 
 ## Prerequisites
- - You have created a trial account on SAP Business Technology Platform (region AWS Europe): [Get a Free Trial Account on SAP Business Technology](hcp-create-trial-account)
-    - Hint: [You can also watch the video and learn how to create the account](https://www.youtube.com/watch?v=n5luSQKYvQQ&feature=emb_logo)
+ - You have created an account on SAP Business Technology Platform: [Get an Account on SAP BTP to Try Out Free Tier Service Plans](btp-free-tier-account)
+ - Please make sure that you are using one of the following Amazon Web Services (AWS) regions:
+     - Europe (Frankfurt) cf-eu10
+     - or US East (VA) cf-us10 region
+     Description how to create a new subaccount is available [here](https://help.sap.com/docs/SAP_TRANSLATION_HUB/9f73362817cd48339dd8a6acba160f7f/892c6d71f35f414e9aed44bece574e57.html)
 
 
 ## Details
@@ -19,36 +22,46 @@ primary_tag: products>sap-translation-hub
 - Which information from the service key is necessary for the authentication e.g. in SAP Business API Hub or SAP Enable Now
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
+[ACCORDION-BEGIN [Step 1: ](Enter your SAP BTP Global account)]
 
-1. In your web browser, open the [SAP Business Technology Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
+1. In your web browser, open the [SAP Business Technology Platform cockpit](https://cockpit.eu10.hana.ondemand.com/cockpit).
 
-2. Navigate to your trial account by clicking **Enter Your Trial Account**.
+2. Navigate from your global account page to your created account by clicking on the **Free tier account** as visible on the example screenshot.
 
-    !![Trial global account](01_trial_account.png)
+    !![Global account](01_account.png)
 
-    >Please make sure that you are using the region **US East (VA) cf-us10 - AWS**.
-
-3. From your global account page, choose the `trial` tile to access your sub account.
-
-    !![Subaccounts](02-enter-trial-account.png)
+    Please make sure that you are using one of the following Amazon Web Services (AWS) regions:
+        - Europe (Frankfurt) cf-eu10
+        - or US East (VA) cf-us10 region
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Access space)]
+[ACCORDION-BEGIN [Step 2: ](Assign entitlements)]
 
-All applications and services are available in spaces. By default, trial accounts only have the **dev** space available. To access your spaces, click **Spaces** on the navigation sidebar and select the **dev** space to open it. You will create your service instance in this space.
+1. In your subaccount account, navigate to Entitlements.
 
-!![Spaces](03-access-space.png)
+    !![entitlements](02-entitlements.png)
+
+2. Click Configure Entitlements, then select Add Service Plans.
+   A popover appears with all entitlements available for your directory/ subaccount.
+
+3.   Select the Document translation service and then the free plan you want to entitle.
+
+    !![service plan](03-add_plan.png)
+
+4. Click Add Service Plans to exit the popover.
+
+5. Click Save.
+
+You have now successfully configured the entitlements for document translation.
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](Access service via Service Marketplace)]
 
-The **Service Marketplace** is where you find the available services on SAP Business Technology.
+The **Service Marketplace** is where you find the entitled services on SAP BTP.
 
 To access it, click **Service Marketplace** on the navigation sidebar and search for **`doc`**. Click the tile named `Document Translation` to access the service.
 
@@ -62,19 +75,18 @@ To access it, click **Service Marketplace** on the navigation sidebar and search
 
 You will now create an instance of your service.
 
-1. Click on the three dots and open the menu to **Create** a new instance.
+1. Click on the button to **Create** a new instance.
 
     !![Service Instance](05-create-instance.png)
 
-2. In the dialog, leave the default value for the service and select the **trial** service plan.
+2. In the dialog, leave the default value for the service and select the **free** service plan.
 
-    For the name for your new instance, enter: `demo`.
+    For the name for your new instance, enter: `translation`.
 
     !![Create Instance](06-create-instance-dialog.png)
 
-    Click **Create Instance** (you can ignore the other steps).
+    Click **Create** Instance (you can ignore the other steps).
 
-    !![Create Instance](07-create-instance-final.png)
 
 3. In the following dialog, click **View Instance** to go to the list of your service instances.
 
