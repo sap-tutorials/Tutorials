@@ -102,11 +102,13 @@ if __name__ == "__main__":
 #### Understanding your code
 
 Where should you load your model from?
+
 - Your code reads files from folder `/mnt/models`. This folder path is hard-coded in SAP AI Core, and cannot be modified.
 - Later, you will dynamically place your model file in the path `/mnt/models`.
 - You may place multiple files inside `/mnt/models` as part of your model. These files may have multiple formats, such as `.py` or `.pickle`, however you should not-create sub-directories within it.
 
 Which serving engine to use?
+
 - Your code uses Flask to create a server, however you may use another python library if you would like to.
 - Your format for prediction REST calls will depend on the implementation of this deployment server.
 - You implement the endpoint `/v2/predict` to make predictions. You may modify the endpoint name and format, but each endpoint must have the prefix `/v<NUMBER>`. For example if you want to create endpoint to greet your server, then the endpoint implementation should be `/v2/greet` or `/v1/greet`
@@ -442,7 +444,7 @@ Switching between deployed models means that you can update the model used in yo
 
 [OPTION BEGIN [SAP AI Launchpad]]
 
-To create a new configuration, click **ML Operations > Configuration > Create**. Enter the following details amd click **Next**.
+To create a new configuration, click **ML Operations > Configuration > Create**. Enter the following details and click **Next**.
 
 !![configuration create](img/ail/config21.jpg)
 

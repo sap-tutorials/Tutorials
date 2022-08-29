@@ -217,7 +217,7 @@ The code first takes takes a public [docker image of python](https://hub.docker.
 !![image](img/explain_3.png)
 
 > ### What is a Docker Image?
-> A Docker Image is a portable Linux environment, similar to a virtual machine. Docker images are layered environments, which means you may just have Linux OS (for example Distrom) as one Docker image or another Docker image which has python layered on top of that Linux.
+> A Docker Image is a portable Linux environment, similar to a virtual machine. Docker images are layered environments, which means you may just have Linux OS (for example `Distrom`) as one Docker image or another Docker image which has python layered on top of that Linux.
 >
 > While the code in this tutorial is written directly in the workflow, in actual production you will store the code scripts within your Docker Image. The number of code files and programming language are your preferences.
 
