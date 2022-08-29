@@ -28,7 +28,7 @@ By the end of the tutorial you will have two models trained on two different dat
 
 [ACCORDION-BEGIN [Step 1: ](Modify AI code)]
 
-Create a new directory named `hello-aicore-data`.
+Create a new directory named `hello-aicore-data`. The code is different from [previous tutorial](https://developers.sap.com/tutorials/ai-core-code.html/#) as it reads the data from folder (volumes, virtual storage spaces). The content of these volumes is dynamically loaded during execution of workflows.
 
 Create a file named `main.py`, and paste the following snippet there:
 
@@ -71,6 +71,8 @@ pickle.dump(clf, open(MODEL_PATH, 'wb'))
 ### Understanding your code
 
 Your code reads the data file `train.csv` from the location `/app/data`, which will be prepared in a later step. It also reads the variable (hyper-parameter) `DT_MAX_DEPTH` from the environment variables later. When generated, your model will be stored in the location `/app/model/` . You will also learn how to transport this code from SAP AI Core to your own cloud storage.
+
+> **Recommendation**: Although the dataset file `train.csv` is not present, it will be dynamically copied during execution to the volume mentioned in `(/app/data)`. Its recommended to pass the filename `(train.csv)` through the environment variable to your code so that if your dataset filename changes, you can dynamically set the dataset file.
 
 !![image](img/code-main.png)
 
@@ -164,13 +166,18 @@ spec:
         - "python /app/src/main.py"
 ```
 
-### Understanding your workflow.
+### Understanding changes in your workflow
+
+This change to your workflow creates a placeholder through which you can specify a data path (volume) to the container (Docker image in execution).
 
 !![image](img/pipeline.png)
 
 1. A placeholder named `housedataset` is created.
 2. You specify the **kind of artifact** that the placeholder can accept. **Artifact** is covered in details later in this tutorial.
 3. You use a placeholder to specify the **path that you created in your Dockerfile**, which is where you will copy files to your Docker image.
+
+#### Why do we need to create placeholders?
+SAP AI Core only uses your workflows as an interface, so is unaware of the volume/ attachments specified in your Docker image. Your data path is specified in your Dockerfile and has a placeholder in your workflow and data is then expected by the Docker image.
 
 [DONE]
 [ACCORDION-END]
@@ -210,6 +217,7 @@ spec:
     - - name: mypredictor
         template: mycodeblock1
   - name: mycodeblock1
+    # Add your resource plan here. The annotation should follow metadata > labels > ai.sap.com/resourcePlan: <plan>
     inputs:
       artifacts:  # placeholder for cloud storage attachements
         - name: housedataset # a name for the placeholder
@@ -228,12 +236,35 @@ The following shows the new important lines in the workflows.
 
 !![image](img/pipeline2.png)
 
-##*#Understanding these changes
+####Understanding these changes
 
 1. A placeholder named `DT_MAX_DEPTH` is created locally in the workflow. It accepts number content of input type: `string`. The input is then type cast to an integer elsewhere in your code, so it must be a string containing integers. For example: ```"4"``` is acceptable because it is a string containing content that can can be type cast to and integer.
 2. You create an input `env` (Environment) variable to your Docker image, named `DT_MAX_DEPTH`. The value of this variable is fed in from `workflow.parameters.DT_MAX_DEPTH`,the local name from previous point.
 
 Commit the changes in the GitHub.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 1: ](Set resource plan)]
+
+Add the following snippet in your workflow to specify resource plan. The resource plan helps specify computing resource required to run your Docker image. The computing resources includes GPU, RAM and Processor. If not mentioned the resource plan defaults to `starter` which is the entry level [resource plan](https://help.sap.com/docs/AI_CORE/2d6c5984063c40a59eda62f4a9135bee/57f4f19d9b3b46208ee1d72017d0eab6.html?locale=en-US).
+
+
+```BASH[6-8]
+spec:
+    ...
+    templates:
+    ...
+    - name: mycodeblock1
+      metadata:
+        labels:
+            ai.sap.com/resourcePlan: starter
+    ...
+```
+
+**INFORMATION**: You can always verify computing resource allocated using the following command `echo $(lscpu)` within your Docker image. The command is the the shell script command of Linux to print system configuration.
 
 [DONE]
 [ACCORDION-END]
@@ -358,7 +389,7 @@ You need to create AWS S3 object store, using one of the following links:
 
 Download and Install the [AWS Command Line Interface (CLI)](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
-Open your terminal and run:
+To configure settings for your CWS CLI, open your terminal and run:
 
 ```BASH
 aws configure
@@ -367,6 +398,8 @@ aws configure
 !![image](img/aws-configure.png)
 
 Enter your AWS credentials. Note that the appearance of the screen will not change as you type. You can leave the `Default output format` entry as blank. Press **enter** to submit your credentials.
+
+Your credentials are stored in your system and used by the AWS CLI to interact with AWS. Fore more informaiton, see [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
 
 [DONE]
 [ACCORDION-END]
@@ -506,7 +539,7 @@ With your object store secret created, you can now reference any sub-folders to 
 
 [OPTION BEGIN [Postman]]
 
-Create an artifact for train.csv that we uploaded to jan folder, by clicking **POST Register artifact** and using the **body** underneath.
+Create an artifact for the `train.csv` file that we uploaded to the `jan` folder, by clicking **POST Register artifact** and using the body underneath.
 
 !![image](img/postman/artifact.png)
 

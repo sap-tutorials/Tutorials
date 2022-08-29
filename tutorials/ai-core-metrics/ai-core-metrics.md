@@ -240,7 +240,7 @@ After execution, you can see this in SAP AI Launchpad.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add tags for execution meta after training)]
+[ACCORDION-BEGIN [Step 7: ](Add tags for execution meta after training)]
 
 Add the following snippet to tag your execution. The `tags` are customizable key-values.
 
@@ -260,7 +260,7 @@ After execution, you can see this in SAP AI Launchpad.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Complete files)]
+[ACCORDION-BEGIN [Step 8: ](Complete files)]
 
 Check your modified `main.py` by comparing it with the following expected `main.py`.
 
@@ -371,7 +371,7 @@ Check your modified `requirements.txt` by comparing it with the following expect
 ```TEXT
 sklearn==0.0
 pandas
-ai-core-sdk>=1.12.0
+ai-core-sdk>=1.15.1
 ```
 
 Create a file called `Dockerfile` with the following snippet. This file must not have a file extension or alternative name.
