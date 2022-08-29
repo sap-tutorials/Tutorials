@@ -90,7 +90,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 [ACCORDION-END]
 ---
 [ACCORDION-BEGIN [Step 2: ](Add files to the project)]
-1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Create a Directory for Development](btp-app-create-directory).
+1. Open the Finder on Mac or the Explorer on Windows and navigate to the `tutorial` directory created in tutorial [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap).
 
 2. Open the folder `templates` and keep it open as you copy a number of files from there. For this part of the tutorial and others, it's probably best if you place it next to your VS Code instance.
 

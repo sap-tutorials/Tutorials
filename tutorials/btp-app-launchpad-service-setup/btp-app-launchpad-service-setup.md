@@ -1,7 +1,7 @@
 ---
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Prepare Launchpad Service Setup
+title: Prepare SAP Launchpad Service Setup
 description: This tutorial shows you how to add the SAP Launchpad application.
 keywords: cap
 auto_validation: true
