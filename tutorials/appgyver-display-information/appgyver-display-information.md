@@ -20,6 +20,7 @@ author_profile: https://github.com/akseliv
 
 In the previous tutorial, you learned how to configure your application to read specific information from an API once a barcode has been scanned. Now, in this final tutorial for this mission, you will learn how to display the fetched information on your application interface.
 
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add text components to app)]

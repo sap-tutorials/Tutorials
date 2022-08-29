@@ -11,8 +11,10 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 ---
 
 ## Prerequisites
- - You have developed your CAP application and have prepared it for deployment using this collection of tutorials [here](mission.btp-application-cap-e2e) or download the result from this [branch](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) to start.
- - When starting with the result from this [branch](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging), refer to [Create a Directory for Development](btp-app-create-directory) to see a recommended approach for organizing directories and details how to copy the contents of the branch.
+ - [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap)
+ - For this tutorial, you have two options:
+    - Before you start with this tutorial, follow the instructions in **Step 16: Start from an example branch** of [Prepare Your Development Environment for CAP](btp-app-prepare-dev-environment-cap) to checkout the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
+    - Complete the group of tutorials [Deploy Your CAP Application on SAP BTP Cloud Foundry Environment](group.btp-app-cap-deploy).
 
 ## Details
 ### You will learn
@@ -22,9 +24,6 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
  - How to connect to the sandbox service
  - How to delegate requests to external services
  - How to add the API key
-
-
-To start with this tutorial use the result in the [`logging`](https://github.com/SAP-samples/cloud-cap-risk-management/tree/logging) branch.
 
 ---
 
