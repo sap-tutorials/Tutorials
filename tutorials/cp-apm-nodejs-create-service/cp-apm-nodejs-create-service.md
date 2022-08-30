@@ -7,8 +7,15 @@ auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [ tutorial>beginner, programming-tool>node-js, software-product>sap-business-technology-platform, software-product-function>sap-cloud-application-programming-model ]
 time: 50
+parser: v2
 ---
 
+## You will learn
+  - How to develop a sample business service using CAP and `Node.js`
+  - How to define a simple data model and a service that exposes the entities you created in your data model
+  - How to run your service locally
+  - How to deploy the data model to an `SQLite` database
+  - How to add custom handlers to serve requests that aren't handled automatically
 
 ## Prerequisites
 - You have installed [Node.js](https://nodejs.org/en/download/). Make sure you run the latest long-term support (LTS) version of Node.js with an even number like 16. Refrain from using odd versions, for which some modules with native parts will have no support and thus might even fail to install. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
@@ -17,19 +24,14 @@ time: 50
 - You have installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
 - If you don't have a Cloud Foundry Trial subaccount and dev space on [SAP Business Technology Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) with **US East (VA) as region** and, if necessary [Manage Entitlements](cp-trial-entitlements). You need this to continue after this tutorial.
 
-## Details
-### You will learn
-  - How to develop a sample business service using CAP and `Node.js`
-  - How to define a simple data model and a service that exposes the entities you created in your data model
-  - How to run your service locally
-  - How to deploy the data model to an `SQLite` database
-  - How to add custom handlers to serve requests that aren't handled automatically
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up local development environment)]
+## Intro
 
 Before you start, make sure that you've completed the prerequisites.
+
+### Set up local development environment
 
 1. Open a command line window and install the `cds` development kit globally by executing the following command:
 
@@ -55,33 +57,27 @@ Before you start, make sure that you've completed the prerequisites.
 
     > This lists the available `cds` commands. For example, use `cds --version` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
-[DONE]
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Install Visual Studio Code extension)]
+### Install Visual Studio Code extension
 
 1. Go to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SAPSE.vscode-cds).
 
 2. Choose **Install**.
 
-    !![extension_marketplace](VSCode_extension.png)
+    <!-- border -->![extension_marketplace](VSCode_extension.png)
 
     > Visual Studio Code opens the extensions details page.
 
 3. In VS Code choose **Install** to enable the extension for SAP CDS Language Support.
 
-    ![extension_VSCode](VSCode_view_extension.png)
+    <!-- border -->![extension_VSCode](VSCode_view_extension.png)
 
     > If the extension is already installed and enabled in VS Code, it will be updated automatically.
 
     > Learn more about the features in this short [demo](https://www.youtube.com/watch?v=eY7BTzch8w0) and see the [features and commands](https://cap.cloud.sap/docs/get-started/tools#cds-editor) in the CAP documentation.
 
-[DONE]
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Start project)]
+### Start project
 
 [OPTION BEGIN [Windows]]
 
@@ -166,11 +162,7 @@ With your installed CDS command line tool, you can now create a new CAP-based pr
 
 [OPTION END]
 
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Define your first service)]
+### Define your first service
 
 After initializing the project, you should see the following empty folders:
 
@@ -178,7 +170,7 @@ After initializing the project, you should see the following empty folders:
 - `db`: for the database level schema model
 - `srv`: for the service definition layer
 
-  ![Folder structure](folder_structure.png)
+  <!-- border -->![Folder structure](folder_structure.png)
 
 1. Let's feed it by adding a simple domain model. In the **`srv`** folder choose the **New File** icon in Visual Studio Code and create a new file called `cat-service.cds`.
 
@@ -232,15 +224,11 @@ After initializing the project, you should see the following empty folders:
 
 4. To test your service, go to: <http://localhost:4004>
 
-    !![application](application_local.png)
+    <!-- border -->![application](application_local.png)
 
     > You won't see data, because you haven't added a data model yet. Click on the available links to see the service is running.
 
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Provide mock data)]
+### Provide mock data
 
 Add service provider logic to return mock data.
 
@@ -279,11 +267,7 @@ Add service provider logic to return mock data.
 
     > You should see the mock data that you've added for the `Books` and `Authors` entities.
 
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Add data model and adapt service definition)]
+### Add data model and adapt service definition
 
 To get started quickly, you've already added a simplistic all-in-one service definition. However, you would usually put normalized entity definitions into a separate data model and have your services expose potentially de-normalized views on those entities.
 
@@ -330,11 +314,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
 
     > Remember to save your files choosing <kbd>Ctrl</kbd> + <kbd>S</kbd>.
 
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7: ](Add initial data)]
+### Add initial data
 
 In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill your database tables with initial data.
 
@@ -391,11 +371,7 @@ In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill yo
 
     > You should see a book titled Jane Eyre. If not, make sure you've removed the mock data from `cat-service.js`.
 
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Add persistent database)]
+### Add persistent database
 
 Before you continue, make sure that you've completed the prerequisites and installed SQLite (for Windows users only).
 
@@ -447,11 +423,7 @@ Instead of using in-memory, you can also use persistent databases.
     [cds] - [ terminate with ^C ]
     ```
 
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Test generic handlers with Postman)]
+### Test generic handlers with Postman
 
 You can now see the generic handlers shipped with CAP in action.
 
@@ -464,23 +436,19 @@ You can now see the generic handlers shipped with CAP in action.
 
 3. In the Postman app, use the **Import** button in the toolbar:
 
-    !![Postman import](postman-import.png)
+    <!-- border -->![Postman import](postman-import.png)
 
 4. Choose **Import File** in the wizard. Click on **Choose Files** and select the file that you've saved before or add it per drag & drop  directly.
 
-    !![Postman import from file](postman-import-from-file.png)
+    <!-- border -->![Postman import from file](postman-import-from-file.png)
 
 5. In the imported collection, execute the various requests in the `metadata` and `CRUD` groups. They should all return proper responses.
 
-    !![Test the request](postman-test-request.png)
+    <!-- border -->![Test the request](postman-test-request.png)
 
     > With your current service implementation, you can get only `POST` orders. Any `GET` or `DELETE` to an order fails, since you've specified the `Orders` entity to be `@insertonly` in `srv/cat-service.cds`.
 
-[VALIDATE_1]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 10: ](Add custom logic)]
+### Add custom logic
 
 1. In Visual Studio Code open the file `cat-service.js` and replace the existing code with:
 
@@ -517,7 +485,7 @@ You can now see the generic handlers shipped with CAP in action.
 
     > Look at the stock of book `201`.
 
-    !![Test the request](postman-get-books.png)
+    <!-- border -->![Test the request](postman-get-books.png)
 
 3. Execute one of the `POST Orders` requests.
 
@@ -526,7 +494,3 @@ You can now see the generic handlers shipped with CAP in action.
 4. Execute the `GET Books` request again.
 
     > The stock of book `201` is lower than before.
-
-[DONE]
-
-[ACCORDION-END]
